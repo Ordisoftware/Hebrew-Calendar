@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -47,6 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       SaveBookmarksDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+      OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
       SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
       OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
     }
