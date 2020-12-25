@@ -174,7 +174,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1</value>
+    <value>0, 2</value>
   </data>
   <data name="ActionExportSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -215,7 +215,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionImportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 1</value>
+    <value>32, 2</value>
   </data>
   <data name="ActionImportSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>

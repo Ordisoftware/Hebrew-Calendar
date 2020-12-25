@@ -143,7 +143,7 @@
       // 
       this.SaveBookmarksDialog.FileName = "Date Bookmarks";
       // 
-      // ManageDateBookmarksForm
+      // EditDateBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +159,7 @@
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ManageDateBookmarksFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "ManageDateBookmarksForm";
+      this.Name = "EditDateBookmarksForm";
       this.ShowInTaskbar = false;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageDateBookmarks_FormClosed);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
