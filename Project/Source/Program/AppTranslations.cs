@@ -101,27 +101,6 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
-    static public readonly TranslationsDictionary ViewSavedToFile
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
-        [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
-      };
-
-    static public readonly TranslationsDictionary ViewCopiedToClipboard
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The view has been copied to the clipboard.",
-        [Language.FR] = "La vue a été copiée dans le presse-papier."
-      };
-
-    static public readonly TranslationsDictionary ViewPrinted
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The view has been printed.",
-        [Language.FR] = "La vue a été imprimée."
-      };
-
     static public readonly TranslationsDictionary DateNotFound
       = new TranslationsDictionary
       {

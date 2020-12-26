@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2020-12 </edited>
 using System;
 using System.Data;
 using Ordisoftware.Core;
@@ -33,7 +33,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady || IsGenerating || GoToDateMutex ) return;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
-      if ( CurrentDay != null && CurrentDay.Date == SQLiteDate.ToString(date) ) return;
       GoToDateMutex = true;
       SystemManager.TryCatch(() =>
       {
@@ -60,11 +59,11 @@ namespace Ordisoftware.Hebrew.Calendar
         int pos = CalendarText.Find(strDate);
         if ( pos != -1 )
         {
-          CalendarText.SelectionStart = pos - 6 - 118;
+          CalendarText.SelectionStart = pos - 6 - 119;
           CalendarText.SelectionLength = 0;
           CalendarText.ScrollToCaret();
           CalendarText.SelectionStart = pos - 6;
-          CalendarText.SelectionLength = 118;
+          CalendarText.SelectionLength = 119;
         }
       });
       GoToDateMutex = false;

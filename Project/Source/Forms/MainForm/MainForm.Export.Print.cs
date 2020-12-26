@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
         void printed(object sender, PrintPageEventArgs e)
         {
           if ( !e.HasMorePages )
-            DisplayManager.ShowSuccessOrSound(AppTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
+            DisplayManager.ShowSuccessOrSound(SysTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
         }
       }
 

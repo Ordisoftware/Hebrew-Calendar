@@ -197,6 +197,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + S : Save current view to file" + Globals.NL +
                         "Ctrl + C : Copy current view to clipboard" + Globals.NL +
                         "Ctrl + P : Print current view" + Globals.NL +
+                        "Shift + Ctrl + C : Copy the text report selection to clipboard" + Globals.NL +
                         Globals.NL +
                         "Alt + T : Show tools menu" + Globals.NL +
                         "Alt + L : Show web links menu" + Globals.NL +
@@ -246,6 +247,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
                         "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
                         "Ctrl + P : Imprime la vue en cours" + Globals.NL +
+                        "Shift + Ctrl + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
                         Globals.NL +
                         "Alt + T : Montre le menu des outils" + Globals.NL +
                         "Alt + L : Montre le menu des liens web" + Globals.NL +

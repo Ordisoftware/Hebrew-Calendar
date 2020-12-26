@@ -254,6 +254,7 @@
       this.CalendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.CalendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
       resources.ApplyResources(this.CalendarText, "CalendarText");
+      this.CalendarText.HideSelection = false;
       this.CalendarText.Name = "CalendarText";
       this.CalendarText.ReadOnly = true;
       this.CalendarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyDown);
