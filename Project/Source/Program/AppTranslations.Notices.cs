@@ -210,14 +210,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + G : Generate calendar" + Globals.NL +
                         Globals.NL +
                         "Ctrl + F1 : Dates difference calculator" + Globals.NL +
-                        "Ctrl + F2 : Generate calendar data" + Globals.NL +
-                        Globals.NL +
-                        "Ctrl + F11 : Current log window" + Globals.NL +
-                        "Ctrl + F12 : Statistics window" + Globals.NL +
+                        "Ctrl + F2 : Celebrations board" + Globals.NL +
+                        "Ctrl + F11 : Log file window" + Globals.NL +
+                        "Ctrl + F12 : Usage statistics window" + Globals.NL +
                         Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
-                        Globals.NL +
                         "Up (ou PageUp) : Previous year" + Globals.NL +
                         "Down (ou PageDown) : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
@@ -261,14 +259,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
                         Globals.NL +
                         "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
-                        "Ctrl + F2 : Génère les données du calendrier" + Globals.NL +
-                        Globals.NL +
-                        "Ctrl + F11 : Fenêtre du log en cours" + Globals.NL +
-                        "Ctrl + F12 : Fenêtre des statistiques" + Globals.NL +
+                        "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
+                        "Ctrl + F11 : Fenêtre du fichier log" + Globals.NL +
+                        "Ctrl + F12 : Fenêtre des statistiques d'utilisation" + Globals.NL +
                         Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
-                        Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +
                         "Bas (ou PageSuiv) : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +

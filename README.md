@@ -160,8 +160,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
-| Ctrl + F11 | Current log window |
-| Ctrl + F12 | Statistics window |
+| Ctrl + F11 | Log file window |
+| Ctrl + F12 | Usage statistics window |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -200,6 +200,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
 - Fix export dialog that has print image orientation option always enabled.
 - Fix navigation form that doesn't ballon when app is started hidden.
+- Fix help shortcuts.
 - Code refactoring.
 - Update web links.
 
