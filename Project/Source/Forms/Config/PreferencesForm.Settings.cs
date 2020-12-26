@@ -78,7 +78,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveSettingsDialog.FilterIndex = index + 1;
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      Program.Settings.Store();
+      UpdateSettings();
+      Settings.Store();
       var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
       config.SaveAs(SaveSettingsDialog.FileName);
     }
