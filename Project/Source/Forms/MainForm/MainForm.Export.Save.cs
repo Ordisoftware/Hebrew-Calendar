@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = (interval) =>
         {
-          SaveTextDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+          SaveTextDialog.FileName = Globals.ApplicationGitHubCode + " " + DataSet.LunisolarDays.TableName;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
           File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
@@ -51,7 +51,10 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             else
             {
-              SaveImageDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+              SaveImageDialog.FileName = string.Format("{0} {1}-{2}.png",
+                                                       Globals.ApplicationGitHubCode,
+                                                       CalendarMonth.CalendarDate.Year,
+                                                       CalendarMonth.CalendarDate.Month.ToString("00"));
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
                 if ( Program.ImageExportTargets.ElementAt(index).Key == Settings.ExportImagePreferredTarget )
                   SaveImageDialog.FilterIndex = index + 1;
@@ -68,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-          SaveDataDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+          SaveDataDialog.FileName = Globals.ApplicationGitHubCode + " " + DataSet.LunisolarDays.TableName;
           for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
             if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;
@@ -100,8 +103,8 @@ namespace Ordisoftware.Hebrew.Calendar
         bool HasMorePages = true;
         while ( HasMorePages )
         {
-          string filename = string.Format("{0}-{1}-{2}.png",
-                                          Globals.AssemblyTitle,
+          string filename = string.Format("{0} {1}-{2}.png",
+                                          Globals.ApplicationGitHubCode,
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));
           var bitmap = CalendarMonth.GetBitmap();
