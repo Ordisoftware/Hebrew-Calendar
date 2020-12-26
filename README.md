@@ -149,6 +149,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
+| Shift + Ctrl + C | Copy the text report selection to clipboard |
 | Alt + T | Show tools menu |
 | Alt + L | Show web links menu |
 | Alt + V | Show view menu |
@@ -197,6 +198,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add backup and restore date bookmarks.
 - Add option to go to today when main form popup else keep the selected.
 - Improve celebrations board to indicate the day of the shabat in the title.
+- Improve text report to always show selection.
+- Fix text report to select the last character of the line.
 - Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
 - Fix export dialog that has print image orientation option always enabled.
 - Fix navigation form that doesn't ballon when app is started hidden.
