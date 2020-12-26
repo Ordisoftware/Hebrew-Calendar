@@ -133,6 +133,41 @@ namespace Ordisoftware.Core
         }
       };
 
+    static public readonly TranslationsDictionary ScreenshotDone
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The window has been copied to the clipboard.",
+        [Language.FR] = "La fenêtre a été copié dans le presse-papier."
+      };
+
+    static public readonly TranslationsDictionary ViewSavedToFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
+        [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
+      };
+
+    static public readonly TranslationsDictionary ViewCopiedToClipboard
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The view has been copied to the clipboard.",
+        [Language.FR] = "La vue a été copiée dans le presse-papier."
+      };
+
+    static public readonly TranslationsDictionary SelectionCopiedToClipboard
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The selection has been copied to the clipboard.",
+        [Language.FR] = "La sélection a été copiée dans le presse-papier."
+      };
+
+    static public readonly TranslationsDictionary ViewPrinted
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The view has been printed.",
+        [Language.FR] = "La vue a été imprimée."
+      };
+
   }
 
 }

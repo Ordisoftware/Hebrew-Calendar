@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       switch ( keyData )
       {
-        // System
+        // System process
         case Keys.Alt | Keys.Control | Keys.F4:
           MenuExit.PerformClick();
           return true;
@@ -93,8 +93,13 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionSaveToFile.PerformClick();
           return true;
         case Keys.Control | Keys.C:
-          if ( ActiveControl == CalendarText ) break;
           ActionCopyToClipboard.PerformClick();
+          return true;
+        case Keys.Control | Keys.Shift | Keys.C:
+          if ( ActiveControl != CalendarText ) break;
+          CalendarText.Copy();
+          DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(), 
+                                            Globals.ClipboardSoundFilePath);
           return true;
         case Keys.Control | Keys.P:
           ActionPrint.PerformClick();

@@ -80,13 +80,6 @@ namespace Ordisoftware.Core
         [Language.FR] = "Voulez-vous ouvrir tous les liens de \"{0}\" ?"
       };
 
-    static public readonly TranslationsDictionary ScreenshotDone
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The window has been copied to the clipboard.",
-        [Language.FR] = "La fenêtre a été copié dans le presse-papier."
-      };
-
     static public readonly TranslationsDictionary AskToEmptyHistory
       = new TranslationsDictionary
       {

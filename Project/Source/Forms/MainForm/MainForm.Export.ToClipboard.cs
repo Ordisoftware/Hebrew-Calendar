@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
       Action<ViewMode> after = (view) =>
       {
-        DisplayManager.ShowSuccessOrSound(AppTranslations.ViewCopiedToClipboard.GetLang(),
+        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
                                           view == ViewMode.Month ? Globals.SnapshotSoundFilePath
                                                                  : Globals.ClipboardSoundFilePath);
       };
