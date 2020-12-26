@@ -26,9 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportPrintTextReport(ExportInterval interval)
     {
-      // TODO filter
-      var lines = CalendarText.Lines;
-
+      var lines = GetTextReportLines(interval).ToList();
       var formatString = new StringFormat();
       var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
       float fontHeight = -1;
@@ -36,7 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
       float marginTop = -1;
       int linesPerPage = -1;
       int countPages = -1;
-      int countTotalLines = CalendarText.Lines.Length;
+      int countTotalLines = lines.Count;
       bool askToContinue = true;
       PrinterCurrentLine = 0;
       ExportPrintRun(false, (s, e) =>

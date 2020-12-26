@@ -200,6 +200,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Improve celebrations board to indicate the day of the shabat in the title.
 - Improve text report to always show selection.
 - Fix text report to select the last character of the line.
+- Fix print text report interval that prints all lines.
 - Fix a strange behavior when resizing celebrations board from the top or left, and un-maximize.
 - Fix export dialog that has print image orientation option always enabled.
 - Fix navigation form that doesn't ballon when app is started hidden.
