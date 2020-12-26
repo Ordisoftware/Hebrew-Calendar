@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = (interval) =>
         {
-          SaveTextDialog.FileName = Globals.AssemblyTitle;
+          SaveTextDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
           File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             else
             {
-              SaveImageDialog.FileName = Globals.AssemblyTitle;
+              SaveImageDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
                 if ( Program.ImageExportTargets.ElementAt(index).Key == Settings.ExportImagePreferredTarget )
                   SaveImageDialog.FilterIndex = index + 1;
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-          SaveDataDialog.FileName = Globals.AssemblyTitle;
+          SaveDataDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
           for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
             if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;

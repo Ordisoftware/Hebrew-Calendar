@@ -2062,10 +2062,6 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // SaveSettingsDialog
-      // 
-      this.SaveSettingsDialog.FileName = "Date Bookmarks";
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
