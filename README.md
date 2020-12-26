@@ -176,6 +176,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
+- Add export celebrations board.
 - Add print celebrations board.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
@@ -190,9 +191,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2021.01.01 - Version 6.1
+#### 2020.12.27 - Version 6.1
 
-- Add export celebrations board.
 - Add export and import preferences.
 - Add backup and restore date bookmarks.
 - Add option to go to today when main form popup else keep the selected.
