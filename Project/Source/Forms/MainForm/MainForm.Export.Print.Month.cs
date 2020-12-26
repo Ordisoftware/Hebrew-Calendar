@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( multi )
       {
         CalendarMonth.CalendarDate = interval.Start.Value;
-        countPages = ( interval.End.Value.Year - interval.Start.Value.Year ) * 12;
+        countPages = interval.MonthsCount;
       }
       int margin = Settings.PrintingMargin;
       int margin2 = margin + margin;

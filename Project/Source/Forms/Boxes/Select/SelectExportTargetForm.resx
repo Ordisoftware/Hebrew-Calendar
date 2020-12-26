@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 2</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 2</value>
+  </data>
+  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 408</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 28</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SelectMonth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectMonth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 45</value>
+  </data>
+  <data name="SelectMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="SelectMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectMonth.Text" xml:space="preserve">
+    <value>Monthly calendar</value>
+  </data>
+  <data name="&gt;&gt;SelectMonth.Name" xml:space="preserve">
+    <value>SelectMonth</value>
+  </data>
+  <data name="&gt;&gt;SelectMonth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectMonth.Parent" xml:space="preserve">
+    <value>GroupBoxView</value>
+  </data>
+  <data name="&gt;&gt;SelectMonth.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectGrid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectGrid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 65</value>
+  </data>
+  <data name="SelectGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="SelectGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SelectGrid.Text" xml:space="preserve">
+    <value>Data grid</value>
+  </data>
+  <data name="&gt;&gt;SelectGrid.Name" xml:space="preserve">
+    <value>SelectGrid</value>
+  </data>
+  <data name="&gt;&gt;SelectGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectGrid.Parent" xml:space="preserve">
+    <value>GroupBoxView</value>
+  </data>
+  <data name="&gt;&gt;SelectGrid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 45</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 17</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+    <value>Open exported file after success</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportedFile.Name" xml:space="preserve">
+    <value>EditAutoOpenExportedFile</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportedFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportedFile.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportedFile.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 65</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+    <value>Open export folder after success</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Name" xml:space="preserve">
+    <value>EditAutoOpenExportFolder</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditAutoOpenExportFolder.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelYear2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelYear2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelYear2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 75</value>
+  </data>
+  <data name="LabelYear2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="LabelYear2.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="LabelYear2.Text" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="&gt;&gt;LabelYear2.Name" xml:space="preserve">
+    <value>LabelYear2</value>
+  </data>
+  <data name="&gt;&gt;LabelYear2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelYear2.Parent" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;LabelYear2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionIntervalInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionIntervalInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 14</value>
+  </data>
+  <data name="ActionIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Name" xml:space="preserve">
+    <value>ActionIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.Parent" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;ActionIntervalInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectSingle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectSingle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectSingle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="SelectSingle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="SelectSingle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectSingle.Text" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="&gt;&gt;SelectSingle.Name" xml:space="preserve">
+    <value>SelectSingle</value>
+  </data>
+  <data name="&gt;&gt;SelectSingle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectSingle.Parent" xml:space="preserve">
+    <value>GroupBoxOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectSingle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectInterval.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 45</value>
+  </data>
+  <data name="SelectInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="SelectInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectInterval.Text" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="&gt;&gt;SelectInterval.Name" xml:space="preserve">
+    <value>SelectInterval</value>
+  </data>
+  <data name="&gt;&gt;SelectInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectInterval.Parent" xml:space="preserve">
+    <value>GroupBoxOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectInterval.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="SelectText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="SelectText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectText.Text" xml:space="preserve">
+    <value>Text report</value>
+  </data>
+  <data name="&gt;&gt;SelectText.Name" xml:space="preserve">
+    <value>SelectText</value>
+  </data>
+  <data name="&gt;&gt;SelectText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectText.Parent" xml:space="preserve">
+    <value>GroupBoxView</value>
+  </data>
+  <data name="&gt;&gt;SelectText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 15</value>
+  </data>
+  <data name="GroupBoxView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 95</value>
+  </data>
+  <data name="GroupBoxView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxView.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxView.Name" xml:space="preserve">
+    <value>GroupBoxView</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 121</value>
+  </data>
+  <data name="GroupBoxOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 130</value>
+  </data>
+  <data name="GroupBoxOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupBoxOptions.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOptions.Name" xml:space="preserve">
+    <value>GroupBoxOptions</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export of enums as humanized translations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
+    <value>EditExportDataEnumsAsTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditPrintImageInLandscape.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditPrintImageInLandscape.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 105</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="EditPrintImageInLandscape.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+    <value>Print images in landscape</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Name" xml:space="preserve">
+    <value>EditPrintImageInLandscape</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditPrintImageInLandscape.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 85</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 17</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditShowPrintPreviewDialog.Text" xml:space="preserve">
+    <value>Show print preview dialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Name" xml:space="preserve">
+    <value>EditShowPrintPreviewDialog</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.Parent" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;EditShowPrintPreviewDialog.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 262</value>
+  </data>
+  <data name="GroupBoxSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 135</value>
+  </data>
+  <data name="GroupBoxSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupBoxSettings.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Name" xml:space="preserve">
+    <value>GroupBoxSettings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBoxFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 15</value>
+  </data>
+  <data name="GroupBoxFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 95</value>
+  </data>
+  <data name="GroupBoxFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupBoxFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxFormat.Name" xml:space="preserve">
+    <value>GroupBoxFormat</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxFormat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectYear2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectYear2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 94</value>
+  </data>
+  <data name="SelectYear2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 25</value>
+  </data>
+  <data name="SelectYear2.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Name" xml:space="preserve">
+    <value>SelectYear2</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectYear1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectYear1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 44</value>
+  </data>
+  <data name="SelectYear1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 25</value>
+  </data>
+  <data name="SelectYear1.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Name" xml:space="preserve">
+    <value>SelectYear1</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelYear1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelYear1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelYear1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 25</value>
+  </data>
+  <data name="labelYear1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="labelYear1.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="labelYear1.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;labelYear1.Name" xml:space="preserve">
+    <value>labelYear1</value>
+  </data>
+  <data name="&gt;&gt;labelYear1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelYear1.Parent" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;labelYear1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxYears.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 121</value>
+  </data>
+  <data name="GroupBoxYears.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 130</value>
+  </data>
+  <data name="GroupBoxYears.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupBoxYears.Text" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxYears.Name" xml:space="preserve">
+    <value>GroupBoxYears</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxYears.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxYears.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxYears.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>399, 446</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectExportTargetForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

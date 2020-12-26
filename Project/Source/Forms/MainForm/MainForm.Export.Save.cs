@@ -45,13 +45,17 @@ namespace Ordisoftware.Hebrew.Calendar
             CalendarMonth.ShowArrowControls = false;
             if ( interval.IsDefined )
             {
+              int countImages = interval.MonthsCount;
+              if ( Settings.SaveImageCountWarning > 0 && countImages >= Settings.SaveImageCountWarning )
+                if ( !DisplayManager.QueryYesNo(SysTranslations.AskToSaveLotsOfImages.GetLang(countImages)) )
+                  return false;
               if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
               filePath = FolderDialog.SelectedPath;
               return ExportSaveMonth(filePath, interval);
             }
             else
             {
-              SaveImageDialog.FileName = string.Format("{0} {1}-{2}.png",
+              SaveImageDialog.FileName = string.Format("{0} {1}-{2}",
                                                        Globals.AssemblyTitle,
                                                        CalendarMonth.CalendarDate.Year,
                                                        CalendarMonth.CalendarDate.Month.ToString("00"));
@@ -97,13 +101,13 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( interval.IsDefined )
       {
-        // TODO waitcursor as csv & advert si > 60 (5 ans) + option
+        // TODO waitcursor as csv
         var current = CalendarMonth.CalendarDate;
         CalendarMonth.CalendarDate = interval.Start.Value;
         bool HasMorePages = true;
         while ( HasMorePages )
         {
-          string filename = string.Format("{0} {1}-{2}.png",
+          string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
                                           Globals.AssemblyTitle,
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));

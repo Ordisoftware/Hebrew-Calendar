@@ -14,10 +14,12 @@
 /// <edited> 2020-12 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using MoreLinq;
 using Ordisoftware.Core;
+using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
 using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -108,24 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var list = MainForm.Instance.YearsIntervalArray.SkipLast(1);
       SelectYear1.Fill(list, year);
       SelectYear2.Fill(list, year);
-      int posX = 15;
-      int posY = 25;
-      int index = 0;
-      foreach ( KVPDataExportTarget item in Program.GridExportTargets )
-      {
-        var checkbox = new RadioButton();
-        GroupBoxFormat.Controls.Add(checkbox);
-        checkbox.Tag = item;
-        checkbox.Text = item.Key.ToString();
-        checkbox.TabStop = true;
-        checkbox.TabIndex = index;
-        checkbox.Location = new Point(posX, posY);
-        if ( item.Key == Program.Settings.ExportDataPreferredTarget )
-          checkbox.Checked = true;
-        checkbox.CheckedChanged += (_s, _e) =>
-          Program.Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)( (RadioButton)_s ).Tag ).Key;
-        posY += 20;
-      }
+      SetFormat();
       UpdateControls();
     }
 
@@ -136,10 +121,50 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.Save();
     }
 
+    private void SetFormat()
+    {
+      GroupBoxFormat.Controls.Clear();
+      if ( SelectMonth.Checked && ActionToDo == ExportAction.SaveToFile )
+        CreateFormatRedioButtons(Program.ImageExportTargets, "ExportImagePreferredTarget");
+      else
+      if ( SelectGrid.Checked && ( ActionToDo == ExportAction.SaveToFile || ActionToDo == ExportAction.CopyToClipboard ) )
+        CreateFormatRedioButtons(Program.GridExportTargets, "ExportDataPreferredTarget");
+    }
+
+    private void CreateFormatRedioButtons<T>(NullSafeOfStringDictionary<T> list, string setting) where T : Enum
+    {
+      int posX = 15;
+      int posY = 25;
+      int index = 0;
+      foreach ( KeyValuePair<T, string> item in list )
+      {
+        var checkbox = new RadioButton();
+        GroupBoxFormat.Controls.Add(checkbox);
+        checkbox.Tag = item;
+        checkbox.Text = item.Key.ToString();
+        checkbox.Location = new Point(posX, posY);
+        checkbox.AutoSize = true;
+        checkbox.TabStop = true;
+        checkbox.TabIndex = index++;
+        if ( item.Key.Equals(Program.Settings[setting]) )
+          checkbox.Checked = true;
+        checkbox.CheckedChanged += (_s, _e) =>
+          Program.Settings[setting] = ( (KeyValuePair<T, string>)( (RadioButton)_s ).Tag ).Key;
+        if ( index == 3 )
+        {
+          posX = 15 + ( GroupBoxFormat.Width - 30 ) / 2;
+          posY = 25;
+        }
+        else
+          posY += 20;
+      }
+    }
+
     private void UpdateControls()
     {
       SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.CopyToClipboard);
-      GroupBoxFormat.Enabled = SelectGrid.Checked;
+      GroupBoxFormat.Enabled = ( SelectMonth.Checked && ActionToDo == ExportAction.SaveToFile )
+                            || ( SelectGrid.Checked && ( ActionToDo == ExportAction.SaveToFile || ActionToDo == ExportAction.CopyToClipboard ) );
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
       EditPrintImageInLandscape.Enabled = (bool)EditPrintImageInLandscape.Tag && SelectMonth.Checked;
@@ -149,6 +174,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectView_CheckedChanged(object sender, EventArgs e)
     {
+      SetFormat();
       UpdateControls();
     }
 
