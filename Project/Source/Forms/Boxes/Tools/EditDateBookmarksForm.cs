@@ -150,7 +150,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      SaveBookmarksDialog.FileName = Globals.AssemblyTitle + " Date Bookmarks";
+      SaveBookmarksDialog.FileName = Globals.AssemblyTitle + " DateBookmarks";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
@@ -169,7 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
         case DataExportTarget.JSON:
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
           var dataset = new DataSet("DataSet");
-          dataset.Tables.Add(data.ToDataTable("Date Bookmarks"));
+          dataset.Tables.Add(data.ToDataTable("DateBookmarks"));
           string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
           File.WriteAllText(SaveBookmarksDialog.FileName, str);
           break;

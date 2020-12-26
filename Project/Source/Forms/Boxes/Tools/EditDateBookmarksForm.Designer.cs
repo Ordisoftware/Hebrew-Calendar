@@ -139,10 +139,6 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
-      // SaveBookmarksDialog
-      // 
-      this.SaveBookmarksDialog.FileName = "Date Bookmarks";
-      // 
       // EditDateBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
