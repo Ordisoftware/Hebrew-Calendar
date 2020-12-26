@@ -322,7 +322,7 @@
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 340</value>
+    <value>125, 353</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -349,7 +349,7 @@
     <value>True</value>
   </data>
   <data name="linkLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 340</value>
+    <value>313, 353</value>
   </data>
   <data name="linkLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 13</value>
@@ -406,7 +406,7 @@
     <value>True</value>
   </data>
   <data name="linkLabel11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 353</value>
+    <value>313, 340</value>
   </data>
   <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 13</value>
@@ -490,7 +490,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 353</value>
+    <value>131, 340</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 13</value>
