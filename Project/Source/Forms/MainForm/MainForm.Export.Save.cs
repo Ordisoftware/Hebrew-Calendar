@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = (interval) =>
         {
-          SaveTextDialog.FileName = Globals.ApplicationGitHubCode + " " + DataSet.LunisolarDays.TableName;
+          SaveTextDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
           File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               SaveImageDialog.FileName = string.Format("{0} {1}-{2}.png",
-                                                       Globals.ApplicationGitHubCode,
+                                                       Globals.AssemblyTitle,
                                                        CalendarMonth.CalendarDate.Year,
                                                        CalendarMonth.CalendarDate.Month.ToString("00"));
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-          SaveDataDialog.FileName = Globals.ApplicationGitHubCode + " " + DataSet.LunisolarDays.TableName;
+          SaveDataDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
           for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
             if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;
@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
         while ( HasMorePages )
         {
           string filename = string.Format("{0} {1}-{2}.png",
-                                          Globals.ApplicationGitHubCode,
+                                          Globals.AssemblyTitle,
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));
           var bitmap = CalendarMonth.GetBitmap();

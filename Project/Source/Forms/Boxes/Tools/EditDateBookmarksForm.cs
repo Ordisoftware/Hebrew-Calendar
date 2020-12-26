@@ -150,7 +150,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      SaveBookmarksDialog.FileName = Globals.ApplicationGitHubCode + " DateBookmarks";
+      SaveBookmarksDialog.FileName = Globals.AssemblyTitle + " DateBookmarks";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
@@ -188,31 +188,39 @@ namespace Ordisoftware.Hebrew.Calendar
       string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
       var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
       int indexListBox = 0;
-      switch ( selected )
+      try
       {
-        case DataExportTarget.CSV:
-          var lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
-          foreach ( string line in lines.Skip(1) )
-          {
-            if ( indexListBox > ListBox.Items.Count ) break;
-            var date = DateTime.MinValue;
-            try { date = SQLiteDate.ToDateTime(line); }
-            catch { }
-            ListBox.Items[indexListBox++] = new DateItem { Date = date };
-          }
-          break;
-        case DataExportTarget.JSON:
-          string str = File.ReadAllText(OpenBookmarksDialog.FileName);
-          var dataset = JsonConvert.DeserializeObject<DataSet>(str);
-          foreach ( DataRow row in dataset.Tables[0].Rows )
-          {
-            if ( indexListBox > ListBox.Items.Count ) break;
-            ListBox.Items[indexListBox++] = new DateItem { Date = (DateTime)row[0] };
-          }
-          break;
-        default:
-          throw new NotImplementedExceptionEx(selected);
+        switch ( selected )
+        {
+          case DataExportTarget.CSV:
+            var lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
+            foreach ( string line in lines.Skip(1) )
+            {
+              if ( indexListBox > ListBox.Items.Count ) break;
+              var date = DateTime.MinValue;
+              try { date = SQLiteDate.ToDateTime(line); }
+              catch { }
+              ListBox.Items[indexListBox++] = new DateItem { Date = date };
+            }
+            break;
+          case DataExportTarget.JSON:
+            string str = File.ReadAllText(OpenBookmarksDialog.FileName);
+            var dataset = JsonConvert.DeserializeObject<DataSet>(str);
+            foreach ( DataRow row in dataset.Tables[0].Rows )
+            {
+              if ( indexListBox > ListBox.Items.Count ) break;
+              ListBox.Items[indexListBox++] = new DateItem { Date = (DateTime)row[0] };
+            }
+            break;
+          default:
+            throw new NotImplementedExceptionEx(selected);
+        }
       }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+      }
+
     }
 
   }
