@@ -197,6 +197,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add export and import preferences.
 - Add backup and restore date bookmarks.
 - Add option to go to today when main form popup else keep the selected.
+- Improve export dialog to select image file format.
 - Improve celebrations board to indicate the day of the shabat in the title.
 - Improve text report to always show selection.
 - Fix text report to select the last character of the line.

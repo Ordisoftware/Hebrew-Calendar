@@ -85,6 +85,9 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? Start;
     public DateTime? End;
     public bool IsDefined => Start.HasValue && End.HasValue;
+    public int MonthsCount => IsDefined
+                              ? ( End.Value.Year - Start.Value.Year ) * 12 + End.Value.Month - Start.Value.Month
+                              : 0;
   }
 
   public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>

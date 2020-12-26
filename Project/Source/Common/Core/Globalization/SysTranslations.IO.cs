@@ -110,6 +110,16 @@ namespace Ordisoftware.Core
                         AskToContinue[Language.FR]
       };
 
+    static public readonly TranslationsDictionary AskToSaveLotsOfImages
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "There is {0} image(s)." + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = "Il y a {0} image(s)." + Globals.NL2 +
+                        AskToContinue[Language.FR]
+      };
+
     static public readonly TranslationsDictionary FileExtensionFilter
       = new TranslationsDictionary
       {

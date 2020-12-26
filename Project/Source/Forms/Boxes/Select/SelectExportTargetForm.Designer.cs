@@ -32,7 +32,6 @@
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.ActionOK = new System.Windows.Forms.Button();
-      this.SelectText = new System.Windows.Forms.RadioButton();
       this.SelectMonth = new System.Windows.Forms.RadioButton();
       this.SelectGrid = new System.Windows.Forms.RadioButton();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
@@ -52,6 +51,7 @@
       this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.labelYear1 = new System.Windows.Forms.Label();
+      this.SelectText = new System.Windows.Forms.RadioButton();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
@@ -61,9 +61,9 @@
       // 
       // PanelButtons
       // 
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionOK);
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionCancel
@@ -78,14 +78,6 @@
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
-      // 
-      // SelectText
-      // 
-      resources.ApplyResources(this.SelectText, "SelectText");
-      this.SelectText.Name = "SelectText";
-      this.SelectText.TabStop = true;
-      this.SelectText.UseVisualStyleBackColor = true;
-      this.SelectText.CheckedChanged += new System.EventHandler(this.SelectView_CheckedChanged);
       // 
       // SelectMonth
       // 
@@ -126,8 +118,8 @@
       // 
       // ActionIntervalInfo
       // 
-      resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
       this.ActionIntervalInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionIntervalInfo, "ActionIntervalInfo");
       this.ActionIntervalInfo.Name = "ActionIntervalInfo";
       this.ActionIntervalInfo.UseVisualStyleBackColor = true;
       this.ActionIntervalInfo.Click += new System.EventHandler(this.ActionIntervalInfo_Click);
@@ -150,18 +142,18 @@
       // 
       // GroupBoxView
       // 
-      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Controls.Add(this.SelectText);
       this.GroupBoxView.Controls.Add(this.SelectMonth);
       this.GroupBoxView.Controls.Add(this.SelectGrid);
+      resources.ApplyResources(this.GroupBoxView, "GroupBoxView");
       this.GroupBoxView.Name = "GroupBoxView";
       this.GroupBoxView.TabStop = false;
       // 
       // GroupBoxOptions
       // 
-      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Controls.Add(this.SelectSingle);
       this.GroupBoxOptions.Controls.Add(this.SelectInterval);
+      resources.ApplyResources(this.GroupBoxOptions, "GroupBoxOptions");
       this.GroupBoxOptions.Name = "GroupBoxOptions";
       this.GroupBoxOptions.TabStop = false;
       // 
@@ -213,12 +205,12 @@
       // 
       // GroupBoxYears
       // 
-      resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
       this.GroupBoxYears.Controls.Add(this.SelectYear2);
       this.GroupBoxYears.Controls.Add(this.SelectYear1);
       this.GroupBoxYears.Controls.Add(this.ActionIntervalInfo);
       this.GroupBoxYears.Controls.Add(this.labelYear1);
       this.GroupBoxYears.Controls.Add(this.LabelYear2);
+      resources.ApplyResources(this.GroupBoxYears, "GroupBoxYears");
       this.GroupBoxYears.Name = "GroupBoxYears";
       this.GroupBoxYears.TabStop = false;
       // 
@@ -240,6 +232,14 @@
       // 
       resources.ApplyResources(this.labelYear1, "labelYear1");
       this.labelYear1.Name = "labelYear1";
+      // 
+      // SelectText
+      // 
+      resources.ApplyResources(this.SelectText, "SelectText");
+      this.SelectText.Name = "SelectText";
+      this.SelectText.TabStop = true;
+      this.SelectText.UseVisualStyleBackColor = true;
+      this.SelectText.CheckedChanged += new System.EventHandler(this.SelectView_CheckedChanged);
       // 
       // SelectExportTargetForm
       // 
@@ -276,7 +276,6 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOK;
-    private System.Windows.Forms.RadioButton SelectText;
     private System.Windows.Forms.RadioButton SelectMonth;
     private System.Windows.Forms.RadioButton SelectGrid;
     private System.Windows.Forms.CheckBox EditAutoOpenExportedFile;
@@ -296,5 +295,6 @@
     private System.Windows.Forms.Label labelYear1;
     private SelectValueComboBox SelectYear2;
     private SelectValueComboBox SelectYear1;
+    private System.Windows.Forms.RadioButton SelectText;
   }
 }
