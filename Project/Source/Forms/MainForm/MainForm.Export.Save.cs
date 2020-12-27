@@ -24,6 +24,27 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private string GetExportDataFilename(ExportInterval interval)
+    {
+      string result = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+      int year1;
+      int year2;
+      if ( interval.IsDefined )
+      {
+        year1 = interval.Start.Value.Year;
+        year2 = interval.End.Value.Year;
+      }
+      else
+      {
+        year1 = YearFirst;
+        year2 = YearLast;
+      }
+      result += " " + year1.ToString();
+      if ( year1 != year2 )
+        result += "-" + year2.ToString();
+      return result;
+    }
+
     private void ExportSave()
     {
       string filePath = "";
@@ -31,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [ViewMode.Text] = (interval) =>
         {
-          SaveTextDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+          SaveTextDialog.FileName = GetExportDataFilename(interval);
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
           File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
@@ -75,7 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-          SaveDataDialog.FileName = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+          SaveDataDialog.FileName = GetExportDataFilename(interval);
           for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
             if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
               SaveDataDialog.FilterIndex = index + 1;
@@ -99,31 +120,39 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool ExportSaveMonth(string filePath, ExportInterval interval)
     {
-      if ( interval.IsDefined )
+      var cursor = Cursor;
+      Cursor = Cursors.WaitCursor;
+      try
       {
-        // TODO waitcursor as csv
-        var current = CalendarMonth.CalendarDate;
-        CalendarMonth.CalendarDate = interval.Start.Value;
-        bool HasMorePages = true;
-        while ( HasMorePages )
+        if ( interval.IsDefined )
         {
-          string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
-                                          Globals.AssemblyTitle,
-                                          CalendarMonth.CalendarDate.Year,
-                                          CalendarMonth.CalendarDate.Month.ToString("00"));
-          var bitmap = CalendarMonth.GetBitmap();
-          bitmap.Save(Path.Combine(filePath, filename), Settings.ExportImagePreferredTarget.GetFormat());
-          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-          HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
+          var current = CalendarMonth.CalendarDate;
+          CalendarMonth.CalendarDate = interval.Start.Value;
+          bool HasMorePages = true;
+          while ( HasMorePages )
+          {
+            string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
+                                            Globals.AssemblyTitle,
+                                            CalendarMonth.CalendarDate.Year,
+                                            CalendarMonth.CalendarDate.Month.ToString("00"));
+            var bitmap = CalendarMonth.GetBitmap();
+            bitmap.Save(Path.Combine(filePath, filename), Settings.ExportImagePreferredTarget.GetFormat());
+            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+            HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
+          }
+          CalendarMonth.CalendarDate = current;
         }
-        CalendarMonth.CalendarDate = current;
+        else
+        {
+          var bitmap = CalendarMonth.GetBitmap();
+          bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
+        }
+        return true;
       }
-      else
+      finally
       {
-        var bitmap = CalendarMonth.GetBitmap();
-        bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
+        Cursor = cursor;
       }
-      return true;
     }
 
     private bool ExportSaveGrid(string filePath, ExportInterval interval)

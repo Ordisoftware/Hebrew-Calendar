@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Data;
 using Newtonsoft.Json;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -26,26 +27,34 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveJSON(ExportInterval interval)
     {
-      // TODO waitcursor as csv
-      var data = GetDayRows(interval).Select(day => new
+      var cursor = Cursor;
+      Cursor = Cursors.WaitCursor;
+      try
       {
-        day.Date,
-        IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
-        IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
-        day.LunarMonth,
-        day.LunarDay,
-        day.Sunrise,
-        day.Sunset,
-        day.Moonrise,
-        day.Moonset,
-        MoonRiseType = day.MoonriseOccuringAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring),
-        MoonPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase),
-        SeasonChange = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange),
-        TorahEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent),
-      });
-      var dataset = new DataSet(Globals.AssemblyTitle);
-      dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
-      return JsonConvert.SerializeObject(dataset, Formatting.Indented);
+        var data = GetDayRows(interval).Select(day => new
+        {
+          day.Date,
+          IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
+          IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
+          day.LunarMonth,
+          day.LunarDay,
+          day.Sunrise,
+          day.Sunset,
+          day.Moonrise,
+          day.Moonset,
+          MoonRiseType = day.MoonriseOccuringAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring),
+          MoonPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase),
+          SeasonChange = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange),
+          TorahEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent),
+        });
+        var dataset = new DataSet(Globals.AssemblyTitle);
+        dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
+        return JsonConvert.SerializeObject(dataset, Formatting.Indented);
+      }
+      finally
+      {
+        Cursor = cursor;
+      }
     }
   }
 
