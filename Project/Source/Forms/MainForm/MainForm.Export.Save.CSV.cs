@@ -29,7 +29,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string ExportSaveCSV(ExportInterval interval)
     {
-      IsGenerating = true;
       UpdateButtons();
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
@@ -81,7 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         Cursor = cursor;
-        IsGenerating = false;
         UpdateButtons();
       }
     }
