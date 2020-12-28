@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2020 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -43,6 +43,11 @@ namespace Ordisoftware.Hebrew
     private void ActionAbout_Click(object sender, EventArgs e)
     {
       AboutBoxHandler?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void ActionHelp_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Globals.HelpFilePath);
     }
 
     private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
