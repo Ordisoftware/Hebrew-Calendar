@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -297,7 +297,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
       if ( Globals.IsExiting ) return;
-      Settings.Store();
+      //Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
       EditScreenNone.PerformClick(); // TODO don't call if minimized
     }
@@ -392,16 +392,6 @@ namespace Ordisoftware.Hebrew.Calendar
         AboutBox.Instance.BringToFront();
       else
         AboutBox.Instance.ShowDialog();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionHelp for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionHelp_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.HelpFilePath);
     }
 
     /// <summary>
@@ -524,6 +514,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Visible = false;
           ShowInTaskbar = false;
           FormBorderStyle = FormBorderStyle.SizableToolWindow;
+          Settings.Store();
         }
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
       });

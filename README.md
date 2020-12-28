@@ -192,6 +192,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### In progress - Version 6.2
+
+- Improve date bookmarks to be used from the main window to navigate.
+- Improve UI/UX.
+
 #### 2020.12.27 - Version 6.1
 
 - Add export and import preferences.
