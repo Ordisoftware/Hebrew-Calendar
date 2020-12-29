@@ -161,6 +161,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
+| Ctrl + F3 | Moons board |
 | Ctrl + F11 | Log file window |
 | Ctrl + F12 | Usage statistics window |
 | Home | First month available in the database |
