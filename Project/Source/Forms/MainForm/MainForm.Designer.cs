@@ -41,10 +41,26 @@
       this.CalendarText = new System.Windows.Forms.RichTextBox();
       this.TabPageMonth = new System.Windows.Forms.TabPage();
       this.PanelViewMonth = new System.Windows.Forms.Panel();
+      this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
       this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
+      this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
       this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +78,30 @@
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
-      this.ToolStrip = new System.Windows.Forms.ToolStrip();
+      this.SaveDataDialog = new System.Windows.Forms.SaveFileDialog();
+      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+      this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu1 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu3 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuResetReminder = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
+      this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
+      this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+      this.TimerReminder = new System.Windows.Forms.Timer(this.components);
+      this.TimerBallon = new System.Windows.Forms.Timer(this.components);
+      this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
+      this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
+      this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
+      this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.ActionSaveToFile = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionPrint = new System.Windows.Forms.ToolStripButton();
@@ -76,8 +115,6 @@
       this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
       this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
-      this.Sep4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionHelp = new System.Windows.Forms.ToolStripButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
@@ -91,6 +128,7 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,46 +166,7 @@
       this.ActionViewReport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewMonth = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
-      this.SaveDataDialog = new System.Windows.Forms.SaveFileDialog();
-      this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
-      this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu1 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuNavigate = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuCelebrations = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu3 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuResetReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuEnableReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuDisableReminder = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
-      this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-      this.TimerReminder = new System.Windows.Forms.Timer(this.components);
-      this.TimerBallon = new System.Windows.Forms.Timer(this.components);
-      this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
-      this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
-      this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
-      this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-      this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
-      this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
+      this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
       this.PanelMain.SuspendLayout();
@@ -182,14 +181,14 @@
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
-      this.ToolStrip.SuspendLayout();
       this.MenuTray.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -271,6 +270,29 @@
       resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
       this.PanelViewMonth.Name = "PanelViewMonth";
       // 
+      // CalendarMonth
+      // 
+      this.CalendarMonth.AllowEditingEvents = false;
+      this.CalendarMonth.BackColor = System.Drawing.Color.White;
+      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
+      this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DimDisabledEvents = true;
+      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
+      this.CalendarMonth.HighlightCurrentDay = false;
+      this.CalendarMonth.LoadPresetHolidays = false;
+      this.CalendarMonth.Name = "CalendarMonth";
+      this.CalendarMonth.ShowArrowControls = true;
+      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
+      this.CalendarMonth.ShowDateInHeader = true;
+      this.CalendarMonth.ShowDisabledEvents = false;
+      this.CalendarMonth.ShowEventTooltips = true;
+      this.CalendarMonth.ShowTodayButton = true;
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      // 
       // TabPageGrid
       // 
       this.TabPageGrid.Controls.Add(this.PanelViewGrid);
@@ -325,6 +347,121 @@
       this.CalendarGrid.RowHeadersVisible = false;
       this.CalendarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.CalendarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
+      // 
+      // dataGridViewTextBoxColumn1
+      // 
+      this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+      this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+      this.dataGridViewTextBoxColumn1.ReadOnly = true;
+      this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn2
+      // 
+      this.dataGridViewTextBoxColumn2.DataPropertyName = "LunarMonth";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+      this.dataGridViewTextBoxColumn2.ReadOnly = true;
+      this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn3
+      // 
+      this.dataGridViewTextBoxColumn3.DataPropertyName = "LunarDay";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+      this.dataGridViewTextBoxColumn3.ReadOnly = true;
+      this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn4
+      // 
+      this.dataGridViewTextBoxColumn4.DataPropertyName = "Sunrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+      this.dataGridViewTextBoxColumn4.ReadOnly = true;
+      this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn5
+      // 
+      this.dataGridViewTextBoxColumn5.DataPropertyName = "Sunset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+      this.dataGridViewTextBoxColumn5.ReadOnly = true;
+      this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn6
+      // 
+      this.dataGridViewTextBoxColumn6.DataPropertyName = "Moonrise";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+      this.dataGridViewTextBoxColumn6.ReadOnly = true;
+      this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn7
+      // 
+      this.dataGridViewTextBoxColumn7.DataPropertyName = "Moonset";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+      this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+      this.dataGridViewTextBoxColumn7.ReadOnly = true;
+      this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn8
+      // 
+      this.dataGridViewTextBoxColumn8.DataPropertyName = "MoonriseType";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
+      this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+      this.dataGridViewTextBoxColumn8.ReadOnly = true;
+      this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn9
+      // 
+      this.dataGridViewTextBoxColumn9.DataPropertyName = "IsNewMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn9, "dataGridViewTextBoxColumn9");
+      this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+      this.dataGridViewTextBoxColumn9.ReadOnly = true;
+      this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn10
+      // 
+      this.dataGridViewTextBoxColumn10.DataPropertyName = "IsFullMoon";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn10, "dataGridViewTextBoxColumn10");
+      this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+      this.dataGridViewTextBoxColumn10.ReadOnly = true;
+      this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn11
+      // 
+      this.dataGridViewTextBoxColumn11.DataPropertyName = "MoonPhase";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn11, "dataGridViewTextBoxColumn11");
+      this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+      this.dataGridViewTextBoxColumn11.ReadOnly = true;
+      this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn12
+      // 
+      this.dataGridViewTextBoxColumn12.DataPropertyName = "SeasonChange";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn12, "dataGridViewTextBoxColumn12");
+      this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+      this.dataGridViewTextBoxColumn12.ReadOnly = true;
+      this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // dataGridViewTextBoxColumn13
+      // 
+      this.dataGridViewTextBoxColumn13.DataPropertyName = "TorahEvents";
+      resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
+      this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+      this.dataGridViewTextBoxColumn13.ReadOnly = true;
+      this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // LunisolarDaysBindingSource
+      // 
+      this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
+      this.LunisolarDaysBindingSource.DataSource = this.DataSet;
+      this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
+      // 
+      // DataSet
+      // 
+      this.DataSet.DataSetName = "DataSet";
+      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // LunisolarDaysBindingNavigator
       // 
@@ -442,40 +579,140 @@
       this.TimerTooltip.Interval = 500;
       this.TimerTooltip.Tick += new System.EventHandler(this.TimerTooltip_Tick);
       // 
-      // ToolStrip
+      // TrayIcon
       // 
-      this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-      this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-      this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionSaveToFile,
-            this.ActionCopyToClipboard,
-            this.ActionPrint,
-            this.Sep2,
-            this.ActionSearchEvent,
-            this.ActionSearchMonth,
-            this.ActionSearchGregorianMonth,
-            this.ActionSearchDay,
-            this.toolStripSeparator12,
-            this.ActionNavigate,
-            this.ActionViewCelebrations,
-            this.Sep3,
-            this.ActionExit,
-            this.Sep4,
-            this.ActionHelp,
-            this.ActionInformation,
-            this.ActionResetReminder,
-            this.ActionDisableReminder,
-            this.ActionEnableReminder,
-            this.toolStripSeparator4,
-            this.ActionTools,
-            this.ActionWebLinks,
-            this.Sep6,
-            this.ActionPreferences,
-            this.ActionSettings,
-            this.ActionView});
-      resources.ApplyResources(this.ToolStrip, "ToolStrip");
-      this.ToolStrip.Name = "ToolStrip";
-      this.ToolStrip.ShowItemToolTips = false;
+      this.TrayIcon.ContextMenuStrip = this.MenuTray;
+      resources.ApplyResources(this.TrayIcon, "TrayIcon");
+      this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
+      this.TrayIcon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseMove);
+      // 
+      // MenuTray
+      // 
+      this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuShowHide,
+            this.SeparatorTrayMenu1,
+            this.MenuNavigate,
+            this.MenuCelebrations,
+            this.SeparatorTrayMenu3,
+            this.MenuResetReminder,
+            this.MenuEnableReminder,
+            this.MenuDisableReminder,
+            this.SeparatorTrayMenu2,
+            this.MenuTools,
+            this.MenuWebLinks,
+            this.MenuInformation,
+            this.SeparatorTrayMenu5,
+            this.MenuPreferences,
+            this.MenuExit});
+      this.MenuTray.Name = "contextMenuStrip";
+      resources.ApplyResources(this.MenuTray, "MenuTray");
+      this.MenuTray.VisibleChanged += new System.EventHandler(this.MenuTray_VisibleChanged);
+      // 
+      // MenuShowHide
+      // 
+      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
+      this.MenuShowHide.Name = "MenuShowHide";
+      this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
+      // 
+      // SeparatorTrayMenu1
+      // 
+      this.SeparatorTrayMenu1.Name = "SeparatorTrayMenu1";
+      resources.ApplyResources(this.SeparatorTrayMenu1, "SeparatorTrayMenu1");
+      // 
+      // MenuNavigate
+      // 
+      resources.ApplyResources(this.MenuNavigate, "MenuNavigate");
+      this.MenuNavigate.Name = "MenuNavigate";
+      this.MenuNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
+      // 
+      // MenuCelebrations
+      // 
+      resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
+      this.MenuCelebrations.Name = "MenuCelebrations";
+      this.MenuCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
+      // 
+      // SeparatorTrayMenu3
+      // 
+      this.SeparatorTrayMenu3.Name = "SeparatorTrayMenu3";
+      resources.ApplyResources(this.SeparatorTrayMenu3, "SeparatorTrayMenu3");
+      // 
+      // MenuResetReminder
+      // 
+      resources.ApplyResources(this.MenuResetReminder, "MenuResetReminder");
+      this.MenuResetReminder.Name = "MenuResetReminder";
+      this.MenuResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
+      // 
+      // MenuEnableReminder
+      // 
+      resources.ApplyResources(this.MenuEnableReminder, "MenuEnableReminder");
+      this.MenuEnableReminder.Name = "MenuEnableReminder";
+      this.MenuEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
+      // 
+      // MenuDisableReminder
+      // 
+      resources.ApplyResources(this.MenuDisableReminder, "MenuDisableReminder");
+      this.MenuDisableReminder.Name = "MenuDisableReminder";
+      this.MenuDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
+      // 
+      // SeparatorTrayMenu2
+      // 
+      this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
+      resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
+      // 
+      // MenuTools
+      // 
+      resources.ApplyResources(this.MenuTools, "MenuTools");
+      this.MenuTools.Name = "MenuTools";
+      // 
+      // MenuWebLinks
+      // 
+      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
+      this.MenuWebLinks.Name = "MenuWebLinks";
+      // 
+      // MenuInformation
+      // 
+      resources.ApplyResources(this.MenuInformation, "MenuInformation");
+      this.MenuInformation.Name = "MenuInformation";
+      // 
+      // SeparatorTrayMenu5
+      // 
+      this.SeparatorTrayMenu5.Name = "SeparatorTrayMenu5";
+      resources.ApplyResources(this.SeparatorTrayMenu5, "SeparatorTrayMenu5");
+      // 
+      // MenuPreferences
+      // 
+      resources.ApplyResources(this.MenuPreferences, "MenuPreferences");
+      this.MenuPreferences.Name = "MenuPreferences";
+      this.MenuPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
+      // 
+      // MenuExit
+      // 
+      resources.ApplyResources(this.MenuExit, "MenuExit");
+      this.MenuExit.Name = "MenuExit";
+      this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
+      // 
+      // TimerReminder
+      // 
+      this.TimerReminder.Interval = 60000;
+      this.TimerReminder.Tick += new System.EventHandler(this.TimerReminder_Tick);
+      // 
+      // TimerBallon
+      // 
+      this.TimerBallon.Interval = 1000;
+      this.TimerBallon.Tick += new System.EventHandler(this.TimerBallon_Tick);
+      // 
+      // TimerTrayMouseMove
+      // 
+      this.TimerTrayMouseMove.Interval = 10;
+      this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
+      // 
+      // TimerResumeReminder
+      // 
+      this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
+      // 
+      // SaveImageDialog
+      // 
+      resources.ApplyResources(this.SaveImageDialog, "SaveImageDialog");
       // 
       // ActionSaveToFile
       // 
@@ -594,23 +831,6 @@
       this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
       this.ActionExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ActionExit_MouseUp);
       // 
-      // Sep4
-      // 
-      this.Sep4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep4.Name = "Sep4";
-      resources.ApplyResources(this.Sep4, "Sep4");
-      // 
-      // ActionHelp
-      // 
-      this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.ActionHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionHelp, "ActionHelp");
-      this.ActionHelp.Name = "ActionHelp";
-      this.ActionHelp.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
-      this.ActionHelp.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionHelp.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
-      // 
       // ActionInformation
       // 
       this.ActionInformation.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -665,6 +885,7 @@
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionViewCelebrationsBoard,
+            this.ActionViewMoonsBoard,
             this.toolStripSeparator1,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
@@ -718,6 +939,12 @@
       resources.ApplyResources(this.ActionViewCelebrationsBoard, "ActionViewCelebrationsBoard");
       this.ActionViewCelebrationsBoard.Name = "ActionViewCelebrationsBoard";
       this.ActionViewCelebrationsBoard.Click += new System.EventHandler(this.ActionViewCelebrationsBoard_Click);
+      // 
+      // ActionViewMoonsBoard
+      // 
+      resources.ApplyResources(this.ActionViewMoonsBoard, "ActionViewMoonsBoard");
+      this.ActionViewMoonsBoard.Name = "ActionViewMoonsBoard";
+      this.ActionViewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
       // 
       // toolStripSeparator1
       // 
@@ -996,278 +1223,38 @@
       this.ActionViewGrid.Name = "ActionViewGrid";
       this.ActionViewGrid.Click += new System.EventHandler(this.ActionViewGrid_Click);
       // 
-      // TrayIcon
-      // 
-      this.TrayIcon.ContextMenuStrip = this.MenuTray;
-      resources.ApplyResources(this.TrayIcon, "TrayIcon");
-      this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseClick);
-      this.TrayIcon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseMove);
-      // 
-      // MenuTray
-      // 
-      this.MenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuShowHide,
-            this.SeparatorTrayMenu1,
-            this.MenuNavigate,
-            this.MenuCelebrations,
-            this.SeparatorTrayMenu3,
-            this.MenuResetReminder,
-            this.MenuEnableReminder,
-            this.MenuDisableReminder,
-            this.SeparatorTrayMenu2,
-            this.MenuTools,
-            this.MenuWebLinks,
-            this.MenuInformation,
-            this.SeparatorTrayMenu5,
-            this.MenuPreferences,
-            this.MenuExit});
-      this.MenuTray.Name = "contextMenuStrip";
-      resources.ApplyResources(this.MenuTray, "MenuTray");
-      this.MenuTray.VisibleChanged += new System.EventHandler(this.MenuTray_VisibleChanged);
-      // 
-      // MenuShowHide
-      // 
-      resources.ApplyResources(this.MenuShowHide, "MenuShowHide");
-      this.MenuShowHide.Name = "MenuShowHide";
-      this.MenuShowHide.Click += new System.EventHandler(this.MenuShowHide_Click);
-      // 
-      // SeparatorTrayMenu1
-      // 
-      this.SeparatorTrayMenu1.Name = "SeparatorTrayMenu1";
-      resources.ApplyResources(this.SeparatorTrayMenu1, "SeparatorTrayMenu1");
-      // 
-      // MenuNavigate
-      // 
-      resources.ApplyResources(this.MenuNavigate, "MenuNavigate");
-      this.MenuNavigate.Name = "MenuNavigate";
-      this.MenuNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
-      // 
-      // MenuCelebrations
-      // 
-      resources.ApplyResources(this.MenuCelebrations, "MenuCelebrations");
-      this.MenuCelebrations.Name = "MenuCelebrations";
-      this.MenuCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
-      // 
-      // SeparatorTrayMenu3
-      // 
-      this.SeparatorTrayMenu3.Name = "SeparatorTrayMenu3";
-      resources.ApplyResources(this.SeparatorTrayMenu3, "SeparatorTrayMenu3");
-      // 
-      // MenuResetReminder
-      // 
-      resources.ApplyResources(this.MenuResetReminder, "MenuResetReminder");
-      this.MenuResetReminder.Name = "MenuResetReminder";
-      this.MenuResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
-      // 
-      // MenuEnableReminder
-      // 
-      resources.ApplyResources(this.MenuEnableReminder, "MenuEnableReminder");
-      this.MenuEnableReminder.Name = "MenuEnableReminder";
-      this.MenuEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
-      // 
-      // MenuDisableReminder
-      // 
-      resources.ApplyResources(this.MenuDisableReminder, "MenuDisableReminder");
-      this.MenuDisableReminder.Name = "MenuDisableReminder";
-      this.MenuDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
-      // 
-      // SeparatorTrayMenu2
-      // 
-      this.SeparatorTrayMenu2.Name = "SeparatorTrayMenu2";
-      resources.ApplyResources(this.SeparatorTrayMenu2, "SeparatorTrayMenu2");
-      // 
-      // MenuTools
-      // 
-      resources.ApplyResources(this.MenuTools, "MenuTools");
-      this.MenuTools.Name = "MenuTools";
-      // 
-      // MenuWebLinks
-      // 
-      resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
-      this.MenuWebLinks.Name = "MenuWebLinks";
-      // 
-      // MenuInformation
-      // 
-      resources.ApplyResources(this.MenuInformation, "MenuInformation");
-      this.MenuInformation.Name = "MenuInformation";
-      // 
-      // SeparatorTrayMenu5
-      // 
-      this.SeparatorTrayMenu5.Name = "SeparatorTrayMenu5";
-      resources.ApplyResources(this.SeparatorTrayMenu5, "SeparatorTrayMenu5");
-      // 
-      // MenuPreferences
-      // 
-      resources.ApplyResources(this.MenuPreferences, "MenuPreferences");
-      this.MenuPreferences.Name = "MenuPreferences";
-      this.MenuPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
-      // 
-      // MenuExit
-      // 
-      resources.ApplyResources(this.MenuExit, "MenuExit");
-      this.MenuExit.Name = "MenuExit";
-      this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
-      // 
-      // TimerReminder
-      // 
-      this.TimerReminder.Interval = 60000;
-      this.TimerReminder.Tick += new System.EventHandler(this.TimerReminder_Tick);
-      // 
-      // TimerBallon
-      // 
-      this.TimerBallon.Interval = 1000;
-      this.TimerBallon.Tick += new System.EventHandler(this.TimerBallon_Tick);
-      // 
-      // TimerTrayMouseMove
-      // 
-      this.TimerTrayMouseMove.Interval = 10;
-      this.TimerTrayMouseMove.Tick += new System.EventHandler(this.TimerTrayMouseMove_Tick);
-      // 
-      // TimerResumeReminder
-      // 
-      this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
-      // 
-      // SaveImageDialog
-      // 
-      resources.ApplyResources(this.SaveImageDialog, "SaveImageDialog");
-      // 
-      // CalendarMonth
-      // 
-      this.CalendarMonth.AllowEditingEvents = false;
-      this.CalendarMonth.BackColor = System.Drawing.Color.White;
-      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
-      this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DimDisabledEvents = true;
-      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
-      this.CalendarMonth.HighlightCurrentDay = false;
-      this.CalendarMonth.LoadPresetHolidays = false;
-      this.CalendarMonth.Name = "CalendarMonth";
-      this.CalendarMonth.ShowArrowControls = true;
-      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
-      this.CalendarMonth.ShowDateInHeader = true;
-      this.CalendarMonth.ShowDisabledEvents = false;
-      this.CalendarMonth.ShowEventTooltips = true;
-      this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      // 
-      // dataGridViewTextBoxColumn1
-      // 
-      this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-      this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-      this.dataGridViewTextBoxColumn1.ReadOnly = true;
-      this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn2
-      // 
-      this.dataGridViewTextBoxColumn2.DataPropertyName = "LunarMonth";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-      this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-      this.dataGridViewTextBoxColumn2.ReadOnly = true;
-      this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn3
-      // 
-      this.dataGridViewTextBoxColumn3.DataPropertyName = "LunarDay";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-      this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-      this.dataGridViewTextBoxColumn3.ReadOnly = true;
-      this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn4
-      // 
-      this.dataGridViewTextBoxColumn4.DataPropertyName = "Sunrise";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-      this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-      this.dataGridViewTextBoxColumn4.ReadOnly = true;
-      this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn5
-      // 
-      this.dataGridViewTextBoxColumn5.DataPropertyName = "Sunset";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-      this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-      this.dataGridViewTextBoxColumn5.ReadOnly = true;
-      this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn6
-      // 
-      this.dataGridViewTextBoxColumn6.DataPropertyName = "Moonrise";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-      this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-      this.dataGridViewTextBoxColumn6.ReadOnly = true;
-      this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn7
-      // 
-      this.dataGridViewTextBoxColumn7.DataPropertyName = "Moonset";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
-      this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-      this.dataGridViewTextBoxColumn7.ReadOnly = true;
-      this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn8
-      // 
-      this.dataGridViewTextBoxColumn8.DataPropertyName = "MoonriseType";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
-      this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-      this.dataGridViewTextBoxColumn8.ReadOnly = true;
-      this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn9
-      // 
-      this.dataGridViewTextBoxColumn9.DataPropertyName = "IsNewMoon";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn9, "dataGridViewTextBoxColumn9");
-      this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-      this.dataGridViewTextBoxColumn9.ReadOnly = true;
-      this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn10
-      // 
-      this.dataGridViewTextBoxColumn10.DataPropertyName = "IsFullMoon";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn10, "dataGridViewTextBoxColumn10");
-      this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-      this.dataGridViewTextBoxColumn10.ReadOnly = true;
-      this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn11
-      // 
-      this.dataGridViewTextBoxColumn11.DataPropertyName = "MoonPhase";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn11, "dataGridViewTextBoxColumn11");
-      this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-      this.dataGridViewTextBoxColumn11.ReadOnly = true;
-      this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn12
-      // 
-      this.dataGridViewTextBoxColumn12.DataPropertyName = "SeasonChange";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn12, "dataGridViewTextBoxColumn12");
-      this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-      this.dataGridViewTextBoxColumn12.ReadOnly = true;
-      this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // dataGridViewTextBoxColumn13
-      // 
-      this.dataGridViewTextBoxColumn13.DataPropertyName = "TorahEvents";
-      resources.ApplyResources(this.dataGridViewTextBoxColumn13, "dataGridViewTextBoxColumn13");
-      this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-      this.dataGridViewTextBoxColumn13.ReadOnly = true;
-      this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // LunisolarDaysBindingSource
-      // 
-      this.LunisolarDaysBindingSource.DataMember = "LunisolarDays";
-      this.LunisolarDaysBindingSource.DataSource = this.DataSet;
-      this.LunisolarDaysBindingSource.CurrentItemChanged += new System.EventHandler(this.LunisolarDaysBindingSource_CurrentItemChanged);
-      // 
-      // DataSet
-      // 
-      this.DataSet.DataSetName = "DataSet";
-      this.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // ToolStrip
+      // 
+      this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+      this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+      this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionSaveToFile,
+            this.ActionCopyToClipboard,
+            this.ActionPrint,
+            this.Sep2,
+            this.ActionSearchEvent,
+            this.ActionSearchMonth,
+            this.ActionSearchGregorianMonth,
+            this.ActionSearchDay,
+            this.toolStripSeparator12,
+            this.ActionNavigate,
+            this.ActionViewCelebrations,
+            this.Sep3,
+            this.ActionExit,
+            this.ActionInformation,
+            this.ActionResetReminder,
+            this.ActionDisableReminder,
+            this.ActionEnableReminder,
+            this.toolStripSeparator4,
+            this.ActionTools,
+            this.ActionWebLinks,
+            this.Sep6,
+            this.ActionPreferences,
+            this.ActionSettings,
+            this.ActionView});
+      resources.ApplyResources(this.ToolStrip, "ToolStrip");
+      this.ToolStrip.Name = "ToolStrip";
+      this.ToolStrip.ShowItemToolTips = false;
       // 
       // LunisolarDaysTableAdapter
       // 
@@ -1305,52 +1292,29 @@
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
+      this.MenuTray.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
-      this.MenuTray.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-
-    private System.Windows.Forms.ToolStrip ToolStrip;
-    private System.Windows.Forms.ToolStripButton ActionExit;
-    private System.Windows.Forms.ToolStripSeparator Sep4;
-    private System.Windows.Forms.ToolStripDropDownButton ActionSettings;
-    private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
-    private System.Windows.Forms.ToolStripButton ActionHelp;
-    private System.Windows.Forms.ToolStripSeparator Sep7;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenNone;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenCenter;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopRight;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomLeft;
-    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomRight;
-    internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
-    internal System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
-    internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
-    private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.SaveFileDialog SaveTextDialog;
-    private System.Windows.Forms.ToolStripSeparator Sep6;
-    private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
     private System.Windows.Forms.Label LabelTitle;
     private System.Windows.Forms.Panel PanelCalendarOuter;
     private System.Windows.Forms.Panel PanelCalendarInner;
-    private System.Windows.Forms.ToolStripDropDownButton ActionView;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewReport;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.TabPage TabPageText;
     private System.Windows.Forms.Panel PanelViewText;
@@ -1375,13 +1339,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.DataGridView CalendarGrid;
     internal Data.DataSet DataSet;
-    private System.Windows.Forms.ToolStripButton ActionSaveToFile;
-    private System.Windows.Forms.ToolStripButton ActionSearchDay;
-    private System.Windows.Forms.ToolStripButton ActionPreferences;
-    private System.Windows.Forms.ToolStripSeparator Sep2;
     private System.Windows.Forms.SaveFileDialog SaveDataDialog;
-    private System.Windows.Forms.ToolStripButton ActionNavigate;
-    private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
     private System.Windows.Forms.NotifyIcon TrayIcon;
     internal System.Windows.Forms.ToolStripMenuItem MenuShowHide;
     private System.Windows.Forms.ToolStripMenuItem MenuNavigate;
@@ -1390,61 +1348,25 @@
     private System.Windows.Forms.ToolStripMenuItem MenuInformation;
     private System.Windows.Forms.ToolStripMenuItem MenuExit;
     private System.Windows.Forms.TabPage TabPageMonth;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
-    private System.Windows.Forms.ToolStripButton ActionPrint;
     internal global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     internal System.Windows.Forms.Panel PanelViewMonth;
     private System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerTrayMouseMove;
-    internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
     internal System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuPreferences;
-    private System.Windows.Forms.ToolStripButton ActionSearchEvent;
-    private System.Windows.Forms.ToolStripButton ActionSearchMonth;
-    private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu2;
     private System.Windows.Forms.ToolStripMenuItem MenuResetReminder;
     internal System.Windows.Forms.ToolStripMenuItem MenuEnableReminder;
     internal System.Windows.Forms.ToolStripMenuItem MenuDisableReminder;
-    private System.Windows.Forms.ToolStripButton ActionResetReminder;
-    private System.Windows.Forms.ToolStripButton ActionEnableReminder;
-    private System.Windows.Forms.ToolStripButton ActionDisableReminder;
-    private System.Windows.Forms.ToolStripDropDownButton ActionTools;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-    private System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu1;
     internal System.Windows.Forms.ContextMenuStrip MenuTray;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-    private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.Timer TimerResumeReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuWebLinks;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu5;
     private System.Windows.Forms.ToolStripMenuItem MenuTools;
-    private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
-    private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewStats;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
-    internal System.Windows.Forms.ToolStripMenuItem EditSoundsEnabled;
-    internal System.Windows.Forms.ToolStripMenuItem EditUseAdvancedDialogBoxes;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-    private System.Windows.Forms.ToolStripMenuItem ActionSelectReminderBoxSound;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowKeyboardNotice;
-    internal System.Windows.Forms.ToolStripMenuItem EditShowSuccessDialogs;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
     private System.Windows.Forms.SaveFileDialog SaveImageDialog;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1460,8 +1382,71 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.CheckBox EditEnumsAsTranslations;
     private System.Windows.Forms.FolderBrowserDialog FolderDialog;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
+    private System.Windows.Forms.ToolStripButton ActionSaveToFile;
+    private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
+    private System.Windows.Forms.ToolStripButton ActionPrint;
+    private System.Windows.Forms.ToolStripSeparator Sep2;
+    private System.Windows.Forms.ToolStripButton ActionSearchEvent;
+    private System.Windows.Forms.ToolStripButton ActionSearchMonth;
+    private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
+    private System.Windows.Forms.ToolStripButton ActionSearchDay;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+    private System.Windows.Forms.ToolStripButton ActionNavigate;
+    private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
+    private System.Windows.Forms.ToolStripSeparator Sep3;
+    private System.Windows.Forms.ToolStripButton ActionExit;
+    internal System.Windows.Forms.ToolStripDropDownButton ActionInformation;
+    private System.Windows.Forms.ToolStripButton ActionResetReminder;
+    private System.Windows.Forms.ToolStripButton ActionDisableReminder;
+    private System.Windows.Forms.ToolStripButton ActionEnableReminder;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripDropDownButton ActionTools;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
     private System.Windows.Forms.ToolStripSeparator SeparatorToolsMenuTop;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+    private System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
+    private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
+    private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewStats;
+    private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
+    private System.Windows.Forms.ToolStripSeparator Sep6;
+    private System.Windows.Forms.ToolStripButton ActionPreferences;
+    private System.Windows.Forms.ToolStripDropDownButton ActionSettings;
+    private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenNone;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenTopRight;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomLeft;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenBottomRight;
+    internal System.Windows.Forms.ToolStripMenuItem EditScreenCenter;
+    private System.Windows.Forms.ToolStripMenuItem ActionResetWinSettings;
+    private System.Windows.Forms.ToolStripSeparator Sep7;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowKeyboardNotice;
+    private System.Windows.Forms.ToolStripMenuItem ActionSelectReminderBoxSound;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+    internal System.Windows.Forms.ToolStripMenuItem EditShowTips;
+    internal System.Windows.Forms.ToolStripMenuItem EditUseAdvancedDialogBoxes;
+    internal System.Windows.Forms.ToolStripMenuItem EditSoundsEnabled;
+    internal System.Windows.Forms.ToolStripMenuItem EditShowSuccessDialogs;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    internal System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
+    internal System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
+    private System.Windows.Forms.ToolStripDropDownButton ActionView;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewReport;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
+    private System.Windows.Forms.ToolStrip ToolStrip;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewMoonsBoard;
   }
 }
 

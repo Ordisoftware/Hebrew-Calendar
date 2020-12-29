@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -198,8 +198,9 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadGrid();
     }
 
-    private void EditUseLongDateFormat_CheckedChanged(object sender, EventArgs e)
+    private void EditDateFormat_CheckedChanged(object sender, EventArgs e)
     {
+      EditUseAbbreviatedNames.Enabled = EditUseLongDateFormat.Checked;
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
       DataGridView.Refresh();
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -223,9 +224,21 @@ namespace Ordisoftware.Hebrew.Calendar
         e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
       }
       else
-      if ( e.ColumnIndex > 0 && e.Value != null )
-        if (EditUseLongDateFormat.Checked)
-          e.Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(( (DateTime)e.Value ).ToLongDateString());
+      if ( e.ColumnIndex > 0 && e.Value != null && e.Value != DBNull.Value )
+        if ( EditUseLongDateFormat.Checked )
+        {
+          var date = (DateTime)e.Value;
+          string str = date.ToLongDateString();
+          if ( EditUseAbbreviatedNames.Checked )
+          {
+            string month1 = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(date.Month);
+            string month2 = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(date.Month);
+            string day1 = CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(date.DayOfWeek);
+            string day2 = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedDayName(date.DayOfWeek);
+            str = str.Replace(month1, month2).Replace(day1, day2);
+          }
+          e.Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+        }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
     }
@@ -238,8 +251,13 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
     {
       if ( e.RowIndex < 0 || e.ColumnIndex < 1 ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null);
-      MainForm.Instance.GoToDate((DateTime)DataGridView[e.ColumnIndex, e.RowIndex].Value);
+      var value = DataGridView[e.ColumnIndex, e.RowIndex].Value;
+      if ( value == null || value == DBNull.Value ) return;
+      if ( !MainForm.Instance.Visible )
+        MainForm.Instance.MenuShowHide_Click(null, null);
+      else
+        MainForm.Instance.Popup();
+      MainForm.Instance.GoToDate((DateTime)value);
     }
 
   }

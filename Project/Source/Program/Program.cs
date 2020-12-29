@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2020 Olivier Rogier.
+/// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string tempLogContent = DebugManager.TraceForm.TextBox.Text;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = MoonMonthsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
@@ -175,7 +175,7 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
       MainForm.Instance.DoTimerReminder();
-      MoonMonthsForm.Instance.Relocalize();
+      LunarMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();
       CoolPrintPreview.CoolPrintPreviewDialog.OfPageText = PrintPreviewDialogOfPageText.GetLang();

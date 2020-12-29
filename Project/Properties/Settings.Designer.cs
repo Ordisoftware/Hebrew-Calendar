@@ -2009,5 +2009,65 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["MainFormShownGoToToday"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CelebrationsBoardFormUseAbbreviatedNames {
+            get {
+                return ((bool)(this["CelebrationsBoardFormUseAbbreviatedNames"]));
+            }
+            set {
+                this["CelebrationsBoardFormUseAbbreviatedNames"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal MoonsBoardFormFontSize {
+            get {
+                return ((decimal)(this["MoonsBoardFormFontSize"]));
+            }
+            set {
+                this["MoonsBoardFormFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MoonsBoardFormUseTitleUpperCase {
+            get {
+                return ((bool)(this["MoonsBoardFormUseTitleUpperCase"]));
+            }
+            set {
+                this["MoonsBoardFormUseTitleUpperCase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MoonsBoardFormUseLongDateFormat {
+            get {
+                return ((bool)(this["MoonsBoardFormUseLongDateFormat"]));
+            }
+            set {
+                this["MoonsBoardFormUseLongDateFormat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MoonsBoardFormUseAbbreviatedNames {
+            get {
+                return ((bool)(this["MoonsBoardFormUseAbbreviatedNames"]));
+            }
+            set {
+                this["MoonsBoardFormUseAbbreviatedNames"] = value;
+            }
+        }
     }
 }

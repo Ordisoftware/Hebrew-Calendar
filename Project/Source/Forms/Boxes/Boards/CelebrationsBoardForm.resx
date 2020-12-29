@@ -181,7 +181,7 @@
     <value>10, 10</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 313</value>
+    <value>964, 308</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -198,6 +198,36 @@
   <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="EditUseAbbreviatedNames.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditUseAbbreviatedNames.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditUseAbbreviatedNames.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 89</value>
+  </data>
+  <data name="EditUseAbbreviatedNames.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="EditUseAbbreviatedNames.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditUseAbbreviatedNames.Text" xml:space="preserve">
+    <value>Use abbreviated names</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Name" xml:space="preserve">
+    <value>EditUseAbbreviatedNames</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditColumnUpperCase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -205,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditColumnUpperCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 58</value>
+    <value>211, 53</value>
   </data>
   <data name="EditColumnUpperCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 17</value>
@@ -226,7 +256,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditColumnUpperCase.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditUseLongDateFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -235,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseLongDateFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 81</value>
+    <value>211, 71</value>
   </data>
   <data name="EditUseLongDateFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -256,7 +286,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseLongDateFormat.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>211, 28</value>
@@ -277,13 +307,13 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SelectYear1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SelectYear1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 28</value>
+    <value>3, 29</value>
   </data>
   <data name="SelectYear1.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 25</value>
@@ -295,19 +325,19 @@
     <value>SelectYear1</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="SelectYear2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SelectYear2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 77</value>
+    <value>3, 82</value>
   </data>
   <data name="SelectYear2.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 25</value>
@@ -319,13 +349,13 @@
     <value>SelectYear2</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="LabelEnd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -334,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 59</value>
+    <value>0, 63</value>
   </data>
   <data name="LabelEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -355,7 +385,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelEnd.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="LabelStart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -385,7 +415,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelStart.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -415,16 +445,16 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="PanelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 323</value>
+    <value>10, 318</value>
   </data>
   <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 100</value>
+    <value>964, 105</value>
   </data>
   <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
