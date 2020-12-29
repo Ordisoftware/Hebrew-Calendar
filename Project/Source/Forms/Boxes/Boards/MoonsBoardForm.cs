@@ -179,6 +179,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
+      else
+        e.CellStyle.BackColor = Color.FromArgb(250, 250, 250);
     }
 
     private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
