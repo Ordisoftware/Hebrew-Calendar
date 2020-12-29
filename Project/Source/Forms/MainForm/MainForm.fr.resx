@@ -1620,22 +1620,6 @@
   <data name="MenuWebLinks.Text" xml:space="preserve">
     <value>Liens web</value>
   </data>
-  <data name="MenuInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAllJREFUOE99kN9LU2Ecxv0LbLh5YYF3EVgmIUQ/WGCCOixDSVpHGaNCEKXIK3VY
-        IWGZoZKuzDTNys1wx+3KiyCkMWdTd0y31ob9MKTMui+vnt7n3dmkH/SFLy/v83ye5/CejD/HVKs6DVb1
-        h8HqwQ6xPHmnriP/nmybWrLT5oO9bwHDM5/g1TbhDW/CJ07eqdMnp0e2h+K+xmmM+tfR+3wNFXfC2N38
-        ErsuzyCv1Y/KPk3q9Mn9VZIjmtX5DdSPxZDfFkCeIwDX3Bdw9rT4UXBlFvvF0idHXo8m3+wYj+KSO46D
-        1+dwuOMVCtuDmAhtyIKCa7M4IjQufXLk0/8kS5n8effFOsydCyi6tYiirkUcvTGP/KtB7G0L4lBHSGrF
-        t4UnfHLkmZMFRkVF89R7lHSHUdarobRHg/nmgvw6h2WlwrMIjz458szJAlONinpXAiedy6gQe6J/Gce7
-        NbhDX2WBuSuM8r7X0uOSI8+cLMiumYIyEkP1YASn70dQNRCBRQQmF7/JguKeJVTeW5Eelxx55vQCdcs6
-        FEXtaBzKwxiswzGcGohiSvsuCyz9Kzgz9EZ6XHLkmZMFxqoHE8faA6hzreLc4wRsj+KoFgHvUrKg3Jn8
-        on0sLn1y5JmTBWJy+R7byFs0TH5AnftdOpwaG4NCp09Of39uMi7GYG5qyLH7cOFJAk2+NQmeH1+F/emq
-        PBvFnTp9cuT1aHoyKRoVD8o6Q7jo+QjH9Ge0iuXJO3X6ejgzGft9KBYaKwefmRTPVtZZD1LLO3X6Ovff
-        4dsOiCWcWt6335yejIxfgUoC11pwVdgAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="MenuInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 22</value>
   </data>
