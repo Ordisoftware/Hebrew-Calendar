@@ -186,6 +186,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
+- Improve date bookmarks to be used from the main window to navigate.
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Improve log viewer to select file.
 - Replace simple internal trace/logging by SeriLog.
@@ -194,8 +195,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### In progress - Version 6.2
 
-- Improve date bookmarks to be used from the main window to navigate.
-- Improve UI/UX.
+- Add moons board with clickable dates and selection of years interval.
+- Add option to use abbreviated names in celebrations and moons boards.
 
 #### 2020.12.27 - Version 6.1
 
@@ -217,7 +218,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2020.12.21 - Version 6.0
 
-- Add window celebrations board with clickable dates and selection of years interval.
+- Add celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
 - Add select years interval to export/print, else process the entire report/grid or only the current month view.
 - Add option to set the default print month view page orientation.
