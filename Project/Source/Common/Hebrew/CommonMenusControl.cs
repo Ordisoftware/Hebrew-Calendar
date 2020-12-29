@@ -31,12 +31,20 @@ namespace Ordisoftware.Hebrew
     public CommonMenusControl()
     {
       InitializeComponent();
-      check(ActionDownloadHebrewCalendar);
-      check(ActionDownloadHebrewLetters);
-      check(ActionDownloadHebrewWords);
+      MenuApplication.Text = Globals.AssemblyTitle;
+      MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
+      if ( Globals.AlternativeToURL == "" )
+      {
+        ActionAlternativeTo.Visible = false;
+        SeparatorAlternativeTo.Visible = false;
+      }
+      check(ActionHebrewCalendar);
+      check(ActionHebrewLetters);
+      check(ActionHebrewWords);
       void check(ToolStripMenuItem item)
       {
-        if ( item.Text.Contains(Globals.AssemblyTitle) ) MenuInformation.DropDownItems.Remove(item);
+        if ( item.Text.Contains(Globals.AssemblyTitle) )
+          MenuSoftware.DropDownItems.Remove(item);
       }
     }
 
@@ -50,7 +58,7 @@ namespace Ordisoftware.Hebrew
       SystemManager.RunShell(Globals.HelpFilePath);
     }
 
-    private void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    private void ActionCheckUpdate_Click(object sender, EventArgs e)
     {
       WebCheckUpdateHandler?.Invoke(this, EventArgs.Empty);
     }
@@ -60,12 +68,17 @@ namespace Ordisoftware.Hebrew
       SystemManager.OpenApplicationReleaseNotes();
     }
 
-    private void ActionWebHome_Click(object sender, EventArgs e)
+    private void ActionAuthorHome_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenAuthorHome();
+    }
+
+    private void ActionApplicationHome_Click(object sender, EventArgs e)
     {
       SystemManager.OpenApplicationHome();
     }
 
-    private void ActionWebContact_Click(object sender, EventArgs e)
+    private void ActionContact_Click(object sender, EventArgs e)
     {
       SystemManager.OpenContactPage();
     }
@@ -75,12 +88,17 @@ namespace Ordisoftware.Hebrew
       SystemManager.OpenGitHupRepo();
     }
 
-    private void ActionCreateGitHubIssueBug_Click(object sender, EventArgs e)
+    private void ActionAlternativeTo_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Globals.AlternativeToURL);
+    }
+
+    private void ActionSubmitBug_Click(object sender, EventArgs e)
     {
       SystemManager.CreateGitHubIssue("&labels=type: bug");
     }
 
-    private void ActionCreateGitHubIssueFeature_Click(object sender, EventArgs e)
+    private void ActionSubmitFeature_Click(object sender, EventArgs e)
     {
       SystemManager.CreateGitHubIssue("&labels=type: feature");
     }
@@ -90,7 +108,7 @@ namespace Ordisoftware.Hebrew
       SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
     }
 
-    private void ActionViewReadmeMD_Click(object sender, EventArgs e)
+    private void ActionReadme_Click(object sender, EventArgs e)
     {
       var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
                                       new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());

@@ -93,6 +93,11 @@ namespace Ordisoftware.Core
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
+    /// Indicate the AlternativeTo url.
+    /// </summary>
+    static public string AlternativeToURL { get; set; }
+
+    /// <summary>
     /// Indicate the file path of the application's icon.
     /// </summary>
     static public string ApplicationIconFilePath

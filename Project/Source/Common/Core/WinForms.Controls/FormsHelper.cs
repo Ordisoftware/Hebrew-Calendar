@@ -248,6 +248,16 @@ namespace Ordisoftware.Core
       destination.DropDownItems.AddRange(items.ToArray());
     }
 
+    static public Icon GetIcon(this Image image)
+    {
+      return Icon.FromHandle(new Bitmap(image).GetHicon());
+    }
+
+    static public Icon GetIcon(this ToolStripItem item)
+    {
+      return Icon.FromHandle(new Bitmap(item.Image).GetHicon());
+    }
+
     static public Icon GetBySize(this Icon icon, int width, int height)
     {
       return icon.GetBySize(new Size(width, height));
