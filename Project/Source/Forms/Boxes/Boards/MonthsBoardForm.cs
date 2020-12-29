@@ -20,20 +20,20 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MoonMonthsForm : Form
+  public partial class MonthsBoardForm : Form
   {
 
     /// <summary>
     /// Indicate the singleton instance.
     /// </summary>
-    static public MoonMonthsForm Instance { get; private set; }
+    static public MonthsBoardForm Instance { get; private set; }
 
     /// <summary>
     /// Static constructor.
     /// </summary>
-    static MoonMonthsForm()
+    static MonthsBoardForm()
     {
-      Instance = new MoonMonthsForm();
+      Instance = new MonthsBoardForm();
     }
 
     static public void Run()
@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    private MoonMonthsForm()
+    private MonthsBoardForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

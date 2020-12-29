@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MoonMonthsForm : Form
+  public partial class MonthsBoardForm : Form
   {
 
     private Color[] ColorsSystem = new Color[]

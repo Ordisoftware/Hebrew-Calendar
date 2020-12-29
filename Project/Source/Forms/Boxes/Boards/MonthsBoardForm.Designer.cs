@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class MoonMonthsForm
+  partial class MonthsBoardForm
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoonMonthsForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthsBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionSwapColors = new System.Windows.Forms.Button();
       this.ActionEditFiles = new System.Windows.Forms.Button();
