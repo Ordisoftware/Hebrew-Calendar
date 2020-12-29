@@ -154,6 +154,12 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Forms\Boxes\Boards\MoonsBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Boards\MoonsBoardForm.Designer.cs">
+      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -471,18 +477,18 @@
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
     <Compile Include="Source\Program\AppTranslations.Notices.cs" />
     <Compile Include="Source\Program\AppTranslations.Calendar.cs" />
-    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.Colors.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.Colors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.CreateControls.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
-    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Boards\MoonMonthsForm.Designer.cs">
-      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.Designer.cs">
+      <DependentUpon>LunarMonthsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Media.cs" />
     <Compile Include="Source\Forms\Boxes\Reminder\LockSessionForm.cs">
@@ -656,6 +662,12 @@
     <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonsBoardForm.fr.resx">
+      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonsBoardForm.resx">
+      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.fr.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -819,11 +831,11 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Reminder\LockSessionForm.resx">
       <DependentUpon>LockSessionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonMonthsForm.fr.resx">
-      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\LunarMonthsForm.fr.resx">
+      <DependentUpon>LunarMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonMonthsForm.resx">
-      <DependentUpon>MoonMonthsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\LunarMonthsForm.resx">
+      <DependentUpon>LunarMonthsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.fr.resx">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>

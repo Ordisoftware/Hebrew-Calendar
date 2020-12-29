@@ -811,13 +811,23 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionViewMoonsBoard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewMoonsBoard_Click(object sender, EventArgs e)
+    {
+      MoonsBoardForm.Run();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewMoonMonths for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
     {
-      MoonMonthsForm.Run();
+      LunarMonthsForm.Run();
     }
 
     /// <summary>

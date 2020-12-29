@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
-      MoonMonthsForm.Instance.Hide();
+      LunarMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
       string country = Settings.GPSCountry;
       string city = Settings.GPSCity;
@@ -90,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
       OpenSettingsDialog.FileName = "";
       if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
-      MoonMonthsForm.Instance.Hide();
+      LunarMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
       long starttime = Program.Settings.BenchmarkStartingApp;
       long loadtime = Program.Settings.BenchmarkLoadData;

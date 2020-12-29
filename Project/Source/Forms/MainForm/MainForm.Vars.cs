@@ -95,6 +95,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Application.OpenForms.ToList().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         CelebrationsBoardForm.Instance?.Close();
+        MoonsBoardForm.Instance?.Close();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
