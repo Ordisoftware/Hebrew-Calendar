@@ -37,6 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
     [STAThread]
     static void Main(string[] args)
     {
+      Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/";
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Settings.CheckUpgradeRequired(ref upgrade);
