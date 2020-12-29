@@ -33,6 +33,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
+      this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -81,6 +82,7 @@
       // 
       // PanelOptions
       // 
+      this.PanelOptions.Controls.Add(this.EditUseAbbreviatedNames);
       this.PanelOptions.Controls.Add(this.EditColumnUpperCase);
       this.PanelOptions.Controls.Add(this.EditUseLongDateFormat);
       this.PanelOptions.Controls.Add(this.EditFontSize);
@@ -91,6 +93,16 @@
       this.PanelOptions.Controls.Add(this.LabelFontSize);
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
+      // 
+      // EditUseAbbreviatedNames
+      // 
+      resources.ApplyResources(this.EditUseAbbreviatedNames, "EditUseAbbreviatedNames");
+      this.EditUseAbbreviatedNames.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormUseAbbreviatedNames;
+      this.EditUseAbbreviatedNames.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditUseAbbreviatedNames.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseAbbreviatedNames", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditUseAbbreviatedNames.Name = "EditUseAbbreviatedNames";
+      this.EditUseAbbreviatedNames.UseVisualStyleBackColor = true;
+      this.EditUseAbbreviatedNames.CheckedChanged += new System.EventHandler(this.EditDateFormat_CheckedChanged);
       // 
       // EditColumnUpperCase
       // 
@@ -110,7 +122,7 @@
       this.EditUseLongDateFormat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseLongDateFormat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseLongDateFormat.Name = "EditUseLongDateFormat";
       this.EditUseLongDateFormat.UseVisualStyleBackColor = true;
-      this.EditUseLongDateFormat.CheckedChanged += new System.EventHandler(this.EditUseLongDateFormat_CheckedChanged);
+      this.EditUseLongDateFormat.CheckedChanged += new System.EventHandler(this.EditDateFormat_CheckedChanged);
       // 
       // EditFontSize
       // 
@@ -197,5 +209,6 @@
     private System.Windows.Forms.Label LabelStart;
     private System.Windows.Forms.Label LabelFontSize;
     private System.Windows.Forms.CheckBox EditColumnUpperCase;
+    private System.Windows.Forms.CheckBox EditUseAbbreviatedNames;
   }
 }

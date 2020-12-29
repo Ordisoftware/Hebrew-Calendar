@@ -69,9 +69,9 @@ namespace Ordisoftware.Hebrew.Calendar
           SetView(Settings.CurrentView.Next());
           return true;
         // Application menu
-        case Keys.Alt | Keys.B:
-          ActionBookmarks.ShowDropDown();
-          return true;
+        //case Keys.Alt | Keys.B:
+          //ActionBookmarks.ShowDropDown();
+          //return true;
         case Keys.Alt | Keys.T:
           ActionTools.ShowDropDown();
           return true;
