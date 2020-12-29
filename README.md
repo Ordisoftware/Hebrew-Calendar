@@ -200,6 +200,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add moons board with clickable dates and selection of years interval.
 - Add option to use abbreviated names in celebrations and moons boards.
 - Improve information menu.
+- Improve Tray Icon menu.
 
 #### 2020.12.27 - Version 6.1
 
