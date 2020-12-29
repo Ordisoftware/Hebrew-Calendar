@@ -92,8 +92,8 @@
       this.SeparatorTrayMenu2 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuTools = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuWebLinks = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorTrayMenu5 = new System.Windows.Forms.ToolStripSeparator();
+      this.MenuInformation = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPreferences = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
@@ -169,6 +169,7 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -600,9 +601,10 @@
             this.SeparatorTrayMenu2,
             this.MenuTools,
             this.MenuWebLinks,
-            this.MenuInformation,
             this.SeparatorTrayMenu5,
+            this.MenuInformation,
             this.MenuPreferences,
+            this.toolStripSeparator6,
             this.MenuExit});
       this.MenuTray.Name = "contextMenuStrip";
       resources.ApplyResources(this.MenuTray, "MenuTray");
@@ -669,15 +671,15 @@
       resources.ApplyResources(this.MenuWebLinks, "MenuWebLinks");
       this.MenuWebLinks.Name = "MenuWebLinks";
       // 
-      // MenuInformation
-      // 
-      resources.ApplyResources(this.MenuInformation, "MenuInformation");
-      this.MenuInformation.Name = "MenuInformation";
-      // 
       // SeparatorTrayMenu5
       // 
       this.SeparatorTrayMenu5.Name = "SeparatorTrayMenu5";
       resources.ApplyResources(this.SeparatorTrayMenu5, "SeparatorTrayMenu5");
+      // 
+      // MenuInformation
+      // 
+      resources.ApplyResources(this.MenuInformation, "MenuInformation");
+      this.MenuInformation.Name = "MenuInformation";
       // 
       // MenuPreferences
       // 
@@ -1266,6 +1268,11 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // toolStripSeparator6
+      // 
+      this.toolStripSeparator6.Name = "toolStripSeparator6";
+      resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1447,6 +1454,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
     private System.Windows.Forms.ToolStrip ToolStrip;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMoonsBoard;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
   }
 }
 
