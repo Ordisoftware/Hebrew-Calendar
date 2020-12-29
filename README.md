@@ -28,7 +28,8 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Search for a day or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
-- Balloon window from the Tray Icon to navigate between days with a summary.
+- Window showing a board of moons by years.
+- Balloon tip from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
