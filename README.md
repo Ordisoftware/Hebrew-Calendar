@@ -162,7 +162,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
-| Ctrl + F3 | Moons board |
+| Ctrl + F3 | New moons board |
 | Ctrl + F11 | Log file window |
 | Ctrl + F12 | Usage statistics window |
 | Home | First month available in the database |
@@ -179,8 +179,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add export celebrations board.
-- Add print celebrations board.
+- Add export celebrations and new moons boards.
+- Add print celebrations and new moons boards.
 - Add dark theme for month view.
 - Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -197,8 +197,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.01.03 - Version 6.2
 
-- Add moons board with clickable dates and selection of years interval.
-- Add option to use abbreviated names in celebrations and moons boards.
+- Add new moons board with clickable dates and selection of years interval.
+- Add option for boards to use abbreviated names of month and day of week.
+- Add option for boards to show real days having the moonset, else use the moonrise.
+- Add option for boards to show or hide hours.
 - Improve information menu.
 - Improve Tray Icon menu.
 
