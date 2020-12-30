@@ -93,6 +93,11 @@ namespace Ordisoftware.Core
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
+    /// Indicate the Softpedia url.
+    /// </summary>
+    static public string SoftpediaURL { get; set; }
+
+    /// <summary>
     /// Indicate the AlternativeTo url.
     /// </summary>
     static public string AlternativeToURL { get; set; }
