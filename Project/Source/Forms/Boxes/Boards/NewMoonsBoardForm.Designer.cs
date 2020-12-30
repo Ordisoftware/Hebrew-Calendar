@@ -39,11 +39,11 @@
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -72,12 +72,14 @@
       this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
       this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridView.BackgroundColor = System.Drawing.Color.White;
+      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.EnableHeadersVisualStyles = false;
       this.DataGridView.MultiSelect = false;
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.ReadOnly = true;
       this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
       this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
       this.DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
       this.DataGridView.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DataGridView_ColumnAdded);
@@ -165,6 +167,21 @@
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
+      // 
       // SelectYear1
       // 
       resources.ApplyResources(this.SelectYear1, "SelectYear1");
@@ -180,21 +197,6 @@
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
-      // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // NewMoonsBoardForm
       // 
