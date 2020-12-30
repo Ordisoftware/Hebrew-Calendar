@@ -117,21 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 423</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>885, 2</value>
+    <value>888, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -150,30 +186,6 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 423</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>961, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -181,7 +193,7 @@
     <value>10, 10</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>961, 272</value>
+    <value>964, 272</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -197,6 +209,162 @@
   </data>
   <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditHideHours.Name" xml:space="preserve">
+    <value>EditHideHours</value>
+  </data>
+  <data name="&gt;&gt;EditHideHours.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditHideHours.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditHideHours.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Name" xml:space="preserve">
+    <value>EditUseRealDays</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Name" xml:space="preserve">
+    <value>EditUseAbbreviatedNames</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditUseAbbreviatedNames.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditColumnUpperCase.Name" xml:space="preserve">
+    <value>EditColumnUpperCase</value>
+  </data>
+  <data name="&gt;&gt;EditColumnUpperCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditColumnUpperCase.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditColumnUpperCase.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditUseLongDateFormat.Name" xml:space="preserve">
+    <value>EditUseLongDateFormat</value>
+  </data>
+  <data name="&gt;&gt;EditUseLongDateFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseLongDateFormat.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditUseLongDateFormat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
+    <value>EditFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Name" xml:space="preserve">
+    <value>SelectYear1</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectYear1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Name" xml:space="preserve">
+    <value>SelectYear2</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;SelectYear2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LabelEnd.Name" xml:space="preserve">
+    <value>LabelEnd</value>
+  </data>
+  <data name="&gt;&gt;LabelEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelEnd.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;LabelEnd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LabelStart.Name" xml:space="preserve">
+    <value>LabelStart</value>
+  </data>
+  <data name="&gt;&gt;LabelStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelStart.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;LabelStart.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSize.Name" xml:space="preserve">
+    <value>LabelFontSize</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSize.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="PanelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 282</value>
+  </data>
+  <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 141</value>
+  </data>
+  <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="EditHideHours.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -507,30 +675,6 @@
   <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="PanelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 282</value>
-  </data>
-  <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>961, 141</value>
-  </data>
-  <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Name" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -539,9 +683,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 461</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

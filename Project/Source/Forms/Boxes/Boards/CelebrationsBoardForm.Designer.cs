@@ -72,12 +72,14 @@
       this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
       this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridView.BackgroundColor = System.Drawing.Color.White;
+      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.EnableHeadersVisualStyles = false;
       this.DataGridView.MultiSelect = false;
       this.DataGridView.Name = "DataGridView";
       this.DataGridView.ReadOnly = true;
       this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
       this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
       this.DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
       this.DataGridView.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DataGridView_ColumnAdded);

@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
         e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
       }
       else
-      if ( e.ColumnIndex > 0 && e.Value != null && e.Value != DBNull.Value )
+      if ( e.ColumnIndex > 0 && e.Value != DBNull.Value )
       {
         var date = (DateTime)e.Value;
         if ( EditUseLongDateFormat.Checked )
@@ -191,14 +191,26 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-      if ( e.ColumnIndex == 0 ) DataGridView.ClearSelection();
+      if ( e.RowIndex < 0 || e.ColumnIndex < 1 )
+        DataGridView.ClearSelection();
+      else
+      if ( DataGridView[e.ColumnIndex, e.RowIndex].Value == DBNull.Value )
+        DataGridView.ClearSelection();
     }
 
     private void DataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
     {
-      if ( e.RowIndex < 0 || e.ColumnIndex < 1 ) return;
+      if ( e.RowIndex < 0 || e.ColumnIndex < 1 )
+      {
+        DataGridView.ClearSelection();
+        return;
+      }
       var value = DataGridView[e.ColumnIndex, e.RowIndex].Value;
-      if ( value == null || value == DBNull.Value ) return;
+      if ( value == DBNull.Value )
+      {
+        DataGridView.ClearSelection();
+        return;
+      }
       if ( !MainForm.Instance.Visible )
         MainForm.Instance.MenuShowHide_Click(null, null);
       else
