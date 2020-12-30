@@ -44,6 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DataTable Board;
     private bool Mutex;
+    private string Title;
 
     private CelebrationsBoardForm()
     {
@@ -55,6 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
               : AppTranslations.OmerSun.GetLang();
       Text += " - Shabat : ";
       Text += AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay);
+      Title = Text + " - ";
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
@@ -114,23 +116,18 @@ namespace Ordisoftware.Hebrew.Calendar
         DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
     }
 
-    private void EditColumnUpperCase_CheckedChanged(object sender, EventArgs e)
+    private void ReloadGrid(object sender, EventArgs e)
     {
       CreateDataTable();
       LoadGrid();
     }
 
-    private void EditDateFormat_CheckedChanged(object sender, EventArgs e)
+    private void RefreshGrid(object sender, EventArgs e)
     {
       EditUseAbbreviatedNames.Enabled = EditUseLongDateFormat.Checked;
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
       DataGridView.Refresh();
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-    }
-
-    private void EditIncludeSeasons_CheckedChanged(object sender, EventArgs e)
-    {
-      LoadGrid();
     }
 
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,9 +166,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       if ( e.ColumnIndex > 0 && e.Value != null && e.Value != DBNull.Value )
+      {
+        var date = (DateTime)e.Value;
         if ( EditUseLongDateFormat.Checked )
         {
-          var date = (DateTime)e.Value;
           string str = date.ToLongDateString();
           if ( EditUseAbbreviatedNames.Checked )
           {
@@ -185,6 +183,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
+        if ( !EditHideHours.Checked ) e.Value += " " + date.ToShortTimeString();
+      }
       else
         e.CellStyle.BackColor = Color.FromArgb(250, 250, 250);
     }
@@ -237,7 +237,7 @@ namespace Ordisoftware.Hebrew.Calendar
                      && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new
                   {
-                    date = SQLiteDate.ToDateTime(day.Date),
+                    date = day.GetEventStartDateTime(EditUseRealDays.Checked),
                     torah = day.TorahEventsAsEnum
                   };
       DataGridView.DataSource = null;
@@ -258,6 +258,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Board.AcceptChanges();
       DataGridView.DataSource = Board;
       DataGridView.ClearSelection();
+      Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }
 
   }
