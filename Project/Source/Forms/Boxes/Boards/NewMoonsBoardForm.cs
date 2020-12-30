@@ -207,11 +207,12 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = null;
       Board = new DataTable();
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
+      int index = 1;
       foreach ( var month in HebrewAlphabet.MoonMonthsTransliterations.Skip(1) )
       {
         name = month;
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
-        Board.Columns.Add(name, typeof(DateTime));
+        Board.Columns.Add(index++ + " - " + name, typeof(DateTime));
       }
     }
 
