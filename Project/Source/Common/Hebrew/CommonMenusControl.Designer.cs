@@ -41,7 +41,8 @@
       this.MenuApplication = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionApplicationHome = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGitHubRepo = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorAlternativeTo = new System.Windows.Forms.ToolStripSeparator();
+      this.SeparatorOnlineArchive = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSoftpedia = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionAlternativeTo = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuAssistance = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionForumQA = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,7 +146,8 @@
       this.MenuApplication.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionApplicationHome,
             this.ActionGitHubRepo,
-            this.SeparatorAlternativeTo,
+            this.SeparatorOnlineArchive,
+            this.ActionSoftpedia,
             this.ActionAlternativeTo});
       resources.ApplyResources(this.MenuApplication, "MenuApplication");
       this.MenuApplication.Name = "MenuApplication";
@@ -165,16 +167,22 @@
       this.ActionGitHubRepo.Tag = "";
       this.ActionGitHubRepo.Click += new System.EventHandler(this.ActionGitHubRepo_Click);
       // 
-      // SeparatorAlternativeTo
+      // SeparatorOnlineArchive
       // 
-      this.SeparatorAlternativeTo.Name = "SeparatorAlternativeTo";
-      resources.ApplyResources(this.SeparatorAlternativeTo, "SeparatorAlternativeTo");
+      this.SeparatorOnlineArchive.Name = "SeparatorOnlineArchive";
+      resources.ApplyResources(this.SeparatorOnlineArchive, "SeparatorOnlineArchive");
+      // 
+      // ActionSoftpedia
+      // 
+      resources.ApplyResources(this.ActionSoftpedia, "ActionSoftpedia");
+      this.ActionSoftpedia.Name = "ActionSoftpedia";
+      this.ActionSoftpedia.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionAlternativeTo
       // 
       resources.ApplyResources(this.ActionAlternativeTo, "ActionAlternativeTo");
       this.ActionAlternativeTo.Name = "ActionAlternativeTo";
-      this.ActionAlternativeTo.Click += new System.EventHandler(this.ActionAlternativeTo_Click);
+      this.ActionAlternativeTo.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // MenuAssistance
       // 
@@ -325,6 +333,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.ToolStrip);
       this.Name = "CommonMenusControl";
+      this.Load += new System.EventHandler(this.CommonMenusControl_Load);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ResumeLayout(false);
@@ -346,7 +355,7 @@
     private System.Windows.Forms.ToolStripMenuItem MenuApplication;
     public System.Windows.Forms.ToolStripMenuItem ActionApplicationHome;
     public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
-    private System.Windows.Forms.ToolStripSeparator SeparatorAlternativeTo;
+    private System.Windows.Forms.ToolStripSeparator SeparatorOnlineArchive;
     private System.Windows.Forms.ToolStripMenuItem ActionAlternativeTo;
     private System.Windows.Forms.ToolStripMenuItem MenuAssistance;
     public System.Windows.Forms.ToolStripMenuItem ActionForumQA;
@@ -367,5 +376,6 @@
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewCalendar;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewLetters;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewWords;
+    private System.Windows.Forms.ToolStripMenuItem ActionSoftpedia;
   }
 }

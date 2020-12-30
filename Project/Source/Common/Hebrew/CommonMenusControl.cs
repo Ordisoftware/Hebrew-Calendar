@@ -33,11 +33,13 @@ namespace Ordisoftware.Hebrew
       InitializeComponent();
       MenuApplication.Text = Globals.AssemblyTitle;
       MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
-      if ( Globals.AlternativeToURL == "" )
-      {
-        ActionAlternativeTo.Visible = false;
-        SeparatorAlternativeTo.Visible = false;
-      }
+      ActionSoftpedia.Tag = Globals.SoftpediaURL;
+      ActionAlternativeTo.Tag = Globals.AlternativeToURL;
+      bool b1 = !string.IsNullOrEmpty(Globals.SoftpediaURL);
+      bool b2 = !string.IsNullOrEmpty(Globals.AlternativeToURL); ;
+      ActionSoftpedia.Visible = b1;
+      ActionAlternativeTo.Visible = b2;
+      SeparatorOnlineArchive.Visible = b1 || b2;
       check(ActionHebrewCalendar);
       check(ActionHebrewLetters);
       check(ActionHebrewWords);
@@ -46,6 +48,10 @@ namespace Ordisoftware.Hebrew
         if ( item.Text.Contains(Globals.AssemblyTitle) )
           MenuSoftware.DropDownItems.Remove(item);
       }
+    }
+
+    private void CommonMenusControl_Load(object sender, EventArgs e)
+    {
     }
 
     private void ActionAbout_Click(object sender, EventArgs e)
@@ -86,11 +92,6 @@ namespace Ordisoftware.Hebrew
     private void ActionGitHubRepo_Click(object sender, EventArgs e)
     {
       SystemManager.OpenGitHupRepo();
-    }
-
-    private void ActionAlternativeTo_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.AlternativeToURL);
     }
 
     private void ActionSubmitBug_Click(object sender, EventArgs e)
