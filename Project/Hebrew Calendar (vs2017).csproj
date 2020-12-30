@@ -154,11 +154,11 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
-    <Compile Include="Source\Forms\Boxes\Boards\MoonsBoardForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Boards\MoonsBoardForm.Designer.cs">
-      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.Designer.cs">
+      <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.cs">
       <SubType>Form</SubType>
@@ -662,11 +662,11 @@
     <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonsBoardForm.fr.resx">
-      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.fr.resx">
+      <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Boards\MoonsBoardForm.resx">
-      <DependentUpon>MoonsBoardForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.resx">
+      <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.fr.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>

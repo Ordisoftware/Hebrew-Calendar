@@ -23,15 +23,15 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MoonsBoardForm : Form
+  public partial class NewMoonsBoardForm : Form
   {
 
-    static public MoonsBoardForm Instance { get; private set; }
+    static public NewMoonsBoardForm Instance { get; private set; }
 
     static public void Run()
     {
       if (Instance == null)
-        Instance = new MoonsBoardForm();
+        Instance = new NewMoonsBoardForm();
       else
       if ( Instance.Visible )
       {
@@ -44,10 +44,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DataTable Board;
     private bool Mutex;
+    private string Title;
 
-    private MoonsBoardForm()
+    private NewMoonsBoardForm()
     {
       InitializeComponent();
+      Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
@@ -58,31 +60,31 @@ namespace Ordisoftware.Hebrew.Calendar
         DataGridView.Columns[0].DefaultCellStyle.BackColor = SystemColors.Control;
     }
 
-    private void CelebrationsBoardForm_Load(object sender, EventArgs e)
+    private void NewMoonsBoardForm_Load(object sender, EventArgs e)
     {
-      Location = Program.Settings.CelebrationsBoardFormLocation;
-      ClientSize = Program.Settings.CelebrationsBoardFormClientSize;
+      Location = Program.Settings.NewMoonsBoardFormLocation;
+      ClientSize = Program.Settings.NewMoonsBoardFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Program.Settings.CelebrationsBoardFormWindowState;
+      WindowState = Program.Settings.NewMoonsBoardFormWindowState;
       CreateDataTable();
       LoadGrid();
     }
 
-    private void CelebrationsBoardForm_Shown(object sender, EventArgs e)
+    private void NewMoonsBoardForm_Shown(object sender, EventArgs e)
     {
       EditFontSize_ValueChanged(null, null);
     }
 
-    private void CelebrationsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
+    private void NewMoonsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;
       if ( WindowState == FormWindowState.Minimized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.CelebrationsBoardFormWindowState = WindowState;
+      Program.Settings.NewMoonsBoardFormWindowState = WindowState;
       if ( WindowState == FormWindowState.Maximized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.CelebrationsBoardFormLocation = Location;
-      Program.Settings.CelebrationsBoardFormClientSize = ClientSize;
+      Program.Settings.NewMoonsBoardFormLocation = Location;
+      Program.Settings.NewMoonsBoardFormClientSize = ClientSize;
       Program.Settings.Save();
     }
 
@@ -108,23 +110,18 @@ namespace Ordisoftware.Hebrew.Calendar
         DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
     }
 
-    private void EditColumnUpperCase_CheckedChanged(object sender, EventArgs e)
+    private void ReloadGrid(object sender, EventArgs e)
     {
       CreateDataTable();
       LoadGrid();
     }
 
-    private void EditDateFormat_CheckedChanged(object sender, EventArgs e)
+    private void RefreshGrid(object sender, EventArgs e)
     {
       EditUseAbbreviatedNames.Enabled = EditUseLongDateFormat.Checked;
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
       DataGridView.Refresh();
       DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-    }
-
-    private void EditIncludeSeasons_CheckedChanged(object sender, EventArgs e)
-    {
-      LoadGrid();
     }
 
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,9 +160,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       if ( e.ColumnIndex > 0 && e.Value != null && e.Value != DBNull.Value )
+      {
+        var date = (DateTime)e.Value;
         if ( EditUseLongDateFormat.Checked )
         {
-          var date = (DateTime)e.Value;
           string str = date.ToLongDateString();
           if ( EditUseAbbreviatedNames.Checked )
           {
@@ -179,6 +177,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
+        if ( !EditHideHours.Checked ) e.Value += " " + date.ToShortTimeString();
+      }
       else
         e.CellStyle.BackColor = Color.FromArgb(250, 250, 250);
     }
@@ -226,7 +226,7 @@ namespace Ordisoftware.Hebrew.Calendar
                      && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new
                   {
-                    date = SQLiteDate.ToDateTime(day.Date),
+                    date = day.GetEventStartDateTime(EditUseRealDays.Checked),
                     month = day.LunarMonth
                   };
       DataGridView.DataSource = null;
@@ -236,6 +236,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( item.month == 1)
           year++;
+        if ( year < year1 ) continue;
         var row = Board.Rows.Find(year);
         if ( row != null )
           row[item.month] = item.date;
@@ -251,6 +252,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Board.AcceptChanges();
       DataGridView.DataSource = Board;
       DataGridView.ClearSelection();
+      Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }
 
   }

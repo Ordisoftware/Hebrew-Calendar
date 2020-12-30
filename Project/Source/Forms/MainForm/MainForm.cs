@@ -817,7 +817,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewMoonsBoard_Click(object sender, EventArgs e)
     {
-      MoonsBoardForm.Run();
+      NewMoonsBoardForm.Run();
     }
 
     /// <summary>

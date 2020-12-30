@@ -1976,18 +1976,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool CelebrationsBoardFormIncludeSeasons {
-            get {
-                return ((bool)(this["CelebrationsBoardFormIncludeSeasons"]));
-            }
-            set {
-                this["CelebrationsBoardFormIncludeSeasons"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool CelebrationsBoardFormUseTitleUpperCase {
             get {
@@ -2025,48 +2013,132 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("8")]
-        public decimal MoonsBoardFormFontSize {
+        public decimal NewMoonsBoardFormFontSize {
             get {
-                return ((decimal)(this["MoonsBoardFormFontSize"]));
+                return ((decimal)(this["NewMoonsBoardFormFontSize"]));
             }
             set {
-                this["MoonsBoardFormFontSize"] = value;
+                this["NewMoonsBoardFormFontSize"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MoonsBoardFormUseTitleUpperCase {
+        public bool NewMoonsBoardFormUseTitleUpperCase {
             get {
-                return ((bool)(this["MoonsBoardFormUseTitleUpperCase"]));
+                return ((bool)(this["NewMoonsBoardFormUseTitleUpperCase"]));
             }
             set {
-                this["MoonsBoardFormUseTitleUpperCase"] = value;
+                this["NewMoonsBoardFormUseTitleUpperCase"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MoonsBoardFormUseLongDateFormat {
+        public bool NewMoonsBoardFormUseLongDateFormat {
             get {
-                return ((bool)(this["MoonsBoardFormUseLongDateFormat"]));
+                return ((bool)(this["NewMoonsBoardFormUseLongDateFormat"]));
             }
             set {
-                this["MoonsBoardFormUseLongDateFormat"] = value;
+                this["NewMoonsBoardFormUseLongDateFormat"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MoonsBoardFormUseAbbreviatedNames {
+        public bool NewMoonsBoardFormUseAbbreviatedNames {
             get {
-                return ((bool)(this["MoonsBoardFormUseAbbreviatedNames"]));
+                return ((bool)(this["NewMoonsBoardFormUseAbbreviatedNames"]));
             }
             set {
-                this["MoonsBoardFormUseAbbreviatedNames"] = value;
+                this["NewMoonsBoardFormUseAbbreviatedNames"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NewMoonsBoardFormUseRealDays {
+            get {
+                return ((bool)(this["NewMoonsBoardFormUseRealDays"]));
+            }
+            set {
+                this["NewMoonsBoardFormUseRealDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CelebrationsBoardFormUseRealDays {
+            get {
+                return ((bool)(this["CelebrationsBoardFormUseRealDays"]));
+            }
+            set {
+                this["CelebrationsBoardFormUseRealDays"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NewMoonsBoardFormHideHours {
+            get {
+                return ((bool)(this["NewMoonsBoardFormHideHours"]));
+            }
+            set {
+                this["NewMoonsBoardFormHideHours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CelebrationsBoardFormHideHours {
+            get {
+                return ((bool)(this["CelebrationsBoardFormHideHours"]));
+            }
+            set {
+                this["CelebrationsBoardFormHideHours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point NewMoonsBoardFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["NewMoonsBoardFormLocation"]));
+            }
+            set {
+                this["NewMoonsBoardFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState NewMoonsBoardFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["NewMoonsBoardFormWindowState"]));
+            }
+            set {
+                this["NewMoonsBoardFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
+        public global::System.Drawing.Size NewMoonsBoardFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["NewMoonsBoardFormClientSize"]));
+            }
+            set {
+                this["NewMoonsBoardFormClientSize"] = value;
             }
         }
     }

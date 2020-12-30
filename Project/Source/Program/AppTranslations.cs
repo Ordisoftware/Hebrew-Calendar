@@ -178,6 +178,25 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "La durée doit être inférieure à {0} secondes: {1}."
       };
 
+    static public readonly NullSafeDictionary<bool, TranslationsDictionary> BoardTimingsTitle
+      = new NullSafeDictionary<bool, TranslationsDictionary>
+      {
+        {
+          true, new TranslationsDictionary
+          {
+            [Language.EN] = "Real days having the moonset",
+            [Language.FR] = "Vrai jours ayant le coucher de la lune"
+          }
+          },
+        {
+          false, new TranslationsDictionary
+          {
+            [Language.EN] = "Solar days having the moonrise",
+            [Language.FR] = "Jours solaires ayant le lever de la lune"
+          }
+        }
+      };
+
   }
 
 }

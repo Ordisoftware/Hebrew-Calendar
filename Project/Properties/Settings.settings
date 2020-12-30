@@ -496,9 +496,6 @@
     <Setting Name="CelebrationsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">984, 461</Value>
     </Setting>
-    <Setting Name="CelebrationsBoardFormIncludeSeasons" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="CelebrationsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -508,17 +505,38 @@
     <Setting Name="CelebrationsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MoonsBoardFormFontSize" Type="System.Decimal" Scope="User">
+    <Setting Name="NewMoonsBoardFormFontSize" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">8</Value>
     </Setting>
-    <Setting Name="MoonsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
+    <Setting Name="NewMoonsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MoonsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
+    <Setting Name="NewMoonsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MoonsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
+    <Setting Name="NewMoonsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormHideHours" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormHideHours" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 461</Value>
     </Setting>
   </Settings>
 </SettingsFile>
