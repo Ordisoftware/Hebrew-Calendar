@@ -32,12 +32,13 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.MenuInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.Separator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionReadme = new System.Windows.Forms.ToolStripMenuItem();
+      this.Separator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
-      this.Separator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.Separator3 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuApplication = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionApplicationHome = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGitHubRepo = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,12 +83,13 @@
       this.MenuInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
-            this.ActionHelp,
             this.Separator1,
+            this.ActionHelp,
             this.ActionReadme,
+            this.Separator2,
             this.ActionReleaseNotes,
             this.ActionCheckUpdate,
-            this.Separator2,
+            this.Separator3,
             this.MenuApplication,
             this.MenuAssistance,
             this.Separator4,
@@ -103,6 +105,11 @@
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
+      // Separator1
+      // 
+      this.Separator1.Name = "Separator1";
+      resources.ApplyResources(this.Separator1, "Separator1");
+      // 
       // ActionHelp
       // 
       this.ActionHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -110,17 +117,17 @@
       this.ActionHelp.Name = "ActionHelp";
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
-      // Separator1
-      // 
-      this.Separator1.Name = "Separator1";
-      resources.ApplyResources(this.Separator1, "Separator1");
-      // 
       // ActionReadme
       // 
       this.ActionReadme.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionReadme, "ActionReadme");
       this.ActionReadme.Name = "ActionReadme";
       this.ActionReadme.Click += new System.EventHandler(this.ActionReadme_Click);
+      // 
+      // Separator2
+      // 
+      this.Separator2.Name = "Separator2";
+      resources.ApplyResources(this.Separator2, "Separator2");
       // 
       // ActionReleaseNotes
       // 
@@ -136,10 +143,10 @@
       this.ActionCheckUpdate.Name = "ActionCheckUpdate";
       this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
-      // Separator2
+      // Separator3
       // 
-      this.Separator2.Name = "Separator2";
-      resources.ApplyResources(this.Separator2, "Separator2");
+      this.Separator3.Name = "Separator3";
+      resources.ApplyResources(this.Separator3, "Separator3");
       // 
       // MenuApplication
       // 
@@ -377,5 +384,6 @@
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewLetters;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewWords;
     private System.Windows.Forms.ToolStripMenuItem ActionSoftpedia;
+    private System.Windows.Forms.ToolStripSeparator Separator3;
   }
 }
