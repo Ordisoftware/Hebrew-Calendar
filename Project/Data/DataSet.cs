@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar.Data
 {
@@ -8,6 +9,29 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
     partial class LunisolarDaysRow
     {
+
+      public DateTime GetEventStartDateTime(bool useRealDay)
+      {
+        var day = this;
+        if ( useRealDay || day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
+        {
+          if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet || day.Moonset == "" )
+          {
+            int index = day.Table.Rows.IndexOf(day) - 1;
+            if ( index >= 0 )
+              day = (LunisolarDaysRow)day.Table.Rows[index];
+            else
+              return SQLiteDate.ToDateTime(day.Date);
+          }
+          return SQLiteDate.ToDateTime(day.Date)
+                           .AddHours(int.Parse(day.Moonset.Substring(0, 2)))
+                           .AddMinutes(int.Parse(day.Moonset.Substring(3, 2)));
+        }
+        else
+          return SQLiteDate.ToDateTime(day.Date)
+                           .AddHours(int.Parse(day.Moonrise.Substring(0, 2)))
+                           .AddMinutes(int.Parse(day.Moonrise.Substring(3, 2)));
+      }
 
       public MoonRiseOccuring MoonriseOccuringAsEnum
       {

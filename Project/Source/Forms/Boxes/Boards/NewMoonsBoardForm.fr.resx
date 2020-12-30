@@ -146,12 +146,18 @@
     <value>Taille police</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Tableau des lunes</value>
+    <value>Tableau des nouvelles lunes</value>
   </data>
   <data name="EditColumnUpperCase.Text" xml:space="preserve">
     <value>Utiliser le titre de la colonne en majuscules</value>
   </data>
   <data name="EditUseAbbreviatedNames.Text" xml:space="preserve">
     <value>Utiliser les noms abrégés</value>
+  </data>
+  <data name="EditUseRealDays.Text" xml:space="preserve">
+    <value>Afficher les jours ayant la vrai heure de début du coucher de la lune avant le lever, sinon utiliser les jours solaires ayant le lever de la lune ou le jour sans lever</value>
+  </data>
+  <data name="EditHideHours.Text" xml:space="preserve">
+    <value>Cacher les heures</value>
   </data>
 </root>

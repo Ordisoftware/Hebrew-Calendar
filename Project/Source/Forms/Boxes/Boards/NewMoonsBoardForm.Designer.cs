@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class MoonsBoardForm
+  partial class NewMoonsBoardForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,12 +28,14 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoonsBoardForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMoonsBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
+      this.EditUseRealDays = new System.Windows.Forms.CheckBox();
+      this.EditHideHours = new System.Windows.Forms.CheckBox();
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
@@ -83,6 +85,8 @@
       // PanelOptions
       // 
       this.PanelOptions.Controls.Add(this.EditColumnUpperCase);
+      this.PanelOptions.Controls.Add(this.EditUseRealDays);
+      this.PanelOptions.Controls.Add(this.EditHideHours);
       this.PanelOptions.Controls.Add(this.EditUseAbbreviatedNames);
       this.PanelOptions.Controls.Add(this.EditUseLongDateFormat);
       this.PanelOptions.Controls.Add(this.EditFontSize);
@@ -97,36 +101,55 @@
       // EditColumnUpperCase
       // 
       resources.ApplyResources(this.EditColumnUpperCase, "EditColumnUpperCase");
-      this.EditColumnUpperCase.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonsBoardFormUseTitleUpperCase;
+      this.EditColumnUpperCase.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseTitleUpperCase;
       this.EditColumnUpperCase.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditColumnUpperCase.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonsBoardFormUseTitleUpperCase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditColumnUpperCase.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseTitleUpperCase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditColumnUpperCase.Name = "EditColumnUpperCase";
       this.EditColumnUpperCase.UseVisualStyleBackColor = true;
-      this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.EditColumnUpperCase_CheckedChanged);
+      this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.ReloadGrid);
+      // 
+      // EditUseRealDays
+      // 
+      resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
+      this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseRealDays;
+      this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditUseRealDays.Name = "EditUseRealDays";
+      this.EditUseRealDays.UseVisualStyleBackColor = true;
+      this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
+      // 
+      // EditHideHours
+      // 
+      resources.ApplyResources(this.EditHideHours, "EditHideHours");
+      this.EditHideHours.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormHideHours;
+      this.EditHideHours.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormHideHours", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditHideHours.Name = "EditHideHours";
+      this.EditHideHours.UseVisualStyleBackColor = true;
+      this.EditHideHours.CheckedChanged += new System.EventHandler(this.RefreshGrid);
       // 
       // EditUseAbbreviatedNames
       // 
       resources.ApplyResources(this.EditUseAbbreviatedNames, "EditUseAbbreviatedNames");
-      this.EditUseAbbreviatedNames.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonsBoardFormUseAbbreviatedNames;
+      this.EditUseAbbreviatedNames.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseAbbreviatedNames;
       this.EditUseAbbreviatedNames.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseAbbreviatedNames.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonsBoardFormUseAbbreviatedNames", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditUseAbbreviatedNames.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseAbbreviatedNames", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseAbbreviatedNames.Name = "EditUseAbbreviatedNames";
       this.EditUseAbbreviatedNames.UseVisualStyleBackColor = true;
-      this.EditUseAbbreviatedNames.CheckedChanged += new System.EventHandler(this.EditDateFormat_CheckedChanged);
+      this.EditUseAbbreviatedNames.CheckedChanged += new System.EventHandler(this.RefreshGrid);
       // 
       // EditUseLongDateFormat
       // 
       resources.ApplyResources(this.EditUseLongDateFormat, "EditUseLongDateFormat");
-      this.EditUseLongDateFormat.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonsBoardFormUseLongDateFormat;
+      this.EditUseLongDateFormat.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseLongDateFormat;
       this.EditUseLongDateFormat.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseLongDateFormat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonsBoardFormUseLongDateFormat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditUseLongDateFormat.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseLongDateFormat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseLongDateFormat.Name = "EditUseLongDateFormat";
       this.EditUseLongDateFormat.UseVisualStyleBackColor = true;
-      this.EditUseLongDateFormat.CheckedChanged += new System.EventHandler(this.EditDateFormat_CheckedChanged);
+      this.EditUseLongDateFormat.CheckedChanged += new System.EventHandler(this.RefreshGrid);
       // 
       // EditFontSize
       // 
-      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonsBoardFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
@@ -139,7 +162,7 @@
             0,
             0});
       this.EditFontSize.Name = "EditFontSize";
-      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonsBoardFormFontSize;
+      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
       // SelectYear1
@@ -173,7 +196,7 @@
       resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
       this.LabelFontSize.Name = "LabelFontSize";
       // 
-      // MoonsBoardForm
+      // NewMoonsBoardForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,11 +204,11 @@
       this.Controls.Add(this.DataGridView);
       this.Controls.Add(this.PanelOptions);
       this.Controls.Add(this.PanelBottom);
-      this.Name = "MoonsBoardForm";
+      this.Name = "NewMoonsBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationsBoardForm_FormClosed);
-      this.Load += new System.EventHandler(this.CelebrationsBoardForm_Load);
-      this.Shown += new System.EventHandler(this.CelebrationsBoardForm_Shown);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewMoonsBoardForm_FormClosed);
+      this.Load += new System.EventHandler(this.NewMoonsBoardForm_Load);
+      this.Shown += new System.EventHandler(this.NewMoonsBoardForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.PanelOptions.ResumeLayout(false);
@@ -210,5 +233,7 @@
     private System.Windows.Forms.Label LabelFontSize;
     private System.Windows.Forms.CheckBox EditColumnUpperCase;
     private System.Windows.Forms.CheckBox EditUseAbbreviatedNames;
+    private System.Windows.Forms.CheckBox EditUseRealDays;
+    private System.Windows.Forms.CheckBox EditHideHours;
   }
 }
