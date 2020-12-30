@@ -217,13 +217,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadGrid()
     {
-      // TODO only one loop ?
       int year1 = (int)SelectYear1.SelectedItem;
       int year2 = (int)SelectYear2.SelectedItem;
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
                   where day.LunarDay == 1
                      && SQLiteDate.ToDateTime(day.Date).Year >= year1
-                     && SQLiteDate.ToDateTime(day.Date).Year <= year2
+                     && SQLiteDate.ToDateTime(day.Date).Year <= year2 + 1
                   select new
                   {
                     date = day.GetEventStartDateTime(EditUseRealDays.Checked),
@@ -234,8 +233,11 @@ namespace Ordisoftware.Hebrew.Calendar
       int year = year1 - 1;
       foreach ( var item in query )
       {
-        if ( item.month == 1)
+        if ( item.month == 1 )
+        {
           year++;
+          if ( year > year2 ) break;
+        }
         if ( year < year1 ) continue;
         var row = Board.Rows.Find(year);
         if ( row != null )

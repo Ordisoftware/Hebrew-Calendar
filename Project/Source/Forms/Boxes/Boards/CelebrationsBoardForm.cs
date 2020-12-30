@@ -227,7 +227,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadGrid()
     {
-      // TODO only one loop ?
       int year1 = (int)SelectYear1.SelectedItem;
       int year2 = (int)SelectYear2.SelectedItem;
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
