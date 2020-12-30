@@ -201,6 +201,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option for boards to use abbreviated names of month and day of week.
 - Add option for boards to show real days having the moonset, else use the moonrise.
 - Add option for boards to show or hide hours.
+- Improve top menu bar.
 - Improve information menu.
 - Improve Tray Icon menu.
 
