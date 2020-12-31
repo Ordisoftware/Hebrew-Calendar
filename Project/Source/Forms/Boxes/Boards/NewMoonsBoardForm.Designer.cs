@@ -39,11 +39,11 @@
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -87,7 +87,6 @@
       // PanelOptions
       // 
       this.PanelOptions.Controls.Add(this.EditColumnUpperCase);
-      this.PanelOptions.Controls.Add(this.EditUseRealDays);
       this.PanelOptions.Controls.Add(this.EditHideHours);
       this.PanelOptions.Controls.Add(this.EditUseAbbreviatedNames);
       this.PanelOptions.Controls.Add(this.EditUseLongDateFormat);
@@ -97,6 +96,7 @@
       this.PanelOptions.Controls.Add(this.LabelEnd);
       this.PanelOptions.Controls.Add(this.LabelStart);
       this.PanelOptions.Controls.Add(this.LabelFontSize);
+      this.PanelOptions.Controls.Add(this.EditUseRealDays);
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
       // 
@@ -167,21 +167,6 @@
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
-      // 
       // SelectYear1
       // 
       resources.ApplyResources(this.SelectYear1, "SelectYear1");
@@ -197,6 +182,21 @@
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
+      // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // NewMoonsBoardForm
       // 
