@@ -197,6 +197,20 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
+    static public readonly TranslationsDictionary OnlineWeatherError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on getting data from {{0}}:{Globals.NL2}{{1}}",
+        [Language.FR] = $"Erreur lors de la récupération des données depuis {{0}} :{Globals.NL2}{{1}}"
+      };
+
+    static public readonly TranslationsDictionary OnlineWeatherLocationNotFound
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Coordinates not found.",
+        [Language.FR] = "Coordonnées non trouvées."
+      };
+
   }
 
 }

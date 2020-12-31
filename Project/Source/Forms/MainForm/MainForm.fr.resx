@@ -1678,4 +1678,7 @@
   <data name="ActionViewMoonsBoard.Text" xml:space="preserve">
     <value>Tableau des nouvelles lunes</value>
   </data>
+  <data name="ActionOnlineWeather.Text" xml:space="preserve">
+    <value>Météo en ligne</value>
+  </data>
 </root>
