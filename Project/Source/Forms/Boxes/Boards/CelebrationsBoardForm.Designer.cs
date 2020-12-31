@@ -39,11 +39,11 @@
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -167,6 +167,21 @@
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
+      // 
       // SelectYear1
       // 
       resources.ApplyResources(this.SelectYear1, "SelectYear1");
@@ -182,21 +197,6 @@
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
-      // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // CelebrationsBoardForm
       // 

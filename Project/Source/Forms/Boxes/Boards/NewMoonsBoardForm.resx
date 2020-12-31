@@ -117,21 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 423</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>885, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -150,30 +186,6 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 423</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -181,7 +193,7 @@
     <value>10, 10</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 272</value>
+    <value>964, 298</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -205,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditColumnUpperCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 73</value>
+    <value>213, 80</value>
   </data>
   <data name="EditColumnUpperCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 17</value>
@@ -228,36 +240,6 @@
   <data name="&gt;&gt;EditColumnUpperCase.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="EditUseRealDays.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditUseRealDays.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditUseRealDays.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
-  </data>
-  <data name="EditUseRealDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 17</value>
-  </data>
-  <data name="EditUseRealDays.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="EditUseRealDays.Text" xml:space="preserve">
-    <value>Show days having the real start time of the moonset before the moonrise, else use solar days having the moonrise or the day with no moonrise</value>
-  </data>
-  <data name="&gt;&gt;EditUseRealDays.Name" xml:space="preserve">
-    <value>EditUseRealDays</value>
-  </data>
-  <data name="&gt;&gt;EditUseRealDays.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditUseRealDays.Parent" xml:space="preserve">
-    <value>PanelOptions</value>
-  </data>
-  <data name="&gt;&gt;EditUseRealDays.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="EditHideHours.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -265,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditHideHours.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 126</value>
+    <value>213, 100</value>
   </data>
   <data name="EditHideHours.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 17</value>
@@ -286,7 +268,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditHideHours.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="EditUseAbbreviatedNames.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseAbbreviatedNames.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 109</value>
+    <value>450, 100</value>
   </data>
   <data name="EditUseAbbreviatedNames.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -316,7 +298,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseAbbreviatedNames.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="EditUseLongDateFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +307,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseLongDateFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 91</value>
+    <value>450, 80</value>
   </data>
   <data name="EditUseLongDateFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -346,10 +328,10 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseLongDateFormat.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 48</value>
+    <value>213, 47</value>
   </data>
   <data name="EditFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
@@ -367,13 +349,13 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="SelectYear1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SelectYear1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 49</value>
+    <value>3, 47</value>
   </data>
   <data name="SelectYear1.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 25</value>
@@ -391,13 +373,13 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="SelectYear2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="SelectYear2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 102</value>
+    <value>3, 92</value>
   </data>
   <data name="SelectYear2.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 25</value>
@@ -415,7 +397,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="LabelEnd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -424,7 +406,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 83</value>
+    <value>0, 75</value>
   </data>
   <data name="LabelEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -445,7 +427,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelEnd.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="LabelStart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -475,7 +457,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelStart.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="LabelFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -484,7 +466,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 30</value>
+    <value>210, 30</value>
   </data>
   <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -505,16 +487,46 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EditUseRealDays.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditUseRealDays.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditUseRealDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="EditUseRealDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 17</value>
+  </data>
+  <data name="EditUseRealDays.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditUseRealDays.Text" xml:space="preserve">
+    <value>Show days having the real start time of the moonset before the moonrise, else use solar days having the moonrise or the day with no moonrise</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Name" xml:space="preserve">
+    <value>EditUseRealDays</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditUseRealDays.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="PanelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="PanelOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 282</value>
+    <value>10, 308</value>
   </data>
   <data name="PanelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 141</value>
+    <value>964, 115</value>
   </data>
   <data name="PanelOptions.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
