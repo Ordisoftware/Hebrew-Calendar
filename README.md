@@ -28,7 +28,7 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Search for a day or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
-- Window showing a board of moons by years.
+- Window showing a board of new moons by years.
 - Balloon tip from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
@@ -83,9 +83,17 @@ In the event that an error message indicates that a DLL file could not be copied
 
 #### What to do in case of ODBC datasource connection error?
 
-The software tries to register an ODBC DSN to the registry but in case of problem run "C:\Program Files\Ordisoftware\Hebrew Calendar\Register ODBC.reg" or open the ODBC datasource manager (Admin tools in Windows' Control panel) and create a user datasource named "Hebrew-Calendar" for "SQLite 3 ODBC Driver" with "Database Name" sets to:
+The software tries to register an ODBC DSN to the registry but in case of problem run:
 
-"%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite"
+&emsp;`C:\Program Files\Ordisoftware\Hebrew Calendar\System\RegisterODBC.reg`
+
+Or open the *ODBC Datasource Manager* (Admin tools in Windows' Control panel) and create a user datasource named:
+
+&emsp;`Hebrew-Calendar` for `SQLite 3 ODBC Driver`
+
+With `Database Name` sets to:
+
+&emsp;`%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite`
 
 Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
@@ -99,11 +107,15 @@ Reset the preferences to default: it will restore the corrupted values in case o
 
 #### What to do if the application does not work normally despite restoring settings?
 
-Use the start menu link "Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings". This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
+Use the *Start Menu* link:
+
+&emsp;`Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings`
+
+This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
 
 #### What are the times of celebration?
 
-The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
+The times of the Torah's celebrations are *Pesa'h* or Easter which is the liberation of illusions, *Shavuot* or Weeks which is the gift of knowledge, *Teru'ah* or Ringtone which is the joy of being freedom, *Kipurim* or Atonement which is the sorrows of losses, and *Sukot* or Tabernacles which is the construction of the future.
 
 These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
@@ -179,10 +191,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add export celebrations and new moons boards.
-- Add print celebrations and new moons boards.
+- Add export and print boards.
+- Add lunar months description form with menu in tools.
+- Add export and print lunar months data.
 - Add dark theme for month view.
-- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.

@@ -529,7 +529,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 46</value>
+    <value>15, 62</value>
   </data>
   <data name="runningTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -550,7 +550,7 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;runningTimeLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <metadata name="startingTimeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1378,7 +1378,7 @@
     <value>NoControl</value>
   </data>
   <data name="processorTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 78</value>
   </data>
   <data name="processorTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -1399,7 +1399,7 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;processorTimeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="LabelApplication.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -1435,7 +1435,7 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;LabelApplication.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -2162,7 +2162,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 45</value>
+    <value>138, 61</value>
   </data>
   <data name="runningTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2186,7 +2186,7 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;runningTimeLabel1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="startingTimeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3005,7 +3005,7 @@
     <value>operatingSystemTextBox</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3032,7 +3032,7 @@
     <value>processorNameTextBox</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3064,6 +3064,72 @@
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="LabelCompiled.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelCompiled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCompiled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCompiled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCompiled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 41</value>
+  </data>
+  <data name="LabelCompiled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="LabelCompiled.TabIndex" type="System.Int32, mscorlib">
+    <value>112</value>
+  </data>
+  <data name="LabelCompiled.Text" xml:space="preserve">
+    <value>Compiled:</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Name" xml:space="preserve">
+    <value>LabelCompiled</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Parent" xml:space="preserve">
+    <value>GroupBoxRunning</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelCompiled1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCompiled1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 41</value>
+  </data>
+  <data name="LabelCompiled1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 13</value>
+  </data>
+  <data name="LabelCompiled1.TabIndex" type="System.Int32, mscorlib">
+    <value>113</value>
+  </data>
+  <data name="LabelCompiled1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="LabelCompiled1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled1.Name" xml:space="preserve">
+    <value>LabelCompiled1</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled1.Parent" xml:space="preserve">
+    <value>GroupBoxRunning</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="LabelApplication1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3092,13 +3158,13 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;LabelApplication1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="processorTime1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="processorTime1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 65</value>
+    <value>138, 81</value>
   </data>
   <data name="processorTime1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3122,7 +3188,7 @@
     <value>GroupBoxRunning</value>
   </data>
   <data name="&gt;&gt;processorTime1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="GroupBoxRunning.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 13</value>
@@ -3458,7 +3524,7 @@
     <value>EditOpenFolderUserLocalData</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3485,7 +3551,7 @@
     <value>EditFolderUserData</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3512,7 +3578,7 @@
     <value>EditFolderApplication</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3606,6 +3672,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 691</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
