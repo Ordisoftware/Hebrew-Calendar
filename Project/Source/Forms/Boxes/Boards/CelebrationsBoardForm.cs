@@ -183,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();
-        if ( !EditHideHours.Checked ) e.Value += " " + date.ToShortTimeString();
+        if ( !EditHideHours.Checked ) e.Value += " " + date.ToString("HH:mm");
       }
       else
         e.CellStyle.BackColor = Color.FromArgb(250, 250, 250);
