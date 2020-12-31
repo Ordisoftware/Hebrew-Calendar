@@ -28,7 +28,7 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Search for a day or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
-- Window showing a board of moons by years.
+- Window showing a board of new moons by years.
 - Balloon tip from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
@@ -179,10 +179,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add export celebrations and new moons boards.
-- Add print celebrations and new moons boards.
+- Add export and print boards.
+- Add lunar months description form with menu in tools.
+- Add export and print lunar months data.
 - Add dark theme for month view.
-- Add moon months description form and menu in tools.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
 - Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
