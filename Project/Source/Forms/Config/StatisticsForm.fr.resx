@@ -461,4 +461,7 @@
   <data name="cPUProcessLoadAvgLabel.Text" xml:space="preserve">
     <value>CPU Process moyen :</value>
   </data>
+  <data name="LabelCompiled.Text" xml:space="preserve">
+    <value>Compilé :</value>
+  </data>
 </root>
