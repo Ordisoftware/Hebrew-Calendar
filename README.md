@@ -171,6 +171,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Alt + E | Open export folder |
 | Alt + C | Open windows calculator |
 | Alt + D | Open windows date and time settings |
+| Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
@@ -209,6 +210,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.01.03 - Version 6.2
 
+- Add show online weather in browser using `meteoblue.com`.
 - Add new moons board with clickable dates and selection of years interval.
 - Add option for boards to use abbreviated names of month and day of week.
 - Add option for boards to show real days having the moonset, else use the moonrise.

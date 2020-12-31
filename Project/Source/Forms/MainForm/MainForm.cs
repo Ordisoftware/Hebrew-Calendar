@@ -16,10 +16,13 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
+using System.Net;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Ordisoftware.Core;
 using Modifiers = Base.Hotkeys.Modifiers;
 
@@ -162,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 630, false, false);
+                                                       true, false, 400, 650, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         //
@@ -1140,6 +1143,41 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TimerMidnight_Tick(DateTime Time)
     {
       DoTimerMidnight();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionOnlineWeather for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOnlineWeather_Click(object sender, EventArgs e)
+    {
+      using ( var client = new WebClient() )
+      {
+        JObject data = null;
+        string location = "";
+        string server = "meteoblue.com";
+        try
+        {
+          string json = "";
+          string query = $"{Settings.GPSLatitude}%20{Settings.GPSLongitude}";
+          string url = $"https://www.{server}/server/search/query3?query={query}";
+          data = JObject.Parse(client.DownloadString(url));
+        }
+        catch ( Exception ex )
+        {
+          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, ex.Message));
+          return;
+        }
+        var results = data["results"];
+        if ( results != null && results.Count() > 0 )
+          location = results[0]["url"]?.ToString();
+        if ( !string.IsNullOrEmpty(location) )
+          SystemManager.RunShell($"https://www.{server}/meteo/week/{location}");
+        else
+          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, AppTranslations.OnlineWeatherLocationNotFound.GetLang()));
+      }
+
     }
 
   }

@@ -169,9 +169,10 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -897,6 +898,7 @@
             this.toolStripSeparator1,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
+            this.ActionOnlineWeather,
             this.toolStripSeparator11,
             this.ActionOpenExportFolder,
             this.ActionGenerate,
@@ -1267,6 +1269,11 @@
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
       // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
       // LunisolarDaysTableAdapter
       // 
       this.LunisolarDaysTableAdapter.ClearBeforeFill = true;
@@ -1277,10 +1284,12 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
-      // toolStripSeparator9
+      // ActionOnlineWeather
       // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      this.ActionOnlineWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOnlineWeather, "ActionOnlineWeather");
+      this.ActionOnlineWeather.Name = "ActionOnlineWeather";
+      this.ActionOnlineWeather.Click += new System.EventHandler(this.ActionOnlineWeather_Click);
       // 
       // MainForm
       // 
@@ -1466,6 +1475,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator Sep6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    private System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
   }
 }
 

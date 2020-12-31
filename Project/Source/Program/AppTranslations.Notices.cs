@@ -202,6 +202,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + E : Open export folder" + Globals.NL +
                         "Alt + C : Open windows calculator" + Globals.NL +
                         "Alt + D : Open windows date and time settings" + Globals.NL +
+                        "Alt + W : Online weather" + Globals.NL +
                         "Alt + G : Generate calendar" + Globals.NL +
                         "Ctrl + F1 : Dates difference calculator" + Globals.NL +
                         "Ctrl + F2 : Celebrations board" + Globals.NL +
@@ -244,6 +245,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + E : Ouvre le dossier d'export" + Globals.NL +
                         "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
                         "Alt + D : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        "Alt + W : Météo en ligne" + Globals.NL +
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
                         "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
                         "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
