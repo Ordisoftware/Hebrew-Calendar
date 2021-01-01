@@ -463,6 +463,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
+        GoToDate(DateTime.Now.Date);
         EnableReminder();
       }
     }
