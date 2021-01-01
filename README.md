@@ -107,7 +107,7 @@ Reset the preferences to default: it will restore the corrupted values in case o
 
 #### What to do if the application does not work normally despite restoring settings?
 
-Use the *Start Menu* link:
+Use the Start Menu link:
 
 &emsp;`Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings`
 
@@ -115,7 +115,7 @@ This will erase all settings as well as those of old versions, which should reso
 
 #### What are the times of celebration?
 
-The times of the Torah's celebrations are *Pesa'h* or Easter which is the liberation of illusions, *Shavuot* or Weeks which is the gift of knowledge, *Teru'ah* or Ringtone which is the joy of being freedom, *Kipurim* or Atonement which is the sorrows of losses, and *Sukot* or Tabernacles which is the construction of the future.
+The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
 
 These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
