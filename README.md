@@ -208,7 +208,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2021.01.03 - Version 6.2
+#### 2021.01.01 - Version 6.2
 
 - Add show online weather in browser using `meteoblue.com`.
 - Add new moons board with clickable dates and selection of years interval.

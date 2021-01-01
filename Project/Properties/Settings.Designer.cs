@@ -2141,5 +2141,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["NewMoonsBoardFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%")]
+        public string WeatherQuery {
+            get {
+                return ((string)(this["WeatherQuery"]));
+            }
+            set {
+                this["WeatherQuery"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.meteoblue.com/weather/week/%LOCATION%")]
+        public string WeatherResult {
+            get {
+                return ((string)(this["WeatherResult"]));
+            }
+            set {
+                this["WeatherResult"] = value;
+            }
+        }
     }
 }
