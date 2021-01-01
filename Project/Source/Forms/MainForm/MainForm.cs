@@ -21,7 +21,6 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Ordisoftware.Core;
 using Modifiers = Base.Hotkeys.Modifiers;
@@ -1152,30 +1151,40 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOnlineWeather_Click(object sender, EventArgs e)
     {
+      string server = new Uri(Program.Settings.WeatherResult).Host;
+      string url = Program.Settings.WeatherQuery;
+      url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
       using ( var client = new WebClient() )
       {
         JObject data = null;
-        string location = "";
-        string server = "meteoblue.com";
+        string json = "";
         try
         {
-          string json = "";
-          string query = $"{Settings.GPSLatitude}%20{Settings.GPSLongitude}";
-          string url = $"https://www.{server}/server/search/query3?query={query}";
-          data = JObject.Parse(client.DownloadString(url));
+          json = client.DownloadString(url);
+          data = JObject.Parse(json);
         }
         catch ( Exception ex )
         {
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, ex.Message));
+          string msg = ex.Message;
+          if ( ex.InnerException != null )
+            msg += Globals.NL2 + ex.InnerException.Message;
+          msg += Globals.NL2 + url;
+          if ( !string.IsNullOrEmpty(json) )
+            msg += Globals.NL2 + json;
+          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
           return;
         }
+        string location = "";
         var results = data["results"];
         if ( results != null && results.Count() > 0 )
           location = results[0]["url"]?.ToString();
         if ( !string.IsNullOrEmpty(location) )
-          SystemManager.RunShell($"https://www.{server}/meteo/week/{location}");
+          SystemManager.RunShell(Program.Settings.WeatherResult.Replace("%LOCATION%", location));
         else
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, AppTranslations.OnlineWeatherLocationNotFound.GetLang()));
+        {
+          string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();
+          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
+        }
       }
 
     }

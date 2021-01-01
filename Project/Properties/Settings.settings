@@ -538,5 +538,11 @@
     <Setting Name="NewMoonsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">984, 461</Value>
     </Setting>
+    <Setting Name="WeatherQuery" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%</Value>
+    </Setting>
+    <Setting Name="WeatherResult" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.meteoblue.com/weather/week/%LOCATION%</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
