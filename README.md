@@ -194,6 +194,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add lunar months description form with menu in tools.
 - Add export and print lunar months data.
+- Add print boards.
 - Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add reminder for solar and lunar anniversary of birth.
@@ -209,7 +210,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### In progress - Version 6.3
 
-- Add export and print boards.
+- Add export boards.
 - Fix null exception after changing current day after preferences form closed.
 
 #### 2021.01.01 - Version 6.2
