@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,15 +64,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !Settings.FirstLaunch
           && SystemManager.CommandLineOptions != null
           && SystemManager.CommandLineOptions.HideGUI )
-          ForceStartupHide = true;
+          Globals.ForceStartupHide = true;
       Application.Run(MainForm.Instance);
     }
-
-    // TODO move in Globals
-    /// <summary>
-    /// Indicate if the application must go to tray icon at startup.
-    /// </summary>
-    static internal bool ForceStartupHide;
 
     /// <summary>
     /// Bring to front the app in case of duplicate process start.

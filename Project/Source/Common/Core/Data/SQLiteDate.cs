@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -23,7 +23,9 @@ namespace Ordisoftware.Core
   static public class SQLiteDate
   {
 
-    // TODO Manage errors
+    static private void RunSecure()
+    {
+    }
 
     /// <summary>
     /// Get a date like "Year.Month.Day".
@@ -54,7 +56,11 @@ namespace Ordisoftware.Core
     {
       if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
       string[] items = date.Split('-');
-      return new DateTime(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), Convert.ToInt32(items[2]));
+      if ( items.Length != 3 ) throw new FormatException(date);
+      if ( !int.TryParse(items[0], out int year) ) throw new FormatException(date);
+      if ( !int.TryParse(items[1], out int month) ) throw new FormatException(date);
+      if ( !int.TryParse(items[2], out int day) ) throw new FormatException(date);
+      return new DateTime(year, month, day);
     }
 
     /// <summary>

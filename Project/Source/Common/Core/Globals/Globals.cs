@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -35,6 +35,11 @@ namespace Ordisoftware.Core
     static public readonly string NL4 = NL3 + NL;
 
     static public bool PreLoadSSLCertificate = true;
+
+    /// <summary>
+    /// Indicate if the application must go to tray icon at startup.
+    /// </summary>
+    static public bool ForceStartupHide;
 
     /// <summary>
     /// Indicate the application code (title without space).
