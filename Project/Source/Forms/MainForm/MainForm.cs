@@ -291,15 +291,16 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Remove flickering due to visual month painting.
+    /// Remove flickering due to painting.
     /// </summary>
     protected override CreateParams CreateParams
     {
       get
       {
-        CreateParams CP = base.CreateParams;
-        CP.ExStyle = CP.ExStyle | 0x02000000; // WS_EX_COMPOSITED
-        return CP;
+        CreateParams cp = base.CreateParams;
+        cp.ExStyle |= 0x02000000;   // + WS_EX_COMPOSITED
+        cp.Style &= ~0x02000000;    // - WS_CLIPCHILDREN
+        return cp;
       }
     }
 
