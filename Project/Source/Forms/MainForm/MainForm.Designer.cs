@@ -133,6 +133,7 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,10 +170,8 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -216,7 +215,7 @@
       // 
       // PanelCalendarInner
       // 
-      this.PanelCalendarInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelCalendarInner.BackColor = System.Drawing.Color.Transparent;
       this.PanelCalendarInner.Controls.Add(this.PanelCalendar);
       resources.ApplyResources(this.PanelCalendarInner, "PanelCalendarInner");
       this.PanelCalendarInner.Name = "PanelCalendarInner";
@@ -263,13 +262,14 @@
       // 
       // TabPageMonth
       // 
+      this.TabPageMonth.BackColor = System.Drawing.Color.White;
       this.TabPageMonth.Controls.Add(this.PanelViewMonth);
       resources.ApplyResources(this.TabPageMonth, "TabPageMonth");
       this.TabPageMonth.Name = "TabPageMonth";
-      this.TabPageMonth.UseVisualStyleBackColor = true;
       // 
       // PanelViewMonth
       // 
+      this.PanelViewMonth.BackColor = System.Drawing.Color.White;
       this.PanelViewMonth.Controls.Add(this.CalendarMonth);
       resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
       this.PanelViewMonth.Name = "PanelViewMonth";
@@ -975,6 +975,13 @@
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
+      // ActionOnlineWeather
+      // 
+      this.ActionOnlineWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOnlineWeather, "ActionOnlineWeather");
+      this.ActionOnlineWeather.Name = "ActionOnlineWeather";
+      this.ActionOnlineWeather.Click += new System.EventHandler(this.ActionOnlineWeather_Click);
+      // 
       // toolStripSeparator11
       // 
       this.toolStripSeparator11.Name = "toolStripSeparator11";
@@ -1025,6 +1032,7 @@
       // 
       // ActionPreferences
       // 
+      this.ActionPreferences.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
       this.ActionPreferences.Name = "ActionPreferences";
@@ -1035,6 +1043,7 @@
       // 
       // ActionSettings
       // 
+      this.ActionSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuitemScreenPosition,
@@ -1250,11 +1259,10 @@
             this.toolStripSeparator4,
             this.ActionTools,
             this.ActionWebLinks,
-            this.Sep6,
             this.ActionInformation,
-            this.ActionSettings,
+            this.Sep6,
             this.ActionPreferences,
-            this.toolStripSeparator9});
+            this.ActionSettings});
       resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
@@ -1266,13 +1274,9 @@
       // 
       // Sep6
       // 
+      this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
-      // 
-      // toolStripSeparator9
-      // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
       // LunisolarDaysTableAdapter
       // 
@@ -1283,13 +1287,6 @@
       this.TableAdapterManager.BackupDataSetBeforeUpdate = false;
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-      // 
-      // ActionOnlineWeather
-      // 
-      this.ActionOnlineWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionOnlineWeather, "ActionOnlineWeather");
-      this.ActionOnlineWeather.Name = "ActionOnlineWeather";
-      this.ActionOnlineWeather.Click += new System.EventHandler(this.ActionOnlineWeather_Click);
       // 
       // MainForm
       // 
@@ -1474,7 +1471,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator Sep6;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
   }
 }

@@ -1681,4 +1681,7 @@
   <data name="ActionOnlineWeather.Text" xml:space="preserve">
     <value>Météo en ligne</value>
   </data>
+  <data name="EditEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Exportation des énumérations sous forme de traductions humanisées</value>
+  </data>
 </root>

@@ -497,9 +497,9 @@ namespace CodeProjectCalendar.NET
     {
       if ( _showingToolTip )
         return;
-
       if ( _calendarView == CalendarViews.Month )
         RenderMonthCalendar(e);
+      else
       if ( _calendarView == CalendarViews.Day )
         RenderDayCalendar(e);
     }
@@ -634,6 +634,9 @@ namespace CodeProjectCalendar.NET
 
     private void ParentResize(object sender, EventArgs e)
     {
+      // ORDISOFTWARE MODIF BEGIN
+      return;
+      // ORDISOFTWARE MODIF END
       ResizeScrollPanel();
       Refresh();
     }
@@ -932,24 +935,24 @@ namespace CodeProjectCalendar.NET
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
+      string monthstr = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM"));
+      int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
       SizeF wedSize = sunSize;// g.MeasureString("Wed", _dayOfWeekFont);
       SizeF thuSize = sunSize;// g.MeasureString("Thu", _dayOfWeekFont);
       SizeF friSize = sunSize;// g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = sunSize;// g.MeasureString("Sat", _dayOfWeekFont);
-      // ORDISOFWTARE MODIF END
-      SizeF dateHeaderSize = g.MeasureString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
-      int headerSpacing = Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
+      SizeF dateHeaderSize = g.MeasureString(monthstr + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+      int headerSpacing = (int)sunSize.Height + 5;// Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
-      // ORDISOFWTARE MODIF BEGIN
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
       int xStart = MarginSize;
       int yStart = MarginSize;
-      DayOfWeek startWeekEnum = DesignMode ? DayOfWeek.Saturday : DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
+      var startWeekEnum = DesignMode ? DayOfWeek.Saturday : DayOfWeekMap.Position[(DayOfWeek)Program.Settings.ShabatDay][(int)new DateTime(_calendarDate.Year, _calendarDate.Month, 1).DayOfWeek];
       int startWeek = ( (int)startWeekEnum ) + 1;
       int rogueDays = startWeek - 1;
-      var value = (float)( DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) + rogueDays ) / 7;
+      var value = (float)( daysinmonth + rogueDays ) / 7;
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
@@ -957,7 +960,7 @@ namespace CodeProjectCalendar.NET
 
       yStart += headerSpacing + controlsSpacing;
 
-      int counter = 1;
+      int counter1 = 1;
       int counter2 = 1;
 
       bool first = false;
@@ -969,75 +972,69 @@ namespace CodeProjectCalendar.NET
       {
         for ( int x = 0; x < 7; x++ )
         {
-          if ( rogueDays == 0 && counter <= DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) )
+          if ( rogueDays == 0 && counter1 <= daysinmonth )
           {
             // ORDISOFTWARE MODIF BEGIN
-            try
-            {
-              if ( MainForm.Instance != null )
-                if ( Program.Settings.UseColors )
-                {
-                  var color = MainForm.Instance.GetDayColor(counter, _calendarDate.Month, _calendarDate.Year);
-                  if ( color != Color.Transparent )
-                    g.FillRectangle(new SolidBrush(color), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
-                }
-            }
-            catch
-            {
-            }
+            if ( MainForm.Instance != null )
+              if ( Program.Settings.UseColors )
+              {
+                var color = MainForm.Instance.GetDayColor(counter1, _calendarDate.Month, _calendarDate.Year);
+                if ( color != Color.Transparent )
+                  g.FillRectangle(new SolidBrush(color), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+              }
             // ORDISOFTWARE MODIF END
 
-            if ( !_calendarDays.ContainsKey(counter) )
-              _calendarDays.Add(counter, new Point(xStart, (int)( yStart + 2f + g.MeasureString(counter.ToString(CultureInfo.InvariantCulture), _daysFont).Height )));
+            if ( !_calendarDays.ContainsKey(counter1) )
+              _calendarDays.Add(counter1, new Point(xStart, (int)( yStart + 2f + g.MeasureString(counter1.ToString(CultureInfo.InvariantCulture), _daysFont).Height )));
 
-            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day && _highlightCurrentDay )
+            if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day && _highlightCurrentDay )
               g.FillRectangle(BrushGrayLight, xStart, yStart, cellWidth, cellHeight);
 
             if ( first == false )
             {
               first = true;
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
                 {
-                  string strCounter = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture);
-                  SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                  string strCounter1 = monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture);
+                  SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                   g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                  g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                  g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
-                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
+                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter1.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + counter.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
+                g.DrawString(monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
               }
             }
             else
             {
-              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter == DateTime.Now.Day )
+              if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN
                 if ( Program.Settings.UseColors )
                 {
 
-                  string strCounter = counter.ToString(CultureInfo.InvariantCulture);
-                  SizeF stringSize = g.MeasureString(strCounter, _todayFont);
+                  string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
+                  SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                   g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                  g.DrawString(strCounter, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                  g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
                 }
                 else
-                  g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
+                  g.DrawString(counter1.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                g.DrawString(counter.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
+                g.DrawString(counter1.ToString(CultureInfo.InvariantCulture), _daysFont, BrushText, xStart + 5, yStart + 2);
               }
             }
-            counter++;
+            counter1++;
           }
           else if ( rogueDays > 0 )
           {
@@ -1051,7 +1048,7 @@ namespace CodeProjectCalendar.NET
 
           g.DrawRectangle(PenTextReduced, xStart, yStart, cellWidth, cellHeight);
 
-          if ( rogueDays == 0 && counter > DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month) )
+          if ( rogueDays == 0 && counter1 > daysinmonth )
           {
             if ( first2 == false )
               first2 = true;
@@ -1083,113 +1080,102 @@ namespace CodeProjectCalendar.NET
       yStart = MarginSize + controlsSpacing;
 
       // ORDISOFTWARE MODIF BEGIN
-      try
-      {
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Sunday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      var daysofweek = DayOfWeekMap.LocalizedNamesText[Languages.Current][(DayOfWeek)Program.Settings.ShabatDay];
 
-        xStart = MarginSize + ( ( cellWidth - (int)monSize.Width ) / 2 ) + cellWidth;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Monday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      g.DrawString(daysofweek[(int)DayOfWeek.Sunday], _dayOfWeekFont, BrushText, xStart, yStart);
 
-        xStart = MarginSize + ( ( cellWidth - (int)tueSize.Width ) / 2 ) + cellWidth * 2;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Tuesday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      xStart = MarginSize + ( ( cellWidth - (int)monSize.Width ) / 2 ) + cellWidth;
+      g.DrawString(daysofweek[(int)DayOfWeek.Monday], _dayOfWeekFont, BrushText, xStart, yStart);
 
-        xStart = MarginSize + ( ( cellWidth - (int)wedSize.Width ) / 2 ) + cellWidth * 3;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Wednesday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      xStart = MarginSize + ( ( cellWidth - (int)tueSize.Width ) / 2 ) + cellWidth * 2;
+      g.DrawString(daysofweek[(int)DayOfWeek.Tuesday], _dayOfWeekFont, BrushText, xStart, yStart);
 
-        xStart = MarginSize + ( ( cellWidth - (int)thuSize.Width ) / 2 ) + cellWidth * 4;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Thursday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      xStart = MarginSize + ( ( cellWidth - (int)wedSize.Width ) / 2 ) + cellWidth * 3;
+      g.DrawString(daysofweek[(int)DayOfWeek.Wednesday], _dayOfWeekFont, BrushText, xStart, yStart);
 
-        xStart = MarginSize + ( ( cellWidth - (int)friSize.Width ) / 2 ) + cellWidth * 5;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Friday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
+      xStart = MarginSize + ( ( cellWidth - (int)thuSize.Width ) / 2 ) + cellWidth * 4;
+      g.DrawString(daysofweek[(int)DayOfWeek.Thursday], _dayOfWeekFont, BrushText, xStart, yStart);
 
-        xStart = MarginSize + ( ( cellWidth - (int)satSize.Width ) / 2 ) + cellWidth * 6;
-        g.DrawString(AppTranslations.DayOfWeek.GetLang(DayOfWeekMap.Names[(DayOfWeek)Program.Settings.ShabatDay][(int)DayOfWeek.Saturday]).Substring(0, 3), _dayOfWeekFont, BrushText, xStart, yStart);
-      }
-      catch
-      {
-      }
+      xStart = MarginSize + ( ( cellWidth - (int)friSize.Width ) / 2 ) + cellWidth * 5;
+      g.DrawString(daysofweek[(int)DayOfWeek.Friday], _dayOfWeekFont, BrushText, xStart, yStart);
+
+      xStart = MarginSize + ( ( cellWidth - (int)satSize.Width ) / 2 ) + cellWidth * 6;
+      g.DrawString(daysofweek[(int)DayOfWeek.Saturday], _dayOfWeekFont, BrushText, xStart, yStart);
       // ORDISOFTWARE MODIF END
 
       if ( _showDateInHeader )
       {
-        g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM")) + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
+        g.DrawString(monthstr + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       // ORDISOFTWARE MODIF BEGIN
       //_events.Sort(new EventComparer());
       // ORDISOFTWARE MODIF END
-
-      try
+      bool generateSunToolTips = Program.Settings.MonthViewSunToolTips;
+      for ( int i = 1; i <= daysinmonth; i++ )
       {
-        bool generateEvents = Program.Settings.MonthViewSunToolTips;
-        for ( int i = 1; i <= DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month); i++ )
-        {
-          int renderOffsetY = 0;
+        int renderOffsetY = 0;
 
+        // ORDISOFTWARE MODIF BEGIN
+        //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
+        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
+        var list = _events.Where(ev => ev.Date == dt
+                                    /*&& ( ev.Enabled || _showDisabledEvents )*/);
+        foreach ( IEvent v in list )
+        //foreach ( IEvent v in _events )
+        // ORDISOFTWARE MODIF END
+        {
           // ORDISOFTWARE MODIF BEGIN
-          //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
-          var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
-          var list = _events.Where(ev => ev.Date == dt
-                                      /*&& ( ev.Enabled || _showDisabledEvents )*/);
-          foreach ( IEvent v in list )
-          //foreach ( IEvent v in _events )
+          if ( DayForward(v, dt) )
+          //if ( NeedsRendering(v, dt) )
           // ORDISOFTWARE MODIF END
           {
+            int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
+            Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
+
+            int offsetY = renderOffsetY;
+            Region r = g.Clip;
             // ORDISOFTWARE MODIF BEGIN
-            if ( DayForward(v, dt) )
-            //if ( NeedsRendering(v, dt) )
+            if ( i > _calendarDays.Count ) continue;
             // ORDISOFTWARE MODIF END
+
+            Point point = _calendarDays[i];
+            SizeF sz = g.MeasureString(v.EventText, v.EventFont);
+            int yy = point.Y - 1;
+
+            // ORDISOFTWARE MODIF BEGIN
+            //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
+            int xx = point.X + 5;
+            if ( sz.Width > cellWidth ) xx = point.X;
+            // ORDISOFTWARE MODIF END
+
+            if ( renderOffsetY + sz.Height > cellHeight - 10 ) continue;
+
+            g.Clip = new Region(new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height));
+            g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
+
+            if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
+              g.DrawRectangle(PenBrushBlack, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
+
+            g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
+            g.Clip = r;
+
+            // ORDISOFTWARE MODIF BEGIN
+            if ( generateSunToolTips )
             {
-              int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
-              Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
-
-              int offsetY = renderOffsetY;
-              Region r = g.Clip;
-              // ORDISOFTWARE MODIF BEGIN
-              if ( i > _calendarDays.Count ) continue;
-              // ORDISOFTWARE MODIF END
-
-              Point point = _calendarDays[i];
-              SizeF sz = g.MeasureString(v.EventText, v.EventFont);
-              int yy = point.Y - 1;
-
-              // ORDISOFTWARE MODIF BEGIN
-              //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
-              int xx = point.X + 5;
-              if ( sz.Width > cellWidth ) xx = point.X;
-              // ORDISOFTWARE MODIF END
-
-              if ( renderOffsetY + sz.Height > cellHeight - 10 ) continue;
-
-              g.Clip = new Region(new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height));
-              g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
-
-              if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-                g.DrawRectangle(PenBrushBlack, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
-
-              g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
-              g.Clip = r;
-
-              // ORDISOFTWARE MODIF BEGIN
-              if ( generateEvents )
+              var ev = new CalendarEvent
               {
-                var ev = new CalendarEvent
-                {
-                  EventArea = new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height),
-                  Event = v,
-                  Date = dt
-                };
-                _calendarEvents.Add(ev);
-              }
-              // ORDISOFTWARE MODIF END
-
-              renderOffsetY += (int)sz.Height + 1;
+                EventArea = new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height),
+                Event = v,
+                Date = dt
+              };
+              _calendarEvents.Add(ev);
             }
+            // ORDISOFTWARE MODIF END
+
+            renderOffsetY += (int)sz.Height + 1;
           }
         }
-      }
-      catch
-      {
       }
 
       _rectangles.Clear();

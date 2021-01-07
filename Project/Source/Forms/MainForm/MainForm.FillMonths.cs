@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -30,9 +30,9 @@ namespace Ordisoftware.Hebrew.Calendar
     internal Color GetDayColor(int counter, int month, int year)
     {
       int indexYear = YearLast - year;
-      if (indexYear < 0 || indexYear > DayColors.GetUpperBound(0))
-        return Color.Transparent;
-      return DayColors[indexYear, month, counter];
+      return indexYear < 0 || indexYear > DayColors.GetUpperBound(0)
+             ? Color.Transparent
+             : DayColors[indexYear, month, counter];
     }
 
     static public Color MixColor(Color c1, Color c2)
@@ -58,9 +58,15 @@ namespace Ordisoftware.Hebrew.Calendar
       DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
       DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
       if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
-        throw new ArgumentOutOfRangeException("DateFirst & DateLast in " + nameof(InitializeYearsInterval));
-      YearFirst = DateFirst.Year;
-      YearLast = DateLast.Year;
+      {
+        YearFirst = DateTime.Now.Year - 1;
+        YearLast = Settings.AutoGenerateYearsInternal - 1;
+      }
+      else
+      {
+        YearFirst = DateFirst.Year;
+        YearLast = DateLast.Year;
+      }
       YearsInterval = DateLast.Year - DateFirst.Year + 1;
       YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
     }

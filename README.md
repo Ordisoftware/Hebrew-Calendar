@@ -208,6 +208,14 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2021.01.08 - Version 6.3
+
+- Optimize visual month painting speed.
+- Optimize main form popup speed to remove flickering.
+- Fix Rotate view is done only between visual month and grid.
+- Fix null exception after changing current day after preferences form closed.
+- Fix exception when running the application having a config file but no database (if deleted).
+
 #### 2021.01.01 - Version 6.2
 
 - Add show online weather in browser using `meteoblue.com`.
