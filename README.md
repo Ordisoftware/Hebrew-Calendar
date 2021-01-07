@@ -212,6 +212,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Optimize visual month painting speed.
 - Optimize main form popup speed to remove flickering.
+- Fix Rotate view is done only between visual month and grid.
 - Fix null exception after changing current day after preferences form closed.
 - Fix exception when running the application having a config file but no database (if deleted).
 
