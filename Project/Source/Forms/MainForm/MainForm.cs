@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Net;
 using System.Data;
+using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -155,7 +156,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
         Settings.Save();
         this.Popup();
-        if ( Settings.StartupHide || Program.ForceStartupHide )
+        if ( Settings.StartupHide || Globals.ForceStartupHide )
           MenuShowHide.PerformClick();
         SystemManager.TryCatch(() =>
         {
@@ -290,18 +291,30 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Remove flickering due to visual month painting.
+    /// </summary>
+    protected override CreateParams CreateParams
+    {
+      get
+      {
+        CreateParams CP = base.CreateParams;
+        CP.ExStyle = CP.ExStyle | 0x02000000; // WS_EX_COMPOSITED
+        return CP;
+      }
+    }
+
+    /// <summary>
     /// Event handler. Called by MainForm for windows changed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
     private void MainForm_WindowsChanged(object sender, EventArgs e)
     {
-      if ( !Globals.IsReady ) return;
       if ( !Visible ) return;
+      if ( !Globals.IsReady ) return;
       if ( Globals.IsExiting ) return;
-      //Settings.Store();
       if ( WindowState != FormWindowState.Normal ) return;
-      EditScreenNone.PerformClick(); // TODO don't call if minimized
+      EditScreenNone.PerformClick();
     }
 
     /// <summary>
@@ -506,9 +519,9 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           if ( !NavigationForm.Instance.Visible )
             if ( Settings.MainFormShownGoToToday )
-              GoToDate(DateTime.Today);
+              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(DateTime.Today))).Start();
             else
-              GoToDate(CalendarMonth.CalendarDate.Date);
+              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(CalendarMonth.CalendarDate.Date))).Start();
         }
         else
         {
