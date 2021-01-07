@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -63,15 +63,12 @@ namespace Ordisoftware.Hebrew.Calendar
           return true;
         // Change view
         case Keys.Control | Keys.Shift | Keys.Tab:
-          SetView(Settings.CurrentView.Previous());
+          SetView(Settings.CurrentView.Previous(new[] { ViewMode.None }));
           return true;
         case Keys.Control | Keys.Tab:
-          SetView(Settings.CurrentView.Next());
+          SetView(Settings.CurrentView.Next(new[] { ViewMode.None }));
           return true;
         // Application menu
-        //case Keys.Alt | Keys.B:
-          //ActionBookmarks.ShowDropDown();
-          //return true;
         case Keys.Alt | Keys.T:
           ActionTools.ShowDropDown();
           return true;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -19,24 +19,35 @@ using System.Globalization;
 namespace Ordisoftware.Core
 {
 
-  // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
   static public class EnumHelper
   {
-    static public T Next<T>(this T value) where T : Enum
+
+  // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
+    static public T Next<T>(this T value, T[] skip = null) where T : Enum
     {
-      return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
-                 .SkipWhile(e => !value.Equals(e))
-                 .Skip(1)
-                 .First();
+      var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+                       .SkipWhile(e => !value.Equals(e))
+                       .Skip(1)
+                       .First();
+      if ( skip != null )
+        foreach ( T item in skip )
+          if ( item.Equals(result) )
+            result = result.Next(skip);
+      return result;
     }
 
-    static public T Previous<T>(this T value) where T : Enum
+    static public T Previous<T>(this T value, T[] skip = null) where T : Enum
     {
-      return Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
-                 .Reverse()
-                 .SkipWhile(e => !value.Equals(e))
-                 .Skip(1)
-                 .First();
+      var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+                       .Reverse()
+                       .SkipWhile(e => !value.Equals(e))
+                       .Skip(1)
+                       .First();
+      if ( skip != null )
+        foreach ( T item in skip )
+          if ( item.Equals(result) )
+            result = result.Previous(skip);
+      return result;
     }
 
     static public string ToStringFull<T>(this T value) where T : Enum
@@ -55,6 +66,7 @@ namespace Ordisoftware.Core
         flagsInt &= ~flagInt;
       return (T)(object)flagsInt;
     }
+
   }
 
 }

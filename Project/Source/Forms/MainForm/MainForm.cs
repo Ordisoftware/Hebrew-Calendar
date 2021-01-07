@@ -298,8 +298,14 @@ namespace Ordisoftware.Hebrew.Calendar
       get
       {
         CreateParams cp = base.CreateParams;
-        cp.ExStyle |= 0x02000000;   // + WS_EX_COMPOSITED
-        cp.Style &= ~0x02000000;    // - WS_CLIPCHILDREN
+        switch ( Settings.CurrentView )
+        {
+          case ViewMode.Text:
+          case ViewMode.Month:
+            cp.ExStyle |= 0x02000000;   // + WS_EX_COMPOSITED
+            //cp.Style &= ~0x02000000;    // - WS_CLIPCHILDREN
+            break;
+        }
         return cp;
       }
     }
