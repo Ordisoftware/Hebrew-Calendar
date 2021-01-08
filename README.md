@@ -211,10 +211,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2021.01.08 - Version 6.3
 
 - Optimize visual month painting speed.
-- Optimize main form popup speed to remove flickering.
+- Add option to enable windows double-buffering painting to reduce flickering.
 - Fix Rotate view is done only between visual month and grid.
-- Fix null exception after changing current day after preferences form closed.
-- Fix exception when running the application having a config file but no database (if deleted).
+- Fix null exception after changing current day once preferences form closed.
+- Fix exception when running application having a config file but no database if deleted.
 
 #### 2021.01.01 - Version 6.2
 
