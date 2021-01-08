@@ -2165,5 +2165,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["WeatherResult"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WindowsDoubleBufferingEnabled {
+            get {
+                return ((bool)(this["WindowsDoubleBufferingEnabled"]));
+            }
+            set {
+                this["WindowsDoubleBufferingEnabled"] = value;
+            }
+        }
     }
 }

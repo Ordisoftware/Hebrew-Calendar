@@ -113,6 +113,12 @@ Use the Start Menu link:
 
 This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
 
+#### What is the Windows double-buffering?
+
+When enabled, this will speed up the display of the main form when it is displayed, but it may cause a slight black flicker.
+
+When disabled, top menu painting causes latency.
+
 #### What are the times of celebration?
 
 The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
@@ -211,10 +217,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### 2021.01.08 - Version 6.3
 
 - Optimize visual month painting speed.
-- Optimize main form popup speed to remove flickering.
+- Add option to enable Windows double-buffering painting.
 - Fix Rotate view is done only between visual month and grid.
-- Fix null exception after changing current day after preferences form closed.
-- Fix exception when running the application having a config file but no database (if deleted).
+- Fix null exception after changing current day once preferences form closed.
+- Fix exception when running application having a config file but no database if deleted.
 
 #### 2021.01.01 - Version 6.2
 

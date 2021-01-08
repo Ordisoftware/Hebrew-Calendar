@@ -976,4 +976,7 @@
   <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
     <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
   </data>
+  <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
+    <value>Activer la peinture à double tampon de Windows</value>
+  </data>
 </root>

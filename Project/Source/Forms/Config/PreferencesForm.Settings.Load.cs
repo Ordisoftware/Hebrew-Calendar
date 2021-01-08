@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -109,6 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditSaveImageCountWarning.Value = Settings.SaveImageCountWarning; });
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
       SystemManager.TryCatch(() => { EditMainFormShownGoToToday.Checked = Settings.MainFormShownGoToToday; });
+      SystemManager.TryCatch(() => { EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled; });
       // Hotkey
       InitHotKeyControls();
       // System

@@ -247,6 +247,7 @@
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
+      this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -427,6 +428,7 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
@@ -2062,6 +2064,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditWindowsDoubleBufferingEnabled
+      // 
+      resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
+      this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
+      this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2349,5 +2357,6 @@
     private System.Windows.Forms.Button ActionImportSettings;
     private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
     private System.Windows.Forms.OpenFileDialog OpenSettingsDialog;
+    private System.Windows.Forms.CheckBox EditWindowsDoubleBufferingEnabled;
   }
 }
