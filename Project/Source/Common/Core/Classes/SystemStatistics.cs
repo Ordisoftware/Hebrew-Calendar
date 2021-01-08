@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
       => Globals.IsDebugExecutable ? "Debug" : "Release";
 
     public string CompiledDate
-      => Globals.CompiledDateTime.ToString();
+      => Globals.CompiledDateTime.ToString("g");
 
     public string TotalVisibleMemory
       => SystemManager.TotalVisibleMemory;
