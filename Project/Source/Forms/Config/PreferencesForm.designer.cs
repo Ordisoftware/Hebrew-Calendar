@@ -58,6 +58,7 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
@@ -247,7 +248,6 @@
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
-      this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -516,6 +516,12 @@
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
+      // EditWindowsDoubleBufferingEnabled
+      // 
+      resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
+      this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
+      this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
       // 
       // EditWebLinksMenuEnabled
       // 
@@ -2063,12 +2069,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // EditWindowsDoubleBufferingEnabled
-      // 
-      resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
-      this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
-      this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 

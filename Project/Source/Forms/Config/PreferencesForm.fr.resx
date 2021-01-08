@@ -977,6 +977,6 @@
     <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
-    <value>Activer la peinture à double tampon de Windows</value>
+    <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
 </root>
