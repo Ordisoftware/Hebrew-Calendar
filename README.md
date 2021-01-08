@@ -221,6 +221,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Fix Rotate view is done only between visual month and grid.
 - Fix null exception after changing current day once preferences form closed.
 - Fix exception when running application having a config file but no database if deleted.
+- Update help.
 
 #### 2021.01.01 - Version 6.2
 
