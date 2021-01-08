@@ -291,21 +291,22 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Remove flickering due to painting.
+    /// Enable double-buffering.
     /// </summary>
     protected override CreateParams CreateParams
     {
       get
       {
         CreateParams cp = base.CreateParams;
-        switch ( Settings.CurrentView )
-        {
-          case ViewMode.Text:
-          case ViewMode.Month:
-            cp.ExStyle |= 0x02000000;   // + WS_EX_COMPOSITED
-            //cp.Style &= ~0x02000000;    // - WS_CLIPCHILDREN
-            break;
-        }
+        if ( Settings.WindowsDoubleBufferingEnabled )
+          switch ( Settings.CurrentView )
+          {
+            case ViewMode.Text:
+            case ViewMode.Month:
+              cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
+              //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
+              break;
+          }
         return cp;
       }
     }
