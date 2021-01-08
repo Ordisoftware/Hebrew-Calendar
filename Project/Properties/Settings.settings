@@ -545,7 +545,7 @@
       <Value Profile="(Default)">https://www.meteoblue.com/weather/week/%LOCATION%</Value>
     </Setting>
     <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

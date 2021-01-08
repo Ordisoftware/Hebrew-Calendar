@@ -744,13 +744,13 @@
     <value>23, 155</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 17</value>
+    <value>237, 17</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
-    <value>Enable Windows double-buffering painting</value>
+    <value>Enable double-buffering for drawing windows</value>
   </data>
   <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.Name" xml:space="preserve">
     <value>EditWindowsDoubleBufferingEnabled</value>
