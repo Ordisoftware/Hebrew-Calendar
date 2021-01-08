@@ -115,7 +115,7 @@ This will erase all settings as well as those of old versions, which should reso
 
 #### What is the Windows double-buffering?
 
-When enabled, this will speed up the display of the main form when it is displayed, but it may cause a slight black flicker.
+When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
 
 When disabled, top menu painting causes latency.
 
