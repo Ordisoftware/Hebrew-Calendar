@@ -529,7 +529,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 59</value>
+    <value>15, 60</value>
   </data>
   <data name="runningTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -1378,7 +1378,7 @@
     <value>NoControl</value>
   </data>
   <data name="processorTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 75</value>
+    <value>15, 77</value>
   </data>
   <data name="processorTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -1657,7 +1657,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCompiled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 38</value>
+    <value>15, 39</value>
   </data>
   <data name="LabelCompiled.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -2198,7 +2198,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 58</value>
+    <value>138, 60</value>
   </data>
   <data name="runningTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3104,7 +3104,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCompiled1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 38</value>
+    <value>88, 39</value>
   </data>
   <data name="LabelCompiled1.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -3164,7 +3164,7 @@
     <value>NoControl</value>
   </data>
   <data name="processorTime1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 78</value>
+    <value>138, 77</value>
   </data>
   <data name="processorTime1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
