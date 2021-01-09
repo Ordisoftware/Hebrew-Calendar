@@ -1684,4 +1684,7 @@
   <data name="EditEnumsAsTranslations.Text" xml:space="preserve">
     <value>Exportation des énumérations sous forme de traductions humanisées</value>
   </data>
+  <data name="ActionLocalWeather.Text" xml:space="preserve">
+    <value>Météo Windows</value>
+  </data>
 </root>

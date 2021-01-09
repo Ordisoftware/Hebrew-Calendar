@@ -47,6 +47,8 @@
       this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.SaveThemeDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
+      this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
+      this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
@@ -234,6 +236,10 @@
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.LabelWindowsWeatherAppPath = new System.Windows.Forms.Label();
+      this.ActionResetWindowsWeatherAppPath = new System.Windows.Forms.Button();
+      this.ActionSelectWindowsWeatherAppPath = new System.Windows.Forms.Button();
+      this.EditWindowsWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
@@ -246,8 +252,6 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
-      this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1968,6 +1972,10 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.LabelWindowsWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetWindowsWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectWindowsWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.EditWindowsWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
@@ -1982,6 +1990,35 @@
       this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
+      // 
+      // LabelWindowsWeatherAppPath
+      // 
+      resources.ApplyResources(this.LabelWindowsWeatherAppPath, "LabelWindowsWeatherAppPath");
+      this.LabelWindowsWeatherAppPath.Name = "LabelWindowsWeatherAppPath";
+      // 
+      // ActionResetWindowsWeatherAppPath
+      // 
+      this.ActionResetWindowsWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetWindowsWeatherAppPath, "ActionResetWindowsWeatherAppPath");
+      this.ActionResetWindowsWeatherAppPath.Name = "ActionResetWindowsWeatherAppPath";
+      this.ActionResetWindowsWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionResetWindowsWeatherAppPath.Click += new System.EventHandler(this.ActionResetWindowsWeatherAppPath_Click);
+      // 
+      // ActionSelectWindowsWeatherAppPath
+      // 
+      this.ActionSelectWindowsWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectWindowsWeatherAppPath, "ActionSelectWindowsWeatherAppPath");
+      this.ActionSelectWindowsWeatherAppPath.Name = "ActionSelectWindowsWeatherAppPath";
+      this.ActionSelectWindowsWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionSelectWindowsWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWindowsWeatherAppPath_Click);
+      // 
+      // EditWindowsWeatherAppPath
+      // 
+      this.EditWindowsWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditWindowsWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditWindowsWeatherAppPath, "EditWindowsWeatherAppPath");
+      this.EditWindowsWeatherAppPath.Name = "EditWindowsWeatherAppPath";
+      this.EditWindowsWeatherAppPath.ReadOnly = true;
       // 
       // LabelExportFolder
       // 
@@ -2358,5 +2395,9 @@
     private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
     private System.Windows.Forms.OpenFileDialog OpenSettingsDialog;
     private System.Windows.Forms.CheckBox EditWindowsDoubleBufferingEnabled;
+    private System.Windows.Forms.Label LabelWindowsWeatherAppPath;
+    private System.Windows.Forms.Button ActionResetWindowsWeatherAppPath;
+    private System.Windows.Forms.Button ActionSelectWindowsWeatherAppPath;
+    private Core.UndoRedoTextBox EditWindowsWeatherAppPath;
   }
 }

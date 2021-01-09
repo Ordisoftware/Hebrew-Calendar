@@ -2177,5 +2177,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["WindowsDoubleBufferingEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("msnweather:")]
+        public string WindowsWeatherAppPath {
+            get {
+                return ((string)(this["WindowsWeatherAppPath"]));
+            }
+            set {
+                this["WindowsWeatherAppPath"] = value;
+            }
+        }
     }
 }

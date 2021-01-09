@@ -102,6 +102,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.MainFormShownGoToToday = EditMainFormShownGoToToday.Checked;
       Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
+      Settings.WindowsWeatherAppPath = EditWindowsWeatherAppPath.Text;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;

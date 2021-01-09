@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 650, false, false);
+                                                       true, false, 400, 660, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         //
@@ -1164,6 +1164,16 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TimerMidnight_Tick(DateTime Time)
     {
       DoTimerMidnight();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionLocalWeather for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionLocalWeather_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Settings.WindowsWeatherAppPath);
     }
 
     /// <summary>

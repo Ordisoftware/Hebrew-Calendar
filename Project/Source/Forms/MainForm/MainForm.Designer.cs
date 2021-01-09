@@ -172,6 +172,8 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -898,6 +900,8 @@
             this.toolStripSeparator1,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
+            this.toolStripSeparator9,
+            this.ActionLocalWeather,
             this.ActionOnlineWeather,
             this.toolStripSeparator11,
             this.ActionOpenExportFolder,
@@ -1288,6 +1292,18 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // ActionLocalWeather
+      // 
+      this.ActionLocalWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionLocalWeather, "ActionLocalWeather");
+      this.ActionLocalWeather.Name = "ActionLocalWeather";
+      this.ActionLocalWeather.Click += new System.EventHandler(this.ActionLocalWeather_Click);
+      // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1472,6 +1488,8 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator Sep6;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
+    private System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
   }
 }
 

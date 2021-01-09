@@ -539,6 +539,20 @@ namespace Ordisoftware.Hebrew.Calendar
         EditCalculatorPath.Text = OpenExeFileDialog.FileName;
     }
 
+    private void ActionSelectWindowsWeatherAppPath_Click(object sender, EventArgs e)
+    {
+      SystemManager.TryCatch(() =>
+      {
+        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditWindowsWeatherAppPath.Text);
+      });
+      SystemManager.TryCatch(() =>
+      {
+        OpenExeFileDialog.FileName = Path.GetFileName(EditWindowsWeatherAppPath.Text);
+      });
+      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
+        EditWindowsWeatherAppPath.Text = OpenExeFileDialog.FileName;
+    }
+
     private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatch(() =>
@@ -575,6 +589,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
         EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
+    }
+
+    private void ActionResetWindowsWeatherAppPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditWindowsWeatherAppPath.Text = (string)Settings.Properties["WindowsWeatherAppPath"].DefaultValue;
     }
 
     private void ActionResetHebrewLettersPath_Click(object sender, EventArgs e)
