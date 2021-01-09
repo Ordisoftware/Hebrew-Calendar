@@ -117,7 +117,7 @@ This will erase all settings as well as those of old versions, which should reso
 
 When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
 
-When disabled, top menu painting causes latency.
+When disabled, top menu painting may cause latency.
 
 #### What are the times of celebration?
 
@@ -214,10 +214,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### 2021.01.08 - Version 6.3
+#### 2021.01.10 - Version 6.3
 
 - Optimize visual month painting speed.
-- Add option to enable Windows double-buffering painting.
+- Add option to enable Windows double-buffering drawing.
 - Fix Rotate view is done only between visual month and grid.
 - Fix null exception after changing current day once preferences form closed.
 - Fix exception when running application having a config file but no database if deleted.
