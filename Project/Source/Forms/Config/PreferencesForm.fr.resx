@@ -121,11 +121,45 @@
     <value>Fermer</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionExportSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
+        MGA0gRYMUcxGO4Hu6g7dGkKwxYVdOMSq1iRWk4UKojiP8fPeV5VKm5VBDxzuqXr3nPte1bP+GWs7RoZW
+        tjkkWxwSzQ62YTaq81rXtU/7I2sIfbkYrJL+yBoi2ZINV8Z3wJ09UNpNW3YG7u4yNLokurTTtNW3LgyQ
+        LSpah6dozwR0OAGduWlOOs8NO/PTnMoFnMkHHBz2zJEiawi7OWMCKp9g8jME3+Bc1qMqtfodzucrvJb1
+        d0Lr6BB7/e3Une6eD5kLqH6FGTG9+Kkmj5dSX83CxWIF69AN4U32DZRpcutodG2WH+8PQ+YCujKP6XYm
+        uDDicang0yNV2Sdap24S4/ryUtbdX2K4+cEa81figDcy8a1M/CC6t+DxUaqcitQtny0PG8zUjW59HKDP
+        fwR8+SWU+kN4uegheUge18eeYh1JG+4fdGksJ9hQXoZ9tkuPsC0OSBUmSBWfcOW2z8BYhf5R33Bw/Bnp
+        0iTOvSnzEZvcJCt6D4dmRTIKqMXVUS9ScK1GH0g/Qvtjs2KxN3F1+4KL1HAi915DNDlxLIOtFG1qjdZ1
+        vcbaH1ljbBXqlv6W2v+/YFm/ASTqJNKXvI4rAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionImportSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
+        jMXGlSgtJu8lkvhRsHaVtAv1JUKTaKF1IcRPVKw9zkye+aAbiz1w3hzuzJw7996n/itaAwsf73sNaG4D
+        9gEDDqFuxarmPNe1BhMlq7UMXvwXcL3VWgbvIFh9DHzuAtaewqv/AL48EYpeI815gubWqwYtgQQaXkQl
+        4Y/l4dOLCBhFDMbzCBoFIWu/XoBn/rvUabSh1U7jv4zgQcYB9WwWv34DO+fANnFINyVe68IZsHUi/XQf
+        MShHfwyN/VGo3g9wphUefmuC6p7BPhXs/QFGF0zskiFzJGHi5wWZk0nFoC1tA9OVviMGYvL1HlTPHMKL
+        OYylcnhNJsw3ySxCiU280terBi6r+S+D53OgATCeMnFMkfk2aeKIYumSPgQxaHLHoNERbJ5Jae6w7uEa
+        k2RA0wvDpOkEOOUEQQwInczm4RDaM3Zpnl3dwvRKFu+Xs4h8ymGKIpP1uyUTE6mNOgMBP+PdvvIz1mJ6
+        2bRUvWZotQaEzlv/iU5//IAX2dlOz8tPzGNKrNGc5zqnL35otVbwiCh3ckNy/W2g1BX3aDCxKWCzKQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
   </data>
   <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
+  </data>
+  <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 49</value>
+  </data>
+  <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 395</value>
   </data>
   <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -185,6 +219,12 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
+  </data>
+  <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
+    <value>Activer le double tampon pour le dessin des fenêtres</value>
+  </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
   </data>
@@ -208,6 +248,12 @@
   </data>
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
+  </data>
+  <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 49</value>
+  </data>
+  <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 395</value>
   </data>
   <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
@@ -320,10 +366,16 @@
     <value>Fenêtre de l'application</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 17</value>
+    <value>305, 17</value>
   </data>
   <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Activer le raccourci global pour faire apparaître l'application</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+    <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
   </data>
   <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
     <value>316, 17</value>
@@ -865,6 +917,41 @@
   <data name="TabPagePaths.Text" xml:space="preserve">
     <value>Chemins</value>
   </data>
+  <data name="LabelWindowsWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="LabelWindowsWeatherAppPath.Text" xml:space="preserve">
+    <value>Application de météo</value>
+  </data>
+  <data name="ActionResetWindowsWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectWindowsWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
   </data>
@@ -901,10 +988,10 @@
 </value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 13</value>
+    <value>103, 13</value>
   </data>
   <data name="LabelCalculatorPath.Text" xml:space="preserve">
-    <value>Chemin de la calculatrice système</value>
+    <value>Calculatrice système</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -949,10 +1036,10 @@
 </value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
+    <value>79, 13</value>
   </data>
   <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
-    <value>Chemin de Hebrew Letters</value>
+    <value>Hebrew Letters</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -972,11 +1059,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
-    <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
-  </data>
-  <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
-    <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
 </root>

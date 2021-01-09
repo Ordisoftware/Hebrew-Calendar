@@ -109,6 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
       SystemManager.TryCatch(() => { EditMainFormShownGoToToday.Checked = Settings.MainFormShownGoToToday; });
       SystemManager.TryCatch(() => { EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled; });
+      SystemManager.TryCatch(() => { EditWindowsWeatherAppPath.Text = Settings.WindowsWeatherAppPath; });
       // Hotkey
       InitHotKeyControls();
       // System

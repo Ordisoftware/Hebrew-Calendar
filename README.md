@@ -177,6 +177,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Alt + E | Open export folder |
 | Alt + C | Open windows calculator |
 | Alt + D | Open windows date and time settings |
+| Alt + M | Windows weather |
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Ctrl + F1 | Dates difference calculator |
@@ -218,6 +219,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Optimize visual month painting speed.
 - Add option to enable Windows double-buffering drawing.
+- Add option to define local weather app.
+- Add launch local weather app like MSN Weather.
 - Fix Rotate view is done only between visual month and grid.
 - Fix null exception after changing current day once preferences form closed.
 - Fix exception when running application having a config file but no database if deleted.
