@@ -133,7 +133,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBEventsCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 168</value>
+    <value>15, 165</value>
   </data>
   <data name="dBEventsCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBFileSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="dBFileSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -205,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBFirstYearLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 99</value>
+    <value>15, 96</value>
   </data>
   <data name="dBFirstYearLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -241,7 +241,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBLastYearLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 115</value>
+    <value>15, 112</value>
   </data>
   <data name="dBLastYearLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBRecordsCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 152</value>
+    <value>15, 149</value>
   </data>
   <data name="dBRecordsCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -313,7 +313,7 @@
     <value>NoControl</value>
   </data>
   <data name="fillMonthViewTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="fillMonthViewTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -349,7 +349,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateYearsTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 83</value>
+    <value>15, 80</value>
   </data>
   <data name="generateYearsTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -385,7 +385,7 @@
     <value>NoControl</value>
   </data>
   <data name="loadDataTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 46</value>
+    <value>15, 43</value>
   </data>
   <data name="loadDataTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -421,7 +421,7 @@
     <value>NoControl</value>
   </data>
   <data name="monthViewEventsCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 184</value>
+    <value>15, 181</value>
   </data>
   <data name="monthViewEventsCountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -493,7 +493,7 @@
     <value>NoControl</value>
   </data>
   <data name="physicalMemoryFreeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 41</value>
+    <value>15, 38</value>
   </data>
   <data name="physicalMemoryFreeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -529,7 +529,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="runningTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -565,7 +565,7 @@
     <value>NoControl</value>
   </data>
   <data name="startingTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="startingTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -601,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="totalVisibleMemoryLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="totalVisibleMemoryLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
@@ -637,7 +637,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBMemorySizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 78</value>
+    <value>15, 75</value>
   </data>
   <data name="dBMemorySizeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -673,7 +673,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBYearsIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 131</value>
+    <value>15, 128</value>
   </data>
   <data name="dBYearsIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -709,7 +709,7 @@
     <value>NoControl</value>
   </data>
   <data name="lastGenerateDateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 153</value>
+    <value>15, 150</value>
   </data>
   <data name="lastGenerateDateLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -745,7 +745,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPeakWorkingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 131</value>
+    <value>15, 128</value>
   </data>
   <data name="memoryPeakWorkingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -781,7 +781,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPrivateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 99</value>
+    <value>15, 96</value>
   </data>
   <data name="memoryPrivateLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -817,7 +817,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryWorkingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 115</value>
+    <value>15, 112</value>
   </data>
   <data name="memoryWorkingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -853,7 +853,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryGCLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="memoryGCLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 13</value>
@@ -889,7 +889,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 152</value>
+    <value>15, 149</value>
   </data>
   <data name="memoryPagedLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -925,7 +925,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedPeakLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 168</value>
+    <value>15, 165</value>
   </data>
   <data name="memoryPagedPeakLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -961,7 +961,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedSystemLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 184</value>
+    <value>15, 181</value>
   </data>
   <data name="memoryPagedSystemLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 13</value>
@@ -997,7 +997,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPULoadLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="cPULoadLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -1033,7 +1033,7 @@
     <value>NoControl</value>
   </data>
   <data name="processPriorityLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 46</value>
+    <value>15, 43</value>
   </data>
   <data name="processPriorityLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -1069,7 +1069,7 @@
     <value>NoControl</value>
   </data>
   <data name="currentThreadPriorityLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="currentThreadPriorityLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -1102,7 +1102,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 83</value>
+    <value>15, 82</value>
   </data>
   <data name="cPUNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -1135,7 +1135,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateAnalyseDaysTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 116</value>
+    <value>25, 113</value>
   </data>
   <data name="generateAnalyseDaysTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -1168,7 +1168,7 @@
     <value>NoControl</value>
   </data>
   <data name="generatePopulateDaysTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 100</value>
+    <value>25, 97</value>
   </data>
   <data name="generatePopulateDaysTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -1201,7 +1201,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateTextReportTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 132</value>
+    <value>25, 129</value>
   </data>
   <data name="generateTextReportTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -1234,7 +1234,7 @@
     <value>NoControl</value>
   </data>
   <data name="executableModeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="executableModeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1270,7 +1270,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryMaxGCUsageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 78</value>
+    <value>15, 75</value>
   </data>
   <data name="memoryMaxGCUsageLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 13</value>
@@ -1306,7 +1306,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBEngineversionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="dBEngineversionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -1342,7 +1342,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBADONETAccessLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 41</value>
+    <value>15, 38</value>
   </data>
   <data name="dBADONETAccessLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -1378,7 +1378,7 @@
     <value>NoControl</value>
   </data>
   <data name="processorTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 78</value>
+    <value>15, 75</value>
   </data>
   <data name="processorTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -1414,7 +1414,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
+    <value>15, 22</value>
   </data>
   <data name="LabelApplication.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -1549,7 +1549,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 46</value>
+    <value>15, 43</value>
   </data>
   <data name="cPUProcessLoadLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -1585,7 +1585,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadMaxLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 62</value>
+    <value>15, 59</value>
   </data>
   <data name="cPUProcessLoadMaxLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 13</value>
@@ -1621,7 +1621,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadAvgLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 78</value>
+    <value>15, 75</value>
   </data>
   <data name="cPUProcessLoadAvgLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -1642,6 +1642,42 @@
     <value>GroupBoxSystemLoad</value>
   </data>
   <data name="&gt;&gt;cPUProcessLoadAvgLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="LabelCompiled.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LabelCompiled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCompiled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCompiled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCompiled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 38</value>
+  </data>
+  <data name="LabelCompiled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="LabelCompiled.TabIndex" type="System.Int32, mscorlib">
+    <value>112</value>
+  </data>
+  <data name="LabelCompiled.Text" xml:space="preserve">
+    <value>Compiled:</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Name" xml:space="preserve">
+    <value>LabelCompiled</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.Parent" xml:space="preserve">
+    <value>GroupBoxRunning</value>
+  </data>
+  <data name="&gt;&gt;LabelCompiled.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ActionScreenshot.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -1832,7 +1868,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 168</value>
+    <value>138, 165</value>
   </data>
   <data name="dBEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1865,7 +1901,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBFileSizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 62</value>
+    <value>138, 59</value>
   </data>
   <data name="dBFileSizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1898,7 +1934,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBFirstYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 99</value>
+    <value>138, 96</value>
   </data>
   <data name="dBFirstYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1931,7 +1967,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBLastYearLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 115</value>
+    <value>138, 112</value>
   </data>
   <data name="dBLastYearLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1964,7 +2000,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBRecordsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 152</value>
+    <value>138, 149</value>
   </data>
   <data name="dBRecordsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1997,7 +2033,7 @@
     <value>NoControl</value>
   </data>
   <data name="fillMonthViewTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 62</value>
+    <value>148, 59</value>
   </data>
   <data name="fillMonthViewTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -2030,7 +2066,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateYearsTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 83</value>
+    <value>138, 80</value>
   </data>
   <data name="generateYearsTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2063,7 +2099,7 @@
     <value>NoControl</value>
   </data>
   <data name="loadDataTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 46</value>
+    <value>138, 43</value>
   </data>
   <data name="loadDataTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2096,7 +2132,7 @@
     <value>NoControl</value>
   </data>
   <data name="monthViewEventsCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 184</value>
+    <value>138, 181</value>
   </data>
   <data name="monthViewEventsCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2132,7 +2168,7 @@
     <value>NoControl</value>
   </data>
   <data name="physicalMemoryFreeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 41</value>
+    <value>203, 38</value>
   </data>
   <data name="physicalMemoryFreeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2162,7 +2198,7 @@
     <value>NoControl</value>
   </data>
   <data name="runningTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 61</value>
+    <value>138, 58</value>
   </data>
   <data name="runningTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2195,7 +2231,7 @@
     <value>NoControl</value>
   </data>
   <data name="startingTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 25</value>
+    <value>138, 22</value>
   </data>
   <data name="startingTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2228,7 +2264,7 @@
     <value>NoControl</value>
   </data>
   <data name="totalVisibleMemoryLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 25</value>
+    <value>203, 22</value>
   </data>
   <data name="totalVisibleMemoryLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2261,7 +2297,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBMemorySizeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 78</value>
+    <value>138, 75</value>
   </data>
   <data name="dBMemorySizeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2294,7 +2330,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBYearsIntervalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 131</value>
+    <value>138, 128</value>
   </data>
   <data name="dBYearsIntervalLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2327,7 +2363,7 @@
     <value>NoControl</value>
   </data>
   <data name="lastGenerateDateLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 153</value>
+    <value>138, 150</value>
   </data>
   <data name="lastGenerateDateLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2360,7 +2396,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 131</value>
+    <value>203, 128</value>
   </data>
   <data name="memoryPeakWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2393,7 +2429,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPrivateLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 99</value>
+    <value>203, 96</value>
   </data>
   <data name="memoryPrivateLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2426,7 +2462,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryWorkingLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 115</value>
+    <value>203, 112</value>
   </data>
   <data name="memoryWorkingLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2459,7 +2495,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryGCLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 62</value>
+    <value>203, 59</value>
   </data>
   <data name="memoryGCLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2492,7 +2528,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 152</value>
+    <value>203, 149</value>
   </data>
   <data name="memoryPagedLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2525,7 +2561,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedPeakLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 168</value>
+    <value>203, 165</value>
   </data>
   <data name="memoryPagedPeakLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2558,7 +2594,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryPagedSystemLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 184</value>
+    <value>203, 181</value>
   </data>
   <data name="memoryPagedSystemLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2591,7 +2627,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPULoadLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 25</value>
+    <value>178, 22</value>
   </data>
   <data name="cPULoadLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2624,7 +2660,7 @@
     <value>NoControl</value>
   </data>
   <data name="processPriorityLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 46</value>
+    <value>178, 43</value>
   </data>
   <data name="processPriorityLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2657,7 +2693,7 @@
     <value>NoControl</value>
   </data>
   <data name="currentThreadPriorityLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 62</value>
+    <value>178, 59</value>
   </data>
   <data name="currentThreadPriorityLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2687,7 +2723,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateTextReportTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 132</value>
+    <value>138, 129</value>
   </data>
   <data name="generateTextReportTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2717,7 +2753,7 @@
     <value>NoControl</value>
   </data>
   <data name="generatePopulateDaysTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 100</value>
+    <value>138, 97</value>
   </data>
   <data name="generatePopulateDaysTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2747,7 +2783,7 @@
     <value>NoControl</value>
   </data>
   <data name="generateAnalyseDaysTimeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 116</value>
+    <value>138, 113</value>
   </data>
   <data name="generateAnalyseDaysTimeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -2804,7 +2840,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBADONETAccessLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 41</value>
+    <value>88, 38</value>
   </data>
   <data name="dBADONETAccessLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -2837,7 +2873,7 @@
     <value>NoControl</value>
   </data>
   <data name="dBEngineversionLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 25</value>
+    <value>88, 22</value>
   </data>
   <data name="dBEngineversionLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -2897,7 +2933,7 @@
     <value>NoControl</value>
   </data>
   <data name="memoryMaxGCUsageLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 78</value>
+    <value>203, 75</value>
   </data>
   <data name="memoryMaxGCUsageLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -2957,7 +2993,7 @@
     <value>NoControl</value>
   </data>
   <data name="executableModeLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 25</value>
+    <value>178, 22</value>
   </data>
   <data name="executableModeLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3005,7 +3041,7 @@
     <value>operatingSystemTextBox</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3017,7 +3053,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="processorNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 100</value>
+    <value>18, 99</value>
   </data>
   <data name="processorNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 20</value>
@@ -3032,7 +3068,7 @@
     <value>processorNameTextBox</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3064,47 +3100,11 @@
   <data name="&gt;&gt;GroupBoxSystem.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="LabelCompiled.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="LabelCompiled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCompiled.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelCompiled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCompiled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 41</value>
-  </data>
-  <data name="LabelCompiled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="LabelCompiled.TabIndex" type="System.Int32, mscorlib">
-    <value>112</value>
-  </data>
-  <data name="LabelCompiled.Text" xml:space="preserve">
-    <value>Compiled:</value>
-  </data>
-  <data name="&gt;&gt;LabelCompiled.Name" xml:space="preserve">
-    <value>LabelCompiled</value>
-  </data>
-  <data name="&gt;&gt;LabelCompiled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCompiled.Parent" xml:space="preserve">
-    <value>GroupBoxRunning</value>
-  </data>
-  <data name="&gt;&gt;LabelCompiled.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="LabelCompiled1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="LabelCompiled1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 41</value>
+    <value>88, 38</value>
   </data>
   <data name="LabelCompiled1.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -3134,7 +3134,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelApplication1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 25</value>
+    <value>88, 22</value>
   </data>
   <data name="LabelApplication1.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 13</value>
@@ -3164,7 +3164,7 @@
     <value>NoControl</value>
   </data>
   <data name="processorTime1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 81</value>
+    <value>138, 78</value>
   </data>
   <data name="processorTime1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3224,7 +3224,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadAvgLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 78</value>
+    <value>178, 75</value>
   </data>
   <data name="cPUProcessLoadAvgLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3257,7 +3257,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadMaxLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 62</value>
+    <value>178, 59</value>
   </data>
   <data name="cPUProcessLoadMaxLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3290,7 +3290,7 @@
     <value>NoControl</value>
   </data>
   <data name="cPUProcessLoadLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 46</value>
+    <value>178, 43</value>
   </data>
   <data name="cPUProcessLoadLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -3524,7 +3524,7 @@
     <value>EditOpenFolderUserLocalData</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3551,7 +3551,7 @@
     <value>EditFolderUserData</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3578,7 +3578,7 @@
     <value>EditFolderApplication</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3672,9 +3672,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>584, 691</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
