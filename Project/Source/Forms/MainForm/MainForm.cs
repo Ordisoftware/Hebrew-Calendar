@@ -1173,7 +1173,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionLocalWeather_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell(Settings.WindowsWeatherAppPath);
+      SystemManager.RunShell(Settings.WeatherAppPath);
     }
 
     /// <summary>

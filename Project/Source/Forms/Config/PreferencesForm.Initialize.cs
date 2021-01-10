@@ -60,8 +60,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditBalloon_CheckedChanged(null, null);
       EditAutoRegenerate_CheckedChanged(null, null);
       EditRemindAutoLock_CheckedChanged(null, null);
-      EditRemindShabat_ValueChanged(null, null);
-      EditTimerEnabled_CheckedChanged(null, null);
+      EditRemindShabat_Changed(null, null);
+      EditRemindCelebrations_Changed(null, null);
       EditUseColors_CheckedChanged(null, null);
       EditLogEnabled_CheckedChanged(null, null);
       ActiveControl = ActionClose;
@@ -148,9 +148,9 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
         if ( MonoSpacedFonts.Contains(item.Name.ToLower()) )
         {
-          int index = EditFontName.Items.Add(item.Name);
+          int index = EditTextReportFontName.Items.Add(item.Name);
           if ( item.Name == Settings.FontName )
-            EditFontName.SelectedIndex = index;
+            EditTextReportFontName.SelectedIndex = index;
         }
     }
 

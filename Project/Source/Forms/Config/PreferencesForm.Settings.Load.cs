@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditEventColorSeason.BackColor = Settings.EventColorSeason; });
       SystemManager.TryCatch(() => { EditEventColorShabat.BackColor = Settings.EventColorShabat; });
       SystemManager.TryCatch(() => { EditEventColorTorah.BackColor = Settings.EventColorTorah; });
-      SystemManager.TryCatch(() => { EditFontSize.Value = Settings.FontSize; });
+      SystemManager.TryCatch(() => { EditTextReportFontSize.Value = Settings.FontSize; });
       SystemManager.TryCatch(() => { EditGPSLatitude.Text = Settings.GPSLatitude; });
       SystemManager.TryCatch(() => { EditGPSLongitude.Text = Settings.GPSLongitude; });
       SystemManager.TryCatch(() => { EditMonthViewSunToolTips.Checked = Settings.MonthViewSunToolTips; });
@@ -74,8 +74,8 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditRemindShabatOnlyLight.Checked = Settings.RemindShabatOnlyLight; });
       SystemManager.TryCatch(() => { EditShowReminderInTaskBar.Checked = Settings.ShowReminderInTaskBar; });
       SystemManager.TryCatch(() => { EditStartupHide.Checked = Settings.StartupHide; });
-      SystemManager.TryCatch(() => { EditTextBackground.BackColor = Settings.TextBackground; });
-      SystemManager.TryCatch(() => { EditTextColor.BackColor = Settings.TextColor; });
+      SystemManager.TryCatch(() => { EditTextReportBackColor.BackColor = Settings.TextBackground; });
+      SystemManager.TryCatch(() => { EditTextReportForeColor.BackColor = Settings.TextColor; });
       SystemManager.TryCatch(() => { EditTorahEventsCountAsMoon.Checked = Settings.TorahEventsCountAsMoon; });
       SystemManager.TryCatch(() => { EditUseColors.Checked = Settings.UseColors; });
       SystemManager.TryCatch(() => { EditMonthViewFontSize.Value = Settings.MonthViewFontSize; });
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditGlobalHotKeyPopupMainFormEnabled.Checked = Settings.GlobalHotKeyPopupMainFormEnabled; });
       SystemManager.TryCatch(() => { EditMainFormShownGoToToday.Checked = Settings.MainFormShownGoToToday; });
       SystemManager.TryCatch(() => { EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled; });
-      SystemManager.TryCatch(() => { EditWindowsWeatherAppPath.Text = Settings.WindowsWeatherAppPath; });
+      SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
       // Hotkey
       InitHotKeyControls();
       // System

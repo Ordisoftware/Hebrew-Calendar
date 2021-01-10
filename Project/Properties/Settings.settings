@@ -547,7 +547,7 @@
     <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="WindowsWeatherAppPath" Type="System.String" Scope="User">
+    <Setting Name="WeatherAppPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">msnweather:</Value>
     </Setting>
   </Settings>

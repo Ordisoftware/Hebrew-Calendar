@@ -93,13 +93,13 @@ namespace Ordisoftware.Hebrew.Calendar
       EditNavigateTopColor.BackColor = ColorTranslator.FromHtml(items["NavigateTopColor"]);
       EditNavigateMiddleColor.BackColor = ColorTranslator.FromHtml(items["NavigateMiddleColor"]);
       EditNavigateBottomColor.BackColor = ColorTranslator.FromHtml(items["NavigateBottomColor"]);
-      EditTextColor.BackColor = ColorTranslator.FromHtml(items["TextColor"]);
-      EditTextBackground.BackColor = ColorTranslator.FromHtml(items["TextBackground "]);
+      EditTextReportForeColor.BackColor = ColorTranslator.FromHtml(items["TextColor"]);
+      EditTextReportBackColor.BackColor = ColorTranslator.FromHtml(items["TextBackground "]);
       NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
       NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
-      MainForm.Instance.CalendarText.ForeColor = EditTextColor.BackColor;
-      MainForm.Instance.CalendarText.BackColor = EditTextBackground.BackColor;
+      MainForm.Instance.CalendarText.ForeColor = EditTextReportForeColor.BackColor;
+      MainForm.Instance.CalendarText.BackColor = EditTextReportBackColor.BackColor;
       MustRefreshMonthView = true;
     }
 
@@ -129,8 +129,8 @@ namespace Ordisoftware.Hebrew.Calendar
       items.Add("NavigateTopColor=" + ColorTranslator.ToHtml(EditNavigateTopColor.BackColor));
       items.Add("NavigateMiddleColor=" + ColorTranslator.ToHtml(EditNavigateMiddleColor.BackColor));
       items.Add("NavigateBottomColor=" + ColorTranslator.ToHtml(EditNavigateBottomColor.BackColor));
-      items.Add("TextColor=" + ColorTranslator.ToHtml(EditTextColor.BackColor));
-      items.Add("TextBackground=" + ColorTranslator.ToHtml(EditTextBackground.BackColor));
+      items.Add("TextColor=" + ColorTranslator.ToHtml(EditTextReportForeColor.BackColor));
+      items.Add("TextBackground=" + ColorTranslator.ToHtml(EditTextReportBackColor.BackColor));
       File.WriteAllLines(SaveThemeDialog.FileName, items);
     }
 
