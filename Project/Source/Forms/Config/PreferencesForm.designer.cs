@@ -209,12 +209,12 @@
       this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
-      this.EditFontSize = new System.Windows.Forms.NumericUpDown();
+      this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelFontSize = new System.Windows.Forms.Label();
-      this.EditFontName = new System.Windows.Forms.ComboBox();
+      this.EditTextReportFontName = new System.Windows.Forms.ComboBox();
       this.LabelBackColor = new System.Windows.Forms.Label();
-      this.EditTextColor = new System.Windows.Forms.Panel();
-      this.EditTextBackground = new System.Windows.Forms.Panel();
+      this.EditTextReportForeColor = new System.Windows.Forms.Panel();
+      this.EditTextReportBackColor = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPagePrint = new System.Windows.Forms.TabPage();
       this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
@@ -236,10 +236,10 @@
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
-      this.LabelWindowsWeatherAppPath = new System.Windows.Forms.Label();
-      this.ActionResetWindowsWeatherAppPath = new System.Windows.Forms.Button();
-      this.ActionSelectWindowsWeatherAppPath = new System.Windows.Forms.Button();
-      this.EditWindowsWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.LabelWeatherAppPath = new System.Windows.Forms.Label();
+      this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
+      this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
+      this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
@@ -280,7 +280,7 @@
       this.PanelCalendarColors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).BeginInit();
       this.TabPagePrint.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
@@ -1032,7 +1032,7 @@
       resources.ApplyResources(this.EditTorahEventsCountAsMoon, "EditTorahEventsCountAsMoon");
       this.EditTorahEventsCountAsMoon.Name = "EditTorahEventsCountAsMoon";
       this.EditTorahEventsCountAsMoon.UseVisualStyleBackColor = true;
-      this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
+      this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
       // 
       // ActionGetGPS
       // 
@@ -1247,7 +1247,7 @@
       resources.ApplyResources(this.EditReminderShabatEnabled, "EditReminderShabatEnabled");
       this.EditReminderShabatEnabled.Name = "EditReminderShabatEnabled";
       this.EditReminderShabatEnabled.UseVisualStyleBackColor = true;
-      this.EditReminderShabatEnabled.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
+      this.EditReminderShabatEnabled.CheckedChanged += new System.EventHandler(this.EditRemindShabat_Changed);
       // 
       // LabelRemindShabatEveryMinutes
       // 
@@ -1271,7 +1271,7 @@
       resources.ApplyResources(this.EditRemindShabatOnlyLight, "EditRemindShabatOnlyLight");
       this.EditRemindShabatOnlyLight.Name = "EditRemindShabatOnlyLight";
       this.EditRemindShabatOnlyLight.UseVisualStyleBackColor = true;
-      this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
+      this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.EditRemindShabat_Changed);
       // 
       // ActionUsePersonalShabat
       // 
@@ -1289,7 +1289,7 @@
       resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
       this.EditShabatDay.FormattingEnabled = true;
       this.EditShabatDay.Name = "EditShabatDay";
-      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_ValueChanged);
+      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_Changed);
       // 
       // EditRemindShabatHoursBefore
       // 
@@ -1357,7 +1357,7 @@
       resources.ApplyResources(this.EditReminderCelebrationsEnabled, "EditReminderCelebrationsEnabled");
       this.EditReminderCelebrationsEnabled.Name = "EditReminderCelebrationsEnabled";
       this.EditReminderCelebrationsEnabled.UseVisualStyleBackColor = true;
-      this.EditReminderCelebrationsEnabled.CheckedChanged += new System.EventHandler(this.EditTimerEnabled_CheckedChanged);
+      this.EditReminderCelebrationsEnabled.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
       // 
       // LabelRemindCelebrationEveryMinutes
       // 
@@ -1746,12 +1746,12 @@
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageTextReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageTextReport.Controls.Add(this.LabelFontName);
-      this.TabPageTextReport.Controls.Add(this.EditFontSize);
+      this.TabPageTextReport.Controls.Add(this.EditTextReportFontSize);
       this.TabPageTextReport.Controls.Add(this.LabelFontSize);
-      this.TabPageTextReport.Controls.Add(this.EditFontName);
+      this.TabPageTextReport.Controls.Add(this.EditTextReportFontName);
       this.TabPageTextReport.Controls.Add(this.LabelBackColor);
-      this.TabPageTextReport.Controls.Add(this.EditTextColor);
-      this.TabPageTextReport.Controls.Add(this.EditTextBackground);
+      this.TabPageTextReport.Controls.Add(this.EditTextReportForeColor);
+      this.TabPageTextReport.Controls.Add(this.EditTextReportBackColor);
       this.TabPageTextReport.Controls.Add(this.LabelTextColor);
       resources.ApplyResources(this.TabPageTextReport, "TabPageTextReport");
       this.TabPageTextReport.Name = "TabPageTextReport";
@@ -1761,62 +1761,62 @@
       resources.ApplyResources(this.LabelFontName, "LabelFontName");
       this.LabelFontName.Name = "LabelFontName";
       // 
-      // EditFontSize
+      // EditTextReportFontSize
       // 
-      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
-      this.EditFontSize.Maximum = new decimal(new int[] {
+      this.EditTextReportFontSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditTextReportFontSize, "EditTextReportFontSize");
+      this.EditTextReportFontSize.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-      this.EditFontSize.Minimum = new decimal(new int[] {
+      this.EditTextReportFontSize.Minimum = new decimal(new int[] {
             6,
             0,
             0,
             0});
-      this.EditFontSize.Name = "EditFontSize";
-      this.EditFontSize.ReadOnly = true;
-      this.EditFontSize.Value = new decimal(new int[] {
+      this.EditTextReportFontSize.Name = "EditTextReportFontSize";
+      this.EditTextReportFontSize.ReadOnly = true;
+      this.EditTextReportFontSize.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-      this.EditFontSize.ValueChanged += new System.EventHandler(this.EditReportFont_Changed);
+      this.EditTextReportFontSize.ValueChanged += new System.EventHandler(this.EditTextReportFontName_Changed);
       // 
       // LabelFontSize
       // 
       resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
       this.LabelFontSize.Name = "LabelFontSize";
       // 
-      // EditFontName
+      // EditTextReportFontName
       // 
-      this.EditFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.EditFontName, "EditFontName");
-      this.EditFontName.FormattingEnabled = true;
-      this.EditFontName.Name = "EditFontName";
-      this.EditFontName.SelectedIndexChanged += new System.EventHandler(this.EditReportFont_Changed);
+      this.EditTextReportFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditTextReportFontName, "EditTextReportFontName");
+      this.EditTextReportFontName.FormattingEnabled = true;
+      this.EditTextReportFontName.Name = "EditTextReportFontName";
+      this.EditTextReportFontName.SelectedIndexChanged += new System.EventHandler(this.EditTextReportFontName_Changed);
       // 
       // LabelBackColor
       // 
       resources.ApplyResources(this.LabelBackColor, "LabelBackColor");
       this.LabelBackColor.Name = "LabelBackColor";
       // 
-      // EditTextColor
+      // EditTextReportForeColor
       // 
-      this.EditTextColor.BackColor = System.Drawing.Color.Black;
-      this.EditTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditTextColor, "EditTextColor");
-      this.EditTextColor.Name = "EditTextColor";
-      this.EditTextColor.Click += new System.EventHandler(this.PanelTextColor_Click);
+      this.EditTextReportForeColor.BackColor = System.Drawing.Color.Black;
+      this.EditTextReportForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditTextReportForeColor, "EditTextReportForeColor");
+      this.EditTextReportForeColor.Name = "EditTextReportForeColor";
+      this.EditTextReportForeColor.Click += new System.EventHandler(this.TextReportForeColor_Click);
       // 
-      // EditTextBackground
+      // EditTextReportBackColor
       // 
-      this.EditTextBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.EditTextBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditTextBackground, "EditTextBackground");
-      this.EditTextBackground.Name = "EditTextBackground";
-      this.EditTextBackground.Click += new System.EventHandler(this.PanelBackColor_Click);
+      this.EditTextReportBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.EditTextReportBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditTextReportBackColor, "EditTextReportBackColor");
+      this.EditTextReportBackColor.Name = "EditTextReportBackColor";
+      this.EditTextReportBackColor.Click += new System.EventHandler(this.TextReportBackColor_Click);
       // 
       // LabelTextColor
       // 
@@ -1863,7 +1863,7 @@
       this.EditDataExportFileFormat.FormattingEnabled = true;
       resources.ApplyResources(this.EditDataExportFileFormat, "EditDataExportFileFormat");
       this.EditDataExportFileFormat.Name = "EditDataExportFileFormat";
-      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditPreferedDataExportFileFormat_SelectedIndexChanged);
+      this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
       this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
       // 
       // LabelImageExportFileFormat
@@ -1915,7 +1915,6 @@
       resources.ApplyResources(this.EditSaveImageCountWarning, "EditSaveImageCountWarning");
       this.EditSaveImageCountWarning.Name = "EditSaveImageCountWarning";
       this.EditSaveImageCountWarning.ReadOnly = true;
-      this.EditSaveImageCountWarning.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
       // 
       // EditAutoOpenExportedFile
       // 
@@ -1930,14 +1929,12 @@
       resources.ApplyResources(this.EditPrintPageCountWarning, "EditPrintPageCountWarning");
       this.EditPrintPageCountWarning.Name = "EditPrintPageCountWarning";
       this.EditPrintPageCountWarning.ReadOnly = true;
-      this.EditPrintPageCountWarning.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
       // 
       // EditExportDataEnumsAsTranslations
       // 
       resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
       this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditAutoOpenExportFolder
       // 
@@ -1951,14 +1948,12 @@
       resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
       this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
       this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
-      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditShowPrintDialog
       // 
       resources.ApplyResources(this.EditShowPrintDialog, "EditShowPrintDialog");
       this.EditShowPrintDialog.Name = "EditShowPrintDialog";
       this.EditShowPrintDialog.UseVisualStyleBackColor = true;
-      this.EditShowPrintDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // EditPrintingMargin
       // 
@@ -1966,16 +1961,15 @@
       resources.ApplyResources(this.EditPrintingMargin, "EditPrintingMargin");
       this.EditPrintingMargin.Name = "EditPrintingMargin";
       this.EditPrintingMargin.ReadOnly = true;
-      this.EditPrintingMargin.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
       // 
       // TabPagePaths
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPagePaths.Controls.Add(this.LabelWindowsWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.ActionResetWindowsWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.ActionSelectWindowsWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.EditWindowsWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectWeatherAppPath);
+      this.TabPagePaths.Controls.Add(this.EditWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
@@ -1991,34 +1985,34 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
-      // LabelWindowsWeatherAppPath
+      // LabelWeatherAppPath
       // 
-      resources.ApplyResources(this.LabelWindowsWeatherAppPath, "LabelWindowsWeatherAppPath");
-      this.LabelWindowsWeatherAppPath.Name = "LabelWindowsWeatherAppPath";
+      resources.ApplyResources(this.LabelWeatherAppPath, "LabelWeatherAppPath");
+      this.LabelWeatherAppPath.Name = "LabelWeatherAppPath";
       // 
-      // ActionResetWindowsWeatherAppPath
+      // ActionResetWeatherAppPath
       // 
-      this.ActionResetWindowsWeatherAppPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionResetWindowsWeatherAppPath, "ActionResetWindowsWeatherAppPath");
-      this.ActionResetWindowsWeatherAppPath.Name = "ActionResetWindowsWeatherAppPath";
-      this.ActionResetWindowsWeatherAppPath.UseVisualStyleBackColor = true;
-      this.ActionResetWindowsWeatherAppPath.Click += new System.EventHandler(this.ActionResetWindowsWeatherAppPath_Click);
+      this.ActionResetWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetWeatherAppPath, "ActionResetWeatherAppPath");
+      this.ActionResetWeatherAppPath.Name = "ActionResetWeatherAppPath";
+      this.ActionResetWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionResetWeatherAppPath.Click += new System.EventHandler(this.ActionResetWeatherAppPath_Click);
       // 
-      // ActionSelectWindowsWeatherAppPath
+      // ActionSelectWeatherAppPath
       // 
-      this.ActionSelectWindowsWeatherAppPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectWindowsWeatherAppPath, "ActionSelectWindowsWeatherAppPath");
-      this.ActionSelectWindowsWeatherAppPath.Name = "ActionSelectWindowsWeatherAppPath";
-      this.ActionSelectWindowsWeatherAppPath.UseVisualStyleBackColor = true;
-      this.ActionSelectWindowsWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWindowsWeatherAppPath_Click);
+      this.ActionSelectWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectWeatherAppPath, "ActionSelectWeatherAppPath");
+      this.ActionSelectWeatherAppPath.Name = "ActionSelectWeatherAppPath";
+      this.ActionSelectWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionSelectWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWeatherAppPath_Click);
       // 
-      // EditWindowsWeatherAppPath
+      // EditWeatherAppPath
       // 
-      this.EditWindowsWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditWindowsWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditWindowsWeatherAppPath, "EditWindowsWeatherAppPath");
-      this.EditWindowsWeatherAppPath.Name = "EditWindowsWeatherAppPath";
-      this.EditWindowsWeatherAppPath.ReadOnly = true;
+      this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditWeatherAppPath, "EditWeatherAppPath");
+      this.EditWeatherAppPath.Name = "EditWeatherAppPath";
+      this.EditWeatherAppPath.ReadOnly = true;
       // 
       // LabelExportFolder
       // 
@@ -2164,7 +2158,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).EndInit();
       this.TabPageTextReport.ResumeLayout(false);
       this.TabPageTextReport.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).EndInit();
       this.TabPagePrint.ResumeLayout(false);
       this.TabPagePrint.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).EndInit();
@@ -2182,7 +2176,7 @@
     private System.Windows.Forms.Label LabelShabatDay;
     private System.Windows.Forms.Label LabelFontSize;
     private System.Windows.Forms.Label LabelFontName;
-    private System.Windows.Forms.ComboBox EditFontName;
+    private System.Windows.Forms.ComboBox EditTextReportFontName;
     private System.Windows.Forms.ComboBox EditShabatDay;
     private Ordisoftware.Core.UndoRedoTextBox EditGPSLatitude;
     private Ordisoftware.Core.UndoRedoTextBox EditGPSLongitude;
@@ -2208,11 +2202,11 @@
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
     private System.Windows.Forms.Label LabelColorToday;
     internal System.Windows.Forms.Panel EditCurrentDayForeColor;
-    private System.Windows.Forms.NumericUpDown EditFontSize;
+    private System.Windows.Forms.NumericUpDown EditTextReportFontSize;
     private System.Windows.Forms.Label LabelBackColor;
-    internal System.Windows.Forms.Panel EditTextColor;
+    internal System.Windows.Forms.Panel EditTextReportForeColor;
     private System.Windows.Forms.Label LabelTextColor;
-    internal System.Windows.Forms.Panel EditTextBackground;
+    internal System.Windows.Forms.Panel EditTextReportBackColor;
     private System.Windows.Forms.Label LabelColorMoon;
     internal System.Windows.Forms.Panel EditCalendarColorMoon;
     private System.Windows.Forms.Label LabelColorSeason;
@@ -2395,9 +2389,9 @@
     private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
     private System.Windows.Forms.OpenFileDialog OpenSettingsDialog;
     private System.Windows.Forms.CheckBox EditWindowsDoubleBufferingEnabled;
-    private System.Windows.Forms.Label LabelWindowsWeatherAppPath;
-    private System.Windows.Forms.Button ActionResetWindowsWeatherAppPath;
-    private System.Windows.Forms.Button ActionSelectWindowsWeatherAppPath;
-    private Core.UndoRedoTextBox EditWindowsWeatherAppPath;
+    private System.Windows.Forms.Label LabelWeatherAppPath;
+    private System.Windows.Forms.Button ActionResetWeatherAppPath;
+    private System.Windows.Forms.Button ActionSelectWeatherAppPath;
+    private Core.UndoRedoTextBox EditWeatherAppPath;
   }
 }

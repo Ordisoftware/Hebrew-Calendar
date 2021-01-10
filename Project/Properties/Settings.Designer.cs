@@ -2181,12 +2181,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("msnweather:")]
-        public string WindowsWeatherAppPath {
+        public string WeatherAppPath {
             get {
-                return ((string)(this["WindowsWeatherAppPath"]));
+                return ((string)(this["WeatherAppPath"]));
             }
             set {
-                this["WindowsWeatherAppPath"] = value;
+                this["WeatherAppPath"] = value;
             }
         }
     }

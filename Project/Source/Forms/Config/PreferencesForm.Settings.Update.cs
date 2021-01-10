@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.EventColorSeason = EditEventColorSeason.BackColor;
       Settings.EventColorShabat = EditEventColorShabat.BackColor;
       Settings.EventColorTorah = EditEventColorTorah.BackColor;
-      Settings.FontSize = (int)EditFontSize.Value;
+      Settings.FontSize = (int)EditTextReportFontSize.Value;
       Settings.GPSLatitude = EditGPSLatitude.Text;
       Settings.GPSLongitude = EditGPSLongitude.Text;
       Settings.MonthViewSunToolTips = EditMonthViewSunToolTips.Checked;
@@ -73,8 +73,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.RemindShabatOnlyLight = EditRemindShabatOnlyLight.Checked;
       Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
       Settings.StartupHide = EditStartupHide.Checked;
-      Settings.TextBackground = EditTextBackground.BackColor;
-      Settings.TextColor = EditTextColor.BackColor;
+      Settings.TextBackground = EditTextReportBackColor.BackColor;
+      Settings.TextColor = EditTextReportForeColor.BackColor;
       Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
       Settings.UseColors = EditUseColors.Checked;
       Settings.MoonDayTextFormat = EditMoonDayTextFormat.Text;
@@ -102,7 +102,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.MainFormShownGoToToday = EditMainFormShownGoToToday.Checked;
       Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
-      Settings.WindowsWeatherAppPath = EditWindowsWeatherAppPath.Text;
+      Settings.WeatherAppPath = EditWeatherAppPath.Text;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;

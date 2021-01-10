@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -93,6 +93,8 @@ namespace Ordisoftware.Hebrew.Calendar
       IsReady = true;
     }
 
+    // Export and import
+
     private void ActionExportSettings_Click(object sender, EventArgs e)
     {
       DoExportSettings();
@@ -107,6 +109,35 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DoResetSettings();
     }
+
+    // Help and info
+
+    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+    }
+
+    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+    }
+
+    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
+    }
+
+    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
+    }
+
+    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
+    {
+      DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
+    }
+
+    // Language
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
@@ -142,10 +173,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
-    {
-      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
-    }
+    // Application
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
@@ -170,6 +198,127 @@ namespace Ordisoftware.Hebrew.Calendar
         StatisticsForm.Instance.Close();
     }
 
+    private void ActionManageBookmarks_Click(object sender, EventArgs e)
+    {
+      if ( EditDateBookmarksForm.Run() )
+        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+    }
+
+    private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
+    {
+      Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
+      Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
+      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+    }
+
+    private void EditVolume_ValueChanged(object sender, EventArgs e)
+    {
+      VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
+      LabelVolumeValue.Text = EditVolume.Value + "%";
+      Program.Settings.ApplicationVolume = EditVolume.Value;
+      Program.Settings.Save();
+      DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
+    }
+
+    // Startup
+
+    private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
+    {
+      SystemManager.StartWithWindowsUserRegistry = EditStartWithWindows.Checked;
+    }
+
+    private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
+    {
+      EditCheckUpdateEveryWeek.Enabled = EditCheckUpdateAtStartup.Checked;
+      EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
+    }
+
+    private void EditVacuumAtStartup_CheckedChanged(object sender, EventArgs e)
+    {
+      EditVacuumAtStartupInterval.Enabled = EditVacuumAtStartup.Checked;
+    }
+
+    // Navigation window colors
+
+    private void DoChangePanelColorNavigation(Panel panelSetting, Panel panelForm)
+    {
+      NavigationForm.Instance.Show();
+      DialogColor.Color = panelSetting.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      panelSetting.BackColor = DialogColor.Color;
+      panelForm.BackColor = panelSetting.BackColor;
+    }
+
+    private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DoChangePanelColorNavigation(EditNavigateTopColor, NavigationForm.Instance.PanelTop);
+    }
+
+    private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DoChangePanelColorNavigation(EditNavigateMiddleColor, NavigationForm.Instance.PanelMiddle);
+    }
+
+    private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
+    {
+      DoChangePanelColorNavigation(EditNavigateBottomColor, NavigationForm.Instance.PanelBottom);
+    }
+
+    private void DoNavigationUseColors(Color colorTop, Color colorMiddle, Color colorBottom)
+    {
+      NavigationForm.Instance.Show();
+      EditNavigateTopColor.BackColor = colorTop;
+      EditNavigateMiddleColor.BackColor = colorMiddle;
+      EditNavigateBottomColor.BackColor = colorBottom;
+      NavigationForm.Instance.PanelTop.BackColor = colorTop;
+      NavigationForm.Instance.PanelMiddle.BackColor = colorMiddle;
+      NavigationForm.Instance.PanelBottom.BackColor = colorBottom;
+    }
+
+    private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DoNavigationUseColors(SystemColors.Control, SystemColors.Control, SystemColors.Control);
+    }
+
+    private void ActionUseBlackAndWhiteColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DoNavigationUseColors(Color.White, Color.Gainsboro, Color.White);
+    }
+
+    private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      DoNavigationUseColors(Color.LemonChiffon, Color.AliceBlue, Color.Honeydew);
+    }
+
+    // Generate
+
+    private void PredefinedYearsItem_Click(object sender, EventArgs e)
+    {
+      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue;
+      EditAutoGenerateYearsInterval.Text = value.ToString();
+    }
+
+    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
+    {
+      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
+                                       Program.AutoGenerateYearsIntervalMax,
+                                       PredefinedYearsItem_Click);
+    }
+
+    private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
+    {
+      EditAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
+      SelectAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
+      ActionAutoGenerateHelp.Enabled = EditAutoRegenerate.Checked;
+    }
+
+    private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
+    {
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval,
+                               new Point(0, SelectAutoGenerateYearsInterval.Height));
+    }
+
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( !SelectCityForm.Run(e != null) ) return;
@@ -179,29 +328,28 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
-    private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
+    // Reminder
+
+    private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+      LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
+      EditAutoLockSessionTimeOut.Enabled = EditAutoLockSession.Checked;
     }
 
-    private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
+    private void LabelSelectReminderSound_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+      SelectSoundForm.Run();
     }
 
-    private void ActionHotKeyInfo_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
-    }
+    // Shabat
 
-    private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
+    private void EditRemindShabat_Changed(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
-    }
-
-    private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)
-    {
-      DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
+      EditRemindShabatOnlyLight.Enabled = EditReminderShabatEnabled.Checked;
+      LabelRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
+      EditRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
+      LabelRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
+      EditRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
     }
 
     private void ActionUsePersonalShabat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -217,73 +365,9 @@ namespace Ordisoftware.Hebrew.Calendar
           EditShabatDay.SelectedItem = day;
     }
 
-    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
-    {
-      MustRefreshMonthView = true;
-    }
+    // Celebrations
 
-    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
-    {
-      if ( IsReady ) MustRefreshMonthView = true;
-    }
-
-    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
-    {
-      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
-    }
-
-    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
-    {
-      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
-                                       new Point(0, ActionMoonDayTextFormatReset.Height));
-    }
-
-    private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
-    {
-      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
-      YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
-                                       Program.AutoGenerateYearsIntervalMax,
-                                       PredefinedYearsItem_Click);
-    }
-
-    private void EditReportFont_Changed(object sender, EventArgs e)
-    {
-      if ( !IsReady ) return;
-      Settings.FontName = EditFontName.Text;
-      Settings.FontSize = (int)EditFontSize.Value;
-      MainForm.Instance.UpdateTextCalendar();
-    }
-
-    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
-    {
-      EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
-      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
-      EditBalloonOnlyIfMainFormIsHidden.Enabled = EditBalloon.Checked;
-    }
-
-    private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
-    {
-      LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
-      EditAutoLockSessionTimeOut.Enabled = EditAutoLockSession.Checked;
-    }
-
-    private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
-    {
-      EditAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
-      SelectAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
-      ActionAutoGenerateHelp.Enabled = EditAutoRegenerate.Checked;
-    }
-
-    private void EditRemindShabat_ValueChanged(object sender, EventArgs e)
-    {
-      EditRemindShabatOnlyLight.Enabled = EditReminderShabatEnabled.Checked;
-      LabelRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
-      EditRemindShabatHoursBefore.Enabled = EditReminderShabatEnabled.Checked;
-      LabelRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
-      EditRemindShabatEveryMinutes.Enabled = EditReminderShabatEnabled.Checked;
-    }
-
-    private void EditTimerEnabled_CheckedChanged(object sender, EventArgs e)
+    private void EditRemindCelebrations_Changed(object sender, EventArgs e)
     {
       LabelTimerInterval.Enabled = EditReminderCelebrationsEnabled.Checked;
       EditReminderCelebrationsDaysBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
@@ -295,191 +379,57 @@ namespace Ordisoftware.Hebrew.Calendar
       EditRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
     }
 
-    private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    // Text report
+
+    private void EditTextReportFontName_Changed(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Show();
-      EditNavigateTopColor.BackColor = SystemColors.Control;
-      EditNavigateMiddleColor.BackColor = SystemColors.Control;
-      EditNavigateBottomColor.BackColor = SystemColors.Control;
-      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+      if ( !IsReady ) return;
+      Settings.FontName = EditTextReportFontName.Text;
+      Settings.FontSize = (int)EditTextReportFontSize.Value;
+      MainForm.Instance.UpdateTextCalendar();
     }
 
-    private void ActionUseBlackAndWhiteColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void TextReportForeColor_Click(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Show();
-      EditNavigateTopColor.BackColor = Color.White;
-      EditNavigateMiddleColor.BackColor = Color.Gainsboro;
-      EditNavigateBottomColor.BackColor = Color.White;
-      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
-    }
-
-    private void ActionUseDefaultColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      NavigationForm.Instance.Show();
-      EditNavigateTopColor.BackColor = Color.LemonChiffon;
-      EditNavigateMiddleColor.BackColor = Color.AliceBlue;
-      EditNavigateBottomColor.BackColor = Color.Honeydew;
-      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
-      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
-      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
-    }
-
-    private void PanelTextColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditTextColor.BackColor;
+      DialogColor.Color = EditTextReportForeColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditTextColor.BackColor = DialogColor.Color;
+      EditTextReportForeColor.BackColor = DialogColor.Color;
       MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
     }
 
-    private void PanelBackColor_Click(object sender, EventArgs e)
+    private void TextReportBackColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = EditTextBackground.BackColor;
+      DialogColor.Color = EditTextReportBackColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditTextBackground.BackColor = DialogColor.Color;
+      EditTextReportBackColor.BackColor = DialogColor.Color;
       MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
     }
 
-    private void PanelTopColor_MouseClick(object sender, MouseEventArgs e)
+    // Month view
+
+    private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = EditNavigateTopColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditNavigateTopColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
+      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
     }
 
-    private void PanelMiddleColor_MouseClick(object sender, MouseEventArgs e)
+    private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = EditNavigateMiddleColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditNavigateMiddleColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
+      if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
     }
 
-    private void PanelBottomColor_MouseClick(object sender, MouseEventArgs e)
+    private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
     {
-      NavigationForm.Instance.Show();
-      DialogColor.Color = EditNavigateBottomColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditNavigateBottomColor.BackColor = DialogColor.Color;
-      NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
+      if ( IsReady ) MustRefreshMonthView = true;
     }
 
-    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
+    private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = EditEventColorTorah.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorTorah.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
+      MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
+                                       new Point(0, ActionMoonDayTextFormatReset.Height));
     }
 
-    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
+    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
     {
-      DialogColor.Color = EditEventColorSeason.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorSeason.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditEventColorShabat.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorShabat.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditEventColorMonth.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorMonth.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditEventColorNext.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditEventColorNext.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCurrentDayForeColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCurrentDayForeColor.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCurrentDayBackColor.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCurrentDayBackColor.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelTorahEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorTorahEvent.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorTorahEvent.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorSeason.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorSeason.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelMoonEventColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorMoon.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorMoon.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void PanelFullMoonColor_Click(object sender, EventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorFullMoon.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorFullMoon.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void EditCalendarColorEmpty_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorEmpty.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorEmpty.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void EditCalendarColorDefaultText_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorDefaultText.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorDefaultText.BackColor = DialogColor.Color;
-      MustRefreshMonthView = true;
-    }
-
-    private void EditCalendarColorNoDay_MouseClick(object sender, MouseEventArgs e)
-    {
-      DialogColor.Color = EditCalendarColorNoDay.BackColor;
-      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditCalendarColorNoDay.BackColor = DialogColor.Color;
       MustRefreshMonthView = true;
     }
 
@@ -488,169 +438,83 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( IsReady ) MustRefreshMonthView = true;
       PanelCalendarColors.Enabled = EditUseColors.Checked;
     }
-    private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
+
+    private void DoChangePanelColorMonthView(Panel panel)
     {
-      if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
+      DialogColor.Color = panel.BackColor;
+      if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+      panel.BackColor = DialogColor.Color;
+      MustRefreshMonthView = true;
     }
 
-    private void EditPreferedDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( !IsReady ) return;
-      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+      DoChangePanelColorMonthView(EditEventColorTorah);
     }
 
-    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
     {
-      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
+      DoChangePanelColorMonthView(EditEventColorSeason);
     }
 
-    private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( !IsReady ) return;
-      Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+      DoChangePanelColorMonthView(EditEventColorShabat);
     }
 
-    private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
     {
-      e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
+      DoChangePanelColorMonthView(EditEventColorMonth);
     }
 
-    private void ActionSelectExportFolder_Click(object sender, EventArgs e)
+    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
     {
-      SystemManager.TryCatch(() =>
-      {
-        FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory();
-      });
-      if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
-        EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
+      DoChangePanelColorMonthView(EditEventColorNext);
     }
 
-    private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
+    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
     {
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditCalculatorPath.Text);
-      });
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.FileName = Path.GetFileName(EditCalculatorPath.Text);
-      });
-      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
-        EditCalculatorPath.Text = OpenExeFileDialog.FileName;
+      DoChangePanelColorMonthView(EditCurrentDayForeColor);
     }
 
-    private void ActionSelectWindowsWeatherAppPath_Click(object sender, EventArgs e)
+    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
     {
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditWindowsWeatherAppPath.Text);
-      });
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.FileName = Path.GetFileName(EditWindowsWeatherAppPath.Text);
-      });
-      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
-        EditWindowsWeatherAppPath.Text = OpenExeFileDialog.FileName;
+      DoChangePanelColorMonthView(EditCurrentDayBackColor);
     }
 
-    private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
+    private void PanelTorahEventColor_Click(object sender, EventArgs e)
     {
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.InitialDirectory = Path.GetDirectoryName(EditHebrewLettersPath.Text);
-      });
-      SystemManager.TryCatch(() =>
-      {
-        OpenExeFileDialog.FileName = Path.GetFileName(EditHebrewLettersPath.Text);
-      });
-      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
-        EditHebrewLettersPath.Text = OpenExeFileDialog.FileName;
+      DoChangePanelColorMonthView(EditCalendarColorTorahEvent);
     }
 
-    private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
+    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
     {
-      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval,
-                               new Point(0, SelectAutoGenerateYearsInterval.Height));
+      DoChangePanelColorMonthView(EditCalendarColorSeason);
     }
 
-    private void PredefinedYearsItem_Click(object sender, EventArgs e)
+    private void PanelMoonEventColor_Click(object sender, EventArgs e)
     {
-      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue;
-      EditAutoGenerateYearsInterval.Text = value.ToString();
+      DoChangePanelColorMonthView(EditCalendarColorMoon);
     }
 
-    private void ActionResetExportFolder_Click(object sender, EventArgs e)
+    private void PanelFullMoonColor_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-        EditExportFolder.Text = (string)Settings.Properties["ExportFolder"].DefaultValue;
+      DoChangePanelColorMonthView(EditCalendarColorFullMoon);
     }
 
-    private void ActionResetCalculatorPath_Click(object sender, EventArgs e)
+    private void EditCalendarColorEmpty_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-        EditCalculatorPath.Text = (string)Settings.Properties["CalculatorExe"].DefaultValue;
+      DoChangePanelColorMonthView(EditCalendarColorEmpty);
     }
 
-    private void ActionResetWindowsWeatherAppPath_Click(object sender, EventArgs e)
+    private void EditCalendarColorDefaultText_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-        EditWindowsWeatherAppPath.Text = (string)Settings.Properties["WindowsWeatherAppPath"].DefaultValue;
+      DoChangePanelColorMonthView(EditCalendarColorDefaultText);
     }
 
-    private void ActionResetHebrewLettersPath_Click(object sender, EventArgs e)
+    private void EditCalendarColorNoDay_MouseClick(object sender, MouseEventArgs e)
     {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-        EditHebrewLettersPath.Text = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
-    }
-
-    private void EditVacuumAtStartup_CheckedChanged(object sender, EventArgs e)
-    {
-      EditVacuumAtStartupInterval.Enabled = EditVacuumAtStartup.Checked;
-    }
-
-    private void EditCheckUpdateAtStartup_CheckedChanged(object sender, EventArgs e)
-    {
-      EditCheckUpdateEveryWeek.Enabled = EditCheckUpdateAtStartup.Checked;
-      EditCheckUpdateAtStartupInterval.Enabled = EditCheckUpdateAtStartup.Checked;
-    }
-
-    private void EditVolume_ValueChanged(object sender, EventArgs e)
-    {
-      VolumeMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
-      LabelVolumeValue.Text = EditVolume.Value + "%";
-      Program.Settings.ApplicationVolume = EditVolume.Value;
-      Program.Settings.Save();
-      DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
-    }
-
-    private void LabelSelectReminderSound_Click(object sender, EventArgs e)
-    {
-      SelectSoundForm.Run();
-    }
-
-    private void ActionManageBookmarks_Click(object sender, EventArgs e)
-    {
-      if ( EditDateBookmarksForm.Run() )
-        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
-    }
-
-    private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
-    {
-      Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-      Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
-    }
-
-    private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
-    {
-      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
-        EditAutoOpenExportFolder.Checked = false;
-    }
-
-    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
-    {
-      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
-        EditAutoOpenExportedFile.Checked = false;
+      DoChangePanelColorMonthView(EditCalendarColorNoDay);
     }
 
     private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -671,6 +535,116 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionSaveTheme_Click(object sender, EventArgs e)
     {
       SaveTheme();
+    }
+
+    // Export Save/Copy/Print
+
+    private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportedFile.Checked = false;
+    }
+
+    private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)
+    {
+      if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )
+        EditAutoOpenExportFolder.Checked = false;
+    }
+
+    private void EditDataExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPDataExportTarget)e.ListItem ).Key.ToString();
+    }
+
+    private void EditDataExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportDataPreferredTarget = ( (KVPDataExportTarget)EditDataExportFileFormat.SelectedItem ).Key;
+    }
+
+    private void EditImageExportFileFormat_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = ( (KVPImageExportTarget)e.ListItem ).Key.ToString();
+    }
+
+    private void EditImageExportFileFormat_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if ( !IsReady ) return;
+      Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
+    }
+
+    // Paths
+
+    private void ActionSelectExportFolder_Click(object sender, EventArgs e)
+    {
+      SystemManager.TryCatch(() =>
+      {
+        FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory();
+      });
+      if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
+        EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
+    }
+
+    private void DoActionSelectPath(FileDialog dialog, TextBox edit)
+    {
+      SystemManager.TryCatch(() =>
+      {
+        dialog.InitialDirectory = Path.GetDirectoryName(edit.Text);
+      });
+      SystemManager.TryCatch(() =>
+      {
+        dialog.FileName = Path.GetFileName(edit.Text);
+      });
+      if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
+        edit.Text = dialog.FileName;
+    }
+
+    private void ActionSelectCalculatorPath_Click(object sender, EventArgs e)
+    {
+      DoActionSelectPath(OpenExeFileDialog, EditCalculatorPath);
+    }
+
+    private void ActionSelectWeatherAppPath_Click(object sender, EventArgs e)
+    {
+      DoActionSelectPath(OpenExeFileDialog, EditWeatherAppPath);
+    }
+
+    private void ActionSelectHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      DoActionSelectPath(OpenExeFileDialog, EditHebrewLettersPath);
+    }
+
+    private void ActionResetExportFolder_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditExportFolder.Text = (string)Settings.Properties[nameof(Settings.ExportFolder)].DefaultValue;
+    }
+
+    private void ActionResetCalculatorPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditCalculatorPath.Text = (string)Settings.Properties[nameof(Settings.CalculatorExe)].DefaultValue;
+    }
+
+    private void ActionResetWeatherAppPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditWeatherAppPath.Text = (string)Settings.Properties[nameof(Settings.WeatherAppPath)].DefaultValue;
+    }
+
+    private void ActionResetHebrewLettersPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
+    }
+
+    // Tray Icon and Global HotKey
+
+    private void EditBalloon_CheckedChanged(object sender, EventArgs e)
+    {
+      EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;
+      EditBalloonAutoHide.Enabled = EditBalloon.Checked;
+      EditBalloonOnlyIfMainFormIsHidden.Enabled = EditBalloon.Checked;
     }
 
     private void EditGlobalHotKeyPopupMainFormEnabled_CheckedChanged(object sender, EventArgs e)
