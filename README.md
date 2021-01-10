@@ -217,13 +217,14 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.01.10 - Version 6.3
 
-- Optimize visual month painting speed.
+- Add launch system weather app like MSN Weather.
+- Add option to define system weather app.
 - Add option to enable Windows double-buffering drawing.
-- Add option to define local weather app.
-- Add launch local weather app like MSN Weather.
+- Optimize visual month painting speed.
 - Fix Rotate view is done only between visual month and grid.
 - Fix null exception after changing current day once preferences form closed.
 - Fix exception when running application having a config file but no database if deleted.
+- Code refactoring (preferences).
 - Update help.
 
 #### 2021.01.01 - Version 6.2
