@@ -188,7 +188,7 @@ namespace Ordisoftware.Core
       if ( Alt ) modifiers.Add(VirtualKeyCode.MENU);
       if ( Windows ) { modifiers.Add(VirtualKeyCode.LWIN); }
       var old = KeyPressed;
-      Action action = () => { result = true; };
+      void action() => result = true;
       KeyPressed = action;
       try
       {

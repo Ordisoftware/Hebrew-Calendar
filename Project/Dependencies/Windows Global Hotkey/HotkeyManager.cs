@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Base.Hotkeys
 {
-  public class HotkeyManager
+  public class HotkeyManager : IDisposable
   {
 
     public Dictionary<ushort, HotkeyAction> Hotkeys { get; }
@@ -19,6 +19,11 @@ namespace Base.Hotkeys
       Hotkeys = new Dictionary<ushort, HotkeyAction>();
       form = new HotkeyForm();
       form.HotkeyPressed += HotkeyPressed;
+    }
+
+    void IDisposable.Dispose()
+    {
+      form.Dispose();
     }
 
     private void HotkeyPressed(object sender, HotkeyEventArgs args)

@@ -310,7 +310,7 @@ namespace Ordisoftware.Core
         }
         var row = table.NewRow();
         foreach ( var column in columns )
-          row[column.Name] = column.GetValue(item, null) == null ? DBNull.Value : column.GetValue(item, null);
+          row[column.Name] = column.GetValue(item, null) ?? DBNull.Value;
         table.Rows.Add(row);
       }
       return table;
