@@ -61,7 +61,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
     {
       int margin = Settings.PrintingMargin;
-      bool finished = false;
       using ( var document = new PrintDocument() )
       {
         document.PrintPage += action;
