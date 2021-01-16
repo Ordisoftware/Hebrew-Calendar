@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportPrint()
     {
-      var process = new ExportActions
+      var process = new ExportActions()
       {
         [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
         [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },

@@ -17,6 +17,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using Ordisoftware.Core;
+using System.Runtime.Serialization;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -89,8 +90,15 @@ namespace Ordisoftware.Hebrew.Calendar
                               : 0;
   }
 
+  [Serializable]
   public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
   {
+    public ExportActions() : base()
+    {
+    }
+    protected ExportActions(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
   }
 
 }

@@ -164,9 +164,12 @@ namespace Ordisoftware.Core
         form.CenterToMainFormElseScreen();
     }
 
-    [DllImport("user32.dll")]
-    private static extern int ShowWindow(IntPtr hWnd, uint Msg);
-    private const uint SW_RESTORE = 0x09;
+    static private class NativeMethods
+    {
+      [DllImport("user32.dll")]
+      static public extern int ShowWindow(IntPtr hWnd, uint Msg);
+      public const uint SW_RESTORE = 0x09;
+    }
 
     /// <summary>
     /// Restore a minimized form.
@@ -175,7 +178,7 @@ namespace Ordisoftware.Core
     static public void Restore(this Form form)
     {
       if ( form.Visible && form.WindowState == FormWindowState.Minimized )
-        ShowWindow(form.Handle, SW_RESTORE);
+        NativeMethods.ShowWindow(form.Handle, NativeMethods.SW_RESTORE);
     }
 
     delegate void PopupMethod(Form form, Form sender, bool dialog);

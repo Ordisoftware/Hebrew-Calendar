@@ -25,14 +25,14 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     static public readonly TranslationsDictionary NoticeKeyboardShortcutsTitle
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Keyboard shortcuts notice",
         [Language.FR] = "Notice des raccourcis clavier"
       };
 
     static public readonly TranslationsDictionary NoticeKeyboardShortcuts
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "F1 : Text report view" + Globals.NL +
                         "F2 : Month view" + Globals.NL +

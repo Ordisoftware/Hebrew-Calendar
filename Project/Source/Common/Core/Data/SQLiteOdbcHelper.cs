@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -177,6 +177,7 @@ namespace Ordisoftware.Core
     {
       SystemManager.TryCatchManage(() =>
       {
+        if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
         using ( var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection) )
           try
           {
@@ -200,6 +201,7 @@ namespace Ordisoftware.Core
     {
       try
       {
+        if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
         using ( var commandCheck = connection.CreateCommand() )
         {
           commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
@@ -236,6 +238,8 @@ namespace Ordisoftware.Core
     {
       try
       {
+        if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
+        if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
         using ( var commandCheck = new OdbcCommand($"PRAGMA table_info({table})", connection) )
         using ( var readerCheck = commandCheck.ExecuteReader() )
         {
@@ -282,6 +286,9 @@ namespace Ordisoftware.Core
                                    string valueDefault,
                                    bool valueNotNull)
     {
+      if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
+      if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
+      if ( type.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(type));
       if ( !valueDefault.IsNullOrEmpty() ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";
       string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {valueDefault}";

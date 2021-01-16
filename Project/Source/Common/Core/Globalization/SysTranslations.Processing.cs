@@ -24,28 +24,28 @@ namespace Ordisoftware.Core
   {
 
     static public readonly TranslationsDictionary Initializing
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Initializing...",
         [Language.FR] = "Initialisation..."
       };
 
     static public readonly TranslationsDictionary Processing
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Processing...",
         [Language.FR] = "Traitement..."
       };
 
     static public readonly TranslationsDictionary ProgressLoadingData
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Loading data...",
         [Language.FR] = "Chargement des données..."
       };
 
     static public readonly TranslationsDictionary ProgressCreatingData
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Creating data...",
         [Language.FR] = "Création des données..."

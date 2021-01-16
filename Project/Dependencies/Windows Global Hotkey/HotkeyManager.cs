@@ -21,9 +21,22 @@ namespace Base.Hotkeys
       form.HotkeyPressed += HotkeyPressed;
     }
 
-    void IDisposable.Dispose()
+    ~HotkeyManager()
     {
-      form.Dispose();
+      Dispose(false);
+    }
+
+    public void Dispose()
+    {
+      Dispose(true);
+      GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+      if ( disposing )
+        if (form != null)
+          form.Dispose();
     }
 
     private void HotkeyPressed(object sender, HotkeyEventArgs args)

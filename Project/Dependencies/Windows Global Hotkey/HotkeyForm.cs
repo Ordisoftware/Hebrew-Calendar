@@ -9,7 +9,7 @@ namespace Base.Hotkeys
 
     public event EventHandler<HotkeyEventArgs> HotkeyPressed;
 
-    private IntPtr hwnd;
+    private readonly IntPtr hwnd;
 
     public HotkeyForm()
     {
@@ -34,7 +34,7 @@ namespace Base.Hotkeys
     protected override void WndProc(ref Message m)
     {
 
-      if ( m.Msg == HOTKEY )
+      if ( m.Msg == NativeMethods.HOTKEY )
       {
 
         ushort id = (ushort)m.WParam;
@@ -73,7 +73,7 @@ namespace Base.Hotkeys
           }
         }
 
-        if ( !RegisterHotKey(hwnd, key.ID, (uint)key.ModifiersEnum, (uint)key.KeyCode) )
+        if ( !NativeMethods.RegisterHotKey(hwnd, key.ID, (uint)key.ModifiersEnum, (uint)key.KeyCode) )
         {
 
           key.ID = 0;
@@ -97,7 +97,7 @@ namespace Base.Hotkeys
         if ( key.ID > 0 )
         {
 
-          bool rel = UnregisterHotKey(Handle, key.ID);
+          bool rel = NativeMethods.UnregisterHotKey(Handle, key.ID);
 
           if ( rel )
           {
@@ -118,14 +118,18 @@ namespace Base.Hotkeys
 
     }
 
-    private static int _id = 1;
-    private const int HOTKEY = 0x312;
+    public static int _id = 1;
 
-    [DllImport("user32", SetLastError = true)]
-    private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+    static private class NativeMethods
+    {
+      public const int HOTKEY = 0x312;
 
-    [DllImport("user32", SetLastError = true)]
-    private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+      [DllImport("user32", SetLastError = true)]
+      public static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+
+      [DllImport("user32", SetLastError = true)]
+      public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+    }
 
   }
 }

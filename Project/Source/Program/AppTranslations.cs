@@ -31,14 +31,14 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     static public readonly TranslationsDictionary ApplicationDescription
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
         [Language.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
       };
 
     static public readonly TranslationsDictionary AskToResetPreferences
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
                         "GPS location, shabat day and bookmarks will be keeped." + Globals.NL2 +
@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary LoadingCitiesError
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
                         SysTranslations.ApplicationMustExit[Language.EN],
@@ -60,119 +60,119 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary ProgressCreateDays
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Populating days...",
         [Language.FR] = "Garnissage des jours..."
       };
 
     static public readonly TranslationsDictionary ProgressAnalyzeDays
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Analyzing days...",
         [Language.FR] = "Analyse des jours..."
       };
 
     static public readonly TranslationsDictionary ProgressGenerateReport
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Generating report...",
         [Language.FR] = "Génération du rapport..."
       };
 
     static public readonly TranslationsDictionary ProgressFillMonths
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Filling months...",
         [Language.FR] = "Remplissage des mois..."
       };
 
     static public readonly TranslationsDictionary AskToUseMoonOmer
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Do you want to use the moon omer, else the sun?",
         [Language.FR] = "Voulez-vous utiliser le omer de la lune, sinon du soleil ?"
       };
 
     static public readonly TranslationsDictionary AskToSetupPersonalShabat
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Do you want to setup the personal shabat?",
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
     static public readonly TranslationsDictionary DateNotFound
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Date not found in the database: {0}",
         [Language.FR] = "Date non trouvée dans la base de données : {0}"
       };
 
     static public readonly TranslationsDictionary SelectBirthday
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Birth day",
         [Language.FR] = "Jour de naissance"
       };
 
     static public readonly TranslationsDictionary OmerMoon
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Count the days according to the moon",
         [Language.FR] = "Compte des jours selon la lune",
       };
 
     static public readonly TranslationsDictionary OmerSun
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Count the days according to the sun",
         [Language.FR] = "Compte des jours selon le soleil",
       };
 
     static public readonly TranslationsDictionary Year
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Year",
         [Language.FR] = "Année"
       };
 
     static public readonly TranslationsDictionary FirstDay
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "First day",
         [Language.FR] = "Premier jour"
       };
 
     static public readonly TranslationsDictionary LastDay
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Last day",
         [Language.FR] = "Dernier jour"
       };
 
     static public readonly TranslationsDictionary NotSupportedYear
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Year is not supported: {0}",
         [Language.FR] = "L'année n'est pas supportée : {0}"
       };
 
     static public readonly TranslationsDictionary PredefinedYearsIntervalAfter
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "{0} years from now",
         [Language.FR] = "{0} années à partir de maintenant"
       };
 
     static public readonly TranslationsDictionary PredefinedYearsIntervalBeforeAndAfter
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "{0} years before and after from now",
         [Language.FR] = "{0} années avant et après maintenant"
       };
 
     static public readonly TranslationsDictionary SoundTooLong
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Duration must be less than {0} seconds: {1}.",
         [Language.FR] = "La durée doit être inférieure à {0} secondes: {1}."
@@ -198,14 +198,14 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary OnlineWeatherError
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = $"Error on getting data from {{0}}:{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur lors de la récupération des données depuis {{0}} :{Globals.NL2}{{1}}"
       };
 
     static public readonly TranslationsDictionary OnlineWeatherLocationNotFound
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Coordinates not found.",
         [Language.FR] = "Coordonnées non trouvées."

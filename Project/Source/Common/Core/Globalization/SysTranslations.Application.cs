@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
       get
       {
         if ( _ApplicationMustExit == null )
-          _ApplicationMustExit = new TranslationsDictionary
+          _ApplicationMustExit = new TranslationsDictionary()
           {
             [Language.EN] = "The application must exit.",
             [Language.FR] = "L'application doit se fermer."
@@ -39,28 +39,28 @@ namespace Ordisoftware.Core
     static private TranslationsDictionary _ApplicationMustExit;
 
     static public readonly TranslationsDictionary RestartRequired
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Application must be restarted",
         [Language.FR] = "L'application doit être redémarrée"
       };
 
     static public readonly TranslationsDictionary AboutBoxTitle
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "About {0}",
         [Language.FR] = "À propos de {0}"
       };
 
     static public readonly TranslationsDictionary AboutBoxVersion
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Version {0}",
         [Language.FR] = "Version {0}"
       };
 
     static public readonly TranslationsDictionary PrivacyNoticeNoData
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features." + Globals.NL2 +
                         "However, it can collect for debugging purposes the type of processor and operating system as well as errors caused by the code, but these information are only stored locally and only transmitted upon conscious validations by the user." + Globals.NL2 +
@@ -71,28 +71,28 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary AskToExitApplication
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Exit application?",
         [Language.FR] = "Quitter l'application ?"
       };
 
     static public readonly TranslationsDictionary CantExitWhileGenerating
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Can't exit application while generating data.",
         [Language.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
     static public readonly TranslationsDictionary AskToShutdownComputer
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Shutdown the computer?",
         [Language.FR] = "Arrêter l'ordinateur ?"
       };
 
     static public readonly TranslationsDictionary AskToContinueOrTerminate
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "You can choose Yes to continue or No to terminate.",
         [Language.FR] = "Vous pouvez choisir Oui pour continuer ou Non pour terminer."
@@ -101,12 +101,12 @@ namespace Ordisoftware.Core
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> HideRestoreCaption
       = new NullSafeDictionary<bool, TranslationsDictionary>
       {
-        [true] = new TranslationsDictionary
+        [true] = new TranslationsDictionary()
         {
           [Language.EN] = "Hide",
           [Language.FR] = "Cacher"
         },
-        [false] = new TranslationsDictionary
+        [false] = new TranslationsDictionary()
         {
           [Language.EN] = "Restore",
           [Language.FR] = "Restaurer"
@@ -116,17 +116,17 @@ namespace Ordisoftware.Core
     static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle
       = new NullSafeDictionary<ExportAction, TranslationsDictionary>
       {
-        [ExportAction.SaveToFile] = new TranslationsDictionary
+        [ExportAction.SaveToFile] = new TranslationsDictionary()
         {
           [Language.EN] = "Save to file",
           [Language.FR] = "Sauver dans un fichier"
         },
-        [ExportAction.CopyToClipboard] = new TranslationsDictionary
+        [ExportAction.CopyToClipboard] = new TranslationsDictionary()
         {
           [Language.EN] = "Copy to clipboard",
           [Language.FR] = "Copier dans le presse-papier"
         },
-        [ExportAction.Print] = new TranslationsDictionary
+        [ExportAction.Print] = new TranslationsDictionary()
         {
           [Language.EN] = "Print",
           [Language.FR] = "Imprimer"
@@ -134,35 +134,35 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary ScreenshotDone
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The window has been copied to the clipboard.",
         [Language.FR] = "La fenêtre a été copié dans le presse-papier."
       };
 
     static public readonly TranslationsDictionary ViewSavedToFile
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
         [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary ViewCopiedToClipboard
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The view has been copied to the clipboard.",
         [Language.FR] = "La vue a été copiée dans le presse-papier."
       };
 
     static public readonly TranslationsDictionary SelectionCopiedToClipboard
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The selection has been copied to the clipboard.",
         [Language.FR] = "La sélection a été copiée dans le presse-papier."
       };
 
     static public readonly TranslationsDictionary ViewPrinted
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The view has been printed.",
         [Language.FR] = "La vue a été imprimée."
