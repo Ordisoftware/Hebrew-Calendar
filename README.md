@@ -217,6 +217,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 #### In progress - Version 6.4
 
 - Add export celebrations and export new moons boards.
+- Add option to set the corner of the desktop to place reminder boxes.
 - Fix navigation box location when the taskbar is not at the bottom of the screen.
 - Code refactoring and improve code quality.
 
