@@ -231,7 +231,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Duplicate menu sbu items.
+    /// Duplicate menu subitems.
     /// </summary>
     static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination, bool noshortcuts = true)
     {

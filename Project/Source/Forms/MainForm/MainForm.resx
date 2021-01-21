@@ -226,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -2095,15 +2095,15 @@
   <data name="ActionLocalWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPzY5NSFRRFMfvqmgVwkBIEAySIAlZWU21i5aG
-        BWITgRTootlERG0HirKNTRSZItT42YygNH3nqPV0FziFWc0TImcyFaSc1ERlnr/OnbnRh5REm37w4557
-        zvm/d9X/g3Mp5yp+tcpp2VmnzdTSM+OVmWvyDDF4EUYaskqte2b8e5xAzpV0sGiAl+ch7oNXx7LqWnrp
-        5i2xP77Ev29NMdEDEKsAaxc83Z3V8sDAEYiWsGGtcpv15aRr8zqwyqGrGB5vF3eIW+HRJjGP+AMfTv3q
-        gFlfzlTA/ZDIHri92VgInW5a2y9QFpnhRO80vsgwpeHEIRP5GbdL5dOYD+ECCG2EtvVYrZWce7bAIpAS
-        l8Tq/jG84fheE/tO+rLLP1Ozzk415C5yw4UVPEpJs83bBeiRdNcneCLn8OwS+28OTpbdehM73G5XmHiG
-        XLEgVa2ev7vm4WT/PBPyx94p6JDim31yH/rsIAdn+z5QHnpdmI0bDobs2ePdKTqTDqFxCCah8QdbRuGO
-        fEjP7ibmOR1N4m2yP5q4Uqd6JojNyXASro9A3S/qnrZW1DsvvsCZ7lFMXClvmz1ddf89lfcSVK1gZkd2
-        dcbEMxSJ2/5SnfkXlPoKefCTm/HuvBwAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPzY5PSFRRFIfvqmgVwkBIEAySIAlZWU21i5ZG
+        BWITgRTootlERG0HirJNTRSZIdT4txlBadL+OWo93QVOYVbzhMiZrAQxJzVRmefXuTM3KsUk2vTBxz33
+        nPN776r/B+dKznX8apXTuLNGm6mlZ8YrM1PvGWTgEgzXZpVa98x4eZxAzrV0sKifVxcg7oPXx7PqWnrp
+        hi2xP77Ev29NMdGDECsHaxc8253V8kD/UYiWsGGtcpv1paSr81qxyqCzGJ5sF3eIW+HxJjGP+EMfzq3V
+        AbO+lImA+xGRPXBvs7EQ2tw0tVykNDLFyZ5JfJEhDoQTh03kd9wulU9dPoQLILQRmtdjNVVw/vkc80BK
+        XBCr+j7hDcf3mthP0ldd/qnL6+zx2tx5bruwgscoabB5Nwfdku78Ak/lHJpeYP+dgbHSu29jR1rschPP
+        kCsWpKrUi/c3PJzqm2VU/tgzAa1S/LBX7oNfHeTgXO9HykJvCrNxw6GQPX2iK0Vb0iH0GYJJqPvFxhG4
+        Lx/Ss/bELGeiSbz19riJK3W6e5TYjAzH4OYw1CxS97TVot55+Q3Odo1g4kp5m+3JygcfqOhIULmCmR3Z
+        1RkTz1AkbvtLdeZfUOo7dLaTmMoV5/4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionLocalWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2124,18 +2124,18 @@
   <data name="ActionOnlineWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVDhPzY9bSNNhGIf/V1FXYRgdpGyVphQVpmVmRFB3
-        QkHahWkkKpHQRRhdFRpWrjRnqbmYloe5NlPTUqe5f7ROHmpGq8RFnls5i5TWyjXd0386KJLstgceePm9
-        7/d+3yf8P7hzfPJIE+a41VuUHqdqKfO2/814WfgrzHLoV00r1Z7M2/47boXPZXdZiImXZ6E7BV4nTOup
-        pcxdHtI560vSds0LpWUvdB4E41a4HzGtMRxMB6AliuXzBZl3fCYThauqMe6Hu6HQHCa5WTIEmtZKrqK7
-        MQX31bkK7/hMRhUyPXXboHaD13VQI6Oi8hzRdXbs3x2oOoaIULYSlFVPYFYtKzOru86LvfkO58QTQeYr
-        BFIaCLpg0AaAxg9jRRIZHU5+AEX6B2xXPkb7tpR2exFqaywn2iMIKyhw5Bh7rwgTub5p9ouLLJOqpT+4
-        5oux5BBR5RZ6nCCOQegpLRef2XnpMND86QxFgzs51n6cBEMsq+W6F55fLJEMHssUnvcVhHPs4TjD0s33
-        RqFaKvwz21BZ3DSMXKPqsx8FAwuJE9XEiycJyq7As2CKGK3l6xHDGDWDk2g/QMkglEoukzeSbm5F3lVM
-        yccFnH8Twq6qYSJ1bazINPxakCoO0/kN7nyEwn5Qel2cXm/bc9tMTNM7TpoTSXu1m6Oth9mh1eCXrrd5
-        jwtCXKXlS3LDEEn1AyT/Zryy5foaxVNnhPo9WzQOUk37OG0OIFKV7UwsFm94j0+xUXLTn1r6rbpoRa3O
-        P0O0yrJMbMi/yfqcy1ZP1jNkM0gzs+NyuXr7rDZRo3+Qd0l960Kuuu6CRv8or886IrpcroGfYz7Jm/2Y
-        g/MAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJvSURBVDhPzY9bSNNhGIf/V0VXYRglUrY8oCRopmlmRGB3
+        QlEWZBmJSiR0IUZXhoaZZyeeWnhIc84tD2mec4tmBw+k0TRxkedWmpHS0nRuPf2ngyKpbnvggZff+37v
+        933C/4Ml2y6PBGGDRe4vs7pai5mt/W8W7wYMokuF8aI1xdqa2dp/xiK1yzWXefcxkAzDMfA6Yk1rLWbm
+        ir39f31JQvAmXzqOQ/950B6Ax4FragOg7yx0hLBzsyCxja/HXOhci/Y0PPSFdj/R/aI+0LZH1Jnhlhgs
+        tzdKbePrmZNKWmk4CPVeNj2hTkLlvZuENhgxflugqHeKQFkX7hlNuGXUszu5eihNM5pvXDI/FyT2ghvl
+        bqDyAKUrKBzRVkaR1LuMCShu7eSQ7BnKt+X0GIuRG8K42hOIX27uQrZ2tFAw59gnGLO26U1FDiZK7dGW
+        XSCkQs/IMmjmwfeakqwXRgYW1LR/ukHx5BFie64QoQ7DJUX1yvoLB1GP+RTh5VhBALFPlpgWb340B7Vi
+        4ZTSTZH+O80fS6n57EjBxFbOaeSEa+Jxz6zEumCVE0r910vqeeomLSg/QNkklIvuSG0hUddF6lAJZbNb
+        SHvjQ3DNNEGqbnalqH8uiNNM078IjbNwaxxkNrcnNs4ce6DjVNs74nWRJAwe5XLXRQ4rFTgmNs3YjgvC
+        mSr9l+jmKaKaJoj+xXBZxx0XafdyoPw9/ooF4vpOcl3nSpAsczmyRFNlO76Kt+i+39WPGVSh0nqVU5LG
+        IMnowyu/Gs9sqcGajUzOqMWZv7OysjI6apjRKFo683Lk99Nz5A3pipanedbMZDJN/ADra8lNDGS+dwAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionOnlineWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2153,7 +2153,7 @@
   <data name="ActionOnlineWeather.Text" xml:space="preserve">
     <value>Online weather</value>
   </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
   </data>
   <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3036,7 +3036,7 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
@@ -3428,16 +3428,28 @@
   <data name="&gt;&gt;ActionOpenSystemDateAndTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
+    <value>toolStripSeparator9</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionLocalWeather.Name" xml:space="preserve">
+    <value>ActionLocalWeather</value>
+  </data>
+  <data name="&gt;&gt;ActionLocalWeather.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionOnlineWeather.Name" xml:space="preserve">
     <value>ActionOnlineWeather</value>
   </data>
   <data name="&gt;&gt;ActionOnlineWeather.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
-    <value>toolStripSeparator11</value>
+  <data name="&gt;&gt;SeparatorMenuWeather.Name" xml:space="preserve">
+    <value>SeparatorMenuWeather</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+  <data name="&gt;&gt;SeparatorMenuWeather.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">
@@ -3648,25 +3660,13 @@
     <value>LunisolarDaysTableAdapter</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ActionLocalWeather.Name" xml:space="preserve">
-    <value>ActionLocalWeather</value>
-  </data>
-  <data name="&gt;&gt;ActionLocalWeather.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
-    <value>toolStripSeparator9</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

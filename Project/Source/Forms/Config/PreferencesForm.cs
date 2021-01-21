@@ -705,6 +705,13 @@ namespace Ordisoftware.Hebrew.Calendar
       return false;
     }
 
+    private void EditWeatherMenuItemsEnabled_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionLocalWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
+      MainForm.Instance.ActionOnlineWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
+      MainForm.Instance.SeparatorMenuWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
+    }
+
   }
 
 }

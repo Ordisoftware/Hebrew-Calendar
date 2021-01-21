@@ -1060,4 +1060,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditWeatherMenuItemsEnabled.Text" xml:space="preserve">
+    <value>Activer les éléments de menus météo</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
+    <value>Position de la fenêtre</value>
+  </data>
 </root>
