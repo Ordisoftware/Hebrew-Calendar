@@ -2189,5 +2189,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["WeatherAppPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WeatherMenuItemsEnabled {
+            get {
+                return ((bool)(this["WeatherMenuItemsEnabled"]));
+            }
+            set {
+                this["WeatherMenuItemsEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BottomRight")]
+        public global::Ordisoftware.Core.ControlLocation ReminderBoxDesktopLocation {
+            get {
+                return ((global::Ordisoftware.Core.ControlLocation)(this["ReminderBoxDesktopLocation"]));
+            }
+            set {
+                this["ReminderBoxDesktopLocation"] = value;
+            }
+        }
     }
 }

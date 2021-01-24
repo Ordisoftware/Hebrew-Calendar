@@ -1,5 +1,4 @@
 ﻿/// <license>
-/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -18,6 +17,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using Ordisoftware.Core;
+using System.Runtime.Serialization;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -90,8 +90,15 @@ namespace Ordisoftware.Hebrew.Calendar
                               : 0;
   }
 
+  [Serializable]
   public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
   {
+    public ExportActions() : base()
+    {
+    }
+    protected ExportActions(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
   }
 
 }

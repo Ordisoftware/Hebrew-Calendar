@@ -199,7 +199,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add export and print boards.
 - Add lunar months description form with menu in tools.
 - Add export and print lunar months data.
 - Add dark theme for month view.
@@ -214,6 +213,16 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### In progress - Version 6.4
+
+- Add option to show or hide weather menu items and keyboard shortcuts.
+- Add option to set the corner of the desktop to place reminder boxes.
+- Update NuGet packages to last versions.
+- Code refactoring and code quality improvements.
+
+>- Fix navigation Tray Icon tooltip box location when the taskbar is not at the bottom of the screen.
+>- Add export celebrations and new moons boards.
 
 #### 2021.01.10 - Version 6.3
 

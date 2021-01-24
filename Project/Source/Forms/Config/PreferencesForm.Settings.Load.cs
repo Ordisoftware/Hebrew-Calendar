@@ -110,6 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditMainFormShownGoToToday.Checked = Settings.MainFormShownGoToToday; });
       SystemManager.TryCatch(() => { EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled; });
       SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
+      SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       // Hotkey
       InitHotKeyControls();
       // System

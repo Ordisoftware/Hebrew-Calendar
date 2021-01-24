@@ -61,6 +61,7 @@
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
+      this.EditWeatherMenuItemsEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
@@ -131,6 +132,8 @@
       this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
+      this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
+      this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
@@ -239,7 +242,6 @@
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
-      this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
@@ -249,6 +251,7 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -433,6 +436,7 @@
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
+      this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
@@ -526,6 +530,13 @@
       resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
       this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
       this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
+      // 
+      // EditWeatherMenuItemsEnabled
+      // 
+      resources.ApplyResources(this.EditWeatherMenuItemsEnabled, "EditWeatherMenuItemsEnabled");
+      this.EditWeatherMenuItemsEnabled.Name = "EditWeatherMenuItemsEnabled";
+      this.EditWeatherMenuItemsEnabled.UseVisualStyleBackColor = true;
+      this.EditWeatherMenuItemsEnabled.CheckedChanged += new System.EventHandler(this.EditWeatherMenuItemsEnabled_CheckedChanged);
       // 
       // EditWebLinksMenuEnabled
       // 
@@ -1124,6 +1135,8 @@
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageReminder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageReminder.Controls.Add(this.LabelReminderBoxDesktopLocation);
+      this.TabPageReminder.Controls.Add(this.SelectReminderBoxDesktopLocation);
       this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
@@ -1134,6 +1147,19 @@
       this.TabPageReminder.Controls.Add(this.EditShowReminderInTaskBar);
       resources.ApplyResources(this.TabPageReminder, "TabPageReminder");
       this.TabPageReminder.Name = "TabPageReminder";
+      // 
+      // LabelReminderBoxDesktopLocation
+      // 
+      resources.ApplyResources(this.LabelReminderBoxDesktopLocation, "LabelReminderBoxDesktopLocation");
+      this.LabelReminderBoxDesktopLocation.Name = "LabelReminderBoxDesktopLocation";
+      // 
+      // SelectReminderBoxDesktopLocation
+      // 
+      this.SelectReminderBoxDesktopLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectReminderBoxDesktopLocation, "SelectReminderBoxDesktopLocation");
+      this.SelectReminderBoxDesktopLocation.FormattingEnabled = true;
+      this.SelectReminderBoxDesktopLocation.Name = "SelectReminderBoxDesktopLocation";
+      this.SelectReminderBoxDesktopLocation.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectReminderBoxDesktopLocation_Format);
       // 
       // LabelSelectReminderSound
       // 
@@ -1969,7 +1995,6 @@
       this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.EditWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
@@ -1979,6 +2004,7 @@
       this.TabPagePaths.Controls.Add(this.ActionSelectCalculatorPath);
       this.TabPagePaths.Controls.Add(this.LabelHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.EditWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.EditExportFolder);
       this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
       this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
@@ -2005,14 +2031,6 @@
       this.ActionSelectWeatherAppPath.Name = "ActionSelectWeatherAppPath";
       this.ActionSelectWeatherAppPath.UseVisualStyleBackColor = true;
       this.ActionSelectWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWeatherAppPath_Click);
-      // 
-      // EditWeatherAppPath
-      // 
-      this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditWeatherAppPath, "EditWeatherAppPath");
-      this.EditWeatherAppPath.Name = "EditWeatherAppPath";
-      this.EditWeatherAppPath.ReadOnly = true;
       // 
       // LabelExportFolder
       // 
@@ -2076,6 +2094,14 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // EditWeatherAppPath
+      // 
+      this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditWeatherAppPath, "EditWeatherAppPath");
+      this.EditWeatherAppPath.Name = "EditWeatherAppPath";
+      this.EditWeatherAppPath.ReadOnly = true;
       // 
       // EditExportFolder
       // 
@@ -2393,5 +2419,8 @@
     private System.Windows.Forms.Button ActionResetWeatherAppPath;
     private System.Windows.Forms.Button ActionSelectWeatherAppPath;
     private Core.UndoRedoTextBox EditWeatherAppPath;
+    private System.Windows.Forms.CheckBox EditWeatherMenuItemsEnabled;
+    private System.Windows.Forms.Label LabelReminderBoxDesktopLocation;
+    private System.Windows.Forms.ComboBox SelectReminderBoxDesktopLocation;
   }
 }

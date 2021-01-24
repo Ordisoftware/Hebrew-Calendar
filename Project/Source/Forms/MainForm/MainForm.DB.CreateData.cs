@@ -26,6 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    [Serializable]
     public class TooManyErrorsException : Exception
     {
       public TooManyErrorsException(string message) : base(message)

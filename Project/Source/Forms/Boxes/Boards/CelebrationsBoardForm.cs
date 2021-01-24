@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -228,10 +229,10 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = null;
       Board = new DataTable();
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
-      foreach ( TorahEvent col in Enum.GetValues(typeof(TorahEvent)) )
-        if ( col != TorahEvent.None && col <= MaxEvent )
+      foreach ( var value in Enums.GetValues<TorahEvent>() )
+        if ( value != TorahEvent.None && value <= MaxEvent )
         {
-          name = col.ToStringExport(AppTranslations.TorahEvent);
+          name = value.ToStringExport(AppTranslations.TorahEvent);
           if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
           Board.Columns.Add(name, typeof(DateTime));
         }

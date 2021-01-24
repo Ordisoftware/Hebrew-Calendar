@@ -178,7 +178,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     static private readonly TranslationsDictionary PrintPreviewDialogOfPageText
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "of",
         [Language.FR] = "de",

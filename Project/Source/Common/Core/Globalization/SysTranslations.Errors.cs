@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
       get
       {
         if ( _ContactSupport == null )
-          _ContactSupport = new TranslationsDictionary
+          _ContactSupport = new TranslationsDictionary()
           {
             [Language.EN] = "Please contact support.",
             [Language.FR] = "Veuillez contacter le support."
@@ -39,28 +39,28 @@ namespace Ordisoftware.Core
     static private TranslationsDictionary _ContactSupport;
 
     static public readonly TranslationsDictionary AskToClearLogs
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Do you want to delete all log files?",
         [Language.FR] = "Voulez-vous effacer tous les fichiers de log ?"
       };
 
     static public readonly TranslationsDictionary TraceLinesCount
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "{0} lines",
         [Language.FR] = "{0} lignes"
       };
 
     static public readonly TranslationsDictionary GitHubIssueComment
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "> Describe here what you did, what you expected and what happened.",
         [Language.FR] = "> Décrivez ici ce que vous avez fait, ce que vous attendiez et ce qui c'est passé."
       };
 
     static public readonly TranslationsDictionary UnhandledException
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Unhandled Exception has occured in {0}" + Globals.NL +
                         "<{1}>" + Globals.NL2 +
@@ -72,49 +72,49 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary NextException
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Next",
         [Language.FR] = "Suivante"
       };
 
     static public readonly TranslationsDictionary HotKeyUnregisterError
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Error on unregistering the HotKey.",
         [Language.FR] = "Erreur au désenregistrement du HotKey."
       };
 
     static public readonly TranslationsDictionary HotKeyRefusedBySystem
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The HotKey combination is refused by the system.",
         [Language.FR] = "La combinaison du HotKey est refusé par le système."
       };
 
     static public readonly TranslationsDictionary HotKeyCapturedByAnotherApplication
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "The HotKey combination is captured by another application",
         [Language.FR] = "La combinaison du HotKey est capturée par une autre application"
       };
 
     static public readonly TranslationsDictionary LockSessionError
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = $"Lock session error:{Globals.NL2}{{0}}",
         [Language.FR] = $"Erreur de vérouillage de la session :{Globals.NL2}{{0}}"
       };
 
     static public readonly TranslationsDictionary CallMethodError
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Error in {0}.",
         [Language.FR] = "Erreur dans {0}.",
       };
 
     static public readonly TranslationsDictionary IndexOutOfRange
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Index out of range in {0}: {1}" + Globals.NL2 +
                         "Must be between {2}} and {3}}.",
@@ -124,7 +124,7 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary IndexCantBeNegative
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Index can''t be negative in {0}: {1}",
         [Language.FR] = "Index ne peut pas être négatif dans {0}: {1}"

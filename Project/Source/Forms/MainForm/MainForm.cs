@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
+using EnumsNET;
 using Ordisoftware.Core;
 using Modifiers = Base.Hotkeys.Modifiers;
 
@@ -73,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
-      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+      foreach ( var value in Enums.GetValues<TorahEvent>() )
         LastCelebrationReminded.Add(value, null);
       if ( !Globals.IsDevExecutable )// TODO remove when ready
       {

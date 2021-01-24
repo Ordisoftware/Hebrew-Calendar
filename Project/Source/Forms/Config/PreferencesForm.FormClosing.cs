@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Xml;
 using System.Windows.Forms;
@@ -50,6 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SelectOpenNextCelebrationsForm.Checked )
         Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
       Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
       Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsDaysBefore.Value;
       for ( int index = 0; index < EditEvents.Items.Count; index++ )
         SystemManager.TryCatch(() =>

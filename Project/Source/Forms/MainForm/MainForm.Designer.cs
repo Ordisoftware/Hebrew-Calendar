@@ -13,6 +13,7 @@
     /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
     protected override void Dispose(bool disposing)
     {
+      TimerMidnight.Dispose();
       if ( disposing && (components != null) )
       {
         components.Dispose();
@@ -44,7 +45,6 @@
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
-      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,8 +133,10 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.SeparatorMenuWeather = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
@@ -172,8 +174,7 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -313,16 +314,6 @@
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
-      // 
-      // EditEnumsAsTranslations
-      // 
-      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
-      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
-      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarGrid
       // 
@@ -903,7 +894,7 @@
             this.toolStripSeparator9,
             this.ActionLocalWeather,
             this.ActionOnlineWeather,
-            this.toolStripSeparator11,
+            this.SeparatorMenuWeather,
             this.ActionOpenExportFolder,
             this.ActionGenerate,
             this.ActionVacuumAtNextStartup,
@@ -979,6 +970,18 @@
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
+      // toolStripSeparator9
+      // 
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      // 
+      // ActionLocalWeather
+      // 
+      this.ActionLocalWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionLocalWeather, "ActionLocalWeather");
+      this.ActionLocalWeather.Name = "ActionLocalWeather";
+      this.ActionLocalWeather.Click += new System.EventHandler(this.ActionLocalWeather_Click);
+      // 
       // ActionOnlineWeather
       // 
       this.ActionOnlineWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -986,10 +989,10 @@
       this.ActionOnlineWeather.Name = "ActionOnlineWeather";
       this.ActionOnlineWeather.Click += new System.EventHandler(this.ActionOnlineWeather_Click);
       // 
-      // toolStripSeparator11
+      // SeparatorMenuWeather
       // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      this.SeparatorMenuWeather.Name = "SeparatorMenuWeather";
+      resources.ApplyResources(this.SeparatorMenuWeather, "SeparatorMenuWeather");
       // 
       // ActionOpenExportFolder
       // 
@@ -1292,17 +1295,15 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
-      // ActionLocalWeather
+      // EditEnumsAsTranslations
       // 
-      this.ActionLocalWeather.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionLocalWeather, "ActionLocalWeather");
-      this.ActionLocalWeather.Name = "ActionLocalWeather";
-      this.ActionLocalWeather.Click += new System.EventHandler(this.ActionLocalWeather_Click);
-      // 
-      // toolStripSeparator9
-      // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
+      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
+      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // MainForm
       // 
@@ -1449,7 +1450,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
@@ -1487,9 +1487,10 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator Sep6;
-    private System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
-    private System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+    internal System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
+    internal System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
+    internal System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
   }
 }
 

@@ -25,28 +25,28 @@ namespace Ordisoftware.Hebrew
   {
 
     static public readonly TranslationsDictionary GrammarGuideTitle
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Grammar guide",
         [Language.FR] = "Guide de grammaire"
       };
 
     static public readonly TranslationsDictionary MethodNoticeTitle
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Lettriq analysis method notice",
         [Language.FR] = "Notice de la méthode d'analyse lettrique"
       };
 
     static public readonly TranslationsDictionary AskToDownload
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Do you want to download it?",
         [Language.FR] = "Voulez-vous le télécharger ?"
       };
 
     static public readonly TranslationsDictionary AskToDownloadHebrewLetters
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
       };
 
     static public readonly TranslationsDictionary AskToDownloadHebrewWords
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Hebrew Words not found." + Globals.NL +
                         SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew
       };
 
     static public readonly TranslationsDictionary ConfigureProviders
-      = new TranslationsDictionary
+      = new TranslationsDictionary()
       {
         [Language.EN] = "Configure providers",
         [Language.FR] = "Configurer les fournisseurs"

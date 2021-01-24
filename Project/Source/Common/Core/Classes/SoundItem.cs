@@ -29,21 +29,23 @@ namespace Ordisoftware.Core
   public class SoundItem
   {
 
-    static private SoundPlayer SoundPlayer = new SoundPlayer();
+    static private class NativeMethods
+    {
+      [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
+      static public extern uint mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
+    }
 
-    [DllImport("winmm.dll")]
-    static private extern uint mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
+    static private SoundPlayer SoundPlayer = new SoundPlayer();
 
     static public int GetSoundLengthMS(string fileName)
     {
       try
       {
         StringBuilder lengthBuf = new StringBuilder(32);
-        mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
-        mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
-        mciSendString("close wave", null, 0, IntPtr.Zero);
-        int length = 0;
-        if (int.TryParse(lengthBuf.ToString(), out length))
+        NativeMethods.mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+        NativeMethods.mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
+        NativeMethods.mciSendString("close wave", null, 0, IntPtr.Zero);
+        if ( int.TryParse(lengthBuf.ToString(), out int length) )
           return length;
       }
       catch

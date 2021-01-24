@@ -11,10 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Drawing;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -63,6 +62,13 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
+      ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;
+      SeparatorMenuWeather.Visible = Settings.WeatherMenuItemsEnabled;
+      var isVisible = Settings.WeatherMenuItemsEnabled ? (int?)null : int.MinValue;
+      ActionLocalWeather.Tag = isVisible;
+      ActionOnlineWeather.Tag = isVisible;
+      SeparatorMenuWeather.Tag = isVisible;
       MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
       if ( Settings.WebLinksMenuEnabled )
       {

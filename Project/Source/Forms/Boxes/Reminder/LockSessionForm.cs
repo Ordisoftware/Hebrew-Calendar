@@ -25,8 +25,11 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class LockSessionForm : Form
   {
 
-    [DllImport("user32.dll", SetLastError = true)]
-    static extern bool LockWorkStation();
+    static private class NativeMethods
+    {
+      [DllImport("user32.dll", SetLastError = true)]
+      static public extern bool LockWorkStation();
+    }
 
     static public LockSessionForm Instance { get; private set; }
 
@@ -145,7 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.MuteVolume();
       }
       Close();
-      if ( !LockWorkStation() )
+      if ( !NativeMethods.LockWorkStation() )
         MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 

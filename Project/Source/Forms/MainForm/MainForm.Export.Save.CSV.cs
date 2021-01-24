@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Text;
 using System.Linq;
 using System.Data;
 using System.Windows.Forms;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -35,7 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         string headerTxt = "";
-        foreach ( ReportFieldCSV field in Enum.GetValues(typeof(ReportFieldCSV)) )
+        foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
           headerTxt += field.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();

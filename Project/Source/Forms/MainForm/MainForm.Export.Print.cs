@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportPrint()
     {
-      var process = new ExportActions
+      var process = new ExportActions()
       {
         [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
         [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
@@ -61,7 +61,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
     {
       int margin = Settings.PrintingMargin;
-      bool finished = false;
       using ( var document = new PrintDocument() )
       {
         document.PrintPage += action;

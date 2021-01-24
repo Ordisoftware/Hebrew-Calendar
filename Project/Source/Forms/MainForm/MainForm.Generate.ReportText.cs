@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -58,11 +59,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
         var headerSep = SeparatorV;
         var headerTxt = SeparatorV;
-        foreach ( ReportFieldText v in Enum.GetValues(typeof(ReportFieldText)) )
+        foreach ( var field in Enums.GetValues<ReportFieldText>() )
         {
-          string str = AppTranslations.ReportFieldText.GetLang(v);
-          headerSep += new string(SeparatorH[0], CalendarFieldSize[v]) + SeparatorV.ToString();
-          headerTxt += " " + str + new string(' ', CalendarFieldSize[v] - str.Length - 2) + " " + SeparatorV.ToString();
+          string str = AppTranslations.ReportFieldText.GetLang(field);
+          headerSep += new string(SeparatorH[0], CalendarFieldSize[field]) + SeparatorV.ToString();
+          headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV.ToString();
         }
         headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
         var content = new StringBuilder();

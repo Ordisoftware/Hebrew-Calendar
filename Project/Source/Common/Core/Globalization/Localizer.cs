@@ -14,13 +14,21 @@
 /// <edited> 2020-08 </edited>
 using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Ordisoftware.Core
 {
 
+  [Serializable]
   public class TranslationsDictionary : NullSafeOfStringDictionary<Language>
   {
+    public TranslationsDictionary() : base()
+    {
+    }
+    protected TranslationsDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
   }
 
   /// <summary>

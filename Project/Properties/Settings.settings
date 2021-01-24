@@ -550,5 +550,11 @@
     <Setting Name="WeatherAppPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">msnweather:</Value>
     </Setting>
+    <Setting Name="WeatherMenuItemsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
+      <Value Profile="(Default)">BottomRight</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

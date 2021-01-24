@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -93,7 +93,6 @@ namespace Ordisoftware.Hebrew.Calendar
                                  AppTranslations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
                                  times.timeEnd;
         form.LabelDate.Tag = date;
-        form.SetLocation(ControlLocation.BottomRight);
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
@@ -118,6 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           MainForm.Instance.RemindCelebrationForms.Add(form);
+        SetFormsLocation();
         form.Show();
         form.BringToFront();
         Application.DoEvents();
@@ -156,12 +156,36 @@ namespace Ordisoftware.Hebrew.Calendar
         list.Add(item.Value);
       foreach ( ReminderForm item in MainForm.Instance.RemindCelebrationForms )
         list.Add(item);
-      int dy = 0;
-      int y = SystemInformation.WorkingArea.Top + SystemInformation.WorkingArea.Height;
-      foreach ( var item in list.OrderBy(f => f.Tag) )
+      var location = Program.Settings.ReminderBoxDesktopLocation;
+      int posY = 0;
+      int posX = 0;
+      int posDY = 0;
+      bool first = true;
+      foreach ( var form in list.OrderBy(f => f.Tag) )
       {
-        item.Location = new Point(item.Left, y - item.Height - dy);
-        dy += item.Height;
+        if ( first )
+        {
+          form.SetLocation(location);
+          posY = form.Top;
+          posX = form.Left;
+          first = false;
+          continue;
+        }
+        switch ( location )
+        {
+          case ControlLocation.TopLeft:
+          case ControlLocation.TopRight:
+            posY += form.Height;
+            form.Location = new Point(posX, posY);
+            break;
+          case ControlLocation.BottomLeft:
+          case ControlLocation.BottomRight:
+            posY -= form.Height;
+            form.Location = new Point(posX, posY);
+            break;
+          default:
+            throw new NotImplementedExceptionEx(location);
+        }
       }
     }
 
@@ -193,7 +217,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
-      SetFormsLocation();
       DoSound();
     }
 
