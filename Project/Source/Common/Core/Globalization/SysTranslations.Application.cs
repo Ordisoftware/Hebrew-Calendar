@@ -168,6 +168,46 @@ namespace Ordisoftware.Core
         [Language.FR] = "La vue a été imprimée."
       };
 
+    static public readonly NullSafeDictionary<ControlLocation, TranslationsDictionary> ControlLocationText
+      = new NullSafeDictionary<ControlLocation, TranslationsDictionary>
+      {
+        [ControlLocation.BottomLeft] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Bottom Left",
+          [Language.FR] = "Bas Gauche"
+        },
+        [ControlLocation.BottomRight] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Bottom Right",
+          [Language.FR] = "Bas Droite"
+        },
+        [ControlLocation.Center] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Center",
+          [Language.FR] = "Centre"
+        },
+        [ControlLocation.Fixed] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Fixed",
+          [Language.FR] = "Fixé"
+        },
+        [ControlLocation.Loose] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Loose",
+          [Language.FR] = "Libre"
+        },
+        [ControlLocation.TopLeft] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Top Left",
+          [Language.FR] = "Haut Gauche"
+        },
+        [ControlLocation.TopRight] = new TranslationsDictionary()
+        {
+          [Language.EN] = "Top Right",
+          [Language.FR] = "Haut Droite"
+        },
+      };
+
   }
 
 }
