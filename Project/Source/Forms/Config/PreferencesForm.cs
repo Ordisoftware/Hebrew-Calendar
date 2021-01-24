@@ -712,6 +712,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.SeparatorMenuWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
     }
 
+    private void SelectReminderBoxDesktopLocation_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = SysTranslations.ControlLocationText.GetLang((ControlLocation)e.Value);
+    }
+
   }
 
 }

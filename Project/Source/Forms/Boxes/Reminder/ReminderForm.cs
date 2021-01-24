@@ -117,6 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           MainForm.Instance.RemindCelebrationForms.Add(form);
+        SetFormsLocation();
         form.Show();
         form.BringToFront();
         Application.DoEvents();
@@ -216,7 +217,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
-      SetFormsLocation();
       DoSound();
     }
 
