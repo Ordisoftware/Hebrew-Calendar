@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -173,13 +173,13 @@ namespace Ordisoftware.Core
       {
         [ControlLocation.BottomLeft] = new TranslationsDictionary()
         {
-          [Language.EN] = "Bottom Left",
-          [Language.FR] = "Bas Gauche"
+          [Language.EN] = "Bottom left",
+          [Language.FR] = "Bas gauche"
         },
         [ControlLocation.BottomRight] = new TranslationsDictionary()
         {
-          [Language.EN] = "Bottom Right",
-          [Language.FR] = "Bas Droite"
+          [Language.EN] = "Bottom right",
+          [Language.FR] = "Bas droit"
         },
         [ControlLocation.Center] = new TranslationsDictionary()
         {
@@ -198,13 +198,13 @@ namespace Ordisoftware.Core
         },
         [ControlLocation.TopLeft] = new TranslationsDictionary()
         {
-          [Language.EN] = "Top Left",
-          [Language.FR] = "Haut Gauche"
+          [Language.EN] = "Top left",
+          [Language.FR] = "Haut gauche"
         },
         [ControlLocation.TopRight] = new TranslationsDictionary()
         {
-          [Language.EN] = "Top Right",
-          [Language.FR] = "Haut Droite"
+          [Language.EN] = "Top right",
+          [Language.FR] = "Haut droit"
         },
       };
 
