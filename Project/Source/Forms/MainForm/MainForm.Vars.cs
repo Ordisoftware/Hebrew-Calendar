@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -105,7 +106,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CurrentDay = null;
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
-        foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+        foreach ( var value in Enums.GetValues<TorahEvent>() )
           if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
           {
             TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
