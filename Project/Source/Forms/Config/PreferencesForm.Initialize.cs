@@ -17,6 +17,8 @@ using System.Linq;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using EnumsNET;
+using MoreLinq;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -39,6 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
       OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
       LoadEditIntervals();
       LoadExportFileFormats();
+      LoadReminderBoxesLocations();
       LoadDays();
       LoadEvents();
       LoadFonts();
@@ -108,15 +111,28 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Load reminder boxes locations.
+    /// </summary>
+    private void LoadReminderBoxesLocations()
+    {
+      foreach ( var value in Enums.GetValues<ControlLocation>().Skip(1).SkipLast(2) )
+      {
+        SelectReminderBoxDesktopLocation.Items.Add(value);
+        if ( Settings.ReminderBoxDesktopLocation == value )
+          SelectReminderBoxDesktopLocation.SelectedItem = value;
+      }
+    }
+
+    /// <summary>
     /// Load week days.
     /// </summary>
     private void LoadDays()
     {
-      foreach ( DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)) )
+      foreach ( var value in Enums.GetValues<DayOfWeek>() )
       {
-        var item = new DayOfWeekItem() { Text = AppTranslations.DayOfWeek.GetLang(day), Day = day };
+        var item = new DayOfWeekItem() { Text = AppTranslations.DayOfWeek.GetLang(value), Day = value };
         EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Settings.ShabatDay == day )
+        if ( (DayOfWeek)Settings.ShabatDay == value )
           EditShabatDay.SelectedItem = item;
       }
     }
@@ -126,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( TorahEvent value in Enum.GetValues(typeof(TorahEvent)) )
+      foreach ( var value in Enums.GetValues<TorahEvent>() )
         if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
           SystemManager.TryCatch(() =>
           {
@@ -145,11 +161,11 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadFonts()
     {
-      foreach ( var item in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
-        if ( MonoSpacedFonts.Contains(item.Name.ToLower()) )
+      foreach ( var value in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
+        if ( MonoSpacedFonts.Contains(value.Name.ToLower()) )
         {
-          int index = EditTextReportFontName.Items.Add(item.Name);
-          if ( item.Name == Settings.FontName )
+          int index = EditTextReportFontName.Items.Add(value.Name);
+          if ( value.Name == Settings.FontName )
             EditTextReportFontName.SelectedIndex = index;
         }
     }
