@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
+using EnumsNET;
 
 namespace Ordisoftware.Core
 {
@@ -81,7 +82,7 @@ namespace Ordisoftware.Core
     {
       try
       {
-        Managed = ( (Language[])Enum.GetValues(typeof(Language)) ).Skip(1).ToArray();
+        Managed = Enums.GetValues<Language>().Skip(1).ToArray();
         Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
         Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
       }

@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Linq;
+using EnumsNET;
 
 namespace Ordisoftware.Core
 {
@@ -25,17 +26,17 @@ namespace Ordisoftware.Core
   {
 
     static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
-      where T : Enum
+      where T : struct, Enum
     {
       var result = new NullSafeOfStringDictionary<T>();
-      foreach ( T value in Enum.GetValues(typeof(T)) )
+      foreach ( var value in Enums.GetValues<T>() )
         if ( list.Length == 0 || list.Contains(value) )
           result.Add(value, "." + value.ToString().ToLower());
       return result;
     }
 
     static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
-      where T : Enum
+      where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => !list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
@@ -43,7 +44,7 @@ namespace Ordisoftware.Core
     }
 
     static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
-      where T : Enum
+      where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
@@ -51,7 +52,7 @@ namespace Ordisoftware.Core
     }
 
     static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
-      where T : Enum
+      where T : struct, Enum
     {
       string str = SysTranslations.FileExtensionFilter.GetLang();
       var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");

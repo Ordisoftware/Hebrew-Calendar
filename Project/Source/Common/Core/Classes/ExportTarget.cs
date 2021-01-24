@@ -50,7 +50,7 @@ namespace Ordisoftware.Core
   {
 
     static public void Fill<T>(this ComboBox combobox, NullSafeOfStringDictionary<T> list, T valueDefault)
-      where T : Enum
+      where T : struct, Enum
     {
       foreach ( KeyValuePair<T, string> item in list )
       {
