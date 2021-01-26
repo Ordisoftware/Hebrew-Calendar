@@ -51,12 +51,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
+      Text += $" ({Program.Settings.GPSCountry}, {Program.Settings.GPSCity})";
+      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay)}";
       Text += " - ";
       Text += Program.Settings.TorahEventsCountAsMoon
               ? AppTranslations.OmerMoon.GetLang()
               : AppTranslations.OmerSun.GetLang();
-      Text += " - Shabat : ";
-      Text += AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay);
       Title = Text + " - ";
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());

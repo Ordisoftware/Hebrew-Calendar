@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -72,6 +72,16 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         DoScreenPositionMutex = false;
       }
+    }
+
+    /// <summary>
+    /// Update title bar text.
+    /// </summary>
+    private void UpdateText()
+    {
+      Text = Globals.AssemblyTitle;
+      if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
+        Text += $" ({Program.Settings.GPSCountry}, {Program.Settings.GPSCity})";
     }
 
     /// <summary>
