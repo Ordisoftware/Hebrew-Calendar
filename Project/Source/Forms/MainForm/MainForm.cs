@@ -61,7 +61,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       SoundItem.Initialize();
-      Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
       SystemManager.TryCatch(() =>
@@ -94,6 +93,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      UpdateText();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
@@ -487,6 +487,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = true;
         GoToDate(DateTime.Now.Date);
         EnableReminder();
+        UpdateText();
       }
     }
 
@@ -1184,8 +1185,37 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOnlineWeather_Click(object sender, EventArgs e)
     {
-      string server = new Uri(Program.Settings.WeatherResult).Host;
-      string url = Program.Settings.WeatherQuery;
+      switch ( Settings.WeatherProvider )
+      {
+        case WeatherProvider.MeteoblueDotCom:
+          DoOnlineWeatherMeteoBlueDotCom();
+          break;
+        case WeatherProvider.WeatherDotCom:
+          DoOnlineWeatherWeatherDotCom();
+          break;
+        default:
+          throw new NotImplementedExceptionEx(Settings.WeatherProvider);
+      }
+    }
+
+    public static class WeatherProviders
+    {
+      static public string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
+      static public string MeteoblueDotComResult = "https://www.meteoblue.com/weather/week/%LOCATION%";
+      static public string WeatherDotComQuery = "https://weather.com/%LANG%/weather/today/l/%LAT%,%LON%";
+    }
+
+    private void DoOnlineWeatherWeatherDotCom()
+    {
+      SystemManager.RunShell(WeatherProviders.WeatherDotComQuery.Replace("%LANG%", Languages.CurrentCode)
+                                                                .Replace("%LAT%", Settings.GPSLatitude)
+                                                                .Replace("%LON%", Settings.GPSLongitude));
+    }
+
+    private void DoOnlineWeatherMeteoBlueDotCom()
+    {
+      string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
+      string url = WeatherProviders.MeteoblueDotComQuery;
       url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
       using ( var client = new WebClient() )
       {
@@ -1212,7 +1242,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( results != null && results.Count() > 0 )
           location = results[0]["url"]?.ToString();
         if ( !string.IsNullOrEmpty(location) )
-          SystemManager.RunShell(Program.Settings.WeatherResult.Replace("%LOCATION%", location));
+          SystemManager.RunShell(WeatherProviders.MeteoblueDotComResult.Replace("%LOCATION%", location));
         else
         {
           string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();

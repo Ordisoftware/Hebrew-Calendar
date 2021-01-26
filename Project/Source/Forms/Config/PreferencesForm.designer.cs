@@ -255,6 +255,14 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.MenuSelectWeatherApp = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActiontWeatherSelecApp = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSeatherUseMeteoblue = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActiontWeatherUsetWeatherDotCom = new System.Windows.Forms.ToolStripMenuItem();
+      this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
+      this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -289,6 +297,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       this.TabPagePaths.SuspendLayout();
+      this.MenuSelectWeatherApp.SuspendLayout();
       this.SuspendLayout();
       // 
       // DialogColor
@@ -1992,6 +2001,9 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.LabelSelectOnlineWeatherProvider);
+      this.TabPagePaths.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
+      this.TabPagePaths.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
       this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectWeatherAppPath);
@@ -2018,6 +2030,7 @@
       // 
       // ActionResetWeatherAppPath
       // 
+      this.ActionResetWeatherAppPath.AllowDrop = true;
       this.ActionResetWeatherAppPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetWeatherAppPath, "ActionResetWeatherAppPath");
       this.ActionResetWeatherAppPath.Name = "ActionResetWeatherAppPath";
@@ -2127,6 +2140,55 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // MenuSelectWeatherApp
+      // 
+      this.MenuSelectWeatherApp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActiontWeatherSelecApp,
+            this.toolStripSeparator1,
+            this.ActionSeatherUseMeteoblue,
+            this.ActiontWeatherUsetWeatherDotCom});
+      this.MenuSelectWeatherApp.Name = "MenuSelectWeatherApp";
+      resources.ApplyResources(this.MenuSelectWeatherApp, "MenuSelectWeatherApp");
+      // 
+      // ActiontWeatherSelecApp
+      // 
+      this.ActiontWeatherSelecApp.Name = "ActiontWeatherSelecApp";
+      resources.ApplyResources(this.ActiontWeatherSelecApp, "ActiontWeatherSelecApp");
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionSeatherUseMeteoblue
+      // 
+      this.ActionSeatherUseMeteoblue.Name = "ActionSeatherUseMeteoblue";
+      resources.ApplyResources(this.ActionSeatherUseMeteoblue, "ActionSeatherUseMeteoblue");
+      // 
+      // ActiontWeatherUsetWeatherDotCom
+      // 
+      this.ActiontWeatherUsetWeatherDotCom.Name = "ActiontWeatherUsetWeatherDotCom";
+      resources.ApplyResources(this.ActiontWeatherUsetWeatherDotCom, "ActiontWeatherUsetWeatherDotCom");
+      // 
+      // LabelSelectOnlineWeatherProvider
+      // 
+      resources.ApplyResources(this.LabelSelectOnlineWeatherProvider, "LabelSelectOnlineWeatherProvider");
+      this.LabelSelectOnlineWeatherProvider.Name = "LabelSelectOnlineWeatherProvider";
+      // 
+      // SelectWeatherOnlineMeteoblueDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMeteoblueDotCom, "SelectWeatherOnlineMeteoblueDotCom");
+      this.SelectWeatherOnlineMeteoblueDotCom.Checked = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.Name = "SelectWeatherOnlineMeteoblueDotCom";
+      this.SelectWeatherOnlineMeteoblueDotCom.TabStop = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.UseVisualStyleBackColor = true;
+      // 
+      // SelectWeatherOnlineWeatherDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineWeatherDotCom, "SelectWeatherOnlineWeatherDotCom");
+      this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
+      this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2192,6 +2254,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).EndInit();
       this.TabPagePaths.ResumeLayout(false);
       this.TabPagePaths.PerformLayout();
+      this.MenuSelectWeatherApp.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -2422,5 +2485,13 @@
     private System.Windows.Forms.CheckBox EditWeatherMenuItemsEnabled;
     private System.Windows.Forms.Label LabelReminderBoxDesktopLocation;
     private System.Windows.Forms.ComboBox SelectReminderBoxDesktopLocation;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectWeatherApp;
+    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherSelecApp;
+    private System.Windows.Forms.ToolStripMenuItem ActionSeatherUseMeteoblue;
+    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherUsetWeatherDotCom;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Label LabelSelectOnlineWeatherProvider;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineMeteoblueDotCom;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineWeatherDotCom;
   }
 }

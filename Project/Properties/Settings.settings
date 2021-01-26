@@ -538,12 +538,6 @@
     <Setting Name="NewMoonsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">984, 461</Value>
     </Setting>
-    <Setting Name="WeatherQuery" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%</Value>
-    </Setting>
-    <Setting Name="WeatherResult" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://www.meteoblue.com/weather/week/%LOCATION%</Value>
-    </Setting>
     <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -555,6 +549,9 @@
     </Setting>
     <Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
       <Value Profile="(Default)">BottomRight</Value>
+    </Setting>
+    <Setting Name="WeatherProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
+      <Value Profile="(Default)">MeteoblueDotCom</Value>
     </Setting>
   </Settings>
 </SettingsFile>

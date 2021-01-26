@@ -158,6 +158,7 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
