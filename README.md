@@ -216,10 +216,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### In progress - Version 6.4
 
+- Improve main form to add country and city name in the title bar.
+- Improve celebrations and new moons boards to add country and city name in the title bar.
+- Add option to choose online weather provider between *meteoblue.com* and *weather.com*.
 - Add option to show or hide weather menu items and keyboard shortcuts.
 - Add option to set the corner of the desktop to place reminder boxes.
-- Update NuGet packages to last versions.
-- Code refactoring and code quality improvements.
+- Update some NuGet packages to last versions.
+- Few code refactoring and code quality improvements.
 
 >- Fix navigation Tray Icon tooltip box location when the taskbar is not at the bottom of the screen.
 >- Add export celebrations and new moons boards.
