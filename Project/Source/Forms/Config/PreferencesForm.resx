@@ -290,7 +290,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="OpenExeFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>588, 10</value>
@@ -368,7 +368,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottomSeparator.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>419, 9</value>
@@ -391,6 +391,36 @@
   <metadata name="OpenSettingsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 46</value>
   </metadata>
+  <metadata name="MenuSelectWeatherApp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>338, 46</value>
+  </metadata>
+  <data name="ActiontWeatherSelecApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="ActiontWeatherSelecApp.Text" xml:space="preserve">
+    <value>Windows 10 MSN Weather</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 6</value>
+  </data>
+  <data name="ActionSeatherUseMeteoblue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="ActiontWeatherUsetWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="ActiontWeatherUsetWeatherDotCom.Text" xml:space="preserve">
+    <value>Weather.com</value>
+  </data>
+  <data name="MenuSelectWeatherApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 76</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectWeatherApp.Name" xml:space="preserve">
+    <value>MenuSelectWeatherApp</value>
+  </data>
+  <data name="&gt;&gt;MenuSelectWeatherApp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
@@ -2953,16 +2983,16 @@
     <value>NoControl</value>
   </data>
   <data name="LabelReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 170</value>
+    <value>20, 20</value>
   </data>
   <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>122, 13</value>
   </data>
   <data name="LabelReminderBoxDesktopLocation.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
-    <value>Window location</value>
+    <value>Location of the windows</value>
   </data>
   <data name="&gt;&gt;LabelReminderBoxDesktopLocation.Name" xml:space="preserve">
     <value>LabelReminderBoxDesktopLocation</value>
@@ -2980,7 +3010,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="SelectReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 189</value>
+    <value>23, 39</value>
   </data>
   <data name="SelectReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 21</value>
@@ -3043,7 +3073,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 138</value>
+    <value>98, 193</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -3079,7 +3109,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 75</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3112,7 +3142,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 115</value>
+    <value>39, 170</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
@@ -3148,7 +3178,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 90</value>
+    <value>23, 145</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -3175,7 +3205,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 134</value>
+    <value>42, 189</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -3208,7 +3238,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 60</value>
+    <value>23, 115</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 17</value>
@@ -3244,7 +3274,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 40</value>
+    <value>23, 95</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3700,6 +3730,138 @@
   <data name="&gt;&gt;TabPageShabat.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 151</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 151</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionRemoveAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionRemoveAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionRemoveAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 151</value>
+  </data>
+  <data name="ActionRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionRemoveAll.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ActionRemoveAll.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveAll.Name" xml:space="preserve">
+    <value>ActionRemoveAll</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveAll.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;ActionRemoveAll.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionAddAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionAddAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionAddAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionAddAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 151</value>
+  </data>
+  <data name="ActionAddAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 18</value>
+  </data>
+  <data name="ActionAddAll.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="ActionAddAll.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;ActionAddAll.Name" xml:space="preserve">
+    <value>ActionAddAll</value>
+  </data>
+  <data name="&gt;&gt;ActionAddAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionAddAll.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;ActionAddAll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3731,7 +3893,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="LabelReminderCelebrationsIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3764,7 +3926,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3797,7 +3959,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3821,7 +3983,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3854,7 +4016,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3887,7 +4049,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3920,13 +4082,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="EditEventsDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventsDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 155</value>
+    <value>193, 175</value>
   </data>
   <data name="EditEventsDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 169</value>
@@ -3944,7 +4106,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3968,13 +4130,13 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 155</value>
+    <value>23, 175</value>
   </data>
   <data name="EditEvents.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 169</value>
@@ -3992,7 +4154,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="EditReminderCelebrationsDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -4016,7 +4178,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsDaysBefore.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4049,7 +4211,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="TabPageCelebrations.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -6154,6 +6316,138 @@
   <data name="&gt;&gt;TabPagePrint.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="EditWeatherOnlineUseDay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 330</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
+    <value>Weather of the day, else of the week</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Name" xml:space="preserve">
+    <value>EditWeatherOnlineUseDay</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 260</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
+    <value>Online weather provider</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Name" xml:space="preserve">
+    <value>LabelSelectOnlineWeatherProvider</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 281</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Text" xml:space="preserve">
+    <value>Meteoblue.com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineMeteoblueDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 303</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Text" xml:space="preserve">
+    <value>Weather.com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineWeatherDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Parent" xml:space="preserve">
+    <value>TabPagePaths</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="LabelWeatherAppPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6161,7 +6455,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 140</value>
+    <value>20, 200</value>
   </data>
   <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
@@ -6182,7 +6476,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;LabelWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="ActionResetWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6204,7 +6498,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 155</value>
+    <value>520, 215</value>
   </data>
   <data name="ActionResetWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -6222,7 +6516,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionResetWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="ActionSelectWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6247,7 +6541,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 155</value>
+    <value>490, 215</value>
   </data>
   <data name="ActionSelectWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -6265,7 +6559,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionSelectWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="LabelExportFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6295,7 +6589,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;LabelExportFolder.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="ActionResetExportFolder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6335,7 +6629,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionResetExportFolder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="ActionSelectExportFolder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6378,7 +6672,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionSelectExportFolder.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="LabelCalculatorPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6408,7 +6702,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;LabelCalculatorPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="ActionResetHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6430,7 +6724,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 215</value>
+    <value>520, 155</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -6448,7 +6742,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionResetHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="ActionResetCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6488,7 +6782,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionResetCalculatorPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="ActionSelectCalculatorPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6531,7 +6825,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionSelectCalculatorPath.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="LabelHebrewLettersPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6540,7 +6834,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 200</value>
+    <value>20, 140</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -6561,7 +6855,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;LabelHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6586,7 +6880,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 215</value>
+    <value>490, 155</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -6604,10 +6898,10 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="EditWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 159</value>
+    <value>23, 219</value>
   </data>
   <data name="EditWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -6625,7 +6919,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="EditExportFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 39</value>
@@ -6646,7 +6940,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 99</value>
@@ -6667,10 +6961,10 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 219</value>
+    <value>23, 159</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -6688,7 +6982,7 @@
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="TabPagePaths.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -6742,7 +7036,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -6752,6 +7046,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -6827,6 +7124,30 @@
   </data>
   <data name="&gt;&gt;OpenSettingsDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActiontWeatherSelecApp.Name" xml:space="preserve">
+    <value>ActiontWeatherSelecApp</value>
+  </data>
+  <data name="&gt;&gt;ActiontWeatherSelecApp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSeatherUseMeteoblue.Name" xml:space="preserve">
+    <value>ActionSeatherUseMeteoblue</value>
+  </data>
+  <data name="&gt;&gt;ActionSeatherUseMeteoblue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActiontWeatherUsetWeatherDotCom.Name" xml:space="preserve">
+    <value>ActiontWeatherUsetWeatherDotCom</value>
+  </data>
+  <data name="&gt;&gt;ActiontWeatherUsetWeatherDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

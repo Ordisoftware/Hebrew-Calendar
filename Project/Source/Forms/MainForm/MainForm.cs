@@ -16,13 +16,11 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
-using System.Net;
 using System.Data;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using Newtonsoft.Json.Linq;
 using EnumsNET;
 using Ordisoftware.Core;
 using Modifiers = Base.Hotkeys.Modifiers;
@@ -61,7 +59,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       SoundItem.Initialize();
-      Text = Globals.AssemblyTitle;
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
       SystemManager.TryCatch(() =>
@@ -94,6 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      UpdateText();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
@@ -487,6 +485,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = true;
         GoToDate(DateTime.Now.Date);
         EnableReminder();
+        UpdateText();
       }
     }
 
@@ -1184,42 +1183,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOnlineWeather_Click(object sender, EventArgs e)
     {
-      string server = new Uri(Program.Settings.WeatherResult).Host;
-      string url = Program.Settings.WeatherQuery;
-      url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
-      using ( var client = new WebClient() )
-      {
-        JObject data = null;
-        string json = "";
-        try
-        {
-          json = client.DownloadString(url);
-          data = JObject.Parse(json);
-        }
-        catch ( Exception ex )
-        {
-          string msg = ex.Message;
-          if ( ex.InnerException != null )
-            msg += Globals.NL2 + ex.InnerException.Message;
-          msg += Globals.NL2 + url;
-          if ( !string.IsNullOrEmpty(json) )
-            msg += Globals.NL2 + json;
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-          return;
-        }
-        string location = "";
-        var results = data["results"];
-        if ( results != null && results.Count() > 0 )
-          location = results[0]["url"]?.ToString();
-        if ( !string.IsNullOrEmpty(location) )
-          SystemManager.RunShell(Program.Settings.WeatherResult.Replace("%LOCATION%", location));
-        else
-        {
-          string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-        }
-      }
-
+      OpenOlineWeather();
     }
 
   }

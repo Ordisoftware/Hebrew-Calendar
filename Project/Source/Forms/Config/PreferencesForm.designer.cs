@@ -49,6 +49,11 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
+      this.MenuSelectWeatherApp = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActiontWeatherSelecApp = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionSeatherUseMeteoblue = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActiontWeatherUsetWeatherDotCom = new System.Windows.Forms.ToolStripMenuItem();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
@@ -127,10 +132,6 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
@@ -209,7 +210,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
@@ -239,6 +239,9 @@
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
+      this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
@@ -251,12 +254,23 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.ActionRemoveAll = new System.Windows.Forms.Button();
+      this.ActionAddAll = new System.Windows.Forms.Button();
+      this.button1 = new System.Windows.Forms.Button();
+      this.button2 = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
+      this.MenuSelectWeatherApp.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
@@ -401,6 +415,36 @@
       // 
       this.OpenThemeDialog.FileName = "openFileDialog1";
       resources.ApplyResources(this.OpenThemeDialog, "OpenThemeDialog");
+      // 
+      // MenuSelectWeatherApp
+      // 
+      this.MenuSelectWeatherApp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActiontWeatherSelecApp,
+            this.toolStripSeparator1,
+            this.ActionSeatherUseMeteoblue,
+            this.ActiontWeatherUsetWeatherDotCom});
+      this.MenuSelectWeatherApp.Name = "MenuSelectWeatherApp";
+      resources.ApplyResources(this.MenuSelectWeatherApp, "MenuSelectWeatherApp");
+      // 
+      // ActiontWeatherSelecApp
+      // 
+      this.ActiontWeatherSelecApp.Name = "ActiontWeatherSelecApp";
+      resources.ApplyResources(this.ActiontWeatherSelecApp, "ActiontWeatherSelecApp");
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionSeatherUseMeteoblue
+      // 
+      this.ActionSeatherUseMeteoblue.Name = "ActionSeatherUseMeteoblue";
+      resources.ApplyResources(this.ActionSeatherUseMeteoblue, "ActionSeatherUseMeteoblue");
+      // 
+      // ActiontWeatherUsetWeatherDotCom
+      // 
+      this.ActiontWeatherUsetWeatherDotCom.Name = "ActiontWeatherUsetWeatherDotCom";
+      resources.ApplyResources(this.ActiontWeatherUsetWeatherDotCom, "ActiontWeatherUsetWeatherDotCom");
       // 
       // TabControl
       // 
@@ -1099,38 +1143,6 @@
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
@@ -1328,6 +1340,10 @@
       // 
       this.TabPageCelebrations.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageCelebrations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageCelebrations.Controls.Add(this.button2);
+      this.TabPageCelebrations.Controls.Add(this.button1);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAll);
+      this.TabPageCelebrations.Controls.Add(this.ActionAddAll);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutesIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelReminderCelebrationsIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBeforeIntervalInfo);
@@ -1759,14 +1775,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -1992,6 +2000,10 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.EditWeatherOnlineUseDay);
+      this.TabPagePaths.Controls.Add(this.LabelSelectOnlineWeatherProvider);
+      this.TabPagePaths.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
+      this.TabPagePaths.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
       this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectWeatherAppPath);
@@ -2011,6 +2023,25 @@
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
       // 
+      // LabelSelectOnlineWeatherProvider
+      // 
+      resources.ApplyResources(this.LabelSelectOnlineWeatherProvider, "LabelSelectOnlineWeatherProvider");
+      this.LabelSelectOnlineWeatherProvider.Name = "LabelSelectOnlineWeatherProvider";
+      // 
+      // SelectWeatherOnlineMeteoblueDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMeteoblueDotCom, "SelectWeatherOnlineMeteoblueDotCom");
+      this.SelectWeatherOnlineMeteoblueDotCom.Checked = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.Name = "SelectWeatherOnlineMeteoblueDotCom";
+      this.SelectWeatherOnlineMeteoblueDotCom.TabStop = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.UseVisualStyleBackColor = true;
+      // 
+      // SelectWeatherOnlineWeatherDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineWeatherDotCom, "SelectWeatherOnlineWeatherDotCom");
+      this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
+      this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
+      // 
       // LabelWeatherAppPath
       // 
       resources.ApplyResources(this.LabelWeatherAppPath, "LabelWeatherAppPath");
@@ -2018,6 +2049,7 @@
       // 
       // ActionResetWeatherAppPath
       // 
+      this.ActionResetWeatherAppPath.AllowDrop = true;
       this.ActionResetWeatherAppPath.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionResetWeatherAppPath, "ActionResetWeatherAppPath");
       this.ActionResetWeatherAppPath.Name = "ActionResetWeatherAppPath";
@@ -2095,6 +2127,78 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // ActionRemoveAll
+      // 
+      this.ActionRemoveAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemoveAll, "ActionRemoveAll");
+      this.ActionRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemoveAll.Name = "ActionRemoveAll";
+      this.ActionRemoveAll.UseVisualStyleBackColor = true;
+      // 
+      // ActionAddAll
+      // 
+      this.ActionAddAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAddAll, "ActionAddAll");
+      this.ActionAddAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionAddAll.Name = "ActionAddAll";
+      this.ActionAddAll.UseVisualStyleBackColor = true;
+      // 
+      // button1
+      // 
+      this.button1.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button1, "button1");
+      this.button1.ForeColor = System.Drawing.Color.DarkBlue;
+      this.button1.Name = "button1";
+      this.button1.UseVisualStyleBackColor = true;
+      // 
+      // button2
+      // 
+      this.button2.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button2, "button2");
+      this.button2.ForeColor = System.Drawing.Color.DarkBlue;
+      this.button2.Name = "button2";
+      this.button2.UseVisualStyleBackColor = true;
+      // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditWeatherAppPath
       // 
       this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2127,6 +2231,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditWeatherOnlineUseDay
+      // 
+      resources.ApplyResources(this.EditWeatherOnlineUseDay, "EditWeatherOnlineUseDay");
+      this.EditWeatherOnlineUseDay.Name = "EditWeatherOnlineUseDay";
+      this.EditWeatherOnlineUseDay.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2146,6 +2256,7 @@
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
+      this.MenuSelectWeatherApp.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
@@ -2422,5 +2533,18 @@
     private System.Windows.Forms.CheckBox EditWeatherMenuItemsEnabled;
     private System.Windows.Forms.Label LabelReminderBoxDesktopLocation;
     private System.Windows.Forms.ComboBox SelectReminderBoxDesktopLocation;
+    private System.Windows.Forms.ContextMenuStrip MenuSelectWeatherApp;
+    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherSelecApp;
+    private System.Windows.Forms.ToolStripMenuItem ActionSeatherUseMeteoblue;
+    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherUsetWeatherDotCom;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.Label LabelSelectOnlineWeatherProvider;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineMeteoblueDotCom;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineWeatherDotCom;
+    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button ActionRemoveAll;
+    private System.Windows.Forms.Button ActionAddAll;
+    private System.Windows.Forms.CheckBox EditWeatherOnlineUseDay;
   }
 }

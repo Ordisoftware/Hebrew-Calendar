@@ -10,42 +10,20 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2021-01 </created>
 /// <edited> 2021-01 </edited>
 using System;
-using System.Xml;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide form to edit the preferences.
+  /// Weather provider enum.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class PreferencesForm
+  public enum WeatherProvider
   {
-
-    private void DoFormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( DoReset ) return;
-      try
-      {
-        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
-        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
-      }
-      catch
-      {
-        DisplayManager.ShowError("Invalid GPS coordonates.");
-        e.Cancel = true;
-        return;
-      }
-      UpdateSettings();
-      Settings.Save();
-      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
-    }
-
+    MeteoblueDotCom,
+    WeatherDotCom
   }
 
 }

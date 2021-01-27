@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -49,6 +49,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private NewMoonsBoardForm()
     {
       InitializeComponent();
+      Text += $" ({Program.Settings.GPSCountry}, {Program.Settings.GPSCity})";
+      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
       var list = MainForm.Instance.YearsIntervalArray;
