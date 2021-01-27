@@ -16,13 +16,11 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
-using System.Net;
 using System.Data;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using Newtonsoft.Json.Linq;
 using EnumsNET;
 using Ordisoftware.Core;
 using Modifiers = Base.Hotkeys.Modifiers;
@@ -1185,71 +1183,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionOnlineWeather_Click(object sender, EventArgs e)
     {
-      switch ( Settings.WeatherProvider )
-      {
-        case WeatherProvider.MeteoblueDotCom:
-          DoOnlineWeatherMeteoBlueDotCom();
-          break;
-        case WeatherProvider.WeatherDotCom:
-          DoOnlineWeatherWeatherDotCom();
-          break;
-        default:
-          throw new NotImplementedExceptionEx(Settings.WeatherProvider);
-      }
-    }
-
-    public static class WeatherProviders
-    {
-      static public string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
-      static public string MeteoblueDotComResult = "https://www.meteoblue.com/weather/week/%LOCATION%";
-      static public string WeatherDotComQuery = "https://weather.com/%LANG%/weather/today/l/%LAT%,%LON%";
-    }
-
-    private void DoOnlineWeatherWeatherDotCom()
-    {
-      SystemManager.RunShell(WeatherProviders.WeatherDotComQuery.Replace("%LANG%", Languages.CurrentCode)
-                                                                .Replace("%LAT%", Settings.GPSLatitude)
-                                                                .Replace("%LON%", Settings.GPSLongitude));
-    }
-
-    private void DoOnlineWeatherMeteoBlueDotCom()
-    {
-      string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
-      string url = WeatherProviders.MeteoblueDotComQuery;
-      url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
-      using ( var client = new WebClient() )
-      {
-        JObject data = null;
-        string json = "";
-        try
-        {
-          json = client.DownloadString(url);
-          data = JObject.Parse(json);
-        }
-        catch ( Exception ex )
-        {
-          string msg = ex.Message;
-          if ( ex.InnerException != null )
-            msg += Globals.NL2 + ex.InnerException.Message;
-          msg += Globals.NL2 + url;
-          if ( !string.IsNullOrEmpty(json) )
-            msg += Globals.NL2 + json;
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-          return;
-        }
-        string location = "";
-        var results = data["results"];
-        if ( results != null && results.Count() > 0 )
-          location = results[0]["url"]?.ToString();
-        if ( !string.IsNullOrEmpty(location) )
-          SystemManager.RunShell(WeatherProviders.MeteoblueDotComResult.Replace("%LOCATION%", location));
-        else
-        {
-          string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();
-          DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-        }
-      }
-
+      OpenOlineWeather();
     }
 
   }

@@ -41,31 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
         e.Cancel = true;
         return;
       }
-      if ( SelectOpenMainForm.Checked )
-        Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
-      else
-      if ( SelectOpenNavigationForm.Checked )
-        Settings.TrayIconClickOpen = TrayIconClickOpen.NavigationForm;
-      else
-      if ( SelectOpenNextCelebrationsForm.Checked )
-        Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
-      Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
-      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsDaysBefore.Value;
-      for ( int index = 0; index < EditEvents.Items.Count; index++ )
-        SystemManager.TryCatch(() =>
-        {
-          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Settings[name] = EditEvents.GetItemChecked(index);
-        });
-      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
-        SystemManager.TryCatch(() =>
-        {
-          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Settings[name] = EditEventsDay.GetItemChecked(index);
-        });
       UpdateSettings();
-      Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       Settings.Save();
       SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }

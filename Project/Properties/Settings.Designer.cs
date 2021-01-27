@@ -2193,12 +2193,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("MeteoblueDotCom")]
-        public global::Ordisoftware.Hebrew.Calendar.WeatherProvider WeatherProvider {
+        public global::Ordisoftware.Hebrew.Calendar.WeatherProvider WeatherOnlineProvider {
             get {
-                return ((global::Ordisoftware.Hebrew.Calendar.WeatherProvider)(this["WeatherProvider"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.WeatherProvider)(this["WeatherOnlineProvider"]));
             }
             set {
-                this["WeatherProvider"] = value;
+                this["WeatherOnlineProvider"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WeatherOnlineUseDay {
+            get {
+                return ((bool)(this["WeatherOnlineUseDay"]));
+            }
+            set {
+                this["WeatherOnlineUseDay"] = value;
             }
         }
     }

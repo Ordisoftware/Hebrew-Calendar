@@ -155,12 +155,6 @@
   <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-  <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 49</value>
-  </data>
-  <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
-  </data>
   <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -225,6 +219,12 @@
   <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
     <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
+  <data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="EditWeatherMenuItemsEnabled.Text" xml:space="preserve">
+    <value>Activer les éléments de menus météo</value>
+  </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
   </data>
@@ -248,12 +248,6 @@
   </data>
   <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
-  </data>
-  <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 49</value>
-  </data>
-  <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
   </data>
   <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
@@ -525,6 +519,12 @@
   </data>
   <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
+    <value>Position des fenêtres</value>
   </data>
   <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 13</value>
@@ -917,13 +917,19 @@
   <data name="TabPagePaths.Text" xml:space="preserve">
     <value>Chemins</value>
   </data>
-  <data name="LabelWindowsWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 13</value>
   </data>
-  <data name="LabelWindowsWeatherAppPath.Text" xml:space="preserve">
-    <value>Application de météo</value>
+  <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
+    <value>Fournisseur de météo en ligne</value>
   </data>
-  <data name="ActionResetWindowsWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelWeatherAppPath.Text" xml:space="preserve">
+    <value>Application Météo</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
@@ -936,7 +942,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionSelectWindowsWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSelectWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
@@ -1035,12 +1041,6 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
-  </data>
-  <data name="LabelHebrewLettersPath.Text" xml:space="preserve">
-    <value>Hebrew Letters</value>
-  </data>
   <data name="ActionSelectHebrewLettersPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1060,10 +1060,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-  <data name="EditWeatherMenuItemsEnabled.Text" xml:space="preserve">
-    <value>Activer les éléments de menus météo</value>
-  </data>
-  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
-    <value>Position de la fenêtre</value>
+  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
+    <value>Météo du jour, sinon de la semaine</value>
   </data>
 </root>

@@ -550,8 +550,11 @@
     <Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
       <Value Profile="(Default)">BottomRight</Value>
     </Setting>
-    <Setting Name="WeatherProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
+    <Setting Name="WeatherOnlineProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
       <Value Profile="(Default)">MeteoblueDotCom</Value>
+    </Setting>
+    <Setting Name="WeatherOnlineUseDay" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
