@@ -466,6 +466,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
+          UpdateText();
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
@@ -485,7 +486,6 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = true;
         GoToDate(DateTime.Now.Date);
         EnableReminder();
-        UpdateText();
       }
     }
 

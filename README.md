@@ -216,7 +216,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### In progress - Version 6.4
 
-- Improve main form to add country and city name in the title bar.
+- Improve main form title bar to indicate country and city name.
+- Improve main form sub-title to indicate if moon or sun omer is used to calculate Torah's dates.
 - Improve celebrations and new moons boards to add country and city name in the title bar.
 - Improve preferences form to allow select all or none events in list bowes.
 - Add option to choose online weather provider between *meteoblue.com* and *weather.com*.
@@ -225,7 +226,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Update some NuGet packages to last versions.
 - Few code refactoring and code quality improvements.
 
->- Improve main form sub-title to indicate if moon or sun days are used to calculate Torah's dates.
 >- Fix navigation Tray Icon tooltip box location when the taskbar is not at the bottom of the screen.
 >- Add export celebrations and new moons boards.
 
