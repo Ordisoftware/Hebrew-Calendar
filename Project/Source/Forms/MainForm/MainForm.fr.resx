@@ -174,7 +174,7 @@
     <value>Aujourd'hui</value>
   </data>
   <data name="LabelTitle.Text" xml:space="preserve">
-    <value>CALENDRIER LUNI-SOLAIRE</value>
+    <value>CALENDRIER LUNISOLAIRE</value>
   </data>
   <data name="ActionSaveToFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
