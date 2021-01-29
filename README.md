@@ -203,8 +203,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add export and print lunar months data.
 - Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
-- Add reminder for solar and lunar anniversary of birth.
-- Add 'Hanouka and Pourim dates and an option to consider them or not in the calendar.
+- Add user reminders for solar and lunar anniversary of birth.
+- Add user reminders for small religious festivals as a yearly alarm reminder.
+- Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
 - Improve date bookmarks to be used from the main window to navigate.
