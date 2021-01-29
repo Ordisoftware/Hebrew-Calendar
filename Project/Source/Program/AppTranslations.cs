@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -35,6 +35,13 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [Language.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
         [Language.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
+      };
+
+    static public readonly TranslationsDictionary MainFormSubTitle
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "LUNISOLAR CALENDAR",
+        [Language.FR] = "CALENDRIER LUNISOLAIRE"
       };
 
     static public readonly TranslationsDictionary AskToResetPreferences
