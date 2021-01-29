@@ -13,17 +13,13 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
 using System;
-using System.Diagnostics;
 using System.Linq;
-using System.Xml;
 using System.Data;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using EnumsNET;
 using Ordisoftware.Core;
-using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -34,10 +30,6 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
-
-    public const bool HotKeyEnabledByDefault = true;
-    public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
-    public const Keys DefaultHotKeyKey = Keys.C;
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -60,7 +52,14 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
-      SystemEvents.PowerModeChanged += PowerModeChanged;
+      SystemEvents.PowerModeChanged += (s,e) =>
+      {
+        if ( e.Mode == PowerModes.Resume )
+        {
+          System.Threading.Thread.Sleep(5000);
+          DoTimerMidnight();
+        }
+      };
       SystemManager.TryCatch(() =>
       {
         Icon = new Icon(Globals.ApplicationIconFilePath);
@@ -89,40 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      if ( Globals.IsExiting ) return;
-      Settings.Retrieve();
-      UpdateText();
-      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
-                                                                    Settings.ApplicationVolume));
-      StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
-      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
-        SystemManager.TryCatchManage(() =>
-        {
-          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
-          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
-        });
-      var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                     ref lastdone,
-                                     Settings.CheckUpdateAtStartupDaysInterval,
-                                     true);
-      Settings.CheckUpdateLastDone = lastdone;
-      if ( exit )
-      {
-        SystemManager.Exit();
-        return;
-      }
-      ChronoStart.Start();
-      CalendarText.ForeColor = Settings.TextColor;
-      CalendarText.BackColor = Settings.TextBackground;
-      InitializeCalendarUI();
-      InitializeCurrentTimeZone();
-      InitializeDialogsDirectory();
-      DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
-      Refresh();
-      ClearLists();
-      LoadData();
+      DoMainForm_Load(sender, e);
     }
 
     /// <summary>
@@ -132,77 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      if ( Globals.IsExiting ) return;
-      DebugManager.Enter();
-      try
-      {
-        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
-        UpdateTextCalendar();
-        CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
-        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-        Globals.IsReady = true;
-        UpdateButtons();
-        GoToDate(DateTime.Today);
-        bool doforce = ( SystemManager.CommandLineOptions as ApplicationCommandLine )?.Generate ?? false;
-        CheckRegenerateCalendar(force: doforce);
-        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-          ActionPreferences.PerformClick();
-        ChronoStart.Stop();
-        TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        TimerMidnight.TimeReached += TimerMidnight_Tick;
-        TimerMidnight.Start();
-        TimerReminder_Tick(null, null);
-        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-        Settings.Save();
-        this.Popup();
-        if ( Settings.StartupHide || Globals.ForceStartupHide )
-          MenuShowHide.PerformClick();
-        SystemManager.TryCatch(() =>
-        {
-          if ( LockSessionForm.Instance?.Visible ?? false )
-            LockSessionForm.Instance.Popup();
-        });
-        NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                       AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 660, false, false);
-        NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
-        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        //
-        SetGlobalHotKey();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
-    }
-
-    internal void SetGlobalHotKey(bool noactive = false)
-    {
-      var shortcutKey = DefaultHotKeyKey;
-      var shortcutModifiers = DefaultHotKeyModifiers;
-      SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
-      SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
-      Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
-      Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
-      Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
-      if ( !noactive )
-        SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
-    }
-
-    /// <summary>
-    /// Event handler. Called by BrintToFrontApplicationHotKey key pressed events.
-    /// </summary>
-    private void BrintToFrontApplicationHotKey_KeyPressed()
-    {
-      this.SyncUI(() =>
-      {
-        MenuShowHide_Click(null, null);
-        var forms = Application.OpenForms.ToList().Where(f => f.Visible);
-        forms.ToList().ForEach(f => f.ForceBringToFront());
-        var form = forms.LastOrDefault();
-        if ( form != null && form.Visible )
-          form.Popup();
-      });
+      DoMainForm_Shown(sender, e);
     }
 
     /// <summary>
@@ -246,35 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Session ending event information.</param>
     internal void SessionEnding(object sender, SessionEndingEventArgs e)
     {
-      if ( Globals.IsSessionEnding ) return;
-      DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
-      try
-      {
-        Globals.IsExiting = true;
-        Globals.IsSessionEnding = true;
-        Globals.AllowClose = true;
-        LockSessionForm.Instance.Timer.Stop();
-        TimerTooltip.Stop();
-        TimerBallon.Stop();
-        TimerTrayMouseMove.Stop();
-        TimerResumeReminder.Stop();
-        TimerMidnight.Stop();
-        TimerReminder.Stop();
-        MessageBoxEx.CloseAll();
-        SystemManager.TryCatch(() => ClearLists());
-        SystemManager.TryCatch(() =>
-        {
-          foreach ( Form form in Application.OpenForms )
-            if ( form != this && form.Visible )
-              SystemManager.TryCatch(() => form.Close());
-        });
-        Close();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      DoSessionEnding(sender, e);
     }
 
     /// <summary>
@@ -496,52 +364,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void MenuShowHide_Click(object sender, EventArgs e)
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        if ( Visible && ( WindowState == FormWindowState.Minimized ) )
-        {
-          WindowState = Settings.MainFormState;
-          this.Popup();
-        }
-        else
-        if ( !Visible || e == null )
-        {
-          FormBorderStyle = FormBorderStyle.Sizable;
-          Visible = true;
-          ShowInTaskbar = true;
-          bool temp = Globals.IsReady;
-          try
-          {
-            Globals.IsReady = false;
-            WindowState = Settings.MainFormState;
-          }
-          finally
-          {
-            Globals.IsReady = temp;
-          }
-          if ( Globals.IsReady )
-          {
-            if ( NavigationTrayBallooned )
-              NavigationForm.Instance.Hide();
-            this.Popup();
-          }
-          if ( !NavigationForm.Instance.Visible )
-            if ( Settings.MainFormShownGoToToday )
-              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(DateTime.Today))).Start();
-            else
-              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(CalendarMonth.CalendarDate.Date))).Start();
-        }
-        else
-        {
-          Settings.MainFormState = WindowState;
-          WindowState = FormWindowState.Minimized;
-          Visible = false;
-          ShowInTaskbar = false;
-          FormBorderStyle = FormBorderStyle.SizableToolWindow;
-          Settings.Store();
-        }
-        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-      });
+      DoMenuShowHide_Click(sender, e);
     }
 
     /// <summary>
@@ -551,47 +374,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Mouse event information.</param>
     private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        TimerBallon.Stop();
-        TimerTrayMouseMove.Stop();
-        if ( e != null )
-        {
-          if ( e.Button == MouseButtons.Left )
-            switch ( Settings.TrayIconClickOpen )
-            {
-              case TrayIconClickOpen.MainForm:
-                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
-                break;
-              case TrayIconClickOpen.NextCelebrationsForm:
-                if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
-                  NextCelebrationsForm.Instance.Close();
-                else
-                  ActionViewCelebrations.PerformClick();
-                break;
-              case TrayIconClickOpen.NavigationForm:
-                var form = NavigationForm.Instance;
-                if ( form.Visible )
-                  form.Visible = false;
-                else
-                  SystemManager.TryCatchManage(() =>
-                  {
-                    if ( Settings.MainFormShownGoToToday )
-                      form.Date = DateTime.Today;
-                    else
-                      GoToDate(CalendarMonth.CalendarDate.Date);
-                    form.Visible = true;
-                  });
-                break;
-              default:
-                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen);
-            }
-          else
-        if ( e.Button == MouseButtons.Right )
-            if ( NavigationForm.Instance.Visible )
-              ActionNavigate.PerformClick();
-        }
-      });
+      DoTrayIconMouse_Click(sender, e);
     }
 
     /// <summary>

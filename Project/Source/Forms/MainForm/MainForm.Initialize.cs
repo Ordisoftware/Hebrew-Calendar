@@ -13,8 +13,15 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
 using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Xml;
+using System.Data;
 using System.Drawing;
+using System.Windows.Forms;
+using Microsoft.Win32;
 using Ordisoftware.Core;
+using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -25,6 +32,168 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm
   {
+
+    public const bool HotKeyEnabledByDefault = true;
+    public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
+    public const Keys DefaultHotKeyKey = Keys.C;
+
+    /// <summary>
+    /// Do Form Load event.
+    /// </summary>
+    private void DoMainForm_Load(object sender, EventArgs e)
+    {
+      if ( Globals.IsExiting ) return;
+      Settings.Retrieve();
+      UpdateText();
+      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+      SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
+                                                                    Settings.ApplicationVolume));
+      StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
+      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
+        SystemManager.TryCatchManage(() =>
+        {
+          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
+        });
+      var lastdone = Settings.CheckUpdateLastDone;
+      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                     ref lastdone,
+                                     Settings.CheckUpdateAtStartupDaysInterval,
+                                     true);
+      Settings.CheckUpdateLastDone = lastdone;
+      if ( exit )
+      {
+        SystemManager.Exit();
+        return;
+      }
+      ChronoStart.Start();
+      CalendarText.ForeColor = Settings.TextColor;
+      CalendarText.BackColor = Settings.TextBackground;
+      InitializeCalendarUI();
+      InitializeCurrentTimeZone();
+      InitializeDialogsDirectory();
+      DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
+      Refresh();
+      ClearLists();
+      LoadData();
+    }
+
+    /// <summary>
+    /// Do Form Shown event.
+    /// </summary>
+    private void DoMainForm_Shown(object sender, EventArgs e)
+    {
+      if ( Globals.IsExiting ) return;
+      DebugManager.Enter();
+      try
+      {
+        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+        UpdateTextCalendar();
+        CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
+        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+        Globals.IsReady = true;
+        UpdateButtons();
+        GoToDate(DateTime.Today);
+        bool doforce = ( SystemManager.CommandLineOptions as ApplicationCommandLine )?.Generate ?? false;
+        CheckRegenerateCalendar(force: doforce);
+        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+          ActionPreferences.PerformClick();
+        ChronoStart.Stop();
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        TimerMidnight.TimeReached += TimerMidnight_Tick;
+        TimerMidnight.Start();
+        TimerReminder_Tick(null, null);
+        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+        Settings.Save();
+        this.Popup();
+        if ( Settings.StartupHide || Globals.ForceStartupHide )
+          MenuShowHide.PerformClick();
+        SystemManager.TryCatch(() =>
+        {
+          if ( LockSessionForm.Instance?.Visible ?? false )
+            LockSessionForm.Instance.Popup();
+        });
+        NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                       AppTranslations.NoticeKeyboardShortcuts,
+                                                       true, false, 400, 660, false, false);
+        NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
+        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        //
+        SetGlobalHotKey();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
+    }
+
+    /// <summary>
+    /// Set global HotKey combination.
+    /// </summary>
+    internal void SetGlobalHotKey(bool noactive = false)
+    {
+      var shortcutKey = DefaultHotKeyKey;
+      var shortcutModifiers = DefaultHotKeyModifiers;
+      SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
+      SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
+      Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
+      Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
+      Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
+      if ( !noactive )
+        SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
+    }
+
+    /// <summary>
+    /// Execute Global HotKey.
+    /// </summary>
+    private void BrintToFrontApplicationHotKey_KeyPressed()
+    {
+      this.SyncUI(() =>
+      {
+        MenuShowHide_Click(null, null);
+        var forms = Application.OpenForms.ToList().Where(f => f.Visible);
+        forms.ToList().ForEach(f => f.ForceBringToFront());
+        var form = forms.LastOrDefault();
+        if ( form != null && form.Visible )
+          form.Popup();
+      });
+    }
+
+    /// <summary>
+    /// Do Session Ending event.
+    /// </summary>
+    internal void DoSessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      if ( Globals.IsSessionEnding ) return;
+      DebugManager.Enter();
+      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
+      try
+      {
+        Globals.IsExiting = true;
+        Globals.IsSessionEnding = true;
+        Globals.AllowClose = true;
+        LockSessionForm.Instance.Timer.Stop();
+        TimerTooltip.Stop();
+        TimerBallon.Stop();
+        TimerTrayMouseMove.Stop();
+        TimerResumeReminder.Stop();
+        TimerMidnight.Stop();
+        TimerReminder.Stop();
+        MessageBoxEx.CloseAll();
+        SystemManager.TryCatch(() => ClearLists());
+        SystemManager.TryCatch(() =>
+        {
+          foreach ( Form form in Application.OpenForms )
+            if ( form != this && form.Visible )
+              SystemManager.TryCatch(() => form.Close());
+        });
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
+    }
 
     /// <summary>
     /// Set the initial directories of dialog boxes.
