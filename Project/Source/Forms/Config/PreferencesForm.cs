@@ -330,6 +330,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     // Reminder
 
+    private void SelectReminderBoxDesktopLocation_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = SysTranslations.ControlLocationText.GetLang((ControlLocation)e.Value);
+    }
+
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)
     {
       LabelRemindAutoLockTimeOut.Enabled = EditAutoLockSession.Checked;
@@ -638,6 +643,26 @@ namespace Ordisoftware.Hebrew.Calendar
         EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
     }
 
+    private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
+    {
+      Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
+    }
+
+    private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
+    {
+      Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
+    }
+
+    private void EditWeatherOnlineUseDay_CheckedChanged(object sender, EventArgs e)
+    {
+      Settings.WeatherOnlineUseDay = EditWeatherOnlineUseDay.Checked;
+    }
+
+    private void ActionWeatherOnlineTest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      MainForm.Instance.ActionOnlineWeather.PerformClick();
+    }
+
     // Tray Icon and Global HotKey
 
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
@@ -707,14 +732,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditWeatherMenuItemsEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionLocalWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
-      MainForm.Instance.ActionOnlineWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
-      MainForm.Instance.SeparatorMenuWeather.Visible = EditWeatherMenuItemsEnabled.Checked;
-    }
-
-    private void SelectReminderBoxDesktopLocation_Format(object sender, ListControlConvertEventArgs e)
-    {
-      e.Value = SysTranslations.ControlLocationText.GetLang((ControlLocation)e.Value);
+      bool enabled = EditWeatherMenuItemsEnabled.Checked;
+      MainForm.Instance.ActionLocalWeather.Visible = enabled;
+      MainForm.Instance.ActionOnlineWeather.Visible = enabled;
+      MainForm.Instance.SeparatorMenuWeather.Visible = enabled;
+      PanelWeatherOnline.Enabled = enabled;
     }
 
   }

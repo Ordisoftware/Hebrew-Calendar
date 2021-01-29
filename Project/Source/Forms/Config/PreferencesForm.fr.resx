@@ -1063,4 +1063,7 @@
   <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
     <value>Météo du jour, sinon de la semaine</value>
   </data>
+  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
+    <value>Tester</value>
+  </data>
 </root>

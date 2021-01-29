@@ -225,7 +225,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to show or hide weather menu items and keyboard shortcuts.
 - Add option to set the corner of the desktop to place reminder boxes.
 - Update some NuGet packages to last versions.
-- Few code refactoring and code quality improvements.
+- Code refactoring and code quality improvements.
 
 >- Fix navigation Tray Icon tooltip box location when the taskbar is not at the bottom of the screen.
 >- Add export celebrations and new moons boards.

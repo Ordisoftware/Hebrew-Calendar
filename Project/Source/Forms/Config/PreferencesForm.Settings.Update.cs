@@ -104,7 +104,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
       Settings.WeatherAppPath = EditWeatherAppPath.Text;
       Settings.WeatherMenuItemsEnabled = EditWeatherMenuItemsEnabled.Checked;
-      Settings.WeatherOnlineUseDay = EditWeatherOnlineUseDay.Checked;
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
@@ -118,12 +117,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( EditGlobalHotKeyPopupMainFormShift.Checked )
         modifierKeys |= Modifiers.Shift;
       Settings.GlobalHotKeyPopupMainFormModifiers = (int)modifierKeys;
-      // Weather online provider
-      if ( SelectWeatherOnlineMeteoblueDotCom.Checked )
-        Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
-      else
-      if ( SelectWeatherOnlineWeatherDotCom.Checked )
-        Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
       // TrayIcon
       if ( SelectOpenMainForm.Checked )
         Settings.TrayIconClickOpen = TrayIconClickOpen.MainForm;
