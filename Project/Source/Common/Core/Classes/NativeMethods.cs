@@ -13,9 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-12 </edited>
 using System;
-using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
@@ -29,11 +27,20 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll", SetLastError = true)]
     static public extern bool LockWorkStation();
 
-    // Windows and sounds
+    // Windows
+
+    public const int MAX_PATH = 260;
 
     public const uint SW_RESTORE = 0x09;
-    public const int APPCOMMAND_VOLUME_MUTE = 0x80000;
-    public const int WM_APPCOMMAND = 0x319;
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct RECT
+    {
+      public int left;
+      public int top;
+      public int right;
+      public int bottom;
+    }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct HARDWAREINPUT
@@ -91,6 +98,11 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll")]
     static public extern int ShowWindow(IntPtr hWnd, uint Msg);
 
+    // WinMedia
+
+    public const int WM_APPCOMMAND = 0x319;
+    public const int APPCOMMAND_VOLUME_MUTE = 0x80000;
+
     [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
     static public extern uint mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
 
@@ -100,32 +112,31 @@ namespace Ordisoftware.Core
     public const int SC_SCREENSAVE = 0xF140;
     public const int SPI_GETSCREENSAVERRUNNING = 0x0072;
 
-    [StructLayout(LayoutKind.Sequential)]
-    public struct RECT
-    {
-      public int left;
-      public int top;
-      public int right;
-      public int bottom;
-    }
-
     [DllImport("user32.dll")]
     static public extern bool SystemParametersInfo(int action, int param, ref int retval, int updini);
 
     [DllImport("user32.dll")]
-    static private extern bool GetWindowRect(HandleRef hWnd, [In, Out] ref RECT rect);
+    static public extern bool GetWindowRect(HandleRef hWnd, [In, Out] ref RECT rect);
 
     [DllImport("user32.dll")]
     static public extern IntPtr GetForegroundWindow();
 
-    static public bool IsForegroundFullScreen(Screen screen = null)
+    // Taskbar
+
+    public const int ABM_GETTASKBARPOS = 5;
+
+    public struct APPBARDATA
     {
-      if ( screen == null ) screen = Screen.PrimaryScreen;
-      RECT rect = new RECT();
-      GetWindowRect(new HandleRef(null, GetForegroundWindow()), ref rect);
-      var rectangle = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
-      return rectangle.Contains(screen.Bounds);
+      public int cbSize;
+      public IntPtr hWnd;
+      public int uCallbackMessage;
+      public int uEdge;
+      public RECT rc;
+      public IntPtr lParam;
     }
+
+    [DllImport("shell32.dll")]
+    public static extern IntPtr SHAppBarMessage(int msg, ref APPBARDATA data);
 
     // Shell icons
     // https://stackoverflow.com/questions/1309738/how-do-i-get-an-image-for-the-various-messageboximages-or-messageboxicons#25429905
@@ -244,11 +255,11 @@ namespace Ordisoftware.Core
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct SHSTOCKICONINFO
     {
-      public UInt32 cbSize;
+      public uint cbSize;
       public IntPtr hIcon;
-      public Int32 iSysIconIndex;
-      public Int32 iIcon;
-      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260/*MAX_PATH*/)]
+      public int iSysIconIndex;
+      public int iIcon;
+      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_PATH)]
       public string szPath;
     }
 

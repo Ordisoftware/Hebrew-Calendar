@@ -15,9 +15,12 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Reflection;
 using System.Runtime.Versioning;
 using System.Management;
+using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
 namespace Ordisoftware.Core
@@ -66,8 +69,17 @@ namespace Ordisoftware.Core
     {
       get
       {
-        return NativeMethods.IsForegroundFullScreen() || IsScreensaverActive;
+        return IsForegroundFullScreen() || IsScreensaverActive;
       }
+    }
+
+    static public bool IsForegroundFullScreen(Screen screen = null)
+    {
+      if ( screen == null ) screen = Screen.PrimaryScreen;
+      NativeMethods.RECT rect = new NativeMethods.RECT();
+      NativeMethods.GetWindowRect(new HandleRef(null, NativeMethods.GetForegroundWindow()), ref rect);
+      var rectangle = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
+      return rectangle.Contains(screen.Bounds);
     }
 
     private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";

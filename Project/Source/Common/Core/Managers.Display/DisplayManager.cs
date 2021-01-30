@@ -11,10 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2011-12 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Threading;
+using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
 {
@@ -36,6 +39,38 @@ namespace Ordisoftware.Core
     static DisplayManager()
     {
       MainThread = Thread.CurrentThread;
+    }
+
+    /// <summary>
+    /// Get task bar coordonates.
+    /// https://stackoverflow.com/questions/3677182/taskbar-location
+    /// </summary>
+    static public Rectangle GetTaskbarCoordonates()
+    {
+      var data = new NativeMethods.APPBARDATA();
+      data.cbSize = Marshal.SizeOf(data);
+      IntPtr retval = NativeMethods.SHAppBarMessage(NativeMethods.ABM_GETTASKBARPOS, ref data);
+      if ( retval == IntPtr.Zero )
+        throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));
+      return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
+    }
+
+    /// <summary>
+    /// Get task bar anchor style.
+    /// </summary>
+    static public AnchorStyles GetTaskbarAnchorStyle()
+    {
+      var coordonates = GetTaskbarCoordonates();
+      if ( coordonates.Left == 0 && coordonates.Top == 0 )
+        if ( coordonates.Width > 250 )
+          return AnchorStyles.Top;
+        else
+          return AnchorStyles.Left;
+      else
+      if ( coordonates.Width > 250 )
+        return AnchorStyles.Bottom;
+      else
+        return AnchorStyles.Right;
     }
 
     /// <summary>
