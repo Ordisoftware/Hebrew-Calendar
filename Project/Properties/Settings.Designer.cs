@@ -2180,7 +2180,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("BottomRight")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Fixed")]
         public global::Ordisoftware.Core.ControlLocation ReminderBoxDesktopLocation {
             get {
                 return ((global::Ordisoftware.Core.ControlLocation)(this["ReminderBoxDesktopLocation"]));

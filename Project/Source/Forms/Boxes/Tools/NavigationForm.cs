@@ -112,7 +112,33 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
-      this.SetLocation(ControlLocation.BottomRight);
+    }
+
+    internal void ShowPopup(bool bringToFront = false)
+    {
+      SetLocation();
+      Show();
+      if ( bringToFront )
+        BringToFront();
+    }
+
+    private void SetLocation()
+    {
+      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      switch ( anchor )
+      {
+        case AnchorStyles.Top:
+          this.SetLocation(ControlLocation.TopRight);
+          break;
+        case AnchorStyles.Left:
+          this.SetLocation(ControlLocation.BottomLeft);
+          break;
+        case AnchorStyles.Bottom:
+        case AnchorStyles.Right:
+        default:
+          this.SetLocation(ControlLocation.BottomRight);
+          break;
+      }
     }
 
     public void Relocalize()

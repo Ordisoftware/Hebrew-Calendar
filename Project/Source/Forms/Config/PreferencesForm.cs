@@ -242,7 +242,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoChangePanelColorNavigation(Panel panelSetting, Panel panelForm)
     {
-      NavigationForm.Instance.Show();
+      NavigationForm.Instance.ShowPopup();
       DialogColor.Color = panelSetting.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       panelSetting.BackColor = DialogColor.Color;
@@ -266,7 +266,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoNavigationUseColors(Color colorTop, Color colorMiddle, Color colorBottom)
     {
-      NavigationForm.Instance.Show();
+      NavigationForm.Instance.ShowPopup();
       EditNavigateTopColor.BackColor = colorTop;
       EditNavigateMiddleColor.BackColor = colorMiddle;
       EditNavigateBottomColor.BackColor = colorBottom;
