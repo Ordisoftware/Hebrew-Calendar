@@ -224,7 +224,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to choose online weather provider between *meteoblue.com* and *weather.com*.
 - Add option to show or hide weather menu items and keyboard shortcuts.
 - Add option to set the corner of the desktop to place reminder boxes.
->- Improve preferences form to allow select all or none events in list boxes.
+- Improve preferences form to allow select all or none events in list boxes.
 - Fix automatic position of the navigation window and default one of reminder boxes beside the Tray Icon when the Taskbar is not at the bottom of the screen.
 - Update some NuGet packages to last versions.
 - Code refactoring and code quality improvements.
