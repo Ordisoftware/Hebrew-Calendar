@@ -218,13 +218,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.02.07 - Version 6.4
 
-- Improve main form title bar to indicate country and city name.
-- Improve main form sub-title to indicate if moon or sun omer is used to calculate Torah's dates.
-- Improve celebrations and new moons boards to add country and city name in the title bar.
-- Improve preferences form to allow select all or none events in list bowes.
+- Add country and city name in the title bar of celebrations and new moons boards.
+- Add country and city name in the middle of the subtitle.
+- Add moon or sun omer in the right of the subtitle.
 - Add option to choose online weather provider between *meteoblue.com* and *weather.com*.
 - Add option to show or hide weather menu items and keyboard shortcuts.
 - Add option to set the corner of the desktop to place reminder boxes.
+>- Improve preferences form to allow select all or none events in list boxes.
 - Fix automatic position of the navigation window and default one of reminder boxes beside the Tray Icon when the Taskbar is not at the bottom of the screen.
 - Update some NuGet packages to last versions.
 - Code refactoring and code quality improvements.
