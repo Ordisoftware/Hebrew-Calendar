@@ -548,7 +548,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
-      <Value Profile="(Default)">BottomRight</Value>
+      <Value Profile="(Default)">Fixed</Value>
     </Setting>
     <Setting Name="WeatherOnlineProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
       <Value Profile="(Default)">MeteoblueDotCom</Value>

@@ -45,6 +45,24 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
       UpdateText();
+      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+      {
+        var anchor = DisplayManager.GetTaskbarAnchorStyle();
+        switch ( anchor )
+        {
+          case AnchorStyles.Top:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
+            break;
+          case AnchorStyles.Left:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
+            break;
+          case AnchorStyles.Bottom:
+          case AnchorStyles.Right:
+          default:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
+            break;
+        }
+      }
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
