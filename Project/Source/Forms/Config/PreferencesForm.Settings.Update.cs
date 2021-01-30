@@ -15,6 +15,7 @@
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -90,7 +91,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.TraceEnabled = EditLogEnabled.Checked;
       Settings.ExportFolder = EditExportFolder.Text;
       Settings.ApplicationVolume = EditVolume.Value;
-      Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
       Settings.UsageStatisticsEnabled = EditUsageStatisticsEnabled.Checked;
       Settings.RestoreLastViewAtStartup = EditRestoreLastViewAtStartup.Checked;
       Settings.ShowPrintPreviewDialog = EditShowPrintDialog.Checked;
@@ -104,6 +104,26 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
       Settings.WeatherAppPath = EditWeatherAppPath.Text;
       Settings.WeatherMenuItemsEnabled = EditWeatherMenuItemsEnabled.Checked;
+      // Month view
+      Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
+      // Shabat
+      Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      // Reminder boxes location
+      Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
+      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsDaysBefore.Value;
+      // Events
+      for ( int index = 0; index < EditEvents.Items.Count; index++ )
+        SystemManager.TryCatch(() =>
+        {
+          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
+          Settings[name] = EditEvents.GetItemChecked(index);
+        });
+      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
+        SystemManager.TryCatch(() =>
+        {
+          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
+          Settings[name] = EditEventsDay.GetItemChecked(index);
+        });
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
       Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;
@@ -126,7 +146,6 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( SelectOpenNextCelebrationsForm.Checked )
         Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
-
     }
 
   }
