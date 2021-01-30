@@ -11,12 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
-using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Microsoft.Win32;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -24,12 +22,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public partial class LockSessionForm : Form
   {
-
-    static private class NativeMethods
-    {
-      [DllImport("user32.dll", SetLastError = true)]
-      static public extern bool LockWorkStation();
-    }
 
     static public LockSessionForm Instance { get; private set; }
 
@@ -56,34 +48,11 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( width > Width ) Width = width;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
-      ActionHibernate.Enabled = CanHibernate();
-      ActionStandby.Enabled = CanStandby();
+      ActionHibernate.Enabled = SystemManager.CanHibernate;
+      ActionStandby.Enabled = SystemManager.CanStandby;
       CenterToScreen();
       Timer.Start();
       Timer_Tick(null, null);
-    }
-
-    private bool CanStandby()
-    {
-      return true;
-    }
-
-    private bool CanHibernate()
-    {
-      try
-      {
-        using ( RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power") )
-          if ( key != null )
-          {
-            var value = key.GetValue("HibernateEnabled", 0);
-            return value == null ? false : (bool)value;
-          }
-      }
-      catch
-      {
-        return File.Exists(@"C:\hiberfil.sys");
-      }
-      return false;
     }
 
     private void LockSessionForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -121,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) ) return;
       Close();
-      SystemManager.MediaStop();
+      MediaMixer.StopPlaying();
       SystemManager.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
     }
@@ -129,14 +98,14 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      SystemManager.MediaStop();
+      MediaMixer.StopPlaying();
       Application.SetSuspendState(PowerState.Hibernate, false, false);
     }
 
     private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      SystemManager.MediaStop();
+      MediaMixer.StopPlaying();
       Application.SetSuspendState(PowerState.Suspend, false, false);
     }
 
@@ -144,8 +113,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( EditMediaStop.Checked )
       {
-        SystemManager.MediaStop();
-        SystemManager.MuteVolume();
+        MediaMixer.StopPlaying();
+        MediaMixer.MuteVolume();
       }
       Close();
       if ( !NativeMethods.LockWorkStation() )

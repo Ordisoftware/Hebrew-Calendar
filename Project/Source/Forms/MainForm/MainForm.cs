@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
-      SystemEvents.PowerModeChanged += (s,e) =>
+      SystemEvents.PowerModeChanged += (s, e) =>
       {
         if ( e.Mode == PowerModes.Resume )
         {
@@ -967,6 +967,29 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionOnlineWeather_Click(object sender, EventArgs e)
     {
       OpenOlineWeather();
+    }
+
+    private void Test()
+    {
+      // TODO set reminder bowes default to none and determine from the task bar at startup.
+      // TODO update navigation to use that.
+      var form = new Form();
+      form.StartPosition = FormStartPosition.Manual;
+      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      switch ( anchor )
+      {
+        case AnchorStyles.Top:
+          form.SetLocation(ControlLocation.TopRight);
+          break;
+        case AnchorStyles.Left:
+          form.SetLocation(ControlLocation.BottomLeft);
+          break;
+        case AnchorStyles.Bottom:
+        case AnchorStyles.Right:
+          form.SetLocation(ControlLocation.BottomRight);
+          break;
+      }
+      form.Show();
     }
 
   }

@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Retrieve();
       UpdateText();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => VolumeMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )

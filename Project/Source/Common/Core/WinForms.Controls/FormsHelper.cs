@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -21,7 +21,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
 {
@@ -162,13 +161,6 @@ namespace Ordisoftware.Core
         || form.Left > SystemInformation.WorkingArea.Width - form.Width / 2
         || form.Top > SystemInformation.WorkingArea.Height - form.Height / 2 )
         form.CenterToMainFormElseScreen();
-    }
-
-    static private class NativeMethods
-    {
-      [DllImport("user32.dll")]
-      static public extern int ShowWindow(IntPtr hWnd, uint Msg);
-      public const uint SW_RESTORE = 0x09;
     }
 
     /// <summary>
