@@ -132,10 +132,6 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
@@ -161,10 +157,10 @@
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.TabPageCelebrations = new System.Windows.Forms.TabPage();
-      this.button2 = new System.Windows.Forms.Button();
-      this.button1 = new System.Windows.Forms.Button();
-      this.ActionRemoveAll = new System.Windows.Forms.Button();
-      this.ActionAddAll = new System.Windows.Forms.Button();
+      this.ActionRemoveAllEvents = new System.Windows.Forms.Button();
+      this.ActionAddAllEvents = new System.Windows.Forms.Button();
+      this.ActionRemoveAllEventsDays = new System.Windows.Forms.Button();
+      this.ActionAddAllEventsDays = new System.Windows.Forms.Button();
       this.LabelRemindCelebrationEveryMinutesIntervalInfo = new System.Windows.Forms.Label();
       this.LabelReminderCelebrationsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
@@ -218,7 +214,6 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
@@ -266,6 +261,11 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -1146,38 +1146,6 @@
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
@@ -1375,10 +1343,10 @@
       // 
       this.TabPageCelebrations.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageCelebrations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageCelebrations.Controls.Add(this.button2);
-      this.TabPageCelebrations.Controls.Add(this.button1);
-      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAll);
-      this.TabPageCelebrations.Controls.Add(this.ActionAddAll);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAllEvents);
+      this.TabPageCelebrations.Controls.Add(this.ActionAddAllEvents);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAllEventsDays);
+      this.TabPageCelebrations.Controls.Add(this.ActionAddAllEventsDays);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutesIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelReminderCelebrationsIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBeforeIntervalInfo);
@@ -1394,37 +1362,41 @@
       resources.ApplyResources(this.TabPageCelebrations, "TabPageCelebrations");
       this.TabPageCelebrations.Name = "TabPageCelebrations";
       // 
-      // button2
+      // ActionRemoveAllEvents
       // 
-      this.button2.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.button2, "button2");
-      this.button2.ForeColor = System.Drawing.Color.DarkBlue;
-      this.button2.Name = "button2";
-      this.button2.UseVisualStyleBackColor = true;
+      this.ActionRemoveAllEvents.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemoveAllEvents, "ActionRemoveAllEvents");
+      this.ActionRemoveAllEvents.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemoveAllEvents.Name = "ActionRemoveAllEvents";
+      this.ActionRemoveAllEvents.UseVisualStyleBackColor = true;
+      this.ActionRemoveAllEvents.Click += new System.EventHandler(this.ActionRemoveAllEvents_Click);
       // 
-      // button1
+      // ActionAddAllEvents
       // 
-      this.button1.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.button1, "button1");
-      this.button1.ForeColor = System.Drawing.Color.DarkBlue;
-      this.button1.Name = "button1";
-      this.button1.UseVisualStyleBackColor = true;
+      this.ActionAddAllEvents.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAddAllEvents, "ActionAddAllEvents");
+      this.ActionAddAllEvents.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionAddAllEvents.Name = "ActionAddAllEvents";
+      this.ActionAddAllEvents.UseVisualStyleBackColor = true;
+      this.ActionAddAllEvents.Click += new System.EventHandler(this.ActionAddAllEvents_Click);
       // 
-      // ActionRemoveAll
+      // ActionRemoveAllEventsDays
       // 
-      this.ActionRemoveAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionRemoveAll, "ActionRemoveAll");
-      this.ActionRemoveAll.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionRemoveAll.Name = "ActionRemoveAll";
-      this.ActionRemoveAll.UseVisualStyleBackColor = true;
+      this.ActionRemoveAllEventsDays.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemoveAllEventsDays, "ActionRemoveAllEventsDays");
+      this.ActionRemoveAllEventsDays.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemoveAllEventsDays.Name = "ActionRemoveAllEventsDays";
+      this.ActionRemoveAllEventsDays.UseVisualStyleBackColor = true;
+      this.ActionRemoveAllEventsDays.Click += new System.EventHandler(this.ActionRemoveAllEventsDays_Click);
       // 
-      // ActionAddAll
+      // ActionAddAllEventsDays
       // 
-      this.ActionAddAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionAddAll, "ActionAddAll");
-      this.ActionAddAll.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionAddAll.Name = "ActionAddAll";
-      this.ActionAddAll.UseVisualStyleBackColor = true;
+      this.ActionAddAllEventsDays.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAddAllEventsDays, "ActionAddAllEventsDays");
+      this.ActionAddAllEventsDays.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionAddAllEventsDays.Name = "ActionAddAllEventsDays";
+      this.ActionAddAllEventsDays.UseVisualStyleBackColor = true;
+      this.ActionAddAllEventsDays.Click += new System.EventHandler(this.ActionAddAllEventsDays_Click);
       // 
       // LabelRemindCelebrationEveryMinutesIntervalInfo
       // 
@@ -1842,14 +1814,6 @@
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -2228,6 +2192,46 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditWeatherAppPath
       // 
       this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2566,10 +2570,10 @@
     private System.Windows.Forms.Label LabelSelectOnlineWeatherProvider;
     private System.Windows.Forms.RadioButton SelectWeatherOnlineMeteoblueDotCom;
     private System.Windows.Forms.RadioButton SelectWeatherOnlineWeatherDotCom;
-    private System.Windows.Forms.Button button2;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Button ActionRemoveAll;
-    private System.Windows.Forms.Button ActionAddAll;
+    private System.Windows.Forms.Button ActionRemoveAllEvents;
+    private System.Windows.Forms.Button ActionAddAllEvents;
+    private System.Windows.Forms.Button ActionRemoveAllEventsDays;
+    private System.Windows.Forms.Button ActionAddAllEventsDays;
     private System.Windows.Forms.CheckBox EditWeatherOnlineUseDay;
     private System.Windows.Forms.Panel PanelWeatherOnline;
     private System.Windows.Forms.LinkLabel ActionWeatherOnlineTest;

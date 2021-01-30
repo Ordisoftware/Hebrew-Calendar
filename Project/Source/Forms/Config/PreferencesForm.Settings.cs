@@ -68,6 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.LanguageSelected = Languages.Current;
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
+      MainForm.Instance.ReminderBoxDesktopLocation();
       Close();
     }
 

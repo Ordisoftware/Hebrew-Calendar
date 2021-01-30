@@ -117,13 +117,6 @@ namespace Ordisoftware.Hebrew.Calendar
       // System
       EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
       EditLogEnabled.Enabled = DebugManager.Enabled;
-      // Month view
-      Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
-      // Shabat
-      Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      // Reminder boxes location
-      Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
-      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsDaysBefore.Value;
       // Weather online provider
       switch ( Settings.WeatherOnlineProvider )
       {
@@ -165,19 +158,6 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionUsePersonalShabat_LinkClicked(null, null);
       }
       EditTimeZone.Text = Settings.GetGPSText();
-      // Events
-      for ( int index = 0; index < EditEvents.Items.Count; index++ )
-        SystemManager.TryCatch(() =>
-        {
-          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Settings[name] = EditEvents.GetItemChecked(index);
-        });
-      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
-        SystemManager.TryCatch(() =>
-        {
-          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Settings[name] = EditEventsDay.GetItemChecked(index);
-        });
     }
 
   }

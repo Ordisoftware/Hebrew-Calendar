@@ -206,6 +206,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
     {
+      if ( !IsReady ) return;
       Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
       Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
       DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
@@ -382,6 +383,32 @@ namespace Ordisoftware.Hebrew.Calendar
       EditRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
       LabelRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
       EditRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
+    }
+
+    private void SetChecked(CheckedListBox control, bool state)
+    {
+      for ( int i = 0; i < control.Items.Count; i++ )
+        control.SetItemChecked(i, state);
+    }
+
+    private void ActionAddAllEvents_Click(object sender, EventArgs e)
+    {
+      SetChecked(EditEvents, true);
+    }
+
+    private void ActionRemoveAllEvents_Click(object sender, EventArgs e)
+    {
+      SetChecked(EditEvents, false);
+    }
+
+    private void ActionAddAllEventsDays_Click(object sender, EventArgs e)
+    {
+      SetChecked(EditEventsDay, true);
+    }
+
+    private void ActionRemoveAllEventsDays_Click(object sender, EventArgs e)
+    {
+      SetChecked(EditEventsDay, false);
     }
 
     // Text report

@@ -37,14 +37,8 @@ namespace Ordisoftware.Hebrew.Calendar
     public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
     public const Keys DefaultHotKeyKey = Keys.C;
 
-    /// <summary>
-    /// Do Form Load event.
-    /// </summary>
-    private void DoMainForm_Load(object sender, EventArgs e)
+    internal void ReminderBoxDesktopLocation()
     {
-      if ( Globals.IsExiting ) return;
-      Settings.Retrieve();
-      UpdateText();
       if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
       {
         var anchor = DisplayManager.GetTaskbarAnchorStyle();
@@ -63,6 +57,17 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
         }
       }
+    }
+
+    /// <summary>
+    /// Do Form Load event.
+    /// </summary>
+    private void DoMainForm_Load(object sender, EventArgs e)
+    {
+      if ( Globals.IsExiting ) return;
+      Settings.Retrieve();
+      UpdateText();
+      ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
                                                                     Settings.ApplicationVolume));
