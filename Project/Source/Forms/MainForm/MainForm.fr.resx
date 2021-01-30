@@ -173,7 +173,7 @@
   <data name="LabelGridGoToToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
   </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
+  <data name="LabelSubTitleCalendar.Text" xml:space="preserve">
     <value>CALENDRIER LUNISOLAIRE</value>
   </data>
   <data name="ActionSaveToFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

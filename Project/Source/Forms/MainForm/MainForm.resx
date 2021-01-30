@@ -745,41 +745,107 @@
   <data name="&gt;&gt;PanelSepTop.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="LabelSubTitleGPS.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="LabelTitle.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelSubTitleGPS.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelSubTitleGPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+  <data name="LabelSubTitleGPS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 1</value>
   </data>
-  <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 22</value>
+  <data name="LabelSubTitleGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>582, 22</value>
   </data>
-  <data name="LabelTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="LabelSubTitleGPS.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="LabelTitle.Text" xml:space="preserve">
-    <value>LUNISOLAR CALENDAR</value>
+  <data name="LabelSubTitleGPS.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="LabelTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;LabelSubTitleGPS.Name" xml:space="preserve">
+    <value>LabelSubTitleGPS</value>
   </data>
-  <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
-    <value>LabelTitle</value>
-  </data>
-  <data name="&gt;&gt;LabelTitle.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelSubTitleGPS.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelTitle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelSubTitleGPS.Parent" xml:space="preserve">
     <value>PanelTitle</value>
   </data>
-  <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelSubTitleGPS.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LabelSubTitleCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="LabelSubTitleCalendar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSubTitleCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSubTitleCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="LabelSubTitleCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="LabelSubTitleCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelSubTitleCalendar.Text" xml:space="preserve">
+    <value>LUNISOLAR CALENDAR</value>
+  </data>
+  <data name="LabelSubTitleCalendar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleCalendar.Name" xml:space="preserve">
+    <value>LabelSubTitleCalendar</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleCalendar.Parent" xml:space="preserve">
+    <value>PanelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleCalendar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelSubTitleOmer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="LabelSubTitleOmer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSubTitleOmer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSubTitleOmer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>783, 1</value>
+  </data>
+  <data name="LabelSubTitleOmer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="LabelSubTitleOmer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelSubTitleOmer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleOmer.Name" xml:space="preserve">
+    <value>LabelSubTitleOmer</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleOmer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleOmer.Parent" xml:space="preserve">
+    <value>PanelTitle</value>
+  </data>
+  <data name="&gt;&gt;LabelSubTitleOmer.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="PanelTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2096,14 +2162,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPzY5PSFRRFIfvqmgVwkBIEAySIAlZWU21i5ZG
-        BWITgRTootlERG0HirJNTRSZIdT4txlBadL+OWo93QVOYVbzhMiZzAQpJzVRmefXuTM3KsUk2vTBxz33
+        BWITgRTootlERG0HirJNTRSZIdT4txlBadL+OWo93QVOYVbzhMiZtAQpJzVRmefXuTM3KsUk2vTBxz33
         nPN776r/B+dKznX8apXTuLNGm6mlZ8YrM1PvGWTgEgzXZpVa98x4eZxAzrV0sKifVxcg7oPXx7PqWnrp
         hi2xP77Ev29NMdGDECsHaxc8253V8kD/UYiWsGGtcpv1paSr81qxyqCzGJ5sF3eIW+HxJjGP+EMfzq3V
         AbO+lImA+xGRPXBvs7EQ2tw0tVykNDLFyZ5JfJEhDoQTh03kd9wulU9dPoQLILQRmtdjNVVw/vkc80BK
-        XBCr+kbxhuN7Tewn6asu/9TldfZobe48t11YwWOUNNi8m4NuSXd+gadyDk0vsP/OwHjp3bexIy12uYln
-        yBULUlXqxfsbHk71zTImf+yZgFYpftgr98GvDnJwrvcjZaE3hdm44VDInj7RlaIt6RD6BMEk1P1i4wjc
+        XBCr+j7iDcf3mthP0ldd/qnL6+zR2tx5bruwgscoabB5Nwfdku78Ak/lHJpeYP+dgfHSu29jR1rschPP
+        kCsWpKrUi/c3PJzqm2VM/tgzAa1S/LBX7oNfHeTgXO8oZaE3hdm44VDInj7RlaIt6RD6BMEk1P1i4wjc
         lw/pWXtiljPRJN56+7OJK3W6e4zYjAzH4eYw1CxS97TVot55+Q3Odo1g4kp5m+3JygcfqOhIULmCmR3Z
-        1RkTz1AkbvtLdeZfUOo7aISTkXSuOAEAAAAASUVORK5CYII=
+        1RkTz1AkbvtLdeZfUOo7ZsaTkJna09EAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionLocalWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2124,17 +2190,17 @@
   <data name="ActionOnlineWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
         AElFTkSuQmCC
 </value>
   </data>
@@ -2932,6 +2998,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1004, 711</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1020, 750</value>

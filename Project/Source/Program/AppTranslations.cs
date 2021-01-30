@@ -37,11 +37,19 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
       };
 
-    static public readonly TranslationsDictionary MainFormSubTitle
-      = new TranslationsDictionary()
+    static public readonly NullSafeDictionary<bool, TranslationsDictionary> MainFormSubTitleOmer
+      = new NullSafeDictionary<bool, TranslationsDictionary>
       {
-        [Language.EN] = "LUNISOLAR CALENDAR",
-        [Language.FR] = "CALENDRIER LUNISOLAIRE"
+        [true] = new TranslationsDictionary()
+        {
+          [Language.EN] = "MOON OMER",
+          [Language.FR] = "OMER DE LA LUNE"
+        },
+        [false] = new TranslationsDictionary()
+        {
+          [Language.EN] = "SUN OMER",
+          [Language.FR] = "OMER DU SOLEIL"
+        }
       };
 
     static public readonly TranslationsDictionary AskToResetPreferences
