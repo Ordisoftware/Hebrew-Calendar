@@ -1,14 +1,54 @@
 ﻿using System;
+using System.Text;
 using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
 {
 
   // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
-  public class VolumeMixer
+  public class MediaMixer
   {
 
-    public static float? GetApplicationVolume(int pid)
+    static public int GetSoundLengthMS(string fileName)
+    {
+      try
+      {
+        StringBuilder lengthBuf = new StringBuilder(32);
+        NativeMethods.mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+        NativeMethods.mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
+        NativeMethods.mciSendString("close wave", null, 0, IntPtr.Zero);
+        if ( int.TryParse(lengthBuf.ToString(), out int length) )
+          return length;
+      }
+      catch
+      {
+      }
+      return -1;
+    }
+
+    static public void StopPlaying()
+    {
+      var input = new NativeMethods.INPUT { Type = 1 };
+      input.Data.Keyboard = new NativeMethods.KEYBDINPUT
+      {
+        Vk = 0xB2,
+        Scan = 0,
+        Flags = 0,
+        Time = 0,
+        ExtraInfo = IntPtr.Zero
+      };
+      var inputs = new NativeMethods.INPUT[] { input };
+      NativeMethods.SendInput(1, inputs, Marshal.SizeOf(typeof(NativeMethods.INPUT)));
+    }
+
+    static public void MuteVolume(IntPtr? handle = null)
+    {
+      if ( !handle.HasValue ) handle = Globals.MainForm.Handle;
+      if ( !handle.HasValue ) return;
+      NativeMethods.SendMessageW(handle.Value, NativeMethods.WM_APPCOMMAND, handle.Value, (IntPtr)NativeMethods.APPCOMMAND_VOLUME_MUTE);
+    }
+
+    static public float? GetApplicationVolume(int pid)
     {
       ISimpleAudioVolume volume = GetVolumeObject(pid);
       if ( volume == null )
@@ -20,7 +60,7 @@ namespace Ordisoftware.Core
       return level * 100;
     }
 
-    public static bool? GetApplicationMute(int pid)
+    static public bool? GetApplicationMute(int pid)
     {
       ISimpleAudioVolume volume = GetVolumeObject(pid);
       if ( volume == null )
@@ -32,7 +72,7 @@ namespace Ordisoftware.Core
       return mute;
     }
 
-    public static bool SetApplicationVolume(int pid, float level)
+    static public bool SetApplicationVolume(int pid, float level)
     {
       ISimpleAudioVolume volume = GetVolumeObject(pid);
       if ( volume == null )
@@ -44,7 +84,7 @@ namespace Ordisoftware.Core
       return true;
     }
 
-    public static void SetApplicationMute(int pid, bool mute)
+    static public void SetApplicationMute(int pid, bool mute)
     {
       ISimpleAudioVolume volume = GetVolumeObject(pid);
       if ( volume == null )
@@ -55,7 +95,7 @@ namespace Ordisoftware.Core
       Marshal.ReleaseComObject(volume);
     }
 
-    private static ISimpleAudioVolume GetVolumeObject(int pid)
+    static private ISimpleAudioVolume GetVolumeObject(int pid)
     {
       // get the speakers (1st render + multimedia) device
       IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)( new MMDeviceEnumerator() );
@@ -97,6 +137,7 @@ namespace Ordisoftware.Core
       Marshal.ReleaseComObject(deviceEnumerator);
       return volumeControl;
     }
+
   }
 
   [ComImport]

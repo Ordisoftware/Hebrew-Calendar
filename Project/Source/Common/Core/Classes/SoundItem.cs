@@ -76,7 +76,7 @@ namespace Ordisoftware.Core
     public SoundItem(string path)
     {
       FilePath = path;
-      DurationMS = SystemManager.GetSoundLengthMS(path);
+      DurationMS = MediaMixer.GetSoundLengthMS(path);
     }
 
     public bool Play()

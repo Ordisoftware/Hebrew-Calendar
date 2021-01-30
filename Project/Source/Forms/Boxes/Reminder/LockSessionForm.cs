@@ -90,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) ) return;
       Close();
-      SystemManager.StopPlaying();
+      MediaMixer.StopPlaying();
       SystemManager.RunShell("shutdown", "/s /t 0");
       MainForm.Instance.SessionEnding(null, null);
     }
@@ -98,14 +98,14 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      SystemManager.StopPlaying();
+      MediaMixer.StopPlaying();
       Application.SetSuspendState(PowerState.Hibernate, false, false);
     }
 
     private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      SystemManager.StopPlaying();
+      MediaMixer.StopPlaying();
       Application.SetSuspendState(PowerState.Suspend, false, false);
     }
 
@@ -113,8 +113,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( EditMediaStop.Checked )
       {
-        SystemManager.StopPlaying();
-        SystemManager.MuteVolume();
+        MediaMixer.StopPlaying();
+        MediaMixer.MuteVolume();
       }
       Close();
       if ( !NativeMethods.LockWorkStation() )

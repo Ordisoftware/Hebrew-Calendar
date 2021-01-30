@@ -503,7 +503,6 @@
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.Designer.cs">
       <DependentUpon>LunarMonthsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Core\Managers.System\SystemManager.Media.cs" />
     <Compile Include="Source\Forms\Boxes\Reminder\LockSessionForm.cs">
       <SubType>Form</SubType>
     </Compile>

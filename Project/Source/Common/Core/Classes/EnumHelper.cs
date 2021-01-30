@@ -22,7 +22,24 @@ namespace Ordisoftware.Core
   static public class EnumHelper
   {
 
-  // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
+    static public string ToStringFull<T>(this T value) where T : Enum
+    {
+      return value.GetType().Name + "." + value.ToString();
+    }
+
+    static public T SetFlag<T>(this T flags, T flag, bool value) 
+      where T : struct, IComparable, IFormattable, IConvertible
+    {
+      int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
+      int flagInt = flag.ToInt32(NumberFormatInfo.CurrentInfo);
+      if ( value )
+        flagsInt |= flagInt;
+      else
+        flagsInt &= ~flagInt;
+      return (T)(object)flagsInt;
+    }
+
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
     static public T Next<T>(this T value, T[] skip = null) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -48,23 +65,6 @@ namespace Ordisoftware.Core
           if ( item.Equals(result) )
             result = result.Previous(skip);
       return result;
-    }
-
-    static public string ToStringFull<T>(this T value) where T : Enum
-    {
-      return value.GetType().Name + "." + value.ToString();
-    }
-
-    static public T SetFlag<T>(this T flags, T flag, bool value) 
-      where T : struct, IComparable, IFormattable, IConvertible
-    {
-      int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
-      int flagInt = flag.ToInt32(NumberFormatInfo.CurrentInfo);
-      if ( value )
-        flagsInt |= flagInt;
-      else
-        flagsInt &= ~flagInt;
-      return (T)(object)flagsInt;
     }
 
   }
