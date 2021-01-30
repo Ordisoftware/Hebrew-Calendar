@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-01 </edited>
 using System;
+using System.Text;
 using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
@@ -31,7 +32,7 @@ namespace Ordisoftware.Core
       NativeMethods.SendMessageW(handle.Value, NativeMethods.WM_APPCOMMAND, handle.Value, (IntPtr)NativeMethods.APPCOMMAND_VOLUME_MUTE);
     }
 
-    static public void MediaStop()
+    static public void StopPlaying()
     {
       var input = new NativeMethods.INPUT { Type = 1 };
       input.Data.Keyboard = new NativeMethods.KEYBDINPUT
@@ -46,63 +47,21 @@ namespace Ordisoftware.Core
       NativeMethods.SendInput(1, inputs, Marshal.SizeOf(typeof(NativeMethods.INPUT)));
     }
 
-    static private class NativeMethods
+    static public int GetSoundLengthMS(string fileName)
     {
-      public const int APPCOMMAND_VOLUME_MUTE = 0x80000;
-      public const int WM_APPCOMMAND = 0x319;
-
-      [StructLayout(LayoutKind.Sequential)]
-      public struct HARDWAREINPUT
+      try
       {
-        public uint Msg;
-        public ushort ParamL;
-        public ushort ParamH;
+        StringBuilder lengthBuf = new StringBuilder(32);
+        NativeMethods.mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+        NativeMethods.mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
+        NativeMethods.mciSendString("close wave", null, 0, IntPtr.Zero);
+        if ( int.TryParse(lengthBuf.ToString(), out int length) )
+          return length;
       }
-
-      [StructLayout(LayoutKind.Sequential)]
-      public struct KEYBDINPUT
+      catch
       {
-        public ushort Vk;
-        public ushort Scan;
-        public uint Flags;
-        public uint Time;
-        public IntPtr ExtraInfo;
       }
-
-      [StructLayout(LayoutKind.Sequential)]
-      public struct MOUSEINPUT
-      {
-        public int X;
-        public int Y;
-        public uint MouseData;
-        public uint Flags;
-        public uint Time;
-        public IntPtr ExtraInfo;
-      }
-
-      [StructLayout(LayoutKind.Explicit)]
-      public struct MOUSEKEYBDHARDWAREINPUT
-      {
-        [FieldOffset(0)]
-        public HARDWAREINPUT Hardware;
-        [FieldOffset(0)]
-        public KEYBDINPUT Keyboard;
-        [FieldOffset(0)]
-        public MOUSEINPUT Mouse;
-      }
-
-      [StructLayout(LayoutKind.Sequential)]
-      public struct INPUT
-      {
-        public uint Type;
-        public MOUSEKEYBDHARDWAREINPUT Data;
-      }
-
-      [DllImport("user32.dll")]
-      static public extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-
-      [DllImport("user32.dll", SetLastError = true)]
-      static public extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
+      return -1;
     }
 
   }

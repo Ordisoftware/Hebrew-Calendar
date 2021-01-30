@@ -37,17 +37,13 @@ namespace Ordisoftware.Core
     {
       // Deal with nested calls.
       ++updating;
-
-      if ( updating > 1 )
-        return;
+      if ( updating > 1 ) return;
 
       // Prevent the control from raising any events.
-      oldEventMask = SendMessage(new HandleRef(this, Handle),
-                                  EM_SETEVENTMASK, 0, 0);
+      oldEventMask = SendMessage(new HandleRef(this, Handle), EM_SETEVENTMASK, 0, 0);
 
       // Prevent the control from redrawing itself.
-      SendMessage(new HandleRef(this, Handle),
-                   WM_SETREDRAW, 0, 0);
+      SendMessage(new HandleRef(this, Handle), WM_SETREDRAW, 0, 0);
     }
 
     /// <summary>
@@ -62,17 +58,13 @@ namespace Ordisoftware.Core
     {
       // Deal with nested calls.
       --updating;
-
-      if ( updating > 0 )
-        return;
+      if ( updating > 0 ) return;
 
       // Allow the control to redraw itself.
-      SendMessage(new HandleRef(this, Handle),
-                   WM_SETREDRAW, 1, 0);
+      SendMessage(new HandleRef(this, Handle), WM_SETREDRAW, 1, 0);
 
       // Allow the control to raise event messages.
-      SendMessage(new HandleRef(this, Handle),
-                   EM_SETEVENTMASK, 0, oldEventMask);
+      SendMessage(new HandleRef(this, Handle), EM_SETEVENTMASK, 0, oldEventMask);
     }
 
     /// <summary>
@@ -91,15 +83,13 @@ namespace Ordisoftware.Core
         fmt.cbSize = Marshal.SizeOf(fmt);
 
         // Get the alignment.
-        SendMessage(new HandleRef(this, Handle),
-                     EM_GETPARAFORMAT,
-                     SCF_SELECTION, ref fmt);
+        SendMessage(new HandleRef(this, Handle), EM_GETPARAFORMAT, SCF_SELECTION, ref fmt);
 
         // Default to Left align.
         if ( ( fmt.dwMask & PFM_ALIGNMENT ) == 0 )
           return TextAlign.Left;
-
-        return (TextAlign)fmt.wAlignment;
+        else 
+          return (TextAlign)fmt.wAlignment;
       }
 
       set
@@ -110,9 +100,7 @@ namespace Ordisoftware.Core
         fmt.wAlignment = (short)value;
 
         // Set the alignment.
-        SendMessage(new HandleRef(this, Handle),
-                     EM_SETPARAFORMAT,
-                     SCF_SELECTION, ref fmt);
+        SendMessage(new HandleRef(this, Handle), EM_SETPARAFORMAT, SCF_SELECTION, ref fmt);
       }
     }
 
@@ -125,10 +113,7 @@ namespace Ordisoftware.Core
       base.OnHandleCreated(e);
 
       // Enable support for justification.
-      SendMessage(new HandleRef(this, Handle),
-                   EM_SETTYPOGRAPHYOPTIONS,
-                   TO_ADVANCEDTYPOGRAPHY,
-                   TO_ADVANCEDTYPOGRAPHY);
+      SendMessage(new HandleRef(this, Handle), EM_SETTYPOGRAPHYOPTIONS, TO_ADVANCEDTYPOGRAPHY, TO_ADVANCEDTYPOGRAPHY);
     }
 
     private int updating = 0;
@@ -179,16 +164,10 @@ namespace Ordisoftware.Core
     }
 
     [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int SendMessage(HandleRef hWnd,
-                                           int msg,
-                                           int wParam,
-                                           int lParam);
+    private static extern int SendMessage(HandleRef hWnd, int msg, int wParam, int lParam);
 
     [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int SendMessage(HandleRef hWnd,
-                                           int msg,
-                                           int wParam,
-                                           ref PARAFORMAT lp);
+    private static extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
   }
 
   /// <summary>

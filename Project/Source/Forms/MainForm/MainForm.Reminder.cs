@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerMutex = true;
       try
       {
-        if ( !DisplayManager.IsForegroundFullScreenOrScreensaver() )
+        if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
           //if ( Settings.ReminderAnniversarySunEnabled )
           /*{

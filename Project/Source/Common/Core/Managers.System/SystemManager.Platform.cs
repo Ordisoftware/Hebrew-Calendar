@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-10 </edited>
+/// <edited> 2021-01 </edited>
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
@@ -27,6 +28,47 @@ namespace Ordisoftware.Core
   /// </summary>
   static public partial class SystemManager
   {
+
+    static public bool CanStandby => true;
+
+    static public bool CanHibernate
+    {
+      get
+      {
+        try
+        {
+          using ( RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power") )
+            if ( key != null )
+            {
+              var value = key.GetValue("HibernateEnabled", 0);
+              return value == null ? false : (bool)value;
+            }
+        }
+        catch
+        {
+          return File.Exists(@"C:\hiberfil.sys");
+        }
+        return false;
+      }
+    }
+
+    static public bool IsScreensaverActive
+    {
+      get
+      {
+        int active = 1;
+        NativeMethods.SystemParametersInfo(NativeMethods.SPI_GETSCREENSAVERRUNNING, 0, ref active, 0);
+        return active != 0;
+      }
+    }
+
+    static public bool IsForegroundFullScreenOrScreensaver
+    {
+      get
+      {
+        return NativeMethods.IsForegroundFullScreen() || IsScreensaverActive;
+      }
+    }
 
     private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
 
