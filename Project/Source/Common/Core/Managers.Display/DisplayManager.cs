@@ -55,6 +55,8 @@ namespace Ordisoftware.Core
       return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
     }
 
+    public const int TaskbarWidthCheckTrigger = 250;
+
     /// <summary>
     /// Get task bar anchor style.
     /// </summary>
@@ -62,12 +64,12 @@ namespace Ordisoftware.Core
     {
       var coordonates = GetTaskbarCoordonates();
       if ( coordonates.Left == 0 && coordonates.Top == 0 )
-        if ( coordonates.Width > 250 )
+        if ( coordonates.Width > TaskbarWidthCheckTrigger )
           return AnchorStyles.Top;
         else
           return AnchorStyles.Left;
       else
-      if ( coordonates.Width > 250 )
+      if ( coordonates.Width > TaskbarWidthCheckTrigger )
         return AnchorStyles.Bottom;
       else
         return AnchorStyles.Right;
