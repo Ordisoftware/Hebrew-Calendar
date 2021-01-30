@@ -81,9 +81,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       Text = Globals.AssemblyTitle;
       if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
-        Text += $" - {Program.Settings.GPSCountry}, {Program.Settings.GPSCity}";
-      var mode = Settings.TorahEventsCountAsMoon ? ReportFieldText.Moon : ReportFieldText.Sun;
-      LabelTitle.Text = $"{AppTranslations.MainFormSubTitle.GetLang()} [{AppTranslations.ReportFieldText[mode].GetLang().ToUpper()}]"; 
+        LabelSubTitleGPS.Text = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+      LabelSubTitleOmer.Text = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang();
     }
 
     /// <summary>

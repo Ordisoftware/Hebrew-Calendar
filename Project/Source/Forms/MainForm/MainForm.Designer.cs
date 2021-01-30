@@ -59,7 +59,7 @@
       this.LabelGridGoToToday = new System.Windows.Forms.ToolStripLabel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
-      this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelSubTitleCalendar = new System.Windows.Forms.Label();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -157,6 +157,8 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.LabelSubTitleOmer = new System.Windows.Forms.Label();
+      this.LabelSubTitleGPS = new System.Windows.Forms.Label();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -421,15 +423,17 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelTitle.Controls.Add(this.LabelTitle);
+      this.PanelTitle.Controls.Add(this.LabelSubTitleGPS);
+      this.PanelTitle.Controls.Add(this.LabelSubTitleCalendar);
+      this.PanelTitle.Controls.Add(this.LabelSubTitleOmer);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
       // 
-      // LabelTitle
+      // LabelSubTitleCalendar
       // 
-      this.LabelTitle.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelTitle, "LabelTitle");
-      this.LabelTitle.Name = "LabelTitle";
+      this.LabelSubTitleCalendar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleCalendar, "LabelSubTitleCalendar");
+      this.LabelSubTitleCalendar.Name = "LabelSubTitleCalendar";
       // 
       // moonPhaseImagePictureBox
       // 
@@ -1157,6 +1161,18 @@
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
       // 
+      // LabelSubTitleOmer
+      // 
+      this.LabelSubTitleOmer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleOmer, "LabelSubTitleOmer");
+      this.LabelSubTitleOmer.Name = "LabelSubTitleOmer";
+      // 
+      // LabelSubTitleGPS
+      // 
+      this.LabelSubTitleGPS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleGPS, "LabelSubTitleGPS");
+      this.LabelSubTitleGPS.Name = "LabelSubTitleGPS";
+      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -1351,7 +1367,7 @@
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
-    private System.Windows.Forms.Label LabelTitle;
+    private System.Windows.Forms.Label LabelSubTitleCalendar;
     private System.Windows.Forms.Panel PanelCalendarOuter;
     private System.Windows.Forms.Panel PanelCalendarInner;
     private System.Windows.Forms.TabControl TabControl;
@@ -1491,6 +1507,8 @@
     internal System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     internal System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
     internal System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
+    private System.Windows.Forms.Label LabelSubTitleOmer;
+    private System.Windows.Forms.Label LabelSubTitleGPS;
   }
 }
 
