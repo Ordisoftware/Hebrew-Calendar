@@ -638,7 +638,7 @@
   <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
   </data>
-  <data name="LabelTimerInterval.Text" xml:space="preserve">
+  <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
   </data>
   <data name="TabPageMonthView.Text" xml:space="preserve">

@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditRemindCelebrationEveryMinutes.Value = Settings.RemindCelebrationEveryMinutes; });
       SystemManager.TryCatch(() => { EditRemindCelebrationHoursBefore.Value = Settings.RemindCelebrationHoursBefore; });
       SystemManager.TryCatch(() => { EditReminderCelebrationsEnabled.Checked = Settings.ReminderCelebrationsEnabled; });
-      SystemManager.TryCatch(() => { EditReminderCelebrationsDaysBefore.Value = Settings.ReminderCelebrationsInterval; });
+      SystemManager.TryCatch(() => { EditRemindCelebrationsDaysBefore.Value = Settings.ReminderCelebrationsInterval; });
       SystemManager.TryCatch(() => { EditReminderShabatEnabled.Checked = Settings.ReminderShabatEnabled; });
       SystemManager.TryCatch(() => { EditRemindShabatEveryMinutes.Value = Settings.RemindShabatEveryMinutes; });
       SystemManager.TryCatch(() => { EditRemindShabatHoursBefore.Value = Settings.RemindShabatHoursBefore; });

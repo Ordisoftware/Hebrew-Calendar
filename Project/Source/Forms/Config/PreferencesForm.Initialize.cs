@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
       setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
       setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
       setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
-      setInterval(EditReminderCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+      setInterval(EditRemindCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
       setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
       setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
       setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
@@ -147,12 +147,12 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
-            int index = EditEvents.Items.Add(item);
+            int index = SelectRemindEventsBefore.Items.Add(item);
             if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
-              EditEvents.SetItemChecked(index, true);
-            index = EditEventsDay.Items.Add(item);
+              SelectRemindEventsBefore.SetItemChecked(index, true);
+            index = SelectRemindEventsDay.Items.Add(item);
             if ( (bool)Settings["TorahEventRemindDay" + value.ToString()] )
-              EditEventsDay.SetItemChecked(index, true);
+              SelectRemindEventsDay.SetItemChecked(index, true);
           });
     }
 

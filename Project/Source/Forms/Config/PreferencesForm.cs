@@ -214,6 +214,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditVolume_ValueChanged(object sender, EventArgs e)
     {
+      if ( !IsReady ) return;
       MediaMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
       Program.Settings.ApplicationVolume = EditVolume.Value;
@@ -375,10 +376,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditRemindCelebrations_Changed(object sender, EventArgs e)
     {
-      LabelTimerInterval.Enabled = EditReminderCelebrationsEnabled.Checked;
-      EditReminderCelebrationsDaysBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
-      EditEvents.Enabled = EditReminderCelebrationsEnabled.Checked;
-      EditEventsDay.Enabled = EditReminderCelebrationsEnabled.Checked;
+      LabelRemindCelebrationDaysBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
+      EditRemindCelebrationsDaysBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
+      SelectRemindEventsBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
+      SelectRemindEventsDay.Enabled = EditReminderCelebrationsEnabled.Checked;
       LabelRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
       EditRemindCelebrationHoursBefore.Enabled = EditReminderCelebrationsEnabled.Checked;
       LabelRemindCelebrationEveryMinutes.Enabled = EditReminderCelebrationsEnabled.Checked;
@@ -391,24 +392,36 @@ namespace Ordisoftware.Hebrew.Calendar
         control.SetItemChecked(i, state);
     }
 
-    private void ActionAddAllEvents_Click(object sender, EventArgs e)
+    private void ActionRemindEventsBeforeSelectAll_Click(object sender, EventArgs e)
     {
-      SetChecked(EditEvents, true);
+      SetChecked(SelectRemindEventsBefore, true);
     }
 
-    private void ActionRemoveAllEvents_Click(object sender, EventArgs e)
+    private void ActionRemindEventsBeforeSelectNone_Click(object sender, EventArgs e)
     {
-      SetChecked(EditEvents, false);
+      SetChecked(SelectRemindEventsBefore, false);
     }
 
-    private void ActionAddAllEventsDays_Click(object sender, EventArgs e)
+    private void ActionRemindEventsBeforeReset_Click(object sender, EventArgs e)
     {
-      SetChecked(EditEventsDay, true);
+      SetChecked(SelectRemindEventsBefore, true);
+      SelectRemindEventsBefore.SetItemChecked(0, false);
     }
 
-    private void ActionRemoveAllEventsDays_Click(object sender, EventArgs e)
+    private void ActionEventsDaySelectAll_Click(object sender, EventArgs e)
     {
-      SetChecked(EditEventsDay, false);
+      SetChecked(SelectRemindEventsDay, true);
+    }
+
+    private void ActionEventsDaySelectNone_Click(object sender, EventArgs e)
+    {
+      SetChecked(SelectRemindEventsDay, false);
+    }
+
+    private void ActionEventsDayReset_Click(object sender, EventArgs e)
+    {
+      SetChecked(SelectRemindEventsDay, true);
+      SelectRemindEventsDay.SetItemChecked(0, false);
     }
 
     // Text report

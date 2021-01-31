@@ -1729,137 +1729,203 @@
   <data name="&gt;&gt;TabPageShabat.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="ActionRemoveAllEvents.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeSelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionRemoveAllEvents.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ActionRemindEventsBeforeSelectNone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
   </data>
-  <data name="ActionRemoveAllEvents.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeSelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionRemoveAllEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 151</value>
+  <data name="ActionRemindEventsBeforeSelectNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 150</value>
   </data>
-  <data name="ActionRemoveAllEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
+  <data name="ActionRemindEventsBeforeSelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
   </data>
-  <data name="ActionRemoveAllEvents.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionRemindEventsBeforeSelectNone.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="ActionRemoveAllEvents.Text" xml:space="preserve">
+  <data name="ActionRemindEventsBeforeSelectNone.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="&gt;&gt;ActionRemoveAllEvents.Name" xml:space="preserve">
-    <value>ActionRemoveAllEvents</value>
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Name" xml:space="preserve">
+    <value>ActionRemindEventsBeforeSelectNone</value>
   </data>
-  <data name="&gt;&gt;ActionRemoveAllEvents.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionRemoveAllEvents.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Parent" xml:space="preserve">
     <value>TabPageCelebrations</value>
   </data>
-  <data name="&gt;&gt;ActionRemoveAllEvents.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ActionAddAllEvents.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionAddAllEvents.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ActionRemindEventsBeforeReset.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
   </data>
-  <data name="ActionAddAllEvents.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionAddAllEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 151</value>
+  <data name="ActionRemindEventsBeforeReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 150</value>
   </data>
-  <data name="ActionAddAllEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
+  <data name="ActionRemindEventsBeforeReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
   </data>
-  <data name="ActionAddAllEvents.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionRemindEventsBeforeReset.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="ActionAddAllEvents.Text" xml:space="preserve">
-    <value>+</value>
+  <data name="ActionRemindEventsBeforeReset.Text" xml:space="preserve">
+    <value>/</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEvents.Name" xml:space="preserve">
-    <value>ActionAddAllEvents</value>
+  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Name" xml:space="preserve">
+    <value>ActionRemindEventsBeforeReset</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEvents.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEvents.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Parent" xml:space="preserve">
     <value>TabPageCelebrations</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEvents.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeReset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeSelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ActionRemindEventsBeforeSelectAll.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionRemindEventsBeforeSelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 151</value>
+  <data name="ActionRemindEventsBeforeSelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 150</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
+  <data name="ActionRemindEventsBeforeSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
   </data>
-  <data name="ActionRemoveAllEventsDays.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="ActionRemoveAllEventsDays.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;ActionRemoveAllEventsDays.Name" xml:space="preserve">
-    <value>ActionRemoveAllEventsDays</value>
-  </data>
-  <data name="&gt;&gt;ActionRemoveAllEventsDays.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRemoveAllEventsDays.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionRemoveAllEventsDays.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionAddAllEventsDays.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionAddAllEventsDays.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionAddAllEventsDays.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionAddAllEventsDays.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 151</value>
-  </data>
-  <data name="ActionAddAllEventsDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 18</value>
-  </data>
-  <data name="ActionAddAllEventsDays.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionRemindEventsBeforeSelectAll.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="ActionAddAllEventsDays.Text" xml:space="preserve">
+  <data name="ActionRemindEventsBeforeSelectAll.Text" xml:space="preserve">
     <value>+</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEventsDays.Name" xml:space="preserve">
-    <value>ActionAddAllEventsDays</value>
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Name" xml:space="preserve">
+    <value>ActionRemindEventsBeforeSelectAll</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEventsDays.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEventsDays.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Parent" xml:space="preserve">
     <value>TabPageCelebrations</value>
   </data>
-  <data name="&gt;&gt;ActionAddAllEventsDays.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 150</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectNone.Name" xml:space="preserve">
+    <value>ActionEventsDaySelectNone</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectNone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectNone.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectNone.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="ActionEventsDayReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDayReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDayReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDayReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 150</value>
+  </data>
+  <data name="ActionEventsDayReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="ActionEventsDayReset.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="ActionEventsDayReset.Text" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDayReset.Name" xml:space="preserve">
+    <value>ActionEventsDayReset</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDayReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDayReset.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDayReset.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 150</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectAll.Name" xml:space="preserve">
+    <value>ActionEventsDaySelectAll</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectAll.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;ActionEventsDaySelectAll.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1892,7 +1958,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="LabelReminderCelebrationsIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1925,7 +1991,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1958,7 +2024,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1982,7 +2048,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2015,7 +2081,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2048,7 +2114,7 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2081,31 +2147,31 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
-  <data name="EditEventsDay.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SelectRemindEventsDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditEventsDay.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SelectRemindEventsDay.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 175</value>
   </data>
-  <data name="EditEventsDay.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectRemindEventsDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 169</value>
   </data>
-  <data name="EditEventsDay.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectRemindEventsDay.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;EditEventsDay.Name" xml:space="preserve">
-    <value>EditEventsDay</value>
+  <data name="&gt;&gt;SelectRemindEventsDay.Name" xml:space="preserve">
+    <value>SelectRemindEventsDay</value>
   </data>
-  <data name="&gt;&gt;EditEventsDay.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectRemindEventsDay.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditEventsDay.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectRemindEventsDay.Parent" xml:space="preserve">
     <value>TabPageCelebrations</value>
   </data>
-  <data name="&gt;&gt;EditEventsDay.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;SelectRemindEventsDay.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2129,88 +2195,88 @@
     <value>TabPageCelebrations</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="EditEvents.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 175</value>
-  </data>
-  <data name="EditEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 169</value>
-  </data>
-  <data name="EditEvents.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EditEvents.Name" xml:space="preserve">
-    <value>EditEvents</value>
-  </data>
-  <data name="&gt;&gt;EditEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditEvents.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditEvents.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditReminderCelebrationsDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditReminderCelebrationsDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 69</value>
-  </data>
-  <data name="EditReminderCelebrationsDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditReminderCelebrationsDaysBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsDaysBefore.Name" xml:space="preserve">
-    <value>EditReminderCelebrationsDaysBefore</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsDaysBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsDaysBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsDaysBefore.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="LabelTimerInterval.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelTimerInterval.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SelectRemindEventsBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelTimerInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="SelectRemindEventsBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 175</value>
   </data>
-  <data name="LabelTimerInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 50</value>
+  <data name="SelectRemindEventsBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 169</value>
   </data>
-  <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
+  <data name="SelectRemindEventsBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="LabelTimerInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;SelectRemindEventsBefore.Name" xml:space="preserve">
+    <value>SelectRemindEventsBefore</value>
   </data>
-  <data name="LabelTimerInterval.Text" xml:space="preserve">
-    <value>Days before first remind</value>
+  <data name="&gt;&gt;SelectRemindEventsBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelTimerInterval.Name" xml:space="preserve">
-    <value>LabelTimerInterval</value>
-  </data>
-  <data name="&gt;&gt;LabelTimerInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTimerInterval.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectRemindEventsBefore.Parent" xml:space="preserve">
     <value>TabPageCelebrations</value>
   </data>
-  <data name="&gt;&gt;LabelTimerInterval.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectRemindEventsBefore.ZOrder" xml:space="preserve">
     <value>15</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 69</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Name" xml:space="preserve">
+    <value>EditRemindCelebrationsDaysBefore</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 50</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
+    <value>Days before first remind</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Name" xml:space="preserve">
+    <value>LabelRemindCelebrationDaysBefore</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Parent" xml:space="preserve">
+    <value>TabPageCelebrations</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="TabPageCelebrations.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -5403,6 +5469,111 @@
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 319</value>
+  </data>
+  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 229</value>
+  </data>
+  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>520, 60</value>
+  </data>
+  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 319</value>
+  </data>
+  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 176</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>EditAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="LabelReminderBoxDesktopLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7705,6 +7876,30 @@
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 39</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="LabelFontName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -9159,135 +9354,6 @@
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 319</value>
-  </data>
-  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
-    <value>EditGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 229</value>
-  </data>
-  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 60</value>
-  </data>
-  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
-    <value>EditTimeZone</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 319</value>
-  </data>
-  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
-    <value>EditGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 176</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
-    <value>EditAutoGenerateYearsInterval</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 39</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 20</value>
-  </data>
-  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="EditWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 219</value>
   </data>
@@ -9380,9 +9446,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
