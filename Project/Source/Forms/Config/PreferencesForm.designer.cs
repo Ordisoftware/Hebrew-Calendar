@@ -132,6 +132,10 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
@@ -157,10 +161,12 @@
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.TabPageCelebrations = new System.Windows.Forms.TabPage();
-      this.ActionRemoveAllEvents = new System.Windows.Forms.Button();
-      this.ActionAddAllEvents = new System.Windows.Forms.Button();
-      this.ActionRemoveAllEventsDays = new System.Windows.Forms.Button();
-      this.ActionAddAllEventsDays = new System.Windows.Forms.Button();
+      this.ActionRemindEventsBeforeSelectNone = new System.Windows.Forms.Button();
+      this.ActionRemindEventsBeforeReset = new System.Windows.Forms.Button();
+      this.ActionRemindEventsBeforeSelectAll = new System.Windows.Forms.Button();
+      this.ActionEventsDaySelectNone = new System.Windows.Forms.Button();
+      this.ActionEventsDayReset = new System.Windows.Forms.Button();
+      this.ActionEventsDaySelectAll = new System.Windows.Forms.Button();
       this.LabelRemindCelebrationEveryMinutesIntervalInfo = new System.Windows.Forms.Label();
       this.LabelReminderCelebrationsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindCelebrationHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
@@ -168,11 +174,11 @@
       this.LabelRemindCelebrationHoursBefore = new System.Windows.Forms.Label();
       this.EditReminderCelebrationsEnabled = new System.Windows.Forms.CheckBox();
       this.LabelRemindCelebrationEveryMinutes = new System.Windows.Forms.Label();
-      this.EditEventsDay = new System.Windows.Forms.CheckedListBox();
+      this.SelectRemindEventsDay = new System.Windows.Forms.CheckedListBox();
       this.EditRemindCelebrationHoursBefore = new System.Windows.Forms.NumericUpDown();
-      this.EditEvents = new System.Windows.Forms.CheckedListBox();
-      this.EditReminderCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
-      this.LabelTimerInterval = new System.Windows.Forms.Label();
+      this.SelectRemindEventsBefore = new System.Windows.Forms.CheckedListBox();
+      this.EditRemindCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
+      this.LabelRemindCelebrationDaysBefore = new System.Windows.Forms.Label();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
@@ -214,6 +220,7 @@
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
@@ -261,11 +268,6 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -294,7 +296,7 @@
       this.TabPageCelebrations.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsDaysBefore)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).BeginInit();
       this.TabPageMonthView.SuspendLayout();
       this.PanelCalendarColors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
@@ -1146,6 +1148,38 @@
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
@@ -1343,10 +1377,12 @@
       // 
       this.TabPageCelebrations.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageCelebrations.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAllEvents);
-      this.TabPageCelebrations.Controls.Add(this.ActionAddAllEvents);
-      this.TabPageCelebrations.Controls.Add(this.ActionRemoveAllEventsDays);
-      this.TabPageCelebrations.Controls.Add(this.ActionAddAllEventsDays);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemindEventsBeforeSelectNone);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemindEventsBeforeReset);
+      this.TabPageCelebrations.Controls.Add(this.ActionRemindEventsBeforeSelectAll);
+      this.TabPageCelebrations.Controls.Add(this.ActionEventsDaySelectNone);
+      this.TabPageCelebrations.Controls.Add(this.ActionEventsDayReset);
+      this.TabPageCelebrations.Controls.Add(this.ActionEventsDaySelectAll);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutesIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelReminderCelebrationsIntervalInfo);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBeforeIntervalInfo);
@@ -1354,49 +1390,67 @@
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationHoursBefore);
       this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsEnabled);
       this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationEveryMinutes);
-      this.TabPageCelebrations.Controls.Add(this.EditEventsDay);
+      this.TabPageCelebrations.Controls.Add(this.SelectRemindEventsDay);
       this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationHoursBefore);
-      this.TabPageCelebrations.Controls.Add(this.EditEvents);
-      this.TabPageCelebrations.Controls.Add(this.EditReminderCelebrationsDaysBefore);
-      this.TabPageCelebrations.Controls.Add(this.LabelTimerInterval);
+      this.TabPageCelebrations.Controls.Add(this.SelectRemindEventsBefore);
+      this.TabPageCelebrations.Controls.Add(this.EditRemindCelebrationsDaysBefore);
+      this.TabPageCelebrations.Controls.Add(this.LabelRemindCelebrationDaysBefore);
       resources.ApplyResources(this.TabPageCelebrations, "TabPageCelebrations");
       this.TabPageCelebrations.Name = "TabPageCelebrations";
       // 
-      // ActionRemoveAllEvents
+      // ActionRemindEventsBeforeSelectNone
       // 
-      this.ActionRemoveAllEvents.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionRemoveAllEvents, "ActionRemoveAllEvents");
-      this.ActionRemoveAllEvents.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionRemoveAllEvents.Name = "ActionRemoveAllEvents";
-      this.ActionRemoveAllEvents.UseVisualStyleBackColor = true;
-      this.ActionRemoveAllEvents.Click += new System.EventHandler(this.ActionRemoveAllEvents_Click);
+      this.ActionRemindEventsBeforeSelectNone.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemindEventsBeforeSelectNone, "ActionRemindEventsBeforeSelectNone");
+      this.ActionRemindEventsBeforeSelectNone.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeSelectNone.Name = "ActionRemindEventsBeforeSelectNone";
+      this.ActionRemindEventsBeforeSelectNone.UseVisualStyleBackColor = true;
+      this.ActionRemindEventsBeforeSelectNone.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectNone_Click);
       // 
-      // ActionAddAllEvents
+      // ActionRemindEventsBeforeReset
       // 
-      this.ActionAddAllEvents.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionAddAllEvents, "ActionAddAllEvents");
-      this.ActionAddAllEvents.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionAddAllEvents.Name = "ActionAddAllEvents";
-      this.ActionAddAllEvents.UseVisualStyleBackColor = true;
-      this.ActionAddAllEvents.Click += new System.EventHandler(this.ActionAddAllEvents_Click);
+      this.ActionRemindEventsBeforeReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemindEventsBeforeReset, "ActionRemindEventsBeforeReset");
+      this.ActionRemindEventsBeforeReset.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeReset.Name = "ActionRemindEventsBeforeReset";
+      this.ActionRemindEventsBeforeReset.UseVisualStyleBackColor = true;
+      this.ActionRemindEventsBeforeReset.Click += new System.EventHandler(this.ActionRemindEventsBeforeReset_Click);
       // 
-      // ActionRemoveAllEventsDays
+      // ActionRemindEventsBeforeSelectAll
       // 
-      this.ActionRemoveAllEventsDays.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionRemoveAllEventsDays, "ActionRemoveAllEventsDays");
-      this.ActionRemoveAllEventsDays.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionRemoveAllEventsDays.Name = "ActionRemoveAllEventsDays";
-      this.ActionRemoveAllEventsDays.UseVisualStyleBackColor = true;
-      this.ActionRemoveAllEventsDays.Click += new System.EventHandler(this.ActionRemoveAllEventsDays_Click);
+      this.ActionRemindEventsBeforeSelectAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRemindEventsBeforeSelectAll, "ActionRemindEventsBeforeSelectAll");
+      this.ActionRemindEventsBeforeSelectAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeSelectAll.Name = "ActionRemindEventsBeforeSelectAll";
+      this.ActionRemindEventsBeforeSelectAll.UseVisualStyleBackColor = true;
+      this.ActionRemindEventsBeforeSelectAll.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectAll_Click);
       // 
-      // ActionAddAllEventsDays
+      // ActionEventsDaySelectNone
       // 
-      this.ActionAddAllEventsDays.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionAddAllEventsDays, "ActionAddAllEventsDays");
-      this.ActionAddAllEventsDays.ForeColor = System.Drawing.Color.DarkBlue;
-      this.ActionAddAllEventsDays.Name = "ActionAddAllEventsDays";
-      this.ActionAddAllEventsDays.UseVisualStyleBackColor = true;
-      this.ActionAddAllEventsDays.Click += new System.EventHandler(this.ActionAddAllEventsDays_Click);
+      this.ActionEventsDaySelectNone.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEventsDaySelectNone, "ActionEventsDaySelectNone");
+      this.ActionEventsDaySelectNone.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDaySelectNone.Name = "ActionEventsDaySelectNone";
+      this.ActionEventsDaySelectNone.UseVisualStyleBackColor = true;
+      this.ActionEventsDaySelectNone.Click += new System.EventHandler(this.ActionEventsDaySelectNone_Click);
+      // 
+      // ActionEventsDayReset
+      // 
+      this.ActionEventsDayReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEventsDayReset, "ActionEventsDayReset");
+      this.ActionEventsDayReset.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDayReset.Name = "ActionEventsDayReset";
+      this.ActionEventsDayReset.UseVisualStyleBackColor = true;
+      this.ActionEventsDayReset.Click += new System.EventHandler(this.ActionEventsDayReset_Click);
+      // 
+      // ActionEventsDaySelectAll
+      // 
+      this.ActionEventsDaySelectAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEventsDaySelectAll, "ActionEventsDaySelectAll");
+      this.ActionEventsDaySelectAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDaySelectAll.Name = "ActionEventsDaySelectAll";
+      this.ActionEventsDaySelectAll.UseVisualStyleBackColor = true;
+      this.ActionEventsDaySelectAll.Click += new System.EventHandler(this.ActionEventsDaySelectAll_Click);
       // 
       // LabelRemindCelebrationEveryMinutesIntervalInfo
       // 
@@ -1445,12 +1499,12 @@
       resources.ApplyResources(this.LabelRemindCelebrationEveryMinutes, "LabelRemindCelebrationEveryMinutes");
       this.LabelRemindCelebrationEveryMinutes.Name = "LabelRemindCelebrationEveryMinutes";
       // 
-      // EditEventsDay
+      // SelectRemindEventsDay
       // 
-      this.EditEventsDay.CheckOnClick = true;
-      resources.ApplyResources(this.EditEventsDay, "EditEventsDay");
-      this.EditEventsDay.FormattingEnabled = true;
-      this.EditEventsDay.Name = "EditEventsDay";
+      this.SelectRemindEventsDay.CheckOnClick = true;
+      resources.ApplyResources(this.SelectRemindEventsDay, "SelectRemindEventsDay");
+      this.SelectRemindEventsDay.FormattingEnabled = true;
+      this.SelectRemindEventsDay.Name = "SelectRemindEventsDay";
       // 
       // EditRemindCelebrationHoursBefore
       // 
@@ -1459,24 +1513,24 @@
       this.EditRemindCelebrationHoursBefore.Name = "EditRemindCelebrationHoursBefore";
       this.EditRemindCelebrationHoursBefore.ReadOnly = true;
       // 
-      // EditEvents
+      // SelectRemindEventsBefore
       // 
-      this.EditEvents.CheckOnClick = true;
-      resources.ApplyResources(this.EditEvents, "EditEvents");
-      this.EditEvents.FormattingEnabled = true;
-      this.EditEvents.Name = "EditEvents";
+      this.SelectRemindEventsBefore.CheckOnClick = true;
+      resources.ApplyResources(this.SelectRemindEventsBefore, "SelectRemindEventsBefore");
+      this.SelectRemindEventsBefore.FormattingEnabled = true;
+      this.SelectRemindEventsBefore.Name = "SelectRemindEventsBefore";
       // 
-      // EditReminderCelebrationsDaysBefore
+      // EditRemindCelebrationsDaysBefore
       // 
-      this.EditReminderCelebrationsDaysBefore.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditReminderCelebrationsDaysBefore, "EditReminderCelebrationsDaysBefore");
-      this.EditReminderCelebrationsDaysBefore.Name = "EditReminderCelebrationsDaysBefore";
-      this.EditReminderCelebrationsDaysBefore.ReadOnly = true;
+      this.EditRemindCelebrationsDaysBefore.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditRemindCelebrationsDaysBefore, "EditRemindCelebrationsDaysBefore");
+      this.EditRemindCelebrationsDaysBefore.Name = "EditRemindCelebrationsDaysBefore";
+      this.EditRemindCelebrationsDaysBefore.ReadOnly = true;
       // 
-      // LabelTimerInterval
+      // LabelRemindCelebrationDaysBefore
       // 
-      resources.ApplyResources(this.LabelTimerInterval, "LabelTimerInterval");
-      this.LabelTimerInterval.Name = "LabelTimerInterval";
+      resources.ApplyResources(this.LabelRemindCelebrationDaysBefore, "LabelRemindCelebrationDaysBefore");
+      this.LabelRemindCelebrationDaysBefore.Name = "LabelRemindCelebrationDaysBefore";
       // 
       // TabPageMonthView
       // 
@@ -1813,6 +1867,14 @@
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
       this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // TabPageTextReport
       // 
@@ -2192,46 +2254,6 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // EditWeatherAppPath
       // 
       this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2314,7 +2336,7 @@
       this.TabPageCelebrations.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditReminderCelebrationsDaysBefore)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).EndInit();
       this.TabPageMonthView.ResumeLayout(false);
       this.TabPageMonthView.PerformLayout();
       this.PanelCalendarColors.ResumeLayout(false);
@@ -2359,10 +2381,10 @@
     private System.Windows.Forms.RadioButton SelectOpenNavigationForm;
     private System.Windows.Forms.RadioButton SelectOpenMainForm;
     private System.Windows.Forms.CheckBox EditStartupHide;
-    private System.Windows.Forms.NumericUpDown EditReminderCelebrationsDaysBefore;
-    private System.Windows.Forms.Label LabelTimerInterval;
+    private System.Windows.Forms.NumericUpDown EditRemindCelebrationsDaysBefore;
+    private System.Windows.Forms.Label LabelRemindCelebrationDaysBefore;
     private System.Windows.Forms.CheckBox EditReminderCelebrationsEnabled;
-    private System.Windows.Forms.CheckedListBox EditEvents;
+    private System.Windows.Forms.CheckedListBox SelectRemindEventsBefore;
     private System.Windows.Forms.CheckBox EditReminderShabatEnabled;
     private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
@@ -2394,7 +2416,7 @@
     private System.Windows.Forms.Label LabelRemindCelebrationEveryMinutes;
     private System.Windows.Forms.NumericUpDown EditRemindCelebrationHoursBefore;
     private System.Windows.Forms.NumericUpDown EditRemindCelebrationEveryMinutes;
-    private System.Windows.Forms.CheckedListBox EditEventsDay;
+    private System.Windows.Forms.CheckedListBox SelectRemindEventsDay;
     private System.Windows.Forms.LinkLabel ActionGetGPS;
     private System.Windows.Forms.CheckBox EditBalloon;
     private System.Windows.Forms.CheckBox EditShowReminderInTaskBar;
@@ -2570,12 +2592,14 @@
     private System.Windows.Forms.Label LabelSelectOnlineWeatherProvider;
     private System.Windows.Forms.RadioButton SelectWeatherOnlineMeteoblueDotCom;
     private System.Windows.Forms.RadioButton SelectWeatherOnlineWeatherDotCom;
-    private System.Windows.Forms.Button ActionRemoveAllEvents;
-    private System.Windows.Forms.Button ActionAddAllEvents;
-    private System.Windows.Forms.Button ActionRemoveAllEventsDays;
-    private System.Windows.Forms.Button ActionAddAllEventsDays;
+    private System.Windows.Forms.Button ActionRemindEventsBeforeSelectNone;
+    private System.Windows.Forms.Button ActionRemindEventsBeforeSelectAll;
+    private System.Windows.Forms.Button ActionEventsDaySelectNone;
+    private System.Windows.Forms.Button ActionEventsDaySelectAll;
     private System.Windows.Forms.CheckBox EditWeatherOnlineUseDay;
     private System.Windows.Forms.Panel PanelWeatherOnline;
     private System.Windows.Forms.LinkLabel ActionWeatherOnlineTest;
+    private System.Windows.Forms.Button ActionRemindEventsBeforeReset;
+    private System.Windows.Forms.Button ActionEventsDayReset;
   }
 }

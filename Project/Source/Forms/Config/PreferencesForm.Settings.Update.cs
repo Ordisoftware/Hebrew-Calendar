@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.RemindCelebrationEveryMinutes = EditRemindCelebrationEveryMinutes.Value;
       Settings.RemindCelebrationHoursBefore = EditRemindCelebrationHoursBefore.Value;
       Settings.ReminderCelebrationsEnabled = EditReminderCelebrationsEnabled.Checked;
-      Settings.ReminderCelebrationsInterval = EditReminderCelebrationsDaysBefore.Value;
+      Settings.ReminderCelebrationsInterval = EditRemindCelebrationsDaysBefore.Value;
       Settings.ReminderShabatEnabled = EditReminderShabatEnabled.Checked;
       Settings.RemindShabatEveryMinutes = EditRemindShabatEveryMinutes.Value;
       Settings.RemindShabatHoursBefore = EditRemindShabatHoursBefore.Value;
@@ -110,19 +110,19 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
       // Reminder boxes location
       Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
-      Settings.ReminderCelebrationsInterval = (int)EditReminderCelebrationsDaysBefore.Value;
+      Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
       // Events
-      for ( int index = 0; index < EditEvents.Items.Count; index++ )
+      for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
         SystemManager.TryCatch(() =>
         {
-          string name = "TorahEventRemind" + ( (TorahEventItem)EditEvents.Items[index] ).Event.ToString();
-          Settings[name] = EditEvents.GetItemChecked(index);
+          string name = "TorahEventRemind" + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event.ToString();
+          Settings[name] = SelectRemindEventsBefore.GetItemChecked(index);
         });
-      for ( int index = 0; index < EditEventsDay.Items.Count; index++ )
+      for ( int index = 0; index < SelectRemindEventsDay.Items.Count; index++ )
         SystemManager.TryCatch(() =>
         {
-          string name = "TorahEventRemindDay" + ( (TorahEventItem)EditEventsDay.Items[index] ).Event.ToString();
-          Settings[name] = EditEventsDay.GetItemChecked(index);
+          string name = "TorahEventRemindDay" + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event.ToString();
+          Settings[name] = SelectRemindEventsDay.GetItemChecked(index);
         });
       // HotKey
       Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
