@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Drawing;
@@ -27,11 +27,13 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class CelebrationsBoardForm : Form
   {
 
+    private const string TableName = "Board Celebrations";
+
     static public CelebrationsBoardForm Instance { get; private set; }
 
     static public void Run()
     {
-      if (Instance == null)
+      if ( Instance == null )
         Instance = new CelebrationsBoardForm();
       else
       if ( Instance.Visible )
@@ -218,7 +220,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.Popup();
       MainForm.Instance.GoToDate((DateTime)value);
     }
-    
+
     // TODO change when others managed
     private const TorahEvent MaxEvent = TorahEvent.SoukotD8;
 
@@ -227,7 +229,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       DataGridView.DataSource = null;
-      Board = new DataTable();
+      Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         if ( value != TorahEvent.None && value <= MaxEvent )
@@ -271,6 +273,17 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = Board;
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
+    }
+
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.SaveDataDialog.FileName = TableName;
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
+      string filePath = MainForm.Instance.SaveDataDialog.FileName;
+      Board.Export(filePath, Program.GridExportTargets);
     }
 
   }

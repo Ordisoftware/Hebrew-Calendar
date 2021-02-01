@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoExportSettings()
     {
-      SaveSettingsDialog.FileName = Globals.AssemblyTitle + " Settings";
+      SaveSettingsDialog.FileName = "Settings";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveSettingsDialog.FilterIndex = index + 1;

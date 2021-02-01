@@ -1394,7 +1394,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.DataGridView CalendarGrid;
     internal Data.DataSet DataSet;
-    private System.Windows.Forms.SaveFileDialog SaveDataDialog;
+    internal System.Windows.Forms.SaveFileDialog SaveDataDialog;
     private System.Windows.Forms.NotifyIcon TrayIcon;
     internal System.Windows.Forms.ToolStripMenuItem MenuShowHide;
     private System.Windows.Forms.ToolStripMenuItem MenuNavigate;

@@ -28,88 +28,89 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      switch ( keyData )
-      {
-        // System process
-        case Keys.Alt | Keys.Control | Keys.F4:
-          MenuExit.PerformClick();
-          return true;
-        case Keys.Escape:
-          if ( EditESCtoExit.Checked ) Close();
-          return true;
-        // System function
-        case Keys.F8:
-          ActionPreferences.PerformClick();
-          return true;
-        case Keys.F12:
-          ActionAbout_Click(null, null);
-          return true;
-        // Application function
-        case Keys.F4:
-          ActionViewCelebrations.PerformClick();
-          return true;
-        case Keys.F5:
-          ActionSearchEvent.PerformClick();
-          return true;
-        case Keys.F6:
-          ActionSearchMonth.PerformClick();
-          return true;
-        case Keys.F7:
-          ActionSearchGregorianMonth.PerformClick();
-          return true;
-        case Keys.F9:
-        case Keys.Control | Keys.N:
-          ActionNavigate.PerformClick();
-          return true;
-        // Change view
-        case Keys.Control | Keys.Shift | Keys.Tab:
-          SetView(Settings.CurrentView.Previous(new[] { ViewMode.None }));
-          return true;
-        case Keys.Control | Keys.Tab:
-          SetView(Settings.CurrentView.Next(new[] { ViewMode.None }));
-          return true;
-        // Application menu
-        case Keys.Alt | Keys.T:
-          ActionTools.ShowDropDown();
-          return true;
-        case Keys.Alt | Keys.L:
-          ActionWebLinks.ShowDropDown();
-          return true;
-        case Keys.Alt | Keys.V:
-          ActionView.ShowDropDown();
-          return true;
-        // System menu
-        case Keys.Alt | Keys.S:
-          ActionSettings.ShowDropDown();
-          return true;
-        case Keys.Alt | Keys.I:
-          ActionInformation.ShowDropDown();
-          return true;
-        // Export
-        case Keys.Control | Keys.S:
-          ActionSaveToFile.PerformClick();
-          return true;
-        case Keys.Control | Keys.C:
-          ActionCopyToClipboard.PerformClick();
-          return true;
-        case Keys.Control | Keys.Shift | Keys.C:
-          if ( ActiveControl != CalendarText ) break;
-          CalendarText.Copy();
-          DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(), 
-                                            Globals.ClipboardSoundFilePath);
-          return true;
-        case Keys.Control | Keys.P:
-          ActionPrint.PerformClick();
-          return true;
-        // Search
-        case Keys.Control | Keys.D:
-          ActionSearchDay.PerformClick();
-          return true;
-        case Keys.NumPad0:
-        case Keys.Control | Keys.T:
-          GoToDate(DateTime.Today);
-          return true;
-      }
+      if ( Globals.IsReady )
+        switch ( keyData )
+        {
+          // System process
+          case Keys.Alt | Keys.Control | Keys.F4:
+            MenuExit.PerformClick();
+            return true;
+          case Keys.Escape:
+            if ( EditESCtoExit.Checked ) Close();
+            return true;
+          // System function
+          case Keys.F8:
+            ActionPreferences.PerformClick();
+            return true;
+          case Keys.F12:
+            ActionAbout_Click(null, null);
+            return true;
+          // Application function
+          case Keys.F4:
+            ActionViewCelebrations.PerformClick();
+            return true;
+          case Keys.F5:
+            ActionSearchEvent.PerformClick();
+            return true;
+          case Keys.F6:
+            ActionSearchMonth.PerformClick();
+            return true;
+          case Keys.F7:
+            ActionSearchGregorianMonth.PerformClick();
+            return true;
+          case Keys.F9:
+          case Keys.Control | Keys.N:
+            ActionNavigate.PerformClick();
+            return true;
+          // Change view
+          case Keys.Control | Keys.Shift | Keys.Tab:
+            SetView(Settings.CurrentView.Previous(new[] { ViewMode.None }));
+            return true;
+          case Keys.Control | Keys.Tab:
+            SetView(Settings.CurrentView.Next(new[] { ViewMode.None }));
+            return true;
+          // Application menu
+          case Keys.Alt | Keys.T:
+            ActionTools.ShowDropDown();
+            return true;
+          case Keys.Alt | Keys.L:
+            ActionWebLinks.ShowDropDown();
+            return true;
+          case Keys.Alt | Keys.V:
+            ActionView.ShowDropDown();
+            return true;
+          // System menu
+          case Keys.Alt | Keys.S:
+            ActionSettings.ShowDropDown();
+            return true;
+          case Keys.Alt | Keys.I:
+            ActionInformation.ShowDropDown();
+            return true;
+          // Export
+          case Keys.Control | Keys.S:
+            ActionSaveToFile.PerformClick();
+            return true;
+          case Keys.Control | Keys.C:
+            ActionCopyToClipboard.PerformClick();
+            return true;
+          case Keys.Control | Keys.Shift | Keys.C:
+            if ( ActiveControl != CalendarText ) break;
+            CalendarText.Copy();
+            DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(),
+                                              Globals.ClipboardSoundFilePath);
+            return true;
+          case Keys.Control | Keys.P:
+            ActionPrint.PerformClick();
+            return true;
+          // Search
+          case Keys.Control | Keys.D:
+            ActionSearchDay.PerformClick();
+            return true;
+          case Keys.NumPad0:
+          case Keys.Control | Keys.T:
+            GoToDate(DateTime.Today);
+            return true;
+        }
       // Visual month navigation
       if ( Settings.CurrentView == ViewMode.Month )
         switch ( keyData )

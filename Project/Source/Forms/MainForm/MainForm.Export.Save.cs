@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string GetExportDataFilename(ExportInterval interval)
     {
-      string result = Globals.AssemblyTitle + " " + DataSet.LunisolarDays.TableName;
+      string result = DataSet.LunisolarDays.TableName;
       int year1;
       int year2;
       if ( interval.IsDefined )
@@ -76,8 +76,7 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             else
             {
-              SaveImageDialog.FileName = string.Format("{0} {1}-{2}",
-                                                       Globals.AssemblyTitle,
+              SaveImageDialog.FileName = string.Format("{0}-{1}",
                                                        CalendarMonth.CalendarDate.Year,
                                                        CalendarMonth.CalendarDate.Month.ToString("00"));
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
@@ -131,8 +130,7 @@ namespace Ordisoftware.Hebrew.Calendar
           bool HasMorePages = true;
           while ( HasMorePages )
           {
-            string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
-                                            Globals.AssemblyTitle,
+            string filename = string.Format("{0}-{1}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
                                             CalendarMonth.CalendarDate.Year,
                                             CalendarMonth.CalendarDate.Month.ToString("00"));
             var bitmap = CalendarMonth.GetBitmap();
@@ -157,15 +155,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool ExportSaveGrid(string filePath, ExportInterval interval)
     {
-      string extension = Path.GetExtension(SaveDataDialog.FileName);
+      string extension = Path.GetExtension(filePath);
       var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          File.WriteAllText(SaveDataDialog.FileName, ExportSaveCSV(interval));
+          File.WriteAllText(filePath, ExportSaveCSV(interval));
           break;
         case DataExportTarget.JSON:
-          File.WriteAllText(SaveDataDialog.FileName, ExportSaveJSON(interval));
+          File.WriteAllText(filePath, ExportSaveJSON(interval));
           break;
         default:
           throw new NotImplementedExceptionEx(selected);
