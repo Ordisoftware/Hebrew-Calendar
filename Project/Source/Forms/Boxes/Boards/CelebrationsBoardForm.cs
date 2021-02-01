@@ -11,13 +11,17 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
+using FileHelpers;
+using FileHelpers.Options;
+using Newtonsoft.Json;
 using EnumsNET;
 using Ordisoftware.Core;
 
@@ -26,6 +30,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public partial class CelebrationsBoardForm : Form
   {
+
+    private const string TableName = "Board Celebrations";
 
     static public CelebrationsBoardForm Instance { get; private set; }
 
@@ -227,7 +233,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       DataGridView.DataSource = null;
-      Board = new DataTable();
+      Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         if ( value != TorahEvent.None && value <= MaxEvent )
@@ -271,6 +277,39 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = Board;
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
+    }
+
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.SaveDataDialog.FileName = TableName;
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
+      string filePath = MainForm.Instance.SaveDataDialog.FileName;
+      SaveDataTable(Board, filePath);
+    }
+
+    private void SaveDataTable(DataTable table, string filePath)
+    {
+      string extension = Path.GetExtension(filePath);
+      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
+      switch ( selected )
+      {
+        case DataExportTarget.CSV:
+          var options = new CsvOptions("String[,]", ',', table.Rows.Count);
+          options.IncludeHeaderNames = true;
+          CsvEngine.DataTableToCsv(table, filePath, options);
+          break;
+        case DataExportTarget.JSON:
+          var dataset = new DataSet(TableName);
+          dataset.Tables.Add(table);
+          string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+          File.WriteAllText(filePath, lines);
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selected);
+      }
     }
 
   }

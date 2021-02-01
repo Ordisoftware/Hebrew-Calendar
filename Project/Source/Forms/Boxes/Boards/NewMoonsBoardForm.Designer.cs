@@ -34,16 +34,17 @@
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
-      this.EditUseRealDays = new System.Windows.Forms.CheckBox();
       this.EditHideHours = new System.Windows.Forms.CheckBox();
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
+      this.EditUseRealDays = new System.Windows.Forms.CheckBox();
+      this.ActionExport = new System.Windows.Forms.Button();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -52,6 +53,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
@@ -110,16 +112,6 @@
       this.EditColumnUpperCase.UseVisualStyleBackColor = true;
       this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.ReloadGrid);
       // 
-      // EditUseRealDays
-      // 
-      resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
-      this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseRealDays;
-      this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditUseRealDays.Name = "EditUseRealDays";
-      this.EditUseRealDays.UseVisualStyleBackColor = true;
-      this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
-      // 
       // EditHideHours
       // 
       resources.ApplyResources(this.EditHideHours, "EditHideHours");
@@ -167,6 +159,38 @@
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
+      // 
+      // EditUseRealDays
+      // 
+      resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
+      this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseRealDays;
+      this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditUseRealDays.Name = "EditUseRealDays";
+      this.EditUseRealDays.UseVisualStyleBackColor = true;
+      this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
+      // 
+      // ActionExport
+      // 
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
+      // 
       // SelectYear1
       // 
       resources.ApplyResources(this.SelectYear1, "SelectYear1");
@@ -182,21 +206,6 @@
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
-      // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // NewMoonsBoardForm
       // 
@@ -237,5 +246,6 @@
     private System.Windows.Forms.CheckBox EditUseAbbreviatedNames;
     private System.Windows.Forms.CheckBox EditUseRealDays;
     private System.Windows.Forms.CheckBox EditHideHours;
+    private System.Windows.Forms.Button ActionExport;
   }
 }

@@ -30,6 +30,7 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationsBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionExport = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
@@ -52,9 +53,17 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionExport
+      // 
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
       // 
       // ActionClose
       // 
@@ -237,5 +246,6 @@
     private System.Windows.Forms.CheckBox EditUseAbbreviatedNames;
     private System.Windows.Forms.CheckBox EditUseRealDays;
     private System.Windows.Forms.CheckBox EditHideHours;
+    private System.Windows.Forms.Button ActionExport;
   }
 }
