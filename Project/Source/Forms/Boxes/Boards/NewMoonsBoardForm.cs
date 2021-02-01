@@ -13,15 +13,11 @@
 /// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
-using FileHelpers;
-using FileHelpers.Options;
-using Newtonsoft.Json;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -286,29 +282,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      SaveDataTable(Board, filePath);
-    }
-
-    private void SaveDataTable(DataTable table, string filePath)
-    {
-      string extension = Path.GetExtension(filePath);
-      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
-      switch ( selected )
-      {
-        case DataExportTarget.CSV:
-          var options = new CsvOptions("String[,]", ',', table.Rows.Count);
-          options.IncludeHeaderNames = true;
-          CsvEngine.DataTableToCsv(table, filePath, options);
-          break;
-        case DataExportTarget.JSON:
-          var dataset = new DataSet(TableName);
-          dataset.Tables.Add(table);
-          string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-          File.WriteAllText(filePath, lines);
-          break;
-        default:
-          throw new NotImplementedExceptionEx(selected);
-      }
+      Board.Export(filePath, Program.GridExportTargets);
     }
 
   }

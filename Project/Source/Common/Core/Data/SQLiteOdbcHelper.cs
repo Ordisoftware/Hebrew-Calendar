@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +19,9 @@ using System.Data.Odbc;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using FileHelpers;
+using FileHelpers.Options;
+using Newtonsoft.Json;
 using Microsoft.Win32;
 
 namespace Ordisoftware.Core
@@ -321,6 +324,29 @@ namespace Ordisoftware.Core
         table.Rows.Add(row);
       }
       return table;
+    }
+
+    static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
+    {
+      string extension = Path.GetExtension(filePath);
+      var selected = targets.First(p => p.Value == extension).Key;
+      switch ( selected )
+      {
+        case DataExportTarget.CSV:
+          var options = new CsvOptions("String[,]", ',', table.Rows.Count);
+          options.IncludeHeaderNames = true;
+          options.DateFormat = "yyyy-MM-dd HH:mm";
+          CsvEngine.DataTableToCsv(table, filePath, options);
+          break;
+        case DataExportTarget.JSON:
+          var dataset = new DataSet(table.TableName);
+          dataset.Tables.Add(table);
+          string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+          File.WriteAllText(filePath, lines);
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selected);
+      }
     }
 
   }
