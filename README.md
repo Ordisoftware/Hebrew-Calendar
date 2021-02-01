@@ -199,7 +199,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add export celebrations and new moons boards.
 - Add lunar months description form with menu in tools.
 - Add export and print lunar months data.
 - Add dark theme for month view.
@@ -215,6 +214,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### 2021.02.07 - Version 6.5
+
+- Add export celebrations and new moons boards.
 
 #### 2021.01.31 - Version 6.4
 
