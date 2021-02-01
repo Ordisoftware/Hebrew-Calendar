@@ -160,4 +160,7 @@
   <data name="EditHideHours.Text" xml:space="preserve">
     <value>Cacher les heures</value>
   </data>
+  <data name="ActionExport.Text" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
 </root>

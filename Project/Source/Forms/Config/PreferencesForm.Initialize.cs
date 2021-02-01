@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Drawing.Text;
@@ -142,9 +142,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( var value in Enums.GetValues<TorahEvent>() )
-        if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
-          SystemManager.TryCatch(() =>
+      foreach ( var value in TorahCelebrations.Values )
+        SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
             int index = SelectRemindEventsBefore.Items.Add(item);

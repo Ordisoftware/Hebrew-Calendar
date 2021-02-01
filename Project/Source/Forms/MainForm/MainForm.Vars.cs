@@ -20,6 +20,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
 using EnumsNET;
+using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -106,9 +107,8 @@ namespace Ordisoftware.Hebrew.Calendar
         CurrentDay = null;
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
-        foreach ( var value in Enums.GetValues<TorahEvent>() )
-          if ( value != TorahEvent.None && value <= TorahEvent.SoukotD8 ) // TODO change when manage others
-          {
+        foreach ( var value in TorahCelebrations.Values )
+        {
             TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
             TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);
             LastCelebrationReminded[value] = null;

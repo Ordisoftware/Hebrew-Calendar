@@ -11,8 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using MoreLinq;
+using EnumsNET;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -92,6 +96,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// The pourim day.
     /// </summary>
     static public readonly int PourimDay = 14;
+
+    static public readonly IEnumerable<TorahEvent> Values
+      = Enums.GetValues<TorahEvent>().Skip(1).TakeUntil(v => v == TorahEvent.SoukotD8);
 
   }
 
