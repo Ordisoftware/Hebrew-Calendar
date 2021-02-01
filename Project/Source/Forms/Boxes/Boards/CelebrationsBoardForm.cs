@@ -19,6 +19,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
 using EnumsNET;
+using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -221,9 +222,6 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.GoToDate((DateTime)value);
     }
 
-    // TODO change when others managed
-    private const TorahEvent MaxEvent = TorahEvent.SoukotD8;
-
     private void CreateDataTable()
     {
       string name = AppTranslations.Year.GetLang();
@@ -231,13 +229,12 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = null;
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
-      foreach ( var value in Enums.GetValues<TorahEvent>() )
-        if ( value != TorahEvent.None && value <= MaxEvent )
-        {
-          name = value.ToStringExport(AppTranslations.TorahEvent);
-          if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
-          Board.Columns.Add(name, typeof(DateTime));
-        }
+      foreach ( var value in TorahCelebrations.Values )
+      {
+        name = value.ToStringExport(AppTranslations.TorahEvent);
+        if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
+        Board.Columns.Add(name, typeof(DateTime));
+      }
     }
 
     private void LoadGrid()
@@ -246,7 +243,6 @@ namespace Ordisoftware.Hebrew.Calendar
       int year2 = (int)SelectYear2.SelectedItem;
       var query = from day in MainForm.Instance.DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
-                     && day.TorahEventsAsEnum <= MaxEvent
                      && SQLiteDate.ToDateTime(day.Date).Year >= year1
                      && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new

@@ -30,6 +30,7 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMoonsBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionExport = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
@@ -38,13 +39,12 @@
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditUseRealDays = new System.Windows.Forms.CheckBox();
-      this.ActionExport = new System.Windows.Forms.Button();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -57,6 +57,13 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionExport
+      // 
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
       // 
       // ActionClose
       // 
@@ -143,6 +150,7 @@
       // 
       // EditFontSize
       // 
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
@@ -156,8 +164,25 @@
             0,
             0});
       this.EditFontSize.Name = "EditFontSize";
+      this.EditFontSize.ReadOnly = true;
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
+      // 
+      // SelectYear1
+      // 
+      resources.ApplyResources(this.SelectYear1, "SelectYear1");
+      this.SelectYear1.Name = "SelectYear1";
+      this.SelectYear1.SelectedIndex = -1;
+      this.SelectYear1.SelectedItem = null;
+      this.SelectYear1.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
+      // 
+      // SelectYear2
+      // 
+      resources.ApplyResources(this.SelectYear2, "SelectYear2");
+      this.SelectYear2.Name = "SelectYear2";
+      this.SelectYear2.SelectedIndex = -1;
+      this.SelectYear2.SelectedItem = null;
+      this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // LabelEnd
       // 
@@ -183,29 +208,6 @@
       this.EditUseRealDays.Name = "EditUseRealDays";
       this.EditUseRealDays.UseVisualStyleBackColor = true;
       this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
-      // 
-      // ActionExport
-      // 
-      resources.ApplyResources(this.ActionExport, "ActionExport");
-      this.ActionExport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionExport.Name = "ActionExport";
-      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
-      // 
-      // SelectYear1
-      // 
-      resources.ApplyResources(this.SelectYear1, "SelectYear1");
-      this.SelectYear1.Name = "SelectYear1";
-      this.SelectYear1.SelectedIndex = -1;
-      this.SelectYear1.SelectedItem = null;
-      this.SelectYear1.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
-      // 
-      // SelectYear2
-      // 
-      resources.ApplyResources(this.SelectYear2, "SelectYear2");
-      this.SelectYear2.Name = "SelectYear2";
-      this.SelectYear2.SelectedIndex = -1;
-      this.SelectYear2.SelectedItem = null;
-      this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // NewMoonsBoardForm
       // 

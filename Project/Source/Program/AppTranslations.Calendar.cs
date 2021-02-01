@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -290,8 +290,9 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "Sukot end",
           [Language.FR] = "Fin de Soukot"
-        },
-        [Calendar.TorahEvent.HanoukaD1] = new TranslationsDictionary()
+        }
+        // TODO manage as user custom remind list
+        /*[Calendar.TorahEvent.HanoukaD1] = new TranslationsDictionary()
         {
           [Language.EN] = "'Hanouka start",
           [Language.FR] = "Début de 'Hanouka"
@@ -315,7 +316,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "Lunar anniversary",
           [Language.FR] = "Anniversaire lunaire"
-        }
+        }*/
       };
 
   }

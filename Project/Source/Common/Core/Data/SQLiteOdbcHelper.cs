@@ -298,14 +298,17 @@ namespace Ordisoftware.Core
       return connection.CheckColumn(table, column, sql);
     }
 
-    // https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
-    static public DataTable ToDataTable<T>(this IEnumerable<T> query, string name = "") where T : class
+    /// <summary>
+    /// Convert a collection of T to a DataTable.
+    /// https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
+    /// </summary>
+    static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
     {
-      if ( query == null ) return null;
+      if ( list == null ) return null;
       var table = new DataTable();
       table.TableName = name;
       PropertyInfo[] columns = null;
-      foreach ( T item in query )
+      foreach ( T item in list )
       {
         if ( columns == null )
         {
@@ -326,6 +329,9 @@ namespace Ordisoftware.Core
       return table;
     }
 
+    /// <summary>
+    /// Export a DataTable to a file depending its extension.
+    /// </summary>
     static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
     {
       string extension = Path.GetExtension(filePath);

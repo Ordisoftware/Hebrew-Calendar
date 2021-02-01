@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 221-02 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -85,8 +85,14 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     SoukotD8,
 
-    // Actually non database values
+    /// <summary>
+    /// The shabat day.
+    /// </summary>
+    Shabat,
 
+    // TODO manage as user custom remind list
+    // Actually non database values
+    /*
     /// <summary>
     /// The 'hanouka first day.
     /// </summary>
@@ -103,11 +109,6 @@ namespace Ordisoftware.Hebrew.Calendar
     Pourim,
 
     /// <summary>
-    /// The shabat day.
-    /// </summary>
-    Shabat,
-
-    /// <summary>
     /// The sun aniversary.
     /// </summary>
     AnniversarySun,
@@ -115,7 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// The moon aniversary.
     /// </summary>
-    AnniversaryMoon
+    AnniversaryMoon*/
 
   }
 
