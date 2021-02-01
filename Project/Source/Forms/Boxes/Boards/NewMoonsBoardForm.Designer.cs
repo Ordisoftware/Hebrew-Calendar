@@ -150,6 +150,7 @@
       // 
       // EditFontSize
       // 
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
@@ -163,6 +164,7 @@
             0,
             0});
       this.EditFontSize.Name = "EditFontSize";
+      this.EditFontSize.ReadOnly = true;
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
