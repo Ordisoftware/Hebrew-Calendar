@@ -72,11 +72,12 @@ namespace Ordisoftware.Hebrew.Calendar
                   return false;
               if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
               filePath = FolderDialog.SelectedPath;
-              return ExportSaveMonth(filePath, interval);
+              return ExportSaveMonthImage(filePath, interval);
             }
             else
             {
-              SaveImageDialog.FileName = string.Format("{0}-{1}",
+              SaveImageDialog.FileName = string.Format("{0} {1}-{2}",
+                                                       DataSet.LunisolarDays.TableName,
                                                        CalendarMonth.CalendarDate.Year,
                                                        CalendarMonth.CalendarDate.Month.ToString("00"));
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
@@ -84,7 +85,9 @@ namespace Ordisoftware.Hebrew.Calendar
                   SaveImageDialog.FilterIndex = index + 1;
               if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
               filePath = SaveImageDialog.FileName;
-              return ExportSaveMonth(filePath, interval);
+              var bitmap = CalendarMonth.GetBitmap();
+              bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
+              return true;
             }
           }
           finally
@@ -117,34 +120,27 @@ namespace Ordisoftware.Hebrew.Calendar
       DoExport(ExportAction.SaveToFile, process, after);
     }
 
-    private bool ExportSaveMonth(string filePath, ExportInterval interval)
+    private bool ExportSaveMonthImage(string path, ExportInterval interval)
     {
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
       {
-        if ( interval.IsDefined )
+        var current = CalendarMonth.CalendarDate;
+        CalendarMonth.CalendarDate = interval.Start.Value;
+        bool HasMorePages = true;
+        while ( HasMorePages )
         {
-          var current = CalendarMonth.CalendarDate;
-          CalendarMonth.CalendarDate = interval.Start.Value;
-          bool HasMorePages = true;
-          while ( HasMorePages )
-          {
-            string filename = string.Format("{0}-{1}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
-                                            CalendarMonth.CalendarDate.Year,
-                                            CalendarMonth.CalendarDate.Month.ToString("00"));
-            var bitmap = CalendarMonth.GetBitmap();
-            bitmap.Save(Path.Combine(filePath, filename), Settings.ExportImagePreferredTarget.GetFormat());
-            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-            HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
-          }
-          CalendarMonth.CalendarDate = current;
-        }
-        else
-        {
+          string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
+                                          DataSet.LunisolarDays.TableName,
+                                          CalendarMonth.CalendarDate.Year,
+                                          CalendarMonth.CalendarDate.Month.ToString("00"));
           var bitmap = CalendarMonth.GetBitmap();
-          bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
+          bitmap.Save(Path.Combine(path, filename), Settings.ExportImagePreferredTarget.GetFormat());
+          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+          HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
         }
+        CalendarMonth.CalendarDate = current;
         return true;
       }
       finally
