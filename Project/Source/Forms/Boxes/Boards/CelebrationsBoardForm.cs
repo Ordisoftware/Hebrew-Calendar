@@ -18,8 +18,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
-using EnumsNET;
-using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
