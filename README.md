@@ -217,7 +217,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.02.07 - Version 6.5
 
-- Add export celebrations and new moons boards.
+- Add celebrations and new moons boards export.
 - Improve image files naming for visual month export.
 
 #### 2021.01.31 - Version 6.4
