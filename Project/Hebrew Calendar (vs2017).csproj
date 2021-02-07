@@ -434,18 +434,10 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Weather.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoonDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversarySunDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversarySun.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoon.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversaryMoonDay.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversarySunDay.cs" />
+    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnniversarySun.cs" />
     <Compile Include="Source\Program\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />
