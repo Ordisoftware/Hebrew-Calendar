@@ -634,11 +634,8 @@ namespace CodeProjectCalendar.NET
 
     private void ParentResize(object sender, EventArgs e)
     {
-      // ORDISOFTWARE MODIF BEGIN
-      return;
-      //ResizeScrollPanel();
-      //Refresh();
-      // ORDISOFTWARE MODIF END
+      ResizeScrollPanel();
+      Refresh();
     }
 
     private void PresetHolidays()
