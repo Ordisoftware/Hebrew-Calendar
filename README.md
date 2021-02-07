@@ -215,6 +215,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### 2021.02.07 - Version 6.6
+
+- Fix visual calendar too optimized in v6.3 (not repainted when resizing the window).
+
 #### 2021.02.03 - Version 6.5
 
 - Add celebrations and new moons boards export.
