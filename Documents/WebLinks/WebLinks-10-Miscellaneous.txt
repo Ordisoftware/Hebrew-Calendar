@@ -33,27 +33,3 @@ URL = http://he.israel-music.com/
 
 Name = (EN) Alex Grey Spiritual Art @ alexgrey.com
 URL = https://www.alexgrey.com/art
-
--
-
-Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
-URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
-
--
-
-Name = (FR) Dictionnaire Sanskrit Heritage @ sanskrit.inria.fr
-URL = https://sanskrit.inria.fr/DICO/index.fr.html
-
-Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
-URL = https://sanskrit.inria.fr/DICO/index.en.html
-
-Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
-URL = https://spokensanskrit.org
-
--
-
-Name = (FR) Dictionnaire Akkadian @ assyrianlanguages.org
-URL = http://www.assyrianlanguages.org/akkadian/index_fr.php?langui=french
-
-Name = (EN) Akkadian Dictionary @ assyrianlanguages.org
-URL = http://www.assyrianlanguages.org/akkadian/index_en.php?langui=english

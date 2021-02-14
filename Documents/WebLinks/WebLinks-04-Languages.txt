@@ -1,0 +1,92 @@
+; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Languages
+Lang/FR = Langages
+
+Name = (EN) Hebrew @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Hebrew_language
+
+Name = (FR) Hébreu @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/H%C3%A9breu
+
+-
+
+Name = (EN) Sumerian @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Sumerian_language
+
+Name = (FR) Sumérien @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Sum%C3%A9rien
+
+Name = (EN) Akkadian @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Akkadian_language
+
+Name = (FR) Akkadien @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Akkadien
+
+Name = (EN) Akkadian Dictionary @ assyrianlanguages.org
+URL = http://www.assyrianlanguages.org/akkadian/index_en.php?langui=english
+
+Name = (FR) Dictionnaire Akkadien @ assyrianlanguages.org
+URL = http://www.assyrianlanguages.org/akkadian/index_fr.php?langui=french
+
+-
+
+Name = (EN) Egyptian @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Egyptian_language
+
+Name = (FR) Egyptien @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/%C3%89gyptien_ancien
+
+-
+
+Name = (EN) Sanskrit @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Sanskrit
+
+Name = (FR) Sanskrit @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Sanskrit
+
+Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.en.html
+
+Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
+URL = https://spokensanskrit.org
+
+Name = (FR) Dictionnaire Sanskrit Heritage @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.fr.html
+
+-
+
+Name = (EN) Greek @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Greek_language
+
+Name = (FR) Grec @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Grec
+
+Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
+URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
+
+-
+
+Name = (EN) Proto-Germanic @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Proto-Germanic_language
+
+Name = (FR) Proto-germanique @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Proto-germanique
+
+-
+
+Name = (EN) Arabic @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Arabic
+
+Name = (FR) Arabe @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Arabe
