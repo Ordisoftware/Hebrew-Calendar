@@ -48,6 +48,9 @@ URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 Name = (FR) Sitré Haïm (Rav Yossef Hay)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
+Name = (FR) Judaïsme En Mouvement
+URL = https://www.youtube.com/c/Juda%C3%AFsmeEnMouvement
+
 -
 
 Name = (FR) Hevrat Pinto (Rav David Pinto)

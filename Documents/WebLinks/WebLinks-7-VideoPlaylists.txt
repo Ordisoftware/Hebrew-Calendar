@@ -19,9 +19,12 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
 Name = (IW) Chants Hébreux
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Avg_Mab89AAsBVDF0uTHcp
 
+Name = (FR) Lettres et Hébreu biblique
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-C8x-a4WQBMvPbEQAPR4mhk
+
 -
 
-Name = (FR/EN) Torah && Religion
+Name = (FR/EN) Torah et religion
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 
 Name = (FR) Cours de Talmud
