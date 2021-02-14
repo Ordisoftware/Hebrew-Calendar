@@ -1,0 +1,51 @@
+; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Astronomy
+Lang/FR = Astronomie
+
+Name = (FR/EN) Solar System Scope Application (online and offline)
+URL = https://www.solarsystemscope.com
+
+-
+
+Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
+URL = https://www.spaceweatherlive.com
+
+Name = (FR) Activité aurorale et solaire en temps réel @ spaceweatherlive.com
+URL = https://www.spaceweatherlive.com/fr.html
+
+-
+
+Name = (EN) Sun and moon rise and set @ sunrise-and-sunset.com
+URL = https://www.sunrise-and-sunset.com/en
+
+Name = (FR) Levers et couchers du soleil et de la lune @ sunrise-and-sunset.com
+URL = https://www.sunrise-and-sunset.com/fr
+
+-
+
+Name = (EN) Gregorian calendar with moon phases @ timeanddate.com
+URL = https://www.timeanddate.com/calendar/
+
+Name = (FR) Calendrier grégorien avec phases de la lune @ kalender-365.de
+URL = https://kalender-365.de/calendrier-lunaire.php
+
+-
+
+Name = (FR) Calendrier lunaire @ calendrier-lunaire.net
+URL = http://www.calendrier-lunaire.net
+
+-
+
+Name = (EN) Calendars through the ages @ webexhibits.org
+URL = http://www.webexhibits.org/calendars/
