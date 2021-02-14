@@ -10,79 +10,44 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
+FOLDER-SEPARATOR
+
 Lang/EN = Hebrew calendar
 Lang/FR = Calendrier hébraïque
 
-Name = (EN) Calendars through the ages @ webexhibits.org
-URL = http://www.webexhibits.org/calendars/
-
--
-
-Name = (FR/EN) Solar System Scope Application (online and offline)
-URL = https://www.solarsystemscope.com
-
-Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
-URL = https://www.spaceweatherlive.com
-
-Name = (FR) Activité aurorale et solaire en temps réel @ spaceweatherlive.com
-URL = https://www.spaceweatherlive.com/fr.html
-
--
-
-Name = (EN) Sun and moon rise and set @ sunrise-and-sunset.com
-URL = https://www.sunrise-and-sunset.com/en
-
-Name = (FR) Levers et couchers du soleil et de la lune @ sunrise-and-sunset.com
-URL = https://www.sunrise-and-sunset.com/fr
-
--
-
-Name = (FR) Calendrier lunaire @ calendrier-lunaire.net
-URL = http://www.calendrier-lunaire.net
-
--
-
-Name = (EN) Gregorian calendar with moon phases @ timeanddate.com
-URL = https://www.timeanddate.com/calendar/
-
-Name = (FR) Calendrier grégorien avec phases de la lune @ kalender-365.de
-URL = https://kalender-365.de/calendrier-lunaire.php
-
--
-
-Name = (EN) Hebrew calendar @ en.wikipedia.org
+Name = (EN) en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_calendar
 
-Name = (FR) Calendrier hébraïque @ fr.wikipedia.org
+Name = (FR) fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
 
 -
 
-Name = (EN) Jewish calendar @ hebcal.com
+Name = (EN) hebcal.com
 URL = https://www.hebcal.com
 
-Name = (EN) Jewish calendar @ chabad.org
+Name = (EN) chabad.org
 URL = https://www.chabad.org/calendar/view/month.htm
 
-Name = (EN) Jewish calendar @ aish.com
+Name = (EN) aish.com
 URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 
 -
 
-Name = (FR) Calendrier hébraïque @ calj.net
+Name = (FR) calj.net
 URL = http://www.calj.net
 
-Name = (FR) Calendrier hébraïque @ chabad.org
+Name = (FR) chabad.org
 URL = https://fr.chabad.org/calendar/view/month.htm
 
-Name = (FR) Calendrier hébraïque @ chiourim.com
+Name = (FR) chiourim.com
 URL = http://www.chiourim.com/cal/calendrier_hebraique.php
 
-Name = (FR) Calendrier hébraïque @ loubavitch.fr
+Name = (FR) loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/calendriers/jewish-calendar/calendriermensuel
 
-Name = (FR) Calendrier hébraïque @ loubavitch-boulogne.com
+Name = (FR) loubavitch-boulogne.com
 URL = https://www.loubavitch-boulogne.com/calendar/view/month.htm
 
-Name = (FR) Calendrier hébraïque @ torah-box.com
+Name = (FR) torah-box.com
 URL = https://www.torah-box.com/calendrier
