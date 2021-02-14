@@ -199,6 +199,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
+- Add Parashah Lecture for each shabat.
 - Add lunar months description form with menu in tools.
 - Add print lunar months data.
 - Add dark theme for month view.
@@ -214,6 +215,10 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### 2021.02.14 - Version 6.7
+
+- Add some french jewish calendars web links.
 
 #### 2021.02.07 - Version 6.6
 

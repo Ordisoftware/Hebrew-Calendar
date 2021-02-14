@@ -18,6 +18,17 @@ URL = http://www.webexhibits.org/calendars/
 
 -
 
+Name = (FR/EN) Solar System Scope Application (online and offline)
+URL = https://www.solarsystemscope.com
+
+Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
+URL = https://www.spaceweatherlive.com
+
+Name = (FR) Activité aurorale et solaire en temps réel @ spaceweatherlive.com
+URL = https://www.spaceweatherlive.com/fr.html
+
+-
+
 Name = (EN) Sun and moon rise and set @ sunrise-and-sunset.com
 URL = https://www.sunrise-and-sunset.com/en
 
@@ -61,19 +72,17 @@ URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 Name = (FR) Calendrier hébraïque @ calj.net
 URL = http://www.calj.net
 
+Name = (FR) Calendrier hébraïque @ chabad.org
+URL = https://fr.chabad.org/calendar/view/month.htm
+
 Name = (FR) Calendrier hébraïque @ chiourim.com
 URL = http://www.chiourim.com/cal/calendrier_hebraique.php
 
+Name = (FR) Calendrier hébraïque @ loubavitch.fr
+URL = https://www.loubavitch.fr/pratique/calendriers/jewish-calendar/calendriermensuel
+
+Name = (FR) Calendrier hébraïque @ loubavitch-boulogne.com
+URL = https://www.loubavitch-boulogne.com/calendar/view/month.htm
+
 Name = (FR) Calendrier hébraïque @ torah-box.com
 URL = https://www.torah-box.com/calendrier
-
--
-
-Name = (FR/EN) Solar System Scope Application (online and offline)
-URL = https://www.solarsystemscope.com
-
-Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
-URL = https://www.spaceweatherlive.com
-
-Name = (FR) Activité aurorale et solaire en temps réel @ spaceweatherlive.com
-URL = https://www.spaceweatherlive.com/fr.html
