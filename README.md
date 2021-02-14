@@ -218,7 +218,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### 2021.02.14 - Version 6.7
 
-- Update web links and add some french jewish calendars.
+- Reorganize, improve and update web links, and add more french jewish calendars entries.
 
 #### 2021.02.07 - Version 6.6
 
