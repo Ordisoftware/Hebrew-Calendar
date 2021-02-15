@@ -13,39 +13,39 @@
 Lang/EN = Hebrew calendar
 Lang/FR = Calendrier hébraïque
 
-Name = (EN) en.wikipedia.org
+Name = (EN) Wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_calendar
 
-Name = (FR) fr.wikipedia.org
+Name = (FR) Wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
 
 -
 
-Name = (EN) hebcal.com
+Name = (EN) Hebcal.com
 URL = https://www.hebcal.com
 
-Name = (EN) chabad.org
+Name = (EN) Chabad.org
 URL = https://www.chabad.org/calendar/view/month.htm
 
-Name = (EN) aish.com
+Name = (EN) Aish.com
 URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 
 -
 
-Name = (FR) calj.net
+Name = (FR) Calj.net
 URL = http://www.calj.net
 
-Name = (FR) chabad.org
+Name = (FR) Chabad.org
 URL = https://fr.chabad.org/calendar/view/month.htm
 
-Name = (FR) chiourim.com
+Name = (FR) Chiourim.com
 URL = http://www.chiourim.com/cal/calendrier_hebraique.php
 
-Name = (FR) loubavitch.fr
+Name = (FR) Loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/calendriers/jewish-calendar/calendriermensuel
 
-Name = (FR) loubavitch-boulogne.com
+Name = (FR) Loubavitch-boulogne.com
 URL = https://www.loubavitch-boulogne.com/calendar/view/month.htm
 
-Name = (FR) torah-box.com
+Name = (FR) Lorah-box.com
 URL = https://www.torah-box.com/calendrier
