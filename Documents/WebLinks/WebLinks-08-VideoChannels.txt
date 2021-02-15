@@ -25,6 +25,9 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Emmanuel Bensimon
 URL = https://www.youtube.com/channel/UCFZbll_XlLWy8gqwIrkTZ0g
 
+Name = (FR) Rav Yeshaya Dalsace
+URL = https://www.youtube.com/channel/UC33ZSc-6eR7TlWw66Ll-TJA
+
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
@@ -47,9 +50,6 @@ URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 
 Name = (FR) Sitré Haïm (Rav Yossef Hay)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
-
-Name = (FR) Judaïsme En Mouvement
-URL = https://www.youtube.com/c/Juda%C3%AFsmeEnMouvement
 
 -
 
@@ -75,6 +75,9 @@ URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 
 Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
+
+Name = (FR) Judaïsme En Mouvement
+URL = https://www.youtube.com/c/Juda%C3%AFsmeEnMouvement
 
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
