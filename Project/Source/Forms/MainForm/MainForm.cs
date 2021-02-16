@@ -598,6 +598,19 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionShowParashahNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionShowParashahNotice_Click(object sender, EventArgs e)
+    {
+      ShowNotice(sender,
+                 HebrewTranslations.NoticeParashahTitle,
+                 HebrewTranslations.NoticeParashah,
+                 MessageBoxEx.DefaultMediumWidth);
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionShowKeyboardNotice for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>

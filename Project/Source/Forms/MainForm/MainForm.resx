@@ -226,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=6.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -2003,6 +2003,29 @@
   <data name="ActionShowShabatNotice.Text" xml:space="preserve">
     <value>Shabat notice</value>
   </data>
+  <data name="ActionShowParashahNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAe5JREFUOE+dk+9O2mAUxnsvXsJ2I97APu7DvngNxjn/YeKWbIRNixY0ERxjsoW1
+        hVrQCq0xAxUtIrhkOIWNYcA/w20+e89rdZBpsvAkT9q05/nl9Jy3wtM53RiXNIxNx/965g631VCGZesC
+        3XQrygpEJq1slLC6tY907hMWkzkMiSpmIhbEcBoTswn+LJXbh7FZ4rUkyt4AlLSND6s7CKoZhBNbKJRr
+        qB2fImpsI1M4hGruQU7ZWLIKUFN5nuEAlwN4/EpG/eQcm8UK5hYiULQkLn5eQrF28dwtwisFcHx2yWsH
+        Xsr8SlnBJV0BnkypMFImfPNvkSke4XO1idbFL8TMXTySVoCj+wi9fgddi2OI1ZIo2wGon7ZYB1X4gxHI
+        8QQHaGYefT4d7vU6JPscz6xDjIkKz/wD6Oyg4QBs9AZsPIh+Qf9aAy+sA7huBUze3oGSzsPj9iDg9+Hh
+        8gn6sizYAXCGSIDrDrKsg4OvDTbE35DZdgrlb6jUmgiHQkhqMQxPOYD2LYz7NDblH8iVKtDXi/C/X0P1
+        exNvlrL8PHzMl9E4a/Ha666vzgE7lqR+T5Svh9bZ7sFJssLfDYsxeBdNeIIGz1BWGHUA3Wh0OkZD7P5f
+        oKww6A7r9E0jjDbi/U+zWspQVmDqYb7XnYWeP1SeKuTO1o5cAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionShowParashahNotice.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowParashahNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 22</value>
+  </data>
+  <data name="ActionShowParashahNotice.Text" xml:space="preserve">
+    <value>Parasha notice</value>
+  </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
   </data>
@@ -2190,17 +2213,17 @@
   <data name="ActionOnlineWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
         AElFTkSuQmCC
 </value>
   </data>
@@ -3635,6 +3658,12 @@
   <data name="&gt;&gt;Sep6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionShowParashahNotice.Name" xml:space="preserve">
+    <value>ActionShowParashahNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowParashahNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
   </data>
@@ -3723,19 +3752,19 @@
     <value>DataSet</value>
   </data>
   <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=6.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
     <value>LunisolarDaysTableAdapter</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=6.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
     <value>TableAdapterManager</value>
   </data>
   <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=6.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=6.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
