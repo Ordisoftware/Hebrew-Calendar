@@ -77,7 +77,7 @@ Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 
 Name = (FR) Judaïsme En Mouvement
-URL = https://www.youtube.com/c/Juda%C3%AFsmeEnMouvement
+URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
 
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
