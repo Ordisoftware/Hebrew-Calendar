@@ -83,6 +83,18 @@ URL = https://en.wikipedia.org/wiki/Proto-Germanic_language
 Name = (FR) Proto-germanique @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Proto-germanique
 
+Name = (EN) Old Norse @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Old_Norse
+
+Name = (FR) Vieux norrois @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Vieux_norrois
+
+Name = (EN) Futhark @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Runes
+
+Name = (FR) Futhark @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Rune
+
 -
 
 Name = (EN) Arabic @ en.wikipedia.org
