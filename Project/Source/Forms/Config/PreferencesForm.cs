@@ -124,12 +124,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionHotKeyInfo_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(AppTranslations.HotKeyNotice.GetLang());
+      DisplayManager.ShowInformation(AppTranslations.NoticeHotKey.GetLang());
     }
 
     private void ActionAutoGenerateHelp_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(AppTranslations.AutoGenerateIntervalNotice.GetLang());
+      DisplayManager.ShowInformation(AppTranslations.NoticeAutoGenerateInterval.GetLang());
     }
 
     private void ActionMoonDayTextFormatHelp_Click(object sender, EventArgs e)

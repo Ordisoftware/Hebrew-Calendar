@@ -186,7 +186,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionIntervalInfo_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(AppTranslations.ExportIntervalNotice.GetLang());
+      DisplayManager.ShowInformation(AppTranslations.NoticeExportInterval.GetLang());
     }
 
     private void EditAutoOpenExportedFile_CheckedChanged(object sender, EventArgs e)

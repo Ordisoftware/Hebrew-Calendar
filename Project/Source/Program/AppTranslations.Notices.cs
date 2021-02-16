@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "%DAYNUM% : numéro du jour lunaire"
       };
 
-    static public readonly TranslationsDictionary HotKeyNotice
+    static public readonly TranslationsDictionary NoticeHotKey
       = new TranslationsDictionary()
       {
         [Language.EN] = "The application checks the availability of the combination with the operating system. If so, it is tested in case it is captured by another application, which will trigger its activation and it will be considered invalid.",
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "L'application vérifie la disponibilité de la combinaison auprès du système d'exploitation. Dans l'affirmative, elle est testé au cas où elle serait capturé par une autre application, ce qui déclenchera son activation et elle sera considérée comme invalide."
       };
 
-    static public readonly TranslationsDictionary AutoGenerateIntervalNotice
+    static public readonly TranslationsDictionary NoticeAutoGenerateInterval
       = new TranslationsDictionary()
       {
         [Language.EN] = "A positive value generates the next years." + Globals.NL2 +
@@ -103,14 +103,14 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
 
-    static public readonly TranslationsDictionary DatesDiffNoticeTitle
+    static public readonly TranslationsDictionary NoticeDatesDiffTitle
       = new TranslationsDictionary()
       {
         [Language.EN] = "Dates difference notice",
         [Language.FR] = "Notice de différence de dates"
       };
 
-    static public readonly TranslationsDictionary DatesDiffNotice
+    static public readonly TranslationsDictionary NoticeDatesDiff
       = new TranslationsDictionary()
       {
         [Language.EN] = "The values shown include the current periods." + Globals.NL2 +
@@ -140,7 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
       };
 
-    static public readonly TranslationsDictionary ExportIntervalNotice
+    static public readonly TranslationsDictionary NoticeExportInterval
       = new TranslationsDictionary()
       {
         [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
