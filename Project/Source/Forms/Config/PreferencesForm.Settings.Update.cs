@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -48,6 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CalendarColorFullMoon = EditCalendarColorFullMoon.BackColor;
       Settings.CalendarColorMoon = EditCalendarColorMoon.BackColor;
       Settings.CalendarColorSeason = EditCalendarColorSeason.BackColor;
+      Settings.CalendarColorParashah = EditCalendarColorParashah.BackColor;
       Settings.CalendarColorTorahEvent = EditCalendarColorTorahEvent.BackColor;
       Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
       Settings.CurrentDayBackColor = EditCurrentDayBackColor.BackColor;

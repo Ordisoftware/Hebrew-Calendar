@@ -2213,5 +2213,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["WeatherOnlineUseDay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Indigo")]
+        public global::System.Drawing.Color CalendarColorParashah {
+            get {
+                return ((global::System.Drawing.Color)(this["CalendarColorParashah"]));
+            }
+            set {
+                this["CalendarColorParashah"] = value;
+            }
+        }
     }
 }

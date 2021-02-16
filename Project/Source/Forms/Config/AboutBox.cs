@@ -111,7 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Link clicked event information.</param>
     private void ActionPrivacyNotice_Click(object sender, EventArgs e)
     {
-      DisplayManager.ShowInformation(SysTranslations.PrivacyNoticeNoData.GetLang());
+      DisplayManager.ShowInformation(SysTranslations.NoticePrivacyNoData.GetLang());
     }
 
     private void label15_Click(object sender, EventArgs e)

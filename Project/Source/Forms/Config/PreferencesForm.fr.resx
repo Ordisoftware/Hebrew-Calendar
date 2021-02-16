@@ -1066,4 +1066,7 @@
   <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
+  <data name="LabelColorParashah.Text" xml:space="preserve">
+    <value>Section Parashah</value>
+  </data>
 </root>

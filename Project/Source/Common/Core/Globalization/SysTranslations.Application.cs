@@ -59,7 +59,7 @@ namespace Ordisoftware.Core
         [Language.FR] = "Version {0}"
       };
 
-    static public readonly TranslationsDictionary PrivacyNoticeNoData
+    static public readonly TranslationsDictionary NoticePrivacyNoData
       = new TranslationsDictionary()
       {
         [Language.EN] = "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features." + Globals.NL2 +

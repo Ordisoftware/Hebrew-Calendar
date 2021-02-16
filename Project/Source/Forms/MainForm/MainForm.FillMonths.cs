@@ -145,7 +145,7 @@ namespace Ordisoftware.Hebrew.Calendar
             void add(Color color, string text)
             {
               var item = new CustomEvent();
-              item.Date = SQLiteDate.ToDateTime(row.Date);
+              item.Date = date;
               item.EventFont = new Font("Calibri", Settings.MonthViewFontSize);
               if ( Settings.UseColors )
               {
@@ -196,6 +196,10 @@ namespace Ordisoftware.Hebrew.Calendar
               add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
+            // TODO Parashah
+            if ( Globals.IsDevExecutable )
+            if ( (int)date.DayOfWeek == Settings.ShabatDay )
+              add(Settings.CalendarColorParashah, "Parashah Portion");
           }
           catch ( Exception ex )
           {

@@ -1687,4 +1687,7 @@
   <data name="ActionLocalWeather.Text" xml:space="preserve">
     <value>Météo Windows</value>
   </data>
+  <data name="ActionShowParashahNotice.Text" xml:space="preserve">
+    <value>Notice de la Parashah</value>
+  </data>
 </root>

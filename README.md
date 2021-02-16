@@ -199,8 +199,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Future improvements
 
-- Add Parashah Lecture for each shabat.
-- Add lunar months description form with menu in tools.
 - Add print lunar months data.
 - Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -215,6 +213,16 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Replace simple internal trace/logging by SeriLog.
 
 ## Changelog
+
+#### In progress - Version 7.0
+
+- Add lunar months description form with menu in tools.
+- Add Shabat Parashah Lecture database field.
+- Add Weekly Torah Portion notice.
+
+#### 2021.02.17 - Version 6.8
+
+- Fix the last day of Pesa'h and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
 
 #### 2021.02.14 - Version 6.7
 

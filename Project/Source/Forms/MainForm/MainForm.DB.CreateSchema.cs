@@ -54,8 +54,12 @@ namespace Ordisoftware.Hebrew.Calendar
                                           MoonPhase INTEGER,
                                           SeasonChange INTEGER,
                                           TorahEvents INTEGER,
+                                          Parasha TEXT,
                                           PRIMARY KEY('Date')
                                         )");
+        // TODO Parashah
+        //if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", "", false) )
+          //DbUpgradedForParashahSupport = true;
       });
     }
 
