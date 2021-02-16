@@ -23,10 +23,10 @@ URL = https://fr.wikipedia.org/wiki/Tanakh
 
 -
 
-Name = (EN) Parasha @ en.wikipedia.org
+Name = (EN) Parashah @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
 
-Name = (FR) Parasha @ fr.wikipedia.org
+Name = (FR) Parashah @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
 -
 
