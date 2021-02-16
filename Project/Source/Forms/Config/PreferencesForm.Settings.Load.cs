@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -48,6 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCalendarColorFullMoon.BackColor = Settings.CalendarColorFullMoon; });
       SystemManager.TryCatch(() => { EditCalendarColorMoon.BackColor = Settings.CalendarColorMoon; });
       SystemManager.TryCatch(() => { EditCalendarColorSeason.BackColor = Settings.CalendarColorSeason; });
+      SystemManager.TryCatch(() => { EditCalendarColorParashah.BackColor = Settings.CalendarColorParashah; });
       SystemManager.TryCatch(() => { EditCalendarColorTorahEvent.BackColor = Settings.CalendarColorTorahEvent; });
       SystemManager.TryCatch(() => { EditCheckUpdateAtStartup.Checked = Settings.CheckUpdateAtStartup; });
       SystemManager.TryCatch(() => { EditCurrentDayBackColor.BackColor = Settings.CurrentDayBackColor; });

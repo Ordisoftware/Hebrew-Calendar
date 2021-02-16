@@ -492,74 +492,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MustRefreshMonthView = true;
     }
 
-    private void PanelEventColorTorah_MouseClick(object sender, MouseEventArgs e)
+    private void EditCalendarColor_Click(object sender, EventArgs e)
     {
-      DoChangePanelColorMonthView(EditEventColorTorah);
-    }
-
-    private void PanelEventColorSeason_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditEventColorSeason);
-    }
-
-    private void PanelEventColorShabat_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditEventColorShabat);
-    }
-
-    private void PanelEventColorNewMonth_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditEventColorMonth);
-    }
-
-    private void PanelEventColorNext_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditEventColorNext);
-    }
-
-    private void PanelCurrentDayColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCurrentDayForeColor);
-    }
-
-    private void PanelCurrentDayBackColor_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCurrentDayBackColor);
-    }
-
-    private void PanelTorahEventColor_Click(object sender, EventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorTorahEvent);
-    }
-
-    private void PanelSeasonEventColor_Click(object sender, EventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorSeason);
-    }
-
-    private void PanelMoonEventColor_Click(object sender, EventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorMoon);
-    }
-
-    private void PanelFullMoonColor_Click(object sender, EventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorFullMoon);
-    }
-
-    private void EditCalendarColorEmpty_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorEmpty);
-    }
-
-    private void EditCalendarColorDefaultText_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorDefaultText);
-    }
-
-    private void EditCalendarColorNoDay_MouseClick(object sender, MouseEventArgs e)
-    {
-      DoChangePanelColorMonthView(EditCalendarColorNoDay);
+      DoChangePanelColorMonthView((Panel)sender);
     }
 
     private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

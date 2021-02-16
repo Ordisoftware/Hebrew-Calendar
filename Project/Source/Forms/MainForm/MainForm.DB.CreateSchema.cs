@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                           Parasha TEXT,
                                           PRIMARY KEY('Date')
                                         )");
-        //TODO 
+        // TODO Parashah
         //if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", "", false) )
           //DbUpgradedForParashahSupport = true;
       });

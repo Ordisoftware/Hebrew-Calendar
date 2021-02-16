@@ -556,5 +556,8 @@
     <Setting Name="WeatherOnlineUseDay" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CalendarColorParashah" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Indigo</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
