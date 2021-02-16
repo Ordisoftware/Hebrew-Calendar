@@ -74,6 +74,8 @@ namespace Ordisoftware.Hebrew.Calendar
         LastCelebrationReminded.Add(value, null);
       if ( !Globals.IsDevExecutable )// TODO remove when ready
       {
+        ActionShowParashahNotice.Visible = false;
+        ActionShowParashahNotice.Tag = int.MinValue;
         ActionViewMoonMonths.Visible = false;
         SeparatorToolsMenuTop.Visible = false;
         ActionViewMoonMonths.Tag = int.MinValue;

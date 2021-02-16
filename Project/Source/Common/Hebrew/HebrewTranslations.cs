@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew
         [Language.EN] = "The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in the desert, that is on the last day of Sukot, or the next day." + Globals.NL2 +
                         "It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat." + Globals.NL2 +
                         "And so on from week to week to go through the Torah in a year in order to build a better future world for oneself, for one's family, for one's community, for one's country and for the species, thanks to Pesa'h, Shavuot, Teru'ah, Kipurim, and Sukot.",
-        [Language.FR] = "L'étude de la Parasha de la semaine débute à Sim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Israël, ou le 23 dans le désert, soit le dernier jour de Soukot, ou le lendemain." + Globals.NL2 +
+        [Language.FR] = "L'étude de la Parashah de la semaine débute à Sim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Israël, ou le 23 dans le désert, soit le dernier jour de Soukot, ou le lendemain." + Globals.NL2 +
                         "Elle se termine par la lecture complète lors du Shabat, ou le Shabat suivant si Sim'hat Torah a lieu un Shabat." + Globals.NL2 +
                         "Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an afin de construire un monde futur meilleur pour soi, pour sa famille, pour sa communauté, pour son pays et pour l'espèce, grâce à Pessa'h, Shavouot, Terou'ah, Kipourim, et Soukot."
       };
