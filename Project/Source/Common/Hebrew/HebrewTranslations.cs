@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -74,6 +74,13 @@ namespace Ordisoftware.Hebrew
       {
         [Language.EN] = "Configure providers",
         [Language.FR] = "Configurer les fournisseurs"
+      };
+
+    static public readonly TranslationsDictionary ParashahNotice
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in the desert, that is on the last day of sukot, or the next day, and ends with full reading on Shabat, and so on from week to week.",
+        [Language.FR] = "L'étude de la Parasha de la semaine débute à Sim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Israël, ou le 23 dans le désert, soit le dernier jour de soukot, ou le lendemain, et se termine par la lecture complète lors du shabat, et ainsi de suite de semaines en semaines."
       };
 
   }
