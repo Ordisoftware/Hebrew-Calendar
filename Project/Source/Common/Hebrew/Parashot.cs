@@ -26,72 +26,72 @@ namespace Ordisoftware.Hebrew
       {
         [TorahBooks.Bereshit] = new NullSafeList<Parashah>
         {
-          new Parashah(TorahBooks.Bereshit, "Bereshit", "בראשית", "1.1", "6.8"),
-          new Parashah(TorahBooks.Bereshit, "Noa'h", "נח", "6.9", "11.32"),
-          new Parashah(TorahBooks.Bereshit, "Lekh Lekha", "לך לך", "12.1", "17.27"),
-          new Parashah(TorahBooks.Bereshit, "Vayera", "וירא", "18.1", "22.24"),
-          new Parashah(TorahBooks.Bereshit, "Haye Sarah", "חיי שרה", "23.1", "25.18"),
-          new Parashah(TorahBooks.Bereshit, "Toledot", "תולדות", "25.19", "28.9"),
-          new Parashah(TorahBooks.Bereshit, "Vayetse", "ויצא", "28.10", "32.3"),
-          new Parashah(TorahBooks.Bereshit, "Vayishla'h", "וישלח", "32.4", "36.43"),
-          new Parashah(TorahBooks.Bereshit, "Vayeshev", "וישב", "37.1", "40.23"),
-          new Parashah(TorahBooks.Bereshit, "Mikets", "מקץ", "41.1", "44.17"),
-          new Parashah(TorahBooks.Bereshit, "Vayigash", "ויגש", "44.18", "47.27"),
-          new Parashah(TorahBooks.Bereshit, "Vaye'hi", "ויחי", "47.28", "50.26")
+          new Parashah(TorahBooks.Bereshit, 01, "Bereshit", "בראשית", "1.1", "6.8"),
+          new Parashah(TorahBooks.Bereshit, 02, "Noa'h", "נח", "6.9", "11.32"),
+          new Parashah(TorahBooks.Bereshit, 03, "Lekh Lekha", "לך לך", "12.1", "17.27"),
+          new Parashah(TorahBooks.Bereshit, 04, "Vayera", "וירא", "18.1", "22.24"),
+          new Parashah(TorahBooks.Bereshit, 05, "Haye Sarah", "חיי שרה", "23.1", "25.18"),
+          new Parashah(TorahBooks.Bereshit, 06, "Toledot", "תולדות", "25.19", "28.9"),
+          new Parashah(TorahBooks.Bereshit, 07, "Vayetse", "ויצא", "28.10", "32.3"),
+          new Parashah(TorahBooks.Bereshit, 08, "Vayishla'h", "וישלח", "32.4", "36.43"),
+          new Parashah(TorahBooks.Bereshit, 09, "Vayeshev", "וישב", "37.1", "40.23"),
+          new Parashah(TorahBooks.Bereshit, 10, "Mikets", "מקץ", "41.1", "44.17"),
+          new Parashah(TorahBooks.Bereshit, 11, "Vayigash", "ויגש", "44.18", "47.27"),
+          new Parashah(TorahBooks.Bereshit, 12, "Vaye'hi", "ויחי", "47.28", "50.26")
         },
         [TorahBooks.Shemot] = new NullSafeList<Parashah>
         {
-          new Parashah(TorahBooks.Shemot, "Shemot", "שמות", "1.1", "6.1"),
-          new Parashah(TorahBooks.Shemot, "Vaera", "וארא", "6.2", "9.35"),
-          new Parashah(TorahBooks.Shemot, "Bo", "בא", "10.1", "13.16"),
-          new Parashah(TorahBooks.Shemot, "Beshala'h", "בשלח", "13.17", "17.16"),
-          new Parashah(TorahBooks.Shemot, "Yitro", "יתרו", "18.1", "20.23"),
-          new Parashah(TorahBooks.Shemot, "Mishpatim", "משפטים", "21.1", "24.18"),
-          new Parashah(TorahBooks.Shemot, "Teroumah", "תרומה", "25.1", "27.19"),
-          new Parashah(TorahBooks.Shemot, "Tetsave", "תצווה", "27.20", "30.10"),
-          new Parashah(TorahBooks.Shemot, "Ki Tissa", "כי תשא", "30.11", "34.35", true),
-          new Parashah(TorahBooks.Shemot, "Vayaqhel", "ויקהל", "35.1", "38.20"),
-          new Parashah(TorahBooks.Shemot, "Peqoudei", "פקודי", "38.21", "40.38")
+          new Parashah(TorahBooks.Shemot, 01, "Shemot", "שמות", "1.1", "6.1"),
+          new Parashah(TorahBooks.Shemot, 02, "Vaera", "וארא", "6.2", "9.35"),
+          new Parashah(TorahBooks.Shemot, 03, "Bo", "בא", "10.1", "13.16"),
+          new Parashah(TorahBooks.Shemot, 04, "Beshala'h", "בשלח", "13.17", "17.16"),
+          new Parashah(TorahBooks.Shemot, 05, "Yitro", "יתרו", "18.1", "20.23"),
+          new Parashah(TorahBooks.Shemot, 06, "Mishpatim", "משפטים", "21.1", "24.18"),
+          new Parashah(TorahBooks.Shemot, 07, "Teroumah", "תרומה", "25.1", "27.19"),
+          new Parashah(TorahBooks.Shemot, 08, "Tetsave", "תצווה", "27.20", "30.10"),
+          new Parashah(TorahBooks.Shemot, 09, "Ki Tissa", "כי תשא", "30.11", "34.35", true),
+          new Parashah(TorahBooks.Shemot, 10, "Vayaqhel", "ויקהל", "35.1", "38.20"),
+          new Parashah(TorahBooks.Shemot, 11, "Peqoudei", "פקודי", "38.21", "40.38")
         },
         [TorahBooks.Vayiqra] = new NullSafeList<Parashah>
         {
-          new Parashah(TorahBooks.Vayiqra, "Vayikra", "ויקרא", "1.1", "5.26"),
-          new Parashah(TorahBooks.Vayiqra, "Tsav", "צו", "6.1", "8.36"),
-          new Parashah(TorahBooks.Vayiqra, "Shemini", "שמיני", "9.1", "11.47", true),
-          new Parashah(TorahBooks.Vayiqra, "Tazria", "תזריע", "12.1", "13.59"),
-          new Parashah(TorahBooks.Vayiqra, "Metsora", "מצורע", "14.1", "15.33", true),
-          new Parashah(TorahBooks.Vayiqra, "A'harei Mot", "אחרי מות", "16.1", "18.30"),
-          new Parashah(TorahBooks.Vayiqra, "Kedoshim", "קדושים", "19.1", "20.27"),
-          new Parashah(TorahBooks.Vayiqra, "Emor", "אמור", "21.1", "24.23", true),
-          new Parashah(TorahBooks.Vayiqra, "Behar", "בהר", "25.1", "26.2"),
-          new Parashah(TorahBooks.Vayiqra, "Be'houqotaï", "בחוקותי", "26.3", "27.34")
-        },
+          new Parashah(TorahBooks.Vayiqra, 01, "Vayikra", "ויקרא", "1.1", "5.26"),
+          new Parashah(TorahBooks.Vayiqra, 02, "Tsav", "צו", "6.1", "8.36"),
+          new Parashah(TorahBooks.Vayiqra, 03, "Shemini", "שמיני", "9.1", "11.47", true),
+          new Parashah(TorahBooks.Vayiqra, 04, "Tazria", "תזריע", "12.1", "13.59"),
+          new Parashah(TorahBooks.Vayiqra, 05, "Metsora", "מצורע", "14.1", "15.33", true),
+          new Parashah(TorahBooks.Vayiqra, 06, "A'harei Mot", "אחרי מות", "16.1", "18.30"),
+          new Parashah(TorahBooks.Vayiqra, 07, "Kedoshim", "קדושים", "19.1", "20.27"),
+          new Parashah(TorahBooks.Vayiqra, 08, "Emor", "אמור", "21.1", "24.23", true),
+          new Parashah(TorahBooks.Vayiqra, 09, "Behar", "בהר", "25.1", "26.2"),
+          new Parashah(TorahBooks.Vayiqra, 10, "Be'houqotaï", "בחוקותי", "26.3", "27.34")
+        },                                  
         [TorahBooks.Bamidbar] = new NullSafeList<Parashah>
         {
-          new Parashah(TorahBooks.Bamidbar, "Bamidbar", "במדבר", "1.1", "4.20"),
-          new Parashah(TorahBooks.Bamidbar, "Nasso", "נשא", "4.21", "7.89"),
-          new Parashah(TorahBooks.Bamidbar, "Beha'alot'kha", "בהעלותך", "8.1", "12.16"),
-          new Parashah(TorahBooks.Bamidbar, "Shela'h lekha", "שלח לך", "13.1", "15.41"),
-          new Parashah(TorahBooks.Bamidbar, "Kora'h", "קרח", "16.1", "18.32", true),
-          new Parashah(TorahBooks.Bamidbar, "'Houkat", "חקת", "19.1", "22.1"),
-          new Parashah(TorahBooks.Bamidbar, "Balaq", "בלק", "22.2", "25.9"),
-          new Parashah(TorahBooks.Bamidbar, "Pin'has", "פנחס", "25.10", "30.1", true),
-          new Parashah(TorahBooks.Bamidbar, "Matot", "מטות", "30.2", "32.42"),
-          new Parashah(TorahBooks.Bamidbar, "Massei", "מסעי", "33.1", "36.13")
-        },
+          new Parashah(TorahBooks.Bamidbar, 01, "Bamidbar", "במדבר", "1.1", "4.20"),
+          new Parashah(TorahBooks.Bamidbar, 02, "Nasso", "נשא", "4.21", "7.89"),
+          new Parashah(TorahBooks.Bamidbar, 03, "Beha'alot'kha", "בהעלותך", "8.1", "12.16"),
+          new Parashah(TorahBooks.Bamidbar, 04, "Shela'h lekha", "שלח לך", "13.1", "15.41"),
+          new Parashah(TorahBooks.Bamidbar, 05, "Kora'h", "קרח", "16.1", "18.32", true),
+          new Parashah(TorahBooks.Bamidbar, 06, "'Houkat", "חקת", "19.1", "22.1"),
+          new Parashah(TorahBooks.Bamidbar, 07, "Balaq", "בלק", "22.2", "25.9"),
+          new Parashah(TorahBooks.Bamidbar, 08, "Pin'has", "פנחס", "25.10", "30.1", true),
+          new Parashah(TorahBooks.Bamidbar, 09, "Matot", "מטות", "30.2", "32.42"),
+          new Parashah(TorahBooks.Bamidbar, 10, "Massei", "מסעי", "33.1", "36.13")
+        },                                   
         [TorahBooks.Devarim] = new NullSafeList<Parashah>
         {
-          new Parashah(TorahBooks.Devarim, "Devarim", "דברים", "1.1", "3.22"),
-          new Parashah(TorahBooks.Devarim, "Vaet'hanan", "ואתחנן", "3.23", "7.11"),
-          new Parashah(TorahBooks.Devarim, "Eikev", "עקב", "7.12", "11.25"),
-          new Parashah(TorahBooks.Devarim, "Reeh", "ראה", "11.26", "16.17"),
-          new Parashah(TorahBooks.Devarim, "Shoftim", "שופטים", "16.18", "21.9"),
-          new Parashah(TorahBooks.Devarim, "Ki Tetse", "כי תצא", "21.10", "25.19"),
-          new Parashah(TorahBooks.Devarim, "Ki Tavo", "כי תבוא", "26.1", "29.8", true),
-          new Parashah(TorahBooks.Devarim, "Nitsavim", "ניצבים", "29.9", "30.20"),
-          new Parashah(TorahBooks.Devarim, "Vayelekh", "וילך", "31.1", "31.30"),
-          new Parashah(TorahBooks.Devarim, "Haazinou", "האזינו", "32.1", "32.52"),
-          new Parashah(TorahBooks.Devarim, "Vezot HaBerakha", "וזאת הברכה", "33.1", "34.12")
+          new Parashah(TorahBooks.Devarim, 01, "Devarim", "דברים", "1.1", "3.22"),
+          new Parashah(TorahBooks.Devarim, 02, "Vaet'hanan", "ואתחנן", "3.23", "7.11"),
+          new Parashah(TorahBooks.Devarim, 03, "Eikev", "עקב", "7.12", "11.25"),
+          new Parashah(TorahBooks.Devarim, 04, "Reeh", "ראה", "11.26", "16.17"),
+          new Parashah(TorahBooks.Devarim, 05, "Shoftim", "שופטים", "16.18", "21.9"),
+          new Parashah(TorahBooks.Devarim, 06, "Ki Tetse", "כי תצא", "21.10", "25.19"),
+          new Parashah(TorahBooks.Devarim, 07, "Ki Tavo", "כי תבוא", "26.1", "29.8", true),
+          new Parashah(TorahBooks.Devarim, 08, "Nitsavim", "ניצבים", "29.9", "30.20"),
+          new Parashah(TorahBooks.Devarim, 09, "Vayelekh", "וילך", "31.1", "31.30"),
+          new Parashah(TorahBooks.Devarim, 10, "Haazinou", "האזינו", "32.1", "32.52"),
+          new Parashah(TorahBooks.Devarim, 11, "Vezot HaBerakha", "וזאת הברכה", "33.1", "34.12")
         }
       };
 

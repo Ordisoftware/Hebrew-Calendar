@@ -83,6 +83,8 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Notice de la Parashah"
       };
 
+    // TODO Add liste parashot
+
     static public readonly TranslationsDictionary NoticeParashah
       = new TranslationsDictionary()
       {

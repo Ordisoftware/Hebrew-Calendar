@@ -21,14 +21,16 @@ namespace Ordisoftware.Hebrew
   public class Parashah
   {
     public TorahBooks Book { get; }
+    public int Number { get; }
     public string Name { get; }
     public string Unicode { get; }
     public string Begin { get; }
     public string End { get; }
     public bool IsLinkedToNext { get; }
-    public Parashah(TorahBooks book, string name, string unicode, string begin, string end, bool isLinkedToNext = false)
+    public Parashah(TorahBooks book, int number, string name, string unicode, string begin, string end, bool isLinkedToNext = false)
     {
       Book = book;
+      Number = number;
       Name = name;
       Unicode = unicode;
       Begin = begin;
