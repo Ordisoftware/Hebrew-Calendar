@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -287,6 +287,10 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( DataSet.LunisolarDays[index + i].MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
+          var row = DataSet.LunisolarDays.FirstOrDefault(d => d.Date == SQLiteDate.ToString(thedate));
+          if ( row != null )
+            if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
+              thedate = thedate.AddDays(1);
         }
         else
           thedate = thedate.AddDays(toadd);
