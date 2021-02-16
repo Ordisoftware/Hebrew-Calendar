@@ -161,7 +161,7 @@
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
     <Compile Include="Source\Common\Hebrew\Books.cs" />
     <Compile Include="Source\Common\Hebrew\BooksBounds.cs" />
-    <Compile Include="Source\Common\Hebrew\Parasha.cs" />
+    <Compile Include="Source\Common\Hebrew\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Parashot.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
