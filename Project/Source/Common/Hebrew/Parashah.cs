@@ -18,7 +18,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  public class Parasha
+  public class Parashah
   {
     public TorahBooks Book { get; }
     public string Name { get; }
@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew
     public string Begin { get; }
     public string End { get; }
     public bool IsLinkedToNext { get; }
-    public Parasha(TorahBooks book, string name, string unicode, string begin, string end, bool isLinkedToNext = false)
+    public Parashah(TorahBooks book, string name, string unicode, string begin, string end, bool isLinkedToNext = false)
     {
       Book = book;
       Name = name;
