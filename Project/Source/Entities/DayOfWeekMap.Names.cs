@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Provide mapping table for Calendar.NET names.
     /// </summary>
-    static public Dictionary<DayOfWeek, DayOfWeek[]> Names
+    static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Names
       = new Dictionary<DayOfWeek, DayOfWeek[]>()
       {
         { DayOfWeek.Monday,
