@@ -297,11 +297,11 @@ namespace Ordisoftware.Hebrew.Calendar
                                    CodeProjectCalendar.NET.Calendar.PenText.Color.R < 125 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 2 / 3));
         CodeProjectCalendar.NET.Calendar.BrushText = new SolidBrush(Settings.MonthViewTextColor);
         CodeProjectCalendar.NET.Calendar.BrushBlack = new SolidBrush(Settings.MonthViewTextColor);
-        CodeProjectCalendar.NET.Calendar.BrushGrayMedium //= new SolidBrush(Color.FromArgb(170, 170, 170));
+        CodeProjectCalendar.NET.Calendar.BrushGrayMedium
           = new SolidBrush(Color.FromArgb(CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.R * 2 / 3,
                                           CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.G * 2 / 3,
                                           CodeProjectCalendar.NET.Calendar.PenText.Color.R < 85 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 2 / 3 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 2 / 3));
-        CodeProjectCalendar.NET.Calendar.BrushGrayLight //= new SolidBrush(Color.FromArgb(234, 234, 234));
+        CodeProjectCalendar.NET.Calendar.BrushGrayLight
           = new SolidBrush(Color.FromArgb((int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.R * 0.92 ),
                                           (int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.G * 0.92 ),
                                           (int)( CodeProjectCalendar.NET.Calendar.PenText.Color.R < 20 ? CodeProjectCalendar.NET.Calendar.PenText.Color.R + 255 * 0.92 : CodeProjectCalendar.NET.Calendar.PenText.Color.B * 0.92 )));
