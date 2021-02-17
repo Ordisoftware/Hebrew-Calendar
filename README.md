@@ -220,11 +220,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add List of Parashot window with verses references.
 - Add Weekly Torah Portion notice.
 - Add option to add Parashah for Shabat days in visual month.
+- Add check update from about box.
 - Add show usage statistics from about box.
 
 #### 2021.02.17 - Version 6.8
 
 - Fix the last day of Pesa'h and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
+- Update web links.
 
 #### 2021.02.14 - Version 6.7
 

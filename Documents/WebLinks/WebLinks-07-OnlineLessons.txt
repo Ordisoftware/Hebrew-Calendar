@@ -50,6 +50,9 @@ URL = https://www.dvartorah.org
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
 
+Name = (FR) Hidabroot
+URL = https://www.hidabroot.fr
+
 Name = (FR) Israël Torah
 URL = https://www.israeltorah.com
 
