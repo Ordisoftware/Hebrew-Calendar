@@ -51,10 +51,10 @@ namespace Ordisoftware.Hebrew.Calendar
       CreateControls();
       ActiveControl = ActionClose;
       ActionEditFiles.Visible = Program.MoonMonthsMeanings[Languages.Current].Configurable;
-      ActionSearchOnline.InitializeFromProviders(ProvidersCollection.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        string str = HebrewAlphabet.MoonMonthsNamesUnicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
+        string str = HebrewMonths.Unicode[(int)LastControl.Tag].Replace(" א", "").Replace(" ב", "");
         SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", str));
       });
     }
@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      HebrewTools.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(HebrewAlphabet.MoonMonthsNamesUnicode[index]),
+      HebrewTools.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]),
                                     Program.Settings.HebrewLettersExe);
     }
 
@@ -132,12 +132,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewAlphabet.MoonMonthsNamesUnicode[index]));
+      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewAlphabet.MoonMonthsNamesUnicode[index]);
+      ActionCopyMonthName(sender, e, index => HebrewMonths.Unicode[index]);
     }
 
     private void ActionCopyLine(object sender, EventArgs e, Func<int, string> process)
@@ -145,7 +145,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      string name = HebrewAlphabet.MoonMonthsTransliterations[index];
+      string name = HebrewMonths.Transliterations[index];
       string meaning = Program.MoonMonthsMeanings[Languages.Current][index];
       string lettriq = Program.MoonMonthsLettriqs[Languages.Current][index];
       Clipboard.SetText(process(index) + " (" + name + ") : " +  meaning + " (" + lettriq + ")");
@@ -153,12 +153,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewAlphabet.MoonMonthsNamesUnicode[index]));
+      ActionCopyLine(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, index => HebrewAlphabet.MoonMonthsNamesUnicode[index]);
+      ActionCopyLine(sender, e, index => HebrewMonths.Unicode[index]);
     }
 
   }

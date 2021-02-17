@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          if ( index >= HebrewAlphabet.MoonMonthsTransliterations.Length )
+          if ( index >= HebrewMonths.Transliterations.Length )
             break;
           string line = lines[index];
           if ( line.Trim() == "" )

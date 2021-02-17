@@ -18,7 +18,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static public class Parashot
+  public partial class Parashah
   {
 
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Items

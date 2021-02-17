@@ -178,6 +178,7 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -908,6 +909,7 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewMoonMonths,
+            this.ActionViewParashot,
             this.SeparatorToolsMenuTop,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
@@ -1329,6 +1331,12 @@
       this.TableAdapterManager.LunisolarDaysTableAdapter = this.LunisolarDaysTableAdapter;
       this.TableAdapterManager.UpdateOrder = Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
       // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1518,6 +1526,7 @@
     private System.Windows.Forms.Label LabelSubTitleOmer;
     private System.Windows.Forms.Label LabelSubTitleGPS;
     private System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
   }
 }
 

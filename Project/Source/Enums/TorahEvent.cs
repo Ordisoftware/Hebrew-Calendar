@@ -118,6 +118,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     AnniversaryMoon*/
 
+    // Hanouka = 25 Kislev(9) 8j
+    // Pourim = 14 Adar(12)
+
   }
 
 }

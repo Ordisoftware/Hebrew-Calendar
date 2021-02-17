@@ -216,9 +216,11 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 #### In progress - Version 7.0
 
-- Add lunar months description form with menu in tools.
-- Add Shabat Parashah Lecture database field.
+- Add Lunar Months description window and menu entry in Tools.
+- Add List of Parashot window with verses references.
 - Add Weekly Torah Portion notice.
+- Add option to add Parashah for Shabat days in visual month.
+- Add show usage statistics from about box.
 
 #### 2021.02.17 - Version 6.8
 

@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew
 {
 
-  public class Parashah
+  public partial class Parashah
   {
     public TorahBooks Book { get; }
     public int Number { get; }

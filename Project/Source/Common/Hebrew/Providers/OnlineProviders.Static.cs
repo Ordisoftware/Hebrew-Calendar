@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -10,8 +10,8 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <created> 2020-03 </created>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -21,9 +21,9 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide onlince providers collection.
+  /// Provide online providers list.
   /// </summary>
-  static public partial class ProvidersCollection
+  public partial class OnlineProviders
   {
 
     /// <summary>
@@ -102,7 +102,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Static constructor.
     /// </summary>
-    static ProvidersCollection()
+    static OnlineProviders()
     {
       if ( Globals.IsVisualStudioDesigner ) return;
       var folder = DataFileFolder.ApplicationDocuments;

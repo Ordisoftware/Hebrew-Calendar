@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
 {
@@ -28,27 +29,19 @@ namespace Ordisoftware.Hebrew
   {
     static public readonly BookBound Torah = new BookBound
     {
-      Min = typeof(TorahBooks).Min() + 1,
-      Max = typeof(TorahBooks).Max() + 1
+      Min = EnumHelper.Min<TorahBooks>() + 1,
+      Max = EnumHelper.Min<TorahBooks>() + 1
     };
     static public readonly BookBound Neviim = new BookBound
     {
-      Min = typeof(NeviimBooks).Min() + 1,
-      Max = typeof(NeviimBooks).Max() + 1
+      Min = EnumHelper.Min<NeviimBooks>() + 1,
+      Max = EnumHelper.Min<NeviimBooks>() + 1
     };
     static public readonly BookBound Ketouvim = new BookBound
     {
-      Min = typeof(KetouvimBooks).Min() + 1,
-      Max = typeof(KetouvimBooks).Max() + 1
+      Min = EnumHelper.Min<KetouvimBooks>() + 1,
+      Max = EnumHelper.Min<KetouvimBooks>() + 1
     };
-    static private int Min(this Type type)
-    {
-      return Enum.GetValues(type).Cast<int>().Min();
-    }
-    static private int Max(this Type type)
-    {
-      return Enum.GetValues(type).Cast<int>().Max();
-    }
   }
 
 }
