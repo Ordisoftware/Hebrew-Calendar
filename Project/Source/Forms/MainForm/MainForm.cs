@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -72,10 +72,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable )// TODO remove when ready
+      if ( !Globals.IsDevExecutable ) // TODO remove when ready
       {
         ActionShowParashahNotice.Visible = false;
         ActionShowParashahNotice.Tag = int.MinValue;
+        ActionViewParashot.Visible = false;
+        ActionViewParashot.Tag = int.MinValue;
         ActionViewMoonMonths.Visible = false;
         SeparatorToolsMenuTop.Visible = false;
         ActionViewMoonMonths.Tag = int.MinValue;
@@ -650,6 +652,16 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionViewMoonMonths_Click(object sender, EventArgs e)
     {
       LunarMonthsForm.Run();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewParashot for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      //ParashotForm.Run();
     }
 
     /// <summary>

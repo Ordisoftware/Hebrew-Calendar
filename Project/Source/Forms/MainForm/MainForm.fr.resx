@@ -1690,4 +1690,7 @@
   <data name="ActionShowParashahNotice.Text" xml:space="preserve">
     <value>Notice de la Parashah</value>
   </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Liste des Parashot</value>
+  </data>
 </root>
