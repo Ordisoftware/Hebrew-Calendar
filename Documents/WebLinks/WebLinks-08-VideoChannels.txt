@@ -25,11 +25,11 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Emmanuel Bensimon
 URL = https://www.youtube.com/channel/UCFZbll_XlLWy8gqwIrkTZ0g
 
-Name = (FR) Rav Yeshaya Dalsace
-URL = https://www.youtube.com/channel/UC33ZSc-6eR7TlWw66Ll-TJA
-
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
+
+Name = (FR) Rav Yeshaya Dalsace
+URL = https://www.youtube.com/channel/UC33ZSc-6eR7TlWw66Ll-TJA
 
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
