@@ -224,7 +224,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       int index = 1;
-      foreach ( var month in HebrewAlphabet.MoonMonthsTransliterations.Skip(1) )
+      foreach ( var month in HebrewMonths.Transliterations.Skip(1) )
       {
         name = month;
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();

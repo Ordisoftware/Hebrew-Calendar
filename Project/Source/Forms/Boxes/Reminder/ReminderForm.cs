@@ -159,7 +159,6 @@ namespace Ordisoftware.Hebrew.Calendar
       var location = Program.Settings.ReminderBoxDesktopLocation;
       int posY = 0;
       int posX = 0;
-      int posDY = 0;
       bool first = true;
       foreach ( var form in list.OrderBy(f => f.Tag) )
       {

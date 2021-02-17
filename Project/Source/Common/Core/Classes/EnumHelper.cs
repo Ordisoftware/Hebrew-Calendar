@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -27,8 +27,18 @@ namespace Ordisoftware.Core
       return value.GetType().Name + "." + value.ToString();
     }
 
+    static public int Min<T>() where T : Enum
+    {
+      return Enum.GetValues(typeof(T)).Cast<int>().Min();
+    }
+
+    static public int Max<T>() where T : Enum
+    {
+      return Enum.GetValues(typeof(T)).Cast<int>().Max();
+    }
+
     static public T SetFlag<T>(this T flags, T flag, bool value) 
-      where T : struct, IComparable, IFormattable, IConvertible
+      where T : Enum, IComparable, IFormattable, IConvertible
     {
       int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
       int flagInt = flag.ToInt32(NumberFormatInfo.CurrentInfo);
@@ -53,6 +63,7 @@ namespace Ordisoftware.Core
       return result;
     }
 
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
     static public T Previous<T>(this T value, T[] skip = null) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })

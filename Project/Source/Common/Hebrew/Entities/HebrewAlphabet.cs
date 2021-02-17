@@ -82,28 +82,6 @@ namespace Ordisoftware.Hebrew
       };
 
     /// <summary>
-    /// Indicate unicode moon months names.
-    /// </summary>
-    static public readonly string[] MoonMonthsNamesUnicode =
-    {
-      "",
-      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
-      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
-      "אדר ב"
-    };
-
-    /// <summary>
-    /// Indicate phonetic moon months names.
-    /// </summary>
-    static public readonly string[] MoonMonthsTransliterations =
-    {
-      "",
-      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-      "Adar II"
-    };
-
-    /// <summary>
     /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =
