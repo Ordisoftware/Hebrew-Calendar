@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -43,6 +43,22 @@ namespace Ordisoftware.Hebrew
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )
         SystemManager.RunShell(path, item);
+    }
+
+    /// <summary>
+    /// Start Hebrew Words process.
+    /// </summary>
+    /// <param name="hebrew">The hebrew font chars of the word.</param>
+    /// <param name="path">Path of the application.</param>
+    static public void OpenHebrewWords(string reference, string path)
+    {
+      if ( !File.Exists(path) )
+      {
+        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
+        return;
+      }
+      SystemManager.RunShell(path, reference);
     }
 
   }
