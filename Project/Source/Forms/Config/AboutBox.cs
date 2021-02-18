@@ -125,6 +125,16 @@ namespace Ordisoftware.Hebrew.Calendar
       StatisticsForm.Run();
     }
 
+    /// <summary>
+    /// Event handler. Called by ActionCheckUpdate for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Link clicked event information.</param>
+    private void ActionCheckUpdate_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionWebCheckUpdate_Click(sender, EventArgs.Empty);
+    }
+
   }
 
 }
