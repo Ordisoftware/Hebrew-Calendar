@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 660, false, false);
+                                                       true, false, 400, 670, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         //

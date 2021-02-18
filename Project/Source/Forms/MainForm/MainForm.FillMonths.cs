@@ -199,7 +199,7 @@ namespace Ordisoftware.Hebrew.Calendar
             // TODO Parashah
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )
-                add(Settings.CalendarColorParashah, "Parashah lecture");
+                ;// add(Settings.CalendarColorParashah, "Parashah lecture");
           }
           catch ( Exception ex )
           {
