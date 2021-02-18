@@ -39,12 +39,12 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( EditESCtoExit.Checked ) Close();
             return true;
           // System function
-          case Keys.F8:
+          case Keys.F9:
             ActionPreferences.PerformClick();
             return true;
-          case Keys.F12:
-            ActionAbout_Click(null, null);
-            return true;
+          //case Keys.F12:
+            //ActionAbout_Click(null, null);
+            //return true;
           // Application function
           case Keys.F4:
             ActionViewCelebrations.PerformClick();
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.F7:
             ActionSearchGregorianMonth.PerformClick();
             return true;
-          case Keys.F9:
+          case Keys.F8:
           case Keys.Control | Keys.N:
             ActionNavigate.PerformClick();
             return true;

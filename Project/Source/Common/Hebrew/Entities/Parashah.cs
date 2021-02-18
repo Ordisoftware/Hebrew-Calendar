@@ -38,7 +38,8 @@ namespace Ordisoftware.Hebrew
 
     public string ToString(bool useHebrewFont)
     {
-      return $"Sefer {Book}, Parashah {Name} #{Number} {VerseBegin} - {VerseEnd} : " +
+      return $"Sefer {Book}, Parashah n°{Number}, " + 
+             $"{Name}{( IsLinkedToNext ? "*" : "" )} {VerseBegin} - {VerseEnd} : " +
              $"{Translation} ; {Lettriq} ({( useHebrewFont ? Hebrew : Unicode )})";
     }
 

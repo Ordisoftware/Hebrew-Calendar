@@ -81,8 +81,6 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewParashot.Tag = int.MinValue;
         ActionViewLunarMonths.Visible = false;
         ActionViewLunarMonths.Tag = int.MinValue;
-        SeparatorToolsMenuTop.Visible = false;
-        SeparatorToolsMenuTop.Tag = int.MinValue;
       }
     }
 
