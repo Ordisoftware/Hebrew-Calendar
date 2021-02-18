@@ -212,7 +212,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 ## Future improvements
 
-- Add print lunar months data.
+- Add print boards.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -233,7 +233,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### In progress - Version 7.2
 
-- Add Lunar Months board with meanings, lettriqs, and study tools.
+- Add lunar months board with meanings, lettriqs, and study tools.
 
 #### In progress - Version 7.1
 
