@@ -161,6 +161,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | F6 | Search a moon month window |
 | F7 | Search a gregorian month window |
 | F9 (or Ctrl + N)| Navigation window |
+| F10 | Show moon months description |
+| F11 | Show parashot window |
 | Ctrl + Tab | Next view |
 | Shift + Ctrl + Tab | Previous view |
 | Ctrl + T (or Numpad0)| Go to today |
@@ -192,7 +194,6 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Left | Previous month |
 | Right | Next month |
 | F8 | Preferences |
-| F11 | Help |
 | F12 | About |
 | Alt + F4 (or Escape) | Close window |
 | Ctrl + Alt + F4 | Exit application |
