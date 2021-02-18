@@ -41,9 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Search a celebration window" + Globals.NL +
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
-                        "F9 (or Ctrl + N) : Navigation window" + Globals.NL +
-                        "F10 : Lunar months board" + Globals.NL +
-                        "F11 : Parashot board" + Globals.NL +
+                        "F8 (or Ctrl + N) : Navigation window" + Globals.NL +
                         "Ctrl + Tab : Next view" + Globals.NL +
                         "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                         "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
@@ -66,15 +64,17 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F1 : Dates difference calculator" + Globals.NL +
                         "Ctrl + F2 : Celebrations board" + Globals.NL +
                         "Ctrl + F3 : New moons board" + Globals.NL +
-                        "Ctrl + F11 : Log file window" + Globals.NL +
-                        "Ctrl + F12 : Usage statistics window" + Globals.NL +
+                        "Ctrl + F4 : Lunar months board" + Globals.NL +
+                        "Ctrl + F5 : Parashot board" + Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         "Up (ou PageUp) : Previous year" + Globals.NL +
                         "Down (ou PageDown) : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
                         "Right : Next month" + Globals.NL +
-                        "F8 : Preferences" + Globals.NL +
+                        "F9 : Preferences" + Globals.NL +
+                        "F10 : Log file window" + Globals.NL +
+                        "F11 : Usage statistics window" + Globals.NL +
                         "F12 : About" + Globals.NL +
                         "Alt + F4 (ou Escape) : Close window" + Globals.NL +
                         "Ctrl + Alt + F4 : Exit application",
@@ -86,9 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F5 : Fenêtre de recherche de célébration" + Globals.NL +
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
-                        "F9 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
-                        "F10 : Tableau des mois lunaires" + Globals.NL +
-                        "F11 : tableau des parashot" + Globals.NL +
+                        "F8 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
                         "Ctrl + Tab : Vue suivante" + Globals.NL +
                         "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
                         "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
@@ -111,15 +109,17 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
                         "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
-                        "Ctrl + F11 : Fenêtre du fichier log" + Globals.NL +
-                        "Ctrl + F12 : Fenêtre des statistiques d'utilisation" + Globals.NL +
+                        "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
+                        "Ctrl + F5 : tableau des parashot" + Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +
                         "Bas (ou PageSuiv) : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
                         "Droite : Mois suivant" + Globals.NL +
-                        "F8 : Préférences" + Globals.NL +
+                        "F9 : Préférences" + Globals.NL +
+                        "F10 : Fenêtre du fichier log" + Globals.NL +
+                        "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +
                         "F12 : A propos" + Globals.NL +
                         "Alt + F4 (ou Echap) : Ferme la fenêtre" + Globals.NL +
                         "Ctrl + Alt + F4 : Ferme l'application",

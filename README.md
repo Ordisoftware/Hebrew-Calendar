@@ -162,9 +162,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | F5 | Search a celebration window |
 | F6 | Search a moon month window |
 | F7 | Search a gregorian month window |
-| F9 (or Ctrl + N)| Navigation window |
-| F10 | Lunar months board |
-| F11 | Parashot board |
+| F8 (or Ctrl + N)| Navigation window |
 | Ctrl + Tab | Next view |
 | Shift + Ctrl + Tab | Previous view |
 | Ctrl + T (or Numpad0)| Go to today |
@@ -187,15 +185,17 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Ctrl + F1 | Dates difference calculator |
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
-| Ctrl + F11 | Log file window |
-| Ctrl + F12 | Usage statistics window |
+| Ctrl + F4 | Lunar months board |
+| Ctrl + F5 | Parashot board |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
 | Down (or PageDown) | Next year |
 | Left | Previous month |
 | Right | Next month |
-| F8 | Preferences |
+| F9 | Preferences |
+| F10 | Log file window |
+| F11 | Usage statistics window |
 | F12 | About |
 | Alt + F4 (or Escape) | Close window |
 | Ctrl + Alt + F4 | Exit application |
@@ -226,6 +226,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add generate weekly parashah items in the database.
 - Add parashah lecture to the days of Shabat according to the option.
+- Add current parashah in navigation form and in main form subtitle.
 
 #### In progress - Version 7.0
 
@@ -234,7 +235,9 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to indicate the Parashah in the days of Shabat for the visual month (does nothing fro now).
 - Add show usage statistics from about box.
 - Add check update from about box.
+- Change some keyboard shortcuts.
 - Some file and code refactoring.
+- Update help files.
 
 #### 2021.02.17 - Version 6.8
 
