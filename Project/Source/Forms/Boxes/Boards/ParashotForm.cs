@@ -50,6 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   from parashah in book.Value
                   select parashah;
       DataGridView.DataSource = query.ToList();
+      ColumnTranslation.ReadOnly = !Globals.IsDevExecutable;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -170,6 +171,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
       Clipboard.SetText(item.ToString());
+    }
+
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+
     }
 
   }

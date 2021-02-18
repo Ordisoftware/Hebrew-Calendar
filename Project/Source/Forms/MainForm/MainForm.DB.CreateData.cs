@@ -216,6 +216,9 @@ namespace Ordisoftware.Hebrew.Calendar
         day.SeasonChangeAsEnum = data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
+        // TODO Uncomment when Shabatot Parashah will be generated
+        //day.IsParashaLinkedToNext = 0;
+        //day.Parasha = "";
       }
       catch ( Exception ex )
       {

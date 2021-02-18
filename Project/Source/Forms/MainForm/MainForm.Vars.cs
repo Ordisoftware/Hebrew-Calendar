@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private Stopwatch ChronoStart = new Stopwatch();
 
-    private bool DbUpgradedForParashahSupport;
+    private bool DbUpgradedForParashotSupport;
 
     private ShowTextForm NoticeKeyboardShortcutsForm;
 
