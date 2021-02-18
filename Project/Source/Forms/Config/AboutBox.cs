@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -65,6 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
     internal void AboutBox_Shown(object sender, EventArgs e)
     {
       Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+      ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;
       LabelTitle.Text = Globals.AssemblyTitle;
       LabelDescription.Text = AppTranslations.ApplicationDescription.GetLang();
       LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
@@ -114,15 +115,16 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.ShowInformation(SysTranslations.NoticePrivacyNoData.GetLang());
     }
 
-    private void label15_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by ActionViewStats for link clicked events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Link clicked event information.</param>
+    private void ActionViewStats_Click(object sender, EventArgs e)
     {
-
+      StatisticsForm.Run();
     }
 
-    private void linkLabel15_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-
-    }
   }
 
 }

@@ -193,6 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
     {
       MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+      AboutBox.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
       StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
       if ( !EditUsageStatisticsEnabled.Checked )
         StatisticsForm.Instance.Close();
