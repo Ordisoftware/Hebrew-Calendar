@@ -212,12 +212,11 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 ## Future improvements
 
-- Add Parashah lettriqs.
+- Add lettriqs of Parashot.
 - Add print lunar months data.
-- Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add user reminders for solar and lunar anniversary of birth.
-- Add user reminders for small religious festivals as a yearly alarm reminder.
+- Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
 - Improve month view to show celebration week days with number as text like first and last.
 - Improve navigation form to show celebration week day number.
@@ -225,6 +224,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Improve log viewer to select file.
 - Replace simple internal trace/logging by SeriLog.
+- Add dark theme for month view.
 
 ## Changelog
 
