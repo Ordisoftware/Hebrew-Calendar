@@ -166,20 +166,20 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
-      // MoonMonthsForm
+      // LunarMonthsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "LunarMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonMonthsFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.LunarMonthsFormLocation;
       this.MaximizeBox = false;
-      this.Name = "MoonMonthsForm";
-      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoonMonthsForm_FormClosing);
-      this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
+      this.Name = "LunarMonthsForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LunarMonthsForm_FormClosing);
+      this.Load += new System.EventHandler(this.LunarMonthsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ContextMenuItems.ResumeLayout(false);
       this.ResumeLayout(false);

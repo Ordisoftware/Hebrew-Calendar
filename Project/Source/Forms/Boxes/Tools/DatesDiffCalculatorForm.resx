@@ -142,7 +142,7 @@
     <value>46</value>
   </data>
   <data name="lunationsLabel.Text" xml:space="preserve">
-    <value>Moon months:</value>
+    <value>Lunar months:</value>
   </data>
   <data name="&gt;&gt;lunationsLabel.Name" xml:space="preserve">
     <value>lunationsLabel</value>

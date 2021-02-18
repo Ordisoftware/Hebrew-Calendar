@@ -1927,7 +1927,7 @@
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
-  <data name="ActionViewMoonMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewLunarMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAf5JREFUOE+dU01oE1EYHAV77M0eelAbpEHBS7wIinos1IPVkycviij+IBhKmmpB
@@ -1942,20 +1942,20 @@
         rkJggg==
 </value>
   </data>
-  <data name="ActionViewMoonMonths.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionViewLunarMonths.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionViewMoonMonths.ShortcutKeyDisplayString" xml:space="preserve">
+  <data name="ActionViewLunarMonths.ShortcutKeyDisplayString" xml:space="preserve">
     <value />
   </data>
-  <data name="ActionViewMoonMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="ActionViewLunarMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F10</value>
   </data>
-  <data name="ActionViewMoonMonths.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
   </data>
-  <data name="ActionViewMoonMonths.Text" xml:space="preserve">
-    <value>Lunar months description</value>
+  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
+    <value>Lunar months board</value>
   </data>
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1987,7 +1987,7 @@
     <value>260, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
-    <value>Parashot list</value>
+    <value>Parashot board</value>
   </data>
   <data name="SeparatorToolsMenuTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
@@ -3483,10 +3483,10 @@
   <data name="&gt;&gt;ActionTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewMoonMonths.Name" xml:space="preserve">
-    <value>ActionViewMoonMonths</value>
+  <data name="&gt;&gt;ActionViewLunarMonths.Name" xml:space="preserve">
+    <value>ActionViewLunarMonths</value>
   </data>
-  <data name="&gt;&gt;ActionViewMoonMonths.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionViewLunarMonths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewParashot.Name" xml:space="preserve">

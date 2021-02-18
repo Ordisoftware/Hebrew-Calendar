@@ -79,8 +79,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionShowParashahNotice.Tag = int.MinValue;
         ActionViewParashot.Visible = false;
         ActionViewParashot.Tag = int.MinValue;
-        ActionViewMoonMonths.Visible = false;
-        ActionViewMoonMonths.Tag = int.MinValue;
+        ActionViewLunarMonths.Visible = false;
+        ActionViewLunarMonths.Tag = int.MinValue;
         SeparatorToolsMenuTop.Visible = false;
         SeparatorToolsMenuTop.Tag = int.MinValue;
       }
@@ -646,11 +646,11 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewMoonMonths for click events.
+    /// Event handler. Called by ActionViewLunarMonths for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewMoonMonths_Click(object sender, EventArgs e)
+    private void ActionViewLunarMonths_Click(object sender, EventArgs e)
     {
       LunarMonthsForm.Run();
     }

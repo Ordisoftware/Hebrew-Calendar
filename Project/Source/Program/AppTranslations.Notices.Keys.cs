@@ -42,8 +42,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
                         "F9 (or Ctrl + N) : Navigation window" + Globals.NL +
-                        "F10 : Show moon months window" + Globals.NL +
-                        "F11 : Show parashot window" + Globals.NL +
+                        "F10 : Lunar months board" + Globals.NL +
+                        "F11 : Parashot board" + Globals.NL +
                         "Ctrl + Tab : Next view" + Globals.NL +
                         "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                         "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
@@ -87,8 +87,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
                         "F9 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
-                        "F10 : Fenêtre des mois lunaires" + Globals.NL +
-                        "F11 : Fenêtre des parashot" + Globals.NL +
+                        "F10 : Tableau des mois lunaires" + Globals.NL +
+                        "F11 : tableau des parashot" + Globals.NL +
                         "Ctrl + Tab : Vue suivante" + Globals.NL +
                         "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
                         "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +

@@ -722,7 +722,7 @@
         OcL/EvmjxgFwunnN+fltAvp/2qxZ/wE0uLtA9T5KcQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionViewMoonMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewLunarMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAf5JREFUOE+dU01oE1EYHAV77M0eelAbpEHBS7wIinos1IPVkycviij+IBhKmmpB
@@ -737,11 +737,11 @@
         rkJggg==
 </value>
   </data>
-  <data name="ActionViewMoonMonths.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
     <value>317, 22</value>
   </data>
-  <data name="ActionViewMoonMonths.Text" xml:space="preserve">
-    <value>Description des mois lunaires</value>
+  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
+    <value>Tableau des mois lunaires</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 6</value>
@@ -1691,6 +1691,6 @@
     <value>Notice de la Parashah</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
-    <value>Liste des Parashot</value>
+    <value>Tableau des Parashot</value>
   </data>
 </root>

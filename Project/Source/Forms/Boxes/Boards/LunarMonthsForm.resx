@@ -169,7 +169,7 @@
 </value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MoonMonthsForm</value>
+    <value>LunarMonthsForm</value>
   </data>
   <data name="&gt;&gt;ActionViewNotice.Parent" xml:space="preserve">
     <value>PanelBottom</value>
@@ -496,7 +496,7 @@
     <value>ActionSwapColors</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Moon months</value>
+    <value>Lunar months</value>
   </data>
   <data name="ActionCopyHebrewChars.Text" xml:space="preserve">
     <value>Copy name (hebrew font chars)</value>

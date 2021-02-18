@@ -125,7 +125,7 @@
       this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
-      this.ActionViewMoonMonths = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorToolsMenuTop = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
@@ -908,7 +908,7 @@
       // 
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewMoonMonths,
+            this.ActionViewLunarMonths,
             this.ActionViewParashot,
             this.SeparatorToolsMenuTop,
             this.ActionShowCelebrationsNotice,
@@ -935,11 +935,11 @@
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
       // 
-      // ActionViewMoonMonths
+      // ActionViewLunarMonths
       // 
-      resources.ApplyResources(this.ActionViewMoonMonths, "ActionViewMoonMonths");
-      this.ActionViewMoonMonths.Name = "ActionViewMoonMonths";
-      this.ActionViewMoonMonths.Click += new System.EventHandler(this.ActionViewMoonMonths_Click);
+      resources.ApplyResources(this.ActionViewLunarMonths, "ActionViewLunarMonths");
+      this.ActionViewLunarMonths.Name = "ActionViewLunarMonths";
+      this.ActionViewLunarMonths.Click += new System.EventHandler(this.ActionViewLunarMonths_Click);
       // 
       // ActionViewParashot
       // 
@@ -1472,7 +1472,7 @@
     private System.Windows.Forms.ToolStripButton ActionEnableReminder;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripDropDownButton ActionTools;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewMoonMonths;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
     private System.Windows.Forms.ToolStripSeparator SeparatorToolsMenuTop;
     private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;

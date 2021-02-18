@@ -40,21 +40,21 @@ namespace Ordisoftware.Hebrew.Calendar
       Color colorLinkTextMeaning = SystemColors.ControlText;
       Color colorLinkTextLettriq = SystemColors.ControlText;
       Color colorActiveLink;
-      switch ( Program.Settings.MoonMonthsFormUseColors )
+      switch ( Program.Settings.LunarMonthsFormUseColors )
       {
-        case MoonMonthsListColors.System:
+        case LunarMonthsListColors.System:
           PanelMonths.BackColor = SystemColors.Control;
           colorActiveLink = Color.MediumBlue;
           colorsMonth = ColorsSystem;
           break;
-        case MoonMonthsListColors.Pastel:
+        case LunarMonthsListColors.Pastel:
           PanelMonths.BackColor = Color.Black;
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Tomato;
           colorLinkTextLettriq = Color.LightSkyBlue;
           colorsMonth = ColorsPastel;
           break;
-        case MoonMonthsListColors.Flashy:
+        case LunarMonthsListColors.Flashy:
           PanelMonths.BackColor = Color.Black;
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Red;
@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
           colorsMonth = ColorsFlashy;
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.MoonMonthsFormUseColors);
+          throw new NotImplementedExceptionEx(Program.Settings.LunarMonthsFormUseColors);
       }
       for ( int index = 1; index < HebrewMonths.Transliterations.Length; index++ )
       {
@@ -104,12 +104,12 @@ namespace Ordisoftware.Hebrew.Calendar
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, false);
         var label3 = createLabel(x + dx2, y + dy2,
-                                 Program.MoonMonthsMeanings[Languages.Current][index],
+                                 Program.LunarMonthsMeanings[Languages.Current][index],
                                  colorLinkTextMeaning,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);
         var label4 = createLabel(x + dx2, label3.Top + label3.Height + dy3,
-                                 Program.MoonMonthsLettriqs[Languages.Current][index],
+                                 Program.LunarMonthsLettriqs[Languages.Current][index],
                                  colorLinkTextLettriq,
                                  new Font("Microsoft Sans Serif", 10f),
                                  false, false, true);

@@ -18,9 +18,9 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Moon months colors enum to display the list in a form.
+  /// Lunar months colors enum to display the list in a form.
   /// </summary>
-  public enum MoonMonthsListColors
+  public enum LunarMonthsListColors
   {
     Pastel,
     Flashy,

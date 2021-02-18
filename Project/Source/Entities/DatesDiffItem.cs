@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public int SolarMonths { get; set; }
     public int SolarYears { get; set; }
     public int MoonDays { get; set; }
-    public int MoonMonths { get; set; }
+    public int LunarMonths { get; set; }
     public int MoonYears { get; set; }
 
     public DatesDiffItem(Form sender, DateTime date1, DateTime date2)
@@ -76,11 +76,11 @@ namespace Ordisoftware.Hebrew.Calendar
         SolarMonths = 1;
         SolarYears = 1;
         MoonDays = 0;
-        MoonMonths = 1;
+        LunarMonths = 1;
         MoonYears = 1;
         if ( Date1.Day == 1 ) SolarMonths = 0;
         if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
-        if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) MoonMonths = 0;
+        if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) LunarMonths = 0;
         if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
         for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
         {
@@ -90,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
           if ( data.Ephemerisis.Moonrise == null ) continue;
           MoonDays++;
-          if ( data.MoonDay == 1 ) MoonMonths++;
+          if ( data.MoonDay == 1 ) LunarMonths++;
           if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
         }
       }

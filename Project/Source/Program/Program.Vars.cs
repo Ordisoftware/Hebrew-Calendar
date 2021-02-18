@@ -108,32 +108,32 @@ namespace Ordisoftware.Hebrew.Calendar
       => Path.Combine(Globals.DocumentsFolderPath, "WorldCities.csv");
 
     /// <summary>
-    /// Indicate the moon months documents folder.
+    /// Indicate the lunar months documents folder.
     /// </summary>
-    static public string MoonMonthsFolderPath
-      => Path.Combine(Globals.DocumentsFolderPath, "MoonMonths");
+    static public string LunarMonthsFolderPath
+      => Path.Combine(Globals.DocumentsFolderPath, "LunarMonths");
 
     /// <summary>
-    /// Indicate file path of the moon months meanings.
+    /// Indicate file path of the lunar months meanings.
     /// </summary>
-    static public string MoonMonthsMeaningsFilePath
-      = Path.Combine(MoonMonthsFolderPath, "MoonMonthsMeanings{0}.txt");
+    static public string LunarMonthsMeaningsFilePath
+      = Path.Combine(LunarMonthsFolderPath, "LunarMonthsMeanings{0}.txt");
 
     /// <summary>
-    /// Indicate file path of the moon months lettriqs.
+    /// Indicate file path of the lunar months lettriqs.
     /// </summary>
-    static public string MoonMonthsLettriqsFilePath
-      => Path.Combine(MoonMonthsFolderPath, "MoonMonthsLettriqs{0}.txt");
+    static public string LunarMonthsLettriqsFilePath
+      => Path.Combine(LunarMonthsFolderPath, "LunarMonthsLettriqs{0}.txt");
 
     /// <summary>
-    /// Indicate the moon months meanings.
+    /// Indicate the lunar months meanings.
     /// </summary>
-    static public NullSafeDictionary<Language, MoonMonthsFile> MoonMonthsMeanings { get; private set; }
+    static public NullSafeDictionary<Language, LunarMonthsFile> LunarMonthsMeanings { get; private set; }
 
     /// <summary>
-    /// Indicate the moon months lettriqs.
+    /// Indicate the lunar months lettriqs.
     /// </summary>
-    static public NullSafeDictionary<Language, MoonMonthsFile> MoonMonthsLettriqs { get; private set; }
+    static public NullSafeDictionary<Language, LunarMonthsFile> LunarMonthsLettriqs { get; private set; }
 
     /// <summary>
     /// Static constructor.
@@ -141,17 +141,17 @@ namespace Ordisoftware.Hebrew.Calendar
     static Program()
     {
       if ( Globals.IsVisualStudioDesigner ) return;
-      MoonMonthsMeanings = new NullSafeDictionary<Language, MoonMonthsFile>();
-      MoonMonthsLettriqs = new NullSafeDictionary<Language, MoonMonthsFile>();
+      LunarMonthsMeanings = new NullSafeDictionary<Language, LunarMonthsFile>();
+      LunarMonthsLettriqs = new NullSafeDictionary<Language, LunarMonthsFile>();
       foreach ( Language lang in Languages.Managed )
       {
-        MoonMonthsMeanings.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsMeaningsFilePath, Languages.Codes[lang].ToUpper()),
+        LunarMonthsMeanings.Add(lang,
+                               new LunarMonthsFile(string.Format(LunarMonthsMeaningsFilePath, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));
-        MoonMonthsLettriqs.Add(lang,
-                               new MoonMonthsFile(string.Format(MoonMonthsLettriqsFilePath, Languages.Codes[lang].ToUpper()),
+        LunarMonthsLettriqs.Add(lang,
+                               new LunarMonthsFile(string.Format(LunarMonthsLettriqsFilePath, Languages.Codes[lang].ToUpper()),
                                                   true,
                                                   Globals.IsDevExecutable,
                                                   DataFileFolder.ApplicationDocuments));

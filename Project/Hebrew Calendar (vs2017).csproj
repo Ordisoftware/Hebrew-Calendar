@@ -403,10 +403,10 @@
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.Designer.cs">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\ParashotForm.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\ParashotForm.designer.cs">
+    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.designer.cs">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
@@ -464,7 +464,7 @@
     <Compile Include="Source\Entities\CalendarDates.cs" />
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
-    <Compile Include="Source\Entities\MoonMonthsFile.cs" />
+    <Compile Include="Source\Entities\LunarMonthsFile.cs" />
     <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -508,7 +508,7 @@
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
+    <Compile Include="Source\Enums\LunarMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -824,10 +824,10 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ParashotForm.fr.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.fr.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ParashotForm.resx">
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.fr.resx">
