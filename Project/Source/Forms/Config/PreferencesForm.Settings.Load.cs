@@ -36,6 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditVacuumAtStartup.Checked = Settings.VacuumAtStartup; });
       SystemManager.TryCatch(() => { EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval; });
       SystemManager.TryCatch(() => { EditHebrewLettersPath.Text = Settings.HebrewLettersExe; });
+      SystemManager.TryCatch(() => { EditHebrewWordsPath.Text = Settings.HebrewWordsExe; });
       SystemManager.TryCatch(() => { EditCalculatorPath.Text = Settings.CalculatorExe; });
       SystemManager.TryCatch(() => { EditAutoLockSession.Checked = Settings.AutoLockSession; });
       SystemManager.TryCatch(() => { EditAutoLockSessionTimeOut.Value = Settings.AutoLockSessionTimeOut; });

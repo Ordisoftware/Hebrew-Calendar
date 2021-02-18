@@ -168,8 +168,8 @@
             this.ActionSearchOnline,
             this.ActionOpenVerseOnline,
             this.MenuSeparator1,
-            this.ActionOpenHebrewWords,
             this.ActionOpenHebrewLetters,
+            this.ActionOpenHebrewWords,
             this.MenuSeparator2,
             this.ActionCopyHebrewChars,
             this.ActionCopyUnicodeChars,
@@ -198,6 +198,7 @@
       // 
       resources.ApplyResources(this.ActionOpenHebrewWords, "ActionOpenHebrewWords");
       this.ActionOpenHebrewWords.Name = "ActionOpenHebrewWords";
+      this.ActionOpenHebrewWords.Click += new System.EventHandler(this.ActionOpenHebrewWords_Click);
       // 
       // ActionOpenHebrewLetters
       // 
@@ -335,8 +336,6 @@
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMain);
       this.Controls.Add(this.PanelBottom);
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "ParashotForm";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParashotForm_FormClosed);
       this.Load += new System.EventHandler(this.ParashotForm_Load);

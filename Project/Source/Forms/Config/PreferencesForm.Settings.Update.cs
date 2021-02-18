@@ -36,6 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
       Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;
       Settings.HebrewLettersExe = EditHebrewLettersPath.Text;
+      Settings.HebrewWordsExe = EditHebrewWordsPath.Text;
       Settings.CalculatorExe = EditCalculatorPath.Text;
       Settings.AutoLockSession = EditAutoLockSession.Checked;
       Settings.AutoLockSessionTimeOut = (int)EditAutoLockSessionTimeOut.Value;

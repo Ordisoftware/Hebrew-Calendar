@@ -253,6 +253,10 @@
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.ActionResetHebrewWordsPath = new System.Windows.Forms.Button();
+      this.LabelHebrewWordsPath = new System.Windows.Forms.Label();
+      this.ActionSelectHebrewWordsPath = new System.Windows.Forms.Button();
+      this.EditHebrewWordsPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelWeatherOnline = new System.Windows.Forms.Panel();
       this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
@@ -1407,6 +1411,7 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectNone, "ActionRemindEventsBeforeSelectNone");
       this.ActionRemindEventsBeforeSelectNone.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionRemindEventsBeforeSelectNone.Name = "ActionRemindEventsBeforeSelectNone";
+      this.ActionRemindEventsBeforeSelectNone.TabStop = false;
       this.ActionRemindEventsBeforeSelectNone.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeSelectNone.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectNone_Click);
       // 
@@ -1416,6 +1421,7 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeReset, "ActionRemindEventsBeforeReset");
       this.ActionRemindEventsBeforeReset.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionRemindEventsBeforeReset.Name = "ActionRemindEventsBeforeReset";
+      this.ActionRemindEventsBeforeReset.TabStop = false;
       this.ActionRemindEventsBeforeReset.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeReset.Click += new System.EventHandler(this.ActionRemindEventsBeforeReset_Click);
       // 
@@ -1425,6 +1431,7 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectAll, "ActionRemindEventsBeforeSelectAll");
       this.ActionRemindEventsBeforeSelectAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionRemindEventsBeforeSelectAll.Name = "ActionRemindEventsBeforeSelectAll";
+      this.ActionRemindEventsBeforeSelectAll.TabStop = false;
       this.ActionRemindEventsBeforeSelectAll.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeSelectAll.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectAll_Click);
       // 
@@ -1434,6 +1441,7 @@
       resources.ApplyResources(this.ActionEventsDaySelectNone, "ActionEventsDaySelectNone");
       this.ActionEventsDaySelectNone.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionEventsDaySelectNone.Name = "ActionEventsDaySelectNone";
+      this.ActionEventsDaySelectNone.TabStop = false;
       this.ActionEventsDaySelectNone.UseVisualStyleBackColor = true;
       this.ActionEventsDaySelectNone.Click += new System.EventHandler(this.ActionEventsDaySelectNone_Click);
       // 
@@ -1443,6 +1451,7 @@
       resources.ApplyResources(this.ActionEventsDayReset, "ActionEventsDayReset");
       this.ActionEventsDayReset.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionEventsDayReset.Name = "ActionEventsDayReset";
+      this.ActionEventsDayReset.TabStop = false;
       this.ActionEventsDayReset.UseVisualStyleBackColor = true;
       this.ActionEventsDayReset.Click += new System.EventHandler(this.ActionEventsDayReset_Click);
       // 
@@ -1452,6 +1461,7 @@
       resources.ApplyResources(this.ActionEventsDaySelectAll, "ActionEventsDaySelectAll");
       this.ActionEventsDaySelectAll.ForeColor = System.Drawing.Color.DarkBlue;
       this.ActionEventsDaySelectAll.Name = "ActionEventsDaySelectAll";
+      this.ActionEventsDaySelectAll.TabStop = false;
       this.ActionEventsDaySelectAll.UseVisualStyleBackColor = true;
       this.ActionEventsDaySelectAll.Click += new System.EventHandler(this.ActionEventsDaySelectAll_Click);
       // 
@@ -2127,6 +2137,10 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.ActionResetHebrewWordsPath);
+      this.TabPagePaths.Controls.Add(this.LabelHebrewWordsPath);
+      this.TabPagePaths.Controls.Add(this.ActionSelectHebrewWordsPath);
+      this.TabPagePaths.Controls.Add(this.EditHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.PanelWeatherOnline);
       this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
@@ -2146,6 +2160,35 @@
       this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
+      // 
+      // ActionResetHebrewWordsPath
+      // 
+      this.ActionResetHebrewWordsPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetHebrewWordsPath, "ActionResetHebrewWordsPath");
+      this.ActionResetHebrewWordsPath.Name = "ActionResetHebrewWordsPath";
+      this.ActionResetHebrewWordsPath.UseVisualStyleBackColor = true;
+      this.ActionResetHebrewWordsPath.Click += new System.EventHandler(this.ActionResetHebrewWordsPath_Click);
+      // 
+      // LabelHebrewWordsPath
+      // 
+      resources.ApplyResources(this.LabelHebrewWordsPath, "LabelHebrewWordsPath");
+      this.LabelHebrewWordsPath.Name = "LabelHebrewWordsPath";
+      // 
+      // ActionSelectHebrewWordsPath
+      // 
+      this.ActionSelectHebrewWordsPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectHebrewWordsPath, "ActionSelectHebrewWordsPath");
+      this.ActionSelectHebrewWordsPath.Name = "ActionSelectHebrewWordsPath";
+      this.ActionSelectHebrewWordsPath.UseVisualStyleBackColor = true;
+      this.ActionSelectHebrewWordsPath.Click += new System.EventHandler(this.ActionSelectHebrewWordsPath_Click);
+      // 
+      // EditHebrewWordsPath
+      // 
+      this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewWordsPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewWordsPath, "EditHebrewWordsPath");
+      this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
+      this.EditHebrewWordsPath.ReadOnly = true;
       // 
       // PanelWeatherOnline
       // 
@@ -2630,5 +2673,9 @@
     private System.Windows.Forms.Label LabelColorParashah;
     internal System.Windows.Forms.Panel EditCalendarColorParashah;
     private System.Windows.Forms.CheckBox EditCalendarShowParashah;
+    private System.Windows.Forms.Button ActionResetHebrewWordsPath;
+    private System.Windows.Forms.Label LabelHebrewWordsPath;
+    private System.Windows.Forms.Button ActionSelectHebrewWordsPath;
+    private Core.UndoRedoTextBox EditHebrewWordsPath;
   }
 }

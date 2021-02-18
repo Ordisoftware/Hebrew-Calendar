@@ -301,4 +301,7 @@
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Traduction</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tableau des Parashot</value>
+  </data>
 </root>

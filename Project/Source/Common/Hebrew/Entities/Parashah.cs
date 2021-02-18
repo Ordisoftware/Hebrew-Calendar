@@ -19,15 +19,29 @@ namespace Ordisoftware.Hebrew
 
   public partial class Parashah
   {
+
     public TorahBooks Book { get; }
     public int Number { get; }
     public string Name { get; }
+    public string Hebrew { get; }
     public string Unicode { get; }
     public string VerseBegin { get; }
     public string VerseEnd { get; }
     public bool IsLinkedToNext { get; }
     public string Translation { get; set; }
     public string Lettriq { get; set; }
+
+    public override string ToString()
+    {
+      return ToString(false);
+    }
+
+    public string ToString(bool useHebrewFont)
+    {
+      return $"Sefer {Book}, Parashah {Name} #{Number} {VerseBegin} - {VerseEnd} : " +
+             $"{Translation} ; {Lettriq} ({( useHebrewFont ? Hebrew : Unicode )})";
+    }
+
     public Parashah(TorahBooks book,
                     int number,
                     string name,
@@ -42,6 +56,7 @@ namespace Ordisoftware.Hebrew
       Number = number;
       Name = name;
       Unicode = unicode;
+      Hebrew = HebrewAlphabet.ConvertToHebrewFont(unicode);
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
       IsLinkedToNext = isLinkedToNext;

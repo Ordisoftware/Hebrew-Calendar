@@ -2237,5 +2237,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarShowParashah"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.HebrewWords.exe")]
+        public string HebrewWordsExe {
+            get {
+                return ((string)(this["HebrewWordsExe"]));
+            }
+            set {
+                this["HebrewWordsExe"] = value;
+            }
+        }
     }
 }

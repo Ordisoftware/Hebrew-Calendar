@@ -143,38 +143,33 @@ namespace Ordisoftware.Hebrew.Calendar
       HebrewTools.OpenHebrewLetters(name, Program.Settings.HebrewLettersExe);
     }
 
-    private void ActionCopyMonthName(object sender, EventArgs e, Func<string, string> process)
+    private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      string name = process?.Invoke(item.Unicode);
-      Clipboard.SetText(name);
+      HebrewTools.OpenHebrewWords("", Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, s => HebrewAlphabet.ConvertToHebrewFont(s));
+      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
+      Clipboard.SetText(item.Hebrew);
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, null);
-    }
-
-    private void ActionCopyLine(object sender, EventArgs e, Func<string, string> process)
-    {
       var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      string name = process?.Invoke(item.Unicode);
-      Clipboard.SetText(name);
+      Clipboard.SetText(item.Unicode);
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, s => HebrewAlphabet.ConvertToHebrewFont(s));
+      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
+      Clipboard.SetText(item.ToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, null);
+      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
+      Clipboard.SetText(item.ToString());
     }
 
   }

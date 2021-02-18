@@ -596,6 +596,11 @@ namespace Ordisoftware.Hebrew.Calendar
       DoActionSelectPath(OpenExeFileDialog, EditHebrewLettersPath);
     }
 
+    private void ActionSelectHebrewWordsPath_Click(object sender, EventArgs e)
+    {
+      DoActionSelectPath(OpenExeFileDialog, EditHebrewWordsPath);
+    }
+
     private void ActionResetExportFolder_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
@@ -618,6 +623,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
         EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
+    }
+
+    private void ActionResetHebrewWordsPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditHebrewWordsPath.Text = (string)Settings.Properties[nameof(Settings.HebrewWordsExe)].DefaultValue;
     }
 
     private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
