@@ -68,6 +68,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
+      if ( Globals.IsDevExecutable )
+        if ( DisplayManager.QueryYesNo("Save changes?") )
+          ActionSave.PerformClick();
+        else
+          Parashah.LoadTranslations();
       Close();
     }
 
@@ -114,6 +119,7 @@ namespace Ordisoftware.Hebrew.Calendar
         e.Value = (bool)e.Value ? "•" : "";
       else
       if ( e.ColumnIndex == ColumnTranslation.Index )
+        // TODO Add parashah lettriq
         ;// e.Value = e.Value + Globals.NL + ( (Parashah)DataGridView.Rows[e.RowIndex].DataBoundItem ).Lettriq;
     }
 
@@ -175,7 +181,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSave_Click(object sender, EventArgs e)
     {
-
+      var list = new NullSafeOfStringDictionary<string>();
+      foreach ( DataGridViewRow row in DataGridView.Rows )
+      {
+        var item = (Parashah)row.DataBoundItem;
+        list.Add(item.Name, item.Translation);
+      }
+      string filePath = string.Format(Parashah.ParashotTranslationFilePath, Languages.CurrentCode.ToUpper());
+      list.SaveKeyValuePairs(filePath, " = ");
     }
 
   }
