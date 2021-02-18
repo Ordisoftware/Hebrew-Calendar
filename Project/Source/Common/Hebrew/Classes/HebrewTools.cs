@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Start Hebrew Words process.
     /// </summary>
-    /// <param name="hebrew">The hebrew font chars of the word.</param>
+    /// <param name="reference">The verse reference.</param>
     /// <param name="path">Path of the application.</param>
     static public void OpenHebrewWords(string reference, string path)
     {
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
-      SystemManager.RunShell(path, reference);
+      SystemManager.RunShell(path, "--ref " + reference);
     }
 
     /// <summary>
