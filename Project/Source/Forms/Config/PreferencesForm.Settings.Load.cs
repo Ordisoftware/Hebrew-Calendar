@@ -85,6 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { OldShabatDay = Settings.ShabatDay; });
       SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
       SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
+      SystemManager.TryCatch(() => { OldShowParashah = Settings.CalendarShowParashah; });
       SystemManager.TryCatch(() => { EditMoonDayTextFormat.Text = Settings.MoonDayTextFormat; });
       SystemManager.TryCatch(() => { EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled; });
       SystemManager.TryCatch(() => { EditAllowSuspendReminder.Checked = Settings.AllowSuspendReminder; });
@@ -113,6 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
+      SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
       // Hotkey
       InitHotKeyControls();
       // System

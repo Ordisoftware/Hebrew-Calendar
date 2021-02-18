@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
+    public bool OldShowParashah { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 
     /// <summary>
