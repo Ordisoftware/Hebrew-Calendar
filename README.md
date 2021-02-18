@@ -24,14 +24,14 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 
 - Generate a calendar with sun and moon rises and sets.
 - View by tabular text report, visual month or data grid.
+- Balloon tip from the Tray Icon to navigate between days with a summary.
 - Event reminder for shabat and celebrations.
-- Search for a day or a celebration.
+- Search for a day, a month, or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
 - Window showing a board of new moons by years.
 - Window showing a board of lunar months description.
 - Window showing a board of the parashot.
-- Balloon tip from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
@@ -235,7 +235,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 #### In progress - Version 7.1
 
 - Add generate weekly parashah items in the database.
-- Add parashah lecture to the days of Shabat according to the option.
+- Add parashah reading to the days of Shabat according to the option.
 - Add current parashah in navigation form and in main form subtitle.
 
 #### In progress - Version 7.0

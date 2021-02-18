@@ -55,11 +55,14 @@ namespace Ordisoftware.Hebrew.Calendar
                                           SeasonChange INTEGER,
                                           TorahEvents INTEGER,
                                           Parasha TEXT,
+                                          IsParashaLinkedToNext INTEGER,
                                           PRIMARY KEY('Date')
                                         )");
-        // TODO Parashah
-        //if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", "", false) )
-          //DbUpgradedForParashahSupport = true;
+        // TODO Uncomment when Shabatot Parashah will be generated
+        /*if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", "", false) )
+          DbUpgradedForParashahSupport = true;
+        if ( !LockFileConnection.CheckColumn("LunisolarDays", "IsParashaLinkedToNext", "INTEGER", "", false) )
+          DbUpgradedForParashahSupport = true;*/
       });
     }
 

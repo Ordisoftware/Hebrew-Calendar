@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -109,6 +109,29 @@ namespace Ordisoftware.Core
                           MessageBoxIcon.Warning);
         return false;
       }
+    }
+    static public bool SaveKeyValuePairs(this NullSafeOfStringDictionary<string> list,
+                                         string filePath,
+                                         string separator,
+                                         bool showError = true)
+    {
+      using ( var stream = File.CreateText(filePath) )
+        try
+        {
+          foreach ( var item in list )
+            stream.WriteLine(item.Key + separator + item.Value);
+          stream.Close();
+          return true;
+        }
+        catch ( Exception ex )
+        {
+          if ( showError )
+            MessageBox.Show(SysTranslations.LoadFileError.GetLang(filePath, ex.Message),
+                            Globals.AssemblyTitle,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+          return false;
+        }
     }
   }
 

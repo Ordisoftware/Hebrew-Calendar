@@ -118,6 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         bool doforce = ( SystemManager.CommandLineOptions as ApplicationCommandLine )?.Generate ?? false;
+        if ( DbUpgradedForParashotSupport ) doforce = true;
         CheckRegenerateCalendar(force: doforce);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
@@ -138,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 660, false, false);
+                                                       true, false, 400, 670, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         //
