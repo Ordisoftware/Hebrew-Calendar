@@ -10,8 +10,8 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-01 </created>
-/// <edited> 2020-03 </edited>
+/// <created> 2021-02 </created>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -63,6 +63,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
     }
 
     private void Select(Parashah parashah)
