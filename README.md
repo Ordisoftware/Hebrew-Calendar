@@ -226,6 +226,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 - Add generate weekly parashah items in the database.
 - Add parashah lecture to the days of Shabat according to the option.
+- Add current parashah in navigation form and in main form subtitle.
 
 #### In progress - Version 7.0
 
