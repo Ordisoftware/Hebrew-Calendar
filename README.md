@@ -151,6 +151,16 @@ The day before, either the man keeps without going out and strengthens the coupl
 
 If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
+#### What are Parashot?
+
+The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
+
+It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat.
+
+The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat.
+
+And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavuot, Teru'ah, Kipurim, and Sukot.
+
 ## Keyboard shortcuts
 
 | Keys | Actions |
