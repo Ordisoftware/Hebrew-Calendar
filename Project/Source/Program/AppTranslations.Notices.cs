@@ -147,14 +147,14 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
       };
 
-    static public readonly TranslationsDictionary NoticeMoonMonthsTitle
+    static public readonly TranslationsDictionary NoticeLunarMonthsTitle
       = new TranslationsDictionary()
       {
-        [Language.EN] = "Moon months notice",
+        [Language.EN] = "Lunar months notice",
         [Language.FR] = "Notice des mois lunaires"
       };
 
-    static public readonly TranslationsDictionary NoticeMoonMonths
+    static public readonly TranslationsDictionary NoticeLunarMonths
       = new TranslationsDictionary()
       {
         [Language.EN] = "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +

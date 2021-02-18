@@ -1068,24 +1068,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
-        public global::Ordisoftware.Hebrew.Calendar.MoonMonthsListColors MoonMonthsFormUseColors {
+        public global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColors LunarMonthsFormUseColors {
             get {
-                return ((global::Ordisoftware.Hebrew.Calendar.MoonMonthsListColors)(this["MoonMonthsFormUseColors"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColors)(this["LunarMonthsFormUseColors"]));
             }
             set {
-                this["MoonMonthsFormUseColors"] = value;
+                this["LunarMonthsFormUseColors"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point MoonMonthsFormLocation {
+        public global::System.Drawing.Point LunarMonthsFormLocation {
             get {
-                return ((global::System.Drawing.Point)(this["MoonMonthsFormLocation"]));
+                return ((global::System.Drawing.Point)(this["LunarMonthsFormLocation"]));
             }
             set {
-                this["MoonMonthsFormLocation"] = value;
+                this["LunarMonthsFormLocation"] = value;
             }
         }
         
@@ -2223,6 +2223,30 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["CalendarColorParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CalendarShowParashah {
+            get {
+                return ((bool)(this["CalendarShowParashah"]));
+            }
+            set {
+                this["CalendarShowParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.HebrewWords.exe")]
+        public string HebrewWordsExe {
+            get {
+                return ((string)(this["HebrewWordsExe"]));
+            }
+            set {
+                this["HebrewWordsExe"] = value;
             }
         }
     }

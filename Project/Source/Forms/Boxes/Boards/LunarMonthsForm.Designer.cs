@@ -52,18 +52,18 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionSwapColors);
       this.PanelBottom.Controls.Add(this.ActionEditFiles);
       this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionSwapColors
       // 
-      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.AllowDrop = true;
       this.ActionSwapColors.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSwapColors, "ActionSwapColors");
       this.ActionSwapColors.Name = "ActionSwapColors";
       this.ActionSwapColors.TabStop = false;
       this.ActionSwapColors.UseVisualStyleBackColor = true;
@@ -71,9 +71,9 @@
       // 
       // ActionEditFiles
       // 
-      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.AllowDrop = true;
       this.ActionEditFiles.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionEditFiles, "ActionEditFiles");
       this.ActionEditFiles.Name = "ActionEditFiles";
       this.ActionEditFiles.TabStop = false;
       this.ActionEditFiles.UseVisualStyleBackColor = true;
@@ -81,9 +81,9 @@
       // 
       // ActionViewNotice
       // 
-      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.AllowDrop = true;
       this.ActionViewNotice.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.Name = "ActionViewNotice";
       this.ActionViewNotice.TabStop = false;
       this.ActionViewNotice.UseVisualStyleBackColor = true;
@@ -98,7 +98,6 @@
       // 
       // ContextMenuItems
       // 
-      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator1,
@@ -110,6 +109,7 @@
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode});
       this.ContextMenuItems.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuItems, "ContextMenuItems");
       // 
       // ActionSearchOnline
       // 
@@ -118,8 +118,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -129,8 +129,8 @@
       // 
       // MenuSeparator2
       // 
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyHebrewChars
       // 
@@ -146,8 +146,8 @@
       // 
       // toolStripSeparator2
       // 
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionCopyLineHebrew
       // 
@@ -166,20 +166,20 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
-      // MoonMonthsForm
+      // LunarMonthsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.PanelMonths);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "MoonMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "LunarMonthsFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.MoonMonthsFormLocation;
+      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.LunarMonthsFormLocation;
       this.MaximizeBox = false;
-      this.Name = "MoonMonthsForm";
-      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoonMonthsForm_FormClosing);
-      this.Load += new System.EventHandler(this.MoonMonthsForm_Load);
+      this.Name = "LunarMonthsForm";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LunarMonthsForm_FormClosing);
+      this.Load += new System.EventHandler(this.LunarMonthsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ContextMenuItems.ResumeLayout(false);
       this.ResumeLayout(false);

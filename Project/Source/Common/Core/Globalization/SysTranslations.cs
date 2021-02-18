@@ -157,7 +157,7 @@ namespace Ordisoftware.Core
         [Language.FR] = "(non définit)"
       };
 
-    static public readonly TranslationsDictionary EmptySLot
+    static public readonly TranslationsDictionary EmptySlot
       = new TranslationsDictionary()
       {
         [Language.EN] = "(empty)",

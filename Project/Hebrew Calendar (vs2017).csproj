@@ -161,6 +161,15 @@
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Parashah.All.cs" />
@@ -394,6 +403,12 @@
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.Designer.cs">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.designer.cs">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -449,7 +464,7 @@
     <Compile Include="Source\Entities\CalendarDates.cs" />
     <Compile Include="Source\Entities\DatesDiffItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
-    <Compile Include="Source\Entities\MoonMonthsFile.cs" />
+    <Compile Include="Source\Entities\LunarMonthsFile.cs" />
     <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,7 +508,7 @@
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Enums\MoonMonthsListColors.cs" />
+    <Compile Include="Source\Enums\LunarMonthsListColors.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -809,6 +824,12 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.resx">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.fr.resx">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.resx">
+      <DependentUpon>ParashotForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.fr.resx">
       <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -954,6 +975,7 @@
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
+    <None Include="Properties\DataSources\Ordisoftware.Hebrew.Parashah.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

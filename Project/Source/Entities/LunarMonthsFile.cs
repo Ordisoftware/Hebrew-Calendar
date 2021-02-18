@@ -21,9 +21,9 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide Moon months file.
+  /// Provide lunar months file.
   /// </summary>
-  public partial class MoonMonthsFile : DataFile
+  public partial class LunarMonthsFile : DataFile
   {
 
     public readonly List<string> Items = new List<string>();
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string this[int index]
       => index >= 0 && index < Items.Count ? Items[index] : "";
 
-    public MoonMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+    public LunarMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
       : base(filePath, showFileNotFound, configurable, folder)
     {
     }

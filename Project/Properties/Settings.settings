@@ -268,10 +268,10 @@
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
     </Setting>
-    <Setting Name="MoonMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.MoonMonthsListColors" Scope="User">
+    <Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColors" Scope="User">
       <Value Profile="(Default)">Pastel</Value>
     </Setting>
-    <Setting Name="MoonMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
+    <Setting Name="LunarMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="MonthViewFontSize" Type="System.Int32" Scope="User">
@@ -558,6 +558,12 @@
     </Setting>
     <Setting Name="CalendarColorParashah" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Indigo</Value>
+    </Setting>
+    <Setting Name="CalendarShowParashah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HebrewWordsExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.HebrewWords.exe</Value>
     </Setting>
   </Settings>
 </SettingsFile>

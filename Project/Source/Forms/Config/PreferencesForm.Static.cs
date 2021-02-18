@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Xml;
 using System.Linq;
@@ -105,6 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
                  || form.OldLongitude != Settings.GPSLongitude
                  || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
                  || form.OldTimeZone != Settings.TimeZone
+                 || form.OldShowParashah != Settings.CalendarShowParashah
                  || lang != Settings.LanguageSelected;
       if ( !result && form.MustRefreshMonthView )
         MainForm.Instance.UpdateCalendarMonth(true);

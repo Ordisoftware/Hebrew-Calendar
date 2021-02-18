@@ -72,15 +72,16 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable ) // TODO remove when ready
+      if ( !Globals.IsDevExecutable )
       {
+        // TODO remove when ready
         ActionShowParashahNotice.Visible = false;
         ActionShowParashahNotice.Tag = int.MinValue;
         ActionViewParashot.Visible = false;
         ActionViewParashot.Tag = int.MinValue;
-        ActionViewMoonMonths.Visible = false;
+        ActionViewLunarMonths.Visible = false;
+        ActionViewLunarMonths.Tag = int.MinValue;
         SeparatorToolsMenuTop.Visible = false;
-        ActionViewMoonMonths.Tag = int.MinValue;
         SeparatorToolsMenuTop.Tag = int.MinValue;
       }
     }
@@ -645,11 +646,11 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewMoonMonths for click events.
+    /// Event handler. Called by ActionViewLunarMonths for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewMoonMonths_Click(object sender, EventArgs e)
+    private void ActionViewLunarMonths_Click(object sender, EventArgs e)
     {
       LunarMonthsForm.Run();
     }
@@ -661,7 +662,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      //ParashotForm.Run();
+      var parashah = Parashah.All[TorahBooks.Shemot][5];
+      ParashotForm.Run(parashah);
     }
 
     /// <summary>

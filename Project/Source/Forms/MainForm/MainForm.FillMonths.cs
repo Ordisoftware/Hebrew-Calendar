@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -197,9 +197,9 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
             // TODO Parashah
-            if ( Globals.IsDevExecutable )
-            if ( (int)date.DayOfWeek == Settings.ShabatDay )
-              add(Settings.CalendarColorParashah, "Parashah Portion");
+            if ( Settings.CalendarShowParashah )
+              if ( (int)date.DayOfWeek == Settings.ShabatDay )
+                add(Settings.CalendarColorParashah, "Parashah Portion");
           }
           catch ( Exception ex )
           {

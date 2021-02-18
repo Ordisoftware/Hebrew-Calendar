@@ -1069,4 +1069,7 @@
   <data name="LabelColorParashah.Text" xml:space="preserve">
     <value>Section Parashah</value>
   </data>
+  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
+    <value>Indiquer la Parashah</value>
+  </data>
 </root>

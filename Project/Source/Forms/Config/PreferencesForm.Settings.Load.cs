@@ -36,6 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditVacuumAtStartup.Checked = Settings.VacuumAtStartup; });
       SystemManager.TryCatch(() => { EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval; });
       SystemManager.TryCatch(() => { EditHebrewLettersPath.Text = Settings.HebrewLettersExe; });
+      SystemManager.TryCatch(() => { EditHebrewWordsPath.Text = Settings.HebrewWordsExe; });
       SystemManager.TryCatch(() => { EditCalculatorPath.Text = Settings.CalculatorExe; });
       SystemManager.TryCatch(() => { EditAutoLockSession.Checked = Settings.AutoLockSession; });
       SystemManager.TryCatch(() => { EditAutoLockSessionTimeOut.Value = Settings.AutoLockSessionTimeOut; });
@@ -85,6 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { OldShabatDay = Settings.ShabatDay; });
       SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
       SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
+      SystemManager.TryCatch(() => { OldShowParashah = Settings.CalendarShowParashah; });
       SystemManager.TryCatch(() => { EditMoonDayTextFormat.Text = Settings.MoonDayTextFormat; });
       SystemManager.TryCatch(() => { EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled; });
       SystemManager.TryCatch(() => { EditAllowSuspendReminder.Checked = Settings.AllowSuspendReminder; });
@@ -113,6 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
+      SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
       // Hotkey
       InitHotKeyControls();
       // System

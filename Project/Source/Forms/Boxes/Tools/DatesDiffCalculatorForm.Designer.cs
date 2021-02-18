@@ -169,7 +169,7 @@
       // 
       // lunationsLabel1
       // 
-      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonMonths", true));
+      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "LunarMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
       // 

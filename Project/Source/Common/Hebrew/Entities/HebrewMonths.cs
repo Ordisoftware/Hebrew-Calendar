@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew
   {
 
     /// <summary>
-    /// Indicate unicode moon months names.
+    /// Indicate unicode lunar months names.
     /// </summary>
     static public readonly string[] Unicode =
     {
@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate phonetic moon months names.
+    /// Indicate phonetic lunar months names.
     /// </summary>
     static public readonly string[] Transliterations =
     {

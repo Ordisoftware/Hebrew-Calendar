@@ -46,6 +46,7 @@
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.linkLabel2 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionViewStats = new System.Windows.Forms.Button();
       this.ActionPrivacyNotice = new System.Windows.Forms.Button();
       this.label6 = new System.Windows.Forms.Label();
       this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -75,6 +76,7 @@
       this.label18 = new System.Windows.Forms.Label();
       this.linkLabel19 = new System.Windows.Forms.LinkLabel();
       this.label19 = new System.Windows.Forms.Label();
+      this.ActionCheckUpdate = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -198,10 +200,21 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionCheckUpdate);
+      this.PanelBottom.Controls.Add(this.ActionViewStats);
       this.PanelBottom.Controls.Add(this.ActionPrivacyNotice);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionViewStats
+      // 
+      this.ActionViewStats.AllowDrop = true;
+      this.ActionViewStats.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionViewStats, "ActionViewStats");
+      this.ActionViewStats.Name = "ActionViewStats";
+      this.ActionViewStats.UseVisualStyleBackColor = true;
+      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionPrivacyNotice
       // 
@@ -351,7 +364,6 @@
       // 
       resources.ApplyResources(this.label15, "label15");
       this.label15.Name = "label15";
-      this.label15.Click += new System.EventHandler(this.label15_Click);
       // 
       // linkLabel15
       // 
@@ -361,7 +373,6 @@
       this.linkLabel15.LinkColor = System.Drawing.Color.Navy;
       this.linkLabel15.Name = "linkLabel15";
       this.linkLabel15.TabStop = true;
-      this.linkLabel15.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel15_LinkClicked);
       // 
       // linkLabel16
       // 
@@ -422,6 +433,15 @@
       // 
       resources.ApplyResources(this.label19, "label19");
       this.label19.Name = "label19";
+      // 
+      // ActionCheckUpdate
+      // 
+      this.ActionCheckUpdate.AllowDrop = true;
+      this.ActionCheckUpdate.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionCheckUpdate, "ActionCheckUpdate");
+      this.ActionCheckUpdate.Name = "ActionCheckUpdate";
+      this.ActionCheckUpdate.UseVisualStyleBackColor = true;
+      this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
       // AboutBox
       // 
@@ -534,5 +554,7 @@
     private System.Windows.Forms.Label label18;
     private System.Windows.Forms.LinkLabel linkLabel19;
     private System.Windows.Forms.Label label19;
+    internal System.Windows.Forms.Button ActionViewStats;
+    internal System.Windows.Forms.Button ActionCheckUpdate;
   }
 }

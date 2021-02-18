@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public void Run()
     {
-      Instance.MoonMonthsForm_Load(null, null);
+      Instance.LunarMonthsForm_Load(null, null);
       MainForm.Instance.Restore();
       Instance.Show();
       Instance.BringToFront();
@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       CreateControls();
       ActiveControl = ActionClose;
-      ActionEditFiles.Visible = Program.MoonMonthsMeanings[Languages.Current].Configurable;
+      ActionEditFiles.Visible = Program.LunarMonthsMeanings[Languages.Current].Configurable;
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -65,12 +65,12 @@ namespace Ordisoftware.Hebrew.Calendar
       CreateControls();
     }
 
-    private void MoonMonthsForm_Load(object sender, EventArgs e)
+    private void LunarMonthsForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
-    private void MoonMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void LunarMonthsForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       e.Cancel = true;
       Hide();
@@ -83,14 +83,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSwapColors_Click(object sender, EventArgs e)
     {
-      Program.Settings.MoonMonthsFormUseColors = Program.Settings.MoonMonthsFormUseColors.Next();
+      Program.Settings.LunarMonthsFormUseColors = Program.Settings.LunarMonthsFormUseColors.Next();
       Program.Settings.Save();
       CreateControls();
     }
 
     private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(AppTranslations.NoticeMoonMonthsTitle, AppTranslations.NoticeMoonMonths).ShowDialog();
+      new MessageBoxEx(AppTranslations.NoticeLunarMonthsTitle, AppTranslations.NoticeLunarMonths).ShowDialog();
     }
 
     private void ActionEditFiles_Click(object sender, EventArgs e)
@@ -98,8 +98,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var list = new List<DataFile>();
       foreach ( var lang in Languages.Managed )
       {
-        list.Add(Program.MoonMonthsMeanings[lang]);
-        list.Add(Program.MoonMonthsLettriqs[lang]);
+        list.Add(Program.LunarMonthsMeanings[lang]);
+        list.Add(Program.LunarMonthsLettriqs[lang]);
       }
       if ( DataFileEditorForm.Run("Moon", list) ) CreateControls();
     }
@@ -146,8 +146,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
       string name = HebrewMonths.Transliterations[index];
-      string meaning = Program.MoonMonthsMeanings[Languages.Current][index];
-      string lettriq = Program.MoonMonthsLettriqs[Languages.Current][index];
+      string meaning = Program.LunarMonthsMeanings[Languages.Current][index];
+      string lettriq = Program.LunarMonthsLettriqs[Languages.Current][index];
       Clipboard.SetText(process(index) + " (" + name + ") : " +  meaning + " (" + lettriq + ")");
     }
 

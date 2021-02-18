@@ -161,6 +161,8 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | F6 | Search a moon month window |
 | F7 | Search a gregorian month window |
 | F9 (or Ctrl + N)| Navigation window |
+| F10 | Lunar months board |
+| F11 | Parashot board |
 | Ctrl + Tab | Next view |
 | Shift + Ctrl + Tab | Previous view |
 | Ctrl + T (or Numpad0)| Go to today |
@@ -192,13 +194,13 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 | Left | Previous month |
 | Right | Next month |
 | F8 | Preferences |
-| F11 | Help |
 | F12 | About |
 | Alt + F4 (or Escape) | Close window |
 | Ctrl + Alt + F4 | Exit application |
 
 ## Future improvements
 
+- Add Parashah lettriqs.
 - Add print lunar months data.
 - Add dark theme for month view.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
@@ -214,14 +216,23 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
+#### In progress - Version 7.2
+
+- Add Lunar Months board and menu entry in Tools.
+
+#### In progress - Version 7.1
+
+- Add generate weekly parashah items in the database.
+- Add parashah lecture to the days of Shabat according to the option.
+
 #### In progress - Version 7.0
 
-- Add Lunar Months description window and menu entry in Tools.
-- Add List of Parashot window with verses references.
-- Add Weekly Torah Portion notice.
-- Add option to add Parashah for Shabat days in visual month.
-- Add check update from about box.
+- Add Parashah notice.
+- Add Parashot board with literal translations, verses references, and study tools.
+- Add option to indicate the Parashah in the days of Shabat for the visual month (does nothing fro now).
 - Add show usage statistics from about box.
+- Add check update from about box.
+- Some file and code refactoring.
 
 #### 2021.02.17 - Version 6.8
 
@@ -313,7 +324,7 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 - Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
-- Fix moon months menu item not available yet in the main form is available in the tray icon menu.
+- Fix lunar months menu item not available yet in the main form is available in the tray icon menu.
 - Few improvements.
 - Few fixes.
 - Code refactoring.

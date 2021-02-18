@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       public DateTime Date { get; set; }
       public override string ToString()
       {
-        return Date == DateTime.MinValue ? SysTranslations.EmptySLot.GetLang() : Date.ToLongDateString();
+        return Date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : Date.ToLongDateString();
       }
     }
 

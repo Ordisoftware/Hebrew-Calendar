@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
+    public bool OldShowParashah { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 
     /// <summary>
@@ -193,6 +194,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
     {
       MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+      AboutBox.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
       StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
       if ( !EditUsageStatisticsEnabled.Checked )
         StatisticsForm.Instance.Close();
@@ -594,6 +596,11 @@ namespace Ordisoftware.Hebrew.Calendar
       DoActionSelectPath(OpenExeFileDialog, EditHebrewLettersPath);
     }
 
+    private void ActionSelectHebrewWordsPath_Click(object sender, EventArgs e)
+    {
+      DoActionSelectPath(OpenExeFileDialog, EditHebrewWordsPath);
+    }
+
     private void ActionResetExportFolder_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
@@ -616,6 +623,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
         EditHebrewLettersPath.Text = (string)Settings.Properties[nameof(Settings.HebrewLettersExe)].DefaultValue;
+    }
+
+    private void ActionResetHebrewWordsPath_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+        EditHebrewWordsPath.Text = (string)Settings.Properties[nameof(Settings.HebrewWordsExe)].DefaultValue;
     }
 
     private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
