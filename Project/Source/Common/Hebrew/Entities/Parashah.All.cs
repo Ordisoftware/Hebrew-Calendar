@@ -27,10 +27,10 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
 
     static public string ParashotTranslationFilePath
-      => Path.Combine(ParashotFolderPath, "ParashotTranslation{0}.txt");
+      => Path.Combine(ParashotFolderPath, "ParashotTranslations{0}.txt");
 
     static public string ParashotLettriqFilePath
-      => Path.Combine(ParashotFolderPath, "ParashotLettriq{0}.txt");
+      => Path.Combine(ParashotFolderPath, "ParashotLettriqs{0}.txt");
 
     static Parashah()
     {
