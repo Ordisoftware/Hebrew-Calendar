@@ -29,6 +29,8 @@ A tool for Windows written in C# that allows to generate a calendar based on sol
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
 - Window showing a board of new moons by years.
+- Window showing a board of lunar months description.
+- Window showing a board of the parashot.
 - Balloon tip from the Tray Icon to navigate between days with a summary.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
