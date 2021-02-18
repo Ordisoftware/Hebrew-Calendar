@@ -230,7 +230,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### In progress - Version 7.2
 
-- Add Lunar Months board with meanings, lettriqs, and study tools..
+- Add Lunar Months board with meanings, lettriqs, and study tools.
 
 #### In progress - Version 7.1
 
