@@ -13,6 +13,8 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.IO;
+using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -21,6 +23,38 @@ namespace Ordisoftware.Hebrew
   public partial class Parashah
   {
 
+    static public string ParashotFolderPath
+      => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
+
+    static public string ParashotTranslationFilePath
+      => Path.Combine(ParashotFolderPath, "ParashotTranslation{0}.txt");
+
+    static public string ParashotLettriqFilePath
+      => Path.Combine(ParashotFolderPath, "ParashotLettriq{0}.txt");
+
+    static Parashah()
+    {
+      LoadTranslations();
+    }
+
+    static public void LoadTranslations()
+    {
+      var query = from book in All
+                  from parashah in book.Value
+                  select parashah;
+      var linesTranslation = new NullSafeOfStringDictionary<string>();
+      var linesLettriq = new NullSafeOfStringDictionary<string>();
+      linesTranslation.LoadKeyValuePairs(string.Format(ParashotTranslationFilePath, Languages.CurrentCode.ToUpper()), "=");
+      linesLettriq.LoadKeyValuePairs(string.Format(ParashotLettriqFilePath, Languages.CurrentCode.ToUpper()), "=");
+      int index = 0;
+      foreach ( Parashah item in query )
+      {
+        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index);
+        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index);
+        index++;
+      }
+    }
+
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> All
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
       {
@@ -28,7 +62,7 @@ namespace Ordisoftware.Hebrew
         {
           new Parashah(TorahBooks.Bereshit, 01, "Bereshit", "בראשית", "1.1", "6.8"),
           new Parashah(TorahBooks.Bereshit, 02, "Noa'h", "נח", "6.9", "11.32"),
-          new Parashah(TorahBooks.Bereshit, 03, "Lekh Lekha", "לך לך", "12.1", "17.27"),
+          new Parashah(TorahBooks.Bereshit, 03, "Lek Leka", "לך לך", "12.1", "17.27"),
           new Parashah(TorahBooks.Bereshit, 04, "Vayera", "וירא", "18.1", "22.24"),
           new Parashah(TorahBooks.Bereshit, 05, "Haye Sarah", "חיי שרה", "23.1", "25.18"),
           new Parashah(TorahBooks.Bereshit, 06, "Toledot", "תולדות", "25.19", "28.9"),
@@ -70,8 +104,8 @@ namespace Ordisoftware.Hebrew
         {
           new Parashah(TorahBooks.Bamidbar, 01, "Bamidbar", "במדבר", "1.1", "4.20"),
           new Parashah(TorahBooks.Bamidbar, 02, "Nasso", "נשא", "4.21", "7.89"),
-          new Parashah(TorahBooks.Bamidbar, 03, "Beha'alot'kha", "בהעלותך", "8.1", "12.16"),
-          new Parashah(TorahBooks.Bamidbar, 04, "Shela'h lekha", "שלח לך", "13.1", "15.41"),
+          new Parashah(TorahBooks.Bamidbar, 03, "Beha'alotka", "בהעלותך", "8.1", "12.16"),
+          new Parashah(TorahBooks.Bamidbar, 04, "Shela'h leka", "שלח לך", "13.1", "15.41"),
           new Parashah(TorahBooks.Bamidbar, 05, "Kora'h", "קרח", "16.1", "18.32"),
           new Parashah(TorahBooks.Bamidbar, 06, "'Houkat", "חקת", "19.1", "22.1", true),
           new Parashah(TorahBooks.Bamidbar, 07, "Balaq", "בלק", "22.2", "25.9"),
@@ -91,7 +125,7 @@ namespace Ordisoftware.Hebrew
           new Parashah(TorahBooks.Devarim, 08, "Nitsavim", "ניצבים", "29.9", "30.20", true),
           new Parashah(TorahBooks.Devarim, 09, "Vayelekh", "וילך", "31.1", "31.30"),
           new Parashah(TorahBooks.Devarim, 10, "Haazinou", "האזינו", "32.1", "32.52"),
-          new Parashah(TorahBooks.Devarim, 11, "Vezot HaBerakha", "וזאת הברכה", "33.1", "34.12")
+          new Parashah(TorahBooks.Devarim, 11, "Vezot HaBerakah", "וזאת הברכה", "33.1", "34.12")
         }
       };
 

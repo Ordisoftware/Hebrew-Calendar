@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>561, 2</value>
+    <value>886, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>10, 598</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 28</value>
+    <value>964, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -181,7 +181,7 @@
     <value>Book</value>
   </data>
   <data name="ColumnBook.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+    <value>60</value>
   </data>
   <data name="ColumnNumber.HeaderText" xml:space="preserve">
     <value>Number</value>
@@ -192,17 +192,23 @@
   <data name="ColumnName.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <metadata name="ColumnTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnTranslation.HeaderText" xml:space="preserve">
+    <value>Translation</value>
+  </data>
   <data name="ColumnBegin.HeaderText" xml:space="preserve">
     <value>Begin</value>
   </data>
   <data name="ColumnBegin.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+    <value>50</value>
   </data>
   <data name="ColumnEnd.HeaderText" xml:space="preserve">
     <value>End</value>
   </data>
   <data name="ColumnEnd.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+    <value>50</value>
   </data>
   <metadata name="ColumnLinked.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -210,11 +216,14 @@
   <data name="ColumnLinked.HeaderText" xml:space="preserve">
     <value>Linked to next</value>
   </data>
+  <data name="ColumnLinked.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
   <metadata name="ColumnUnicode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ColumnUnicode.HeaderText" xml:space="preserve">
-    <value>Hebrew</value>
+    <value>Parashah</value>
   </data>
   <data name="ColumnUnicode.Width" type="System.Int32, mscorlib">
     <value>140</value>
@@ -248,15 +257,18 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAe5JREFUOE+dk+9O2mAUxnsvXsJ2I97APu7DvngNxjn/YeKWbIRNixY0ERxjsoW1
-        hVrQCq0xAxUtIrhkOIWNYcA/w20+e89rdZBpsvAkT9q05/nl9Jy3wtM53RiXNIxNx/965g631VCGZesC
-        3XQrygpEJq1slLC6tY907hMWkzkMiSpmIhbEcBoTswn+LJXbh7FZ4rUkyt4AlLSND6s7CKoZhBNbKJRr
-        qB2fImpsI1M4hGruQU7ZWLIKUFN5nuEAlwN4/EpG/eQcm8UK5hYiULQkLn5eQrF28dwtwisFcHx2yWsH
-        Xsr8SlnBJV0BnkypMFImfPNvkSke4XO1idbFL8TMXTySVoCj+wi9fgddi2OI1ZIo2wGon7ZYB1X4gxHI
-        8QQHaGYefT4d7vU6JPscz6xDjIkKz/wD6Oyg4QBs9AZsPIh+Qf9aAy+sA7huBUze3oGSzsPj9iDg9+Hh
-        8gn6sizYAXCGSIDrDrKsg4OvDTbE35DZdgrlb6jUmgiHQkhqMQxPOYD2LYz7NDblH8iVKtDXi/C/X0P1
-        exNvlrL8PHzMl9E4a/Ha666vzgE7lqR+T5Svh9bZ7sFJssLfDYsxeBdNeIIGz1BWGHUA3Wh0OkZD7P5f
-        oKww6A7r9E0jjDbi/U+zWspQVmDqYb7XnYWeP1SeKuTO1o5cAAAAAElFTkSuQmCC
+        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
+        pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
+        drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
+        4f+GsH8UhhEnJDK9mlTIDFjxapGPOrAeNMBj7QWy67SdBzIJ+I1PEJ7SIhXxIfenBOdXEffqUCHTowBE
+        3P3IRhxIBfRwW3YB6QRmKbDsHcTqshdb6RSdzwFbSUQ9WlQ0FAAjwq4+bO0XyBeB8LiGnsBQBISvn/d/
+        ghKw5OotA4uOD/8C2z/xf0A2CWHs0zbAYcGuooCTAga4rfQW8ukikElS4OkewE/a6SkBjRzmbQpko0Ug
+        SD9H8PHYWIvTjb/g51oQ3gOYH1aVgZDlHXLRMaSCHBLT/YhMdGHO1olEaBQBcxui0yy9xmlkM+K/oSO3
+        ipBVQQEjiKTJBMGuAJITyAgWrAdYLDiU8DCtCI28wXf+OXy8EvGggzazRQBpLDu6IWniQKRyE4Zf10HX
+        UQ+2/T6GOh5A1/kQTGcDGFUrmPctYOgc234P7ItaMG13MfSyDrZXtThDu6Rarl+TynmcbjajcicWnHxk
+        w4iiuRDxubxmLuwVO2KX0FF1/NKdmmMXb10v5MLNa0fO1Vw+K9fFqh7zECOt/8gePX/jiri2vU/siF0R
+        EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
@@ -414,7 +426,7 @@
     <value>0, 0</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 578</value>
+    <value>964, 578</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -441,7 +453,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>639, 588</value>
+    <value>964, 588</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -486,19 +498,19 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>659, 636</value>
+    <value>984, 636</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>675, 675</value>
+    <value>1000, 675</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Parashot</value>
@@ -611,11 +623,23 @@
   <data name="&gt;&gt;isLinkedToNextDataGridViewCheckBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
+  <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
+    <value>ColumnTranslation</value>
   </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ColumnTranslation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnLinked.Name" xml:space="preserve">
+    <value>ColumnLinked</value>
+  </data>
+  <data name="&gt;&gt;ColumnLinked.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnUnicode.Name" xml:space="preserve">
+    <value>ColumnUnicode</value>
+  </data>
+  <data name="&gt;&gt;ColumnUnicode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
     <value>ColumnBook</value>
@@ -647,17 +671,11 @@
   <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ColumnLinked.Name" xml:space="preserve">
-    <value>ColumnLinked</value>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
   </data>
-  <data name="&gt;&gt;ColumnLinked.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnUnicode.Name" xml:space="preserve">
-    <value>ColumnUnicode</value>
-  </data>
-  <data name="&gt;&gt;ColumnUnicode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>

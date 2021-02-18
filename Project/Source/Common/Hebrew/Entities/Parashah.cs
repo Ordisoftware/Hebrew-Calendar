@@ -26,13 +26,17 @@ namespace Ordisoftware.Hebrew
     public string VerseBegin { get; }
     public string VerseEnd { get; }
     public bool IsLinkedToNext { get; }
+    public string Translation { get; set; }
+    public string Lettriq { get; set; }
     public Parashah(TorahBooks book,
                     int number,
                     string name,
                     string unicode,
                     string verseBegin,
                     string verseEnd,
-                    bool isLinkedToNext = false)
+                    bool isLinkedToNext = false,
+                    string translation = "",
+                    string lettriq = "" )
     {
       Book = book;
       Number = number;
@@ -41,6 +45,8 @@ namespace Ordisoftware.Hebrew
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
       IsLinkedToNext = isLinkedToNext;
+      Translation = translation;
+      Lettriq = lettriq;
     }
   }
 

@@ -23,17 +23,22 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class ParashotForm : Form
   {
 
+    static public ParashotForm Instance { get; private set; }
+
     static public void Run(Parashah parashah = null)
     {
-      var form = new ParashotForm();
-      if ( parashah != null )
-        foreach ( DataGridViewRow row in form.DataGridView.Rows )
-          if ( (Parashah)row.DataBoundItem == parashah )
-          {
-            form.DataGridView.CurrentCell = row.Cells[0];
-            break;
-          }
-      form.ShowDialog();
+      if ( Instance == null )
+        Instance = new ParashotForm();
+      else
+      if ( Instance.Visible )
+      {
+        Instance.Select(parashah);
+        Instance.Popup();
+        return;
+      }
+      Instance.Select(parashah);
+      Instance.Show();
+      Instance.BringToFront();
     }
 
     private ParashotForm()
@@ -48,6 +53,27 @@ namespace Ordisoftware.Hebrew.Calendar
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
+    }
+
+    private void ParashotForm_Load(object sender, EventArgs e)
+    {
+      this.CenterToMainFormElseScreen();
+    }
+
+    private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Instance = null;
+    }
+
+    private void Select(Parashah parashah)
+    {
+      if ( parashah == null ) return;
+      foreach ( DataGridViewRow row in DataGridView.Rows )
+        if ( (Parashah)row.DataBoundItem == parashah )
+        {
+          DataGridView.CurrentCell = row.Cells[0];
+          break;
+        }
     }
 
     private void InitializeMenu()
@@ -80,6 +106,9 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( e.ColumnIndex == ColumnLinked.Index )
         e.Value = (bool)e.Value ? "•" : "";
+      else
+      if ( e.ColumnIndex == ColumnTranslation.Index )
+        ;// e.Value = e.Value + Globals.NL + ( (Parashah)DataGridView.Rows[e.RowIndex].DataBoundItem ).Lettriq;
     }
 
     private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)

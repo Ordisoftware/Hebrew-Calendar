@@ -1959,17 +1959,19 @@
   </data>
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAf5JREFUOE+dU01oE1EYHAV77M0eelAbpEHBS7wIinos1IPVkycviij+IBhKmmpB
-        QVoERUul2KKXCjWKpaJg1cYmu9nSgw0kpZdI8L9sjS0RK4ao42z3HaIGQx2Yhd033+z3zXsPlXC60DLZ
-        BZrXlcGOIpbpCzDV+R8GdgTn01caSdpMtq/QIBXFeuccyO9xcmEHszc20/tmlmsjEUFsPnWUfL2bzIL5
-        2E6Oh3HALNeGpZa50MOZt7PMFsmXH1za7Sia5drwZi6/Osa5MrmkFLY1baI71spkGFQ29MYz0uqwJPpq
-        NfFHuaByGazbqOcz8QVLc4O0OlA20uqwouCnO+I98PNDsJQAvznqKg3OXAMv7sdJI62O5xG4726ChWGZ
-        jIDFx+DShIymwNzdFibCyGmGVUb+N24dRne6G5wfAj+qk8VR8IlO43S/wqVDN3mQs4NBOjpgmf6AtjlI
-        u0PZVJzYhmQnSvnroCuTQswfZeQM2LNvDa8e38X4cERmU+KkOMFM3wZeaMMJUw+0hdDq3YFcrzq5bfJ4
-        pHDjGsVSHhrnZy5I5ps5fbmeD07hqcrq/WofdXtD2ON14o3zXpks3vdNvoyLyuSNMkqdBYeOYED6gF/2
-        O+rE0MAhXPKCtTWzt0PaxmWOnsZYYC22S9O4rP4HGsQt4tY/6P11tVgB4BeGfDqpSKrE0AAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVDhPjZNLTxNRHMVnq+7cGo0uTEEDJPgNNDEmro2J
+        msjO6AKIqFQsfgQFRaFBowNFJcqr2k5f03dLQazFUqDQFspAH5BWqEVamfZ4bx+CBhNOcpLJ/57zy517
+        c5l/5XOOYCu5FA24dVdKo/1L0999eMo+BGCLGIjMOZ36EXbM/LEPJmVvxqhkbxmHXp8pxYuqkOqGPRMW
+        hN0qzDoH8M02COQ2CwD8jGOGf4L4DIek4MHq8jwW/F8R8Y9C7xhDhVQ7zEikeqx6VcjHXEgH9Zi0DgBi
+        mrTzQDYBv+ERIlMqpKI+5H6VwPl1rHm1kEh1KACiHiXEqAupgA4eyy5AJoFZAljxfsL6ihfbmRSZ54Dt
+        JGKTKkiaCwADIhOD2N4vIF8ERL6MkB3oiwDh84f976AEWJ4Y2AEsud79DSgf4v8AYhLC+PsygEfYqSCA
+        MQLQw2Mlt5DPFAHZJAE83gPwnXTelgD3eSzaWIixIiBIfkfwmbC5sUaCP+Dn2xDZA7BoV+wAQpZXyMXG
+        kQrySEwrEXX3Yd4mRyI0ioC5A7FpjlzjNMQsPRui3DpCVpYADGAqW4wQnCyQdCMrWJAOcAi7ejCpbkfI
+        8RJzpqfwmXqwFnSRplgEIIMV1xtUtvBgqluNsL9ohLarCVznHWi67kIrvwe1vBlqRTvUvW1QkxnXeRvc
+        swaoO+qhed4IW3cDqkiXqZXpNqpbTTgtM+PUH1tw8oENDlZWMP3eWTMXsrRDu/Q51By/WH/92IWb1wo+
+        f+PqkbN1l2plmnjNQxOoq5r6uaPn6i7TtXKOdmiXAqgOER/c5QPE1cT05VGfKM12Z0iHYX4DaqG3W1u1
+        DfAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3051,9 +3053,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1004, 711</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1020, 750</value>
