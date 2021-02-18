@@ -199,7 +199,7 @@ namespace Ordisoftware.Hebrew.Calendar
             // TODO Parashah
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )
-                ;// add(Settings.CalendarColorParashah, "Parashah lecture");
+                add(Settings.CalendarColorParashah, ParashahReading.GetLang());
           }
           catch ( Exception ex )
           {
@@ -214,6 +214,14 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.Save();
       }
     }
+
+    // TODO remove when weekly parashah generated
+    static public readonly TranslationsDictionary ParashahReading
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Parashah reading",
+        [Language.FR] = "Lecture de la Parashah"
+      };
 
   }
 
