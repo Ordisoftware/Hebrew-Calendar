@@ -235,7 +235,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 #### In progress - Version 7.1
 
 - Add generate weekly parashah items in the database.
-- Add parashah lecture to the days of Shabat according to the option.
+- Add parashah reading to the days of Shabat according to the option.
 - Add current parashah in navigation form and in main form subtitle.
 
 #### In progress - Version 7.0
