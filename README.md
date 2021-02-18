@@ -212,7 +212,6 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 ## Future improvements
 
-- Add lettriqs of Parashot.
 - Add print lunar months data.
 - Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add user reminders for solar and lunar anniversary of birth.
@@ -228,9 +227,13 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 ## Changelog
 
+#### In progress - Version 7.3
+
+- Add lettriqs of Parashot.
+
 #### In progress - Version 7.2
 
-- Add Lunar Months board with meanings, lettriqs, and study tools..
+- Add Lunar Months board with meanings, lettriqs, and study tools.
 
 #### In progress - Version 7.1
 
