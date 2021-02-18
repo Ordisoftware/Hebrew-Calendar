@@ -214,14 +214,18 @@ If you prefer to use the traditional group shabat, select for example Saturday f
 
 ## Changelog
 
-#### In progress - Version 7.0
+#### In progress - Version 7.1
 
 - Add Lunar Months description window and menu entry in Tools.
-- Add List of Parashot window with verses references.
-- Add Weekly Torah Portion notice.
-- Add option to add Parashah for Shabat days in visual month.
-- Add check update from about box.
+- Add Parashah lettriqs.
+
+#### In progress - Version 7.0
+
+- Add Parashsh notice.
+- Add Parashot window with translations, verses references and study tools.
+- Add option to indicate the Parashah in the days of Shabat in the visual month.
 - Add show usage statistics from about box.
+- Add check update from about box.
 
 #### 2021.02.17 - Version 6.8
 
