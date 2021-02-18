@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   public partial class Parashah
   {
 
-    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Items
+    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> All
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
       {
         [TorahBooks.Bereshit] = new NullSafeList<Parashah>

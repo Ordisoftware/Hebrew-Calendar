@@ -23,17 +23,23 @@ namespace Ordisoftware.Hebrew
     public int Number { get; }
     public string Name { get; }
     public string Unicode { get; }
-    public string Begin { get; }
-    public string End { get; }
+    public string VerseBegin { get; }
+    public string VerseEnd { get; }
     public bool IsLinkedToNext { get; }
-    public Parashah(TorahBooks book, int number, string name, string unicode, string begin, string end, bool isLinkedToNext = false)
+    public Parashah(TorahBooks book,
+                    int number,
+                    string name,
+                    string unicode,
+                    string verseBegin,
+                    string verseEnd,
+                    bool isLinkedToNext = false)
     {
       Book = book;
       Number = number;
       Name = name;
       Unicode = unicode;
-      Begin = begin;
-      End = end;
+      VerseBegin = verseBegin;
+      VerseEnd = verseEnd;
       IsLinkedToNext = isLinkedToNext;
     }
   }
