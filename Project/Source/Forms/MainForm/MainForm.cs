@@ -75,10 +75,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsDevExecutable )
       {
         // TODO remove when ready
-        ActionShowParashahNotice.Visible = false;
-        ActionShowParashahNotice.Tag = int.MinValue;
-        ActionViewParashot.Visible = false;
-        ActionViewParashot.Tag = int.MinValue;
         ActionViewLunarMonths.Visible = false;
         ActionViewLunarMonths.Tag = int.MinValue;
       }
