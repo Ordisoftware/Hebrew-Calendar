@@ -31,13 +31,13 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -65,16 +65,16 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnUnicode = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnUnicode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -92,8 +92,8 @@
       // ActionSave
       // 
       this.ActionSave.AllowDrop = true;
-      this.ActionSave.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionSave, "ActionSave");
+      this.ActionSave.FlatAppearance.BorderSize = 0;
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.UseVisualStyleBackColor = true;
       this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
@@ -301,9 +301,44 @@
       this.isLinkedToNextDataGridViewCheckBoxColumn.Name = "isLinkedToNextDataGridViewCheckBoxColumn";
       this.isLinkedToNextDataGridViewCheckBoxColumn.ReadOnly = true;
       // 
-      // BindingSource
+      // ColumnTranslation
       // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
+      this.ColumnTranslation.DataPropertyName = "Translation";
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle3;
+      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
+      this.ColumnTranslation.Name = "ColumnTranslation";
+      this.ColumnTranslation.ReadOnly = true;
+      // 
+      // ColumnLettriq
+      // 
+      this.ColumnLettriq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnLettriq.DataPropertyName = "Lettriq";
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
+      resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
+      this.ColumnLettriq.Name = "ColumnLettriq";
+      this.ColumnLettriq.ReadOnly = true;
+      // 
+      // ColumnLinked
+      // 
+      this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
+      resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
+      this.ColumnLinked.Name = "ColumnLinked";
+      this.ColumnLinked.ReadOnly = true;
+      // 
+      // ColumnUnicode
+      // 
+      this.ColumnUnicode.DataPropertyName = "Unicode";
+      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle8;
+      resources.ApplyResources(this.ColumnUnicode, "ColumnUnicode");
+      this.ColumnUnicode.Name = "ColumnUnicode";
+      this.ColumnUnicode.ReadOnly = true;
       // 
       // ColumnBook
       // 
@@ -328,25 +363,6 @@
       this.ColumnName.Name = "ColumnName";
       this.ColumnName.ReadOnly = true;
       // 
-      // ColumnTranslation
-      // 
-      this.ColumnTranslation.DataPropertyName = "Translation";
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle3;
-      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
-      this.ColumnTranslation.Name = "ColumnTranslation";
-      this.ColumnTranslation.ReadOnly = true;
-      // 
-      // ColumnLettriq
-      // 
-      this.ColumnLettriq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.ColumnLettriq.DataPropertyName = "Lettriq";
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
-      resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
-      this.ColumnLettriq.Name = "ColumnLettriq";
-      this.ColumnLettriq.ReadOnly = true;
-      // 
       // ColumnBegin
       // 
       this.ColumnBegin.DataPropertyName = "VerseBegin";
@@ -365,25 +381,9 @@
       this.ColumnEnd.Name = "ColumnEnd";
       this.ColumnEnd.ReadOnly = true;
       // 
-      // ColumnLinked
+      // BindingSource
       // 
-      this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
-      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
-      resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
-      this.ColumnLinked.Name = "ColumnLinked";
-      this.ColumnLinked.ReadOnly = true;
-      // 
-      // ColumnUnicode
-      // 
-      this.ColumnUnicode.DataPropertyName = "Unicode";
-      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle8;
-      resources.ApplyResources(this.ColumnUnicode, "ColumnUnicode");
-      this.ColumnUnicode.Name = "ColumnUnicode";
-      this.ColumnUnicode.ReadOnly = true;
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
       // 
       // ParashotForm
       // 

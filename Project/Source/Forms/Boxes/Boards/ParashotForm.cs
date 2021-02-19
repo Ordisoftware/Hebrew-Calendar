@@ -109,6 +109,8 @@ namespace Ordisoftware.Hebrew.Calendar
       string filePathLettriqs = string.Format(Parashah.ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper());
       listTranslations.SaveKeyValuePairs(filePathTranslations, " = ");
       listLettriqs.SaveKeyValuePairs(filePathLettriqs, " = ");
+      ActionSave.Enabled = false;
+      HasChanges = false;
     }
 
     private void Select(Parashah parashah)
@@ -144,6 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !Created ) return;
       HasChanges = true;
+      ActionSave.Enabled = HasChanges;
     }
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
