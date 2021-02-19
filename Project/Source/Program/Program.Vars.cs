@@ -79,6 +79,23 @@ namespace Ordisoftware.Hebrew.Calendar
     };
 
     /// <summary>
+    /// Indicate the grammar guide form.
+    /// </summary>
+    static public HTMLBrowserForm GrammarGuideForm
+    {
+      get
+      {
+        if ( _GrammarGuideForm == null )
+          _GrammarGuideForm = new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
+                                                  OnlineProviders.HebrewGrammarGuideFilePath,
+                                                  nameof(Settings.GrammarGuideFormLocation),
+                                                  nameof(Settings.GrammarGuideFormSize));
+        return _GrammarGuideForm;
+      }
+    }
+    static public HTMLBrowserForm _GrammarGuideForm;
+
+    /// <summary>
     /// Indicate file path of date bookmarks.
     /// </summary>
     static public string DateBookmarksFilePath
@@ -87,7 +104,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate date bookmarks.
     /// </summary>
-    static public readonly DateBookmarks DateBookmarks = new DateBookmarks(DateBookmarksFilePath);
+    static public readonly DateBookmarks DateBookmarks
+      = new DateBookmarks(DateBookmarksFilePath);
 
     /// <summary>
     /// Indicate file path of reminder box image.

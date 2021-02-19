@@ -565,5 +565,20 @@
     <Setting Name="HebrewWordsExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.HebrewWords.exe</Value>
     </Setting>
+    <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">542, 666</Value>
+    </Setting>
+    <Setting Name="ParashotFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="ParashotFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 676</Value>
+    </Setting>
+    <Setting Name="ParashotFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

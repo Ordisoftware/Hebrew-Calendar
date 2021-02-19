@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
-      hebrew = HebrewAlphabet.SetFinal(hebrew, false);
+      hebrew = HebrewAlphabet.UnFinalAll(hebrew);
       if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
         hebrew = hebrew.Substring(2, hebrew.Length - 2);
       foreach ( string item in hebrew.Split(' ') )

@@ -120,17 +120,11 @@
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="ColumnUnicode.HeaderText" xml:space="preserve">
-    <value>Parashah</value>
-  </data>
   <data name="ColumnName.HeaderText" xml:space="preserve">
     <value>Nom</value>
   </data>
   <data name="ColumnBook.HeaderText" xml:space="preserve">
     <value>Livre</value>
-  </data>
-  <data name="ColumnNumber.HeaderText" xml:space="preserve">
-    <value>Numéro</value>
   </data>
   <data name="ColumnBegin.HeaderText" xml:space="preserve">
     <value>Début</value>
@@ -303,5 +297,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
+  </data>
+  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
+    <value>Guide de grammaire</value>
   </data>
 </root>

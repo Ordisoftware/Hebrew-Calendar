@@ -41,6 +41,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
+    private bool HasChanges;
+
     private ParashotForm()
     {
       InitializeComponent();
@@ -51,6 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   select parashah;
       DataGridView.DataSource = query.ToList();
       ColumnTranslation.ReadOnly = !Globals.IsDevExecutable;
+      ColumnLettriq.ReadOnly = !Globals.IsDevExecutable;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -58,22 +61,56 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
-      this.CenterToMainFormElseScreen();
+      Location = Program.Settings.ParashotFormLocation;
+      ClientSize = Program.Settings.ParashotFormClientSize;
+      this.CheckLocationOrCenterToMainFormElseScreen();
+      WindowState = Program.Settings.ParashotFormWindowState;
+    }
+
+    private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( !Globals.IsDevExecutable ) return;
+      if ( !HasChanges ) return;
+      if ( DisplayManager.QueryYesNo("Save changes?") )
+        ActionSave.PerformClick();
+      else
+        Parashah.LoadTranslations();
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;
+      if ( WindowState == FormWindowState.Minimized )
+        WindowState = FormWindowState.Normal;
+      Program.Settings.ParashotFormWindowState = WindowState;
+      if ( WindowState == FormWindowState.Maximized )
+        WindowState = FormWindowState.Normal;
+      Program.Settings.ParashotFormLocation = Location;
+      Program.Settings.ParashotFormClientSize = ClientSize;
+      Program.Settings.Save();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
-      if ( Globals.IsDevExecutable )
-        if ( DisplayManager.QueryYesNo("Save changes?") )
-          ActionSave.PerformClick();
-        else
-          Parashah.LoadTranslations();
       Close();
+    }
+
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      var listTranslations = new NullSafeOfStringDictionary<string>();
+      var listLettriqs = new NullSafeOfStringDictionary<string>();
+      foreach ( DataGridViewRow row in DataGridView.Rows )
+      {
+        var item = (Parashah)row.DataBoundItem;
+        listTranslations.Add(item.Name, item.Translation);
+        listLettriqs.Add(item.Name, item.Lettriq);
+      }
+      string filePathTranslations = string.Format(Parashah.ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper());
+      string filePathLettriqs = string.Format(Parashah.ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper());
+      listTranslations.SaveKeyValuePairs(filePathTranslations, " = ");
+      listLettriqs.SaveKeyValuePairs(filePathLettriqs, " = ");
+      ActionSave.Enabled = false;
+      HasChanges = false;
     }
 
     private void Select(Parashah parashah)
@@ -93,7 +130,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var menuitem = (ToolStripMenuItem)sender;
         var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-        SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", item.Unicode));
+        foreach ( string word in item.Unicode.Split(' ') )
+          SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
@@ -104,23 +142,24 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
+    private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+    {
+      if ( !Created ) return;
+      HasChanges = true;
+      ActionSave.Enabled = HasChanges;
+    }
+
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      if ( e.ColumnIndex == ColumnBook.Index )
-      {
-        if ( e.RowIndex > 0 && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
-          e.Value = "";
-      }
-      else
       if ( e.ColumnIndex == ColumnUnicode.Index )
         e.Value = HebrewAlphabet.ConvertToHebrewFont((string)e.Value);
       else
       if ( e.ColumnIndex == ColumnLinked.Index )
         e.Value = (bool)e.Value ? "•" : "";
       else
-      if ( e.ColumnIndex == ColumnTranslation.Index )
-        // TODO Add parashah lettriq
-        ;// e.Value = e.Value + Globals.NL + ( (Parashah)DataGridView.Rows[e.RowIndex].DataBoundItem ).Lettriq;
+      if ( e.ColumnIndex == ColumnBook.Index && e.RowIndex > 0 
+        && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
+        e.Value = "";
     }
 
     private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -141,6 +180,17 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( DataGridView[e.ColumnIndex, e.RowIndex].Value == DBNull.Value )
         DataGridView.ClearSelection();
+    }
+
+    private void ActionOpenShorashon_Click(object sender, EventArgs e)
+    {
+      string url = (string)( (ToolStripItem)sender ).Tag;
+      SystemManager.OpenWebLink(url);
+    }
+
+    private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+    {
+      Program.GrammarGuideForm.Popup();
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -177,18 +227,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
       Clipboard.SetText(item.ToString());
-    }
-
-    private void ActionSave_Click(object sender, EventArgs e)
-    {
-      var list = new NullSafeOfStringDictionary<string>();
-      foreach ( DataGridViewRow row in DataGridView.Rows )
-      {
-        var item = (Parashah)row.DataBoundItem;
-        list.Add(item.Name, item.Translation);
-      }
-      string filePath = string.Format(Parashah.ParashotTranslationFilePath, Languages.CurrentCode.ToUpper());
-      list.SaveKeyValuePairs(filePath, " = ");
     }
 
   }
