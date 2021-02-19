@@ -26,10 +26,10 @@ namespace Ordisoftware.Hebrew
     static public string ParashotFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
 
-    static public string ParashotTranslationFilePath
+    static public string ParashotTranslationsFilePath
       => Path.Combine(ParashotFolderPath, "ParashotTranslations{0}.txt");
 
-    static public string ParashotLettriqFilePath
+    static public string ParashotLettriqsFilePath
       => Path.Combine(ParashotFolderPath, "ParashotLettriqs{0}.txt");
 
     static Parashah()
@@ -44,8 +44,8 @@ namespace Ordisoftware.Hebrew
                   select parashah;
       var linesTranslation = new NullSafeOfStringDictionary<string>();
       var linesLettriq = new NullSafeOfStringDictionary<string>();
-      linesTranslation.LoadKeyValuePairs(string.Format(ParashotTranslationFilePath, Languages.CurrentCode.ToUpper()), "=");
-      linesLettriq.LoadKeyValuePairs(string.Format(ParashotLettriqFilePath, Languages.CurrentCode.ToUpper()), "=");
+      linesTranslation.LoadKeyValuePairs(string.Format(ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper()), "=");
+      linesLettriq.LoadKeyValuePairs(string.Format(ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper()), "=");
       int index = 0;
       foreach ( Parashah item in query )
       {

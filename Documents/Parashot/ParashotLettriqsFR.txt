@@ -1,5 +1,5 @@
-Bereshit = 
-Noa'h = 
+Bereshit = Volonté du Mental dans l'Espace du Foyer de l'Énergie de la Matière
+Noa'h = Pouvoir de la Créature
 Lek Leka = 
 Vayera = 
 Haye Sarah = 
@@ -51,4 +51,4 @@ Ki Tavo =
 Nitsavim = 
 Vayelekh = 
 Haazinou = 
-Vezot HaBeraka = 
+Vezot HaBerakah = 
