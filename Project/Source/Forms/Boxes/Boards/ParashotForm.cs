@@ -142,6 +142,11 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
+    private void KeyUp(object sender, KeyEventArgs e)
+    {
+      if ( e.Control && e.KeyCode == Keys.S ) ActionSave.PerformClick();
+    }
+
     private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
     {
       if ( !Created ) return;
