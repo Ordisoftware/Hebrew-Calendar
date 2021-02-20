@@ -17,8 +17,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
 using System.IO;
+using System.Text;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 using FileHelpers;
 using FileHelpers.Options;
 using Newtonsoft.Json;
@@ -342,17 +344,42 @@ namespace Ordisoftware.Core
           var options = new CsvOptions("String[,]", ',', table.Rows.Count);
           options.IncludeHeaderNames = true;
           options.DateFormat = "yyyy-MM-dd HH:mm";
+          options.Encoding = Encoding.UTF8;
           CsvEngine.DataTableToCsv(table, filePath, options);
           break;
         case DataExportTarget.JSON:
           var dataset = new DataSet(table.TableName);
           dataset.Tables.Add(table);
           string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-          File.WriteAllText(filePath, lines);
+          File.WriteAllText(filePath, lines, Encoding.UTF8);
           break;
         default:
           throw new NotImplementedExceptionEx(selected);
       }
+    }
+
+    //https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
+    static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
+    {
+      try
+      {
+        var table = new DataTable(name);
+        foreach ( DataGridViewColumn column in datagridview.Columns )
+        {
+          if ( IgnoreHiddenColumns & !column.Visible ) continue;
+          table.Columns.Add(column.Name, column.ValueType);
+          table.Columns[column.Name].Caption = column.HeaderText;
+        }
+        foreach ( DataGridViewRow rowGrid in datagridview.Rows )
+        {
+          var rowTable = table.NewRow();
+          foreach ( DataColumn column in table.Columns )
+            rowTable[column.ColumnName] = rowGrid.Cells[column.ColumnName].Value;
+          table.Rows.Add(rowTable);
+        }
+        return table;
+      }
+      catch { return null; }
     }
 
   }
