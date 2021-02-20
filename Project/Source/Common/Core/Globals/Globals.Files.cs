@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 
@@ -169,29 +169,58 @@ namespace Ordisoftware.Core
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "system32", "sqlite3odbc.dll");
 
     /// <summary>
-    /// Indicate the Odbc DSN of the database.
-    /// </summary>
-    static public string DatabaseOdbcDSN
-      => ApplicationGitHubCode;
-
-    /// <summary>
     /// Indicate the extension of database files.
     /// </summary>
     static public string DatabaseFileExtension { get; set; }
       = ".sqlite";
 
     /// <summary>
-    /// Indicate the file name of the database.
+    /// Indicate the application ODBC DSN of the database.
+    /// </summary>
+    static public string DatabaseOdbcDSN
+      => ApplicationGitHubCode;
+
+    /// <summary>
+    /// Indicate the application database connection string.
+    /// </summary>
+    static public string ConnectionString
+      => "Dsn=" + DatabaseOdbcDSN;
+
+    /// <summary>
+    /// Indicate the file name of the application database.
     /// </summary>
     static public string DatabaseFileName
       => DatabaseOdbcDSN + DatabaseFileExtension;
 
     /// <summary>
-    /// Indicate the file path of the database.
+    /// Indicate the file path of the application database.
     /// </summary>
     static public string DatabaseFilePath
       => Path.Combine(DatabaseFolderPath, DatabaseFileName);
 
+    /// <summary>
+    /// Indicate the common ODBC DSN of the database.
+    /// </summary>
+    static public string CommonDatabaseOdbcDSN
+      => HebrewCommonDirectoryName.Replace(" ", "-");
+
+    /// <summary>
+    /// Indicate the common database connection string.
+    /// </summary>
+    static public string CommonConnectionString
+      => "Dsn=" + CommonDatabaseOdbcDSN;
+
+    /// <summary>
+    /// Indicate the file name of the common database.
+    /// </summary>
+    static public string CommonDatabaseFileName
+      => CommonDatabaseOdbcDSN + DatabaseFileExtension;
+
+    /// <summary>
+    /// Indicate the file path of the common database.
+    /// </summary>
+    static public string CommonDatabaseFilePath
+      => Path.Combine(UserDataCommonFolderPath, CommonDatabaseFileName);
 
   }
 
