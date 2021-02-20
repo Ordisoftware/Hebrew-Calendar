@@ -168,6 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( e.Control && e.KeyCode == Keys.S )
         ActionSave.PerformClick();
+      else
       if ( e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter )
         DataGridView.BeginEdit(false);
     }
