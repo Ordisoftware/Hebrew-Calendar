@@ -97,7 +97,7 @@ namespace Ordisoftware.Core
               list.Add(parts[0].Trim(), parts[1].Trim());
             else
             if ( parts.Length > 2 )
-              list.Add(parts[0].Trim(), parts.Skip(1).Select(v => v.Trim()).AsMultiSpace());
+              list.Add(parts[0].Trim(), string.Join(separator, parts.Skip(1)));
           }
         return true;
       }

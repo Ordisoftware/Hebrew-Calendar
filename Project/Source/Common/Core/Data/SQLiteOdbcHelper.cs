@@ -75,13 +75,13 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void CreateOrUpdateDSN()
     {
-      CreateOrUpdateDSN(Globals.DatabaseOdbcDSN, Globals.DatabaseFilePath, 0);
+      CreateOrUpdateDSN(Globals.DatabaseOdbcDSN, Globals.DatabaseFilePath);
     }
 
     /// <summary>
     /// Create or update the ODBC DSN.
     /// </summary>
-    static public void CreateOrUpdateDSN(string dsnName, string filePath, int timeout)
+    static public void CreateOrUpdateDSN(string dsnName, string filePath, int timeout = 0)
     {
       try
       {
@@ -348,10 +348,12 @@ namespace Ordisoftware.Core
           CsvEngine.DataTableToCsv(table, filePath, options);
           break;
         case DataExportTarget.JSON:
-          var dataset = new DataSet(table.TableName);
+          var dataset = new DataSet(Globals.AssemblyTitle);
           dataset.Tables.Add(table);
           string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
           File.WriteAllText(filePath, lines, Encoding.UTF8);
+          dataset.Tables.Clear();
+          dataset.Dispose();
           break;
         default:
           throw new NotImplementedExceptionEx(selected);

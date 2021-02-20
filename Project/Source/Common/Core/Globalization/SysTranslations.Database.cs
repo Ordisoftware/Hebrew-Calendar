@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -73,6 +73,18 @@ namespace Ordisoftware.Core
 
         [Language.FR] = "La base de données a été mise à jour." + Globals.NL2 +
                         "Voulez-vous vérifier les paramètres ?"
+      };
+
+    static public readonly TranslationsDictionary AskToResetData
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "The data will be restored to their default values. " + Globals.NL2 +
+                        "All changes will be lost." + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut." + Globals.NL2 +
+                        "Toutes les moidifications seront perdues." + Globals.NL2 +
+                        AskToContinue[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToOptimizeDatabase
