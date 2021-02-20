@@ -48,11 +48,12 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
       ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
-      ParashotTable.UseParashotTable();
+      ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.Instance;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
+      Timer_Tick(null, null);
     }
 
     private void ParashotForm_Load(object sender, EventArgs e)
@@ -67,14 +68,37 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ParashotForm_Shown(object sender, EventArgs e)
     {
-      DataGridView.ReadOnly = ParashotTable.IsParashotTableReadOnly(true);
-      if ( DataGridView.ReadOnly )
+    }
+
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+      DataGridView.ReadOnly = ParashotTable.IsReadOnly();
+      ActionExportAsDefaults.Enabled = !DataGridView.ReadOnly;
+      ActionExport.Enabled = !DataGridView.ReadOnly;
+      ActionReset.Enabled = !DataGridView.ReadOnly;
+      Timer.Enabled = DataGridView.ReadOnly;
+      LabelTableLocked.Visible = DataGridView.ReadOnly;
+      ActionViewLockers.Visible = DataGridView.ReadOnly;
+      ActionCheckLockers.Visible = DataGridView.ReadOnly;
+      if ( Created && !DataGridView.ReadOnly )
       {
-        ActionExportAsDefaults.Enabled = false;
-        ActionExport.Enabled = false;
-        ActionReset.Enabled = false;
-        // Use timer to check every 5s
+        ActionUndo.PerformClick();
+        ParashotTable.Release();
+        ParashotTable.Take();
+        BindingSource.DataSource = ParashotTable.Instance;
       }
+    }
+
+    private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      string list = string.Join(Globals.NL, ProcessLocksTable.GetLockers(ParashotTable.TableName)).Indent(4);
+      string msg = SysTranslations.DatabaseTableLocked.GetLang(ParashotTable.TableName, list, Timer.Interval / 1000);
+      DisplayManager.Show(msg);
+    }
+
+    private void ActionCheckLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Timer_Tick(null, null);
     }
 
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -95,7 +119,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ParashotFormClientSize = ClientSize;
       Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Program.Settings.Save();
-      ParashotTable.DisposeParashotTable();
+      ParashotTable.Release();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -143,7 +167,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionReset_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
-      ParashotTable.CreateParashotDataIfNotExists(true);
+      ParashotTable.CreateDataIfNotExists(true);
       BindingSource.DataSource = ParashotTable.Instance;
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
@@ -151,7 +175,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSave_Click(object sender, EventArgs e)
     {
-      ParashotTable.UpdateParashotTable();
+      ParashotTable.Update();
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
     }
@@ -266,6 +290,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
+      if ( DataGridView.ReadOnly ) return;
       if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
       var form = new EditMemoForm();
       form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;

@@ -117,21 +117,111 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionCheckLockers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionCheckLockers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 8</value>
+  </data>
+  <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="ActionCheckLockers.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="ActionCheckLockers.Text" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckLockers.Name" xml:space="preserve">
+    <value>ActionCheckLockers</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckLockers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckLockers.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckLockers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionViewLockers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionViewLockers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 8</value>
+  </data>
+  <data name="ActionViewLockers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="ActionViewLockers.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="ActionViewLockers.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLockers.Name" xml:space="preserve">
+    <value>ActionViewLockers</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLockers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLockers.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewLockers.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelTableLocked.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTableLocked.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTableLocked.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 8</value>
+  </data>
+  <data name="LabelTableLocked.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="LabelTableLocked.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="LabelTableLocked.Text" xml:space="preserve">
+    <value>Table is readonly</value>
+  </data>
+  <data name="&gt;&gt;LabelTableLocked.Name" xml:space="preserve">
+    <value>LabelTableLocked</value>
+  </data>
+  <data name="&gt;&gt;LabelTableLocked.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTableLocked.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;LabelTableLocked.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionExportAsDefaults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionExportAsDefaults.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionExportAsDefaults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>680, 2</value>
+    <value>683, 2</value>
   </data>
   <data name="ActionExportAsDefaults.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionExportAsDefaults.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
@@ -151,7 +241,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionExportAsDefaults.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -160,7 +250,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>805, 2</value>
+    <value>808, 2</value>
   </data>
   <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -181,7 +271,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -224,7 +314,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="ActionUndo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -266,7 +356,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionUndo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -313,7 +403,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSave.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -322,7 +412,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>886, 2</value>
+    <value>889, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -343,7 +433,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -368,6 +458,45 @@
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
+    <value>DataGridView</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
+  </data>
+  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 628</value>
+  </data>
+  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="DataGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>25</value>
@@ -442,8 +571,44 @@
     <value>50</value>
   </data>
   <metadata name="ContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>99, 17</value>
   </metadata>
+  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 270</value>
+  </data>
+  <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
+    <value>ContextMenu</value>
+  </data>
+  <data name="&gt;&gt;ContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 17</value>
+  </metadata>
+  <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 618</value>
+  </data>
+  <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
+    <value>DataGridView</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -693,69 +858,6 @@
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copy line (unicode chars)</value>
   </data>
-  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 270</value>
-  </data>
-  <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
-    <value>ContextMenu</value>
-  </data>
-  <data name="&gt;&gt;ContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>172, 17</value>
-  </metadata>
-  <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="DataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 618</value>
-  </data>
-  <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
-    <value>DataGridView</value>
-  </data>
-  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 10</value>
-  </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 628</value>
-  </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="bookDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Book</value>
   </data>
@@ -777,6 +879,9 @@
   <data name="isLinkedToNextDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>IsLinkedToNext</value>
   </data>
+  <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -785,6 +890,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 676</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
@@ -801,24 +909,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
-  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
-    <value>ColumnBook</value>
-  </data>
-  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
-    <value>ColumnNumber</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
-    <value>ColumnName</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
     <value>ColumnTranslation</value>
   </data>
@@ -829,18 +919,6 @@
     <value>ColumnLettriq</value>
   </data>
   <data name="&gt;&gt;ColumnLettriq.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
-    <value>ColumnBegin</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
-    <value>ColumnEnd</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnLinked.Name" xml:space="preserve">
@@ -951,12 +1029,6 @@
   <data name="&gt;&gt;ActionCopyLineUnicode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;bookDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>bookDataGridViewTextBoxColumn</value>
   </data>
@@ -998,6 +1070,48 @@
   </data>
   <data name="&gt;&gt;isLinkedToNextDataGridViewCheckBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Timer.Name" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="&gt;&gt;Timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
+    <value>ColumnBook</value>
+  </data>
+  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
+    <value>ColumnNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
+    <value>ColumnName</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
+    <value>ColumnBegin</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
+    <value>ColumnEnd</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>

@@ -29,10 +29,10 @@ namespace Ordisoftware.Hebrew
 
     static ProcessLocksTable()
     {
-      CreateProcessLocksSchemaIfNotExists();
+      CreateSchemaIfNotExists();
     }
 
-    static private void CreateProcessLocksSchemaIfNotExists()
+    static private void CreateSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -45,7 +45,7 @@ namespace Ordisoftware.Hebrew
       });
     }
 
-    static private void PurgeLocks()
+    static private void Purge()
     {
       string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
@@ -67,14 +67,15 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static private string ConvertLockName(string name = null)
+    static private string Convert(string name = null)
     {
+      Purge();
       return string.IsNullOrEmpty(name) ? Globals.ApplicationCode : name;
     }
 
-    static public bool IsAlreadyLockedByCurrentProcess(string name = null)
+    static public bool IsLockedByCurrentProcess(string name = null)
     {
-      name = ConvertLockName(name);
+      name = Convert(name);
       string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -86,9 +87,9 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public int GetLocks(string name)
+    static public int GetCount(string name)
     {
-      name = ConvertLockName(name);
+      name = Convert(name);
       string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -99,9 +100,9 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public List<string> GetOtherLockers(string name = null)
+    static public List<string> GetLockers(string name = null)
     {
-      name = ConvertLockName(name);
+      name = Convert(name);
       string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -115,7 +116,7 @@ namespace Ordisoftware.Hebrew
           int id = (int)reader["ProcessID"];
           if ( id == Process.GetCurrentProcess().Id ) continue;
           var process = Process.GetProcesses().FirstOrDefault(p => p.Id == id);
-          string processName = process?.ProcessName ?? SysTranslations.UnknownSlot.GetLang(); 
+          string processName = process?.ProcessName ?? "PID " + id; 
           if ( dictionary.ContainsKey(processName) )
             dictionary[processName]++;
           else
@@ -127,24 +128,21 @@ namespace Ordisoftware.Hebrew
 
     static public void Lock(string name = null)
     {
-      if ( IsAlreadyLockedByCurrentProcess(name) ) return;
-      name = ConvertLockName(name);
+      if ( IsLockedByCurrentProcess(name) ) return;
       string sql = $"INSERT INTO {TableName} VALUES (?, (?))";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
-      {
-        connection.Open();
-        command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
-        command.Parameters.Add("@Name", OdbcType.Text).Value = name;
-        command.ExecuteNonQuery();
-      }
+      UpdateLock(name, sql);
     }
 
     static public void Unlock(string name = null)
     {
-      if ( !IsAlreadyLockedByCurrentProcess(name) ) return;
-      name = ConvertLockName(name);
+      if ( !IsLockedByCurrentProcess(name) ) return;
       string sql = $"DELETE FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
+      UpdateLock(name, sql);
+    }
+
+    static private void UpdateLock(string name, string sql)
+    {
+      name = Convert(name);
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {

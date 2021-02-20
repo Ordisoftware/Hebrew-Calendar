@@ -65,6 +65,22 @@ namespace Ordisoftware.Core
         [Language.FR] = "La base de données ne peut pas être modifiée lorsque plusieurs instances de l'application sont en cours d'éxécution."
       };
 
+    static public readonly TranslationsDictionary DatabaseTableLocked
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "The table {0} is used by other processes and therefore cannot be modified or exported: " + Globals.NL2 +
+                        "{1}" + Globals.NL2 +
+                        "You must close the edit window for this table in these applications." + Globals.NL2 +
+                        "This state is checked every {2} seconds." + Globals.NL2 +
+                        "You can also verify this manually.",
+
+        [Language.FR] = "La table {0} est utilisée par d'autres processus et ne peut donc pas être modifiée ou exportée: " + Globals.NL2 +
+                        "{1}" + Globals.NL2 +
+                        "Vous devez fermer la fenêtre d'édition de cette table dans ces applications." + Globals.NL2 +
+                        "Cet état est vérifié toutes les {2} secondes." + Globals.NL2 +
+                        "Vous pouvez également vérifier cela manuellement."
+      };
+
     static public readonly TranslationsDictionary AskToCheckParametersAfterDatabaseUpgraded
       = new TranslationsDictionary()
       {
