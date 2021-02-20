@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -49,7 +49,10 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         var dataset = new DataSet(Globals.AssemblyTitle);
         dataset.Tables.Add(data.ToDataTable(DataSet.LunisolarDays.TableName));
-        return JsonConvert.SerializeObject(dataset, Formatting.Indented);
+        string result = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+        dataset.Tables.Clear();
+        dataset.Dispose();
+        return result;
       }
       finally
       {

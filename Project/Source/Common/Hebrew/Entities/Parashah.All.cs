@@ -23,15 +23,6 @@ namespace Ordisoftware.Hebrew
   public partial class Parashah
   {
 
-    static public string ParashotFolderPath
-      => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
-
-    static public string ParashotTranslationsFilePath
-      => Path.Combine(ParashotFolderPath, "ParashotTranslations{0}.txt");
-
-    static public string ParashotLettriqsFilePath
-      => Path.Combine(ParashotFolderPath, "ParashotLettriqs{0}.txt");
-
     static Parashah()
     {
       LoadTranslations();
@@ -39,13 +30,13 @@ namespace Ordisoftware.Hebrew
 
     static public void LoadTranslations()
     {
-      var query = from book in All
+      var query = from book in Defaults
                   from parashah in book.Value
                   select parashah;
       var linesTranslation = new NullSafeOfStringDictionary<string>();
       var linesLettriq = new NullSafeOfStringDictionary<string>();
-      linesTranslation.LoadKeyValuePairs(string.Format(ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper()), "=");
-      linesLettriq.LoadKeyValuePairs(string.Format(ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper()), "=");
+      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
+      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
       int index = 0;
       foreach ( Parashah item in query )
       {
@@ -55,7 +46,7 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> All
+    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
       {
         [TorahBooks.Bereshit] = new NullSafeList<Parashah>

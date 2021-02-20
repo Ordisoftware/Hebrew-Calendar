@@ -13,6 +13,7 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -41,19 +42,14 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    private bool HasChanges;
-
     private ParashotForm()
     {
       InitializeComponent();
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
-      var query = from book in Parashah.All
-                  from parashah in book.Value
-                  select parashah;
-      DataGridView.DataSource = query.ToList();
-      ColumnTranslation.ReadOnly = !Globals.IsDevExecutable;
-      ColumnLettriq.ReadOnly = !Globals.IsDevExecutable;
+      ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
+      ParashotTable.UseParashotTable();
+      BindingSource.DataSource = ParashotTable.Instance;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -65,16 +61,26 @@ namespace Ordisoftware.Hebrew.Calendar
       ClientSize = Program.Settings.ParashotFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
       WindowState = Program.Settings.ParashotFormWindowState;
+      if ( Program.Settings.ParashotFormColumnTranslationWidth != -1 )
+        ColumnTranslation.Width = Program.Settings.ParashotFormColumnTranslationWidth;
+    }
+
+    private void ParashotForm_Shown(object sender, EventArgs e)
+    {
+      DataGridView.ReadOnly = ParashotTable.IsParashotTableReadOnly(true);
+      if ( DataGridView.ReadOnly )
+      {
+        ActionExportAsDefaults.Enabled = false;
+        ActionExport.Enabled = false;
+        ActionReset.Enabled = false;
+        // Use timer to check every 5s
+      }
     }
 
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( !Globals.IsDevExecutable ) return;
-      if ( !HasChanges ) return;
-      if ( DisplayManager.QueryYesNo("Save changes?") )
-        ActionSave.PerformClick();
-      else
-        Parashah.LoadTranslations();
+      if ( !ActionSave.Enabled ) return;
+      DisplayManager.QueryYesNo("Save changes?", ActionSave.PerformClick, Parashah.LoadTranslations);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -87,7 +93,9 @@ namespace Ordisoftware.Hebrew.Calendar
         WindowState = FormWindowState.Normal;
       Program.Settings.ParashotFormLocation = Location;
       Program.Settings.ParashotFormClientSize = ClientSize;
+      Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Program.Settings.Save();
+      ParashotTable.DisposeParashotTable();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -95,22 +103,71 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    private void ActionSave_Click(object sender, EventArgs e)
+    private void ActionExportAsDefaults_Click(object sender, EventArgs e)
     {
       var listTranslations = new NullSafeOfStringDictionary<string>();
       var listLettriqs = new NullSafeOfStringDictionary<string>();
+      ActionSave.PerformClick();
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
-        var item = (Parashah)row.DataBoundItem;
-        listTranslations.Add(item.Name, item.Translation);
-        listLettriqs.Add(item.Name, item.Lettriq);
+        var bookName = row.Cells[ColumnBook.Index].FormattedValue as string;
+        if ( !string.IsNullOrEmpty(bookName) )
+        {
+          bookName = bookName.ToUpper();
+          listTranslations.Add("// BOOK " + bookName, "");
+          listLettriqs.Add("// BOOK " + bookName, "");
+        }
+        string itemName = (string)row.Cells[ColumnName.Index].Value;
+        string itemTranslation = (string)row.Cells[ColumnTranslation.Index].Value;
+        string itemLettriq = (string)row.Cells[ColumnLettriq.Index].Value;
+        listTranslations.Add(itemName, itemTranslation);
+        listLettriqs.Add(itemName, itemLettriq);
       }
-      string filePathTranslations = string.Format(Parashah.ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper());
-      string filePathLettriqs = string.Format(Parashah.ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper());
-      listTranslations.SaveKeyValuePairs(filePathTranslations, " = ");
-      listLettriqs.SaveKeyValuePairs(filePathLettriqs, " = ");
+      listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
+      listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
+      Parashah.LoadTranslations();
+    }
+
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      ActionSave.PerformClick();
+      MainForm.Instance.SaveDataDialog.FileName = "Parashot";
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
+      string filePath = MainForm.Instance.SaveDataDialog.FileName;
+      ParashotTable.Instance.Export(filePath, Program.GridExportTargets);
+    }
+
+    private void ActionReset_Click(object sender, EventArgs e)
+    {
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
+      ParashotTable.CreateParashotDataIfNotExists(true);
+      BindingSource.DataSource = ParashotTable.Instance;
       ActionSave.Enabled = false;
-      HasChanges = false;
+      ActionUndo.Enabled = false;
+    }
+
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      ParashotTable.UpdateParashotTable();
+      ActionSave.Enabled = false;
+      ActionUndo.Enabled = false;
+    }
+
+    private void ActionUndo_Click(object sender, EventArgs e)
+    {
+      ParashotTable.Instance.RejectChanges();
+      BindingSource.ResetBindings(false);
+      ActionSave.Enabled = false;
+      ActionUndo.Enabled = false;
+    }
+
+    private void OnKeyUp(object sender, KeyEventArgs e)
+    {
+      if ( e.Control && e.KeyCode == Keys.S )
+        ActionSave.PerformClick();
     }
 
     private void Select(Parashah parashah)
@@ -124,29 +181,47 @@ namespace Ordisoftware.Hebrew.Calendar
         }
     }
 
+    private DataRowView CurrentDataBoundItem 
+      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
+
+    private string CurrentDataBoundItemReferenceBegin
+      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}.{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
+
     private void InitializeMenu()
     {
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-        foreach ( string word in item.Unicode.Split(' ') )
+        foreach ( string word in ((string)CurrentDataBoundItem[nameof(Parashah.Unicode)]).Split(' ') )
           SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-        int[] reference = ( ( (int)item.Book + 1 ) + "." + item.VerseBegin ).Split('.').Select(int.Parse).ToArray();
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, reference[0], reference[1], reference[2]);
+        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemReferenceBegin);
       });
+    }
+
+    private void BindingSource_DataSourceChanged(object sender, EventArgs e)
+    {
+      if ( DataGridView.DataSource == null ) return;
+      if ( ParashotTable.Instance == null ) return;
+      foreach ( DataGridViewColumn column in DataGridView.Columns )
+      {
+        var datacolumn = ParashotTable.Instance.Columns[column.DataPropertyName];
+        if ( datacolumn.DataType == typeof(string) )
+        {
+          column.DefaultCellStyle.DataSourceNullValue = string.Empty;
+          datacolumn.DefaultValue = string.Empty;
+        }
+      }
     }
 
     private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
     {
       if ( !Created ) return;
-      HasChanges = true;
-      ActionSave.Enabled = HasChanges;
+      ActionSave.Enabled = true;
+      ActionUndo.Enabled = true;
     }
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -155,22 +230,21 @@ namespace Ordisoftware.Hebrew.Calendar
         e.Value = HebrewAlphabet.ConvertToHebrewFont((string)e.Value);
       else
       if ( e.ColumnIndex == ColumnLinked.Index )
-        e.Value = (bool)e.Value ? "•" : "";
+        e.Value = Convert.ToBoolean(e.Value) ? "•" : "";
       else
-      if ( e.ColumnIndex == ColumnBook.Index && e.RowIndex > 0 
-        && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
-        e.Value = "";
+      if ( e.ColumnIndex == ColumnBook.Index )
+        if ( e.ColumnIndex == ColumnBook.Index && e.RowIndex > 0
+          && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
+          e.Value = "";
+        else
+          e.Value = ( (TorahBooks)( (int)e.Value - 1 ) ).ToString();
     }
 
     private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
     {
       if ( e.Button == MouseButtons.Right )
         if ( e.RowIndex != -1 )
-        {
-          DataGridView.ClearSelection();
           DataGridView.Rows[e.RowIndex].Selected = true;
-          BindingSource.Position = e.RowIndex;
-        }
     }
 
     private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -182,10 +256,29 @@ namespace Ordisoftware.Hebrew.Calendar
         DataGridView.ClearSelection();
     }
 
+    private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+      DataGridView.BeginEdit(false);
+    }
+
+    private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+      if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
+      var form = new EditMemoForm();
+      form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+      form.TextBox.Text = (string)CurrentDataBoundItem.Row[nameof(Parashah.Memo)];
+      form.TextBox.SelectionStart = 0;
+      if ( form.ShowDialog() == DialogResult.OK )
+      {
+        CurrentDataBoundItem.Row[nameof(Parashah.Memo)] = form.TextBox.Text;
+        ActionSave.Enabled = true;
+        ActionUndo.Enabled = true;
+      }
+    }
+
     private void ActionOpenShorashon_Click(object sender, EventArgs e)
     {
-      string url = (string)( (ToolStripItem)sender ).Tag;
-      SystemManager.OpenWebLink(url);
+      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
     }
 
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
@@ -195,38 +288,37 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      string name = HebrewAlphabet.ConvertToHebrewFont(item.Unicode);
-      HebrewTools.OpenHebrewLetters(name, Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWords("", Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWords(CurrentDataBoundItemReferenceBegin, Program.Settings.HebrewWordsExe);
+    }
+
+    private void ActionCopyName_Click(object sender, EventArgs e)
+    {
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Name)]);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      Clipboard.SetText(item.Hebrew);
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)]);
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      Clipboard.SetText(item.Unicode);
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Unicode)]);
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      Clipboard.SetText(item.ToString(true));
+      //Clipboard.SetText(CurrentParashah.ToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-      Clipboard.SetText(item.ToString());
+      //Clipboard.SetText(CurrentParashah.ToString());
     }
 
   }

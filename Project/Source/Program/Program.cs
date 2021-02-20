@@ -143,10 +143,11 @@ namespace Ordisoftware.Hebrew.Calendar
       new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
+      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
-        if ( form != Globals.MainForm && form != AboutBox.Instance )
+        if ( form != Globals.MainForm && form != AboutBox.Instance && form != GrammarGuideForm )
           update(form);
         if ( form is ShowTextForm formShowText )
           formShowText.RelocalizeText();
@@ -168,6 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadingForm.Instance.Relocalize();
       UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
+      GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
       MainForm.Instance.CalendarText.Text = str;
       MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
       MainForm.Instance.DoTimerReminder();

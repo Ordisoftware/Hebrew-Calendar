@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -168,10 +168,12 @@ namespace Ordisoftware.Hebrew.Calendar
           break;
         case DataExportTarget.JSON:
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
-          var dataset = new DataSet("DataSet");
+          var dataset = new DataSet(Globals.AssemblyTitle);
           dataset.Tables.Add(data.ToDataTable("DateBookmarks"));
           string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
           File.WriteAllText(SaveBookmarksDialog.FileName, str);
+          dataset.Tables.Clear();
+          dataset.Dispose();
           break;
         default:
           throw new NotImplementedExceptionEx(selected);

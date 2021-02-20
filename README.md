@@ -229,7 +229,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### In progress - Version 7.2
 
-- Add lunar months board with meanings, lettriqs, and study tools.
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
 #### In progress - Version 7.1
 
@@ -239,11 +239,13 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### In progress - Version 7.0
 
-- Add Parashah notice.
-- Add Parashot board with literal translations, lettriqs, verses references, and study tools.
-- Add option to indicate the Parashah in the days of Shabat for the visual month (does nothing fro now).
+- Add parashah notice.
+- Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
+- Add option to indicate the parashah in the days of Shabat for the visual month (does nothing fro now).
+- Add common database in roaming to store parashot user table.
 - Add show usage statistics from about box.
 - Add check update from about box.
+- Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
 - Some file and code refactoring.
 - Update help files.

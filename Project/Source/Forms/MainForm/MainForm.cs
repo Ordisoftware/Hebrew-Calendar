@@ -656,7 +656,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      var parashah = Parashah.All[TorahBooks.Shemot][5];
+      var parashah = Parashah.Defaults[TorahBooks.Shemot][5];
       ParashotForm.Run(parashah);
     }
 
