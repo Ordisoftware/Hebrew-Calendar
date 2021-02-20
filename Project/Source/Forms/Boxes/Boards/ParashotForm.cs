@@ -48,8 +48,8 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
       ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
-      CommonDatabase.Instance.UseParashotTable();
-      BindingSource.DataSource = CommonDatabase.Instance.ParashotTable;
+      ParashotTable.UseParashotTable();
+      BindingSource.DataSource = ParashotTable.Instance;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -63,6 +63,18 @@ namespace Ordisoftware.Hebrew.Calendar
       WindowState = Program.Settings.ParashotFormWindowState;
       if ( Program.Settings.ParashotFormColumnTranslationWidth != -1 )
         ColumnTranslation.Width = Program.Settings.ParashotFormColumnTranslationWidth;
+    }
+
+    private void ParashotForm_Shown(object sender, EventArgs e)
+    {
+      DataGridView.ReadOnly = ParashotTable.IsParashotTableReadOnly(true);
+      if ( DataGridView.ReadOnly )
+      {
+        ActionExportAsDefaults.Enabled = false;
+        ActionExport.Enabled = false;
+        ActionReset.Enabled = false;
+        // Use timer to check every 5s
+      }
     }
 
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,7 +95,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ParashotFormClientSize = ClientSize;
       Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Program.Settings.Save();
-      CommonDatabase.Instance.DisposeParashotTable();
+      ParashotTable.DisposeParashotTable();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -125,28 +137,28 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      CommonDatabase.Instance.ParashotTable.Export(filePath, Program.GridExportTargets);
+      ParashotTable.Instance.Export(filePath, Program.GridExportTargets);
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
-      CommonDatabase.Instance.CreateParashotDataIfNotExists(true);
-      BindingSource.DataSource = CommonDatabase.Instance.ParashotTable;
+      ParashotTable.CreateParashotDataIfNotExists(true);
+      BindingSource.DataSource = ParashotTable.Instance;
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
     }
 
     private void ActionSave_Click(object sender, EventArgs e)
     {
-      CommonDatabase.Instance.UpdateParashotTable();
+      ParashotTable.UpdateParashotTable();
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
-      CommonDatabase.Instance.ParashotTable.RejectChanges();
+      ParashotTable.Instance.RejectChanges();
       BindingSource.ResetBindings(false);
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
@@ -169,31 +181,34 @@ namespace Ordisoftware.Hebrew.Calendar
         }
     }
 
-    private Parashah CurrentParashah => (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
-    private DataRowView CurrentDataBoundItem => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
+    private DataRowView CurrentDataBoundItem 
+      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
+
+    private string CurrentDataBoundItemReferenceBegin
+      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}.{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
 
     private void InitializeMenu()
     {
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        foreach ( string word in CurrentParashah.Unicode.Split(' ') )
+        foreach ( string word in ((string)CurrentDataBoundItem[nameof(Parashah.Unicode)]).Split(' ') )
           SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
       });
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentParashah.ReferenceBegin);
+        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemReferenceBegin);
       });
     }
 
     private void BindingSource_DataSourceChanged(object sender, EventArgs e)
     {
       if ( DataGridView.DataSource == null ) return;
-      if ( CommonDatabase.Instance.ParashotTable == null ) return;
+      if ( ParashotTable.Instance == null ) return;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
       {
-        var datacolumn = CommonDatabase.Instance.ParashotTable.Columns[column.DataPropertyName];
+        var datacolumn = ParashotTable.Instance.Columns[column.DataPropertyName];
         if ( datacolumn.DataType == typeof(string) )
         {
           column.DefaultCellStyle.DataSourceNullValue = string.Empty;
@@ -273,37 +288,37 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewLetters(CurrentParashah.Hebrew, Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWords(CurrentParashah.ReferenceBegin, Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWords(CurrentDataBoundItemReferenceBegin, Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentParashah.Name);
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Name)]);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentParashah.Hebrew);
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)]);
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentParashah.Unicode);
+      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Unicode)]);
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentParashah.ToString(true));
+      //Clipboard.SetText(CurrentParashah.ToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentParashah.ToString());
+      //Clipboard.SetText(CurrentParashah.ToString());
     }
 
   }

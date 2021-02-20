@@ -87,7 +87,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      CommonDatabase.Instance.ToString();
       DoMainForm_Load(sender, e);
     }
 

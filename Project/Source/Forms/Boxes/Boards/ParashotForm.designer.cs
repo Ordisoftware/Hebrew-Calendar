@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +39,8 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionExportAsDefaults = new System.Windows.Forms.Button();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionUndo = new System.Windows.Forms.Button();
@@ -81,7 +82,6 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.ActionExportAsDefaults = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -99,6 +99,13 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionExportAsDefaults
+      // 
+      resources.ApplyResources(this.ActionExportAsDefaults, "ActionExportAsDefaults");
+      this.ActionExportAsDefaults.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionExportAsDefaults.Name = "ActionExportAsDefaults";
+      this.ActionExportAsDefaults.Click += new System.EventHandler(this.ActionExportAsDefaults_Click);
       // 
       // ActionExport
       // 
@@ -446,13 +453,6 @@
       this.isLinkedToNextDataGridViewCheckBoxColumn.Name = "isLinkedToNextDataGridViewCheckBoxColumn";
       this.isLinkedToNextDataGridViewCheckBoxColumn.ReadOnly = true;
       // 
-      // ActionExportAsDefaults
-      // 
-      resources.ApplyResources(this.ActionExportAsDefaults, "ActionExportAsDefaults");
-      this.ActionExportAsDefaults.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionExportAsDefaults.Name = "ActionExportAsDefaults";
-      this.ActionExportAsDefaults.Click += new System.EventHandler(this.ActionExportAsDefaults_Click);
-      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -463,6 +463,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParashotForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParashotForm_FormClosed);
       this.Load += new System.EventHandler(this.ParashotForm_Load);
+      this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelMain.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();

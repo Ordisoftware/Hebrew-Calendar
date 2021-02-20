@@ -22,14 +22,17 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class CommonDatabase
+  static public class ProcessLocksTable
   {
 
-    public const string AppLockTableName = "AppLock";
-    public const string AppLockSelectAll = "select * from " + AppLockTableName;
-    public const string AppLockDeleteAll = "delete from " + AppLockTableName;
+    public const string TableName = "ProcessLocks";
 
-    private void CreateAppLockSchemaIfNotExists()
+    static ProcessLocksTable()
+    {
+      CreateProcessLocksSchemaIfNotExists();
+    }
+
+    static private void CreateProcessLocksSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -37,9 +40,8 @@ namespace Ordisoftware.Hebrew
         using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
         {
           connection.Open();
-          //SQLiteOdbcHelper.DropTableIfExists(connection, AppLockTableName);
-          bool existed = connection.CheckTable(AppLockTableName,
-                                               $@"CREATE TABLE {AppLockTableName}
+          bool existed = connection.CheckTable(TableName,
+                                               $@"CREATE TABLE {TableName}
                                                   (
                                                     ProcessID INTEGER NOT NULL,
                                                     Name TEXT NOT NULL
@@ -48,9 +50,9 @@ namespace Ordisoftware.Hebrew
       });
     }
 
-    private void PurgeLocks()
+    static private void PurgeLocks()
     {
-      string sql = $"SELECT ProcessID, count(ProcessID) FROM {AppLockTableName} GROUP BY ProcessID";
+      string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
@@ -61,7 +63,7 @@ namespace Ordisoftware.Hebrew
           int id = (int)reader["ProcessID"];
           if ( !Process.GetProcesses().Any(p => p.Id == id) )
           {
-            string sqlDelete = $"DELETE FROM {AppLockTableName} WHERE ProcessID = (?)";
+            string sqlDelete = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
             using ( var commandDelete = new OdbcCommand(sqlDelete, connection) )
             {
               commandDelete.Parameters.Add("@ID", OdbcType.Int).Value = id;
@@ -72,9 +74,8 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    private string GetLockName(string nameCommonTable = null)
+    static private string GetLockName(string nameCommonTable = null)
     {
-      PurgeLocks();
       if ( string.IsNullOrEmpty(nameCommonTable) )
         switch ( Globals.AssemblyGUID )
         {
@@ -90,16 +91,16 @@ namespace Ordisoftware.Hebrew
       else
         switch ( nameCommonTable )
         {
-          case ParashotTableName:
+          case ParashotTable.TableName:
             return "CommonParashotInstances";
           default:
             throw new SystemException("Unknown application GUID: " + Globals.AssemblyTitle);
         }
     }
 
-    public bool IsAlreadyLockedByCurrentProcess(string nameCommonTable = null)
+    static public bool IsAlreadyLockedByCurrentProcess(string nameCommonTable = null)
     {
-      string sql = $"SELECT Count(ProcessID) FROM {AppLockTableName} WHERE ProcessID = (?)";
+      string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
@@ -109,10 +110,10 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    public int GetLocks(string nameCommonTable)
+    static public int GetLocks(string nameCommonTable)
     {
       string name = GetLockName(nameCommonTable);
-      string sql = $"SELECT Count(Name) FROM {AppLockTableName} WHERE Name = (?)";
+      string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
@@ -122,11 +123,11 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    public List<string> GetOtherLockers(string nameCommonTable = null)
+    static public List<string> GetOtherLockers(string nameCommonTable = null)
     {
       var dictionary = new Dictionary<string, int>();
       string name = GetLockName(nameCommonTable);
-      string sql = $"SELECT ProcessID FROM {AppLockTableName} WHERE Name = (?)";
+      string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
@@ -148,11 +149,11 @@ namespace Ordisoftware.Hebrew
       return dictionary.Select(pair => $"{pair.Key} ({pair.Value})").ToList();
     }
 
-    public void Lock(string nameCommonTable = null)
+    static public void Lock(string nameCommonTable = null)
     {
       if ( IsAlreadyLockedByCurrentProcess(nameCommonTable) ) return;
       string name = GetLockName(nameCommonTable);
-      string sql = $"INSERT INTO {AppLockTableName} VALUES (?, (?))";
+      string sql = $"INSERT INTO {TableName} VALUES (?, (?))";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
@@ -163,11 +164,11 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    public void Unlock(string nameCommonTable = null)
+    static public void Unlock(string nameCommonTable = null)
     {
       string name = GetLockName(nameCommonTable);
       if ( !IsAlreadyLockedByCurrentProcess(name) ) return;
-      string sql = $"DELETE FROM {AppLockTableName} WHERE ProcessID = (?) AND Name = (?)";
+      string sql = $"DELETE FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {

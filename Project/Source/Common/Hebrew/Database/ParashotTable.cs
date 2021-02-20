@@ -21,18 +21,23 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class CommonDatabase
+  static class ParashotTable
   {
 
-    public const string ParashotTableName = "Parashot";
-    public const string ParashotSelectAll = "select * from " + ParashotTableName;
-    public const string ParashotDeleteAll = "delete from " + ParashotTableName;
+    public const string TableName = "Parashot";
+    private const string SelectAll = "select * from " + TableName;
+    private const string DeleteAll = "delete from " + TableName;
 
-    public DataTable ParashotTable { get; private set; }
+    static public DataTable Instance { get; private set; }
 
-    private bool ParashotTableMutex;
+    static private bool ParashotTableMutex;
 
-    private void CreateParashotSchemaIfNotExists()
+    static ParashotTable()
+    {
+      CreateParashotSchemaIfNotExists();
+    }
+
+    static private void CreateParashotSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -40,8 +45,8 @@ namespace Ordisoftware.Hebrew
         using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
         {
           connection.Open();
-          connection.CheckTable(ParashotTableName,
-                                $@"CREATE TABLE {ParashotTableName}
+          connection.CheckTable(TableName,
+                                $@"CREATE TABLE {TableName}
                                   (
                                     Book INTEGER NOT NULL,
                                     Number INTEGER NOT NULL,
@@ -60,48 +65,52 @@ namespace Ordisoftware.Hebrew
       });
     }
 
-    public void UseParashotTable()
+    static public void UseParashotTable()
     {
-      if ( ParashotTable != null ) return;
-      Lock(ParashotTableName);
-      Lock(ParashotTableName);
-      if ( GetLocks(ParashotTableName) != 1 )
-        // TODO manage read only mode
-        DisplayManager.Show("Table is in use by other processes: readonly mode." + Globals.NL +
-                            "Try to check locks count to enable write mode." + Globals.NL2 +
-                            string.Join(Environment.NewLine, GetOtherLockers(ParashotTableName)));
-      ParashotTable = new DataTable(ParashotTableName);
+      if ( Instance != null ) return;
+      ProcessLocksTable.Lock(TableName);
+      Instance = new DataTable(TableName);
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       {
         connection.Open();
-        var command = new OdbcCommand(ParashotSelectAll, connection);
+        var command = new OdbcCommand(SelectAll, connection);
         using ( var adapter = new OdbcDataAdapter(command) )
-          adapter.Fill(ParashotTable);
+          adapter.Fill(Instance);
       }
-      CreateParashotDataIfNotExists(false);
+      CreateParashotDataIfNotExists();
     }
 
-    public void DisposeParashotTable()
+    static public bool IsParashotTableReadOnly(bool showmessage)
     {
-      if ( ParashotTable == null ) return;
-      ParashotTable.Dispose();
-      ParashotTable = null;
-      Unlock(ParashotTableName);
+      bool result = ProcessLocksTable.GetLocks(TableName) > 1;
+      if ( result && showmessage )
+        DisplayManager.Show("Table is in use by other processes: readonly mode." + Globals.NL +
+                            "Try to check locks count to enable write mode." + Globals.NL2 +
+                            string.Join(Environment.NewLine, ProcessLocksTable.GetOtherLockers(TableName)));
+      return result;
     }
 
-    public void UpdateParashotTable()
+    static public void DisposeParashotTable()
     {
-      if ( ParashotTable == null ) throw new ArgumentNullException(ParashotTableName);
+      if ( Instance == null ) return;
+      Instance.Dispose();
+      Instance = null;
+      ProcessLocksTable.Unlock(TableName);
+    }
+
+    static public void UpdateParashotTable()
+    {
+      if ( Instance == null ) throw new ArgumentNullException(TableName);
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(ParashotSelectAll, connection) )
+      using ( var command = new OdbcCommand(SelectAll, connection) )
       using ( var adapter = new OdbcDataAdapter(command) )
       using ( var builder = new OdbcCommandBuilder(adapter) )
       {
-        adapter.Update(ParashotTable);
+        adapter.Update(Instance);
       }
     }
 
-    public void CreateParashotDataIfNotExists(bool reset)
+    static public void CreateParashotDataIfNotExists(bool reset = false)
     {
       if ( ParashotTableMutex ) return;
       SystemManager.TryCatchManage(() =>
@@ -111,24 +120,21 @@ namespace Ordisoftware.Hebrew
         ParashotTableMutex = true;
         try
         {
-          if ( !reset && ParashotTable.Rows.Count == 54 ) return;
+          if ( !reset && Instance.Rows.Count == 54 ) return;
           DisposeParashotTable();
-
           using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-          using ( var command = new OdbcCommand(ParashotDeleteAll, connection) )
+          using ( var command = new OdbcCommand(DeleteAll, connection) )
           {
             connection.Open();
             command.ExecuteNonQuery();
           }
-
           UseParashotTable();
           var query = from book in Parashah.Defaults
                       from parashah in book.Value
                       select parashah;
-
           foreach ( Parashah parashah in query.ToList() )
           {
-            var row = ParashotTable.NewRow();
+            var row = Instance.NewRow();
             row[nameof(Parashah.Book)] = parashah.Book + 1;
             row[nameof(Parashah.Number)] = parashah.Number;
             row[nameof(Parashah.Name)] = parashah.Name;
@@ -140,7 +146,7 @@ namespace Ordisoftware.Hebrew
             row[nameof(Parashah.Translation)] = parashah.Translation;
             row[nameof(Parashah.Lettriq)] = parashah.Lettriq;
             row[nameof(Parashah.Memo)] = "";
-            ParashotTable.Rows.Add(row);
+            Instance.Rows.Add(row);
           }
           UpdateParashotTable();
         }

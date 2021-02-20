@@ -165,9 +165,8 @@
     <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.System.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.Parashot.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
