@@ -13,9 +13,6 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Data;
-using System.Data.Odbc;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
 {
@@ -30,8 +27,6 @@ namespace Ordisoftware.Hebrew
       CreateAppLockSchemaIfNotExists();
       CreateParashotSchemaIfNotExists();
     }
-
-
 
   }
 
