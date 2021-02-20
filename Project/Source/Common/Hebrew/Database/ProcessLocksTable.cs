@@ -25,14 +25,14 @@ namespace Ordisoftware.Hebrew
   static public class ProcessLocksTable
   {
 
-    public const string TableName = "ProcessLocks";
+    static public readonly string TableName = nameof(ProcessLocksTable).Replace("Table", "");
 
     static ProcessLocksTable()
     {
-      CreateProcessLocksSchemaIfNotExists();
+      CreateSchemaIfNotExists();
     }
 
-    static private void CreateProcessLocksSchemaIfNotExists()
+    static private void CreateSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -40,79 +40,56 @@ namespace Ordisoftware.Hebrew
         using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
         {
           connection.Open();
-          bool existed = connection.CheckTable(TableName,
-                                               $@"CREATE TABLE {TableName}
-                                                  (
-                                                    ProcessID INTEGER NOT NULL,
-                                                    Name TEXT NOT NULL
-                                                  )");
+          connection.CheckTable(TableName, $@"CREATE TABLE {TableName} ( ProcessID INTEGER, Name TEXT)");
         }
       });
     }
 
-    static private void PurgeLocks()
+    static private void Purge()
     {
       string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var commandSelect = new OdbcCommand(sql, connection) )
       {
         connection.Open();
-        var reader = command.ExecuteReader();
+        var reader = commandSelect.ExecuteReader();
         while ( reader.Read() )
         {
           int id = (int)reader["ProcessID"];
-          if ( !Process.GetProcesses().Any(p => p.Id == id) )
+          if ( Process.GetProcesses().Any(p => p.Id == id) ) continue;
+          string sqlDelete = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
+          using ( var commandDelete = new OdbcCommand(sqlDelete, connection) )
           {
-            string sqlDelete = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
-            using ( var commandDelete = new OdbcCommand(sqlDelete, connection) )
-            {
-              commandDelete.Parameters.Add("@ID", OdbcType.Int).Value = id;
-              commandDelete.ExecuteNonQuery();
-            }
+            commandDelete.Parameters.Add("@ID", OdbcType.Int).Value = id;
+            commandDelete.ExecuteNonQuery();
           }
         }
       }
     }
 
-    static private string GetLockName(string nameCommonTable = null)
+    static private string Convert(string name = null)
     {
-      if ( string.IsNullOrEmpty(nameCommonTable) )
-        switch ( Globals.AssemblyGUID )
-        {
-          case "39d572b4-36da-4964-ba85-51bc5909c69b":
-            return "CalendarInstances";
-          case "e4e4c05b-71ed-42de-a2fa-345ae793a9ac":
-            return "LettersInstances";
-          case "9117fa5b-51de-481e-9cb1-65a606d6ca69":
-            return "WordsInstances";
-          default:
-            throw new SystemException("Unknown application GUID: " + Globals.AssemblyTitle);
-        }
-      else
-        switch ( nameCommonTable )
-        {
-          case ParashotTable.TableName:
-            return "CommonParashotInstances";
-          default:
-            throw new SystemException("Unknown application GUID: " + Globals.AssemblyTitle);
-        }
+      Purge();
+      return string.IsNullOrEmpty(name) ? Globals.ApplicationCode : name;
     }
 
-    static public bool IsAlreadyLockedByCurrentProcess(string nameCommonTable = null)
+    static public bool IsLockedByCurrentProcess(string name = null)
     {
-      string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?)";
+      name = Convert(name);
+      string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {
         connection.Open();
         command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
+        command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         return (int)command.ExecuteScalar() > 0;
       }
     }
 
-    static public int GetLocks(string nameCommonTable)
+    static public int GetCount(string name)
     {
-      string name = GetLockName(nameCommonTable);
+      name = Convert(name);
       string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -123,10 +100,9 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public List<string> GetOtherLockers(string nameCommonTable = null)
+    static public List<string> GetLockers(string name = null)
     {
-      var dictionary = new Dictionary<string, int>();
-      string name = GetLockName(nameCommonTable);
+      name = Convert(name);
       string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -134,41 +110,39 @@ namespace Ordisoftware.Hebrew
         connection.Open();
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         var reader = command.ExecuteReader();
+        var dictionary = new Dictionary<string, int>();
         while ( reader.Read() )
         {
           int id = (int)reader["ProcessID"];
           if ( id == Process.GetCurrentProcess().Id ) continue;
           var process = Process.GetProcesses().FirstOrDefault(p => p.Id == id);
-          string processName = process?.ProcessName ?? SysTranslations.UnknownSlot.GetLang(); 
+          string processName = process?.ProcessName ?? "PID " + id; 
           if ( dictionary.ContainsKey(processName) )
             dictionary[processName]++;
           else
             dictionary.Add(processName, 1);
         }
+        return dictionary.Select(pair => $"{pair.Key} ({pair.Value})").ToList();
       }
-      return dictionary.Select(pair => $"{pair.Key} ({pair.Value})").ToList();
     }
 
-    static public void Lock(string nameCommonTable = null)
+    static public void Lock(string name = null)
     {
-      if ( IsAlreadyLockedByCurrentProcess(nameCommonTable) ) return;
-      string name = GetLockName(nameCommonTable);
+      if ( IsLockedByCurrentProcess(name) ) return;
       string sql = $"INSERT INTO {TableName} VALUES (?, (?))";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
-      {
-        connection.Open();
-        command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
-        command.Parameters.Add("@Name", OdbcType.Text).Value = name;
-        command.ExecuteNonQuery();
-      }
+      UpdateLock(name, sql);
     }
 
-    static public void Unlock(string nameCommonTable = null)
+    static public void Unlock(string name = null)
     {
-      string name = GetLockName(nameCommonTable);
-      if ( !IsAlreadyLockedByCurrentProcess(name) ) return;
+      if ( !IsLockedByCurrentProcess(name) ) return;
       string sql = $"DELETE FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
+      UpdateLock(name, sql);
+    }
+
+    static private void UpdateLock(string name, string sql)
+    {
+      name = Convert(name);
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       {

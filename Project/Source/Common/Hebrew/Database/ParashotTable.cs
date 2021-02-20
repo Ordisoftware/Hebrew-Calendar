@@ -24,9 +24,7 @@ namespace Ordisoftware.Hebrew
   static class ParashotTable
   {
 
-    public const string TableName = "Parashot";
-    private const string SelectAll = "select * from " + TableName;
-    private const string DeleteAll = "delete from " + TableName;
+    static public readonly string TableName = nameof(ParashotTable).Replace("Table", "");
 
     static public DataTable Instance { get; private set; }
 
@@ -34,10 +32,10 @@ namespace Ordisoftware.Hebrew
 
     static ParashotTable()
     {
-      CreateParashotSchemaIfNotExists();
+      CreateIfNotExists();
     }
 
-    static private void CreateParashotSchemaIfNotExists()
+    static private void CreateIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -65,32 +63,28 @@ namespace Ordisoftware.Hebrew
       });
     }
 
-    static public void UseParashotTable()
+    static public void Take()
     {
       if ( Instance != null ) return;
       ProcessLocksTable.Lock(TableName);
       Instance = new DataTable(TableName);
+      string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
+      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var adapter = new OdbcDataAdapter(command) )
       {
         connection.Open();
-        var command = new OdbcCommand(SelectAll, connection);
-        using ( var adapter = new OdbcDataAdapter(command) )
-          adapter.Fill(Instance);
+        adapter.Fill(Instance);
       }
-      CreateParashotDataIfNotExists();
+      CreateDataIfNotExists();
     }
 
-    static public bool IsParashotTableReadOnly(bool showmessage)
+    static public bool IsReadOnly()
     {
-      bool result = ProcessLocksTable.GetLocks(TableName) > 1;
-      if ( result && showmessage )
-        DisplayManager.Show("Table is in use by other processes: readonly mode." + Globals.NL +
-                            "Try to check locks count to enable write mode." + Globals.NL2 +
-                            string.Join(Environment.NewLine, ProcessLocksTable.GetOtherLockers(TableName)));
-      return result;
+      return ProcessLocksTable.GetCount(TableName) > 1;
     }
 
-    static public void DisposeParashotTable()
+    static public void Release()
     {
       if ( Instance == null ) return;
       Instance.Dispose();
@@ -98,19 +92,21 @@ namespace Ordisoftware.Hebrew
       ProcessLocksTable.Unlock(TableName);
     }
 
-    static public void UpdateParashotTable()
+    static public void Update()
     {
       if ( Instance == null ) throw new ArgumentNullException(TableName);
+      string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(SelectAll, connection) )
+      using ( var command = new OdbcCommand(sql, connection) )
       using ( var adapter = new OdbcDataAdapter(command) )
       using ( var builder = new OdbcCommandBuilder(adapter) )
       {
+        connection.Open();
         adapter.Update(Instance);
       }
     }
 
-    static public void CreateParashotDataIfNotExists(bool reset = false)
+    static public void CreateDataIfNotExists(bool reset = false)
     {
       if ( ParashotTableMutex ) return;
       SystemManager.TryCatchManage(() =>
@@ -121,14 +117,15 @@ namespace Ordisoftware.Hebrew
         try
         {
           if ( !reset && Instance.Rows.Count == 54 ) return;
-          DisposeParashotTable();
+          Release();
+          string sql = "DELETE FROM " + TableName;
           using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-          using ( var command = new OdbcCommand(DeleteAll, connection) )
+          using ( var command = new OdbcCommand(sql, connection) )
           {
             connection.Open();
             command.ExecuteNonQuery();
           }
-          UseParashotTable();
+          Take();
           var query = from book in Parashah.Defaults
                       from parashah in book.Value
                       select parashah;
@@ -148,12 +145,12 @@ namespace Ordisoftware.Hebrew
             row[nameof(Parashah.Memo)] = "";
             Instance.Rows.Add(row);
           }
-          UpdateParashotTable();
+          Update();
         }
         finally
         {
-          Globals.IsReady = temp;
           ParashotTableMutex = false;
+          Globals.IsReady = temp;
         }
       });
     }
