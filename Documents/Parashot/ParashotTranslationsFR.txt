@@ -1,3 +1,4 @@
+// BOOK BERESHIT
 Bereshit = Au début
 Noa'h = Il (HaShem) a déposé [la Torah]
 Lek Leka = Vas pour toi
@@ -10,6 +11,7 @@ Vayeshev = Il donnera un foyer
 Mikets = Lorsque fin du processus
 Vayigash = Il aura offert
 Vaye'hi = Il aura péservé la vie
+// BOOK SHEMOT
 Shemot = Réalisations
 Vaera = J'aurais pris soin [de l'étude]
 Bo = Il a accomplit
@@ -21,16 +23,18 @@ Tetsave = Elle commandera
 Ki Tissa = Puisqu'elle portera
 Vayaqhel = Il aura assemblé
 Peqoudei = Ils ont attribué pour moi
+// BOOK VAYIQRA
 Vayikra = Il aura invoqué [le bien]
 Tsav = Recommandation
 Shemini = Rayonne pour moi
 Tazria = Elle enfantera de moi
 Metsora = En cas d'infection terminée
-A'harei Mot = Il a changé (retardé, accouplé) moi, Il a fait cesser le mal 
+A'harei Mot = Il a amélioré moi, Il a fait cesser le mal
 Kedoshim = Bienveillants
 Emor = Ils parleront
 Behar = Parce que la montagne (sion, coeur)
-Be'houqotaï = J'écrirais pour Lui (variante: avec Son aide)
+Be'houqotaï = J'écrirais selon Lui
+// BOOK BAMIDBAR
 Bamidbar = Dans désert
 Nasso = Élever!
 Beha'alotka = Dans votre exaltation
@@ -41,6 +45,7 @@ Balaq = Balak
 Pin'has = Phinéas
 Matot = Tribus
 Massei = Voyages de
+// BOOK DEVARIM
 Devarim = Paroles
 Vaet'hanan = Plaidé
 Eikev = Par conséquent

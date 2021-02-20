@@ -1,3 +1,4 @@
+// BOOK BERESHIT
 Bereshit = Volonté du Mental dans l'Espace du Foyer de l'Énergie de la Matière
 Noa'h = Pouvoir de la Créature
 Lek Leka = Transmission de l'Élan intérieur pour l'Évolution de la Puissance
@@ -10,6 +11,7 @@ Vayeshev = Fondement de la Paix du Foyer de la Volonté
 Mikets = Chemin de la Vérité Juste
 Vayigash = Communication de l'Amour, de la Générosité et de l'Amitié
 Vaye'hi = Réalité de l'Énergie de l'Autorité de l'Amour
+// BOOK SHEMOT
 Shemot = Force du Service de la Lumière de la Musique
 Vaera = Réalité du Potentiel du Mental qui Planifie
 Bo = Création du Potentiel
@@ -21,6 +23,7 @@ Tetsave = Soutien de l'Aide de la Lumière Communiquant le Souffle
 Ki Tissa = Couverture Énergétique pour la Substance Partagée dans l'Espace
 Vayaqhel = Liaison par l'Amour de la Vérité du Souffle de l'Existence
 Peqoudei = Révélation de la Vérité de la Réalité de la Pensée de la Paix
+// BOOK VAYIQRA
 Vayikra = 
 Tsav = 
 Shemini = 
@@ -31,6 +34,7 @@ Kedoshim =
 Emor = 
 Behar = 
 Be'houqotaï = 
+// BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
 Beha'alotka = 
@@ -41,6 +45,7 @@ Balaq =
 Pin'has = 
 Matot = 
 Massei = 
+// BOOK DEVARIM
 Devarim = 
 Vaet'hanan = 
 Eikev = 

@@ -1,3 +1,4 @@
+// BOOK BERESHIT
 Bereshit = Will of the Mind in the Space of the Home of the Energy of the Matter
 Noa'h = Power of the Creature
 Lek Leka = Transmission of the Inner Momentum for the Evolution of the Power
@@ -10,6 +11,7 @@ Vayeshev = Foundation of the Peace of the Home of the Will
 Mikets = Path of the Right Truth
 Vayigash = Communication of Love, Generosity and Friendship
 Vaye'hi = Reality of the Energy of the Authority of the Love
+// BOOK SHEMOT
 Shemot = 
 Vaera = 
 Bo = Creation of the Potential
@@ -21,6 +23,7 @@ Tetsave =
 Ki Tissa = 
 Vayaqhel = 
 Peqoudei = 
+// BOOK VAYIQRA
 Vayikra = 
 Tsav = 
 Shemini = 
@@ -31,6 +34,7 @@ Kedoshim =
 Emor = 
 Behar = 
 Be'houqotaï = 
+// BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
 Beha'alotka = 
@@ -41,6 +45,7 @@ Balaq =
 Pin'has = 
 Matot = 
 Massei = 
+// BOOK DEVARIM
 Devarim = 
 Vaet'hanan = 
 Eikev = 

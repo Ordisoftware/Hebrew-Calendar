@@ -65,6 +65,8 @@ namespace Ordisoftware.Hebrew.Calendar
       ClientSize = Program.Settings.ParashotFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
       WindowState = Program.Settings.ParashotFormWindowState;
+      if ( Program.Settings.ParashotFormColumnTranslationWidth != -1 )
+        ColumnTranslation.Width = Program.Settings.ParashotFormColumnTranslationWidth;
     }
 
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,6 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
         WindowState = FormWindowState.Normal;
       Program.Settings.ParashotFormLocation = Location;
       Program.Settings.ParashotFormClientSize = ClientSize;
+      Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Program.Settings.Save();
     }
 
@@ -99,11 +102,21 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var listTranslations = new NullSafeOfStringDictionary<string>();
       var listLettriqs = new NullSafeOfStringDictionary<string>();
-      foreach ( DataGridViewRow row in DataGridView.Rows )
+      /*foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var item = (Parashah)row.DataBoundItem;
         listTranslations.Add(item.Name, item.Translation);
         listLettriqs.Add(item.Name, item.Lettriq);
+      }*/
+      foreach ( var book in Parashah.All.Keys )
+      {
+        listTranslations.Add("// BOOK " + book.ToString().ToUpper(), "");
+        listLettriqs.Add("// BOOK " + book.ToString().ToUpper(), "");
+        foreach ( var item in Parashah.All[book] )
+        {
+          listTranslations.Add(item.Name, item.Translation);
+          listLettriqs.Add(item.Name, item.Lettriq);
+        }
       }
       string filePathTranslations = string.Format(Parashah.ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper());
       string filePathLettriqs = string.Format(Parashah.ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper());
