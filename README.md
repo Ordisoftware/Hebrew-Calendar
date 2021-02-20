@@ -240,7 +240,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 #### In progress - Version 7.0
 
 - Add Parashah notice.
-- Add Parashot board with literal translations, lettriqs, verses references, and study tools.
+- Add Parashot board with literal translations, lettriqs, verses references, study tools, and export.
 - Add option to indicate the Parashah in the days of Shabat for the visual month (does nothing fro now).
 - Add show usage statistics from about box.
 - Add check update from about box.
