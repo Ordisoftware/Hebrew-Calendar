@@ -87,17 +87,18 @@ namespace Ordisoftware.Core
       {
         list.Clear();
         foreach ( string line in File.ReadAllLines(filePath) )
-        {
-          var parts = line.SplitNoEmptyLines(separator);
-          if ( parts.Length == 1 )
-            list.Add(parts[0].Trim(), "");
-          else
-          if ( parts.Length == 2 )
-            list.Add(parts[0].Trim(), parts[1].Trim());
-          else
-          if ( parts.Length > 2 )
-            list.Add(parts[0].Trim(), parts.Skip(1).Select(v => v.Trim()).AsMultiSpace());
-        }
+          if ( !line.StartsWith(";") && !line.StartsWith("//") )
+          {
+            var parts = line.SplitNoEmptyLines(separator);
+            if ( parts.Length == 1 )
+              list.Add(parts[0].Trim(), "");
+            else
+            if ( parts.Length == 2 )
+              list.Add(parts[0].Trim(), parts[1].Trim());
+            else
+            if ( parts.Length > 2 )
+              list.Add(parts[0].Trim(), parts.Skip(1).Select(v => v.Trim()).AsMultiSpace());
+          }
         return true;
       }
       catch ( Exception ex )
@@ -119,7 +120,10 @@ namespace Ordisoftware.Core
         try
         {
           foreach ( var item in list )
-            stream.WriteLine(item.Key + separator + item.Value);
+            if ( !item.Key.StartsWith(";") && !item.Key.StartsWith("//") )
+              stream.WriteLine(item.Key + separator + item.Value);
+            else
+              stream.WriteLine(item.Key);
           stream.Close();
           return true;
         }
