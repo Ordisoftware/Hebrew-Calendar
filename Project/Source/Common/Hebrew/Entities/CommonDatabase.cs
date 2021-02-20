@@ -25,61 +25,13 @@ namespace Ordisoftware.Hebrew
 
     static public readonly CommonDatabase Instance = new CommonDatabase();
 
-    //private OdbcConnection CommonLockFileConnection;
-
     private CommonDatabase()
     {
-      CreateSchemaIfNotExists();
+      CreateAppLockSchemaIfNotExists();
+      CreateParashotSchemaIfNotExists();
     }
 
-    public DataTable ParashotTable { get; private set; }
 
-    public void UseParashotTable()
-    {
-      if ( ParashotTable != null ) return;
-      // TODO check if parashotinstance == 0
-      // TODO incr parashotinstance
-      // TODO use readonly if locked ?
-      ParashotTable = new DataTable(ParashotTableName);
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-        try
-        {
-          connection.Open();
-          var command = new OdbcCommand(ParashotSelectAll, connection);
-          using ( var adapter = new OdbcDataAdapter(command) )
-            adapter.Fill(ParashotTable);
-        }
-        finally
-        {
-          connection.Close();
-        }
-      CreateParashotDataIfNotExists(false);
-    }
-
-    public void DisposeParashotTable()
-    {
-      if ( ParashotTable == null ) return;
-      ParashotTable.Dispose();
-      ParashotTable = null;
-      // TODO unlock parashotinstance
-    }
-
-    public void UpdateParashotTable()
-    {
-      if ( ParashotTable == null ) throw new ArgumentNullException(ParashotTableName);
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(ParashotSelectAll, connection) )
-      using ( var adapter = new OdbcDataAdapter(command) )
-      using ( var builder = new OdbcCommandBuilder(adapter) )
-        try
-        {
-          adapter.Update(ParashotTable);
-        }
-        finally
-        {
-          connection.Close();
-        }
-    }
 
   }
 

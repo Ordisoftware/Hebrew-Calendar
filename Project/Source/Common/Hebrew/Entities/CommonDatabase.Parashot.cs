@@ -28,26 +28,20 @@ namespace Ordisoftware.Hebrew
     public const string ParashotSelectAll = "select * from " + ParashotTableName;
     public const string ParashotDeleteAll = "delete from " + ParashotTableName;
 
-    private void CreateSchemaIfNotExists()
+    public DataTable ParashotTable { get; private set; }
+
+    private bool ParashotTableMutex;
+
+    private void CreateParashotSchemaIfNotExists()
     {
       SystemManager.TryCatchManage(() =>
       {
         SQLiteOdbcHelper.CreateOrUpdateDSN(Globals.CommonDatabaseOdbcDSN, Globals.CommonDatabaseFilePath, 0);
         using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-          try
-          {
-            connection.Open();
-            /*CommonLockFileConnection.CheckTable(@"System",
-                                                @"CREATE TABLE System
-                                                  (
-                                                    CalendarInstances INTEGER DEFAULT 0 NOT NULL
-                                                    LettersInstances INTEGER DEFAULT 0 NOT NULL
-                                                    WordsInstances INTEGER DEFAULT 0 NOT NULL
-                                                    ParashotInstances INTEGER DEFAULT 0 NOT NULL
-                                                    PRIMARY KEY(Book, Number)
-                                                  )");*/
-            connection.CheckTable(ParashotTableName,
-                                  $@"CREATE TABLE {ParashotTableName}
+        {
+          connection.Open();
+          connection.CheckTable(ParashotTableName,
+                                $@"CREATE TABLE {ParashotTableName}
                                   (
                                     Book INTEGER NOT NULL,
                                     Number INTEGER NOT NULL,
@@ -62,24 +56,59 @@ namespace Ordisoftware.Hebrew
                                     Memo TEXT DEFAULT '' NOT NULL,
                                     PRIMARY KEY (Book, Number)
                                   )");
-          }
-          finally
-          {
-            connection.Close();
-          }
+        }
       });
     }
 
-    private bool Mutex;
+    public void UseParashotTable()
+    {
+      if ( ParashotTable != null ) return;
+      Lock(ParashotTableName);
+      Lock(ParashotTableName);
+      if ( GetLocks(ParashotTableName) != 1 )
+        // TODO manage read only mode
+        DisplayManager.Show("Table is in use by other processes: readonly mode." + Globals.NL +
+                            "Try to check locks count to enable write mode." + Globals.NL2 +
+                            string.Join(Environment.NewLine, GetOtherLockers(ParashotTableName)));
+      ParashotTable = new DataTable(ParashotTableName);
+      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
+      {
+        connection.Open();
+        var command = new OdbcCommand(ParashotSelectAll, connection);
+        using ( var adapter = new OdbcDataAdapter(command) )
+          adapter.Fill(ParashotTable);
+      }
+      CreateParashotDataIfNotExists(false);
+    }
+
+    public void DisposeParashotTable()
+    {
+      if ( ParashotTable == null ) return;
+      ParashotTable.Dispose();
+      ParashotTable = null;
+      Unlock(ParashotTableName);
+    }
+
+    public void UpdateParashotTable()
+    {
+      if ( ParashotTable == null ) throw new ArgumentNullException(ParashotTableName);
+      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
+      using ( var command = new OdbcCommand(ParashotSelectAll, connection) )
+      using ( var adapter = new OdbcDataAdapter(command) )
+      using ( var builder = new OdbcCommandBuilder(adapter) )
+      {
+        adapter.Update(ParashotTable);
+      }
+    }
 
     public void CreateParashotDataIfNotExists(bool reset)
     {
-      if ( Mutex ) return;
+      if ( ParashotTableMutex ) return;
       SystemManager.TryCatchManage(() =>
       {
         bool temp = Globals.IsReady;
         Globals.IsReady = false;
-        Mutex = true;
+        ParashotTableMutex = true;
         try
         {
           if ( !reset && ParashotTable.Rows.Count == 54 ) return;
@@ -87,15 +116,10 @@ namespace Ordisoftware.Hebrew
 
           using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
           using ( var command = new OdbcCommand(ParashotDeleteAll, connection) )
-            try
-            {
-              connection.Open();
-              command.ExecuteNonQuery();
-            }
-            finally
-            {
-              connection.Close();
-            }
+          {
+            connection.Open();
+            command.ExecuteNonQuery();
+          }
 
           UseParashotTable();
           var query = from book in Parashah.Defaults
@@ -123,7 +147,7 @@ namespace Ordisoftware.Hebrew
         finally
         {
           Globals.IsReady = temp;
-          Mutex = false;
+          ParashotTableMutex = false;
         }
       });
     }

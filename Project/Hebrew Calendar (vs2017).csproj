@@ -165,7 +165,8 @@
     <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.Create.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.System.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.Parashot.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
@@ -916,6 +917,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.fr.resx">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
