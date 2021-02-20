@@ -1,19 +1,19 @@
 // BOOK BERESHIT
 Bereshit = Au début
-Noa'h = Il (HaShem) a déposé [la Torah]
-Lek Leka = Vas pour toi
-Vayera = Il aura révélé
+Noa'h = Il (HaShem) a déposé [la Torah en toi]
+Lek Leka = Vas pour toi {fais ce que tu veux sans nuire}
+Vayera = Il aura révélé [le bien et ce qui est juste]
 Haye Sarah = Existence de Sarah
 Toledot = Engendrements
 Vayetse = Il fera sortir [de Mitsraïm]
-Vayishla'h = Il aura libéré
+Vayishla'h = Il aura libéré [de l'ignorance et des manigances]
 Vayeshev = Il donnera un foyer
 Mikets = Lorsque fin du processus
 Vayigash = Il aura offert
 Vaye'hi = Il aura péservé la vie
 // BOOK SHEMOT
 Shemot = Réalisations
-Vaera = J'aurais pris soin [de l'étude]
+Vaera = J'aurais pris soin [de l'étude pour eduquer]
 Bo = Il a accomplit
 Beshala'h = Parce qu'Il a dirigé
 Yitro = Il sauvera [des méchants]
@@ -29,10 +29,10 @@ Tsav = Recommandation
 Shemini = Rayonne pour moi
 Tazria = Elle enfantera de moi
 Metsora = En cas d'infection terminée
-A'harei Mot = Il a amélioré moi, Il a fait cesser le mal
-Kedoshim = Bienveillants
-Emor = Ils parleront
-Behar = Il a clarifié
+A'harei Mot = Il a amélioré moi, Il a fait cesser le mal [qui me tuait]
+Kedoshim = Bienveillants [les enfants d'Israël seront]
+Emor = Ils parleront [de HaShem et Sa Torah]
+Behar = Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: Payaga payas+ga "lait qui bouge")}
 Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
 Bamidbar = Lorsque solitude

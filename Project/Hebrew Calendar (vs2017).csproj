@@ -159,6 +159,14 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.Create.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\CommonDatabase.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
@@ -686,6 +694,12 @@
     <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.fr.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.resx">
+      <DependentUpon>EditMemoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.fr.resx">
       <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
     </EmbeddedResource>

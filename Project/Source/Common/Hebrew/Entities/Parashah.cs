@@ -30,6 +30,7 @@ namespace Ordisoftware.Hebrew
     public bool IsLinkedToNext { get; }
     public string Translation { get; set; }
     public string Lettriq { get; set; }
+    public string Memo { get; set; }
 
     public string ReferenceBegin
       => $"{(int)Book + 1}.{VerseBegin}";

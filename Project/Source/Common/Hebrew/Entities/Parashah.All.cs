@@ -30,13 +30,13 @@ namespace Ordisoftware.Hebrew
 
     static public void LoadTranslations()
     {
-      var query = from book in All
+      var query = from book in Defaults
                   from parashah in book.Value
                   select parashah;
       var linesTranslation = new NullSafeOfStringDictionary<string>();
       var linesLettriq = new NullSafeOfStringDictionary<string>();
-      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, "=");
-      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, "=");
+      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
+      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
       int index = 0;
       foreach ( Parashah item in query )
       {
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> All
+    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
       {
         [TorahBooks.Bereshit] = new NullSafeList<Parashah>
