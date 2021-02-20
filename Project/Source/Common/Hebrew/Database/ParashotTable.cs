@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew
 
     static public readonly string TableName = nameof(ParashotTable).Replace("Table", "");
 
-    static public DataTable Instance { get; private set; }
+    static public DataTable DataTable { get; private set; }
 
     static private bool ParashotTableMutex;
 
@@ -65,16 +65,16 @@ namespace Ordisoftware.Hebrew
 
     static public void Take()
     {
-      if ( Instance != null ) return;
+      if ( DataTable != null ) return;
       ProcessLocksTable.Lock(TableName);
-      Instance = new DataTable(TableName);
+      DataTable = new DataTable(TableName);
       string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
       using ( var adapter = new OdbcDataAdapter(command) )
       {
         connection.Open();
-        adapter.Fill(Instance);
+        adapter.Fill(DataTable);
       }
       CreateDataIfNotExists();
     }
@@ -86,15 +86,15 @@ namespace Ordisoftware.Hebrew
 
     static public void Release()
     {
-      if ( Instance == null ) return;
-      Instance.Dispose();
-      Instance = null;
+      if ( DataTable == null ) return;
+      DataTable.Dispose();
+      DataTable = null;
       ProcessLocksTable.Unlock(TableName);
     }
 
     static public void Update()
     {
-      if ( Instance == null ) throw new ArgumentNullException(TableName);
+      if ( DataTable == null ) throw new ArgumentNullException(TableName);
       string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
       using ( var command = new OdbcCommand(sql, connection) )
@@ -102,7 +102,7 @@ namespace Ordisoftware.Hebrew
       using ( var builder = new OdbcCommandBuilder(adapter) )
       {
         connection.Open();
-        adapter.Update(Instance);
+        adapter.Update(DataTable);
       }
     }
 
@@ -116,7 +116,7 @@ namespace Ordisoftware.Hebrew
         ParashotTableMutex = true;
         try
         {
-          if ( !reset && Instance.Rows.Count == 54 ) return;
+          if ( !reset && DataTable.Rows.Count == 54 ) return;
           Release();
           string sql = "DELETE FROM " + TableName;
           using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew
                       select parashah;
           foreach ( Parashah parashah in query.ToList() )
           {
-            var row = Instance.NewRow();
+            var row = DataTable.NewRow();
             row[nameof(Parashah.Book)] = parashah.Book + 1;
             row[nameof(Parashah.Number)] = parashah.Number;
             row[nameof(Parashah.Name)] = parashah.Name;
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew
             row[nameof(Parashah.Translation)] = parashah.Translation;
             row[nameof(Parashah.Lettriq)] = parashah.Lettriq;
             row[nameof(Parashah.Memo)] = "";
-            Instance.Rows.Add(row);
+            DataTable.Rows.Add(row);
           }
           Update();
         }

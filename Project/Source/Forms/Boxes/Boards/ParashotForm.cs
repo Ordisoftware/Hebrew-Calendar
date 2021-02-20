@@ -42,6 +42,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
+    private DataRowView CurrentDataBoundItem
+      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
+
+    private string CurrentDataBoundItemReferenceBegin
+      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." + 
+         $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
+
+    private string CurrentDataBoundItemToString(bool useHebrewFont)
+    {
+      var item = CurrentDataBoundItem;
+      bool islinked = Convert.ToBoolean(item[nameof(Parashah.IsLinkedToNext)]);
+      return $"Sefer {item[nameof(Parashah.Book)]}, Parashah n°{item[nameof(Parashah.Number)]}, " +
+             $"{item[nameof(Parashah.Name)]}{( islinked ? "*" : "" )} " +
+             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} : " +
+             $"{item[nameof(Parashah.Translation)]} ; {item[nameof(Parashah.Lettriq)]} " +
+             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
+    }
+
     private ParashotForm()
     {
       InitializeComponent();
@@ -49,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
-      BindingSource.DataSource = ParashotTable.Instance;
+      BindingSource.DataSource = ParashotTable.DataTable;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -85,7 +103,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionUndo.PerformClick();
         ParashotTable.Release();
         ParashotTable.Take();
-        BindingSource.DataSource = ParashotTable.Instance;
+        BindingSource.DataSource = ParashotTable.DataTable;
       }
     }
 
@@ -161,14 +179,14 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      ParashotTable.Instance.Export(filePath, Program.GridExportTargets);
+      ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
       ParashotTable.CreateDataIfNotExists(true);
-      BindingSource.DataSource = ParashotTable.Instance;
+      BindingSource.DataSource = ParashotTable.DataTable;
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
     }
@@ -182,7 +200,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
-      ParashotTable.Instance.RejectChanges();
+      ParashotTable.DataTable.RejectChanges();
       BindingSource.ResetBindings(false);
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
@@ -208,12 +226,6 @@ namespace Ordisoftware.Hebrew.Calendar
         }
     }
 
-    private DataRowView CurrentDataBoundItem 
-      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
-
-    private string CurrentDataBoundItemReferenceBegin
-      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}.{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
-
     private void InitializeMenu()
     {
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
@@ -232,10 +244,10 @@ namespace Ordisoftware.Hebrew.Calendar
     private void BindingSource_DataSourceChanged(object sender, EventArgs e)
     {
       if ( DataGridView.DataSource == null ) return;
-      if ( ParashotTable.Instance == null ) return;
+      if ( ParashotTable.DataTable == null ) return;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
       {
-        var datacolumn = ParashotTable.Instance.Columns[column.DataPropertyName];
+        var datacolumn = ParashotTable.DataTable.Columns[column.DataPropertyName];
         if ( datacolumn.DataType == typeof(string) )
         {
           column.DefaultCellStyle.DataSourceNullValue = string.Empty;
@@ -316,7 +328,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
+                                    Program.Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
@@ -341,12 +354,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      //Clipboard.SetText(CurrentParashah.ToString(true));
+      Clipboard.SetText(CurrentDataBoundItemToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      //Clipboard.SetText(CurrentParashah.ToString());
+      Clipboard.SetText(CurrentDataBoundItemToString(false));
     }
 
   }
