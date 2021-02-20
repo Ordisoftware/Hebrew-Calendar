@@ -118,14 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
+  <data name="ActionUndo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ActionSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionUndo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionUndo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAWtJREFUOE/tkE9LAlEUxWfdvg8Q2D5znX8SHQmJFkFEpC2sVUFtgijQGU2LIAvD
+        aJUggSWYRDozZmhlugiKKAjLCFoYgUMQFriI0x2zRRDRB/DAj3sfnHfuu49p6qfMPklj4IWIjhPetJwA
+        rYtQKqHjRRg8UsTq3Gtp2L9kmk/B4BbDek7c7F06hF8qQrh+RuauQsh1siUZ8csncPErWBbTMHqkYOM6
+        wxgoeTX7gP61PNK3MsJnZczulzASuoB9Iw9bMAfb+insxNTWOUKFRwxTT4N36gFaVxJFuQax+ILxWAl9
+        oRuwyznonYmqZmzF2846BlUWx5BSO0f9Phr4PhA4htl7AHYhxdYDEndVDEbuYYs+wBoooGs6kqHsDqKV
+        UHb+RjmrdTPbEuujAILR8wJOyh+YSFUwmZaRKL6ih4vtkvEvtennokcmb6rGGHnhlX4e3XySoOoWlf3Q
+        MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionUndo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionUndo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 1</value>
+  </data>
+  <data name="ActionUndo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionUndo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionUndo.Name" xml:space="preserve">
+    <value>ActionUndo</value>
+  </data>
+  <data name="&gt;&gt;ActionUndo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionUndo.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionUndo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="ActionSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -165,7 +207,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSave.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -195,7 +237,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -537,7 +579,7 @@
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 292</value>
+    <value>251, 270</value>
   </data>
   <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
     <value>ContextMenu</value>
@@ -752,6 +794,12 @@
   <data name="&gt;&gt;MenuSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionCopyName.Name" xml:space="preserve">
+    <value>ActionCopyName</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionCopyHebrewChars.Name" xml:space="preserve">
     <value>ActionCopyHebrewChars</value>
   </data>
@@ -829,12 +877,6 @@
   </data>
   <data name="&gt;&gt;isLinkedToNextDataGridViewCheckBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyName.Name" xml:space="preserve">
-    <value>ActionCopyName</value>
-  </data>
-  <data name="&gt;&gt;ActionCopyName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>

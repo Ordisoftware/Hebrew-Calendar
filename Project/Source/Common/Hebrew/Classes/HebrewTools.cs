@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.IO;
 using Ordisoftware.Core;
 
@@ -59,6 +60,15 @@ namespace Ordisoftware.Hebrew
         return;
       }
       SystemManager.RunShell(path, "--ref " + reference);
+    }
+
+    /// <summary>
+    /// Open default online verse search url.
+    /// </summary>
+    static public void OpenOnlineVerse(string url, string reference)
+    {
+      int[] list = reference.Split('.').Select(int.Parse).ToArray();
+      OpenOnlineVerse(url, list[0], list[1], list[2]);
     }
 
     /// <summary>

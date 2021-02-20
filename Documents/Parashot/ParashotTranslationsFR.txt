@@ -24,7 +24,7 @@ Ki Tissa = Puisqu'elle portera
 Vayaqhel = Il aura assemblé
 Peqoudei = Ils ont attribué pour moi
 // BOOK VAYIQRA
-Vayikra = Il aura invoqué [le bien]
+Vayikra = Il aura choisit
 Tsav = Recommandation
 Shemini = Rayonne pour moi
 Tazria = Elle enfantera de moi

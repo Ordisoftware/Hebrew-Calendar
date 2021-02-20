@@ -31,6 +31,12 @@ namespace Ordisoftware.Hebrew
     public string Translation { get; set; }
     public string Lettriq { get; set; }
 
+    public string ReferenceBegin
+      => $"{(int)Book + 1}.{VerseBegin}";
+
+    public string ReferenceEnd
+      => $"{(int)Book + 1}.{VerseEnd}";
+
     public override string ToString()
     {
       return ToString(false);

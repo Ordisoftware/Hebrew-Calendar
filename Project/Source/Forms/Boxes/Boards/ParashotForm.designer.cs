@@ -39,6 +39,7 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
@@ -62,6 +63,7 @@
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,7 +77,6 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -85,10 +86,20 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionUndo);
       this.PanelBottom.Controls.Add(this.ActionSave);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionUndo
+      // 
+      this.ActionUndo.AllowDrop = true;
+      resources.ApplyResources(this.ActionUndo, "ActionUndo");
+      this.ActionUndo.FlatAppearance.BorderSize = 0;
+      this.ActionUndo.Name = "ActionUndo";
+      this.ActionUndo.UseVisualStyleBackColor = true;
+      this.ActionUndo.Click += new System.EventHandler(this.ActionUndo_Click);
       // 
       // ActionSave
       // 
@@ -120,6 +131,7 @@
       this.DataGridView.AutoGenerateColumns = false;
       this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridView.BackgroundColor = System.Drawing.Color.White;
+      this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,6 +318,12 @@
       this.MenuSeparator2.Name = "MenuSeparator2";
       resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
+      // ActionCopyName
+      // 
+      resources.ApplyResources(this.ActionCopyName, "ActionCopyName");
+      this.ActionCopyName.Name = "ActionCopyName";
+      this.ActionCopyName.Click += new System.EventHandler(this.ActionCopyName_Click);
+      // 
       // ActionCopyHebrewChars
       // 
       resources.ApplyResources(this.ActionCopyHebrewChars, "ActionCopyHebrewChars");
@@ -388,12 +406,6 @@
       this.isLinkedToNextDataGridViewCheckBoxColumn.Name = "isLinkedToNextDataGridViewCheckBoxColumn";
       this.isLinkedToNextDataGridViewCheckBoxColumn.ReadOnly = true;
       // 
-      // ActionCopyName
-      // 
-      resources.ApplyResources(this.ActionCopyName, "ActionCopyName");
-      this.ActionCopyName.Name = "ActionCopyName";
-      this.ActionCopyName.Click += new System.EventHandler(this.ActionCopyName_Click);
-      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -456,5 +468,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnicode;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
+    private System.Windows.Forms.Button ActionUndo;
   }
 }
