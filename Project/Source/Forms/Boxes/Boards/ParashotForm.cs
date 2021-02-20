@@ -49,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
-      BindingSource.DataSource = ParashotTable.Instance;
+      BindingSource.DataSource = ParashotTable.DataTable;
       ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionUndo.PerformClick();
         ParashotTable.Release();
         ParashotTable.Take();
-        BindingSource.DataSource = ParashotTable.Instance;
+        BindingSource.DataSource = ParashotTable.DataTable;
       }
     }
 
@@ -161,14 +161,14 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      ParashotTable.Instance.Export(filePath, Program.GridExportTargets);
+      ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
       ParashotTable.CreateDataIfNotExists(true);
-      BindingSource.DataSource = ParashotTable.Instance;
+      BindingSource.DataSource = ParashotTable.DataTable;
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
     }
@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
-      ParashotTable.Instance.RejectChanges();
+      ParashotTable.DataTable.RejectChanges();
       BindingSource.ResetBindings(false);
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
@@ -232,10 +232,10 @@ namespace Ordisoftware.Hebrew.Calendar
     private void BindingSource_DataSourceChanged(object sender, EventArgs e)
     {
       if ( DataGridView.DataSource == null ) return;
-      if ( ParashotTable.Instance == null ) return;
+      if ( ParashotTable.DataTable == null ) return;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
       {
-        var datacolumn = ParashotTable.Instance.Columns[column.DataPropertyName];
+        var datacolumn = ParashotTable.DataTable.Columns[column.DataPropertyName];
         if ( datacolumn.DataType == typeof(string) )
         {
           column.DefaultCellStyle.DataSourceNullValue = string.Empty;
