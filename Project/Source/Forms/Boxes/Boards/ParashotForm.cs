@@ -93,6 +93,17 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.SaveDataDialog.FileName = "Parashot";
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
+      string filePath = MainForm.Instance.SaveDataDialog.FileName;
+      DataGridView.ToDataTable("Parashot").Export(filePath, Program.GridExportTargets);
+    }
+
     private void ActionSave_Click(object sender, EventArgs e)
     {
       var listTranslations = new NullSafeOfStringDictionary<string>();
