@@ -24,16 +24,16 @@ Ki Tissa = Since she will carry
 Vayaqhel = He will have assembled
 Peqoudei = They allocated for me
 // BOOK VAYIQRA
-Vayikra = 
-Tsav = 
-Shemini = 
-Tazria = 
-Metsora = 
-A'harei Mot = 
-Kedoshim = 
-Emor = 
-Behar = 
-Be'houqotaï = 
+Vayikra = He will have summoned [the good]
+Tsav = Recommendation
+Shemini = Shine for me
+Tazria = She will give birth from me
+Metsora = In case of infection terminated
+A'harei Mot = He improved me, He made the evil stop
+Kedoshim = Benevolent
+Emor = They will talk
+Behar = Because the mountain (sion, heart)
+Be'houqotaï = I would write according to Him
 // BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
