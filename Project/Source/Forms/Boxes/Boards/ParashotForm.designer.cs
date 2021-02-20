@@ -75,6 +75,7 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -246,6 +247,7 @@
             this.ActionOpenHebrewLetters,
             this.ActionOpenHebrewWords,
             this.MenuSeparator2,
+            this.ActionCopyName,
             this.ActionCopyHebrewChars,
             this.ActionCopyUnicodeChars,
             this.MenuSeparator3,
@@ -386,6 +388,12 @@
       this.isLinkedToNextDataGridViewCheckBoxColumn.Name = "isLinkedToNextDataGridViewCheckBoxColumn";
       this.isLinkedToNextDataGridViewCheckBoxColumn.ReadOnly = true;
       // 
+      // ActionCopyName
+      // 
+      resources.ApplyResources(this.ActionCopyName, "ActionCopyName");
+      this.ActionCopyName.Name = "ActionCopyName";
+      this.ActionCopyName.Click += new System.EventHandler(this.ActionCopyName_Click);
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -447,5 +455,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEnd;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnicode;
+    private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
   }
 }

@@ -41,8 +41,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
-    private bool HasChanges;
-
     private ParashotForm()
     {
       InitializeComponent();
@@ -72,11 +70,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( !Globals.IsDevExecutable ) return;
-      if ( !HasChanges ) return;
-      if ( DisplayManager.QueryYesNo("Save changes?") )
-        ActionSave.PerformClick();
-      else
-        Parashah.LoadTranslations();
+      if ( !ActionSave.Enabled ) return;
+      DisplayManager.QueryYesNo("Save changes?", ActionSave.PerformClick, Parashah.LoadTranslations);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -102,12 +97,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var listTranslations = new NullSafeOfStringDictionary<string>();
       var listLettriqs = new NullSafeOfStringDictionary<string>();
-      /*foreach ( DataGridViewRow row in DataGridView.Rows )
-      {
-        var item = (Parashah)row.DataBoundItem;
-        listTranslations.Add(item.Name, item.Translation);
-        listLettriqs.Add(item.Name, item.Lettriq);
-      }*/
       foreach ( var book in Parashah.All.Keys )
       {
         listTranslations.Add("// BOOK " + book.ToString().ToUpper(), "");
@@ -118,12 +107,9 @@ namespace Ordisoftware.Hebrew.Calendar
           listLettriqs.Add(item.Name, item.Lettriq);
         }
       }
-      string filePathTranslations = string.Format(Parashah.ParashotTranslationsFilePath, Languages.CurrentCode.ToUpper());
-      string filePathLettriqs = string.Format(Parashah.ParashotLettriqsFilePath, Languages.CurrentCode.ToUpper());
-      listTranslations.SaveKeyValuePairs(filePathTranslations, " = ");
-      listLettriqs.SaveKeyValuePairs(filePathLettriqs, " = ");
+      listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
+      listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
       ActionSave.Enabled = false;
-      HasChanges = false;
     }
 
     private void Select(Parashah parashah)
@@ -163,8 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
     {
       if ( !Created ) return;
-      HasChanges = true;
-      ActionSave.Enabled = HasChanges;
+      ActionSave.Enabled = true;
     }
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -221,6 +206,12 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
     {
       HebrewTools.OpenHebrewWords("", Program.Settings.HebrewWordsExe);
+    }
+
+    private void ActionCopyName_Click(object sender, EventArgs e)
+    {
+      var item = (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
+      Clipboard.SetText(item.Name);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)

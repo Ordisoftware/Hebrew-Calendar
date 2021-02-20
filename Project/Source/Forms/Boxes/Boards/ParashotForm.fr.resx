@@ -301,4 +301,7 @@
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
+  <data name="ActionCopyName.Text" xml:space="preserve">
+    <value>Copier la ligne (caractères de translittération)</value>
+  </data>
 </root>

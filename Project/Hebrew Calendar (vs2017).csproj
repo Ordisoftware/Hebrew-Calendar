@@ -159,6 +159,7 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />

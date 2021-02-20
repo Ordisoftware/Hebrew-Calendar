@@ -305,7 +305,7 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
@@ -328,13 +328,13 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
   <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>247, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -359,7 +359,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
@@ -384,13 +384,13 @@
     <value>None</value>
   </data>
   <data name="ActionOpenShorashon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionOpenShorashon.Text" xml:space="preserve">
     <value>Shorashon Lexicon</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>247, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -406,7 +406,7 @@
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
@@ -425,13 +425,33 @@
 </value>
   </data>
   <data name="ActionOpenHebrewWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionOpenHebrewWords.Text" xml:space="preserve">
     <value>Hebrew Words</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>247, 6</value>
+  </data>
+  <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAfFJREFUOE+Vks1LVFEYxue/aCtE4aoWZXk1Ilr0b0SCVFQYBFpt2lXQJsfu3Gyi
+        DxNSRMdxvGPeO19qZg3de0apwFWii3HM2gzTxvDpPOccr4a46Acv733f83teZjGxg0g4DmzbBrtZHcyb
+        OxfGB2+fx2DPWbztbsPde/fhuu+Qybiqc+ae7/Tom6hmoPscRHkeqakc0lM+Hj56jIWPZXxY+KQ6Z+75
+        To++iWpe3TqDsWwOO8TtfthPk1Fx3oEefRPVvLzZjtFJTwlrq2tYr1bxo1aLijP3hB59E9W86GrDmDut
+        hF+1KuqbNTQ2N9D4KUt2ztwTevRNVPP8hoWUq3/BISfEkddfcXTgG5qSQnXO3BN69E1Uk7xuycv6wJeg
+        jO1GHfhdx3Lls+qcuSf06Juo5tm11ujAbKkEEQaoyJqfm1WdM/eEHn0T1ThXT0cHgiDA1tYfVUKI6Jt7
+        Qo++iWoSV05FB4rFopJFGOK9/AWLFYFFEWJuZka906Nvohq7c/fAXpaXhPna/U5lfdA3UQ0X6emCEvbS
+        PPwdx0dWcExW8/CK2k14xf0Hnly2kB5KqCOprKcqI/+6np9DIZdX5fl5uH4JE0MO6Juo5sFFqxTvtNDb
+        0YLeSydVxWX1dfxbcfneJz36JhpxWNaJ/yj6kljsLzVrQBKFABULAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionCopyName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="ActionCopyName.Text" xml:space="preserve">
+    <value>Copy name (transliteration chars)</value>
   </data>
   <data name="ActionCopyHebrewChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -448,7 +468,7 @@
 </value>
   </data>
   <data name="ActionCopyHebrewChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionCopyHebrewChars.Text" xml:space="preserve">
     <value>Copy name (hebrew font chars)</value>
@@ -468,13 +488,13 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copy name (unicode chars)</value>
   </data>
   <data name="MenuSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 6</value>
+    <value>247, 6</value>
   </data>
   <data name="ActionCopyLineHebrew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -491,7 +511,7 @@
 </value>
   </data>
   <data name="ActionCopyLineHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionCopyLineHebrew.Text" xml:space="preserve">
     <value>Copy line (hebrew font chars)</value>
@@ -511,13 +531,13 @@
 </value>
   </data>
   <data name="ActionCopyLineUnicode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
+    <value>250, 22</value>
   </data>
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 248</value>
+    <value>251, 292</value>
   </data>
   <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
     <value>ContextMenu</value>
@@ -809,6 +829,12 @@
   </data>
   <data name="&gt;&gt;isLinkedToNextDataGridViewCheckBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyName.Name" xml:space="preserve">
+    <value>ActionCopyName</value>
+  </data>
+  <data name="&gt;&gt;ActionCopyName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>
