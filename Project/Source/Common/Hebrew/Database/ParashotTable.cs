@@ -24,9 +24,7 @@ namespace Ordisoftware.Hebrew
   static class ParashotTable
   {
 
-    public const string TableName = "Parashot";
-    private const string SelectAll = "select * from " + TableName;
-    private const string DeleteAll = "delete from " + TableName;
+    static public readonly string TableName = nameof(ParashotTable).Replace("Table", "");
 
     static public DataTable Instance { get; private set; }
 
@@ -70,12 +68,13 @@ namespace Ordisoftware.Hebrew
       if ( Instance != null ) return;
       ProcessLocksTable.Lock(TableName);
       Instance = new DataTable(TableName);
+      string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
+      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var adapter = new OdbcDataAdapter(command) )
       {
         connection.Open();
-        var command = new OdbcCommand(SelectAll, connection);
-        using ( var adapter = new OdbcDataAdapter(command) )
-          adapter.Fill(Instance);
+        adapter.Fill(Instance);
       }
       CreateParashotDataIfNotExists();
     }
@@ -101,11 +100,13 @@ namespace Ordisoftware.Hebrew
     static public void UpdateParashotTable()
     {
       if ( Instance == null ) throw new ArgumentNullException(TableName);
+      string sql = "SELECT * FROM " + TableName;
       using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(SelectAll, connection) )
+      using ( var command = new OdbcCommand(sql, connection) )
       using ( var adapter = new OdbcDataAdapter(command) )
       using ( var builder = new OdbcCommandBuilder(adapter) )
       {
+        connection.Open();
         adapter.Update(Instance);
       }
     }
@@ -122,8 +123,9 @@ namespace Ordisoftware.Hebrew
         {
           if ( !reset && Instance.Rows.Count == 54 ) return;
           DisposeParashotTable();
+          string sql = "DELETE FROM " + TableName;
           using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-          using ( var command = new OdbcCommand(DeleteAll, connection) )
+          using ( var command = new OdbcCommand(sql, connection) )
           {
             connection.Open();
             command.ExecuteNonQuery();
@@ -152,8 +154,8 @@ namespace Ordisoftware.Hebrew
         }
         finally
         {
-          Globals.IsReady = temp;
           ParashotTableMutex = false;
+          Globals.IsReady = temp;
         }
       });
     }
