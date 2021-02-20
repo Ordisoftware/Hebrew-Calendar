@@ -37,7 +37,7 @@ Be'houqotaï =
 // BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
-Beha'alotka = 
+Beha'alotka = <-
 Shela'h leka = 
 Kora'h = 
 'Houkat = 

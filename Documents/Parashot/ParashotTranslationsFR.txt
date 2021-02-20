@@ -32,11 +32,11 @@ Metsora = En cas d'infection terminée
 A'harei Mot = Il a amélioré moi, Il a fait cesser le mal
 Kedoshim = Bienveillants
 Emor = Ils parleront
-Behar = Parce que la montagne (sion, coeur)
+Behar = Il a clarifié
 Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
-Bamidbar = Dans désert
-Nasso = Élever!
+Bamidbar = Lorsque solitude
+Nasso = Il a soutenu
 Beha'alotka = Dans votre exaltation
 Shela'h leka = Envoyez pour vous
 Kora'h = Korach
