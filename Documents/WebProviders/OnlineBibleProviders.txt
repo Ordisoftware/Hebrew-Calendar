@@ -12,14 +12,36 @@
 ; Use the %WORD% tag in URL to allow the application to replace it by the word to process
 ; --------------------------------------------------------------------------------------------------
 
-Name = (EN) StudyBible.org
+Name = (EN) StudyBible.org (Literal with Strongs)
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = (EN) BibleHub.com
+Name = (EN) BibleHub.com (Literal with Strongs)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
-Name = (EN) Chabad.org
-URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
+-
+
+Name = (EN) BibleHub.com (Darby)
+URL = https://biblehub.com/dbt/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (EN) BibleHub.com (English Standard)
+URL = https://biblehub.com/esv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (EN) BibleHub.com (New International)
+URL = https://biblehub.com/niv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (EN) BibleHub.com (New King James)
+URL = https://biblehub.com/nkjv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+-
+
+Name = (FR) SainteBible.com (Segond)
+URL = https://saintebible.com/lsg/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (FR) SainteBible.com (Darby)
+URL = https://saintebible.com/mar/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (FR) SainteBible.com (Martin)
+URL = https://saintebible.com/dar/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 -
 
@@ -31,8 +53,47 @@ URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2
 
 -
 
-Name = (FR) LEvangile.com
+Name = (EN) Chabad.org
+URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
+
+-
+
+Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs sans codes)
+URL = https://www.levangile.com/Bible-LSGSN-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs et codes)
 URL = https://www.levangile.com/Bible-LSGS-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Louis Segond 1979 sans Strongs)
+URL = https://www.levangile.com/Bible-NEG-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Louis Segond 2007 sans Strongs)
+URL = https://www.levangile.com/Bible-S21-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+-
+
+Name = (FR) Levangile.com (Ostervald 1811)
+URL = https://www.levangile.com/Bible-OST-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Lausanne 1872)
+URL = https://www.levangile.com/Bible-LAU-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Glaire et Vigoureux 1902)
+URL = https://www.levangile.com/Bible-VIG-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Crampon 1923)
+URL = https://www.levangile.com/Bible-CRA-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Pirot-Clamer 1949)
+URL = https://www.levangile.com/Bible-BPC-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (Chouraqui 1985)
+URL = https://www.levangile.com/Bible-CHU-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+Name = (FR) Levangile.com (King James 2016)
+URL = https://www.levangile.com/Bible-KJF-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
+
+-
 
 Name = (FR) Djep.hd.free.fr
 URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%
