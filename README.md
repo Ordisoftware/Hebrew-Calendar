@@ -248,6 +248,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
 - Some file and code refactoring.
+- Add some online bible providers and update *chabad.org*.
 - Update help files.
 
 #### 2021.02.17 - Version 6.8
