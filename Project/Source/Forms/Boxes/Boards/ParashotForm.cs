@@ -206,13 +206,17 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionUndo.Enabled = false;
     }
 
-    private void OnKeyUp(object sender, KeyEventArgs e)
+    private void DataGridView_KeyDown(object sender, KeyEventArgs e)
     {
       if ( e.Control && e.KeyCode == Keys.S )
         ActionSave.PerformClick();
       else
-      if ( e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter )
+      if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
         DataGridView.BeginEdit(false);
+      else
+        return;
+      e.Handled = true;
+      e.SuppressKeyPress = true;
     }
 
     private void Select(Parashah parashah)
