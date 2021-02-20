@@ -42,6 +42,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.BringToFront();
     }
 
+    private DataRowView CurrentDataBoundItem
+      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
+
+    private string CurrentDataBoundItemReferenceBegin
+      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." + 
+         $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
+
+    private string CurrentDataBoundItemToString(bool useHebrewFont)
+    {
+      var item = CurrentDataBoundItem;
+      bool islinked = Convert.ToBoolean(item[nameof(Parashah.IsLinkedToNext)]);
+      return $"Sefer {item[nameof(Parashah.Book)]}, Parashah n°{item[nameof(Parashah.Number)]}, " +
+             $"{item[nameof(Parashah.Name)]}{( islinked ? "*" : "" )} " +
+             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} : " +
+             $"{item[nameof(Parashah.Translation)]} ; {item[nameof(Parashah.Lettriq)]} " +
+             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
+    }
+
     private ParashotForm()
     {
       InitializeComponent();
@@ -208,12 +226,6 @@ namespace Ordisoftware.Hebrew.Calendar
         }
     }
 
-    private DataRowView CurrentDataBoundItem 
-      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
-
-    private string CurrentDataBoundItemReferenceBegin
-      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}.{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
-
     private void InitializeMenu()
     {
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
@@ -316,7 +328,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
+                                    Program.Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
@@ -341,12 +354,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      //Clipboard.SetText(CurrentParashah.ToString(true));
+      Clipboard.SetText(CurrentDataBoundItemToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      //Clipboard.SetText(CurrentParashah.ToString());
+      Clipboard.SetText(CurrentDataBoundItemToString(false));
     }
 
   }
