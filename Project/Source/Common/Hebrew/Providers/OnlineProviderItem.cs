@@ -52,6 +52,7 @@ namespace Ordisoftware.Hebrew
         ["(FR)"] = createImage("flag_france.png"),
         ["(EN)"] = createImage("flag_great_britain.png"),
         ["(IW)"] = createImage("flag_israel.png"),
+        ["(EN/IW)"] = createImage("flag_en_iw.png"),
         ["(FR/IW)"] = createImage("flag_fr_iw.png"),
         ["(FR/EN)"] = createImage("flag_fr_en.png")
       };
