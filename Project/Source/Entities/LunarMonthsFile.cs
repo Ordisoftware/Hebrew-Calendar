@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public readonly List<string> Items = new List<string>();
 
     public string this[int index]
-      => index >= 0 && index < Items.Count ? Items[index] : "";
+      => index >= 0 && index < Items.Count ? Items[index] : string.Empty;
 
     public LunarMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
       : base(filePath, showFileNotFound, configurable, folder)
@@ -42,14 +42,14 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         Items.Clear();
-        Items.Add("");
+        Items.Add(string.Empty);
         var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
           if ( index >= HebrewMonths.Transliterations.Length )
             break;
           string line = lines[index];
-          if ( line.Trim() == "" )
+          if ( line.Trim() == string.Empty )
             continue;
           if ( line.StartsWith(";") )
             continue;

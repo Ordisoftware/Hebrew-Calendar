@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     /// <param name="date">The date.</param>
     static public string ToString(DateTime date)
     {
-      if ( date == null ) return "";
+      if ( date == null ) return string.Empty;
       return $"{date.Year.ToString("0000")}-{date.Month.ToString("00")}-{date.Day.ToString("00")}";
     }
 
@@ -70,7 +70,7 @@ namespace Ordisoftware.Core
     /// <returns>An empty string if time is null</returns>
     static public string ToString(TimeSpan? time)
     {
-      return time.HasValue ? $"{time.Value.Hours.ToString("00")}:{time.Value.Minutes.ToString("00")}" : "";
+      return time.HasValue ? $"{time.Value.Hours.ToString("00")}:{time.Value.Minutes.ToString("00")}" : string.Empty;
     }
 
     /// <summary>

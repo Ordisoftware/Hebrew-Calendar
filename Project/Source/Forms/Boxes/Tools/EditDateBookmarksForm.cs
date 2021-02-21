@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionImport_Click(object sender, EventArgs e)
     {
-      OpenBookmarksDialog.FileName = "";
+      OpenBookmarksDialog.FileName = string.Empty;
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           OpenBookmarksDialog.FilterIndex = index + 1;

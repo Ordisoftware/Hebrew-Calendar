@@ -165,6 +165,7 @@
     <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotTable.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
@@ -180,8 +181,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\Parashah.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\Parashah.All.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>

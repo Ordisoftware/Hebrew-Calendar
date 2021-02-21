@@ -13,37 +13,13 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class Parashah
+  static public partial class ParashotTable
   {
-
-    static Parashah()
-    {
-      LoadTranslations();
-    }
-
-    static public void LoadTranslations()
-    {
-      var query = from book in Defaults
-                  from parashah in book.Value
-                  select parashah;
-      var linesTranslation = new NullSafeOfStringDictionary<string>();
-      var linesLettriq = new NullSafeOfStringDictionary<string>();
-      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
-      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
-      int index = 0;
-      foreach ( Parashah item in query )
-      {
-        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index);
-        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index);
-        index++;
-      }
-    }
 
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
@@ -89,7 +65,7 @@ namespace Ordisoftware.Hebrew
           new Parashah(TorahBooks.Vayiqra, 08, "Emor", "אמור", "21.1", "24.23"),
           new Parashah(TorahBooks.Vayiqra, 09, "Behar", "בהר", "25.1", "26.2", true),
           new Parashah(TorahBooks.Vayiqra, 10, "Be'houqotaï", "בחוקותי", "26.3", "27.34")
-        },                                  
+        },
         [TorahBooks.Bamidbar] = new NullSafeList<Parashah>
         {
           new Parashah(TorahBooks.Bamidbar, 01, "Bamidbar", "במדבר", "1.1", "4.20"),
@@ -102,7 +78,7 @@ namespace Ordisoftware.Hebrew
           new Parashah(TorahBooks.Bamidbar, 08, "Pin'has", "פנחס", "25.10", "30.1"),
           new Parashah(TorahBooks.Bamidbar, 09, "Matot", "מטות", "30.2", "32.42", true),
           new Parashah(TorahBooks.Bamidbar, 10, "Massei", "מסעי", "33.1", "36.13")
-        },                                   
+        },
         [TorahBooks.Devarim] = new NullSafeList<Parashah>
         {
           new Parashah(TorahBooks.Devarim, 01, "Devarim", "דברים", "1.1", "3.22"),

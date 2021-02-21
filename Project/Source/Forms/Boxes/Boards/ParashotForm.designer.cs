@@ -499,7 +499,6 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParashotForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParashotForm_FormClosed);
       this.Load += new System.EventHandler(this.ParashotForm_Load);
-      this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
       this.PanelMain.ResumeLayout(false);

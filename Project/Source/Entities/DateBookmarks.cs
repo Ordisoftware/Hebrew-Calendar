@@ -49,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
         int index = 0;
         foreach ( string item in list )
         {
-          if ( item == "" )
+          if ( item == string.Empty )
             continue;
           DateTime date = DateTime.MinValue;
           try

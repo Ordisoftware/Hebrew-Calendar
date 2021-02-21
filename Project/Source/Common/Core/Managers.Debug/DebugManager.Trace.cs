@@ -77,7 +77,7 @@ namespace Ordisoftware.Core
       if ( !_Enabled || !_TraceEnabled ) return;
       try
       {
-        string message = "";
+        string message = string.Empty;
         if ( traceEvent != LogTraceEvent.System )
         {
           string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);

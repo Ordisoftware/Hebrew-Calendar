@@ -59,9 +59,9 @@ namespace Ordisoftware.Hebrew.Calendar
                                           PRIMARY KEY('Date')
                                         )");
         // TODO Uncomment when Shabatot Parashah will be generated
-        /*if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", "", false) )
+        /*if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", string.Empty, false) )
           DbUpgradedForParashahSupport = true;
-        if ( !LockFileConnection.CheckColumn("LunisolarDays", "IsParashaLinkedToNext", "INTEGER", "", false) )
+        if ( !LockFileConnection.CheckColumn("LunisolarDays", "IsParashaLinkedToNext", "INTEGER", string.Empty, false) )
           DbUpgradedForParashahSupport = true;*/
       });
     }

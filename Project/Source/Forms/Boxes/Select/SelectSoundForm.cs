@@ -189,7 +189,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectFilePath_Click(object sender, EventArgs e)
     {
       string path = EditFilePath.Text;
-      if ( path == "" ) path = Globals.UserMusicFolderPath;
+      if ( path == string.Empty ) path = Globals.UserMusicFolderPath;
       SystemManager.TryCatch(() => { OpenFileDialog.InitialDirectory = Path.GetDirectoryName(path); });
       SystemManager.TryCatch(() => { OpenFileDialog.FileName = Path.GetFileName(EditFilePath.Text); });
       if ( OpenFileDialog.ShowDialog() != DialogResult.OK ) return;

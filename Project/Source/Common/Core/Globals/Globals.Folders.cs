@@ -163,7 +163,7 @@ namespace Ordisoftware.Core
     /// Indicate the user data folder in local.
     /// </summary>
     static public string UserLocalDataFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, "");
+      => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, string.Empty);
 
     /// <summary>
     /// Indicate the user data folder in roaming.

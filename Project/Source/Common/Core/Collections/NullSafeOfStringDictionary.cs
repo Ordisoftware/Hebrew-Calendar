@@ -91,7 +91,7 @@ namespace Ordisoftware.Core
           {
             var parts = line.SplitNoEmptyLines(separator);
             if ( parts.Length == 1 )
-              list.Add(parts[0].Trim(), "");
+              list.Add(parts[0].Trim(), string.Empty);
             else
             if ( parts.Length == 2 )
               list.Add(parts[0].Trim(), parts[1].Trim());

@@ -88,7 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoImportSettings()
     {
-      OpenSettingsDialog.FileName = "";
+      OpenSettingsDialog.FileName = string.Empty;
       if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       MainForm.Instance.MenuShowHide_Click(null, null);
       LunarMonthsForm.Instance.Hide();

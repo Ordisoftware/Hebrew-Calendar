@@ -177,7 +177,7 @@ namespace Ordisoftware.Hebrew.Calendar
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();
       CoolPrintPreview.CoolPrintPreviewDialog.OfPageText = PrintPreviewDialogOfPageText.GetLang();
-      Parashah.LoadTranslations();
+      ParashotTable.LoadDefaults();
     }
 
     static private readonly TranslationsDictionary PrintPreviewDialogOfPageText

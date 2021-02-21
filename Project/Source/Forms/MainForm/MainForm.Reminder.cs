@@ -165,16 +165,16 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( rowNext.Date == SQLiteDate.ToString(DateTime.Today) )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.AfterSet )
+        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.AfterSet )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.NextDay )
+        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.NextDay )
           SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
         else
-        if ( row.Moonset != "" && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.BeforeSet )
+        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.BeforeSet )
           SetTimes(times, dateRow, rowPrevious.Moonset, row.Moonset, -1, 0, delta3);
         else
-        if ( row.Moonset == "" )
+        if ( row.Moonset == string.Empty )
           SetTimes(times, dateRow, rowPrevious.Moonset, rowNext.Moonset, -1, 1, delta3);
         else
           throw new Exception("Error on calculating celebration dates and times.");

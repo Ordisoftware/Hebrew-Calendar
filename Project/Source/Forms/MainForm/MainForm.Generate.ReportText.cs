@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var content = new StringBuilder();
         content.Append(headerSep + Globals.NL);
         content.Append(headerTxt + Globals.NL);
-        if ( DataSet.LunisolarDays.Count <= 0 ) return "";
+        if ( DataSet.LunisolarDays.Count <= 0 ) return string.Empty;
         var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
@@ -100,24 +100,24 @@ namespace Ordisoftware.Hebrew.Calendar
             strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                               ? ShabatText
                               : "   " );
-            string strMoonrise = day.Moonrise == ""
+            string strMoonrise = day.Moonrise == string.Empty
                                ? MoonNoText
                                : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
-            string strMoonset = day.Moonset == ""
+            string strMoonset = day.Moonset == string.Empty
                               ? MoonNoText
                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
             string strMoon = day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;
             string textDate = AppTranslations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
-            textDate = textDate.Replace(".", "") + " ";
+            textDate = textDate.Replace(".", string.Empty) + " ";
             textDate += dayDate.Day.ToString("00") + ".";
             textDate += dayDate.Month.ToString("00") + ".";
             textDate += dayDate.Year;
-            string strDesc = "";
+            string strDesc = string.Empty;
             string s1 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
             string s2 = AppTranslations.TorahEvent.GetLang(day.TorahEventsAsEnum);
-            strDesc = s1 != "" && s2 != "" ? s1 + " - " + s2 : s1 + s2;
+            strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;
             if ( length < 0 )

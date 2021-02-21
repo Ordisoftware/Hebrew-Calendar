@@ -361,14 +361,14 @@ namespace Ordisoftware.Core
         List<string> WordsList = str.Split((char)32).ToList();
         if ( WordsList.Capacity < 2 ) return str;
         int NumberOfWords = WordsList.Capacity - 1;
-        int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", ""), font).Width;
+        int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
         int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
                            - TextRenderer.MeasureText(WordsList[0], font).Width;
         int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
         float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
         return ( (Func<string>)( () => {
-          string Spaces = "";
-          string AdjustedWords = "";
+          string Spaces = string.Empty;
+          string AdjustedWords = string.Empty;
           for ( int h = 0; h < AverageSpace; h++ )
             Spaces += SpaceChar;
           foreach ( string Word in WordsList )

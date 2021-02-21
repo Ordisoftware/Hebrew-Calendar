@@ -158,8 +158,8 @@ namespace Ordisoftware.Core
     /// <param name="skip">The skip.</param>
     static internal string GetCallerName(int skip)
     {
-      if ( !DebugManager.UseStack ) return "";
-      string result = "";
+      if ( !DebugManager.UseStack ) return string.Empty;
+      string result = string.Empty;
       try
       {
         var frame = new StackFrame(skip, true);
@@ -203,9 +203,9 @@ namespace Ordisoftware.Core
         if ( !DebugManager.UseStack ) return;
         var frames = full ? new StackTrace(true).GetFrames() : new StackTrace(Instance, true).GetFrames();
         if ( frames == null ) return;
-        string result = "";
-        string partMethod = "";
-        string partFileName = "";
+        string result = string.Empty;
+        string partMethod = string.Empty;
+        string partFileName = string.Empty;
         bool first = true;
         foreach ( var frame in frames )
         {
@@ -237,9 +237,9 @@ namespace Ordisoftware.Core
           if ( line != 0 )
           {
             partMethod = $"{partFileName} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
-            if ( result != "" ) partMethod = Globals.NL + partMethod;
+            if ( result != string.Empty ) partMethod = Globals.NL + partMethod;
           }
-          if ( result != "" ) result += Globals.NL;
+          if ( result != string.Empty ) result += Globals.NL;
           result += partMethod;
           ( full ? ThreadStackList : ExceptionStackList ).Add(partMethod.SplitNoEmptyLines().AsMultiSpace());
         }
@@ -307,7 +307,7 @@ namespace Ordisoftware.Core
 
         SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
                                      .Replace(Globals.NL, " | ")
-                                     .Replace("  ", "");
+                                     .Replace("  ", string.Empty);
       }
       catch
       {

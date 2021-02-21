@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
       set
       {
         InsertingText?.Invoke(this, TextUpdating.Text, ref value);
-        if ( value == null ) value = "";
+        if ( value == null ) value = string.Empty;
         if ( value == Text ) return;
         if ( value.Length > MaxLength ) return;
         try
@@ -116,7 +116,7 @@ namespace Ordisoftware.Core
       set
       {
         InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
-        if ( value == null ) value = "";
+        if ( value == null ) value = string.Empty;
         if ( value == base.SelectedText ) return;
         if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
         try

@@ -55,9 +55,9 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
-          if ( LabelEventSeasonValue.Text == "" ) LabelEventSeasonValue.Text = "-";
+          if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
           LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
-          if ( LabelEventTorahValue.Text == "" ) LabelEventTorahValue.Text = "-";
+          if ( LabelEventTorahValue.Text == string.Empty ) LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
                           where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
           else
           {
             LabelTorahNextValue.Text = "-";
-            LabelTorahNextDateValue.Text = "";
+            LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNext.Tag = null;
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);

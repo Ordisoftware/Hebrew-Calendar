@@ -102,7 +102,7 @@ namespace Ordisoftware.Core
         {
           if ( ShowFileNotFound )
             DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePathDefault));
-          return "";
+          return string.Empty;
         }
         else
         if ( FilePath != FilePathDefault )
@@ -122,7 +122,7 @@ namespace Ordisoftware.Core
           {
             string msg = SysTranslations.LoadFileError.GetLang(filePath1, filePath2, ex.Message);
             DisplayManager.ShowError(msg);
-            return "";
+            return string.Empty;
           }
         }
       return FilePath;
