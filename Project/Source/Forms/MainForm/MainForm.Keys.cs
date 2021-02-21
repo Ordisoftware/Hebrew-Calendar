@@ -62,6 +62,9 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Control | Keys.N:
             ActionNavigate.PerformClick();
             return true;
+          case Keys.Alt | Keys.P:
+            ActionViewParashot.PerformClick();
+            return true;
           // Change view
           case Keys.Control | Keys.Shift | Keys.Tab:
             SetView(Settings.CurrentView.Previous(new[] { ViewMode.None }));
