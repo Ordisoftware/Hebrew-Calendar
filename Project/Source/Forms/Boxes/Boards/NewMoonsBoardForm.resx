@@ -133,7 +133,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>1</value>
   </data>
   <data name="ActionExport.Text" xml:space="preserve">
     <value>Export</value>
@@ -163,7 +163,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>0</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Close</value>
@@ -214,7 +214,7 @@
     <value>964, 298</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
     <value>DataGridView</value>
@@ -271,7 +271,7 @@
     <value>77, 17</value>
   </data>
   <data name="EditHideHours.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditHideHours.Text" xml:space="preserve">
     <value>Hide hours</value>
@@ -301,7 +301,7 @@
     <value>138, 17</value>
   </data>
   <data name="EditUseAbbreviatedNames.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="EditUseAbbreviatedNames.Text" xml:space="preserve">
     <value>Use abbreviated names</value>
@@ -331,7 +331,7 @@
     <value>124, 17</value>
   </data>
   <data name="EditUseLongDateFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="EditUseLongDateFormat.Text" xml:space="preserve">
     <value>Use long date format</value>
@@ -379,13 +379,13 @@
     <value>179, 25</value>
   </data>
   <data name="SelectYear1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Name" xml:space="preserve">
     <value>SelectYear1</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
     <value>PanelOptions</value>
@@ -403,13 +403,13 @@
     <value>179, 25</value>
   </data>
   <data name="SelectYear2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Name" xml:space="preserve">
     <value>SelectYear2</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
     <value>PanelOptions</value>
@@ -520,7 +520,7 @@
     <value>690, 17</value>
   </data>
   <data name="EditUseRealDays.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="EditUseRealDays.Text" xml:space="preserve">
     <value>Show days having the real start time of the moonset before the moonrise, else use solar days having the moonrise or the day with no moonrise</value>
