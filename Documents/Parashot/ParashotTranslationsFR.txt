@@ -1,7 +1,7 @@
 // BOOK BERESHIT
 Bereshit = Au début
 Noa'h = Il (HaShem) a déposé [la Torah en toi]
-Lek Leka = Vas pour toi {fais ce que tu veux sans nuire}
+Lek Leka = Vas pour toi (shabat) {fais ce que tu veux sans nuire}
 Vayera = Il aura révélé [le bien et ce qui est juste]
 Haye Sarah = Existence de Sarah
 Toledot = Engendrements
@@ -32,7 +32,7 @@ Metsora = En cas d'infection terminée
 A'harei Mot = Il a amélioré moi, Il a fait cesser le mal [qui me tuait]
 Kedoshim = Bienveillants [les enfants d'Israël seront]
 Emor = Ils parleront [de HaShem et Sa Torah]
-Behar = Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: Payaga = payas+ga "lait qui bouge")}
+Behar =  Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: Payaga = payas+ga "lait qui bouge")}
 Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
 Bamidbar = Lorsque solitude
