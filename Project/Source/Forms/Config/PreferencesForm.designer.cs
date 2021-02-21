@@ -61,6 +61,7 @@
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
+      this.LabelChaneLangNotice = new System.Windows.Forms.Label();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -256,7 +257,6 @@
       this.ActionResetHebrewWordsPath = new System.Windows.Forms.Button();
       this.LabelHebrewWordsPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewWordsPath = new System.Windows.Forms.Button();
-      this.EditHebrewWordsPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.PanelWeatherOnline = new System.Windows.Forms.Panel();
       this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
@@ -275,6 +275,7 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditHebrewWordsPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
@@ -487,6 +488,7 @@
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
+      this.TabPageApplication.Controls.Add(this.LabelChaneLangNotice);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
@@ -551,6 +553,12 @@
       // 
       resources.ApplyResources(this.LabelDateBookmarksCount, "LabelDateBookmarksCount");
       this.LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
+      // 
+      // LabelChaneLangNotice
+      // 
+      resources.ApplyResources(this.LabelChaneLangNotice, "LabelChaneLangNotice");
+      this.LabelChaneLangNotice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelChaneLangNotice.Name = "LabelChaneLangNotice";
       // 
       // LabelVolume
       // 
@@ -2140,7 +2148,6 @@
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.LabelHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewWordsPath);
-      this.TabPagePaths.Controls.Add(this.EditHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.PanelWeatherOnline);
       this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
@@ -2154,6 +2161,7 @@
       this.TabPagePaths.Controls.Add(this.ActionSelectCalculatorPath);
       this.TabPagePaths.Controls.Add(this.LabelHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
+      this.TabPagePaths.Controls.Add(this.EditHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.EditWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.EditExportFolder);
       this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
@@ -2181,14 +2189,6 @@
       this.ActionSelectHebrewWordsPath.Name = "ActionSelectHebrewWordsPath";
       this.ActionSelectHebrewWordsPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewWordsPath.Click += new System.EventHandler(this.ActionSelectHebrewWordsPath_Click);
-      // 
-      // EditHebrewWordsPath
-      // 
-      this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewWordsPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewWordsPath, "EditHebrewWordsPath");
-      this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
-      this.EditHebrewWordsPath.ReadOnly = true;
       // 
       // PanelWeatherOnline
       // 
@@ -2322,6 +2322,14 @@
       this.ActionSelectHebrewLettersPath.Name = "ActionSelectHebrewLettersPath";
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
+      // 
+      // EditHebrewWordsPath
+      // 
+      this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewWordsPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewWordsPath, "EditHebrewWordsPath");
+      this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
+      this.EditHebrewWordsPath.ReadOnly = true;
       // 
       // EditWeatherAppPath
       // 
@@ -2677,5 +2685,6 @@
     private System.Windows.Forms.Label LabelHebrewWordsPath;
     private System.Windows.Forms.Button ActionSelectHebrewWordsPath;
     private Core.UndoRedoTextBox EditHebrewWordsPath;
+    private System.Windows.Forms.Label LabelChaneLangNotice;
   }
 }

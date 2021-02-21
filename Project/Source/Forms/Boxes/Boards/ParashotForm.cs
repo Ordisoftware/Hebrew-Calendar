@@ -65,13 +65,13 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
-      ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
+      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
-      ActiveControl = DataGridView;
       foreach ( DataGridViewColumn column in DataGridView.Columns )
         column.HeaderText = column.HeaderText.ToUpper();
       Timer_Tick(null, null);
+      ActiveControl = DataGridView;
     }
 
     private void InitializeMenu()
@@ -117,14 +117,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Timer_Tick(object sender, EventArgs e)
     {
+      Timer.Enabled = DataGridView.ReadOnly;
       DataGridView.ReadOnly = ParashotTable.IsReadOnly();
-      ActionExportAsDefaults.Enabled = !DataGridView.ReadOnly;
+      ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
       ActionExport.Enabled = !DataGridView.ReadOnly;
       ActionReset.Enabled = !DataGridView.ReadOnly;
-      Timer.Enabled = DataGridView.ReadOnly;
-      LabelTableLocked.Visible = DataGridView.ReadOnly;
-      ActionViewLockers.Visible = DataGridView.ReadOnly;
       ActionCheckLockers.Visible = DataGridView.ReadOnly;
+      ActionViewLockers.Visible = DataGridView.ReadOnly;
+      LabelTableLocked.Visible = DataGridView.ReadOnly;
       if ( Created && !DataGridView.ReadOnly )
       {
         ActionUndo.PerformClick();
@@ -149,9 +149,10 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( !ActionSave.Enabled ) return;
-      DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(),
-                                ActionSave.PerformClick,
-                                ParashotTable.LoadDefaults);
+      DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
+                                      ActionSave.PerformClick,
+                                      ParashotTable.LoadDefaults,
+                                      () => e.Cancel = true);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -174,31 +175,34 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    private void ActionExportAsDefaults_Click(object sender, EventArgs e)
+    private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo("Overwrite default files?") ) return;
-      var listTranslations = new NullSafeOfStringDictionary<string>();
-      var listLettriqs = new NullSafeOfStringDictionary<string>();
-      ActionSave.PerformClick();
-      foreach ( DataGridViewRow row in DataGridView.Rows )
+      if ( DisplayManager.QueryYesNo("Overwrite default files?") )
       {
-        var bookName = row.Cells[ColumnBook.Index].FormattedValue as string;
-        if ( !string.IsNullOrEmpty(bookName) )
+        var listTranslations = new NullSafeOfStringDictionary<string>();
+        var listLettriqs = new NullSafeOfStringDictionary<string>();
+        ActionSave.PerformClick();
+        foreach ( DataGridViewRow row in DataGridView.Rows )
         {
-          bookName = bookName.ToUpper();
-          listTranslations.Add("// BOOK " + bookName, string.Empty);
-          listLettriqs.Add("// BOOK " + bookName, string.Empty);
+          var bookName = row.Cells[ColumnBook.Index].FormattedValue as string;
+          if ( !string.IsNullOrEmpty(bookName) )
+          {
+            bookName = bookName.ToUpper();
+            listTranslations.Add("// BOOK " + bookName, string.Empty);
+            listLettriqs.Add("// BOOK " + bookName, string.Empty);
+          }
+          string itemName = (string)row.Cells[ColumnName.Index].Value;
+          string itemTranslation = (string)row.Cells[ColumnTranslation.Index].Value;
+          string itemLettriq = (string)row.Cells[ColumnLettriq.Index].Value;
+          listTranslations.Add(itemName, itemTranslation);
+          listLettriqs.Add(itemName, itemLettriq);
         }
-        string itemName = (string)row.Cells[ColumnName.Index].Value;
-        string itemTranslation = (string)row.Cells[ColumnTranslation.Index].Value;
-        string itemLettriq = (string)row.Cells[ColumnLettriq.Index].Value;
-        listTranslations.Add(itemName, itemTranslation);
-        listLettriqs.Add(itemName, itemLettriq);
+        listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
+        listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
+        ParashotTable.LoadDefaults();
+        DisplayManager.Show("Default files updated.");
       }
-      listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
-      listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
-      ParashotTable.LoadDefaults();
-      DisplayManager.Show("Default files updated.");
+      ActiveControl = DataGridView;
     }
 
     private void ActionExport_Click(object sender, EventArgs e)
@@ -208,18 +212,24 @@ namespace Ordisoftware.Hebrew.Calendar
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
-      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
-      string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
+      if ( MainForm.Instance.SaveDataDialog.ShowDialog() == DialogResult.OK )
+      {
+        string filePath = MainForm.Instance.SaveDataDialog.FileName;
+        ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
+      }
+      ActiveControl = DataGridView;
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
     {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
-      ParashotTable.CreateDataIfNotExists(true);
-      BindingSource.DataSource = ParashotTable.DataTable;
-      ActionSave.Enabled = false;
-      ActionUndo.Enabled = false;
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) )
+      {
+        ParashotTable.CreateDataIfNotExists(true);
+        BindingSource.DataSource = ParashotTable.DataTable;
+        ActionSave.Enabled = false;
+        ActionUndo.Enabled = false;
+      }
+      ActiveControl = DataGridView;
     }
 
     private void ActionSave_Click(object sender, EventArgs e)
@@ -227,6 +237,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ParashotTable.Update();
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
+      ActiveControl = DataGridView;
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
@@ -235,6 +246,7 @@ namespace Ordisoftware.Hebrew.Calendar
       BindingSource.ResetBindings(false);
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
+      ActiveControl = DataGridView;
     }
 
     private void DataGridView_KeyDown(object sender, KeyEventArgs e)

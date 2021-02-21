@@ -140,6 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
