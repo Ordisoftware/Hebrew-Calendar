@@ -36,6 +36,9 @@ URL = https://www.sefaria.org/texts
 Name = (EN) Babylonian Talmud @ halakhah.com
 URL = http://halakhah.com
 
+Name = (EN) Judaism @ sacred-texts.com
+URL = https://www.sacred-texts.com/jud/
+
 -
 
 Name = (IW) Tanak Hebrew Text @ fourmilab.ch
