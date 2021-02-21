@@ -93,6 +93,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void Select(string referenceBegin)
     {
       if ( string.IsNullOrEmpty(referenceBegin) ) return;
+      referenceBegin = referenceBegin.Split(',')[0];
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var datarowview = (DataRowView)row.DataBoundItem;
@@ -209,14 +210,14 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      MainForm.Instance.SaveDataDialog.FileName = ParashotTable.TableName;
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
-      if ( MainForm.Instance.SaveDataDialog.ShowDialog() == DialogResult.OK )
+      MainForm.Instance.SaveDataBoardDialog.FileName = ParashotTable.TableName;
+      for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
       {
-        string filePath = MainForm.Instance.SaveDataDialog.FileName;
-        ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
+        string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+        ParashotTable.DataTable.Export(filePath, Program.BoardExportTargets);
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                           Globals.KeyboardSoundFilePath);
         if ( Program.Settings.AutoOpenExportFolder )

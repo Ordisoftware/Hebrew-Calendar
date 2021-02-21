@@ -340,6 +340,15 @@ namespace Ordisoftware.Core
       var selected = targets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
+        case DataExportTarget.TXT:
+          using ( var stream = File.CreateText(filePath) )
+            foreach ( DataRow row in table.Rows )
+            {
+              foreach (DataColumn column in table.Columns)
+                stream.WriteLine($"{column.ColumnName} = {row[column].ToString()}");
+              stream.WriteLine();
+            }
+          break;
         case DataExportTarget.CSV:
           var options = new CsvOptions("String[,]", ',', table.Rows.Count);
           options.IncludeHeaderNames = true;

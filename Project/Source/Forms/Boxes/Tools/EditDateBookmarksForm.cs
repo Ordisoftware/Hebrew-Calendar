@@ -15,7 +15,7 @@
 using System;
 using System.Linq;
 using System.Data;
-using System.Collections.Generic;
+using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       SaveBookmarksDialog.InitialDirectory = Program.Settings.GetExportDirectory();
       OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
-      SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
+      SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
       OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
     }
 
@@ -151,27 +151,33 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       SaveBookmarksDialog.FileName = "DateBookmarks";
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+      for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
       if ( SaveBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
       string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
-      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
+      var selected = Program.BoardExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )
       {
+        case DataExportTarget.TXT:
+          using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
+            foreach ( DateItem item in ListBox.Items )
+              stream.WriteLine(SQLiteDate.ToString(item.Date));
+          break;
         case DataExportTarget.CSV:
-          var lines = new List<string>();
-          lines.Add("Date");
-          foreach ( DateItem item in ListBox.Items )
-            lines.Add(SQLiteDate.ToString(item.Date));
-          File.WriteAllLines(SaveBookmarksDialog.FileName, lines);
+          using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
+          {
+            stream.WriteLine("Date");
+            foreach ( DateItem item in ListBox.Items )
+              stream.WriteLine(SQLiteDate.ToString(item.Date));
+          }
           break;
         case DataExportTarget.JSON:
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
           var dataset = new DataSet(Globals.AssemblyTitle);
           dataset.Tables.Add(data.ToDataTable("DateBookmarks"));
           string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-          File.WriteAllText(SaveBookmarksDialog.FileName, str);
+          File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
           dataset.Tables.Clear();
           dataset.Dispose();
           break;
@@ -183,19 +189,31 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionImport_Click(object sender, EventArgs e)
     {
       OpenBookmarksDialog.FileName = string.Empty;
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+      for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           OpenBookmarksDialog.FilterIndex = index + 1;
       if ( OpenBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
       string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
-      var selected = Program.GridExportTargets.First(p => p.Value == extension).Key;
+      var selected = Program.BoardExportTargets.First(p => p.Value == extension).Key;
       int indexListBox = 0;
+      string[] lines;
       try
       {
         switch ( selected )
         {
+          case DataExportTarget.TXT:
+            lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
+            foreach ( string line in lines )
+            {
+              if ( indexListBox > ListBox.Items.Count ) break;
+              var date = DateTime.MinValue;
+              try { date = SQLiteDate.ToDateTime(line); }
+              catch { }
+              ListBox.Items[indexListBox++] = new DateItem { Date = date };
+            }
+            break;
           case DataExportTarget.CSV:
-            var lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
+            lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
             foreach ( string line in lines.Skip(1) )
             {
               if ( indexListBox > ListBox.Items.Count ) break;
