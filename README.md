@@ -196,7 +196,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
 | Ctrl + F4 | Lunar months board |
-| Ctrl + F5 | Parashot board |
+| Ctrl + F5 (or Alt + P) | Parashot board |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -237,7 +237,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add parashah reading to the days of Shabat according to the option.
 - Add current parashah in navigation form and in main form subtitle.
 
-#### In progress - Version 7.0
+#### 2021.03.12 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
