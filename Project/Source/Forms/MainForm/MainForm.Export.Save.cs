@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Text;
 using System.Linq;
 using System.IO;
 using System.Windows.Forms;
@@ -55,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SaveTextDialog.FileName = GetExportDataFilename(interval);
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
-          File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)));
+          File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)), Encoding.UTF8);
           return true;
         },
         [ViewMode.Month] = (interval) =>
@@ -98,12 +99,12 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [ViewMode.Grid] = (interval) =>
         {
-          SaveDataDialog.FileName = GetExportDataFilename(interval);
+          SaveDataGridDialog.FileName = GetExportDataFilename(interval);
           for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
             if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-              SaveDataDialog.FilterIndex = index + 1;
-          if ( SaveDataDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveDataDialog.FileName;
+              SaveDataGridDialog.FilterIndex = index + 1;
+          if ( SaveDataGridDialog.ShowDialog() != DialogResult.OK ) return false;
+          filePath = SaveDataGridDialog.FileName;
           return ExportSaveGrid(filePath, interval);
         }
       };
@@ -156,10 +157,10 @@ namespace Ordisoftware.Hebrew.Calendar
       switch ( selected )
       {
         case DataExportTarget.CSV:
-          File.WriteAllText(filePath, ExportSaveCSV(interval));
+          File.WriteAllText(filePath, ExportSaveCSV(interval), Encoding.UTF8);
           break;
         case DataExportTarget.JSON:
-          File.WriteAllText(filePath, ExportSaveJSON(interval));
+          File.WriteAllText(filePath, ExportSaveJSON(interval), Encoding.UTF8);
           break;
         default:
           throw new NotImplementedExceptionEx(selected);

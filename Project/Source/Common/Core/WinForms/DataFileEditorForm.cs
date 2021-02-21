@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -119,7 +120,7 @@ namespace Ordisoftware.Core
         try
         {
           filePath = ( (DataFile)page.Tag ).FilePath;
-          File.WriteAllText(filePath, ( (TextBox)page.Controls[0] ).Text);
+          File.WriteAllText(filePath, ( (TextBox)page.Controls[0] ).Text, Encoding.UTF8);
         }
         catch ( Exception ex )
         {

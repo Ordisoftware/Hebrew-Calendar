@@ -227,9 +227,10 @@ namespace Ordisoftware.Hebrew.Calendar
       string directory = Settings.GetExportDirectory();
       SaveTextDialog.InitialDirectory = directory;
       SaveImageDialog.InitialDirectory = directory;
-      SaveDataDialog.InitialDirectory = directory;
+      SaveDataGridDialog.InitialDirectory = directory;
       FolderDialog.SelectedPath = directory;
-      SaveDataDialog.Filter = Program.GridExportTargets.CreateFilters();
+      SaveDataGridDialog.Filter = Program.GridExportTargets.CreateFilters();
+      SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
       SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
     }
 

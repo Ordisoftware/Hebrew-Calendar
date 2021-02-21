@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
 
     static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
-      = ExportHelper.CreateExportTargets<DataExportTarget>();
+      = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
 
     static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
       = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);

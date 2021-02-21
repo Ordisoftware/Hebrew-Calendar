@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
+using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -114,7 +115,7 @@ namespace Ordisoftware.Hebrew
       var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
                                       new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
       string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
-      File.WriteAllText(filePath, fileLines);
+      File.WriteAllText(filePath, fileLines, Encoding.UTF8);
       SystemManager.RunShell(filePath);
       var timer = new Timer();
       timer.Interval = 60000;
