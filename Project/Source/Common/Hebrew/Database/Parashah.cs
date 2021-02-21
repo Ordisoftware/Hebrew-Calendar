@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// Copyright 2012-2021 Olivier Rogier. 
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class Parashah
+  public class Parashah
   {
 
     public TorahBooks Book { get; }
@@ -39,16 +39,12 @@ namespace Ordisoftware.Hebrew
       => $"{(int)Book + 1}.{VerseEnd}";
 
     public override string ToString()
-    {
-      return ToString(false);
-    }
+      => ToString(false);
 
     public string ToString(bool useHebrewFont)
-    {
-      return $"Sefer {Book}, Parashah n°{Number}, " + 
-             $"{Name}{( IsLinkedToNext ? "*" : "" )} {VerseBegin} - {VerseEnd} : " +
-             $"{Translation} ; {Lettriq} ({( useHebrewFont ? Hebrew : Unicode )})";
-    }
+      => $"Sefer {Book}, Parashah n°{Number}, " +
+         $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} {VerseBegin} - {VerseEnd} : " +
+         $"{Translation} ; {Lettriq} ({( useHebrewFont ? Hebrew : Unicode )})";
 
     public Parashah(TorahBooks book,
                     int number,
@@ -58,7 +54,7 @@ namespace Ordisoftware.Hebrew
                     string verseEnd,
                     bool isLinkedToNext = false,
                     string translation = "",
-                    string lettriq = "" )
+                    string lettriq = "")
     {
       Book = book;
       Number = number;
@@ -71,6 +67,7 @@ namespace Ordisoftware.Hebrew
       Translation = translation;
       Lettriq = lettriq;
     }
+
   }
 
 }

@@ -43,7 +43,7 @@ namespace Ordisoftware.Core
       if ( bytes < unit ) return $"{bytes} {suffix}";
       var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
       string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}i{suffix}";
-      return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", "");
+      return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", string.Empty);
     }
 
     /// <summary>

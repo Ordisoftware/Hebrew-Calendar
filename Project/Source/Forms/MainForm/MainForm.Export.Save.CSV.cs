@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Cursor = Cursors.WaitCursor;
       try
       {
-        string headerTxt = "";
+        string headerTxt = string.Empty;
         foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
           headerTxt += field.ToString() + CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);

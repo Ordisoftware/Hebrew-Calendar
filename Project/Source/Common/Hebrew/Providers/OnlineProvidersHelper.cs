@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew
                                  EventHandler action,
                                  Action reconstruct)
     {
-      string nameItems = NameOfFromStack(items, 3).Replace("Globals.", "");
+      string nameItems = NameOfFromStack(items, 3).Replace("Globals.", string.Empty);
       if ( items.Configurable )
       {
         list.Insert(0, CreateConfigureMenuItem((sender, e) =>
@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew
           // Folder
           string title = items.Title.GetLang();
           ToolStripDropDownItem menu;
-          if ( title != "" )
+          if ( title != string.Empty )
           {
             if ( items.SeparatorBeforeFolder )
               menuRoot.DropDownItems.Add(new ToolStripSeparator());

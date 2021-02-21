@@ -115,7 +115,7 @@ namespace Ordisoftware.Core
       {
         AutoSize = false;
         Label.AutoSize = false;
-        Label.Text = "";
+        Label.Text = string.Empty;
         if ( Justify )
           Label.SetTextJustified(LocalizedText.GetLang(), LabelMaxWidth);
         else

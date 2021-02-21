@@ -114,7 +114,7 @@ namespace Ordisoftware.Hebrew
     {
       var array = enable ? FinalEnable : FinalDisable;
       str = str.Trim();
-      if ( str.IsNullOrEmpty() ) return "";
+      if ( str.IsNullOrEmpty() ) return string.Empty;
       char c = str[0];
       foreach ( var v in array )
         if ( c == v[0] )
@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew
     /// <param name="str">The sentence having some words.</param>
     static public string UnFinalAll(string str)
     {
-      if ( str.IsNullOrEmpty() ) return "";
+      if ( str.IsNullOrEmpty() ) return string.Empty;
       foreach ( var v in FinalDisable )
         str = str.Replace(v[0], v[1]);
       return str;
@@ -142,8 +142,8 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
-      if ( str.IsNullOrEmpty() ) return "";
-      string result = "";
+      if ( str.IsNullOrEmpty() ) return string.Empty;
+      string result = string.Empty;
       foreach ( char c in str.RemoveDiacritics() )
         if ( Codes.Contains(c.ToString()) )
           result = result + c;
@@ -155,8 +155,8 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public string ConvertToHebrewFont(string str)
     {
-      if ( str.IsNullOrEmpty() ) return "";
-      string result = "";
+      if ( str.IsNullOrEmpty() ) return string.Empty;
+      string result = string.Empty;
       foreach ( char c in str.RemoveDiacritics() )
         result = ConvertToKey(c) + result;
       return result;
@@ -167,8 +167,8 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public string ConvertToUnicode(string str)
     {
-      if ( str.IsNullOrEmpty() ) return "";
-      string result = "";
+      if ( str.IsNullOrEmpty() ) return string.Empty;
+      string result = string.Empty;
       foreach ( char c in str )
         result = ConvertToUnicode(c) + result;
       return result;

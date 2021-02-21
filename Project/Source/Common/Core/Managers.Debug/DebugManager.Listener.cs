@@ -124,7 +124,7 @@ namespace Ordisoftware.Core
         Date = DateTime.Today;
         string ProcessName = SystemManager.AllowApplicationMultipleInstances
                            ? $" ({Process.GetCurrentProcess().Id})"
-                           : "";
+                           : string.Empty;
         FilePath = Path.Combine(Folder, $"{Code} {SQLiteDate.ToString(Date)}{ProcessName}{Extension}");
         SystemManager.TryCatchManage(() => { Changed?.Invoke(this, FilePath); });
         return FilePath;
@@ -137,7 +137,7 @@ namespace Ordisoftware.Core
         {
           bool ResolveDate(FileItem item)
           {
-            string dateCode = Path.GetFileNameWithoutExtension(item.FilePath).Replace(Code, "");
+            string dateCode = Path.GetFileNameWithoutExtension(item.FilePath).Replace(Code, string.Empty);
             dateCode = dateCode.SplitNoEmptyLines(" (")[0];
             try
             {

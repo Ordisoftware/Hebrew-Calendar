@@ -21,18 +21,35 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static class ParashotTable
+  static partial class ParashotTable
   {
 
-    static public readonly string TableName = nameof(ParashotTable).Replace("Table", "");
+    static public readonly string TableName = nameof(ParashotTable).Replace("Table", string.Empty);
 
     static public DataTable DataTable { get; private set; }
 
-    static private bool ParashotTableMutex;
+    static private bool CreateDataMutex;
 
     static ParashotTable()
     {
+      LoadDefaults();
       CreateIfNotExists();
+    }
+
+    static public void LoadDefaults()
+    {
+      var query = from book in Defaults from parashah in book.Value select parashah;
+      var linesTranslation = new NullSafeOfStringDictionary<string>();
+      var linesLettriq = new NullSafeOfStringDictionary<string>();
+      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, "=");
+      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, "=");
+      int index = 0;
+      foreach ( Parashah item in query )
+      {
+        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index);
+        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index);
+        index++;
+      }
     }
 
     static private void CreateIfNotExists()
@@ -46,18 +63,18 @@ namespace Ordisoftware.Hebrew
           connection.CheckTable(TableName,
                                 $@"CREATE TABLE {TableName}
                                   (
-                                    Book INTEGER NOT NULL,
-                                    Number INTEGER NOT NULL,
-                                    Name TEXT DEFAULT '' NOT NULL,
-                                    Hebrew TEXT DEFAULT '' NOT NULL,
-                                    Unicode TEXT DEFAULT '' NOT NULL,
-                                    VerseBegin TEXT DEFAULT '' NOT NULL,
-                                    VerseEnd TEXT DEFAULT '' NOT NULL,
-                                    IsLinkedToNext INTEGER DEFAULT 0 NOT NULL,
-                                    Translation TEXT DEFAULT '' NOT NULL,
-                                    Lettriq TEXT DEFAULT '' NOT NULL,
-                                    Memo TEXT DEFAULT '' NOT NULL,
-                                    PRIMARY KEY (Book, Number)
+                                    {nameof(Parashah.Book)} INTEGER NOT NULL,
+                                    {nameof(Parashah.Number)} INTEGER NOT NULL,
+                                    {nameof(Parashah.Name)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Hebrew)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Unicode)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.VerseBegin)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.VerseEnd)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.IsLinkedToNext)} INTEGER DEFAULT 0 NOT NULL,
+                                    {nameof(Parashah.Translation)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Lettriq)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Memo)} TEXT DEFAULT '' NOT NULL,
+                                    PRIMARY KEY ({nameof(Parashah.Book)}, {nameof(Parashah.Number)})
                                   )");
         }
       });
@@ -108,12 +125,12 @@ namespace Ordisoftware.Hebrew
 
     static public void CreateDataIfNotExists(bool reset = false)
     {
-      if ( ParashotTableMutex ) return;
+      if ( CreateDataMutex ) return;
       SystemManager.TryCatchManage(() =>
       {
         bool temp = Globals.IsReady;
         Globals.IsReady = false;
-        ParashotTableMutex = true;
+        CreateDataMutex = true;
         try
         {
           if ( !reset && DataTable.Rows.Count == 54 ) return;
@@ -126,7 +143,7 @@ namespace Ordisoftware.Hebrew
             command.ExecuteNonQuery();
           }
           Take();
-          var query = from book in Parashah.Defaults
+          var query = from book in Defaults
                       from parashah in book.Value
                       select parashah;
           foreach ( Parashah parashah in query.ToList() )
@@ -142,14 +159,14 @@ namespace Ordisoftware.Hebrew
             row[nameof(Parashah.IsLinkedToNext)] = parashah.IsLinkedToNext;
             row[nameof(Parashah.Translation)] = parashah.Translation;
             row[nameof(Parashah.Lettriq)] = parashah.Lettriq;
-            row[nameof(Parashah.Memo)] = "";
+            row[nameof(Parashah.Memo)] = string.Empty;
             DataTable.Rows.Add(row);
           }
           Update();
         }
         finally
         {
-          ParashotTableMutex = false;
+          CreateDataMutex = false;
           Globals.IsReady = temp;
         }
       });

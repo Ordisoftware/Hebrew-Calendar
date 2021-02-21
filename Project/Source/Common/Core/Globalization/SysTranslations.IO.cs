@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -125,6 +125,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "{0} files",
         [Language.FR] = "Fichiers {0}"
+      };
+
+    static public readonly TranslationsDictionary AskToSaveChanges
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Save changes?",
+        [Language.FR] = "Sauver les modifications ?"
       };
 
   }

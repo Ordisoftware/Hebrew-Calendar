@@ -76,7 +76,7 @@ namespace Ordisoftware.Hebrew
         {
           void showError() => DisplayManager.ShowError(SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
           string line = lines[index].Trim();
-          if ( line == "" ) continue;
+          if ( line == string.Empty ) continue;
           if ( line.StartsWith(";") ) continue;
           if ( line.StartsWith("FOLDER-SEPARATOR") )
             SeparatorBeforeFolder = true;

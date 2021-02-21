@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ExportSave()
     {
-      string filePath = "";
+      string filePath = string.Empty;
       var process = new ExportActions
       {
         [ViewMode.Text] = (interval) =>

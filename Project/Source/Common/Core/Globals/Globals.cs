@@ -34,6 +34,8 @@ namespace Ordisoftware.Core
     static public readonly string NL3 = NL2 + NL;
     static public readonly string NL4 = NL3 + NL;
 
+    static public readonly string Bullet = "•";
+
     static public bool PreLoadSSLCertificate = true;
 
     /// <summary>
@@ -45,7 +47,7 @@ namespace Ordisoftware.Core
     /// Indicate the application code (title without space).
     /// </summary>
     static public string ApplicationCode
-      => AssemblyTitle.Replace(" ", "");
+      => AssemblyTitle.Replace(" ", string.Empty);
 
     /// <summary>
     /// Indicate the application GitHub code (title with '-' instead of space.

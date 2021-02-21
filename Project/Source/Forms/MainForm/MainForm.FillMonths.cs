@@ -55,8 +55,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void InitializeYearsInterval()
     {
-      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? "");
-      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? "");
+      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? string.Empty);
+      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? string.Empty);
       if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
       {
         YearFirst = DateTime.Now.Year - 1;
@@ -180,7 +180,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         : Settings.CalendarColorMoon );
             if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.AfterSet )
             {
-              if ( row.Moonset != "" )
+              if ( row.Moonset != string.Empty )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
               if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
@@ -189,7 +189,7 @@ namespace Ordisoftware.Hebrew.Calendar
             {
               if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
-              if ( row.Moonset != "" )
+              if ( row.Moonset != string.Empty )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             if ( row.SeasonChange != 0 )

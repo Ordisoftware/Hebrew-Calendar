@@ -395,7 +395,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
-      TrayIcon.Text = Settings.BalloonEnabled ? "" : Text;
+      TrayIcon.Text = Settings.BalloonEnabled ? string.Empty : Text;
       if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
       TimerBallon.Start();
@@ -456,7 +456,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !( sender is ToolStripItem ) ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
-      if ( ( (ToolStripItem)sender ).ToolTipText == "" ) return;
+      if ( ( (ToolStripItem)sender ).ToolTipText == string.Empty ) return;
       TimerTooltip.Enabled = true;
     }
 
@@ -656,7 +656,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      var parashah = Parashah.Defaults[TorahBooks.Shemot][5];
+      var parashah = ParashotTable.Defaults[TorahBooks.Shemot][6];
       ParashotForm.Run(parashah);
     }
 
@@ -908,18 +908,18 @@ namespace Ordisoftware.Hebrew.Calendar
             e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
             break;
           case 8:
-            e.Value = (int)e.Value == 0 ? "" : "*";
+            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
             break;
           case 9:
-            e.Value = (int)e.Value == 0 ? "" : "*";
+            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
             break;
           case 11:
             var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? "" : season.ToStringExport(AppTranslations.SeasonChange);
+            e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
             break;
           case 12:
             var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? "" : torah.ToStringExport(AppTranslations.TorahEvent);
+            e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
             break;
         }
       });

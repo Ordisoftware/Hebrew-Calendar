@@ -15,7 +15,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         var day = this;
         if ( useRealDay || day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
         {
-          if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet || day.Moonset == "" )
+          if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet || day.Moonset == string.Empty )
           {
             int index = day.Table.Rows.IndexOf(day) - 1;
             if ( index >= 0 )

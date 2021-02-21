@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public readonly string[] Unicode =
     {
-      "",
+      string.Empty,
       "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
       "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
       "אדר ב"
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public readonly string[] Transliterations =
     {
-      "",
+      string.Empty,
       "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
       "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
       "Adar II"

@@ -218,7 +218,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.TorahEvents = 0;
         // TODO Uncomment when Shabatot Parashah will be generated
         //day.IsParashaLinkedToNext = 0;
-        //day.Parasha = "";
+        //day.Parasha = string.Empty;
       }
       catch ( Exception ex )
       {

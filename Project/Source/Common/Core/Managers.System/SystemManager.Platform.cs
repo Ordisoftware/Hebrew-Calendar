@@ -124,8 +124,8 @@ namespace Ordisoftware.Core
       {
         if ( _Platform.IsNullOrEmpty() )
         {
-          string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "productName", "").ToString());
-          string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", "").ToString());
+          string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "productName", string.Empty).ToString());
+          string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", string.Empty).ToString());
           if ( !osRelease.IsNullOrEmpty() ) osRelease = $" ({ osRelease})";
           string osVersion = Environment.OSVersion.Version.ToString();
           string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";

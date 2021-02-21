@@ -46,7 +46,7 @@ namespace Ordisoftware.Core
       {
         var attribute = GetAttribute<AssemblyTitleAttribute>();
         if ( attribute != null )
-          if ( attribute.Title != "" )
+          if ( attribute.Title != string.Empty )
             return attribute.Title;
         return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
       }

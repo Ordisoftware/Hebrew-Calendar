@@ -62,7 +62,7 @@ namespace Ordisoftware.Core
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
       textbox.Text = File.ReadAllText(file.FilePath);
-      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", ""));
+      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty));
       tabpage.Tag = file;
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);

@@ -110,7 +110,7 @@ namespace Ordisoftware.Core
     public void AppendText(string text, bool scrollBottom = true)
     {
       TextBox.AppendText(text);
-      if ( text == "" ) return;
+      if ( text == string.Empty ) return;
       if ( scrollBottom )
       {
         TextBox.SelectionStart = TextBox.Text.Length - 1;

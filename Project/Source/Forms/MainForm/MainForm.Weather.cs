@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
       using ( var client = new WebClient() )
       {
         JObject data = null;
-        string json = "";
+        string json = string.Empty;
         try
         {
           json = client.DownloadString(url);
@@ -87,7 +87,7 @@ namespace Ordisoftware.Hebrew.Calendar
           DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
           return;
         }
-        string location = "";
+        string location = string.Empty;
         var results = data["results"];
         if ( results != null && results.Count() > 0 )
           location = results[0]["url"]?.ToString();
