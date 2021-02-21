@@ -69,6 +69,13 @@ namespace Ordisoftware.Hebrew
                         AskToDownload[Language.FR]
       };
 
+    static public readonly TranslationsDictionary BoardExportFileName
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Board {0}",
+        [Language.FR] = "Board {0}"
+      };
+
     static public readonly TranslationsDictionary ConfigureProviders
       = new TranslationsDictionary()
       {
