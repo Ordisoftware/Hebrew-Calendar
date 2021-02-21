@@ -13,6 +13,7 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public ParashotForm Instance { get; private set; }
 
-    static public void Run(Parashah parashah = null)
+    static public void Run(string referenceBegin = null)
     {
       if ( Instance == null )
         Instance = new ParashotForm();
@@ -34,12 +35,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Instance.Visible )
       {
         Instance.Popup();
-        Instance.Select(parashah);
+        Instance.Select(referenceBegin);
         return;
       }
       Instance.Show();
       Instance.BringToFront();
-      Instance.Select(parashah);
+      Instance.Select(referenceBegin);
     }
 
     private DataRowView CurrentDataBoundItem
@@ -89,15 +90,16 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    private void Select(Parashah parashah)
+    private void Select(string referenceBegin)
     {
-      if ( parashah == null ) return;
+      if ( string.IsNullOrEmpty(referenceBegin) ) return;
+      referenceBegin = referenceBegin.Split(',')[0];
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var datarowview = (DataRowView)row.DataBoundItem;
         string reference = $"{(int)datarowview[nameof(Parashah.Book)]}." +
                            $"{(string)datarowview[nameof(Parashah.VerseBegin)]}";
-        if ( reference == parashah.ReferenceBegin )
+        if ( reference == referenceBegin )
         {
           DataGridView.CurrentCell = row.Cells[0];
           break;
@@ -208,14 +210,20 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      MainForm.Instance.SaveDataDialog.FileName = ParashotTable.TableName;
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
-      if ( MainForm.Instance.SaveDataDialog.ShowDialog() == DialogResult.OK )
+      MainForm.Instance.SaveDataBoardDialog.FileName = ParashotTable.TableName;
+      for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
       {
-        string filePath = MainForm.Instance.SaveDataDialog.FileName;
-        ParashotTable.DataTable.Export(filePath, Program.GridExportTargets);
+        string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+        ParashotTable.DataTable.Export(filePath, Program.BoardExportTargets);
+        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+                                          Globals.KeyboardSoundFilePath);
+        if ( Program.Settings.AutoOpenExportFolder )
+          SystemManager.RunShell(Path.GetDirectoryName(filePath));
+        if ( Program.Settings.AutoOpenExportedFile )
+          SystemManager.RunShell(filePath);
       }
       ActiveControl = DataGridView;
     }

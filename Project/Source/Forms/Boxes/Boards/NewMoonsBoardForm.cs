@@ -13,6 +13,7 @@
 /// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -276,13 +277,19 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SaveDataDialog.FileName = TableName;
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
-          MainForm.Instance.SaveDataDialog.FilterIndex = index + 1;
-      if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
-      string filePath = MainForm.Instance.SaveDataDialog.FileName;
-      Board.Export(filePath, Program.GridExportTargets);
+      MainForm.Instance.SaveDataBoardDialog.FileName = TableName;
+      for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+          MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
+      if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() != DialogResult.OK ) return;
+      string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+      Board.Export(filePath, Program.BoardExportTargets);
+      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+                                        Globals.KeyboardSoundFilePath);
+      if ( Program.Settings.AutoOpenExportFolder )
+        SystemManager.RunShell(Path.GetDirectoryName(filePath));
+      if ( Program.Settings.AutoOpenExportedFile )
+        SystemManager.RunShell(filePath);
     }
 
   }

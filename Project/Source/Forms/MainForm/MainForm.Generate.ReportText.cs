@@ -146,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
         content.Append(headerSep + Globals.NL);
         try
         {
-          File.WriteAllText(Program.TextReportFilePath, content.ToString());
+          File.WriteAllText(Program.TextReportFilePath, content.ToString(), Encoding.UTF8);
         }
         catch ( Exception ex )
         {
