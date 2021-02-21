@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -224,6 +224,13 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [Language.EN] = "Coordinates not found.",
         [Language.FR] = "Coordonnées non trouvées."
+      };
+
+    static public readonly TranslationsDictionary BoardExportFileName
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Board {0}",
+        [Language.FR] = "Board {0}"
       };
 
   }

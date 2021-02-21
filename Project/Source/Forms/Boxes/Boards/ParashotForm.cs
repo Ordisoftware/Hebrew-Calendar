@@ -210,7 +210,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      MainForm.Instance.SaveDataBoardDialog.FileName = ParashotTable.TableName;
+      MainForm.Instance.SaveDataBoardDialog.FileName = AppTranslations.BoardExportFileName.GetLang(ParashotTable.TableName);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

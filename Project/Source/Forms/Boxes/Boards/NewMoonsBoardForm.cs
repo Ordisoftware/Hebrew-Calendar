@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class NewMoonsBoardForm : Form
   {
 
-    private const string TableName = "Board New Moons";
+    private const string TableName = "New Moons";
 
     static public NewMoonsBoardForm Instance { get; private set; }
 
@@ -277,7 +277,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SaveDataBoardDialog.FileName = TableName;
+      MainForm.Instance.SaveDataBoardDialog.FileName = AppTranslations.BoardExportFileName.GetLang(TableName);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

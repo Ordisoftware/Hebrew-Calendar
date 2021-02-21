@@ -27,6 +27,8 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class EditDateBookmarksForm : Form
   {
 
+    private const string TableName = "Date Bookmarks";
+
     private class DateItem
     {
       public DateTime Date { get; set; }
@@ -150,7 +152,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      SaveBookmarksDialog.FileName = "DateBookmarks";
+      SaveBookmarksDialog.FileName = TableName;
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
@@ -175,7 +177,7 @@ namespace Ordisoftware.Hebrew.Calendar
         case DataExportTarget.JSON:
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
           var dataset = new DataSet(Globals.AssemblyTitle);
-          dataset.Tables.Add(data.ToDataTable("DateBookmarks"));
+          dataset.Tables.Add(data.ToDataTable(TableName));
           string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
           File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
           dataset.Tables.Clear();
