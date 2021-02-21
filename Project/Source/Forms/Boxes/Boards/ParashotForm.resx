@@ -133,7 +133,7 @@
     <value>38, 13</value>
   </data>
   <data name="ActionCheckLockers.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>7</value>
   </data>
   <data name="ActionCheckLockers.Text" xml:space="preserve">
     <value>Check</value>
@@ -163,7 +163,7 @@
     <value>39, 13</value>
   </data>
   <data name="ActionViewLockers.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>6</value>
   </data>
   <data name="ActionViewLockers.Text" xml:space="preserve">
     <value>Details</value>
@@ -223,7 +223,7 @@
     <value>120, 24</value>
   </data>
   <data name="ActionSaveAsDefaults.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>2</value>
   </data>
   <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
     <value>Save as defaults</value>
@@ -256,7 +256,7 @@
     <value>75, 24</value>
   </data>
   <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>1</value>
   </data>
   <data name="ActionExport.Text" xml:space="preserve">
     <value>Export</value>
@@ -302,7 +302,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
     <value>ActionReset</value>
@@ -344,7 +344,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionUndo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionUndo.Name" xml:space="preserve">
     <value>ActionUndo</value>
@@ -391,7 +391,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSave.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
     <value>ActionSave</value>
@@ -894,24 +894,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
-  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
-    <value>ColumnBook</value>
-  </data>
-  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
-    <value>ColumnNumber</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
-    <value>ColumnName</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
     <value>ColumnTranslation</value>
   </data>
@@ -922,18 +904,6 @@
     <value>ColumnLettriq</value>
   </data>
   <data name="&gt;&gt;ColumnLettriq.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
-    <value>ColumnBegin</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
-    <value>ColumnEnd</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnLinked.Name" xml:space="preserve">
@@ -1044,12 +1014,6 @@
   <data name="&gt;&gt;ActionCopyLineUnicode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;bookDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>bookDataGridViewTextBoxColumn</value>
   </data>
@@ -1097,6 +1061,42 @@
   </data>
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
+    <value>ColumnBook</value>
+  </data>
+  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
+    <value>ColumnNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
+    <value>ColumnName</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
+    <value>ColumnBegin</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
+    <value>ColumnEnd</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>

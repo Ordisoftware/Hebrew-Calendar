@@ -31,14 +31,14 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
       this.ActionViewLockers = new System.Windows.Forms.LinkLabel();
@@ -51,13 +51,8 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnUnicode = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -77,7 +72,6 @@
       this.MenuSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +80,12 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -233,29 +233,6 @@
       this.DataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellValueChanged);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
-      // ColumnBook
-      // 
-      this.ColumnBook.DataPropertyName = "Book";
-      resources.ApplyResources(this.ColumnBook, "ColumnBook");
-      this.ColumnBook.Name = "ColumnBook";
-      this.ColumnBook.ReadOnly = true;
-      // 
-      // ColumnNumber
-      // 
-      this.ColumnNumber.DataPropertyName = "Number";
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
-      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
-      this.ColumnNumber.Name = "ColumnNumber";
-      this.ColumnNumber.ReadOnly = true;
-      // 
-      // ColumnName
-      // 
-      this.ColumnName.DataPropertyName = "Name";
-      resources.ApplyResources(this.ColumnName, "ColumnName");
-      this.ColumnName.Name = "ColumnName";
-      this.ColumnName.ReadOnly = true;
-      // 
       // ColumnTranslation
       // 
       this.ColumnTranslation.DataPropertyName = "Translation";
@@ -272,24 +249,6 @@
       this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
       resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
       this.ColumnLettriq.Name = "ColumnLettriq";
-      // 
-      // ColumnBegin
-      // 
-      this.ColumnBegin.DataPropertyName = "VerseBegin";
-      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
-      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
-      this.ColumnBegin.Name = "ColumnBegin";
-      this.ColumnBegin.ReadOnly = true;
-      // 
-      // ColumnEnd
-      // 
-      this.ColumnEnd.DataPropertyName = "VerseEnd";
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
-      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
-      this.ColumnEnd.Name = "ColumnEnd";
-      this.ColumnEnd.ReadOnly = true;
       // 
       // ColumnLinked
       // 
@@ -430,11 +389,6 @@
       this.ActionCopyLineUnicode.Name = "ActionCopyLineUnicode";
       this.ActionCopyLineUnicode.Click += new System.EventHandler(this.ActionCopyLineUnicode_Click);
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
-      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
-      // 
       // bookDataGridViewTextBoxColumn
       // 
       this.bookDataGridViewTextBoxColumn.DataPropertyName = "Book";
@@ -488,6 +442,52 @@
       // 
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+      // 
+      // ColumnBook
+      // 
+      this.ColumnBook.DataPropertyName = "Book";
+      resources.ApplyResources(this.ColumnBook, "ColumnBook");
+      this.ColumnBook.Name = "ColumnBook";
+      this.ColumnBook.ReadOnly = true;
+      // 
+      // ColumnNumber
+      // 
+      this.ColumnNumber.DataPropertyName = "Number";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
+      this.ColumnNumber.Name = "ColumnNumber";
+      this.ColumnNumber.ReadOnly = true;
+      // 
+      // ColumnName
+      // 
+      this.ColumnName.DataPropertyName = "Name";
+      resources.ApplyResources(this.ColumnName, "ColumnName");
+      this.ColumnName.Name = "ColumnName";
+      this.ColumnName.ReadOnly = true;
+      // 
+      // ColumnBegin
+      // 
+      this.ColumnBegin.DataPropertyName = "VerseBegin";
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
+      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
+      this.ColumnBegin.Name = "ColumnBegin";
+      this.ColumnBegin.ReadOnly = true;
+      // 
+      // ColumnEnd
+      // 
+      this.ColumnEnd.DataPropertyName = "VerseEnd";
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
+      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
+      this.ColumnEnd.Name = "ColumnEnd";
+      this.ColumnEnd.ReadOnly = true;
+      // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
+      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
       // 
       // ParashotForm
       // 
