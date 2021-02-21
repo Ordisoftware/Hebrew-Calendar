@@ -210,37 +210,37 @@
   <data name="&gt;&gt;LabelTableLocked.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ActionExportAsDefaults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionSaveAsDefaults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionExportAsDefaults.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionSaveAsDefaults.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionExportAsDefaults.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionSaveAsDefaults.Location" type="System.Drawing.Point, System.Drawing">
     <value>683, 2</value>
   </data>
-  <data name="ActionExportAsDefaults.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSaveAsDefaults.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
   </data>
-  <data name="ActionExportAsDefaults.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionSaveAsDefaults.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="ActionExportAsDefaults.Text" xml:space="preserve">
-    <value>Export As Defaults</value>
+  <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
+    <value>Save as defaults</value>
   </data>
-  <data name="ActionExportAsDefaults.Visible" type="System.Boolean, mscorlib">
+  <data name="ActionSaveAsDefaults.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;ActionExportAsDefaults.Name" xml:space="preserve">
-    <value>ActionExportAsDefaults</value>
+  <data name="&gt;&gt;ActionSaveAsDefaults.Name" xml:space="preserve">
+    <value>ActionSaveAsDefaults</value>
   </data>
-  <data name="&gt;&gt;ActionExportAsDefaults.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveAsDefaults.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionExportAsDefaults.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveAsDefaults.Parent" xml:space="preserve">
     <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;ActionExportAsDefaults.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveAsDefaults.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

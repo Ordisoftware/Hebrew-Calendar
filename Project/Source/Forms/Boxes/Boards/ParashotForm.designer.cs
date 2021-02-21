@@ -43,7 +43,7 @@
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
       this.ActionViewLockers = new System.Windows.Forms.LinkLabel();
       this.LabelTableLocked = new System.Windows.Forms.Label();
-      this.ActionExportAsDefaults = new System.Windows.Forms.Button();
+      this.ActionSaveAsDefaults = new System.Windows.Forms.Button();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionUndo = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
       this.PanelBottom.Controls.Add(this.LabelTableLocked);
-      this.PanelBottom.Controls.Add(this.ActionExportAsDefaults);
+      this.PanelBottom.Controls.Add(this.ActionSaveAsDefaults);
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionReset);
       this.PanelBottom.Controls.Add(this.ActionUndo);
@@ -131,12 +131,12 @@
       this.LabelTableLocked.ForeColor = System.Drawing.Color.Maroon;
       this.LabelTableLocked.Name = "LabelTableLocked";
       // 
-      // ActionExportAsDefaults
+      // ActionSaveAsDefaults
       // 
-      resources.ApplyResources(this.ActionExportAsDefaults, "ActionExportAsDefaults");
-      this.ActionExportAsDefaults.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionExportAsDefaults.Name = "ActionExportAsDefaults";
-      this.ActionExportAsDefaults.Click += new System.EventHandler(this.ActionExportAsDefaults_Click);
+      resources.ApplyResources(this.ActionSaveAsDefaults, "ActionSaveAsDefaults");
+      this.ActionSaveAsDefaults.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionSaveAsDefaults.Name = "ActionSaveAsDefaults";
+      this.ActionSaveAsDefaults.Click += new System.EventHandler(this.ActionSaveAsDefaults_Click);
       // 
       // ActionExport
       // 
@@ -556,7 +556,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnicode;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
-    private System.Windows.Forms.Button ActionExportAsDefaults;
+    private System.Windows.Forms.Button ActionSaveAsDefaults;
     private System.Windows.Forms.Timer Timer;
     private System.Windows.Forms.Label LabelTableLocked;
     private System.Windows.Forms.LinkLabel ActionCheckLockers;

@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
-      ActionExportAsDefaults.Visible = Globals.IsDevExecutable;
+      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
       ActiveControl = DataGridView;
@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void Timer_Tick(object sender, EventArgs e)
     {
       DataGridView.ReadOnly = ParashotTable.IsReadOnly();
-      ActionExportAsDefaults.Enabled = !DataGridView.ReadOnly;
+      ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
       ActionExport.Enabled = !DataGridView.ReadOnly;
       ActionReset.Enabled = !DataGridView.ReadOnly;
       Timer.Enabled = DataGridView.ReadOnly;
@@ -174,7 +174,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    private void ActionExportAsDefaults_Click(object sender, EventArgs e)
+    private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo("Overwrite default files?") ) return;
       var listTranslations = new NullSafeOfStringDictionary<string>();
