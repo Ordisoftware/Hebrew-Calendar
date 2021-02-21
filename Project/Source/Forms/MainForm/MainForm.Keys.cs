@@ -96,12 +96,6 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Control | Keys.C:
             ActionCopyToClipboard.PerformClick();
             return true;
-          case Keys.Control | Keys.Shift | Keys.C:
-            if ( ActiveControl != CalendarText ) break;
-            CalendarText.Copy();
-            DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(),
-                                              Globals.ClipboardSoundFilePath);
-            return true;
           case Keys.Control | Keys.P:
             ActionPrint.PerformClick();
             return true;

@@ -878,6 +878,14 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarText.SelectAll();
         e.Handled = true;
       }
+      else
+      if ( e.Control && e.Shift && e.KeyCode == Keys.C )
+      {
+        CalendarText.Copy();
+        DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(),
+                                          Globals.ClipboardSoundFilePath);
+        e.Handled = true;
+      }
     }
 
     /// <summary>

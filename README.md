@@ -245,7 +245,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add common database in roaming to store parashot user table and inter-process locking table.
 - Add show usage statistics from about box.
 - Add check update from about box.
-- Add TXT export for all boards.
+- Add export to TXT support for all boards.
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
 - Some improvements.
