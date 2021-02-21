@@ -149,9 +149,10 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( !ActionSave.Enabled ) return;
-      DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(),
-                                ActionSave.PerformClick,
-                                ParashotTable.LoadDefaults);
+      DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
+                                      ActionSave.PerformClick,
+                                      ParashotTable.LoadDefaults,
+                                      () => e.Cancel = true);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -177,6 +177,12 @@
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
     <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
   </data>
+  <data name="LabelChaneLangNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 28</value>
+  </data>
+  <data name="LabelChaneLangNotice.Text" xml:space="preserve">
+    <value>Le changement de langue n'affectera pas les données du tableau des Parashot à moins de restaurer les valeurs par défaut</value>
+  </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 13</value>
   </data>
@@ -635,7 +641,7 @@
   <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
     <value>Rappeler toutes les minutes</value>
   </data>
-  <data name="LabelTimerInterval.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
   </data>
   <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
@@ -760,6 +766,12 @@
   <data name="LabelColorMoon.Text" xml:space="preserve">
     <value>Lever de la lune</value>
   </data>
+  <data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="LabelColorParashah.Text" xml:space="preserve">
+    <value>Section Parashah</value>
+  </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
@@ -817,6 +829,12 @@
   </data>
   <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
     <value>Taille de la police</value>
+  </data>
+  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
+    <value>Indiquer la Parashah</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 17</value>
@@ -917,11 +935,52 @@
   <data name="TabPagePaths.Text" xml:space="preserve">
     <value>Chemins</value>
   </data>
+  <data name="ActionResetHebrewWordsPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectHebrewWordsPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 13</value>
   </data>
   <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
     <value>Fournisseur de météo en ligne</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
+    <value>Météo du jour, sinon de la semaine</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
+    <value>Tester</value>
   </data>
   <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1057,19 +1116,11 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
-    <value>Météo du jour, sinon de la semaine</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
-    <value>Tester</value>
-  </data>
-  <data name="LabelColorParashah.Text" xml:space="preserve">
-    <value>Section Parashah</value>
-  </data>
-  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
-    <value>Indiquer la Parashah</value>
   </data>
 </root>

@@ -130,8 +130,8 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToSaveChanges
       = new TranslationsDictionary()
       {
-        [Language.EN] = "Save changes?",
-        [Language.FR] = "Sauver les modifications ?"
+        [Language.EN] = "Save {0} changes?",
+        [Language.FR] = "Sauver les modifications de {0} ?"
       };
 
   }
