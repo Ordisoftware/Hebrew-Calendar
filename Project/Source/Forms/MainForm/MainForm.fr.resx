@@ -432,7 +432,7 @@
     <value>Naviguer</value>
   </data>
   <data name="ActionNavigate.ToolTipText" xml:space="preserve">
-    <value>Naviguer (F9, Ctrl+N)</value>
+    <value>Naviguer (F8, Ctrl+N)</value>
   </data>
   <data name="ActionViewCelebrations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1070,7 +1070,7 @@
     <value>Préférences</value>
   </data>
   <data name="ActionPreferences.ToolTipText" xml:space="preserve">
-    <value>Préférences (F8)</value>
+    <value>Préférences (F9)</value>
   </data>
   <data name="ActionSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
