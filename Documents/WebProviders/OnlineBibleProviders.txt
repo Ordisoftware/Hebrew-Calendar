@@ -1,4 +1,4 @@
-; --------------------------------------------------------------------------------------------------
+﻿; --------------------------------------------------------------------------------------------------
 ; File format for online providers items to search a hebrew word having unicode chars
 ; --------------------------------------------------------------------------------------------------
 ; To create a folder else items will be at root level: Lang/[short code] = Title
@@ -20,11 +20,21 @@ URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.ht
 
 -
 
+Name = (EN) Mechon-Mamre.org
+URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
+
+Name = (FR) Mechon-Mamre.org
+URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
+
+-
+
+Name = (EN) Chabad.org
+URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
+
+-
+
 Name = (EN) BibleHub.com (Darby)
 URL = https://biblehub.com/dbt/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
-
-Name = (EN) BibleHub.com (English Standard)
-URL = https://biblehub.com/esv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 Name = (EN) BibleHub.com (New International)
 URL = https://biblehub.com/niv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
@@ -45,27 +55,11 @@ URL = https://saintebible.com/dar/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 -
 
-Name = (EN) Mechon-Mamre.org
-URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
-
-Name = (FR) Mechon-Mamre.org
-URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM#2%
-
--
-
-Name = (EN) Chabad.org
-URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
-
--
-
 Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs sans codes)
 URL = https://www.levangile.com/Bible-LSGSN-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
 Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs et codes)
 URL = https://www.levangile.com/Bible-LSGS-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
-
-Name = (FR) Levangile.com (Louis Segond 1979 sans Strongs)
-URL = https://www.levangile.com/Bible-NEG-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
 Name = (FR) Levangile.com (Louis Segond 2007 sans Strongs)
 URL = https://www.levangile.com/Bible-S21-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
