@@ -13,7 +13,7 @@ Vayigash = Il aura offert
 Vaye'hi = Il aura péservé la vie
 // BOOK SHEMOT
 Shemot = Réalisations
-Vaera = J'aurais pris soin [de l'étude pour eduquer]
+Vaera = J'aurais pris soin [de l'étude]
 Bo = Il a accomplit
 Beshala'h = Parce qu'Il a dirigé
 Yitro = Il sauvera [des méchants]
@@ -32,7 +32,7 @@ Metsora = En cas d'infection terminée
 A'harei Mot = Il a amélioré moi, Il a fait cesser le mal [qui me tuait]
 Kedoshim = Bienveillants [les enfants d'Israël seront]
 Emor = Ils parleront [de HaShem et Sa Torah]
-Behar = Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: Payaga payas+ga "lait qui bouge")}
+Behar = Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: Payaga = payas+ga "lait qui bouge")}
 Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
 Bamidbar = Lorsque solitude

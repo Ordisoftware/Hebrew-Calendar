@@ -7,13 +7,13 @@ Haye Sarah = Existence of Sarah
 Toledot = Generations
 Vayetse = He will bring out [from Mitsraïm]
 Vayishla'h = He will have freed [ignorance and shenanigans]
-Vayeshev = He will give home
+Vayeshev = He will give a home
 Mikets = When end of process
 Vayigash = He will have offered
 Vaye'hi = He will have preserved life
 // BOOK SHEMOT
 Shemot = Achievements
-Vaera = I would have taken care [of the study to educate]
+Vaera = I would have taken care [of the study]
 Bo = He accomplished
 Beshala'h = Because He led
 Yitro = He will save [from the villains]
