@@ -13,6 +13,7 @@
 /// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -283,6 +284,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( MainForm.Instance.SaveDataDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataDialog.FileName;
       Board.Export(filePath, Program.GridExportTargets);
+      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+                                        Globals.KeyboardSoundFilePath);
+      if ( Program.Settings.AutoOpenExportFolder )
+        SystemManager.RunShell(Path.GetDirectoryName(filePath));
+      if ( Program.Settings.AutoOpenExportedFile )
+        SystemManager.RunShell(filePath);
     }
 
   }
