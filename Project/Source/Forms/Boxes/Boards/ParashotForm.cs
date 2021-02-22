@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private DataRowView CurrentDataBoundItem
       => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
 
-    private string CurrentDataBoundItemReferenceBegin
+    private string CurrentDataBoundItemFullReferenceBegin
       => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." + 
          $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
 
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemReferenceBegin);
+        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
       });
     }
 
@@ -394,9 +394,14 @@ namespace Ordisoftware.Hebrew.Calendar
                                     Program.Settings.HebrewLettersExe);
     }
 
-    private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
+    private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWords(CurrentDataBoundItemReferenceBegin, Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsReference(CurrentDataBoundItemFullReferenceBegin, Program.Settings.HebrewWordsExe);
+    }
+
+    private void ActionOpenHebrewWordsFind_Click(object sender, EventArgs e)
+    {
+      HebrewTools.OpenFindHebrewWordsFind((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)

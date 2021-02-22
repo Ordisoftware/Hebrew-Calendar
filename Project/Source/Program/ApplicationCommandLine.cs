@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public class ApplicationCommandLine : SystemCommandLine
   {
-    [Option('g', "generate", Required = false, HelpText = "Generate the calendar's data.")]
+    [Option("generate", Required = false, HelpText = "Generate the calendar's data.")]
     public bool Generate { get; set; }
   }
 

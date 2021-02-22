@@ -29,9 +29,9 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
-    /// <param name="hebrew">The hebrew font chars of the word.</param>
+    /// <param name="word">The hebrew font chars of the word.</param>
     /// <param name="path">Path of the application.</param>
-    static public void OpenHebrewLetters(string hebrew, string path)
+    static public void OpenHebrewLetters(string word, string path, bool isUnicode = false)
     {
       if ( !File.Exists(path) )
       {
@@ -39,11 +39,13 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
-      hebrew = HebrewAlphabet.UnFinalAll(hebrew);
-      if ( hebrew.StartsWith("a ") || hebrew.StartsWith("b ") )
-        hebrew = hebrew.Substring(2, hebrew.Length - 2);
-      foreach ( string item in hebrew.Split(' ') )
-        SystemManager.RunShell(path, item);
+      word = HebrewAlphabet.UnFinalAll(word);
+      // TODO test unicode
+      if ( ( isUnicode && ( word.StartsWith("א ") || word.StartsWith("ב ") ) )
+        || word.StartsWith("a ") || word.StartsWith("b ") )
+        word = word.Substring(2, word.Length - 2);
+      foreach ( string item in word.Split(' ') )
+        SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + word);
     }
 
     /// <summary>
@@ -51,7 +53,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     /// <param name="reference">The verse reference.</param>
     /// <param name="path">Path of the application.</param>
-    static public void OpenHebrewWords(string reference, string path)
+    static public void OpenFindHebrewWordsFind(string word, string path, bool isUnicode = false)
     {
       if ( !File.Exists(path) )
       {
@@ -59,7 +61,23 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, "-r " + reference);
+      SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + word);
+    }
+
+    /// <summary>
+    /// Start Hebrew Words process.
+    /// </summary>
+    /// <param name="reference">The verse reference.</param>
+    /// <param name="path">Path of the application.</param>
+    static public void OpenHebrewWordsReference(string reference, string path)
+    {
+      if ( !File.Exists(path) )
+      {
+        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+        return;
+      }
+      SystemManager.RunShell(path, "--ref " + reference);
     }
 
     /// <summary>
