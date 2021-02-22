@@ -213,7 +213,6 @@ And so on from week to week to go through the Torah in a year to build a better 
 ## Future improvements
 
 - Add print boards.
-- Add a different tray icon to indicate if shabat or a celebration shabat day is running.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
@@ -243,6 +242,8 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add option to indicate the parashah in the days of Shabat for the visual month (does nothing for now).
 - Add common database in roaming to store parashot user table and inter-process locking table.
+- Add a different tray icon to indicate if shabat or a celebration day is running.
+- Add option to enable or disable the special day tray icon.
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
