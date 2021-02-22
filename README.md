@@ -5,7 +5,7 @@
 > [Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
 > [Twitter](https://twitter.com/ordisoftware)<br/>
 
-A tool for Windows written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippour and Sukkot festivities.
+A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.
 
 ## Table of content
 
