@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 8</value>
+    <value>365, 8</value>
   </data>
   <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -128,7 +128,7 @@
     <value>Vérifier</value>
   </data>
   <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 8</value>
+    <value>315, 8</value>
   </data>
   <data name="ActionViewLockers.Text" xml:space="preserve">
     <value>Détails</value>
@@ -167,6 +167,23 @@
         MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAoNJREFUOE+Nkl1IU2EYx89FRNFFUCsUuvem6CLooqsGCaLdhBdRdwZBUEFe2ZZ9
+        2EUWRRclJZruw6igiDB0N96EIWipfTg3peS4Nbfp5na2ec7Ox/bveZ5GeCHUC/+9z/b8fs97OO+Uuq5Q
+        p6srhN03RrCrcwQ7/xFmmGWHXWUfFdMZYDzp4H8Xs+ywq+y5NYqvmQqUO4vSjCY0SgERynw8j3Ash8gv
+        DfOceE4YZtlhVwZMpKtQ3O3S9Ho88Hq9CASC8Pl8WMro6OjooO8B+H2DwijuK+LIgL1doxiLO9jW1g/T
+        qSC1UUGyVEWiYFOc2m4jrllIaCYMi9k+cdhVXDTl3Y8yDvSqKNs2rl31IOgPYlV34KF6KDCEgM+PdMmC
+        f2AAumkKyw67MuBlVEfDM5UezkbRdpAzHayXbeTpNM66aSNbNqGZFqpVCw39qjh/BtBj+OdKOBpYRmip
+        QEMcVGiQQ+F9c/gAZphlh126xlH0fSmi8VUCx1/EqRnD4cEYDg0s42AtXPNv3GOGWXbYlQE9M0WceruC
+        ltcJPJ9c4Re9aVUpFdm51/ImISw7MmA/fTz8XMTZ4RQ1kgQ6iKgZLNK9L9J/Iqxm8f3nKsJLaerZwjDL
+        Drsy4N4nDedCaZweTsKml1UwKvDc7Ib7RDPVVUTj61iIZWEbZWJSwrLzd0D3VBGXx7JoC63B2CjTSYC7
+        sRl3H/RIraY0qMk8jJIhDLPsyIC62yHcn9ZxfaKA9g95OsUSqanpJB497pV6NWdgLafD0k1hmGWHXcV1
+        6ekTLvhOt3vf49tsBJMzUZy/cLFVOXamdWZ2AeNTYXycmqPevDDMikOuQquecmSL7Khlq14tSv1vbU/x
+        i7m5HQgAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="ActionSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -190,8 +207,15 @@
   <data name="ColumnBook.HeaderText" xml:space="preserve">
     <value>Livre</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ColumnBook.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
   <data name="ColumnName.HeaderText" xml:space="preserve">
     <value>Nom</value>
+  </data>
+  <data name="ColumnName.Width" type="System.Int32, mscorlib">
+    <value>54</value>
   </data>
   <data name="ColumnTranslation.HeaderText" xml:space="preserve">
     <value>Traduction</value>
@@ -202,11 +226,20 @@
   <data name="ColumnBegin.HeaderText" xml:space="preserve">
     <value>Début</value>
   </data>
+  <data name="ColumnBegin.Width" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
   <data name="ColumnEnd.HeaderText" xml:space="preserve">
     <value>Fin</value>
   </data>
+  <data name="ColumnEnd.Width" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
   <data name="ColumnLinked.HeaderText" xml:space="preserve">
-    <value>Lié au suivant</value>
+    <value>Lié</value>
+  </data>
+  <data name="ColumnLinked.Width" type="System.Int32, mscorlib">
+    <value>46</value>
   </data>
   <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 270</value>
@@ -441,6 +474,10 @@
   </data>
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copier la ligne (caractères unicodes)</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>

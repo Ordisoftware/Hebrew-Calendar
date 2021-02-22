@@ -382,7 +382,7 @@
     <value>213, 47</value>
   </data>
   <data name="EditFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+    <value>40, 20</value>
   </data>
   <data name="EditFontSize.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>

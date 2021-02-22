@@ -16,6 +16,7 @@ using System;
 using System.IO;
 using System.Data;
 using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -69,8 +70,8 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
-      foreach ( DataGridViewColumn column in DataGridView.Columns )
-        column.HeaderText = column.HeaderText.ToUpper();
+      //foreach ( DataGridViewColumn column in DataGridView.Columns )
+        //column.HeaderText = column.HeaderText.ToUpper();
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
     }
@@ -115,6 +116,11 @@ namespace Ordisoftware.Hebrew.Calendar
       WindowState = Program.Settings.ParashotFormWindowState;
       if ( Program.Settings.ParashotFormColumnTranslationWidth != -1 )
         ColumnTranslation.Width = Program.Settings.ParashotFormColumnTranslationWidth;
+    }
+
+    private void ParashotForm_Shown(object sender, EventArgs e)
+    {
+      EditFontSize_ValueChanged(null, null);
     }
 
     private void Timer_Tick(object sender, EventArgs e)
@@ -175,6 +181,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void ActionViewNotice_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowParashahNotice.PerformClick();
     }
 
     private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
@@ -255,6 +266,14 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
+    }
+
+    private void EditFontSize_ValueChanged(object sender, EventArgs e)
+    {
+      DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+      ColumnUnicode.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
+      if ( DataGridView.Rows.Count > 0 )
+        DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
     }
 
     private void DataGridView_KeyDown(object sender, KeyEventArgs e)
