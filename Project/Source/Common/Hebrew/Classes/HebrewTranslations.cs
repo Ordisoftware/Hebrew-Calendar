@@ -103,7 +103,14 @@ namespace Ordisoftware.Hebrew
                         "Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communauté, pour son pays, pour les Nations, et pour l'espèce, grâce à Pessa'h, Shavouot, Terou'ah, Kipourim, et Soukot."
       };
 
-    static public readonly TranslationsDictionary NoticeOnlineBibleprovider
+      static public readonly TranslationsDictionary NoticeOnlineWordProvider
+      = new TranslationsDictionary
+      {
+        { Language.EN, "Use the %WORD% tag to replace the value." },
+        { Language.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
+      };
+
+    static public readonly TranslationsDictionary NoticeOnlineBibleProvider
       = new TranslationsDictionary
       {
         [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
