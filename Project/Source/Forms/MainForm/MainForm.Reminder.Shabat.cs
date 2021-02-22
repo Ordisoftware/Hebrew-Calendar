@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void CheckShabat()
+    private bool CheckShabat()
     {
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
                      && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow)
                   select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
       if ( row == null )
-        return;
+        return false;
       var dateRow = SQLiteDate.ToDateTime(row.Date);
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
@@ -41,19 +41,20 @@ namespace Ordisoftware.Hebrew.Calendar
         SetTimes(times, dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
         SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
+      bool result = dateNow >= times.dateStartCheck.Value && dateNow <= times.dateEnd.Value;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
           ShabatForm.Close();
-        return;
+        return result;
       }
       else
       if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
       {
         if ( LastShabatReminded.HasValue )
-          return;
+          return result;
         else
           LastShabatReminded = dateNow;
       }
@@ -68,13 +69,14 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Settings.RemindShabatEveryMinutes) )
-          return;
+          return result;
         else
           LastShabatReminded = dateNow;
       }
       else
         LastShabatReminded = dateNow;
       ReminderForm.Run(row, TorahEvent.Shabat, times);
+      return result;
     }
 
   }

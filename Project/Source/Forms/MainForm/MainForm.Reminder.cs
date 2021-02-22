@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using Ordisoftware.Core;
@@ -28,6 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
+      bool isSpecialDay = false;
       try
       {
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
@@ -40,11 +41,11 @@ namespace Ordisoftware.Hebrew.Calendar
             CheckAnniversaryMoon();
           }*/
           if ( Settings.ReminderShabatEnabled )
-            CheckShabat();
+            isSpecialDay = CheckShabat() || isSpecialDay;
           if ( Settings.ReminderCelebrationsEnabled )
           {
-            CheckCelebrationDay();
-            CheckEvents();
+            isSpecialDay = CheckCelebrationDay() || isSpecialDay;
+            CheckCelebrations();
           }
         }
       }
@@ -57,9 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        /*TrayIcon.Icon = ShabatForm == null && RemindCelebrationForms.Count == 0 not adapted
-                        ? TrayIconDefault
-                        : TrayIconEvent;*/
+        TrayIcon.Icon = isSpecialDay ? TrayIconEvent : TrayIconDefault;
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
