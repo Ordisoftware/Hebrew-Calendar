@@ -25,15 +25,13 @@ Name: startwithwindows; Description: {cm:StartWithWindows_msg}; GroupDescription
 
 [InstallDelete]
 #include "Scripts\InstallDelete.iss"
-Name: {app}\Sounds\*; Type: filesandordirs
-Name: {commonstartup}\{#MyAppName}.*; Type: files
 
 [Files]
 #include "Scripts\Files.iss"
-Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 
 [Icons]
 #include "Scripts\Icons.iss"
+
 
 [Registry]
 Root: HKCU; Subkey: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run; ValueType: string; ValueName: {#MyAppPublisher} {#MyAppName}; ValueData: """{app}\Bin\{#MyAppExeName}"" --hide"; Flags: uninsdeletevalue deletevalue
