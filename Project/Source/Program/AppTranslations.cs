@@ -33,8 +33,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary ApplicationDescription
       = new TranslationsDictionary
       {
-        [Language.EN] = "Generate a hebrew lunisolar calendar with shabat and celebrations reminder",
-        [Language.FR] = "Génère un calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
+        [Language.EN] = "Hebrew lunisolar calendar generator with shabat and celebrations reminder",
+        [Language.FR] = "Générateur de calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
       };
 
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> MainFormSubTitleOmer

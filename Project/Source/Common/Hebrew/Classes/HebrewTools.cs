@@ -56,10 +56,10 @@ namespace Ordisoftware.Hebrew
       if ( !File.Exists(path) )
       {
         if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
+          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, "--ref " + reference);
+      SystemManager.RunShell(path, "-r " + reference);
     }
 
     /// <summary>

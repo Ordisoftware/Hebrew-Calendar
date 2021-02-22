@@ -268,7 +268,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>521, 2</value>
+    <value>536, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -298,7 +298,7 @@
     <value>16, 125</value>
   </data>
   <data name="EditLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>588, 204</value>
+    <value>603, 204</value>
   </data>
   <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -322,7 +322,7 @@
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 353</value>
+    <value>140, 353</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -349,7 +349,7 @@
     <value>True</value>
   </data>
   <data name="linkLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 353</value>
+    <value>328, 353</value>
   </data>
   <data name="linkLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 13</value>
@@ -406,7 +406,7 @@
     <value>True</value>
   </data>
   <data name="linkLabel11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 340</value>
+    <value>328, 340</value>
   </data>
   <data name="linkLabel11.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 13</value>
@@ -436,7 +436,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 392</value>
+    <value>328, 392</value>
   </data>
   <data name="linkLabel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -463,7 +463,7 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 392</value>
+    <value>64, 392</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 13</value>
@@ -490,7 +490,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 340</value>
+    <value>146, 340</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 13</value>
@@ -517,7 +517,7 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 379</value>
+    <value>42, 379</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 13</value>
@@ -544,7 +544,7 @@
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 405</value>
+    <value>115, 405</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 13</value>
@@ -574,7 +574,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 379</value>
+    <value>328, 379</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 13</value>
@@ -604,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 366</value>
+    <value>328, 366</value>
   </data>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 13</value>
@@ -632,17 +632,17 @@
   </data>
   <data name="ActionCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIkSURBVDhPrZBbSNNRAIePs3wQwQydRWxRXkKyGf3BB3WU
-        CraokQ9maaOiCxhpNasRRBehi0VCF4qMpNEUgy4M54La3LqYl4KFJRTiyocwKLO1mhpZX/9lg0ocEn3w
-        47yc7ztwxH/FkqK2mufMpE6tpE41NrO86wkzECaBqIxE7Im2/ro+nqDMIxe0O8bW4ZRPeS4HvTgY4C7C
-        KEcm4rI6AVpsDOVrCCxdxLBOggKJ2vQMNroX8HzEjtgeMXGgYVYsNF3jg5TMYFY6vmwNo5ka9PkZrO1K
-        4/GnJsSOMIFMwzmov4hfFYdvngp/2lxeJaWy8HA6BQ9nc993A7EzTEC7qpoO7wi6NSbK01LxKuO4lJjE
-        /GY1Gc4E7G+vygH5M39nxfoTLDMcI7+4ipVlZjw9w+w+30flhT5ysnTkZCcT757GdFs0Df0WORCFKIxF
-        URLPVEPiz5hUUHqEp73f6ewOYLG/puJ4N7tOedl8oJMcbQr6k0oKbyswda3jTH8tlo9mRHFcUJaCgSDS
-        kqKDtMuBDfs9bKnyUHb0BXmrT+NvicR5VknNNhU1W+PhSx1CH/OHHELKlSNtzz5TstdDyb4e9MsXQ6eC
-        0dYovrVGQKCetrE/GCeHkPKKD3HvyQi5mx5Qa4rhq2sKgTuRMNhIc0V4OYSkLarmzUs3728Khm4JeNeI
-        tXxycgjJZZTFgSuy3IB1ki//jWSvFNiMin+SQwTFMLIQPwB9pUVMXsD+6AAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAiRJREFUOE+tkFtI01EAh4+zfBDBDJ1FbFFeQrIZ/cEHdZQKtqiRD2Zpo6ILGGk1
+        qxFEF6GLRUIXioyk0RSDLgzngtrcupiXgoUlFOLKhzAos7WaGllf/2WDShwSffDjvJzvO3DEf8WSoraa
+        58ykTq2kTjU2s7zrCTMQJoGojETsibb+uj6eoMwjF7Q7xtbhlE95Lge9OBjgLsIoRybisjoBWmwM5WsI
+        LF3EsE6CAona9Aw2uhfwfMSO2B4xcaBhViw0XeODlMxgVjq+bA2jmRr0+Rms7Urj8acmxI4wgUzDOai/
+        iF8Vh2+eCn/aXF4lpbLwcDoFD2dz33cDsTNMQLuqmg7vCLo1JsrTUvEq47iUmMT8ZjUZzgTsb6/KAfkz
+        f2fF+hMsMxwjv7iKlWVmPD3D7D7fR+WFPnKydORkJxPvnsZ0WzQN/RY5EIUojEVREs9UQ+LPmFRQeoSn
+        vd/p7A5gsb+m4ng3u0552XygkxxtCvqTSgpvKzB1reNMfy2Wj2ZEcVxQloKBINKSooO0y4EN+z1sqfJQ
+        dvQFeatP42+JxHlWSc02FTVb4+FLHUIf84ccQsqVI23PPlOy10PJvh70yxdDp4LR1ii+tUZAoJ62sT8Y
+        J4eQ8ooPce/JCLmbHlBriuGrawqBO5Ew2EhzRXg5hKQtqubNSzfvbwqGbgl414i1fHJyCMlllMWBK7Lc
+        gHWSL/+NZK8U2IyKf5JDBMUwshA/AH2lRUxewP7oAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionCheckUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -764,7 +764,7 @@
     <value>10, 593</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 28</value>
+    <value>614, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -785,7 +785,7 @@
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 366</value>
+    <value>64, 366</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 13</value>
@@ -812,7 +812,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 405</value>
+    <value>328, 405</value>
   </data>
   <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 13</value>
@@ -839,7 +839,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 444</value>
+    <value>328, 444</value>
   </data>
   <data name="linkLabel5.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 13</value>
@@ -869,7 +869,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 444</value>
+    <value>146, 444</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 13</value>
@@ -899,7 +899,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 457</value>
+    <value>125, 457</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 13</value>
@@ -926,7 +926,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 457</value>
+    <value>328, 457</value>
   </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -956,7 +956,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 535</value>
+    <value>237, 535</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -986,7 +986,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 535</value>
+    <value>328, 535</value>
   </data>
   <data name="linkLabel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 13</value>
@@ -1013,7 +1013,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 418</value>
+    <value>328, 418</value>
   </data>
   <data name="linkLabel7.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -1043,7 +1043,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 418</value>
+    <value>103, 418</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 13</value>
@@ -1073,7 +1073,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 431</value>
+    <value>134, 431</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 13</value>
@@ -1100,7 +1100,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 431</value>
+    <value>328, 431</value>
   </data>
   <data name="linkLabel8.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -1130,7 +1130,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 574</value>
+    <value>328, 574</value>
   </data>
   <data name="linkLabel9.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 13</value>
@@ -1160,7 +1160,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 574</value>
+    <value>204, 574</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 13</value>
@@ -1190,7 +1190,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 509</value>
+    <value>328, 509</value>
   </data>
   <data name="linkLabel13.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 13</value>
@@ -1220,7 +1220,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 509</value>
+    <value>192, 509</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 13</value>
@@ -1247,7 +1247,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 470</value>
+    <value>328, 470</value>
   </data>
   <data name="linkLabel14.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 13</value>
@@ -1277,7 +1277,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 470</value>
+    <value>87, 470</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 13</value>
@@ -1307,7 +1307,7 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 561</value>
+    <value>204, 561</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 13</value>
@@ -1337,7 +1337,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 561</value>
+    <value>328, 561</value>
   </data>
   <data name="linkLabel15.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 13</value>
@@ -1367,7 +1367,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 483</value>
+    <value>328, 483</value>
   </data>
   <data name="linkLabel16.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 13</value>
@@ -1397,7 +1397,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 483</value>
+    <value>69, 483</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 13</value>
@@ -1427,7 +1427,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 496</value>
+    <value>328, 496</value>
   </data>
   <data name="linkLabel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 13</value>
@@ -1457,7 +1457,7 @@
     <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 496</value>
+    <value>179, 496</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 13</value>
@@ -1487,7 +1487,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 522</value>
+    <value>328, 522</value>
   </data>
   <data name="linkLabel18.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 13</value>
@@ -1517,7 +1517,7 @@
     <value>NoControl</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 522</value>
+    <value>210, 522</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 13</value>
@@ -1547,7 +1547,7 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabel19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 548</value>
+    <value>328, 548</value>
   </data>
   <data name="linkLabel19.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 13</value>
@@ -1577,7 +1577,7 @@
     <value>NoControl</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 548</value>
+    <value>232, 548</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -1607,7 +1607,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>619, 631</value>
+    <value>634, 631</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

@@ -46,6 +46,7 @@
       this.linkLabel1 = new System.Windows.Forms.LinkLabel();
       this.linkLabel2 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionCheckUpdate = new System.Windows.Forms.Button();
       this.ActionViewStats = new System.Windows.Forms.Button();
       this.ActionPrivacyNotice = new System.Windows.Forms.Button();
       this.label6 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
       this.label18 = new System.Windows.Forms.Label();
       this.linkLabel19 = new System.Windows.Forms.LinkLabel();
       this.label19 = new System.Windows.Forms.Label();
-      this.ActionCheckUpdate = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -206,6 +206,15 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionCheckUpdate
+      // 
+      this.ActionCheckUpdate.AllowDrop = true;
+      this.ActionCheckUpdate.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionCheckUpdate, "ActionCheckUpdate");
+      this.ActionCheckUpdate.Name = "ActionCheckUpdate";
+      this.ActionCheckUpdate.UseVisualStyleBackColor = true;
+      this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
       // ActionViewStats
       // 
@@ -433,15 +442,6 @@
       // 
       resources.ApplyResources(this.label19, "label19");
       this.label19.Name = "label19";
-      // 
-      // ActionCheckUpdate
-      // 
-      this.ActionCheckUpdate.AllowDrop = true;
-      this.ActionCheckUpdate.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionCheckUpdate, "ActionCheckUpdate");
-      this.ActionCheckUpdate.Name = "ActionCheckUpdate";
-      this.ActionCheckUpdate.UseVisualStyleBackColor = true;
-      this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
       // AboutBox
       // 
