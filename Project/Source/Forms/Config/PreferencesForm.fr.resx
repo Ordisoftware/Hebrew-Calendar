@@ -1123,4 +1123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
+    <value>Utilisez une icône différente lors du shabat ou d'un jour de célébration</value>
+  </data>
 </root>

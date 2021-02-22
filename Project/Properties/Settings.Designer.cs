@@ -2321,5 +2321,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ParashotFormColumnTranslationWidth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TrayIconUseSpecialDayIcon {
+            get {
+                return ((bool)(this["TrayIconUseSpecialDayIcon"]));
+            }
+            set {
+                this["TrayIconUseSpecialDayIcon"] = value;
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-; --------------------------------------------------------------------------------------------------
+﻿; --------------------------------------------------------------------------------------------------
 ; File format for web links
 ; --------------------------------------------------------------------------------------------------
 ; To create a folder else items will be at root level: Lang/[short code] = Title
@@ -18,6 +18,18 @@ URL = https://en.wikipedia.org/wiki/Hebrew_language
 
 Name = (FR) Hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/H%C3%A9breu
+
+Name = (EN) Hebrew Verb Tables @ pealim.com
+URL = https://www.pealim.com
+
+Name = (EN) Klein Dictionary @ sefaria.org
+URL = https://www.sefaria.org/Klein_Dictionary
+
+Name = (EN) Wiktionary.org
+URL = https://en.wiktionary.org
+
+Name = (FR) Wiktionary.org
+URL = https://fr.wiktionary.org
 
 -
 

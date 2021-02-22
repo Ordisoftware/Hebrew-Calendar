@@ -226,13 +226,6 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Coordonnées non trouvées."
       };
 
-    static public readonly TranslationsDictionary BoardExportFileName
-      = new TranslationsDictionary()
-      {
-        [Language.EN] = "Board {0}",
-        [Language.FR] = "Board {0}"
-      };
-
   }
 
 }

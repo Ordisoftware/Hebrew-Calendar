@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private void CheckEvents()
+    private void CheckCelebrations()
     {
       bool check(TorahEvent item)
       {

@@ -27,6 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadSettings()
     {
+      SystemManager.TryCatch(() => { EditTrayIconUseSpecialDayIcon.Checked = Settings.TrayIconUseSpecialDayIcon; });
       SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
       SystemManager.TryCatch(() => { LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString(); });
       SystemManager.TryCatch(() => { EditCalendarColorNoDay.BackColor = Settings.MonthViewNoDaysBackColor; });
