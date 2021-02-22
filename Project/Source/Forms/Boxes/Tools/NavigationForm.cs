@@ -57,7 +57,10 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
           LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
-          if ( LabelEventTorahValue.Text == string.Empty ) LabelEventTorahValue.Text = "-";
+          if ( LabelEventTorahValue.Text == string.Empty )
+            LabelEventTorahValue.Text = row.CelebrationDay;
+          if ( LabelEventTorahValue.Text == string.Empty )
+              LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
                           where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();

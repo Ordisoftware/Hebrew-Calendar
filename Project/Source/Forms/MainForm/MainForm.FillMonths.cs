@@ -144,6 +144,7 @@ namespace Ordisoftware.Hebrew.Calendar
             int rank = 0;
             void add(Color color, string text)
             {
+              if ( string.IsNullOrEmpty(text) ) return;
               var item = new CustomEvent();
               item.Date = date;
               item.EventFont = new Font("Calibri", Settings.MonthViewFontSize);
@@ -192,14 +193,16 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( row.Moonset != string.Empty )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
-            if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
+            else
+              add(Settings.CalendarColorTorahEvent, row.CelebrationDay);
             // TODO Parashah
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )
                 add(Settings.CalendarColorParashah, ParashahReading.GetLang());
+            if ( row.SeasonChange != 0 )
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
           }
           catch ( Exception ex )
           {

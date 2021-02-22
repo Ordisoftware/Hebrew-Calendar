@@ -22,13 +22,14 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private bool IsSpecialDay;
+
     internal void DoTimerReminder()
     {
       if ( TimerMutex ) return;
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
-      bool isSpecialDay = false;
       try
       {
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
@@ -41,10 +42,10 @@ namespace Ordisoftware.Hebrew.Calendar
             CheckAnniversaryMoon();
           }*/
           if ( Settings.ReminderShabatEnabled )
-            isSpecialDay = CheckShabat() || isSpecialDay;
+            IsSpecialDay = CheckShabat() || IsSpecialDay;
           if ( Settings.ReminderCelebrationsEnabled )
           {
-            isSpecialDay = CheckCelebrationDay() || isSpecialDay;
+            IsSpecialDay = CheckCelebrationDay() || IsSpecialDay;
             CheckCelebrations();
           }
         }
@@ -61,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.TryCatch(() =>
         {
           if ( Settings.TrayIconUseSpecialDayIcon )
-            TrayIcon.Icon = isSpecialDay ? TrayIconEvent : TrayIconDefault;
+            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
         });
         SystemManager.TryCatch(() =>
         {

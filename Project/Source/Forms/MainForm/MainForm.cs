@@ -290,6 +290,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
+      if ( IsSpecialDay ) return;
       bool menuEnabled = MenuTray.Enabled;
       try
       {

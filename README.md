@@ -216,10 +216,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Improve month view to show celebration week days with number as text like first and last.
-- Improve navigation form to show celebration week day number.
 - Improve date bookmarks to be used from the main window to navigate.
-- Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Improve log viewer to select file.
 - Replace simple internal trace/logging by SeriLog.
 - Add dark theme for month view.
@@ -249,6 +246,9 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add export to TXT support for all boards.
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
+- Improve month view to show celebration week days with number as text like first and last.
+- Improve navigation form to show celebration week day number.
+- Improve automatic web check update to not run when shabat and special celebration days but the next day.
 - Some improvements.
 - Some file and code refactoring.
 - Add some online bible providers and update *chabad.org*.
