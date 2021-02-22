@@ -70,8 +70,6 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
-      //foreach ( DataGridViewColumn column in DataGridView.Columns )
-        //column.HeaderText = column.HeaderText.ToUpper();
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
     }
@@ -127,6 +125,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       Timer.Enabled = DataGridView.ReadOnly;
       DataGridView.ReadOnly = ParashotTable.IsReadOnly();
+      ActionErase.Enabled = !DataGridView.ReadOnly;
       ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
       ActionExport.Enabled = !DataGridView.ReadOnly;
       ActionReset.Enabled = !DataGridView.ReadOnly;
@@ -249,6 +248,21 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionUndo.Enabled = false;
       }
       ActiveControl = DataGridView;
+    }
+
+    private void ActionEmpty_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo("Clear all custom data?") )
+      {
+        foreach ( DataRow row in ParashotTable.DataTable.Rows )
+        {
+          row[nameof(Parashah.Translation)] = string.Empty;
+          row[nameof(Parashah.Lettriq)] = string.Empty;
+          ActionSave.Enabled = true;
+          ActionUndo.Enabled = true;
+        }
+        //BindingSource.ResetBindings(false);
+      }
     }
 
     private void ActionSave_Click(object sender, EventArgs e)

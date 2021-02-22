@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 8</value>
+    <value>397, 8</value>
   </data>
   <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -128,7 +128,7 @@
     <value>Vérifier</value>
   </data>
   <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 8</value>
+    <value>347, 8</value>
   </data>
   <data name="ActionViewLockers.Text" xml:space="preserve">
     <value>Détails</value>
@@ -167,21 +167,37 @@
         MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoNJREFUOE+Nkl1IU2EYx89FRNFFUCsUuvem6CLooqsGCaLdhBdRdwZBUEFe2ZZ9
-        2EUWRRclJZruw6igiDB0N96EIWipfTg3peS4Nbfp5na2ec7Ox/bveZ5GeCHUC/+9z/b8fs97OO+Uuq5Q
-        p6srhN03RrCrcwQ7/xFmmGWHXWUfFdMZYDzp4H8Xs+ywq+y5NYqvmQqUO4vSjCY0SgERynw8j3Ash8gv
-        DfOceE4YZtlhVwZMpKtQ3O3S9Ho88Hq9CASC8Pl8WMro6OjooO8B+H2DwijuK+LIgL1doxiLO9jW1g/T
-        qSC1UUGyVEWiYFOc2m4jrllIaCYMi9k+cdhVXDTl3Y8yDvSqKNs2rl31IOgPYlV34KF6KDCEgM+PdMmC
-        f2AAumkKyw67MuBlVEfDM5UezkbRdpAzHayXbeTpNM66aSNbNqGZFqpVCw39qjh/BtBj+OdKOBpYRmip
-        QEMcVGiQQ+F9c/gAZphlh126xlH0fSmi8VUCx1/EqRnD4cEYDg0s42AtXPNv3GOGWXbYlQE9M0WceruC
-        ltcJPJ9c4Re9aVUpFdm51/ImISw7MmA/fTz8XMTZ4RQ1kgQ6iKgZLNK9L9J/Iqxm8f3nKsJLaerZwjDL
-        Drsy4N4nDedCaZweTsKml1UwKvDc7Ib7RDPVVUTj61iIZWEbZWJSwrLzd0D3VBGXx7JoC63B2CjTSYC7
-        sRl3H/RIraY0qMk8jJIhDLPsyIC62yHcn9ZxfaKA9g95OsUSqanpJB497pV6NWdgLafD0k1hmGWHXcV1
-        6ekTLvhOt3vf49tsBJMzUZy/cLFVOXamdWZ2AeNTYXycmqPevDDMikOuQquecmSL7Khlq14tSv1vbU/x
-        i7m5HQgAAAAASUVORK5CYII=
+        wwAADsMBx2+oZAAAAldJREFUOE9dj8tPE2EUxecvQKStCSbixp0sfMWV1g0BRImx+CgtNI0hoGJgAQsi
+        voKaKAkYxaJglYdEQJ1pu0IXCoQ0aWqLIK19aLEhSGSBKxNldfzO12lRbnLzzT3nd04yyuYx1nhcW6u1
+        3/lWFVvE8uVNXUdyA0D/EmOq9ZZud/jg7AnBPbUE7+wqPOFV+fKmTp+cHtkooFh8aQKDM8voeptGeXcY
+        O1unYGqalC9v6vTJZUtyBYWiWfvwAw1DMexqm8F1zxfhbQxv6vTJkWdOWJl/bn8RRfNYAgduBlB8zS9D
+        04k17GidxmR8Td67r/qlT448c0JWlAKb+qf3/TIO3w3BLPbgraAMVD6Yw54bAVT1zst7X0dA+uTIMydk
+        RTHYNLR5FlHaPYuyex9R0hXGkU697HYQke+/ZMGhOyHJcMkzJwuMdg0XRpOodH3K7bGeeZSIsnexnzLc
+        MJJA2f05HH+Y8ckzJwtMdg9sAzGc7o/gVF9mLY8jOCpKOJe9KVSIb8ujBemRI8+cLNhm19at7ihqBhOw
+        PYvJtT6NwdIXRYVrASdE2Vn355xHjjxzssBY9WTc3OFH/ehXnHuehHM4AcdQHGdEiMOXN3X65MgzJwvE
+        FPF/HANxNL7+hvPjKdQJqHY4KQv48qZOnxx55rIFSr65pbHQ6UPdSBItviU0a2lcfLWI+rGUfHlTp0+O
+        PHO5AjF5FA02FeWdQTSpaVx5s4L2iRX58qZOXw/nMfRvAYfifsPJ/pdGm7peUK0iu7yp09c5OZsLslMk
+        dq9YwtnlTf2/AaD8BbJ1NdC1E7hwAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionErase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAndJREFUOE99kNtOGlEUhr3vW/QNmiZ9ll5Yoj3YpN72CXph4pGeUAEhVlKMJ4hY
+        owMMzMipWMRQGB1AYTgUBgSh1cpp4O8eMxclxX7Jn72y9vr/vbKH/ua9hX00t8FMzKy7HNPrdGCGaHbD
+        5Z9bdwVkzZL+2y1mQp5TLP2QgRiXqfyqXgONDpAoA75UF1+FDrL13q2OksWKetMdUyz9aKxs3slLiOS6
+        KNRATgn0aRNM8gbBzA1ciQboRAczq468YulHu30Q/Xl1nZa63RYGIElS6zwnpic/70cVSz86m4fjM2X/
+        lu/ME+IFtlTKsSfpLP343S72w1knnxEZKhDxTZopTrH0Iwec/6j4qLDojmdL7nq9QhcvLqkXOieeae0o
+        VutOd4jzTt0ZsOPl0sWa9431W1ml2ceTjxSeLtgxbnDhFdEIqdnwiWdq9T8Bglg/GF9mulQoESmVSq5s
+        QaTH9E6MkS3yYolhjk7u3kD/xRPl0qJvfi92mi2WKZWGglir7Y7KL0cLDlsoFXMextgps33wJy7ZfPF4
+        Kl9lw6nOmJ7GS6JcLovQqQCrn8drE4t2qylNm+28Yuln2cag1W5jdNGJcaP7Vs/J6iMLDqjm7VgLJFC4
+        qOLD2h4USz9rdAjBCI94qkCMNOQt0OvgptnE1e8mKpd1OALfYdjxDA4wb1gQ5VM4Ttch9XpQLdJICjn4
+        +QK8iSrylSsEjjmYN62DA1Y+rcBi3YYgCIjzPM6TZ9BoFrFlsSIYPCS9OGy2HZhMpsEBw8PDI2q1mtJq
+        tQ29Xg/Dkh5GowFGg4HUS9DptA35Xp5TLP9wj+g+0QOihwMk9+V7eY4wNPQHLYoLQROQlHYAAAAASUVO
+        RK5CYII=
 </value>
   </data>
   <data name="ActionSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -240,9 +256,6 @@
   </data>
   <data name="ColumnLinked.Width" type="System.Int32, mscorlib">
     <value>46</value>
-  </data>
-  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 270</value>
   </data>
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -475,9 +488,8 @@
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copier la ligne (caractères unicodes)</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 270</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
