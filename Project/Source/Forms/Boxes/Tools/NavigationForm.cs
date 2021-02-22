@@ -57,26 +57,10 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
           LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
-          if ( LabelEventTorahValue.Text == string.Empty && row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
-            if ( row.LunarMonth == TorahCelebrations.PessahMonth )
-            {
-              int day = row.LunarDay >= TorahCelebrations.PessahStartDay
-                        ? row.LunarDay - TorahCelebrations.PessahStartDay + 1
-                        : -1;
-              if ( day > 0 && day < TorahCelebrations.PessahLenght )
-                LabelEventTorahValue.Text = AppTranslations.PessahDay.GetLang(day);
-            }
-            else
-            if ( row.LunarMonth == TorahCelebrations.YomsMonth )
-            {
-              int day = row.LunarDay >= TorahCelebrations.SoukotStartDay
-                        ? row.LunarDay - TorahCelebrations.SoukotStartDay + 1
-                        : -1;
-              if ( day > 0 && day < TorahCelebrations.SoukotLenght )
-                LabelEventTorahValue.Text = AppTranslations.SoukotDay.GetLang(day);
-            }
           if ( LabelEventTorahValue.Text == string.Empty )
-            LabelEventTorahValue.Text = "-";
+            LabelEventTorahValue.Text = row.CelebrationDay;
+          if ( LabelEventTorahValue.Text == string.Empty )
+              LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
                           where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
