@@ -192,14 +192,33 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( row.Moonset != string.Empty )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
-            if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
+            else
+            if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
+              if ( row.LunarMonth == TorahCelebrations.PessahMonth )
+              {
+                int day = row.LunarDay >= TorahCelebrations.PessahStartDay
+                          ? row.LunarDay - TorahCelebrations.PessahStartDay + 1
+                          : -1;
+                if ( day > 0 && day < TorahCelebrations.PessahLenght )
+                  add(Settings.CalendarColorTorahEvent, AppTranslations.PessahDay.GetLang(day));
+              }
+              else
+              if ( row.LunarMonth == TorahCelebrations.YomsMonth )
+              {
+                int day = row.LunarDay >= TorahCelebrations.SoukotStartDay
+                          ? row.LunarDay - TorahCelebrations.SoukotStartDay + 1
+                          : -1;
+                if ( day > 0 && day < TorahCelebrations.SoukotLenght )
+                  add(Settings.CalendarColorTorahEvent, AppTranslations.SoukotDay.GetLang(day));
+              }
             // TODO Parashah
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )
                 add(Settings.CalendarColorParashah, ParashahReading.GetLang());
+            if ( row.SeasonChange != 0 )
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
           }
           catch ( Exception ex )
           {

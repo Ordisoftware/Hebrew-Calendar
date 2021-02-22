@@ -228,6 +228,20 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
+    static public readonly TranslationsDictionary PessahDay
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Pesa'h day {0}",
+        [Language.FR] = "Pessa'h jour {0}"
+      };
+
+    static public readonly TranslationsDictionary SoukotDay
+      = new TranslationsDictionary()
+      {
+        [Language.EN] = "Sukot day {0}",
+        [Language.FR] = "Soukot jour {0}"
+      };
+
     static public readonly NullSafeDictionary<TorahEvent, TranslationsDictionary> TorahEvent
       = new NullSafeDictionary<TorahEvent, TranslationsDictionary>
       {
