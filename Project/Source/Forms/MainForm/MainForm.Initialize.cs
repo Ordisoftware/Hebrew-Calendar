@@ -142,7 +142,6 @@ namespace Ordisoftware.Hebrew.Calendar
                                                        true, false, 400, 670, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        //
         SetGlobalHotKey();
       }
       finally
