@@ -29,6 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateSettings()
     {
+      Settings.TrayIconUseSpecialDayIcon = EditTrayIconUseSpecialDayIcon.Checked;
       Settings.MonthViewNoDaysBackColor = EditCalendarColorNoDay.BackColor;
       Settings.MonthViewBackColor = EditCalendarColorEmpty.BackColor;
       Settings.MonthViewTextColor = EditCalendarColorDefaultText.BackColor;

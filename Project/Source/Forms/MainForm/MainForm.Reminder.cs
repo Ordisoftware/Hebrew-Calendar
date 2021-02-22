@@ -58,7 +58,11 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        TrayIcon.Icon = isSpecialDay ? TrayIconEvent : TrayIconDefault;
+        SystemManager.TryCatch(() =>
+        {
+          if ( Settings.TrayIconUseSpecialDayIcon )
+            TrayIcon.Icon = isSpecialDay ? TrayIconEvent : TrayIconDefault;
+        });
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
