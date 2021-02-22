@@ -220,7 +220,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     // TODO remove when weekly parashah generated
     static public readonly TranslationsDictionary ParashahReading
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Parashah reading",
         [Language.FR] = "Lecture de la Parashah"

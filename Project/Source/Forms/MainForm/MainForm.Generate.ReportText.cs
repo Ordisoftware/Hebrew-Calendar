@@ -117,6 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
             string strDesc = string.Empty;
             string s1 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
             string s2 = AppTranslations.TorahEvent.GetLang(day.TorahEventsAsEnum);
+            if ( string.IsNullOrEmpty(s2) ) s2 = day.WeekLongCelebrationSubDay;
             strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;

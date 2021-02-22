@@ -4,6 +4,7 @@ Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: ..\Bin\Release\*; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
 Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
+Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\System\*; DestDir: {app}\System; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.psess, *.vsp, *.bak, *.suo, *.user, obj, packages, .vs
 Source: ..\Project\Medias\Fonts\Hebrew.ttf; DestDir: {commonfonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall

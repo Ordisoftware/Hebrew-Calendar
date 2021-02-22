@@ -24,84 +24,84 @@ namespace Ordisoftware.Core
   {
 
     static public readonly TranslationsDictionary RunSystemManagerError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error on launching :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur de lancement :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
       };
 
     static public readonly TranslationsDictionary FileNotFound
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"File not found:{Globals.NL2}{{0}}",
         [Language.FR] = $"Fichier non trouvé :{Globals.NL2}{{0}}"
       };
 
     static public readonly TranslationsDictionary FileAccessError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error with file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur avec le fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
       };
 
     static public readonly TranslationsDictionary NotAnExecutableFile
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Not an executable file:{Globals.NL2}{{0}}",
         [Language.FR] = $"Le fichier n'est pas un exécutable :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary LoadFileError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error while loading file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur de chargement du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
       };
 
     static public readonly TranslationsDictionary WriteFileError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error while writing file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur de sauvegarde du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
       };
 
     static public readonly TranslationsDictionary CopyFileError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error while copying file:{Globals.NL2}{{0}} -> {{1}}{Globals.NL2}{{2}}",
         [Language.FR] = $"Erreur de copie du fichier :{Globals.NL2}{{0}} -> {{1}}{Globals.NL2}{{2}}",
       };
 
     static public readonly TranslationsDictionary ErrorInFile
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error in {{0}}{Globals.NL2}Line n° {{1}}{Globals.NL2}{{2}}",
         [Language.FR] = $"Erreur dans {{0}}{Globals.NL2}Ligne n° {{1}}{Globals.NL2}{{2}}"
       };
 
     static public readonly TranslationsDictionary WrongSSLCertificate
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Wrong SSL certificate for {{0}}:{Globals.NL2}Required:{Globals.NL2}{{1}}{Globals.NL2}Found:{Globals.NL2}{{2}}",
         [Language.FR] = $"Mauvais certificat SSL pour  {{0}} :{Globals.NL2}Requis :{Globals.NL2}{{1}}{Globals.NL2}Trouvé :{Globals.NL2}{{2}}"
       };
 
     static public readonly TranslationsDictionary ExpiredSSLCertificate
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Expired SSL certificate for {{0}}:{Globals.NL2}Effective = {{1}}{Globals.NL2}Expiration = {{2}}",
         [Language.FR] = $"Certificat SSL expiré pour {{0}} :{Globals.NL2}Effective = {{1}}{Globals.NL2}Expiration = {{2}}"
       };
 
     static public readonly TranslationsDictionary WrongFileChecksum
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Wrong checksum for file:{Globals.NL2}{{0}}",
         [Language.FR] = $"Mauvaise somme de contrôle pour le fichier :{Globals.NL2}{{0}}"
       };
 
     static public readonly TranslationsDictionary AskToPrintLotsOfPages
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "There is {0} page(s)." + Globals.NL2 +
                         AskToContinue[Language.EN],
@@ -111,7 +111,7 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary AskToSaveLotsOfImages
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "There is {0} image(s)." + Globals.NL2 +
                         AskToContinue[Language.EN],
@@ -121,14 +121,14 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary FileExtensionFilter
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "{0} files",
         [Language.FR] = "Fichiers {0}"
       };
 
     static public readonly TranslationsDictionary AskToSaveChanges
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Save {0} changes?",
         [Language.FR] = "Sauver les modifications de {0} ?"

@@ -161,8 +161,8 @@ namespace Ordisoftware.Hebrew.Calendar
       menu.DropDownItems.Clear();
       MainForm.Instance.ActionInformation.DropDownItems.Clear();
       MainForm.Instance.ActionInformation.DropDownItems.AddRange(list.ToArray());
-      control.AboutBoxHandler += MainForm.Instance.ActionAbout_Click;
-      control.WebCheckUpdateHandler += MainForm.Instance.ActionWebCheckUpdate_Click;
+      control.AboutBoxHandler = MainForm.Instance.ActionAbout_Click;
+      control.WebCheckUpdateHandler = MainForm.Instance.ActionWebCheckUpdate_Click;
       MainForm.Instance.InitializeSpecialMenus();
       // Various updates
       DebugManager.TraceForm.Text = tempLogTitle;
@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     static private readonly TranslationsDictionary PrintPreviewDialogOfPageText
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "of",
         [Language.FR] = "de",

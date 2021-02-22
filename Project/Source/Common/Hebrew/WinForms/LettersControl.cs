@@ -65,6 +65,12 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
+    /// Indicate Input Length property.
+    /// </summary>
+    public int InputTextLength
+      => Input.Text.Length;
+
+    /// <summary>
     /// Indicate Input SelectionStart property.
     /// </summary>
     public int InputSelectionStart

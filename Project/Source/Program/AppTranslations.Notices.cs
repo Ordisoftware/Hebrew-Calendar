@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     static public readonly TranslationsDictionary NoticeMoonDayTextFormat
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
                         "%MONTHNAME% : moon month name" + Globals.NL +
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary NoticeHotKey
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The application checks the availability of the combination with the operating system. If so, it is tested in case it is captured by another application, which will trigger its activation and it will be considered invalid.",
 
@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary NoticeAutoGenerateInterval
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "A positive value generates the next years." + Globals.NL2 +
                         "A negative value generates the years before and after now.",
@@ -57,14 +57,14 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary NoticeShabatTitle
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Shabat notice",
         [Language.FR] = "Notice du Shabat"
       };
 
     static public readonly TranslationsDictionary NoticeShabat
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The Shabat is the \"day of rest\" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity." + Globals.NL2 +
                         "The tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately." + Globals.NL2 +
@@ -80,14 +80,14 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary NoticeCelebrationsTitle
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Celebrations notice",
         [Language.FR] = "Notice des célébrations"
       };
 
     static public readonly TranslationsDictionary NoticeCelebrations
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future." + Globals.NL2 +
                         "These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun." + Globals.NL2 +
@@ -104,14 +104,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
 
     static public readonly TranslationsDictionary NoticeDatesDiffTitle
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Dates difference notice",
         [Language.FR] = "Notice de différence de dates"
       };
 
     static public readonly TranslationsDictionary NoticeDatesDiff
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The values shown include the current periods." + Globals.NL2 +
                         "The annual solar period begins on January 1." + Globals.NL +
@@ -141,21 +141,21 @@ namespace Ordisoftware.Hebrew.Calendar
       };
 
     static public readonly TranslationsDictionary NoticeExportInterval
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
         [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
       };
 
     static public readonly TranslationsDictionary NoticeLunarMonthsTitle
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Lunar months notice",
         [Language.FR] = "Notice des mois lunaires"
       };
 
     static public readonly TranslationsDictionary NoticeLunarMonths
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)" + Globals.NL +
                         "Vert = air = action | A" + Globals.NL +

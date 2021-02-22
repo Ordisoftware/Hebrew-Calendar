@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
       get
       {
         if ( _AskToContinue == null )
-          _AskToContinue = new TranslationsDictionary()
+          _AskToContinue = new TranslationsDictionary
           {
             [Language.EN] = "Do you want to continue?",
             [Language.FR] = "Voulez-vous continuer ?"
@@ -39,147 +39,147 @@ namespace Ordisoftware.Core
     static private TranslationsDictionary _AskToContinue;
 
     static public readonly TranslationsDictionary ActionCancel
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Cancel",
         [Language.FR] = "Annuler",
       };
 
     static public readonly TranslationsDictionary ActionClose
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Close",
         [Language.FR] = "Fermer",
       };
 
     static public readonly TranslationsDictionary NotImplemented
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Not implemented: {0}",
         [Language.FR] = "Non implémenté : {0}",
       };
 
     static public readonly TranslationsDictionary NotYetAvailable
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Not yet available.",
         [Language.FR] = "Pas encore disponible."
       };
 
     static public readonly TranslationsDictionary TermNotFound
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Term \"{0}\" not found.",
         [Language.FR] = "Terme \"{0}\" non trouvé."
       };
 
     static public readonly TranslationsDictionary AskToOpenAllLinks
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Do you want to open all \"{0}\" links?",
         [Language.FR] = "Voulez-vous ouvrir tous les liens de \"{0}\" ?"
       };
 
     static public readonly TranslationsDictionary AskToEmptyHistory
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Empty history?",
         [Language.FR] = "Vider l'historique ?"
       };
 
     static public readonly TranslationsDictionary AskToEmptyBookmarks
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Empty bookmarks?",
         [Language.FR] = "Vider les signets ?"
       };
 
     static public readonly TranslationsDictionary AskToDeleteBookmark
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Erase the bookmark?",
         [Language.FR] = "Effacer le signet ?"
       };
 
     static public readonly TranslationsDictionary AskToDeleteBookmarkAll
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Erase all bookmarks?",
         [Language.FR] = "Effacer tous les signets ?"
       };
 
     static public readonly TranslationsDictionary AskToReplaceBookmark
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Replace bookmark?",
         [Language.FR] = "Remplacer le signet ?"
       };
 
     static public readonly TranslationsDictionary Valid
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Valid",
         [Language.FR] = "Valide"
       };
 
     static public readonly TranslationsDictionary Invalid
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Invalid",
         [Language.FR] = "Invalide"
       };
 
     static public readonly TranslationsDictionary Accepted
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Accepted",
         [Language.FR] = "Accepté"
       };
 
     static public readonly TranslationsDictionary Rejected
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Rejected",
         [Language.FR] = "Rejeté"
       };
 
     static public readonly TranslationsDictionary NullSlot
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "(null)",
         [Language.FR] = "(null)"
       };
 
     static public readonly TranslationsDictionary UndefinedSlot
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "(not defined)",
         [Language.FR] = "(non définit)"
       };
 
     static public readonly TranslationsDictionary UnknownSlot
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "(unknown)",
         [Language.FR] = "(inconnu)"
       };
 
     static public readonly TranslationsDictionary EmptySlot
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "(empty)",
         [Language.FR] = "(vide)"
       };
 
     static public readonly TranslationsDictionary ErrorSlot
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "(error)",
         [Language.FR] = "(erreur)"
       };
 
     static public readonly TranslationsDictionary MemorySizeSuffix
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "B",
         [Language.FR] = "o"
