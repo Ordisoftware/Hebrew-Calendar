@@ -196,7 +196,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
             else
-              add(Settings.CalendarColorTorahEvent, row.CelebrationDay);
+              add(Settings.CalendarColorTorahEvent, row.WeekLongCelebrationSubDay);
             // TODO Parashah
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )

@@ -44,7 +44,6 @@
       this.PanelViewMonth = new System.Windows.Forms.Panel();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
-      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -160,6 +159,8 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -178,7 +179,6 @@
       this.DataSet = new Ordisoftware.Hebrew.Calendar.Data.DataSet();
       this.LunisolarDaysTableAdapter = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter();
       this.TableAdapterManager = new Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager();
-      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -295,16 +295,6 @@
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
-      // 
-      // EditEnumsAsTranslations
-      // 
-      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
-      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
-      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarGrid
       // 
@@ -1160,9 +1150,9 @@
             this.ActionExit,
             this.ActionResetReminder,
             this.ActionDisableReminder,
+            this.ActionTools,
             this.ActionEnableReminder,
             this.toolStripSeparator4,
-            this.ActionTools,
             this.ActionWebLinks,
             this.ActionInformation,
             this.Sep6,
@@ -1182,6 +1172,16 @@
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
+      // 
+      // EditEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
+      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
+      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarMonth
       // 
@@ -1518,9 +1518,9 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
     private System.Windows.Forms.Label LabelSubTitleOmer;
     private System.Windows.Forms.Label LabelSubTitleGPS;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     internal System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
   }
 }
 

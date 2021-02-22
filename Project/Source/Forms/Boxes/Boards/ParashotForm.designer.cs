@@ -40,6 +40,7 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
       this.ActionViewLockers = new System.Windows.Forms.LinkLabel();
       this.LabelTableLocked = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionReset = new System.Windows.Forms.Button();
       this.ActionUndo = new System.Windows.Forms.Button();
+      this.ActionViewNotice = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
@@ -87,6 +89,7 @@
       this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.ContextMenu.SuspendLayout();
@@ -95,6 +98,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
       this.PanelBottom.Controls.Add(this.LabelTableLocked);
@@ -102,10 +106,31 @@
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionReset);
       this.PanelBottom.Controls.Add(this.ActionUndo);
+      this.PanelBottom.Controls.Add(this.ActionViewNotice);
       this.PanelBottom.Controls.Add(this.ActionSave);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // EditFontSize
+      // 
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
+      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ParashotFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
+      this.EditFontSize.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+      this.EditFontSize.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+      this.EditFontSize.Name = "EditFontSize";
+      this.EditFontSize.ReadOnly = true;
+      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ParashotFormFontSize;
+      this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
       // ActionCheckLockers
       // 
@@ -162,6 +187,15 @@
       this.ActionUndo.Name = "ActionUndo";
       this.ActionUndo.UseVisualStyleBackColor = true;
       this.ActionUndo.Click += new System.EventHandler(this.ActionUndo_Click);
+      // 
+      // ActionViewNotice
+      // 
+      this.ActionViewNotice.AllowDrop = true;
+      this.ActionViewNotice.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
+      this.ActionViewNotice.Name = "ActionViewNotice";
+      this.ActionViewNotice.UseVisualStyleBackColor = true;
+      this.ActionViewNotice.Click += new System.EventHandler(this.ActionViewNotice_Click);
       // 
       // ActionSave
       // 
@@ -252,6 +286,7 @@
       // 
       // ColumnLinked
       // 
+      this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
       dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,9 +297,10 @@
       // 
       // ColumnUnicode
       // 
+      this.ColumnUnicode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnUnicode.DataPropertyName = "Unicode";
       dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle8;
       resources.ApplyResources(this.ColumnUnicode, "ColumnUnicode");
       this.ColumnUnicode.Name = "ColumnUnicode";
@@ -272,6 +308,7 @@
       // 
       // ColumnMemo
       // 
+      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnMemo.DataPropertyName = "Memo";
       dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
@@ -445,6 +482,7 @@
       // 
       // ColumnBook
       // 
+      this.ColumnBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnBook.DataPropertyName = "Book";
       resources.ApplyResources(this.ColumnBook, "ColumnBook");
       this.ColumnBook.Name = "ColumnBook";
@@ -452,6 +490,7 @@
       // 
       // ColumnNumber
       // 
+      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnNumber.DataPropertyName = "Number";
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
@@ -461,6 +500,7 @@
       // 
       // ColumnName
       // 
+      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnName.DataPropertyName = "Name";
       resources.ApplyResources(this.ColumnName, "ColumnName");
       this.ColumnName.Name = "ColumnName";
@@ -468,6 +508,7 @@
       // 
       // ColumnBegin
       // 
+      this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnBegin.DataPropertyName = "VerseBegin";
       dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
@@ -477,6 +518,7 @@
       // 
       // ColumnEnd
       // 
+      this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnEnd.DataPropertyName = "VerseEnd";
       dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
@@ -499,8 +541,10 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ParashotForm_FormClosing);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParashotForm_FormClosed);
       this.Load += new System.EventHandler(this.ParashotForm_Load);
+      this.Shown += new System.EventHandler(this.ParashotForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.PanelMain.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.ContextMenu.ResumeLayout(false);
@@ -546,6 +590,12 @@
     private System.Windows.Forms.Button ActionUndo;
     private System.Windows.Forms.Button ActionExport;
     private System.Windows.Forms.Button ActionReset;
+    private System.Windows.Forms.Button ActionSaveAsDefaults;
+    private System.Windows.Forms.Timer Timer;
+    private System.Windows.Forms.Label LabelTableLocked;
+    private System.Windows.Forms.LinkLabel ActionCheckLockers;
+    private System.Windows.Forms.LinkLabel ActionViewLockers;
+    private System.Windows.Forms.NumericUpDown EditFontSize;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBook;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
@@ -556,10 +606,6 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnicode;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
-    private System.Windows.Forms.Button ActionSaveAsDefaults;
-    private System.Windows.Forms.Timer Timer;
-    private System.Windows.Forms.Label LabelTableLocked;
-    private System.Windows.Forms.LinkLabel ActionCheckLockers;
-    private System.Windows.Forms.LinkLabel ActionViewLockers;
+    private System.Windows.Forms.Button ActionViewNotice;
   }
 }

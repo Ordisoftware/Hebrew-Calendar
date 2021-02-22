@@ -2333,5 +2333,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["TrayIconUseSpecialDayIcon"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public decimal ParashotFormFontSize {
+            get {
+                return ((decimal)(this["ParashotFormFontSize"]));
+            }
+            set {
+                this["ParashotFormFontSize"] = value;
+            }
+        }
     }
 }

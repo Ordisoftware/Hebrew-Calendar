@@ -117,7 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="EditFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
+    <value>EditFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionCheckLockers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -125,9 +147,8 @@
   <data name="ActionCheckLockers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 8</value>
+    <value>340, 8</value>
   </data>
   <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -148,7 +169,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCheckLockers.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionViewLockers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -157,7 +178,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 8</value>
+    <value>290, 8</value>
   </data>
   <data name="ActionViewLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -178,7 +199,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionViewLockers.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelTableLocked.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -187,7 +208,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTableLocked.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 8</value>
+    <value>192, 8</value>
   </data>
   <data name="LabelTableLocked.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -208,7 +229,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelTableLocked.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionSaveAsDefaults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -241,7 +262,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSaveAsDefaults.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -271,7 +292,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -296,7 +317,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 1</value>
+    <value>155, 1</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -314,7 +335,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionUndo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -338,7 +359,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUndo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 1</value>
+    <value>123, 1</value>
   </data>
   <data name="ActionUndo.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -356,7 +377,50 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionUndo.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="ActionViewNotice.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionViewNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAldJREFUOE9dj8tPE2EUxecvQKStCSbixp0sfMWV1g0BRImx+CgtNI0hoGJgAQsi
+        voKaKAkYxaJglYdEQJ1pu0IXCoQ0aWqLIK19aLEhSGSBKxNldfzO12lRbnLzzT3nd04yyuYx1nhcW6u1
+        3/lWFVvE8uVNXUdyA0D/EmOq9ZZud/jg7AnBPbUE7+wqPOFV+fKmTp+cHtkooFh8aQKDM8voeptGeXcY
+        O1unYGqalC9v6vTJZUtyBYWiWfvwAw1DMexqm8F1zxfhbQxv6vTJkWdOWJl/bn8RRfNYAgduBlB8zS9D
+        04k17GidxmR8Td67r/qlT448c0JWlAKb+qf3/TIO3w3BLPbgraAMVD6Yw54bAVT1zst7X0dA+uTIMydk
+        RTHYNLR5FlHaPYuyex9R0hXGkU697HYQke+/ZMGhOyHJcMkzJwuMdg0XRpOodH3K7bGeeZSIsnexnzLc
+        MJJA2f05HH+Y8ckzJwtMdg9sAzGc7o/gVF9mLY8jOCpKOJe9KVSIb8ujBemRI8+cLNhm19at7ihqBhOw
+        PYvJtT6NwdIXRYVrASdE2Vn355xHjjxzssBY9WTc3OFH/ehXnHuehHM4AcdQHGdEiMOXN3X65MgzJwvE
+        FPF/HANxNL7+hvPjKdQJqHY4KQv48qZOnxx55rIFSr65pbHQ6UPdSBItviU0a2lcfLWI+rGUfHlTp0+O
+        PHO5AjF5FA02FeWdQTSpaVx5s4L2iRX58qZOXw/nMfRvAYfifsPJ/pdGm7peUK0iu7yp09c5OZsLslMk
+        dq9YwtnlTf2/AaD8BbJ1NdC1E7hwAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionViewNotice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionViewNotice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 1</value>
+  </data>
+  <data name="ActionViewNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionViewNotice.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Name" xml:space="preserve">
+    <value>ActionViewNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -385,7 +449,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 1</value>
+    <value>91, 1</value>
   </data>
   <data name="ActionSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -403,7 +467,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSave.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -433,7 +497,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -466,16 +530,19 @@
     <value>Book</value>
   </data>
   <data name="ColumnBook.Width" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>57</value>
   </data>
   <data name="ColumnNumber.HeaderText" xml:space="preserve">
     <value>N°</value>
   </data>
   <data name="ColumnNumber.Width" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>44</value>
   </data>
   <data name="ColumnName.HeaderText" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="ColumnName.Width" type="System.Int32, mscorlib">
+    <value>60</value>
   </data>
   <metadata name="ColumnTranslation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -496,22 +563,22 @@
     <value>Begin</value>
   </data>
   <data name="ColumnBegin.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>59</value>
   </data>
   <data name="ColumnEnd.HeaderText" xml:space="preserve">
     <value>End</value>
   </data>
   <data name="ColumnEnd.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>51</value>
   </data>
   <metadata name="ColumnLinked.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ColumnLinked.HeaderText" xml:space="preserve">
-    <value>Linked to next</value>
+    <value>Linked</value>
   </data>
   <data name="ColumnLinked.Width" type="System.Int32, mscorlib">
-    <value>105</value>
+    <value>64</value>
   </data>
   <metadata name="ColumnUnicode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -520,7 +587,7 @@
     <value>Parashah</value>
   </data>
   <data name="ColumnUnicode.Width" type="System.Int32, mscorlib">
-    <value>135</value>
+    <value>77</value>
   </data>
   <metadata name="ColumnMemo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -529,7 +596,7 @@
     <value>Memo</value>
   </data>
   <data name="ColumnMemo.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>42</value>
   </data>
   <metadata name="ContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>99, 17</value>
@@ -878,6 +945,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 676</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

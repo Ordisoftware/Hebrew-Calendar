@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         set { TorahEvents = (int)value; }
       }
 
-      public string CelebrationDay
+      public string WeekLongCelebrationSubDay
       {
         get
         {
