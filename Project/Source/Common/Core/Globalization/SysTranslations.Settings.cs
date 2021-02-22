@@ -24,7 +24,7 @@ namespace Ordisoftware.Core
   {
 
     static public readonly TranslationsDictionary UpgradeResetRequired
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "An upgrade of the settings is required." + Globals.NL +
                         "They will be reseted to default values.",
@@ -34,42 +34,42 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary ResetPreferences
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Preferences will be reseted to their default values.",
         [Language.FR] = "Les préférences vont être réinitialisés à leurs valeurs par défaut."
       };
 
     static public readonly TranslationsDictionary ResetParameter
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The parameter will be reset to its default value.",
         [Language.FR] = "Le paramètre va être réinitialisé à sa valeur par défaut."
       };
 
     static public readonly TranslationsDictionary AskToResetPreferences
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = ResetPreferences[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
         [Language.FR] = ResetPreferences[Language.FR] + Globals.NL2 + AskToContinue[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToResetParameter
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = ResetParameter[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
         [Language.FR] = ResetParameter[Language.FR] + Globals.NL2 + AskToContinue[Language.FR]
       };
 
     static public readonly TranslationsDictionary AskToCheckPreferences
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Check preferences.",
         [Language.FR] = "Vérifiez les préférences."
       };
 
     static public readonly TranslationsDictionary AskToRestoreWindowPosition
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "This action will restore the window position." + Globals.NL2 +
                          AskToContinue[Language.EN],

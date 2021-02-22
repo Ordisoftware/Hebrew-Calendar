@@ -24,14 +24,14 @@ namespace Ordisoftware.Core
   {
 
     static public readonly TranslationsDictionary DatabaseSetDSNError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Error creating or updating SQLite ODBC DSN.",
         [Language.FR] = "Erreur de création ou de mise à jour du DSN ODBC SQLite."
       };
 
     static public readonly TranslationsDictionary FatalGenerateError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Fatal error while generating data." + Globals.NL +
                         ApplicationMustExit[Language.EN] + Globals.NL +
@@ -45,28 +45,28 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary DatabaseIntegrityError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Database integrity error:{Globals.NL2}{{0}}",
         [Language.FR] = $"Erreur d'intégrité de la base de données :{Globals.NL2}{{0}}"
       };
 
     static public readonly TranslationsDictionary DatabaseVacuumError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Database vacuum failed.",
         [Language.FR] = "Echec du vacuum de la base de données."
       };
 
     static public readonly TranslationsDictionary DatabaseNoProcessConcurrency
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Database can't be modified while multiple instance of the application are running.",
         [Language.FR] = "La base de données ne peut pas être modifiée lorsque plusieurs instances de l'application sont en cours d'éxécution."
       };
 
     static public readonly TranslationsDictionary DatabaseTableLocked
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "The table {0} is used by other processes and therefore cannot be modified or exported: " + Globals.NL2 +
                         "{1}" + Globals.NL2 +
@@ -82,7 +82,7 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary AskToCheckParametersAfterDatabaseUpgraded
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Database upgraded." + Globals.NL2 +
                         "Do you want check the parameters?",
@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary AskToOptimizeDatabase
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "Optimization process will close and reopen the database." + Globals.NL2 +
                          AskToContinue[Language.EN],
@@ -114,7 +114,7 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary AskToLoadInstalledData
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = "This action will load the data installed with the application." + Globals.NL2 +
                         "All modifications will be lost." + Globals.NL2 +
@@ -126,21 +126,21 @@ namespace Ordisoftware.Core
       };
 
     static public readonly TranslationsDictionary DBDropTableError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error on drop table:{Globals.NL2}{{0}}",
         [Language.FR] = $"Erreur à la suppression de la table :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary DBCreateTableError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error on create table:{Globals.NL2}{{0}}",
         [Language.FR] = $"Erreur à la création de la table :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary DBCreateColumnError
-      = new TranslationsDictionary()
+      = new TranslationsDictionary
       {
         [Language.EN] = $"Error on create column:{Globals.NL2}{{0}}",
         [Language.FR] = $"Erreur à la création de la colonne :{Globals.NL2}{{0}}",
