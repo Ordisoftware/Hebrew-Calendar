@@ -252,38 +252,38 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [Calendar.TorahEvent.NewYearD1] = new TranslationsDictionary()
         {
-          [Language.EN] = "New year",
-          [Language.FR] = "Début de l'année"
+          [Language.EN] = "New Year",
+          [Language.FR] = "Nouvelle Année"
         },
         [Calendar.TorahEvent.NewYearD10] = new TranslationsDictionary()
         {
-          [Language.EN] = "Set aside lamb",
-          [Language.FR] = "Réserver agneau"
+          [Language.EN] = "Set Aside Lamb",
+          [Language.FR] = "Réserver Agneau"
         },
         [Calendar.TorahEvent.PessahD1] = new TranslationsDictionary()
         {
-          [Language.EN] = "Pesa'h start",
-          [Language.FR] = "Début de Pessa'h"
+          [Language.EN] = "Pesa'h Start",
+          [Language.FR] = "Pessa'h Début"
         },
         [Calendar.TorahEvent.PessahD7] = new TranslationsDictionary()
         {
-          [Language.EN] = "Pesa'h end",
-          [Language.FR] = "Fin de Pessa'h"
+          [Language.EN] = "Pesa'h End",
+          [Language.FR] = "Pessa'h Fin"
         },
         [Calendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary()
         {
-          [Language.EN] = "Shavuot diet",
-          [Language.FR] = "Régime de Shavouot"
+          [Language.EN] = "Shavuot Diet",
+          [Language.FR] = "Shavouot Régime"
         },
         [Calendar.TorahEvent.Chavouot1] = new TranslationsDictionary()
         {
-          [Language.EN] = "Shavuot lamb",
-          [Language.FR] = "Agneau de Shavouot"
+          [Language.EN] = "Shavuot Lamb",
+          [Language.FR] = "Shavouot Agneau"
         },
         [Calendar.TorahEvent.Chavouot2] = new TranslationsDictionary()
         {
-          [Language.EN] = "Shavuot end",
-          [Language.FR] = "Fin de Shavouot"
+          [Language.EN] = "Shavuot End",
+          [Language.FR] = "Shavouot Fin"
         },
         [Calendar.TorahEvent.YomTerouah] = new TranslationsDictionary()
         {
@@ -297,13 +297,13 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [Calendar.TorahEvent.SoukotD1] = new TranslationsDictionary()
         {
-          [Language.EN] = "Sukot start",
-          [Language.FR] = "Début de Soukot"
+          [Language.EN] = "Sukot Start",
+          [Language.FR] = "Soukot Début"
         },
         [Calendar.TorahEvent.SoukotD8] = new TranslationsDictionary()
         {
-          [Language.EN] = "Sukot end",
-          [Language.FR] = "Fin de Soukot"
+          [Language.EN] = "Sukot End",
+          [Language.FR] = "Soukot Fin"
         }
         // TODO manage as user custom remind list
         /*[Calendar.TorahEvent.HanoukaD1] = new TranslationsDictionary()
