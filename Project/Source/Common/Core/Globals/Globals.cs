@@ -16,6 +16,8 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Linq;
 
 namespace Ordisoftware.Core
 {
@@ -109,6 +111,39 @@ namespace Ordisoftware.Core
 
     static public readonly SystemHotKey BringToFrontApplicationHotKey
       = new SystemHotKey();
+
+    // https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
+    static private void PurgeIconsFR()
+    {
+      string path = Globals.ProjectSourceCodePath;
+      string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
+      bool exit = false;
+      foreach ( string file in files )
+      {
+        var xdoc = XDocument.Load(file);
+        var elements = xdoc.Root.Elements("data");
+        var items = elements.Where(item => ( (string)item.Attribute("name") ).Contains(".Image")).ToList();
+        if ( items.Count > 0 )
+        {
+          if ( !exit )
+          {
+            MessageBox.Show("Purge fr.resx images and exit.", "System");
+            exit = true;
+          }
+          foreach ( var item in items )
+            item.Remove();
+          xdoc.Save(file);
+        }
+      }
+      if ( exit ) Environment.Exit(0);
+    }
+
+    static Globals()
+    {
+      #if DEBUG
+      PurgeIconsFR();
+      #endif
+    }
 
   }
 

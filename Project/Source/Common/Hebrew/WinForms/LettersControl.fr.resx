@@ -118,14 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionLetterAddAtCaret.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAACASURBVDhPYxgFNABZWVnH09LS/icnJ/9PSkoCYxAbJAaS
-        gyrDDdLT0//fun3n/5OnL/4/fPQUjEFskBhIDqoMLzBOBtq6b/+B/5u2bgdjEBskBpKDKCEMjEHOXrtu
-        PRiD2CAxiBTxwBjkZBC2srKKgYqRDEC2gjAXmDcKaAEYGACOXU1+KQ04tAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="ActionLetterAddAtCaret.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 22</value>
   </data>
@@ -146,23 +138,6 @@
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 6</value>
-  </data>
-  <data name="ActionLetterViewDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAJzSURBVDhPlZLfS5NRGMdfKJgjCIICR9Af0EW/vIjoopso
-        qv+lK7vRIVliUEiIaLXN6cylW+ZW7H3d5kxrm2v+LOfe953th2Nr9mtqK8tV9u05p/lqUBd+4ct5zuF5
-        Ps9zDkdgsjrcHZ0OFyz9g5qtjkH0Dbhaj9+UjuxvCpww3PDVbPoQ+WCz72Sl2BX3h6ehZN/h9ZuiZpX2
-        o+NTuGpzY3e9FzqjhKp6kSxBT/HeBgnVTb6iYKHO6aUVRGMphGdVzdFYEpnCCiwPHuF/YhAOUNJ5LH9Z
-        R6m8geJaGaX1DdqXoWQKuGN3AdELQOQ8GsQcMH4OCJ3lAL1RhGB1uiGNRTD24hUmY2nI6beYkbMITs3D
-        F5yAiSa45s3hurSI5qE0GsUMjE9SfwB0JcH68DG8z6J4PhnDdDwDdfE9Xqo5hGdk+EOTMNmdSP8AMt+B
-        W6KC1DqgrvF6eg8PhC4CsE4h6sg6J7IfMLeQR2RWQSA8BbPdgcIGUCDI7SEZeQJlvm0DmHqdKYfHi+BE
-        DHOJPJK5ZcSTSwjSRHa3CNOAhDb/Atq8Ctr9KloJ0uKJbwFIh1s674fM/S6Yex1ot/WhvacPFvoHw5Fp
-        3B1WUKLkT+QOv4LVX8DHn7xeAwi7Ll2+KNRJ/JBNx0xXBU0Ly0iCx8wmgn2l9TNBmDTAvlrbKV2dyA9N
-        fpkSZZjJ1hEFtlGVr5txZ0DGPd88z9UAB2q7TlfVefghvRfYhGxl6n6qVKKtuDIAWI0G0BPtX+oZkSvR
-        3zETq+GA6iu2M+xb7lT8K1e0x9AorrIDRtXRaMxsRHZPvm6LWQ7LNTQOlSr1XEfJNTuzcOw3vNTgoglY
-        GUsAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="ActionLetterViewDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>374, 22</value>

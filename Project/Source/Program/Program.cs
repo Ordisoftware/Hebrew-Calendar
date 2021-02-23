@@ -20,9 +20,6 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO.Pipes;
 using Ordisoftware.Core;
-using System.IO;
-using System.Xml.Linq;
-using System.Linq;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
