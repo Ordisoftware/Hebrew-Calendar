@@ -45,6 +45,27 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Enable double-buffering.
+    /// </summary>
+    protected override CreateParams CreateParams
+    {
+      get
+      {
+        CreateParams cp = base.CreateParams;
+        if ( Settings.WindowsDoubleBufferingEnabled )
+          switch ( Settings.CurrentView )
+          {
+            case ViewMode.Text:
+            case ViewMode.Month:
+              cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
+              //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
+              break;
+          }
+        return cp;
+      }
+    }
+
+    /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
@@ -153,27 +174,6 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         System.Threading.Thread.Sleep(5000);
         DoTimerMidnight();
-      }
-    }
-
-    /// <summary>
-    /// Enable double-buffering.
-    /// </summary>
-    protected override CreateParams CreateParams
-    {
-      get
-      {
-        CreateParams cp = base.CreateParams;
-        if ( Settings.WindowsDoubleBufferingEnabled )
-          switch ( Settings.CurrentView )
-          {
-            case ViewMode.Text:
-            case ViewMode.Month:
-              cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
-              //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
-              break;
-          }
-        return cp;
       }
     }
 
