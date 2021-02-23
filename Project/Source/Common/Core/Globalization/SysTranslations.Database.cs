@@ -101,12 +101,22 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToResetData
       = new TranslationsDictionary
       {
-        [Language.EN] = "The data will be restored to their default values. " + Globals.NL2 +
+        [Language.EN] = "Data will be restored to their default values." + Globals.NL2 +
                         "All changes will be lost." + Globals.NL2 +
                         AskToContinue[Language.EN],
 
         [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut." + Globals.NL2 +
                         "Toutes les moidifications seront perdues." + Globals.NL2 +
+                        AskToContinue[Language.FR]
+      };
+
+    static public readonly TranslationsDictionary AskToClearCustomData
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Custom data will be erased. " + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = "Les données personnalisées vont être effacées." + Globals.NL2 +
                         AskToContinue[Language.FR]
       };
 
