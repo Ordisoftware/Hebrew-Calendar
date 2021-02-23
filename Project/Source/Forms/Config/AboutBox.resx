@@ -655,7 +655,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionCheckUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
     <value>ActionCheckUpdate</value>
@@ -743,7 +743,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionPrivacyNotice.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
     <value>ActionPrivacyNotice</value>

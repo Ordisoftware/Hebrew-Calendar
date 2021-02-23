@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -138,6 +138,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "The window has been copied to the clipboard.",
         [Language.FR] = "La fenêtre a été copié dans le presse-papier."
+      };
+
+    static public readonly TranslationsDictionary DataCopiedToClipboard
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Data have been copied to the clipboard.",
+        [Language.FR] = "Les données ont été copiées dans le presse-papier."
       };
 
     static public readonly TranslationsDictionary ViewSavedToFile
