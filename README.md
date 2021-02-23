@@ -123,7 +123,7 @@ When disabled, top menu painting may cause latency.
 
 #### What are the times of celebration?
 
-The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
+The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
 
 These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
@@ -159,7 +159,7 @@ It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs 
 
 The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat.
 
-And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavuot, Teru'ah, Kipurim, and Sukot.
+And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot.
 
 ## Keyboard shortcuts
 

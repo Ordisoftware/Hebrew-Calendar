@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
                         "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
-                        "Ctrl + F5 (ou Atl + P) : tableau des parashot" + Globals.NL +
+                        "Ctrl + F5 (ou Atl + P) : Tableau des parashot" + Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +

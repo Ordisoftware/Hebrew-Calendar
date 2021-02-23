@@ -272,18 +272,18 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [Calendar.TorahEvent.ChavouotDiet] = new TranslationsDictionary
         {
-          [Language.EN] = "Shavuot Diet",
-          [Language.FR] = "Shavouot Régime"
+          [Language.EN] = "Shavu'ot Diet",
+          [Language.FR] = "Shavou'ot Régime"
         },
         [Calendar.TorahEvent.Chavouot1] = new TranslationsDictionary
         {
-          [Language.EN] = "Shavuot Lamb",
-          [Language.FR] = "Shavouot Agneau"
+          [Language.EN] = "Shavu'ot Lamb",
+          [Language.FR] = "Shavou'ot Agneau"
         },
         [Calendar.TorahEvent.Chavouot2] = new TranslationsDictionary
         {
-          [Language.EN] = "Shavuot End",
-          [Language.FR] = "Shavouot Fin"
+          [Language.EN] = "Shavu'ot End",
+          [Language.FR] = "Shavou'ot Fin"
         },
         [Calendar.TorahEvent.YomTerouah] = new TranslationsDictionary
         {
