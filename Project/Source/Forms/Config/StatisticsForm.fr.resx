@@ -374,7 +374,7 @@
     <value>128, 13</value>
   </data>
   <data name="dBParashotMemorySizeLabel.Text" xml:space="preserve">
-    <value>Taille mémoirer Parashot :</value>
+    <value>Taille mémoire Parashot :</value>
   </data>
   <data name="ActionScreenshot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

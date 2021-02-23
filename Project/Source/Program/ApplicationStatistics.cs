@@ -115,21 +115,6 @@ namespace Ordisoftware.Hebrew.Calendar
     static private string _DBFileSize;
     static internal bool UpdateDBFileSizeRequired = true;
 
-    public string DBCommonFileSize
-    {
-      get
-      {
-        if ( UpdateDBCommonFileSizeRequired )
-        {
-          UpdateDBCommonFileSizeRequired = false;
-          _DBCommonFileSize = SystemManager.GetFileSize(Globals.CommonDatabaseFilePath).FormatBytesSize().ToString();
-        }
-        return MainForm.Instance.IsGenerating ? SysTranslations.Processing.GetLang() : _DBCommonFileSize;
-      }
-    }
-    static private string _DBCommonFileSize;
-    static internal bool UpdateDBCommonFileSizeRequired = true;
-
     public string DBMemorySize
     {
       get
@@ -145,6 +130,21 @@ namespace Ordisoftware.Hebrew.Calendar
     static private string _DBMemorySize;
     static internal bool UpdateDBMemorySizeRequired = true;
 
+    public string DBCommonFileSize
+    {
+      get
+      {
+        if ( UpdateDBCommonFileSizeRequired )
+        {
+          UpdateDBCommonFileSizeRequired = false;
+          _DBCommonFileSize = SystemManager.GetFileSize(Globals.CommonDatabaseFilePath).FormatBytesSize().ToString();
+        }
+        return _DBCommonFileSize;
+      }
+    }
+    static private string _DBCommonFileSize;
+    static internal bool UpdateDBCommonFileSizeRequired = true;
+
     public string DBParashotMemorySize
     {
       get
@@ -155,7 +155,7 @@ namespace Ordisoftware.Hebrew.Calendar
           _DDParashotMemorySize = ParashotTable.DataTable?.SizeOf().FormatBytesSize() 
                                ?? SysTranslations.DatabaseTableClosed.GetLang();
         }
-        return MainForm.Instance.IsGenerating ? SysTranslations.Processing.GetLang() : _DDParashotMemorySize;
+        return _DDParashotMemorySize;
       }
     }
     static private string _DDParashotMemorySize;

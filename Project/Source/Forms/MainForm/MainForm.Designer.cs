@@ -44,6 +44,7 @@
       this.PanelViewMonth = new System.Windows.Forms.Panel();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
+      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -127,9 +128,6 @@
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -160,7 +158,6 @@
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
-      this.EditEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -295,6 +292,16 @@
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
+      // 
+      // EditEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
+      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
+      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarGrid
       // 
@@ -778,10 +785,7 @@
             this.SeparatorMenuWeather,
             this.ActionOpenExportFolder,
             this.ActionGenerate,
-            this.ActionVacuumAtNextStartup,
-            this.toolStripSeparator10,
-            this.ActionViewLog,
-            this.ActionViewStats});
+            this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
@@ -900,23 +904,6 @@
       resources.ApplyResources(this.ActionVacuumAtNextStartup, "ActionVacuumAtNextStartup");
       this.ActionVacuumAtNextStartup.Name = "ActionVacuumAtNextStartup";
       this.ActionVacuumAtNextStartup.Click += new System.EventHandler(this.ActionVacuumAtNextStartup_Click);
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
-      // ActionViewLog
-      // 
-      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
-      this.ActionViewLog.Name = "ActionViewLog";
-      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
-      // 
-      // ActionViewStats
-      // 
-      resources.ApplyResources(this.ActionViewStats, "ActionViewStats");
-      this.ActionViewStats.Name = "ActionViewStats";
-      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionWebLinks
       // 
@@ -1172,16 +1159,6 @@
       this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.Sep6.Name = "Sep6";
       resources.ApplyResources(this.Sep6, "Sep6");
-      // 
-      // EditEnumsAsTranslations
-      // 
-      resources.ApplyResources(this.EditEnumsAsTranslations, "EditEnumsAsTranslations");
-      this.EditEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditEnumsAsTranslations.Name = "EditEnumsAsTranslations";
-      this.EditEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // CalendarMonth
       // 
@@ -1478,9 +1455,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
     private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewLog;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewStats;
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripDropDownButton ActionSettings;

@@ -187,13 +187,13 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditLogEnabled_CheckedChanged(object sender, EventArgs e)
     {
       DebugManager.TraceEnabled = EditLogEnabled.Checked;
-      MainForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      MainForm.Instance.SystemInformationMenu.ActionViewLog.Enabled = DebugManager.TraceEnabled;
       StatisticsForm.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     }
 
     private void EditUsageStatisticsEnabled_CheckedChanged(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
+      MainForm.Instance.SystemInformationMenu.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
       AboutBox.Instance.ActionViewStats.Enabled = EditUsageStatisticsEnabled.Checked;
       StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
       if ( !EditUsageStatisticsEnabled.Checked )

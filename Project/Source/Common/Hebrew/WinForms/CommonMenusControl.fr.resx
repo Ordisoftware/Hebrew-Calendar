@@ -190,4 +190,10 @@
   <data name="ActionHebrewWords.Text" xml:space="preserve">
     <value>Hebrew Words : traducteur littéral mot-à-mot de la Bible</value>
   </data>
+  <data name="ActionViewLog.Text" xml:space="preserve">
+    <value>Voir le log en cours</value>
+  </data>
+  <data name="ActionViewStats.Text" xml:space="preserve">
+    <value>Statistiques d'utilisation</value>
+  </data>
 </root>

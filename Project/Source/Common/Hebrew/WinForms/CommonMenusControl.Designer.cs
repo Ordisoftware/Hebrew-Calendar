@@ -64,6 +64,9 @@
       this.ActionHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -94,7 +97,10 @@
             this.MenuAssistance,
             this.Separator4,
             this.MenuAuthor,
-            this.MenuSoftware});
+            this.MenuSoftware,
+            this.toolStripSeparator10,
+            this.ActionViewLog,
+            this.ActionViewStats});
       resources.ApplyResources(this.MenuInformation, "MenuInformation");
       this.MenuInformation.Name = "MenuInformation";
       // 
@@ -103,7 +109,6 @@
       this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
-      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
       // Separator1
       // 
@@ -141,7 +146,6 @@
       this.ActionCheckUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionCheckUpdate, "ActionCheckUpdate");
       this.ActionCheckUpdate.Name = "ActionCheckUpdate";
-      this.ActionCheckUpdate.Click += new System.EventHandler(this.ActionCheckUpdate_Click);
       // 
       // Separator3
       // 
@@ -334,6 +338,23 @@
       this.ActionHebrewWords.Tag = "https://www.ordisoftware.com/projects/hebrew-words";
       this.ActionHebrewWords.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
+      // ActionViewLog
+      // 
+      resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
+      this.ActionViewLog.Name = "ActionViewLog";
+      this.ActionViewLog.Click += new System.EventHandler(this.ActionViewLog_Click);
+      // 
+      // ActionViewStats
+      // 
+      resources.ApplyResources(this.ActionViewStats, "ActionViewStats");
+      this.ActionViewStats.Name = "ActionViewStats";
+      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
+      // 
       // CommonMenusControl
       // 
       resources.ApplyResources(this, "$this");
@@ -359,18 +380,15 @@
     public System.Windows.Forms.ToolStripMenuItem ActionReadme;
     public System.Windows.Forms.ToolStripMenuItem ActionHelp;
     private System.Windows.Forms.ToolStripSeparator Separator2;
-    private System.Windows.Forms.ToolStripMenuItem MenuApplication;
     public System.Windows.Forms.ToolStripMenuItem ActionApplicationHome;
     public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
     private System.Windows.Forms.ToolStripSeparator SeparatorOnlineArchive;
     private System.Windows.Forms.ToolStripMenuItem ActionAlternativeTo;
-    private System.Windows.Forms.ToolStripMenuItem MenuAssistance;
     public System.Windows.Forms.ToolStripMenuItem ActionForumQA;
     private System.Windows.Forms.ToolStripSeparator SeparatorForumQA;
     public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssueBug;
     public System.Windows.Forms.ToolStripMenuItem ActionCreateGitHubIssueFeature;
     private System.Windows.Forms.ToolStripSeparator Separator4;
-    private System.Windows.Forms.ToolStripMenuItem MenuAuthor;
     public System.Windows.Forms.ToolStripMenuItem ActionAuthorHome;
     public System.Windows.Forms.ToolStripMenuItem ActionContact;
     private System.Windows.Forms.ToolStripSeparator SeparatorAuthor1;
@@ -379,11 +397,17 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorAuthor2;
     public System.Windows.Forms.ToolStripMenuItem ActionTipeee;
     public System.Windows.Forms.ToolStripMenuItem ActionLinkedIn;
-    private System.Windows.Forms.ToolStripMenuItem MenuSoftware;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewCalendar;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewLetters;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewWords;
     private System.Windows.Forms.ToolStripMenuItem ActionSoftpedia;
     private System.Windows.Forms.ToolStripSeparator Separator3;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    public System.Windows.Forms.ToolStripMenuItem MenuApplication;
+    public System.Windows.Forms.ToolStripMenuItem MenuAssistance;
+    public System.Windows.Forms.ToolStripMenuItem MenuAuthor;
+    public System.Windows.Forms.ToolStripMenuItem MenuSoftware;
+    public System.Windows.Forms.ToolStripMenuItem ActionViewLog;
+    public System.Windows.Forms.ToolStripMenuItem ActionViewStats;
   }
 }

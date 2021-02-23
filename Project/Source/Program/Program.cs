@@ -11,9 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -153,31 +152,21 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( form is ShowTextForm formShowText )
           formShowText.RelocalizeText();
       }
-      // Menu information
-      var control = new CommonMenusControl();
-      var menu = control.MenuInformation;
-      var list = new List<ToolStripItem>();
-      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
-      menu.DropDownItems.Clear();
-      MainForm.Instance.ActionInformation.DropDownItems.Clear();
-      MainForm.Instance.ActionInformation.DropDownItems.AddRange(list.ToArray());
-      control.AboutBoxHandler = MainForm.Instance.ActionAbout_Click;
-      control.WebCheckUpdateHandler = MainForm.Instance.ActionWebCheckUpdate_Click;
-      MainForm.Instance.InitializeSpecialMenus();
       // Various updates
       DebugManager.TraceForm.Text = tempLogTitle;
       DebugManager.TraceForm.AppendText(tempLogContent);
-      LoadingForm.Instance.Relocalize();
-      UndoRedoTextBox.Relocalize();
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-      MainForm.Instance.CalendarText.Text = str;
-      MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
-      MainForm.Instance.DoTimerReminder();
+      LoadingForm.Instance.Relocalize();
+      UndoRedoTextBox.Relocalize();
       LunarMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();
       ParashotTable.LoadDefaults();
+      MainForm.Instance.CreateSystemInformationMenu();
+      MainForm.Instance.CalendarText.Text = str;
+      MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
+      MainForm.Instance.DoTimerReminder();
     }
 
   }

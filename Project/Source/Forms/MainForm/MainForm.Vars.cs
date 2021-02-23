@@ -31,6 +31,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private readonly Properties.Settings Settings = Program.Settings;
 
+    internal CommonMenusControl SystemInformationMenu;
+
     public bool IsGenerating { get; private set; }
 
     private ToolTip LastToolTip = new ToolTip();

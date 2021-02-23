@@ -649,7 +649,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCheckUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 1</value>
+    <value>35, 1</value>
   </data>
   <data name="ActionCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -694,7 +694,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionViewStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 1</value>
+    <value>67, 1</value>
   </data>
   <data name="ActionViewStats.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>

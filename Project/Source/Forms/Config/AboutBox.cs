@@ -48,6 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ActiveControl = ActionClose;
+      ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;
     }
 
     /// <summary>
