@@ -34,6 +34,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
+      this.EditShowMonthNumbers = new System.Windows.Forms.CheckBox();
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditHideHours = new System.Windows.Forms.CheckBox();
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
@@ -95,6 +96,7 @@
       // 
       // PanelOptions
       // 
+      this.PanelOptions.Controls.Add(this.EditShowMonthNumbers);
       this.PanelOptions.Controls.Add(this.EditColumnUpperCase);
       this.PanelOptions.Controls.Add(this.EditHideHours);
       this.PanelOptions.Controls.Add(this.EditUseAbbreviatedNames);
@@ -108,6 +110,16 @@
       this.PanelOptions.Controls.Add(this.EditUseRealDays);
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
+      // 
+      // EditShowMonthNumbers
+      // 
+      resources.ApplyResources(this.EditShowMonthNumbers, "EditShowMonthNumbers");
+      this.EditShowMonthNumbers.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormShowMonthNumbers;
+      this.EditShowMonthNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditShowMonthNumbers.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormShowMonthNumbers", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditShowMonthNumbers.Name = "EditShowMonthNumbers";
+      this.EditShowMonthNumbers.UseVisualStyleBackColor = true;
+      this.EditShowMonthNumbers.CheckedChanged += new System.EventHandler(this.ReloadGrid);
       // 
       // EditColumnUpperCase
       // 
@@ -249,5 +261,6 @@
     private System.Windows.Forms.CheckBox EditUseRealDays;
     private System.Windows.Forms.CheckBox EditHideHours;
     private System.Windows.Forms.Button ActionExport;
+    private System.Windows.Forms.CheckBox EditShowMonthNumbers;
   }
 }

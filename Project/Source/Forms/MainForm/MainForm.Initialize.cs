@@ -230,6 +230,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SaveTextDialog.InitialDirectory = directory;
       SaveImageDialog.InitialDirectory = directory;
       SaveDataGridDialog.InitialDirectory = directory;
+      SaveDataBoardDialog.InitialDirectory = directory;
       FolderDialog.SelectedPath = directory;
       SaveDataGridDialog.Filter = Program.GridExportTargets.CreateFilters();
       SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();

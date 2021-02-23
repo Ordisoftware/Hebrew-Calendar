@@ -163,4 +163,10 @@
   <data name="ActionExport.Text" xml:space="preserve">
     <value>Exporter</value>
   </data>
+  <data name="EditEnglishTitles.Text" xml:space="preserve">
+    <value>Utiliser les noms de colonnes en anglais</value>
+  </data>
+  <data name="EditShowMonthNumbers.Text" xml:space="preserve">
+    <value>Afficher les numéros de mois</value>
+  </data>
 </root>

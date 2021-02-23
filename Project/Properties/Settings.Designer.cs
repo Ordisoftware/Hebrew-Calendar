@@ -1055,7 +1055,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.Hebrew.Letters.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
         public string HebrewLettersExe {
             get {
                 return ((string)(this["HebrewLettersExe"]));
@@ -2343,6 +2343,30 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ParashotFormFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CelebrationsBoardFormEnglishColumns {
+            get {
+                return ((bool)(this["CelebrationsBoardFormEnglishColumns"]));
+            }
+            set {
+                this["CelebrationsBoardFormEnglishColumns"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NewMoonsBoardFormShowMonthNumbers {
+            get {
+                return ((bool)(this["NewMoonsBoardFormShowMonthNumbers"]));
+            }
+            set {
+                this["NewMoonsBoardFormShowMonthNumbers"] = value;
             }
         }
     }

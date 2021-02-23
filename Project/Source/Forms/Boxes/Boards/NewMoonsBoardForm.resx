@@ -228,6 +228,36 @@
   <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="EditShowMonthNumbers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditShowMonthNumbers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditShowMonthNumbers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 100</value>
+  </data>
+  <data name="EditShowMonthNumbers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="EditShowMonthNumbers.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="EditShowMonthNumbers.Text" xml:space="preserve">
+    <value>Show month numbers</value>
+  </data>
+  <data name="&gt;&gt;EditShowMonthNumbers.Name" xml:space="preserve">
+    <value>EditShowMonthNumbers</value>
+  </data>
+  <data name="&gt;&gt;EditShowMonthNumbers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShowMonthNumbers.Parent" xml:space="preserve">
+    <value>PanelOptions</value>
+  </data>
+  <data name="&gt;&gt;EditShowMonthNumbers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EditColumnUpperCase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -256,7 +286,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditColumnUpperCase.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditHideHours.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -265,7 +295,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditHideHours.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 100</value>
+    <value>450, 60</value>
   </data>
   <data name="EditHideHours.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 17</value>
@@ -286,7 +316,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditHideHours.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="EditUseAbbreviatedNames.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +346,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseAbbreviatedNames.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditUseLongDateFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +376,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseLongDateFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 47</value>
@@ -367,7 +397,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="SelectYear1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -391,7 +421,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="SelectYear2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -415,7 +445,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;SelectYear2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelEnd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -445,7 +475,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelEnd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LabelStart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -475,7 +505,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelStart.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -505,7 +535,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditUseRealDays.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +565,7 @@
     <value>PanelOptions</value>
   </data>
   <data name="&gt;&gt;EditUseRealDays.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="PanelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
