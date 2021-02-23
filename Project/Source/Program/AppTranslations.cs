@@ -24,10 +24,10 @@ namespace Ordisoftware.Hebrew.Calendar
   static public partial class AppTranslations
   {
 
-    static public string ToStringExport<T>(this Enum value, NullSafeDictionary<T, TranslationsDictionary> translations) 
+    static public string ToStringExport<T>(this Enum value, NullSafeDictionary<T, TranslationsDictionary> translations, bool forceEnglish = false) 
       where T : Enum
     {
-      return Program.Settings.ExportDataEnumsAsTranslations ? translations.GetLang((T)value) : ( (T)value ).ToString();
+      return Program.Settings.ExportDataEnumsAsTranslations ? translations.GetLang((T)value, forceEnglish) : ( (T)value ).ToString();
     }
 
     static public readonly TranslationsDictionary ApplicationDescription

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Globalization;
 using System.Runtime.Serialization;
@@ -64,9 +64,10 @@ namespace Ordisoftware.Core
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing value>lang>translation.</param>
     /// <param name="value">The value to translate.</param>
-    static public string GetLang<T>(this NullSafeDictionary<T, TranslationsDictionary> values, T value)
+    static public string GetLang<T>(this NullSafeDictionary<T, TranslationsDictionary> values, T value, bool forceEnglish = false)
     {
-      return values?[value]?[Languages.Current] ?? values?[value]?[Languages.Default] ?? ERR;
+      var lang = forceEnglish ? Language.EN : Languages.Current;
+      return values?[value]?[lang] ?? values?[value]?[Languages.Default] ?? ERR;
     }
 
     /// <summary>
