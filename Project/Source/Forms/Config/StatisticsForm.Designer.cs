@@ -74,6 +74,8 @@
       System.Windows.Forms.Label cPUProcessLoadMaxLabel;
       System.Windows.Forms.Label cPUProcessLoadAvgLabel;
       System.Windows.Forms.Label LabelCompiled;
+      System.Windows.Forms.Label dBCommonFileSizeLabel;
+      System.Windows.Forms.Label dBParashotMemorySizeLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionScreenshot = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
@@ -113,6 +115,8 @@
       this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
+      this.dBCommonFileSizeLabel1 = new System.Windows.Forms.Label();
+      this.dBParashotMemorySizeLabel1 = new System.Windows.Forms.Label();
       this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
       this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxMemory = new System.Windows.Forms.GroupBox();
@@ -183,6 +187,8 @@
       cPUProcessLoadMaxLabel = new System.Windows.Forms.Label();
       cPUProcessLoadAvgLabel = new System.Windows.Forms.Label();
       LabelCompiled = new System.Windows.Forms.Label();
+      dBCommonFileSizeLabel = new System.Windows.Forms.Label();
+      dBParashotMemorySizeLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
@@ -418,13 +424,23 @@
       resources.ApplyResources(LabelCompiled, "LabelCompiled");
       LabelCompiled.Name = "LabelCompiled";
       // 
+      // dBCommonFileSizeLabel
+      // 
+      resources.ApplyResources(dBCommonFileSizeLabel, "dBCommonFileSizeLabel");
+      dBCommonFileSizeLabel.Name = "dBCommonFileSizeLabel";
+      // 
+      // dBParashotMemorySizeLabel
+      // 
+      resources.ApplyResources(dBParashotMemorySizeLabel, "dBParashotMemorySizeLabel");
+      dBParashotMemorySizeLabel.Name = "dBParashotMemorySizeLabel";
+      // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionScreenshot);
       this.PanelBottom.Controls.Add(this.ActionViewLog);
       this.PanelBottom.Controls.Add(this.EditAlwaysOnTop);
       this.PanelBottom.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionScreenshot
@@ -537,8 +553,8 @@
       // 
       // runningTimeLabel1
       // 
-      this.runningTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "RunningTime", true));
       resources.ApplyResources(this.runningTimeLabel1, "runningTimeLabel1");
+      this.runningTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "RunningTime", true));
       this.runningTimeLabel1.Name = "runningTimeLabel1";
       // 
       // startingTimeLabel1
@@ -633,6 +649,7 @@
       // 
       // GroupBoxTimings
       // 
+      resources.ApplyResources(this.GroupBoxTimings, "GroupBoxTimings");
       this.GroupBoxTimings.Controls.Add(generateTextReportTimeLabel);
       this.GroupBoxTimings.Controls.Add(this.generateTextReportTimeLabel1);
       this.GroupBoxTimings.Controls.Add(generatePopulateDaysTimeLabel);
@@ -649,30 +666,34 @@
       this.GroupBoxTimings.Controls.Add(fillMonthViewTimeLabel);
       this.GroupBoxTimings.Controls.Add(this.lastGenerateDateLabel1);
       this.GroupBoxTimings.Controls.Add(lastGenerateDateLabel);
-      resources.ApplyResources(this.GroupBoxTimings, "GroupBoxTimings");
       this.GroupBoxTimings.Name = "GroupBoxTimings";
       this.GroupBoxTimings.TabStop = false;
       // 
       // generateTextReportTimeLabel1
       // 
-      this.generateTextReportTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateTextReportTime", true));
       resources.ApplyResources(this.generateTextReportTimeLabel1, "generateTextReportTimeLabel1");
+      this.generateTextReportTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateTextReportTime", true));
       this.generateTextReportTimeLabel1.Name = "generateTextReportTimeLabel1";
       // 
       // generatePopulateDaysTimeLabel1
       // 
-      this.generatePopulateDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GeneratePopulateDaysTime", true));
       resources.ApplyResources(this.generatePopulateDaysTimeLabel1, "generatePopulateDaysTimeLabel1");
+      this.generatePopulateDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GeneratePopulateDaysTime", true));
       this.generatePopulateDaysTimeLabel1.Name = "generatePopulateDaysTimeLabel1";
       // 
       // generateAnalyseDaysTimeLabel1
       // 
-      this.generateAnalyseDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateAnalyseDaysTime", true));
       resources.ApplyResources(this.generateAnalyseDaysTimeLabel1, "generateAnalyseDaysTimeLabel1");
+      this.generateAnalyseDaysTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateAnalyseDaysTime", true));
       this.generateAnalyseDaysTimeLabel1.Name = "generateAnalyseDaysTimeLabel1";
       // 
       // GroupBoxDatabase
       // 
+      resources.ApplyResources(this.GroupBoxDatabase, "GroupBoxDatabase");
+      this.GroupBoxDatabase.Controls.Add(dBCommonFileSizeLabel);
+      this.GroupBoxDatabase.Controls.Add(this.dBCommonFileSizeLabel1);
+      this.GroupBoxDatabase.Controls.Add(this.dBParashotMemorySizeLabel1);
+      this.GroupBoxDatabase.Controls.Add(dBParashotMemorySizeLabel);
       this.GroupBoxDatabase.Controls.Add(dBADONETAccessLabel);
       this.GroupBoxDatabase.Controls.Add(dBEngineversionLabel);
       this.GroupBoxDatabase.Controls.Add(dBFileSizeLabel);
@@ -693,9 +714,20 @@
       this.GroupBoxDatabase.Controls.Add(dBEventsCountLabel);
       this.GroupBoxDatabase.Controls.Add(dBMemorySizeLabel);
       this.GroupBoxDatabase.Controls.Add(dBYearsIntervalLabel);
-      resources.ApplyResources(this.GroupBoxDatabase, "GroupBoxDatabase");
       this.GroupBoxDatabase.Name = "GroupBoxDatabase";
       this.GroupBoxDatabase.TabStop = false;
+      // 
+      // dBCommonFileSizeLabel1
+      // 
+      resources.ApplyResources(this.dBCommonFileSizeLabel1, "dBCommonFileSizeLabel1");
+      this.dBCommonFileSizeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBCommonFileSize", true));
+      this.dBCommonFileSizeLabel1.Name = "dBCommonFileSizeLabel1";
+      // 
+      // dBParashotMemorySizeLabel1
+      // 
+      resources.ApplyResources(this.dBParashotMemorySizeLabel1, "dBParashotMemorySizeLabel1");
+      this.dBParashotMemorySizeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBParashotMemorySize", true));
+      this.dBParashotMemorySizeLabel1.Name = "dBParashotMemorySizeLabel1";
       // 
       // dBADONETAccessLabel1
       // 
@@ -783,6 +815,7 @@
       // 
       // GroupBoxRunning
       // 
+      resources.ApplyResources(this.GroupBoxRunning, "GroupBoxRunning");
       this.GroupBoxRunning.Controls.Add(LabelCompiled);
       this.GroupBoxRunning.Controls.Add(this.LabelCompiled1);
       this.GroupBoxRunning.Controls.Add(LabelApplication);
@@ -791,14 +824,13 @@
       this.GroupBoxRunning.Controls.Add(this.processorTime1);
       this.GroupBoxRunning.Controls.Add(runningTimeLabel);
       this.GroupBoxRunning.Controls.Add(this.runningTimeLabel1);
-      resources.ApplyResources(this.GroupBoxRunning, "GroupBoxRunning");
       this.GroupBoxRunning.Name = "GroupBoxRunning";
       this.GroupBoxRunning.TabStop = false;
       // 
       // LabelCompiled1
       // 
-      this.LabelCompiled1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "CompiledDate", true));
       resources.ApplyResources(this.LabelCompiled1, "LabelCompiled1");
+      this.LabelCompiled1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "CompiledDate", true));
       this.LabelCompiled1.Name = "LabelCompiled1";
       // 
       // LabelApplication1
@@ -808,8 +840,8 @@
       // 
       // processorTime1
       // 
-      this.processorTime1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ProcessorTime", true));
       resources.ApplyResources(this.processorTime1, "processorTime1");
+      this.processorTime1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SystemStatisticsDataBindingSource, "ProcessorTime", true));
       this.processorTime1.Name = "processorTime1";
       // 
       // GroupBoxSystemLoad
@@ -846,13 +878,13 @@
       // 
       // PanelMain
       // 
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.GroupBoxTimings);
       this.PanelMain.Controls.Add(this.GroupBoxDatabase);
       this.PanelMain.Controls.Add(this.GroupBoxMemory);
       this.PanelMain.Controls.Add(this.GroupBoxSystem);
       this.PanelMain.Controls.Add(this.GroupBoxRunning);
       this.PanelMain.Controls.Add(this.GroupBoxSystemLoad);
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // GroupBoxFolders
@@ -923,14 +955,14 @@
       // 
       // PanelBottomOuter
       // 
-      this.PanelBottomOuter.Controls.Add(this.PanelBottom);
       resources.ApplyResources(this.PanelBottomOuter, "PanelBottomOuter");
+      this.PanelBottomOuter.Controls.Add(this.PanelBottom);
       this.PanelBottomOuter.Name = "PanelBottomOuter";
       // 
       // PanelFolders
       // 
-      this.PanelFolders.Controls.Add(this.GroupBoxFolders);
       resources.ApplyResources(this.PanelFolders, "PanelFolders");
+      this.PanelFolders.Controls.Add(this.GroupBoxFolders);
       this.PanelFolders.Name = "PanelFolders";
       // 
       // StatisticsForm
@@ -1040,5 +1072,7 @@
     private System.Windows.Forms.Label cPUProcessLoadMaxLabel1;
     private System.Windows.Forms.Label cPUProcessLoadAvgLabel1;
     private System.Windows.Forms.Label LabelCompiled1;
+    private System.Windows.Forms.Label dBCommonFileSizeLabel1;
+    private System.Windows.Forms.Label dBParashotMemorySizeLabel1;
   }
 }

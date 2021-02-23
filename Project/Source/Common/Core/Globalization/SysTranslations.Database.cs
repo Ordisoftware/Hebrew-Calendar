@@ -30,6 +30,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Erreur de création ou de mise à jour du DSN ODBC SQLite."
       };
 
+    static public readonly TranslationsDictionary DatabaseTableClosed
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Closed",
+        [Language.FR] = "Fermée"
+      };
+
     static public readonly TranslationsDictionary FatalGenerateError
       = new TranslationsDictionary
       {

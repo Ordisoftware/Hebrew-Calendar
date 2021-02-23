@@ -62,6 +62,12 @@ namespace Ordisoftware.Hebrew.Calendar
              $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
     }
 
+    private void UpdateStats()
+    {
+      ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      ApplicationStatistics.UpdateDDParashotMemorySizeRequired = true;
+    }
+
     private ParashotForm()
     {
       InitializeComponent();
@@ -72,6 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       BindingSource.DataSource = ParashotTable.DataTable;
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void InitializeMenu()
@@ -175,6 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Program.Settings.Save();
       ParashotTable.Release();
+      UpdateStats();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -248,6 +256,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionUndo.Enabled = false;
       }
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void ActionEmpty_Click(object sender, EventArgs e)
@@ -261,7 +270,7 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionSave.Enabled = true;
           ActionUndo.Enabled = true;
         }
-        //BindingSource.ResetBindings(false);
+        UpdateStats();
       }
     }
 
@@ -271,6 +280,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
@@ -280,6 +290,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void EditFontSize_ValueChanged(object sender, EventArgs e)
@@ -316,6 +327,7 @@ namespace Ordisoftware.Hebrew.Calendar
           datacolumn.DefaultValue = string.Empty;
         }
       }
+      UpdateStats();
     }
 
     private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
