@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -24,15 +24,15 @@ namespace Ordisoftware.Core
 
     static private IContainer _Container;
     static private ContextMenuStrip ContextMenuEdit;
-    static private ToolStripMenuItem ActionUndo;
-    static private ToolStripMenuItem ActionRedo;
-    static private ToolStripSeparator Separator1;
-    static private ToolStripMenuItem ActionCopy;
-    static private ToolStripMenuItem ActionCut;
-    static private ToolStripMenuItem ActionPaste;
-    static private ToolStripSeparator Separator2;
-    static private ToolStripMenuItem ActionSelectAll;
-    static private ToolStripMenuItem ActionDelete;
+    static public ToolStripMenuItem ActionUndo;
+    static public ToolStripMenuItem ActionRedo;
+    static public ToolStripSeparator Separator1;
+    static public ToolStripMenuItem ActionCopy;
+    static public ToolStripMenuItem ActionCut;
+    static public ToolStripMenuItem ActionPaste;
+    static public ToolStripSeparator Separator2;
+    static public ToolStripMenuItem ActionSelectAll;
+    static public ToolStripMenuItem ActionDelete;
 
     static void InitializeContextMenu()
     {

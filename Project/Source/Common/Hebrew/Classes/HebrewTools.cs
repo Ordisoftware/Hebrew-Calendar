@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
+      word = Localizer.RemoveDiacritics(word);
       bool isUnicode = HebrewAlphabet.IsUnicode(word);
       if ( isUnicode )
       {

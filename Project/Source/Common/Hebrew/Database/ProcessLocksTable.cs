@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew
     static private string Convert(string name = null)
     {
       Purge();
-      return string.IsNullOrEmpty(name) ? Globals.ApplicationCode : name;
+      return name.IsNullOrEmpty() ? Globals.ApplicationCode : name;
     }
 
     static public bool IsLockedByCurrentProcess(string name = null)
@@ -87,7 +87,12 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public int GetCount(string name)
+    static public bool IsReadOnly(string name = null)
+    {
+      return GetCount() > 1;
+    }
+
+    static public int GetCount(string name = null)
     {
       name = Convert(name);
       string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";

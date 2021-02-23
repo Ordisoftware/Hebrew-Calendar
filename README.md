@@ -251,6 +251,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Improve automatic web check update to not run when shabat and a special celebration day but the next day.
 - Some UI/UX improvements.
 - Some file and code refactoring.
+- Add Serilog-sinks-winforms NuGet package.
 - Add some online bible providers and update *chabad.org*.
 - Update web links.
 - Update help files.

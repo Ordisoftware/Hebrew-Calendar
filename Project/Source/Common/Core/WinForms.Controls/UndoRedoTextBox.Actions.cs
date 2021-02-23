@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-07 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -21,13 +21,18 @@ namespace Ordisoftware.Core
   public partial class UndoRedoTextBox
   {
 
-    static private UndoRedoTextBox GetTextBoxAndFocus(object sender)
+    static public UndoRedoTextBox GetTextBox(object sender)
     {
-      UndoRedoTextBox control = null;
+      return GetTextBoxAndFocus(sender, false);
+    }
+
+    static public UndoRedoTextBox GetTextBoxAndFocus(object sender, bool doFocus = true)
+    {
+        UndoRedoTextBox control = null;
       if ( sender is ContextMenuStrip menuContext )
       {
         control = (UndoRedoTextBox)menuContext.SourceControl;
-        if ( control != null && control.Enabled && !control.Focused )
+        if ( doFocus && control != null && control.Enabled && !control.Focused )
           control.Focus();
       }
       else
@@ -35,7 +40,7 @@ namespace Ordisoftware.Core
       {
         var parent = (ContextMenuStrip)menuItem.GetCurrentParent();
         control = (UndoRedoTextBox)parent.SourceControl;
-        if ( control != null && control.Enabled && !control.Focused )
+        if ( doFocus && control != null && control.Enabled && !control.Focused )
           control.Focus();
       }
       else
@@ -108,7 +113,20 @@ namespace Ordisoftware.Core
       if ( Clipboard.GetText().IsNullOrEmpty() ) return;
       try
       {
+        int pos = textbox.SelectionStart;
+        string strTemp = null;
+        if ( textbox.InsertingText != null )
+        {
+          strTemp = Clipboard.GetText();
+          string str = strTemp;
+          textbox.InsertingText(textbox, TextUpdating.Text, ref str);
+          Clipboard.SetText(str);
+        }
         textbox.Paste();
+        if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )
+          textbox.SelectionStart = pos;
+        if ( strTemp != null )
+          Clipboard.SetText(strTemp);
         /*textbox.SetTextMutex = true;
         textbox.SelectedText = Clipboard.GetText();
         if ( textbox.Multiline ) textbox.ScrollToCaret();*/

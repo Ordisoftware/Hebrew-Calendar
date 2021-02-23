@@ -45,7 +45,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     /// <param name="parameters">Parameters for the translated string.</param>
-    static public string GetLang(this TranslationsDictionary values, params object[] parameters)
+    static public string GetLang(this TranslationsDictionary values, params string[] parameters)
     {
       return string.Format(values?.GetLang(), parameters) ?? ERR + " " + string.Join(",", parameters);
     }

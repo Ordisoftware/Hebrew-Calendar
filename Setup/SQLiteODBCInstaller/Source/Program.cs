@@ -51,12 +51,12 @@ namespace Ordisoftware.SQLiteODBCInstaller
         culture = CultureInfo.CurrentCulture;
       Thread.CurrentThread.CurrentCulture = culture;
       Thread.CurrentThread.CurrentUICulture = culture;
-      string arguments = string.Join(" ", args.Skip(1));
+      string arguments = string.Join(" ", args.Skip(1).ToArray());
       DialogResult result = DialogResult.None;
       List<Process> processes = GetProcesses();
       while ( processes.Count() != 0 && result != DialogResult.Cancel )
       {
-        var applications = string.Join(NL, processes.Select(p => p.ProcessName));
+        var applications = string.Join(NL, processes.Select(p => p.ProcessName).ToArray());
         var form = new MessageBoxEx(AssemblyTitle,
                                     CloseApplicationText.GetLang(applications.Indent(5, 5)),
                                     buttons: MessageBoxButtons.RetryCancel,
