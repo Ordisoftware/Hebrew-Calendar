@@ -177,16 +177,8 @@ namespace Ordisoftware.Hebrew.Calendar
       LunarMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();
-      CoolPrintPreview.CoolPrintPreviewDialog.OfPageText = PrintPreviewDialogOfPageText.GetLang();
       ParashotTable.LoadDefaults();
     }
-
-    static private readonly TranslationsDictionary PrintPreviewDialogOfPageText
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "of",
-        [Language.FR] = "de",
-      };
 
   }
 
