@@ -46,8 +46,8 @@ namespace Ordisoftware.Hebrew
       int index = 0;
       foreach ( Parashah item in query )
       {
-        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index);
-        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index);
+        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index).Trim();
+        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index).Trim();
         index++;
       }
     }

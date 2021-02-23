@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
@@ -66,6 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      ChronoStart.Start();
       UpdateText();
       ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
@@ -78,6 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         });
+      ChronoStart.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
@@ -95,7 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
-      DebugManager.TraceEnabledChanged += value => ActionViewLog.Enabled = value;
+      DebugManager.TraceEnabledChanged += value => SystemInformationMenu.ActionViewLog.Enabled = value;
       Refresh();
       ClearLists();
       LoadData();
@@ -248,12 +251,30 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Create system information menu items.
+    /// </summary>
+    internal void CreateSystemInformationMenu()
+    {
+      SystemInformationMenu = new CommonMenusControl(ActionAbout_Click,
+                                                     ActionWebCheckUpdate_Click,
+                                                     ActionViewLog_Click,
+                                                     ActionViewStats_Click);
+      var menu = SystemInformationMenu.MenuInformation;
+      var list = new List<ToolStripItem>();
+      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
+      menu.DropDownItems.Clear();
+      ActionInformation.DropDownItems.Clear();
+      ActionInformation.DropDownItems.AddRange(list.ToArray());
+      InitializeSpecialMenus();
+    }
+
+    /// <summary>
     /// Initialize special menus (web links, tray icon and suspend).
     /// </summary>
     internal void InitializeSpecialMenus()
     {
-      ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      SystemInformationMenu.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+      SystemInformationMenu.ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
       ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
       ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;

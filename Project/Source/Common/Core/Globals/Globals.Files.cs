@@ -101,6 +101,7 @@ namespace Ordisoftware.Core
     /// Indicate the AlternativeTo url.
     /// </summary>
     static public string AlternativeToURL { get; set; }
+      = $"https://alternativeto.net/user/{AssemblyCompany.ToLower()}/";
 
     /// <summary>
     /// Indicate the file path of the application's icon.

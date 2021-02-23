@@ -158,37 +158,8 @@
   <data name="ActionCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="ActionPrefefinedInterval.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjNJREFUOE+Vks1P02Acxxtv7m9QD5p49CKaYDLUCwf15NVEPXjhYAgBEnEzo2xd
-        N5xgCLIJCc7Q0bFNXEyWEIljdsqBxUVjiCHxnQQ2J2wd3cbb+Po8T8t0ifjyTT797em+z2dtV+728KO8
-        6A3BeS/4V2iP9rlfQ0/+T2jf2KpHIGaaY55XaOhP4+RdnRPGpNDz9Hsa2je26nEYgmJuGZXVLNbzWTIz
-        0FYyKK1+QyWfIzMHNZdhPdo3turZFbgCCdwJJdFHcMsK1IIKu5yCEHoNB4EPzLEev5fAGZiBZ0IhJOEa
-        J4K1CjCxD4iYgPB+QOZYzzoo/15Q0YrYrGjYImyUNZRKZayVqygSj0ooaFusN/91CfNCHG9747poV8A/
-        fAZBmiFXkmAIDIVhlxTwYwrrdVpv4lP0M2aHUkjfmkRNsL1RJod1+qGOHcJ2tco6HV3dWFzOwt7rhmyJ
-        INVy/6eA98chjD2HU9IRCA6y7gm8xIfF75htO4D8QgTd4gAiT2Jos3TRWzheE/wpL1oPAslGIHQI76I9
-        aL9hg9l85pLxDPQ38brUgPagGR3B02Q2oXW8EemlJArBU8CKH9WPw4DXhNFrR/Vf5jgTEwiGYGDqLLzT
-        5+CbvkDmeQw+bcYXdQ4jlouISVbsvBHhvXwY77Ob9X+j6A0zwV7pvNIMx9UmLIhmthZ8j+sFtr4HCSqh
-        V1JPGKJvEp7RGDz+KbjJdI1EYev3J4yttRwh0Hv6V2jfCMf9AKQQlciR8BlNAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="ActionPrefefinedInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 17</value>
-  </data>
-  <data name="ActionDefaultInterval.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
-        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
-        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
-        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
-        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
-        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
-        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
-        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
-        AABJRU5ErkJggg==
-</value>
   </data>
   <data name="ActionDefaultInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 42</value>

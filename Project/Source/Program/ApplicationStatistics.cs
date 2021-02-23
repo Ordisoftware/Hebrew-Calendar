@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -129,6 +129,37 @@ namespace Ordisoftware.Hebrew.Calendar
     }
     static private string _DBMemorySize;
     static internal bool UpdateDBMemorySizeRequired = true;
+
+    public string DBCommonFileSize
+    {
+      get
+      {
+        if ( UpdateDBCommonFileSizeRequired )
+        {
+          UpdateDBCommonFileSizeRequired = false;
+          _DBCommonFileSize = SystemManager.GetFileSize(Globals.CommonDatabaseFilePath).FormatBytesSize().ToString();
+        }
+        return _DBCommonFileSize;
+      }
+    }
+    static private string _DBCommonFileSize;
+    static internal bool UpdateDBCommonFileSizeRequired = true;
+
+    public string DBParashotMemorySize
+    {
+      get
+      {
+        if ( UpdateDDParashotMemorySizeRequired )
+        {
+          UpdateDDParashotMemorySizeRequired = false;
+          _DDParashotMemorySize = ParashotTable.DataTable?.SizeOf().FormatBytesSize() 
+                               ?? SysTranslations.DatabaseTableClosed.GetLang();
+        }
+        return _DDParashotMemorySize;
+      }
+    }
+    static private string _DDParashotMemorySize;
+    static internal bool UpdateDDParashotMemorySizeRequired = true;
 
   }
 

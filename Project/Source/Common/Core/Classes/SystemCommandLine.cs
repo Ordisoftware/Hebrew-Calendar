@@ -20,13 +20,13 @@ namespace Ordisoftware.Core
 
   public class SystemCommandLine
   {
-    [Option('r', "reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
+    [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
     public bool ResetSettings { get; set; }
 
-    [Option('h', "hide", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
+    [Option("hide", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
     public bool HideGUI { get; set; }
 
-    [Option('l', "lang", Required = false, HelpText = "Change the interface language.")]
+    [Option("lang", Required = false, HelpText = "Change the interface language.")]
     public string Language { get; set; }
   }
 

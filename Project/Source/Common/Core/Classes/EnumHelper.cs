@@ -50,13 +50,12 @@ namespace Ordisoftware.Core
     }
 
     // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
-    static public T Next<T>(this T value, T[] skip = null) where T : Enum
+    static public T Next<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
                        .SkipWhile(e => !value.Equals(e))
                        .Skip(1)
                        .First();
-      if ( skip != null )
         foreach ( T item in skip )
           if ( item.Equals(result) )
             result = result.Next(skip);
@@ -64,14 +63,13 @@ namespace Ordisoftware.Core
     }
 
     // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
-    static public T Previous<T>(this T value, T[] skip = null) where T : Enum
+    static public T Previous<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
                        .Reverse()
                        .SkipWhile(e => !value.Equals(e))
                        .Skip(1)
                        .First();
-      if ( skip != null )
         foreach ( T item in skip )
           if ( item.Equals(result) )
             result = result.Previous(skip);

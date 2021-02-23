@@ -728,7 +728,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewStats_Click(object sender, EventArgs e)
+    internal void ActionViewStats_Click(object sender, EventArgs e)
     {
       StatisticsForm.Run();
     }
@@ -738,7 +738,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionViewLog_Click(object sender, EventArgs e)
+    internal void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Popup();
     }

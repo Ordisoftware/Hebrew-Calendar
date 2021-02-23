@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Words.
+/// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private DataRowView CurrentDataBoundItem
       => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
 
-    private string CurrentDataBoundItemReferenceBegin
+    private string CurrentDataBoundItemFullReferenceBegin
       => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." + 
          $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
 
@@ -62,6 +62,12 @@ namespace Ordisoftware.Hebrew.Calendar
              $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
     }
 
+    private void UpdateStats()
+    {
+      ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      ApplicationStatistics.UpdateDDParashotMemorySizeRequired = true;
+    }
+
     private ParashotForm()
     {
       InitializeComponent();
@@ -72,6 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       BindingSource.DataSource = ParashotTable.DataTable;
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void InitializeMenu()
@@ -85,7 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemReferenceBegin);
+        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
       });
     }
 
@@ -108,6 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
+      EditFontSize.Value = Program.Settings.ParashotFormFontSize;
       Location = Program.Settings.ParashotFormLocation;
       ClientSize = Program.Settings.ParashotFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
@@ -123,8 +131,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Timer_Tick(object sender, EventArgs e)
     {
-      Timer.Enabled = DataGridView.ReadOnly;
       DataGridView.ReadOnly = ParashotTable.IsReadOnly();
+      Timer.Enabled = DataGridView.ReadOnly;
       ActionErase.Enabled = !DataGridView.ReadOnly;
       ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
       ActionExport.Enabled = !DataGridView.ReadOnly;
@@ -173,8 +181,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ParashotFormLocation = Location;
       Program.Settings.ParashotFormClientSize = ClientSize;
       Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
+      Program.Settings.ParashotFormFontSize = EditFontSize.Value;
       Program.Settings.Save();
       ParashotTable.Release();
+      UpdateStats();
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
@@ -206,8 +216,8 @@ namespace Ordisoftware.Hebrew.Calendar
           string itemName = (string)row.Cells[ColumnName.Index].Value;
           string itemTranslation = (string)row.Cells[ColumnTranslation.Index].Value;
           string itemLettriq = (string)row.Cells[ColumnLettriq.Index].Value;
-          listTranslations.Add(itemName, itemTranslation);
-          listLettriqs.Add(itemName, itemLettriq);
+          listTranslations.Add(itemName, itemTranslation.Trim());
+          listLettriqs.Add(itemName, itemLettriq.Trim());
         }
         listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
         listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
@@ -248,6 +258,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionUndo.Enabled = false;
       }
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void ActionEmpty_Click(object sender, EventArgs e)
@@ -261,7 +272,7 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionSave.Enabled = true;
           ActionUndo.Enabled = true;
         }
-        //BindingSource.ResetBindings(false);
+        UpdateStats();
       }
     }
 
@@ -271,6 +282,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void ActionUndo_Click(object sender, EventArgs e)
@@ -280,6 +292,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
+      UpdateStats();
     }
 
     private void EditFontSize_ValueChanged(object sender, EventArgs e)
@@ -316,6 +329,7 @@ namespace Ordisoftware.Hebrew.Calendar
           datacolumn.DefaultValue = string.Empty;
         }
       }
+      UpdateStats();
     }
 
     private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -394,9 +408,16 @@ namespace Ordisoftware.Hebrew.Calendar
                                     Program.Settings.HebrewLettersExe);
     }
 
-    private void ActionOpenHebrewWords_Click(object sender, EventArgs e)
+    private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWords(CurrentDataBoundItemReferenceBegin, Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsReference(CurrentDataBoundItemFullReferenceBegin,
+                                           Program.Settings.HebrewWordsExe);
+    }
+
+    private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
+    {
+      HebrewTools.OpenFindHebrewWordsSearch((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
+                                            Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)

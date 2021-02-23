@@ -105,6 +105,16 @@ namespace Ordisoftware.Hebrew
       new char[] { 'j', '/' }
     };
 
+    static public bool IsHebrew(string str)
+    {
+      return str.All(c => c == ' ' || Codes.Contains(c.ToString()));
+    }
+
+    static public bool IsUnicode(string str)
+    {
+      return str.All(c => c == ' ' || ( c >= '\u0590' && c <= '\u05FF' ));
+    }
+
     /// <summary>
     /// Set final letter.
     /// </summary>

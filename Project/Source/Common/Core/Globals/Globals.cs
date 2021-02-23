@@ -11,11 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Linq;
 
 namespace Ordisoftware.Core
 {
@@ -109,6 +111,47 @@ namespace Ordisoftware.Core
 
     static public readonly SystemHotKey BringToFrontApplicationHotKey
       = new SystemHotKey();
+
+    // https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
+    static private void PurgeIconsFR()
+    {
+      try
+      {
+        string path = ProjectFolderPath;
+        string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
+        foreach ( string file in files )
+        {
+          var xdoc = XDocument.Load(file);
+          var elements = xdoc.Root.Elements("data");
+          var items = elements.Where(item => ( (string)item.Attribute("name") ).Contains(".Image")).ToList();
+          if ( items.Count > 0 )
+          {
+            if ( !IsExiting )
+            {
+              MessageBox.Show("Purge *fr.resx images and exit.", AssemblyTitle);
+              IsExiting = true;
+            }
+            foreach ( var item in items )
+              item.Remove();
+            xdoc.Save(file);
+          }
+        }
+      }
+      catch ( Exception ex )
+      {
+        MessageBox.Show(ex.Message, AssemblyTitle);
+        IsExiting = true;
+      }
+      if ( IsExiting )
+        Environment.Exit(0);
+    }
+
+    static Globals()
+    {
+      #if DEBUG
+      PurgeIconsFR();
+      #endif
+    }
 
   }
 

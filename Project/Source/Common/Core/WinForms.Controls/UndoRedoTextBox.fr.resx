@@ -118,35 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ActionUndo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFrSURBVDhP7ZBPSwJRFMVn3b4PENg+c51/Eh0JiRZBRKQt
-        rFVBbYIo0BlNiyALw2iVIIElmEQ6M2ZoZboIiigIywhaGIFDEBa4iNMds0UQ0QfwwI97H5x37ruPaeqn
-        zD5JY+CFiI4T3rScAK2LUCqh40UYPFLE6txradi/ZJpPweAWw3pO3OxdOoRfKkK4fkbmrkLIdbIlGfHL
-        J3DxK1gW0zB6pGDjOsMYKHk1+4D+tTzStzLCZ2XM7pcwErqAfSMPWzAH2/op7MTU1jlChUcMU0+Dd+oB
-        WlcSRbkGsfiC8VgJfaEbsMs56J2JqmZsxdvOOgZVFseQUjtH/T4a+D4QOIbZewB2IcXWAxJ3VQxG7mGL
-        PsAaKKBrOpKh7A6ilVB2/kY5q3Uz2xLrowCC0fMCTsofmEhVMJmWkSi+ooeL7ZLxL7Xp56JHJm+qxhh5
-        4ZV+Ht18kqDqFpX90DD+JRWhVhrlqZpfaOpfYphPfXXOVlc+qygAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="ActionUndo.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>
   <data name="ActionUndo.Text" xml:space="preserve">
     <value>Annuler</value>
-  </data>
-  <data name="ActionRedo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFkSURBVDhPYxgFqMCnfhOXY8vOFfZNO/7bNW6H4AYIbd+4
-        /atj0/YVbu07jaHKUYFzy85pHp17/jduuPx/w8Xn/w/ceft//20YfvN/+5WX//t33vzv1733v0PjjvmO
-        zTsWu7bu+g/WDGSsip1+9P+C44/+Fy499z8eyI4D4WlH/sfPPPY/YcH5/9Vb7vxffPrZ/z233v4PmXLs
-        /8QD9/87Al3K4N6xy92tbff/8MmHQALfjFL721XdUyJVPFKiQbRx2oQ2h/qtX9z7jvwPWHD9f866O/93
-        3Hz//+bbn0DvbQMa0L77PwjbV67cCXSMIRCLAjEXEgbxDWwrVu73nXz8f9zq+/8jVtz9v/X2F4gBrm27
-        fjrUrD4IVKQIxDiBXdWq9Ssuvf9fvu/9/9xdb/4ffvb3v0PTdnAYgGxVATHwAVCAOTfv+O8E1OTUtA3o
-        3e3/nZu2f4JKEwVA0YeODYB4hAMGBgAVU843hxLo1QAAAABJRU5ErkJggg==
-</value>
   </data>
   <data name="ActionRedo.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
@@ -157,61 +133,17 @@
   <data name="Separator.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 6</value>
   </data>
-  <data name="ActionCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAHxSURBVDhPlZLNS1RRGMbnv2grROGqFmV5NSJa9G9EglRU
-        GARabdpV0CbH7txsog8TUkTHcbxj3jtfamYN3XtGqcBVootxzNoM08bw6TznHK+GuOgHL+993/N7XmYx
-        sYNIOA5s2wa7WR3MmzsXxgdvn8dgz1m87W7D3Xv34brvkMm4qnPmnu/06JuoZqD7HER5HqmpHNJTPh4+
-        eoyFj2V8WPikOmfu+U6PvolqXt06g7FsDjvE7X7YT5NRcd6BHn0T1by82Y7RSU8Ja6trWK9W8aNWi4oz
-        94QefRPVvOhqw5g7rYRftSrqmzU0NjfQ+ClLds7cE3r0TVTz/IaFlKt/wSEnxJHXX3F04BuakkJ1ztwT
-        evRNVJO8bsnL+sCXoIztRh34Xcdy5bPqnLkn9OibqObZtdbowGypBBEGqMian5tVnTP3hB59E9U4V09H
-        B4IgwNbWH1VCiOibe0KPvolqEldORQeKxaKSRRjivfwFixWBRRFibmZGvdOjb6Iau3P3wF6Wl4T52v1O
-        ZX3QN1ENF+npghL20jz8HcdHVnBMVvPwitpNeMX9B55ctpAeSqgjqaynKiP/up6fQyGXV+X5ebh+CRND
-        DuibqObBRasU77TQ29GC3ksnVcVl9XX8W3H53ic9+iYacVjWif8o+pJY7C81a0AShQAVCwAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
   <data name="ActionCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>
   <data name="ActionCopy.Text" xml:space="preserve">
     <value>Copier</value>
   </data>
-  <data name="ActionCut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFjSURBVDhPY8AFtu3Y9QfKJA9cvHj5/+q1619BuYTB1m07
-        LkOZYHDt+s3/Bw4d+g/lEgaXr1z5f/3mrddQLsPFS1f+79q9l3gDJk+eOvf1q9f/r1y99hjEP3X67P+j
-        x08QbwAQSC9ZvvLt69ev/1+8eOny4cNH/h87dpwkA0BAf9as2Tvfv33zf8WWvf8vnDlFsgEgoLRw9vRt
-        sjWX/8d17yTLABBQzOhc/b9v6rz/vrMfkGdI7oTN/wsKCmp1K/dttWg989+q6dgz64ZD123q9uE30LTt
-        gppZ+4X/pk0nQQqFgVjRtGzbXsvafaAo1tZPnNRtW7kVHFNYgUXb+QcaMd2FNvUHkG1Stqza8dS2atd6
-        IFvMvnTDN4gwFmDVArZZwLYaIwB1LQtXbrAv3/DfOnvePqgYJrBpOAjWaF++Cd0AEFAEYmMgVgbzsAGQ
-        zSBbDCKaW6BCJAOQDSAsAubhBQwMAGmKo8BOHbsqAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="ActionCut.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
   </data>
   <data name="ActionCut.Text" xml:space="preserve">
     <value>Couper</value>
-  </data>
-  <data name="ActionPaste.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAJ3SURBVDhPhZLZT1NBFMb7v/iuJryZUBSjPrDIoq3CA09G
-        gmtcosRYaS22IkKwhZYawAUj9Pau7b0IjSJpghVRAe2jBqFCEZFayibL58yAJEXEL/nl3HuWb04mo9ss
-        040KmEwm0Lie2l6Pyw9Kj67uR+uVdJRX2KFpnVDVDhbpP83TOu1bH0lVy+VMJIZEzAy0w1bjQrjvHXrD
-        b0h8C9vdBiQH2pAY5NF8MX3rjZou6DE//hEf7hvQ8ICHu8ULd/NTNDa3wtX0BBF3Lhai/fCU7drawHM+
-        HfHPveh3GfHeU4RBzzEMuQvxwnsPvKLCKypoFxRwkh8+UYZPEAkCeEmC5PdLOs85Pb5FOvHKaUTYVYzX
-        7mL01ReC83fhf+JFEbrGs3pE+3zoqTMg5CgiHEeoNg9e5RlrGh4ZRfTrGGGcxZHRKIa/jLAa3UTnOqPH
-        p54WPK8pRHedkWBAd3UOvHIHa4pNTKCyshKyrEAUJfC8gLFYjNU4ZnBaj4hWh647BQhWHyUcQdCeBW59
-        g6mpH0gkZhjx+E9MT8cxOTnFahzPE4NTGejnLFDtedCqCqDdzodqPbRhQAetViv8ioJkchYCOZUaUTGD
-        emIQengJ8q3DUGz5UEiUzAc2DGbn5vBraYmxsLiIufl5zCSTrLZmUJaBoPMEhJvZhFwIlmz4rmfC518z
-        oINmsxmaqiIQCJC7kJkRFTNwEgOpygCODHKWHHDmLLRd2wc+0MmaVlZWWPyj1dVVLC8vs292ibaSPS8d
-        pXvhKM0gkHhSj9qSNEgdQda0nehjoo9xByFtM5LW9V2QZHYKXTUFkqOPSJDlBOn9p3YS/jJORbf7Nx7l
-        g/lNUVK1AAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="ActionPaste.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>

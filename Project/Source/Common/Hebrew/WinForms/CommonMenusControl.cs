@@ -25,11 +25,10 @@ namespace Ordisoftware.Hebrew
   public partial class CommonMenusControl : UserControl
   {
 
-    public EventHandler AboutBoxHandler;
-
-    public EventHandler WebCheckUpdateHandler;
-
-    public CommonMenusControl()
+    public CommonMenusControl(EventHandler aboutClick,
+                              EventHandler updateClick,
+                              EventHandler viewLogClick,
+                              EventHandler viewStatsClick)
     {
       InitializeComponent();
       MenuApplication.Text = Globals.AssemblyTitle;
@@ -49,25 +48,29 @@ namespace Ordisoftware.Hebrew
         if ( item.Text.Contains(Globals.AssemblyTitle) )
           MenuSoftware.DropDownItems.Remove(item);
       }
+      ActionAbout.Click += aboutClick;
+      ActionCheckUpdate.Click += updateClick;
+      ActionViewLog.Click += viewLogClick;
+      ActionViewStats.Click += viewStatsClick;
     }
 
     private void CommonMenusControl_Load(object sender, EventArgs e)
     {
     }
 
-    private void ActionAbout_Click(object sender, EventArgs e)
+    private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      AboutBoxHandler?.Invoke(this, EventArgs.Empty);
+      DebugManager.TraceForm.Popup();
+    }
+
+    private void ActionViewStats_Click(object sender, EventArgs e)
+    {
+
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
       SystemManager.RunShell(Globals.HelpFilePath);
-    }
-
-    private void ActionCheckUpdate_Click(object sender, EventArgs e)
-    {
-      WebCheckUpdateHandler?.Invoke(this, EventArgs.Empty);
     }
 
     private void ActionReleaseNotes_Click(object sender, EventArgs e)

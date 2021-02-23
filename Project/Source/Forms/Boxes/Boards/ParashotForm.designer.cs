@@ -72,7 +72,8 @@
       this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +100,6 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
@@ -112,13 +112,13 @@
       this.PanelBottom.Controls.Add(this.ActionErase);
       this.PanelBottom.Controls.Add(this.ActionSave);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // EditFontSize
       // 
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
-      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ParashotFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -131,13 +131,17 @@
             0});
       this.EditFontSize.Name = "EditFontSize";
       this.EditFontSize.ReadOnly = true;
-      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ParashotFormFontSize;
+      this.EditFontSize.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
       // ActionCheckLockers
       // 
-      resources.ApplyResources(this.ActionCheckLockers, "ActionCheckLockers");
       this.ActionCheckLockers.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionCheckLockers, "ActionCheckLockers");
       this.ActionCheckLockers.LinkColor = System.Drawing.Color.Navy;
       this.ActionCheckLockers.Name = "ActionCheckLockers";
       this.ActionCheckLockers.TabStop = true;
@@ -145,8 +149,8 @@
       // 
       // ActionViewLockers
       // 
-      resources.ApplyResources(this.ActionViewLockers, "ActionViewLockers");
       this.ActionViewLockers.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionViewLockers, "ActionViewLockers");
       this.ActionViewLockers.LinkColor = System.Drawing.Color.Navy;
       this.ActionViewLockers.Name = "ActionViewLockers";
       this.ActionViewLockers.TabStop = true;
@@ -174,17 +178,17 @@
       // 
       // ActionReset
       // 
-      resources.ApplyResources(this.ActionReset, "ActionReset");
       this.ActionReset.AllowDrop = true;
       this.ActionReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionReset, "ActionReset");
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
       // 
       // ActionUndo
       // 
-      resources.ApplyResources(this.ActionUndo, "ActionUndo");
       this.ActionUndo.AllowDrop = true;
+      resources.ApplyResources(this.ActionUndo, "ActionUndo");
       this.ActionUndo.FlatAppearance.BorderSize = 0;
       this.ActionUndo.Name = "ActionUndo";
       this.ActionUndo.UseVisualStyleBackColor = true;
@@ -192,26 +196,26 @@
       // 
       // ActionViewNotice
       // 
-      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.AllowDrop = true;
       this.ActionViewNotice.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionViewNotice, "ActionViewNotice");
       this.ActionViewNotice.Name = "ActionViewNotice";
       this.ActionViewNotice.UseVisualStyleBackColor = true;
       this.ActionViewNotice.Click += new System.EventHandler(this.ActionViewNotice_Click);
       // 
       // ActionErase
       // 
-      resources.ApplyResources(this.ActionErase, "ActionErase");
       this.ActionErase.AllowDrop = true;
       this.ActionErase.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionErase, "ActionErase");
       this.ActionErase.Name = "ActionErase";
       this.ActionErase.UseVisualStyleBackColor = true;
       this.ActionErase.Click += new System.EventHandler(this.ActionEmpty_Click);
       // 
       // ActionSave
       // 
-      resources.ApplyResources(this.ActionSave, "ActionSave");
       this.ActionSave.AllowDrop = true;
+      resources.ApplyResources(this.ActionSave, "ActionSave");
       this.ActionSave.FlatAppearance.BorderSize = 0;
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.UseVisualStyleBackColor = true;
@@ -226,13 +230,12 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.DataGridView);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // DataGridView
       // 
-      resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.AllowUserToAddRows = false;
       this.DataGridView.AllowUserToDeleteRows = false;
       this.DataGridView.AllowUserToResizeRows = false;
@@ -248,6 +251,7 @@
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
       dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
       this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnBook,
@@ -379,7 +383,6 @@
       // 
       // ContextMenu
       // 
-      resources.ApplyResources(this.ContextMenu, "ContextMenu");
       this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenVerseOnline,
             this.ActionSearchOnline,
@@ -388,7 +391,8 @@
             this.ActionOpenShorashon,
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
-            this.ActionOpenHebrewWords,
+            this.ActionOpenHebrewWordsVerse,
+            this.ActionOpenHebrewWordsSearch,
             this.MenuSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -397,6 +401,7 @@
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode});
       this.ContextMenu.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenu, "ContextMenu");
       // 
       // ActionOpenVerseOnline
       // 
@@ -410,8 +415,8 @@
       // 
       // MenuSeparator1
       // 
-      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       this.MenuSeparator1.Name = "MenuSeparator1";
+      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
       // 
       // ActionShowGrammarGuide
       // 
@@ -428,8 +433,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -437,16 +442,22 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
-      // ActionOpenHebrewWords
+      // ActionOpenHebrewWordsVerse
       // 
-      resources.ApplyResources(this.ActionOpenHebrewWords, "ActionOpenHebrewWords");
-      this.ActionOpenHebrewWords.Name = "ActionOpenHebrewWords";
-      this.ActionOpenHebrewWords.Click += new System.EventHandler(this.ActionOpenHebrewWords_Click);
+      resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
+      this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
+      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
+      // 
+      // ActionOpenHebrewWordsSearch
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
+      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
+      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
       // 
       // MenuSeparator2
       // 
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyName
       // 
@@ -468,8 +479,8 @@
       // 
       // MenuSeparator3
       // 
-      resources.ApplyResources(this.MenuSeparator3, "MenuSeparator3");
       this.MenuSeparator3.Name = "MenuSeparator3";
+      resources.ApplyResources(this.MenuSeparator3, "MenuSeparator3");
       // 
       // ActionCopyLineHebrew
       // 
@@ -592,7 +603,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn verseEndDataGridViewTextBoxColumn;
     private System.Windows.Forms.DataGridViewCheckBoxColumn isLinkedToNextDataGridViewCheckBoxColumn;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWords;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private System.Windows.Forms.Button ActionSave;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashon;
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
@@ -619,5 +630,6 @@
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
     private System.Windows.Forms.Button ActionViewNotice;
     private System.Windows.Forms.Button ActionErase;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsSearch;
   }
 }

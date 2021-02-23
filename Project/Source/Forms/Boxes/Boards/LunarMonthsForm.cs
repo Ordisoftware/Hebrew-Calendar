@@ -120,8 +120,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      HebrewTools.OpenHebrewLetters(HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]),
-                                    Program.Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index], Program.Settings.HebrewLettersExe);
     }
 
     private void ActionCopyMonthName(object sender, EventArgs e, Func<int, string> process)

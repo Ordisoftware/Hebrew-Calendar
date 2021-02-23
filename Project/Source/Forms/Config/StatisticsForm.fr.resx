@@ -352,36 +352,29 @@
   <data name="cPUProcessLoadMaxLabel.Text" xml:space="preserve">
     <value>CPU Process max :</value>
   </data>
-  <data name="ActionScreenshot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
-        0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
-        iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
-        RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
-        toD7nUsQda0gx7UKcc83vPZ9R9GQAEnfGnJ74zzvW8czXwTjwhHOyVzgkqXd+N+iXi4pLx4QDAYQDIUQ
-        CocJ85hfWICx2gRtmY4p7ek5nQkGAsxDvVxSYgOed0BXWQ39MUYTZmbnEBEEprSn93WGKvCdDuah3pMA
-        Q6WR6dERcHh4CL/fD95uh51A1T/lRyx2gNivGMrLdWw2EeBizb0HGRBLXqFIqUavr58YHXC7uuF1O5ny
-        PA+314vobhRabTnzsIDk/HhARmYWWtus0JRVwGJpxoeRYTw0TULUusr0/fAQamrrIEQiUKm0zPNXwKNM
-        EfJkcpRW6FFLBgMzU5B27aB+cJ/p3PQXGAxGLK+sokSpYh66PXdG5mZNZpYIbe02FlChr8Ty4jxybRuQ
-        vdlmuvQ1DA1ZfZq80OLieAB9OJei8AIHUWQ/zoY0sUFLaxssTc3Y3tzA3o8tphZLExosLfj4eRRqpRLY
-        30aKnHyJ6fn8xNmifrx4+gRWawcL6PUNot7cCHlBMeSKIqZ15gZ43/XD5xtAhVqJZEUf0gu92/R/uka4
-        JRW/7FGp1OwlqjRaQmkcbUIJSjU5V2tQIsvroR7CTRpwXFcJ9PBfoLOkOO43327AKRyZZp8AAAAASUVO
-        RK5CYII=
-</value>
+  <data name="cPUProcessLoadAvgLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
   </data>
-  <data name="ActionViewLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAbdJREFUOE+Vk0tSwkAQhnMFSz2BR/AgLlx4FjcuvIMFpbgRlUUIicVKqiDAUo9g
-        4RMwGQiEPAjv357J4Avw8VV19dSk+69/ejIK5yqf72qGgaxuQM3pFDkZmsiariNnGEwUL4M3/4Zt28hq
-        2qVs+UpWCtTWFTyyDp4bTTw9v+D+4Unspy8uRLYsi1zqGdn2gSoFHvd30HRDnKROcV0ooF5viP3zTAaM
-        tcSaOyHHWdkao9LZObVNBa9eBLvdgWUzNJqW2L+5vRUicyd8JrI1RqUNjj2YgnkhmOOAtVqwGYMfBOLb
-        Z/hgZWvMu4MNBU40Qafno+v24HRdOJ0uhYs2ZdZ2RJ2qad8E5AzqB7voTYDjVAqmaaJUKsH3AySTSRSL
-        RbgkyFkUkA7u6BY8EgiiCEEYCvsehR/Gued5om6JQDyDkCKYUiaBsN8XIgHl+Xo+jx8dDCmPJlOMRiMM
-        h0OMKfPg68FgIOpWzoAd7oEM4CiRRKVSwWwGJBIJVKtVlMsmxmM6H7EgMP8T79YUkVcx44rEwjX+5S18
-        htfL1pizdLocv0b5Esni0pAvk9fL1ne2KLb/EbyeUJQ3lC+ZmgDmmQcAAAAASUVORK5CYII=
-</value>
+  <data name="cPUProcessLoadAvgLabel.Text" xml:space="preserve">
+    <value>CPU Process moyen :</value>
+  </data>
+  <data name="LabelCompiled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelCompiled.Text" xml:space="preserve">
+    <value>Compilé :</value>
+  </data>
+  <data name="dBCommonFileSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="dBCommonFileSizeLabel.Text" xml:space="preserve">
+    <value>Taille fichier commun :</value>
+  </data>
+  <data name="dBParashotMemorySizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 13</value>
+  </data>
+  <data name="dBParashotMemorySizeLabel.Text" xml:space="preserve">
+    <value>Taille mémoire Parashot :</value>
   </data>
   <data name="EditAlwaysOnTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
@@ -410,58 +403,7 @@
   <data name="GroupBoxSystemLoad.Text" xml:space="preserve">
     <value>Charge</value>
   </data>
-  <data name="ActionOpenFolderUserLocalData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
-        Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
-        irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
-        kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
-        qcvQ0sOopUcM61ehpoYQeezAe3c7tSHobkXw7gGE7pv1JIqvI88EnMG3RQYPoRB0orjaj2JIGGDwCXx5
-        cdpopRynGEX1llmFSSzgEC3A9hxiAVGprelOO74un4GWHIQa62NbPahGLtIF1DJjKGefYsllXpTkaRtK
-        8dtIzDiA+kcOi9V4E1AzbGOYW9HKCHEvJK8AmzPIvR5FYNDUKYW9dmwuO5F7NQAUllDPsP/MNbqO2qcb
-        dPMXo6hnb/HEz/AhcBIcYQsfUgeSs6dQSk0AW0/w/fMYuQy58d+4gLwXpYQbL8fNC/otKI8cHIaVdzzH
-        2/ADO5Pk2VtlFhsL3fBfMp3TE8g+R0GcQp6y8aVZENJZ97Tm4a/Hts3QFj0Bl4nEq/ob++hfLEn6ARk1
-        G0tPEW/pAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOpenFolderUserData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
-        Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
-        irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
-        kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
-        qcvQ0sOopUcM61ehpoYQeezAe3c7tSHobkXw7gGE7pv1JIqvI88EnMG3RQYPoRB0orjaj2JIGGDwCXx5
-        cdpopRynGEX1llmFSSzgEC3A9hxiAVGprelOO74un4GWHIQa62NbPahGLtIF1DJjKGefYsllXpTkaRtK
-        8dtIzDiA+kcOi9V4E1AzbGOYW9HKCHEvJK8AmzPIvR5FYNDUKYW9dmwuO5F7NQAUllDPsP/MNbqO2qcb
-        dPMXo6hnb/HEz/AhcBIcYQsfUgeSs6dQSk0AW0/w/fMYuQy58d+4gLwXpYQbL8fNC/otKI8cHIaVdzzH
-        2/ADO5Pk2VtlFhsL3fBfMp3TE8g+R0GcQp6y8aVZENJZ97Tm4a/Hts3QFj0Bl4nEq/ob++hfLEn6ARk1
-        G0tPEW/pAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOpenFolderApplication.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
-        Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
-        irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
-        kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
-        qcvQ0sOopUcM61ehpoYQeezAe3c7tSHobkXw7gGE7pv1JIqvI88EnMG3RQYPoRB0orjaj2JIGGDwCXx5
-        cdpopRynGEX1llmFSSzgEC3A9hxiAVGprelOO74un4GWHIQa62NbPahGLtIF1DJjKGefYsllXpTkaRtK
-        8dtIzDiA+kcOi9V4E1AzbGOYW9HKCHEvJK8AmzPIvR5FYNDUKYW9dmwuO5F7NQAUllDPsP/MNbqO2qcb
-        dPMXo6hnb/HEz/AhcBIcYQsfUgeSs6dQSk0AW0/w/fMYuQy58d+4gLwXpYQbL8fNC/otKI8cHIaVdzzH
-        2/ADO5Pk2VtlFhsL3fBfMp3TE8g+R0GcQp6y8aVZENJZ97Tm4a/Hts3QFj0Bl4nEq/ob++hfLEn6ARk1
-        G0tPEW/pAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques</value>
-  </data>
-  <data name="cPUProcessLoadAvgLabel.Text" xml:space="preserve">
-    <value>CPU Process moyen :</value>
-  </data>
-  <data name="LabelCompiled.Text" xml:space="preserve">
-    <value>Compilé :</value>
   </data>
 </root>

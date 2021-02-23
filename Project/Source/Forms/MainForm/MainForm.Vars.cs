@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
-using EnumsNET;
 using MoreLinq;
 using Ordisoftware.Core;
 
@@ -30,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     private readonly Properties.Settings Settings = Program.Settings;
+
+    internal CommonMenusControl SystemInformationMenu;
 
     public bool IsGenerating { get; private set; }
 

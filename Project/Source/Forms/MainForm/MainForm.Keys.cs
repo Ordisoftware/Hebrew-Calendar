@@ -42,9 +42,6 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.F9:
             ActionPreferences.PerformClick();
             return true;
-          //case Keys.F12:
-            //ActionAbout_Click(null, null);
-            //return true;
           // Application function
           case Keys.F4:
             ActionViewCelebrations.PerformClick();
@@ -67,10 +64,10 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
           // Change view
           case Keys.Control | Keys.Shift | Keys.Tab:
-            SetView(Settings.CurrentView.Previous(new[] { ViewMode.None }));
+            SetView(Settings.CurrentView.Previous(ViewMode.None));
             return true;
           case Keys.Control | Keys.Tab:
-            SetView(Settings.CurrentView.Next(new[] { ViewMode.None }));
+            SetView(Settings.CurrentView.Next(ViewMode.None));
             return true;
           // Application menu
           case Keys.Alt | Keys.T:

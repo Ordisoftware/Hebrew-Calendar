@@ -74,6 +74,8 @@
       System.Windows.Forms.Label cPUProcessLoadMaxLabel;
       System.Windows.Forms.Label cPUProcessLoadAvgLabel;
       System.Windows.Forms.Label LabelCompiled;
+      System.Windows.Forms.Label dBCommonFileSizeLabel;
+      System.Windows.Forms.Label dBParashotMemorySizeLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionScreenshot = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
@@ -113,6 +115,8 @@
       this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxDatabase = new System.Windows.Forms.GroupBox();
+      this.dBCommonFileSizeLabel1 = new System.Windows.Forms.Label();
+      this.dBParashotMemorySizeLabel1 = new System.Windows.Forms.Label();
       this.dBADONETAccessLabel1 = new System.Windows.Forms.Label();
       this.dBEngineversionLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxMemory = new System.Windows.Forms.GroupBox();
@@ -183,6 +187,8 @@
       cPUProcessLoadMaxLabel = new System.Windows.Forms.Label();
       cPUProcessLoadAvgLabel = new System.Windows.Forms.Label();
       LabelCompiled = new System.Windows.Forms.Label();
+      dBCommonFileSizeLabel = new System.Windows.Forms.Label();
+      dBParashotMemorySizeLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
@@ -417,6 +423,16 @@
       // 
       resources.ApplyResources(LabelCompiled, "LabelCompiled");
       LabelCompiled.Name = "LabelCompiled";
+      // 
+      // dBCommonFileSizeLabel
+      // 
+      resources.ApplyResources(dBCommonFileSizeLabel, "dBCommonFileSizeLabel");
+      dBCommonFileSizeLabel.Name = "dBCommonFileSizeLabel";
+      // 
+      // dBParashotMemorySizeLabel
+      // 
+      resources.ApplyResources(dBParashotMemorySizeLabel, "dBParashotMemorySizeLabel");
+      dBParashotMemorySizeLabel.Name = "dBParashotMemorySizeLabel";
       // 
       // PanelBottom
       // 
@@ -673,6 +689,10 @@
       // 
       // GroupBoxDatabase
       // 
+      this.GroupBoxDatabase.Controls.Add(dBCommonFileSizeLabel);
+      this.GroupBoxDatabase.Controls.Add(this.dBCommonFileSizeLabel1);
+      this.GroupBoxDatabase.Controls.Add(this.dBParashotMemorySizeLabel1);
+      this.GroupBoxDatabase.Controls.Add(dBParashotMemorySizeLabel);
       this.GroupBoxDatabase.Controls.Add(dBADONETAccessLabel);
       this.GroupBoxDatabase.Controls.Add(dBEngineversionLabel);
       this.GroupBoxDatabase.Controls.Add(dBFileSizeLabel);
@@ -696,6 +716,18 @@
       resources.ApplyResources(this.GroupBoxDatabase, "GroupBoxDatabase");
       this.GroupBoxDatabase.Name = "GroupBoxDatabase";
       this.GroupBoxDatabase.TabStop = false;
+      // 
+      // dBCommonFileSizeLabel1
+      // 
+      resources.ApplyResources(this.dBCommonFileSizeLabel1, "dBCommonFileSizeLabel1");
+      this.dBCommonFileSizeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBCommonFileSize", true));
+      this.dBCommonFileSizeLabel1.Name = "dBCommonFileSizeLabel1";
+      // 
+      // dBParashotMemorySizeLabel1
+      // 
+      resources.ApplyResources(this.dBParashotMemorySizeLabel1, "dBParashotMemorySizeLabel1");
+      this.dBParashotMemorySizeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBParashotMemorySize", true));
+      this.dBParashotMemorySizeLabel1.Name = "dBParashotMemorySizeLabel1";
       // 
       // dBADONETAccessLabel1
       // 
@@ -1040,5 +1072,7 @@
     private System.Windows.Forms.Label cPUProcessLoadMaxLabel1;
     private System.Windows.Forms.Label cPUProcessLoadAvgLabel1;
     private System.Windows.Forms.Label LabelCompiled1;
+    private System.Windows.Forms.Label dBCommonFileSizeLabel1;
+    private System.Windows.Forms.Label dBParashotMemorySizeLabel1;
   }
 }
