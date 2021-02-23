@@ -214,8 +214,8 @@ namespace Ordisoftware.Hebrew.Calendar
           string itemName = (string)row.Cells[ColumnName.Index].Value;
           string itemTranslation = (string)row.Cells[ColumnTranslation.Index].Value;
           string itemLettriq = (string)row.Cells[ColumnLettriq.Index].Value;
-          listTranslations.Add(itemName, itemTranslation);
-          listLettriqs.Add(itemName, itemLettriq);
+          listTranslations.Add(itemName, itemTranslation.Trim());
+          listLettriqs.Add(itemName, itemLettriq.Trim());
         }
         listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
         listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
