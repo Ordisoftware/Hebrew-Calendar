@@ -117,7 +117,7 @@ namespace Ordisoftware.Core
     {
       try
       {
-        string path = ProjectSourceCodePath;
+        string path = ProjectFolderPath;
         string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
         foreach ( string file in files )
         {

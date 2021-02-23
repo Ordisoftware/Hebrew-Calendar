@@ -108,7 +108,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the application source code folder path.
     /// </summary>
-    static public string ProjectSourceCodePath
+    static public string ProjectSourceFolderPath
       => Path.Combine(ProjectFolderPath, "Source");
 
     /// <summary>
