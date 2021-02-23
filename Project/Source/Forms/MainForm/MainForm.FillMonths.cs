@@ -197,10 +197,10 @@ namespace Ordisoftware.Hebrew.Calendar
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
             else
               add(Settings.CalendarColorTorahEvent, row.WeekLongCelebrationSubDay);
-            // TODO Parashah
+            // TODO add Parashah lecture
             if ( Settings.CalendarShowParashah )
               if ( (int)date.DayOfWeek == Settings.ShabatDay )
-                add(Settings.CalendarColorParashah, ParashahReading.GetLang());
+                add(Settings.CalendarColorParashah, HebrewTranslations.ParashahReading.GetLang());
             if ( row.SeasonChange != 0 )
               add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
           }
@@ -217,14 +217,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.Save();
       }
     }
-
-    // TODO remove when weekly parashah generated
-    static public readonly TranslationsDictionary ParashahReading
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Parashah reading",
-        [Language.FR] = "Lecture de la Parashah"
-      };
 
   }
 

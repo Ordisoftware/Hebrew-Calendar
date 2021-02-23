@@ -19,12 +19,12 @@ namespace System.Globalization
 	[Serializable()]
 	public class VietnameseCalendar : Calendar
 	{
-		#region "constants"
-		// TODO: must use Environment.GetResourceString()
-		private static readonly Resources.ResourceManager resource =
+    #region "constants"
+    // TODOVIETCAL: must use Environment.GetResourceString()
+    private static readonly Resources.ResourceManager resource =
 			new Resources.ResourceManager("mscorlib", Reflection.Assembly.GetAssembly(typeof(int)));
 
-		// TODO: translate to English
+		// TODOVIETCAL: translate to English
 		/*
 		 * Moi nam duong lich se duoc ma hoa voi 3 bytes (24 bits).
 		 * - 7 bits cao: so ngay tinh tu 1/1 duong lich den 1/1 am lich.
@@ -588,7 +588,7 @@ namespace System.Globalization
 
 			/*
 			int year = time.Year, month = time.Month, day = time.Day;
-			// TODO: this.FromDateTime(time, out year, out month, out day);
+			// TODOVIETCAL: this.FromDateTime(time, out year, out month, out day);
 			int leapMonth = this.GetLeapMonth(year, 0);
 
 			// adds months
@@ -601,7 +601,7 @@ namespace System.Globalization
 				month += ((leapMonth > 0) ? 13 : 12) * (-inc);
 			}
 
-			// TODO: decrease the lunar day when overload
+			// TODOVIETCAL: decrease the lunar day when overload
 			int daysInMonth = GetMonthLength(year, month, leapMonth);
 			if (day > daysInMonth) day = daysInMonth;
 
@@ -630,11 +630,11 @@ namespace System.Globalization
 
 			/*
 			int year = time.Year + years, month = time.Month, day = time.Day;
-			// TODO: re-calculates the lunar month
+			// TODOVIETCAL: re-calculates the lunar month
 			int leapMonth = this.GetLeapMonth(year, 0);
 			if (month > 12 && leapMonth == 0) month = 12;
 
-			// TODO: decrease the lunar day when overload
+			// TODOVIETCAL: decrease the lunar day when overload
 			int daysInMonth = GetMonthLength(year, month, leapMonth);
 			if (day > daysInMonth) day = daysInMonth;
 
@@ -755,7 +755,7 @@ namespace System.Globalization
 				month--;		// lunar-month
 				day += (time - date2).Days;
 			}
-			// TODO: exception!
+			// TODOVIETCAL: exception!
 		}
 
 		/// <summary>

@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                           IsParashaLinkedToNext INTEGER,
                                           PRIMARY KEY('Date')
                                         )");
-        // TODO Uncomment when Shabatot Parashah will be generated
+        // TODO uncomment when Shabatot Parashah will be generated
         /*if ( !LockFileConnection.CheckColumn("LunisolarDays", "Parasha", "TEXT", string.Empty, false) )
           DbUpgradedForParashahSupport = true;
         if ( !LockFileConnection.CheckColumn("LunisolarDays", "IsParashaLinkedToNext", "INTEGER", string.Empty, false) )
