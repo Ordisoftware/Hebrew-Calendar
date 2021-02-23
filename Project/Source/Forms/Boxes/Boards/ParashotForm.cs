@@ -115,6 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
+      EditFontSize.Value = Program.Settings.ParashotFormFontSize;
       Location = Program.Settings.ParashotFormLocation;
       ClientSize = Program.Settings.ParashotFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
@@ -130,8 +131,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Timer_Tick(object sender, EventArgs e)
     {
-      Timer.Enabled = DataGridView.ReadOnly;
       DataGridView.ReadOnly = ParashotTable.IsReadOnly();
+      Timer.Enabled = DataGridView.ReadOnly;
       ActionErase.Enabled = !DataGridView.ReadOnly;
       ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
       ActionExport.Enabled = !DataGridView.ReadOnly;
@@ -180,6 +181,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ParashotFormLocation = Location;
       Program.Settings.ParashotFormClientSize = ClientSize;
       Program.Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
+      Program.Settings.ParashotFormFontSize = EditFontSize.Value;
       Program.Settings.Save();
       ParashotTable.Release();
       UpdateStats();
@@ -412,10 +414,10 @@ namespace Ordisoftware.Hebrew.Calendar
                                            Program.Settings.HebrewWordsExe);
     }
 
-    private void ActionOpenHebrewWordsFind_Click(object sender, EventArgs e)
+    private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenFindHebrewWordsFind((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
-                                          Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenFindHebrewWordsSearch((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
+                                            Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)

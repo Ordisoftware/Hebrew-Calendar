@@ -788,7 +788,7 @@
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Hebrew Words Verse</value>
   </data>
-  <data name="ActionOpenHebrewWordsFind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAbdJREFUOE+dkzlrQkEUhd/vcPkTVpoiYFDSuIBip5WVCCqCjViKFvY24la4/BTB
@@ -801,11 +801,11 @@
         Pvk7P6bT6Vd2cn6aH6QGg0GVO8/UteDQqDNY43A4nr8B6PK1N5dwt+EAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionOpenHebrewWordsFind.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
-  <data name="ActionOpenHebrewWordsFind.Text" xml:space="preserve">
-    <value>Hebrew Words Find</value>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Hebrew Words Search</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -914,7 +914,7 @@
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 292</value>
+    <value>251, 314</value>
   </data>
   <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
     <value>ContextMenu</value>
@@ -1132,10 +1132,10 @@
   <data name="&gt;&gt;ActionOpenHebrewWordsVerse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsFind.Name" xml:space="preserve">
-    <value>ActionOpenHebrewWordsFind</value>
+  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Name" xml:space="preserve">
+    <value>ActionOpenHebrewWordsSearch</value>
   </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsFind.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuSeparator2.Name" xml:space="preserve">

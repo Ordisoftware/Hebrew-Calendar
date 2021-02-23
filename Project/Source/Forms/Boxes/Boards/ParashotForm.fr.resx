@@ -254,4 +254,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Hebrew Words Recherche</value>
+  </data>
+  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Hebrew Words Verset</value>
+  </data>
 </root>

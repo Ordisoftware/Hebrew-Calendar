@@ -73,7 +73,7 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewWordsFind = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,7 +118,6 @@
       // EditFontSize
       // 
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
-      this.EditFontSize.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ParashotFormFontSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
@@ -132,7 +131,11 @@
             0});
       this.EditFontSize.Name = "EditFontSize";
       this.EditFontSize.ReadOnly = true;
-      this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ParashotFormFontSize;
+      this.EditFontSize.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
       // 
       // ActionCheckLockers
@@ -389,7 +392,7 @@
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
             this.ActionOpenHebrewWordsVerse,
-            this.ActionOpenHebrewWordsFind,
+            this.ActionOpenHebrewWordsSearch,
             this.MenuSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -445,11 +448,11 @@
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
       this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
-      // ActionOpenHebrewWordsFind
+      // ActionOpenHebrewWordsSearch
       // 
-      resources.ApplyResources(this.ActionOpenHebrewWordsFind, "ActionOpenHebrewWordsFind");
-      this.ActionOpenHebrewWordsFind.Name = "ActionOpenHebrewWordsFind";
-      this.ActionOpenHebrewWordsFind.Click += new System.EventHandler(this.ActionOpenHebrewWordsFind_Click);
+      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
+      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
+      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
       // 
       // MenuSeparator2
       // 
@@ -627,6 +630,6 @@
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
     private System.Windows.Forms.Button ActionViewNotice;
     private System.Windows.Forms.Button ActionErase;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsFind;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsSearch;
   }
 }
