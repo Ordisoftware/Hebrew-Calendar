@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -104,6 +104,12 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string ProjectFolderPath
       => Path.Combine(RootFolderPath, "Project");
+
+    /// <summary>
+    /// Indicate the application source code folder path.
+    /// </summary>
+    static public string ProjectSourceCodePath
+      => Path.Combine(RootFolderPath, "Source");
 
     /// <summary>
     /// Indicate the project sounds folder path.

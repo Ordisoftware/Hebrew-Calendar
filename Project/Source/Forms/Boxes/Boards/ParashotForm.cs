@@ -408,12 +408,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWordsReference(CurrentDataBoundItemFullReferenceBegin, Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsReference(CurrentDataBoundItemFullReferenceBegin,
+                                           Program.Settings.HebrewWordsExe);
     }
 
     private void ActionOpenHebrewWordsFind_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenFindHebrewWordsFind((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenFindHebrewWordsFind((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
+                                          Program.Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)

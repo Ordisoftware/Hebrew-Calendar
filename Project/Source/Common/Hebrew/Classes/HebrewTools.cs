@@ -29,9 +29,9 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
-    /// <param name="word">The hebrew font chars of the word.</param>
+    /// <param name="word">The unicode or hebrew font chars of the word.</param>
     /// <param name="path">Path of the application.</param>
-    static public void OpenHebrewLetters(string word, string path, bool isUnicode = false)
+    static public void OpenHebrewLetters(string word, string path)
     {
       if ( !File.Exists(path) )
       {
@@ -39,13 +39,25 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
         return;
       }
-      word = HebrewAlphabet.UnFinalAll(word);
-      // TODO test unicode
-      if ( ( isUnicode && ( word.StartsWith("א ") || word.StartsWith("ב ") ) )
-        || word.StartsWith("a ") || word.StartsWith("b ") )
-        word = word.Substring(2, word.Length - 2);
-      foreach ( string item in word.Split(' ') )
-        SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + word);
+      bool isUnicode = HebrewAlphabet.IsUnicode(word);
+      if ( isUnicode )
+      {
+        if ( word.EndsWith(" א") || word.StartsWith(" ב") )
+          word = word.Remove(word.Length - 2);
+      }
+      else
+      {
+        if ( word.StartsWith("a ") || word.StartsWith("b ") )
+          word = word.Remove(0, 2);
+        word = HebrewAlphabet.UnFinalAll(word);
+      }
+      var items = word.Split(' ');
+      if ( isUnicode ) items = items.Reverse().ToArray();
+      foreach ( string item in items )
+      {
+        SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + item);
+        System.Threading.Thread.Sleep(250);
+      }
     }
 
     /// <summary>
