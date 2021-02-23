@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using CommandLine;
 using Ordisoftware.Core;
@@ -21,8 +21,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public class ApplicationCommandLine : SystemCommandLine
   {
+
+    static public ApplicationCommandLine Instance
+      => SystemManager.CommandLineOptions as ApplicationCommandLine;
+
     [Option("generate", Required = false, HelpText = "Generate the data of the calendar.")]
     public bool Generate { get; set; }
+
   }
 
 }

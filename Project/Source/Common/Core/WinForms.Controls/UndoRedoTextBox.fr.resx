@@ -157,4 +157,7 @@
   <data name="ActionSelectAll.Text" xml:space="preserve">
     <value>Tout sélectionner</value>
   </data>
+  <data name="ActionDelete.Text" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
 </root>

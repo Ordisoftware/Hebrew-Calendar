@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-07 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -108,7 +108,10 @@ namespace Ordisoftware.Core
       if ( Clipboard.GetText().IsNullOrEmpty() ) return;
       try
       {
+        int pos = textbox.SelectionStart;
         textbox.Paste();
+        if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )
+          textbox.SelectionStart = pos;
         /*textbox.SetTextMutex = true;
         textbox.SelectedText = Clipboard.GetText();
         if ( textbox.Multiline ) textbox.ScrollToCaret();*/

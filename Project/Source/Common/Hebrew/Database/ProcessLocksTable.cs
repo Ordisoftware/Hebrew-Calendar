@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew
     static private string Convert(string name = null)
     {
       Purge();
-      return string.IsNullOrEmpty(name) ? Globals.ApplicationCode : name;
+      return name.IsNullOrEmpty() ? Globals.ApplicationCode : name;
     }
 
     static public bool IsLockedByCurrentProcess(string name = null)

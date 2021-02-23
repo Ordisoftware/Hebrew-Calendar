@@ -149,7 +149,7 @@ namespace Ordisoftware.Core
     static Globals()
     {
       #if DEBUG
-      PurgeIconsFR();
+      if ( !IsVisualStudioDesigner ) PurgeIconsFR();
       #endif
     }
 

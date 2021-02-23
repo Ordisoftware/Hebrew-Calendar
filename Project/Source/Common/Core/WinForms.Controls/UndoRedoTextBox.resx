@@ -310,4 +310,18 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ActionDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHISURBVDhPjZJfb9JQGIf5LH6A3fChvFAzY2LCBZkJheC9
+        jl3MaGSic1mWmLhME1FhCFom/7dF5wxmhVnWtSubsDLl8ZxSZsgw40l+Oaftec57evL6JiVxM7aYmI4h
+        R+/V5MRv3AejTV+33FE+e58ux5XNE1qPkugirYdvxCbHxK/fu3wTVz7qYCykMBLrbg4ep3A0Aw5slm/P
+        J72lF3l6bRbsLvazLNbzHNaSiJj3dJPG3Kp7iifTs+NPoYQV7M4vdl984GR5A1tmScURd9B88AozkYZj
+        h9jVu6895R+KotDtdHmXzpDMZNhb26CzUjyXrcUMvZdl4oPqVwaWRygU4tRxyH5UyX3Kk1XzpFWV3v4R
+        zfm1gbxaZuHWnJT9A8tDymdnvykUSxRlSmXynwscWhbVlaT4/0Hl/8p/+n1qm1tsbm27qVRrmKbJ2/cp
+        CpUq9YaGbCSxfFSORCI1BDvfds/z5esOh55cLFXZazQJRZWLsuTOzIzRMgyxqMEPTeN7vY5pDeUKmpDD
+        4fB42WMqEAhgt9v81PWRypPIQ/zBYJCuc8p6NifuYptGc39ieYhfCHo0GkVGbCibZGJ5yJSIlGRGm2Qs
+        Pt9f7E2nW7hqsi0AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

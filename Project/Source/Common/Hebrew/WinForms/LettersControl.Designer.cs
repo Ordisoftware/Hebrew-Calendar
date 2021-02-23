@@ -32,13 +32,13 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LettersControl));
       this.PanelLetters = new System.Windows.Forms.Panel();
       this.PanelSeparator = new System.Windows.Forms.Panel();
-      this.Input = new Ordisoftware.Core.UndoRedoTextBox();
       this.ContextMenuLetter = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionLetterAddAtCaret = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLetterAddAtEnd = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionLetterAddAtBegin = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionLetterAddAtStart = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+      this.TextBox = new Ordisoftware.Core.UndoRedoTextBox();
       this.ContextMenuLetter.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -53,21 +53,12 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
-      // Input
-      // 
-      this.Input.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Beginning;
-      resources.ApplyResources(this.Input, "Input");
-      this.Input.Name = "Input";
-      this.Input.InsertingText += new Ordisoftware.Core.InsertingTextEventHandler(this.Input_TextChanging);
-      this.Input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
-      this.Input.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
-      // 
       // ContextMenuLetter
       // 
       this.ContextMenuLetter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionLetterAddAtCaret,
             this.ActionLetterAddAtEnd,
-            this.ActionLetterAddAtBegin,
+            this.ActionLetterAddAtStart,
             this.MenuItemSeparator,
             this.ActionLetterViewDetails});
       this.ContextMenuLetter.Name = "ContextMenuLetter";
@@ -86,11 +77,11 @@
       this.ActionLetterAddAtEnd.Name = "ActionLetterAddAtEnd";
       this.ActionLetterAddAtEnd.Click += new System.EventHandler(this.ActionLetterAddAtEnd_Click);
       // 
-      // ActionLetterAddAtBegin
+      // ActionLetterAddAtStart
       // 
-      resources.ApplyResources(this.ActionLetterAddAtBegin, "ActionLetterAddAtBegin");
-      this.ActionLetterAddAtBegin.Name = "ActionLetterAddAtBegin";
-      this.ActionLetterAddAtBegin.Click += new System.EventHandler(this.ActionLetterAddAtBegin_Click);
+      resources.ApplyResources(this.ActionLetterAddAtStart, "ActionLetterAddAtStart");
+      this.ActionLetterAddAtStart.Name = "ActionLetterAddAtStart";
+      this.ActionLetterAddAtStart.Click += new System.EventHandler(this.ActionLetterAddAtBegin_Click);
       // 
       // MenuItemSeparator
       // 
@@ -103,6 +94,15 @@
       this.ActionLetterViewDetails.Name = "ActionLetterViewDetails";
       this.ActionLetterViewDetails.Click += new System.EventHandler(this.ActionLetterViewDetails_Click);
       // 
+      // TextBox
+      // 
+      this.TextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Beginning;
+      resources.ApplyResources(this.TextBox, "TextBox");
+      this.TextBox.Name = "TextBox";
+      this.TextBox.InsertingText += new Ordisoftware.Core.InsertingTextEventHandler(this.Input_TextChanging);
+      this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
+      this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
+      // 
       // LettersControl
       // 
       resources.ApplyResources(this, "$this");
@@ -110,7 +110,7 @@
       this.BackColor = System.Drawing.Color.Transparent;
       this.Controls.Add(this.PanelLetters);
       this.Controls.Add(this.PanelSeparator);
-      this.Controls.Add(this.Input);
+      this.Controls.Add(this.TextBox);
       this.Name = "LettersControl";
       this.Load += new System.EventHandler(this.LettersControl_Load);
       this.ContextMenuLetter.ResumeLayout(false);
@@ -122,9 +122,9 @@
     #endregion
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
-    private Ordisoftware.Core.UndoRedoTextBox Input;
+    internal Ordisoftware.Core.UndoRedoTextBox TextBox;
     private System.Windows.Forms.ContextMenuStrip ContextMenuLetter;
-    private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtBegin;
+    private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtStart;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtEnd;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtCaret;
     private System.Windows.Forms.ToolStripSeparator MenuItemSeparator;

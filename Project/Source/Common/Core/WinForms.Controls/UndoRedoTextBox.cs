@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-07 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -143,9 +143,9 @@ namespace Ordisoftware.Core
       if ( ContextMenuEdit == null )
         InitializeContextMenu();
       ContextMenuStrip = ContextMenuEdit;
-      //TextChanged += TextChangedEvent;
-      //KeyPress += KeyPressEvent;
-      //KeyDown += KeyDownEvent;
+      TextChanged += TextChangedEvent;
+      KeyPress += KeyPressEvent;
+      KeyDown += KeyDownEvent;
     }
 
     private void AddUndo()
@@ -177,8 +177,8 @@ namespace Ordisoftware.Core
     private void TextChangedEvent(object sender, EventArgs e)
     {
       if ( SetTextMutex ) return;
-      UndoStack.Push(Previous);
-      RedoStack.Clear();
+      //UndoStack.Push(Previous);
+      //RedoStack.Clear();
     }
 
     private void KeyPressEvent(object sender, KeyPressEventArgs e)
@@ -197,7 +197,7 @@ namespace Ordisoftware.Core
         var pos = SelectionStart;
         Text = Text.Remove(SelectionStart - 1, 1);
         SelectionStart = pos - 1;
-        if ( Multiline ) ScrollToCaret();
+        //if ( Multiline ) ScrollToCaret();
       }
       else
         return;
@@ -220,7 +220,7 @@ namespace Ordisoftware.Core
         && !check(e.Control, Keys.Insert, ActionCopy_Click)
         && !check(e.Shift, Keys.Delete, ActionCut_Click)
         && !check(e.Shift, Keys.Insert, ActionPaste_Click) )
-        Previous.Set(Text, SelectionStart/*, SelectionLength*/);
+        ;// Previous.Set(Text, SelectionStart /*, SelectionLength*/);
     }
 
   }

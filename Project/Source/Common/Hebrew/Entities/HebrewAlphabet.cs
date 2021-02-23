@@ -107,12 +107,12 @@ namespace Ordisoftware.Hebrew
 
     static public bool IsHebrew(string str)
     {
-      return str.All(c => c == ' ' || Codes.Contains(c.ToString()));
+      return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || Codes.Contains(c.ToString()));
     }
 
     static public bool IsUnicode(string str)
     {
-      return str.All(c => c == ' ' || ( c >= '\u0590' && c <= '\u05FF' ));
+      return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || ( c >= '\u0590' && c <= '\u05FF' ));
     }
 
     /// <summary>
@@ -122,9 +122,10 @@ namespace Ordisoftware.Hebrew
     /// <param name="enable">On else off</param>
     static public string SetFinal(string str, bool enable)
     {
-      var array = enable ? FinalEnable : FinalDisable;
+      if ( str.IsNullOrEmpty() ) return string.Empty;
       str = str.Trim();
       if ( str.IsNullOrEmpty() ) return string.Empty;
+      var array = enable ? FinalEnable : FinalDisable;
       char c = str[0];
       foreach ( var v in array )
         if ( c == v[0] )

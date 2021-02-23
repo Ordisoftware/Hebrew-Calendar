@@ -168,36 +168,6 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="Input.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="Input.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Hebrew, 24pt, style=Bold</value>
-  </data>
-  <data name="Input.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 187</value>
-  </data>
-  <data name="Input.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 53</value>
-  </data>
-  <data name="Input.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Input.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;Input.Name" xml:space="preserve">
-    <value>Input</value>
-  </data>
-  <data name="&gt;&gt;Input.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Input.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Input.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <metadata name="ContextMenuLetter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>25, 19</value>
   </metadata>
@@ -229,9 +199,9 @@
     <value>263, 22</value>
   </data>
   <data name="ActionLetterAddAtEnd.Text" xml:space="preserve">
-    <value>Add at the ending</value>
+    <value>Add at the end</value>
   </data>
-  <data name="ActionLetterAddAtBegin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionLetterAddAtStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
@@ -241,11 +211,11 @@
         ev4GJz21AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionLetterAddAtBegin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionLetterAddAtStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>263, 22</value>
   </data>
-  <data name="ActionLetterAddAtBegin.Text" xml:space="preserve">
-    <value>Add at the beginning</value>
+  <data name="ActionLetterAddAtStart.Text" xml:space="preserve">
+    <value>Add at the start</value>
   </data>
   <data name="MenuItemSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 6</value>
@@ -282,6 +252,36 @@
   <data name="&gt;&gt;ContextMenuLetter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Hebrew, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 187</value>
+  </data>
+  <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 53</value>
+  </data>
+  <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TextBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Name" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Letters, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -303,10 +303,10 @@
   <data name="&gt;&gt;ActionLetterAddAtEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionLetterAddAtBegin.Name" xml:space="preserve">
-    <value>ActionLetterAddAtBegin</value>
+  <data name="&gt;&gt;ActionLetterAddAtStart.Name" xml:space="preserve">
+    <value>ActionLetterAddAtStart</value>
   </data>
-  <data name="&gt;&gt;ActionLetterAddAtBegin.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionLetterAddAtStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;MenuItemSeparator.Name" xml:space="preserve">

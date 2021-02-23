@@ -35,8 +35,8 @@ namespace Ordisoftware.Hebrew
       MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
       ActionSoftpedia.Tag = Globals.SoftpediaURL;
       ActionAlternativeTo.Tag = Globals.AlternativeToURL;
-      bool b1 = !string.IsNullOrEmpty(Globals.SoftpediaURL);
-      bool b2 = !string.IsNullOrEmpty(Globals.AlternativeToURL); ;
+      bool b1 = !Globals.SoftpediaURL.IsNullOrEmpty();
+      bool b2 = !Globals.AlternativeToURL.IsNullOrEmpty();
       ActionSoftpedia.Visible = b1;
       ActionAlternativeTo.Visible = b2;
       SeparatorOnlineArchive.Visible = b1 || b2;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew
     public const float DefaultFontSizeValues = 6.25F;
     public const float DefaultFontSizeKeys = 8.25F;
     public const float DefaultFontSizeInput = 24F;
-    public const int DefaultInputMaxLength = 20;
+    public const int DefaultInputMaxLength = 12;
 
     /// <summary>
     /// Indicate view letter details event.
@@ -56,28 +56,10 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate Input Text property.
+    /// Indicate the TextBox control.
     /// </summary>
-    public string InputText
-    {
-      get => Input.Text;
-      set => Input.Text = value;
-    }
-
-    /// <summary>
-    /// Indicate Input Length property.
-    /// </summary>
-    public int InputTextLength
-      => Input.Text.Length;
-
-    /// <summary>
-    /// Indicate Input SelectionStart property.
-    /// </summary>
-    public int InputSelectionStart
-    {
-      get => Input.SelectionStart;
-      set => Input.SelectionStart = value;
-    }
+    public UndoRedoTextBox Input
+      => TextBox;
 
     /// <summary>
     /// Indicate Input MaxLength property.
@@ -85,8 +67,8 @@ namespace Ordisoftware.Hebrew
     [DefaultValue(DefaultInputMaxLength)]
     public int InputMaxLength
     {
-      get => Input.MaxLength;
-      set => Input.MaxLength = value;
+      get => TextBox.MaxLength;
+      set => TextBox.MaxLength = value;
     }
 
     /// <summary>
@@ -105,8 +87,8 @@ namespace Ordisoftware.Hebrew
     [DefaultValue(typeof(Color), "AliceBlue")]
     public Color InputBackColor
     {
-      get => Input.BackColor;
-      set => Input.BackColor = value;
+      get => TextBox.BackColor;
+      set => TextBox.BackColor = value;
     }
 
     /// <summary>
@@ -163,11 +145,11 @@ namespace Ordisoftware.Hebrew
     [DefaultValue(DefaultFontSizeInput)]
     public float FontSizeInput
     {
-      get => Input.Font.Size;
+      get => TextBox.Font.Size;
       set
       {
-        if ( Input.Font.Size == value ) return;
-        Input.Font = new Font(Input.Font.FontFamily, value, Input.Font.Style);
+        if ( TextBox.Font.Size == value ) return;
+        TextBox.Font = new Font(TextBox.Font.FontFamily, value, TextBox.Font.Style);
         Redraw();
       }
     }
@@ -215,10 +197,10 @@ namespace Ordisoftware.Hebrew
     public LettersControl()
     {
       InitializeComponent();
-      Input.MaxLength = DefaultInputMaxLength;
-      Input.Font = new Font(Input.Font.FontFamily, DefaultFontSizeInput, Input.Font.Style);
-      Input.CaretAfterPaste = CaretPositionAfterPaste.Beginning;
-      Input.BackColor = Color.FromKnownColor(DefaultInputBackColor);
+      TextBox.MaxLength = DefaultInputMaxLength;
+      TextBox.Font = new Font(TextBox.Font.FontFamily, DefaultFontSizeInput, TextBox.Font.Style);
+      TextBox.CaretAfterPaste = CaretPositionAfterPaste.Beginning;
+      TextBox.BackColor = Color.FromKnownColor(DefaultInputBackColor);
       PanelLetters.BackColor = Color.FromKnownColor(DefaultPanelLettersBackColor);
       _ShowKeys = true;
       _ShowValues = true;
@@ -240,8 +222,8 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     public new void Focus()
     {
-      Input.Focus();
-      Input.SelectionLength = 0;
+      TextBox.Focus();
+      TextBox.SelectionLength = 0;
     }
 
     /// <summary>
@@ -257,7 +239,8 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     private void Input_KeyPress(object sender, KeyPressEventArgs e)
     {
-      if ( HebrewAlphabet.Codes.Contains(e.KeyChar.ToString()) )
+      if ( HebrewAlphabet.Codes.Contains(e.KeyChar.ToString())
+       && ( TextBox.TextLength < TextBox.MaxLength || TextBox.SelectionLength > 0 ) )
         KeyProcessed = true;
       else
         e.KeyChar = '\x0';
@@ -271,8 +254,10 @@ namespace Ordisoftware.Hebrew
       if ( KeyProcessed )
       {
         KeyProcessed = false;
-        if ( Input.SelectionStart > 0 )
-          Input.SelectionStart--;
+        if ( TextBox.SelectionStart > 0 )
+        {
+          TextBox.SelectionStart--;
+        }
       }
     }
 
@@ -281,28 +266,37 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     private void ButtonLetter_Click(object sender, EventArgs e)
     {
-      Button button = null;
-      if ( sender is Button buttonSender )
-        button = buttonSender;
+      if ( TextBox.TextLength >= InputMaxLength && TextBox.SelectionLength == 0 )
+        DisplayManager.DoSound(MessageBoxIcon.Warning);
       else
-      if ( sender is ToolStripMenuItem menuItem )
-        button = (Button)( (ContextMenuStrip)menuItem.Owner ).SourceControl;
-      if ( button != null )
-        Input.SelectedText = button.Text;
-      Input.Focus();
+      {
+        Button button = null;
+        if ( sender is Button buttonSender )
+          button = buttonSender;
+        else
+        if ( sender is ToolStripMenuItem menuItem )
+          button = (Button)( (ContextMenuStrip)menuItem.Owner ).SourceControl;
+        if ( button != null )
+        {
+          TextBox.SelectedText = button.Text;
+          TextBox.SelectionStart--;
+          TextBox.Refresh();
+        }
+      }
+      TextBox.Focus();
     }
 
     private void ActionLetterAddAtBegin_Click(object sender, EventArgs e)
     {
-      Input.SelectionLength = 0;
-      Input.SelectionStart = Input.Text.Length;
+      TextBox.SelectionLength = 0;
+      TextBox.SelectionStart = TextBox.Text.Length;
       ButtonLetter_Click(sender, e);
     }
 
     private void ActionLetterAddAtEnd_Click(object sender, EventArgs e)
     {
-      Input.SelectionLength = 0;
-      Input.SelectionStart = 0;
+      TextBox.SelectionLength = 0;
+      TextBox.SelectionStart = 0;
       ButtonLetter_Click(sender, e);
     }
 
@@ -320,9 +314,9 @@ namespace Ordisoftware.Hebrew
 
     private void ContextMenuLetter_Opened(object sender, EventArgs e)
     {
-      ActionLetterAddAtBegin.Enabled = Input.Text.Length < Input.MaxLength;
-      ActionLetterAddAtEnd.Enabled = ActionLetterAddAtBegin.Enabled;
-      ActionLetterAddAtCaret.Enabled = ActionLetterAddAtBegin.Enabled;
+      ActionLetterAddAtStart.Enabled = TextBox.Text.Length < TextBox.MaxLength;
+      ActionLetterAddAtEnd.Enabled = ActionLetterAddAtStart.Enabled;
+      ActionLetterAddAtCaret.Enabled = ActionLetterAddAtStart.Enabled || TextBox.SelectionLength > 0;
       ActionLetterViewDetails.Enabled = ViewLetterDetails != null;
       MenuItemSeparator.Enabled = ActionLetterViewDetails.Enabled;
     }

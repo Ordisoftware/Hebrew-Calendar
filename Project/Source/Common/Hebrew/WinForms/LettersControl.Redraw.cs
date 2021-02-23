@@ -119,7 +119,7 @@ namespace Ordisoftware.Hebrew
           }
         }
         Height = posY + deltaBetweenLines + deltaY + deltaValues + deltaKeys + deltaValue5
-               + PanelSeparator.Height + Input.Height;
+               + PanelSeparator.Height + TextBox.Height;
         PanelLetters.Controls.AddRange(controls);
       }
       catch ( Exception ex )
