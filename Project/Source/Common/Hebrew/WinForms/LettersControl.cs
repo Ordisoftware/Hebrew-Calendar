@@ -231,7 +231,11 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     private void Input_TextChanging(object sender, TextUpdating mode, ref string text)
     {
-      text = HebrewAlphabet.OnlyHebrewFont(text).Replace(" ", string.Empty);
+      text = text.RemoveDiacritics().Replace(" ", string.Empty);
+      if ( HebrewAlphabet.IsUnicode(text) )
+        text = HebrewAlphabet.ConvertToHebrewFont(text);
+      text = HebrewAlphabet.UnFinalAll(text);
+      text = HebrewAlphabet.OnlyHebrewFont(text);
     }
 
     /// <summary>

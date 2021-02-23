@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -105,11 +105,17 @@ namespace Ordisoftware.Hebrew
       new char[] { 'j', '/' }
     };
 
+    /// <summary>
+    /// Indicate if a string has only hebrew font chars in addition to space.
+    /// </summary>
     static public bool IsHebrew(string str)
     {
       return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || Codes.Contains(c.ToString()));
     }
 
+    /// <summary>
+    /// Indicate if a string has only hebrew unicode chars in addition to space.
+    /// </summary>
     static public bool IsUnicode(string str)
     {
       return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || ( c >= '\u0590' && c <= '\u05FF' ));

@@ -114,9 +114,19 @@ namespace Ordisoftware.Core
       try
       {
         int pos = textbox.SelectionStart;
+        string strTemp = null;
+        if ( textbox.InsertingText != null )
+        {
+          strTemp = Clipboard.GetText();
+          string str = strTemp;
+          textbox.InsertingText(textbox, TextUpdating.Text, ref str);
+          Clipboard.SetText(str);
+        }
         textbox.Paste();
         if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )
           textbox.SelectionStart = pos;
+        if ( strTemp != null )
+          Clipboard.SetText(strTemp);
         /*textbox.SetTextMutex = true;
         textbox.SelectedText = Clipboard.GetText();
         if ( textbox.Multiline ) textbox.ScrollToCaret();*/

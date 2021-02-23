@@ -82,7 +82,7 @@ namespace Ordisoftware.Core
       remove { ContextMenuEdit.Closed -= value; }
     }
 
-    /*public override string Text
+    public override string Text
     {
       get => base.Text;
       set
@@ -91,7 +91,8 @@ namespace Ordisoftware.Core
         if ( value == null ) value = string.Empty;
         if ( value == Text ) return;
         if ( value.Length > MaxLength ) return;
-        try
+        base.Text = value;
+        /*try
         {
           bool first = Text.IsNullOrEmpty() && UndoStack.Count == 0;
           if ( !SetTextMutex )
@@ -106,11 +107,11 @@ namespace Ordisoftware.Core
         finally
         {
           SetTextMutex = false;
-        }
+        }*/
       }
-    }*/
+    }
 
-    /*public override string SelectedText
+    public override string SelectedText
     {
       get => base.SelectedText;
       set
@@ -119,7 +120,8 @@ namespace Ordisoftware.Core
         if ( value == null ) value = string.Empty;
         if ( value == base.SelectedText ) return;
         if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
-        try
+        base.SelectedText = value;
+        /*try
         {
           if ( !SetTextMutex )
           {
@@ -133,9 +135,9 @@ namespace Ordisoftware.Core
         finally
         {
           SetTextMutex = false;
-        }
+        }*/
       }
-    }*/
+    }
 
     public UndoRedoTextBox()
     {
