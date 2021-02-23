@@ -87,7 +87,12 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    static public int GetCount(string name)
+    static public bool IsReadOnly(string name = null)
+    {
+      return GetCount() > 1;
+    }
+
+    static public int GetCount(string name = null)
     {
       name = Convert(name);
       string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
