@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
 
     static public UndoRedoTextBox GetTextBoxAndFocus(object sender, bool doFocus = true)
     {
-        UndoRedoTextBox control = null;
+      UndoRedoTextBox control = null;
       if ( sender is ContextMenuStrip menuContext )
       {
         control = (UndoRedoTextBox)menuContext.SourceControl;
