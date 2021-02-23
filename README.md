@@ -246,6 +246,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add export to TXT support for all boards.
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
+- Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve month view to show long-week celebration inner days.
 - Improve navigation form to show long-week celebration inner days.
 - Improve automatic web check update to not run when shabat and a special celebration day but the next day.
