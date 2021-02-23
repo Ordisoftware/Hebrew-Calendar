@@ -282,7 +282,7 @@ namespace Ordisoftware.Hebrew
           button = (Button)( (ContextMenuStrip)menuItem.Owner ).SourceControl;
         if ( button != null )
         {
-          TextBox.SelectedText = button.Text;
+          TextBox.Paste(button.Text);
           TextBox.SelectionStart--;
           TextBox.Refresh();
         }
