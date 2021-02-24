@@ -67,6 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      ProcessLocksTable.Lock();
       ChronoStart.Start();
       UpdateText();
       ReminderBoxDesktopLocation();

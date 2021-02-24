@@ -148,6 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Settings.Store();
+        ProcessLocksTable.Unlock();
       }
       finally
       {

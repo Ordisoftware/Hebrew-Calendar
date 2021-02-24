@@ -27,6 +27,8 @@ namespace Ordisoftware.Hebrew
 
     static public readonly string TableName = nameof(ProcessLocksTable).Replace("Table", string.Empty);
 
+    static private OdbcConnection LockFileConnection;
+
     static ProcessLocksTable()
     {
       CreateSchemaIfNotExists();
@@ -37,28 +39,24 @@ namespace Ordisoftware.Hebrew
       SystemManager.TryCatchManage(() =>
       {
         SQLiteOdbcHelper.CreateOrUpdateDSN(Globals.CommonDatabaseOdbcDSN, Globals.CommonDatabaseFilePath, 0);
-        using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-        {
-          connection.Open();
-          connection.CheckTable(TableName, $@"CREATE TABLE {TableName} ( ProcessID INTEGER, Name TEXT)");
-        }
+        LockFileConnection = new OdbcConnection(Globals.CommonConnectionString);
+        LockFileConnection.Open();
+        LockFileConnection.CheckTable(TableName, $@"CREATE TABLE {TableName} ( ProcessID INTEGER, Name TEXT)");
       });
     }
 
     static private void Purge()
     {
       string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var commandSelect = new OdbcCommand(sql, connection) )
+      using ( var commandSelect = new OdbcCommand(sql, LockFileConnection) )
       {
-        connection.Open();
         var reader = commandSelect.ExecuteReader();
         while ( reader.Read() )
         {
           int id = (int)reader["ProcessID"];
           if ( Process.GetProcesses().Any(p => p.Id == id) ) continue;
           string sqlDelete = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
-          using ( var commandDelete = new OdbcCommand(sqlDelete, connection) )
+          using ( var commandDelete = new OdbcCommand(sqlDelete, LockFileConnection) )
           {
             commandDelete.Parameters.Add("@ID", OdbcType.Int).Value = id;
             commandDelete.ExecuteNonQuery();
@@ -77,10 +75,8 @@ namespace Ordisoftware.Hebrew
     {
       name = Convert(name);
       string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        connection.Open();
         command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         return (int)command.ExecuteScalar() > 0;
@@ -96,10 +92,8 @@ namespace Ordisoftware.Hebrew
     {
       name = Convert(name);
       string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        connection.Open();
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         return (int)command.ExecuteScalar();
       }
@@ -109,10 +103,8 @@ namespace Ordisoftware.Hebrew
     {
       name = Convert(name);
       string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        connection.Open();
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         var reader = command.ExecuteReader();
         var dictionary = new Dictionary<string, int>();
@@ -148,10 +140,8 @@ namespace Ordisoftware.Hebrew
     static private void UpdateLock(string name, string sql)
     {
       name = Convert(name);
-      using ( var connection = new OdbcConnection(Globals.CommonConnectionString) )
-      using ( var command = new OdbcCommand(sql, connection) )
+      using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        connection.Open();
         command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         command.ExecuteNonQuery();
