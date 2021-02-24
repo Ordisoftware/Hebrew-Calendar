@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public ParashotForm Instance { get; private set; }
 
-    static public void Run(string referenceBegin = null)
+    static public void Run(Parashah parashah = null)
     {
       if ( Instance == null )
         Instance = new ParashotForm();
@@ -36,12 +36,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Instance.Visible )
       {
         Instance.Popup();
-        Instance.Select(referenceBegin);
+        Instance.Select(parashah);
         return;
       }
       Instance.Show();
       Instance.BringToFront();
-      Instance.Select(referenceBegin);
+      Instance.Select(parashah);
     }
 
     private DataRowView CurrentDataBoundItem
@@ -96,16 +96,15 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    private void Select(string referenceBegin)
+    private void Select(Parashah parashah)
     {
-      if ( string.IsNullOrEmpty(referenceBegin) ) return;
-      referenceBegin = referenceBegin.Split(',')[0];
+      if ( parashah == null ) return;
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var datarowview = (DataRowView)row.DataBoundItem;
         string reference = $"{(int)datarowview[nameof(Parashah.Book)]}." +
                            $"{(string)datarowview[nameof(Parashah.VerseBegin)]}";
-        if ( reference == referenceBegin )
+        if ( reference == parashah.ReferenceBegin )
         {
           DataGridView.CurrentCell = row.Cells[0];
           break;

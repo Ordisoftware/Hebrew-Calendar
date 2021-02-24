@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew
 
     static ParashotTable()
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       LoadDefaults();
       CreateIfNotExists();
     }

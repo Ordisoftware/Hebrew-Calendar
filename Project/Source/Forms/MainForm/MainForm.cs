@@ -658,7 +658,14 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      string parashah = null;// ParashotTable.Defaults[TorahBooks.Shemot][6].ReferenceBegin;
+      Parashah parashah = null;
+      var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
+      if ( row != null )
+      {
+        row = row.GetParashahLectureDay();
+        if ( row != null )
+          parashah = ParashotTable.GetParashah(row.Parashah);
+      }
       ParashotForm.Run(parashah);
     }
 

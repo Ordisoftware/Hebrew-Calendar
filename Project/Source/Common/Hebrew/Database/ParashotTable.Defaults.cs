@@ -13,6 +13,9 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -20,6 +23,20 @@ namespace Ordisoftware.Hebrew
 
   static public partial class ParashotTable
   {
+
+    static public Parashah GetParashah(string bookParashah)
+    {
+      if ( string.IsNullOrEmpty(bookParashah) ) return null;
+      try
+      {
+        var parts = bookParashah.Split('.');
+        return Defaults[(TorahBooks)( int.Parse(parts[0]) - 1 )][int.Parse(parts[1]) - 1];
+      }
+      catch
+      {
+        throw new ArgumentException($"Bad reference in {nameof(ParashotTable)}.{nameof(GetParashah)}: {bookParashah}");
+      }
+    }
 
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
@@ -94,6 +111,11 @@ namespace Ordisoftware.Hebrew
           new Parashah(TorahBooks.Devarim, 11, "Vezot HaBerakah", "וזאת הברכה", "33.1", "34.12")
         }
       };
+
+    static public readonly List<string> ParashotReferences
+      = ( from book in Enums.GetValues<TorahBooks>()
+          from parashah in Defaults[book]
+          select $"{(int)book + 1}.{parashah.Number}" ).ToList();
 
   }
 
