@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -199,9 +199,14 @@ namespace Ordisoftware.Core
         }
         else
         {
-          form.Visible = false;
           if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
-          form.ShowDialog();
+          if ( !form.Modal )
+          {
+            form.Visible = false;
+            form.ShowDialog();
+          }
+          else
+            form.ForceBringToFront();
         }
       else
       if ( dialog )

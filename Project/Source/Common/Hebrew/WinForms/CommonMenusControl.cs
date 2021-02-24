@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace Ordisoftware.Hebrew
                               EventHandler viewStatsClick)
     {
       InitializeComponent();
+      ActionViewVersionNews.DropDownItems.Remove(dummyVersionNews);
       MenuApplication.Text = Globals.AssemblyTitle;
       MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
       ActionSoftpedia.Tag = Globals.SoftpediaURL;
@@ -73,9 +75,12 @@ namespace Ordisoftware.Hebrew
       if ( menuitem == null ) return;
       var notice = menuitem.Tag as TranslationsDictionary;
       if ( notice == null ) return;
-      new MessageBoxEx(SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion),
-                       notice.GetLang(),
-                       MessageBoxEx.DefaultMediumWidth).ShowDialog();
+      string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion);
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
+      if ( form == null )
+        form = new MessageBoxEx(title, notice.GetLang(), MessageBoxEx.DefaultMediumWidth);
+      form.ShowInTaskbar = true;
+      form.Popup(null);
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
