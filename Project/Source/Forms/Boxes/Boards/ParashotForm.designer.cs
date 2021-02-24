@@ -125,7 +125,7 @@
             0,
             0});
       this.EditFontSize.Minimum = new decimal(new int[] {
-            6,
+            7,
             0,
             0,
             0});

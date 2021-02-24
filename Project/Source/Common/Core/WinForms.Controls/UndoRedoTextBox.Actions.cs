@@ -13,6 +13,7 @@
 /// <created> 2020-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Core
@@ -28,24 +29,27 @@ namespace Ordisoftware.Core
 
     static public UndoRedoTextBox GetTextBoxAndFocus(object sender, bool doFocus = true)
     {
-      UndoRedoTextBox control = null;
-      if ( sender is ContextMenuStrip menuContext )
+      UndoRedoTextBox control = sender as UndoRedoTextBox;
+      if ( control == null )
+        if ( sender is ContextMenuStrip menuContext )
+          control = menuContext.SourceControl as UndoRedoTextBox;
+        else
+        if ( sender is ToolStripMenuItem menuItem )
+          control = ( menuItem.GetCurrentParent() as ContextMenuStrip ).SourceControl as UndoRedoTextBox;
+      if ( control == null )
       {
-        control = (UndoRedoTextBox)menuContext.SourceControl;
-        if ( doFocus && control != null && control.Enabled && !control.Focused )
-          control.Focus();
+        var form = Application.OpenForms.ToList().LastOrDefault();
+        if ( form != null )
+        {
+          if ( form.ActiveControl is UndoRedoTextBox )
+            control = Form.ActiveForm.ActiveControl as UndoRedoTextBox;
+          else
+          if ( form.ActiveControl is UserControl )
+            control = ( form.ActiveControl as UserControl ).ActiveControl as UndoRedoTextBox;
+        }
       }
-      else
-      if ( sender is ToolStripMenuItem menuItem )
-      {
-        var parent = (ContextMenuStrip)menuItem.GetCurrentParent();
-        control = (UndoRedoTextBox)parent.SourceControl;
-        if ( doFocus && control != null && control.Enabled && !control.Focused )
-          control.Focus();
-      }
-      else
-      if ( sender is UndoRedoTextBox textbox )
-        control = textbox;
+      if ( doFocus && control != null && control.Enabled && !control.Focused )
+        control.Focus();
       return control;
     }
 
@@ -120,7 +124,10 @@ namespace Ordisoftware.Core
           strTemp = Clipboard.GetText();
           string str = strTemp;
           textbox.InsertingText(textbox, TextUpdating.Text, ref str);
-          Clipboard.SetText(str);
+          if ( !str.IsNullOrEmpty() )
+            Clipboard.SetText(str);
+          else
+            Clipboard.Clear();
         }
         textbox.Paste();
         if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )

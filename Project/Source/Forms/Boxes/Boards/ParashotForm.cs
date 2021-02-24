@@ -263,7 +263,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionEmpty_Click(object sender, EventArgs e)
     {
-      if ( DisplayManager.QueryYesNo("Clear all custom data?") )
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToClearCustomData.GetLang()) )
       {
         foreach ( DataRow row in ParashotTable.DataTable.Rows )
         {

@@ -354,9 +354,9 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
-- Add Serilog-sinks-file NuGet package.
-- Add InputSimulatorStandard NuGet package.
 - Add Windows Global Hotkey dependency.
+- Add InputSimulatorStandard NuGet package.
+- Add Serilog-sinks-file NuGet package.
 - Update web links.
 - Update help.
 
@@ -368,8 +368,6 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Fix custom wav is played twice when clicking on the radio box.
 - Fix visual calendar IDE design time exceptions.
 - Add Serilog NuGet package.
-- Add Humanizer NuGet package.
-- Add FluentValidation NuGet package.
 
 #### 2020.12.12 - Version 5.12
 
