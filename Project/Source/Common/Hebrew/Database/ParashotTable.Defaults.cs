@@ -24,18 +24,9 @@ namespace Ordisoftware.Hebrew
   static public partial class ParashotTable
   {
 
-    static public Parashah GetParashah(string bookParashah)
+    static public Parashah GetParashah(string id)
     {
-      if ( string.IsNullOrEmpty(bookParashah) ) return null;
-      try
-      {
-        var parts = bookParashah.Split('.');
-        return Defaults[(TorahBooks)( int.Parse(parts[0]) - 1 )][int.Parse(parts[1]) - 1];
-      }
-      catch
-      {
-        throw new ArgumentException($"Bad reference in {nameof(ParashotTable)}.{nameof(GetParashah)}: {bookParashah}");
-      }
+      return DefaultsAsList.FirstOrDefault(p => p.ID == id);
     }
 
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
@@ -112,10 +103,10 @@ namespace Ordisoftware.Hebrew
         }
       };
 
-    static public readonly List<string> ParashotReferences
+    static public readonly List<Parashah> DefaultsAsList
       = ( from book in Enums.GetValues<TorahBooks>()
           from parashah in Defaults[book]
-          select $"{(int)book + 1}.{parashah.Number}" ).ToList();
+          select parashah ).ToList();
 
   }
 

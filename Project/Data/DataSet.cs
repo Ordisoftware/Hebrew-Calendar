@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
           if ( Parashah.IsNullOrEmpty() ) return string.Empty;
           string str = ParashotTable.GetParashah(Parashah).Name;
           if ( !LinkedParashah.IsNullOrEmpty() )
-            str += " - " + ParashotTable.GetParashah(Parashah).Name;
+            str += " - " + ParashotTable.GetParashah(LinkedParashah).Name;
           return str;
         }
       }

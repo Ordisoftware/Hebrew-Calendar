@@ -19,6 +19,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Data;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -189,7 +190,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Initialize a day.
     /// </summary>
     /// <param name="day">The day.</param>
-    private bool InitializeDay(Data.DataSet.LunisolarDaysRow day, DateTime date)
+    private bool InitializeDay(LunisolarDaysRow day, DateTime date)
     {
       try
       {
@@ -242,7 +243,10 @@ namespace Ordisoftware.Hebrew.Calendar
         int delta = 0;
         int indexParashah = -1;
         var shabatDay = (DayOfWeek)Settings.ShabatDay;
-        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+        bool shabatMutex = false;
+        LunisolarDaysRow dayRemap1 = null;
+        LunisolarDaysRow dayRemap2 = null;
+        foreach ( LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
           try
           {
             LoadingForm.Instance.DoProgress();
@@ -257,18 +261,50 @@ namespace Ordisoftware.Hebrew.Calendar
             day.LunarDay -= delta;
 
             // TODO option to set in israel or out of israel => 23
+            if ( day.TorahEventsAsEnum == TorahEvent.PessahD1 )
+              shabatMutex = true;
             if ( day.LunarMonth == 7 && day.LunarDay == 22 )
             {
-              if ( indexParashah >= ParashotTable.ParashotReferences.Count )
-                ;//remap
+              if ( indexParashah > 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
+              {
+                dayRemap2 = day;
+                var query = from row in DataSet.LunisolarDays.Rows.Cast<LunisolarDaysRow>()
+                            where row.Date.CompareTo(dayRemap1.Date) >= 0
+                               && row.Date.CompareTo(dayRemap2.Date) <= 0
+                               && !row.Parashah.IsNullOrEmpty()
+                            select row;
+                indexParashah = 0;
+                foreach ( var row in query )
+                {
+                  if ( indexParashah >= ParashotTable.DefaultsAsList.Count )
+                    row.Parashah = string.Empty;
+                  else
+                  {
+                    var parashah = ParashotTable.DefaultsAsList[indexParashah];
+                    row.Parashah = parashah.ID;
+                    if ( parashah.IsLinkedToNext )
+                    {
+                      indexParashah++;
+                      row.LinkedParashah = ParashotTable.DefaultsAsList[indexParashah].ID;
+                    }
+                    indexParashah++;
+                  }
+                }
+              }
               indexParashah = 0;
+              dayRemap1 = day;
             }
             else
-            if ( date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < ParashotTable.ParashotReferences.Count )
+            if ( date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
             {
-              day.Parashah = ParashotTable.ParashotReferences[indexParashah];
-              indexParashah++;
+              if ( !shabatMutex )
+              {
+                day.Parashah = ParashotTable.DefaultsAsList[indexParashah].ID;
+                indexParashah++;
+              }
             }
+            if ( day.TorahEventsAsEnum == TorahEvent.PessahD7 )
+              shabatMutex = false;
 
           }
           catch ( Exception ex )
@@ -290,7 +326,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="day">The day.</param>
     /// <param name="monthMoon">[in,out] The current mooon month.</param>
-    private bool AnalyzeDay(Data.DataSet.LunisolarDaysRow day, DateTime dayDate, ref int monthMoon)
+    private bool AnalyzeDay(LunisolarDaysRow day, DateTime dayDate, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)
       {
@@ -320,7 +356,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       try
       {
-        bool check(Data.DataSet.LunisolarDaysRow row)
+        bool check(LunisolarDaysRow row)
         {
           var dateRow = SQLiteDate.ToDateTime(row.Date);
           return dateRow.Year == dayDate.Year 
