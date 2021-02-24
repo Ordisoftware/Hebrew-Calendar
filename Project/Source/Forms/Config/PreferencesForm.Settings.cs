@@ -44,11 +44,15 @@ namespace Ordisoftware.Hebrew.Calendar
       string lat = Settings.GPSLatitude;
       string lng = Settings.GPSLongitude;
       string timezone = Settings.TimeZone;
-      long starttime = Program.Settings.BenchmarkStartingApp;
-      long loadtime = Program.Settings.BenchmarkLoadData;
+      long starttime = Settings.BenchmarkStartingApp;
+      long loadtime = Settings.BenchmarkLoadData;
       int shabat = EditShabatDay.SelectedIndex;
       int bookmarksCount = Settings.DateBookmarksCount;
+      var lastupdate = Settings.CheckUpdateLastDone;
+      var lastvacuum = Settings.VacuumLastDone;
       Settings.Reset();
+      Settings.CheckUpdateLastDone = lastupdate;
+      Settings.VacuumLastDone = lastvacuum;
       Settings.DateBookmarksCount = bookmarksCount;
       Settings.UpgradeResetRequiredV3_0 = false;
       Settings.UpgradeResetRequiredV3_6 = false;
@@ -57,20 +61,20 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FirstLaunchV4 = false;
       Settings.FirstLaunchV7_0 = false;
       Settings.FirstLaunch = false;
-      Settings.Save();
-      DoReset = true;
-      Reseted = true;
       Settings.GPSCountry = country;
       Settings.GPSCity = city;
       Settings.GPSLatitude = lat;
       Settings.GPSLongitude = lng;
       Settings.TimeZone = timezone;
       Settings.ShabatDay = shabat;
-      Settings.RestoreMainForm();
       Settings.LanguageSelected = Languages.Current;
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
+      Settings.RestoreMainForm();
+      Settings.Save();
       MainForm.Instance.ReminderBoxDesktopLocation();
+      DoReset = true;
+      Reseted = true;
       Close();
     }
 
@@ -78,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SaveSettingsDialog.FileName = "Settings";
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           SaveSettingsDialog.FilterIndex = index + 1;
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       TabControl.SelectedIndex = 0;
@@ -95,8 +99,8 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.MenuShowHide_Click(null, null);
       LunarMonthsForm.Instance.Hide();
       StatisticsForm.Instance.Hide();
-      long starttime = Program.Settings.BenchmarkStartingApp;
-      long loadtime = Program.Settings.BenchmarkLoadData;
+      long starttime = Settings.BenchmarkStartingApp;
+      long loadtime = Settings.BenchmarkLoadData;
       try
       {
         var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
@@ -107,11 +111,11 @@ namespace Ordisoftware.Hebrew.Calendar
         section.SetRawXml(settings.Single().ToString());
         config.Save(ConfigurationSaveMode.Modified);
         ConfigurationManager.RefreshSection("userSettings");
-        Program.Settings.Reload();
-        Program.Settings.BenchmarkStartingApp = starttime;
-        Program.Settings.BenchmarkLoadData = loadtime;
-        Program.Settings.Save();
-        Program.Settings.Retrieve();
+        Settings.Reload();
+        Settings.BenchmarkStartingApp = starttime;
+        Settings.BenchmarkLoadData = loadtime;
+        Settings.Save();
+        Settings.Retrieve();
         Settings.UpgradeResetRequiredV3_0 = false;
         Settings.UpgradeResetRequiredV3_6 = false;
         Settings.UpgradeResetRequiredV4_1 = false;
@@ -126,7 +130,7 @@ namespace Ordisoftware.Hebrew.Calendar
       catch ( Exception ex )
       {
         DisplayManager.ShowError(ex.Message);
-        Program.Settings.Reload();
+        Settings.Reload();
       }
     }
 
