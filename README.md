@@ -354,9 +354,9 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
-- Add Serilog-sinks-file NuGet package.
-- Add InputSimulatorStandard NuGet package.
 - Add Windows Global Hotkey dependency.
+- Add InputSimulatorStandard NuGet package.
+- Add Serilog-sinks-file NuGet package.
 - Update web links.
 - Update help.
 
