@@ -121,6 +121,13 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
+        if ( Settings.FirstLaunchV7_0 )
+        {
+          Settings.FirstLaunchV7_0 = false;
+          doforce = true;
+          var menuitem = SystemInformationMenu.ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+          if ( menuitem != null ) menuitem.PerformClick();
+        }
         if ( DbUpgradedForParashotSupport ) doforce = true;
         CheckRegenerateCalendar(force: doforce);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
@@ -266,6 +273,7 @@ namespace Ordisoftware.Hebrew.Calendar
       menu.DropDownItems.Clear();
       ActionInformation.DropDownItems.Clear();
       ActionInformation.DropDownItems.AddRange(list.ToArray());
+      SystemInformationMenu.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }
 

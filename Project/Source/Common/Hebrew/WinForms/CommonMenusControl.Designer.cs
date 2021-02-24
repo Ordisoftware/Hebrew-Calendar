@@ -35,7 +35,7 @@
       this.Separator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionReadme = new System.Windows.Forms.ToolStripMenuItem();
-      this.Separator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewVersionNews = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionReleaseNotes = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
       this.Separator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,6 +67,8 @@
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.dummyVersionNews = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -86,12 +88,13 @@
       this.MenuInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.MenuInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionAbout,
+            this.toolStripSeparator1,
+            this.ActionViewVersionNews,
+            this.ActionCheckUpdate,
             this.Separator1,
             this.ActionHelp,
             this.ActionReadme,
-            this.Separator2,
             this.ActionReleaseNotes,
-            this.ActionCheckUpdate,
             this.Separator3,
             this.MenuApplication,
             this.MenuAssistance,
@@ -129,10 +132,13 @@
       this.ActionReadme.Name = "ActionReadme";
       this.ActionReadme.Click += new System.EventHandler(this.ActionReadme_Click);
       // 
-      // Separator2
+      // ActionViewVersionNews
       // 
-      this.Separator2.Name = "Separator2";
-      resources.ApplyResources(this.Separator2, "Separator2");
+      this.ActionViewVersionNews.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ActionViewVersionNews.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dummyVersionNews});
+      resources.ApplyResources(this.ActionViewVersionNews, "ActionViewVersionNews");
+      this.ActionViewVersionNews.Name = "ActionViewVersionNews";
       // 
       // ActionReleaseNotes
       // 
@@ -355,13 +361,22 @@
       this.ActionViewStats.Name = "ActionViewStats";
       this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // dummyVersionNews
+      // 
+      resources.ApplyResources(this.dummyVersionNews, "dummyVersionNews");
+      this.dummyVersionNews.Name = "dummyVersionNews";
+      // 
       // CommonMenusControl
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.ToolStrip);
       this.Name = "CommonMenusControl";
-      this.Load += new System.EventHandler(this.CommonMenusControl_Load);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ResumeLayout(false);
@@ -379,7 +394,6 @@
     private System.Windows.Forms.ToolStripSeparator Separator1;
     public System.Windows.Forms.ToolStripMenuItem ActionReadme;
     public System.Windows.Forms.ToolStripMenuItem ActionHelp;
-    private System.Windows.Forms.ToolStripSeparator Separator2;
     public System.Windows.Forms.ToolStripMenuItem ActionApplicationHome;
     public System.Windows.Forms.ToolStripMenuItem ActionGitHubRepo;
     private System.Windows.Forms.ToolStripSeparator SeparatorOnlineArchive;
@@ -409,5 +423,8 @@
     public System.Windows.Forms.ToolStripMenuItem MenuSoftware;
     public System.Windows.Forms.ToolStripMenuItem ActionViewLog;
     public System.Windows.Forms.ToolStripMenuItem ActionViewStats;
+    public System.Windows.Forms.ToolStripMenuItem ActionViewVersionNews;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    private System.Windows.Forms.ToolStripMenuItem dummyVersionNews;
   }
 }

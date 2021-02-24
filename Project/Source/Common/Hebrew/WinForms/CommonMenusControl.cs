@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-01 </edited>
 using System;
 using System.Text;
 using System.IO;
@@ -54,13 +54,33 @@ namespace Ordisoftware.Hebrew
       ActionViewStats.Click += viewStatsClick;
     }
 
-    private void CommonMenusControl_Load(object sender, EventArgs e)
+    internal void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
     {
+      foreach ( var item in list )
+      {
+        var menuitem = ActionViewVersionNews.DropDownItems.Add(SysTranslations.AboutBoxVersion.GetLang(item.Key));
+        menuitem.Tag = item.Value;
+        menuitem.Click += ShowVersionNews;
+        menuitem.Image = dummyVersionNews.Image;
+        menuitem.ImageScaling = ToolStripItemImageScaling.None;
+      }
+      ActionViewVersionNews.Enabled = ActionViewVersionNews.DropDownItems.Count > 0;
+    }
+
+    private void ShowVersionNews(object sender, EventArgs e)
+    {
+      var menuitem = sender as ToolStripItem;
+      if ( menuitem == null ) return;
+      var notice = menuitem.Tag as TranslationsDictionary;
+      if ( notice == null ) return;
+      new MessageBoxEx(SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion),
+                       notice.GetLang(),
+                       MessageBoxEx.DefaultLargeWidth).ShowDialog();
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Popup();
+    DebugManager.TraceForm.Popup();
     }
 
     private void ActionViewStats_Click(object sender, EventArgs e)
@@ -110,7 +130,9 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
+      var menuitem = sender as ToolStripItem;
+      if ( menuitem == null ) return;
+      SystemManager.OpenWebLink((string)menuitem.Tag);
     }
 
     private void ActionReadme_Click(object sender, EventArgs e)
