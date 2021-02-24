@@ -39,13 +39,13 @@ namespace Ordisoftware.Core
     /// Indicate the author projects URL.
     /// </summary>
     static public string AuthorProjectsURL { get; set; }
-      = AssemblyTrademark + "/projects";
+      = AssemblyTrademark + "/projects/";
 
     /// <summary>
     /// Indicate the author contact URL.
     /// </summary>
     static public string AuthorContactURL { get; set; }
-      = AssemblyTrademark + "/contact";
+      = AssemblyTrademark + "/contact/";
 
     /// <summary>
     /// Indicate the application home URL.
@@ -55,6 +55,9 @@ namespace Ordisoftware.Core
 
     static public string ApplicationReleaseNotesURL { get; set; }
       = $"{ApplicationHomeURL}/#release{{0}}";
+
+    static public string ApplicationReleaseNews { get; set; }
+      = $"{ApplicationHomeURL}/#whatsnew";
 
     /// <summary>
     /// Indicate the application website SSL certificate information.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -50,14 +50,19 @@ namespace Ordisoftware.Core
       this.CenterToMainFormElseScreen();
     }
 
+    private void WebUpdateForm_Shown(object sender, EventArgs e)
+    {
+      DisplayManager.DoSound(MessageBoxIcon.Question);
+    }
+
     private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       SystemManager.OpenWebLink((string)( (LinkLabel)sender ).Tag);
     }
 
-    private void WebUpdateForm_Shown(object sender, EventArgs e)
+    private void ActionNews_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      DisplayManager.DoSound(MessageBoxIcon.Question);
+      SystemManager.OpenWebLink(Globals.ApplicationReleaseNews);
     }
   }
 
