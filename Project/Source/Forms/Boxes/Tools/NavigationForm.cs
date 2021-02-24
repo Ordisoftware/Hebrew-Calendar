@@ -77,18 +77,27 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNext.Tag = null;
           }
-          var rowParashah = row.GetParashahLectureDay();
-          if ( rowParashah != null )
+          LabelParashahValue.Text = "";
+          LabelParashahValue.Tag = null;
+          bool isPessah = false;
+          if ( row.LunarMonth == TorahCelebrations.PessahMonth )
+            isPessah = row.LunarDay >= TorahCelebrations.PessahStartDay
+                    && row.LunarDay <= TorahCelebrations.PessahStartDay + TorahCelebrations.PessahLenght - 1;
+          if ( !isPessah )
           {
-            LabelParashahValue.Text = rowParashah.ParashahText;
-            LabelParashahValue.Tag = ParashotTable.GetParashah(rowParashah.Parashah);
-          }
-          else
-          {
-            string str = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')');
-            char[] chars = str.ToCharArray();
-            chars[0] = char.ToUpper(chars[0]);
-            LabelParashahValue.Text = new string(chars);
+            var rowParashah = row.GetParashahLectureDay();
+            if ( rowParashah != null )
+            {
+              LabelParashahValue.Text = rowParashah.ParashahText;
+              LabelParashahValue.Tag = ParashotTable.GetParashah(rowParashah.Parashah);
+            }
+            else
+            {
+              string str = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')');
+              char[] chars = str.ToCharArray();
+              chars[0] = char.ToUpper(chars[0]);
+              LabelParashahValue.Text = new string(chars);
+            }
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);

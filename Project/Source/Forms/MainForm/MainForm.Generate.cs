@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( force || auto || Settings.AutoRegenerate )
           {
             var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
-            int year = DateTime.Today.Year - 1;
+            int year = DateTime.Today.Year - Program.GenerateIntervalPreviousYears;
             int yearFirst = year - interval.YearsBefore;
             int yearLast = year + interval.YearsAfter - 1;
             return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);

@@ -335,7 +335,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          UpdateText();
+          UpdateTitles();
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
@@ -658,15 +658,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      Parashah parashah = null;
-      var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
-      if ( row != null )
-      {
-        row = row.GetParashahLectureDay();
-        if ( row != null )
-          parashah = ParashotTable.GetParashah(row.Parashah);
-      }
-      ParashotForm.Run(parashah);
+      ParashotForm.Run(GetTodayParashah());
     }
 
     /// <summary>
@@ -708,6 +700,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MenuShowHide_Click(null, null);
       SystemManager.TryCatchManage(() => DoGenerate(sender, e));
+      UpdateTitles();
     }
 
     /// <summary>

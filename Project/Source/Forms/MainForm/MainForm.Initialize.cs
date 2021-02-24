@@ -69,7 +69,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.Retrieve();
       ProcessLocksTable.Lock();
       ChronoStart.Start();
-      UpdateText();
       ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
@@ -157,6 +156,7 @@ namespace Ordisoftware.Hebrew.Calendar
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         SetGlobalHotKey();
+        UpdateTitles();
       }
       finally
       {

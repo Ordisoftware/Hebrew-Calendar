@@ -74,15 +74,35 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private Parashah GetTodayParashah()
+    {
+      Parashah parashah = null;
+      var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
+      if ( row != null )
+      {
+        row = row.GetParashahLectureDay();
+        if ( row != null )
+          parashah = ParashotTable.GetParashah(row.Parashah);
+      }
+      return parashah;
+    }
+
     /// <summary>
-    /// Update title bar text.
+    /// Update form title bar and sub-title texts.
     /// </summary>
-    private void UpdateText()
+    private void UpdateTitles()
     {
       Text = Globals.AssemblyTitle;
       if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
         LabelSubTitleGPS.Text = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
       LabelSubTitleOmer.Text = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang();
+      var parashah = GetTodayParashah();
+      if ( parashah != null )
+      {
+        Text += " : Parashah " + parashah.Name;
+        if ( parashah.Linked != null )
+          Text += " - " + parashah.Linked.Name;
+      }
     }
 
     /// <summary>

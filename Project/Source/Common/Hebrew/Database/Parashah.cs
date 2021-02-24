@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew
     public string Translation { get; set; }
     public string Lettriq { get; set; }
     public string Memo { get; set; }
+    public Parashah Linked { get; internal set; }
 
     public string ReferenceBegin
       => $"{(int)Book + 1}.{VerseBegin}";
