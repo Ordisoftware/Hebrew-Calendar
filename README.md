@@ -62,7 +62,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set.
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
-- Added news in version in the Information menu.
+- Added new in version in the Information menu.
 - Modification and addition of web links and online providers for the study of words and verses of the Bible.
 - Some improvements in appearance and function.
 
