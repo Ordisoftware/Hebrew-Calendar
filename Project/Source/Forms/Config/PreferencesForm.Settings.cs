@@ -67,10 +67,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.GPSLongitude = lng;
       Settings.TimeZone = timezone;
       Settings.ShabatDay = shabat;
-      Settings.RestoreMainForm();
       Settings.LanguageSelected = Languages.Current;
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
+      Settings.RestoreMainForm();
       Settings.Save();
       MainForm.Instance.ReminderBoxDesktopLocation();
       DoReset = true;
