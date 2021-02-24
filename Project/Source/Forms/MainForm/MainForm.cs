@@ -335,7 +335,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          UpdateText();
+          UpdateTitles();
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
@@ -658,8 +658,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      string parashah = null;// ParashotTable.Defaults[TorahBooks.Shemot][6].ReferenceBegin;
-      ParashotForm.Run(parashah);
+      ParashotForm.Run(GetTodayParashah());
     }
 
     /// <summary>
@@ -701,6 +700,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MenuShowHide_Click(null, null);
       SystemManager.TryCatchManage(() => DoGenerate(sender, e));
+      UpdateTitles();
     }
 
     /// <summary>

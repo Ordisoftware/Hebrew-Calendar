@@ -24,6 +24,33 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
+      public LunisolarDaysRow GetParashahLectureDay()
+      {
+        LunisolarDaysRow result = null;
+        for ( int index = tableLunisolarDays.Rows.IndexOf(this); index < tableLunisolarDays.Rows.Count; index++ )
+        {
+          var row = (LunisolarDaysRow)tableLunisolarDays.Rows[index];
+          if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+          {
+            result = row;
+            break;
+          }
+        }
+        return result;
+      }
+
+      public string ParashahText
+      {
+        get
+        {
+          if ( Parashah.IsNullOrEmpty() ) return string.Empty;
+          string str = ParashotTable.GetParashah(Parashah).Name;
+          if ( !LinkedParashah.IsNullOrEmpty() )
+            str += " - " + ParashotTable.GetParashah(LinkedParashah).Name;
+          return str;
+        }
+      }
+
       public MoonRiseOccuring MoonriseOccuringAsEnum
       {
         get { return (MoonRiseOccuring)MoonriseType; }

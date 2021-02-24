@@ -84,6 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
           GoToDate(DateTime.Today);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
+        UpdateTitles();
       });
     }
 

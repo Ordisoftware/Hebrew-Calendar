@@ -32,8 +32,12 @@ namespace Ordisoftware.Hebrew
 
     static ParashotTable()
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       LoadDefaults();
       CreateIfNotExists();
+      for ( int index = 0; index < DefaultsAsList.Count; index++ )
+        if ( DefaultsAsList[index].IsLinkedToNext )
+          DefaultsAsList[index].Linked = DefaultsAsList[++index];
     }
 
     static public void LoadDefaults()

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = row.WeekLongCelebrationSubDay;
           if ( LabelEventTorahValue.Text == string.Empty )
-              LabelEventTorahValue.Text = "-";
+            LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
                           where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
@@ -76,6 +76,28 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelTorahNextValue.Text = "-";
             LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNext.Tag = null;
+          }
+          LabelParashahValue.Text = "";
+          LabelParashahValue.Tag = null;
+          bool isPessah = false;
+          if ( row.LunarMonth == TorahCelebrations.PessahMonth )
+            isPessah = row.LunarDay >= TorahCelebrations.PessahStartDay
+                    && row.LunarDay <= TorahCelebrations.PessahStartDay + TorahCelebrations.PessahLenght - 1;
+          if ( !isPessah )
+          {
+            var rowParashah = row.GetParashahLectureDay();
+            if ( rowParashah != null )
+            {
+              LabelParashahValue.Text = rowParashah.ParashahText;
+              LabelParashahValue.Tag = ParashotTable.GetParashah(rowParashah.Parashah);
+            }
+            else
+            {
+              string str = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')');
+              char[] chars = str.ToCharArray();
+              chars[0] = char.ToUpper(chars[0]);
+              LabelParashahValue.Text = new string(chars);
+            }
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);
@@ -196,8 +218,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelTorahNext.Tag == null ) return;
-      MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
+      if ( LabelTorahNext.Tag != null )
+        MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
+    }
+
+    private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if ( LabelParashahValue.Tag != null )
+        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
 
   }

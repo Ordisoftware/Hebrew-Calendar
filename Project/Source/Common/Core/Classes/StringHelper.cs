@@ -24,6 +24,11 @@ namespace Ordisoftware.Core
   static partial class StringHelper
   {
 
+    static public bool IsEmpty(this string str)
+    {
+      return str.Length == 0;
+    }
+
     /// <summary>
     /// Indicate if a string is null or empty.
     /// </summary>

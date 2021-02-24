@@ -31,6 +31,7 @@ namespace Ordisoftware.Hebrew
 
     static ProcessLocksTable()
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       CreateSchemaIfNotExists();
     }
 

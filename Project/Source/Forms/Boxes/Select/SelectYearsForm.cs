@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
       int min = Program.GenerateIntervalMinimum;
       int max = Program.Settings.GenerateIntervalMaximum;
-      CurrentYear = DateTime.Today.AddYears(-1).Year;
+      CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
         throw new ArgumentOutOfRangeException(AppTranslations.NotSupportedYear.GetLang(CurrentYear));
       EditYearFirst.Minimum = CurrentYear + min - max + 1;
@@ -69,8 +69,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Mutex = false;
       if ( MainForm.Instance.YearFirst != 0 && MainForm.Instance.YearLast != 0 )
       {
-        EditYearFirst.Value = MainForm.Instance.YearFirst;
-        EditYearLast.Value = MainForm.Instance.YearLast;
+        EditYearFirst.Value = Math.Min(MainForm.Instance.YearFirst, EditYearFirst.Maximum);
+        EditYearLast.Value = Math.Max(MainForm.Instance.YearLast, EditYearLast.Minimum);
       }
       else
         ActionDefaultInterval.PerformClick();

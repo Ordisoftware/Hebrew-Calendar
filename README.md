@@ -235,21 +235,18 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 ## Changelog
 
-#### In progress - Version 7.2
-
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
-
 #### In progress - Version 7.1
 
-- Add generate weekly parashah items in the database.
-- Add parashah reading to the days of Shabat according to the option.
-- Add current parashah in navigation form and in main form subtitle.
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
 #### 2021.03.12 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
-- Add option to indicate the parashah in the days of Shabat for the visual month (does nothing for now).
+- Add generate weekly parashah lecture in the database.
+- Add option to indicate the parashah in the days of Shabat for the visual month.
+- Add parashah reading to the days of Shabat according to the option.
+- Add current parashah in navigation form and in main form subtitle.
 - Add common database in roaming to store parashot user table and inter-process locking table.
 - Add a different tray icon to indicate if shabat or a celebration day is running.
 - Add option to enable or disable the special day tray icon.
@@ -257,6 +254,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
+- Change the minimum year to generate to two years before instead of one in order to have consistency with the parashot.
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.

@@ -31,3 +31,6 @@ URL = https://sites.google.com/site/asherhaimhalevi/sefirot
 
 Name = (FR) Bibliographie
 URL = https://sites.google.com/site/asherhaimhalevi/the-religious-problem/bibliography
+
+Name = (FR) Archive GitHub
+URL = https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books

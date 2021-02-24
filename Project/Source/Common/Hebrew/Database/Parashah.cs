@@ -20,6 +20,7 @@ namespace Ordisoftware.Hebrew
   public class Parashah
   {
 
+    public string ID { get; }
     public TorahBooks Book { get; }
     public int Number { get; }
     public string Name { get; }
@@ -31,6 +32,7 @@ namespace Ordisoftware.Hebrew
     public string Translation { get; set; }
     public string Lettriq { get; set; }
     public string Memo { get; set; }
+    public Parashah Linked { get; internal set; }
 
     public string ReferenceBegin
       => $"{(int)Book + 1}.{VerseBegin}";
@@ -66,6 +68,7 @@ namespace Ordisoftware.Hebrew
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
+      ID = $"{(int)book + 1}.{number}";
     }
 
   }
