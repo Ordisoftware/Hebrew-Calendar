@@ -37,6 +37,7 @@
       this.SelectDownload = new System.Windows.Forms.RadioButton();
       this.ActionReleaseNotes = new System.Windows.Forms.LinkLabel();
       this.LabelCurrentversion = new System.Windows.Forms.Label();
+      this.ActionNews = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -92,12 +93,21 @@
       resources.ApplyResources(this.LabelCurrentversion, "LabelCurrentversion");
       this.LabelCurrentversion.Name = "LabelCurrentversion";
       // 
+      // ActionNews
+      // 
+      resources.ApplyResources(this.ActionNews, "ActionNews");
+      this.ActionNews.LinkColor = System.Drawing.Color.Navy;
+      this.ActionNews.Name = "ActionNews";
+      this.ActionNews.TabStop = true;
+      this.ActionNews.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionNews_LinkClicked);
+      // 
       // WebUpdateForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.ActionNews);
       this.Controls.Add(this.ActionReleaseNotes);
       this.Controls.Add(this.SelectDownload);
       this.Controls.Add(this.SelectInstall);
@@ -124,5 +134,6 @@
     internal System.Windows.Forms.Label LabelNewVersion;
     private System.Windows.Forms.LinkLabel ActionReleaseNotes;
     internal System.Windows.Forms.Label LabelCurrentversion;
+    private System.Windows.Forms.LinkLabel ActionNews;
   }
 }

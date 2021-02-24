@@ -148,4 +148,7 @@
   <data name="LabelCurrentversion.Text" xml:space="preserve">
     <value>Version actuelle : </value>
   </data>
+  <data name="ActionNews.Text" xml:space="preserve">
+    <value>Nouveautés</value>
+  </data>
 </root>
