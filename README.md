@@ -241,14 +241,15 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add common database in roaming to store parashot user table and inter-process locking table.
 - Add a different tray icon to indicate if shabat or a celebration day is running.
 - Add option to enable or disable the special day tray icon.
+- Add news in version notice in the Information menu.
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
 - Change exported text files to be in UTF-8 encoding.
 - Change some keyboard shortcuts.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
-- Improve month view to show long-week celebration inner days.
-- Improve navigation form to show long-week celebration inner days.
+- Improve month view to show long-week celebration intermediate days.
+- Improve navigation form to show long-week celebration intermediate days.
 - Improve automatic web check update to not run when shabat and a special celebration day but the next day.
 - Some UI/UX improvements.
 - Some file and code refactoring.
