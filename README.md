@@ -25,7 +25,8 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Generate a calendar with sun and moon rises and sets.
 - View by tabular text report, visual month or data grid.
 - Balloon tip from the Tray Icon to navigate between days with a summary.
-- Event reminder for shabat and celebrations.
+- Event reminder for Shabat and celebrations.
+- Indicate the weekly Parashah.
 - Search for a day, a month, or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
@@ -147,21 +148,21 @@ You can use traditionnals sun days by modifying the option in the reminder, henc
 
 #### What is Shabat?
 
-The shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
+The Shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
 
 The tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
-The personal shabat of a maried or concubin or divorced man is the previous day of the birth. A son follows his father's shabat. The shabat of a woman is the shabat of her father or her husband or her concubin.
+The personal Shabat of a maried or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin.
 
 So the man and the woman respect their mutual cycles. Indeed, during the period when the married or concubine or divorced woman is Nidah from the beginning to the end of the blood flow, her vital field is dissonant and the couple avoid touching each other (the virgin girl is not concerned as long as she had no relations through the openings of the begetting) to avoid to increase as well as to transmit this state to things and people (otherwise we follow the rules of the Torah about that).
 
-If the man were born between midnight and the sunset, the shabat is the day before. Between sunset and midnight, the shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset.
+If the man were born between midnight and the sunset, the Shabat is the day before. Between sunset and midnight, the Shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset.
 
-The day of the shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour.
+The day of the Shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour.
 
-The day before, either the man keeps without going out and strengthens the couple during the shabat, or he goes out and lights up the couple for shabat, but on shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.
+The day before, either the man keeps without going out and strengthens the couple during the Shabat, or he goes out and lights up the couple for Shabat, but on Shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.
 
-If you prefer to use the traditional group shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
+If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
 #### What are Parashot?
 
@@ -241,14 +242,14 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### 2021.03.12 - Version 7.0
 
-- Add parashah notice.
+- Add Parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
-- Add generate weekly parashah lecture in the database.
-- Add option to indicate the parashah in the days of Shabat for the visual month.
-- Add parashah reading to the days of Shabat according to the option.
-- Add current parashah in navigation form and in main form subtitle.
+- Add generate weekly Parashah lecture in the database.
+- Add option to indicate the Parashah in the days of Shabat for the visual month.
+- Add Parashah reading to the days of Shabat according to the option.
+- Add current Parashah in navigation form and in main form subtitle.
 - Add common database in roaming to store parashot user table and inter-process locking table.
-- Add a different tray icon to indicate if shabat or a celebration day is running.
+- Add a different tray icon to indicate if Shabat or a celebration day is running.
 - Add option to enable or disable the special day tray icon.
 - Add news in version notice in the Information menu.
 - Add show usage statistics from about box.
@@ -260,7 +261,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
-- Improve automatic web check update to not run when shabat and a special celebration day but the next day.
+- Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
 - Some UI/UX improvements.
 - Some file and code refactoring.
 - Add Serilog-sinks-winforms NuGet package.
@@ -333,7 +334,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add backup and restore date bookmarks.
 - Add option to go to today when main form popup else keep the selected.
 - Improve export dialog to select default image file format.
-- Improve celebrations board to indicate the day of the shabat in the title.
+- Improve celebrations board to indicate the day of the Shabat in the title.
 - Improve text report to always show selection.
 - Fix text report to select the last character of the line.
 - Fix print text report interval that prints all lines.
@@ -565,13 +566,13 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add preferences menu in the tray icon.
 - Add dialog box to choose sun or moon omer at first startup.
 - Add celebrations dialog box notice.
-- Improve personal shabat dialog box notice.
+- Improve personal Shabat dialog box notice.
 - Improve preferences form.
 - Improve search celebration and moon month forms to use a combobox to select year.
 - Improve text report : Ctrl+A select all text.
 - Add month number column in the search moon month form.
 - Add tools menu.
-- Add celebrations and shabat notices in tools menu.
+- Add celebrations and Shabat notices in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
 - Add option to change month view text size.
@@ -605,7 +606,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### 2019.11.04 - Version 3.8
 
-- Add option to auto lock session during shabat and celebrations days.
+- Add option to auto lock session during Shabat and celebrations days.
 
 #### 2019.11.01 - Version 3.7
 
@@ -621,7 +622,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### 2019.10.21 - Version 3.5
 
-- Improve personal shabat setup by asking birth time.
+- Improve personal Shabat setup by asking birth time.
 - Improve min and max years that can be generated (up to 2198).
 - Improve reminder to change the window color when just passing the start date without waiting the remind delay.
 - Fix reminder using moon days that stops remind after midnight.
@@ -659,14 +660,14 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### 2019.10.14 - Version 3.0
 
-- Improve the reminder to remind during the celebration day like with the shabat day.
+- Improve the reminder to remind during the celebration day like with the Shabat day.
 - Improve the reminder to flash the form if already displayed.
 - Improve reminder boxes location on the desktop.
 - Improve session ending.
 - Add loading data box instead of using a bottom progressbar.
-- Add displaying begin and end dates and times in the celebration reminder form like with the shabat.
+- Add displaying begin and end dates and times in the celebration reminder form like with the Shabat.
 - Add looming navigation popup from the tray icon when mouse is over.
-- Add celebration weeks, shabat days and reminders popup colorization.
+- Add celebration weeks, Shabat days and reminders popup colorization.
 - Add check end of calendar to automatically regenerate it.
 - Add option to choose language.
 - Add world cities GPS database.
@@ -690,12 +691,12 @@ And so on from week to week to go through the Torah in a year to build a better 
 
 #### 2019.09.04 - Version 2.1
 
-- Improve shabat reminder.
+- Improve Shabat reminder.
 - Update controls tabs.
 
 #### 2019.08.26 - Version 2.0
 
-- Change shabat reminder.
+- Change Shabat reminder.
 - Reorganize preferences form.
 
 #### 2019.08.25 - Version 1.10
