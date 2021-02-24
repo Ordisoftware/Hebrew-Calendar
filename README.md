@@ -368,8 +368,6 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Fix custom wav is played twice when clicking on the radio box.
 - Fix visual calendar IDE design time exceptions.
 - Add Serilog NuGet package.
-- Add Humanizer NuGet package.
-- Add FluentValidation NuGet package.
 
 #### 2020.12.12 - Version 5.12
 
