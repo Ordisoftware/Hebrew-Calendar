@@ -36,7 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set." + Globals.NL2 +
                           "The web update check is not performed on a day off while the application is running." + Globals.NL2 +
                           "Boards are exportable as TXT files in addition to CSV and JSON." + Globals.NL2 +
-                          "Added news in version in the Information menu." + Globals.NL2 +
+                          "Added new in version in the Information menu." + Globals.NL2 +
                           "Modification and addition of web links and online providers for the study of words and verses of the Bible." + Globals.NL2 +
                           "Some improvements in appearance and function.",
 
