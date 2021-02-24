@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -133,7 +133,7 @@ namespace Ordisoftware.Core
 
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
-      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.TopMost);
+      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.Visible && f.TopMost);
       DisplayManager.DoSound(IconStyle);
       this.Popup();
     }

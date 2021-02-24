@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -24,18 +24,11 @@ namespace Ordisoftware.Hebrew.Calendar
   static public partial class AppTranslations
   {
 
-    static public readonly TranslationsDictionary NoticeMoonDayTextFormat
+    static public readonly TranslationsDictionary NoticeExportInterval
       = new TranslationsDictionary
       {
-        [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
-                        "%MONTHNAME% : moon month name" + Globals.NL +
-                        "%MONTHNUM% : moon month number" + Globals.NL +
-                        "%DAYNUM% : moon day number",
-
-        [Language.FR] = "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
-                        "%MONTHNAME% : nom du mois lunaire" + Globals.NL +
-                        "%MONTHNUM% : numéro du mois lunaire" + Globals.NL +
-                        "%DAYNUM% : numéro du jour lunaire"
+        [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
+        [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
       };
 
     static public readonly TranslationsDictionary NoticeHotKey
@@ -54,6 +47,20 @@ namespace Ordisoftware.Hebrew.Calendar
 
         [Language.FR] = "Une valeur positive permet de générer les prochaines années." + Globals.NL2 +
                         "Une valeur négative permet de générer les années avant et après maintenant."
+      };
+
+    static public readonly TranslationsDictionary NoticeMoonDayTextFormat
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
+                        "%MONTHNAME% : moon month name" + Globals.NL +
+                        "%MONTHNUM% : moon month number" + Globals.NL +
+                        "%DAYNUM% : moon day number",
+
+        [Language.FR] = "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
+                        "%MONTHNAME% : nom du mois lunaire" + Globals.NL +
+                        "%MONTHNUM% : numéro du mois lunaire" + Globals.NL +
+                        "%DAYNUM% : numéro du jour lunaire"
       };
 
     static public readonly TranslationsDictionary NoticeShabatTitle
@@ -138,13 +145,6 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Deux mois lunaires indiquent qu'il s'est écoulé une lune et qu'on se trouve dans la deuxième." + Globals.NL2 +
                         "Il en est de même pour les années solaires." + Globals.NL2 +
                         "Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
-      };
-
-    static public readonly TranslationsDictionary NoticeExportInterval
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The export goes from the start year to the end year, and for each year are taken into account the Gregorian months going from Nissan of this year to Adar of the next year.",
-        [Language.FR] = "L'export va de l'année de début à l'année de fin, et pour chaque année sont pris en compte les mois grégoriens allant de Nissan cette année à Adar de l'année suivante."
       };
 
     static public readonly TranslationsDictionary NoticeLunarMonthsTitle

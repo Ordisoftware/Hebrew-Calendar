@@ -153,7 +153,12 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionGetGPS_LinkClicked(null, null);
       if ( Settings.FirstLaunch )
       {
+        Settings.UpgradeResetRequiredV3_0 = false;
+        Settings.UpgradeResetRequiredV3_6 = false;
+        Settings.UpgradeResetRequiredV4_1 = false;
+        Settings.UpgradeResetRequiredV5_10 = false;
         Settings.FirstLaunchV4 = false;
+        Settings.FirstLaunchV7_0 = false;
         Settings.FirstLaunch = false;
         Settings.Save();
         MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);

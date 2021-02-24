@@ -2369,5 +2369,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["NewMoonsBoardFormShowMonthNumbers"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV7_0 {
+            get {
+                return ((bool)(this["FirstLaunchV7_0"]));
+            }
+            set {
+                this["FirstLaunchV7_0"] = value;
+            }
+        }
     }
 }

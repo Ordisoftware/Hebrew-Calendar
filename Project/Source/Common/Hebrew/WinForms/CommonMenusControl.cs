@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace Ordisoftware.Hebrew
                               EventHandler viewStatsClick)
     {
       InitializeComponent();
+      ActionViewVersionNews.DropDownItems.Remove(dummyVersionNews);
       MenuApplication.Text = Globals.AssemblyTitle;
       MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
       ActionSoftpedia.Tag = Globals.SoftpediaURL;
@@ -54,13 +56,36 @@ namespace Ordisoftware.Hebrew
       ActionViewStats.Click += viewStatsClick;
     }
 
-    private void CommonMenusControl_Load(object sender, EventArgs e)
+    internal void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
     {
+      foreach ( var item in list )
+      {
+        var menuitem = ActionViewVersionNews.DropDownItems.Add(SysTranslations.AboutBoxVersion.GetLang(item.Key));
+        menuitem.Tag = item.Value;
+        menuitem.Click += ShowVersionNews;
+        menuitem.Image = dummyVersionNews.Image;
+        menuitem.ImageScaling = ToolStripItemImageScaling.None;
+      }
+      ActionViewVersionNews.Enabled = ActionViewVersionNews.DropDownItems.Count > 0;
+    }
+
+    private void ShowVersionNews(object sender, EventArgs e)
+    {
+      var menuitem = sender as ToolStripItem;
+      if ( menuitem == null ) return;
+      var notice = menuitem.Tag as TranslationsDictionary;
+      if ( notice == null ) return;
+      string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion);
+      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
+      if ( form == null )
+        form = new MessageBoxEx(title, notice.GetLang(), MessageBoxEx.DefaultMediumWidth);
+      form.ShowInTaskbar = true;
+      form.Popup(null);
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Popup();
+    DebugManager.TraceForm.Popup();
     }
 
     private void ActionViewStats_Click(object sender, EventArgs e)
@@ -110,7 +135,9 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
+      var menuitem = sender as ToolStripItem;
+      if ( menuitem == null ) return;
+      SystemManager.OpenWebLink((string)menuitem.Tag);
     }
 
     private void ActionReadme_Click(object sender, EventArgs e)

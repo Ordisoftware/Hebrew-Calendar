@@ -121,17 +121,27 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
+        ChronoStart.Stop();
+        if ( Settings.FirstLaunchV7_0 )
+          SystemManager.TryCatch(() =>
+          {
+            Settings.FirstLaunchV7_0 = false;
+            doforce = true;
+            var menuitem = SystemInformationMenu.ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+            if ( menuitem != null ) menuitem.PerformClick();
+          });
+        ChronoStart.Start();
         if ( DbUpgradedForParashotSupport ) doforce = true;
         CheckRegenerateCalendar(force: doforce);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         ChronoStart.Stop();
+        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+        SystemManager.TryCatch(Settings.Save);
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;
         TimerMidnight.Start();
         TimerReminder_Tick(null, null);
-        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-        Settings.Save();
         this.Popup();
         if ( Settings.StartupHide || Globals.ForceStartupHide )
           MenuShowHide.PerformClick();
@@ -266,6 +276,7 @@ namespace Ordisoftware.Hebrew.Calendar
       menu.DropDownItems.Clear();
       ActionInformation.DropDownItems.Clear();
       ActionInformation.DropDownItems.AddRange(list.ToArray());
+      SystemInformationMenu.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }
 

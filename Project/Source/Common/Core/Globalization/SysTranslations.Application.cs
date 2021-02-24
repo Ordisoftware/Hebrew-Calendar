@@ -23,6 +23,13 @@ namespace Ordisoftware.Core
   static public partial class SysTranslations
   {
 
+    static public readonly TranslationsDictionary NoticeNewFeaturesTitle
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "New features in version {0}",
+        [Language.FR] = "Nouvelles fonctionnalités de la version {0}"
+      };
+
     static public TranslationsDictionary ApplicationMustExit
     {
       get
