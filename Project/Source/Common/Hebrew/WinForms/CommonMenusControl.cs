@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew
       if ( notice == null ) return;
       new MessageBoxEx(SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion),
                        notice.GetLang(),
-                       MessageBoxEx.DefaultLargeWidth).ShowDialog();
+                       MessageBoxEx.DefaultMediumWidth).ShowDialog();
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
