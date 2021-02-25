@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        if ( force || DateTime.Today.Year >= YearLast )
+        if ( force || DateTime.Today.Year >= YearLast - Program.GenerateIntervalPreviousYears )
           if ( force || auto || Settings.AutoRegenerate )
           {
             var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
