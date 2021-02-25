@@ -182,6 +182,8 @@ The day after Shabat we move on to the next Parashah that we study during the we
 
 And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot.
 
+The generation of Parashot relating to Shabatot is not guaranteed to be scrupulous especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.
+
 ## Keyboard shortcuts
 
 | Keys | Actions |
