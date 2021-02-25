@@ -64,6 +64,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
+- Added Ctrl + Left/Right shortchut to navigate between months having celebrations.
 - Added new in version in the Information menu.
 - Modification and addition of web links and online providers for the study of words and verses of the Bible.
 - Some improvements in appearance and function.
@@ -264,9 +265,10 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
+- Add Ctrl + Left/Right shortchut to navigate between months having celebrations.
+- Change some keyboard shortcuts.
 - Change the minimum year to generate to two years before instead of one in order to have consistency with the parashot.
 - Change exported text files to be in UTF-8 encoding.
-- Change some keyboard shortcuts.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
