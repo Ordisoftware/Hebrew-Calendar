@@ -63,6 +63,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set.
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
+- Fixed celebrations board showing moon times in the case of sun omer.
 - Added new in version in the Information menu.
 - Modification and addition of web links and online providers for the study of words and verses of the Bible.
 - Some improvements in appearance and function.
@@ -262,6 +263,8 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
 - Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
+- Improve celebrations board export file name to indicate moon or sun omer and set or rise.
+- Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
 - Some UI/UX improvements.
 - Some file and code refactoring.
 - Add Serilog-sinks-winforms NuGet package.
