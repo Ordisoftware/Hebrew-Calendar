@@ -298,13 +298,13 @@
     <value>3, 5</value>
   </data>
   <data name="EditUseRealDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 17</value>
+    <value>516, 17</value>
   </data>
   <data name="EditUseRealDays.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="EditUseRealDays.Text" xml:space="preserve">
-    <value>Show days having the real start time of the moonset before the moonrise, else use solar days having the moonrise or the day with no moonrise</value>
+    <value>Show days having the real start time of the moon or sun set before the rise, else use days having the rise</value>
   </data>
   <data name="&gt;&gt;EditUseRealDays.Name" xml:space="preserve">
     <value>EditUseRealDays</value>
@@ -599,9 +599,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 461</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>

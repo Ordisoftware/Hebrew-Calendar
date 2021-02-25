@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Text = Globals.AssemblyTitle;
       if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
         LabelSubTitleGPS.Text = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
-      LabelSubTitleOmer.Text = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang();
+      LabelSubTitleOmer.Text = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
       var parashah = GetWeeklyParashah();
       if ( parashah != null ) Text += " - Parashah " + parashah.ToStringLinked().ToUpper();
     }

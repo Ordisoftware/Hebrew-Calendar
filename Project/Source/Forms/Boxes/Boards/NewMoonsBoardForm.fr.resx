@@ -155,7 +155,7 @@
     <value>Utiliser les noms abrégés</value>
   </data>
   <data name="EditUseRealDays.Text" xml:space="preserve">
-    <value>Afficher les jours ayant la vrai heure de début du coucher de la lune avant le lever, sinon utiliser les jours solaires ayant le lever de la lune ou le jour sans lever</value>
+    <value>Afficher les jours ayant la vrai heure de début du coucher de la lune avant le lever, sinon utiliser les jours ayant le lever de la lune</value>
   </data>
   <data name="EditHideHours.Text" xml:space="preserve">
     <value>Cacher les heures</value>

@@ -521,7 +521,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CelebrationsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NewMoonsBoardFormHideHours" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

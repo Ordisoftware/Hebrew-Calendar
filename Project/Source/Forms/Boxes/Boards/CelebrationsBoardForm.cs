@@ -246,7 +246,7 @@ namespace Ordisoftware.Hebrew.Calendar
                      && SQLiteDate.ToDateTime(day.Date).Year <= year2
                   select new
                   {
-                    date = day.GetEventStartDateTime(EditUseRealDays.Checked),
+                    date = day.GetEventStartDateTime(EditUseRealDays.Checked, false),
                     torah = day.TorahEventsAsEnum
                   };
       DataGridView.DataSource = null;
@@ -272,7 +272,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName);
+      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName) + " "
+                                                     + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
+      if (Program.Settings.TorahEventsCountAsMoon )
+        MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Moonset" : " Moonrise";
+      else
+        MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Sunset" : " Sunrise";
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

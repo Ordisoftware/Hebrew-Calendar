@@ -104,18 +104,35 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         }
       }
 
-      public DateTime GetEventStartDateTime(bool useRealDay)
+      public DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
       {
         var day = this;
-        if ( useRealDay || day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay )
+        if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
+        {
+          if ( useRealDay )
+          {
+            int index = day.Table.Rows.IndexOf(day) - 1;
+            if ( index < 0 )
+              throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+            day = (LunisolarDaysRow)day.Table.Rows[index];
+            return SQLiteDate.ToDateTime(day.Date)
+                             .AddHours(int.Parse(day.Sunset.Substring(0, 2)))
+                             .AddMinutes(int.Parse(day.Sunset.Substring(3, 2)));
+          }
+          else
+            return SQLiteDate.ToDateTime(day.Date)
+                             .AddHours(int.Parse(day.Sunrise.Substring(0, 2)))
+                             .AddMinutes(int.Parse(day.Sunrise.Substring(3, 2)));
+        }
+        else
+        if ( useRealDay )
         {
           if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet || day.Moonset == string.Empty )
           {
             int index = day.Table.Rows.IndexOf(day) - 1;
-            if ( index >= 0 )
-              day = (LunisolarDaysRow)day.Table.Rows[index];
-            else
-              return SQLiteDate.ToDateTime(day.Date);
+            if ( index < 0 )
+              throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+            day = (LunisolarDaysRow)day.Table.Rows[index];
           }
           return SQLiteDate.ToDateTime(day.Date)
                            .AddHours(int.Parse(day.Moonset.Substring(0, 2)))
