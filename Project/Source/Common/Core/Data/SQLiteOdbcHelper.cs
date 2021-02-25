@@ -294,7 +294,7 @@ namespace Ordisoftware.Core
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
       if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
       if ( type.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(type));
-      if ( !valueDefault.IsNullOrEmpty() ) valueDefault = " DEFAULT " + valueDefault;
+      if ( valueDefault != null ) valueDefault = " DEFAULT " + valueDefault;
       if ( valueNotNull ) valueDefault += " NOT NULL";
       string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {valueDefault}";
       return connection.CheckColumn(table, column, sql);
