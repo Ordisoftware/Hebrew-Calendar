@@ -157,19 +157,18 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionGetGPS_LinkClicked(null, null);
       if ( Settings.FirstLaunch )
       {
-        Settings.UpgradeResetRequiredV3_0 = false;
-        Settings.UpgradeResetRequiredV3_6 = false;
-        Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.UpgradeResetRequiredV5_10 = false;
-        Settings.FirstLaunchV4 = false;
-        Settings.FirstLaunchV7_0 = false;
-        Settings.FirstLaunch = false;
+        Settings.SetFirstAndUpgradeFlagsOff();
         Settings.Save();
         MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
         Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
         MainForm.Instance.ActionShowShabatNotice_Click(null, null);
         if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
           ActionUsePersonalShabat_LinkClicked(null, null);
+        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+        DisplayManager.QueryYesNoCancel(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+                                        () => EditUseSimhatTorahOutside.Checked = false,
+                                        () => EditUseSimhatTorahOutside.Checked = true);
+        TabControl.SelectedTab = TabPageGeneration;
       }
       EditTimeZone.Text = Settings.GetGPSText();
     }

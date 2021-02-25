@@ -120,6 +120,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
     }
 
+    private void ActionParashahHelp_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+    }
+
     private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
     {
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
@@ -479,7 +484,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
     {
-      MustRefreshMonthView = true;
+      if ( IsReady ) MustRefreshMonthView = true;
     }
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)

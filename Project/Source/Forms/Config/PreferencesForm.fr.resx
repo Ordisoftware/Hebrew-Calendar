@@ -755,4 +755,7 @@
   <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
     <value>Toujours générer les Parashot pour le samedi</value>
   </data>
+  <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
+    <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
+  </data>
 </root>
