@@ -947,7 +947,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LunisolarDaysBindingSource.Current != null )
         {
           var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-          GoToDate(SQLiteDate.ToDateTime(( (Data.DataSet.LunisolarDaysRow)rowview ).Date));
+          GoToDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date);
         }
       });
     }

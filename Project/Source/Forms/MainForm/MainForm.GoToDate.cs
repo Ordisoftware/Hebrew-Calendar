@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using Ordisoftware.Core;
@@ -31,6 +31,12 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
       return ParashotTable.GetDefaultByID(row?.GetParashahReadingDay()?.ParashahID) ?? null;
+    }
+
+    internal void GoToDate(string date)
+    {
+      if ( !date.IsNullOrEmpty() )
+        GoToDate(SQLiteDate.ToDateTime(date));
     }
 
     /// <summary>

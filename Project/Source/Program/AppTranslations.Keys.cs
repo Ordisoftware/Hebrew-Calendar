@@ -74,6 +74,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Right : Next month" + Globals.NL +
                         "Ctrl + Left : Previous month having a celebration" + Globals.NL +
                         "Ctrl + Right : Next month having a celebration" + Globals.NL +
+                        "Ctrl + Home : First month available in the database having a celebration" + Globals.NL +
+                        "Ctrl + End : Last month available in the databasehaving a celebration" + Globals.NL +
                         "F9 : Preferences" + Globals.NL +
                         "F10 : Log file window" + Globals.NL +
                         "F11 : Usage statistics window" + Globals.NL +
@@ -121,6 +123,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Droite : Mois suivant" + Globals.NL +
                         "Ctrl + Gauche : Mois précédent ayant une célébration" + Globals.NL +
                         "Ctrl + Droite : Mois suivant ayant une célébration" + Globals.NL +
+                        "Ctrl + Début : Premier mois disponible dans la base de données ayant une célébration" + Globals.NL +
+                        "Ctrl + Fin : Dernier mois disponible dans la base de données ayant une célébration" + Globals.NL +
                         "F9 : Préférences" + Globals.NL +
                         "F10 : Fenêtre du fichier log" + Globals.NL +
                         "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +

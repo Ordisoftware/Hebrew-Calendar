@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
+        MainForm.Instance.GoToDate(CurrentDay.Date);
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ListItems.SelectedItems.Count > 0 )
       {
         var row = (Data.DataSet.LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
-        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(row.Date));
+        MainForm.Instance.GoToDate(row.Date);
       }
     }
 

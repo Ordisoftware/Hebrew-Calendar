@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionCancel_Click(object sender, EventArgs e)
     {
       if ( IsGotoRealtime && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
+        MainForm.Instance.GoToDate(CurrentDay.Date);
     }
 
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
         date = SQLiteDate.ToString(MainForm.Instance.DateLast);
-      MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(date));
+      MainForm.Instance.GoToDate(date);
     }
 
   }

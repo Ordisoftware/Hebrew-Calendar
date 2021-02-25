@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -106,16 +107,33 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
         }
       // Visual month navigation
+      void search(bool isFuture, Func<int, bool> check)
+      {
+        var date = SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1);
+        if ( isFuture ) date = date.AddMonths(1);
+        string str = SQLiteDate.ToString(date);
+        var query = from day in DataSet.LunisolarDays
+                    where check(day.Date.CompareTo(str))
+                       && day.TorahEventsAsEnum != TorahEvent.None
+                       && day.TorahEventsAsEnum != TorahEvent.NewYearD1
+                    select day;
+        var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
+        if ( found != null ) GoToDate(found.Date);
+      }
       if ( Settings.CurrentView == ViewMode.Month )
         switch ( keyData )
         {
+          case Keys.Control | Keys.Home:
+            search(true, v => v < 0);
+            break;
+          case Keys.Control | Keys.End:
+            search(false, v => v >= 0);
+            break;
           case Keys.Control | Keys.Left:
-            // TODO previous month having a celebration
-            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(-1));
+            search(false, v => v < 0);
             break;
           case Keys.Control | Keys.Right:
-            // TODO next month having a celebration
-            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
+            search(true, v => v >= 0);
             break;
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));

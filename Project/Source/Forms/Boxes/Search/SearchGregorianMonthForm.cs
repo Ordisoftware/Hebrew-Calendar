@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
-        MainForm.Instance.GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date));
+        MainForm.Instance.GoToDate(CurrentDay.Date);
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
