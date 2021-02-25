@@ -235,22 +235,24 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
                                       ProgressCount,
                                       Program.LoadingFormGenerate);
+      int month = 0;
+      int delta = 0;
+      int indexParashah = -1;
+      var shabatDay = (DayOfWeek)Settings.ShabatDay;
+      bool shabatMutex = false;
+      int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
+      LunisolarDaysRow dayRemap1 = null;
+      LunisolarDaysRow dayRemap2 = null;
+      DateTime date;
       var Chrono = new Stopwatch();
       Chrono.Start();
       try
       {
-        int month = 0;
-        int delta = 0;
-        int indexParashah = -1;
-        var shabatDay = (DayOfWeek)Settings.ShabatDay;
-        bool shabatMutex = false;
-        LunisolarDaysRow dayRemap1 = null;
-        LunisolarDaysRow dayRemap2 = null;
         foreach ( LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
           try
           {
             LoadingForm.Instance.DoProgress();
-            var date = SQLiteDate.ToDateTime(day.Date);
+            date = SQLiteDate.ToDateTime(day.Date);
             if ( day.IsNewMoon == 1 )
               if ( !AnalyzeDay(day, date, ref month) ) break;
             day.LunarMonth = month;
@@ -259,51 +261,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
-            if ( day.TorahEventsAsEnum == TorahEvent.PessahD1 )
-              shabatMutex = true;
-            if ( day.LunarMonth == 7 && day.LunarDay == 22 )
-            {
-              if ( indexParashah > 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
-              {
-                dayRemap2 = day;
-                var query = from row in DataSet.LunisolarDays.Rows.Cast<LunisolarDaysRow>()
-                            where row.Date.CompareTo(dayRemap1.Date) >= 0
-                               && row.Date.CompareTo(dayRemap2.Date) <= 0
-                               && !row.ParashahID.IsNullOrEmpty()
-                            select row;
-                indexParashah = 0;
-                foreach ( var row in query )
-                {
-                  if ( indexParashah >= ParashotTable.DefaultsAsList.Count )
-                    row.ParashahID = string.Empty;
-                  else
-                  {
-                    var parashah = ParashotTable.DefaultsAsList[indexParashah];
-                    row.ParashahID = parashah.ID;
-                    if ( parashah.IsLinkedToNext )
-                    {
-                      indexParashah++;
-                      row.LinkedParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
-                    }
-                    indexParashah++;
-                  }
-                }
-              }
-              indexParashah = 0;
-              dayRemap1 = day;
-            }
-            else
-            if ( date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
-            {
-              if ( !shabatMutex )
-              {
-                day.ParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
-                indexParashah++;
-              }
-            }
-            if ( day.TorahEventsAsEnum == TorahEvent.PessahD7 )
-              shabatMutex = false;
-
+            checkParashah(day);
           }
           catch ( Exception ex )
           {
@@ -317,6 +275,55 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
       }
       return true;
+      //
+      void checkParashah(LunisolarDaysRow day)
+      {
+        if ( day.TorahEventsAsEnum == TorahEvent.PessahD1 )
+          shabatMutex = true;
+        if ( day.LunarMonth == 7 && day.LunarDay == simhatTorah )
+        {
+          remap(day);
+          indexParashah = 0;
+          dayRemap1 = day;
+        }
+        else
+        if ( !shabatMutex && date.DayOfWeek == shabatDay
+          && indexParashah >= 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
+        {
+          day.ParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
+          indexParashah++;
+        }
+        if ( day.TorahEventsAsEnum == TorahEvent.PessahD7 )
+          shabatMutex = false;
+      }
+      //
+      void remap(LunisolarDaysRow day)
+      {
+        if ( indexParashah > 0 && indexParashah < ParashotTable.DefaultsAsList.Count )
+        {
+          dayRemap2 = day;
+          var query = from row in DataSet.LunisolarDays.Rows.Cast<LunisolarDaysRow>()
+                      where row.Date.CompareTo(dayRemap1.Date) >= 0
+                         && row.Date.CompareTo(dayRemap2.Date) <= 0
+                         && !row.ParashahID.IsNullOrEmpty()
+                      select row;
+          indexParashah = 0;
+          foreach ( var row in query )
+            if ( indexParashah >= ParashotTable.DefaultsAsList.Count )
+              row.ParashahID = string.Empty;
+            else
+            {
+              var parashah = ParashotTable.DefaultsAsList[indexParashah];
+              row.ParashahID = parashah.ID;
+              if ( parashah.IsLinkedToNext )
+              {
+                indexParashah++;
+                row.LinkedParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
+              }
+              indexParashah++;
+            }
+        }
+      }
     }
 
     /// <summary>
