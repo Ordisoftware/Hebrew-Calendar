@@ -265,6 +265,7 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
 - Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
+- Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.
 - Some UI/UX improvements.
 - Some file and code refactoring.
 - Add Serilog-sinks-winforms NuGet package.
