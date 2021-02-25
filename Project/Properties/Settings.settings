@@ -521,13 +521,13 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CelebrationsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NewMoonsBoardFormHideHours" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CelebrationsBoardFormHideHours" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="NewMoonsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>

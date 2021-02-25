@@ -547,13 +547,13 @@
     <value>3, 5</value>
   </data>
   <data name="EditUseRealDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 17</value>
+    <value>533, 17</value>
   </data>
   <data name="EditUseRealDays.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="EditUseRealDays.Text" xml:space="preserve">
-    <value>Show days having the real start time of the moonset before the moonrise, else use solar days having the moonrise or the day with no moonrise</value>
+    <value>Show days having the real start time of the moonset before the moonrise, else use days having the moonrise</value>
   </data>
   <data name="&gt;&gt;EditUseRealDays.Name" xml:space="preserve">
     <value>EditUseRealDays</value>

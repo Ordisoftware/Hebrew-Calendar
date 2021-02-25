@@ -34,6 +34,9 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
+      this.LabelEnd = new System.Windows.Forms.Label();
+      this.LabelStart = new System.Windows.Forms.Label();
+      this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditEnglishTitles = new System.Windows.Forms.CheckBox();
       this.EditHideHours = new System.Windows.Forms.CheckBox();
       this.EditUseRealDays = new System.Windows.Forms.CheckBox();
@@ -41,9 +44,6 @@
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.LabelEnd = new System.Windows.Forms.Label();
-      this.LabelStart = new System.Windows.Forms.Label();
-      this.LabelFontSize = new System.Windows.Forms.Label();
       this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
       this.PanelBottom.SuspendLayout();
@@ -111,6 +111,21 @@
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
       // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
+      // 
       // EditEnglishTitles
       // 
       resources.ApplyResources(this.EditEnglishTitles, "EditEnglishTitles");
@@ -134,6 +149,7 @@
       // 
       resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
       this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormUseRealDays;
+      this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseRealDays.Name = "EditUseRealDays";
       this.EditUseRealDays.UseVisualStyleBackColor = true;
@@ -188,21 +204,6 @@
       this.EditFontSize.ReadOnly = true;
       this.EditFontSize.Value = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormFontSize;
       this.EditFontSize.ValueChanged += new System.EventHandler(this.EditFontSize_ValueChanged);
-      // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // SelectYear1
       // 
