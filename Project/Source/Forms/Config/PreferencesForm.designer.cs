@@ -125,6 +125,7 @@
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
       this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditUseSimhatTorahOutside = new System.Windows.Forms.CheckBox();
       this.EditTorahEventsCountAsMoon = new System.Windows.Forms.CheckBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
@@ -1057,6 +1058,7 @@
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsInterval);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
+      this.TabPageGeneration.Controls.Add(this.EditUseSimhatTorahOutside);
       this.TabPageGeneration.Controls.Add(this.EditTorahEventsCountAsMoon);
       this.TabPageGeneration.Controls.Add(this.ActionGetGPS);
       this.TabPageGeneration.Controls.Add(this.SelectAutoGenerateYearsInterval);
@@ -1109,6 +1111,13 @@
             0,
             0});
       this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
+      // 
+      // EditUseSimhatTorahOutside
+      // 
+      resources.ApplyResources(this.EditUseSimhatTorahOutside, "EditUseSimhatTorahOutside");
+      this.EditUseSimhatTorahOutside.Name = "EditUseSimhatTorahOutside";
+      this.EditUseSimhatTorahOutside.UseVisualStyleBackColor = true;
+      this.EditUseSimhatTorahOutside.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
       // 
       // EditTorahEventsCountAsMoon
       // 
@@ -2695,5 +2704,6 @@
     private Core.UndoRedoTextBox EditHebrewWordsPath;
     private System.Windows.Forms.Label LabelChaneLangNotice;
     private System.Windows.Forms.CheckBox EditTrayIconUseSpecialDayIcon;
+    private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
   }
 }
