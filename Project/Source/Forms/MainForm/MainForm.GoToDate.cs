@@ -33,6 +33,12 @@ namespace Ordisoftware.Hebrew.Calendar
       return ParashotTable.GetDefaultByID(row?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
+    internal void GoToDate(string date)
+    {
+      if ( !date.IsNullOrEmpty() )
+        GoToDate(SQLiteDate.ToDateTime(date));
+    }
+
     /// <summary>
     /// Set the data position.
     /// </summary>

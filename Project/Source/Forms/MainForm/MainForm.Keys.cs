@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -110,12 +111,22 @@ namespace Ordisoftware.Hebrew.Calendar
         switch ( keyData )
         {
           case Keys.Control | Keys.Left:
-            // TODO previous month having a celebration
-            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(-1));
+            var date = SQLiteDate.ToString(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1));
+            var row = from day in DataSet.LunisolarDays
+                      where day.Date.CompareTo(date) < 0 && day.TorahEventsAsEnum != TorahEvent.None
+                      select day;
+            var found = row.LastOrDefault();
+            if ( found != null )
+              GoToDate(found.Date);
             break;
           case Keys.Control | Keys.Right:
-            // TODO next month having a celebration
-            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
+            var date2 = SQLiteDate.ToString(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
+            var row2 = from day in DataSet.LunisolarDays
+                      where day.Date.CompareTo(date2) >= 0 && day.TorahEventsAsEnum != TorahEvent.None
+                      select day;
+            var found2 = row2.FirstOrDefault();
+            if ( found2 != null )
+              GoToDate(found2.Date);
             break;
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));

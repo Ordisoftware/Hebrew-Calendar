@@ -152,9 +152,10 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                        AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 400, 700, false, false);
+                                                       true, false, 475, 745, false, false);
         NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
         NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
         SetGlobalHotKey();
         UpdateTitles();
       }
