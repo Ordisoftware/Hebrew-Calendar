@@ -12,8 +12,8 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = Miscellaneous
-Lang/FR = Divers
+Lang/EN = Art and music
+Lang/FR = Art et musique
 
 Name = (FR) Danses et chants d'Israël @ dansesdisrael.fr
 URL = https://dansesdisrael.fr

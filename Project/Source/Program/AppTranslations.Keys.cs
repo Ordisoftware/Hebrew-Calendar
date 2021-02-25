@@ -72,6 +72,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Down (ou PageDown) : Next year" + Globals.NL +
                         "Left : Previous month" + Globals.NL +
                         "Right : Next month" + Globals.NL +
+                        "Ctrl + Left : Previous month having a celebration" + Globals.NL +
+                        "Ctrl + Right : Next month having a celebration" + Globals.NL +
                         "F9 : Preferences" + Globals.NL +
                         "F10 : Log file window" + Globals.NL +
                         "F11 : Usage statistics window" + Globals.NL +
@@ -117,6 +119,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Bas (ou PageSuiv) : Année suivante" + Globals.NL +
                         "Gauche : Mois précédent" + Globals.NL +
                         "Droite : Mois suivant" + Globals.NL +
+                        "Ctrl + Gauche : Mois précédent ayant une célébration" + Globals.NL +
+                        "Ctrl + Droite : Mois suivant ayant une célébration" + Globals.NL +
                         "F9 : Préférences" + Globals.NL +
                         "F10 : Fenêtre du fichier log" + Globals.NL +
                         "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +

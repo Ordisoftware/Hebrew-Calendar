@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoExportSettings()
     {
-      SaveSettingsDialog.FileName = "Settings";
+      SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
       for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
         if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           SaveSettingsDialog.FilterIndex = index + 1;

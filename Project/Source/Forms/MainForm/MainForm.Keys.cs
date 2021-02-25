@@ -109,6 +109,14 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.CurrentView == ViewMode.Month )
         switch ( keyData )
         {
+          case Keys.Control | Keys.Left:
+            // TODO previous month having a celebration
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(-1));
+            break;
+          case Keys.Control | Keys.Right:
+            // TODO next month having a celebration
+            GoToDate(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
+            break;
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));
             return true;

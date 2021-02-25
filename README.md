@@ -64,6 +64,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
+- Added Ctrl + Left/Right shortchut to navigate between months having celebrations.
 - Added new in version in the Information menu.
 - Modification and addition of web links and online providers for the study of words and verses of the Bible.
 - Some improvements in appearance and function.
@@ -134,6 +135,12 @@ This will erase all settings as well as those of old versions, which should reso
 When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
 
 When disabled, top menu painting may cause latency.
+
+#### What are known problems?
+
+The data generated for cities near poles can be inconsistent when using the moon omer due to strange ephemerisis for the years before 1970 and after 2060.
+
+Thus celebration dates may be wrong.
 
 #### What are the times of celebration?
 
@@ -217,6 +224,8 @@ And so on from week to week to go through the Torah in a year to build a better 
 | Down (or PageDown) | Next year |
 | Left | Previous month |
 | Right | Next month |
+| Ctrl + Left | Previous month having a celebration |
+| Ctrl + Right | Next month having a celebration |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
@@ -256,9 +265,10 @@ And so on from week to week to go through the Torah in a year to build a better 
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
+- Add Ctrl + Left/Right shortchut to navigate between months having celebrations.
+- Change some keyboard shortcuts.
 - Change the minimum year to generate to two years before instead of one in order to have consistency with the parashot.
 - Change exported text files to be in UTF-8 encoding.
-- Change some keyboard shortcuts.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.

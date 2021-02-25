@@ -193,14 +193,16 @@ namespace Ordisoftware.Core
       else
       if ( e.KeyChar == '\u0016' ) // Ctrl+V
         ActionPaste_Click(sender, null);
-      else
+      /*else
       if ( e.KeyChar == '\b' && SelectionStart > 0 ) // Back Space
       {
         var pos = SelectionStart;
-        Text = Text.Remove(SelectionStart - 1, 1);
+        //Text = Text.Remove(SelectionStart - 1, 1);
         SelectionStart = pos - 1;
+        SelectionLength = 1;
+        ActionDelete_Click(this, EventArgs.Empty);
         //if ( Multiline ) ScrollToCaret();
-      }
+      }*/
       else
         return;
       e.Handled = true;
