@@ -47,6 +47,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public readonly int PessahLenght = 7;
 
+    static public readonly int PessahEndDay = PessahStartDay + PessahEndDay - 1;
+
     /// <summary>
     /// The chavouot length.
     /// </summary>
@@ -71,6 +73,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// The soukot length.
     /// </summary>
     static public readonly int SoukotLenght = 7 + 1;
+
+    static public readonly int SoukotEndDay = SoukotStartDay + SoukotEndDay - 1;
 
     /// <summary>
     /// The 'hanouka month.

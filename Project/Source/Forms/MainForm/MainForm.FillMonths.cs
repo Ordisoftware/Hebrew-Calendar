@@ -198,7 +198,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
               add(Settings.CalendarColorTorahEvent, row.WeekLongCelebrationSubDay);
             if ( Settings.CalendarShowParashah )
-              if ( !string.IsNullOrEmpty(row.Parashah) )
+              if ( !string.IsNullOrEmpty(row.ParashahID) )
                 add(Settings.CalendarColorParashah, row.ParashahText);
             if ( row.SeasonChange != 0 )
               add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));

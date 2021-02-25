@@ -216,8 +216,8 @@ namespace Ordisoftware.Hebrew.Calendar
         day.SeasonChangeAsEnum = data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
-        day.Parashah = string.Empty;
-        day.LinkedParashah = string.Empty;
+        day.ParashahID = string.Empty;
+        day.LinkedParashahID = string.Empty;
       }
       catch ( Exception ex )
       {
@@ -271,21 +271,21 @@ namespace Ordisoftware.Hebrew.Calendar
                 var query = from row in DataSet.LunisolarDays.Rows.Cast<LunisolarDaysRow>()
                             where row.Date.CompareTo(dayRemap1.Date) >= 0
                                && row.Date.CompareTo(dayRemap2.Date) <= 0
-                               && !row.Parashah.IsNullOrEmpty()
+                               && !row.ParashahID.IsNullOrEmpty()
                             select row;
                 indexParashah = 0;
                 foreach ( var row in query )
                 {
                   if ( indexParashah >= ParashotTable.DefaultsAsList.Count )
-                    row.Parashah = string.Empty;
+                    row.ParashahID = string.Empty;
                   else
                   {
                     var parashah = ParashotTable.DefaultsAsList[indexParashah];
-                    row.Parashah = parashah.ID;
+                    row.ParashahID = parashah.ID;
                     if ( parashah.IsLinkedToNext )
                     {
                       indexParashah++;
-                      row.LinkedParashah = ParashotTable.DefaultsAsList[indexParashah].ID;
+                      row.LinkedParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
                     }
                     indexParashah++;
                   }
@@ -299,7 +299,7 @@ namespace Ordisoftware.Hebrew.Calendar
             {
               if ( !shabatMutex )
               {
-                day.Parashah = ParashotTable.DefaultsAsList[indexParashah].ID;
+                day.ParashahID = ParashotTable.DefaultsAsList[indexParashah].ID;
                 indexParashah++;
               }
             }

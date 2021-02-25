@@ -24,33 +24,6 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
-      public LunisolarDaysRow GetParashahLectureDay()
-      {
-        LunisolarDaysRow result = null;
-        for ( int index = tableLunisolarDays.Rows.IndexOf(this); index < tableLunisolarDays.Rows.Count; index++ )
-        {
-          var row = (LunisolarDaysRow)tableLunisolarDays.Rows[index];
-          if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-          {
-            result = row;
-            break;
-          }
-        }
-        return result;
-      }
-
-      public string ParashahText
-      {
-        get
-        {
-          if ( Parashah.IsNullOrEmpty() ) return string.Empty;
-          string str = ParashotTable.GetParashah(Parashah).Name;
-          if ( !LinkedParashah.IsNullOrEmpty() )
-            str += " - " + ParashotTable.GetParashah(LinkedParashah).Name;
-          return str;
-        }
-      }
-
       public MoonRiseOccuring MoonriseOccuringAsEnum
       {
         get { return (MoonRiseOccuring)MoonriseType; }
@@ -73,6 +46,36 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       {
         get { return (TorahEvent)TorahEvents; }
         set { TorahEvents = (int)value; }
+      }
+
+      public string ParashahText
+      {
+        get
+        {
+          if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
+          string result = ParashotTable.GetDefaultByID(ParashahID).Name;
+          if ( !LinkedParashahID.IsNullOrEmpty() )
+            result += " - " + ParashotTable.GetDefaultByID(LinkedParashahID).Name;
+          return result;
+        }
+      }
+
+      public LunisolarDaysRow GetParashahReadingDay()
+      {
+        LunisolarDaysRow result = null;
+        var shabatDay = (DayOfWeek)Program.Settings.ShabatDay;
+        int indexStart = tableLunisolarDays.Rows.IndexOf(this);
+        int indexEnd = Math.Min(indexStart + 14, tableLunisolarDays.Rows.Count);
+        for ( int index = indexStart; index < indexEnd; index++ )
+        {
+          var row = (LunisolarDaysRow)tableLunisolarDays.Rows[index];
+          if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == shabatDay )
+          {
+            result = row;
+            break;
+          }
+        }
+        return result;
       }
 
       public string WeekLongCelebrationSubDay

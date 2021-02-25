@@ -67,6 +67,7 @@ namespace Ordisoftware.Hebrew
           connection.CheckTable(TableName,
                                 $@"CREATE TABLE {TableName}
                                   (
+                                    {nameof(Parashah.ID)} TEXT NOT NULL,
                                     {nameof(Parashah.Book)} INTEGER NOT NULL,
                                     {nameof(Parashah.Number)} INTEGER NOT NULL,
                                     {nameof(Parashah.Name)} TEXT DEFAULT '' NOT NULL,
@@ -78,10 +79,15 @@ namespace Ordisoftware.Hebrew
                                     {nameof(Parashah.Translation)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.Lettriq)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.Memo)} TEXT DEFAULT '' NOT NULL,
-                                    PRIMARY KEY ({nameof(Parashah.Book)}, {nameof(Parashah.Number)})
+                                    PRIMARY KEY ({nameof(Parashah.ID)})
                                   )");
         }
       });
+    }
+
+    static public bool IsReadOnly()
+    {
+      return ProcessLocksTable.GetCount(TableName) > 1;
     }
 
     static public void Take()
@@ -98,11 +104,6 @@ namespace Ordisoftware.Hebrew
         adapter.Fill(DataTable);
       }
       CreateDataIfNotExists();
-    }
-
-    static public bool IsReadOnly()
-    {
-      return ProcessLocksTable.GetCount(TableName) > 1;
     }
 
     static public void Release()
@@ -153,7 +154,8 @@ namespace Ordisoftware.Hebrew
           foreach ( Parashah parashah in query.ToList() )
           {
             var row = DataTable.NewRow();
-            row[nameof(Parashah.Book)] = parashah.Book + 1;
+            row[nameof(Parashah.ID)] = parashah.ID;
+            row[nameof(Parashah.Book)] = (int)parashah.Book + 1;
             row[nameof(Parashah.Number)] = parashah.Number;
             row[nameof(Parashah.Name)] = parashah.Name;
             row[nameof(Parashah.Hebrew)] = parashah.Hebrew;

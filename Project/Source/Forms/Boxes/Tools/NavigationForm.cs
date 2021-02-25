@@ -81,15 +81,15 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelParashahValue.Tag = null;
           bool isPessah = false;
           if ( row.LunarMonth == TorahCelebrations.PessahMonth )
-            isPessah = row.LunarDay >= TorahCelebrations.PessahStartDay
-                    && row.LunarDay <= TorahCelebrations.PessahStartDay + TorahCelebrations.PessahLenght - 1;
+            isPessah = row.LunarDay >= TorahCelebrations.PessahStartDay 
+                    && row.LunarDay <= TorahCelebrations.PessahEndDay;
           if ( !isPessah )
           {
-            var rowParashah = row.GetParashahLectureDay();
+            var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
               LabelParashahValue.Text = rowParashah.ParashahText;
-              LabelParashahValue.Tag = ParashotTable.GetParashah(rowParashah.Parashah);
+              LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
             }
             else
             {
