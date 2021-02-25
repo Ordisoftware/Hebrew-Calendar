@@ -63,7 +63,9 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       public LunisolarDaysRow GetParashahReadingDay()
       {
         LunisolarDaysRow result = null;
-        var shabatDay = (DayOfWeek)Program.Settings.ShabatDay;
+        var shabatDay = Program.Settings.WeekParashahIsOnSaturday 
+                        ? DayOfWeek.Saturday 
+                        : (DayOfWeek)Program.Settings.ShabatDay;
         int indexStart = tableLunisolarDays.Rows.IndexOf(this);
         int indexEnd = Math.Min(indexStart + 14, tableLunisolarDays.Rows.Count);
         for ( int index = indexStart; index < indexEnd; index++ )
