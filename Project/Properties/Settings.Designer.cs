@@ -2384,13 +2384,25 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool UseSimhatTorahOutside {
             get {
                 return ((bool)(this["UseSimhatTorahOutside"]));
             }
             set {
                 this["UseSimhatTorahOutside"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WeekParashahIsOnSaturday {
+            get {
+                return ((bool)(this["WeekParashahIsOnSaturday"]));
+            }
+            set {
+                this["WeekParashahIsOnSaturday"] = value;
             }
         }
     }

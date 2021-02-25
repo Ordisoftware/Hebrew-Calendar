@@ -125,6 +125,7 @@
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
       this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditWeekParashahIsOnSaturday = new System.Windows.Forms.CheckBox();
       this.EditUseSimhatTorahOutside = new System.Windows.Forms.CheckBox();
       this.EditTorahEventsCountAsMoon = new System.Windows.Forms.CheckBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
@@ -1058,6 +1059,7 @@
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsInterval);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
+      this.TabPageGeneration.Controls.Add(this.EditWeekParashahIsOnSaturday);
       this.TabPageGeneration.Controls.Add(this.EditUseSimhatTorahOutside);
       this.TabPageGeneration.Controls.Add(this.EditTorahEventsCountAsMoon);
       this.TabPageGeneration.Controls.Add(this.ActionGetGPS);
@@ -1111,6 +1113,15 @@
             0,
             0});
       this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
+      // 
+      // EditWeekParashahIsOnSaturday
+      // 
+      resources.ApplyResources(this.EditWeekParashahIsOnSaturday, "EditWeekParashahIsOnSaturday");
+      this.EditWeekParashahIsOnSaturday.Checked = true;
+      this.EditWeekParashahIsOnSaturday.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditWeekParashahIsOnSaturday.Name = "EditWeekParashahIsOnSaturday";
+      this.EditWeekParashahIsOnSaturday.UseVisualStyleBackColor = true;
+      this.EditWeekParashahIsOnSaturday.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
       // 
       // EditUseSimhatTorahOutside
       // 
@@ -2705,5 +2716,6 @@
     private System.Windows.Forms.Label LabelChaneLangNotice;
     private System.Windows.Forms.CheckBox EditTrayIconUseSpecialDayIcon;
     private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
+    private System.Windows.Forms.CheckBox EditWeekParashahIsOnSaturday;
   }
 }
