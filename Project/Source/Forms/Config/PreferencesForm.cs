@@ -39,6 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string OldLongitude { get; private set; }
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
+    public bool OldUseSimhat { get; private set; }
     public bool OldShowParashah { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 

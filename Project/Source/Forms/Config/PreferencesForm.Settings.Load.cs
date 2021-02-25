@@ -80,6 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTextReportBackColor.BackColor = Settings.TextBackground; });
       SystemManager.TryCatch(() => { EditTextReportForeColor.BackColor = Settings.TextColor; });
       SystemManager.TryCatch(() => { EditTorahEventsCountAsMoon.Checked = Settings.TorahEventsCountAsMoon; });
+      SystemManager.TryCatch(() => { EditUseSimhatTorahOutside.Checked = Settings.UseSimhatTorahOutside; });
       SystemManager.TryCatch(() => { EditUseColors.Checked = Settings.UseColors; });
       SystemManager.TryCatch(() => { EditMonthViewFontSize.Value = Settings.MonthViewFontSize; });
       SystemManager.TryCatch(() => { OldLatitude = Settings.GPSLatitude; });
@@ -87,6 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { OldShabatDay = Settings.ShabatDay; });
       SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
       SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
+      SystemManager.TryCatch(() => { OldUseSimhat = Settings.UseSimhatTorahOutside; });
       SystemManager.TryCatch(() => { OldShowParashah = Settings.CalendarShowParashah; });
       SystemManager.TryCatch(() => { EditMoonDayTextFormat.Text = Settings.MoonDayTextFormat; });
       SystemManager.TryCatch(() => { EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled; });

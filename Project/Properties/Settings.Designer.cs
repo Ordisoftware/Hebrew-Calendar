@@ -2381,5 +2381,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["FirstLaunchV7_0"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseSimhatTorahOutside {
+            get {
+                return ((bool)(this["UseSimhatTorahOutside"]));
+            }
+            set {
+                this["UseSimhatTorahOutside"] = value;
+            }
+        }
     }
 }

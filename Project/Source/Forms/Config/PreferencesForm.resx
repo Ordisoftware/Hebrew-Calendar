@@ -2573,6 +2573,39 @@
   <data name="&gt;&gt;EditMaxYearsInterval.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="EditUseSimhatTorahOutside.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 20</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
+    <value>Use Sim'hat Torah outside of Israël</value>
+  </data>
+  <data name="&gt;&gt;EditUseSimhatTorahOutside.Name" xml:space="preserve">
+    <value>EditUseSimhatTorahOutside</value>
+  </data>
+  <data name="&gt;&gt;EditUseSimhatTorahOutside.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseSimhatTorahOutside.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditUseSimhatTorahOutside.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="EditTorahEventsCountAsMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2604,7 +2637,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditTorahEventsCountAsMoon.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionGetGPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2637,7 +2670,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionGetGPS.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2679,7 +2712,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelGPSLatitude.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2715,7 +2748,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLatitude.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LabelTimeZone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2751,7 +2784,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelTimeZone.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditBigCalendarWarning.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2787,7 +2820,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditBigCalendarWarning.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="LabelGPSLongitude.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2823,7 +2856,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2859,7 +2892,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="ActionAutoGenerateHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2902,7 +2935,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2926,7 +2959,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2956,7 +2989,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2980,7 +3013,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3007,7 +3040,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="TabPageGeneration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -7459,9 +7492,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

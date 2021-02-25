@@ -259,8 +259,6 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
-
-            // TODO option to set in israel or out of israel => 23
             if ( day.TorahEventsAsEnum == TorahEvent.PessahD1 )
               shabatMutex = true;
             if ( day.LunarMonth == 7 && day.LunarDay == 22 )
