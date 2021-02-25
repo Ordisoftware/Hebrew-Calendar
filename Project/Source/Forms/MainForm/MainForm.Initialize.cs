@@ -127,6 +127,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.TryCatch(Settings.Save);
         ChronoStart.Stop();
         Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
+        ChronoStart.Start();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;
         TimerMidnight.Start();
@@ -147,6 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
         NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
         SetGlobalHotKey();
         UpdateTitles();
+        ChronoStart.Stop();
       }
       finally
       {
