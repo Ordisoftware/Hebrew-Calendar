@@ -37,6 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "The web update check is not performed on a day off while the application is running." + Globals.NL2 +
                           "Boards are exportable as TXT files in addition to CSV and JSON." + Globals.NL2 +
                           "Fixed the celebrations board showing moon times in the case of sun omer." + Globals.NL2 +
+                          "Added Ctrl + Left/Right shortchut to navigate between months having celebrations." + Globals.NL2 +
                           "Added new in version in the Information menu." + Globals.NL2 +
                           "Modification and addition of web links and online providers for the study of words and verses of the Bible." + Globals.NL2 +
                           "Some improvements in appearance and function.",
@@ -48,6 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "La vérification de mise à jour en ligne n'est pas effectuée durant un jour de repos pendant l'exécution de l'application." + Globals.NL2 +
                           "Les tableaux sont exportables en fichiers TXT en plus de CSV et JSON." + Globals.NL2 +
                           "Correction du tableau des célébrations qui indiquait les heures de la lune dans le cas du omer du soleil." + Globals.NL2 +
+                          "Ajout des raccourcis Ctrl + Gauche/Droite pour naviguer entre les mois ayant des celebrations." + Globals.NL2 +
                           "Ajout des nouveautés de version dans le menu Information." + Globals.NL2 +
                           "Modification et ajouts de liens web et de fournisseurs en ligne pour l'étude des mots et des versets de la Bible." + Globals.NL2 +
                           "Quelques améliorations d'aspect et de fonctionnement."
