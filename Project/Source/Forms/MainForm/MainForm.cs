@@ -70,6 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private MainForm()
     {
+      ChronoStart.Start();
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;

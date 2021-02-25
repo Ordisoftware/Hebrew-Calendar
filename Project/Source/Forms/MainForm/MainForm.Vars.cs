@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DateTime? LastVacuum = null;
 
-    private Stopwatch ChronoStart = new Stopwatch();
+    static internal Stopwatch ChronoStart = new Stopwatch();
 
     private bool DbUpgradedForParashotSupport;
 

@@ -15,6 +15,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -80,11 +81,23 @@ namespace Ordisoftware.Hebrew.Calendar
     private void UpdateTitles()
     {
       Text = Globals.AssemblyTitle;
-      if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
-        LabelSubTitleGPS.Text = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
-      LabelSubTitleOmer.Text = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-      var parashah = GetWeeklyParashah();
-      if ( parashah != null ) Text += " - Parashah " + parashah.ToStringLinked().ToUpper();
+      new Task(() =>
+      {
+        string str;
+        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
+        {
+          str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+          this.SyncUI(() => LabelSubTitleGPS.Text = str);
+        }
+        str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+        this.SyncUI(() => LabelSubTitleOmer.Text = str);
+        var parashah = GetWeeklyParashah();
+        if ( parashah != null )
+        {
+          str = Text + " - Parashah " + parashah.ToStringLinked().ToUpper();
+          this.SyncUI(() => Text = str);
+        }
+      }).Start();
     }
 
     /// <summary>
