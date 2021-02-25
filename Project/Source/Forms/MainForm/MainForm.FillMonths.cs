@@ -185,11 +185,17 @@ namespace Ordisoftware.Hebrew.Calendar
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
               if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+              else
+              if ( !Program.Settings.TorahEventsCountAsMoon )
+                add(colorMoon, strMonthDay);
             }
             else
             {
               if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+              else
+              if ( !Program.Settings.TorahEventsCountAsMoon )
+                add(colorMoon, strMonthDay);
               if ( row.Moonset != string.Empty )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }

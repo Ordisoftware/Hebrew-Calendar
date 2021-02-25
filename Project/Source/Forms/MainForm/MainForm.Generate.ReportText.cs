@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
             if ( day.IsNewMoon == 1 ) content.Append(headerSep + Globals.NL);
             string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-            string strDay = ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay
+            string strDay = ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay && Program.Settings.TorahEventsCountAsMoon
                             ? "  "
                             : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon == 1
                                                                                 ? MoonNewText

@@ -82,24 +82,30 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       {
         get
         {
-          if ( MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
-            if ( LunarMonth == TorahCelebrations.PessahMonth )
-            {
-              int day = LunarDay >= TorahCelebrations.PessahStartDay
-                        ? LunarDay - TorahCelebrations.PessahStartDay + 1
-                        : -1;
-              if ( day > 0 && day < TorahCelebrations.PessahLenght )
-                return AppTranslations.PessahDay.GetLang(day);
-            }
-            else
-            if ( LunarMonth == TorahCelebrations.YomsMonth )
-            {
-              int day = LunarDay >= TorahCelebrations.SoukotStartDay
-                        ? LunarDay - TorahCelebrations.SoukotStartDay + 1
-                        : -1;
-              if ( day > 0 && day < TorahCelebrations.SoukotLenght )
-                return AppTranslations.SoukotDay.GetLang(day);
-            }
+          if ( Program.Settings.TorahEventsCountAsMoon )
+          {
+            if ( MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
+              if ( LunarMonth == TorahCelebrations.PessahMonth )
+              {
+                int day = LunarDay >= TorahCelebrations.PessahStartDay
+                          ? LunarDay - TorahCelebrations.PessahStartDay + 1
+                          : -1;
+                if ( day > 0 && day < TorahCelebrations.PessahLenght )
+                  return AppTranslations.PessahDay.GetLang(day);
+              }
+              else
+              if ( LunarMonth == TorahCelebrations.YomsMonth )
+              {
+                int day = LunarDay >= TorahCelebrations.SoukotStartDay
+                          ? LunarDay - TorahCelebrations.SoukotStartDay + 1
+                          : -1;
+                if ( day > 0 && day < TorahCelebrations.SoukotLenght )
+                  return AppTranslations.SoukotDay.GetLang(day);
+              }
+          }
+          else
+          {
+          }
           return string.Empty;
         }
       }
