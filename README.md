@@ -223,6 +223,8 @@ And so on from week to week to go through the Torah in a year to build a better 
 | Down (or PageDown) | Next year |
 | Left | Previous month |
 | Right | Next month |
+| Ctrl + Left | Previous month having a celebration |
+| Ctrl + Right | Next month having a celebration |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
