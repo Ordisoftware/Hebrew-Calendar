@@ -2594,6 +2594,9 @@
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Use Sim'hat Torah outside of Israël</value>
   </data>
+  <data name="EditUseSimhatTorahOutside.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;EditUseSimhatTorahOutside.Name" xml:space="preserve">
     <value>EditUseSimhatTorahOutside</value>
   </data>
