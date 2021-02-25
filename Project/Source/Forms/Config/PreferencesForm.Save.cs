@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class PreferencesForm
   {
 
-    private void UpdateSettings()
+    private void SaveSettings()
     {
       Settings.TrayIconUseSpecialDayIcon = EditTrayIconUseSpecialDayIcon.Checked;
       Settings.MonthViewNoDaysBackColor = EditCalendarColorNoDay.BackColor;

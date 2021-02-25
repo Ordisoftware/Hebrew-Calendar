@@ -19,7 +19,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide localization helper.
+  /// Localization strings.
   /// </summary>
   static public partial class HebrewTranslations
   {
@@ -90,34 +90,11 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Configurer les fournisseurs"
       };
 
-    static public readonly TranslationsDictionary NoticeParashahTitle
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Parashah notice",
-        [Language.FR] = "Notice de la Parashah"
-      };
-
-    static public readonly TranslationsDictionary NoticeParashah
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day." + Globals.NL2 +
-                        "It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat." + Globals.NL2 +
-                        "The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat." + Globals.NL2 +
-                        "And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot." + Globals.NL2 +
-                        "The generation of Parashot relating to Shabatot is not guaranteed to be scrupulous especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.",
-
-        [Language.FR] = "L'étude de la Parashah de la semaine débute à Sim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Israël, ou le 23 en Mitsraïm et dans le désert, soit le dernier jour de Soukot, ou le lendemain." + Globals.NL2 +
-                        "Elle se termine par la lecture complète lors du Shabat, ou le Shabat suivant si Sim'hat Torah a lieu un Shabat." + Globals.NL2 +
-                        "Le lendemain du Shabat on passe à la Parashah suivante qu'on étudie durant la semaine en lisant des commentaires, en écoutant des conférences, en s'informant sur les sciences, et en examinant les lettres, les mots et les versets, pour la lire en intégralité lors du Shabat." + Globals.NL2 +
-                        "Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communauté, pour son pays, pour les Nations, et pour l'espèce, grâce à Pessa'h, Shavou'ot, Terou'ah, Kipourim, et Soukot." + Globals.NL2 +
-                        "La génération des Parashot relatives aux Shabatot n'est pas garantie pour être scrupuleuse d'autant que l'application génère des dates, quoi que basé sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le shabat personnel."
-      };
-
       static public readonly TranslationsDictionary NoticeOnlineWordProvider
       = new TranslationsDictionary
       {
-        { Language.EN, "Use the %WORD% tag to replace the value." },
-        { Language.FR, "Utiliser le tag %WORD% pour remplacer la valeur." },
+        { Language.EN, "Use the %WORD% tag to be replaced by the unicode value." },
+        { Language.FR, "Utiliser le tag %WORD% pour le remplacer la valeur unicode." },
       };
 
     static public readonly TranslationsDictionary NoticeOnlineBibleProvider

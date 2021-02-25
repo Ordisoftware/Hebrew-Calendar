@@ -54,6 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CheckUpdateLastDone = lastupdate;
       Settings.VacuumLastDone = lastvacuum;
       Settings.DateBookmarksCount = bookmarksCount;
+      // TODO refactor
       Settings.UpgradeResetRequiredV3_0 = false;
       Settings.UpgradeResetRequiredV3_6 = false;
       Settings.UpgradeResetRequiredV4_1 = false;
@@ -61,6 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FirstLaunchV4 = false;
       Settings.FirstLaunchV7_0 = false;
       Settings.FirstLaunch = false;
+      // TODO refactor
       Settings.GPSCountry = country;
       Settings.GPSCity = city;
       Settings.GPSLatitude = lat;
@@ -86,7 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SaveSettingsDialog.FilterIndex = index + 1;
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       TabControl.SelectedIndex = 0;
-      UpdateSettings();
+      SaveSettings();
       Settings.Store();
       var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
       config.SaveAs(SaveSettingsDialog.FileName);
@@ -116,13 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.BenchmarkLoadData = loadtime;
         Settings.Save();
         Settings.Retrieve();
-        Settings.UpgradeResetRequiredV3_0 = false;
-        Settings.UpgradeResetRequiredV3_6 = false;
-        Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.UpgradeResetRequiredV5_10 = false;
-        Settings.FirstLaunchV4 = false;
-        Settings.FirstLaunchV7_0 = false;
-        Settings.FirstLaunch = false;
+        Settings.SetFirstAndUpgradeFlagsOff();
         DoReset = true;
         Reseted = true;
         Close();

@@ -559,13 +559,10 @@
     <Compile Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.Designer.cs">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.FormClosing.cs">
+    <Compile Include="Source\Forms\Config\PreferencesForm.Save.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Config\PreferencesForm.Settings.Load.cs">
+    <Compile Include="Source\Forms\Config\PreferencesForm.Load.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">

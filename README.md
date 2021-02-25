@@ -174,7 +174,7 @@ If you prefer to use the traditional group Shabat, select for example Saturday f
 
 #### What are Parashot?
 
-The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
+The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel  (the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil), or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
 
 It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat.
 

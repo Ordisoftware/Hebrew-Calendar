@@ -116,6 +116,13 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
       };
 
+    static public readonly TranslationsDictionary AskToUseLastDayOfSukotForSimhatTorah
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Do you want to use the last day of Sukot for Simhat Torah, otherwise outside?",
+        [Language.FR] = "Voulez-vous utiliser le dernier jour de Soukot pour Sim'hat Torah, sinon en dehors ?"
+      };
+
     static public readonly TranslationsDictionary DateNotFound
       = new TranslationsDictionary
       {

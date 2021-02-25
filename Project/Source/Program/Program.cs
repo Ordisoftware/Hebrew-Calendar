@@ -36,6 +36,8 @@ namespace Ordisoftware.Hebrew.Calendar
     [STAThread]
     static void Main(string[] args)
     {
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
@@ -43,8 +45,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CheckUpgradeRequired(ref upgrade);
       Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
       DebugManager.Enabled = Settings.DebuggerEnabled;
@@ -96,12 +96,9 @@ namespace Ordisoftware.Hebrew.Calendar
           DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
         Settings.Reset();
         Settings.LanguageSelected = Languages.Current;
-        Settings.UpgradeResetRequiredV3_0 = false;
-        Settings.UpgradeResetRequiredV3_6 = false;
-        Settings.UpgradeResetRequiredV4_1 = false;
-        Settings.UpgradeResetRequiredV5_10 = false;
+        Settings.SetUpgradeFlagsOff();
       }
-      if ( Settings.FirstLaunchV4 )
+      if ( Settings.FirstLaunchV4 || Settings.FirstLaunchV7_0 )
       {
         Settings.FirstLaunchV4 = false;
         Settings.FirstLaunch = true;

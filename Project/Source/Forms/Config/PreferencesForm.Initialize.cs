@@ -14,11 +14,12 @@
 /// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
+using System.Xml;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 using EnumsNET;
 using MoreLinq;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -70,6 +71,28 @@ namespace Ordisoftware.Hebrew.Calendar
       ActiveControl = ActionClose;
       ActionResetSettings.TabStop = false;
       IsReady = true;
+    }
+
+    /// <summary>
+    /// Do form closing.
+    /// </summary>
+    private void DoFormClosing(object sender, FormClosingEventArgs e)
+    {
+      if ( DoReset ) return;
+      try
+      {
+        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
+        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
+      }
+      catch
+      {
+        DisplayManager.ShowError("Invalid GPS coordonates.");
+        e.Cancel = true;
+        return;
+      }
+      SaveSettings();
+      Settings.Save();
+      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
     /// <summary>
@@ -199,7 +222,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void CheckHotKeyCombination(Action action)
     {
-      var temp = ActiveControl;
+      var tempActiveControl = ActiveControl;
+      var tempIsReady = IsReady;
       PanelHotKey.Enabled = false;
       try
       {
@@ -210,7 +234,7 @@ namespace Ordisoftware.Hebrew.Calendar
         IsReady = false;
         EditGlobalHotKeyPopupMainFormEnabled.Checked = InitialHotKeyEnabled;
         EditGlobalHotKeyPopupMainFormEnabled.Enabled = true;
-        IsReady = true;
+        IsReady = tempIsReady;
       }
       catch ( Exception ex )
       {
@@ -218,12 +242,12 @@ namespace Ordisoftware.Hebrew.Calendar
         IsReady = false;
         EditGlobalHotKeyPopupMainFormEnabled.Checked = false;
         EditGlobalHotKeyPopupMainFormEnabled.Enabled = false;
-        IsReady = true;
+        IsReady = tempIsReady;
       }
       finally
       {
         PanelHotKey.Enabled = true;
-        ActiveControl = temp;
+        ActiveControl = tempActiveControl;
       }
     }
 
