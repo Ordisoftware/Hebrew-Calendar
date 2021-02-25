@@ -135,6 +135,12 @@ When enabled, this will speed up rendering of the main form when it is displayed
 
 When disabled, top menu painting may cause latency.
 
+#### What are known problems?
+
+The data generated for cities near poles can be inconsistent when using the moon omer due to strange ephemerisis for the years before 1970 and after 2060.
+
+Thus celebration dates may be wrong.
+
 #### What are the times of celebration?
 
 The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
