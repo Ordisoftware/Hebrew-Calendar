@@ -115,10 +115,10 @@ namespace Ordisoftware.Hebrew.Calendar
         var query = from day in DataSet.LunisolarDays
                     where check(day.Date.CompareTo(str))
                        && day.TorahEventsAsEnum != TorahEvent.None
-                        && day.TorahEventsAsEnum != TorahEvent.NewYearD1
+                       && day.TorahEventsAsEnum != TorahEvent.NewYearD1
                     select day;
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
-      if ( found != null ) GoToDate(found.Date);
+        if ( found != null ) GoToDate(found.Date);
       }
       if ( Settings.CurrentView == ViewMode.Month )
         switch ( keyData )
@@ -134,7 +134,7 @@ namespace Ordisoftware.Hebrew.Calendar
             break;
           case Keys.Control | Keys.Right:
             search(true, v => v >= 0);
-            break;       
+            break;
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));
             return true;
