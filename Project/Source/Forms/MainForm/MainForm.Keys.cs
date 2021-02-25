@@ -107,27 +107,34 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
         }
       // Visual month navigation
+      void search(bool isFuture, Func<int, bool> check)
+      {
+        var date = SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1);
+        if ( isFuture ) date = date.AddMonths(1);
+        string str = SQLiteDate.ToString(date);
+        var query = from day in DataSet.LunisolarDays
+                    where check(day.Date.CompareTo(str))
+                       && day.TorahEventsAsEnum != TorahEvent.None
+                        && day.TorahEventsAsEnum != TorahEvent.NewYearD1
+                    select day;
+        var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
+      if ( found != null ) GoToDate(found.Date);
+      }
       if ( Settings.CurrentView == ViewMode.Month )
         switch ( keyData )
         {
+          case Keys.Control | Keys.Home:
+            search(true, v => v < 0);
+            break;
+          case Keys.Control | Keys.End:
+            search(false, v => v >= 0);
+            break;
           case Keys.Control | Keys.Left:
-            var date = SQLiteDate.ToString(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1));
-            var row = from day in DataSet.LunisolarDays
-                      where day.Date.CompareTo(date) < 0 && day.TorahEventsAsEnum != TorahEvent.None
-                      select day;
-            var found = row.LastOrDefault();
-            if ( found != null )
-              GoToDate(found.Date);
+            search(false, v => v < 0);
             break;
           case Keys.Control | Keys.Right:
-            var date2 = SQLiteDate.ToString(SQLiteDate.ToDateTime(CurrentDay.Date).Change(day: 1).AddMonths(1));
-            var row2 = from day in DataSet.LunisolarDays
-                      where day.Date.CompareTo(date2) >= 0 && day.TorahEventsAsEnum != TorahEvent.None
-                      select day;
-            var found2 = row2.FirstOrDefault();
-            if ( found2 != null )
-              GoToDate(found2.Date);
-            break;
+            search(true, v => v >= 0);
+            break;       
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));
             return true;
