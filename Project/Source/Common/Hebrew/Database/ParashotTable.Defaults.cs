@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew
   static public partial class ParashotTable
   {
 
-    static public Parashah GetParashah(string id)
+    static public Parashah GetDefaultByID(string id)
     {
       return DefaultsAsList.FirstOrDefault(p => p.ID == id);
     }

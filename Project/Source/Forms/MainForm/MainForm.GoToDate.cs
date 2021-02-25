@@ -25,6 +25,15 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool GoToDateMutex;
 
     /// <summary>
+    /// Return the weekly parashah from today.
+    /// </summary>
+    private Parashah GetWeeklyParashah()
+    {
+      var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
+      return ParashotTable.GetDefaultByID(row?.GetParashahReadingDay()?.ParashahID) ?? null;
+    }
+
+    /// <summary>
     /// Set the data position.
     /// </summary>
     /// <param name="date">The date.</param>

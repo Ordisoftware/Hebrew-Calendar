@@ -73,9 +73,9 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       InitializeMenu();
       Icon = Globals.MainForm.Icon;
-      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       ParashotTable.Take();
       BindingSource.DataSource = ParashotTable.DataTable;
+      ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       Timer_Tick(null, null);
       ActiveControl = DataGridView;
       UpdateStats();
@@ -102,9 +102,7 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( DataGridViewRow row in DataGridView.Rows )
       {
         var datarowview = (DataRowView)row.DataBoundItem;
-        string reference = $"{(int)datarowview[nameof(Parashah.Book)]}." +
-                           $"{(string)datarowview[nameof(Parashah.VerseBegin)]}";
-        if ( reference == parashah.ReferenceBegin )
+        if ( (string)datarowview[nameof(Parashah.ID)] == parashah.ID )
         {
           DataGridView.CurrentCell = row.Cells[0];
           break;

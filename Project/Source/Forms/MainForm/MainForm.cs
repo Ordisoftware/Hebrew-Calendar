@@ -658,7 +658,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(GetTodayParashah());
+      ParashotForm.Run(GetWeeklyParashah());
     }
 
     /// <summary>
