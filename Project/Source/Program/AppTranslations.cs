@@ -42,13 +42,13 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [true] = new TranslationsDictionary
         {
-          [Language.EN] = "MOON OMER",
-          [Language.FR] = "OMER DE LA LUNE"
+          [Language.EN] = "Moon Omer",
+          [Language.FR] = "Omer de la Lune"
         },
         [false] = new TranslationsDictionary
         {
-          [Language.EN] = "SUN OMER",
-          [Language.FR] = "OMER DU SOLEIL"
+          [Language.EN] = "Sun Omer",
+          [Language.FR] = "Omer du Soleil"
         }
       };
 
@@ -199,15 +199,15 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           true, new TranslationsDictionary
           {
-            [Language.EN] = "Real days having the moonset",
-            [Language.FR] = "Vrai jours ayant le coucher de la lune"
+            [Language.EN] = "Real days having the set",
+            [Language.FR] = "Jours ayant le coucher"
           }
           },
         {
           false, new TranslationsDictionary
           {
-            [Language.EN] = "Solar days having the moonrise",
-            [Language.FR] = "Jours solaires ayant le lever de la lune"
+            [Language.EN] = "Days having the rise",
+            [Language.FR] = "Jours ayant le lever"
           }
         }
       };
