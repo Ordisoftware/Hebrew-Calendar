@@ -104,8 +104,9 @@ namespace Ordisoftware.Hebrew.Calendar
                  || form.OldLatitude != Settings.GPSLatitude
                  || form.OldLongitude != Settings.GPSLongitude
                  || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
-                 || form.OldUseSimhat != Settings.UseSimhatTorahOutside
                  || form.OldTimeZone != Settings.TimeZone
+                 || form.OldSaturdayParashot != Settings.WeekParashahIsOnSaturday
+                 || form.OldUseSimhat != Settings.UseSimhatTorahOutside
                  || form.OldShowParashah != Settings.CalendarShowParashah
                  || lang != Settings.LanguageSelected;
       if ( !result && form.MustRefreshMonthView )

@@ -238,9 +238,9 @@ namespace Ordisoftware.Hebrew.Calendar
       int month = 0;
       int delta = 0;
       int indexParashah = -1;
-      var shabatDay = (DayOfWeek)Settings.ShabatDay;
+      var shabatDay = Settings.WeekParashahIsOnSaturday ? DayOfWeek.Saturday : (DayOfWeek)Settings.ShabatDay;
       bool shabatMutex = false;
-      int simhatTorah = /*Settings.UseSimhatTorahOutside ? 23 :*/ 22; // TODO uncomment if used
+      int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
       LunisolarDaysRow dayRemap1 = null;
       LunisolarDaysRow dayRemap2 = null;
       DateTime date;
