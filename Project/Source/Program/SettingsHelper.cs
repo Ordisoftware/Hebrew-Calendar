@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -161,11 +161,26 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    static internal void SetUpgradeFlagsOff(this Settings settings)
+    {
+      settings.UpgradeResetRequiredV3_0 = false;
+      settings.UpgradeResetRequiredV3_6 = false;
+      settings.UpgradeResetRequiredV4_1 = false;
+      settings.UpgradeResetRequiredV5_10 = false;
+    }
+
+    static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
+    {
+      settings.SetUpgradeFlagsOff();
+      settings.FirstLaunch = false;
+      settings.FirstLaunchV4 = false;
+      settings.FirstLaunchV7_0 = false;
+    }
+
     /// <summary>
     /// Returns a string representing the GPS location.
     /// </summary>
-    /// <returns></returns>
-    static public string GetGPSText(this Settings settings)
+    static internal string GetGPSText(this Settings settings)
     {
       string result = "• " + settings.GPSCountry + Globals.NL +
                       "• " + settings.GPSCity;

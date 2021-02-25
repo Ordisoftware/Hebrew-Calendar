@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide localization helper.
+  /// Localization strings.
   /// </summary>
   static public partial class SysTranslations
   {

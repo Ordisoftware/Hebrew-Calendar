@@ -127,8 +127,8 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             Settings.FirstLaunchV7_0 = false;
             doforce = true;
-            var menuitem = SystemInformationMenu.ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-            if ( menuitem != null ) menuitem.PerformClick();
+            //var menuitem = SystemInformationMenu.ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+            //if ( menuitem != null ) menuitem.PerformClick();
           });
         ChronoStart.Start();
         if ( DbUpgradedForParashotSupport ) doforce = true;
