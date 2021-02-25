@@ -259,6 +259,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be scrupulo
 - Add Parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add generate weekly Parashah lecture in the database.
+- Add options to set Parashah in or outside of Israël, and always on saturday.
 - Add option to indicate the Parashah in the days of Shabat for the visual month.
 - Add Parashah reading to the days of Shabat according to the option.
 - Add current Parashah in navigation form and in main form subtitle.
