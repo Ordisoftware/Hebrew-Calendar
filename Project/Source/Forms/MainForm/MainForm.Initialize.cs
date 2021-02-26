@@ -120,8 +120,7 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
-        if ( DbUpgradedForParashotSupport ) doforce = true;
-        CheckRegenerateCalendar(force: doforce);
+        CheckRegenerateCalendar(force: doforce || Globals.DatabaseUpgraded);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         SystemManager.TryCatch(Settings.Save);
