@@ -167,6 +167,7 @@ namespace Ordisoftware.Hebrew.Calendar
       settings.UpgradeResetRequiredV3_6 = false;
       settings.UpgradeResetRequiredV4_1 = false;
       settings.UpgradeResetRequiredV5_10 = false;
+      settings.UpgradeRequired = false;
     }
 
     static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
