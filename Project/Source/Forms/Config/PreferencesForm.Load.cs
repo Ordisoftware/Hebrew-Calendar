@@ -166,9 +166,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
           ActionUsePersonalShabat_LinkClicked(null, null);
         MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-        DisplayManager.QueryYesNoCancel(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
-                                        () => EditUseSimhatTorahOutside.Checked = false,
-                                        () => EditUseSimhatTorahOutside.Checked = true);
+        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+                                  () => EditUseSimhatTorahOutside.Checked = false,
+                                  () => EditUseSimhatTorahOutside.Checked = true);
         TabControl.SelectedTab = TabPageGeneration;
       }
       EditTimeZone.Text = Settings.GetGPSText();
