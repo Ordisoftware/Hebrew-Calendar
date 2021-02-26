@@ -196,7 +196,7 @@
     <value />
   </data>
   <data name="PictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 17</value>
+    <value>18, 16</value>
   </data>
   <data name="PictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
