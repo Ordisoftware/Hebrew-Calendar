@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.MainFormTitleBarShowToday )
       {
         var date = DateTime.Today;
-        var row = DataSet.GetLunarNow();
+        var row = DataSet.GetLunarToday();
         if ( row != null && row.LunarMonth != 0 )
           Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
       }

@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
     public Parashah GetWeeklyParashah()
     {
-      return ParashotTable.GetDefaultByID(GetLunarNow()?.GetParashahReadingDay()?.ParashahID) ?? null;
+      return ParashotTable.GetDefaultByID(GetLunarToday()?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
     partial class LunisolarDaysRow

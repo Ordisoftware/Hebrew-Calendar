@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
   partial class DataSet
   {
 
-    public LunisolarDaysRow GetLunarNow()
+    public LunisolarDaysRow GetLunarToday()
     {
       // TODO use a timer to not call each time needed ?
       return GetLunarDay(DateTime.Now);

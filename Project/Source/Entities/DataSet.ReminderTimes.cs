@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
-      internal ReminderTimes GetCelebrationTimes(decimal delta3)
+      internal ReminderTimes GetReminderTimes(decimal delta3)
       {
         var times = new ReminderTimes();
         var dateRow = SQLiteDate.ToDateTime(Date);
