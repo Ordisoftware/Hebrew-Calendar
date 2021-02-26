@@ -24,7 +24,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class NewMoonsBoardForm : Form
+  partial class NewMoonsBoardForm : Form
   {
 
     private const string TableName = "New Moons";

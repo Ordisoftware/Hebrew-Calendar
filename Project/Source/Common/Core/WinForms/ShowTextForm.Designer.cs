@@ -85,7 +85,7 @@
     #endregion
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
-    internal RichTextBoxEx TextBox;
+    public RichTextBoxEx TextBox;
     private System.Windows.Forms.Panel PanelBottom;
   }
 }

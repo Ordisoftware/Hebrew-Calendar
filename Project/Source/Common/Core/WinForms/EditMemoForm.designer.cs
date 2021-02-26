@@ -91,7 +91,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    internal Ordisoftware.Core.UndoRedoTextBox TextBox;
+    public Ordisoftware.Core.UndoRedoTextBox TextBox;
     private System.Windows.Forms.Panel PanelSep;
   }
 }

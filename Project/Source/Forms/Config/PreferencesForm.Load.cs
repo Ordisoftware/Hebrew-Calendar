@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class PreferencesForm
+  partial class PreferencesForm
   {
 
     private void LoadSettings()
@@ -121,6 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
       SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
+      SystemManager.TryCatch(() => { EditMainFormShowWeekParashahInTitleBar.Checked = Settings.MainFormShowWeekParashahInTitleBar; });
       // Hotkey
       InitHotKeyControls();
       // System

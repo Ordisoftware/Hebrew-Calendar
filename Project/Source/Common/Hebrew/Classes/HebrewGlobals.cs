@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide hebrew global variables.
   /// </summary>
-  static public partial class HebrewGlobals
+  static partial class HebrewGlobals
   {
 
     static public string ParashotFolderPath

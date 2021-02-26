@@ -604,5 +604,8 @@
     <Setting Name="WeekParashahIsOnSaturday" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="MainFormShowWeekParashahInTitleBar" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

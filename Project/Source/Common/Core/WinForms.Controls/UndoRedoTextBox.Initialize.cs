@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class UndoRedoTextBox
+  partial class UndoRedoTextBox
   {
 
     static private IContainer _Container;
@@ -87,7 +87,7 @@ namespace Ordisoftware.Core
                                      });
     }
 
-    static internal void Relocalize()
+    static public void Relocalize()
     {
       if ( ContextMenuEdit == null ) return;
       var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));

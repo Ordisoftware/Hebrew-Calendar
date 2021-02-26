@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectBirthTimeForm : Form
+  partial class SelectBirthTimeForm : Form
   {
 
     static public bool Run(out TimeSpan time)

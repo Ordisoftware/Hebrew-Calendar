@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide data file management.
   /// </summary>
-  public abstract class DataFile
+  abstract class DataFile
   {
 
     /// <summary>

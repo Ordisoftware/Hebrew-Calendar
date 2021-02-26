@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectDayForm : Form
+  partial class SelectDayForm : Form
   {
 
     static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)

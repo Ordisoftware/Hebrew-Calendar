@@ -2405,5 +2405,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["WeekParashahIsOnSaturday"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MainFormShowWeekParashahInTitleBar {
+            get {
+                return ((bool)(this["MainFormShowWeekParashahInTitleBar"]));
+            }
+            set {
+                this["MainFormShowWeekParashahInTitleBar"] = value;
+            }
+        }
     }
 }

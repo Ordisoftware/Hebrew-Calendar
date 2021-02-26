@@ -19,12 +19,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private bool IsSpecialDay;
 
-    internal void DoTimerReminder()
+    public void DoTimerReminder()
     {
       if ( TimerMutex ) return;
       if ( !Globals.IsReady ) return;

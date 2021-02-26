@@ -24,11 +24,11 @@ using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDays
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     [Serializable]
-    public class TooManyErrorsException : Exception
+    partial class TooManyErrorsException : Exception
     {
       public TooManyErrorsException(string message) : base(message)
       {

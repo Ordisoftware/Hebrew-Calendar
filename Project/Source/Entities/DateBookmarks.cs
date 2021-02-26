@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public class DateBookmarks
+  partial class DateBookmarks
   {
 
     private string FilePath;

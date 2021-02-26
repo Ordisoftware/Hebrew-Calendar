@@ -20,10 +20,10 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class LunarMonthsForm : Form
+  partial class LunarMonthsForm : Form
   {
 
-    internal void CreateControls()
+    public void CreateControls()
     {
       PanelMonths.Controls.Clear();
       int x = 10;

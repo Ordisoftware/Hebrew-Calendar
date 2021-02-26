@@ -20,10 +20,10 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class DatesDiffCalculatorForm : Form
+  partial class DatesDiffCalculatorForm : Form
   {
 
-    static internal DatesDiffCalculatorForm Instance { get; private set; }
+    static public DatesDiffCalculatorForm Instance { get; private set; }
 
     static DatesDiffCalculatorForm()
     {
@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadMenuBookmarks();
     }
 
-    internal void LoadMenuBookmarks()
+    public void LoadMenuBookmarks()
     {
       MenuBookmarks.Items.Clear();
       for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    internal void Relocalize()
+    public void Relocalize()
     {
       if ( !Globals.IsReady ) return;
       var date1 = MonthCalendar1.SelectionStart;

@@ -279,8 +279,8 @@
     }
 
     #endregion
-    internal System.Windows.Forms.Label LabelDate;
-    internal System.Windows.Forms.PictureBox PictureMoon;
+    public System.Windows.Forms.Label LabelDate;
+    public System.Windows.Forms.PictureBox PictureMoon;
     private System.Windows.Forms.Panel PanelSeparatorTop;
     private System.Windows.Forms.Button ActionNextDay;
     private System.Windows.Forms.Button ActionPreviousDay;
@@ -300,9 +300,9 @@
     private System.Windows.Forms.Label LabelEventTorah;
     private System.Windows.Forms.Label LabelEventSeason;
     private System.Windows.Forms.Panel PanelSeparatorBottom;
-    internal System.Windows.Forms.Panel PanelTop;
-    internal System.Windows.Forms.Panel PanelMiddle;
-    internal System.Windows.Forms.Panel PanelBottom;
+    public System.Windows.Forms.Panel PanelTop;
+    public System.Windows.Forms.Panel PanelMiddle;
+    public System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Label LabelTorahNextValue;
     private System.Windows.Forms.Label LabelTorahNext;
     private System.Windows.Forms.LinkLabel LabelTorahNextDateValue;

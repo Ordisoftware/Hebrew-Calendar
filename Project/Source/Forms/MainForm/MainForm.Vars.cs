@@ -48,8 +48,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool DbUpgradedForParashotSupport;
 
-    public float CurrentGPSLatitude { get; internal set; }
-    public float CurrentGPSLongitude { get; internal set; }
+    public float CurrentGPSLatitude { get; set; }
+    public float CurrentGPSLongitude { get; set; }
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
 
     public DateTime DateFirst { get; private set; }
@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public int YearFirst { get; private set; }
     public int YearLast { get; private set; }
     public int YearsInterval { get; private set; }
-    internal int[] YearsIntervalArray { get; private set; }
+    public int[] YearsIntervalArray { get; private set; }
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
 
@@ -79,10 +79,10 @@ namespace Ordisoftware.Hebrew.Calendar
     internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
       = new Dictionary<TorahEvent, ReminderForm>();
 
-    internal DateTime? LastShabatReminded;
+    public DateTime? LastShabatReminded;
     internal ReminderForm ShabatForm;
 
-    internal void ClearLists()
+    public void ClearLists()
     {
       SystemManager.TryCatchManage(() =>
       {

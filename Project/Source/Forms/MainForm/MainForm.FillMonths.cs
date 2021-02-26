@@ -22,12 +22,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private Color[,,] DayColors;
 
-    internal Color GetDayColor(int counter, int month, int year)
+    public Color GetDayColor(int counter, int month, int year)
     {
       int indexYear = YearLast - year;
       return indexYear < 0 || indexYear > DayColors.GetUpperBound(0)
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
       YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
     }
 
-    internal void FillMonths()
+    public void FillMonths()
     {
       Globals.ChronoShowData.Start();
       try

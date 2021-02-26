@@ -25,12 +25,12 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide view letter details delegate.
   /// </summary>
-  public delegate void ViewLetterDetails(LettersControl sender, string code);
+  delegate void ViewLetterDetails(LettersControl sender, string code);
 
   /// <summary>
   /// Provide Letters input panel Control class.
   /// </summary>
-  public partial class LettersControl : UserControl
+  partial class LettersControl : UserControl
   {
 
     public const KnownColor DefaultInputBackColor = KnownColor.AliceBlue;
@@ -330,7 +330,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide LetterEventArgs class.
   /// </summary>
-  public class LetterEventArgs : EventArgs
+  partial class LetterEventArgs : EventArgs
   {
     public string LetterCode { get; private set; }
     public LetterEventArgs(string lettercode) { LetterCode = lettercode; }

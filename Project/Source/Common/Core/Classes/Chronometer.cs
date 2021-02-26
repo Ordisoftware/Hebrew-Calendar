@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide benchmark helper.
   /// </summary>
-  static public class Chronometer
+  static partial class Chronometer
   {
 
     /// <summary>

@@ -284,6 +284,7 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMainFormShowWeekParashahInTitleBar = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -500,6 +501,7 @@
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.TabPageApplication.Controls.Add(this.EditMainFormShowWeekParashahInTitleBar);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
@@ -2401,6 +2403,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditMainFormShowWeekParashahInTitleBar
+      // 
+      resources.ApplyResources(this.EditMainFormShowWeekParashahInTitleBar, "EditMainFormShowWeekParashahInTitleBar");
+      this.EditMainFormShowWeekParashahInTitleBar.Name = "EditMainFormShowWeekParashahInTitleBar";
+      this.EditMainFormShowWeekParashahInTitleBar.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2489,9 +2497,9 @@
     private System.Windows.Forms.Label LabelBottomColor;
     private System.Windows.Forms.Label LabelMiddleColor;
     private System.Windows.Forms.LinkLabel ActionUseSystemColors;
-    internal System.Windows.Forms.Panel EditNavigateTopColor;
-    internal System.Windows.Forms.Panel EditNavigateBottomColor;
-    internal System.Windows.Forms.Panel EditNavigateMiddleColor;
+    public System.Windows.Forms.Panel EditNavigateTopColor;
+    public System.Windows.Forms.Panel EditNavigateBottomColor;
+    public System.Windows.Forms.Panel EditNavigateMiddleColor;
     private System.Windows.Forms.LinkLabel ActionUseDefaultColors;
     private System.Windows.Forms.RadioButton SelectOpenNavigationForm;
     private System.Windows.Forms.RadioButton SelectOpenMainForm;
@@ -2504,19 +2512,19 @@
     private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
     private System.Windows.Forms.Label LabelColorToday;
-    internal System.Windows.Forms.Panel EditCurrentDayForeColor;
+    public System.Windows.Forms.Panel EditCurrentDayForeColor;
     private System.Windows.Forms.NumericUpDown EditTextReportFontSize;
     private System.Windows.Forms.Label LabelBackColor;
-    internal System.Windows.Forms.Panel EditTextReportForeColor;
+    public System.Windows.Forms.Panel EditTextReportForeColor;
     private System.Windows.Forms.Label LabelTextColor;
-    internal System.Windows.Forms.Panel EditTextReportBackColor;
+    public System.Windows.Forms.Panel EditTextReportBackColor;
     private System.Windows.Forms.Label LabelColorMoon;
-    internal System.Windows.Forms.Panel EditCalendarColorMoon;
+    public System.Windows.Forms.Panel EditCalendarColorMoon;
     private System.Windows.Forms.Label LabelColorSeason;
-    internal System.Windows.Forms.Panel EditCalendarColorSeason;
-    internal System.Windows.Forms.Panel EditCalendarColorTorahEvent;
+    public System.Windows.Forms.Panel EditCalendarColorSeason;
+    public System.Windows.Forms.Panel EditCalendarColorTorahEvent;
     private System.Windows.Forms.Label LabelColorFullMoon;
-    internal System.Windows.Forms.Panel EditCalendarColorFullMoon;
+    public System.Windows.Forms.Panel EditCalendarColorFullMoon;
     private System.Windows.Forms.Label LabelColorTorah;
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeLight;
     private System.Windows.Forms.NumericUpDown EditRemindShabatHoursBefore;
@@ -2538,18 +2546,18 @@
     private System.Windows.Forms.CheckBox EditBalloonAutoHide;
     private System.Windows.Forms.LinkLabel ActionResetSettings;
     private System.Windows.Forms.Label label1;
-    internal System.Windows.Forms.Panel EditEventColorTorah;
+    public System.Windows.Forms.Panel EditEventColorTorah;
     private System.Windows.Forms.CheckBox EditUseColors;
     private System.Windows.Forms.Label label2;
-    internal System.Windows.Forms.Panel EditEventColorShabat;
+    public System.Windows.Forms.Panel EditEventColorShabat;
     private System.Windows.Forms.Label label3;
-    internal System.Windows.Forms.Panel EditEventColorSeason;
+    public System.Windows.Forms.Panel EditEventColorSeason;
     private System.Windows.Forms.Label LabelColorTodayBack;
-    internal System.Windows.Forms.Panel EditCurrentDayBackColor;
+    public System.Windows.Forms.Panel EditCurrentDayBackColor;
     private System.Windows.Forms.Label label4;
-    internal System.Windows.Forms.Panel EditEventColorNext;
+    public System.Windows.Forms.Panel EditEventColorNext;
     private System.Windows.Forms.Label label5;
-    internal System.Windows.Forms.Panel EditEventColorMonth;
+    public System.Windows.Forms.Panel EditEventColorMonth;
     private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
     private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
     private System.Windows.Forms.Label LabelRemindAutoLockTimeOut;
@@ -2564,12 +2572,12 @@
     private System.Windows.Forms.OpenFileDialog OpenExeFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
-    internal System.Windows.Forms.Panel EditCalendarColorDefaultText;
+    public System.Windows.Forms.Panel EditCalendarColorDefaultText;
     private System.Windows.Forms.Label LabelColorEmpty;
-    internal System.Windows.Forms.Panel EditCalendarColorEmpty;
+    public System.Windows.Forms.Panel EditCalendarColorEmpty;
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.Label LabelColorNoDay;
-    internal System.Windows.Forms.Panel EditCalendarColorNoDay;
+    public System.Windows.Forms.Panel EditCalendarColorNoDay;
     private Ordisoftware.Core.UndoRedoTextBox EditMoonDayTextFormat;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
@@ -2717,7 +2725,7 @@
     private System.Windows.Forms.Button ActionRemindEventsBeforeReset;
     private System.Windows.Forms.Button ActionEventsDayReset;
     private System.Windows.Forms.Label LabelColorParashah;
-    internal System.Windows.Forms.Panel EditCalendarColorParashah;
+    public System.Windows.Forms.Panel EditCalendarColorParashah;
     private System.Windows.Forms.CheckBox EditCalendarShowParashah;
     private System.Windows.Forms.Button ActionResetHebrewWordsPath;
     private System.Windows.Forms.Label LabelHebrewWordsPath;
@@ -2728,5 +2736,6 @@
     private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
     private System.Windows.Forms.CheckBox EditWeekParashahIsOnSaturday;
     private System.Windows.Forms.Button ActionParashahHelp;
+    private System.Windows.Forms.CheckBox EditMainFormShowWeekParashahInTitleBar;
   }
 }

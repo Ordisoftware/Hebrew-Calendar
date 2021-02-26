@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide auto list.
   /// </summary>
   [Serializable]
-  public class AutoResizedList<T> : List<T>
+  partial class AutoResizedList<T> : List<T>
     where T : new()
   {
 

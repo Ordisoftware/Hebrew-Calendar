@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SearchEventForm : Form
+  partial class SearchEventForm : Form
   {
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }

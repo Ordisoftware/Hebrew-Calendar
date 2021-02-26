@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// The application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class MainForm
+  partial class MainForm
   {
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Set the view panel.
     /// </summary>
     /// <param name="view">The view mode.</param>
-    internal void SetView(ViewMode view)
+    public void SetView(ViewMode view)
     {
       SetView(view, false);
     }
@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="view">The view mode.</param>
     /// <param name="first">true to first.</param>
-    internal void SetView(ViewMode view, bool first)
+    public void SetView(ViewMode view, bool first)
     {
       var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
       {

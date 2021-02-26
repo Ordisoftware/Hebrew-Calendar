@@ -160,7 +160,7 @@
     private Ordisoftware.Core.UndoRedoTextBox EditFilter;
     private System.Windows.Forms.Label LabelFilter;
     private System.Windows.Forms.Label LabelTimeZone;
-    internal System.Windows.Forms.ComboBox EditTimeZone;
+    public System.Windows.Forms.ComboBox EditTimeZone;
     private System.Windows.Forms.Button DummyButton;
   }
 }

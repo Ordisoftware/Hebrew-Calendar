@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide Torah event item to be displayed in a control.
   /// </summary>
-  public class TorahEventItem
+  partial class TorahEventItem
   {
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string Text { get; set; }
 
     /// <summary>
-    /// Indicate the event enum value.
+    /// Indicate the event public enum value.
     /// </summary>
     public TorahEvent Event { get; set; }
 

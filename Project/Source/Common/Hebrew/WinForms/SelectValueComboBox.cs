@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace Ordisoftware.Hebrew
 {
-  public partial class SelectValueComboBox : UserControl
+  partial class SelectValueComboBox : UserControl
   {
 
     public event EventHandler SelectedIndexChanged

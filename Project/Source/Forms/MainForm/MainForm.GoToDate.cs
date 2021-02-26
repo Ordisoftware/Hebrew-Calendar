@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private bool GoToDateMutex;
@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
       return ParashotTable.GetDefaultByID(row?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
-    internal void GoToDate(string date)
+    public void GoToDate(string date)
     {
       if ( !date.IsNullOrEmpty() )
         GoToDate(SQLiteDate.ToDateTime(date));
@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Set the data position.
     /// </summary>
     /// <param name="date">The date.</param>
-    internal void GoToDate(DateTime date)
+    public void GoToDate(DateTime date)
     {
       if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
       if ( date < DateFirst ) date = DateFirst;

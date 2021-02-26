@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private void DoTrayIconMouse_Click(object sender, MouseEventArgs e)
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    internal void DoMenuShowHide_Click(object sender, EventArgs e)
+    public void DoMenuShowHide_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatchManage(() =>
       {

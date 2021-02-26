@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide years interval item.
   /// </summary>
-  public class YearsIntervalItem
+  partial class YearsIntervalItem
   {
 
     public int YearsBefore { get; }

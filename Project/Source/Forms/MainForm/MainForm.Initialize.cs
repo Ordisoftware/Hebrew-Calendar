@@ -31,14 +31,14 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class MainForm
+  partial class MainForm
   {
 
     public const bool HotKeyEnabledByDefault = true;
     public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
     public const Keys DefaultHotKeyKey = Keys.C;
 
-    internal void ReminderBoxDesktopLocation()
+    public void ReminderBoxDesktopLocation()
     {
       if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
       {
@@ -149,8 +149,16 @@ namespace Ordisoftware.Hebrew.Calendar
         SetGlobalHotKey();
         UpdateTitles();
         Globals.ChronoLoadApp.Stop();
-        if (Globals.SettingsUpgraded)
-          CommonMenusControl.
+        if ( Globals.SettingsUpgraded )
+          SystemManager.TryCatch(() =>
+          {
+            var menuitem = CommonMenusControl.Instance
+                                             .ActionViewVersionNews
+                                             .DropDownItems
+                                             .Cast<ToolStripItem>()
+                                             .LastOrDefault();
+            if ( menuitem != null ) menuitem.PerformClick();
+          });
       }
       finally
       {
@@ -161,7 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Set global HotKey combination.
     /// </summary>
-    internal void SetGlobalHotKey(bool noactive = false)
+    public void SetGlobalHotKey(bool noactive = false)
     {
       var shortcutKey = DefaultHotKeyKey;
       var shortcutModifiers = DefaultHotKeyModifiers;
@@ -193,7 +201,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Do Session Ending event.
     /// </summary>
-    internal void DoSessionEnding(object sender, SessionEndingEventArgs e)
+    public void DoSessionEnding(object sender, SessionEndingEventArgs e)
     {
       if ( Globals.IsSessionEnding ) return;
       DebugManager.Enter();
@@ -229,7 +237,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
-    internal void InitializeDialogsDirectory()
+    public void InitializeDialogsDirectory()
     {
       string directory = Settings.GetExportDirectory();
       SaveTextDialog.InitialDirectory = directory;
@@ -245,7 +253,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Initialize current time zone.
     /// </summary>
-    internal void InitializeCurrentTimeZone()
+    public void InitializeCurrentTimeZone()
     {
       CurrentTimeZoneInfo = null;
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
@@ -259,7 +267,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Create system information menu items.
     /// </summary>
-    internal void CreateSystemInformationMenu()
+    public void CreateSystemInformationMenu()
     {
       CommonMenusControl.Instance = new CommonMenusControl(ActionAbout_Click,
                                                            ActionWebCheckUpdate_Click,
@@ -278,7 +286,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Initialize special menus (web links, tray icon and suspend).
     /// </summary>
-    internal void InitializeSpecialMenus()
+    public void InitializeSpecialMenus()
     {
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;

@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class StatisticsForm : Form
+  partial class StatisticsForm : Form
   {
 
     static public StatisticsForm Instance { get; private set; }
@@ -115,7 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.RunShell(EditOpenFolderUserLocalData.Text);
     }
 
-    internal void Timer_Tick(object sender, EventArgs e)
+    public void Timer_Tick(object sender, EventArgs e)
     {
       if ( Visible )
       {

@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
     Download,
   }
 
-  public partial class WebUpdateForm : Form
+  partial class WebUpdateForm : Form
   {
 
     static public WebUpdateSelection Run (Version version)

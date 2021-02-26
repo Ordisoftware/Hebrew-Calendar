@@ -22,7 +22,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class DataFileEditorForm : Form
+  partial class DataFileEditorForm : Form
   {
 
     static public bool Run(string title, DataFile file)

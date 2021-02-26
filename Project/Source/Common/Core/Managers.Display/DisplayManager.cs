@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide multithreaded messages output and messages box.
   /// </summary>
-  static public partial class DisplayManager
+  static partial class DisplayManager
   {
 
     /// <summary>

@@ -19,7 +19,7 @@ using System.IO;
 namespace Ordisoftware.Core
 {
 
-  static public partial class DebugManager
+  static partial class DebugManager
   {
 
     static DebugManager()
@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
-    static private void LeaveInternal()
+    static private void Leavepublic()
     {
       if ( !_Enabled || EnterCount == 0 ) return;
       EnterCount--;

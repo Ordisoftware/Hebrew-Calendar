@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class UndoRedoTextBox
+  partial class UndoRedoTextBox
   {
 
     static public UndoRedoTextBox GetTextBox(object sender)

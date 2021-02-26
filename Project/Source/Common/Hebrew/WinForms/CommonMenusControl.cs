@@ -23,7 +23,7 @@ using Markdig;
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class CommonMenusControl : UserControl
+  partial class CommonMenusControl : UserControl
   {
 
     static public CommonMenusControl Instance;
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
       ActionViewStats.Click += viewStatsClick;
     }
 
-    internal void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
+    public void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
     {
       foreach ( var item in list )
       {

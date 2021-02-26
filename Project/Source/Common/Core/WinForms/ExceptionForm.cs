@@ -27,7 +27,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide exception form.
   /// </summary>
-  public partial class ExceptionForm : Form
+  partial class ExceptionForm : Form
   {
 
     /// <summary>

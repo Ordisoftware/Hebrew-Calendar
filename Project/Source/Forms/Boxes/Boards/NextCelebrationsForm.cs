@@ -22,7 +22,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class NextCelebrationsForm : Form
+  partial class NextCelebrationsForm : Form
   {
 
     static public NextCelebrationsForm Instance { get; private set; }

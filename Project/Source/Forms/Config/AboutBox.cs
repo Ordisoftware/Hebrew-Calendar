@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide the about box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class AboutBox : Form
+  partial class AboutBox : Form
   {
 
     /// <summary>
@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     }
 
-    internal void AboutBox_Shown(object sender, EventArgs e)
+    public void AboutBox_Shown(object sender, EventArgs e)
     {
       Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;

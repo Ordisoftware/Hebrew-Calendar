@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class LockSessionForm : Form
+  partial class LockSessionForm : Form
   {
 
     static public LockSessionForm Instance { get; private set; }

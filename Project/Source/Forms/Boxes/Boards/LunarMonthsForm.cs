@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class LunarMonthsForm : Form
+  partial class LunarMonthsForm : Form
   {
 
     /// <summary>
@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    internal void Relocalize()
+    public void Relocalize()
     {
       if ( !Globals.IsReady ) return;
       CreateControls();

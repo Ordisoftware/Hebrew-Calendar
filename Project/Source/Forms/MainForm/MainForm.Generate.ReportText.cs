@@ -24,7 +24,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     const string SeparatorV = "|";
@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
     const string MoonNoText = "        ";
     const string ShabatText = "[S]";
     const string MoonFullText = "o";
-    internal readonly string MoonNewText = "•";
+    public readonly string MoonNewText = "•";
 
     private bool ShowWinterSummerHour = true;
     private bool ShowShabat = true;

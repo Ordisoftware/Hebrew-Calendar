@@ -25,7 +25,7 @@ using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectExportTargetForm : Form
+  partial class SelectExportTargetForm : Form
   {
 
     static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)

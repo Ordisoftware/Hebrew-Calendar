@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide hebrew tools helper.
   /// </summary>
-  static public partial class HebrewTools
+  static partial class HebrewTools
   {
 
     /// <summary>

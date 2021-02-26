@@ -15,10 +15,10 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO.Pipes;
 using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO.Pipes;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -41,9 +41,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
-      bool upgrade = Settings.UpgradeRequired;
-      Settings.CheckUpgradeRequired(ref upgrade);
-      Settings.UpgradeRequired = upgrade;
+      Globals.SettingsUpgraded = Settings.UpgradeRequired;
+      Settings.CheckUpgradeRequired(ref Globals.SettingsUpgraded);
+      Settings.UpgradeRequired = Globals.SettingsUpgraded;
       CheckSettingsReset();
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
@@ -53,17 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       Settings.LanguageSelected = lang;
       UpdateLocalization();
-      if ( SystemManager.CommandLineOptions != null )
-        if ( SystemManager.CommandLineOptions.ResetSettings )
-        {
-          SystemManager.CleanAllLocalAppSettingsFolders();
-          CheckSettingsReset(true);
-        }
-        else
-        if ( !Settings.FirstLaunch
-          && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideGUI )
-          Globals.ForceStartupHide = true;
+      ProcessCommandLineOptions();
       Application.Run(MainForm.Instance);
     }
 
@@ -108,9 +98,27 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Process command line options.
+    /// </summary>
+    static private void ProcessCommandLineOptions()
+    {
+      if ( SystemManager.CommandLineOptions != null )
+        if ( SystemManager.CommandLineOptions.ResetSettings )
+        {
+          SystemManager.CleanAllLocalAppSettingsFolders();
+          CheckSettingsReset(true);
+        }
+        else
+        if ( !Settings.FirstLaunch
+          && SystemManager.CommandLineOptions != null
+          && SystemManager.CommandLineOptions.HideGUI )
+          Globals.ForceStartupHide = true;
+    }
+
+    /// <summary>
     /// Update localization strings to the whole application.
     /// </summary>
-    static internal void UpdateLocalization()
+    static public void UpdateLocalization()
     {
       void update(Form form)
       {

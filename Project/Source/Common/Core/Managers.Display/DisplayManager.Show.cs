@@ -65,7 +65,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide messages and questions with waiting user communication feedback.
   /// </summary>
-  static public partial class DisplayManager
+  static partial class DisplayManager
   {
 
     static public bool AdvancedFormUseSounds = true;

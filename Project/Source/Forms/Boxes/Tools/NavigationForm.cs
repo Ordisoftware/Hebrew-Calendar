@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class NavigationForm : Form
+  partial class NavigationForm : Form
   {
 
     static public NavigationForm Instance { get; private set; }
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
     }
 
-    internal void ShowPopup(bool bringToFront = false)
+    public void ShowPopup(bool bringToFront = false)
     {
       SetLocation();
       Show();

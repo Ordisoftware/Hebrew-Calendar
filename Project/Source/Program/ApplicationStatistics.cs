@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// provide application statistics.
   /// </summary>
-  public class ApplicationStatistics
+  partial class ApplicationStatistics
   {
 
     static public ApplicationStatistics Instance
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBFileSize;
-    static internal bool UpdateDBFileSizeRequired = true;
+    static public bool UpdateDBFileSizeRequired = true;
 
     public string DBMemorySize
     {
@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBMemorySize;
-    static internal bool UpdateDBMemorySizeRequired = true;
+    static public bool UpdateDBMemorySizeRequired = true;
 
     public string DBCommonFileSize
     {
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBCommonFileSize;
-    static internal bool UpdateDBCommonFileSizeRequired = true;
+    static public bool UpdateDBCommonFileSizeRequired = true;
 
     public string DBParashotMemorySize
     {
@@ -159,7 +159,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DDParashotMemorySize;
-    static internal bool UpdateDDParashotMemorySizeRequired = true;
+    static public bool UpdateDDParashotMemorySizeRequired = true;
 
   }
 

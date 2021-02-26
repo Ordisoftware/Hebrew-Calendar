@@ -24,7 +24,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class EditDateBookmarksForm : Form
+  partial class EditDateBookmarksForm : Form
   {
 
     private const string TableName = "Date Bookmarks";

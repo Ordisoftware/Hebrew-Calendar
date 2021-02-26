@@ -22,7 +22,7 @@ using FileHelpers;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectCityForm : Form
+  partial class SelectCityForm : Form
   {
    
     static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS

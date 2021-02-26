@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide global variables.
   /// </summary>
-  static public partial class Globals
+  static partial class Globals
   {
 
     /// <summary>

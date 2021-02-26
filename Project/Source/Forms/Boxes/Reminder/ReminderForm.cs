@@ -23,7 +23,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class ReminderForm : Form
+  partial class ReminderForm : Form
   {
 
     static private Image Image;

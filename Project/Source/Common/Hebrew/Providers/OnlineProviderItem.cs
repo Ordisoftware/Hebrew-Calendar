@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide online provider item.
   /// </summary>
-  public class OnlineProviderItem
+  partial class OnlineProviderItem
   {
 
     static public readonly Dictionary<string, Image> LanguageImages;

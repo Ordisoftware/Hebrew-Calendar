@@ -94,6 +94,6 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOK;
-    internal System.Windows.Forms.DateTimePicker EditTime;
+    public System.Windows.Forms.DateTimePicker EditTime;
   }
 }

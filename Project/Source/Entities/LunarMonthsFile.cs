@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide lunar months file.
   /// </summary>
-  public partial class LunarMonthsFile : DataFile
+  partial class LunarMonthsFile : DataFile
   {
 
     public readonly List<string> Items = new List<string>();
