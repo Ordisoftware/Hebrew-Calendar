@@ -115,7 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.RunShell(EditOpenFolderUserLocalData.Text);
     }
 
-    internal void Timer_Tick(object sender, EventArgs e)
+    public void Timer_Tick(object sender, EventArgs e)
     {
       if ( Visible )
       {

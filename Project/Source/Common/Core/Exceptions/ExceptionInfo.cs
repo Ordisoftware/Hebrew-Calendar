@@ -156,7 +156,7 @@ namespace Ordisoftware.Core
     /// The caller name.
     /// </returns>
     /// <param name="skip">The skip.</param>
-    static internal string GetCallerName(int skip)
+    static public string GetCallerName(int skip)
     {
       if ( !DebugManager.UseStack ) return string.Empty;
       string result = string.Empty;

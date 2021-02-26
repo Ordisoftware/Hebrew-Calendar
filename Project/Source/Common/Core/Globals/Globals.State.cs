@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the application settings.
     /// </summary>
-    static public ApplicationSettingsBase Settings { get; internal set; }
+    static public ApplicationSettingsBase Settings { get; set; }
 
     /// <summary>
     /// Indicate the process start date and time.
@@ -52,6 +52,11 @@ namespace Ordisoftware.Core
     /// Indicate if data is being generated.
     /// </summary>
     static public bool IsGenerating { get; set; }
+
+    /// <summary>
+    /// Indicate if current processing must be cancelled.
+    /// </summary>
+    static public bool CancelRequired { get; set; }
 
     /// <summary>
     /// Indicate if the windows session is ending.

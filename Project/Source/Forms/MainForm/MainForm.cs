@@ -162,7 +162,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
-    internal void SessionEnding(object sender, SessionEndingEventArgs e)
+    public void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       DoSessionEnding(sender, e);
     }
@@ -277,7 +277,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionAbout_Click(object sender, EventArgs e)
+    public void ActionAbout_Click(object sender, EventArgs e)
     {
       if ( AboutBox.Instance.Visible )
         AboutBox.Instance.BringToFront();
@@ -290,7 +290,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionWebCheckUpdate_Click(object sender, EventArgs e)
+    public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
       if ( IsSpecialDay ) return;
       bool menuEnabled = MenuTray.Enabled;
@@ -364,7 +364,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void MenuShowHide_Click(object sender, EventArgs e)
+    public void MenuShowHide_Click(object sender, EventArgs e)
     {
       DoMenuShowHide_Click(sender, e);
     }
@@ -479,7 +479,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void EditDialogBoxesSettings_CheckedChanged(object sender, EventArgs e)
+    public void EditDialogBoxesSettings_CheckedChanged(object sender, EventArgs e)
     {
       Settings.SoundsEnabled = EditSoundsEnabled.Checked;
       DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
@@ -536,7 +536,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void EditScreenPosition_Click(object sender, EventArgs e)
+    public void EditScreenPosition_Click(object sender, EventArgs e)
     {
       DoScreenPosition(sender, e);
     }
@@ -578,7 +578,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
+    public void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
     {
       ShowNotice(sender,
                  AppTranslations.NoticeCelebrationsTitle,
@@ -591,7 +591,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionShowShabatNotice_Click(object sender, EventArgs e)
+    public void ActionShowShabatNotice_Click(object sender, EventArgs e)
     {
       ShowNotice(sender,
                  AppTranslations.NoticeShabatTitle,
@@ -604,7 +604,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionShowParashahNotice_Click(object sender, EventArgs e)
+    public void ActionShowParashahNotice_Click(object sender, EventArgs e)
     {
       ShowNotice(sender,
                  AppTranslations.NoticeParashahTitle,
@@ -730,7 +730,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionViewStats_Click(object sender, EventArgs e)
+    public void ActionViewStats_Click(object sender, EventArgs e)
     {
       StatisticsForm.Run();
     }
@@ -740,7 +740,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    internal void ActionViewLog_Click(object sender, EventArgs e)
+    public void ActionViewLog_Click(object sender, EventArgs e)
     {
       DebugManager.TraceForm.Popup();
     }

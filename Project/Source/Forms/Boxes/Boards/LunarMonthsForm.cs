@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    internal void Relocalize()
+    public void Relocalize()
     {
       if ( !Globals.IsReady ) return;
       CreateControls();

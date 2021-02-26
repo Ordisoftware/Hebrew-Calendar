@@ -81,7 +81,7 @@ namespace Ordisoftware.Core
       }
 
       private bool TraceMutex;
-      internal bool IsRollOver { get; private set; }
+      public bool IsRollOver { get; private set; }
 
       private void CheckRollOver()
       {

@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
       Relocalize();
     }
 
-    internal void Relocalize()
+    public void Relocalize()
     {
       LabelTitle.Text = Globals.AssemblyTitle;
     }

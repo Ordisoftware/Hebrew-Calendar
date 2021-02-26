@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
       this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
-    internal void HTMLBrowserForm_Shown(object sender, EventArgs e)
+    public void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
       if ( Title != null ) Text = Title.GetLang();
       if ( FilePathTemplate == null ) return;

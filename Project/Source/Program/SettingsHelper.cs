@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide Settings helper.
   /// </summary>
-  static internal class SettingsHelper
+  static public class SettingsHelper
   {
 
     static private bool Mutex;
@@ -193,7 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
       return result;
     }
 
-    static public string GetExportDirectory(this Settings settings)
+    static internal string GetExportDirectory(this Settings settings)
     {
       string directory = settings.ExportFolder;
       if ( directory == "%USER_APP_DOCUMENTS%" )

@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
     const string MoonNoText = "        ";
     const string ShabatText = "[S]";
     const string MoonFullText = "o";
-    internal readonly string MoonNewText = "•";
+    public readonly string MoonNewText = "•";
 
     private bool ShowWinterSummerHour = true;
     private bool ShowShabat = true;

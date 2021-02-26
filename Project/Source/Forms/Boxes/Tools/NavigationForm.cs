@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
     }
 
-    internal void ShowPopup(bool bringToFront = false)
+    public void ShowPopup(bool bringToFront = false)
     {
       SetLocation();
       Show();

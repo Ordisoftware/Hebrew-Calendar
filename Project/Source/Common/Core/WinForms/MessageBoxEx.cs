@@ -32,7 +32,7 @@ namespace Ordisoftware.Core
 
     static public readonly List<MessageBoxEx> Instances = new List<MessageBoxEx>();
 
-    static internal void CloseAll()
+    static public void CloseAll()
     {
       Instances.ToList().ForEach(f => f.ForceClose());
     }
@@ -125,7 +125,7 @@ namespace Ordisoftware.Core
       }
     }
 
-    internal void ForceClose()
+    public void ForceClose()
     {
       AllowClose = true;
       Close();

@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip));
     }
 
-    static private void LeaveInternal()
+    static private void Leavepublic()
     {
       if ( !_Enabled || EnterCount == 0 ) return;
       EnterCount--;

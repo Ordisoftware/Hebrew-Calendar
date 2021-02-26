@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    internal void DoMenuShowHide_Click(object sender, EventArgs e)
+    public void DoMenuShowHide_Click(object sender, EventArgs e)
     {
       SystemManager.TryCatchManage(() =>
       {

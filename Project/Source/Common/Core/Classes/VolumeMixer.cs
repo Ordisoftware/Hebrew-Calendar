@@ -142,11 +142,11 @@ namespace Ordisoftware.Core
 
   [ComImport]
   [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]
-  internal class MMDeviceEnumerator
+  public class MMDeviceEnumerator
   {
   }
 
-  internal enum EDataFlow
+  public enum EDataFlow
   {
     eRender,
     eCapture,
@@ -154,7 +154,7 @@ namespace Ordisoftware.Core
     EDataFlow_enum_count
   }
 
-  internal enum ERole
+  public enum ERole
   {
     eConsole,
     eMultimedia,
@@ -163,7 +163,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface IMMDeviceEnumerator
+  public interface IMMDeviceEnumerator
   {
     int NotImpl1();
 
@@ -174,7 +174,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("D666063F-1587-4E43-81F1-B948E807363F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface IMMDevice
+  public interface IMMDevice
   {
     [PreserveSig]
     int Activate(ref Guid iid, int dwClsCtx, IntPtr pActivationParams, [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface);
@@ -183,7 +183,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface IAudioSessionManager2
+  public interface IAudioSessionManager2
   {
     int NotImpl1();
     int NotImpl2();
@@ -195,7 +195,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface IAudioSessionEnumerator
+  public interface IAudioSessionEnumerator
   {
     [PreserveSig]
     int GetCount(out int SessionCount);
@@ -205,7 +205,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("87CE5498-68D6-44E5-9215-6DA47EF883D8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface ISimpleAudioVolume
+  public interface ISimpleAudioVolume
   {
     [PreserveSig]
     int SetMasterVolume(float fLevel, ref Guid EventContext);
@@ -221,7 +221,7 @@ namespace Ordisoftware.Core
   }
 
   [Guid("bfb7ff88-7239-4fc9-8fa2-07c950be9c6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-  internal interface IAudioSessionControl2
+  public interface IAudioSessionControl2
   {
     // IAudioSessionControl
     [PreserveSig]

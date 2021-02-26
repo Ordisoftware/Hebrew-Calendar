@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew
     public string Translation { get; set; }
     public string Lettriq { get; set; }
     public string Memo { get; set; }
-    public Parashah Linked { get; internal set; }
+    public Parashah Linked { get; set; }
 
     public override string ToString()
       => ToString(false);

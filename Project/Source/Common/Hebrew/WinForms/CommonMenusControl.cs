@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
       ActionViewStats.Click += viewStatsClick;
     }
 
-    internal void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
+    public void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> list)
     {
       foreach ( var item in list )
       {

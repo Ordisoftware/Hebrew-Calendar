@@ -103,7 +103,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Update the buttons.
     /// </summary>
-    internal void UpdateButtons()
+    public void UpdateButtons()
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Update the month view.
     /// </summary>
-    internal void UpdateCalendarMonth(bool doFill)
+    public void UpdateCalendarMonth(bool doFill)
     {
       Globals.IsGenerating = true;
       var cursor = Cursor;

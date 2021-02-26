@@ -87,7 +87,7 @@ namespace Ordisoftware.Core
                                      });
     }
 
-    static internal void Relocalize()
+    static public void Relocalize()
     {
       if ( ContextMenuEdit == null ) return;
       var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));

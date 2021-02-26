@@ -42,8 +42,8 @@ namespace Ordisoftware.Core
 
     static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
 
-    private Hotkey InternalHotKey;
-    private int InternalHotKeyID;
+    private Hotkey publicHotKey;
+    private int publicHotKeyID;
 
     public bool Shift
     {
@@ -75,7 +75,7 @@ namespace Ordisoftware.Core
       set
       {
         if ( _Key == value || value == Keys.None ) return;
-        if ( InternalHotKey != null )
+        if ( publicHotKey != null )
         {
           Active = false;
           Key = value;
@@ -92,7 +92,7 @@ namespace Ordisoftware.Core
       set
       {
         if ( _Modifiers == value || value == Modifiers.None ) return;
-        if ( InternalHotKey != null )
+        if ( publicHotKey != null )
         {
           Active = false;
           Modifiers = value;
@@ -109,7 +109,7 @@ namespace Ordisoftware.Core
       set
       {
         if ( _KeyPressed == value ) return;
-        if ( InternalHotKey != null )
+        if ( publicHotKey != null )
         {
           Active = false;
           KeyPressed = value;
@@ -122,7 +122,7 @@ namespace Ordisoftware.Core
 
     public bool Active
     {
-      get { return InternalHotKey != null; }
+      get { return publicHotKey != null; }
       set
       {
         if ( Active == value ) return;
@@ -135,19 +135,19 @@ namespace Ordisoftware.Core
 
     private void Register()
     {
-      if ( InternalHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
+      if ( publicHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
       {
         var key = Key;
         if ( Shift ) key |= Keys.Shift;
         if ( Control ) key |= Keys.Control;
         if ( Alt ) key |= Keys.Alt;
-        InternalHotKey = new Hotkey(key);
-        if ( Windows ) InternalHotKey.Win = true;
+        publicHotKey = new Hotkey(key);
+        if ( Windows ) publicHotKey.Win = true;
         try
         {
-          var hka = new HotkeyAction(InternalHotKey, KeyPressed);
-          InternalHotKeyID = 1;
-          if ( !Manager.RegisterHotkey(InternalHotKeyID, hka) )
+          var hka = new HotkeyAction(publicHotKey, KeyPressed);
+          publicHotKeyID = 1;
+          if ( !Manager.RegisterHotkey(publicHotKeyID, hka) )
             throw new Exception(SysTranslations.HotKeyRefusedBySystem.GetLang());
         }
         catch ( Exception ex )
@@ -168,18 +168,18 @@ namespace Ordisoftware.Core
 
     private void Unregister()
     {
-      if ( InternalHotKey != null )
+      if ( publicHotKey != null )
       {
-        if ( !Manager.UnregisterHotkey(InternalHotKeyID) )
+        if ( !Manager.UnregisterHotkey(publicHotKeyID) )
           throw new Exception(SysTranslations.HotKeyUnregisterError.GetLang());
-        InternalHotKey = null;
+        publicHotKey = null;
         AllActivated.Remove(this);
       }
     }
 
     public bool IsValid()
     {
-      if ( InternalHotKey != null ) return true;
+      if ( publicHotKey != null ) return true;
       bool result = false;
       var key = (VirtualKeyCode)Key;
       var modifiers = new List<VirtualKeyCode>();
