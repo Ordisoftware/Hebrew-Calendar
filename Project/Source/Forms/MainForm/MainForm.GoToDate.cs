@@ -45,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="date">The date.</param>
     internal void GoToDate(DateTime date)
     {
-      if ( !Globals.IsReady || IsGenerating || GoToDateMutex ) return;
+      if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
       GoToDateMutex = true;

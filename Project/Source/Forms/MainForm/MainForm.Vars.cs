@@ -14,7 +14,6 @@
 /// <edited> 2021-01 </edited>
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -30,20 +29,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private readonly Properties.Settings Settings = Program.Settings;
 
-    internal CommonMenusControl SystemInformationMenu;
-
-    public bool IsGenerating { get; private set; }
-
     private ToolTip LastToolTip = new ToolTip();
 
     private Icon TrayIconPause;
     private Icon TrayIconDefault;
     private Icon TrayIconEvent;
-
     private Point TrayIconMouse;
 
-    private bool CanBallon = true;
-    private bool NavigationTrayBallooned;
+    private bool TrayIconCanBallon = true;
+    private bool IsTrayBallooned;
 
     private bool TimerMutex;
     private bool TimerErrorShown;
@@ -52,23 +46,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DateTime? LastVacuum = null;
 
-    static internal Stopwatch ChronoStart = new Stopwatch();
-
     private bool DbUpgradedForParashotSupport;
 
-    private ShowTextForm NoticeKeyboardShortcutsForm;
-
-    public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
     public float CurrentGPSLatitude { get; internal set; }
     public float CurrentGPSLongitude { get; internal set; }
+    public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
 
     public DateTime DateFirst { get; private set; }
     public DateTime DateLast { get; private set; }
-
     public int YearFirst { get; private set; }
     public int YearLast { get; private set; }
     public int YearsInterval { get; private set; }
-
     internal int[] YearsIntervalArray { get; private set; }
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }

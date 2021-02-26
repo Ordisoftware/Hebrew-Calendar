@@ -16,7 +16,6 @@ using System;
 using System.IO;
 using System.Data;
 using System.Data.Odbc;
-using System.Diagnostics;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -30,15 +29,14 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
-        if ( !IsGenerating ) LoadingForm.Instance.DoProgress();
+        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
       };
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
       {
         Enabled = false;
-        var Chrono = new Stopwatch();
-        Chrono.Start();
+        Globals.ChronoLoadData.Start();
         CreateSchemaIfNotExists();
         var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", LockFileConnection);
         LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(),
@@ -46,19 +44,17 @@ namespace Ordisoftware.Hebrew.Calendar
                                         Program.LoadingFormLoadDB);
         DataSet.LunisolarDays.RowChanged += update;
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        Chrono.Stop();
-        Settings.BenchmarkLoadData = Chrono.ElapsedMilliseconds;
-        Settings.Save();
+        Globals.ChronoLoadData.Stop();
         if ( DataSet.LunisolarDays.Count > 0 && !Settings.FirstLaunch )
         {
-          IsGenerating = true;
+          Globals.IsGenerating = true;
           try
           {
             FillMonths();
           }
           finally
           {
-            IsGenerating = false;
+            Globals.IsGenerating = false;
           }
           SystemManager.TryCatch(() =>
           {
@@ -66,14 +62,16 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( File.Exists(Program.TextReportFilePath) )
               try
               {
+                Globals.ChronoLoadData.Start();
                 CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
+                Globals.ChronoLoadData.Stop();
                 isTextReportLoaded = true;
               }
               catch ( Exception ex )
               {
-                ChronoStart.Stop();
+                Globals.ChronoLoadApp.Stop();
                 DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
-                ChronoStart.Start();
+                Globals.ChronoLoadApp.Start();
               }
             if ( !isTextReportLoaded )
               CalendarText.Text = GenerateReportText();
@@ -82,9 +80,9 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          ChronoStart.Stop();
+          Globals.ChronoLoadApp.Stop();
           PreferencesForm.Run();
-          ChronoStart.Start();
+          Globals.ChronoLoadApp.Start();
           string errors = CheckRegenerateCalendar(true);
           if ( errors != null )
           {
@@ -95,11 +93,11 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch ( Exception ex )
       {
-        ChronoStart.Stop();
+        Globals.ChronoLoadApp.Stop();
         ex.Manage();
         DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
                                         SysTranslations.ContactSupport[Language.FR]);
-        ChronoStart.Start();
+        Globals.ChronoLoadApp.Start();
       }
       finally
       {
@@ -116,9 +114,9 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch ( Exception ex )
         {
-          ChronoStart.Stop();
+          Globals.ChronoLoadApp.Stop();
           ex.Manage();
-          ChronoStart.Start();
+          Globals.ChronoLoadApp.Start();
         }
         try
         {
@@ -128,10 +126,12 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch ( Exception ex )
         {
-          ChronoStart.Stop();
+          Globals.ChronoLoadApp.Stop();
           ex.Manage();
-          ChronoStart.Start();
+          Globals.ChronoLoadApp.Start();
         }
+        Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+        Settings.Save();
       }
     }
 

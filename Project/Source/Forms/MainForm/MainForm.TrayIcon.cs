@@ -95,7 +95,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           if ( Globals.IsReady )
           {
-            if ( NavigationTrayBallooned )
+            if ( IsTrayBallooned )
               NavigationForm.Instance.Hide();
             this.Popup();
           }

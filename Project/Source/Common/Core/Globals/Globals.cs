@@ -45,6 +45,18 @@ namespace Ordisoftware.Core
     /// </summary>
     static public bool ForceStartupHide;
 
+    static public bool SettingsUpgraded;
+
+    static public Stopwatch ChronoLoadApp = new Stopwatch();
+
+    static public Stopwatch ChronoLoadData = new Stopwatch();
+
+    static public Stopwatch ChronoCreateData = new Stopwatch();
+
+    static public Stopwatch ChronoShowData = new Stopwatch();
+
+    static public ShowTextForm NoticeKeyboardShortcutsForm;
+
     /// <summary>
     /// Indicate the application code (title without space).
     /// </summary>

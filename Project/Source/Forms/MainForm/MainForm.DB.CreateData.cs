@@ -57,14 +57,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="yearLast">The last year.</param>
     private string CreateData(int yearFirst, int yearLast)
     {
-      IsGenerating = true;
+      Globals.IsGenerating = true;
       PanelViewText.Parent = null;
       PanelViewMonth.Parent = null;
       PanelViewGrid.Parent = null;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
-      var Chrono = new Stopwatch();
-      Chrono.Start();
+      Globals.ChronoCreateData.Start();
       try
       {
         UpdateButtons();
@@ -77,11 +76,11 @@ namespace Ordisoftware.Hebrew.Calendar
         ProgressCount = (int)( d2 - d1 ).TotalDays;
         try
         {
-          if ( IsGenerating )
+          if ( Globals.IsGenerating )
             if ( PopulateDays(yearFirst, yearLast) )
-              if ( IsGenerating )
+              if ( Globals.IsGenerating )
                 if ( AnalyseDays() )
-                  if ( IsGenerating )
+                  if ( Globals.IsGenerating )
                     try
                     {
                       CalendarText.Text = GenerateReportText();
@@ -94,11 +93,11 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         finally
         {
-          Chrono.Stop();
-          Settings.BenchmarkGenerateYears = Chrono.ElapsedMilliseconds;
+          Globals.ChronoCreateData.Stop();
+          Settings.BenchmarkGenerateYears = Globals.ChronoCreateData.ElapsedMilliseconds;
           Settings.LastGenerated = DateTime.Now;
           Settings.Save();
-          if ( IsGenerating )
+          if ( Globals.IsGenerating )
             try
             {
               FillMonths();
@@ -117,7 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         Cursor = cursor;
-        IsGenerating = false;
+        Globals.IsGenerating = false;
         ApplicationStatistics.UpdateDBFileSizeRequired = true;
         ApplicationStatistics.UpdateDBMemorySizeRequired = true;
         SetView(Settings.CurrentView, true);

@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private MainForm()
     {
-      ChronoStart.Start();
+      Globals.ChronoLoadApp.Start();
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
@@ -260,7 +260,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      if ( IsGenerating )
+      if ( Globals.IsGenerating )
       {
         DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
         return;
@@ -386,7 +386,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MenuTray_VisibleChanged(object sender, EventArgs e)
     {
-      CanBallon = !MenuTray.Visible;
+      TrayIconCanBallon = !MenuTray.Visible;
     }
 
     /// <summary>
@@ -417,7 +417,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Cursor.Position == TrayIconMouse ) return;
       TimerBallon.Stop();
       TimerTrayMouseMove.Stop();
-      if ( NavigationForm.Instance.Visible && NavigationTrayBallooned )
+      if ( NavigationForm.Instance.Visible && IsTrayBallooned )
         ActionNavigate.PerformClick();
     }
 
@@ -429,7 +429,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TimerBallon_Tick(object sender, EventArgs e)
     {
       TimerBallon.Stop();
-      if ( !CanBallon ) return;
+      if ( !TrayIconCanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
         if ( !Visible || !Settings.BalloonOnlyIfMainFormIsHidden )
           ActionNavigate_Click(null, null);
@@ -619,7 +619,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
     {
-      NoticeKeyboardShortcutsForm.Popup();
+      Globals.NoticeKeyboardShortcutsForm.Popup();
     }
 
     /// <summary>
@@ -809,7 +809,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();
-        NavigationTrayBallooned = sender == null;
+        IsTrayBallooned = sender == null;
         if ( NavigationForm.Instance.Visible )
         {
           NavigationForm.Instance.Hide();
