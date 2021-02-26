@@ -141,10 +141,10 @@ namespace Ordisoftware.Hebrew.Calendar
         });
         Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                                AppTranslations.NoticeKeyboardShortcuts,
-                                                               true, false, 475, 745, false, false);
+                                                               true, false, 475, 735, false, false);
         Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
         SetGlobalHotKey();
         UpdateTitles();
         Globals.ChronoLoadApp.Stop();

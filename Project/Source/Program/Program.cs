@@ -150,10 +150,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
-        if ( form != Globals.MainForm && form != AboutBox.Instance && form != GrammarGuideForm )
+        if ( form != Globals.MainForm && form != AboutBox.Instance
+          && form != GrammarGuideForm )
           update(form);
         if ( form is ShowTextForm formShowText )
-          formShowText.RelocalizeText();
+          formShowText.Relocalize();
       }
       // Various updates
       DebugManager.TraceForm.Text = tempLogTitle;
