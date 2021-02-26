@@ -139,56 +139,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void SetTimes(ReminderTimes times,
-                              DateTime date,
-                              string timeStart,
-                              string timeEnd,
-                              int delta1,
-                              int delta2,
-                              decimal delta3)
-    {
-      string[] timesStart = timeStart.Split(':');
-      string[] timesEnd = timeEnd.Split(':');
-      times.timeStart = timeStart;
-      times.timeEnd = timeEnd;
-      times.dateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0]))
-                            .AddMinutes(Convert.ToInt32(timesStart[1]));
-      times.dateStartCheck = times.dateStart.Value.AddMinutes((double)-delta3);
-      times.dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0]))
-                          .AddMinutes(Convert.ToInt32(timesEnd[1]));
-    }
-
-    private ReminderTimes CreateCelebrationTimes(LunisolarDaysRow row, decimal delta3)
-    {
-      var times = new ReminderTimes();
-      var dateRow = SQLiteDate.ToDateTime(row.Date);
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
-      var rowNext = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(+1)));
-      if ( rowPrevious == null || rowNext == null )
-        return null;
-      if ( Settings.TorahEventsCountAsMoon )
-      {
-        if ( rowNext.Date == SQLiteDate.ToString(DateTime.Today) )
-          SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
-        else
-        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.AfterSet )
-          SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
-        else
-        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.NextDay )
-          SetTimes(times, dateRow, row.Moonset, rowNext.Moonset, 0, 1, delta3);
-        else
-        if ( row.Moonset != string.Empty && (MoonRiseOccuring)row.MoonriseType == MoonRiseOccuring.BeforeSet )
-          SetTimes(times, dateRow, rowPrevious.Moonset, row.Moonset, -1, 0, delta3);
-        else
-        if ( row.Moonset == string.Empty )
-          SetTimes(times, dateRow, rowPrevious.Moonset, rowNext.Moonset, -1, 1, delta3);
-        else
-          throw new Exception("Error on calculating celebration dates and times.");
-      }
-      else
-        SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
-      return times;
-    }
 
   }
 

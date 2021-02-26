@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Settings.RemindShabatEveryMinutes;
-      SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
+      times.SetTimes(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
 
       // TODO use anniversarysunform & date like shabat

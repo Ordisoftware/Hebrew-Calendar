@@ -145,6 +145,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet - Copier.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\Hotkey.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyAction.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyEventArgs.cs" />
@@ -179,6 +180,12 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
+    <Compile Include="Source\Entities\DataSet.CelebrationTimes.cs" />
+    <Compile Include="Source\Entities\DataSet.LunarDay.cs" />
+    <Compile Include="Source\Entities\DataSet.Parashah.cs" />
+    <Compile Include="Source\Entities\DataSet.Times.cs" />
+    <Compile Include="Source\Entities\DataSet.Enums.cs" />
+    <Compile Include="Source\Entities\DataSet.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>

@@ -63,12 +63,6 @@ namespace Ordisoftware.Hebrew.Calendar
     public int CurrentDayYear
       => SQLiteDate.ToDateTime(CurrentDay?.Date ?? null).Year;
 
-    private LunisolarDaysRow TodayDay
-      => DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
-
-    private Parashah GetWeeklyParashah
-      => ParashotTable.GetDefaultByID(TodayDay?.GetParashahReadingDay()?.ParashahID) ?? null;
-
     private Dictionary<TorahEvent, bool> TorahEventRemindList
       = new Dictionary<TorahEvent, bool>();
 
