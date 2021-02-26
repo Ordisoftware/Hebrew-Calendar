@@ -90,7 +90,10 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.SetUpgradeFlagsOff();
       }
       if ( Settings.FirstLaunchV4 || Settings.FirstLaunchV7_0 )
+      {
+        Settings.SetFirstAndUpgradeFlagsOff();
         Settings.FirstLaunch = true;
+      }
       if ( Settings.UpgradeResetRequiredV5_10 )
         Settings.CurrentView = ViewMode.Month;
       if ( Settings.LanguageSelected == Language.None )
