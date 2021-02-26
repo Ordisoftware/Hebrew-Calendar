@@ -399,17 +399,23 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
-      TrayIcon.Text = !Settings.BalloonEnabled
-                      ? Text
-                      : Settings.BalloonOnlyIfMainFormIsHidden && Visible
-                        ? Text
-                        : string.Empty;
-      if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
-        return;
-      TimerBallon.Start();
-      TrayIconMouse = Cursor.Position;
-      if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
-        TimerTrayMouseMove.Start();
+      SystemManager.TryCatch(() =>
+      {
+        if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
+        {
+          var lines = Text.Replace("Parashah ", "").SplitNoEmptyLines(" - ").ToList();
+          lines.Insert(2, DateTime.Today.ToShortDateString());
+          TrayIcon.Text = new string(string.Join(Globals.NL, lines).Take(63).ToArray());
+        }
+        else
+          TrayIcon.Text = string.Empty;
+        if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
+          return;
+        TimerBallon.Start();
+        TrayIconMouse = Cursor.Position;
+        if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
+          TimerTrayMouseMove.Start();
+      });
     }
 
     /// <summary>
