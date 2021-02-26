@@ -206,7 +206,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           true, new TranslationsDictionary
           {
-            [Language.EN] = "Real days having the set",
+            [Language.EN] = "Days having the set",
             [Language.FR] = "Jours ayant le coucher"
           }
           },

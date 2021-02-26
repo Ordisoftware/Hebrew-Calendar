@@ -80,20 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    private void DoExportSettings()
-    {
-      SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
-      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-          SaveSettingsDialog.FilterIndex = index + 1;
-      if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      TabControl.SelectedIndex = 0;
-      SaveSettings();
-      Settings.Store();
-      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-      config.SaveAs(SaveSettingsDialog.FileName);
-    }
-
     private void DoImportSettings()
     {
       OpenSettingsDialog.FileName = string.Empty;
@@ -119,6 +105,8 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.Save();
         Settings.Retrieve();
         Settings.SetFirstAndUpgradeFlagsOff();
+        Program.UpdateLocalization();
+        LanguageChanged = true;
         DoReset = true;
         Reseted = true;
         Close();
@@ -128,6 +116,20 @@ namespace Ordisoftware.Hebrew.Calendar
         DisplayManager.ShowError(ex.Message);
         Settings.Reload();
       }
+    }
+
+    private void DoExportSettings()
+    {
+      SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
+      for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
+        if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+          SaveSettingsDialog.FilterIndex = index + 1;
+      if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
+      TabControl.SelectedIndex = 0;
+      SaveSettings();
+      Settings.Store();
+      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+      config.SaveAs(SaveSettingsDialog.FileName);
     }
 
   }

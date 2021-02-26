@@ -90,7 +90,10 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.SetUpgradeFlagsOff();
       }
       if ( Settings.FirstLaunchV4 || Settings.FirstLaunchV7_0 )
+      {
+        Settings.SetFirstAndUpgradeFlagsOff();
         Settings.FirstLaunch = true;
+      }
       if ( Settings.UpgradeResetRequiredV5_10 )
         Settings.CurrentView = ViewMode.Month;
       if ( Settings.LanguageSelected == Language.None )
@@ -150,10 +153,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       foreach ( Form form in Application.OpenForms )
       {
-        if ( form != Globals.MainForm && form != AboutBox.Instance && form != GrammarGuideForm )
+        if ( form != Globals.MainForm && form != AboutBox.Instance
+          && form != GrammarGuideForm )
           update(form);
         if ( form is ShowTextForm formShowText )
-          formShowText.RelocalizeText();
+          formShowText.Relocalize();
       }
       // Various updates
       DebugManager.TraceForm.Text = tempLogTitle;

@@ -67,7 +67,7 @@ namespace Ordisoftware.Core
       LocalizedText = text;
     }
 
-    public void RelocalizeText()
+    public void Relocalize()
     {
       if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
       if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
