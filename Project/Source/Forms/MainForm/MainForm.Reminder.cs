@@ -13,9 +13,7 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Data;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -85,7 +83,6 @@ namespace Ordisoftware.Hebrew.Calendar
           GoToDate(DateTime.Today);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
-        UpdateTitles();
       });
     }
 

@@ -231,46 +231,14 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
         Board.Columns.Add(( EditShowMonthNumbers.Checked ? index++ + " - " : "" ) + name, typeof(DateTime));
       }
+      DataGridView.DataSource = Board;
     }
 
     private void LoadGrid()
     {
       int year1 = (int)SelectYear1.SelectedItem;
       int year2 = (int)SelectYear2.SelectedItem;
-      var query = from day in MainForm.Instance.DataSet.LunisolarDays
-                  where day.LunarDay == 1
-                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
-                     && SQLiteDate.ToDateTime(day.Date).Year <= year2 + 1
-                  select new
-                  {
-                    date = day.GetEventStartDateTime(EditUseRealDays.Checked, true),
-                    month = day.LunarMonth
-                  };
-      DataGridView.DataSource = null;
-      Board.Rows.Clear();
-      int year = year1 - 1;
-      foreach ( var item in query )
-      {
-        if ( item.month == 1 )
-        {
-          year++;
-          if ( year > year2 ) break;
-        }
-        if ( year < year1 ) continue;
-        var row = Board.Rows.Find(year);
-        if ( row != null )
-          row[item.month] = item.date;
-        else
-        if ( item.month > 0 )
-        {
-          row = Board.NewRow();
-          row[0] = year;
-          row[item.month] = item.date;
-          Board.Rows.Add(row);
-        }
-      }
-      Board.AcceptChanges();
-      DataGridView.DataSource = Board;
+      MainForm.Instance.DataSet.LoadNewMoons(Board, year1, year2, EditUseRealDays.Checked);
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }

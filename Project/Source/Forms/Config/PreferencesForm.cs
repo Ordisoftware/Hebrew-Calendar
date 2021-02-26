@@ -336,7 +336,6 @@ namespace Ordisoftware.Hebrew.Calendar
       EditGPSLatitude.Text = Settings.GPSLatitude;
       EditGPSLongitude.Text = Settings.GPSLongitude;
       EditTimeZone.Text = Settings.GetGPSText();
-      MainForm.Instance.InitializeCurrentTimeZone();
     }
 
     // Reminder

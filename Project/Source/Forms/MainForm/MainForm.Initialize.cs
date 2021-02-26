@@ -147,7 +147,8 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
         SetGlobalHotKey();
-        UpdateTitles();
+        TimerUpdateTitles.Start();
+        TimerUpdateTitles_Tick(null, null);
         Globals.ChronoLoadApp.Stop();
         if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
           SystemManager.TryCatch(() =>

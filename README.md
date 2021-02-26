@@ -248,8 +248,10 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 7.1
+#### Planned - Version 7.x
 
+- Improve navigation form to show real lunar day values when using moon omer.
+- Improve reminder box to show real lunar day values when using moon omer.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
 #### 2021.03.12 - Version 7.0
@@ -272,15 +274,15 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add check update from about box.
 - Add export to TXT support for all boards.
 - Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
+- Improve month view to show long-week celebration intermediate days.
+- Improve navigation form to show long-week celebration intermediate days.
+- Improve celebrations and new moons boards to allow the use of english columns title and exports.
+- Improve celebrations board export file name to indicate moon or sun omer and set or rise.
+- Improve Tray Icon mouse move management.
+- Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
 - Change some keyboard shortcuts.
 - Change the minimum year to generate to two years before instead of one in order to have consistency with the parashot.
 - Change exported text files to be in UTF-8 encoding.
-- Improve celebrations and new moons boards to allow the use of english columns title and exports.
-- Improve month view to show long-week celebration intermediate days.
-- Improve navigation form to show long-week celebration intermediate days.
-- Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
-- Improve celebrations board export file name to indicate moon or sun omer and set or rise.
-- Improve Tray Icon mouse move management.
 - Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
 - Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.
 - Some UI/UX improvements.
