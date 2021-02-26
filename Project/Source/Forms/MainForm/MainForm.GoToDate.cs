@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -24,25 +25,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool GoToDateMutex;
 
-    /// <summary>
-    /// Return the weekly parashah from today.
-    /// </summary>
-    private Parashah GetWeeklyParashah()
-    {
-      var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(DateTime.Today));
-      return ParashotTable.GetDefaultByID(row?.GetParashahReadingDay()?.ParashahID) ?? null;
-    }
-
     public void GoToDate(string date)
     {
       if ( !date.IsNullOrEmpty() )
         GoToDate(SQLiteDate.ToDateTime(date));
     }
 
-    /// <summary>
-    /// Set the data position.
-    /// </summary>
-    /// <param name="date">The date.</param>
     public void GoToDate(DateTime date)
     {
       if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
@@ -64,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( position >= 0 )
         {
           LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
-          CurrentDay = (Data.DataSet.LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+          CurrentDay = (LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
           CalendarGrid.Update();
         }
       });

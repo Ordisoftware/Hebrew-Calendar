@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -23,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SearchGregorianMonthForm : Form
   {
 
-    public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }
+    public LunisolarDaysRow CurrentDay { get; private set; }
 
     public SearchGregorianMonthForm()
     {
@@ -31,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       ActiveControl = ListItems;
       CurrentDay = MainForm.Instance.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
+      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
       SelectYear.Fill(MainForm.Instance.YearsIntervalArray, year);
     }
 

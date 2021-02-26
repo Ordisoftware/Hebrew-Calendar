@@ -121,7 +121,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
       SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
-      SystemManager.TryCatch(() => { EditMainFormShowWeekParashahInTitleBar.Checked = Settings.MainFormShowWeekParashahInTitleBar; });
+      SystemManager.TryCatch(() => { EditMainFormTitleBarShowWeeklyParashah.Checked = Settings.MainFormTitleBarShowWeeklyParashah; });
+      SystemManager.TryCatch(() => { EditMainFormTitleBarShowToday.Checked = Settings.MainFormTitleBarShowToday; });
+      SystemManager.TryCatch(() => { EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate; });
       // Hotkey
       InitHotKeyControls();
       // System

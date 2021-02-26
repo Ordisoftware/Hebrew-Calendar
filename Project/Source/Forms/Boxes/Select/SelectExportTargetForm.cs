@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditAutoOpenExportedFile.Checked = Program.Settings.AutoOpenExportedFile;
       EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
       var CurrentDay = MainForm.Instance.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : SQLiteDate.ToDateTime(CurrentDay.Date).Year;
+      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
       if ( year == MainForm.Instance.DateLast.Year ) year--;
       var list = MainForm.Instance.YearsIntervalArray.SkipLast(1);
       SelectYear1.Fill(list, year);

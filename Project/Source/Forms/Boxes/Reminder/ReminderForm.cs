@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -40,9 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    static public void Run(Data.DataSet.LunisolarDaysRow row,
-                           TorahEvent torahevent,
-                           ReminderTimes times)
+    static public void Run(LunisolarDaysRow row, TorahEvent torahevent, ReminderTimes times)
     {
       bool isShabat = torahevent == TorahEvent.Shabat;
       bool doLockSession = false;

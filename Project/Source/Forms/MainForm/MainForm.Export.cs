@@ -16,8 +16,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-using Ordisoftware.Core;
 using System.Runtime.Serialization;
+using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -48,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
         after?.Invoke(view);
     }
 
-    private IEnumerable<Data.DataSet.LunisolarDaysRow> GetDayRows(ExportInterval interval)
+    private IEnumerable<LunisolarDaysRow> GetDayRows(ExportInterval interval)
     {
       if ( !interval.IsDefined ) return DataSet.LunisolarDays;
       string start = SQLiteDate.ToString(interval.Start.Value);

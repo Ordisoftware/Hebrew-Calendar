@@ -16,6 +16,7 @@ using System;
 using System.Data;
 using System.Linq;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -38,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
                     && SQLiteDate.ToDateTime(day.Date) >= dateNow
                     && SQLiteDate.ToDateTime(day.Date) <= dateLimit
                  select day;
-      foreach ( Data.DataSet.LunisolarDaysRow row in rows )
+      foreach ( LunisolarDaysRow row in rows )
       {
         var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
         if ( times == null ) continue;

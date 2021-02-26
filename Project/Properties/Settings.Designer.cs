@@ -2409,12 +2409,36 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainFormShowWeekParashahInTitleBar {
+        public bool MainFormTitleBarShowWeeklyParashah {
             get {
-                return ((bool)(this["MainFormShowWeekParashahInTitleBar"]));
+                return ((bool)(this["MainFormTitleBarShowWeeklyParashah"]));
             }
             set {
-                this["MainFormShowWeekParashahInTitleBar"] = value;
+                this["MainFormTitleBarShowWeeklyParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowLastNewInVersionAfterUpdate {
+            get {
+                return ((bool)(this["ShowLastNewInVersionAfterUpdate"]));
+            }
+            set {
+                this["ShowLastNewInVersionAfterUpdate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MainFormTitleBarShowToday {
+            get {
+                return ((bool)(this["MainFormTitleBarShowToday"]));
+            }
+            set {
+                this["MainFormTitleBarShowToday"] = value;
             }
         }
     }

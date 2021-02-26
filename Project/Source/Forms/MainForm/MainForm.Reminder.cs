@@ -15,6 +15,7 @@
 using System;
 using System.Data;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -157,7 +158,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           .AddMinutes(Convert.ToInt32(timesEnd[1]));
     }
 
-    private ReminderTimes CreateCelebrationTimes(Data.DataSet.LunisolarDaysRow row, decimal delta3)
+    private ReminderTimes CreateCelebrationTimes(LunisolarDaysRow row, decimal delta3)
     {
       var times = new ReminderTimes();
       var dateRow = SQLiteDate.ToDateTime(row.Date);

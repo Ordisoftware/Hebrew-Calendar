@@ -758,7 +758,13 @@
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
   </data>
-  <data name="EditMainFormShowWeekParashahInTitleBar.Text" xml:space="preserve">
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
     <value>Afficher la Parashah de la semaine dans la barre de titre</value>
+  </data>
+  <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
+    <value>Afficher le jour de la lune dans la barre de titre</value>
+  </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
+    <value>Afficher les nouveautés après une mise à jour</value>
   </data>
 </root>
