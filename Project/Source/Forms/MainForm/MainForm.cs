@@ -337,7 +337,6 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
-          UpdateTitles();
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
@@ -356,7 +355,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Enabled = formEnabled;
         MenuTray.Enabled = true;
         GoToDate(DateTime.Now.Date);
-        UpdateTitles();
+        UpdateTitles(true);
         EnableReminder();
       }
     }
@@ -707,7 +706,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MenuShowHide_Click(null, null);
       SystemManager.TryCatchManage(() => DoGenerate(sender, e));
-      UpdateTitles();
+      UpdateTitles(true);
     }
 
     /// <summary>
@@ -967,6 +966,19 @@ namespace Ordisoftware.Hebrew.Calendar
     private void TimerReminder_Tick(object sender, EventArgs e)
     {
       DoTimerReminder();
+    }
+
+    /// <summary>
+    /// Event handler. Called by TimerUpdateTitles for tick events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void TimerUpdateTitles_Tick(object sender, EventArgs e)
+    {
+      if ( !Globals.IsReady || Globals.IsExiting || Globals.IsGenerating || Globals.IsSessionEnding )
+        TimerUpdateTitles.Stop();
+      else
+        UpdateTitles();
     }
 
     /// <summary>

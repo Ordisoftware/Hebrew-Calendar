@@ -15,7 +15,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -78,44 +77,46 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Update form title bar and sub-title texts.
     /// </summary>
-    private void UpdateTitles()
+    private void UpdateTitles(bool force = false)
     {
       Text = Globals.AssemblyTitle;
       if ( Settings.MainFormTitleBarShowToday )
       {
         var date = DateTime.Today;
-        var row = DataSet.GetLunarToday();
+        var row = DataSet.GetLunarToday(force);
         if ( row != null && row.LunarMonth != 0 )
           Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
       }
-      new Task(() =>
+      SystemManager.TryCatch(() =>
       {
-        try
-        {
-          string str;
-          if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
-          {
-            str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
-            this.SyncUI(() => LabelSubTitleGPS.Text = str);
-          }
+        string str;// = string.Empty;
+        // GPS
+        if ( !force && !TitleGPS.IsNullOrEmpty() )
+          str = TitleGPS;
+        else
+        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
+          str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+        else
+          str = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
+        LabelSubTitleGPS.Text = str;
+        // Omer
+        if ( !force && !TitleOmer.IsNullOrEmpty() )
+          str = TitleOmer;
+        else
           str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-          this.SyncUI(() => LabelSubTitleOmer.Text = str);
-          if ( Settings.MainFormTitleBarShowWeeklyParashah )
-          {
-            var parashah = DataSet.GetWeeklyParashah();
-            if ( parashah != null )
-            {
-              str = Text + " - Parashah " + parashah.ToStringLinked().ToUpper();
-              this.SyncUI(() => Text = str);
-            }
-          }
-        }
-        catch
+        LabelSubTitleOmer.Text = str;
+        // Parashah
+        if ( Settings.MainFormTitleBarShowWeeklyParashah )
         {
-          ;
+          var parashah = DataSet.GetWeeklyParashah(force);
+          Text += " - Parashah ";
+          Text += ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
         }
-      }).Start();
+      });
     }
+
+    private string TitleGPS;
+    private string TitleOmer;
 
     /// <summary>
     /// Update the buttons.

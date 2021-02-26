@@ -21,9 +21,9 @@ namespace Ordisoftware.Hebrew.Calendar.Data
   partial class DataSet
   {
 
-    public Parashah GetWeeklyParashah()
+    public Parashah GetWeeklyParashah(bool force = false)
     {
-      return ParashotTable.GetDefaultByID(GetLunarToday()?.GetParashahReadingDay()?.ParashahID) ?? null;
+      return ParashotTable.GetDefaultByID(GetLunarToday(force)?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
     partial class LunisolarDaysRow

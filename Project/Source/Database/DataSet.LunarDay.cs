@@ -21,42 +21,49 @@ namespace Ordisoftware.Hebrew.Calendar.Data
   partial class DataSet
   {
 
-    public LunisolarDaysRow GetLunarToday()
+    public LunisolarDaysRow GetLunarToday(bool force = false)
     {
-      // TODO use a timer to not call each time needed ?
+      // TODO use a delta timespan to avoid calculation each time 
       return GetLunarDay(DateTime.Now);
     }
 
-    public LunisolarDaysRow GetLunarDay(DateTime date)
+    public LunisolarDaysRow GetLunarDay(DateTime datetime)
     {
-      var dateStr = SQLiteDate.ToString(date);
+      var dateStr = SQLiteDate.ToString(datetime);
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
         int delta = 2;
         var rowCurrent = LunisolarDays.FindByDate(dateStr);
-        int indexrow = LunisolarDays.Rows.IndexOf(rowCurrent);
-        int indexStart = Math.Max(0, indexrow - delta);
-        int indexEnd = Math.Min(indexrow + delta, LunisolarDays.Count - 1);
+        int indexRowCurrent = LunisolarDays.Rows.IndexOf(rowCurrent);
+        int indexStart = Math.Max(0, indexRowCurrent - delta);
+        int indexEnd = Math.Min(indexRowCurrent + delta, LunisolarDays.Count - 1);
         bool isInBounds = false;
         LunisolarDaysRow rowLast = null;
         LunisolarDaysRow rowFirst = null;
         for ( int index = indexEnd; index > indexStart; index-- )
         {
           rowCurrent = LunisolarDays[index];
-          if ( !isInBounds && rowCurrent.MoonsetAsDateTime < date )
+          if ( !isInBounds && rowCurrent.MoonsetAsDateTime < datetime )
           {
             isInBounds = true;
             rowFirst = rowCurrent;
           }
           else
-          if ( isInBounds && rowCurrent.MoonsetAsDateTime <= date )
+          if ( isInBounds && rowCurrent.MoonsetAsDateTime <= datetime )
             return !rowCurrent.Moonrise.IsNullOrEmpty() ? rowLast : rowFirst;
           rowLast = rowCurrent;
         }
       }
       else
       {
-        ;
+        int delta = 2;
+        var rowCurrent = LunisolarDays.FindByDate(dateStr);
+        int indexRowCurrent = LunisolarDays.Rows.IndexOf(rowCurrent);
+        if ( datetime < rowCurrent.SunsetAsDateTime )
+          return rowCurrent;
+        else
+        if ( indexRowCurrent < LunisolarDays.Rows.Count - 1 )
+          return (LunisolarDaysRow)LunisolarDays.Rows[indexRowCurrent + 1];
       }
       return null;
     }
