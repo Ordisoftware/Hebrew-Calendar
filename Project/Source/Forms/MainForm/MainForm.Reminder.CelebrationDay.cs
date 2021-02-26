@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
           return false;
-      var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
+      var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return false;
       bool result = dateNow >= times.dateStartCheck.Value && dateNow <= times.dateEnd.Value;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);

@@ -39,9 +39,9 @@ namespace Ordisoftware.Hebrew.Calendar
       var times = new ReminderTimes();
       var delta3 = Settings.RemindShabatEveryMinutes;
       if ( Settings.RemindShabatOnlyLight )
-        SetTimes(times, dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
+        times.Set(dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
-        SetTimes(times, dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
+        times.Set(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
       bool result = dateNow >= times.dateStartCheck.Value && dateNow <= times.dateEnd.Value;
       var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )

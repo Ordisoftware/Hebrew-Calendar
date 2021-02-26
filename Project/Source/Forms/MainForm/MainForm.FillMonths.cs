@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Drawing;
 using CodeProjectCalendar.NET;
@@ -201,7 +200,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( row.TorahEvents != 0 )
               add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
             else
-              add(Settings.CalendarColorTorahEvent, row.WeekLongCelebrationSubDay);
+              add(Settings.CalendarColorTorahEvent, row.GetWeekLongCelebrationIntermediateDay());
             if ( Settings.CalendarShowParashah )
               if ( !string.IsNullOrEmpty(row.ParashahID) )
                 add(Settings.CalendarColorParashah, row.ParashahText);

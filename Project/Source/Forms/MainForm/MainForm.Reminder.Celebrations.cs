@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
                  select day;
       foreach ( LunisolarDaysRow row in rows )
       {
-        var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
+        var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
         if ( times == null ) continue;
         RemindCelebrationDates.Add(row.Date);
         ReminderForm.Run(row, TorahEvent.None, times);

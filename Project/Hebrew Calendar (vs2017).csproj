@@ -179,6 +179,12 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
+    <Compile Include="Source\Entities\DataSet.ReminderTimes.cs" />
+    <Compile Include="Source\Entities\DataSet.LunarDay.cs" />
+    <Compile Include="Source\Entities\DataSet.Parashah.cs" />
+    <Compile Include="Source\Entities\DataSet.AsDateTime.cs" />
+    <Compile Include="Source\Entities\DataSet.AsEnum.cs" />
+    <Compile Include="Source\Entities\DataSet.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>

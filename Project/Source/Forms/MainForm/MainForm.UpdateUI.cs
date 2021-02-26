@@ -84,28 +84,35 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.MainFormTitleBarShowToday )
       {
         var date = DateTime.Today;
-        var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(date));
-        if ( row != null )
+        var row = DataSet.GetLunarToday();
+        if ( row != null && row.LunarMonth != 0 )
           Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
       }
       new Task(() =>
       {
-        string str;
-        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
+        try
         {
-          str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
-          this.SyncUI(() => LabelSubTitleGPS.Text = str);
-        }
-        str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-        this.SyncUI(() => LabelSubTitleOmer.Text = str);
-        if ( Settings.MainFormTitleBarShowWeeklyParashah )
-        {
-          var parashah = GetWeeklyParashah;
-          if ( parashah != null )
+          string str;
+          if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
           {
-            str = Text + " - Parashah " + parashah.ToStringLinked().ToUpper();
-            this.SyncUI(() => Text = str);
+            str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+            this.SyncUI(() => LabelSubTitleGPS.Text = str);
           }
+          str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+          this.SyncUI(() => LabelSubTitleOmer.Text = str);
+          if ( Settings.MainFormTitleBarShowWeeklyParashah )
+          {
+            var parashah = DataSet.GetWeeklyParashah();
+            if ( parashah != null )
+            {
+              str = Text + " - Parashah " + parashah.ToStringLinked().ToUpper();
+              this.SyncUI(() => Text = str);
+            }
+          }
+        }
+        catch
+        {
+          ;
         }
       }).Start();
     }

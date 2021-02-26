@@ -864,13 +864,13 @@
     <value>23, 205</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 17</value>
+    <value>148, 17</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
-    <value>Show current lunar day in the title bar</value>
+    <value>Show today in the title bar</value>
   </data>
   <data name="&gt;&gt;EditMainFormTitleBarShowToday.Name" xml:space="preserve">
     <value>EditMainFormTitleBarShowToday</value>
