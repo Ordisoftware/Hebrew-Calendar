@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -99,11 +98,12 @@ namespace Ordisoftware.Hebrew.Calendar
               NavigationForm.Instance.Hide();
             this.Popup();
           }
-          if ( !NavigationForm.Instance.Visible )
-            if ( Settings.MainFormShownGoToToday )
-              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(DateTime.Today))).Start();
-            else
-              new Task(() => DisplayManager.SyncMainUI(() => GoToDate(CalendarMonth.CalendarDate.Date))).Start();
+          if ( sender != null )
+            if ( !NavigationForm.Instance.Visible )
+              if ( Settings.MainFormShownGoToToday )
+                GoToDate(DateTime.Today);
+              else
+                GoToDate(CalendarMonth.CalendarDate.Date);
         }
         else
         {
