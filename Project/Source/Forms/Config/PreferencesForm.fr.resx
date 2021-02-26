@@ -758,4 +758,7 @@
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
   </data>
+  <data name="EditMainFormShowWeekParashahInTitleBar.Text" xml:space="preserve">
+    <value>Afficher la Parashah de la semaine dans la barre de titre</value>
+  </data>
 </root>

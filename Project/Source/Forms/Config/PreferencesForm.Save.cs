@@ -110,6 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WeatherAppPath = EditWeatherAppPath.Text;
       Settings.WeatherMenuItemsEnabled = EditWeatherMenuItemsEnabled.Checked;
       Settings.CalendarShowParashah = EditCalendarShowParashah.Checked;
+      Settings.MainFormShowWeekParashahInTitleBar = EditMainFormShowWeekParashahInTitleBar.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

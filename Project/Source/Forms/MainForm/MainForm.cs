@@ -354,6 +354,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
+        UpdateTitles();
         GoToDate(DateTime.Now.Date);
         EnableReminder();
       }

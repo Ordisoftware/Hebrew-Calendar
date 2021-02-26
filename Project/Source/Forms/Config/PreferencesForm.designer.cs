@@ -284,6 +284,7 @@
       this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
       this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMainFormShowWeekParashahInTitleBar = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -500,6 +501,7 @@
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.TabPageApplication.Controls.Add(this.EditMainFormShowWeekParashahInTitleBar);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
       this.TabPageApplication.Controls.Add(this.EditLogEnabled);
@@ -2401,6 +2403,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditMainFormShowWeekParashahInTitleBar
+      // 
+      resources.ApplyResources(this.EditMainFormShowWeekParashahInTitleBar, "EditMainFormShowWeekParashahInTitleBar");
+      this.EditMainFormShowWeekParashahInTitleBar.Name = "EditMainFormShowWeekParashahInTitleBar";
+      this.EditMainFormShowWeekParashahInTitleBar.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2728,5 +2736,6 @@
     private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
     private System.Windows.Forms.CheckBox EditWeekParashahIsOnSaturday;
     private System.Windows.Forms.Button ActionParashahHelp;
+    private System.Windows.Forms.CheckBox EditMainFormShowWeekParashahInTitleBar;
   }
 }
