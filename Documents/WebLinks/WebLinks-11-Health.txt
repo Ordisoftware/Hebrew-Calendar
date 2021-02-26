@@ -13,31 +13,17 @@
 Lang/EN = health and herbology
 Lang/FR = Santé et herbologie
 
-Name = (EN) Medicinal plants
-URL = https://en.wikipedia.org/wiki/Medicinal_plants
+Name = (EN) Traditional Chinese medicine
+URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
 
-Name = (FR) Plante médicinale
-URL = https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale
-
-Name = (EN) Chinese herbology
-URL = https://en.wikipedia.org/wiki/Chinese_herbology
-
-Name = (FR) Pharmacopée chinoise
-URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
-
--
+Name = (FR) Médecine traditionnelle chinoise
+URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
 
 Name = (EN) Ayurveda
 URL = https://en.wikipedia.org/wiki/Ayurveda
 
 Name = (FR) Ayurveda
 URL = https://fr.wikipedia.org/wiki/Ayurveda
-
-Name = (EN) Traditional Chinese medicine
-URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
-
-Name = (FR) Médecine traditionnelle chinoise
-URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
 
 -
 
@@ -52,6 +38,20 @@ URL = https://en.wikipedia.org/wiki/Qigong
 
 Name = (FR) Qi gong
 URL = https://fr.wikipedia.org/wiki/Qi_gong
+
+-
+
+Name = (EN) Medicinal plants
+URL = https://en.wikipedia.org/wiki/Medicinal_plants
+
+Name = (FR) Plante médicinale
+URL = https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale
+
+Name = (EN) Chinese herbology
+URL = https://en.wikipedia.org/wiki/Chinese_herbology
+
+Name = (FR) Pharmacopée chinoise
+URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
 
 -
 
