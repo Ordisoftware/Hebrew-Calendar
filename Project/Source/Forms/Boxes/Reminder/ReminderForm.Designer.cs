@@ -33,8 +33,12 @@
       this.LabelDate = new System.Windows.Forms.LinkLabel();
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
-      this.LabelHours = new System.Windows.Forms.Label();
+      this.LabelStartTime = new System.Windows.Forms.Label();
       this.ActionSetup = new System.Windows.Forms.Button();
+      this.LabelEndTime = new System.Windows.Forms.Label();
+      this.LabelArrow = new System.Windows.Forms.Label();
+      this.LabelStartDay = new System.Windows.Forms.Label();
+      this.LabelEndDay = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
@@ -72,11 +76,11 @@
       this.ActionClose.UseVisualStyleBackColor = true;
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
-      // LabelHours
+      // LabelStartTime
       // 
-      resources.ApplyResources(this.LabelHours, "LabelHours");
-      this.LabelHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-      this.LabelHours.Name = "LabelHours";
+      resources.ApplyResources(this.LabelStartTime, "LabelStartTime");
+      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelStartTime.Name = "LabelStartTime";
       // 
       // ActionSetup
       // 
@@ -87,13 +91,41 @@
       this.ActionSetup.UseVisualStyleBackColor = true;
       this.ActionSetup.Click += new System.EventHandler(this.ActionSetup_Click);
       // 
+      // LabelEndTime
+      // 
+      resources.ApplyResources(this.LabelEndTime, "LabelEndTime");
+      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelEndTime.Name = "LabelEndTime";
+      // 
+      // LabelArrow
+      // 
+      resources.ApplyResources(this.LabelArrow, "LabelArrow");
+      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelArrow.Name = "LabelArrow";
+      // 
+      // LabelStartDay
+      // 
+      resources.ApplyResources(this.LabelStartDay, "LabelStartDay");
+      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelStartDay.Name = "LabelStartDay";
+      // 
+      // LabelEndDay
+      // 
+      resources.ApplyResources(this.LabelEndDay, "LabelEndDay");
+      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelEndDay.Name = "LabelEndDay";
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.LabelHours);
+      this.Controls.Add(this.LabelEndDay);
+      this.Controls.Add(this.LabelEndTime);
+      this.Controls.Add(this.LabelArrow);
+      this.Controls.Add(this.LabelStartDay);
+      this.Controls.Add(this.LabelStartTime);
       this.Controls.Add(this.ActionSetup);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
@@ -119,7 +151,11 @@
     private System.Windows.Forms.LinkLabel LabelDate;
     private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.Label LabelHours;
+    private System.Windows.Forms.Label LabelStartTime;
     private System.Windows.Forms.Button ActionSetup;
+    private System.Windows.Forms.Label LabelEndTime;
+    private System.Windows.Forms.Label LabelArrow;
+    private System.Windows.Forms.Label LabelStartDay;
+    private System.Windows.Forms.Label LabelEndDay;
   }
 }

@@ -85,19 +85,30 @@ namespace Ordisoftware.Hebrew.Calendar
                                : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
                                                                     ? row.TorahEventsAsEnum
                                                                     : torahevent);
-        form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+        //var lunarDay = MainForm.Instance.DataSet.GetLunarDay(row.Date)
+        //form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+        form.LabelDate.Text = isShabat
+                              ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString())
+                              : $"{row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
         if ( times.DateStart != null && times.DateEnd != null )
-          form.LabelHours.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " +
-                                 times.TimeStart + " ➜ " +
-                                 AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " +
-                                 times.TimeEnd;
+        {
+          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " + times.TimeStart;
+          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " + times.TimeEnd;
+          form.LabelStartDay.Text = times.DateStart.Value.ToString("d MMM yyyy");
+          form.LabelEndDay.Text = times.DateEnd.Value.ToString("d MMM yyyy");
+        }
+        int left = form.LabelStartTime.Left + form.LabelStartTime.Width;
+        int left2 = left + form.LabelArrow.Width;
+        form.LabelArrow.Left = left;
+        form.LabelEndTime.Left = left2;
+        form.LabelEndDay.Left = left2;
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
-        form.LabelHours.ForeColor = Program.Settings.MonthViewTextColor;
+        form.LabelStartTime.ForeColor = Program.Settings.MonthViewTextColor;
         if ( Program.Settings.UseColors )
           form.BackColor = doLockSession ? Program.Settings.EventColorTorah : Program.Settings.EventColorNext;
         form.IsShabat = isShabat;
@@ -254,14 +265,19 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null); 
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
+      if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
+      {
+        MainForm.Instance.MenuShowHide_Click(null, null);
+        this.Popup();
+      }
     }
 
     private void ActionSetup_Click(object sender, EventArgs e)
     {
       SelectSoundForm.Run(true);
     }
+
   }
 
 }

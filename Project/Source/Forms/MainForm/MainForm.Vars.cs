@@ -88,6 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatchManage(() =>
       {
+        IsSpecialDay = false;
         TrayIcon.Icon = TrayIconDefault;
         Application.OpenForms.ToList().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         ParashotForm.Instance?.Close();
