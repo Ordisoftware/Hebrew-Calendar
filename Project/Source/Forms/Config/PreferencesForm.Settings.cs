@@ -51,18 +51,10 @@ namespace Ordisoftware.Hebrew.Calendar
       var lastupdate = Settings.CheckUpdateLastDone;
       var lastvacuum = Settings.VacuumLastDone;
       Settings.Reset();
+      Settings.SetFirstAndUpgradeFlagsOff();
       Settings.CheckUpdateLastDone = lastupdate;
       Settings.VacuumLastDone = lastvacuum;
       Settings.DateBookmarksCount = bookmarksCount;
-      // TODO refactor
-      Settings.UpgradeResetRequiredV3_0 = false;
-      Settings.UpgradeResetRequiredV3_6 = false;
-      Settings.UpgradeResetRequiredV4_1 = false;
-      Settings.UpgradeResetRequiredV5_10 = false;
-      Settings.FirstLaunchV4 = false;
-      Settings.FirstLaunchV7_0 = false;
-      Settings.FirstLaunch = false;
-      // TODO refactor
       Settings.GPSCountry = country;
       Settings.GPSCity = city;
       Settings.GPSLatitude = lat;
