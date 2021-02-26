@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.MainFormTitleBarShowToday )
       {
         var date = DateTime.Today;
-        var row = DataSet.GetLunarToday(force);
+        var row = DataSet.GetLunarToday();
         if ( row != null && row.LunarMonth != 0 )
           Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
       }
@@ -108,7 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
         // Parashah
         if ( Settings.MainFormTitleBarShowWeeklyParashah )
         {
-          var parashah = DataSet.GetWeeklyParashah(force);
+          var parashah = DataSet.GetWeeklyParashah();
           Text += " - Parashah ";
           Text += ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
         }

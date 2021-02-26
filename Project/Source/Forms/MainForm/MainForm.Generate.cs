@@ -75,6 +75,10 @@ namespace Ordisoftware.Hebrew.Calendar
             yearLast = YearLast;
           }
           ClearLists();
+          Text = Globals.AssemblyTitle;
+          LabelSubTitleGPS.Text = string.Empty;
+          LabelSubTitleOmer.Text = string.Empty;
+          InitializeCurrentTimeZone();
           return CreateData(yearFirst, yearLast);
         }
         finally

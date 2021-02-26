@@ -21,10 +21,17 @@ namespace Ordisoftware.Hebrew.Calendar.Data
   partial class DataSet
   {
 
-    public LunisolarDaysRow GetLunarToday(bool force = false)
+    private DateTime LunarDayChecked = DateTime.MinValue;
+    private LunisolarDaysRow LastCheck;
+
+    public LunisolarDaysRow GetLunarToday()
     {
-      // TODO use a delta timespan to avoid calculation each time 
-      return GetLunarDay(DateTime.Now);
+      var now = DateTime.Now;
+      var diff = now - LunarDayChecked;
+      if ( LastCheck != null && diff.Seconds < 60 && LunisolarDays.Rows.Contains(LastCheck) )
+        return LastCheck;
+      LunarDayChecked = now;
+      return GetLunarDay(now);
     }
 
     public LunisolarDaysRow GetLunarDay(DateTime datetime)
@@ -32,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       var dateStr = SQLiteDate.ToString(datetime);
       if ( Program.Settings.TorahEventsCountAsMoon )
       {
-        int delta = 2;
+        int delta = 7;
         var rowCurrent = LunisolarDays.FindByDate(dateStr);
         int indexRowCurrent = LunisolarDays.Rows.IndexOf(rowCurrent);
         int indexStart = Math.Max(0, indexRowCurrent - delta);

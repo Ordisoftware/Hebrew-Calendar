@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       {
         if ( time.IsNullOrEmpty() ) return null;
         var date = SQLiteDate.ToDateTime(Date);
-        var parts = Moonset.Split(':');
+        var parts = time.Split(':');
         return date.AddHours(int.Parse(parts[0])).AddMinutes(int.Parse(parts[1]));
       }
 
