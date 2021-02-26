@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static public partial class AppTranslations
+  static partial class AppTranslations
   {
 
     static public readonly TranslationsDictionary NoticeCelebrationsTitle

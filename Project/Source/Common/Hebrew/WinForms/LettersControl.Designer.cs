@@ -122,7 +122,7 @@
     #endregion
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
-    internal Ordisoftware.Core.UndoRedoTextBox TextBox;
+    public Ordisoftware.Core.UndoRedoTextBox TextBox;
     private System.Windows.Forms.ContextMenuStrip ContextMenuLetter;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtStart;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtEnd;

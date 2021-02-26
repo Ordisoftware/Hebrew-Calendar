@@ -554,7 +554,7 @@
     private System.Windows.Forms.Label label18;
     private System.Windows.Forms.LinkLabel linkLabel19;
     private System.Windows.Forms.Label label19;
-    internal System.Windows.Forms.Button ActionViewStats;
-    internal System.Windows.Forms.Button ActionCheckUpdate;
+    public System.Windows.Forms.Button ActionViewStats;
+    public System.Windows.Forms.Button ActionCheckUpdate;
   }
 }

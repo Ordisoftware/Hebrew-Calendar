@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   [Serializable]
-  public class TranslationsDictionary : NullSafeOfStringDictionary<Language>
+  partial class TranslationsDictionary : NullSafeOfStringDictionary<Language>
   {
     public TranslationsDictionary() : base()
     {
@@ -34,7 +34,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide localization helper.
   /// </summary>
-  static public partial class Localizer
+  static partial class Localizer
   {
 
     private const string ERR = "<Not translated>";

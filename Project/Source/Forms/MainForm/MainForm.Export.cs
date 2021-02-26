@@ -22,7 +22,7 @@ using System.Runtime.Serialization;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private void DoExport(ExportAction action, ExportActions process, Action<ViewMode> after)
@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
   }
 
   [Serializable]
-  public class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
+  partial class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
   {
     public ExportActions() : base()
     {

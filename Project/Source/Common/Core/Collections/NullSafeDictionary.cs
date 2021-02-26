@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// Provide null safe dictionary.
   /// </summary>
   [Serializable]
-  public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+  partial class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
     where TValue : class
   {
 

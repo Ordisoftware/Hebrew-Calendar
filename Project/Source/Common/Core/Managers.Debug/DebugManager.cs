@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
   /// }                                                          
   /// 
   /// </remarks>
-  static public partial class DebugManager
+  static partial class DebugManager
   {
 
     static public event DebugManagerHandler EnabledChanged;

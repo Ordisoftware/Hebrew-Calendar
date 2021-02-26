@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectYearsForm : Form
+  partial class SelectYearsForm : Form
   {
 
     static public bool Run(bool canCancel, out int first, out int last)

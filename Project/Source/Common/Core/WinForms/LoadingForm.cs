@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class LoadingForm : Form
+  partial class LoadingForm : Form
   {
 
     public const int QuantaTotal = 10;

@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SearchGregorianMonthForm : Form
+  partial class SearchGregorianMonthForm : Form
   {
 
     public Data.DataSet.LunisolarDaysRow CurrentDay { get; private set; }

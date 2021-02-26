@@ -145,7 +145,7 @@
     private System.Windows.Forms.Button ActionLock;
     private System.Windows.Forms.Label LabelCountDown;
     private System.Windows.Forms.Label LabelMessage;
-    internal System.Windows.Forms.Timer Timer;
+    public System.Windows.Forms.Timer Timer;
     private System.Windows.Forms.CheckBox EditMediaStop;
     private System.Windows.Forms.LinkLabel ActionHibernate;
     private System.Windows.Forms.LinkLabel ActionStandby;

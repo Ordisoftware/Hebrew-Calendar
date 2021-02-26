@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide reminder times.
   /// </summary>
-  public class ReminderTimes
+  partial class ReminderTimes
   {
     public string timeStart;
     public string timeEnd;

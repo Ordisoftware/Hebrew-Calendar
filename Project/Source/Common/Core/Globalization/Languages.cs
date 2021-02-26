@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Indicate supported languages.
   /// </summary>
-  static public class Languages
+  static partial class Languages
   {
 
     /// <summary>

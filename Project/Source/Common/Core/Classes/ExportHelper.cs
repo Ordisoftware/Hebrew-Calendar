@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide export helper.
   /// </summary>
-  static public partial class ExportHelper
+  static partial class ExportHelper
   {
 
     static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)

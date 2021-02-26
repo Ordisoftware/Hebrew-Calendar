@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide calendar date item.
   /// </summary>
-  public class CalendarDateItem
+  partial class CalendarDateItem
   {
     public DateTime Date { get; set; }
     public int MoonDay { get; set; }

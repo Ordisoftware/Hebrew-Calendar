@@ -26,7 +26,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide exception information.
   /// </summary>
-  public class ExceptionInfo
+  partial class ExceptionInfo
   {
 
     /// <summary>

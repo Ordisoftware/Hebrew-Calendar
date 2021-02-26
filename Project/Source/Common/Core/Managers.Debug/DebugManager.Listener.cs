@@ -20,10 +20,10 @@ using System.Diagnostics;
 namespace Ordisoftware.Core
 {
 
-  static public partial class DebugManager
+  static partial class DebugManager
   {
 
-    public class Listener : TraceListener
+    internal partial class Listener : TraceListener
     {
 
       public event TraceFileChanged Changed;

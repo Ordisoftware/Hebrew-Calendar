@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew
     public int Max;
   }
 
-  static public class BooksBounds
+  static partial class BooksBounds
   {
     static public readonly BookBound Torah = new BookBound
     {

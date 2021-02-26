@@ -18,7 +18,7 @@ using System.Collections.Generic;
 namespace Ordisoftware.Hebrew
 {
 
-  static public partial class BooksNames
+  static partial class BooksNames
   {
 
     static public readonly Dictionary<Books, string> MechonMamre = new Dictionary<Books, string>()

@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static public partial class SysTranslations
+  static partial class SysTranslations
   {
 
     static public readonly TranslationsDictionary Initializing

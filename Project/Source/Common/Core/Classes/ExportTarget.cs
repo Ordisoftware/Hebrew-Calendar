@@ -46,7 +46,7 @@ namespace Ordisoftware.Core
     GIF
   }
 
-  static public class ImageExportTargetHelper
+  static partial class ImageExportTargetHelper
   {
 
     static public void Fill<T>(this ComboBox combobox, NullSafeOfStringDictionary<T> list, T valueDefault)

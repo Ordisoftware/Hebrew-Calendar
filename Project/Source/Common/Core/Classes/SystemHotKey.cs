@@ -24,7 +24,7 @@ using Base.Hotkeys;
 namespace Ordisoftware.Core
 {
 
-  public class SystemHotKey
+  partial class SystemHotKey
   {
 
     static private HotkeyManager Manager

@@ -21,7 +21,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class MessageBoxEx : Form
+  partial class MessageBoxEx : Form
   {
 
     public const bool DefaultJustifyEnabled = true;

@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="filePath">The new file path.</param>
-  public delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
+  delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
 
   /// <summary>
   /// Delegate for handling before show exception events.
@@ -30,7 +30,7 @@ namespace Ordisoftware.Core
   /// <param name="sender">Source of the event.</param>
   /// <param name="einfo">The einfo.</param>
   /// <param name="process">[in,out] The process.</param>
-  public delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo, ref bool process);
+  delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo, ref bool process);
 
   /// <summary>
   /// Delegate for handling after show exception events.
@@ -38,13 +38,13 @@ namespace Ordisoftware.Core
   /// <param name="sender">Source of the event.</param>
   /// <param name="einfo">The einfo.</param>
   /// <param name="processed">true if processed.</param>
-  public delegate void AfterShowExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
+  delegate void AfterShowExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
 
   /// <summary>
   /// Delegate for handling SubstitureShowException events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="einfo">The einfo.</param>
-  public delegate void SubstitureShowExceptionEventHandler(object sender, ExceptionInfo einfo);
+  delegate void SubstitureShowExceptionEventHandler(object sender, ExceptionInfo einfo);
 
 }

@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public class ApplicationCommandLine : SystemCommandLine
+  partial class ApplicationCommandLine : SystemCommandLine
   {
 
     static public ApplicationCommandLine Instance

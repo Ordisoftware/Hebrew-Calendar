@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static public partial class ParashotTable
+  static partial class ParashotTable
   {
 
     static public Parashah GetDefaultByID(string id)

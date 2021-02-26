@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide Settings helper.
   /// </summary>
-  static public class SettingsHelper
+  static partial class SettingsHelper
   {
 
     static private bool Mutex;

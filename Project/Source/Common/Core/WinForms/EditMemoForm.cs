@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class EditMemoForm : Form
+  partial class EditMemoForm : Form
   {
 
     public EditMemoForm()

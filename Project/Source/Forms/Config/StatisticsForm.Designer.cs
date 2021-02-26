@@ -1009,7 +1009,7 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    internal System.Windows.Forms.Timer Timer;
+    public System.Windows.Forms.Timer Timer;
     private System.Windows.Forms.BindingSource ApplicationStatisticsDataBindingSource;
     private System.Windows.Forms.BindingSource SystemStatisticsDataBindingSource;
     private System.Windows.Forms.Label dBEventsCountLabel1;
@@ -1067,7 +1067,7 @@
     private Ordisoftware.Core.UndoRedoTextBox EditOpenFolderUserLocalData;
     private Ordisoftware.Core.UndoRedoTextBox EditFolderUserData;
     private System.Windows.Forms.Panel PanelFolders;
-    internal System.Windows.Forms.Button ActionViewLog;
+    public System.Windows.Forms.Button ActionViewLog;
     private System.Windows.Forms.Label cPUProcessLoadLabel1;
     private System.Windows.Forms.Label cPUProcessLoadMaxLabel1;
     private System.Windows.Forms.Label cPUProcessLoadAvgLabel1;

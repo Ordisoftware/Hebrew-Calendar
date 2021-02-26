@@ -23,7 +23,7 @@ using Markdig;
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class CommonMenusControl : UserControl
+  partial class CommonMenusControl : UserControl
   {
 
     static public CommonMenusControl Instance;

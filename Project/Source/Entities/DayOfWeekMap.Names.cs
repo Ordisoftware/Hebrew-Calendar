@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  static public partial class DayOfWeekMap
+  static partial class DayOfWeekMap
   {
 
     /// <summary>

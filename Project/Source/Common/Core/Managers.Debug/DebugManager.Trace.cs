@@ -19,7 +19,7 @@ using System.IO;
 namespace Ordisoftware.Core
 {
 
-  static public partial class DebugManager
+  static partial class DebugManager
   {
 
     static DebugManager()

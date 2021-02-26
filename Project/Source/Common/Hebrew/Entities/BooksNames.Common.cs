@@ -18,7 +18,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static public partial class BooksNames
+  static partial class BooksNames
   {
 
     static public readonly NullSafeDictionary<Language, NullSafeOfStringDictionary<Books>> Common

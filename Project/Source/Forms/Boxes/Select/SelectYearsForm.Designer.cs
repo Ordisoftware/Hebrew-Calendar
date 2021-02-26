@@ -152,9 +152,9 @@
     private System.Windows.Forms.Label LabelYearFirst;
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Panel PanelBottom;
-    internal System.Windows.Forms.NumericUpDown EditYearLast;
-    internal System.Windows.Forms.NumericUpDown EditYearFirst;
-    internal System.Windows.Forms.Button ActionCancel;
+    public System.Windows.Forms.NumericUpDown EditYearLast;
+    public System.Windows.Forms.NumericUpDown EditYearFirst;
+    public System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionPrefefinedInterval;
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
     private System.Windows.Forms.Button ActionDefaultInterval;

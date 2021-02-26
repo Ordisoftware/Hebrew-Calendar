@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide improved not implemented exception.
   /// </summary>
   [Serializable]
-  public class NotImplementedExceptionEx : NotImplementedException
+  partial class NotImplementedExceptionEx : NotImplementedException
   {
 
     public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);

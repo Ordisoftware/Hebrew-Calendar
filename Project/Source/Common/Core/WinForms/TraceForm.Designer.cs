@@ -134,6 +134,6 @@
     private System.Windows.Forms.Button ActionClearLogs;
     private System.Windows.Forms.TrackBar TrackBarFontSize;
     private System.Windows.Forms.Button ActionOpenLogsFolder;
-    internal RichTextBoxEx TextBox;
+    public RichTextBoxEx TextBox;
   }
 }

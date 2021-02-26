@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 namespace Ordisoftware.Core
 {
 
-  static public class NativeMethods
+  static partial class NativeMethods
   {
 
     // WorkStation

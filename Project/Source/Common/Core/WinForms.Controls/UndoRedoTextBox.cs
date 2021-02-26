@@ -51,7 +51,7 @@ namespace Ordisoftware.Core
 
   //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
 
-  public partial class UndoRedoTextBox : TextBox
+  partial class UndoRedoTextBox : TextBox
   {
 
     private bool SetTextMutex;

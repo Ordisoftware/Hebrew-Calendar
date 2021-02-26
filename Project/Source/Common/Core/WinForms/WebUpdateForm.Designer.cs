@@ -129,11 +129,11 @@
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOK;
-    internal System.Windows.Forms.RadioButton SelectInstall;
-    internal System.Windows.Forms.RadioButton SelectDownload;
-    internal System.Windows.Forms.Label LabelNewVersion;
+    public System.Windows.Forms.RadioButton SelectInstall;
+    public System.Windows.Forms.RadioButton SelectDownload;
+    public System.Windows.Forms.Label LabelNewVersion;
     private System.Windows.Forms.LinkLabel ActionReleaseNotes;
-    internal System.Windows.Forms.Label LabelCurrentversion;
+    public System.Windows.Forms.Label LabelCurrentversion;
     private System.Windows.Forms.LinkLabel ActionNews;
   }
 }

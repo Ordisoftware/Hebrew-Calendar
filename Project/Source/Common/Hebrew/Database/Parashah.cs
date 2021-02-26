@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew
 {
 
-  public class Parashah
+  partial class Parashah
   {
 
     public string ID { get; }

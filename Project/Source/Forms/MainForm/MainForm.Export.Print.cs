@@ -21,7 +21,7 @@ using CoolPrintPreview;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class MainForm
+  partial class MainForm
   {
 
     private int PrinterCurrentLine;

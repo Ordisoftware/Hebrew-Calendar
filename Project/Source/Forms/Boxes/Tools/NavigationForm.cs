@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class NavigationForm : Form
+  partial class NavigationForm : Form
   {
 
     static public NavigationForm Instance { get; private set; }

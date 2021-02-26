@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static public partial class HebrewTranslations
+  static partial class HebrewTranslations
   {
 
     static public readonly TranslationsDictionary GrammarGuideTitle

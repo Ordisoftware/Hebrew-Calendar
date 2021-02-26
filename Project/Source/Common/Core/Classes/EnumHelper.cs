@@ -19,7 +19,7 @@ using System.Globalization;
 namespace Ordisoftware.Core
 {
 
-  static public class EnumHelper
+  static partial class EnumHelper
   {
 
     static public string ToStringFull<T>(this T value) where T : Enum
@@ -49,7 +49,7 @@ namespace Ordisoftware.Core
       return (T)(object)flagsInt;
     }
 
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Next<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -62,7 +62,7 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-enum-value-in-c-sharp
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Previous<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })

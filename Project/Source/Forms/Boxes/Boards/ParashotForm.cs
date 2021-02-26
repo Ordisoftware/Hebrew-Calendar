@@ -23,7 +23,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class ParashotForm : Form
+  partial class ParashotForm : Form
   {
 
     static public ParashotForm Instance { get; private set; }

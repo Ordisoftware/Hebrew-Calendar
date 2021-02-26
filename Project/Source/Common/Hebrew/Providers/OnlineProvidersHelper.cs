@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide online providers list helper to create menu items.
   /// </summary>
-  static public class OnlineProvidersHelper
+  static partial class OnlineProvidersHelper
   {
 
     /// <summary>

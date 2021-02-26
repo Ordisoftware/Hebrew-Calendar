@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace Ordisoftware.Core
 {
-  public partial class TraceForm : Form
+  partial class TraceForm : Form
   {
 
     private string LocationPropertyName;

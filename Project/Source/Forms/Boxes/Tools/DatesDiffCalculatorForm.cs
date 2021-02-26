@@ -20,7 +20,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class DatesDiffCalculatorForm : Form
+  partial class DatesDiffCalculatorForm : Form
   {
 
     static public DatesDiffCalculatorForm Instance { get; private set; }

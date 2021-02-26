@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide online providers list.
   /// </summary>
-  public partial class OnlineProviders : DataFile
+  partial class OnlineProviders : DataFile
   {
 
     /// <summary>

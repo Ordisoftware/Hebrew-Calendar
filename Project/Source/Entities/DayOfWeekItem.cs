@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide day of week item to be displayed in a control.
   /// </summary>
-  public class DayOfWeekItem
+  partial class DayOfWeekItem
   {
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string Text { get; set; }
 
     /// <summary>
-    /// Indicate the day of week enum value.
+    /// Indicate the day of week public enum value.
     /// </summary>
     public DayOfWeek Day { get; set; }
 

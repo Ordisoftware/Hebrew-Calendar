@@ -6,7 +6,7 @@ namespace Ordisoftware.Core
 {
 
   // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
-  public class MediaMixer
+  partial class MediaMixer
   {
 
     static public int GetSoundLengthMS(string fileName)
@@ -142,7 +142,7 @@ namespace Ordisoftware.Core
 
   [ComImport]
   [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]
-  public class MMDeviceEnumerator
+  partial class MMDeviceEnumerator
   {
   }
 

@@ -32,7 +32,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide SQLite ODBC helper.
   /// </summary>
-  static public class SQLiteOdbcHelper
+  static partial class SQLiteOdbcHelper
   {
 
     static public int DefaultOptimizeDaysInterval = 7;

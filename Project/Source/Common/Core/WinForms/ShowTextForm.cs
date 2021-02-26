@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class ShowTextForm : Form
+  partial class ShowTextForm : Form
   {
 
     private bool HideOnClose;

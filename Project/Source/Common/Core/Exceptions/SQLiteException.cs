@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// Provide SQLite exception.
   /// </summary>
   [Serializable]
-  public class SQLiteException : DbException
+  partial class SQLiteException : DbException
   {
     public SQLiteException() : base() { }
     public SQLiteException(string message) : base(message) { }

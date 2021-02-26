@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class PreferencesForm
+  partial class PreferencesForm
   {
 
     private void LoadSettings()

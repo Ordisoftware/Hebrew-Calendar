@@ -19,7 +19,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectSuspendDelayForm : Form
+  partial class SelectSuspendDelayForm : Form
   {
 
     static public int? Run()

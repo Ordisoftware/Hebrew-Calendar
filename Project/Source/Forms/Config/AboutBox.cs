@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide the about box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class AboutBox : Form
+  partial class AboutBox : Form
   {
 
     /// <summary>

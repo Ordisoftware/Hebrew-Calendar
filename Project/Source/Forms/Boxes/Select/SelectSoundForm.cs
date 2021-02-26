@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public partial class SelectSoundForm : Form
+  partial class SelectSoundForm : Form
   {
 
     static public int DefaultReminderSoundMaxDuration = 3000;

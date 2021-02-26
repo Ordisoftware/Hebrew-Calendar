@@ -128,7 +128,7 @@
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Label LabelYear;
-    internal System.Windows.Forms.ListView ListItems;
+    public System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader3;
     private SelectValueComboBox SelectYear;

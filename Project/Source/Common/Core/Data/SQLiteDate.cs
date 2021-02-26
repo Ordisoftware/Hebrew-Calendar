@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide SQLite date helper.
   /// </summary>
-  static public class SQLiteDate
+  static partial class SQLiteDate
   {
 
     static private void RunSecure()

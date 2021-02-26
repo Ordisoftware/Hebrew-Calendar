@@ -20,7 +20,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class HTMLBrowserForm : Form
+  partial class HTMLBrowserForm : Form
   {
 
     private string LocationPropertyName;

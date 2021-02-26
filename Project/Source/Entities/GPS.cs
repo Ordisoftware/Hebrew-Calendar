@@ -18,7 +18,7 @@ using FileHelpers;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  public class CityItem
+  partial class CityItem
   {
     public string Name;
     public string Latitude;
@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
   [IgnoreFirst(1)]
   [DelimitedRecord(",")]
-  public class WorldCities
+  partial class WorldCities
   {
     [FieldQuoted] public string city;
     [FieldQuoted] public string city_ascii;

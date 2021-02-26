@@ -87,6 +87,6 @@
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
     private System.Windows.Forms.Button ActionOK;
-    internal System.Windows.Forms.MonthCalendar MonthCalendar;
+    public System.Windows.Forms.MonthCalendar MonthCalendar;
   }
 }

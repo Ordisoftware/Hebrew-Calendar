@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// Provide application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
-  public partial class MainForm
+  partial class MainForm
   {
 
     public const bool HotKeyEnabledByDefault = true;

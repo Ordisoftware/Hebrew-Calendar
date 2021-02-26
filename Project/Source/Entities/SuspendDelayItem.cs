@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide suspend reminder delay item.
   /// </summary>
-  public class SuspendDelayItem
+  partial class SuspendDelayItem
   {
     public string Text { get; set; }
     public int Minutes { get; set; }

@@ -22,7 +22,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static public class ProcessLocksTable
+  static partial class ProcessLocksTable
   {
 
     static public readonly string TableName = nameof(ProcessLocksTable).Replace("Table", string.Empty);
