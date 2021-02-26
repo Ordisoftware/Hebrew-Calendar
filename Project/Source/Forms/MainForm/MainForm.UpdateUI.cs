@@ -108,8 +108,8 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() =>
       {
         if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
-        MenuTray.Enabled = Globals.IsReady && !IsGenerating;
-        ToolStrip.Enabled = !IsGenerating;
+        MenuTray.Enabled = Globals.IsReady && !Globals.IsGenerating;
+        ToolStrip.Enabled = !Globals.IsGenerating;
         ActionSaveToFile.Enabled = DataSet.LunisolarDays.Count > 0;
         ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
         ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;
@@ -135,7 +135,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void UpdateCalendarMonth(bool doFill)
     {
-      IsGenerating = true;
+      Globals.IsGenerating = true;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       Enabled = false;
@@ -149,7 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = true;
         Cursor = cursor;
-        IsGenerating = false;
+        Globals.IsGenerating = false;
         SetView(Settings.CurrentView, true);
         UpdateButtons();
       }

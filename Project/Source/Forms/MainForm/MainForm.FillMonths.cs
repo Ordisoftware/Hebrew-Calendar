@@ -73,8 +73,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     internal void FillMonths()
     {
-      var Chrono = new Stopwatch();
-      Chrono.Start();
+      Globals.ChronoShowData.Start();
       try
       {
         InitializeYearsInterval();
@@ -217,8 +216,8 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Chrono.Stop();
-        Settings.BenchmarkFillCalendar = Chrono.ElapsedMilliseconds;
+        Globals.ChronoShowData.Stop();
+        Settings.BenchmarkFillCalendar = Globals.ChronoShowData.ElapsedMilliseconds;
         Settings.Save();
       }
     }

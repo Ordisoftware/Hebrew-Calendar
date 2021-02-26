@@ -79,7 +79,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         });
-      ChronoStart.Stop();
+      Globals.ChronoLoadApp.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
@@ -91,13 +91,13 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.Exit();
         return;
       }
-      ChronoStart.Start();
+      Globals.ChronoLoadApp.Start();
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
       InitializeCurrentTimeZone();
       InitializeDialogsDirectory();
-      DebugManager.TraceEnabledChanged += value => SystemInformationMenu.ActionViewLog.Enabled = value;
+      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
       Refresh();
       ClearLists();
       LoadData();
@@ -125,9 +125,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         SystemManager.TryCatch(Settings.Save);
-        ChronoStart.Stop();
-        Settings.BenchmarkStartingApp = ChronoStart.ElapsedMilliseconds;
-        ChronoStart.Start();
+        Globals.ChronoLoadApp.Stop();
+        Settings.BenchmarkStartingApp = Globals.ChronoLoadApp.ElapsedMilliseconds;
+        Globals.ChronoLoadApp.Start();
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;
         TimerMidnight.Start();
@@ -140,15 +140,17 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LockSessionForm.Instance?.Visible ?? false )
             LockSessionForm.Instance.Popup();
         });
-        NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                       AppTranslations.NoticeKeyboardShortcuts,
-                                                       true, false, 475, 745, false, false);
-        NoticeKeyboardShortcutsForm.TextBox.BackColor = NoticeKeyboardShortcutsForm.BackColor;
-        NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
+        Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                               AppTranslations.NoticeKeyboardShortcuts,
+                                                               true, false, 475, 745, false, false);
+        Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
+        Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
         SetGlobalHotKey();
         UpdateTitles();
-        ChronoStart.Stop();
+        Globals.ChronoLoadApp.Stop();
+        if (Globals.SettingsUpgraded)
+          CommonMenusControl.
       }
       finally
       {
@@ -259,17 +261,17 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void CreateSystemInformationMenu()
     {
-      SystemInformationMenu = new CommonMenusControl(ActionAbout_Click,
-                                                     ActionWebCheckUpdate_Click,
-                                                     ActionViewLog_Click,
-                                                     ActionViewStats_Click);
-      var menu = SystemInformationMenu.MenuInformation;
+      CommonMenusControl.Instance = new CommonMenusControl(ActionAbout_Click,
+                                                           ActionWebCheckUpdate_Click,
+                                                           ActionViewLog_Click,
+                                                           ActionViewStats_Click);
+      var menu = CommonMenusControl.Instance.MenuInformation;
       var list = new List<ToolStripItem>();
       foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
       menu.DropDownItems.Clear();
       ActionInformation.DropDownItems.Clear();
       ActionInformation.DropDownItems.AddRange(list.ToArray());
-      SystemInformationMenu.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
+      CommonMenusControl.Instance.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }
 
@@ -278,8 +280,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     internal void InitializeSpecialMenus()
     {
-      SystemInformationMenu.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      SystemInformationMenu.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
+      CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
       ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
       ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;

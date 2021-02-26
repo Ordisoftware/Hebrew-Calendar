@@ -26,6 +26,8 @@ namespace Ordisoftware.Hebrew
   public partial class CommonMenusControl : UserControl
   {
 
+    static public CommonMenusControl Instance;
+
     public CommonMenusControl(EventHandler aboutClick,
                               EventHandler updateClick,
                               EventHandler viewLogClick,

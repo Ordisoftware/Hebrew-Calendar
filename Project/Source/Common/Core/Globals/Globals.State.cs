@@ -49,6 +49,11 @@ namespace Ordisoftware.Core
     static public bool IsReady { get; set; } = false;
 
     /// <summary>
+    /// Indicate if data is being generated.
+    /// </summary>
+    static public bool IsGenerating { get; set; }
+
+    /// <summary>
     /// Indicate if the windows session is ending.
     /// </summary>
     static public bool IsSessionEnding { get; set; } = false;
