@@ -234,38 +234,14 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
         Board.Columns.Add(name, typeof(DateTime));
       }
+      DataGridView.DataSource = Board;
     }
 
     private void LoadGrid()
     {
       int year1 = (int)SelectYear1.SelectedItem;
       int year2 = (int)SelectYear2.SelectedItem;
-      var query = from day in MainForm.Instance.DataSet.LunisolarDays
-                  where day.TorahEventsAsEnum != TorahEvent.None
-                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
-                     && SQLiteDate.ToDateTime(day.Date).Year <= year2
-                  select new
-                  {
-                    date = day.GetEventStartDateTime(EditUseRealDays.Checked, false),
-                    torah = day.TorahEventsAsEnum
-                  };
-      DataGridView.DataSource = null;
-      Board.Rows.Clear();
-      foreach ( var item in query )
-      {
-        var row = Board.Rows.Find(item.date.Year);
-        if ( row != null )
-          row[(int)item.torah] = item.date;
-        else
-        {
-          row = Board.NewRow();
-          row[0] = item.date.Year;
-          row[(int)item.torah] = item.date;
-          Board.Rows.Add(row);
-        }
-      }
-      Board.AcceptChanges();
-      DataGridView.DataSource = Board;
+      MainForm.Instance.DataSet.LoadCelebrations(Board, year1, year2, EditUseRealDays.Checked);
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }

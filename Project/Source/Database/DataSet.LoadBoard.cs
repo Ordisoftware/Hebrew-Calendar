@@ -10,9 +10,11 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-12 </created>
+/// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Data;
+using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar.Data
@@ -20,6 +22,70 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
   partial class DataSet
   {
+
+    public void LoadCelebrations(DataTable table, int year1, int year2, bool useRealDay)
+    {
+      table.Rows.Clear();
+      var query = from day in LunisolarDays
+                  where day.TorahEventsAsEnum != TorahEvent.None
+                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
+                     && SQLiteDate.ToDateTime(day.Date).Year <= year2
+                  select new
+                  {
+                    date = day.GetEventStartDateTime(useRealDay, false),
+                    torah = day.TorahEventsAsEnum
+                  };
+      foreach ( var item in query )
+      {
+        var row = table.Rows.Find(item.date.Year);
+        if ( row != null )
+          row[(int)item.torah] = item.date;
+        else
+        {
+          row = table.NewRow();
+          row[0] = item.date.Year;
+          row[(int)item.torah] = item.date;
+          table.Rows.Add(row);
+        }
+      }
+      table.AcceptChanges();
+    }
+
+    public void LoadNewMoons(DataTable table, int year1, int year2, bool useRealDay)
+    {
+      table.Rows.Clear();
+      var query = from day in LunisolarDays
+                  where day.LunarDay == 1
+                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
+                     && SQLiteDate.ToDateTime(day.Date).Year <= year2 + 1
+                  select new
+                  {
+                    date = day.GetEventStartDateTime(useRealDay, true),
+                    month = day.LunarMonth
+                  };
+      int year = year1 - 1;
+      foreach ( var item in query )
+      {
+        if ( item.month == 1 )
+        {
+          year++;
+          if ( year > year2 ) break;
+        }
+        if ( year < year1 ) continue;
+        var row = table.Rows.Find(year);
+        if ( row != null )
+          row[item.month] = item.date;
+        else
+        if ( item.month > 0 )
+        {
+          row = table.NewRow();
+          row[0] = year;
+          row[item.month] = item.date;
+          table.Rows.Add(row);
+        }
+      }
+      table.AcceptChanges();
+    }
 
     partial class LunisolarDaysRow
     {

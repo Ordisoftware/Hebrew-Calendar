@@ -184,7 +184,7 @@
     <Compile Include="Source\Database\DataSet.Parashah.cs" />
     <Compile Include="Source\Database\DataSet.AsDateTime.cs" />
     <Compile Include="Source\Database\DataSet.AsEnum.cs" />
-    <Compile Include="Source\Database\DataSet.cs" />
+    <Compile Include="Source\Database\DataSet.LoadBoard.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>
