@@ -42,9 +42,9 @@ namespace Ordisoftware.Hebrew.Calendar
         times.Set(dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
         times.Set(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
-      bool result = dateNow >= times.dateStartCheck.Value && dateNow <= times.dateEnd.Value;
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
+      bool result = dateNow >= times.DateStartCheck.Value && dateNow <= times.DateEnd.Value;
+      var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
+      if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         return result;
       }
       else
-      if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
+      if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
       {
         if ( LastShabatReminded.HasValue )
           return result;
@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( LastShabatReminded.HasValue )
       {
-        if ( dateNow > times.dateStart && LastShabatReminded.Value < times.dateStart )
+        if ( dateNow > times.DateStart && LastShabatReminded.Value < times.DateStart )
         {
           if ( ShabatForm != null )
             ShabatForm.Close();

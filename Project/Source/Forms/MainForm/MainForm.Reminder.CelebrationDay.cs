@@ -43,10 +43,10 @@ namespace Ordisoftware.Hebrew.Calendar
           return false;
       var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return false;
-      bool result = dateNow >= times.dateStartCheck.Value && dateNow <= times.dateEnd.Value;
-      var dateTrigger = times.dateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
+      bool result = dateNow >= times.DateStartCheck.Value && dateNow <= times.DateEnd.Value;
+      var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       var torahevent = row.TorahEventsAsEnum;
-      if ( dateNow < dateTrigger || dateNow >= times.dateEnd.Value )
+      if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
       {
         LastCelebrationReminded[torahevent] = null;
         if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
         return result;
       }
       else
-      if ( dateNow >= dateTrigger && dateNow < times.dateStartCheck )
+      if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
       {
         if ( LastCelebrationReminded[torahevent].HasValue )
           return result;
@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( LastCelebrationReminded[torahevent].HasValue )
       {
-        if ( dateNow > times.dateStart && LastCelebrationReminded[torahevent].Value < times.dateStart )
+        if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent].Value < times.DateStart )
         {
           if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
             RemindCelebrationDayForms[torahevent].Close();

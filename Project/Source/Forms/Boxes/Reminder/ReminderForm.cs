@@ -46,8 +46,8 @@ namespace Ordisoftware.Hebrew.Calendar
       bool isShabat = torahevent == TorahEvent.Shabat;
       bool doLockSession = false;
       var dateNow = DateTime.Now;
-      if ( times.dateStart != null && times.dateEnd != null )
-        doLockSession = dateNow >= times.dateStart && dateNow <= times.dateEnd;
+      if ( times.DateStart != null && times.DateEnd != null )
+        doLockSession = dateNow >= times.DateStart && dateNow <= times.DateEnd;
       try
       {
         ReminderForm form = null;
@@ -86,11 +86,11 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                     ? row.TorahEventsAsEnum
                                                                     : torahevent);
         form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
-        if ( times.dateStart != null && times.dateEnd != null )
-          form.LabelHours.Text = AppTranslations.DayOfWeek.GetLang(times.dateStart.Value.DayOfWeek) + " " +
-                                 times.timeStart + " ➜ " +
-                                 AppTranslations.DayOfWeek.GetLang(times.dateEnd.Value.DayOfWeek) + " " +
-                                 times.timeEnd;
+        if ( times.DateStart != null && times.DateEnd != null )
+          form.LabelHours.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " +
+                                 times.TimeStart + " ➜ " +
+                                 AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " +
+                                 times.TimeEnd;
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
