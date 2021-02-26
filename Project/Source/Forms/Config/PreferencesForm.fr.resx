@@ -762,7 +762,7 @@
     <value>Afficher la Parashah de la semaine dans la barre de titre</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
-    <value>Afficher le jour de la lune dans la barre de titre</value>
+    <value>Afficher aujourd'hui dans la barre de titre</value>
   </data>
   <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
     <value>Afficher les nouveautés après une mise à jour</value>

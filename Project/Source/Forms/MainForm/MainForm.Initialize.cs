@@ -148,7 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SetGlobalHotKey();
         UpdateTitles();
         Globals.ChronoLoadApp.Stop();
-        if ( Globals.SettingsUpgraded )
+        if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
           SystemManager.TryCatch(() =>
           {
             var menuitem = CommonMenusControl.Instance
