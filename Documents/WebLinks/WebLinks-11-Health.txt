@@ -10,8 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Herbology
-Lang/FR = Herbologie
+Lang/EN = health and herbology
+Lang/FR = Santé et herbologie
 
 Name = (EN) Medicinal plants
 URL = https://en.wikipedia.org/wiki/Medicinal_plants
@@ -38,6 +38,20 @@ URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
 
 Name = (FR) Médecine traditionnelle chinoise
 URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
+
+-
+
+Name = (EN) Yoga
+URL = https://en.wikipedia.org/wiki/Yoga
+
+Name = (FR) Yoga
+URL = https://fr.wikipedia.org/wiki/Yoga
+
+Name = (EN) Qigong
+URL = https://en.wikipedia.org/wiki/Qigong
+
+Name = (FR) Qi gong
+URL = https://fr.wikipedia.org/wiki/Qi_gong
 
 -
 
