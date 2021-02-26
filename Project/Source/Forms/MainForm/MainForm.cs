@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using EnumsNET;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -354,8 +355,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
-        UpdateTitles();
         GoToDate(DateTime.Now.Date);
+        UpdateTitles();
         EnableReminder();
       }
     }
@@ -399,7 +400,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !Globals.IsReady ) return;
       if ( !MenuTray.Enabled ) return;
-      TrayIcon.Text = Settings.BalloonEnabled ? string.Empty : Text;
+      TrayIcon.Text = !Settings.BalloonEnabled
+                      ? Text
+                      : Settings.BalloonOnlyIfMainFormIsHidden && Visible
+                        ? Text
+                        : string.Empty;
       if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
       TimerBallon.Start();
@@ -660,7 +665,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(GetWeeklyParashah());
+      ParashotForm.Run(GetWeeklyParashah);
     }
 
     /// <summary>
@@ -949,7 +954,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LunisolarDaysBindingSource.Current != null )
         {
           var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-          GoToDate(( (Data.DataSet.LunisolarDaysRow)rowview ).Date);
+          GoToDate(( (LunisolarDaysRow)rowview ).Date);
         }
       });
     }

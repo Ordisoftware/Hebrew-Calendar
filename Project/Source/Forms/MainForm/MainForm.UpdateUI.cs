@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -81,24 +81,33 @@ namespace Ordisoftware.Hebrew.Calendar
     private void UpdateTitles()
     {
       Text = Globals.AssemblyTitle;
-      if ( Settings.MainFormShowWeekParashahInTitleBar )
-        new Task(() =>
+      if ( Settings.MainFormTitleBarShowToday )
+      {
+        var date = DateTime.Today;
+        var row = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(date));
+        if ( row != null )
+          Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
+      }
+      new Task(() =>
+      {
+        string str;
+        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
         {
-          string str;
-          if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
-          {
-            str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
-            this.SyncUI(() => LabelSubTitleGPS.Text = str);
-          }
-          str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-          this.SyncUI(() => LabelSubTitleOmer.Text = str);
-          var parashah = GetWeeklyParashah();
+          str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+          this.SyncUI(() => LabelSubTitleGPS.Text = str);
+        }
+        str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+        this.SyncUI(() => LabelSubTitleOmer.Text = str);
+        if ( Settings.MainFormTitleBarShowWeeklyParashah )
+        {
+          var parashah = GetWeeklyParashah;
           if ( parashah != null )
           {
             str = Text + " - Parashah " + parashah.ToStringLinked().ToUpper();
             this.SyncUI(() => Text = str);
           }
-        }).Start();
+        }
+      }).Start();
     }
 
     /// <summary>

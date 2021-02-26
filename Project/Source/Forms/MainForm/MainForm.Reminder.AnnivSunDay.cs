@@ -16,6 +16,7 @@ using System;
 using System.Data;
 using System.Linq;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -34,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
                   where SQLiteDate.ToDateTime(day.Date) == dateBirth
-                  select day ).FirstOrDefault() as Data.DataSet.LunisolarDaysRow;
+                  select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null )
         return;
       var dateRow = SQLiteDate.ToDateTime(row.Date);

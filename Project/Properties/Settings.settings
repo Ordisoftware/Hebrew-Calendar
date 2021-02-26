@@ -604,7 +604,13 @@
     <Setting Name="WeekParashahIsOnSaturday" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="MainFormShowWeekParashahInTitleBar" Type="System.Boolean" Scope="User">
+    <Setting Name="MainFormTitleBarShowWeeklyParashah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowLastNewInVersionAfterUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainFormTitleBarShowToday" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

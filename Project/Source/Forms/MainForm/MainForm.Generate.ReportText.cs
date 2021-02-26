@@ -20,6 +20,7 @@ using System.Text;
 using System.Linq;
 using EnumsNET;
 using Ordisoftware.Core;
+using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -74,7 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
-        foreach ( Data.DataSet.LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+        foreach ( LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
           try
           {
             var dayDate = SQLiteDate.ToDateTime(day.Date);
