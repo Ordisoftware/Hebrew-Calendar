@@ -81,7 +81,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( force
         || Settings.UpgradeResetRequiredV3_0
         || Settings.UpgradeResetRequiredV3_6
-        || Settings.UpgradeResetRequiredV4_1 )
+        || Settings.UpgradeResetRequiredV4_1
+        || Settings.UpgradeResetRequiredV5_10 )
       {
         if ( !force && !Settings.FirstLaunch )
           DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
