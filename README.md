@@ -257,14 +257,17 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add Parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add generate weekly Parashah lecture in the database.
-- Add options to set Parashah in or outside of Israël, and always on saturday.
-- Add option to indicate the Parashah in the days of Shabat for the visual month.
-- Add Parashah reading to the days of Shabat according to the option.
-- Add current Parashah in navigation form and in main form subtitle.
-- Add common database in roaming to store parashot user table and inter-process locking table.
-- Add a different tray icon to indicate if Shabat or a celebration day is running.
-- Add option to enable or disable the special day tray icon.
-- Add news in version notice in the Information menu.
+- Add option to set Parashah generation for inside or outside of Israël.
+- Add option to set Parashah reading always on saturday.
+- Add option to indicate Parashah in the Shabatot of the visual month.
+- Add option to indicate current Parashah in the application title bar.
+- Add option to indicate current lunar day in the application title bar.
+- Add current Parashah in the navigation form and in the main form subtitle.
+- Add common database in roaming to store parashot table and inter-process locking table.
+- Add a different Tray Icon to indicate if a Shabat or a celebration day is running.
+- Add option to enable or disable this special day Tray Icon.
+- Add new in version notice in the Information menu.
+- Add option to show the last new in version after a software update.
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
@@ -277,6 +280,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Improve navigation form to show long-week celebration intermediate days.
 - Improve automatic web check update to not run when Shabat and a special celebration day but the next day.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
+- Improve Tray Icon mouse move management.
 - Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
 - Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.
 - Some UI/UX improvements.
@@ -376,7 +380,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
-- Fix lunar months menu item not available yet in the main form is available in the tray icon menu.
+- Fix lunar months menu item not available yet in the main form is available in the Tray Icon menu.
 - Few improvements.
 - Few fixes.
 - Code refactoring.
@@ -463,7 +467,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Improve new version available form to show current version.
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
-- Fix small defect with tray icon images.
+- Fix small defect with Tray Icon images.
 - Update web links to improve playlists and add the calendar of Torah-box.
 
 #### 2020.11.18 - Version 5.7
@@ -521,7 +525,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add keyboard shortcuts to navigate in the calendar month view.
 - Add search gregorian month form.
-- Add tools menu duplicated in the tray icon.
+- Add tools menu duplicated in the Tray Icon.
 - Add force database optimize at next startup in tools menu
 - Add option to define the years interval for auto-generation.
 - Add option to enable or disable the web links menu.
@@ -563,8 +567,8 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to define moon day text format for calendar month view.
 - Add Windows date and time link in the tools menu.
 - Add release notes link in the information menu.
-- Add information menu duplicated in the tray icon.
-- Add web links menu duplicated in the tray icon.
+- Add information menu duplicated in the Tray Icon.
+- Add web links menu duplicated in the Tray Icon.
 - Fix reset preferences generates data before setup GPS if undefined that causes an exception.
 - Fix GPS labels appearance for Windows 10.
 - Fix reminder form title bar for Windows 10.
@@ -578,9 +582,9 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add F1/F2/F3 shortcuts to select the view.
 - Add F4/F5/F6/F7 shortcuts to open searches windows.
 - Add moon month name to all days in the month view.
-- Add suspend reminder menu in the main form and the tray icon.
-- Improve tray icon to show if the reminder is suspended.
-- Add preferences menu in the tray icon.
+- Add suspend reminder menu in the main form and the Tray Icon.
+- Improve Tray Icon to show if the reminder is suspended.
+- Add preferences menu in the Tray Icon.
 - Add dialog box to choose sun or moon omer at first startup.
 - Add celebrations dialog box notice.
 - Improve personal Shabat dialog box notice.
@@ -653,7 +657,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 - Improve celebration and lunar month finder.
 - Improve select city window.
-- Change exit button now doesn't shutdown app but minimize to tray icon.
+- Change exit button now doesn't shutdown app but minimize to Tray Icon.
 - Fix cities names having special diacritics.
 - Fix lunar month's first day duplicated if no moon rise on the next sun day.
 
@@ -683,7 +687,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Improve session ending.
 - Add loading data box instead of using a bottom progressbar.
 - Add displaying begin and end dates and times in the celebration reminder form like with the Shabat.
-- Add looming navigation popup from the tray icon when mouse is over.
+- Add looming navigation popup from the Tray Icon when mouse is over.
 - Add celebration weeks, Shabat days and reminders popup colorization.
 - Add check end of calendar to automatically regenerate it.
 - Add option to choose language.
@@ -734,7 +738,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2019.04.08 - Version 1.6
 
-- Fix tray icon.
+- Fix Tray Icon.
 
 #### 2019.01.28 - Version 1.5
 
