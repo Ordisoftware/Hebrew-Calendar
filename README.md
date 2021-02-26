@@ -61,6 +61,8 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - The Parashah of the week in indicated in Shabat cases of the visual calendar and in the navigation window.
 - The visual calendar and the navigation window indicates the intermediate days of week-long celebrations.
 - The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set.
+- The navigation window and reminder boxes now show the real lunar date according to the times for sun or moon omer.
+- The application title bar can show the lunar today and the Weekly Parashah.
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
@@ -250,8 +252,6 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 #### Planned - Version 7.x
 
-- Improve navigation form to show real lunar day values when using moon omer.
-- Improve reminder box to show real lunar day values when using moon omer.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
 #### 2021.03.12 - Version 7.0
@@ -276,6 +276,8 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
+- Improve navigation form to show real lunar day date according to the times for sun or moon omer.
+- Improve reminder box to show real lunar day date according to the times for sun ormoon omer.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
 - Improve Tray Icon mouse move management.
@@ -285,7 +287,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Change exported text files to be in UTF-8 encoding.
 - Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
 - Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.
-- Some UI/UX improvements.
+- Some fixes and UI/UX improvements.
 - Some file and code refactoring.
 - Add Serilog-sinks-winforms NuGet package.
 - Add some online bible providers and update *chabad.org*.
