@@ -41,9 +41,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequest) ) return;
-      Globals.SettingsUpgraded = Settings.UpgradeRequired;
-      Settings.CheckUpgradeRequired(ref Globals.SettingsUpgraded);
-      Settings.UpgradeRequired = Globals.SettingsUpgraded;
+      bool upgrade = Settings.UpgradeRequired;
+      Globals.SettingsUpgraded = upgrade;
+      Settings.CheckUpgradeRequired(ref upgrade);
+      Settings.UpgradeRequired = upgrade;
       CheckSettingsReset();
       Globals.Settings = Settings;
       Globals.MainForm = MainForm.Instance;
