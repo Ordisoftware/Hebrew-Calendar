@@ -1,0 +1,48 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Herbology
+Lang/FR = Herbologie
+
+Name = (EN) Medicinal plants
+URL = https://en.wikipedia.org/wiki/Medicinal_plants
+
+Name = (FR) Plante médicinale
+URL = https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale
+
+Name = (EN) Chinese herbology
+URL = https://en.wikipedia.org/wiki/Chinese_herbology
+
+Name = (FR) Pharmacopée chinoise
+URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
+
+-
+
+Name = (EN) Ayurveda
+URL = https://en.wikipedia.org/wiki/Ayurveda
+
+Name = (FR) Ayurveda
+URL = https://fr.wikipedia.org/wiki/Ayurveda
+
+Name = (EN) Traditional Chinese medicine
+URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
+
+Name = (FR) Médecine traditionnelle chinoise
+URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
+
+-
+
+Name = (EN) iHerb
+URL = https://www.iherb.com
+
+Name = (EN) Vitacost
+URL = https://www.vitacost.com
