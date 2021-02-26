@@ -22,20 +22,20 @@ namespace Ordisoftware.Hebrew.Calendar
   /// </summary>
   partial class ReminderTimes
   {
-    public string timeStart;
-    public string timeEnd;
-    public DateTime? dateStartCheck;
-    public DateTime? dateStart;
-    public DateTime? dateEnd;
+    public string TimeStart;
+    public string TimeEnd;
+    public DateTime? DateStartCheck;
+    public DateTime? DateStart;
+    public DateTime? DateEnd;
     public void Set(DateTime date, string timeStart, string timeEnd, int delta1, int delta2, decimal delta3)
     {
       string[] timesStart = timeStart.Split(':');
       string[] timesEnd = timeEnd.Split(':');
-      timeStart = timeStart;
-      timeEnd = timeEnd;
-      dateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
-      dateStartCheck = dateStart.Value.AddMinutes((double)-delta3);
-      dateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
+      TimeStart = timeStart;
+      TimeEnd = timeEnd;
+      DateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
+      DateStartCheck = DateStart.Value.AddMinutes((double)-delta3);
+      DateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
     }
 
 
