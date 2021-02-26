@@ -286,6 +286,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Change exported text files to be in UTF-8 encoding.
 - Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.
 - Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.
+- Fix moonrise sometimes attributed to previous day when being 00:00.
 - Some fixes and UI/UX improvements.
 - Some file and code refactoring.
 - Add Serilog-sinks-winforms NuGet package.

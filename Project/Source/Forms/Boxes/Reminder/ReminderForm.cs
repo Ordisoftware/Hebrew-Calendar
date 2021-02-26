@@ -85,8 +85,6 @@ namespace Ordisoftware.Hebrew.Calendar
                                : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
                                                                     ? row.TorahEventsAsEnum
                                                                     : torahevent);
-        //var lunarDay = MainForm.Instance.DataSet.GetLunarDay(row.Date)
-        //form.LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
         form.LabelDate.Text = isShabat
                               ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString())
                               : $"{row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
@@ -94,8 +92,13 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " + times.TimeStart;
           form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " + times.TimeEnd;
-          form.LabelStartDay.Text = times.DateStart.Value.ToString("d MMM yyyy");
-          form.LabelEndDay.Text = times.DateEnd.Value.ToString("d MMM yyyy");
+          if ( !isShabat )
+          {
+            form.LabelStartDay.Text = times.DateStart.Value.ToString("d MMM yyyy");
+            form.LabelEndDay.Text = times.DateEnd.Value.ToString("d MMM yyyy");
+          }
+          else
+            form.Height -= form.LabelStartDay.Height;
         }
         int left = form.LabelStartTime.Left + form.LabelStartTime.Width;
         int left2 = left + form.LabelArrow.Width;
@@ -105,6 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
+        if ( isShabat ) form.LabelTitle.Text += $" {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]}";
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;

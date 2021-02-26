@@ -185,6 +185,12 @@ namespace Ordisoftware.Hebrew.Calendar
       return true;
     }
 
+    private TimeSpan? DelayMoonset;
+    private TimeSpan? DelayMoonrise;
+    private bool isMoonsetDelayed;
+    private bool isMoonriseDelayed;
+    private LunisolarDaysRow DelayPreviousRow;
+
     /// <summary>
     /// Initialize a day.
     /// </summary>
@@ -195,7 +201,22 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var data = CalendarDates.Instance[date];
         var ephemeris = data.Ephemerisis;
+        if ( isMoonriseDelayed )
+        {
+          ephemeris.Moonrise = DelayMoonrise;
+          isMoonriseDelayed = false;
+        }
+        else
+        if ( !CalendarDates.Instance[date.AddDays(1)].Ephemerisis.Moonrise.HasValue )
+          if ( ephemeris.Moonrise == new TimeSpan(0) )
+          {
+            DelayPreviousRow = day;
+            DelayMoonrise = ephemeris.Moonrise;
+            ephemeris.Moonrise = null;
+            isMoonriseDelayed = true;
+          }
         day.LunarDay = data.MoonDay;
+        if ( isMoonriseDelayed ) day.LunarDay++;
         day.IsNewMoon = day.LunarDay == 1 ? 1 : 0;
         day.MoonPhase = data.MoonPhase;
         day.IsFullMoon = Convert.ToInt32(day.MoonPhaseAsEnum == MoonPhase.Full);
@@ -204,7 +225,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Moonrise = SQLiteDate.ToString(ephemeris.Moonrise);
         day.Moonset = SQLiteDate.ToString(ephemeris.Moonset);
         MoonRiseOccuring moonrisetype;
-        if ( ephemeris.Moonrise == null )
+        if ( ephemeris.Moonrise == null)
           moonrisetype = MoonRiseOccuring.NextDay;
         else
         if ( ephemeris.Moonrise < ephemeris.Moonset )
