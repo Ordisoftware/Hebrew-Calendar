@@ -75,8 +75,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.RestoreMainForm();
       Settings.Save();
       MainForm.Instance.ReminderBoxDesktopLocation();
-      Program.UpdateLocalization();
-      LanguageChanged = true;
       DoReset = true;
       Reseted = true;
       Close();
