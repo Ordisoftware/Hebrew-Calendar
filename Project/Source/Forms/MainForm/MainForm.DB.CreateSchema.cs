@@ -35,33 +35,33 @@ namespace Ordisoftware.Hebrew.Calendar
         LockFileConnection = new OdbcConnection(Settings.ConnectionString);
         LockFileConnection.Open();
         if ( Settings.VacuumAtStartup )
-          Settings.VacuumLastDone = LockFileConnection.Optimize(Settings.VacuumLastDone, 
+          Settings.VacuumLastDone = LockFileConnection.Optimize(Settings.VacuumLastDone,
                                                                 Settings.VacuumAtStartupDaysInterval);
         LockFileConnection.DropTableIfExists("Report");
         LockFileConnection.CheckTable(@"LunisolarDays",
                                       @"CREATE TABLE LunisolarDays 
                                         (
-                                          Date TEXT NOT NULL,
-                                          LunarMonth INTEGER,
-                                          LunarDay INTEGER,
-                                          Sunrise TEXT,
-                                          Sunset TEXT,
-                                          Moonrise TEXT,
-                                          Moonset TEXT,
-                                          MoonriseType INTEGER,
-                                          IsNewMoon INTEGER,
-                                          IsFullMoon INTEGER,
-                                          MoonPhase INTEGER,
-                                          SeasonChange INTEGER,
-                                          TorahEvents INTEGER,
-                                          ParashahID TEXT,
-                                          LinkedParashahID TEXT,
-                                          PRIMARY KEY('Date')
+                                          Date TEXT DEFAULT '' NOT NULL,
+                                          LunarMonth DEFAULT 0 INTEGER NOT NULL,
+                                          LunarDay DEFAULT 0 INTEGER NOT NULL,
+                                          Sunrise DEFAULT '' TEXT NOT NULL,
+                                          Sunset DEFAULT '' TEXT NOT NULL,
+                                          Moonrise DEFAULT '' TEXT NOT NULL,
+                                          Moonset DEFAULT '' TEXT NOT NULL,
+                                          MoonriseType DEFAULT 0 INTEGER NOT NULL,
+                                          IsNewMoon DEFAULT 0 INTEGER NOT NULL,
+                                          IsFullMoon DEFAULT 0 INTEGER NOT NULL,
+                                          MoonPhase DEFAULT 0 INTEGER NOT NULL,
+                                          SeasonChange DEFAULT 0 INTEGER NOT NULL,
+                                          TorahEvents DEFAULT 0 INTEGER NOT NULL,
+                                          ParashahID DEFAULT '' TEXT NOT NULL,
+                                          LinkedParashahID DEFAULT '' TEXT NOT NULL,
+                                          PRIMARY KEY(Date)
                                         )");
-        if ( !LockFileConnection.CheckColumn("LunisolarDays", "ParashahID", "TEXT", string.Empty, false) )
-          DbUpgradedForParashotSupport = true;
-        if ( !LockFileConnection.CheckColumn("LunisolarDays", "LinkedParashahID", "TEXT", string.Empty, false) )
-          DbUpgradedForParashotSupport = true;
+        bool b = Globals.DatabaseUpgraded;
+        b = !LockFileConnection.CheckColumn("LunisolarDays", "ParashahID", "TEXT", "''", true) || b;
+        b = !LockFileConnection.CheckColumn("LunisolarDays", "LinkedParashahID", "TEXT", "''", true) || b;
+        Globals.DatabaseUpgraded = b;
       });
     }
 

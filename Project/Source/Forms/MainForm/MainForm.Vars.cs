@@ -46,8 +46,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DateTime? LastVacuum = null;
 
-    private bool DbUpgradedForParashotSupport;
-
     public float CurrentGPSLatitude { get; set; }
     public float CurrentGPSLongitude { get; set; }
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }

@@ -47,6 +47,8 @@ namespace Ordisoftware.Core
 
     static public bool SettingsUpgraded;
 
+    static public bool DatabaseUpgraded;
+
     static public Stopwatch ChronoLoadApp = new Stopwatch();
 
     static public Stopwatch ChronoLoadData = new Stopwatch();
