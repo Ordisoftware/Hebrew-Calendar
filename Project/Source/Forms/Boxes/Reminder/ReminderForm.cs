@@ -87,7 +87,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                     : torahevent);
         form.LabelDate.Text = isShabat
                               ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString())
-                              : $"{row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
+                              : row.DayAndMonthWithYearText;
         if ( times.DateStart != null && times.DateEnd != null )
         {
           form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " + times.TimeStart;
@@ -108,7 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
-        if ( isShabat ) form.LabelTitle.Text += $" {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]}";
+        if ( isShabat ) form.LabelTitle.Text += " " + row.DayAndMonthText;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;

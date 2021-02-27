@@ -197,6 +197,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
+    <Compile Include="Source\Database\DataSet.cs" />
     <Compile Include="Source\Database\DataSet.ReminderTimes.cs" />
     <Compile Include="Source\Database\DataSet.LunarDay.cs" />
     <Compile Include="Source\Database\DataSet.Parashah.cs" />

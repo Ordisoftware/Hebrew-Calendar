@@ -27,6 +27,8 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private string TitleGPS;
+    private string TitleOmer;
     private bool DoScreenPositionMutex;
 
     /// <summary>
@@ -81,15 +83,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       Text = Globals.AssemblyTitle;
       if ( Settings.MainFormTitleBarShowToday )
-      {
-        var date = DateTime.Today;
-        var row = DataSet.GetLunarToday();
-        if ( row != null && row.LunarMonth != 0 )
-          Text += $" - {row?.LunarDay} {HebrewMonths.Transliterations[row.LunarMonth]} {date.Year}";
-      }
+        Text += " - " + DataSet.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
       SystemManager.TryCatch(() =>
       {
-        string str;// = string.Empty;
+        string str;
         // GPS
         if ( !force && !TitleGPS.IsNullOrEmpty() )
           str = TitleGPS;
@@ -107,16 +104,9 @@ namespace Ordisoftware.Hebrew.Calendar
         LabelSubTitleOmer.Text = str;
         // Parashah
         if ( Settings.MainFormTitleBarShowWeeklyParashah )
-        {
-          var parashah = DataSet.GetWeeklyParashah();
-          Text += " - Parashah ";
-          Text += ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
-        }
+          Text += " - Parashah " + DataSet.WeeklyParashahText;
       });
     }
-
-    private string TitleGPS;
-    private string TitleOmer;
 
     /// <summary>
     /// Update the buttons.
