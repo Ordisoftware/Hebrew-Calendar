@@ -168,10 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
             strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
                        + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
             Color colorMoon = Color.Black;
-            string strMonthDay = Settings.MoonDayTextFormat.ToUpper()
-                                 .Replace("%MONTHNAME%", HebrewMonths.Transliterations[row.LunarMonth])
-                                 .Replace("%MONTHNUM%", row.LunarMonth.ToString())
-                                 .Replace("%DAYNUM%", row.LunarDay.ToString());
+            string strMonthDay = row.DayAndMonthFormattedText;
             colorMoon = row.IsNewMoon == 1
                       ? Settings.CalendarColorTorahEvent
                       : ( row.IsFullMoon == 1

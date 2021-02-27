@@ -38,7 +38,7 @@
       this.ListBoxCities = new System.Windows.Forms.ListBox();
       this.LabelCountry = new System.Windows.Forms.Label();
       this.LabelCity = new System.Windows.Forms.Label();
-      this.EditFilter = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditFilter = new Ordisoftware.Core.TextBoxEx();
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
@@ -157,7 +157,7 @@
     private System.Windows.Forms.ListBox ListBoxCities;
     private System.Windows.Forms.Label LabelCountry;
     private System.Windows.Forms.Label LabelCity;
-    private Ordisoftware.Core.UndoRedoTextBox EditFilter;
+    private Ordisoftware.Core.TextBoxEx EditFilter;
     private System.Windows.Forms.Label LabelFilter;
     private System.Windows.Forms.Label LabelTimeZone;
     public System.Windows.Forms.ComboBox EditTimeZone;

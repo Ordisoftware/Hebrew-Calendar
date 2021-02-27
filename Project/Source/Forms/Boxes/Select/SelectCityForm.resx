@@ -337,7 +337,7 @@
     <value>EditFilter</value>
   </data>
   <data name="&gt;&gt;EditFilter.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.UndoRedoTextBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilter.Parent" xml:space="preserve">
     <value>$this</value>
