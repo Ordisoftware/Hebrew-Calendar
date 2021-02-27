@@ -140,7 +140,7 @@ When disabled, top menu painting may cause latency.
 
 #### What are known problems?
 
-The data generated for cities near poles can be inconsistent when using the moon omer due to strange ephemerisis for the years before 1970 and after 2060.
+Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.
 
 Thus celebration dates may be wrong.
 
