@@ -28,6 +28,21 @@ namespace Ordisoftware.Hebrew.Calendar
     [Option("generate", Required = false, HelpText = "Generate the data of the calendar.")]
     public bool Generate { get; set; }
 
+    [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
+    public bool OpenDiffDates { get; set; }
+
+    [Option("celebrations", Required = false, HelpText = "Open celebrations board.")]
+    public bool OpenCelebrationsBoard { get; set; }
+
+    [Option("newmoons", Required = false, HelpText = "Open new moons board.")]
+    public bool OpenNewMoonsBoard { get; set; }
+
+    [Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
+    public bool OpenLunarMonthsBoard { get; set; }
+
+    [Option("parashot", Required = false, HelpText = "Open parashot board.")]
+    public bool OpenParashotBoard { get; set; }
+
   }
 
 }

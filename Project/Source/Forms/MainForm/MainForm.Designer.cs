@@ -131,7 +131,7 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -912,7 +912,7 @@
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionViewCelebrationsBoard,
-            this.ActionViewMoonsBoard,
+            this.ActionViewNewMoonsBoard,
             this.ActionViewLunarMonths,
             this.ActionViewParashot,
             this.toolStripSeparator1,
@@ -966,9 +966,9 @@
       // 
       // ActionViewMoonsBoard
       // 
-      resources.ApplyResources(this.ActionViewMoonsBoard, "ActionViewMoonsBoard");
-      this.ActionViewMoonsBoard.Name = "ActionViewMoonsBoard";
-      this.ActionViewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
+      resources.ApplyResources(this.ActionViewNewMoonsBoard, "ActionViewMoonsBoard");
+      this.ActionViewNewMoonsBoard.Name = "ActionViewMoonsBoard";
+      this.ActionViewNewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
       // 
       // ActionViewLunarMonths
       // 
@@ -1449,12 +1449,9 @@
     private System.Windows.Forms.ToolStripButton ActionEnableReminder;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripDropDownButton ActionTools;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
     private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-    private System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
@@ -1488,7 +1485,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
     private System.Windows.Forms.ToolStrip ToolStrip;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewMoonsBoard;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     private System.Windows.Forms.ToolStripSeparator Sep6;
@@ -1498,10 +1494,14 @@
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
     private System.Windows.Forms.Label LabelSubTitleOmer;
     private System.Windows.Forms.Label LabelSubTitleGPS;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     public System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
     public System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
     private System.Windows.Forms.Timer TimerUpdateTitles;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
+    internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
   }
 }
 

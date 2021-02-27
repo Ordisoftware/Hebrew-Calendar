@@ -150,18 +150,36 @@ namespace Ordisoftware.Hebrew.Calendar
         TimerUpdateTitles.Start();
         TimerUpdateTitles_Tick(null, null);
         Globals.ChronoLoadApp.Stop();
-        if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-          SystemManager.TryCatch(() =>
-          {
-            var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
-            var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-            if ( menuItem != null ) menuItem.PerformClick();
-          });
+        ProcessNewsAndCommandLine();
       }
       finally
       {
         DebugManager.Leave();
       }
+    }
+
+    /// <summary>
+    /// Show news and process command line options.
+    /// </summary>
+    private void ProcessNewsAndCommandLine()
+    {
+      if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+        SystemManager.TryCatch(() =>
+        {
+          var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
+          var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
+          if ( menuItem != null ) menuItem.PerformClick();
+        });
+      if ( ApplicationCommandLine.Instance.OpenDiffDates )
+        ActionCalculateDateDiff.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
+        ActionViewCelebrationsBoard.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
+        ActionViewNewMoonsBoard.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
+        ActionViewLunarMonths.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenParashotBoard )
+        ActionViewParashot.PerformClick();
     }
 
     /// <summary>
