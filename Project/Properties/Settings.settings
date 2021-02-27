@@ -266,7 +266,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.HebrewLetters.exe</Value>
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
     </Setting>
     <Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColors" Scope="User">
       <Value Profile="(Default)">Pastel</Value>
@@ -563,7 +563,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="HebrewWordsExe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.HebrewWords.exe</Value>
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.Hebrew.Words.exe</Value>
     </Setting>
     <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>

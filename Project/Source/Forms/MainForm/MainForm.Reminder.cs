@@ -29,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
+      // TODO change isspecialday management to test lunar today
+      IsSpecialDay = false;
       try
       {
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )

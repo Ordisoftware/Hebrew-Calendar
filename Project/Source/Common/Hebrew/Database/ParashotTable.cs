@@ -70,12 +70,12 @@ namespace Ordisoftware.Hebrew
                                     {nameof(Parashah.ID)} TEXT NOT NULL,
                                     {nameof(Parashah.Book)} INTEGER NOT NULL,
                                     {nameof(Parashah.Number)} INTEGER NOT NULL,
-                                    {nameof(Parashah.Name)} TEXT DEFAULT '' NOT NULL,
-                                    {nameof(Parashah.Hebrew)} TEXT DEFAULT '' NOT NULL,
-                                    {nameof(Parashah.Unicode)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.VerseBegin)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.VerseEnd)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.IsLinkedToNext)} INTEGER DEFAULT 0 NOT NULL,
+                                    {nameof(Parashah.Name)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Hebrew)} TEXT DEFAULT '' NOT NULL,
+                                    {nameof(Parashah.Unicode)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.Translation)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.Lettriq)} TEXT DEFAULT '' NOT NULL,
                                     {nameof(Parashah.Memo)} TEXT DEFAULT '' NOT NULL,
@@ -157,12 +157,12 @@ namespace Ordisoftware.Hebrew
             row[nameof(Parashah.ID)] = parashah.ID;
             row[nameof(Parashah.Book)] = (int)parashah.Book + 1;
             row[nameof(Parashah.Number)] = parashah.Number;
-            row[nameof(Parashah.Name)] = parashah.Name;
-            row[nameof(Parashah.Hebrew)] = parashah.Hebrew;
-            row[nameof(Parashah.Unicode)] = parashah.Unicode;
             row[nameof(Parashah.VerseBegin)] = parashah.VerseBegin;
             row[nameof(Parashah.VerseEnd)] = parashah.VerseEnd;
             row[nameof(Parashah.IsLinkedToNext)] = parashah.IsLinkedToNext;
+            row[nameof(Parashah.Name)] = parashah.Name;
+            row[nameof(Parashah.Hebrew)] = parashah.Hebrew;
+            row[nameof(Parashah.Unicode)] = parashah.Unicode;
             row[nameof(Parashah.Translation)] = parashah.Translation;
             row[nameof(Parashah.Lettriq)] = parashah.Lettriq;
             row[nameof(Parashah.Memo)] = string.Empty;
