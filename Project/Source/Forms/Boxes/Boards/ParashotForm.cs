@@ -18,6 +18,7 @@ using System.Data;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -55,11 +56,14 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var item = CurrentDataBoundItem;
       bool islinked = Convert.ToBoolean(item[nameof(Parashah.IsLinkedToNext)]);
-      return $"Sefer {item[nameof(Parashah.Book)]}, Parashah n°{item[nameof(Parashah.Number)]}, " +
+      return $"Sefer {(TorahBooks)((int)item[nameof(Parashah.Book)] - 1)} " +
+             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} " +
+             $"Parashah n°{item[nameof(Parashah.Number)]} " +
              $"{item[nameof(Parashah.Name)]}{( islinked ? "*" : string.Empty )} " +
-             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} : " +
-             $"{item[nameof(Parashah.Translation)]} ; {item[nameof(Parashah.Lettriq)]} " +
-             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )})";
+             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )}) : " +
+             $"{item[nameof(Parashah.Translation)].ToString().GetOrEmpty()} ; " +
+             $"{item[nameof(Parashah.Lettriq)].ToString().GetOrEmpty()} ; " +
+             $"{item[nameof(Parashah.Memo)].ToString().GetOrEmpty()} ";
     }
 
     private void UpdateStats()
