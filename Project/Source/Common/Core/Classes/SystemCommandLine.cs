@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using CommandLine;
 
@@ -23,10 +23,10 @@ namespace Ordisoftware.Core
     [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
     public bool ResetSettings { get; set; }
 
-    [Option("hide", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
+    [Option("hide", Required = false, HelpText = "Start the application without showing the main form.")]
     public bool HideMainForm { get; set; }
 
-    [Option("show", Required = false, HelpText = "Start the application and show the main form but only the Tray Icon.")]
+    [Option("show", Required = false, HelpText = "Start the application and show the main form.")]
     public bool ShowMainForm { get; set; }
 
     [Option("lang", Required = false, HelpText = "Change the interface language.")]
