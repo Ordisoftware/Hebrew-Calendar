@@ -344,7 +344,7 @@ namespace Ordisoftware.Core
           using ( var stream = File.CreateText(filePath) )
             foreach ( DataRow row in table.Rows )
             {
-              foreach (DataColumn column in table.Columns)
+              foreach ( DataColumn column in table.Columns )
                 stream.WriteLine($"{column.ColumnName} = {row[column].ToString()}");
               stream.WriteLine();
             }

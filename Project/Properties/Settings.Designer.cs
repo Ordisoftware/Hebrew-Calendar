@@ -1055,7 +1055,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.HebrewLetters.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.Hebrew.Letters.exe")]
         public string HebrewLettersExe {
             get {
                 return ((string)(this["HebrewLettersExe"]));
@@ -2240,7 +2240,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.HebrewWords.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.Hebrew.Words.exe")]
         public string HebrewWordsExe {
             get {
                 return ((string)(this["HebrewWordsExe"]));

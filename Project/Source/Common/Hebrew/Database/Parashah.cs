@@ -23,12 +23,12 @@ namespace Ordisoftware.Hebrew
     public string ID { get; }
     public TorahBooks Book { get; }
     public int Number { get; }
-    public string Name { get; }
-    public string Hebrew { get; }
-    public string Unicode { get; }
     public string VerseBegin { get; }
     public string VerseEnd { get; }
     public bool IsLinkedToNext { get; }
+    public string Name { get; }
+    public string Hebrew { get; }
+    public string Unicode { get; }
     public string Translation { get; set; }
     public string Lettriq { get; set; }
     public string Memo { get; set; }
