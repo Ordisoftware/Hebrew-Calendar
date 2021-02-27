@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
           CreateIPCServer(duplicated);
         else
         {
-          if ( !CommandLineOptions.HideGUI )
+          if ( CommandLineArguments.Length == 0 || CommandLineOptions.ShowMainForm )
             IPCSend(IPCRequestBringToFront);
           IPCAnswers?.Invoke();
         }

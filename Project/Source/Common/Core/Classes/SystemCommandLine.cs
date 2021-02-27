@@ -24,7 +24,10 @@ namespace Ordisoftware.Core
     public bool ResetSettings { get; set; }
 
     [Option("hide", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
-    public bool HideGUI { get; set; }
+    public bool HideMainForm { get; set; }
+
+    [Option("show", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
+    public bool ShowMainForm { get; set; }
 
     [Option("lang", Required = false, HelpText = "Change the interface language.")]
     public string Language { get; set; }

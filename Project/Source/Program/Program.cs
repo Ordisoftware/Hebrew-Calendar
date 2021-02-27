@@ -171,7 +171,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( !Settings.FirstLaunch
           && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideGUI )
+          && SystemManager.CommandLineOptions.HideMainForm )
           Globals.ForceStartupHide = true;
       }
       catch ( Exception ex )
