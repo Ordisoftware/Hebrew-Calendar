@@ -506,7 +506,7 @@
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Inherit</value>
   </data>
-  <data name="ActionViewMoonsBoard.Text" xml:space="preserve">
+  <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
     <value>Tableau des nouvelles lunes</value>
   </data>
   <data name="ActionOnlineWeather.Text" xml:space="preserve">

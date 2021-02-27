@@ -150,12 +150,7 @@ namespace Ordisoftware.Core
         [Language.FR] = "(null)"
       };
 
-    static public readonly TranslationsDictionary UndefinedSlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(not defined)",
-        [Language.FR] = "(non définit)"
-      };
+    static public string GetOrNull(this string str) => str == null ? EmptySlot.GetLang() : str;
 
     static public readonly TranslationsDictionary UnknownSlot
       = new TranslationsDictionary
@@ -164,12 +159,27 @@ namespace Ordisoftware.Core
         [Language.FR] = "(inconnu)"
       };
 
+    static public string GetOrUnknownIfNullOrEmpty(this string str) => str.IsNullOrEmpty() ? UnknownSlot.GetLang() : str;
+    static public string GetOrUnknownIfEmpty(this string str) => str.IsEmpty() ? UnknownSlot.GetLang() : str;
+
+    static public readonly TranslationsDictionary UndefinedSlot
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "(not defined)",
+        [Language.FR] = "(non définit)"
+      };
+
+    static public string GetOrUndefinedIfNullOrEmpty(this string str) => str.IsNullOrEmpty() ? UndefinedSlot.GetLang() : str;
+    static public string GetOrUndefinedIfEmpty(this string str) => str.IsEmpty() ? UndefinedSlot.GetLang() : str;
+
     static public readonly TranslationsDictionary EmptySlot
       = new TranslationsDictionary
       {
         [Language.EN] = "(empty)",
         [Language.FR] = "(vide)"
       };
+
+    static public string GetOrEmpty(this string str) => str.IsEmpty() ? EmptySlot.GetLang() : str;
 
     static public readonly TranslationsDictionary ErrorSlot
       = new TranslationsDictionary

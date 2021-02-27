@@ -34,13 +34,16 @@ namespace Ordisoftware.Hebrew
     public string Memo { get; set; }
     public Parashah Linked { get; set; }
 
-    public override string ToString()
+    /*public override string ToString()
       => ToString(false);
 
     public string ToString(bool useHebrewFont)
-      => $"Sefer {Book}, Parashah n°{Number}, " +
-         $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} {VerseBegin} - {VerseEnd} : " +
-         $"{Translation} ; {Lettriq} ({( useHebrewFont ? Hebrew : Unicode )})";
+      => $"Sefer {Book}, " +
+         $"Parashah n°{Number}, " +
+         $"{VerseBegin} - {VerseEnd}, " +
+         $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
+         $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
+         $"{Translation} ; {Lettriq} : {Memo}";*/
 
     public string ToStringLinked()
       => Name + ( Linked != null  ? " - " + Linked.Name : "");
