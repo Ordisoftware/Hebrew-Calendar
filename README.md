@@ -188,6 +188,8 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 | Keys | Actions |
 |-|-|
+| Ctrl + Tab | Next view |
+| Shift + Ctrl + Tab | Previous view |
 | F1 | Text report view |
 | F2 | Month view |
 | F3 | Database grid view |
@@ -196,8 +198,6 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 | F6 | Search a moon month window |
 | F7 | Search a gregorian month window |
 | F8 (or Ctrl + N)| Navigation window |
-| Ctrl + Tab | Next view |
-| Shift + Ctrl + Tab | Previous view |
 | Ctrl + T (or Numpad0)| Go to today |
 | Ctrl + D | Search a day |
 | Ctrl + S | Save current view to a file |
