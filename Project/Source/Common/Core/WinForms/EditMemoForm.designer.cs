@@ -34,7 +34,7 @@
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelSep = new System.Windows.Forms.Panel();
-      this.TextBox = new Ordisoftware.Core.UndoRedoTextBox();
+      this.TextBox = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -91,7 +91,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    public Ordisoftware.Core.UndoRedoTextBox TextBox;
+    public Ordisoftware.Core.TextBoxEx TextBox;
     private System.Windows.Forms.Panel PanelSep;
   }
 }

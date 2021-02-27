@@ -46,7 +46,7 @@
       this.SelectApplicationSound = new System.Windows.Forms.ListBox();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
-      this.EditFilePath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditFilePath = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.SuspendLayout();
@@ -217,7 +217,7 @@
     private System.Windows.Forms.RadioButton SelectCustom;
     private System.Windows.Forms.RadioButton SelectWindows;
     private System.Windows.Forms.Button ActionSelectFilePath;
-    private Core.UndoRedoTextBox EditFilePath;
+    private Ordisoftware.Core.TextBoxEx EditFilePath;
     private System.Windows.Forms.ListBox SelectWindowsSound;
     private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     private System.Windows.Forms.RadioButton SelectDialog;

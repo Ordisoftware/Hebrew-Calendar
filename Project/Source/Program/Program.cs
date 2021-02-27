@@ -167,7 +167,7 @@ namespace Ordisoftware.Hebrew.Calendar
       AboutBox.Instance.AboutBox_Shown(null, null);
       GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
       LoadingForm.Instance.Relocalize();
-      UndoRedoTextBox.Relocalize();
+      TextBoxEx.Relocalize();
       LunarMonthsForm.Instance.Relocalize();
       NavigationForm.Instance.Relocalize();
       DatesDiffCalculatorForm.Instance.Relocalize();

@@ -156,6 +156,24 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
+    <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
+    <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Actions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Designer.cs">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\TextBoxEx.Initialize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\ToolStripMenuItemHelper.cs" />
     <Compile Include="Source\Common\Core\WinForms\EditMemoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,25 +293,7 @@
     <Compile Include="Source\Common\Core\Classes\VolumeMixer.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Platform.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.SSL.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Source\Common\Core\Classes\ShellIcons.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\ToolStripMenuItemHelper.cs" />
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Actions.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Designer.cs">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.Initialize.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Source\Common\Core\Data\DataFile.cs" />
     <Compile Include="Source\Common\Core\Data\DataFileFolder.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
@@ -695,6 +695,12 @@
     <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\TextBoxEx.fr.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.fr.resx">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -751,12 +757,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dependencies\CoolPrintPreviewDialog\CoolPrintPreviewDialog.resx">
       <DependentUpon>CoolPrintPreviewDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.fr.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\UndoRedoTextBox.resx">
-      <DependentUpon>UndoRedoTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\DataFileEditorForm.fr.resx">
       <DependentUpon>DataFileEditorForm.cs</DependentUpon>

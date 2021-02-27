@@ -140,10 +140,10 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditTimeZone = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditGPSLongitude = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
+      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
@@ -231,7 +231,7 @@
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
@@ -282,11 +282,11 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditHebrewWordsPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditWeatherAppPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditExportFolder = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditCalculatorPath = new Ordisoftware.Core.UndoRedoTextBox();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.UndoRedoTextBox();
+      this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -2505,8 +2505,8 @@
     private System.Windows.Forms.Label LabelFontName;
     private System.Windows.Forms.ComboBox EditTextReportFontName;
     private System.Windows.Forms.ComboBox EditShabatDay;
-    private Ordisoftware.Core.UndoRedoTextBox EditGPSLatitude;
-    private Ordisoftware.Core.UndoRedoTextBox EditGPSLongitude;
+    private Ordisoftware.Core.TextBoxEx EditGPSLatitude;
+    private Ordisoftware.Core.TextBoxEx EditGPSLongitude;
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.LinkLabel ActionUsePersonalShabat;
     private System.Windows.Forms.Label LabelTopColor;
@@ -2584,7 +2584,7 @@
     private System.Windows.Forms.CheckBox EditAutoOpenExportFolder;
     private System.Windows.Forms.CheckBox EditVacuumAtStartup;
     private System.Windows.Forms.Button ActionSelectHebrewLettersPath;
-    private Ordisoftware.Core.UndoRedoTextBox EditHebrewLettersPath;
+    private Ordisoftware.Core.TextBoxEx EditHebrewLettersPath;
     private System.Windows.Forms.OpenFileDialog OpenExeFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
@@ -2594,10 +2594,10 @@
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.Label LabelColorNoDay;
     public System.Windows.Forms.Panel EditCalendarColorNoDay;
-    private Ordisoftware.Core.UndoRedoTextBox EditMoonDayTextFormat;
+    private Ordisoftware.Core.TextBoxEx EditMoonDayTextFormat;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
-    private Ordisoftware.Core.UndoRedoTextBox EditTimeZone;
+    private Ordisoftware.Core.TextBoxEx EditTimeZone;
     private System.Windows.Forms.ContextMenuStrip MenuSelectMoonDayTextFormat;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
@@ -2616,7 +2616,7 @@
     private System.Windows.Forms.Button ActionAutoGenerateHelp;
     private System.Windows.Forms.Button SelectAutoGenerateYearsInterval;
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
-    private Ordisoftware.Core.UndoRedoTextBox EditAutoGenerateYearsInterval;
+    private Ordisoftware.Core.TextBoxEx EditAutoGenerateYearsInterval;
     private System.Windows.Forms.CheckBox EditBigCalendarWarning;
     private System.Windows.Forms.CheckBox EditLogEnabled;
     private System.Windows.Forms.CheckBox EditStartWithWindows;
@@ -2625,7 +2625,7 @@
     private System.Windows.Forms.TabPage TabPageTextReport;
     private System.Windows.Forms.TabPage TabPageMonthView;
     private System.Windows.Forms.TabPage TabPageNavigationWindow;
-    private Core.UndoRedoTextBox EditCalculatorPath;
+    private Ordisoftware.Core.TextBoxEx EditCalculatorPath;
     private System.Windows.Forms.Button ActionSelectCalculatorPath;
     private System.Windows.Forms.TabPage TabPageShabat;
     private System.Windows.Forms.TabPage TabPageCelebrations;
@@ -2642,7 +2642,7 @@
     private System.Windows.Forms.NumericUpDown EditCheckUpdateAtStartupInterval;
     private System.Windows.Forms.Button ActionResetExportFolder;
     private System.Windows.Forms.Button ActionSelectExportFolder;
-    private Core.UndoRedoTextBox EditExportFolder;
+    private Ordisoftware.Core.TextBoxEx EditExportFolder;
     private System.Windows.Forms.TabPage TabPageTrayIcon;
     private System.Windows.Forms.Label LabelLoomingDelayIntervalInfo;
     private System.Windows.Forms.Label LabelCheckUpdateAtStartupInfo;
@@ -2719,7 +2719,7 @@
     private System.Windows.Forms.Label LabelWeatherAppPath;
     private System.Windows.Forms.Button ActionResetWeatherAppPath;
     private System.Windows.Forms.Button ActionSelectWeatherAppPath;
-    private Core.UndoRedoTextBox EditWeatherAppPath;
+    private Ordisoftware.Core.TextBoxEx EditWeatherAppPath;
     private System.Windows.Forms.CheckBox EditWeatherMenuItemsEnabled;
     private System.Windows.Forms.Label LabelReminderBoxDesktopLocation;
     private System.Windows.Forms.ComboBox SelectReminderBoxDesktopLocation;
@@ -2746,7 +2746,7 @@
     private System.Windows.Forms.Button ActionResetHebrewWordsPath;
     private System.Windows.Forms.Label LabelHebrewWordsPath;
     private System.Windows.Forms.Button ActionSelectHebrewWordsPath;
-    private Core.UndoRedoTextBox EditHebrewWordsPath;
+    private Ordisoftware.Core.TextBoxEx EditHebrewWordsPath;
     private System.Windows.Forms.Label LabelChaneLangNotice;
     private System.Windows.Forms.CheckBox EditTrayIconUseSpecialDayIcon;
     private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
