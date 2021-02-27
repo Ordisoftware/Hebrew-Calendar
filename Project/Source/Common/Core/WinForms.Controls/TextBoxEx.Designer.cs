@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Core
 {
-  partial class UndoRedoTextBox
+  partial class TextBoxEx
   {
     /// <summary> 
     /// Variable nécessaire au concepteur.
@@ -30,7 +30,7 @@
     {
       this.SuspendLayout();
       // 
-      // UndoRedoTextBox
+      // TextBoxEx
       // 
       this.ResumeLayout(false);
 

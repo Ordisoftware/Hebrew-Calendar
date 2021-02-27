@@ -19,7 +19,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  partial class UndoRedoTextBox
+  partial class TextBoxEx
   {
 
     static private IContainer _Container;
@@ -90,7 +90,7 @@ namespace Ordisoftware.Core
     static public void Relocalize()
     {
       if ( ContextMenuEdit == null ) return;
-      var resources = new ComponentResourceManager(typeof(UndoRedoTextBox));
+      var resources = new ComponentResourceManager(typeof(TextBoxEx));
       resources.ApplyResources(ContextMenuEdit, "ContextMenuEdit");
       resources.ApplyResources(ActionUndo, "ActionUndo");
       resources.ApplyResources(ActionRedo, "ActionRedo");
@@ -106,13 +106,13 @@ namespace Ordisoftware.Core
       UpdateMenuItems(GetTextBoxAndFocus(sender));
     }
 
-    static private void UpdateMenuItems(UndoRedoTextBox textbox)
+    static private void UpdateMenuItems(TextBoxEx textbox)
     {
       if ( textbox == null ) return;
       bool b1 = textbox.Enabled;
       bool b2 = textbox.Enabled && !textbox.ReadOnly;
       bool b3 = !textbox.SelectedText.IsNullOrEmpty();
-      ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo ); // TODO rewrite undo/redo
+      ActionUndo.Enabled = b2 && ( textbox.UndoStack.Count != 0 || textbox.CanUndo );
       ActionRedo.Enabled = b2 && ( textbox.RedoStack.Count != 0 );
       ActionCopy.Enabled = b1 && b3;
       ActionCut.Enabled = b2 && b3;

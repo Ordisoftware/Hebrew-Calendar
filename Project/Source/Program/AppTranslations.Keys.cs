@@ -34,7 +34,9 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary NoticeKeyboardShortcuts
       = new TranslationsDictionary
       {
-        [Language.EN] = "F1 : Text report view" + Globals.NL +
+        [Language.EN] = "Ctrl + Tab : Next view" + Globals.NL +
+                        "Shift + Ctrl + Tab : Previous view" + Globals.NL +
+                        "F1 : Text report view" + Globals.NL +
                         "F2 : Month view" + Globals.NL +
                         "F3 : Database grid view" + Globals.NL +
                         "F4 : Next celebrations window" + Globals.NL +
@@ -42,19 +44,17 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F6 : Search a moon month window" + Globals.NL +
                         "F7 : Search a gregorian month window" + Globals.NL +
                         "F8 (or Ctrl + N) : Navigation window" + Globals.NL +
-                        "Ctrl + Tab : Next view" + Globals.NL +
-                        "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                         "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
                         "Ctrl + D : Search a day" + Globals.NL +
                         "Ctrl + S : Save current view to file" + Globals.NL +
                         "Ctrl + C : Copy current view to clipboard" + Globals.NL +
                         "Ctrl + P : Print current view" + Globals.NL +
                         "Shift + Ctrl + C : Copy the text report selection to clipboard" + Globals.NL +
+                        "Alt + V : Show view menu" + Globals.NL +
                         "Alt + T : Show tools menu" + Globals.NL +
                         "Alt + L : Show web links menu" + Globals.NL +
-                        "Alt + V : Show view menu" + Globals.NL +
-                        "Alt + S : Show settings menu" + Globals.NL +
                         "Alt + I : Show information menu" + Globals.NL +
+                        "Alt + S : Show settings menu" + Globals.NL +
                         "Alt + E : Open export folder" + Globals.NL +
                         "Alt + C : Open windows calculator" + Globals.NL +
                         "Alt + D : Open windows date and time settings" + Globals.NL +
@@ -83,7 +83,9 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + F4 (ou Escape) : Close window" + Globals.NL +
                         "Ctrl + Alt + F4 : Exit application",
 
-        [Language.FR] = "F1 : Vue du rapport textuel" + Globals.NL +
+        [Language.FR] = "Ctrl + Tab : Vue suivante" + Globals.NL +
+                        "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
+                        "F1 : Vue du rapport textuel" + Globals.NL +
                         "F2 : Vue du mois" + Globals.NL +
                         "F3 : Vue de la grille de données" + Globals.NL +
                         "F4 : Fenêtre des prochaines célébrations" + Globals.NL +
@@ -91,19 +93,17 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
                         "F8 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
-                        "Ctrl + Tab : Vue suivante" + Globals.NL +
-                        "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
                         "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
                         "Ctrl + D : Chercher un jour" + Globals.NL +
                         "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
                         "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
                         "Ctrl + P : Imprime la vue en cours" + Globals.NL +
                         "Maj + Ctrl + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
+                        "Alt + V : Montre le menu des vues" + Globals.NL +
                         "Alt + T : Montre le menu des outils" + Globals.NL +
                         "Alt + L : Montre le menu des liens web" + Globals.NL +
-                        "Alt + V : Montre le menu des vues" + Globals.NL +
-                        "Alt + S : Montre le menu des paramètres" + Globals.NL +
                         "Alt + I : Montre le menu des informations" + Globals.NL +
+                        "Alt + S : Montre le menu des paramètres" + Globals.NL +
                         "Alt + E : Ouvre le dossier d'export" + Globals.NL +
                         "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
                         "Alt + D : Ouvre les paramètres de date et heure de Windows" + Globals.NL +

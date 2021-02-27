@@ -38,7 +38,7 @@
       this.ActionLetterAddAtStart = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
-      this.TextBox = new Ordisoftware.Core.UndoRedoTextBox();
+      this.TextBox = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -122,7 +122,7 @@
     #endregion
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
-    public Ordisoftware.Core.UndoRedoTextBox TextBox;
+    public Ordisoftware.Core.TextBoxEx TextBox;
     private System.Windows.Forms.ContextMenuStrip ContextMenuLetter;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtStart;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtEnd;
