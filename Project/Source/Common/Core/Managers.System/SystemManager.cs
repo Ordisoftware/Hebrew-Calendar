@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -32,6 +32,10 @@ namespace Ordisoftware.Core
   static partial class SystemManager
   {
 
+    public const string IPCRequestBringToFront = "BringToFront";
+
+    public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+    
     /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
@@ -41,6 +45,22 @@ namespace Ordisoftware.Core
     /// IPC server instance.
     /// </summary>
     static private NamedPipeServerStream IPCServer;
+
+    /// <summary>
+    /// IPC answers callback.
+    /// </summary>
+    static public Action IPCAnswers;
+
+    /// <summary>
+    /// Indicate if the several instances of the application can run at same time.
+    /// </summary>
+    static public bool AllowApplicationMultipleInstances { get; private set; } = true;
+
+    /// <summary>
+    /// Indicate the number of application running processes count.
+    /// </summary>
+    static public int ApplicationInstancesCount
+      => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
 
     /// <summary>
     /// Create IPC server instance.
@@ -56,17 +76,6 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate if the several instances of the application can run at same time.
-    /// </summary>
-    static public bool AllowApplicationMultipleInstances { get; private set; } = true;
-
-    /// <summary>
-    /// Indicate the number of application running processes count.
-    /// </summary>
-    static public int ApplicationInstancesCount
-      => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
-
-    /// <summary>
     /// Check if the process is already running.
     /// </summary>
     static public bool CheckApplicationOnlyOneInstance(AsyncCallback duplicated)
@@ -79,10 +88,8 @@ namespace Ordisoftware.Core
           CreateIPCServer(duplicated);
         else
         {
-          var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
-          client.Connect();
-          new BinaryFormatter().Serialize(client, "BringToFront");
-          client.Close();
+          IPCSend(IPCRequestBringToFront);
+          IPCAnswers?.Invoke();
         }
         return created;
       }
@@ -91,6 +98,17 @@ namespace Ordisoftware.Core
         ex.Manage();
         return false;
       }
+    }
+
+    /// <summary>
+    /// Send an IPC command.
+    /// </summary>
+    static public void IPCSend(string command)
+    {
+      var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
+      client.Connect();
+      new BinaryFormatter().Serialize(client, command);
+      client.Close();
     }
 
     /// <summary>
@@ -132,8 +150,6 @@ namespace Ordisoftware.Core
         ex.Manage();
       }
     }
-
-    private const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
     /// <summary>
     /// Indicate if the application stars with windows user session or not.
