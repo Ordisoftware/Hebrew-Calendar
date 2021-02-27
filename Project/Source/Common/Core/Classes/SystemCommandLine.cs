@@ -26,7 +26,7 @@ namespace Ordisoftware.Core
     [Option("hide", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
     public bool HideMainForm { get; set; }
 
-    [Option("show", Required = false, HelpText = "Start the application without showing the main form but only the Tray Icon.")]
+    [Option("show", Required = false, HelpText = "Start the application and show the main form but only the Tray Icon.")]
     public bool ShowMainForm { get; set; }
 
     [Option("lang", Required = false, HelpText = "Change the interface language.")]
