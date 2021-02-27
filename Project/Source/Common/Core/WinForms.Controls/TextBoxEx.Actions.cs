@@ -19,33 +19,33 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  partial class UndoRedoTextBox
+  partial class TextBoxEx
   {
 
-    static public UndoRedoTextBox GetTextBox(object sender)
+    static public TextBoxEx GetTextBox(object sender)
     {
       return GetTextBoxAndFocus(sender, false);
     }
 
-    static public UndoRedoTextBox GetTextBoxAndFocus(object sender, bool doFocus = true)
+    static public TextBoxEx GetTextBoxAndFocus(object sender, bool doFocus = true)
     {
-      UndoRedoTextBox control = sender as UndoRedoTextBox;
+      TextBoxEx control = sender as TextBoxEx;
       if ( control == null )
         if ( sender is ContextMenuStrip menuContext )
-          control = menuContext.SourceControl as UndoRedoTextBox;
+          control = menuContext.SourceControl as TextBoxEx;
         else
         if ( sender is ToolStripMenuItem menuItem )
-          control = ( menuItem.GetCurrentParent() as ContextMenuStrip ).SourceControl as UndoRedoTextBox;
+          control = ( menuItem.GetCurrentParent() as ContextMenuStrip ).SourceControl as TextBoxEx;
       if ( control == null )
       {
         var form = Application.OpenForms.ToList().LastOrDefault();
         if ( form != null )
         {
-          if ( form.ActiveControl is UndoRedoTextBox )
-            control = Form.ActiveForm.ActiveControl as UndoRedoTextBox;
+          if ( form.ActiveControl is TextBoxEx )
+            control = Form.ActiveForm.ActiveControl as TextBoxEx;
           else
           if ( form.ActiveControl is UserControl )
-            control = ( form.ActiveControl as UserControl ).ActiveControl as UndoRedoTextBox;
+            control = ( form.ActiveControl as UserControl ).ActiveControl as TextBoxEx;
         }
       }
       if ( doFocus && control != null && control.Enabled && !control.Focused )

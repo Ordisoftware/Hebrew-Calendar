@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate the TextBox control.
     /// </summary>
-    public UndoRedoTextBox Input
+    public TextBoxEx Input
       => TextBox;
 
     /// <summary>

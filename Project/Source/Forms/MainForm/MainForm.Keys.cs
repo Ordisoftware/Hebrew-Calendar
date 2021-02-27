@@ -32,18 +32,25 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Globals.IsReady )
         switch ( keyData )
         {
-          // System process
+          // System close
           case Keys.Alt | Keys.Control | Keys.F4:
             MenuExit.PerformClick();
             return true;
           case Keys.Escape:
             if ( EditESCtoExit.Checked ) Close();
             return true;
-          // System function
+          // System tools
           case Keys.F9:
             ActionPreferences.PerformClick();
             return true;
-          // Application function
+          // Change view
+          case Keys.Control | Keys.Shift | Keys.Tab:
+            SetView(Settings.CurrentView.Previous(ViewMode.None));
+            return true;
+          case Keys.Control | Keys.Tab:
+            SetView(Settings.CurrentView.Next(ViewMode.None));
+            return true;
+          // Application functions
           case Keys.F4:
             ActionViewCelebrations.PerformClick();
             return true;
@@ -63,14 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Alt | Keys.P:
             ActionViewParashot.PerformClick();
             return true;
-          // Change view
-          case Keys.Control | Keys.Shift | Keys.Tab:
-            SetView(Settings.CurrentView.Previous(ViewMode.None));
-            return true;
-          case Keys.Control | Keys.Tab:
-            SetView(Settings.CurrentView.Next(ViewMode.None));
-            return true;
-          // Application menu
+          // Application menus
           case Keys.Alt | Keys.T:
             ActionTools.ShowDropDown();
             return true;
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Alt | Keys.V:
             ActionView.ShowDropDown();
             return true;
-          // System menu
+          // System menus
           case Keys.Alt | Keys.S:
             ActionSettings.ShowDropDown();
             return true;

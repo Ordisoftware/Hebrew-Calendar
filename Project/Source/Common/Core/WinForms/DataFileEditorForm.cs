@@ -56,7 +56,7 @@ namespace Ordisoftware.Core
         DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
         return;
       }
-      var textbox = new UndoRedoTextBox();
+      var textbox = new TextBoxEx();
       textbox.Font = new Font("Consolas", 9.75F);
       textbox.Multiline = true;
       textbox.WordWrap = false;
