@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew
       Number = number;
       Name = name;
       Unicode = unicode;
-      Hebrew = HebrewAlphabet.ConvertToHebrewFont(unicode);
+      Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
       IsLinkedToNext = isLinkedToNext;
