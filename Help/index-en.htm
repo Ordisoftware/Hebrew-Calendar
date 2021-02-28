@@ -104,6 +104,60 @@ Control panel) and create a user datasource named &quot;Hebrew-Calendar&quot; fo
     <h4>What are known problems?</h4>
     <p>Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.</p>
     <p>Thus celebration dates may be wrong.</p>
+    <h4>What are command line options?</h4>
+    <ul>
+        <li>
+            <p>Change interface language (does not change the text report unless using <code>--generate</code>):</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --lang [en|fr]</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Show the main window:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --show</code></p>
+        </li>
+        <li>
+            <p>Hide the main window:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --hide</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Regenerate the calendar data:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --generate</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Show the dates difference calculator:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --diffdates</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Show the celebrations&nbsp;board:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --celebrations</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Show the new moons board&nbsp;board:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --newmoons</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Show the parashot&nbsp;board:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --parashot</code></p>
+        </li>
+    </ul>
+    <p>These options are cumulative and can be used to control the software when it is already running.</p>
+    <p>It is therefore possible to use <a href="https://www.autohotkey.com" target="_blank">AutoHotKey</a>&nbsp;to define for example this Shift + Ctrl + Alt + P command:</p>
+    <p><code>!^+P::
+<br>
+ &nbsp;&nbsp;Run &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\Ordisoftware.Hebrew.Calendar.exe&quot; --parashot  <br>
+ &nbsp;&nbsp;return
+</code></p>
     <h4>What are the times of celebration?</h4>
     <p>The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom,&nbsp;Kipurim or Atonement&nbsp;which is the sorrows of losses, and Sukot or Tabernacles&nbsp;which is the construction of the future.</p>
     <p>These are important moments of the lunar year in the solar cycle whose purpose
@@ -141,6 +195,14 @@ lights up the couple for shabat, but on shabat he does not go out of his temple,
         </thead>
         <tbody>
         <tr>
+            <td width="180">Ctrl + Tab</td>
+            <td width="420">Next view</td>
+        </tr>
+        <tr>
+            <td width="180">Shift + Ctrl + Tab</td>
+            <td width="420">Previous view</td>
+        </tr>
+        <tr>
             <td width="180">F1</td>
             <td width="420">Text report view</td>
         </tr>
@@ -171,14 +233,6 @@ lights up the couple for shabat, but on shabat he does not go out of his temple,
         <tr>
             <td width="180">F9 (or Ctrl + N)</td>
             <td width="420">Navigation window</td>
-        </tr>
-        <tr>
-            <td width="180">Ctrl + Tab</td>
-            <td width="420">Next view</td>
-        </tr>
-        <tr>
-            <td width="180">Shift + Ctrl + Tab</td>
-            <td width="420">Previous view</td>
         </tr>
         <tr>
             <td width="180">Ctrl + T (or Numpad0)</td>
