@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
         times.Set(dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
         times.Set(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
-      bool result = dateNow >= times.DateStartCheck.Value && dateNow <= times.DateEnd.Value;
+      bool result = dateNow >= times.DateStart.Value && dateNow <= times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
       {
