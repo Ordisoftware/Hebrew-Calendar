@@ -111,7 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Action<ViewMode> after = (view) =>
       {
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
-                                          view == ViewMode.Month ? Globals.SnapshotSoundFilePath
+                                          view == ViewMode.Month ? Globals.ScreenshotSoundFilePath
                                                                  : Globals.KeyboardSoundFilePath);
         if ( Settings.AutoOpenExportFolder )
           SystemManager.RunShell(Path.GetDirectoryName(filePath));

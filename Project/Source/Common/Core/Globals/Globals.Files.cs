@@ -143,10 +143,10 @@ namespace Ordisoftware.Core
       => Path.Combine(ProjectSoundsFolderPath, "Empty.wav");
 
     /// <summary>
-    /// Indicate the file path of the snapshot sound.
+    /// Indicate the file path of the screenshot sound.
     /// </summary>
-    static public string SnapshotSoundFilePath
-      => Path.Combine(ProjectSoundsFolderPath, "Snapshot.wav");
+    static public string ScreenshotSoundFilePath
+      => Path.Combine(ProjectSoundsFolderPath, "Screenshot.wav");
 
     /// <summary>
     /// Indicate the file path of the clipboard sound.

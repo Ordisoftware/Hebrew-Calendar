@@ -223,7 +223,19 @@ namespace Ordisoftware.Hebrew
     public new void Focus()
     {
       TextBox.Focus();
-      TextBox.SelectionLength = 0;
+    }
+
+    /// <summary>
+    /// Focus and select all.
+    /// </summary>
+    public void Focus(bool selectAll)
+    {
+      Focus();
+      if ( selectAll )
+      {
+        TextBox.SelectionStart = 0;
+        TextBox.SelectionLength = TextBox.TextLength;
+      }
     }
 
     /// <summary>
