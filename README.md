@@ -26,7 +26,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - View by tabular text report, visual month or data grid.
 - Balloon tip from the Tray Icon to navigate between days with a summary.
 - Event reminder for Shabat and celebrations.
-- Indicate the weekly Parashah.
+- Indicate the weekly parashah.
 - Search for a day, a month, or a celebration.
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
@@ -58,11 +58,11 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 **What's new in the latest version**
 
 - The reminder box has been improved.
-- An editable Parashot board is available in the Tools menu.
-- The Parashah of the week in indicated in Shabat cases of the visual calendar and in the navigation window.
+- An editable parashot board is available in the Tools menu.
+- The parashah of the week in indicated in Shabat cases of the visual calendar and in the navigation window.
 - The visual calendar and the navigation window indicates the intermediate days of week-long celebrations.
 - The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set.
-- The application title bar can show the lunar today and the Weekly Parashah.
+- The application title bar can show the lunar today and the Weekly parashah.
 - The web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
@@ -178,8 +178,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ```
 !^+P:: 
-   Run "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\Ordisoftware.Hebrew.Calendar.exe" --parashot 
-   return
+  appPath := "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\"
+  appExe := "Ordisoftware.Hebrew.Calendar.exe"
+  Run %appPath%%appExe% --parashot
+  return
 ```
 
 #### What are known problems?
@@ -218,15 +220,15 @@ The day before, either the man keeps without going out and strengthens the coupl
 
 If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
-#### What are Parashot?
+#### What are parashot?
 
 The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
 
-It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat. The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot.
+It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot.
 
 Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Sim'hat Torah means 'Joy [bestowed by the] Torah' and a Lettriq of Sim'hat is 'Sharing of the Service which Sustains the Matter': it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
-The generation of Parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.
+The generation of parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.
 
 ## Keyboard shortcuts
 
@@ -263,7 +265,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
 | Ctrl + F4 | Lunar months board |
-| Ctrl + F5 (or Alt + P) | Parashot board |
+| Ctrl + F5 (or Alt + P) | parashot board |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -301,15 +303,15 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.03.12 - Version 7.0
 
-- Add Parashah notice.
+- Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
-- Add generate weekly Parashah lecture in the database.
-- Add option to set Parashah generation for inside or outside of Israël.
-- Add option to set Parashah reading always on saturday.
-- Add option to indicate Parashah in the Shabatot of the visual month.
-- Add option to indicate current Parashah in the application title bar.
+- Add generate weekly parashah lecture in the database.
+- Add option to set parashah generation for inside or outside of Israël.
+- Add option to set parashah reading always on saturday.
+- Add option to indicate parashah in the Shabatot of the visual month.
+- Add option to indicate current parashah in the application title bar.
 - Add option to indicate current lunar day in the application title bar.
-- Add current Parashah in the navigation form and in the main form subtitle.
+- Add current parashah in the navigation form and in the main form subtitle.
 - Add common database in roaming to store parashot table and inter-process locking table.
 - Add a different Tray Icon to indicate if a Shabat or a celebration day is running.
 - Add option to enable or disable this special day Tray Icon.
