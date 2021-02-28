@@ -32,8 +32,6 @@ namespace Ordisoftware.Core
   static partial class SystemManager
   {
 
-    public const string IPCRequestBringToFront = "BringToFront";
-
     public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
     
     /// <summary>
@@ -87,11 +85,7 @@ namespace Ordisoftware.Core
         if ( created )
           CreateIPCServer(duplicated);
         else
-        {
-          if ( CommandLineArguments.Length == 0 || CommandLineOptions.ShowMainForm )
-            IPCSend(IPCRequestBringToFront);
           IPCAnswers?.Invoke();
-        }
         return created;
       }
       catch ( Exception ex )
