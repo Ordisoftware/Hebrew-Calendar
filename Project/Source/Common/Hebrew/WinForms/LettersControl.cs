@@ -250,7 +250,7 @@ namespace Ordisoftware.Hebrew
     {
       text = text.RemoveDiacritics().Replace(" ", string.Empty);
       if ( HebrewAlphabet.ContainsUnicode(text) )
-        text = HebrewAlphabet.ConvertToHebrewFont(text);
+        text = HebrewAlphabet.ToHebrewFont(text);
       text = HebrewAlphabet.UnFinalAll(text);
       text = HebrewAlphabet.OnlyHebrewFont(text);
     }

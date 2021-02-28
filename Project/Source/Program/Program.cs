@@ -95,7 +95,6 @@ namespace Ordisoftware.Hebrew.Calendar
         server.Close();
         SystemManager.CreateIPCServer(IPCRequests);
       });
-      // TODO add notice to FAQ
     }
 
     /// <summary>

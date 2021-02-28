@@ -41,22 +41,17 @@ namespace Ordisoftware.Hebrew
       }
       word = Localizer.RemoveDiacritics(word);
       bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
-      if ( isUnicode )
-      {
-        if ( word.EndsWith(" א") || word.StartsWith(" ב") )
-          word = word.Remove(word.Length - 2);
-      }
+      if ( isUnicode && ( word.EndsWith(" א") || word.StartsWith(" ב") ) )
+        word = word.Remove(word.Length - 2);
       else
-      {
-        if ( word.StartsWith("a ") || word.StartsWith("b ") )
-          word = word.Remove(0, 2);
-      }
+      if ( word.StartsWith("a ") || word.StartsWith("b ") )
+        word = word.Remove(0, 2);
       var items = word.Split(' ');
       if ( isUnicode ) items = items.Reverse().ToArray();
       foreach ( string item in items )
       {
-        SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + item);
-        System.Threading.Thread.Sleep(250);
+        SystemManager.RunShell(path, item);
+        System.Threading.Thread.Sleep(100);
       }
     }
 
@@ -73,7 +68,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + word);
+      SystemManager.RunShell(path, "--search " + word);
     }
 
     /// <summary>
@@ -89,7 +84,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, "--ref " + reference);
+      SystemManager.RunShell(path, "--verse " + reference);
     }
 
     /// <summary>

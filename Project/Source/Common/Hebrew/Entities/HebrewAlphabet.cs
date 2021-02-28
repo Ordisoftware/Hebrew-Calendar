@@ -116,34 +116,34 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Set final letter.
     /// </summary>
-    /// <param name="str">The word in hebrew font chars.</param>
+    /// <param name="hebrew">The word in hebrew font chars.</param>
     /// <param name="enable">On else off</param>
-    static public string SetFinal(string str, bool enable)
+    static public string SetFinal(string hebrew, bool enable)
     {
-      if ( str.IsNullOrEmpty() ) return string.Empty;
-      str = str.Trim();
-      if ( str.IsNullOrEmpty() ) return string.Empty;
+      if ( hebrew.IsNullOrEmpty() ) return string.Empty;
+      hebrew = hebrew.Trim();
+      if ( hebrew.IsNullOrEmpty() ) return string.Empty;
       var array = enable ? FinalEnable : FinalDisable;
-      char c = str[0];
+      char c = hebrew[0];
       foreach ( var v in array )
         if ( c == v[0] )
         {
           c = v[1];
           break;
         }
-      return c + str.Remove(0, 1);
+      return c + hebrew.Remove(0, 1);
     }
 
     /// <summary>
     /// Convert all final letters to non final.
     /// </summary>
-    /// <param name="str">The sentence having some words.</param>
-    static public string UnFinalAll(string str)
+    /// <param name="hebrew">The sentence having some words.</param>
+    static public string UnFinalAll(string hebrew)
     {
-      if ( str.IsNullOrEmpty() ) return string.Empty;
+      if ( hebrew.IsNullOrEmpty() ) return string.Empty;
       foreach ( var v in FinalDisable )
-        str = str.Replace(v[0], v[1]);
-      return str;
+        hebrew = hebrew.Replace(v[0], v[1]);
+      return hebrew;
     }
 
     /// <summary>
@@ -153,7 +153,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
-      foreach ( char c in str.RemoveDiacritics() )
+      foreach ( char c in str.RemoveDiacritics().ToLower() )
         if ( Codes.Contains(c.ToString()) )
           result = result + c;
       return result;
@@ -166,7 +166,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
-      foreach ( char c in str.RemoveDiacritics() )
+      foreach ( char c in str.RemoveDiacritics().ToLower() )
         if ( c >= '\u0590' && c <= '\u05FF' )
           result = result + c;
       return result;
@@ -175,31 +175,31 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Convert unicode hebrew chars to hebrew font chars.
     /// </summary>
-    static public string ConvertToHebrewFont(string str)
+    static public string ToHebrewFont(string unicode)
     {
-      if ( str.IsNullOrEmpty() ) return string.Empty;
+      if ( unicode.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
-      foreach ( char c in str.RemoveDiacritics() )
-        result = ConvertToKey(c) + result;
+      foreach ( char c in unicode.RemoveDiacritics().ToLower() )
+        result = UnicodeToHebrew(c) + result;
       return result;
     }
 
     /// <summary>
     /// Convert hebrew font chars to unicode hebrew chars.
     /// </summary>
-    static public string ConvertToUnicode(string str)
+    static public string ToUnicode(string str)
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
-      foreach ( char c in str )
-        result = ConvertToUnicode(c) + result;
+      foreach ( char c in str.RemoveDiacritics().ToLower() )
+        result = HebrewToUnicode(c) + result;
       return result;
     }
 
     /// <summary>
     /// Convert unicode hebrew chars to hebrew font chars.
     /// </summary>
-    static public char ConvertToKey(char c)
+    static public char UnicodeToHebrew(char c)
     {
       switch ( c )
       {
@@ -239,7 +239,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Convert hebrew font chars to unicode hebrew chars.
     /// </summary>
-    static public char ConvertToUnicode(char c)
+    static public char HebrewToUnicode(char c)
     {
       switch ( c )
       {

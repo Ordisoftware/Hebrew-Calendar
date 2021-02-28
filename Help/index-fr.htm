@@ -158,8 +158,10 @@ source de donnée utilisateur nommé &quot;Hebrew-Calendar&quot; pour &quot;SQLite
     <p><code>
 !^+P::
   <br>
- &nbsp;&nbsp;Run &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\Ordisoftware.Hebrew.Calendar.exe&quot; --parashot  <br>
- &nbsp;&nbsp;return
+&nbsp;&nbsp;appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\&quot;<br>
+&nbsp;&nbsp;appExe := &quot;Ordisoftware.Hebrew.Calendar.exe&quot;<br>
+&nbsp;&nbsp;Run %appPath%%appExe% --parashot<br>
+&nbsp;&nbsp;return
 </code></p>
     <h4>Que sont les temps de célébration ?</h4>
     <p>Les temps de célébration de la Torah sont Pessa'h ou Pâques qui est la libération des illusions, Shavou'ot ou Semaines qui est le don de la connaissance, Terou'ah ou Sonnerie qui est la joie d'être libéré,
