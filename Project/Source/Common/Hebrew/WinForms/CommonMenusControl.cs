@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
@@ -63,7 +64,7 @@ namespace Ordisoftware.Hebrew
       foreach ( var item in list )
       {
         var menuitem = ActionViewVersionNews.DropDownItems.Add(SysTranslations.AboutBoxVersion.GetLang(item.Key));
-        menuitem.Tag = item.Value;
+        menuitem.Tag = item;
         menuitem.Click += ShowVersionNews;
         menuitem.Image = dummyVersionNews.Image;
         menuitem.ImageScaling = ToolStripItemImageScaling.None;
@@ -75,24 +76,18 @@ namespace Ordisoftware.Hebrew
     {
       var menuitem = sender as ToolStripItem;
       if ( menuitem == null ) return;
-      var notice = menuitem.Tag as TranslationsDictionary;
-      if ( notice == null ) return;
-      string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(Globals.AssemblyVersion);
+      var notice = (KeyValuePair<string, TranslationsDictionary>)menuitem.Tag;
+      string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(notice.Key);
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
       if ( form == null )
-        form = new MessageBoxEx(title, notice.GetLang(), MessageBoxEx.DefaultMediumWidth);
+        form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultMediumWidth, justify: false);
       form.ShowInTaskbar = true;
       form.Popup(null);
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
     {
-    DebugManager.TraceForm.Popup();
-    }
-
-    private void ActionViewStats_Click(object sender, EventArgs e)
-    {
-
+      DebugManager.TraceForm.Popup();
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)

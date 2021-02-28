@@ -362,7 +362,6 @@
       // 
       resources.ApplyResources(this.ActionViewStats, "ActionViewStats");
       this.ActionViewStats.Name = "ActionViewStats";
-      this.ActionViewStats.Click += new System.EventHandler(this.ActionViewStats_Click);
       // 
       // ActionHelp
       // 
