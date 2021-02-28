@@ -176,8 +176,9 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewCelebrationsBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
         ActionViewNewMoonsBoard.PerformClick();
-      if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-        ActionViewLunarMonths.PerformClick();
+      // TODO enable when ready and update keys and faq
+      //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
+        //ActionViewLunarMonths.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
         ActionViewParashot.PerformClick();
     }
