@@ -287,6 +287,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
+- Add option to choose default auto-lock option between lock station, standby and power off.
 - Improve date bookmarks to be used from the main window to navigate.
 - Improve log viewer to select file.
 - Replace simple internal trace/logging by SeriLog.
