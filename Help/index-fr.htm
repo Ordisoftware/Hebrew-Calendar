@@ -94,7 +94,7 @@ source de donnée utilisateur nommé &quot;Hebrew-Calendar&quot; pour &quot;SQLite
  Driver&quot; avec &quot;Database Name&quot; définit à :</p>
     <p><span style="font-size: 8pt;">&quot;%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite&quot;</span></p>
     <p>Visionner la <a href="https://www.youtube.com/watch?v=WPVF8pj9I3E" target="_blank" rel="noopener">vidéo</a>.</p>
-    <h4>Que faire si la vérification de mise à jour indique que le certificat SSL est incorrect ou expiré ? </h4>
+    <h4>Que faire si la vérification de mise à jour indique que le certificat SSL est incorrect ou expiré ?  </h4>
     <p>Le logiciel vérifie la validité du certificat du serveur de mise à jour en plus de la somme de contrôle SHA-512 du fichier d'installation avant de le télécharger et de l'exécuter. Ce certificat est normalement mis à jour dans les deux mois avant son expiration annuelle et une nouvelle version est publiée. Si l'application n'a pas été mise à jour dans ce délai, vous pouvez vérifier manuellement la dernière version disponible en ligne.</p>
     <h4>Que faire si la vue mensuelle du calendrier est moche ?</h4>
     <p>Réinitialisez les préférences par défaut: cel&nbsp;restaurera les valeurs corrompues en cas de problème après l'installation ou la mise à niveau.</p>
@@ -106,6 +106,61 @@ source de donnée utilisateur nommé &quot;Hebrew-Calendar&quot; pour &quot;SQLite
     <h4>Quels sont les problèmes connus ?</h4>
     <p>Les données générées pour les villes proches des pôles peuvent être incohérentes à mesure qu'on s'en rapproche, en particulier avec le omer de la lune, en raison de certaines éphémérides étranges.</p>
     <p>Ainsi, les dates de célébration peuvent être fausses.</p>
+    <h4>Quelles sont les options de ligne de commande ?</h4>
+    <ul>
+        <li>
+            <p>Changer la langue de l'interface (ne change pas le rapport textuel à moins d'utiliser <code>--generate</code>) :</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --lang [en|fr]</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Afficher la fenêtre principale :</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --show</code></p>
+        </li>
+        <li>
+            <p>Cacher la fenêtre principale&nbsp;:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --hide</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Régénérer les données du calendrier :</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --generate</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Afficher le calculateur de diféfrence de dates :</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --diffdates</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Afficher le tableau des célébrations&nbsp;:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --celebrations</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Afficher le tableau des nouvelles lunes :</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --newmoons</code></p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <p>Afficher le tableau des parashot&nbsp;:</p>
+            <p><code>Ordisoftware.Hebrew.Letters.exe --parashot</code></p>
+        </li>
+    </ul>
+    <p>Ces options sont cumulables et peuvent être utilisées pour contrôler le logiciel lorsqu'il est déjà en cours d'exécution.</p>
+    <p>Il est donc possible d'utiliser <a href="https://www.autohotkey.com" target="_blank">AutoHotKey</a> pour définir par exemple cette commande Maj + Ctrl + Alt + P&nbsp;:</p>
+    <p><code>
+!^+P::
+  <br>
+ &nbsp;&nbsp;Run &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\Ordisoftware.Hebrew.Calendar.exe&quot; --parashot  <br>
+ &nbsp;&nbsp;return
+</code></p>
     <h4>Que sont les temps de célébration ?</h4>
     <p>Les temps de célébration de la Torah sont Pessa'h ou Pâques qui est la libération des illusions, Shavou'ot ou Semaines qui est le don de la connaissance, Terou'ah ou Sonnerie qui est la joie d'être libéré,
 Kipourim ou Pénitence qui est les peines des pertes, et Soukot ou Cabanes qui est la construction du futur.</p>
@@ -135,11 +190,25 @@ pour shabat, mais à shabat il ne sort pas de son temple, et sauf cas d'urgence o
     <p>Si vous préférez utiliser le shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam.</p>
     <h4>Que sont les Parashot?</h4>
     <p>L'étude de la Parashah de la semaine débute à Sim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Israël, ou le 23 en Mitsraïm et dans le désert, soit le dernier jour de Soukot, ou le lendemain. Elle se termine par la lecture complète lors du Shabat, ou le Shabat suivant si Sim'hat Torah a lieu un Shabat.</p>
-    <p>Le lendemain du Shabat on passe à la Parashah suivante qu'on étudie durant la semaine en lisant des commentaires, en écoutant des conférences, en s'informant sur les sciences, et en examinant les lettres, les mots et les versets, pour la lire en intégralité lors du Shabat. Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communauté, pour son pays, pour les Nations, et pour l'espèce, grâce à Pessa'h, Shavou'ot, Terou'ah, Kipourim, et Soukot.</p>
-    <p>Israël est le pays conceptuel mondial des justes bienveillants dont le corps+esprit, et donc l'ADN, est dans une certaine mesure notable libéré de l'ignorance et du mal. Sim'hat Torah signifie &quot;Joie [prodiguée par la] Torah&quot; et une lettrique de Sim'hat est &quot;Partage du Service qui Soutien la Matière&quot; : c'est donc la joie résultant de l'aide bénéfique de la Torah et de ceux qui suivent les lois du pays où l'on vit et de la Doctrine de YHVH qui ont pour seul et unique but fondamental de protéger la vie et les biens des personnes sans nuire même aux méchants et aux criminels.</p>
+    <p>Le lendemain du Shabat on passe à la Parashah suivante qu'on étudie durant la semaine en lisant des commentaires, en écoutant des conférences, en s'informant sur les sciences, et en examinant les lettres, les mots et les versets, pour la lire en intégralité lors du Shabat. Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communauté, pour son pays, pour les Nations, et pour l'espèce, grâce à Pessa'h,
+Shavou'ot, Terou'ah, Kipourim, et Soukot.</p>
+    <p>Israël est le pays conceptuel mondial des justes bienveillants dont le corps+esprit, et donc l'ADN, est dans une certaine mesure notable libéré de l'ignorance et du mal. Sim'hat Torah signifie &quot;Joie [prodiguée par la] Torah&quot; et une lettrique de Sim'hat est &quot;Partage du Service qui Soutien la Matière&quot; : c'est donc la joie résultant de l'aide bénéfique de la Torah et de ceux qui suivent les lois du pays où l'on vit et de la Doctrine de YHVH qui ont pour seul et unique but fondamental de
+protéger la vie et les biens des personnes sans nuire même aux méchants et aux criminels.</p>
     <p>La génération des Parashot relatives aux Shabatot n'est pas garantie pour être traditionnelle d'autant que l'application génère des dates, quoi que basé sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le shabat personnel.</p>
     <h3>Raccourcis clavier</h3>
-    <table width="650" height="1297">
+    <table width="650">
+        <tr>
+            <td width="180">Ctrl + Tab</td>
+            <td width="460">
+                Vue suivante
+            </td>
+        </tr>
+        <tr>
+            <td width="180">Maj + Ctrl + Tab</td>
+            <td width="460">
+                Vue précédente
+            </td>
+        </tr>
         <tr>
             <td width="180">F1</td>
             <td width="460">
@@ -186,18 +255,6 @@ pour shabat, mais à shabat il ne sort pas de son temple, et sauf cas d'urgence o
             <td width="180">F8 (ou Ctrl + N)</td>
             <td width="460">
                 Fenêtre de navigation
-            </td>
-        </tr>
-        <tr>
-            <td width="180">Ctrl + Tab</td>
-            <td width="460">
-                Vue suivante
-            </td>
-        </tr>
-        <tr>
-            <td width="180">Maj + Ctrl + Tab</td>
-            <td width="460">
-                Vue précédente
             </td>
         </tr>
         <tr>

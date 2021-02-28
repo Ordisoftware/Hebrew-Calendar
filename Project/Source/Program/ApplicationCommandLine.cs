@@ -37,8 +37,9 @@ namespace Ordisoftware.Hebrew.Calendar
     [Option("newmoons", Required = false, HelpText = "Open new moons board.")]
     public bool OpenNewMoonsBoard { get; set; }
 
-    [Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
-    public bool OpenLunarMonthsBoard { get; set; }
+    // TODO enable when ready and update keys and faq
+    //[Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
+    //public bool OpenLunarMonthsBoard { get; set; }
 
     [Option("parashot", Required = false, HelpText = "Open parashot board.")]
     public bool OpenParashotBoard { get; set; }
