@@ -343,7 +343,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
       if ( e.ColumnIndex == ColumnUnicode.Index )
-        e.Value = HebrewAlphabet.ConvertToHebrewFont((string)e.Value);
+        e.Value = HebrewAlphabet.ToHebrewFont((string)e.Value);
       else
       if ( e.ColumnIndex == ColumnLinked.Index )
         e.Value = Convert.ToBoolean(e.Value) ? Globals.Bullet : string.Empty;

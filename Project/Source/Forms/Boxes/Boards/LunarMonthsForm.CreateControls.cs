@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
             return label;
           };
         var label1 = createLabel(x, y,
-                                 HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]),
+                                 HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
                                  colorsMonth[index - 1],
                                  new Font("Hebrew", 14f),
                                  true, true, false);
