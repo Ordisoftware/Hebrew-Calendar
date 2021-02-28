@@ -77,8 +77,10 @@ namespace Ordisoftware.Hebrew.Calendar
         var server = ar.AsyncState as NamedPipeServerStream;
         server.EndWaitForConnection(ar);
         var command = new BinaryFormatter().Deserialize(server) as string;
-        if ( command == SystemManager.IPCRequestBringToFront )
+        if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
+        if ( command == nameof(ApplicationCommandLine.Instance.HideMainForm) )
+          MainForm.Instance.SyncUI(() => { if ( MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized ) MainForm.Instance.MenuShowHide.PerformClick(); });
         if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionCalculateDateDiff.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard) )
@@ -103,6 +105,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
+        if ( ApplicationCommandLine.Instance.HideMainForm )
+          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
+        if ( ApplicationCommandLine.Instance.ShowMainForm )
+          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
         if ( ApplicationCommandLine.Instance.OpenDiffDates )
           SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
         if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )

@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return false;
       var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return false;
-      bool result = dateNow >= times.DateStartCheck.Value && dateNow <= times.DateEnd.Value;
+      bool result = dateNow >= times.DateStart.Value && dateNow <= times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       var torahevent = row.TorahEventsAsEnum;
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
