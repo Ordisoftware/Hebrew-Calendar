@@ -106,19 +106,11 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate if a string has only hebrew font chars in addition to space.
+    /// Indicate if a string contains some hebrew unicode chars.
     /// </summary>
-    static public bool IsHebrew(string str)
+    static public bool ContainsUnicode(string str)
     {
-      return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || Codes.Contains(c.ToString()));
-    }
-
-    /// <summary>
-    /// Indicate if a string has only hebrew unicode chars in addition to space.
-    /// </summary>
-    static public bool IsUnicode(string str)
-    {
-      return str.IsNullOrEmpty() ? false : str.All(c => c == ' ' || ( c >= '\u0590' && c <= '\u05FF' ));
+      return !str.IsNullOrEmpty() && str.Any(c => c >= '\u0590' && c <= '\u05FF');
     }
 
     /// <summary>
@@ -163,6 +155,19 @@ namespace Ordisoftware.Hebrew
       string result = string.Empty;
       foreach ( char c in str.RemoveDiacritics() )
         if ( Codes.Contains(c.ToString()) )
+          result = result + c;
+      return result;
+    }
+
+    /// <summary>
+    /// Return only allowed chars for hebrew font.
+    /// </summary>
+    static public string OnlyUnicode(string str)
+    {
+      if ( str.IsNullOrEmpty() ) return string.Empty;
+      string result = string.Empty;
+      foreach ( char c in str.RemoveDiacritics() )
+        if ( c >= '\u0590' && c <= '\u05FF' )
           result = result + c;
       return result;
     }

@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew
         return;
       }
       word = Localizer.RemoveDiacritics(word);
-      bool isUnicode = HebrewAlphabet.IsUnicode(word);
+      bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
       if ( isUnicode )
       {
         if ( word.EndsWith(" א") || word.StartsWith(" ב") )
@@ -50,7 +50,6 @@ namespace Ordisoftware.Hebrew
       {
         if ( word.StartsWith("a ") || word.StartsWith("b ") )
           word = word.Remove(0, 2);
-        word = HebrewAlphabet.UnFinalAll(word);
       }
       var items = word.Split(' ');
       if ( isUnicode ) items = items.Reverse().ToArray();

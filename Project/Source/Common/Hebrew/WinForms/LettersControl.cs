@@ -249,7 +249,7 @@ namespace Ordisoftware.Hebrew
     private void Input_TextChanging(object sender, TextUpdating mode, ref string text)
     {
       text = text.RemoveDiacritics().Replace(" ", string.Empty);
-      if ( HebrewAlphabet.IsUnicode(text) )
+      if ( HebrewAlphabet.ContainsUnicode(text) )
         text = HebrewAlphabet.ConvertToHebrewFont(text);
       text = HebrewAlphabet.UnFinalAll(text);
       text = HebrewAlphabet.OnlyHebrewFont(text);
