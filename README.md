@@ -138,10 +138,7 @@ When enabled, this will speed up rendering of the main form when it is displayed
 
 When disabled, top menu painting may cause latency.
 
-
-
-
-#### What are command line options?
+#### What are command-line options?
 
 - Change interface language (does not change the text report unless using --generate):
 
@@ -321,6 +318,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Add check update from about box.
 - Add export to TXT support for all boards.
 - Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
+- Add command-line options (see FAQ).
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
@@ -464,7 +462,7 @@ The generation of Parashot relating to Shabatot is not guaranteed to be traditio
 - Few fixes.
 - Replace AASharp source code dependency by the NuGet package.
 - Replace GenericParsing dependency by FileHelpers NuGet package.
-- Replace simple internal command line parser by CommandLineParser NuGet package.
+- Replace simple internal command-line parser by CommandLineParser NuGet package.
 - Code refactoring.
 - File system refactoring.
 
