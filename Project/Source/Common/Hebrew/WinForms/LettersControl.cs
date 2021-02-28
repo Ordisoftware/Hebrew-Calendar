@@ -236,6 +236,11 @@ namespace Ordisoftware.Hebrew
         TextBox.SelectionStart = 0;
         TextBox.SelectionLength = TextBox.TextLength;
       }
+      else
+      {
+        TextBox.SelectionStart = 0;
+        TextBox.SelectionLength = 0;
+      }
     }
 
     /// <summary>
