@@ -138,6 +138,53 @@ When enabled, this will speed up rendering of the main form when it is displayed
 
 When disabled, top menu painting may cause latency.
 
+
+
+
+#### What are command line options?
+
+- Change interface language (does not change the text report unless using --generate):
+
+  `Ordisoftware.Hebrew.Letters.exe --lang [en|fr]`
+
+- Show the main window:
+
+  `Ordisoftware.Hebrew.Letters.exe --show`
+
+- Hide the main window:
+
+  `Ordisoftware.Hebrew.Letters.exe --hide`
+
+- Regenerate the calendar data:
+ 
+  `Ordisoftware.Hebrew.Letters.exe --generate`
+
+- Show the dates difference calculator:
+ 
+  `Ordisoftware.Hebrew.Letters.exe --diffdates`
+
+- Show the celebrations board:
+
+  `Ordisoftware.Hebrew.Letters.exe --celebrations`
+
+- Show the new moons board board:
+ 
+  `Ordisoftware.Hebrew.Letters.exe --newmoons`
+
+- Show the parashot board:
+
+  `Ordisoftware.Hebrew.Letters.exe --parashot`
+
+These options are cumulative and can be used to control the software when it is already running.
+
+It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this Shift + Ctrl + Alt + P command:
+
+```
+!^+P:: 
+   Run "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\Ordisoftware.Hebrew.Calendar.exe" --parashot 
+   return
+```
+
 #### What are known problems?
 
 Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.
