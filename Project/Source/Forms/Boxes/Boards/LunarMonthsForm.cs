@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]));
+      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
@@ -154,7 +154,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, index => HebrewAlphabet.ConvertToHebrewFont(HebrewMonths.Unicode[index]));
+      ActionCopyLine(sender, e, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
