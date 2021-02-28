@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew
       if ( isUnicode ) items = items.Reverse().ToArray();
       foreach ( string item in items )
       {
-        SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + item);
+        SystemManager.RunShell(path, item);
         System.Threading.Thread.Sleep(100);
       }
     }
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, ( isUnicode ? "--unicode " : "--hebrew " ) + word);
+      SystemManager.RunShell(path, "--search " + word);
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
         return;
       }
-      SystemManager.RunShell(path, "--ref " + reference);
+      SystemManager.RunShell(path, "--verse " + reference);
     }
 
     /// <summary>
