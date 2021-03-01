@@ -72,7 +72,7 @@ namespace Ordisoftware.Core
         }
         form.EditType.Text = einfo.TypeText;
         form.EditMessage.Text = einfo.Message;
-        form.LabelInfo1.Text += einfo.Emitter + " " + Globals.AssemblyVersion;
+        form.LabelInfo1.Text += einfo.Emitter;
         form.EditStack.Text = einfo.StackText;
         form.ErrorMessages.Add(form.EditType.Text);
         form.ErrorMessages.Add(Globals.NL);

@@ -327,7 +327,8 @@ namespace Ordisoftware.Core
       TargetSite = ex.TargetSite;
       try
       {
-        Emitter = Sender is ExceptionForm form ? form.Text : Globals.MainForm?.Text ?? ex.Source;
+        //Emitter = Sender is ExceptionForm form ? form.Text : Globals.MainForm?.Text ?? ex.Source;
+        Emitter = Globals.AssemblyTitleWithVersion;
         ExtractInherits();
         try
         {
