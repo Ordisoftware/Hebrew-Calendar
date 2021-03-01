@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
+        CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
         SystemManager.TryCatch(() =>
         {
           if ( Settings.TrayIconUseSpecialDayIcon )

@@ -110,9 +110,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoMainForm_Shown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      DebugManager.Enter();
-      try
-      {
         EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
@@ -151,11 +148,6 @@ namespace Ordisoftware.Hebrew.Calendar
         TimerUpdateTitles_Tick(null, null);
         Globals.ChronoLoadApp.Stop();
         ProcessNewsAndCommandLine();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
     }
 
     /// <summary>
