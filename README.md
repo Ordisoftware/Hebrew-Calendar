@@ -59,7 +59,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 - The reminder box has been improved.
 - An editable parashot board is available in the Tools menu.
-- Parashah of the week in indicated for Shabat in visual calendar and in navigation window.
+- Parashah of the week is indicated for Shabat in visual calendar and in navigation window.
 - Visual calendar and navigation window indicates intermediate days of week-long celebrations.
 - Image of the Tray Icon changes during a Shabat day or celebration regardless of reminder boxes.
 - Application title bar can show lunar today and weekly parashah.
