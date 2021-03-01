@@ -13,17 +13,17 @@
 Lang/EN = health and herbology
 Lang/FR = Santé et herbologie
 
-Name = (EN) Traditional Chinese medicine
-URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
-
-Name = (FR) Médecine traditionnelle chinoise
-URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
-
 Name = (EN) Ayurveda
 URL = https://en.wikipedia.org/wiki/Ayurveda
 
 Name = (FR) Ayurveda
 URL = https://fr.wikipedia.org/wiki/Ayurveda
+
+Name = (EN) Traditional Chinese medicine
+URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
+
+Name = (FR) Médecine traditionnelle chinoise
+URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
 
 -
 
@@ -39,7 +39,16 @@ URL = https://en.wikipedia.org/wiki/Qigong
 Name = (FR) Qi gong
 URL = https://fr.wikipedia.org/wiki/Qi_gong
 
+Name = (EN) Bodybuilding
+URL = https://en.wikipedia.org/wiki/Bodybuilding
+
+Name = (FR) Bodybuilding
+URL = https://fr.wikipedia.org/wiki/Culturisme
+
 -
+
+Name = (EN) History of herbalism
+URL = https://en.wikipedia.org/wiki/History_of_herbalism
 
 Name = (EN) Medicinal plants
 URL = https://en.wikipedia.org/wiki/Medicinal_plants
