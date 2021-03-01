@@ -286,6 +286,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Add print boards.
+- Add option to set Tray Icons.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
