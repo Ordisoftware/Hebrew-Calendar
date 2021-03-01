@@ -143,6 +143,34 @@ namespace Ordisoftware.Core
         [Language.FR] = "Rejeté"
       };
 
+    static public readonly TranslationsDictionary First
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "First",
+        [Language.FR] = "Premier"
+      };
+
+    static public readonly TranslationsDictionary Previous
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Previous",
+        [Language.FR] = "Précédent"
+      };
+
+    static public readonly TranslationsDictionary Next
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Next",
+        [Language.FR] = "Suivant"
+      };
+
+    static public readonly TranslationsDictionary Last
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Last",
+        [Language.FR] = "Dernier"
+      };
+
     static public readonly TranslationsDictionary NullSlot
       = new TranslationsDictionary
       {
