@@ -29,6 +29,7 @@ namespace Ordisoftware.Core
     public const int DefaultSmallWidth = 400;
     public const int DefaultMediumWidth = 500;
     public const int DefaultLargeWidth = 600;
+    public const int DefaultVeryLargeWidth = 800;
 
     static public readonly List<MessageBoxEx> Instances = new List<MessageBoxEx>();
 
