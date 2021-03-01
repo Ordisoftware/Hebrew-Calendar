@@ -168,7 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["7.0"] = new TranslationsDictionary
         {
-          [Language.EN] = "Added command-line options (see FAQ)." + Globals.NL +
+          [Language.EN] = "Added command-line options (see help FAQ)." + Globals.NL +
                           "The reminder box has been improved." + Globals.NL +
                           "New editable parashot board." + Globals.NL +
                           "Parashah of the week is indicated for Shabat in visual calendar and in navigation window." + Globals.NL +
@@ -183,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Update web links and Bible study providers." + Globals.NL +
                           "Some improvements in appearance and function.",
 
-          [Language.FR] = "Ajout d'options de ligne de commande (voir la FAQ)." + Globals.NL +
+          [Language.FR] = "Ajout d'options de ligne de commande (voir la FAQ de l'aide)." + Globals.NL +
                           "Boite de rappel a été améliorée." + Globals.NL +
                           "Nouveau tableau des parashot modifiables" + Globals.NL +
                           "Indication de la parashah de la semaine pour le Shabat dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +

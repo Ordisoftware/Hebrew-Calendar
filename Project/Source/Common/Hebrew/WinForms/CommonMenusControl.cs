@@ -63,6 +63,7 @@ namespace Ordisoftware.Hebrew
 
     public void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> notices)
     {
+      ActionViewVersionNews.DropDownItems.Clear();
       Notices = notices;
       foreach ( var item in notices )
       {
@@ -85,11 +86,16 @@ namespace Ordisoftware.Hebrew
       if ( form == null )
       {
         form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultVeryLargeWidth, justify: false);
+        form.DoShownSound = false;
         form.ShowInTaskbar = true;
         if ( Notices.Keys.First() != notice.Key )
-          init(form.ActionRetry, "Previous", index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
+          init(form.ActionRetry,
+               SysTranslations.Previous.GetLang(),
+               index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
         if ( Notices.Keys.Last() != notice.Key )
-          init(form.ActionIgnore, "Next", index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
+          init(form.ActionIgnore,
+               SysTranslations.Next.GetLang(),
+               index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
         void init(Button button, string text, Action<int> action)
         {
           button.Visible = true;
@@ -97,7 +103,7 @@ namespace Ordisoftware.Hebrew
           button.Click += (_s, _e) =>
           {
             var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
-            var found = items.FirstOrDefault(item => item.Text == "Version " + notice.Key);
+            var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
             if ( found == null ) return;
             form.Close();
             action(ActionViewVersionNews.DropDownItems.IndexOf(found));
