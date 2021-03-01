@@ -86,6 +86,7 @@ namespace Ordisoftware.Hebrew
       if ( form == null )
       {
         form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultVeryLargeWidth, justify: false);
+        form.DoShownSound = false;
         form.ShowInTaskbar = true;
         if ( Notices.Keys.First() != notice.Key )
           init(form.ActionRetry,

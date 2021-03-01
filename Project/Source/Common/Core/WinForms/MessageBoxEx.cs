@@ -45,6 +45,8 @@ namespace Ordisoftware.Core
     private bool Justify;
     private bool AllowClose;
 
+    public bool DoShownSound = true;
+
     private MessageBoxEx()
     {
       InitializeComponent();
@@ -56,7 +58,8 @@ namespace Ordisoftware.Core
                         int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
-                        bool justify = DefaultJustifyEnabled)
+                        bool justify = DefaultJustifyEnabled,
+                        bool doSound = true)
       : this()
     {
       Text = title;
@@ -94,6 +97,7 @@ namespace Ordisoftware.Core
       this.CenterToFormElseMainFormElseScreen(ActiveForm);
       Instances.Add(this);
       IconStyle = icon;
+      DoShownSound = doSound;
     }
 
     public MessageBoxEx(TranslationsDictionary title,
@@ -101,8 +105,9 @@ namespace Ordisoftware.Core
                         int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
-                        bool justify = DefaultJustifyEnabled)
-      : this(title.GetLang(), text.GetLang(), width, buttons, icon, justify)
+                        bool justify = DefaultJustifyEnabled,
+                        bool doSound = true)
+      : this(title.GetLang(), text.GetLang(), width, buttons, icon, justify, doSound)
     {
       LocalizedTitle = title;
       LocalizedText = text;
@@ -135,7 +140,7 @@ namespace Ordisoftware.Core
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
       TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.Visible && f.TopMost);
-      DisplayManager.DoSound(IconStyle);
+      if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
       this.Popup();
     }
 
