@@ -85,7 +85,11 @@ namespace Ordisoftware.Core
         if ( created )
           CreateIPCServer(duplicated);
         else
+        {
+          if ( CommandLineArguments.Length == 0 )
+            CommandLineOptions.ShowMainForm = true;
           IPCAnswers?.Invoke();
+        }
         return created;
       }
       catch ( Exception ex )

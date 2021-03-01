@@ -80,7 +80,15 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
         if ( command == nameof(ApplicationCommandLine.Instance.HideMainForm) )
-          MainForm.Instance.SyncUI(() => { if ( MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized ) MainForm.Instance.MenuShowHide.PerformClick(); });
+          MainForm.Instance.SyncUI(() => 
+          {
+            if ( MainForm.Instance.Visible )
+            {
+              if ( MainForm.Instance.WindowState == FormWindowState.Minimized)
+                MainForm.Instance.MenuShowHide.PerformClick();
+              MainForm.Instance.MenuShowHide.PerformClick();
+            }
+          });
         if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionCalculateDateDiff.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard) )
@@ -89,7 +97,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewNewMoonsBoard.PerformClick());
         // TODO enable when ready and update keys and faq
         //if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
-          //MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
+        //MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenParashotBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
         server.Close();
@@ -114,7 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
         // TODO enable when ready and update keys and faq
         //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-          //SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
+        //SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
         if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
           SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
         if ( ApplicationCommandLine.Instance.OpenParashotBoard )
@@ -209,26 +217,26 @@ namespace Ordisoftware.Hebrew.Calendar
         AboutBox.Instance.Hide();
         MainForm.Instance.ClearLists();
         string str = MainForm.Instance.CalendarText.Text;
-        update(Globals.MainForm);
-        string tempLogTitle = DebugManager.TraceForm.Text;
-        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
-        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
-        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
         {
-          if ( form != Globals.MainForm && form != AboutBox.Instance
-            && form != GrammarGuideForm )
+          if ( form != AboutBox.Instance && form != GrammarGuideForm )
             update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
         }
+        string tempLogTitle = DebugManager.TraceForm.Text;
+        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
+        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
+        new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+        new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = NewMoonsBoardForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
+        Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         // Various updates
         DebugManager.TraceForm.Text = tempLogTitle;
         DebugManager.TraceForm.AppendText(tempLogContent);
