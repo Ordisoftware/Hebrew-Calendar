@@ -356,7 +356,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = true;
         GoToDate(DateTime.Now.Date);
         UpdateTitles(true);
-        EnableReminder();
+        EnableReminderTimer();
       }
     }
 
@@ -867,7 +867,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
-      EnableReminder();
+      EnableReminderTimer();
     }
 
     /// <summary>
@@ -877,7 +877,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MenuDisableReminder_Click(object sender, EventArgs e)
     {
-      DisableReminder();
+      DisableReminderTimer();
     }
 
     /// <summary>

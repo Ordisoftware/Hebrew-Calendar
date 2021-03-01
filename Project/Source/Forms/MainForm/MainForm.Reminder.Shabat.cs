@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private bool CheckShabat()
+    private bool CheckShabat(bool showBox)
     {
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
@@ -76,7 +76,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
         LastShabatReminded = dateNow;
-      ReminderForm.Run(row, TorahEvent.Shabat, times);
+      if ( showBox ) ReminderForm.Run(row, TorahEvent.Shabat, times);
       return result;
     }
 

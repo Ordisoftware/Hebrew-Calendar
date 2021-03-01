@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private bool CheckCelebrationDay()
+    private bool CheckCelebrationDay(bool onlyCheck)
     {
       bool check(TorahEvent item)
       {
@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
         LastCelebrationReminded[torahevent] = dateNow;
-      ReminderForm.Run(row, torahevent, times);
+      if ( onlyCheck ) ReminderForm.Run(row, torahevent, times);
       return result;
     }
 

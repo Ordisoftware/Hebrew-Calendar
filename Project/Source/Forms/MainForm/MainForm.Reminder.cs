@@ -29,7 +29,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
-      // TODO change isspecialday management to test lunar today
       IsSpecialDay = false;
       try
       {
@@ -42,13 +41,9 @@ namespace Ordisoftware.Hebrew.Calendar
             CheckAnniversarySun();
             CheckAnniversaryMoon();
           }*/
-          if ( Settings.ReminderShabatEnabled )
-            IsSpecialDay = CheckShabat() || IsSpecialDay;
-          if ( Settings.ReminderCelebrationsEnabled )
-          {
-            IsSpecialDay = CheckCelebrationDay() || IsSpecialDay;
-            CheckCelebrations();
-          }
+          IsSpecialDay = CheckShabat(Settings.ReminderShabatEnabled) || IsSpecialDay;
+          IsSpecialDay = CheckCelebrationDay(Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
+          if ( Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
         }
       }
       catch ( Exception ex )
@@ -88,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    private void EnableReminder()
+    private void EnableReminderTimer()
     {
       TimerResumeReminder.Enabled = false;
       TrayIcon.Icon = TrayIconDefault;
@@ -106,7 +101,7 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerReminder_Tick(null, null);
     }
 
-    private void DisableReminder()
+    private void DisableReminderTimer()
     {
       try
       {
