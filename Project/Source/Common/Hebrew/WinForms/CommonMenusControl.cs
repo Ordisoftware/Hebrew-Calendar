@@ -63,6 +63,7 @@ namespace Ordisoftware.Hebrew
 
     public void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> notices)
     {
+      ActionViewVersionNews.DropDownItems.Clear();
       Notices = notices;
       foreach ( var item in notices )
       {
