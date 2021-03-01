@@ -124,7 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "General improvement and some fixes.",
 
           [Language.FR] = "Suppression de la boîte de dialogue de génération au premier démarrage et lors de la régénération automatiquement." + Globals.NL +
-                          "Amélioration de la mise à jour de la vérification de mise à jour pour télécharger et installer automatiquement de manière sécurisée." + Globals.NL +
+                          "Amélioration de la vérification de mise à jour pour télécharger et installer automatiquement de manière sécurisée." + Globals.NL +
                           "Amélioration des raccourcis clavier." + Globals.NL +
                           "Amélioration de moitié de la vitesse de génération des données." + Globals.NL +
                           "Amélioration de moitié de la vitesse d'affichage du mois visuel." + Globals.NL +
