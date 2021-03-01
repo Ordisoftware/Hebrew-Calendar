@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatchManage(() =>
       {
-        if ( Visible && ( WindowState == FormWindowState.Minimized ) )
+        if ( Visible && WindowState == FormWindowState.Minimized )
         {
           WindowState = Settings.MainFormState;
           this.Popup();

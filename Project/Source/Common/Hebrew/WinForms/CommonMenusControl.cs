@@ -85,6 +85,7 @@ namespace Ordisoftware.Hebrew
       if ( form == null )
       {
         form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultVeryLargeWidth, justify: false);
+        form.ShowInTaskbar = true;
         if ( Notices.Keys.First() != notice.Key )
           init(form.ActionRetry, "Previous", index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
         if ( Notices.Keys.Last() != notice.Key )
@@ -103,7 +104,7 @@ namespace Ordisoftware.Hebrew
           };
         }
       }
-      form.ShowInTaskbar = true;
+      form.ActiveControl = form.ActionOK;
       form.Popup(null);
     }
 
