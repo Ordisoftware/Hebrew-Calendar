@@ -482,7 +482,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                        new Point(0, ActionMoonDayTextFormatReset.Height));
     }
 
-    private void EditMonthViewSunToolTips_CheckedChanged(object sender, EventArgs e)
+    private void EditMonthViewOptionChanged(object sender, EventArgs e)
     {
       if ( IsReady ) MustRefreshMonthView = true;
     }

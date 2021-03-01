@@ -227,6 +227,8 @@
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
+      this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
+      this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
@@ -287,6 +289,9 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
+      this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
+      this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -314,6 +319,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).BeginInit();
       this.TabPageMonthView.SuspendLayout();
       this.PanelCalendarColors.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).BeginInit();
@@ -1619,11 +1625,15 @@
       // 
       this.TabPageMonthView.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonthView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSizeInterval);
+      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacingInfo);
       this.TabPageMonthView.Controls.Add(this.LabelMoonDayTextFormat);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatReset);
       this.TabPageMonthView.Controls.Add(this.PanelCalendarColors);
       this.TabPageMonthView.Controls.Add(this.EditUseColors);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
+      this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
+      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacing);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
@@ -1932,6 +1942,19 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
+      // EditCalendarLineSpacing
+      // 
+      this.EditCalendarLineSpacing.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditCalendarLineSpacing, "EditCalendarLineSpacing");
+      this.EditCalendarLineSpacing.Name = "EditCalendarLineSpacing";
+      this.EditCalendarLineSpacing.ReadOnly = true;
+      this.EditCalendarLineSpacing.ValueChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
+      // LabelCalendarLineSpacing
+      // 
+      resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
+      this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
+      // 
       // EditMonthViewFontSize
       // 
       this.EditMonthViewFontSize.BackColor = System.Drawing.SystemColors.Window;
@@ -1965,14 +1988,14 @@
       resources.ApplyResources(this.EditCalendarShowParashah, "EditCalendarShowParashah");
       this.EditCalendarShowParashah.Name = "EditCalendarShowParashah";
       this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
-      this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
+      this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // EditMonthViewSunToolTips
       // 
       resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
       this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
       this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewSunToolTips_CheckedChanged);
+      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // EditMoonDayTextFormat
       // 
@@ -1986,6 +2009,7 @@
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageTextReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageTextReport.Controls.Add(this.LabelTextReportFontSizeInterval);
       this.TabPageTextReport.Controls.Add(this.LabelFontName);
       this.TabPageTextReport.Controls.Add(this.EditTextReportFontSize);
       this.TabPageTextReport.Controls.Add(this.LabelFontSize);
@@ -2425,6 +2449,24 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // LabelCalendarLineSpacingInfo
+      // 
+      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
+      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
+      // 
+      // LabelMonthViewFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontSizeInterval, "LabelMonthViewFontSizeInterval");
+      this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
+      // 
+      // LabelTextReportFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelTextReportFontSizeInterval, "LabelTextReportFontSizeInterval");
+      this.LabelTextReportFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelTextReportFontSizeInterval.Name = "LabelTextReportFontSizeInterval";
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2480,6 +2522,7 @@
       this.TabPageMonthView.PerformLayout();
       this.PanelCalendarColors.ResumeLayout(false);
       this.PanelCalendarColors.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).EndInit();
       this.TabPageTextReport.ResumeLayout(false);
       this.TabPageTextReport.PerformLayout();
@@ -2755,5 +2798,10 @@
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowWeeklyParashah;
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowToday;
     private System.Windows.Forms.CheckBox EditShowLastNewInVersionAfterUpdate;
+    private System.Windows.Forms.NumericUpDown EditCalendarLineSpacing;
+    private System.Windows.Forms.Label LabelCalendarLineSpacing;
+    private System.Windows.Forms.Label LabelCalendarLineSpacingInfo;
+    private System.Windows.Forms.Label LabelMonthViewFontSizeInterval;
+    private System.Windows.Forms.Label LabelTextReportFontSizeInterval;
   }
 }

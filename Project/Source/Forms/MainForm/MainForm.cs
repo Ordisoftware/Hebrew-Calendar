@@ -326,6 +326,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
+      string dateOld = CurrentDay.Date;
       bool formEnabled = Globals.MainForm.Enabled;
       try
       {
@@ -354,7 +355,10 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = formEnabled;
         MenuTray.Enabled = true;
-        GoToDate(DateTime.Now.Date);
+        if ( dateOld == null)
+          GoToDate(DateTime.Now.Date);
+        else
+          GoToDate(dateOld);
         UpdateTitles(true);
         EnableReminderTimer();
       }

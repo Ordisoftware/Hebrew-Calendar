@@ -2441,5 +2441,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["MainFormTitleBarShowToday"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CalendarLineSpacing {
+            get {
+                return ((int)(this["CalendarLineSpacing"]));
+            }
+            set {
+                this["CalendarLineSpacing"] = value;
+            }
+        }
     }
 }

@@ -4568,6 +4568,72 @@
   <data name="&gt;&gt;TabPageCelebrations.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="LabelMonthViewFontSizeInterval.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 43</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="LabelMonthViewFontSizeInterval.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSizeInterval.Name" xml:space="preserve">
+    <value>LabelMonthViewFontSizeInterval</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSizeInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSizeInterval.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSizeInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 91</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="LabelCalendarLineSpacingInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacingInfo.Name" xml:space="preserve">
+    <value>LabelCalendarLineSpacingInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacingInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacingInfo.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacingInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="LabelMoonDayTextFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4596,7 +4662,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -4638,7 +4704,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatReset.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="ActionOpenTheme.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -5666,7 +5732,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;PanelCalendarColors.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5678,7 +5744,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 102</value>
+    <value>142, 102</value>
   </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 17</value>
@@ -5699,7 +5765,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -5742,7 +5808,64 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 87</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="EditCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Name" xml:space="preserve">
+    <value>EditCalendarLineSpacing</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 68</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+    <value>Line spacing</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Name" xml:space="preserve">
+    <value>LabelCalendarLineSpacing</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -5766,7 +5889,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5799,7 +5922,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="EditCalendarShowParashah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5814,7 +5937,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCalendarShowParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 66</value>
+    <value>142, 66</value>
   </data>
   <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
@@ -5838,7 +5961,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5853,7 +5976,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 84</value>
+    <value>142, 84</value>
   </data>
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -5877,7 +6000,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -5901,7 +6024,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -5929,6 +6052,39 @@
   </data>
   <data name="&gt;&gt;TabPageMonthView.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 98</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="LabelTextReportFontSizeInterval.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelTextReportFontSizeInterval.Name" xml:space="preserve">
+    <value>LabelTextReportFontSizeInterval</value>
+  </data>
+  <data name="&gt;&gt;LabelTextReportFontSizeInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTextReportFontSizeInterval.Parent" xml:space="preserve">
+    <value>TabPageTextReport</value>
+  </data>
+  <data name="&gt;&gt;LabelTextReportFontSizeInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelFontName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5961,7 +6117,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;LabelFontName.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="EditTextReportFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -5985,7 +6141,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;EditTextReportFontSize.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6018,7 +6174,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;LabelFontSize.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="EditTextReportFontName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6042,7 +6198,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;EditTextReportFontName.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LabelBackColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6075,7 +6231,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;LabelBackColor.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="EditTextReportForeColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6099,7 +6255,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;EditTextReportForeColor.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EditTextReportBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6123,7 +6279,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;EditTextReportBackColor.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelTextColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6156,7 +6312,7 @@
     <value>TabPageTextReport</value>
   </data>
   <data name="&gt;&gt;LabelTextColor.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TabPageTextReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>

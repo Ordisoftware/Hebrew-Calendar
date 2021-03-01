@@ -767,4 +767,7 @@
   <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
     <value>Afficher les nouveautés après une mise à jour</value>
   </data>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+    <value>Interligne</value>
+  </data>
 </root>
