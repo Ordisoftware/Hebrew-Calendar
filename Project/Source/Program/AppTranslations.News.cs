@@ -124,7 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "General improvement and some fixes.",
 
           [Language.FR] = "Suppression de la boîte de dialogue de génération au premier démarrage et lors de la régénération automatiquement." + Globals.NL +
-                          "Amélioration de la mise à jour de la vérification de mise à jour pour télécharger et installer automatiquement de manière sécurisée." + Globals.NL +
+                          "Amélioration de la vérification de mise à jour pour télécharger et installer automatiquement de manière sécurisée." + Globals.NL +
                           "Amélioration des raccourcis clavier." + Globals.NL +
                           "Amélioration de moitié de la vitesse de génération des données." + Globals.NL +
                           "Amélioration de moitié de la vitesse d'affichage du mois visuel." + Globals.NL +
@@ -188,7 +188,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Nouveau tableau des parashot modifiables" + Globals.NL +
                           "Indication de la parashah de la semaine pour le Shabat dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
                           "La barre de titre de l'application peut afficher la date lunaire d'aujourd'hui et la parashah hebdomadaire." + Globals.NL +
-                          "Indication des jours intermédiaires de célébration durnt qui durent une semaine dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
+                          "Indication des jours intermédiaires de célébration durant qui durent une semaine dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
                           "L'image de la Tray Icon change durant un jour de Shabat ou de célébration quelque soient les boites de rappel." + Globals.NL +
                           "La vérification de mise à jour en ligne n'est pas effectuée durant un jour de repos pendant l'exécution de l'application." + Globals.NL +
                           "Correction du tableau des célébrations qui indiquait les heures de la lune dans le cas du omer du soleil." + Globals.NL +

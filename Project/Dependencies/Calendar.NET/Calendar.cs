@@ -69,15 +69,11 @@ namespace CodeProjectCalendar.NET
 
     // ORDISOFTWARE MODIF BEGIN
     public event Action<DateTime> CalendarDateChanged;
-    // ORDISOFTWARE MODIF END
 
-    // ORDISOFTWARE MODIF BEGIN
     //private const int MarginSize = 20;
-    private const int MarginSize = 10;
+    private const int MarginSize = 5;
     internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
-    // ORDISOFTWARE MODIF END
 
-    // ORDISOFTWARE MODIF BEGIN
     static public Color CurrentDayForeColor = Color.White;
     static public Color CurrentDayBackColor = Color.Red;
     static public Color ColorText = Color.Black;
@@ -1168,9 +1164,8 @@ namespace CodeProjectCalendar.NET
               };
               _calendarEvents.Add(ev);
             }
+            renderOffsetY += (int)sz.Height - 3 + Program.Settings.CalendarLineSpacing;
             // ORDISOFTWARE MODIF END
-
-            renderOffsetY += (int)sz.Height + 1;
           }
         }
       }

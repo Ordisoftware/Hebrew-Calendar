@@ -88,6 +88,7 @@ namespace Ordisoftware.Hebrew
         form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultVeryLargeWidth, justify: false);
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
+        form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
         if ( Notices.Keys.First() != notice.Key )
           init(form.ActionRetry,
                SysTranslations.Previous.GetLang(),

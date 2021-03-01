@@ -113,6 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.MainFormTitleBarShowWeeklyParashah = EditMainFormTitleBarShowWeeklyParashah.Checked;
       Settings.MainFormTitleBarShowToday = EditMainFormTitleBarShowToday.Checked;
       Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
+      Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

@@ -100,6 +100,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEditIntervals()
     {
+      setInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
+      setInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
       setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
       setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
       setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
@@ -114,13 +116,14 @@ namespace Ordisoftware.Hebrew.Calendar
       setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
       setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
       setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+      setInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
       void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
       {
         control.Minimum = interval.Item1;
         control.Maximum = interval.Item2;
         control.Value = interval.Item3;
         control.Increment = interval.Item4;
-        label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+        if (label != null) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
       }
     }
 
