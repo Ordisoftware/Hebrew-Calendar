@@ -188,6 +188,8 @@
       this.EditRemindCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
       this.LabelRemindCelebrationDaysBefore = new System.Windows.Forms.Label();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
+      this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
+      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
       this.PanelCalendarColors = new System.Windows.Forms.Panel();
@@ -235,6 +237,7 @@
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
+      this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelFontName = new System.Windows.Forms.Label();
       this.EditTextReportFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -289,9 +292,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
-      this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
-      this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -1157,8 +1157,6 @@
       // EditWeekParashahIsOnSaturday
       // 
       resources.ApplyResources(this.EditWeekParashahIsOnSaturday, "EditWeekParashahIsOnSaturday");
-      this.EditWeekParashahIsOnSaturday.Checked = true;
-      this.EditWeekParashahIsOnSaturday.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditWeekParashahIsOnSaturday.Name = "EditWeekParashahIsOnSaturday";
       this.EditWeekParashahIsOnSaturday.UseVisualStyleBackColor = true;
       this.EditWeekParashahIsOnSaturday.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
@@ -1626,21 +1624,33 @@
       this.TabPageMonthView.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonthView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSizeInterval);
-      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacingInfo);
       this.TabPageMonthView.Controls.Add(this.LabelMoonDayTextFormat);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatReset);
+      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacingInfo);
       this.TabPageMonthView.Controls.Add(this.PanelCalendarColors);
       this.TabPageMonthView.Controls.Add(this.EditUseColors);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
-      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacing);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewSunToolTips);
       this.TabPageMonthView.Controls.Add(this.EditMoonDayTextFormat);
+      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
+      this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
+      this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
+      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacing);
       resources.ApplyResources(this.TabPageMonthView, "TabPageMonthView");
       this.TabPageMonthView.Name = "TabPageMonthView";
+      // 
+      // LabelMonthViewFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontSizeInterval, "LabelMonthViewFontSizeInterval");
+      this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
+      // 
+      // LabelCalendarLineSpacingInfo
+      // 
+      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
+      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
       // 
       // LabelMoonDayTextFormat
       // 
@@ -2020,6 +2030,12 @@
       this.TabPageTextReport.Controls.Add(this.LabelTextColor);
       resources.ApplyResources(this.TabPageTextReport, "TabPageTextReport");
       this.TabPageTextReport.Name = "TabPageTextReport";
+      // 
+      // LabelTextReportFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelTextReportFontSizeInterval, "LabelTextReportFontSizeInterval");
+      this.LabelTextReportFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelTextReportFontSizeInterval.Name = "LabelTextReportFontSizeInterval";
       // 
       // LabelFontName
       // 
@@ -2448,24 +2464,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // LabelCalendarLineSpacingInfo
-      // 
-      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
-      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
-      // 
-      // LabelMonthViewFontSizeInterval
-      // 
-      resources.ApplyResources(this.LabelMonthViewFontSizeInterval, "LabelMonthViewFontSizeInterval");
-      this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
-      // 
-      // LabelTextReportFontSizeInterval
-      // 
-      resources.ApplyResources(this.LabelTextReportFontSizeInterval, "LabelTextReportFontSizeInterval");
-      this.LabelTextReportFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelTextReportFontSizeInterval.Name = "LabelTextReportFontSizeInterval";
       // 
       // PreferencesForm
       // 
