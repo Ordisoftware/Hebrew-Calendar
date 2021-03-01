@@ -286,12 +286,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Add print boards.
-- Add option to set Tray Icons.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Add option to choose default auto-lock option between lock station, standby and power off.
-- Improve date bookmarks to be used from the main window to navigate.
 - Improve log viewer to select file.
 - Replace simple internal trace/logging by SeriLog.
 - Add dark theme for month view.
@@ -301,6 +298,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### Planned - Version 7.x
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
+- Add Manage date bookmarks in Tools menu.
+- Add option to set Tray Icons.
+- Add option to choose default auto-lock option between lock station, standby and power off.
+- Improve auto-lock session.
 
 #### 2021.03.12 - Version 7.0
 
