@@ -313,6 +313,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to indicate parashah in the Shabatot of the visual month.
 - Add option to indicate current parashah in the application title bar.
 - Add option to indicate current lunar day in the application title bar.
+- Add option to set visual calendar events line spacing that is reduced to display parashah.
 - Add current parashah in the navigation form and in the main form subtitle.
 - Add common database in roaming to store parashot table and inter-process locking table.
 - Add a different Tray Icon to indicate if a Shabat or a celebration day is running.
