@@ -59,16 +59,16 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 - The reminder box has been improved.
 - An editable parashot board is available in the Tools menu.
-- The parashah of the week in indicated in Shabat cases of the visual calendar and in the navigation window.
-- The visual calendar and the navigation window indicates the intermediate days of week-long celebrations.
-- The image of the Tray Icon changes during a Shabat day or celebration regardless of the reminders set.
-- The application title bar can show the lunar today and the Weekly parashah.
-- The web update check is not performed on a day off while the application is running.
+- Parashah of the week is indicated for Shabat in visual calendar and in navigation window.
+- Visual calendar and navigation window indicates intermediate days of week-long celebrations.
+- Image of the Tray Icon changes during a Shabat day or celebration regardless of reminder boxes.
+- Application title bar can show lunar today and weekly parashah.
+- Web update check is not performed on a day off while the application is running.
 - Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
-- Added Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
-- Added new in version in the Information menu.
-- Modification and addition of web links and online providers for the study of words and verses of the Bible.
+- Added keyboard shortchuts to navigate between months having celebrations.
+- Added New in version in the Information menu.
+- Update web links and Bible study providers.
 - Some improvements in appearance and function.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
