@@ -143,7 +143,7 @@
     <value>374, 22</value>
   </data>
   <data name="ActionLetterViewDetails.Text" xml:space="preserve">
-    <value>Voir les paramètres</value>
+    <value>Voir les détails</value>
   </data>
   <data name="ContextMenuLetter.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 98</value>
