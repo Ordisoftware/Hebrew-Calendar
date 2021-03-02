@@ -44,7 +44,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Application.SetCompatibleTextRenderingDefault(false);
         Language lang = Settings.LanguageSelected;
         SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-        Settings.LanguageSelected = lang;
         SystemManager.IPCAnswers = IPCAnswers;
         if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
         bool upgrade = Settings.UpgradeRequired;
@@ -53,6 +52,8 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.UpgradeRequired = upgrade;
         Globals.SettingsUpgraded = Globals.SettingsUpgraded && !Settings.FirstLaunch;
         CheckSettingsReset();
+        Settings.LanguageSelected = lang;
+        Settings.Save();
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
