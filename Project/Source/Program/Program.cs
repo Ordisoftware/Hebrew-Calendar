@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Application.SetCompatibleTextRenderingDefault(false);
         Language lang = Settings.LanguageSelected;
         SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-        SystemManager.IPCAnswers = IPCAnswers;
+        SystemManager.ProcessIPCommands = ProcessIPCommands;
         if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
         bool upgrade = Settings.UpgradeRequired;
         Globals.SettingsUpgraded = upgrade;
@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.UpgradeRequired = upgrade;
         Globals.SettingsUpgraded = Globals.SettingsUpgraded && !Settings.FirstLaunch;
         CheckSettingsReset();
-        Settings.LanguageSelected = lang;
+        if ( lang != Language.None ) Settings.LanguageSelected = lang;
         Settings.Save();
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
@@ -73,19 +73,20 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static void IPCRequests(IAsyncResult ar)
     {
-      SystemManager.TryCatchManage(() =>
+      var server = ar.AsyncState as NamedPipeServerStream;
+      try
       {
-        var server = ar.AsyncState as NamedPipeServerStream;
         server.EndWaitForConnection(ar);
         var command = new BinaryFormatter().Deserialize(server) as string;
+        if ( Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
         if ( command == nameof(ApplicationCommandLine.Instance.HideMainForm) )
-          MainForm.Instance.SyncUI(() => 
+          MainForm.Instance.SyncUI(() =>
           {
             if ( MainForm.Instance.Visible )
             {
-              if ( MainForm.Instance.WindowState == FormWindowState.Minimized)
+              if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
                 MainForm.Instance.MenuShowHide.PerformClick();
               MainForm.Instance.MenuShowHide.PerformClick();
             }
@@ -101,38 +102,34 @@ namespace Ordisoftware.Hebrew.Calendar
         //MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenParashotBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
-        server.Close();
         SystemManager.CreateIPCServer(IPCRequests);
-      });
+      }
+      finally
+      {
+        server.Close();
+      }
     }
 
     /// <summary>
     /// IPC answers.
     /// </summary>
-    static private void IPCAnswers()
+    static private void ProcessIPCommands()
     {
-      try
-      {
-        if ( ApplicationCommandLine.Instance.HideMainForm )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
-        if ( ApplicationCommandLine.Instance.ShowMainForm )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
-        if ( ApplicationCommandLine.Instance.OpenDiffDates )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
-        if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
-        // TODO enable when ready and update keys and faq
-        //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-        //SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
-        if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
-        if ( ApplicationCommandLine.Instance.OpenParashotBoard )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      if ( ApplicationCommandLine.Instance.HideMainForm )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
+      if ( ApplicationCommandLine.Instance.ShowMainForm )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
+      if ( ApplicationCommandLine.Instance.OpenDiffDates )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
+      if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
+      // TODO enable when ready and update keys and faq
+      //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
+      //SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
+      if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
+      if ( ApplicationCommandLine.Instance.OpenParashotBoard )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
     }
 
     /// <summary>

@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// IPC answers callback.
     /// </summary>
-    static public Action IPCAnswers;
+    static public Action ProcessIPCommands;
 
     /// <summary>
     /// Indicate if the several instances of the application can run at same time.
@@ -63,32 +63,47 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Create IPC server instance.
     /// </summary>
-    static public void CreateIPCServer(AsyncCallback duplicated)
+    static public void CreateIPCServer(AsyncCallback ipcRequests)
     {
-      IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
-                                            PipeDirection.InOut,
-                                            1,
-                                            PipeTransmissionMode.Message,
-                                            PipeOptions.Asynchronous);
-      IPCServer.BeginWaitForConnection(duplicated, IPCServer);
+      try
+      {
+        IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
+                                              PipeDirection.InOut,
+                                              1,
+                                              PipeTransmissionMode.Message,
+                                              PipeOptions.Asynchronous);
+        IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
+      }
+      catch ( Exception ex )
+      {
+        IPCServer = null;
+        ex.Manage();
+      }
     }
 
     /// <summary>
     /// Check if the process is already running.
     /// </summary>
-    static public bool CheckApplicationOnlyOneInstance(AsyncCallback duplicated)
+    static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
     {
       try
       {
         AllowApplicationMultipleInstances = false;
         ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
         if ( created )
-          CreateIPCServer(duplicated);
+          CreateIPCServer(ipcRequests);
         else
         {
           if ( CommandLineArguments.Length == 0 )
             CommandLineOptions.ShowMainForm = true;
-          IPCAnswers?.Invoke();
+          try
+          {
+            ProcessIPCommands?.Invoke();
+          }
+          catch ( Exception ex )
+          {
+            ex.Manage();
+          }
         }
         return created;
       }
@@ -104,10 +119,19 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void IPCSend(string command)
     {
-      var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
-      client.Connect();
-      new BinaryFormatter().Serialize(client, command);
-      client.Close();
+      try
+      {
+        using ( var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut) )
+        {
+          client.Connect();
+          new BinaryFormatter().Serialize(client, command);
+          client.Close();
+        }
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
     }
 
     /// <summary>
