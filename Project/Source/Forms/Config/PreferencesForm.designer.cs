@@ -189,9 +189,9 @@
       this.LabelRemindCelebrationDaysBefore = new System.Windows.Forms.Label();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
       this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
-      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
       this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
       this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
+      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
       this.PanelCalendarColors = new System.Windows.Forms.Panel();
       this.ActionOpenTheme = new System.Windows.Forms.Button();
       this.ActionSaveTheme = new System.Windows.Forms.Button();
@@ -229,13 +229,13 @@
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
-      this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
-      this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
-      this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
       this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
+      this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
+      this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
+      this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
+      this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelFontName = new System.Windows.Forms.Label();
@@ -1483,7 +1483,7 @@
       // 
       this.ActionRemindEventsBeforeSelectNone.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectNone, "ActionRemindEventsBeforeSelectNone");
-      this.ActionRemindEventsBeforeSelectNone.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeSelectNone.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeSelectNone.Name = "ActionRemindEventsBeforeSelectNone";
       this.ActionRemindEventsBeforeSelectNone.TabStop = false;
       this.ActionRemindEventsBeforeSelectNone.UseVisualStyleBackColor = true;
@@ -1493,7 +1493,7 @@
       // 
       this.ActionRemindEventsBeforeReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionRemindEventsBeforeReset, "ActionRemindEventsBeforeReset");
-      this.ActionRemindEventsBeforeReset.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeReset.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeReset.Name = "ActionRemindEventsBeforeReset";
       this.ActionRemindEventsBeforeReset.TabStop = false;
       this.ActionRemindEventsBeforeReset.UseVisualStyleBackColor = true;
@@ -1503,7 +1503,7 @@
       // 
       this.ActionRemindEventsBeforeSelectAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectAll, "ActionRemindEventsBeforeSelectAll");
-      this.ActionRemindEventsBeforeSelectAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionRemindEventsBeforeSelectAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeSelectAll.Name = "ActionRemindEventsBeforeSelectAll";
       this.ActionRemindEventsBeforeSelectAll.TabStop = false;
       this.ActionRemindEventsBeforeSelectAll.UseVisualStyleBackColor = true;
@@ -1513,7 +1513,7 @@
       // 
       this.ActionEventsDaySelectNone.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionEventsDaySelectNone, "ActionEventsDaySelectNone");
-      this.ActionEventsDaySelectNone.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDaySelectNone.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDaySelectNone.Name = "ActionEventsDaySelectNone";
       this.ActionEventsDaySelectNone.TabStop = false;
       this.ActionEventsDaySelectNone.UseVisualStyleBackColor = true;
@@ -1523,7 +1523,7 @@
       // 
       this.ActionEventsDayReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionEventsDayReset, "ActionEventsDayReset");
-      this.ActionEventsDayReset.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDayReset.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDayReset.Name = "ActionEventsDayReset";
       this.ActionEventsDayReset.TabStop = false;
       this.ActionEventsDayReset.UseVisualStyleBackColor = true;
@@ -1533,7 +1533,7 @@
       // 
       this.ActionEventsDaySelectAll.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionEventsDaySelectAll, "ActionEventsDaySelectAll");
-      this.ActionEventsDaySelectAll.ForeColor = System.Drawing.Color.DarkBlue;
+      this.ActionEventsDaySelectAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDaySelectAll.Name = "ActionEventsDaySelectAll";
       this.ActionEventsDaySelectAll.TabStop = false;
       this.ActionEventsDaySelectAll.UseVisualStyleBackColor = true;
@@ -1646,12 +1646,6 @@
       this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
       // 
-      // LabelCalendarLineSpacingInfo
-      // 
-      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
-      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
-      // 
       // LabelMoonDayTextFormat
       // 
       resources.ApplyResources(this.LabelMoonDayTextFormat, "LabelMoonDayTextFormat");
@@ -1665,6 +1659,12 @@
       this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
       this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
+      // 
+      // LabelCalendarLineSpacingInfo
+      // 
+      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
+      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
       // 
       // PanelCalendarColors
       // 
@@ -1952,6 +1952,33 @@
       this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
       this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
       // 
+      // EditCalendarShowParashah
+      // 
+      resources.ApplyResources(this.EditCalendarShowParashah, "EditCalendarShowParashah");
+      this.EditCalendarShowParashah.Name = "EditCalendarShowParashah";
+      this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
+      this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
+      // EditMonthViewSunToolTips
+      // 
+      resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
+      this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
+      this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
+      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
+      // LabelMonthViewFontSize
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontSize, "LabelMonthViewFontSize");
+      this.LabelMonthViewFontSize.Name = "LabelMonthViewFontSize";
+      // 
       // EditCalendarLineSpacing
       // 
       this.EditCalendarLineSpacing.BackColor = System.Drawing.SystemColors.Window;
@@ -1959,11 +1986,6 @@
       this.EditCalendarLineSpacing.Name = "EditCalendarLineSpacing";
       this.EditCalendarLineSpacing.ReadOnly = true;
       this.EditCalendarLineSpacing.ValueChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
-      // 
-      // LabelCalendarLineSpacing
-      // 
-      resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
-      this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
       // 
       // EditMonthViewFontSize
       // 
@@ -1988,32 +2010,10 @@
             0});
       this.EditMonthViewFontSize.ValueChanged += new System.EventHandler(this.EditMonthViewFontSize_ValueChanged);
       // 
-      // LabelMonthViewFontSize
+      // LabelCalendarLineSpacing
       // 
-      resources.ApplyResources(this.LabelMonthViewFontSize, "LabelMonthViewFontSize");
-      this.LabelMonthViewFontSize.Name = "LabelMonthViewFontSize";
-      // 
-      // EditCalendarShowParashah
-      // 
-      resources.ApplyResources(this.EditCalendarShowParashah, "EditCalendarShowParashah");
-      this.EditCalendarShowParashah.Name = "EditCalendarShowParashah";
-      this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
-      this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
-      // 
-      // EditMonthViewSunToolTips
-      // 
-      resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
-      this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
-      this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
+      this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
       // 
       // TabPageTextReport
       // 

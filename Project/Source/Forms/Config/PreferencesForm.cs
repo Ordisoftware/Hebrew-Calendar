@@ -493,17 +493,13 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelCalendarColors.Enabled = EditUseColors.Checked;
     }
 
-    private void DoChangePanelColorMonthView(Panel panel)
+    private void EditCalendarColor_Click(object sender, EventArgs e)
     {
+      var panel = (Panel)sender;
       DialogColor.Color = panel.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
       panel.BackColor = DialogColor.Color;
       MustRefreshMonthView = true;
-    }
-
-    private void EditCalendarColor_Click(object sender, EventArgs e)
-    {
-      DoChangePanelColorMonthView((Panel)sender);
     }
 
     private void ActionMonthViewThemeLight_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
