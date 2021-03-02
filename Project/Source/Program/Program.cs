@@ -217,19 +217,15 @@ namespace Ordisoftware.Hebrew.Calendar
         MessageBoxEx.CloseAll();
         AboutBox.Instance.Hide();
         MainForm.Instance.ClearLists();
-        string str = MainForm.Instance.CalendarText.Text;
-        foreach ( Form form in Application.OpenForms )
-        {
-          if ( form != AboutBox.Instance && form != GrammarGuideForm )
-            update(form);
-          if ( form is ShowTextForm formShowText )
-            formShowText.Relocalize();
-        }
+        string tempTextReport = MainForm.Instance.CalendarText.Text;
         string tempLogTitle = DebugManager.TraceForm.Text;
         string tempLogContent = DebugManager.TraceForm.TextBox.Text;
+        MainForm.Instance.EditEnumsAsTranslations.Visible = false;
+        MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+        update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
+        new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
@@ -238,21 +234,31 @@ namespace Ordisoftware.Hebrew.Calendar
         new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
+        foreach ( Form form in Application.OpenForms )
+        {
+          if ( form != AboutBox.Instance && form != GrammarGuideForm )
+            update(form);
+          if ( form is ShowTextForm formShowText )
+            formShowText.Relocalize();
+        }
         // Various updates
         DebugManager.TraceForm.Text = tempLogTitle;
         DebugManager.TraceForm.AppendText(tempLogContent);
-        AboutBox.Instance.AboutBox_Shown(null, null);
-        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
         LoadingForm.Instance.Relocalize();
         TextBoxEx.Relocalize();
+        AboutBox.Instance.AboutBox_Shown(null, null);
+        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();
         DatesDiffCalculatorForm.Instance.Relocalize();
         ParashotTable.LoadDefaults();
         MainForm.Instance.CreateSystemInformationMenu();
-        MainForm.Instance.CalendarText.Text = str;
+        MainForm.Instance.CalendarText.Text = tempTextReport;
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.DoTimerReminder();
+        MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
+        MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        MainForm.Instance.EditEnumsAsTranslations.Visible = true;
       }
       catch ( Exception ex )
       {
