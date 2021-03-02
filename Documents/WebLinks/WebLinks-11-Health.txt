@@ -61,11 +61,3 @@ URL = https://en.wikipedia.org/wiki/Chinese_herbology
 
 Name = (FR) Pharmacopée chinoise
 URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
-
--
-
-Name = (EN) iHerb
-URL = https://www.iherb.com
-
-Name = (EN) Vitacost
-URL = https://www.vitacost.com
