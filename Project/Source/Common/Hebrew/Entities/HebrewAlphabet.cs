@@ -114,6 +114,24 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
+    /// Indicate if a string contains only hebrew unicode chars or spaces regardless of diacritics and capitals.
+    /// </summary>
+    static public bool IsValidUnicode(string str)
+    {
+      str = str.RemoveDiacritics().ToLower();
+      return !str.IsNullOrEmpty() && str.All(c => c == ' ' || c >= '\u0590' && c <= '\u05FF');
+    }
+
+    /// <summary>
+    /// Indicate if a string contains only hebrew font chars or spaces regardless of diacritics and capitals and finals.
+    /// </summary>
+    static public bool IsValidHebrew(string str)
+    {
+      str = UnFinalAll(str.RemoveDiacritics().ToLower());
+      return !str.IsNullOrEmpty() && str.All(c => c == ' ' || Codes.Contains(c.ToString()));
+    }
+
+    /// <summary>
     /// Set final letter.
     /// </summary>
     /// <param name="hebrew">The word in hebrew font chars.</param>

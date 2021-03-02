@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -120,6 +120,12 @@ namespace Ordisoftware.Core
 
     [DllImport("user32.dll")]
     static public extern IntPtr GetForegroundWindow();
+
+    // Clipboard
+
+    [DllImport("User32.dll", CharSet = CharSet.Auto)]
+    static public extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
+    static public IntPtr ClipboardViewerNext;
 
     // Taskbar
 
