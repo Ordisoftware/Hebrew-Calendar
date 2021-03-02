@@ -1107,7 +1107,7 @@ namespace CodeProjectCalendar.NET
       bool generateSunToolTips = Program.Settings.MonthViewSunToolTips;
       for ( int i = 1; i <= daysinmonth; i++ )
       {
-        int renderOffsetY = 0;
+        int renderOffsetY = -3 + Program.Settings.CalendarLineSpacing;
 
         // ORDISOFTWARE MODIF BEGIN
         //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
@@ -1164,7 +1164,7 @@ namespace CodeProjectCalendar.NET
               };
               _calendarEvents.Add(ev);
             }
-            renderOffsetY += (int)sz.Height - 3 + Program.Settings.CalendarLineSpacing;
+            renderOffsetY += (int)sz.Height - 5 + Program.Settings.CalendarLineSpacing;
             // ORDISOFTWARE MODIF END
           }
         }
