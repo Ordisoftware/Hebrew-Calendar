@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " + times.TimeStart;
           form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " + times.TimeEnd;
-          if ( !isShabat )
+          if ( Program.Settings.ReminderBoxShowFullDates )
           {
             form.LabelStartDay.Text = times.DateStart.Value.ToString("d MMM yyyy");
             form.LabelEndDay.Text = times.DateEnd.Value.ToString("d MMM yyyy");

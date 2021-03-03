@@ -323,7 +323,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      string dateOld = CurrentDay.Date;
+      string dateOld = CurrentDay?.Date;
       bool formEnabled = Globals.MainForm.Enabled;
       try
       {

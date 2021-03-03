@@ -770,4 +770,7 @@
   <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
     <value>Interligne</value>
   </data>
+  <data name="EditReminderBoxShowFullDates.Text" xml:space="preserve">
+    <value>Afficher les dates complètes</value>
+  </data>
 </root>

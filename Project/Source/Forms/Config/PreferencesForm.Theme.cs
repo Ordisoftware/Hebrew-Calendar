@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditEventColorSeason.BackColor = Color.FromArgb(245, 255, 240);
       EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
       EditEventColorMonth.BackColor = Color.AliceBlue;
-      EditEventColorNext.BackColor = Color.WhiteSmoke;
+      EditEventColorNext.BackColor = Color.FromArgb(240, 240, 240);
       EditMonthViewBackColor.BackColor = Color.White;
       EditMonthViewTextColor.BackColor = Color.Black;
       EditMonthViewNoDaysBackColor.BackColor = Color.FromArgb(250, 250, 250);

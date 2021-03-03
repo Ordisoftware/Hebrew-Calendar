@@ -32,13 +32,15 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "Initial release." + Globals.NL +
                           "Text report only, and then visual month view." + Globals.NL +
-                          "Next celebrations and day navigation windows." + Globals.NL +
+                          "Next celebrations windows." + Globals.NL +
+                          "Day navigation windows." + Globals.NL +
                           "Shabat reminder." + Globals.NL +
                           "Basic preferences and GPS coordonates.",
 
           [Language.FR] = "Version initiale" + Globals.NL +
                           "Rapport texte seul, puis vue du mois visuel." + Globals.NL +
-                          "Fenêtre des prochaines célébrations et de navigation par jour." + Globals.NL +
+                          "Fenêtre des prochaines célébrations." + Globals.NL +
+                          "Fenêtre de navigation par jour." + Globals.NL +
                           "Rappel de Shabat." + Globals.NL +
                           "Préférences de base et coordonnées GPS.",
         },
@@ -188,7 +190,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Nouveau tableau des parashot modifiables" + Globals.NL +
                           "Indication de la parashah de la semaine pour le Shabat dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
                           "La barre de titre de l'application peut afficher la date lunaire d'aujourd'hui et la parashah hebdomadaire." + Globals.NL +
-                          "Indication des jours intermédiaires de célébration durant qui durent une semaine dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
+                          "Indication des jours intermédiaires pour les célébrations qui durent une semaine dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
                           "L'image de la Tray Icon change durant un jour de Shabat ou de célébration quelque soient les boites de rappel." + Globals.NL +
                           "La vérification de mise à jour en ligne n'est pas effectuée durant un jour de repos pendant l'exécution de l'application." + Globals.NL +
                           "Correction du tableau des célébrations qui indiquait les heures de la lune dans le cas du omer du soleil." + Globals.NL +
