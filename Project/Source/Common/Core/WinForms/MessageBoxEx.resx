@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 43</value>
+    <value>91, 13</value>
   </data>
   <data name="ActionNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -232,7 +232,7 @@
     <value>30, 30, 30, 20</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 511</value>
+    <value>584, 511</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -256,7 +256,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionRetry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 13</value>
+    <value>253, 13</value>
   </data>
   <data name="ActionRetry.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -289,7 +289,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionIgnore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 13</value>
+    <value>334, 13</value>
   </data>
   <data name="ActionIgnore.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -322,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 13</value>
+    <value>496, 13</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -355,7 +355,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 13</value>
+    <value>415, 13</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -388,7 +388,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 43</value>
+    <value>10, 13</value>
   </data>
   <data name="ActionYes.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -421,7 +421,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 13</value>
+    <value>172, 13</value>
   </data>
   <data name="ActionAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -463,7 +463,7 @@
     <value>5, 10, 5, 10</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 50</value>
+    <value>584, 50</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -493,7 +493,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>484, 561</value>
+    <value>584, 561</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 800</value>
