@@ -24,6 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoTrayIconMouse_Click(object sender, MouseEventArgs e)
     {
+      if ( !Globals.IsReady ) return;
       SystemManager.TryCatchManage(() =>
       {
         TimerBallon.Stop();

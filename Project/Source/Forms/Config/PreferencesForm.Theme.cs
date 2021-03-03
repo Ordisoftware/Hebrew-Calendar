@@ -109,7 +109,6 @@ namespace Ordisoftware.Hebrew.Calendar
       File.WriteAllLines(SaveThemeDialog.FileName, items);
     }
 
-
   }
 
 }
