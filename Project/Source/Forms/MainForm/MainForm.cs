@@ -309,9 +309,6 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.AllowClose = true;
           Close();
         }
-        else
-        if ( Visible )
-          BringToFront();
       }
       finally
       {

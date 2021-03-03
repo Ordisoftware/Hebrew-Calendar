@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -66,8 +66,13 @@ namespace Ordisoftware.Core
       try
       {
         Mutex = true;
-        if ( Globals.MainForm != null ) Globals.MainForm.Enabled = false;
+        if ( Globals.MainForm != null )
+        {
+          Globals.MainForm.TopMost = true;
+          Globals.MainForm.Enabled = false;
+        }
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
+        LoadingForm.Instance.Owner = Globals.MainForm;
         LoadingForm.Instance.DoProgress();
         using ( WebClient client = new WebClient() )
         {
@@ -83,27 +88,31 @@ namespace Ordisoftware.Core
       catch ( UnauthorizedAccessException ex )
       {
         CleanTemp();
-        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
         if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
           SystemManager.OpenGitHupRepo();
       }
       catch ( IOException ex )
       {
         CleanTemp();
-        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
         if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
           SystemManager.OpenGitHupRepo();
       }
       catch ( Exception ex )
       {
         CleanTemp();
-        DisplayManager.ShowWarning(DisplayManager.Title + " Check Update", ex.Message);
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
       }
       finally
       {
         Mutex = false;
         LoadingForm.Instance.Hide();
-        if ( Globals.MainForm != null ) Globals.MainForm.Enabled = formEnabled;
+        if ( Globals.MainForm != null )
+        {
+          Globals.MainForm.Enabled = formEnabled;
+          Globals.MainForm.TopMost = false;
+        }
       }
       return false;
     }
