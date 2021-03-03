@@ -1142,7 +1142,11 @@ namespace CodeProjectCalendar.NET
             if ( sz.Width > cellWidth ) xx = point.X;
             // ORDISOFTWARE MODIF END
 
-            if ( renderOffsetY + sz.Height > cellHeight - 10 ) continue;
+            if ( renderOffsetY + sz.Height + sz.Height > cellHeight - 4 )
+            {
+              g.DrawString("...", v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
+              continue;
+            }
 
             g.Clip = new Region(new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height));
             g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
