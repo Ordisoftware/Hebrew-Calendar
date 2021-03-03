@@ -14,6 +14,7 @@
 /// <edited> 2021-02 </edited>
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
@@ -43,9 +44,9 @@ namespace Ordisoftware.Hebrew.Calendar
       EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
       EditEventColorMonth.BackColor = Color.AliceBlue;
       EditEventColorNext.BackColor = Color.WhiteSmoke;
-      EditCalendarColorEmpty.BackColor = Color.White;
-      EditCalendarColorDefaultText.BackColor = Color.Black;
-      EditCalendarColorNoDay.BackColor = Color.FromArgb(250, 250, 250);
+      EditMonthViewBackColor.BackColor = Color.White;
+      EditMonthViewTextColor.BackColor = Color.Black;
+      EditMonthViewNoDaysBackColor.BackColor = Color.FromArgb(250, 250, 250);
       MustRefreshMonthView = true;
     }
 
@@ -63,9 +64,9 @@ namespace Ordisoftware.Hebrew.Calendar
       EditEventColorShabat.BackColor = Color.FromArgb(60, 50, 60);
       EditEventColorMonth.BackColor = Color.FromArgb(0, 50, 100);
       EditEventColorNext.BackColor = Color.FromArgb(20, 20, 20);
-      EditCalendarColorEmpty.BackColor = Color.Black;
-      EditCalendarColorDefaultText.BackColor = Color.White;
-      EditCalendarColorNoDay.BackColor = Color.FromArgb(80, 80, 80);
+      EditMonthViewBackColor.BackColor = Color.Black;
+      EditMonthViewTextColor.BackColor = Color.White;
+      EditMonthViewNoDaysBackColor.BackColor = Color.FromArgb(80, 80, 80);
       MustRefreshMonthView = true;
     }
 
@@ -78,29 +79,16 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new NullSafeOfStringDictionary<string>();
       if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
-      EditCalendarColorDefaultText.BackColor = ColorTranslator.FromHtml(items["MonthViewTextColor"]);
-      EditCalendarColorEmpty.BackColor = ColorTranslator.FromHtml(items["MonthViewBackColor"]);
-      EditCalendarColorNoDay.BackColor = ColorTranslator.FromHtml(items["MonthViewNoDaysBackColor"]);
-      EditCurrentDayForeColor.BackColor = ColorTranslator.FromHtml(items["CurrentDayForeColor"]);
-      EditCurrentDayBackColor.BackColor = ColorTranslator.FromHtml(items["CurrentDayBackColor"]);
-      EditCalendarColorTorahEvent.BackColor = ColorTranslator.FromHtml(items["CalendarColorTorahEvent"]);
-      EditCalendarColorSeason.BackColor = ColorTranslator.FromHtml(items["CalendarColorSeason"]);
-      EditCalendarColorMoon.BackColor = ColorTranslator.FromHtml(items["CalendarColorMoon"]);
-      EditCalendarColorFullMoon.BackColor = ColorTranslator.FromHtml(items["CalendarColorFullMoon"]);
-      EditEventColorTorah.BackColor = ColorTranslator.FromHtml(items["EventColorTorah"]);
-      EditEventColorSeason.BackColor = ColorTranslator.FromHtml(items["EventColorSeason"]);
-      EditEventColorShabat.BackColor = ColorTranslator.FromHtml(items["EventColorShabat"]);
-      EditEventColorMonth.BackColor = ColorTranslator.FromHtml(items["EventColorMonth"]);
-      EditEventColorNext.BackColor = ColorTranslator.FromHtml(items["EventColorNext"]);
-      EditNavigateTopColor.BackColor = ColorTranslator.FromHtml(items["NavigateTopColor"]);
-      EditNavigateMiddleColor.BackColor = ColorTranslator.FromHtml(items["NavigateMiddleColor"]);
-      EditNavigateBottomColor.BackColor = ColorTranslator.FromHtml(items["NavigateBottomColor"]);
-      EditTextReportForeColor.BackColor = ColorTranslator.FromHtml(items["TextColor"]);
-      EditTextReportBackColor.BackColor = ColorTranslator.FromHtml(items["TextBackground "]);
+      PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel =>
+      {
+        string name = panel.Name.Substring(4);
+        if ( items.ContainsKey(name) )
+          panel.BackColor = ColorTranslator.FromHtml(items[name]);
+      });
       NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
       NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
       NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
-      MainForm.Instance.CalendarText.ForeColor = EditTextReportForeColor.BackColor;
+      MainForm.Instance.CalendarText.ForeColor = EditTextReportTextColor.BackColor;
       MainForm.Instance.CalendarText.BackColor = EditTextReportBackColor.BackColor;
       MustRefreshMonthView = true;
     }
@@ -114,25 +102,10 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new List<string>();
-      items.Add("MonthViewTextColor=" + ColorTranslator.ToHtml(EditCalendarColorDefaultText.BackColor));
-      items.Add("MonthViewBackColor=" + ColorTranslator.ToHtml(EditCalendarColorEmpty.BackColor));
-      items.Add("MonthViewNoDaysBackColor=" + ColorTranslator.ToHtml(EditCalendarColorNoDay.BackColor));
-      items.Add("CurrentDayForeColor=" + ColorTranslator.ToHtml(EditCurrentDayForeColor.BackColor));
-      items.Add("CurrentDayBackColor=" + ColorTranslator.ToHtml(EditCurrentDayBackColor.BackColor));
-      items.Add("CalendarColorTorahEvent=" + ColorTranslator.ToHtml(EditCalendarColorTorahEvent.BackColor));
-      items.Add("CalendarColorSeason=" + ColorTranslator.ToHtml(EditCalendarColorSeason.BackColor));
-      items.Add("CalendarColorMoon=" + ColorTranslator.ToHtml(EditCalendarColorMoon.BackColor));
-      items.Add("CalendarColorFullMoon=" + ColorTranslator.ToHtml(EditCalendarColorFullMoon.BackColor));
-      items.Add("EventColorTorah=" + ColorTranslator.ToHtml(EditEventColorTorah.BackColor));
-      items.Add("EventColorSeason=" + ColorTranslator.ToHtml(EditEventColorSeason.BackColor));
-      items.Add("EventColorShabat=" + ColorTranslator.ToHtml(EditEventColorShabat.BackColor));
-      items.Add("EventColorMonth=" + ColorTranslator.ToHtml(EditEventColorMonth.BackColor));
-      items.Add("EventColorNext=" + ColorTranslator.ToHtml(EditEventColorNext.BackColor));
-      items.Add("NavigateTopColor=" + ColorTranslator.ToHtml(EditNavigateTopColor.BackColor));
-      items.Add("NavigateMiddleColor=" + ColorTranslator.ToHtml(EditNavigateMiddleColor.BackColor));
-      items.Add("NavigateBottomColor=" + ColorTranslator.ToHtml(EditNavigateBottomColor.BackColor));
-      items.Add("TextColor=" + ColorTranslator.ToHtml(EditTextReportForeColor.BackColor));
-      items.Add("TextBackground=" + ColorTranslator.ToHtml(EditTextReportBackColor.BackColor));
+      PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel =>
+      {
+        items.Add(panel.Name.Substring(4) + "=" + ColorTranslator.ToHtml(panel.BackColor));
+      });
       File.WriteAllLines(SaveThemeDialog.FileName, items);
     }
 
