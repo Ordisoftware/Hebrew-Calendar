@@ -284,12 +284,9 @@ namespace Ordisoftware.Hebrew.Calendar
                                                            ActionWebCheckUpdate_Click,
                                                            ActionViewLog_Click,
                                                            ActionViewStats_Click);
-      var menu = CommonMenusControl.Instance.MenuInformation;
-      var list = new List<ToolStripItem>();
-      foreach ( ToolStripItem item in menu.DropDownItems ) list.Add(item);
-      menu.DropDownItems.Clear();
-      ActionInformation.DropDownItems.Clear();
-      ActionInformation.DropDownItems.AddRange(list.ToArray());
+      ToolStrip.Items.Remove(ActionInformation);
+      ActionInformation = CommonMenusControl.Instance.ActionInformation;
+      ToolStrip.Items.Add(ActionInformation);
       CommonMenusControl.Instance.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
       InitializeSpecialMenus();
     }

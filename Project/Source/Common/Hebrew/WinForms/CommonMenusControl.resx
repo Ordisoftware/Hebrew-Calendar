@@ -139,7 +139,7 @@
     <value>None</value>
   </data>
   <data name="dummyVersionNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>116, 22</value>
   </data>
   <data name="dummyVersionNews.Text" xml:space="preserve">
     <value>dummy</value>
@@ -155,11 +155,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVDhP3ZJPK4RRFMbPhnwCX8AXUFMsyKQsBxHe+QT2
-        ipFZoPyLHTUzhlFiaaOslbKfxX2zYGNpSdhY8HiOe05dZWXHU7+e8+ee09t7r/wD3WTymGeCMGNMJ0wZ
-        nvsZojN5Wc4lZwNHQ0CrCByS5kCk3gfUCkCjn/lgrLWGeXbEvAidlTDOBap5+oLFc+Yu7akq9CWyGHOd
-        lVCy5stDbKp8gbrWvO6LzMNouuDpPqLyg6pVxiuW73ZH34v+fcE6/ZVfoapaTX3NUN2eARcZcEenwlj6
-        D7bpWxZvmLt2mF/OAu9vwCbjD3p7GWGCC75u4aSDN0A/IPtGndRIgzSN467o2j/tRM7rlHZZnn98B/4G
-        0neQoDPXk3Klb6mXFH5JD/nbEvkEBY2YY+CdpssAAAAASUVORK5CYII=
+        ipFZoPyLHTUzhlFiaaOslbJmcd8s2FhaEjYWPJ7jnlNXWdnx1K/n/Lnn9PbeK/9AN5k85pkgTBmTCROG
+        536G6ExellPJ2cDBANAqAvuk2Rep9wC1AtDoZd4fa61Bnh0yL0JnJYxygWqWPmfxjLlLe6oKfYHMx1xn
+        JZSs+fIQmypfoK41r/si8zCcLni6j6j8oGqZ8ZLl253Rd6J/X7BKf+VXqKpWU18xVLcnwFkG3NGpMJL+
+        g036hsVr5q4t5ufTwPsbsM74g369iDDGBV+3cNTGG6DvkV2jTmqkQZrGYUd07R+3I+d1ylVZnn98B/4G
+        0neQoDOX43Khb6mbFH5JF/nbEvkEBEmYYoom+a8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionViewVersionNews.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -279,7 +279,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionApplicationHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionApplicationHome.Text" xml:space="preserve">
     <value>Website</value>
@@ -307,13 +307,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionGitHubRepo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionGitHubRepo.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="SeparatorOnlineArchive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>140, 6</value>
   </data>
   <data name="ActionSoftpedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -334,7 +334,7 @@
     <value>None</value>
   </data>
   <data name="ActionSoftpedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionSoftpedia.Text" xml:space="preserve">
     <value>Softpedia</value>
@@ -354,7 +354,7 @@
     <value>None</value>
   </data>
   <data name="ActionAlternativeTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionAlternativeTo.Text" xml:space="preserve">
     <value>AlternativeTo</value>
@@ -390,7 +390,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionHelp.Text" xml:space="preserve">
     <value>Help</value>
@@ -415,13 +415,13 @@
     <value>None</value>
   </data>
   <data name="ActionForumQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionForumQA.Text" xml:space="preserve">
     <value>Forum Q&amp;&amp;A</value>
   </data>
   <data name="SeparatorForumQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -447,7 +447,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
     <value>Submit a problem</value>
@@ -474,7 +474,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionCreateGitHubIssueFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
     <value>Submit a feature</value>
@@ -900,7 +900,7 @@
   <data name="ActionAbout.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="MenuInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAfqSURBVFhHpVcJVFTnFTbHY0/NOREZGDBWm9RYiYYoWKOW
@@ -940,10 +940,10 @@
         02Ad29jnBUfco8d/ACMbFiyDEOTzAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="MenuInformation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionInformation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="MenuInformation.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 36</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -953,7 +953,7 @@
     <value>5, 5, 5, 0</value>
   </data>
   <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 44</value>
+    <value>100, 44</value>
   </data>
   <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -980,25 +980,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 150</value>
+    <value>100, 50</value>
   </data>
-  <data name="&gt;&gt;MenuInformation.Name" xml:space="preserve">
-    <value>MenuInformation</value>
+  <data name="&gt;&gt;ActionInformation.Name" xml:space="preserve">
+    <value>ActionInformation</value>
   </data>
-  <data name="&gt;&gt;MenuInformation.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionInformation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionAbout.Name" xml:space="preserve">
-    <value>ActionAbout</value>
-  </data>
-  <data name="&gt;&gt;ActionAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewVersionNews.Name" xml:space="preserve">
     <value>ActionViewVersionNews</value>
@@ -1012,18 +1000,6 @@
   <data name="&gt;&gt;dummyVersionNews.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
-    <value>ActionCheckUpdate</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionReleaseNotes.Name" xml:space="preserve">
     <value>ActionReleaseNotes</value>
   </data>
@@ -1034,6 +1010,18 @@
     <value>ActionReadme</value>
   </data>
   <data name="&gt;&gt;ActionReadme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
+    <value>ActionCheckUpdate</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Separator3.Name" xml:space="preserve">
@@ -1082,6 +1070,12 @@
     <value>MenuAssistance</value>
   </data>
   <data name="&gt;&gt;MenuAssistance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
+    <value>ActionHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionForumQA.Name" xml:space="preserve">
@@ -1210,10 +1204,16 @@
   <data name="&gt;&gt;ActionViewStats.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
-    <value>ActionHelp</value>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionAbout.Name" xml:space="preserve">
+    <value>ActionAbout</value>
+  </data>
+  <data name="&gt;&gt;ActionAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

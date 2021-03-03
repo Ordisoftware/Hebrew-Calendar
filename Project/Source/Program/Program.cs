@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         server.EndWaitForConnection(ar);
         var command = new BinaryFormatter().Deserialize(server) as string;
-        if ( Globals.IsReady ) return;
+        if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
         if ( command == nameof(ApplicationCommandLine.Instance.HideMainForm) )
@@ -102,11 +102,12 @@ namespace Ordisoftware.Hebrew.Calendar
         //MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenParashotBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
-        SystemManager.CreateIPCServer(IPCRequests);
       }
       finally
       {
         server.Close();
+        if ( Globals.IsReady )
+          SystemManager.CreateIPCServer(IPCRequests);
       }
     }
 

@@ -66,6 +66,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Version {0}"
       };
 
+    static public readonly TranslationsDictionary CheckUpdate
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "{0} Check Update",
+        [Language.FR] = "Mise à jour de {0}"
+      };
+
     static public readonly TranslationsDictionary NoticePrivacyNoData
       = new TranslationsDictionary
       {
