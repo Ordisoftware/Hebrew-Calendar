@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
     static public readonly (int, int, int, int) TextReportFontSizeInterval = (6, 30, 10, 1);
     static public readonly (int, int, int, int) VisualMonthFontSizeInterval = (6, 30, 9, 1);
-    static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 2, 1);
+    static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
 
     // Available keys for hotkey keys
     static private readonly List<Keys> AvailableHotKeyKeys;
