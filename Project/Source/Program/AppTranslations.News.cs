@@ -31,13 +31,13 @@ namespace Ordisoftware.Hebrew.Calendar
         ["1.x"] = new TranslationsDictionary
         {
           [Language.EN] = "Initial release." + Globals.NL +
-                          "Text report and visual month view." + Globals.NL +
+                          "Text report only, and then visual month view." + Globals.NL +
                           "Next celebrations and day navigation windows." + Globals.NL +
                           "Shabat reminder." + Globals.NL +
                           "Basic preferences and GPS coordonates.",
 
           [Language.FR] = "Version initiale" + Globals.NL +
-                          "Rapport texte et vue mensuelle." + Globals.NL +
+                          "Rapport texte seul, puis vue du mois visuel." + Globals.NL +
                           "Fenêtre des prochaines célébrations et de navigation par jour." + Globals.NL +
                           "Rappel de Shabat." + Globals.NL +
                           "Préférences de base et coordonnées GPS.",
