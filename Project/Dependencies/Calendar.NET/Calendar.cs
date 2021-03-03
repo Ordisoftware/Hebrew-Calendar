@@ -1112,62 +1112,64 @@ namespace CodeProjectCalendar.NET
         // ORDISOFTWARE MODIF BEGIN
         //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
         var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
-        var list = _events.Where(ev => ev.Date == dt
-                                    /*&& ( ev.Enabled || _showDisabledEvents )*/);
-        foreach ( IEvent v in list )
+        var list = _events.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).ToArray();
+        int countEvents = list.Length;
+        int countEventsPrev = list.Length - 1;
+        if ( countEvents == 0 ) continue;
+        int deltaLine = -5 + Program.Settings.CalendarLineSpacing;
+        SizeF sz = g.MeasureString(list[0].EventText, list[0].EventFont);
+        for ( int index = 0; index < countEvents; index++)
         //foreach ( IEvent v in _events )
-        // ORDISOFTWARE MODIF END
         {
-          // ORDISOFTWARE MODIF BEGIN
+          var v = list[index];
           if ( DayForward(v, dt) )
           //if ( NeedsRendering(v, dt) )
-          // ORDISOFTWARE MODIF END
           {
             int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
             Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
 
             int offsetY = renderOffsetY;
             Region r = g.Clip;
-            // ORDISOFTWARE MODIF BEGIN
             if ( i > _calendarDays.Count ) continue;
-            // ORDISOFTWARE MODIF END
 
             Point point = _calendarDays[i];
-            SizeF sz = g.MeasureString(v.EventText, v.EventFont);
             int yy = point.Y - 1;
 
-            // ORDISOFTWARE MODIF BEGIN
             //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
             int xx = point.X + 5;
-            if ( sz.Width > cellWidth ) xx = point.X;
-            // ORDISOFTWARE MODIF END
+            //if ( sz.Width > cellWidth ) xx = point.X;
 
-            if ( renderOffsetY + sz.Height > cellHeight - 10 ) continue;
+            if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 4 && index != countEventsPrev )
+            {
+              g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), new SolidBrush(v.EventTextColor), xx, yy + offsetY);
+              break;
+            }
 
-            g.Clip = new Region(new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height));
-            g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, point.Y + offsetY, cellWidth - 1, sz.Height);
+            int pointYoffsetY = point.Y + offsetY;
+
+            g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
+            g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, pointYoffsetY, cellWidth - 1, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-              g.DrawRectangle(PenBrushBlack, point.X + 1, point.Y + offsetY, cellWidth - 2, sz.Height - 1);
+              g.DrawRectangle(PenBrushBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
-            // ORDISOFTWARE MODIF BEGIN
             if ( generateSunToolTips )
             {
               var ev = new CalendarEvent
               {
-                EventArea = new Rectangle(point.X + 1, point.Y + offsetY, cellWidth - 1, (int)sz.Height),
+                EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
                 Event = v,
                 Date = dt
               };
               _calendarEvents.Add(ev);
             }
-            renderOffsetY += (int)sz.Height - 5 + Program.Settings.CalendarLineSpacing;
-            // ORDISOFTWARE MODIF END
+            renderOffsetY += (int)sz.Height + deltaLine;
           }
         }
+        // ORDISOFTWARE MODIF END
       }
 
       _rectangles.Clear();

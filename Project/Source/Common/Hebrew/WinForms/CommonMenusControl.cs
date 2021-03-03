@@ -89,6 +89,11 @@ namespace Ordisoftware.Hebrew
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
+        form.ActionAbort.Visible = true;
+        form.ActionAbort.Left = 5;
+        form.ActionAbort.Width = 30;
+        form.ActionAbort.Text = "...";
+        form.ActionAbort.Click += ActionReleaseNotes_Click;
         if ( Notices.Keys.First() != notice.Key )
           init(form.ActionRetry,
                SysTranslations.Previous.GetLang(),

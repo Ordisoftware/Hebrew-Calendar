@@ -30,9 +30,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SaveSettings()
     {
       Settings.TrayIconUseSpecialDayIcon = EditTrayIconUseSpecialDayIcon.Checked;
-      Settings.MonthViewNoDaysBackColor = EditCalendarColorNoDay.BackColor;
-      Settings.MonthViewBackColor = EditCalendarColorEmpty.BackColor;
-      Settings.MonthViewTextColor = EditCalendarColorDefaultText.BackColor;
+      Settings.MonthViewNoDaysBackColor = EditMonthViewNoDaysBackColor.BackColor;
+      Settings.MonthViewBackColor = EditMonthViewBackColor.BackColor;
+      Settings.MonthViewTextColor = EditMonthViewTextColor.BackColor;
       Settings.DebuggerEnabled = EditDebuggerEnabled.Checked;
       Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
       Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;
@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ShowReminderInTaskBar = EditShowReminderInTaskBar.Checked;
       Settings.StartupHide = EditStartupHide.Checked;
       Settings.TextBackground = EditTextReportBackColor.BackColor;
-      Settings.TextColor = EditTextReportForeColor.BackColor;
+      Settings.TextColor = EditTextReportTextColor.BackColor;
       Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
       Settings.WeekParashahIsOnSaturday = EditWeekParashahIsOnSaturday.Checked;
       Settings.UseSimhatTorahOutside = EditUseSimhatTorahOutside.Checked;

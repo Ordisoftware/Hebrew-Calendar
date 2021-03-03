@@ -445,9 +445,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void TextReportForeColor_Click(object sender, EventArgs e)
     {
-      DialogColor.Color = EditTextReportForeColor.BackColor;
+      DialogColor.Color = EditTextReportTextColor.BackColor;
       if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
-      EditTextReportForeColor.BackColor = DialogColor.Color;
+      EditTextReportTextColor.BackColor = DialogColor.Color;
       MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
     }
 

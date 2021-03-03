@@ -210,11 +210,11 @@
       this.label3 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.EditCurrentDayForeColor = new System.Windows.Forms.Panel();
-      this.EditCalendarColorNoDay = new System.Windows.Forms.Panel();
+      this.EditMonthViewNoDaysBackColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorMoon = new System.Windows.Forms.Panel();
       this.LabelColorToday = new System.Windows.Forms.Label();
       this.LabelColorMoon = new System.Windows.Forms.Label();
-      this.EditCalendarColorDefaultText = new System.Windows.Forms.Panel();
+      this.EditMonthViewTextColor = new System.Windows.Forms.Panel();
       this.LabelColorParashah = new System.Windows.Forms.Label();
       this.LabelColorSeason = new System.Windows.Forms.Label();
       this.EditCalendarColorFullMoon = new System.Windows.Forms.Panel();
@@ -223,7 +223,7 @@
       this.EditCalendarColorSeason = new System.Windows.Forms.Panel();
       this.EditCurrentDayBackColor = new System.Windows.Forms.Panel();
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
-      this.EditCalendarColorEmpty = new System.Windows.Forms.Panel();
+      this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
@@ -243,7 +243,7 @@
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditTextReportFontName = new System.Windows.Forms.ComboBox();
       this.LabelBackColor = new System.Windows.Forms.Label();
-      this.EditTextReportForeColor = new System.Windows.Forms.Panel();
+      this.EditTextReportTextColor = new System.Windows.Forms.Panel();
       this.EditTextReportBackColor = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPagePrint = new System.Windows.Forms.TabPage();
@@ -1685,11 +1685,11 @@
       this.PanelCalendarColors.Controls.Add(this.label3);
       this.PanelCalendarColors.Controls.Add(this.label2);
       this.PanelCalendarColors.Controls.Add(this.EditCurrentDayForeColor);
-      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorNoDay);
+      this.PanelCalendarColors.Controls.Add(this.EditMonthViewNoDaysBackColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorMoon);
       this.PanelCalendarColors.Controls.Add(this.LabelColorToday);
       this.PanelCalendarColors.Controls.Add(this.LabelColorMoon);
-      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorDefaultText);
+      this.PanelCalendarColors.Controls.Add(this.EditMonthViewTextColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorParashah);
       this.PanelCalendarColors.Controls.Add(this.LabelColorSeason);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorFullMoon);
@@ -1698,7 +1698,7 @@
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorSeason);
       this.PanelCalendarColors.Controls.Add(this.EditCurrentDayBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorFullMoon);
-      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorEmpty);
+      this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
@@ -1827,11 +1827,11 @@
       // 
       // EditCalendarColorNoDay
       // 
-      this.EditCalendarColorNoDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.EditCalendarColorNoDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditCalendarColorNoDay, "EditCalendarColorNoDay");
-      this.EditCalendarColorNoDay.Name = "EditCalendarColorNoDay";
-      this.EditCalendarColorNoDay.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      this.EditMonthViewNoDaysBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.EditMonthViewNoDaysBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditMonthViewNoDaysBackColor, "EditCalendarColorNoDay");
+      this.EditMonthViewNoDaysBackColor.Name = "EditCalendarColorNoDay";
+      this.EditMonthViewNoDaysBackColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // EditCalendarColorMoon
       // 
@@ -1853,11 +1853,11 @@
       // 
       // EditCalendarColorDefaultText
       // 
-      this.EditCalendarColorDefaultText.BackColor = System.Drawing.Color.Black;
-      this.EditCalendarColorDefaultText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditCalendarColorDefaultText, "EditCalendarColorDefaultText");
-      this.EditCalendarColorDefaultText.Name = "EditCalendarColorDefaultText";
-      this.EditCalendarColorDefaultText.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      this.EditMonthViewTextColor.BackColor = System.Drawing.Color.Black;
+      this.EditMonthViewTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditMonthViewTextColor, "EditCalendarColorDefaultText");
+      this.EditMonthViewTextColor.Name = "EditCalendarColorDefaultText";
+      this.EditMonthViewTextColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // LabelColorParashah
       // 
@@ -1913,11 +1913,11 @@
       // 
       // EditCalendarColorEmpty
       // 
-      this.EditCalendarColorEmpty.BackColor = System.Drawing.Color.White;
-      this.EditCalendarColorEmpty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditCalendarColorEmpty, "EditCalendarColorEmpty");
-      this.EditCalendarColorEmpty.Name = "EditCalendarColorEmpty";
-      this.EditCalendarColorEmpty.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      this.EditMonthViewBackColor.BackColor = System.Drawing.Color.White;
+      this.EditMonthViewBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditMonthViewBackColor, "EditCalendarColorEmpty");
+      this.EditMonthViewBackColor.Name = "EditCalendarColorEmpty";
+      this.EditMonthViewBackColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // LabelColorTorah
       // 
@@ -2025,7 +2025,7 @@
       this.TabPageTextReport.Controls.Add(this.LabelFontSize);
       this.TabPageTextReport.Controls.Add(this.EditTextReportFontName);
       this.TabPageTextReport.Controls.Add(this.LabelBackColor);
-      this.TabPageTextReport.Controls.Add(this.EditTextReportForeColor);
+      this.TabPageTextReport.Controls.Add(this.EditTextReportTextColor);
       this.TabPageTextReport.Controls.Add(this.EditTextReportBackColor);
       this.TabPageTextReport.Controls.Add(this.LabelTextColor);
       resources.ApplyResources(this.TabPageTextReport, "TabPageTextReport");
@@ -2085,11 +2085,11 @@
       // 
       // EditTextReportForeColor
       // 
-      this.EditTextReportForeColor.BackColor = System.Drawing.Color.Black;
-      this.EditTextReportForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditTextReportForeColor, "EditTextReportForeColor");
-      this.EditTextReportForeColor.Name = "EditTextReportForeColor";
-      this.EditTextReportForeColor.Click += new System.EventHandler(this.TextReportForeColor_Click);
+      this.EditTextReportTextColor.BackColor = System.Drawing.Color.Black;
+      this.EditTextReportTextColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditTextReportTextColor, "EditTextReportForeColor");
+      this.EditTextReportTextColor.Name = "EditTextReportForeColor";
+      this.EditTextReportTextColor.Click += new System.EventHandler(this.TextReportForeColor_Click);
       // 
       // EditTextReportBackColor
       // 
@@ -2572,7 +2572,7 @@
     public System.Windows.Forms.Panel EditCurrentDayForeColor;
     private System.Windows.Forms.NumericUpDown EditTextReportFontSize;
     private System.Windows.Forms.Label LabelBackColor;
-    public System.Windows.Forms.Panel EditTextReportForeColor;
+    public System.Windows.Forms.Panel EditTextReportTextColor;
     private System.Windows.Forms.Label LabelTextColor;
     public System.Windows.Forms.Panel EditTextReportBackColor;
     private System.Windows.Forms.Label LabelColorMoon;
@@ -2629,12 +2629,12 @@
     private System.Windows.Forms.OpenFileDialog OpenExeFileDialog;
     private System.Windows.Forms.CheckBox EditDebuggerEnabled;
     private System.Windows.Forms.Label LabelColorText;
-    public System.Windows.Forms.Panel EditCalendarColorDefaultText;
+    public System.Windows.Forms.Panel EditMonthViewTextColor;
     private System.Windows.Forms.Label LabelColorEmpty;
-    public System.Windows.Forms.Panel EditCalendarColorEmpty;
+    public System.Windows.Forms.Panel EditMonthViewBackColor;
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.Label LabelColorNoDay;
-    public System.Windows.Forms.Panel EditCalendarColorNoDay;
+    public System.Windows.Forms.Panel EditMonthViewNoDaysBackColor;
     private Ordisoftware.Core.TextBoxEx EditMoonDayTextFormat;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;

@@ -166,15 +166,15 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( Language lang in Languages.Managed )
       {
         LunarMonthsMeanings.Add(lang,
-                               new LunarMonthsFile(string.Format(LunarMonthsMeaningsFilePath, Languages.Codes[lang].ToUpper()),
-                                                  true,
-                                                  Globals.IsDevExecutable,
-                                                  DataFileFolder.ApplicationDocuments));
+                                new LunarMonthsFile(string.Format(LunarMonthsMeaningsFilePath, Languages.Codes[lang].ToUpper()),
+                                                    true,
+                                                    Globals.IsDevExecutable,
+                                                    DataFileFolder.ApplicationDocuments));
         LunarMonthsLettriqs.Add(lang,
-                               new LunarMonthsFile(string.Format(LunarMonthsLettriqsFilePath, Languages.Codes[lang].ToUpper()),
-                                                  true,
-                                                  Globals.IsDevExecutable,
-                                                  DataFileFolder.ApplicationDocuments));
+                                new LunarMonthsFile(string.Format(LunarMonthsLettriqsFilePath, Languages.Codes[lang].ToUpper()),
+                                                    true,
+                                                    Globals.IsDevExecutable,
+                                                    DataFileFolder.ApplicationDocuments));
       }
     }
 

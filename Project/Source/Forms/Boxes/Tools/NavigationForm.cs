@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
+using Humanizer;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -92,12 +93,7 @@ namespace Ordisoftware.Hebrew.Calendar
               LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
             }
             else
-            {
-              string str = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')');
-              char[] chars = str.ToCharArray();
-              chars[0] = char.ToUpper(chars[0]);
-              LabelParashahValue.Text = new string(chars);
-            }
+              LabelParashahValue.Text = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')').Titleize();
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);

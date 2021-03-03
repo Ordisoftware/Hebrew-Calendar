@@ -30,9 +30,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTrayIconUseSpecialDayIcon.Checked = Settings.TrayIconUseSpecialDayIcon; });
       SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
       SystemManager.TryCatch(() => { LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString(); });
-      SystemManager.TryCatch(() => { EditCalendarColorNoDay.BackColor = Settings.MonthViewNoDaysBackColor; });
-      SystemManager.TryCatch(() => { EditCalendarColorEmpty.BackColor = Settings.MonthViewBackColor; });
-      SystemManager.TryCatch(() => { EditCalendarColorDefaultText.BackColor = Settings.MonthViewTextColor; });
+      SystemManager.TryCatch(() => { EditMonthViewNoDaysBackColor.BackColor = Settings.MonthViewNoDaysBackColor; });
+      SystemManager.TryCatch(() => { EditMonthViewBackColor.BackColor = Settings.MonthViewBackColor; });
+      SystemManager.TryCatch(() => { EditMonthViewTextColor.BackColor = Settings.MonthViewTextColor; });
       SystemManager.TryCatch(() => { EditDebuggerEnabled.Checked = Settings.DebuggerEnabled; });
       SystemManager.TryCatch(() => { EditVacuumAtStartup.Checked = Settings.VacuumAtStartup; });
       SystemManager.TryCatch(() => { EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval; });
@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditShowReminderInTaskBar.Checked = Settings.ShowReminderInTaskBar; });
       SystemManager.TryCatch(() => { EditStartupHide.Checked = Settings.StartupHide; });
       SystemManager.TryCatch(() => { EditTextReportBackColor.BackColor = Settings.TextBackground; });
-      SystemManager.TryCatch(() => { EditTextReportForeColor.BackColor = Settings.TextColor; });
+      SystemManager.TryCatch(() => { EditTextReportTextColor.BackColor = Settings.TextColor; });
       SystemManager.TryCatch(() => { EditTorahEventsCountAsMoon.Checked = Settings.TorahEventsCountAsMoon; });
       SystemManager.TryCatch(() => { EditWeekParashahIsOnSaturday.Checked = Settings.WeekParashahIsOnSaturday; });
       SystemManager.TryCatch(() => { EditUseSimhatTorahOutside.Checked = Settings.UseSimhatTorahOutside; });
