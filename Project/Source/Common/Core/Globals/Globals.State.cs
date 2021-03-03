@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Configuration;
 
@@ -41,12 +41,17 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate if the application is in loading data stage.
     /// </summary>
-    static public bool IsLoadingData { get; set; } = false;
+    static public bool IsLoadingData { get; set; }
 
     /// <summary>
     /// Indicate if the application is ready to interact with the user or do its purpose.
     /// </summary>
-    static public bool IsReady { get; set; } = false;
+    static public bool IsReady { get; set; }
+
+    /// <summary>
+    /// Indicate if data are read only.
+    /// </summary>
+    static public bool IsReadOnly { get; set; }
 
     /// <summary>
     /// Indicate if data is being generated.
@@ -61,12 +66,12 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate if the windows session is ending.
     /// </summary>
-    static public bool IsSessionEnding { get; set; } = false;
+    static public bool IsSessionEnding { get; set; }
 
     /// <summary>
     /// Indicate if the application is exiting.
     /// </summary>
-    static public bool IsExiting { get; set; } = false;
+    static public bool IsExiting { get; set; }
 
     /// <summary>
     /// Indicate if the application can be closed.
