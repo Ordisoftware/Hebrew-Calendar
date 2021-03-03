@@ -2453,5 +2453,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarLineSpacing"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReminderBoxShowFullDates {
+            get {
+                return ((bool)(this["ReminderBoxShowFullDates"]));
+            }
+            set {
+                this["ReminderBoxShowFullDates"] = value;
+            }
+        }
     }
 }

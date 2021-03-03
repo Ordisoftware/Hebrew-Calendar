@@ -125,6 +125,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditMainFormTitleBarShowToday.Checked = Settings.MainFormTitleBarShowToday; });
       SystemManager.TryCatch(() => { EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate; });
       SystemManager.TryCatch(() => { EditCalendarLineSpacing.Value = Settings.CalendarLineSpacing; });
+      SystemManager.TryCatch(() => { EditReminderBoxShowFullDates.Checked = Settings.ReminderBoxShowFullDates; });
       // Hotkey
       InitHotKeyControls();
       // System
