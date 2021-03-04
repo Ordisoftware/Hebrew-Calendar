@@ -150,6 +150,11 @@ namespace Ordisoftware.Core
       KeyDown += KeyDownEvent;
     }
 
+    public void UpdateMenuItems()
+    {
+      UpdateMenuItems(this);
+    }
+
     private void AddUndo()
     {
       return;
