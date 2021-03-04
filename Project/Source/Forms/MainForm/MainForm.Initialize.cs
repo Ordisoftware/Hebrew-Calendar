@@ -280,14 +280,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     public void CreateSystemInformationMenu()
     {
-      CommonMenusControl.Instance = new CommonMenusControl(ActionAbout_Click,
-                                                           ActionWebCheckUpdate_Click,
-                                                           ActionViewLog_Click,
-                                                           ActionViewStats_Click);
-      ToolStrip.Items.Remove(ActionInformation);
-      ActionInformation = CommonMenusControl.Instance.ActionInformation;
-      ToolStrip.Items.Add(ActionInformation);
-      CommonMenusControl.Instance.InitializeVersionNewsMenuItems(AppTranslations.NoticeNewFeatures);
+      CommonMenusControl.CreateInstance(ToolStrip,
+                                        ref ActionInformation,
+                                        AppTranslations.NoticeNewFeatures,
+                                        ActionAbout_Click,
+                                        ActionWebCheckUpdate_Click,
+                                        ActionViewLog_Click,
+                                        ActionViewStats_Click);
       InitializeSpecialMenus();
     }
 
