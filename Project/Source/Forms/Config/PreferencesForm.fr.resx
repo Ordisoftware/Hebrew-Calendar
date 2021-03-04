@@ -750,7 +750,7 @@
     <value>Préférences</value>
   </data>
   <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
-    <value>Utilisez une icône différente lors du shabat ou d'un jour de célébration</value>
+    <value>Utiliser une icône différente lors du shabat ou d'un jour de célébration</value>
   </data>
   <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
     <value>Toujours générer les Parashot pour le samedi</value>
