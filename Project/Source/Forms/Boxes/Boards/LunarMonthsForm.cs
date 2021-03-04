@@ -115,20 +115,17 @@ namespace Ordisoftware.Hebrew.Calendar
         ContextMenuItems.Show(LastControl, LastControl.PointToClient(Cursor.Position));
     }
 
-    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
-      int index = (int)control.Tag;
-      HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index], Program.Settings.HebrewLettersExe);
-    }
-
     private void ActionCopyMonthName(object sender, EventArgs e, Func<int, string> process)
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
       Clipboard.SetText(process(index));
+    }
+
+    private void ActionCopyName_Click(object sender, EventArgs e)
+    {
+      ActionCopyMonthName(sender, e, index => HebrewMonths.Transliterations[index]);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
@@ -149,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
       string name = HebrewMonths.Transliterations[index];
       string meaning = Program.LunarMonthsMeanings[Languages.Current][index];
       string lettriq = Program.LunarMonthsLettriqs[Languages.Current][index];
-      Clipboard.SetText(process(index) + " (" + name + ") : " +  meaning + " (" + lettriq + ")");
+      Clipboard.SetText($"{process(index)} ({name}) : {meaning} ({lettriq})");
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
@@ -160,6 +157,34 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
       ActionCopyLine(sender, e, index => HebrewMonths.Unicode[index]);
+    }
+
+    private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+    {
+      Program.GrammarGuideForm.Popup();
+    }
+
+    private void ActionOpenWebLink_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
+    }
+
+    private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      int index = (int)control.Tag;
+      HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index],
+                                    Program.Settings.HebrewLettersExe);
+    }
+
+    private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+      int index = (int)control.Tag;
+      HebrewTools.OpenFindHebrewWordsSearch(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
+                                            Program.Settings.HebrewWordsExe);
     }
 
   }

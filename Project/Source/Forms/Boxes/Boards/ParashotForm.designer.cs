@@ -69,7 +69,6 @@
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +89,8 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.ActionOpenShorashim = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -388,6 +389,7 @@
             this.ActionSearchOnline,
             this.MenuSeparator1,
             this.ActionShowGrammarGuide,
+            this.ActionOpenShorashim,
             this.ActionOpenShorashon,
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
@@ -423,13 +425,6 @@
       resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
-      // ActionOpenShorashon
-      // 
-      resources.ApplyResources(this.ActionOpenShorashon, "ActionOpenShorashon");
-      this.ActionOpenShorashon.Name = "ActionOpenShorashon";
-      this.ActionOpenShorashon.Tag = "http://shorashon.free.fr/online/";
-      this.ActionOpenShorashon.Click += new System.EventHandler(this.ActionOpenShorashon_Click);
       // 
       // toolStripSeparator1
       // 
@@ -553,6 +548,20 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // ActionOpenShorashim
+      // 
+      resources.ApplyResources(this.ActionOpenShorashim, "ActionOpenShorashim");
+      this.ActionOpenShorashim.Name = "ActionOpenShorashim";
+      this.ActionOpenShorashim.Tag = "www.hebrew.ch/verb-roots/";
+      this.ActionOpenShorashim.Click += new System.EventHandler(this.ActionOpenWebLink_Click);
+      // 
+      // ActionOpenShorashon
+      // 
+      resources.ApplyResources(this.ActionOpenShorashon, "ActionOpenShorashon");
+      this.ActionOpenShorashon.Name = "ActionOpenShorashon";
+      this.ActionOpenShorashon.Tag = "http://shorashon.free.fr/online/";
+      this.ActionOpenShorashon.Click += new System.EventHandler(this.ActionOpenWebLink_Click);
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -605,7 +614,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private System.Windows.Forms.Button ActionSave;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashon;
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
@@ -631,5 +639,7 @@
     private System.Windows.Forms.Button ActionViewNotice;
     private System.Windows.Forms.Button ActionErase;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsSearch;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashim;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashon;
   }
 }

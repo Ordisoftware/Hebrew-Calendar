@@ -393,14 +393,14 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void ActionOpenShorashon_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
-    }
-
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
     {
       Program.GrammarGuideForm.Popup();
+    }
+
+    private void ActionOpenWebLink_Click(object sender, EventArgs e)
+    {
+      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
     }
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)

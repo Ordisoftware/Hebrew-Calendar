@@ -944,7 +944,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 36</value>
+    <value>55, 46</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -953,7 +953,7 @@
     <value>5, 5, 5, 0</value>
   </data>
   <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 44</value>
+    <value>150, 54</value>
   </data>
   <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -980,7 +980,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 50</value>
+    <value>150, 50</value>
   </data>
   <data name="&gt;&gt;ActionInformation.Name" xml:space="preserve">
     <value>ActionInformation</value>

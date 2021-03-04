@@ -104,6 +104,7 @@
             this.ActionAbout});
       resources.ApplyResources(this.ActionInformation, "ActionInformation");
       this.ActionInformation.Name = "ActionInformation";
+      this.ActionInformation.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionViewVersionNews
       // 
