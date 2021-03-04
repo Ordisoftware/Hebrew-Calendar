@@ -150,35 +150,35 @@ When disabled, top menu painting may cause latency.
 
 - Change interface language (does not change the text report unless using --generate):
 
-  `Ordisoftware.Hebrew.Letters.exe --lang [en|fr]`
+  `Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]`
 
 - Show the main window:
 
-  `Ordisoftware.Hebrew.Letters.exe --show`
+  `Ordisoftware.Hebrew.Calendar.exe --show`
 
 - Hide the main window:
 
-  `Ordisoftware.Hebrew.Letters.exe --hide`
+  `Ordisoftware.Hebrew.Calendar.exe --hide`
 
 - Regenerate the calendar data:
  
-  `Ordisoftware.Hebrew.Letters.exe --generate`
+  `Ordisoftware.Hebrew.Calendar.exe --generate`
 
 - Show the dates difference calculator:
  
-  `Ordisoftware.Hebrew.Letters.exe --diffdates`
+  `Ordisoftware.Hebrew.Calendar.exe --diffdates`
 
 - Show the celebrations board:
 
-  `Ordisoftware.Hebrew.Letters.exe --celebrations`
+  `Ordisoftware.Hebrew.Calendar.exe --celebrations`
 
 - Show the new moons board board:
  
-  `Ordisoftware.Hebrew.Letters.exe --newmoons`
+  `Ordisoftware.Hebrew.Calendar.exe --newmoons`
 
 - Show the parashot board:
 
-  `Ordisoftware.Hebrew.Letters.exe --parashot`
+  `Ordisoftware.Hebrew.Calendar.exe --parashot`
 
 These options are cumulative and can be used to control the software when it is already running.
 

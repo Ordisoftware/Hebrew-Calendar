@@ -22,6 +22,13 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
+  public enum LettersControlFocusSelect
+  {
+    None,
+    Keep,
+    All
+  }
+
   /// <summary>
   /// Provide view letter details delegate.
   /// </summary>
@@ -223,23 +230,29 @@ namespace Ordisoftware.Hebrew
     public new void Focus()
     {
       TextBox.Focus();
+      TextBox.UpdateMenuItems();
     }
 
     /// <summary>
     /// Focus and select all.
     /// </summary>
-    public void Focus(bool selectAll)
+    public void Focus(LettersControlFocusSelect selection)
     {
       Focus();
-      if ( selectAll )
+      switch ( selection )
       {
-        TextBox.SelectionStart = 0;
-        TextBox.SelectionLength = TextBox.TextLength;
-      }
-      else
-      {
-        TextBox.SelectionStart = 0;
-        TextBox.SelectionLength = 0;
+        case LettersControlFocusSelect.None:
+          TextBox.SelectionStart = 0;
+          TextBox.SelectionLength = 0;
+          break;
+        case LettersControlFocusSelect.Keep:
+          break;
+        case LettersControlFocusSelect.All:
+          TextBox.SelectionStart = 0;
+          TextBox.SelectionLength = TextBox.TextLength;
+          break;
+        default:
+          throw new NotImplementedExceptionEx(selection);
       }
     }
 
