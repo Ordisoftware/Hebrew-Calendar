@@ -1,4 +1,4 @@
-; --------------------------------------------------------------------------------------------------
+﻿; --------------------------------------------------------------------------------------------------
 ; File format for online providers items to search a hebrew word having unicode chars
 ; --------------------------------------------------------------------------------------------------
 ; To create a folder else items will be at root level: Lang/[short code] = Title
@@ -15,8 +15,23 @@
 Name = (EN) Pealim Hebrew Verb Tables
 URL = https://www.pealim.com/search/?q=%WORD%
 
+-
+
 Name = (EN) Sefaria Klein Dictionary
-URL = https://www.sefaria.org/Klein_Dictionary%2C_%WORD%_%E1%B4%B5?lang=bi
+URL = https://www.sefaria.org/Klein_Dictionary%2C_%FIRSTLETTER%_1?lang=bi
+
+Name = (EN) Sefaria Jastrow Dictionary
+URL = https://www.sefaria.org/Jastrow%2C_%FIRSTLETTER%.1?lang=bi
+
+-
+
+Name = (EN) Shorashim Lexicon
+URL = http://www.hebrew.ch/verb-roots/%FIRSTLETTER%
+
+Name = (FR) Shorashon Lexicon
+URL = http://shorashon.free.fr/online/
+
+-
 
 Name = (FR) Dict.com
 URL = https://www.dict.com/hebreu-francais/%WORD%
