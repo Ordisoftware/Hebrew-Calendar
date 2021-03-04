@@ -62,8 +62,14 @@ URL = https://biblehub.com/interlinear/
 
 -
 
-Name = (FR) La Bible en hébreu @ lexilogos.com
+Name = (FR) Bible en hébreu @ lexilogos.com
 URL = https://www.lexilogos.com/bible_hebreu.htm
+
+Name = (FR) Hébreu ancien @ lexilogos.com
+URL = https://www.lexilogos.com/hebreu_ancien_dictionnaire.htm
+
+Name = (FR) Hébreu moderne @ lexilogos.com
+URL = https://www.lexilogos.com/hebreu_moderne_dictionnaire.htm
 
 -
 
