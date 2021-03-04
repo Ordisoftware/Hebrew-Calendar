@@ -51,8 +51,6 @@
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
-      this.ActionOpenShorashim = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenShorashon = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuItems.SuspendLayout();
       this.SuspendLayout();
@@ -109,8 +107,6 @@
             this.ActionSearchOnline,
             this.toolStripSeparator3,
             this.ActionShowGrammarGuide,
-            this.ActionOpenShorashim,
-            this.ActionOpenShorashon,
             this.toolStripSeparator1,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator4,
@@ -208,20 +204,6 @@
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
       // 
-      // ActionOpenShorashim
-      // 
-      resources.ApplyResources(this.ActionOpenShorashim, "ActionOpenShorashim");
-      this.ActionOpenShorashim.Name = "ActionOpenShorashim";
-      this.ActionOpenShorashim.Tag = "www.hebrew.ch/verb-roots/";
-      this.ActionOpenShorashim.Click += new System.EventHandler(this.ActionOpenWebLink_Click);
-      // 
-      // ActionOpenShorashon
-      // 
-      resources.ApplyResources(this.ActionOpenShorashon, "ActionOpenShorashon");
-      this.ActionOpenShorashon.Name = "ActionOpenShorashon";
-      this.ActionOpenShorashon.Tag = "http://shorashon.free.fr/online/";
-      this.ActionOpenShorashon.Click += new System.EventHandler(this.ActionOpenWebLink_Click);
-      // 
       // LunarMonthsForm
       // 
       resources.ApplyResources(this, "$this");
@@ -265,7 +247,5 @@
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashim;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenShorashon;
   }
 }

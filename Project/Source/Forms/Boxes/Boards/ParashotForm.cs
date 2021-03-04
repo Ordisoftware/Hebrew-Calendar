@@ -398,11 +398,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.GrammarGuideForm.Popup();
     }
 
-    private void ActionOpenWebLink_Click(object sender, EventArgs e)
-    {
-      SystemManager.OpenWebLink((string)( (ToolStripItem)sender ).Tag);
-    }
-
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
       HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
