@@ -27,12 +27,31 @@ namespace Ordisoftware.Hebrew
   partial class CommonMenusControl : UserControl
   {
 
-    static public CommonMenusControl Instance;
+    static public CommonMenusControl Instance { get; private set; }
 
-    public CommonMenusControl(EventHandler aboutClick,
-                              EventHandler updateClick,
-                              EventHandler viewLogClick,
-                              EventHandler viewStatsClick)
+    static public void CreateInstance(ToolStrip toolStrip,
+                                      ref ToolStripDropDownButton buttonToReplace,
+                                      NullSafeDictionary<string, TranslationsDictionary> notices,
+                                      EventHandler aboutClick,
+                                      EventHandler updateClick,
+                                      EventHandler viewLogClick,
+                                      EventHandler viewStatsClick)
+    {
+      Instance = new CommonMenusControl();
+      int index = toolStrip.Items.IndexOf(buttonToReplace);
+      toolStrip.Items.Remove(buttonToReplace);
+      toolStrip.Items.Insert(index, Instance.ActionInformation);
+      buttonToReplace = Instance.ActionInformation;
+      Instance.SetNewInVersionItems(notices);
+      Instance.ActionAbout.Click += aboutClick;
+      Instance.ActionCheckUpdate.Click += updateClick;
+      Instance.ActionViewLog.Click += viewLogClick;
+      Instance.ActionViewStats.Click += viewStatsClick;
+    }
+
+    private NullSafeDictionary<string, TranslationsDictionary> Notices;
+
+    private CommonMenusControl()
     {
       InitializeComponent();
       ActionViewVersionNews.DropDownItems.Remove(dummyVersionNews);
@@ -53,15 +72,9 @@ namespace Ordisoftware.Hebrew
         if ( item.Text.Contains(Globals.AssemblyTitle) )
           MenuSoftware.DropDownItems.Remove(item);
       }
-      ActionAbout.Click += aboutClick;
-      ActionCheckUpdate.Click += updateClick;
-      ActionViewLog.Click += viewLogClick;
-      ActionViewStats.Click += viewStatsClick;
     }
 
-    private NullSafeDictionary<string, TranslationsDictionary> Notices;
-
-    public void InitializeVersionNewsMenuItems(NullSafeDictionary<string, TranslationsDictionary> notices)
+    public void SetNewInVersionItems(NullSafeDictionary<string, TranslationsDictionary> notices)
     {
       ActionViewVersionNews.DropDownItems.Clear();
       Notices = notices;
@@ -69,14 +82,14 @@ namespace Ordisoftware.Hebrew
       {
         var menuitem = ActionViewVersionNews.DropDownItems.Add(SysTranslations.AboutBoxVersion.GetLang(item.Key));
         menuitem.Tag = item;
-        menuitem.Click += ShowVersionNews;
+        menuitem.Click += ShowNewInVersion;
         menuitem.Image = dummyVersionNews.Image;
         menuitem.ImageScaling = ToolStripItemImageScaling.None;
       }
       ActionViewVersionNews.Enabled = ActionViewVersionNews.DropDownItems.Count > 0;
     }
 
-    private void ShowVersionNews(object sender, EventArgs e)
+    private void ShowNewInVersion(object sender, EventArgs e)
     {
       var menuitem = sender as ToolStripItem;
       if ( menuitem == null ) return;
@@ -94,17 +107,18 @@ namespace Ordisoftware.Hebrew
         form.ActionAbort.Width = 30;
         form.ActionAbort.Text = "...";
         form.ActionAbort.Click += ActionReleaseNotes_Click;
-        if ( Notices.Keys.First() != notice.Key )
-          init(form.ActionRetry,
-               SysTranslations.Previous.GetLang(),
-               index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-        if ( Notices.Keys.Last() != notice.Key )
-          init(form.ActionIgnore,
-               SysTranslations.Next.GetLang(),
-               index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-        void init(Button button, string text, Action<int> action)
+        init(form.ActionRetry,
+             SysTranslations.Previous.GetLang(),
+             Notices.Keys.First() != notice.Key,
+             index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
+        init(form.ActionIgnore,
+             SysTranslations.Next.GetLang(),
+             Notices.Keys.Last() != notice.Key,
+             index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
+        void init(Button button, string text, bool enabled, Action<int> action)
         {
           button.Visible = true;
+          button.Enabled = enabled;
           button.Text = text;
           button.Click += (_s, _e) =>
           {
