@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       settings.ReminderBoxSoundSource = SoundSource.Dialog;
       settings.ReminderBoxSoundDialog = MessageBoxIcon.Asterisk;
       settings.ApplicationVolume = 100;
-      MediaMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, settings.ApplicationVolume);
+      MediaMixer.SetApplicationVolume(Globals.ProcessID, settings.ApplicationVolume);
       MainForm.SetView(ViewMode.Month);
       settings.Store();
     }

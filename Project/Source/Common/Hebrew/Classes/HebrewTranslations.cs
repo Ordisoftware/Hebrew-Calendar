@@ -38,6 +38,20 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Notice de la méthode d'analyse lettrique"
       };
 
+    static public readonly TranslationsDictionary Hebrew
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Hebrew",
+        [Language.FR] = "Hébreu"
+      };
+
+    static public readonly TranslationsDictionary Unicode
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Unicode",
+        [Language.FR] = "Unicode"
+      };
+
     static public readonly TranslationsDictionary ParashahReading
       = new TranslationsDictionary
       {

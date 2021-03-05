@@ -27,9 +27,10 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
+    private bool DoScreenPositionMutex;
+
     private string TitleGPS;
     private string TitleOmer;
-    private bool DoScreenPositionMutex;
 
     /// <summary>
     /// Bring to front improved.
@@ -45,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Center the form to the screen.
     /// </summary>
-    protected internal new void CenterToScreen()
+    public new void CenterToScreen()
     {
       base.CenterToScreen();
     }

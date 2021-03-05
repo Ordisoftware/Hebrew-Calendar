@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate if the several instances of the application can run at same time.
     /// </summary>
-    static public bool AllowApplicationMultipleInstances { get; private set; } = true;
+    static public bool AllowMultipleInstances { get; private set; } = true;
 
     /// <summary>
     /// Indicate the number of application running processes count.
@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
     {
       try
       {
-        AllowApplicationMultipleInstances = false;
+        AllowMultipleInstances = false;
         ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
         if ( created )
           CreateIPCServer(ipcRequests);

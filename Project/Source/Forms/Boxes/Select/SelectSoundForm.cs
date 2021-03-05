@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -224,7 +224,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditVolume_ValueChanged(object sender, EventArgs e)
     {
-      MediaMixer.SetApplicationVolume(System.Diagnostics.Process.GetCurrentProcess().Id, EditVolume.Value);
+      MediaMixer.SetApplicationVolume(Globals.ProcessID, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
       Program.Settings.ApplicationVolume = EditVolume.Value;
       Program.Settings.Save();

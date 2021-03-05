@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew
       string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
       using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
+        command.Parameters.Add("@ID", OdbcType.Int).Value = Globals.ProcessId;
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         return (int)command.ExecuteScalar() > 0;
       }
@@ -112,7 +112,7 @@ namespace Ordisoftware.Hebrew
         while ( reader.Read() )
         {
           int id = (int)reader["ProcessID"];
-          if ( id == Process.GetCurrentProcess().Id ) continue;
+          if ( id == Globals.ProcessId ) continue;
           var process = Process.GetProcesses().FirstOrDefault(p => p.Id == id);
           string processName = process?.ProcessName ?? "PID " + id; 
           if ( dictionary.ContainsKey(processName) )
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew
       name = Convert(name);
       using ( var command = new OdbcCommand(sql, LockFileConnection) )
       {
-        command.Parameters.Add("@ID", OdbcType.Int).Value = Process.GetCurrentProcess().Id;
+        command.Parameters.Add("@ID", OdbcType.Int).Value = Globals.ProcessId;
         command.Parameters.Add("@Name", OdbcType.Text).Value = name;
         command.ExecuteNonQuery();
       }
