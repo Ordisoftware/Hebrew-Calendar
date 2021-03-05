@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -49,6 +49,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Creating data...",
         [Language.FR] = "Création des données..."
+      };
+
+    static public readonly TranslationsDictionary ProgressSavingData
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Saving data...",
+        [Language.FR] = "Sauvegarde des données..."
       };
 
   }

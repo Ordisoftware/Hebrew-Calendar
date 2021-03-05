@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   partial class LoadingForm : Form
   {
 
-    public const int QuantaTotal = 10;
+    public const int QuantaTotalDefault = 10;
 
     static public LoadingForm Instance { get; private set; }
 
@@ -31,6 +31,7 @@ namespace Ordisoftware.Core
     }
 
     private bool UseQuanta;
+    private int QuantaTotal;
     private int QuantaLevel;
     private int CurrentQuanta;
 
@@ -52,8 +53,9 @@ namespace Ordisoftware.Core
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 
-    public void Initialize(string text, int count, int minimum = 0, bool quantify = true)
+    public void Initialize(string text, int count, int minimum = 0, bool quantify = true, int quantaTotal = QuantaTotalDefault)
     {
+      QuantaTotal = quantaTotal;
       this.CenterToMainFormElseScreen();
       if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
       {

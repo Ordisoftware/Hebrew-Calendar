@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2010-11 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -96,6 +96,55 @@ namespace Ordisoftware.Core
           break;
         case DialogResult.Cancel:
           onCancel?.Invoke();
+          break;
+        default:
+          break;
+      }
+      return result;
+    }
+
+
+
+
+
+
+
+
+    /// <summary>
+    /// Show a question.
+    /// </summary>
+    /// <param name="caption">The caption.</param>
+    /// <param name="onYes">The on Yes button selected action.</param>
+    /// <param name="onNo">The on No button selected action.</param>
+    /// <param name="onAbort">The on Abort button selected action.</param>
+    static public DialogResult QueryYesNoAbort(string caption, Action onYes = null, Action onNo = null, Action onAbort = null)
+    {
+      return QueryYesNoAbort(Title, caption, onYes, onNo, onAbort);
+    }
+
+    /// <summary>
+    /// Show a question.
+    /// </summary>
+    /// <param name="title">The title.</param>
+    /// <param name="caption">The caption.</param>
+    /// <param name="onYes">The on Yes button selected action.</param>
+    /// <param name="onNo">The on No button selected action.</param>
+    /// <param name="onAbort">The on Abort button selected action.</param>
+    static public DialogResult QueryYesNoAbort(string title, string caption, Action onYes = null, Action onNo = null, Action onAbort = null)
+    {
+      var form = new MessageBoxEx(title, caption, buttons: MessageBoxButtons.YesNo, icon: MessageBoxIcon.Question);
+      form.ActionAbort.Visible = true;
+      var result = form.ShowDialog();
+      switch ( result )
+      {
+        case DialogResult.Yes:
+          onYes?.Invoke();
+          break;
+        case DialogResult.No:
+          onNo?.Invoke();
+          break;
+        case DialogResult.Abort:
+          onAbort?.Invoke();
           break;
         default:
           break;

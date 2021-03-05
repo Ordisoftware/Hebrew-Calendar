@@ -301,6 +301,30 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Get the number of rows in a table.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    /// <param name="table">The table name.</param>
+    /// <returns></returns>
+    static public int GetRowsCount(this OdbcConnection connection, string table)
+    {
+      int count = -1;
+      try
+      {
+        using ( var command = new OdbcCommand($"SELECT COUNT(ID) FROM [{table}]", connection) )
+        {
+          var reader = command.ExecuteReader();
+          if ( reader.Read() ) count = (int)reader[0];
+        }
+      }
+      catch ( Exception ex )
+      {
+        throw new SQLiteException($"Error in {nameof(GetRowsCount)}", ex);
+      }
+      return count;
+    }
+
+    /// <summary>
     /// Convert a collection of T to a DataTable.
     /// https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
     /// </summary>
