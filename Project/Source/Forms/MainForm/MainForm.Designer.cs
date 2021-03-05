@@ -220,14 +220,14 @@
       // 
       // PanelCalendarInner
       // 
-      this.PanelCalendarInner.BackColor = System.Drawing.Color.Transparent;
+      this.PanelCalendarInner.BackColor = System.Drawing.SystemColors.Control;
       this.PanelCalendarInner.Controls.Add(this.PanelCalendar);
       resources.ApplyResources(this.PanelCalendarInner, "PanelCalendarInner");
       this.PanelCalendarInner.Name = "PanelCalendarInner";
       // 
       // PanelCalendar
       // 
-      this.PanelCalendar.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelCalendar.BackColor = System.Drawing.SystemColors.Control;
       this.PanelCalendar.Controls.Add(this.TabControl);
       resources.ApplyResources(this.PanelCalendar, "PanelCalendar");
       this.PanelCalendar.Name = "PanelCalendar";
