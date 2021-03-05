@@ -171,6 +171,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Dernier"
       };
 
+    static public readonly TranslationsDictionary Notes
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Notes",
+        [Language.FR] = "Notes"
+      };
+
     static public readonly TranslationsDictionary NullSlot
       = new TranslationsDictionary
       {

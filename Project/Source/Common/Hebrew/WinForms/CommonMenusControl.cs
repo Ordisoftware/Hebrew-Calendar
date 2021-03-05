@@ -39,8 +39,10 @@ namespace Ordisoftware.Hebrew
     {
       Instance = new CommonMenusControl();
       int index = toolStrip.Items.IndexOf(buttonToReplace);
+      toolStrip.SuspendLayout();
       toolStrip.Items.Remove(buttonToReplace);
       toolStrip.Items.Insert(index, Instance.ActionInformation);
+      toolStrip.ResumeLayout();
       buttonToReplace = Instance.ActionInformation;
       Instance.SetNewInVersionItems(notices);
       Instance.ActionAbout.Click += aboutClick;
@@ -102,23 +104,21 @@ namespace Ordisoftware.Hebrew
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
-        form.ActionAbort.Visible = true;
-        form.ActionAbort.Left = 5;
-        form.ActionAbort.Width = 30;
-        form.ActionAbort.Text = "...";
-        form.ActionAbort.Click += ActionReleaseNotes_Click;
-        init(form.ActionRetry,
-             SysTranslations.Previous.GetLang(),
-             Notices.Keys.First() != notice.Key,
+        init(form.ActionYes, SysTranslations.Notes.GetLang(), 50, true,
+             index => ActionReleaseNotes.PerformClick());
+        init(form.ActionNo, "<<", 30, Notices.Keys.First() != notice.Key,
+             index => ActionViewVersionNews.DropDownItems[0].PerformClick());
+        init(form.ActionAbort, "<", 30, Notices.Keys.First() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-        init(form.ActionIgnore,
-             SysTranslations.Next.GetLang(),
-             Notices.Keys.Last() != notice.Key,
+        init(form.ActionRetry, ">", 30, Notices.Keys.Last() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-        void init(Button button, string text, bool enabled, Action<int> action)
+        init(form.ActionIgnore, ">>", 30, Notices.Keys.Last() != notice.Key,
+             index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
+        void init(Button button, string text, int width, bool enabled, Action<int> action)
         {
           button.Visible = true;
           button.Enabled = enabled;
+          button.Width = width;
           button.Text = text;
           button.Click += (_s, _e) =>
           {
