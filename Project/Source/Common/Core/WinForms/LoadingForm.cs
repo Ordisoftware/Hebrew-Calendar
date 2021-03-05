@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 
-    public void Initialize(string text, int count, int minimum, bool quantify = true)
+    public void Initialize(string text, int count, int minimum = 0, bool quantify = true)
     {
       this.CenterToMainFormElseScreen();
       if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
@@ -72,7 +72,7 @@ namespace Ordisoftware.Core
       Application.DoEvents();
     }
 
-    public void DoProgress()
+    public void DoProgress(int index = -1)
     {
       bool process = true;
       if ( UseQuanta )
@@ -85,7 +85,10 @@ namespace Ordisoftware.Core
       }
       if ( process )
       {
-        ProgressBar.PerformStep();
+        if ( index == -1 )
+          ProgressBar.PerformStep();
+        else
+          ProgressBar.Value = index;
         ProgressBar.Refresh();
         Refresh();
       }
