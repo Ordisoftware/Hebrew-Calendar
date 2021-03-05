@@ -58,6 +58,18 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur d'intégrité de la base de données :{Globals.NL2}{{0}}"
       };
 
+    static public readonly TranslationsDictionary AskToResetCorruptedDatabase
+      = new TranslationsDictionary
+      {
+        [Language.EN] = DatabaseIntegrityError[Language.EN] + Globals.NL2 +
+                        "The reset will erase all data." + Globals.NL2 +
+                        AskToContinue[Language.EN],
+
+        [Language.FR] = DatabaseIntegrityError[Language.FR] + Globals.NL2 +
+                        "La réinitialisation va effacer toutes les données." + Globals.NL2 +
+                        AskToContinue[Language.FR]
+      };
+  
     static public readonly TranslationsDictionary DatabaseVacuumError
       = new TranslationsDictionary
       {
