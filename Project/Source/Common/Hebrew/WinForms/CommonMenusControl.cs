@@ -104,15 +104,15 @@ namespace Ordisoftware.Hebrew
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
-        init(form.ActionYes, SysTranslations.Notes.GetLang(), 50, true,
+        init(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true,
              index => ActionReleaseNotes.PerformClick());
-        init(form.ActionNo, "<<", 30, Notices.Keys.First() != notice.Key,
+        init(form.ActionNo, "<<", 35, Notices.Keys.First() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[0].PerformClick());
-        init(form.ActionAbort, "<", 30, Notices.Keys.First() != notice.Key,
+        init(form.ActionAbort, "<", 35, Notices.Keys.First() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-        init(form.ActionRetry, ">", 30, Notices.Keys.Last() != notice.Key,
+        init(form.ActionRetry, ">", 35, Notices.Keys.Last() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-        init(form.ActionIgnore, ">>", 30, Notices.Keys.Last() != notice.Key,
+        init(form.ActionIgnore, ">>", 35, Notices.Keys.Last() != notice.Key,
              index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
         void init(Button button, string text, int width, bool enabled, Action<int> action)
         {
