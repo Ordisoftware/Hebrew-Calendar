@@ -64,6 +64,7 @@ namespace Ordisoftware.Core
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing value>lang>translation.</param>
     /// <param name="value">The value to translate.</param>
+    /// <param name="forceEnglish">True to force get in english.</param>
     static public string GetLang<T>(this NullSafeDictionary<T, TranslationsDictionary> values, T value, bool forceEnglish = false)
     {
       var lang = forceEnglish ? Language.EN : Languages.Current;

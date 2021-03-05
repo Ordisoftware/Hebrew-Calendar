@@ -58,8 +58,9 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Start Hebrew Words process.
     /// </summary>
-    /// <param name="reference">The verse reference.</param>
+    /// <param name="word">The verse reference.</param>
     /// <param name="path">Path of the application.</param>
+    /// <param name="isUnicode">True if the word is in unicode chars, else hebrew font.</param>
     static public void OpenFindHebrewWordsSearch(string word, string path, bool isUnicode = false)
     {
       if ( !File.Exists(path) )

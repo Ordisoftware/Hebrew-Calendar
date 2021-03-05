@@ -224,7 +224,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditVolume_ValueChanged(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
-      MediaMixer.SetApplicationVolume(Globals.ProcessID, EditVolume.Value);
+      MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
       Program.Settings.ApplicationVolume = EditVolume.Value;
       Program.Settings.Save();

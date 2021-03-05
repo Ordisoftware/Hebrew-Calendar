@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ProcessLocksTable.Lock();
       ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessID, Settings.ApplicationVolume));
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>

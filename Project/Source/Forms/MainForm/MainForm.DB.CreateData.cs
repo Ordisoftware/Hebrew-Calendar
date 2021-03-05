@@ -185,16 +185,13 @@ namespace Ordisoftware.Hebrew.Calendar
       return true;
     }
 
-    private TimeSpan? DelayMoonset;
     private TimeSpan? DelayMoonrise;
-    private bool isMoonsetDelayed;
     private bool isMoonriseDelayed;
     private LunisolarDaysRow DelayPreviousRow;
 
     /// <summary>
     /// Initialize a day.
     /// </summary>
-    /// <param name="day">The day.</param>
     private bool InitializeDay(LunisolarDaysRow day, DateTime date)
     {
       try
@@ -349,8 +346,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Analyzes a day.
     /// </summary>
-    /// <param name="day">The day.</param>
-    /// <param name="monthMoon">[in,out] The current mooon month.</param>
     private bool AnalyzeDay(LunisolarDaysRow day, DateTime dayDate, ref int monthMoon)
     {
       DateTime calculate(DateTime thedate, int toadd, TorahEvent type, bool forceSunOmer)

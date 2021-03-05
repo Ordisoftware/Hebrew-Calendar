@@ -47,7 +47,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
-    <NoWarn>1587, 1591</NoWarn>
+    <NoWarn>1587, 1591, 0649</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>latest</LangVersion>
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
@@ -62,7 +62,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
-    <NoWarn>1587, 1591</NoWarn>
+    <NoWarn>1587, 1591, 0649</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>true</DebugSymbols>
     <LangVersion>latest</LangVersion>

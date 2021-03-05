@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
   {
 
     private bool SetTextMutex;
-    private UndoRedoItem Previous = new UndoRedoItem();
+    //private UndoRedoItem Previous = new UndoRedoItem();
     private Stack<UndoRedoItem> UndoStack = new Stack<UndoRedoItem>();
     private Stack<UndoRedoItem> RedoStack = new Stack<UndoRedoItem>();
 
@@ -159,11 +159,11 @@ namespace Ordisoftware.Core
     {
       return;
       //
-      if ( base.Text == null ) return;
-      Previous.Set(base.Text, SelectionStart/*, SelectionLength*/);
-      UndoStack.Push(Previous);
-      if ( RedoStack.Count > 0 )
-        RedoStack.Clear();
+      //if ( base.Text == null ) return;
+      //Previous.Set(base.Text, SelectionStart/*, SelectionLength*/);
+      //UndoStack.Push(Previous);
+      //if ( RedoStack.Count > 0 )
+      //  RedoStack.Clear();
     }
 
     private void SetCaret(int pos, int length)
@@ -229,7 +229,10 @@ namespace Ordisoftware.Core
         && !check(e.Control, Keys.Insert, ActionCopy_Click)
         && !check(e.Shift, Keys.Delete, ActionCut_Click)
         && !check(e.Shift, Keys.Insert, ActionPaste_Click) )
-        ;// Previous.Set(Text, SelectionStart /*, SelectionLength*/);
+      {
+        // NOP required
+        // OR TODO Previous.Set(Text, SelectionStart /*, SelectionLength*/);
+      }
     }
 
   }
