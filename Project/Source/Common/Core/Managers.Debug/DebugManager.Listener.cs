@@ -122,9 +122,7 @@ namespace Ordisoftware.Core
       {
         Purge();
         Date = DateTime.Today;
-        string ProcessName = SystemManager.AllowApplicationMultipleInstances
-                           ? $" ({Process.GetCurrentProcess().Id})"
-                           : string.Empty;
+        string ProcessName = SystemManager.AllowMultipleInstances ? $" ({Globals.ProcessId})" : string.Empty;
         FilePath = Path.Combine(Folder, $"{Code} {SQLiteDate.ToString(Date)}{ProcessName}{Extension}");
         SystemManager.TryCatchManage(() => { Changed?.Invoke(this, FilePath); });
         return FilePath;

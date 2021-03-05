@@ -38,20 +38,6 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _AskToContinue;
 
-    static public readonly TranslationsDictionary ActionCancel
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Cancel",
-        [Language.FR] = "Annuler",
-      };
-
-    static public readonly TranslationsDictionary ActionClose
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Close",
-        [Language.FR] = "Fermer",
-      };
-
     static public readonly TranslationsDictionary NotImplemented
       = new TranslationsDictionary
       {
@@ -115,6 +101,20 @@ namespace Ordisoftware.Core
         [Language.FR] = "Remplacer le signet ?"
       };
 
+    static public readonly TranslationsDictionary ActionCancel
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Cancel",
+        [Language.FR] = "Annuler",
+      };
+
+    static public readonly TranslationsDictionary ActionClose
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Close",
+        [Language.FR] = "Fermer",
+      };
+
     static public readonly TranslationsDictionary Valid
       = new TranslationsDictionary
       {
@@ -176,6 +176,20 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Notes",
         [Language.FR] = "Notes"
+      };
+
+    static public readonly TranslationsDictionary ReadOnly
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Read only",
+        [Language.FR] = "Lecture seule"
+      };
+
+    static public readonly TranslationsDictionary Uncertain
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Uncertain",
+        [Language.FR] = "Incertain"
       };
 
     static public readonly TranslationsDictionary NullSlot

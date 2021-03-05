@@ -26,6 +26,14 @@ namespace Ordisoftware.Hebrew
   static partial class HebrewTools
   {
 
+    static public void OpenOnlineWordProvider(string link, string hebrew)
+    {
+      if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
+      string unicode = HebrewAlphabet.ToUnicode(hebrew);
+      link = link.Replace("%WORD%", unicode).Replace("%FIRSTLETTER%", unicode[0].ToString());
+      SystemManager.RunShell(link);
+    }
+
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
@@ -51,15 +59,16 @@ namespace Ordisoftware.Hebrew
       foreach ( string item in items )
       {
         SystemManager.RunShell(path, item);
-        System.Threading.Thread.Sleep(100);
+        System.Threading.Thread.Sleep(250);
       }
     }
 
     /// <summary>
     /// Start Hebrew Words process.
     /// </summary>
-    /// <param name="reference">The verse reference.</param>
+    /// <param name="word">The verse reference.</param>
     /// <param name="path">Path of the application.</param>
+    /// <param name="isUnicode">True if the word is in unicode chars, else hebrew font.</param>
     static public void OpenFindHebrewWordsSearch(string word, string path, bool isUnicode = false)
     {
       if ( !File.Exists(path) )

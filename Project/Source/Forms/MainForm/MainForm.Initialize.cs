@@ -13,8 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Data;
@@ -71,8 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ProcessLocksTable.Lock();
       ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Process.GetCurrentProcess().Id,
-                                                                   Settings.ApplicationVolume));
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
       if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
         SystemManager.TryCatchManage(() =>

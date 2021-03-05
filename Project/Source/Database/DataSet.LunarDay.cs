@@ -63,7 +63,6 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       }
       else
       {
-        int delta = 2;
         var rowCurrent = LunisolarDays.FindByDate(dateStr);
         int indexRowCurrent = LunisolarDays.Rows.IndexOf(rowCurrent);
         if ( datetime < rowCurrent.SunsetAsDateTime )

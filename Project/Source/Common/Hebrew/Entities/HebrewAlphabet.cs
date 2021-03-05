@@ -171,6 +171,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
+      str = UnFinalAll(str);
       foreach ( char c in str.RemoveDiacritics().ToLower() )
         if ( Codes.Contains(c.ToString()) )
           result = result + c;

@@ -78,6 +78,12 @@ namespace Ordisoftware.Core
       => Path.GetFileNameWithoutExtension(Application.ExecutablePath);
 
     /// <summary>
+    /// Indicate the application process ID.
+    /// </summary>
+    static public int ProcessId
+      => Process.GetCurrentProcess().Id;
+
+    /// <summary>
     /// Indicate if the executable has been generated in debug mode.
     /// </summary>
     static public bool IsDebugExecutable
