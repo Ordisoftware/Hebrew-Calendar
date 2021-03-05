@@ -26,6 +26,14 @@ namespace Ordisoftware.Hebrew
   static partial class HebrewTools
   {
 
+    static public void OpenOnlineWordProvider(string link, string hebrew)
+    {
+      if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
+      string unicode = HebrewAlphabet.ToUnicode(hebrew);
+      link = link.Replace("%WORD%", unicode).Replace("%FIRSTLETTER%", unicode[0].ToString());
+      SystemManager.RunShell(link);
+    }
+
     /// <summary>
     /// Start Hebrew Letters process.
     /// </summary>
@@ -51,7 +59,7 @@ namespace Ordisoftware.Hebrew
       foreach ( string item in items )
       {
         SystemManager.RunShell(path, item);
-        System.Threading.Thread.Sleep(100);
+        System.Threading.Thread.Sleep(250);
       }
     }
 

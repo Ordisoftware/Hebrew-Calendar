@@ -90,8 +90,8 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Unicode)] ).Split(' ') )
-          SystemManager.RunShell(( (string)menuitem.Tag ).Replace("%WORD%", word));
+        foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
+          HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, word);
       });
       ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
       {
