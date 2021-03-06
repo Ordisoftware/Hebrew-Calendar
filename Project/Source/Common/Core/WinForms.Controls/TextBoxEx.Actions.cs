@@ -38,12 +38,11 @@ namespace Ordisoftware.Core
           control = ( menuItem.GetCurrentParent() as ContextMenuStrip ).SourceControl as TextBoxEx;
       if ( control == null )
       {
-        var form = Form.ActiveForm;
-        if (form == null) form = Application.OpenForms.ToList().LastOrDefault();
+        var form = FormsHelper.GetActiveForm();
         if ( form != null )
         {
           if ( form.ActiveControl is TextBoxEx )
-            control = Form.ActiveForm.ActiveControl as TextBoxEx;
+            control = form.ActiveControl as TextBoxEx;
           else
           if ( form.ActiveControl is UserControl )
             control = ( form.ActiveControl as UserControl ).ActiveControl as TextBoxEx;

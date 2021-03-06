@@ -62,16 +62,17 @@ namespace Ordisoftware.Core
       if ( Mutex ) return false;
       if ( auto && !checkAtStartup ) return false;
       if ( auto && lastdone.AddDays(interval) >= DateTime.Now ) return false;
-      bool formEnabled = Globals.MainForm?.Enabled ?? false;
-      bool formTopMost = Globals.MainForm?.TopMost ?? false;
+      var form = FormsHelper.GetActiveForm();
+      bool formEnabled = form?.Enabled ?? false;
+      bool formTopMost = form?.TopMost ?? false;
       try
       {
         Mutex = true;
-        if ( Globals.MainForm != null )
+        if ( form != null )
         {
-          Globals.MainForm.TopMost = true;
-          Globals.MainForm.TopMost = formTopMost;
-          Globals.MainForm.Enabled = false;
+          form.TopMost = true;
+          form.TopMost = formTopMost;
+          form.Enabled = false;
         }
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
         LoadingForm.Instance.Owner = Globals.MainForm;
@@ -110,11 +111,11 @@ namespace Ordisoftware.Core
       {
         Mutex = false;
         LoadingForm.Instance.Hide();
-        if ( Globals.MainForm != null )
+        if ( form != null )
         {
-          Globals.MainForm.TopMost = true;
-          Globals.MainForm.TopMost = formTopMost;
-          Globals.MainForm.Enabled = formEnabled;
+          form.TopMost = true;
+          form.TopMost = formTopMost;
+          form.Enabled = formEnabled;
         }
       }
       return false;
