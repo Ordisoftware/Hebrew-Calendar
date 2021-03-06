@@ -66,26 +66,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Start Hebrew Words process.
     /// </summary>
-    /// <param name="word">The verse reference.</param>
-    /// <param name="path">Path of the application.</param>
-    /// <param name="isUnicode">True if the word is in unicode chars, else hebrew font.</param>
-    static public void OpenFindHebrewWordsSearch(string word, string path, bool isUnicode = false)
-    {
-      if ( !File.Exists(path) )
-      {
-        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
-        return;
-      }
-      SystemManager.RunShell(path, "--search " + word);
-    }
-
-    /// <summary>
-    /// Start Hebrew Words process.
-    /// </summary>
-    /// <param name="reference">The verse reference.</param>
-    /// <param name="path">Path of the application.</param>
-    static public void OpenHebrewWordsReference(string reference, string path)
+    static public void OpenHebrewWordsGoToVerse(string reference, string path)
     {
       if ( !File.Exists(path) )
       {
@@ -94,6 +75,34 @@ namespace Ordisoftware.Hebrew
         return;
       }
       SystemManager.RunShell(path, "--verse " + reference);
+    }
+
+    /// <summary>
+    /// Start Hebrew Words process.
+    /// </summary>
+    static public void OpenFindHebrewWordsSearchWord(string word, string path)
+    {
+      if ( !File.Exists(path) )
+      {
+        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+        return;
+      }
+      SystemManager.RunShell(path, "--word " + word);
+    }
+
+    /// <summary>
+    /// Start Hebrew Words process.
+    /// </summary>
+    static public void OpenFindHebrewWordsSearchTranslated(string word, string path)
+    {
+      if ( !File.Exists(path) )
+      {
+        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+        return;
+      }
+      SystemManager.RunShell(path, "--translated " + word);
     }
 
     /// <summary>

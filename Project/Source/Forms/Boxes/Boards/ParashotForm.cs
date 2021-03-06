@@ -406,12 +406,12 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWordsReference(CurrentDataBoundItemFullReferenceBegin, Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsGoToVerse(CurrentDataBoundItemFullReferenceBegin, Settings.HebrewWordsExe);
     }
 
     private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenFindHebrewWordsSearch((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Settings.HebrewWordsExe);
+      HebrewTools.OpenFindHebrewWordsSearchWord((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)
