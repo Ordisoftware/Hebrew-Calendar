@@ -98,18 +98,6 @@ namespace Ordisoftware.Hebrew.Calendar
     static public HTMLBrowserForm _GrammarGuideForm;
 
     /// <summary>
-    /// Indicate file path of date bookmarks.
-    /// </summary>
-    static public string DateBookmarksFilePath
-      => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
-
-    /// <summary>
-    /// Indicate date bookmarks.
-    /// </summary>
-    static public readonly DateBookmarks DateBookmarks
-      = new DateBookmarks(DateBookmarksFilePath);
-
-    /// <summary>
     /// Indicate file path of reminder box image.
     /// </summary>
     static public string ReminderBoxImageFilePath
@@ -122,13 +110,31 @@ namespace Ordisoftware.Hebrew.Calendar
       => Path.ChangeExtension(Globals.DatabaseFilePath, ".txt");
 
     /// <summary>
+    /// Indicate file path of date bookmarks.
+    /// </summary>
+    static public string DateBookmarksFilePath
+      => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
+
+    /// <summary>
+    /// Indicate date bookmarks.
+    /// </summary>
+    static public readonly DateBookmarks DateBookmarks
+      = new DateBookmarks(DateBookmarksFilePath);
+
+    /// <summary>
+    /// Indicate world cities documents folder.
+    /// </summary>
+    static public string WorldCitiesFolderPath
+      => Path.Combine(Globals.DocumentsFolderPath, "WorldCities");
+
+    /// <summary>
     /// Indicate file path of the GPS database.
     /// </summary>
     static public string GPSFilePath
-      => Path.Combine(Globals.DocumentsFolderPath, "WorldCities.csv");
+      => Path.Combine(WorldCitiesFolderPath, "WorldCities.csv");
 
     /// <summary>
-    /// Indicate the lunar months documents folder.
+    /// Indicate lunar months documents folder.
     /// </summary>
     static public string LunarMonthsFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "LunarMonths");
@@ -146,12 +152,12 @@ namespace Ordisoftware.Hebrew.Calendar
       => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current.ToString()}.txt");
 
     /// <summary>
-    /// Indicate the lunar months meanings.
+    /// Indicate lunar months meanings.
     /// </summary>
     static public NullSafeDictionary<Language, LunarMonthsFile> LunarMonthsMeanings { get; private set; }
 
     /// <summary>
-    /// Indicate the lunar months lettriqs.
+    /// Indicate lunar months lettriqs.
     /// </summary>
     static public NullSafeDictionary<Language, LunarMonthsFile> LunarMonthsLettriqs { get; private set; }
 
