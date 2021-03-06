@@ -45,13 +45,13 @@ namespace Ordisoftware.Hebrew.Calendar
       CreateControls();
       ActiveControl = ActionClose;
       ActionEditFiles.Visible = Program.LunarMonthsMeanings[Languages.Current].Configurable;
-      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         string word = HebrewMonths.Unicode[(int)LastControl.Tag]
                                   .Replace(" א", string.Empty)
                                   .Replace(" ב", string.Empty);
-        HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word));
+        HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word));
       });
     }
 
@@ -172,8 +172,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      HebrewTools.OpenFindHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
-                                                Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
+                                            Program.Settings.HebrewWordsExe);
     }
 
   }

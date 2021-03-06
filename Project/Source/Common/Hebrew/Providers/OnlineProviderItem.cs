@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew
       {
         try
         {
-          return Image.FromFile(System.IO.Path.Combine(OnlineProviders.GuidesFolderPath, filePath));
+          return Image.FromFile(System.IO.Path.Combine(HebrewGlobals.GuidesFolderPath, filePath));
         }
         catch ( Exception ex )
         {

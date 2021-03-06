@@ -92,16 +92,16 @@ namespace Ordisoftware.Hebrew
 
     private void InitializeMenu()
     {
-      ActionSearchOnline.InitializeFromProviders(OnlineProviders.OnlineWordProviders, (sender, e) =>
+      ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
-          HebrewTools.OpenOnlineWordProvider((string)menuitem.Tag, word);
+          HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
       });
-      ActionOpenVerseOnline.InitializeFromProviders(OnlineProviders.OnlineBibleProviders, (sender, e) =>
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenOnlineVerse((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
       });
     }
 
@@ -411,7 +411,7 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenFindHebrewWordsSearchWord((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsSearchWord((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)

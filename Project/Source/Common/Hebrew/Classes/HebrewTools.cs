@@ -21,21 +21,13 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide hebrew tools helper.
+  /// Provide hebrew tools.
   /// </summary>
   static partial class HebrewTools
   {
 
-    static public void OpenOnlineWordProvider(string link, string hebrew)
-    {
-      if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
-      string unicode = HebrewAlphabet.ToUnicode(hebrew);
-      link = link.Replace("%WORD%", unicode).Replace("%FIRSTLETTER%", unicode[0].ToString());
-      SystemManager.RunShell(link);
-    }
-
     /// <summary>
-    /// Start Hebrew Letters process.
+    /// Start Hebrew Letters.
     /// </summary>
     /// <param name="word">The unicode or hebrew font chars of the word.</param>
     /// <param name="path">Path of the application.</param>
@@ -64,7 +56,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words process.
+    /// Start Hebrew Words.
     /// </summary>
     static public void OpenHebrewWordsGoToVerse(string reference, string path)
     {
@@ -78,9 +70,9 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words process.
+    /// Start Hebrew Words.
     /// </summary>
-    static public void OpenFindHebrewWordsSearchWord(string word, string path)
+    static public void OpenHebrewWordsSearchWord(string word, string path)
     {
       if ( !File.Exists(path) )
       {
@@ -92,9 +84,9 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words process.
+    /// Start Hebrew Words.
     /// </summary>
-    static public void OpenFindHebrewWordsSearchTranslated(string word, string path)
+    static public void OpenHebrewWordsSearchTranslated(string word, string path)
     {
       if ( !File.Exists(path) )
       {
@@ -106,18 +98,31 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open default online verse search url.
+    /// Open online word provider.
     /// </summary>
-    static public void OpenOnlineVerse(string url, string reference)
+    /// <param name="link"></param>
+    /// <param name="hebrew"></param>
+    static public void OpenWordProvider(string link, string hebrew)
     {
-      int[] list = reference.Split('.').Select(int.Parse).ToArray();
-      OpenOnlineVerse(url, list[0], list[1], list[2]);
+      if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
+      string unicode = HebrewAlphabet.ToUnicode(hebrew);
+      link = link.Replace("%WORD%", unicode).Replace("%FIRSTLETTER%", unicode[0].ToString());
+      SystemManager.RunShell(link);
     }
 
     /// <summary>
-    /// Open default online verse search url.
+    /// Open online bible provider.
     /// </summary>
-    static public void OpenOnlineVerse(string url, int book, int chapter, int verse)
+    static public void OpenBibleProvider(string url, string reference)
+    {
+      int[] list = reference.Split('.').Select(int.Parse).ToArray();
+      OpenBibleProvider(url, list[0], list[1], list[2]);
+    }
+
+    /// <summary>
+    /// Open online bible provider.
+    /// </summary>
+    static public void OpenBibleProvider(string url, int book, int chapter, int verse)
     {
       int bookchabad = BooksNames.Chabad[(Books)( book - 1 )] + chapter - 1;
       if ( url.Contains("%BOOKSEFARIA%") )

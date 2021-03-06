@@ -89,7 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( _GrammarGuideForm == null )
           _GrammarGuideForm = new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                  OnlineProviders.HebrewGrammarGuideFilePath,
+                                                  HebrewGlobals.HebrewGrammarGuideFilePath,
                                                   nameof(Settings.GrammarGuideFormLocation),
                                                   nameof(Settings.GrammarGuideFormSize));
         return _GrammarGuideForm;
@@ -137,13 +137,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate file path of the lunar months meanings.
     /// </summary>
     static public string LunarMonthsMeaningsFilePath
-      = Path.Combine(LunarMonthsFolderPath, "LunarMonthsMeanings{0}.txt");
+      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current.ToString()}.txt");
 
     /// <summary>
     /// Indicate file path of the lunar months lettriqs.
     /// </summary>
     static public string LunarMonthsLettriqsFilePath
-      => Path.Combine(LunarMonthsFolderPath, "LunarMonthsLettriqs{0}.txt");
+      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current.ToString()}.txt");
 
     /// <summary>
     /// Indicate the lunar months meanings.
