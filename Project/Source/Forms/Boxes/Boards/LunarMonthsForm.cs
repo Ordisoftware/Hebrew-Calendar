@@ -23,14 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunarMonthsForm : Form
   {
 
-    /// <summary>
-    /// Indicate the singleton instance.
-    /// </summary>
     static public LunarMonthsForm Instance { get; private set; }
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
     static LunarMonthsForm()
     {
       Instance = new LunarMonthsForm();
