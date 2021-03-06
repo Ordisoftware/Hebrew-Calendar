@@ -31,20 +31,6 @@ namespace Ordisoftware.Core
   static class FormsHelper
   {
 
-    static public IEnumerable<Form> ToList(this FormCollection forms)
-    {
-      foreach ( Form form in forms )
-        yield return form;
-    }
-
-    static public IEnumerable<T> GetAllControls<T>(this Control control)
-    {
-      var controls = control.Controls.OfType<T>();
-      return control.Controls.Cast<Control>()
-                             .SelectMany(c => c.GetAllControls<T>())
-                             .Concat(controls);
-    }
-
     /// <summary>
     /// Apply localized resources.
     /// </summary>
@@ -61,6 +47,20 @@ namespace Ordisoftware.Core
       });
     }
 
+    static public IEnumerable<Form> ToList(this FormCollection forms)
+    {
+      foreach ( Form form in forms )
+        yield return form;
+    }
+
+    static public IEnumerable<T> GetAllControls<T>(this Control control)
+    {
+      var controls = control.Controls.OfType<T>();
+      return control.Controls.Cast<Control>()
+                             .SelectMany(c => c.GetAllControls<T>())
+                             .Concat(controls);
+    }
+
     /// <summary>
     /// Center a form to screen.
     /// </summary>
@@ -68,6 +68,11 @@ namespace Ordisoftware.Core
     static public void CenterToScreen(this Form form)
     {
       SetLocation(form, ControlLocation.Center);
+    }
+
+    static public Form GetActiveForm()
+    {
+      return Form.ActiveForm ?? Application.OpenForms.ToList().LastOrDefault() ?? Globals.MainForm;
     }
 
     /// <summary>

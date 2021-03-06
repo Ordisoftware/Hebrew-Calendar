@@ -124,7 +124,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public Form MainForm
     {
-      get => _MainForm ?? ( Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm );
+      get => _MainForm ?? ( Application.OpenForms.Count > 0 ? Application.OpenForms[0] : FormsHelper.GetActiveForm() );
       set => _MainForm = value;
     }
     static private Form _MainForm;
