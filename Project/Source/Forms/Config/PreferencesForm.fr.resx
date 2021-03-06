@@ -136,7 +136,7 @@
   <data name="LabelChaneLangNotice.Size" type="System.Drawing.Size, System.Drawing">
     <value>386, 28</value>
   </data>
-  <data name="LabelChaneLangNotice.Text" xml:space="preserve">
+  <data name="LabelChangeLangNotice.Text" xml:space="preserve">
     <value>Le changement de langue n'affectera pas les données du tableau des Parashot à moins de restaurer les valeurs par défaut</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
