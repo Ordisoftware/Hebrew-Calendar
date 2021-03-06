@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 8</value>
+    <value>360, 8</value>
   </data>
   <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -128,7 +128,7 @@
     <value>Vérifier</value>
   </data>
   <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 8</value>
+    <value>310, 8</value>
   </data>
   <data name="ActionViewLockers.Text" xml:space="preserve">
     <value>Détails</value>
@@ -179,6 +179,9 @@
   <data name="ColumnLinked.Width" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
+  <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 276</value>
+  </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
   </data>
@@ -200,17 +203,26 @@
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Guide de grammaire</value>
   </data>
-  <data name="ActionOpenShorashon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 22</value>
-  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
   </data>
-  <data name="ActionOpenHebrewWords.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 6</value>
+  </data>
+  <data name="ActionOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
+  </data>
+  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Hebrew Words Verset</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 22</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Hebrew Words Recherche</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -248,16 +260,7 @@
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copier la ligne (caractères unicodes)</value>
   </data>
-  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 270</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Hebrew Words Recherche</value>
-  </data>
-  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words Verset</value>
   </data>
 </root>

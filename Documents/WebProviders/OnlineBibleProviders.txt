@@ -12,15 +12,15 @@
 ; Use the %WORD% tag in URL to allow the application to replace it by the word to process
 ; --------------------------------------------------------------------------------------------------
 
-Name = (EN) StudyBible.org (Literal with Strongs)
+Name = (EN) StudyBible.org (Literal with Strongs links)
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = (EN) BibleHub.com (Literal with Strongs)
+Name = (EN) BibleHub.com (Literal with Strongs links)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
 -
 
-Name = (EN) Sefaria.org
+Name = (EN) Sefaria.org (With contextual dictionary)
 URL = https://www.sefaria.org/%BOOKSEFARIA%.%CHAPTERNUM%.%VERSENUM%?lang=bi&with=all&lang2=en
 
 Name = (EN) Chabad.org

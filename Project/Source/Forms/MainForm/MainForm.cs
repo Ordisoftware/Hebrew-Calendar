@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
-    private void PowerModeChanged(object s, PowerModeChangedEventArgs e)
+    private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
     {
       if ( e.Mode == PowerModes.Resume )
       {
