@@ -277,6 +277,7 @@ namespace Ordisoftware.Hebrew
        && ( TextBox.TextLength < TextBox.MaxLength || TextBox.SelectionLength > 0 ) )
         KeyProcessed = true;
       else
+      if ( e.KeyChar != '\b' || TextBox.SelectionStart <= 0 ) // Back Space
         e.KeyChar = '\x0';
     }
 

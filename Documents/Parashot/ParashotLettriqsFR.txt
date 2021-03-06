@@ -37,8 +37,8 @@ Be'houqotaï = Création du Soutien par la Communication de la Vérité sur la L
 // BOOK BAMIDBAR
 Bamidbar = 
 Nasso = 
-Beha'alotka = <-
-Shela'h leka = 
+Beha'alotka = 
+Shela'h leka = <-
 Kora'h = 
 'Houkat = 
 Balaq = 

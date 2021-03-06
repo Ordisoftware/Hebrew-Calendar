@@ -76,6 +76,7 @@ namespace Ordisoftware.Hebrew
           buttonLetter.FlatStyle = FlatStyle.Flat;
           buttonLetter.FlatAppearance.BorderSize = 0;
           buttonLetter.FlatAppearance.BorderColor = SystemColors.Control;
+          buttonLetter.Cursor = Cursors.Hand;
           buttonLetter.Font = fontLetter;
           buttonLetter.Text = HebrewAlphabet.Codes[index];
           buttonLetter.BackColor = Color.Transparent;
