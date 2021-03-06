@@ -9,7 +9,8 @@
 ; --------------------------------------------------------------------------------------------------
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
-; Use the %WORD% tag in URL to allow the application to replace it by the word to process
+; Use the %WORD% tag in URL to allow the application to replace it by the unicode word to process
+; Use the %FIRSTLETTER% tag for only the first letter
 ; --------------------------------------------------------------------------------------------------
 
 Name = (EN) Pealim Hebrew Verb Tables

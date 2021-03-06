@@ -57,15 +57,16 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version**
 
+- Added command-line options (see FAQ).
 - The reminder box has been improved.
-- An editable parashot board is available in the Tools menu.
+- New editable parashot board.
 - Parashah of the week is indicated for Shabat in visual calendar and in navigation window.
+- Application title bar can show lunar today and weekly parashah.
 - Visual calendar and navigation window indicates intermediate days of week-long celebrations.
 - Image of the Tray Icon changes during a Shabat day or celebration regardless of reminder boxes.
-- Application title bar can show lunar today and weekly parashah.
 - Web update check is not performed on a day off while the application is running.
-- Boards are exportable as TXT files in addition to CSV and JSON.
 - Fixed celebrations board showing moon times in the case of sun omer.
+- Boards are exportable as TXT files in addition to CSV and JSON.
 - Added keyboard shortchuts to navigate between months having celebrations.
 - Added New in version in the Information menu.
 - Update web links and Bible study providers.
@@ -258,14 +259,14 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
 | Shift + Ctrl + C | Copy the text report selection to clipboard |
-| Alt + T | Show tools menu |
-| Alt + L | Show web links menu |
 | Alt + V | Show view menu |
-| Alt + S | Show settings menu |
-| Alt + I | Show information menu |
-| Alt + E | Open export folder |
-| Alt + C | Open windows calculator |
-| Alt + D | Open windows date and time settings |
+| Alt + T | Tools menu |
+| Alt + L | Web links menu |
+| Alt + S | Settings menu |
+| Alt + I | Information menu |
+| Alt + E | Export folder |
+| Alt + C | Windows calculator |
+| Alt + D | Windows date and time settings |
 | Alt + M | Windows weather |
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
@@ -298,7 +299,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
 - Improve log viewer to select file.
-- Replace simple internal trace/logging by SeriLog.
+- Replace simple trace/logging by SeriLog.
 - Add dark theme for month view.
 
 ## Changelog
@@ -477,7 +478,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Few fixes.
 - Replace AASharp source code dependency by the NuGet package.
 - Replace GenericParsing dependency by FileHelpers NuGet package.
-- Replace simple internal command-line parser by CommandLineParser NuGet package.
+- Replace simple command-line parser by CommandLineParser NuGet package.
 - Code refactoring.
 - File system refactoring.
 
