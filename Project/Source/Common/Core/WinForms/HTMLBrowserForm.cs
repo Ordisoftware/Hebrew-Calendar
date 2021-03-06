@@ -61,7 +61,7 @@ namespace Ordisoftware.Core
     {
       if ( Title != null ) Text = Title.GetLang();
       if ( FilePathTemplate == null ) return;
-      string filePath = string.Format(FilePathTemplate, Languages.CurrentCode);
+      string filePath = string.Format(FilePathTemplate, Languages.Current.ToString());
       if ( File.Exists(filePath) )
         WebBrowser.Navigate(filePath);
       else

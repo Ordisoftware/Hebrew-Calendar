@@ -183,10 +183,14 @@
     <Compile Include="Source\Common\Core\WinForms\EditMemoForm.designer.cs">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.providers.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
@@ -198,8 +202,32 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.Designer.cs">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Designer.cs">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Redraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.Designer.cs">
+      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Database\DataSet.cs" />
     <Compile Include="Source\Database\DataSet.ReminderTimes.cs" />
     <Compile Include="Source\Database\DataSet.LunarDay.cs" />
@@ -279,12 +307,6 @@
     </Compile>
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
-    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.Designer.cs">
-      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Common\Core\Classes\SystemCommandLine.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportAction.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Errors.cs" />
@@ -387,28 +409,6 @@
     <Compile Include="Source\Common\Core\Classes\StringHelper.Format.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemStatistics.cs" />
     <Compile Include="Source\Common\Core\Classes\WebCheckUpdate.cs" />
-    <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.Designer.cs">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
-    <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
-    <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Designer.cs">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Redraw.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProvidersHelper.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.Static.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundItem.cs" />
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
@@ -711,6 +711,21 @@
     <EmbeddedResource Include="Source\Common\Core\WinForms\EditMemoForm.resx">
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\CommonMenusControl.fr.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\CommonMenusControl.resx">
+      <DependentUpon>CommonMenusControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.fr.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.resx">
+      <DependentUpon>LettersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.resx">
+      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.fr.resx">
       <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -811,18 +826,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\CommonMenusControl.fr.resx">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\CommonMenusControl.resx">
-      <DependentUpon>CommonMenusControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.fr.resx">
-      <DependentUpon>LettersControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.resx">
-      <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.fr.resx">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
@@ -940,9 +943,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\PreferencesForm.fr.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.resx">
-      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

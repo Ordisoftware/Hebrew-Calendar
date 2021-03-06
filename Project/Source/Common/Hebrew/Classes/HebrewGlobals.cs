@@ -25,14 +25,32 @@ namespace Ordisoftware.Hebrew
   static partial class HebrewGlobals
   {
 
+    /// <summary>
+    /// Indicate the application guides folder.
+    /// </summary>
+    static public string GuidesFolderPath
+      => Path.Combine(Globals.DocumentsFolderPath, "Guides");
+
+    /// <summary>
+    /// Indicate file path of the hebrew grammar guide.
+    /// </summary>
+    static public string HebrewGrammarGuideFilePath
+      => Path.Combine(GuidesFolderPath, "Guide-Grammar-{0}.htm");
+
+    /// <summary>
+    /// Indicate file path of the lettriq method notice.
+    /// </summary>
+    static public string LettriqMethodNoticeFilePath
+      => Path.Combine(GuidesFolderPath, "Method-Lettriq-{0}.htm");
+
     static public string ParashotFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
 
     static public string ParashotTranslationsFilePath
-      => Path.Combine(ParashotFolderPath, $"ParashotTranslations{Languages.CurrentCode.ToUpper()}.txt");
+      => Path.Combine(ParashotFolderPath, $"Parashot-Translations-{Languages.Current.ToString()}.txt");
 
     static public string ParashotLettriqsFilePath
-      => Path.Combine(ParashotFolderPath, $"ParashotLettriqs{Languages.CurrentCode.ToUpper()}.txt");
+      => Path.Combine(ParashotFolderPath, $"Parashot-Lettriqs-{Languages.Current.ToString()}.txt");
 
   }
 

@@ -21,16 +21,10 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide online providers list.
+  /// Provide hebrew global variables.
   /// </summary>
-  partial class OnlineProviders
+  static partial class HebrewGlobals
   {
-
-    /// <summary>
-    /// Indicate the application guides folder.
-    /// </summary>
-    static public string GuidesFolderPath
-      => Path.Combine(Globals.DocumentsFolderPath, "Guides");
 
     /// <summary>
     /// Indicate the application web links folder.
@@ -45,38 +39,26 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(Globals.DocumentsFolderPath, "WebProviders");
 
     /// <summary>
-    /// Indicate file path of the hebrew grammar guide.
+    /// Indicate the file path of the online search word providers.
     /// </summary>
-    static public string HebrewGrammarGuideFilePath
-      => Path.Combine(GuidesFolderPath, "grammar-{0}.htm");
-
-    /// <summary>
-    /// Indicate file path of the lettriq method notice.
-    /// </summary>
-    static public string LettriqMethodNoticeFilePath
-      => Path.Combine(GuidesFolderPath, "method-{0}.htm");
+    static public string WebProvidersWordFilePath
+      => Path.Combine(WebProvidersFolderPath, "WebProviders-Word.txt");
 
     /// <summary>
     /// Indicate the file path of the online search word providers.
     /// </summary>
-    static public string OnlineWordProvidersFilePath
-      => Path.Combine(WebProvidersFolderPath, "OnlineWordProviders.txt");
-
-    /// <summary>
-    /// Indicate the file path of the online search word providers.
-    /// </summary>
-    static public string OnlineBibleProvidersFilePath
-      => Path.Combine(WebProvidersFolderPath, "OnlineBibleProviders.txt");
+    static public string WebProvidersBibleFilePath
+      => Path.Combine(WebProvidersFolderPath, "WebProviders-Bible.txt");
 
     /// <summary>
     /// Indicate the online search a word providers.
     /// </summary>
-    static public OnlineProviders OnlineWordProviders { get; private set; }
+    static public OnlineProviders WebProvidersWord { get; private set; }
 
     /// <summary>
     /// Indicate the online bible verse providers.
     /// </summary>
-    static public OnlineProviders OnlineBibleProviders { get; private set; }
+    static public OnlineProviders WebProvidersBible { get; private set; }
 
     /// <summary>
     /// Indicate the web links providers.
@@ -102,12 +84,12 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Static constructor.
     /// </summary>
-    static OnlineProviders()
+    static HebrewGlobals()
     {
       if ( Globals.IsVisualStudioDesigner ) return;
       var folder = DataFileFolder.ApplicationDocuments;
-      OnlineWordProviders = CreateOnlineProviders(folder, OnlineWordProvidersFilePath);
-      OnlineBibleProviders = CreateOnlineProviders(folder, OnlineBibleProvidersFilePath);
+      WebProvidersWord = CreateOnlineProviders(folder, WebProvidersWordFilePath);
+      WebProvidersBible = CreateOnlineProviders(folder, WebProvidersBibleFilePath);
       WebLinksProviders = new List<OnlineProviders>();
       if ( Directory.Exists(WebLinksFolderPath) )
         SystemManager.TryCatch(() =>

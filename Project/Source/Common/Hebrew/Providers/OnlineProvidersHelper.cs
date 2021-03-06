@@ -125,7 +125,7 @@ namespace Ordisoftware.Hebrew
     static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
     {
       menuRoot.DropDownItems.Clear();
-      foreach ( var items in OnlineProviders.WebLinksProviders )
+      foreach ( var items in HebrewGlobals.WebLinksProviders )
         if ( items.Items.Count > 0 )
         {
           // Folder
@@ -162,12 +162,12 @@ namespace Ordisoftware.Hebrew
               SystemManager.OpenWebLink(url);
             }));
         }
-      if ( menuRoot.DropDownItems.Count > 0 && OnlineProviders.WebLinksProviders[0].Configurable )
+      if ( menuRoot.DropDownItems.Count > 0 && HebrewGlobals.WebLinksProviders[0].Configurable )
       {
         menuRoot.DropDownItems.Add(new ToolStripSeparator());
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
-          if ( !DataFileEditorForm.Run(nameof(OnlineProviders.WebLinksProviders), OnlineProviders.WebLinksProviders) ) return;
+          if ( !DataFileEditorForm.Run(nameof(HebrewGlobals.WebLinksProviders), HebrewGlobals.WebLinksProviders) ) return;
           reconstruct();
         }));
       }
