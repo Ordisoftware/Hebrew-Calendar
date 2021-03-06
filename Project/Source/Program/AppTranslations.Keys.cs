@@ -50,14 +50,14 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + C : Copy current view to clipboard" + Globals.NL +
                         "Ctrl + P : Print current view" + Globals.NL +
                         "Shift + Ctrl + C : Copy the text report selection to clipboard" + Globals.NL +
-                        "Alt + V : Show view menu" + Globals.NL +
-                        "Alt + T : Show tools menu" + Globals.NL +
-                        "Alt + L : Show web links menu" + Globals.NL +
-                        "Alt + I : Show information menu" + Globals.NL +
-                        "Alt + S : Show settings menu" + Globals.NL +
-                        "Alt + E : Open export folder" + Globals.NL +
-                        "Alt + C : Open windows calculator" + Globals.NL +
-                        "Alt + D : Open windows date and time settings" + Globals.NL +
+                        "Alt + V : View menu" + Globals.NL +
+                        "Alt + T : Tools menu" + Globals.NL +
+                        "Alt + L : Web links menu" + Globals.NL +
+                        "Alt + I : Information menu" + Globals.NL +
+                        "Alt + S : Settings menu" + Globals.NL +
+                        "Alt + E : Export folder" + Globals.NL +
+                        "Alt + C : Windows calculator" + Globals.NL +
+                        "Alt + D : Windows date and time settings" + Globals.NL +
                         "Alt + M : Windows weather" + Globals.NL +
                         "Alt + W : Online weather" + Globals.NL +
                         "Alt + G : Generate calendar" + Globals.NL +
@@ -99,14 +99,14 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
                         "Ctrl + P : Imprime la vue en cours" + Globals.NL +
                         "Maj + Ctrl + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
-                        "Alt + V : Montre le menu des vues" + Globals.NL +
-                        "Alt + T : Montre le menu des outils" + Globals.NL +
-                        "Alt + L : Montre le menu des liens web" + Globals.NL +
-                        "Alt + I : Montre le menu des informations" + Globals.NL +
-                        "Alt + S : Montre le menu des paramètres" + Globals.NL +
-                        "Alt + E : Ouvre le dossier d'export" + Globals.NL +
-                        "Alt + C : Ouvre la calculatrice Windows" + Globals.NL +
-                        "Alt + D : Ouvre les paramètres de date et heure de Windows" + Globals.NL +
+                        "Alt + V : Menu des vues" + Globals.NL +
+                        "Alt + T : Menu des outils" + Globals.NL +
+                        "Alt + L : Menu des liens web" + Globals.NL +
+                        "Alt + I : Menu des informations" + Globals.NL +
+                        "Alt + S : Menu des paramètres" + Globals.NL +
+                        "Alt + E : Dossier d'export" + Globals.NL +
+                        "Alt + C : Calculatrice Windows" + Globals.NL +
+                        "Alt + D : Paramètres de date et heure de Windows" + Globals.NL +
                         "Alt + M : Météo Windows" + Globals.NL +
                         "Alt + W : Météo en ligne" + Globals.NL +
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
