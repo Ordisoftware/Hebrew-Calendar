@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       get
       {
-        CreateParams cp = base.CreateParams;
+        var cp = base.CreateParams;
         if ( Settings.WindowsDoubleBufferingEnabled )
           switch ( Settings.CurrentView )
           {
@@ -75,14 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
-      SystemEvents.PowerModeChanged += (s, e) =>
-      {
-        if ( e.Mode == PowerModes.Resume )
-        {
-          System.Threading.Thread.Sleep(5000);
-          DoTimerMidnight();
-        }
-      };
+      SystemEvents.PowerModeChanged += PowerModeChanged;
       SystemManager.TryCatch(() =>
       {
         Icon = new Icon(Globals.ApplicationIconFilePath);
@@ -95,9 +88,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable )
+      if ( !Globals.IsDevExecutable ) // TODO remove when ready
       {
-        // TODO remove when ready
         ActionViewLunarMonths.Visible = false;
         ActionViewLunarMonths.Tag = int.MinValue;
       }
@@ -159,7 +151,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Session ending events handler.
+    /// Session ending event handler.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Session ending event information.</param>
@@ -169,8 +161,10 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Power mode changed events handler.
+    /// Power mode changed event handler.
     /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Session ending event information.</param>
     private void PowerModeChanged(object s, PowerModeChangedEventArgs e)
     {
       if ( e.Mode == PowerModes.Resume )

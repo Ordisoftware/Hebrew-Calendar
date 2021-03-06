@@ -100,14 +100,14 @@ namespace Ordisoftware.Core
                         "Vous pouvez également vérifier cela manuellement."
       };
 
-    static public readonly TranslationsDictionary AskToCheckParametersAfterDatabaseUpgraded
+    static public readonly TranslationsDictionary AskToCheckDataAfterDatabaseUpgraded
       = new TranslationsDictionary
       {
         [Language.EN] = "Database upgraded." + Globals.NL2 +
-                        "Do you want check the parameters?",
+                        "Do you want check the data?",
 
         [Language.FR] = "La base de données a été mise à jour." + Globals.NL2 +
-                        "Voulez-vous vérifier les paramètres ?"
+                        "Voulez-vous vérifier les données ?"
       };
 
     static public readonly TranslationsDictionary AskToResetData
