@@ -62,7 +62,6 @@
       // 
       // _toolStrip
       // 
-      resources.ApplyResources(this._toolStrip, "_toolStrip");
       this._toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this._toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this._toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -79,27 +78,27 @@
             this._separator,
             this._btnCancel,
             this._btnClose});
+      resources.ApplyResources(this._toolStrip, "_toolStrip");
       this._toolStrip.Name = "_toolStrip";
       // 
       // _btnPrint
       // 
-      resources.ApplyResources(this._btnPrint, "_btnPrint");
       this._btnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnPrint, "_btnPrint");
       this._btnPrint.Name = "_btnPrint";
       this._btnPrint.Padding = new System.Windows.Forms.Padding(5);
       this._btnPrint.Click += new System.EventHandler(this._btnPrint_Click);
       // 
       // _btnPageSetup
       // 
-      resources.ApplyResources(this._btnPageSetup, "_btnPageSetup");
       this._btnPageSetup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnPageSetup, "_btnPageSetup");
       this._btnPageSetup.Name = "_btnPageSetup";
       this._btnPageSetup.Padding = new System.Windows.Forms.Padding(5);
       this._btnPageSetup.Click += new System.EventHandler(this._btnPageSetup_Click);
       // 
       // _btnZoom
       // 
-      resources.ApplyResources(this._btnZoom, "_btnZoom");
       this._btnZoom.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._itemActualSize,
             this._itemFullPage,
@@ -114,6 +113,7 @@
             this._item50,
             this._item25,
             this._item10});
+      resources.ApplyResources(this._btnZoom, "_btnZoom");
       this._btnZoom.Name = "_btnZoom";
       this._btnZoom.Padding = new System.Windows.Forms.Padding(5);
       this._btnZoom.ButtonClick += new System.EventHandler(this._btnZoom_ButtonClick);
@@ -141,66 +141,66 @@
       // 
       // toolStripMenuItem1
       // 
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       // 
       // _item500
       // 
-      resources.ApplyResources(this._item500, "_item500");
       this._item500.Name = "_item500";
+      resources.ApplyResources(this._item500, "_item500");
       // 
       // _item200
       // 
-      resources.ApplyResources(this._item200, "_item200");
       this._item200.Name = "_item200";
+      resources.ApplyResources(this._item200, "_item200");
       // 
       // _item150
       // 
-      resources.ApplyResources(this._item150, "_item150");
       this._item150.Name = "_item150";
+      resources.ApplyResources(this._item150, "_item150");
       // 
       // _item100
       // 
-      resources.ApplyResources(this._item100, "_item100");
       this._item100.Name = "_item100";
+      resources.ApplyResources(this._item100, "_item100");
       // 
       // _item75
       // 
-      resources.ApplyResources(this._item75, "_item75");
       this._item75.Name = "_item75";
+      resources.ApplyResources(this._item75, "_item75");
       // 
       // _item50
       // 
-      resources.ApplyResources(this._item50, "_item50");
       this._item50.Name = "_item50";
+      resources.ApplyResources(this._item50, "_item50");
       // 
       // _item25
       // 
-      resources.ApplyResources(this._item25, "_item25");
       this._item25.Name = "_item25";
+      resources.ApplyResources(this._item25, "_item25");
       // 
       // _item10
       // 
-      resources.ApplyResources(this._item10, "_item10");
       this._item10.Name = "_item10";
+      resources.ApplyResources(this._item10, "_item10");
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // _btnFirst
       // 
-      resources.ApplyResources(this._btnFirst, "_btnFirst");
       this._btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnFirst, "_btnFirst");
       this._btnFirst.Name = "_btnFirst";
       this._btnFirst.Padding = new System.Windows.Forms.Padding(5);
       this._btnFirst.Click += new System.EventHandler(this._btnFirst_Click);
       // 
       // _btnPrev
       // 
-      resources.ApplyResources(this._btnPrev, "_btnPrev");
       this._btnPrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnPrev, "_btnPrev");
       this._btnPrev.Name = "_btnPrev";
       this._btnPrev.Padding = new System.Windows.Forms.Padding(5);
       this._btnPrev.Click += new System.EventHandler(this._btnPrev_Click);
@@ -215,42 +215,43 @@
       // 
       // _lblPageCount
       // 
-      resources.ApplyResources(this._lblPageCount, "_lblPageCount");
       this._lblPageCount.Name = "_lblPageCount";
+      resources.ApplyResources(this._lblPageCount, "_lblPageCount");
       // 
       // _btnNext
       // 
-      resources.ApplyResources(this._btnNext, "_btnNext");
       this._btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnNext, "_btnNext");
       this._btnNext.Name = "_btnNext";
       this._btnNext.Padding = new System.Windows.Forms.Padding(5);
       this._btnNext.Click += new System.EventHandler(this._btnNext_Click);
       // 
       // _btnLast
       // 
-      resources.ApplyResources(this._btnLast, "_btnLast");
       this._btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnLast, "_btnLast");
       this._btnLast.Name = "_btnLast";
       this._btnLast.Padding = new System.Windows.Forms.Padding(5);
       this._btnLast.Click += new System.EventHandler(this._btnLast_Click);
       // 
       // _separator
       // 
-      resources.ApplyResources(this._separator, "_separator");
       this._separator.Name = "_separator";
+      resources.ApplyResources(this._separator, "_separator");
       // 
       // _btnCancel
       // 
-      resources.ApplyResources(this._btnCancel, "_btnCancel");
       this._btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnCancel, "_btnCancel");
       this._btnCancel.Name = "_btnCancel";
       this._btnCancel.Padding = new System.Windows.Forms.Padding(5);
       this._btnCancel.Click += new System.EventHandler(this._btnCancel_Click);
       // 
       // _btnClose
       // 
-      resources.ApplyResources(this._btnClose, "_btnClose");
+      this._btnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this._btnClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this._btnClose, "_btnClose");
       this._btnClose.Name = "_btnClose";
       this._btnClose.Padding = new System.Windows.Forms.Padding(5);
       this._btnClose.Click += new System.EventHandler(this._btnCancel_Click);

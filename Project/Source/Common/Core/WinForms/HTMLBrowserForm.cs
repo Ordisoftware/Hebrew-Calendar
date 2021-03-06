@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -40,9 +40,11 @@ namespace Ordisoftware.Core
     public HTMLBrowserForm(TranslationsDictionary title,
                            string filePathTemplate,
                            string locationPropertyName,
-                           string clientSizePropertyName) : this()
+                           string clientSizePropertyName,
+                           bool menuEnabled = true) : this()
     {
       Title = title;
+      ToolStrip.Visible = menuEnabled;
       FilePathTemplate = filePathTemplate;
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;
@@ -78,12 +80,6 @@ namespace Ordisoftware.Core
       Hide();
     }
 
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      ActiveControl = WebBrowser;
-      Close();
-    }
-
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
       if ( keyData == Keys.Escape)
@@ -92,6 +88,28 @@ namespace Ordisoftware.Core
         return true;
       }
       return base.ProcessCmdKey(ref msg, keyData);
+    }
+
+    private void WebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+    {
+      ActionPrevious.Enabled = WebBrowser.CanGoBack;
+      ActionNext.Enabled = WebBrowser.CanGoForward;
+    }
+
+    private void ActionPrevious_Click(object sender, EventArgs e)
+    {
+      WebBrowser.GoBack();
+    }
+
+    private void ActionNext_Click(object sender, EventArgs e)
+    {
+      WebBrowser.GoForward();
+    }
+
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      ActiveControl = WebBrowser;
+      Close();
     }
 
   }
