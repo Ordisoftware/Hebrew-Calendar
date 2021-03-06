@@ -94,6 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();
         NewMoonsBoardForm.Instance?.Close();
+        NextCelebrationsForm.Instance?.Close();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();
