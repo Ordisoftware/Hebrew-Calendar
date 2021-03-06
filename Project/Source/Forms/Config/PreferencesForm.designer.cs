@@ -61,7 +61,7 @@
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
-      this.LabelChaneLangNotice = new System.Windows.Forms.Label();
+      this.LabelChangeLangNotice = new System.Windows.Forms.Label();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -502,7 +502,7 @@
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
-      this.TabPageApplication.Controls.Add(this.LabelChaneLangNotice);
+      this.TabPageApplication.Controls.Add(this.LabelChangeLangNotice);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
@@ -570,11 +570,11 @@
       resources.ApplyResources(this.LabelDateBookmarksCount, "LabelDateBookmarksCount");
       this.LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
       // 
-      // LabelChaneLangNotice
+      // LabelChangeLangNotice
       // 
-      resources.ApplyResources(this.LabelChaneLangNotice, "LabelChaneLangNotice");
-      this.LabelChaneLangNotice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelChaneLangNotice.Name = "LabelChaneLangNotice";
+      resources.ApplyResources(this.LabelChangeLangNotice, "LabelChangeLangNotice");
+      this.LabelChangeLangNotice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelChangeLangNotice.Name = "LabelChangeLangNotice";
       // 
       // LabelVolume
       // 
@@ -2796,7 +2796,7 @@
     private System.Windows.Forms.Label LabelHebrewWordsPath;
     private System.Windows.Forms.Button ActionSelectHebrewWordsPath;
     private Ordisoftware.Core.TextBoxEx EditHebrewWordsPath;
-    private System.Windows.Forms.Label LabelChaneLangNotice;
+    private System.Windows.Forms.Label LabelChangeLangNotice;
     private System.Windows.Forms.CheckBox EditTrayIconUseSpecialDayIcon;
     private System.Windows.Forms.CheckBox EditUseSimhatTorahOutside;
     private System.Windows.Forms.CheckBox EditWeekParashahIsOnSaturday;

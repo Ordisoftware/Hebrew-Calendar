@@ -178,8 +178,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      HebrewTools.OpenFindHebrewWordsSearch(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
-                                            Program.Settings.HebrewWordsExe);
+      HebrewTools.OpenFindHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
+                                                Program.Settings.HebrewWordsExe);
     }
 
   }
