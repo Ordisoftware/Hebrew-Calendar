@@ -1143,7 +1143,7 @@ namespace CodeProjectCalendar.NET
             int xx = point.X + 5;
             //if ( sz.Width > cellWidth ) xx = point.X;
 
-            if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 4 && index != countEventsPrev )
+            if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 2 && index != countEventsPrev )
             {
               g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), new SolidBrush(v.EventTextColor), xx, yy + offsetY);
               break;
