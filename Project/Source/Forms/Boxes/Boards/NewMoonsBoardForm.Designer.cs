@@ -40,8 +40,8 @@
       this.EditUseAbbreviatedNames = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectValueComboBox();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear1 = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.SelectYear2 = new Ordisoftware.Hebrew.SelectYearsControl();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -251,8 +251,8 @@
     private System.Windows.Forms.Panel PanelOptions;
     private System.Windows.Forms.CheckBox EditUseLongDateFormat;
     private System.Windows.Forms.NumericUpDown EditFontSize;
-    private SelectValueComboBox SelectYear1;
-    private SelectValueComboBox SelectYear2;
+    private Ordisoftware.Hebrew.SelectYearsControl SelectYear1;
+    private Ordisoftware.Hebrew.SelectYearsControl SelectYear2;
     private System.Windows.Forms.Label LabelEnd;
     private System.Windows.Forms.Label LabelStart;
     private System.Windows.Forms.Label LabelFontSize;

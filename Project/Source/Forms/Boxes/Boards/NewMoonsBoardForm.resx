@@ -415,7 +415,7 @@
     <value>SelectYear1</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear1.Parent" xml:space="preserve">
     <value>PanelOptions</value>
@@ -439,7 +439,7 @@
     <value>SelectYear2</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear2.Parent" xml:space="preserve">
     <value>PanelOptions</value>

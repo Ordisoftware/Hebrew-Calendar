@@ -42,6 +42,11 @@ namespace Ordisoftware.Core
     static public readonly string Bullet = "•";
 
     /// <summary>
+    /// Indicate list separator.
+    /// </summary>
+    static public readonly string ListSeparator = "-";
+
+    /// <summary>
     /// Indicate if SSL certificate is preloaded.
     /// </summary>
     static public bool PreLoadSSLCertificate = true;

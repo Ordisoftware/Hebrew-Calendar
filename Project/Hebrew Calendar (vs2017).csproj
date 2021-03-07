@@ -159,6 +159,15 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\WinForms.Controls\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\ComboBoxNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Common\Core\WinForms.Controls\ComboBoxNavigator.designer.cs">
+      <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
@@ -222,11 +231,11 @@
     <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.cs">
+    <Compile Include="Source\Common\Hebrew\WinForms\SelectYearsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.Designer.cs">
-      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
+    <Compile Include="Source\Common\Hebrew\WinForms\SelectYearsControl.designer.cs">
+      <DependentUpon>SelectYearsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Database\DataSet.cs" />
     <Compile Include="Source\Database\DataSet.ReminderTimes.cs" />
@@ -699,6 +708,9 @@
     <Compile Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.Designer.cs">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\ComboBoxNavigator.resx">
+      <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms.Controls\TextBoxEx.fr.resx">
       <DependentUpon>TextBoxEx.cs</DependentUpon>
     </EmbeddedResource>
@@ -723,8 +735,8 @@
     <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\SelectValueComboBox.resx">
-      <DependentUpon>SelectValueComboBox.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\SelectYearsControl.resx">
+      <DependentUpon>SelectYearsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.fr.resx">
       <DependentUpon>NewMoonsBoardForm.cs</DependentUpon>
