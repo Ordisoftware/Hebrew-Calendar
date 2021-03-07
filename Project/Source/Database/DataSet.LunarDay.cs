@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
     private LunisolarDaysRow GetLunarDayMoon(DateTime datetime)
     {
-      int delta = 2;
+      int delta = 7;
       var dateStr = SQLiteDate.ToString(datetime);
       var rowCurrent = LunisolarDays.FindByDate(dateStr);
       int indexRowCurrent = LunisolarDays.Rows.IndexOf(rowCurrent);
