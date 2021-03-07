@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where day.TorahEventsAsEnum != TorahEvent.None
-                    && day.DateAsDateTime.Year == SelectYear.SelectedYear
+                    && day.DateAsDateTime.Year == SelectYear.Value
                  orderby day.Date
                  select day;
       foreach ( var row in rows )

@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ListItems.SelectedItems.Count > 0 )
       {
         int month = int.Parse(ListItems.SelectedItems[0].Text);
-        MainForm.Instance.GoToDate(new DateTime(SelectYear.SelectedYear, month, 1));
+        MainForm.Instance.GoToDate(new DateTime(SelectYear.Value, month, 1));
       }
     }
 

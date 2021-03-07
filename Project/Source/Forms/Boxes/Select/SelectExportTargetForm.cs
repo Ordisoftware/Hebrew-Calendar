@@ -64,8 +64,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         if ( form.SelectInterval.Checked )
         {
-          var year1 = form.SelectYear1.SelectedYear;
-          var year2 = form.SelectYear2.SelectedYear;
+          var year1 = form.SelectYear1.Value;
+          var year2 = form.SelectYear2.Value;
           if ( year2 > year1 )
           {
             interval.Start = new DateTime(year1, 1, 1);
