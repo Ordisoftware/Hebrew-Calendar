@@ -27,10 +27,10 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool CheckShabat(bool showBox)
     {
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteDate.ToString(dateNow);
+      var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
                   where day.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                     && day.DateAsDateTime >= dateNow
+                     && day.DateAsDateTime >= dateToday
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null )
         return false;

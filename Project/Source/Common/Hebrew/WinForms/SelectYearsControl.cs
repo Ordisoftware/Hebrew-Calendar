@@ -49,6 +49,12 @@ namespace Ordisoftware.Hebrew
       set { SelectValue.SelectedItem = value; }
     }
 
+    public int Value
+    {
+      get { return (int)SelectValue.SelectedItem; }
+      set { SelectValue.SelectedItem = value; }
+    }
+
     public SelectYearsControl()
     {
       InitializeComponent();

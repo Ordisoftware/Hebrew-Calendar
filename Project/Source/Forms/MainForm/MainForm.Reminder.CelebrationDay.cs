@@ -15,7 +15,6 @@
 using System;
 using System.Data;
 using System.Linq;
-using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -31,11 +30,11 @@ namespace Ordisoftware.Hebrew.Calendar
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
       var dateNow = DateTime.Now;
-      string strDateNow = SQLiteDate.ToString(dateNow);
+      var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
                      && check(day.TorahEventsAsEnum)
-                     && day.DateAsDateTime >= dateNow.AddDays(-1)
+                     && day.DateAsDateTime >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null ) return false;
       if ( row.DateAsDateTime.Day < dateNow.Day )

@@ -140,8 +140,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Mutex = true;
       try
       {
-        int year1 = (int)SelectYear1.SelectedItem;
-        int year2 = (int)SelectYear2.SelectedItem;
+        int year1 = SelectYear1.Value;
+        int year2 = SelectYear2.Value;
         var control = ( (ComboBox)sender ).Parent;
         if ( control == SelectYear1 && year1 > year2 )
           SelectYear2.SelectedIndex = SelectYear1.SelectedIndex;
@@ -239,8 +239,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadGrid()
     {
-      int year1 = (int)SelectYear1.SelectedItem;
-      int year2 = (int)SelectYear2.SelectedItem;
+      int year1 = SelectYear1.Value;
+      int year2 = SelectYear2.Value;
       MainForm.Instance.DataSet.LoadCelebrations(Board, year1, year2, EditUseRealDays.Checked);
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
