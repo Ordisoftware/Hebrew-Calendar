@@ -1,6 +1,6 @@
-﻿namespace Ordisoftware.Hebrew
+﻿namespace Ordisoftware.Core
 {
-  partial class SelectValueComboBox
+  partial class ComboBoxNavigator
   {
     /// <summary> 
     /// Variable nécessaire au concepteur.
@@ -28,27 +28,17 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.SelectValue = new System.Windows.Forms.ComboBox();
       this.ActionLast = new System.Windows.Forms.Button();
       this.ActionNext = new System.Windows.Forms.Button();
       this.ActionFirst = new System.Windows.Forms.Button();
       this.ActionPrevious = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
-      // SelectValue
-      // 
-      this.SelectValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectValue.FormattingEnabled = true;
-      this.SelectValue.Location = new System.Drawing.Point(0, 0);
-      this.SelectValue.Name = "SelectValue";
-      this.SelectValue.Size = new System.Drawing.Size(55, 21);
-      this.SelectValue.TabIndex = 5;
-      this.SelectValue.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
-      // 
       // ActionLast
       // 
+      this.ActionLast.Enabled = false;
       this.ActionLast.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionLast.Location = new System.Drawing.Point(148, -1);
+      this.ActionLast.Location = new System.Drawing.Point(86, -1);
       this.ActionLast.Name = "ActionLast";
       this.ActionLast.Size = new System.Drawing.Size(28, 23);
       this.ActionLast.TabIndex = 9;
@@ -57,8 +47,9 @@
       // 
       // ActionNext
       // 
+      this.ActionNext.Enabled = false;
       this.ActionNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionNext.Location = new System.Drawing.Point(119, -1);
+      this.ActionNext.Location = new System.Drawing.Point(57, -1);
       this.ActionNext.Name = "ActionNext";
       this.ActionNext.Size = new System.Drawing.Size(28, 23);
       this.ActionNext.TabIndex = 8;
@@ -67,8 +58,9 @@
       // 
       // ActionFirst
       // 
+      this.ActionFirst.Enabled = false;
       this.ActionFirst.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionFirst.Location = new System.Drawing.Point(61, -1);
+      this.ActionFirst.Location = new System.Drawing.Point(-1, -1);
       this.ActionFirst.Name = "ActionFirst";
       this.ActionFirst.Size = new System.Drawing.Size(28, 23);
       this.ActionFirst.TabIndex = 6;
@@ -77,36 +69,37 @@
       // 
       // ActionPrevious
       // 
+      this.ActionPrevious.Enabled = false;
       this.ActionPrevious.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.ActionPrevious.Location = new System.Drawing.Point(90, -1);
+      this.ActionPrevious.Location = new System.Drawing.Point(28, -1);
       this.ActionPrevious.Name = "ActionPrevious";
       this.ActionPrevious.Size = new System.Drawing.Size(28, 23);
       this.ActionPrevious.TabIndex = 7;
       this.ActionPrevious.Text = "<";
       this.ActionPrevious.Click += new System.EventHandler(this.ActionPrevious_Click);
       // 
-      // SelectValueComboBox
+      // ComboBoxNavigator
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.Controls.Add(this.SelectValue);
       this.Controls.Add(this.ActionLast);
       this.Controls.Add(this.ActionNext);
       this.Controls.Add(this.ActionFirst);
       this.Controls.Add(this.ActionPrevious);
-      this.Name = "SelectValueComboBox";
-      this.Size = new System.Drawing.Size(194, 34);
-      this.VisibleChanged += new System.EventHandler(this.SelectYearControl_VisibleChanged);
+      this.Margin = new System.Windows.Forms.Padding(0);
+      this.Name = "ComboBoxNavigator";
+      this.Size = new System.Drawing.Size(117, 25);
+      this.EnabledChanged += new System.EventHandler(this.ComboBoxNavigator_EnabledChanged);
+      this.VisibleChanged += new System.EventHandler(this.ComboBox_VisibleChanged);
       this.ResumeLayout(false);
 
     }
 
     #endregion
-    private System.Windows.Forms.Button ActionLast;
-    private System.Windows.Forms.Button ActionNext;
-    private System.Windows.Forms.Button ActionFirst;
-    private System.Windows.Forms.Button ActionPrevious;
-    public System.Windows.Forms.ComboBox SelectValue;
+    public System.Windows.Forms.Button ActionLast;
+    public System.Windows.Forms.Button ActionNext;
+    public System.Windows.Forms.Button ActionFirst;
+    public System.Windows.Forms.Button ActionPrevious;
   }
 }

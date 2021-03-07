@@ -36,7 +36,7 @@
       this.ListItems = new System.Windows.Forms.ListView();
       this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.SelectYear = new Ordisoftware.Hebrew.SelectValueComboBox();
+      this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -131,6 +131,6 @@
     public System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader columnHeader1;
     private System.Windows.Forms.ColumnHeader columnHeader2;
-    private SelectValueComboBox SelectYear;
+    private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
   }
 }

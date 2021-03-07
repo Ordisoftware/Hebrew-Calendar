@@ -289,7 +289,7 @@
     <value>SelectYear</value>
   </data>
   <data name="&gt;&gt;SelectYear.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.SelectValueComboBox, Ordisoftware.Hebrew.Calendar, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear.Parent" xml:space="preserve">
     <value>$this</value>
