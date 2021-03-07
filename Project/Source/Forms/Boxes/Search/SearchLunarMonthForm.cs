@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-02 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where day.IsNewMoon == 1 && day.DateAsDateTime.Year == (int)SelectYear.SelectedItem
+                 where day.IsNewMoon == 1 && day.DateAsDateTime.Year == SelectYear.Value
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
@@ -88,7 +88,22 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var row = (LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
         MainForm.Instance.GoToDate(row.Date);
+        SelectDay.Items.Clear();
+        var days = MainForm.Instance.DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == SelectYear.Value && day.LunarMonth == row.LunarMonth);
+        SelectDay.Items.AddRange(days.Cast<object>().ToArray());
       }
+    }
+
+    private void SelectDay_Format(object sender, ListControlConvertEventArgs e)
+    {
+      var row = (LunisolarDaysRow)e.ListItem;
+      e.Value = row.LunarDay.ToString();
+    }
+
+    private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      var row = (LunisolarDaysRow)SelectDay.SelectedItem;
+      MainForm.Instance.GoToDate(row.Date);
     }
 
   }
