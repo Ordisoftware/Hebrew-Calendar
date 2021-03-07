@@ -32,6 +32,7 @@
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
       this.PanelMiddle = new System.Windows.Forms.Panel();
+      this.LabelCurrentDayValue = new System.Windows.Forms.LinkLabel();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextValue = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
       this.LabelEventTorahValue = new System.Windows.Forms.Label();
       this.LabelEventTorah = new System.Windows.Forms.Label();
       this.LabelParashah = new System.Windows.Forms.Label();
+      this.LabelCurrentDay = new System.Windows.Forms.Label();
       this.LabelEventSeason = new System.Windows.Forms.Label();
       this.LabelEventSeasonValue = new System.Windows.Forms.Label();
       this.PictureMoon = new System.Windows.Forms.PictureBox();
@@ -79,6 +81,7 @@
       // PanelMiddle
       // 
       this.PanelMiddle.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelMiddle.Controls.Add(this.LabelCurrentDayValue);
       this.PanelMiddle.Controls.Add(this.LabelParashahValue);
       this.PanelMiddle.Controls.Add(this.LabelTorahNextDateValue);
       this.PanelMiddle.Controls.Add(this.LabelTorahNextValue);
@@ -86,6 +89,7 @@
       this.PanelMiddle.Controls.Add(this.LabelEventTorahValue);
       this.PanelMiddle.Controls.Add(this.LabelEventTorah);
       this.PanelMiddle.Controls.Add(this.LabelParashah);
+      this.PanelMiddle.Controls.Add(this.LabelCurrentDay);
       this.PanelMiddle.Controls.Add(this.LabelEventSeason);
       this.PanelMiddle.Controls.Add(this.LabelEventSeasonValue);
       this.PanelMiddle.Controls.Add(this.PictureMoon);
@@ -101,6 +105,15 @@
       this.PanelMiddle.Controls.Add(this.LabelSunrise);
       resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.Name = "PanelMiddle";
+      // 
+      // LabelCurrentDayValue
+      // 
+      this.LabelCurrentDayValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelCurrentDayValue, "LabelCurrentDayValue");
+      this.LabelCurrentDayValue.LinkColor = System.Drawing.Color.Navy;
+      this.LabelCurrentDayValue.Name = "LabelCurrentDayValue";
+      this.LabelCurrentDayValue.TabStop = true;
+      this.LabelCurrentDayValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDay_LinkClicked);
       // 
       // LabelParashahValue
       // 
@@ -118,7 +131,7 @@
       this.LabelTorahNextDateValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";
       this.LabelTorahNextDateValue.TabStop = true;
-      this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelTorahNextDateValue_LinkClicked);
+      this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDay_LinkClicked);
       // 
       // LabelTorahNextValue
       // 
@@ -144,6 +157,11 @@
       // 
       resources.ApplyResources(this.LabelParashah, "LabelParashah");
       this.LabelParashah.Name = "LabelParashah";
+      // 
+      // LabelCurrentDay
+      // 
+      resources.ApplyResources(this.LabelCurrentDay, "LabelCurrentDay");
+      this.LabelCurrentDay.Name = "LabelCurrentDay";
       // 
       // LabelEventSeason
       // 
@@ -308,5 +326,7 @@
     private System.Windows.Forms.LinkLabel LabelTorahNextDateValue;
     private System.Windows.Forms.LinkLabel LabelParashahValue;
     private System.Windows.Forms.Label LabelParashah;
+    private System.Windows.Forms.Label LabelCurrentDay;
+    private System.Windows.Forms.LinkLabel LabelCurrentDayValue;
   }
 }
