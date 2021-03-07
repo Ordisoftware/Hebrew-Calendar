@@ -389,7 +389,7 @@ namespace CodeProjectCalendar.NET
       this._btnToday.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
       this._btnToday.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
       this._btnToday.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
-      this._btnToday.Location = new Point(19, 20);
+      this._btnToday.Location = new Point(19, 10);
       this._btnToday.Name = "_btnToday";
       //this._btnToday.Size = new Size(72, 29);
       this._btnToday.TabIndex = 0;
@@ -408,7 +408,7 @@ namespace CodeProjectCalendar.NET
       this._btnLeft.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
       this._btnLeft.Location = new Point(98, 10);
       this._btnLeft.Name = "_btnLeft";
-      this._btnLeft.Size = new Size(42, 29);
+      //this._btnLeft.Size = new Size(42, 29);
       this._btnLeft.TabIndex = 1;
       this._btnLeft.TextColor = ColorText;
       this._btnLeft.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnLeftButtonClicked);
@@ -425,7 +425,7 @@ namespace CodeProjectCalendar.NET
       this._btnRight.HighlightButtonColor = Color.FromArgb(( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ), ( (int)( ( (byte)( 246 ) ) ) ));
       this._btnRight.Location = new Point(138 + 5, 10);
       this._btnRight.Name = "_btnRight";
-      this._btnRight.Size = new Size(42, 29);
+      //this._btnRight.Size = new Size(42, 29);
       this._btnRight.TabIndex = 2;
       this._btnRight.TextColor = ColorText;
       this._btnRight.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnRightButtonClicked);
@@ -959,7 +959,11 @@ namespace CodeProjectCalendar.NET
       bool first = false;
       bool first2 = false;
 
+      // ORDISOFWTARE MODIF BEGIN
       _btnToday.Location = new Point(MarginSize, MarginSize);
+      _btnLeft.Location = new Point(MarginSize + _btnToday.Width + MarginSize, MarginSize);
+      _btnRight.Location = new Point(MarginSize + _btnToday.Width + _btnLeft.Width + MarginSize + MarginSize/2, MarginSize);
+      // ORDISOFWTARE MODIF END
 
       for ( int y = 0; y < numWeeks; y++ )
       {
