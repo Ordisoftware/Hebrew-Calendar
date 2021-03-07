@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
 
     static public void CloseAll()
     {
-      Instances.ToList().ForEach(f => f.ForceClose());
+      Instances.ToList().ForEach(f => SystemManager.TryCatch(f.ForceClose));
     }
 
     private TranslationsDictionary LocalizedTitle;
@@ -139,7 +139,7 @@ namespace Ordisoftware.Core
 
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
-      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.ToList().Any(f => f.Visible && f.TopMost);
+      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.All().Any(f => f.Visible && f.TopMost);
       if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
       this.Popup();
     }

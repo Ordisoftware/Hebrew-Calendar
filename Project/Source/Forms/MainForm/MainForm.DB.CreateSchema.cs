@@ -22,6 +22,9 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
+    /// <summary>
+    /// Indicate persistent database connection.
+    /// </summary>
     private OdbcConnection LockFileConnection;
 
     /// <summary>
@@ -58,10 +61,10 @@ namespace Ordisoftware.Hebrew.Calendar
                                           LinkedParashahID TEXT DEFAULT '' NOT NULL,
                                           PRIMARY KEY(Date)
                                         )");
-        bool b = Globals.DatabaseUpgraded;
+        bool b = Globals.IsDatabaseUpgraded;
         b = !LockFileConnection.CheckColumn("LunisolarDays", "ParashahID", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("LunisolarDays", "LinkedParashahID", "TEXT", "''", true) || b;
-        Globals.DatabaseUpgraded = b;
+        Globals.IsDatabaseUpgraded = b;
       });
     }
 

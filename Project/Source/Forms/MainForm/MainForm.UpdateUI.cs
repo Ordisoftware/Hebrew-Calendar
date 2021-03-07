@@ -33,17 +33,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private string TitleOmer;
 
     /// <summary>
-    /// Bring to front improved.
-    /// </summary>
-    public new void BringToFront()
-    {
-      var temp = TopMost;
-      TopMost = true;
-      base.BringToFront();
-      TopMost = temp;
-    }
-
-    /// <summary>
     /// Center the form to the screen.
     /// </summary>
     public new void CenterToScreen()
@@ -74,6 +63,27 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         DoScreenPositionMutex = false;
+      }
+    }
+
+    /// <summary>
+    /// Enable double-buffering.
+    /// </summary>
+    protected override CreateParams CreateParams
+    {
+      get
+      {
+        var cp = base.CreateParams;
+        if ( Settings.WindowsDoubleBufferingEnabled )
+          switch ( Settings.CurrentView )
+          {
+            case ViewMode.Text:
+            case ViewMode.Month:
+              cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
+              //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
+              break;
+          }
+        return cp;
       }
     }
 

@@ -77,7 +77,6 @@ namespace Ordisoftware.Core
     /// </summary>
     static SystemManager()
     {
-
       if ( Globals.PreLoadSSLCertificate)
         LoadSSLCertificate(); 
     }

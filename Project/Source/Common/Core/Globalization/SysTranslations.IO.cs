@@ -82,8 +82,15 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary WrongSSLCertificate
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Wrong SSL certificate for {{0}}:{Globals.NL2}Required:{Globals.NL2}{{1}}{Globals.NL2}Found:{Globals.NL2}{{2}}",
-        [Language.FR] = $"Mauvais certificat SSL pour  {{0}} :{Globals.NL2}Requis :{Globals.NL2}{{1}}{Globals.NL2}Trouvé :{Globals.NL2}{{2}}"
+        [Language.EN] = $"Wrong SSL certificate for {{0}}:{Globals.NL2}" + 
+                        $"Required:{Globals.NL2}{{1}}{Globals.NL2}" + 
+                        $"Found:{Globals.NL2}{{2}}{Globals.NL2}" + 
+                        $"Either there is a problem or it has been updated.",
+
+        [Language.FR] = $"Mauvais certificat SSL pour  {{0}} :{Globals.NL2}" +
+                        $"Requis :{Globals.NL2}{{1}}{Globals.NL2}" +
+                        $"Trouvé :{Globals.NL2}{{2}}{Globals.NL2}" +
+                        $"Soit il y a un problème soit il a été mis à jour."
       };
 
     static public readonly TranslationsDictionary ExpiredSSLCertificate

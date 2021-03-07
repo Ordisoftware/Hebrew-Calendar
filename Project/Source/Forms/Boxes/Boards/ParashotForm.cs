@@ -170,10 +170,18 @@ namespace Ordisoftware.Hebrew
     private void ParashotForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( !ActionSave.Enabled ) return;
-      DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
-                                      ActionSave.PerformClick,
-                                      ParashotTable.LoadDefaults,
-                                      () => e.Cancel = true);
+      if ( Globals.IsExiting )
+      {
+        this.Popup();
+        DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(Text),
+                                  ActionSave.PerformClick,
+                                  ParashotTable.LoadDefaults);
+      }
+      else
+        DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
+                                          ActionSave.PerformClick,
+                                          ParashotTable.LoadDefaults,
+                                          () => e.Cancel = true);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)

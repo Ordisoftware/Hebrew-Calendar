@@ -36,8 +36,14 @@ namespace Ordisoftware.Core
     static public readonly string NL3 = NL2 + NL;
     static public readonly string NL4 = NL3 + NL;
 
+    /// <summary>
+    /// Indicate bullet.
+    /// </summary>
     static public readonly string Bullet = "•";
 
+    /// <summary>
+    /// Indicate if SSL certificate is preloaded.
+    /// </summary>
     static public bool PreLoadSSLCertificate = true;
 
     /// <summary>
@@ -45,18 +51,17 @@ namespace Ordisoftware.Core
     /// </summary>
     static public bool ForceStartupHide;
 
-    static public bool SettingsUpgraded;
-
-    static public bool DatabaseUpgraded;
-
+    /// <summary>
+    /// Indicate StopWatches.
+    /// </summary>
     static public Stopwatch ChronoLoadApp = new Stopwatch();
-
     static public Stopwatch ChronoLoadData = new Stopwatch();
-
     static public Stopwatch ChronoCreateData = new Stopwatch();
-
     static public Stopwatch ChronoShowData = new Stopwatch();
 
+    /// <summary>
+    /// Indicate keyboard shortcuts notice form.
+    /// </summary>
     static public ShowTextForm NoticeKeyboardShortcutsForm;
 
     /// <summary>
@@ -129,11 +134,17 @@ namespace Ordisoftware.Core
     }
     static private Form _MainForm;
 
+    /// <summary>
+    /// Indicate brint to front application system hot key.
+    /// </summary>
     static public readonly SystemHotKey BringToFrontApplicationHotKey
       = new SystemHotKey();
 
-    // https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
-    static private void PurgeIconsFR()
+    /// <summary>
+    /// Purge images from localized resource form code files.
+    /// https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
+    /// </summary>
+    static private void PurgeResourceImages()
     {
       try
       {
@@ -166,10 +177,13 @@ namespace Ordisoftware.Core
         Environment.Exit(0);
     }
 
+    /// <summary>
+    /// Static constructor.
+    /// </summary>
     static Globals()
     {
       #if DEBUG
-      if ( !IsVisualStudioDesigner ) PurgeIconsFR();
+      if ( !IsVisualStudioDesigner ) PurgeResourceImages();
       #endif
     }
 
