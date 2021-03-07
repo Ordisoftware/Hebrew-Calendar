@@ -29,12 +29,12 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where SQLiteDate.ToDateTime(day.Date).DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                     && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow)
+                  where day.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
+                     && day.DateAsDateTime >= dateNow
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null )
         return false;
-      var dateRow = SQLiteDate.ToDateTime(row.Date);
+      var dateRow = row.DateAsDateTime;
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Settings.RemindShabatEveryMinutes;

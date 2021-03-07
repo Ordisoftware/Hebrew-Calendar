@@ -58,13 +58,13 @@ namespace Ordisoftware.Hebrew.Calendar
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where day.TorahEventsAsEnum != TorahEvent.None
-                    && SQLiteDate.ToDateTime(day.Date).Year == (int)SelectYear.SelectedItem
+                    && day.DateAsDateTime.Year == (int)SelectYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
       {
         var item = ListItems.Items.Add(AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
-        string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
+        string str = row.DateAsDateTime.ToLongDateString();
         item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
         item.Tag = row;
         if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )

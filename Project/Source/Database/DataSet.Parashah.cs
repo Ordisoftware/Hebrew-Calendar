@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         for ( int index = indexStart; index < indexEnd; index++ )
         {
           var row = (LunisolarDaysRow)tableLunisolarDays.Rows[index];
-          if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == shabatDay )
+          if ( row.DateAsDateTime.DayOfWeek == shabatDay )
           {
             result = row;
             break;

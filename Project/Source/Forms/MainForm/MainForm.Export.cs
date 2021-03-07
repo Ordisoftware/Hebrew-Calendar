@@ -30,9 +30,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DateTime check(int year, int delta)
       {
-        var query = DataSet.LunisolarDays.Where(day => SQLiteDate.ToDateTime(day.Date).Year == year
+        var query = DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == year
                                                     && day.TorahEventsAsEnum == TorahEvent.NewYearD1);
-        return SQLiteDate.ToDateTime(query.FirstOrDefault()?.Date).AddDays(delta);
+        return query.FirstOrDefault()?.DateAsDateTime.AddDays(delta) ?? DateTime.MinValue;
       }
       var interval = new ExportInterval();
       var available = ViewMode.None;

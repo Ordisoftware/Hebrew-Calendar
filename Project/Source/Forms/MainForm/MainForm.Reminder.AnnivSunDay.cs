@@ -34,11 +34,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var row = ( from day in DataSet.LunisolarDays
-                  where SQLiteDate.ToDateTime(day.Date) == dateBirth
+                  where day.DateAsDateTime == dateBirth
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null )
         return;
-      var dateRow = SQLiteDate.ToDateTime(row.Date);
+      var dateRow = row.DateAsDateTime;
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Settings.RemindShabatEveryMinutes;

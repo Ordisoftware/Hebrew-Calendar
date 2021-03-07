@@ -44,14 +44,14 @@ namespace Ordisoftware.Hebrew.Calendar
         result.AppendLine(headerTxt);
         if ( DataSet.LunisolarDays.Count == 0 ) return null;
         var items = GetDayRows(interval);
-        var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        var lastyear = DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().DateAsDateTime.Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         items.Count(),
                                         Program.LoadingFormLoadDB);
         foreach ( LunisolarDaysRow day in items )
         {
           LoadingForm.Instance.DoProgress();
-          var dayDate = SQLiteDate.ToDateTime(day.Date);
+          var dayDate = day.DateAsDateTime;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           result.Append(day.Date + CSVSeparator);

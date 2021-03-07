@@ -36,8 +36,8 @@ namespace Ordisoftware.Hebrew.Calendar
       var rows = from day in DataSet.LunisolarDays
                  where !RemindCelebrationDates.Contains(day.Date)
                     && check(day.TorahEventsAsEnum)
-                    && SQLiteDate.ToDateTime(day.Date) >= dateNow
-                    && SQLiteDate.ToDateTime(day.Date) <= dateLimit
+                    && day.DateAsDateTime >= dateNow
+                    && day.DateAsDateTime <= dateLimit
                  select day;
       foreach ( LunisolarDaysRow row in rows )
       {

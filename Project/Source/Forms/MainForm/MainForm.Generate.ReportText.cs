@@ -71,14 +71,14 @@ namespace Ordisoftware.Hebrew.Calendar
         content.Append(headerSep + Globals.NL);
         content.Append(headerTxt + Globals.NL);
         if ( DataSet.LunisolarDays.Count <= 0 ) return string.Empty;
-        var lastyear = SQLiteDate.ToDateTime(DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().Date).Year;
+        var lastyear = DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().DateAsDateTime.Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         DataSet.LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
         foreach ( LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
           try
           {
-            var dayDate = SQLiteDate.ToDateTime(day.Date);
+            var dayDate = day.DateAsDateTime;
             LoadingForm.Instance.DoProgress();
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
@@ -116,9 +116,9 @@ namespace Ordisoftware.Hebrew.Calendar
             textDate += dayDate.Month.ToString("00") + ".";
             textDate += dayDate.Year;
             string strDesc = string.Empty;
-            string s1 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
-            string s2 = AppTranslations.TorahEvent.GetLang(day.TorahEventsAsEnum);
-            if ( string.IsNullOrEmpty(s2) ) s2 = day.GetWeekLongCelebrationIntermediateDay();
+            string s1 = AppTranslations.TorahEvent.GetLang(day.TorahEventsAsEnum);
+            string s2 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
+            if ( string.IsNullOrEmpty(s1) ) s1 = day.GetWeekLongCelebrationIntermediateDay();
             strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;
