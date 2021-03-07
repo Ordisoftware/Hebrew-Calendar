@@ -29,14 +29,24 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
+    /// Indicate the process start date and time.
+    /// </summary>
+    static public readonly DateTime StartDateTime = DateTime.Now;
+
+    /// <summary>
     /// Indicate the application settings.
     /// </summary>
     static public ApplicationSettingsBase Settings { get; set; }
 
     /// <summary>
-    /// Indicate the process start date and time.
+    /// Indicate if database has been upgraded.
     /// </summary>
-    static public readonly DateTime StartDateTime = DateTime.Now;
+    static public bool IsSettingsUpgraded { get; set; }
+
+    /// <summary>
+    /// Indicate if database has been upgraded.
+    /// </summary>
+    static public bool IsDatabaseUpgraded { get; set; }
 
     /// <summary>
     /// Indicate if the application is in loading data stage.

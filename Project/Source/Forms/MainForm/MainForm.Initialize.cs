@@ -20,8 +20,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Ordisoftware.Core;
-using Modifiers = Base.Hotkeys.Modifiers;
+using EnumsNET;
 using CalenderNet = CodeProjectCalendar.NET.Calendar;
+using Modifiers = Base.Hotkeys.Modifiers;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -37,32 +38,39 @@ namespace Ordisoftware.Hebrew.Calendar
     public const Modifiers DefaultHotKeyModifiers = Modifiers.Shift | Modifiers.Control | Modifiers.Alt;
     public const Keys DefaultHotKeyKey = Keys.C;
 
-    public void ReminderBoxDesktopLocation()
+    /// <summary>
+    /// Do constructor
+    /// </summary>
+    private void DoConstructor()
     {
-      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+      Globals.ChronoLoadApp.Start();
+      InitializeComponent();
+      SoundItem.Initialize();
+      SystemEvents.SessionEnding += SessionEnding;
+      SystemEvents.PowerModeChanged += PowerModeChanged;
+      SystemManager.TryCatch(() =>
       {
-        var anchor = DisplayManager.GetTaskbarAnchorStyle();
-        switch ( anchor )
-        {
-          case AnchorStyles.Top:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
-            break;
-          case AnchorStyles.Left:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
-            break;
-          case AnchorStyles.Bottom:
-          case AnchorStyles.Right:
-          default:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
-            break;
-        }
+        Icon = new Icon(Globals.ApplicationIconFilePath);
+        TrayIconPause = new Icon(Globals.ApplicationPauseIconFilePath).GetBySize(16, 16);
+        TrayIconEvent = new Icon(Globals.ApplicationEventIconFilePath).GetBySize(16, 16);
+        TrayIconDefault = Icon.GetBySize(16, 16);
+        TrayIcon.Icon = TrayIconDefault;
+      });
+      MenuTray.Enabled = false;
+      Globals.AllowClose = false;
+      foreach ( var value in Enums.GetValues<TorahEvent>() )
+        LastCelebrationReminded.Add(value, null);
+      if ( !Globals.IsDevExecutable ) // TODO remove when ready
+      {
+        ActionViewLunarMonths.Visible = false;
+        ActionViewLunarMonths.Tag = int.MinValue;
       }
     }
 
     /// <summary>
     /// Do Form Load event.
     /// </summary>
-    private void DoMainForm_Load(object sender, EventArgs e)
+    private void DoFormLoad(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
@@ -102,9 +110,34 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Set reminder boxes location.
+    /// </summary>
+    public void ReminderBoxDesktopLocation()
+    {
+      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+      {
+        var anchor = DisplayManager.GetTaskbarAnchorStyle();
+        switch ( anchor )
+        {
+          case AnchorStyles.Top:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
+            break;
+          case AnchorStyles.Left:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
+            break;
+          case AnchorStyles.Bottom:
+          case AnchorStyles.Right:
+          default:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
+            break;
+        }
+      }
+    }
+
+    /// <summary>
     /// Do Form Shown event.
     /// </summary>
-    private void DoMainForm_Shown(object sender, EventArgs e)
+    private void DoFormShown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
         EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
@@ -115,7 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateButtons();
         GoToDate(DateTime.Today);
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
-        CheckRegenerateCalendar(force: doforce || Globals.DatabaseUpgraded);
+        CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         SystemManager.TryCatch(Settings.Save);
@@ -152,7 +185,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void ProcessNewsAndCommandLine()
     {
-      if ( Globals.SettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+      if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
         SystemManager.TryCatch(() =>
         {
           var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
@@ -183,7 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
       Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
-      Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKey_KeyPressed;
+      Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKeyPressed;
       SystemManager.TryCatch(() =>
       {
         if ( !noactive ) Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
@@ -193,12 +226,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Execute Global HotKey.
     /// </summary>
-    private void BrintToFrontApplicationHotKey_KeyPressed()
+    private void BrintToFrontApplicationHotKeyPressed()
     {
       this.SyncUI(() =>
       {
         MenuShowHide_Click(null, null);
-        var forms = Application.OpenForms.ToList().Where(f => f.Visible);
+        var forms = Application.OpenForms.All().Where(f => f.Visible);
         forms.ToList().ForEach(f => f.ForceBringToFront());
         var form = forms.LastOrDefault();
         if ( form != null && form.Visible )
@@ -207,38 +240,82 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do Session Ending event.
+    ///  Do Form Closing event.
     /// </summary>
-    public void DoSessionEnding(object sender, SessionEndingEventArgs e)
+    private void DoFormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( Globals.IsSessionEnding ) return;
+      if ( !Globals.IsReady ) return;
+      if ( Globals.IsExiting ) return;
+      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
+      {
+        Globals.IsExiting = true;
+        return;
+      }
+      if ( !Globals.AllowClose )
+      {
+        e.Cancel = true;
+        MenuShowHide.PerformClick();
+        return;
+      }
+    }
+
+    /// <summary>
+    /// Do Form Closed event.
+    /// </summary>
+    private void DoFormClosed(object sender, FormClosedEventArgs e)
+    {
       DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
+      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
       try
       {
         Globals.IsExiting = true;
         Globals.IsSessionEnding = true;
         Globals.AllowClose = true;
-        LockSessionForm.Instance.Timer.Stop();
+        ProcessLocksTable.Unlock();
+        Settings.Store();
         TimerTooltip.Stop();
         TimerBallon.Stop();
         TimerTrayMouseMove.Stop();
-        TimerResumeReminder.Stop();
         TimerMidnight.Stop();
         TimerReminder.Stop();
-        MessageBoxEx.CloseAll();
+        TimerResumeReminder.Stop();
+        LockSessionForm.Instance?.Timer.Stop();
         SystemManager.TryCatch(() => ClearLists());
-        SystemManager.TryCatch(() =>
-        {
-          foreach ( Form form in Application.OpenForms )
-            if ( form != this && form.Visible )
-              SystemManager.TryCatch(() => form.Close());
-        });
+        FormsHelper.CloseAll();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
+    }
+
+    /// <summary>
+    /// Do Session Ending event.
+    /// </summary>
+    public void SessionEnding(object sender, SessionEndingEventArgs e)
+    {
+      if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
+      DebugManager.Enter();
+      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
+      try
+      {
         Close();
       }
       finally
       {
         DebugManager.Leave();
+      }
+    }
+
+    /// <summary>
+    /// Power mode changed event handler.
+    /// </summary>
+    private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+    {
+      if ( e.Mode == PowerModes.Resume )
+      {
+        System.Threading.Thread.Sleep(5000);
+        DoTimerMidnight();
       }
     }
 

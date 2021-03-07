@@ -100,7 +100,7 @@ namespace Ordisoftware.Core
                         "Vous pouvez également vérifier cela manuellement."
       };
 
-    static public readonly TranslationsDictionary AskToCheckDataAfterDatabaseUpgraded
+    static public readonly TranslationsDictionary AskToCheckDataAfterDbUpgraded
       = new TranslationsDictionary
       {
         [Language.EN] = "Database upgraded." + Globals.NL2 +

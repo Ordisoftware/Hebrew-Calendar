@@ -750,8 +750,8 @@
       this.ActionSaveToFile.Name = "ActionSaveToFile";
       this.ActionSaveToFile.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSaveToFile.Click += new System.EventHandler(this.ActionSave_Click);
-      this.ActionSaveToFile.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSaveToFile.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSaveToFile.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSaveToFile.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionCopyToClipboard
       // 
@@ -760,8 +760,8 @@
       this.ActionCopyToClipboard.Name = "ActionCopyToClipboard";
       this.ActionCopyToClipboard.Padding = new System.Windows.Forms.Padding(5);
       this.ActionCopyToClipboard.Click += new System.EventHandler(this.ActionCopyToClipboard_Click);
-      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionCopyToClipboard.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionCopyToClipboard.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionPrint
       // 
@@ -770,8 +770,8 @@
       this.ActionPrint.Name = "ActionPrint";
       this.ActionPrint.Padding = new System.Windows.Forms.Padding(5);
       this.ActionPrint.Click += new System.EventHandler(this.ActionPrint_Click);
-      this.ActionPrint.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionPrint.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionPrint.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionPrint.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // Sep2
       // 
@@ -785,8 +785,8 @@
       this.ActionSearchEvent.Name = "ActionSearchEvent";
       this.ActionSearchEvent.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSearchEvent.Click += new System.EventHandler(this.ActionSearchEvent_Click);
-      this.ActionSearchEvent.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSearchEvent.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSearchEvent.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSearchEvent.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionSearchMonth
       // 
@@ -795,8 +795,8 @@
       this.ActionSearchMonth.Name = "ActionSearchMonth";
       this.ActionSearchMonth.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSearchMonth.Click += new System.EventHandler(this.ActionSearchMonth_Click);
-      this.ActionSearchMonth.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSearchMonth.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSearchMonth.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSearchMonth.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionSearchGregorianMonth
       // 
@@ -805,8 +805,8 @@
       this.ActionSearchGregorianMonth.Name = "ActionSearchGregorianMonth";
       this.ActionSearchGregorianMonth.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSearchGregorianMonth.Click += new System.EventHandler(this.ActionSearchGregorianMonth_Click);
-      this.ActionSearchGregorianMonth.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSearchGregorianMonth.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSearchGregorianMonth.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSearchGregorianMonth.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionSearchDay
       // 
@@ -815,8 +815,8 @@
       this.ActionSearchDay.Name = "ActionSearchDay";
       this.ActionSearchDay.Padding = new System.Windows.Forms.Padding(5);
       this.ActionSearchDay.Click += new System.EventHandler(this.ActionSearchDay_Click);
-      this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator12
       // 
@@ -830,8 +830,8 @@
       this.ActionNavigate.Name = "ActionNavigate";
       this.ActionNavigate.Padding = new System.Windows.Forms.Padding(5);
       this.ActionNavigate.Click += new System.EventHandler(this.ActionNavigate_Click);
-      this.ActionNavigate.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionNavigate.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionNavigate.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionNavigate.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionViewCelebrations
       // 
@@ -840,8 +840,8 @@
       this.ActionViewCelebrations.Name = "ActionViewCelebrations";
       this.ActionViewCelebrations.Padding = new System.Windows.Forms.Padding(5);
       this.ActionViewCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
-      this.ActionViewCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionViewCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionViewCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // Sep3
       // 
@@ -856,8 +856,8 @@
       this.ActionExit.Name = "ActionExit";
       this.ActionExit.Padding = new System.Windows.Forms.Padding(5);
       this.ActionExit.Click += new System.EventHandler(this.ActionExit_Click);
-      this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionExit.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionExit.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       this.ActionExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ActionExit_MouseUp);
       // 
       // ActionInformation
@@ -874,8 +874,8 @@
       this.ActionResetReminder.Name = "ActionResetReminder";
       this.ActionResetReminder.Padding = new System.Windows.Forms.Padding(5);
       this.ActionResetReminder.Click += new System.EventHandler(this.MenuRefreshReminder_Click);
-      this.ActionResetReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionResetReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionResetReminder.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionResetReminder.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionDisableReminder
       // 
@@ -884,8 +884,8 @@
       this.ActionDisableReminder.Name = "ActionDisableReminder";
       this.ActionDisableReminder.Padding = new System.Windows.Forms.Padding(5);
       this.ActionDisableReminder.Click += new System.EventHandler(this.MenuDisableReminder_Click);
-      this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionDisableReminder.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionDisableReminder.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionEnableReminder
       // 
@@ -894,8 +894,8 @@
       this.ActionEnableReminder.Name = "ActionEnableReminder";
       this.ActionEnableReminder.Padding = new System.Windows.Forms.Padding(5);
       this.ActionEnableReminder.Click += new System.EventHandler(this.MenuEnableReminder_Click);
-      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // toolStripSeparator4
       // 
@@ -1059,8 +1059,8 @@
       this.ActionPreferences.Name = "ActionPreferences";
       this.ActionPreferences.Padding = new System.Windows.Forms.Padding(5);
       this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
-      this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTipOnMouseEnter);
-      this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTipOnMouseLeave);
+      this.ActionPreferences.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionPreferences.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionSettings
       // 

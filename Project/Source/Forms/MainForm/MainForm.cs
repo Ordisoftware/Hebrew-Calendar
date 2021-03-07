@@ -17,8 +17,6 @@ using System.Linq;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using Microsoft.Win32;
-using EnumsNET;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
@@ -31,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
   {
+
+    #region Static members
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -45,54 +45,16 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new MainForm();
     }
 
-    /// <summary>
-    /// Enable double-buffering.
-    /// </summary>
-    protected override CreateParams CreateParams
-    {
-      get
-      {
-        var cp = base.CreateParams;
-        if ( Settings.WindowsDoubleBufferingEnabled )
-          switch ( Settings.CurrentView )
-          {
-            case ViewMode.Text:
-            case ViewMode.Month:
-              cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
-              //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
-              break;
-          }
-        return cp;
-      }
-    }
+    #endregion
+
+    #region Form management
 
     /// <summary>
     /// Default constructor.
     /// </summary>
     private MainForm()
     {
-      Globals.ChronoLoadApp.Start();
-      InitializeComponent();
-      SoundItem.Initialize();
-      SystemEvents.SessionEnding += SessionEnding;
-      SystemEvents.PowerModeChanged += PowerModeChanged;
-      SystemManager.TryCatch(() =>
-      {
-        Icon = new Icon(Globals.ApplicationIconFilePath);
-        TrayIconPause = new Icon(Globals.ApplicationPauseIconFilePath).GetBySize(16, 16);
-        TrayIconEvent = new Icon(Globals.ApplicationEventIconFilePath).GetBySize(16, 16);
-        TrayIconDefault = Icon.GetBySize(16, 16);
-        TrayIcon.Icon = TrayIconDefault;
-      });
-      MenuTray.Enabled = false;
-      Globals.AllowClose = false;
-      foreach ( var value in Enums.GetValues<TorahEvent>() )
-        LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable ) // TODO remove when ready
-      {
-        ActionViewLunarMonths.Visible = false;
-        ActionViewLunarMonths.Tag = int.MinValue;
-      }
+      DoConstructor();
     }
 
     /// <summary>
@@ -102,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MainForm_Load(object sender, EventArgs e)
     {
-      DoMainForm_Load(sender, e);
+      DoFormLoad(sender, e);
     }
 
     /// <summary>
@@ -112,66 +74,27 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MainForm_Shown(object sender, EventArgs e)
     {
-      DoMainForm_Shown(sender, e);
+      DoFormShown(sender, e);
     }
 
     /// <summary>
     /// Event handler. Called by MainForm for form closing events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
+    /// <param name="e">Event information.</param>
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing ) return;
-      if ( !Globals.IsReady ) return;
-      if ( Globals.IsExiting ) return;
-      if ( Globals.AllowClose ) return;
-      e.Cancel = true;
-      MenuShowHide.PerformClick();
+      DoFormClosing(sender, e);
     }
 
     /// <summary>
     /// Event handler. Called by MainForm for form closed events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Form closing event information.</param>
+    /// <param name="e">Event information.</param>
     private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-      try
-      {
-        Settings.Store();
-        ProcessLocksTable.Unlock();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
-    }
-
-    /// <summary>
-    /// Session ending event handler.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    public void SessionEnding(object sender, SessionEndingEventArgs e)
-    {
-      DoSessionEnding(sender, e);
-    }
-
-    /// <summary>
-    /// Power mode changed event handler.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Session ending event information.</param>
-    private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
-    {
-      if ( e.Mode == PowerModes.Resume )
-      {
-        System.Threading.Thread.Sleep(5000);
-        DoTimerMidnight();
-      }
+      DoFormClosed(sender, e);
     }
 
     /// <summary>
@@ -188,65 +111,9 @@ namespace Ordisoftware.Hebrew.Calendar
       EditScreenNone.PerformClick();
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionViewReport for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewReport_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Text);
-    }
+    #endregion
 
-    /// <summary>
-    /// Event handler. Called by ActionViewMonth for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewMonth_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Month);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionViewGrid for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionViewGrid_Click(object sender, EventArgs e)
-    {
-      SetView(ViewMode.Grid);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionSave for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionSave_Click(object sender, EventArgs e)
-    {
-      ExportSave();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionCopyToClipboard for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
-    {
-      ExportToClipboard();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionPrint for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPrint_Click(object sender, EventArgs e)
-    {
-      ExportPrint();
-    }
+    #region Tray Icon
 
     /// <summary>
     /// Event handler. Called by MenuExit for click events.
@@ -255,104 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void MenuExit_Click(object sender, EventArgs e)
     {
-      if ( Globals.IsGenerating )
-      {
-        DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
-        return;
-      }
-      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
-        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
-          return;
-      Globals.AllowClose = true;
-      Close();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionAbout for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    public void ActionAbout_Click(object sender, EventArgs e)
-    {
-      if ( AboutBox.Instance.Visible )
-        AboutBox.Instance.BringToFront();
-      else
-        AboutBox.Instance.ShowDialog();
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionWebCheckUpdate for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
-    {
-      if ( IsSpecialDay ) return;
-      bool menuEnabled = MenuTray.Enabled;
-      try
-      {
-        MenuTray.Enabled = false;
-        var lastdone = Settings.CheckUpdateLastDone;
-        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                       ref lastdone,
-                                       Settings.CheckUpdateAtStartupDaysInterval,
-                                       e == null);
-        Settings.CheckUpdateLastDone = lastdone;
-        if ( exit )
-        {
-          Globals.AllowClose = true;
-          Close();
-        }
-      }
-      finally
-      {
-        MenuTray.Enabled = menuEnabled;
-      }
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionPreferences for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionPreferences_Click(object sender, EventArgs e)
-    {
-      string dateOld = CurrentDay?.Date;
-      bool formEnabled = Globals.MainForm.Enabled;
-      try
-      {
-        Enabled = false;
-        ActionPreferences.Visible = false;
-        ActionPreferences.Visible = true;
-        TimerReminder.Enabled = false;
-        MenuTray.Enabled = false;
-        ClearLists();
-        if ( PreferencesForm.Run() )
-        {
-          CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
-          CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
-          UpdateCalendarMonth(false);
-          ActionGenerate_Click(null, EventArgs.Empty);
-        }
-        TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
-        InitializeSpecialMenus();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        Enabled = formEnabled;
-        MenuTray.Enabled = true;
-        if ( dateOld == null)
-          GoToDate(DateTime.Now.Date);
-        else
-          GoToDate(dateOld);
-        UpdateTitles(true);
-        EnableReminderTimer();
-      }
+      DoMenuExit_Click(sender, e);
     }
 
     /// <summary>
@@ -441,6 +211,10 @@ namespace Ordisoftware.Hebrew.Calendar
           ActionNavigate_Click(null, null);
     }
 
+    #endregion
+
+    #region Menu tooltips
+
     /// <summary>
     /// Event handler. Called by TimerTooltip for tick events.
     /// </summary>
@@ -450,16 +224,18 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !EditShowTips.Checked ) return;
       var item = (ToolStripItem)LastToolTip.Tag;
-      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionSaveToFile.Height + 5);
+      var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
       LastToolTip.Tag = sender;
       LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
       TimerTooltip.Enabled = false;
     }
 
     /// <summary>
-    /// Show tooltip on mouse enter event.
+    /// Event handler. Called by ShowToolTip for on mouse enter events.
     /// </summary>
-    private void ShowToolTipOnMouseEnter(object sender, EventArgs e)
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ShowToolTip_OnMouseEnter(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
       if ( !( sender is ToolStripItem ) ) return;
@@ -470,14 +246,121 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Hide tooltip on mouse leave event.
+    /// Event handler. Called by ShowToolTip for on mouse leave events.
     /// </summary>
-    private void ShowToolTipOnMouseLeave(object sender, EventArgs e)
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ShowToolTip_OnMouseLeave(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
       TimerTooltip.Enabled = false;
       LastToolTip.Tag = null;
       LastToolTip.Hide(ToolStrip);
+    }
+
+    #endregion
+
+    #region Menu system
+
+    /// <summary>
+    /// Event handler. Called by ActionExit for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionExit_Click(object sender, EventArgs e)
+    {
+      MenuShowHide.PerformClick();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionExit for mouse up events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionExit_MouseUp(object sender, MouseEventArgs e)
+    {
+      if ( e.Button == MouseButtons.Right )
+        MenuExit_Click(MenuExit, null);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPreferences for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      string dateOld = CurrentDay?.Date;
+      bool formEnabled = Globals.MainForm.Enabled;
+      try
+      {
+        Enabled = false;
+        ActionPreferences.Visible = false;
+        ActionPreferences.Visible = true;
+        TimerReminder.Enabled = false;
+        MenuTray.Enabled = false;
+        ClearLists();
+        if ( PreferencesForm.Run() )
+        {
+          CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
+          CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
+          UpdateCalendarMonth(false);
+          ActionGenerate_Click(null, EventArgs.Empty);
+        }
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
+        InitializeSpecialMenus();
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+      finally
+      {
+        Enabled = formEnabled;
+        MenuTray.Enabled = true;
+        if ( dateOld == null )
+          GoToDate(DateTime.Now.Date);
+        else
+          GoToDate(dateOld);
+        UpdateTitles(true);
+        EnableReminderTimer();
+      }
+    }
+
+    #endregion
+
+    #region Menu settings
+
+    /// <summary>
+    /// Event handler. Called by ActionResetWinSettings for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionResetWinSettings_Click(object sender, EventArgs e)
+    {
+      if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
+        Settings.RestoreMainForm();
+    }
+
+    /// <summary>
+    /// Event handler. Called by EditScreenPosition for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    public void EditScreenPosition_Click(object sender, EventArgs e)
+    {
+      DoScreenPosition(sender, e);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionShowKeyboardNotice for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
+    {
+      Globals.NoticeKeyboardShortcutsForm.Popup();
     }
 
     /// <summary>
@@ -517,17 +400,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionResetWinSettings for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionResetWinSettings_Click(object sender, EventArgs e)
-    {
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToRestoreWindowPosition.GetLang()) )
-        Settings.RestoreMainForm();
-    }
-
-    /// <summary>
     /// Event handler. Called by ActionSelectReminderBoxSound for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -537,36 +409,76 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectSoundForm.Run();
     }
 
+    #endregion
+
+    #region Menu information
+
     /// <summary>
-    /// Event handler. Called by EditScreenPosition for click events.
+    /// Event handler. Called by ActionAbout for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    public void EditScreenPosition_Click(object sender, EventArgs e)
+    public void ActionAbout_Click(object sender, EventArgs e)
     {
-      DoScreenPosition(sender, e);
+      if ( AboutBox.Instance.Visible )
+        AboutBox.Instance.BringToFront();
+      else
+        AboutBox.Instance.ShowDialog();
     }
 
     /// <summary>
-    /// Event handler. Called by ActionExit for click events.
+    /// Event handler. Called by ActionWebCheckUpdate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionExit_Click(object sender, EventArgs e)
+    public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
     {
-      MenuShowHide.PerformClick();
+      if ( IsSpecialDay ) return;
+      bool menuEnabled = MenuTray.Enabled;
+      try
+      {
+        MenuTray.Enabled = false;
+        var lastdone = Settings.CheckUpdateLastDone;
+        bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
+                                       ref lastdone,
+                                       Settings.CheckUpdateAtStartupDaysInterval,
+                                       e == null);
+        Settings.CheckUpdateLastDone = lastdone;
+        if ( exit )
+        {
+          Globals.AllowClose = true;
+          Close();
+        }
+      }
+      finally
+      {
+        MenuTray.Enabled = menuEnabled;
+      }
     }
 
     /// <summary>
-    /// Event handler. Called by ActionExit for mouse up events.
+    /// Event handler. Called by ActionViewLog for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionExit_MouseUp(object sender, MouseEventArgs e)
+    public void ActionViewLog_Click(object sender, EventArgs e)
     {
-      if ( e.Button == MouseButtons.Right )
-        MenuExit_Click(MenuExit, null);
+      DebugManager.TraceForm.Popup();
     }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewStats for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    public void ActionViewStats_Click(object sender, EventArgs e)
+    {
+      StatisticsForm.Run();
+    }
+
+    #endregion
+
+    #region Menu tools
 
     /// <summary>
     /// Show a notice.
@@ -616,16 +528,6 @@ namespace Ordisoftware.Hebrew.Calendar
                  AppTranslations.NoticeParashahTitle,
                  AppTranslations.NoticeParashah,
                  MessageBoxEx.DefaultMediumWidth);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionShowKeyboardNotice for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionShowKeyboardNotice_Click(object sender, EventArgs e)
-    {
-      Globals.NoticeKeyboardShortcutsForm.Popup();
     }
 
     /// <summary>
@@ -699,6 +601,26 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionLocalWeather for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionLocalWeather_Click(object sender, EventArgs e)
+    {
+      SystemManager.RunShell(Settings.WeatherAppPath);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionOnlineWeather for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOnlineWeather_Click(object sender, EventArgs e)
+    {
+      OpenOlineWeather();
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionGenerate for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -731,24 +653,68 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.VacuumLastDone = ActionVacuumAtNextStartup.Checked ? DateTime.MinValue : LastVacuum.Value;
     }
 
+    #endregion
+
+    #region Menu application
+
     /// <summary>
-    /// Event handler. Called by ActionViewStats for click events.
+    /// Event handler. Called by ActionViewReport for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    public void ActionViewStats_Click(object sender, EventArgs e)
+    private void ActionViewReport_Click(object sender, EventArgs e)
     {
-      StatisticsForm.Run();
+      SetView(ViewMode.Text);
     }
 
     /// <summary>
-    /// Event handler. Called by ActionViewLog for click events.
+    /// Event handler. Called by ActionViewMonth for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    public void ActionViewLog_Click(object sender, EventArgs e)
+    private void ActionViewMonth_Click(object sender, EventArgs e)
     {
-      DebugManager.TraceForm.Popup();
+      SetView(ViewMode.Month);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionViewGrid for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewGrid_Click(object sender, EventArgs e)
+    {
+      SetView(ViewMode.Grid);
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionSave for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionSave_Click(object sender, EventArgs e)
+    {
+      ExportSave();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionCopyToClipboard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionCopyToClipboard_Click(object sender, EventArgs e)
+    {
+      ExportToClipboard();
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionPrint for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionPrint_Click(object sender, EventArgs e)
+    {
+      ExportPrint();
     }
 
     /// <summary>
@@ -763,16 +729,6 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !SelectDayForm.Run(null, ref date, false, true, true) )
           return;
       GoToDate(date);
-    }
-
-    /// <summary>
-    /// Event handler. Called by LabelGridGoToToday for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void LabelGridGoToToday_Click(object sender, EventArgs e)
-    {
-      GoToDate(DateTime.Today);
     }
 
     /// <summary>
@@ -875,6 +831,10 @@ namespace Ordisoftware.Hebrew.Calendar
       DisableReminderTimer();
     }
 
+    #endregion
+
+    #region View text report
+
     /// <summary>
     /// Event handler. Called by CalendarText for key down events.
     /// </summary>
@@ -895,6 +855,20 @@ namespace Ordisoftware.Hebrew.Calendar
                                           Globals.ClipboardSoundFilePath);
         e.Handled = true;
       }
+    }
+
+    #endregion
+
+    #region View data grid
+
+    /// <summary>
+    /// Event handler. Called by LabelGridGoToToday for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void LabelGridGoToToday_Click(object sender, EventArgs e)
+    {
+      GoToDate(DateTime.Today);
     }
 
     /// <summary>
@@ -959,6 +933,10 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
+    #endregion
+
+    #region Timers
+
     /// <summary>
     /// Event handler. Called by TimerReminder for tick events.
     /// </summary>
@@ -1001,25 +979,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DoTimerMidnight();
     }
 
-    /// <summary>
-    /// Event handler. Called by ActionLocalWeather for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionLocalWeather_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Settings.WeatherAppPath);
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionOnlineWeather for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOnlineWeather_Click(object sender, EventArgs e)
-    {
-      OpenOlineWeather();
-    }
+    #endregion
 
   }
 

@@ -47,32 +47,48 @@ namespace Ordisoftware.Core
       });
     }
 
-    static public IEnumerable<Form> ToList(this FormCollection forms)
+    /// <summary>
+    /// Get active form else last opened else main form.
+    /// </summary>
+    static public Form GetActiveForm()
     {
-      foreach ( Form form in forms )
-        yield return form;
-    }
-
-    static public IEnumerable<T> GetAllControls<T>(this Control control)
-    {
-      var controls = control.Controls.OfType<T>();
-      return control.Controls.Cast<Control>()
-                             .SelectMany(c => c.GetAllControls<T>())
-                             .Concat(controls);
+      return Form.ActiveForm ?? Application.OpenForms.All().LastOrDefault() ?? Globals.MainForm;
     }
 
     /// <summary>
-    /// Center a form to screen.
+    /// Get a list of open forms.
     /// </summary>
-    /// <param name="form">The form.</param>
-    static public void CenterToScreen(this Form form)
+    static public void CloseAll(Func<Form, bool> keep = null)
     {
-      SetLocation(form, ControlLocation.Center);
+      var list = keep == null 
+                 ? Application.OpenForms.All(form => form.Visible).Reverse().ToList()
+                 : Application.OpenForms.All(form => form.Visible && !keep(form)).Reverse().ToList();
+      foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
     }
 
-    static public Form GetActiveForm()
+    /// <summary>
+    /// Get all apened forms.
+    /// </summary>
+    static public IEnumerable<Form> All(this FormCollection forms, Func<Form, bool> select = null)
     {
-      return Form.ActiveForm ?? Application.OpenForms.ToList().LastOrDefault() ?? Globals.MainForm;
+      if ( select == null )
+        foreach ( Form form in forms )
+          yield return form;
+      else
+        foreach ( Form form in forms )
+          if ( select(form) )
+            yield return form;
+    }
+
+    /// <summary>
+    /// Get all controls of a control.
+    /// </summary>
+    static public IEnumerable<T> AllControls<T>(this Control control)
+    {
+      var controls = control.Controls.OfType<T>();
+      return control.Controls.Cast<Control>()
+                             .SelectMany(c => c.AllControls<T>())
+                             .Concat(controls);
     }
 
     /// <summary>
@@ -109,6 +125,15 @@ namespace Ordisoftware.Core
         default:
           throw new NotImplementedExceptionEx(location);
       }
+    }
+
+    /// <summary>
+    /// Center a form to screen.
+    /// </summary>
+    /// <param name="form">The form.</param>
+    static public void CenterToScreen(this Form form)
+    {
+      SetLocation(form, ControlLocation.Center);
     }
 
     /// <summary>
@@ -224,6 +249,9 @@ namespace Ordisoftware.Core
       form.Activate();
     }
 
+    /// <summary>
+    /// Force bring to front.
+    /// </summary>
     static public void ForceBringToFront(this Form form)
     {
       var temp = form.TopMost;
@@ -253,21 +281,33 @@ namespace Ordisoftware.Core
       destination.DropDownItems.AddRange(items.ToArray());
     }
 
+    /// <summary>
+    /// Get an icon from an image.
+    /// </summary>
     static public Icon GetIcon(this Image image)
     {
       return Icon.FromHandle(new Bitmap(image).GetHicon());
     }
 
+    /// <summary>
+    /// Get an icon from a ToolStripItem image.
+    /// </summary>
     static public Icon GetIcon(this ToolStripItem item)
     {
       return Icon.FromHandle(new Bitmap(item.Image).GetHicon());
     }
 
+    /// <summary>
+    /// Get an icon from an icon by size.
+    /// </summary>
     static public Icon GetBySize(this Icon icon, int width, int height)
     {
       return icon.GetBySize(new Size(width, height));
     }
 
+    /// <summary>
+    /// Get an icon from an icon by size.
+    /// </summary>
     static public Icon GetBySize(this Icon icon, Size size)
     {
       using ( var stream = new MemoryStream() )
@@ -395,6 +435,25 @@ namespace Ordisoftware.Core
       }
     }
 
+  }
+
+  /// <summary>
+  /// Custom ToolStrip renderer
+  /// https://stackoverflow.com/questions/2097164/how-to-change-system-windows-forms-toolstripbutton-highlight-background-color-wh#2097341
+  /// </summary>
+  public class CheckedButtonsToolStripRenderer : ToolStripProfessionalRenderer
+  {
+    protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
+    {
+      var button = e.Item as ToolStripButton;
+      if ( button != null && button.Checked )
+      {
+        var bounds = new Rectangle(0, 0, e.Item.Width - 1, e.Item.Height - 1);
+        e.Graphics.FillRectangle(SystemBrushes.ControlLight, bounds);
+        e.Graphics.DrawRectangle(SystemPens.ControlDark, bounds);
+      }
+      else base.OnRenderButtonBackground(e);
+    }
   }
 
 }

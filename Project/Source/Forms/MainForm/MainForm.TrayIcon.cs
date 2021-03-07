@@ -119,6 +119,20 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
+    private void DoMenuExit_Click(object sender, EventArgs e)
+    {
+      if ( Globals.IsGenerating )
+      {
+        DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
+        return;
+      }
+      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
+          return;
+      Globals.AllowClose = true;
+      Close();
+    }
+
   }
 
 }

@@ -90,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         IsSpecialDay = false;
         TrayIcon.Icon = TrayIconDefault;
-        Application.OpenForms.ToList().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
+        Application.OpenForms.All().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();
         NewMoonsBoardForm.Instance?.Close();

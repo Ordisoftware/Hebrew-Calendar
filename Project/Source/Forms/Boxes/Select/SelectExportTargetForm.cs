@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      var control = this.GetAllControls<CheckBox>().OrderByDescending(c => c.Width).FirstOrDefault();
+      var control = this.AllControls<CheckBox>().OrderByDescending(c => c.Width).FirstOrDefault();
       if ( control != null )
       {
         int width = control.Left * 3 + control.Width + GroupBoxView.Left * 2;
