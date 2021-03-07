@@ -24,6 +24,12 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
+      public DateTime DateAsDateTime => SQLiteDate.ToDateTime(Date);
+      public DateTime? MoonsetAsDateTime => ConvertTime(Moonset);
+      public DateTime? MoonriseAsDateTime => ConvertTime(Moonrise);
+      public DateTime? SunsetAsDateTime => ConvertTime(Sunset);
+      public DateTime? SunriseAsDateTime => ConvertTime(Sunrise);
+
       private DateTime? ConvertTime(string time)
       {
         if ( time.IsNullOrEmpty() ) return null;
@@ -31,11 +37,6 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         var parts = time.Split(':');
         return date.AddHours(int.Parse(parts[0])).AddMinutes(int.Parse(parts[1]));
       }
-
-      public DateTime? MoonsetAsDateTime => ConvertTime(Moonset);
-      public DateTime? MoonriseAsDateTime => ConvertTime(Moonrise);
-      public DateTime? SunsetAsDateTime => ConvertTime(Sunset);
-      public DateTime? SunriseAsDateTime => ConvertTime(Sunrise);
 
     }
 

@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       internal ReminderTimes GetReminderTimes(decimal delta3)
       {
         var times = new ReminderTimes();
-        var dateRow = SQLiteDate.ToDateTime(Date);
+        var dateRow = DateAsDateTime;
         var rowPrevious = tableLunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
         var rowNext = tableLunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(+1)));
         if ( rowPrevious == null || rowNext == null )

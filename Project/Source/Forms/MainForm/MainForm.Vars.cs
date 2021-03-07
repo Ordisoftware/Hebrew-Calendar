@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public LunisolarDaysRow CurrentDay { get; private set; }
 
     public int CurrentDayYear
-      => SQLiteDate.ToDateTime(CurrentDay?.Date ?? null).Year;
+      => CurrentDay?.DateAsDateTime.Year ?? 0;
 
     private Dictionary<TorahEvent, bool> TorahEventRemindList
       = new Dictionary<TorahEvent, bool>();
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();
         NewMoonsBoardForm.Instance?.Close();
-        NextCelebrationsForm.Instance?.Close();
+        NextCelebrationsForm.Instance?.Hide();
         TorahEventRemindList.Clear();
         TorahEventRemindDayList.Clear();
         RemindCelebrationDates.Clear();

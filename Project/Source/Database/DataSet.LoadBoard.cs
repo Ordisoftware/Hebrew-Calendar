@@ -28,8 +28,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       table.Rows.Clear();
       var query = from day in LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
-                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
-                     && SQLiteDate.ToDateTime(day.Date).Year <= year2
+                     && day.DateAsDateTime.Year >= year1
+                     && day.DateAsDateTime.Year <= year2
                   select new
                   {
                     date = day.GetEventStartDateTime(useRealDay, false),
@@ -56,8 +56,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       table.Rows.Clear();
       var query = from day in LunisolarDays
                   where day.LunarDay == 1
-                     && SQLiteDate.ToDateTime(day.Date).Year >= year1
-                     && SQLiteDate.ToDateTime(day.Date).Year <= year2 + 1
+                     && day.DateAsDateTime.Year >= year1
+                     && day.DateAsDateTime.Year <= year2 + 1
                   select new
                   {
                     date = day.GetEventStartDateTime(useRealDay, true),
@@ -125,14 +125,14 @@ namespace Ordisoftware.Hebrew.Calendar.Data
             if ( index < 0 )
               throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
             day = (LunisolarDaysRow)day.Table.Rows[index];
-            return SQLiteDate.ToDateTime(day.Date)
-                             .AddHours(int.Parse(day.Sunset.Substring(0, 2)))
-                             .AddMinutes(int.Parse(day.Sunset.Substring(3, 2)));
+            return day.DateAsDateTime
+                      .AddHours(int.Parse(day.Sunset.Substring(0, 2)))
+                      .AddMinutes(int.Parse(day.Sunset.Substring(3, 2)));
           }
           else
-            return SQLiteDate.ToDateTime(day.Date)
-                             .AddHours(int.Parse(day.Sunrise.Substring(0, 2)))
-                             .AddMinutes(int.Parse(day.Sunrise.Substring(3, 2)));
+            return day.DateAsDateTime
+                      .AddHours(int.Parse(day.Sunrise.Substring(0, 2)))
+                      .AddMinutes(int.Parse(day.Sunrise.Substring(3, 2)));
         }
         else
         if ( useRealDay )
@@ -144,14 +144,14 @@ namespace Ordisoftware.Hebrew.Calendar.Data
               throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
             day = (LunisolarDaysRow)day.Table.Rows[index];
           }
-          return SQLiteDate.ToDateTime(day.Date)
-                           .AddHours(int.Parse(day.Moonset.Substring(0, 2)))
-                           .AddMinutes(int.Parse(day.Moonset.Substring(3, 2)));
+          return day.DateAsDateTime
+                    .AddHours(int.Parse(day.Moonset.Substring(0, 2)))
+                    .AddMinutes(int.Parse(day.Moonset.Substring(3, 2)));
         }
         else
-          return SQLiteDate.ToDateTime(day.Date)
-                           .AddHours(int.Parse(day.Moonrise.Substring(0, 2)))
-                           .AddMinutes(int.Parse(day.Moonrise.Substring(3, 2)));
+          return day.DateAsDateTime
+                    .AddHours(int.Parse(day.Moonrise.Substring(0, 2)))
+                    .AddMinutes(int.Parse(day.Moonrise.Substring(3, 2)));
       }
 
     }

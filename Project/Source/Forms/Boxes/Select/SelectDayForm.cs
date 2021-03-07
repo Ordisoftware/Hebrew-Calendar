@@ -45,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !title.IsNullOrEmpty() )
           form.Text = title;
         else
-          form.MonthCalendar.SelectionStart = SQLiteDate.ToDateTime(form.CurrentDay.Date);
+          form.MonthCalendar.SelectionStart = form.CurrentDay.DateAsDateTime;
         form.IsGotoRealtime = isGotoRealtime;
         form.TopMost = topmost;
         bool result = form.ShowDialog() == DialogResult.OK;

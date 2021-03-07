@@ -54,8 +54,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void InitializeYearsInterval()
     {
-      DateFirst = SQLiteDate.ToDateTime(DataSet.LunisolarDays.FirstOrDefault()?.Date ?? string.Empty);
-      DateLast = SQLiteDate.ToDateTime(DataSet.LunisolarDays.LastOrDefault()?.Date ?? string.Empty);
+      DateFirst = DataSet.LunisolarDays.FirstOrDefault()?.DateAsDateTime ?? default;
+      DateLast = DataSet.LunisolarDays.LastOrDefault()?.DateAsDateTime ?? default;
       if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
       {
         YearFirst = DateTime.Now.Year - 1;
@@ -98,7 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                 || ev == TorahEvent.SoukotD8
                                 || ev == TorahEvent.Chavouot1;
             var result = IsCelebrationWeekStart || IsCelebrationWeekEnd;
-            var date = SQLiteDate.ToDateTime(row.Date);
+            var date = row.DateAsDateTime;
             // Colors
             Color? color1 = null;
             Color? color2 = null;
@@ -115,7 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             if ( IsCelebrationWeekStart || ev != TorahEvent.None )
               color2 = Settings.EventColorTorah;
-            if ( SQLiteDate.ToDateTime(row.Date).DayOfWeek == (DayOfWeek)Settings.ShabatDay )
+            if ( row.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
               color3 = Settings.EventColorShabat;
             if ( color1 != null && color2 != null && color3 != null )
               color1 = MixColor(color1.Value, color2.Value, color3.Value);

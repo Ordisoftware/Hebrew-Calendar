@@ -269,7 +269,7 @@ namespace Ordisoftware.Hebrew.Calendar
           try
           {
             LoadingForm.Instance.DoProgress();
-            date = SQLiteDate.ToDateTime(day.Date);
+            date = day.DateAsDateTime;
             if ( day.IsNewMoon == 1 )
               if ( !AnalyzeDay(day, date, ref month) ) break;
             day.LunarMonth = month;
@@ -378,12 +378,12 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         bool check(LunisolarDaysRow row)
         {
-          var dateRow = SQLiteDate.ToDateTime(row.Date);
+          var dateRow = row.DateAsDateTime;
           return dateRow.Year == dayDate.Year 
-                              && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
+              && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
-        var dateEquinox = SQLiteDate.ToDateTime(equinoxe.Date);
+        var dateEquinox = equinoxe.DateAsDateTime;
         int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
         bool newEquinoxe = ( dayDate.Month == dateEquinox.Month && dayDate.Day >= deltaNewLambDay )
                         || ( dayDate.Month == dateEquinox.Month + 1 );

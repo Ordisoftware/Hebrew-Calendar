@@ -37,10 +37,10 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
       var row = ( from day in DataSet.LunisolarDays
                    where !RemindCelebrationDates.Contains(day.Date)
-                      && SQLiteDate.ToDateTime(day.Date) >= dateNow
+                      && day.DateAsDateTime >= dateNow
                       && day.LunarMonth == MoonMonthBirth
                       && day.LunarDay == MoonDayBirth
-                      && SQLiteDate.ToDateTime(day.Date) <= dateLimit
+                      && day.DateAsDateTime <= dateLimit
                   select day ).FirstOrDefault();
       if ( row == null ) return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);

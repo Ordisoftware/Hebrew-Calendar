@@ -57,8 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ListItems.Items.Clear();
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where day.IsNewMoon == 1
-                    && SQLiteDate.ToDateTime(day.Date).Year == (int)SelectYear.SelectedItem
+                 where day.IsNewMoon == 1 && day.DateAsDateTime.Year == (int)SelectYear.SelectedItem
                  orderby day.Date
                  select day;
       foreach ( var row in rows )
@@ -66,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           var item = ListItems.Items.Add(row.LunarMonth.ToString());
           item.SubItems.Add(HebrewMonths.Transliterations[row.LunarMonth]);
-          string str = SQLiteDate.ToDateTime(row.Date).ToLongDateString();
+          string str = row.DateAsDateTime.ToLongDateString();
           item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
           item.Tag = row;
           if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )

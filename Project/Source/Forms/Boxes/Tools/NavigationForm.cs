@@ -63,22 +63,25 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = "-";
           var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where SQLiteDate.ToDateTime(day.Date) > value && day.TorahEvents > 0
+                          where day.DateAsDateTime > value && day.TorahEvents > 0
                           select day ).FirstOrDefault();
           if ( rowNext != null )
           {
-            var date = SQLiteDate.ToDateTime(rowNext.Date);
+            var date = rowNext.DateAsDateTime;
             LabelTorahNextValue.Text = AppTranslations.TorahEvent.GetLang(rowNext.TorahEventsAsEnum);
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
-            LabelTorahNext.Tag = date;
+            LabelTorahNextDateValue.Tag = date;
           }
           else
           {
             LabelTorahNextValue.Text = "-";
             LabelTorahNextDateValue.Text = string.Empty;
-            LabelTorahNext.Tag = null;
+            LabelTorahNextDateValue.Tag = null;
           }
-          LabelParashahValue.Text = "";
+          var today = MainForm.Instance.DataSet.GetLunarToday();
+          LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
+          LabelCurrentDayValue.Tag = today.DateAsDateTime;
+          LabelParashahValue.Text = "-";
           LabelParashahValue.Tag = null;
           bool isPessah = false;
           if ( row.LunarMonth == TorahCelebrations.PessahMonth )
@@ -212,10 +215,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.GoToDate(_Date.AddDays(1));
     }
 
-    private void LabelTorahNextDateValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    private void LabelDay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelTorahNext.Tag != null )
-        MainForm.Instance.GoToDate((DateTime)LabelTorahNext.Tag);
+      var label = sender as LinkLabel;
+      if ( label != null && label.Tag != null )
+        MainForm.Instance.GoToDate((DateTime)label.Tag);
     }
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

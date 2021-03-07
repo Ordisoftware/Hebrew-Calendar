@@ -35,10 +35,10 @@ namespace Ordisoftware.Hebrew.Calendar
       var row = ( from day in DataSet.LunisolarDays
                   where day.TorahEventsAsEnum != TorahEvent.None
                      && check(day.TorahEventsAsEnum)
-                     && SQLiteDate.ToDateTime(day.Date) >= SQLiteDate.ToDateTime(strDateNow).AddDays(-1)
+                     && day.DateAsDateTime >= dateNow.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null ) return false;
-      if ( SQLiteDate.ToDateTime(row.Date).Day < dateNow.Day )
+      if ( row.DateAsDateTime.Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
           return false;
       var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
