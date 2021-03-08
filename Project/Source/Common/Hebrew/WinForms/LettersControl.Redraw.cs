@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew
         int deltaValue2 = 2;
         int deltaValue5 = 5;
         int deltaBetweenLines = 15;
-        int posX = width + deltaX;
+        int posX = width + deltaX + deltaValue2;
         int posY = deltaValue5;
         var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
         var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);

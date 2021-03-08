@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm : Form
   {
 
-    #region Static members
+    #region Singleton
 
     /// <summary>
     /// Indicate the singleton instance.
@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Form management
+    #region Form Management
 
     /// <summary>
     /// Default constructor.
@@ -216,7 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu tooltips
+    #region Top Menu Tooltips
 
     /// <summary>
     /// Event handler. Called by TimerTooltip for tick events.
@@ -263,7 +263,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu system
+    #region Menu System
 
     /// <summary>
     /// Event handler. Called by ActionExit for click events.
@@ -333,7 +333,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu settings
+    #region Menu Settings
 
     /// <summary>
     /// Event handler. Called by ActionResetWinSettings for click events.
@@ -414,7 +414,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu information
+    #region Menu Information
 
     /// <summary>
     /// Event handler. Called by ActionAbout for click events.
@@ -481,7 +481,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu tools
+    #region Menu Tools
 
     /// <summary>
     /// Show a notice.
@@ -658,7 +658,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Menu application
+    #region Menu Application
 
     /// <summary>
     /// Event handler. Called by ActionViewReport for click events.
@@ -836,7 +836,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region View text report
+    #region View Text Report
 
     /// <summary>
     /// Event handler. Called by CalendarText for key down events.
@@ -862,7 +862,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region View data grid
+    #region View Data Grid
 
     /// <summary>
     /// Event handler. Called by LabelGridGoToToday for click events.
