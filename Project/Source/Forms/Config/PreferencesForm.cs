@@ -31,6 +31,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class PreferencesForm : Form
   {
 
+    #region Variables
+
     private bool IsReady;
     private bool InitialHotKeyEnabled;
 
@@ -43,6 +45,10 @@ namespace Ordisoftware.Hebrew.Calendar
     public bool OldSaturdayParashot { get; private set; }
     public bool OldShowParashah { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
+
+    #endregion
+
+    #region Form Management
 
     /// <summary>
     /// Default constructor.
@@ -96,7 +102,9 @@ namespace Ordisoftware.Hebrew.Calendar
       IsReady = true;
     }
 
-    // Export and import
+    #endregion 
+
+    #region Export and import
 
     private void ActionExportSettings_Click(object sender, EventArgs e)
     {
@@ -113,7 +121,9 @@ namespace Ordisoftware.Hebrew.Calendar
       DoResetSettings();
     }
 
-    // Help and info
+    #endregion
+
+    #region Help and Info
 
     private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
     {
@@ -145,7 +155,9 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.ShowInformation(AppTranslations.NoticeMoonDayTextFormat.GetLang());
     }
 
-    // Language
+    #endregion 
+
+    #region Language
 
     private void ActionSelectLangEN_Click(object sender, EventArgs e)
     {
@@ -181,7 +193,9 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    // Application
+    #endregion 
+
+    #region Application
 
     private void EditDebuggerEnabled_CheckedChanged(object sender, EventArgs e)
     {
@@ -231,7 +245,9 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
     }
 
-    // Startup
+    #endregion 
+
+    #region Startup
 
     private void EditStartWithWindows_CheckedChanged(object sender, EventArgs e)
     {
@@ -249,7 +265,9 @@ namespace Ordisoftware.Hebrew.Calendar
       EditVacuumAtStartupInterval.Enabled = EditVacuumAtStartup.Checked;
     }
 
-    // Navigation window colors
+    #endregion 
+
+    #region Navigation Window Colors
 
     private void DoChangePanelColorNavigation(Panel panelSetting, Panel panelForm)
     {
@@ -301,7 +319,9 @@ namespace Ordisoftware.Hebrew.Calendar
       DoNavigationUseColors(Color.LemonChiffon, Color.AliceBlue, Color.Honeydew);
     }
 
-    // Generate
+    #endregion
+
+    #region Generate
 
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
@@ -339,7 +359,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.InitializeCurrentTimeZone();
     }
 
-    // Reminder
+    #endregion
+
+    #region Reminder
 
     private void SelectReminderBoxDesktopLocation_Format(object sender, ListControlConvertEventArgs e)
     {
@@ -357,7 +379,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectSoundForm.Run();
     }
 
-    // Shabat
+    #endregion
+
+    #region Shabat
 
     private void EditRemindShabat_Changed(object sender, EventArgs e)
     {
@@ -381,7 +405,9 @@ namespace Ordisoftware.Hebrew.Calendar
           EditShabatDay.SelectedItem = day;
     }
 
-    // Celebrations
+    #endregion
+
+    #region Celebrations
 
     private void EditRemindCelebrations_Changed(object sender, EventArgs e)
     {
@@ -433,7 +459,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectRemindEventsDay.SetItemChecked(0, false);
     }
 
-    // Text report
+    #endregion
+
+    #region Text Report
 
     private void EditTextReportFontName_Changed(object sender, EventArgs e)
     {
@@ -459,7 +487,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
     }
 
-    // Month view
+    #endregion
+
+    #region Month View
 
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
@@ -522,7 +552,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SaveTheme();
     }
 
-    // Export Save/Copy/Print
+    #endregion
+
+    #region Export Save, Copy and Print
 
     private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
     {
@@ -558,7 +590,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ExportImagePreferredTarget = ( (KVPImageExportTarget)EditImageExportFileFormat.SelectedItem ).Key;
     }
 
-    // Paths
+    #endregion
+
+    #region Paths
 
     private void ActionSelectExportFolder_Click(object sender, EventArgs e)
     {
@@ -654,7 +688,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.ActionOnlineWeather.PerformClick();
     }
 
-    // Tray Icon and Global HotKey
+    #endregion
+
+    #region Tray Icon and Global HotKey
 
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
     {
@@ -729,6 +765,8 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.SeparatorMenuWeather.Visible = enabled;
       PanelWeatherOnline.Enabled = enabled;
     }
+
+    #endregion
 
   }
 

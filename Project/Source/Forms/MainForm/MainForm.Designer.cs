@@ -142,6 +142,7 @@
       this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorMenuWeather = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionVacuumAtNextStartup = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -923,6 +924,7 @@
             this.ActionOnlineWeather,
             this.SeparatorMenuWeather,
             this.ActionOpenExportFolder,
+            this.toolStripSeparator10,
             this.ActionGenerate,
             this.ActionVacuumAtNextStartup});
       resources.ApplyResources(this.ActionTools, "ActionTools");
@@ -1030,6 +1032,11 @@
       resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
       this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
       this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionGenerate
       // 
@@ -1502,6 +1509,7 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
+    public System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
   }
 }
 
