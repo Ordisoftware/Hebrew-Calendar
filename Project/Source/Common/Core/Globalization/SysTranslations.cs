@@ -192,6 +192,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Incertain"
       };
 
+    static public readonly TranslationsDictionary BadValue
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Wrong value",
+        [Language.FR] = "Valeur incorrecte"
+      };
+
     static public readonly TranslationsDictionary NullSlot
       = new TranslationsDictionary
       {
