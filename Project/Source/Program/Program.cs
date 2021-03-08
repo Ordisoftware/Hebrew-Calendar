@@ -91,6 +91,8 @@ namespace Ordisoftware.Hebrew.Calendar
               MainForm.Instance.MenuShowHide.PerformClick();
             }
           });
+        if ( command == nameof(ApplicationCommandLine.Instance.OpenNavigation) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionNavigate.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionCalculateDateDiff.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard) )
@@ -120,6 +122,8 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
       if ( ApplicationCommandLine.Instance.ShowMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
+      if ( ApplicationCommandLine.Instance.OpenNavigation )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNavigation));
       if ( ApplicationCommandLine.Instance.OpenDiffDates )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
       if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
