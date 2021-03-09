@@ -161,9 +161,13 @@ When disabled, top menu painting may cause latency.
 
   `Ordisoftware.Hebrew.Calendar.exe --hide`
 
-- Regenerate the calendar data:
+- Generate the calendar:
  
   `Ordisoftware.Hebrew.Calendar.exe --generate`
+
+- Show the navigation window:
+ 
+  `Ordisoftware.Hebrew.Calendar.exe --navigation`
 
 - Show the dates difference calculator:
  
