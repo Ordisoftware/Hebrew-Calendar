@@ -386,7 +386,7 @@ namespace Ordisoftware.Core
             string tmpLine = line + ( Words[x] + (char)32 );
             if ( TextRenderer.MeasureText(tmpLine, font).Width > width )
             {
-              // TODO hack to solve freezing bug when word has no space 
+              // TODO improve this hack solving freezing when word has no space
               if ( checkoverflow++ > 50 )
               {
                 DebugManager.Trace(LogTraceEvent.Error, $"Stack Overflow in {nameof(JustifyParagraph)}:{Globals.NL2}{text}");
