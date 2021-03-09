@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private bool CheckShabat(bool showBox)
+    private void CheckShabat()
     {
       var dateNow = DateTime.Now;
       var dateToday = DateTime.Today;
@@ -32,8 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   where day.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                      && day.DateAsDateTime >= dateToday
                   select day ).FirstOrDefault() as LunisolarDaysRow;
-      if ( row == null )
-        return false;
+      if ( row == null ) return;
       var dateRow = row.DateAsDateTime;
       var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
@@ -42,20 +41,19 @@ namespace Ordisoftware.Hebrew.Calendar
         times.Set(dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
       else
         times.Set(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
-      bool result = dateNow >= times.DateStart.Value && dateNow <= times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )
           ShabatForm.Close();
-        return result;
+        return;
       }
       else
       if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
       {
         if ( LastShabatReminded.HasValue )
-          return result;
+          return;
         else
           LastShabatReminded = dateNow;
       }
@@ -70,14 +68,13 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Settings.RemindShabatEveryMinutes) )
-          return result;
+          return;
         else
           LastShabatReminded = dateNow;
       }
       else
         LastShabatReminded = dateNow;
-      if ( showBox ) ReminderForm.Run(row, TorahEvent.Shabat, times);
-      return result;
+      ReminderForm.Run(row, TorahEvent.Shabat, times);
     }
 
   }

@@ -29,21 +29,37 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
-      IsSpecialDay = false;
+      SystemManager.TryCatch(() =>
+      {
+        var today = DataSet.GetLunarToday();
+        IsSpecialDay = today.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
+                    || ( today.TorahEventsAsEnum == TorahEvent.PessahD1
+                      && today.TorahEventsAsEnum == TorahEvent.PessahD7
+                      && today.TorahEventsAsEnum != TorahEvent.SoukotD1
+                      && today.TorahEventsAsEnum != TorahEvent.SoukotD8
+                      && today.TorahEventsAsEnum != TorahEvent.YomHaKipourim
+                      && today.TorahEventsAsEnum != TorahEvent.YomTerouah );
+        CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
+        if ( Settings.TrayIconUseSpecialDayIcon )
+          TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
+      });
       try
       {
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
-          //if ( Settings.ReminderAnniversarySunEnabled )
-          /*{
+          if ( Settings.ReminderShabatEnabled ) CheckShabat();
+          if ( Settings.ReminderCelebrationsEnabled )
+          {
+            CheckCelebrationDay();
+            CheckCelebrations();
+          }
+          /*if ( Settings.ReminderAnniversarySunEnabled )
+          {
             CheckAnniversarySunDay();
             CheckAnniversaryMoonDay();
             CheckAnniversarySun();
             CheckAnniversaryMoon();
           }*/
-          IsSpecialDay = CheckShabat(Settings.ReminderShabatEnabled) || IsSpecialDay;
-          IsSpecialDay = CheckCelebrationDay(Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
-          if ( Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
         }
       }
       catch ( Exception ex )
@@ -55,12 +71,6 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-        SystemManager.TryCatch(() =>
-        {
-          if ( Settings.TrayIconUseSpecialDayIcon )
-            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
-        });
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )

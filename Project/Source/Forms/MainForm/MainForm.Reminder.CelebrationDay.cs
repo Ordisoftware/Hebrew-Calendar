@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private bool CheckCelebrationDay(bool onlyCheck)
+    private void CheckCelebrationDay()
     {
       bool check(TorahEvent item)
       {
@@ -36,13 +36,12 @@ namespace Ordisoftware.Hebrew.Calendar
                      && check(day.TorahEventsAsEnum)
                      && day.DateAsDateTime >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;
-      if ( row == null ) return false;
+      if ( row == null ) return;
       if ( row.DateAsDateTime.Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
-          return false;
+          return;
       var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) return false;
-      bool result = dateNow >= times.DateStart.Value && dateNow <= times.DateEnd.Value;
+      if ( times == null ) return;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       var torahevent = row.TorahEventsAsEnum;
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
@@ -50,13 +49,13 @@ namespace Ordisoftware.Hebrew.Calendar
         LastCelebrationReminded[torahevent] = null;
         if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
           RemindCelebrationDayForms[torahevent].Close();
-        return result;
+        return;
       }
       else
       if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
       {
         if ( LastCelebrationReminded[torahevent].HasValue )
-          return result;
+          return;
         else
           LastCelebrationReminded[torahevent] = dateNow;
       }
@@ -71,14 +70,13 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         if ( dateNow < LastCelebrationReminded[torahevent].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
-          return result;
+          return;
         else
           LastCelebrationReminded[torahevent] = dateNow;
       }
       else
         LastCelebrationReminded[torahevent] = dateNow;
-      if ( onlyCheck ) ReminderForm.Run(row, torahevent, times);
-      return result;
+      ReminderForm.Run(row, torahevent, times);
     }
 
   }
