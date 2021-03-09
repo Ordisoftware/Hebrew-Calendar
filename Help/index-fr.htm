@@ -176,6 +176,8 @@ source de donnée utilisateur nommé &quot;Hebrew-Calendar&quot; pour &quot;SQLite
 &nbsp;&nbsp;appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\&quot;<br>
 &nbsp;&nbsp;appExe := &quot;Ordisoftware.Hebrew.Calendar.exe&quot;<br>
 &nbsp;&nbsp;Run %appPath%%appExe% --parashot<br>
+&nbsp;&nbsp;sleep 2000 ; Increase delay in case of problems<br>
+&nbsp;&nbsp;WinActive(&quot;A&quot;)<br>
 &nbsp;&nbsp;return
 </code></p>
     <h4>Que sont les temps de célébration ?</h4>
