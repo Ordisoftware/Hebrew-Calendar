@@ -1446,8 +1446,6 @@
     private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
     private System.Windows.Forms.ToolStripButton ActionSearchDay;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    private System.Windows.Forms.ToolStripButton ActionNavigate;
-    private System.Windows.Forms.ToolStripButton ActionViewCelebrations;
     private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.ToolStripButton ActionExit;
     public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
@@ -1510,6 +1508,8 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     public System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+    internal System.Windows.Forms.ToolStripButton ActionNavigate;
+    internal System.Windows.Forms.ToolStripButton ActionViewCelebrations;
   }
 }
 

@@ -25,8 +25,11 @@ namespace Ordisoftware.Hebrew.Calendar
     static public ApplicationCommandLine Instance
       => SystemManager.CommandLineOptions as ApplicationCommandLine;
 
-    [Option("generate", Required = false, HelpText = "Generate the data of the calendar.")]
+    [Option("generate", Required = false, HelpText = "Generate calendar.")]
     public bool Generate { get; set; }
+
+    [Option("navigation", Required = false, HelpText = "Open navigation window.")]
+    public bool OpenNavigation { get; set; }
 
     [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
     public bool OpenDiffDates { get; set; }
