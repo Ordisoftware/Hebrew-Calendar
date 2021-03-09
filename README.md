@@ -194,6 +194,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
   appPath := "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\"
   appExe := "Ordisoftware.Hebrew.Calendar.exe"
   Run %appPath%%appExe% --parashot
+  sleep 2000 ; Increase delay in case of problems
+  WinActive("A")
   return
 ```
 
