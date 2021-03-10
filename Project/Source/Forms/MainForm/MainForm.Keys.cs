@@ -114,7 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
         string str = SQLiteDate.ToString(date);
         var query = from day in DataSet.LunisolarDays
                     where check(day.Date.CompareTo(str))
-                       && day.TorahEventsAsEnum != TorahEvent.None
+                       && day.HasTorahEvent
                        && day.TorahEventsAsEnum != TorahEvent.NewYearD1
                     select day;
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();

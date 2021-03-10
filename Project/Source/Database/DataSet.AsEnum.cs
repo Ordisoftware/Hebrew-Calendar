@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -47,6 +47,12 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         get { return (TorahEvent)TorahEvents; }
         set { TorahEvents = (int)value; }
       }
+
+      public bool HasSeasonChange
+        => SeasonChangeAsEnum != Calendar.SeasonChange.None;
+
+      public bool HasTorahEvent
+        => TorahEventsAsEnum != TorahEvent.None;
 
     }
 
