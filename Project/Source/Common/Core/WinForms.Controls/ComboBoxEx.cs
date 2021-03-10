@@ -36,7 +36,7 @@ namespace Ordisoftware.Core
     {
       if ( Mutex ) return;
       Mutex = true;
-      bool isSeparator = SelectedIndex >= 0 && Items[SelectedIndex] == Globals.ListSeparator;
+      bool isSeparator = SelectedIndex >= 0 && (string)Items[SelectedIndex] == Globals.ListSeparator;
       if ( isSeparator ) SelectedIndex = SelectedIndexLast;
       SelectedIndexPrevious = SelectedIndexLast;
       SelectedIndexLast = SelectedIndex;

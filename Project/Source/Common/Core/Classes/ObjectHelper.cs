@@ -25,6 +25,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <typeparam name="T">Convertible generic type parameter.</typeparam>
     /// <param name="obj">The obj to act on.</param>
+    /// <param name="returnDefaultOnError">True to return default value in case of error, else throw it.</param>
     /// <returns>
     /// The converted object.
     /// </returns>
