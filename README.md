@@ -342,6 +342,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add command-line options (see FAQ).
 - Improve month view to show long-week celebration intermediate days.
 - Improve navigation form to show long-week celebration intermediate days.
+- Improve search event, lunar month and gregorian month windows.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
 - Improve Tray Icon mouse move management.
