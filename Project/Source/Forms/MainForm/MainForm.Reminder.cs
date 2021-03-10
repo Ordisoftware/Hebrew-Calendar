@@ -11,8 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
+using System.Linq;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -29,37 +31,28 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
-      SystemManager.TryCatch(() =>
+      try
       {
         var today = DataSet.GetLunarToday();
         IsSpecialDay = today.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                    || ( today.TorahEventsAsEnum == TorahEvent.PessahD1
-                      && today.TorahEventsAsEnum == TorahEvent.PessahD7
-                      && today.TorahEventsAsEnum != TorahEvent.SoukotD1
-                      && today.TorahEventsAsEnum != TorahEvent.SoukotD8
-                      && today.TorahEventsAsEnum != TorahEvent.YomHaKipourim
-                      && today.TorahEventsAsEnum != TorahEvent.YomTerouah );
-        CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-        if ( Settings.TrayIconUseSpecialDayIcon )
-          TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
-      });
-      try
-      {
+                    || TorahCelebrations.SpecialDays.Contains(today.TorahEventsAsEnum);
+        SystemManager.TryCatch(() =>
+        {
+          CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
+          if ( Settings.TrayIconUseSpecialDayIcon )
+            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
+        });
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
-          if ( Settings.ReminderShabatEnabled ) CheckShabat();
+          if ( Settings.ReminderShabatEnabled )
+          {
+            CheckShabat();
+          }
           if ( Settings.ReminderCelebrationsEnabled )
           {
             CheckCelebrationDay();
             CheckCelebrations();
           }
-          /*if ( Settings.ReminderAnniversarySunEnabled )
-          {
-            CheckAnniversarySunDay();
-            CheckAnniversaryMoonDay();
-            CheckAnniversarySun();
-            CheckAnniversaryMoon();
-          }*/
         }
       }
       catch ( Exception ex )
@@ -148,3 +141,11 @@ namespace Ordisoftware.Hebrew.Calendar
   }
 
 }
+
+/*if ( Settings.ReminderAnniversarySunEnabled )
+{
+  CheckAnniversarySunDay();
+  CheckAnniversaryMoonDay();
+  CheckAnniversarySun();
+  CheckAnniversaryMoon();
+}*/

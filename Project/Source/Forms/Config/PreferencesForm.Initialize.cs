@@ -168,7 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( var value in TorahCelebrations.Values )
+      foreach ( var value in TorahCelebrations.MajorEvents )
         SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
