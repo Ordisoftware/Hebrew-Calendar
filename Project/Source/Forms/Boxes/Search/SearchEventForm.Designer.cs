@@ -34,8 +34,9 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnCelebration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnLunarDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
@@ -69,8 +70,9 @@
       // 
       resources.ApplyResources(this.ListItems, "ListItems");
       this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.ColumnCelebration,
+            this.ColumnDate,
+            this.ColumnLunarDay});
       this.ListItems.FullRowSelect = true;
       this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
@@ -81,13 +83,17 @@
       this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.ListItems_DoubleClick);
       // 
-      // columnHeader1
+      // ColumnCelebration
       // 
-      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      resources.ApplyResources(this.ColumnCelebration, "ColumnCelebration");
       // 
-      // columnHeader2
+      // ColumnDate
       // 
-      resources.ApplyResources(this.columnHeader2, "columnHeader2");
+      resources.ApplyResources(this.ColumnDate, "ColumnDate");
+      // 
+      // ColumnLunarDay
+      // 
+      resources.ApplyResources(this.ColumnLunarDay, "ColumnLunarDay");
       // 
       // SelectYear
       // 
@@ -95,6 +101,7 @@
       this.SelectYear.Name = "SelectYear";
       this.SelectYear.SelectedIndex = -1;
       this.SelectYear.SelectedItem = null;
+      this.SelectYear.Value = -1;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // SearchEventForm
@@ -116,6 +123,7 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchEventForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Shown += new System.EventHandler(this.SearchEventForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -129,8 +137,9 @@
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Label LabelYear;
     public System.Windows.Forms.ListView ListItems;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
+    private System.Windows.Forms.ColumnHeader ColumnCelebration;
+    private System.Windows.Forms.ColumnHeader ColumnDate;
     private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
+    private System.Windows.Forms.ColumnHeader ColumnLunarDay;
   }
 }

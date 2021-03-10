@@ -34,8 +34,8 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
@@ -69,8 +69,8 @@
       // 
       resources.ApplyResources(this.ListItems, "ListItems");
       this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader1});
+            this.ColumnNumber,
+            this.ColumnMonth});
       this.ListItems.FullRowSelect = true;
       this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
@@ -81,13 +81,13 @@
       this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.ListItems_DoubleClick);
       // 
-      // columnHeader3
+      // ColumnNumber
       // 
-      resources.ApplyResources(this.columnHeader3, "columnHeader3");
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
       // 
-      // columnHeader1
+      // ColumnMonth
       // 
-      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      resources.ApplyResources(this.ColumnMonth, "ColumnMonth");
       // 
       // SelectYear
       // 
@@ -95,6 +95,7 @@
       this.SelectYear.Name = "SelectYear";
       this.SelectYear.SelectedIndex = -1;
       this.SelectYear.SelectedItem = null;
+      this.SelectYear.Value = -1;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // SearchGregorianMonthForm
@@ -116,6 +117,7 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Shown += new System.EventHandler(this.SearchGregorianMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -129,8 +131,8 @@
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Label LabelYear;
     public System.Windows.Forms.ListView ListItems;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader3;
+    private System.Windows.Forms.ColumnHeader ColumnMonth;
+    private System.Windows.Forms.ColumnHeader ColumnNumber;
     private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
   }
 }

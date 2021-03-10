@@ -133,10 +133,10 @@
   <data name="LabelYear.Text" xml:space="preserve">
     <value>Année</value>
   </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
+  <data name="ColumnNumber.Text" xml:space="preserve">
     <value>Numéro</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
+  <data name="ColumnMonth.Text" xml:space="preserve">
     <value>Mois</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

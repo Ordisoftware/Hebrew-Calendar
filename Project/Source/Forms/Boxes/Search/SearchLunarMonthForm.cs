@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -25,16 +25,22 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SearchLunarMonthForm : Form
   {
 
+    private MainForm MainForm = MainForm.Instance;
+
+    private Data.DataSet.LunisolarDaysDataTable LunisolarDays = MainForm.Instance.DataSet.LunisolarDays;
+
     public LunisolarDaysRow CurrentDay { get; private set; }
+
+    private int CurrentDayIndex = -1;
 
     public SearchLunarMonthForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
+      Icon = MainForm.Icon;
       ActiveControl = ListItems;
-      CurrentDay = MainForm.Instance.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
-      SelectYear.Fill(MainForm.Instance.YearsIntervalArray, year);
+      CurrentDay = MainForm.CurrentDay;
+      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
+      SelectYear.Fill(MainForm.YearsIntervalArray, year);
     }
 
     private void SearchEventForm_Load(object sender, EventArgs e)
@@ -42,10 +48,15 @@ namespace Ordisoftware.Hebrew.Calendar
       this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
+    private void SearchLunarMonthForm_Shown(object sender, EventArgs e)
+    {
+      ListItems_SelectedIndexChanged(null, null);
+    }
+
     private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
-        MainForm.Instance.GoToDate(CurrentDay.Date);
+        MainForm.GoToDate(CurrentDay.Date);
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -55,26 +66,39 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
+      int year = SelectYear.Value;
+      var rows = LunisolarDays.Where(row => row.IsNewMoon == 1 && row.DateAsDateTime.Year == year);
+      string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
+      CurrentDayIndex = SelectMoonDay.SelectedIndex;
       ListItems.Items.Clear();
-      var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where day.IsNewMoon == 1 && day.DateAsDateTime.Year == SelectYear.Value
-                 orderby day.Date
-                 select day;
-      foreach ( var row in rows )
-        if ( row.LunarMonth > 0 )
-        {
-          var item = ListItems.Items.Add(row.LunarMonth.ToString());
-          item.SubItems.Add(HebrewMonths.Transliterations[row.LunarMonth]);
-          string str = row.DateAsDateTime.ToLongDateString();
-          item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str));
-          item.Tag = row;
-          if ( row.TorahEventsAsEnum == TorahEvent.NewYearD1 )
-          {
-            item.Focused = true;
-            item.Selected = true;
-          }
-        }
-      if ( ListItems.Items.Count > 0 && ListItems.SelectedItems.Count == 0 )
+      ListViewItem itemToSelect = null;
+      ListViewItem itemToSelectDefault = null;
+      foreach ( var row in rows.Where(row => row.LunarMonth > 0) )
+      {
+        string key = row.LunarMonth.ToString();
+        string date = row.DateAsDateTime.ToLongDateString();
+        var item = ListItems.Items.Add(key);
+        item.SubItems.Add(HebrewMonths.Transliterations[row.LunarMonth]);
+        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date));
+        item.Tag = row;
+        if ( selectedKey != null && key == selectedKey && itemToSelect == null )
+          itemToSelect = item;
+        if ( row.IsNewYear )
+          itemToSelectDefault = item;
+      }
+      if ( itemToSelect != null )
+      {
+        itemToSelect.Focused = true;
+        itemToSelect.Selected = true;
+      }
+      else
+      if ( itemToSelectDefault != null )
+      {
+        itemToSelectDefault.Focused = true;
+        itemToSelectDefault.Selected = true;
+      }
+      else
+      if ( ListItems.Items.Count > 0 )
       {
         ListItems.Items[0].Focused = true;
         ListItems.Items[0].Selected = true;
@@ -87,23 +111,37 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ListItems.SelectedItems.Count > 0 )
       {
         var row = (LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
-        MainForm.Instance.GoToDate(row.Date);
-        SelectDay.Items.Clear();
-        var days = MainForm.Instance.DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == SelectYear.Value && day.LunarMonth == row.LunarMonth);
-        SelectDay.Items.AddRange(days.Cast<object>().ToArray());
+        SelectMoonDay.Items.Clear();
+        int year = SelectYear.Value;
+        var days = LunisolarDays.Where(day => day.DateAsDateTime.Year == year && day.LunarMonth == row.LunarMonth);
+        SelectMoonDay.Items.AddRange(days.ToArray());
+        if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
+        if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
+          CurrentDayIndex = SelectMoonDay.Items.Count - 1;
+        SelectMoonDay.SelectedIndex = CurrentDayIndex;
       }
     }
 
-    private void SelectDay_Format(object sender, ListControlConvertEventArgs e)
+    private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)
     {
-      var row = (LunisolarDaysRow)e.ListItem;
-      e.Value = row.LunarDay.ToString();
+      e.Value = ( (LunisolarDaysRow)e.ListItem ).LunarDay.ToString();
     }
 
-    private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
+    private void SelectMoonDay_SelectedIndexChanged(object sender, EventArgs e)
     {
-      var row = (LunisolarDaysRow)SelectDay.SelectedItem;
-      MainForm.Instance.GoToDate(row.Date);
+      if ( SelectMoonDay.SelectedItem != null )
+        MainForm.GoToDate(( (LunisolarDaysRow)SelectMoonDay.SelectedItem ).Date);
+    }
+
+    protected override CreateParams CreateParams
+    {
+      get
+      {
+        var cp = base.CreateParams;
+        if ( Program.Settings.WindowsDoubleBufferingEnabled )
+          cp.ExStyle |= 0x02000000;
+        return cp;
+      }
     }
 
   }
