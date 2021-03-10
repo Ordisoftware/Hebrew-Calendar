@@ -54,6 +54,9 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       public bool HasTorahEvent
         => TorahEventsAsEnum != TorahEvent.None;
 
+      public bool IsNewYear
+        => TorahEventsAsEnum == TorahEvent.NewYearD1;
+
     }
 
   }

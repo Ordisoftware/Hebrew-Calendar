@@ -27,9 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     {
       table.Rows.Clear();
       var query = from day in LunisolarDays
-                  where day.TorahEventsAsEnum != TorahEvent.None
-                     && day.DateAsDateTime.Year >= year1
-                     && day.DateAsDateTime.Year <= year2
+                  where day.HasTorahEvent && day.DateAsDateTime.Year >= year1 && day.DateAsDateTime.Year <= year2
                   select new
                   {
                     date = day.GetEventStartDateTime(useRealDay, false),
@@ -111,6 +109,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data
             if ( day > 0 && day < TorahCelebrations.SoukotLenght )
               return AppTranslations.SoukotDay.GetLang(day);
           }
+          //else
+          //if
         return string.Empty;
       }
 

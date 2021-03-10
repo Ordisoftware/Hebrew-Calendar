@@ -113,9 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( isFuture ) date = date.AddMonths(1);
         string str = SQLiteDate.ToString(date);
         var query = from day in DataSet.LunisolarDays
-                    where check(day.Date.CompareTo(str))
-                       && day.HasTorahEvent
-                       && day.TorahEventsAsEnum != TorahEvent.NewYearD1
+                    where check(day.Date.CompareTo(str)) && day.HasTorahEvent && !day.IsNewYear
                     select day;
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
         if ( found != null ) GoToDate(found.Date);
