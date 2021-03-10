@@ -11,9 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-03 </edited>
 using System;
-using System.Linq;
+using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
@@ -24,16 +24,18 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SearchGregorianMonthForm : Form
   {
 
+    private MainForm MainForm = MainForm.Instance;
+
     public LunisolarDaysRow CurrentDay { get; private set; }
 
     public SearchGregorianMonthForm()
     {
       InitializeComponent();
-      Icon = MainForm.Instance.Icon;
+      Icon = MainForm.Icon;
       ActiveControl = ListItems;
-      CurrentDay = MainForm.Instance.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
-      SelectYear.Fill(MainForm.Instance.YearsIntervalArray, year);
+      CurrentDay = MainForm.CurrentDay;
+      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
+      SelectYear.Fill(MainForm.YearsIntervalArray, year);
     }
 
     private void SearchEventForm_Load(object sender, EventArgs e)
@@ -41,10 +43,15 @@ namespace Ordisoftware.Hebrew.Calendar
       this.CheckLocationOrCenterToMainFormElseScreen();
     }
 
+    private void SearchGregorianMonthForm_Shown(object sender, EventArgs e)
+    {
+      ListItems_SelectedIndexChanged(null, null);
+    }
+
     private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
-        MainForm.Instance.GoToDate(CurrentDay.Date);
+        MainForm.GoToDate(CurrentDay.Date);
     }
 
     private void ListItems_DoubleClick(object sender, EventArgs e)
@@ -54,25 +61,32 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
+      int selectedKey = ListItems.SelectedIndices.Count > 0 ? ListItems.SelectedIndices[0] : -1;
       ListItems.Items.Clear();
-      for ( int month = 1; month <= 12; month++ )
+      for ( int index = 0; index < 12; index++ )
       {
-        var item = ListItems.Items.Add(month.ToString());
-        string str = new DateTime(2000, month, 1).ToString("MMMM");
-        item.SubItems.Add(str.First().ToString().ToUpper() + str.Substring(1));
+        string key = new DateTime(2000, index + 1, 1).ToString("MMMM");
+        var item = ListItems.Items.Add((index + 1).ToString());
+        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(key));
+        if ( index == 0 && selectedKey == -1 )
+        {
+          ListItems.Items[index].Focused = true;
+          ListItems.Items[index].Selected = true;
+        }
+        else
+        if ( selectedKey == index )
+        {
+          ListItems.Items[selectedKey].Focused = true;
+          ListItems.Items[selectedKey].Selected = true;
+        }
       }
-      ListItems.Items[0].Focused = true;
-      ListItems.Items[0].Selected = true;
       ListItems.Columns[ListItems.Columns.Count - 1].Width = -2;
     }
 
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if ( ListItems.SelectedItems.Count > 0 )
-      {
-        int month = int.Parse(ListItems.SelectedItems[0].Text);
-        MainForm.Instance.GoToDate(new DateTime(SelectYear.Value, month, 1));
-      }
+      if ( ListItems.SelectedIndices.Count > 0 )
+        MainForm.GoToDate(new DateTime(SelectYear.Value, ListItems.SelectedIndices[0] + 1, 1));
     }
 
   }

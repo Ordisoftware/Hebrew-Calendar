@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -23,47 +23,45 @@ namespace Ordisoftware.Hebrew
 
     public event EventHandler SelectedIndexChanged
     {
-      add { SelectValue.SelectedIndexChanged += value; }
-      remove { SelectValue.SelectedIndexChanged -= value; }
+      add { if ( SelectValue != null ) SelectValue.SelectedIndexChanged += value; }
+      remove { if ( SelectValue != null ) SelectValue.SelectedIndexChanged -= value; }
     }
 
     public ComboBox.ObjectCollection Items
     {
-      get { return SelectValue.Items; }
+      get => SelectValue?.Items ?? null;
     }
 
     public int Count
     {
-      get { return SelectValue.Items.Count; }
+      get => SelectValue?.Items.Count ?? -1;
     }
 
     public int SelectedIndex
     {
-      get { return SelectValue.SelectedIndex; }
-      set { SelectValue.SelectedIndex = value; }
+      get => SelectValue?.SelectedIndex ?? -1;
+      set { if ( SelectValue != null ) SelectValue.SelectedIndex = value; }
     }
 
     public object SelectedItem
     {
-      get { return SelectValue.SelectedItem; }
-      set { SelectValue.SelectedItem = value; }
+      get => SelectValue?.SelectedItem ?? null;
+      set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
     }
 
     public int Value
     {
-      get { return (int)SelectValue.SelectedItem; }
-      set { SelectValue.SelectedItem = value; }
+      get => SelectValue.SelectedItem != null && SelectValue.SelectedItem is int
+             ? (int)SelectValue.SelectedItem
+             : -1;
+      set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
     }
 
     public SelectYearsControl()
-    {
-      InitializeComponent();
-    }
+      => InitializeComponent();
 
     public void Fill(IEnumerable<int> list, int selected = -1)
-    {
-      Navigator.Fill(list, selected);
-    }
+      => Navigator.Fill(list, selected);
 
   }
 

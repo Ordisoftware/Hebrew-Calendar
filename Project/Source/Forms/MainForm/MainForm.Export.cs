@@ -30,8 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DateTime check(int year, int delta)
       {
-        var query = DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == year
-                                                    && day.TorahEventsAsEnum == TorahEvent.NewYearD1);
+        var query = DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == year && day.IsNewYear);
         return query.FirstOrDefault()?.DateAsDateTime.AddDays(delta) ?? DateTime.MinValue;
       }
       var interval = new ExportInterval();

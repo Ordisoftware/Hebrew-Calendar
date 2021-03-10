@@ -44,16 +44,16 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateEnd = dateStart.AddYears(1);
       var rows = from day in MainForm.Instance.DataSet.LunisolarDays
                  where day.DateAsDateTime >= dateStart && day.DateAsDateTime <= dateEnd
-                    && ( day.SeasonChangeAsEnum != SeasonChange.None || day.TorahEventsAsEnum != TorahEvent.None )
+                    && ( day.HasSeasonChange || day.HasTorahEvent )
                  select day;
       foreach ( var row in rows )
       {
         var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(row.DateAsDateTime.ToLongDateString());
-        if ( row.SeasonChangeAsEnum != SeasonChange.None )
+        if ( row.HasSeasonChange )
           Instance.ListView.Items.Add(item)
                                  .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum))
                                  .Tag = row.Date;
-        if ( row.TorahEventsAsEnum != TorahEvent.None )
+        if ( row.HasTorahEvent )
           Instance.ListView.Items.Add(item)
                                  .SubItems.Add(AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum))
                                  .Tag = row.Date;

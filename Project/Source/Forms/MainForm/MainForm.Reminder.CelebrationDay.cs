@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
-                  where day.TorahEventsAsEnum != TorahEvent.None
+                  where day.HasTorahEvent
                      && check(day.TorahEventsAsEnum)
                      && day.DateAsDateTime >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;

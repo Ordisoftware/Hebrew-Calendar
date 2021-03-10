@@ -34,12 +34,12 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
-      this.LabelDay = new System.Windows.Forms.Label();
-      this.SelectDay = new System.Windows.Forms.ComboBox();
+      this.LabelLunarDay = new System.Windows.Forms.Label();
+      this.SelectMoonDay = new System.Windows.Forms.ComboBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -72,9 +72,9 @@
       // 
       resources.ApplyResources(this.ListItems, "ListItems");
       this.ListItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader2});
+            this.ColumnNumber,
+            this.ColumnMonth,
+            this.ColumnDate});
       this.ListItems.FullRowSelect = true;
       this.ListItems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
       this.ListItems.HideSelection = false;
@@ -85,17 +85,17 @@
       this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
       this.ListItems.DoubleClick += new System.EventHandler(this.ListItems_DoubleClick);
       // 
-      // columnHeader3
+      // ColumnNumber
       // 
-      resources.ApplyResources(this.columnHeader3, "columnHeader3");
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
       // 
-      // columnHeader1
+      // ColumnMonth
       // 
-      resources.ApplyResources(this.columnHeader1, "columnHeader1");
+      resources.ApplyResources(this.ColumnMonth, "ColumnMonth");
       // 
-      // columnHeader2
+      // ColumnDate
       // 
-      resources.ApplyResources(this.columnHeader2, "columnHeader2");
+      resources.ApplyResources(this.ColumnDate, "ColumnDate");
       // 
       // SelectYear
       // 
@@ -103,21 +103,22 @@
       this.SelectYear.Name = "SelectYear";
       this.SelectYear.SelectedIndex = -1;
       this.SelectYear.SelectedItem = null;
+      this.SelectYear.Value = -1;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
-      // LabelDay
+      // LabelLunarDay
       // 
-      resources.ApplyResources(this.LabelDay, "LabelDay");
-      this.LabelDay.Name = "LabelDay";
+      resources.ApplyResources(this.LabelLunarDay, "LabelLunarDay");
+      this.LabelLunarDay.Name = "LabelLunarDay";
       // 
-      // SelectDay
+      // SelectMoonDay
       // 
-      this.SelectDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectDay.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectDay, "SelectDay");
-      this.SelectDay.Name = "SelectDay";
-      this.SelectDay.SelectedIndexChanged += new System.EventHandler(this.SelectDay_SelectedIndexChanged);
-      this.SelectDay.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectDay_Format);
+      this.SelectMoonDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMoonDay.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectMoonDay, "SelectMoonDay");
+      this.SelectMoonDay.Name = "SelectMoonDay";
+      this.SelectMoonDay.SelectedIndexChanged += new System.EventHandler(this.SelectMoonDay_SelectedIndexChanged);
+      this.SelectMoonDay.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectMoonDay_Format);
       // 
       // SearchLunarMonthForm
       // 
@@ -125,8 +126,8 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.SelectDay);
-      this.Controls.Add(this.LabelDay);
+      this.Controls.Add(this.SelectMoonDay);
+      this.Controls.Add(this.LabelLunarDay);
       this.Controls.Add(this.SelectYear);
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
@@ -140,6 +141,7 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Shown += new System.EventHandler(this.SearchLunarMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -153,11 +155,11 @@
     private System.Windows.Forms.Button ActionOK;
     private System.Windows.Forms.Label LabelYear;
     public System.Windows.Forms.ListView ListItems;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.ColumnHeader columnHeader3;
+    private System.Windows.Forms.ColumnHeader ColumnMonth;
+    private System.Windows.Forms.ColumnHeader ColumnDate;
+    private System.Windows.Forms.ColumnHeader ColumnNumber;
     private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
-    private System.Windows.Forms.Label LabelDay;
-    private System.Windows.Forms.ComboBox SelectDay;
+    private System.Windows.Forms.Label LabelLunarDay;
+    private System.Windows.Forms.ComboBox SelectMoonDay;
   }
 }
