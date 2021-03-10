@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +47,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public readonly int PessahLenght = 7;
 
+    /// <summary>
+    /// The pessah last day.
+    /// </summary>
     static public readonly int PessahEndDay = PessahStartDay + PessahEndDay - 1;
 
     /// <summary>
@@ -74,6 +77,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public readonly int SoukotLenght = 7 + 1;
 
+    /// <summary>
+    /// The soukot last day.
+    /// </summary>
     static public readonly int SoukotEndDay = SoukotStartDay + SoukotEndDay - 1;
 
     /// <summary>
@@ -92,6 +98,11 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly int HanoukaLenght = 7 + 1;
 
     /// <summary>
+    /// The 'hanouka last day.
+    /// </summary>
+    static public readonly int HanoukaEndDay = HanoukaStartDay + HanoukaEndDay - 1;
+
+    /// <summary>
     /// The pourim month.
     /// </summary>
     static public readonly int PourimMonth = 12;
@@ -101,8 +112,31 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public readonly int PourimDay = 14;
 
-    static public readonly IEnumerable<TorahEvent> Values
+    /// <summary>
+    /// Indicate major TorahEvent enums list.
+    /// </summary>
+    static public readonly IEnumerable<TorahEvent> MajorEvents
       = Enums.GetValues<TorahEvent>().Skip(1).TakeUntil(v => v == TorahEvent.SoukotD8);
+
+    /// <summary>
+    /// Indicate minor TorahEvent enums list.
+    /// </summary>
+    static public readonly IEnumerable<TorahEvent> MinorEvents
+      = Enums.GetValues<TorahEvent>().SkipUntil(v => v == TorahEvent.SoukotD8).TakeUntil(v => v == TorahEvent.Pourim);
+
+    /// <summary>
+    /// Indicate special celebration days.
+    /// </summary>
+    static public readonly IEnumerable<TorahEvent> SpecialDays
+      = new List<TorahEvent>
+      {
+        TorahEvent.PessahD1,
+        TorahEvent.PessahD7,
+        TorahEvent.YomTerouah,
+        TorahEvent.YomHaKipourim,
+        TorahEvent.SoukotD1,
+        TorahEvent.SoukotD8
+      };
 
   }
 

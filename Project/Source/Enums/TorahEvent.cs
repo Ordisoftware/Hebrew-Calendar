@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 221-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   public enum TorahEvent
   {
 
-    // Database values
+    // Database values for major celebrations
 
     /// <summary>
     /// The no event.
@@ -85,14 +85,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     SoukotD8,
 
-    /// <summary>
-    /// The shabat day.
-    /// </summary>
-    Shabat,
+    // Database values for minor celebrations
 
-    // TODO manage as user custom remind list
-    // Actually non database values
-    /*
     /// <summary>
     /// The 'hanouka first day.
     /// </summary>
@@ -108,19 +102,25 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     Pourim,
 
-    /// <summary>
-    /// The sun aniversary.
-    /// </summary>
-    AnniversarySun,
+    // Non database values (always at the end)
 
     /// <summary>
-    /// The moon aniversary.
+    /// The shabat day.
     /// </summary>
-    AnniversaryMoon*/
-
-    // Hanouka = 25 Kislev(9) 8j
-    // Pourim = 14 Adar(12)
+    Shabat
 
   }
 
 }
+
+/*
+/// <summary>
+/// The sun aniversary.
+/// </summary>
+AnniversarySun,
+
+/// <summary>
+/// The moon aniversary.
+/// </summary>
+AnniversaryMoon
+*/

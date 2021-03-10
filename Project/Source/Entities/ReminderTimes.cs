@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -27,15 +27,18 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? DateStartCheck;
     public DateTime? DateStart;
     public DateTime? DateEnd;
-    public void Set(DateTime date, string timeStart, string timeEnd, int delta1, int delta2, decimal delta3)
+    public void Set(DateTime date, 
+                    string timeStart, string timeEnd,
+                    int deltaDayStart, int deltaDayEnd,
+                    decimal deltaRemindBefore)
     {
       string[] timesStart = timeStart.Split(':');
       string[] timesEnd = timeEnd.Split(':');
       TimeStart = timeStart;
       TimeEnd = timeEnd;
-      DateStart = date.AddDays(delta1).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
-      DateStartCheck = DateStart.Value.AddMinutes((double)-delta3);
-      DateEnd = date.AddDays(delta2).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
+      DateStart = date.AddDays(deltaDayStart).AddHours(Convert.ToInt32(timesStart[0])).AddMinutes(Convert.ToInt32(timesStart[1]));
+      DateStartCheck = DateStart.Value.AddMinutes((double)-deltaRemindBefore);
+      DateEnd = date.AddDays(deltaDayEnd).AddHours(Convert.ToInt32(timesEnd[0])).AddMinutes(Convert.ToInt32(timesEnd[1]));
     }
 
 

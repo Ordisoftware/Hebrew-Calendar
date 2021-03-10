@@ -228,7 +228,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DataGridView.DataSource = null;
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
-      foreach ( var value in TorahCelebrations.Values )
+      foreach ( var value in TorahCelebrations.MajorEvents )
       {
         name = value.ToStringExport(AppTranslations.TorahEvent, EditEnglishTitles.Checked);
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();

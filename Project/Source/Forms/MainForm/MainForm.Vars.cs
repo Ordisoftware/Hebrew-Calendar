@@ -104,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CurrentDay = null;
         foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
-        foreach ( var value in TorahCelebrations.Values )
+        foreach ( var value in TorahCelebrations.MajorEvents )
         {
             TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
             TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);

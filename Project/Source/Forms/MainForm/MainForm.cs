@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
+using System.Threading;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -308,6 +309,7 @@ namespace Ordisoftware.Hebrew.Calendar
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
+          Thread.Sleep(1000);
           ActionGenerate_Click(null, EventArgs.Empty);
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
