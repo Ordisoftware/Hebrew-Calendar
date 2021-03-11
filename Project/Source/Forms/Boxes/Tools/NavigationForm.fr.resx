@@ -117,27 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LabelTorahNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 220</value>
-  </data>
-  <data name="LabelTorahNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 16</value>
-  </data>
   <data name="LabelTorahNext.Text" xml:space="preserve">
     <value>Suivant :</value>
   </data>
-  <data name="LabelEventTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 200</value>
-  </data>
-  <data name="LabelEventTorah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 16</value>
-  </data>
   <data name="LabelEventTorah.Text" xml:space="preserve">
     <value>Torah :</value>
-  </data>
-  <data name="LabelParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
   </data>
   <data name="LabelParashah.Text" xml:space="preserve">
     <value>Parashah :</value>
@@ -145,15 +129,10 @@
   <data name="LabelCurrentDay.Text" xml:space="preserve">
     <value>Jour actuel :</value>
   </data>
-  <data name="LabelEventSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 175</value>
-  </data>
-  <data name="LabelEventSeason.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 16</value>
-  </data>
   <data name="LabelEventSeason.Text" xml:space="preserve">
     <value>Saison :</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelMoonset.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 16</value>
   </data>
