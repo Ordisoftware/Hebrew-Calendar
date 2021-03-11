@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.Globalization;
@@ -32,6 +32,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new NavigationForm();
     }
 
+    private Data.DataSet.LunisolarDaysDataTable LunisolarDays = MainForm.Instance.DataSet.LunisolarDays;
+
     public DateTime Date
     {
       get => _Date;
@@ -42,19 +44,21 @@ namespace Ordisoftware.Hebrew.Calendar
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
           string strDate = SQLiteDate.ToString(value);
-          var row = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                      where day.Date == strDate
-                      select day ).Single();
+          var row = LunisolarDays.Where(day => day.Date == strDate).Single();
           LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
-          LabelLunarMonthValue.Text = strMonth + " #" + row.LunarMonth.ToString();
-          LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang() + row.LunarDay.ToString();
+          LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth) + " " + strMonth.ToUpper();
+          LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-            LabelLunarDayValue.Text += " (Shabat)";
+            LabelLunarDayValue.Text += " SHABAT";
           LabelSunriseValue.Text = row.Sunrise.ToString();
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
+          LabelMoonriseValue.Visible = !row.Moonrise.IsNullOrEmpty();
+          LabelMoonrise.Visible = !row.Moonrise.IsNullOrEmpty();
+          LabelMoonsetValue.Visible = !row.Moonset.IsNullOrEmpty();
+          LabelMoonset.Visible = !row.Moonset.IsNullOrEmpty();
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
           LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
@@ -62,9 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelEventTorahValue.Text = row.GetWeekLongCelebrationIntermediateDay();
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = "-";
-          var rowNext = ( from day in MainForm.Instance.DataSet.LunisolarDays
-                          where day.DateAsDateTime > value && day.TorahEvents > 0
-                          select day ).FirstOrDefault();
+          var rowNext = LunisolarDays.Where(day => day.DateAsDateTime > value && day.TorahEvents > 0).FirstOrDefault();
           if ( rowNext != null )
           {
             var date = rowNext.DateAsDateTime;
