@@ -127,7 +127,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. If the application has not been updated within this period, you can manually check the latest version available online.
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
 
 #### What to do if the calendar month view is ugly?
 
@@ -313,12 +313,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### Planned - Version 7.x
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
-- Add Manage date bookmarks in Tools menu.
 - Add option to set Tray Icons.
 - Add option to choose default auto-lock option between lock station, standby and power off.
 - Improve auto-lock session.
 
-#### 2021.03.12 - Version 7.0
+#### 2021.03.20 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.

@@ -39,14 +39,14 @@ namespace Ordisoftware.Core
       point.CloseConnectionGroup(id);
       if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.Issuer
         || AuthorWebsiteSSLCertificate["Subject"] != point.Certificate.Subject
-        || AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
-        || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString() )
+        /*|| AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
+        || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
       {
         string str1 = AuthorWebsiteSSLCertificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
         string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
-                      "Subject = " + point.Certificate.Subject + Globals.NL +
+                      "Subject = " + point.Certificate.Subject/* + Globals.NL +
                       "Serial = " + point.Certificate.GetSerialNumberString() + Globals.NL +
-                      "PublicKey = " + point.Certificate.GetPublicKeyString();
+                      "PublicKey = " + point.Certificate.GetPublicKeyString()*/;
         string msg = SysTranslations.WrongSSLCertificate.GetLang(uri.Host, str1, str2);
         throw new UnauthorizedAccessException(msg);
       }
