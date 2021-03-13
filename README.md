@@ -313,12 +313,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### Planned - Version 7.x
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
-- Add Manage date bookmarks in Tools menu.
 - Add option to set Tray Icons.
 - Add option to choose default auto-lock option between lock station, standby and power off.
 - Improve auto-lock session.
 
-#### 2021.03.12 - Version 7.0
+#### 2021.03.20 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
