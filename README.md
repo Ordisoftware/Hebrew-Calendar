@@ -127,7 +127,7 @@ Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. If the application has not been updated within this period, you can manually check the latest version available online.
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
 
 #### What to do if the calendar month view is ugly?
 
