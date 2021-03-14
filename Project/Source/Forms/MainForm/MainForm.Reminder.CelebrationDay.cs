@@ -23,12 +23,13 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private void CheckCelebrationDay()
+    private bool CheckCelebrationDay(bool showbox)
     {
       bool check(TorahEvent item)
       {
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }
+      bool result = false;
       var dateNow = DateTime.Now;
       var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
@@ -36,12 +37,13 @@ namespace Ordisoftware.Hebrew.Calendar
                      && check(day.TorahEventsAsEnum)
                      && day.DateAsDateTime >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;
-      if ( row == null ) return;
+      if ( row == null ) return result;
       if ( row.DateAsDateTime.Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
-          return;
+          return result;
       var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) return;
+      if ( times == null ) return result;
+      result = dateNow >= times.DateStart.Value && dateNow < times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
       var torahevent = row.TorahEventsAsEnum;
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
@@ -49,13 +51,13 @@ namespace Ordisoftware.Hebrew.Calendar
         LastCelebrationReminded[torahevent] = null;
         if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
           RemindCelebrationDayForms[torahevent].Close();
-        return;
+        return result;
       }
       else
       if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
       {
         if ( LastCelebrationReminded[torahevent].HasValue )
-          return;
+          return result;
         else
           LastCelebrationReminded[torahevent] = dateNow;
       }
@@ -70,13 +72,14 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         if ( dateNow < LastCelebrationReminded[torahevent].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
-          return;
+          return result;
         else
           LastCelebrationReminded[torahevent] = dateNow;
       }
       else
         LastCelebrationReminded[torahevent] = dateNow;
-      ReminderForm.Run(row, torahevent, times);
+      if ( showbox ) ReminderForm.Run(row, torahevent, times);
+      return result;
     }
 
   }
