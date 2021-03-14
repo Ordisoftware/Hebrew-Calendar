@@ -193,7 +193,7 @@
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
-    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.providers.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
