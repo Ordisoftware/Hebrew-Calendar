@@ -213,6 +213,13 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaFR.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadEN.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishFR.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />

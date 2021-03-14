@@ -524,4 +524,7 @@
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
+  <data name="ActionOnlineParashah.Text" xml:space="preserve">
+    <value>Parashah de la semaine en ligne</value>
+  </data>
 </root>

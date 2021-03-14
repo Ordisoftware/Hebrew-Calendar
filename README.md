@@ -322,7 +322,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
 - Add generate weekly parashah lecture in the database.
-- Add menu item ion Tools to the weekly parashah study web page of *Torah-Box*.
+- Add menu item in Tools to the weekly parashah study page of some web sites.
 - Add option to set parashah generation for inside or outside of Israël.
 - Add option to set parashah reading always on saturday.
 - Add option to indicate parashah in the Shabatot of the visual month.

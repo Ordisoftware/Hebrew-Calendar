@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -104,11 +104,23 @@ namespace Ordisoftware.Hebrew
         [Language.FR] = "Configurer les fournisseurs"
       };
 
-      static public readonly TranslationsDictionary NoticeOnlineWordProvider
+    static public readonly TranslationsDictionary ParashahNotFound
       = new TranslationsDictionary
       {
-        { Language.EN, "Use the %WORD% tag to be replaced by the unicode value." },
-        { Language.FR, "Utiliser le tag %WORD% pour le remplacer la valeur unicode." },
+        [Language.EN] = "Parashah not found : it's Pesa'h or data are not generated.",
+        [Language.FR] = "Parashah non trouvée : c'est Pessa'h ou les données n'ont pas été générées."
+      };
+
+    static public readonly TranslationsDictionary NoticeOnlineWordProvider
+      = new TranslationsDictionary
+      {
+        { Language.EN, "Use the following tags to replace values:" + Globals.NL2 +
+                        "%WORD% : the unicode value" + Globals.NL +
+                        "%FIRSTLETTER% : first letter of the unicode value" },
+
+        { Language.FR, "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
+                        "%WORD% : la valeur unicode" + Globals.NL +
+                        "%FIRSTLETTER% : première lettre de la valeur unicode" },
       };
 
     static public readonly TranslationsDictionary NoticeOnlineBibleProvider

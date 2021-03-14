@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
         if ( parashah != null && Settings.MainFormTitleBarShowWeeklyParashah )
           Text += " - Parashah " + parashah.ToStringLinked().ToUpper();
-        ActionOpenTorahBoxParashah.Enabled = parashah != null;
+        ActionOnlineParashah.Enabled = parashah != null;
       });
     }
 
