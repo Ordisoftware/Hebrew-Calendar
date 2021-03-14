@@ -56,6 +56,9 @@ URL = https://www.hidabroot.fr
 Name = (FR) Israël Torah
 URL = https://www.israeltorah.com
 
+Name = (FR) Massorti France
+URL = https://www.massorti.com
+
 Name = (FR) Pureté Juive
 URL = https://www.puretejuive.com
 

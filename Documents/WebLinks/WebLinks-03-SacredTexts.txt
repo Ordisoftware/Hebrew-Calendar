@@ -31,6 +31,14 @@ URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
 
 -
 
+Name = (EN) Haggadah @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Haggadah
+
+Name = (FR) Haggada @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Haggada
+
+-
+
 Name = (EN) Jewish Texts @ sefaria.org
 URL = https://www.sefaria.org/texts
 

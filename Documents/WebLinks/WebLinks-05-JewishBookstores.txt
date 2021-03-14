@@ -32,6 +32,9 @@ URL = https://korenpub.com
 Name = (FR) Editions La Délivrance
 URL = http://www.ladelivrance.org
 
+Name = (FR) Editions Loubavitch
+URL = http://www.editions-loubavitch.fr
+
 Name = (FR) Editions Torah-Box
 URL = https://www.torah-box.com/editions
 

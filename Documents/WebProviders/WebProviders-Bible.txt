@@ -1,15 +1,13 @@
 ﻿; --------------------------------------------------------------------------------------------------
-; File format for online providers items to search a hebrew word having unicode chars
+; File format for online providers items to search a bible verse
 ; --------------------------------------------------------------------------------------------------
 ; To create a folder else items will be at root level: Lang/[short code] = Title
-; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders
 ; --------------------------------------------------------------------------------------------------
 ; Name = Title
 ; URL = Web link
 ; --------------------------------------------------------------------------------------------------
 ; Use the "-" char at the beginning of a line to insert a separator
-; --------------------------------------------------------------------------------------------------
-; Use the %WORD% tag in URL to allow the application to replace it by the word to process
 ; --------------------------------------------------------------------------------------------------
 
 Name = (EN) StudyBible.org (Literal with Strongs links)
