@@ -25,6 +25,9 @@ URL = https://www.pealim.com
 Name = (EN) Klein Dictionary @ sefaria.org
 URL = https://www.sefaria.org/Klein_Dictionary
 
+Name = (EN) Jastrow Dictionary @ sefaria.org
+URL = https://www.sefaria.org/Jastrow
+
 Name = (EN) Wiktionary.org
 URL = https://en.wiktionary.org
 
