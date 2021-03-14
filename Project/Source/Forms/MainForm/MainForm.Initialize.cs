@@ -371,6 +371,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     public void InitializeSpecialMenus()
     {
+      ActionOnlineParashah.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+      });
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
@@ -393,12 +399,6 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionEnableReminder.PerformClick();
       ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
-      ActionOnlineParashah.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
-      });
     }
 
     /// <summary>
