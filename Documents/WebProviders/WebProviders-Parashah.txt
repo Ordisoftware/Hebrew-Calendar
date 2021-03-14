@@ -10,6 +10,17 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
+Name = (EN) Wikipedia.org
+URL = https://en.wikipedia.org/wiki/%WIKIPEDIA-EN%
+
+Name = (FR) Wikipedia.org
+URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
+
+-
+
+Name = (EN) Torah.org
+URL = https://torah.org/parsha/%TORAHORG%/
+
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/paracha/%TORAHBOX%
 
@@ -20,14 +31,6 @@ URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
 
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
-
--
-
-Name = (EN) Wikipedia.org
-URL = https://en.wikipedia.org/wiki/%WIKIPEDIA-EN%
-
-Name = (FR) Wikipedia.org
-URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 
 -
 

@@ -193,7 +193,7 @@
       <DependentUpon>EditMemoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.cs" />
-    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.providers.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
@@ -215,6 +215,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahOrg.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadEN.cs" />
