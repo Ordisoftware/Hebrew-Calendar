@@ -13,7 +13,6 @@
 /// <created> 2020-12 </created>
 /// <edited> 2021-03 </edited>
 using System;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar.Data
 {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -35,6 +35,65 @@ namespace Ordisoftware.Hebrew.Calendar.Data
                   .Replace("%MONTHNAME%", HebrewMonths.Transliterations[LunarMonth])
                   .Replace("%MONTHNUM%", LunarMonth.ToString())
                   .Replace("%DAYNUM%", LunarDay.ToString());
+
+      public string GetWeekLongCelebrationIntermediateDay()
+      {
+        int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
+        if ( MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay || deltaPessah != 0 )
+          if ( LunarMonth == TorahCelebrations.PessahMonth )
+          {
+            int day = LunarDay >= TorahCelebrations.PessahStartDay + deltaPessah
+                      ? LunarDay - TorahCelebrations.PessahStartDay + 1 + deltaPessah
+                      : -1;
+            if ( day > 0 && day < TorahCelebrations.PessahLenght )
+              return AppTranslations.PessahDay.GetLang(day);
+          }
+          else
+          if ( LunarMonth == TorahCelebrations.YomsMonth )
+          {
+            int day = LunarDay >= TorahCelebrations.SoukotStartDay
+                      ? LunarDay - TorahCelebrations.SoukotStartDay + 1
+                      : -1;
+            if ( day > 0 && day < TorahCelebrations.SoukotLenght )
+              return AppTranslations.SoukotDay.GetLang(day);
+          }
+          else
+          if ( LunarMonth == 3 )
+          {
+            int indexCurrent = tableLunisolarDays.Rows.IndexOf(this);
+            int indexStart = Math.Max(0, indexCurrent - 7);
+            int indexEnd = Math.Min(indexCurrent + 7, tableLunisolarDays.Rows.Count - 1);
+            LunisolarDaysRow first = null;
+            LunisolarDaysRow last = null;
+            for ( int index = indexStart; index <= indexEnd; index++ )
+            {
+              var row = tableLunisolarDays[index];
+              if ( row.TorahEventsAsEnum == TorahEvent.ChavouotDiet )
+              {
+                first = row;
+                if ( row.DateAsDateTime.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+                {
+                  last = row;
+                  break;
+                }
+              }
+              else
+              if ( first != null )
+                if ( row.DateAsDateTime.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+                {
+                  last = row;
+                  break;
+                }
+            }
+            if ( first != null && last != null
+              && first.DateAsDateTime <= last.DateAsDateTime
+              && this.DateAsDateTime >= first.DateAsDateTime
+              && this.DateAsDateTime <= last.DateAsDateTime )
+              return AppTranslations.TorahEvent[TorahEvent.ChavouotDiet].GetLang();
+          }
+
+        return string.Empty;
+      }
 
     }
 
