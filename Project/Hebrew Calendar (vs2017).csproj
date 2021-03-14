@@ -215,6 +215,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahOrg.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadEN.cs" />

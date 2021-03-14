@@ -166,6 +166,7 @@ namespace Ordisoftware.Hebrew
       void open(Parashah item)
       {
         string link = url.Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
+                         .Replace("%TORAHORG%", OnlineParashot.TorahOrg[item.Book][item.Number - 1])
                          .Replace("%CHABAD-EN%", OnlineParashot.ChabadEN[item.Book][item.Number - 1])
                          .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
                          .Replace("%WIKIPEDIA-EN%", OnlineParashot.WikipediaEN[item.Book][item.Number - 1])
