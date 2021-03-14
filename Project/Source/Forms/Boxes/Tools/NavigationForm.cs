@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNextDateValue.Tag = null;
           }
-          var today = MainForm.Instance.DataSet.GetLunarToday();
+          var today = MainForm.Instance.DataSet.LunisolarDays.GetLunarToday();
           LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
           LabelCurrentDayValue.Tag = today.DateAsDateTime;
           LabelParashahValue.Text = "-";
