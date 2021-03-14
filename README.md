@@ -328,7 +328,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to indicate current parashah in the application title bar.
 - Add option to indicate current lunar day in the application title bar.
 - Add option to set visual calendar events line spacing that is reduced to display parashah.
-- Add current parashah in the navigation form and in the main form subtitle.
 - Add common database in roaming to store parashot table and inter-process locking table.
 - Add a different Tray Icon to indicate if a Shabat or a celebration day is running.
 - Add option to enable or disable this special day Tray Icon.
@@ -339,8 +338,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add export to TXT support for all boards.
 - Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
 - Add command-line options (see FAQ).
-- Improve month view to show long-week celebration intermediate days.
-- Improve navigation form to show long-week celebration intermediate days.
+- Improve text report and month view to show long-week celebration intermediate days.
+- Improve navigation form to show parashah long-week celebration intermediate days.
 - Improve search event, lunar month and gregorian month windows.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
