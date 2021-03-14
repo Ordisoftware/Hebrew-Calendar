@@ -447,6 +447,15 @@ namespace Ordisoftware.Hebrew
       Clipboard.SetText(CurrentDataBoundItemToString(false));
     }
 
+    private void ActionOpenTorahBoxParashah_Click(object sender, EventArgs e)
+    {
+      var item = CurrentDataBoundItem;
+      var book = (TorahBooks)( (int)item[nameof(Parashah.Book)] - 1 );
+      int number = (int)item[nameof(Parashah.Number)];
+      string link = OnlineParashot.TorahBox[book][number - 1];
+      SystemManager.OpenWebLink(link);
+    }
+
   }
 
 }

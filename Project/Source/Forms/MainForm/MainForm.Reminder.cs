@@ -14,7 +14,6 @@
 /// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
-using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -33,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerMutex = true;
       try
       {
-        var today = DataSet.GetLunarToday();
+        var today = DataSet.LunisolarDays.GetLunarToday();
         IsSpecialDay = today.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                     || TorahCelebrations.SpecialDays.Contains(today.TorahEventsAsEnum);
         SystemManager.TryCatch(() =>

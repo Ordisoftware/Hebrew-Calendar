@@ -21,18 +21,23 @@ namespace Ordisoftware.Hebrew.Calendar.Data
   partial class DataSet
   {
 
-    public string WeeklyParashahText
+    partial class LunisolarDaysDataTable
     {
-      get
-      {
-        var parashah = GetWeeklyParashah();
-        return ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
-      }
-    }
 
-    public Parashah GetWeeklyParashah()
-    {
-      return ParashotTable.GetDefaultByID(GetLunarToday()?.GetParashahReadingDay()?.ParashahID) ?? null;
+      public string WeeklyParashahText
+      {
+        get
+        {
+          var parashah = GetWeeklyParashah();
+          return ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
+        }
+      }
+
+      public Parashah GetWeeklyParashah()
+      {
+        return ParashotTable.GetDefaultByID(GetLunarToday()?.GetParashahReadingDay()?.ParashahID) ?? null;
+      }
+
     }
 
     partial class LunisolarDaysRow

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       Text = Globals.AssemblyTitle;
       if ( Settings.MainFormTitleBarShowToday )
-        Text += " - " + DataSet.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
+        Text += " - " + DataSet.LunisolarDays.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
       SystemManager.TryCatch(() =>
       {
         string str;
@@ -114,8 +114,10 @@ namespace Ordisoftware.Hebrew.Calendar
           str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
         LabelSubTitleOmer.Text = str;
         // Parashah
-        if ( Settings.MainFormTitleBarShowWeeklyParashah )
-          Text += " - Parashah " + DataSet.WeeklyParashahText;
+        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        if ( parashah != null && Settings.MainFormTitleBarShowWeeklyParashah )
+          Text += " - Parashah " + parashah.ToStringLinked().ToUpper();
+        ActionOpenTorahBoxParashah.Enabled = parashah != null;
       });
     }
 

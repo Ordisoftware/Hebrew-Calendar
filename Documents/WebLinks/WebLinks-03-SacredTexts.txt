@@ -28,6 +28,7 @@ URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
 
 Name = (FR) Parashah @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
+
 -
 
 Name = (EN) Jewish Texts @ sefaria.org
@@ -46,6 +47,9 @@ URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
 
 Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
 URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
+
+Name = (FR/IW) Parashah Texte, Audio et Cours @ torah-box.com
+URL = https://www.torah-box.com/paracha/
 
 -
 

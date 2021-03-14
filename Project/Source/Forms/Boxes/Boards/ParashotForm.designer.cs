@@ -30,15 +30,15 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
@@ -53,20 +53,14 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
-      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnUnicode = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +74,8 @@
       this.MenuSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenTorahBoxParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +84,12 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -99,7 +100,6 @@
       // 
       // PanelBottom
       // 
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
@@ -111,12 +111,13 @@
       this.PanelBottom.Controls.Add(this.ActionErase);
       this.PanelBottom.Controls.Add(this.ActionSave);
       this.PanelBottom.Controls.Add(this.ActionClose);
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // EditFontSize
       // 
-      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditFontSize, "EditFontSize");
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -138,8 +139,8 @@
       // 
       // ActionCheckLockers
       // 
-      resources.ApplyResources(this.ActionCheckLockers, "ActionCheckLockers");
       this.ActionCheckLockers.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionCheckLockers, "ActionCheckLockers");
       this.ActionCheckLockers.LinkColor = System.Drawing.Color.Navy;
       this.ActionCheckLockers.Name = "ActionCheckLockers";
       this.ActionCheckLockers.TabStop = true;
@@ -147,8 +148,8 @@
       // 
       // ActionViewLockers
       // 
-      resources.ApplyResources(this.ActionViewLockers, "ActionViewLockers");
       this.ActionViewLockers.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionViewLockers, "ActionViewLockers");
       this.ActionViewLockers.LinkColor = System.Drawing.Color.Navy;
       this.ActionViewLockers.Name = "ActionViewLockers";
       this.ActionViewLockers.TabStop = true;
@@ -176,17 +177,17 @@
       // 
       // ActionReset
       // 
-      resources.ApplyResources(this.ActionReset, "ActionReset");
       this.ActionReset.AllowDrop = true;
       this.ActionReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionReset, "ActionReset");
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
       // 
       // ActionUndo
       // 
-      resources.ApplyResources(this.ActionUndo, "ActionUndo");
       this.ActionUndo.AllowDrop = true;
+      resources.ApplyResources(this.ActionUndo, "ActionUndo");
       this.ActionUndo.FlatAppearance.BorderSize = 0;
       this.ActionUndo.Name = "ActionUndo";
       this.ActionUndo.UseVisualStyleBackColor = true;
@@ -194,17 +195,17 @@
       // 
       // ActionErase
       // 
-      resources.ApplyResources(this.ActionErase, "ActionErase");
       this.ActionErase.AllowDrop = true;
       this.ActionErase.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionErase, "ActionErase");
       this.ActionErase.Name = "ActionErase";
       this.ActionErase.UseVisualStyleBackColor = true;
       this.ActionErase.Click += new System.EventHandler(this.ActionEmpty_Click);
       // 
       // ActionSave
       // 
-      resources.ApplyResources(this.ActionSave, "ActionSave");
       this.ActionSave.AllowDrop = true;
+      resources.ApplyResources(this.ActionSave, "ActionSave");
       this.ActionSave.FlatAppearance.BorderSize = 0;
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.UseVisualStyleBackColor = true;
@@ -219,13 +220,12 @@
       // 
       // PanelMain
       // 
-      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Controls.Add(this.DataGridView);
+      resources.ApplyResources(this.PanelMain, "PanelMain");
       this.PanelMain.Name = "PanelMain";
       // 
       // DataGridView
       // 
-      resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.AllowUserToAddRows = false;
       this.DataGridView.AllowUserToDeleteRows = false;
       this.DataGridView.AllowUserToResizeRows = false;
@@ -233,14 +233,15 @@
       this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridView.BackgroundColor = System.Drawing.Color.White;
       this.DataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-      dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      resources.ApplyResources(this.DataGridView, "DataGridView");
       this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnBook,
@@ -271,37 +272,11 @@
       this.DataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellValueChanged);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
-      // ColumnBook
-      // 
-      this.ColumnBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBook.DataPropertyName = "Book";
-      resources.ApplyResources(this.ColumnBook, "ColumnBook");
-      this.ColumnBook.Name = "ColumnBook";
-      this.ColumnBook.ReadOnly = true;
-      // 
-      // ColumnNumber
-      // 
-      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnNumber.DataPropertyName = "Number";
-      dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle11;
-      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
-      this.ColumnNumber.Name = "ColumnNumber";
-      this.ColumnNumber.ReadOnly = true;
-      // 
-      // ColumnName
-      // 
-      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnName.DataPropertyName = "Name";
-      resources.ApplyResources(this.ColumnName, "ColumnName");
-      this.ColumnName.Name = "ColumnName";
-      this.ColumnName.ReadOnly = true;
-      // 
       // ColumnTranslation
       // 
       this.ColumnTranslation.DataPropertyName = "Translation";
-      dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle12;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle3;
       resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
       this.ColumnTranslation.Name = "ColumnTranslation";
       // 
@@ -309,38 +284,18 @@
       // 
       this.ColumnLettriq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
       this.ColumnLettriq.DataPropertyName = "Lettriq";
-      dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle13;
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
       resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
       this.ColumnLettriq.Name = "ColumnLettriq";
-      // 
-      // ColumnBegin
-      // 
-      this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBegin.DataPropertyName = "VerseBegin";
-      dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle14;
-      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
-      this.ColumnBegin.Name = "ColumnBegin";
-      this.ColumnBegin.ReadOnly = true;
-      // 
-      // ColumnEnd
-      // 
-      this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnEnd.DataPropertyName = "VerseEnd";
-      dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle15;
-      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
-      this.ColumnEnd.Name = "ColumnEnd";
-      this.ColumnEnd.ReadOnly = true;
       // 
       // ColumnLinked
       // 
       this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
-      dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle16;
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
       resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
       this.ColumnLinked.Name = "ColumnLinked";
       this.ColumnLinked.ReadOnly = true;
@@ -349,9 +304,9 @@
       // 
       this.ColumnUnicode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnUnicode.DataPropertyName = "Unicode";
-      dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle17.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle17;
+      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnUnicode.DefaultCellStyle = dataGridViewCellStyle8;
       resources.ApplyResources(this.ColumnUnicode, "ColumnUnicode");
       this.ColumnUnicode.Name = "ColumnUnicode";
       this.ColumnUnicode.ReadOnly = true;
@@ -360,10 +315,10 @@
       // 
       this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
       this.ColumnMemo.DataPropertyName = "Memo";
-      dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Transparent;
-      dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Transparent;
-      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle18;
+      dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+      dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
+      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle9;
       resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
       this.ColumnMemo.Name = "ColumnMemo";
       this.ColumnMemo.ReadOnly = true;
@@ -372,13 +327,13 @@
       // 
       // ContextMenuParashah
       // 
-      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionOpenVerseOnline,
             this.ActionSearchOnline,
-            this.MenuSeparator1,
-            this.ActionShowGrammarGuide,
+            this.toolStripMenuItem1,
+            this.ActionOpenTorahBoxParashah,
             this.toolStripSeparator1,
+            this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
             this.ActionOpenHebrewWordsVerse,
@@ -391,6 +346,7 @@
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
       // ActionOpenVerseOnline
       // 
@@ -402,11 +358,6 @@
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
       // 
-      // MenuSeparator1
-      // 
-      resources.ApplyResources(this.MenuSeparator1, "MenuSeparator1");
-      this.MenuSeparator1.Name = "MenuSeparator1";
-      // 
       // ActionShowGrammarGuide
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
@@ -415,8 +366,8 @@
       // 
       // toolStripSeparator1
       // 
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionOpenHebrewLetters
       // 
@@ -426,8 +377,8 @@
       // 
       // toolStripSeparator2
       // 
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionOpenHebrewWordsVerse
       // 
@@ -443,8 +394,8 @@
       // 
       // MenuSeparator2
       // 
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       this.MenuSeparator2.Name = "MenuSeparator2";
+      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyName
       // 
@@ -466,8 +417,8 @@
       // 
       // MenuSeparator3
       // 
-      resources.ApplyResources(this.MenuSeparator3, "MenuSeparator3");
       this.MenuSeparator3.Name = "MenuSeparator3";
+      resources.ApplyResources(this.MenuSeparator3, "MenuSeparator3");
       // 
       // ActionCopyLineHebrew
       // 
@@ -481,10 +432,16 @@
       this.ActionCopyLineUnicode.Name = "ActionCopyLineUnicode";
       this.ActionCopyLineUnicode.Click += new System.EventHandler(this.ActionCopyLineUnicode_Click);
       // 
-      // BindingSource
+      // toolStripMenuItem1
       // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
-      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionOpenTorahBoxParashah
+      // 
+      resources.ApplyResources(this.ActionOpenTorahBoxParashah, "ActionOpenTorahBoxParashah");
+      this.ActionOpenTorahBoxParashah.Name = "ActionOpenTorahBoxParashah";
+      this.ActionOpenTorahBoxParashah.Click += new System.EventHandler(this.ActionOpenTorahBoxParashah_Click);
       // 
       // bookDataGridViewTextBoxColumn
       // 
@@ -540,6 +497,57 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // ColumnBook
+      // 
+      this.ColumnBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnBook.DataPropertyName = "Book";
+      resources.ApplyResources(this.ColumnBook, "ColumnBook");
+      this.ColumnBook.Name = "ColumnBook";
+      this.ColumnBook.ReadOnly = true;
+      // 
+      // ColumnNumber
+      // 
+      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnNumber.DataPropertyName = "Number";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
+      this.ColumnNumber.Name = "ColumnNumber";
+      this.ColumnNumber.ReadOnly = true;
+      // 
+      // ColumnName
+      // 
+      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnName.DataPropertyName = "Name";
+      resources.ApplyResources(this.ColumnName, "ColumnName");
+      this.ColumnName.Name = "ColumnName";
+      this.ColumnName.ReadOnly = true;
+      // 
+      // ColumnBegin
+      // 
+      this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnBegin.DataPropertyName = "VerseBegin";
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
+      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
+      this.ColumnBegin.Name = "ColumnBegin";
+      this.ColumnBegin.ReadOnly = true;
+      // 
+      // ColumnEnd
+      // 
+      this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnEnd.DataPropertyName = "VerseEnd";
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
+      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
+      this.ColumnEnd.Name = "ColumnEnd";
+      this.ColumnEnd.ReadOnly = true;
+      // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
+      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -568,7 +576,6 @@
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
-    private System.Windows.Forms.ToolStripSeparator MenuSeparator1;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewChars;
@@ -613,5 +620,7 @@
     private System.Windows.Forms.Button ActionErase;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsSearch;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenTorahBoxParashah;
   }
 }
