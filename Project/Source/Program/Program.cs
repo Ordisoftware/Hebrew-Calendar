@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Application.SetCompatibleTextRenderingDefault(false);
         Language lang = Settings.LanguageSelected;
         SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-        SystemManager.ProcessIPCommands = ProcessIPCommands;
+        SystemManager.IPCSendCommands = IPCSendCommands;
         if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
         bool upgrade = Settings.UpgradeRequired;
         Globals.IsSettingsUpgraded = upgrade;
@@ -114,9 +114,9 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// IPC answers.
+    /// Send IPC commands.
     /// </summary>
-    static private void ProcessIPCommands()
+    static private void IPCSendCommands()
     {
       if ( ApplicationCommandLine.Instance.HideMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));

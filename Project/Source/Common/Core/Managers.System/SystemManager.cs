@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// IPC answers callback.
     /// </summary>
-    static public Action ProcessIPCommands;
+    static public Action IPCSendCommands;
 
     /// <summary>
     /// Indicate if the several instances of the application can run at same time.
@@ -98,7 +98,7 @@ namespace Ordisoftware.Core
             CommandLineOptions.ShowMainForm = true;
           try
           {
-            ProcessIPCommands?.Invoke();
+            IPCSendCommands?.Invoke();
           }
           catch ( Exception ex )
           {

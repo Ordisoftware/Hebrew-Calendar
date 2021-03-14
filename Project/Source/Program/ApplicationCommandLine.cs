@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
     [Option("generate", Required = false, HelpText = "Generate calendar.")]
     public bool Generate { get; set; }
 
-    [Option("navigation", Required = false, HelpText = "Open navigation window.")]
+    [Option("navigate", Required = false, HelpText = "Open navigation window.")]
     public bool OpenNavigation { get; set; }
 
     [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
