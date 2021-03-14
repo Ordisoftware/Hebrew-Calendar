@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -116,9 +116,8 @@ namespace Ordisoftware.Hebrew.Calendar
             textDate += dayDate.Month.ToString("00") + ".";
             textDate += dayDate.Year;
             string strDesc = string.Empty;
-            string s1 = AppTranslations.TorahEvent.GetLang(day.TorahEventsAsEnum);
+            string s1 = day.TorahEventText;
             string s2 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
-            if ( string.IsNullOrEmpty(s1) ) s1 = day.GetWeekLongCelebrationIntermediateDay();
             strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;

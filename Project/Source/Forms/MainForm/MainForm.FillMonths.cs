@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -173,10 +173,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
             }
             //Torah
-            if ( row.TorahEvents != 0 )
-              add(Settings.CalendarColorTorahEvent, AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum));
-            else
-              add(Settings.CalendarColorTorahEvent, row.GetWeekLongCelebrationIntermediateDay());
+            add(Settings.CalendarColorTorahEvent, row.TorahEventText);
             // Parashah
             if ( Settings.CalendarShowParashah )
               if ( !string.IsNullOrEmpty(row.ParashahID) )

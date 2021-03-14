@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Data.Odbc;
 using Ordisoftware.Core;
@@ -57,11 +57,13 @@ namespace Ordisoftware.Hebrew.Calendar
                                           MoonPhase INTEGER DEFAULT 0 NOT NULL,
                                           SeasonChange INTEGER DEFAULT 0 NOT NULL,
                                           TorahEvents INTEGER DEFAULT 0 NOT NULL,
+                                          TorahEventText TEXT DEFAULT '' NOT NULL,
                                           ParashahID TEXT DEFAULT '' NOT NULL,
                                           LinkedParashahID TEXT DEFAULT '' NOT NULL,
                                           PRIMARY KEY(Date)
                                         )");
         bool b = Globals.IsDatabaseUpgraded;
+        b = !LockFileConnection.CheckColumn("LunisolarDays", "TorahEventText", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("LunisolarDays", "ParashahID", "TEXT", "''", true) || b;
         b = !LockFileConnection.CheckColumn("LunisolarDays", "LinkedParashahID", "TEXT", "''", true) || b;
         Globals.IsDatabaseUpgraded = b;

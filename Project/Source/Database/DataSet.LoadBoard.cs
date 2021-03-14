@@ -10,12 +10,11 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2016-04 </created>
+/// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
 using System;
 using System.Data;
 using System.Linq;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar.Data
 {
@@ -87,32 +86,6 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
     partial class LunisolarDaysRow
     {
-
-      public string GetWeekLongCelebrationIntermediateDay()
-      {
-        int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
-        if ( MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay || deltaPessah != 0 )
-          if ( LunarMonth == TorahCelebrations.PessahMonth )
-          {
-            int day = LunarDay >= TorahCelebrations.PessahStartDay + deltaPessah
-                      ? LunarDay - TorahCelebrations.PessahStartDay + 1 + deltaPessah
-                      : -1;
-            if ( day > 0 && day < TorahCelebrations.PessahLenght )
-              return AppTranslations.PessahDay.GetLang(day);
-          }
-          else
-          if ( LunarMonth == TorahCelebrations.YomsMonth )
-          {
-            int day = LunarDay >= TorahCelebrations.SoukotStartDay
-                      ? LunarDay - TorahCelebrations.SoukotStartDay + 1
-                      : -1;
-            if ( day > 0 && day < TorahCelebrations.SoukotLenght )
-              return AppTranslations.SoukotDay.GetLang(day);
-          }
-          //else
-          //if
-        return string.Empty;
-      }
 
       public DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
       {
