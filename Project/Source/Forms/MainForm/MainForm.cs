@@ -333,8 +333,8 @@ namespace Ordisoftware.Hebrew.Calendar
           GoToDate(DateTime.Now.Date);
         else
           GoToDate(dateOld);
-        UpdateTitles(true);
         EnableReminderTimer();
+        UpdateTitles(true);
       }
     }
 
