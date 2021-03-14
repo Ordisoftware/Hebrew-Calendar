@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -572,7 +572,29 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(DataSet.GetWeeklyParashah());
+      ParashotForm.Run(DataSet.LunisolarDays.GetWeeklyParashah());
+    }
+
+    /// <summary>
+    /// Event handler. Called by ActionOpenTorahBoxParashah for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionOpenTorahBoxParashah_Click(object sender, EventArgs e)
+    {
+      var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+      if ( parashah == null )
+      {
+        DisplayManager.Show(AppTranslations.ParashahNotFound.GetLang());
+        return;
+      }
+      string link = OnlineParashot.TorahBox[parashah.Book][parashah.Number - 1];
+      SystemManager.OpenWebLink(link);
+      if ( parashah.Linked != null )
+      {
+        link = OnlineParashot.TorahBox[parashah.Linked.Book][parashah.Linked.Number - 1];
+        SystemManager.OpenWebLink(link);
+      }
     }
 
     /// <summary>
