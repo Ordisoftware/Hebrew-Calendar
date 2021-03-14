@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -223,6 +223,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CreateDataTable()
     {
+      Program.Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       DataGridView.DataSource = null;

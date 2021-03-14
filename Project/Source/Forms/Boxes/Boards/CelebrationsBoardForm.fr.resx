@@ -166,4 +166,7 @@
   <data name="EditEnglishTitles.Text" xml:space="preserve">
     <value>Utiliser les noms de colonnes en anglais</value>
   </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Export des énumérations en tant que traductions humanisées</value>
+  </data>
 </root>

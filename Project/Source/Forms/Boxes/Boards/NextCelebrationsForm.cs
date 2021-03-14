@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                  .Tag = row.Date;
         if ( row.HasTorahEvent )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum))
+                                 .SubItems.Add(row.TorahEventText)
                                  .Tag = row.Date;
       }
       if ( Instance.ListView.Columns.Count > 0 )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -233,6 +233,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.SeasonChangeAsEnum = data.RealSeasonChange;
         day.LunarMonth = 0;
         day.TorahEvents = 0;
+        day.TorahEventText = string.Empty;
         day.ParashahID = string.Empty;
         day.LinkedParashahID = string.Empty;
       }
@@ -279,6 +280,10 @@ namespace Ordisoftware.Hebrew.Calendar
               delta = 1;
             day.LunarDay -= delta;
             checkParashah(day);
+            if ( day.TorahEventsAsEnum != TorahEvent.None )
+              day.TorahEventText = AppTranslations.TorahEvent[day.TorahEventsAsEnum].GetLang();
+            else
+              day.TorahEventText = day.GetWeekLongCelebrationIntermediateDay();
           }
           catch ( Exception ex )
           {

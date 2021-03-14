@@ -34,9 +34,6 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
       this.PanelOptions = new System.Windows.Forms.Panel();
-      this.LabelEnd = new System.Windows.Forms.Label();
-      this.LabelStart = new System.Windows.Forms.Label();
-      this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditEnglishTitles = new System.Windows.Forms.CheckBox();
       this.EditHideHours = new System.Windows.Forms.CheckBox();
       this.EditUseRealDays = new System.Windows.Forms.CheckBox();
@@ -46,6 +43,10 @@
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.SelectYear1 = new Ordisoftware.Hebrew.SelectYearsControl();
       this.SelectYear2 = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.LabelEnd = new System.Windows.Forms.Label();
+      this.LabelStart = new System.Windows.Forms.Label();
+      this.LabelFontSize = new System.Windows.Forms.Label();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
@@ -54,6 +55,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditExportDataEnumsAsTranslations);
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -110,21 +112,6 @@
       this.PanelOptions.Controls.Add(this.LabelFontSize);
       resources.ApplyResources(this.PanelOptions, "PanelOptions");
       this.PanelOptions.Name = "PanelOptions";
-      // 
-      // LabelEnd
-      // 
-      resources.ApplyResources(this.LabelEnd, "LabelEnd");
-      this.LabelEnd.Name = "LabelEnd";
-      // 
-      // LabelStart
-      // 
-      resources.ApplyResources(this.LabelStart, "LabelStart");
-      this.LabelStart.Name = "LabelStart";
-      // 
-      // LabelFontSize
-      // 
-      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
-      this.LabelFontSize.Name = "LabelFontSize";
       // 
       // EditEnglishTitles
       // 
@@ -211,6 +198,7 @@
       this.SelectYear1.Name = "SelectYear1";
       this.SelectYear1.SelectedIndex = -1;
       this.SelectYear1.SelectedItem = null;
+      this.SelectYear1.Value = -1;
       this.SelectYear1.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // SelectYear2
@@ -219,7 +207,32 @@
       this.SelectYear2.Name = "SelectYear2";
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
+      this.SelectYear2.Value = -1;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
+      // 
+      // LabelEnd
+      // 
+      resources.ApplyResources(this.LabelEnd, "LabelEnd");
+      this.LabelEnd.Name = "LabelEnd";
+      // 
+      // LabelStart
+      // 
+      resources.ApplyResources(this.LabelStart, "LabelStart");
+      this.LabelStart.Name = "LabelStart";
+      // 
+      // LabelFontSize
+      // 
+      resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
+      this.LabelFontSize.Name = "LabelFontSize";
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.ReloadGrid);
       // 
       // CelebrationsBoardForm
       // 
@@ -235,6 +248,7 @@
       this.Load += new System.EventHandler(this.CelebrationsBoardForm_Load);
       this.Shown += new System.EventHandler(this.CelebrationsBoardForm_Shown);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
@@ -262,5 +276,6 @@
     private System.Windows.Forms.CheckBox EditHideHours;
     private System.Windows.Forms.Button ActionExport;
     private System.Windows.Forms.CheckBox EditEnglishTitles;
+    private System.Windows.Forms.CheckBox EditExportDataEnumsAsTranslations;
   }
 }

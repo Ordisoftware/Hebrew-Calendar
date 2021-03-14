@@ -309,6 +309,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             
             private global::System.Data.DataColumn columnLinkedParashahID;
             
+            private global::System.Data.DataColumn columnTorahEventText;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public LunisolarDaysDataTable() {
@@ -464,6 +466,14 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TorahEventTextColumn {
+                get {
+                    return this.columnTorahEventText;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,23 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LunisolarDaysRow AddLunisolarDaysRow(string Date, int LunarMonth, int LunarDay, string Sunrise, string Sunset, string Moonrise, string Moonset, int MoonriseType, int IsNewMoon, int IsFullMoon, int MoonPhase, int SeasonChange, int TorahEvents, string ParashahID, string LinkedParashahID) {
+            public LunisolarDaysRow AddLunisolarDaysRow(
+                        string Date, 
+                        int LunarMonth, 
+                        int LunarDay, 
+                        string Sunrise, 
+                        string Sunset, 
+                        string Moonrise, 
+                        string Moonset, 
+                        int MoonriseType, 
+                        int IsNewMoon, 
+                        int IsFullMoon, 
+                        int MoonPhase, 
+                        int SeasonChange, 
+                        int TorahEvents, 
+                        string ParashahID, 
+                        string LinkedParashahID, 
+                        string TorahEventText) {
                 LunisolarDaysRow rowLunisolarDaysRow = ((LunisolarDaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Date,
@@ -516,7 +542,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
                         SeasonChange,
                         TorahEvents,
                         ParashahID,
-                        LinkedParashahID};
+                        LinkedParashahID,
+                        TorahEventText};
                 rowLunisolarDaysRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLunisolarDaysRow);
                 return rowLunisolarDaysRow;
@@ -561,6 +588,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
                 this.columnTorahEvents = base.Columns["TorahEvents"];
                 this.columnParashahID = base.Columns["ParashahID"];
                 this.columnLinkedParashahID = base.Columns["LinkedParashahID"];
+                this.columnTorahEventText = base.Columns["TorahEventText"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,17 +624,35 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
                 base.Columns.Add(this.columnParashahID);
                 this.columnLinkedParashahID = new global::System.Data.DataColumn("LinkedParashahID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLinkedParashahID);
+                this.columnTorahEventText = new global::System.Data.DataColumn("TorahEventText", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTorahEventText);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDate}, true));
                 this.columnDate.AllowDBNull = false;
                 this.columnDate.Unique = true;
                 this.columnDate.MaxLength = 65536;
+                this.columnLunarMonth.AllowDBNull = false;
+                this.columnLunarDay.AllowDBNull = false;
+                this.columnSunrise.AllowDBNull = false;
                 this.columnSunrise.MaxLength = 65536;
+                this.columnSunset.AllowDBNull = false;
                 this.columnSunset.MaxLength = 65536;
+                this.columnMoonrise.AllowDBNull = false;
                 this.columnMoonrise.MaxLength = 65536;
+                this.columnMoonset.AllowDBNull = false;
                 this.columnMoonset.MaxLength = 65536;
+                this.columnMoonriseType.AllowDBNull = false;
+                this.columnIsNewMoon.AllowDBNull = false;
+                this.columnIsFullMoon.AllowDBNull = false;
+                this.columnMoonPhase.AllowDBNull = false;
+                this.columnSeasonChange.AllowDBNull = false;
+                this.columnTorahEvents.AllowDBNull = false;
+                this.columnParashahID.AllowDBNull = false;
                 this.columnParashahID.MaxLength = 65536;
+                this.columnLinkedParashahID.AllowDBNull = false;
                 this.columnLinkedParashahID.MaxLength = 65536;
+                this.columnTorahEventText.AllowDBNull = false;
+                this.columnTorahEventText.MaxLength = 65536;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -762,12 +808,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int LunarMonth {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.LunarMonthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'LunarMonth\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.LunarMonthColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.LunarMonthColumn] = value;
@@ -778,12 +819,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int LunarDay {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.LunarDayColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'LunarDay\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.LunarDayColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.LunarDayColumn] = value;
@@ -794,12 +830,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Sunrise {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.SunriseColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Sunrise\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.SunriseColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.SunriseColumn] = value;
@@ -810,12 +841,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Sunset {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.SunsetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Sunset\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.SunsetColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.SunsetColumn] = value;
@@ -826,12 +852,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Moonrise {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.MoonriseColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Moonrise\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.MoonriseColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.MoonriseColumn] = value;
@@ -842,12 +863,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Moonset {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.MoonsetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Moonset\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.MoonsetColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.MoonsetColumn] = value;
@@ -858,13 +874,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int MoonriseType {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.MoonriseTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MoonriseType\' dans la table \'LunisolarDays\' est DBNull" +
-                                ".", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.MoonriseTypeColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.MoonriseTypeColumn] = value;
@@ -875,12 +885,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int IsNewMoon {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.IsNewMoonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'IsNewMoon\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.IsNewMoonColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.IsNewMoonColumn] = value;
@@ -891,12 +896,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int IsFullMoon {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.IsFullMoonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'IsFullMoon\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.IsFullMoonColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.IsFullMoonColumn] = value;
@@ -907,12 +907,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int MoonPhase {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.MoonPhaseColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MoonPhase\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.MoonPhaseColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.MoonPhaseColumn] = value;
@@ -923,13 +918,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SeasonChange {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.SeasonChangeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'SeasonChange\' dans la table \'LunisolarDays\' est DBNull" +
-                                ".", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.SeasonChangeColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.SeasonChangeColumn] = value;
@@ -940,13 +929,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int TorahEvents {
                 get {
-                    try {
-                        return ((int)(this[this.tableLunisolarDays.TorahEventsColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'TorahEvents\' dans la table \'LunisolarDays\' est DBNull." +
-                                "", e);
-                    }
+                    return ((int)(this[this.tableLunisolarDays.TorahEventsColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.TorahEventsColumn] = value;
@@ -957,12 +940,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ParashahID {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.ParashahIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'ParashahID\' dans la table \'LunisolarDays\' est DBNull.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.ParashahIDColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.ParashahIDColumn] = value;
@@ -973,13 +951,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string LinkedParashahID {
                 get {
-                    try {
-                        return ((string)(this[this.tableLunisolarDays.LinkedParashahIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'LinkedParashahID\' dans la table \'LunisolarDays\' est DB" +
-                                "Null.", e);
-                    }
+                    return ((string)(this[this.tableLunisolarDays.LinkedParashahIDColumn]));
                 }
                 set {
                     this[this.tableLunisolarDays.LinkedParashahIDColumn] = value;
@@ -988,170 +960,13 @@ namespace Ordisoftware.Hebrew.Calendar.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLunarMonthNull() {
-                return this.IsNull(this.tableLunisolarDays.LunarMonthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLunarMonthNull() {
-                this[this.tableLunisolarDays.LunarMonthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLunarDayNull() {
-                return this.IsNull(this.tableLunisolarDays.LunarDayColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLunarDayNull() {
-                this[this.tableLunisolarDays.LunarDayColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSunriseNull() {
-                return this.IsNull(this.tableLunisolarDays.SunriseColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSunriseNull() {
-                this[this.tableLunisolarDays.SunriseColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSunsetNull() {
-                return this.IsNull(this.tableLunisolarDays.SunsetColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSunsetNull() {
-                this[this.tableLunisolarDays.SunsetColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMoonriseNull() {
-                return this.IsNull(this.tableLunisolarDays.MoonriseColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMoonriseNull() {
-                this[this.tableLunisolarDays.MoonriseColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMoonsetNull() {
-                return this.IsNull(this.tableLunisolarDays.MoonsetColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMoonsetNull() {
-                this[this.tableLunisolarDays.MoonsetColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMoonriseTypeNull() {
-                return this.IsNull(this.tableLunisolarDays.MoonriseTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMoonriseTypeNull() {
-                this[this.tableLunisolarDays.MoonriseTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIsNewMoonNull() {
-                return this.IsNull(this.tableLunisolarDays.IsNewMoonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIsNewMoonNull() {
-                this[this.tableLunisolarDays.IsNewMoonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIsFullMoonNull() {
-                return this.IsNull(this.tableLunisolarDays.IsFullMoonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIsFullMoonNull() {
-                this[this.tableLunisolarDays.IsFullMoonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMoonPhaseNull() {
-                return this.IsNull(this.tableLunisolarDays.MoonPhaseColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMoonPhaseNull() {
-                this[this.tableLunisolarDays.MoonPhaseColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSeasonChangeNull() {
-                return this.IsNull(this.tableLunisolarDays.SeasonChangeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSeasonChangeNull() {
-                this[this.tableLunisolarDays.SeasonChangeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTorahEventsNull() {
-                return this.IsNull(this.tableLunisolarDays.TorahEventsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTorahEventsNull() {
-                this[this.tableLunisolarDays.TorahEventsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsParashahIDNull() {
-                return this.IsNull(this.tableLunisolarDays.ParashahIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetParashahIDNull() {
-                this[this.tableLunisolarDays.ParashahIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLinkedParashahIDNull() {
-                return this.IsNull(this.tableLunisolarDays.LinkedParashahIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLinkedParashahIDNull() {
-                this[this.tableLunisolarDays.LinkedParashahIDColumn] = global::System.Convert.DBNull;
+            public string TorahEventText {
+                get {
+                    return ((string)(this[this.tableLunisolarDays.TorahEventTextColumn]));
+                }
+                set {
+                    this[this.tableLunisolarDays.TorahEventTextColumn] = value;
+                }
             }
         }
         
@@ -1329,43 +1144,31 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TorahEvents", "TorahEvents");
             tableMapping.ColumnMappings.Add("ParashahID", "ParashahID");
             tableMapping.ColumnMappings.Add("LinkedParashahID", "LinkedParashahID");
+            tableMapping.ColumnMappings.Add("TorahEventText", "TorahEventText");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""LunisolarDays"" WHERE ((""Date"" = ?) AND ((? = 1 AND ""LunarMonth"" IS NULL) OR (""LunarMonth"" = ?)) AND ((? = 1 AND ""LunarDay"" IS NULL) OR (""LunarDay"" = ?)) AND ((? = 1 AND ""Sunrise"" IS NULL) OR (""Sunrise"" = ?)) AND ((? = 1 AND ""Sunset"" IS NULL) OR (""Sunset"" = ?)) AND ((? = 1 AND ""Moonrise"" IS NULL) OR (""Moonrise"" = ?)) AND ((? = 1 AND ""Moonset"" IS NULL) OR (""Moonset"" = ?)) AND ((? = 1 AND ""MoonriseType"" IS NULL) OR (""MoonriseType"" = ?)) AND ((? = 1 AND ""IsNewMoon"" IS NULL) OR (""IsNewMoon"" = ?)) AND ((? = 1 AND ""IsFullMoon"" IS NULL) OR (""IsFullMoon"" = ?)) AND ((? = 1 AND ""MoonPhase"" IS NULL) OR (""MoonPhase"" = ?)) AND ((? = 1 AND ""SeasonChange"" IS NULL) OR (""SeasonChange"" = ?)) AND ((? = 1 AND ""TorahEvents"" IS NULL) OR (""TorahEvents"" = ?)) AND ((? = 1 AND ""ParashahID"" IS NULL) OR (""ParashahID"" = ?)) AND ((? = 1 AND ""LinkedParashahID"" IS NULL) OR (""LinkedParashahID"" = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""LunisolarDays"" WHERE ((""Date"" = ?) AND (""LunarMonth"" = ?) AND (""LunarDay"" = ?) AND (""Sunrise"" = ?) AND (""Sunset"" = ?) AND (""Moonrise"" = ?) AND (""Moonset"" = ?) AND (""MoonriseType"" = ?) AND (""IsNewMoon"" = ?) AND (""IsFullMoon"" = ?) AND (""MoonPhase"" = ?) AND (""SeasonChange"" = ?) AND (""TorahEvents"" = ?) AND (""TorahEventText"" = ?) AND (""ParashahID"" = ?) AND (""LinkedParashahID"" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Date", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LunarDay", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarDay", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LunarDay", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarDay", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Sunrise", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunrise", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Sunrise", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunrise", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Sunset", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunset", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Sunset", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunset", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Moonrise", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonrise", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Moonrise", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonrise", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Moonset", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonset", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Moonset", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonset", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_MoonriseType", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonriseType", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_MoonriseType", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonriseType", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_IsNewMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsNewMoon", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_IsNewMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsNewMoon", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_IsFullMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsFullMoon", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_IsFullMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsFullMoon", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_ParashahID", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TorahEventText", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEventText", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LinkedParashahID", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LinkedParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""LunisolarDays"" (""Date"", ""LunarMonth"", ""LunarDay"", ""Sunrise"", ""Sunset"", ""Moonrise"", ""Moonset"", ""MoonriseType"", ""IsNewMoon"", ""IsFullMoon"", ""MoonPhase"", ""SeasonChange"", ""TorahEvents"", ""ParashahID"", ""LinkedParashahID"") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""LunisolarDays"" (""Date"", ""LunarMonth"", ""LunarDay"", ""Sunrise"", ""Sunset"", ""Moonrise"", ""Moonset"", ""MoonriseType"", ""IsNewMoon"", ""IsFullMoon"", ""MoonPhase"", ""SeasonChange"", ""TorahEvents"", ""TorahEventText"", ""ParashahID"", ""LinkedParashahID"") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Date", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Current, false, null));
@@ -1380,11 +1183,12 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TorahEventText", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEventText", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("LinkedParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LunisolarDays"" SET ""Date"" = ?, ""LunarMonth"" = ?, ""LunarDay"" = ?, ""Sunrise"" = ?, ""Sunset"" = ?, ""Moonrise"" = ?, ""Moonset"" = ?, ""MoonriseType"" = ?, ""IsNewMoon"" = ?, ""IsFullMoon"" = ?, ""MoonPhase"" = ?, ""SeasonChange"" = ?, ""TorahEvents"" = ?, ""ParashahID"" = ?, ""LinkedParashahID"" = ? WHERE ((""Date"" = ?) AND ((? = 1 AND ""LunarMonth"" IS NULL) OR (""LunarMonth"" = ?)) AND ((? = 1 AND ""LunarDay"" IS NULL) OR (""LunarDay"" = ?)) AND ((? = 1 AND ""Sunrise"" IS NULL) OR (""Sunrise"" = ?)) AND ((? = 1 AND ""Sunset"" IS NULL) OR (""Sunset"" = ?)) AND ((? = 1 AND ""Moonrise"" IS NULL) OR (""Moonrise"" = ?)) AND ((? = 1 AND ""Moonset"" IS NULL) OR (""Moonset"" = ?)) AND ((? = 1 AND ""MoonriseType"" IS NULL) OR (""MoonriseType"" = ?)) AND ((? = 1 AND ""IsNewMoon"" IS NULL) OR (""IsNewMoon"" = ?)) AND ((? = 1 AND ""IsFullMoon"" IS NULL) OR (""IsFullMoon"" = ?)) AND ((? = 1 AND ""MoonPhase"" IS NULL) OR (""MoonPhase"" = ?)) AND ((? = 1 AND ""SeasonChange"" IS NULL) OR (""SeasonChange"" = ?)) AND ((? = 1 AND ""TorahEvents"" IS NULL) OR (""TorahEvents"" = ?)) AND ((? = 1 AND ""ParashahID"" IS NULL) OR (""ParashahID"" = ?)) AND ((? = 1 AND ""LinkedParashahID"" IS NULL) OR (""LinkedParashahID"" = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LunisolarDays"" SET ""Date"" = ?, ""LunarMonth"" = ?, ""LunarDay"" = ?, ""Sunrise"" = ?, ""Sunset"" = ?, ""Moonrise"" = ?, ""Moonset"" = ?, ""MoonriseType"" = ?, ""IsNewMoon"" = ?, ""IsFullMoon"" = ?, ""MoonPhase"" = ?, ""SeasonChange"" = ?, ""TorahEvents"" = ?, ""TorahEventText"" = ?, ""ParashahID"" = ?, ""LinkedParashahID"" = ? WHERE ((""Date"" = ?) AND (""LunarMonth"" = ?) AND (""LunarDay"" = ?) AND (""Sunrise"" = ?) AND (""Sunset"" = ?) AND (""Moonrise"" = ?) AND (""Moonset"" = ?) AND (""MoonriseType"" = ?) AND (""IsNewMoon"" = ?) AND (""IsFullMoon"" = ?) AND (""MoonPhase"" = ?) AND (""SeasonChange"" = ?) AND (""TorahEvents"" = ?) AND (""TorahEventText"" = ?) AND (""ParashahID"" = ?) AND (""LinkedParashahID"" = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Date", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Current, false, null));
@@ -1399,36 +1203,24 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TorahEventText", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEventText", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("LinkedParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Date", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Date", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LunarMonth", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarMonth", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LunarDay", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarDay", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LunarDay", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LunarDay", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Sunrise", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunrise", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Sunrise", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunrise", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Sunset", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunset", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Sunset", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Sunset", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Moonrise", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonrise", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Moonrise", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonrise", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_Moonset", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonset", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_Moonset", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Moonset", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_MoonriseType", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonriseType", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_MoonriseType", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonriseType", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_IsNewMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsNewMoon", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_IsNewMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsNewMoon", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_IsFullMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsFullMoon", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_IsFullMoon", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "IsFullMoon", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_MoonPhase", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MoonPhase", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_SeasonChange", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SeasonChange", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TorahEvents", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEvents", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_ParashahID", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TorahEventText", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TorahEventText", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_ParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ParashahID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_LinkedParashahID", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_LinkedParashahID", global::System.Data.Odbc.OdbcType.NChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LinkedParashahID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -1446,8 +1238,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        \"Date\", LunarMonth, LunarDay, Sunrise, Sunset, Moonrise, Moonset, M" +
-                "oonriseType, IsNewMoon, IsFullMoon, MoonPhase, SeasonChange, TorahEvents, Parash" +
-                "ahID, LinkedParashahID\r\nFROM            LunisolarDays";
+                "oonriseType, IsNewMoon, IsFullMoon, MoonPhase, SeasonChange, TorahEvents, TorahE" +
+                "ventText, ParashahID, LinkedParashahID\r\nFROM            LunisolarDays";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -1512,124 +1304,78 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Date, global::System.Nullable<int> Original_LunarMonth, global::System.Nullable<int> Original_LunarDay, string Original_Sunrise, string Original_Sunset, string Original_Moonrise, string Original_Moonset, global::System.Nullable<int> Original_MoonriseType, global::System.Nullable<int> Original_IsNewMoon, global::System.Nullable<int> Original_IsFullMoon, global::System.Nullable<int> Original_MoonPhase, global::System.Nullable<int> Original_SeasonChange, global::System.Nullable<int> Original_TorahEvents, string Original_ParashahID, string Original_LinkedParashahID) {
+        public virtual int Delete(
+                    string Original_Date, 
+                    int Original_LunarMonth, 
+                    int Original_LunarDay, 
+                    string Original_Sunrise, 
+                    string Original_Sunset, 
+                    string Original_Moonrise, 
+                    string Original_Moonset, 
+                    int Original_MoonriseType, 
+                    int Original_IsNewMoon, 
+                    int Original_IsFullMoon, 
+                    int Original_MoonPhase, 
+                    int Original_SeasonChange, 
+                    int Original_TorahEvents, 
+                    string Original_TorahEventText, 
+                    string Original_ParashahID, 
+                    string Original_LinkedParashahID) {
             if ((Original_Date == null)) {
                 throw new global::System.ArgumentNullException("Original_Date");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Date));
             }
-            if ((Original_LunarMonth.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_LunarMonth.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_LunarDay.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_LunarDay.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_LunarMonth));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_LunarDay));
             if ((Original_Sunrise == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sunrise");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Sunrise));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Sunrise));
             }
             if ((Original_Sunset == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sunset");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Sunset));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Sunset));
             }
             if ((Original_Moonrise == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Moonrise");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Moonrise));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Moonrise));
             }
             if ((Original_Moonset == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Moonset");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Moonset));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Moonset));
             }
-            if ((Original_MoonriseType.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_MoonriseType.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsNewMoon.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_IsNewMoon.Value));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_MoonriseType));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_IsNewMoon));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_IsFullMoon));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_MoonPhase));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_SeasonChange));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_TorahEvents));
+            if ((Original_TorahEventText == null)) {
+                throw new global::System.ArgumentNullException("Original_TorahEventText");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsFullMoon.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_IsFullMoon.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_MoonPhase.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_MoonPhase.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SeasonChange.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_SeasonChange.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((Original_TorahEvents.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_TorahEvents.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_TorahEventText));
             }
             if ((Original_ParashahID == null)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_ParashahID");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_ParashahID));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ParashahID));
             }
             if ((Original_LinkedParashahID == null)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_LinkedParashahID");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_LinkedParashahID));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_LinkedParashahID));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1651,96 +1397,78 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Date, global::System.Nullable<int> LunarMonth, global::System.Nullable<int> LunarDay, string Sunrise, string Sunset, string Moonrise, string Moonset, global::System.Nullable<int> MoonriseType, global::System.Nullable<int> IsNewMoon, global::System.Nullable<int> IsFullMoon, global::System.Nullable<int> MoonPhase, global::System.Nullable<int> SeasonChange, global::System.Nullable<int> TorahEvents, string ParashahID, string LinkedParashahID) {
+        public virtual int Insert(
+                    string Date, 
+                    int LunarMonth, 
+                    int LunarDay, 
+                    string Sunrise, 
+                    string Sunset, 
+                    string Moonrise, 
+                    string Moonset, 
+                    int MoonriseType, 
+                    int IsNewMoon, 
+                    int IsFullMoon, 
+                    int MoonPhase, 
+                    int SeasonChange, 
+                    int TorahEvents, 
+                    string TorahEventText, 
+                    string ParashahID, 
+                    string LinkedParashahID) {
             if ((Date == null)) {
                 throw new global::System.ArgumentNullException("Date");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Date));
             }
-            if ((LunarMonth.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(LunarMonth.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((LunarDay.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(LunarDay.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(LunarMonth));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(LunarDay));
             if ((Sunrise == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sunrise");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Sunrise));
             }
             if ((Sunset == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sunset");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Sunset));
             }
             if ((Moonrise == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Moonrise");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Moonrise));
             }
             if ((Moonset == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Moonset");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Moonset));
             }
-            if ((MoonriseType.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(MoonriseType.Value));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(MoonriseType));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(IsNewMoon));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(IsFullMoon));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(MoonPhase));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(SeasonChange));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(TorahEvents));
+            if ((TorahEventText == null)) {
+                throw new global::System.ArgumentNullException("TorahEventText");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((IsNewMoon.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(IsNewMoon.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsFullMoon.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(IsFullMoon.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((MoonPhase.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(MoonPhase.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((SeasonChange.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(SeasonChange.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((TorahEvents.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(TorahEvents.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(TorahEventText));
             }
             if ((ParashahID == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("ParashahID");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(ParashahID));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(ParashahID));
             }
             if ((LinkedParashahID == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LinkedParashahID");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(LinkedParashahID));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(LinkedParashahID));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1764,33 +1492,35 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string Date, 
-                    global::System.Nullable<int> LunarMonth, 
-                    global::System.Nullable<int> LunarDay, 
+                    int LunarMonth, 
+                    int LunarDay, 
                     string Sunrise, 
                     string Sunset, 
                     string Moonrise, 
                     string Moonset, 
-                    global::System.Nullable<int> MoonriseType, 
-                    global::System.Nullable<int> IsNewMoon, 
-                    global::System.Nullable<int> IsFullMoon, 
-                    global::System.Nullable<int> MoonPhase, 
-                    global::System.Nullable<int> SeasonChange, 
-                    global::System.Nullable<int> TorahEvents, 
+                    int MoonriseType, 
+                    int IsNewMoon, 
+                    int IsFullMoon, 
+                    int MoonPhase, 
+                    int SeasonChange, 
+                    int TorahEvents, 
+                    string TorahEventText, 
                     string ParashahID, 
                     string LinkedParashahID, 
                     string Original_Date, 
-                    global::System.Nullable<int> Original_LunarMonth, 
-                    global::System.Nullable<int> Original_LunarDay, 
+                    int Original_LunarMonth, 
+                    int Original_LunarDay, 
                     string Original_Sunrise, 
                     string Original_Sunset, 
                     string Original_Moonrise, 
                     string Original_Moonset, 
-                    global::System.Nullable<int> Original_MoonriseType, 
-                    global::System.Nullable<int> Original_IsNewMoon, 
-                    global::System.Nullable<int> Original_IsFullMoon, 
-                    global::System.Nullable<int> Original_MoonPhase, 
-                    global::System.Nullable<int> Original_SeasonChange, 
-                    global::System.Nullable<int> Original_TorahEvents, 
+                    int Original_MoonriseType, 
+                    int Original_IsNewMoon, 
+                    int Original_IsFullMoon, 
+                    int Original_MoonPhase, 
+                    int Original_SeasonChange, 
+                    int Original_TorahEvents, 
+                    string Original_TorahEventText, 
                     string Original_ParashahID, 
                     string Original_LinkedParashahID) {
             if ((Date == null)) {
@@ -1799,207 +1529,111 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Date));
             }
-            if ((LunarMonth.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(LunarMonth.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((LunarDay.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(LunarDay.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(LunarMonth));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(LunarDay));
             if ((Sunrise == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sunrise");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Sunrise));
             }
             if ((Sunset == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sunset");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Sunset));
             }
             if ((Moonrise == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Moonrise");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Moonrise));
             }
             if ((Moonset == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Moonset");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Moonset));
             }
-            if ((MoonriseType.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(MoonriseType.Value));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(MoonriseType));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(IsNewMoon));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(IsFullMoon));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(MoonPhase));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SeasonChange));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(TorahEvents));
+            if ((TorahEventText == null)) {
+                throw new global::System.ArgumentNullException("TorahEventText");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((IsNewMoon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(IsNewMoon.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsFullMoon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(IsFullMoon.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((MoonPhase.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(MoonPhase.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((SeasonChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(SeasonChange.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((TorahEvents.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(TorahEvents.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(TorahEventText));
             }
             if ((ParashahID == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("ParashahID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(ParashahID));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(ParashahID));
             }
             if ((LinkedParashahID == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LinkedParashahID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(LinkedParashahID));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(LinkedParashahID));
             }
             if ((Original_Date == null)) {
                 throw new global::System.ArgumentNullException("Original_Date");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Date));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Date));
             }
-            if ((Original_LunarMonth.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_LunarMonth.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_LunarDay.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_LunarDay.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_LunarMonth));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_LunarDay));
             if ((Original_Sunrise == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sunrise");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Sunrise));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Sunrise));
             }
             if ((Original_Sunset == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sunset");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Sunset));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Sunset));
             }
             if ((Original_Moonrise == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Moonrise");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Moonrise));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Moonrise));
             }
             if ((Original_Moonset == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Moonset");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Moonset));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Moonset));
             }
-            if ((Original_MoonriseType.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_MoonriseType.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsNewMoon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_IsNewMoon.Value));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_MoonriseType));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_IsNewMoon));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_IsFullMoon));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_MoonPhase));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_SeasonChange));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_TorahEvents));
+            if ((Original_TorahEventText == null)) {
+                throw new global::System.ArgumentNullException("Original_TorahEventText");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IsFullMoon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_IsFullMoon.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            if ((Original_MoonPhase.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_MoonPhase.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SeasonChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_SeasonChange.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            if ((Original_TorahEvents.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_TorahEvents.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_TorahEventText));
             }
             if ((Original_ParashahID == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_ParashahID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_ParashahID));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_ParashahID));
             }
             if ((Original_LinkedParashahID == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_LinkedParashahID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_LinkedParashahID));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_LinkedParashahID));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2022,36 +1656,38 @@ namespace Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    global::System.Nullable<int> LunarMonth, 
-                    global::System.Nullable<int> LunarDay, 
+                    int LunarMonth, 
+                    int LunarDay, 
                     string Sunrise, 
                     string Sunset, 
                     string Moonrise, 
                     string Moonset, 
-                    global::System.Nullable<int> MoonriseType, 
-                    global::System.Nullable<int> IsNewMoon, 
-                    global::System.Nullable<int> IsFullMoon, 
-                    global::System.Nullable<int> MoonPhase, 
-                    global::System.Nullable<int> SeasonChange, 
-                    global::System.Nullable<int> TorahEvents, 
+                    int MoonriseType, 
+                    int IsNewMoon, 
+                    int IsFullMoon, 
+                    int MoonPhase, 
+                    int SeasonChange, 
+                    int TorahEvents, 
+                    string TorahEventText, 
                     string ParashahID, 
                     string LinkedParashahID, 
                     string Original_Date, 
-                    global::System.Nullable<int> Original_LunarMonth, 
-                    global::System.Nullable<int> Original_LunarDay, 
+                    int Original_LunarMonth, 
+                    int Original_LunarDay, 
                     string Original_Sunrise, 
                     string Original_Sunset, 
                     string Original_Moonrise, 
                     string Original_Moonset, 
-                    global::System.Nullable<int> Original_MoonriseType, 
-                    global::System.Nullable<int> Original_IsNewMoon, 
-                    global::System.Nullable<int> Original_IsFullMoon, 
-                    global::System.Nullable<int> Original_MoonPhase, 
-                    global::System.Nullable<int> Original_SeasonChange, 
-                    global::System.Nullable<int> Original_TorahEvents, 
+                    int Original_MoonriseType, 
+                    int Original_IsNewMoon, 
+                    int Original_IsFullMoon, 
+                    int Original_MoonPhase, 
+                    int Original_SeasonChange, 
+                    int Original_TorahEvents, 
+                    string Original_TorahEventText, 
                     string Original_ParashahID, 
                     string Original_LinkedParashahID) {
-            return this.Update(Original_Date, LunarMonth, LunarDay, Sunrise, Sunset, Moonrise, Moonset, MoonriseType, IsNewMoon, IsFullMoon, MoonPhase, SeasonChange, TorahEvents, ParashahID, LinkedParashahID, Original_Date, Original_LunarMonth, Original_LunarDay, Original_Sunrise, Original_Sunset, Original_Moonrise, Original_Moonset, Original_MoonriseType, Original_IsNewMoon, Original_IsFullMoon, Original_MoonPhase, Original_SeasonChange, Original_TorahEvents, Original_ParashahID, Original_LinkedParashahID);
+            return this.Update(Original_Date, LunarMonth, LunarDay, Sunrise, Sunset, Moonrise, Moonset, MoonriseType, IsNewMoon, IsFullMoon, MoonPhase, SeasonChange, TorahEvents, TorahEventText, ParashahID, LinkedParashahID, Original_Date, Original_LunarMonth, Original_LunarDay, Original_Sunrise, Original_Sunset, Original_Moonrise, Original_Moonset, Original_MoonriseType, Original_IsNewMoon, Original_IsFullMoon, Original_MoonPhase, Original_SeasonChange, Original_TorahEvents, Original_TorahEventText, Original_ParashahID, Original_LinkedParashahID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

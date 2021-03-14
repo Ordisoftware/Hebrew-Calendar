@@ -61,16 +61,14 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelMoonset.Visible = !row.Moonset.IsNullOrEmpty();
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
-          LabelEventTorahValue.Text = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
-          if ( LabelEventTorahValue.Text == string.Empty )
-            LabelEventTorahValue.Text = row.GetWeekLongCelebrationIntermediateDay();
+          LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = "-";
           var rowNext = LunisolarDays.Where(day => day.DateAsDateTime > value && day.TorahEvents > 0).FirstOrDefault();
           if ( rowNext != null )
           {
             var date = rowNext.DateAsDateTime;
-            LabelTorahNextValue.Text = AppTranslations.TorahEvent.GetLang(rowNext.TorahEventsAsEnum);
+            LabelTorahNextValue.Text = rowNext.TorahEventText;
             LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
             LabelTorahNextDateValue.Tag = date;
           }
