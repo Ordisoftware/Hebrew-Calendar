@@ -92,16 +92,22 @@ namespace Ordisoftware.Hebrew
 
     private void InitializeMenu()
     {
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
+      });
       ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
           HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
       });
-      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
+        var parashah = ParashotTable.GetDefaultByID((string)CurrentDataBoundItem[nameof(Parashah.ID)]);
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
       });
     }
 
@@ -445,15 +451,6 @@ namespace Ordisoftware.Hebrew
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
       Clipboard.SetText(CurrentDataBoundItemToString(false));
-    }
-
-    private void ActionOpenTorahBoxParashah_Click(object sender, EventArgs e)
-    {
-      var item = CurrentDataBoundItem;
-      var book = (TorahBooks)( (int)item[nameof(Parashah.Book)] - 1 );
-      int number = (int)item[nameof(Parashah.Number)];
-      string link = OnlineParashot.TorahBox[book][number - 1];
-      SystemManager.OpenWebLink(link);
     }
 
   }

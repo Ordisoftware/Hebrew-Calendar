@@ -80,6 +80,7 @@ namespace Ordisoftware.Hebrew
                                  EventHandler action,
                                  Action reconstruct)
     {
+      list.Clear();
       string nameItems = NameOfFromStack(items, 3).Replace("Globals.", string.Empty);
       if ( items.Configurable )
       {

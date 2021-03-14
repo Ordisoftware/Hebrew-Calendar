@@ -306,11 +306,16 @@ namespace Ordisoftware.Hebrew.Calendar
         ClearLists();
         if ( PreferencesForm.Run() )
         {
+          PanelViewText.Parent = null;
+          PanelViewMonth.Parent = null;
+          PanelViewGrid.Parent = null;
+          PanelViewMonth.Visible = false;
           CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
           Thread.Sleep(1000);
           ActionGenerate_Click(null, EventArgs.Empty);
+          PanelViewMonth.Visible = true;
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
@@ -573,28 +578,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
       ParashotForm.Run(DataSet.LunisolarDays.GetWeeklyParashah());
-    }
-
-    /// <summary>
-    /// Event handler. Called by ActionOpenTorahBoxParashah for click events.
-    /// </summary>
-    /// <param name="sender">Source of the event.</param>
-    /// <param name="e">Event information.</param>
-    private void ActionOpenTorahBoxParashah_Click(object sender, EventArgs e)
-    {
-      var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
-      if ( parashah == null )
-      {
-        DisplayManager.Show(AppTranslations.ParashahNotFound.GetLang());
-        return;
-      }
-      string link = OnlineParashot.TorahBox[parashah.Book][parashah.Number - 1];
-      SystemManager.OpenWebLink(link);
-      if ( parashah.Linked != null )
-      {
-        link = OnlineParashot.TorahBox[parashah.Linked.Book][parashah.Linked.Number - 1];
-        SystemManager.OpenWebLink(link);
-      }
     }
 
     /// <summary>

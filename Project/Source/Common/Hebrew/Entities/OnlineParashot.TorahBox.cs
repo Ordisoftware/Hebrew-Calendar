@@ -26,72 +26,72 @@ namespace Ordisoftware.Hebrew
       {
         [TorahBooks.Bereshit] = new NullSafeList<string>
         {
-          "https://www.torah-box.com/paracha/berechit-genese/berechit/",
-          "https://www.torah-box.com/paracha/berechit-genese/noah/",
-          "https://www.torah-box.com/paracha/berechit-genese/lekh-lekha/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayera/",
-          "https://www.torah-box.com/paracha/berechit-genese/haye-sarah/",
-          "https://www.torah-box.com/paracha/berechit-genese/toledot/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayetse/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayichlah/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayechev/",
-          "https://www.torah-box.com/paracha/berechit-genese/mikets/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayigach/",
-          "https://www.torah-box.com/paracha/berechit-genese/vayehi/"
+          "berechit-genese/berechit/",
+          "berechit-genese/noah/",
+          "berechit-genese/lekh-lekha/",
+          "berechit-genese/vayera/",
+          "berechit-genese/haye-sarah/",
+          "berechit-genese/toledot/",
+          "berechit-genese/vayetse/",
+          "berechit-genese/vayichlah/",
+          "berechit-genese/vayechev/",
+          "berechit-genese/mikets/",
+          "berechit-genese/vayigach/",
+          "berechit-genese/vayehi/"
         },
         [TorahBooks.Shemot] = new NullSafeList<string>
         {
-          "https://www.torah-box.com/paracha/chemot-exode/chemot/",
-          "https://www.torah-box.com/paracha/chemot-exode/vaera/",
-          "https://www.torah-box.com/paracha/chemot-exode/bo/",
-          "https://www.torah-box.com/paracha/chemot-exode/bechalah/",
-          "https://www.torah-box.com/paracha/chemot-exode/yitro/",
-          "https://www.torah-box.com/paracha/chemot-exode/michpatim/",
-          "https://www.torah-box.com/paracha/chemot-exode/terouma/",
-          "https://www.torah-box.com/paracha/chemot-exode/tetsave/",
-          "https://www.torah-box.com/paracha/chemot-exode/ki-tissa/",
-          "https://www.torah-box.com/paracha/chemot-exode/vayakhel/",
-          "https://www.torah-box.com/paracha/chemot-exode/pekoude/"
+          "chemot-exode/chemot/",
+          "chemot-exode/vaera/",
+          "chemot-exode/bo/",
+          "chemot-exode/bechalah/",
+          "chemot-exode/yitro/",
+          "chemot-exode/michpatim/",
+          "chemot-exode/terouma/",
+          "chemot-exode/tetsave/",
+          "chemot-exode/ki-tissa/",
+          "chemot-exode/vayakhel/",
+          "chemot-exode/pekoude/"
         },
         [TorahBooks.Vayiqra] = new NullSafeList<string>
         {
-          "https://www.torah-box.com/paracha/vayikra-levitique/vayikra/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/tsav/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/chemini/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/tazria/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/metsora/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/ahare-mot/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/kedochim/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/emor/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/behar/",
-          "https://www.torah-box.com/paracha/vayikra-levitique/behoukotai/"
+          "vayikra-levitique/vayikra/",
+          "vayikra-levitique/tsav/",
+          "vayikra-levitique/chemini/",
+          "vayikra-levitique/tazria/",
+          "vayikra-levitique/metsora/",
+          "vayikra-levitique/ahare-mot/",
+          "vayikra-levitique/kedochim/",
+          "vayikra-levitique/emor/",
+          "vayikra-levitique/behar/",
+          "vayikra-levitique/behoukotai/"
         },
         [TorahBooks.Bamidbar] = new NullSafeList<string>
         {
-          "https://www.torah-box.com/paracha/bamidbar-nombres/bamidbar/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/nasso/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/behaalotekha/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/chelah-lekha/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/korah/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/houkat/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/balak/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/pinhas/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/matot/",
-          "https://www.torah-box.com/paracha/bamidbar-nombres/masse/"
+          "bamidbar-nombres/bamidbar/",
+          "bamidbar-nombres/nasso/",
+          "bamidbar-nombres/behaalotekha/",
+          "bamidbar-nombres/chelah-lekha/",
+          "bamidbar-nombres/korah/",
+          "bamidbar-nombres/houkat/",
+          "bamidbar-nombres/balak/",
+          "bamidbar-nombres/pinhas/",
+          "bamidbar-nombres/matot/",
+          "bamidbar-nombres/masse/"
         },
         [TorahBooks.Devarim] = new NullSafeList<string>
         {
-          "https://www.torah-box.com/paracha/devarim-deuteronome/devarim/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/vaethanane/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/ekev/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/ree/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/choftim/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/ki-tetse/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/ki-tavo/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/nitsavim/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/vayelekh/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/haazinou/",
-          "https://www.torah-box.com/paracha/devarim-deuteronome/vezot-haberakha/"
+          "devarim-deuteronome/devarim/",
+          "devarim-deuteronome/vaethanane/",
+          "devarim-deuteronome/ekev/",
+          "devarim-deuteronome/ree/",
+          "devarim-deuteronome/choftim/",
+          "devarim-deuteronome/ki-tetse/",
+          "devarim-deuteronome/ki-tavo/",
+          "devarim-deuteronome/nitsavim/",
+          "devarim-deuteronome/vayelekh/",
+          "devarim-deuteronome/haazinou/",
+          "devarim-deuteronome/vezot-haberakha/"
         }
       };
 

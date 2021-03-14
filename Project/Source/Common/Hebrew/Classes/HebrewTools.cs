@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -106,7 +106,8 @@ namespace Ordisoftware.Hebrew
     {
       if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
       string unicode = HebrewAlphabet.ToUnicode(hebrew);
-      link = link.Replace("%WORD%", unicode).Replace("%FIRSTLETTER%", unicode[0].ToString());
+      link = link.Replace("%WORD%", unicode)
+                 .Replace("%FIRSTLETTER%", unicode[0].ToString());
       SystemManager.RunShell(link);
     }
 
@@ -147,6 +148,33 @@ namespace Ordisoftware.Hebrew
                  .Replace("%VERSENUM#2%", verse.ToString("00"));
 
       SystemManager.RunShell(url);
+    }
+
+    /// <summary>
+    /// Open online parashah provider.
+    /// </summary>
+    static public void OpenParashahProvider(string url, Parashah parashah, bool openLinked = false)
+    {
+      if ( parashah == null )
+      {
+        DisplayManager.Show(HebrewTranslations.ParashahNotFound.GetLang());
+        return;
+      }
+      open(parashah);
+      if ( parashah.Linked != null )
+        open(parashah.Linked);
+      void open(Parashah item)
+      {
+        string link = url.Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
+                         .Replace("%CHABAD-EN%", OnlineParashot.ChabadEN[item.Book][item.Number - 1])
+                         .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
+                         .Replace("%WIKIPEDIA-EN%", OnlineParashot.WikipediaEN[item.Book][item.Number - 1])
+                         .Replace("%WIKIPEDIA-FR%", OnlineParashot.WikipediaFR[item.Book][item.Number - 1])
+                         .Replace("%AISH-EN%", OnlineParashot.AishEN[item.Book][item.Number - 1])
+                         .Replace("%AISH-FR%", OnlineParashot.AishFR[item.Book][item.Number - 1])
+                         .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1]);
+        SystemManager.OpenWebLink(link);
+      }
     }
 
   }
