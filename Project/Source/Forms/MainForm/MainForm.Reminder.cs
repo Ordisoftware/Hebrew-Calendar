@@ -32,26 +32,16 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerMutex = true;
       try
       {
-        var today = DataSet.LunisolarDays.GetLunarToday();
+        IsSpecialDay = false;
+        /*var today = DataSet.LunisolarDays.GetLunarToday();
         IsSpecialDay = today.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                    || TorahCelebrations.SpecialDays.Contains(today.TorahEventsAsEnum);
-        SystemManager.TryCatch(() =>
-        {
-          CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-          if ( Settings.TrayIconUseSpecialDayIcon )
-            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
-        });
+                    || TorahCelebrations.SpecialDays.Contains(today.TorahEventsAsEnum);*/
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
-          if ( Settings.ReminderShabatEnabled )
-          {
-            CheckShabat();
-          }
+          IsSpecialDay = CheckShabat(Settings.ReminderShabatEnabled) || IsSpecialDay;
+          IsSpecialDay = CheckCelebrationDay(Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
           if ( Settings.ReminderCelebrationsEnabled )
-          {
-            CheckCelebrationDay();
             CheckCelebrations();
-          }
         }
       }
       catch ( Exception ex )
@@ -63,6 +53,12 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
+        SystemManager.TryCatch(() =>
+        {
+          CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
+          if ( Settings.TrayIconUseSpecialDayIcon )
+            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
+        });
         SystemManager.TryCatch(() =>
         {
           if ( LockSessionForm.Instance?.Visible ?? false )
