@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -24,7 +24,21 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
-      internal ReminderTimes GetReminderTimes(decimal delta3)
+      internal ReminderTimes GetTimesForShabat(decimal delta3)
+      {
+        var times = new ReminderTimes();
+        var dateRow = DateAsDateTime;
+        var rowPrevious = tableLunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
+        if ( rowPrevious == null )
+          return null;
+        if ( Program.Settings.RemindShabatOnlyLight )
+          times.Set(dateRow, Sunrise, Sunset, 0, 0, delta3);
+        else
+          times.Set(dateRow, rowPrevious.Sunset, Sunset, -1, 0, delta3);
+        return times;
+      }
+
+      internal ReminderTimes GetTimesForCelebration(decimal delta3)
       {
         var times = new ReminderTimes();
         var dateRow = DateAsDateTime;

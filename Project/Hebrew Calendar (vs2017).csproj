@@ -247,7 +247,7 @@
       <DependentUpon>SelectYearsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Database\DataSet.cs" />
-    <Compile Include="Source\Database\DataSet.ReminderTimes.cs" />
+    <Compile Include="Source\Database\DataSet.Times.cs" />
     <Compile Include="Source\Database\DataSet.LunarDay.cs" />
     <Compile Include="Source\Database\DataSet.Parashah.cs" />
     <Compile Include="Source\Database\DataSet.AsDateTime.cs" />

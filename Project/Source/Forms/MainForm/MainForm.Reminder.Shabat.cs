@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Data;
 using System.Linq;
-using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -34,14 +33,8 @@ namespace Ordisoftware.Hebrew.Calendar
                      && day.DateAsDateTime >= dateToday
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null ) return result;
-      var dateRow = row.DateAsDateTime;
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
-      var times = new ReminderTimes();
-      var delta3 = Settings.RemindShabatEveryMinutes;
-      if ( Settings.RemindShabatOnlyLight )
-        times.Set(dateRow, row.Sunrise, row.Sunset, 0, 0, delta3);
-      else
-        times.Set(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);
+      var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
+      if ( times == null ) return result;
       result = dateNow >= times.DateStart.Value && dateNow < times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
       if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )

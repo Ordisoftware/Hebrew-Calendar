@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -33,15 +33,14 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
-                  where day.HasTorahEvent
-                     && check(day.TorahEventsAsEnum)
+                  where day.HasTorahEvent && check(day.TorahEventsAsEnum)
                      && day.DateAsDateTime >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault() as LunisolarDaysRow;
       if ( row == null ) return result;
       if ( row.DateAsDateTime.Day < dateNow.Day )
         if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
           return result;
-      var times = row.GetReminderTimes(Settings.RemindCelebrationEveryMinutes);
+      var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return result;
       result = dateNow >= times.DateStart.Value && dateNow < times.DateEnd.Value;
       var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
