@@ -15,7 +15,7 @@
 Name = (EN) StudyBible.org (Literal with Strongs links)
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = (EN) BibleHub.com (Literal with Strongs links)
+Name = (EN) BibleHub.com (Literal with Strongs links and transliteration)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
 -
