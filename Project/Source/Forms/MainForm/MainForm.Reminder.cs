@@ -13,7 +13,6 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-03 </edited>
 using System;
-using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -33,9 +32,6 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         IsSpecialDay = false;
-        /*var today = DataSet.LunisolarDays.GetLunarToday();
-        IsSpecialDay = today.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                    || TorahCelebrations.SpecialDays.Contains(today.TorahEventsAsEnum);*/
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
           IsSpecialDay = CheckShabat(Settings.ReminderShabatEnabled) || IsSpecialDay;
