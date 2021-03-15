@@ -15,17 +15,17 @@ FOLDER-SEPARATOR
 Lang/EN = Jewish bookstores
 Lang/FR = Librairies juives
 
-Name = (FR) Gallia Editions
-URL = http://librairiegallia.fr
-
-Name = (FR/EN) ArtScroll Editions 
-URL = https://www.artscroll.com
+Name = (EN) Koren Publishers
+URL = https://korenpub.com
 
 Name = (FR/EN) Koren Talmud
 URL = https://korenpub.com/collections/the-noe-edition-koren-talmud-bavli-1
 
-Name = (EN) Koren Publishers
-URL = https://korenpub.com
+Name = (FR/EN) ArtScroll Editions 
+URL = https://www.artscroll.com
+
+Name = (FR) Gallia Editions
+URL = http://librairiegallia.fr
 
 -
 

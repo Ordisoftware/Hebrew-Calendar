@@ -76,14 +76,17 @@ URL = https://www.tsarfat.com
 
 -
 
-Name = (FR) Aish
-URL = https://www.aish.fr
+Name = (FR) Hassidout
+URL = http://hassidout.org
 
-Name = (EN) Aish
-URL = https://www.aish.com
+Name = (FR) Beth Loubavitch
+URL = https://www.loubavitch.fr
 
-Name = (IW) Aish
-URL = https://www.aish.co.il
+Name = (FR) 'Habad Loubavitch
+URL = https://fr.chabad.org
+
+Name = (EN) 'Habad Loubavitch
+URL = https://www.chabad.org
 
 -
 
@@ -101,17 +104,14 @@ URL = https://torah.org
 
 -
 
-Name = (FR) Hassidout
-URL = http://hassidout.org
+Name = (FR) Aish
+URL = https://www.aish.fr
 
-Name = (FR) Beth Loubavitch
-URL = https://www.loubavitch.fr
+Name = (EN) Aish
+URL = https://www.aish.com
 
-Name = (FR) 'Habad Loubavitch
-URL = https://fr.chabad.org
-
-Name = (EN) 'Habad Loubavitch
-URL = https://www.chabad.org
+Name = (IW) Aish
+URL = https://www.aish.co.il
 
 -
 
