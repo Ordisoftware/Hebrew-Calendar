@@ -92,12 +92,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void UpdateTitles(bool force = false)
     {
+      string str;
       Text = Globals.AssemblyTitle;
-      if ( Settings.MainFormTitleBarShowToday )
-        Text += " - " + DataSet.LunisolarDays.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
       SystemManager.TryCatch(() =>
       {
-        string str;
+        // Today
+        if ( Settings.MainFormTitleBarShowToday )
+          Text += " - " + DataSet.LunisolarDays.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
         // GPS
         if ( !force && !TitleGPS.IsNullOrEmpty() )
           str = TitleGPS;

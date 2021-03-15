@@ -13,6 +13,14 @@
 Lang/EN = Languages
 Lang/FR = Langages
 
+Name = (EN) Wiktionary.org
+URL = https://en.wiktionary.org
+
+Name = (FR) Wiktionary.org
+URL = https://fr.wiktionary.org
+
+-
+
 Name = (EN) Hebrew @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_language
 
@@ -24,15 +32,6 @@ URL = https://www.pealim.com
 
 Name = (EN) Klein Dictionary @ sefaria.org
 URL = https://www.sefaria.org/Klein_Dictionary
-
-Name = (EN) Jastrow Dictionary @ sefaria.org
-URL = https://www.sefaria.org/Jastrow
-
-Name = (EN) Wiktionary.org
-URL = https://en.wiktionary.org
-
-Name = (FR) Wiktionary.org
-URL = https://fr.wiktionary.org
 
 -
 
