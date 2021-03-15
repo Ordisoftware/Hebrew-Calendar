@@ -73,32 +73,28 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
 -
 
+Name = (FR) Le problème religieux
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
+
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
-Name = (FR) Livre "Le problème religieux"
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
+Name = (EN) CoSM
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DuAK0HENOpYe4B1Zo6pJ_s-
 
 -
 
-Name = (FR) Science - Mathématiques et physiques
+Name = (FR) Mathématiques et physiques
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Boo3Ss5OZSYCNHEGpFXcPc
 
-Name = (FR/EN) Science - Biologie et génétique
+Name = (FR/EN) Biologie et génétique
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEv_KNGXktzeF8oBTXGoKR
 
-Name = (FR/EN) Science - Bodybuilding et nutrition
+Name = (FR/EN) Bodybuilding et nutrition
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEAk_k9s5tCMG5ZPwK6KVz
 
-Name = (FR) Science - Mentalisme et psychologie
+Name = (FR) Mentalisme et psychologie
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B3m_jadFZi3rvJx9LPhHeG
-
--
 
 Name = (FR) Documentaires et sujets de société
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DfPB3GAU-e6hLSzJIjVc18
-
--
-
-Name = (EN) CoSM
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DuAK0HENOpYe4B1Zo6pJ_s
