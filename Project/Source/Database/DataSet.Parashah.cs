@@ -43,6 +43,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysRow
     {
 
+      private const int SearchParashahInterval = 14;
+
       public string ParashahText
       {
         get
@@ -62,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
                         ? DayOfWeek.Saturday
                         : (DayOfWeek)Program.Settings.ShabatDay;
         int indexStart = tableLunisolarDays.Rows.IndexOf(this);
-        int indexEnd = Math.Min(indexStart + 14, tableLunisolarDays.Rows.Count);
+        int indexEnd = Math.Min(indexStart + SearchParashahInterval, tableLunisolarDays.Rows.Count);
         for ( int index = indexStart; index < indexEnd; index++ )
         {
           var row = (LunisolarDaysRow)tableLunisolarDays.Rows[index];
