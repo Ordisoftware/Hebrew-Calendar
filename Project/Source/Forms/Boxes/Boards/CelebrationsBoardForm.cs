@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
             string day2 = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedDayName(date.DayOfWeek);
             str = str.Replace(month1, month2).Replace(day1, day2);
           }
-          e.Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+          e.Value = str.Titleize();
         }
         else
           e.Value = ( (DateTime)e.Value ).ToShortDateString();

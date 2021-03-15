@@ -14,7 +14,6 @@
 /// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
-using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
@@ -75,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
         string key = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
         string date = row.DateAsDateTime.ToLongDateString();
         var item = ListItems.Items.Add(key);
-        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date));
+        item.SubItems.Add(date.Titleize());
         item.SubItems.Add(row.DayAndMonthText);
         item.Tag = row;
         if ( selectedKey != null && key == selectedKey && itemToSelect == null )

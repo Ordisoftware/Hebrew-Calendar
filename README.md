@@ -456,7 +456,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add Newtonsoft.Json NuGet package.
 - Add MoreLINQ NuGet package.
 - Add Enums.NET NuGet package.
-- Add Humanizer NuGet package.
 - Add Windows Global Hotkey dependency.
 - Add InputSimulatorStandard NuGet package.
 - Add Serilog-sinks-file NuGet package.
