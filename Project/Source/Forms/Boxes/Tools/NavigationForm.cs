@@ -14,9 +14,7 @@
 /// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
-using System.Globalization;
 using System.Windows.Forms;
-using Humanizer;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -45,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
           strText = strText.Remove(strText.Length - 3, 3);
           string strDate = SQLiteDate.ToString(value);
           var row = LunisolarDays.Where(day => day.Date == strDate).Single();
-          LabelDate.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value.ToLongDateString());
+          LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
           LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth) + " " + strMonth.ToUpper();
           LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
@@ -69,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             var date = rowNext.DateAsDateTime;
             LabelTorahNextValue.Text = rowNext.TorahEventText;
-            LabelTorahNextDateValue.Text = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString());
+            LabelTorahNextDateValue.Text = date.ToLongDateString().Titleize();
             LabelTorahNextDateValue.Tag = date;
           }
           else

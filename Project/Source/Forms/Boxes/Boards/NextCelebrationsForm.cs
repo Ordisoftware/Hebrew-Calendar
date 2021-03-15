@@ -15,7 +15,6 @@
 using System;
 using System.Data;
 using System.Linq;
-using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -48,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
                  select day;
       foreach ( var row in rows )
       {
-        var item = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(row.DateAsDateTime.ToLongDateString());
+        var item = row.DateAsDateTime.ToLongDateString().Titleize();
         if ( row.HasSeasonChange )
           Instance.ListView.Items.Add(item)
                                  .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum))

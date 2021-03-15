@@ -928,7 +928,7 @@ namespace CodeProjectCalendar.NET
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
-      string monthstr = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.ToString("MMMM"));
+      string monthstr = _calendarDate.ToString("MMMM").Titleize();
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -1056,7 +1056,7 @@ namespace CodeProjectCalendar.NET
                 // ORDISOFWTARE MODIF BEGIN
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
-                g.DrawString(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_calendarDate.AddMonths(1).ToString("MMMM")) + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
+                g.DrawString(_calendarDate.AddMonths(1).ToString("MMMM").Titleize() + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
               }
               else
               {

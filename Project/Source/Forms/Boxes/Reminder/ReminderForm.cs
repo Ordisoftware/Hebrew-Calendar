@@ -16,7 +16,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
@@ -86,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                     ? row.TorahEventsAsEnum
                                                                     : torahevent);
         form.LabelDate.Text = isShabat
-                              ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(date.ToLongDateString())
+                              ? date.ToLongDateString().Titleize()
                               : row.DayAndMonthWithYearText;
         if ( times.DateStart != null && times.DateEnd != null )
         {

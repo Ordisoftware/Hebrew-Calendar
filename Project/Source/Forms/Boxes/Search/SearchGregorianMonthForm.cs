@@ -13,7 +13,6 @@
 /// <created> 2020-08 </created>
 /// <edited> 2021-03 </edited>
 using System;
-using System.Globalization;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
@@ -67,7 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         string key = new DateTime(2000, index + 1, 1).ToString("MMMM");
         var item = ListItems.Items.Add((index + 1).ToString());
-        item.SubItems.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(key));
+        item.SubItems.Add(key.Titleize());
         if ( index == 0 && selectedKey == -1 )
         {
           ListItems.Items[index].Focused = true;

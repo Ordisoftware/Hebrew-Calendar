@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-09 </edited>
+/// <edited> 2021-03 </edited>
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 
 namespace Ordisoftware.Core
@@ -39,6 +40,15 @@ namespace Ordisoftware.Core
     static public bool IsNullOrEmpty(this string str)
     {
       return ReferenceEquals(str, null) || str.Length == 0;
+    }
+
+    /// <summary>
+    /// Set all first letter to upper case.
+    /// </summary>
+    /// <param name="str">The str to act on.</param>
+    static public string Titleize(this string str)
+    {
+      return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
     }
 
     /// <summary>
