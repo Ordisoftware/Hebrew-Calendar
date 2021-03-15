@@ -24,28 +24,28 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysDataTable
     {
 
-      private DateTime LunarDayChecked = DateTime.MinValue;
+      private DateTime DayChecked = DateTime.MinValue;
       private LunisolarDaysRow LastCheck;
 
-      public LunisolarDaysRow GetLunarToday()
+      public LunisolarDaysRow GetToday()
       {
         var now = DateTime.Now;
-        var diff = now - LunarDayChecked;
+        var diff = now - DayChecked;
         if ( LastCheck != null && diff.Seconds < 60 && Rows.Contains(LastCheck) )
           return LastCheck;
-        LunarDayChecked = now;
-        LastCheck = GetLunarDay(now);
+        DayChecked = now;
+        LastCheck = GetDay(now);
         return LastCheck;
       }
 
-      public LunisolarDaysRow GetLunarDay(DateTime datetime)
+      public LunisolarDaysRow GetDay(DateTime datetime)
       {
         return Program.Settings.TorahEventsCountAsMoon
-               ? GetLunarDayMoon(datetime)
-               : GetLunarDaySun(datetime);
+               ? GetDayMoon(datetime)
+               : GetDaySun(datetime);
       }
 
-      private LunisolarDaysRow GetLunarDayMoon(DateTime datetime)
+      private LunisolarDaysRow GetDayMoon(DateTime datetime)
       {
         int delta = 7;
         var dateStr = SQLiteDate.ToString(datetime);
@@ -106,7 +106,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         return null;
       }
 
-      private LunisolarDaysRow GetLunarDaySun(DateTime datetime)
+      private LunisolarDaysRow GetDaySun(DateTime datetime)
       {
         var dateStr = SQLiteDate.ToString(datetime);
         var rowCurrent = FindByDate(dateStr);
