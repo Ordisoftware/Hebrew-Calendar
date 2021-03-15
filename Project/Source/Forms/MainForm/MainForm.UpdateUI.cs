@@ -98,7 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + DataSet.LunisolarDays.GetLunarToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
+          Text += " - " + DataSet.LunisolarDays.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.UndefinedSlot.GetLang();
         // GPS
         if ( !force && !TitleGPS.IsNullOrEmpty() )
           str = TitleGPS;

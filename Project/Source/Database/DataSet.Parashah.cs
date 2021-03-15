@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
       public Parashah GetWeeklyParashah()
       {
-        return ParashotTable.GetDefaultByID(GetLunarToday()?.GetParashahReadingDay()?.ParashahID) ?? null;
+        return ParashotTable.GetDefaultByID(GetDaySun(DateTime.Now)?.GetParashahReadingDay()?.ParashahID) ?? null;
       }
 
     }
