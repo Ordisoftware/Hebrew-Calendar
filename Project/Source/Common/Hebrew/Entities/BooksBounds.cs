@@ -13,7 +13,6 @@
 /// <created> 2012-10 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -30,17 +29,17 @@ namespace Ordisoftware.Hebrew
     static public readonly BookBound Torah = new BookBound
     {
       Min = EnumHelper.Min<TorahBooks>() + 1,
-      Max = EnumHelper.Min<TorahBooks>() + 1
+      Max = EnumHelper.Max<TorahBooks>() + 1
     };
     static public readonly BookBound Neviim = new BookBound
     {
       Min = EnumHelper.Min<NeviimBooks>() + 1,
-      Max = EnumHelper.Min<NeviimBooks>() + 1
+      Max = EnumHelper.Max<NeviimBooks>() + 1
     };
     static public readonly BookBound Ketouvim = new BookBound
     {
       Min = EnumHelper.Min<KetouvimBooks>() + 1,
-      Max = EnumHelper.Min<KetouvimBooks>() + 1
+      Max = EnumHelper.Max<KetouvimBooks>() + 1
     };
   }
 
