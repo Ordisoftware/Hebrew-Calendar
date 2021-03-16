@@ -24,14 +24,19 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     partial class LunisolarDaysDataTable
     {
 
+      private const int SearchDayInterval = 7;
+
+      private const int GetTodayCacheInSeconds = 60;
+
       private DateTime DayChecked = DateTime.MinValue;
+
       private LunisolarDaysRow LastCheck;
 
       public LunisolarDaysRow GetToday()
       {
         var now = DateTime.Now;
         var diff = now - DayChecked;
-        if ( LastCheck != null && diff.Seconds < 60 && Rows.Contains(LastCheck) )
+        if ( LastCheck != null && diff.Seconds < GetTodayCacheInSeconds && Rows.Contains(LastCheck) )
           return LastCheck;
         DayChecked = now;
         LastCheck = GetDay(now);
@@ -47,12 +52,11 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
       private LunisolarDaysRow GetDayMoon(DateTime datetime)
       {
-        int delta = 7;
         var dateStr = SQLiteDate.ToString(datetime);
         var rowCurrent = FindByDate(dateStr);
         int indexRowCurrent = Rows.IndexOf(rowCurrent);
-        int indexStart = Math.Max(0, indexRowCurrent - delta);
-        int indexEnd = Math.Min(indexRowCurrent + delta, Count - 1);
+        int indexStart = Math.Max(0, indexRowCurrent - SearchDayInterval);
+        int indexEnd = Math.Min(indexRowCurrent + SearchDayInterval, Count - 1);
         bool isInBounds = false;
         LunisolarDaysRow rowFirst = null;
         LunisolarDaysRow rowLast = null;
