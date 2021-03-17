@@ -50,6 +50,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DP-nvpbjUq-Bjlug7TjxgU
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
 
+Name = (FR) Rav Yonathan Benchetrit
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dh6eRE1EGpvsJM-Urlmdre
+
 Name = (FR) Rav Mordekhai Chriqui
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
 
