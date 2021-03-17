@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew
         return;
       }
       Instance.Show();
-      Instance.BringToFront();
+      Instance.ForceBringToFront();
       Instance.Select(parashah);
     }
 
