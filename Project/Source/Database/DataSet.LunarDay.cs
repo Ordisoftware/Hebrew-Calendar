@@ -100,7 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         {
           indexStart = Rows.IndexOf(rowFirst);
           indexEnd = Rows.IndexOf(rowLast);
-          for ( int index = indexStart + 1; index < indexEnd - 1; index++ )
+          for ( int index = indexStart + 1; index <= indexEnd - 1; index++ )
           {
             rowCurrent = this[index];
             if ( !rowCurrent.Moonrise.IsNullOrEmpty() )
