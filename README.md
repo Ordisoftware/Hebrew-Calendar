@@ -167,7 +167,7 @@ When disabled, top menu painting may cause latency.
 
 - Show the navigation window:
  
-  `Ordisoftware.Hebrew.Calendar.exe --navigation`
+  `Ordisoftware.Hebrew.Calendar.exe --navigate`
 
 - Show the dates difference calculator:
  
@@ -193,7 +193,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 !^+P:: 
   appPath := "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\"
   appExe := "Ordisoftware.Hebrew.Calendar.exe"
-  sleep 300
+  sleep 250
   Run %appPath%%appExe% --parashot
   return
 ```
