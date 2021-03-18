@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           var today = MainForm.Instance.DataSet.LunisolarDays.GetToday();
           LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
-          LabelCurrentDayValue.Tag = today.DateAsDateTime;
+          LabelCurrentDayValue.Tag = today?.DateAsDateTime;
           LabelParashahValue.Text = "-";
           LabelParashahValue.Tag = null;
           bool isPessah = false;
