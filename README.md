@@ -242,6 +242,8 @@ It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs 
 
 Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Sim'hat Torah means 'Joy [bestowed by the] Torah' and a Lettriq of Sim'hat is 'Sharing of the Service which Sustains the Matter': it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
+The number of Parashot is 54 that is to say נד which is the Power of the Student and that root means To pass from the malevolent world to that of the good.
+
 The generation of parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.
 
 ## Keyboard shortcuts
@@ -275,11 +277,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Alt + M | Windows weather |
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
-| Ctrl + F1 | Dates difference calculator |
+| Alt + P | Show online parashah menu |
+| Ctrl + F1 | parashot board |
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
 | Ctrl + F4 | Lunar months board |
-| Ctrl + F5 (or Alt + P) | parashot board |
+| Ctrl + F5 | Dates difference calculator |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |

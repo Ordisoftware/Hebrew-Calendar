@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -61,11 +61,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + M : Windows weather" + Globals.NL +
                         "Alt + W : Online weather" + Globals.NL +
                         "Alt + G : Generate calendar" + Globals.NL +
-                        "Ctrl + F1 : Dates difference calculator" + Globals.NL +
+                        "Alt + P : Show online parashah menu" + Globals.NL +
+                        "Ctrl + F1 : Parashot board" + Globals.NL +
                         "Ctrl + F2 : Celebrations board" + Globals.NL +
                         "Ctrl + F3 : New moons board" + Globals.NL +
                         "Ctrl + F4 : Lunar months board" + Globals.NL +
-                        "Ctrl + F5 (or Atl + P) : Parashot board" + Globals.NL +
+                        "Ctrl + F5 : Dates difference calculator" + Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         "Up (ou PageUp) : Previous year" + Globals.NL +
@@ -110,11 +111,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + M : Météo Windows" + Globals.NL +
                         "Alt + W : Météo en ligne" + Globals.NL +
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
-                        "Ctrl + F1 : Calculateur de différence de dates" + Globals.NL +
+                        "Alt + P : Affiche le menu de la parashah en ligne" + Globals.NL +
+                        "Ctrl + F1 : Tableau des parashot" + Globals.NL +
                         "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
                         "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
-                        "Ctrl + F5 (ou Atl + P) : Tableau des parashot" + Globals.NL +
+                        "Ctrl + F5 : Calculateur de différence de dates" + Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +

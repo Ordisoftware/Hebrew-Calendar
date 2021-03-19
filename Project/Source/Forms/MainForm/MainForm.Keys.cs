@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -67,12 +67,15 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Control | Keys.N:
             ActionNavigate.PerformClick();
             return true;
-          case Keys.Alt | Keys.P:
-            ActionViewParashot.PerformClick();
-            return true;
           // Application menus
           case Keys.Alt | Keys.T:
             ActionTools.ShowDropDown();
+            return true;
+          case Keys.Alt | Keys.P:
+            if ( ActionOnlineParashah.DropDownItems.Count <= 0 ) break;
+            ActionTools.ShowDropDown();
+            ActionOnlineParashah.ShowDropDown();
+            ActionOnlineParashah.DropDownItems[0].Select();
             return true;
           case Keys.Alt | Keys.L:
             ActionWebLinks.ShowDropDown();
