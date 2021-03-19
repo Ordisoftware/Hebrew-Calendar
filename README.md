@@ -193,7 +193,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 !^+P:: 
   appPath := "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\"
   appExe := "Ordisoftware.Hebrew.Calendar.exe"
-  sleep 250
+  sleep 500
   Run %appPath%%appExe% --parashot
   return
 ```
