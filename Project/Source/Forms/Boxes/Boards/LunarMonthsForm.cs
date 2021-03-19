@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.LunarMonthsForm_Load(null, null);
       MainForm.Instance.Restore();
       Instance.Show();
-      Instance.BringToFront();
+      Instance.ForceBringToFront();
     }
 
     private LunarMonthsForm()

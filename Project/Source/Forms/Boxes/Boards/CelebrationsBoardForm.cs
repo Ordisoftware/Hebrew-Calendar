@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
         return;
       }
       Instance.Show();
-      Instance.BringToFront();
+      Instance.ForceBringToFront();
     }
 
     private DataTable Board;
