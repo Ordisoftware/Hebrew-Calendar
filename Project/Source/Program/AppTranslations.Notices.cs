@@ -73,8 +73,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary NoticeParashahTitle
       = new TranslationsDictionary
       {
-        [Language.EN] = "Parashah notice",
-        [Language.FR] = "Notice de la Parashah"
+        [Language.EN] = "Parashot notice",
+        [Language.FR] = "Notice des Parashot"
       };
 
     static public readonly TranslationsDictionary NoticeParashah
