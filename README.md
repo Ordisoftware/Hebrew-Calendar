@@ -277,6 +277,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Alt + M | Windows weather |
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
+| Alt + P | Show online parashah menu |
 | Ctrl + F1 | parashot board |
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
