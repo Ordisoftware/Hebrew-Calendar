@@ -19,9 +19,6 @@ URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/user/TheBenchetrit
 
-Name = (FR) Rav Yonathan Benchetrit
-URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
-
 Name = (FR) Rav Emmanuel Bensimon
 URL = https://www.youtube.com/channel/UCFZbll_XlLWy8gqwIrkTZ0g
 
