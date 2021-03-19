@@ -291,8 +291,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Right | Next month |
 | Ctrl + Left | Previous month having a celebration |
 | Ctrl + Right | Next month having a celebration |
-| Ctrl + Home | First month available in the database having a celebration |
-| Ctrl + End | Last month available in the database having a celebration |
+| Ctrl + Home | First month having a celebration |
+| Ctrl + End | Last month having a celebration |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
