@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Text;
 using System.Linq;
@@ -27,8 +27,6 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private const string CSVSeparator = ",";
-
     private string ExportSaveCSV(ExportInterval interval)
     {
       UpdateButtons();
@@ -36,9 +34,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Cursor = Cursors.WaitCursor;
       try
       {
+        string CSVSeparator = Globals.CSVSeparator.ToString();
         string headerTxt = string.Empty;
         foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
-          headerTxt += field.ToString() + CSVSeparator;
+          headerTxt += field.ToString() + Globals.CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);

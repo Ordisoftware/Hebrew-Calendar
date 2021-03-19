@@ -252,7 +252,7 @@ namespace Ordisoftware.Hebrew
       if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
       {
         string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
-        ParashotTable.DataTable.Export(filePath, Program.BoardExportTargets);
+        DoExportTable(filePath);
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                           Globals.KeyboardSoundFilePath);
         if ( Settings.AutoOpenExportFolder )
@@ -261,6 +261,28 @@ namespace Ordisoftware.Hebrew
           SystemManager.RunShell(filePath);
       }
       ActiveControl = DataGridView;
+    }
+
+    private void DoExportTable(string filePath)
+    {
+      var table = new DataTable();
+      int indexBook = -1;
+      foreach ( DataColumn column in ParashotTable.DataTable.Columns )
+        if ( indexBook == -1 && column.ColumnName == ColumnBook.DataPropertyName )
+        {
+          table.Columns.Add(ColumnBook.DataPropertyName, typeof(string));
+          indexBook = column.Ordinal;
+        }
+        else
+          table.Columns.Add(column.ColumnName, column.DataType);
+      foreach ( DataRow row in ParashotTable.DataTable.Rows )
+      {
+        object[] values = new object[row.ItemArray.Length];
+        Array.Copy(row.ItemArray, values, row.ItemArray.Length);
+        values[indexBook] = ( (TorahBooks)( (int)row.ItemArray[indexBook] - 1 ) ).ToString();
+        table.Rows.Add(values);
+      }
+      table.Export(filePath, Program.BoardExportTargets);
     }
 
     private void ActionReset_Click(object sender, EventArgs e)

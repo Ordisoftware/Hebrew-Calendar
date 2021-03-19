@@ -1,7 +1,7 @@
 // BOOK BERESHIT
 Bereshit = Au début
 Noa'h = Il (HaShem) a déposé [la Torah en toi]
-Lek Leka = Vas pour toi (shabat) {fais ce que tu veux selon la Loi du pays et la Torah sans nuire}
+Lek Leka = Va pour toi (shabat) {fais ce que tu veux selon la Loi du pays et la Torah sans nuire}
 Vayera = Il aura révélé [le bien et ce qui est juste]
 Haye Sarah = Existence de Sarah
 Toledot = Engendrements
@@ -10,7 +10,7 @@ Vayishla'h = Il aura libéré [de l'ignorance et des manigances]
 Vayeshev = Il donnera un foyer
 Mikets = Lorsque fin du processus
 Vayigash = Il aura offert
-Vaye'hi = Il aura péservé la vie
+Vaye'hi = Il aura préservé la vie
 // BOOK SHEMOT
 Shemot = Réalisations
 Vaera = J'aurais pris soin [de l'étude]
@@ -44,15 +44,15 @@ Kora'h = Celui qui est froid (sans coeur {sans amour pour autrui et la loi visan
 Balaq = Celui qui dépouille [les victimes, de leur santé et de leurs biens]
 Pin'has = Celui qui parle de l'avenir par conjectures
 Matot = Groupes dirigeants (tribus, branches, factions, partis, influenceurs)
-Massei = Evolution (trajets, cheminements, étapes, degrés)
+Massei = Évolution (trajets, cheminements, étapes, degrés)
 // BOOK DEVARIM
 Devarim = Mots (déclarations, consignes, recommandations, promesses)
 Vaet'hanan = J'aurais imploré
 Eikev = Compensation (rétribution, résultat)
-Reeh = Choisit ! {entre la bénédiction et la propérité de la Torah des compatissants qui font le bien, aident, soignent, jugent et font vivre, ou la malédiction et la haine des méchants hors-la-loi qui font le mal, abandonnent, blessent, volent et tuent}
+Reeh = Choisit ! {entre la bénédiction et la prospérité de la Torah des compatissants qui font le bien, aident, soignent, jugent et font vivre, ou la malédiction et la haine des méchants hors-la-loi qui font le mal, abandonnent, blessent, volent et tuent}
 Shoftim = Juges (gouverneurs, décideurs)
-Ki Tetse = Parce que tu produiras [{les oeuvres prescrites et le témoignage de l'affliction} pour combat contre ennemis à Moi (HaShem) et à toi {qui agressent par haine du bien, de la bonté, de la justice et de la compassion} afin de Me les livrer pour que justice soit rendu et que reparation soit faite, par HaShem dans les Cieux et sur Terre par les Juges du Tribunal, et non par vengeance personnelle]
-Ki Tavo = Lorsque tu entreras [dans le pays donné par HaShem en héritage {ton corps fabriqué par ton ADN, et que tu auras chassé les ennemis illégitimes et criminels qui le possédaient à ta place car étant né en Mistraïm}]
+Ki Tetse = Parce que tu produiras [{les oeuvres prescrites et le témoignage de l'affliction} pour combat contre ennemis à Moi (HaShem) et à toi {qui agressent par haine du bien, de la bonté, de la justice et de la compassion} afin de Me les livrer pour que justice soit rendu et que réparation soit faite, par HaShem dans les Cieux et sur Terre par les Juges du Tribunal, et non par vengeance personnelle]
+Ki Tavo = Lorsque tu entreras [dans le pays donné par HaShem en héritage {ton corps fabriqué par ton ADN, et que tu auras chassé les ennemis illégitimes et criminels qui le possédaient à ta place car étant né en Mitsraïm}]
 Nitsavim = Vous prenez position [pour la Doctrine de la Torah de HaShem de Elohim] {vous agissez selon les plus hautes lois du bien, de la bonté, de la justice et la compassion visant à protéger la vie et les possessions des gens sans nuire même aux criminels et aux fous}
 Vayelekh = Il (Moshéh) aura guidé [le peuple d'Israël via la Torah {en tout temps et à chaque génération}]
 Haazinou = Ils ont été compensés par moi (Moshéh) {les Cieux [affligés]}

@@ -6,7 +6,7 @@ Vayera = Fondement de la Paix du Mental Instruit
 Haye Sarah = Vitalité de l'Énergie de l'Amour pour le Foyer de l'Incarnation du Souffle
 Toledot = Finalité de la Communication de l'Instruction à l'Étudiant : la Lumière de la Matière
 Vayetse = Communication de l'Impulsion du Juste Potentiel
-Vayishla'h = Direction de l'Énergie de la Chair Élévée avec Fidélité
+Vayishla'h = Direction de l'Énergie de la Chair Élevée avec Fidélité
 Vayeshev = Fondement de la Paix du Foyer de la Volonté
 Mikets = Chemin de la Vérité Juste
 Vayigash = Communication de l'Amour, de la Générosité et de l'Amitié
@@ -24,7 +24,7 @@ Ki Tissa = Couverture Énergétique pour la Substance Partagée dans l'Espace
 Vayaqhel = Liaison par l'Amour de la Vérité du Souffle de l'Existence
 Peqoudei = Révélation de la Vérité de la Réalité de la Pensée de la Paix
 // BOOK VAYIQRA
-Vayikra = Fondement de la Paix par la Liberation du Mental Instruit
+Vayikra = Fondement de la Paix par la Libération du Mental Instruit
 Tsav = Extériorisation de la Communication
 Shemini = Foyer de la Formation pour l'Amour de la Vie et de la Paix
 Tazria = But de la Compassion : Incarnation du Germe de la Vision

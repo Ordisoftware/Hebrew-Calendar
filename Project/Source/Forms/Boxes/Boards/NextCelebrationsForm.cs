@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Instance.ListView.Columns[Instance.ListView.Columns.Count - 1].Width = -2;
       Instance.CelebrationsForm_Load(null, null);
       Instance.Show();
-      Instance.BringToFront();
+      Instance.ForceBringToFront();
     }
 
     private NextCelebrationsForm()
