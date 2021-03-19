@@ -193,7 +193,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 !^+P:: 
   appPath := "C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\"
   appExe := "Ordisoftware.Hebrew.Calendar.exe"
-  sleep 250
+  sleep 500
   Run %appPath%%appExe% --parashot
   return
 ```
@@ -316,7 +316,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to choose default auto-lock option between lock station, standby and power off.
 - Improve auto-lock session.
 
-#### 2021.03.20 - Version 7.0
+#### 2021.03.21 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
