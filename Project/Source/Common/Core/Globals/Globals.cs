@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-3 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -39,12 +39,17 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate bullet.
     /// </summary>
-    static public readonly string Bullet = "•";
+    static public string Bullet = "•";
 
     /// <summary>
     /// Indicate list separator.
     /// </summary>
-    static public readonly string ListSeparator = "-";
+    static public string ListSeparator = "-";
+
+    /// <summary>
+    /// Indicate CSV separator.
+    /// </summary>
+    static public char CSVSeparator = ';';
 
     /// <summary>
     /// Indicate if SSL certificate is preloaded.

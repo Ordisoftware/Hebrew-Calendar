@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -374,7 +374,7 @@ namespace Ordisoftware.Core
             }
           break;
         case DataExportTarget.CSV:
-          var options = new CsvOptions("String[,]", ',', table.Rows.Count);
+          var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count);
           options.IncludeHeaderNames = true;
           options.DateFormat = "yyyy-MM-dd HH:mm";
           options.Encoding = Encoding.UTF8;
