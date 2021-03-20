@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsSettingsUpgraded = upgrade;
         Settings.CheckUpgradeRequired(ref upgrade);
         Settings.UpgradeRequired = upgrade;
-        if ( Globals.IsSettingsUpgraded ) Settings.FirstLaunch = false;
+        Globals.IsSettingsUpgraded = Globals.IsSettingsUpgraded && !Settings.FirstLaunch;
         CheckSettingsReset();
         if ( lang != Language.None ) Settings.LanguageSelected = lang;
         Settings.Save();
