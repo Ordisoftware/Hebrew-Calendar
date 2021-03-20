@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-3 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -139,7 +139,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public Form MainForm
     {
-      get => _MainForm ?? ( Application.OpenForms.Count > 0 ? Application.OpenForms[0] : FormsHelper.GetActiveForm() );
+      get => _MainForm ?? ( Application.OpenForms.Count > 0 ? Application.OpenForms[0] : Form.ActiveForm );
       set => _MainForm = value;
     }
     static private Form _MainForm;
