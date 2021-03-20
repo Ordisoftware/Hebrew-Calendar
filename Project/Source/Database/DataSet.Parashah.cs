@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -35,7 +35,16 @@ namespace Ordisoftware.Hebrew.Calendar.Data
 
       public Parashah GetWeeklyParashah()
       {
-        return ParashotTable.GetDefaultByID(GetDaySun(DateTime.Now)?.GetParashahReadingDay()?.ParashahID) ?? null;
+        var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
+        if ( today == null ) return null;
+        if ( today.LunarMonth == TorahCelebrations.PessahMonth )
+          if ( today.TorahEventsAsEnum == TorahEvent.PessahD1 || today.TorahEventsAsEnum == TorahEvent.PessahD7 )
+            return null;
+          else
+          if ( !today.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )
+            return null;
+        if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
+        return ParashotTable.GetDefaultByID(today?.GetParashahReadingDay()?.ParashahID) ?? null;
       }
 
     }

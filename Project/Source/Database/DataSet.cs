@@ -91,7 +91,6 @@ namespace Ordisoftware.Hebrew.Calendar.Data
               && this.DateAsDateTime <= last.DateAsDateTime )
               return AppTranslations.TorahEvent[TorahEvent.ChavouotDiet].GetLang();
           }
-
         return string.Empty;
       }
 
