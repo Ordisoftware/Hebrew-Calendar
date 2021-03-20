@@ -59,6 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
       BringToFront();
       UpdateLanguagesButtons();
       LoadSettings();
+      CheckFirstLaunchNoticesAndChoices();
       EditVacuumAtStartup_CheckedChanged(null, null);
       EditCheckUpdateAtStartup_CheckedChanged(null, null);
       EditBalloon_CheckedChanged(null, null);
@@ -71,6 +72,34 @@ namespace Ordisoftware.Hebrew.Calendar
       ActiveControl = ActionClose;
       ActionResetSettings.TabStop = false;
       IsReady = true;
+    }
+
+    private void CheckFirstLaunchNoticesAndChoices()
+    {
+      bool changed = false;
+      if ( Settings.FirstLaunch )
+      {
+        changed = true;
+        MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
+        MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+        if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
+          ActionUsePersonalShabat_LinkClicked(null, null);
+      }
+      if ( changed || Settings.FirstLaunchV7_0 )
+      {
+        changed = true;
+        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+                                  () => EditUseSimhatTorahOutside.Checked = false,
+                                  () => EditUseSimhatTorahOutside.Checked = true);
+      }
+      if ( changed )
+      {
+        TabControl.SelectedTab = TabPageGeneration;
+        Settings.SetFirstAndUpgradeFlagsOff();
+        Settings.Save();
+      }
     }
 
     /// <summary>

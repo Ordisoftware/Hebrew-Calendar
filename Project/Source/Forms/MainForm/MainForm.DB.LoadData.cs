@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -45,7 +45,9 @@ namespace Ordisoftware.Hebrew.Calendar
         DataSet.LunisolarDays.RowChanged += update;
         LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
         Globals.ChronoLoadData.Stop();
-        if ( DataSet.LunisolarDays.Count > 0 && !Settings.FirstLaunch )
+        if ( DataSet.LunisolarDays.Count > 0
+          && !Settings.FirstLaunch
+          && !Settings.FirstLaunchV7_0 )
         {
           Globals.IsGenerating = true;
           try
@@ -70,7 +72,8 @@ namespace Ordisoftware.Hebrew.Calendar
               catch ( Exception ex )
               {
                 Globals.ChronoLoadApp.Stop();
-                DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
+                string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
+                DisplayManager.ShowWarning(msg);
                 Globals.ChronoLoadApp.Start();
               }
             if ( !isTextReportLoaded )

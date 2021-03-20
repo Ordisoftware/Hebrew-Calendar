@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -160,21 +160,6 @@ namespace Ordisoftware.Hebrew.Calendar
       // GPS
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionGetGPS_LinkClicked(null, null);
-      if ( Settings.FirstLaunch )
-      {
-        Settings.SetFirstAndUpgradeFlagsOff();
-        Settings.Save();
-        MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
-        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
-        MainForm.Instance.ActionShowShabatNotice_Click(null, null);
-        if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
-          ActionUsePersonalShabat_LinkClicked(null, null);
-        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
-                                  () => EditUseSimhatTorahOutside.Checked = false,
-                                  () => EditUseSimhatTorahOutside.Checked = true);
-        TabControl.SelectedTab = TabPageGeneration;
-      }
       EditTimeZone.Text = Settings.GetGPSText();
     }
 
