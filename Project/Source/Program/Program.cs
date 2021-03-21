@@ -118,6 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static private void IPCSendCommands()
     {
+      if ( ApplicationCommandLine.Instance == null ) return;
       if ( ApplicationCommandLine.Instance.HideMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
       if ( ApplicationCommandLine.Instance.ShowMainForm )
