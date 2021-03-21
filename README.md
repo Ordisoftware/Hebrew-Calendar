@@ -302,6 +302,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
+- Add parashot MSWord export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
