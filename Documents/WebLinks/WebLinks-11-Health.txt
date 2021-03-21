@@ -61,3 +61,20 @@ URL = https://en.wikipedia.org/wiki/Chinese_herbology
 
 Name = (FR) Pharmacopée chinoise
 URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
+
+-
+
+Name = (EN) American National Center for Biotechnology Information
+URL = https://www.ncbi.nlm.nih.gov
+
+Name = (EN) WebMD Health Information and Herbs Database
+URL = https://www.webmd.com
+
+Name = (EN) Yet Another Traditional Chinese Medicine Database
+URL = cadd.pharmacy.nankai.edu.cn/yatcm
+
+Name = (EN) AyurTimes Ayurveda and Indian Herbs
+URL = https://www.ayurtimes.com
+
+Name = (EN) Springer's Indian Medicinal Plants Database (PDF 8 MiB)
+URL = http://gbpihedenvis.nic.in/PDFs/Glossary_Medicinal_Plants_Springer.pdf

@@ -104,7 +104,7 @@ URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_t
 
 -
 
-Name = (EN) Yoga Sutra of Patanjali word-for-word (PDF 363 MiB)
+Name = (EN) Yoga Sutra of Patanjali word-for-word (PDF 363 KiB)
 URL = http://www.arlingtoncenter.org/Sanskrit-English.pdf
 
 Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Kio)
