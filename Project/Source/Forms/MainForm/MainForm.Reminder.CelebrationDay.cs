@@ -31,6 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       bool result = false;
       var dateNow = DateTime.Now;
+      dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
       var dateToday = DateTime.Today;
       var row = ( from day in DataSet.LunisolarDays
                   where day.HasTorahEvent && check(day.TorahEventsAsEnum)
