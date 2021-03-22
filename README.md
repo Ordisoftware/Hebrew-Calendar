@@ -320,7 +320,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to choose default auto-lock option between lock station, standby and power off.
 - Improve auto-lock session.
 
-#### 2021.03.21 - Version 7.0
+#### 2021.03.23 - Version 7.0
 
 - Add parashah notice.
 - Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.
