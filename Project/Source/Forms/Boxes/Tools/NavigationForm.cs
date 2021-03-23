@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class NavigationForm : Form
   {
 
+    private const string NoDataField = "-";
+
     static public NavigationForm Instance { get; private set; }
 
     static NavigationForm()
@@ -58,10 +60,10 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelMoonsetValue.Visible = !row.Moonset.IsNullOrEmpty();
           LabelMoonset.Visible = !row.Moonset.IsNullOrEmpty();
           LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
-          if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = "-";
+          if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = NoDataField;
           LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
-            LabelEventTorahValue.Text = "-";
+            LabelEventTorahValue.Text = NoDataField;
           var rowNext = LunisolarDays.Where(day => day.DateAsDateTime > value && day.TorahEvents > 0).FirstOrDefault();
           if ( rowNext != null )
           {
@@ -72,29 +74,30 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           else
           {
-            LabelTorahNextValue.Text = "-";
+            LabelTorahNextValue.Text = NoDataField;
             LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNextDateValue.Tag = null;
           }
           var today = MainForm.Instance.DataSet.LunisolarDays.GetToday();
           LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
           LabelCurrentDayValue.Tag = today?.DateAsDateTime;
-          LabelParashahValue.Text = "-";
+          LabelParashahValue.Text = NoDataField;
           LabelParashahValue.Tag = null;
-          bool isPessah = false;
-          if ( row.LunarMonth == TorahCelebrations.PessahMonth )
-            isPessah = row.LunarDay >= TorahCelebrations.PessahStartDay 
-                    && row.LunarDay <= TorahCelebrations.PessahEndDay;
-          if ( !isPessah )
+          var rowParashah = row.GetParashahReadingDay();
+          bool isPessah = row.LunarMonth == TorahCelebrations.PessahMonth 
+                       && row.LunarDay >= TorahCelebrations.PessahStartDay 
+                       && row.LunarDay <= TorahCelebrations.PessahEndDay;
+          bool isSoukot = row.LunarMonth == TorahCelebrations.YomsMonth
+                       && row.LunarDay >= TorahCelebrations.SoukotStartDay
+                       && ( 
+                            ( Program.Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
+                            || row.LunarDay < TorahCelebrations.SoukotEndDay 
+                          );
+          LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
+          if ( LabelParashahValue.Enabled )
           {
-            var rowParashah = row.GetParashahReadingDay();
-            if ( rowParashah != null )
-            {
-              LabelParashahValue.Text = rowParashah.ParashahText;
-              LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
-            }
-            else
-              LabelParashahValue.Text = SysTranslations.UndefinedSlot.GetLang().Trim('(', ')').Titleize();
+            LabelParashahValue.Text = rowParashah.ParashahText;
+            LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);

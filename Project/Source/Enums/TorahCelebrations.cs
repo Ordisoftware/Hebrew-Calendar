@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// The pessah last day.
     /// </summary>
-    static public readonly int PessahEndDay = PessahStartDay + PessahEndDay - 1;
+    static public readonly int PessahEndDay = PessahStartDay + PessahLenght - 1;
 
     /// <summary>
     /// The chavouot length.
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// The soukot last day.
     /// </summary>
-    static public readonly int SoukotEndDay = SoukotStartDay + SoukotEndDay - 1;
+    static public readonly int SoukotEndDay = SoukotStartDay + SoukotLenght - 1;
 
     /// <summary>
     /// The 'hanouka month.

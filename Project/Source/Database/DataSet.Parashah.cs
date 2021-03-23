@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
             break;
           }
         }
-        return result;
+        return result.ParashahID.IsNullOrEmpty() ? null : result;
       }
 
     }
