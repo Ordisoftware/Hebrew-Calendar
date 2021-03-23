@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-03 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
