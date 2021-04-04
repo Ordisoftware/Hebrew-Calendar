@@ -316,9 +316,14 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### Planned - Version 7.x
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
+
+#### In progress - Version 7.1
+
+- Improve auto-lock session box.
+- Add lock session action in active reminder box.
+- Add option to choose default auto-lock action.
 - Add option to set Tray Icons.
-- Add option to choose default auto-lock option between lock station, standby and power off.
-- Improve auto-lock session.
+- Add command-line option to reset the reminder (--resetreminder).
 
 #### 2021.03.23 - Version 7.0
 
