@@ -193,6 +193,10 @@ namespace Ordisoftware.Hebrew.Calendar
           var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
           if ( menuItem != null ) menuItem.PerformClick();
         });
+      if ( ApplicationCommandLine.Instance.Generate )
+        ActionGenerate.PerformClick();
+      if ( ApplicationCommandLine.Instance.ResetReminder )
+        ActionResetReminder.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNavigation )
         ActionNavigate.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenDiffDates )

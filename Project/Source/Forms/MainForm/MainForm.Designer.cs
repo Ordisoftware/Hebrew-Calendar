@@ -1463,7 +1463,7 @@
     private System.Windows.Forms.ToolStripSeparator Sep3;
     private System.Windows.Forms.ToolStripButton ActionExit;
     public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
-    private System.Windows.Forms.ToolStripButton ActionResetReminder;
+    internal System.Windows.Forms.ToolStripButton ActionResetReminder;
     private System.Windows.Forms.ToolStripButton ActionDisableReminder;
     private System.Windows.Forms.ToolStripButton ActionEnableReminder;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -1475,7 +1475,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
-    private System.Windows.Forms.ToolStripMenuItem ActionGenerate;
+    internal System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     private System.Windows.Forms.ToolStripButton ActionPreferences;
