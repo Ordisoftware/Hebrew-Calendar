@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -32,9 +32,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private ToolTip LastToolTip = new ToolTip();
 
-    private Icon TrayIconPause;
-    private Icon TrayIconDefault;
-    private Icon TrayIconEvent;
+    // Active>SpecialDay:
+    // true, true  = TrayIconEvent
+    // true, false = TrayIconDefault
+    // false, true  = TrayIconEventPause
+    // false, false = TrayIconDefaultPause
+    private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
+      = new Dictionary<bool, NullSafeDictionary<bool, Icon>>()
+      {
+        { true, new NullSafeDictionary<bool, Icon>() },
+        { false, new NullSafeDictionary<bool, Icon>() }
+      };
+
     private Point TrayIconMouse;
 
     private bool TrayIconCanBallon = true;
@@ -42,6 +51,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool TimerMutex;
     private bool TimerErrorShown;
+
+    private bool IsReminderPaused;
 
     private MidnightTimer TimerMidnight = new MidnightTimer();
 
@@ -90,7 +101,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Text = Globals.AssemblyTitle;
         IsSpecialDay = false;
-        TrayIcon.Icon = TrayIconDefault;
+        TrayIcon.Icon = TrayIcons[!IsReminderPaused]?[Settings.TrayIconUseSpecialDayIcon && IsSpecialDay] ?? null;
         Application.OpenForms.All().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();

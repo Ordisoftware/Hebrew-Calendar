@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -333,6 +333,7 @@ namespace Ordisoftware.Hebrew.Calendar
           GoToDate(DateTime.Now.Date);
         else
           GoToDate(dateOld);
+        TimerReminder.Enabled = true;
         EnableReminderTimer();
         UpdateTitles(true);
       }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -51,10 +51,11 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         Icon = new Icon(Globals.ApplicationIconFilePath);
-        TrayIconPause = new Icon(Globals.ApplicationPauseIconFilePath).GetBySize(16, 16);
-        TrayIconEvent = new Icon(Globals.ApplicationEventIconFilePath).GetBySize(16, 16);
-        TrayIconDefault = Icon.GetBySize(16, 16);
-        TrayIcon.Icon = TrayIconDefault;
+        TrayIcons[false][true] = new Icon(Globals.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[false][false] = new Icon(Globals.ApplicationPauseIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][true] = new Icon(Globals.ApplicationEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][false] = Icon.GetBySize(16, 16);
+        TrayIcon.Icon = TrayIcons[true][false];
       });
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
@@ -192,6 +193,10 @@ namespace Ordisoftware.Hebrew.Calendar
           var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
           if ( menuItem != null ) menuItem.PerformClick();
         });
+      if ( ApplicationCommandLine.Instance.Generate )
+        ActionGenerate.PerformClick();
+      if ( ApplicationCommandLine.Instance.ResetReminder )
+        ActionResetReminder.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNavigation )
         ActionNavigate.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenDiffDates )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -91,6 +91,10 @@ namespace Ordisoftware.Hebrew.Calendar
               MainForm.Instance.MenuShowHide.PerformClick();
             }
           });
+        if ( command == nameof(ApplicationCommandLine.Instance.Generate) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionGenerate.PerformClick());
+        if ( command == nameof(ApplicationCommandLine.Instance.ResetReminder) )
+          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionResetReminder.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenNavigation) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionNavigate.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
@@ -123,6 +127,10 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
       if ( ApplicationCommandLine.Instance.ShowMainForm )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
+      if ( ApplicationCommandLine.Instance.Generate )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.Generate));
+      if ( ApplicationCommandLine.Instance.ResetReminder )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ResetReminder));
       if ( ApplicationCommandLine.Instance.OpenNavigation )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNavigation));
       if ( ApplicationCommandLine.Instance.OpenDiffDates )
