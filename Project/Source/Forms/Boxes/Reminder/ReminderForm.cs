@@ -294,8 +294,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-
+      if ( LabelParashahValue.Tag != null )
+        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
+
   }
 
 }
