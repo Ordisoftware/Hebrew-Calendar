@@ -39,6 +39,7 @@
       this.LabelArrow = new System.Windows.Forms.Label();
       this.LabelStartDay = new System.Windows.Forms.Label();
       this.LabelEndDay = new System.Windows.Forms.Label();
+      this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
@@ -115,12 +116,21 @@
       this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelEndDay.Name = "LabelEndDay";
       // 
+      // LabelParashahValue
+      // 
+      this.LabelParashahValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelParashahValue, "LabelParashahValue");
+      this.LabelParashahValue.LinkColor = System.Drawing.Color.Navy;
+      this.LabelParashahValue.Name = "LabelParashahValue";
+      this.LabelParashahValue.TabStop = true;
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.LabelParashahValue);
       this.Controls.Add(this.LabelEndDay);
       this.Controls.Add(this.LabelEndTime);
       this.Controls.Add(this.LabelArrow);
@@ -157,5 +167,6 @@
     private System.Windows.Forms.Label LabelArrow;
     private System.Windows.Forms.Label LabelStartDay;
     private System.Windows.Forms.Label LabelEndDay;
+    private System.Windows.Forms.LinkLabel LabelParashahValue;
   }
 }
