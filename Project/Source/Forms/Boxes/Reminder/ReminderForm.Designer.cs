@@ -123,6 +123,7 @@
       this.LabelParashahValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelParashahValue.Name = "LabelParashahValue";
       this.LabelParashahValue.TabStop = true;
+      this.LabelParashahValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelParashahValue_LinkClicked);
       // 
       // ReminderForm
       // 
