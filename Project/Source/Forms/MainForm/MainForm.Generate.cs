@@ -51,8 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        bool isTimerEnabled = TimerReminder.Enabled;
-        TimerReminder.Enabled = false;
+        if ( e != null ) TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         try
         {
@@ -88,9 +87,8 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( e != null )
           {
             GoToDate(DateTime.Today);
-            TimerReminder.Enabled = isTimerEnabled;
-            if ( TimerReminder.Enabled )
-              TimerReminder_Tick(null, null);
+            TimerReminder.Enabled = true;
+            TimerReminder_Tick(null, null);
           }
         }
       }

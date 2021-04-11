@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -34,9 +34,9 @@ namespace Ordisoftware.Hebrew.Calendar
         IsSpecialDay = false;
         if ( !SystemManager.IsForegroundFullScreenOrScreensaver )
         {
-          IsSpecialDay = CheckShabat(Settings.ReminderShabatEnabled) || IsSpecialDay;
-          IsSpecialDay = CheckCelebrationDay(Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
-          if ( Settings.ReminderCelebrationsEnabled )
+          IsSpecialDay = CheckShabat(!IsReminderPaused && Settings.ReminderShabatEnabled) || IsSpecialDay;
+          IsSpecialDay = CheckCelebrationDay(!IsReminderPaused && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
+          if ( !IsReminderPaused && Settings.ReminderCelebrationsEnabled )
             CheckCelebrations();
         }
       }
@@ -52,8 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.TryCatch(() =>
         {
           CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-          if ( Settings.TrayIconUseSpecialDayIcon )
-            TrayIcon.Icon = IsSpecialDay ? TrayIconEvent : TrayIconDefault;
+          TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
         });
         SystemManager.TryCatch(() =>
         {
@@ -81,7 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EnableReminderTimer()
     {
       TimerResumeReminder.Enabled = false;
-      TrayIcon.Icon = TrayIconDefault;
       ActionResetReminder.Enabled = true;
       ActionEnableReminder.Visible = false;
       ActionDisableReminder.Visible = true;
@@ -92,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuDisableReminder.Visible = true;
       MenuEnableReminder.Enabled = false;
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
-      TimerReminder.Enabled = true;
+      IsReminderPaused = false;
       TimerReminder_Tick(null, null);
     }
 
@@ -103,8 +101,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = false;
         var delay = SelectSuspendDelayForm.Run();
         if ( delay == null ) return;
-        TrayIcon.Icon = TrayIconPause;
-        TimerReminder.Enabled = false;
+        IsReminderPaused = true;
         ActionResetReminder.Enabled = false;
         ActionEnableReminder.Visible = true;
         ActionDisableReminder.Visible = false;
@@ -121,6 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
           TimerResumeReminder.Interval = delay.Value * 60 * 1000;
           TimerResumeReminder.Start();
         }
+        TimerReminder_Tick(null, null);
       }
       finally
       {
