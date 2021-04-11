@@ -324,8 +324,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lock session action in active reminder box.
 - Add option to choose default auto-lock action.
 - Add command-line option to reset the reminder (--resetreminder).
-- Improve tray icon to show special day color even when the reminder is disabled.
+- Fix generate command-line option does nothing.
 - Fix tray icon no more shown paused when reminder is disabled since previous version.
+- Improve tray icon to show special day color even when the reminder is disabled.
+- Improve shabat reminder box to show current parashah.
 
 #### 2021.03.23 - Version 7.0
 
