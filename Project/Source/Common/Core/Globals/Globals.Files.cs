@@ -113,24 +113,6 @@ namespace Ordisoftware.Core
       => Path.Combine(SystemFolderPath, "Application.ico");
 
     /// <summary>
-    /// Indicate the file path of the application's pause icon.
-    /// </summary>
-    static public string ApplicationPauseIconFilePath
-      => Path.Combine(SystemFolderPath, "ApplicationPause.ico");
-
-    /// <summary>
-    /// Indicate the file path of the application's pause when special day icon.
-    /// </summary>
-    static public string ApplicationPauseEventIconFilePath
-      => Path.Combine(SystemFolderPath, "ApplicationPauseEvent.ico");
-
-    /// <summary>
-    /// Indicate the file path of the application's event icon.
-    /// </summary>
-    static public string ApplicationEventIconFilePath
-      => Path.Combine(SystemFolderPath, "ApplicationEvent.ico");
-
-    /// <summary>
     /// Indicate the file path of the application's readme markdown file.
     /// </summary>
     static public string ApplicationReadmeMDPath
