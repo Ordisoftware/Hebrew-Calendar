@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -126,6 +126,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate; });
       SystemManager.TryCatch(() => { EditCalendarLineSpacing.Value = Settings.CalendarLineSpacing; });
       SystemManager.TryCatch(() => { EditReminderBoxShowFullDates.Checked = Settings.ReminderBoxShowFullDates; });
+      SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
       // Hotkey
       InitHotKeyControls();
       // System
