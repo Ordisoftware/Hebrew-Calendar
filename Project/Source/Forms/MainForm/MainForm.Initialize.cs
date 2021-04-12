@@ -51,9 +51,9 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         Icon = new Icon(Globals.ApplicationIconFilePath);
-        TrayIcons[false][true] = new Icon(Globals.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
-        TrayIcons[false][false] = new Icon(Globals.ApplicationPauseIconFilePath).GetBySize(16, 16);
-        TrayIcons[true][true] = new Icon(Globals.ApplicationEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
         TrayIcons[true][false] = Icon.GetBySize(16, 16);
         TrayIcon.Icon = TrayIcons[true][false];
       });

@@ -31,6 +31,24 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly Properties.Settings Settings
       = Properties.Settings.Default;
 
+    /// <summary>
+    /// Indicate the file path of the application's pause icon.
+    /// </summary>
+    static public string ApplicationPauseIconFilePath
+      => Path.Combine(Globals.SystemFolderPath, "ApplicationPause.ico");
+
+    /// <summary>
+    /// Indicate the file path of the application's pause when special day icon.
+    /// </summary>
+    static public string ApplicationPauseEventIconFilePath
+      => Path.Combine(Globals.SystemFolderPath, "ApplicationPauseEvent.ico");
+
+    /// <summary>
+    /// Indicate the file path of the application's event icon.
+    /// </summary>
+    static public string ApplicationEventIconFilePath
+      => Path.Combine(Globals.SystemFolderPath, "ApplicationEvent.ico");
+
     static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
       = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
 

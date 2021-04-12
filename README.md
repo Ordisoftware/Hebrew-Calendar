@@ -302,6 +302,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add parashah reminder at the start of the week.
 - Add parashot MSWord export.
 - Add print boards.
@@ -314,20 +315,20 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### Planned - Version 7.x
+#### Planned - Version 7.2
 
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
+>- Improve auto-lock session box.
+>- Add lock session action in active reminder box.
+>- Add option to choose default auto-lock action.
 
 #### In progress - Version 7.1
 
-- Improve auto-lock session box.
-- Add lock session action in active reminder box.
-- Add option to choose default auto-lock action.
-- Add command-line option to reset the reminder (--resetreminder).
-- Fix generate command-line option does nothing.
-- Fix tray icon no more shown paused when reminder is disabled since previous version.
-- Improve tray icon to show special day color even when the reminder is disabled.
+>- Add option to show parashah in shabat reminder box
 - Improve shabat reminder box to show current parashah.
+- Improve tray icon to show special day color even when the reminder is disabled.
+- Fix tray icon no more shown paused when reminder is disabled since previous version.
+- Fix generate command-line option does nothing.
+- Add command-line option to reset the reminder (--resetreminder).
 
 #### 2021.03.23 - Version 7.0
 
