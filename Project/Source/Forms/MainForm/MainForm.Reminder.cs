@@ -119,6 +119,7 @@ namespace Ordisoftware.Hebrew.Calendar
           TimerResumeReminder.Start();
         }
         TimerReminder_Tick(null, null);
+        ClearLists();
       }
       finally
       {
