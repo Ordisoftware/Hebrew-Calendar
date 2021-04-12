@@ -773,4 +773,7 @@
   <data name="EditReminderBoxShowFullDates.Text" xml:space="preserve">
     <value>Afficher les dates complètes</value>
   </data>
+  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
+    <value>Afficher la parashah de la semaine</value>
+  </data>
 </root>
