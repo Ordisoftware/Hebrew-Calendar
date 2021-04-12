@@ -323,7 +323,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 7.1
 
->- Add option to show parashah in shabat reminder box
+- Add option to show parashah in shabat reminder box
 - Improve shabat reminder box to show current parashah.
 - Improve tray icon to show special day color even when the reminder is disabled.
 - Fix tray icon no more shown paused when reminder is disabled since previous version.
