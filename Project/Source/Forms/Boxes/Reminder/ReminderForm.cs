@@ -107,16 +107,19 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
+        form.LabelParashahValue.Text = "";
+        form.LabelParashahValue.Tag = null;
         if ( isShabat )
         {
           form.LabelTitle.Text += " " + row.DayAndMonthText;
-          var rowParashah = row.GetParashahReadingDay();
-          form.LabelParashahValue.Text = "";
-          form.LabelParashahValue.Tag = null;
-          if ( rowParashah != null )
+          if ( Program.Settings.ReminderShabatShowParashah )
           {
-            form.LabelParashahValue.Text = rowParashah.ParashahText;
-            form.LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
+            var rowParashah = row.GetParashahReadingDay();
+            if ( rowParashah != null )
+            {
+              form.LabelParashahValue.Text = rowParashah.ParashahText;
+              form.LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
+            }
           }
         }
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;

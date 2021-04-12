@@ -165,6 +165,7 @@
       this.EditReminderShabatEnabled = new System.Windows.Forms.CheckBox();
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.EditRemindShabatEveryMinutes = new System.Windows.Forms.NumericUpDown();
+      this.EditReminderShabatShowParashah = new System.Windows.Forms.CheckBox();
       this.EditRemindShabatOnlyLight = new System.Windows.Forms.CheckBox();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
@@ -1369,6 +1370,7 @@
       this.TabPageShabat.Controls.Add(this.EditReminderShabatEnabled);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatEveryMinutes);
       this.TabPageShabat.Controls.Add(this.EditRemindShabatEveryMinutes);
+      this.TabPageShabat.Controls.Add(this.EditReminderShabatShowParashah);
       this.TabPageShabat.Controls.Add(this.EditRemindShabatOnlyLight);
       this.TabPageShabat.Controls.Add(this.ActionUsePersonalShabat);
       this.TabPageShabat.Controls.Add(this.EditShabatDay);
@@ -1429,6 +1431,13 @@
             0});
       this.EditRemindShabatEveryMinutes.Name = "EditRemindShabatEveryMinutes";
       this.EditRemindShabatEveryMinutes.ReadOnly = true;
+      // 
+      // EditReminderShabatShowParashah
+      // 
+      resources.ApplyResources(this.EditReminderShabatShowParashah, "EditReminderShabatShowParashah");
+      this.EditReminderShabatShowParashah.Name = "EditReminderShabatShowParashah";
+      this.EditReminderShabatShowParashah.UseVisualStyleBackColor = true;
+      this.EditReminderShabatShowParashah.CheckedChanged += new System.EventHandler(this.EditRemindShabat_Changed);
       // 
       // EditRemindShabatOnlyLight
       // 
@@ -2810,5 +2819,6 @@
     private System.Windows.Forms.Label LabelMonthViewFontSizeInterval;
     private System.Windows.Forms.Label LabelTextReportFontSizeInterval;
     private System.Windows.Forms.CheckBox EditReminderBoxShowFullDates;
+    private System.Windows.Forms.CheckBox EditReminderShabatShowParashah;
   }
 }

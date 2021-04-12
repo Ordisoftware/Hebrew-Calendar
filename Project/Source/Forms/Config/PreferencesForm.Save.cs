@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -115,6 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
       Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
       Settings.ReminderBoxShowFullDates = EditReminderBoxShowFullDates.Checked;
+      Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

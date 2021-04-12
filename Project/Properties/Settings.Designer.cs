@@ -2465,5 +2465,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ReminderBoxShowFullDates"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReminderShabatShowParashah {
+            get {
+                return ((bool)(this["ReminderShabatShowParashah"]));
+            }
+            set {
+                this["ReminderShabatShowParashah"] = value;
+            }
+        }
     }
 }
