@@ -44,7 +44,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
-[![Note](https://www.ordisoftware.com/theme/softpedia4.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
+[![Note](https://www.ordisoftware.com/wp-content/theming/softpedia4.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
 
 ## Requirements
 
