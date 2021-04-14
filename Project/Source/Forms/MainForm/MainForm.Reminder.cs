@@ -89,6 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
       IsReminderPaused = false;
       ClearLists();
+      UpdateTitles();
       TimerReminder_Tick(null, null);
     }
 
@@ -111,6 +112,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuEnableReminder.Enabled = true;
         MenuDisableReminder.Enabled = false;
         ClearLists();
+        UpdateTitles();
         if ( delay > 0 )
         {
           TimerResumeReminder.Interval = delay.Value * 60 * 1000;
@@ -123,7 +125,6 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuTray.Enabled = true;
       }
     }
-
 
   }
 
