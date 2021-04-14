@@ -154,6 +154,10 @@ When disabled, top menu painting may cause latency.
  
   `Ordisoftware.Hebrew.Calendar.exe --generate`
 
+- Reset the reminder:
+ 
+  `Ordisoftware.Hebrew.Calendar.exe --resetreminder`
+
 - Show the navigation window:
  
   `Ordisoftware.Hebrew.Calendar.exe --navigate`
@@ -310,7 +314,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 >- Add lock session action in active reminder box.
 >- Add option to choose default auto-lock action.
 
-#### In progress - Version 7.1
+#### 2021.04.20 - Version 7.1
 
 - Add option to show parashah in shabat reminder box
 - Improve shabat reminder box to show current parashah.
