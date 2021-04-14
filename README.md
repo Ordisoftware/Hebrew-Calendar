@@ -57,20 +57,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version**
 
-- Added command-line options (see FAQ).
-- The reminder box has been improved.
-- New editable parashot board.
-- Parashah of the week is indicated for Shabat in visual calendar and in navigation window.
-- Application title bar can show lunar today and weekly parashah.
-- Visual calendar and navigation window indicates intermediate days of week-long celebrations.
-- Image of the Tray Icon changes during a Shabat day or celebration regardless of reminder boxes.
-- Web update check is not performed on a day off while the application is running.
-- Fixed celebrations board showing moon times in the case of sun omer.
-- Boards are exportable as TXT files in addition to CSV and JSON.
-- Added keyboard shortchuts to navigate between months having celebrations.
-- Added New in version in the Information menu.
-- Update web links and Bible study providers.
-- Some improvements in appearance and function.
+- Added the weekly parashah in the shabat reminder box.
+- Added a [--resetreminder] command-line option.
+- Some tray icons and UI/UX fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -328,7 +317,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve tray icon to show special day color even when the reminder is disabled.
 - Fix tray icon no more shown paused when reminder is disabled since previous version.
 - Fix generate command-line option does nothing.
-- Add command-line option to reset the reminder (--resetreminder).
+- Add command-line option to reset the reminder [--resetreminder].
 - Some UI/UX fixes and improvements.
 
 #### 2021.03.23 - Version 7.0
