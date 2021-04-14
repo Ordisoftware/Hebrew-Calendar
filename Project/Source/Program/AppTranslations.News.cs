@@ -199,6 +199,17 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Ajout des Nouveautés de version dans le menu Information." + Globals.NL +
                           "Mise à jour des liens web et fournisseurs d'étude de la Bible." + Globals.NL +
                           "Quelques améliorations d'aspect et de fonctionnement."
+        },
+
+        ["7.1"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Added the weekly parashah in the shabat reminder box." + Globals.NL +
+                          "Added a [--resetreminder] command-line option." + Globals.NL +
+                          "Some tray icons and UI/UX fixes and improvements.",
+
+          [Language.FR] = "Ajout de la parashah de la semaine dans la boite de rappel du shabat." + Globals.NL +
+                          "Ajout d'une option de ligne de commande [--resetreminder]." + Globals.NL +
+                          "Quelques corrections et amélioration de la tray icon et de l'UI/UX."
         }
 
       };
