@@ -329,6 +329,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Fix tray icon no more shown paused when reminder is disabled since previous version.
 - Fix generate command-line option does nothing.
 - Add command-line option to reset the reminder (--resetreminder).
+- Some UI/UX fixes and improvements.
 
 #### 2021.03.23 - Version 7.0
 
