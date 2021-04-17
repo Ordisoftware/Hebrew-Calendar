@@ -313,6 +313,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 >- Add lock session action in active reminder box.
 >- Add option to choose default auto-lock action.
 >- Improve auto-lock session box.
+- Set web check update timeout to 5s.
 
 #### 2021.04.15 - Version 7.1
 
