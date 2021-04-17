@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -71,6 +71,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "{0} Check Update",
         [Language.FR] = "Mise à jour de {0}"
+      };
+
+    static public readonly TranslationsDictionary CheckInternetConnection
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Please check the Internet connection.",
+        [Language.FR] = "Veuillez vérifier la connexion internet."
       };
 
     static public readonly TranslationsDictionary NoticePrivacyNoData

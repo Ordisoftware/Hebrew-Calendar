@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -20,16 +20,41 @@ using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Core
 {
+
+  /// <summary>
+  /// Provide web client with timeout.
+  /// </summary>
+  public class WebClientEx : WebClient
+  {
+
+    static public int DefaultTimeOutSeconds = 5;
+
+    public int TimeOutSeconds { get; set; }
+
+    public WebClientEx(int timeOutSeconds = 0)
+    {
+      if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
+      TimeOutSeconds = timeOutSeconds;
+    }
+
+    protected override WebRequest GetWebRequest(Uri address)
+    {
+      var request = base.GetWebRequest(address);
+      request.Timeout = TimeOutSeconds * 1000;
+      return request;
+    }
+
+  }
 
   /// <summary>
   /// Provide web check update.
   /// </summary>
   static class WebCheckUpdate
   {
+
     static public int DefaultCheckDaysInterval = 7;
 
     static private bool Mutex;
@@ -77,7 +102,7 @@ namespace Ordisoftware.Core
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
         LoadingForm.Instance.Owner = Globals.MainForm;
         LoadingForm.Instance.DoProgress();
-        using ( WebClient client = new WebClient() )
+        using ( var client = new WebClientEx() )
         {
           var fileInfo = GetVersionAndChecksum(client);
           lastdone = DateTime.Now;
@@ -101,6 +126,14 @@ namespace Ordisoftware.Core
         DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
         if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
           SystemManager.OpenGitHupRepo();
+      }
+      catch ( WebException ex )
+      {
+        CleanTemp();
+        string msg = ex.Message;
+        if ( ex.Status == WebExceptionStatus.Timeout )
+          msg += Globals.NL2 + SysTranslations.CheckInternetConnection.GetLang();
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);
       }
       catch ( Exception ex )
       {
