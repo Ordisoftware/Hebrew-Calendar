@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -227,6 +227,42 @@ namespace Ordisoftware.Core
       catch ( Exception ex )
       {
         throw new SQLiteException($"Error in {nameof(CheckTable)}", ex);
+      }
+      return false;
+    }
+
+    /// <summary>
+    /// Check if a index exists and create it if not.
+    /// </summary>
+    /// <param name="connection">The connection.</param>
+    /// <param name="index">The index name.</param>
+    /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
+    /// <returns>True if the index exists else false even if created.</returns>
+    static public bool CheckIndex(this OdbcConnection connection, string index, string sql = "")
+    {
+      try
+      {
+        if ( index.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(index));
+        using ( var commandCheck = connection.CreateCommand() )
+        {
+          commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
+          commandCheck.Parameters.Add("@index", OdbcType.Text).Value = index;
+          if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
+          if ( !sql.IsNullOrEmpty() )
+            using ( var commandCreate = new OdbcCommand(sql, connection) )
+              try
+              {
+                commandCreate.ExecuteNonQuery();
+              }
+              catch ( Exception ex )
+              {
+                throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
+              }
+        }
+      }
+      catch ( Exception ex )
+      {
+        throw new SQLiteException($"Error in {nameof(CheckIndex)}", ex);
       }
       return false;
     }
