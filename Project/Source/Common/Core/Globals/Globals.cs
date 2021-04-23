@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -158,6 +158,7 @@ namespace Ordisoftware.Core
     {
       try
       {
+        if ( !Directory.Exists(ProjectFolderPath) ) return;
         string path = ProjectFolderPath;
         string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
         foreach ( string file in files )

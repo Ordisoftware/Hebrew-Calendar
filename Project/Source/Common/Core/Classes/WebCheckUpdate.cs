@@ -25,31 +25,6 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide web client with timeout.
-  /// </summary>
-  public class WebClientEx : WebClient
-  {
-
-    static public int DefaultTimeOutSeconds = 5;
-
-    public int TimeOutSeconds { get; set; }
-
-    public WebClientEx(int timeOutSeconds = 0)
-    {
-      if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
-      TimeOutSeconds = timeOutSeconds;
-    }
-
-    protected override WebRequest GetWebRequest(Uri address)
-    {
-      var request = base.GetWebRequest(address);
-      request.Timeout = TimeOutSeconds * 1000;
-      return request;
-    }
-
-  }
-
-  /// <summary>
   /// Provide web check update.
   /// </summary>
   static class WebCheckUpdate
@@ -293,6 +268,31 @@ namespace Ordisoftware.Core
                               status.ToStringFull() + Globals.NL +
                               code.ToStringFull());
       }
+    }
+
+  }
+
+  /// <summary>
+  /// Provide web client with timeout.
+  /// </summary>
+  public class WebClientEx : WebClient
+  {
+
+    static public int DefaultTimeOutSeconds = 5;
+
+    public int TimeOutSeconds { get; set; }
+
+    public WebClientEx(int timeOutSeconds = 0)
+    {
+      if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
+      TimeOutSeconds = timeOutSeconds;
+    }
+
+    protected override WebRequest GetWebRequest(Uri address)
+    {
+      var request = base.GetWebRequest(address);
+      request.Timeout = TimeOutSeconds * 1000;
+      return request;
     }
 
   }

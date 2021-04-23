@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -37,10 +37,10 @@ namespace Ordisoftware.Core
       ActiveControl = WebBrowser;
     }
 
-    public HTMLBrowserForm(TranslationsDictionary title,
-                           string filePathTemplate,
-                           string locationPropertyName,
-                           string clientSizePropertyName,
+    public HTMLBrowserForm(TranslationsDictionary title = null,
+                           string filePathTemplate = null,
+                           string locationPropertyName = null,
+                           string clientSizePropertyName = null,
                            bool menuEnabled = true) : this()
     {
       Title = title;
@@ -48,8 +48,11 @@ namespace Ordisoftware.Core
       FilePathTemplate = filePathTemplate;
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;
-      Location = (Point)Globals.Settings[locationPropertyName];
-      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+      if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
+      {
+        Location = (Point)Globals.Settings[locationPropertyName];
+        ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+      }
     }
 
     private void HTMLBrowserForm_Load(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace Ordisoftware.Core
     public void HTMLBrowserForm_Shown(object sender, EventArgs e)
     {
       if ( Title != null ) Text = Title.GetLang();
-      if ( FilePathTemplate == null ) return;
+      if ( FilePathTemplate.IsNullOrEmpty() ) return;
       string filePath = string.Format(FilePathTemplate, Languages.Current.ToString());
       if ( File.Exists(filePath) )
         WebBrowser.Navigate(filePath);
@@ -70,8 +73,11 @@ namespace Ordisoftware.Core
 
     private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)
     {
-      Globals.Settings[LocationPropertyName] = Location;
-      Globals.Settings[ClientSizePropertyName] = ClientSize;
+      if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
+      {
+        Globals.Settings[LocationPropertyName] = Location;
+        Globals.Settings[ClientSizePropertyName] = ClientSize;
+      }
     }
 
     private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
