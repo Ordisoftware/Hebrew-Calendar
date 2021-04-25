@@ -103,7 +103,7 @@ namespace Ordisoftware.SQLiteODBCInstaller
 
     static private List<Process> GetProcesses()
     {
-      return Process.GetProcesses().Where(p => p.ProcessName.Contains("Ordisoftware.Hebrew")).ToList();
+      return Process.GetProcesses().Where(p => p.ProcessName.Contains("Ordisoftware.")).ToList();
     }
 
     static public string AssemblyTitle

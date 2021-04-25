@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
+using System.Globalization;
 
 namespace Ordisoftware.Core
 {
@@ -23,22 +24,36 @@ namespace Ordisoftware.Core
   static partial class SQLiteDate
   {
 
-    static private void RunSecure()
-    {
-    }
-
     /// <summary>
-    /// Get a date like "Year.Month.Day".
+    /// Get a date from a string like "Year-Month-Day Hour-Min-Sec".
     /// </summary>
     /// <param name="date">The date.</param>
-    static public string ToString(DateTime date)
+    static public DateTime ToDateTime(string date, bool withTime = false, bool ignoreSeconds = false)
     {
-      if ( date == null ) return string.Empty;
-      return $"{date.Year.ToString("0000")}-{date.Month.ToString("00")}-{date.Day.ToString("00")}";
+      if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
+      return withTime
+             ? ignoreSeconds
+               ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+               : DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+             : DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
     }
 
     /// <summary>
-    /// Get a date like "Year.Month.Day".
+    /// Get a date like "Year-Month-Day Hour:Min:Sec".
+    /// </summary>
+    /// <param name="date">The date.</param>
+    static public string ToString(DateTime date, bool withTime = false, bool ignoreSeconds = false)
+    {
+      if ( date == null ) return string.Empty;
+      return withTime
+             ? ignoreSeconds
+               ? date.ToString("yyyy-MM-dd HH:mm")
+               : date.ToString("yyyy-MM-dd HH:mm:ss")
+             : date.ToString("yyyy-MM-dd");
+    }
+
+    /// <summary>
+    /// Get a date like "Year-Month-Day".
     /// </summary>
     /// <param name="year">The year.</param>
     /// <param name="month">The month.</param>
@@ -46,21 +61,6 @@ namespace Ordisoftware.Core
     static public string ToString(int year, int month, int day)
     {
       return $"{year.ToString("0000")}-{month.ToString("00")}-{day.ToString("00")}";
-    }
-
-    /// <summary>
-    /// Get a date from a string like "Year.Month.Day".
-    /// </summary>
-    /// <param name="date">The date.</param>
-    static public DateTime ToDateTime(string date)
-    {
-      if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
-      string[] items = date.Split('-');
-      if ( items.Length != 3 ) throw new FormatException(date);
-      if ( !int.TryParse(items[0], out int year) ) throw new FormatException(date);
-      if ( !int.TryParse(items[1], out int month) ) throw new FormatException(date);
-      if ( !int.TryParse(items[2], out int day) ) throw new FormatException(date);
-      return new DateTime(year, month, day);
     }
 
     /// <summary>
