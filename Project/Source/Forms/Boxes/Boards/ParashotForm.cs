@@ -120,6 +120,7 @@ namespace Ordisoftware.Hebrew
         if ( (string)datarowview[nameof(Parashah.ID)] == parashah.ID )
         {
           DataGridView.CurrentCell = row.Cells[0];
+          DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
           break;
         }
       }
