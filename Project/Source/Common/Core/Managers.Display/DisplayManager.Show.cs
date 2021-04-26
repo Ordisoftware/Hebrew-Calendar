@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Media;
 using System.Diagnostics;
@@ -68,10 +68,10 @@ namespace Ordisoftware.Core
   static partial class DisplayManager
   {
 
-    static public bool AdvancedFormUseSounds = true;
-    static public bool ShowSuccessDialogs = true;
-    static public MessageBoxFormStyle FormStyle = MessageBoxFormStyle.Advanced;
-    static public MessageBoxIconStyle IconStyle = MessageBoxIconStyle.ForceInformation;
+    static public bool AdvancedFormUseSounds { get; set; } = true;
+    static public bool ShowSuccessDialogs { get; set; } = true;
+    static public MessageBoxFormStyle FormStyle { get; set; } = MessageBoxFormStyle.Advanced;
+    static public MessageBoxIconStyle IconStyle { get; set; } = MessageBoxIconStyle.ForceInformation;
 
     /// <summary>
     /// Indicates application title initialized from file version info or executable path.
@@ -93,7 +93,7 @@ namespace Ordisoftware.Core
         _Title = value;
       }
     }
-    static public string _Title;
+    static private string _Title;
 
     /// <summary>
     /// Play the sound associated to a message box icon.

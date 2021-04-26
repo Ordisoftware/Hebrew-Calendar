@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -395,9 +395,8 @@ namespace Ordisoftware.Hebrew
 
     private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
     {
-      if ( e.Button == MouseButtons.Right )
-        if ( e.RowIndex != -1 )
-          DataGridView.Rows[e.RowIndex].Selected = true;
+      if ( e.Button == MouseButtons.Right && e.RowIndex != -1 )
+        DataGridView.Rows[e.RowIndex].Selected = true;
     }
 
     private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

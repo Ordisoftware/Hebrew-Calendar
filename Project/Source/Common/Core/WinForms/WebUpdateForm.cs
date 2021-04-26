@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -38,7 +38,7 @@ namespace Ordisoftware.Core
         if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
         if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
         if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-        throw new NotImplementedExceptionEx($"User selection in {form.GetType().Name}.{nameof(Run)}");
+        throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
       }
     }
 

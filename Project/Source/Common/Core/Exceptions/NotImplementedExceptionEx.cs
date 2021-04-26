@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Runtime.Serialization;
 
@@ -22,32 +22,32 @@ namespace Ordisoftware.Core
   /// Provide improved not implemented exception.
   /// </summary>
   [Serializable]
-  partial class NotImplementedExceptionEx : NotImplementedException
+  partial class AdvancedNotImplementedException : NotImplementedException
   {
 
     public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);
 
-    public NotImplementedExceptionEx()
+    public AdvancedNotImplementedException()
       : base()
     {
     }
 
-    public NotImplementedExceptionEx(Enum value)
+    public AdvancedNotImplementedException(Enum value)
       : base(value.ToStringFull())
     {
     }
 
-    public NotImplementedExceptionEx(string message)
+    public AdvancedNotImplementedException(string message)
       : base(message)
     {
     }
 
-    public NotImplementedExceptionEx(string message, Exception inner)
+    public AdvancedNotImplementedException(string message, Exception inner)
       : base(message, inner)
     {
     }
 
-    protected NotImplementedExceptionEx(SerializationInfo info, StreamingContext context) : base(info, context)
+    protected AdvancedNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }
   }

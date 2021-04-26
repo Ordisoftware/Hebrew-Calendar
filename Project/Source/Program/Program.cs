@@ -77,7 +77,9 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         server.EndWaitForConnection(ar);
-        var command = new BinaryFormatter().Deserialize(server) as string;
+#pragma warning disable S5773 // Types allowed to be deserialized should be restricted
+        if ( !( new BinaryFormatter().Deserialize(server) is string command ) ) return;
+#pragma warning restore S5773 // Types allowed to be deserialized should be restricted
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));

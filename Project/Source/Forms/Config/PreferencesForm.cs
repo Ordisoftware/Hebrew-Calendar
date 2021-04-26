@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -708,7 +708,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( !IsReady ) return;
-      var key = Globals.BringToFrontApplicationHotKey.Key;
       CheckHotKeyCombination(() => Globals.BringToFrontApplicationHotKey.Key = (Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem);
     }
 
@@ -751,7 +750,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var checkbox = (CheckBox)sender;
       if ( checkbox.Checked ) return true;
-      if ( !PanelHotKey.Controls.OfType<CheckBox>().Where(c => c != checkbox).ToList().All(c => !c.Checked) )
+      if ( !PanelHotKey.Controls.OfType<CheckBox>().Where(c => c != checkbox).All(c => !c.Checked) )
         return true;
       checkbox.Checked = true;
       return false;

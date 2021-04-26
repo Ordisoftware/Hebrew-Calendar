@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -24,29 +24,21 @@ namespace Ordisoftware.Core
 
     static private IContainer _Container;
     static private ContextMenuStrip ContextMenuEdit;
-    static public ToolStripMenuItem ActionUndo;
-    static public ToolStripMenuItem ActionRedo;
-    static public ToolStripSeparator Separator1;
-    static public ToolStripMenuItem ActionCopy;
-    static public ToolStripMenuItem ActionCut;
-    static public ToolStripMenuItem ActionPaste;
-    static public ToolStripSeparator Separator2;
-    static public ToolStripMenuItem ActionSelectAll;
-    static public ToolStripMenuItem ActionDelete;
+
+    static public readonly ToolStripMenuItem ActionUndo = new ToolStripMenuItem();
+    static public readonly ToolStripMenuItem ActionRedo = new ToolStripMenuItem();
+    static public readonly ToolStripSeparator Separator1 = new ToolStripSeparator();
+    static public readonly ToolStripMenuItem ActionCopy = new ToolStripMenuItem();
+    static public readonly ToolStripMenuItem ActionCut = new ToolStripMenuItem();
+    static public readonly ToolStripMenuItem ActionPaste = new ToolStripMenuItem();
+    static public readonly ToolStripSeparator Separator2 = new ToolStripSeparator();
+    static public readonly ToolStripMenuItem ActionSelectAll = new ToolStripMenuItem();
+    static public readonly ToolStripMenuItem ActionDelete = new ToolStripMenuItem();
 
     static void InitializeContextMenu()
     {
       _Container = new Container();
       ContextMenuEdit = new ContextMenuStrip(_Container);
-      ActionUndo = new ToolStripMenuItem();
-      ActionRedo = new ToolStripMenuItem();
-      Separator1 = new ToolStripSeparator();
-      ActionCut = new ToolStripMenuItem();
-      ActionCopy = new ToolStripMenuItem();
-      ActionPaste = new ToolStripMenuItem();
-      Separator2 = new ToolStripSeparator();
-      ActionSelectAll = new ToolStripMenuItem();
-      ActionDelete = new ToolStripMenuItem();
       ContextMenuEdit.Opened += ContextMenuEdit_Opened;
       ActionUndo.Click += ActionUndo_Click;
       ActionRedo.Click += ActionRedo_Click;

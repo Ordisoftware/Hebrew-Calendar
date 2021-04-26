@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -21,6 +21,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using System.Text;
 
 namespace Ordisoftware.Core
 {
@@ -123,7 +124,7 @@ namespace Ordisoftware.Core
         case ControlLocation.Loose:
           break;
         default:
-          throw new NotImplementedExceptionEx(location);
+          throw new AdvancedNotImplementedException(location);
       }
     }
 
@@ -267,7 +268,7 @@ namespace Ordisoftware.Core
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.DropDownItems )
-        if ( item.Tag == null || !( item.Tag is int ) || (int)item.Tag != int.MinValue )
+        if ( !( item.Tag is int ) || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {
             var newitem = menuItem.Clone();
@@ -369,18 +370,18 @@ namespace Ordisoftware.Core
     // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     static public string JustifyParagraph(string text, int width, Font font)
     {
-      string result = string.Empty;
+      var result = new StringBuilder();
       List<string> ParagraphsList = new List<string>();
-      ParagraphsList.AddRange(text.Split(new[] { "\r\n" }, StringSplitOptions.None).ToList());
+      ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None).ToList());
       int checkoverflow = 0;
       foreach ( string Paragraph in ParagraphsList )
       {
-        string line = string.Empty;
+        var line = new StringBuilder();
         int ParagraphWidth = TextRenderer.MeasureText(Paragraph, font).Width;
         if ( ParagraphWidth > width )
         {
           string[] Words = Paragraph.Split(' ');
-          line = Words[0] + (char)32;
+          line.Append(Words[0] + ' ');
           for ( int x = 1; x < Words.Length; x++ )
           {
             string tmpLine = line + ( Words[x] + (char)32 );
@@ -392,23 +393,23 @@ namespace Ordisoftware.Core
                 DebugManager.Trace(LogTraceEvent.Error, $"Stack Overflow in {nameof(JustifyParagraph)}:{Globals.NL2}{text}");
                 return text;
               }
-              result += Justify(line.TrimEnd()) + "\r\n";
-              line = string.Empty;
+              result.Append(Justify(line.ToString().TrimEnd()) + Globals.NL);
+              line.Clear();
               --x;
             }
             else
-              line += ( Words[x] + (char)32 );
+              line.Append(Words[x] + ' ');
           }
-          if ( line.Length > 0 ) result += line + "\r\n";
+          if ( line.Length > 0 ) result.Append(line + Globals.NL);
         }
         else
-          result += Paragraph + "\r\n";
+          result.Append(Paragraph + Globals.NL);
       }
-      return result.TrimEnd(new[] { '\r', '\n' });
+      return result.ToString().TrimEnd(Globals.NL.ToCharArray());
       string Justify(string str)
       {
         char SpaceChar = (char)0x200A;
-        List<string> WordsList = str.Split((char)32).ToList();
+        List<string> WordsList = str.Split(' ').ToList();
         if ( WordsList.Capacity < 2 ) return str;
         int NumberOfWords = WordsList.Capacity - 1;
         int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
@@ -417,20 +418,20 @@ namespace Ordisoftware.Core
         int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
         float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
         return ( (Func<string>)( () => {
-          string Spaces = string.Empty;
-          string AdjustedWords = string.Empty;
+          var Spaces = new StringBuilder();
+          var AdjustedWords = new StringBuilder();
           for ( int h = 0; h < AverageSpace; h++ )
-            Spaces += SpaceChar;
+            Spaces.Append(SpaceChar);
           foreach ( string Word in WordsList )
           {
-            AdjustedWords += Word + Spaces;
+            AdjustedWords.Append(Word + Spaces);
             if ( AdjustSpace > 0 )
             {
-              AdjustedWords += SpaceChar;
+              AdjustedWords.Append(SpaceChar);
               AdjustSpace -= SpaceCharWidth;
             }
           }
-          return AdjustedWords.TrimEnd();
+          return AdjustedWords.ToString().TrimEnd();
         } ) )();
       }
     }
@@ -445,14 +446,14 @@ namespace Ordisoftware.Core
   {
     protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
     {
-      var button = e.Item as ToolStripButton;
-      if ( button != null && button.Checked )
+      if ( e.Item is ToolStripButton button && button.Checked )
       {
         var bounds = new Rectangle(0, 0, e.Item.Width - 1, e.Item.Height - 1);
         e.Graphics.FillRectangle(SystemBrushes.ControlLight, bounds);
         e.Graphics.DrawRectangle(SystemPens.ControlDark, bounds);
       }
-      else base.OnRenderButtonBackground(e);
+      else
+        base.OnRenderButtonBackground(e);
     }
   }
 

@@ -40,10 +40,10 @@ namespace Ordisoftware.Core
       if ( updating > 1 ) return;
 
       // Prevent the control from raising any events.
-      oldEventMask = SendMessage(new HandleRef(this, Handle), EM_SETEVENTMASK, 0, 0);
+      oldEventMask = NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.EM_SETEVENTMASK, 0, 0);
 
       // Prevent the control from redrawing itself.
-      SendMessage(new HandleRef(this, Handle), WM_SETREDRAW, 0, 0);
+      NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.WM_SETREDRAW, 0, 0);
     }
 
     /// <summary>
@@ -61,10 +61,10 @@ namespace Ordisoftware.Core
       if ( updating > 0 ) return;
 
       // Allow the control to redraw itself.
-      SendMessage(new HandleRef(this, Handle), WM_SETREDRAW, 1, 0);
+      NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.WM_SETREDRAW, 1, 0);
 
       // Allow the control to raise event messages.
-      SendMessage(new HandleRef(this, Handle), EM_SETEVENTMASK, 0, oldEventMask);
+      NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.EM_SETEVENTMASK, 0, oldEventMask);
     }
 
     /// <summary>
@@ -79,14 +79,14 @@ namespace Ordisoftware.Core
     {
       get
       {
-        PARAFORMAT fmt = new PARAFORMAT();
+        NativeMethods.PARAFORMAT fmt = new NativeMethods.PARAFORMAT();
         fmt.cbSize = Marshal.SizeOf(fmt);
 
         // Get the alignment.
-        SendMessage(new HandleRef(this, Handle), EM_GETPARAFORMAT, SCF_SELECTION, ref fmt);
+        NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.EM_GETPARAFORMAT, NativeMethods.SCF_SELECTION, ref fmt);
 
         // Default to Left align.
-        if ( ( fmt.dwMask & PFM_ALIGNMENT ) == 0 )
+        if ( ( fmt.dwMask & NativeMethods.PFM_ALIGNMENT ) == 0 )
           return TextAlign.Left;
         else 
           return (TextAlign)fmt.wAlignment;
@@ -94,13 +94,13 @@ namespace Ordisoftware.Core
 
       set
       {
-        PARAFORMAT fmt = new PARAFORMAT();
+        NativeMethods.PARAFORMAT fmt = new NativeMethods.PARAFORMAT();
         fmt.cbSize = Marshal.SizeOf(fmt);
-        fmt.dwMask = PFM_ALIGNMENT;
+        fmt.dwMask = NativeMethods.PFM_ALIGNMENT;
         fmt.wAlignment = (short)value;
 
         // Set the alignment.
-        SendMessage(new HandleRef(this, Handle), EM_SETPARAFORMAT, SCF_SELECTION, ref fmt);
+        NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.EM_SETPARAFORMAT, NativeMethods.SCF_SELECTION, ref fmt);
       }
     }
 
@@ -113,61 +113,13 @@ namespace Ordisoftware.Core
       base.OnHandleCreated(e);
 
       // Enable support for justification.
-      SendMessage(new HandleRef(this, Handle), EM_SETTYPOGRAPHYOPTIONS, TO_ADVANCEDTYPOGRAPHY, TO_ADVANCEDTYPOGRAPHY);
+      NativeMethods.SendMessage(new HandleRef(this, Handle), NativeMethods.EM_SETTYPOGRAPHYOPTIONS, NativeMethods.TO_ADVANCEDTYPOGRAPHY, NativeMethods.TO_ADVANCEDTYPOGRAPHY);
     }
 
     private int updating = 0;
     private int oldEventMask = 0;
 
-    // Constants from the Platform SDK.
-    private const int EM_SETEVENTMASK = 1073;
-    private const int EM_GETPARAFORMAT = 1085;
-    private const int EM_SETPARAFORMAT = 1095;
-    private const int EM_SETTYPOGRAPHYOPTIONS = 1226;
-    private const int WM_SETREDRAW = 11;
-    private const int TO_ADVANCEDTYPOGRAPHY = 1;
-    private const int PFM_ALIGNMENT = 8;
-    private const int SCF_SELECTION = 1;
 
-    // It makes no difference if we use PARAFORMAT or
-    // PARAFORMAT2 here, so I have opted for PARAFORMAT2.
-    [StructLayout(LayoutKind.Sequential)]
-    private struct PARAFORMAT
-    {
-      public int cbSize;
-      public uint dwMask;
-      public short wNumbering;
-      public short wReserved;
-      public int dxStartIndent;
-      public int dxRightIndent;
-      public int dxOffset;
-      public short wAlignment;
-      public short cTabCount;
-      [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
-      public int[] rgxTabs;
-
-      // PARAFORMAT2 from here onwards.
-      public int dySpaceBefore;
-      public int dySpaceAfter;
-      public int dyLineSpacing;
-      public short sStyle;
-      public byte bLineSpacingRule;
-      public byte bOutlineLevel;
-      public short wShadingWeight;
-      public short wShadingStyle;
-      public short wNumberingStart;
-      public short wNumberingStyle;
-      public short wNumberingTab;
-      public short wBorderSpace;
-      public short wBorderWidth;
-      public short wBorders;
-    }
-
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int SendMessage(HandleRef hWnd, int msg, int wParam, int lParam);
-
-    [DllImport("user32", CharSet = CharSet.Auto)]
-    private static extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
   }
 
   /// <summary>

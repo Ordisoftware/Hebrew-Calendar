@@ -126,8 +126,6 @@ namespace Ordisoftware.Hebrew.Calendar
           case AnchorStyles.Left:
             Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
             break;
-          case AnchorStyles.Bottom:
-          case AnchorStyles.Right:
           default:
             Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
             break;
@@ -256,13 +254,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
       {
         Globals.IsExiting = true;
-        return;
       }
+      else
       if ( !Globals.AllowClose )
       {
         e.Cancel = true;
         MenuShowHide.PerformClick();
-        return;
       }
     }
 

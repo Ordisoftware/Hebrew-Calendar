@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -27,7 +27,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportPrintTextReport(ExportInterval interval)
     {
       var lines = GetTextReportLines(interval).ToList();
-      var formatString = new StringFormat();
       var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
       float fontHeight = -1;
       float marginLeft = -1;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-01 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Net;
@@ -35,19 +35,19 @@ namespace Ordisoftware.Hebrew.Calendar
           DoOnlineWeatherWeatherDotCom();
           break;
         default:
-          throw new NotImplementedExceptionEx(Settings.WeatherOnlineProvider);
+          throw new AdvancedNotImplementedException(Settings.WeatherOnlineProvider);
       }
     }
 
-    public static class WeatherProviders
+    static public class WeatherProviders
     {
-      static public string MeteoblueDotComQueryDay = "current";
-      static public string MeteoblueDotComQueryWeek = "week";
-      static public string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
-      static public string MeteoblueDotComResult = "https://www.meteoblue.com/weather/%MODE%/%LOCATION%";
-      static public string WeatherDotComQueryDay = "today";
-      static public string WeatherDotComQueryWeek = "tenday";
-      static public string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
+      public const string MeteoblueDotComQueryDay = "current";
+      public const string MeteoblueDotComQueryWeek = "week";
+      public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
+      public const string MeteoblueDotComResult = "https://www.meteoblue.com/weather/%MODE%/%LOCATION%";
+      public const string WeatherDotComQueryDay = "today";
+      public const string WeatherDotComQueryWeek = "tenday";
+      public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
     }
 
     private void DoOnlineWeatherWeatherDotCom()
@@ -89,7 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         string location = string.Empty;
         var results = data["results"];
-        if ( results != null && results.Count() > 0 )
+        if ( results != null && results.Any() )
           location = results[0]["url"]?.ToString();
         if ( !string.IsNullOrEmpty(location) )
         {

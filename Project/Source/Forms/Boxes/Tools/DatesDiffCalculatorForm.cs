@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -224,7 +224,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;
       if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
       if ( !force && !b1 && !b2 ) return;
-      var diff = Math.Abs((decimal)( MonthCalendar1.SelectionStart - MonthCalendar2.SelectionStart ).TotalDays);
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try

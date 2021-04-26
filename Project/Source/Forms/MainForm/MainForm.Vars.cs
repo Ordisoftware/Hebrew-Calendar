@@ -92,8 +92,8 @@ namespace Ordisoftware.Hebrew.Calendar
     internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
       = new Dictionary<TorahEvent, ReminderForm>();
 
-    public DateTime? LastShabatReminded;
-    internal ReminderForm ShabatForm;
+    private DateTime? LastShabatReminded;
+    internal ReminderForm ShabatForm = null;
 
     public void ClearLists()
     {

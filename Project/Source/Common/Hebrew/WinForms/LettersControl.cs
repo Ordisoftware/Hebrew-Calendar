@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -209,8 +209,6 @@ namespace Ordisoftware.Hebrew
       TextBox.CaretAfterPaste = CaretPositionAfterPaste.Beginning;
       TextBox.BackColor = Color.FromKnownColor(DefaultInputBackColor);
       PanelLetters.BackColor = Color.FromKnownColor(DefaultPanelLettersBackColor);
-      _ShowKeys = true;
-      _ShowValues = true;
     }
 
 
@@ -252,7 +250,7 @@ namespace Ordisoftware.Hebrew
           TextBox.SelectionLength = TextBox.TextLength;
           break;
         default:
-          throw new NotImplementedExceptionEx(selection);
+          throw new AdvancedNotImplementedException(selection);
       }
     }
 

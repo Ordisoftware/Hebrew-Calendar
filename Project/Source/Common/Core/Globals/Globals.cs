@@ -39,40 +39,40 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate bullet.
     /// </summary>
-    static public string Bullet = "•";
+    static public string Bullet { get; set; } = "•";
 
     /// <summary>
     /// Indicate list separator.
     /// </summary>
-    static public string ListSeparator = "-";
+    static public string ListSeparator { get; set; } = "-";
 
     /// <summary>
     /// Indicate CSV separator.
     /// </summary>
-    static public char CSVSeparator = ';';
+    static public char CSVSeparator { get; set; } = ';';
 
     /// <summary>
     /// Indicate if SSL certificate is preloaded.
     /// </summary>
-    static public bool PreLoadSSLCertificate = true;
+    static public bool PreLoadSSLCertificate { get; set; } = true;
 
     /// <summary>
     /// Indicate if the application must go to tray icon at startup.
     /// </summary>
-    static public bool ForceStartupHide;
+    static public bool ForceStartupHide { get; set; }
 
     /// <summary>
     /// Indicate StopWatches.
     /// </summary>
-    static public Stopwatch ChronoLoadApp = new Stopwatch();
-    static public Stopwatch ChronoLoadData = new Stopwatch();
-    static public Stopwatch ChronoCreateData = new Stopwatch();
-    static public Stopwatch ChronoShowData = new Stopwatch();
+    static public readonly Stopwatch ChronoLoadApp = new Stopwatch();
+    static public readonly Stopwatch ChronoLoadData = new Stopwatch();
+    static public readonly Stopwatch ChronoCreateData = new Stopwatch();
+    static public readonly Stopwatch ChronoShowData = new Stopwatch();
 
     /// <summary>
     /// Indicate keyboard shortcuts notice form.
     /// </summary>
-    static public ShowTextForm NoticeKeyboardShortcutsForm;
+    static public ShowTextForm NoticeKeyboardShortcutsForm { get; internal set; }
 
     /// <summary>
     /// Indicate the application code (title without space).

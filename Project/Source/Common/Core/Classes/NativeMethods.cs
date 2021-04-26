@@ -11,11 +11,15 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
 
+#pragma warning disable S101 // Types should be named in PascalCase
+#pragma warning disable S2346 // Flags enumerations zero-value members should be named "None"
+#pragma warning disable S4487 // Unread "private" fields should be removed
+#pragma warning disable IDE1006 // Styles d'affectation de noms
 namespace Ordisoftware.Core
 {
 
@@ -125,7 +129,7 @@ namespace Ordisoftware.Core
 
     [DllImport("User32.dll", CharSet = CharSet.Auto)]
     static public extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
-    static public IntPtr ClipboardViewerNext;
+    static public IntPtr ClipboardViewerNext { get; set; }
 
     // Taskbar
 
@@ -272,6 +276,62 @@ namespace Ordisoftware.Core
     [DllImport("Shell32.dll", SetLastError = false)]
     static public extern Int32 SHGetStockIconInfo(SHSTOCKICONID siid, SHGSI uFlags, ref SHSTOCKICONINFO psii);
 
+    // RichTextBox
+
+    // Constants from the Platform SDK.
+    public const int EM_SETEVENTMASK = 1073;
+    public const int EM_GETPARAFORMAT = 1085;
+    public const int EM_SETPARAFORMAT = 1095;
+    public const int EM_SETTYPOGRAPHYOPTIONS = 1226;
+    public const int WM_SETREDRAW = 11;
+    public const int TO_ADVANCEDTYPOGRAPHY = 1;
+    public const int PFM_ALIGNMENT = 8;
+    public const int SCF_SELECTION = 1;
+
+    // It makes no difference if we use PARAFORMAT or
+    // PARAFORMAT2 here, so I have opted for PARAFORMAT2.
+    [StructLayout(LayoutKind.Sequential)]
+    public struct PARAFORMAT
+    {
+      public int cbSize;
+      public uint dwMask;
+      public short wNumbering;
+      public short wReserved;
+      public int dxStartIndent;
+      public int dxRightIndent;
+      public int dxOffset;
+      public short wAlignment;
+      public short cTabCount;
+      [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+      public int[] rgxTabs;
+
+      // PARAFORMAT2 from here onwards.
+      public int dySpaceBefore;
+      public int dySpaceAfter;
+      public int dyLineSpacing;
+      public short sStyle;
+      public byte bLineSpacingRule;
+      public byte bOutlineLevel;
+      public short wShadingWeight;
+      public short wShadingStyle;
+      public short wNumberingStart;
+      public short wNumberingStyle;
+      public short wNumberingTab;
+      public short wBorderSpace;
+      public short wBorderWidth;
+      public short wBorders;
+    }
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    static public extern int SendMessage(HandleRef hWnd, int msg, int wParam, int lParam);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    static public extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
+
   }
 
 }
+#pragma warning restore S101 // Types should be named in PascalCase
+#pragma warning restore S2346 // Flags enumerations zero-value members should be named "None"
+#pragma warning restore S4487 // Unread "private" fields should be removed
+#pragma warning restore IDE1006 // Styles d'affectation de noms

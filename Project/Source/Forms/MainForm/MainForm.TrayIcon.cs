@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
                   });
                 break;
               default:
-                throw new NotImplementedExceptionEx(Settings.TrayIconClickOpen);
+                throw new AdvancedNotImplementedException(Settings.TrayIconClickOpen);
             }
           else
         if ( e.Button == MouseButtons.Right )

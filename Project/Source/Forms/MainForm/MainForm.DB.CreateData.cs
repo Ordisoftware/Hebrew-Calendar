@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data;
+using System.Runtime.Serialization;
 using Ordisoftware.Core;
 using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
@@ -28,9 +29,12 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     [Serializable]
-    partial class TooManyErrorsException : Exception
+    public partial class TooManyErrorsException : Exception
     {
       public TooManyErrorsException(string message) : base(message)
+      {
+      }
+      protected TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
       {
       }
     }
@@ -187,7 +191,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private TimeSpan? DelayMoonrise;
     private bool isMoonriseDelayed;
-    private LunisolarDaysRow DelayPreviousRow;
+    //TODO remove? private LunisolarDaysRow DelayPreviousRow;
 
     /// <summary>
     /// Initialize a day.
@@ -207,7 +211,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !CalendarDates.Instance[date.AddDays(1)].Ephemerisis.Moonrise.HasValue )
           if ( ephemeris.Moonrise == new TimeSpan(0) )
           {
-            DelayPreviousRow = day;
+            //TODO remove? DelayPreviousRow = day;
             DelayMoonrise = ephemeris.Moonrise;
             ephemeris.Moonrise = null;
             isMoonriseDelayed = true;
@@ -389,9 +393,10 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = equinoxe.DateAsDateTime;
-        int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
-        bool newEquinoxe = ( dayDate.Month == dateEquinox.Month && dayDate.Day >= deltaNewLambDay )
-                        || ( dayDate.Month == dateEquinox.Month + 1 );
+        // TODO not used ? 
+        //int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
+        //bool newEquinoxe = ( dayDate.Month == dateEquinox.Month && dayDate.Day >= deltaNewLambDay )
+        //                || ( dayDate.Month == dateEquinox.Month + 1 );
         int monthExuinoxe = dateEquinox.Month;
         int dayEquinoxe = dateEquinox.Day - TorahCelebrations.NewLambDay;
         if ( dayEquinoxe < 1 )
@@ -402,7 +407,7 @@ namespace Ordisoftware.Hebrew.Calendar
         int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
         bool isNewYear = ( dayDate.Month == monthExuinoxe && dayDate.Day >= dayEquinoxe )
                       || ( dayDate.Month == monthExuinoxe + 1 );
-        if ( equinoxe != null && ( monthMoon == 0 || monthMoon >= 12 ) && isNewYear )
+        if ( isNewYear && ( monthMoon == 0 || monthMoon >= 12 ) )
         {
           monthMoon = 1;
           calculate(dayDate, 0, TorahEvent.NewYearD1, false);

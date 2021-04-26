@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -20,27 +20,22 @@ namespace Ordisoftware.Hebrew
 
   public struct BookBound
   {
-    public int Min;
-    public int Max;
+    public int Min { get; private set; }
+    public int Max { get; private set; }
+    public BookBound(int min, int max)
+    {
+      Min = min;
+      Max = max;
+    }
   }
 
   static partial class BooksBounds
   {
-    static public readonly BookBound Torah = new BookBound
-    {
-      Min = EnumHelper.Min<TorahBooks>() + 1,
-      Max = EnumHelper.Max<TorahBooks>() + 1
-    };
-    static public readonly BookBound Neviim = new BookBound
-    {
-      Min = EnumHelper.Min<NeviimBooks>() + 1,
-      Max = EnumHelper.Max<NeviimBooks>() + 1
-    };
-    static public readonly BookBound Ketouvim = new BookBound
-    {
-      Min = EnumHelper.Min<KetouvimBooks>() + 1,
-      Max = EnumHelper.Max<KetouvimBooks>() + 1
-    };
+    static public readonly BookBound Torah = Create<TorahBooks>();
+    static public readonly BookBound Neviim = Create<NeviimBooks>();
+    static public readonly BookBound Ketouvim = Create<KetouvimBooks>();
+    static private BookBound Create<T>() where T : struct, Enum
+      => new BookBound(EnumHelper.Min<T>() + 1, EnumHelper.Max<T>() + 1);
   }
 
 }

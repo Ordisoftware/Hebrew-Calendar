@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Globalization;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     /// <param name="str">The str to act on.</param>
     static public bool IsNullOrEmpty(this string str)
     {
-      return ReferenceEquals(str, null) || str.Length == 0;
+      return str == null || str.Length == 0;
     }
 
     /// <summary>

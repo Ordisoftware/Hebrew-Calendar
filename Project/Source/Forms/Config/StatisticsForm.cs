@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -125,8 +125,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       {
+#pragma warning disable S1481 // Unused local variables should be removed
         string dummyMemoryGC = SystemStatistics.Instance.MemoryGC;
         string dummyCPUProcessLoad = SystemStatistics.Instance.CPUProcessLoad;
+#pragma warning restore S1481 // Unused local variables should be removed
       }
     }
 

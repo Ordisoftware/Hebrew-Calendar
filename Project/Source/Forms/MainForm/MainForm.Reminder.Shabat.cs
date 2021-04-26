@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Data;
 using System.Linq;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -32,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var row = ( from day in DataSet.LunisolarDays
                   where day.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                      && day.DateAsDateTime >= dateToday
-                  select day ).FirstOrDefault() as LunisolarDaysRow;
+                  select day ).FirstOrDefault();
       if ( row == null ) return result;
       var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
       if ( times == null ) return result;

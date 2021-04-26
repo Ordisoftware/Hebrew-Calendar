@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ContextMenuItems.Show(LastControl, LastControl.PointToClient(Cursor.Position));
     }
 
-    private void ActionCopyMonthName(object sender, EventArgs e, Func<int, string> process)
+    private void ActionCopyMonthName(object sender, Func<int, string> process)
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
@@ -119,20 +119,20 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewMonths.Transliterations[index]);
+      ActionCopyMonthName(sender, index => HebrewMonths.Transliterations[index]);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
+      ActionCopyMonthName(sender, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, e, index => HebrewMonths.Unicode[index]);
+      ActionCopyMonthName(sender, index => HebrewMonths.Unicode[index]);
     }
 
-    private void ActionCopyLine(object sender, EventArgs e, Func<int, string> process)
+    private void ActionCopyLine(object sender, Func<int, string> process)
     {
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
@@ -145,12 +145,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
+      ActionCopyLine(sender, index => HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      ActionCopyLine(sender, e, index => HebrewMonths.Unicode[index]);
+      ActionCopyLine(sender, index => HebrewMonths.Unicode[index]);
     }
 
     private void ActionShowGrammarGuide_Click(object sender, EventArgs e)

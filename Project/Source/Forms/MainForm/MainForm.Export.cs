@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var view = Settings.CurrentView;
       foreach ( var item in process.Where(p => p.Value != null) ) available |= item.Key;
       if ( !SelectExportTargetForm.Run(action, ref view, available, ref interval) ) return;
-      if ( process[view] == null ) throw new NotImplementedExceptionEx(Settings.CurrentView);
+      if ( process[view] == null ) throw new AdvancedNotImplementedException(Settings.CurrentView);
       if ( interval.IsDefined )
       {
         interval.Start = check(interval.Start.Value.Year, 0);
@@ -82,8 +82,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
   public struct ExportInterval
   {
-    public DateTime? Start;
-    public DateTime? End;
+    public DateTime? Start { get; set; }
+    public DateTime? End { get; set; }
     public bool IsDefined => Start.HasValue && End.HasValue;
     public int MonthsCount => IsDefined
                               ? ( End.Value.Year - Start.Value.Year ) * 12 + End.Value.Month - Start.Value.Month
