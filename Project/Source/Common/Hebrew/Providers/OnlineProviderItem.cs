@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -27,35 +27,31 @@ namespace Ordisoftware.Hebrew
   partial class OnlineProviderItem
   {
 
-    static public readonly Dictionary<string, Image> LanguageImages;
+    static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");
 
-    static public readonly Image FolderImage;
+    static public readonly Dictionary<string, Image> LanguageImages
+      = new Dictionary<string, Image>()
+        {
+          ["(NONE)"] = CreateImage("web_layout.png"),
+          ["(FR)"] = CreateImage("flag_france.png"),
+          ["(EN)"] = CreateImage("flag_great_britain.png"),
+          ["(IW)"] = CreateImage("flag_israel.png"),
+          ["(EN/IW)"] = CreateImage("flag_en_iw.png"),
+          ["(FR/IW)"] = CreateImage("flag_fr_iw.png"),
+          ["(FR/EN)"] = CreateImage("flag_fr_en.png")
+        };
 
-    static OnlineProviderItem()
+    static private Image CreateImage(string filePath)
     {
-      Image createImage(string filePath)
+      try
       {
-        try
-        {
-          return Image.FromFile(System.IO.Path.Combine(HebrewGlobals.GuidesFolderPath, filePath));
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
-          return null;
-        }
+        return Image.FromFile(System.IO.Path.Combine(HebrewGlobals.GuidesFolderPath, filePath));
       }
-      FolderImage = createImage("folder_vertical_open.png");
-      LanguageImages = new Dictionary<string, Image>()
+      catch ( Exception ex )
       {
-        ["(NONE)"] = createImage("web_layout.png"),
-        ["(FR)"] = createImage("flag_france.png"),
-        ["(EN)"] = createImage("flag_great_britain.png"),
-        ["(IW)"] = createImage("flag_israel.png"),
-        ["(EN/IW)"] = createImage("flag_en_iw.png"),
-        ["(FR/IW)"] = createImage("flag_fr_iw.png"),
-        ["(FR/EN)"] = createImage("flag_fr_en.png")
-      };
+        DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
+        return null;
+      }
     }
 
     public string Name { get; private set; }

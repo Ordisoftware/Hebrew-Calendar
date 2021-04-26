@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2011-12 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Threading;
 using System.Drawing;
@@ -99,6 +99,7 @@ namespace Ordisoftware.Core
       if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
       Exception exception = null;
       Semaphore semaphore = null;
+#pragma warning disable IDE0039 // Utiliser une fonction locale
       Action processAction = () =>
       {
         try
@@ -115,9 +116,8 @@ namespace Ordisoftware.Core
         processAction();
         semaphore?.Release();
       };
-      if ( control != null
-        && control.InvokeRequired
-        && Thread.CurrentThread != MainThread )
+#pragma warning restore IDE0039 // Utiliser une fonction locale
+      if ( control.InvokeRequired && Thread.CurrentThread != MainThread )
       {
         if ( wait ) semaphore = new Semaphore(0, 1);
         control.BeginInvoke(wait ? processActionWait : processAction);

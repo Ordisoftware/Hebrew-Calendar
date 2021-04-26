@@ -6,7 +6,7 @@ namespace Ordisoftware.Core
 {
 
   // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
-  partial class MediaMixer
+  static partial class MediaMixer
   {
 
     static public int GetSoundLengthMS(string fileName)
@@ -43,7 +43,7 @@ namespace Ordisoftware.Core
 
     static public void MuteVolume(IntPtr? handle = null)
     {
-      if ( !handle.HasValue ) handle = Globals.MainForm.Handle;
+      if ( !handle.HasValue ) handle = Globals.MainForm?.Handle;
       if ( !handle.HasValue ) return;
       NativeMethods.SendMessageW(handle.Value, NativeMethods.WM_APPCOMMAND, handle.Value, (IntPtr)NativeMethods.APPCOMMAND_VOLUME_MUTE);
     }
@@ -54,8 +54,7 @@ namespace Ordisoftware.Core
       if ( volume == null )
         return null;
 
-      float level;
-      volume.GetMasterVolume(out level);
+      volume.GetMasterVolume(out var level);
       Marshal.ReleaseComObject(volume);
       return level * 100;
     }
@@ -66,8 +65,7 @@ namespace Ordisoftware.Core
       if ( volume == null )
         return null;
 
-      bool mute;
-      volume.GetMute(out mute);
+      volume.GetMute(out var mute);
       Marshal.ReleaseComObject(volume);
       return mute;
     }
@@ -99,30 +97,24 @@ namespace Ordisoftware.Core
     {
       // get the speakers (1st render + multimedia) device
       IMMDeviceEnumerator deviceEnumerator = (IMMDeviceEnumerator)( new MMDeviceEnumerator() );
-      IMMDevice speakers;
-      deviceEnumerator.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia, out speakers);
+      deviceEnumerator.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia, out var speakers);
 
       // activate the session manager. we need the enumerator
       Guid IID_IAudioSessionManager2 = typeof(IAudioSessionManager2).GUID;
-      object o;
-      speakers.Activate(ref IID_IAudioSessionManager2, 0, IntPtr.Zero, out o);
+      speakers.Activate(ref IID_IAudioSessionManager2, 0, IntPtr.Zero, out var o);
       IAudioSessionManager2 mgr = (IAudioSessionManager2)o;
 
       // enumerate sessions for on this device
-      IAudioSessionEnumerator sessionEnumerator;
-      mgr.GetSessionEnumerator(out sessionEnumerator);
-      int count;
-      sessionEnumerator.GetCount(out count);
+      mgr.GetSessionEnumerator(out var sessionEnumerator);
+      sessionEnumerator.GetCount(out var count);
 
       // search for an audio session with the required name
       // NOTE: we could also use the process id instead of the app name (with IAudioSessionControl2)
       ISimpleAudioVolume volumeControl = null;
       for ( int i = 0; i < count; i++ )
       {
-        IAudioSessionControl2 ctl;
-        sessionEnumerator.GetSession(i, out ctl);
-        int cpid;
-        ctl.GetProcessId(out cpid);
+        sessionEnumerator.GetSession(i, out var ctl);
+        ctl.GetProcessId(out var cpid);
 
         if ( cpid == pid )
         {

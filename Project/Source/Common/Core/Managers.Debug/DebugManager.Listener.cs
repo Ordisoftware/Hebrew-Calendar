@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-10 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -66,18 +66,19 @@ namespace Ordisoftware.Core
       protected override void Dispose(bool disposing)
       {
         if ( disposing ) Writer.Close();
+        base.Dispose(disposing);
       }
 
-      public override void Write(string value)
+      public override void Write(string message)
       {
         CheckRollOver();
-        Writer.Write(value);
+        Writer.Write(message);
       }
 
-      public override void WriteLine(string value)
+      public override void WriteLine(string message)
       {
         CheckRollOver();
-        Writer.WriteLine(value);
+        Writer.WriteLine(message);
       }
 
       private bool TraceMutex;
@@ -160,7 +161,7 @@ namespace Ordisoftware.Core
               limit = DateTime.Now.Date.AddMonths(-KeepCount);
               break;
             default:
-              throw new NotImplementedExceptionEx(Mode);
+              throw new AdvancedNotImplementedException(Mode);
           }
           foreach ( var file in list.Where(f => f.Date <= limit) )
             try

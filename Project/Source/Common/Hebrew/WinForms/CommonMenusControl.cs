@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,8 +93,7 @@ namespace Ordisoftware.Hebrew
 
     private void ShowNewInVersion(object sender, EventArgs e)
     {
-      var menuitem = sender as ToolStripItem;
-      if ( menuitem == null ) return;
+      if ( !( sender is ToolStripItem menuitem ) ) return;
       var notice = (KeyValuePair<string, TranslationsDictionary>)menuitem.Tag;
       string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(notice.Key);
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
@@ -181,8 +180,7 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      var menuitem = sender as ToolStripItem;
-      if ( menuitem == null ) return;
+      if ( !( sender is ToolStripItem menuitem ) ) return;
       SystemManager.OpenWebLink((string)menuitem.Tag);
     }
 
@@ -198,8 +196,7 @@ namespace Ordisoftware.Hebrew
       timer.Tick += (_s, _e) =>
       {
         timer.Stop();
-        try { File.Delete(filePath); }
-        catch { }
+        SystemManager.TryCatch(() => File.Delete(filePath));
       };
       timer.Start();
     }

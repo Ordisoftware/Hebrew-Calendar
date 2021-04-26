@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2009-08 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -79,7 +79,7 @@ namespace Ordisoftware.Core
     static public InputValueResult Run(string title, string caption, ref T value, bool ispassword, Func<T, bool> validator)
     {
       var f = new InputBox<T>();
-      f.TextBox.PasswordChar = ispassword ? '*' : '\0'; ;
+      f.TextBox.PasswordChar = ispassword ? '*' : '\0';
       int dx = f.TextBox.Width;
       if ( !title.IsNullOrEmpty() ) f.Text = title;
       if ( !caption.IsNullOrEmpty() ) f.Label.Text = caption;
@@ -89,7 +89,7 @@ namespace Ordisoftware.Core
       f.Validator = validator;
       if ( value != null ) f.TextBox.Text = value.ToString();
       if ( f.ShowDialog() == DialogResult.Cancel ) return InputValueResult.Cancelled;
-      if ( f.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
+      if ( value != null && f.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
       value = f.Value;
       return InputValueResult.Modified;
     }
@@ -109,12 +109,15 @@ namespace Ordisoftware.Core
     /// <param name="e">Event information.</param>
     private void ActionOK_Click(object sender, EventArgs e)
     {
+#pragma warning disable S1854 // Unused assignments should be removed
       T value = default;
+#pragma warning restore S1854 // Unused assignments should be removed
       bool b = true;
       try
       {
         value = TextBox.Text.ConvertTo<T>();
-        if ( Validator != null ) b = Validator(value);
+        if ( Validator != null )
+          b = Validator(value);
       }
       catch
       {

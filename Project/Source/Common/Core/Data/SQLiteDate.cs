@@ -28,12 +28,14 @@ namespace Ordisoftware.Core
     /// Get a date from a string like "Year-Month-Day Hour-Min-Sec".
     /// </summary>
     /// <param name="date">The date.</param>
+    /// <param name="withTime">True to add time, else only date.</param>
+    /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
     static public DateTime ToDateTime(string date, bool withTime = false, bool ignoreSeconds = false)
     {
       if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
       return withTime
              ? ignoreSeconds
-               ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+               ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)
                : DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
              : DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
     }
@@ -42,9 +44,10 @@ namespace Ordisoftware.Core
     /// Get a date like "Year-Month-Day Hour:Min:Sec".
     /// </summary>
     /// <param name="date">The date.</param>
+    /// <param name="withTime">True to add time, else only date.</param>
+    /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
     static public string ToString(DateTime date, bool withTime = false, bool ignoreSeconds = false)
     {
-      if ( date == null ) return string.Empty;
       return withTime
              ? ignoreSeconds
                ? date.ToString("yyyy-MM-dd HH:mm")
@@ -83,7 +86,6 @@ namespace Ordisoftware.Core
     /// <returns>The new date without time</returns>
     static public DateTime Change(this DateTime date, int year = -1, int month = -1, int day = -1)
     {
-      if ( date == null ) return date;
       if ( year == -1 ) year = date.Year;
       if ( month == -1 ) month = date.Month;
       if ( day == -1 ) day = date.Day;

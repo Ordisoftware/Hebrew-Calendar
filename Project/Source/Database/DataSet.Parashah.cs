@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
             break;
           }
         }
-        return result.ParashahID.IsNullOrEmpty() ? null : result;
+        return result == null || result.ParashahID.IsNullOrEmpty() ? null : result;
       }
 
     }

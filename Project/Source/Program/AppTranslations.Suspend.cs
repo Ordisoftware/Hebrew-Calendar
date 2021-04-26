@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   static partial class AppTranslations
   {
 
-    static public NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
+    static public readonly NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
       = new NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>>
       {
         [Language.EN] = new NullSafeList<SuspendDelayItem>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Data;
@@ -184,7 +184,7 @@ namespace Ordisoftware.Hebrew.Calendar
           dataset.Dispose();
           break;
         default:
-          throw new NotImplementedExceptionEx(selected);
+          throw new AdvancedNotImplementedException(selected);
       }
     }
 
@@ -235,7 +235,7 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             break;
           default:
-            throw new NotImplementedExceptionEx(selected);
+            throw new AdvancedNotImplementedException(selected);
         }
       }
       catch ( Exception ex )

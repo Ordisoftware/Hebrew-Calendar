@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
   static partial class SQLiteOdbcHelper
   {
 
-    static public int DefaultOptimizeDaysInterval = 7;
+    static public int DefaultOptimizeDaysInterval { get; set; } = 7;
 
     /// <summary>
     /// Indicate the database engine name and version.
@@ -180,9 +180,10 @@ namespace Ordisoftware.Core
     /// <param name="table"></param>
     static public void DropTableIfExists(this OdbcConnection connection, string table)
     {
+      string argnameTable = nameof(table);
       SystemManager.TryCatchManage(() =>
       {
-        if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
+        if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
         using ( var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection) )
           try
           {
@@ -391,6 +392,30 @@ namespace Ordisoftware.Core
       return table;
     }
 
+    //https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
+    static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
+    {
+      try
+      {
+        var table = new DataTable(name);
+        foreach ( DataGridViewColumn column in datagridview.Columns )
+        {
+          if ( IgnoreHiddenColumns && !column.Visible ) continue;
+          table.Columns.Add(column.Name, column.ValueType);
+          table.Columns[column.Name].Caption = column.HeaderText;
+        }
+        foreach ( DataGridViewRow rowGrid in datagridview.Rows )
+        {
+          var rowTable = table.NewRow();
+          foreach ( DataColumn column in table.Columns )
+            rowTable[column.ColumnName] = rowGrid.Cells[column.ColumnName].Value;
+          table.Rows.Add(rowTable);
+        }
+        return table;
+      }
+      catch { return null; }
+    }
+
     /// <summary>
     /// Export a DataTable to a file depending its extension.
     /// </summary>
@@ -425,32 +450,8 @@ namespace Ordisoftware.Core
           dataset.Dispose();
           break;
         default:
-          throw new NotImplementedExceptionEx(selected);
+          throw new AdvancedNotImplementedException(selected);
       }
-    }
-
-    //https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
-    static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
-    {
-      try
-      {
-        var table = new DataTable(name);
-        foreach ( DataGridViewColumn column in datagridview.Columns )
-        {
-          if ( IgnoreHiddenColumns & !column.Visible ) continue;
-          table.Columns.Add(column.Name, column.ValueType);
-          table.Columns[column.Name].Caption = column.HeaderText;
-        }
-        foreach ( DataGridViewRow rowGrid in datagridview.Rows )
-        {
-          var rowTable = table.NewRow();
-          foreach ( DataColumn column in table.Columns )
-            rowTable[column.ColumnName] = rowGrid.Cells[column.ColumnName].Value;
-          table.Rows.Add(rowTable);
-        }
-        return table;
-      }
-      catch { return null; }
     }
 
   }

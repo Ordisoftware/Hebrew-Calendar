@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -20,6 +20,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
+#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
 namespace Ordisoftware.Core
 {
 
@@ -211,7 +212,7 @@ namespace Ordisoftware.Core
         {
           var method = frame.GetMethod();
           partMethod = method.DeclaringType.FullName;
-          var type = Type.GetType(partMethod);
+          //var type = Type.GetType(partMethod);
           Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
           if ( list.Contains(method.DeclaringType) )
             continue;
@@ -354,3 +355,4 @@ namespace Ordisoftware.Core
   }
 
 }
+#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop

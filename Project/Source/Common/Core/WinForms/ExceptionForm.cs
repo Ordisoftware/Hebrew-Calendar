@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Net;
@@ -246,7 +246,6 @@ namespace Ordisoftware.Core
       var lines = DebugManager.TraceForm
                               .TextBox
                               .Lines
-                              .ToList()
                               .Select(l => ( l.StartsWith("# ") ? l.Remove(0, 2) : l ).TrimStart())
                               .Where(l => !l.StartsWith("--"))
                               .TakeLast(100);

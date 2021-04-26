@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -130,7 +130,7 @@ namespace Ordisoftware.Core
         TraceEnabledChanged?.Invoke(value);
       }
     }
-    static public bool _TraceEnabled = false;
+    static private bool _TraceEnabled = false;
 
     /// <summary>
     /// Indicate if the debug manager is enabled or not.

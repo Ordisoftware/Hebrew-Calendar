@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -110,8 +110,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( DoReset ) return;
       try
       {
-        var v1 = (float)XmlConvert.ToDouble(EditGPSLatitude.Text);
-        var v2 = (float)XmlConvert.ToDouble(EditGPSLongitude.Text);
+        XmlConvert.ToDouble(EditGPSLatitude.Text);
+        XmlConvert.ToDouble(EditGPSLongitude.Text);
       }
       catch
       {

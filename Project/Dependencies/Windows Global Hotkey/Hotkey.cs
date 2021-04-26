@@ -11,6 +11,7 @@ namespace Base.Hotkeys
     Failed
   }
 
+  [Flags]
   public enum Modifiers
   {
     None = 0,

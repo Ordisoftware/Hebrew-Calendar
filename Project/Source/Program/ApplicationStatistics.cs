@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class ApplicationStatistics
   {
 
-    static public ApplicationStatistics Instance
+    static public readonly ApplicationStatistics Instance
       = new ApplicationStatistics();
 
     public string StartingTime
@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string DBRecordsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : MainForm.Instance.DataSet.LunisolarDays.Count().ToString();
+         : MainForm.Instance.DataSet.LunisolarDays.Count.ToString();
 
     public string DBEventsCount
       => Globals.IsGenerating
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBFileSize;
-    static public bool UpdateDBFileSizeRequired = true;
+    static internal bool UpdateDBFileSizeRequired { get; set; } = true;
 
     public string DBMemorySize
     {
@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBMemorySize;
-    static public bool UpdateDBMemorySizeRequired = true;
+    static internal bool UpdateDBMemorySizeRequired { get; set; } = true;
 
     public string DBCommonFileSize
     {
@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DBCommonFileSize;
-    static public bool UpdateDBCommonFileSizeRequired = true;
+    static internal bool UpdateDBCommonFileSizeRequired { get; set; } = true;
 
     public string DBParashotMemorySize
     {
@@ -159,7 +159,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
     static private string _DDParashotMemorySize;
-    static public bool UpdateDDParashotMemorySizeRequired = true;
+    static internal bool UpdateDDParashotMemorySizeRequired { get; set; } = true;
 
   }
 

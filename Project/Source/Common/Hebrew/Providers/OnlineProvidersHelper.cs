@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate image of the configure menu item.
     /// </summary>
-    static private Image ImageConfigure;
+    static public Image ImageConfigure { get; private set; }
 
     /// <summary>
     /// Static constructor.

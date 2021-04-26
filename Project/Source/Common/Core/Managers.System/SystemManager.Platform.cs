@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -44,7 +44,7 @@ namespace Ordisoftware.Core
             if ( key != null )
             {
               var value = key.GetValue("HibernateEnabled", 0);
-              return value == null ? false : (bool)value;
+              return value != null && (bool)value;
             }
         }
         catch

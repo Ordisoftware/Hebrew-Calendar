@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -57,17 +57,17 @@ namespace Ordisoftware.Hebrew.Calendar
               Clipboard.SetText(ExportSaveJSON(interval).ToString());
               break;
             default:
-              throw new NotImplementedExceptionEx(Settings.ExportDataPreferredTarget);
+              throw new AdvancedNotImplementedException(Settings.ExportDataPreferredTarget);
           }
           return true;
         },
       };
-      Action<ViewMode> after = (view) =>
+      void after(ViewMode view)
       {
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
                                           view == ViewMode.Month ? Globals.ScreenshotSoundFilePath
                                                                  : Globals.ClipboardSoundFilePath);
-      };
+      }
       DoExport(ExportAction.CopyToClipboard, process, after);
     }
 

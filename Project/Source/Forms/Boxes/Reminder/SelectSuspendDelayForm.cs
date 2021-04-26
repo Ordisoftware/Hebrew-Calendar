@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -27,7 +27,6 @@ namespace Ordisoftware.Hebrew.Calendar
       using ( var form = new SelectSuspendDelayForm() )
       {
         if ( form.ShowDialog() != DialogResult.OK ) return null;
-        var item = form.SelectDelay.SelectedItem;
         int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
         if ( value == -1 ) value = (int)form.EditDelay.Value;
         return value;

@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
+using System.Text;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -170,12 +171,12 @@ namespace Ordisoftware.Hebrew
     static public string OnlyHebrewFont(string str)
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
-      string result = string.Empty;
+      var result = new StringBuilder();
       str = UnFinalAll(str);
       foreach ( char c in str.RemoveDiacritics().ToLower() )
         if ( Codes.Contains(c.ToString()) )
-          result = result + c;
-      return result;
+          result.Append(c);
+      return result.ToString();
     }
 
     /// <summary>
@@ -184,11 +185,11 @@ namespace Ordisoftware.Hebrew
     static public string OnlyUnicode(string str)
     {
       if ( str.IsNullOrEmpty() ) return string.Empty;
-      string result = string.Empty;
+      var result = new StringBuilder();
       foreach ( char c in str.RemoveDiacritics().ToLower() )
         if ( c >= '\u0590' && c <= '\u05FF' )
-          result = result + c;
-      return result;
+          result.Append(c);
+      return result.ToString();
     }
 
     /// <summary>

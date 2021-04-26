@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -78,7 +78,7 @@ namespace Ordisoftware.Core
         case ImageExportTarget.BMP:
           return ImageFormat.Bmp;
         default:
-          throw new NotImplementedExceptionEx(value);
+          throw new AdvancedNotImplementedException(value);
       }
     }
 

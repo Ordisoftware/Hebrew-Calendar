@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Data;
@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
       void update(object tableSender, DataRowChangeEventArgs tableEvent)
       {
         if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-      };
+      }
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try

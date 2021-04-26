@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -210,7 +210,7 @@ namespace Ordisoftware.Hebrew.Calendar
             form.Location = new Point(posX, posY);
             break;
           default:
-            throw new NotImplementedExceptionEx(location);
+            throw new AdvancedNotImplementedException(location);
         }
       }
     }

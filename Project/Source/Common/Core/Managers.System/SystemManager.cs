@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -33,11 +33,13 @@ namespace Ordisoftware.Core
   {
 
     public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
-    
+
     /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
+#pragma warning disable S4487 // Unread "private" fields should be removed
     static private Mutex ApplicationMutex;
+#pragma warning restore S4487 // Unread "private" fields should be removed
 
     /// <summary>
     /// IPC server instance.
@@ -47,7 +49,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// IPC answers callback.
     /// </summary>
-    static public Action IPCSendCommands;
+    static public Action IPCSendCommands { get; set; }
 
     /// <summary>
     /// Indicate if the several instances of the application can run at same time.

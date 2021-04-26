@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -37,6 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int margin = Settings.PrintingMargin;
       int margin2 = margin + margin;
       double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+      //
       ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
       {
         if ( askToContinue )
@@ -62,31 +63,36 @@ namespace Ordisoftware.Hebrew.Calendar
           bounds.Width = (int)( bounds.Height * ratio );
         }
         bool redone = false;
-        TwoPerPage:
-        var bitmap = CalendarMonth.GetBitmap();
-        int delta = !redone ? 0 : e.PageBounds.Height / 2;
-        e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
-        if ( multi )
+        process();
+        //
+        void process()
         {
-          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-          if ( CalendarMonth.CalendarDate <= interval.End.Value )
+          var bitmap = CalendarMonth.GetBitmap();
+          int delta = !redone ? 0 : e.PageBounds.Height / 2;
+          e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
+          if ( multi )
           {
-            e.HasMorePages = true;
-            if ( !redone && !e.PageSettings.Landscape )
+            CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
+            if ( CalendarMonth.CalendarDate <= interval.End.Value )
             {
-              redone = true;
-              goto TwoPerPage;
+              e.HasMorePages = true;
+              if ( !redone && !e.PageSettings.Landscape )
+              {
+                redone = true;
+                process();
+              }
+            }
+            else
+            {
+              CalendarMonth.CalendarDate = interval.Start.Value;
+              e.HasMorePages = false;
             }
           }
           else
-          {
-            CalendarMonth.CalendarDate = interval.Start.Value;
             e.HasMorePages = false;
-          }
         }
-        else
-          e.HasMorePages = false;
       });
+      //
       CalendarMonth.CalendarDate = current;
     }
 

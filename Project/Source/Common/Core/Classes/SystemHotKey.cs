@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -160,7 +160,7 @@ namespace Ordisoftware.Core
           {
             throw new Exception(ex.Message, inner);
           }
-          throw ex;
+          throw;
         }
         AllActivated.Add(this);
       }

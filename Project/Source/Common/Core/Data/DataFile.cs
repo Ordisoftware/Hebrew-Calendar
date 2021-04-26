@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 
@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide data file management.
   /// </summary>
-  abstract class DataFile
+  public abstract class DataFile
   {
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Constructor.
     /// </summary>
-    public DataFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+    protected DataFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
     {
+      FilePathDefault = filePath ?? throw new ArgumentNullException(nameof(filePath));
       ShowFileNotFound = showFileNotFound;
       Configurable = configurable;
-      FilePathDefault = filePath;
       Folder = folder;
       switch ( folder )
       {
@@ -73,7 +73,7 @@ namespace Ordisoftware.Core
           FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
           break;
         default:
-          throw new NotImplementedExceptionEx(folder);
+          throw new AdvancedNotImplementedException(folder);
       }
       ReLoad();
     }

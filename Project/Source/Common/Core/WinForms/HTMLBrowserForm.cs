@@ -37,7 +37,7 @@ namespace Ordisoftware.Core
       ActiveControl = WebBrowser;
     }
 
-    public HTMLBrowserForm(TranslationsDictionary title = null,
+    public HTMLBrowserForm(TranslationsDictionary title,
                            string filePathTemplate = null,
                            string locationPropertyName = null,
                            string clientSizePropertyName = null,

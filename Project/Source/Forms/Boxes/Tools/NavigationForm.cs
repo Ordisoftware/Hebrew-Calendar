@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
           string strDate = SQLiteDate.ToString(value);
-          var row = LunisolarDays.Where(day => day.Date == strDate).Single();
+          var row = LunisolarDays.Single(day => day.Date == strDate);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
           LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth) + " " + strMonth.ToUpper();
@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = NoDataField;
-          var rowNext = LunisolarDays.Where(day => day.DateAsDateTime > value && day.TorahEvents > 0).FirstOrDefault();
+          var rowNext = LunisolarDays.FirstOrDefault(day => day.DateAsDateTime > value && day.TorahEvents > 0);
           if ( rowNext != null )
           {
             var date = rowNext.DateAsDateTime;
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
                             || row.LunarDay < TorahCelebrations.SoukotEndDay 
                           );
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
-          if ( LabelParashahValue.Enabled )
+          if ( LabelParashahValue.Enabled && rowParashah != null )
           {
             LabelParashahValue.Text = rowParashah.ParashahText;
             LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
@@ -158,8 +158,6 @@ namespace Ordisoftware.Hebrew.Calendar
         case AnchorStyles.Left:
           this.SetLocation(ControlLocation.BottomLeft);
           break;
-        case AnchorStyles.Bottom:
-        case AnchorStyles.Right:
         default:
           this.SetLocation(ControlLocation.BottomRight);
           break;
@@ -168,7 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public void Relocalize()
     {
-      Date = Date;
+      Date = _Date;
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -218,8 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelDay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      var label = sender as LinkLabel;
-      if ( label != null && label.Tag != null )
+      if ( sender is LinkLabel label && label.Tag != null )
         MainForm.Instance.GoToDate((DateTime)label.Tag);
     }
 

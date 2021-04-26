@@ -30,7 +30,7 @@ namespace Ordisoftware.Core
   static class WebCheckUpdate
   {
 
-    static public int DefaultCheckDaysInterval = 7;
+    static public int DefaultCheckDaysInterval { get; set; } = 7;
 
     static private bool Mutex;
 
@@ -209,7 +209,7 @@ namespace Ordisoftware.Core
         case WebUpdateSelection.Install:
           return ProcessAutoInstall(client, fileInfo, fileURL);
         default:
-          throw new NotImplementedExceptionEx(result);
+          throw new AdvancedNotImplementedException(result);
       }
       return false;
     }
@@ -229,11 +229,13 @@ namespace Ordisoftware.Core
       client.DownloadProgressChanged += progress;
       client.DownloadFileCompleted += completed;
       client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous
       while ( !finished )
       {
         Thread.Sleep(100);
         Application.DoEvents();
       }
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous
       if ( ex != null ) throw ex;
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
         throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
@@ -278,7 +280,7 @@ namespace Ordisoftware.Core
   public class WebClientEx : WebClient
   {
 
-    static public int DefaultTimeOutSeconds = 5;
+    static public int DefaultTimeOutSeconds { get; set; } = 5;
 
     public int TimeOutSeconds { get; set; }
 

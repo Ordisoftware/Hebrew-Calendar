@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class DateBookmarks
   {
 
-    private string FilePath;
+    private string FilePath { get; set; }
 
     private DateTime[] Items
       = new DateTime[Program.Settings.DateBookmarksCount];

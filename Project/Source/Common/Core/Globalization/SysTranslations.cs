@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -206,7 +206,7 @@ namespace Ordisoftware.Core
         [Language.FR] = "(null)"
       };
 
-    static public string GetOrNull(this string str) => str == null ? EmptySlot.GetLang() : str;
+    static public string GetOrNull(this string str) => str ?? EmptySlot.GetLang();
 
     static public readonly TranslationsDictionary UnknownSlot
       = new TranslationsDictionary
@@ -251,7 +251,7 @@ namespace Ordisoftware.Core
         [Language.FR] = "o"
       };
 
-    static public NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat
+    static public readonly NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat
       = new NullSafeDictionary<Language, NullSafeStringList>
       {
         [Language.EN] = new NullSafeStringList

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using Ordisoftware.Core;
@@ -114,7 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
         },
       };
 
-    static public Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText
+    static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText
       = new Dictionary<Language, Dictionary<DayOfWeek, List<string>>>();
 
     static DayOfWeekMap()

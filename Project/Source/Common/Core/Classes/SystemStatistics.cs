@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
       }
     }
 
-    static public SystemStatistics Instance
+    static public readonly SystemStatistics Instance
       = new SystemStatistics();
 
     public string Processor

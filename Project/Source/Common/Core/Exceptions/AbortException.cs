@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Runtime.Serialization;
 
@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide abort exception.
   /// </summary>
   [Serializable]
-  partial class AbortException : Exception
+  public partial class AbortException : Exception
   {
 
     /// <summary>

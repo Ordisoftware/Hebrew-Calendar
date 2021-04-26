@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -22,10 +22,10 @@ namespace Ordisoftware.Hebrew.Calendar
   /// </summary>
   public struct SunAndMoonRiseAndSet
   {
-    public TimeSpan? Sunrise;
-    public TimeSpan? Sunset;
-    public TimeSpan? Moonrise;
-    public TimeSpan? Moonset;
+    public TimeSpan? Sunrise { get; set; }
+    public TimeSpan? Sunset { get; set; }
+    public TimeSpan? Moonrise { get; set; }
+    public TimeSpan? Moonset { get; set; }
   }
 
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
         return _GrammarGuideForm;
       }
     }
-    static public HTMLBrowserForm _GrammarGuideForm;
+    static private HTMLBrowserForm _GrammarGuideForm;
 
     /// <summary>
     /// Indicate file path of reminder box image.

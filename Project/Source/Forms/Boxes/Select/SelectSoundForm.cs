@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SelectSoundForm : Form
   {
 
-    static public int DefaultReminderSoundMaxDuration = 3000;
+    static public int DefaultReminderSoundMaxDuration { get; set; } = 3000;
 
     static public void Run(bool topmost = false)
     {
@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectCustom.Checked = true;
           break;
         default:
-          throw new NotImplementedExceptionEx(Program.Settings.ReminderBoxSoundSource);
+          throw new AdvancedNotImplementedException(Program.Settings.ReminderBoxSoundSource);
       }
     }
 

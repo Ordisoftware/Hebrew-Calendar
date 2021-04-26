@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -47,7 +47,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( GPS.Keys.Count == 0 )
         {
           string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
+#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods
           throw new NullReferenceException(msg);
+#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods
         }
       }
       catch ( Exception ex )
@@ -62,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate if the cities are loaded and ready, else there is an error.
     /// </summary>
-    public static bool Enable = true;
+    public static bool Enable { get; set; } = true;
 
     public string Country { get; private set; }
     public string City { get; private set; }
@@ -186,14 +188,18 @@ namespace Ordisoftware.Hebrew.Calendar
                             where country.Key.ToLower().StartsWith(list[0])
                             orderby country.Key
                             select country;
-        if ( resultCountry.Count() == 0 ) return;
+        if ( !resultCountry.Any() ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
         FoundCountry = resultCountry.Count() == 1;
         if ( !FoundCountry )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
             FoundCountry = true;
         if ( FoundCountry && !EditFilter.Text.Contains(",") )
-          tempo(EditFilter.Text = strCountry + ", ");
+        {
+          EditFilter.Text = strCountry + ", ";
+          tempo(EditFilter.Text);
+        }
+
         int index = ListBoxCountries.FindString(strCountry);
         if ( ListBoxCountries.SelectedIndex != index )
           ListBoxCountries.SelectedIndex = index;
@@ -207,14 +213,17 @@ namespace Ordisoftware.Hebrew.Calendar
                             && city.Name.ToLower().StartsWith(list[1])
                          orderby city.Name
                          select city;
-        if ( resultCity.Count() == 0 ) return;
+        if ( !resultCity.Any() ) return;
         string strCity = resultCity.ElementAt(0).Name;
         FoundCity = resultCity.Count() == 1;
         if ( !FoundCity )
           if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
             FoundCity = true;
         if ( FoundCity )
-          tempo(EditFilter.Text = strCountry + ", " + strCity);
+        {
+          EditFilter.Text = strCountry + ", " + strCity;
+          tempo(EditFilter.Text);
+        }
         index = ListBoxCities.FindString(strCity);
         if ( ListBoxCities.SelectedIndex != index )
           ListBoxCities.SelectedIndex = index;

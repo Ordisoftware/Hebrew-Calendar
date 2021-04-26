@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -29,8 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool DoScreenPositionMutex;
 
-    private string TitleGPS;
-    private string TitleOmer;
+    private string TitleGPS = "";
+    private string TitleOmer = "";
 
     /// <summary>
     /// Center the form to the screen.
@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         DoScreenPositionMutex = true;
-        if ( sender != null && sender is ToolStripMenuItem menuItem )
+        if ( sender is ToolStripMenuItem menuItem )
         {
           var list = ( (ToolStripMenuItem)menuItem.OwnerItem ).DropDownItems;
           foreach ( ToolStripMenuItem item in list )

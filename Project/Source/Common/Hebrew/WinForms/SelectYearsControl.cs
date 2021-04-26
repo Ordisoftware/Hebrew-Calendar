@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -28,14 +28,10 @@ namespace Ordisoftware.Hebrew
     }
 
     public ComboBox.ObjectCollection Items
-    {
-      get => SelectValue?.Items ?? null;
-    }
+      => SelectValue?.Items ?? null;
 
     public int Count
-    {
-      get => SelectValue?.Items.Count ?? -1;
-    }
+      => SelectValue?.Items.Count ?? -1;
 
     public int SelectedIndex
     {
@@ -51,9 +47,7 @@ namespace Ordisoftware.Hebrew
 
     public int Value
     {
-      get => SelectValue.SelectedItem != null && SelectValue.SelectedItem is int
-             ? (int)SelectValue.SelectedItem
-             : -1;
+      get => SelectValue.SelectedItem is int ? (int)SelectValue.SelectedItem : -1;
       set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
     }
 

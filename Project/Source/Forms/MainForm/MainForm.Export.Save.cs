@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-04 </edited>
 using System;
 using System.Text;
 using System.Linq;
@@ -108,7 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return ExportSaveGrid(filePath, interval);
         }
       };
-      Action<ViewMode> after = (view) =>
+      void after(ViewMode view)
       {
         DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                           view == ViewMode.Month ? Globals.ScreenshotSoundFilePath
@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
           SystemManager.RunShell(Path.GetDirectoryName(filePath));
         if ( Settings.AutoOpenExportedFile )
           SystemManager.RunShell(filePath);
-      };
+      }
       DoExport(ExportAction.SaveToFile, process, after);
     }
 
@@ -163,7 +163,7 @@ namespace Ordisoftware.Hebrew.Calendar
           File.WriteAllText(filePath, ExportSaveJSON(interval), Encoding.UTF8);
           break;
         default:
-          throw new NotImplementedExceptionEx(selected);
+          throw new AdvancedNotImplementedException(selected);
       }
       return true;
     }
