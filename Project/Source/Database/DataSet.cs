@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar.Data
         => LunarDay + " " + HebrewMonths.Transliterations[LunarMonth];
 
       public string DayAndMonthWithYearText
-        => DayAndMonthText + " " + int.Parse(Date.Substring(0,4));
+        => DayAndMonthText + " " + int.Parse(Date.Substring(0, 4));
 
       public string DayAndMonthFormattedText
         => Program.Settings.MoonDayTextFormat.ToUpper()

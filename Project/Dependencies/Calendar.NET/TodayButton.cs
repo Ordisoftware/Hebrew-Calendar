@@ -1,24 +1,24 @@
 ﻿namespace CodeProjectCalendar.NET
 {
-    internal class TodayButton : CoolButton
+  internal class TodayButton : CoolButton
+  {
+    public TodayButton()
     {
-        public TodayButton()
-        {
-            Size = new System.Drawing.Size(85, 29);
-            ButtonText = "Today";
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // TodayButton
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.DoubleBuffered = true;
-            this.Name = "TodayButton";
-            this.ResumeLayout(false);
-
-        }
+      Size = new System.Drawing.Size(85, 29);
+      ButtonText = "Today";
     }
+
+    private void InitializeComponent()
+    {
+      this.SuspendLayout();
+      // 
+      // TodayButton
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.DoubleBuffered = true;
+      this.Name = "TodayButton";
+      this.ResumeLayout(false);
+
+    }
+  }
 }

@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-      if ( keyData == Keys.Escape)
+      if ( keyData == Keys.Escape )
       {
         Close();
         return true;

@@ -177,7 +177,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         Enabled = true;
-     }
+      }
     }
 
     private void ActionHelp_Click(object sender, EventArgs e)

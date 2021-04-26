@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
         // Default to Left align.
         if ( ( fmt.dwMask & NativeMethods.PFM_ALIGNMENT ) == 0 )
           return TextAlign.Left;
-        else 
+        else
           return (TextAlign)fmt.wAlignment;
       }
 

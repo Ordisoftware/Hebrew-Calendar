@@ -139,44 +139,44 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormShown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
-        UpdateTextCalendar();
-        CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
-        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-        Globals.IsReady = true;
-        UpdateButtons();
-        GoToDate(DateTime.Today);
-        bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
-        CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
-        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-          ActionPreferences.PerformClick();
-        SystemManager.TryCatch(Settings.Save);
-        Globals.ChronoLoadApp.Stop();
-        Settings.BenchmarkStartingApp = Globals.ChronoLoadApp.ElapsedMilliseconds;
-        Globals.ChronoLoadApp.Start();
-        TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        TimerMidnight.TimeReached += TimerMidnight_Tick;
-        TimerMidnight.Start();
-        TimerReminder_Tick(null, null);
-        this.Popup();
-        if ( Settings.StartupHide || Globals.ForceStartupHide )
-          MenuShowHide.PerformClick();
-        SystemManager.TryCatch(() =>
-        {
-          if ( LockSessionForm.Instance?.Visible ?? false )
-            LockSessionForm.Instance.Popup();
-        });
-        Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                               AppTranslations.NoticeKeyboardShortcuts,
-                                                               true, false, 410, 745, false, false);
-        Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
-        Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
-        SetGlobalHotKey();
-        TimerUpdateTitles.Start();
-        TimerUpdateTitles_Tick(null, null);
-        Globals.ChronoLoadApp.Stop();
-        ProcessNewsAndCommandLine();
+      EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+      UpdateTextCalendar();
+      CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
+      MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+      Globals.IsReady = true;
+      UpdateButtons();
+      GoToDate(DateTime.Today);
+      bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
+      CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
+      if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+        ActionPreferences.PerformClick();
+      SystemManager.TryCatch(Settings.Save);
+      Globals.ChronoLoadApp.Stop();
+      Settings.BenchmarkStartingApp = Globals.ChronoLoadApp.ElapsedMilliseconds;
+      Globals.ChronoLoadApp.Start();
+      TimerBallon.Interval = Settings.BalloonLoomingDelay;
+      TimerMidnight.TimeReached += TimerMidnight_Tick;
+      TimerMidnight.Start();
+      TimerReminder_Tick(null, null);
+      this.Popup();
+      if ( Settings.StartupHide || Globals.ForceStartupHide )
+        MenuShowHide.PerformClick();
+      SystemManager.TryCatch(() =>
+      {
+        if ( LockSessionForm.Instance?.Visible ?? false )
+          LockSessionForm.Instance.Popup();
+      });
+      Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                             AppTranslations.NoticeKeyboardShortcuts,
+                                                             true, false, 410, 745, false, false);
+      Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
+      Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
+      SetGlobalHotKey();
+      TimerUpdateTitles.Start();
+      TimerUpdateTitles_Tick(null, null);
+      Globals.ChronoLoadApp.Stop();
+      ProcessNewsAndCommandLine();
     }
 
     /// <summary>
@@ -205,7 +205,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewNewMoonsBoard.PerformClick();
       // TODO enable when ready and update keys and faq
       //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-        //ActionViewLunarMonths.PerformClick();
+      //ActionViewLunarMonths.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
         ActionViewParashot.PerformClick();
     }

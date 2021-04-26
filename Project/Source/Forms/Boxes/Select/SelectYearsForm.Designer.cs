@@ -40,8 +40,8 @@
       this.ActionPrefefinedInterval = new System.Windows.Forms.Button();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionDefaultInterval = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditYearLast ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditYearFirst ) ).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -139,8 +139,8 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectYearsForm_FormClosing);
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditYearLast ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditYearFirst ) ).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

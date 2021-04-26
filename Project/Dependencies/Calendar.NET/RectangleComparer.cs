@@ -3,11 +3,11 @@ using System.Drawing;
 
 namespace CodeProjectCalendar.NET
 {
-    public class RectangleComparer : IComparer<Rectangle>
+  public class RectangleComparer : IComparer<Rectangle>
+  {
+    public int Compare(Rectangle x, Rectangle y)
     {
-        public int Compare(Rectangle x, Rectangle y)
-        {
-            return x.Y.CompareTo(y.Y);
-        }
+      return x.Y.CompareTo(y.Y);
     }
+  }
 }

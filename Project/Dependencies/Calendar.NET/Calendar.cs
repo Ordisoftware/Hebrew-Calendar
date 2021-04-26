@@ -962,7 +962,7 @@ namespace CodeProjectCalendar.NET
       // ORDISOFWTARE MODIF BEGIN
       _btnToday.Location = new Point(MarginSize, MarginSize);
       _btnLeft.Location = new Point(MarginSize + _btnToday.Width + MarginSize, MarginSize);
-      _btnRight.Location = new Point(MarginSize + _btnToday.Width + _btnLeft.Width + MarginSize + MarginSize/2, MarginSize);
+      _btnRight.Location = new Point(MarginSize + _btnToday.Width + _btnLeft.Width + MarginSize + MarginSize / 2, MarginSize);
       // ORDISOFWTARE MODIF END
 
       for ( int y = 0; y < numWeeks; y++ )
@@ -1122,7 +1122,7 @@ namespace CodeProjectCalendar.NET
         if ( countEvents == 0 ) continue;
         int deltaLine = -5 + Program.Settings.CalendarLineSpacing;
         SizeF sz = g.MeasureString(list[0].EventText, list[0].EventFont);
-        for ( int index = 0; index < countEvents; index++)
+        for ( int index = 0; index < countEvents; index++ )
         //foreach ( IEvent v in _events )
         {
           var v = list[index];

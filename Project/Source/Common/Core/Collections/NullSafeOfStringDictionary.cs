@@ -79,8 +79,8 @@ namespace Ordisoftware.Core
   static partial class NullSafeOfStringDictionaryHelper
   {
     static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
-                                         string filePath, 
-                                         string separator, 
+                                         string filePath,
+                                         string separator,
                                          bool showError = true)
     {
       try

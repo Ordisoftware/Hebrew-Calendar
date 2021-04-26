@@ -162,7 +162,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateControls()
     {
-      SelectInterval.Enabled = !(SelectMonth.Checked &&  ActionToDo == ExportAction.CopyToClipboard);
+      SelectInterval.Enabled = !( SelectMonth.Checked && ActionToDo == ExportAction.CopyToClipboard );
       GroupBoxFormat.Enabled = ( SelectMonth.Checked && ActionToDo == ExportAction.SaveToFile )
                             || ( SelectGrid.Checked && ( ActionToDo == ExportAction.SaveToFile || ActionToDo == ExportAction.CopyToClipboard ) );
       GroupBoxYears.Enabled = SelectInterval.Checked;

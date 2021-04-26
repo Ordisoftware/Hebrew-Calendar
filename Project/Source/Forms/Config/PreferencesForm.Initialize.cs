@@ -152,7 +152,7 @@ namespace Ordisoftware.Hebrew.Calendar
         control.Maximum = interval.Item2;
         control.Value = interval.Item3;
         control.Increment = interval.Item4;
-        if (label != null) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+        if ( label != null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
       }
     }
 

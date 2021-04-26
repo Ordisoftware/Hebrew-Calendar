@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
       {
         base.Refresh();
         bool notNull = _ComboBox != null;
-        ActionFirst.Enabled =  notNull && _ComboBox.SelectedIndex > 0;
+        ActionFirst.Enabled = notNull && _ComboBox.SelectedIndex > 0;
         ActionPrevious.Enabled = ActionFirst.Enabled;
         ActionLast.Enabled = notNull && _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1;
         ActionNext.Enabled = ActionLast.Enabled;

@@ -118,10 +118,10 @@ namespace Ordisoftware.Hebrew.Calendar
         foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
         foreach ( var value in TorahCelebrations.MajorEvents )
         {
-            TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
-            TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);
-            LastCelebrationReminded[value] = null;
-          }
+          TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
+          TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);
+          LastCelebrationReminded[value] = null;
+        }
       });
     }
 

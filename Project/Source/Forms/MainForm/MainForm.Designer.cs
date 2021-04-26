@@ -14,7 +14,7 @@
     protected override void Dispose(bool disposing)
     {
       TimerMidnight.Dispose();
-      if ( disposing && (components != null) )
+      if ( disposing && ( components != null ) )
       {
         components.Dispose();
       }
@@ -191,15 +191,15 @@
       this.PanelViewMonth.SuspendLayout();
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.CalendarGrid ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingNavigator ) ).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.moonPhaseImagePictureBox ) ).BeginInit();
       this.MenuTray.SuspendLayout();
       this.ToolStrip.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataSet ) ).BeginInit();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -260,7 +260,7 @@
       // 
       // CalendarText
       // 
-      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
       this.CalendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
       resources.ApplyResources(this.CalendarText, "CalendarText");
       this.CalendarText.HideSelection = false;
@@ -1193,10 +1193,10 @@
       this.CalendarMonth.BackColor = System.Drawing.Color.White;
       this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
       this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.CalendarMonth.DimDisabledEvents = true;
       resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
       this.CalendarMonth.HighlightCurrentDay = false;
@@ -1208,7 +1208,7 @@
       this.CalendarMonth.ShowDisabledEvents = false;
       this.CalendarMonth.ShowEventTooltips = true;
       this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       // 
       // dataGridViewTextBoxColumn1
       // 
@@ -1360,17 +1360,17 @@
       this.TabPageGrid.ResumeLayout(false);
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.CalendarGrid ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingNavigator ) ).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.moonPhaseImagePictureBox ) ).EndInit();
       this.MenuTray.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataSet ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

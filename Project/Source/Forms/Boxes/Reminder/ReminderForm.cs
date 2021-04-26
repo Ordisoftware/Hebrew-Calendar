@@ -270,7 +270,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Form_Click(object sender, EventArgs e)
     {
-      if (Program.Settings.ReminderFormCloseOnClick)
+      if ( Program.Settings.ReminderFormCloseOnClick )
         Close();
     }
 

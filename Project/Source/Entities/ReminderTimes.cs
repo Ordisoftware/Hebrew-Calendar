@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? DateStartCheck;
     public DateTime? DateStart;
     public DateTime? DateEnd;
-    public void Set(DateTime date, 
+    public void Set(DateTime date,
                     string timeStart, string timeEnd,
                     int deltaDayStart, int deltaDayEnd,
                     decimal deltaRemindBefore)

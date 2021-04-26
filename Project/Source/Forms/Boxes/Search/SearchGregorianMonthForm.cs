@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
       for ( int index = 0; index < 12; index++ )
       {
         string key = new DateTime(2000, index + 1, 1).ToString("MMMM");
-        var item = ListItems.Items.Add((index + 1).ToString());
+        var item = ListItems.Items.Add(( index + 1 ).ToString());
         item.SubItems.Add(key.Titleize());
         if ( index == 0 && selectedKey == -1 )
         {

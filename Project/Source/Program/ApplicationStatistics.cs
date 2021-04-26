@@ -152,7 +152,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDDParashotMemorySizeRequired )
         {
           UpdateDDParashotMemorySizeRequired = false;
-          _DDParashotMemorySize = ParashotTable.DataTable?.SizeOf().FormatBytesSize() 
+          _DDParashotMemorySize = ParashotTable.DataTable?.SizeOf().FormatBytesSize()
                                ?? SysTranslations.DatabaseTableClosed.GetLang();
         }
         return _DDParashotMemorySize;

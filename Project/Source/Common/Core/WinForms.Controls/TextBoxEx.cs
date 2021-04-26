@@ -45,7 +45,7 @@ namespace Ordisoftware.Core
     Selected
   }
 
-  
+
 
   public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
 

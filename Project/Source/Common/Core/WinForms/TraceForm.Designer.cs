@@ -38,7 +38,7 @@
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.Core.RichTextBoxEx();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -121,7 +121,7 @@
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).EndInit();
       this.ResumeLayout(false);
 
     }

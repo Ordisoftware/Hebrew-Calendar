@@ -80,8 +80,8 @@ namespace Ordisoftware.Core
     /// </summary>
     static SystemManager()
     {
-      if ( Globals.PreLoadSSLCertificate)
-        LoadSSLCertificate(); 
+      if ( Globals.PreLoadSSLCertificate )
+        LoadSSLCertificate();
     }
 
   }

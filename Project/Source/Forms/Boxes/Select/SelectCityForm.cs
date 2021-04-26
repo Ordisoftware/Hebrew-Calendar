@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
   partial class SelectCityForm : Form
   {
-   
+
     static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS
       = new SortedAutoDictionary<string, AutoResizedList<CityItem>>();
 

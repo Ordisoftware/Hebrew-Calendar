@@ -193,9 +193,9 @@ namespace Ordisoftware.Core
     /// </summary>
     static Globals()
     {
-      #if DEBUG
+#if DEBUG
       if ( !IsVisualStudioDesigner ) PurgeResourceImages();
-      #endif
+#endif
     }
 
   }

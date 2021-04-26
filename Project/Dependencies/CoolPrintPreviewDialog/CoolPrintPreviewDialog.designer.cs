@@ -1,33 +1,33 @@
 ﻿namespace CoolPrintPreview
 {
-    partial class CoolPrintPreviewDialog
+  partial class CoolPrintPreviewDialog
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if ( disposing && ( components != null ) )
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoolPrintPreviewDialog));
       this._toolStrip = new System.Windows.Forms.ToolStrip();
       this._btnPrint = new System.Windows.Forms.ToolStripButton();
@@ -278,36 +278,36 @@
       this.ResumeLayout(false);
       this.PerformLayout();
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.ToolStrip _toolStrip;
-        private System.Windows.Forms.ToolStripButton _btnPrint;
-        private System.Windows.Forms.ToolStripButton _btnPageSetup;
-        private CoolPrintPreviewControl _preview;
-        private System.Windows.Forms.ToolStripSplitButton _btnZoom;
-        private System.Windows.Forms.ToolStripMenuItem _itemActualSize;
-        private System.Windows.Forms.ToolStripMenuItem _itemFullPage;
-        private System.Windows.Forms.ToolStripMenuItem _itemPageWidth;
-        private System.Windows.Forms.ToolStripMenuItem _itemTwoPages;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem _item500;
-        private System.Windows.Forms.ToolStripMenuItem _item200;
-        private System.Windows.Forms.ToolStripMenuItem _item150;
-        private System.Windows.Forms.ToolStripMenuItem _item100;
-        private System.Windows.Forms.ToolStripMenuItem _item75;
-        private System.Windows.Forms.ToolStripMenuItem _item50;
-        private System.Windows.Forms.ToolStripMenuItem _item25;
-        private System.Windows.Forms.ToolStripMenuItem _item10;
-        private System.Windows.Forms.ToolStripButton _btnFirst;
-        private System.Windows.Forms.ToolStripButton _btnPrev;
-        private System.Windows.Forms.ToolStripTextBox _txtStartPage;
-        private System.Windows.Forms.ToolStripLabel _lblPageCount;
-        private System.Windows.Forms.ToolStripButton _btnNext;
-        private System.Windows.Forms.ToolStripButton _btnLast;
-        private System.Windows.Forms.ToolStripSeparator _separator;
-        private System.Windows.Forms.ToolStripButton _btnCancel;
+    private System.Windows.Forms.ToolStrip _toolStrip;
+    private System.Windows.Forms.ToolStripButton _btnPrint;
+    private System.Windows.Forms.ToolStripButton _btnPageSetup;
+    private CoolPrintPreviewControl _preview;
+    private System.Windows.Forms.ToolStripSplitButton _btnZoom;
+    private System.Windows.Forms.ToolStripMenuItem _itemActualSize;
+    private System.Windows.Forms.ToolStripMenuItem _itemFullPage;
+    private System.Windows.Forms.ToolStripMenuItem _itemPageWidth;
+    private System.Windows.Forms.ToolStripMenuItem _itemTwoPages;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem _item500;
+    private System.Windows.Forms.ToolStripMenuItem _item200;
+    private System.Windows.Forms.ToolStripMenuItem _item150;
+    private System.Windows.Forms.ToolStripMenuItem _item100;
+    private System.Windows.Forms.ToolStripMenuItem _item75;
+    private System.Windows.Forms.ToolStripMenuItem _item50;
+    private System.Windows.Forms.ToolStripMenuItem _item25;
+    private System.Windows.Forms.ToolStripMenuItem _item10;
+    private System.Windows.Forms.ToolStripButton _btnFirst;
+    private System.Windows.Forms.ToolStripButton _btnPrev;
+    private System.Windows.Forms.ToolStripTextBox _txtStartPage;
+    private System.Windows.Forms.ToolStripLabel _lblPageCount;
+    private System.Windows.Forms.ToolStripButton _btnNext;
+    private System.Windows.Forms.ToolStripButton _btnLast;
+    private System.Windows.Forms.ToolStripSeparator _separator;
+    private System.Windows.Forms.ToolStripButton _btnCancel;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.ToolStripButton _btnClose;
   }

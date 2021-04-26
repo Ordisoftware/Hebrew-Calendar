@@ -114,8 +114,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
       //for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-        //if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-          //SaveSettingsDialog.FilterIndex = index + 1;
+      //if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
+      //SaveSettingsDialog.FilterIndex = index + 1;
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       TabControl.SelectedIndex = 0;
       SaveSettings();

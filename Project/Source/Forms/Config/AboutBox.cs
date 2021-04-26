@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Link label link clicked event information.</param>
     private void LabelProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      SystemManager.OpenWebLink(((LinkLabel)sender).Text);
+      SystemManager.OpenWebLink(( (LinkLabel)sender ).Text);
     }
 
     /// <summary>

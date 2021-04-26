@@ -170,7 +170,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
         {
           var lines = Text.Replace("Parashah ", "").SplitNoEmptyLines(" - ").ToList();
-          if (lines.Count >= 3)
+          if ( lines.Count >= 3 )
             lines.Insert(2, DateTime.Today.ToShortDateString());
           else
             lines.Add(DateTime.Today.ToShortDateString());

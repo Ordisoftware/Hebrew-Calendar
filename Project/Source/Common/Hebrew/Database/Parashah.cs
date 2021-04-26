@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew
          $"{Translation} ; {Lettriq} : {Memo}";*/
 
     public string ToStringLinked()
-      => Name + ( Linked != null  ? " - " + Linked.Name : "");
+      => Name + ( Linked != null ? " - " + Linked.Name : "" );
 
     public Parashah(TorahBooks book,
                     int number,

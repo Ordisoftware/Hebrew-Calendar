@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew
       => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
 
     private string CurrentDataBoundItemFullReferenceBegin
-      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." + 
+      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." +
          $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
 
     private string CurrentDataBoundItemToString(bool useHebrewFont)

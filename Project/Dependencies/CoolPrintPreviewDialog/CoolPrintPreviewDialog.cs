@@ -23,7 +23,7 @@ namespace CoolPrintPreview
   internal partial class CoolPrintPreviewDialog : Form
   {
 
-    static public 
+    static public
 
     //--------------------------------------------------------------------
     #region ** fields

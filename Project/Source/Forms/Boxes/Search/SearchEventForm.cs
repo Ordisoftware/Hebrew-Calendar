@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
         itemToSelectDefault.Selected = true;
       }
       else
-      if ( ListItems.Items.Count > 0)
+      if ( ListItems.Items.Count > 0 )
       {
         ListItems.Items[0].Focused = true;
         ListItems.Items[0].Selected = true;
