@@ -35,7 +35,7 @@ namespace Base.Hotkeys
     protected virtual void Dispose(bool disposing)
     {
       if ( disposing )
-        if (form != null)
+        if ( form != null )
           form.Dispose();
     }
 

@@ -65,11 +65,11 @@ namespace CoolPrintPreview
 
 #else
 
-    // This version of the PageImageList is a simple List<Image>. It is simple,
-    // but caches one image (GDI object) per preview page.
-    class PageImageList : List<Image>
-    {
-    }
+  // This version of the PageImageList is a simple List<Image>. It is simple,
+  // but caches one image (GDI object) per preview page.
+  class PageImageList : List<Image>
+  {
+  }
 
 #endif
 }

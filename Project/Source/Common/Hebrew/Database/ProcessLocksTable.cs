@@ -114,7 +114,7 @@ namespace Ordisoftware.Hebrew
           int id = (int)reader["ProcessID"];
           if ( id == Globals.ProcessId ) continue;
           var process = Process.GetProcesses().FirstOrDefault(p => p.Id == id);
-          string processName = process?.ProcessName ?? "PID " + id; 
+          string processName = process?.ProcessName ?? "PID " + id;
           if ( dictionary.ContainsKey(processName) )
             dictionary[processName]++;
           else

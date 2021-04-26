@@ -34,8 +34,8 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();

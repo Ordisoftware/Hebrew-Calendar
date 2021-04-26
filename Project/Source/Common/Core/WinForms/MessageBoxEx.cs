@@ -76,7 +76,7 @@ namespace Ordisoftware.Core
       {
         SetIcon(icon);
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
-        Label.Top = Label.Top + (PictureBox.Height - Label.Height) / 2;
+        Label.Top = Label.Top + ( PictureBox.Height - Label.Height ) / 2;
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }

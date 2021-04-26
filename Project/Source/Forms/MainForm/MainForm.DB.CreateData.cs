@@ -226,7 +226,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Moonrise = SQLiteDate.ToString(ephemeris.Moonrise);
         day.Moonset = SQLiteDate.ToString(ephemeris.Moonset);
         MoonRiseOccuring moonrisetype;
-        if ( ephemeris.Moonrise == null)
+        if ( ephemeris.Moonrise == null )
           moonrisetype = MoonRiseOccuring.NextDay;
         else
         if ( ephemeris.Moonrise < ephemeris.Moonset )
@@ -388,7 +388,7 @@ namespace Ordisoftware.Hebrew.Calendar
         bool check(LunisolarDaysRow row)
         {
           var dateRow = row.DateAsDateTime;
-          return dateRow.Year == dayDate.Year 
+          return dateRow.Year == dayDate.Year
               && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();

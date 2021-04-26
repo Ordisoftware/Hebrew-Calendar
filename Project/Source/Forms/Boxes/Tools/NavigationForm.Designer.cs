@@ -62,7 +62,7 @@
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -290,7 +290,7 @@
       this.PanelTop.ResumeLayout(false);
       this.PanelMiddle.ResumeLayout(false);
       this.PanelMiddle.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 

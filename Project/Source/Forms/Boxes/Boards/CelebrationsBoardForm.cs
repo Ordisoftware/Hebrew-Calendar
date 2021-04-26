@@ -251,7 +251,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName) + " "
                                                      + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
-      if (Program.Settings.TorahEventsCountAsMoon )
+      if ( Program.Settings.TorahEventsCountAsMoon )
         MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Moonset" : " Moonrise";
       else
         MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Sunset" : " Sunrise";

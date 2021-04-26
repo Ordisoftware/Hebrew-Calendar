@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
   partial class WebUpdateForm : Form
   {
 
-    static public WebUpdateSelection Run (Version version)
+    static public WebUpdateSelection Run(Version version)
     {
       using ( var form = new WebUpdateForm() )
       {

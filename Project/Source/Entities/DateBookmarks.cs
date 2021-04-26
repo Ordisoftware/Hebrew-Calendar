@@ -85,5 +85,5 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
   }
-  
+
 }

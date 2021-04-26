@@ -90,7 +90,7 @@ namespace Ordisoftware.Hebrew.Calendar
         throw new InvalidTimeZoneException();
       int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours +
                      ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
-      var strEphem = SunMoon.Get(date.Year, date.Month, date.Day, 
+      var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                  MainForm.Instance.CurrentGPSLatitude,
                                  MainForm.Instance.CurrentGPSLongitude,
                                  timezone,

@@ -42,7 +42,7 @@ namespace Ordisoftware.Core
 
     static public List<SoundItem> GetWindowsSounds()
     {
-      if ( WindowsSounds == null)
+      if ( WindowsSounds == null )
         WindowsSounds = GetSounds(Globals.WindowsMediaFolderPath);
       return WindowsSounds;
     }

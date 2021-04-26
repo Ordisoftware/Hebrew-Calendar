@@ -125,5 +125,5 @@ namespace Ordisoftware.Hebrew.Calendar.Data
     }
 
   }
-  
+
 }

@@ -121,7 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
         if ( found != null ) GoToDate(found.Date);
       }
-      if ( Settings.CurrentView == ViewMode.Month && CurrentDay != null)
+      if ( Settings.CurrentView == ViewMode.Month && CurrentDay != null )
         switch ( keyData )
         {
           case Keys.Control | Keys.Home:

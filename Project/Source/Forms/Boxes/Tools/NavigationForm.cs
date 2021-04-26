@@ -84,14 +84,14 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelParashahValue.Text = NoDataField;
           LabelParashahValue.Tag = null;
           var rowParashah = row.GetParashahReadingDay();
-          bool isPessah = row.LunarMonth == TorahCelebrations.PessahMonth 
-                       && row.LunarDay >= TorahCelebrations.PessahStartDay 
+          bool isPessah = row.LunarMonth == TorahCelebrations.PessahMonth
+                       && row.LunarDay >= TorahCelebrations.PessahStartDay
                        && row.LunarDay <= TorahCelebrations.PessahEndDay;
           bool isSoukot = row.LunarMonth == TorahCelebrations.YomsMonth
                        && row.LunarDay >= TorahCelebrations.SoukotStartDay
-                       && ( 
+                       && (
                             ( Program.Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
-                            || row.LunarDay < TorahCelebrations.SoukotEndDay 
+                            || row.LunarDay < TorahCelebrations.SoukotEndDay
                           );
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
           if ( LabelParashahValue.Enabled && rowParashah != null )

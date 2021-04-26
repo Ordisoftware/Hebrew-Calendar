@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public void Run()
     {
-      if (Instance == null)
+      if ( Instance == null )
         Instance = new NewMoonsBoardForm();
       else
       if ( Instance.Visible )
@@ -246,7 +246,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName)
-                                                     + (EditUseRealDays.Checked ? " Moonset" : " Moonrise");
+                                                     + ( EditUseRealDays.Checked ? " Moonset" : " Moonrise" );
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

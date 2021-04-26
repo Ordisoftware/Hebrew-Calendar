@@ -177,7 +177,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     /// </summary>
-    static private Dictionary<string, string> AlreadyAcessedVarNames 
+    static private Dictionary<string, string> AlreadyAcessedVarNames
       = new Dictionary<string, string>();
 
     static private string NameOfFromStack(this object instance, int level = 1)

@@ -69,7 +69,7 @@ namespace Ordisoftware.Core
                         "La réinitialisation va effacer toutes les données." + Globals.NL2 +
                         AskToContinue[Language.FR]
       };
-  
+
     static public readonly TranslationsDictionary DatabaseVacuumError
       = new TranslationsDictionary
       {

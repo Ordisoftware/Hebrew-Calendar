@@ -22,7 +22,7 @@ namespace Keith_Burnett_moonr2cs
       double hrs, h, m, dum;
       hrs = System.Math.Floor(hours * 60 + 0.5) / 60.0;
       h = System.Math.Floor(hrs);
-      m = System.Math.Floor(60 * (hrs - h) + 0.5);
+      m = System.Math.Floor(60 * ( hrs - h ) + 0.5);
       dum = h * 100 + m;
       //
       // the jiggery pokery below is to make sure that two minutes past midnight
@@ -82,7 +82,7 @@ namespace Keith_Burnett_moonr2cs
       //
       double a, b;
       b = x / 360;
-      a = 360 * (b - ipart(b));
+      a = 360 * ( b - ipart(b) );
       if ( a < 0 )
       {
         a = a + 360;
@@ -106,14 +106,14 @@ namespace Keith_Burnett_moonr2cs
       a = 10000.0 * year + 100.0 * month + day;
       if ( a <= 15821004.1 )
       {
-        b = -2 * System.Math.Floor((year + 4716) / 4.0) - 1179;
+        b = -2 * System.Math.Floor(( year + 4716 ) / 4.0) - 1179;
       }
       else
       {
         b = System.Math.Floor(year / 400.0) - System.Math.Floor(year / 100.0) + System.Math.Floor(year / 4.0);
       }
       a = 365.0 * year - 679004.0;
-      return (a + b + System.Math.Floor(30.6001 * (month + 1)) + day + hour / 24.0);
+      return ( a + b + System.Math.Floor(30.6001 * ( month + 1 )) + day + hour / 24.0 );
     }
 
     String caldat(double mjd)
@@ -134,16 +134,16 @@ namespace Keith_Burnett_moonr2cs
       }
       else
       {
-        b = System.Math.Floor((jd0 - 1867216.25) / 36524.25);
-        c = jd0 + (b - System.Math.Floor(b / 4)) + 1525.0;
+        b = System.Math.Floor(( jd0 - 1867216.25 ) / 36524.25);
+        c = jd0 + ( b - System.Math.Floor(b / 4) ) + 1525.0;
       }
-      d = System.Math.Floor((c - 122.1) / 365.25);
+      d = System.Math.Floor(( c - 122.1 ) / 365.25);
       e = 365.0 * d + System.Math.Floor(d / 4);
-      f = System.Math.Floor((c - e) / 30.6001);
+      f = System.Math.Floor(( c - e ) / 30.6001);
       day = System.Math.Floor(c - e + 0.5) - System.Math.Floor(30.6001 * f);
       month = f - 1 - 12 * System.Math.Floor(f / 14);
-      year = d - 4715 - System.Math.Floor((7 + month) / 10);
-      hour = 24.0 * (jd + 0.5 - jd0) + 5;
+      year = d - 4715 - System.Math.Floor(( 7 + month ) / 10);
+      hour = 24.0 * ( jd + 0.5 - jd0 ) + 5;
       //hour = _wtoi(hrsmin(hour));
       hour = System.Convert.ToUInt32(hrsmin(hour));
       double calout = round(year * 10000.0 + month * 100.0 + day + hour / 10000, 4);
@@ -168,11 +168,11 @@ namespace Keith_Burnett_moonr2cs
       //var quadout = new Array;
       z1 = z2 = 0;
       nz = 0;
-      a = 0.5 * (ym + yp) - yz;
-      b = 0.5 * (yp - ym);
+      a = 0.5 * ( ym + yp ) - yz;
+      b = 0.5 * ( yp - ym );
       c = yz;
-      xe = -b / (2 * a);
-      ye = (a * xe + b) * xe + c;
+      xe = -b / ( 2 * a );
+      ye = ( a * xe + b ) * xe + c;
       dis = b * b - 4.0 * a * c;
       if ( dis > 0 )
       {
@@ -202,7 +202,7 @@ namespace Keith_Burnett_moonr2cs
       d = mjd - 51544.5;
       t = d / 36525.0;
       lst = range(280.46061837 + 360.98564736629 * d + 0.000387933 * t * t - t * t * t / 38710000);
-      return (lst / 15.0 + glong / 15);
+      return ( lst / 15.0 + glong / 15 );
     }
 
     double[] minisun(double t)
@@ -217,14 +217,14 @@ namespace Keith_Burnett_moonr2cs
       double L, M, DL, SL, X, Y, Z, RHO, ra, dec;
       M = p2 * frac(0.993133 + 99.997361 * t);
       DL = 6893.0 * System.Math.Sin(M) + 72.0 * System.Math.Sin(2 * M);
-      L = p2 * frac(0.7859453 + M / p2 + (6191.2 * t + DL) / 1296000);
+      L = p2 * frac(0.7859453 + M / p2 + ( 6191.2 * t + DL ) / 1296000);
       SL = System.Math.Sin(L);
       X = System.Math.Cos(L);
       Y = coseps * SL;
       Z = sineps * SL;
       RHO = System.Math.Sqrt(1 - Z * Z);
-      dec = (360.0 / p2) * System.Math.Atan(Z / RHO);
-      ra = (48.0 / p2) * System.Math.Atan(Y / (X + RHO));
+      dec = ( 360.0 / p2 ) * System.Math.Atan(Z / RHO);
+      ra = ( 48.0 / p2 ) * System.Math.Atan(Y / ( X + RHO ));
       if ( ra < 0 ) ra += 24;
       suneq[1] = dec;
       suneq[2] = ra;
@@ -261,7 +261,7 @@ namespace Keith_Burnett_moonr2cs
       DL += +148 * System.Math.Sin(L - LS);
       DL += -55 * System.Math.Sin(2 * F - 2 * D);
       // simplified form of the latitude terms
-      S = F + (DL + 412 * System.Math.Sin(2 * F) + 541 * System.Math.Sin(LS)) / arc;
+      S = F + ( DL + 412 * System.Math.Sin(2 * F) + 541 * System.Math.Sin(LS) ) / arc;
       H = F - 2 * D;
       N = -526 * System.Math.Sin(H);
       N += +44 * System.Math.Sin(L + H);
@@ -272,7 +272,7 @@ namespace Keith_Burnett_moonr2cs
       N += +21 * System.Math.Sin(-L + F);
       // ecliptic long and lat of Moon in rads
       L_moon = p2 * frac(L0 + DL / 1296000);
-      B_moon = (18520.0 * System.Math.Sin(S) + N) / arc;
+      B_moon = ( 18520.0 * System.Math.Sin(S) + N ) / arc;
       // equatorial coord conversion - note fixed obliquity
       CB = System.Math.Cos(B_moon);
       X = CB * System.Math.Cos(L_moon);
@@ -281,8 +281,8 @@ namespace Keith_Burnett_moonr2cs
       Y = coseps * V - sineps * W;
       Z = sineps * V + coseps * W;
       RHO = System.Math.Sqrt(1.0 - Z * Z);
-      dec = (360.0 / p2) * System.Math.Atan(Z / RHO);
-      ra = (48.0 / p2) * System.Math.Atan(Y / (X + RHO));
+      dec = ( 360.0 / p2 ) * System.Math.Atan(Z / RHO);
+      ra = ( 48.0 / p2 ) * System.Math.Atan(Y / ( X + RHO ));
       if ( ra < 0 ) ra += 24;
       mooneq[1] = dec;
       mooneq[2] = ra;
@@ -299,7 +299,7 @@ namespace Keith_Burnett_moonr2cs
       double mjd, t, ra, dec, tau, salt, rads = 0.0174532925;
       double[] objpos;
       mjd = mjd0 + hour / 24.0;
-      t = (mjd - 51544.5) / 36525.0;
+      t = ( mjd - 51544.5 ) / 36525.0;
       if ( iobj == 1 )
       {
         objpos = minimoon(t);
@@ -311,7 +311,7 @@ namespace Keith_Burnett_moonr2cs
       ra = objpos[2];
       dec = objpos[1];
       // hour angle of object
-      tau = 15.0 * (lmst(mjd, glong) - ra);
+      tau = 15.0 * ( lmst(mjd, glong) - ra );
       // sin(alt) of object using the conversion formulas
       salt = sglat * System.Math.Sin(rads * dec) + cglat * System.Math.Cos(rads * dec) * System.Math.Cos(rads * tau);
       return salt;
@@ -364,7 +364,7 @@ namespace Keith_Burnett_moonr2cs
         // or for two zero crossings in an interval or for a grazing event
         // The flags rise and sett are set accordingly
         //
-        while ( hour < 25 && (sett == false || rise == false) )
+        while ( hour < 25 && ( sett == false || rise == false ) )
         {
           yz = sin_alt(2, date, hour, glong, cglat, sglat) - sinho[j];
           yp = sin_alt(2, date, hour + 1.0, glong, cglat, sglat) - sinho[j];
@@ -459,7 +459,7 @@ namespace Keith_Burnett_moonr2cs
       hour = 1.0;
       ym = sin_alt(1, date, hour - 1.0, glong, cglat, sglat) - sinho;
       if ( ym > 0.0 ) above = true;
-      while ( hour < 25 && (sett == false || rise == false) )
+      while ( hour < 25 && ( sett == false || rise == false ) )
       {
         yz = sin_alt(1, date, hour, glong, cglat, sglat) - sinho;
         yp = sin_alt(1, date, hour + 1.0, glong, cglat, sglat) - sinho;

@@ -61,7 +61,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void CloseAll(Func<Form, bool> keep = null)
     {
-      var list = keep == null 
+      var list = keep == null
                  ? Application.OpenForms.All(form => form.Visible).Reverse().ToList()
                  : Application.OpenForms.All(form => form.Visible && !keep(form)).Reverse().ToList();
       foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
@@ -417,7 +417,8 @@ namespace Ordisoftware.Core
                            - TextRenderer.MeasureText(WordsList[0], font).Width;
         int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
         float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
-        return ( (Func<string>)( () => {
+        return ( (Func<string>)( () =>
+        {
           var Spaces = new StringBuilder();
           var AdjustedWords = new StringBuilder();
           for ( int h = 0; h < AverageSpace; h++ )

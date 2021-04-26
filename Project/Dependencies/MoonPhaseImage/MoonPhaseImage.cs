@@ -28,15 +28,15 @@ namespace MostafaKaisoun
       int j;
       int mm, yy;
       int k1, k2, k3;
-      yy = y - (int)((12 - m) / 10);
+      yy = y - (int)( ( 12 - m ) / 10 );
       mm = m + 9;
       if ( mm >= 12 )
       {
         mm = mm - 12;
       }
-      k1 = (int)(365.25 * (yy + 4712));
-      k2 = (int)(30.6001 * mm + 0.5);
-      k3 = (int)((int)((yy / 100) + 49) * 0.75) - 38;
+      k1 = (int)( 365.25 * ( yy + 4712 ) );
+      k2 = (int)( 30.6001 * mm + 0.5 );
+      k3 = (int)( (int)( ( yy / 100 ) + 49 ) * 0.75 ) - 38;
       // 'j' for dates in Julian calendar:
       j = k1 + k2 + d + 59;
       if ( j > 2299160 )
@@ -45,7 +45,7 @@ namespace MostafaKaisoun
         j = j - k3;  // 'j' is the Julian date at 12h UT (Universal Time)
       }
       //Calculate the approximate phase of the moon
-      ip = (j + 4.867) / 29.53059;
+      ip = ( j + 4.867 ) / 29.53059;
       ip = ip - Math.Floor(ip);
       //After several trials I've seen to add the following lines, 
       //which gave the result was not bad
@@ -76,7 +76,7 @@ namespace MostafaKaisoun
 
       for ( Ypos = 0; Ypos <= 45; Ypos++ )
       {
-        Xpos = (int)(Math.Sqrt(45 * 45 - Ypos * Ypos));
+        Xpos = (int)( Math.Sqrt(45 * 45 - Ypos * Ypos) );
         // Draw darkness part of the moon
         Point pB1 = new Point(90 - Xpos, Ypos + 90);
         Point pB2 = new Point(Xpos + 90, Ypos + 90);
@@ -89,12 +89,12 @@ namespace MostafaKaisoun
         if ( Phase < 0.5 )
         {
           Xpos1 = -Xpos;
-          Xpos2 = (int)(Rpos - 2 * Phase * Rpos - Xpos);
+          Xpos2 = (int)( Rpos - 2 * Phase * Rpos - Xpos );
         }
         else
         {
           Xpos1 = Xpos;
-          Xpos2 = (int)(Xpos - 2 * Phase * Rpos + Rpos);
+          Xpos2 = (int)( Xpos - 2 * Phase * Rpos + Rpos );
         }
         // Draw the lighted part of the moon
         Point pW1 = new Point(Xpos1 + 90, 90 - Ypos);

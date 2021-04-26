@@ -48,7 +48,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicates error messages.
     /// </summary>
-    private readonly List<string> ErrorMessages 
+    private readonly List<string> ErrorMessages
       = new List<string>();
 
     private bool IsInner;
@@ -263,7 +263,7 @@ namespace Ordisoftware.Core
       => "mailto:?" + Parameters(message).Join("&");
 
     static string Recipients(MailAddressCollection addresses)
-      => (from r in addresses select Uri.EscapeDataString(r.Address)).Join(",");
+      => ( from r in addresses select Uri.EscapeDataString(r.Address) ).Join(",");
 
     static IEnumerable<string> Parameters(MailMessage message)
     {

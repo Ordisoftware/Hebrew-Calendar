@@ -190,8 +190,8 @@
       dBCommonFileSizeLabel = new System.Windows.Forms.Label();
       dBParashotMemorySizeLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ApplicationStatisticsDataBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SystemStatisticsDataBindingSource ) ).BeginInit();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
       this.GroupBoxMemory.SuspendLayout();
@@ -982,8 +982,8 @@
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.ApplicationStatisticsDataBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.SystemStatisticsDataBindingSource ) ).EndInit();
       this.GroupBoxTimings.ResumeLayout(false);
       this.GroupBoxTimings.PerformLayout();
       this.GroupBoxDatabase.ResumeLayout(false);

@@ -37,7 +37,7 @@ namespace Ordisoftware.Core
       return Enum.GetValues(typeof(T)).Cast<int>().Max();
     }
 
-    static public T SetFlag<T>(this T flags, T flag, bool value) 
+    static public T SetFlag<T>(this T flags, T flag, bool value)
       where T : Enum, IComparable, IFormattable, IConvertible
     {
       int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
@@ -56,9 +56,9 @@ namespace Ordisoftware.Core
                        .SkipWhile(e => !value.Equals(e))
                        .Skip(1)
                        .First();
-        foreach ( T item in skip )
-          if ( item.Equals(result) )
-            result = result.Next(skip);
+      foreach ( T item in skip )
+        if ( item.Equals(result) )
+          result = result.Next(skip);
       return result;
     }
 
@@ -70,9 +70,9 @@ namespace Ordisoftware.Core
                        .SkipWhile(e => !value.Equals(e))
                        .Skip(1)
                        .First();
-        foreach ( T item in skip )
-          if ( item.Equals(result) )
-            result = result.Previous(skip);
+      foreach ( T item in skip )
+        if ( item.Equals(result) )
+          result = result.Previous(skip);
       return result;
     }
 

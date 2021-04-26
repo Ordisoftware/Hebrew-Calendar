@@ -40,7 +40,7 @@
       this.LabelStartDay = new System.Windows.Forms.Label();
       this.LabelEndDay = new System.Windows.Forms.Label();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
-      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
       this.SuspendLayout();
       // 
       // LabelTitle
@@ -80,7 +80,7 @@
       // LabelStartTime
       // 
       resources.ApplyResources(this.LabelStartTime, "LabelStartTime");
-      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
       this.LabelStartTime.Name = "LabelStartTime";
       // 
       // ActionSetup
@@ -95,25 +95,25 @@
       // LabelEndTime
       // 
       resources.ApplyResources(this.LabelEndTime, "LabelEndTime");
-      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
       this.LabelEndTime.Name = "LabelEndTime";
       // 
       // LabelArrow
       // 
       resources.ApplyResources(this.LabelArrow, "LabelArrow");
-      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
       this.LabelArrow.Name = "LabelArrow";
       // 
       // LabelStartDay
       // 
       resources.ApplyResources(this.LabelStartDay, "LabelStartDay");
-      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
       this.LabelStartDay.Name = "LabelStartDay";
       // 
       // LabelEndDay
       // 
       resources.ApplyResources(this.LabelEndDay, "LabelEndDay");
-      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
       this.LabelEndDay.Name = "LabelEndDay";
       // 
       // LabelParashahValue
@@ -151,7 +151,7 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
       this.Click += new System.EventHandler(this.Form_Click);
-      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

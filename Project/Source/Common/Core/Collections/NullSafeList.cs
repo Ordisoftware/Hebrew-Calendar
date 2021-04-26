@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide null safe list.
   /// </summary>
   [Serializable]
-  partial class NullSafeList<T> : List<T> 
+  partial class NullSafeList<T> : List<T>
     where T : class
   {
 
