@@ -315,6 +315,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 >- Improve auto-lock session box.
 - Improve parashot form to ensure visibility of the current one when opening.
 - Set web check update timeout to 5s.
+- Code refactoring and quality improvement.
 
 #### 2021.04.15 - Version 7.1
 
