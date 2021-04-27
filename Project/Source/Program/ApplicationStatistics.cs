@@ -31,6 +31,9 @@ namespace Ordisoftware.Hebrew.Calendar
     public string StartingTime
       => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
 
+    public string TranslateTime
+      => Program.Settings.BenchmarkTranslate.FormatMilliseconds();
+
     public string LoadDataTime
       => Program.Settings.BenchmarkLoadData.FormatMilliseconds();
 

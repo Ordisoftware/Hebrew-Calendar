@@ -64,7 +64,8 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate StopWatches.
     /// </summary>
-    static public readonly Stopwatch ChronoLoadApp = new Stopwatch();
+    static public readonly Stopwatch ChronoStartingApp = new Stopwatch();
+    static public readonly Stopwatch ChronoTranslate = new Stopwatch();
     static public readonly Stopwatch ChronoLoadData = new Stopwatch();
     static public readonly Stopwatch ChronoCreateData = new Stopwatch();
     static public readonly Stopwatch ChronoShowData = new Stopwatch();

@@ -214,6 +214,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public void UpdateLocalization()
     {
+      Globals.ChronoTranslate.Restart();
       try
       {
         void update(Form form)
@@ -276,6 +277,11 @@ namespace Ordisoftware.Hebrew.Calendar
       catch ( Exception ex )
       {
         ex.Manage();
+      }
+      finally
+      {
+        Globals.ChronoTranslate.Stop();
+        Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }
     }
 
