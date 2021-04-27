@@ -140,6 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+      ToolStrip.SetDropDownOpening();
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
       MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);

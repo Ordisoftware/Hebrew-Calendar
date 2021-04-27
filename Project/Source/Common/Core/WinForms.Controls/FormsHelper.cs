@@ -262,6 +262,41 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Ensure drop down menu items are displayed on the same screen.
+    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
+    /// </summary>
+    static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
+    {
+      if ( action == null ) action = MenuItemDropDownOpening;
+      var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>().ToList();
+      var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+      items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+      items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+    }
+
+    /// <summary>
+    /// Ensure drop down menu items are displayed on the same screen.
+    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
+    /// </summary>
+    static public void MenuItemDropDownOpening(object sender, EventArgs e)
+    {
+      ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+      if ( menuItem == null || !menuItem.HasDropDownItems ) return;
+      Rectangle Bounds = menuItem.GetCurrentParent().Bounds;
+      Screen CurrentScreen = Screen.FromPoint(Bounds.Location);
+      int MaxWidth = 0;
+      foreach ( var subitem in menuItem.DropDownItems.OfType<ToolStripMenuItem>() )
+        MaxWidth = Math.Max(subitem.Width, MaxWidth);
+      MaxWidth += 10;
+      int FarRight = Bounds.Right + MaxWidth;
+      int CurrentMonitorRight = CurrentScreen.Bounds.Right;
+      if ( FarRight > CurrentMonitorRight )
+        menuItem.DropDownDirection = ToolStripDropDownDirection.Left;
+      else
+        menuItem.DropDownDirection = ToolStripDropDownDirection.Right;
+    }
+
+    /// <summary>
     /// Duplicate menu subitems.
     /// </summary>
     static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination, bool noshortcuts = true)
