@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew
       SuspendLayout();
       try
       {
-        // TODO calculate buttons and labels size from fonts size
+        // TODO calculate buttons and labels size from fonts size at startup and future setting changed
         PanelLetters.Controls.Clear();
         int countLetters = HebrewAlphabet.Codes.Length;
         int countControls = countLetters;

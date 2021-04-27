@@ -91,7 +91,6 @@ namespace Ordisoftware.Hebrew.Calendar
                     }
                     catch ( Exception ex )
                     {
-                      // TODO add in errors list instead
                       ex.Manage();
                     }
         }
@@ -191,7 +190,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private TimeSpan? DelayMoonrise;
     private bool isMoonriseDelayed;
-    //TODO remove? private LunisolarDaysRow DelayPreviousRow;
 
     /// <summary>
     /// Initialize a day.
@@ -211,7 +209,6 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !CalendarDates.Instance[date.AddDays(1)].Ephemerisis.Moonrise.HasValue )
           if ( ephemeris.Moonrise == new TimeSpan(0) )
           {
-            //TODO remove? DelayPreviousRow = day;
             DelayMoonrise = ephemeris.Moonrise;
             ephemeris.Moonrise = null;
             isMoonriseDelayed = true;
@@ -393,10 +390,6 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         var equinoxe = DataSet.LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = equinoxe.DateAsDateTime;
-        // TODO not used ? 
-        //int deltaNewLambDay = dateEquinox.Day - TorahCelebrations.NewLambDay;
-        //bool newEquinoxe = ( dayDate.Month == dateEquinox.Month && dayDate.Day >= deltaNewLambDay )
-        //                || ( dayDate.Month == dateEquinox.Month + 1 );
         int monthExuinoxe = dateEquinox.Month;
         int dayEquinoxe = dateEquinox.Day - TorahCelebrations.NewLambDay;
         if ( dayEquinoxe < 1 )

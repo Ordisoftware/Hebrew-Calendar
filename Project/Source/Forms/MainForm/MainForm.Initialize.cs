@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable ) // TODO remove when ready
+      if ( !Globals.IsDevExecutable ) // TODO remove when lunarmonths will be ready
       {
         ActionViewLunarMonths.Visible = false;
         ActionViewLunarMonths.Tag = int.MinValue;
@@ -203,7 +203,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewCelebrationsBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
         ActionViewNewMoonsBoard.PerformClick();
-      // TODO enable when ready and update keys and faq
+      // TODO enable lunarmonths when ready and update keys and faq
       //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
       //ActionViewLunarMonths.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
