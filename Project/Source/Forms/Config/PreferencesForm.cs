@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when ready
+      ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when dark theme will be ready
     }
 
     /// <summary>
