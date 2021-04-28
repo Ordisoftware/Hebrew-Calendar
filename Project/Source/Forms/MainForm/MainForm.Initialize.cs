@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void DoConstructor()
     {
-      Globals.ChronoLoadApp.Start();
+      Globals.ChronoStartingApp.Start();
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
@@ -86,7 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
           Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         });
-      Globals.ChronoLoadApp.Stop();
+      Globals.ChronoStartingApp.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
@@ -98,7 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.Exit();
         return;
       }
-      Globals.ChronoLoadApp.Start();
+      Globals.ChronoStartingApp.Start();
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
@@ -152,9 +152,9 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionPreferences.PerformClick();
       SystemManager.TryCatch(Settings.Save);
-      Globals.ChronoLoadApp.Stop();
-      Settings.BenchmarkStartingApp = Globals.ChronoLoadApp.ElapsedMilliseconds;
-      Globals.ChronoLoadApp.Start();
+      Globals.ChronoStartingApp.Stop();
+      Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
+      Globals.ChronoStartingApp.Start();
       TimerBallon.Interval = Settings.BalloonLoomingDelay;
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
@@ -176,7 +176,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SetGlobalHotKey();
       TimerUpdateTitles.Start();
       TimerUpdateTitles_Tick(null, null);
-      Globals.ChronoLoadApp.Stop();
+      Globals.ChronoStartingApp.Stop();
       ProcessNewsAndCommandLine();
     }
 

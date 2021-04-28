@@ -76,6 +76,7 @@
       System.Windows.Forms.Label LabelCompiled;
       System.Windows.Forms.Label dBCommonFileSizeLabel;
       System.Windows.Forms.Label dBParashotMemorySizeLabel;
+      System.Windows.Forms.Label translateTimeLabel;
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionScreenshot = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
@@ -143,6 +144,7 @@
       this.EditFolderApplication = new Ordisoftware.Core.TextBoxEx();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
       this.PanelFolders = new System.Windows.Forms.Panel();
+      this.translateTimeLabel1 = new System.Windows.Forms.Label();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -189,9 +191,10 @@
       LabelCompiled = new System.Windows.Forms.Label();
       dBCommonFileSizeLabel = new System.Windows.Forms.Label();
       dBParashotMemorySizeLabel = new System.Windows.Forms.Label();
+      translateTimeLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ApplicationStatisticsDataBindingSource ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.SystemStatisticsDataBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).BeginInit();
       this.GroupBoxTimings.SuspendLayout();
       this.GroupBoxDatabase.SuspendLayout();
       this.GroupBoxMemory.SuspendLayout();
@@ -649,6 +652,8 @@
       // 
       // GroupBoxTimings
       // 
+      this.GroupBoxTimings.Controls.Add(this.translateTimeLabel1);
+      this.GroupBoxTimings.Controls.Add(translateTimeLabel);
       this.GroupBoxTimings.Controls.Add(generateTextReportTimeLabel);
       this.GroupBoxTimings.Controls.Add(this.generateTextReportTimeLabel1);
       this.GroupBoxTimings.Controls.Add(generatePopulateDaysTimeLabel);
@@ -965,6 +970,17 @@
       resources.ApplyResources(this.PanelFolders, "PanelFolders");
       this.PanelFolders.Name = "PanelFolders";
       // 
+      // translateTimeLabel1
+      // 
+      resources.ApplyResources(this.translateTimeLabel1, "translateTimeLabel1");
+      this.translateTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "TranslateTime", true));
+      this.translateTimeLabel1.Name = "translateTimeLabel1";
+      // 
+      // translateTimeLabel
+      // 
+      resources.ApplyResources(translateTimeLabel, "translateTimeLabel");
+      translateTimeLabel.Name = "translateTimeLabel";
+      // 
       // StatisticsForm
       // 
       resources.ApplyResources(this, "$this");
@@ -982,8 +998,8 @@
       this.Load += new System.EventHandler(this.SystemStatisticsForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.ApplicationStatisticsDataBindingSource ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.SystemStatisticsDataBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ApplicationStatisticsDataBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.SystemStatisticsDataBindingSource)).EndInit();
       this.GroupBoxTimings.ResumeLayout(false);
       this.GroupBoxTimings.PerformLayout();
       this.GroupBoxDatabase.ResumeLayout(false);
@@ -1074,5 +1090,6 @@
     private System.Windows.Forms.Label LabelCompiled1;
     private System.Windows.Forms.Label dBCommonFileSizeLabel1;
     private System.Windows.Forms.Label dBParashotMemorySizeLabel1;
+    private System.Windows.Forms.Label translateTimeLabel1;
   }
 }

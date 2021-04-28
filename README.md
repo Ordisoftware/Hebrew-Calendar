@@ -57,31 +57,29 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version**
 
-- Added the weekly parashah in the shabat reminder box.
-- Added a [--resetreminder] command-line option.
-- Some tray icons and UI/UX fixes and improvements.
+- Maintenance release.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
 ## Screenshots
 
-[![](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en.png)
+[![Month view](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Text report view](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en-282x300.png)](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en-464x300.png)](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en.png)
+[![Next celebrations](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en-282x300.png)](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Parashot board](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en-464x300.png)](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en-300x206.png)](https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en-356x206.png)](https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en.png)
+[![Celebrations board](https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en-300x206.png)](https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![New moons board](https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en-356x206.png)](https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en-254x300.png)](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en-349x300.png)](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en.png)
+[![Navigation window](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en-254x300.png)](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Dates diff calculator](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en-349x300.png)](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en.png)
+[![Reminder box celebration](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Reminder box shabat](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;
+[![Lock session box](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;
 
-[![](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png)
+[![Prefences window 1](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 2](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
+[![Prefences window 3(https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 4](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
 
-[![](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
+[![Prefences window 5(https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Export box](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
 
 ## Videos
 
@@ -313,7 +311,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 7.2
 
-- Maintenance release.
 - Improve parashot form to ensure visibility of the current one when opening.
 - Improve web check update timeout to 5s.
 - Fix drop down menus shown on another monitor instead of the same screen.

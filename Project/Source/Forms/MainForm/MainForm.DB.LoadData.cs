@@ -71,10 +71,10 @@ namespace Ordisoftware.Hebrew.Calendar
               }
               catch ( Exception ex )
               {
-                Globals.ChronoLoadApp.Stop();
+                Globals.ChronoStartingApp.Stop();
                 string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
                 DisplayManager.ShowWarning(msg);
-                Globals.ChronoLoadApp.Start();
+                Globals.ChronoStartingApp.Start();
               }
             if ( !isTextReportLoaded )
               CalendarText.Text = GenerateReportText();
@@ -83,9 +83,9 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          Globals.ChronoLoadApp.Stop();
+          Globals.ChronoStartingApp.Stop();
           PreferencesForm.Run();
-          Globals.ChronoLoadApp.Start();
+          Globals.ChronoStartingApp.Start();
           string errors = CheckRegenerateCalendar(true);
           if ( errors != null )
           {
@@ -96,11 +96,11 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch ( Exception ex )
       {
-        Globals.ChronoLoadApp.Stop();
+        Globals.ChronoStartingApp.Stop();
         ex.Manage();
         DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
                                         SysTranslations.ContactSupport[Language.FR]);
-        Globals.ChronoLoadApp.Start();
+        Globals.ChronoStartingApp.Start();
       }
       finally
       {
@@ -117,9 +117,9 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch ( Exception ex )
         {
-          Globals.ChronoLoadApp.Stop();
+          Globals.ChronoStartingApp.Stop();
           ex.Manage();
-          Globals.ChronoLoadApp.Start();
+          Globals.ChronoStartingApp.Start();
         }
         try
         {
@@ -129,9 +129,9 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch ( Exception ex )
         {
-          Globals.ChronoLoadApp.Stop();
+          Globals.ChronoStartingApp.Stop();
           ex.Manage();
-          Globals.ChronoLoadApp.Start();
+          Globals.ChronoStartingApp.Start();
         }
         Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
         Settings.Save();
