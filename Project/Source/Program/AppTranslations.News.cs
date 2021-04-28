@@ -210,7 +210,14 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.FR] = "Ajout de la parashah de la semaine dans la boite de rappel du shabat." + Globals.NL +
                           "Ajout d'une option de ligne de commande [--resetreminder]." + Globals.NL +
                           "Quelques corrections et amélioration de la tray icon et de l'UI/UX."
-        }
+        },
+
+        ["7.2"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Maintenance release.",
+
+          [Language.FR] = "Mise à jour de maintenance."
+        },
 
       };
 
