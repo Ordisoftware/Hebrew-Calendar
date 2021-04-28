@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelViewGrid.Parent = null;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
-      Globals.ChronoCreateData.Start();
+      Globals.ChronoCreateData.Restart();
       try
       {
         UpdateButtons();

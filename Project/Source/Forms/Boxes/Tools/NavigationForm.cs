@@ -191,6 +191,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
     {
+      MainForm.Instance.TimerBallon.Stop();
       e.Cancel = true;
       Hide();
     }

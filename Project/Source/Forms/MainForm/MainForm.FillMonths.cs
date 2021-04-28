@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public void FillMonths()
     {
-      Globals.ChronoShowData.Start();
+      Globals.ChronoShowData.Restart();
       try
       {
         InitializeYearsInterval();
