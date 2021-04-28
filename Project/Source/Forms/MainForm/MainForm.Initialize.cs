@@ -43,7 +43,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void DoConstructor()
     {
-      Globals.ChronoStartingApp.Start();
       InitializeComponent();
       SoundItem.Initialize();
       SystemEvents.SessionEnding += SessionEnding;
@@ -144,16 +143,25 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
       MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+      Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                             AppTranslations.NoticeKeyboardShortcuts,
+                                                             true, false, 410, 745, false, false);
+      Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
+      Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
       Globals.IsReady = true;
+      SetGlobalHotKey();
+      TimerUpdateTitles.Start();
+      TimerUpdateTitles_Tick(null, null);
       UpdateButtons();
       GoToDate(DateTime.Today);
+      Globals.ChronoStartingApp.Stop();
+      Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
       bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
       CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionPreferences.PerformClick();
       SystemManager.TryCatch(Settings.Save);
-      Globals.ChronoStartingApp.Stop();
-      Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
       TimerBallon.Interval = Settings.BalloonLoomingDelay;
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
@@ -166,15 +174,6 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LockSessionForm.Instance?.Visible ?? false )
           LockSessionForm.Instance.Popup();
       });
-      Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                             AppTranslations.NoticeKeyboardShortcuts,
-                                                             true, false, 410, 745, false, false);
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
-      SetGlobalHotKey();
-      TimerUpdateTitles.Start();
-      TimerUpdateTitles_Tick(null, null);
       ProcessNewsAndCommandLine();
     }
 
