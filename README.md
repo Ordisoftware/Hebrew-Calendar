@@ -309,7 +309,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 7.2
+#### 2021.04.30 - Version 7.2
 
 - Improve parashot form to ensure visibility of the current one when opening.
 - Improve web check update timeout to 5s.
