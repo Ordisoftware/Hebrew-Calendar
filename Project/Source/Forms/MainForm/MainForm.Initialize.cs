@@ -154,7 +154,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(Settings.Save);
       Globals.ChronoStartingApp.Stop();
       Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
-      Globals.ChronoStartingApp.Start();
       TimerBallon.Interval = Settings.BalloonLoomingDelay;
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
@@ -176,7 +175,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SetGlobalHotKey();
       TimerUpdateTitles.Start();
       TimerUpdateTitles_Tick(null, null);
-      Globals.ChronoStartingApp.Stop();
       ProcessNewsAndCommandLine();
     }
 
