@@ -1419,7 +1419,7 @@
     private System.Windows.Forms.TabPage TabPageMonth;
     public global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     public System.Windows.Forms.Panel PanelViewMonth;
-    private System.Windows.Forms.Timer TimerBallon;
+    internal System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerTrayMouseMove;
     public System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuPreferences;
