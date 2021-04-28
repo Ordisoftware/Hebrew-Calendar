@@ -314,6 +314,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve parashot form to ensure visibility of the current one when opening.
 - Improve web check update timeout to 5s.
 - Fix drop down menus shown on another monitor instead of the same screen.
+- Fix tray balloon is redisplayed if not auto-hidden and closed too quickly.
 - Code refactoring and quality improvement.
 
 #### 2021.04.15 - Version 7.1
