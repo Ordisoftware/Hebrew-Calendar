@@ -38,6 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
+        Globals.ChronoStartingApp.Start();
         Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
         Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
         Application.EnableVisualStyles();
@@ -59,7 +60,9 @@ namespace Ordisoftware.Hebrew.Calendar
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
         UpdateLocalization();
+        Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
+        Globals.ChronoStartingApp.Start();
       }
       catch ( Exception ex )
       {
