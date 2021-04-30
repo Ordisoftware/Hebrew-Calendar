@@ -36,6 +36,7 @@ namespace Ordisoftware.Core
     private int CurrentQuanta;
 
     public event Action Progressing;
+    public bool CancelRequired { get; set; }
 
     private LoadingForm()
     {
@@ -53,8 +54,17 @@ namespace Ordisoftware.Core
       LabelTitle.Text = Globals.AssemblyTitle;
     }
 
-    public void Initialize(string text, int count, int minimum = 0, bool quantify = true, int quantaTotal = QuantaTotalDefault)
+    public void Initialize(string text,
+                           int count,
+                           int minimum = 0,
+                           bool quantify = true,
+                           int quantaTotal = QuantaTotalDefault,
+                           bool showCounter = false,
+                           bool canCancel = false)
     {
+      CancelRequired = false;
+      ActionCancel.Visible = canCancel;
+      LabelCount.Visible = showCounter;
       QuantaTotal = quantaTotal;
       this.CenterToMainFormElseScreen();
       if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
@@ -70,6 +80,7 @@ namespace Ordisoftware.Core
       ProgressBar.Maximum = UseQuanta ? QuantaTotal - 1 : count - 1;
       ProgressBar.Refresh();
       LabelOperation.Text = text;
+      LabelCount.Text = LabelCount.Visible ? $"{minimum}/{count}" : string.Empty;
       Refresh();
       Application.DoEvents();
     }
@@ -91,16 +102,23 @@ namespace Ordisoftware.Core
           ProgressBar.PerformStep();
         else
           ProgressBar.Value = index;
+        if ( LabelCount.Visible ) LabelCount.Text = $"{ProgressBar.Value}/{ProgressBar.Maximum}";
         ProgressBar.Refresh();
         Refresh();
       }
       SystemManager.TryCatchManage(() => Progressing?.Invoke());
+      if ( ActionCancel.Visible ) Application.DoEvents();
     }
 
     public void SetProgress(int index)
     {
       ProgressBar.Value = index > ProgressBar.Maximum ? ProgressBar.Maximum : index;
       ProgressBar.Refresh();
+    }
+
+    private void ActionCancel_Click(object sender, EventArgs e)
+    {
+      CancelRequired = true;
     }
 
   }
