@@ -103,13 +103,6 @@ namespace Ordisoftware.Core
       return result;
     }
 
-
-
-
-
-
-
-
     /// <summary>
     /// Show a question.
     /// </summary>
