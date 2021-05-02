@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -80,8 +80,7 @@ namespace Ordisoftware.Core
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }
-      else
-        Width = width;
+      MinimumSize = new Size(width, MinimumSize.Height);
       MaximumSize = new Size(width, MaximumSize.Height);
       Label.MaximumSize = new Size(LabelMaxWidth, Label.MaximumSize.Height);
       Justify = justify;
@@ -142,6 +141,7 @@ namespace Ordisoftware.Core
       TopMost = LoadingForm.Instance.Visible || Application.OpenForms.All().Any(f => f.Visible && f.TopMost);
       if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
       this.Popup();
+      this.ForceBringToFront();
     }
 
     private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)

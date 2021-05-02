@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -26,14 +26,34 @@ namespace Ordisoftware.Core
   static partial class NativeMethods
   {
 
-    // WorkStation
+    #region WorkStation
 
     [DllImport("user32.dll", SetLastError = true)]
     static public extern bool LockWorkStation();
 
-    // Windows
+    [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    static public extern EXECUTIONSTATE SetThreadExecutionState(EXECUTIONSTATE esFlags);
 
-    public const int MAX_PATH = 260;
+    [Flags]
+    public enum EXECUTIONSTATE : uint
+    {
+      EsAwaymodeRequired = 0x00000040,
+      EsContinuous = 0x80000000,
+      EsDisplayRequired = 0x00000002,
+      EsSystemRequired = 0x00000001
+    }
+
+    static public EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous 
+                                               | EXECUTIONSTATE.EsSystemRequired 
+                                               | EXECUTIONSTATE.EsAwaymodeRequired;
+
+    static public EXECUTIONSTATE SleepAllow = EXECUTIONSTATE.EsContinuous;
+
+    #endregion
+
+    #region Windows
+
+  public const int MAX_PATH = 260;
 
     public const uint SW_RESTORE = 0x09;
 
@@ -102,7 +122,9 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll")]
     static public extern int ShowWindow(IntPtr hWnd, uint Msg);
 
-    // WinMedia
+    #endregion
+
+    #region WinMedia
 
     public const int WM_APPCOMMAND = 0x319;
     public const int APPCOMMAND_VOLUME_MUTE = 0x80000;
@@ -110,7 +132,9 @@ namespace Ordisoftware.Core
     [DllImport("winmm.dll", CharSet = CharSet.Unicode)]
     static public extern uint mciSendString(string command, StringBuilder returnValue, int returnLength, IntPtr winHandle);
 
-    // Screensaver
+    #endregion
+
+    #region Screensaver
 
     public const int WM_SYSCOMMAND = 0x0112;
     public const int SC_SCREENSAVE = 0xF140;
@@ -125,13 +149,17 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll")]
     static public extern IntPtr GetForegroundWindow();
 
-    // Clipboard
+    #endregion
+
+    #region Clipboard
 
     [DllImport("User32.dll", CharSet = CharSet.Auto)]
     static public extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
     static public IntPtr ClipboardViewerNext { get; set; }
 
-    // Taskbar
+    #endregion
+
+    #region Taskbar
 
     public const int ABM_GETTASKBARPOS = 5;
 
@@ -148,7 +176,10 @@ namespace Ordisoftware.Core
     [DllImport("shell32.dll")]
     public static extern IntPtr SHAppBarMessage(int msg, ref APPBARDATA data);
 
-    // Shell icons
+    #endregion
+
+    #region Shell icons
+
     // https://stackoverflow.com/questions/1309738/how-do-i-get-an-image-for-the-various-messageboximages-or-messageboxicons#25429905
 
     public enum SHSTOCKICONID : uint
@@ -276,7 +307,9 @@ namespace Ordisoftware.Core
     [DllImport("Shell32.dll", SetLastError = false)]
     static public extern Int32 SHGetStockIconInfo(SHSTOCKICONID siid, SHGSI uFlags, ref SHSTOCKICONINFO psii);
 
-    // RichTextBox
+    #endregion
+
+    #region RichTextBox
 
     // Constants from the Platform SDK.
     public const int EM_SETEVENTMASK = 1073;
@@ -327,6 +360,8 @@ namespace Ordisoftware.Core
 
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
     static public extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
+
+    #endregion
 
   }
 

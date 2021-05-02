@@ -63,27 +63,6 @@ namespace Ordisoftware.Core
       => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
 
     /// <summary>
-    /// Create IPC server instance.
-    /// </summary>
-    static public void CreateIPCServer(AsyncCallback ipcRequests)
-    {
-      try
-      {
-        IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
-                                              PipeDirection.InOut,
-                                              1,
-                                              PipeTransmissionMode.Message,
-                                              PipeOptions.Asynchronous);
-        IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
-      }
-      catch ( Exception ex )
-      {
-        IPCServer = null;
-        ex.Manage();
-      }
-    }
-
-    /// <summary>
     /// Check if the process is already running.
     /// </summary>
     static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
@@ -113,6 +92,28 @@ namespace Ordisoftware.Core
       {
         ex.Manage();
         return false;
+      }
+    }
+
+    /// <summary>
+    /// Create IPC server instance.
+    /// </summary>
+    static public void CreateIPCServer(AsyncCallback ipcRequests)
+    {
+      if ( ipcRequests == null ) return;
+      try
+      {
+        IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
+                                              PipeDirection.InOut,
+                                              1,
+                                              PipeTransmissionMode.Message,
+                                              PipeOptions.Asynchronous);
+        IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
+      }
+      catch ( Exception ex )
+      {
+        IPCServer = null;
+        ex.Manage();
       }
     }
 

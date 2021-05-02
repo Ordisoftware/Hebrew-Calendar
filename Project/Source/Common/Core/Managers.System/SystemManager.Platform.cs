@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -31,6 +31,16 @@ namespace Ordisoftware.Core
   /// </summary>
   static partial class SystemManager
   {
+
+    static public void PreventSleep()
+    {
+      NativeMethods.SetThreadExecutionState(NativeMethods.SleepDisallow);
+    }
+
+    static public void AllowSleep()
+    {
+      NativeMethods.SetThreadExecutionState(NativeMethods.SleepAllow);
+    }
 
     static public bool CanStandby => true;
 
