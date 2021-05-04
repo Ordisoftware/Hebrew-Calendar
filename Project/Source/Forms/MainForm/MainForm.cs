@@ -212,10 +212,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !TrayIconCanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
         if ( !Visible || !Settings.BalloonOnlyIfMainFormIsHidden )
-        {
-          // TODO check if mouse is over tray icon else don't show
-          ActionNavigate_Click(null, null);
-        }
+          if ( Cursor.Position == TrayIconMouse )
+            ActionNavigate_Click(null, null);
     }
 
     #endregion
