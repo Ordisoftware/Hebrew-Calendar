@@ -122,6 +122,10 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll")]
     static public extern int ShowWindow(IntPtr hWnd, uint Msg);
 
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    static public extern bool GetCursorPos(out System.Drawing.Point lpPoint);
+
     #endregion
 
     #region WinMedia

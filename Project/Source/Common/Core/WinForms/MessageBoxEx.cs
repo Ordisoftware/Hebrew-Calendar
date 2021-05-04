@@ -80,7 +80,9 @@ namespace Ordisoftware.Core
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }
-      MinimumSize = new Size(width, MinimumSize.Height);
+      else
+        Width = width;
+      // This does not work: MinimumSize = new Size(width, MinimumSize.Height);
       MaximumSize = new Size(width, MaximumSize.Height);
       Label.MaximumSize = new Size(LabelMaxWidth, Label.MaximumSize.Height);
       Justify = justify;
