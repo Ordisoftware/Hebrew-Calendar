@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide input value box result.
   /// </summary>
-  public enum InputValueResult 
+  public enum InputValueResult
   {
 
     /// <summary>
@@ -39,5 +39,5 @@ namespace Ordisoftware.Core
     Modified,
 
   };
-  
+
 }

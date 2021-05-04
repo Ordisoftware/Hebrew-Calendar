@@ -84,13 +84,19 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="filePath">The file path.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
-    static public Process RunShell(string filePath, string arguments = "")
+    static public Process RunShell(string filePath, string arguments = "", bool asAdmin = false, ProcessWindowStyle style = ProcessWindowStyle.Normal)
     {
       var process = new Process();
       try
       {
         process.StartInfo.FileName = filePath;
         process.StartInfo.Arguments = arguments;
+        process.StartInfo.WindowStyle = style;
+        if ( asAdmin )
+        {
+          process.StartInfo.UseShellExecute = true;
+          process.StartInfo.Verb = "runas";
+        }
         process.Start();
         return process;
       }

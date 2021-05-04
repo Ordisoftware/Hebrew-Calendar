@@ -50,7 +50,7 @@ namespace Ordisoftware.Core
       // 
       // ActionOK
       // 
-      this.ActionOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.ActionOK.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Location = new System.Drawing.Point(79, 5);
       this.ActionOK.Name = "ActionOK";
@@ -62,7 +62,7 @@ namespace Ordisoftware.Core
       // 
       // ActionCancel
       // 
-      this.ActionCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.ActionCancel.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Location = new System.Drawing.Point(160, 5);
       this.ActionCancel.Name = "ActionCancel";
@@ -84,8 +84,8 @@ namespace Ordisoftware.Core
       // 
       // TextBox
       // 
-      this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+      this.TextBox.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+            | System.Windows.Forms.AnchorStyles.Right ) ) );
       this.TextBox.Location = new System.Drawing.Point(12, 29);
       this.TextBox.Name = "TextBox";
       this.TextBox.Size = new System.Drawing.Size(220, 20);

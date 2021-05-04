@@ -32,7 +32,9 @@
       this.Panel = new System.Windows.Forms.Panel();
       this.ProgressBar = new System.Windows.Forms.ProgressBar();
       this.LabelTitle = new System.Windows.Forms.Label();
+      this.LabelCount = new System.Windows.Forms.Label();
       this.LabelOperation = new System.Windows.Forms.Label();
+      this.ActionCancel = new System.Windows.Forms.Button();
       this.Panel.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -40,8 +42,10 @@
       // 
       this.Panel.BackColor = System.Drawing.Color.LemonChiffon;
       this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.Panel.Controls.Add(this.ActionCancel);
       this.Panel.Controls.Add(this.ProgressBar);
       this.Panel.Controls.Add(this.LabelTitle);
+      this.Panel.Controls.Add(this.LabelCount);
       this.Panel.Controls.Add(this.LabelOperation);
       resources.ApplyResources(this.Panel, "Panel");
       this.Panel.Name = "Panel";
@@ -57,10 +61,25 @@
       resources.ApplyResources(this.LabelTitle, "LabelTitle");
       this.LabelTitle.Name = "LabelTitle";
       // 
+      // LabelCount
+      // 
+      resources.ApplyResources(this.LabelCount, "LabelCount");
+      this.LabelCount.Name = "LabelCount";
+      // 
       // LabelOperation
       // 
       resources.ApplyResources(this.LabelOperation, "LabelOperation");
       this.LabelOperation.Name = "LabelOperation";
+      // 
+      // ActionCancel
+      // 
+      resources.ApplyResources(this.ActionCancel, "ActionCancel");
+      this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionCancel.FlatAppearance.BorderSize = 0;
+      this.ActionCancel.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.UseVisualStyleBackColor = true;
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
       // LoadingForm
       // 
@@ -85,5 +104,7 @@
     public System.Windows.Forms.ProgressBar ProgressBar;
     public System.Windows.Forms.Label LabelOperation;
     public System.Windows.Forms.Label LabelTitle;
+    public System.Windows.Forms.Label LabelCount;
+    private System.Windows.Forms.Button ActionCancel;
   }
 }

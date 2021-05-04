@@ -309,6 +309,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 7.3
+
+- Fix tray balloon is displayed before the looming delay when mouse is no more over the trayv icon if not auto-hidden.
+
 #### 2021.04.30 - Version 7.2
 
 - Improve parashot form to ensure visibility of the current one when opening.

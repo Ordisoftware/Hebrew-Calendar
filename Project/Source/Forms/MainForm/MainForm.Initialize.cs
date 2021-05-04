@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Data;
@@ -187,7 +188,9 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
           var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-          if ( menuItem != null ) menuItem.PerformClick();
+          if ( menuItem != null )
+            if ( ( (KeyValuePair<string, TranslationsDictionary>)menuItem.Tag ).Key == Globals.AssemblyVersion )
+              menuItem.PerformClick();
         });
       if ( ApplicationCommandLine.Instance.Generate )
         ActionGenerate.PerformClick();
