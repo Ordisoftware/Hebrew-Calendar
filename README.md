@@ -311,6 +311,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 7.3
 
+- Add context menu to study parashah in navigation and reminder boxes.
 - Fix tray balloon is displayed before the looming delay when mouse is no more over the trayv icon if not auto-hidden.
 
 #### 2021.04.30 - Version 7.2
