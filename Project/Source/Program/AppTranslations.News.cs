@@ -219,6 +219,13 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.FR] = "Mise à jour de maintenance."
         },
 
+        ["7.3"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Maintenance release.",
+
+          [Language.FR] = "Mise à jour de maintenance."
+        },
+
       };
 
   }

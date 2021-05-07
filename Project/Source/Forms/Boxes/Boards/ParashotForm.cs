@@ -108,6 +108,7 @@ namespace Ordisoftware.Hebrew
         var menuitem = (ToolStripMenuItem)sender;
         var parashah = ParashotTable.GetDefaultByID((string)CurrentDataBoundItem[nameof(Parashah.ID)]);
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
+        // TODO don't open linked unless it is the current weekly
       });
     }
 
