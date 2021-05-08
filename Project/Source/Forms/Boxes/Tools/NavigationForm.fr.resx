@@ -157,4 +157,10 @@
   <data name="LabelSunrise.Text" xml:space="preserve">
     <value>Coucher du soleil</value>
   </data>
+  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+    <value>Lire en ligne</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Étudier en ligne</value>
+  </data>
 </root>

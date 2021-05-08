@@ -374,11 +374,18 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     public void InitializeSpecialMenus()
     {
-      ActionOnlineParashah.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+      });
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;

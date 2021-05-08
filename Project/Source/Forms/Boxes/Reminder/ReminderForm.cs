@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -224,8 +224,8 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
-      if ( Image != null )
-        PictureBox.Image = Image;
+      if ( Image != null ) PictureBox.Image = Image;
+      InitializeMenu();
     }
 
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -244,6 +244,23 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ReminderForm_Shown(object sender, EventArgs e)
     {
       DoSound();
+    }
+
+    private void InitializeMenu()
+    {
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = (Parashah)LabelParashahValue.Tag;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+      });
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = (Parashah)LabelParashahValue.Tag;
+        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+      });
     }
 
     private void DoSound()
@@ -297,8 +314,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelParashahValue.Tag != null )
-        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
+      if ( e.Button == MouseButtons.Left )
+        if ( LabelParashahValue.Tag != null )
+          ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
 
   }

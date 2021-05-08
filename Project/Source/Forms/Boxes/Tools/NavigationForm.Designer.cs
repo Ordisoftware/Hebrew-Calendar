@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationForm));
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
@@ -60,10 +61,14 @@
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
       this.PanelBottom.SuspendLayout();
+      this.ContextMenuParashah.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelTop
@@ -119,6 +124,7 @@
       // 
       this.LabelParashahValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelParashahValue, "LabelParashahValue");
+      this.LabelParashahValue.ContextMenuStrip = this.ContextMenuParashah;
       this.LabelParashahValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelParashahValue.Name = "LabelParashahValue";
       this.LabelParashahValue.TabStop = true;
@@ -271,6 +277,24 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
+      // ContextMenuParashah
+      // 
+      this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionStudyOnline,
+            this.ActionOpenVerseOnline});
+      this.ContextMenuParashah.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      // 
+      // ActionStudyOnline
+      // 
+      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
+      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      // 
+      // ActionOpenVerseOnline
+      // 
+      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
+      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -290,8 +314,9 @@
       this.PanelTop.ResumeLayout(false);
       this.PanelMiddle.ResumeLayout(false);
       this.PanelMiddle.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
       this.PanelBottom.ResumeLayout(false);
+      this.ContextMenuParashah.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -328,5 +353,8 @@
     private System.Windows.Forms.Label LabelParashah;
     private System.Windows.Forms.Label LabelCurrentDay;
     private System.Windows.Forms.LinkLabel LabelCurrentDayValue;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
+    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
   }
 }

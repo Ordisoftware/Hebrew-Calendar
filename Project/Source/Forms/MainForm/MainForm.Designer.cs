@@ -162,6 +162,8 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
+      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -799,6 +801,9 @@
       // 
       // ActionOnlineParashah
       // 
+      this.ActionOnlineParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionStudyOnline,
+            this.ActionOpenVerseOnline});
       resources.ApplyResources(this.ActionOnlineParashah, "ActionOnlineParashah");
       this.ActionOnlineParashah.Name = "ActionOnlineParashah";
       // 
@@ -1187,6 +1192,16 @@
       this.TimerUpdateTitles.Interval = 60000;
       this.TimerUpdateTitles.Tick += new System.EventHandler(this.TimerUpdateTitles_Tick);
       // 
+      // ActionStudyOnline
+      // 
+      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
+      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      // 
+      // ActionOpenVerseOnline
+      // 
+      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
+      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
       // CalendarMonth
       // 
       this.CalendarMonth.AllowEditingEvents = false;
@@ -1526,6 +1541,8 @@
     internal System.Windows.Forms.ToolStripButton ActionViewCelebrations;
     private System.Windows.Forms.ToolStripMenuItem ActionOnlineParashah;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
   }
 }
 

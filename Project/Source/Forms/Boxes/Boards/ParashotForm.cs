@@ -92,6 +92,12 @@ namespace Ordisoftware.Hebrew
 
     private void InitializeMenu()
     {
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = ParashotTable.GetDefaultByID((string)CurrentDataBoundItem[nameof(Parashah.ID)]);
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
+      });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
@@ -102,13 +108,6 @@ namespace Ordisoftware.Hebrew
         var menuitem = (ToolStripMenuItem)sender;
         foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
           HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
-      });
-      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ParashotTable.GetDefaultByID((string)CurrentDataBoundItem[nameof(Parashah.ID)]);
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
-        // TODO don't open linked unless it is the current weekly
       });
     }
 

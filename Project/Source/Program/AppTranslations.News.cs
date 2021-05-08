@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -221,9 +221,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["7.3"] = new TranslationsDictionary
         {
-          [Language.EN] = "Maintenance release.",
+          [Language.EN] = "Improve weekly parashah menus.",
 
-          [Language.FR] = "Mise à jour de maintenance."
+          [Language.FR] = "Amélioration des menus de la parashah de la semaine."
         },
 
       };
