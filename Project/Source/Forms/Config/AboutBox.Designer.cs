@@ -77,6 +77,8 @@
       this.label18 = new System.Windows.Forms.Label();
       this.linkLabel19 = new System.Windows.Forms.LinkLabel();
       this.label19 = new System.Windows.Forms.Label();
+      this.label20 = new System.Windows.Forms.Label();
+      this.linkLabel20 = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -443,11 +445,27 @@
       resources.ApplyResources(this.label19, "label19");
       this.label19.Name = "label19";
       // 
+      // label20
+      // 
+      resources.ApplyResources(this.label20, "label20");
+      this.label20.Name = "label20";
+      // 
+      // linkLabel20
+      // 
+      this.linkLabel20.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel20, "linkLabel20");
+      this.linkLabel20.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel20.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel20.Name = "linkLabel20";
+      this.linkLabel20.TabStop = true;
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.label20);
+      this.Controls.Add(this.linkLabel20);
       this.Controls.Add(this.label15);
       this.Controls.Add(this.linkLabel15);
       this.Controls.Add(this.PanelBottom);
@@ -556,5 +574,7 @@
     private System.Windows.Forms.Label label19;
     public System.Windows.Forms.Button ActionViewStats;
     public System.Windows.Forms.Button ActionCheckUpdate;
+    private System.Windows.Forms.Label label20;
+    private System.Windows.Forms.LinkLabel linkLabel20;
   }
 }
