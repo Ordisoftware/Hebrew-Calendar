@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReminderForm));
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelDate = new System.Windows.Forms.LinkLabel();
@@ -40,7 +41,11 @@
       this.LabelStartDay = new System.Windows.Forms.Label();
       this.LabelEndDay = new System.Windows.Forms.Label();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+      this.ContextMenuParashah.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelTitle
@@ -80,7 +85,7 @@
       // LabelStartTime
       // 
       resources.ApplyResources(this.LabelStartTime, "LabelStartTime");
-      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelStartTime.Name = "LabelStartTime";
       // 
       // ActionSetup
@@ -95,35 +100,54 @@
       // LabelEndTime
       // 
       resources.ApplyResources(this.LabelEndTime, "LabelEndTime");
-      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelEndTime.Name = "LabelEndTime";
       // 
       // LabelArrow
       // 
       resources.ApplyResources(this.LabelArrow, "LabelArrow");
-      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelArrow.Name = "LabelArrow";
       // 
       // LabelStartDay
       // 
       resources.ApplyResources(this.LabelStartDay, "LabelStartDay");
-      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelStartDay.Name = "LabelStartDay";
       // 
       // LabelEndDay
       // 
       resources.ApplyResources(this.LabelEndDay, "LabelEndDay");
-      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelEndDay.Name = "LabelEndDay";
       // 
       // LabelParashahValue
       // 
       this.LabelParashahValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
       resources.ApplyResources(this.LabelParashahValue, "LabelParashahValue");
+      this.LabelParashahValue.ContextMenuStrip = this.ContextMenuParashah;
       this.LabelParashahValue.LinkColor = System.Drawing.Color.Navy;
       this.LabelParashahValue.Name = "LabelParashahValue";
       this.LabelParashahValue.TabStop = true;
       this.LabelParashahValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelParashahValue_LinkClicked);
+      // 
+      // ContextMenuParashah
+      // 
+      this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionStudyOnline,
+            this.ActionOpenVerseOnline});
+      this.ContextMenuParashah.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      // 
+      // ActionStudyOnline
+      // 
+      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
+      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      // 
+      // ActionOpenVerseOnline
+      // 
+      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
+      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
       // ReminderForm
       // 
@@ -151,7 +175,8 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
       this.Click += new System.EventHandler(this.Form_Click);
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+      this.ContextMenuParashah.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -169,5 +194,8 @@
     private System.Windows.Forms.Label LabelStartDay;
     private System.Windows.Forms.Label LabelEndDay;
     private System.Windows.Forms.LinkLabel LabelParashahValue;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
+    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
   }
 }

@@ -525,6 +525,12 @@
     <value>Tableau des Parashot</value>
   </data>
   <data name="ActionOnlineParashah.Text" xml:space="preserve">
-    <value>Parashah de la semaine en ligne</value>
+    <value>Parashah de la semaine</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+    <value>Lire en ligne</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Étudier en ligne</value>
   </data>
 </root>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -137,6 +137,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
+      InitializeMenu();
     }
 
     public void ShowPopup(bool bringToFront = false)
@@ -196,6 +197,23 @@ namespace Ordisoftware.Hebrew.Calendar
       Hide();
     }
 
+    private void InitializeMenu()
+    {
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = (Parashah)LabelParashahValue.Tag;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+      });
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var parashah = (Parashah)LabelParashahValue.Tag;
+        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+      });
+    }
+
     private void ActionSelectDay_Click(object sender, EventArgs e)
     {
       var date = DateTime.Today;
@@ -223,8 +241,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if ( LabelParashahValue.Tag != null )
-        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
+      if ( e.Button == MouseButtons.Left )
+        if ( LabelParashahValue.Tag != null )
+          ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
 
   }
