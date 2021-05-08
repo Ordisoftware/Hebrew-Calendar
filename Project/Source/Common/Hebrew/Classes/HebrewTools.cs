@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -161,8 +161,8 @@ namespace Ordisoftware.Hebrew
         return;
       }
       open(parashah);
-      if ( parashah.Linked != null )
-        open(parashah.Linked);
+      if ( parashah.Linked != null && openLinked ) open(parashah.Linked);
+      //
       void open(Parashah item)
       {
         string link = url.Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
