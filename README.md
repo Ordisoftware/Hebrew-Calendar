@@ -77,9 +77,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 [![Prefences window 1](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 2](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png)
 
-[![Prefences window 3(https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 4](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
+[![Prefences window 3](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 4](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
 
-[![Prefences window 5(https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Export box](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
+[![Prefences window 5](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Export box](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
 
 ## Videos
 
