@@ -221,7 +221,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["7.3"] = new TranslationsDictionary
         {
-          [Language.EN] = "Improve weekly parashah menus.",
+          [Language.EN] = "Improved weekly parashah menus.",
 
           [Language.FR] = "Amélioration des menus de la parashah de la semaine."
         },
