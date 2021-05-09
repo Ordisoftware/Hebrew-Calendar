@@ -147,7 +147,7 @@ namespace Ordisoftware.Core
         string filter = Globals.ApplicationExeFileName.Substring(0, 25) + "*";
         string filterold = filter.Replace("Hebrew.", "Hebrew");
         var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
-                   .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));
+                            .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));
         foreach ( var item in list )
           Directory.Delete(item, true);
       }
