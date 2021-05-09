@@ -313,7 +313,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add context menu to study and read online the weekly parashah in navigation and reminder boxes.
 - Improve the main form weekly parashah tools menu.
-- Fix tray balloon is displayed before the looming delay when mouse is no more over the trayv icon if not auto-hidden.
+- Fix tray balloon is displayed before the looming delay when mouse is no more over the tray icon if not auto-hidden.
 
 #### 2021.04.30 - Version 7.2
 
