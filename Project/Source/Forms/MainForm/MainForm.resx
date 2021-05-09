@@ -1974,11 +1974,11 @@
   <data name="ActionOnlineParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADqSURBVDhPpdMva0JRHIfxE10SbEsGg3FRsEywDwwGy4qC
-        zWoUfA1rC4uTFZsiupewtCzspfg8Bw9crt7tXveFT7jn9we9nBvOWeGAx/j0e+yx15mYe3xigBcP/og9
-        9jrjbPjCDEu8YoKiWLPHXmecDUes8YEdvvFewJo99jrjbCykPGCBJjo5nlmzJyXOXlvQxzzHs9ILzBhv
-        GSNUWnCHekYNpRc8w/Mszyr9gh6mGV1UWtCGty5pofSCf/0Fb1r+DiTWLhbs4Rs3T9ggfwcSa/YYZ5wN
-        Q/xgCz+QBopizR57nXE25sbPOYQTeYlP7iy1l/EAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVDhP7ZM9CsJAFITfGew8RY7gDQIW3iBgZ2speAa7
+        HCBiY6dI9AhW1oJ32APE+ZYXm2XjT+3AB5l9Mw8WsubairOYRDcsMmTpRI3FRUzFhoM3IkOWDl27ioVY
+        i1pUIidmZMjSoWt3sRc7cRI30WRgRoYsHbrWdC59F2LlNhEzMm7xLE0XhBD64Qs/+3yBF+Y9Xy1wm4gZ
+        Gbf5Bf8rWD1wBf7CZEHrnoNSHMQyA7PS4+RbYTPxEEfBAxmJnJiRIUuHbtSPz9nsCeZ9axu/jsT/AAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOnlineParashah.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
