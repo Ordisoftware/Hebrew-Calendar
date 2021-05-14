@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide null safe string list.
   /// </summary>
   [Serializable]
-  partial class NullSafeStringList : List<string>
+  public class NullSafeStringList : List<string>
   {
 
     public NullSafeStringList()

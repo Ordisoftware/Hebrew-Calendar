@@ -26,7 +26,7 @@ namespace Ordisoftware.Core
   /// Provide null safe of string dictionary.
   /// </summary>
   [Serializable]
-  partial class NullSafeOfStringDictionary<T> : Dictionary<T, string>
+  public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
   {
 
     public NullSafeOfStringDictionary()
@@ -76,7 +76,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide NullSafeOfStringDictionary helper.
   /// </summary>
-  static partial class NullSafeOfStringDictionaryHelper
+  static class NullSafeOfStringDictionaryHelper
   {
     static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
                                          string filePath,
