@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 
@@ -169,26 +169,20 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the application ODBC DSN of the database.
     /// </summary>
-    static public string DatabaseOdbcDSN
+    static public string ApplicationDatabaseOdbcDSN
       => ApplicationGitHubCode;
-
-    /// <summary>
-    /// Indicate the application database connection string.
-    /// </summary>
-    static public string ConnectionString
-      => "Dsn=" + DatabaseOdbcDSN;
 
     /// <summary>
     /// Indicate the file name of the application database.
     /// </summary>
-    static public string DatabaseFileName
-      => DatabaseOdbcDSN + DatabaseFileExtension;
+    static public string ApplicationDatabaseFileName
+      => ApplicationDatabaseOdbcDSN + DatabaseFileExtension;
 
     /// <summary>
     /// Indicate the file path of the application database.
     /// </summary>
-    static public string DatabaseFilePath
-      => Path.Combine(DatabaseFolderPath, DatabaseFileName);
+    static public string ApplicationDatabaseFilePath
+      => Path.Combine(DatabaseFolderPath, ApplicationDatabaseFileName);
 
     /// <summary>
     /// Indicate the common ODBC DSN of the database.
@@ -197,10 +191,10 @@ namespace Ordisoftware.Core
       => HebrewCommonDirectoryName.Replace(" ", "-");
 
     /// <summary>
-    /// Indicate the common database connection string.
+    /// Indicate the application database ODBC connection string.
     /// </summary>
-    static public string CommonConnectionString
-      => "Dsn=" + CommonDatabaseOdbcDSN;
+    static public string ApplicationOdbcConnectionString
+      => "Dsn=" + ApplicationDatabaseOdbcDSN;
 
     /// <summary>
     /// Indicate the file name of the common database.
@@ -213,6 +207,24 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string CommonDatabaseFilePath
       => Path.Combine(UserDataCommonFolderPath, CommonDatabaseFileName);
+
+    /// <summary>
+    /// Indicate the application database SQLite connection string.
+    /// </summary>
+    static public string ApplicationSQLiteConnectionString
+      => "Datasource=" + ApplicationDatabaseFilePath;
+
+    /// <summary>
+    /// Indicate the common database ODBC connection string.
+    /// </summary>
+    static public string CommonOdbcConnectionString
+      => "Dsn=" + CommonDatabaseOdbcDSN;
+
+    /// <summary>
+    /// Indicate the common database SQLite connection string.
+    /// </summary>
+    static public string CommonSQLiteConnectionString
+      => "Datasource=" + CommonDatabaseFilePath;
 
   }
 

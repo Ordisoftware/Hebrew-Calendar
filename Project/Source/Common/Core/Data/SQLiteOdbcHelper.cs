@@ -75,7 +75,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void CreateOrUpdateDSN()
     {
-      CreateOrUpdateDSN(Globals.DatabaseOdbcDSN, Globals.DatabaseFilePath);
+      CreateOrUpdateDSN(Globals.ApplicationDatabaseOdbcDSN, Globals.ApplicationDatabaseFilePath);
     }
 
     /// <summary>
@@ -90,7 +90,7 @@ namespace Ordisoftware.Core
         key = key.CreateSubKey("ODBC", true);
         key = key.CreateSubKey("ODBC.INI", true);
         key = key.CreateSubKey("ODBC Data Sources", true);
-        key.SetValue(Globals.DatabaseOdbcDSN, "SQLite3 ODBC Driver");
+        key.SetValue(Globals.ApplicationDatabaseOdbcDSN, "SQLite3 ODBC Driver");
         key = Registry.CurrentUser.OpenSubKey(@"Software\ODBC\ODBC.INI", true);
         key = key.CreateSubKey(dsnName);
         key.SetValue("Driver", Globals.SQLiteSystemDLLFilePath);
