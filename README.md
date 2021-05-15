@@ -309,6 +309,13 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 8.0
+
+- Optimize overall performances.
+- Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Code refactoring and quality improvement.
+- Some UI improvements.
+
 #### 2021.05.09 - Version 7.3
 
 - Add context menu to study and read online the weekly parashah in navigation and reminder boxes.
