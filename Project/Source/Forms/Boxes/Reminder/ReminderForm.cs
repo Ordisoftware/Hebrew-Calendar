@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -40,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    static public void Run(LunisolarDaysRow row, TorahEvent torahevent, ReminderTimes times)
+    static public void Run(LunisolarDay row, TorahEvent torahevent, ReminderTimes times)
     {
       bool isShabat = torahevent == TorahEvent.Shabat;
       bool doLockSession = false;
@@ -68,33 +67,33 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !isShabat )
         {
           foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
-            if ( (string)item.Value.Tag == row.Date )
+            if ( (DateTime)item.Value.Tag == row.Date )
               return;
           foreach ( var item in MainForm.Instance.RemindCelebrationForms )
-            if ( (string)item.Tag == row.Date )
+            if ( (DateTime)item.Tag == row.Date )
             {
               Flash(item);
               return;
             }
         }
         form = new ReminderForm();
-        var date = row.DateAsDateTime;
+        var date = row.Date;
         form.LabelTitle.Text = isShabat
                                ? "Shabat"
                                : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
-                                                                    ? row.TorahEventsAsEnum
+                                                                    ? row.TorahEvent
                                                                     : torahevent);
         form.LabelDate.Text = isShabat
                               ? date.ToLongDateString().Titleize()
                               : row.DayAndMonthWithYearText;
         if ( times.DateStart != null && times.DateEnd != null )
         {
-          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.Value.DayOfWeek) + " " + times.TimeStart;
-          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.Value.DayOfWeek) + " " + times.TimeEnd;
+          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart;
+          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd;
           if ( Program.Settings.ReminderBoxShowFullDates )
           {
-            form.LabelStartDay.Text = times.DateStart.Value.ToString("d MMM yyyy");
-            form.LabelEndDay.Text = times.DateEnd.Value.ToString("d MMM yyyy");
+            form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
+            form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
           }
           else
             form.Height -= form.LabelStartDay.Height;
@@ -118,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( rowParashah != null )
             {
               form.LabelParashahValue.Text = rowParashah.ParashahText;
-              form.LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
+              form.LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
             }
           }
         }
@@ -135,7 +134,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( torahevent != TorahEvent.None )
         {
           foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
-            if ( (string)item.Tag == row.Date )
+            if ( (DateTime)item.Tag == row.Date )
             {
               item.Close();
               break;

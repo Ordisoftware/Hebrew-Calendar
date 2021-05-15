@@ -75,7 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ProcessLocksTable.Lock();
+      ProcessLocks.Lock();
       ReminderBoxDesktopLocation();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormShown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+      EditEnumsAsTranslations.Left = LunisolarDayBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
       ToolStrip.SetDropDownOpening();
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
@@ -276,7 +276,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsExiting = true;
         Globals.IsSessionEnding = true;
         Globals.AllowClose = true;
-        ProcessLocksTable.Unlock();
+        ProcessLocks.Unlock();
         Settings.Store();
         TimerTooltip.Stop();
         TimerBallon.Stop();
@@ -377,13 +377,13 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });

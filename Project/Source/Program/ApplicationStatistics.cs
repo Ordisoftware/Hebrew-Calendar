@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -85,12 +85,12 @@ namespace Ordisoftware.Hebrew.Calendar
     public string DBRecordsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : MainForm.Instance.DataSet.LunisolarDays.Count.ToString();
+         : ApplicationDatabase.Instance.LunisolarDays.Count.ToString();
 
     public string DBEventsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : MainForm.Instance.DataSet.LunisolarDays.Count(d => d.TorahEvents != 0 || d.SeasonChange != 0).ToString();
+         : ApplicationDatabase.Instance.LunisolarDays.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString();
 
     public string MonthViewEventsCount
       => Globals.IsGenerating
@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDBFileSizeRequired )
         {
           UpdateDBFileSizeRequired = false;
-          _DBFileSize = SystemManager.GetFileSize(Globals.DatabaseFilePath).FormatBytesSize().ToString();
+          _DBFileSize = SystemManager.GetFileSize(Globals.ApplicationDatabaseFilePath).FormatBytesSize().ToString();
         }
         return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBFileSize;
       }
@@ -125,7 +125,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDBMemorySizeRequired )
         {
           UpdateDBMemorySizeRequired = false;
-          _DBMemorySize = MainForm.Instance.DataSet.SizeOf().FormatBytesSize();
+          _DBMemorySize = ApplicationDatabase.Instance.LunisolarDays.SizeOf().FormatBytesSize();
         }
         return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBMemorySize;
       }
@@ -155,7 +155,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDDParashotMemorySizeRequired )
         {
           UpdateDDParashotMemorySizeRequired = false;
-          _DDParashotMemorySize = ParashotTable.DataTable?.SizeOf().FormatBytesSize()
+          _DDParashotMemorySize = HebrewDatabase.Instance.Parashot?.SizeOf().FormatBytesSize()
                                ?? SysTranslations.DatabaseTableClosed.GetLang();
         }
         return _DDParashotMemorySize;

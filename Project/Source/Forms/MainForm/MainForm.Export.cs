@@ -11,14 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.Serialization;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -30,8 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DateTime check(int year, int delta)
       {
-        var query = DataSet.LunisolarDays.Where(day => day.DateAsDateTime.Year == year && day.IsNewYear);
-        return query.FirstOrDefault()?.DateAsDateTime.AddDays(delta) ?? DateTime.MinValue;
+        var query = LunisolarDays.Where(day => day.Date.Year == year && day.IsNewYear);
+        return query.FirstOrDefault()?.Date.AddDays(delta) ?? DateTime.MinValue;
       }
       var interval = new ExportInterval();
       var available = ViewMode.None;
@@ -48,12 +47,12 @@ namespace Ordisoftware.Hebrew.Calendar
         after?.Invoke(view);
     }
 
-    private IEnumerable<LunisolarDaysRow> GetDayRows(ExportInterval interval)
+    private IEnumerable<LunisolarDay> GetDayRows(ExportInterval interval)
     {
-      if ( !interval.IsDefined ) return DataSet.LunisolarDays;
+      if ( !interval.IsDefined ) return LunisolarDays;
       string start = SQLiteDate.ToString(interval.Start.Value);
       string end = SQLiteDate.ToString(interval.End.Value);
-      return DataSet.LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
+      return LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
     }
 
     private IEnumerable<string> GetTextReportLines(ExportInterval interval)

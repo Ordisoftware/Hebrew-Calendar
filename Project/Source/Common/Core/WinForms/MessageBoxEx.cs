@@ -55,11 +55,11 @@ namespace Ordisoftware.Core
 
     public MessageBoxEx(string title,
                         string text,
-                        int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
+                        int width = DefaultSmallWidth,
                         bool justify = DefaultJustifyEnabled,
-                        bool doSound = true)
+                        bool sound = true)
       : this()
     {
       Text = title;
@@ -98,17 +98,17 @@ namespace Ordisoftware.Core
       this.CenterToFormElseMainFormElseScreen(ActiveForm);
       Instances.Add(this);
       IconStyle = icon;
-      DoShownSound = doSound;
+      DoShownSound = sound;
     }
 
     public MessageBoxEx(TranslationsDictionary title,
                         TranslationsDictionary text,
-                        int width = DefaultSmallWidth,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
+                        int width = DefaultSmallWidth,
                         bool justify = DefaultJustifyEnabled,
-                        bool doSound = true)
-      : this(title.GetLang(), text.GetLang(), width, buttons, icon, justify, doSound)
+                        bool sound = true)
+      : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound)
     {
       LocalizedTitle = title;
       LocalizedText = text;

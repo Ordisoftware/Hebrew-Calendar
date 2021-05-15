@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Text;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string GetExportDataFilename(ExportInterval interval)
     {
-      string result = DataSet.LunisolarDays.TableName;
+      string result = nameof(LunisolarDays);
       int year1;
       int year2;
       if ( interval.IsDefined )
@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               SaveImageDialog.FileName = string.Format("{0} {1}-{2}",
-                                                       DataSet.LunisolarDays.TableName,
+                                                       nameof(LunisolarDays),
                                                        CalendarMonth.CalendarDate.Year,
                                                        CalendarMonth.CalendarDate.Month.ToString("00"));
               for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
         while ( HasMorePages )
         {
           string filename = string.Format("{0} {1}-{2}" + Program.ImageExportTargets[Settings.ExportImagePreferredTarget],
-                                          DataSet.LunisolarDays.TableName,
+                                          nameof(LunisolarDays),
                                           CalendarMonth.CalendarDate.Year,
                                           CalendarMonth.CalendarDate.Month.ToString("00"));
           var bitmap = CalendarMonth.GetBitmap();

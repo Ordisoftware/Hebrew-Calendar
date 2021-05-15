@@ -226,7 +226,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Program.Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
-      DataGridView.DataSource = null;
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       foreach ( var value in TorahCelebrations.MajorEvents )
@@ -242,7 +241,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int year1 = SelectYear1.Value;
       int year2 = SelectYear2.Value;
-      MainForm.Instance.DataSet.LoadCelebrations(Board, year1, year2, EditUseRealDays.Checked);
+      ApplicationDatabase.Instance.LoadCelebrations(Board, year1, year2, EditUseRealDays.Checked);
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }

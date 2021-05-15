@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -295,7 +294,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      string dateOld = CurrentDay?.Date;
+      var dateOld = CurrentDay?.Date;
       bool formEnabled = Globals.MainForm.Enabled;
       try
       {
@@ -333,7 +332,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);
         else
-          GoToDate(dateOld);
+          GoToDate(dateOld.Value);
         TimerReminder.Enabled = true;
         EnableReminderTimer();
         UpdateTitles(true);
@@ -499,7 +498,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
       if ( form == null )
-        form = new MessageBoxEx(title, text, width); form.ShowInTaskbar = true;
+        form = new MessageBoxEx(title, text, width: width); form.ShowInTaskbar = true;
       form.Popup(null, sender == null);
     }
 
@@ -579,7 +578,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(DataSet.LunisolarDays.GetWeeklyParashah());
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
     }
 
     /// <summary>
@@ -900,32 +899,34 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      SystemManager.TryCatch(() =>
+      switch ( e.ColumnIndex )
       {
-        switch ( e.ColumnIndex )
-        {
-          case 7:
-            e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
-            break;
-          case 10:
-            e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
-            break;
-          case 8:
-            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
-            break;
-          case 9:
-            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
-            break;
-          case 11:
-            var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
-            break;
-          case 12:
-            var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
-            break;
-        }
-      });
+        case 3:
+        case 4:
+        case 6:
+        case 7:
+          var time = (DateTime?)e.Value;
+          e.Value = time == null ? "" : time.AsTime();
+          break;
+        case 5:
+          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonRiseOccuring);
+          break;
+        case 8:
+        case 9:
+          e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
+          break;
+        case 10:
+          e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
+          break;
+        case 11:
+          var season = (SeasonChange)e.Value;
+          e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
+          break;
+        case 12:
+          var torah = (TorahEvent)e.Value;
+          e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
+          break;
+      }
     }
 
     /// <summary>
@@ -937,10 +938,9 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatch(() =>
       {
-        if ( LunisolarDaysBindingSource.Current != null )
+        if ( LunisolarDayBindingSource.Current != null )
         {
-          var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-          GoToDate(( (LunisolarDaysRow)rowview ).Date);
+          GoToDate(( (LunisolarDay)LunisolarDayBindingSource.Current ).Date);
         }
       });
     }

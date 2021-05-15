@@ -11,26 +11,27 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Data;
 using System.Linq;
+using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar.Data
+namespace Ordisoftware.Hebrew.Calendar
 {
 
-  partial class DataSet
+  partial class ApplicationDatabase : SQLiteDatabase
   {
 
     public void LoadCelebrations(DataTable table, int year1, int year2, bool useRealDay)
     {
       table.Rows.Clear();
       var query = from day in LunisolarDays
-                  where day.HasTorahEvent && day.DateAsDateTime.Year >= year1 && day.DateAsDateTime.Year <= year2
+                  where day.HasTorahEvent && day.Date.Year >= year1 && day.Date.Year <= year2
                   select new
                   {
                     date = day.GetEventStartDateTime(useRealDay, false),
-                    torah = day.TorahEventsAsEnum
+                    torah = day.TorahEvent
                   };
       foreach ( var item in query )
       {
@@ -53,8 +54,8 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       table.Rows.Clear();
       var query = from day in LunisolarDays
                   where day.LunarDay == 1
-                     && day.DateAsDateTime.Year >= year1
-                     && day.DateAsDateTime.Year <= year2 + 1
+                     && day.Date.Year >= year1
+                     && day.Date.Year <= year2 + 1
                   select new
                   {
                     date = day.GetEventStartDateTime(useRealDay, true),
@@ -83,52 +84,42 @@ namespace Ordisoftware.Hebrew.Calendar.Data
       }
       table.AcceptChanges();
     }
+  }
 
-    partial class LunisolarDaysRow
+  partial class LunisolarDay
+  {
+
+    public DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
     {
-
-      public DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
+      var day = this;
+      if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
       {
-        var day = this;
-        if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
-        {
-          if ( useRealDay )
-          {
-            int index = day.Table.Rows.IndexOf(day) - 1;
-            if ( index < 0 )
-              throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
-            day = (LunisolarDaysRow)day.Table.Rows[index];
-            return day.DateAsDateTime
-                      .AddHours(int.Parse(day.Sunset.Substring(0, 2)))
-                      .AddMinutes(int.Parse(day.Sunset.Substring(3, 2)));
-          }
-          else
-            return day.DateAsDateTime
-                      .AddHours(int.Parse(day.Sunrise.Substring(0, 2)))
-                      .AddMinutes(int.Parse(day.Sunrise.Substring(3, 2)));
-        }
-        else
         if ( useRealDay )
         {
-          if ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet || day.Moonset == string.Empty )
-          {
-            int index = day.Table.Rows.IndexOf(day) - 1;
-            if ( index < 0 )
-              throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
-            day = (LunisolarDaysRow)day.Table.Rows[index];
-          }
-          return day.DateAsDateTime
-                    .AddHours(int.Parse(day.Moonset.Substring(0, 2)))
-                    .AddMinutes(int.Parse(day.Moonset.Substring(3, 2)));
+          int index = ApplicationDatabase.Instance.LunisolarDays.IndexOf(day) - 1;
+          if ( index < 0 )
+            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+          day = ApplicationDatabase.Instance.LunisolarDays[index];
+          return day.Sunset.Value;
         }
         else
-          return day.DateAsDateTime
-                    .AddHours(int.Parse(day.Moonrise.Substring(0, 2)))
-                    .AddMinutes(int.Parse(day.Moonrise.Substring(3, 2)));
+          return day.Sunrise.Value;
       }
-
+      else
+      if ( useRealDay )
+      {
+        if ( day.MoonriseOccuring == MoonriseOccuring.BeforeSet || day.Moonset == null )
+        {
+          int index = ApplicationDatabase.Instance.LunisolarDays.IndexOf(day) - 1;
+          if ( index < 0 )
+            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+          day = ApplicationDatabase.Instance.LunisolarDays[index];
+        }
+        return day.Moonset.Value;
+      }
+      else
+        return day.Moonrise.Value;
     }
-
 
   }
 

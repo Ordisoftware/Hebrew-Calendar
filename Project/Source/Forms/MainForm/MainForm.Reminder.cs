@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
         System.Threading.Thread.Sleep(1000);
         CheckRegenerateCalendar();
         CalendarMonth.Refresh();
-        if ( CurrentDay.DateAsDateTime == DateTime.Today.AddDays(-1) )
+        if ( CurrentDay.Date == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);

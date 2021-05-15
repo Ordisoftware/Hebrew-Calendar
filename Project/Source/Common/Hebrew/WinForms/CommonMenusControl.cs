@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
       if ( form == null )
       {
-        form = new MessageBoxEx(title, notice.Value.GetLang(), MessageBoxEx.DefaultVeryLargeWidth, justify: false);
+        form = new MessageBoxEx(title, notice.Value.GetLang(), width: MessageBoxEx.DefaultVeryLargeWidth, justify: false);
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();

@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Moon rise occuring enum.
   /// </summary>
-  public enum MoonRiseOccuring
+  public enum MoonriseOccuring
   {
 
     /// <summary>

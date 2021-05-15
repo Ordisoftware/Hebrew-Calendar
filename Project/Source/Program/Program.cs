@@ -268,7 +268,7 @@ namespace Ordisoftware.Hebrew.Calendar
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();
         DatesDiffCalculatorForm.Instance.Relocalize();
-        ParashotTable.LoadDefaults();
+        ParashotFactory.Reset();
         MainForm.Instance.CreateSystemInformationMenu();
         MainForm.Instance.CalendarText.Text = tempTextReport;
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();

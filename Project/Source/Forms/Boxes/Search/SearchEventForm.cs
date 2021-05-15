@@ -11,12 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -26,9 +26,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private MainForm MainForm = MainForm.Instance;
 
-    private Data.DataSet.LunisolarDaysDataTable LunisolarDays = MainForm.Instance.DataSet.LunisolarDays;
+    private List<LunisolarDay> LunisolarDays = ApplicationDatabase.Instance.LunisolarDays;
 
-    public LunisolarDaysRow CurrentDay { get; private set; }
+    public LunisolarDay CurrentDay { get; private set; }
 
     public SearchEventForm()
     {
@@ -64,15 +64,15 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
       int year = SelectYear.Value;
-      var rows = LunisolarDays.Where(row => row.HasTorahEvent && row.DateAsDateTime.Year == year);
+      var rows = LunisolarDays.Where(row => row.HasTorahEvent && row.Date.Year == year);
       string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
       ListItems.Items.Clear();
       ListViewItem itemToSelect = null;
       ListViewItem itemToSelectDefault = null;
       foreach ( var row in rows )
       {
-        string key = AppTranslations.TorahEvent.GetLang(row.TorahEventsAsEnum);
-        string date = row.DateAsDateTime.ToLongDateString();
+        string key = AppTranslations.TorahEvent.GetLang(row.TorahEvent);
+        string date = row.Date.ToLongDateString();
         var item = ListItems.Items.Add(key);
         item.SubItems.Add(date.Titleize());
         item.SubItems.Add(row.DayAndMonthText);
@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( ListItems.SelectedItems.Count > 0 )
-        MainForm.GoToDate(( (LunisolarDaysRow)ListItems.SelectedItems[0].Tag ).Date);
+        MainForm.GoToDate(( (LunisolarDay)ListItems.SelectedItems[0].Tag ).Date);
     }
 
   }

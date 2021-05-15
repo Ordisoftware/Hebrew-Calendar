@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           Date = key,
           MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
-          MoonPhase = (int)key.GetMoonPhase(),
+          MoonPhase = key.GetMoonPhase(),
           Ephemerisis = key.GetSunMoonEphemeris()
         };
         if ( !TorahSeasons.ContainsKey(key.Year) )

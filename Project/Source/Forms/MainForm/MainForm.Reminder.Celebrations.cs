@@ -32,11 +32,11 @@ namespace Ordisoftware.Hebrew.Calendar
       dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
       var dateToday = DateTime.Today;
       var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
-      var rows = from day in DataSet.LunisolarDays
+      var rows = from day in LunisolarDays
                  where !RemindCelebrationDates.Contains(day.Date)
-                    && check(day.TorahEventsAsEnum)
-                    && day.DateAsDateTime >= dateToday
-                    && day.DateAsDateTime <= dateLimit
+                    && check(day.TorahEvent)
+                    && day.Date >= dateToday
+                    && day.Date <= dateLimit
                  select day;
       foreach ( var row in rows )
       {

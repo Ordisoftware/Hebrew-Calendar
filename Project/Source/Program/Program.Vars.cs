@@ -125,7 +125,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate file path of the text report.
     /// </summary>
     static public string TextReportFilePath
-      => Path.ChangeExtension(Globals.DatabaseFilePath, ".txt");
+      => Path.ChangeExtension(Globals.ApplicationDatabaseFilePath, ".txt");
 
     /// <summary>
     /// Indicate file path of date bookmarks.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Data;
 using System.Linq;
@@ -41,16 +41,16 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.ListView.Items.Clear();
       var dateStart = DateTime.Today;
       var dateEnd = dateStart.AddYears(1);
-      var rows = from day in MainForm.Instance.DataSet.LunisolarDays
-                 where day.DateAsDateTime >= dateStart && day.DateAsDateTime <= dateEnd
+      var rows = from day in ApplicationDatabase.Instance.LunisolarDays
+                 where day.Date >= dateStart && day.Date <= dateEnd
                     && ( day.HasSeasonChange || day.HasTorahEvent )
                  select day;
       foreach ( var row in rows )
       {
-        var item = row.DateAsDateTime.ToLongDateString().Titleize();
+        var item = row.Date.ToLongDateString().Titleize();
         if ( row.HasSeasonChange )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum))
+                                 .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChange))
                                  .Tag = row.Date;
         if ( row.HasTorahEvent )
           Instance.ListView.Items.Add(item)

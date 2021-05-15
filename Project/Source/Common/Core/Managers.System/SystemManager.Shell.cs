@@ -15,8 +15,12 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Linq;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Windows.Forms;
+using System.Threading;
 using CommandLine;
 
 namespace Ordisoftware.Core
@@ -212,6 +216,33 @@ namespace Ordisoftware.Core
       {
         throw new IOException(SysTranslations.FileAccessError.GetLang(filePath), ex);
       }
+    }
+
+    static public void CloseRunningApplications(string reason)
+    {
+      var result = DialogResult.None;
+      var processes = Globals.ConcurrentRunningProcesses;
+      while ( processes.Count() != 0 && result != DialogResult.Cancel )
+      {
+        var list = processes.Select(p => p.ProcessName);
+        var names = string.Join(Globals.NL, list.ToArray());
+        var form = new MessageBoxEx(Globals.AssemblyTitle,
+                                    SysTranslations.CloseApplicationsRequired.GetLang(reason, names.Indent(5, 5)),
+                                    MessageBoxButtons.RetryCancel,
+                                    MessageBoxIcon.Exclamation);
+        form.ActionYes.Visible = true;
+        form.AcceptButton = form.ActionYes;
+        form.CancelButton = form.ActionCancel;
+        form.ActiveControl = form.ActionRetry;
+        form.ShowInTaskbar = true;
+        result = form.ShowDialog();
+        if ( result == DialogResult.Yes )
+          foreach ( var process in processes )
+            TryCatch(process.Kill);
+        Thread.Sleep(2000);
+        processes = Globals.ConcurrentRunningProcesses;
+      }
+      if ( processes.Count() != 0 || result == DialogResult.Cancel ) Terminate();
     }
 
   }

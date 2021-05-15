@@ -333,7 +333,7 @@ namespace Ordisoftware.Core
                                                  MessageBoxButtons buttons,
                                                  MessageBoxIcon icon)
     {
-      return new MessageBoxEx(title, text, MessageBoxEx.DefaultSmallWidth, buttons, icon).ShowDialog();
+      return new MessageBoxEx(title, text, buttons, icon).ShowDialog();
     }
 
   }

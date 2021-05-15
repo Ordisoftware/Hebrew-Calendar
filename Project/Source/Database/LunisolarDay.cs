@@ -10,26 +10,35 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-08 </created>
+/// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using Ordisoftware.Core;
+using SQLite;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  /// <summary>
-  /// Provide calendar date item.
-  /// </summary>
-  partial class CalendarDateItem
+  [Serializable]
+  [Table("LunisolarDays")]
+  public partial class LunisolarDay
   {
+    [PrimaryKey]
     public DateTime Date { get; set; }
-    public int MoonDay { get; set; }
+    public int LunarMonth { get; set; }
+    public int LunarDay { get; set; }
+    public DateTime? Sunrise { get; set; }
+    public DateTime? Sunset { get; set; }
+    public DateTime? Moonrise { get; set; }
+    public DateTime? Moonset { get; set; }
+    public MoonriseOccuring MoonriseOccuring { get; set; }
+    public bool IsNewMoon { get; set; }
+    public bool IsFullMoon { get; set; }
     public MoonPhase MoonPhase { get; set; }
-    public SeasonChange TorahSeasonChange { get; set; }
-    public SeasonChange RealSeasonChange { get; set; }
-    public SunAndMoonRiseAndSet Ephemerisis { get; set; }
-    public override string ToString() => SQLiteDate.ToString(Date);
+    public SeasonChange SeasonChange { get; set; }
+    public TorahEvent TorahEvent { get; set; }
+    public string TorahEventText { get; set; }
+    public string ParashahID { get; set; }
+    public string LinkedParashahID { get; set; }
   }
 
 }

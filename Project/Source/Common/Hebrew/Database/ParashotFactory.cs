@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +21,37 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static partial class ParashotTable
+  static class ParashotFactory
   {
 
-    static public Parashah GetDefaultByID(string id)
+    static public Parashah Get(string id)
     {
-      return DefaultsAsList.FirstOrDefault(p => p.ID == id);
+      return All.FirstOrDefault(p => p.ID == id);
     }
+
+    static public void Reset()
+    {
+      var query = from book in Defaults from parashah in book.Value select parashah;
+      var linesTranslation = new NullSafeOfStringDictionary<string>();
+      var linesLettriq = new NullSafeOfStringDictionary<string>();
+      linesTranslation.LoadKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, "=");
+      linesLettriq.LoadKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, "=");
+      int index = 0;
+      foreach ( Parashah item in query )
+      {
+        if ( index < linesTranslation.Count ) item.Translation = linesTranslation.Values.ElementAt(index).Trim();
+        if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index).Trim();
+        index++;
+      }
+      for ( index = 0; index < All.Count(); index++ )
+        if ( All.ElementAt(index).IsLinkedToNext )
+          All.ElementAt(index).Linked = All.ElementAt(++index);
+    }
+
+    static public IEnumerable<Parashah> All
+      => from book in Enums.GetValues<TorahBooks>()
+         from parashah in Defaults[book]
+         select parashah;
 
     static public readonly NullSafeDictionary<TorahBooks, NullSafeList<Parashah>> Defaults
       = new NullSafeDictionary<TorahBooks, NullSafeList<Parashah>>
@@ -102,11 +126,6 @@ namespace Ordisoftware.Hebrew
           new Parashah(TorahBooks.Devarim, 11, "Vezot HaBerakah", "וזאת הברכה", "33.1", "34.12")
         }
       };
-
-    static public readonly List<Parashah> DefaultsAsList
-      = ( from book in Enums.GetValues<TorahBooks>()
-          from parashah in Defaults[book]
-          select parashah ).ToList();
 
   }
 

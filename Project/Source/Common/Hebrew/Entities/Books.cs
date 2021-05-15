@@ -17,10 +17,12 @@ using System;
 namespace Ordisoftware.Hebrew
 {
 
+  // TODO TODO TODO TODO TODO remove all +1 or -1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   public enum Books
   {
     // Torah
-    Bereshit, Shemot, Vayiqra, Bamidbar, Devarim,
+    Bereshit = 1, Shemot, Vayiqra, Bamidbar, Devarim,
     // Nevi'im
     Yehoshoua, Shoftim, Shemouel_I, Shemouel_II, Melakim_I, Melakim_II,
     Yeshayahou, Yirmeyahou, Yehezqel,

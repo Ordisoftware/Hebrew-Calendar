@@ -15,7 +15,6 @@
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -45,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !title.IsNullOrEmpty() )
           form.Text = title;
         else
-          form.MonthCalendar.SelectionStart = form.CurrentDay.DateAsDateTime;
+          form.MonthCalendar.SelectionStart = form.CurrentDay.Date;
         form.IsGotoRealtime = isGotoRealtime;
         form.TopMost = topmost;
         bool result = form.ShowDialog() == DialogResult.OK;
@@ -56,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool IsGotoRealtime;
 
-    private LunisolarDaysRow CurrentDay;
+    private LunisolarDay CurrentDay;
 
     private SelectDayForm()
     {

@@ -14,6 +14,7 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -32,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new NavigationForm();
     }
 
-    private Data.DataSet.LunisolarDaysDataTable LunisolarDays = MainForm.Instance.DataSet.LunisolarDays;
+    private List<LunisolarDay> LunisolarDays = ApplicationDatabase.Instance.LunisolarDays;
 
     public DateTime Date
     {
@@ -44,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
           string strText = value.ToString();
           strText = strText.Remove(strText.Length - 3, 3);
           string strDate = SQLiteDate.ToString(value);
-          var row = LunisolarDays.Single(day => day.Date == strDate);
+          var row = LunisolarDays.Single(day => day.Date == value);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
           LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth) + " " + strMonth.ToUpper();
@@ -55,19 +56,19 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelSunsetValue.Text = row.Sunset.ToString();
           LabelMoonriseValue.Text = row.Moonrise.ToString();
           LabelMoonsetValue.Text = row.Moonset.ToString();
-          LabelMoonriseValue.Visible = !row.Moonrise.IsNullOrEmpty();
-          LabelMoonrise.Visible = !row.Moonrise.IsNullOrEmpty();
-          LabelMoonsetValue.Visible = !row.Moonset.IsNullOrEmpty();
-          LabelMoonset.Visible = !row.Moonset.IsNullOrEmpty();
-          LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum);
+          LabelMoonriseValue.Visible = row.Moonrise != null;
+          LabelMoonrise.Visible = row.Moonrise != null;
+          LabelMoonsetValue.Visible = row.Moonset != null;
+          LabelMoonset.Visible = row.Moonset != null;
+          LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChange);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = NoDataField;
           LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = NoDataField;
-          var rowNext = LunisolarDays.FirstOrDefault(day => day.DateAsDateTime > value && day.TorahEvents > 0);
+          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value && day.TorahEvent != TorahEvent.None);
           if ( rowNext != null )
           {
-            var date = rowNext.DateAsDateTime;
+            var date = rowNext.Date;
             LabelTorahNextValue.Text = rowNext.TorahEventText;
             LabelTorahNextDateValue.Text = date.ToLongDateString().Titleize();
             LabelTorahNextDateValue.Tag = date;
@@ -78,9 +79,9 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelTorahNextDateValue.Text = string.Empty;
             LabelTorahNextDateValue.Tag = null;
           }
-          var today = MainForm.Instance.DataSet.LunisolarDays.GetToday();
+          var today = ApplicationDatabase.Instance.GetToday();
           LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
-          LabelCurrentDayValue.Tag = today?.DateAsDateTime;
+          LabelCurrentDayValue.Tag = today?.Date;
           LabelParashahValue.Text = NoDataField;
           LabelParashahValue.Tag = null;
           var rowParashah = row.GetParashahReadingDay();
@@ -97,11 +98,11 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
             LabelParashahValue.Text = rowParashah.ParashahText;
-            LabelParashahValue.Tag = ParashotTable.GetDefaultByID(rowParashah.ParashahID);
+            LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);
-          if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.AfterSet )
+          if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
           {
             LabelMoonrise.Top = 125;
             LabelMoonriseValue.Top = 125;

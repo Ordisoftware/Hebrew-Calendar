@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -22,6 +22,32 @@ namespace Ordisoftware.Core
   /// </summary>
   static partial class SysTranslations
   {
+
+    static public readonly TranslationsDictionary UpgradeCommonDatabaseRequired
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "One or more common tables must be updated:" + Globals.NL2 +
+                        "     {0}" + Globals.NL2 +
+                        "Once the operation is done you will have to check the web update for other Torah applications, either automatically by launching them without worrying about the error message concerning them and click on continue, or by downloading them manually from the Internet for more ease or in case of problem. If no new version is available, all is well.",
+
+        [Language.FR] = "Une ou plusieurs tables communes doivent être mise à jour :" + Globals.NL2 +
+                        "     {0} " + Globals.NL2 +
+                        "Une fois l'opération effectuée vous devrez vérifier la mise à jour web pour les autres applications de Torah, soit automatiquement en les lançant sans vous inquiéter du message d'erreur les concernant et cliquer sur continuer, soit en les téléchargeant manuellement depuis Internet pour plus de simplicité ou en cas de problème. Si aucune nouvelle version n'est disponible, tout va bien."
+      };
+
+    static public readonly TranslationsDictionary CloseApplicationsRequired
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "{0}" + Globals.NL2 +
+                        "This or these applications must be closed:" + Globals.NL2 +
+                        "{1}" + Globals.NL2 +
+                        "Do you want to try to close them automatically?",
+
+        [Language.FR] = "{0}" + Globals.NL2 +
+                        "Cette ou ces applications doivent être fermées :" + Globals.NL2 +
+                        "{1}" + Globals.NL2 +
+                        "Voulez-vous tenter de les fermer automatiquement ?"
+      };
 
     static public readonly TranslationsDictionary NoticeNewFeaturesTitle
       = new TranslationsDictionary

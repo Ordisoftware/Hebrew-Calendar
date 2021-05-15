@@ -11,11 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-05 </edited>
 using System;
-using System.Data;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -48,11 +46,11 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       SystemManager.TryCatch(() =>
       {
-        int position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
+        int position = LunisolarDayBindingSource.Find("Date", date);
         if ( position >= 0 )
         {
-          LunisolarDaysBindingSource.Position = LunisolarDaysBindingSource.Find("Date", SQLiteDate.ToString(date));
-          CurrentDay = (LunisolarDaysRow)( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
+          LunisolarDayBindingSource.Position = LunisolarDayBindingSource.Find("Date", date);
+          CurrentDay = (LunisolarDay)LunisolarDayBindingSource.Current;
           CalendarGrid.Update();
         }
       });

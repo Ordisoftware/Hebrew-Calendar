@@ -15,7 +15,6 @@
 using System;
 using System.IO;
 using System.Data;
-using System.Data.Odbc;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -27,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadData()
     {
-      void update(object tableSender, DataRowChangeEventArgs tableEvent)
+      void update(Type type)
       {
         if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
       }
@@ -37,15 +36,14 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = false;
         Globals.ChronoLoadData.Start();
-        CreateSchemaIfNotExists();
-        var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", LockFileConnection);
-        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(),
-                                        (int)command.ExecuteScalar() * 2,
-                                        Program.LoadingFormLoadDB);
-        DataSet.LunisolarDays.RowChanged += update;
-        LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
+        ApplicationDatabase.Instance.Open();
+        LunisolarDayBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+        // TODO set autoload false
+        ApplicationDatabase.Instance.LoadingData += update;
+        var count = ApplicationDatabase.Instance.Connection.GetRowsCount(nameof(ApplicationDatabase.Instance.LunisolarDays));
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), (int)count * 2, Program.LoadingFormLoadDB);
         Globals.ChronoLoadData.Stop();
-        if ( DataSet.LunisolarDays.Count > 0
+        if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch
           && !Settings.FirstLaunchV7_0 )
         {
@@ -85,11 +83,11 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           Globals.ChronoStartingApp.Stop();
           PreferencesForm.Run();
-          Globals.ChronoStartingApp.Start();
           string errors = CheckRegenerateCalendar(true);
+          Globals.ChronoStartingApp.Start();
           if ( errors != null )
           {
-            SystemManager.TryCatch(() => EmptyDatabase());
+            SystemManager.TryCatch(() => ApplicationDatabase.Instance.Empty());
             throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
           }
         }
@@ -106,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = true;
         Cursor = cursor;
-        DataSet.LunisolarDays.RowChanged -= update;
+        ApplicationDatabase.Instance.LoadingData -= update;
         try
         {
           if ( Settings.RestoreLastViewAtStartup )

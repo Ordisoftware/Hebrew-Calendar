@@ -16,7 +16,7 @@ using System;
 using System.Data;
 using System.Linq;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
+using LunisolarDay = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDay;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -33,13 +33,13 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateBirth = BirthDate.Change(year: DateTime.Today.Year);
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
-      var row = ( from day in DataSet.LunisolarDays
-                  where day.DateAsDateTime == dateBirth
-                  select day ).FirstOrDefault() as LunisolarDaysRow;
+      var row = ( from day in LunisolarDays
+                  where day.Date == dateBirth
+                  select day ).FirstOrDefault() as LunisolarDay;
       if ( row == null )
         return;
-      var dateRow = row.DateAsDateTime;
-      var rowPrevious = DataSet.LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
+      var dateRow = row.Date;
+      var rowPrevious = LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));
       var times = new ReminderTimes();
       var delta3 = Settings.RemindShabatEveryMinutes;
       times.SetTimes(dateRow, rowPrevious.Sunset, row.Sunset, -1, 0, delta3);

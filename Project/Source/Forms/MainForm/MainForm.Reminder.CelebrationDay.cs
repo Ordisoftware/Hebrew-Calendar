@@ -32,20 +32,20 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
       var dateToday = DateTime.Today;
-      var row = ( from day in DataSet.LunisolarDays
-                  where day.HasTorahEvent && check(day.TorahEventsAsEnum)
-                     && day.DateAsDateTime >= dateToday.AddDays(-1)
+      var row = ( from day in LunisolarDays
+                  where day.HasTorahEvent && check(day.TorahEvent)
+                     && day.Date >= dateToday.AddDays(-1)
                   select day ).FirstOrDefault();
       if ( row == null ) return result;
-      var torahevent = row.TorahEventsAsEnum;
-      if ( row.DateAsDateTime.Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet )
+      var torahevent = row.TorahEvent;
+      if ( row.Date.Day < dateNow.Day )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccuring.BeforeSet )
           return result;
       var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return result;
-      result = dateNow >= times.DateStart.Value && dateNow < times.DateEnd.Value;
-      var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindCelebrationHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
+      result = dateNow >= times.DateStart && dateNow < times.DateEnd;
+      var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindCelebrationHoursBefore);
+      if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
       {
         LastCelebrationReminded[torahevent] = null;
         if ( RemindCelebrationDayForms.ContainsKey(torahevent) )

@@ -34,11 +34,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       string strDateNow = SQLiteDate.ToString(dateNow);
       var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
-      var row = ( from day in DataSet.LunisolarDays
+      var row = ( from day in LunisolarDays
                    where !RemindCelebrationDates.Contains(day.Date)
-                      && day.DateAsDateTime  >= dateNow
-                      && day.DateAsDateTime == dateBirth
-                      && day.DateAsDateTime <= dateLimit
+                      && day.Date  >= dateNow
+                      && day.Date == dateBirth
+                      && day.Date <= dateLimit
                   select day ).FirstOrDefault();
       if ( row == null ) return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
