@@ -45,7 +45,6 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           LunisolarDaysBindingSource.Position = position;
           CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
-          //TODO remove ? CalendarGrid.Refresh();
         }
       });
       SystemManager.TryCatch(() =>
