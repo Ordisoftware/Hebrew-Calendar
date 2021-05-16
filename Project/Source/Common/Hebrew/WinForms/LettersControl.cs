@@ -58,15 +58,9 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     public event EventHandler InputTextChanged
     {
-      add { Input.TextChanged += value; }
-      remove { Input.TextChanged -= value; }
+      add { TextBox.TextChanged += value; }
+      remove { TextBox.TextChanged -= value; }
     }
-
-    /// <summary>
-    /// Indicate the TextBox control.
-    /// </summary>
-    public TextBoxEx Input
-      => TextBox;
 
     /// <summary>
     /// Indicate Input MaxLength property.
