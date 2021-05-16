@@ -108,6 +108,9 @@ namespace Ordisoftware.Hebrew.Calendar
         ViewPanels[view].Focused.Focus();
         Settings.CurrentView = view;
         UpdateButtons();
+        if (view == ViewMode.Grid)
+          if ( CalendarGrid.SelectedRows.Count > 0 )
+            CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
       }
       catch ( Exception ex )
       {

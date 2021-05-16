@@ -77,12 +77,12 @@ namespace Ordisoftware.Hebrew.Calendar
     private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
     {
       if ( !IsGotoRealtime ) return;
-      string date = SQLiteDate.ToString(MonthCalendar.SelectionStart);
+      var date = MonthCalendar.SelectionStart;
       if ( MonthCalendar.SelectionStart < MainForm.Instance.DateFirst )
-        date = SQLiteDate.ToString(MainForm.Instance.DateFirst);
+        date = MainForm.Instance.DateFirst;
       else
       if ( MonthCalendar.SelectionStart > MainForm.Instance.DateLast )
-        date = SQLiteDate.ToString(MainForm.Instance.DateLast);
+        date = MainForm.Instance.DateLast;
       MainForm.Instance.GoToDate(date);
     }
 

@@ -46,7 +46,8 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        SystemManager.TryCatch(() =>
+        // TODO remove Manage
+        SystemManager.TryCatchManage(() =>
         {
           CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
           TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];

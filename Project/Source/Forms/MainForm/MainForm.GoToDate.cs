@@ -23,12 +23,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool GoToDateMutex;
 
-    public void GoToDate(string date)
-    {
-      if ( !date.IsNullOrEmpty() )
-        GoToDate(SQLiteDate.ToDateTime(date));
-    }
-
     public void GoToDate(DateTime date)
     {
       if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
@@ -51,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           LunisolarDaysBindingSource.Position = position;
           CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
-          CalendarGrid.Update();
+          //TODO remove ? CalendarGrid.Refresh();
         }
       });
       SystemManager.TryCatch(() =>
