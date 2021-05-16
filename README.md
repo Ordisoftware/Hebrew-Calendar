@@ -289,6 +289,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Optimize overall performances.
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
+- Add open parashot board menu item in shabat reminder box.
 - Code refactoring and quality improvement.
 - Some UI improvements.
 - Some fixes.
