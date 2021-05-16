@@ -13,6 +13,7 @@
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -30,6 +31,10 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? Sunset { get; set; }
     public DateTime? Moonrise { get; set; }
     public DateTime? Moonset { get; set; }
+    public string SunriseAsString { get; set; }
+    public string SunsetAsString { get; set; }
+    public string MoonriseAsString { get; set; }
+    public string MoonsetAsString { get; set; }
     public MoonriseOccuring MoonriseOccuring { get; set; }
     public bool IsNewMoon { get; set; }
     public bool IsFullMoon { get; set; }
@@ -39,6 +44,10 @@ namespace Ordisoftware.Hebrew.Calendar
     public string TorahEventText { get; set; }
     public string ParashahID { get; set; }
     public string LinkedParashahID { get; set; }
+
+    [Ignore]
+    public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
+
   }
 
 }

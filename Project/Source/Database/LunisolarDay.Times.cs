@@ -21,11 +21,43 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunisolarDay
   {
 
+    internal DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
+    {
+      var day = this;
+      if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
+      {
+        if ( useRealDay )
+        {
+          int index = Table.IndexOf(day) - 1;
+          if ( index < 0 )
+            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+          day = Table[index];
+          return day.Sunset.Value;
+        }
+        else
+          return day.Sunrise.Value;
+      }
+      else
+      if ( useRealDay )
+      {
+        if ( day.MoonriseOccuring == MoonriseOccuring.BeforeSet || day.Moonset == null )
+        {
+          int index = Table.IndexOf(day) - 1;
+          if ( index < 0 )
+            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
+          day = Table[index];
+        }
+        return day.Moonset.Value;
+      }
+      else
+        return day.Moonrise.Value;
+    }
+
     internal ReminderTimes GetTimesForShabat(decimal delta3)
     {
       var times = new ReminderTimes();
       var dateRow = Date;
-      var rowPrevious = ApplicationDatabase.Instance.LunisolarDays.Find(d => d.Date == dateRow.AddDays(-1));
+      var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
       if ( rowPrevious == null )
         return null;
       if ( Program.Settings.RemindShabatOnlyLight )
@@ -39,8 +71,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var times = new ReminderTimes();
       var dateRow = Date;
-      var rowPrevious = ApplicationDatabase.Instance.LunisolarDays.Find(d => d.Date == dateRow.AddDays(-1));
-      var rowNext = ApplicationDatabase.Instance.LunisolarDays.Find(d => d.Date == dateRow.AddDays(+1));
+      var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
+      var rowNext = Table.Find(d => d.Date == dateRow.AddDays(+1));
       if ( rowPrevious == null || rowNext == null )
         return null;
       if ( Program.Settings.TorahEventsCountAsMoon )

@@ -170,7 +170,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 var row = new LunisolarDay();
                 row.Date = new DateTime(year, month, day);
                 if ( !InitializeDay(row) ) break;
-                ApplicationDatabase.Instance.LunisolarDays.Add(row);
+                LunisolarDays.Add(row);
               }
               catch ( Exception ex )
               {
@@ -218,14 +218,14 @@ namespace Ordisoftware.Hebrew.Calendar
         day.IsNewMoon = day.LunarDay == 1;
         day.MoonPhase = data.MoonPhase;
         day.IsFullMoon = day.MoonPhase == MoonPhase.Full;
-        DateTime? setEphemeris(TimeSpan? time)
-        {
-          return time.HasValue ? (DateTime?)day.Date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
-        }
-        day.Sunrise = setEphemeris(ephemeris.Sunrise);
-        day.Sunset = setEphemeris(ephemeris.Sunset);
-        day.Moonrise = setEphemeris(ephemeris.Moonrise);
-        day.Moonset = setEphemeris(ephemeris.Moonset);
+        day.Sunrise = SQLiteDate.Add(ephemeris.Sunrise, day.Date);
+        day.Sunset = SQLiteDate.Add(ephemeris.Sunset, day.Date);
+        day.Moonrise = SQLiteDate.Add(ephemeris.Moonrise, day.Date);
+        day.Moonset = SQLiteDate.Add(ephemeris.Moonset, day.Date);
+        day.SunriseAsString = SQLiteDate.ToString(ephemeris.Sunrise);
+        day.SunsetAsString = SQLiteDate.ToString(ephemeris.Sunset);
+        day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
+        day.MoonsetAsString = SQLiteDate.ToString(ephemeris.Moonset);
         MoonriseOccuring moonrisetype;
         if ( ephemeris.Moonrise == null )
           moonrisetype = MoonriseOccuring.NextDay;
@@ -271,7 +271,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var parashot = ParashotFactory.All.ToList();
       try
       {
-        foreach ( var day in ApplicationDatabase.Instance.LunisolarDays )
+        foreach ( var day in LunisolarDays )
           try
           {
             LoadingForm.Instance.DoProgress();
@@ -329,9 +329,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( indexParashah > 0 && indexParashah < parashot.Count )
         {
           dayRemap2 = day;
-          var query = from row in ApplicationDatabase.Instance.LunisolarDays
-                      where row.Date.CompareTo(dayRemap1.Date) >= 0
-                         && row.Date.CompareTo(dayRemap2.Date) <= 0
+          var query = from row in LunisolarDays
+                      where row.Date >= dayRemap1.Date
+                         && row.Date <= dayRemap2.Date
                          && !row.ParashahID.IsNullOrEmpty()
                       select row;
           indexParashah = 0;
@@ -362,24 +362,24 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( Settings.TorahEventsCountAsMoon )
         {
-          var rowStart = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date == thedate);
-          int index = ApplicationDatabase.Instance.LunisolarDays.IndexOf(rowStart);
+          var rowStart = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+          int index = LunisolarDays.IndexOf(rowStart);
           int count = 0;
           if ( forceSunOmer )
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( ApplicationDatabase.Instance.LunisolarDays[index + i].MoonriseOccuring == MoonriseOccuring.NextDay )
+              if ( LunisolarDays[index + i].MoonriseOccuring == MoonriseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
-          var row = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+          var row = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
           if ( row != null )
             if ( row.MoonriseOccuring == MoonriseOccuring.NextDay )
               thedate = thedate.AddDays(1);
         }
         else
           thedate = thedate.AddDays(toadd);
-        var rowEnd = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+        var rowEnd = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
         if ( rowEnd != null )
           rowEnd.TorahEvent = type;
         return thedate;
@@ -392,7 +392,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return dateRow.Year == dayDate.Year
               && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
-        var equinoxe = ApplicationDatabase.Instance.LunisolarDays.Where(d => check(d)).First();
+        var equinoxe = LunisolarDays.Where(d => check(d)).First();
         var dateEquinox = equinoxe.Date;
         int monthExuinoxe = dateEquinox.Month;
         int dayEquinoxe = dateEquinox.Day - TorahCelebrations.NewLambDay;

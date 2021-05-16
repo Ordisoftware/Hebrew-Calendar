@@ -901,13 +901,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       switch ( e.ColumnIndex )
       {
-        case 3:
-        case 4:
-        case 6:
-        case 7:
-          var time = (DateTime?)e.Value;
-          e.Value = time == null ? "" : time.AsTime();
-          break;
         case 5:
           e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonRiseOccuring);
           break;

@@ -27,9 +27,9 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private readonly Properties.Settings Settings = Program.Settings;
+    static private readonly Properties.Settings Settings = Program.Settings;
 
-    private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
     private ToolTip LastToolTip = new ToolTip();
 

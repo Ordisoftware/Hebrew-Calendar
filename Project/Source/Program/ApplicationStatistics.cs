@@ -13,6 +13,7 @@
 /// <created> 2020-08 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Ordisoftware.Core;
 
@@ -24,6 +25,8 @@ namespace Ordisoftware.Hebrew.Calendar
   /// </summary>
   partial class ApplicationStatistics
   {
+
+    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
     static public readonly ApplicationStatistics Instance
       = new ApplicationStatistics();
@@ -85,12 +88,12 @@ namespace Ordisoftware.Hebrew.Calendar
     public string DBRecordsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : ApplicationDatabase.Instance.LunisolarDays.Count.ToString();
+         : LunisolarDays.Count.ToString();
 
     public string DBEventsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : ApplicationDatabase.Instance.LunisolarDays.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString();
+         : LunisolarDays.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString();
 
     public string MonthViewEventsCount
       => Globals.IsGenerating
@@ -125,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDBMemorySizeRequired )
         {
           UpdateDBMemorySizeRequired = false;
-          _DBMemorySize = ApplicationDatabase.Instance.LunisolarDays.SizeOf().FormatBytesSize();
+          _DBMemorySize = LunisolarDays.SizeOf().FormatBytesSize();
         }
         return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBMemorySize;
       }

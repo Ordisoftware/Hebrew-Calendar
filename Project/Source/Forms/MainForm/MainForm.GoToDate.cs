@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -46,10 +47,10 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       SystemManager.TryCatch(() =>
       {
-        int position = LunisolarDayBindingSource.Find("Date", date);
+        int position = LunisolarDayBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
         if ( position >= 0 )
         {
-          LunisolarDayBindingSource.Position = LunisolarDayBindingSource.Find("Date", date);
+          LunisolarDayBindingSource.Position = position;
           CurrentDay = (LunisolarDay)LunisolarDayBindingSource.Current;
           CalendarGrid.Update();
         }

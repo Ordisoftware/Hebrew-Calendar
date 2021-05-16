@@ -141,8 +141,8 @@ namespace Ordisoftware.Hebrew.Calendar
               IsCelebrationWeekStart = false;
             int rank = 0;
             // Sun
-            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise.AsTime() + Globals.NL
-                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset.AsTime();
+            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.SunriseAsString + Globals.NL
+                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.SunsetAsString;
             Color colorMoon = Color.Black;
             string strMonthDay = row.DayAndMonthFormattedText;
             colorMoon = row.IsNewMoon
@@ -154,9 +154,9 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
             {
               if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset.AsTime());
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise.AsTime() + " " + strMonthDay);
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               // TODO property AsTiming
               else
               if ( !Program.Settings.TorahEventsCountAsMoon )
@@ -165,12 +165,12 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise.AsTime() + " " + strMonthDay);
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
               if ( !Program.Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
               if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset.AsTime());
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
             }
             //Torah
             add(Settings.CalendarColorTorahEvent, row.TorahEventText);

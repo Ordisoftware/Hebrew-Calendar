@@ -50,9 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private IEnumerable<LunisolarDay> GetDayRows(ExportInterval interval)
     {
       if ( !interval.IsDefined ) return LunisolarDays;
-      string start = SQLiteDate.ToString(interval.Start.Value);
-      string end = SQLiteDate.ToString(interval.End.Value);
-      return LunisolarDays.Where(day => day.Date.CompareTo(start) >= 0 && day.Date.CompareTo(end) <= 0);
+      return LunisolarDays.Where(day => day.Date >= interval.Start.Value && day.Date <= interval.End.Value);
     }
 
     private IEnumerable<string> GetTextReportLines(ExportInterval interval)

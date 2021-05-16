@@ -18,14 +18,6 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  static public class TimeSpanHelper
-  {
-    static public string AsTime(this DateTime? date)
-    {
-      return date == null ? "" : date.Value.Hour.ToString("00") + ":" + date.Value.Minute.ToString("00");
-    }
-  }
-
   partial class LunisolarDay
   {
 
@@ -74,14 +66,14 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( LunarMonth == 3 )
         {
-          int indexCurrent = ApplicationDatabase.Instance.LunisolarDays.IndexOf(this);
+          int indexCurrent = Table.IndexOf(this);
           int indexStart = Math.Max(0, indexCurrent - 7);
-          int indexEnd = Math.Min(indexCurrent + 7, ApplicationDatabase.Instance.LunisolarDays.Count - 1);
+          int indexEnd = Math.Min(indexCurrent + 7, Table.Count - 1);
           LunisolarDay first = null;
           LunisolarDay last = null;
           for ( int index = indexStart; index <= indexEnd; index++ )
           {
-            var row = ApplicationDatabase.Instance.LunisolarDays[index];
+            var row = Table[index];
             if ( row.TorahEvent == TorahEvent.ChavouotDiet )
             {
               first = row;

@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private MainForm MainForm = MainForm.Instance;
 
-    private List<LunisolarDay> LunisolarDays = ApplicationDatabase.Instance.LunisolarDays;
+    private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
     public LunisolarDay CurrentDay { get; private set; }
 

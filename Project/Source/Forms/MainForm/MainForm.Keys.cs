@@ -114,9 +114,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var date = CurrentDay.Date.Change(day: 1);
         if ( isFuture ) date = date.AddMonths(1);
-        string str = SQLiteDate.ToString(date);
         var query = from day in LunisolarDays
-                    where check(day.Date.CompareTo(str)) && day.HasTorahEvent && !day.IsNewYear
+                    where check(day.Date.CompareTo(date)) && day.HasTorahEvent && !day.IsNewYear
                     select day;
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
         if ( found != null ) GoToDate(found.Date);

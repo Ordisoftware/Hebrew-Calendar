@@ -86,41 +86,4 @@ namespace Ordisoftware.Hebrew.Calendar
     }
   }
 
-  partial class LunisolarDay
-  {
-
-    public DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
-    {
-      var day = this;
-      if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
-      {
-        if ( useRealDay )
-        {
-          int index = ApplicationDatabase.Instance.LunisolarDays.IndexOf(day) - 1;
-          if ( index < 0 )
-            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
-          day = ApplicationDatabase.Instance.LunisolarDays[index];
-          return day.Sunset.Value;
-        }
-        else
-          return day.Sunrise.Value;
-      }
-      else
-      if ( useRealDay )
-      {
-        if ( day.MoonriseOccuring == MoonriseOccuring.BeforeSet || day.Moonset == null )
-        {
-          int index = ApplicationDatabase.Instance.LunisolarDays.IndexOf(day) - 1;
-          if ( index < 0 )
-            throw new SystemException($"Bad calendar in {nameof(GetEventStartDateTime)}({useRealDay},{isMoon})");
-          day = ApplicationDatabase.Instance.LunisolarDays[index];
-        }
-        return day.Moonset.Value;
-      }
-      else
-        return day.Moonrise.Value;
-    }
-
-  }
-
 }

@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new NavigationForm();
     }
 
-    private List<LunisolarDay> LunisolarDays = ApplicationDatabase.Instance.LunisolarDays;
+    private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
     public DateTime Date
     {
@@ -42,9 +42,6 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         try
         {
-          string strText = value.ToString();
-          strText = strText.Remove(strText.Length - 3, 3);
-          string strDate = SQLiteDate.ToString(value);
           var row = LunisolarDays.Single(day => day.Date == value);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
@@ -52,10 +49,10 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
           if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             LabelLunarDayValue.Text += " SHABAT";
-          LabelSunriseValue.Text = row.Sunrise.ToString();
-          LabelSunsetValue.Text = row.Sunset.ToString();
-          LabelMoonriseValue.Text = row.Moonrise.ToString();
-          LabelMoonsetValue.Text = row.Moonset.ToString();
+          LabelSunriseValue.Text = row.SunriseAsString;
+          LabelSunsetValue.Text = row.SunsetAsString;
+          LabelMoonriseValue.Text = row.MoonriseAsString;
+          LabelMoonsetValue.Text = row.MoonsetAsString;
           LabelMoonriseValue.Visible = row.Moonrise != null;
           LabelMoonrise.Visible = row.Moonrise != null;
           LabelMoonsetValue.Visible = row.Moonset != null;

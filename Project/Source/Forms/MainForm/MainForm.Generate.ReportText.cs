@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                                 : day.IsFullMoon
                                                                                   ? MoonFullText
                                                                                   : " " );
-            string strSun = day.Sunrise.AsTime() + " - " + day.Sunset.AsTime();
+            string strSun = day.SunriseAsString + " - " + day.SunsetAsString;
             strSun = ShowWinterSummerHour
                    ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
                                                                ? AppTranslations.Ephemeris.GetLang(Ephemeris.SummerHour)
@@ -103,10 +103,10 @@ namespace Ordisoftware.Hebrew.Calendar
                               : "   " );
             string strMoonrise = day.Moonrise == null
                                ? MoonNoText
-                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise.AsTime();
+                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.MoonriseAsString;
             string strMoonset = day.Moonset == null
                               ? MoonNoText
-                              : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset.AsTime();
+                              : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.MoonsetAsString;
             string strMoon = day.MoonriseOccuring == MoonriseOccuring.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;

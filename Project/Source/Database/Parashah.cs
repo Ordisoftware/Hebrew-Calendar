@@ -70,11 +70,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var shabatDay = Program.Settings.WeekParashahIsOnSaturday
                       ? DayOfWeek.Saturday
                       : (DayOfWeek)Program.Settings.ShabatDay;
-      int indexStart = ApplicationDatabase.Instance.LunisolarDays.IndexOf(this);
-      int indexEnd = Math.Min(indexStart + SearchParashahInterval, ApplicationDatabase.Instance.LunisolarDays.Count);
+      int indexStart = Table.IndexOf(this);
+      int indexEnd = Math.Min(indexStart + SearchParashahInterval, Table.Count);
       for ( int index = indexStart; index < indexEnd; index++ )
       {
-        var row = ApplicationDatabase.Instance.LunisolarDays[index];
+        var row = Table[index];
         if ( row.Date.DayOfWeek == shabatDay )
         {
           result = row;

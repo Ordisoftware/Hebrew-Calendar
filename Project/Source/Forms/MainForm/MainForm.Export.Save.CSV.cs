@@ -57,10 +57,10 @@ namespace Ordisoftware.Hebrew.Calendar
           result.Append(day.IsFullMoon + CSVSeparator);
           result.Append(day.LunarMonth + CSVSeparator);
           result.Append(day.LunarDay + CSVSeparator);
-          result.Append(day.Sunrise.AsTime() + CSVSeparator);
-          result.Append(day.Sunset.AsTime() + CSVSeparator);
-          result.Append(day.Moonrise.AsTime() + CSVSeparator);
-          result.Append(day.Moonset.AsTime() + CSVSeparator);
+          result.Append(day.SunriseAsString + CSVSeparator);
+          result.Append(day.SunsetAsString + CSVSeparator);
+          result.Append(day.MoonriseAsString + CSVSeparator);
+          result.Append(day.MoonsetAsString + CSVSeparator);
           string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonRiseOccuring);
           string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhase);
           string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChange);
