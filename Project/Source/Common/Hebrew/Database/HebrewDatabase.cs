@@ -13,9 +13,7 @@
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -26,22 +24,14 @@ namespace Ordisoftware.Hebrew
 
     static new public HebrewDatabase Instance { get; protected set; }
 
-    public readonly string ParashotTableName = nameof(Parashot);
     public readonly string ProcessLocksTableName = nameof(ProcessLocks);
 
-    public List<Parashah> Parashot { get; private set; }
-
-    public BindingList<Parashah> ParashotAsBindingList => new BindingList<Parashah>(Parashot);
-
-    private bool ParashotFirstTake = true;
 
     static HebrewDatabase()
     {
       Instance = new HebrewDatabase();
       SQLiteDatabase.Instance = Instance;
     }
-
-    private bool CreateDataMutex;
 
     private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
     {
@@ -54,6 +44,8 @@ namespace Ordisoftware.Hebrew
     {
       Connection.CreateTable<ProcessLock>();
       Connection.CreateTable<Parashah>();
+      Connection.CreateTable<HebrewWord>();
+      Connection.CreateTable<Lettriq>();
     }
 
     public override void LoadAll()
@@ -65,54 +57,6 @@ namespace Ordisoftware.Hebrew
       throw new NotImplementedException();
     }
 
-    public override void DeleteAll()
-    {
-      Connection.DeleteAll<Parashah>();
-      Parashot?.Clear();
-    }
-
-    public bool IsParashotReadOnly()
-    {
-      return ProcessLocks.GetCount(ParashotTableName) > 1;
-    }
-
-    public List<Parashah> TakeParashot(bool reload = false)
-    {
-      if ( !reload && Parashot != null ) return Parashot;
-      ProcessLocks.Lock(ParashotTableName);
-      if ( ParashotFirstTake )
-      {
-        ParashotFactory.Reset();
-        CreateParashotDataIfNotExist();
-        ParashotFirstTake = false;
-      }
-      Parashot = Load(Connection.Table<Parashah>());
-      return Parashot;
-    }
-
-    public void ReleaseParashot()
-    {
-      if ( Parashot == null ) return;
-      Parashot.Clear();
-      Parashot = null;
-      ProcessLocks.Unlock(ParashotTableName);
-    }
-
-    public void SaveParashot()
-    {
-      Connection.BeginTransaction();
-      try
-      {
-        Connection.UpdateAll(Parashot);
-        Connection.Commit();
-      }
-      catch
-      {
-        Connection.Rollback();
-        throw;
-      }
-    }
-
     public override void UpgradeSchema()
     {
       if ( Connection.CheckTable(ProcessLocksTableName) )
@@ -122,38 +66,6 @@ namespace Ordisoftware.Hebrew
           SystemManager.CloseRunningApplications(msg);
           ProcessLocksUpgrade.AddID(Connection);
         }
-    }
-
-    public void CreateParashotDataIfNotExist(bool reset = false)
-    {
-      if ( CreateDataMutex ) return;
-      bool temp = Globals.IsReady;
-      Globals.IsReady = false;
-      CreateDataMutex = true;
-      try
-      {
-        SystemManager.TryCatchManage(() =>
-        {
-          if ( !reset && Connection.GetRowsCount(ParashotTableName) == 54 ) return;
-          Connection.BeginTransaction();
-          try
-          {
-            DeleteAll();
-            Connection.InsertAll(ParashotFactory.All.Select(p => p.Clone()));
-            Connection.Commit();
-          }
-          catch
-          {
-            Connection.Rollback();
-            throw;
-          }
-        });
-      }
-      finally
-      {
-        CreateDataMutex = false;
-        Globals.IsReady = temp;
-      }
     }
 
   }
