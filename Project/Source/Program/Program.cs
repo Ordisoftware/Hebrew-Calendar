@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
-        UpdateLocalization();
+        //UpdateLocalization();
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();

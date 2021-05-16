@@ -14,6 +14,7 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -30,10 +31,17 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Enabled = false;
-        Globals.ChronoLoadData.Start();
-        ApplicationDatabase.Instance.Open();
-        LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
-        Globals.ChronoLoadData.Stop();
+        var task = new Task(() =>
+        {
+          ApplicationDatabase.Instance.Open();
+          Globals.ChronoLoadData.Start();
+          ApplicationDatabase.Instance.Open();
+          LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+          Globals.ChronoLoadData.Stop();
+        });
+        task.Start();
+        Program.UpdateLocalization();
+        task.Wait();
         if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch
           && !Settings.FirstLaunchV7_0 )

@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Data;
@@ -24,6 +23,7 @@ using Ordisoftware.Core;
 using EnumsNET;
 using CalenderNet = CodeProjectCalendar.NET.Calendar;
 using Modifiers = Base.Hotkeys.Modifiers;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -44,19 +44,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void DoConstructor()
     {
-      InitializeComponent();
-      SoundItem.Initialize();
+      new Task(() => ProcessLocks.Lock()).Start();
+      new Task(InitializeIconsAndSound).Start();
+      SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
+      Text = Globals.AssemblyTitle;
+      ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
-      SystemManager.TryCatch(() =>
-      {
-        Icon = new Icon(Globals.ApplicationIconFilePath);
-        TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
-        TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
-        TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
-        TrayIcons[true][false] = Icon.GetBySize(16, 16);
-        TrayIcon.Icon = TrayIcons[true][false];
-      });
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
@@ -75,17 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ProcessLocks.Lock();
-      ReminderBoxDesktopLocation();
-      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
-      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
-        SystemManager.TryCatchManage(() =>
-        {
-          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
-          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
-        });
       Globals.ChronoStartingApp.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
@@ -99,38 +83,22 @@ namespace Ordisoftware.Hebrew.Calendar
         return;
       }
       Globals.ChronoStartingApp.Start();
+      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
+        SystemManager.TryCatchManage(() =>
+        {
+          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
+        });
+      new Task(InitializeCurrentTimeZone).Start();
+      new Task(InitializeDialogsDirectory).Start();
+      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
-      InitializeCurrentTimeZone();
-      InitializeDialogsDirectory();
-      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
+      InitializeReminderBoxDesktopLocation();
       Refresh();
       ClearLists();
       LoadData();
-    }
-
-    /// <summary>
-    /// Set reminder boxes location.
-    /// </summary>
-    public void ReminderBoxDesktopLocation()
-    {
-      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
-      {
-        var anchor = DisplayManager.GetTaskbarAnchorStyle();
-        switch ( anchor )
-        {
-          case AnchorStyles.Top:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
-            break;
-          case AnchorStyles.Left:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
-            break;
-          default:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
-            break;
-        }
-      }
     }
 
     /// <summary>
@@ -167,7 +135,7 @@ namespace Ordisoftware.Hebrew.Calendar
       TimerMidnight.TimeReached += TimerMidnight_Tick;
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
-      this.Popup();
+      this.ForceBringToFront();// Popup();
       if ( Settings.StartupHide || Globals.ForceStartupHide )
         MenuShowHide.PerformClick();
       SystemManager.TryCatch(() =>
@@ -319,6 +287,20 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Initialize current time zone.
+    /// </summary>
+    public void InitializeCurrentTimeZone()
+    {
+      CurrentTimeZoneInfo = null;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Settings.TimeZone )
+        {
+          CurrentTimeZoneInfo = item;
+          break;
+        }
+    }
+
+    /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
     public void InitializeDialogsDirectory()
@@ -335,17 +317,19 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize current time zone.
+    /// Initialize icons
     /// </summary>
-    public void InitializeCurrentTimeZone()
+    private void InitializeIconsAndSound()
     {
-      CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Settings.TimeZone )
-        {
-          CurrentTimeZoneInfo = item;
-          break;
-        }
+      SystemManager.TryCatch(() =>
+      {
+        TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(16, 16);
+      });
+      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
     }
 
     /// <summary>
@@ -403,6 +387,29 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionEnableReminder.PerformClick();
       ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
       MenuDisableReminder.Enabled = ActionDisableReminder.Enabled;
+    }
+
+    /// <summary>
+    /// Set reminder boxes location.
+    /// </summary>
+    public void InitializeReminderBoxDesktopLocation()
+    {
+      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+      {
+        var anchor = DisplayManager.GetTaskbarAnchorStyle();
+        switch ( anchor )
+        {
+          case AnchorStyles.Top:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
+            break;
+          case AnchorStyles.Left:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
+            break;
+          default:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
+            break;
+        }
+      }
     }
 
     /// <summary>

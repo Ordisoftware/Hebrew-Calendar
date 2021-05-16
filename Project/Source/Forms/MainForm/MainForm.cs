@@ -53,6 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private MainForm()
     {
+      InitializeComponent();
       DoConstructor();
     }
 

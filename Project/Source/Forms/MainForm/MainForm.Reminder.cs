@@ -26,6 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public void DoTimerReminder()
     {
       if ( TimerMutex ) return;
+      if ( !Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
