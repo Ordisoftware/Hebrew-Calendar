@@ -71,6 +71,13 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _ApplicationMustExit;
 
+    static public TranslationsDictionary ApplicationMustExitContactSupport
+      = new TranslationsDictionary
+      {
+        [Language.EN] = ApplicationMustExit [Language.EN] + Globals.NL2 + ContactSupport [Language.EN],
+        [Language.FR] = ApplicationMustExit [Language.FR] + Globals.NL2 + ContactSupport [Language.FR]
+      };
+
     static public readonly TranslationsDictionary RestartRequired
       = new TranslationsDictionary
       {

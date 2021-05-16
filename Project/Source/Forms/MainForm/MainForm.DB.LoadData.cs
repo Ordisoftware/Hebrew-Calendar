@@ -11,10 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
-using System.Data;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -38,10 +37,11 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.ChronoLoadData.Start();
         ApplicationDatabase.Instance.Open();
         LunisolarDayBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
-        // TODO set autoload false
+        // TODO set autoload false ? 
         ApplicationDatabase.Instance.LoadingData += update;
-        var count = ApplicationDatabase.Instance.Connection.GetRowsCount(nameof(ApplicationDatabase.Instance.LunisolarDays));
-        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), (int)count * 2, Program.LoadingFormLoadDB);
+        var count = ApplicationDatabase.Instance.Connection.GetRowsCount(nameof(LunisolarDays));
+        var msg = SysTranslations.ProgressLoadingData.GetLang();
+        LoadingForm.Instance.Initialize(msg, (int)count, Program.LoadingFormLoadDB);
         Globals.ChronoLoadData.Stop();
         if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch
@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
               catch ( Exception ex )
               {
                 Globals.ChronoStartingApp.Stop();
-                string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
+                msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
                 DisplayManager.ShowWarning(msg);
                 Globals.ChronoStartingApp.Start();
               }
@@ -96,8 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Globals.ChronoStartingApp.Stop();
         ex.Manage();
-        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
-                                        SysTranslations.ContactSupport[Language.FR]);
+        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExitContactSupport.GetLang());
         Globals.ChronoStartingApp.Start();
       }
       finally
@@ -123,7 +122,9 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
           TimerReminder.Enabled = true;
+          Globals.ChronoStartingApp.Stop();
           TimerReminder_Tick(null, null);
+          Globals.ChronoStartingApp.Start();
         }
         catch ( Exception ex )
         {

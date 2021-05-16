@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public List<LunisolarDay> LunisolarDays { get; private set; }
 
-    public BindingList<LunisolarDay> LunisolarDaysAsBindingList => new BindingList<LunisolarDay>(LunisolarDays);
+    public BindingList<LunisolarDay> LunisolarDaysAsBindingList { get; private set; }
 
     private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
     {
@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public override void LoadAll()
     {
       LunisolarDays = Connection.Table<LunisolarDay>().ToList();
+      LunisolarDaysAsBindingList = new BindingList<LunisolarDay>(LunisolarDays);
     }
 
     protected override void DoSaveAll()
