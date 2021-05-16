@@ -243,26 +243,8 @@ namespace Ordisoftware.Hebrew
 
     private void DoExportTable(string filePath)
     {
-      // TODO redo and improve
-      //var table = DataGridView.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
-      /*var table = new DataTable();
-      int indexBook = -1;
-      foreach ( DataGridViewColumn column in DataGridView.Columns )
-        if ( indexBook == -1 && column.Name == ColumnBook.DataPropertyName )
-        {
-          table.Columns.Add(ColumnBook.DataPropertyName, typeof(string));
-          indexBook = column.Index;
-        }
-        else
-          table.Columns.Add(column.Name, column.ValueType);
-      foreach ( DataGridViewRow row in DataGridView.Rows )
-      {
-        object[] values = new object[row.Cells.Count];
-        Array.Copy(row.ItemArray, values, row.ItemArray.Length);
-        values[indexBook] = ( (TorahBooks)( (int)row.ItemArray[indexBook] - 1 ) ).ToString();
-        table.Rows.Add(values);
-      }
-      table.Export(filePath, Program.BoardExportTargets);*/
+      var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
+      table.Export(filePath, Program.BoardExportTargets);
     }
 
     private void ActionReset_Click(object sender, EventArgs e)
@@ -344,15 +326,6 @@ namespace Ordisoftware.Hebrew
     {
       if ( DataGridView.DataSource == null ) return;
       if ( HebrewDatabase.Instance.Parashot == null ) return;
-      /*TODO remove? foreach ( DataGridViewColumn column in DataGridView.Columns )
-      {
-        var datacolumn = ParashotTable.DataTable.Columns[column.DataPropertyName];
-        if ( datacolumn.DataType == typeof(string) )
-        {
-          column.DefaultCellStyle.DataSourceNullValue = string.Empty;
-          datacolumn.DefaultValue = string.Empty;
-        }
-      }*/
       UpdateStats();
     }
 

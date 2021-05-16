@@ -161,7 +161,7 @@ namespace Ordisoftware.Hebrew
         return;
       }
       open(parashah);
-      if ( parashah.Linked != null && openLinked ) open(parashah.Linked);
+      if ( parashah.GetLinked() != null && openLinked ) open(parashah.GetLinked());
       //
       void open(Parashah item)
       {

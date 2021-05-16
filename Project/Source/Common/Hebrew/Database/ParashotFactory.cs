@@ -45,7 +45,7 @@ namespace Ordisoftware.Hebrew
       }
       for ( index = 0; index < All.Count(); index++ )
         if ( All.ElementAt(index).IsLinkedToNext )
-          All.ElementAt(index).Linked = All.ElementAt(++index);
+          All.ElementAt(index).SetLinked(All.ElementAt(++index));
     }
 
     static public IEnumerable<Parashah> All

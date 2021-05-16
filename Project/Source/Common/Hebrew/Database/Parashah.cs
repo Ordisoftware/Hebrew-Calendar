@@ -26,23 +26,34 @@ namespace Ordisoftware.Hebrew
 
     [PrimaryKey]
     public string ID { get; set; }
+
     public TorahBooks Book { get; set; }
     public int Number { get; set; }
-    public string VerseBegin { get; set; }
-    public string VerseEnd { get; set; }
-    public bool IsLinkedToNext { get; set; }
-    public string Name { get; set; }
-    public string Hebrew { get; set; }
-    public string Unicode { get; set; }
-    public string Translation { get; set; }
-    public string Lettriq { get; set; }
-    public string Memo { get; set; }
 
     [Ignore]
-    public Parashah Linked { get; set; }
-
     public string FullReferenceBegin
       => $"{(int)Book}.{VerseBegin}";
+
+    public string VerseBegin { get; set; }
+    public string VerseEnd { get; set; }
+
+    public string Name { get; set; }
+    public string Unicode { get; set; }
+    public string Hebrew { get; set; }
+
+    public string Translation { get; set; }
+    public string Lettriq { get; set; }
+
+    public string Memo { get; set; }
+
+    public bool IsLinkedToNext { get; set; }
+
+    public void SetLinked(Parashah parashah) => Linked = parashah;
+    public Parashah GetLinked() => Linked;
+    private Parashah Linked;
+
+    public string ToStringLinked()
+      => Name + ( Linked != null ? " - " + Linked.Name : "" );
 
     public string ToString(bool useHebrewFont)
       => $"Sefer {Book} " +
@@ -56,9 +67,6 @@ namespace Ordisoftware.Hebrew
 
     public override string ToString()
       => ToString(false);
-
-    public string ToStringLinked()
-      => Name + ( Linked != null ? " - " + Linked.Name : "" );
 
     public object Clone()
     {

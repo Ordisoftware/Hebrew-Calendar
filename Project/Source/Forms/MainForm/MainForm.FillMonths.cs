@@ -157,7 +157,6 @@ namespace Ordisoftware.Hebrew.Calendar
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
-              // TODO property AsTiming
               else
               if ( !Program.Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
