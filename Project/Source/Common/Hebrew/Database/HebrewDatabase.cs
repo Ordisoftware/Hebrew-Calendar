@@ -115,11 +115,13 @@ namespace Ordisoftware.Hebrew
 
     public override void UpgradeSchema()
     {
-      if ( !Connection.CheckColumn(ProcessLocksTableName, "ID") )
-      {
-        SystemManager.CloseRunningApplications(SysTranslations.UpgradeCommonDatabaseRequired.GetLang(ProcessLocksTableName));
-        ProcessLocksUpgrade.AddID(Connection);
-      }
+      if ( Connection.CheckTable(ProcessLocksTableName) )
+        if ( !Connection.CheckColumn(ProcessLocksTableName, "ID") )
+        {
+          var msg = SysTranslations.UpgradeCommonDatabaseRequired.GetLang(ProcessLocksTableName);
+          SystemManager.CloseRunningApplications(msg);
+          ProcessLocksUpgrade.AddID(Connection);
+        }
     }
 
     public void CreateParashotDataIfNotExist(bool reset = false)
