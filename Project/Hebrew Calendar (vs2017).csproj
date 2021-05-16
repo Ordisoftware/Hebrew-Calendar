@@ -216,10 +216,14 @@
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
     <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Parashot.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Terms.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ProcessLock.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ProcessLocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
