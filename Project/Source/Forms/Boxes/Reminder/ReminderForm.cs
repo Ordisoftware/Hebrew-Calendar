@@ -88,8 +88,8 @@ namespace Ordisoftware.Hebrew.Calendar
                               : row.DayAndMonthWithYearText;
         if ( times.DateStart != null && times.DateEnd != null )
         {
-          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart;
-          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd;
+          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
+          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
           if ( Program.Settings.ReminderBoxShowFullDates )
           {
             form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
