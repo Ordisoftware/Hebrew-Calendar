@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew
     public override void DeleteAll()
     {
       Connection.DeleteAll<Parashah>();
-      Parashot.Clear();
+      Parashot?.Clear();
     }
 
     public bool IsParashotReadOnly()

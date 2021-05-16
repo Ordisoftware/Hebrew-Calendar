@@ -15,7 +15,6 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -26,8 +25,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadData()
     {
-      var cursor = Cursor;
-      Cursor = Cursors.WaitCursor;
       try
       {
         Enabled = false;
@@ -101,7 +98,6 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         Enabled = true;
-        Cursor = cursor;
         try
         {
           if ( Settings.RestoreLastViewAtStartup )
