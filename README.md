@@ -51,7 +51,6 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 - Windows 7 SP1 x32/x64 or higher
 - Screen 1024x768 or higher
 - Framework .NET 4.7.2
-- SQLite ODBC Driver
 
 ## Download
 
@@ -86,31 +85,6 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 [![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
 ## Frequently asked questions
-
-#### How to install SQlite ODBC Driver?
-
-The setup installs:
-
-- [sqliteodbc.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc.exe) on Windows 32-bit.
-- [sqliteodbc_w64.exe](http://www.ch-werner.de/sqliteodbc/sqliteodbc_w64.exe) on Windows 64-bit.
-
-In the event that an error message indicates that a DLL file could not be copied, it is usually due to the fact that an application using this driver already installed is running and is blocking the file. You can ignore this error or close the application in question and restart the installation to obtain a driver update.
-
-#### What to do in case of ODBC datasource connection error?
-
-The software tries to register an ODBC DSN to the registry but in case of problem run:
-
-&emsp;`C:\Program Files\Ordisoftware\Hebrew Calendar\System\RegisterODBC.reg`
-
-Or open the ODBC Datasource Manager (Admin tools in Windows' Control panel) and create a user datasource named:
-
-&emsp;`Hebrew-Calendar` for `SQLite 3 ODBC Driver`
-
-With Database Name sets to:
-
-&emsp;`%USERPROFILE%\AppData\Roaming\Ordisoftware\Hebrew Calendar\Hebrew-Calendar.sqlite`
-
-Watch the [video](https://www.youtube.com/watch?v=WPVF8pj9I3E).
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
@@ -315,6 +289,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Code refactoring and quality improvement.
 - Some UI improvements.
+- Some fixes.
 
 #### 2021.05.09 - Version 7.3
 
