@@ -87,7 +87,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.ChronoStartingApp.Start();
           if ( errors != null )
           {
-            SystemManager.TryCatch(() => ApplicationDatabase.Instance.Empty());
+            SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
             throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
           }
         }

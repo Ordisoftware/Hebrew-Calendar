@@ -66,16 +66,14 @@ namespace Ordisoftware.Hebrew.Calendar
     public override void UpgradeSchema()
     {
       Connection.DropTableIfExists("Report");
-      // TODO check if column else
-      //Connection.DropTableIfExists(nameof(LunisolarDays));
-      /*bool b = Globals.IsDatabaseUpgraded;
-      b = !LockFileConnection.CheckColumn("LunisolarDays", "TorahEventText", "TEXT", "''", true) || b;
-      b = !LockFileConnection.CheckColumn("LunisolarDays", "ParashahID", "TEXT", "''", true) || b;
-      b = !LockFileConnection.CheckColumn("LunisolarDays", "LinkedParashahID", "TEXT", "''", true) || b;
-      Globals.IsDatabaseUpgraded = b;*/
+      if ( Connection.CheckTable(nameof(LunisolarDays)) )
+      {
+        if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
+          Connection.DropTableIfExists(nameof(LunisolarDays));
+      }
     }
 
-    public void Empty()
+    public override void DeleteAll()
     {
       Connection.DeleteAll<LunisolarDay>();
       LunisolarDays.Clear();

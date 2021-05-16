@@ -65,6 +65,12 @@ namespace Ordisoftware.Hebrew
       throw new NotImplementedException();
     }
 
+    public override void DeleteAll()
+    {
+      Connection.DeleteAll<Parashah>();
+      Parashot.Clear();
+    }
+
     public bool IsParashotReadOnly()
     {
       return ProcessLocks.GetCount(ParashotTableName) > 1;
@@ -77,7 +83,7 @@ namespace Ordisoftware.Hebrew
       if ( ParashotFirstTake )
       {
         ParashotFactory.Reset();
-        CreateParashotDataIfNotExist(false);
+        CreateParashotDataIfNotExist();
         ParashotFirstTake = false;
       }
       Parashot = Load(Connection.Table<Parashah>());
@@ -130,7 +136,7 @@ namespace Ordisoftware.Hebrew
           Connection.BeginTransaction();
           try
           {
-            Connection.DeleteAll<Parashah>();
+            DeleteAll();
             Connection.InsertAll(ParashotFactory.All.Select(p => p.Clone()));
             Connection.Commit();
           }

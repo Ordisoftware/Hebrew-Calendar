@@ -86,6 +86,8 @@ namespace Ordisoftware.Core
       return result;
     }
 
+    public abstract void DeleteAll();
+
     public void BeginTransaction()
     {
       Connection.BeginTransaction();
