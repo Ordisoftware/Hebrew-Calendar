@@ -29,6 +29,8 @@ namespace Ordisoftware.Core
 
     public string ConnectionString { get; private set; }
 
+    public bool Initialized { get; private set; }
+
     public SQLiteNetORM Connection
     {
       get => _Connection;
@@ -48,16 +50,17 @@ namespace Ordisoftware.Core
     protected SQLiteDatabase(string connectionString)
     {
       ConnectionString = connectionString;
+      Connection = new SQLiteNetORM(ConnectionString);
     }
 
     public virtual void Open()
     {
-      if ( Connection != null ) return;
-      Connection = new SQLiteNetORM(ConnectionString);
+      if ( Initialized ) return;
       UpgradeSchema();
       CreateTables();
       LoadAll();
       CreateDataIfNotExist();
+      Initialized = true;
     }
 
     public void Close()

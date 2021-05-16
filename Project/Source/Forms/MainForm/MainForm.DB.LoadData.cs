@@ -25,10 +25,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadData()
     {
-      void update(Type type)
-      {
-        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-      }
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       try
@@ -37,11 +33,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.ChronoLoadData.Start();
         ApplicationDatabase.Instance.Open();
         LunisolarDayBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
-        // TODO set autoload false ? 
-        ApplicationDatabase.Instance.LoadingData += update;
-        var count = ApplicationDatabase.Instance.Connection.GetRowsCount(nameof(LunisolarDays));
-        var msg = SysTranslations.ProgressLoadingData.GetLang();
-        LoadingForm.Instance.Initialize(msg, (int)count, Program.LoadingFormLoadDB);
         Globals.ChronoLoadData.Stop();
         if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch
@@ -70,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
               catch ( Exception ex )
               {
                 Globals.ChronoStartingApp.Stop();
-                msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
+                string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
                 DisplayManager.ShowWarning(msg);
                 Globals.ChronoStartingApp.Start();
               }
@@ -103,7 +94,6 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Enabled = true;
         Cursor = cursor;
-        ApplicationDatabase.Instance.LoadingData -= update;
         try
         {
           if ( Settings.RestoreLastViewAtStartup )

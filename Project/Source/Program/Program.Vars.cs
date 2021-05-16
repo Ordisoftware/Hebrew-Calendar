@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using Ordisoftware.Core;
@@ -88,7 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate big calendar advert levels.
     /// </summary>
-    static public readonly int[] BigCalendarLevels = { 20, 40, 60, 80, 120 };
+    static public readonly int[] BigCalendarLevels = { 30, 50, 75, 100, 125 };
 
     /// <summary>
     /// Indicate predefined years intervals.
