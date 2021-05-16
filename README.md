@@ -56,7 +56,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version**
 
-- Improved weekly parashah menus.
+- SQLite ODBC Driver is no more needed.
+- Overall performances are Optimized.
+- Some UI improvements and some fixes.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
