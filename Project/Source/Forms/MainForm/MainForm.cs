@@ -14,7 +14,6 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
-using System.Data;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;

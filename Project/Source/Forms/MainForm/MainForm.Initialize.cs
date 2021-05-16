@@ -184,14 +184,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ProcessNewsAndCommandLine()
     {
       if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-        SystemManager.TryCatch(() =>
-        {
-          var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
-          var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-          if ( menuItem != null )
-            if ( ( (KeyValuePair<string, TranslationsDictionary>)menuItem.Tag ).Key == Globals.AssemblyVersion )
-              menuItem.PerformClick();
-        });
+        if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+          SystemManager.TryCatch(CommonMenusControl.Instance.ShowLastNews);
       if ( ApplicationCommandLine.Instance.Generate )
         ActionGenerate.PerformClick();
       if ( ApplicationCommandLine.Instance.ResetReminder )

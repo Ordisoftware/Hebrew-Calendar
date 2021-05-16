@@ -11,15 +11,15 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Markdig;
+using TranslationPair = System.Collections.Generic.KeyValuePair<string, Ordisoftware.Core.TranslationsDictionary>;
 
 namespace Ordisoftware.Hebrew
 {
@@ -91,10 +91,19 @@ namespace Ordisoftware.Hebrew
       ActionViewVersionNews.Enabled = ActionViewVersionNews.DropDownItems.Count > 0;
     }
 
+    public void ShowLastNews()
+    {
+      ActionViewVersionNews.DropDownItems
+                           .Cast<ToolStripItem>()
+                           .Where(item => ( (TranslationPair)item.Tag ).Key == Globals.AssemblyVersion)
+                           .SingleOrDefault()?
+                           .PerformClick();
+    }
+
     private void ShowNewInVersion(object sender, EventArgs e)
     {
       if ( !( sender is ToolStripItem menuitem ) ) return;
-      var notice = (KeyValuePair<string, TranslationsDictionary>)menuitem.Tag;
+      var notice = (TranslationPair)menuitem.Tag;
       string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(notice.Key);
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
       if ( form == null )
@@ -105,14 +114,14 @@ namespace Ordisoftware.Hebrew
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
         init(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true,
              index => ActionReleaseNotes.PerformClick());
-        init(form.ActionNo, "<<", 35, Notices.Keys.First() != notice.Key,
-             index => ActionViewVersionNews.DropDownItems[0].PerformClick());
-        init(form.ActionAbort, "<", 35, Notices.Keys.First() != notice.Key,
+        init(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
+        index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
+        init(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
+        index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
+        init(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
              index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-        init(form.ActionRetry, ">", 35, Notices.Keys.Last() != notice.Key,
-             index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-        init(form.ActionIgnore, ">>", 35, Notices.Keys.Last() != notice.Key,
-             index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
+        init(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
+             index => ActionViewVersionNews.DropDownItems[0].PerformClick());
         void init(Button button, string text, int width, bool enabled, Action<int> action)
         {
           button.Visible = true;
