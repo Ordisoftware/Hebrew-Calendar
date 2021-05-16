@@ -32,7 +32,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     public List<LunisolarDay> LunisolarDays { get; private set; }
-
     public BindingList<LunisolarDay> LunisolarDaysAsBindingList { get; private set; }
 
     private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
@@ -63,9 +62,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Connection.UpdateAll(LunisolarDays);
     }
 
-    public override void UpgradeSchema()
+    protected override void UpgradeSchema()
     {
-      Connection.DropTableIfExists("Report");
+      base.UpgradeSchema();
       if ( Connection.CheckTable(nameof(LunisolarDays)) )
       {
         if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
@@ -73,8 +72,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    public override void DeleteAll()
+    public void DeleteAll()
     {
+      CheckConnected();
+      CheckAccess(LunisolarDays, nameof(LunisolarDays));
       Connection.DeleteAll<LunisolarDay>();
       LunisolarDays.Clear();
     }

@@ -14,6 +14,7 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SQLite;
 
 namespace Ordisoftware.Core
@@ -53,8 +54,19 @@ namespace Ordisoftware.Core
       Connection = new SQLiteNetORM(ConnectionString);
     }
 
+    protected void CheckConnected()
+    {
+      if ( Connection == null ) throw new SQLiteException("Not connected.");
+    }
+
+    protected void CheckAccess(object table, string name)
+    {
+      if ( table == null ) throw new SQLiteException("Table is not loaded: " + name);
+    }
+
     public virtual void Open()
     {
+      CheckConnected();
       if ( Initialized ) return;
       UpgradeSchema();
       CreateTables();
@@ -65,44 +77,49 @@ namespace Ordisoftware.Core
 
     public void Close()
     {
+      if ( Connection == null ) return;
       Connection.Close();
       Connection = null;
     }
 
-    public virtual void UpgradeSchema()
+    protected virtual void UpgradeSchema()
     {
+      CheckConnected();
     }
 
     protected abstract void CreateTables();
 
     public virtual void CreateDataIfNotExist(bool reset = false)
     {
+      CheckConnected();
     }
 
     public abstract void LoadAll();
 
     protected List<T> Load<T>(TableQuery<T> query)
     {
+      CheckConnected();
       LoadingData?.Invoke(typeof(T));
       var result = query.ToList();
       DataLoaded?.Invoke();
       return result;
     }
 
-    public abstract void DeleteAll();
-
     public void BeginTransaction()
     {
+      CheckConnected();
       Connection.BeginTransaction();
     }
 
     public void Commit()
     {
+      CheckConnected();
       Connection.Commit();
     }
 
     public void Rollback()
     {
+      CheckConnected();
       Connection.Rollback();
     }
 
@@ -113,6 +130,7 @@ namespace Ordisoftware.Core
 
     public void SaveAll(bool useTransaction)
     {
+      CheckConnected();
       if ( !useTransaction )
       {
         DoSaveAll();

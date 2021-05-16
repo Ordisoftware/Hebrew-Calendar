@@ -24,9 +24,6 @@ namespace Ordisoftware.Hebrew
 
     static new public HebrewDatabase Instance { get; protected set; }
 
-    public readonly string ProcessLocksTableName = nameof(ProcessLocks);
-
-
     static HebrewDatabase()
     {
       Instance = new HebrewDatabase();
@@ -36,16 +33,18 @@ namespace Ordisoftware.Hebrew
     private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
     {
       Open();
+      CheckConnected();
       Connection.CheckIntegrity();
       Connection.Vacuum();
     }
 
     protected override void CreateTables()
     {
+      CheckConnected();
       Connection.CreateTable<ProcessLock>();
       Connection.CreateTable<Parashah>();
-      Connection.CreateTable<HebrewWord>();
-      Connection.CreateTable<Lettriq>();
+      Connection.CreateTable<TermHebrew>();
+      Connection.CreateTable<TermLettriq>();
     }
 
     public override void LoadAll()
@@ -57,12 +56,13 @@ namespace Ordisoftware.Hebrew
       throw new NotImplementedException();
     }
 
-    public override void UpgradeSchema()
+    protected override void UpgradeSchema()
     {
-      if ( Connection.CheckTable(ProcessLocksTableName) )
-        if ( !Connection.CheckColumn(ProcessLocksTableName, "ID") )
+      base.UpgradeSchema();
+      if ( Connection.CheckTable(nameof(ProcessLocks)) )
+        if ( !Connection.CheckColumn(nameof(ProcessLocks), "ID") )
         {
-          var msg = SysTranslations.UpgradeCommonDatabaseRequired.GetLang(ProcessLocksTableName);
+          var msg = SysTranslations.UpgradeCommonDatabaseRequired.GetLang(nameof(ProcessLocks));
           SystemManager.CloseRunningApplications(msg);
           ProcessLocksUpgrade.AddID(Connection);
         }
