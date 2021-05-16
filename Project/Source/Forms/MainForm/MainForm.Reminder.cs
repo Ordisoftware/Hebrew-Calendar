@@ -76,7 +76,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
     }
 
-    private void EnableReminderTimer()
+    private void EnableReminderTimer(bool calltimer = true)
     {
       TimerResumeReminder.Enabled = false;
       ActionResetReminder.Enabled = true;
@@ -90,9 +90,12 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuEnableReminder.Enabled = false;
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
       IsReminderPaused = false;
-      ClearLists();
       UpdateTitles();
-      TimerReminder_Tick(null, null);
+      if ( calltimer )
+      {
+        ClearLists();
+        TimerReminder_Tick(null, null);
+      }
     }
 
     private void DisableReminderTimer()

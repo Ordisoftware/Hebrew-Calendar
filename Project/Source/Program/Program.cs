@@ -217,6 +217,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public void UpdateLocalization()
     {
+      //if ( Globals.IsReady && Settings.LanguageSelected == Languages.Default ) return;
       Globals.ChronoTranslate.Restart();
       try
       {
@@ -272,7 +273,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CreateSystemInformationMenu();
         MainForm.Instance.CalendarText.Text = tempTextReport;
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
-        MainForm.Instance.DoTimerReminder();
+        //MainForm.Instance.DoTimerReminder();
         MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
         MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         MainForm.Instance.EditEnumsAsTranslations.Visible = true;

@@ -296,6 +296,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Globals.MainForm.Enabled;
+      bool calltimer = true;
       try
       {
         Enabled = false;
@@ -316,6 +317,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Thread.Sleep(1000);
           ActionGenerate_Click(null, EventArgs.Empty);
           PanelViewMonth.Visible = true;
+          calltimer = false;
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
@@ -334,7 +336,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
           GoToDate(dateOld.Value);
         TimerReminder.Enabled = true;
-        EnableReminderTimer();
+        EnableReminderTimer(calltimer);
         UpdateTitles(true);
       }
     }
