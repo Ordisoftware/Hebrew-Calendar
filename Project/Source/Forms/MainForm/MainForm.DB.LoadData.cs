@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Enabled = false;
         Globals.ChronoLoadData.Start();
         ApplicationDatabase.Instance.Open();
-        LunisolarDayBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+        LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
         Globals.ChronoLoadData.Stop();
         if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch

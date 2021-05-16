@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormShown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      EditEnumsAsTranslations.Left = LunisolarDayBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+      EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
       ToolStrip.SetDropDownOpening();
       UpdateTextCalendar();
       CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);

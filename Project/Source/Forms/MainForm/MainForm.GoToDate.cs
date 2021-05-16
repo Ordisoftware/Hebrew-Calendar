@@ -46,11 +46,11 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       SystemManager.TryCatch(() =>
       {
-        int position = LunisolarDayBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
+        int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
         if ( position >= 0 )
         {
-          LunisolarDayBindingSource.Position = position;
-          CurrentDay = (LunisolarDay)LunisolarDayBindingSource.Current;
+          LunisolarDaysBindingSource.Position = position;
+          CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
           CalendarGrid.Update();
         }
       });

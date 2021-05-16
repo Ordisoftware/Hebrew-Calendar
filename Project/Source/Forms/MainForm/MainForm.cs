@@ -869,7 +869,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region View Data Grid
+    #region Data Grid View
 
     /// <summary>
     /// Event handler. Called by LabelGridGoToToday for click events.
@@ -930,10 +930,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatch(() =>
       {
-        if ( LunisolarDayBindingSource.Current != null )
-        {
-          GoToDate(( (LunisolarDay)LunisolarDayBindingSource.Current ).Date);
-        }
+        if ( LunisolarDaysBindingSource.Current != null )
+          GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
       });
     }
 

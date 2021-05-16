@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
       Globals.ChronoCreateData.Restart();
-      LunisolarDayBindingSource.DataSource = null;
+      LunisolarDaysBindingSource.DataSource = null;
       ApplicationDatabase.Instance.BeginTransaction();
       try
       {
@@ -108,7 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
             finally
             {
               ApplicationDatabase.Instance.Commit();
-              LunisolarDayBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+              LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
             }
         }
       }
