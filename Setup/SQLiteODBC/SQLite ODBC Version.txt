@@ -1,2 +1,0 @@
-SQLiteODBC 0.9998
-SQLite 3.32.3

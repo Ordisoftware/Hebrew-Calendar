@@ -29,13 +29,13 @@ namespace Ordisoftware.Core
 
     public string ConnectionString { get; private set; }
 
-    public SQLiteConnection Connection
+    public SQLiteNetORM Connection
     {
       get => _Connection;
       private set => _Connection = value;
     }
     [NonSerialized]
-    public SQLiteConnection _Connection;
+    public SQLiteNetORM _Connection;
 
     public bool UseTransactionByDefault { get; set; } = true;
 
@@ -53,7 +53,7 @@ namespace Ordisoftware.Core
     public virtual void Open()
     {
       if ( Connection != null ) return;
-      Connection = new SQLiteConnection(ConnectionString);
+      Connection = new SQLiteNetORM(ConnectionString);
       UpgradeSchema();
       CreateTables();
       LoadAll();

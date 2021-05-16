@@ -211,7 +211,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the application database SQLite connection string.
     /// </summary>
-    static public string ApplicationSQLiteConnectionString
+    static public string ApplicationSQLiteNetConnectionString
       => "Datasource=" + ApplicationDatabaseFilePath;
 
     /// <summary>
@@ -223,7 +223,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the common database SQLite connection string.
     /// </summary>
-    static public string CommonSQLiteConnectionString
+    static public string CommonSQLiteNetConnectionString
       => "Datasource=" + CommonDatabaseFilePath;
 
   }

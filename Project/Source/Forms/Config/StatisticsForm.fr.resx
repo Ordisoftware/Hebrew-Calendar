@@ -326,7 +326,7 @@
     <value>61, 13</value>
   </data>
   <data name="dBADONETAccessLabel.Text" xml:space="preserve">
-    <value>ADO.NET :</value>
+    <value>Fournisseur :</value>
   </data>
   <data name="processorTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>

@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew
 
   static class ProcessLocksUpgrade
   {
-    static public void AddID(SQLiteConnection connection)
+    static public void AddID(SQLiteNetORM connection)
     {
       connection.Execute($@"PRAGMA foreign_keys = 0;");
       connection.DropTableIfExists(nameof(ProcessLock_No_ID));

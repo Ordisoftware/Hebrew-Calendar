@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -58,13 +57,13 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
-        int pos = CalendarText.Find(strDate);
-        if ( pos != -1 )
+        int position = CalendarText.Find(strDate);
+        if ( position != -1 )
         {
-          CalendarText.SelectionStart = pos - 6 - 119;
+          CalendarText.SelectionStart = position - 6 - 119;
           CalendarText.SelectionLength = 0;
           CalendarText.ScrollToCaret();
-          CalendarText.SelectionStart = pos - 6;
+          CalendarText.SelectionStart = position - 6;
           CalendarText.SelectionLength = 119;
         }
       });

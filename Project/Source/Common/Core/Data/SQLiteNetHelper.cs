@@ -22,6 +22,13 @@ using SQLite;
 namespace Ordisoftware.Core
 {
 
+  public class SQLiteNetORM : SQLiteConnection
+  {
+    public SQLiteNetORM(SQLiteConnectionString connectionString) : base(connectionString) { }
+    public SQLiteNetORM(string databasePath, bool storeDateTimeAsTicks = true) : base(databasePath, storeDateTimeAsTicks) { }
+    public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true) : base(databasePath, openFlags, storeDateTimeAsTicks) { }
+  }
+
   /// <summary>
   /// Provide SQLite-Net helper.
   /// </summary>
@@ -67,7 +74,7 @@ namespace Ordisoftware.Core
     /// Get the version of the engine.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public void InitializeVersion(this SQLiteConnection connection)
+    static public void InitializeVersion(this SQLiteNetORM connection)
     {
       ProviderName = connection?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();
       int vernum = connection?.LibVersionNumber ?? -1;
@@ -87,7 +94,7 @@ namespace Ordisoftware.Core
     /// Create a SQL command.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public SQLiteCommand CreateCommand(this SQLiteConnection connection)
+    static public SQLiteCommand CreateCommand(this SQLiteNetORM connection)
     {
       return new SQLiteCommand(connection);
     }
@@ -97,7 +104,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="sql">The query.</param>
-    static public SQLiteCommand CreateCommand(this SQLiteConnection connection, string sql)
+    static public SQLiteCommand CreateCommand(this SQLiteNetORM connection, string sql)
     {
       var command = new SQLiteCommand(connection);
       command.CommandText = sql;
@@ -112,7 +119,7 @@ namespace Ordisoftware.Core
     /// <param name="interval">Days interval to check.</param>
     /// <param name="force">True to force check.</param>
     /// <returns>The new date if done else lastdone.</returns>
-    static public DateTime Optimize(this SQLiteConnection connection, DateTime lastdone, int interval = -1, bool force = false)
+    static public DateTime Optimize(this SQLiteNetORM connection, DateTime lastdone, int interval = -1, bool force = false)
     {
       if ( interval == -1 ) interval = DefaultOptimizeDaysInterval;
       InitializeVersion(connection);
@@ -129,7 +136,7 @@ namespace Ordisoftware.Core
     /// Vacuum the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public void CheckIntegrity(this SQLiteConnection connection)
+    static public void CheckIntegrity(this SQLiteNetORM connection)
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -146,7 +153,7 @@ namespace Ordisoftware.Core
     ///  Vacuum the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public void Vacuum(this SQLiteConnection connection)
+    static public void Vacuum(this SQLiteNetORM connection)
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -160,7 +167,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="connection"></param>
     /// <param name="table"></param>
-    static public void DropTableIfExists(this SQLiteConnection connection, string table)
+    static public void DropTableIfExists(this SQLiteNetORM connection, string table)
     {
       string argnameTable = nameof(table);
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
@@ -180,7 +187,7 @@ namespace Ordisoftware.Core
     /// <param name="connection">The connection.</param>
     /// <param name="tableOldName">Old name.</param>
     /// <param name="tableNewName">New name.</param>
-    static public void RenameTableIfExists(this SQLiteConnection connection, string tableOldName, string tableNewName)
+    static public void RenameTableIfExists(this SQLiteNetORM connection, string tableOldName, string tableNewName)
     {
       string argnameTableOld = nameof(tableOldName);
       string argnameTableNew = nameof(tableNewName);
@@ -203,7 +210,7 @@ namespace Ordisoftware.Core
     /// <param name="table">The table name.</param>
     /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
     /// <returns>True if the table exists else false even if created.</returns>
-    static public bool CheckTable(this SQLiteConnection connection, string table, string sql = "")
+    static public bool CheckTable(this SQLiteNetORM connection, string table, string sql = "")
     {
       try
       {
@@ -234,7 +241,7 @@ namespace Ordisoftware.Core
     /// <param name="index">The index name.</param>
     /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
     /// <returns>True if the index exists else false even if created.</returns>
-    static public bool CheckIndex(this SQLiteConnection connection, string index, string sql = "")
+    static public bool CheckIndex(this SQLiteNetORM connection, string index, string sql = "")
     {
       try
       {
@@ -266,7 +273,7 @@ namespace Ordisoftware.Core
     /// <param name="column">The column name.</param>
     /// <param name="sql">The sql query to create the column, can be empty to only check</param>
     /// <returns>True if the column exists else false even if created.</returns>
-    static public bool CheckColumn(this SQLiteConnection connection, string table, string column, string sql = "")
+    static public bool CheckColumn(this SQLiteNetORM connection, string table, string column, string sql = "")
     {
       try
       {
@@ -303,7 +310,7 @@ namespace Ordisoftware.Core
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
     /// <returns>True if the column exists else false even if created.</returns>
-    static public bool CheckColumn(this SQLiteConnection connection,
+    static public bool CheckColumn(this SQLiteNetORM connection,
                                    string table,
                                    string column,
                                    string type,
@@ -329,7 +336,7 @@ namespace Ordisoftware.Core
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
     /// <returns></returns>
-    static public long GetRowsCount(this SQLiteConnection connection, string table)
+    static public long GetRowsCount(this SQLiteNetORM connection, string table)
     {
       try
       {

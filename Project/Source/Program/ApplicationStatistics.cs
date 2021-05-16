@@ -101,10 +101,10 @@ namespace Ordisoftware.Hebrew.Calendar
          : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
 
     public string DBEngine
-      => SQLiteOdbcHelper.EngineNameAndVersion;
+      => SQLiteNetHelper.EngineNameAndVersion;
 
-    public string DBADOdotNETProvider
-      => SQLiteOdbcHelper.ADOdotNETProviderName;
+    public string DBProvider
+      => SQLiteNetHelper.ProviderName;
 
     public string DBFileSize
     {

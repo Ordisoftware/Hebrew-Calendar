@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ListView.SelectedItems.Count > 0 )
         SystemManager.TryCatch(() =>
         {
-          MainForm.Instance.GoToDate(ListView.SelectedItems[0].SubItems[1].Tag.ToString());
+          MainForm.Instance.GoToDate((DateTime)ListView.SelectedItems[0].SubItems[1].Tag);
           if ( !MainForm.Instance.Visible )
             MainForm.Instance.MenuShowHide_Click(null, null);
           else

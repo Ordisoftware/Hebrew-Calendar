@@ -112,6 +112,7 @@
       this.processPriorityLabel1 = new System.Windows.Forms.Label();
       this.currentThreadPriorityLabel1 = new System.Windows.Forms.Label();
       this.GroupBoxTimings = new System.Windows.Forms.GroupBox();
+      this.translateTimeLabel1 = new System.Windows.Forms.Label();
       this.generateTextReportTimeLabel1 = new System.Windows.Forms.Label();
       this.generatePopulateDaysTimeLabel1 = new System.Windows.Forms.Label();
       this.generateAnalyseDaysTimeLabel1 = new System.Windows.Forms.Label();
@@ -144,7 +145,6 @@
       this.EditFolderApplication = new Ordisoftware.Core.TextBoxEx();
       this.PanelBottomOuter = new System.Windows.Forms.Panel();
       this.PanelFolders = new System.Windows.Forms.Panel();
-      this.translateTimeLabel1 = new System.Windows.Forms.Label();
       dBEventsCountLabel = new System.Windows.Forms.Label();
       dBFileSizeLabel = new System.Windows.Forms.Label();
       dBFirstYearLabel = new System.Windows.Forms.Label();
@@ -437,6 +437,11 @@
       resources.ApplyResources(dBParashotMemorySizeLabel, "dBParashotMemorySizeLabel");
       dBParashotMemorySizeLabel.Name = "dBParashotMemorySizeLabel";
       // 
+      // translateTimeLabel
+      // 
+      resources.ApplyResources(translateTimeLabel, "translateTimeLabel");
+      translateTimeLabel.Name = "translateTimeLabel";
+      // 
       // PanelBottom
       // 
       this.PanelBottom.Controls.Add(this.ActionScreenshot);
@@ -674,6 +679,12 @@
       this.GroupBoxTimings.Name = "GroupBoxTimings";
       this.GroupBoxTimings.TabStop = false;
       // 
+      // translateTimeLabel1
+      // 
+      resources.ApplyResources(this.translateTimeLabel1, "translateTimeLabel1");
+      this.translateTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "TranslateTime", true));
+      this.translateTimeLabel1.Name = "translateTimeLabel1";
+      // 
       // generateTextReportTimeLabel1
       // 
       this.generateTextReportTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "GenerateTextReportTime", true));
@@ -737,7 +748,7 @@
       // dBADONETAccessLabel1
       // 
       resources.ApplyResources(this.dBADONETAccessLabel1, "dBADONETAccessLabel1");
-      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBADOdotNETProvider", true));
+      this.dBADONETAccessLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "DBProvider", true));
       this.dBADONETAccessLabel1.Name = "dBADONETAccessLabel1";
       // 
       // dBEngineversionLabel1
@@ -969,17 +980,6 @@
       this.PanelFolders.Controls.Add(this.GroupBoxFolders);
       resources.ApplyResources(this.PanelFolders, "PanelFolders");
       this.PanelFolders.Name = "PanelFolders";
-      // 
-      // translateTimeLabel1
-      // 
-      resources.ApplyResources(this.translateTimeLabel1, "translateTimeLabel1");
-      this.translateTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ApplicationStatisticsDataBindingSource, "TranslateTime", true));
-      this.translateTimeLabel1.Name = "translateTimeLabel1";
-      // 
-      // translateTimeLabel
-      // 
-      resources.ApplyResources(translateTimeLabel, "translateTimeLabel");
-      translateTimeLabel.Name = "translateTimeLabel";
       // 
       // StatisticsForm
       // 
