@@ -318,6 +318,11 @@ namespace Ordisoftware.Hebrew.Calendar
           ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
 
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
+    }
+
   }
 
 }

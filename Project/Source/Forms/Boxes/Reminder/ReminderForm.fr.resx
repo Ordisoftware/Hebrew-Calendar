@@ -126,4 +126,7 @@
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Tableau des parashot</value>
+  </data>
 </root>

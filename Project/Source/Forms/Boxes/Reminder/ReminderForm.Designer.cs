@@ -44,6 +44,8 @@
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
       this.SuspendLayout();
@@ -135,7 +137,9 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline});
+            this.ActionOpenVerseOnline,
+            this.toolStripSeparator1,
+            this.ActionViewParashot});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -148,6 +152,17 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // ReminderForm
       // 
@@ -197,5 +212,7 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
   }
 }
