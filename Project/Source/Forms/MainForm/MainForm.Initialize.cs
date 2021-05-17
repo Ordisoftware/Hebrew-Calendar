@@ -44,8 +44,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void DoConstructor()
     {
-      new Task(() => ProcessLocks.Lock()).Start();
       new Task(InitializeIconsAndSound).Start();
+      ProcessLocks.Lock();
       SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
       Text = Globals.AssemblyTitle;
       ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
