@@ -21,7 +21,6 @@ using Ordisoftware.Core;
 using Program = Ordisoftware.Hebrew.Calendar.Program;
 using Properties = Ordisoftware.Hebrew.Calendar.Properties;
 using MainForm = Ordisoftware.Hebrew.Calendar.MainForm;
-using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew
 {
@@ -65,7 +64,7 @@ namespace Ordisoftware.Hebrew
       InitializeMenu();
       Icon = Globals.MainForm.Icon;
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
-      ActiveControl = DataGridView;
+      DataGridView.Visible = false;
     }
 
     private void InitializeMenu()
@@ -107,9 +106,9 @@ namespace Ordisoftware.Hebrew
       PanelBottom.Enabled = false;
       try
       {
-        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), 8);
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), 4);
         LoadingForm.Instance.DoProgress();
-        var task = Task.Run(() => { MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(); });
+        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot();
         LoadingForm.Instance.DoProgress();
         EditFontSize.Value = Settings.ParashotFormFontSize;
         Location = Settings.ParashotFormLocation;
@@ -119,30 +118,37 @@ namespace Ordisoftware.Hebrew
         if ( Settings.ParashotFormColumnTranslationWidth != -1 )
           ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
         LoadingForm.Instance.DoProgress();
-        task.Wait();
-        LoadingForm.Instance.DoProgress();
         BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
         LoadingForm.Instance.DoProgress();
-        Timer_Tick(null, null);
-        LoadingForm.Instance.DoProgress();
-        UpdateStats();
-        LoadingForm.Instance.DoProgress();
+        UpdateControls();
       }
       finally
       {
         PanelBottom.Enabled = true;
         Cursor = Cursors.Default;
-        LoadingForm.Instance.DoProgress();
         LoadingForm.Instance.Hide();
       }
     }
 
     private void ParashotForm_Shown(object sender, EventArgs e)
     {
+      DataGridView.Visible = true;
+      ActiveControl = DataGridView;
       EditFontSize_ValueChanged(null, null);
     }
 
     private void Timer_Tick(object sender, EventArgs e)
+    {
+      UpdateControls();
+      if ( Created && !DataGridView.ReadOnly)
+      {
+        ActionUndo.PerformClick();
+        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+      }
+    }
+
+    private void UpdateControls()
     {
       DataGridView.ReadOnly = HebrewDatabase.Instance.IsParashotReadOnly();
       Timer.Enabled = DataGridView.ReadOnly;
@@ -153,12 +159,6 @@ namespace Ordisoftware.Hebrew
       ActionCheckLockers.Visible = DataGridView.ReadOnly;
       ActionViewLockers.Visible = DataGridView.ReadOnly;
       LabelTableLocked.Visible = DataGridView.ReadOnly;
-      if ( Created && !DataGridView.ReadOnly )
-      {
-        ActionUndo.PerformClick();
-        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
-        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
-      }
     }
 
     private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
