@@ -60,13 +60,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public override void LoadAll()
     {
+      base.LoadAll();
       LunisolarDays = Connection.Table<LunisolarDay>().ToList();
       LunisolarDaysAsBindingList = new BindingList<LunisolarDay>(LunisolarDays);
     }
 
     protected override void DoSaveAll()
     {
-      Connection.UpdateAll(LunisolarDays);
+      throw new NotImplementedException();
     }
 
     public void DeleteAll()

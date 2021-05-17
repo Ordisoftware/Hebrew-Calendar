@@ -79,6 +79,7 @@ namespace Ordisoftware.Core
     public void Close()
     {
       if ( Connection == null ) return;
+      Rollback();
       DoClose();
       Connection.Close();
       Connection = null;
@@ -98,7 +99,10 @@ namespace Ordisoftware.Core
       CheckConnected();
     }
 
-    public abstract void LoadAll();
+    public virtual void LoadAll()
+    {
+      Rollback();
+    }
 
     protected List<T> Load<T>(TableQuery<T> query)
     {
@@ -112,19 +116,22 @@ namespace Ordisoftware.Core
     public void BeginTransaction()
     {
       CheckConnected();
-      Connection.BeginTransaction();
+      if ( !Connection.IsInTransaction )
+        Connection.BeginTransaction();
     }
 
     public void Commit()
     {
       CheckConnected();
-      Connection.Commit();
+      if ( Connection.IsInTransaction )
+        Connection.Commit();
     }
 
     public void Rollback()
     {
       CheckConnected();
-      Connection.Rollback();
+      if ( Connection.IsInTransaction )
+        Connection.Rollback();
     }
 
     public void SaveAll()
@@ -140,7 +147,7 @@ namespace Ordisoftware.Core
         DoSaveAll();
         return;
       }
-      Connection.BeginTransaction();
+      BeginTransaction();
       try
       {
         DoSaveAll();
@@ -148,7 +155,7 @@ namespace Ordisoftware.Core
       }
       catch
       {
-        Connection.Rollback();
+        Rollback();
         throw;
       }
     }
