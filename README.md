@@ -57,7 +57,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 **What's new in the latest version**
 
 - SQLite ODBC Driver is no more needed.
-- Overall performances are Optimized.
+- Overall performances are optimized.
 - Some UI improvements and some fixes.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -285,7 +285,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Optimize overall performances.
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
-- Add open parashot board menu item in shabat reminder box.
+- Add open parashot board menu item in shabat reminder box and in tools menu.
 - Code refactoring and quality improvement.
 - Some UI improvements.
 - Some fixes.
