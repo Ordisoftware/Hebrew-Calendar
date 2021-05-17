@@ -140,11 +140,10 @@ namespace Ordisoftware.Core
     {
       SystemManager.TryCatchManage(() =>
       {
-        var errors = new List<string>();
-        if ( connection.ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()") != "ok" )
+        string result = connection.ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()");
+        if ( result != "ok" )
         {
-          string msg = SysTranslations.DatabaseIntegrityError.GetLang(errors.AsMultiLine());
-          throw new SQLiteException(msg);
+          throw new SQLiteException(result);
         }
       });
     }
@@ -153,13 +152,9 @@ namespace Ordisoftware.Core
     ///  Vacuum the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public void Vacuum(this SQLiteNetORM connection)
+    static public void Vacuum(this SQLiteNetORM connection, bool noerror = false)
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        if ( connection.Execute("VACUUM") != 0 )
-          throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang());
-      });
+      SystemManager.TryCatchManage(() => { connection.Execute("VACUUM"); });
     }
 
     /// <summary>

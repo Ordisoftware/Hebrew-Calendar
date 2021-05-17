@@ -69,6 +69,14 @@ namespace Ordisoftware.Hebrew.Calendar
       Connection.UpdateAll(LunisolarDays);
     }
 
+    public void DeleteAll()
+    {
+      CheckConnected();
+      CheckAccess(LunisolarDays, nameof(LunisolarDays));
+      Connection.DeleteAll<LunisolarDay>();
+      LunisolarDays.Clear();
+    }
+
     protected override void UpgradeSchema()
     {
       base.UpgradeSchema();
@@ -77,14 +85,6 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
           Connection.DropTableIfExists(nameof(LunisolarDays));
       }
-    }
-
-    public void DeleteAll()
-    {
-      CheckConnected();
-      CheckAccess(LunisolarDays, nameof(LunisolarDays));
-      Connection.DeleteAll<LunisolarDay>();
-      LunisolarDays.Clear();
     }
 
   }
