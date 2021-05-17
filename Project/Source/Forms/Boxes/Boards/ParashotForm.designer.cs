@@ -70,7 +70,6 @@
       this.MenuSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +78,7 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +88,7 @@
       this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
@@ -252,6 +253,7 @@
             this.ColumnEnd,
             this.ColumnLinked,
             this.ColumnHebrew,
+            this.HasMemo,
             this.ColumnMemo});
       this.DataGridView.ContextMenuStrip = this.ContextMenuParashah;
       this.DataGridView.DataSource = this.BindingSource;
@@ -382,11 +384,6 @@
       this.ActionCopyLineUnicode.Name = "ActionCopyLineUnicode";
       this.ActionCopyLineUnicode.Click += new System.EventHandler(this.ActionCopyLineUnicode_Click);
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
-      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
-      // 
       // bookDataGridViewTextBoxColumn
       // 
       this.bookDataGridViewTextBoxColumn.DataPropertyName = "Book";
@@ -440,6 +437,11 @@
       // 
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+      // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
+      this.BindingSource.DataSourceChanged += new System.EventHandler(this.BindingSource_DataSourceChanged);
       // 
       // ColumnBook
       // 
@@ -535,6 +537,13 @@
       this.ColumnHebrew.ReadOnly = true;
       this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
+      // HasMemo
+      // 
+      this.HasMemo.DataPropertyName = "HasMemo";
+      resources.ApplyResources(this.HasMemo, "HasMemo");
+      this.HasMemo.Name = "HasMemo";
+      this.HasMemo.ReadOnly = true;
+      // 
       // ColumnMemo
       // 
       this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -621,6 +630,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEnd;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLinked;
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
+    private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
   }
 }

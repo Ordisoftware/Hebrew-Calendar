@@ -10,26 +10,58 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2021-05 </created>
+/// <created> 2021-02 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Linq;
-using System.Collections.Generic;
 using SQLite;
+using Ordisoftware.Core;
+using System.ComponentModel;
 
 namespace Ordisoftware.Hebrew
 {
 
-  [Serializable]
-  [Table("TermHebrew")]
-  public class TermHebrew
+  public partial class Parashah
   {
+
     [PrimaryKey]
     public string ID { get; set; }
+
+    public TorahBooks Book { get; set; }
+    public int Number { get; set; }
+
+    public string VerseBegin { get; set; }
+    public string VerseEnd { get; set; }
+
+    public string FullReferenceBegin { get; private set; }
+
+    public string Name { get; set; }
     public string Unicode { get; set; }
     public string Hebrew { get; set; }
-    public List<TermLettriq> Lettriqs
-      => HebrewDatabase.Instance.TermLettriqs.Where(item => item.TermID == ID).ToList();
+
+    public string Translation { get; set; }
+    public string Lettriq { get; set; }
+
+    public Parashah GetLinked() => Linked;
+
+    internal void SetLinked(Parashah parashah) => Linked = parashah;
+
+    public string Memo
+    {
+      get => _Memo;
+      set
+      {
+        _Memo = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasMemo"));
+      }
+    }
+    private string _Memo;
+
+    public bool HasMemo => !Memo.IsNullOrEmpty();
+
+    public bool IsLinkedToNext { get; set; }
+
+    private Parashah Linked;
+
   }
 
 }

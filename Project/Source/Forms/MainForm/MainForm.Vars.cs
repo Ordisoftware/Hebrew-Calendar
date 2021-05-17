@@ -27,23 +27,25 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    static private readonly Properties.Settings Settings = Program.Settings;
-
-    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
-
-    private ToolTip LastToolTip = new ToolTip();
-
     // Active>SpecialDay:
     // true, true  = TrayIconEvent
     // true, false = TrayIconDefault
     // false, true  = TrayIconEventPause
     // false, false = TrayIconDefaultPause
-    private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
+    static private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
       = new Dictionary<bool, NullSafeDictionary<bool, Icon>>()
       {
         { true, new NullSafeDictionary<bool, Icon>() },
         { false, new NullSafeDictionary<bool, Icon>() }
       };
+
+    static private readonly Properties.Settings Settings = Program.Settings;
+
+    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+
+    static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+
+    private ToolTip LastToolTip = new ToolTip();
 
     private Point TrayIconMouse;
 
@@ -62,9 +64,6 @@ namespace Ordisoftware.Hebrew.Calendar
     public float CurrentGPSLatitude { get; set; }
     public float CurrentGPSLongitude { get; set; }
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
-
-    public List<Parashah> UserParashot { get; set; } 
-      = new List<Parashah>();
 
     public DateTime DateFirst { get; private set; }
     public DateTime DateLast { get; private set; }

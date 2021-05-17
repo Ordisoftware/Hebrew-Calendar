@@ -438,6 +438,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int sizeFont = Settings.MonthViewFontSize;
       if ( Settings.UseColors )
       {
+        PanelCalendar.BackColor = Settings.MonthViewNoDaysBackColor;
         CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
         CalendarMonth.ForeColor = Settings.MonthViewTextColor;
         CalendarMonth.BackColor = Settings.MonthViewBackColor;
@@ -466,6 +467,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       {
+        PanelCalendar.BackColor = SystemColors.Window;
         CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;

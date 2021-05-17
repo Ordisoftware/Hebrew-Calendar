@@ -50,6 +50,9 @@ namespace Ordisoftware.Hebrew.Calendar
         // TODO remove Manage
         SystemManager.TryCatchManage(() =>
         {
+          if ( Globals.IsExiting ) return;
+          if ( TrayIcon == null ) return;
+          if ( CommonMenusControl.Instance == null ) return;
           CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
           TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
         });

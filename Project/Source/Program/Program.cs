@@ -20,6 +20,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -59,7 +60,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
-        //UpdateLocalization();
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();

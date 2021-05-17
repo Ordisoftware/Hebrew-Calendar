@@ -229,7 +229,7 @@
       // 
       // PanelCalendar
       // 
-      this.PanelCalendar.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelCalendar.BackColor = System.Drawing.SystemColors.Window;
       this.PanelCalendar.Controls.Add(this.TabControl);
       resources.ApplyResources(this.PanelCalendar, "PanelCalendar");
       this.PanelCalendar.Name = "PanelCalendar";
@@ -269,14 +269,14 @@
       // 
       // TabPageMonth
       // 
-      this.TabPageMonth.BackColor = System.Drawing.Color.White;
+      this.TabPageMonth.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonth.Controls.Add(this.PanelViewMonth);
       resources.ApplyResources(this.TabPageMonth, "TabPageMonth");
       this.TabPageMonth.Name = "TabPageMonth";
       // 
       // PanelViewMonth
       // 
-      this.PanelViewMonth.BackColor = System.Drawing.Color.White;
+      this.PanelViewMonth.BackColor = System.Drawing.SystemColors.Window;
       this.PanelViewMonth.Controls.Add(this.CalendarMonth);
       resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
       this.PanelViewMonth.Name = "PanelViewMonth";

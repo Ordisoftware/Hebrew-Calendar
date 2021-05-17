@@ -47,12 +47,9 @@ namespace Ordisoftware.Hebrew
       if ( ParashotFirstTake )
       {
         ParashotFactory.Reset();
-        CreateParashotDataIfNotExist();
         ParashotFirstTake = false;
       }
-      Parashot = Load(Connection.Table<Parashah>());
-      ParashotAsBindingList = new BindingList<Parashah>(Parashot);
-      return Parashot;
+      return CreateParashotDataIfNotExistAndLoad();
     }
 
     public void ReleaseParashot()
@@ -61,6 +58,13 @@ namespace Ordisoftware.Hebrew
       ProcessLocks.Unlock(ParashotTableName);
       if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
       Parashot = null;
+    }
+
+    private List<Parashah> LoadParashot()
+    {
+      Parashot = Load(Connection.Table<Parashah>());
+      ParashotAsBindingList = new BindingList<Parashah>(Parashot);
+      return Parashot;
     }
 
     public void SaveParashot()
@@ -80,40 +84,43 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    public void DeleteParashot()
+    public void DeleteParashot(bool nocheckaccess = false)
     {
       CheckConnected();
-      CheckAccess(Parashot, nameof(Parashot));
+      if ( !nocheckaccess ) CheckAccess(Parashot, nameof(Parashot));
       Connection.DeleteAll<Parashah>();
       Parashot?.Clear();
     }
 
-    public void CreateParashotDataIfNotExist(bool reset = false)
+    public List<Parashah> CreateParashotDataIfNotExistAndLoad(bool reset = false, bool notext = false)
     {
       CheckConnected();
-      if ( Parashot == null ) return;
-      if ( CreateParashotDataMutex ) return;
+      if ( CreateParashotDataMutex )
+        throw new SystemException($"{nameof(CreateParashotDataIfNotExistAndLoad)} is already running.");
       bool temp = Globals.IsReady;
       Globals.IsReady = false;
       CreateParashotDataMutex = true;
       try
       {
-        SystemManager.TryCatchManage(() =>
-        {
-          if ( !reset && Connection.GetRowsCount(ParashotTableName) == 54 ) return;
-          Connection.BeginTransaction();
-          try
+        if ( reset || Connection.GetRowsCount(ParashotTableName) != 54 )
+          SystemManager.TryCatchManage(() =>
           {
-            DeleteParashot();
-            Connection.InsertAll(ParashotFactory.All.Select(p => p.Clone()));
-            Connection.Commit();
-          }
-          catch
-          {
-            Connection.Rollback();
-            throw;
-          }
-        });
+            Connection.BeginTransaction();
+            try
+            {
+              DeleteParashot(true);
+              var list = ParashotFactory.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
+              if ( notext ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
+              Connection.InsertAll(list);
+              Connection.Commit();
+            }
+            catch
+            {
+              Connection.Rollback();
+              throw;
+            }
+          });
+        return LoadParashot();
       }
       finally
       {

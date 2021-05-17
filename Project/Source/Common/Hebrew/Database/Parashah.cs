@@ -14,69 +14,17 @@
 /// <edited> 2021-05 </edited>
 using System;
 using SQLite;
-using Ordisoftware.Core;
+using System.ComponentModel;
 
 namespace Ordisoftware.Hebrew
 {
 
   [Serializable]
   [Table("Parashot")]
-  public class Parashah
+  public partial class Parashah : INotifyPropertyChanged
   {
 
-    [PrimaryKey]
-    public string ID { get; set; }
-
-    public TorahBooks Book { get; set; }
-    public int Number { get; set; }
-
-    [Ignore]
-    public string FullReferenceBegin
-      => $"{(int)Book}.{VerseBegin}";
-
-    public string VerseBegin { get; set; }
-    public string VerseEnd { get; set; }
-
-    public string Name { get; set; }
-    public string Unicode { get; set; }
-    public string Hebrew { get; set; }
-
-    public string Translation { get; set; }
-    public string Lettriq { get; set; }
-
-    public string Memo { get; set; }
-
-    public bool IsLinkedToNext { get; set; }
-
-    public void SetLinked(Parashah parashah) => Linked = parashah;
-    public Parashah GetLinked() => Linked;
-    private Parashah Linked;
-
-    public string ToStringLinked()
-      => Name + ( Linked != null ? " - " + Linked.Name : "" );
-
-    public string ToStringReadable()
-      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " + Globals.NL +
-         $"{Name} " +
-         $"({Unicode})" + Globals.NL +
-         $"• {Translation.GetOrEmpty()}" + Globals.NL +
-         $"• {Lettriq.GetOrEmpty()}";
-
-    public string ToString(bool useHebrewFont = false, bool memo = true)
-      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " +
-         $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
-         $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
-         $"{Translation.GetOrEmpty()} ; " +
-         $"{Lettriq.GetOrEmpty()}" +
-         ( memo ? $" ; {Memo.GetOrEmpty()} " : "" );
-
-    public override string ToString()
-      => ToString(false);
-
-    public object Clone()
-    {
-      return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
-    }
+    public event PropertyChangedEventHandler PropertyChanged;
 
     public Parashah()
     {
@@ -99,11 +47,17 @@ namespace Ordisoftware.Hebrew
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
+      FullReferenceBegin = $"{(int)Book}.{VerseBegin}";
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
       Memo = string.Empty;
       ID = $"{(int)book}.{number}";
+    }
+
+    public object Clone()
+    {
+      return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
     }
 
   }

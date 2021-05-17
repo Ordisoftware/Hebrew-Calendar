@@ -21,6 +21,7 @@ using Ordisoftware.Core;
 using Program = Ordisoftware.Hebrew.Calendar.Program;
 using Properties = Ordisoftware.Hebrew.Calendar.Properties;
 using MainForm = Ordisoftware.Hebrew.Calendar.MainForm;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew
 {
@@ -63,12 +64,8 @@ namespace Ordisoftware.Hebrew
       InitializeComponent();
       InitializeMenu();
       Icon = Globals.MainForm.Icon;
-      HebrewDatabase.Instance.TakeParashot();
-      BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
-      Timer_Tick(null, null);
       ActiveControl = DataGridView;
-      UpdateStats();
     }
 
     private void InitializeMenu()
@@ -106,13 +103,27 @@ namespace Ordisoftware.Hebrew
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
-      EditFontSize.Value = Settings.ParashotFormFontSize;
-      Location = Settings.ParashotFormLocation;
-      ClientSize = Settings.ParashotFormClientSize;
-      this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Settings.ParashotFormWindowState;
-      if ( Settings.ParashotFormColumnTranslationWidth != -1 )
-        ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        var task = Task.Run(() => { MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(); });
+        EditFontSize.Value = Settings.ParashotFormFontSize;
+        Location = Settings.ParashotFormLocation;
+        ClientSize = Settings.ParashotFormClientSize;
+        this.CheckLocationOrCenterToMainFormElseScreen();
+        WindowState = Settings.ParashotFormWindowState;
+        if ( Settings.ParashotFormColumnTranslationWidth != -1 )
+          ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
+        Refresh();
+        task.Wait();
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        Timer_Tick(null, null);
+        UpdateStats();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
     }
 
     private void ParashotForm_Shown(object sender, EventArgs e)
@@ -134,7 +145,7 @@ namespace Ordisoftware.Hebrew
       if ( Created && !DataGridView.ReadOnly )
       {
         ActionUndo.PerformClick();
-        HebrewDatabase.Instance.TakeParashot(true);
+        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
         BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
       }
     }
@@ -181,7 +192,7 @@ namespace Ordisoftware.Hebrew
       Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Settings.ParashotFormFontSize = EditFontSize.Value;
       Settings.Save();
-      MainForm.Instance.UserParashot = HebrewDatabase.Instance.Parashot;
+      MainForm.UserParashot = HebrewDatabase.Instance.Parashot;
       HebrewDatabase.Instance.ReleaseParashot();
       UpdateStats();
     }
@@ -253,8 +264,7 @@ namespace Ordisoftware.Hebrew
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) )
       {
         int index = DataGridView.CurrentRow.Index;
-        HebrewDatabase.Instance.CreateParashotDataIfNotExist(true);
-        HebrewDatabase.Instance.TakeParashot(true);
+        MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true);
         BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
         DataGridView.Rows[index].Selected = true;
         DataGridView.FirstDisplayedScrollingRowIndex = index;
@@ -269,13 +279,14 @@ namespace Ordisoftware.Hebrew
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToClearCustomData.GetLang()) )
       {
-        foreach ( DataGridViewRow row in DataGridView.Rows )
-        {
-          row.Cells[ColumnTranslation.Index].Value = string.Empty;
-          row.Cells[ColumnLettriq.Index].Value = string.Empty;
-        }
-        ActionSave.Enabled = true;
-        ActionUndo.Enabled = true;
+        int index = DataGridView.CurrentRow.Index;
+        MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true, true);
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        DataGridView.Rows[index].Selected = true;
+        DataGridView.FirstDisplayedScrollingRowIndex = index;
+        ActionSave.Enabled = false;
+        ActionUndo.Enabled = false;
+        ActiveControl = DataGridView;
         UpdateStats();
       }
     }
@@ -292,7 +303,7 @@ namespace Ordisoftware.Hebrew
     private void ActionUndo_Click(object sender, EventArgs e)
     {
       int index = DataGridView.CurrentRow.Index;
-      HebrewDatabase.Instance.TakeParashot(true);
+      MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
       BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
       DataGridView.Rows[index].Selected = true;
       DataGridView.FirstDisplayedScrollingRowIndex = index;
@@ -381,6 +392,7 @@ namespace Ordisoftware.Hebrew
         CurrentDataBoundItem.Memo = form.TextBox.Text;
         ActionSave.Enabled = true;
         ActionUndo.Enabled = true;
+        DataGridView.RefreshEdit();
       }
     }
 

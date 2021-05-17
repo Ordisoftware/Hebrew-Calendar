@@ -329,19 +329,28 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
-      var userparashah = MainForm.Instance.UserParashot.Find(p => p.ID == parashah.ID);
-      if ( userparashah == null )
+      var factory = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
+      var parashah = MainForm.UserParashot.Find(p => p.ID == factory.ID);
+      var linked = parashah.GetLinked();
+      if ( parashah == null )
       {
         ActionViewParashahInfos.Enabled = false;
         return;
       }
-      var message = userparashah.ToStringReadable();
-      message += Globals.NL2 + userparashah.GetLinked()?.ToStringReadable();
+      var message = parashah.ToStringReadable();
+      message += Globals.NL2 + linked?.ToStringReadable();
       var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
+      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+      form.ActionYes.Text = "Memo";
+      form.ActionYes.Click += (_s, _e) =>
+      {
+        string memo1 = parashah.Memo;
+        string memo2 = linked?.Memo ?? "";
+        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+      };
       form.ShowDialog(MainForm.Instance);
     }
 

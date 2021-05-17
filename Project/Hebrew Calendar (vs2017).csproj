@@ -218,6 +218,8 @@
     <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.cs" />
     <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Parashot.cs" />
     <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Terms.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.Properties.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.ToString.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ProcessLock.cs" />
