@@ -20,6 +20,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -59,7 +60,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.MainForm = MainForm.Instance;
         DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
-        UpdateLocalization();
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();
@@ -217,6 +217,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public void UpdateLocalization()
     {
+      //if ( Globals.IsReady && Settings.LanguageSelected == Languages.Default ) return;
       Globals.ChronoTranslate.Restart();
       try
       {
@@ -268,11 +269,10 @@ namespace Ordisoftware.Hebrew.Calendar
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();
         DatesDiffCalculatorForm.Instance.Relocalize();
-        ParashotTable.LoadDefaults();
+        ParashotFactory.Reset();
         MainForm.Instance.CreateSystemInformationMenu();
         MainForm.Instance.CalendarText.Text = tempTextReport;
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
-        MainForm.Instance.DoTimerReminder();
         MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
         MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         MainForm.Instance.EditEnumsAsTranslations.Visible = true;

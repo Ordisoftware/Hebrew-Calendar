@@ -114,11 +114,11 @@ namespace Ordisoftware.Core
       = new TranslationsDictionary
       {
         [Language.EN] = "Data will be restored to their default values." + Globals.NL2 +
-                        "All changes will be lost." + Globals.NL2 +
+                        "All changes will be lost and the action cannot be undone." + Globals.NL2 +
                         AskToContinue[Language.EN],
 
         [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut." + Globals.NL2 +
-                        "Toutes les moidifications seront perdues." + Globals.NL2 +
+                        "Toutes les moidifications seront perdues et l'action ne pourra pas être annulée." + Globals.NL2 +
                         AskToContinue[Language.FR]
       };
 
@@ -161,11 +161,25 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Erreur à la suppression de la table :{Globals.NL2}{{0}}",
       };
 
+    static public readonly TranslationsDictionary DBRenameTableError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on rename table:{Globals.NL2}{{0}} -> {{1}}",
+        [Language.FR] = $"Erreur au renommage de la table :{Globals.NL2}{{0}} -> {{1}}",
+      };
+
     static public readonly TranslationsDictionary DBCreateTableError
       = new TranslationsDictionary
       {
-        [Language.EN] = $"Error on create table:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Erreur à la création de la table :{Globals.NL2}{{0}}",
+        [Language.EN] = $"Error on create table: {{0}}{Globals.NL2}{{1}}",
+        [Language.FR] = $"Erreur à la création de la table : {{0}}{Globals.NL2}{{1}}",
+      };
+
+    static public readonly TranslationsDictionary DBCreateIndexError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on create index : {{0}}{Globals.NL2}{{1}}",
+        [Language.FR] = $"Erreur à la création de l'index : {{0}}{Globals.NL2}{{1}}",
       };
 
     static public readonly TranslationsDictionary DBCreateColumnError

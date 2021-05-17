@@ -11,13 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
-using System.Globalization;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -27,9 +26,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private MainForm MainForm = MainForm.Instance;
 
-    private Data.DataSet.LunisolarDaysDataTable LunisolarDays = MainForm.Instance.DataSet.LunisolarDays;
+    private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
-    public LunisolarDaysRow CurrentDay { get; private set; }
+    public LunisolarDay CurrentDay { get; private set; }
 
     private int CurrentDayIndex = -1;
 
@@ -67,7 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
     {
       int year = SelectYear.Value;
-      var rows = LunisolarDays.Where(row => row.IsNewMoon == 1 && row.DateAsDateTime.Year == year);
+      var rows = LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year);
       string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
       CurrentDayIndex = SelectMoonDay.SelectedIndex;
       ListItems.Items.Clear();
@@ -76,7 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( var row in rows.Where(row => row.LunarMonth > 0) )
       {
         string key = row.LunarMonth.ToString();
-        string date = row.DateAsDateTime.ToLongDateString();
+        string date = row.Date.ToLongDateString();
         var item = ListItems.Items.Add(key);
         item.SubItems.Add(HebrewMonths.Transliterations[row.LunarMonth]);
         item.SubItems.Add(date.Titleize());
@@ -110,10 +109,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( ListItems.SelectedItems.Count > 0 )
       {
-        var row = (LunisolarDaysRow)ListItems.SelectedItems[0].Tag;
+        var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
         SelectMoonDay.Items.Clear();
         int year = SelectYear.Value;
-        var days = LunisolarDays.Where(day => day.DateAsDateTime.Year == year && day.LunarMonth == row.LunarMonth);
+        var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
         SelectMoonDay.Items.AddRange(days.ToArray());
         if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
         if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
@@ -124,13 +123,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)
     {
-      e.Value = ( (LunisolarDaysRow)e.ListItem ).LunarDay.ToString();
+      e.Value = ( (LunisolarDay)e.ListItem ).LunarDay.ToString();
     }
 
     private void SelectMoonDay_SelectedIndexChanged(object sender, EventArgs e)
     {
       if ( SelectMoonDay.SelectedItem != null )
-        MainForm.GoToDate(( (LunisolarDaysRow)SelectMoonDay.SelectedItem ).Date);
+        MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
     }
 
     protected override CreateParams CreateParams

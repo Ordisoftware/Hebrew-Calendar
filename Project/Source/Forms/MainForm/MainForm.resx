@@ -226,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -319,7 +319,7 @@
     <value>Date</value>
   </data>
   <data name="dataGridViewTextBoxColumn1.Width" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>75</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>LunarMonth</value>
@@ -345,6 +345,9 @@
   <data name="dataGridViewTextBoxColumn5.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="dataGridViewTextBoxColumn8.HeaderText" xml:space="preserve">
+    <value>MoonriseOccuring</value>
+  </data>
   <data name="dataGridViewTextBoxColumn6.HeaderText" xml:space="preserve">
     <value>Moonrise</value>
   </data>
@@ -357,20 +360,17 @@
   <data name="dataGridViewTextBoxColumn7.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
-  <data name="dataGridViewTextBoxColumn8.HeaderText" xml:space="preserve">
-    <value>MoonriseOccuring</value>
-  </data>
   <data name="dataGridViewTextBoxColumn9.HeaderText" xml:space="preserve">
-    <value>IsNewMoon</value>
+    <value>NewMoon</value>
   </data>
   <data name="dataGridViewTextBoxColumn9.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+    <value>65</value>
   </data>
   <data name="dataGridViewTextBoxColumn10.HeaderText" xml:space="preserve">
-    <value>IsFullMoon</value>
+    <value>FullMoon</value>
   </data>
   <data name="dataGridViewTextBoxColumn10.Width" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>60</value>
   </data>
   <data name="dataGridViewTextBoxColumn11.HeaderText" xml:space="preserve">
     <value>MoonPhase</value>
@@ -385,16 +385,13 @@
     <value>105</value>
   </data>
   <data name="dataGridViewTextBoxColumn13.HeaderText" xml:space="preserve">
-    <value>TorahEvents</value>
+    <value>TorahEvent</value>
   </data>
   <data name="dataGridViewTextBoxColumn13.Width" type="System.Int32, mscorlib">
     <value>110</value>
   </data>
   <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>744, 20</value>
-  </metadata>
-  <metadata name="DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>307, 16</value>
+    <value>729, 59</value>
   </metadata>
   <data name="CalendarGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -421,7 +418,7 @@
     <value>1</value>
   </data>
   <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>948, 22</value>
+    <value>930, 58</value>
   </metadata>
   <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 22</value>
@@ -938,7 +935,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="TimerTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>497, 54</value>
+    <value>300, 21</value>
   </metadata>
   <metadata name="SaveDataGridDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 54</value>
@@ -1270,16 +1267,16 @@
     <value>True</value>
   </data>
   <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>606, 54</value>
+    <value>409, 21</value>
   </metadata>
   <metadata name="TimerBallon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>731, 54</value>
+    <value>534, 21</value>
   </metadata>
   <metadata name="TimerTrayMouseMove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>837, 56</value>
+    <value>640, 23</value>
   </metadata>
   <metadata name="TimerResumeReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>999, 56</value>
+    <value>802, 23</value>
   </metadata>
   <metadata name="SaveImageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>18, 50</value>
@@ -1288,7 +1285,7 @@
     <value>PNG files|*.png</value>
   </data>
   <metadata name="FolderDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>389, 55</value>
+    <value>443, 56</value>
   </metadata>
   <data name="ActionSaveToFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1921,6 +1918,31 @@
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1973,12 +1995,11 @@
   </data>
   <data name="ActionOnlineParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVDhP7ZM9CsJAFITfGew8RY7gDQIW3iBgZ2speAa7
-        HCBiY6dI9AhW1oJ32APE+ZYXm2XjT+3AB5l9Mw8WsubairOYRDcsMmTpRI3FRUzFhoM3IkOWDl27ioVY
-        i1pUIidmZMjSoWt3sRc7cRI30WRgRoYsHbrWdC59F2LlNhEzMm7xLE0XhBD64Qs/+3yBF+Y9Xy1wm4gZ
-        Gbf5Bf8rWD1wBf7CZEHrnoNSHMQyA7PS4+RbYTPxEEfBAxmJnJiRIUuHbtSPz9nsCeZ9axu/jsT/AAAA
-        AElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAMpJREFUOE/tkz0KwkAUhN8Z7DxFjuANAhbeIGBnayl4BrscIGJjp0j0CFbWgnfY
+        A8T5lhebZeNP7cAHmX0zDxay5tqKs5hENywyZOlEjcVFTMWGgzciQ5YOXbuKhViLWlQiJ2ZkyNKha3ex
+        FztxEjfRZGBGhiwdutZ0Ln0XYuU2ETMybvEsTReEEPrhCz/7fIEX5j1fLXCbiBkZt/kF/ytYPXAF/sJk
+        Qeueg1IcxDIDs9Lj5FthM/EQR8EDGYmcmJEhS4du1I/P2ewJ5n1rG7+OxP8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionOnlineParashah.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3045,22 +3066,16 @@
     <value>2</value>
   </data>
   <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 81</value>
+    <value>569, 58</value>
   </metadata>
   <metadata name="TimerUpdateTitles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>190, 81</value>
-  </metadata>
-  <metadata name="LunisolarDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>555, 19</value>
-  </metadata>
-  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>390, 17</value>
+    <value>972, 24</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>115</value>
+    <value>99</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -3113,6 +3128,12 @@
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn8</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn6</value>
   </data>
@@ -3123,12 +3144,6 @@
     <value>dataGridViewTextBoxColumn7</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn8</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
@@ -3166,12 +3181,6 @@
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Name" xml:space="preserve">
-    <value>DataSet</value>
-  </data>
-  <data name="&gt;&gt;DataSet.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSet, Ordisoftware.Hebrew.Calendar, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
@@ -3821,17 +3830,17 @@
   <data name="&gt;&gt;TimerUpdateTitles.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LunisolarDaysTableAdapter.Name" xml:space="preserve">
-    <value>LunisolarDaysTableAdapter</value>
+  <data name="&gt;&gt;ActionViewParashahInfos.Name" xml:space="preserve">
+    <value>ActionViewParashahInfos</value>
   </data>
-  <data name="&gt;&gt;LunisolarDaysTableAdapter.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.LunisolarDaysTableAdapter, Ordisoftware.Hebrew.Calendar, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;ActionViewParashahInfos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TableAdapterManager.Name" xml:space="preserve">
-    <value>TableAdapterManager</value>
+  <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">
+    <value>toolStripSeparator13</value>
   </data>
-  <data name="&gt;&gt;TableAdapterManager.Type" xml:space="preserve">
-    <value>Ordisoftware.Hebrew.Calendar.Data.DataSetTableAdapters.TableAdapterManager, Ordisoftware.Hebrew.Calendar, Version=7.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

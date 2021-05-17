@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
     public DateTime Date { get; set; }
     public int MoonDay { get; set; }
-    public int MoonPhase { get; set; }
+    public MoonPhase MoonPhase { get; set; }
     public SeasonChange TorahSeasonChange { get; set; }
     public SeasonChange RealSeasonChange { get; set; }
     public SunAndMoonRiseAndSet Ephemerisis { get; set; }

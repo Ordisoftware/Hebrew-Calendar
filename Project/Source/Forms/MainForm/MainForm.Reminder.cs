@@ -26,6 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public void DoTimerReminder()
     {
       if ( TimerMutex ) return;
+      if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
@@ -48,6 +49,9 @@ namespace Ordisoftware.Hebrew.Calendar
         TimerMutex = false;
         SystemManager.TryCatch(() =>
         {
+          if ( Globals.IsExiting ) return;
+          if ( TrayIcon == null ) return;
+          if ( CommonMenusControl.Instance == null ) return;
           CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
           TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
         });
@@ -67,14 +71,14 @@ namespace Ordisoftware.Hebrew.Calendar
         System.Threading.Thread.Sleep(1000);
         CheckRegenerateCalendar();
         CalendarMonth.Refresh();
-        if ( CurrentDay.DateAsDateTime == DateTime.Today.AddDays(-1) )
+        if ( CurrentDay.Date == DateTime.Today.AddDays(-1) )
           GoToDate(DateTime.Today);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
       });
     }
 
-    private void EnableReminderTimer()
+    private void EnableReminderTimer(bool calltimer = true)
     {
       TimerResumeReminder.Enabled = false;
       ActionResetReminder.Enabled = true;
@@ -88,9 +92,12 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuEnableReminder.Enabled = false;
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
       IsReminderPaused = false;
-      ClearLists();
       UpdateTitles();
-      TimerReminder_Tick(null, null);
+      if ( calltimer )
+      {
+        ClearLists();
+        TimerReminder_Tick(null, null);
+      }
     }
 
     private void DisableReminderTimer()

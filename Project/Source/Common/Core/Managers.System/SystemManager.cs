@@ -19,6 +19,7 @@ using System.IO.Pipes;
 using System.Configuration;
 using System.Diagnostics;
 using System.Threading;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -278,10 +279,37 @@ namespace Ordisoftware.Core
       long result = -1;
       if ( instance == null ) return 0;
       if ( instance.GetType().IsSerializable )
-        using ( var stream = new MemoryStream() )
-          TryCatch(() => { new BinaryFormatter().Serialize(stream, instance); result = stream.Length; });
+        try
+        {
+          using ( var stream = new MemoryStream() )
+          {
+            new BinaryFormatter().Serialize(stream, instance);
+            result = stream.Length;
+          }
+        }
+        catch ( Exception ex )
+        {
+          TryCatch(() => { result = System.Runtime.InteropServices.Marshal.SizeOf(instance); });
+        }
       return result;
     }
+
+    /*static public int GetSizeOfObject(object obj)
+    {
+      object Value = null;
+      int size = 0;
+      Type type = obj.GetType();
+      PropertyInfo[] info = type.GetProperties();
+      foreach ( PropertyInfo property in info )
+      {
+        Value = property.GetValue(obj, null);
+        unsafe
+        {
+          size += sizeof(Value);
+        }
+      }
+      return size;
+    }*/
 
     /// <summary>
     /// Get a file size.

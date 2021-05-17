@@ -11,12 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
-using System.Data;
-using System.Data.Odbc;
-using System.Windows.Forms;
+using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -27,25 +25,23 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadData()
     {
-      void update(object tableSender, DataRowChangeEventArgs tableEvent)
-      {
-        if ( !Globals.IsGenerating ) LoadingForm.Instance.DoProgress();
-      }
-      var cursor = Cursor;
-      Cursor = Cursors.WaitCursor;
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       try
       {
-        Enabled = false;
-        Globals.ChronoLoadData.Start();
-        CreateSchemaIfNotExists();
-        var command = new OdbcCommand("SELECT count(*) FROM LunisolarDays", LockFileConnection);
-        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(),
-                                        (int)command.ExecuteScalar() * 2,
-                                        Program.LoadingFormLoadDB);
-        DataSet.LunisolarDays.RowChanged += update;
-        LunisolarDaysTableAdapter.Fill(DataSet.LunisolarDays);
-        Globals.ChronoLoadData.Stop();
-        if ( DataSet.LunisolarDays.Count > 0
+        var task = Task.Run(() =>
+        {
+          ApplicationDatabase.Instance.Open();
+          Globals.ChronoLoadData.Start();
+          ApplicationDatabase.Instance.Open();
+          LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+          UserParashot = HebrewDatabase.Instance.TakeParashot();
+          HebrewDatabase.Instance.ReleaseParashot();
+          Globals.ChronoLoadData.Stop();
+        });
+        Program.UpdateLocalization();
+        task.Wait();
+        if ( LunisolarDays.Count > 0
           && !Settings.FirstLaunch
           && !Settings.FirstLaunchV7_0 )
         {
@@ -85,11 +81,11 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           Globals.ChronoStartingApp.Stop();
           PreferencesForm.Run();
-          Globals.ChronoStartingApp.Start();
           string errors = CheckRegenerateCalendar(true);
+          Globals.ChronoStartingApp.Start();
           if ( errors != null )
           {
-            SystemManager.TryCatch(() => EmptyDatabase());
+            SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
             throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
           }
         }
@@ -98,15 +94,12 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Globals.ChronoStartingApp.Stop();
         ex.Manage();
-        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExit[Language.FR] + Globals.NL2 +
-                                        SysTranslations.ContactSupport[Language.FR]);
+        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExitContactSupport.GetLang());
         Globals.ChronoStartingApp.Start();
       }
       finally
       {
-        Enabled = true;
-        Cursor = cursor;
-        DataSet.LunisolarDays.RowChanged -= update;
+        ToolStrip.Enabled = formEnabled;
         try
         {
           if ( Settings.RestoreLastViewAtStartup )
@@ -125,7 +118,9 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
           TimerReminder.Enabled = true;
+          Globals.ChronoStartingApp.Stop();
           TimerReminder_Tick(null, null);
+          Globals.ChronoStartingApp.Start();
         }
         catch ( Exception ex )
         {

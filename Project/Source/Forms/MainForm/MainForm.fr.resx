@@ -533,4 +533,7 @@
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
 </root>

@@ -13,7 +13,6 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Data;
@@ -24,6 +23,7 @@ using Ordisoftware.Core;
 using EnumsNET;
 using CalenderNet = CodeProjectCalendar.NET.Calendar;
 using Modifiers = Base.Hotkeys.Modifiers;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -44,19 +44,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void DoConstructor()
     {
-      InitializeComponent();
-      SoundItem.Initialize();
+      new Task(() => ProcessLocks.Lock()).Start();
+      new Task(InitializeIconsAndSound).Start();
+      SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
+      Text = Globals.AssemblyTitle;
+      ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
-      SystemManager.TryCatch(() =>
-      {
-        Icon = new Icon(Globals.ApplicationIconFilePath);
-        TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
-        TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
-        TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
-        TrayIcons[true][false] = Icon.GetBySize(16, 16);
-        TrayIcon.Icon = TrayIcons[true][false];
-      });
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahEvent>() )
@@ -75,17 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
-      ProcessLocksTable.Lock();
-      ReminderBoxDesktopLocation();
-      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
-      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
-      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
-        SystemManager.TryCatchManage(() =>
-        {
-          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
-          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
-        });
       Globals.ChronoStartingApp.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
@@ -99,37 +83,30 @@ namespace Ordisoftware.Hebrew.Calendar
         return;
       }
       Globals.ChronoStartingApp.Start();
-      CalendarText.ForeColor = Settings.TextColor;
-      CalendarText.BackColor = Settings.TextBackground;
-      InitializeCalendarUI();
-      InitializeCurrentTimeZone();
-      InitializeDialogsDirectory();
-      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
-      Refresh();
-      ClearLists();
-      LoadData();
-    }
-
-    /// <summary>
-    /// Set reminder boxes location.
-    /// </summary>
-    public void ReminderBoxDesktopLocation()
-    {
-      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
-      {
-        var anchor = DisplayManager.GetTaskbarAnchorStyle();
-        switch ( anchor )
+      if ( !Settings.GPSLatitude.IsNullOrEmpty() && !Settings.GPSLongitude.IsNullOrEmpty() )
+        SystemManager.TryCatchManage(() =>
         {
-          case AnchorStyles.Top:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
-            break;
-          case AnchorStyles.Left:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
-            break;
-          default:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
-            break;
-        }
+          Instance.CurrentGPSLatitude = (float)XmlConvert.ToDouble(Settings.GPSLatitude);
+          Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
+        });
+      new Task(InitializeCurrentTimeZone).Start();
+      new Task(InitializeDialogsDirectory).Start();
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
+        CalendarText.ForeColor = Settings.TextColor;
+        CalendarText.BackColor = Settings.TextBackground;
+        InitializeCalendarUI();
+        InitializeReminderBoxDesktopLocation();
+        Refresh();
+        ClearLists();
+        LoadData();
+      }
+      catch
+      {
+        Cursor = Cursors.Default;
+        throw;
       }
     }
 
@@ -139,35 +116,43 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormShown(object sender, EventArgs e)
     {
       if ( Globals.IsExiting ) return;
-      EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
-      ToolStrip.SetDropDownOpening();
-      UpdateTextCalendar();
-      CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
-      MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-      Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
-                                                             AppTranslations.NoticeKeyboardShortcuts,
-                                                             true, false, 410, 745, false, false);
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
-      Globals.IsReady = true;
-      SetGlobalHotKey();
-      TimerUpdateTitles.Start();
-      TimerUpdateTitles_Tick(null, null);
-      UpdateButtons();
-      GoToDate(DateTime.Today);
-      Globals.ChronoStartingApp.Stop();
-      Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
-      bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
-      CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
-      if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-        ActionPreferences.PerformClick();
-      SystemManager.TryCatch(Settings.Save);
-      TimerBallon.Interval = Settings.BalloonLoomingDelay;
-      TimerMidnight.TimeReached += TimerMidnight_Tick;
+      try
+      {
+        Cursor = Cursors.WaitCursor;
+        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
+        ToolStrip.SetDropDownOpening();
+        UpdateTextCalendar();
+        CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
+        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+        Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+                                                               AppTranslations.NoticeKeyboardShortcuts,
+                                                               true, false, 410, 745, false, false);
+        Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
+        Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
+        Globals.IsReady = true;
+        SetGlobalHotKey();
+        TimerUpdateTitles.Start();
+        TimerUpdateTitles_Tick(null, null);
+        UpdateButtons();
+        GoToDate(DateTime.Today);
+        Globals.ChronoStartingApp.Stop();
+        Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
+        bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
+        CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
+        if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+          ActionPreferences.PerformClick();
+        SystemManager.TryCatch(Settings.Save);
+        TimerBallon.Interval = Settings.BalloonLoomingDelay;
+        TimerMidnight.TimeReached += TimerMidnight_Tick;
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
-      this.Popup();
+      this.ForceBringToFront();// Popup();
       if ( Settings.StartupHide || Globals.ForceStartupHide )
         MenuShowHide.PerformClick();
       SystemManager.TryCatch(() =>
@@ -184,14 +169,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ProcessNewsAndCommandLine()
     {
       if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-        SystemManager.TryCatch(() =>
-        {
-          var menuRoot = CommonMenusControl.Instance.ActionViewVersionNews;
-          var menuItem = menuRoot.DropDownItems.Cast<ToolStripItem>().LastOrDefault();
-          if ( menuItem != null )
-            if ( ( (KeyValuePair<string, TranslationsDictionary>)menuItem.Tag ).Key == Globals.AssemblyVersion )
-              menuItem.PerformClick();
-        });
+        if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
+          SystemManager.TryCatch(CommonMenusControl.Instance.ShowLastNews);
       if ( ApplicationCommandLine.Instance.Generate )
         ActionGenerate.PerformClick();
       if ( ApplicationCommandLine.Instance.ResetReminder )
@@ -276,7 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsExiting = true;
         Globals.IsSessionEnding = true;
         Globals.AllowClose = true;
-        ProcessLocksTable.Unlock();
+        ProcessLocks.Unlock();
         Settings.Store();
         TimerTooltip.Stop();
         TimerBallon.Stop();
@@ -325,6 +304,20 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Initialize current time zone.
+    /// </summary>
+    public void InitializeCurrentTimeZone()
+    {
+      CurrentTimeZoneInfo = null;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+        if ( item.Id == Settings.TimeZone )
+        {
+          CurrentTimeZoneInfo = item;
+          break;
+        }
+    }
+
+    /// <summary>
     /// Set the initial directories of dialog boxes.
     /// </summary>
     public void InitializeDialogsDirectory()
@@ -341,17 +334,19 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize current time zone.
+    /// Initialize icons
     /// </summary>
-    public void InitializeCurrentTimeZone()
+    private void InitializeIconsAndSound()
     {
-      CurrentTimeZoneInfo = null;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-        if ( item.Id == Settings.TimeZone )
-        {
-          CurrentTimeZoneInfo = item;
-          break;
-        }
+      SystemManager.TryCatch(() =>
+      {
+        TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
+        TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(16, 16);
+      });
+      SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+      SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
     }
 
     /// <summary>
@@ -377,13 +372,13 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
@@ -412,6 +407,29 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Set reminder boxes location.
+    /// </summary>
+    public void InitializeReminderBoxDesktopLocation()
+    {
+      if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+      {
+        var anchor = DisplayManager.GetTaskbarAnchorStyle();
+        switch ( anchor )
+        {
+          case AnchorStyles.Top:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
+            break;
+          case AnchorStyles.Left:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
+            break;
+          default:
+            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
+            break;
+        }
+      }
+    }
+
+    /// <summary>
     /// Initialize the calendar month view aspect.
     /// </summary>
     private void InitializeCalendarUI()
@@ -420,6 +438,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int sizeFont = Settings.MonthViewFontSize;
       if ( Settings.UseColors )
       {
+        PanelCalendar.BackColor = Settings.MonthViewNoDaysBackColor;
         CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
         CalendarMonth.ForeColor = Settings.MonthViewTextColor;
         CalendarMonth.BackColor = Settings.MonthViewBackColor;
@@ -448,6 +467,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       {
+        PanelCalendar.BackColor = SystemColors.Window;
         CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;

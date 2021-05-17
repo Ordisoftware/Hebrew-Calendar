@@ -35,6 +35,9 @@
       this.PanelMiddle = new System.Windows.Forms.Panel();
       this.LabelCurrentDayValue = new System.Windows.Forms.LinkLabel();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextValue = new System.Windows.Forms.Label();
       this.LabelTorahNext = new System.Windows.Forms.Label();
@@ -61,14 +64,13 @@
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
-      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
+      this.ContextMenuParashah.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
       this.PanelBottom.SuspendLayout();
-      this.ContextMenuParashah.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelTop
@@ -129,6 +131,26 @@
       this.LabelParashahValue.Name = "LabelParashahValue";
       this.LabelParashahValue.TabStop = true;
       this.LabelParashahValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelParashahValue_LinkClicked);
+      // 
+      // ContextMenuParashah
+      // 
+      this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionViewParashahInfos,
+            this.toolStripSeparator2,
+            this.ActionStudyOnline,
+            this.ActionOpenVerseOnline});
+      this.ContextMenuParashah.Name = "ContextMenuStrip";
+      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      // 
+      // ActionStudyOnline
+      // 
+      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
+      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      // 
+      // ActionOpenVerseOnline
+      // 
+      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
+      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
       // LabelTorahNextDateValue
       // 
@@ -277,23 +299,16 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
-      // ContextMenuParashah
+      // ActionViewParashahInfos
       // 
-      this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionStudyOnline,
-            this.ActionOpenVerseOnline});
-      this.ContextMenuParashah.Name = "ContextMenuStrip";
-      resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
-      // ActionStudyOnline
+      // toolStripSeparator2
       // 
-      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
-      this.ActionStudyOnline.Name = "ActionStudyOnline";
-      // 
-      // ActionOpenVerseOnline
-      // 
-      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
-      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // NavigationForm
       // 
@@ -314,9 +329,9 @@
       this.PanelTop.ResumeLayout(false);
       this.PanelMiddle.ResumeLayout(false);
       this.PanelMiddle.PerformLayout();
+      this.ContextMenuParashah.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
       this.PanelBottom.ResumeLayout(false);
-      this.ContextMenuParashah.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -356,5 +371,7 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
   }
 }

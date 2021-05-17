@@ -223,7 +223,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 105</value>
+    <value>294, 107</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 26</value>
@@ -462,6 +462,52 @@
   <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAMpJREFUOE/tkz0KwkAUhN8Z7DxFjuANAhbeIGBnayl4BrscIGJjp0j0CFbWgnfY
+        A8T5lhebZeNP7cAHmX0zDxay5tqKs5hENywyZOlEjcVFTMWGgzciQ5YOXbuKhViLWlQiJ2ZkyNKha3ex
+        FztxEjfRZGBGhiwdutZ0Ln0XYuU2ETMybvEsTReEEPrhCz/7fIEX5j1fLXCbiBkZt/kF/ytYPXAF/sJk
+        Qeueg1IcxDIDs9Lj5FthM/EQR8EDGYmcmJEhS4du1I/P2ewJ5n1rG7+OxP8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -510,7 +556,7 @@
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 70</value>
+    <value>181, 126</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -525,7 +571,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 100</value>
+    <value>96, 102</value>
   </data>
   <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 15</value>
@@ -555,7 +601,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 131</value>
+    <value>334, 133</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -565,6 +611,30 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Next celebration</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashot.Name" xml:space="preserve">
+    <value>ActionViewParashot</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Name" xml:space="preserve">
+    <value>ActionViewParashahInfos</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionStudyOnline.Name" xml:space="preserve">
     <value>ActionStudyOnline</value>

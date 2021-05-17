@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
-using System.IO;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using System.Linq;
 
 namespace Ordisoftware.Core
 {
@@ -35,6 +36,7 @@ namespace Ordisoftware.Core
     static public readonly string NL2 = NL + NL;
     static public readonly string NL3 = NL2 + NL;
     static public readonly string NL4 = NL3 + NL;
+    static public readonly string NL5 = NL4 + NL;
 
     /// <summary>
     /// Indicate bullet.
@@ -98,6 +100,18 @@ namespace Ordisoftware.Core
     /// </summary>
     static public int ProcessId
       => Process.GetCurrentProcess().Id;
+
+    /// <summary>
+    /// Indicate running processes whose names starts with "AssemblyCompany.".
+    /// </summary>
+    static public IEnumerable<Process> SameCompanyRunningProcesses
+      => Process.GetProcesses().Where(p => p.ProcessName.StartsWith(AssemblyCompany + "."));
+
+    /// <summary>
+    /// Indicate running processes whose names starts with "[AssemblyCompany]." not being this one.
+    /// </summary>
+    static public IEnumerable<Process> ConcurrentRunningProcesses
+      => SameCompanyRunningProcesses.Where(p => p.Id != ProcessId);
 
     /// <summary>
     /// Indicate if the executable has been generated in debug mode.

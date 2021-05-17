@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide null safe sorted dictionary.
   /// </summary>
   [Serializable]
-  partial class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+  public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
     where TValue : class
   {
 

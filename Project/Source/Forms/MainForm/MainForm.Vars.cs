@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,7 +20,6 @@ using System.Windows.Forms;
 using DandTSoftware.Timers;
 using MoreLinq;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -28,21 +27,25 @@ namespace Ordisoftware.Hebrew.Calendar
   public partial class MainForm
   {
 
-    private readonly Properties.Settings Settings = Program.Settings;
-
-    private ToolTip LastToolTip = new ToolTip();
-
     // Active>SpecialDay:
     // true, true  = TrayIconEvent
     // true, false = TrayIconDefault
     // false, true  = TrayIconEventPause
     // false, false = TrayIconDefaultPause
-    private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
+    static private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
       = new Dictionary<bool, NullSafeDictionary<bool, Icon>>()
       {
         { true, new NullSafeDictionary<bool, Icon>() },
         { false, new NullSafeDictionary<bool, Icon>() }
       };
+
+    static private readonly Properties.Settings Settings = Program.Settings;
+
+    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+
+    static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+
+    private ToolTip LastToolTip = new ToolTip();
 
     private Point TrayIconMouse;
 
@@ -69,10 +72,10 @@ namespace Ordisoftware.Hebrew.Calendar
     public int YearsInterval { get; private set; }
     public int[] YearsIntervalArray { get; private set; }
 
-    public LunisolarDaysRow CurrentDay { get; private set; }
+    public LunisolarDay CurrentDay { get; private set; }
 
     public int CurrentDayYear
-      => CurrentDay?.DateAsDateTime.Year ?? 0;
+      => CurrentDay?.Date.Year ?? 0;
 
     private Dictionary<TorahEvent, bool> TorahEventRemindList
       = new Dictionary<TorahEvent, bool>();
@@ -83,8 +86,8 @@ namespace Ordisoftware.Hebrew.Calendar
     internal readonly NullSafeList<ReminderForm> RemindCelebrationForms
       = new NullSafeList<ReminderForm>();
 
-    private readonly NullSafeStringList RemindCelebrationDates
-      = new NullSafeStringList();
+    private readonly List<DateTime> RemindCelebrationDates
+      = new List<DateTime>();
 
     private readonly Dictionary<TorahEvent, DateTime?> LastCelebrationReminded
       = new Dictionary<TorahEvent, DateTime?>();

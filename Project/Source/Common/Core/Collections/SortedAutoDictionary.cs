@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide sorted auto dictionary.
   /// </summary>
   [Serializable]
-  partial class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+  public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
     where TValue : new()
   {
 

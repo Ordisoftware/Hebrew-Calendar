@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// Provide null safe of string dictionary.
   /// </summary>
   [Serializable]
-  partial class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+  public class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>
     where TValue : Enum
   {
 

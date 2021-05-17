@@ -221,7 +221,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
-      DataGridView.DataSource = null;
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       int index = 1;
@@ -238,7 +237,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int year1 = SelectYear1.Value;
       int year2 = SelectYear2.Value;
-      MainForm.Instance.DataSet.LoadNewMoons(Board, year1, year2, EditUseRealDays.Checked);
+      ApplicationDatabase.Instance.LoadNewMoons(Board, year1, year2, EditUseRealDays.Checked);
       DataGridView.ClearSelection();
       Text = Title + AppTranslations.BoardTimingsTitle.GetLang(EditUseRealDays.Checked);
     }

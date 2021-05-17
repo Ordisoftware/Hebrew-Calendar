@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Text;
 using System.Linq;
@@ -19,7 +19,6 @@ using System.Data;
 using System.Windows.Forms;
 using EnumsNET;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -41,16 +40,16 @@ namespace Ordisoftware.Hebrew.Calendar
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
-        if ( DataSet.LunisolarDays.Count == 0 ) return null;
+        if ( LunisolarDays.Count == 0 ) return null;
         var items = GetDayRows(interval);
-        var lastyear = DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().DateAsDateTime.Year;
+        var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         items.Count(),
                                         Program.LoadingFormLoadDB);
-        foreach ( LunisolarDaysRow day in items )
+        foreach ( LunisolarDay day in items )
         {
           LoadingForm.Instance.DoProgress();
-          var dayDate = day.DateAsDateTime;
+          var dayDate = day.Date;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           result.Append(day.Date + CSVSeparator);
@@ -58,14 +57,14 @@ namespace Ordisoftware.Hebrew.Calendar
           result.Append(day.IsFullMoon + CSVSeparator);
           result.Append(day.LunarMonth + CSVSeparator);
           result.Append(day.LunarDay + CSVSeparator);
-          result.Append(day.Sunrise + CSVSeparator);
-          result.Append(day.Sunset + CSVSeparator);
-          result.Append(day.Moonrise + CSVSeparator);
-          result.Append(day.Moonset + CSVSeparator);
-          string strMoonriseType = day.MoonriseOccuringAsEnum.ToStringExport(AppTranslations.MoonRiseOccuring);
-          string strPhase = day.MoonPhaseAsEnum.ToStringExport(AppTranslations.MoonPhase);
-          string strSeason = day.SeasonChangeAsEnum.ToStringExport(AppTranslations.SeasonChange);
-          string strEvent = day.TorahEventsAsEnum.ToStringExport(AppTranslations.TorahEvent);
+          result.Append(day.SunriseAsString + CSVSeparator);
+          result.Append(day.SunsetAsString + CSVSeparator);
+          result.Append(day.MoonriseAsString + CSVSeparator);
+          result.Append(day.MoonsetAsString + CSVSeparator);
+          string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonRiseOccuring);
+          string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhase);
+          string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChange);
+          string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahEvent);
           result.Append(strMoonriseType + CSVSeparator);
           result.Append(strPhase + CSVSeparator);
           result.Append(strSeason + CSVSeparator);

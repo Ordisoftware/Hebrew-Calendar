@@ -66,7 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.BenchmarkLoadData = loadtime;
       Settings.RestoreMainForm();
       Settings.Save();
-      MainForm.Instance.ReminderBoxDesktopLocation();
+      MainForm.Instance.InitializeReminderBoxDesktopLocation();
       DoReset = true;
       Reseted = true;
       Close();

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using System.Diagnostics;
@@ -20,7 +20,6 @@ using System.Text;
 using System.Linq;
 using EnumsNET;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -51,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
         { ReportFieldText.Events, 42 },
       };
 
-    private string GenerateReportText()
+    private string GenerateReportText(bool processInsert = false)
     {
       var Chrono = new Stopwatch();
       Chrono.Start();
@@ -70,28 +69,29 @@ namespace Ordisoftware.Hebrew.Calendar
         var content = new StringBuilder();
         content.Append(headerSep + Globals.NL);
         content.Append(headerTxt + Globals.NL);
-        if ( DataSet.LunisolarDays.Count <= 0 ) return string.Empty;
-        var lastyear = DataSet.LunisolarDays.OrderByDescending(p => p.Date).First().DateAsDateTime.Year;
+        if ( LunisolarDays.Count <= 0 ) return string.Empty;
+        var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                        DataSet.LunisolarDays.Count,
+                                        LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
-        foreach ( LunisolarDaysRow day in DataSet.LunisolarDays.Rows )
+        foreach ( LunisolarDay day in LunisolarDays )
           try
           {
-            var dayDate = day.DateAsDateTime;
+            if ( processInsert ) ApplicationDatabase.Instance.Connection.Insert(day);
+            var dayDate = day.Date;
             LoadingForm.Instance.DoProgress();
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-            if ( day.IsNewMoon == 1 ) content.Append(headerSep + Globals.NL);
-            string strMonth = day.IsNewMoon == 1 && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-            string strDay = ( day.MoonriseOccuringAsEnum == MoonRiseOccuring.NextDay && Program.Settings.TorahEventsCountAsMoon
+            if ( day.IsNewMoon ) content.Append(headerSep + Globals.NL);
+            string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
+            string strDay = ( day.MoonriseOccuring == MoonriseOccuring.NextDay && Program.Settings.TorahEventsCountAsMoon
                             ? "  "
-                            : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon == 1
+                            : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon
                                                                                 ? MoonNewText
-                                                                                : day.IsFullMoon == 1
+                                                                                : day.IsFullMoon
                                                                                   ? MoonFullText
                                                                                   : " " );
-            string strSun = day.Sunrise + " - " + day.Sunset;
+            string strSun = day.SunriseAsString + " - " + day.SunsetAsString;
             strSun = ShowWinterSummerHour
                    ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
                                                                ? AppTranslations.Ephemeris.GetLang(Ephemeris.SummerHour)
@@ -101,13 +101,13 @@ namespace Ordisoftware.Hebrew.Calendar
             strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                               ? ShabatText
                               : "   " );
-            string strMoonrise = day.Moonrise == string.Empty
+            string strMoonrise = day.Moonrise == null
                                ? MoonNoText
-                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.Moonrise;
-            string strMoonset = day.Moonset == string.Empty
+                               : AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + day.MoonriseAsString;
+            string strMoonset = day.Moonset == null
                               ? MoonNoText
-                              : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.Moonset;
-            string strMoon = day.MoonriseOccuringAsEnum == MoonRiseOccuring.BeforeSet
+                              : AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + day.MoonsetAsString;
+            string strMoon = day.MoonriseOccuring == MoonriseOccuring.BeforeSet
                            ? strMoonrise + ColumnSepInner + strMoonset
                            : strMoonset + ColumnSepInner + strMoonrise;
             string textDate = AppTranslations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
             textDate += dayDate.Year;
             string strDesc = string.Empty;
             string s1 = day.TorahEventText;
-            string s2 = AppTranslations.SeasonChange.GetLang(day.SeasonChangeAsEnum);
+            string s2 = AppTranslations.SeasonChange.GetLang(day.SeasonChange);
             strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
             int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
             int length = lengthAvailable - 2 - strDesc.Length;

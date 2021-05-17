@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;USE_SQLITEPCL_RAW</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
@@ -52,13 +52,13 @@
     <LangVersion>latest</LangVersion>
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;USE_SQLITEPCL_RAW</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
@@ -107,6 +107,21 @@
     <Reference Include="Serilog.Sinks.WinForms, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Serilog.Sinks.WinForms.2.3.0\lib\net46\Serilog.Sinks.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite-net, Version=1.7.335.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\sqlite-net-pcl.1.7.335\lib\netstandard2.0\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.0.4.976, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.2.0.4\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.4.976, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.core.2.0.4\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.nativelibrary, Version=2.0.4.976, Culture=neutral, PublicKeyToken=502ed628492ab262, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.2.0.4\lib\net461\SQLitePCLRaw.nativelibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.0.4.976, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.provider.dynamic_cdecl.2.0.4\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -152,6 +167,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
+    <Compile Include="Source\Common\Core\Data\DataFile.cs" />
+    <Compile Include="Source\Common\Core\Data\DataFileFolder.cs" />
+    <Compile Include="Source\Common\Core\Data\DataTableHelper.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteDatabase.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteNetHelper.cs" />
     <Compile Include="Source\Common\Core\GlobalSuppressions.cs" />
     <Compile Include="Source\Common\Core\Classes\NativeMethods.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
@@ -194,10 +215,17 @@
     <Compile Include="Source\Common\Hebrew\Classes\HebrewGlobals.Providers.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTools.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewTranslations.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Parashot.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\HebrewDatabase.Terms.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.Properties.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Parashah.ToString.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ParashotTable.Defaults.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ProcessLocksTable.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ProcessLock.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ProcessLocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
@@ -244,13 +272,13 @@
     <Compile Include="Source\Common\Hebrew\WinForms\SelectYearsControl.designer.cs">
       <DependentUpon>SelectYearsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Database\DataSet.cs" />
-    <Compile Include="Source\Database\DataSet.Times.cs" />
-    <Compile Include="Source\Database\DataSet.LunarDay.cs" />
-    <Compile Include="Source\Database\DataSet.Parashah.cs" />
-    <Compile Include="Source\Database\DataSet.AsDateTime.cs" />
-    <Compile Include="Source\Database\DataSet.AsEnum.cs" />
-    <Compile Include="Source\Database\DataSet.LoadBoard.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.cs" />
+    <Compile Include="Source\Database\LunisolarDay.Helper.cs" />
+    <Compile Include="Source\Database\LunisolarDay.Times.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.LunarDay.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
+    <Compile Include="Source\Database\LunisolarDay.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>
@@ -336,8 +364,6 @@
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Platform.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.SSL.cs" />
     <Compile Include="Source\Common\Core\Classes\ShellIcons.cs" />
-    <Compile Include="Source\Common\Core\Data\DataFile.cs" />
-    <Compile Include="Source\Common\Core\Data\DataFileFolder.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\AutoResizedList.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeOfEnumDictionary.cs" />
@@ -346,8 +372,6 @@
     <Compile Include="Source\Common\Core\Collections\SortedAutoDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeSortedDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeStringList.cs" />
-    <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
-    <Compile Include="Source\Common\Core\Data\SQLiteOdbcHelper.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\ExceptionInfo.cs" />
     <Compile Include="Source\Common\Core\Exceptions\NotImplementedExceptionEx.cs" />
@@ -594,9 +618,6 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateSchema.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Generate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -636,14 +657,6 @@
     </Compile>
     <Compile Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.Designer.cs">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\DataSet.cs">
-      <DependentUpon>DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Data\DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.CSV.cs">
       <SubType>Form</SubType>
@@ -996,21 +1009,11 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Data\DataSet.xsc">
-      <DependentUpon>DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\DataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Data\DataSet.xss">
-      <DependentUpon>DataSet.xsd</DependentUpon>
-    </None>
     <None Include="Licenses\MPL 2.0.rtf" />
     <None Include="Packages.config" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
+    <None Include="Properties\DataSources\LunisolarDay.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Hebrew.Parashah.datasource" />
     <None Include="Properties\Settings.settings">
@@ -1055,4 +1058,11 @@
     <VisualStudio>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets'))" />
+  </Target>
+  <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
 </Project>

@@ -28,16 +28,16 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateNow = DateTime.Now;
       dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
       var dateToday = DateTime.Today;
-      var row = ( from day in DataSet.LunisolarDays
-                  where day.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                     && day.DateAsDateTime >= dateToday
+      var row = ( from day in LunisolarDays
+                  where day.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay
+                     && day.Date >= dateToday
                   select day ).FirstOrDefault();
       if ( row == null ) return result;
       var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
       if ( times == null ) return result;
-      result = dateNow >= times.DateStart.Value && dateNow < times.DateEnd.Value;
-      var dateTrigger = times.DateStartCheck.Value.AddHours((double)-Settings.RemindShabatHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= times.DateEnd.Value )
+      result = dateNow >= times.DateStart && dateNow < times.DateEnd;
+      var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindShabatHoursBefore);
+      if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
       {
         LastShabatReminded = null;
         if ( ShabatForm != null )

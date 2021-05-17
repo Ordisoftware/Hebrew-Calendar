@@ -11,42 +11,24 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-05 </edited>
 using System;
+using SQLite;
+using System.ComponentModel;
 
 namespace Ordisoftware.Hebrew
 {
 
-  public partial class Parashah
+  [Serializable]
+  [Table("Parashot")]
+  public partial class Parashah : INotifyPropertyChanged
   {
 
-    public string ID { get; }
-    public TorahBooks Book { get; }
-    public int Number { get; }
-    public string VerseBegin { get; }
-    public string VerseEnd { get; }
-    public bool IsLinkedToNext { get; }
-    public string Name { get; }
-    public string Hebrew { get; }
-    public string Unicode { get; }
-    public string Translation { get; set; }
-    public string Lettriq { get; set; }
-    public string Memo { get; set; }
-    public Parashah Linked { get; set; }
+    public event PropertyChangedEventHandler PropertyChanged;
 
-    /*public override string ToString()
-      => ToString(false);
-
-    public string ToString(bool useHebrewFont)
-      => $"Sefer {Book}, " +
-         $"Parashah n°{Number}, " +
-         $"{VerseBegin} - {VerseEnd}, " +
-         $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
-         $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
-         $"{Translation} ; {Lettriq} : {Memo}";*/
-
-    public string ToStringLinked()
-      => Name + ( Linked != null ? " - " + Linked.Name : "" );
+    public Parashah()
+    {
+    }
 
     public Parashah(TorahBooks book,
                     int number,
@@ -65,10 +47,17 @@ namespace Ordisoftware.Hebrew
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
+      FullReferenceBegin = $"{(int)Book}.{VerseBegin}";
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
-      ID = $"{(int)book + 1}.{number}";
+      Memo = string.Empty;
+      ID = $"{(int)book}.{number}";
+    }
+
+    public object Clone()
+    {
+      return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
     }
 
   }

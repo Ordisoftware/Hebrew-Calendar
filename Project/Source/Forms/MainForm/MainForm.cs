@@ -14,12 +14,10 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
-using System.Data;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -55,6 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private MainForm()
     {
+      InitializeComponent();
       DoConstructor();
     }
 
@@ -295,11 +294,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      string dateOld = CurrentDay?.Date;
-      bool formEnabled = Globals.MainForm.Enabled;
+      var dateOld = CurrentDay?.Date;
+      bool calltimer = true;
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       try
       {
-        Enabled = false;
         ActionPreferences.Visible = false;
         ActionPreferences.Visible = true;
         TimerReminder.Enabled = false;
@@ -317,6 +317,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Thread.Sleep(1000);
           ActionGenerate_Click(null, EventArgs.Empty);
           PanelViewMonth.Visible = true;
+          calltimer = false;
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
@@ -328,14 +329,14 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Enabled = formEnabled;
+        ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);
         else
-          GoToDate(dateOld);
+          GoToDate(dateOld.Value);
         TimerReminder.Enabled = true;
-        EnableReminderTimer();
+        EnableReminderTimer(calltimer);
         UpdateTitles(true);
       }
     }
@@ -499,7 +500,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
       if ( form == null )
-        form = new MessageBoxEx(title, text, width); form.ShowInTaskbar = true;
+        form = new MessageBoxEx(title, text, width: width); form.ShowInTaskbar = true;
       form.Popup(null, sender == null);
     }
 
@@ -543,6 +544,17 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Event handler. Called by ActionViewParashahInfos for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+    {
+      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
+        ActionViewParashahInfos.Enabled = false;
+    }
+
+    /// <summary>
     /// Event handler. Called by ActionViewCelebrationsBoard for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
@@ -579,7 +591,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(DataSet.LunisolarDays.GetWeeklyParashah());
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
     }
 
     /// <summary>
@@ -871,7 +883,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region View Data Grid
+    #region Data Grid View
 
     /// <summary>
     /// Event handler. Called by LabelGridGoToToday for click events.
@@ -900,32 +912,27 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      SystemManager.TryCatch(() =>
+      switch ( e.ColumnIndex )
       {
-        switch ( e.ColumnIndex )
-        {
-          case 7:
-            e.Value = ( (MoonRiseOccuring)e.Value ).ToString();
-            break;
-          case 10:
-            e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
-            break;
-          case 8:
-            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
-            break;
-          case 9:
-            e.Value = (int)e.Value == 0 ? string.Empty : Globals.Bullet;
-            break;
-          case 11:
-            var season = (SeasonChange)e.Value;
-            e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
-            break;
-          case 12:
-            var torah = (TorahEvent)e.Value;
-            e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
-            break;
-        }
-      });
+        case 5:
+          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonRiseOccuring);
+          break;
+        case 8:
+        case 9:
+          e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
+          break;
+        case 10:
+          e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
+          break;
+        case 11:
+          var season = (SeasonChange)e.Value;
+          e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
+          break;
+        case 12:
+          var torah = (TorahEvent)e.Value;
+          e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
+          break;
+      }
     }
 
     /// <summary>
@@ -938,10 +945,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         if ( LunisolarDaysBindingSource.Current != null )
-        {
-          var rowview = ( (DataRowView)LunisolarDaysBindingSource.Current ).Row;
-          GoToDate(( (LunisolarDaysRow)rowview ).Date);
-        }
+          GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
       });
     }
 

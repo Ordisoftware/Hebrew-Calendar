@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -98,7 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( DataSet.LunisolarDays.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
         // GPS
         if ( !force && !TitleGPS.IsNullOrEmpty() )
           str = TitleGPS;
@@ -115,7 +115,7 @@ namespace Ordisoftware.Hebrew.Calendar
           str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
         LabelSubTitleOmer.Text = str;
         // Parashah
-        var parashah = DataSet.LunisolarDays.GetWeeklyParashah();
+        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         if ( parashah != null && Settings.MainFormTitleBarShowWeeklyParashah )
           Text += " - Parashah " + parashah.ToStringLinked().ToUpper();
       });
@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
         MenuTray.Enabled = Globals.IsReady && !Globals.IsGenerating;
         ToolStrip.Enabled = !Globals.IsGenerating;
-        ActionSaveToFile.Enabled = DataSet.LunisolarDays.Count > 0;
+        ActionSaveToFile.Enabled = LunisolarDays.Count > 0;
         ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
         ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;
         ActionSearchEvent.Enabled = ActionSaveToFile.Enabled;
@@ -159,7 +159,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.IsGenerating = true;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
-      Enabled = false;
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       PanelViewMonth.Parent = null;
       try
       {
@@ -168,7 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Enabled = true;
+        ToolStrip.Enabled = formEnabled;
         Cursor = cursor;
         Globals.IsGenerating = false;
         SetView(Settings.CurrentView, true);

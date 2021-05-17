@@ -15,7 +15,6 @@
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using LunisolarDaysRow = Ordisoftware.Hebrew.Calendar.Data.DataSet.LunisolarDaysRow;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -25,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private MainForm MainForm = MainForm.Instance;
 
-    public LunisolarDaysRow CurrentDay { get; private set; }
+    public LunisolarDay CurrentDay { get; private set; }
 
     public SearchGregorianMonthForm()
     {

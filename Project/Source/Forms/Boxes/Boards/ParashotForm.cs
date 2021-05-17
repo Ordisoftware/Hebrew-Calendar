@@ -11,10 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
-using System.Data;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
@@ -43,33 +42,15 @@ namespace Ordisoftware.Hebrew
         return;
       }
       Instance.Show();
-      Instance.ForceBringToFront();
-      Instance.Select(parashah);
+      Instance?.ForceBringToFront();
+      Instance?.Select(parashah);
     }
 
     public readonly Properties.Settings Settings
       = Properties.Settings.Default;
 
-    private DataRowView CurrentDataBoundItem
-      => (DataRowView)DataGridView.SelectedRows[0].DataBoundItem;
-
-    private string CurrentDataBoundItemFullReferenceBegin
-      => $"{(int)CurrentDataBoundItem[nameof(Parashah.Book)]}." +
-         $"{(string)CurrentDataBoundItem[nameof(Parashah.VerseBegin)]}";
-
-    private string CurrentDataBoundItemToString(bool useHebrewFont)
-    {
-      var item = CurrentDataBoundItem;
-      bool islinked = Convert.ToBoolean(item[nameof(Parashah.IsLinkedToNext)]);
-      return $"Sefer {(TorahBooks)( (int)item[nameof(Parashah.Book)] - 1 )} " +
-             $"{item[nameof(Parashah.VerseBegin)]} - {item[nameof(Parashah.VerseEnd)]} " +
-             $"Parashah n°{item[nameof(Parashah.Number)]} " +
-             $"{item[nameof(Parashah.Name)]}{( islinked ? "*" : string.Empty )} " +
-             $"({( useHebrewFont ? item[nameof(Parashah.Hebrew)] : item[nameof(Parashah.Unicode)] )}) : " +
-             $"{item[nameof(Parashah.Translation)].ToString().GetOrEmpty()} ; " +
-             $"{item[nameof(Parashah.Lettriq)].ToString().GetOrEmpty()} ; " +
-             $"{item[nameof(Parashah.Memo)].ToString().GetOrEmpty()} ";
-    }
+    private Parashah CurrentDataBoundItem
+      => (Parashah)DataGridView.SelectedRows[0].DataBoundItem;
 
     private void UpdateStats()
     {
@@ -82,12 +63,8 @@ namespace Ordisoftware.Hebrew
       InitializeComponent();
       InitializeMenu();
       Icon = Globals.MainForm.Icon;
-      ParashotTable.Take();
-      BindingSource.DataSource = ParashotTable.DataTable;
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
-      Timer_Tick(null, null);
-      ActiveControl = DataGridView;
-      UpdateStats();
+      DataGridView.Visible = false;
     }
 
     private void InitializeMenu()
@@ -95,18 +72,18 @@ namespace Ordisoftware.Hebrew
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ParashotTable.GetDefaultByID((string)CurrentDataBoundItem[nameof(Parashah.ID)]);
+        var parashah = ParashotFactory.Get(CurrentDataBoundItem.ID);
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItemFullReferenceBegin);
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItem.FullReferenceBegin);
       });
       ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        foreach ( string word in ( (string)CurrentDataBoundItem[nameof(Parashah.Hebrew)] ).Split(' ') )
+        foreach ( string word in CurrentDataBoundItem.Hebrew.Split(' ') )
           HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
       });
     }
@@ -115,36 +92,65 @@ namespace Ordisoftware.Hebrew
     {
       if ( parashah == null ) return;
       foreach ( DataGridViewRow row in DataGridView.Rows )
-      {
-        var datarowview = (DataRowView)row.DataBoundItem;
-        if ( (string)datarowview[nameof(Parashah.ID)] == parashah.ID )
+        if ( ( (Parashah)row.DataBoundItem ).ID == parashah.ID )
         {
           DataGridView.CurrentCell = row.Cells[0];
           DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
           break;
         }
-      }
     }
 
     private void ParashotForm_Load(object sender, EventArgs e)
     {
-      EditFontSize.Value = Settings.ParashotFormFontSize;
-      Location = Settings.ParashotFormLocation;
-      ClientSize = Settings.ParashotFormClientSize;
-      this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Settings.ParashotFormWindowState;
-      if ( Settings.ParashotFormColumnTranslationWidth != -1 )
-        ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
+      Cursor = Cursors.WaitCursor;
+      PanelBottom.Enabled = false;
+      try
+      {
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), 4);
+        LoadingForm.Instance.DoProgress();
+        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot();
+        LoadingForm.Instance.DoProgress();
+        EditFontSize.Value = Settings.ParashotFormFontSize;
+        Location = Settings.ParashotFormLocation;
+        ClientSize = Settings.ParashotFormClientSize;
+        this.CheckLocationOrCenterToMainFormElseScreen();
+        WindowState = Settings.ParashotFormWindowState;
+        if ( Settings.ParashotFormColumnTranslationWidth != -1 )
+          ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
+        LoadingForm.Instance.DoProgress();
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        LoadingForm.Instance.DoProgress();
+        UpdateControls();
+      }
+      finally
+      {
+        PanelBottom.Enabled = true;
+        Cursor = Cursors.Default;
+        LoadingForm.Instance.Hide();
+      }
     }
 
     private void ParashotForm_Shown(object sender, EventArgs e)
     {
+      DataGridView.Visible = true;
+      ActiveControl = DataGridView;
       EditFontSize_ValueChanged(null, null);
     }
 
     private void Timer_Tick(object sender, EventArgs e)
     {
-      DataGridView.ReadOnly = ParashotTable.IsReadOnly();
+      UpdateControls();
+      if ( Created && !DataGridView.ReadOnly)
+      {
+        ActionUndo.PerformClick();
+        MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+      }
+    }
+
+    private void UpdateControls()
+    {
+      DataGridView.ReadOnly = HebrewDatabase.Instance.IsParashotReadOnly();
       Timer.Enabled = DataGridView.ReadOnly;
       ActionErase.Enabled = !DataGridView.ReadOnly;
       ActionSaveAsDefaults.Enabled = !DataGridView.ReadOnly;
@@ -153,19 +159,12 @@ namespace Ordisoftware.Hebrew
       ActionCheckLockers.Visible = DataGridView.ReadOnly;
       ActionViewLockers.Visible = DataGridView.ReadOnly;
       LabelTableLocked.Visible = DataGridView.ReadOnly;
-      if ( Created && !DataGridView.ReadOnly )
-      {
-        ActionUndo.PerformClick();
-        ParashotTable.Release();
-        ParashotTable.Take();
-        BindingSource.DataSource = ParashotTable.DataTable;
-      }
     }
 
     private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      string list = string.Join(Globals.NL, ProcessLocksTable.GetLockers(ParashotTable.TableName)).Indent(4);
-      string msg = SysTranslations.DatabaseTableLocked.GetLang(ParashotTable.TableName, list, Timer.Interval / 1000);
+      string list = string.Join(Globals.NL, ProcessLocks.GetLockers(HebrewDatabase.Instance.ParashotTableName)).Indent(4);
+      string msg = SysTranslations.DatabaseTableLocked.GetLang(HebrewDatabase.Instance.ParashotTableName, list, Timer.Interval / 1000);
       DisplayManager.Show(msg);
     }
 
@@ -182,13 +181,13 @@ namespace Ordisoftware.Hebrew
         this.Popup();
         DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(Text),
                                   ActionSave.PerformClick,
-                                  ParashotTable.LoadDefaults);
+                                  ParashotFactory.Reset);
       }
       else
         DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
-                                          ActionSave.PerformClick,
-                                          ParashotTable.LoadDefaults,
-                                          () => e.Cancel = true);
+                                        ActionSave.PerformClick,
+                                        ParashotFactory.Reset,
+                                        () => e.Cancel = true);
     }
 
     private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -204,7 +203,8 @@ namespace Ordisoftware.Hebrew
       Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Settings.ParashotFormFontSize = EditFontSize.Value;
       Settings.Save();
-      ParashotTable.Release();
+      MainForm.UserParashot = HebrewDatabase.Instance.Parashot;
+      HebrewDatabase.Instance.ReleaseParashot();
       UpdateStats();
     }
 
@@ -237,7 +237,7 @@ namespace Ordisoftware.Hebrew
         }
         listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
         listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
-        ParashotTable.LoadDefaults();
+        ParashotFactory.Reset();
         DisplayManager.Show("Default files updated.");
       }
       ActiveControl = DataGridView;
@@ -246,7 +246,7 @@ namespace Ordisoftware.Hebrew
     private void ActionExport_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(ParashotTable.TableName);
+      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(HebrewDatabase.Instance.ParashotTableName);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
@@ -266,23 +266,7 @@ namespace Ordisoftware.Hebrew
 
     private void DoExportTable(string filePath)
     {
-      var table = new DataTable();
-      int indexBook = -1;
-      foreach ( DataColumn column in ParashotTable.DataTable.Columns )
-        if ( indexBook == -1 && column.ColumnName == ColumnBook.DataPropertyName )
-        {
-          table.Columns.Add(ColumnBook.DataPropertyName, typeof(string));
-          indexBook = column.Ordinal;
-        }
-        else
-          table.Columns.Add(column.ColumnName, column.DataType);
-      foreach ( DataRow row in ParashotTable.DataTable.Rows )
-      {
-        object[] values = new object[row.ItemArray.Length];
-        Array.Copy(row.ItemArray, values, row.ItemArray.Length);
-        values[indexBook] = ( (TorahBooks)( (int)row.ItemArray[indexBook] - 1 ) ).ToString();
-        table.Rows.Add(values);
-      }
+      var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
       table.Export(filePath, Program.BoardExportTargets);
     }
 
@@ -290,33 +274,37 @@ namespace Ordisoftware.Hebrew
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) )
       {
-        ParashotTable.CreateDataIfNotExists(true);
-        BindingSource.DataSource = ParashotTable.DataTable;
+        int index = DataGridView.CurrentRow.Index;
+        MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true);
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        DataGridView.Rows[index].Selected = true;
+        DataGridView.FirstDisplayedScrollingRowIndex = index;
         ActionSave.Enabled = false;
         ActionUndo.Enabled = false;
+        ActiveControl = DataGridView;
+        UpdateStats();
       }
-      ActiveControl = DataGridView;
-      UpdateStats();
     }
 
     private void ActionEmpty_Click(object sender, EventArgs e)
     {
       if ( DisplayManager.QueryYesNo(SysTranslations.AskToClearCustomData.GetLang()) )
       {
-        foreach ( DataRow row in ParashotTable.DataTable.Rows )
-        {
-          row[nameof(Parashah.Translation)] = string.Empty;
-          row[nameof(Parashah.Lettriq)] = string.Empty;
-          ActionSave.Enabled = true;
-          ActionUndo.Enabled = true;
-        }
+        int index = DataGridView.CurrentRow.Index;
+        MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true, true);
+        BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        DataGridView.Rows[index].Selected = true;
+        DataGridView.FirstDisplayedScrollingRowIndex = index;
+        ActionSave.Enabled = false;
+        ActionUndo.Enabled = false;
+        ActiveControl = DataGridView;
         UpdateStats();
       }
     }
 
     private void ActionSave_Click(object sender, EventArgs e)
     {
-      ParashotTable.Update();
+      HebrewDatabase.Instance.SaveParashot();
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
@@ -325,8 +313,11 @@ namespace Ordisoftware.Hebrew
 
     private void ActionUndo_Click(object sender, EventArgs e)
     {
-      ParashotTable.DataTable.RejectChanges();
-      BindingSource.ResetBindings(false);
+      int index = DataGridView.CurrentRow.Index;
+      MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
+      BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+      DataGridView.Rows[index].Selected = true;
+      DataGridView.FirstDisplayedScrollingRowIndex = index;
       ActionSave.Enabled = false;
       ActionUndo.Enabled = false;
       ActiveControl = DataGridView;
@@ -336,7 +327,7 @@ namespace Ordisoftware.Hebrew
     private void EditFontSize_ValueChanged(object sender, EventArgs e)
     {
       DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
-      ColumnUnicode.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
+      ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
       if ( DataGridView.Rows.Count > 0 )
         DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
     }
@@ -357,16 +348,7 @@ namespace Ordisoftware.Hebrew
     private void BindingSource_DataSourceChanged(object sender, EventArgs e)
     {
       if ( DataGridView.DataSource == null ) return;
-      if ( ParashotTable.DataTable == null ) return;
-      foreach ( DataGridViewColumn column in DataGridView.Columns )
-      {
-        var datacolumn = ParashotTable.DataTable.Columns[column.DataPropertyName];
-        if ( datacolumn.DataType == typeof(string) )
-        {
-          column.DefaultCellStyle.DataSourceNullValue = string.Empty;
-          datacolumn.DefaultValue = string.Empty;
-        }
-      }
+      if ( HebrewDatabase.Instance.Parashot == null ) return;
       UpdateStats();
     }
 
@@ -379,9 +361,6 @@ namespace Ordisoftware.Hebrew
 
     private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
     {
-      if ( e.ColumnIndex == ColumnUnicode.Index )
-        e.Value = HebrewAlphabet.ToHebrewFont((string)e.Value);
-      else
       if ( e.ColumnIndex == ColumnLinked.Index )
         e.Value = Convert.ToBoolean(e.Value) ? Globals.Bullet : string.Empty;
       else
@@ -389,8 +368,6 @@ namespace Ordisoftware.Hebrew
         if ( e.ColumnIndex == ColumnBook.Index && e.RowIndex > 0
           && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
           e.Value = string.Empty;
-        else
-          e.Value = ( (TorahBooks)( (int)e.Value - 1 ) ).ToString();
     }
 
     private void DataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -419,13 +396,14 @@ namespace Ordisoftware.Hebrew
       if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
       var form = new EditMemoForm();
       form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
-      form.TextBox.Text = (string)CurrentDataBoundItem.Row[nameof(Parashah.Memo)];
+      form.TextBox.Text = CurrentDataBoundItem.Memo;
       form.TextBox.SelectionStart = 0;
       if ( form.ShowDialog() == DialogResult.OK )
       {
-        CurrentDataBoundItem.Row[nameof(Parashah.Memo)] = form.TextBox.Text;
+        CurrentDataBoundItem.Memo = form.TextBox.Text;
         ActionSave.Enabled = true;
         ActionUndo.Enabled = true;
+        DataGridView.RefreshEdit();
       }
     }
 
@@ -436,43 +414,42 @@ namespace Ordisoftware.Hebrew
 
     private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewLetters((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)],
-                                    Settings.HebrewLettersExe);
+      HebrewTools.OpenHebrewLetters(CurrentDataBoundItem.Hebrew, Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWordsGoToVerse(CurrentDataBoundItemFullReferenceBegin, Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsGoToVerse(CurrentDataBoundItem.FullReferenceBegin, Settings.HebrewWordsExe);
     }
 
     private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
     {
-      HebrewTools.OpenHebrewWordsSearchWord((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)], Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsSearchWord(CurrentDataBoundItem.Hebrew, Settings.HebrewWordsExe);
     }
 
     private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Name)]);
+      Clipboard.SetText(CurrentDataBoundItem.Name);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Hebrew)]);
+      Clipboard.SetText(CurrentDataBoundItem.Hebrew);
     }
 
     private void ActionCopyUnicodeChars_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText((string)CurrentDataBoundItem[nameof(Parashah.Unicode)]);
+      Clipboard.SetText(CurrentDataBoundItem.Unicode);
     }
 
     private void ActionCopyLineHebrew_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentDataBoundItemToString(true));
+      Clipboard.SetText(CurrentDataBoundItem.ToString(true));
     }
 
     private void ActionCopyLineUnicode_Click(object sender, EventArgs e)
     {
-      Clipboard.SetText(CurrentDataBoundItemToString(false));
+      Clipboard.SetText(CurrentDataBoundItem.ToString(false));
     }
 
   }

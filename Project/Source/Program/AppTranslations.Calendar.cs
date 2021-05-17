@@ -85,20 +85,20 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
-    static public readonly NullSafeDictionary<MoonRiseOccuring, TranslationsDictionary> MoonRiseOccuring
-      = new NullSafeDictionary<MoonRiseOccuring, TranslationsDictionary>
+    static public readonly NullSafeDictionary<MoonriseOccuring, TranslationsDictionary> MoonRiseOccuring
+      = new NullSafeDictionary<MoonriseOccuring, TranslationsDictionary>
       {
-        [Calendar.MoonRiseOccuring.AfterSet] = new TranslationsDictionary
+        [Calendar.MoonriseOccuring.AfterSet] = new TranslationsDictionary
         {
           [Language.EN] = "After the set",
           [Language.FR] = "Après le lever"
         },
-        [Calendar.MoonRiseOccuring.BeforeSet] = new TranslationsDictionary
+        [Calendar.MoonriseOccuring.BeforeSet] = new TranslationsDictionary
         {
           [Language.EN] = "Before the set",
           [Language.FR] = "Avant le lever"
         },
-        [Calendar.MoonRiseOccuring.NextDay] = new TranslationsDictionary
+        [Calendar.MoonriseOccuring.NextDay] = new TranslationsDictionary
         {
           [Language.EN] = "The next day",
           [Language.FR] = "Le jour d'après"

@@ -54,8 +54,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void InitializeYearsInterval()
     {
-      DateFirst = DataSet.LunisolarDays.FirstOrDefault()?.DateAsDateTime ?? default;
-      DateLast = DataSet.LunisolarDays.LastOrDefault()?.DateAsDateTime ?? default;
+      DateFirst = LunisolarDays.FirstOrDefault()?.Date ?? default;
+      DateLast = LunisolarDays.LastOrDefault()?.Date ?? default;
       if ( DateFirst == DateTime.MinValue || DateLast == DateTime.MinValue || DateFirst >= DateLast )
       {
         YearFirst = DateTime.Now.Year - 1;
@@ -79,17 +79,17 @@ namespace Ordisoftware.Hebrew.Calendar
         string strToolTip = "Error on getting sun rise and set";
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
-        if ( DataSet.LunisolarDays.Count == 0 ) return;
+        if ( LunisolarDays.Count == 0 ) return;
         DayColors = new Color[YearsInterval, 13, 35];
         LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
-                                        DataSet.LunisolarDays.Count,
+                                        LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
-        foreach ( var row in DataSet.LunisolarDays )
+        foreach ( var row in LunisolarDays )
           try
           {
             LoadingForm.Instance.DoProgress();
-            var ev = (TorahEvent)row.TorahEvents;
-            var season = row.SeasonChangeAsEnum;
+            var ev = row.TorahEvent;
+            var season = row.SeasonChange;
             if ( ev == TorahEvent.PessahD1
               || ev == TorahEvent.SoukotD1
               || ev == TorahEvent.ChavouotDiet )
@@ -97,24 +97,24 @@ namespace Ordisoftware.Hebrew.Calendar
             IsCelebrationWeekEnd = ev == TorahEvent.PessahD7
                                 || ev == TorahEvent.SoukotD8
                                 || ev == TorahEvent.Chavouot1;
-            var date = row.DateAsDateTime;
+            var date = row.Date;
             // Colors
             Color? color1 = null;
             Color? color2 = null;
             Color? color3 = null;
             if ( season != SeasonChange.None )
               color1 = Settings.EventColorSeason;
-            if ( row.IsNewMoon == 1 && ev == TorahEvent.None )
+            if ( row.IsNewMoon && ev == TorahEvent.None )
               color2 = Settings.EventColorMonth;
             else
-            if ( row.IsNewMoon == 1 && ev == TorahEvent.NewYearD1 )
+            if ( row.IsNewMoon && ev == TorahEvent.NewYearD1 )
               color2 = MixColor(Settings.EventColorMonth,
                                 Settings.EventColorSeason,
                                 Settings.EventColorNext);
             else
             if ( IsCelebrationWeekStart || ev != TorahEvent.None )
               color2 = Settings.EventColorTorah;
-            if ( row.DateAsDateTime.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
+            if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
               color3 = Settings.EventColorShabat;
             if ( color1 != null && color2 != null && color3 != null )
               color1 = MixColor(color1.Value, color2.Value, color3.Value);
@@ -141,35 +141,35 @@ namespace Ordisoftware.Hebrew.Calendar
               IsCelebrationWeekStart = false;
             int rank = 0;
             // Sun
-            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Sunrise + Globals.NL
-                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Sunset;
+            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.SunriseAsString + Globals.NL
+                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.SunsetAsString;
             Color colorMoon = Color.Black;
             string strMonthDay = row.DayAndMonthFormattedText;
-            colorMoon = row.IsNewMoon == 1
+            colorMoon = row.IsNewMoon
                       ? Settings.CalendarColorTorahEvent
-                      : ( row.IsFullMoon == 1
+                      : ( row.IsFullMoon
                         ? Settings.CalendarColorFullMoon
                         : Settings.CalendarColorMoon );
             // Moon
-            if ( row.MoonriseOccuringAsEnum == MoonRiseOccuring.AfterSet )
+            if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
             {
-              if ( row.Moonset != string.Empty )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
-              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+              if ( row.Moonset != null )
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+              if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
               if ( !Program.Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
             }
             else
             {
-              if ( row.MoonriseOccuringAsEnum != MoonRiseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.Moonrise + " " + strMonthDay);
+              if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
               if ( !Program.Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
-              if ( row.Moonset != string.Empty )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.Moonset);
+              if ( row.Moonset != null )
+                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
             }
             //Torah
             add(Settings.CalendarColorTorahEvent, row.TorahEventText);
@@ -179,7 +179,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 add(Settings.CalendarColorParashah, row.ParashahText);
             // Season
             if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChangeAsEnum));
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChange));
             //
             void add(Color color, string text)
             {
@@ -209,7 +209,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.Date, ex) )
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), SQLiteDate.ToString(row.Date), ex) )
               return;
           }
       }

@@ -112,11 +112,10 @@ namespace Ordisoftware.Hebrew.Calendar
       // Visual month navigation
       void search(bool isFuture, Func<int, bool> check)
       {
-        var date = CurrentDay.DateAsDateTime.Change(day: 1);
+        var date = CurrentDay.Date.Change(day: 1);
         if ( isFuture ) date = date.AddMonths(1);
-        string str = SQLiteDate.ToString(date);
-        var query = from day in DataSet.LunisolarDays
-                    where check(day.Date.CompareTo(str)) && day.HasTorahEvent && !day.IsNewYear
+        var query = from day in LunisolarDays
+                    where check(day.Date.CompareTo(date)) && day.HasTorahEvent && !day.IsNewYear
                     select day;
         var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
         if ( found != null ) GoToDate(found.Date);
@@ -144,17 +143,17 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
           case Keys.Up:
           case Keys.PageUp:
-            GoToDate(CurrentDay.DateAsDateTime.Change(day: 1).AddYears(-1));
+            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(-1));
             return true;
           case Keys.Down:
           case Keys.PageDown:
-            GoToDate(CurrentDay.DateAsDateTime.Change(day: 1).AddYears(1));
+            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(1));
             return true;
           case Keys.Left:
-            GoToDate(CurrentDay.DateAsDateTime.Change(day: 1).AddMonths(-1));
+            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(-1));
             return true;
           case Keys.Right:
-            GoToDate(CurrentDay.DateAsDateTime.Change(day: 1).AddMonths(1));
+            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(1));
             return true;
         }
       return base.ProcessCmdKey(ref msg, keyData);

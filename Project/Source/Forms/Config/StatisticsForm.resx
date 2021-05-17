@@ -1345,13 +1345,13 @@
     <value>15, 37</value>
   </data>
   <data name="dBADONETAccessLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>49, 13</value>
   </data>
   <data name="dBADONETAccessLabel.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="dBADONETAccessLabel.Text" xml:space="preserve">
-    <value>ADO.NET:</value>
+    <value>Provider:</value>
   </data>
   <data name="&gt;&gt;dBADONETAccessLabel.Name" xml:space="preserve">
     <value>dBADONETAccessLabel</value>
@@ -1751,6 +1751,42 @@
   </data>
   <data name="&gt;&gt;dBParashotMemorySizeLabel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <metadata name="translateTimeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="translateTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="translateTimeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="translateTimeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="translateTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 40</value>
+  </data>
+  <data name="translateTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="translateTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>121</value>
+  </data>
+  <data name="translateTimeLabel.Text" xml:space="preserve">
+    <value>Translation:</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel.Name" xml:space="preserve">
+    <value>translateTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;ActionScreenshot.Name" xml:space="preserve">
     <value>ActionScreenshot</value>
@@ -2845,6 +2881,78 @@
   <data name="&gt;&gt;currentThreadPriorityLabel1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;translateTimeLabel1.Name" xml:space="preserve">
+    <value>translateTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;translateTimeLabel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Name" xml:space="preserve">
+    <value>generateTextReportTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generateTextReportTimeLabel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Name" xml:space="preserve">
+    <value>generatePopulateDaysTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generatePopulateDaysTimeLabel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Name" xml:space="preserve">
+    <value>generateAnalyseDaysTimeLabel1</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.Parent" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="GroupBoxTimings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 114</value>
+  </data>
+  <data name="GroupBoxTimings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 197</value>
+  </data>
+  <data name="GroupBoxTimings.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="GroupBoxTimings.Text" xml:space="preserve">
+    <value>Timings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Name" xml:space="preserve">
+    <value>GroupBoxTimings</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxTimings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="translateTimeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -2877,42 +2985,6 @@
   </data>
   <data name="&gt;&gt;translateTimeLabel1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="translateTimeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="translateTimeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="translateTimeLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="translateTimeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="translateTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 40</value>
-  </data>
-  <data name="translateTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
-  <data name="translateTimeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>121</value>
-  </data>
-  <data name="translateTimeLabel.Text" xml:space="preserve">
-    <value>Translation:</value>
-  </data>
-  <data name="&gt;&gt;translateTimeLabel.Name" xml:space="preserve">
-    <value>translateTimeLabel</value>
-  </data>
-  <data name="&gt;&gt;translateTimeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;translateTimeLabel.Parent" xml:space="preserve">
-    <value>GroupBoxTimings</value>
-  </data>
-  <data name="&gt;&gt;translateTimeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="generateTextReportTimeLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3003,102 +3075,6 @@
   </data>
   <data name="&gt;&gt;generateAnalyseDaysTimeLabel1.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="GroupBoxTimings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 114</value>
-  </data>
-  <data name="GroupBoxTimings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 197</value>
-  </data>
-  <data name="GroupBoxTimings.TabIndex" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="GroupBoxTimings.Text" xml:space="preserve">
-    <value>Timings</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTimings.Name" xml:space="preserve">
-    <value>GroupBoxTimings</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTimings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTimings.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxTimings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dBCommonFileSizeLabel1.Name" xml:space="preserve">
-    <value>dBCommonFileSizeLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBCommonFileSizeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBCommonFileSizeLabel1.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBCommonFileSizeLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dBParashotMemorySizeLabel1.Name" xml:space="preserve">
-    <value>dBParashotMemorySizeLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBParashotMemorySizeLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBParashotMemorySizeLabel1.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBParashotMemorySizeLabel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel1.Name" xml:space="preserve">
-    <value>dBADONETAccessLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel1.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBADONETAccessLabel1.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel1.Name" xml:space="preserve">
-    <value>dBEngineversionLabel1</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel1.Parent" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;dBEngineversionLabel1.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="GroupBoxDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 317</value>
-  </data>
-  <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 218</value>
-  </data>
-  <data name="GroupBoxDatabase.TabIndex" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="GroupBoxDatabase.Text" xml:space="preserve">
-    <value>Database</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Name" xml:space="preserve">
-    <value>GroupBoxDatabase</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxDatabase.Parent" xml:space="preserve">
-    <value>PanelMain</value>
-  </data>
-  <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="dBCommonFileSizeLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -3232,6 +3208,30 @@
   <data name="&gt;&gt;dBEngineversionLabel1.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="GroupBoxDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 317</value>
+  </data>
+  <data name="GroupBoxDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 218</value>
+  </data>
+  <data name="GroupBoxDatabase.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="GroupBoxDatabase.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.Name" xml:space="preserve">
+    <value>GroupBoxDatabase</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.Parent" xml:space="preserve">
+    <value>PanelMain</value>
+  </data>
+  <data name="&gt;&gt;GroupBoxDatabase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="GroupBoxMemory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -3323,7 +3323,7 @@
     <value>operatingSystemTextBox</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3335,7 +3335,7 @@
     <value>processorNameTextBox</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3422,7 +3422,7 @@
     <value>operatingSystemTextBox</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;operatingSystemTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3449,7 +3449,7 @@
     <value>processorNameTextBox</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processorNameTextBox.Parent" xml:space="preserve">
     <value>GroupBoxSystem</value>
@@ -3839,7 +3839,7 @@
     <value>EditOpenFolderUserLocalData</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3851,7 +3851,7 @@
     <value>EditFolderUserData</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -3863,7 +3863,7 @@
     <value>EditFolderApplication</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -4049,7 +4049,7 @@
     <value>EditOpenFolderUserLocalData</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenFolderUserLocalData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -4076,7 +4076,7 @@
     <value>EditFolderUserData</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderUserData.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
@@ -4103,7 +4103,7 @@
     <value>EditFolderApplication</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFolderApplication.Parent" xml:space="preserve">
     <value>GroupBoxFolders</value>
