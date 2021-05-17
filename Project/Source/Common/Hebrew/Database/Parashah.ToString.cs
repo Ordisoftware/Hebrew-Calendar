@@ -27,18 +27,19 @@ namespace Ordisoftware.Hebrew
     public override string ToString()
       => ToString(false);
 
-    public string ToString(bool useHebrewFont = false, bool memo = true)
-      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " +
+    public string ToString(bool useHebrewFont = false)
+      => $"Sefer {Book} {VerseBegin} - {VerseEnd} " +
+         $"Parashah n°{Number} " +
          $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
          $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
          $"{Translation.GetOrEmpty()} ; " +
          $"{Lettriq.GetOrEmpty()}" +
-         ( memo ? $" ; {Memo.GetOrEmpty()} " : "" );
+         ( Memo.IsNullOrEmpty() ? "" : $" ; {Memo.GetOrEmpty()}" );
 
     public string ToStringReadable()
-      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " + Globals.NL +
-         $"{Name} " +
-         $"({Unicode})" + Globals.NL +
+      => $"Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
+         $"Parashah n°{Number} " + Globals.NL +
+         $"{Name} ({Unicode})" + Globals.NL +
          $"• {Translation.GetOrEmpty()}" + Globals.NL +
          $"• {Lettriq.GetOrEmpty()}";
 

@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch
       {
-        Cursor = Cursors.Hand;
+        Cursor = Cursors.Default;
         throw;
       }
     }
@@ -148,7 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Cursor = Cursors.Hand;
+        Cursor = Cursors.Default;
       }
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);

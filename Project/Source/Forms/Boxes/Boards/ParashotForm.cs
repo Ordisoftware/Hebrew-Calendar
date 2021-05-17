@@ -43,8 +43,8 @@ namespace Ordisoftware.Hebrew
         return;
       }
       Instance.Show();
-      Instance.ForceBringToFront();
-      Instance.Select(parashah);
+      Instance?.ForceBringToFront();
+      Instance?.Select(parashah);
     }
 
     public readonly Properties.Settings Settings
@@ -104,9 +104,13 @@ namespace Ordisoftware.Hebrew
     private void ParashotForm_Load(object sender, EventArgs e)
     {
       Cursor = Cursors.WaitCursor;
+      PanelBottom.Enabled = false;
       try
       {
+        LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), 8);
+        LoadingForm.Instance.DoProgress();
         var task = Task.Run(() => { MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(); });
+        LoadingForm.Instance.DoProgress();
         EditFontSize.Value = Settings.ParashotFormFontSize;
         Location = Settings.ParashotFormLocation;
         ClientSize = Settings.ParashotFormClientSize;
@@ -114,15 +118,22 @@ namespace Ordisoftware.Hebrew
         WindowState = Settings.ParashotFormWindowState;
         if ( Settings.ParashotFormColumnTranslationWidth != -1 )
           ColumnTranslation.Width = Settings.ParashotFormColumnTranslationWidth;
-        Refresh();
+        LoadingForm.Instance.DoProgress();
         task.Wait();
+        LoadingForm.Instance.DoProgress();
         BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+        LoadingForm.Instance.DoProgress();
         Timer_Tick(null, null);
+        LoadingForm.Instance.DoProgress();
         UpdateStats();
+        LoadingForm.Instance.DoProgress();
       }
       finally
       {
+        PanelBottom.Enabled = true;
         Cursor = Cursors.Default;
+        LoadingForm.Instance.DoProgress();
+        LoadingForm.Instance.Hide();
       }
     }
 

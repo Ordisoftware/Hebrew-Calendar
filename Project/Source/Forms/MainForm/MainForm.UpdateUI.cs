@@ -159,7 +159,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.IsGenerating = true;
       var cursor = Cursor;
       Cursor = Cursors.WaitCursor;
-      Enabled = false;
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       PanelViewMonth.Parent = null;
       try
       {
@@ -168,7 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Enabled = true;
+        ToolStrip.Enabled = formEnabled;
         Cursor = cursor;
         Globals.IsGenerating = false;
         SetView(Settings.CurrentView, true);

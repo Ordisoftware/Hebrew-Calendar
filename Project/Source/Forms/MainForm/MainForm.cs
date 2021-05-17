@@ -295,11 +295,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
       var dateOld = CurrentDay?.Date;
-      bool formEnabled = Globals.MainForm.Enabled;
       bool calltimer = true;
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       try
       {
-        Enabled = false;
         ActionPreferences.Visible = false;
         ActionPreferences.Visible = true;
         TimerReminder.Enabled = false;
@@ -329,7 +329,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Enabled = formEnabled;
+        ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);

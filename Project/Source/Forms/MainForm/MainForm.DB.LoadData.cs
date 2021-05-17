@@ -25,9 +25,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LoadData()
     {
+      bool formEnabled = Enabled;
+      ToolStrip.Enabled = false;
       try
       {
-        Enabled = false;
         var task = Task.Run(() =>
         {
           ApplicationDatabase.Instance.Open();
@@ -98,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        Enabled = true;
+        ToolStrip.Enabled = formEnabled;
         try
         {
           if ( Settings.RestoreLastViewAtStartup )
