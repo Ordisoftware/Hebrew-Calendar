@@ -329,6 +329,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
+      if ( MainForm.UserParashot == null ) return;
       var factory = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
       var parashah = MainForm.UserParashot.Find(p => p.ID == factory.ID);
       var linked = parashah.GetLinked();
@@ -354,6 +355,10 @@ namespace Ordisoftware.Hebrew.Calendar
       form.ShowDialog(MainForm.Instance);
     }
 
+    private void toolStripSeparator2_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
 }

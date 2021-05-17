@@ -986,6 +986,32 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
+    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+    {
+      if ( UserParashot == null ) return;
+      var parashah = UserParashot.Find(p => p.ID == ApplicationDatabase.Instance.GetWeeklyParashah().ID);
+      var linked = parashah.GetLinked();
+      if ( parashah == null )
+      {
+        ActionViewParashahInfos.Enabled = false;
+        return;
+      }
+      var message = parashah.ToStringReadable();
+      message += Globals.NL2 + linked?.ToStringReadable();
+      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
+      form.StartPosition = FormStartPosition.CenterScreen;
+      form.ForceNoTopMost = true;
+      form.ShowInTaskbar = true;
+      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+      form.ActionYes.Text = "Memo";
+      form.ActionYes.Click += (_s, _e) =>
+      {
+        string memo1 = parashah.Memo;
+        string memo2 = linked?.Memo ?? "";
+        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+      };
+      form.ShowDialog(MainForm.Instance);
+    }
   }
 
 }

@@ -47,8 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        // TODO remove Manage
-        SystemManager.TryCatchManage(() =>
+        SystemManager.TryCatch(() =>
         {
           if ( Globals.IsExiting ) return;
           if ( TrayIcon == null ) return;
