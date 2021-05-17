@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew
       => Name + ( Linked != null ? " - " + Linked.Name : "" );
 
     public string ToStringReadable()
-      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " +
+      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " + Globals.NL +
          $"{Name} " +
          $"({Unicode})" + Globals.NL +
          $"• {Translation.GetOrEmpty()}" + Globals.NL +

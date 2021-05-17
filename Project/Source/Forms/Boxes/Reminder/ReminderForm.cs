@@ -340,8 +340,9 @@ namespace Ordisoftware.Hebrew.Calendar
       message += Globals.NL2 + userparashah.GetLinked()?.ToStringReadable();
       var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
       form.StartPosition = FormStartPosition.CenterScreen;
-      form.TopMost = false;
-      form.ShowDialog();
+      form.ForceNoTopMost = true;
+      form.ShowInTaskbar = true;
+      form.ShowDialog(MainForm.Instance);
     }
 
   }

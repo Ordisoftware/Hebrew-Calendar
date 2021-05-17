@@ -138,9 +138,18 @@ namespace Ordisoftware.Core
       Close();
     }
 
+    public bool ForceNoTopMost;
+    public bool ForceTopMost;
+
     private void MessageBoxEx_Shown(object sender, EventArgs e)
     {
-      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.All().Any(f => f.Visible && f.TopMost);
+      if ( ForceNoTopMost )
+        TopMost = false;
+      else
+      if ( ForceTopMost )
+        TopMost = true;
+      else
+        TopMost = LoadingForm.Instance.Visible || Application.OpenForms.All().Any(f => f.Visible && f.TopMost);
       if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
       this.Popup();
       this.ForceBringToFront();
