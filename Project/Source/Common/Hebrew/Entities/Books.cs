@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Hebrew
 {
 
-  // TODO TODO TODO TODO TODO remove all +1 or -1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // TODO TODO TODO TODO TODO remove all +1 or -1 in Words !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   public enum Books
   {
