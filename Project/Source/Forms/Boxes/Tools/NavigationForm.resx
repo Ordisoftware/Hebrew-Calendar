@@ -117,11 +117,51 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;LabelDate.Name" xml:space="preserve">
+    <value>LabelDate</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.Parent" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 35</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
+    <value>PanelTop</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="LabelDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -131,7 +171,6 @@
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>324, 25</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -152,33 +191,6 @@
   </data>
   <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 35</value>
-  </data>
-  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="LabelCurrentDayValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -219,6 +231,28 @@
   <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -238,7 +272,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -261,13 +295,13 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 48</value>
+    <value>181, 98</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1147,6 +1181,18 @@
   </data>
   <data name="&gt;&gt;ActionOpenVerseOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Name" xml:space="preserve">
+    <value>ActionViewParashahInfos</value>
+  </data>
+  <data name="&gt;&gt;ActionViewParashahInfos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NavigationForm</value>

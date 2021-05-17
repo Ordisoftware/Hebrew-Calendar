@@ -329,36 +329,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      if ( MainForm.UserParashot == null ) return;
-      var factory = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
-      var parashah = MainForm.UserParashot.Find(p => p.ID == factory.ID);
-      var linked = parashah.GetLinked();
-      if ( parashah == null )
-      {
+      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
         ActionViewParashahInfos.Enabled = false;
-        return;
-      }
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
-      form.StartPosition = FormStartPosition.CenterScreen;
-      form.ForceNoTopMost = true;
-      form.ShowInTaskbar = true;
-      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionYes.Text = "Memo";
-      form.ActionYes.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      form.ShowDialog(MainForm.Instance);
     }
 
-    private void toolStripSeparator2_Click(object sender, EventArgs e)
-    {
-
-    }
   }
 
 }

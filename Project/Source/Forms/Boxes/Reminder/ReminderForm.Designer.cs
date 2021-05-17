@@ -168,7 +168,6 @@
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
       resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-      this.toolStripSeparator2.Click += new System.EventHandler(this.toolStripSeparator2_Click);
       // 
       // ActionStudyOnline
       // 
