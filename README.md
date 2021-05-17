@@ -7,6 +7,8 @@
 
 A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.
 
+WARNING: This master branch in its current state is a v8.0 release candidate which should only be installed after compilation for tests because Hebrew Letters will no longer work unless you remove the Hebrew-Calender and Hebrew-Common databases from the user folder in AppRaoming if going back to the previous version.
+
 ## Table of content
 
 1. [Functionalities](#Functionalities)
