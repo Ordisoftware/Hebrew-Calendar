@@ -26,7 +26,6 @@ namespace Ordisoftware.Hebrew
     public string ID { get; set; }
     public string TermID { get; set; }
     public string Sentence { get; set; }
-
   }
 
 }
