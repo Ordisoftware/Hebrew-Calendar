@@ -206,7 +206,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="BalloonAutoHide" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="EventColorTorah" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 255, 230</Value>
@@ -628,7 +628,7 @@
     <Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerActions" Scope="User">
       <Value Profile="(Default)">LockSession</Value>
     </Setting>
-    <Setting Name="LockSessionConfirmShutdown" Type="System.Boolean" Scope="User">
+    <Setting Name="LockSessionConfirmLogOffOrMore" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

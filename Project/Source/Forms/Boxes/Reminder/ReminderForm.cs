@@ -17,6 +17,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -31,11 +32,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        Image = Image.FromFile(Program.ReminderBoxImageFilePath);
+        Image = Image.FromFile(Program.ApplicationImage64FilePath);
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ReminderBoxImageFilePath, ex.Message));
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ApplicationImage64FilePath, ex.Message));
       }
     }
 
@@ -231,6 +232,23 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
     }
 
+    private void ReminderForm_Load(object sender, EventArgs e)
+    {
+      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
+      foreach ( var value in Enums.GetValues<PowerActions>().Skip(1).Where(a => !avoid.Contains(a)) )
+      {
+        var item = (ToolStripMenuItem)ContextMenuStripLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
+        item.Tag = value;
+        item.Click += (_s, _e) =>
+        {
+          var action = (PowerActions)( (ToolStripItem)_s ).Tag;
+          SystemManager.DoPowerAction(action, Program.Settings.LockSessionConfirmLogOffOrMore);
+        };
+        if ( Program.Settings.LockSessionDefaultAction == value )
+          item.Image = MenuDefaultLockout.Image;
+      }
+    }
+
     private void ReminderForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       if ( IsShabat )
@@ -331,6 +349,11 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
         ActionViewParashahInfos.Enabled = false;
+    }
+
+    private void ActionLockout_Click(object sender, EventArgs e)
+    {
+      ContextMenuStripLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
     }
 
   }

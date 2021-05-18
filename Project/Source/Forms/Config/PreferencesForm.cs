@@ -697,6 +697,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Tray Icon and Global HotKey
 
+    private void SelectOpenNavigationForm_CheckedChanged(object sender, EventArgs e)
+    {
+      PanelBalloon.Enabled = !SelectOpenNavigationForm.Checked;
+    }
+
     private void EditBalloon_CheckedChanged(object sender, EventArgs e)
     {
       EditBalloonLoomingDelay.Enabled = EditBalloon.Checked;

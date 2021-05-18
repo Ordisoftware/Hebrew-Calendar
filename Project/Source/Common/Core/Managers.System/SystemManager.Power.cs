@@ -90,55 +90,58 @@ namespace Ordisoftware.Core
       return NativeMethods.LockWorkStation();
     }
 
-    static public void StandBy()
+    static public bool StandBy()
     {
-      Application.SetSuspendState(PowerState.Suspend, false, false);
+      return Application.SetSuspendState(PowerState.Suspend, false, false);
     }
 
-    static public void Hibernate()
+    static public bool Hibernate()
     {
-      Application.SetSuspendState(PowerState.Hibernate, false, false);
+      return Application.SetSuspendState(PowerState.Hibernate, false, false);
     }
 
-    static public void LogOff()
+    static public bool LogOff(bool confirm)
     {
-      RunShell("shutdown", "/l /t 0");
+      return RunProtectedPowerAction(() => { RunShell("shutdown", "/l /t 0"); }, confirm);
     }
 
-    static public void Restart()
+    static public bool Restart(bool confirm)
     {
-      RunShell("shutdown", "/r /t 0");
+      return RunProtectedPowerAction(() => { RunShell("shutdown", "/r /t 0"); }, confirm);
     }
 
-    static public void Shutdown()
+    static public bool Shutdown(bool confirm)
     {
-      RunShell("shutdown", "/s /t 0");
+      return RunProtectedPowerAction(() => { RunShell("shutdown", "/s /t 0"); }, confirm);
     }
 
-    static public void DoPowerAction(PowerActions action)
+    static private bool RunProtectedPowerAction(Action action, bool confirm)
+    {
+      if ( confirm )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) )
+          return false;
+      action();
+      return true;
+    }
+
+    static public bool DoPowerAction(PowerActions action, bool confirmLogOffOrMore)
     {
       switch ( action )
       {
         case PowerActions.None:
-          break;
+          return true;
         case PowerActions.LockSession:
-          LockWorkStation();
-          break;
+          return LockWorkStation();
         case PowerActions.StandBy:
-          StandBy();
-          break;
+          return StandBy();
         case PowerActions.Hibernate:
-          Hibernate();
-          break;
+          return Hibernate();
         case PowerActions.LogOff:
-          LogOff();
-          break;
+          return LogOff(confirmLogOffOrMore);
         case PowerActions.Restart:
-          Restart();
-          break;
+          return Restart(confirmLogOffOrMore);
         case PowerActions.Shutdown:
-          Shutdown();
-          break;
+          return Shutdown(confirmLogOffOrMore);
         default:
           throw new AdvancedNotImplementedException(action);
       }

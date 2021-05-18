@@ -116,10 +116,16 @@ namespace Ordisoftware.Hebrew.Calendar
     static private HTMLBrowserForm _GrammarGuideForm;
 
     /// <summary>
-    /// Indicate file path of reminder box image.
+    /// Indicate file path of application image 64x64.
     /// </summary>
-    static public string ReminderBoxImageFilePath
+    static public string ApplicationImage64FilePath
       => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew-calendar-64.png");
+
+    /// <summary>
+    /// Indicate file path of application image 32x32.
+    /// </summary>
+    static public string ApplicationImage32FilePath
+      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew-calendar-32.png");
 
     /// <summary>
     /// Indicate file path of the text report.

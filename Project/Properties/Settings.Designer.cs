@@ -815,7 +815,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool BalloonAutoHide {
             get {
                 return ((bool)(this["BalloonAutoHide"]));
@@ -2505,12 +2505,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool LockSessionConfirmShutdown {
+        public bool LockSessionConfirmLogOffOrMore {
             get {
-                return ((bool)(this["LockSessionConfirmShutdown"]));
+                return ((bool)(this["LockSessionConfirmLogOffOrMore"]));
             }
             set {
-                this["LockSessionConfirmShutdown"] = value;
+                this["LockSessionConfirmLogOffOrMore"] = value;
             }
         }
     }
