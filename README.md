@@ -54,7 +54,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Download
 
-**What's new in the latest version**
+**What's new in the latest version 8.0**
 
 - SQLite ODBC Driver is no more needed.
 - Overall performances are optimized.
