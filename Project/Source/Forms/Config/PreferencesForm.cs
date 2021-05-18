@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -366,6 +366,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectReminderBoxDesktopLocation_Format(object sender, ListControlConvertEventArgs e)
     {
       e.Value = SysTranslations.ControlLocationText.GetLang((ControlLocation)e.Value);
+    }
+
+    private void SelectLockSessionDefaultAction_Format(object sender, ListControlConvertEventArgs e)
+    {
+      e.Value = SysTranslations.PowerActionText.GetLang((PowerActions)e.Value);
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)

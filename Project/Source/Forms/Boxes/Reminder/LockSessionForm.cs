@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      ActiveControl = ActionLock;
+      ActiveControl = ActionOk;
     }
 
     private void LockSessionForm_Load(object sender, EventArgs e)
@@ -46,6 +46,12 @@ namespace Ordisoftware.Hebrew.Calendar
       LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
       int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
       if ( width > Width ) Width = width;
+      ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
+      ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerActions.LockSession);
+      ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerActions.StandBy);
+      ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerActions.Hibernate);
+      ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerActions.Shutdown);
+      ActionStandby.Left = ActionLock.Left + ActionLock.Width + 5;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
       ActionHibernate.Enabled = SystemManager.CanHibernate;
@@ -66,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int remain = Program.Settings.AutoLockSessionTimeOut - ( DateTime.Now - Start ).Seconds;
       LabelCountDown.Text = remain.ToString();
       if ( remain != 0 ) return;
-      LockSession();
+      ActionOk.PerformClick();
     }
 
     private void ActionDisable_Click(object sender, EventArgs e)
@@ -81,44 +87,58 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    private void ActionOK_Click(object sender, EventArgs e)
+    private void ActionOk_Click(object sender, EventArgs e)
     {
-      LockSession();
+      var actions = new NullSafeDictionary<PowerActions, Delegate>
+      {
+        [PowerActions.LockSession] = (Action<object, EventArgs>)ActionLock_Click,
+        [PowerActions.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionStandby_Click,
+        [PowerActions.Hibernate] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionHibernate_Click,
+        [PowerActions.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionShutdown_Click
+      };
+      actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
     }
 
-    private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) ) return;
-      Close();
-      MediaMixer.StopPlaying();
-      SystemManager.RunShell("shutdown", "/s /t 0");
-      MainForm.Instance.SessionEnding(null, null);
-    }
-
-    private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionLock_Click(object sender, EventArgs e)
     {
       Close();
-      MediaMixer.StopPlaying();
-      Application.SetSuspendState(PowerState.Hibernate, false, false);
+      DoMediaPlayingAndVolumeAction();
+      if ( !SystemManager.LockWorkStation() )
+        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
     private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      MediaMixer.StopPlaying();
-      Application.SetSuspendState(PowerState.Suspend, false, false);
+      DoMediaPlayingAndVolumeAction();
+      SystemManager.StandBy();
     }
 
-    private void LockSession()
+    private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Close();
+      DoMediaPlayingAndVolumeAction();
+      SystemManager.Hibernate();
+    }
+
+    private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Close();
+      if ( Program.Settings.LockSessionConfirmShutdown )
+        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) )
+          return;
+      DoMediaPlayingAndVolumeAction();
+      SystemManager.Shutdown();
+      MainForm.Instance.SessionEnding(null, null);
+    }
+
+    private void DoMediaPlayingAndVolumeAction()
     {
       if ( EditMediaStop.Checked )
       {
         MediaMixer.StopPlaying();
         MediaMixer.MuteVolume();
       }
-      Close();
-      if ( !NativeMethods.LockWorkStation() )
-        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
   }

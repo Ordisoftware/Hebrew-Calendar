@@ -625,5 +625,11 @@
     <Setting Name="BenchmarkTranslate" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerActions" Scope="User">
+      <Value Profile="(Default)">LockSession</Value>
+    </Setting>
+    <Setting Name="LockSessionConfirmShutdown" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

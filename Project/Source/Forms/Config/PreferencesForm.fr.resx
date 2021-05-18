@@ -776,4 +776,10 @@
   <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
     <value>Afficher la parashah de la semaine</value>
   </data>
+  <data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
+    <value>Action de blocage par défaut</value>
+  </data>
+  <data name="EditConfirmShutdown.Text" xml:space="preserve">
+    <value>Confirmer l'arrêt de l'ordinateur</value>
+  </data>
 </root>

@@ -210,41 +210,41 @@
   <data name="&gt;&gt;ActionDisable.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ActionLock.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionDefaultAction.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionLock.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionDefaultAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionLock.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionDefaultAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 156</value>
   </data>
-  <data name="ActionLock.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionDefaultAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ActionLock.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionDefaultAction.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ActionLock.Text" xml:space="preserve">
-    <value>Lock</value>
+  <data name="ActionDefaultAction.Text" xml:space="preserve">
+    <value>Default</value>
   </data>
-  <data name="&gt;&gt;ActionLock.Name" xml:space="preserve">
-    <value>ActionLock</value>
+  <data name="&gt;&gt;ActionDefaultAction.Name" xml:space="preserve">
+    <value>ActionDefaultAction</value>
   </data>
-  <data name="&gt;&gt;ActionLock.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionDefaultAction.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionLock.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionDefaultAction.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionDefaultAction.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="ActionShutdown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ActionShutdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 100</value>
+    <value>168, 100</value>
   </data>
   <data name="ActionShutdown.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHibernate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 100</value>
+    <value>109, 100</value>
   </data>
   <data name="ActionHibernate.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -310,7 +310,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionStandby.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 100</value>
+    <value>57, 100</value>
   </data>
   <data name="ActionStandby.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -368,7 +368,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -402,6 +402,39 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
   </data>
   <data name="&gt;&gt;EditMediaStop.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="ActionLock.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionLock.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionLock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 100</value>
+  </data>
+  <data name="ActionLock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="ActionLock.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionLock.Text" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="ActionLock.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;ActionLock.Name" xml:space="preserve">
+    <value>ActionLock</value>
+  </data>
+  <data name="&gt;&gt;ActionLock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionLock.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -677,13 +677,13 @@
     <value>17</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
+    <value>4, 49</value>
   </data>
   <data name="TabPageApplication.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 419</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageApplication.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -896,13 +896,13 @@
     <value>15</value>
   </data>
   <data name="TabPageStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
+    <value>4, 49</value>
   </data>
   <data name="TabPageStartup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 419</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1436,7 +1436,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -1448,7 +1448,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -1460,7 +1460,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -1472,7 +1472,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -1507,6 +1507,60 @@
   <data name="&gt;&gt;TabPageGeneration.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="LabelDefaultLockoutAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 250</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
+    <value>Default lockout action</value>
+  </data>
+  <data name="&gt;&gt;LabelDefaultLockoutAction.Name" xml:space="preserve">
+    <value>LabelDefaultLockoutAction</value>
+  </data>
+  <data name="&gt;&gt;LabelDefaultLockoutAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDefaultLockoutAction.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;LabelDefaultLockoutAction.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 13</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
+    <value>Location of the windows</value>
+  </data>
   <data name="&gt;&gt;LabelReminderBoxDesktopLocation.Name" xml:space="preserve">
     <value>LabelReminderBoxDesktopLocation</value>
   </data>
@@ -1517,6 +1571,42 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelReminderBoxDesktopLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectLockSessionDefaultAction.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectLockSessionDefaultAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 269</value>
+  </data>
+  <data name="SelectLockSessionDefaultAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 21</value>
+  </data>
+  <data name="SelectLockSessionDefaultAction.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectLockSessionDefaultAction.Name" xml:space="preserve">
+    <value>SelectLockSessionDefaultAction</value>
+  </data>
+  <data name="&gt;&gt;SelectLockSessionDefaultAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectLockSessionDefaultAction.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;SelectLockSessionDefaultAction.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectReminderBoxDesktopLocation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 39</value>
+  </data>
+  <data name="SelectReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 21</value>
+  </data>
+  <data name="SelectReminderBoxDesktopLocation.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;SelectReminderBoxDesktopLocation.Name" xml:space="preserve">
@@ -1529,7 +1619,28 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;SelectReminderBoxDesktopLocation.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
+  </data>
+  <data name="LabelSelectReminderSound.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSelectReminderSound.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSelectReminderSound.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 355</value>
+  </data>
+  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 13</value>
+  </data>
+  <data name="LabelSelectReminderSound.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
+    <value>Select the sound of the reminder boxes</value>
   </data>
   <data name="&gt;&gt;LabelSelectReminderSound.Name" xml:space="preserve">
     <value>LabelSelectReminderSound</value>
@@ -1541,7 +1652,28 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelSelectReminderSound.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 213</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
   </data>
   <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.Name" xml:space="preserve">
     <value>LabelAutoLockSessionTimeOutIntervalInfo</value>
@@ -1553,7 +1685,31 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 135</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditReminderBoxShowFullDates.Text" xml:space="preserve">
+    <value>Show full dates</value>
   </data>
   <data name="&gt;&gt;EditReminderBoxShowFullDates.Name" xml:space="preserve">
     <value>EditReminderBoxShowFullDates</value>
@@ -1565,7 +1721,31 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditReminderBoxShowFullDates.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
+  </data>
+  <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAllowSuspendReminder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditAllowSuspendReminder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 75</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="EditAllowSuspendReminder.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
+    <value>Allow suspend reminder</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.Name" xml:space="preserve">
     <value>EditAllowSuspendReminder</value>
@@ -1577,7 +1757,28 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 190</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 13</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
+    <value>Auto lock timeout in seconds</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Name" xml:space="preserve">
     <value>LabelRemindAutoLockTimeOut</value>
@@ -1589,7 +1790,67 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="EditConfirmShutdown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditConfirmShutdown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditConfirmShutdown.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditConfirmShutdown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditConfirmShutdown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 305</value>
+  </data>
+  <data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="EditConfirmShutdown.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditConfirmShutdown.Text" xml:space="preserve">
+    <value>Confirm shutdown</value>
+  </data>
+  <data name="&gt;&gt;EditConfirmShutdown.Name" xml:space="preserve">
+    <value>EditConfirmShutdown</value>
+  </data>
+  <data name="&gt;&gt;EditConfirmShutdown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditConfirmShutdown.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;EditConfirmShutdown.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoLockSession.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoLockSession.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditAutoLockSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 165</value>
+  </data>
+  <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="EditAutoLockSession.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditAutoLockSession.Text" xml:space="preserve">
+    <value>Auto lock session</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.Name" xml:space="preserve">
     <value>EditAutoLockSession</value>
@@ -1601,7 +1862,19 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
+  </data>
+  <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 209</value>
+  </data>
+  <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditAutoLockSessionTimeOut.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
     <value>EditAutoLockSessionTimeOut</value>
@@ -1613,7 +1886,31 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 95</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 17</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
+    <value>Close reminder box on click everywhere</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.Name" xml:space="preserve">
     <value>EditCloseReminderFormOnClick</value>
@@ -1625,7 +1922,31 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 115</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
+    <value>Show reminder boxes in task bar</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.Name" xml:space="preserve">
     <value>EditShowReminderInTaskBar</value>
@@ -1637,7 +1958,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="TabPageReminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -1666,27 +1987,6 @@
   <data name="&gt;&gt;TabPageReminder.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 268</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
-  </data>
   <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.Name" xml:space="preserve">
     <value>LabelRemindShabatEveryMinutesIntervalInfo</value>
   </data>
@@ -1698,27 +1998,6 @@
   </data>
   <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 218</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
   </data>
   <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.Name" xml:space="preserve">
     <value>LabelRemindShabatHoursBeforeIntervalInfo</value>
@@ -1732,27 +2011,6 @@
   <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 195</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 13</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
-    <value>Hours before remind </value>
-  </data>
   <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>LabelRemindShabatHoursBefore</value>
   </data>
@@ -1764,27 +2022,6 @@
   </data>
   <data name="&gt;&gt;LabelRemindShabatHoursBefore.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="LabelShabatDay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelShabatDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelShabatDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="LabelShabatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelShabatDay.Text" xml:space="preserve">
-    <value>Day</value>
   </data>
   <data name="&gt;&gt;LabelShabatDay.Name" xml:space="preserve">
     <value>LabelShabatDay</value>
@@ -1798,37 +2035,6 @@
   <data name="&gt;&gt;LabelShabatDay.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionPersonalShabatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionPersonalShabatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionPersonalShabatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionPersonalShabatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 36</value>
-  </data>
-  <data name="ActionPersonalShabatHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionPersonalShabatHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;ActionPersonalShabatHelp.Name" xml:space="preserve">
     <value>ActionPersonalShabatHelp</value>
   </data>
@@ -1840,27 +2046,6 @@
   </data>
   <data name="&gt;&gt;ActionPersonalShabatHelp.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="EditReminderShabatEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditReminderShabatEnabled.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditReminderShabatEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditReminderShabatEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 110</value>
-  </data>
-  <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 17</value>
-  </data>
-  <data name="EditReminderShabatEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
-    <value>Remind</value>
   </data>
   <data name="&gt;&gt;EditReminderShabatEnabled.Name" xml:space="preserve">
     <value>EditReminderShabatEnabled</value>
@@ -1874,27 +2059,6 @@
   <data name="&gt;&gt;EditReminderShabatEnabled.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="LabelRemindShabatEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 245</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
-    <value>Remind every minutes</value>
-  </data>
   <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>LabelRemindShabatEveryMinutes</value>
   </data>
@@ -1906,18 +2070,6 @@
   </data>
   <data name="&gt;&gt;LabelRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="EditRemindShabatEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 264</value>
-  </data>
-  <data name="EditRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindShabatEveryMinutes</value>
@@ -1931,27 +2083,6 @@
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="EditReminderShabatShowParashah.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 160</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 17</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
-    <value>Show Weekly Parashah</value>
-  </data>
   <data name="&gt;&gt;EditReminderShabatShowParashah.Name" xml:space="preserve">
     <value>EditReminderShabatShowParashah</value>
   </data>
@@ -1963,27 +2094,6 @@
   </data>
   <data name="&gt;&gt;EditReminderShabatShowParashah.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
-    <value>Only during sunlight</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatOnlyLight.Name" xml:space="preserve">
     <value>EditRemindShabatOnlyLight</value>
@@ -1997,27 +2107,6 @@
   <data name="&gt;&gt;EditRemindShabatOnlyLight.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionUsePersonalShabat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionUsePersonalShabat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 73</value>
-  </data>
-  <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
-  </data>
-  <data name="ActionUsePersonalShabat.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
-    <value>Use personal shabat</value>
-  </data>
   <data name="&gt;&gt;ActionUsePersonalShabat.Name" xml:space="preserve">
     <value>ActionUsePersonalShabat</value>
   </data>
@@ -2030,18 +2119,6 @@
   <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="EditShabatDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditShabatDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
-  </data>
-  <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 21</value>
-  </data>
-  <data name="EditShabatDay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;EditShabatDay.Name" xml:space="preserve">
     <value>EditShabatDay</value>
   </data>
@@ -2053,18 +2130,6 @@
   </data>
   <data name="&gt;&gt;EditShabatDay.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="EditRemindShabatHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 214</value>
-  </data>
-  <data name="EditRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>EditRemindShabatHoursBefore</value>
@@ -2508,7 +2573,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -3117,7 +3182,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3129,7 +3194,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3141,7 +3206,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3153,7 +3218,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3165,7 +3230,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3225,7 +3290,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="ActionManageBookmarks.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -5910,7 +5975,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5940,7 +6005,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5964,7 +6029,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5991,7 +6056,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5999,365 +6064,417 @@
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="LabelReminderBoxDesktopLocation.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelReminderBoxDesktopLocation.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelReminderBoxDesktopLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 268</value>
   </data>
-  <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
-  </data>
-  <data name="LabelReminderBoxDesktopLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
-    <value>Location of the windows</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderBoxDesktopLocation.Name" xml:space="preserve">
-    <value>LabelReminderBoxDesktopLocation</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderBoxDesktopLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderBoxDesktopLocation.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderBoxDesktopLocation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SelectReminderBoxDesktopLocation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectReminderBoxDesktopLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
-  </data>
-  <data name="SelectReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 21</value>
-  </data>
-  <data name="SelectReminderBoxDesktopLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SelectReminderBoxDesktopLocation.Name" xml:space="preserve">
-    <value>SelectReminderBoxDesktopLocation</value>
-  </data>
-  <data name="&gt;&gt;SelectReminderBoxDesktopLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectReminderBoxDesktopLocation.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;SelectReminderBoxDesktopLocation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelSelectReminderSound.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSelectReminderSound.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelSelectReminderSound.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 250</value>
-  </data>
-  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 13</value>
-  </data>
-  <data name="LabelSelectReminderSound.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
-    <value>Select the sound of the reminder boxes</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectReminderSound.Name" xml:space="preserve">
-    <value>LabelSelectReminderSound</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectReminderSound.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectReminderSound.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectReminderSound.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 213</value>
-  </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
   </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="LabelAutoLockSessionTimeOutIntervalInfo.Text" xml:space="preserve">
+  <data name="LabelRemindShabatEveryMinutesIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.Name" xml:space="preserve">
-    <value>LabelAutoLockSessionTimeOutIntervalInfo</value>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.Name" xml:space="preserve">
+    <value>LabelRemindShabatEveryMinutesIntervalInfo</value>
   </data>
-  <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
   </data>
-  <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditReminderBoxShowFullDates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 218</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="EditReminderBoxShowFullDates.Text" xml:space="preserve">
-    <value>Show full dates</value>
+  <data name="LabelRemindShabatHoursBeforeIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
   </data>
-  <data name="&gt;&gt;EditReminderBoxShowFullDates.Name" xml:space="preserve">
-    <value>EditReminderBoxShowFullDates</value>
+  <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.Name" xml:space="preserve">
+    <value>LabelRemindShabatHoursBeforeIntervalInfo</value>
   </data>
-  <data name="&gt;&gt;EditReminderBoxShowFullDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditReminderBoxShowFullDates.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
+  <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
   </data>
-  <data name="&gt;&gt;EditReminderBoxShowFullDates.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditAllowSuspendReminder.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAllowSuspendReminder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditAllowSuspendReminder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 75</value>
-  </data>
-  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
-  </data>
-  <data name="EditAllowSuspendReminder.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;LabelRemindShabatHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
-    <value>Allow suspend reminder</value>
-  </data>
-  <data name="&gt;&gt;EditAllowSuspendReminder.Name" xml:space="preserve">
-    <value>EditAllowSuspendReminder</value>
-  </data>
-  <data name="&gt;&gt;EditAllowSuspendReminder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditAllowSuspendReminder.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelRemindShabatHoursBefore.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelRemindShabatHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelRemindShabatHoursBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 190</value>
+  <data name="LabelRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 195</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 13</value>
+  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="LabelRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
-    <value>Auto lock timeout in seconds</value>
+  <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
+    <value>Hours before remind </value>
   </data>
-  <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Name" xml:space="preserve">
-    <value>LabelRemindAutoLockTimeOut</value>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
+    <value>LabelRemindShabatHoursBefore</value>
   </data>
-  <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelRemindAutoLockTimeOut.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
   </data>
-  <data name="&gt;&gt;LabelRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditAutoLockSession.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoLockSession.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditAutoLockSession.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 165</value>
-  </data>
-  <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
-  </data>
-  <data name="EditAutoLockSession.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="EditAutoLockSession.Text" xml:space="preserve">
-    <value>Auto lock session</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSession.Name" xml:space="preserve">
-    <value>EditAutoLockSession</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSession.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSession.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 209</value>
-  </data>
-  <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditAutoLockSessionTimeOut.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Name" xml:space="preserve">
-    <value>EditAutoLockSessionTimeOut</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSessionTimeOut.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 95</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 17</value>
-  </data>
-  <data name="EditCloseReminderFormOnClick.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;LabelRemindShabatHoursBefore.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
-    <value>Close reminder box on click everywhere</value>
-  </data>
-  <data name="&gt;&gt;EditCloseReminderFormOnClick.Name" xml:space="preserve">
-    <value>EditCloseReminderFormOnClick</value>
-  </data>
-  <data name="&gt;&gt;EditCloseReminderFormOnClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCloseReminderFormOnClick.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
-  </data>
-  <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelShabatDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditShowReminderInTaskBar.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelShabatDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditShowReminderInTaskBar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditShowReminderInTaskBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelShabatDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 115</value>
+  <data name="LabelShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
   </data>
-  <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
+  <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
   </data>
-  <data name="EditShowReminderInTaskBar.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelShabatDay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelShabatDay.Text" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="&gt;&gt;LabelShabatDay.Name" xml:space="preserve">
+    <value>LabelShabatDay</value>
+  </data>
+  <data name="&gt;&gt;LabelShabatDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelShabatDay.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelShabatDay.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
-    <value>Show reminder boxes in task bar</value>
+  <data name="ActionPersonalShabatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;EditShowReminderInTaskBar.Name" xml:space="preserve">
-    <value>EditShowReminderInTaskBar</value>
+  <data name="ActionPersonalShabatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="&gt;&gt;EditShowReminderInTaskBar.Type" xml:space="preserve">
+  <data name="ActionPersonalShabatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionPersonalShabatHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 36</value>
+  </data>
+  <data name="ActionPersonalShabatHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionPersonalShabatHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionPersonalShabatHelp.Name" xml:space="preserve">
+    <value>ActionPersonalShabatHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionPersonalShabatHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPersonalShabatHelp.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;ActionPersonalShabatHelp.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="EditReminderShabatEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderShabatEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 110</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="EditReminderShabatEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
+    <value>Remind</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatEnabled.Name" xml:space="preserve">
+    <value>EditReminderShabatEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditShowReminderInTaskBar.Parent" xml:space="preserve">
-    <value>TabPageReminder</value>
+  <data name="&gt;&gt;EditReminderShabatEnabled.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
   </data>
-  <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditReminderShabatEnabled.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 245</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
+    <value>Remind every minutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Name" xml:space="preserve">
+    <value>LabelRemindShabatEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;LabelRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditRemindShabatEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 264</value>
+  </data>
+  <data name="EditRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
+    <value>EditRemindShabatEveryMinutes</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatEveryMinutes.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 160</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 17</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
+    <value>Show Weekly Parashah</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatShowParashah.Name" xml:space="preserve">
+    <value>EditReminderShabatShowParashah</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatShowParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatShowParashah.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShabatShowParashah.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 135</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
+    <value>Only during sunlight</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Name" xml:space="preserve">
+    <value>EditRemindShabatOnlyLight</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatOnlyLight.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ActionUsePersonalShabat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionUsePersonalShabat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 73</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="ActionUsePersonalShabat.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
+    <value>Use personal shabat</value>
+  </data>
+  <data name="&gt;&gt;ActionUsePersonalShabat.Name" xml:space="preserve">
+    <value>ActionUsePersonalShabat</value>
+  </data>
+  <data name="&gt;&gt;ActionUsePersonalShabat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionUsePersonalShabat.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;ActionUsePersonalShabat.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="EditShabatDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditShabatDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 39</value>
+  </data>
+  <data name="EditShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 21</value>
+  </data>
+  <data name="EditShabatDay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditShabatDay.Name" xml:space="preserve">
+    <value>EditShabatDay</value>
+  </data>
+  <data name="&gt;&gt;EditShabatDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditShabatDay.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;EditShabatDay.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditRemindShabatHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 214</value>
+  </data>
+  <data name="EditRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
+    <value>EditRemindShabatHoursBefore</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.Parent" xml:space="preserve">
+    <value>TabPageShabat</value>
+  </data>
+  <data name="&gt;&gt;EditRemindShabatHoursBefore.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="ActionRemindEventsBeforeSelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -8766,7 +8883,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -10387,7 +10504,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -10408,7 +10525,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -10429,7 +10546,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -10450,7 +10567,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -10471,7 +10588,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -10487,9 +10604,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

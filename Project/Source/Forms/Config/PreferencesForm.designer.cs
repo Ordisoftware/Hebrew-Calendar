@@ -145,13 +145,16 @@
       this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
       this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
+      this.LabelDefaultLockoutAction = new System.Windows.Forms.Label();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
+      this.SelectLockSessionDefaultAction = new System.Windows.Forms.ComboBox();
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
       this.EditReminderBoxShowFullDates = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
+      this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSession = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSessionTimeOut = new System.Windows.Forms.NumericUpDown();
       this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
@@ -299,36 +302,36 @@
       this.MenuSelectWeatherApp.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDateBookmarksCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabPageStartup.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
       this.PanelHotKey.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBalloonLoomingDelay ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageNavigationWindow.SuspendLayout();
       this.TabPageGeneration.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxYearsInterval ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
       this.TabPageReminder.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoLockSessionTimeOut ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).BeginInit();
       this.TabPageShabat.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatEveryMinutes ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatHoursBefore ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatEveryMinutes)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).BeginInit();
       this.TabPageCelebrations.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationEveryMinutes ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationHoursBefore ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationsDaysBefore ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).BeginInit();
       this.TabPageMonthView.SuspendLayout();
       this.PanelCalendarColors.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCalendarLineSpacing ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMonthViewFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditTextReportFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).BeginInit();
       this.TabPagePrint.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditSaveImageCountWarning ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintPageCountWarning ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintingMargin ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       this.TabPagePaths.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
       this.SuspendLayout();
@@ -1267,13 +1270,16 @@
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageReminder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageReminder.Controls.Add(this.LabelDefaultLockoutAction);
       this.TabPageReminder.Controls.Add(this.LabelReminderBoxDesktopLocation);
+      this.TabPageReminder.Controls.Add(this.SelectLockSessionDefaultAction);
       this.TabPageReminder.Controls.Add(this.SelectReminderBoxDesktopLocation);
       this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
       this.TabPageReminder.Controls.Add(this.EditReminderBoxShowFullDates);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
+      this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSession);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
       this.TabPageReminder.Controls.Add(this.EditCloseReminderFormOnClick);
@@ -1281,10 +1287,23 @@
       resources.ApplyResources(this.TabPageReminder, "TabPageReminder");
       this.TabPageReminder.Name = "TabPageReminder";
       // 
+      // LabelDefaultLockoutAction
+      // 
+      resources.ApplyResources(this.LabelDefaultLockoutAction, "LabelDefaultLockoutAction");
+      this.LabelDefaultLockoutAction.Name = "LabelDefaultLockoutAction";
+      // 
       // LabelReminderBoxDesktopLocation
       // 
       resources.ApplyResources(this.LabelReminderBoxDesktopLocation, "LabelReminderBoxDesktopLocation");
       this.LabelReminderBoxDesktopLocation.Name = "LabelReminderBoxDesktopLocation";
+      // 
+      // SelectLockSessionDefaultAction
+      // 
+      this.SelectLockSessionDefaultAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectLockSessionDefaultAction, "SelectLockSessionDefaultAction");
+      this.SelectLockSessionDefaultAction.FormattingEnabled = true;
+      this.SelectLockSessionDefaultAction.Name = "SelectLockSessionDefaultAction";
+      this.SelectLockSessionDefaultAction.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectLockSessionDefaultAction_Format);
       // 
       // SelectReminderBoxDesktopLocation
       // 
@@ -1326,6 +1345,13 @@
       // 
       resources.ApplyResources(this.LabelRemindAutoLockTimeOut, "LabelRemindAutoLockTimeOut");
       this.LabelRemindAutoLockTimeOut.Name = "LabelRemindAutoLockTimeOut";
+      // 
+      // EditConfirmShutdown
+      // 
+      resources.ApplyResources(this.EditConfirmShutdown, "EditConfirmShutdown");
+      this.EditConfirmShutdown.Name = "EditConfirmShutdown";
+      this.EditConfirmShutdown.UseVisualStyleBackColor = true;
+      this.EditConfirmShutdown.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // EditAutoLockSession
       // 
@@ -1746,7 +1772,7 @@
       // 
       // EditEventColorTorah
       // 
-      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 230 ) ) ) ));
+      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
       this.EditEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorTorah, "EditEventColorTorah");
       this.EditEventColorTorah.Name = "EditEventColorTorah";
@@ -1754,7 +1780,7 @@
       // 
       // EditEventColorShabat
       // 
-      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
       this.EditEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorShabat, "EditEventColorShabat");
       this.EditEventColorShabat.Name = "EditEventColorShabat";
@@ -1762,7 +1788,7 @@
       // 
       // EditEventColorSeason
       // 
-      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 245 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 240 ) ) ) ));
+      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
       this.EditEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorSeason, "EditEventColorSeason");
       this.EditEventColorSeason.Name = "EditEventColorSeason";
@@ -1844,7 +1870,7 @@
       // 
       // EditMonthViewNoDaysBackColor
       // 
-      this.EditMonthViewNoDaysBackColor.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
+      this.EditMonthViewNoDaysBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.EditMonthViewNoDaysBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditMonthViewNoDaysBackColor, "EditMonthViewNoDaysBackColor");
       this.EditMonthViewNoDaysBackColor.Name = "EditMonthViewNoDaysBackColor";
@@ -1888,7 +1914,7 @@
       // 
       // EditCalendarColorFullMoon
       // 
-      this.EditCalendarColorFullMoon.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 150 ) ) ) ), ( (int)( ( (byte)( 100 ) ) ) ), ( (int)( ( (byte)( 0 ) ) ) ));
+      this.EditCalendarColorFullMoon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
       this.EditCalendarColorFullMoon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCalendarColorFullMoon, "EditCalendarColorFullMoon");
       this.EditCalendarColorFullMoon.Name = "EditCalendarColorFullMoon";
@@ -1917,7 +1943,7 @@
       // 
       // EditCurrentDayBackColor
       // 
-      this.EditCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 200 ) ) ) ), ( (int)( ( (byte)( 0 ) ) ) ), ( (int)( ( (byte)( 0 ) ) ) ));
+      this.EditCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
       this.EditCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCurrentDayBackColor, "EditCurrentDayBackColor");
       this.EditCurrentDayBackColor.Name = "EditCurrentDayBackColor";
@@ -2110,7 +2136,7 @@
       // 
       // EditTextReportBackColor
       // 
-      this.EditTextReportBackColor.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
+      this.EditTextReportBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.EditTextReportBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditTextReportBackColor, "EditTextReportBackColor");
       this.EditTextReportBackColor.Name = "EditTextReportBackColor";
@@ -2505,48 +2531,48 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDateBookmarksCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
       this.TabPageStartup.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
       this.PanelHotKey.ResumeLayout(false);
       this.PanelHotKey.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBalloonLoomingDelay ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.TabPageNavigationWindow.ResumeLayout(false);
       this.TabPageNavigationWindow.PerformLayout();
       this.TabPageGeneration.ResumeLayout(false);
       this.TabPageGeneration.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxYearsInterval ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).EndInit();
       this.TabPageReminder.ResumeLayout(false);
       this.TabPageReminder.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoLockSessionTimeOut ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).EndInit();
       this.TabPageShabat.ResumeLayout(false);
       this.TabPageShabat.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatEveryMinutes ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatHoursBefore ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatEveryMinutes)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).EndInit();
       this.TabPageCelebrations.ResumeLayout(false);
       this.TabPageCelebrations.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationEveryMinutes ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationHoursBefore ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationsDaysBefore ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).EndInit();
       this.TabPageMonthView.ResumeLayout(false);
       this.TabPageMonthView.PerformLayout();
       this.PanelCalendarColors.ResumeLayout(false);
       this.PanelCalendarColors.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCalendarLineSpacing ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMonthViewFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).EndInit();
       this.TabPageTextReport.ResumeLayout(false);
       this.TabPageTextReport.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditTextReportFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).EndInit();
       this.TabPagePrint.ResumeLayout(false);
       this.TabPagePrint.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditSaveImageCountWarning ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintPageCountWarning ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintingMargin ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).EndInit();
       this.TabPagePaths.ResumeLayout(false);
       this.TabPagePaths.PerformLayout();
       this.PanelWeatherOnline.ResumeLayout(false);
@@ -2820,5 +2846,8 @@
     private System.Windows.Forms.Label LabelTextReportFontSizeInterval;
     private System.Windows.Forms.CheckBox EditReminderBoxShowFullDates;
     private System.Windows.Forms.CheckBox EditReminderShabatShowParashah;
+    private System.Windows.Forms.Label LabelDefaultLockoutAction;
+    private System.Windows.Forms.ComboBox SelectLockSessionDefaultAction;
+    private System.Windows.Forms.CheckBox EditConfirmShutdown;
   }
 }
