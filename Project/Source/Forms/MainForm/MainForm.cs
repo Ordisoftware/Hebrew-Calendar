@@ -995,6 +995,13 @@ namespace Ordisoftware.Hebrew.Calendar
       DoTimerMidnight();
     }
 
+    private void TimerKillProcesses_Tick(object sender, EventArgs e)
+    {
+      TimerKillProcesses.Stop();
+      foreach ( var process in Globals.SameRunningProcessesNotThisOne )
+        SystemManager.TryCatch(process.Kill);
+    }
+
     #endregion
 
   }

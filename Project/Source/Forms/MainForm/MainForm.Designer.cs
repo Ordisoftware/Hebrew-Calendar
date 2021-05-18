@@ -126,6 +126,8 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionOnlineParashah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -180,8 +182,7 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
-      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+      this.TimerKillProcesses = new System.Windows.Forms.Timer(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -949,6 +950,17 @@
       resources.ApplyResources(this.ActionOnlineParashah, "ActionOnlineParashah");
       this.ActionOnlineParashah.Name = "ActionOnlineParashah";
       // 
+      // ActionViewParashahInfos
+      // 
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      // 
+      // toolStripSeparator13
+      // 
+      this.toolStripSeparator13.Name = "toolStripSeparator13";
+      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+      // 
       // ActionStudyOnline
       // 
       resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
@@ -1344,16 +1356,10 @@
       this.TimerUpdateTitles.Interval = 60000;
       this.TimerUpdateTitles.Tick += new System.EventHandler(this.TimerUpdateTitles_Tick);
       // 
-      // ActionViewParashahInfos
+      // TimerKillProcesses
       // 
-      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
-      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
-      // 
-      // toolStripSeparator13
-      // 
-      this.toolStripSeparator13.Name = "toolStripSeparator13";
-      resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+      this.TimerKillProcesses.Interval = 5000;
+      this.TimerKillProcesses.Tick += new System.EventHandler(this.TimerKillProcesses_Tick);
       // 
       // MainForm
       // 
@@ -1425,7 +1431,6 @@
     private System.Windows.Forms.TabPage TabPageMonth;
     public global::CodeProjectCalendar.NET.Calendar CalendarMonth;
     public System.Windows.Forms.Panel PanelViewMonth;
-    internal System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerTrayMouseMove;
     public System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuPreferences;
@@ -1546,6 +1551,8 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+    internal System.Windows.Forms.Timer TimerBallon;
+    private System.Windows.Forms.Timer TimerKillProcesses;
   }
 }
 

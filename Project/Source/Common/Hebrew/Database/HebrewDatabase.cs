@@ -13,7 +13,7 @@
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
-
+using System.Linq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -65,7 +65,10 @@ namespace Ordisoftware.Hebrew
     protected override void UpgradeSchema()
     {
       base.UpgradeSchema();
-      Connection.DropTableIfExists("ProcessLocks");
+      string table = "ProcessLocks";
+      if ( Connection.CheckTable(table) )
+        if ( Globals.ConcurrentRunningProcesses.Count() == 0)
+          Connection.DropTableIfExists(table);
     }
 
   }
