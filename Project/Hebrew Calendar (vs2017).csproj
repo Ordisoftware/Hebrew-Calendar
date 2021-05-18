@@ -178,6 +178,8 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\Managers.System\SystemManager.IPC.cs" />
+    <Compile Include="Source\Common\Core\Managers.System\SystemManager.Power.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -279,6 +281,7 @@
     <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
+    <Compile Include="Source\Common\Core\Managers.System\PowerActions.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>

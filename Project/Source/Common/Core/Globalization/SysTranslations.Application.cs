@@ -74,8 +74,8 @@ namespace Ordisoftware.Core
     static public TranslationsDictionary ApplicationMustExitContactSupport
       = new TranslationsDictionary
       {
-        [Language.EN] = ApplicationMustExit [Language.EN] + Globals.NL2 + ContactSupport [Language.EN],
-        [Language.FR] = ApplicationMustExit [Language.FR] + Globals.NL2 + ContactSupport [Language.FR]
+        [Language.EN] = ApplicationMustExit[Language.EN] + Globals.NL2 + ContactSupport[Language.EN],
+        [Language.FR] = ApplicationMustExit[Language.FR] + Globals.NL2 + ContactSupport[Language.FR]
       };
 
     static public readonly TranslationsDictionary RestartRequired
@@ -141,8 +141,10 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToShutdownComputer
       = new TranslationsDictionary
       {
-        [Language.EN] = "Shutdown the computer?",
-        [Language.FR] = "Arrêter l'ordinateur ?"
+        [Language.EN] = "All application will be closed and unsaved works lost." + Globals.NL2 +
+                        "Shutdown the computer?",
+        [Language.FR] = "Toutes les applications seront fermées et les travaux non sauvés perdus." + Globals.NL2 +
+                        "Arrêter l'ordinateur ?"
       };
 
     static public readonly TranslationsDictionary AskToContinueOrTerminate
@@ -266,7 +268,32 @@ namespace Ordisoftware.Core
         {
           [Language.EN] = "Top right",
           [Language.FR] = "Haut droit"
+        }
+      };
+
+    static public readonly NullSafeDictionary<PowerActions, TranslationsDictionary> PowerActionText
+      = new NullSafeDictionary<PowerActions, TranslationsDictionary>
+      {
+        [PowerActions.Hibernate] = new TranslationsDictionary
+        {
+          [Language.EN] = "Hibernate",
+          [Language.FR] = "Hiberner"
         },
+        [PowerActions.LockSession] = new TranslationsDictionary
+        {
+          [Language.EN] = "Lock",
+          [Language.FR] = "Verrouiller"
+        },
+        [PowerActions.Shutdown] = new TranslationsDictionary
+        {
+          [Language.EN] = "Shutdown",
+          [Language.FR] = "Éteindre"
+        },
+        [PowerActions.StandBy] = new TranslationsDictionary
+        {
+          [Language.EN] = "Standby",
+          [Language.FR] = "Veille"
+        }
       };
 
   }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -43,6 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LoadEditIntervals();
       LoadExportFileFormats();
       LoadReminderBoxesLocations();
+      LoadPowerActions();
       LoadDays();
       LoadEvents();
       LoadFonts();
@@ -175,6 +176,20 @@ namespace Ordisoftware.Hebrew.Calendar
         SelectReminderBoxDesktopLocation.Items.Add(value);
         if ( Settings.ReminderBoxDesktopLocation == value )
           SelectReminderBoxDesktopLocation.SelectedItem = value;
+      }
+    }
+
+    /// <summary>
+    /// Load week days.
+    /// </summary>
+    private void LoadPowerActions()
+    {
+      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
+      foreach ( var value in Enums.GetValues<PowerActions>().Skip(1).Where(a => !avoid.Contains(a)) )
+      {
+        SelectLockSessionDefaultAction.Items.Add(value);
+        if ( Settings.LockSessionDefaultAction == value )
+          SelectLockSessionDefaultAction.SelectedItem = value;
       }
     }
 

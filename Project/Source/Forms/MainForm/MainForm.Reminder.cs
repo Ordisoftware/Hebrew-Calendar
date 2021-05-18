@@ -36,9 +36,9 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         IsSpecialDay = false;
-        IsSpecialDay = CheckShabat(!SystemManager.IsForegroundFullScreenOrScreensaver && !IsReminderPaused && Settings.ReminderShabatEnabled) || IsSpecialDay;
-        IsSpecialDay = CheckCelebrationDay(!SystemManager.IsForegroundFullScreenOrScreensaver && !IsReminderPaused && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
-        if ( !SystemManager.IsForegroundFullScreenOrScreensaver && !IsReminderPaused && Settings.ReminderCelebrationsEnabled )
+        IsSpecialDay = CheckShabat(!SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderShabatEnabled) || IsSpecialDay;
+        IsSpecialDay = CheckCelebrationDay(!SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
+        if ( !SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderCelebrationsEnabled )
           CheckCelebrations();
       }
       catch ( Exception ex )

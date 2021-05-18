@@ -2489,5 +2489,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["BenchmarkTranslate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LockSession")]
+        public global::Ordisoftware.Core.PowerActions LockSessionDefaultAction {
+            get {
+                return ((global::Ordisoftware.Core.PowerActions)(this["LockSessionDefaultAction"]));
+            }
+            set {
+                this["LockSessionDefaultAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool LockSessionConfirmShutdown {
+            get {
+                return ((bool)(this["LockSessionConfirmShutdown"]));
+            }
+            set {
+                this["LockSessionConfirmShutdown"] = value;
+            }
+        }
     }
 }

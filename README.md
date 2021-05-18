@@ -56,9 +56,10 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version 8.0**
 
-- SQLite ODBC Driver is no more needed.
-- Overall performances are optimized.
+- Added option to set automatic computer lockout mode.
 - Some UI improvements and some fixes.
+- Overall performances are optimized.
+- SQLite ODBC Driver is no more needed.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -283,15 +284,17 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add parashah reminder at the start of the week.
-- Add lock session action in active reminder box.
-- Add option to choose default auto-lock action.
 - Improve auto-lock session box.
 
 #### In progress - Version 8.0
 
-- Optimize overall performances.
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
-- Add open parashot board menu item in shabat reminder box, navigation window, and in tools menu.
+- Optimize overall performances.
+
+>- Add lock session action in active reminder box.
+
+- Add option to choose default auto-lock action.
+- Add parashot context menu in shabat reminder box, navigation window, and tools menu.
 - Code refactoring and quality improvement.
 - Some UI improvements.
 - Some fixes.

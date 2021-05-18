@@ -102,6 +102,12 @@ namespace Ordisoftware.Core
       => Process.GetCurrentProcess().Id;
 
     /// <summary>
+    /// Indicate the number of application running processes count.
+    /// </summary>
+    static public int ApplicationInstancesCount
+      => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
+
+    /// <summary>
     /// Indicate running processes whose names starts with "AssemblyCompany.".
     /// </summary>
     static public IEnumerable<Process> SameCompanyRunningProcesses

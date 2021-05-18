@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -116,6 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
       Settings.ReminderBoxShowFullDates = EditReminderBoxShowFullDates.Checked;
       Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
+      Settings.LockSessionConfirmShutdown = EditConfirmShutdown.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat
@@ -123,6 +124,8 @@ namespace Ordisoftware.Hebrew.Calendar
       // Reminder boxes location
       Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
       Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
+      // Loclout action
+      Settings.LockSessionDefaultAction= (PowerActions)SelectLockSessionDefaultAction.SelectedItem;
       // Events
       for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
         SystemManager.TryCatch(() =>

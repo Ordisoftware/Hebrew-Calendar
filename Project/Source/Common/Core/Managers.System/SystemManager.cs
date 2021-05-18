@@ -15,10 +15,7 @@
 using System;
 using System.Linq;
 using System.IO;
-using System.IO.Pipes;
 using System.Configuration;
-using System.Diagnostics;
-using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -33,109 +30,6 @@ namespace Ordisoftware.Core
   {
 
     public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
-
-    /// <summary>
-    /// Application mutex to allow only one process instance.
-    /// </summary>
-#pragma warning disable S4487 // Unread "private" fields should be removed
-    static private Mutex ApplicationMutex;
-#pragma warning restore S4487 // Unread "private" fields should be removed
-
-    /// <summary>
-    /// IPC server instance.
-    /// </summary>
-    static private NamedPipeServerStream IPCServer;
-
-    /// <summary>
-    /// IPC answers callback.
-    /// </summary>
-    static public Action IPCSendCommands { get; set; }
-
-    /// <summary>
-    /// Indicate if the several instances of the application can run at same time.
-    /// </summary>
-    static public bool AllowMultipleInstances { get; private set; } = true;
-
-    /// <summary>
-    /// Indicate the number of application running processes count.
-    /// </summary>
-    static public int ApplicationInstancesCount
-      => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
-
-    /// <summary>
-    /// Check if the process is already running.
-    /// </summary>
-    static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
-    {
-      try
-      {
-        AllowMultipleInstances = false;
-        ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
-        if ( created )
-          CreateIPCServer(ipcRequests);
-        else
-        {
-          if ( CommandLineArguments.Length == 0 )
-            CommandLineOptions.ShowMainForm = true;
-          try
-          {
-            IPCSendCommands?.Invoke();
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
-        }
-        return created;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-        return false;
-      }
-    }
-
-    /// <summary>
-    /// Create IPC server instance.
-    /// </summary>
-    static public void CreateIPCServer(AsyncCallback ipcRequests)
-    {
-      if ( ipcRequests == null ) return;
-      try
-      {
-        IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
-                                              PipeDirection.InOut,
-                                              1,
-                                              PipeTransmissionMode.Message,
-                                              PipeOptions.Asynchronous);
-        IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
-      }
-      catch ( Exception ex )
-      {
-        IPCServer = null;
-        ex.Manage();
-      }
-    }
-
-    /// <summary>
-    /// Send an IPC command.
-    /// </summary>
-    static public void IPCSend(string command)
-    {
-      try
-      {
-        using ( var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut) )
-        {
-          client.Connect();
-          new BinaryFormatter().Serialize(client, command);
-          client.Close();
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-    }
 
     /// <summary>
     /// Delete all app settings folders in User\AppData\Local.
@@ -292,23 +186,6 @@ namespace Ordisoftware.Core
         }
       return result;
     }
-
-    /*static public int GetSizeOfObject(object obj)
-    {
-      object Value = null;
-      int size = 0;
-      Type type = obj.GetType();
-      PropertyInfo[] info = type.GetProperties();
-      foreach ( PropertyInfo property in info )
-      {
-        Value = property.GetValue(obj, null);
-        unsafe
-        {
-          size += sizeof(Value);
-        }
-      }
-      return size;
-    }*/
 
     /// <summary>
     /// Get a file size.
