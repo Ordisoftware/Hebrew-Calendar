@@ -119,7 +119,6 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Cursor = Cursors.WaitCursor;
-        EditEnumsAsTranslations.Left = LunisolarDaysBindingNavigator.Width - EditEnumsAsTranslations.Width - 3;
         ToolStrip.SetDropDownOpening();
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);

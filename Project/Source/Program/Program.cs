@@ -233,15 +233,11 @@ namespace Ordisoftware.Hebrew.Calendar
         Thread.CurrentThread.CurrentUICulture = culture;
         string tempLogTitle = DebugManager.TraceForm.Text;
         string tempLogContent = DebugManager.TraceForm.TextBox.Text;
-        string tempTextReport = string.Empty;
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
           AboutBox.Instance.Hide();
           MainForm.Instance.ClearLists();
-          tempTextReport = MainForm.Instance.CalendarText.Text;
-          MainForm.Instance.EditEnumsAsTranslations.Visible = false;
-          MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Left;
         }
         update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
@@ -265,7 +261,7 @@ namespace Ordisoftware.Hebrew.Calendar
         // Various updates
         if ( Globals.IsReady )
         {
-          MainForm.Instance.CalendarText.Text = tempTextReport;
+          //MainForm.Instance.CalendarText.Text = tempTextReport;
           LoadingForm.Instance.Relocalize();
           TextBoxEx.Relocalize();
           AboutBox.Instance.AboutBox_Shown(null, null);
@@ -274,10 +270,9 @@ namespace Ordisoftware.Hebrew.Calendar
           NavigationForm.Instance.Relocalize();
           DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Reset();
-          MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
-          MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-          MainForm.Instance.EditEnumsAsTranslations.Visible = true;
         }
+        DebugManager.TraceForm.Text = tempLogTitle;
+        DebugManager.TraceForm.AppendText(tempLogContent);
         DebugManager.TraceForm.Text = tempLogTitle;
         DebugManager.TraceForm.AppendText(tempLogContent);
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();

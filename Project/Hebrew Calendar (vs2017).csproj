@@ -190,6 +190,9 @@
       <DependentUpon>ComboBoxNavigator.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Common\Core\WinForms.Controls\ControlLocation.cs" />
+    <Compile Include="Source\Common\Core\WinForms.Controls\CheckBoxToolStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Common\Core\WinForms.Controls\FormsHelper.cs" />
     <Compile Include="Source\Common\Core\WinForms.Controls\RichTextBoxEx.cs">
       <SubType>Component</SubType>
@@ -765,6 +768,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.fr.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationsBoardForm.resx">
       <DependentUpon>CelebrationsBoardForm.cs</DependentUpon>
@@ -977,6 +981,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.fr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
