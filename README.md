@@ -269,8 +269,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
-- Add parashot MSWord export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -281,6 +279,14 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### Planned - Version 8.x
+
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
+- Add parashah reminder at the start of the week.
+- Add lock session action in active reminder box.
+- Add option to choose default auto-lock action.
+- Improve auto-lock session box.
+
 #### In progress - Version 8.0
 
 - Optimize overall performances.
@@ -290,10 +296,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Some UI improvements.
 - Some fixes.
 
->- Add parashah reminder at the start of the week.
->- Add lock session action in active reminder box.
->- Add option to choose default auto-lock action.
->- Improve auto-lock session box.
 
 #### 2021.05.09 - Version 7.3
 
