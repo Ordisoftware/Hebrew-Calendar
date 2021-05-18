@@ -34,6 +34,9 @@ namespace Ordisoftware.Core
     [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
     static public extern EXECUTIONSTATE SetThreadExecutionState(EXECUTIONSTATE esFlags);
 
+    [DllImport("powrprof.dll", SetLastError = true)]
+    static public extern bool IsPwrSuspendAllowed();
+
     [Flags]
     public enum EXECUTIONSTATE : uint
     {
@@ -43,8 +46,8 @@ namespace Ordisoftware.Core
       EsSystemRequired = 0x00000001
     }
 
-    static public EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous 
-                                               | EXECUTIONSTATE.EsSystemRequired 
+    static public EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous
+                                               | EXECUTIONSTATE.EsSystemRequired
                                                | EXECUTIONSTATE.EsAwaymodeRequired;
 
     static public EXECUTIONSTATE SleepAllow = EXECUTIONSTATE.EsContinuous;
@@ -53,7 +56,7 @@ namespace Ordisoftware.Core
 
     #region Windows
 
-  public const int MAX_PATH = 260;
+    public const int MAX_PATH = 260;
 
     public const uint SW_RESTORE = 0x09;
 
