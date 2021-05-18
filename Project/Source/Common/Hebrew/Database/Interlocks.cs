@@ -23,15 +23,15 @@ using static Ordisoftware.Hebrew.HebrewDatabase;
 namespace Ordisoftware.Hebrew
 {
 
-  static class ProcessLocks
+  static class Interlocks
   {
 
-    static public readonly string TableName = nameof(ProcessLocks);
+    static public readonly string TableName = nameof(Interlocks);
 
     static private void Purge()
     {
       string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
-      foreach ( var item in Instance.Connection.Query<ProcessLock>(sql) )
+      foreach ( var item in Instance.Connection.Query<Interlock>(sql) )
       {
         if ( Process.GetProcesses().Any(p => p.Id == item.ProcessID) ) continue;
         sql = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
@@ -45,15 +45,15 @@ namespace Ordisoftware.Hebrew
       return name.IsNullOrEmpty() ? Globals.ApplicationCode : name;
     }
 
-    static public void Lock(string name = null)
+    static public void Take(string name = null)
     {
       if ( IsLockedByCurrentProcess(name) ) return;
       name = Convert(name);
-      var item = new ProcessLock { ProcessID = Globals.ProcessId, Name = name };
+      var item = new Interlock { ProcessID = Globals.ProcessId, Name = name };
       Instance.Connection.Insert(item);
     }
 
-    static public void Unlock(string name = null)
+    static public void Release(string name = null)
     {
       if ( !IsLockedByCurrentProcess(name) ) return;
       name = Convert(name);
@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew
       name = Convert(name);
       string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
       var dictionary = new Dictionary<string, int>();
-      foreach ( var item in Instance.Connection.Query<ProcessLock>(sql, name) )
+      foreach ( var item in Instance.Connection.Query<Interlock>(sql, name) )
       {
         var id = item.ProcessID;
         if ( id == Globals.ProcessId ) continue;

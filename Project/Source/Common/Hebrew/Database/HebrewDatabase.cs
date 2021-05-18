@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew
     protected override void CreateTables()
     {
       CheckConnected();
-      Connection.CreateTable<ProcessLock>();
+      Connection.CreateTable<Interlock>();
       Connection.CreateTable<Parashah>();
       Connection.CreateTable<TermHebrew>();
       Connection.CreateTable<TermLettriq>();
@@ -65,13 +65,7 @@ namespace Ordisoftware.Hebrew
     protected override void UpgradeSchema()
     {
       base.UpgradeSchema();
-      if ( Connection.CheckTable(nameof(ProcessLocks)) )
-        if ( !Connection.CheckColumn(nameof(ProcessLocks), "ID") )
-        {
-          var msg = SysTranslations.UpgradeCommonDatabaseRequired.GetLang(nameof(ProcessLocks));
-          SystemManager.CloseRunningApplications(msg);
-          ProcessLocksUpgrade.AddID(Connection);
-        }
+      Connection.DropTableIfExists("ProcessLocks");
     }
 
   }

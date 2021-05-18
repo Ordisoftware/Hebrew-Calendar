@@ -45,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoConstructor()
     {
       new Task(InitializeIconsAndSound).Start();
-      ProcessLocks.Lock();
+      Interlocks.Take();
       SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
       Text = Globals.AssemblyTitle;
       ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
@@ -255,7 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.IsExiting = true;
         Globals.IsSessionEnding = true;
         Globals.AllowClose = true;
-        ProcessLocks.Unlock();
+        Interlocks.Release();
         Settings.Store();
         TimerTooltip.Stop();
         TimerBallon.Stop();

@@ -222,8 +222,8 @@
     <Compile Include="Source\Common\Hebrew\Database\Parashah.ToString.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Parashah.cs" />
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ProcessLock.cs" />
-    <Compile Include="Source\Common\Hebrew\Database\ProcessLocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Interlock.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\Interlocks.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />

@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew
     {
       CheckConnected();
       if ( !reload && TermsHebrew != null ) return TermsHebrew;
-      ProcessLocks.Lock(nameof(TermsHebrew));
+      Interlocks.Take(nameof(TermsHebrew));
       TermsHebrew = Load(Connection.Table<TermHebrew>());
       TermLettriqs = Load(Connection.Table<TermLettriq>());
       TermsHebrewAsBindingList = new BindingList<TermHebrew>(TermsHebrew);
@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew
     public void ReleaseLettriqs()
     {
       if ( TermsHebrew == null && TermLettriqs == null ) return;
-      ProcessLocks.Unlock(nameof(TermsHebrew));
+      Interlocks.Release(nameof(TermsHebrew));
       if ( ClearListsOnCloseAndRelease )
       {
         TermsHebrew?.Clear();
