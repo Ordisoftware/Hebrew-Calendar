@@ -114,6 +114,12 @@ namespace Ordisoftware.Core
       => SameCompanyRunningProcesses.Where(p => p.Id != ProcessId);
 
     /// <summary>
+    /// Indicate running processes being the same as this application not being this one.
+    /// </summary>
+    static public IEnumerable<Process> SameRunningProcessesNotThisOne
+      => ConcurrentRunningProcesses.Where(p => p.ProcessName == ProcessName);
+
+    /// <summary>
     /// Indicate if the executable has been generated in debug mode.
     /// </summary>
     static public bool IsDebugExecutable

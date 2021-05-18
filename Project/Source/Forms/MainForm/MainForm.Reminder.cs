@@ -13,6 +13,8 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -30,6 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
       TimerMutex = true;
+      CheckProcessRelicate();
       try
       {
         IsSpecialDay = false;
@@ -131,6 +134,16 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         MenuTray.Enabled = true;
       }
+    }
+
+    private void CheckProcessRelicate()
+    {
+      SystemManager.TryCatch(() =>
+      {
+        var processes = Globals.SameRunningProcessesNotThisOne;
+        if ( processes.Count() != 0 )
+          TimerKillProcesses.Start();
+      });
     }
 
   }
