@@ -284,16 +284,15 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add parashah reminder at the start of the week.
-- Improve auto-lock session box.
 
-#### In progress - Version 8.0
+#### 2021.05.30 - Version 8.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
-
->- Add lock session action in active reminder box.
-
+- Improve auto-lock session box.
 - Add option to choose default auto-lock action.
+- Add lockout button for menu in active reminder box.
+- Add open main form button in navigation window.
 - Add parashot context menu in shabat reminder box, navigation window, and tools menu.
 - Code refactoring and quality improvement.
 - Some UI improvements.
