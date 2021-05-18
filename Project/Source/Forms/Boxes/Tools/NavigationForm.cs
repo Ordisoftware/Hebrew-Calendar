@@ -15,6 +15,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -24,12 +25,22 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class NavigationForm : Form
   {
 
+    static private Image Image;
+
     private const string NoDataField = "-";
 
     static public NavigationForm Instance { get; private set; }
 
     static NavigationForm()
     {
+      try
+      {
+        Image = Image.FromFile(Program.ApplicationImage32FilePath);
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ApplicationImage32FilePath, ex.Message));
+      }
       Instance = new NavigationForm();
     }
 
@@ -135,6 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
+      if ( Image != null ) ActionShowMainForm.Image = Image;
       InitializeMenu();
     }
 
@@ -248,6 +260,15 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
         ActionViewParashahInfos.Enabled = false;
+    }
+
+    private void ActionShowMainForm_Click(object sender, EventArgs e)
+    {
+      if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
+      {
+        MainForm.Instance.MenuShowHide_Click(null, null);
+        this.Popup();
+      }
     }
 
   }

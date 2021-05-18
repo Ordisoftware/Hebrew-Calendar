@@ -297,6 +297,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.PanelBalloon = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -334,6 +335,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       this.TabPagePaths.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
+      this.PanelBalloon.SuspendLayout();
       this.SuspendLayout();
       // 
       // DialogColor
@@ -821,17 +823,13 @@
       this.TabPageTrayIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.TabPageTrayIcon.Controls.Add(this.EditTrayIconUseSpecialDayIcon);
       this.TabPageTrayIcon.Controls.Add(this.PanelHotKey);
-      this.TabPageTrayIcon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
       this.TabPageTrayIcon.Controls.Add(this.LabelTrayIconClickOpen);
-      this.TabPageTrayIcon.Controls.Add(this.EditBalloonLoomingDelay);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.TabPageTrayIcon.Controls.Add(this.EditGlobalHotKeyPopupMainFormEnabled);
       this.TabPageTrayIcon.Controls.Add(this.EditMainFormShownGoToToday);
-      this.TabPageTrayIcon.Controls.Add(this.EditBalloonOnlyIfMainFormIsHidden);
-      this.TabPageTrayIcon.Controls.Add(this.EditBalloonAutoHide);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNavigationForm);
-      this.TabPageTrayIcon.Controls.Add(this.EditBalloon);
+      this.TabPageTrayIcon.Controls.Add(this.PanelBalloon);
       resources.ApplyResources(this.TabPageTrayIcon, "TabPageTrayIcon");
       this.TabPageTrayIcon.Name = "TabPageTrayIcon";
       // 
@@ -994,6 +992,7 @@
       resources.ApplyResources(this.SelectOpenNavigationForm, "SelectOpenNavigationForm");
       this.SelectOpenNavigationForm.Name = "SelectOpenNavigationForm";
       this.SelectOpenNavigationForm.UseVisualStyleBackColor = true;
+      this.SelectOpenNavigationForm.CheckedChanged += new System.EventHandler(this.SelectOpenNavigationForm_CheckedChanged);
       // 
       // EditBalloon
       // 
@@ -2508,6 +2507,16 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // PanelBalloon
+      // 
+      this.PanelBalloon.Controls.Add(this.EditBalloon);
+      this.PanelBalloon.Controls.Add(this.EditBalloonAutoHide);
+      this.PanelBalloon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
+      this.PanelBalloon.Controls.Add(this.EditBalloonOnlyIfMainFormIsHidden);
+      this.PanelBalloon.Controls.Add(this.EditBalloonLoomingDelay);
+      resources.ApplyResources(this.PanelBalloon, "PanelBalloon");
+      this.PanelBalloon.Name = "PanelBalloon";
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2577,6 +2586,8 @@
       this.TabPagePaths.PerformLayout();
       this.PanelWeatherOnline.ResumeLayout(false);
       this.PanelWeatherOnline.PerformLayout();
+      this.PanelBalloon.ResumeLayout(false);
+      this.PanelBalloon.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -2849,5 +2860,6 @@
     private System.Windows.Forms.Label LabelDefaultLockoutAction;
     private System.Windows.Forms.ComboBox SelectLockSessionDefaultAction;
     private System.Windows.Forms.CheckBox EditConfirmShutdown;
+    private System.Windows.Forms.Panel PanelBalloon;
   }
 }

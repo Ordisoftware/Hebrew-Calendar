@@ -48,8 +48,12 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionLockout = new System.Windows.Forms.Button();
+      this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
+      this.ContextMenuStripLockout.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelTitle
@@ -179,6 +183,29 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
+      // ActionLockout
+      // 
+      resources.ApplyResources(this.ActionLockout, "ActionLockout");
+      this.ActionLockout.ContextMenuStrip = this.ContextMenuParashah;
+      this.ActionLockout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.ActionLockout.FlatAppearance.BorderSize = 0;
+      this.ActionLockout.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionLockout.Name = "ActionLockout";
+      this.ActionLockout.UseVisualStyleBackColor = true;
+      this.ActionLockout.Click += new System.EventHandler(this.ActionLockout_Click);
+      // 
+      // ContextMenuStripLockout
+      // 
+      this.ContextMenuStripLockout.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuDefaultLockout});
+      this.ContextMenuStripLockout.Name = "ContextMenuStripLockout";
+      resources.ApplyResources(this.ContextMenuStripLockout, "ContextMenuStripLockout");
+      // 
+      // MenuDefaultLockout
+      // 
+      resources.ApplyResources(this.MenuDefaultLockout, "MenuDefaultLockout");
+      this.MenuDefaultLockout.Name = "MenuDefaultLockout";
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -192,6 +219,7 @@
       this.Controls.Add(this.LabelStartDay);
       this.Controls.Add(this.LabelStartTime);
       this.Controls.Add(this.ActionSetup);
+      this.Controls.Add(this.ActionLockout);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.LabelDate);
@@ -203,10 +231,12 @@
       this.ShowIcon = false;
       this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReminderForm_FormClosed);
+      this.Load += new System.EventHandler(this.ReminderForm_Load);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
       this.Click += new System.EventHandler(this.Form_Click);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
+      this.ContextMenuStripLockout.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -231,5 +261,8 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.Button ActionLockout;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
+    private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
   }
 }

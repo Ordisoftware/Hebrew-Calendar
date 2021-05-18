@@ -33,9 +33,12 @@
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
       this.PanelMiddle = new System.Windows.Forms.Panel();
+      this.ActionShowMainForm = new System.Windows.Forms.Button();
       this.LabelCurrentDayValue = new System.Windows.Forms.LinkLabel();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
@@ -64,8 +67,6 @@
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
-      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -88,6 +89,7 @@
       // PanelMiddle
       // 
       this.PanelMiddle.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelMiddle.Controls.Add(this.ActionShowMainForm);
       this.PanelMiddle.Controls.Add(this.LabelCurrentDayValue);
       this.PanelMiddle.Controls.Add(this.LabelParashahValue);
       this.PanelMiddle.Controls.Add(this.LabelTorahNextDateValue);
@@ -112,6 +114,14 @@
       this.PanelMiddle.Controls.Add(this.LabelSunrise);
       resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.Name = "PanelMiddle";
+      // 
+      // ActionShowMainForm
+      // 
+      resources.ApplyResources(this.ActionShowMainForm, "ActionShowMainForm");
+      this.ActionShowMainForm.FlatAppearance.BorderSize = 0;
+      this.ActionShowMainForm.Name = "ActionShowMainForm";
+      this.ActionShowMainForm.UseVisualStyleBackColor = true;
+      this.ActionShowMainForm.Click += new System.EventHandler(this.ActionShowMainForm_Click);
       // 
       // LabelCurrentDayValue
       // 
@@ -141,6 +151,17 @@
             this.ActionOpenVerseOnline});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
+      // 
+      // ActionViewParashahInfos
+      // 
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
       // 
       // ActionStudyOnline
       // 
@@ -299,17 +320,6 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
-      // ActionViewParashahInfos
-      // 
-      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
-      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
-      // 
-      // toolStripSeparator2
-      // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -373,5 +383,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+    private System.Windows.Forms.Button ActionShowMainForm;
   }
 }

@@ -124,11 +124,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      if ( Program.Settings.LockSessionConfirmShutdown )
-        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToShutdownComputer.GetLang()) )
-          return;
+      if ( !SystemManager.Shutdown(Program.Settings.LockSessionConfirmLogOffOrMore) ) return;
       DoMediaPlayingAndVolumeAction();
-      SystemManager.Shutdown();
       MainForm.Instance.SessionEnding(null, null);
     }
 

@@ -127,7 +127,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCalendarLineSpacing.Value = Settings.CalendarLineSpacing; });
       SystemManager.TryCatch(() => { EditReminderBoxShowFullDates.Checked = Settings.ReminderBoxShowFullDates; });
       SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
-      SystemManager.TryCatch(() => { Settings.LockSessionConfirmShutdown = EditConfirmShutdown.Checked; });
+      SystemManager.TryCatch(() => { EditConfirmShutdown.Checked = Settings.LockSessionConfirmLogOffOrMore; });
       // Hotkey
       InitHotKeyControls();
       // System
