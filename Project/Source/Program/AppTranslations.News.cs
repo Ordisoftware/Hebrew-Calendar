@@ -30,13 +30,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["8.0"] = new TranslationsDictionary
         {
-          [Language.EN] = "SQLite ODBC Driver is no more needed." + Globals.NL +
-                          "Overall performances are optimized." + Globals.NL +
-                          "Some improvements and fixes.",
+          [Language.EN] = "Overall performances are optimized." + Globals.NL +
+                          "Some improvements and fixes." + Globals.NL +
+                          "SQLite ODBC Driver is no more needed.",
 
-          [Language.FR] = "Le pilote SQLite ODBC n'est plus nécessaire. " + Globals.NL +
-                          "Les performances globales sont optimisées." + Globals.NL +
-                          "Quelques améliorations et quelques corrections."
+          [Language.FR] = "Les performances globales sont optimisées." + Globals.NL +
+                          "Quelques améliorations et quelques corrections." + Globals.NL +
+                          "Le pilote SQLite ODBC n'est plus nécessaire. "
         },
 
         ["7.x"] = new TranslationsDictionary
