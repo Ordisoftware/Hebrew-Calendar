@@ -14,41 +14,17 @@
 /// <edited> 2021-05 </edited>
 using System;
 using SQLite;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
 {
 
-  [Table("ProcessLocks")]
-  public class ProcessLock : ProcessLock_No_ID
+  [Table("Interlocks")]
+  public class Interlock
   {
     [PrimaryKey, AutoIncrement]
     public int ID { get; set; }
-  }
-
-  public class ProcessLock_No_ID
-  {
     public int ProcessID { get; set; }
     public string Name { get; set; }
-  }
-
-  static class ProcessLocksUpgrade
-  {
-    static public void AddID(SQLiteNetORM connection)
-    {
-      connection.Execute($@"PRAGMA foreign_keys = 0;");
-      connection.DropTableIfExists(nameof(ProcessLock_No_ID));
-      connection.RenameTableIfExists(nameof(ProcessLocks), nameof(ProcessLock_No_ID));
-      connection.CreateTable<ProcessLock>();
-      var rows = connection.Table<ProcessLock_No_ID>();
-      connection.BeginTransaction();
-      int index = 1;
-      foreach ( var row in rows )
-        connection.Insert(new ProcessLock { ID = index++, Name = row.Name, ProcessID = row.ProcessID });
-      connection.Commit();
-      connection.DropTableIfExists(nameof(ProcessLock_No_ID));
-      connection.Execute($@"PRAGMA foreign_keys = 1;");
-    }
   }
 
 }

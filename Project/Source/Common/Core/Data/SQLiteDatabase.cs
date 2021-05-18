@@ -113,6 +113,8 @@ namespace Ordisoftware.Core
       return result;
     }
 
+    public bool IsInTransaction => Connection.IsInTransaction;
+
     public void BeginTransaction()
     {
       CheckConnected();

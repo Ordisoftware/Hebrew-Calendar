@@ -163,7 +163,7 @@ namespace Ordisoftware.Hebrew
 
     private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      string list = string.Join(Globals.NL, ProcessLocks.GetLockers(HebrewDatabase.Instance.ParashotTableName)).Indent(4);
+      string list = string.Join(Globals.NL, Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName)).Indent(4);
       string msg = SysTranslations.DatabaseTableLocked.GetLang(HebrewDatabase.Instance.ParashotTableName, list, Timer.Interval / 1000);
       DisplayManager.Show(msg);
     }

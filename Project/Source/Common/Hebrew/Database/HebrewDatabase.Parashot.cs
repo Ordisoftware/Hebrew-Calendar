@@ -36,14 +36,14 @@ namespace Ordisoftware.Hebrew
     public bool IsParashotReadOnly()
     {
       CheckConnected();
-      return ProcessLocks.GetCount(ParashotTableName) > 1;
+      return Interlocks.GetCount(ParashotTableName) > 1;
     }
 
     public List<Parashah> TakeParashot(bool reload = false)
     {
       CheckConnected();
       if ( !reload && Parashot != null ) return Parashot;
-      ProcessLocks.Lock(ParashotTableName);
+      Interlocks.Take(ParashotTableName);
       if ( ParashotFirstTake )
       {
         ParashotFactory.Reset();
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew
     public void ReleaseParashot()
     {
       if ( Parashot == null ) return;
-      ProcessLocks.Unlock(ParashotTableName);
+      Interlocks.Release(ParashotTableName);
       if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
       Parashot = null;
     }
