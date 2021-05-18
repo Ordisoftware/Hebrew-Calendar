@@ -31,7 +31,6 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var task = Task.Run(() =>
         {
-          ApplicationDatabase.Instance.Open();
           Globals.ChronoLoadData.Start();
           ApplicationDatabase.Instance.Open();
           LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;

@@ -217,7 +217,6 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static public void UpdateLocalization()
     {
-      //if ( Globals.IsReady && Settings.LanguageSelected == Languages.Default ) return;
       Globals.ChronoTranslate.Restart();
       try
       {
@@ -232,14 +231,20 @@ namespace Ordisoftware.Hebrew.Calendar
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
-        MessageBoxEx.CloseAll();
-        AboutBox.Instance.Hide();
-        MainForm.Instance.ClearLists();
-        string tempTextReport = MainForm.Instance.CalendarText.Text;
-        string tempLogTitle = DebugManager.TraceForm.Text;
-        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
-        MainForm.Instance.EditEnumsAsTranslations.Visible = false;
-        MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+        string tempTextReport = string.Empty;
+        string tempLogTitle = string.Empty;
+        string tempLogContent = string.Empty;
+        if ( Globals.IsReady )
+        {
+          MessageBoxEx.CloseAll();
+          AboutBox.Instance.Hide();
+          MainForm.Instance.ClearLists();
+          tempTextReport = MainForm.Instance.CalendarText.Text;
+          tempLogTitle = DebugManager.TraceForm.Text;
+          tempLogContent = DebugManager.TraceForm.TextBox.Text;
+          MainForm.Instance.EditEnumsAsTranslations.Visible = false;
+          MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+        }
         update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
@@ -260,22 +265,25 @@ namespace Ordisoftware.Hebrew.Calendar
             formShowText.Relocalize();
         }
         // Various updates
-        DebugManager.TraceForm.Text = tempLogTitle;
-        DebugManager.TraceForm.AppendText(tempLogContent);
-        LoadingForm.Instance.Relocalize();
-        TextBoxEx.Relocalize();
-        AboutBox.Instance.AboutBox_Shown(null, null);
-        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-        LunarMonthsForm.Instance.Relocalize();
-        NavigationForm.Instance.Relocalize();
-        DatesDiffCalculatorForm.Instance.Relocalize();
-        ParashotFactory.Reset();
-        MainForm.Instance.CreateSystemInformationMenu();
-        MainForm.Instance.CalendarText.Text = tempTextReport;
+        if ( Globals.IsReady )
+        {
+          MainForm.Instance.CalendarText.Text = tempTextReport;
+          DebugManager.TraceForm.Text = tempLogTitle;
+          DebugManager.TraceForm.AppendText(tempLogContent);
+          LoadingForm.Instance.Relocalize();
+          TextBoxEx.Relocalize();
+          AboutBox.Instance.AboutBox_Shown(null, null);
+          GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
+          LunarMonthsForm.Instance.Relocalize();
+          NavigationForm.Instance.Relocalize();
+          DatesDiffCalculatorForm.Instance.Relocalize();
+          ParashotFactory.Reset();
+          MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
+          MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+          MainForm.Instance.EditEnumsAsTranslations.Visible = true;
+        }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
-        MainForm.Instance.EditEnumsAsTranslations.Left = MainForm.Instance.PanelViewGrid.Width - MainForm.Instance.EditEnumsAsTranslations.Width - 5;
-        MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        MainForm.Instance.EditEnumsAsTranslations.Visible = true;
+        MainForm.Instance.CreateSystemInformationMenu();
       }
       catch ( Exception ex )
       {

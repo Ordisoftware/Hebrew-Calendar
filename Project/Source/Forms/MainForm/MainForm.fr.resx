@@ -133,9 +133,6 @@
   <data name="LabelGridGoToToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
   </data>
-  <data name="LabelSubTitleCalendar.Text" xml:space="preserve">
-    <value>CALENDRIER LUNISOLAIRE</value>
-  </data>
   <data name="ActionSaveToFile.Text" xml:space="preserve">
     <value>Sauvegarder la vue dans un fichier</value>
   </data>

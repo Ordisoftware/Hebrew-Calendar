@@ -96,6 +96,8 @@ namespace Ordisoftware.Hebrew.Calendar
       Text = Globals.AssemblyTitle;
       SystemManager.TryCatch(() =>
       {
+        // Subtitle
+        LabelSubTitleCalendar.Text = AppTranslations.Subtitle.GetLang();
         // Today
         if ( Settings.MainFormTitleBarShowToday )
           Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
