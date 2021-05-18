@@ -486,38 +486,34 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.JSON.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Save.JSON.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Save.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.ToClipboard.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.ToClipboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.Text.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Print.Text.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.Month.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Print.Month.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Print.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.TrayIcon.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.TrayIcon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Weather.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.Weather.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnnivMoon.cs" />
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnnivMoonDay.cs" />
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnnivSunDay.cs" />
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.AnnivSun.cs" />
-    <Compile Include="Source\Program\ApplicationStatistics.cs" />
+    <Compile Include="Source\Program\System\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />
     <Compile Include="Source\Entities\CalendarDates.cs" />
@@ -548,20 +544,20 @@
     <Compile Include="Source\Forms\Boxes\Search\SearchGregorianMonthForm.Designer.cs">
       <DependentUpon>SearchGregorianMonthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.CreateData.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Data.Create.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Program\AppTranslations.News.cs" />
-    <Compile Include="Source\Program\AppTranslations.Keys.cs" />
-    <Compile Include="Source\Program\AppTranslations.Suspend.cs" />
-    <Compile Include="Source\Program\AppTranslations.BigCalendar.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.News.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Keys.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Suspend.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.BigCalendar.cs" />
     <Compile Include="Source\Entities\SunAndMoonRiseAndSet.cs" />
     <Compile Include="Source\Enums\ReportFieldCSV.cs" />
-    <Compile Include="Source\Program\AppTranslations.Notices.cs" />
-    <Compile Include="Source\Program\AppTranslations.Calendar.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Notices.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.Calendar.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.Colors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -585,7 +581,7 @@
     <Compile Include="Source\Entities\DayOfWeekMap.Positions.cs" />
     <Compile Include="Source\Entities\DayOfWeekItem.cs" />
     <Compile Include="Source\Entities\TorahEventItem.cs" />
-    <Compile Include="Source\Program\AppTranslations.cs" />
+    <Compile Include="Source\Program\Translations\AppTranslations.cs" />
     <Compile Include="Source\Enums\ReportFieldText.cs" />
     <Compile Include="Source\Enums\Ephemeris.cs" />
     <Compile Include="Source\Forms\Boxes\Search\SearchLunarMonthForm.cs">
@@ -621,31 +617,31 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.Static.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Generate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.GoToDate.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.GoToDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.CelebrationDay.cs">
+    <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.CelebrationDay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.cs">
+    <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Shabat.cs">
+    <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.Shabat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.UpdateUI.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.UpdateUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Vars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.DB.LoadData.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Data.Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Reminder.Celebrations.cs">
+    <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.Celebrations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\Reminder\ReminderForm.cs">
@@ -661,13 +657,13 @@
     <Compile Include="Source\Forms\Boxes\Boards\NextCelebrationsForm.Designer.cs">
       <DependentUpon>NextCelebrationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Export.Save.CSV.cs">
+    <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.Save.CSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.FillMonths.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.FillMonths.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.SetView.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Boxes\Tools\NavigationForm.cs">
@@ -705,7 +701,7 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Generate.ReportText.cs">
+    <Compile Include="Source\Forms\MainForm\Data\MainForm.Generate.ReportText.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
@@ -718,8 +714,8 @@
     <Compile Include="Source\Forms\Config\PreferencesForm.designer.cs">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program\ApplicationCommandLine.cs" />
-    <Compile Include="Source\Program\SettingsHelper.cs" />
+    <Compile Include="Source\Program\System\ApplicationCommandLine.cs" />
+    <Compile Include="Source\Program\System\SettingsHelper.cs" />
     <Compile Include="Source\Enums\TorahEvent.cs" />
     <Compile Include="Source\Enums\MoonPhase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1028,7 +1024,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source\Program\AstronomyHelper.cs" />
+    <Compile Include="Source\Program\System\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
   </ItemGroup>

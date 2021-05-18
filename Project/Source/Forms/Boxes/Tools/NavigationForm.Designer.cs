@@ -67,6 +67,7 @@
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -227,6 +228,7 @@
       resources.ApplyResources(this.PictureMoon, "PictureMoon");
       this.PictureMoon.Name = "PictureMoon";
       this.PictureMoon.TabStop = false;
+      this.PictureMoon.Click += new System.EventHandler(this.ActionShowMainForm_Click);
       // 
       // LabelMoonsetValue
       // 
@@ -384,5 +386,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.Button ActionShowMainForm;
+    private System.Windows.Forms.Timer timer1;
   }
 }
