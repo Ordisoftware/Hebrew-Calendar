@@ -231,17 +231,15 @@ namespace Ordisoftware.Hebrew.Calendar
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
+        string tempLogTitle = DebugManager.TraceForm.Text;
+        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
         string tempTextReport = string.Empty;
-        string tempLogTitle = string.Empty;
-        string tempLogContent = string.Empty;
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
           AboutBox.Instance.Hide();
           MainForm.Instance.ClearLists();
           tempTextReport = MainForm.Instance.CalendarText.Text;
-          tempLogTitle = DebugManager.TraceForm.Text;
-          tempLogContent = DebugManager.TraceForm.TextBox.Text;
           MainForm.Instance.EditEnumsAsTranslations.Visible = false;
           MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Left;
         }
@@ -268,8 +266,6 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( Globals.IsReady )
         {
           MainForm.Instance.CalendarText.Text = tempTextReport;
-          DebugManager.TraceForm.Text = tempLogTitle;
-          DebugManager.TraceForm.AppendText(tempLogContent);
           LoadingForm.Instance.Relocalize();
           TextBoxEx.Relocalize();
           AboutBox.Instance.AboutBox_Shown(null, null);
@@ -282,6 +278,8 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.EditEnumsAsTranslations.Anchor = AnchorStyles.Top | AnchorStyles.Right;
           MainForm.Instance.EditEnumsAsTranslations.Visible = true;
         }
+        DebugManager.TraceForm.Text = tempLogTitle;
+        DebugManager.TraceForm.AppendText(tempLogContent);
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.CreateSystemInformationMenu();
       }
