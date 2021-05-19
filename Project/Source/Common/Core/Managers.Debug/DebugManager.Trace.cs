@@ -13,12 +13,13 @@
 /// <created> 2007-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Serilog.Core;
 using Serilog.Events;
 using System.Threading;
 using Serilog;
-using System.IO;
 
 namespace Ordisoftware.Core
 {
@@ -43,12 +44,6 @@ namespace Ordisoftware.Core
         logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("ThreadId", id));
       }
     }
-
-    static public string TraceFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-                                             "P{ProcessId}:T{ThreadId} " +
-                                             "{Message:lj}{NewLine}{Exception}";
-
-    static public int TraceFileTemplateSize = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
 
     static public readonly TraceForm TraceForm;
     static public string IdWidth = "D6";
@@ -96,6 +91,19 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
     }
 
+    static private Dictionary<LogTraceEvent, char> Signes = new Dictionary<LogTraceEvent, char>
+    {
+      [LogTraceEvent.System] = ' ',
+      [LogTraceEvent.Start] = '>',
+      [LogTraceEvent.Stop] = '.',
+      [LogTraceEvent.Enter] = '+',
+      [LogTraceEvent.Leave] = '-',
+      [LogTraceEvent.Message] = '#',
+      [LogTraceEvent.Data] = '*',
+      [LogTraceEvent.Error] = '!',
+      [LogTraceEvent.Exception] = '!'
+    };
+
     static public void Trace(LogTraceEvent traceEvent, string text = "")
     {
       if ( !_Enabled || !_TraceEnabled ) return;
@@ -104,11 +112,11 @@ namespace Ordisoftware.Core
         string message = string.Empty;
         if ( traceEvent != LogTraceEvent.System )
         {
-          string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
-          message += $"[ {traceEventName} ] ";
+          string traceEventName = traceEvent.ToString().ToUpper().PadLeft(TraceEventMaxLength);
+          message += $"| {Signes[traceEvent]} | {traceEventName} | ";
         }
         if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, 5 + TraceFileTemplateSize + CurrentMargin + message.Length);
+        message += text.Indent(CurrentMargin, 5 + Globals.SinkFileTemplateSize + CurrentMargin + message.Length);
         Log.Logger.Information(message);
       }
       catch
@@ -122,26 +130,19 @@ namespace Ordisoftware.Core
 
     static private void WriteHeader()
     {
-      string platform = "Undefined";
+      string platform = "";
       try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); }
-      catch { }
-      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() > 0 )
-      //  Trace(LogTraceEvent.System);
-      //Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.Start, Globals.AssemblyTitle + " on " + platform);
-      //Trace(LogTraceEvent.System, Separator);
-      //Trace(LogTraceEvent.System);
+      catch { platform = "Unknown platform"; }
+      Trace(LogTraceEvent.Start, Globals.AssemblyTitle);
+      Trace(LogTraceEvent.Start, Globals.ApplicationExePath);
+      Trace(LogTraceEvent.Start, platform);
+      Trace(LogTraceEvent.Start, $"FreeMem: {SystemStatistics.Instance.PhysicalMemoryFree} | RAM: {SystemStatistics.Instance.TotalVisibleMemory}");
     }
 
     static private void WriteFooter()
     {
-      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() == 0 )
-      //  Trace(LogTraceEvent.System);
-      //Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.Stop, Globals.AssemblyTitle + " (Unleft: " + EnterCount + ")");
-      //Trace(LogTraceEvent.System, Separator);
-      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() == 0 )
-      //  Trace(LogTraceEvent.System);
+      Trace(LogTraceEvent.Stop, Globals.AssemblyTitle + $" (Unleft: {EnterCount})");
+      Trace(LogTraceEvent.Stop, $"GC: {SystemStatistics.Instance.MemoryGC} | Peak: {SystemStatistics.Instance.MemoryGCPeak}");
     }
 
     public static void ClearTraces(bool norestart = false)

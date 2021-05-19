@@ -916,7 +916,7 @@ namespace Ordisoftware.Hebrew.Calendar
       switch ( e.ColumnIndex )
       {
         case 5:
-          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonRiseOccuring);
+          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonriseOccuring);
           break;
         case 8:
         case 9:

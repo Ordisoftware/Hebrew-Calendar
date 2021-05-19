@@ -59,6 +59,16 @@ namespace Ordisoftware.Core
     Stop,
 
     /// <summary>
+    /// Enter method event.
+    /// </summary>
+    Enter,
+
+    /// <summary>
+    /// Leave method event.
+    /// </summary>
+    Leave,
+
+    /// <summary>
     /// Message event.
     /// </summary>
     Message,
@@ -76,17 +86,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Excention event.
     /// </summary>
-    Exception,
-
-    /// <summary>
-    /// Enter method event.
-    /// </summary>
-    Enter,
-
-    /// <summary>
-    /// Leave method event.
-    /// </summary>
-    Leave
+    Exception
 
   }
 

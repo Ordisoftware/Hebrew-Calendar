@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
           result.Append(day.SunsetAsString + CSVSeparator);
           result.Append(day.MoonriseAsString + CSVSeparator);
           result.Append(day.MoonsetAsString + CSVSeparator);
-          string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonRiseOccuring);
+          string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccuring);
           string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhase);
           string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChange);
           string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahEvent);

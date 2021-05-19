@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
     public const string OldTraceDirectoryName = "Logs";
 
     static public RollingInterval SinkFileRollingInterval { get; set; }
-      = RollingInterval.Day;
+      = IsVisualStudioDesigner ? 0 : RollingInterval.Day;
 
     static public int SinkFileRetainedFileCountLimit { get; set; }
       = 7;
@@ -36,6 +36,11 @@ namespace Ordisoftware.Core
     static public int SinkFileSizeLimitBytes { get; set; }
       = 100 * 1024 * 1024;
 
+    static public string SinkFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+                                             "P{ProcessId}:T{ThreadId} " +
+                                             "{Message:lj}{NewLine}{Exception}";
+
+    static public int SinkFileTemplateSize = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
 
     /// <summary>
     /// Indicate the log/trace directory name.
