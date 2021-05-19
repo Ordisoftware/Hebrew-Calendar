@@ -56,9 +56,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version 8.0**
 
-- Added option to set automatic computer lockout mode.
-- Some UI improvements and some fixes.
 - Overall performances are optimized.
+- Added option to set automatic computer lockout mode.
+- Some fixes and UI improvements.
 - SQLite ODBC Driver is no more needed.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -275,7 +275,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
 - Improve log viewer to select file.
-- Replace simple trace/logging by SeriLog.
 - Add dark theme for month view.
 
 ## Changelog
@@ -292,12 +291,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve auto-lock session box.
 - Add option to choose default auto-lock action.
 - Add lockout button for menu in active reminder box.
-- Add open main form button in navigation window.
 - Add parashot context menu in shabat reminder box, navigation window, and tools menu.
+- Add open main form when click on the moon image in navigation window.
+- Some fixes and improvements.
 - Code refactoring and quality improvement.
-- Some UI improvements.
-- Some fixes.
-
+- Replace proprietary simple TraceListener by SeriLog.
 
 #### 2021.05.09 - Version 7.3
 

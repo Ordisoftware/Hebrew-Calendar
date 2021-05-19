@@ -106,10 +106,6 @@ namespace Ordisoftware.Core
     static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
       = ShowExceptionMode.Advanced;
 
-    static public string TraceFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-                                             "[P{ProcessId}:T[{ThreadId}] " +
-                                             "{Message:lj}{NewLine}{Exception}";
-
     /// <summary>
     /// Indicate the trace listener.
     /// </summary>
