@@ -120,4 +120,10 @@
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="TabPageCurrent.Text" xml:space="preserve">
+    <value>Session</value>
+  </data>
+  <data name="TabPagePrevious" xml:space="preserve">
+    <value>Précédents</value>
+  </data>
 </root>
