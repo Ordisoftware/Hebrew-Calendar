@@ -16,6 +16,10 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Serilog;
+using Serilog.Sinks.WinForms;
+using Serilog.Formatting.Display;
+using System.IO;
 
 namespace Ordisoftware.Core
 {
@@ -102,11 +106,13 @@ namespace Ordisoftware.Core
     static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
       = ShowExceptionMode.Advanced;
 
+    static public string TraceFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+                                             "[P{ProcessId}:T[{ThreadId}] " +
+                                             "{Message:lj}{NewLine}{Exception}";
+
     /// <summary>
     /// Indicate the trace listener.
     /// </summary>
-    static public Listener TraceListener { get; private set; }
-
     static public bool TraceEnabled
     {
       get => _TraceEnabled;
@@ -114,20 +120,22 @@ namespace Ordisoftware.Core
       {
         if ( _TraceEnabled == value ) return;
         var isEnabled = _Enabled;
+        Enabled = false;
         if ( value )
         {
-          Enabled = false;
+          if ( Directory.Exists(Globals.OldTraceFolderPath) )
+            try { Directory.Delete(Globals.OldTraceFolderPath, true); } catch { }
           _TraceEnabled = value;
-          Enabled = isEnabled;
-          Trace(LogTraceEvent.Data, $"{nameof(DebugManager)}.{nameof(TraceEnabled)} = {value}");
         }
         else
         {
+          TraceForm?.Hide();
+          TraceForm?.TextBox.Clear();
           ClearTraces(true);
           _TraceEnabled = value;
-          Enabled = isEnabled;
         }
-        TraceEnabledChanged?.Invoke(value);
+        Enabled = isEnabled;
+        try { TraceEnabledChanged?.Invoke(value); } catch { }
       }
     }
     static private bool _TraceEnabled = false;
@@ -158,30 +166,31 @@ namespace Ordisoftware.Core
           _Enabled = true;
           if ( _TraceEnabled )
           {
-            TraceListener = new Listener(Globals.TraceFolderPath,
-                                         Globals.TraceFileCode,
-                                         Globals.TraceFileExtension,
-                                         Globals.TraceFileMode,
-                                         Globals.TraceFilesKeepCount,
-                                         TraceFileChanged);
-            System.Diagnostics.Trace.Listeners.Add(TraceListener);
-            System.Diagnostics.Trace.AutoFlush = true;
-            TraceListener.AutoFlush = true;
+            var logconf = new LoggerConfiguration();
+            logconf.Enrich.With(new ProcessIdEnricher());
+            logconf.Enrich.With(new ThreadIdEnricher());
+            Log.Logger = logconf.WriteTo.File(Globals.SinkFilePatternPath,
+                                              shared: SystemManager.AllowMultipleInstances,
+                                              outputTemplate: TraceFileTemplate,
+                                              rollingInterval: Globals.SinkFileRollingInterval,
+                                              fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
+                                              retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
+                                .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(TraceFileTemplate))
+                                .CreateLogger();
+            WindFormsSink.SimpleTextBoxSink.OnLogReceived += TraceEventAdded;
+            WriteHeader();
           }
-          WriteHeader();
         }
         else
         {
-          WriteFooter();
           if ( _TraceEnabled )
           {
-            System.Diagnostics.Trace.Listeners.Remove(TraceListener);
-            TraceListener.Dispose();
-            TraceListener = null;
+            WriteFooter();
+            Log.CloseAndFlush();
           }
           _Enabled = false;
-          TraceForm.Hide();
-          TraceForm.TextBox.Clear();
+          TraceForm?.Hide();
+          TraceForm?.TextBox.Clear();
         }
         EnabledChanged?.Invoke(value);
       }
@@ -238,7 +247,7 @@ namespace Ordisoftware.Core
     static private void Handle(object sender, Exception ex)
     {
       if ( ex is AbortException ) return;
-      Managepublic(sender, ex);
+      ManageInternal(sender, ex);
     }
 
     /// <summary>
@@ -283,7 +292,7 @@ namespace Ordisoftware.Core
         StackSkip++;
         ManageInternal(sender, ex, show);
       }
-      Leavepublic();
+      LeaveInternal();
     }
 
     /// <summary>
@@ -291,7 +300,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
-    static private void Managepublic(object sender, Exception ex)
+    static private void ManageInternal(object sender, Exception ex)
     {
       ManageInternal(sender, ex, DeaultShowExceptionMode);
     }

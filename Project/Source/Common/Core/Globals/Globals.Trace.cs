@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using Serilog;
@@ -25,53 +25,50 @@ namespace Ordisoftware.Core
   static partial class Globals
   {
 
-    /// <summary>
-    /// Indicate the trace file mode.
-    /// </summary>
-    static public TraceFileRollOverMode TraceFileMode
-      => TraceFileRollOverMode.Daily;
+    public const string OldTraceDirectoryName = "Logs";
 
-    static public RollingInterval SinkFileTraceFileMode
-      => RollingInterval.Day;
+    static public RollingInterval SinkFileRollingInterval { get; set; }
+      = RollingInterval.Day;
 
-    /// <summary>
-    /// Indicate the trace files keep count.
-    /// </summary>
-    static public int TraceFilesKeepCount { get; set; }
+    static public int SinkFileRetainedFileCountLimit { get; set; }
       = 7;
 
-    static public int SinkFileTraceFilesKeepCount { get; set; }
-      = 7;
+    static public int SinkFileSizeLimitBytes { get; set; }
+      = 100 * 1024 * 1024;
+
 
     /// <summary>
     /// Indicate the log/trace directory name.
     /// </summary>
-    static public string TraceDirectoryName { get; set; }
-      = "Logs";
-
-    static public string SinkTraceDirectoryName { get; set; }
+    static public string SinkDirectoryName { get; set; }
       = "Serilog";
-
-    /// <summary>
-    /// Indicate the trace file code.
-    /// </summary>
-    static public string TraceFileCode { get; set; }
-      = ApplicationGitHubCode + "-Trace-";
 
     /// <summary>
     /// Indicate the trace file extension.
     /// </summary>
-    static public string TraceFileExtension { get; set; }
+    static public string SinkFileExtension { get; set; }
       = ".log";
+
+    /// <summary>
+    /// Indicate the trace file code.
+    /// </summary>
+    static public string SinkFileCode { get; set; }
+      = ApplicationGitHubCode + "-Trace-";
 
     /// <summary>
     /// Indicate the user application trace folder path.
     /// </summary>
-    static public string TraceFolderPath
-      => Path.Combine(UserDataFolderPath, TraceDirectoryName);
+    static public string SinkFileFolderPath
+      => Path.Combine(UserDataFolderPath, SinkDirectoryName);
 
-    static public string SinkTraceFolderPath
-      => Path.Combine(UserDataFolderPath, SinkTraceDirectoryName);
+    static public string OldTraceFolderPath
+      => Path.Combine(UserDataFolderPath, OldTraceDirectoryName);
+
+    /// <summary>
+    /// Indicate the serilog sink file absolute full path and name pattern.
+    /// </summary>
+    static public string SinkFilePatternPath
+      => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileExtension;
 
   }
 

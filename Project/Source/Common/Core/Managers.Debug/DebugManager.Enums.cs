@@ -28,14 +28,14 @@ namespace Ordisoftware.Core
     OnlyMessage
   }
 
-  /// <summary>
-  /// INdicate trace file roll over mode.
-  /// </summary>
-  public enum TraceFileRollOverMode
-  {
-    Daily,
-    Monthly
-  }
+  ///// <summary>
+  ///// INdicate trace file roll over mode.
+  ///// </summary>
+  //public enum TraceFileRollOverMode
+  //{
+  //  Daily,
+  //  Monthly
+  //}
 
   /// <summary>
   /// Provide log event enum.
@@ -44,37 +44,37 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// System event. 
+    /// System event.
     /// </summary>
     System,
 
     /// <summary>
-    /// Message event. 
+    /// Message event.
     /// </summary>
     Message,
 
     /// <summary>
-    /// Data event. 
+    /// Data event.
     /// </summary>
     Data,
 
     /// <summary>
-    /// Error event. 
+    /// Error event.
     /// </summary>
     Error,
 
     /// <summary>
-    /// Excention event. 
+    /// Excention event.
     /// </summary>
     Exception,
 
     /// <summary>
-    /// Enter method event. 
+    /// Enter method event.
     /// </summary>
     Enter,
 
     /// <summary>
-    /// Leave method event. 
+    /// Leave method event.
     /// </summary>
     Leave
 

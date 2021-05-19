@@ -20,7 +20,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
-using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -231,8 +230,6 @@ namespace Ordisoftware.Hebrew.Calendar
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
-        string tempLogTitle = DebugManager.TraceForm.Text;
-        string tempLogContent = DebugManager.TraceForm.TextBox.Text;
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
@@ -241,7 +238,6 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-        new Infralution.Localization.CultureManager().ManagedControl = DebugManager.TraceForm;
         new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
@@ -253,7 +249,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
         {
-          if ( form != AboutBox.Instance && form != GrammarGuideForm )
+          if ( form != DebugManager.TraceForm && form != AboutBox.Instance && form != GrammarGuideForm )
             update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
@@ -261,7 +257,6 @@ namespace Ordisoftware.Hebrew.Calendar
         // Various updates
         if ( Globals.IsReady )
         {
-          //MainForm.Instance.CalendarText.Text = tempTextReport;
           LoadingForm.Instance.Relocalize();
           TextBoxEx.Relocalize();
           AboutBox.Instance.AboutBox_Shown(null, null);
@@ -271,10 +266,6 @@ namespace Ordisoftware.Hebrew.Calendar
           DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Reset();
         }
-        DebugManager.TraceForm.Text = tempLogTitle;
-        DebugManager.TraceForm.AppendText(tempLogContent);
-        DebugManager.TraceForm.Text = tempLogTitle;
-        DebugManager.TraceForm.AppendText(tempLogContent);
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.CreateSystemInformationMenu();
       }

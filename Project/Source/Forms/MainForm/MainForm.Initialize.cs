@@ -94,7 +94,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Cursor = Cursors.WaitCursor;
       try
       {
-        DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
         CalendarText.ForeColor = Settings.TextColor;
         CalendarText.BackColor = Settings.TextBackground;
         InitializeCalendarUI();
@@ -108,6 +107,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Cursor = Cursors.Default;
         throw;
       }
+      DebugManager.TraceEnabledChanged += value => CommonMenusControl.Instance.ActionViewLog.Enabled = value;
     }
 
     /// <summary>

@@ -91,7 +91,7 @@ namespace Ordisoftware.Core
 
     private void ActionOpenLogsFolder_Click(object sender, EventArgs e)
     {
-      SystemManager.RunShell(Globals.TraceFolderPath);
+      SystemManager.RunShell(Globals.SinkFileFolderPath);
     }
 
     private void ActionClearLogs_Click(object sender, EventArgs e)

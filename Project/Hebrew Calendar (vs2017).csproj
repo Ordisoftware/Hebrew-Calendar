@@ -435,7 +435,6 @@
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Delegates.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Enums.cs" />
-    <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Listener.cs" />
     <Compile Include="Source\Common\Core\Managers.Debug\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\Managers.Display\DisplayManager.cs" />
     <Compile Include="Source\Common\Core\Managers.Display\DisplayManager.Query.cs" />
