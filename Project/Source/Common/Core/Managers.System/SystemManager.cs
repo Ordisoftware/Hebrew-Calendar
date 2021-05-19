@@ -197,6 +197,23 @@ namespace Ordisoftware.Core
       return result;
     }
 
+    /// <summary>
+    /// Indicate if a file is locked or not.
+    /// </summary>
+    static public bool IsFileLocked(string filePath)
+    {
+      try
+      {
+        using ( FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None) )
+          stream.Close();
+        return false;
+      }
+      catch ( IOException )
+      {
+        return true;
+      }
+    }
+
   }
 
 }

@@ -126,7 +126,7 @@ namespace Ordisoftware.Core
         else
         {
           TraceForm?.Hide();
-          TraceForm?.TextBox.Clear();
+          TraceForm?.TextBoxCurrent.Clear();
           ClearTraces(true);
           _TraceEnabled = value;
         }
@@ -186,7 +186,7 @@ namespace Ordisoftware.Core
           }
           _Enabled = false;
           TraceForm?.Hide();
-          TraceForm?.TextBox.Clear();
+          TraceForm?.TextBoxCurrent.Clear();
         }
         EnabledChanged?.Invoke(value);
       }
