@@ -44,6 +44,12 @@ namespace Ordisoftware.Core
       }
     }
 
+    static public string TraceFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+                                             "[P{ProcessId}:T{ThreadId}] " +
+                                             "{Message:lj}{NewLine}{Exception}";
+
+    static public int TraceFileTemplateSize = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
+
     static public readonly TraceForm TraceForm;
     static public string IdWidth = "D6";
     static public int MarginSize = 4;
@@ -98,11 +104,11 @@ namespace Ordisoftware.Core
         string message = string.Empty;
         if ( traceEvent != LogTraceEvent.System )
         {
-          string traceEventName = traceEvent.ToString().ToUpper();
-          message += $"[ {traceEventName} ]".PadRight(TraceEventMaxLength + 1);
+          string traceEventName = traceEvent.ToString().ToUpper().PadRight(TraceEventMaxLength);
+          message += $"[ {traceEventName} ] ";
         }
         if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, CurrentMargin + message.Length);
+        message += text.Indent(CurrentMargin, 5 + TraceFileTemplateSize + CurrentMargin + message.Length);
         Log.Logger.Information(message);
       }
       catch
