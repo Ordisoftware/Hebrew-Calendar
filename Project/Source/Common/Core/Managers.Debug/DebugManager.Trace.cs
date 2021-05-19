@@ -45,7 +45,7 @@ namespace Ordisoftware.Core
     }
 
     static public string TraceFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-                                             "[P{ProcessId}:T{ThreadId}] " +
+                                             "P{ProcessId}:T{ThreadId} " +
                                              "{Message:lj}{NewLine}{Exception}";
 
     static public int TraceFileTemplateSize = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
@@ -125,24 +125,23 @@ namespace Ordisoftware.Core
       string platform = "Undefined";
       try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); }
       catch { }
-      if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() > 0 )
-        Trace(LogTraceEvent.System);
-      Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.System, "# " + "START   : " + Globals.AssemblyTitle);
-      Trace(LogTraceEvent.System, "# " + "SYSTEM  : " + platform);
-      Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.System);
+      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() > 0 )
+      //  Trace(LogTraceEvent.System);
+      //Trace(LogTraceEvent.System, Separator);
+      Trace(LogTraceEvent.Start, Globals.AssemblyTitle + " on " + platform);
+      //Trace(LogTraceEvent.System, Separator);
+      //Trace(LogTraceEvent.System);
     }
 
     static private void WriteFooter()
     {
-      Trace(LogTraceEvent.System);
-      Trace(LogTraceEvent.System, Separator);
-      Trace(LogTraceEvent.System, "# " + "STOP    : " + Globals.AssemblyTitle);
-      Trace(LogTraceEvent.System, "# " + "UNLEFT  : " + EnterCount);
-      Trace(LogTraceEvent.System, Separator);
-      if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() == 0 )
-        Trace(LogTraceEvent.System);
+      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() == 0 )
+      //  Trace(LogTraceEvent.System);
+      //Trace(LogTraceEvent.System, Separator);
+      Trace(LogTraceEvent.Stop, Globals.AssemblyTitle + " (Unleft: " + EnterCount + ")");
+      //Trace(LogTraceEvent.System, Separator);
+      //if ( SystemManager.AllowMultipleInstances && Globals.SameRunningProcessesNotThisOne.Count() == 0 )
+      //  Trace(LogTraceEvent.System);
     }
 
     public static void ClearTraces(bool norestart = false)

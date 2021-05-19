@@ -44,9 +44,19 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// System event.
+    /// System event (no event level).
     /// </summary>
     System,
+
+    /// <summary>
+    /// Start process event.
+    /// </summary>
+    Start,
+
+    /// <summary>
+    /// Stop process event.
+    /// </summary>
+    Stop,
 
     /// <summary>
     /// Message event.
