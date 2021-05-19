@@ -244,7 +244,7 @@ namespace Ordisoftware.Core
       body.AppendLine("## LOG");
       body.AppendLine();
       var lines = DebugManager.TraceForm
-                              .TextBox
+                              .TextBoxCurrent
                               .Lines
                               .Select(l => ( l.StartsWith("# ") ? l.Remove(0, 2) : l ).TrimStart())
                               .Where(l => !l.StartsWith("--"))

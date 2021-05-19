@@ -145,20 +145,27 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Stop, $"GC: {SystemStatistics.Instance.MemoryGC} | Peak: {SystemStatistics.Instance.MemoryGCPeak}");
     }
 
-    public static void ClearTraces(bool norestart = false)
+    static public IEnumerable<string> GetTraceFiles()
+    {
+      string folder = Globals.SinkFileFolderPath;
+      string code = Globals.SinkFileCode;
+      string extension = Globals.SinkFileExtension;
+      foreach ( string file in Directory.GetFiles(folder, code + "*" + extension) )
+        // TODO if (not locked)
+        yield return file;
+    }
+
+    static public void ClearTraces(bool norestart = false)
     {
       try
       {
         bool isEnabled = _Enabled;
         try
         {
-          string folder = Globals.SinkFileFolderPath;
-          string code = Globals.SinkFileCode;
-          string extension = Globals.SinkFileExtension;
           Stop();
-          foreach ( string path in Directory.GetFiles(folder, code + "*" + extension) )
-            try { File.Delete(path); } catch { }
-          TraceForm?.TextBox.Clear();
+          foreach ( string file in GetTraceFiles() )
+            try { File.Delete(file); } catch { }
+          TraceForm?.TextBoxCurrent.Clear();
         }
         finally
         {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -57,6 +57,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Term \"{0}\" not found.",
         [Language.FR] = "Terme \"{0}\" non trouvé."
+      };
+
+    static public readonly TranslationsDictionary AskToDeleteFile
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Delete file:{Globals.NL2}{{0}}?",
+        [Language.FR] = $"Effacer le fichier :{Globals.NL2}{{0}}?",
       };
 
     static public readonly TranslationsDictionary AskToOpenAllLinks

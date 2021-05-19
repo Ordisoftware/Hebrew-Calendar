@@ -141,7 +141,7 @@ namespace Ordisoftware.Core
     static private ulong _CPUProcessLoadAverage;
 
     public string CPUProcessLoadAverage
-      => _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
+      => _CPUprocessLoadCount == 0 ? "-" : _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
 
     public string CPUProcessLoadMax
       => _CPUProcessLoadMax + "%";

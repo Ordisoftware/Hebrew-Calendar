@@ -121,9 +121,9 @@
     <value>Fermer</value>
   </data>
   <data name="TabPageCurrent.Text" xml:space="preserve">
-    <value>Session</value>
+    <value>En cours</value>
   </data>
-  <data name="TabPagePrevious" xml:space="preserve">
+  <data name="TabPagePrevious.Text" xml:space="preserve">
     <value>Précédents</value>
   </data>
 </root>

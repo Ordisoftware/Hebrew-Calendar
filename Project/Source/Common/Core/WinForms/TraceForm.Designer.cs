@@ -38,14 +38,19 @@
       this.PanelSeparator = new System.Windows.Forms.Panel();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageCurrent = new System.Windows.Forms.TabPage();
-      this.TabPageFile = new System.Windows.Forms.TabPage();
-      this.TextBox = new Ordisoftware.Core.RichTextBoxEx();
-      this.richTextBoxEx1 = new Ordisoftware.Core.RichTextBoxEx();
+      this.TextBoxCurrent = new Ordisoftware.Core.RichTextBoxEx();
+      this.TabPagePrevious = new System.Windows.Forms.TabPage();
+      this.TextBoxPrevious = new Ordisoftware.Core.RichTextBoxEx();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.SelectFile = new System.Windows.Forms.ComboBox();
+      this.ActionRefreshFiles = new System.Windows.Forms.Button();
+      this.ActionDeleteFile = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
       this.TabControl.SuspendLayout();
       this.TabPageCurrent.SuspendLayout();
-      this.TabPageFile.SuspendLayout();
+      this.TabPagePrevious.SuspendLayout();
+      this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -102,46 +107,82 @@
       // 
       // TabControl
       // 
-      this.TabControl.Controls.Add(this.TabPageCurrent);
-      this.TabControl.Controls.Add(this.TabPageFile);
       resources.ApplyResources(this.TabControl, "TabControl");
+      this.TabControl.Controls.Add(this.TabPageCurrent);
+      this.TabControl.Controls.Add(this.TabPagePrevious);
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
+      this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TextBox_TextChanged);
       // 
       // TabPageCurrent
       // 
-      this.TabPageCurrent.Controls.Add(this.TextBox);
+      this.TabPageCurrent.Controls.Add(this.TextBoxCurrent);
       resources.ApplyResources(this.TabPageCurrent, "TabPageCurrent");
       this.TabPageCurrent.Name = "TabPageCurrent";
       this.TabPageCurrent.UseVisualStyleBackColor = true;
       // 
-      // TabPageFile
+      // TextBoxCurrent
       // 
-      this.TabPageFile.Controls.Add(this.richTextBoxEx1);
-      resources.ApplyResources(this.TabPageFile, "TabPageFile");
-      this.TabPageFile.Name = "TabPageFile";
-      this.TabPageFile.UseVisualStyleBackColor = true;
+      this.TextBoxCurrent.BackColor = System.Drawing.SystemColors.Window;
+      this.TextBoxCurrent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.TextBoxCurrent, "TextBoxCurrent");
+      this.TextBoxCurrent.Name = "TextBoxCurrent";
+      this.TextBoxCurrent.ReadOnly = true;
+      this.TextBoxCurrent.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
+      this.TextBoxCurrent.TabStop = false;
+      this.TextBoxCurrent.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
       // 
-      // TextBox
+      // TabPagePrevious
       // 
-      this.TextBox.BackColor = System.Drawing.SystemColors.Window;
-      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.TextBox, "TextBox");
-      this.TextBox.Name = "TextBox";
-      this.TextBox.ReadOnly = true;
-      this.TextBox.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
-      this.TextBox.TabStop = false;
-      this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+      this.TabPagePrevious.Controls.Add(this.TextBoxPrevious);
+      this.TabPagePrevious.Controls.Add(this.panel1);
+      resources.ApplyResources(this.TabPagePrevious, "TabPagePrevious");
+      this.TabPagePrevious.Name = "TabPagePrevious";
+      this.TabPagePrevious.UseVisualStyleBackColor = true;
       // 
-      // richTextBoxEx1
+      // TextBoxPrevious
       // 
-      this.richTextBoxEx1.BackColor = System.Drawing.SystemColors.Window;
-      this.richTextBoxEx1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.richTextBoxEx1, "richTextBoxEx1");
-      this.richTextBoxEx1.Name = "richTextBoxEx1";
-      this.richTextBoxEx1.ReadOnly = true;
-      this.richTextBoxEx1.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
-      this.richTextBoxEx1.TabStop = false;
+      this.TextBoxPrevious.BackColor = System.Drawing.SystemColors.Window;
+      this.TextBoxPrevious.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.TextBoxPrevious, "TextBoxPrevious");
+      this.TextBoxPrevious.Name = "TextBoxPrevious";
+      this.TextBoxPrevious.ReadOnly = true;
+      this.TextBoxPrevious.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
+      this.TextBoxPrevious.TabStop = false;
+      this.TextBoxPrevious.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+      // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.SelectFile);
+      this.panel1.Controls.Add(this.ActionRefreshFiles);
+      this.panel1.Controls.Add(this.ActionDeleteFile);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // SelectFile
+      // 
+      this.SelectFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectFile.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectFile, "SelectFile");
+      this.SelectFile.Name = "SelectFile";
+      this.SelectFile.SelectedIndexChanged += new System.EventHandler(this.SelectFile_SelectedIndexChanged);
+      this.SelectFile.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectFile_Format);
+      // 
+      // ActionRefreshFiles
+      // 
+      this.ActionRefreshFiles.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionRefreshFiles, "ActionRefreshFiles");
+      this.ActionRefreshFiles.Name = "ActionRefreshFiles";
+      this.ActionRefreshFiles.UseVisualStyleBackColor = true;
+      this.ActionRefreshFiles.Click += new System.EventHandler(this.ActionRefreshFiles_Click);
+      // 
+      // ActionDeleteFile
+      // 
+      this.ActionDeleteFile.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionDeleteFile, "ActionDeleteFile");
+      this.ActionDeleteFile.Name = "ActionDeleteFile";
+      this.ActionDeleteFile.UseVisualStyleBackColor = true;
+      this.ActionDeleteFile.Click += new System.EventHandler(this.ActionDeleteFile_Click);
       // 
       // TraceForm
       // 
@@ -158,12 +199,14 @@
       this.Deactivate += new System.EventHandler(this.TraceForm_Deactivate);
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TraceForm_FormClosing);
       this.Load += new System.EventHandler(this.LogForm_Load);
+      this.Shown += new System.EventHandler(this.TraceForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
       this.TabControl.ResumeLayout(false);
       this.TabPageCurrent.ResumeLayout(false);
-      this.TabPageFile.ResumeLayout(false);
+      this.TabPagePrevious.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -178,8 +221,12 @@
     private System.Windows.Forms.Button ActionOpenLogsFolder;
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.TabPage TabPageCurrent;
-    private System.Windows.Forms.TabPage TabPageFile;
-    public RichTextBoxEx TextBox;
-    public RichTextBoxEx richTextBoxEx1;
+    private System.Windows.Forms.TabPage TabPagePrevious;
+    public RichTextBoxEx TextBoxCurrent;
+    public RichTextBoxEx TextBoxPrevious;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.ComboBox SelectFile;
+    private System.Windows.Forms.Button ActionRefreshFiles;
+    private System.Windows.Forms.Button ActionDeleteFile;
   }
 }
