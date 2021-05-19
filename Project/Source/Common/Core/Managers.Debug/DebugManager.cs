@@ -167,11 +167,11 @@ namespace Ordisoftware.Core
             logconf.Enrich.With(new ThreadIdEnricher());
             Log.Logger = logconf.WriteTo.File(Globals.SinkFilePatternPath,
                                               shared: SystemManager.AllowMultipleInstances,
-                                              outputTemplate: TraceFileTemplate,
+                                              outputTemplate: Globals.SinkFileTemplate,
                                               rollingInterval: Globals.SinkFileRollingInterval,
                                               fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
                                               retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
-                                .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(TraceFileTemplate))
+                                .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
                                 .CreateLogger();
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += TraceEventAdded;
             WriteHeader();

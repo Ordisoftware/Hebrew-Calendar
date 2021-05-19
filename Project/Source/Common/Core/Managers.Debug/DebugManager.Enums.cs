@@ -44,9 +44,29 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// System event.
+    /// System event (no event level).
     /// </summary>
     System,
+
+    /// <summary>
+    /// Start process event.
+    /// </summary>
+    Start,
+
+    /// <summary>
+    /// Stop process event.
+    /// </summary>
+    Stop,
+
+    /// <summary>
+    /// Enter method event.
+    /// </summary>
+    Enter,
+
+    /// <summary>
+    /// Leave method event.
+    /// </summary>
+    Leave,
 
     /// <summary>
     /// Message event.
@@ -66,17 +86,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Excention event.
     /// </summary>
-    Exception,
-
-    /// <summary>
-    /// Enter method event.
-    /// </summary>
-    Enter,
-
-    /// <summary>
-    /// Leave method event.
-    /// </summary>
-    Leave
+    Exception
 
   }
 

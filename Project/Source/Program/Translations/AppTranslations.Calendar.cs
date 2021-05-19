@@ -85,7 +85,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
-    static public readonly NullSafeDictionary<MoonriseOccuring, TranslationsDictionary> MoonRiseOccuring
+    static public readonly NullSafeDictionary<MoonriseOccuring, TranslationsDictionary> MoonriseOccuring
       = new NullSafeDictionary<MoonriseOccuring, TranslationsDictionary>
       {
         [Calendar.MoonriseOccuring.AfterSet] = new TranslationsDictionary

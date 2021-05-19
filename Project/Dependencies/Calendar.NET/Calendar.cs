@@ -366,6 +366,9 @@ namespace CodeProjectCalendar.NET
       Controls.Add(_scrollPanel);
     }
 
+    public static bool IsVisualStudioDesigner
+      = System.IO.Path.GetFileNameWithoutExtension(Application.ExecutablePath) == "devenv";
+
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
@@ -384,7 +387,7 @@ namespace CodeProjectCalendar.NET
       this._btnToday.ButtonColor = Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
       this._btnToday.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
-      this._btnToday.ButtonText = DesignMode ? "Today" : AppTranslations.Today.GetLang();
+      this._btnToday.ButtonText = DesignMode || IsVisualStudioDesigner ? "Today" : AppTranslations.Today.GetLang();
       // ORDISOFTWARE MODIF END
       this._btnToday.FocusColor = Color.FromArgb(( (int)( ( (byte)( 77 ) ) ) ), ( (int)( ( (byte)( 144 ) ) ) ), ( (int)( ( (byte)( 254 ) ) ) ));
       this._btnToday.HighlightBorderColor = Color.FromArgb(( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ), ( (int)( ( (byte)( 198 ) ) ) ));
@@ -918,7 +921,7 @@ namespace CodeProjectCalendar.NET
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
-      if ( Globals.IsVisualStudioDesigner ) return;
+      if ( IsVisualStudioDesigner ) return;
       var brushDayFore = new SolidBrush(CurrentDayForeColor);
       var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();

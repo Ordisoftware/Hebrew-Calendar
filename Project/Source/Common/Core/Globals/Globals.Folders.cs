@@ -50,10 +50,16 @@ namespace Ordisoftware.Core
       => Path.Combine(BinDirectoryName, "Release");
 
     /// <summary>
+    /// Indicate the application executable file path.
+    /// </summary>
+    static public string ApplicationExeFullPath
+      => System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+
+    /// <summary>
     /// Indicate the application executable file name.
     /// </summary>
     static public string ApplicationExeFileName
-      => Path.GetFileNameWithoutExtension(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+      => Path.GetFileNameWithoutExtension(ApplicationExeFullPath);
 
     /// <summary>
     /// Indicate the application full file name.
