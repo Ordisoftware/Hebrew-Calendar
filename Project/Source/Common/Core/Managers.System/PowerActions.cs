@@ -10,7 +10,7 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2021-05 </edited>
+/// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
 

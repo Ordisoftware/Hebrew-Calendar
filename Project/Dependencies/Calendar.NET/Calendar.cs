@@ -918,6 +918,7 @@ namespace CodeProjectCalendar.NET
 
     private void RenderMonthCalendar(PaintEventArgs e)
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       var brushDayFore = new SolidBrush(CurrentDayForeColor);
       var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();

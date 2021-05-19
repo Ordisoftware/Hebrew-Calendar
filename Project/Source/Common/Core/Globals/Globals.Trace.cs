@@ -13,6 +13,8 @@
 /// <created> 2016-04 </created>
 /// <edited> 2020-08 </edited>
 using System;
+using System.IO;
+using Serilog;
 
 namespace Ordisoftware.Core
 {
@@ -26,14 +28,20 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the trace file mode.
     /// </summary>
-    static public TraceFileRollOverMode TraceFileMode { get; set; }
-     = TraceFileRollOverMode.Daily;
+    static public TraceFileRollOverMode TraceFileMode
+      => TraceFileRollOverMode.Daily;
+
+    static public RollingInterval SinkFileTraceFileMode
+      => RollingInterval.Day;
 
     /// <summary>
     /// Indicate the trace files keep count.
     /// </summary>
     static public int TraceFilesKeepCount { get; set; }
-     = 7;
+      = 7;
+
+    static public int SinkFileTraceFilesKeepCount { get; set; }
+      = 7;
 
     /// <summary>
     /// Indicate the log/trace directory name.
@@ -41,17 +49,29 @@ namespace Ordisoftware.Core
     static public string TraceDirectoryName { get; set; }
       = "Logs";
 
+    static public string SinkTraceDirectoryName { get; set; }
+      = "Serilog";
+
     /// <summary>
     /// Indicate the trace file code.
     /// </summary>
     static public string TraceFileCode { get; set; }
-      = "Trace";
+      = ApplicationGitHubCode + "-Trace-";
 
     /// <summary>
     /// Indicate the trace file extension.
     /// </summary>
     static public string TraceFileExtension { get; set; }
       = ".log";
+
+    /// <summary>
+    /// Indicate the user application trace folder path.
+    /// </summary>
+    static public string TraceFolderPath
+      => Path.Combine(UserDataFolderPath, TraceDirectoryName);
+
+    static public string SinkTraceFolderPath
+      => Path.Combine(UserDataFolderPath, SinkTraceDirectoryName);
 
   }
 

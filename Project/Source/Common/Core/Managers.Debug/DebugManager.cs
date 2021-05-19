@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -281,7 +281,7 @@ namespace Ordisoftware.Core
       if ( !( ex is AbortException ) )
       {
         StackSkip++;
-        Managepublic(sender, ex, show);
+        ManageInternal(sender, ex, show);
       }
       Leavepublic();
     }
@@ -293,7 +293,7 @@ namespace Ordisoftware.Core
     /// <param name="ex">The ex.</param>
     static private void Managepublic(object sender, Exception ex)
     {
-      Managepublic(sender, ex, DeaultShowExceptionMode);
+      ManageInternal(sender, ex, DeaultShowExceptionMode);
     }
 
     /// <summary>
@@ -302,7 +302,7 @@ namespace Ordisoftware.Core
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
     /// <param name="show">The show mode.</param>
-    static private void Managepublic(object sender, Exception ex, ShowExceptionMode show)
+    static private void ManageInternal(object sender, Exception ex, ShowExceptionMode show)
     {
       bool process = true;
       var einfo = new ExceptionInfo(sender, ex);
@@ -333,6 +333,9 @@ namespace Ordisoftware.Core
             break;
           case ShowExceptionMode.Advanced:
             ShowAdvanced(einfo);
+            break;
+          case ShowExceptionMode.OnlyMessage:
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             break;
           default:
             ShowSimple(einfo);

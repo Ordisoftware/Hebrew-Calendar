@@ -47,10 +47,9 @@ namespace Ordisoftware.Core
 
     public event DataLoadedEventHandler DataLoaded;
 
-    private readonly Dictionary<string, object> Tables;
-
     protected SQLiteDatabase(string connectionString)
     {
+      if ( Globals.IsVisualStudioDesigner ) return;
       ConnectionString = connectionString;
       Connection = new SQLiteNetORM(ConnectionString);
     }

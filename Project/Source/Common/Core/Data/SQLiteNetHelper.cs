@@ -151,7 +151,7 @@ namespace Ordisoftware.Core
     ///  Vacuum the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
-    static public void Vacuum(this SQLiteNetORM connection, bool noerror = false)
+    static public void Vacuum(this SQLiteNetORM connection)
     {
       SystemManager.TryCatchManage(() => { connection.Execute("VACUUM"); });
     }
@@ -303,6 +303,8 @@ namespace Ordisoftware.Core
     /// <param name="type">The type of the column.</param>
     /// <param name="valueDefault">The default value.</param>
     /// <param name="valueNotNull">Indicate if not null.</param>
+    /// <param name="isPrimary">Indicate if primary key.</param>
+    /// <param name="isAutoInc">INdicate if auto inc.</param>
     /// <returns>True if the column exists else false even if created.</returns>
     static public bool CheckColumn(this SQLiteNetORM connection,
                                    string table,

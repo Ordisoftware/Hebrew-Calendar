@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -24,7 +24,8 @@ namespace Ordisoftware.Core
   {
     None,
     Simple,
-    Advanced
+    Advanced,
+    OnlyMessage
   }
 
   /// <summary>
