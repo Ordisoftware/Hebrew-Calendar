@@ -134,7 +134,7 @@ namespace Ordisoftware.Core
       try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); }
       catch { platform = "Unknown platform"; }
       Trace(LogTraceEvent.Start, Globals.AssemblyTitle);
-      Trace(LogTraceEvent.Start, Globals.ApplicationExePath);
+      Trace(LogTraceEvent.Start, Globals.ApplicationExeFullPath);
       Trace(LogTraceEvent.Start, platform);
       Trace(LogTraceEvent.Start, $"FreeMem: {SystemStatistics.Instance.PhysicalMemoryFree} | RAM: {SystemStatistics.Instance.TotalVisibleMemory}");
     }
