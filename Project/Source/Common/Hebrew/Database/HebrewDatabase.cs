@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew
       Open();
       CheckConnected();
       Connection.CheckIntegrity();
-      Connection.Vacuum(true);
+      Connection.Vacuum();
     }
 
     protected override void DoClose()

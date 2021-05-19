@@ -31,12 +31,12 @@ namespace Ordisoftware.Hebrew.Calendar
         ["8.0"] = new TranslationsDictionary
         {
           [Language.EN] = "Added option to set automatic computer lockout mode" + Globals.NL +
-                          "Some improvements and fixes." + Globals.NL +
+                          "Some fixes and improvements." + Globals.NL +
                           "Overall performances are optimized." + Globals.NL +
                           "SQLite ODBC Driver is no more needed.",
 
           [Language.FR] = "Ajout d'une option pour définir le mode automatique de blocage de l'ordinateur." + Globals.NL +
-                          "Quelques améliorations et quelques corrections." + Globals.NL +
+                          "Quelques corrections et améliorations." + Globals.NL +
                           "Les performances globales sont optimisées." + Globals.NL +
                           "Le pilote SQLite ODBC n'est plus nécessaire. "
         },

@@ -136,12 +136,6 @@ namespace Ordisoftware.Core
       => Path.Combine(RootFolderPath, "Sounds");
 
     /// <summary>
-    /// Indicate the user applicationtrace folder path.
-    /// </summary>
-    static public string TraceFolderPath
-      => Path.Combine(UserDataFolderPath, TraceDirectoryName);
-
-    /// <summary>
     /// Indicate the user applicationdatabase folder path.
     /// </summary>
     static public string DatabaseFolderPath

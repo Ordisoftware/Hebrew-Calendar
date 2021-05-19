@@ -37,6 +37,8 @@ namespace Ordisoftware.Hebrew.Calendar
           UserParashot = HebrewDatabase.Instance.TakeParashot();
           HebrewDatabase.Instance.ReleaseParashot();
           Globals.ChronoLoadData.Stop();
+          Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+          Settings.Save();
         });
         Program.UpdateLocalization();
         task.Wait();
@@ -127,8 +129,6 @@ namespace Ordisoftware.Hebrew.Calendar
           ex.Manage();
           Globals.ChronoStartingApp.Start();
         }
-        Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-        Settings.Save();
       }
     }
 

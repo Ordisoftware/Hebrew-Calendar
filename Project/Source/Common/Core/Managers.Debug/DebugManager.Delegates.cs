@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="filePath">The new file path.</param>
-  delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
+  //delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
 
   /// <summary>
   /// Delegate for handling before show exception events.

@@ -36,9 +36,16 @@
       this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
+      this.TabControl = new System.Windows.Forms.TabControl();
+      this.TabPageCurrent = new System.Windows.Forms.TabPage();
+      this.TabPageFile = new System.Windows.Forms.TabPage();
       this.TextBox = new Ordisoftware.Core.RichTextBoxEx();
+      this.richTextBoxEx1 = new Ordisoftware.Core.RichTextBoxEx();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
+      this.TabControl.SuspendLayout();
+      this.TabPageCurrent.SuspendLayout();
+      this.TabPageFile.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -93,6 +100,28 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
+      // TabControl
+      // 
+      this.TabControl.Controls.Add(this.TabPageCurrent);
+      this.TabControl.Controls.Add(this.TabPageFile);
+      resources.ApplyResources(this.TabControl, "TabControl");
+      this.TabControl.Name = "TabControl";
+      this.TabControl.SelectedIndex = 0;
+      // 
+      // TabPageCurrent
+      // 
+      this.TabPageCurrent.Controls.Add(this.TextBox);
+      resources.ApplyResources(this.TabPageCurrent, "TabPageCurrent");
+      this.TabPageCurrent.Name = "TabPageCurrent";
+      this.TabPageCurrent.UseVisualStyleBackColor = true;
+      // 
+      // TabPageFile
+      // 
+      this.TabPageFile.Controls.Add(this.richTextBoxEx1);
+      resources.ApplyResources(this.TabPageFile, "TabPageFile");
+      this.TabPageFile.Name = "TabPageFile";
+      this.TabPageFile.UseVisualStyleBackColor = true;
+      // 
       // TextBox
       // 
       this.TextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -104,13 +133,23 @@
       this.TextBox.TabStop = false;
       this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
       // 
+      // richTextBoxEx1
+      // 
+      this.richTextBoxEx1.BackColor = System.Drawing.SystemColors.Window;
+      this.richTextBoxEx1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.richTextBoxEx1, "richTextBoxEx1");
+      this.richTextBoxEx1.Name = "richTextBoxEx1";
+      this.richTextBoxEx1.ReadOnly = true;
+      this.richTextBoxEx1.SelectionAlignment = Ordisoftware.Core.TextAlign.Left;
+      this.richTextBoxEx1.TabStop = false;
+      // 
       // TraceForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.TextBox);
+      this.Controls.Add(this.TabControl);
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.PanelBottom);
       this.Name = "TraceForm";
@@ -121,7 +160,10 @@
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
+      this.TabControl.ResumeLayout(false);
+      this.TabPageCurrent.ResumeLayout(false);
+      this.TabPageFile.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -134,6 +176,10 @@
     private System.Windows.Forms.Button ActionClearLogs;
     private System.Windows.Forms.TrackBar TrackBarFontSize;
     private System.Windows.Forms.Button ActionOpenLogsFolder;
+    private System.Windows.Forms.TabControl TabControl;
+    private System.Windows.Forms.TabPage TabPageCurrent;
+    private System.Windows.Forms.TabPage TabPageFile;
     public RichTextBoxEx TextBox;
+    public RichTextBoxEx richTextBoxEx1;
   }
 }

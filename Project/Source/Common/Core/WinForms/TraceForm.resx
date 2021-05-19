@@ -353,13 +353,13 @@
     <value>Courier New, 8.25pt</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+    <value>3, 3</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 603</value>
+    <value>851, 571</value>
   </data>
   <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="TextBox.Text" xml:space="preserve">
     <value />
@@ -371,12 +371,123 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>TabPageCurrent</value>
   </data>
   <data name="&gt;&gt;TextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageCurrent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageCurrent.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>857, 577</value>
+  </data>
+  <data name="TabPageCurrent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPageCurrent.Text" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="&gt;&gt;TabPageCurrent.Name" xml:space="preserve">
+    <value>TabPageCurrent</value>
+  </data>
+  <data name="&gt;&gt;TabPageCurrent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageCurrent.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageCurrent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="richTextBoxEx1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="richTextBoxEx1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="richTextBoxEx1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>850, 571</value>
+  </data>
+  <data name="richTextBoxEx1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="richTextBoxEx1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBoxEx1.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Name" xml:space="preserve">
+    <value>richTextBoxEx1</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Parent" xml:space="preserve">
+    <value>TabPageFile</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>856, 577</value>
+  </data>
+  <data name="TabPageFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TabPageFile.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="&gt;&gt;TabPageFile.Name" xml:space="preserve">
+    <value>TabPageFile</value>
+  </data>
+  <data name="&gt;&gt;TabPageFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFile.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 603</value>
+  </data>
+  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -387,6 +498,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>884, 661</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
