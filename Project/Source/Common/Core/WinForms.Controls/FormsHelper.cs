@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -84,11 +84,11 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Get all controls of a control.
     /// </summary>
-    static public IEnumerable<T> AllControls<T>(this Control control)
+    static public IEnumerable<T> GetAllControls<T>(this Control control)
     {
       var controls = control.Controls.OfType<T>();
       return control.Controls.Cast<Control>()
-                             .SelectMany(c => c.AllControls<T>())
+                             .SelectMany(c => c.GetAllControls<T>())
                              .Concat(controls);
     }
 
@@ -395,14 +395,70 @@ namespace Ordisoftware.Core
       return destImage;
     }
 
+    static public List<Point> GetGridPoints(this Control control, int margin = 15)
+    {
+      int widthDiv2 = control.Width / 2;
+      int heightDiv2 = control.Height / 2;
+      int widthDiv4 = widthDiv2 / 4;
+      int heightDiv4 = heightDiv2 / 4;
+      var points = new List<Point>();
+      // Center
+      points.Add(new Point(control.Left + widthDiv2, control.Top + heightDiv2));
+      // Corners
+      points.Add(new Point(control.Left + margin, control.Top + margin));
+      points.Add(new Point(control.Right - margin, control.Top + margin));
+      points.Add(new Point(control.Left + margin, control.Bottom - margin));
+      points.Add(new Point(control.Right - margin, control.Bottom - margin));
+      // Borders
+      points.Add(new Point(control.Left + widthDiv4, control.Top + heightDiv4));
+      points.Add(new Point(control.Right - widthDiv4, control.Top + heightDiv4));
+      points.Add(new Point(control.Left + widthDiv4, control.Bottom - heightDiv4));
+      points.Add(new Point(control.Right - widthDiv4, control.Bottom - heightDiv4));
+      // Inner
+      points.Add(new Point(control.Left + widthDiv2, control.Top + margin));
+      points.Add(new Point(control.Left + widthDiv2, control.Bottom - margin));
+      points.Add(new Point(control.Left + margin, control.Top + heightDiv2));
+      points.Add(new Point(control.Right - margin, control.Top + heightDiv2));
+      return points;
+    }
+
     /// <summary>
-    /// Apply "justify" to the text of a control.
+    /// Indicate if a control is visible on the screen over others.
+    /// https://stackoverflow.com/questions/1649959/how-to-check-if-window-is-really-visible-in-windows-forms
     /// </summary>
+    static public bool IsVisibleOnTop(this Control control, int requiredPercent = 100, int margin = 15)
+    {
+      if ( !control.Visible ) return false;
+      var controls = control.GetAllControls<Control>().Select(c => c.Handle).ToList();
+      var points = control.GetGridPoints(margin);
+      bool all = requiredPercent == 100;
+      int found = 0;
+      int required = points.Count();
+      if ( !all ) required = required * requiredPercent / 100;
+      foreach ( var point in points )
+      {
+        var handle = NativeMethods.WindowFromPoint(new NativeMethods.PointStruct(point.X, point.Y));
+        if ( handle == control.Handle || controls.Contains(handle) )
+        {
+          if ( ++found == required ) return true;
+        }
+        else
+        {
+          if ( all ) return false;
+        }
+      }
+      return false;
+    }
+
     static public void SetTextJustified(this Control control, string text, int width)
     {
       control.Text = JustifyParagraph(text, width, control.Font);
     }
+
+    /// <summary>
+    /// Apply "justify" to the text of a control.
     // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
+    /// </summary>
     static public string JustifyParagraph(string text, int width, Font font)
     {
       var result = new StringBuilder();
