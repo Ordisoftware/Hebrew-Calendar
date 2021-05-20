@@ -13,6 +13,7 @@
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -23,7 +24,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool GoToDateMutex;
 
-    public void GoToDate(DateTime date)
+    public void GoToDate(DateTime date,
+                         bool bringToFront = false,
+                         bool onlyIfOpened = true,
+                         bool onlyIfNotMinimized = false,
+                         Form regetFocus = null)
     {
       if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
       if ( date < DateFirst ) date = DateFirst;
@@ -61,6 +66,18 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       });
       GoToDateMutex = false;
+      if ( bringToFront )
+      {
+        if ( !Visible && !onlyIfOpened )
+          MenuShowHide_Click(null, null);
+        else
+        if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
+          this.Restore();
+        else
+        if ( !this.IsVisibleOnTop(80) )
+          this.Popup();
+        regetFocus?.Popup();
+      }
     }
 
   }

@@ -216,7 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.MenuShowHide_Click(null, null);
       else
         MainForm.Instance.Popup();
-      MainForm.Instance.GoToDate((DateTime)value);
+      MainForm.Instance.GoToDate((DateTime)value, true);
     }
 
     private void CreateDataTable()

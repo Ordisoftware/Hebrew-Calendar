@@ -15,7 +15,6 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
@@ -25,22 +24,12 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class NavigationForm : Form
   {
 
-    static private Image Image;
-
     private const string NoDataField = "-";
 
     static public NavigationForm Instance { get; private set; }
 
     static NavigationForm()
     {
-      try
-      {
-        Image = Image.FromFile(Program.ApplicationImage32FilePath);
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ApplicationImage32FilePath, ex.Message));
-      }
       Instance = new NavigationForm();
     }
 
@@ -146,7 +135,6 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelTop.BackColor = Program.Settings.NavigateTopColor;
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
-      if ( Image != null ) ActionShowMainForm.Image = Image;
       InitializeMenu();
     }
 
@@ -228,25 +216,27 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var date = DateTime.Today;
       if ( SelectDayForm.Run(null, ref date, true, true) )
-        MainForm.Instance.GoToDate(date);
+        MainForm.Instance.GoToDate(date, true, true, true);
       else
         SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
     }
 
     private void ActionPreviousDay_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.GoToDate(_Date.AddDays(-1));
+      MainForm.Instance.GoToDate(_Date.AddDays(-1), true, true, true);
     }
 
     private void ActionNextDay_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.GoToDate(_Date.AddDays(1));
+      MainForm.Instance.GoToDate(_Date.AddDays(1), true, true, true);
     }
 
     private void LabelDay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( sender is LinkLabel label && label.Tag != null )
-        MainForm.Instance.GoToDate((DateTime)label.Tag);
+      {
+        MainForm.Instance.GoToDate((DateTime)label.Tag, true, true, true);
+      }
     }
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -262,13 +252,10 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewParashahInfos.Enabled = false;
     }
 
-    private void ActionShowMainForm_Click(object sender, EventArgs e)
+    private void PictureMoon_Click(object sender, EventArgs e)
     {
-      if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
-      {
-        MainForm.Instance.MenuShowHide_Click(null, null);
-        this.Popup();
-      }
+      MainForm.Instance.MenuShowHide_Click(null, null);
+      this.Popup();
     }
 
   }

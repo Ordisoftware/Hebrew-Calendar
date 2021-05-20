@@ -320,12 +320,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
-      MainForm.Instance.GoToDate((DateTime)LabelDate.Tag);
-      if ( !MainForm.Instance.Visible || MainForm.Instance.WindowState == FormWindowState.Minimized )
-      {
-        MainForm.Instance.MenuShowHide_Click(null, null);
-        this.Popup();
-      }
+      MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, this);
     }
 
     private void ActionSetup_Click(object sender, EventArgs e)
