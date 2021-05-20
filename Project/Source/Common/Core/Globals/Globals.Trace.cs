@@ -27,11 +27,17 @@ namespace Ordisoftware.Core
 
     public const string OldTraceDirectoryName = "Logs";
 
+    static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
+      = TraceFileRollOverMode.Session;
+
     static public RollingInterval SinkFileRollingInterval { get; set; }
       = IsVisualStudioDesigner ? 0 : RollingInterval.Day;
 
     static public int SinkFileRetainedFileCountLimit { get; set; }
       = 7;
+
+    static public int SessionFileRetainedFileCountLimit { get; set; }
+      = 20;
 
     static public int SinkFileSizeLimitBytes { get; set; }
       = 100 * 1024 * 1024;
@@ -72,7 +78,10 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the serilog sink file absolute full path and name pattern.
     /// </summary>
-    static public string SinkFilePatternPath
+    static public string SinkFileNoRollingPatternPath
+      => Path.Combine(SinkFileFolderPath, SinkFileCode) + "%DATETIME%" + SinkFileExtension;
+
+    static public string SinkFileRollingPatternPath
       => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileExtension;
 
   }

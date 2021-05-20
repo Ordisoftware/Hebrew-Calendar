@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunarMonthsForm : Form
   {
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public LunarMonthsForm Instance { get; private set; }
 
     static LunarMonthsForm()
@@ -79,8 +81,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSwapColors_Click(object sender, EventArgs e)
     {
-      Program.Settings.LunarMonthsFormUseColors = Program.Settings.LunarMonthsFormUseColors.Next();
-      Program.Settings.Save();
+      Settings.LunarMonthsFormUseColors = Program.Settings.LunarMonthsFormUseColors.Next();
+      SystemManager.TryCatch(Settings.Save);
       CreateControls();
     }
 
@@ -164,7 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
       HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index],
-                                    Program.Settings.HebrewLettersExe);
+                                    Settings.HebrewLettersExe);
     }
 
     private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
@@ -173,7 +175,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
       HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
-                                            Program.Settings.HebrewWordsExe);
+                                            Settings.HebrewWordsExe);
     }
 
   }

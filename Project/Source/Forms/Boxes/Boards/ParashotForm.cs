@@ -202,7 +202,7 @@ namespace Ordisoftware.Hebrew
       Settings.ParashotFormClientSize = ClientSize;
       Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Settings.ParashotFormFontSize = EditFontSize.Value;
-      Settings.Save();
+      SystemManager.TryCatch(Settings.Save);
       MainForm.UserParashot = HebrewDatabase.Instance.Parashot;
       HebrewDatabase.Instance.ReleaseParashot();
       UpdateStats();

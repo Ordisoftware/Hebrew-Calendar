@@ -28,14 +28,14 @@ namespace Ordisoftware.Core
     OnlyMessage
   }
 
-  ///// <summary>
-  ///// INdicate trace file roll over mode.
-  ///// </summary>
-  //public enum TraceFileRollOverMode
-  //{
-  //  Daily,
-  //  Monthly
-  //}
+  /// <summary>
+  /// Indicate trace file roll over mode.
+  /// </summary>
+  public enum TraceFileRollOverMode
+  {
+    Session,
+    SinkFile
+  }
 
   /// <summary>
   /// Provide log event enum.
@@ -67,6 +67,11 @@ namespace Ordisoftware.Core
     /// Leave method event.
     /// </summary>
     Leave,
+
+    /// <summary>
+    /// Finished method event.
+    /// </summary>
+    Complete,
 
     /// <summary>
     /// Message event.

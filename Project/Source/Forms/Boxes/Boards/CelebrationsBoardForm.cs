@@ -29,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string TableName = "Celebrations";
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public CelebrationsBoardForm Instance { get; private set; }
 
     static public void Run()
@@ -53,10 +55,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      Text += $" ({Program.Settings.GPSCountry}, {Program.Settings.GPSCity})";
-      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay)}";
+      Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
+      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Text += " - ";
-      Text += Program.Settings.TorahEventsCountAsMoon
+      Text += Settings.TorahEventsCountAsMoon
               ? AppTranslations.OmerMoon.GetLang()
               : AppTranslations.OmerSun.GetLang();
       Title = Text + " - ";
@@ -71,10 +73,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CelebrationsBoardForm_Load(object sender, EventArgs e)
     {
-      Location = Program.Settings.CelebrationsBoardFormLocation;
-      ClientSize = Program.Settings.CelebrationsBoardFormClientSize;
+      Location = Settings.CelebrationsBoardFormLocation;
+      ClientSize = Settings.CelebrationsBoardFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Program.Settings.CelebrationsBoardFormWindowState;
+      WindowState = Settings.CelebrationsBoardFormWindowState;
       CreateDataTable();
       LoadGrid();
     }
@@ -89,12 +91,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = null;
       if ( WindowState == FormWindowState.Minimized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.CelebrationsBoardFormWindowState = WindowState;
+      Settings.CelebrationsBoardFormWindowState = WindowState;
       if ( WindowState == FormWindowState.Maximized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.CelebrationsBoardFormLocation = Location;
-      Program.Settings.CelebrationsBoardFormClientSize = ClientSize;
-      Program.Settings.Save();
+      Settings.CelebrationsBoardFormLocation = Location;
+      Settings.CelebrationsBoardFormClientSize = ClientSize;
+      SystemManager.TryCatch(Settings.Save);
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -223,7 +225,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CreateDataTable()
     {
-      Program.Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
+      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board = new DataTable(TableName);
@@ -249,22 +251,22 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExport_Click(object sender, EventArgs e)
     {
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName) + " "
-                                                     + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
-      if ( Program.Settings.TorahEventsCountAsMoon )
+                                                     + AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon][Language.EN];
+      if ( Settings.TorahEventsCountAsMoon )
         MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Moonset" : " Moonrise";
       else
         MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Sunset" : " Sunrise";
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
       Board.Export(filePath, Program.BoardExportTargets);
       DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                         Globals.KeyboardSoundFilePath);
-      if ( Program.Settings.AutoOpenExportFolder )
+      if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(filePath));
-      if ( Program.Settings.AutoOpenExportedFile )
+      if ( Settings.AutoOpenExportedFile )
         SystemManager.RunShell(filePath);
     }
 

@@ -240,8 +240,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !IsReady ) return;
       MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
-      Program.Settings.ApplicationVolume = EditVolume.Value;
-      Program.Settings.Save();
+      Settings.ApplicationVolume = EditVolume.Value;
+      SystemManager.TryCatch(Settings.Save);
       DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
     }
 
@@ -331,7 +331,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
     {
-      if ( Created ) Program.Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
+      if ( Created ) Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
       YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
                                        Program.AutoGenerateYearsIntervalMax,
                                        PredefinedYearsItem_Click);

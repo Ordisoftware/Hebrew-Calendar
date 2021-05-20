@@ -62,7 +62,7 @@ namespace Ordisoftware.Core
         {
           settings.Upgrade();
           upgradeRequired = false;
-          settings.Save();
+          try { settings.Save(); } catch { }
         }
       }
       catch ( Exception ex )

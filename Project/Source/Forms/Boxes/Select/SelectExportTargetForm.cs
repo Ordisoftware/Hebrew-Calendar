@@ -28,6 +28,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SelectExportTargetForm : Form
   {
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)
     {
       using ( var form = new SelectExportTargetForm() )
@@ -102,8 +104,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectViewForm_Load(object sender, EventArgs e)
     {
-      EditAutoOpenExportedFile.Checked = Program.Settings.AutoOpenExportedFile;
-      EditAutoOpenExportFolder.Checked = Program.Settings.AutoOpenExportFolder;
+      EditAutoOpenExportedFile.Checked = Settings.AutoOpenExportedFile;
+      EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder;
       var CurrentDay = MainForm.Instance.CurrentDay;
       int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
       if ( year == MainForm.Instance.DateLast.Year ) year--;
@@ -116,9 +118,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectViewForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      Program.Settings.AutoOpenExportedFile = EditAutoOpenExportedFile.Checked;
-      Program.Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
-      Program.Settings.Save();
+      Settings.AutoOpenExportedFile = EditAutoOpenExportedFile.Checked;
+      Settings.AutoOpenExportFolder = EditAutoOpenExportFolder.Checked;
+      SystemManager.TryCatch(Settings.Save);
     }
 
     private void SetFormat()
@@ -146,10 +148,10 @@ namespace Ordisoftware.Hebrew.Calendar
         checkbox.AutoSize = true;
         checkbox.TabStop = true;
         checkbox.TabIndex = index++;
-        if ( item.Key.Equals(Program.Settings[setting]) )
+        if ( item.Key.Equals(Settings[setting]) )
           checkbox.Checked = true;
         checkbox.CheckedChanged += (_s, _e) =>
-          Program.Settings[setting] = ( (KeyValuePair<T, string>)( (RadioButton)_s ).Tag ).Key;
+          Settings[setting] = ( (KeyValuePair<T, string>)( (RadioButton)_s ).Tag ).Key;
         if ( index == 3 )
         {
           posX = 15 + ( GroupBoxFormat.Width - 30 ) / 2;
@@ -164,7 +166,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SelectInterval.Enabled = !( SelectMonth.Checked && ActionToDo == ExportAction.CopyToClipboard );
       GroupBoxFormat.Enabled = ( SelectMonth.Checked && ActionToDo == ExportAction.SaveToFile )
-                            || ( SelectGrid.Checked && ( ActionToDo == ExportAction.SaveToFile || ActionToDo == ExportAction.CopyToClipboard ) );
+                            || ( SelectGrid.Checked && ( ActionToDo == ExportAction.SaveToFile 
+                                                      || ActionToDo == ExportAction.CopyToClipboard ) );
       GroupBoxYears.Enabled = SelectInterval.Checked;
       EditExportDataEnumsAsTranslations.Enabled = SelectGrid.Checked;
       EditPrintImageInLandscape.Enabled = (bool)EditPrintImageInLandscape.Tag && SelectMonth.Checked;

@@ -42,6 +42,7 @@
       this.TabPagePrevious = new System.Windows.Forms.TabPage();
       this.TextBoxPrevious = new Ordisoftware.Core.RichTextBoxEx();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.comboBoxNavigator1 = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectFile = new System.Windows.Forms.ComboBox();
       this.ActionRefreshFiles = new System.Windows.Forms.Button();
       this.ActionDeleteFile = new System.Windows.Forms.Button();
@@ -139,6 +140,7 @@
       resources.ApplyResources(this.TabPagePrevious, "TabPagePrevious");
       this.TabPagePrevious.Name = "TabPagePrevious";
       this.TabPagePrevious.UseVisualStyleBackColor = true;
+      this.TabPagePrevious.Enter += new System.EventHandler(this.TabPagePrevious_Enter);
       // 
       // TextBoxPrevious
       // 
@@ -153,11 +155,20 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.comboBoxNavigator1);
       this.panel1.Controls.Add(this.SelectFile);
       this.panel1.Controls.Add(this.ActionRefreshFiles);
       this.panel1.Controls.Add(this.ActionDeleteFile);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
+      // 
+      // comboBoxNavigator1
+      // 
+      resources.ApplyResources(this.comboBoxNavigator1, "comboBoxNavigator1");
+      this.comboBoxNavigator1.ComboBox = this.SelectFile;
+      this.comboBoxNavigator1.Name = "comboBoxNavigator1";
+      this.comboBoxNavigator1.SelectedIndex = -1;
+      this.comboBoxNavigator1.SelectedItem = null;
       // 
       // SelectFile
       // 
@@ -207,6 +218,7 @@
       this.TabPageCurrent.ResumeLayout(false);
       this.TabPagePrevious.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -228,5 +240,6 @@
     private System.Windows.Forms.ComboBox SelectFile;
     private System.Windows.Forms.Button ActionRefreshFiles;
     private System.Windows.Forms.Button ActionDeleteFile;
+    private ComboBoxNavigator comboBoxNavigator1;
   }
 }

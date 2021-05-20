@@ -15,7 +15,6 @@
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Core
@@ -30,7 +29,7 @@ namespace Ordisoftware.Core
     private TraceForm()
     {
       InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
+      ActiveControl = TabControl;
     }
 
     public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
@@ -58,6 +57,7 @@ namespace Ordisoftware.Core
 
     private void TraceForm_Shown(object sender, EventArgs e)
     {
+      Icon = Globals.MainForm?.Icon;
     }
 
     private void LogForm_Activated(object sender, EventArgs e)
@@ -68,16 +68,17 @@ namespace Ordisoftware.Core
 
     private void TraceForm_Deactivate(object sender, EventArgs e)
     {
-      try
-      {
-        Globals.Settings[LocationPropertyName] = Location;
-        Globals.Settings[ClientSizePropertyName] = ClientSize;
-        Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
-        Globals.Settings.Save();
-      }
-      catch
-      {
-      }
+      if ( Globals.Settings != null )
+        try
+        {
+          Globals.Settings[LocationPropertyName] = Location;
+          Globals.Settings[ClientSizePropertyName] = ClientSize;
+          Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
+          SystemManager.TryCatch(Globals.Settings.Save);
+        }
+        catch
+        {
+        }
     }
 
     private void TraceForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -105,7 +106,7 @@ namespace Ordisoftware.Core
     private void ActionClearLogs_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToClearLogs.GetLang()) ) return;
-      DebugManager.ClearTraces();
+      DebugManager.ClearTraces(false, true);
       Show();
       BringToFront();
     }
@@ -126,16 +127,18 @@ namespace Ordisoftware.Core
       if ( TabControl.SelectedIndex == 0 )
         LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxCurrent.Lines.Length);
       else
+      {
         LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxPrevious.Lines.Length);
+        ActiveControl = SelectFile;
+      }
     }
 
     private void ActionRefreshFiles_Click(object sender, EventArgs e)
     {
       TextBoxPrevious.Clear();
       SelectFile.Items.Clear();
-      foreach ( var file in DebugManager.GetTraceFiles().OrderBy(f => f) )
-        if ( !SystemManager.IsFileLocked(file) )
-          SelectFile.Items.Add(file);
+      foreach ( var file in DebugManager.GetTraceFiles(false) )
+        SelectFile.Items.Add(file);
       SelectFile.Enabled = SelectFile.Items.Count > 0;
       ActionDeleteFile.Enabled = SelectFile.Enabled;
       if ( SelectFile.Enabled )
@@ -150,8 +153,9 @@ namespace Ordisoftware.Core
     private void ActionDeleteFile_Click(object sender, EventArgs e)
     {
       if ( SelectFile.SelectedIndex < 0 ) return;
+      string filePath = (string)SelectFile.SelectedItem;
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteFile.GetLang(SelectFile.Text)) ) return;
-      File.Delete((string)SelectFile.SelectedItem);
+      File.Delete(filePath);
       ActionRefreshFiles.PerformClick();
     }
 
@@ -162,6 +166,9 @@ namespace Ordisoftware.Core
       TextBoxPrevious.Lines = File.ReadAllLines((string)SelectFile.SelectedItem);
     }
 
+    private void TabPagePrevious_Enter(object sender, EventArgs e)
+    {
+    }
   }
 
 }
