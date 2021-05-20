@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var data = GetDayRows(interval).Select(day => new
         {
-          day.Date,
+          day.DateAsString,
           IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
           IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
           day.LunarMonth,

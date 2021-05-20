@@ -116,6 +116,18 @@ namespace Ordisoftware.Core
       public MOUSEKEYBDHARDWAREINPUT Data;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct PointStruct
+    {
+      public int X;
+      public int Y;
+      public PointStruct(int x, int y)
+      {
+        X = x;
+        Y = y;
+      }
+    }
+
     [DllImport("user32.dll")]
     static public extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
@@ -128,6 +140,10 @@ namespace Ordisoftware.Core
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     static public extern bool GetCursorPos(out System.Drawing.Point lpPoint);
+
+    [DllImport("user32.dll")]
+    static public extern IntPtr WindowFromPoint(PointStruct Point);
+
 
     #endregion
 

@@ -52,7 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
           var dayDate = day.Date;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-          result.Append(day.Date + CSVSeparator);
+          result.Append(day.DateAsString + CSVSeparator);
           result.Append(day.IsNewMoon + CSVSeparator);
           result.Append(day.IsFullMoon + CSVSeparator);
           result.Append(day.LunarMonth + CSVSeparator);

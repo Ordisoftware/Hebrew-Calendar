@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.ChronoCreateData.Stop();
           Settings.BenchmarkGenerateYears = Globals.ChronoCreateData.ElapsedMilliseconds;
           Settings.LastGenerated = DateTime.Now;
-                  SystemManager.TryCatch(Settings.Save);
+          SystemManager.TryCatch(Settings.Save);
           if ( Globals.IsGenerating )
             try
             {
@@ -222,6 +222,7 @@ namespace Ordisoftware.Hebrew.Calendar
         day.Sunset = SQLiteDate.Add(ephemeris.Sunset, day.Date);
         day.Moonrise = SQLiteDate.Add(ephemeris.Moonrise, day.Date);
         day.Moonset = SQLiteDate.Add(ephemeris.Moonset, day.Date);
+        day.DateAsString = SQLiteDate.ToString(day.Date);
         day.SunriseAsString = SQLiteDate.ToString(ephemeris.Sunrise);
         day.SunsetAsString = SQLiteDate.ToString(ephemeris.Sunset);
         day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
@@ -243,7 +244,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDay), SQLiteDate.ToString(day.Date), ex) )
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDay), day.DateAsString, ex) )
           return false;
       }
       return true;
@@ -292,7 +293,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyseDays), SQLiteDate.ToString(day.Date), ex) )
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyseDays), day.DateAsString, ex) )
               return false;
           }
       }
@@ -434,7 +435,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch ( Exception ex )
       {
-        if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyzeDay), SQLiteDate.ToString(day.Date), ex) )
+        if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyzeDay), day.DateAsString, ex) )
           return false;
       }
       return true;

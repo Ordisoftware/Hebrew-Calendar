@@ -209,7 +209,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           catch ( Exception ex )
           {
-            if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), SQLiteDate.ToString(row.Date), ex) )
+            if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
               return;
           }
       }

@@ -31,6 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? Sunset { get; set; }
     public DateTime? Moonrise { get; set; }
     public DateTime? Moonset { get; set; }
+    public string DateAsString { get; set; }
     public string SunriseAsString { get; set; }
     public string SunsetAsString { get; set; }
     public string MoonriseAsString { get; set; }
