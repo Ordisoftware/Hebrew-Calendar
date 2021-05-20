@@ -108,7 +108,7 @@ namespace Ordisoftware.Hebrew.Calendar
             finally
             {
               ApplicationDatabase.Instance.Commit();
-              LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+              LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDays;
             }
         }
       }

@@ -13,7 +13,6 @@
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.ComponentModel;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
@@ -32,7 +31,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     public List<LunisolarDay> LunisolarDays { get; private set; }
-    public BindingList<LunisolarDay> LunisolarDaysAsBindingList { get; private set; }
 
     private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
     {
@@ -62,7 +60,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       base.LoadAll();
       LunisolarDays = Connection.Table<LunisolarDay>().ToList();
-      LunisolarDaysAsBindingList = new BindingList<LunisolarDay>(LunisolarDays);
     }
 
     protected override void DoSaveAll()

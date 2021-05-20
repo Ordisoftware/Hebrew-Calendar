@@ -27,108 +27,114 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       bool formEnabled = Enabled;
       ToolStrip.Enabled = false;
+      Globals.IsGenerating = true;
       try
       {
-        var task = Task.Run(() =>
-        {
-          Globals.ChronoLoadData.Start();
-          ApplicationDatabase.Instance.Open();
-          LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
-          UserParashot = HebrewDatabase.Instance.TakeParashot();
-          HebrewDatabase.Instance.ReleaseParashot();
-          Globals.ChronoLoadData.Stop();
-          Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-                  SystemManager.TryCatch(Settings.Save);
-        });
+        var task = Task.Run(LoadDataInit);
         Program.UpdateLocalization();
         task.Wait();
-        if ( LunisolarDays.Count > 0
-          && !Settings.FirstLaunch
-          && !Settings.FirstLaunchV7_0 )
-        {
-          Globals.IsGenerating = true;
-          try
-          {
-            FillMonths();
-          }
-          finally
-          {
-            Globals.IsGenerating = false;
-          }
-          SystemManager.TryCatch(() =>
-          {
-            bool isTextReportLoaded = false;
-            if ( File.Exists(Program.TextReportFilePath) )
-              try
-              {
-                Globals.ChronoLoadData.Start();
-                CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
-                Globals.ChronoLoadData.Stop();
-                isTextReportLoaded = true;
-              }
-              catch ( Exception ex )
-              {
-                Globals.ChronoStartingApp.Stop();
-                string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
-                DisplayManager.ShowWarning(msg);
-                Globals.ChronoStartingApp.Start();
-              }
-            if ( !isTextReportLoaded )
-              CalendarText.Text = GenerateReportText();
-            GoToDate(DateTime.Today);
-          });
-        }
+        if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
+          LoadDataFill();
         else
-        {
-          Globals.ChronoStartingApp.Stop();
-          PreferencesForm.Run();
-          string errors = CheckRegenerateCalendar(true);
-          Globals.ChronoStartingApp.Start();
-          if ( errors != null )
-          {
-            SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
-            throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
-          }
-        }
+          LoadDataGenerate();
       }
       catch ( Exception ex )
       {
         Globals.ChronoStartingApp.Stop();
         ex.Manage();
         DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExitContactSupport.GetLang());
-        Globals.ChronoStartingApp.Start();
       }
       finally
       {
+        Globals.IsGenerating = false;
         ToolStrip.Enabled = formEnabled;
+        LoadDataEnd();
+      }
+    }
+
+    private void LoadDataInit()
+    {
+      Globals.ChronoLoadData.Start();
+      ApplicationDatabase.Instance.Open();
+      LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDays;
+      UserParashot = HebrewDatabase.Instance.TakeParashot();
+      HebrewDatabase.Instance.ReleaseParashot();
+      Globals.ChronoLoadData.Stop();
+      Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+      SystemManager.TryCatch(Settings.Save);
+    }
+
+    private void LoadDataFill()
+    {
+      FillMonths();
+      LoadDataFillReport();
+      GoToDate(DateTime.Today);
+    }
+
+    private void LoadDataFillReport()
+    {
+      bool isTextReportLoaded = false;
+      if ( File.Exists(Program.TextReportFilePath) )
         try
         {
-          if ( Settings.RestoreLastViewAtStartup )
-            SetView(Settings.CurrentView, true);
-          else
-            SetView(ViewMode.Month, true);
-          UpdateButtons();
+          Globals.ChronoLoadData.Start();
+          CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
+          Globals.ChronoLoadData.Stop();
+          isTextReportLoaded = true;
         }
         catch ( Exception ex )
         {
           Globals.ChronoStartingApp.Stop();
-          ex.Manage();
+          string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
+          DisplayManager.ShowWarning(msg);
           Globals.ChronoStartingApp.Start();
         }
-        try
-        {
-          CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
-          TimerReminder.Enabled = true;
-          Globals.ChronoStartingApp.Stop();
-          TimerReminder_Tick(null, null);
-          Globals.ChronoStartingApp.Start();
-        }
-        catch ( Exception ex )
-        {
-          Globals.ChronoStartingApp.Stop();
-          ex.Manage();
-          Globals.ChronoStartingApp.Start();
-        }
+      if ( !isTextReportLoaded )
+        CalendarText.Text = GenerateReportText();
+    }
+
+    private void LoadDataGenerate()
+    {
+      Globals.ChronoStartingApp.Stop();
+      PreferencesForm.Run();
+      string errors = CheckRegenerateCalendar(true);
+      Globals.ChronoStartingApp.Start();
+      if ( errors != null )
+      {
+        SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
+        throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
+      }
+    }
+
+    private void LoadDataEnd()
+    {
+      try
+      {
+        if ( Settings.RestoreLastViewAtStartup )
+          SetView(Settings.CurrentView, true);
+        else
+          SetView(ViewMode.Month, true);
+        UpdateButtons();
+      }
+      catch ( Exception ex )
+      {
+        Globals.ChronoStartingApp.Stop();
+        ex.Manage();
+        Globals.ChronoStartingApp.Start();
+      }
+      try
+      {
+        Globals.ChronoStartingApp.Stop();
+        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
+        TimerReminder.Enabled = true;
+        TimerReminder_Tick(null, null);
+        Globals.ChronoStartingApp.Start();
+      }
+      catch ( Exception ex )
+      {
+        Globals.ChronoStartingApp.Stop();
+        ex.Manage();
+        Globals.ChronoStartingApp.Start();
       }
     }
 
