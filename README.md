@@ -295,7 +295,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add open main form when click on the moon image in navigation window.
 - Some fixes and improvements.
 - Code refactoring and quality improvement.
-- Replace proprietary simple TraceListener by SeriLog.
+- Replace custom TraceListener by SeriLog.
 - Improve trace form.
 
 #### 2021.05.09 - Version 7.3
