@@ -58,7 +58,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 - Overall performances are optimized.
 - Added option to set automatic computer lockout mode.
-- Some fixes and UI improvements.
+- Some fixes and improvements.
 - SQLite ODBC Driver is no more needed.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
