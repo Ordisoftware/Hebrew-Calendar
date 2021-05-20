@@ -116,20 +116,20 @@ namespace Ordisoftware.Core
       {
         if ( _TraceEnabled == value ) return;
         var isEnabled = _Enabled;
-        Enabled = false;
+        Stop();
         if ( value )
         {
           if ( Directory.Exists(Globals.OldTraceFolderPath) )
             try { Directory.Delete(Globals.OldTraceFolderPath, true); } catch { }
-          _TraceEnabled = value;
+          ClearTraces(true, false);
         }
         else
         {
           TraceForm?.Hide();
           TraceForm?.TextBoxCurrent.Clear();
-          ClearTraces(true);
-          _TraceEnabled = value;
+          ClearTraces(true, true);
         }
+        _TraceEnabled = value;
         Enabled = isEnabled;
         try { TraceEnabledChanged?.Invoke(value); } catch { }
       }
@@ -165,14 +165,25 @@ namespace Ordisoftware.Core
             var logconf = new LoggerConfiguration();
             logconf.Enrich.With(new ProcessIdEnricher());
             logconf.Enrich.With(new ThreadIdEnricher());
-            Log.Logger = logconf.WriteTo.File(Globals.SinkFilePatternPath,
-                                              shared: SystemManager.AllowMultipleInstances,
-                                              outputTemplate: Globals.SinkFileTemplate,
-                                              rollingInterval: Globals.SinkFileRollingInterval,
-                                              fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
-                                              retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
-                                .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
-                                .CreateLogger();
+            if ( Globals.TraceFileRollOverMode == TraceFileRollOverMode.Session )
+            {
+              string datetime = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+              string filePath = Globals.SinkFileNoRollingPatternPath.Replace("%DATETIME%", datetime);
+              Log.Logger = logconf.WriteTo.File(filePath,
+                                                outputTemplate: Globals.SinkFileTemplate,
+                                                fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes)
+                                    .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
+                                    .CreateLogger();
+            }
+            else
+              Log.Logger = logconf.WriteTo.File(Globals.SinkFileRollingPatternPath,
+                                                shared: SystemManager.AllowMultipleInstances,
+                                                outputTemplate: Globals.SinkFileTemplate,
+                                                rollingInterval: Globals.SinkFileRollingInterval,
+                                                fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
+                                                retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
+                                    .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
+                                    .CreateLogger();
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += TraceEventAdded;
             WriteHeader();
           }

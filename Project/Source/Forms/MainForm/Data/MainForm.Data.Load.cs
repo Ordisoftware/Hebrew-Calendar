@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
           HebrewDatabase.Instance.ReleaseParashot();
           Globals.ChronoLoadData.Stop();
           Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-          Settings.Save();
+                  SystemManager.TryCatch(Settings.Save);
         });
         Program.UpdateLocalization();
         task.Wait();

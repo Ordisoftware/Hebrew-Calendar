@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.ChronoCreateData.Stop();
           Settings.BenchmarkGenerateYears = Globals.ChronoCreateData.ElapsedMilliseconds;
           Settings.LastGenerated = DateTime.Now;
-          Settings.Save();
+                  SystemManager.TryCatch(Settings.Save);
           if ( Globals.IsGenerating )
             try
             {

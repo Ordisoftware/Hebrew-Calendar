@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class DatesDiffCalculatorForm : Form
   {
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public DatesDiffCalculatorForm Instance { get; private set; }
 
     static DatesDiffCalculatorForm()
@@ -72,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public void LoadMenuBookmarks()
     {
       MenuBookmarks.Items.Clear();
-      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
+      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       {
         var date = Program.DateBookmarks[index];
         string s = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
@@ -129,7 +131,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
             menuitem.Text = ( (int)menuitem.Tag + 1 ).ToString("00") + ". " + SysTranslations.EmptySlot.GetLang();
             Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
-            Program.Settings.Save();
+            SystemManager.TryCatch(Settings.Save);
           }
       if ( e.Button != MouseButtons.Left ) return;
       if ( control == ActionSetBookmarkStart )
@@ -146,7 +148,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MonthCalendar2.SelectionStart = date;
       void setBookmark(MonthCalendar calendar)
       {
-        for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
+        for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         {
           var date = Program.DateBookmarks[index];
           if ( calendar.SelectionStart.Date == date ) return;
@@ -155,7 +157,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
         menuitem.Text = ( (int)menuitem.Tag + 1 ).ToString("00") + ". " + calendar.SelectionStart.Date.ToLongDateString();
         Program.DateBookmarks[(int)menuitem.Tag] = calendar.SelectionStart.Date;
-        Program.Settings.Save();
+        SystemManager.TryCatch(Settings.Save);
       }
     }
 

@@ -29,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string TableName = "New Moons";
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public NewMoonsBoardForm Instance { get; private set; }
 
     static public void Run()
@@ -52,8 +54,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private NewMoonsBoardForm()
     {
       InitializeComponent();
-      Text += $" ({Program.Settings.GPSCountry}, {Program.Settings.GPSCity})";
-      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Program.Settings.ShabatDay)}";
+      Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
+      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
       var list = MainForm.Instance.YearsIntervalArray;
@@ -67,10 +69,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void NewMoonsBoardForm_Load(object sender, EventArgs e)
     {
-      Location = Program.Settings.NewMoonsBoardFormLocation;
-      ClientSize = Program.Settings.NewMoonsBoardFormClientSize;
+      Location = Settings.NewMoonsBoardFormLocation;
+      ClientSize = Settings.NewMoonsBoardFormClientSize;
       this.CheckLocationOrCenterToMainFormElseScreen();
-      WindowState = Program.Settings.NewMoonsBoardFormWindowState;
+      WindowState = Settings.NewMoonsBoardFormWindowState;
       CreateDataTable();
       LoadGrid();
     }
@@ -85,12 +87,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = null;
       if ( WindowState == FormWindowState.Minimized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.NewMoonsBoardFormWindowState = WindowState;
+      Settings.NewMoonsBoardFormWindowState = WindowState;
       if ( WindowState == FormWindowState.Maximized )
         WindowState = FormWindowState.Normal;
-      Program.Settings.NewMoonsBoardFormLocation = Location;
-      Program.Settings.NewMoonsBoardFormClientSize = ClientSize;
-      Program.Settings.Save();
+      Settings.NewMoonsBoardFormLocation = Location;
+      Settings.NewMoonsBoardFormClientSize = ClientSize;
+      SystemManager.TryCatch(Settings.Save);
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -247,16 +249,16 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName)
                                                      + ( EditUseRealDays.Checked ? " Moonset" : " Moonrise" );
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
       if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() != DialogResult.OK ) return;
       string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
       Board.Export(filePath, Program.BoardExportTargets);
       DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                         Globals.KeyboardSoundFilePath);
-      if ( Program.Settings.AutoOpenExportFolder )
+      if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(filePath));
-      if ( Program.Settings.AutoOpenExportedFile )
+      if ( Settings.AutoOpenExportedFile )
         SystemManager.RunShell(filePath);
     }
 

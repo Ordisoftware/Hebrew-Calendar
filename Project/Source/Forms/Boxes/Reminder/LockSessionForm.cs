@@ -78,7 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionDisable_Click(object sender, EventArgs e)
     {
       Program.Settings.AutoLockSession = false;
-      Program.Settings.Save();
+      SystemManager.TryCatch(Program.Settings.Save);
       ActionCancel.PerformClick();
     }
 

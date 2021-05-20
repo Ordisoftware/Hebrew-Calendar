@@ -20,6 +20,7 @@ using Serilog.Core;
 using Serilog.Events;
 using System.Threading;
 using Serilog;
+using MoreLinq;
 
 namespace Ordisoftware.Core
 {
@@ -98,6 +99,7 @@ namespace Ordisoftware.Core
       [LogTraceEvent.Stop] = '.',
       [LogTraceEvent.Enter] = '+',
       [LogTraceEvent.Leave] = '-',
+      [LogTraceEvent.Complete] = ':',
       [LogTraceEvent.Message] = '#',
       [LogTraceEvent.Data] = '*',
       [LogTraceEvent.Error] = '!',
@@ -145,34 +147,53 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Stop, $"GC: {SystemStatistics.Instance.MemoryGC} | Peak: {SystemStatistics.Instance.MemoryGCPeak}");
     }
 
-    static public IEnumerable<string> GetTraceFiles()
+    static public IEnumerable<string> GetTraceFiles(bool sortByDateOnly)
     {
       string folder = Globals.SinkFileFolderPath;
       string code = Globals.SinkFileCode;
       string extension = Globals.SinkFileExtension;
-      foreach ( string file in Directory.GetFiles(folder, code + "*" + extension) )
-        // TODO if (not locked)
-        yield return file;
+      var list = Directory.GetFiles(folder, code + "*" + extension)
+                          .Where(f => !SystemManager.IsFileLocked(f));
+      return sortByDateOnly
+             ? list.OrderBy(f => new FileInfo(f).CreationTime)
+             : list.OrderBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
     }
 
-    static public void ClearTraces(bool norestart = false)
+    static public void ClearTraces(bool norestart = false, bool all = false)
     {
       try
       {
         bool isEnabled = _Enabled;
         try
         {
-          Stop();
-          foreach ( string file in GetTraceFiles() )
-            try { File.Delete(file); } catch { }
+          switch ( Globals.TraceFileRollOverMode )
+          {
+            case TraceFileRollOverMode.Session:
+              if ( !delete(Globals.SessionFileRetainedFileCountLimit) ) return;
+              break;
+            case TraceFileRollOverMode.SinkFile:
+              if ( !all || !delete(Globals.SinkFileRetainedFileCountLimit) ) return;
+              break;
+          }
           TraceForm?.TextBoxCurrent.Clear();
+          //
+          bool delete(int retain)
+          {
+            if ( retain == 0 ) return false;
+            Stop();
+            var list = GetTraceFiles(true);
+            if ( !all ) list = list.Take(list.Count() - retain + 1);
+            foreach ( string file in list )
+              try { File.Delete(file); } catch { }
+            return true;
+          }
         }
         finally
         {
           if ( !norestart && isEnabled )
           {
             Start();
-            Trace(LogTraceEvent.Message, $"{nameof(DebugManager)}.{nameof(ClearTraces)}");
+            if ( all ) Trace(LogTraceEvent.Complete, $"{nameof(DebugManager)}.{nameof(ClearTraces)}(all)");
           }
         }
       }

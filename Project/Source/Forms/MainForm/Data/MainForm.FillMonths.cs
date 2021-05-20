@@ -217,7 +217,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Globals.ChronoShowData.Stop();
         Settings.BenchmarkFillCalendar = Globals.ChronoShowData.ElapsedMilliseconds;
-        Settings.Save();
+        SystemManager.TryCatch(Settings.Save);
       }
     }
 

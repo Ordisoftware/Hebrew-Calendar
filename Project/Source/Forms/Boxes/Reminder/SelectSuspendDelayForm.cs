@@ -22,6 +22,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SelectSuspendDelayForm : Form
   {
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public int? Run()
     {
       using ( var form = new SelectSuspendDelayForm() )
@@ -48,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
       SelectDelay.SelectedIndex = -1;
       foreach ( SuspendDelayItem item in SelectDelay.Items )
-        if ( Program.Settings.LastSuspendDelaySelected == item.Minutes )
+        if ( Settings.LastSuspendDelaySelected == item.Minutes )
         {
           SelectDelay.SelectedItem = item;
           break;
@@ -56,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SelectDelay.SelectedIndex == -1 )
       {
         SelectDelay.SelectedIndex = SelectDelay.Items.Count - 1;
-        EditDelay.Value = Program.Settings.LastSuspendDelaySelected;
+        EditDelay.Value = Settings.LastSuspendDelaySelected;
       }
     }
 
@@ -71,10 +73,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
-      Program.Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
-                                                  ? (int)EditDelay.Value
-                                                  : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
-      Program.Settings.Save();
+      Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
+                                          ? (int)EditDelay.Value
+                                          : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
+      SystemManager.TryCatch(Settings.Save);
     }
 
   }

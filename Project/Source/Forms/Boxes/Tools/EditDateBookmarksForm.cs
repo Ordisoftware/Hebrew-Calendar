@@ -29,6 +29,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const string TableName = "Date Bookmarks";
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     private class DateItem
     {
       public DateTime Date { get; set; }
@@ -48,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
-      SaveBookmarksDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+      SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
       OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
       SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
       OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
@@ -58,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
       ListBox.Items.Clear();
-      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
+      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });
       ListBox.SelectedIndex = 0;
       ActiveControl = ListBox;
@@ -67,9 +69,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
     {
       if ( DialogResult != DialogResult.OK ) return;
-      for ( int index = 0; index < Program.Settings.DateBookmarksCount; index++ )
+      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         Program.DateBookmarks[index] = ( (DateItem)ListBox.Items[index] ).Date;
-      Program.Settings.Save();
+      SystemManager.TryCatch(Settings.Save);
     }
 
     private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,7 +156,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SaveBookmarksDialog.FileName = TableName;
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           SaveBookmarksDialog.FilterIndex = index + 1;
       if ( SaveBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
       string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
@@ -192,7 +194,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       OpenBookmarksDialog.FileName = string.Empty;
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-        if ( Program.BoardExportTargets.ElementAt(index).Key == Program.Settings.ExportDataPreferredTarget )
+        if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           OpenBookmarksDialog.FilterIndex = index + 1;
       if ( OpenBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
       string extension = Path.GetExtension(OpenBookmarksDialog.FileName);

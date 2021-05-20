@@ -26,6 +26,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public int DefaultReminderSoundMaxDuration { get; set; } = 3000;
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public void Run(bool topmost = false)
     {
       using ( var form = new SelectSoundForm() )
@@ -33,25 +35,25 @@ namespace Ordisoftware.Hebrew.Calendar
         form.TopMost = topmost;
         if ( form.ShowDialog() != DialogResult.OK ) return;
         if ( form.SelectNone.Checked )
-          Program.Settings.ReminderBoxSoundSource = SoundSource.None;
+          Settings.ReminderBoxSoundSource = SoundSource.None;
         else
         if ( form.SelectDialog.Checked )
-          Program.Settings.ReminderBoxSoundSource = SoundSource.Dialog;
+          Settings.ReminderBoxSoundSource = SoundSource.Dialog;
         else
         if ( form.SelectApplication.Checked )
-          Program.Settings.ReminderBoxSoundSource = SoundSource.Application;
+          Settings.ReminderBoxSoundSource = SoundSource.Application;
         else
         if ( form.SelectWindows.Checked )
-          Program.Settings.ReminderBoxSoundSource = SoundSource.Windows;
+          Settings.ReminderBoxSoundSource = SoundSource.Windows;
         else
         if ( form.SelectCustom.Checked )
-          Program.Settings.ReminderBoxSoundSource = SoundSource.Custom;
+          Settings.ReminderBoxSoundSource = SoundSource.Custom;
         if ( form.SelectDialogSound.SelectedItem != null )
-          Program.Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
-        Program.Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
-        Program.Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
-        Program.Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
-        Program.Settings.Save();
+          Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
+        Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
+        Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
+        Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
+        SystemManager.TryCatch(Settings.Save);
       }
     }
 
@@ -65,14 +67,14 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectDialogSound.Items.Add(MessageBoxIcon.Question);
       SelectDialogSound.Items.Add(MessageBoxIcon.Exclamation);
       SelectDialogSound.Items.Add(MessageBoxIcon.Hand);
-      EditFilePath.Text = Program.Settings.ReminderBoxSoundPath;
-      SelectDialogSound.SelectedIndex = SelectDialogSound.Items.IndexOf(Program.Settings.ReminderBoxSoundDialog);
+      EditFilePath.Text = Settings.ReminderBoxSoundPath;
+      SelectDialogSound.SelectedIndex = SelectDialogSound.Items.IndexOf(Settings.ReminderBoxSoundDialog);
       var item = ( from SoundItem sound in SelectApplicationSound.Items
-                   where sound.FilePath == Program.Settings.ReminderBoxSoundApplication
+                   where sound.FilePath == Settings.ReminderBoxSoundApplication
                    select sound ).FirstOrDefault();
       if ( item != null ) SelectApplicationSound.SelectedItem = item;
       item = ( from SoundItem sound in SelectWindowsSound.Items
-               where sound.FilePath == Program.Settings.ReminderBoxSoundWindows
+               where sound.FilePath == Settings.ReminderBoxSoundWindows
                select sound ).FirstOrDefault();
       if ( item != null ) SelectWindowsSound.SelectedItem = item;
       if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 )
@@ -81,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SelectApplicationSound.SelectedIndex = 0;
       if ( SelectWindowsSound.Items.Count > 0 && SelectWindowsSound.SelectedIndex == -1 )
         SelectWindowsSound.SelectedIndex = 0;
-      switch ( Program.Settings.ReminderBoxSoundSource )
+      switch ( Settings.ReminderBoxSoundSource )
       {
         case SoundSource.None:
           SelectNone.Checked = true;
@@ -99,13 +101,13 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectCustom.Checked = true;
           break;
         default:
-          throw new AdvancedNotImplementedException(Program.Settings.ReminderBoxSoundSource);
+          throw new AdvancedNotImplementedException(Settings.ReminderBoxSoundSource);
       }
     }
 
     private void SelectSoundForm_Shown(object sender, EventArgs e)
     {
-      EditVolume.Value = Program.Settings.ApplicationVolume;
+      EditVolume.Value = Settings.ApplicationVolume;
       ActionPlay.PerformClick();
     }
 
@@ -226,8 +228,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
-      Program.Settings.ApplicationVolume = EditVolume.Value;
-      Program.Settings.Save();
+      Settings.ApplicationVolume = EditVolume.Value;
+      SystemManager.TryCatch(Settings.Save);
       ActionPlay.PerformClick();
     }
 

@@ -296,6 +296,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Some fixes and improvements.
 - Code refactoring and quality improvement.
 - Replace proprietary simple TraceListener by SeriLog.
+- Improve trace form.
 
 #### 2021.05.09 - Version 7.3
 

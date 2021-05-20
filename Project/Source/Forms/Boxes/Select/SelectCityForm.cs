@@ -25,6 +25,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SelectCityForm : Form
   {
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS
       = new SortedAutoDictionary<string, AutoResizedList<CityItem>>();
 
@@ -83,12 +85,12 @@ namespace Ordisoftware.Hebrew.Calendar
         form.ActionCancel.Enabled = canCancel;
         if ( form.ShowDialog() != DialogResult.OK ) return false;
         if ( form.EditTimeZone.SelectedItem != null )
-          Program.Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        Program.Settings.GPSLatitude = form.Latitude;
-        Program.Settings.GPSLongitude = form.Longitude;
-        Program.Settings.GPSCountry = form.Country;
-        Program.Settings.GPSCity = form.City;
-        Program.Settings.Save();
+          Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+        Settings.GPSLatitude = form.Latitude;
+        Settings.GPSLongitude = form.Longitude;
+        Settings.GPSCountry = form.Country;
+        Settings.GPSCity = form.City;
+        SystemManager.TryCatch(Settings.Save);
         return true;
       }
     }
@@ -110,18 +112,18 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         IsLoading = false;
         ActiveControl = EditFilter;
-        if ( !Program.Settings.GPSCountry.IsNullOrEmpty() )
+        if ( !Settings.GPSCountry.IsNullOrEmpty() )
         {
-          EditFilter.Text = Program.Settings.GPSCountry;
-          if ( !Program.Settings.GPSCity.IsNullOrEmpty() )
-            EditFilter.Text += Program.Settings.GPSCity;
+          EditFilter.Text = Settings.GPSCountry;
+          if ( !Settings.GPSCity.IsNullOrEmpty() )
+            EditFilter.Text += Settings.GPSCity;
         }
         else
           EditFilter_TextChanged(null, null);
         foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         {
           int index = EditTimeZone.Items.Add(item);
-          if ( Program.Settings.TimeZone == item.Id )
+          if ( Settings.TimeZone == item.Id )
             EditTimeZone.SelectedIndex = index;
         }
         IsReady = true;

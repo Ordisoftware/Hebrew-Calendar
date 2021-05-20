@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
       Settings.RestoreMainForm();
-      Settings.Save();
+              SystemManager.TryCatch(Settings.Save);
       MainForm.Instance.InitializeReminderBoxDesktopLocation();
       DoReset = true;
       Reseted = true;
@@ -94,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Settings.Reload();
         Settings.BenchmarkStartingApp = starttime;
         Settings.BenchmarkLoadData = loadtime;
-        Settings.Save();
+                SystemManager.TryCatch(Settings.Save);
         Settings.Retrieve();
         Settings.SetFirstAndUpgradeFlagsOff();
         Program.UpdateLocalization();

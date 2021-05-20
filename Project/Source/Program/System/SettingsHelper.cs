@@ -153,7 +153,7 @@ namespace Ordisoftware.Hebrew.Calendar
         settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
         settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
         settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
-        settings.Save();
+        SystemManager.TryCatch(settings.Save);
       }
       finally
       {
