@@ -25,8 +25,6 @@ namespace Ordisoftware.Core
   static partial class Globals
   {
 
-    public const string OldTraceDirectoryName = "Logs";
-
     static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
       = TraceFileRollOverMode.Session;
 
@@ -42,47 +40,42 @@ namespace Ordisoftware.Core
     static public int SinkFileSizeLimitBytes { get; set; }
       = 100 * 1024 * 1024;
 
-    static public string SinkFileTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-                                             "P{ProcessId}:T{ThreadId} " +
-                                             "{Message:lj}{NewLine}{Exception}";
+    static public string SinkFileEventTemplate
+      = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+        "P{ProcessId}:T{ThreadId} " +
+        "{Message:lj}{NewLine}{Exception}";
 
-    static public int SinkFileTemplateSize = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
+    static public int SinkFileEventTemplateSize
+      = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
 
-    /// <summary>
-    /// Indicate the log/trace directory name.
-    /// </summary>
-    static public string SinkDirectoryName { get; set; }
+    static public string TraceDirectoryName { get; set; }
       = "Serilog";
 
-    /// <summary>
-    /// Indicate the trace file extension.
-    /// </summary>
-    static public string SinkFileExtension { get; set; }
+    static public string TraceFileExtension { get; set; }
       = ".log";
 
-    /// <summary>
-    /// Indicate the trace file code.
-    /// </summary>
+    static public string TraceSessionFileTemplate
+      = "yyyy-MM-dd@HH-mm-ss";
+
     static public string SinkFileCode { get; set; }
       = ApplicationGitHubCode + "-Trace-";
 
-    /// <summary>
-    /// Indicate the user application trace folder path.
-    /// </summary>
     static public string SinkFileFolderPath
-      => Path.Combine(UserDataFolderPath, SinkDirectoryName);
+      => Path.Combine(UserDataFolderPath, TraceDirectoryName);
+
+    static public string SinkFileNoRollingPatternPathDateTag
+      = "%DATETIME%";
+
+    static public string SinkFileNoRollingPatternPath
+      => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileNoRollingPatternPathDateTag + TraceFileExtension;
+
+    static public string SinkFileRollingPatternPath
+      => Path.Combine(SinkFileFolderPath, SinkFileCode) + TraceFileExtension;
 
     static public string OldTraceFolderPath
       => Path.Combine(UserDataFolderPath, OldTraceDirectoryName);
 
-    /// <summary>
-    /// Indicate the serilog sink file absolute full path and name pattern.
-    /// </summary>
-    static public string SinkFileNoRollingPatternPath
-      => Path.Combine(SinkFileFolderPath, SinkFileCode) + "%DATETIME%" + SinkFileExtension;
-
-    static public string SinkFileRollingPatternPath
-      => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileExtension;
+    public const string OldTraceDirectoryName = "Logs";
 
   }
 

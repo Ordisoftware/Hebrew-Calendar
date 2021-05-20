@@ -167,23 +167,24 @@ namespace Ordisoftware.Core
             logconf.Enrich.With(new ThreadIdEnricher());
             if ( Globals.TraceFileRollOverMode == TraceFileRollOverMode.Session )
             {
-              string datetime = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-              string filePath = Globals.SinkFileNoRollingPatternPath.Replace("%DATETIME%", datetime);
+              string datetime = DateTime.Now.ToString(Globals.TraceSessionFileTemplate);
+              string filePath = Globals.SinkFileNoRollingPatternPath.Replace(Globals.SinkFileNoRollingPatternPathDateTag,
+                                                                             datetime);
               Log.Logger = logconf.WriteTo.File(filePath,
-                                                outputTemplate: Globals.SinkFileTemplate,
+                                                outputTemplate: Globals.SinkFileEventTemplate,
                                                 fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes)
-                                    .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
-                                    .CreateLogger();
+                                  .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileEventTemplate))
+                                  .CreateLogger();
             }
             else
               Log.Logger = logconf.WriteTo.File(Globals.SinkFileRollingPatternPath,
                                                 shared: SystemManager.AllowMultipleInstances,
-                                                outputTemplate: Globals.SinkFileTemplate,
+                                                outputTemplate: Globals.SinkFileEventTemplate,
                                                 rollingInterval: Globals.SinkFileRollingInterval,
                                                 fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
                                                 retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
-                                    .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileTemplate))
-                                    .CreateLogger();
+                                  .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileEventTemplate))
+                                  .CreateLogger();
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += TraceEventAdded;
             WriteHeader();
           }

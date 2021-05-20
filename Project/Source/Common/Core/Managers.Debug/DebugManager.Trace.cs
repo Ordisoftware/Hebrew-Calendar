@@ -118,7 +118,7 @@ namespace Ordisoftware.Core
           message += $"| {Signes[traceEvent]} | {traceEventName} | ";
         }
         if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, 5 + Globals.SinkFileTemplateSize + CurrentMargin + message.Length);
+        message += text.Indent(CurrentMargin, 5 + Globals.SinkFileEventTemplateSize + CurrentMargin + message.Length);
         Log.Logger.Information(message);
       }
       catch
@@ -151,7 +151,7 @@ namespace Ordisoftware.Core
     {
       string folder = Globals.SinkFileFolderPath;
       string code = Globals.SinkFileCode;
-      string extension = Globals.SinkFileExtension;
+      string extension = Globals.TraceFileExtension;
       var list = Directory.GetFiles(folder, code + "*" + extension)
                           .Where(f => !SystemManager.IsFileLocked(f));
       return sortByDateOnly
