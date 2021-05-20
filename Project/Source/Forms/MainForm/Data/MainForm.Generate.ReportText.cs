@@ -142,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           catch ( Exception ex )
           {
-            GenerateErrors.Add($"{day.Date}: [{nameof(GenerateReportText)}] { ex.Message}");
+            GenerateErrors.Add($"{day.DateAsString}: [{nameof(GenerateReportText)}] { ex.Message}");
           }
         content.Append(headerSep + Globals.NL);
         try
