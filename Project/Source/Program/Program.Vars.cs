@@ -61,12 +61,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate minimum items for load data to show the loading form.
     /// </summary>
-    public const int LoadingFormLoadDB = 10000 * 2;
+    public const int LoadingFormLoadDB = 10000;
 
     /// <summary>
     /// Indicate minimum items for generate data to show the loading form.
     /// </summary>
-    public const int LoadingFormGenerate = 3000;
+    public const int LoadingFormGenerate = 5000;
 
     /// <summary>
     /// Indicate minimum items for calc dates diff to show the loading form.

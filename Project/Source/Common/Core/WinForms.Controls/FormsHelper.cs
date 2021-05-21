@@ -280,8 +280,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void MenuItemDropDownOpening(object sender, EventArgs e)
     {
-      ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
-      if ( menuItem == null || !menuItem.HasDropDownItems ) return;
+      if ( !( sender is ToolStripMenuItem menuItem ) || !menuItem.HasDropDownItems ) return;
       Rectangle Bounds = menuItem.GetCurrentParent().Bounds;
       Screen CurrentScreen = Screen.FromPoint(Bounds.Location);
       int MaxWidth = 0;
@@ -401,24 +400,26 @@ namespace Ordisoftware.Core
       int heightDiv2 = control.Height / 2;
       int widthDiv4 = widthDiv2 / 4;
       int heightDiv4 = heightDiv2 / 4;
-      var points = new List<Point>();
-      // Center
-      points.Add(new Point(control.Left + widthDiv2, control.Top + heightDiv2));
-      // Corners
-      points.Add(new Point(control.Left + margin, control.Top + margin));
-      points.Add(new Point(control.Right - margin, control.Top + margin));
-      points.Add(new Point(control.Left + margin, control.Bottom - margin));
-      points.Add(new Point(control.Right - margin, control.Bottom - margin));
-      // Borders
-      points.Add(new Point(control.Left + widthDiv4, control.Top + heightDiv4));
-      points.Add(new Point(control.Right - widthDiv4, control.Top + heightDiv4));
-      points.Add(new Point(control.Left + widthDiv4, control.Bottom - heightDiv4));
-      points.Add(new Point(control.Right - widthDiv4, control.Bottom - heightDiv4));
-      // Inner
-      points.Add(new Point(control.Left + widthDiv2, control.Top + margin));
-      points.Add(new Point(control.Left + widthDiv2, control.Bottom - margin));
-      points.Add(new Point(control.Left + margin, control.Top + heightDiv2));
-      points.Add(new Point(control.Right - margin, control.Top + heightDiv2));
+      var points = new List<Point>
+      {
+        // Center
+        new Point(control.Left + widthDiv2, control.Top + heightDiv2),
+        // Corners
+        new Point(control.Left + margin, control.Top + margin),
+        new Point(control.Right - margin, control.Top + margin),
+        new Point(control.Left + margin, control.Bottom - margin),
+        new Point(control.Right - margin, control.Bottom - margin),
+        // Borders
+        new Point(control.Left + widthDiv4, control.Top + heightDiv4),
+        new Point(control.Right - widthDiv4, control.Top + heightDiv4),
+        new Point(control.Left + widthDiv4, control.Bottom - heightDiv4),
+        new Point(control.Right - widthDiv4, control.Bottom - heightDiv4),
+        // Inner
+        new Point(control.Left + widthDiv2, control.Top + margin),
+        new Point(control.Left + widthDiv2, control.Bottom - margin),
+        new Point(control.Left + margin, control.Top + heightDiv2),
+        new Point(control.Right - margin, control.Top + heightDiv2)
+      };
       return points;
     }
 
@@ -457,8 +458,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Apply "justify" to the text of a control.
-    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     /// </summary>
+    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     static public string JustifyParagraph(string text, int width, Font font)
     {
       var result = new StringBuilder();

@@ -60,8 +60,10 @@ namespace Ordisoftware.Core
                            bool quantify = true,
                            int quantaTotal = QuantaTotalDefault,
                            bool showCounter = false,
-                           bool canCancel = false)
+                           bool canCancel = false,
+                           bool topMost = false)
     {
+      TopMost = topMost;
       CancelRequired = false;
       ActionCancel.Visible = canCancel;
       LabelCount.Visible = showCounter;
@@ -105,6 +107,7 @@ namespace Ordisoftware.Core
         if ( LabelCount.Visible ) LabelCount.Text = $"{ProgressBar.Value}/{ProgressBar.Maximum}";
         ProgressBar.Refresh();
         Refresh();
+        BringToFront();
       }
       SystemManager.TryCatchManage(() => Progressing?.Invoke());
       if ( ActionCancel.Visible ) Application.DoEvents();
