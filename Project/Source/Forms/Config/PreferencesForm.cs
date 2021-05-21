@@ -559,6 +559,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Export Save, Copy and Print
 
+    private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.EditExportDataEnumsAsTranslations.Checked = EditExportDataEnumsAsTranslations.Checked;
+    }
+
     private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
     {
       if ( EditAutoOpenExportedFile.Checked && EditAutoOpenExportFolder.Checked )

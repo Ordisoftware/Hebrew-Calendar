@@ -102,17 +102,18 @@
       this.LabelHotKeyStatus = new System.Windows.Forms.Label();
       this.EditGlobalHotKeyPopupMainFormAlt = new System.Windows.Forms.CheckBox();
       this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
-      this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
       this.LabelTrayIconClickOpen = new System.Windows.Forms.Label();
-      this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
       this.EditGlobalHotKeyPopupMainFormEnabled = new System.Windows.Forms.CheckBox();
       this.EditMainFormShownGoToToday = new System.Windows.Forms.CheckBox();
-      this.EditBalloonOnlyIfMainFormIsHidden = new System.Windows.Forms.CheckBox();
-      this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
       this.SelectOpenNavigationForm = new System.Windows.Forms.RadioButton();
+      this.PanelBalloon = new System.Windows.Forms.Panel();
       this.EditBalloon = new System.Windows.Forms.CheckBox();
+      this.EditBalloonAutoHide = new System.Windows.Forms.CheckBox();
+      this.LabelLoomingDelayIntervalInfo = new System.Windows.Forms.Label();
+      this.EditBalloonOnlyIfMainFormIsHidden = new System.Windows.Forms.CheckBox();
+      this.EditBalloonLoomingDelay = new System.Windows.Forms.NumericUpDown();
       this.TabPageNavigationWindow = new System.Windows.Forms.TabPage();
       this.ActionUseBlackAndWhiteColors = new System.Windows.Forms.LinkLabel();
       this.LabelTopColor = new System.Windows.Forms.Label();
@@ -140,10 +141,6 @@
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
-      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelDefaultLockoutAction = new System.Windows.Forms.Label();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
@@ -240,7 +237,6 @@
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelFontName = new System.Windows.Forms.Label();
@@ -292,12 +288,16 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
+      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.PanelBalloon = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -310,6 +310,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
       this.PanelHotKey.SuspendLayout();
+      this.PanelBalloon.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageNavigationWindow.SuspendLayout();
       this.TabPageGeneration.SuspendLayout();
@@ -335,7 +336,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       this.TabPagePaths.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
-      this.PanelBalloon.SuspendLayout();
       this.SuspendLayout();
       // 
       // DialogColor
@@ -910,43 +910,10 @@
       this.EditGlobalHotKeyPopupMainFormWin.UseVisualStyleBackColor = true;
       this.EditGlobalHotKeyPopupMainFormWin.CheckedChanged += new System.EventHandler(this.EditGlobalHotKeyPopupMainFormWin_CheckedChanged);
       // 
-      // LabelLoomingDelayIntervalInfo
-      // 
-      resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
-      this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
-      // 
       // LabelTrayIconClickOpen
       // 
       resources.ApplyResources(this.LabelTrayIconClickOpen, "LabelTrayIconClickOpen");
       this.LabelTrayIconClickOpen.Name = "LabelTrayIconClickOpen";
-      // 
-      // EditBalloonLoomingDelay
-      // 
-      this.EditBalloonLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditBalloonLoomingDelay, "EditBalloonLoomingDelay");
-      this.EditBalloonLoomingDelay.Increment = new decimal(new int[] {
-            250,
-            0,
-            0,
-            0});
-      this.EditBalloonLoomingDelay.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-      this.EditBalloonLoomingDelay.Minimum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-      this.EditBalloonLoomingDelay.Name = "EditBalloonLoomingDelay";
-      this.EditBalloonLoomingDelay.ReadOnly = true;
-      this.EditBalloonLoomingDelay.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
       // 
       // SelectOpenNextCelebrationsForm
       // 
@@ -975,18 +942,6 @@
       this.EditMainFormShownGoToToday.Name = "EditMainFormShownGoToToday";
       this.EditMainFormShownGoToToday.UseVisualStyleBackColor = true;
       // 
-      // EditBalloonOnlyIfMainFormIsHidden
-      // 
-      resources.ApplyResources(this.EditBalloonOnlyIfMainFormIsHidden, "EditBalloonOnlyIfMainFormIsHidden");
-      this.EditBalloonOnlyIfMainFormIsHidden.Name = "EditBalloonOnlyIfMainFormIsHidden";
-      this.EditBalloonOnlyIfMainFormIsHidden.UseVisualStyleBackColor = true;
-      // 
-      // EditBalloonAutoHide
-      // 
-      resources.ApplyResources(this.EditBalloonAutoHide, "EditBalloonAutoHide");
-      this.EditBalloonAutoHide.Name = "EditBalloonAutoHide";
-      this.EditBalloonAutoHide.UseVisualStyleBackColor = true;
-      // 
       // SelectOpenNavigationForm
       // 
       resources.ApplyResources(this.SelectOpenNavigationForm, "SelectOpenNavigationForm");
@@ -994,12 +949,67 @@
       this.SelectOpenNavigationForm.UseVisualStyleBackColor = true;
       this.SelectOpenNavigationForm.CheckedChanged += new System.EventHandler(this.SelectOpenNavigationForm_CheckedChanged);
       // 
+      // PanelBalloon
+      // 
+      this.PanelBalloon.Controls.Add(this.EditBalloon);
+      this.PanelBalloon.Controls.Add(this.EditBalloonAutoHide);
+      this.PanelBalloon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
+      this.PanelBalloon.Controls.Add(this.EditBalloonOnlyIfMainFormIsHidden);
+      this.PanelBalloon.Controls.Add(this.EditBalloonLoomingDelay);
+      resources.ApplyResources(this.PanelBalloon, "PanelBalloon");
+      this.PanelBalloon.Name = "PanelBalloon";
+      // 
       // EditBalloon
       // 
       resources.ApplyResources(this.EditBalloon, "EditBalloon");
       this.EditBalloon.Name = "EditBalloon";
       this.EditBalloon.UseVisualStyleBackColor = true;
       this.EditBalloon.CheckedChanged += new System.EventHandler(this.EditBalloon_CheckedChanged);
+      // 
+      // EditBalloonAutoHide
+      // 
+      resources.ApplyResources(this.EditBalloonAutoHide, "EditBalloonAutoHide");
+      this.EditBalloonAutoHide.Name = "EditBalloonAutoHide";
+      this.EditBalloonAutoHide.UseVisualStyleBackColor = true;
+      // 
+      // LabelLoomingDelayIntervalInfo
+      // 
+      resources.ApplyResources(this.LabelLoomingDelayIntervalInfo, "LabelLoomingDelayIntervalInfo");
+      this.LabelLoomingDelayIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelLoomingDelayIntervalInfo.Name = "LabelLoomingDelayIntervalInfo";
+      // 
+      // EditBalloonOnlyIfMainFormIsHidden
+      // 
+      resources.ApplyResources(this.EditBalloonOnlyIfMainFormIsHidden, "EditBalloonOnlyIfMainFormIsHidden");
+      this.EditBalloonOnlyIfMainFormIsHidden.Name = "EditBalloonOnlyIfMainFormIsHidden";
+      this.EditBalloonOnlyIfMainFormIsHidden.UseVisualStyleBackColor = true;
+      // 
+      // EditBalloonLoomingDelay
+      // 
+      this.EditBalloonLoomingDelay.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditBalloonLoomingDelay, "EditBalloonLoomingDelay");
+      this.EditBalloonLoomingDelay.Increment = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+      this.EditBalloonLoomingDelay.Name = "EditBalloonLoomingDelay";
+      this.EditBalloonLoomingDelay.ReadOnly = true;
+      this.EditBalloonLoomingDelay.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
       // 
       // TabPageNavigationWindow
       // 
@@ -1232,38 +1242,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -2049,14 +2027,6 @@
       resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
       this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
       // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -2258,6 +2228,7 @@
       resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
       this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // EditAutoOpenExportFolder
       // 
@@ -2467,6 +2438,46 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditHebrewWordsPath
       // 
       this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2507,16 +2518,6 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // PanelBalloon
-      // 
-      this.PanelBalloon.Controls.Add(this.EditBalloon);
-      this.PanelBalloon.Controls.Add(this.EditBalloonAutoHide);
-      this.PanelBalloon.Controls.Add(this.LabelLoomingDelayIntervalInfo);
-      this.PanelBalloon.Controls.Add(this.EditBalloonOnlyIfMainFormIsHidden);
-      this.PanelBalloon.Controls.Add(this.EditBalloonLoomingDelay);
-      resources.ApplyResources(this.PanelBalloon, "PanelBalloon");
-      this.PanelBalloon.Name = "PanelBalloon";
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2550,6 +2551,8 @@
       this.TabPageTrayIcon.PerformLayout();
       this.PanelHotKey.ResumeLayout(false);
       this.PanelHotKey.PerformLayout();
+      this.PanelBalloon.ResumeLayout(false);
+      this.PanelBalloon.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.TabPageNavigationWindow.ResumeLayout(false);
       this.TabPageNavigationWindow.PerformLayout();
@@ -2586,8 +2589,6 @@
       this.TabPagePaths.PerformLayout();
       this.PanelWeatherOnline.ResumeLayout(false);
       this.PanelWeatherOnline.PerformLayout();
-      this.PanelBalloon.ResumeLayout(false);
-      this.PanelBalloon.PerformLayout();
       this.ResumeLayout(false);
 
     }

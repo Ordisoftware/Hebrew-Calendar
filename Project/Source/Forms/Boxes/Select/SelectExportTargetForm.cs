@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-11 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -204,6 +204,10 @@ namespace Ordisoftware.Hebrew.Calendar
         EditAutoOpenExportedFile.Checked = false;
     }
 
+    private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.EditExportDataEnumsAsTranslations.Checked = EditExportDataEnumsAsTranslations.Checked;
+    }
   }
 
 }

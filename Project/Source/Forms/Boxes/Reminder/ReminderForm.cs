@@ -323,9 +323,14 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, this);
     }
 
-    private void ActionSetup_Click(object sender, EventArgs e)
+    private void ActionSetupSound_Click(object sender, EventArgs e)
     {
       SelectSoundForm.Run(true);
+    }
+
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionPreferences.PerformClick();
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)

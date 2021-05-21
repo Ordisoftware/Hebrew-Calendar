@@ -41,6 +41,7 @@
       this.SelectSingle = new System.Windows.Forms.RadioButton();
       this.SelectInterval = new System.Windows.Forms.RadioButton();
       this.GroupBoxView = new System.Windows.Forms.GroupBox();
+      this.SelectText = new System.Windows.Forms.RadioButton();
       this.GroupBoxOptions = new System.Windows.Forms.GroupBox();
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
       this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
@@ -51,7 +52,6 @@
       this.SelectYear2 = new Ordisoftware.Hebrew.SelectYearsControl();
       this.SelectYear1 = new Ordisoftware.Hebrew.SelectYearsControl();
       this.labelYear1 = new System.Windows.Forms.Label();
-      this.SelectText = new System.Windows.Forms.RadioButton();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
@@ -149,6 +149,14 @@
       this.GroupBoxView.Name = "GroupBoxView";
       this.GroupBoxView.TabStop = false;
       // 
+      // SelectText
+      // 
+      resources.ApplyResources(this.SelectText, "SelectText");
+      this.SelectText.Name = "SelectText";
+      this.SelectText.TabStop = true;
+      this.SelectText.UseVisualStyleBackColor = true;
+      this.SelectText.CheckedChanged += new System.EventHandler(this.SelectView_CheckedChanged);
+      // 
       // GroupBoxOptions
       // 
       this.GroupBoxOptions.Controls.Add(this.SelectSingle);
@@ -176,6 +184,7 @@
       this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // EditPrintImageInLandscape
       // 
@@ -220,6 +229,7 @@
       this.SelectYear2.Name = "SelectYear2";
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
+      this.SelectYear2.Value = -1;
       // 
       // SelectYear1
       // 
@@ -227,19 +237,12 @@
       this.SelectYear1.Name = "SelectYear1";
       this.SelectYear1.SelectedIndex = -1;
       this.SelectYear1.SelectedItem = null;
+      this.SelectYear1.Value = -1;
       // 
       // labelYear1
       // 
       resources.ApplyResources(this.labelYear1, "labelYear1");
       this.labelYear1.Name = "labelYear1";
-      // 
-      // SelectText
-      // 
-      resources.ApplyResources(this.SelectText, "SelectText");
-      this.SelectText.Name = "SelectText";
-      this.SelectText.TabStop = true;
-      this.SelectText.UseVisualStyleBackColor = true;
-      this.SelectText.CheckedChanged += new System.EventHandler(this.SelectView_CheckedChanged);
       // 
       // SelectExportTargetForm
       // 
