@@ -235,7 +235,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ReminderForm_Load(object sender, EventArgs e)
     {
       PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
-      foreach ( var value in Enums.GetValues<PowerActions>().Skip(1).Where(a => !avoid.Contains(a)) )
+      foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
         var item = (ToolStripMenuItem)ContextMenuStripLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
         item.Tag = value;
@@ -323,9 +323,14 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, this);
     }
 
-    private void ActionSetup_Click(object sender, EventArgs e)
+    private void ActionSetupSound_Click(object sender, EventArgs e)
     {
       SelectSoundForm.Run(true);
+    }
+
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionPreferences.PerformClick();
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)

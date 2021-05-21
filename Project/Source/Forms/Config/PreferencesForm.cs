@@ -331,7 +331,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
     {
-      if ( Created ) Settings.GenerateIntervalMaximum = (int)EditMaxYearsInterval.Value;
       YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
                                        Program.AutoGenerateYearsIntervalMax,
                                        PredefinedYearsItem_Click);
@@ -346,8 +345,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)
     {
-      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval,
-                               new Point(0, SelectAutoGenerateYearsInterval.Height));
+      MenuPredefinedYears.Show(SelectAutoGenerateYearsInterval, new Point(0, SelectAutoGenerateYearsInterval.Height));
     }
 
     private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -560,6 +558,11 @@ namespace Ordisoftware.Hebrew.Calendar
     #endregion
 
     #region Export Save, Copy and Print
+
+    private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
+    {
+      MainForm.Instance.EditExportDataEnumsAsTranslations.Checked = EditExportDataEnumsAsTranslations.Checked;
+    }
 
     private void EditAutoOpenExportFolder_CheckedChanged(object sender, EventArgs e)
     {

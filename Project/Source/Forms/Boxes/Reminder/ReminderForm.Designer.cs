@@ -35,7 +35,7 @@
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.LabelStartTime = new System.Windows.Forms.Label();
-      this.ActionSetup = new System.Windows.Forms.Button();
+      this.ActionPreferences = new System.Windows.Forms.Button();
       this.LabelEndTime = new System.Windows.Forms.Label();
       this.LabelArrow = new System.Windows.Forms.Label();
       this.LabelStartDay = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
       this.ActionLockout = new System.Windows.Forms.Button();
       this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSetupSound = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
       this.ContextMenuStripLockout.SuspendLayout();
@@ -96,14 +97,14 @@
       this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelStartTime.Name = "LabelStartTime";
       // 
-      // ActionSetup
+      // ActionPreferences
       // 
-      resources.ApplyResources(this.ActionSetup, "ActionSetup");
-      this.ActionSetup.FlatAppearance.BorderSize = 0;
-      this.ActionSetup.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.ActionSetup.Name = "ActionSetup";
-      this.ActionSetup.UseVisualStyleBackColor = true;
-      this.ActionSetup.Click += new System.EventHandler(this.ActionSetup_Click);
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
+      this.ActionPreferences.FlatAppearance.BorderSize = 0;
+      this.ActionPreferences.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionPreferences.Name = "ActionPreferences";
+      this.ActionPreferences.UseVisualStyleBackColor = true;
+      this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
       // LabelEndTime
       // 
@@ -206,19 +207,28 @@
       resources.ApplyResources(this.MenuDefaultLockout, "MenuDefaultLockout");
       this.MenuDefaultLockout.Name = "MenuDefaultLockout";
       // 
+      // ActionSetupSound
+      // 
+      this.ActionSetupSound.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetupSound, "ActionSetupSound");
+      this.ActionSetupSound.Name = "ActionSetupSound";
+      this.ActionSetupSound.UseVisualStyleBackColor = true;
+      this.ActionSetupSound.Click += new System.EventHandler(this.ActionSetupSound_Click);
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.ActionSetupSound);
       this.Controls.Add(this.LabelParashahValue);
       this.Controls.Add(this.LabelEndDay);
       this.Controls.Add(this.LabelEndTime);
       this.Controls.Add(this.LabelArrow);
       this.Controls.Add(this.LabelStartDay);
       this.Controls.Add(this.LabelStartTime);
-      this.Controls.Add(this.ActionSetup);
+      this.Controls.Add(this.ActionPreferences);
       this.Controls.Add(this.ActionLockout);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
@@ -248,7 +258,7 @@
     private System.Windows.Forms.PictureBox PictureBox;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Label LabelStartTime;
-    private System.Windows.Forms.Button ActionSetup;
+    private System.Windows.Forms.Button ActionPreferences;
     private System.Windows.Forms.Label LabelEndTime;
     private System.Windows.Forms.Label LabelArrow;
     private System.Windows.Forms.Label LabelStartDay;
@@ -264,5 +274,6 @@
     private System.Windows.Forms.Button ActionLockout;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
+    private System.Windows.Forms.Button ActionSetupSound;
   }
 }

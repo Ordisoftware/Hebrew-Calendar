@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -329,14 +329,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -561,12 +561,12 @@
       this.toolStripSeparator14.Name = "toolStripSeparator14";
       resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
       // 
-      // EditEnumsAsTranslations
+      // EditExportDataEnumsAsTranslations
       // 
-      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditEnumsAsTranslations");
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
       this.EditExportDataEnumsAsTranslations.BackColor = System.Drawing.Color.Transparent;
       this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditExportDataEnumsAsTranslations.Name = "EditEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
       // LabelEnumsAsTranslations
@@ -1486,7 +1486,7 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionGenerate;
     private System.Windows.Forms.ToolStripMenuItem ActionVacuumAtNextStartup;
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
-    private System.Windows.Forms.ToolStripButton ActionPreferences;
+    internal System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripDropDownButton ActionSettings;
     private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
     public System.Windows.Forms.ToolStripMenuItem EditScreenNone;
@@ -1537,7 +1537,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
     private System.Windows.Forms.BindingSource LunisolarDaysBindingSource;
-    private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
     private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -1567,7 +1566,8 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     private System.Windows.Forms.ToolStripLabel LabelEnumsAsTranslations;
-    private Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
+    private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
+    internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
   }
 }
 
