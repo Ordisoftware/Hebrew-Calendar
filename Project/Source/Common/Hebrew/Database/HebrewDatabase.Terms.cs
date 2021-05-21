@@ -14,7 +14,7 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using Equin.ApplicationFramework;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -26,7 +26,8 @@ namespace Ordisoftware.Hebrew
     public List<TermHebrew> TermsHebrew { get; private set; }
     public List<TermLettriq> TermLettriqs { get; private set; }
 
-    public BindingList<TermHebrew> TermsHebrewAsBindingList { get; private set; }
+    public BindingListView<TermHebrew> TermsHebrewAsBindingList { get; private set; }
+    public BindingListView<TermLettriq> TermLettriqsAsBindingList { get; private set; }
 
     public List<TermHebrew> TakeLettriqs(bool reload = false)
     {
@@ -35,7 +36,10 @@ namespace Ordisoftware.Hebrew
       Interlocks.Take(nameof(TermsHebrew));
       TermsHebrew = Load(Connection.Table<TermHebrew>());
       TermLettriqs = Load(Connection.Table<TermLettriq>());
-      TermsHebrewAsBindingList = new BindingList<TermHebrew>(TermsHebrew);
+      TermsHebrewAsBindingList = new BindingListView<TermHebrew>(TermsHebrew);
+      TermLettriqsAsBindingList = new BindingListView<TermLettriq>(TermLettriqs);
+      Instance.TermsHebrewAsBindingList.ApplySort(nameof(TermHebrew.Hebrew));
+      Instance.TermLettriqsAsBindingList.ApplySort(nameof(TermLettriq.Sentence));
       return TermsHebrew;
     }
 
