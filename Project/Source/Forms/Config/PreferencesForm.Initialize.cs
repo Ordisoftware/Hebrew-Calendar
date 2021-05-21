@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         TabControl.SelectedTab = TabPageGeneration;
         Settings.SetFirstAndUpgradeFlagsOff();
-                SystemManager.TryCatch(Settings.Save);
+        SystemManager.TryCatch(Settings.Save);
       }
     }
 
@@ -121,7 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
         return;
       }
       SaveSettings();
-              SystemManager.TryCatch(Settings.Save);
+      SystemManager.TryCatch(Settings.Save);
       SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
     }
 
@@ -184,8 +184,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadPowerActions()
     {
-      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
-      foreach ( var value in Enums.GetValues<PowerActions>().Skip(1).Where(a => !avoid.Contains(a)) )
+      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart, PowerActions.Shutdown };
+      foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
         SelectLockSessionDefaultAction.Items.Add(value);
         if ( Settings.LockSessionDefaultAction == value )

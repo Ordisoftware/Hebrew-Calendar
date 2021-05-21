@@ -18,6 +18,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace Ordisoftware.Core
 {
@@ -27,6 +28,18 @@ namespace Ordisoftware.Core
   /// </summary>
   static partial class SystemManager
   {
+
+    static public List<PowerActions> GetAvailablePowerActions()
+    {
+      var list = new List<PowerActions>();
+      list.Add(PowerActions.LockSession);
+      if ( CanStandby ) list.Add(PowerActions.StandBy);
+      if ( CanHibernate ) list.Add(PowerActions.Hibernate);
+      list.Add(PowerActions.LogOff);
+      list.Add(PowerActions.Restart);
+      list.Add(PowerActions.Shutdown);
+      return list;
+    }
 
     static public void PreventSleep()
       => NativeMethods.SetThreadExecutionState(NativeMethods.SleepDisallow);

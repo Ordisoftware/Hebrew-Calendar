@@ -235,7 +235,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ReminderForm_Load(object sender, EventArgs e)
     {
       PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
-      foreach ( var value in Enums.GetValues<PowerActions>().Skip(1).Where(a => !avoid.Contains(a)) )
+      foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
         var item = (ToolStripMenuItem)ContextMenuStripLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
         item.Tag = value;
