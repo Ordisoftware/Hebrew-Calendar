@@ -41,6 +41,10 @@ namespace Ordisoftware.Core
       return list;
     }
 
+    static public bool IsUserSession { get; private set; }
+
+    static public bool IsSessionLocked { get; private set; }
+
     static public void PreventSleep()
       => NativeMethods.SetThreadExecutionState(NativeMethods.SleepDisallow);
 
@@ -71,6 +75,14 @@ namespace Ordisoftware.Core
       }
     }
 
+    static public bool IsForegroundFullScreenOrScreensaverRunning
+    {
+      get
+      {
+        return IsForegroundFullScreen() || IsScreensaverRunning;
+      }
+    }
+
     static public bool IsScreensaverRunning
     {
       get
@@ -78,14 +90,6 @@ namespace Ordisoftware.Core
         int running = 0;
         NativeMethods.SystemParametersInfo(NativeMethods.SPI_GETSCREENSAVERRUNNING, 0, ref running, 0);
         return running != 0;
-      }
-    }
-
-    static public bool IsForegroundFullScreenOrScreensaverRunning
-    {
-      get
-      {
-        return IsForegroundFullScreen() || IsScreensaverRunning;
       }
     }
 

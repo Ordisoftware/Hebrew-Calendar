@@ -344,6 +344,7 @@ namespace Ordisoftware.Hebrew.Calendar
         TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
         TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(16, 16);
       });
+      SoundItem.Initialize();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
     }

@@ -35,11 +35,11 @@ namespace Ordisoftware.Hebrew.Calendar
       CheckProcessRelicate();
       try
       {
+        bool showbox = !SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused;
         IsSpecialDay = false;
-        IsSpecialDay = CheckShabat(!SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderShabatEnabled) || IsSpecialDay;
-        IsSpecialDay = CheckCelebrationDay(!SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
-        if ( !SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused && Settings.ReminderCelebrationsEnabled )
-          CheckCelebrations();
+        IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
+        IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
+        if ( showbox && Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
       }
       catch ( Exception ex )
       {

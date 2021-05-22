@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -73,15 +73,6 @@ namespace Ordisoftware.Core
       if ( Globals.IsVisualStudioDesigner ) return;
       if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
         AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
-    }
-
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static SystemManager()
-    {
-      if ( Globals.PreLoadSSLCertificate )
-        LoadSSLCertificate();
     }
 
   }
