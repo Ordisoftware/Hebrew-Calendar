@@ -43,8 +43,11 @@ namespace Ordisoftware.Hebrew
     {
       if ( TermsHebrew == null && TermLettriqs == null ) return;
       ProcessLocks.Unlock(nameof(TermsHebrew));
-      TermsHebrew?.Clear();
-      TermLettriqs?.Clear();
+      if ( ClearListsOnCloseAndRelease )
+      {
+        TermsHebrew?.Clear();
+        TermLettriqs?.Clear();
+      }
       TermsHebrew = null;
       TermLettriqs = null;
     }

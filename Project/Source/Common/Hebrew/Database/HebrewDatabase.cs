@@ -38,6 +38,12 @@ namespace Ordisoftware.Hebrew
       Connection.Vacuum();
     }
 
+    protected override void DoClose()
+    {
+      ReleaseParashot();
+      ReleaseLettriqs();
+    }
+
     protected override void CreateTables()
     {
       CheckConnected();

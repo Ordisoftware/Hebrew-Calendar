@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew
     {
       if ( Parashot == null ) return;
       ProcessLocks.Unlock(ParashotTableName);
-      Parashot.Clear();
+      if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
       Parashot = null;
     }
 

@@ -55,15 +55,20 @@ namespace Ordisoftware.Hebrew
     public string ToStringLinked()
       => Name + ( Linked != null ? " - " + Linked.Name : "" );
 
-    public string ToString(bool useHebrewFont)
-      => $"Sefer {Book} " +
-         $"{VerseBegin} - {VerseEnd} " +
-         $"Parashah n°{Number} " +
+    public string ToStringReadable()
+      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " +
+         $"{Name} " +
+         $"({Unicode})" + Globals.NL +
+         $"• {Translation.GetOrEmpty()}" + Globals.NL +
+         $"• {Lettriq.GetOrEmpty()}";
+
+    public string ToString(bool useHebrewFont = false, bool memo = true)
+      => $"Sefer {Book} {VerseBegin} - {VerseEnd} Parashah n°{Number} " +
          $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
          $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
          $"{Translation.GetOrEmpty()} ; " +
-         $"{Lettriq.GetOrEmpty()} ; " +
-         $"{Memo.GetOrEmpty()} ";
+         $"{Lettriq.GetOrEmpty()}" +
+         ( memo ? $" ; {Memo.GetOrEmpty()} " : "" );
 
     public override string ToString()
       => ToString(false);

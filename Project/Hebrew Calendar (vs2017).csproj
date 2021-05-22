@@ -274,7 +274,7 @@
     <Compile Include="Source\Database\LunisolarDay.Helper.cs" />
     <Compile Include="Source\Database\LunisolarDay.Times.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LunarDay.cs" />
-    <Compile Include="Source\Database\Parashah.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />

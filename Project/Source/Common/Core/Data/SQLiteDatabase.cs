@@ -14,7 +14,6 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SQLite;
 
 namespace Ordisoftware.Core
@@ -31,6 +30,8 @@ namespace Ordisoftware.Core
     public string ConnectionString { get; private set; }
 
     public bool Initialized { get; private set; }
+
+    public bool ClearListsOnCloseAndRelease { get; set; }
 
     public SQLiteNetORM Connection
     {
@@ -78,9 +79,12 @@ namespace Ordisoftware.Core
     public void Close()
     {
       if ( Connection == null ) return;
+      DoClose();
       Connection.Close();
       Connection = null;
     }
+
+    protected abstract void DoClose();
 
     protected virtual void UpgradeSchema()
     {

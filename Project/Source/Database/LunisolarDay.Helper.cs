@@ -21,27 +21,6 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunisolarDay
   {
 
-    public bool IsNewYear
-      => TorahEvent == TorahEvent.NewYearD1;
-
-    public bool HasSeasonChange
-      => SeasonChange != SeasonChange.None;
-
-    public bool HasTorahEvent
-      => TorahEvent != TorahEvent.None;
-
-    public string DayAndMonthText
-      => LunarDay + " " + HebrewMonths.Transliterations[LunarMonth];
-
-    public string DayAndMonthWithYearText
-      => DayAndMonthText + " " + Date.Year;
-
-    public string DayAndMonthFormattedText
-      => Program.Settings.MoonDayTextFormat.ToUpper()
-                .Replace("%MONTHNAME%", HebrewMonths.Transliterations[LunarMonth])
-                .Replace("%MONTHNUM%", LunarMonth.ToString())
-                .Replace("%DAYNUM%", LunarDay.ToString());
-
     public string GetWeekLongCelebrationIntermediateDay()
     {
       int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;

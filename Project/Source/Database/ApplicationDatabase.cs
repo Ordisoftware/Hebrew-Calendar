@@ -46,6 +46,13 @@ namespace Ordisoftware.Hebrew.Calendar
                                                               Program.Settings.VacuumAtStartupDaysInterval);
     }
 
+    protected override void DoClose()
+    {
+      if ( LunisolarDays == null ) return;
+      if ( ClearListsOnCloseAndRelease ) LunisolarDays.Clear();
+      LunisolarDays = null;
+    }
+
     protected override void CreateTables()
     {
       Connection.CreateTable<LunisolarDay>();

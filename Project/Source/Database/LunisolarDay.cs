@@ -48,6 +48,27 @@ namespace Ordisoftware.Hebrew.Calendar
     [Ignore]
     public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
 
+    public bool IsNewYear
+      => TorahEvent == TorahEvent.NewYearD1;
+
+    public bool HasSeasonChange
+      => SeasonChange != SeasonChange.None;
+
+    public bool HasTorahEvent
+      => TorahEvent != TorahEvent.None;
+
+    public string DayAndMonthText
+      => LunarDay + " " + HebrewMonths.Transliterations[LunarMonth];
+
+    public string DayAndMonthWithYearText
+      => DayAndMonthText + " " + Date.Year;
+
+    public string DayAndMonthFormattedText
+      => Program.Settings.MoonDayTextFormat.ToUpper()
+                .Replace("%MONTHNAME%", HebrewMonths.Transliterations[LunarMonth])
+                .Replace("%MONTHNUM%", LunarMonth.ToString())
+                .Replace("%DAYNUM%", LunarDay.ToString());
+
   }
 
 }
