@@ -394,6 +394,13 @@ namespace Ordisoftware.Core
       return destImage;
     }
 
+    static public void SetBackColor(this DataGridView grid, Color color)
+    {
+      for ( int row = 0; row < grid.Rows.Count; row++ )
+        for ( int col = 0; col < grid.Columns.Count; col++ )
+          grid[col, row].Style.BackColor = color;
+    }
+
     static public List<Point> GetGridPoints(this Control control, int margin = 15)
     {
       int widthDiv2 = control.Width / 2;
