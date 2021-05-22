@@ -63,6 +63,9 @@ namespace Ordisoftware.Hebrew.Calendar
     public float CurrentGPSLongitude { get; set; }
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
 
+    public List<Parashah> UserParashot { get; set; } 
+      = new List<Parashah>();
+
     public DateTime DateFirst { get; private set; }
     public DateTime DateLast { get; private set; }
     public int YearFirst { get; private set; }

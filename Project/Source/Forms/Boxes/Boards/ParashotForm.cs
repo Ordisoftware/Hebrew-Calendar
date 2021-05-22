@@ -181,6 +181,7 @@ namespace Ordisoftware.Hebrew
       Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
       Settings.ParashotFormFontSize = EditFontSize.Value;
       Settings.Save();
+      MainForm.Instance.UserParashot = HebrewDatabase.Instance.Parashot;
       HebrewDatabase.Instance.ReleaseParashot();
       UpdateStats();
     }

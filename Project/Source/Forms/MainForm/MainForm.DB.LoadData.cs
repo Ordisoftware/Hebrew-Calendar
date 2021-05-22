@@ -13,7 +13,9 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-05 </edited>
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Ordisoftware.Core;
 
@@ -34,6 +36,9 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.ChronoLoadData.Start();
           ApplicationDatabase.Instance.Open();
           LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDaysAsBindingList;
+          HebrewDatabase.Instance.TakeParashot();
+          UserParashot = HebrewDatabase.Instance.Parashot;
+          HebrewDatabase.Instance.ReleaseParashot();
           Globals.ChronoLoadData.Stop();
         });
         task.Start();

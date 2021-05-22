@@ -116,9 +116,13 @@ namespace Ordisoftware.Hebrew.Calendar
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
+              var parashah = ParashotFactory.Get(rowParashah.ParashahID);
               form.LabelParashahValue.Text = rowParashah.ParashahText;
-              form.LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
+              form.LabelParashahValue.Tag = row;
+              form.LabelParashahValue.Enabled = true;
             }
+            else
+              form.LabelParashahValue.Enabled = false;
           }
         }
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
@@ -250,7 +254,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = (Parashah)LabelParashahValue.Tag;
+        var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
@@ -311,16 +315,33 @@ namespace Ordisoftware.Hebrew.Calendar
       SelectSoundForm.Run(true);
     }
 
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
+    }
+
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
         if ( LabelParashahValue.Tag != null )
-          ParashotForm.Run((Parashah)LabelParashahValue.Tag);
+          ParashotForm.Run(ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID));
     }
 
-    private void ActionViewParashot_Click(object sender, EventArgs e)
+    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
+      var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
+      var userparashah = MainForm.Instance.UserParashot.Find(p => p.ID == parashah.ID);
+      if ( userparashah == null )
+      {
+        ActionViewParashahInfos.Enabled = false;
+        return;
+      }
+      var message = userparashah.ToStringReadable();
+      message += Globals.NL2 + userparashah.GetLinked()?.ToStringReadable();
+      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
+      form.StartPosition = FormStartPosition.CenterScreen;
+      form.TopMost = false;
+      form.ShowDialog();
     }
 
   }
