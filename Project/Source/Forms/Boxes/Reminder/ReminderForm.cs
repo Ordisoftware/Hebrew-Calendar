@@ -17,7 +17,6 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using EnumsNET;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -25,6 +24,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
   partial class ReminderForm : Form
   {
+
+    #region Static Constructor and Run
 
     static private Image Image;
 
@@ -161,6 +162,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    #endregion
+
+    #region Static Multi-Box Management
+
     static private void BringMainForm()
     {
       if ( MainForm.Instance.Visible && MainForm.Instance.WindowState != FormWindowState.Minimized )
@@ -219,6 +224,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    #endregion 
+
+    #region Instance Form Management
+
     protected override bool ShowWithoutActivation => true;
 
     private bool IsShabat;
@@ -229,7 +238,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
       if ( Image != null ) PictureBox.Image = Image;
-      InitializeMenu();
+      InitializeParashahMenu();
     }
 
     private void ReminderForm_Load(object sender, EventArgs e)
@@ -267,7 +276,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DoSound();
     }
 
-    private void InitializeMenu()
+    private void InitializeParashahMenu()
     {
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
@@ -283,6 +292,10 @@ namespace Ordisoftware.Hebrew.Calendar
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
     }
+
+    #endregion
+
+    #region Instance User Interactions
 
     private void DoSound()
     {
@@ -330,7 +343,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionPreferences.PerformClick();
+      MainForm.Instance.ActionPreferences_Click(IsShabat ? 6 : 7, null);
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)
@@ -355,6 +368,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ContextMenuStripLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
     }
+
+    #endregion 
 
   }
 

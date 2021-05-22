@@ -59,11 +59,8 @@ namespace Ordisoftware.Core
 
     static public void Initialize()
     {
-      new Task(() =>
-      {
-        GetApplicationSounds();
-        GetWindowsSounds();
-      }).Start();
+      GetApplicationSounds();
+      GetWindowsSounds();
     }
 
     public string FilePath { get; }

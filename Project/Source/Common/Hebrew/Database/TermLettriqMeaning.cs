@@ -13,25 +13,21 @@
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using SQLite;
 
 namespace Ordisoftware.Hebrew
 {
 
   [Serializable]
-  [Table("TermLettriq")]
-  public class TermLettriq
+  [Table("TermLettriqMeaning")]
+  public class TermLettriqOriginalMeaning
   {
     [PrimaryKey]
     public string ID { get; set; }
     public string TermID { get; set; }
-    public string Sentence { get; set; }
-    public List<TermLettriqOriginalMeaning> OriginalMeaning
-      => HebrewDatabase.Instance.TermLettriqOriginalMeanings
-                                .Where(item => item.LettriqID == ID)
-                                .OrderBy(m => m.Position).ToList();
+    public string LettriqID { get; set; }
+    public string OriginalMeaning { get; set; }
+    public int Position { get; set; }
   }
 
 }

@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void PreferencesForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      IsReady = true;
+      IsReady = false;
     }
 
     #endregion 

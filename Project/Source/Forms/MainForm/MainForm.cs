@@ -292,8 +292,9 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionPreferences_Click(object sender, EventArgs e)
+    internal void ActionPreferences_Click(object sender, EventArgs e)
     {
+      if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool calltimer = true;
       bool formEnabled = Enabled;
@@ -305,7 +306,7 @@ namespace Ordisoftware.Hebrew.Calendar
         TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         ClearLists();
-        if ( PreferencesForm.Run() )
+        if ( PreferencesForm.Run(sender is int ? (int)sender : -1) )
         {
           PanelViewText.Parent = null;
           PanelViewMonth.Parent = null;
