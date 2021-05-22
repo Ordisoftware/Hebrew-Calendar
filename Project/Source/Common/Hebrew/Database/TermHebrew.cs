@@ -29,7 +29,8 @@ namespace Ordisoftware.Hebrew
     public string Unicode { get; set; }
     public string Hebrew { get; set; }
     public List<TermLettriq> Lettriqs
-      => HebrewDatabase.Instance.TermLettriqs.Where(item => item.TermID == ID).OrderBy(s => s.Sentence).ToList();
+      => HebrewDatabase.Instance.TermLettriqs.Where(item => item.TermID == ID)
+                                             .OrderBy(s => s.Sentence).ToList();
   }
 
 }

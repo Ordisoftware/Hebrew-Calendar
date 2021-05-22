@@ -51,6 +51,7 @@ namespace Ordisoftware.Hebrew
       Connection.CreateTable<Parashah>();
       Connection.CreateTable<TermHebrew>();
       Connection.CreateTable<TermLettriq>();
+      Connection.CreateTable<TermLettriqOriginalMeaning>();
     }
 
     public override void LoadAll()
