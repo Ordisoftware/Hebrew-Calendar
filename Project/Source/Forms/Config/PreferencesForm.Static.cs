@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Xml;
 using System.Linq;
@@ -83,13 +83,17 @@ namespace Ordisoftware.Hebrew.Calendar
                                  .ToList();
     }
 
-    static public bool Run()
+    static public bool Run(int index = -1)
     {
       Reseted = false;
       Language lang = Settings.LanguageSelected;
       var form = new PreferencesForm();
       if ( !MainForm.Instance.Visible )
         form.ShowInTaskbar = true;
+      if ( index >= 0 )
+        form.TabControl.SelectedIndex = index;
+      else
+        form.TabControl.SelectedIndex = Settings.PreferencesFormSelectedTabIndex;
       form.ShowDialog();
       while ( LanguageChanged || DoReset )
       {
@@ -120,6 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
         MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
         if ( result ) CalendarDates.Instance.Clear();
       });
+      Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
       form.Dispose();
       return result;
     }

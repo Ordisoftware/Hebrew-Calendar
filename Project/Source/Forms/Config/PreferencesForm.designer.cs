@@ -494,10 +494,8 @@
       this.TabControl.Controls.Add(this.TabPageTextReport);
       this.TabControl.Controls.Add(this.TabPagePrint);
       this.TabControl.Controls.Add(this.TabPagePaths);
-      this.TabControl.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PreferencesFormSelectedTabIndex", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
-      this.TabControl.SelectedIndex = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PreferencesFormSelectedTabIndex;
       // 
       // TabPageApplication
       // 
