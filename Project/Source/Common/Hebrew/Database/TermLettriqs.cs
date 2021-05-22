@@ -28,8 +28,8 @@ namespace Ordisoftware.Hebrew
     public string ID { get; set; }
     public string TermID { get; set; }
     public string Sentence { get; set; }
-    public List<TermLettriqOriginalMeaning> OriginalMeaning
-      => HebrewDatabase.Instance.TermLettriqOriginalMeanings
+    public List<TermAnalysis> Analyzes
+      => HebrewDatabase.Instance.TermAnalyzes
                                 .Where(item => item.LettriqID == ID)
                                 .OrderBy(m => m.Position).ToList();
   }

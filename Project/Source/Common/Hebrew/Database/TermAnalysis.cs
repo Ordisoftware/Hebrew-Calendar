@@ -19,14 +19,14 @@ namespace Ordisoftware.Hebrew
 {
 
   [Serializable]
-  [Table("TermLettriqMeaning")]
-  public class TermLettriqOriginalMeaning
+  [Table("TermAnalysis")]
+  public class TermAnalysis
   {
     [PrimaryKey]
     public string ID { get; set; }
     public string TermID { get; set; }
     public string LettriqID { get; set; }
-    public string OriginalMeaning { get; set; }
+    public string Meaning { get; set; }
     public int Position { get; set; }
   }
 
