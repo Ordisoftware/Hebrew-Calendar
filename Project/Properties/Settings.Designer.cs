@@ -2513,5 +2513,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["LockSessionConfirmLogOffOrMore"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault {
+            get {
+                return ((bool)(this["AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault"]));
+            }
+            set {
+                this["AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault"] = value;
+            }
+        }
     }
 }

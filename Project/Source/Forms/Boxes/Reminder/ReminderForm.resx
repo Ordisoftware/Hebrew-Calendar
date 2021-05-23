@@ -462,6 +462,28 @@
   <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -478,35 +500,13 @@
     <value />
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
-  </data>
-  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
-        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
-        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
-        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
-        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
-        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
-        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
-        FOqQHJPYCDEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
-  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -527,7 +527,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -550,13 +550,13 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 104</value>
+    <value>181, 126</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -677,19 +677,19 @@
   </data>
   <data name="ActionSetupSound.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        yiq30bNfAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionSetupSound.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

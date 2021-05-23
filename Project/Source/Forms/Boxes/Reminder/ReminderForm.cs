@@ -127,6 +127,7 @@ namespace Ordisoftware.Hebrew.Calendar
               form.LabelParashahValue.Enabled = false;
           }
         }
+        form.ActionLockout.Visible = doLockSession;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;

@@ -105,8 +105,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !force && !TitleGPS.IsNullOrEmpty() )
           str = TitleGPS;
         else
-        if ( !string.IsNullOrEmpty(Program.Settings.GPSCountry) && !string.IsNullOrEmpty(Program.Settings.GPSCity) )
-          str = $"{Program.Settings.GPSCountry} - {Program.Settings.GPSCity}".ToUpper();
+        if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
+          str = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
         else
           str = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
         LabelSubTitleGPS.Text = str;

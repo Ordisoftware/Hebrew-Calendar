@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SelectYearsForm : Form
   {
 
+    static public readonly Properties.Settings Settings = Properties.Settings.Default;
+
     static public bool Run(bool canCancel, out int first, out int last)
     {
       using ( var form = new SelectYearsForm() )
@@ -46,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
-                                       Program.Settings.GenerateIntervalMaximum,
+                                       Settings.GenerateIntervalMaximum,
                                        PredefinedYearsItem_Click);
     }
 
@@ -56,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
       int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
       int min = Program.GenerateIntervalMinimum;
-      int max = Program.Settings.GenerateIntervalMaximum;
+      int max = Settings.GenerateIntervalMaximum;
       CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
         throw new ArgumentOutOfRangeException(AppTranslations.NotSupportedYear.GetLang(CurrentYear));
@@ -89,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionDefaultInterval_Click(object sender, EventArgs e)
     {
-      var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
+      var interval = new YearsIntervalItem(Settings.AutoGenerateYearsInternal);
       EditYearFirst.Value = CurrentYear - interval.YearsBefore;
       EditYearLast.Value = CurrentYear + interval.YearsAfter - 1;
     }
@@ -110,21 +112,21 @@ namespace Ordisoftware.Hebrew.Calendar
     private void EditYearFirst_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearLast.Value - EditYearFirst.Value >= Program.Settings.GenerateIntervalMaximum )
-        EditYearLast.Value = EditYearFirst.Value + Program.Settings.GenerateIntervalMaximum - 1;
+      if ( EditYearLast.Value - EditYearFirst.Value >= Settings.GenerateIntervalMaximum )
+        EditYearLast.Value = EditYearFirst.Value + Settings.GenerateIntervalMaximum - 1;
     }
 
     private void EditYearLast_ValueChanged(object sender, EventArgs e)
     {
       if ( Mutex ) return;
-      if ( EditYearLast.Value - EditYearFirst.Value >= Program.Settings.GenerateIntervalMaximum )
-        EditYearFirst.Value = EditYearLast.Value - Program.Settings.GenerateIntervalMaximum + 1;
+      if ( EditYearLast.Value - EditYearFirst.Value >= Settings.GenerateIntervalMaximum )
+        EditYearFirst.Value = EditYearLast.Value - Settings.GenerateIntervalMaximum + 1;
     }
 
     private void ActionOK_Click(object sender, EventArgs e)
     {
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
-      if ( Program.Settings.BigCalendarWarningEnabled )
+      if ( Settings.BigCalendarWarningEnabled )
         for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
           if ( diff > Program.BigCalendarLevels[index] )
           {

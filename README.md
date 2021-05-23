@@ -283,7 +283,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add parashah reminder at the start of the week.
-- Add option to ask to regenerate data at startup if years interval is larger than the default setting.
 
 #### 2021.05.30 - Version 8.0
 
@@ -294,6 +293,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lockout button for menu in active reminder box.
 - Add parashot context menu in shabat reminder box, navigation window, and tools menu.
 - Add open main form when click on the moon image in navigation window.
+- Add option to ask to regenerate data at startup if years interval is larger than 20% the default setting.
 - Some fixes and improvements.
 - Code refactoring and quality improvement.
 - Replace custom TraceListener by SeriLog.

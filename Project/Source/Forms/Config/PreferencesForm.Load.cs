@@ -128,6 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditReminderBoxShowFullDates.Checked = Settings.ReminderBoxShowFullDates; });
       SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
       SystemManager.TryCatch(() => { EditConfirmShutdown.Checked = Settings.LockSessionConfirmLogOffOrMore; });
+      SystemManager.TryCatch(() => { EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Checked = Settings.AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault; });
       // Hotkey
       InitHotKeyControls();
       // System
