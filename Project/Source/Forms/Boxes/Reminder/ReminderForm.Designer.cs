@@ -143,9 +143,9 @@
       // ContextMenuParashah
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewParashot,
-            this.toolStripSeparator1,
             this.ActionViewParashahInfos,
+            this.toolStripSeparator1,
+            this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline});
