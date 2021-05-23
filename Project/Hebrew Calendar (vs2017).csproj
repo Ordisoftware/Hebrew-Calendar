@@ -232,6 +232,7 @@
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Interlock.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Interlocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\TermAnalysis.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\Books.cs" />
