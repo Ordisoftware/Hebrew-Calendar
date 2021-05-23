@@ -903,7 +903,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
     {
-      Program.Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
+      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
       CalendarGrid.Invalidate();
     }
 

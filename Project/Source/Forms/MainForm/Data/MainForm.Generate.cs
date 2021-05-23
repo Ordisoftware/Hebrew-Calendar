@@ -28,10 +28,13 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
+        if ( Settings.AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault )
+          if ( YearsInterval >= Settings.AutoGenerateYearsInternal * 120 / 100 )
+            force = true;
         if ( force || DateTime.Today.Year >= YearLast - Program.GenerateIntervalPreviousYears )
           if ( force || auto || Settings.AutoRegenerate )
           {
-            var interval = new YearsIntervalItem(Program.Settings.AutoGenerateYearsInternal);
+            var interval = new YearsIntervalItem(Settings.AutoGenerateYearsInternal);
             int year = DateTime.Today.Year - Program.GenerateIntervalPreviousYears;
             int yearFirst = year - interval.YearsBefore;
             int yearLast = year + interval.YearsAfter - 1;

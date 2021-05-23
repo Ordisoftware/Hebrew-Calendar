@@ -158,7 +158,7 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
-              if ( !Program.Settings.TorahEventsCountAsMoon )
+              if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
             }
             else
@@ -166,7 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
                 add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
-              if ( !Program.Settings.TorahEventsCountAsMoon )
+              if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
               if ( row.Moonset != null )
                 add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);

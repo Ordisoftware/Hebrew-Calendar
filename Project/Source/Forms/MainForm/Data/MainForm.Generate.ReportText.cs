@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
             if ( day.IsNewMoon ) content.Append(headerSep + Globals.NL);
             string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-            string strDay = ( day.MoonriseOccuring == MoonriseOccuring.NextDay && Program.Settings.TorahEventsCountAsMoon
+            string strDay = ( day.MoonriseOccuring == MoonriseOccuring.NextDay && Settings.TorahEventsCountAsMoon
                             ? "  "
                             : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon
                                                                                 ? MoonNewText

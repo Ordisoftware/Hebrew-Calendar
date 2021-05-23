@@ -2836,7 +2836,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionGetGPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 355</value>
+    <value>20, 365</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -2881,7 +2881,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 173</value>
+    <value>88, 168</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2911,7 +2911,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 300</value>
+    <value>20, 315</value>
   </data>
   <data name="LabelGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -2947,7 +2947,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 210</value>
+    <value>20, 230</value>
   </data>
   <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -3019,7 +3019,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 300</value>
+    <value>107, 315</value>
   </data>
   <data name="LabelGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
@@ -3045,6 +3045,42 @@
   <data name="&gt;&gt;LabelGPSLongitude.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 200</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 17</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Text" xml:space="preserve">
+    <value>Auto-regenerate at startup if the previously generated interval is greater than 20%</value>
+  </data>
+  <data name="&gt;&gt;EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Name" xml:space="preserve">
+    <value>EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault</value>
+  </data>
+  <data name="&gt;&gt;EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="EditAutoRegenerate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3058,7 +3094,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoRegenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
+    <value>23, 146</value>
   </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
@@ -3079,7 +3115,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoRegenerate.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="ActionAutoGenerateHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -3104,7 +3140,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionAutoGenerateHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 173</value>
+    <value>118, 168</value>
   </data>
   <data name="ActionAutoGenerateHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -3122,13 +3158,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 319</value>
+    <value>23, 334</value>
   </data>
   <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -3146,13 +3182,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 229</value>
+    <value>23, 249</value>
   </data>
   <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3176,13 +3212,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 319</value>
+    <value>110, 334</value>
   </data>
   <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -3200,13 +3236,13 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 176</value>
+    <value>42, 171</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -3227,7 +3263,7 @@
     <value>TabPageGeneration</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="TabPageGeneration.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
