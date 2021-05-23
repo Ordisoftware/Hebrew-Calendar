@@ -63,7 +63,12 @@ namespace Ordisoftware.Hebrew.Calendar
       Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     }
 
-    public void AboutBox_Shown(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by AboutBox for shown events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+      public void AboutBox_Shown(object sender, EventArgs e)
     {
       Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
       ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;

@@ -83,6 +83,8 @@
       this.label21 = new System.Windows.Forms.Label();
       this.linkLabel22 = new System.Windows.Forms.LinkLabel();
       this.label22 = new System.Windows.Forms.Label();
+      this.linkLabel23 = new System.Windows.Forms.LinkLabel();
+      this.label23 = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -493,6 +495,21 @@
       resources.ApplyResources(this.label22, "label22");
       this.label22.Name = "label22";
       // 
+      // linkLabel23
+      // 
+      this.linkLabel23.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.linkLabel23, "linkLabel23");
+      this.linkLabel23.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkLabel23.LinkColor = System.Drawing.Color.Navy;
+      this.linkLabel23.Name = "linkLabel23";
+      this.linkLabel23.TabStop = true;
+      this.linkLabel23.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelProvider_LinkClicked);
+      // 
+      // label23
+      // 
+      resources.ApplyResources(this.label23, "label23");
+      this.label23.Name = "label23";
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
@@ -514,6 +531,7 @@
       this.Controls.Add(this.label17);
       this.Controls.Add(this.label16);
       this.Controls.Add(this.label19);
+      this.Controls.Add(this.label23);
       this.Controls.Add(this.label18);
       this.Controls.Add(this.label8);
       this.Controls.Add(this.label7);
@@ -532,6 +550,7 @@
       this.Controls.Add(this.linkLabel13);
       this.Controls.Add(this.linkLabel17);
       this.Controls.Add(this.linkLabel16);
+      this.Controls.Add(this.linkLabel23);
       this.Controls.Add(this.linkLabel19);
       this.Controls.Add(this.linkLabel18);
       this.Controls.Add(this.linkLabel6);
@@ -618,5 +637,7 @@
     private System.Windows.Forms.Label label21;
     private System.Windows.Forms.LinkLabel linkLabel22;
     private System.Windows.Forms.Label label22;
+    private System.Windows.Forms.LinkLabel linkLabel23;
+    private System.Windows.Forms.Label label23;
   }
 }
