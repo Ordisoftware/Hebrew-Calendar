@@ -850,3 +850,4 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2019.01.14 - Version 1.0
 
 - Initial release.
+- 
