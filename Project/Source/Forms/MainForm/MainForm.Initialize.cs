@@ -138,7 +138,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.ChronoStartingApp.Stop();
         Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
-        CheckRegenerateCalendar(force: doforce || Globals.IsDatabaseUpgraded);
+        CheckRegenerateCalendar(false, doforce || Globals.IsDatabaseUpgraded, true);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
         SystemManager.TryCatch(Settings.Save);

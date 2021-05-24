@@ -24,13 +24,19 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Check if the calendar must be generated again in it comes near the end.
     /// </summary>
-    private string CheckRegenerateCalendar(bool auto = false, bool force = false)
+    private string CheckRegenerateCalendar(bool auto = false, bool force = false, bool checkover = false)
     {
       try
       {
-        if ( Settings.AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault )
-          if ( YearsInterval >= Settings.AutoGenerateYearsInternal * 120 / 100 )
-            force = true;
+        if ( checkover && YearsInterval > Settings.AutoGenerateYearsInternal )
+          if ( Settings.AskRegenerateIfIntervalGreater )
+          {
+            string msg = AppTranslations.AskToRegenerate.GetLang(Settings.AutoGenerateYearsInternal, YearsInterval);
+            DisplayManager.QueryYesNoCancel(msg,
+            () => { force = true; },
+            null,
+            () => Settings.AskRegenerateIfIntervalGreater = false);
+          }
         if ( force || DateTime.Today.Year >= YearLast - Program.GenerateIntervalPreviousYears )
           if ( force || auto || Settings.AutoRegenerate )
           {

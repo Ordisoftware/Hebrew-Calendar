@@ -2517,12 +2517,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault {
+        public bool AskRegenerateIfIntervalGreater {
             get {
-                return ((bool)(this["AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault"]));
+                return ((bool)(this["AskRegenerateIfIntervalGreater"]));
             }
             set {
-                this["AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault"] = value;
+                this["AskRegenerateIfIntervalGreater"] = value;
             }
         }
     }

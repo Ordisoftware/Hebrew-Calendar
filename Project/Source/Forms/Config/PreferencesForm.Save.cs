@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ReminderBoxShowFullDates = EditReminderBoxShowFullDates.Checked;
       Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
       Settings.LockSessionConfirmLogOffOrMore = EditConfirmShutdown.Checked;
-      Settings.AutoRegenerateAtStartupIfIntervalIsGreaterThanDefault = EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Checked;
+      Settings.AskRegenerateIfIntervalGreater = EditAskRegenerateIfIntervalGreater.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

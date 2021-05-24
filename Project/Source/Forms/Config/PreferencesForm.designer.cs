@@ -139,7 +139,7 @@
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditBigCalendarWarning = new System.Windows.Forms.CheckBox();
       this.LabelGPSLongitude = new System.Windows.Forms.Label();
-      this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault = new System.Windows.Forms.CheckBox();
+      this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
       this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
@@ -1114,7 +1114,7 @@
       this.TabPageGeneration.Controls.Add(this.LabelTimeZone);
       this.TabPageGeneration.Controls.Add(this.EditBigCalendarWarning);
       this.TabPageGeneration.Controls.Add(this.LabelGPSLongitude);
-      this.TabPageGeneration.Controls.Add(this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault);
+      this.TabPageGeneration.Controls.Add(this.EditAskRegenerateIfIntervalGreater);
       this.TabPageGeneration.Controls.Add(this.EditAutoRegenerate);
       this.TabPageGeneration.Controls.Add(this.ActionAutoGenerateHelp);
       this.TabPageGeneration.Controls.Add(this.EditGPSLatitude);
@@ -1229,12 +1229,12 @@
       resources.ApplyResources(this.LabelGPSLongitude, "LabelGPSLongitude");
       this.LabelGPSLongitude.Name = "LabelGPSLongitude";
       // 
-      // EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault
+      // EditAskRegenerateIfIntervalGreater
       // 
-      resources.ApplyResources(this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault, "EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault");
-      this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Name = "EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault";
-      this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.UseVisualStyleBackColor = true;
-      this.EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.CheckedChanged += new System.EventHandler(this.EditAutoRegenerate_CheckedChanged);
+      resources.ApplyResources(this.EditAskRegenerateIfIntervalGreater, "EditAskRegenerateIfIntervalGreater");
+      this.EditAskRegenerateIfIntervalGreater.Name = "EditAskRegenerateIfIntervalGreater";
+      this.EditAskRegenerateIfIntervalGreater.UseVisualStyleBackColor = true;
+      this.EditAskRegenerateIfIntervalGreater.CheckedChanged += new System.EventHandler(this.EditAutoRegenerate_CheckedChanged);
       // 
       // EditAutoRegenerate
       // 
@@ -2870,6 +2870,6 @@
     private System.Windows.Forms.ComboBox SelectLockSessionDefaultAction;
     private System.Windows.Forms.CheckBox EditConfirmShutdown;
     private System.Windows.Forms.Panel PanelBalloon;
-    private System.Windows.Forms.CheckBox EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault;
+    private System.Windows.Forms.CheckBox EditAskRegenerateIfIntervalGreater;
   }
 }
