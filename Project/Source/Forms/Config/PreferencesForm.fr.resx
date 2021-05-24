@@ -782,7 +782,7 @@
   <data name="EditConfirmShutdown.Text" xml:space="preserve">
     <value>Confirmer l'arrêt de l'ordinateur</value>
   </data>
-  <data name="EditAutoRegenerateAtStartupIfIntervalIsGreaterThanDefault.Text" xml:space="preserve">
-    <value>Régénération auto au démarrage si l'intervalle précédemment généré est supérieur de 20%</value>
+  <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
+    <value>Demander de régénérer au démarrage si l'intervalle est supérieur à la valeur par défaut</value>
   </data>
 </root>

@@ -96,7 +96,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LoadDataGenerate()
     {
       Globals.ChronoStartingApp.Stop();
-      PreferencesForm.Run();
+      PreferencesForm.Run(4);
       string errors = CheckRegenerateCalendar(true);
       Globals.ChronoStartingApp.Start();
       if ( errors != null )
