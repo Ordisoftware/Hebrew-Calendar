@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 namespace Ordisoftware.Core
 {
 
-  static partial class NativeMethods
+  static class NativeMethods
   {
 
     #region WorkStation
@@ -77,15 +77,15 @@ namespace Ordisoftware.Core
       public ushort ParamH;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
-    public struct KEYBDINPUT
-    {
-      public ushort Vk;
-      public ushort Scan;
-      public uint Flags;
-      public uint Time;
-      public IntPtr ExtraInfo;
-    }
+      [StructLayout(LayoutKind.Sequential)]
+      public struct KEYBDINPUT
+      {
+        public ushort Vk;
+        public ushort Scan;
+        public uint Flags;
+        public uint Time;
+        public IntPtr ExtraInfo;
+      }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct MOUSEINPUT
@@ -109,12 +109,12 @@ namespace Ordisoftware.Core
       public MOUSEINPUT Mouse;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
-    public struct INPUT
-    {
-      public uint Type;
-      public MOUSEKEYBDHARDWAREINPUT Data;
-    }
+      [StructLayout(LayoutKind.Sequential)]
+      public struct INPUT
+      {
+        public uint Type;
+        public MOUSEKEYBDHARDWAREINPUT Data;
+      }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct PointStruct
