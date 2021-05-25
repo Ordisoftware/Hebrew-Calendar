@@ -130,7 +130,7 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    public bool ShowParashahInformation(Form owner, Parashah parashah, bool withLinked)
+    public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
     {
       var linked = withLinked ? parashah.GetLinked() : null;
       if ( parashah == null ) return false;
