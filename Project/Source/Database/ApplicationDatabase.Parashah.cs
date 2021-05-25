@@ -46,28 +46,11 @@ namespace Ordisoftware.Hebrew.Calendar
       return ParashotFactory.Get(today?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
-    public bool ShowWeeklyParashahInformation()
+    public bool ShowParashahDescription()
     {
       if ( MainForm.UserParashot == null ) return false;
       var parashah = MainForm.UserParashot.Find(p => p.ID == GetWeeklyParashah().ID);
-      var linked = parashah.GetLinked();
-      if ( parashah == null ) return false;
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
-      form.StartPosition = FormStartPosition.CenterScreen;
-      form.ForceNoTopMost = true;
-      form.ShowInTaskbar = true;
-      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionYes.Text = "Memo";
-      form.ActionYes.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      form.ShowDialog(MainForm.Instance);
-      return true;
+      return HebrewDatabase.Instance.ShowParashahDescription(MainForm.Instance, parashah, true);
     }
 
   }

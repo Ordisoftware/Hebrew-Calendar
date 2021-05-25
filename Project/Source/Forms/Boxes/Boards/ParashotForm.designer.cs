@@ -53,6 +53,17 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.DataGridView = new System.Windows.Forms.DataGridView();
+      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,17 +90,8 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.ColumnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnTranslation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnLettriq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnLinked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -273,6 +275,121 @@
       this.DataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellValueChanged);
       this.DataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView_KeyDown);
       // 
+      // ColumnBook
+      // 
+      this.ColumnBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnBook.DataPropertyName = "Book";
+      resources.ApplyResources(this.ColumnBook, "ColumnBook");
+      this.ColumnBook.Name = "ColumnBook";
+      this.ColumnBook.ReadOnly = true;
+      this.ColumnBook.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnNumber
+      // 
+      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnNumber.DataPropertyName = "Number";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
+      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
+      this.ColumnNumber.Name = "ColumnNumber";
+      this.ColumnNumber.ReadOnly = true;
+      this.ColumnNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnName
+      // 
+      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnName.DataPropertyName = "Name";
+      resources.ApplyResources(this.ColumnName, "ColumnName");
+      this.ColumnName.Name = "ColumnName";
+      this.ColumnName.ReadOnly = true;
+      this.ColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnTranslation
+      // 
+      this.ColumnTranslation.DataPropertyName = "Translation";
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle3;
+      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
+      this.ColumnTranslation.Name = "ColumnTranslation";
+      this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnLettriq
+      // 
+      this.ColumnLettriq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnLettriq.DataPropertyName = "Lettriq";
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
+      resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
+      this.ColumnLettriq.Name = "ColumnLettriq";
+      this.ColumnLettriq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnBegin
+      // 
+      this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnBegin.DataPropertyName = "VerseBegin";
+      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
+      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
+      this.ColumnBegin.Name = "ColumnBegin";
+      this.ColumnBegin.ReadOnly = true;
+      this.ColumnBegin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnEnd
+      // 
+      this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnEnd.DataPropertyName = "VerseEnd";
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
+      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
+      this.ColumnEnd.Name = "ColumnEnd";
+      this.ColumnEnd.ReadOnly = true;
+      this.ColumnEnd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnLinked
+      // 
+      this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
+      resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
+      this.ColumnLinked.Name = "ColumnLinked";
+      this.ColumnLinked.ReadOnly = true;
+      this.ColumnLinked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnHebrew
+      // 
+      this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnHebrew.DataPropertyName = "Hebrew";
+      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle8;
+      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
+      this.ColumnHebrew.Name = "ColumnHebrew";
+      this.ColumnHebrew.ReadOnly = true;
+      this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // HasMemo
+      // 
+      this.HasMemo.DataPropertyName = "HasMemo";
+      resources.ApplyResources(this.HasMemo, "HasMemo");
+      this.HasMemo.Name = "HasMemo";
+      this.HasMemo.ReadOnly = true;
+      // 
+      // ColumnMemo
+      // 
+      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+      this.ColumnMemo.DataPropertyName = "Memo";
+      dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+      dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
+      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle9;
+      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
+      this.ColumnMemo.Name = "ColumnMemo";
+      this.ColumnMemo.ReadOnly = true;
+      this.ColumnMemo.Text = "...";
+      this.ColumnMemo.UseColumnTextForButtonValue = true;
+      // 
       // ContextMenuParashah
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -291,7 +408,9 @@
             this.ActionCopyUnicodeChars,
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
-            this.ActionCopyLineUnicode});
+            this.ActionCopyLineUnicode,
+            this.toolStripMenuItem1,
+            this.ActionViewParashahInfos});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -443,120 +562,16 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
-      // ColumnBook
+      // toolStripMenuItem1
       // 
-      this.ColumnBook.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBook.DataPropertyName = "Book";
-      resources.ApplyResources(this.ColumnBook, "ColumnBook");
-      this.ColumnBook.Name = "ColumnBook";
-      this.ColumnBook.ReadOnly = true;
-      this.ColumnBook.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
       // 
-      // ColumnNumber
+      // ActionViewParashahInfos
       // 
-      this.ColumnNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnNumber.DataPropertyName = "Number";
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnNumber.DefaultCellStyle = dataGridViewCellStyle2;
-      resources.ApplyResources(this.ColumnNumber, "ColumnNumber");
-      this.ColumnNumber.Name = "ColumnNumber";
-      this.ColumnNumber.ReadOnly = true;
-      this.ColumnNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnName
-      // 
-      this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnName.DataPropertyName = "Name";
-      resources.ApplyResources(this.ColumnName, "ColumnName");
-      this.ColumnName.Name = "ColumnName";
-      this.ColumnName.ReadOnly = true;
-      this.ColumnName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnTranslation
-      // 
-      this.ColumnTranslation.DataPropertyName = "Translation";
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnTranslation.DefaultCellStyle = dataGridViewCellStyle3;
-      resources.ApplyResources(this.ColumnTranslation, "ColumnTranslation");
-      this.ColumnTranslation.Name = "ColumnTranslation";
-      this.ColumnTranslation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnLettriq
-      // 
-      this.ColumnLettriq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.ColumnLettriq.DataPropertyName = "Lettriq";
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.ColumnLettriq.DefaultCellStyle = dataGridViewCellStyle4;
-      resources.ApplyResources(this.ColumnLettriq, "ColumnLettriq");
-      this.ColumnLettriq.Name = "ColumnLettriq";
-      this.ColumnLettriq.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnBegin
-      // 
-      this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBegin.DataPropertyName = "VerseBegin";
-      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
-      resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
-      this.ColumnBegin.Name = "ColumnBegin";
-      this.ColumnBegin.ReadOnly = true;
-      this.ColumnBegin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnEnd
-      // 
-      this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnEnd.DataPropertyName = "VerseEnd";
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
-      resources.ApplyResources(this.ColumnEnd, "ColumnEnd");
-      this.ColumnEnd.Name = "ColumnEnd";
-      this.ColumnEnd.ReadOnly = true;
-      this.ColumnEnd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnLinked
-      // 
-      this.ColumnLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnLinked.DataPropertyName = "IsLinkedToNext";
-      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnLinked.DefaultCellStyle = dataGridViewCellStyle7;
-      resources.ApplyResources(this.ColumnLinked, "ColumnLinked");
-      this.ColumnLinked.Name = "ColumnLinked";
-      this.ColumnLinked.ReadOnly = true;
-      this.ColumnLinked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // ColumnHebrew
-      // 
-      this.ColumnHebrew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnHebrew.DataPropertyName = "Hebrew";
-      dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-      dataGridViewCellStyle8.Font = new System.Drawing.Font("Hebrew", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ColumnHebrew.DefaultCellStyle = dataGridViewCellStyle8;
-      resources.ApplyResources(this.ColumnHebrew, "ColumnHebrew");
-      this.ColumnHebrew.Name = "ColumnHebrew";
-      this.ColumnHebrew.ReadOnly = true;
-      this.ColumnHebrew.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // HasMemo
-      // 
-      this.HasMemo.DataPropertyName = "HasMemo";
-      resources.ApplyResources(this.HasMemo, "HasMemo");
-      this.HasMemo.Name = "HasMemo";
-      this.HasMemo.ReadOnly = true;
-      // 
-      // ColumnMemo
-      // 
-      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnMemo.DataPropertyName = "Memo";
-      dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-      dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
-      dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
-      this.ColumnMemo.DefaultCellStyle = dataGridViewCellStyle9;
-      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
-      this.ColumnMemo.Name = "ColumnMemo";
-      this.ColumnMemo.ReadOnly = true;
-      this.ColumnMemo.Text = "...";
-      this.ColumnMemo.UseColumnTextForButtonValue = true;
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
       // ParashotForm
       // 
@@ -632,5 +647,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHebrew;
     private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
   }
 }
