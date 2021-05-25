@@ -17,6 +17,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Ordisoftware.Core;
+using System.Windows.Forms;
 
 namespace Ordisoftware.Hebrew
 {
@@ -127,6 +128,28 @@ namespace Ordisoftware.Hebrew
         CreateParashotDataMutex = false;
         Globals.IsReady = temp;
       }
+    }
+
+    public bool ShowParashahInformation(Form owner, Parashah parashah, bool withLinked)
+    {
+      var linked = withLinked ? parashah.GetLinked() : null;
+      if ( parashah == null ) return false;
+      var message = parashah.ToStringReadable();
+      message += Globals.NL2 + linked?.ToStringReadable();
+      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
+      form.StartPosition = FormStartPosition.CenterScreen;
+      form.ForceNoTopMost = true;
+      form.ShowInTaskbar = true;
+      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+      form.ActionYes.Text = "Memo";
+      form.ActionYes.Click += (_s, _e) =>
+      {
+        string memo1 = parashah.Memo;
+        string memo2 = linked?.Memo ?? "";
+        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+      };
+      form.ShowDialog(owner);
+      return true;
     }
 
   }
