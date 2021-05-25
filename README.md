@@ -32,7 +32,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Window showing a board of celebrations by years.
 - Window showing a board of new moons by years.
 - Window showing a board of lunar months description.
-- Window showing a board of the parashot.
+- Window showing a board of parashot.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
@@ -57,6 +57,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 **What's new in the latest version 8.0**
 
 - Overall performances are optimized.
+- Added lettriqs notebook.
 - Added option to set automatic computer lockout mode.
 - Some fixes and improvements.
 - SQLite ODBC Driver is no more needed.
