@@ -803,7 +803,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          if ( Settings.MainFormShownGoToToday )
+          if ( sender != ActionNavigate && Settings.MainFormShownGoToToday )
             GoToDate(DateTime.Today);
           else
             GoToDate(CalendarMonth.CalendarDate.Date);
