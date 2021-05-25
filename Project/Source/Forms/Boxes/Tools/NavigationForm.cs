@@ -248,7 +248,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
+      if ( !ApplicationDatabase.Instance.ShowParashahDescription() )
         ActionViewParashahInfos.Enabled = false;
     }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-05 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -551,8 +551,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahInformation() )
-        ActionViewParashahInfos.Enabled = false;
+      if ( !ApplicationDatabase.Instance.ShowParashahDescription() )
+        ActionViewParashahDescription.Enabled = false;
     }
 
     /// <summary>

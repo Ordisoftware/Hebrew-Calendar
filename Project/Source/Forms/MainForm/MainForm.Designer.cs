@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -128,7 +128,7 @@
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionOnlineParashah = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -329,14 +329,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -956,7 +956,7 @@
       // ActionOnlineParashah
       // 
       this.ActionOnlineParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewParashahInfos,
+            this.ActionViewParashahDescription,
             this.toolStripSeparator13,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline});
@@ -965,9 +965,9 @@
       // 
       // ActionViewParashahInfos
       // 
-      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
-      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      resources.ApplyResources(this.ActionViewParashahDescription, "ActionViewParashahInfos");
+      this.ActionViewParashahDescription.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahDescription.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
       // toolStripSeparator13
       // 
@@ -1547,7 +1547,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
+    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahDescription;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     internal System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerKillProcesses;

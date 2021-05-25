@@ -452,6 +452,11 @@ namespace Ordisoftware.Hebrew
       Clipboard.SetText(CurrentDataBoundItem.ToString(false));
     }
 
+    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+    {
+      HebrewDatabase.Instance.ShowParashahDescription(this, CurrentDataBoundItem, false);
+    }
+
   }
 
 }
