@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew
       TermAnalyzes = Load(Connection.Table<TermAnalysis>());
       TermsHebrewAsBindingList = new BindingListView<TermHebrew>(TermsHebrew);
       TermLettriqsAsBindingList = new BindingListView<TermLettriq>(TermLettriqs);
-      Instance.TermsHebrewAsBindingList.ApplySort(nameof(TermHebrew.Hebrew));
+      Instance.TermsHebrewAsBindingList.ApplySort((item1, item2) => item1.Hebrew[item1.Hebrew.Length - 1].CompareTo(item2.Hebrew[item2.Hebrew.Length - 1]));
       Instance.TermLettriqsAsBindingList.ApplySort(nameof(TermLettriq.Sentence));
       return TermsHebrew;
     }
