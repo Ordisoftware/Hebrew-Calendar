@@ -41,6 +41,7 @@
       this.Timer = new System.Windows.Forms.Timer(this.components);
       this.EditMediaStop = new System.Windows.Forms.CheckBox();
       this.ActionLock = new System.Windows.Forms.LinkLabel();
+      this.ActionPreferences = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // LabelCountDown
@@ -63,10 +64,10 @@
       this.ActionDisable.UseVisualStyleBackColor = true;
       this.ActionDisable.Click += new System.EventHandler(this.ActionDisable_Click);
       // 
-      // ActionDefaultAction
+      // ActionOk
       // 
-      resources.ApplyResources(this.ActionOk, "ActionDefaultAction");
-      this.ActionOk.Name = "ActionDefaultAction";
+      resources.ApplyResources(this.ActionOk, "ActionOk");
+      this.ActionOk.Name = "ActionOk";
       this.ActionOk.UseVisualStyleBackColor = true;
       this.ActionOk.Click += new System.EventHandler(this.ActionOk_Click);
       // 
@@ -124,11 +125,21 @@
       this.ActionLock.TabStop = true;
       this.ActionLock.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_Click);
       // 
+      // ActionPreferences
+      // 
+      resources.ApplyResources(this.ActionPreferences, "ActionPreferences");
+      this.ActionPreferences.FlatAppearance.BorderSize = 0;
+      this.ActionPreferences.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.ActionPreferences.Name = "ActionPreferences";
+      this.ActionPreferences.UseVisualStyleBackColor = true;
+      this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
+      // 
       // LockSessionForm
       // 
       this.AcceptButton = this.ActionOk;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.ActionPreferences);
       this.Controls.Add(this.LabelCountDown);
       this.Controls.Add(this.ActionShutdown);
       this.Controls.Add(this.ActionCancel);
@@ -163,5 +174,6 @@
     private System.Windows.Forms.LinkLabel ActionShutdown;
     private System.Windows.Forms.Button ActionDisable;
     private System.Windows.Forms.LinkLabel ActionLock;
+    private System.Windows.Forms.Button ActionPreferences;
   }
 }

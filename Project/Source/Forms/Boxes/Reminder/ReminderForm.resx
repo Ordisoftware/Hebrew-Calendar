@@ -301,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionPreferences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 2</value>
+    <value>306, 2</value>
   </data>
   <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -602,19 +602,19 @@
   </data>
   <data name="ActionLockout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVDhPjZLfS1NhGMefu66imyChGzM0x8JQoT8jKK0g
-        lLRsXWhddBF0FdRVyDZScanbJHfW3C+n68xlIWHZEtsPnTnKNjeHlnb0dOFFs8Jvzzk7pKBFX/jwvjzP
-        8/3yvu85tFuiGO4WQ88ghsIavOea1v63/EPBlXhiFpIk4au0Dln+xqsEpab0tLH95fb6u6eno1hIZzAa
-        HoPL7VVR9kpN6Skz2vheCc5BxBIzGBoW0W7u6OJSrYLJ9LAzwDWl98TlgTq8n3rtTkzHknB6RpShkmJV
-        VUmvXUCUex5P8O8BRosLkfhH9AihPUNmyyDi8TQGhbH9A5Zcp5N5QYf8QBnyjnLkHFXIOmqQE2qQF05B
-        EqpwXiD0vSTcEmhMs+3ok6MW2BwHvk8WKUSYtxpTwI8oLvQTclIXejmkxUEuzVpUyl6NrZV+pF2ERfdB
-        LHsOw+wgnLERzloJdbzW85qTbJhbvoO+CYJhd8ictRqFtBE/E43Ynr2K1aHjOPeY8GUzgEW5lbmJzEYb
-        8rIPgTlCavUubG8I1wXyqQEzPSdRWLiPtOcIsr5SrAUqUT9AWJCNGEnRHwLMMBP8wL2NezDwu6gB0W49
-        Cqnb+JVoxnbyGlY5oI6vEJebEcoTRpcIoRxBTBcZzRJs7whXemhcDZjq1KGQbEXGexRZfyk+c0CX+5D6
-        8hf5JJf4Og12QpjDFKwxQpNF/RplakCkoxJb8SbgfQswb8BKsAJroh7rT/WQgzog1YYGDnousTlBuFw0
-        H1PNil48KJ99ZSrHhLHIa1MlJs06lYhJh2i7Ho1Ogn2ecOPRgRhbdsyaTjDqv/8fVDC7RPQbFoLSc/Qo
-        1E0AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAnNJREFUOE+Nkt9LU2EYx5+7rqKbIKEbMzTHwlChPyMorSCUtGxdaF10EXQV1FXI
+        NlJxqdskd9bcL6frzGUhYdkS2w+dOco2N4eWdvR04UWzwm/POTukoEVf+PC+PM/z/fK+7zm0W6IY7hZD
+        zyCGwhq855rW/rf8Q8GVeGIWkiThq7QOWf7GqwSlpvS0sf3l9vq7p6ejWEhnMBoeg8vtVVH2Sk3pKTPa
+        +F4JzkHEEjMYGhbRbu7o4lKtgsn0sDPANaX3xOWBOryfeu1OTMeScHpGlKGSYlVVSa9dQJR7Hk/w7wFG
+        iwuR+Ef0CKE9Q2bLIOLxNAaFsf0Dllynk3lBh/xAGfKOcuQcVcg6apATapAXTkESqnBeIPS9JNwSaEyz
+        7eiToxbYHAe+TxYpRJi3GlPAjygu9BNyUhd6OaTFQS7NWlTKXo2tlX6kXYRF90Esew7D7CCcsRHOWgl1
+        vNbzmpNsmFu+g74JgmF3yJy1GoW0ET8TjdievYrVoeM495jwZTOARbmVuYnMRhvysg+BOUJq9S5sbwjX
+        BfKpATM9J1FYuI+05wiyvlKsBSpRP0BYkI0YSdEfAswwE/zAvY17MPC7qAHRbj0Kqdv4lWjGdvIaVjmg
+        jq8Ql5sRyhNGlwihHEFMFxnNEmzvCFd6aFwNmOrUoZBsRcZ7FFl/KT5zQJf7kPryF/kkl/g6DXZCmMMU
+        rDFCk0X9GmVqQKSjElvxJuB9CzBvwEqwAmuiHutP9ZCDOiDVhgYOei6xOUG4XDQfU82KXjwon31lKseE
+        schrUyUmzTqViEmHaLsejU6CfZ5w49GBGFt2zJpOMOq//x9UMLtE9BsWgtJz9CjUTQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ActionLockout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

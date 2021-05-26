@@ -298,7 +298,7 @@
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon avec ce délai avant surgissement en millisecondes</value>
   </data>
-  <data name="TabPageNavigationWindow.Text" xml:space="preserve">
+  <data name="TabPageNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">

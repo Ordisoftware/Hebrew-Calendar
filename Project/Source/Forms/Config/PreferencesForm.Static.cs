@@ -31,6 +31,19 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class PreferencesForm
   {
 
+    static public int TabIndexApplication { get; private set; }
+    static public int TabIndexCelebrations { get; private set; }
+    static public int TabIndexGeneration { get; private set; }
+    static public int TabIndexMonthView { get; private set; }
+    static public int TabIndexNavigation { get; private set; }
+    static public int TabIndexPaths { get; private set; }
+    static public int TabIndexPrint { get; private set; }
+    static public int TabIndexReminder { get; private set; }
+    static public int TabIndexShabat { get; private set; }
+    static public int TabIndexStartup { get; private set; }
+    static public int TabIndexTextReport { get; private set; }
+    static public int TabIndexTrayIcon { get; private set; }
+
     // Mono spaced fonts list
     static private readonly string[] MonoSpacedFonts =
     {
@@ -72,6 +85,21 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static PreferencesForm()
     {
+      using ( var form = new PreferencesForm() )
+      {
+        TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
+        TabIndexCelebrations = form.TabControl.TabPages.IndexOf(form.TabPageCelebrations);
+        TabIndexGeneration = form.TabControl.TabPages.IndexOf(form.TabPageGeneration);
+        TabIndexMonthView = form.TabControl.TabPages.IndexOf(form.TabPageMonthView);
+        TabIndexNavigation = form.TabControl.TabPages.IndexOf(form.TabPageNavigation);
+        TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
+        TabIndexPrint = form.TabControl.TabPages.IndexOf(form.TabPagePrint);
+        TabIndexReminder = form.TabControl.TabPages.IndexOf(form.TabPageReminder);
+        TabIndexShabat = form.TabControl.TabPages.IndexOf(form.TabPageShabat);
+        TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
+        TabIndexTextReport = form.TabControl.TabPages.IndexOf(form.TabPageTextReport);
+        TabIndexTrayIcon = form.TabControl.TabPages.IndexOf(form.TabPageTrayIcon);
+      }
       var filter1 = new Regex("(^F[0-9]{1,2}$)");
       var filter2 = new Regex("(^[A-Z]$)");
       var filter3 = new Regex("(^D[0-D9]$)");
@@ -126,6 +154,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
       form.Dispose();
+      form = null;
       return result;
     }
 
