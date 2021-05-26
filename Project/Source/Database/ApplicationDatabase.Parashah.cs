@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( MainForm.UserParashot == null ) return false;
       var parashah = MainForm.UserParashot.Find(p => p.ID == GetWeeklyParashah().ID);
-      return HebrewDatabase.Instance.ShowParashahDescription(MainForm.Instance, parashah, true);
+      return ParashotForm.ShowParashahDescription(MainForm.Instance, parashah, true);
     }
 
   }

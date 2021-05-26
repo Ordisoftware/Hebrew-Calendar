@@ -83,21 +83,18 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
             if ( day.IsNewMoon ) content.Append(headerSep + Globals.NL);
-            string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? day.LunarMonth.ToString("00") : "  ";
-            string strDay = ( day.MoonriseOccuring == MoonriseOccuring.NextDay && Settings.TorahEventsCountAsMoon
+            string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? $"{day.LunarMonth:00}" : "  ";
+            string strDay = day.MoonriseOccuring == MoonriseOccuring.NextDay && Settings.TorahEventsCountAsMoon
                             ? "  "
-                            : string.Format("{0:00}", day.LunarDay) ) + " " + ( day.IsNewMoon
-                                                                                ? MoonNewText
-                                                                                : day.IsFullMoon
-                                                                                  ? MoonFullText
-                                                                                  : " " );
+                            : $"{day.LunarDay:00}";
+            strDay += " " + ( day.IsNewMoon ? MoonNewText : day.IsFullMoon ? MoonFullText : " " );
             string strSun = day.SunriseAsString + " - " + day.SunsetAsString;
             strSun = ShowWinterSummerHour
-                   ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
-                                                               ? AppTranslations.Ephemeris.GetLang(Ephemeris.SummerHour)
-                                                                : AppTranslations.Ephemeris.GetLang(Ephemeris.WinterHour) )
-                                                                  + " " + strSun
-                   : strSun + new string(' ', 3 + 1);
+                     ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
+                         ? AppTranslations.Ephemeris.GetLang(Ephemeris.SummerHour)
+                         : AppTranslations.Ephemeris.GetLang(Ephemeris.WinterHour) )
+                       + " " + strSun
+                     : strSun + new string(' ', 3 + 1);
             strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                               ? ShabatText
                               : "   " );
@@ -112,8 +109,8 @@ namespace Ordisoftware.Hebrew.Calendar
                            : strMoonset + ColumnSepInner + strMoonrise;
             string textDate = AppTranslations.DayOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
             textDate = textDate.Replace(".", string.Empty) + " ";
-            textDate += dayDate.Day.ToString("00") + ".";
-            textDate += dayDate.Month.ToString("00") + ".";
+            textDate += $"{dayDate.Day:00}.";
+            textDate += $"{dayDate.Month:00}.";
             textDate += dayDate.Year;
             string strDesc = string.Empty;
             string s1 = day.TorahEventText;

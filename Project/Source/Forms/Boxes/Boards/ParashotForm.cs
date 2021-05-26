@@ -44,7 +44,6 @@ namespace Ordisoftware.Hebrew
       Instance?.Show();
       Instance?.ForceBringToFront();
       Instance?.Select(parashah);
-      //Instance?.Popup();
     }
 
     public readonly Properties.Settings Settings
@@ -455,7 +454,37 @@ namespace Ordisoftware.Hebrew
 
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      HebrewDatabase.Instance.ShowParashahDescription(this, CurrentDataBoundItem, false);
+      ShowParashahDescription(this, CurrentDataBoundItem, false);
+    }
+
+    static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
+    {
+      var linked = withLinked ? parashah.GetLinked() : null;
+      if ( parashah == null ) return false;
+      var message = parashah.ToStringReadable();
+      message += Globals.NL2 + linked?.ToStringReadable();
+      var form = new MessageBoxEx(HebrewTranslations.WeeklyParashah.GetLang(), message, width: MessageBoxEx.DefaultMediumWidth);
+      form.StartPosition = FormStartPosition.CenterScreen;
+      form.ForceNoTopMost = true;
+      form.ShowInTaskbar = true;
+      form.ActionYes.Visible = true;
+      form.ActionYes.Text = SysTranslations.Board.GetLang(); ;
+      form.ActionYes.Click += async (_s, _e) =>
+      {
+        Run(parashah);
+        await System.Threading.Tasks.Task.Delay(1000);
+        Instance.Popup();
+      };
+      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+      form.ActionNo.Text = SysTranslations.Memo.GetLang();
+      form.ActionNo.Click += (_s, _e) =>
+      {
+        string memo1 = parashah.Memo;
+        string memo2 = linked?.Memo ?? "";
+        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+      };
+      form.ShowDialog(owner);
+      return true;
     }
 
   }

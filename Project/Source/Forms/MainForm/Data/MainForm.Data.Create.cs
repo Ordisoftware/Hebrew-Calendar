@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
     {
       var einfo = new ExceptionInfo(this, ex);
-      GenerateErrors.Add($"{( GenerateErrors.Count + 1 ).ToString("00")}) " +
+      GenerateErrors.Add($"{GenerateErrors.Count + 1:00}) " +
                          $"{method.PadRight(13)} {date} : " +
                          $"{einfo.SingleLineText}");
       return GenerateErrors.Count >= MaxGenerateErrors;
@@ -174,7 +174,7 @@ namespace Ordisoftware.Hebrew.Calendar
               }
               catch ( Exception ex )
               {
-                if ( AddGenerateErrorAndCheckIfTooMany(nameof(PopulateDays), $"{year}-{month.ToString("00")}-{day.ToString("00")}", ex) )
+                if ( AddGenerateErrorAndCheckIfTooMany(nameof(PopulateDays), $"{year}-{month:00}-{day:00}", ex) )
                   return false;
               }
         }
