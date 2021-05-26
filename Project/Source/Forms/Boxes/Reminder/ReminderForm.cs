@@ -92,13 +92,14 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
           form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
-          if ( Program.Settings.ReminderBoxShowFullDates )
+          //if ( Program.Settings.ReminderBoxShowFullDates ) 
           {
             form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
             form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
           }
-          else
-            form.Height -= form.LabelStartDay.Height;
+          //else
+          // TODO remove or fix lockout icon and parashah link location
+          //form.Height -= form.LabelStartDay.Height;
         }
         int left = form.LabelStartTime.Left + form.LabelStartTime.Width;
         int left2 = left + form.LabelArrow.Width;

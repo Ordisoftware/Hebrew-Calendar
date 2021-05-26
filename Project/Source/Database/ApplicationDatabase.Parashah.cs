@@ -13,7 +13,6 @@
 /// <created> 2021-02 </created>
 /// <edited> 2021-05 </edited>
 using System;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -95,3 +94,4 @@ namespace Ordisoftware.Hebrew.Calendar
   }
 
 }
+

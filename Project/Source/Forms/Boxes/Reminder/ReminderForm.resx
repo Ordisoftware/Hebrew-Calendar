@@ -594,9 +594,6 @@
   <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionLockout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <data name="ActionLockout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
