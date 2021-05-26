@@ -6,7 +6,7 @@ namespace Ordisoftware.Core
 {
 
   // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
-  static partial class MediaMixer
+  static class MediaMixer
   {
 
     static public int GetSoundLengthMS(string fileName)

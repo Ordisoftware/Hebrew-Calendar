@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
       return ParashotFactory.Get(today?.GetParashahReadingDay()?.ParashahID) ?? null;
     }
 
-    public bool ShowParashahDescription()
+    public bool ShowWeeklyParashahDescription()
     {
       if ( MainForm.UserParashot == null ) return false;
       var parashah = MainForm.UserParashot.Find(p => p.ID == GetWeeklyParashah().ID);

@@ -41,9 +41,10 @@ namespace Ordisoftware.Hebrew
         Instance.Select(parashah);
         return;
       }
-      Instance.Show();
+      Instance?.Show();
       Instance?.ForceBringToFront();
       Instance?.Select(parashah);
+      //Instance?.Popup();
     }
 
     public readonly Properties.Settings Settings

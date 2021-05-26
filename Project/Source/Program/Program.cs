@@ -57,8 +57,8 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.TryCatch(Settings.Save);
         Globals.Settings = Settings;
         Globals.MainForm = MainForm.Instance;
-        DebugManager.Enabled = Settings.DebuggerEnabled;
         DebugManager.TraceEnabled = Settings.TraceEnabled;
+        DebugManager.Enabled = Settings.DebuggerEnabled;
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();

@@ -551,7 +551,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      if ( !ApplicationDatabase.Instance.ShowParashahDescription() )
+      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahDescription() )
         ActionViewParashahDescription.Enabled = false;
     }
 
@@ -803,7 +803,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          if ( Settings.MainFormShownGoToToday )
+          if ( sender != ActionNavigate && Settings.MainFormShownGoToToday )
             GoToDate(DateTime.Today);
           else
             GoToDate(CalendarMonth.CalendarDate.Date);

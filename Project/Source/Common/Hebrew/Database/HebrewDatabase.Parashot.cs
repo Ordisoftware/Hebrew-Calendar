@@ -16,8 +16,8 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Ordisoftware.Core;
 using System.Windows.Forms;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
 {
@@ -136,13 +136,21 @@ namespace Ordisoftware.Hebrew
       if ( parashah == null ) return false;
       var message = parashah.ToStringReadable();
       message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx("Parashah", message, width: MessageBoxEx.DefaultMediumWidth);
+      var form = new MessageBoxEx(HebrewTranslations.WeeklyParashah.GetLang(), message, width: MessageBoxEx.DefaultMediumWidth);
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
-      form.ActionYes.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionYes.Text = "Memo";
-      form.ActionYes.Click += (_s, _e) =>
+      form.ActionYes.Visible = true;
+      form.ActionYes.Text = SysTranslations.Board.GetLang(); ;
+      form.ActionYes.Click += async (_s, _e) =>
+      {
+        ParashotForm.Run(parashah);
+        await System.Threading.Tasks.Task.Delay(1000);
+        ParashotForm.Instance.Popup();
+      };
+      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+      form.ActionNo.Text = SysTranslations.Memo.GetLang();
+      form.ActionNo.Click += (_s, _e) =>
       {
         string memo1 = parashah.Memo;
         string memo2 = linked?.Memo ?? "";
