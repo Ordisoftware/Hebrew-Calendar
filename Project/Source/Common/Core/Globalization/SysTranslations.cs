@@ -185,6 +185,20 @@ namespace Ordisoftware.Core
         [Language.FR] = "Notes"
       };
 
+    static public readonly TranslationsDictionary Memo
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Memo",
+        [Language.FR] = "Mémo"
+      };
+
+    static public readonly TranslationsDictionary Board
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Board",
+        [Language.FR] = "Tableau"
+      };
+
     static public readonly TranslationsDictionary ReadOnly
       = new TranslationsDictionary
       {
@@ -275,7 +289,7 @@ namespace Ordisoftware.Core
           "{3} s",
           "{2} m {3} s",
           "{1} h {2} m {3} s",
-          "{0} j {1} h {2} m {3} s",
+          "{0} j {1} h {2} m {3} s"
         }
       };
 

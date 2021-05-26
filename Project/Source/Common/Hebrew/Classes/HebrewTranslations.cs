@@ -93,8 +93,15 @@ namespace Ordisoftware.Hebrew
     static public readonly TranslationsDictionary BoardExportFileName
       = new TranslationsDictionary
       {
-        [Language.EN] = "Board {0}",
-        [Language.FR] = "Board {0}"
+        [Language.EN] = SysTranslations.Board[Language.EN] + " {0}",
+        [Language.FR] = SysTranslations.Board[Language.FR] + " {0}",
+      };
+
+    static public readonly TranslationsDictionary WeeklyParashah
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Weekly parashah",
+        [Language.FR] = "Parashah de la semaine"
       };
 
     static public readonly TranslationsDictionary ConfigureProviders
