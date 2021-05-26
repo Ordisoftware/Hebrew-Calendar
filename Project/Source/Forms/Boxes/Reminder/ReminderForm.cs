@@ -344,7 +344,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionPreferences_Click(object sender, EventArgs e)
     {
-      MainForm.Instance.ActionPreferences_Click(IsShabat ? 6 : 7, null);
+      int index = IsShabat ? PreferencesForm.TabIndexShabat : PreferencesForm.TabIndexCelebrations;
+      MainForm.Instance.ActionPreferences_Click(index, null);
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)

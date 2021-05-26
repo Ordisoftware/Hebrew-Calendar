@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCountDown.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionDisable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -208,37 +208,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionDisable.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="ActionDefaultAction.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="ActionOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="ActionDefaultAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionDefaultAction.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 156</value>
   </data>
-  <data name="ActionDefaultAction.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ActionDefaultAction.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ActionDefaultAction.Text" xml:space="preserve">
+  <data name="ActionOk.Text" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="&gt;&gt;ActionDefaultAction.Name" xml:space="preserve">
-    <value>ActionDefaultAction</value>
+  <data name="&gt;&gt;ActionOk.Name" xml:space="preserve">
+    <value>ActionOk</value>
   </data>
-  <data name="&gt;&gt;ActionDefaultAction.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionDefaultAction.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionOk.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionDefaultAction.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;ActionOk.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="ActionShutdown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionShutdown.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionHibernate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -301,7 +301,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionHibernate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ActionStandby.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -368,7 +368,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -401,7 +401,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditMediaStop.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ActionLock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -434,7 +434,52 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="ActionPreferences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ActionPreferences.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
+        O4qU2JSAJsZUrFFqYkxitGIujVBny/3tcyw6cOgPC37W+tbO7u7x/a/xpzO5bDqbl5XZ8dzo3+NPOdl8
+        ysl8M/t0POno6OinFTseGQwshT/HvxFLbL6oVLX7+o2iG3EViyV1ep+t2PHIYGDpuFV3pmLx5KD2qq7h
+        cKTBYKDJ5Idq9V0rdjwyGFg6btWdE0YXVx9FVa3Vtd9s6dn2jpJOWk4mZ3c8MhhYr2PHH1ldz0XWoioU
+        tvSx/UnbpbIBHysYXLZixyODgTU6foupyNq6Ds01h6OR9t425KSzWgqFNTMzcx2xxxOO9hoNw4wtS4cu
+        B5x5GFlVt9vTh2ZT797vy7y2VoxnslOIHY8MBpYOXXvAwuJS8d79Ffv3NlttPTcvHQo/4LGs2PHIYGDp
+        /D6Aa5y7cvXajcVgyPxCS+12R5VqTYmUo2g0psrLmvXIYGDpeF37EKeDy+HvpZ2y+v0D81gd9Xp9dT2x
+        45HBwNLxunZOzgXubhUKTy0wF5hX/smmvnw9sEqZfyceGQwsHbfqDlc5P3v7TjkwvzA2+2UK48OJFTse
+        GQys1zkersKDEPCRXLg5e6tEEbHjeRkM7F+fMoPBqXxh00ZnjS55Yscjg/HKPt8vP8vX6xDYbTcAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionPreferences.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionPreferences.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 2</value>
+  </data>
+  <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionPreferences.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
+    <value>ActionPreferences</value>
+  </data>
+  <data name="&gt;&gt;ActionPreferences.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPreferences.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionPreferences.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

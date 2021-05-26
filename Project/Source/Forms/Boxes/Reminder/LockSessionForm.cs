@@ -138,6 +138,11 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private void ActionPreferences_Click(object sender, EventArgs e)
+    {
+      MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexReminder, null);
+    }
+
   }
 
 }
