@@ -54,7 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       SystemManager.TryCatch(() =>
       {
-        string strDate = date.Day.ToString("00") + "." + date.Month.ToString("00") + "." + date.Year.ToString("0000");
+        string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
         int position = CalendarText.Find(strDate);
         if ( position != -1 )
         {

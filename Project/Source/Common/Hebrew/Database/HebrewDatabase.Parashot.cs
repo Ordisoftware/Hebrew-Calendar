@@ -16,7 +16,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew
@@ -128,36 +127,6 @@ namespace Ordisoftware.Hebrew
         CreateParashotDataMutex = false;
         Globals.IsReady = temp;
       }
-    }
-
-    public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
-    {
-      var linked = withLinked ? parashah.GetLinked() : null;
-      if ( parashah == null ) return false;
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx(HebrewTranslations.WeeklyParashah.GetLang(), message, width: MessageBoxEx.DefaultMediumWidth);
-      form.StartPosition = FormStartPosition.CenterScreen;
-      form.ForceNoTopMost = true;
-      form.ShowInTaskbar = true;
-      form.ActionYes.Visible = true;
-      form.ActionYes.Text = SysTranslations.Board.GetLang(); ;
-      form.ActionYes.Click += async (_s, _e) =>
-      {
-        ParashotForm.Run(parashah);
-        await System.Threading.Tasks.Task.Delay(1000);
-        ParashotForm.Instance.Popup();
-      };
-      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionNo.Text = SysTranslations.Memo.GetLang();
-      form.ActionNo.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      form.ShowDialog(owner);
-      return true;
     }
 
   }
