@@ -57,7 +57,6 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 **What's new in the latest version 8.0**
 
 - Overall performances are optimized.
-- Added lettriqs notebook.
 - Added option to set automatic computer lockout mode.
 - Some fixes and improvements.
 - SQLite ODBC Driver is no more needed.
@@ -275,7 +274,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Improve log viewer to select file.
 - Add dark theme for month view.
 
 ## Changelog
@@ -285,7 +283,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add parashah reminder at the start of the week.
 
-#### 2021.05.30 - Version 8.0
+#### 2021.05.28 - Version 8.0
 
 - Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.
 - Optimize overall performances.
