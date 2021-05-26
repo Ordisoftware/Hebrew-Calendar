@@ -61,15 +61,15 @@ namespace Ordisoftware.Core
       = ApplicationGitHubCode + "-Trace-";
 
     static public string SinkFileFolderPath
-      => Path.Combine(UserDataFolderPath, TraceDirectoryName);
+      => Directory.CreateDirectory(Path.Combine(UserDataFolderPath, TraceDirectoryName)).FullName;
 
     static public string SinkFileNoRollingPatternPathDateTag
       = "%DATETIME%";
 
-    static public string SinkFileNoRollingPatternPath
+    static public string SinkFileNoRollingFilePatternPath
       => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileNoRollingPatternPathDateTag + TraceFileExtension;
 
-    static public string SinkFileRollingPatternPath
+    static public string SinkFileRollingFilePatternPath
       => Path.Combine(SinkFileFolderPath, SinkFileCode) + TraceFileExtension;
 
     static public string OldTraceFolderPath

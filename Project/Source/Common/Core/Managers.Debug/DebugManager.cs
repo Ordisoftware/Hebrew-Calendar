@@ -168,7 +168,7 @@ namespace Ordisoftware.Core
             if ( Globals.TraceFileRollOverMode == TraceFileRollOverMode.Session )
             {
               string datetime = DateTime.Now.ToString(Globals.TraceSessionFileTemplate);
-              string filePath = Globals.SinkFileNoRollingPatternPath.Replace(Globals.SinkFileNoRollingPatternPathDateTag,
+              string filePath = Globals.SinkFileNoRollingFilePatternPath.Replace(Globals.SinkFileNoRollingPatternPathDateTag,
                                                                              datetime);
               Log.Logger = logconf.WriteTo.File(filePath,
                                                 outputTemplate: Globals.SinkFileEventTemplate,
@@ -177,7 +177,7 @@ namespace Ordisoftware.Core
                                   .CreateLogger();
             }
             else
-              Log.Logger = logconf.WriteTo.File(Globals.SinkFileRollingPatternPath,
+              Log.Logger = logconf.WriteTo.File(Globals.SinkFileRollingFilePatternPath,
                                                 shared: SystemManager.AllowMultipleInstances,
                                                 outputTemplate: Globals.SinkFileEventTemplate,
                                                 rollingInterval: Globals.SinkFileRollingInterval,
