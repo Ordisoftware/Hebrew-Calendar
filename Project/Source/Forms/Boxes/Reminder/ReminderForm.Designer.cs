@@ -186,10 +186,10 @@
       // 
       // ActionLockout
       // 
-      resources.ApplyResources(this.ActionLockout, "ActionLockout");
       this.ActionLockout.ContextMenuStrip = this.ContextMenuParashah;
       this.ActionLockout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionLockout.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionLockout, "ActionLockout");
       this.ActionLockout.ForeColor = System.Drawing.SystemColors.GrayText;
       this.ActionLockout.Name = "ActionLockout";
       this.ActionLockout.UseVisualStyleBackColor = true;
