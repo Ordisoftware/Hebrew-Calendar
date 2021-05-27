@@ -398,13 +398,13 @@
     <value>254, 13</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
-    <value>Délai avant le vérrouillage automatique en secondes</value>
+    <value>Délai avant le vérrouillage en secondes</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
   </data>
   <data name="EditAutoLockSession.Text" xml:space="preserve">
-    <value>Vérouillage automatique de la session</value>
+    <value>Vérouillage automatique de l'ordinateur</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 17</value>
@@ -783,6 +783,6 @@
     <value>Confirmer l'arrêt de l'ordinateur</value>
   </data>
   <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
-    <value>Demander de régénérer au démarrage si l'intervalle est supérieur à la valeur par défaut</value>
+    <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
   </data>
 </root>

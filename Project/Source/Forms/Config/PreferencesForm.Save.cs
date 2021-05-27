@@ -114,7 +114,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.MainFormTitleBarShowToday = EditMainFormTitleBarShowToday.Checked;
       Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
       Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
-      Settings.ReminderBoxShowFullDates = EditReminderBoxShowFullDates.Checked;
       Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
       Settings.LockSessionConfirmLogOffOrMore = EditConfirmShutdown.Checked;
       Settings.AskRegenerateIfIntervalGreater = EditAskRegenerateIfIntervalGreater.Checked;

@@ -338,9 +338,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
     {
-      EditAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
-      SelectAutoGenerateYearsInterval.Enabled = EditAutoRegenerate.Checked;
-      ActionAutoGenerateHelp.Enabled = EditAutoRegenerate.Checked;
+      bool b = EditAutoRegenerate.Checked;
+      EditAutoGenerateYearsInterval.Enabled = b;
+      SelectAutoGenerateYearsInterval.Enabled = b;
+      ActionAutoGenerateHelp.Enabled = b;
+      EditAskRegenerateIfIntervalGreater.Enabled = b;
     }
 
     private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)

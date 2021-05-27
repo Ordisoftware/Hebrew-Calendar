@@ -149,7 +149,6 @@
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
-      this.EditReminderBoxShowFullDates = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
@@ -1261,7 +1260,6 @@
       this.TabPageReminder.Controls.Add(this.SelectReminderBoxDesktopLocation);
       this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
-      this.TabPageReminder.Controls.Add(this.EditReminderBoxShowFullDates);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
@@ -1313,12 +1311,6 @@
       resources.ApplyResources(this.LabelAutoLockSessionTimeOutIntervalInfo, "LabelAutoLockSessionTimeOutIntervalInfo");
       this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelAutoLockSessionTimeOutIntervalInfo.Name = "LabelAutoLockSessionTimeOutIntervalInfo";
-      // 
-      // EditReminderBoxShowFullDates
-      // 
-      resources.ApplyResources(this.EditReminderBoxShowFullDates, "EditReminderBoxShowFullDates");
-      this.EditReminderBoxShowFullDates.Name = "EditReminderBoxShowFullDates";
-      this.EditReminderBoxShowFullDates.UseVisualStyleBackColor = true;
       // 
       // EditAllowSuspendReminder
       // 
@@ -2673,7 +2665,6 @@
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowWeeklyParashah;
     private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
-    private System.Windows.Forms.CheckBox EditReminderBoxShowFullDates;
     private System.Windows.Forms.CheckBox EditReminderCelebrationsEnabled;
     private System.Windows.Forms.CheckBox EditReminderShabatEnabled;
     private System.Windows.Forms.CheckBox EditReminderShabatShowParashah;
