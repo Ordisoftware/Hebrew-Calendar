@@ -166,9 +166,6 @@ namespace Ordisoftware.Core
       TextBoxPrevious.Lines = File.ReadAllLines((string)SelectFile.SelectedItem);
     }
 
-    private void TabPagePrevious_Enter(object sender, EventArgs e)
-    {
-    }
   }
 
 }
