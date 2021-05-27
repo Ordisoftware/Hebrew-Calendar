@@ -118,7 +118,7 @@ namespace Ordisoftware.Core
           message += $"| {Signes[traceEvent]} | {traceEventName} | ";
         }
         if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
-        message += text.Indent(CurrentMargin, 5 + Globals.SinkFileEventTemplateSize + CurrentMargin + message.Length);
+        message += text.Indent(CurrentMargin, Globals.SinkFileEventTemplateSize + CurrentMargin + message.Length);
         Log.Logger.Information(message);
       }
       catch
