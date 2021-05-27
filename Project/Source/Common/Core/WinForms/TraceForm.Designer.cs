@@ -140,7 +140,6 @@
       resources.ApplyResources(this.TabPagePrevious, "TabPagePrevious");
       this.TabPagePrevious.Name = "TabPagePrevious";
       this.TabPagePrevious.UseVisualStyleBackColor = true;
-      this.TabPagePrevious.Enter += new System.EventHandler(this.TabPagePrevious_Enter);
       // 
       // TextBoxPrevious
       // 

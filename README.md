@@ -111,6 +111,12 @@ When enabled, this will speed up rendering of the main form when it is displayed
 
 When disabled, top menu painting may cause latency.
 
+#### What are known problems?
+
+Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.
+
+Thus celebration dates may be wrong.
+
 #### What are command-line options?
 
 - Change interface language (does not change the text report unless using --generate):
@@ -165,12 +171,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
   Run %appPath%%appExe% --parashot
   return
 ```
-
-#### What are known problems?
-
-Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.
-
-Thus celebration dates may be wrong.
 
 #### What are the times of celebration?
 

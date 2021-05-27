@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        if ( checkover && YearsInterval > Settings.AutoGenerateYearsInternal )
+        if ( checkover && Settings.AutoRegenerate && YearsInterval > Settings.AutoGenerateYearsInternal )
           if ( Settings.AskRegenerateIfIntervalGreater )
           {
             string msg = AppTranslations.AskToRegenerate.GetLang(Settings.AutoGenerateYearsInternal, YearsInterval);
