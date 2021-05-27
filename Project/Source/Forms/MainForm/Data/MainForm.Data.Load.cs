@@ -30,6 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.IsGenerating = true;
       try
       {
+        LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
         var task = Task.Run(LoadDataInit);
         Program.UpdateLocalization();
         task.Wait();
@@ -47,6 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         Globals.IsGenerating = false;
+        LabelSubTitleGPS.Text = string.Empty;
         ToolStrip.Enabled = formEnabled;
         LoadDataEnd();
       }

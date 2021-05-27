@@ -72,6 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         UpdateButtons();
+        LabelSubTitleGPS.Text = SysTranslations.ProgressCreatingData.GetLang();
         CalendarText.Clear();
         CalendarMonth.TheEvents.Clear();
         ApplicationDatabase.Instance.DeleteAll();
@@ -100,10 +101,13 @@ namespace Ordisoftware.Hebrew.Calendar
           Settings.BenchmarkGenerateYears = Globals.ChronoCreateData.ElapsedMilliseconds;
           Settings.LastGenerated = DateTime.Now;
           SystemManager.TryCatch(Settings.Save);
-          if ( Globals.IsGenerating )
+          if ( !Globals.IsGenerating )
+            LabelSubTitleGPS.Text = string.Empty;
+          else
             try
             {
               FillMonths();
+              LabelSubTitleGPS.Text = string.Empty;
             }
             finally
             {

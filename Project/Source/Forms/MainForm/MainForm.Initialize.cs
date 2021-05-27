@@ -69,6 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( Globals.IsExiting ) return;
       Settings.Retrieve();
+      LabelSubTitleGPS.Text = SysTranslations.Initializing.GetLang();
       StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
       Globals.ChronoStartingApp.Stop();
       var lastdone = Settings.CheckUpdateLastDone;
