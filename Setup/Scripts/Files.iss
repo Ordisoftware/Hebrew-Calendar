@@ -1,10 +1,10 @@
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: *; DestDir: {app}\Setup; Flags: ignoreversion recursesubdirs; Excludes: *.---, *.bak,  *.bak, *.suo, *.user, *.pdb, obj, .vs, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
+Source: *; DestDir: {app}\Setup; Flags: ignoreversion recursesubdirs; Excludes: *.---, *.bak,  *.suo, *.user, *.pdb, obj, .vs, {#MyAppPublisher}{#MyAppNameNoSpace}Setup*.exe
 Source: ..\*; DestDir: {app}; Flags: ignoreversion
 Source: ..\Bin\Release\*; DestDir: {app}\Bin; Flags: ignoreversion recursesubdirs; Excludes: *vshost.exe
-Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Help\*; DestDir: {app}\Help; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Sounds\*; DestDir: {app}\Sounds; Excludes: *.bak; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\System\*; DestDir: {app}\System; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist
-Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.psess, *.vsp, *.bak, *.suo, *.user, obj, packages, .vs
+Source: ..\Documents\*; DestDir: {app}\Documents; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
+Source: ..\Help\*; DestDir: {app}\Help; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
+Source: ..\Sounds\*; DestDir: {app}\Sounds; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
+Source: ..\System\*; DestDir: {app}\System; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
+Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.psess, *.vsp, *.suo, *.user, obj, packages, .vs
 Source: ..\Project\Medias\Fonts\Hebrew.ttf; DestDir: {commonfonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall skipifsourcedoesntexist
