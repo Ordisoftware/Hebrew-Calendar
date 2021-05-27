@@ -46,7 +46,7 @@ namespace Ordisoftware.Core
         "{Message:lj}{NewLine}{Exception}";
 
     static public int SinkFileEventTemplateSize
-      = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length;
+      = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
     static public string TraceDirectoryName { get; set; }
       = "Serilog";
