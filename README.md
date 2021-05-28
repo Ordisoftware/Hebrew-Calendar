@@ -131,7 +131,7 @@ Kaspersky, F-Secure, Trend Micro, McAfee, CrowdStrike Falcon, MetaDefender and M
 
 All Hebrew software use certain functions of the Windows system like for error tracing and global keyboard shortcuts management, as well as multiple timers, and some command line options to control each other via IPC. The author also uses advanced coding techniques such as generics and factorizations, and the database access layer has been completely rewritten for Calendar 8, Letters 6 and Words 3.
 
-If in doubt, the source code available at https://github.com/Ordisoftware can be build using Visual Studio 2017 or later. Please do not hesitate to contact the author or create a GitHub Issue if you have any information on this, and if there is a real problem with the binaries or the source code.
+If in doubt, the source code can be build using Visual Studio 2017 or later. Please do not hesitate to contact the author or create a GitHub Issue if you have any information on this, and if there is a real problem with the binaries or the source code.
 
 #### What are command-line options?
 
