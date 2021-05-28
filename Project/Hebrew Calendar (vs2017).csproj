@@ -176,6 +176,7 @@
     <Compile Include="Source\Common\Core\Data\SQLiteDatabase.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteNetHelper.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteOdbcHelper.cs" />
     <Compile Include="Source\Common\Core\GlobalSuppressions.cs" />
     <Compile Include="Source\Common\Core\Classes\NativeMethods.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
