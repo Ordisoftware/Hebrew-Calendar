@@ -125,7 +125,7 @@ However, it can collect for debugging purposes the type of processor and operati
 
 #### What about possible virus issues?
 
-Alerts since early 2021 regarding a *Trojan.Malware.300983.susgen* from a little known vendor, and a *Nibiru detection* from a Sigma Crowdsourced rule, appear to be false positives.
+Alerts since spring 2021 regarding a *Trojan.Malware.300983.susgen* from a little known vendor, and a *Nibiru detection* from a Sigma Crowdsourced rule, appear to be false positives.
 
 Kaspersky, F-Secure, Trend Micro, McAfee, CrowdStrike Falcon, MetaDefender and Malwarebytes could not find anything on the solo-computer that is behind software and hardware firewalls, and which is used to create the binaries. Additionally, inspection of the Windows registry and file system did not reveal anything conclusive about a potential infection. A cursory review of the source code, just like using an old workstation backup, could not identify the cause of these flags.
 
