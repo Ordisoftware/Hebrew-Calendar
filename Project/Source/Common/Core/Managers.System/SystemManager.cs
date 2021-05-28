@@ -114,57 +114,6 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatch(Action action)
-    {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(ShowExceptionMode.None);
-        return false;
-      }
-    }
-
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatchManage(Action action)
-    {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-        return false;
-      }
-    }
-
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatchManage(ShowExceptionMode mode, Action action)
-    {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(mode);
-        return false;
-      }
-    }
-
-    /// <summary>
     /// Get the memory size of a serializable object.
     /// </summary>
     static public long SizeOf(this object instance)
