@@ -123,11 +123,15 @@ This software doesn't collect any personal information about you, your computer 
 
 However, it can collect for debugging purposes the type of processor and operating system as well as errors caused by the code, but these information are only stored locally and only transmitted upon conscious validations by the user.
 
-#### Are there any security and virus issues?
+#### What about possible virus issues?
 
-The software and the third-party libraries use certain Windows system functions in order in particular to provide detailed information in the event of a runtime error or to define keyboard shortcuts, as well as, depending on the software, to detect whether the use of the computer is paused. Also, applications can use several timers and command-line options to control each other. In addition to this, the author uses a lot of the advanced possibilities of the language and the system.
+Alerts from Calendar 8, Letters 6 and Words 3 regarding a *Trojan.Malware.300983.susgen* from a little known vendor and *Nibiru detection* from a Sigma Crowdsourced rule appear to be false positives.
 
-Alerts since Calendar 8, Letters 6 and Words 3 regarding *Trojan.Malware.300983.susgen* and *Nibiru detection* appear to be false positives. Kaspersky, F-Secure, Trend Micro, McAfee, CrowdStrike Falcon, MetaDefender and Malwarebytes found nothing on the solo-computer which is behind software and hardware firewalls, and which is used to create these applications and installation binaries. Also, inspecting the Windows registry and the file system did not reveal anything conclusive about a potential infection. A rough code review could not identify the cause of these flags, and the main difference with previous versions of the software is the discontinuation of the use of ODBC connectivity to the database to use a direct Code-First ORM access, as well as some core changes and improvements to improve stability, efficiency and functionalities. If in doubt, the source code available at https://github.com/Ordisoftware can be built using Visual Studio 2017 or higher. Do not hesitate to contact the author if you have any information on this subject, and if there is a real problem with the binaries or the source code.
+Kaspersky, F-Secure, Trend Micro, McAfee, CrowdStrike Falcon, MetaDefender and Malwarebytes could not find anything on the solo-computer that is behind software and hardware firewalls, and which is used to create these binaries. Additionally, inspection of the Windows registry and file system did not reveal anything conclusive about a potential infection.
+
+A cursory review of the code could not identify the cause of these flags, and previous versions still build without problems. The main difference is the discontinuation of the use of ODBC connectivity to use Code-First ORM direct access to the database, as well as some changes and improvements.
+
+If in doubt, the source code available at https://github.com/Ordisoftware can be build using Visual Studio 2017 or later. Please do not hesitate to contact the author or create a GitHub Issue if you have any information on this, and if there is a real problem with the binaries or the source code.
 
 #### What are command-line options?
 
