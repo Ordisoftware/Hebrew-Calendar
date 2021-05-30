@@ -165,7 +165,7 @@
     <value>37, 16</value>
   </data>
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>0</value>
   </data>
   <data name="LabelDate.Text" xml:space="preserve">
     <value>Date</value>
@@ -229,7 +229,7 @@
     <value>40, 26</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>2</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>OK</value>
@@ -307,7 +307,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionPreferences.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;ActionPreferences.Name" xml:space="preserve">
     <value>ActionPreferences</value>
@@ -577,7 +577,7 @@
     <value>60, 15</value>
   </data>
   <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
-    <value>64</value>
+    <value>1</value>
   </data>
   <data name="LabelParashahValue.Text" xml:space="preserve">
     <value>Parashah</value>
@@ -624,7 +624,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionLockout.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ActionLockout.Name" xml:space="preserve">
     <value>ActionLockout</value>
@@ -702,7 +702,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionSetupSound.TabIndex" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionSetupSound.Name" xml:space="preserve">
     <value>ActionSetupSound</value>
