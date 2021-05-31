@@ -246,6 +246,12 @@ namespace Ordisoftware.Hebrew.Calendar
           ParashotForm.Run((Parashah)LabelParashahValue.Tag);
     }
 
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      if ( LabelParashahValue.Tag != null )
+        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
+    }
+
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
       if ( !ApplicationDatabase.Instance.ShowWeeklyParashahDescription() )

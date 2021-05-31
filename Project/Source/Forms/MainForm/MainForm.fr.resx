@@ -365,7 +365,7 @@
     <value>330, 22</value>
   </data>
   <data name="EditShowTips.Text" xml:space="preserve">
-    <value>Affichier les astuces des menus</value>
+    <value>Afficher les astuces des menus</value>
   </data>
   <data name="EditUseAdvancedDialogBoxes.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 22</value>
@@ -530,7 +530,7 @@
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
-  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
-    <value>Description</value>
+  <data name="ActionViewParashahDescription.Text" xml:space="preserve">
+    <value>Afficher la description</value>
   </data>
 </root>

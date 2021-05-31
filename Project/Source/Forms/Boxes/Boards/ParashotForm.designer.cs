@@ -81,6 +81,8 @@
       this.MenuSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,8 +92,7 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -393,13 +394,15 @@
       // ContextMenuParashah
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionViewParashahInfos,
+            this.toolStripSeparator3,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
-            this.ActionSearchOnline,
             this.toolStripSeparator1,
+            this.ActionSearchOnline,
             this.ActionShowGrammarGuide,
-            this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
+            this.ActionOpenHebrewLetters,
             this.ActionOpenHebrewWordsVerse,
             this.ActionOpenHebrewWordsSearch,
             this.MenuSeparator2,
@@ -409,8 +412,7 @@
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode,
-            this.toolStripMenuItem1,
-            this.ActionViewParashahInfos});
+            this.toolStripMenuItem1});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -503,6 +505,17 @@
       this.ActionCopyLineUnicode.Name = "ActionCopyLineUnicode";
       this.ActionCopyLineUnicode.Click += new System.EventHandler(this.ActionCopyLineUnicode_Click);
       // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      // 
+      // ActionViewParashahInfos
+      // 
+      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
+      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      // 
       // BindingSource
       // 
       this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
@@ -562,16 +575,10 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
-      // toolStripMenuItem1
+      // toolStripSeparator3
       // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      // 
-      // ActionViewParashahInfos
-      // 
-      resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
-      this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ParashotForm
       // 
@@ -649,5 +656,6 @@
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
   }
 }

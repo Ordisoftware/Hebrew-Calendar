@@ -287,6 +287,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Fix error on opening online verse from reminder box and parashot board.
 - Fix preferences and reminder box controls tab index.
+- Improve parashot menus.
+- Update web links.
 
 #### 2021.05.28 - Version 8.0
 
