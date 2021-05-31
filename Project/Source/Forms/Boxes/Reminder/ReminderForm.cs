@@ -289,7 +289,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = (Parashah)LabelParashahValue.Tag;
+        var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
         string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });

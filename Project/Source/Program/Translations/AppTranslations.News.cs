@@ -28,6 +28,13 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
+        ["8.1"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Fixed error on opening online verse from reminder box and parashot board.",
+
+          [Language.FR] = "Correction d'une erreur lors de l'ouverture du verset en ligne à partir de la boîte de rappel et du tableau de parashot."
+        },
+
         ["8.0"] = new TranslationsDictionary
         {
           [Language.EN] = "Overall performances are optimized." + Globals.NL +
@@ -38,7 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.FR] = "Les performances globales sont optimisées." + Globals.NL +
                           "Ajout d'une option pour définir le mode automatique de blocage de l'ordinateur." + Globals.NL +
                           "Quelques corrections et améliorations." + Globals.NL +
-                          "Le pilote SQLite ODBC n'est plus nécessaire. "
+                          "Le pilote SQLite ODBC n'est plus nécessaire."
         },
 
         ["7.x"] = new TranslationsDictionary
