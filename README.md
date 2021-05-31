@@ -283,8 +283,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add parashah reminder at the start of the week.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
-#### In progress - Version 8.1
+#### 2021.05.31 - Version 8.1
 
+- Fix error on opening online verse from reminder box and parashot board.
 - Fix preferences and reminder box controls tab index.
 
 #### 2021.05.28 - Version 8.0
