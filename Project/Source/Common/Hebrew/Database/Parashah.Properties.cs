@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew
     public string VerseBegin { get; set; }
     public string VerseEnd { get; set; }
 
-    public string FullReferenceBegin { get; private set; }
+    public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
 
     public string Name { get; set; }
     public string Unicode { get; set; }

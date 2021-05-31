@@ -47,7 +47,6 @@ namespace Ordisoftware.Hebrew
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
       VerseBegin = verseBegin;
       VerseEnd = verseEnd;
-      FullReferenceBegin = $"{(int)Book}.{VerseBegin}";
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;

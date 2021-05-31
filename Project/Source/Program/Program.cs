@@ -71,6 +71,42 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
+    /// Check if settings must be reseted.
+    /// </summary>
+    private static void CheckSettingsReset(bool force = false)
+    {
+      try
+      {
+        if ( force
+          || Settings.UpgradeResetRequiredV3_0
+          || Settings.UpgradeResetRequiredV3_6
+          || Settings.UpgradeResetRequiredV4_1
+          || Settings.UpgradeResetRequiredV5_10 )
+        {
+          if ( !force && !Settings.FirstLaunch )
+            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+          Settings.Reset();
+          Settings.LanguageSelected = Languages.Current;
+          Settings.SetUpgradeFlagsOff();
+        }
+        if ( Settings.FirstLaunchV4 )
+        {
+          Settings.SetFirstAndUpgradeFlagsOff();
+          Settings.FirstLaunch = true;
+        }
+        if ( Settings.UpgradeResetRequiredV5_10 )
+          Settings.CurrentView = ViewMode.Month;
+        if ( Settings.LanguageSelected == Language.None )
+          Settings.LanguageSelected = Languages.Current;
+        SystemManager.TryCatch(Settings.Save);
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage();
+      }
+    }
+
+    /// <summary>
     /// IPC requests.
     /// </summary>
     static void IPCRequests(IAsyncResult ar)
@@ -148,42 +184,6 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
-    }
-
-    /// <summary>
-    /// Check if settings must be reseted.
-    /// </summary>
-    private static void CheckSettingsReset(bool force = false)
-    {
-      try
-      {
-        if ( force
-          || Settings.UpgradeResetRequiredV3_0
-          || Settings.UpgradeResetRequiredV3_6
-          || Settings.UpgradeResetRequiredV4_1
-          || Settings.UpgradeResetRequiredV5_10 )
-        {
-          if ( !force && !Settings.FirstLaunch )
-            DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-          Settings.Reset();
-          Settings.LanguageSelected = Languages.Current;
-          Settings.SetUpgradeFlagsOff();
-        }
-        if ( Settings.FirstLaunchV4 )
-        {
-          Settings.SetFirstAndUpgradeFlagsOff();
-          Settings.FirstLaunch = true;
-        }
-        if ( Settings.UpgradeResetRequiredV5_10 )
-          Settings.CurrentView = ViewMode.Month;
-        if ( Settings.LanguageSelected == Language.None )
-          Settings.LanguageSelected = Languages.Current;
-        SystemManager.TryCatch(Settings.Save);
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
     }
 
     /// <summary>
