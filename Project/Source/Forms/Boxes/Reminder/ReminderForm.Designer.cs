@@ -43,7 +43,6 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,7 +143,6 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
-            this.toolStripSeparator1,
             this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
@@ -157,11 +155,6 @@
       resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
-      // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionViewParashot
       // 
@@ -267,7 +260,6 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

@@ -267,6 +267,9 @@
     <value>Étudier en ligne</value>
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
-    <value>Description</value>
+    <value>Afficher la description</value>
+  </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Hebrew Letters Analyse</value>
   </data>
 </root>

@@ -963,10 +963,10 @@
       resources.ApplyResources(this.ActionOnlineParashah, "ActionOnlineParashah");
       this.ActionOnlineParashah.Name = "ActionOnlineParashah";
       // 
-      // ActionViewParashahInfos
+      // ActionViewParashahDescription
       // 
-      resources.ApplyResources(this.ActionViewParashahDescription, "ActionViewParashahInfos");
-      this.ActionViewParashahDescription.Name = "ActionViewParashahInfos";
+      resources.ApplyResources(this.ActionViewParashahDescription, "ActionViewParashahDescription");
+      this.ActionViewParashahDescription.Name = "ActionViewParashahDescription";
       this.ActionViewParashahDescription.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
       // toolStripSeparator13

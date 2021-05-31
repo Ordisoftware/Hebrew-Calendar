@@ -258,6 +258,11 @@ namespace Ordisoftware.Hebrew.Calendar
       this.Popup();
     }
 
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      LabelParashahValue_LinkClicked(sender, null);
+    }
+
   }
 
 }
