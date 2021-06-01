@@ -153,6 +153,8 @@
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
+      this.EditWeeklyParashahShowAtNewWeek = new System.Windows.Forms.CheckBox();
+      this.EditWeeklyParashahShowAtStartup = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
@@ -1292,6 +1294,8 @@
       this.TabPageReminder.Controls.Add(this.SelectReminderBoxDesktopLocation);
       this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
+      this.TabPageReminder.Controls.Add(this.EditWeeklyParashahShowAtNewWeek);
+      this.TabPageReminder.Controls.Add(this.EditWeeklyParashahShowAtStartup);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
@@ -1343,6 +1347,18 @@
       resources.ApplyResources(this.LabelAutoLockSessionTimeOutIntervalInfo, "LabelAutoLockSessionTimeOutIntervalInfo");
       this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelAutoLockSessionTimeOutIntervalInfo.Name = "LabelAutoLockSessionTimeOutIntervalInfo";
+      // 
+      // EditWeeklyParashahShowAtNewWeek
+      // 
+      resources.ApplyResources(this.EditWeeklyParashahShowAtNewWeek, "EditWeeklyParashahShowAtNewWeek");
+      this.EditWeeklyParashahShowAtNewWeek.Name = "EditWeeklyParashahShowAtNewWeek";
+      this.EditWeeklyParashahShowAtNewWeek.UseVisualStyleBackColor = true;
+      // 
+      // EditWeeklyParashahShowAtStartup
+      // 
+      resources.ApplyResources(this.EditWeeklyParashahShowAtStartup, "EditWeeklyParashahShowAtStartup");
+      this.EditWeeklyParashahShowAtStartup.Name = "EditWeeklyParashahShowAtStartup";
+      this.EditWeeklyParashahShowAtStartup.UseVisualStyleBackColor = true;
       // 
       // EditAllowSuspendReminder
       // 
@@ -2523,9 +2539,9 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
+      this.Controls.Add(this.TabControl);
       this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelButtons);
-      this.Controls.Add(this.TabControl);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -2862,5 +2878,7 @@
     public System.Windows.Forms.Panel EditNavigateTopColor;
     public System.Windows.Forms.Panel EditTextReportBackColor;
     public System.Windows.Forms.Panel EditTextReportTextColor;
+    private System.Windows.Forms.CheckBox EditWeeklyParashahShowAtStartup;
+    private System.Windows.Forms.CheckBox EditWeeklyParashahShowAtNewWeek;
   }
 }

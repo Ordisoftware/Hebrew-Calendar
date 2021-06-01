@@ -459,11 +459,18 @@ namespace Ordisoftware.Hebrew
 
     static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
     {
+      string title = HebrewTranslations.WeeklyParashah.GetLang();
+      var form = (MessageBoxEx)Application.OpenForms.All(f => f.Text == title).FirstOrDefault();
+      if ( form != null )
+      {
+        form.Popup();
+        return true;
+      }
       var linked = withLinked ? parashah.GetLinked() : null;
       if ( parashah == null ) return false;
       var message = parashah.ToStringReadable();
       message += Globals.NL2 + linked?.ToStringReadable();
-      var form = new MessageBoxEx(HebrewTranslations.WeeklyParashah.GetLang(), message, width: MessageBoxEx.DefaultMediumWidth);
+      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultMediumWidth);
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
@@ -483,7 +490,8 @@ namespace Ordisoftware.Hebrew
         string memo2 = linked?.Memo ?? "";
         DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
       };
-      form.ShowDialog(owner);
+      form.AllowClose = true;
+      form.Show();
       return true;
     }
 

@@ -290,7 +290,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="OpenExeFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>588, 10</value>
@@ -368,7 +368,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottomSeparator.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>419, 9</value>
@@ -1527,7 +1527,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2237,7 +2237,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageTrayIcon.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2534,7 +2534,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3176,7 +3176,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3206,7 +3206,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3230,7 +3230,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3257,7 +3257,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3302,7 +3302,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDefaultLockoutAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 230</value>
+    <value>20, 270</value>
   </data>
   <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
@@ -3362,7 +3362,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="SelectLockSessionDefaultAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 249</value>
+    <value>23, 289</value>
   </data>
   <data name="SelectLockSessionDefaultAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 21</value>
@@ -3416,7 +3416,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 355</value>
+    <value>20, 365</value>
   </data>
   <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 13</value>
@@ -3449,7 +3449,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 198</value>
+    <value>98, 238</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -3471,6 +3471,78 @@
   </data>
   <data name="&gt;&gt;LabelAutoLockSessionTimeOutIntervalInfo.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 165</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
+    <value>Show weekly parashah on new week</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtNewWeek.Name" xml:space="preserve">
+    <value>EditWeeklyParashahShowAtNewWeek</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtNewWeek.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtNewWeek.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtNewWeek.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 145</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
+    <value>Show weekly parashah at startup</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtStartup.Name" xml:space="preserve">
+    <value>EditWeeklyParashahShowAtStartup</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtStartup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtStartup.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;EditWeeklyParashahShowAtStartup.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="EditAllowSuspendReminder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3506,7 +3578,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAllowSuspendReminder.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3518,7 +3590,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 175</value>
+    <value>39, 215</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 13</value>
@@ -3539,7 +3611,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;LabelRemindAutoLockTimeOut.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="EditConfirmShutdown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3554,7 +3626,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditConfirmShutdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 285</value>
+    <value>23, 325</value>
   </data>
   <data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
@@ -3575,7 +3647,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditConfirmShutdown.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3590,7 +3662,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
+    <value>23, 190</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 17</value>
@@ -3611,13 +3683,13 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 194</value>
+    <value>42, 234</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -3635,7 +3707,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3671,7 +3743,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3707,7 +3779,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="TabPageReminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -4731,7 +4803,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6201,7 +6273,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -6216,7 +6288,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6504,7 +6576,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPageTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -7059,7 +7131,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPagePrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPagePrint.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -7843,7 +7915,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -7864,7 +7936,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -7885,7 +7957,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -7906,7 +7978,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -7927,7 +7999,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -7942,7 +8014,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPagePaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 395</value>
+    <value>571, 428</value>
   </data>
   <data name="TabPagePaths.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -7972,7 +8044,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>579, 481</value>
+    <value>579, 448</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7987,7 +8059,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

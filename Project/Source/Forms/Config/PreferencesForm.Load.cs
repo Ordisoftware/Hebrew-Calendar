@@ -128,6 +128,8 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
       SystemManager.TryCatch(() => { EditConfirmShutdown.Checked = Settings.LockSessionConfirmLogOffOrMore; });
       SystemManager.TryCatch(() => { EditAskRegenerateIfIntervalGreater.Checked = Settings.AskRegenerateIfIntervalGreater; });
+      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup; });
+      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek; });
       // Hotkey
       InitHotKeyControls();
       // System

@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     private bool IsSpecialDay;
+    private bool WeeklyParashahShownAtStartup;
+    private bool WeeklyParashahShownAtNewWeek;
 
     public void DoTimerReminder()
     {
@@ -63,6 +65,23 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LockSessionForm.Instance?.Visible ?? false )
             LockSessionForm.Instance.Popup();
         });
+        if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
+        {
+          WeeklyParashahShownAtStartup = true;
+          WeeklyParashahShownAtNewWeek = true;
+          ActionViewParashahDescription.PerformClick();
+        }
+        else
+        if ( !WeeklyParashahShownAtNewWeek && Settings.WeeklyParashahShowAtNewWeek && !IsSpecialDay )
+        {
+          WeeklyParashahShownAtStartup = true;
+          WeeklyParashahShownAtNewWeek = true;
+          ActionViewParashahDescription.PerformClick();
+        }
+        else
+        if ( IsSpecialDay )
+          WeeklyParashahShownAtNewWeek = false;
+
       }
     }
 
