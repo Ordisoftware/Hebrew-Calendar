@@ -61,7 +61,7 @@ namespace Ordisoftware.Core
           CreateIPCServer(ipcRequests);
         else
         {
-          if ( CommandLineArguments.Length == 0 )
+          if ( CommandLineArguments != null && CommandLineArguments.Length == 0 )
             CommandLineOptions.ShowMainForm = true;
           try
           {
