@@ -43,7 +43,7 @@ namespace Ordisoftware.Core
     private MessageBoxIcon IconStyle;
     private int LabelMaxWidth;
     private bool Justify;
-    private bool AllowClose;
+    public bool AllowClose;
 
     public bool DoShownSound = true;
 
