@@ -14,7 +14,6 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -50,6 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
+        UpdateTitles();
         SystemManager.TryCatch(() =>
         {
           if ( Globals.IsExiting ) return;
