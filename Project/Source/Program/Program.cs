@@ -143,11 +143,11 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewCelebrationsBoard.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewNewMoonsBoard.PerformClick());
-        // TODO enable lunarmonths when ready and update keys and faq
-        //if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
-        //MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenParashotBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
+        if ( Globals.IsDebugExecutable ) // TODO remove when ready
+          if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
+            MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
       }
       finally
       {
@@ -177,13 +177,13 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
       if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
-      // TODO enable lunarmonths when ready and update keys and faq
-      //if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-      //SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
+      if ( Globals.IsDebugExecutable ) // TODO remove when ready
+        if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
+          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
     }
 
     /// <summary>
