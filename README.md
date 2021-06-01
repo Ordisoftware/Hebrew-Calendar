@@ -284,7 +284,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 8.2
 
-- Add parashah reminder at the start of the week.
+- Add option to show a box displaying the weekly parashah at the start of the application and after shabat while running.
 - Improve refreshing current day info labels.
 
 #### 2021.05.31 - Version 8.1
