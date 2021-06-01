@@ -2513,5 +2513,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["AskRegenerateIfIntervalGreater"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WeeklyParashahShowAtStartup {
+            get {
+                return ((bool)(this["WeeklyParashahShowAtStartup"]));
+            }
+            set {
+                this["WeeklyParashahShowAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WeeklyParashahShowAtNewWeek {
+            get {
+                return ((bool)(this["WeeklyParashahShowAtNewWeek"]));
+            }
+            set {
+                this["WeeklyParashahShowAtNewWeek"] = value;
+            }
+        }
     }
 }

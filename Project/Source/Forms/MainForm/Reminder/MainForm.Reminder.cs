@@ -14,7 +14,6 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -24,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     private bool IsSpecialDay;
+    private bool WeeklyParashahShownAtStartup;
+    private bool WeeklyParashahShownAtNewWeek;
 
     public void DoTimerReminder()
     {
@@ -50,6 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
+        UpdateTitles();
         SystemManager.TryCatch(() =>
         {
           if ( Globals.IsExiting ) return;
@@ -63,6 +65,23 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LockSessionForm.Instance?.Visible ?? false )
             LockSessionForm.Instance.Popup();
         });
+        if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
+        {
+          WeeklyParashahShownAtStartup = true;
+          WeeklyParashahShownAtNewWeek = true;
+          ActionViewParashahDescription.PerformClick();
+        }
+        else
+        if ( !WeeklyParashahShownAtNewWeek && Settings.WeeklyParashahShowAtNewWeek && !IsSpecialDay )
+        {
+          WeeklyParashahShownAtStartup = true;
+          WeeklyParashahShownAtNewWeek = true;
+          ActionViewParashahDescription.PerformClick();
+        }
+        else
+        if ( IsSpecialDay )
+          WeeklyParashahShownAtNewWeek = false;
+
       }
     }
 
