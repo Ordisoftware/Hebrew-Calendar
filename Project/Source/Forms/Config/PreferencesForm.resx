@@ -1527,7 +1527,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageStartup.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2237,7 +2237,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTrayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageTrayIcon.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2534,7 +2534,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageNavigation.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3272,7 +3272,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageGeneration.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3416,7 +3416,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 365</value>
+    <value>20, 360</value>
   </data>
   <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 13</value>
@@ -3788,7 +3788,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageReminder.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -4227,7 +4227,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageShabat.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4803,7 +4803,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6288,7 +6288,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6576,7 +6576,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPageTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -7131,7 +7131,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPagePrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPagePrint.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -8014,7 +8014,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPagePaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 428</value>
+    <value>571, 395</value>
   </data>
   <data name="TabPagePaths.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -8059,7 +8059,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

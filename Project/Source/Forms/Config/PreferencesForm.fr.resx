@@ -785,4 +785,10 @@
   <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
     <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
   </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
+    <value>Montrer la parashah de la semaine au début de la semaine</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
+    <value>Montrer la parashah de la semaine au démarrage</value>
+  </data>
 </root>
