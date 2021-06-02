@@ -285,7 +285,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 8.2
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
-- Improve refreshing current day info labels.
+- Fix current day labels not correctly updated.
 
 #### 2021.05.31 - Version 8.1
 
