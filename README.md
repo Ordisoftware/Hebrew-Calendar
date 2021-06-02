@@ -286,6 +286,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
 - Fix current day labels not correctly updated.
+- Fix setup that creates the Run at Windows startup registry key even unchecked.
 
 #### 2021.05.31 - Version 8.1
 
