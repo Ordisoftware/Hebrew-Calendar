@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var now = DateTime.Now;
       var diff = now - DayChecked;
-      if ( LastCheck != null && diff.Seconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
+      if ( LastCheck != null && diff.TotalSeconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
         return LastCheck;
       DayChecked = now;
       LastCheck = GetDay(now);
