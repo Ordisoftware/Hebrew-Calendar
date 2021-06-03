@@ -153,10 +153,9 @@ namespace Ordisoftware.Core
       string code = Globals.SinkFileCode;
       string extension = Globals.TraceFileExtension;
       var list = Directory.GetFiles(folder, code + "*" + extension)
-                          .Where(f => !SystemManager.IsFileLocked(f));
-      return sortByDateOnly
-             ? list.OrderBy(f => new FileInfo(f).CreationTime)
-             : list.OrderBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
+                          .Where(f => !SystemManager.IsFileLocked(f))
+                          .OrderBy(f => new FileInfo(f).CreationTime);
+      return sortByDateOnly ? list : list.OrderBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
     }
 
     static public void ClearTraces(bool norestart = false, bool all = false)
