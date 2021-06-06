@@ -7,7 +7,7 @@
 
 [Setup]
 AppId={{EA196B80-7F9C-4E31-8337-61CE9A8B4FA9}
-AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
+;AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 AppCopyright=Copyright 2016-2021 Olivier Rogier
 #include "Scripts\Setup.iss"
 
