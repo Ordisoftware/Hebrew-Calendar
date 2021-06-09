@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -274,6 +274,8 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionExit_Click(object sender, EventArgs e)
     {
       MenuShowHide.PerformClick();
+      ActionExit.Visible = false;
+      ActionExit.Visible = true;
     }
 
     /// <summary>

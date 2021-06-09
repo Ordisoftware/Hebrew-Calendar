@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -161,7 +161,11 @@ namespace Ordisoftware.Hebrew
         return;
       }
       open(parashah);
-      if ( parashah.GetLinked() != null && openLinked ) open(parashah.GetLinked());
+      if ( openLinked && url.Contains("%") )
+      {
+        var linked = parashah.GetLinked();
+        if ( linked != null ) open(linked);
+      }
       //
       void open(Parashah item)
       {

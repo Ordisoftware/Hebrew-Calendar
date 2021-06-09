@@ -11,11 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
+using System.Linq;
 using SQLite;
 using Ordisoftware.Core;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace Ordisoftware.Hebrew
 {
@@ -41,9 +43,13 @@ namespace Ordisoftware.Hebrew
     public string Translation { get; set; }
     public string Lettriq { get; set; }
 
-    public Parashah GetLinked() => Linked;
-
-    internal void SetLinked(Parashah parashah) => Linked = parashah;
+    public Parashah GetLinked(List<Parashah> owner = null)
+    {
+      if ( !IsLinkedToNext ) return null;
+      if ( owner != null ) return owner[owner.IndexOf(this) + 1];
+      var list = ParashotFactory.All.ToList();
+      return list[list.IndexOf(this) + 1];
+    }
 
     public string Memo
     {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,9 +43,6 @@ namespace Ordisoftware.Hebrew
         if ( index < linesLettriq.Count ) item.Lettriq = linesLettriq.Values.ElementAt(index).Trim();
         index++;
       }
-      for ( index = 0; index < All.Count(); index++ )
-        if ( All.ElementAt(index).IsLinkedToNext )
-          All.ElementAt(index).SetLinked(All.ElementAt(++index));
     }
 
     static public IEnumerable<Parashah> All

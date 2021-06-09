@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -140,7 +140,7 @@ namespace Ordisoftware.Hebrew
     private void Timer_Tick(object sender, EventArgs e)
     {
       UpdateControls();
-      if ( Created && !DataGridView.ReadOnly)
+      if ( Created && !DataGridView.ReadOnly )
       {
         ActionUndo.PerformClick();
         MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
@@ -460,13 +460,13 @@ namespace Ordisoftware.Hebrew
     static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
     {
       string title = HebrewTranslations.WeeklyParashah.GetLang();
-      var form = (MessageBoxEx)Application.OpenForms.All(f => f.Text == title).FirstOrDefault();
+      var form = (MessageBoxEx)Application.OpenForms.All(f => f.Text.Contains(title)).FirstOrDefault();
       if ( form != null )
       {
         form.Popup();
         return true;
       }
-      var linked = withLinked ? parashah.GetLinked() : null;
+      var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
       if ( parashah == null ) return false;
       var message = parashah.ToStringReadable();
       message += Globals.NL2 + linked?.ToStringReadable();
