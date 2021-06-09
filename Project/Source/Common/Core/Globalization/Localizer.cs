@@ -34,7 +34,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide localization helper.
   /// </summary>
-  static partial class Localizer
+  static class Localizer
   {
 
     private const string ERR = "<Not translated>";
