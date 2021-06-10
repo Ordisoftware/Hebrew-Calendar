@@ -273,22 +273,22 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private static int WM_QUERYENDSESSION = 0x11;
+    protected override void WndProc(ref Message m)
+    {
+      if ( m.Msg == WM_QUERYENDSESSION )
+        SessionEnding(this, null);
+      base.WndProc(ref m);
+    }
+
     /// <summary>
     /// Do Session Ending event.
     /// </summary>
     public void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
-      DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.Reason.ToStringFull());
-      try
-      {
-        Close();
-      }
-      finally
-      {
-        DebugManager.Leave();
-      }
+      DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(WM_QUERYENDSESSION));
+      Close();
     }
 
     /// <summary>
