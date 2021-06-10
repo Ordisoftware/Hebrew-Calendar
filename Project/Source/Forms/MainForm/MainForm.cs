@@ -334,13 +334,13 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
+        UpdateTitles(true);
+        TimerReminder.Enabled = true;
+        EnableReminderTimer(calltimer);
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);
         else
           GoToDate(dateOld.Value);
-        TimerReminder.Enabled = true;
-        EnableReminderTimer(calltimer);
-        UpdateTitles(true);
       }
     }
 
