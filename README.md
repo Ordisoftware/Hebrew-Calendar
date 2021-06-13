@@ -286,11 +286,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 8.2
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
-- Improve study parashah online to not open twice a website if no link pattern.
+- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Fix weekly parashah description box that does not show linked parashah.
-- Fix current day labels not correctly updated on new day.
+- Fix current day labels not correctly updated when new day is triggered.
 - Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the month view.
 - Fix click on send to tray icon is selected when main form is reopened.
+- Fix reminder bug introduced in previous version : events are not reminded n-hours before when returning from fullscreen.
 - Fix suspend menu tray is disabled on start until preferences is opened and closed.
 - Fix setup that creates the *Start with Windows* registry key even unchecked.
 - Some fixes.
