@@ -11,14 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
-
-
+  
   partial class ApplicationDatabase : SQLiteDatabase
   {
 
@@ -64,9 +63,11 @@ namespace Ordisoftware.Hebrew.Calendar
       get
       {
         if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
-        string result = ParashotFactory.Get(ParashahID).Name;
+        var parashah = ParashotFactory.Get(ParashahID);
+        string result = parashah.Name;
         if ( !LinkedParashahID.IsNullOrEmpty() )
           result += " - " + ParashotFactory.Get(LinkedParashahID).Name;
+        result += $" ({parashah.Book})";
         return result;
       }
     }
@@ -94,4 +95,3 @@ namespace Ordisoftware.Hebrew.Calendar
   }
 
 }
-

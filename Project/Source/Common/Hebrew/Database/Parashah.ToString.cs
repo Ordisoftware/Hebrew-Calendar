@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew
   {
 
     public string ToStringLinked()
-      => Name + ( Linked != null ? " - " + Linked.Name : "" );
+      => Name + ( GetLinked() != null ? " - " + GetLinked().Name : "" );
 
     public override string ToString()
       => ToString(false);
