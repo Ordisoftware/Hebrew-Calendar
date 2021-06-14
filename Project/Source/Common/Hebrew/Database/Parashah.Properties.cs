@@ -66,8 +66,6 @@ namespace Ordisoftware.Hebrew
 
     public bool IsLinkedToNext { get; set; }
 
-    private Parashah Linked;
-
   }
 
 }

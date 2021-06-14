@@ -283,14 +283,16 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add option to auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 
-#### In progress - Version 8.2
+#### 2021.06.20 - Version 8.2
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
-- Improve study parashah online to not open twice a website if no link pattern.
+- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
+- Improve weekly parashah labels to show book name.
 - Fix weekly parashah description box that does not show linked parashah.
-- Fix current day labels not correctly updated on new day.
+- Fix current day labels not correctly updated when new day is triggered.
 - Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the month view.
 - Fix click on send to tray icon is selected when main form is reopened.
+- Fix reminder bug introduced in previous version : events are not reminded n-hours before when returning from fullscreen.
 - Fix suspend menu tray is disabled on start until preferences is opened and closed.
 - Fix setup that creates the *Start with Windows* registry key even unchecked.
 - Some fixes.

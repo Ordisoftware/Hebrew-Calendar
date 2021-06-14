@@ -126,7 +126,7 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 18</value>
+    <value>106, 18</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 18</value>
@@ -159,7 +159,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="LabelDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 40</value>
+    <value>106, 40</value>
   </data>
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 16</value>
@@ -196,7 +196,7 @@
     <value />
   </data>
   <data name="PictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 17</value>
+    <value>23, 17</value>
   </data>
   <data name="PictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
@@ -223,7 +223,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 107</value>
+    <value>319, 107</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 26</value>
@@ -253,7 +253,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="LabelStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 62</value>
+    <value>106, 62</value>
   </data>
   <data name="LabelStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 16</value>
@@ -301,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionPreferences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 2</value>
+    <value>331, 2</value>
   </data>
   <data name="ActionPreferences.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEndTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 62</value>
+    <value>234, 62</value>
   </data>
   <data name="LabelEndTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 16</value>
@@ -364,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelArrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 63</value>
+    <value>212, 63</value>
   </data>
   <data name="LabelArrow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -400,7 +400,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelStartDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 80</value>
+    <value>106, 80</value>
   </data>
   <data name="LabelStartDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 16</value>
@@ -433,7 +433,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelEndDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 81</value>
+    <value>234, 81</value>
   </data>
   <data name="LabelEndDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 16</value>
@@ -553,7 +553,7 @@
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 120</value>
+    <value>187, 98</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -568,7 +568,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 102</value>
+    <value>106, 102</value>
   </data>
   <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 15</value>
@@ -615,7 +615,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionLockout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 97</value>
+    <value>23, 97</value>
   </data>
   <data name="ActionLockout.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -693,7 +693,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetupSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 2</value>
+    <value>303, 2</value>
   </data>
   <data name="ActionSetupSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -720,7 +720,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 133</value>
+    <value>359, 133</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

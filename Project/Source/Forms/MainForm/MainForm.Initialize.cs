@@ -249,9 +249,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DoFormClosed(object sender, FormClosedEventArgs e)
     {
       DebugManager.Enter();
-      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
       try
       {
+        DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
         Globals.IsExiting = true;
         Globals.IsSessionEnding = true;
         Globals.AllowClose = true;
@@ -287,8 +287,16 @@ namespace Ordisoftware.Hebrew.Calendar
     public void SessionEnding(object sender, SessionEndingEventArgs e)
     {
       if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
-      DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(WM_QUERYENDSESSION));
-      Close();
+      DebugManager.Enter();
+      try
+      {
+        DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(WM_QUERYENDSESSION));
+        Close();
+      }
+      finally
+      {
+        DebugManager.Leave();
+      }
     }
 
     /// <summary>

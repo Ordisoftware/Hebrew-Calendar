@@ -32,15 +32,25 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
       if ( !TimerReminder.Enabled ) return;
+      if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
       TimerMutex = true;
       CheckProcessRelicate();
       try
       {
-        bool showbox = !SystemManager.IsForegroundFullScreenOrScreensaverRunning && !IsReminderPaused;
+        bool showbox = !IsReminderPaused;
+        bool IsSpecialDayOld = IsSpecialDay; // TODO marche pas
         IsSpecialDay = false;
         IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
         IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
         if ( showbox && Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
+        if ( !IsSpecialDay && !IsSpecialDayOld )
+          WeeklyParashahShownAtNewWeek = true;
+        else
+        if ( !IsSpecialDay && IsSpecialDayOld )
+          WeeklyParashahShownAtNewWeek = false;
+        else
+        if ( IsSpecialDay )
+          WeeklyParashahShownAtNewWeek = false;
       }
       catch ( Exception ex )
       {
