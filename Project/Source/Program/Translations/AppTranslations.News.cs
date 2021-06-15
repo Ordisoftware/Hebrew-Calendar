@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -27,6 +27,17 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
+
+        ["8.2"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Added weekly parashah reminder." + Globals.NL +
+                          "Improve parashot titles and menus." + Globals.NL +
+                          "Some fixes.",
+
+          [Language.FR] = "Ajout d'un rappel de la parasha hebdomadaire." + Globals.NL +
+                          "Amélioration des titres et des menus des parashot." + Globals.NL +
+                          "Quelques corrections."
+        },
 
         ["8.1"] = new TranslationsDictionary
         {
