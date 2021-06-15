@@ -18,11 +18,14 @@ URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 
 -
 
+Name = (FR) Torah-Box.com
+URL = https://www.torah-box.com/paracha/%TORAHBOX%
+
 Name = (EN) Torah.org
 URL = https://torah.org/parsha/%TORAHORG%/
 
-Name = (FR) Torah-Box.com
-URL = https://www.torah-box.com/paracha/%TORAHBOX%
+Name = (EN) TrueTorahJews.org
+URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
 -
 
@@ -42,14 +45,6 @@ URL = https://www.hevratpinto.org/parsha/path_to_follow.html
 
 Name = (FR) HevratPinto.org
 URL = https://www.hevratpinto.org/voie%20a%20suivre_n/vas.html
-
-- 
-
-Name = (FR) JudaismeEnMouvement.org (Site web)
-URL = https://judaismeenmouvement.org/suivre/la-paracha-de-la-semaine/
-
-Name = (FR) JudaismeEnMouvement.org (YouTube)
-URL = https://www.youtube.com/playlist?list=PLU4D_qR3BkAgutgERizAOhPFHdnPEDjSC
 
 -
 
@@ -72,3 +67,11 @@ URL = http://halachayomit.co.il/fr/Parasha.aspx
 
 Name = (IW) HalachaYomit.co.il
 URL = http://halachayomit.co.il/he/Parasha.aspx
+
+- 
+
+Name = (FR) JudaismeEnMouvement.org (Site web)
+URL = https://judaismeenmouvement.org/suivre/la-paracha-de-la-semaine/
+
+Name = (FR) JudaismeEnMouvement.org (YouTube)
+URL = https://www.youtube.com/playlist?list=PLU4D_qR3BkAgutgERizAOhPFHdnPEDjSC

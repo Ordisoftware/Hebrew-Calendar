@@ -93,14 +93,17 @@ URL = https://www.chabad.org
 Name = (EN) The Yeshiva
 URL = https://www.theyeshiva.net
 
+Name = (EN) Torah.org
+URL = https://torah.org
+
 Name = (EN) Torah Anytime
 URL = https://www.torahanytime.com
 
 Name = (EN) Torah Café
 URL = https://www.torahcafe.com
 
-Name = (EN) Torah.org
-URL = https://torah.org
+Name = (EN) Torah Jews
+URL = https://www.truetorahjews.org
 
 -
 
