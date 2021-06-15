@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -27,6 +27,8 @@ namespace Ordisoftware.Core
   {
 
     #region WorkStation
+
+    public const int WM_QUERYENDSESSION = 0x11;
 
     [DllImport("user32.dll", SetLastError = true)]
     static public extern bool LockWorkStation();
@@ -55,6 +57,8 @@ namespace Ordisoftware.Core
     #endregion
 
     #region Windows
+
+    public const int WM_DRAWCLIPBOARD = 0x308;
 
     public const int MAX_PATH = 260;
 

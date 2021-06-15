@@ -54,12 +54,11 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Download
 
-**What's new in the latest version 8.0**
+**What's new in the latest version 8.2**
 
-- Overall performances are optimized.
-- Added option to set automatic computer lockout mode.
-- Some fixes and improvements.
-- SQLite ODBC Driver is no more needed.
+- Added weekly parashah reminder.
+- Improve parashot titles and menus.
+- Some fixes.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 

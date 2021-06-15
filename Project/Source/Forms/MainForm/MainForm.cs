@@ -170,7 +170,13 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           var lines = Text.Replace("Parashah ", "").SplitNoEmptyLines(" - ").ToList();
           if ( lines.Count >= 3 )
+          {
             lines.Insert(2, DateTime.Today.ToShortDateString());
+            int index = lines.Count - 1;
+            int pos = lines[index].IndexOf('(');
+            if ( pos != -1 )
+              lines[index] = lines[index].Substring(0, pos - 1);
+          }
           else
             lines.Add(DateTime.Today.ToShortDateString());
           TrayIcon.Text = new string(string.Join(Globals.NL, lines).Take(63).ToArray());
