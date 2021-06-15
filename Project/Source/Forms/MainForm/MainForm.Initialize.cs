@@ -273,12 +273,16 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private static int WM_QUERYENDSESSION = 0x11;
-    protected override void WndProc(ref Message m)
+    /// <summary>
+    /// Power mode changed event handler.
+    /// </summary>
+    private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
     {
-      if ( m.Msg == WM_QUERYENDSESSION )
-        SessionEnding(this, null);
-      base.WndProc(ref m);
+      if ( e.Mode == PowerModes.Resume )
+      {
+        System.Threading.Thread.Sleep(5000);
+        DoTimerMidnight();
+      }
     }
 
     /// <summary>
@@ -290,7 +294,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DebugManager.Enter();
       try
       {
-        DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(WM_QUERYENDSESSION));
+        DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(NativeMethods.WM_QUERYENDSESSION));
         Close();
       }
       finally
@@ -300,14 +304,18 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Power mode changed event handler.
+    /// WndProc override.
     /// </summary>
-    private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+    protected override void WndProc(ref Message m)
     {
-      if ( e.Mode == PowerModes.Resume )
+      switch ( m.Msg )
       {
-        System.Threading.Thread.Sleep(5000);
-        DoTimerMidnight();
+        case NativeMethods.WM_QUERYENDSESSION:
+          SessionEnding(this, null);
+          break;
+        default:
+          base.WndProc(ref m);
+          break;
       }
     }
 
