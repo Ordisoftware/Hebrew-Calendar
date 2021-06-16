@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
           this.Restore();
         else
-        if ( !this.IsVisibleOnTop(80) )
+        if ( Visible && !this.IsVisibleOnTop(80) )
           this.Popup();
         regetFocus?.Popup();
       }
