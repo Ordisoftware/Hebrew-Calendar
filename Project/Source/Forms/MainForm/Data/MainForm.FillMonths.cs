@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -176,7 +176,7 @@ namespace Ordisoftware.Hebrew.Calendar
             // Parashah
             if ( Settings.CalendarShowParashah )
               if ( !string.IsNullOrEmpty(row.ParashahID) )
-                add(Settings.CalendarColorParashah, row.ParashahText);
+                add(Settings.CalendarColorParashah, row.GetParashahText(false));
             // Season
             if ( row.SeasonChange != 0 )
               add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChange));
