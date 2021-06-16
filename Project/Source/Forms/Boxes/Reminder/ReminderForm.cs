@@ -120,7 +120,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( rowParashah != null )
             {
               var parashah = ParashotFactory.Get(rowParashah.ParashahID);
-              form.LabelParashahValue.Text = rowParashah.ParashahText;
+              form.LabelParashahValue.Text = rowParashah.GetParashahText(true);
               form.LabelParashahValue.Tag = row;
               form.LabelParashahValue.Enabled = true;
             }

@@ -58,18 +58,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const int SearchParashahInterval = 14;
 
-    public string ParashahText
+    public string GetParashahText(bool withBook)
     {
-      get
-      {
-        if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
-        var parashah = ParashotFactory.Get(ParashahID);
-        string result = parashah.Name;
-        if ( !LinkedParashahID.IsNullOrEmpty() )
-          result += " - " + ParashotFactory.Get(LinkedParashahID).Name;
-        result += $" ({parashah.Book})";
-        return result;
-      }
+      if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
+      var parashah = ParashotFactory.Get(ParashahID);
+      string result = parashah.Name;
+      if ( !LinkedParashahID.IsNullOrEmpty() )
+        result += " - " + ParashotFactory.Get(LinkedParashahID).Name;
+      if ( withBook ) result += $" ({parashah.Book})";
+      return result;
     }
 
     public LunisolarDay GetParashahReadingDay()
