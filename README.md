@@ -282,9 +282,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add option to auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 
-#### 2021.06.20 - Version 8.2
+#### 2021.06.30 - Version 8.2
 
-- Add options to show the weekly parashah description box at startup and after shabat while running.
+>- Add options to show the weekly parashah description box at startup and after shabat while running.
 >- Add option to hide links not in current language.
 - Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Improve weekly parashah labels to show book name.
