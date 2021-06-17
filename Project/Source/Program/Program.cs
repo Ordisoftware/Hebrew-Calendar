@@ -77,6 +77,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
+        Settings.WeekParashahIsOnSaturday = false; // TODO remove all
         if ( force
           || Settings.UpgradeResetRequiredV3_0
           || Settings.UpgradeResetRequiredV3_6

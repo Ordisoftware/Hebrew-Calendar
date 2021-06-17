@@ -2640,7 +2640,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionParashahHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 63</value>
+    <value>284, 38</value>
   </data>
   <data name="ActionParashahHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -2737,7 +2737,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeekParashahIsOnSaturday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 43</value>
+    <value>322, 106</value>
   </data>
   <data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 17</value>
@@ -2747,6 +2747,9 @@
   </data>
   <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
     <value>Always generate Parashot for saturday</value>
+  </data>
+  <data name="EditWeekParashahIsOnSaturday.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditWeekParashahIsOnSaturday.Name" xml:space="preserve">
     <value>EditWeekParashahIsOnSaturday</value>
