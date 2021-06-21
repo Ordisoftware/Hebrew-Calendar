@@ -20,7 +20,6 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// View mode enum.
   /// </summary>
-  [Flags]
   public enum ViewMode
   {
 
