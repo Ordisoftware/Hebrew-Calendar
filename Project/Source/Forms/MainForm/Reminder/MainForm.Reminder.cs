@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        UpdateTitles();
+        // TODO remove UpdateTitles();
         SystemManager.TryCatch(() =>
         {
           if ( Globals.IsExiting ) return;

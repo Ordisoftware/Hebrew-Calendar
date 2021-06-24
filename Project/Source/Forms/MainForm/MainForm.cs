@@ -980,7 +980,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void TimerUpdateTitles_Tick(object sender, EventArgs e)
     {
-      if ( !Globals.IsReady || Globals.IsExiting || Globals.IsGenerating || Globals.IsSessionEnding )
+      if ( Globals.IsExiting || Globals.IsSessionEnding )
         TimerUpdateTitles.Stop();
       else
         UpdateTitles();

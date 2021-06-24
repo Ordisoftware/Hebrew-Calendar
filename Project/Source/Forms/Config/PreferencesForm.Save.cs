@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -119,6 +119,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.AskRegenerateIfIntervalGreater = EditAskRegenerateIfIntervalGreater.Checked;
       Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
       Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
+      Settings.ReminderShowLockoutIcon = EditReminderShowLockoutIcon.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

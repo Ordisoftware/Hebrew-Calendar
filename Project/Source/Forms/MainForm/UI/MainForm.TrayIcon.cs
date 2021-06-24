@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -72,6 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatchManage(() =>
       {
+        UpdateTitles(true);
         if ( Visible && WindowState == FormWindowState.Minimized )
         {
           WindowState = Settings.MainFormState;
