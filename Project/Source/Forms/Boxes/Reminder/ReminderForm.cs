@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-06 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -44,10 +44,12 @@ namespace Ordisoftware.Hebrew.Calendar
     static public void Run(LunisolarDay row, TorahEvent torahevent, ReminderTimes times)
     {
       bool isShabat = torahevent == TorahEvent.Shabat;
+      bool showParashah = false;
       bool doLockSession = false;
       var dateNow = DateTime.Now;
       if ( times.DateStart != null && times.DateEnd != null )
         doLockSession = dateNow >= times.DateStart && dateNow <= times.DateEnd;
+      bool isLockSessionIcon = doLockSession && Program.Settings.ReminderShowLockoutIcon;
       try
       {
         ReminderForm form = null;
@@ -92,18 +94,12 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
           form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
-          //if ( Program.Settings.ReminderBoxShowFullDates ) 
-          {
-            form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
-            form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
-          }
-          //else
-          // TODO remove or fix lockout icon and parashah link location
-          //form.Height -= form.LabelStartDay.Height;
+          form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
+          form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
         }
-        int left = form.LabelStartTime.Left + form.LabelStartTime.Width;
-        int left2 = left + form.LabelArrow.Width;
-        form.LabelArrow.Left = left;
+        int left1 = form.LabelStartTime.Left + form.LabelStartTime.Width;
+        int left2 = left1 + form.LabelArrow.Width;
+        form.LabelArrow.Left = left1;
         form.LabelEndTime.Left = left2;
         form.LabelEndDay.Left = left2;
         form.LabelDate.Tag = date;
@@ -116,19 +112,21 @@ namespace Ordisoftware.Hebrew.Calendar
           form.LabelTitle.Text += " " + row.DayAndMonthText;
           if ( Program.Settings.ReminderShabatShowParashah )
           {
+            showParashah = true;
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
               var parashah = ParashotFactory.Get(rowParashah.ParashahID);
               form.LabelParashahValue.Text = rowParashah.GetParashahText(true);
               form.LabelParashahValue.Tag = row;
-              form.LabelParashahValue.Enabled = true;
             }
-            else
-              form.LabelParashahValue.Enabled = false;
           }
+          else
+            form.LabelParashahValue.Enabled = false;
         }
-        form.ActionLockout.Visible = doLockSession;
+        if ( !doLockSession || ( !showParashah && !isLockSessionIcon ) )
+          form.Height -= form.LabelParashahValue.Height;
+        form.ActionLockout.Visible = isLockSessionIcon;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;

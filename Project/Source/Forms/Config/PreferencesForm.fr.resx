@@ -791,4 +791,10 @@
   <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
     <value>Montrer la parashah de la semaine au démarrage</value>
   </data>
+  <data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
+    <value>Afficher l'icône de vérouillage</value>
+  </data>
+  <data name="EditHideLinksNotInCurrentLanguage.Text" xml:space="preserve">
+    <value>Cacher les liens qui ne sont pas dans la langue actuelle</value>
+  </data>
 </root>

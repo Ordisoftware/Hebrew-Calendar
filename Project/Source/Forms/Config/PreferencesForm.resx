@@ -447,7 +447,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 275</value>
+    <value>74, 280</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -477,7 +477,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 282</value>
+    <value>106, 287</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -504,7 +504,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 277</value>
+    <value>23, 282</value>
   </data>
   <data name="EditDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -531,7 +531,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 337</value>
+    <value>18, 345</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>490, 18</value>
@@ -561,7 +561,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 257</value>
+    <value>20, 262</value>
   </data>
   <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>446, 13</value>
@@ -624,7 +624,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 317</value>
+    <value>20, 325</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -657,7 +657,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 337</value>
+    <value>515, 345</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -771,7 +771,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 175</value>
+    <value>23, 180</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -801,7 +801,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeatherMenuItemsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 155</value>
+    <value>23, 160</value>
   </data>
   <data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
@@ -831,7 +831,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
+    <value>23, 140</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -861,7 +861,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 205</value>
+    <value>23, 210</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 17</value>
@@ -891,7 +891,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 225</value>
+    <value>23, 230</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 17</value>
@@ -921,7 +921,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 65</value>
+    <value>23, 70</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -951,7 +951,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUsageStatisticsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 105</value>
+    <value>23, 110</value>
   </data>
   <data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -981,7 +981,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 85</value>
+    <value>23, 90</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -3305,7 +3305,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDefaultLockoutAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 270</value>
+    <value>20, 275</value>
   </data>
   <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
@@ -3365,7 +3365,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="SelectLockSessionDefaultAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 289</value>
+    <value>23, 294</value>
   </data>
   <data name="SelectLockSessionDefaultAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 21</value>
@@ -3419,7 +3419,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelSelectReminderSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 360</value>
+    <value>20, 358</value>
   </data>
   <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 13</value>
@@ -3452,7 +3452,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 238</value>
+    <value>98, 248</value>
   </data>
   <data name="LabelAutoLockSessionTimeOutIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -3488,7 +3488,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 165</value>
+    <value>23, 160</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
@@ -3524,7 +3524,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 145</value>
+    <value>23, 140</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -3560,7 +3560,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAllowSuspendReminder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 80</value>
+    <value>23, 75</value>
   </data>
   <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -3593,7 +3593,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 215</value>
+    <value>39, 225</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 13</value>
@@ -3652,6 +3652,42 @@
   <data name="&gt;&gt;EditConfirmShutdown.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="EditReminderShowLockoutIcon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 185</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 17</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
+    <value>Show lockout icon</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShowLockoutIcon.Name" xml:space="preserve">
+    <value>EditReminderShowLockoutIcon</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShowLockoutIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShowLockoutIcon.Parent" xml:space="preserve">
+    <value>TabPageReminder</value>
+  </data>
+  <data name="&gt;&gt;EditReminderShowLockoutIcon.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="EditAutoLockSession.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3665,7 +3701,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoLockSession.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 190</value>
+    <value>23, 205</value>
   </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 17</value>
@@ -3686,13 +3722,13 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSession.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 234</value>
+    <value>42, 244</value>
   </data>
   <data name="EditAutoLockSessionTimeOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -3710,7 +3746,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditAutoLockSessionTimeOut.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditCloseReminderFormOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3725,7 +3761,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 100</value>
+    <value>23, 95</value>
   </data>
   <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 17</value>
@@ -3746,7 +3782,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditCloseReminderFormOnClick.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditShowReminderInTaskBar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3761,7 +3797,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditShowReminderInTaskBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 120</value>
+    <value>23, 115</value>
   </data>
   <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -3782,7 +3818,7 @@
     <value>TabPageReminder</value>
   </data>
   <data name="&gt;&gt;EditShowReminderInTaskBar.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="TabPageReminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -4119,7 +4155,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
+    <value>23, 130</value>
   </data>
   <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>

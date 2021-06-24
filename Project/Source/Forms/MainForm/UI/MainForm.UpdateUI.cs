@@ -87,40 +87,52 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    private bool UpdateTitlesMutex;
+
     /// <summary>
     /// Update form title bar and sub-title texts.
     /// </summary>
     private void UpdateTitles(bool force = false)
     {
-      string str;
-      Text = Globals.AssemblyTitle;
-      SystemManager.TryCatch(() =>
+      if ( !Globals.IsReady || Globals.IsGenerating ) return;
+      if ( UpdateTitlesMutex ) return;
+      UpdateTitlesMutex = true;
+      try
       {
-        // Subtitle
-        LabelSubTitleCalendar.Text = AppTranslations.Subtitle.GetLang();
-        // Today
-        if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
-        // GPS
-        if ( !force && !TitleGPS.IsNullOrEmpty() )
-          str = TitleGPS;
-        else
-        if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
-          str = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
-        else
-          str = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
-        LabelSubTitleGPS.Text = str;
-        // Omer
-        if ( !force && !TitleOmer.IsNullOrEmpty() )
-          str = TitleOmer;
-        else
-          str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-        LabelSubTitleOmer.Text = str;
-        // Parashah
-        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        if ( parashah != null && Settings.MainFormTitleBarShowWeeklyParashah )
-          Text += " - Parashah " + parashah.ToStringLinked().ToUpper() + $" ({parashah.Book.ToString().ToUpper()})";
-      });
+        string str;
+        Text = Globals.AssemblyTitle;
+        SystemManager.TryCatch(() =>
+        {
+          // Subtitle
+          LabelSubTitleCalendar.Text = AppTranslations.Subtitle.GetLang();
+          // Today
+          if ( Settings.MainFormTitleBarShowToday )
+            Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          // GPS
+          if ( !force && !TitleGPS.IsNullOrEmpty() )
+            str = TitleGPS;
+          else
+            if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
+            str = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
+          else
+            str = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
+          LabelSubTitleGPS.Text = str;
+          // Omer
+          if ( !force && !TitleOmer.IsNullOrEmpty() )
+            str = TitleOmer;
+          else
+            str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+          LabelSubTitleOmer.Text = str;
+          // Parashah
+          var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+          if ( parashah != null && Settings.MainFormTitleBarShowWeeklyParashah )
+            Text += " - Parashah " + parashah.ToStringLinked().ToUpper() + $" ({parashah.Book.ToString().ToUpper()})";
+        });
+      }
+      finally
+      {
+        UpdateTitlesMutex = false;
+      }
     }
 
     /// <summary>
