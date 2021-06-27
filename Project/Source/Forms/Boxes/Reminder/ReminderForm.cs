@@ -124,7 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
           else
             form.LabelParashahValue.Enabled = false;
         }
-        if ( !doLockSession || ( !showParashah && !isLockSessionIcon ) )
+        if ( !showParashah && !doLockSession || ( !showParashah && !isLockSessionIcon ) )
           form.Height -= form.LabelParashahValue.Height;
         form.ActionLockout.Visible = isLockSessionIcon;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
