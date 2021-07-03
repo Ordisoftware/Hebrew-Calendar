@@ -142,6 +142,10 @@
       this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
+      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelDefaultLockoutAction = new System.Windows.Forms.Label();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
@@ -240,6 +244,7 @@
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelFontName = new System.Windows.Forms.Label();
@@ -291,16 +296,13 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
-      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -398,6 +400,8 @@
       this.MenuSelectMoonDayTextFormat.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nissan11ToolStripMenuItem,
             this.nissan11ToolStripMenuItem1,
+            this.nissan101ToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.nissanToolStripMenuItem,
             this.nissan1ToolStripMenuItem});
       this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
@@ -1253,6 +1257,38 @@
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
@@ -2052,6 +2088,14 @@
       resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
       this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
       // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // TabPageTextReport
       // 
       this.TabPageTextReport.BackColor = System.Drawing.SystemColors.Window;
@@ -2463,46 +2507,6 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
-      // 
       // EditHebrewWordsPath
       // 
       this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2542,6 +2546,20 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
+      // 
+      // nissan101ToolStripMenuItem
+      // 
+      this.nissan101ToolStripMenuItem.Name = "nissan101ToolStripMenuItem";
+      resources.ApplyResources(this.nissan101ToolStripMenuItem, "nissan101ToolStripMenuItem");
+      this.nissan101ToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM% [%MONTHNUM%]";
+      this.nissan101ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Tag = "%MONTHNAME% #%DAYNUM% (%MONTHNUM%)";
+      this.toolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // PreferencesForm
       // 
@@ -2890,5 +2908,7 @@
     private System.Windows.Forms.CheckBox EditWeeklyParashahShowAtStartup;
     private System.Windows.Forms.CheckBox EditWeeklyParashahShowAtNewWeek;
     private System.Windows.Forms.CheckBox EditReminderShowLockoutIcon;
+    private System.Windows.Forms.ToolStripMenuItem nissan101ToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
   }
 }
