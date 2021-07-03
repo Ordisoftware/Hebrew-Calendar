@@ -58,7 +58,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 - Added weekly parashah reminder.
 - Improve parashot titles and menus.
-- Some fixes.
+- Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -282,7 +282,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add option to auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 
-#### 2021.06.30 - Version 8.2
+#### 2021.07.30 - Version 8.2
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
 - Add option to show/hode lockout icon in reminder box.
@@ -295,7 +295,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Fix reminder bug introduced in previous version : events are not reminded n-hours before when returning from fullscreen.
 - Fix suspend menu tray is disabled on start until preferences is opened and closed.
 - Fix setup that creates the *Start with Windows* registry key even unchecked.
-- Some fixes.
+- Some fixes and improvements.
 - Update web links.
 
 #### 2021.05.31 - Version 8.1
