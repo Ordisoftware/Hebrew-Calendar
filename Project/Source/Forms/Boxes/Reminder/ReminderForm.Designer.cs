@@ -43,10 +43,11 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
       this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,10 +144,11 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
-            this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline});
+            this.ActionOpenVerseOnline,
+            this.toolStripSeparator1,
+            this.ActionViewParashot});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -155,12 +157,6 @@
       resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
-      // 
-      // ActionViewParashot
-      // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // toolStripSeparator2
       // 
@@ -176,6 +172,17 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // ActionLockout
       // 
@@ -267,5 +274,6 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
     private System.Windows.Forms.Button ActionSetupSound;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
