@@ -51,6 +51,7 @@
       this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetupSound = new System.Windows.Forms.Button();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
       this.ContextMenuStripLockout.SuspendLayout();
@@ -143,10 +144,11 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
-            this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline});
+            this.ActionOpenVerseOnline,
+            this.toolStripSeparator1,
+            this.ActionViewParashot});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -208,6 +210,11 @@
       this.ActionSetupSound.UseVisualStyleBackColor = true;
       this.ActionSetupSound.Click += new System.EventHandler(this.ActionSetupSound_Click);
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // ReminderForm
       // 
       this.AcceptButton = this.ActionClose;
@@ -267,5 +274,6 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
     private System.Windows.Forms.Button ActionSetupSound;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }

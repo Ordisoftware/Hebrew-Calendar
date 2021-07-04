@@ -233,34 +233,13 @@
 </value>
   </data>
   <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
-  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAMpJREFUOE/tkz0KwkAUhN8Z7DxFjuANAhbeIGBnayl4BrscIGJjp0j0CFbWgnfY
-        A8T5lhebZeNP7cAHmX0zDxay5tqKs5hENywyZOlEjcVFTMWGgzciQ5YOXbuKhViLWlQiJ2ZkyNKha3ex
-        FztxEjfRZGBGhiwdutZ0Ln0XYuU2ETMybvEsTReEEPrhCz/7fIEX5j1fLXCbiBkZt/kF/ytYPXAF/sJk
-        Qeueg1IcxDIDs9Lj5FthM/EQR8EDGYmcmJEhS4du1I/P2ewJ5n1rG7+OxP8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
-  </data>
-  <data name="ActionViewParashot.Text" xml:space="preserve">
-    <value>Open parashot board</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -281,7 +260,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -304,13 +283,37 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAMpJREFUOE/tkz0KwkAUhN8Z7DxFjuANAhbeIGBnayl4BrscIGJjp0j0CFbWgnfY
+        A8T5lhebZeNP7cAHmX0zDxay5tqKs5hENywyZOlEjcVFTMWGgzciQ5YOXbuKhViLWlQiJ2ZkyNKha3ex
+        FztxEjfRZGBGhiwdutZ0Ln0XYuU2ETMybvEsTReEEPrhCz/7fIEX5j1fLXCbiBkZt/kF/ytYPXAF/sJk
+        Qeueg1IcxDIDs9Lj5FthM/EQR8EDGYmcmJEhS4du1I/P2ewJ5n1rG7+OxP8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 120</value>
+    <value>181, 126</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1208,6 +1211,12 @@
   </data>
   <data name="&gt;&gt;ActionOpenVerseOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NavigationForm</value>
