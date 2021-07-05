@@ -17,7 +17,7 @@ using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
-  
+
   partial class ApplicationDatabase : SQLiteDatabase
   {
 
@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public LunisolarDay GetParashahReadingDay()
     {
       LunisolarDay result = null;
-      var shabatDay = Program.Settings.WeekParashahIsOnSaturday
+      var shabatDay = Program.Settings.WeekParashahIsOnSaturday // TODO remove
                       ? DayOfWeek.Saturday
                       : (DayOfWeek)Program.Settings.ShabatDay;
       int indexStart = Table.IndexOf(this);

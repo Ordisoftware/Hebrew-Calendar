@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.TextBackground = EditTextReportBackColor.BackColor;
       Settings.TextColor = EditTextReportTextColor.BackColor;
       Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
-      Settings.WeekParashahIsOnSaturday = EditWeekParashahIsOnSaturday.Checked;
+      Settings.WeekParashahIsOnSaturday = EditWeekParashahIsOnSaturday.Checked; // TODO remove
       Settings.UseSimhatTorahOutside = EditUseSimhatTorahOutside.Checked;
       Settings.UseColors = EditUseColors.Checked;
       Settings.MoonDayTextFormat = EditMoonDayTextFormat.Text;
@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
       Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
       // Loclout action
-      Settings.LockSessionDefaultAction= (PowerActions)SelectLockSessionDefaultAction.SelectedItem;
+      Settings.LockSessionDefaultAction = (PowerActions)SelectLockSessionDefaultAction.SelectedItem;
       // Events
       for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
         SystemManager.TryCatch(() =>
