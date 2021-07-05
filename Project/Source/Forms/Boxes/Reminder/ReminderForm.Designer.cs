@@ -156,7 +156,7 @@
       // 
       resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
-      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahDescription_Click);
       // 
       // toolStripSeparator2
       // 

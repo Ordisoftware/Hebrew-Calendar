@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -347,22 +347,21 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.ActionPreferences_Click(index, null);
     }
 
-    private void ActionViewParashot_Click(object sender, EventArgs e)
-    {
-      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
-    }
-
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
-        if ( LabelParashahValue.Tag != null )
-          ParashotForm.Run(ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID));
+        ActionViewParashahDescription_Click(this, e);
     }
 
-    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+    private void ActionViewParashahDescription_Click(object sender, EventArgs e)
     {
       if ( !ApplicationDatabase.Instance.ShowWeeklyParashahDescription() )
         ActionViewParashahInfos.Enabled = false;
+    }
+
+    private void ActionViewParashot_Click(object sender, EventArgs e)
+    {
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
     }
 
     private void ActionLockout_Click(object sender, EventArgs e)
