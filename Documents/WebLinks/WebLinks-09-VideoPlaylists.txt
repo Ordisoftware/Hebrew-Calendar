@@ -76,14 +76,13 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
 -
 
-Name = (FR) Le problème religieux
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
-
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
-Name = (EN) CoSM
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DuAK0HENOpYe4B1Zo6pJ_s-
+-
+
+Name = (FR) Le problème religieux
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
 
 -
 

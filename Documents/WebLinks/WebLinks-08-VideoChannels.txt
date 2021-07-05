@@ -113,12 +113,10 @@ URL = https://www.youtube.com/user/TheYeshivaNet
 Name = (EN) Torah Anytime
 URL = https://www.youtube.com/user/torahanytime1
 
+Name = (EN) Torah Jews
+URL = https://www.youtube.com/torahjews
+
 -
 
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/user/Adamantha
-
--
-
-Name = (EN) Alex Grey's Chapel of Sacred Mirrors
-URL = https://www.youtube.com/channel/UCZVxulrA3TWY1_WSeFD3eGg
