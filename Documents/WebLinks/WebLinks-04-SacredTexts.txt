@@ -10,8 +10,6 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-FOLDER-SEPARATOR
-
 Lang/EN = Sacred texts
 Lang/FR = Textes sacrés
 
