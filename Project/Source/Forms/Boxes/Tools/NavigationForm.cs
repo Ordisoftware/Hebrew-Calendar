@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -87,10 +87,8 @@ namespace Ordisoftware.Hebrew.Calendar
                        && row.LunarDay <= TorahCelebrations.PessahEndDay;
           bool isSoukot = row.LunarMonth == TorahCelebrations.YomsMonth
                        && row.LunarDay >= TorahCelebrations.SoukotStartDay
-                       && (
-                            ( Program.Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
-                            || row.LunarDay < TorahCelebrations.SoukotEndDay
-                          );
+                       && ( ( Program.Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
+                         || ( row.LunarDay < TorahCelebrations.SoukotEndDay ) );
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
@@ -234,28 +232,27 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LabelDay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( sender is LinkLabel label && label.Tag != null )
-      {
         MainForm.Instance.GoToDate((DateTime)label.Tag, true, true, true);
-      }
     }
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( e.Button == MouseButtons.Left )
         if ( LabelParashahValue.Tag != null )
-          ParashotForm.Run((Parashah)LabelParashahValue.Tag);
+          ActionViewParashahDescription_Click(sender, e);
+    }
+
+    private void ActionViewParashahDescription_Click(object sender, EventArgs e)
+    {
+      if ( LabelParashahValue.Tag is Parashah parashah )
+        if ( !ParashotForm.ShowParashahDescription(this, parashah, true) )
+          ActionViewParashahInfos.Enabled = false;
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      if ( LabelParashahValue.Tag != null )
-        ParashotForm.Run((Parashah)LabelParashahValue.Tag);
-    }
-
-    private void ActionViewParashahInfos_Click(object sender, EventArgs e)
-    {
-      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahDescription() )
-        ActionViewParashahInfos.Enabled = false;
+      if ( LabelParashahValue.Tag is Parashah parashah )
+        ParashotForm.Run(parashah);
     }
 
     private void PictureMoon_Click(object sender, EventArgs e)
