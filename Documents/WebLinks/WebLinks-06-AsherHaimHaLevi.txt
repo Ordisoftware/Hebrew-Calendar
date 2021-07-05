@@ -14,23 +14,23 @@ Lang/EN = Asher 'Haïm HaLevi
 Lang/FR = Asher 'Haïm HaLevi
 
 Name = (FR) Le problème religieux
-URL = https://www.ordisoftware.com/asherhaimhalevi/the-religious-problem.html
+URL = https://asherhaimhalevi.ordisoftware.com/works/the-religious-problem/
 
 -
 
 Name = (FR) L'alphabet hébreu
-URL = https://www.ordisoftware.com/asherhaimhalevi/hebrew-alphabet.html
+URL = https://asherhaimhalevi.ordisoftware.com/works/hebrew-alphabet/
 
 Name = (FR) L'alliance
-URL = https://www.ordisoftware.com/asherhaimhalevi/alliance.html
+URL = https://asherhaimhalevi.ordisoftware.com/works/alliance/
 
 Name = (FR) Les séfitot
-URL = https://www.ordisoftware.com/asherhaimhalevi/sefirot.html
+URL = https://asherhaimhalevi.ordisoftware.com/works/sefirot/
 
 -
 
 Name = (FR) Bibliographie
-URL = https://www.ordisoftware.com/asherhaimhalevi/bibliography.html
+URL = https://asherhaimhalevi.ordisoftware.com/works/bibliography/
 
 Name = (FR) Archive GitHub
 URL = https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books
