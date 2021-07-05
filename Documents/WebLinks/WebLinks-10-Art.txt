@@ -34,11 +34,6 @@ URL = http://he.israel-music.com/
 
 -
 
-Name = (EN) Alex Grey Spiritual Art @ alexgrey.com
-URL = https://www.alexgrey.com/art
-
--
-
 Name = (NONE) Nature Sounds YouTube Playlist
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CISXi_m6DGFEhPFbSz45JF
 
