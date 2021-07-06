@@ -40,6 +40,8 @@
       this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.nissan11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -301,8 +303,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.MenuSelectWeatherApp.SuspendLayout();
@@ -421,6 +421,20 @@
       resources.ApplyResources(this.nissan11ToolStripMenuItem1, "nissan11ToolStripMenuItem1");
       this.nissan11ToolStripMenuItem1.Tag = "%MONTHNAME% (%MONTHNUM%) #%DAYNUM%";
       this.nissan11ToolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // nissan101ToolStripMenuItem
+      // 
+      this.nissan101ToolStripMenuItem.Name = "nissan101ToolStripMenuItem";
+      resources.ApplyResources(this.nissan101ToolStripMenuItem, "nissan101ToolStripMenuItem");
+      this.nissan101ToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM% [%MONTHNUM%]";
+      this.nissan101ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Tag = "%MONTHNAME% #%DAYNUM% (%MONTHNUM%)";
+      this.toolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // nissanToolStripMenuItem
       // 
@@ -677,6 +691,7 @@
       this.TabPageStartup.Controls.Add(this.LabelLastDBOptimizeDate);
       this.TabPageStartup.Controls.Add(this.LabelLastDBOptimize);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheckDate);
+      this.TabPageStartup.Controls.Add(this.EditWeeklyParashahShowAtStartup);
       this.TabPageStartup.Controls.Add(this.LabelLastStartupCheck);
       this.TabPageStartup.Controls.Add(this.LabelCheckUpdateFrequency);
       this.TabPageStartup.Controls.Add(this.LabelCheckUpdateAtStartupInfo);
@@ -1299,8 +1314,6 @@
       this.TabPageReminder.Controls.Add(this.SelectReminderBoxDesktopLocation);
       this.TabPageReminder.Controls.Add(this.LabelSelectReminderSound);
       this.TabPageReminder.Controls.Add(this.LabelAutoLockSessionTimeOutIntervalInfo);
-      this.TabPageReminder.Controls.Add(this.EditWeeklyParashahShowAtNewWeek);
-      this.TabPageReminder.Controls.Add(this.EditWeeklyParashahShowAtStartup);
       this.TabPageReminder.Controls.Add(this.EditAllowSuspendReminder);
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
@@ -1430,6 +1443,7 @@
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBeforeIntervalInfo);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBefore);
       this.TabPageShabat.Controls.Add(this.LabelShabatDay);
+      this.TabPageShabat.Controls.Add(this.EditWeeklyParashahShowAtNewWeek);
       this.TabPageShabat.Controls.Add(this.ActionPersonalShabatHelp);
       this.TabPageShabat.Controls.Add(this.EditReminderShabatEnabled);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatEveryMinutes);
@@ -2546,20 +2560,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // nissan101ToolStripMenuItem
-      // 
-      this.nissan101ToolStripMenuItem.Name = "nissan101ToolStripMenuItem";
-      resources.ApplyResources(this.nissan101ToolStripMenuItem, "nissan101ToolStripMenuItem");
-      this.nissan101ToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM% [%MONTHNUM%]";
-      this.nissan101ToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
-      // 
-      // toolStripMenuItem1
-      // 
-      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-      this.toolStripMenuItem1.Tag = "%MONTHNAME% #%DAYNUM% (%MONTHNUM%)";
-      this.toolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // PreferencesForm
       // 
