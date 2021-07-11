@@ -91,7 +91,6 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( IsSpecialDay )
           WeeklyParashahShownAtNewWeek = false;
-
       }
     }
 

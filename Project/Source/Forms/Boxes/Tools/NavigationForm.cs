@@ -261,6 +261,11 @@ namespace Ordisoftware.Hebrew.Calendar
       this.Popup();
     }
 
+    private void ActionClose_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
   }
 
 }
