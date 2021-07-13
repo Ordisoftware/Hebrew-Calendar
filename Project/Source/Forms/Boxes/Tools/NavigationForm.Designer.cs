@@ -67,8 +67,9 @@
       this.ActionPreviousDay = new System.Windows.Forms.Button();
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
+      this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -233,7 +234,7 @@
       resources.ApplyResources(this.PictureMoon, "PictureMoon");
       this.PictureMoon.Name = "PictureMoon";
       this.PictureMoon.TabStop = false;
-      this.PictureMoon.Click += new System.EventHandler(this.PictureMoon_Click);
+      this.PictureMoon.Click += new System.EventHandler(this.ActionViewCalendar_Click);
       // 
       // LabelMoonsetValue
       // 
@@ -317,16 +318,18 @@
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottom.Controls.Add(this.ActionSelectDay);
       this.PanelBottom.Controls.Add(this.ActionPreviousDay);
+      this.PanelBottom.Controls.Add(this.ActionViewCalendar);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionNextDay);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
-      // PanelSeparatorBottom
+      // ActionViewCalendar
       // 
-      this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
-      this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
+      resources.ApplyResources(this.ActionViewCalendar, "ActionViewCalendar");
+      this.ActionViewCalendar.Name = "ActionViewCalendar";
+      this.ActionViewCalendar.UseVisualStyleBackColor = true;
+      this.ActionViewCalendar.Click += new System.EventHandler(this.ActionViewCalendar_Click);
       // 
       // ActionClose
       // 
@@ -334,6 +337,12 @@
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.UseVisualStyleBackColor = true;
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
+      // 
+      // PanelSeparatorBottom
+      // 
+      this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
+      this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
       // NavigationForm
       // 
@@ -401,5 +410,6 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Button ActionClose;
+    private System.Windows.Forms.Button ActionViewCalendar;
   }
 }
