@@ -288,6 +288,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to show/hode lockout icon in reminder box.
 - Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Improve weekly parashah labels to show book name.
+- Improve navigation window with more buttons.
 - Fix weekly parashah description box that does not show linked parashah.
 - Fix current day labels not correctly updated when new day is triggered.
 - Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the month view.
