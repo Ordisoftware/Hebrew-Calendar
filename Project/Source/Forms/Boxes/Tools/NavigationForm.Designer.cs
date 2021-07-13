@@ -67,8 +67,8 @@
       this.ActionPreviousDay = new System.Windows.Forms.Button();
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.ActionClose = new System.Windows.Forms.Button();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -315,28 +315,25 @@
       // PanelBottom
       // 
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
-      this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionSelectDay);
       this.PanelBottom.Controls.Add(this.ActionPreviousDay);
+      this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionNextDay);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // ActionClose
-      // 
-      resources.ApplyResources(this.ActionClose, "ActionClose");
-      this.ActionClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionClose.FlatAppearance.BorderSize = 0;
-      this.ActionClose.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.ActionClose.Name = "ActionClose";
-      this.ActionClose.UseVisualStyleBackColor = true;
-      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // PanelSeparatorBottom
       // 
       this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
+      // 
+      // ActionClose
+      // 
+      resources.ApplyResources(this.ActionClose, "ActionClose");
+      this.ActionClose.Name = "ActionClose";
+      this.ActionClose.UseVisualStyleBackColor = true;
+      this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
       // NavigationForm
       // 
