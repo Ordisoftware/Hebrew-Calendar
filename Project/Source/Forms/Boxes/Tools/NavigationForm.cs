@@ -255,7 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Run(parashah);
     }
 
-    private void PictureMoon_Click(object sender, EventArgs e)
+    private void ActionViewCalendar_Click(object sender, EventArgs e)
     {
       MainForm.Instance.MenuShowHide_Click(null, null);
       this.Popup();
