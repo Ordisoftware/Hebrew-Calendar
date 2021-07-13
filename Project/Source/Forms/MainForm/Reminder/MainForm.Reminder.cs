@@ -38,7 +38,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         bool showbox = !IsReminderPaused;
-        bool IsSpecialDayOld = IsSpecialDay; // TODO marche pas
+        bool IsSpecialDayOld = IsSpecialDay;
         IsSpecialDay = false;
         IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
         IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
@@ -61,7 +61,6 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         TimerMutex = false;
-        // TODO remove UpdateTitles();
         SystemManager.TryCatch(() =>
         {
           if ( Globals.IsExiting ) return;
