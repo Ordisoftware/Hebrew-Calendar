@@ -269,6 +269,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
+- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -277,17 +279,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### Planned - Version 8.x
-
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
-- Add option to auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-
 #### 2021.07.30 - Version 8.2
 
 - Add options to show the weekly parashah description box at startup and after shabat while running.
-- Add option to show/hode lockout icon in reminder box.
-- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
+- Add option to show or hide lockout icon in reminder box.
 - Improve weekly parashah labels to show book name.
+- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Improve navigation window with more buttons.
 - Fix weekly parashah description box that does not show linked parashah.
 - Fix current day labels not correctly updated when new day is triggered.
