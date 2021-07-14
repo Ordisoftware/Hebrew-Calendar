@@ -45,10 +45,14 @@ namespace Ordisoftware.Hebrew.Calendar
           var row = LunisolarDays.Single(day => day.Date == value);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
-          LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth) + " " + strMonth.ToUpper();
+          bool isShabat = value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay;
+          LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
+          LabelLunarMonthName.Text = strMonth.ToUpper();
           LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-          if ( value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-            LabelLunarDayValue.Text += " SHABAT";
+          LabelLunarDayEvent.Text = isShabat ? AppTranslations.Shabat.GetLang().ToUpper() : "";
+          int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width) + 5;
+          LabelLunarMonthName.Left = left;
+          LabelLunarDayEvent.Left = left;
           LabelSunriseValue.Text = row.SunriseAsString;
           LabelSunsetValue.Text = row.SunsetAsString;
           LabelMoonriseValue.Text = row.MoonriseAsString;

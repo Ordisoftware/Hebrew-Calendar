@@ -290,7 +290,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <metadata name="OpenExeFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>588, 10</value>
@@ -302,43 +302,43 @@
     <value>12, 14</value>
   </metadata>
   <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan [1] #10</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan (1) #10</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan #10 [1]</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan #10 (1)</value>
   </data>
-  <data name="nissanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
   </data>
-  <data name="nissanToolStripMenuItem.Text" xml:space="preserve">
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Nissan #10</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan 10</value>
   </data>
   <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 136</value>
+    <value>156, 158</value>
   </data>
   <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
     <value>MenuSelectMoonDayTextFormat</value>
@@ -380,7 +380,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottomSeparator.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <metadata name="FolderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>419, 9</value>
@@ -398,41 +398,11 @@
     <value>Theme files (*.ini)|*.ini</value>
   </data>
   <metadata name="SaveSettingsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>21, 43</value>
+    <value>19, 45</value>
   </metadata>
   <metadata name="OpenSettingsDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>177, 46</value>
   </metadata>
-  <metadata name="MenuSelectWeatherApp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>338, 46</value>
-  </metadata>
-  <data name="ActiontWeatherSelecApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
-  <data name="ActiontWeatherSelecApp.Text" xml:space="preserve">
-    <value>Windows 10 MSN Weather</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 6</value>
-  </data>
-  <data name="ActionSeatherUseMeteoblue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
-  <data name="ActiontWeatherUsetWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
-  <data name="ActiontWeatherUsetWeatherDotCom.Text" xml:space="preserve">
-    <value>Weather.com</value>
-  </data>
-  <data name="MenuSelectWeatherApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 76</value>
-  </data>
-  <data name="&gt;&gt;MenuSelectWeatherApp.Name" xml:space="preserve">
-    <value>MenuSelectWeatherApp</value>
-  </data>
-  <data name="&gt;&gt;MenuSelectWeatherApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
@@ -1614,7 +1584,7 @@
     <value>0</value>
   </data>
   <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
-    <value>Use a different icon when shabat or a celebration day</value>
+    <value>Use a different icon when Shabat or a celebration day</value>
   </data>
   <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.Name" xml:space="preserve">
     <value>EditTrayIconUseSpecialDayIcon</value>
@@ -4209,7 +4179,7 @@
     <value>2</value>
   </data>
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
-    <value>Use personal shabat</value>
+    <value>Use personal Shabat</value>
   </data>
   <data name="&gt;&gt;ActionUsePersonalShabat.Name" xml:space="preserve">
     <value>ActionUsePersonalShabat</value>
@@ -7222,7 +7192,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetHebrewWordsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 185</value>
+    <value>520, 175</value>
   </data>
   <data name="ActionResetHebrewWordsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -7249,7 +7219,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewWordsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 170</value>
+    <value>20, 161</value>
   </data>
   <data name="LabelHebrewWordsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
@@ -7295,7 +7265,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewWordsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 185</value>
+    <value>490, 175</value>
   </data>
   <data name="ActionSelectHebrewWordsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -7447,6 +7417,42 @@
   <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SelectWeatherOnlineMSN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 29</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.Text" xml:space="preserve">
+    <value>MSN.com/weather</value>
+  </data>
+  <data name="SelectWeatherOnlineMSN.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMSN.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineMSN</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMSN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMSN.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMSN.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="SelectWeatherOnlineMeteoblueDotCom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7478,13 +7484,13 @@
     <value>PanelWeatherOnline</value>
   </data>
   <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="PanelWeatherOnline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 274</value>
+    <value>20, 252</value>
   </data>
   <data name="PanelWeatherOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 110</value>
+    <value>460, 132</value>
   </data>
   <data name="PanelWeatherOnline.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -7508,7 +7514,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 220</value>
+    <value>20, 208</value>
   </data>
   <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
@@ -7551,7 +7557,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 235</value>
+    <value>520, 222</value>
   </data>
   <data name="ActionResetWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7594,7 +7600,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 235</value>
+    <value>490, 222</value>
   </data>
   <data name="ActionSelectWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7664,7 +7670,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 35</value>
+    <value>520, 34</value>
   </data>
   <data name="ActionResetExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7707,7 +7713,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 35</value>
+    <value>490, 34</value>
   </data>
   <data name="ActionSelectExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7734,7 +7740,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 70</value>
+    <value>20, 67</value>
   </data>
   <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -7777,7 +7783,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 135</value>
+    <value>520, 128</value>
   </data>
   <data name="ActionResetHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -7817,7 +7823,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionResetCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 85</value>
+    <value>520, 81</value>
   </data>
   <data name="ActionResetCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7860,7 +7866,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 85</value>
+    <value>490, 81</value>
   </data>
   <data name="ActionSelectCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7887,7 +7893,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 120</value>
+    <value>20, 114</value>
   </data>
   <data name="LabelHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -7933,7 +7939,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 135</value>
+    <value>490, 128</value>
   </data>
   <data name="ActionSelectHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 27</value>
@@ -7954,7 +7960,7 @@
     <value>15</value>
   </data>
   <data name="EditHebrewWordsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 189</value>
+    <value>23, 179</value>
   </data>
   <data name="EditHebrewWordsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -7975,7 +7981,7 @@
     <value>16</value>
   </data>
   <data name="EditWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 239</value>
+    <value>23, 226</value>
   </data>
   <data name="EditWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -7996,7 +8002,7 @@
     <value>17</value>
   </data>
   <data name="EditExportFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
+    <value>23, 38</value>
   </data>
   <data name="EditExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -8017,7 +8023,7 @@
     <value>18</value>
   </data>
   <data name="EditCalculatorPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 89</value>
+    <value>23, 85</value>
   </data>
   <data name="EditCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -8038,7 +8044,7 @@
     <value>19</value>
   </data>
   <data name="EditHebrewLettersPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 139</value>
+    <value>23, 132</value>
   </data>
   <data name="EditHebrewLettersPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 20</value>
@@ -8110,7 +8116,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -8166,12 +8172,6 @@
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nissanToolStripMenuItem.Name" xml:space="preserve">
-    <value>nissanToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;nissanToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;nissan1ToolStripMenuItem.Name" xml:space="preserve">
     <value>nissan1ToolStripMenuItem</value>
   </data>
@@ -8208,28 +8208,10 @@
   <data name="&gt;&gt;OpenSettingsDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActiontWeatherSelecApp.Name" xml:space="preserve">
-    <value>ActiontWeatherSelecApp</value>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
   </data>
-  <data name="&gt;&gt;ActiontWeatherSelecApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSeatherUseMeteoblue.Name" xml:space="preserve">
-    <value>ActionSeatherUseMeteoblue</value>
-  </data>
-  <data name="&gt;&gt;ActionSeatherUseMeteoblue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActiontWeatherUsetWeatherDotCom.Name" xml:space="preserve">
-    <value>ActiontWeatherUsetWeatherDotCom</value>
-  </data>
-  <data name="&gt;&gt;ActiontWeatherUsetWeatherDotCom.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

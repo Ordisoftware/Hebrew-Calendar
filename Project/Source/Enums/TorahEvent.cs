@@ -105,7 +105,7 @@ namespace Ordisoftware.Hebrew.Calendar
     // Non database values (always at the end)
 
     /// <summary>
-    /// The shabat day.
+    /// The Shabat day.
     /// </summary>
     Shabat
 
