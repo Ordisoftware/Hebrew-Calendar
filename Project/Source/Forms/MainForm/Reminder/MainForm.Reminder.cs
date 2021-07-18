@@ -168,7 +168,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() =>
       {
         var processes = Globals.SameRunningProcessesNotThisOne;
-        if ( processes.Count() != 0 )
+        if ( processes.Any() )
           TimerKillProcesses.Start();
       });
     }
