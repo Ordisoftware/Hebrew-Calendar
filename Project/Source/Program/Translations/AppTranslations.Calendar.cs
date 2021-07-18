@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -31,18 +31,25 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Aujourd'hui"
       };
 
+    static public readonly TranslationsDictionary Shabat
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Shabat",
+        [Language.FR] = "Shabat"
+      };
+
     static public readonly TranslationsDictionary NavigationMonth
       = new TranslationsDictionary
       {
-        [Language.EN] = "Month #{0}",
-        [Language.FR] = "Mois #{0}"
+        [Language.EN] = "Month No. {0}",
+        [Language.FR] = "Mois n°{0}"
       };
 
     static public readonly TranslationsDictionary NavigationDay
       = new TranslationsDictionary
       {
-        [Language.EN] = "Day #{0}",
-        [Language.FR] = "Jour #{0}"
+        [Language.EN] = "Day No. {0}",
+        [Language.FR] = "Jour n°{0}"
       };
 
     static public readonly NullSafeDictionary<DayOfWeek, TranslationsDictionary> DayOfWeek

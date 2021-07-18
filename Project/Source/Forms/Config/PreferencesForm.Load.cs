@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -131,6 +131,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup; });
       SystemManager.TryCatch(() => { EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek; });
       SystemManager.TryCatch(() => { EditReminderShowLockoutIcon.Checked = Settings.ReminderShowLockoutIcon; });
+      SystemManager.TryCatch(() => { EditLoadingFormHidden.Checked = Settings.LoadingFormHidden; });
       // Hotkey
       InitHotKeyControls();
       // System

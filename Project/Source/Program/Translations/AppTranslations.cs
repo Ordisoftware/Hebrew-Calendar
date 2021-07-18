@@ -33,8 +33,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary ApplicationDescription
       = new TranslationsDictionary
       {
-        [Language.EN] = "Hebrew lunisolar calendar generator with shabat and celebrations reminder",
-        [Language.FR] = "Générateur de calendrier luni-solaire hébraïque avec rappel du shabat et des célébrations"
+        [Language.EN] = "Hebrew lunisolar calendar generator with Shabat and celebrations reminder",
+        [Language.FR] = "Générateur de calendrier luni-solaire hébraïque avec rappel du Shabat et des célébrations"
       };
 
     static public readonly TranslationsDictionary Subtitle
@@ -63,11 +63,11 @@ namespace Ordisoftware.Hebrew.Calendar
       = new TranslationsDictionary
       {
         [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
-                        "GPS location, shabat day and bookmarks will be keeped." + Globals.NL2 +
+                        "GPS location, Shabat day and bookmarks will be keeped." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.EN],
 
         [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
-                        "La position GPS, le jour du shabat et les signets seront conservés." + Globals.NL2 +
+                        "La position GPS, le jour du Shabat et les signets seront conservés." + Globals.NL2 +
                         SysTranslations.AskToContinue[Language.FR]
       };
 
@@ -119,8 +119,8 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary AskToSetupPersonalShabat
       = new TranslationsDictionary
       {
-        [Language.EN] = "Do you want to setup the personal shabat?",
-        [Language.FR] = "Voulez-vous configurer le shabat personnel ?"
+        [Language.EN] = "Do you want to setup the personal Shabat?",
+        [Language.FR] = "Voulez-vous configurer le Shabat personnel ?"
       };
 
     static public readonly TranslationsDictionary AskToUseLastDayOfSukotForSimhatTorah

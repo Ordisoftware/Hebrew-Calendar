@@ -180,6 +180,39 @@
   <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="LabelLunarMonthName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarMonthName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarMonthName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLunarMonthName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 15</value>
+  </data>
+  <data name="LabelLunarMonthName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 16</value>
+  </data>
+  <data name="LabelLunarMonthName.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="LabelLunarMonthName.Text" xml:space="preserve">
+    <value>Month name</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Name" xml:space="preserve">
+    <value>LabelLunarMonthName</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="LabelCurrentDayValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -211,7 +244,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelCurrentDayValue.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="LabelParashahValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -350,7 +383,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LabelTorahNextDateValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -383,7 +416,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelTorahNextDateValue.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LabelTorahNextValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -416,7 +449,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelTorahNextValue.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LabelTorahNext.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -449,7 +482,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelTorahNext.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="LabelEventTorahValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -482,7 +515,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelEventTorahValue.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="LabelEventTorah.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -515,7 +548,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelEventTorah.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="LabelParashah.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -548,7 +581,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelParashah.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LabelCurrentDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -581,7 +614,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelCurrentDay.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelEventSeason.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -614,7 +647,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelEventSeason.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="LabelEventSeasonValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -644,7 +677,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelEventSeasonValue.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="PictureMoon.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 2</value>
@@ -665,7 +698,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;PictureMoon.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="LabelMoonsetValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -695,7 +728,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelMoonsetValue.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="LabelMoonriseValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -725,7 +758,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelMoonriseValue.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="LabelSunsetValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -755,7 +788,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelSunsetValue.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="LabelSunriseValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -785,7 +818,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelSunriseValue.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="LabelMoonset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -815,7 +848,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelMoonset.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="LabelMoonrise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -845,7 +878,40 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelMoonrise.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
+  </data>
+  <data name="LabelLunarDayEvent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarDayEvent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarDayEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLunarDayEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 35</value>
+  </data>
+  <data name="LabelLunarDayEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 16</value>
+  </data>
+  <data name="LabelLunarDayEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelLunarDayEvent.Text" xml:space="preserve">
+    <value>Day event</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Name" xml:space="preserve">
+    <value>LabelLunarDayEvent</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="LabelLunarDayValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -857,13 +923,13 @@
     <value>115, 35</value>
   </data>
   <data name="LabelLunarDayValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 16</value>
+    <value>86, 16</value>
   </data>
   <data name="LabelLunarDayValue.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="LabelLunarDayValue.Text" xml:space="preserve">
-    <value>Lunar Day</value>
+    <value>Day No. XX</value>
   </data>
   <data name="&gt;&gt;LabelLunarDayValue.Name" xml:space="preserve">
     <value>LabelLunarDayValue</value>
@@ -875,7 +941,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelLunarDayValue.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="LabelLunarMonthValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -887,13 +953,13 @@
     <value>115, 15</value>
   </data>
   <data name="LabelLunarMonthValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 16</value>
+    <value>99, 16</value>
   </data>
   <data name="LabelLunarMonthValue.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="LabelLunarMonthValue.Text" xml:space="preserve">
-    <value>Lunar Month</value>
+    <value>Month No. XX</value>
   </data>
   <data name="&gt;&gt;LabelLunarMonthValue.Name" xml:space="preserve">
     <value>LabelLunarMonthValue</value>
@@ -905,7 +971,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelLunarMonthValue.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="LabelSunset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -935,7 +1001,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelSunset.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="LabelSunrise.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -965,7 +1031,7 @@
     <value>PanelMiddle</value>
   </data>
   <data name="&gt;&gt;LabelSunrise.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="PanelMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

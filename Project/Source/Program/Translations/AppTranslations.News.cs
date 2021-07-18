@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "The reminder box has been improved." + Globals.NL +
                           "New editable parashot board." + Globals.NL +
                           "Parashah of the week is indicated for Shabat in visual calendar and in navigation window." + Globals.NL +
-                          "Added the weekly parashah in the shabat reminder box." + Globals.NL +
+                          "Added the weekly parashah in the Shabat reminder box." + Globals.NL +
                           "Application title bar can show lunar today and weekly parashah." + Globals.NL +
                           "Visual calendar and navigation window indicates intermediate days of week-long celebrations." + Globals.NL +
                           "Image of the Tray Icon changes during a Shabat day or celebration regardless of reminder boxes." + Globals.NL +
@@ -81,7 +81,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Boite de rappel a été améliorée." + Globals.NL +
                           "Nouveau tableau des parashot modifiables" + Globals.NL +
                           "Indication de la parashah de la semaine pour le Shabat dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
-                          "Ajout de la parashah de la semaine dans la boite de rappel du shabat." + Globals.NL +
+                          "Ajout de la parashah de la semaine dans la boite de rappel du Shabat." + Globals.NL +
                           "La barre de titre de l'application peut afficher la date lunaire d'aujourd'hui et la parashah hebdomadaire." + Globals.NL +
                           "Indication des jours intermédiaires pour les célébrations qui durent une semaine dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
                           "L'image de la Tray Icon change durant un jour de Shabat ou de célébration quelque soient les boites de rappel." + Globals.NL +
@@ -170,7 +170,7 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.FR] = "Configuration de démarrage améliorée." + Globals.NL +
                           "Calendrier visuel amélioré." + Globals.NL +
                           "Préférences améliorées." + Globals.NL +
-                          "Ajout des notices de célébrations et de Shabat" + Globals.NL +
+                          "Ajout des notices de célébrations et du Shabat" + Globals.NL +
                           "Ajout d'un calculateur de différence de dates." + Globals.NL +
                           "Ajout d'un suspendeur des rappels." + Globals.NL +
                           "Ajout d'un menu outils." + Globals.NL +

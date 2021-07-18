@@ -42,7 +42,7 @@
       this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.nissanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
@@ -51,11 +51,6 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
-      this.MenuSelectWeatherApp = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActiontWeatherSelecApp = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionSeatherUseMeteoblue = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActiontWeatherUsetWeatherDotCom = new System.Windows.Forms.ToolStripMenuItem();
       this.TabControl = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
@@ -68,6 +63,7 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.EditLoadingFormHidden = new System.Windows.Forms.CheckBox();
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditWeatherMenuItemsEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
@@ -81,6 +77,7 @@
       this.LabelLastDBOptimizeDate = new System.Windows.Forms.Label();
       this.LabelLastDBOptimize = new System.Windows.Forms.Label();
       this.LabelLastStartupCheckDate = new System.Windows.Forms.Label();
+      this.EditWeeklyParashahShowAtStartup = new System.Windows.Forms.CheckBox();
       this.LabelLastStartupCheck = new System.Windows.Forms.Label();
       this.LabelCheckUpdateFrequency = new System.Windows.Forms.Label();
       this.LabelCheckUpdateAtStartupInfo = new System.Windows.Forms.Label();
@@ -155,8 +152,6 @@
       this.SelectReminderBoxDesktopLocation = new System.Windows.Forms.ComboBox();
       this.LabelSelectReminderSound = new System.Windows.Forms.LinkLabel();
       this.LabelAutoLockSessionTimeOutIntervalInfo = new System.Windows.Forms.Label();
-      this.EditWeeklyParashahShowAtNewWeek = new System.Windows.Forms.CheckBox();
-      this.EditWeeklyParashahShowAtStartup = new System.Windows.Forms.CheckBox();
       this.EditAllowSuspendReminder = new System.Windows.Forms.CheckBox();
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
@@ -170,6 +165,7 @@
       this.LabelRemindShabatHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
       this.LabelShabatDay = new System.Windows.Forms.Label();
+      this.EditWeeklyParashahShowAtNewWeek = new System.Windows.Forms.CheckBox();
       this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.EditReminderShabatEnabled = new System.Windows.Forms.CheckBox();
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
@@ -285,6 +281,7 @@
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
       this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
       this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineMSN = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
@@ -305,7 +302,6 @@
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
-      this.MenuSelectWeatherApp.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
@@ -402,7 +398,7 @@
             this.nissan11ToolStripMenuItem1,
             this.nissan101ToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.nissanToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.nissan1ToolStripMenuItem});
       this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
       this.MenuSelectMoonDayTextFormat.ShowImageMargin = false;
@@ -436,12 +432,11 @@
       this.toolStripMenuItem1.Tag = "%MONTHNAME% #%DAYNUM% (%MONTHNUM%)";
       this.toolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
-      // nissanToolStripMenuItem
+      // toolStripMenuItem2
       // 
-      this.nissanToolStripMenuItem.Name = "nissanToolStripMenuItem";
-      resources.ApplyResources(this.nissanToolStripMenuItem, "nissanToolStripMenuItem");
-      this.nissanToolStripMenuItem.Tag = "%MONTHNAME% #%DAYNUM%";
-      this.nissanToolStripMenuItem.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Tag = "%MONTHNAME% #%DAYNUM%";
       // 
       // nissan1ToolStripMenuItem
       // 
@@ -469,36 +464,6 @@
       // 
       this.OpenThemeDialog.FileName = "openFileDialog1";
       resources.ApplyResources(this.OpenThemeDialog, "OpenThemeDialog");
-      // 
-      // MenuSelectWeatherApp
-      // 
-      this.MenuSelectWeatherApp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActiontWeatherSelecApp,
-            this.toolStripSeparator1,
-            this.ActionSeatherUseMeteoblue,
-            this.ActiontWeatherUsetWeatherDotCom});
-      this.MenuSelectWeatherApp.Name = "MenuSelectWeatherApp";
-      resources.ApplyResources(this.MenuSelectWeatherApp, "MenuSelectWeatherApp");
-      // 
-      // ActiontWeatherSelecApp
-      // 
-      this.ActiontWeatherSelecApp.Name = "ActiontWeatherSelecApp";
-      resources.ApplyResources(this.ActiontWeatherSelecApp, "ActiontWeatherSelecApp");
-      // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-      // 
-      // ActionSeatherUseMeteoblue
-      // 
-      this.ActionSeatherUseMeteoblue.Name = "ActionSeatherUseMeteoblue";
-      resources.ApplyResources(this.ActionSeatherUseMeteoblue, "ActionSeatherUseMeteoblue");
-      // 
-      // ActiontWeatherUsetWeatherDotCom
-      // 
-      this.ActiontWeatherUsetWeatherDotCom.Name = "ActiontWeatherUsetWeatherDotCom";
-      resources.ApplyResources(this.ActiontWeatherUsetWeatherDotCom, "ActiontWeatherUsetWeatherDotCom");
       // 
       // TabControl
       // 
@@ -533,6 +498,7 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.EditLoadingFormHidden);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
@@ -630,6 +596,13 @@
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
+      // EditLoadingFormHidden
+      // 
+      resources.ApplyResources(this.EditLoadingFormHidden, "EditLoadingFormHidden");
+      this.EditLoadingFormHidden.Name = "EditLoadingFormHidden";
+      this.EditLoadingFormHidden.UseVisualStyleBackColor = true;
+      this.EditLoadingFormHidden.CheckedChanged += new System.EventHandler(this.EditLoadingFormHidden_CheckedChanged);
       // 
       // EditWindowsDoubleBufferingEnabled
       // 
@@ -730,6 +703,12 @@
       resources.ApplyResources(this.LabelLastStartupCheckDate, "LabelLastStartupCheckDate");
       this.LabelLastStartupCheckDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelLastStartupCheckDate.Name = "LabelLastStartupCheckDate";
+      // 
+      // EditWeeklyParashahShowAtStartup
+      // 
+      resources.ApplyResources(this.EditWeeklyParashahShowAtStartup, "EditWeeklyParashahShowAtStartup");
+      this.EditWeeklyParashahShowAtStartup.Name = "EditWeeklyParashahShowAtStartup";
+      this.EditWeeklyParashahShowAtStartup.UseVisualStyleBackColor = true;
       // 
       // LabelLastStartupCheck
       // 
@@ -1367,18 +1346,6 @@
       this.LabelAutoLockSessionTimeOutIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelAutoLockSessionTimeOutIntervalInfo.Name = "LabelAutoLockSessionTimeOutIntervalInfo";
       // 
-      // EditWeeklyParashahShowAtNewWeek
-      // 
-      resources.ApplyResources(this.EditWeeklyParashahShowAtNewWeek, "EditWeeklyParashahShowAtNewWeek");
-      this.EditWeeklyParashahShowAtNewWeek.Name = "EditWeeklyParashahShowAtNewWeek";
-      this.EditWeeklyParashahShowAtNewWeek.UseVisualStyleBackColor = true;
-      // 
-      // EditWeeklyParashahShowAtStartup
-      // 
-      resources.ApplyResources(this.EditWeeklyParashahShowAtStartup, "EditWeeklyParashahShowAtStartup");
-      this.EditWeeklyParashahShowAtStartup.Name = "EditWeeklyParashahShowAtStartup";
-      this.EditWeeklyParashahShowAtStartup.UseVisualStyleBackColor = true;
-      // 
       // EditAllowSuspendReminder
       // 
       resources.ApplyResources(this.EditAllowSuspendReminder, "EditAllowSuspendReminder");
@@ -1477,6 +1444,12 @@
       // 
       resources.ApplyResources(this.LabelShabatDay, "LabelShabatDay");
       this.LabelShabatDay.Name = "LabelShabatDay";
+      // 
+      // EditWeeklyParashahShowAtNewWeek
+      // 
+      resources.ApplyResources(this.EditWeeklyParashahShowAtNewWeek, "EditWeeklyParashahShowAtNewWeek");
+      this.EditWeeklyParashahShowAtNewWeek.Name = "EditWeeklyParashahShowAtNewWeek";
+      this.EditWeeklyParashahShowAtNewWeek.UseVisualStyleBackColor = true;
       // 
       // ActionPersonalShabatHelp
       // 
@@ -2394,6 +2367,7 @@
       this.PanelWeatherOnline.Controls.Add(this.EditWeatherOnlineUseDay);
       this.PanelWeatherOnline.Controls.Add(this.ActionWeatherOnlineTest);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMSN);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
       resources.ApplyResources(this.PanelWeatherOnline, "PanelWeatherOnline");
       this.PanelWeatherOnline.Name = "PanelWeatherOnline";
@@ -2426,6 +2400,15 @@
       this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
       this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
       this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
+      // 
+      // SelectWeatherOnlineMSN
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMSN, "SelectWeatherOnlineMSN");
+      this.SelectWeatherOnlineMSN.Checked = true;
+      this.SelectWeatherOnlineMSN.Name = "SelectWeatherOnlineMSN";
+      this.SelectWeatherOnlineMSN.TabStop = true;
+      this.SelectWeatherOnlineMSN.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineMSN.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
       // 
       // SelectWeatherOnlineMeteoblueDotCom
       // 
@@ -2580,7 +2563,6 @@
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
-      this.MenuSelectWeatherApp.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
@@ -2741,7 +2723,6 @@
     private System.Windows.Forms.ComboBox SelectReminderBoxDesktopLocation;
     private System.Windows.Forms.ContextMenuStrip MenuPredefinedYears;
     private System.Windows.Forms.ContextMenuStrip MenuSelectMoonDayTextFormat;
-    private System.Windows.Forms.ContextMenuStrip MenuSelectWeatherApp;
     private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
@@ -2876,14 +2857,9 @@
     private System.Windows.Forms.TabPage TabPageStartup;
     private System.Windows.Forms.TabPage TabPageTextReport;
     private System.Windows.Forms.TabPage TabPageTrayIcon;
-    private System.Windows.Forms.ToolStripMenuItem ActionSeatherUseMeteoblue;
-    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherSelecApp;
-    private System.Windows.Forms.ToolStripMenuItem ActiontWeatherUsetWeatherDotCom;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem nissan11ToolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem nissan1ToolStripMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem nissanToolStripMenuItem;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.TrackBar EditVolume;
     public System.Windows.Forms.Panel EditCalendarColorFullMoon;
     public System.Windows.Forms.Panel EditCalendarColorMoon;
@@ -2910,5 +2886,8 @@
     private System.Windows.Forms.CheckBox EditReminderShowLockoutIcon;
     private System.Windows.Forms.ToolStripMenuItem nissan101ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineMSN;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.CheckBox EditLoadingFormHidden;
   }
 }

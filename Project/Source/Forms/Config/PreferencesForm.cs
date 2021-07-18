@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -243,6 +243,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ApplicationVolume = EditVolume.Value;
       SystemManager.TryCatch(Settings.Save);
       DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
+    }
+
+    private void EditLoadingFormHidden_CheckedChanged(object sender, EventArgs e)
+    {
+      LoadingForm.Instance.Hidden = EditLoadingFormHidden.Checked;
     }
 
     #endregion 

@@ -72,7 +72,7 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 [![Navigation window](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en-254x300.png)](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Dates diff calculator](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en-349x300.png)](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en.png)
 
-[![Reminder box celebration](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Reminder box shabat](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en.png)
+[![Reminder box celebration](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Reminder box Shabat](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-Shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-Shabat-en.png)
 
 [![Lock session box](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -211,7 +211,7 @@ Israël is the conceptual worldwide land of the righteous benevolent whose body+
 
 The number of Parashot is 54 that is to say נד which is the Power of the Student and that root means To pass from the malevolent world to that of the good.
 
-The generation of parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal shabat.
+The generation of parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
 
 ## Keyboard shortcuts
 
@@ -269,6 +269,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
+- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -277,17 +279,13 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### Planned - Version 8.x
-
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
-- Add option to auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-
 #### 2021.07.30 - Version 8.2
 
-- Add options to show the weekly parashah description box at startup and after shabat while running.
-- Add option to show/hode lockout icon in reminder box.
-- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
+- Add option to show or hide lockout icon in reminder box.
+- Add options to show the weekly parashah description box at startup and after Shabat while running.
+- Add option to disable loading and processing boxes for powerful computers.
 - Improve weekly parashah labels to show book name.
+- Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Improve navigation window with more buttons.
 - Fix weekly parashah description box that does not show linked parashah.
 - Fix current day labels not correctly updated when new day is triggered.
@@ -313,7 +311,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve auto-lock session box.
 - Add option to choose default auto-lock action.
 - Add lockout button for menu in active reminder box.
-- Add parashot context menu in shabat reminder box, navigation window, and tools menu.
+- Add parashot context menu in Shabat reminder box, navigation window, and tools menu.
 - Add open main form when click on the moon image in navigation window.
 - Add option to ask to regenerate data at startup if years interval is larger than 20% the default setting.
 - Some fixes and improvements.
@@ -337,8 +335,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.04.15 - Version 7.1
 
-- Add option to show the weekly parashah in the shabat reminder box
-- Improve the shabat reminder box to show the weekly parashah.
+- Add option to show the weekly parashah in the Shabat reminder box
+- Improve the Shabat reminder box to show the weekly parashah.
 - Improve tray icon to show special day color even when the reminder is disabled.
 - Fix tray icon no more shown paused when reminder is disabled since previous version.
 - Fix generate command-line option does nothing.

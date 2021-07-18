@@ -452,7 +452,7 @@
     <value>133, 13</value>
   </data>
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
-    <value>Utiliser le shabat personnel</value>
+    <value>Utiliser le Shabat personnel</value>
   </data>
   <data name="TabPageCelebrations.Text" xml:space="preserve">
     <value>Célébrations</value>
@@ -539,7 +539,7 @@
     <value>66, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Fond shabat</value>
+    <value>Fond Shabat</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -750,7 +750,7 @@
     <value>Préférences</value>
   </data>
   <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
-    <value>Utiliser une icône différente lors du shabat ou d'un jour de célébration</value>
+    <value>Utiliser une icône différente lors du Shabat ou d'un jour de célébration</value>
   </data>
   <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
     <value>Toujours générer les Parashot pour le samedi</value>
@@ -796,5 +796,8 @@
   </data>
   <data name="EditHideLinksNotInCurrentLanguage.Text" xml:space="preserve">
     <value>Cacher les liens qui ne sont pas dans la langue actuelle</value>
+  </data>
+  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
+    <value>Cacher les boites de chargement et de traitement</value>
   </data>
 </root>

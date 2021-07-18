@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew.Calendar
         form = new ReminderForm();
         var date = row.Date;
         form.LabelTitle.Text = isShabat
-                               ? "Shabat"
+                               ? AppTranslations.Shabat.GetLang()
                                : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
                                                                     ? row.TorahEvent
                                                                     : torahevent);

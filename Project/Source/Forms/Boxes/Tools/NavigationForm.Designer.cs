@@ -70,6 +70,8 @@
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.LabelLunarMonthName = new System.Windows.Forms.Label();
+      this.LabelLunarDayEvent = new System.Windows.Forms.Label();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -92,6 +94,7 @@
       // PanelMiddle
       // 
       this.PanelMiddle.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelMiddle.Controls.Add(this.LabelLunarMonthName);
       this.PanelMiddle.Controls.Add(this.LabelCurrentDayValue);
       this.PanelMiddle.Controls.Add(this.LabelParashahValue);
       this.PanelMiddle.Controls.Add(this.LabelTorahNextDateValue);
@@ -110,6 +113,7 @@
       this.PanelMiddle.Controls.Add(this.LabelSunriseValue);
       this.PanelMiddle.Controls.Add(this.LabelMoonset);
       this.PanelMiddle.Controls.Add(this.LabelMoonrise);
+      this.PanelMiddle.Controls.Add(this.LabelLunarDayEvent);
       this.PanelMiddle.Controls.Add(this.LabelLunarDayValue);
       this.PanelMiddle.Controls.Add(this.LabelLunarMonthValue);
       this.PanelMiddle.Controls.Add(this.LabelSunset);
@@ -344,6 +348,16 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
+      // LabelLunarMonthName
+      // 
+      resources.ApplyResources(this.LabelLunarMonthName, "LabelLunarMonthName");
+      this.LabelLunarMonthName.Name = "LabelLunarMonthName";
+      // 
+      // LabelLunarDayEvent
+      // 
+      resources.ApplyResources(this.LabelLunarDayEvent, "LabelLunarDayEvent");
+      this.LabelLunarDayEvent.Name = "LabelLunarDayEvent";
+      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -411,5 +425,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Button ActionViewCalendar;
+    private System.Windows.Forms.Label LabelLunarMonthName;
+    private System.Windows.Forms.Label LabelLunarDayEvent;
   }
 }
