@@ -283,7 +283,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add option to show or hide lockout icon in reminder box.
 - Add options to show the weekly parashah description box at startup and after Shabat while running.
->- Add option to disable loading and process boxes on powerful computers.
+- Add option to disable loading and processing boxes for powerful computers.
 - Improve weekly parashah labels to show book name.
 - Improve study parashah online to not open twice a website if link does not have a replacement pattern.
 - Improve navigation window with more buttons.
