@@ -2144,7 +2144,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool WindowsDoubleBufferingEnabled {
             get {
                 return ((bool)(this["WindowsDoubleBufferingEnabled"]));
@@ -2547,6 +2547,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ReminderShowLockoutIcon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LoadingFormHidden {
+            get {
+                return ((bool)(this["LoadingFormHidden"]));
+            }
+            set {
+                this["LoadingFormHidden"] = value;
             }
         }
     }

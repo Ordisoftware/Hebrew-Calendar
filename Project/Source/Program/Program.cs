@@ -62,6 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.ChronoStartingApp.Stop();
         ProcessCommandLineOptions();
         Globals.ChronoStartingApp.Start();
+        LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
       }
       catch ( Exception ex )
       {

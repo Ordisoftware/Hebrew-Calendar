@@ -42,6 +42,7 @@
       this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.PanelBottomSeparator = new System.Windows.Forms.Panel();
@@ -62,6 +63,7 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
       this.ActionSelectLangFR = new System.Windows.Forms.Button();
+      this.EditLoadingFormHidden = new System.Windows.Forms.CheckBox();
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditWeatherMenuItemsEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
@@ -279,6 +281,7 @@
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
       this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
       this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineMSN = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
@@ -297,8 +300,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.SelectWeatherOnlineMSN = new System.Windows.Forms.RadioButton();
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -431,6 +432,12 @@
       this.toolStripMenuItem1.Tag = "%MONTHNAME% #%DAYNUM% (%MONTHNUM%)";
       this.toolStripMenuItem1.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+      this.toolStripMenuItem2.Tag = "%MONTHNAME% #%DAYNUM%";
+      // 
       // nissan1ToolStripMenuItem
       // 
       this.nissan1ToolStripMenuItem.Name = "nissan1ToolStripMenuItem";
@@ -491,6 +498,7 @@
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangFR);
+      this.TabPageApplication.Controls.Add(this.EditLoadingFormHidden);
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
@@ -588,6 +596,13 @@
       this.ActionSelectLangFR.TabStop = false;
       this.ActionSelectLangFR.UseVisualStyleBackColor = true;
       this.ActionSelectLangFR.Click += new System.EventHandler(this.ActionSelectLangFR_Click);
+      // 
+      // EditLoadingFormHidden
+      // 
+      resources.ApplyResources(this.EditLoadingFormHidden, "EditLoadingFormHidden");
+      this.EditLoadingFormHidden.Name = "EditLoadingFormHidden";
+      this.EditLoadingFormHidden.UseVisualStyleBackColor = true;
+      this.EditLoadingFormHidden.CheckedChanged += new System.EventHandler(this.EditLoadingFormHidden_CheckedChanged);
       // 
       // EditWindowsDoubleBufferingEnabled
       // 
@@ -2386,6 +2401,15 @@
       this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
       this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
       // 
+      // SelectWeatherOnlineMSN
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMSN, "SelectWeatherOnlineMSN");
+      this.SelectWeatherOnlineMSN.Checked = true;
+      this.SelectWeatherOnlineMSN.Name = "SelectWeatherOnlineMSN";
+      this.SelectWeatherOnlineMSN.TabStop = true;
+      this.SelectWeatherOnlineMSN.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineMSN.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
+      // 
       // SelectWeatherOnlineMeteoblueDotCom
       // 
       resources.ApplyResources(this.SelectWeatherOnlineMeteoblueDotCom, "SelectWeatherOnlineMeteoblueDotCom");
@@ -2519,21 +2543,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // SelectWeatherOnlineMSN
-      // 
-      resources.ApplyResources(this.SelectWeatherOnlineMSN, "SelectWeatherOnlineMSN");
-      this.SelectWeatherOnlineMSN.Checked = true;
-      this.SelectWeatherOnlineMSN.Name = "SelectWeatherOnlineMSN";
-      this.SelectWeatherOnlineMSN.TabStop = true;
-      this.SelectWeatherOnlineMSN.UseVisualStyleBackColor = true;
-      this.SelectWeatherOnlineMSN.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
-      // 
-      // toolStripMenuItem2
-      // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-      this.toolStripMenuItem2.Tag = "%MONTHNAME% #%DAYNUM%";
       // 
       // PreferencesForm
       // 
@@ -2879,5 +2888,6 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     private System.Windows.Forms.RadioButton SelectWeatherOnlineMSN;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    private System.Windows.Forms.CheckBox EditLoadingFormHidden;
   }
 }

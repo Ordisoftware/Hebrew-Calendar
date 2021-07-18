@@ -37,6 +37,7 @@ namespace Ordisoftware.Core
 
     public event Action Progressing;
     public bool CancelRequired { get; set; }
+    public bool Hidden { get; set; }
 
     private LoadingForm()
     {
@@ -69,11 +70,12 @@ namespace Ordisoftware.Core
       LabelCount.Visible = showCounter;
       QuantaTotal = quantaTotal;
       this.CenterToMainFormElseScreen();
-      if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
-      {
-        Show();
-        BringToFront();
-      }
+      if ( !Hidden )
+        if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
+        {
+          Show();
+          BringToFront();
+        }
       if ( count <= 0 ) count = 1;
       UseQuanta = quantify && count > QuantaTotal;
       QuantaLevel = UseQuanta ? count / QuantaTotal : 1;

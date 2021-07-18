@@ -797,4 +797,7 @@
   <data name="EditHideLinksNotInCurrentLanguage.Text" xml:space="preserve">
     <value>Cacher les liens qui ne sont pas dans la langue actuelle</value>
   </data>
+  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
+    <value>Cacher les boites de chargement et de traitement</value>
+  </data>
 </root>

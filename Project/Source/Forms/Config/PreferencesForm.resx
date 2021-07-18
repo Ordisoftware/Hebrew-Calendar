@@ -302,43 +302,43 @@
     <value>12, 14</value>
   </metadata>
   <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan [1] #10</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan (1) #10</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan #10 [1]</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan #10 (1)</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Nissan #10</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
+    <value>123, 22</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan 10</value>
   </data>
   <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 158</value>
+    <value>124, 136</value>
   </data>
   <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
     <value>MenuSelectMoonDayTextFormat</value>
@@ -429,7 +429,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 280</value>
+    <value>74, 300</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -459,7 +459,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 287</value>
+    <value>106, 307</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -486,7 +486,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 282</value>
+    <value>23, 302</value>
   </data>
   <data name="EditDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -513,7 +513,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 345</value>
+    <value>18, 360</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>490, 18</value>
@@ -543,7 +543,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 262</value>
+    <value>20, 282</value>
   </data>
   <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>446, 13</value>
@@ -606,7 +606,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 325</value>
+    <value>20, 340</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -639,7 +639,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 345</value>
+    <value>515, 360</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -746,6 +746,36 @@
   <data name="&gt;&gt;ActionSelectLangFR.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="EditLoadingFormHidden.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditLoadingFormHidden.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditLoadingFormHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 200</value>
+  </data>
+  <data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="EditLoadingFormHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
+    <value>Hide loading and processing boxes</value>
+  </data>
+  <data name="&gt;&gt;EditLoadingFormHidden.Name" xml:space="preserve">
+    <value>EditLoadingFormHidden</value>
+  </data>
+  <data name="&gt;&gt;EditLoadingFormHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditLoadingFormHidden.Parent" xml:space="preserve">
+    <value>TabPageApplication</value>
+  </data>
+  <data name="&gt;&gt;EditLoadingFormHidden.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="EditWindowsDoubleBufferingEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -774,7 +804,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWindowsDoubleBufferingEnabled.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditWeatherMenuItemsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -804,7 +834,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWeatherMenuItemsEnabled.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditWebLinksMenuEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -834,7 +864,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditWebLinksMenuEnabled.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -843,7 +873,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 210</value>
+    <value>23, 230</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 17</value>
@@ -864,7 +894,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditMainFormTitleBarShowToday.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -873,7 +903,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 230</value>
+    <value>23, 250</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 17</value>
@@ -894,7 +924,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditMainFormTitleBarShowWeeklyParashah.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="EditDebuggerEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -924,7 +954,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditDebuggerEnabled.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditUsageStatisticsEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -954,7 +984,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditUsageStatisticsEnabled.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditLogEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -984,7 +1014,7 @@
     <value>TabPageApplication</value>
   </data>
   <data name="&gt;&gt;EditLogEnabled.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="TabPageApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -1578,7 +1608,7 @@
     <value>23, 20</value>
   </data>
   <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 17</value>
+    <value>280, 17</value>
   </data>
   <data name="EditTrayIconUseSpecialDayIcon.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4173,7 +4203,7 @@
     <value>20, 73</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+    <value>106, 13</value>
   </data>
   <data name="ActionUsePersonalShabat.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8172,6 +8202,12 @@
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;nissan1ToolStripMenuItem.Name" xml:space="preserve">
     <value>nissan1ToolStripMenuItem</value>
   </data>
@@ -8207,12 +8243,6 @@
   </data>
   <data name="&gt;&gt;OpenSettingsDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
-    <value>toolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

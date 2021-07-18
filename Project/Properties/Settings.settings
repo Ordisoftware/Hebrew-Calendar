@@ -539,7 +539,7 @@
       <Value Profile="(Default)">984, 461</Value>
     </Setting>
     <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="WeatherAppPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">msnweather:</Value>
@@ -639,6 +639,9 @@
     </Setting>
     <Setting Name="ReminderShowLockoutIcon" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
