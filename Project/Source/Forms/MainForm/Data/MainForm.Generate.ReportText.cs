@@ -57,8 +57,8 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
 
-        var headerSep = SeparatorV;
-        var headerTxt = SeparatorV;
+        string headerSep = SeparatorV;
+        string headerTxt = SeparatorV;
         foreach ( var field in Enums.GetValues<ReportFieldText>() )
         {
           string str = AppTranslations.ReportFieldText.GetLang(field);

@@ -103,7 +103,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() =>
       {
         Text = Globals.AssemblyTitle;
-        IsSpecialDay = false;
         TrayIcon.Icon = TrayIcons[!IsReminderPaused]?[Settings.TrayIconUseSpecialDayIcon && IsSpecialDay] ?? null;
         Application.OpenForms.All().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         ParashotForm.Instance?.Close();

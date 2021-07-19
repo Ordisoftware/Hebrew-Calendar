@@ -475,7 +475,7 @@ namespace Ordisoftware.Hebrew
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
       form.ActionYes.Visible = true;
-      form.ActionYes.Text = SysTranslations.Board.GetLang(); ;
+      form.ActionYes.Text = SysTranslations.Board.GetLang();
       form.ActionYes.Click += async (_s, _e) =>
       {
         Run(parashah);
