@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -397,7 +397,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return dateRow.Year == dayDate.Year
               && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
         }
-        var equinoxe = LunisolarDays.Where(d => check(d)).First();
+        var equinoxe = LunisolarDays.First(d => check(d));
         var dateEquinox = equinoxe.Date;
         int monthExuinoxe = dateEquinox.Month;
         int dayEquinoxe = dateEquinox.Day - TorahCelebrations.NewLambDay;

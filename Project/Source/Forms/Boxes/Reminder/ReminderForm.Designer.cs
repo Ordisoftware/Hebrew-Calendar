@@ -46,7 +46,6 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
       this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -144,11 +143,10 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
+            this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline,
-            this.toolStripSeparator1,
-            this.ActionViewParashot});
+            this.ActionOpenVerseOnline});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -173,11 +171,6 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-      // 
       // ActionViewParashot
       // 
       resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
@@ -186,7 +179,6 @@
       // 
       // ActionLockout
       // 
-      this.ActionLockout.ContextMenuStrip = this.ContextMenuParashah;
       this.ActionLockout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionLockout.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionLockout, "ActionLockout");
@@ -274,6 +266,5 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
     private System.Windows.Forms.Button ActionSetupSound;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
   }
 }
