@@ -272,7 +272,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSettings_Click(object sender, EventArgs e)
     {
-      PreferencesForm.Run(PreferencesForm.TabIndexNavigation);
+      MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexNavigation, null);
+      TopMost = false;
+      TopMost = true;
     }
 
   }
