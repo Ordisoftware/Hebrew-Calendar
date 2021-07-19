@@ -270,6 +270,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
+    private void ActionSettings_Click(object sender, EventArgs e)
+    {
+      PreferencesForm.Run(PreferencesForm.TabIndexNavigation);
+    }
+
   }
 
 }

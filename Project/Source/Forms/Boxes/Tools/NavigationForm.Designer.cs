@@ -33,6 +33,7 @@
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
       this.PanelMiddle = new System.Windows.Forms.Panel();
+      this.LabelLunarMonthName = new System.Windows.Forms.Label();
       this.LabelCurrentDayValue = new System.Windows.Forms.LinkLabel();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -40,7 +41,6 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextValue = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
       this.LabelSunriseValue = new System.Windows.Forms.Label();
       this.LabelMoonset = new System.Windows.Forms.Label();
       this.LabelMoonrise = new System.Windows.Forms.Label();
+      this.LabelLunarDayEvent = new System.Windows.Forms.Label();
       this.LabelLunarDayValue = new System.Windows.Forms.Label();
       this.LabelLunarMonthValue = new System.Windows.Forms.Label();
       this.LabelSunset = new System.Windows.Forms.Label();
@@ -67,11 +68,10 @@
       this.ActionPreviousDay = new System.Windows.Forms.Button();
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionSettings = new System.Windows.Forms.Button();
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
-      this.LabelLunarMonthName = new System.Windows.Forms.Label();
-      this.LabelLunarDayEvent = new System.Windows.Forms.Label();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
@@ -121,6 +121,11 @@
       resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.Name = "PanelMiddle";
       // 
+      // LabelLunarMonthName
+      // 
+      resources.ApplyResources(this.LabelLunarMonthName, "LabelLunarMonthName");
+      this.LabelLunarMonthName.Name = "LabelLunarMonthName";
+      // 
       // LabelCurrentDayValue
       // 
       this.LabelCurrentDayValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
@@ -144,11 +149,10 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
+            this.ActionViewParashot,
             this.toolStripSeparator2,
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline,
-            this.toolStripSeparator1,
-            this.ActionViewParashot});
+            this.ActionOpenVerseOnline});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -172,11 +176,6 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
-      // 
-      // toolStripSeparator1
-      // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionViewParashot
       // 
@@ -270,6 +269,11 @@
       resources.ApplyResources(this.LabelMoonrise, "LabelMoonrise");
       this.LabelMoonrise.Name = "LabelMoonrise";
       // 
+      // LabelLunarDayEvent
+      // 
+      resources.ApplyResources(this.LabelLunarDayEvent, "LabelLunarDayEvent");
+      this.LabelLunarDayEvent.Name = "LabelLunarDayEvent";
+      // 
       // LabelLunarDayValue
       // 
       resources.ApplyResources(this.LabelLunarDayValue, "LabelLunarDayValue");
@@ -322,11 +326,19 @@
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottom.Controls.Add(this.ActionSelectDay);
       this.PanelBottom.Controls.Add(this.ActionPreviousDay);
+      this.PanelBottom.Controls.Add(this.ActionSettings);
       this.PanelBottom.Controls.Add(this.ActionViewCalendar);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionNextDay);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionSettings
+      // 
+      resources.ApplyResources(this.ActionSettings, "ActionSettings");
+      this.ActionSettings.Name = "ActionSettings";
+      this.ActionSettings.UseVisualStyleBackColor = true;
+      this.ActionSettings.Click += new System.EventHandler(this.ActionSettings_Click);
       // 
       // ActionViewCalendar
       // 
@@ -347,16 +359,6 @@
       this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
-      // 
-      // LabelLunarMonthName
-      // 
-      resources.ApplyResources(this.LabelLunarMonthName, "LabelLunarMonthName");
-      this.LabelLunarMonthName.Name = "LabelLunarMonthName";
-      // 
-      // LabelLunarDayEvent
-      // 
-      resources.ApplyResources(this.LabelLunarDayEvent, "LabelLunarDayEvent");
-      this.LabelLunarDayEvent.Name = "LabelLunarDayEvent";
       // 
       // NavigationForm
       // 
@@ -422,10 +424,10 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Button ActionViewCalendar;
     private System.Windows.Forms.Label LabelLunarMonthName;
     private System.Windows.Forms.Label LabelLunarDayEvent;
+    private System.Windows.Forms.Button ActionSettings;
   }
 }
