@@ -42,6 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         try
         {
+          ActiveControl = LabelDate;
           var row = LunisolarDays.Single(day => day.Date == value);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
@@ -119,10 +120,6 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         catch
         {
-        }
-        finally
-        {
-          SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
         }
       }
     }
@@ -216,11 +213,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSelectDay_Click(object sender, EventArgs e)
     {
+      ActiveControl = LabelDate;
       var date = DateTime.Today;
       if ( SelectDayForm.Run(null, ref date, true, true) )
         MainForm.Instance.GoToDate(date, true, true, true);
-      else
-        SystemManager.TryCatch(() => { ActiveControl = LabelDate; });
     }
 
     private void ActionPreviousDay_Click(object sender, EventArgs e)
@@ -261,20 +257,28 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewCalendar_Click(object sender, EventArgs e)
     {
+      ActiveControl = LabelDate;
       MainForm.Instance.MenuShowHide_Click(null, null);
       this.Popup();
+    }
+
+    private void ActionDatesDiff_Click(object sender, EventArgs e)
+    {
+      ActiveControl = LabelDate;
+      DatesDiffCalculatorForm.Run();
+    }
+
+    private void ActionSettings_Click(object sender, EventArgs e)
+    {
+      ActiveControl = LabelDate;
+      MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexNavigation, null);
+      TopMost = false;
+      TopMost = true;
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
-    }
-
-    private void ActionSettings_Click(object sender, EventArgs e)
-    {
-      MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexNavigation, null);
-      TopMost = false;
-      TopMost = true;
     }
 
   }
