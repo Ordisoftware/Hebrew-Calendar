@@ -38,10 +38,10 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
       this.LabelTorahNextValue = new System.Windows.Forms.Label();
       this.LabelTorahNext = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
       this.ActionPreviousDay = new System.Windows.Forms.Button();
       this.PanelSeparatorTop = new System.Windows.Forms.Panel();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionDatesDiff = new System.Windows.Forms.Button();
       this.ActionSettings = new System.Windows.Forms.Button();
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -162,6 +163,12 @@
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahDescription_Click);
       // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -176,12 +183,6 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
-      // 
-      // ActionViewParashot
-      // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // LabelTorahNextDateValue
       // 
@@ -326,12 +327,20 @@
       this.PanelBottom.BackColor = System.Drawing.Color.Honeydew;
       this.PanelBottom.Controls.Add(this.ActionSelectDay);
       this.PanelBottom.Controls.Add(this.ActionPreviousDay);
+      this.PanelBottom.Controls.Add(this.ActionDatesDiff);
       this.PanelBottom.Controls.Add(this.ActionSettings);
       this.PanelBottom.Controls.Add(this.ActionViewCalendar);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionNextDay);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionDatesDiff
+      // 
+      resources.ApplyResources(this.ActionDatesDiff, "ActionDatesDiff");
+      this.ActionDatesDiff.Name = "ActionDatesDiff";
+      this.ActionDatesDiff.UseVisualStyleBackColor = true;
+      this.ActionDatesDiff.Click += new System.EventHandler(this.ActionDatesDiff_Click);
       // 
       // ActionSettings
       // 
@@ -429,5 +438,6 @@
     private System.Windows.Forms.Label LabelLunarMonthName;
     private System.Windows.Forms.Label LabelLunarDayEvent;
     private System.Windows.Forms.Button ActionSettings;
+    private System.Windows.Forms.Button ActionDatesDiff;
   }
 }

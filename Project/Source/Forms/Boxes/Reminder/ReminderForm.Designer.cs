@@ -43,10 +43,10 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
       this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,6 +156,12 @@
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahDescription_Click);
       // 
+      // ActionViewParashot
+      // 
+      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
+      this.ActionViewParashot.Name = "ActionViewParashot";
+      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -170,12 +176,6 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
-      // 
-      // ActionViewParashot
-      // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // ActionLockout
       // 
