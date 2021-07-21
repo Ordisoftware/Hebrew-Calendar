@@ -31,11 +31,15 @@ namespace Ordisoftware.Hebrew.Calendar
         ["8.2"] = new TranslationsDictionary
         {
           [Language.EN] = "Added weekly parashah reminder." + Globals.NL +
-                          "Improve parashot titles and menus." + Globals.NL +
+                          "Improved parashot titles and menus." + Globals.NL +
+                          "Improved navigation window." + Globals.NL +
+                          "Improved reminder boxes." + Globals.NL +
                           "Some fixes and improvements.",
 
-          [Language.FR] = "Ajout d'un rappel de la parasha hebdomadaire." + Globals.NL +
+          [Language.FR] = "Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
                           "Amélioration des titres et des menus des parashot." + Globals.NL +
+                          "Amélioration de la fenêtre de navigation." + Globals.NL +
+                          "Amélioration des boites de rappel." + Globals.NL +
                           "Quelques corrections et améliorations."
         },
 

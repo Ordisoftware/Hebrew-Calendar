@@ -57,7 +57,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 **What's new in the latest version 8.2**
 
 - Added weekly parashah reminder.
-- Improve parashot titles and menus.
+- Improved parashot titles and menus.
+- Improved navigation window.
+- Improved reminder boxes.
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
