@@ -36,7 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Improved reminder boxes." + Globals.NL +
                           "Some fixes and improvements.",
 
-          [Language.FR] = "Ajout d'un rappel de la parasha hebdomadaire." + Globals.NL +
+          [Language.FR] = "Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
                           "Amélioration des titres et des menus des parashot." + Globals.NL +
                           "Amélioration de la fenêtre de navigation." + Globals.NL +
                           "Amélioration des boites de rappel." + Globals.NL +
