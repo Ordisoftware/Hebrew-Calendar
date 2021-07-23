@@ -281,7 +281,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.07.30 - Version 8.2
+#### 2021.07.23 - Version 8.2
 
 - Add option to show or hide lockout icon in reminder box.
 - Add options to show the weekly parashah description box at startup and after Shabat while running.
