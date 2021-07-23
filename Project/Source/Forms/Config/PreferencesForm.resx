@@ -906,13 +906,13 @@
     <value>23, 250</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 17</value>
+    <value>202, 17</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
-    <value>Show Weekly Parashah in the title bar</value>
+    <value>Show weekly parashah in the title bar</value>
   </data>
   <data name="&gt;&gt;EditMainFormTitleBarShowWeeklyParashah.Name" xml:space="preserve">
     <value>EditMainFormTitleBarShowWeeklyParashah</value>
@@ -1188,13 +1188,13 @@
     <value>23, 110</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 17</value>
+    <value>237, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
-    <value>Show weekly parashah at startup</value>
+    <value>Show weekly parashah description at startup</value>
   </data>
   <data name="&gt;&gt;EditWeeklyParashahShowAtStartup.Name" xml:space="preserve">
     <value>EditWeeklyParashahShowAtStartup</value>
@@ -3833,7 +3833,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindShabatEveryMinutesIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 268</value>
+    <value>79, 233</value>
   </data>
   <data name="LabelRemindShabatEveryMinutesIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -3866,7 +3866,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindShabatHoursBeforeIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 218</value>
+    <value>79, 183</value>
   </data>
   <data name="LabelRemindShabatHoursBeforeIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -3899,7 +3899,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 195</value>
+    <value>20, 160</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
@@ -3968,16 +3968,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 310</value>
+    <value>23, 290</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
+    <value>257, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
-    <value>Show weekly parashah on new week</value>
+    <value>Show weekly parashah description on new week</value>
   </data>
   <data name="&gt;&gt;EditWeeklyParashahShowAtNewWeek.Name" xml:space="preserve">
     <value>EditWeeklyParashahShowAtNewWeek</value>
@@ -4077,7 +4077,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 245</value>
+    <value>20, 210</value>
   </data>
   <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
@@ -4104,7 +4104,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 264</value>
+    <value>23, 229</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -4134,16 +4134,16 @@
     <value>NoControl</value>
   </data>
   <data name="EditReminderShabatShowParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 160</value>
+    <value>23, 270</value>
   </data>
   <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 17</value>
+    <value>228, 17</value>
   </data>
   <data name="EditReminderShabatShowParashah.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
-    <value>Show Weekly Parashah</value>
+    <value>Show weekly parashah in the reminder box</value>
   </data>
   <data name="&gt;&gt;EditReminderShabatShowParashah.Name" xml:space="preserve">
     <value>EditReminderShabatShowParashah</value>
@@ -4251,7 +4251,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditRemindShabatHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 214</value>
+    <value>23, 179</value>
   </data>
   <data name="EditRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>

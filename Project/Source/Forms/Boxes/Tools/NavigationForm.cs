@@ -48,10 +48,10 @@ namespace Ordisoftware.Hebrew.Calendar
           string strMonth = HebrewMonths.Transliterations[row.LunarMonth];
           bool isShabat = value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay;
           LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
-          LabelLunarMonthName.Text = strMonth.ToUpper();
+          LabelLunarMonthName.Text = "(" + strMonth.ToUpper() + ")";
           LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-          LabelLunarDayEvent.Text = isShabat ? AppTranslations.Shabat.GetLang().ToUpper() : "";
-          int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width) + 5;
+          LabelLunarDayEvent.Text = isShabat ? "(" + AppTranslations.Shabat.GetLang().ToUpper() + ")" : "";
+          int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
           LabelLunarMonthName.Left = left;
           LabelLunarDayEvent.Left = left;
           LabelSunriseValue.Text = row.SunriseAsString;

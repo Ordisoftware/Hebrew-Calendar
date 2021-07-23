@@ -133,9 +133,6 @@
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
     <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
   </data>
-  <data name="LabelChaneLangNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 28</value>
-  </data>
   <data name="LabelChangeLangNotice.Text" xml:space="preserve">
     <value>Le changement de langue n'affectera pas les données du tableau des Parashot à moins de restaurer les valeurs par défaut</value>
   </data>
@@ -144,6 +141,12 @@
   </data>
   <data name="LabelVolume.Text" xml:space="preserve">
     <value>Volume des sons (non applicable aux sons système des boites de dialogue)</value>
+  </data>
+  <data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 17</value>
+  </data>
+  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
+    <value>Cacher les boites de chargement et de traitement</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 17</value>
@@ -162,6 +165,18 @@
   </data>
   <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Activer le menu des liens web</value>
+  </data>
+  <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
+  </data>
+  <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
+    <value>Afficher aujourd'hui dans la barre de titre</value>
+  </data>
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 17</value>
+  </data>
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
+    <value>Afficher la parashah de la semaine dans la barre de titre</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -184,11 +199,23 @@
   <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
   </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
+    <value>Afficher les nouveautés après une mise à jour</value>
+  </data>
   <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
   </data>
   <data name="LabelLastDBOptimize.Text" xml:space="preserve">
     <value>Dernière optimisation : </value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
+    <value>Montrer la description de la parashah de la semaine au démarrage</value>
   </data>
   <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 13</value>
@@ -238,6 +265,12 @@
   <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 17</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
+    <value>Utiliser une icône différente lors du Shabat ou d'un jour de célébration</value>
+  </data>
   <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 17</value>
   </data>
@@ -274,18 +307,6 @@
   <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
     <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
   </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 17</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
-    <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
-  </data>
-  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
-  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
-    <value>Cacher automatiquement le ballon</value>
-  </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
   </data>
@@ -298,11 +319,23 @@
   <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon avec ce délai avant surgissement en millisecondes</value>
   </data>
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
+    <value>Cacher automatiquement le ballon</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
+    <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
+  </data>
   <data name="TabPageNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 13</value>
+    <value>109, 13</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Text" xml:space="preserve">
     <value>Couleurs noir et blanc</value>
@@ -314,7 +347,7 @@
     <value>Haut</value>
   </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
+    <value>79, 13</value>
   </data>
   <data name="ActionUseDefaultColors.Text" xml:space="preserve">
     <value>Couleurs pastel</value>
@@ -329,7 +362,7 @@
     <value>Bas</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
+    <value>89, 13</value>
   </data>
   <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Couleurs système</value>
@@ -342,6 +375,18 @@
   </data>
   <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Intervalle d'années maximum</value>
+  </data>
+  <data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 17</value>
+  </data>
+  <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
+    <value>Toujours générer les Parashot pour le samedi</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 17</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
+    <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 17</value>
@@ -367,6 +412,12 @@
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Afficher une alerte pour un grand intervalle</value>
   </data>
+  <data name="EditAskRegenerateIfIntervalGreater.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 17</value>
+  </data>
+  <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
+    <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
+  </data>
   <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 17</value>
   </data>
@@ -375,6 +426,12 @@
   </data>
   <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
+    <value>Action de blocage par défaut</value>
   </data>
   <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
@@ -395,13 +452,25 @@
     <value>Autoriser la suspension du rappeleur</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 13</value>
+    <value>193, 13</value>
   </data>
   <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
     <value>Délai avant le vérrouillage en secondes</value>
   </data>
+  <data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 17</value>
+  </data>
+  <data name="EditConfirmShutdown.Text" xml:space="preserve">
+    <value>Confirmer l'arrêt de l'ordinateur</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
+    <value>Afficher l'icône de vérouillage</value>
+  </data>
   <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
+    <value>208, 17</value>
   </data>
   <data name="EditAutoLockSession.Text" xml:space="preserve">
     <value>Vérouillage automatique de l'ordinateur</value>
@@ -430,6 +499,12 @@
   <data name="LabelShabatDay.Text" xml:space="preserve">
     <value>Jour</value>
   </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
+    <value>Montrer la description de la parashah de la semaine au début de la semaine</value>
+  </data>
   <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
   </data>
@@ -442,6 +517,12 @@
   <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
     <value>Rappeler toutes les minutes</value>
   </data>
+  <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 17</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
+    <value>Afficher la parashah de la semaine dans la boite de rappel</value>
+  </data>
   <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 17</value>
   </data>
@@ -449,7 +530,7 @@
     <value>Seulement lors de la lumière solaire</value>
   </data>
   <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>135, 13</value>
   </data>
   <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le Shabat personnel</value>
@@ -512,7 +593,7 @@
     <value>Fond évèn. à venir</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
+    <value>77, 13</value>
   </data>
   <data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
     <value>Thème sombre</value>
@@ -523,9 +604,6 @@
   <data name="LabelColorText.Text" xml:space="preserve">
     <value>Texte par défaut</value>
   </data>
-  <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 13</value>
-  </data>
   <data name="ActionMonthViewThemeLight.Text" xml:space="preserve">
     <value>Thème clair</value>
   </data>
@@ -534,9 +612,6 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Fond saison</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Fond Shabat</value>
@@ -595,12 +670,6 @@
   <data name="EditUseColors.Text" xml:space="preserve">
     <value>Utiliser les couleurs pour le calendrier et les boites de rappel</value>
   </data>
-  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
-    <value>Taille de la police</value>
-  </data>
   <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 17</value>
   </data>
@@ -612,6 +681,18 @@
   </data>
   <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
     <value>Afficher les levers et couchers du soleil dans une info-bulle</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
+    <value>Taille de la police</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+    <value>Interligne</value>
   </data>
   <data name="TabPageTextReport.Text" xml:space="preserve">
     <value>Rapport texte</value>
@@ -742,62 +823,7 @@
   <data name="LabelCalculatorPath.Text" xml:space="preserve">
     <value>Calculatrice système</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
-    <value>Utiliser une icône différente lors du Shabat ou d'un jour de célébration</value>
-  </data>
-  <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
-    <value>Toujours générer les Parashot pour le samedi</value>
-  </data>
-  <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
-    <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
-  </data>
-  <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
-    <value>Afficher la Parashah de la semaine dans la barre de titre</value>
-  </data>
-  <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
-    <value>Afficher aujourd'hui dans la barre de titre</value>
-  </data>
-  <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
-    <value>Afficher les nouveautés après une mise à jour</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
-    <value>Interligne</value>
-  </data>
-  <data name="EditReminderBoxShowFullDates.Text" xml:space="preserve">
-    <value>Afficher les dates complètes</value>
-  </data>
-  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
-    <value>Afficher la parashah de la semaine</value>
-  </data>
-  <data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
-    <value>Action de blocage par défaut</value>
-  </data>
-  <data name="EditConfirmShutdown.Text" xml:space="preserve">
-    <value>Confirmer l'arrêt de l'ordinateur</value>
-  </data>
-  <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
-    <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
-  </data>
-  <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
-    <value>Montrer la parashah de la semaine au début de la semaine</value>
-  </data>
-  <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
-    <value>Montrer la parashah de la semaine au démarrage</value>
-  </data>
-  <data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
-    <value>Afficher l'icône de vérouillage</value>
-  </data>
-  <data name="EditHideLinksNotInCurrentLanguage.Text" xml:space="preserve">
-    <value>Cacher les liens qui ne sont pas dans la langue actuelle</value>
-  </data>
-  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
-    <value>Cacher les boites de chargement et de traitement</value>
   </data>
 </root>

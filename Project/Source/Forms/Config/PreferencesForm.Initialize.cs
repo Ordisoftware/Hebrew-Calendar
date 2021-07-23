@@ -269,6 +269,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void CheckHotKeyCombination(Action action)
     {
+      if ( action == null && !EditGlobalHotKeyPopupMainFormEnabled.Checked ) return;
       var tempActiveControl = ActiveControl;
       var tempIsReady = IsReady;
       PanelHotKey.Enabled = false;
