@@ -723,6 +723,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !IsReady ) return;
       InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+      CheckHotKeyCombination(null);
     }
 
     private void SelectGlobalHotKeyPopupMainFormKey_SelectedIndexChanged(object sender, EventArgs e)
