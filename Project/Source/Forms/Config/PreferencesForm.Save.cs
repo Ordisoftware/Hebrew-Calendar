@@ -121,6 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
       Settings.ReminderShowLockoutIcon = EditReminderShowLockoutIcon.Checked;
       Settings.LoadingFormHidden = EditLoadingFormHidden.Checked;
+      Settings.NavigationWindowCloseOnShowMainForm = EditNavigationWindowCloseOnShowMainForm.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

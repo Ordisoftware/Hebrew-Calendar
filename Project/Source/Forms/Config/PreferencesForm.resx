@@ -2315,7 +2315,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 81</value>
+    <value>20, 121</value>
   </data>
   <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -2348,7 +2348,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+    <value>20, 60</value>
   </data>
   <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -2381,7 +2381,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseDefaultColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 127</value>
+    <value>20, 167</value>
   </data>
   <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -2414,7 +2414,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 20</value>
+    <value>80, 60</value>
   </data>
   <data name="LabelMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -2437,6 +2437,36 @@
   <data name="&gt;&gt;LabelMiddleColor.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
+    <value>Close on show main form</value>
+  </data>
+  <data name="&gt;&gt;EditNavigationWindowCloseOnShowMainForm.Name" xml:space="preserve">
+    <value>EditNavigationWindowCloseOnShowMainForm</value>
+  </data>
+  <data name="&gt;&gt;EditNavigationWindowCloseOnShowMainForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditNavigationWindowCloseOnShowMainForm.Parent" xml:space="preserve">
+    <value>TabPageNavigation</value>
+  </data>
+  <data name="&gt;&gt;EditNavigationWindowCloseOnShowMainForm.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="LabelBottomColor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2447,7 +2477,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 20</value>
+    <value>140, 60</value>
   </data>
   <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -2468,7 +2498,7 @@
     <value>TabPageNavigation</value>
   </data>
   <data name="&gt;&gt;LabelBottomColor.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ActionUseSystemColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2480,7 +2510,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUseSystemColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 104</value>
+    <value>20, 144</value>
   </data>
   <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -2501,13 +2531,13 @@
     <value>TabPageNavigation</value>
   </data>
   <data name="&gt;&gt;ActionUseSystemColors.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="EditNavigateMiddleColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateMiddleColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 39</value>
+    <value>83, 79</value>
   </data>
   <data name="EditNavigateMiddleColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2525,13 +2555,13 @@
     <value>TabPageNavigation</value>
   </data>
   <data name="&gt;&gt;EditNavigateMiddleColor.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="EditNavigateTopColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateTopColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
+    <value>23, 79</value>
   </data>
   <data name="EditNavigateTopColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2549,13 +2579,13 @@
     <value>TabPageNavigation</value>
   </data>
   <data name="&gt;&gt;EditNavigateTopColor.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="EditNavigateBottomColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditNavigateBottomColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 39</value>
+    <value>143, 79</value>
   </data>
   <data name="EditNavigateBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -2573,7 +2603,7 @@
     <value>TabPageNavigation</value>
   </data>
   <data name="&gt;&gt;EditNavigateBottomColor.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="TabPageNavigation.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>

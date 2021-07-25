@@ -2561,5 +2561,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["LoadingFormHidden"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NavigationWindowCloseOnShowMainForm {
+            get {
+                return ((bool)(this["NavigationWindowCloseOnShowMainForm"]));
+            }
+            set {
+                this["NavigationWindowCloseOnShowMainForm"] = value;
+            }
+        }
     }
 }
