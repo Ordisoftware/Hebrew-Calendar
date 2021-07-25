@@ -271,7 +271,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
-- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
@@ -280,6 +279,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add dark theme for month view.
 
 ## Changelog
+
+#### In progress - Version 8.3
+
+- Add option to close navigation window when clicked on show main form.
+>- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 
 #### 2021.07.23 - Version 8.2
 
