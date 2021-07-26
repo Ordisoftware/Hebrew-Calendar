@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -67,6 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( TrayIcon == null ) return;
           if ( CommonMenusControl.Instance == null ) return;
           CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
+          AboutBox.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
           TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
         });
         SystemManager.TryCatch(() =>
