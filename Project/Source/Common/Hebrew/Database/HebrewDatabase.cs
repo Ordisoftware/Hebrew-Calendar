@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew
 
     private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
     {
+      AutoLoadAllAtOpen = false;
       Open();
       CheckConnected();
       Connection.CheckIntegrity();
@@ -56,6 +57,8 @@ namespace Ordisoftware.Hebrew
 
     public override void LoadAll()
     {
+      string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
+      throw new NotImplementedException(message);
     }
 
     protected override void DoSaveAll()
@@ -69,7 +72,7 @@ namespace Ordisoftware.Hebrew
       base.UpgradeSchema();
       string table = "ProcessLocks";
       if ( Connection.CheckTable(table) )
-        if ( Globals.ConcurrentRunningProcesses.Count() == 0)
+        if ( Globals.ConcurrentRunningProcesses.Any() )
           Connection.DropTableIfExists(table);
     }
 

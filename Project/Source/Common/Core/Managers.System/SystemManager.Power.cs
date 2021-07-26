@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -69,7 +69,7 @@ namespace Ordisoftware.Core
         }
         catch
         {
-          return File.Exists(@"C:\hiberfil.sys");
+          return File.Exists(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "hiberfil.sys"));
         }
         return false;
       }

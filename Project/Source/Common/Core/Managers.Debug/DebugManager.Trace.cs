@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,9 +47,9 @@ namespace Ordisoftware.Core
     }
 
     static public readonly TraceForm TraceForm;
-    static public string IdWidth = "D6";
-    static public int MarginSize = 4;
-    static public int EnterCountSkip = 2;
+    static public readonly string IdWidth = "D6";
+    static public int MarginSize { get; set; } = 4;
+    static public int EnterCountSkip { get; set; } = 2;
 
     static private int StackSkip = 1;
     static private int EnterCount = 0;

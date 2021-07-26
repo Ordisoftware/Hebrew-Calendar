@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -441,7 +441,7 @@ namespace Ordisoftware.Core
       var points = control.GetGridPoints(margin);
       bool all = requiredPercent == 100;
       int found = 0;
-      int required = points.Count();
+      int required = points.Count;
       if ( !all ) required = required * requiredPercent / 100;
       foreach ( var point in points )
       {

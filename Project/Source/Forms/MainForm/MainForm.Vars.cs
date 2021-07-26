@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -103,7 +103,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatchManage(() =>
       {
         Text = Globals.AssemblyTitle;
-        TrayIcon.Icon = TrayIcons[!IsReminderPaused]?[Settings.TrayIconUseSpecialDayIcon && IsSpecialDay] ?? null;
+        TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
         Application.OpenForms.All().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();

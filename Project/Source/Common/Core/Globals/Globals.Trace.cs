@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.IO;
 using Serilog;
@@ -40,12 +40,12 @@ namespace Ordisoftware.Core
     static public int SinkFileSizeLimitBytes { get; set; }
       = 100 * 1024 * 1024;
 
-    static public string SinkFileEventTemplate
+    static public string SinkFileEventTemplate { get; set; }
       = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
         "P{ProcessId}:T{ThreadId} " +
         "{Message:lj}{NewLine}{Exception}";
 
-    static public int SinkFileEventTemplateSize
+    static public int SinkFileEventTemplateSize { get; set; }
       = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
     static public string TraceDirectoryName { get; set; }
@@ -54,7 +54,7 @@ namespace Ordisoftware.Core
     static public string TraceFileExtension { get; set; }
       = ".log";
 
-    static public string TraceSessionFileTemplate
+    static public string TraceSessionFileTemplate { get; set; }
       = "yyyy-MM-dd@HH-mm-ss";
 
     static public string SinkFileCode { get; set; }
@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
     static public string SinkFileFolderPath
       => Directory.CreateDirectory(Path.Combine(UserDataFolderPath, TraceDirectoryName)).FullName;
 
-    static public string SinkFileNoRollingPatternPathDateTag
+    static public string SinkFileNoRollingPatternPathDateTag { get; set; }
       = "%DATETIME%";
 
     static public string SinkFileNoRollingFilePatternPath
