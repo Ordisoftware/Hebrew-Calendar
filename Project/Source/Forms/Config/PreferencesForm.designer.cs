@@ -118,6 +118,7 @@
       this.LabelTopColor = new System.Windows.Forms.Label();
       this.ActionUseDefaultColors = new System.Windows.Forms.LinkLabel();
       this.LabelMiddleColor = new System.Windows.Forms.Label();
+      this.EditNavigationWindowCloseOnShowMainForm = new System.Windows.Forms.CheckBox();
       this.LabelBottomColor = new System.Windows.Forms.Label();
       this.ActionUseSystemColors = new System.Windows.Forms.LinkLabel();
       this.EditNavigateMiddleColor = new System.Windows.Forms.Panel();
@@ -1019,6 +1020,7 @@
       this.TabPageNavigation.Controls.Add(this.LabelTopColor);
       this.TabPageNavigation.Controls.Add(this.ActionUseDefaultColors);
       this.TabPageNavigation.Controls.Add(this.LabelMiddleColor);
+      this.TabPageNavigation.Controls.Add(this.EditNavigationWindowCloseOnShowMainForm);
       this.TabPageNavigation.Controls.Add(this.LabelBottomColor);
       this.TabPageNavigation.Controls.Add(this.ActionUseSystemColors);
       this.TabPageNavigation.Controls.Add(this.EditNavigateMiddleColor);
@@ -1056,6 +1058,12 @@
       // 
       resources.ApplyResources(this.LabelMiddleColor, "LabelMiddleColor");
       this.LabelMiddleColor.Name = "LabelMiddleColor";
+      // 
+      // EditNavigationWindowCloseOnShowMainForm
+      // 
+      resources.ApplyResources(this.EditNavigationWindowCloseOnShowMainForm, "EditNavigationWindowCloseOnShowMainForm");
+      this.EditNavigationWindowCloseOnShowMainForm.Name = "EditNavigationWindowCloseOnShowMainForm";
+      this.EditNavigationWindowCloseOnShowMainForm.UseVisualStyleBackColor = true;
       // 
       // LabelBottomColor
       // 
@@ -2889,5 +2897,6 @@
     private System.Windows.Forms.RadioButton SelectWeatherOnlineMSN;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     private System.Windows.Forms.CheckBox EditLoadingFormHidden;
+    private System.Windows.Forms.CheckBox EditNavigationWindowCloseOnShowMainForm;
   }
 }

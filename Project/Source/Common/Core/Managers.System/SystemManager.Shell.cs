@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.IO;
 using System.Text;
@@ -142,7 +142,7 @@ namespace Ordisoftware.Core
     /// </returns>
     static public string MakeWebLink(string link)
     {
-      return !link.StartsWith("http://") && !link.StartsWith("https://") ? link = "http://" + link : link;
+      return !link.StartsWith("http://") && !link.StartsWith("https://") ? "http://" + link : link;
     }
 
     /// <summary>
@@ -223,7 +223,7 @@ namespace Ordisoftware.Core
     {
       var result = DialogResult.None;
       var processes = Globals.ConcurrentRunningProcesses;
-      while ( processes.Count() != 0 && result != DialogResult.Cancel )
+      while ( processes.Any() && result != DialogResult.Cancel )
       {
         var list = processes.Select(p => p.ProcessName);
         var names = string.Join(Globals.NL, list.ToArray());
@@ -243,7 +243,7 @@ namespace Ordisoftware.Core
         Thread.Sleep(2000);
         processes = Globals.ConcurrentRunningProcesses;
       }
-      if ( processes.Count() != 0 || result == DialogResult.Cancel ) Terminate();
+      if ( processes.Any() || result == DialogResult.Cancel ) Terminate();
     }
 
   }

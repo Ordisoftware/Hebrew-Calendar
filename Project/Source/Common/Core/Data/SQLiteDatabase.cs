@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Collections.Generic;
 using SQLite;
@@ -26,6 +26,8 @@ namespace Ordisoftware.Core
   {
 
     static public SQLiteDatabase Instance { get; protected set; }
+
+    protected bool AutoLoadAllAtOpen = true;
 
     public string ConnectionString { get; private set; }
 
@@ -70,7 +72,7 @@ namespace Ordisoftware.Core
       if ( Initialized ) return;
       UpgradeSchema();
       CreateTables();
-      LoadAll();
+      if ( AutoLoadAllAtOpen ) LoadAll();
       CreateDataIfNotExist();
       Initialized = true;
     }

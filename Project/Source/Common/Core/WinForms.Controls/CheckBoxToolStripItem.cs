@@ -15,8 +15,7 @@ namespace Ordisoftware.Core
   public class CheckBoxToolStripItem : ToolStripControlHost
   {
 
-    private FlowLayoutPanel ControlPanel;
-    private CheckBox CheckBox = new CheckBox();
+    private readonly CheckBox CheckBox = new CheckBox();
 
     public bool Checked
     {
@@ -32,14 +31,14 @@ namespace Ordisoftware.Core
 
     public CheckBoxToolStripItem() : base(new FlowLayoutPanel())
     {
-      ControlPanel = (FlowLayoutPanel)Control;
-      ControlPanel.BackColor = Color.Transparent;
+      var panel = (FlowLayoutPanel)Control;
+      panel.BackColor = Color.Transparent;
       CheckBox.AutoSize = true;
       CheckBox.Text = string.Empty;
       AutoSize = false;
       Width = 20;
       Height = 20;
-      ControlPanel.Controls.Add(CheckBox);
+      panel.Controls.Add(CheckBox);
     }
 
   }

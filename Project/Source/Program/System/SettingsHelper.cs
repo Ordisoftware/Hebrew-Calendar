@@ -11,8 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-07 </edited>
 using System;
+using System.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -183,15 +184,17 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static internal string GetGPSText(this Settings settings)
     {
-      string result = "• " + settings.GPSCountry + Globals.NL +
-                      "• " + settings.GPSCity;
+      var builder = new StringBuilder();
+      builder.AppendLine("• " + settings.GPSCountry);
+      builder.Append("• " + settings.GPSCity);
       foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
         if ( item.Id == settings.TimeZone )
         {
-          result += Globals.NL2 + item.DisplayName;
+          builder.AppendLine();
+          builder.Append(item.DisplayName);
           break;
         }
-      return result;
+      return builder.ToString();
     }
 
     static internal string GetExportDirectory(this Settings settings)

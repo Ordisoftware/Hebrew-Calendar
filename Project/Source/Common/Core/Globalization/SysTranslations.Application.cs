@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -71,7 +71,7 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _ApplicationMustExit;
 
-    static public TranslationsDictionary ApplicationMustExitContactSupport
+    static public readonly TranslationsDictionary ApplicationMustExitContactSupport
       = new TranslationsDictionary
       {
         [Language.EN] = ApplicationMustExit[Language.EN] + Globals.NL2 + ContactSupport[Language.EN],

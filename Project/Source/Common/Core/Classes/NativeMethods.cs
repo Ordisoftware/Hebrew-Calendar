@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -48,11 +48,11 @@ namespace Ordisoftware.Core
       EsSystemRequired = 0x00000001
     }
 
-    static public EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous
-                                               | EXECUTIONSTATE.EsSystemRequired
-                                               | EXECUTIONSTATE.EsAwaymodeRequired;
+    public const EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous
+                                              | EXECUTIONSTATE.EsSystemRequired
+                                              | EXECUTIONSTATE.EsAwaymodeRequired;
 
-    static public EXECUTIONSTATE SleepAllow = EXECUTIONSTATE.EsContinuous;
+    public const EXECUTIONSTATE SleepAllow = EXECUTIONSTATE.EsContinuous;
 
     #endregion
 

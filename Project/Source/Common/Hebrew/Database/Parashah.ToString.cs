@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew
     public override string ToString()
       => ToString(false);
 
-    public string ToString(bool useHebrewFont = false)
+    public string ToString(bool useHebrewFont)
       => $"Sefer {Book} {VerseBegin} - {VerseEnd} " +
          $"Parashah n°{Number} " +
          $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +

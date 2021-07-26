@@ -826,4 +826,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
+    <value>Fermer à l'affichage de la fenêtre principale</value>
+  </data>
 </root>

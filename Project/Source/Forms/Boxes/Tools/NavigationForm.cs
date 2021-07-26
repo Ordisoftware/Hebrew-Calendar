@@ -259,7 +259,10 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ActiveControl = LabelDate;
       MainForm.Instance.MenuShowHide_Click(null, null);
-      this.Popup();
+      if ( Program.Settings.NavigationWindowCloseOnShowMainForm )
+        Close();
+      else
+        this.Popup();
     }
 
     private void ActionDatesDiff_Click(object sender, EventArgs e)

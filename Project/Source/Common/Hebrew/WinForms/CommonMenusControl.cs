@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -95,8 +95,7 @@ namespace Ordisoftware.Hebrew
     {
       ActionViewVersionNews.DropDownItems
                            .Cast<ToolStripItem>()
-                           .Where(item => ( (TranslationPair)item.Tag ).Key == Globals.AssemblyVersion)
-                           .SingleOrDefault()?
+                           .SingleOrDefault(item => ( (TranslationPair)item.Tag ).Key == Globals.AssemblyVersion)?
                            .PerformClick();
     }
 
