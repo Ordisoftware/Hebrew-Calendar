@@ -3257,7 +3257,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3287,7 +3287,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3311,7 +3311,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3338,7 +3338,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -6354,7 +6354,7 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
@@ -7388,7 +7388,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeatherOnlineUseDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 65</value>
+    <value>3, 85</value>
   </data>
   <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
@@ -7421,7 +7421,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionWeatherOnlineTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 90</value>
+    <value>0, 110</value>
   </data>
   <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -7477,40 +7477,37 @@
   <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.AutoSize" type="System.Boolean, mscorlib">
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 29</value>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.TabIndex" type="System.Int32, mscorlib">
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.Text" xml:space="preserve">
-    <value>MSN.com/weather</value>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Text" xml:space="preserve">
+    <value>MSN.com</value>
   </data>
-  <data name="SelectWeatherOnlineMSN.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineMicrosoftNetworkDotCom</value>
   </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMSN.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineMSN</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMSN.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMSN.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Parent" xml:space="preserve">
     <value>PanelWeatherOnline</value>
   </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMSN.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="SelectWeatherOnlineMeteoblueDotCom.AutoSize" type="System.Boolean, mscorlib">
@@ -7547,10 +7544,10 @@
     <value>5</value>
   </data>
   <data name="PanelWeatherOnline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 252</value>
+    <value>20, 260</value>
   </data>
   <data name="PanelWeatherOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 132</value>
+    <value>460, 128</value>
   </data>
   <data name="PanelWeatherOnline.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -8032,7 +8029,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8053,7 +8050,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8074,7 +8071,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8095,7 +8092,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8116,7 +8113,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=8.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
