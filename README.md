@@ -56,7 +56,6 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 **What's new in the latest version 8.3**
 
-- 
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
