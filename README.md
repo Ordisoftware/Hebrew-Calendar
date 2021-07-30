@@ -54,12 +54,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Download
 
-**What's new in the latest version 8.2**
+**What's new in the latest version 8.3**
 
-- Added weekly parashah reminder.
-- Improved parashot titles and menus.
-- Improved navigation window.
-- Improved reminder boxes.
+- 
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -285,6 +282,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add MSN weather online provider.
 - Add option to close navigation window when clicked on show main form.
 >- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Fix preferences and navigation window control tabs.
 
 #### 2021.07.23 - Version 8.2
 
