@@ -28,6 +28,15 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
+        ["8.3"] = new TranslationsDictionary
+        {
+          [Language.EN] = "." + Globals.NL +
+                          "Some fixes and improvements.",
+
+          [Language.FR] = "." + Globals.NL +
+                          "Quelques corrections et améliorations."
+        },
+
         ["8.2"] = new TranslationsDictionary
         {
           [Language.EN] = "Added weekly parashah reminder." + Globals.NL +
