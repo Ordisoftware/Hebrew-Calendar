@@ -217,7 +217,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !TrayIconCanBallon ) return;
       if ( !NavigationForm.Instance.Visible )
         if ( !Visible || !Settings.BalloonOnlyIfMainFormIsHidden )
-          if ( Cursor.Position == TrayIconMouse )
+          if ( TrayIconMouse.X != 0 && TrayIconMouse.Y != 0 && Cursor.Position == TrayIconMouse )
             ActionNavigate_Click(null, null);
     }
 

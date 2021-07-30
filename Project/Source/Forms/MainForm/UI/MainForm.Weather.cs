@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-07 </edited>
 using System;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 using Ordisoftware.Core;
 
@@ -34,6 +35,9 @@ namespace Ordisoftware.Hebrew.Calendar
         case WeatherProvider.WeatherDotCom:
           DoOnlineWeatherWeatherDotCom();
           break;
+        case WeatherProvider.MicrosoftNetworkDotCom:
+          DoMicrosoftNetworkDotCom();
+          break;
         default:
           throw new AdvancedNotImplementedException(Settings.WeatherOnlineProvider);
       }
@@ -41,13 +45,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public class WeatherProviders
     {
+      // Meteoblue
       public const string MeteoblueDotComQueryDay = "current";
       public const string MeteoblueDotComQueryWeek = "week";
       public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
       public const string MeteoblueDotComResult = "https://www.meteoblue.com/weather/%MODE%/%LOCATION%";
+      // Weather
       public const string WeatherDotComQueryDay = "today";
       public const string WeatherDotComQueryWeek = "tenday";
       public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
+      // MSN
+      public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
     }
 
     private void DoOnlineWeatherWeatherDotCom()
@@ -106,7 +114,15 @@ namespace Ordisoftware.Hebrew.Calendar
           DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
         }
       }
+    }
 
+    private void DoMicrosoftNetworkDotCom()
+    {
+      string cmd = WeatherProviders.MicrosoftNetworkDotComResult
+                                   .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
+                                   .Replace("%LAT%", Settings.GPSLatitude)
+                                   .Replace("%LON%", Settings.GPSLongitude);
+      SystemManager.RunShell(cmd);
     }
 
   }

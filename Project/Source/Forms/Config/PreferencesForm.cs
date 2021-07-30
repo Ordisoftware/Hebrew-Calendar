@@ -686,11 +686,19 @@ namespace Ordisoftware.Hebrew.Calendar
     private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
     {
       Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
+      EditWeatherOnlineUseDay.Enabled = true;
     }
 
     private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
     {
       Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
+      EditWeatherOnlineUseDay.Enabled = true;
+    }
+
+    private void SelectWeatherOnlineMicrosoftNetworkDotCom_CheckedChanged(object sender, EventArgs e)
+    {
+      Settings.WeatherOnlineProvider = WeatherProvider.MicrosoftNetworkDotCom;
+      EditWeatherOnlineUseDay.Enabled = false;
     }
 
     private void EditWeatherOnlineUseDay_CheckedChanged(object sender, EventArgs e)

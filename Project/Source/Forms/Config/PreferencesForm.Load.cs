@@ -147,6 +147,9 @@ namespace Ordisoftware.Hebrew.Calendar
         case WeatherProvider.WeatherDotCom:
           SelectWeatherOnlineWeatherDotCom.Select();
           break;
+        case WeatherProvider.MicrosoftNetworkDotCom:
+          SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
+          break;
         default:
           SelectWeatherOnlineMeteoblueDotCom.Select();
           break;

@@ -282,7 +282,7 @@
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
       this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
       this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
-      this.SelectWeatherOnlineMSN = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
@@ -2375,7 +2375,7 @@
       this.PanelWeatherOnline.Controls.Add(this.EditWeatherOnlineUseDay);
       this.PanelWeatherOnline.Controls.Add(this.ActionWeatherOnlineTest);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
-      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMSN);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMicrosoftNetworkDotCom);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
       resources.ApplyResources(this.PanelWeatherOnline, "PanelWeatherOnline");
       this.PanelWeatherOnline.Name = "PanelWeatherOnline";
@@ -2409,14 +2409,12 @@
       this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
       this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
       // 
-      // SelectWeatherOnlineMSN
+      // SelectWeatherOnlineMicrosoftNetworkDotCom
       // 
-      resources.ApplyResources(this.SelectWeatherOnlineMSN, "SelectWeatherOnlineMSN");
-      this.SelectWeatherOnlineMSN.Checked = true;
-      this.SelectWeatherOnlineMSN.Name = "SelectWeatherOnlineMSN";
-      this.SelectWeatherOnlineMSN.TabStop = true;
-      this.SelectWeatherOnlineMSN.UseVisualStyleBackColor = true;
-      this.SelectWeatherOnlineMSN.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
+      resources.ApplyResources(this.SelectWeatherOnlineMicrosoftNetworkDotCom, "SelectWeatherOnlineMicrosoftNetworkDotCom");
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.Name = "SelectWeatherOnlineMicrosoftNetworkDotCom";
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMicrosoftNetworkDotCom_CheckedChanged);
       // 
       // SelectWeatherOnlineMeteoblueDotCom
       // 
@@ -2894,7 +2892,7 @@
     private System.Windows.Forms.CheckBox EditReminderShowLockoutIcon;
     private System.Windows.Forms.ToolStripMenuItem nissan101ToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-    private System.Windows.Forms.RadioButton SelectWeatherOnlineMSN;
+    private System.Windows.Forms.RadioButton SelectWeatherOnlineMicrosoftNetworkDotCom;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     private System.Windows.Forms.CheckBox EditLoadingFormHidden;
     private System.Windows.Forms.CheckBox EditNavigationWindowCloseOnShowMainForm;
