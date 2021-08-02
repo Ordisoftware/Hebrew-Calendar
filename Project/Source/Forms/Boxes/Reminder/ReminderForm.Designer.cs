@@ -78,7 +78,7 @@
       resources.ApplyResources(this.PictureBox, "PictureBox");
       this.PictureBox.Name = "PictureBox";
       this.PictureBox.TabStop = false;
-      this.PictureBox.Click += new System.EventHandler(this.Form_Click);
+      this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
       // 
       // ActionClose
       // 

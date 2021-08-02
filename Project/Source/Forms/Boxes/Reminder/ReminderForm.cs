@@ -329,6 +329,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
+    private void PictureBox_Click(object sender, EventArgs e)
+    {
+      LabelDate_LinkClicked(sender, null);
+    }
+
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
@@ -368,7 +373,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuStripLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
     }
 
-    #endregion 
+    #endregion
 
   }
 
