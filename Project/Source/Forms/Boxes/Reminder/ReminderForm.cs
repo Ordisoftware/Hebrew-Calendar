@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -238,6 +238,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
       if ( Image != null ) PictureBox.Image = Image;
       InitializeParashahMenu();
+      this.InitDropDowns();
     }
 
     private void ReminderForm_Load(object sender, EventArgs e)
@@ -329,6 +330,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
+    private void PictureBox_Click(object sender, EventArgs e)
+    {
+      LabelDate_LinkClicked(sender, null);
+    }
+
     private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if ( LabelDate.Tag == null ) return;
@@ -368,7 +374,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuStripLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
     }
 
-    #endregion 
+    #endregion
 
   }
 

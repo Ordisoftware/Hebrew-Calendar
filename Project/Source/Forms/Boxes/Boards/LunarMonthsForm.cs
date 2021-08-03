@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                   .Replace(" ב", string.Empty);
         HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word));
       });
+      this.InitDropDowns();
     }
 
     public void Relocalize()

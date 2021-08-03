@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -65,6 +65,7 @@ namespace Ordisoftware.Hebrew
       Icon = Globals.MainForm.Icon;
       ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
       DataGridView.Visible = false;
+      this.InitDropDowns();
     }
 
     private void InitializeMenu()
@@ -460,7 +461,7 @@ namespace Ordisoftware.Hebrew
     static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
     {
       string title = HebrewTranslations.WeeklyParashah.GetLang();
-      var form = (MessageBoxEx)Application.OpenForms.All(f => f.Text.Contains(title)).FirstOrDefault();
+      var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
       if ( form != null )
       {
         form.Popup();
