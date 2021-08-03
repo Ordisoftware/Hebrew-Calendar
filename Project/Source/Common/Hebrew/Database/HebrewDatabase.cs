@@ -50,12 +50,9 @@ namespace Ordisoftware.Hebrew
       CheckConnected();
       Connection.CreateTable<Interlock>();
       Connection.CreateTable<Parashah>();
-      if ( Globals.IsDevExecutable ) // TODO remove when ready
-      {
-        Connection.CreateTable<TermHebrew>();
-        Connection.CreateTable<TermLettriq>();
-        Connection.CreateTable<TermAnalysis>();
-      }
+      Connection.CreateTable<TermHebrew>();
+      Connection.CreateTable<TermLettriq>();
+      Connection.CreateTable<TermAnalysis>();
     }
 
     public override void LoadAll()
