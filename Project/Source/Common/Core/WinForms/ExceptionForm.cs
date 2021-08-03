@@ -214,9 +214,11 @@ namespace Ordisoftware.Core
       body.AppendLine();
       body.AppendLine("## SYSTEM");
       body.AppendLine();
+      body.AppendLine("```");
       body.AppendLine(SystemManager.Platform);
-      body.AppendLine("Total Visible Memory: " + SystemManager.TotalVisibleMemory);
-      body.AppendLine("Free Physical Memory: " + SystemManager.PhysicalMemoryFree);
+      body.AppendLine("Total Memory: " + SystemManager.TotalVisibleMemory);
+      body.AppendLine("Free Memory: " + SystemManager.PhysicalMemoryFree);
+      body.AppendLine("```");
       body.AppendLine();
       body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
       body.AppendLine();
@@ -224,11 +226,12 @@ namespace Ordisoftware.Core
       body.AppendLine();
       body.AppendLine("#### _STACK_");
       body.AppendLine();
-      body.Append(ErrorInfo.StackText);
+      body.AppendLine("```");
+      body.AppendLine(ErrorInfo.StackText);
+      body.AppendLine("```");
       ExceptionInfo inner = ErrorInfo.InnerInfo;
       while ( inner != null )
       {
-        body.AppendLine();
         body.AppendLine();
         body.AppendLine("## INNER : " + inner.Instance.GetType().Name);
         body.AppendLine();
@@ -236,10 +239,11 @@ namespace Ordisoftware.Core
         body.AppendLine();
         body.AppendLine("#### _STACK_");
         body.AppendLine();
-        body.Append(inner.StackText);
+        body.AppendLine("```");
+        body.AppendLine(inner.StackText);
+        body.AppendLine("```");
         inner = inner.InnerInfo;
       }
-      body.AppendLine();
       body.AppendLine();
       body.AppendLine("## LOG");
       body.AppendLine();
@@ -249,7 +253,9 @@ namespace Ordisoftware.Core
                               .Select(l => ( l.StartsWith("# ") ? l.Remove(0, 2) : l ).TrimStart())
                               .Where(l => !l.StartsWith("--"))
                               .TakeLast(100);
-      body.Append(lines.AsMultiLine());
+      body.AppendLine("```");
+      body.AppendLine(lines.AsMultiLine());
+      body.AppendLine("```");
       return body;
     }
 
