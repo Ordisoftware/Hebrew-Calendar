@@ -267,6 +267,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
+- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
@@ -276,11 +277,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 8.3
+#### 2021.08.08 - Version 8.3
 
 - Add MSN weather online provider.
 - Add option to close navigation window when clicked on show main form.
->- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Improve GitHub issue text creation.
 - Fix preferences and navigation window control tabs.
 
