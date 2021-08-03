@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             else
             {
-              Application.OpenForms.All().LastOrDefault()?.Popup();
+              Application.OpenForms.GetAll().LastOrDefault()?.Popup();
               askToContinue = false;
             }
           else

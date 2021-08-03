@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -135,6 +135,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
       PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
       InitializeMenu();
+      this.InitDropDowns();
     }
 
     public void ShowPopup(bool bringToFront = false)

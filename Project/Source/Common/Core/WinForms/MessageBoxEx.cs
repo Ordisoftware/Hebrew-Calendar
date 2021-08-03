@@ -149,7 +149,7 @@ namespace Ordisoftware.Core
       if ( ForceTopMost )
         TopMost = true;
       else
-        TopMost = LoadingForm.Instance.Visible || Application.OpenForms.All().Any(f => f.Visible && f.TopMost);
+        TopMost = LoadingForm.Instance.Visible || Application.OpenForms.GetAll().Any(f => f.Visible && f.TopMost);
       if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
       this.Popup();
       this.ForceBringToFront();

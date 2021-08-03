@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -22,6 +22,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Text;
+using System.Reflection;
 
 namespace Ordisoftware.Core
 {
@@ -35,7 +36,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Apply localized resources.
     /// </summary>
-    static public void Apply(this ComponentResourceManager resources, Control.ControlCollection controls)
+    static public void ApplyResources(this ComponentResourceManager resources, Control.ControlCollection controls)
     {
       SystemManager.TryCatchManage(() =>
       {
@@ -43,7 +44,7 @@ namespace Ordisoftware.Core
         {
           if ( control is Label )
             resources.ApplyResources(control, control.Name);
-          Apply(resources, control.Controls);
+          resources.ApplyResources(control.Controls);
         }
       });
     }
@@ -53,7 +54,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public Form GetActiveForm()
     {
-      return Form.ActiveForm ?? Application.OpenForms.All().LastOrDefault() ?? Globals.MainForm;
+      return Form.ActiveForm ?? Application.OpenForms.GetAll().LastOrDefault() ?? Globals.MainForm;
     }
 
     /// <summary>
@@ -62,15 +63,15 @@ namespace Ordisoftware.Core
     static public void CloseAll(Func<Form, bool> keep = null)
     {
       var list = keep == null
-                 ? Application.OpenForms.All(form => form.Visible).Reverse().ToList()
-                 : Application.OpenForms.All(form => form.Visible && !keep(form)).Reverse().ToList();
+                 ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
+                 : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
       foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
     }
 
     /// <summary>
-    /// Get all apened forms.
+    /// Get all opened forms.
     /// </summary>
-    static public IEnumerable<Form> All(this FormCollection forms, Func<Form, bool> select = null)
+    static public IEnumerable<Form> GetAll(this FormCollection forms, Func<Form, bool> select = null)
     {
       if ( select == null )
         foreach ( Form form in forms )
@@ -84,12 +85,25 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Get all controls of a control.
     /// </summary>
-    static public IEnumerable<T> GetAllControls<T>(this Control control)
+    static public IEnumerable<T> GetAll<T>(this Control control)
     {
       var controls = control.Controls.OfType<T>();
       return control.Controls.Cast<Control>()
-                             .SelectMany(c => c.GetAllControls<T>())
+                             .SelectMany(c => c.GetAll<T>())
                              .Concat(controls);
+    }
+
+    /// <summary>
+    /// Get all components of a form.
+    /// </summary>
+    static public IEnumerable<Component> GetComponents(this Form form)
+    {
+      var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+      return from field in form.GetType().GetFields(flags)
+             where typeof(Component).IsAssignableFrom(field.FieldType)
+             let component = (Component)field.GetValue(form)
+             where component != null
+             select component;
     }
 
     /// <summary>
@@ -263,6 +277,18 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Ensure drop down menu items are displayed on the same screen.
+    /// </summary>
+    static public void InitDropDowns(this Form form)
+    {
+      var list = form.GetComponents().ToList();
+      foreach ( ToolStrip instance in list.OfType<ToolStrip>() )
+        instance.SetDropDownOpening();
+      foreach ( ContextMenuStrip instance in list.OfType<ContextMenuStrip>() )
+        instance.SetDropDownOpening();
+    }
+
+    /// <summary>
+    /// Ensure drop down menu items are displayed on the same screen.
     /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     /// </summary>
     static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
@@ -270,8 +296,25 @@ namespace Ordisoftware.Core
       if ( action == null ) action = MenuItemDropDownOpening;
       var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>().ToList();
       var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+      var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
       items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
       items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+      items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+    }
+
+    /// <summary>
+    /// Ensure drop down menu items are displayed on the same screen.
+    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
+    /// </summary>
+    static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
+    {
+      if ( action == null ) action = MenuItemDropDownOpening;
+      var items1 = menu.Items.OfType<ToolStripMenuItem>().ToList();
+      var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+      var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+      items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+      items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
+      items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
     }
 
     /// <summary>
@@ -437,7 +480,7 @@ namespace Ordisoftware.Core
     static public bool IsVisibleOnTop(this Control control, int requiredPercent = 100, int margin = 15)
     {
       if ( !control.Visible ) return false;
-      var controls = control.GetAllControls<Control>().Select(c => c.Handle).ToList();
+      var controls = control.GetAll<Control>().Select(c => c.Handle).ToList();
       var points = control.GetGridPoints(margin);
       bool all = requiredPercent == 100;
       int found = 0;

@@ -120,7 +120,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Cursor = Cursors.WaitCursor;
-        ToolStrip.SetDropDownOpening();
+        this.InitDropDowns();
         UpdateTextCalendar();
         CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
@@ -216,7 +216,7 @@ namespace Ordisoftware.Hebrew.Calendar
       this.SyncUI(() =>
       {
         MenuShowHide_Click(null, null);
-        var forms = Application.OpenForms.All().Where(f => f.Visible);
+        var forms = Application.OpenForms.GetAll().Where(f => f.Visible);
         forms.ToList().ForEach(f => f.ForceBringToFront());
         var form = forms.LastOrDefault();
         if ( form != null && form.Visible )
