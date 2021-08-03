@@ -281,6 +281,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add MSN weather online provider.
 - Add option to close navigation window when clicked on show main form.
 >- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Improve GitHub issue text creation.
 - Fix preferences and navigation window control tabs.
 
 #### 2021.07.23 - Version 8.2
