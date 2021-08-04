@@ -4004,7 +4004,7 @@
     <value>257, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
     <value>Show weekly parashah description on new week</value>
@@ -4140,7 +4140,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindShabatEveryMinutes</value>
@@ -4170,7 +4170,7 @@
     <value>228, 17</value>
   </data>
   <data name="EditReminderShabatShowParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
     <value>Show weekly parashah in the reminder box</value>
@@ -4287,7 +4287,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditRemindShabatHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>EditRemindShabatHoursBefore</value>

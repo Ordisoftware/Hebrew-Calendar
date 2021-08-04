@@ -277,7 +277,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.08.08 - Version 8.3
+#### 2021.08.05 - Version 8.3
 
 - Add MSN weather online provider.
 - Add option to close navigation window when clicked on show main form.
