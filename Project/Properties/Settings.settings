@@ -601,9 +601,6 @@
     <Setting Name="UseSimhatTorahOutside" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="WeekParashahIsOnSaturday" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="MainFormTitleBarShowWeeklyParashah" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>

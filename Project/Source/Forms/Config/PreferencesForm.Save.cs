@@ -80,7 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.TextBackground = EditTextReportBackColor.BackColor;
       Settings.TextColor = EditTextReportTextColor.BackColor;
       Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
-      Settings.WeekParashahIsOnSaturday = EditWeekParashahIsOnSaturday.Checked; // TODO remove
       Settings.UseSimhatTorahOutside = EditUseSimhatTorahOutside.Checked;
       Settings.UseColors = EditUseColors.Checked;
       Settings.MoonDayTextFormat = EditMoonDayTextFormat.Text;

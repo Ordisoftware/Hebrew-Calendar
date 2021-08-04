@@ -265,7 +265,7 @@ namespace Ordisoftware.Hebrew.Calendar
       int month = 0;
       int delta = 0;
       int indexParashah = -1;
-      var shabatDay = Settings.WeekParashahIsOnSaturday ? DayOfWeek.Saturday : (DayOfWeek)Settings.ShabatDay;
+      var shabatDay = (DayOfWeek)Settings.ShabatDay;
       bool shabatMutex = false;
       int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
       LunisolarDay dayRemap1 = null;

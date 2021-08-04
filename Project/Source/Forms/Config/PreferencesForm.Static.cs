@@ -140,7 +140,6 @@ namespace Ordisoftware.Hebrew.Calendar
                  || form.OldLongitude != Settings.GPSLongitude
                  || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
                  || form.OldTimeZone != Settings.TimeZone
-                 || form.OldSaturdayParashot != Settings.WeekParashahIsOnSaturday
                  || form.OldUseSimhat != Settings.UseSimhatTorahOutside
                  || form.OldShowParashah != Settings.CalendarShowParashah
                  || lang != Settings.LanguageSelected;

@@ -20,6 +20,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
+using System.IO;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -78,7 +79,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
-        Settings.WeekParashahIsOnSaturday = false; // TODO remove all
+        // Check reset
         if ( force
           || Settings.UpgradeResetRequiredV3_0
           || Settings.UpgradeResetRequiredV3_6
@@ -96,10 +97,33 @@ namespace Ordisoftware.Hebrew.Calendar
           Settings.SetFirstAndUpgradeFlagsOff();
           Settings.FirstLaunch = true;
         }
+        // Check language
         if ( Settings.UpgradeResetRequiredV5_10 )
           Settings.CurrentView = ViewMode.Month;
         if ( Settings.LanguageSelected == Language.None )
           Settings.LanguageSelected = Languages.Current;
+        // Check applications
+        string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
+        string pathWordsFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Words", "Bin");
+        string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
+        string pathWordsOld = Path.Combine(pathWordsFolder, "Ordisoftware.HebrewWords.exe");
+        string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
+        string pathWordsDefault = (string)Settings.Properties["HebrewWordsExe"].DefaultValue;
+        // Check Letters
+        if ( !File.Exists(Settings.HebrewLettersExe) )
+          if ( File.Exists(pathLettersOld) )
+            Settings.HebrewLettersExe = pathLettersOld;
+          else
+          if ( File.Exists(pathLettersDefault) )
+            Settings.HebrewLettersExe = pathLettersDefault;
+        // Check Words
+        if ( !File.Exists(Settings.HebrewWordsExe) )
+          if ( File.Exists(pathWordsOld) )
+            Settings.HebrewWordsExe = pathWordsOld;
+          else
+          if ( File.Exists(pathWordsDefault) )
+            Settings.HebrewWordsExe = pathWordsDefault;
+        // Save settings
         SystemManager.TryCatch(Settings.Save);
       }
       catch ( Exception ex )
