@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -121,15 +121,32 @@ namespace Ordisoftware.Core
           CPUProcessLoadInitMutex = true;
           new Task(() =>
           {
-            PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", Globals.ApplicationExeFileName);
+            var process = Process.GetCurrentProcess();
+            var name = string.Empty;
+            foreach ( var instance in new PerformanceCounterCategory("Process").GetInstanceNames() )
+              if ( instance.StartsWith(process.ProcessName) )
+                using ( var processId = new PerformanceCounter("Process", "ID Process", instance, true) )
+                  if ( process.Id == (int)processId.RawValue )
+                  {
+                    name = instance;
+                    break;
+                  }
+            PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", name, true);
             CPUProcessLoadInitMutex = false;
           }).Start();
         }
         if ( CPUProcessLoadInitMutex ) return "(init)";
-        int value;
-        do
-          value = (int)PerformanceCounterCPUProcessLoad.NextValue();
-        while ( value > 100 );
+        int value = 0;
+        try
+        {
+          do
+            value = (int)PerformanceCounterCPUProcessLoad.NextValue();
+          while ( value > 100 );
+        }
+        catch
+        {
+          PerformanceCounterCPUProcessLoad = null;
+        }
         if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
         _CPUprocessLoadCount++;
         _CPUProcessLoadAverage = _CPUProcessLoadAverage + (ulong)value;
