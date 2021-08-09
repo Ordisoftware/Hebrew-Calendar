@@ -282,6 +282,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.08.05 - Version 8.3
 
+- Fix shabat reminder box thet open the wrong (next book) parashah for reading online.
+
+#### 2021.08.05 - Version 8.3
+
 - Add MSN weather online provider.
 - Add option to close navigation window when clicked on show main form.
 - Fix preferences and navigation window control tabs.
