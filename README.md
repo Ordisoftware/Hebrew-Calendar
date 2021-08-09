@@ -280,9 +280,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Add lunar months board with meanings, lettriqs, study tools, edition and export.
 
-#### 2021.08.05 - Version 8.3
+#### 2021.08.08 - Version 8.4
 
-- Fix shabat reminder box thet open the wrong (next book) parashah for reading online.
+- Fix main form and shabat reminder box thet open the wrong (next book) parashah for reading online.
 
 #### 2021.08.05 - Version 8.3
 
