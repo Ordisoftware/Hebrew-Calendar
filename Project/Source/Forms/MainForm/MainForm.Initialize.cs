@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -396,7 +396,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var menuitem = (ToolStripMenuItem)sender;
         var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
