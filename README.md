@@ -54,9 +54,9 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 ## Download
 
-**What's new in the latest version 8.3**
+**What's new in the latest version 8.4**
 
-- Some fixes and improvements.
+- Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -267,8 +267,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Future improvements
 
-- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -276,6 +274,15 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add dark theme for month view.
 
 ## Changelog
+
+#### In progress
+
+- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add lunar months board with meanings, lettriqs, study tools, edition and export.
+
+#### 2021.08.08 - Version 8.4
+
+- Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.
 
 #### 2021.08.05 - Version 8.3
 

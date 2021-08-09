@@ -288,7 +288,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var menuitem = (ToolStripMenuItem)sender;
         var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
-        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
     }

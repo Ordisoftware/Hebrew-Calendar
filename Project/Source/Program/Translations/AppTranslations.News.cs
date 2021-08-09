@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -27,6 +27,15 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
+
+        ["8.4"] = new TranslationsDictionary
+        {
+          [Language.EN] = "." + Globals.NL +
+                          "Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.",
+
+          [Language.FR] = "." + Globals.NL +
+                          "Correction du formulaire principal et de la boîte de rappel du shabat qui ouvrent la mauvaise parashah (livre suivant) pour la lecture en ligne."
+        },
 
         ["8.3"] = new TranslationsDictionary
         {
