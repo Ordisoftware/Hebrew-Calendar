@@ -46,6 +46,10 @@ _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
 [![Note](https://www.ordisoftware.com/wp-content/theming/softpedia4.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
 
+[Anxz.com](https://www.anxz.com/down/141941.html)
+
+_"Powerful comprehensive Hebrew calendar software that any user can easily use"_
+
 ## Requirements
 
 - Windows 7 SP1 x32/x64 or higher
