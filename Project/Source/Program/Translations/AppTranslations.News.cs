@@ -28,22 +28,25 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
+        ["8.5"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Fix navigation window that open the wrong (next book) parashah for reading online.",
+
+          [Language.FR] = "Correction du la fenêtre de navigation qui ouvre la mauvaise parashah (livre suivant) pour la lecture en ligne."
+        },
+
         ["8.4"] = new TranslationsDictionary
         {
-          [Language.EN] = "." + Globals.NL +
-                          "Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.",
+          [Language.EN] = "Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.",
 
-          [Language.FR] = "." + Globals.NL +
-                          "Correction du formulaire principal et de la boîte de rappel du shabat qui ouvrent la mauvaise parashah (livre suivant) pour la lecture en ligne."
+          [Language.FR] = "Correction du formulaire principal et de la boîte de rappel du shabat qui ouvrent la mauvaise parashah (livre suivant) pour la lecture en ligne."
         },
 
         ["8.3"] = new TranslationsDictionary
         {
-          [Language.EN] = "." + Globals.NL +
-                          "Some fixes and improvements.",
+          [Language.EN] = "Some fixes and improvements.",
 
-          [Language.FR] = "." + Globals.NL +
-                          "Quelques corrections et améliorations."
+          [Language.FR] = "Quelques corrections et améliorations."
         },
 
         ["8.2"] = new TranslationsDictionary
