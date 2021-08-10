@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -223,30 +223,39 @@ namespace Ordisoftware.Core
     {
       Exception ex = null;
       bool finished = false;
-      LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
-      SystemManager.CheckServerCertificate(fileURL);
-      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
-      client.DownloadProgressChanged += progress;
-      client.DownloadFileCompleted += completed;
-      client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
+      bool hidden = LoadingForm.Instance.Hidden;
+      try
+      {
+        LoadingForm.Instance.Hidden = false;
+        LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
+        SystemManager.CheckServerCertificate(fileURL);
+        string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
+        client.DownloadProgressChanged += progress;
+        client.DownloadFileCompleted += completed;
+        client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
 #pragma warning disable S2589 // Boolean expressions should not be gratuitous
-      while ( !finished )
-      {
-        Thread.Sleep(100);
-        Application.DoEvents();
-      }
+        while ( !finished )
+        {
+          Thread.Sleep(100);
+          Application.DoEvents();
+        }
 #pragma warning restore S2589 // Boolean expressions should not be gratuitous
-      if ( ex != null ) throw ex;
-      if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
-        throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
-      if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
-        throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
-      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
-      {
-        Globals.IsExiting = true;
-        return true;
+        if ( ex != null ) throw ex;
+        if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
+          throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
+        if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
+          throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
+        if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
+        {
+          Globals.IsExiting = true;
+          return true;
+        }
+        return false;
       }
-      return false;
+      finally
+      {
+        LoadingForm.Instance.Hidden = hidden;
+      }
       // Do progress
       void progress(object sender, DownloadProgressChangedEventArgs e)
       {
