@@ -207,7 +207,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var menuitem = (ToolStripMenuItem)sender;
         var parashah = (Parashah)LabelParashahValue.Tag;
-        string verse = $"{(int)parashah.Book + 1}.{parashah.VerseBegin}";
+        string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
     }
