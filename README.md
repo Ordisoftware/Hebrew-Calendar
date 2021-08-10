@@ -40,15 +40,15 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Review
 
-[Softpedia.com](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
+- [Softpedia.com](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
 
-_"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
+  _"Efficient and intuitive calendar and reminder app for the Hebrew Torah"_
 
-[![Note](https://www.ordisoftware.com/wp-content/theming/softpedia4.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
+  [![Note](https://www.ordisoftware.com/wp-content/theming/softpedia4.5-white.png)](https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml)
 
-[Anxz.com](https://www.anxz.com/down/141941.html)
+- [Anxz.com](https://www.anxz.com/down/141941.html)
 
-_"Powerful comprehensive Hebrew calendar software that any user can easily use"_
+  _"Powerful comprehensive Hebrew calendar software that any user can easily use"_
 
 ## Requirements
 
