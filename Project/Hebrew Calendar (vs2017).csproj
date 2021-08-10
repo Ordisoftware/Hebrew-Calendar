@@ -372,7 +372,7 @@
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Settings.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Database.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Application.cs" />
-    <Compile Include="Source\Common\Core\Classes\VolumeMixer.cs" />
+    <Compile Include="Source\Common\Core\Classes\MediaMixer.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Platform.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.SSL.cs" />
     <Compile Include="Source\Common\Core\Classes\ShellIcons.cs" />
