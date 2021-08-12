@@ -643,5 +643,8 @@
     <Setting Name="NavigationWindowCloseOnShowMainForm" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ParashahCaptionWithBookAndRef" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

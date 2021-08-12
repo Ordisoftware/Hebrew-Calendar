@@ -116,7 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
-              form.LabelParashahValue.Text = rowParashah.GetParashahText(true);
+              form.LabelParashahValue.Text = rowParashah.GetParashahText(Program.Settings.ParashahCaptionWithBookAndRef);
               form.LabelParashahValue.Tag = row;
             }
           }

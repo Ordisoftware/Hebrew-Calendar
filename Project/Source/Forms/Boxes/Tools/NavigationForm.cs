@@ -97,7 +97,7 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
-            LabelParashahValue.Text = rowParashah.GetParashahText(true);
+            LabelParashahValue.Text = rowParashah.GetParashahText(Program.Settings.ParashahCaptionWithBookAndRef);
             LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -121,6 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ReminderShowLockoutIcon = EditReminderShowLockoutIcon.Checked;
       Settings.LoadingFormHidden = EditLoadingFormHidden.Checked;
       Settings.NavigationWindowCloseOnShowMainForm = EditNavigationWindowCloseOnShowMainForm.Checked;
+      Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat

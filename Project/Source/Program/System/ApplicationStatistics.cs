@@ -88,12 +88,13 @@ namespace Ordisoftware.Hebrew.Calendar
     public string DBRecordsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : LunisolarDays.Count.ToString();
+         : LunisolarDays?.Count.ToString() ?? SysTranslations.NullSlot.GetLang();
 
     public string DBEventsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : LunisolarDays.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString();
+         : LunisolarDays?.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString() 
+           ?? SysTranslations.NullSlot.GetLang();
 
     public string MonthViewEventsCount
       => Globals.IsGenerating
@@ -159,7 +160,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           UpdateDDParashotMemorySizeRequired = false;
           _DDParashotMemorySize = HebrewDatabase.Instance.Parashot?.SizeOf().FormatBytesSize()
-                               ?? SysTranslations.DatabaseTableClosed.GetLang();
+                                  ?? SysTranslations.DatabaseTableClosed.GetLang();
         }
         return _DDParashotMemorySize;
       }
