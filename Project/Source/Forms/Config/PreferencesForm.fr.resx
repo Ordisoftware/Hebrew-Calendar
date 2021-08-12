@@ -829,4 +829,7 @@
   <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
     <value>Fermer à l'affichage de la fenêtre principale</value>
   </data>
+  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
+    <value>Afficher la parashah de la semaine avec le nom du livre et la référence de verset</value>
+  </data>
 </root>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -21,8 +21,12 @@ namespace Ordisoftware.Hebrew
   public partial class Parashah
   {
 
-    public string ToStringLinked()
-      => Name + ( GetLinked() != null ? " - " + GetLinked().Name : "" );
+    public string ToStringLinked(bool withBookAndref)
+    {
+      string result = Name + ( GetLinked() != null ? " - " + GetLinked().Name : "" );
+      if ( withBookAndref ) result += $" ({Book} {VerseBegin})";
+      return result;
+    }
 
     public override string ToString()
       => ToString(false);

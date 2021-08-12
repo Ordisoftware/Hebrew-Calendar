@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -340,13 +340,13 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
-        UpdateTitles(true);
         TimerReminder.Enabled = true;
         EnableReminderTimer(calltimer);
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);
         else
           GoToDate(dateOld.Value);
+        UpdateTitles(true);
       }
     }
 

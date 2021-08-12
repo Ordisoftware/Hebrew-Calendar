@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -20,15 +20,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
   partial class ApplicationDatabase : SQLiteDatabase
   {
-
-    public string WeeklyParashahText
-    {
-      get
-      {
-        var parashah = GetWeeklyParashah();
-        return ( parashah != null ? parashah.ToStringLinked() : SysTranslations.UndefinedSlot.GetLang() ).ToUpper();
-      }
-    }
 
     public Parashah GetWeeklyParashah()
     {
@@ -58,15 +49,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private const int SearchParashahInterval = 14;
 
-    public string GetParashahText(bool withBook)
+    public string GetParashahText(bool withBookAndRefIfRequired)
     {
       if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
       var parashah = ParashotFactory.Get(ParashahID);
-      string result = parashah.Name;
-      if ( !LinkedParashahID.IsNullOrEmpty() )
-        result += " - " + ParashotFactory.Get(LinkedParashahID).Name;
-      if ( withBook ) result += $" ({parashah.Book})";
-      return result;
+      return parashah != null
+             ? parashah.ToStringLinked(withBookAndRefIfRequired)
+             : SysTranslations.UndefinedSlot.GetLang();
     }
 
     public LunisolarDay GetParashahReadingDay()
