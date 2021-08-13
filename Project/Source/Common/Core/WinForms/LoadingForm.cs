@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Windows.Forms;
 
@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
 
     public void Relocalize()
     {
-      LabelTitle.Text = Globals.AssemblyTitle;
+      LabelTitle.Text = Globals.AssemblyTitle; // TODO remove ?
     }
 
     public void Initialize(string text,
@@ -64,6 +64,7 @@ namespace Ordisoftware.Core
                            bool canCancel = false,
                            bool topMost = false)
     {
+      LabelTitle.Text = Globals.AssemblyTitle;
       TopMost = topMost;
       CancelRequired = false;
       ActionCancel.Visible = canCancel;
