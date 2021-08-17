@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +27,14 @@ namespace Ordisoftware.Hebrew
     [PrimaryKey]
     public string ID { get; set; }
     public string TermID { get; set; }
+    public string Transcription { get; set; }
+    public string Dictionary { get; set; }
     public string Sentence { get; set; }
     public List<TermAnalysis> Analyzes
-      => HebrewDatabase.Instance.TermAnalyzes
-                                .Where(item => item.LettriqID == ID)
-                                .OrderBy(m => m.Position).ToList();
+      => HebrewDatabase.Instance
+                       .TermAnalyzes
+                       .Where(item => item.LettriqID == ID)
+                       .OrderBy(meaning => meaning.Position).ToList();
   }
 
 }
