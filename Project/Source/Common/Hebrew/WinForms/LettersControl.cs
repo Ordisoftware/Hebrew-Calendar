@@ -62,6 +62,13 @@ namespace Ordisoftware.Hebrew
       remove { TextBox.TextChanged -= value; }
     }
 
+    [DefaultValue("")]
+    public string InputText
+    {
+      get => TextBox.Text;
+      set => TextBox.Text = value;
+    }
+
     /// <summary>
     /// Indicate Input MaxLength property.
     /// </summary>
