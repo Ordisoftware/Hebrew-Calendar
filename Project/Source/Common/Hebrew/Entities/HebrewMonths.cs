@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate phonetic lunar months names.
     /// </summary>
-    static public readonly string[] Transliterations =
+    static public readonly string[] Transcriptions =
     {
       string.Empty,
       "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
