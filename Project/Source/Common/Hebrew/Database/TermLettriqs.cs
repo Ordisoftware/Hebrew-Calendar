@@ -30,6 +30,7 @@ namespace Ordisoftware.Hebrew
     public string Transcription { get; set; }
     public string Dictionary { get; set; }
     public string Sentence { get; set; }
+    public string Memo { get; set; }
     public List<TermAnalysis> Analyzes
       => HebrewDatabase.Instance
                        .TermAnalyzes
