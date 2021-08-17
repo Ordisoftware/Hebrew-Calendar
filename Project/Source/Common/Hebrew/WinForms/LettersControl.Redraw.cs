@@ -36,27 +36,28 @@ namespace Ordisoftware.Hebrew
       {
         // TODO calculate buttons and labels size from fonts size at startup and future setting changed
         PanelLetters.Controls.Clear();
+        TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
         int countLetters = HebrewAlphabet.Codes.Length;
         int countControls = countLetters;
         if ( _ShowValues ) countControls += countLetters;
         if ( _ShowKeys ) countControls += countLetters;
         var controls = new Control[countControls];
-        int lettersPerLine = 12;
-        int lineLetterCount = 1;
-        int width = 500;
-        int deltaY = 45;
-        int deltaX = -deltaY;
-        int deltaXabs = Math.Abs(deltaX);
-        int deltaValue2 = 2;
-        int deltaValue5 = 5;
-        int deltaBetweenLines = 15;
-        int posX = width + deltaX + deltaValue2;
-        int posY = deltaValue5;
         var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
         var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
         var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
-        var sizeLabelValue = new Size(45, 8);
-        var sizeLabelKey = new Size(45, 13);
+        int lettersPerLine = 11;
+        int lineLetterCount = 1;
+        int width = PanelLetters.Width - 10;
+        int deltaY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
+        int deltaX = -(int)Math.Round(( width + 10 - ( deltaY / 2.0 ) ) / 11, MidpointRounding.AwayFromZero);
+        int deltaXabs = -deltaX;
+        var sizeLabelValue = new Size(deltaY, 8);
+        var sizeLabelKey = new Size(deltaY, 13);
+        int deltaValue2 = 2;
+        int deltaValue5 = 5;
+        int deltaBetweenLines = 15;
+        int posX = width + deltaX + deltaValue2 - _MarginX;
+        int posY = _MarginY + deltaValue5;
         int deltaValues = _ShowValues ? sizeLabelValue.Height : -deltaValue2;
         int deltaKeys = _ShowKeys ? sizeLabelKey.Height : -deltaValue2;
         int deltaValuesAndKeys = _ShowValues && _ShowKeys ? deltaValues + deltaValue5 : deltaValues;
@@ -71,7 +72,7 @@ namespace Ordisoftware.Hebrew
           // Button letter
           buttonLetter = new Button();
           buttonLetter.Location = new Point(posX, posY);
-          buttonLetter.Size = new Size(deltaXabs, deltaY);
+          buttonLetter.Size = new Size(deltaY, deltaY);
           buttonLetter.TabStop = false;
           buttonLetter.FlatStyle = FlatStyle.Flat;
           buttonLetter.FlatAppearance.BorderSize = 0;
@@ -111,12 +112,15 @@ namespace Ordisoftware.Hebrew
           }
           // Loop
           lineLetterCount++;
-          if ( lineLetterCount != lettersPerLine )
+          if ( lineLetterCount <= lettersPerLine )
+          {
             posX += deltaX;
+          }
           else
           {
-            posX = width + deltaX;
+            posX = width + deltaX - _MarginX;
             posY = posY + deltaLine;
+            lineLetterCount = 0;
           }
         }
         Height = posY + deltaBetweenLines + deltaY + deltaValues + deltaKeys + deltaValue5

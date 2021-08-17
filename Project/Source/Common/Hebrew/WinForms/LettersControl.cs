@@ -153,14 +153,15 @@ namespace Ordisoftware.Hebrew
     [DefaultValue(DefaultFontSizeInput)]
     public float FontSizeInput
     {
-      get => TextBox.Font.Size;
+      get => _FontSizeInput;
       set
       {
-        if ( TextBox.Font.Size == value ) return;
-        TextBox.Font = new Font(TextBox.Font.FontFamily, value, TextBox.Font.Style);
+        if ( _FontSizeInput == value ) return;
+        _FontSizeInput = value;
         Redraw();
       }
     }
+    private float _FontSizeInput = DefaultFontSizeInput;
 
     /// <summary>
     /// Indicate if letters values must be shown.
@@ -194,6 +195,32 @@ namespace Ordisoftware.Hebrew
     }
     private bool _ShowKeys = true;
 
+    [DefaultValue(5)]
+    public int MarginX
+    {
+      get => _MarginX;
+      set
+      {
+        if ( _MarginX == value ) return;
+        _MarginX = value;
+        Redraw();
+      }
+    }
+    private int _MarginX = 5;
+
+    [DefaultValue(5)]
+    public int MarginY
+    {
+      get => _MarginY;
+      set
+      {
+        if ( _MarginY == value ) return;
+        _MarginY = value;
+        Redraw();
+      }
+    }
+    private int _MarginY = 5;
+
     /// <summary>
     /// Indicate if an input key is processed.
     /// </summary>
@@ -206,7 +233,6 @@ namespace Ordisoftware.Hebrew
     {
       InitializeComponent();
       TextBox.MaxLength = DefaultInputMaxLength;
-      TextBox.Font = new Font(TextBox.Font.FontFamily, DefaultFontSizeInput, TextBox.Font.Style);
       TextBox.CaretAfterPaste = CaretPositionAfterPaste.Beginning;
       TextBox.BackColor = Color.FromKnownColor(DefaultInputBackColor);
       PanelLetters.BackColor = Color.FromKnownColor(DefaultPanelLettersBackColor);
@@ -219,6 +245,31 @@ namespace Ordisoftware.Hebrew
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void LettersControl_Load(object sender, EventArgs e)
+    {
+      Redraw();
+    }
+
+    /// <summary>
+    /// Control paint event.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void LettersControl_Paint(object sender, PaintEventArgs e)
+    {
+      if ( !first ) return;
+      first = false;
+      TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
+      Redraw();
+    }
+
+    private bool first = true;
+
+    /// <summary>
+    /// Control size chenged event.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void LettersControl_SizeChanged(object sender, EventArgs e)
     {
       Redraw();
     }
