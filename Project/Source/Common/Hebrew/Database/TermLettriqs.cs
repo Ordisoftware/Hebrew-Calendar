@@ -27,6 +27,7 @@ namespace Ordisoftware.Hebrew
     [PrimaryKey]
     public string ID { get; set; }
     public string TermID { get; set; }
+    public string ConcordanceID { get; set; }
     public string Transcription { get; set; }
     public string Dictionary { get; set; }
     public string Sentence { get; set; }
