@@ -244,7 +244,7 @@
     <value>View details</value>
   </data>
   <data name="ContextMenuLetter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 120</value>
+    <value>264, 98</value>
   </data>
   <data name="&gt;&gt;ContextMenuLetter.Name" xml:space="preserve">
     <value>ContextMenuLetter</value>
@@ -274,7 +274,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>$this</value>

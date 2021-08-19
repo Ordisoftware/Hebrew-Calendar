@@ -59,14 +59,14 @@ namespace Ordisoftware.Hebrew.Calendar
       => TorahEvent != TorahEvent.None;
 
     public string DayAndMonthText
-      => LunarDay + " " + HebrewMonths.Transliterations[LunarMonth];
+      => LunarDay + " " + HebrewMonths.Transcriptions[LunarMonth];
 
     public string DayAndMonthWithYearText
       => DayAndMonthText + " " + Date.Year;
 
     public string DayAndMonthFormattedText
       => Program.Settings.MoonDayTextFormat.ToUpper()
-                .Replace("%MONTHNAME%", HebrewMonths.Transliterations[LunarMonth])
+                .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
                 .Replace("%MONTHNUM%", LunarMonth.ToString())
                 .Replace("%DAYNUM%", LunarDay.ToString());
 

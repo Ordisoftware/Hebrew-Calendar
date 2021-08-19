@@ -113,6 +113,8 @@
       this.Controls.Add(this.TextBox);
       this.Name = "LettersControl";
       this.Load += new System.EventHandler(this.LettersControl_Load);
+      this.SizeChanged += new System.EventHandler(this.LettersControl_SizeChanged);
+      this.Paint += new System.Windows.Forms.PaintEventHandler(this.LettersControl_Paint);
       this.ContextMenuLetter.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

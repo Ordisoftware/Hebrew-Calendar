@@ -122,7 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionCopyName_Click(object sender, EventArgs e)
     {
-      ActionCopyMonthName(sender, index => HebrewMonths.Transliterations[index]);
+      ActionCopyMonthName(sender, index => HebrewMonths.Transcriptions[index]);
     }
 
     private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var menuitem = (ToolStripMenuItem)sender;
       var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
       int index = (int)control.Tag;
-      string name = HebrewMonths.Transliterations[index];
+      string name = HebrewMonths.Transcriptions[index];
       string meaning = Program.LunarMonthsMeanings[Languages.Current][index];
       string lettriq = Program.LunarMonthsLettriqs[Languages.Current][index];
       Clipboard.SetText($"{process(index)} ({name}) : {meaning} ({lettriq})");

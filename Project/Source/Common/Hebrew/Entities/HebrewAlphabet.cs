@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -26,6 +26,9 @@ namespace Ordisoftware.Hebrew
   /// </summary>
   static partial class HebrewAlphabet
   {
+
+    public const int ConcordanceFirst = 1;
+    public const int ConcordanceLast = 8853;
 
     /// <summary>
     /// Indicate letters keyboard codes for hebrew font.

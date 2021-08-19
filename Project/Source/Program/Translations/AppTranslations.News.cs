@@ -28,6 +28,13 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
+        ["8.7"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Fixed wrong linked parashah description shown from the navigation window.",
+
+          [Language.FR] = "Correction d'une mauvaise description de parashah liée affichée depuis la fenêtre de navigation."
+        },
+
         ["8.6"] = new TranslationsDictionary
         {
           [Language.EN] = "Added option to show book name and verse reference in parashah labels.",

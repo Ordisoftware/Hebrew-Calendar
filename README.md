@@ -58,9 +58,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 8.6**
+**What's new in the latest version 8.7**
 
-- Added option to show book name and verse reference in parashah labels.
+- Fixed wrong linked parashah description shown from the navigation window.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -280,6 +280,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add dark theme for month view.
 
 ## Changelog
+
+#### 2021.08.20 - Version 8.7
+
+- Fix wrong linked parashah description shown from the navigation window.
 
 #### 2021.08.13 - Version 8.6
 

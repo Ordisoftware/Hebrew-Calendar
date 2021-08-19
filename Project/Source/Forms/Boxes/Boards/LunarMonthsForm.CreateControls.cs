@@ -64,7 +64,7 @@ namespace Ordisoftware.Hebrew.Calendar
         default:
           throw new AdvancedNotImplementedException(Program.Settings.LunarMonthsFormUseColors);
       }
-      for ( int index = 1; index < HebrewMonths.Transliterations.Length; index++ )
+      for ( int index = 1; index < HebrewMonths.Transcriptions.Length; index++ )
       {
         LinkLabel createLabel(int posX, int posY,
                               string text, Color color, Font font,
@@ -100,7 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
                     new Font("Hebrew", 14f),
                     true, true, false);
         createLabel(x + dx1, y + dy1,
-                    HebrewMonths.Transliterations[index],
+                    HebrewMonths.Transcriptions[index],
                     colorsMonth[index - 1],
                     new Font("Microsoft Sans Serif", 10f),
                     false, false, false);

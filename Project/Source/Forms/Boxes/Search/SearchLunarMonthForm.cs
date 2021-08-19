@@ -77,7 +77,7 @@ namespace Ordisoftware.Hebrew.Calendar
         string key = row.LunarMonth.ToString();
         string date = row.Date.ToLongDateString();
         var item = ListItems.Items.Add(key);
-        item.SubItems.Add(HebrewMonths.Transliterations[row.LunarMonth]);
+        item.SubItems.Add(HebrewMonths.Transcriptions[row.LunarMonth]);
         item.SubItems.Add(date.Titleize());
         item.Tag = row;
         if ( selectedKey != null && key == selectedKey && itemToSelect == null )
