@@ -842,6 +842,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ClearLists();
       TimerReminder_Tick(null, null);
+      UpdateTitles(true);
     }
 
     /// <summary>
@@ -852,6 +853,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
       EnableReminderTimer();
+      UpdateTitles(true);
     }
 
     /// <summary>

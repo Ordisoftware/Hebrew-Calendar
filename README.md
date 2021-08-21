@@ -281,6 +281,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress
+
+- Fix additional title bar text unassigned immediately after refreshing reminder.
+
 #### 2021.08.20 - Version 8.7
 
 - Fix wrong linked parashah description shown from the navigation window.
