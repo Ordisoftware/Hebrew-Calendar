@@ -16,6 +16,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -25,6 +26,8 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     private const string NoDataField = "-";
+
+    static private readonly Properties.Settings Settings = Program.Settings;
 
     static public NavigationForm Instance { get; private set; }
 
@@ -46,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
           var row = LunisolarDays.Single(day => day.Date == value);
           LabelDate.Text = value.ToLongDateString().Titleize();
           string strMonth = HebrewMonths.Transcriptions[row.LunarMonth];
-          bool isShabat = value.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay;
+          bool isShabat = value.DayOfWeek == (DayOfWeek)Settings.ShabatDay;
           LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
           LabelLunarMonthName.Text = "(" + strMonth.ToUpper() + ")";
           LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
@@ -92,12 +95,12 @@ namespace Ordisoftware.Hebrew.Calendar
                        && row.LunarDay <= TorahCelebrations.PessahEndDay;
           bool isSoukot = row.LunarMonth == TorahCelebrations.YomsMonth
                        && row.LunarDay >= TorahCelebrations.SoukotStartDay
-                       && ( ( Program.Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
+                       && ( ( Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
                          || ( row.LunarDay < TorahCelebrations.SoukotEndDay ) );
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
-            LabelParashahValue.Text = rowParashah.GetParashahText(Program.Settings.ParashahCaptionWithBookAndRef);
+            LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
             LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
@@ -126,14 +129,19 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DateTime _Date;
 
+    public void SetColors(Color colorTop, Color colorMiddle, Color colorBottom)
+    {
+      PanelTop.BackColor = colorTop;
+      PanelMiddle.BackColor = colorMiddle;
+      PanelBottom.BackColor = colorBottom;
+    }
+
     private NavigationForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       Text = DisplayManager.Title;
-      PanelTop.BackColor = Program.Settings.NavigateTopColor;
-      PanelMiddle.BackColor = Program.Settings.NavigateMiddleColor;
-      PanelBottom.BackColor = Program.Settings.NavigateBottomColor;
+      SetColors(Settings.NavigateTopColor, Settings.NavigateMiddleColor, Settings.NavigateBottomColor);
       InitializeMenu();
       this.InitDropDowns();
     }
@@ -260,7 +268,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ActiveControl = LabelDate;
       MainForm.Instance.MenuShowHide_Click(null, null);
-      if ( Program.Settings.NavigationWindowCloseOnShowMainForm )
+      if ( Settings.NavigationWindowCloseOnShowMainForm )
         Close();
       else
         this.Popup();
