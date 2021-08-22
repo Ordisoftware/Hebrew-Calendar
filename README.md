@@ -282,7 +282,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9
 
-- Add lunar months board with meanings, lettriqs, study tools, edition and export.
+- Add lunar months board with hebrew names, meanings, lettriqs and tools.
 - Change weekly parashah main menu icon.
 - Fix additional title bar text unassigned immediately after refreshing reminder.
 - Fix open letters for words ending by a single Bet.
