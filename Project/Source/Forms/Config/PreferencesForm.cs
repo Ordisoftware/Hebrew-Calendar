@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -300,13 +300,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoNavigationUseColors(Color colorTop, Color colorMiddle, Color colorBottom)
     {
-      NavigationForm.Instance.ShowPopup();
       EditNavigateTopColor.BackColor = colorTop;
       EditNavigateMiddleColor.BackColor = colorMiddle;
       EditNavigateBottomColor.BackColor = colorBottom;
-      NavigationForm.Instance.PanelTop.BackColor = colorTop;
-      NavigationForm.Instance.PanelMiddle.BackColor = colorMiddle;
-      NavigationForm.Instance.PanelBottom.BackColor = colorBottom;
+      NavigationForm.Instance.SetColors(colorTop, colorMiddle, colorBottom);
+      NavigationForm.Instance.ShowPopup();
     }
 
     private void ActionUseSystemColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew
     private void UpdateStats()
     {
       Calendar.ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-      Calendar.ApplicationStatistics.UpdateDDParashotMemorySizeRequired = true;
+      Calendar.ApplicationStatistics.UpdateDBParashotMemorySizeRequired = true;
     }
 
     private ParashotForm()

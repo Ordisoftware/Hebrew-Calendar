@@ -1037,7 +1037,7 @@
     <value>0, 36</value>
   </data>
   <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 305</value>
+    <value>364, 300</value>
   </data>
   <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1061,13 +1061,13 @@
     <value>Flat</value>
   </data>
   <data name="ActionNextDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+    <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionNextDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 5</value>
+    <value>210, 7</value>
   </data>
   <data name="ActionNextDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionNextDay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1094,22 +1094,22 @@
     <value>Flat</value>
   </data>
   <data name="ActionSelectDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+    <value>Verdana, 9.75pt</value>
   </data>
   <data name="ActionSelectDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionSelectDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 5</value>
+    <value>165, 7</value>
   </data>
   <data name="ActionSelectDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>34, 26</value>
   </data>
   <data name="ActionSelectDay.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="ActionSelectDay.Text" xml:space="preserve">
-    <value>...</value>
+    <value>^</value>
   </data>
   <data name="&gt;&gt;ActionSelectDay.Name" xml:space="preserve">
     <value>ActionSelectDay</value>
@@ -1130,13 +1130,13 @@
     <value>Flat</value>
   </data>
   <data name="ActionPreviousDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+    <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionPreviousDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 5</value>
+    <value>124, 7</value>
   </data>
   <data name="ActionPreviousDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionPreviousDay.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1184,16 +1184,16 @@
     <value>Flat</value>
   </data>
   <data name="ActionDatesDiff.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Verdana, 9.75pt</value>
   </data>
   <data name="ActionDatesDiff.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionDatesDiff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 5</value>
+    <value>43, 7</value>
   </data>
   <data name="ActionDatesDiff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionDatesDiff.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1220,16 +1220,16 @@
     <value>Flat</value>
   </data>
   <data name="ActionSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 5</value>
+    <value>291, 7</value>
   </data>
   <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionSettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1253,16 +1253,16 @@
     <value>Flat</value>
   </data>
   <data name="ActionViewCalendar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionViewCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionViewCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
+    <value>7, 7</value>
   </data>
   <data name="ActionViewCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionViewCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1289,16 +1289,16 @@
     <value>Flat</value>
   </data>
   <data name="ActionClose.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>Verdana, 9.75pt</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>329, 5</value>
+    <value>327, 7</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 25</value>
+    <value>30, 26</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1322,13 +1322,13 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 341</value>
+    <value>0, 336</value>
   </data>
   <data name="PanelBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 35</value>
+    <value>364, 40</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1349,7 +1349,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelSeparatorBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 340</value>
+    <value>0, 335</value>
   </data>
   <data name="PanelSeparatorBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 1</value>

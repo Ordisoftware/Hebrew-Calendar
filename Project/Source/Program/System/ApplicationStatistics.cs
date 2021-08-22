@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +26,11 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class ApplicationStatistics
   {
 
-    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
-
     static public readonly ApplicationStatistics Instance
       = new ApplicationStatistics();
+
+    static private List<LunisolarDay> LunisolarDays
+      => ApplicationDatabase.Instance.LunisolarDays;
 
     public string StartingTime
       => Program.Settings.BenchmarkStartingApp.FormatMilliseconds();
@@ -93,7 +94,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string DBEventsCount
       => Globals.IsGenerating
          ? SysTranslations.Processing.GetLang()
-         : LunisolarDays?.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString() 
+         : LunisolarDays?.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString()
            ?? SysTranslations.NullSlot.GetLang();
 
     public string MonthViewEventsCount
@@ -129,7 +130,12 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( UpdateDBMemorySizeRequired )
         {
           UpdateDBMemorySizeRequired = false;
-          _DBMemorySize = LunisolarDays.SizeOf().FormatBytesSize();
+          long size = ApplicationDatabase.Instance.LunisolarDays?.SizeOf() ?? 0;
+          _DBMemorySize = size > 0
+                          ? size.FormatBytesSize()
+                            : size == 0
+                              ? SysTranslations.DatabaseTableClosed.GetLang()
+                              : "-";
         }
         return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBMemorySize;
       }
@@ -156,17 +162,21 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       get
       {
-        if ( UpdateDDParashotMemorySizeRequired )
+        if ( UpdateDBParashotMemorySizeRequired )
         {
-          UpdateDDParashotMemorySizeRequired = false;
-          _DDParashotMemorySize = HebrewDatabase.Instance.Parashot?.SizeOf().FormatBytesSize()
-                                  ?? SysTranslations.DatabaseTableClosed.GetLang();
+          UpdateDBParashotMemorySizeRequired = false;
+          long size = HebrewDatabase.Instance.Parashot?.SizeOf() ?? 0;
+          _DBParashotMemorySize = size > 0
+                                  ? size.FormatBytesSize()
+                                    : size == 0
+                                      ? SysTranslations.DatabaseTableClosed.GetLang()
+                                      : "-";
         }
-        return _DDParashotMemorySize;
+        return _DBParashotMemorySize;
       }
     }
-    static private string _DDParashotMemorySize;
-    static internal bool UpdateDDParashotMemorySizeRequired { get; set; } = true;
+    static private string _DBParashotMemorySize;
+    static internal bool UpdateDBParashotMemorySizeRequired { get; set; } = true;
 
   }
 

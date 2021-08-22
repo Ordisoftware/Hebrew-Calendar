@@ -688,6 +688,8 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                      Program.Settings.VacuumAtStartupDaysInterval,
                                                                      true);
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+      Calendar.ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
+      Calendar.ApplicationStatistics.UpdateDBParashotMemorySizeRequired = true;
     }
 
     #endregion
