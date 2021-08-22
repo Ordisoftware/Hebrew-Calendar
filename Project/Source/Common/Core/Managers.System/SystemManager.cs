@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -129,10 +129,17 @@ namespace Ordisoftware.Core
             result = stream.Length;
           }
         }
-        catch ( Exception ex )
+        catch ( Exception ex1 )
         {
-          ex.Manage(ShowExceptionMode.None);
-          TryCatch(() => { result = System.Runtime.InteropServices.Marshal.SizeOf(instance); });
+          ex1.Manage(ShowExceptionMode.None);
+          try
+          {
+            result = System.Runtime.InteropServices.Marshal.SizeOf(instance);
+          }
+          catch ( Exception ex2 )
+          {
+            ex2.Manage(ShowExceptionMode.None);
+          }
         }
       return result;
     }
