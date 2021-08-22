@@ -132,7 +132,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Vacuum the database.
+    /// Check the database integrity.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this SQLiteNetORM connection)

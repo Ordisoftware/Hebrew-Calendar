@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using Ordisoftware.Core;
@@ -35,8 +35,6 @@ namespace Ordisoftware.Hebrew
       AutoLoadAllAtOpen = false;
       Open();
       CheckConnected();
-      Connection.CheckIntegrity();
-      Connection.Vacuum();
     }
 
     protected override void DoClose()

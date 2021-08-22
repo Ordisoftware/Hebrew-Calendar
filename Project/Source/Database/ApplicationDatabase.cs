@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Collections.Generic;
 using Ordisoftware.Core;
@@ -40,8 +40,15 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       base.Open();
       if ( Program.Settings.VacuumAtStartup )
-        Program.Settings.VacuumLastDone = Connection.Optimize(Program.Settings.VacuumLastDone,
-                                                              Program.Settings.VacuumAtStartupDaysInterval);
+      {
+        var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone,
+                                          Program.Settings.VacuumAtStartupDaysInterval);
+        if ( Program.Settings.VacuumLastDone != dateNew )
+        {
+          HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
+          Program.Settings.VacuumLastDone = dateNew;
+        }
+      }
     }
 
     protected override void DoClose()
