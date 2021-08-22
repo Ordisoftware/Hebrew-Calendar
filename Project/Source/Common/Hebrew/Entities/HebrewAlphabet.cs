@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate phonetic letters names.
     /// </summary>
-    static public readonly NullSafeDictionary<Language, string[]> Translitterations
+    static public readonly NullSafeDictionary<Language, string[]> Transcriptions
       = new NullSafeDictionary<Language, string[]>()
       {
         [Language.EN] = new string[]

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew
       }
       word = Localizer.RemoveDiacritics(word);
       bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
-      if ( isUnicode && ( word.EndsWith(" א") || word.StartsWith(" ב") ) )
+      if ( isUnicode && ( word.EndsWith(" א") || word.EndsWith(" ב") ) )
         word = word.Remove(word.Length - 2);
       else
       if ( word.StartsWith("a ") || word.StartsWith("b ") )
