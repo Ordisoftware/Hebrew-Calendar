@@ -129,8 +129,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ApplicationStatistics.UpdateDBMemorySizeRequired = true;
         SetView(Settings.CurrentView, true);
         UpdateButtons();
-        if ( Globals.IsReady && !ActionVacuumAtNextStartup.Checked )
-          ActionVacuumAtNextStartup.PerformClick();
+        if ( Globals.IsReady && !ActionVacuumDB.Checked )
+          ActionVacuumDB.PerformClick();
       }
       if ( GenerateErrors.Count != 0 )
       {

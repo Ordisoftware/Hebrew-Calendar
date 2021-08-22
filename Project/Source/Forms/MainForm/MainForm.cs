@@ -676,14 +676,18 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Event handler. Called by ActionVacuumAtNextStartup for click events.
+    /// Event handler. Called by ActionVacuumDB for click events.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
-    private void ActionVacuumAtNextStartup_Click(object sender, EventArgs e)
+    private void ActionVacuumDB_Click(object sender, EventArgs e)
     {
-      if ( LastVacuum == null ) LastVacuum = Settings.VacuumLastDone;
-      Settings.VacuumLastDone = ActionVacuumAtNextStartup.Checked ? DateTime.MinValue : LastVacuum.Value;
+      Program.Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                           .Connection
+                                                           .Optimize(Program.Settings.VacuumLastDone,
+                                                                     Program.Settings.VacuumAtStartupDaysInterval,
+                                                                     true);
+      HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
     }
 
     #endregion
