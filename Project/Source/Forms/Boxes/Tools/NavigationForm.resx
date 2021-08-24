@@ -1037,7 +1037,7 @@
     <value>0, 36</value>
   </data>
   <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 300</value>
+    <value>364, 305</value>
   </data>
   <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1184,7 +1184,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionDatesDiff.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9.75pt</value>
+    <value>Verdana, 9pt</value>
   </data>
   <data name="ActionDatesDiff.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1253,7 +1253,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionViewCalendar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9.75pt</value>
+    <value>Verdana, 9.75pt</value>
   </data>
   <data name="ActionViewCalendar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1322,7 +1322,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 336</value>
+    <value>0, 341</value>
   </data>
   <data name="PanelBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -1349,7 +1349,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelSeparatorBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 335</value>
+    <value>0, 340</value>
   </data>
   <data name="PanelSeparatorBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 1</value>
@@ -1376,7 +1376,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>364, 376</value>
+    <value>364, 381</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
