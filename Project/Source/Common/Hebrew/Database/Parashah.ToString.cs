@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew
       => $"Sefer {Book} {VerseBegin} - {VerseEnd} " +
          $"Parashah n°{Number} " +
          $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
-         $"({( useHebrewFont ? Hebrew : Unicode )}) : " +
+         $"{( useHebrewFont ? Hebrew : Unicode )} : " +
          $"{Translation.GetOrEmpty()} ; " +
          $"{Lettriq.GetOrEmpty()}" +
          ( Memo.IsNullOrEmpty() ? "" : $" ; {Memo.GetOrEmpty()}" );
@@ -43,9 +43,9 @@ namespace Ordisoftware.Hebrew
     public string ToStringReadable()
       => $"Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
          $"Parashah n°{Number} " + Globals.NL +
-         $"{Name} ({Unicode})" + Globals.NL +
-         $"• {Translation.GetOrEmpty()}" + Globals.NL +
-         $"• {Lettriq.GetOrEmpty()}";
+         $"{Name} {Unicode}" + Globals.NL +
+         $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
+         $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";
 
   }
 
