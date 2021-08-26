@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -50,6 +50,27 @@ namespace Ordisoftware.Hebrew
       {
         [Language.EN] = "Unicode",
         [Language.FR] = "Unicode"
+      };
+
+    static public readonly TranslationsDictionary Translation
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Translation",
+        [Language.FR] = "Traduction"
+      };
+
+    static public readonly TranslationsDictionary Transcription
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Transcription",
+        [Language.FR] = "Transcription"
+      };
+
+    static public readonly TranslationsDictionary Lettriq
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Lettriq",
+        [Language.FR] = "Lettrique"
       };
 
     static public readonly TranslationsDictionary ParashahReading

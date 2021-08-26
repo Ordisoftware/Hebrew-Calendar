@@ -285,8 +285,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with hebrew names, meanings, lettriqs and tools.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
+>- Remove text justify in parashah description box.
 - Fix additional title bar text unassigned immediately after refreshing reminder.
 - Fix open letters for words ending by a single Bet.
+- Some fixes and improvements.
 
 #### 2021.08.20 - Version 8.7
 
