@@ -283,6 +283,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.0
 
 - Add lunar months board with hebrew names, meanings, lettriqs and tools.
+- Add option to enable or disable unicode icons in navigation window.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
 >- Remove text justify in parashah description box.
