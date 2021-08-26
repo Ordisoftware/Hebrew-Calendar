@@ -2573,5 +2573,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ParashahCaptionWithBookAndRef"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NavigationWindowUseUnicodeIcons {
+            get {
+                return ((bool)(this["NavigationWindowUseUnicodeIcons"]));
+            }
+            set {
+                this["NavigationWindowUseUnicodeIcons"] = value;
+            }
+        }
     }
 }

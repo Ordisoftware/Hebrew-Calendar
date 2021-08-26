@@ -34,6 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static NavigationForm()
     {
       Instance = new NavigationForm();
+      Instance.Relocalize();
     }
 
     private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
@@ -174,6 +175,26 @@ namespace Ordisoftware.Hebrew.Calendar
     public void Relocalize()
     {
       Date = _Date;
+      if ( Settings.NavigationWindowUseUnicodeIcons )
+      {
+        Instance.ActionClose.Text = "X";
+        Instance.ActionDatesDiff.Text = "∑";
+        Instance.ActionNextDay.Text = ">";
+        Instance.ActionPreviousDay.Text = "<";
+        Instance.ActionSelectDay.Text = "...";
+        Instance.ActionSettings.Text = "⚙";
+        Instance.ActionViewCalendar.Text = "📅";
+      }
+      else
+      {
+        Instance.ActionClose.Text = "X";
+        Instance.ActionDatesDiff.Text = "D";
+        Instance.ActionNextDay.Text = ">";
+        Instance.ActionPreviousDay.Text = "<";
+        Instance.ActionSelectDay.Text = "...";
+        Instance.ActionSettings.Text = "O";
+        Instance.ActionViewCalendar.Text = "C";
+      }
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

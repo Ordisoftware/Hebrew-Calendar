@@ -59,8 +59,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private MidnightTimer TimerMidnight = new MidnightTimer();
 
-    private DateTime? LastVacuum = null;
-
     public float CurrentGPSLatitude { get; set; }
     public float CurrentGPSLongitude { get; set; }
     public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
