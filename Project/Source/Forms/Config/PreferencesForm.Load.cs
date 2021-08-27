@@ -132,6 +132,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditLoadingFormHidden.Checked = Settings.LoadingFormHidden; });
       SystemManager.TryCatch(() => { EditNavigationWindowCloseOnShowMainForm.Checked = Settings.NavigationWindowCloseOnShowMainForm; });
       SystemManager.TryCatch(() => { EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef; });
+      SystemManager.TryCatch(() => { EditNavigationWindowUseUnicodeIcons.Checked = Settings.NavigationWindowUseUnicodeIcons; });
       // Hotkey
       InitHotKeyControls();
       // System

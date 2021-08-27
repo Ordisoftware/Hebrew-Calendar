@@ -832,4 +832,7 @@
   <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
     <value>Afficher la parashah de la semaine avec le nom du livre et la référence de verset</value>
   </data>
+  <data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
+    <value>Utiliser les icônes unicode</value>
+  </data>
 </root>

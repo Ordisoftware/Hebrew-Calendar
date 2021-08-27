@@ -122,6 +122,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.LoadingFormHidden = EditLoadingFormHidden.Checked;
       Settings.NavigationWindowCloseOnShowMainForm = EditNavigationWindowCloseOnShowMainForm.Checked;
       Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
+      Settings.NavigationWindowUseUnicodeIcons = EditNavigationWindowUseUnicodeIcons.Checked;
+      // Navigation window
+      NavigationForm.Instance.Relocalize();
       // Month view
       Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
       // Shabat
