@@ -287,7 +287,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
 - Fix additional title bar text unassigned immediately after refreshing reminder.
-- Fix open letters for words ending by a single Bet.
+- Fix open Hebrew Letters for words ending by a single numbering letter.
 - Some fixes and improvements.
 
 #### 2021.08.20 - Version 8.7
