@@ -161,6 +161,10 @@ Thus celebration dates may be wrong.
 
   `Ordisoftware.Hebrew.Calendar.exe --parashot`
 
+- Show the weekly parashah description box:
+
+  `Ordisoftware.Hebrew.Calendar.exe --parashah`
+
 These options are cumulative and can be used to control the software when it is already running.
 
 It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this Shift + Ctrl + Alt + P command:
@@ -284,6 +288,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.0
 
 - Add lunar months board with hebrew names, meanings, lettriqs and tools.
+- Add `--parashah` command-line option to show the weekly parashah description box.
 - Add option to enable or disable unicode icons in navigation window.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
