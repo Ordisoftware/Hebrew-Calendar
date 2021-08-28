@@ -185,6 +185,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewNewMoonsBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenParashotBoard )
         ActionViewParashot.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
+        ActionViewParashahDescription.PerformClick();
       if ( Globals.IsDebugExecutable ) // TODO remove when ready
         if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
           ActionViewLunarMonths.PerformClick();

@@ -28,6 +28,15 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
+        ["9.0"] = new TranslationsDictionary
+        {
+          [Language.EN] = "Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
+                          "Some fixes and improvements.",
+
+          [Language.FR] = "Ajout d'un tableau des mois lunaires avec noms hébreux, significations, lettriques et outils." + Globals.NL +
+                          "Some fixes and improvements.",
+        },
+
         ["8.7"] = new TranslationsDictionary
         {
           [Language.EN] = "Fixed wrong linked parashah description shown from the navigation window.",
@@ -157,7 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Ajout de l'exportation et importation des paramètres." + Globals.NL +
                           "Préférences améliorées." + Globals.NL +
                           "Mettre à jour les liens Web." + Globals.NL +
-                          "Quelques améliorations et corrections.",
+                          "Quelques améliorations et corrections."
         },
 
         ["5.x"] = new TranslationsDictionary
@@ -190,7 +199,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Nouvelle boîte de dialogue avancée d'exportation et d'impression." + Globals.NL +
                           "Refonte de la fenêtre des préférences avec ajout d'options." + Globals.NL +
                           "Nouvelle fenêtre de statistiques d'utilisation." + Globals.NL +
-                          "Amélioration générale et quelques corrections.",
+                          "Amélioration générale et quelques corrections."
         },
 
         ["4.x"] = new TranslationsDictionary
@@ -244,7 +253,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Ajout la base de données des villes du monde pour sélectionner le GPS." + Globals.NL +
                           "Option pour sélectionner le soleil ou la lune omer." + Globals.NL +
                           "Régénération des données si aujourd'hui est proche de la fin." + Globals.NL +
-                          "Amélioration générale et quelques corrections.",
+                          "Amélioration générale et quelques corrections."
         },
 
         ["2.x"] = new TranslationsDictionary
@@ -270,7 +279,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "Fenêtre des prochaines célébrations." + Globals.NL +
                           "Fenêtre de navigation par jour." + Globals.NL +
                           "Rappel de Shabat." + Globals.NL +
-                          "Préférences de base et coordonnées GPS.",
+                          "Préférences de base et coordonnées GPS."
         },
 
       };

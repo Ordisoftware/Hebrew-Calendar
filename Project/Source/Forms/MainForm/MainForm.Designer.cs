@@ -1546,7 +1546,7 @@
     private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
-    private System.Windows.Forms.ToolStripMenuItem ActionViewParashahDescription;
+    internal System.Windows.Forms.ToolStripMenuItem ActionViewParashahDescription;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     internal System.Windows.Forms.Timer TimerBallon;
     private System.Windows.Forms.Timer TimerKillProcesses;

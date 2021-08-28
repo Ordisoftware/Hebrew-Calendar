@@ -58,9 +58,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 8.7**
+**What's new in the latest version 9.0**
 
-- Fixed wrong linked parashah description shown from the navigation window.
+- Added lunar months board with hebrew names, meanings, lettriqs and tools.
+- Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -159,6 +160,10 @@ Thus celebration dates may be wrong.
 - Show the parashot board:
 
   `Ordisoftware.Hebrew.Calendar.exe --parashot`
+
+- Show the weekly parashah description box:
+
+  `Ordisoftware.Hebrew.Calendar.exe --parashah`
 
 These options are cumulative and can be used to control the software when it is already running.
 
@@ -283,6 +288,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.0
 
 - Add lunar months board with hebrew names, meanings, lettriqs and tools.
+- Add `--parashah` command-line option to show the weekly parashah description box.
 - Add option to enable or disable unicode icons in navigation window.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
