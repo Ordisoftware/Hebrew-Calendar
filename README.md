@@ -286,7 +286,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to enable or disable unicode icons in navigation window.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
->- Remove text justify in parashah description box.
 - Fix additional title bar text unassigned immediately after refreshing reminder.
 - Fix open letters for words ending by a single Bet.
 - Some fixes and improvements.
