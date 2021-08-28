@@ -58,9 +58,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 8.7**
+**What's new in the latest version 9.0**
 
-- Fixed wrong linked parashah description shown from the navigation window.
+- Added lunar months board with hebrew names, meanings, lettriqs and tools.
+- Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
