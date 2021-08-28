@@ -184,7 +184,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 203</value>
+    <value>10, 231</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 28</value>
@@ -204,11 +204,14 @@
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="SelectDelay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="SelectDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 18</value>
   </data>
   <data name="SelectDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 173</value>
+    <value>127, 199</value>
   </data>
   <data name="SelectDelay.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -225,11 +228,14 @@
   <data name="&gt;&gt;SelectDelay.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="LabelCustom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="LabelCustom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LabelCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 152</value>
+    <value>158, 178</value>
   </data>
   <data name="LabelCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -252,8 +258,11 @@
   <data name="&gt;&gt;LabelCustom.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="EditDelay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="EditDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 171</value>
+    <value>161, 197</value>
   </data>
   <data name="EditDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
@@ -280,7 +289,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>244, 241</value>
+    <value>244, 269</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

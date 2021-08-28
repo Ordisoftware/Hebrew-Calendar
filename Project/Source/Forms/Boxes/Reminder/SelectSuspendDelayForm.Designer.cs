@@ -36,7 +36,7 @@
       this.LabelCustom = new System.Windows.Forms.Label();
       this.EditDelay = new System.Windows.Forms.NumericUpDown();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDelay ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -62,8 +62,8 @@
       // 
       // SelectDelay
       // 
-      this.SelectDelay.FormattingEnabled = true;
       resources.ApplyResources(this.SelectDelay, "SelectDelay");
+      this.SelectDelay.FormattingEnabled = true;
       this.SelectDelay.Name = "SelectDelay";
       this.SelectDelay.SelectedIndexChanged += new System.EventHandler(this.SelectDelay_SelectedIndexChanged);
       // 
@@ -99,7 +99,7 @@
       this.TopMost = true;
       this.Load += new System.EventHandler(this.SelectSuspendDelayForm_Load);
       this.PanelBottom.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDelay ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDelay)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

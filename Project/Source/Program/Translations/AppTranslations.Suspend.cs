@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -39,6 +39,8 @@ namespace Ordisoftware.Hebrew.Calendar
           new SuspendDelayItem("3 hours", 180),
           new SuspendDelayItem("4 hours", 240),
           new SuspendDelayItem("6 hours", 360),
+          new SuspendDelayItem("8 hours", 480),
+          new SuspendDelayItem("10 hours", 600),
           new SuspendDelayItem("12 hours", 720),
           new SuspendDelayItem("1 day", 1440),
           new SuspendDelayItem("Custom", -1)
@@ -55,6 +57,8 @@ namespace Ordisoftware.Hebrew.Calendar
           new SuspendDelayItem("3 heures", 180),
           new SuspendDelayItem("4 heures", 240),
           new SuspendDelayItem("6 heures", 360),
+          new SuspendDelayItem("8 heures", 480),
+          new SuspendDelayItem("10 heures", 600),
           new SuspendDelayItem("12 heures", 720),
           new SuspendDelayItem("1 jour", 1440),
           new SuspendDelayItem("Personnalisé", -1)
