@@ -77,6 +77,13 @@ namespace Ordisoftware.Core
         [Language.FR] = "Echec du vacuum de la base de données."
       };
 
+    static public readonly TranslationsDictionary DatabaseVacuumSuccess
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Database vacuum successed.",
+        [Language.FR] = "Succès du vacuum de la base de données."
+      };
+
     static public readonly TranslationsDictionary DatabaseNoProcessConcurrency
       = new TranslationsDictionary
       {
