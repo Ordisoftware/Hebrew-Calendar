@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using CommandLine;
 using Ordisoftware.Core;
@@ -45,6 +45,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     [Option("parashot", Required = false, HelpText = "Open parashot board.")]
     public bool OpenParashotBoard { get; set; }
+
+    [Option("parashah", Required = false, HelpText = "Open weekly parashah description box.")]
+    public bool OpenWeeklyParashahBox { get; set; }
 
     [Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
     public bool OpenLunarMonthsBoard { get; set; }
