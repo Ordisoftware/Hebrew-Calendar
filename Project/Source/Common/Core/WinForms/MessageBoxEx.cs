@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -26,10 +26,12 @@ namespace Ordisoftware.Core
 
     public const bool DefaultJustifyEnabled = true;
 
-    public const int DefaultSmallWidth = 400;
-    public const int DefaultMediumWidth = 500;
-    public const int DefaultLargeWidth = 600;
-    public const int DefaultVeryLargeWidth = 800;
+    public const int DefaultWidthVerySmall = 300;
+    public const int DefaultWidthSmall = 400;
+    public const int DefaultWidthMedium = 500;
+    public const int DefaultWidthLarge = 600;
+    public const int DefaultWidthBig = 700;
+    public const int DefaultWidthHuge = 800;
 
     static public readonly List<MessageBoxEx> Instances = new List<MessageBoxEx>();
 
@@ -57,7 +59,7 @@ namespace Ordisoftware.Core
                         string text,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
-                        int width = DefaultSmallWidth,
+                        int width = DefaultWidthSmall,
                         bool justify = DefaultJustifyEnabled,
                         bool sound = true)
       : this()
@@ -105,7 +107,7 @@ namespace Ordisoftware.Core
                         TranslationsDictionary text,
                         MessageBoxButtons buttons = MessageBoxButtons.OK,
                         MessageBoxIcon icon = MessageBoxIcon.None,
-                        int width = DefaultSmallWidth,
+                        int width = DefaultWidthSmall,
                         bool justify = DefaultJustifyEnabled,
                         bool sound = true)
       : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound)

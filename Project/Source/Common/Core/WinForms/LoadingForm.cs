@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
 
     public void Relocalize()
     {
-      LabelTitle.Text = Globals.AssemblyTitle; // TODO remove ?
+      LabelTitle.Text = Globals.AssemblyTitle;
     }
 
     public void Initialize(string text,
@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
                            bool canCancel = false,
                            bool topMost = false)
     {
-      LabelTitle.Text = Globals.AssemblyTitle;
+      Relocalize();
       TopMost = topMost;
       CancelRequired = false;
       ActionCancel.Visible = canCancel;

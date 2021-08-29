@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -107,7 +107,7 @@ namespace Ordisoftware.Hebrew
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
       if ( form == null )
       {
-        form = new MessageBoxEx(title, notice.Value.GetLang(), width: MessageBoxEx.DefaultVeryLargeWidth, justify: false);
+        form = new MessageBoxEx(title, notice.Value.GetLang(), width: MessageBoxEx.DefaultWidthMedium, justify: false);
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
