@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
           [Language.FR] = "• Ajout d'un tableau des mois lunaires avec noms hébreux, significations, lettriques et outils." + Globals.NL +
                           "• Ajout d'une option de ligne de commande pour afficher le tableau des mois lunaires." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parasha hebdomadaire." + Globals.NL +
+                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 
