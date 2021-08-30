@@ -28,16 +28,23 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
-        ["9.0"] = new TranslationsDictionary
+        /*["9.0"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
                           "• Added a command-line option to show the lunar months board." + Globals.NL +
-                          "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
                           "• Some fixes and improvements.",
 
           [Language.FR] = "• Ajout d'un tableau des mois lunaires avec noms hébreux, significations, lettriques et outils." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour afficher le tableau des mois lunaires." + Globals.NL +
                           "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
+                          "• Quelques améliorations et corrections."
+        },*/
+
+        ["8.8"] = new TranslationsDictionary
+        {
+          [Language.EN] = "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
+                          "• Some fixes and improvements.",
+
+          [Language.FR] = "• Ajout d'une option de ligne de commande pour afficher le tableau des mois lunaires." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 
