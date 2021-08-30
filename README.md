@@ -292,7 +292,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.08.31 - Version 8.8
+#### 2021.08.30 - Version 8.8
 
 - Add `--parashah` command-line option to show the weekly parashah description box.
 - Add option to enable or disable unicode icons in navigation window.
