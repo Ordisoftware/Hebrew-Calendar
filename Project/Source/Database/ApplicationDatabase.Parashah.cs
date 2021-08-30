@@ -38,7 +38,10 @@ namespace Ordisoftware.Hebrew.Calendar
     public bool ShowWeeklyParashahDescription()
     {
       if ( MainForm.UserParashot == null ) return false;
-      var parashah = MainForm.UserParashot.Find(p => p.ID == GetWeeklyParashah().ID);
+      var parashah = GetWeeklyParashah();
+      if ( parashah == null ) return false;
+      parashah = MainForm.UserParashot.Find(p => p.ID == parashah.ID);
+      if ( parashah == null ) return false;
       return ParashotForm.ShowParashahDescription(MainForm.Instance, parashah, true);
     }
 
