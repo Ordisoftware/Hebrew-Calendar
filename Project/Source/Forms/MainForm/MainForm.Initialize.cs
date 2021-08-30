@@ -57,6 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
         LastCelebrationReminded.Add(value, null);
       if ( !Globals.IsDevExecutable ) // TODO remove when ready
       {
+        ActionViewLunarMonths.Enabled = false;
         ActionViewLunarMonths.Visible = false;
         ActionViewLunarMonths.Tag = int.MinValue;
       }
