@@ -471,7 +471,7 @@ namespace Ordisoftware.Hebrew
       if ( parashah == null ) return false;
       var message = parashah.ToStringReadable();
       message += Globals.NL2 + linked?.ToStringReadable();
-      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultMediumWidth);
+      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium);
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;

@@ -186,7 +186,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       new MessageBoxEx(AppTranslations.NoticeDatesDiffTitle,
                        AppTranslations.NoticeDatesDiff,
-                       width: MessageBoxEx.DefaultMediumWidth).ShowDialog();
+                       width: MessageBoxEx.DefaultWidthMedium).ShowDialog();
     }
 
     private void ActionSwapDates_Click(object sender, EventArgs e)

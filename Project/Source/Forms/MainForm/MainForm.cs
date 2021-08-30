@@ -523,7 +523,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ShowNotice(sender,
                  AppTranslations.NoticeCelebrationsTitle,
                  AppTranslations.NoticeCelebrations,
-                 MessageBoxEx.DefaultMediumWidth);
+                 MessageBoxEx.DefaultWidthMedium);
     }
 
     /// <summary>
@@ -536,7 +536,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ShowNotice(sender,
                  AppTranslations.NoticeShabatTitle,
                  AppTranslations.NoticeShabat,
-                 MessageBoxEx.DefaultLargeWidth);
+                 MessageBoxEx.DefaultWidthLarge);
     }
 
     /// <summary>
@@ -549,7 +549,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ShowNotice(sender,
                  AppTranslations.NoticeParashahTitle,
                  AppTranslations.NoticeParashah,
-                 MessageBoxEx.DefaultMediumWidth);
+                 MessageBoxEx.DefaultWidthMedium);
     }
 
     /// <summary>

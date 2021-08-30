@@ -55,12 +55,13 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.7.2
+- SQLite 3.33
 
 ## Download
 
-**What's new in the latest version 9.0**
+**What's new in the latest version 8.8**
 
-- Added lunar months board with hebrew names, meanings, lettriqs and tools.
+- Added a command-line option to show the weekly parashah description box.
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -156,6 +157,10 @@ Thus celebration dates may be wrong.
 - Show the new moons board board:
  
   `Ordisoftware.Hebrew.Calendar.exe --newmoons`
+
+- Show the lunar months board:
+
+  `Ordisoftware.Hebrew.Calendar.exe --lunarmonths`
 
 - Show the parashot board:
 
@@ -277,6 +282,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add lunar months board with hebrew names, meanings, lettriqs and tools.
+- Add `--lunarmonths` command-line option to show the lunar months board.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -285,9 +292,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 9.0
+#### 2021.08.31 - Version 8.8
 
-- Add lunar months board with hebrew names, meanings, lettriqs and tools.
 - Add `--parashah` command-line option to show the weekly parashah description box.
 - Add option to enable or disable unicode icons in navigation window.
 - Change weekly parashah main menu icon.

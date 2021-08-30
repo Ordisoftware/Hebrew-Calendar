@@ -41,7 +41,7 @@
       this.ActionAbort = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.FlowLayoutPanel();
       this.PanelMain.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -142,7 +142,7 @@
       this.Shown += new System.EventHandler(this.MessageBoxEx_Shown);
       this.PanelMain.ResumeLayout(false);
       this.PanelMain.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

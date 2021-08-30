@@ -223,7 +223,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 110</value>
+    <value>344, 115</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 26</value>
@@ -616,7 +616,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionLockout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 97</value>
+    <value>23, 100</value>
   </data>
   <data name="ActionLockout.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -721,7 +721,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 136</value>
+    <value>384, 141</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
