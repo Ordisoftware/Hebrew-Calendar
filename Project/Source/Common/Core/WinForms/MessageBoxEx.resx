@@ -496,7 +496,7 @@
     <value>584, 561</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 800</value>
+    <value>1000, 1000</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>200, 140</value>
