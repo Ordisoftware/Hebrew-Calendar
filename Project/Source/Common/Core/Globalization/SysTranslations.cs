@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -120,6 +120,13 @@ namespace Ordisoftware.Core
       {
         [Language.EN] = "Close",
         [Language.FR] = "Fermer",
+      };
+
+    static public readonly TranslationsDictionary ActionCopy
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Copy",
+        [Language.FR] = "Copier",
       };
 
     static public readonly TranslationsDictionary Valid
