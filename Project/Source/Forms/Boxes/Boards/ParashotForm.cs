@@ -475,6 +475,7 @@ namespace Ordisoftware.Hebrew
       form.StartPosition = FormStartPosition.CenterScreen;
       form.ForceNoTopMost = true;
       form.ShowInTaskbar = true;
+      // Open board
       form.ActionYes.Visible = true;
       form.ActionYes.Text = SysTranslations.Board.GetLang();
       form.ActionYes.Click += async (_s, _e) =>
@@ -483,6 +484,7 @@ namespace Ordisoftware.Hebrew
         await System.Threading.Tasks.Task.Delay(1000);
         Instance.Popup();
       };
+      // Open memo
       form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
       form.ActionNo.Text = SysTranslations.Memo.GetLang();
       form.ActionNo.Click += (_s, _e) =>
@@ -490,6 +492,17 @@ namespace Ordisoftware.Hebrew
         string memo1 = parashah.Memo;
         string memo2 = linked?.Memo ?? "";
         DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+      };
+      // Copy to clipboard
+      form.ActionRetry.Visible = true;
+      form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
+      form.ActionRetry.DialogResult = DialogResult.None;
+      form.ActionRetry.Click -= form.ActionClose_Click;
+      form.ActionRetry.Click += (_s, _e) =>
+      {
+        Clipboard.SetText(message);
+        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
+                                          Globals.ClipboardSoundFilePath);
       };
       form.AllowClose = true;
       form.Show();
