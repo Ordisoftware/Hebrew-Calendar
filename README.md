@@ -292,6 +292,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version x.y
+
+- Add copy to clipboard button in parashah description box.
+
 #### 2021.08.30 - Version 8.8
 
 - Add `--parashah` command-line option to show the weekly parashah description box.
