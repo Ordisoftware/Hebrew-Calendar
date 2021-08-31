@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,12 +26,17 @@ namespace Ordisoftware.Hebrew
   partial class LettersControl
   {
 
+    private bool RedrawMutex;
+
     /// <summary>
     /// Create letters buttons and labels.
     /// </summary>
     public void Redraw()
     {
+      if ( !Created || RedrawMutex ) return;
+      if ( !Globals.IsReady ) return;
       SuspendLayout();
+      RedrawMutex = true;
       try
       {
         // TODO calculate buttons and labels size from fonts size at startup and future setting changed
@@ -134,6 +139,7 @@ namespace Ordisoftware.Hebrew
       finally
       {
         ResumeLayout();
+        RedrawMutex = false;
       }
     }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-08 </edited>
 using System;
 using System.Drawing;
 using System.Linq;
@@ -42,11 +42,12 @@ namespace Ordisoftware.Hebrew
 
     public const KnownColor DefaultInputBackColor = KnownColor.AliceBlue;
     public const KnownColor DefaultPanelLettersBackColor = KnownColor.LightYellow;
-    public const float DefaultFontSizeLetters = 20.25F;
-    public const float DefaultFontSizeValues = 6.25F;
-    public const float DefaultFontSizeKeys = 8.25F;
-    public const float DefaultFontSizeInput = 24F;
+    public const float DefaultFontSizeLetters = 18F;
+    public const float DefaultFontSizeValues = 6F;
+    public const float DefaultFontSizeKeys = 8F;
+    public const float DefaultFontSizeInput = 18F;
     public const int DefaultInputMaxLength = 12;
+    public const int DefaultMargin = 5;
 
     /// <summary>
     /// Indicate view letter details event.
@@ -195,7 +196,7 @@ namespace Ordisoftware.Hebrew
     }
     private bool _ShowKeys = true;
 
-    [DefaultValue(5)]
+    [DefaultValue(DefaultMargin)]
     public int MarginX
     {
       get => _MarginX;
@@ -206,9 +207,9 @@ namespace Ordisoftware.Hebrew
         Redraw();
       }
     }
-    private int _MarginX = 5;
+    private int _MarginX = DefaultMargin;
 
-    [DefaultValue(5)]
+    [DefaultValue(DefaultMargin)]
     public int MarginY
     {
       get => _MarginY;
@@ -219,7 +220,7 @@ namespace Ordisoftware.Hebrew
         Redraw();
       }
     }
-    private int _MarginY = 5;
+    private int _MarginY = DefaultMargin;
 
     /// <summary>
     /// Indicate if an input key is processed.

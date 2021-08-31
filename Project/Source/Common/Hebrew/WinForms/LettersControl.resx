@@ -126,7 +126,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 179</value>
+    <value>510, 150</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelLetters.TabIndex" type="System.Int32, mscorlib">
@@ -148,7 +148,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 179</value>
+    <value>0, 150</value>
   </data>
   <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>510, 8</value>
@@ -256,13 +256,13 @@
     <value>Bottom</value>
   </data>
   <data name="TextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Hebrew, 24pt, style=Bold</value>
+    <value>Hebrew, 18pt, style=Bold</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 187</value>
+    <value>0, 158</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 53</value>
+    <value>510, 42</value>
   </data>
   <data name="TextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -289,7 +289,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 240</value>
+    <value>510, 200</value>
   </data>
   <data name="&gt;&gt;ActionLetterAddAtCaret.Name" xml:space="preserve">
     <value>ActionLetterAddAtCaret</value>
