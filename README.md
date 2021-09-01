@@ -295,6 +295,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version x.y
 
 - Add copy to clipboard button in parashah description box.
+- Fix preferences volume track bar on load.
 
 #### 2021.08.30 - Version 8.8
 
