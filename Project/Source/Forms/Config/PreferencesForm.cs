@@ -237,9 +237,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditVolume_ValueChanged(object sender, EventArgs e)
     {
-      if ( !IsReady ) return;
       MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
       LabelVolumeValue.Text = EditVolume.Value + "%";
+      if ( !IsReady ) return;
       Settings.ApplicationVolume = EditVolume.Value;
       SystemManager.TryCatch(Settings.Save);
       DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
