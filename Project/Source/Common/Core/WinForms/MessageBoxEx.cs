@@ -169,7 +169,7 @@ namespace Ordisoftware.Core
       Instances.Remove(this);
     }
 
-    private void ActionClose_Click(object sender, EventArgs e)
+    internal void ActionClose_Click(object sender, EventArgs e)
     {
       Close();
     }

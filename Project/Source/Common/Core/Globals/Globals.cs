@@ -18,7 +18,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Ordisoftware.Core
 {
@@ -178,50 +177,17 @@ namespace Ordisoftware.Core
       = new SystemHotKey();
 
     /// <summary>
-    /// Purge images from localized resource form code files.
-    /// https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
-    /// </summary>
-    static private void PurgeResourceImages()
-    {
-      try
-      {
-        if ( !Directory.Exists(ProjectFolderPath) ) return;
-        string path = ProjectFolderPath;
-        string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
-        foreach ( string file in files )
-        {
-          var xdoc = XDocument.Load(file);
-          var elements = xdoc.Root.Elements("data");
-          var items = elements.Where(item => ( (string)item.Attribute("name") ).Contains(".Image")).ToList();
-          if ( items.Count > 0 )
-          {
-            if ( !IsExiting )
-            {
-              MessageBox.Show("Purge *fr.resx images and exit.", AssemblyTitle);
-              IsExiting = true;
-            }
-            foreach ( var item in items )
-              item.Remove();
-            xdoc.Save(file);
-          }
-        }
-      }
-      catch ( Exception ex )
-      {
-        MessageBox.Show(ex.Message, AssemblyTitle);
-        IsExiting = true;
-      }
-      if ( IsExiting )
-        Environment.Exit(0);
-    }
-
-    /// <summary>
     /// Static constructor.
     /// </summary>
     static Globals()
     {
 #if DEBUG
-      if ( !IsVisualStudioDesigner ) PurgeResourceImages();
+      if ( !IsVisualStudioDesigner )
+      {
+        bool conditional = IsExiting;
+        StackMethods.PurgeResourceImages(AssemblyTitle, ProjectFolderPath, ref conditional);
+        IsExiting = conditional;
+      }
 #endif
     }
 

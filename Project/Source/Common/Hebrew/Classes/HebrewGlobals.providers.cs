@@ -83,7 +83,7 @@ namespace Ordisoftware.Hebrew
     {
       try
       {
-        return new OnlineProviders(filePath, true, Globals.IsDevExecutable, folder);
+        return new OnlineProviders(filePath, true, Globals.IsDebugExecutable, folder);
       }
       catch ( Exception ex )
       {

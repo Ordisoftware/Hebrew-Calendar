@@ -97,57 +97,27 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionUp_Click(object sender, EventArgs e)
     {
-      MoveSelectedItem(ListBox, -1);
+      ListBox.MoveSelectedItem(-1);
       ListBox.Focus();
     }
 
     private void ActionDown_Click(object sender, EventArgs e)
     {
-      MoveSelectedItem(ListBox, 1);
+      ListBox.MoveSelectedItem(1);
       ListBox.Focus();
-    }
-
-    // https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
-    static void MoveSelectedItem(ListBox listBox, int direction)
-    {
-      if ( listBox.SelectedItem == null || listBox.SelectedIndex < 0 ) return;
-      int newIndex = listBox.SelectedIndex + direction;
-      if ( newIndex < 0 || newIndex >= listBox.Items.Count ) return;
-      object selected = listBox.SelectedItem;
-      var checkedListBox = listBox as CheckedListBox;
-      var checkState = CheckState.Unchecked;
-      if ( checkedListBox != null ) checkState = checkedListBox.GetItemCheckState(checkedListBox.SelectedIndex);
-      listBox.Items.Remove(selected);
-      listBox.Items.Insert(newIndex, selected);
-      listBox.SetSelected(newIndex, true);
-      if ( checkedListBox != null ) checkedListBox.SetItemCheckState(newIndex, checkState);
     }
 
     // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
     private void ActionSort_Click(object sender, EventArgs e)
     {
-      bool swapped;
-      do
+      ListBox.Sort((item1, item2) =>
       {
-        int counter = ListBox.Items.Count - 1;
-        swapped = false;
-        while ( counter > 0 )
-        {
-          var date1 = ( (DateItem)ListBox.Items[counter] ).Date;
-          var date2 = ( (DateItem)ListBox.Items[counter - 1] ).Date;
-          if ( date1 == DateTime.MinValue ) date1 = DateTime.MaxValue;
-          if ( date2 == DateTime.MinValue ) date2 = DateTime.MaxValue;
-          if ( date1.CompareTo(date2) == -1 )
-          {
-            object temp = ListBox.Items[counter];
-            ListBox.Items[counter] = ListBox.Items[counter - 1];
-            ListBox.Items[counter - 1] = temp;
-            swapped = true;
-          }
-          counter -= 1;
-        }
-      }
-      while ( swapped );
+        var date1 = ( (DateItem)item1 ).Date;
+        var date2 = ( (DateItem)item2 ).Date;
+        if ( date1 == DateTime.MinValue ) date1 = DateTime.MaxValue;
+        if ( date2 == DateTime.MinValue ) date2 = DateTime.MaxValue;
+        return date1.CompareTo(date2);
+      });
       ListBox_SelectedIndexChanged(null, null);
       ListBox.Focus();
     }

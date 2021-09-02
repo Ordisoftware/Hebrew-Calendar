@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2020-12 </edited>
 using System;
-using System.Threading;
 
 namespace Ordisoftware.Core
 {
@@ -29,21 +28,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public string FormatBytesSize(this long bytes)
     {
-      return bytes >= 0 ? FormatBytesSize((ulong)bytes) : SysTranslations.UndefinedSlot.GetLang();
-    }
-
-    /// <summary>
-    /// Create a readable string from a size in bytes.
-    /// From: https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
-    /// </summary>
-    static public string FormatBytesSize(this ulong bytes)
-    {
-      string suffix = SysTranslations.MemorySizeSuffix.GetLang();
-      ulong unit = 1024;
-      if ( bytes < unit ) return $"{bytes} {suffix}";
-      var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-      string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}i{suffix}";
-      return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", string.Empty);
+      return bytes >= 0 ? StackMethods.FormatBytesSize((ulong)bytes) : SysTranslations.UndefinedSlot.GetLang();
     }
 
     /// <summary>
