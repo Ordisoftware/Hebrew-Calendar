@@ -14,10 +14,7 @@
 /// <edited> 2021-04 </edited>
 using System;
 using System.Threading;
-using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.Runtime.InteropServices;
 
 namespace Ordisoftware.Core
 {
@@ -41,20 +38,6 @@ namespace Ordisoftware.Core
       MainThread = Thread.CurrentThread;
     }
 
-    /// <summary>
-    /// Get task bar coordonates.
-    /// https://stackoverflow.com/questions/3677182/taskbar-location
-    /// </summary>
-    static public Rectangle GetTaskbarCoordonates()
-    {
-      var data = new NativeMethods.APPBARDATA();
-      data.cbSize = Marshal.SizeOf(data);
-      IntPtr retval = NativeMethods.SHAppBarMessage(NativeMethods.ABM_GETTASKBARPOS, ref data);
-      if ( retval == IntPtr.Zero )
-        throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));
-      return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
-    }
-
     public const int TaskbarWidthCheckTrigger = 250;
 
     /// <summary>
@@ -62,7 +45,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public AnchorStyles GetTaskbarAnchorStyle()
     {
-      var coordonates = GetTaskbarCoordonates();
+      var coordonates = StackMethods.GetTaskbarCoordonates();
       if ( coordonates.Left == 0 && coordonates.Top == 0 )
         if ( coordonates.Width > TaskbarWidthCheckTrigger )
           return AnchorStyles.Top;

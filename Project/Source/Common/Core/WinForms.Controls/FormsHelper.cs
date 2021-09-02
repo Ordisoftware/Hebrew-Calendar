@@ -18,10 +18,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.Windows.Forms;
-using System.Text;
 using System.Reflection;
 
 namespace Ordisoftware.Core
@@ -88,9 +85,7 @@ namespace Ordisoftware.Core
     static public IEnumerable<T> GetAll<T>(this Control control)
     {
       var controls = control.Controls.OfType<T>();
-      return control.Controls.Cast<Control>()
-                             .SelectMany(c => c.GetAll<T>())
-                             .Concat(controls);
+      return control.Controls.Cast<Control>().SelectMany(c => c.GetAll<T>()).Concat(controls);
     }
 
     /// <summary>
@@ -288,57 +283,6 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
-    /// </summary>
-    static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
-    {
-      if ( action == null ) action = MenuItemDropDownOpening;
-      var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>().ToList();
-      var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-      var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-      items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-      items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-      items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-    }
-
-    /// <summary>
-    /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
-    /// </summary>
-    static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
-    {
-      if ( action == null ) action = MenuItemDropDownOpening;
-      var items1 = menu.Items.OfType<ToolStripMenuItem>().ToList();
-      var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-      var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-      items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-      items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-      items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
-    }
-
-    /// <summary>
-    /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
-    /// </summary>
-    static public void MenuItemDropDownOpening(object sender, EventArgs e)
-    {
-      if ( !( sender is ToolStripMenuItem menuItem ) || !menuItem.HasDropDownItems ) return;
-      Rectangle Bounds = menuItem.GetCurrentParent().Bounds;
-      Screen CurrentScreen = Screen.FromPoint(Bounds.Location);
-      int MaxWidth = 0;
-      foreach ( var subitem in menuItem.DropDownItems.OfType<ToolStripMenuItem>() )
-        MaxWidth = Math.Max(subitem.Width, MaxWidth);
-      MaxWidth += 10;
-      int FarRight = Bounds.Right + MaxWidth;
-      int CurrentMonitorRight = CurrentScreen.Bounds.Right;
-      if ( FarRight > CurrentMonitorRight )
-        menuItem.DropDownDirection = ToolStripDropDownDirection.Left;
-      else
-        menuItem.DropDownDirection = ToolStripDropDownDirection.Right;
-    }
-
-    /// <summary>
     /// Duplicate menu subitems.
     /// </summary>
     static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination, bool noshortcuts = true)
@@ -409,39 +353,16 @@ namespace Ordisoftware.Core
       return bitmap;
     }
 
-    /// <summary>
-    /// Resize an image.
-    /// </summary>
-    /// <param name="image">The image.</param>
-    /// <param name="width">The width.</param>
-    /// <param name="height">The height.</param>
-    /// <returns>The image resized.</returns>
-    static public Bitmap Resize(this Image image, int width, int height)
-    {
-      var destRect = new Rectangle(0, 0, width, height);
-      var destImage = new Bitmap(width, height);
-      destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-      using ( var graphics = Graphics.FromImage(destImage) )
-      {
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        using ( var wrapMode = new ImageAttributes() )
-        {
-          wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-          graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-        }
-      }
-      return destImage;
-    }
-
     static public void SetBackColor(this DataGridView grid, Color color)
     {
       for ( int row = 0; row < grid.Rows.Count; row++ )
         for ( int col = 0; col < grid.Columns.Count; col++ )
           grid[col, row].Style.BackColor = color;
+    }
+
+    static public void SetTextJustified(this Control control, string text, int width)
+    {
+      control.Text = StackMethods.JustifyParagraph(text, width, control.Font);
     }
 
     static public List<Point> GetGridPoints(this Control control, int margin = 15)
@@ -473,131 +394,6 @@ namespace Ordisoftware.Core
       return points;
     }
 
-    /// <summary>
-    /// Indicate if a control is visible on the screen over others.
-    /// https://stackoverflow.com/questions/1649959/how-to-check-if-window-is-really-visible-in-windows-forms
-    /// </summary>
-    static public bool IsVisibleOnTop(this Control control, int requiredPercent = 100, int margin = 15)
-    {
-      if ( !control.Visible ) return false;
-      var controls = control.GetAll<Control>().Select(c => c.Handle).ToList();
-      var points = control.GetGridPoints(margin);
-      bool all = requiredPercent == 100;
-      int found = 0;
-      int required = points.Count;
-      if ( !all ) required = required * requiredPercent / 100;
-      foreach ( var point in points )
-      {
-        var handle = NativeMethods.WindowFromPoint(new NativeMethods.PointStruct(point.X, point.Y));
-        if ( handle == control.Handle || controls.Contains(handle) )
-        {
-          if ( ++found == required ) return true;
-        }
-        else
-        {
-          if ( all ) return false;
-        }
-      }
-      return false;
-    }
-
-    static public void SetTextJustified(this Control control, string text, int width)
-    {
-      control.Text = JustifyParagraph(text, width, control.Font);
-    }
-
-    /// <summary>
-    /// Apply "justify" to the text of a control.
-    /// </summary>
-    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
-    static public string JustifyParagraph(string text, int width, Font font)
-    {
-      var result = new StringBuilder();
-      List<string> ParagraphsList = new List<string>();
-      ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None).ToList());
-      int checkoverflow = 0;
-      foreach ( string Paragraph in ParagraphsList )
-      {
-        var line = new StringBuilder();
-        int ParagraphWidth = TextRenderer.MeasureText(Paragraph, font).Width;
-        if ( ParagraphWidth > width )
-        {
-          string[] Words = Paragraph.Split(' ');
-          line.Append(Words[0] + ' ');
-          for ( int x = 1; x < Words.Length; x++ )
-          {
-            string tmpLine = line + ( Words[x] + (char)32 );
-            if ( TextRenderer.MeasureText(tmpLine, font).Width > width )
-            {
-              // TODO improve this hack solving freezing when word has no space
-              if ( checkoverflow++ > 50 )
-              {
-                DebugManager.Trace(LogTraceEvent.Error, $"Stack Overflow in {nameof(JustifyParagraph)}:{Globals.NL2}{text}");
-                return text;
-              }
-              result.Append(Justify(line.ToString().TrimEnd()) + Globals.NL);
-              line.Clear();
-              --x;
-            }
-            else
-              line.Append(Words[x] + ' ');
-          }
-          if ( line.Length > 0 ) result.Append(line + Globals.NL);
-        }
-        else
-          result.Append(Paragraph + Globals.NL);
-      }
-      return result.ToString().TrimEnd(Globals.NL.ToCharArray());
-      string Justify(string str)
-      {
-        char SpaceChar = (char)0x200A;
-        List<string> WordsList = str.Split(' ').ToList();
-        if ( WordsList.Capacity < 2 ) return str;
-        int NumberOfWords = WordsList.Capacity - 1;
-        int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
-        int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
-                           - TextRenderer.MeasureText(WordsList[0], font).Width;
-        int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
-        float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
-        return ( (Func<string>)( () =>
-        {
-          var Spaces = new StringBuilder();
-          var AdjustedWords = new StringBuilder();
-          for ( int h = 0; h < AverageSpace; h++ )
-            Spaces.Append(SpaceChar);
-          foreach ( string Word in WordsList )
-          {
-            AdjustedWords.Append(Word + Spaces);
-            if ( AdjustSpace > 0 )
-            {
-              AdjustedWords.Append(SpaceChar);
-              AdjustSpace -= SpaceCharWidth;
-            }
-          }
-          return AdjustedWords.ToString().TrimEnd();
-        } ) )();
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// Custom ToolStrip renderer
-  /// https://stackoverflow.com/questions/2097164/how-to-change-system-windows-forms-toolstripbutton-highlight-background-color-wh#2097341
-  /// </summary>
-  public class CheckedButtonsToolStripRenderer : ToolStripProfessionalRenderer
-  {
-    protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
-    {
-      if ( e.Item is ToolStripButton button && button.Checked )
-      {
-        var bounds = new Rectangle(0, 0, e.Item.Width - 1, e.Item.Height - 1);
-        e.Graphics.FillRectangle(SystemBrushes.ControlLight, bounds);
-        e.Graphics.DrawRectangle(SystemPens.ControlDark, bounds);
-      }
-      else
-        base.OnRenderButtonBackground(e);
-    }
   }
 
 }

@@ -81,7 +81,7 @@ namespace Ordisoftware.Hebrew
                                  Action reconstruct)
     {
       list.Clear();
-      string nameItems = NameOfFromStack(items, 3).Replace("Globals.", string.Empty);
+      string nameItems = StackMethods.NameOfFromStack(items, 3).Replace("Globals.", string.Empty);
       if ( items.Configurable )
       {
         list.Insert(0, CreateConfigureMenuItem((sender, e) =>
@@ -171,38 +171,6 @@ namespace Ordisoftware.Hebrew
           if ( !DataFileEditorForm.Run(nameof(HebrewGlobals.WebLinksProviders), HebrewGlobals.WebLinksProviders) ) return;
           reconstruct();
         }));
-      }
-    }
-
-    /// <summary>
-    /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
-    /// </summary>
-    static private Dictionary<string, string> AlreadyAcessedVarNames
-      = new Dictionary<string, string>();
-
-    static private string NameOfFromStack(this object instance, int level = 1)
-    {
-      try
-      {
-        var frame = new StackTrace(true).GetFrame(level);
-        string filePath = frame.GetFileName();
-        int lineNumber = frame.GetFileLineNumber();
-        string id = filePath + lineNumber;
-        if ( AlreadyAcessedVarNames.ContainsKey(id) )
-          return AlreadyAcessedVarNames[id];
-        using ( var file = new StreamReader(filePath) )
-        {
-          for ( int i = 0; i < lineNumber - 1; i++ )
-            file.ReadLine();
-          string line = file.ReadLine();
-          string name = line.Split('(', ')')[1].TrimEnd(' ', ',');
-          AlreadyAcessedVarNames.Add(id, name);
-          return name;
-        }
-      }
-      catch
-      {
-        return SysTranslations.ErrorSlot.GetLang();
       }
     }
 

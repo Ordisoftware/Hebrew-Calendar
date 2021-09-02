@@ -49,33 +49,6 @@ namespace Ordisoftware.Core
       return (T)(object)flagsInt;
     }
 
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
-    static public T Next<T>(this T value, params T[] skip) where T : Enum
-    {
-      var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
-                       .SkipWhile(e => !value.Equals(e))
-                       .Skip(1)
-                       .First();
-      foreach ( T item in skip )
-        if ( item.Equals(result) )
-          result = result.Next(skip);
-      return result;
-    }
-
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
-    static public T Previous<T>(this T value, params T[] skip) where T : Enum
-    {
-      var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
-                       .Reverse()
-                       .SkipWhile(e => !value.Equals(e))
-                       .Skip(1)
-                       .First();
-      foreach ( T item in skip )
-        if ( item.Equals(result) )
-          result = result.Previous(skip);
-      return result;
-    }
-
   }
 
 }
