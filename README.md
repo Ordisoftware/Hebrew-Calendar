@@ -55,7 +55,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.7.2
-- SQLite 3.33
+- SQLite 3.35.5
 
 ## Download
 
@@ -296,6 +296,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add copy to clipboard button in parashah description box.
 - Fix preferences volume track bar on load.
+- Update sqlite-net-pcl nuget.
+- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
 
 #### 2021.08.30 - Version 8.8
 

@@ -1,0 +1,21 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for online providers items to search a concordance number
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Name = (EN) StudyBible.org
+URL = https://studybible.info/strongs/H%CONCORDANCE%.html
+
+Name = (EN) BibleHub.com
+URL = https://biblehub.com/hebrew/%CONCORDANCE%.htm
+
+Name = (EN) BlueLetterBible.org
+URL = https://www.blueletterbible.org/lexicon/h%CONCORDANCE%/
+

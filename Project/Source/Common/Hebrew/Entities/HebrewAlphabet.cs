@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew
   {
 
     public const int ConcordanceFirst = 1;
-    public const int ConcordanceLast = 8853;
+    public const int ConcordanceLast = 8674;
 
     /// <summary>
     /// Indicate letters keyboard codes for hebrew font.

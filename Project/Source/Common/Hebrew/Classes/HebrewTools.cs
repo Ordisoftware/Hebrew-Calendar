@@ -100,14 +100,22 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Open online word provider.
     /// </summary>
-    /// <param name="link"></param>
-    /// <param name="hebrew"></param>
     static public void OpenWordProvider(string link, string hebrew)
     {
       if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
       string unicode = HebrewAlphabet.ToUnicode(hebrew);
       link = link.Replace("%WORD%", unicode)
                  .Replace("%FIRSTLETTER%", unicode[0].ToString());
+      SystemManager.RunShell(link);
+    }
+
+    /// <summary>
+    /// Open online concordance provider.
+    /// </summary>
+    static public void OpenWordConcordance(string link, int concordance)
+    {
+      if ( concordance < 1 ) return;
+      link = link.Replace("%CONCORDANCE%", concordance.ToString());
       SystemManager.RunShell(link);
     }
 
