@@ -59,9 +59,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 8.8**
+**What's new in the latest version 8.9**
 
-- Added a command-line option to show the weekly parashah description box.
+- Added copy to clipboard button in parashah description box.
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -292,12 +292,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version x.y
+#### 2021.09.05 - Version 8.9
 
 - Add copy to clipboard button in parashah description box.
 - Fix preferences volume track bar on load.
 - Update sqlite-net-pcl nuget.
-- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
+- Nuget SQLitePCLRaw.bundle_green must remain `v2.0.4`.
 
 #### 2021.08.30 - Version 8.8
 

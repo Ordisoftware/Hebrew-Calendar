@@ -39,12 +39,12 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["8.8"] = new TranslationsDictionary
+        ["8.9"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
+          [Language.EN] = "• Added copy to clipboard button in parashah description box." + Globals.NL +
                           "• Some fixes and improvements.",
 
-          [Language.FR] = "• Ajout d'une option de ligne de commande pour afficher le tableau des mois lunaires." + Globals.NL +
+          [Language.FR] = "• Ajout d'un bouton copier dans le presse-papier pour la boite de description de parashah." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 
@@ -52,6 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
                           "• Overall performances are optimized." + Globals.NL +
+                          "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
                           "• Added weekly parashah reminder." + Globals.NL +
                           "• Improved parashot titles and menus." + Globals.NL +
                           "• Improved navigation window." + Globals.NL +
@@ -60,6 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
           [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
                           "• Les performances globales sont optimisées." + Globals.NL +
+                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah de la semaine." + Globals.NL +
                           "• Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
                           "• Amélioration des titres et des menus des parashot." + Globals.NL +
                           "• Amélioration de la fenêtre de navigation." + Globals.NL +
