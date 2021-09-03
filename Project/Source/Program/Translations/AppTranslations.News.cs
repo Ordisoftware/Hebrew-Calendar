@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
           [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
                           "• Les performances globales sont optimisées." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour afficher la dscription de la parashah de la semaine." + Globals.NL +
+                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah de la semaine." + Globals.NL +
                           "• Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
                           "• Amélioration des titres et des menus des parashot." + Globals.NL +
                           "• Amélioration de la fenêtre de navigation." + Globals.NL +
