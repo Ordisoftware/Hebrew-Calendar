@@ -296,8 +296,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add copy to clipboard button in parashah description box.
 - Fix preferences volume track bar on load.
-- Update sqlite-net-pcl nuget.
-- Nuget SQLitePCLRaw.bundle_green must remain v2.0.4
+- Update sqlite-net-pcl nuget
+- Nuget SQLitePCLRaw.bundle_green must remain `v2.0.4`.
 
 #### 2021.08.30 - Version 8.8
 
