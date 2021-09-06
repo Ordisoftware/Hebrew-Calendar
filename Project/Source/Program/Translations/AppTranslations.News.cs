@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -39,21 +39,20 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["8.9"] = new TranslationsDictionary
+        ["8.10"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added copy to clipboard button in parashah description box." + Globals.NL +
-                          "• Some fixes and improvements.",
+          [Language.EN] = "• Fixed showing linked parashah even if not linked.",
 
-          [Language.FR] = "• Ajout d'un bouton copier dans le presse-papier pour la boite de description de parashah." + Globals.NL +
-                          "• Quelques améliorations et corrections."
+          [Language.FR] = "• Correction de l'affichage de la parashah liée même si elle n'est pas liée."
         },
 
         ["8.x"] = new TranslationsDictionary
         {
           [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
                           "• Overall performances are optimized." + Globals.NL +
-                          "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
+                          "• Added copy to clipboard button in parashah description box." + Globals.NL +
                           "• Added weekly parashah reminder." + Globals.NL +
+                          "• Added a command-line option to show the weekly parashah description box." + Globals.NL +
                           "• Improved parashot titles and menus." + Globals.NL +
                           "• Improved navigation window." + Globals.NL +
                           "• Improved reminder boxes." + Globals.NL +
@@ -61,8 +60,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
           [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
                           "• Les performances globales sont optimisées." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah de la semaine." + Globals.NL +
+                          "• Ajout d'un bouton copier dans le presse-papier pour la boite de description de parashah." + Globals.NL +
                           "• Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
+                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah de la semaine." + Globals.NL +
                           "• Amélioration des titres et des menus des parashot." + Globals.NL +
                           "• Amélioration de la fenêtre de navigation." + Globals.NL +
                           "• Amélioration des boites de rappel." + Globals.NL +
