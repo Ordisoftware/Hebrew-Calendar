@@ -61,7 +61,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 8.10**
 
-- Fix bug in visual month view that shows linked parashah even if not linked.
+- Fixed showing linked parashah even if not linked.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -293,7 +293,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.06 - Version 8.10
 
-- Fix bug in visual month view that shows linked parashah even if not linked.
+- Fix showing linked parashah even if not linked.
 
 #### 2021.09.05 - Version 8.9
 
