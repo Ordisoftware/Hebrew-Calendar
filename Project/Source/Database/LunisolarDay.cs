@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 using SQLite;
+using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -45,6 +46,9 @@ namespace Ordisoftware.Hebrew.Calendar
     public string TorahEventText { get; set; }
     public string ParashahID { get; set; }
     public string LinkedParashahID { get; set; }
+
+    [Ignore]
+    public bool HasLinkedParashah => !LinkedParashahID.IsNullOrEmpty();
 
     [Ignore]
     public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;

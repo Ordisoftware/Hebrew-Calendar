@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -275,19 +275,22 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DoSound();
     }
-
+    
     private void InitializeParashahMenu()
     {
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+        var day = (LunisolarDay)LabelParashahValue.Tag;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         ParashotFactory.Get(day.ParashahID),
+                                         day.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ParashotFactory.Get(( (LunisolarDay)LabelParashahValue.Tag ).ParashahID);
+        var day = (LunisolarDay)LabelParashahValue.Tag;
+        var parashah = ParashotFactory.Get(day.ParashahID);
         string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
@@ -366,7 +369,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
     }
 
     private void ActionLockout_Click(object sender, EventArgs e)

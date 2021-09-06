@@ -559,8 +559,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashahInfos_Click(object sender, EventArgs e)
     {
-      if ( !ApplicationDatabase.Instance.ShowWeeklyParashahDescription() )
-        ActionViewParashahDescription.Enabled = false;
+      ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
     }
 
     /// <summary>
@@ -600,7 +599,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah());
+      ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
     }
 
     /// <summary>
