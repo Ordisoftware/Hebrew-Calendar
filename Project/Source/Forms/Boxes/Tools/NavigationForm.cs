@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -102,7 +102,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
             LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
-            LabelParashahValue.Tag = ParashotFactory.Get(rowParashah.ParashahID);
+            LabelParashahValue.Tag = rowParashah;
           }
           var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
           PictureMoon.Image = image.Resize(100, 100);
@@ -229,13 +229,16 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = (Parashah)LabelParashahValue.Tag;
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+        var day = (LunisolarDay)LabelParashahValue.Tag;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         ParashotFactory.Get(day.ParashahID),
+                                         day.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = (Parashah)LabelParashahValue.Tag;
+        var day = (LunisolarDay)LabelParashahValue.Tag;
+        var parashah = ParashotFactory.Get(day.ParashahID);
         string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
@@ -274,15 +277,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewParashahDescription_Click(object sender, EventArgs e)
     {
-      if ( LabelParashahValue.Tag is Parashah parashah )
-        if ( !ParashotForm.ShowParashahDescription(this, parashah, true) )
+      if ( LabelParashahValue.Tag is LunisolarDay day )
+      {
+        var parashah = ParashotFactory.Get(day.ParashahID);
+        if ( !ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah) )
           ActionViewParashahInfos.Enabled = false;
+      }
     }
 
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
-      if ( LabelParashahValue.Tag is Parashah parashah )
-        ParashotForm.Run(parashah);
+      if ( LabelParashahValue.Tag is LunisolarDay day )
+        ParashotForm.Run(ParashotFactory.Get(day.ParashahID));
     }
 
     private void ActionViewCalendar_Click(object sender, EventArgs e)

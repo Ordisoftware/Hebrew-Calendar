@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -126,9 +126,13 @@ namespace Ordisoftware.Hebrew.Calendar
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
           {
-            var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-            if ( parashah != null )
-              Text += " - Parashah " + parashah.ToStringLinked(Program.Settings.ParashahCaptionWithBookAndRef).ToUpper();
+            var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+            if ( weekParashah.Factory != null )
+            {
+              str = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
+                                                       weekParashah.Day.HasLinkedParashah);
+              Text += " - Parashah " + str.ToUpper();
+            }
           }
         });
       }

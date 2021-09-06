@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Xml;
@@ -392,14 +392,18 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah, true);
+        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+        if ( weekParashah.Factory == null ) return;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         weekParashah.Factory,
+                                         weekParashah.Day.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
+        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+        if ( weekParashah.Factory == null ) return;
+        string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;

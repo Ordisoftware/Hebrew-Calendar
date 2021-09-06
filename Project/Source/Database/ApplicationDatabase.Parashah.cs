@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -21,28 +21,31 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class ApplicationDatabase : SQLiteDatabase
   {
 
-    public Parashah GetWeeklyParashah()
+    public (LunisolarDay Day, Parashah Factory) GetWeeklyParashah()
     {
       var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
-      if ( today == null ) return null;
+      if ( today == null ) return (today, null);
       if ( today.LunarMonth == TorahCelebrations.PessahMonth )
         if ( today.TorahEvent == TorahEvent.PessahD1 || today.TorahEvent == TorahEvent.PessahD7 )
-          return null;
+          return (today, null);
         else
         if ( !today.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )
-          return null;
+          return (today, null);
       if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
-      return ParashotFactory.Get(today?.GetParashahReadingDay()?.ParashahID) ?? null;
+      today = today?.GetParashahReadingDay();
+      return (today, ParashotFactory.Get(today?.ParashahID) ?? null);
     }
 
     public bool ShowWeeklyParashahDescription()
     {
       if ( MainForm.UserParashot == null ) return false;
-      var parashah = GetWeeklyParashah();
-      if ( parashah == null ) return false;
-      parashah = MainForm.UserParashot.Find(p => p.ID == parashah.ID);
-      if ( parashah == null ) return false;
-      return ParashotForm.ShowParashahDescription(MainForm.Instance, parashah, true);
+      var weekParashah = GetWeeklyParashah();
+      if ( weekParashah.Factory == null ) return false;
+      var parashah = MainForm.UserParashot.Find(p => p.ID == weekParashah.Factory.ID);
+      if ( weekParashah.Factory == null ) return false;
+      return ParashotForm.ShowParashahDescription(MainForm.Instance,
+                                                  weekParashah.Factory,
+                                                  weekParashah.Day.HasLinkedParashah);
     }
 
   }
@@ -57,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
       var parashah = ParashotFactory.Get(ParashahID);
       return parashah != null
-             ? parashah.ToStringLinked(withBookAndRefIfRequired)
+             ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
              : SysTranslations.UndefinedSlot.GetLang();
     }
 
