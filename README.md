@@ -256,6 +256,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
+| Alt + V | Show verses about convocations |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
@@ -281,7 +282,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add celebrations' verses references board.
 - Add lunar months board with hebrew names, meanings, lettriqs and tools.
 - Add `--lunarmonths` command-line option to show the lunar months board.
 - Add print boards.
@@ -291,6 +291,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add dark theme for month view.
 
 ## Changelog
+
+#### In progress
+
+- Add verses about convocations window.
 
 #### 2021.09.06 - Version 8.10
 
