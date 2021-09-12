@@ -127,10 +127,10 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
         Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                                AppTranslations.NoticeKeyboardShortcuts,
-                                                               true, false, 410, 745, false, false);
+                                                               true, false, 410, 750, false, false);
         Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(15, 10, 10, 10);
         Globals.IsReady = true;
         SetGlobalHotKey();
         TimerUpdateTitles.Start();

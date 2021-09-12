@@ -533,4 +533,7 @@
   <data name="ActionViewParashahDescription.Text" xml:space="preserve">
     <value>Afficher la description</value>
   </data>
+  <data name="ActionShowConvocationsVerses.Text" xml:space="preserve">
+    <value>Versets des convocations</value>
+  </data>
 </root>
