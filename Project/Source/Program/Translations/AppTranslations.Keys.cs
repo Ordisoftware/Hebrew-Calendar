@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + W : Online weather" + Globals.NL +
                         "Alt + G : Generate calendar" + Globals.NL +
                         "Alt + P : Show online parashah menu" + Globals.NL +
-                        "Alt + V : Show verses about convocations" + Globals.NL +
+                        "Alt + A : Show verses about convocations" + Globals.NL +
                         "Ctrl + F1 : Parashot board" + Globals.NL +
                         "Ctrl + F2 : Celebrations board" + Globals.NL +
                         "Ctrl + F3 : New moons board" + Globals.NL +
@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Alt + W : Météo en ligne" + Globals.NL +
                         "Alt + G : Génèrate le calendrier" + Globals.NL +
                         "Alt + P : Affiche le menu de la parashah en ligne" + Globals.NL +
-                        "Alt + V : Affiche les versets des convocations" + Globals.NL +
+                        "Alt + A : Affiche les versets des convocations" + Globals.NL +
                         "Ctrl + F1 : Tableau des parashot" + Globals.NL +
                         "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +

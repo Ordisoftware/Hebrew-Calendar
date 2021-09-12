@@ -564,7 +564,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionShowConvocationsVerses_Click(object sender, EventArgs e)
     {
-      // TODO
+      DisplayManager.Show("Verses about convocations");
     }
 
     /// <summary>
