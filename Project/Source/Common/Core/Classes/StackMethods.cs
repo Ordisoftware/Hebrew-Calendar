@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
 
     #region Enums
 
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+    /// From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Next<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -36,7 +36,7 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+    /// From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Previous<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -56,8 +56,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Create a readable string from a size in bytes.
-    /// From: https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
     /// </summary>
+    /// From https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
     static public string FormatBytesSize(this ulong bytes)
     {
       string suffix = SysTranslations.MemorySizeSuffix.GetLang();
@@ -75,7 +75,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Apply "justify" to the text of a control.
     /// </summary>
-    // https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
+    /// From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     static public string JustifyParagraph(string text, int width, Font font)
     {
       var result = new StringBuilder();
@@ -156,6 +156,7 @@ namespace Ordisoftware.Core
     /// <param name="width">The width.</param>
     /// <param name="height">The height.</param>
     /// <returns>The image resized.</returns>
+    /// From Stack Overflow
     static public Bitmap Resize(this Image image, int width, int height)
     {
       var destRect = new Rectangle(0, 0, width, height);
@@ -183,8 +184,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Indicate if a control is visible on the screen over others.
-    /// https://stackoverflow.com/questions/1649959/how-to-check-if-window-is-really-visible-in-windows-forms
     /// </summary>
+    /// From https://stackoverflow.com/questions/1649959/how-to-check-if-window-is-really-visible-in-windows-forms
     static public bool IsVisibleOnTop(this Control control, int requiredPercent = 100, int margin = 15)
     {
       if ( !control.Visible ) return false;
@@ -212,11 +213,11 @@ namespace Ordisoftware.Core
     #endregion
 
     #region WinForms Menus DropDown
-    
+
     /// <summary>
     /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     /// </summary>
+    /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
     {
       if ( action == null ) action = MenuItemDropDownOpening;
@@ -230,8 +231,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     /// </summary>
+    /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
     {
       if ( action == null ) action = MenuItemDropDownOpening;
@@ -245,8 +246,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Ensure drop down menu items are displayed on the same screen.
-    /// https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     /// </summary>
+    /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     static public void MenuItemDropDownOpening(object sender, EventArgs e)
     {
       if ( !( sender is ToolStripMenuItem menuItem ) || !menuItem.HasDropDownItems ) return;
@@ -268,7 +269,7 @@ namespace Ordisoftware.Core
 
     #region WinForms ListBox
 
-    // https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
+    /// From https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
     static public void MoveSelectedItem(this ListBox listBox, int direction)
     {
       if ( listBox.SelectedItem == null || listBox.SelectedIndex < 0 ) return;
@@ -284,7 +285,7 @@ namespace Ordisoftware.Core
       if ( checkedListBox != null ) checkedListBox.SetItemCheckState(newIndex, checkState);
     }
 
-    // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
+    /// From https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
     static public void Sort(this ListBox listBox, Func<object, object, int> compare)
     {
       bool swapped;
@@ -313,8 +314,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Convert a collection of T to a DataTable.
-    /// https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
     /// </summary>
+    /// From https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
     static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
     {
       if ( list == null ) return null;
@@ -342,7 +343,7 @@ namespace Ordisoftware.Core
       return table;
     }
 
-    //https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
+    /// From https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
     static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
     {
       try
@@ -372,8 +373,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Purge images from localized resource form code files.
-    /// https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
     /// </summary>
+    /// From https://stackoverflow.com/questions/15340615/resx-form-icon-cascade-updates#42977949
     static public void PurgeResourceImages(string title, string sourcepath, ref bool conditional)
     {
       try
@@ -414,8 +415,8 @@ namespace Ordisoftware.Core
 
     /// <summary>
     /// Get task bar coordonates.
-    /// https://stackoverflow.com/questions/3677182/taskbar-location
     /// </summary>
+    /// From https://stackoverflow.com/questions/3677182/taskbar-location
     static public Rectangle GetTaskbarCoordonates()
     {
       var data = new NativeMethods.APPBARDATA();
@@ -430,7 +431,7 @@ namespace Ordisoftware.Core
 
     #region Assembly
 
-    // https://stackoverflow.com/questions/1600962/displaying-the-build-date
+    /// From https://stackoverflow.com/questions/1600962/displaying-the-build-date
     static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
     {
       var filePath = assembly.Location;
@@ -452,12 +453,10 @@ namespace Ordisoftware.Core
 
     #region Stack Trace
 
-    /// <summary>
-    /// https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
-    /// </summary>
     static private Dictionary<string, string> AlreadyAcessedVarNames
       = new Dictionary<string, string>();
 
+    /// From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     static public string NameOfFromStack(this object instance, int level = 1)
     {
       try
@@ -490,8 +489,8 @@ namespace Ordisoftware.Core
 
   /// <summary>
   /// Custom ToolStrip renderer
-  /// https://stackoverflow.com/questions/2097164/how-to-change-system-windows-forms-toolstripbutton-highlight-background-color-wh#2097341
   /// </summary>
+  /// From https://stackoverflow.com/questions/2097164/how-to-change-system-windows-forms-toolstripbutton-highlight-background-color-wh#2097341
   public class CheckedButtonsToolStripRenderer : ToolStripProfessionalRenderer
   {
     protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
