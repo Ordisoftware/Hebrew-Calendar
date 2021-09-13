@@ -129,10 +129,13 @@ namespace Ordisoftware.Hebrew.Calendar
             var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
             if ( weekParashah.Factory != null )
             {
+              ActionWeeklyParashah.Enabled = true;
               str = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
                                                        weekParashah.Day.HasLinkedParashah);
               Text += " - Parashah " + str.ToUpper();
             }
+            else
+              ActionWeeklyParashah.Enabled = false;
           }
         });
       }
