@@ -292,6 +292,7 @@
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
     <Compile Include="Source\Common\Core\Managers.System\PowerActions.cs" />
+    <Compile Include="Source\Enums\TorahCelebrations.Verses.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\NewMoonsBoardForm.cs">
       <SubType>Form</SubType>
