@@ -292,9 +292,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress
+#### In progress - Version 9.0
 
 - Add verses about convocations window.
+- Add celebartions study tools.
+- Some fixes and improvements.
 
 #### 2021.09.06 - Version 8.10
 
