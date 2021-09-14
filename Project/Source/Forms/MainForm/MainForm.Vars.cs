@@ -75,11 +75,11 @@ namespace Ordisoftware.Hebrew.Calendar
     public int CurrentDayYear
       => CurrentDay?.Date.Year ?? 0;
 
-    private Dictionary<TorahEvent, bool> TorahEventRemindList
-      = new Dictionary<TorahEvent, bool>();
+    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindList
+      = new Dictionary<TorahCelebrationDay, bool>();
 
-    private Dictionary<TorahEvent, bool> TorahEventRemindDayList
-      = new Dictionary<TorahEvent, bool>();
+    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList
+      = new Dictionary<TorahCelebrationDay, bool>();
 
     internal readonly NullSafeList<ReminderForm> RemindCelebrationForms
       = new NullSafeList<ReminderForm>();
@@ -87,11 +87,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private readonly List<DateTime> RemindCelebrationDates
       = new List<DateTime>();
 
-    private readonly Dictionary<TorahEvent, DateTime?> LastCelebrationReminded
-      = new Dictionary<TorahEvent, DateTime?>();
+    private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded
+      = new Dictionary<TorahCelebrationDay, DateTime?>();
 
-    internal readonly Dictionary<TorahEvent, ReminderForm> RemindCelebrationDayForms
-      = new Dictionary<TorahEvent, ReminderForm>();
+    internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms
+      = new Dictionary<TorahCelebrationDay, ReminderForm>();
 
     private DateTime? LastShabatReminded;
     internal ReminderForm ShabatForm = null;

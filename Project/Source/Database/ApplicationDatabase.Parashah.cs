@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
       if ( today == null ) return (today, null);
       if ( today.LunarMonth == TorahCelebrations.PessahMonth )
-        if ( today.TorahEvent == TorahEvent.PessahD1 || today.TorahEvent == TorahEvent.PessahD7 )
+        if ( today.TorahEvent == TorahCelebrationDay.PessahD1 || today.TorahEvent == TorahCelebrationDay.PessahD7 )
           return (today, null);
         else
         if ( !today.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )

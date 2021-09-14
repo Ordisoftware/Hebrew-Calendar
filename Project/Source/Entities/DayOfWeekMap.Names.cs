@@ -128,7 +128,7 @@ namespace Ordisoftware.Hebrew.Calendar
           dic.Add(kvp.Key, new List<string>());
           foreach ( var item in kvp.Value )
           {
-            dic[kvp.Key].Add(AppTranslations.DayOfWeek[item][lang].Substring(0, 3));
+            dic[kvp.Key].Add(AppTranslations.DaysOfWeek[item][lang].Substring(0, 3));
           }
         }
       }

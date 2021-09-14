@@ -17,10 +17,19 @@ using System;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
+  public enum TorahCelebration
+  {
+    Pessah = TorahCelebrationDay.PessahD1,
+    Chavouot = TorahCelebrationDay.Chavouot1,
+    YomTerouah = TorahCelebrationDay.YomTerouah,
+    YomHaKipourim = TorahCelebrationDay.YomHaKipourim,
+    Soukot = TorahCelebrationDay.SoukotD1,
+  }
+
   /// <summary>
   /// Torah event enum.
   /// </summary>
-  public enum TorahEvent
+  public enum TorahCelebrationDay
   {
 
     // Database values for major celebrations

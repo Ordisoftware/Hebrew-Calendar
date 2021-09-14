@@ -115,27 +115,31 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate major TorahEvent enums list.
     /// </summary>
-    static public readonly IEnumerable<TorahEvent> MajorEvents
-      = Enums.GetValues<TorahEvent>().Skip(1).TakeUntil(v => v == TorahEvent.SoukotD8);
+    static public readonly IEnumerable<TorahCelebrationDay> MajorEvents
+      = Enums.GetValues<TorahCelebrationDay>()
+             .Skip(1)
+             .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
 
     /// <summary>
     /// Indicate minor TorahEvent enums list.
     /// </summary>
-    static public readonly IEnumerable<TorahEvent> MinorEvents
-      = Enums.GetValues<TorahEvent>().SkipUntil(v => v == TorahEvent.SoukotD8).TakeUntil(v => v == TorahEvent.Pourim);
+    static public readonly IEnumerable<TorahCelebrationDay> MinorEvents
+      = Enums.GetValues<TorahCelebrationDay>()
+             .SkipUntil(v => v == TorahCelebrationDay.SoukotD8)
+             .TakeUntil(v => v == TorahCelebrationDay.Pourim);
 
     /// <summary>
     /// Indicate special celebration days.
     /// </summary>
-    static public readonly IEnumerable<TorahEvent> SpecialDays
-      = new List<TorahEvent>
+    static public readonly IEnumerable<TorahCelebrationDay> SpecialDays
+      = new List<TorahCelebrationDay>
       {
-        TorahEvent.PessahD1,
-        TorahEvent.PessahD7,
-        TorahEvent.YomTerouah,
-        TorahEvent.YomHaKipourim,
-        TorahEvent.SoukotD1,
-        TorahEvent.SoukotD8
+        TorahCelebrationDay.PessahD1,
+        TorahCelebrationDay.PessahD7,
+        TorahCelebrationDay.YomTerouah,
+        TorahCelebrationDay.YomHaKipourim,
+        TorahCelebrationDay.SoukotD1,
+        TorahCelebrationDay.SoukotD8
       };
 
   }

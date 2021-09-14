@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public bool IsFullMoon { get; set; }
     public MoonPhase MoonPhase { get; set; }
     public SeasonChange SeasonChange { get; set; }
-    public TorahEvent TorahEvent { get; set; }
+    public TorahCelebrationDay TorahEvent { get; set; }
     public string TorahEventText { get; set; }
     public string ParashahID { get; set; }
     public string LinkedParashahID { get; set; }
@@ -54,13 +54,13 @@ namespace Ordisoftware.Hebrew.Calendar
     public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
 
     public bool IsNewYear
-      => TorahEvent == TorahEvent.NewYearD1;
+      => TorahEvent == TorahCelebrationDay.NewYearD1;
 
     public bool HasSeasonChange
       => SeasonChange != SeasonChange.None;
 
     public bool HasTorahEvent
-      => TorahEvent != TorahEvent.None;
+      => TorahEvent != TorahCelebrationDay.None;
 
     public string DayAndMonthText
       => LunarDay + " " + HebrewMonths.Transcriptions[LunarMonth];

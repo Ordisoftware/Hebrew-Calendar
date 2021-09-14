@@ -90,13 +90,13 @@ namespace Ordisoftware.Hebrew.Calendar
             LoadingForm.Instance.DoProgress();
             var ev = row.TorahEvent;
             var season = row.SeasonChange;
-            if ( ev == TorahEvent.PessahD1
-              || ev == TorahEvent.SoukotD1
-              || ev == TorahEvent.ChavouotDiet )
+            if ( ev == TorahCelebrationDay.PessahD1
+              || ev == TorahCelebrationDay.SoukotD1
+              || ev == TorahCelebrationDay.ChavouotDiet )
               IsCelebrationWeekStart = true;
-            IsCelebrationWeekEnd = ev == TorahEvent.PessahD7
-                                || ev == TorahEvent.SoukotD8
-                                || ev == TorahEvent.Chavouot1;
+            IsCelebrationWeekEnd = ev == TorahCelebrationDay.PessahD7
+                                || ev == TorahCelebrationDay.SoukotD8
+                                || ev == TorahCelebrationDay.Chavouot1;
             var date = row.Date;
             // Colors
             Color? color1 = null;
@@ -104,15 +104,15 @@ namespace Ordisoftware.Hebrew.Calendar
             Color? color3 = null;
             if ( season != SeasonChange.None )
               color1 = Settings.EventColorSeason;
-            if ( row.IsNewMoon && ev == TorahEvent.None )
+            if ( row.IsNewMoon && ev == TorahCelebrationDay.None )
               color2 = Settings.EventColorMonth;
             else
-            if ( row.IsNewMoon && ev == TorahEvent.NewYearD1 )
+            if ( row.IsNewMoon && ev == TorahCelebrationDay.NewYearD1 )
               color2 = MixColor(Settings.EventColorMonth,
                                 Settings.EventColorSeason,
                                 Settings.EventColorNext);
             else
-            if ( IsCelebrationWeekStart || ev != TorahEvent.None )
+            if ( IsCelebrationWeekStart || ev != TorahCelebrationDay.None )
               color2 = Settings.EventColorTorah;
             if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
               color3 = Settings.EventColorShabat;
@@ -141,8 +141,8 @@ namespace Ordisoftware.Hebrew.Calendar
               IsCelebrationWeekStart = false;
             int rank = 0;
             // Sun
-            strToolTip = AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.SunriseAsString + Globals.NL
-                       + AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.SunsetAsString;
+            strToolTip = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.SunriseAsString + Globals.NL
+                       + AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString;
             Color colorMoon = Color.Black;
             string strMonthDay = row.DayAndMonthFormattedText;
             colorMoon = row.IsNewMoon
@@ -154,9 +154,9 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
             {
               if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -164,12 +164,12 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.Ephemeris.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
               if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.Ephemeris.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
             }
             //Torah
             add(Settings.CalendarColorTorahEvent, row.TorahEventText);
@@ -179,7 +179,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 add(Settings.CalendarColorParashah, row.GetParashahText(false));
             // Season
             if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonChange.GetLang(row.SeasonChange));
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
             //
             void add(Color color, string text)
             {

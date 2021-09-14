@@ -938,22 +938,26 @@ namespace Ordisoftware.Hebrew.Calendar
       switch ( e.ColumnIndex )
       {
         case 5:
-          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonriseOccuring);
+          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
           break;
         case 8:
         case 9:
           e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
           break;
         case 10:
-          e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhase);
+          e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhases);
           break;
         case 11:
           var season = (SeasonChange)e.Value;
-          e.Value = season == SeasonChange.None ? string.Empty : season.ToStringExport(AppTranslations.SeasonChange);
+          e.Value = season == SeasonChange.None
+                    ? string.Empty
+                    : season.ToStringExport(AppTranslations.SeasonChanges);
           break;
         case 12:
-          var torah = (TorahEvent)e.Value;
-          e.Value = torah == TorahEvent.None ? string.Empty : torah.ToStringExport(AppTranslations.TorahEvent);
+          var torah = (TorahCelebrationDay)e.Value;
+          e.Value = torah == TorahCelebrationDay.None
+                    ? string.Empty
+                    : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
           break;
       }
     }

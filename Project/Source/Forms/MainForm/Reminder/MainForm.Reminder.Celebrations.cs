@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CheckCelebrations()
     {
-      bool check(TorahEvent item)
+      bool check(TorahCelebrationDay item)
       {
         return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
       }
@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
         if ( times == null ) continue;
         RemindCelebrationDates.Add(row.Date);
-        ReminderForm.Run(row, TorahEvent.None, times);
+        ReminderForm.Run(row, TorahCelebrationDay.None, times);
       }
     }
 

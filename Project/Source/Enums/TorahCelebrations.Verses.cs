@@ -33,10 +33,10 @@ namespace Ordisoftware.Hebrew.Calendar
     // Bamidbar 33.3 - 33.4
     // Dévarim 16.1 - 16.9
 
-    static public NullSafeDictionary<TorahEvent, List<Tuple<Books, string, string>>> Verses
-      = new NullSafeDictionary<TorahEvent, List<Tuple<Books, string, string>>>
+    static public NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>> Verses
+      = new NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>>
       {
-        [TorahEvent.PessahD1] = new List<Tuple<Books, string, string>>()
+        [TorahCelebration.Pessah] = new List<Tuple<Books, string, string>>()
         {
           new Tuple<Books, string, string>(Books.Shemot, "12.1", "12.20"),
           new Tuple<Books, string, string>(Books.Shemot, "13.4", ""),
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
           new Tuple<Books, string, string>(Books.Divrei_HaYamim_II, "35.1", "35.19")
         },
 
-        [TorahEvent.Chavouot1] = new List<Tuple<Books, string, string>>()
+        [TorahCelebration.Chavouot] = new List<Tuple<Books, string, string>>()
         {
           new Tuple<Books, string, string>(Books.Shemot, "23.16", "23.17"),
           new Tuple<Books, string, string>(Books.Shemot, "34.22", ""),
@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
           new Tuple<Books, string, string>(Books.Divrei_HaYamim_II, "8.12", "8.13")
         },
 
-        [TorahEvent.YomTerouah] = new List<Tuple<Books, string, string>>()
+        [TorahCelebration.YomTerouah] = new List<Tuple<Books, string, string>>()
         {
           new Tuple<Books, string, string>(Books.Shemot, "12.2", ""),
           new Tuple<Books, string, string>(Books.Vayiqra, "23.24", "23.25"),
@@ -77,7 +77,7 @@ namespace Ordisoftware.Hebrew.Calendar
           new Tuple<Books, string, string>(Books.Nehemiah, "8.1", "8.10")
         },
 
-        [TorahEvent.YomHaKipourim] = new List<Tuple<Books, string, string>>()
+        [TorahCelebration.YomHaKipourim] = new List<Tuple<Books, string, string>>()
         {
           new Tuple<Books, string, string>(Books.Shemot, "30.1", "30.10"),
           new Tuple<Books, string, string>(Books.Vayiqra, "10.1", "10.3"),
@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
           new Tuple<Books, string, string>(Books.Zekaria, "7.1", "7.5 ?")
         },
 
-        [TorahEvent.SoukotD1] = new List<Tuple<Books, string, string>>()
+        [TorahCelebration.Soukot] = new List<Tuple<Books, string, string>>()
         {
           new Tuple<Books, string, string>(Books.Shemot, "23.16", "23.17"),
           new Tuple<Books, string, string>(Books.Shemot, "34.22", ""),

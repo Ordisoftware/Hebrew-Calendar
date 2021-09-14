@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemEvents.PowerModeChanged += PowerModeChanged;
       MenuTray.Enabled = false;
       Globals.AllowClose = false;
-      foreach ( var value in Enums.GetValues<TorahEvent>() )
+      foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
         LastCelebrationReminded.Add(value, null);
       if ( !Globals.IsDevExecutable ) // TODO remove when ready
       {
