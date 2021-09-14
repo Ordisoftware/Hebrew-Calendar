@@ -2585,5 +2585,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["NavigationWindowUseUnicodeIcons"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point CelebrationVersesBoardFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["CelebrationVersesBoardFormLocation"]));
+            }
+            set {
+                this["CelebrationVersesBoardFormLocation"] = value;
+            }
+        }
     }
 }

@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeComponent();
       Icon = MainForm.Instance.Icon;
       Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
-      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
+      Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Text += " - ";
       Text += Settings.TorahEventsCountAsMoon
               ? AppTranslations.OmerMoon.GetLang()
@@ -232,7 +232,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
       foreach ( var value in TorahCelebrations.MajorEvents )
       {
-        name = value.ToStringExport(AppTranslations.TorahEvent, EditEnglishTitles.Checked);
+        name = value.ToStringExport(AppTranslations.TorahCelebrationDays, EditEnglishTitles.Checked);
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
         Board.Columns.Add(name, typeof(DateTime));
       }

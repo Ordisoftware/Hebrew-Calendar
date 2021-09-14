@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Torah event enum.
   /// </summary>
-  public enum TorahEvent
+  public enum TorahCelebrationDay
   {
 
     // Database values for major celebrations

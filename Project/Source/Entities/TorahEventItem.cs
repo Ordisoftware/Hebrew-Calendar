@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate the event public enum value.
     /// </summary>
-    public TorahEvent Event { get; set; }
+    public TorahCelebrationDay Event { get; set; }
 
     /// <summary>
     /// Return a <see cref="T:System.String" /> that represents the day.

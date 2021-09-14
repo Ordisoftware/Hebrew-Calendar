@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var item = row.Date.ToLongDateString().Titleize();
         if ( row.HasSeasonChange )
           Instance.ListView.Items.Add(item)
-                                 .SubItems.Add(AppTranslations.SeasonChange.GetLang(row.SeasonChange))
+                                 .SubItems.Add(AppTranslations.SeasonChanges.GetLang(row.SeasonChange))
                                  .Tag = row.Date;
         if ( row.HasTorahEvent )
           Instance.ListView.Items.Add(item)

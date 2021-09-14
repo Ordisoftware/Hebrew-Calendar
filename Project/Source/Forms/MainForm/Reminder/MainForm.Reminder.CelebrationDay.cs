@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool CheckCelebrationDay(bool showbox)
     {
-      bool check(TorahEvent item)
+      bool check(TorahCelebrationDay item)
       {
         return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
       }

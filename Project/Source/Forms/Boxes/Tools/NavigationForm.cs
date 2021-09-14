@@ -66,12 +66,13 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelMoonrise.Visible = row.Moonrise != null;
           LabelMoonsetValue.Visible = row.Moonset != null;
           LabelMoonset.Visible = row.Moonset != null;
-          LabelEventSeasonValue.Text = AppTranslations.SeasonChange.GetLang(row.SeasonChange);
+          LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
           if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = NoDataField;
           LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = NoDataField;
-          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value && day.TorahEvent != TorahEvent.None);
+          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value 
+                                                         && day.TorahEvent != TorahCelebrationDay.None);
           if ( rowNext != null )
           {
             var date = rowNext.Date;
@@ -86,7 +87,9 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelTorahNextDateValue.Tag = null;
           }
           var today = ApplicationDatabase.Instance.GetToday();
-          LabelCurrentDayValue.Text = today != null ? today.DayAndMonthWithYearText : SysTranslations.NullSlot.GetLang();
+          LabelCurrentDayValue.Text = today != null
+                                      ? today.DayAndMonthWithYearText 
+                                      : SysTranslations.NullSlot.GetLang();
           LabelCurrentDayValue.Tag = today?.Date;
           LabelParashahValue.Text = NoDataField;
           LabelParashahValue.Tag = null;

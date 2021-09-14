@@ -122,7 +122,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       SaveSettings();
       SystemManager.TryCatch(Settings.Save);
-      SystemManager.TryCatch(() => { Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled; });
+      SystemManager.TryCatch(() => 
+      {
+        Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
+      });
     }
 
     /// <summary>
@@ -200,7 +203,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       foreach ( var value in Enums.GetValues<DayOfWeek>() )
       {
-        var item = new DayOfWeekItem() { Text = AppTranslations.DayOfWeek.GetLang(value), Day = value };
+        var item = new DayOfWeekItem() { Text = AppTranslations.DaysOfWeek.GetLang(value), Day = value };
         EditShabatDay.Items.Add(item);
         if ( (DayOfWeek)Settings.ShabatDay == value )
           EditShabatDay.SelectedItem = item;
@@ -215,7 +218,11 @@ namespace Ordisoftware.Hebrew.Calendar
       foreach ( var value in TorahCelebrations.MajorEvents )
         SystemManager.TryCatch(() =>
           {
-            var item = new TorahEventItem() { Text = AppTranslations.TorahEvent.GetLang(value), Event = value };
+            var item = new TorahEventItem()
+            {
+              Text = AppTranslations.TorahCelebrationDays.GetLang(value),
+              Event = value
+            };
             int index = SelectRemindEventsBefore.Items.Add(item);
             if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
               SelectRemindEventsBefore.SetItemChecked(index, true);
@@ -260,7 +267,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
       EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
       EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
-      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(Globals.BringToFrontApplicationHotKey.Key.ToString());
+      string key = Globals.BringToFrontApplicationHotKey.Key.ToString();
+      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(key);
       CheckHotKeyCombination(null);
     }
 

@@ -521,7 +521,7 @@
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
-  <data name="ActionOnlineParashah.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashah.Text" xml:space="preserve">
     <value>Parashah de la semaine</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
@@ -532,5 +532,8 @@
   </data>
   <data name="ActionViewParashahDescription.Text" xml:space="preserve">
     <value>Afficher la description</value>
+  </data>
+  <data name="ActionShowConvocationsVerses.Text" xml:space="preserve">
+    <value>Versets des convocations</value>
   </data>
 </root>

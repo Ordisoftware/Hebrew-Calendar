@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -272,6 +272,7 @@ namespace Ordisoftware.Hebrew.Calendar
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = CelebrationVersesBoardForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = NewMoonsBoardForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;

@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       InitializeComponent();
       Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
-      Text += $" - Shabat : {AppTranslations.DayOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
+      Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
       var list = MainForm.Instance.YearsIntervalArray;

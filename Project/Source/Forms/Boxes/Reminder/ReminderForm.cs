@@ -41,9 +41,9 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    static public void Run(LunisolarDay row, TorahEvent torahevent, ReminderTimes times)
+    static public void Run(LunisolarDay row, TorahCelebrationDay torahevent, ReminderTimes times)
     {
-      bool isShabat = torahevent == TorahEvent.Shabat;
+      bool isShabat = torahevent == TorahCelebrationDay.Shabat;
       bool showParashah = false;
       bool doLockSession = false;
       var dateNow = DateTime.Now;
@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return;
         }
         else
-        if ( torahevent != TorahEvent.None )
+        if ( torahevent != TorahCelebrationDay.None )
         {
           if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
           {
@@ -84,7 +84,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var date = row.Date;
         form.LabelTitle.Text = isShabat
                                ? AppTranslations.Shabat.GetLang()
-                               : AppTranslations.TorahEvent.GetLang(torahevent == TorahEvent.None
+                               : AppTranslations.TorahCelebrationDays.GetLang(torahevent == TorahCelebrationDay.None
                                                                     ? row.TorahEvent
                                                                     : torahevent);
         form.LabelDate.Text = isShabat
@@ -92,8 +92,8 @@ namespace Ordisoftware.Hebrew.Calendar
                               : row.DayAndMonthWithYearText;
         if ( times.DateStart != null && times.DateEnd != null )
         {
-          form.LabelStartTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
-          form.LabelEndTime.Text = AppTranslations.DayOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
+          form.LabelStartTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
+          form.LabelEndTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
           form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
           form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
         }
@@ -136,7 +136,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( isShabat )
           MainForm.Instance.ShabatForm = form;
         else
-        if ( torahevent != TorahEvent.None )
+        if ( torahevent != TorahCelebrationDay.None )
         {
           foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
             if ( (DateTime)item.Tag == row.Date )

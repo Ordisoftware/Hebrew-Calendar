@@ -191,6 +191,26 @@ namespace Ordisoftware.Hebrew
       }
     }
 
+    /// <summary>
+    /// Open online celebration provider.
+    /// </summary>
+    static public void OpenCelebrationProvider(string url, TorahCelebration celebration)
+    {
+      string link = url.Replace("%WIKIPEDIA-EN%", OnlineCelebration.WikipediaEN[celebration])
+                       .Replace("%WIKIPEDIA-FR%", OnlineCelebration.WikipediaFR[celebration])
+                       .Replace("%TORAHORG%", OnlineCelebration.TorahOrg[celebration])
+                       .Replace("%TORAHBOX%", OnlineCelebration.TorahBox[celebration])
+                       .Replace("%TORAHJEWS%", OnlineCelebration.TrueTorahJews[celebration])
+                       //.Replace("%CHABAD-EN%", OnlineCelebration.ChabadEN[celebration])
+                       //.Replace("%CHABAD-FR%", OnlineCelebration.ChabadFR[celebration])
+                       //.Replace("%AISH-EN%", OnlineCelebration.AishEN[celebration])
+                       //.Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
+                       //.Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration])
+                       ;
+      SystemManager.OpenWebLink(link);
+    }
+
+
   }
 
 }

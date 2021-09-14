@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew.Calendar
           for ( int index = indexStart; index <= indexEnd; index++ )
           {
             var row = Table[index];
-            if ( row.TorahEvent == TorahEvent.ChavouotDiet )
+            if ( row.TorahEvent == TorahCelebrationDay.ChavouotDiet )
             {
               first = row;
               if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
             && first.Date <= last.Date
             && this.Date >= first.Date
             && this.Date <= last.Date )
-            return AppTranslations.TorahEvent[TorahEvent.ChavouotDiet].GetLang();
+            return AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang();
         }
       return string.Empty;
     }
