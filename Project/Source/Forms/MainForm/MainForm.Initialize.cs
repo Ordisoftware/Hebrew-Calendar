@@ -285,7 +285,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( e.Mode == PowerModes.Resume )
       {
-        System.Threading.Thread.Sleep(5000);
+        System.Threading.Thread.Sleep(10000);
         DoTimerMidnight();
       }
     }
