@@ -144,6 +144,11 @@ namespace Ordisoftware.Hebrew.Calendar
         item.SubItems.Add(reference.Item2.ToString());
         item.SubItems.Add(reference.Item3.ToString());
       }
+      if ( SelectVerse.Items.Count > 0 )
+      {
+        SelectVerse.Items[0].Focused = true;
+        SelectVerse.Items[0].Selected = true;
+      }
     }
 
   }
