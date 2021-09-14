@@ -180,6 +180,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionNavigate.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenDiffDates )
         ActionCalculateDateDiff.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenCelebrationBoard )
+        ActionShowCelebrationVersesBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
         ActionViewCelebrationsBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
