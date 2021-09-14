@@ -11,20 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
-
-  public enum TorahCelebration
-  {
-    Pessah = TorahCelebrationDay.PessahD1,
-    Chavouot = TorahCelebrationDay.Chavouot1,
-    YomTerouah = TorahCelebrationDay.YomTerouah,
-    YomHaKipourim = TorahCelebrationDay.YomHaKipourim,
-    Soukot = TorahCelebrationDay.SoukotD1,
-  }
 
   /// <summary>
   /// Torah event enum.

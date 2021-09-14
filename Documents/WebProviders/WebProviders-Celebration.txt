@@ -1,0 +1,77 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for online providers items to search a parashah
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Name = (EN) Wikipedia.org
+URL = https://en.wikipedia.org/wiki/%WIKIPEDIA-EN%
+
+Name = (FR) Wikipedia.org
+URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
+
+-
+
+Name = (EN) Torah.org
+URL = https://torah.org/%TORAHORG%/
+
+Name = (EN) TrueTorahJews.org
+URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
+
+Name = (FR) Torah-Box.com
+URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
+
+-
+
+Name = (EN) Chabad.org
+URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
+
+Name = (FR) Chabad.org
+URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
+
+Name = (FR) Loubavitch.fr*
+URL = https://www.loubavitch.fr/etude/paracha
+
+-
+
+Name = (EN) HevratPinto.org*
+URL = https://www.hevratpinto.org/parsha/path_to_follow.html
+
+Name = (FR) HevratPinto.org*
+URL = https://www.hevratpinto.org/voie%20a%20suivre_n/vas.html
+
+-
+
+Name = (EN) Aish.com
+URL = https://www.aish.com/tp/%AISH-EN%.html
+
+Name = (FR) Aish.fr
+URL = https://www.aish.fr/tp/%AISH-FR%.html
+
+Name = (IW) Aish.co.il
+URL = https://www.aish.co.il/tp/%AISH-IW%.html
+
+-
+
+Name = (EN) HalachaYomit.co.il*
+URL = http://halachayomit.co.il/en/Parasha.aspx
+
+Name = (FR) HalachaYomit.co.il*
+URL = http://halachayomit.co.il/fr/Parasha.aspx
+
+Name = (IW) HalachaYomit.co.il*
+URL = http://halachayomit.co.il/he/Parasha.aspx
+
+- 
+
+Name = (FR) JudaismeEnMouvement.org (Site web)
+URL = https://judaismeenmouvement.org/suivre/la-paracha-de-la-semaine/
+
+Name = (FR) JudaismeEnMouvement.org (YouTube)
+URL = https://www.youtube.com/playlist?list=PLU4D_qR3BkAgutgERizAOhPFHdnPEDjSC

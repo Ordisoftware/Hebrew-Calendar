@@ -132,7 +132,7 @@
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowConvocationsVerses = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowParashahNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
@@ -929,7 +929,7 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWeeklyParashah,
-            this.ActionShowConvocationsVerses,
+            this.ActionShowCelebrationVersesBoard,
             this.toolStripSeparator8,
             this.ActionShowParashahNotice,
             this.ActionShowCelebrationsNotice,
@@ -986,11 +986,11 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
-      // ActionShowConvocationsVerses
+      // ActionShowCelebrationVersesBoard
       // 
-      resources.ApplyResources(this.ActionShowConvocationsVerses, "ActionShowConvocationsVerses");
-      this.ActionShowConvocationsVerses.Name = "ActionShowConvocationsVerses";
-      this.ActionShowConvocationsVerses.Click += new System.EventHandler(this.ActionShowConvocationsVerses_Click);
+      resources.ApplyResources(this.ActionShowCelebrationVersesBoard, "ActionShowCelebrationVersesBoard");
+      this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
+      this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
       // 
       // toolStripSeparator8
       // 
@@ -1575,7 +1575,7 @@
     private System.Windows.Forms.ToolStripLabel LabelEnumsAsTranslations;
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowConvocationsVerses;
+    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
   }
 }
 

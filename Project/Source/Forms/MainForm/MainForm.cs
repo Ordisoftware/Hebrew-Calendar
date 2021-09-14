@@ -562,9 +562,14 @@ namespace Ordisoftware.Hebrew.Calendar
       ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
     }
 
-    private void ActionShowConvocationsVerses_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Event handler. Called by CelebrationVersesBoard for click events.
+    /// </summary>
+    /// <param name="sender">Source of the event.</param>
+    /// <param name="e">Event information.</param>
+    private void CelebrationVersesBoard_Click(object sender, EventArgs e)
     {
-      DisplayManager.Show("Verses about convocations");
+      CelebrationVersesBoardForm.Run();
     }
 
     /// <summary>

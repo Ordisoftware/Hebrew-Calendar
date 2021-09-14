@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -63,6 +63,12 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(WebProvidersFolderPath, "WebProviders-Parashah.txt");
 
     /// <summary>
+    /// Indicate the file path of the online study parashah providers.
+    /// </summary>
+    static public string WebProvidersCelebrationFilePath
+      => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration.txt");
+
+    /// <summary>
     /// Indicate the online search a word providers.
     /// </summary>
     static public OnlineProviders WebProvidersWord { get; private set; }
@@ -81,6 +87,11 @@ namespace Ordisoftware.Hebrew
     /// Indicate the online study parashah providers.
     /// </summary>
     static public OnlineProviders WebProvidersParashah { get; private set; }
+
+    /// <summary>
+    /// Indicate the online study celebration providers.
+    /// </summary>
+    static public OnlineProviders WebProvidersCelebration { get; private set; }
 
     /// <summary>
     /// Indicate the web links providers.
@@ -114,6 +125,7 @@ namespace Ordisoftware.Hebrew
       WebProvidersConcordance = CreateOnlineProviders(folder, WebProvidersConcordanceFilePath);
       WebProvidersBible = CreateOnlineProviders(folder, WebProvidersBibleFilePath);
       WebProvidersParashah = CreateOnlineProviders(folder, WebProvidersParashahFilePath);
+      WebProvidersCelebration = CreateOnlineProviders(folder, WebProvidersCelebrationFilePath);
       WebLinksProviders = new List<OnlineProviders>();
       if ( Directory.Exists(WebLinksFolderPath) )
         SystemManager.TryCatch(() =>

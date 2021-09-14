@@ -1914,13 +1914,13 @@
     <value>None</value>
   </data>
   <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionViewParashahDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>162, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1941,7 +1941,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -1967,7 +1967,7 @@
     <value>None</value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
@@ -1999,7 +1999,7 @@
   <data name="ActionWeeklyParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
   </data>
-  <data name="ActionShowConvocationsVerses.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAmxJREFUOE+tkN9Lk3EYxf0Tuu026K4b666ESBraENlE05YaBqMiMipv/Jk6HWjR
@@ -2015,17 +2015,17 @@
         LF7OzLknR16rxnVAeL/wLuHdwola9tecmXNPjtn/UELCHyIAGajl6yNUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionShowConvocationsVerses.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionShowConvocationsVerses.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+A</value>
   </data>
-  <data name="ActionShowConvocationsVerses.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 22</value>
   </data>
-  <data name="ActionShowConvocationsVerses.Text" xml:space="preserve">
-    <value>Verses about convocations</value>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebration verses board</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 6</value>
@@ -3560,10 +3560,10 @@
   <data name="&gt;&gt;ActionOpenVerseOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionShowConvocationsVerses.Name" xml:space="preserve">
-    <value>ActionShowConvocationsVerses</value>
+  <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Name" xml:space="preserve">
+    <value>ActionShowCelebrationVersesBoard</value>
   </data>
-  <data name="&gt;&gt;ActionShowConvocationsVerses.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
