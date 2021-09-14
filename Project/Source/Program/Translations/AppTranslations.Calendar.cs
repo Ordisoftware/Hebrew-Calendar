@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -242,6 +242,35 @@ namespace Ordisoftware.Hebrew.Calendar
         }
       };
 
+    static public readonly NullSafeDictionary<TorahEvent, TranslationsDictionary> TorahEventMain
+      = new NullSafeDictionary<TorahEvent, TranslationsDictionary>
+      {
+        [Calendar.TorahEvent.PessahD1] = new TranslationsDictionary
+        {
+          [Language.EN] = "Pesa'h",
+          [Language.FR] = "Pessa'h"
+        },
+        [Calendar.TorahEvent.Chavouot1] = new TranslationsDictionary
+        {
+          [Language.EN] = "Shavu'ot",
+          [Language.FR] = "Shavou'ot"
+        },
+        [Calendar.TorahEvent.YomTerouah] = new TranslationsDictionary
+        {
+          [Language.EN] = "Yom Teru'ah",
+          [Language.FR] = "Yom Terou'ah"
+        },
+        [Calendar.TorahEvent.YomHaKipourim] = new TranslationsDictionary
+        {
+          [Language.EN] = "Yom HaKipurim",
+          [Language.FR] = "Yom HaKipourim"
+        },
+        [Calendar.TorahEvent.SoukotD1] = new TranslationsDictionary
+        {
+          [Language.EN] = "Sukot",
+          [Language.FR] = "Soukot"
+        }
+      };
     static public readonly TranslationsDictionary PessahDay
       = new TranslationsDictionary
       {
