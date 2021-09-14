@@ -60,9 +60,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 8.10**
+**What's new in the latest version 9.0**
 
-- Fixed showing linked parashah even if not linked.
+- Added celebration verses board.
+- Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -149,6 +150,10 @@ Thus celebration dates may be wrong.
 - Show the dates difference calculator:
  
   `Ordisoftware.Hebrew.Calendar.exe --diffdates`
+
+- Show the celebration verses board:
+
+  `Ordisoftware.Hebrew.Calendar.exe --celebration`
 
 - Show the celebrations board:
 
@@ -296,6 +301,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.0
 
 - Add celebration verses board.
+- Add `--celebration` command-line option to show the celebration verses board.
 - Some fixes and improvements.
 
 #### 2021.09.06 - Version 8.10
