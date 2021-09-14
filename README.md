@@ -33,6 +33,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Window showing a board of new moons by years.
 - Window showing a board of lunar months description.
 - Window showing a board of parashot.
+- Window showing a board of celebration verses.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
@@ -256,7 +257,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
-| Alt + V | Show verses about convocations |
+| Alt + A | Celebration verses board |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebrations board |
 | Ctrl + F3 | New moons board |
@@ -294,8 +295,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9.0
 
-- Add verses about convocations window.
-- Add celebartions study tools.
+- Add celebration verses board.
 - Some fixes and improvements.
 
 #### 2021.09.06 - Version 8.10
