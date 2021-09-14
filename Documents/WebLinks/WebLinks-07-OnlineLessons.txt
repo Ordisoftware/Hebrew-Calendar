@@ -119,13 +119,13 @@ URL = https://www.aish.co.il
 -
 
 Name = (FR) Halacha Yomit
-URL = http://halachayomit.co.il/fr/
+URL = http://halachayomit.co.il/fr/default.aspx
 
 Name = (EN) Halacha Yomit
-URL = http://halachayomit.co.il/en/
+URL = http://halachayomit.co.il/en/Default.aspx
 
 Name = (IW) Halacha Yomit
-URL = http://halachayomit.co.il/he/
+URL = http://halachayomit.co.il/he/default.aspx
 
 -
 

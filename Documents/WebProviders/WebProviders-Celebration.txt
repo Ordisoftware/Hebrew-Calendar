@@ -1,5 +1,5 @@
 ﻿; --------------------------------------------------------------------------------------------------
-; File format for online providers items to search a parashah
+; File format for online providers items to search a celebration
 ; --------------------------------------------------------------------------------------------------
 ; To create a folder else items will be at root level: Lang/[short code] = Title
 ; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders
