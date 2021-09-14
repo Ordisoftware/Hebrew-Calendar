@@ -41,6 +41,17 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       Instance.Show();
       Instance.ForceBringToFront();
+      var dateStart = DateTime.Today;
+      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
+      if ( day != null )
+      {
+        var item = Instance.SelectCelebration.FindItemWithText(day.TorahEvent.ToString());
+        if ( item != null )
+        {
+          item.Focused = true;
+          item.Selected = true;
+        }
+      }
     }
 
     public CelebrationVersesBoardForm()
@@ -53,7 +64,10 @@ namespace Ordisoftware.Hebrew.Calendar
                        .Select(value => new ListViewItem(value.ToString()) { Tag = value });
       SelectCelebration.Items.AddRange(items.ToArray());
       if ( SelectCelebration.Items.Count > 0 )
+      {
+        SelectCelebration.Items[0].Focused = true;
         SelectCelebration.Items[0].Selected = true;
+      }
     }
 
     private void InitializeMenu()
