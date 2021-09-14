@@ -536,4 +536,7 @@
   <data name="ActionShowConvocationsVerses.Text" xml:space="preserve">
     <value>Versets des convocations</value>
   </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Tableau des versets des célébrations</value>
+  </data>
 </root>

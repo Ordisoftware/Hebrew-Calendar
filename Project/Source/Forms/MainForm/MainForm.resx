@@ -2001,18 +2001,19 @@
   </data>
   <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ1SURBVDhPfZLda1JxGMf9C4Jt5dzN/oGuIoKouy4KCXqx
+        l4ugILybMwctggraRQRrdBXeyNplzJZb5+y1kihbqKVmTnSbLqhczGk69fhy9Lhvz3M8OVbRAw+Pz/N8
+        vt/f75yj7s/QWwV7Z/9UtcPyHB19lFS557mG/Dt6BsTjLLgwuoIHb+twhADHJ0qq3POc98xpkp3gYc/A
+        LG7PFSAu/UB63Q1kXRgZMmOb6kbKDSGyjlu0Z+4vk0665o3pHLyrK0BpDkp+AdXsAiqZBUib8yinZ6Bk
+        RbyLxzEo5sC8JtXpum2C/eSjKJzBFFB+hdOmy3CN21EveiBlX6O46UYx7Sajl9jOz2P8YwrMs0412Ns/
+        VbO6MsikfYC0iIDPCdPFqwj6J6BIPlTyiyhl2cwDOf8GmxteMM+6loFVwHWhANS9aJT8aFaCCH2YxNlz
+        VxDyT0KpBFDZ8kHKeSEX6BDZq/Ksaxv0uXIYs98lOARZoteuRBENz+LUmUvwvXeps2oxqO6ZY75tsI9+
+        mJ+kASzR6RHUyxGgEccJ43mEAtN0s5g6k0uf1T1zzLOuZdAvyCbHGrJb9AUaMTRqMSjyMtBM0E1WqV+G
+        XCGTakzdM8c861QDvXnMeeieHyMv1sg9SVACTZmynqSahFJLkCGZ0Zz3zDHPOtWAopevc+xhFM8CXwj6
+        RvlVq9939bxnTrt+b0tO0WUctBhsMzg6HMbQdBI/JfpPIANxwqFW7nnOe+aY16Tt2NNlvGnRXxOx/44H
+        h++HcWQ42k7uec575phvyXYHDw8azI+fdlsF2WAT6bRWqj3Nea9x/w1+tgOUDP9O7neeuR063S81zEiw
+        h2F/nwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
