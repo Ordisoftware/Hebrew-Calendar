@@ -180,6 +180,8 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionNavigate.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenDiffDates )
         ActionCalculateDateDiff.PerformClick();
+      if ( ApplicationCommandLine.Instance.OpenCelebrationBoard )
+        ActionShowCelebrationVersesBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
         ActionViewCelebrationsBoard.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
@@ -283,7 +285,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( e.Mode == PowerModes.Resume )
       {
-        System.Threading.Thread.Sleep(5000);
+        System.Threading.Thread.Sleep(10000);
         DoTimerMidnight();
       }
     }

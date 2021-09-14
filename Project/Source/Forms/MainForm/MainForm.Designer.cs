@@ -1575,7 +1575,7 @@
     private System.Windows.Forms.ToolStripLabel LabelEnumsAsTranslations;
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
   }
 }
 
