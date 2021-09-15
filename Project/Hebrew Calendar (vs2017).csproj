@@ -294,7 +294,7 @@
     <Compile Include="Source\Database\LunisolarDay.cs" />
     <Compile Include="Source\Common\Core\Managers.System\PowerActions.cs" />
     <Compile Include="Source\Enums\TorahCelebrationDay.cs" />
-    <Compile Include="Source\Enums\TorahCelebrations.Verses.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\CelebrationVersesBoardForm.cs">
       <SubType>Form</SubType>

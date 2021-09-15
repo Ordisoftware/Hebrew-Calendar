@@ -652,5 +652,8 @@
     <Setting Name="CelebrationVersesBoardFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
+    <Setting Name="CelebrationVersesBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">384, 306</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

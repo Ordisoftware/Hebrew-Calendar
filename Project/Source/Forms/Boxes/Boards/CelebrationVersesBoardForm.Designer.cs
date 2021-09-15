@@ -31,6 +31,8 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationVersesBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionExport = new System.Windows.Forms.Button();
+      this.ActionImport = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.SelectVerse = new System.Windows.Forms.ListView();
       this.ColumnBook = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,16 +46,40 @@
       this.ColumnCelebration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuCelebration = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.panel2 = new System.Windows.Forms.Panel();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuVerse.SuspendLayout();
       this.ContextMenuCelebration.SuspendLayout();
+      this.panel1.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionExport);
+      this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionExport
+      // 
+      this.ActionExport.AllowDrop = true;
+      this.ActionExport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.Name = "ActionExport";
+      this.ActionExport.UseVisualStyleBackColor = true;
+      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
+      // 
+      // ActionImport
+      // 
+      this.ActionImport.AllowDrop = true;
+      this.ActionImport.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionImport, "ActionImport");
+      this.ActionImport.Name = "ActionImport";
+      this.ActionImport.UseVisualStyleBackColor = true;
+      this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
       // 
       // ActionClose
       // 
@@ -64,16 +90,15 @@
       // 
       // SelectVerse
       // 
-      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnBook,
             this.ColumnVerseBegin,
             this.ColumnVerseEnd});
       this.SelectVerse.ContextMenuStrip = this.ContextMenuVerse;
+      resources.ApplyResources(this.SelectVerse, "SelectVerse");
       this.SelectVerse.FullRowSelect = true;
-      this.SelectVerse.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+      this.SelectVerse.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.SelectVerse.HideSelection = false;
-      this.SelectVerse.MultiSelect = false;
       this.SelectVerse.Name = "SelectVerse";
       this.SelectVerse.UseCompatibleStateImageBehavior = false;
       this.SelectVerse.View = System.Windows.Forms.View.Details;
@@ -118,12 +143,12 @@
       // 
       // SelectCelebration
       // 
-      resources.ApplyResources(this.SelectCelebration, "SelectCelebration");
       this.SelectCelebration.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnCelebration});
       this.SelectCelebration.ContextMenuStrip = this.ContextMenuCelebration;
+      resources.ApplyResources(this.SelectCelebration, "SelectCelebration");
       this.SelectCelebration.FullRowSelect = true;
-      this.SelectCelebration.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+      this.SelectCelebration.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.SelectCelebration.HideSelection = false;
       this.SelectCelebration.MultiSelect = false;
       this.SelectCelebration.Name = "SelectCelebration";
@@ -148,25 +173,41 @@
       resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
       this.ActionStudyOnline.Name = "ActionStudyOnline";
       // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.SelectCelebration);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.SelectVerse);
+      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.Name = "panel2";
+      // 
       // CelebrationVersesBoardForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.SelectCelebration);
-      this.Controls.Add(this.SelectVerse);
+      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationVersesBoardFormClientSize;
+      this.Controls.Add(this.panel2);
+      this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationVersesBoardFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationVersesBoardFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationVersesBoardFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "CelebrationVersesBoardForm";
+      this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationVersesBoardForm_FormClosing);
       this.Load += new System.EventHandler(this.CelebrationVersesBoardForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ContextMenuVerse.ResumeLayout(false);
       this.ContextMenuCelebration.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
+      this.panel2.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -187,5 +228,9 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuVerse;
     private System.Windows.Forms.ContextMenuStrip ContextMenuCelebration;
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
+    private System.Windows.Forms.Button ActionExport;
+    private System.Windows.Forms.Button ActionImport;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel panel2;
   }
 }
