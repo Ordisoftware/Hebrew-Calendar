@@ -150,6 +150,11 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
+    private void SelectCelebration_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      SelectCelebration.ContextMenuStrip.Show(Cursor.Position);
+    }
+
     private void SelectVerse_MouseDoubleClick(object sender, MouseEventArgs e)
     {
       SelectVerse.ContextMenuStrip.Show(Cursor.Position);

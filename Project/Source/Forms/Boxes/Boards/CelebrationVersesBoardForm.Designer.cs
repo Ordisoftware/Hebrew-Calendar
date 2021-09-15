@@ -157,6 +157,7 @@
       this.SelectCelebration.View = System.Windows.Forms.View.Details;
       this.SelectCelebration.SelectedIndexChanged += new System.EventHandler(this.SelectCelebration_SelectedIndexChanged);
       this.SelectCelebration.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lists_KeyDown);
+      this.SelectCelebration.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SelectCelebration_MouseDoubleClick);
       // 
       // ColumnCelebration
       // 
