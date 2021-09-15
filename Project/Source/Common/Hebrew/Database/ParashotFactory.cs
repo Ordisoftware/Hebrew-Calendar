@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static class ParashotFactory
+  class ParashotFactory
   {
 
     static public Parashah Get(string id)

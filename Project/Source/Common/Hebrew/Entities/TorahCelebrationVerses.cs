@@ -21,7 +21,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  public class TorahCelebrationVerses : ProviderSettings
+  class TorahCelebrationVerses : ProviderSettings
   {
 
     static public readonly TorahCelebrationVerses Instance = new TorahCelebrationVerses();
