@@ -187,7 +187,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadPowerActions()
     {
-      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart, PowerActions.Shutdown };
+      PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown };
       foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
         SelectLockSessionDefaultAction.Items.Add(value);
@@ -215,7 +215,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( var value in TorahCelebrations.MajorEvents )
+      foreach ( var value in TorahCelebrationSettings.MajorEvents )
         SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem()

@@ -145,16 +145,16 @@ namespace Ordisoftware.Hebrew
         chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
         url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
       }
-      url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(Books)book]
+      url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(TanakBook)book]
                                                    .Replace("1", "I")
                                                    .Replace("2", "II")
                                                    .Replace(" ", "_"))
-               .Replace("%BOOKSB%", BooksNames.StudyBible[(Books)book])
-               .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)book])
-               .Replace("%BOOKCHABAD%", ( BooksNames.Chabad[(Books)book] + chapter - 1 ).ToString())
-               .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)book])
-               .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)book])
-               .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)book])
+               .Replace("%BOOKSB%", BooksNames.StudyBible[(TanakBook)book])
+               .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(TanakBook)book])
+               .Replace("%BOOKCHABAD%", ( BooksNames.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
+               .Replace("%BOOKMM%", BooksNames.MechonMamre[(TanakBook)book])
+               .Replace("%BOOKDJEP%", BooksNames.Djep[(TanakBook)book])
+               .Replace("%BOOKLE%", BooksNames.LEvangile[(TanakBook)book])
                .Replace("%BOOKNUM%", book.ToString())
                .Replace("%CHAPTERNUM%", chapterString)
                .Replace("%VERSENUM%", verse.ToString())

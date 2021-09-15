@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelEventTorahValue.Text = row.TorahEventText;
           if ( LabelEventTorahValue.Text == string.Empty )
             LabelEventTorahValue.Text = NoDataField;
-          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value 
+          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value
                                                          && day.TorahEvent != TorahCelebrationDay.None);
           if ( rowNext != null )
           {
@@ -88,19 +88,19 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           var today = ApplicationDatabase.Instance.GetToday();
           LabelCurrentDayValue.Text = today != null
-                                      ? today.DayAndMonthWithYearText 
+                                      ? today.DayAndMonthWithYearText
                                       : SysTranslations.NullSlot.GetLang();
           LabelCurrentDayValue.Tag = today?.Date;
           LabelParashahValue.Text = NoDataField;
           LabelParashahValue.Tag = null;
           var rowParashah = row.GetParashahReadingDay();
-          bool isPessah = row.LunarMonth == TorahCelebrations.PessahMonth
-                       && row.LunarDay >= TorahCelebrations.PessahStartDay
-                       && row.LunarDay <= TorahCelebrations.PessahEndDay;
-          bool isSoukot = row.LunarMonth == TorahCelebrations.YomsMonth
-                       && row.LunarDay >= TorahCelebrations.SoukotStartDay
-                       && ( ( Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrations.SoukotEndDay )
-                         || ( row.LunarDay < TorahCelebrations.SoukotEndDay ) );
+          bool isPessah = row.LunarMonth == TorahCelebrationSettings.PessahMonth
+                       && row.LunarDay >= TorahCelebrationSettings.PessahStartDay
+                       && row.LunarDay <= TorahCelebrationSettings.PessahEndDay;
+          bool isSoukot = row.LunarMonth == TorahCelebrationSettings.YomsMonth
+                       && row.LunarDay >= TorahCelebrationSettings.SoukotStartDay
+                       && ( ( Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrationSettings.SoukotEndDay )
+                         || ( row.LunarDay < TorahCelebrationSettings.SoukotEndDay ) );
           LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
           if ( LabelParashahValue.Enabled && rowParashah != null )
           {
@@ -234,14 +234,14 @@ namespace Ordisoftware.Hebrew.Calendar
         var menuitem = (ToolStripMenuItem)sender;
         var day = (LunisolarDay)LabelParashahValue.Tag;
         HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         ParashotFactory.Get(day.ParashahID),
+                                         ParashotFactory.Instance.Get(day.ParashahID),
                                          day.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var day = (LunisolarDay)LabelParashahValue.Tag;
-        var parashah = ParashotFactory.Get(day.ParashahID);
+        var parashah = ParashotFactory.Instance.Get(day.ParashahID);
         string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
@@ -282,7 +282,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( LabelParashahValue.Tag is LunisolarDay day )
       {
-        var parashah = ParashotFactory.Get(day.ParashahID);
+        var parashah = ParashotFactory.Instance.Get(day.ParashahID);
         if ( !ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah) )
           ActionViewParashahInfos.Enabled = false;
       }
@@ -291,7 +291,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionViewParashot_Click(object sender, EventArgs e)
     {
       if ( LabelParashahValue.Tag is LunisolarDay day )
-        ParashotForm.Run(ParashotFactory.Get(day.ParashahID));
+        ParashotForm.Run(ParashotFactory.Instance.Get(day.ParashahID));
     }
 
     private void ActionViewCalendar_Click(object sender, EventArgs e)

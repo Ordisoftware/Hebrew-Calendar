@@ -26,8 +26,8 @@ namespace Ordisoftware.Hebrew
 
     static public readonly TorahCelebrationVerses Instance = new TorahCelebrationVerses();
 
-    public readonly NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>> Items
-      = new NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>>();
+    public readonly NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>> Items
+      = new NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>>();
 
     protected override void SetFilePath()
     {
@@ -41,16 +41,16 @@ namespace Ordisoftware.Hebrew
 
     protected override void DoLoad(string line)
     {
-      var parts = line.Split(':');
-      if ( parts.Length < 2 ) return;
-      var celebration = Enums.Parse<TorahCelebration>(parts[0].Trim());
-      if ( Items[celebration] == null ) Items[celebration] = new List<Tuple<Books, string, string>>();
-      var verses = parts[1].Split('-');
-      if ( verses.Length < 2 ) return;
-      var book = Enums.Parse<Books>(verses[0].Trim());
-      string verse1 = verses[1].Trim();
-      string verse2 = verses.Length > 2 ? verses[2].Trim() : string.Empty;
-      Items[celebration].Add(new Tuple<Books, string, string>(book, verse1, verse2));
+      var pair = line.Split(':');
+      if ( pair.Length < 2 ) return;
+      var celebration = Enums.Parse<TorahCelebration>(pair[0].Trim());
+      if ( Items[celebration] == null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
+      var items = pair[1].Split('-');
+      if ( items.Length < 2 ) return;
+      var book = Enums.Parse<TanakBook>(items[0].Trim());
+      string verse1 = items[1].Trim();
+      string verse2 = items.Length > 2 ? items[2].Trim() : string.Empty;
+      Items[celebration].Add(new Tuple<TanakBook, string, string>(book, verse1, verse2));
     }
 
     protected override void DoSave(StreamWriter stream)

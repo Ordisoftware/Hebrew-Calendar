@@ -25,21 +25,21 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
       if ( MoonriseOccuring != MoonriseOccuring.NextDay || deltaPessah != 0 )
-        if ( LunarMonth == TorahCelebrations.PessahMonth )
+        if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
         {
-          int day = LunarDay >= TorahCelebrations.PessahStartDay + deltaPessah
-                    ? LunarDay - TorahCelebrations.PessahStartDay + 1 + deltaPessah
+          int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
+                    ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
                     : -1;
-          if ( day > 0 && day < TorahCelebrations.PessahLenght )
+          if ( day > 0 && day < TorahCelebrationSettings.PessahLenght )
             return AppTranslations.PessahDay.GetLang(day);
         }
         else
-        if ( LunarMonth == TorahCelebrations.YomsMonth )
+        if ( LunarMonth == TorahCelebrationSettings.YomsMonth )
         {
-          int day = LunarDay >= TorahCelebrations.SoukotStartDay
-                    ? LunarDay - TorahCelebrations.SoukotStartDay + 1
+          int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
+                    ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
                     : -1;
-          if ( day > 0 && day < TorahCelebrations.SoukotLenght )
+          if ( day > 0 && day < TorahCelebrationSettings.SoukotLenght )
             return AppTranslations.SoukotDay.GetLang(day);
         }
         else

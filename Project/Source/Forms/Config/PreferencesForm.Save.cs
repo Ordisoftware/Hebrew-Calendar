@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
       Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
       // Loclout action
-      Settings.LockSessionDefaultAction = (PowerActions)SelectLockSessionDefaultAction.SelectedItem;
+      Settings.LockSessionDefaultAction = (PowerAction)SelectLockSessionDefaultAction.SelectedItem;
       // Events
       for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
         SystemManager.TryCatch(() =>

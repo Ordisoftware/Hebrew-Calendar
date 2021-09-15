@@ -29,15 +29,15 @@ namespace Ordisoftware.Core
   static partial class SystemManager
   {
 
-    static public List<PowerActions> GetAvailablePowerActions()
+    static public List<PowerAction> GetAvailablePowerActions()
     {
-      var list = new List<PowerActions>();
-      list.Add(PowerActions.LockSession);
-      if ( CanStandby ) list.Add(PowerActions.StandBy);
-      if ( CanHibernate ) list.Add(PowerActions.Hibernate);
-      list.Add(PowerActions.LogOff);
-      list.Add(PowerActions.Restart);
-      list.Add(PowerActions.Shutdown);
+      var list = new List<PowerAction>();
+      list.Add(PowerAction.LockSession);
+      if ( CanStandby ) list.Add(PowerAction.StandBy);
+      if ( CanHibernate ) list.Add(PowerAction.Hibernate);
+      list.Add(PowerAction.LogOff);
+      list.Add(PowerAction.Restart);
+      list.Add(PowerAction.Shutdown);
       return list;
     }
 
@@ -141,23 +141,23 @@ namespace Ordisoftware.Core
       return true;
     }
 
-    static public bool DoPowerAction(PowerActions action, bool confirmLogOffOrMore)
+    static public bool DoPowerAction(PowerAction action, bool confirmLogOffOrMore)
     {
       switch ( action )
       {
-        case PowerActions.None:
+        case PowerAction.None:
           return true;
-        case PowerActions.LockSession:
+        case PowerAction.LockSession:
           return LockWorkStation();
-        case PowerActions.StandBy:
+        case PowerAction.StandBy:
           return StandBy();
-        case PowerActions.Hibernate:
+        case PowerAction.Hibernate:
           return Hibernate();
-        case PowerActions.LogOff:
+        case PowerAction.LogOff:
           return LogOff(confirmLogOffOrMore);
-        case PowerActions.Restart:
+        case PowerAction.Restart:
           return Restart(confirmLogOffOrMore);
-        case PowerActions.Shutdown:
+        case PowerAction.Shutdown:
           return Shutdown(confirmLogOffOrMore);
         default:
           throw new AdvancedNotImplementedException(action);

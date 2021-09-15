@@ -373,7 +373,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SelectLockSessionDefaultAction_Format(object sender, ListControlConvertEventArgs e)
     {
-      e.Value = SysTranslations.PowerActionText.GetLang((PowerActions)e.Value);
+      e.Value = SysTranslations.PowerActionText.GetLang((PowerAction)e.Value);
     }
 
     private void EditRemindAutoLock_CheckedChanged(object sender, EventArgs e)

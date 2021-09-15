@@ -58,6 +58,9 @@ namespace Ordisoftware.Hebrew
     static public string ParashotFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
 
+    static public string ParashotFactoryFilePath
+      => Path.Combine(ParashotFolderPath, "ParashotFactory.txt");
+
     static public string ParashotTranslationsFilePath
       => Path.Combine(ParashotFolderPath, $"Parashot-Translations-{Languages.Current.ToString()}.txt");
 

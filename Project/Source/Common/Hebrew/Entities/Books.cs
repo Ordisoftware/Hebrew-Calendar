@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2019-09 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 
 namespace Ordisoftware.Hebrew
@@ -19,7 +19,7 @@ namespace Ordisoftware.Hebrew
 
   // TODO remove all +1 or -1 in Words
 
-  public enum Books
+  public enum TanakBook
   {
     // Torah
     Bereshit = 1, Shemot, Vayiqra, Bamidbar, Devarim,
@@ -34,55 +34,55 @@ namespace Ordisoftware.Hebrew
     Divrei_HaYamim_I, Divrei_HaYamim_II
   };
 
-  public enum TorahBooks
+  public enum TorahBook
   {
-    Bereshit = Books.Bereshit,
-    Shemot = Books.Shemot,
-    Vayiqra = Books.Vayiqra,
-    Bamidbar = Books.Bamidbar,
-    Devarim = Books.Devarim
+    Bereshit = TanakBook.Bereshit,
+    Shemot = TanakBook.Shemot,
+    Vayiqra = TanakBook.Vayiqra,
+    Bamidbar = TanakBook.Bamidbar,
+    Devarim = TanakBook.Devarim
   };
 
-  public enum NeviimBooks
+  public enum NeviimBook
   {
-    Yehoshoua = Books.Yehoshoua,
-    Shoftim = Books.Shoftim,
-    Shemouel_I = Books.Shemouel_I,
-    Shemouel_II = Books.Shemouel_II,
-    Melakim_I = Books.Melakim_I,
-    Melakim_II = Books.Melakim_II,
-    Yeshayahou = Books.Yeshayahou,
-    Yirmeyahou = Books.Yirmeyahou,
-    Yehezqel = Books.Yehezqel,
-    Hoshea = Books.Hoshea,
-    Yoel = Books.Yoel,
-    Amos = Books.Amos,
-    Obadyah = Books.Obadyah,
-    Yonah = Books.Yonah,
-    Mikah = Books.Mikah,
-    Nahoum = Books.Nahoum,
-    Habaqouq = Books.Habaqouq,
-    Tsephaniah = Books.Tsephaniah,
-    Hagai = Books.Hagai,
-    Zekaria = Books.Zekaria,
-    Malaki = Books.Malaki
+    Yehoshoua = TanakBook.Yehoshoua,
+    Shoftim = TanakBook.Shoftim,
+    Shemouel_I = TanakBook.Shemouel_I,
+    Shemouel_II = TanakBook.Shemouel_II,
+    Melakim_I = TanakBook.Melakim_I,
+    Melakim_II = TanakBook.Melakim_II,
+    Yeshayahou = TanakBook.Yeshayahou,
+    Yirmeyahou = TanakBook.Yirmeyahou,
+    Yehezqel = TanakBook.Yehezqel,
+    Hoshea = TanakBook.Hoshea,
+    Yoel = TanakBook.Yoel,
+    Amos = TanakBook.Amos,
+    Obadyah = TanakBook.Obadyah,
+    Yonah = TanakBook.Yonah,
+    Mikah = TanakBook.Mikah,
+    Nahoum = TanakBook.Nahoum,
+    Habaqouq = TanakBook.Habaqouq,
+    Tsephaniah = TanakBook.Tsephaniah,
+    Hagai = TanakBook.Hagai,
+    Zekaria = TanakBook.Zekaria,
+    Malaki = TanakBook.Malaki
   };
 
-  public enum KetouvimBooks
+  public enum KetouvimBook
   {
-    Tehilim = Books.Tehilim,
-    Mishlei = Books.Mishlei,
-    Iyov = Books.Iyov,
-    Shir_HaShirim = Books.Shir_HaShirim,
-    Ruth = Books.Ruth,
-    Eikah = Books.Eikah,
-    Qohelet = Books.Qohelet,
-    Esther = Books.Esther,
-    Daniel = Books.Daniel,
-    Ezra = Books.Ezra,
-    Nehemiah = Books.Nehemiah,
-    Divrei_HaYamim_I = Books.Divrei_HaYamim_I,
-    Divrei_HaYamim_II = Books.Divrei_HaYamim_II
+    Tehilim = TanakBook.Tehilim,
+    Mishlei = TanakBook.Mishlei,
+    Iyov = TanakBook.Iyov,
+    Shir_HaShirim = TanakBook.Shir_HaShirim,
+    Ruth = TanakBook.Ruth,
+    Eikah = TanakBook.Eikah,
+    Qohelet = TanakBook.Qohelet,
+    Esther = TanakBook.Esther,
+    Daniel = TanakBook.Daniel,
+    Ezra = TanakBook.Ezra,
+    Nehemiah = TanakBook.Nehemiah,
+    Divrei_HaYamim_I = TanakBook.Divrei_HaYamim_I,
+    Divrei_HaYamim_II = TanakBook.Divrei_HaYamim_II
   };
 
 }

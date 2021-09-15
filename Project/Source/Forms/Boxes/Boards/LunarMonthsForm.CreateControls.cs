@@ -42,19 +42,19 @@ namespace Ordisoftware.Hebrew.Calendar
       Color colorActiveLink;
       switch ( Program.Settings.LunarMonthsFormUseColors )
       {
-        case LunarMonthsListColors.System:
+        case LunarMonthsListColor.System:
           PanelMonths.BackColor = SystemColors.Control;
           colorActiveLink = Color.MediumBlue;
           colorsMonth = ColorsSystem;
           break;
-        case LunarMonthsListColors.Pastel:
+        case LunarMonthsListColor.Pastel:
           PanelMonths.BackColor = Color.Black;
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Tomato;
           colorLinkTextLettriq = Color.LightSkyBlue;
           colorsMonth = ColorsPastel;
           break;
-        case LunarMonthsListColors.Flashy:
+        case LunarMonthsListColor.Flashy:
           PanelMonths.BackColor = Color.Black;
           colorActiveLink = Color.Gainsboro;
           colorLinkTextMeaning = Color.Red;

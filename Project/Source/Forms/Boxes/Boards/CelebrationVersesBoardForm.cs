@@ -70,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var menuitem = (ToolStripMenuItem)sender;
         foreach ( ListViewItem item in SelectVerse.SelectedItems )
         {
-          var verseitem = (Tuple<Books, string, string>)item.Tag;
+          var verseitem = (Tuple<TanakBook, string, string>)item.Tag;
           var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
           HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
           if ( SelectVerse.SelectedItems.Count > 1 )
@@ -82,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
     {
       if ( SelectVerse.SelectedItems.Count <= 0 ) return;
-      var verseitem = (Tuple<Books, string, string>)SelectVerse.SelectedItems[0].Tag;
+      var verseitem = (Tuple<TanakBook, string, string>)SelectVerse.SelectedItems[0].Tag;
       var reference = $"{verseitem.Item1}.{verseitem.Item2}";
       HebrewTools.OpenHebrewWordsGoToVerse(reference, Settings.HebrewWordsExe);
     }

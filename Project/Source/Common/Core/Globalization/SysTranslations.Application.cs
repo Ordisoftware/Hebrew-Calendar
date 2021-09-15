@@ -271,25 +271,25 @@ namespace Ordisoftware.Core
         }
       };
 
-    static public readonly NullSafeDictionary<PowerActions, TranslationsDictionary> PowerActionText
-      = new NullSafeDictionary<PowerActions, TranslationsDictionary>
+    static public readonly NullSafeDictionary<PowerAction, TranslationsDictionary> PowerActionText
+      = new NullSafeDictionary<PowerAction, TranslationsDictionary>
       {
-        [PowerActions.Hibernate] = new TranslationsDictionary
+        [PowerAction.Hibernate] = new TranslationsDictionary
         {
           [Language.EN] = "Hibernate",
           [Language.FR] = "Hiberner"
         },
-        [PowerActions.LockSession] = new TranslationsDictionary
+        [PowerAction.LockSession] = new TranslationsDictionary
         {
           [Language.EN] = "Lock",
           [Language.FR] = "Verrouiller"
         },
-        [PowerActions.Shutdown] = new TranslationsDictionary
+        [PowerAction.Shutdown] = new TranslationsDictionary
         {
           [Language.EN] = "Shutdown",
           [Language.FR] = "Éteindre"
         },
-        [PowerActions.StandBy] = new TranslationsDictionary
+        [PowerAction.StandBy] = new TranslationsDictionary
         {
           [Language.EN] = "Standby",
           [Language.FR] = "Veille"

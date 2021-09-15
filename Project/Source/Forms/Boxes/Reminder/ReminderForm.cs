@@ -243,14 +243,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReminderForm_Load(object sender, EventArgs e)
     {
-      PowerActions[] avoid = { PowerActions.LogOff, PowerActions.Restart };
+      PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart };
       foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
         var item = (ToolStripMenuItem)ContextMenuStripLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
         item.Tag = value;
         item.Click += (_s, _e) =>
         {
-          var action = (PowerActions)( (ToolStripItem)_s ).Tag;
+          var action = (PowerAction)( (ToolStripItem)_s ).Tag;
           SystemManager.DoPowerAction(action, Program.Settings.LockSessionConfirmLogOffOrMore);
         };
         if ( Program.Settings.LockSessionDefaultAction == value )
@@ -275,7 +275,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       DoSound();
     }
-    
+
     private void InitializeParashahMenu()
     {
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
@@ -283,14 +283,14 @@ namespace Ordisoftware.Hebrew.Calendar
         var menuitem = (ToolStripMenuItem)sender;
         var day = (LunisolarDay)LabelParashahValue.Tag;
         HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         ParashotFactory.Get(day.ParashahID),
+                                         ParashotFactory.Instance.Get(day.ParashahID),
                                          day.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var day = (LunisolarDay)LabelParashahValue.Tag;
-        var parashah = ParashotFactory.Get(day.ParashahID);
+        var parashah = ParashotFactory.Instance.Get(day.ParashahID);
         string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });

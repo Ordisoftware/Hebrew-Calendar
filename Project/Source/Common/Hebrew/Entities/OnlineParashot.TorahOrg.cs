@@ -21,10 +21,10 @@ namespace Ordisoftware.Hebrew
   static partial class OnlineParashot
   {
 
-    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<string>> TorahOrg
-      = new NullSafeDictionary<TorahBooks, NullSafeList<string>>
+    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahOrg
+      = new NullSafeDictionary<TorahBook, NullSafeList<string>>
       {
-        [TorahBooks.Bereshit] = new NullSafeList<string>
+        [TorahBook.Bereshit] = new NullSafeList<string>
         {
           "bereishis",
           "noach",
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew
           "vayigash",
           "vayechi"
         },
-        [TorahBooks.Shemot] = new NullSafeList<string>
+        [TorahBook.Shemot] = new NullSafeList<string>
         {
           "shemos",
           "vaera",
@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew
           "vayakhel",
           "pekudei"
         },
-        [TorahBooks.Vayiqra] = new NullSafeList<string>
+        [TorahBook.Vayiqra] = new NullSafeList<string>
         {
           "vayikra",
           "tzav",
@@ -66,7 +66,7 @@ namespace Ordisoftware.Hebrew
           "behar",
           "bechukosai"
         },
-        [TorahBooks.Bamidbar] = new NullSafeList<string>
+        [TorahBook.Bamidbar] = new NullSafeList<string>
         {
           "bamidbar",
           "naso",
@@ -79,7 +79,7 @@ namespace Ordisoftware.Hebrew
           "matos",
           "masei"
         },
-        [TorahBooks.Devarim] = new NullSafeList<string>
+        [TorahBook.Devarim] = new NullSafeList<string>
         {
           "devarim",
           "vaeschanan",

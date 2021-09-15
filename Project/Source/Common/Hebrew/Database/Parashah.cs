@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew
     {
     }
 
-    public Parashah(TorahBooks book,
+    public Parashah(TorahBook book,
                     int number,
                     string name,
                     string unicode,

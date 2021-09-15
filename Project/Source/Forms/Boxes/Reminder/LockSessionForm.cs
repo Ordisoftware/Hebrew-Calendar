@@ -47,10 +47,10 @@ namespace Ordisoftware.Hebrew.Calendar
       int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
       if ( width > Width ) Width = width;
       ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
-      ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerActions.LockSession);
-      ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerActions.StandBy);
-      ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerActions.Hibernate);
-      ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerActions.Shutdown);
+      ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerAction.LockSession);
+      ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerAction.StandBy);
+      ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Hibernate);
+      ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Shutdown);
       ActionStandby.Left = ActionLock.Left + ActionLock.Width + 5;
       ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
       ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
@@ -89,12 +89,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionOk_Click(object sender, EventArgs e)
     {
-      var actions = new NullSafeDictionary<PowerActions, Delegate>
+      var actions = new NullSafeDictionary<PowerAction, Delegate>
       {
-        [PowerActions.LockSession] = (Action<object, EventArgs>)ActionLock_Click,
-        [PowerActions.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionStandby_Click,
-        [PowerActions.Hibernate] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionHibernate_Click,
-        [PowerActions.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionShutdown_Click
+        [PowerAction.LockSession] = (Action<object, EventArgs>)ActionLock_Click,
+        [PowerAction.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionStandby_Click,
+        [PowerAction.Hibernate] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionHibernate_Click,
+        [PowerAction.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionShutdown_Click
       };
       actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
     }
