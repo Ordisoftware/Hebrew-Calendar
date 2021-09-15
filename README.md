@@ -190,7 +190,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### What are the times of celebration?
 
-The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
+The times of the Torah's celebrations are Pesach or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
 
 These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
@@ -222,7 +222,7 @@ If you prefer to use the traditional group Shabat, select for example Saturday f
 
 The study of the Weekly Torah portion begins at Sim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
 
-It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavu'ot, Teru'ah, Kipurim, and Sukot.
+It ends with full reading on Shabat, or the next Shabat if Sim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesach, Shavu'ot, Teru'ah, Kipurim, and Sukot.
 
 Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Sim'hat Torah means 'Joy [bestowed by the] Torah' and a Lettriq of Sim'hat is 'Sharing of the Service which Sustains the Matter': it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
@@ -460,7 +460,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.02.17 - Version 6.8
 
-- Fix the last day of Pesa'h and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
+- Fix the last day of Pesach and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
 - Update web links.
 
 #### 2021.02.14 - Version 6.7
