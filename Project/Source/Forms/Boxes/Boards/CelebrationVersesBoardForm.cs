@@ -73,12 +73,13 @@ namespace Ordisoftware.Hebrew.Calendar
       var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
       if ( day != null )
       {
-        var item = SelectCelebration.FindItemWithText(day.TorahEvent.ToString());
-        if ( item != null )
-        {
-          item.Focused = true;
-          item.Selected = true;
-        }
+        foreach ( ListViewItem item in SelectCelebration.Items )
+          if ( ((TorahCelebration)item.Tag).ToString().StartsWith(day.TorahEvent.ToString()) )
+          {
+            item.Focused = true;
+            item.Selected = true;
+            break;
+          }
       }
       else
       {
