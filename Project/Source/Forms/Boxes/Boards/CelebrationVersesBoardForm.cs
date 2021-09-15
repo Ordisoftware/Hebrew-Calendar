@@ -49,36 +49,10 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
       ActiveControl = SelectCelebration;
-      PopulateLists();
-    }
-
-    private void PopulateLists()
-    {
-      var items = Enums.GetValues<TorahCelebration>()
-                       .Select(value => new ListViewItem(value.ToString()) { Tag = value });
-      SelectCelebration.Items.Clear();
-      SelectCelebration.Items.AddRange(items.ToArray());
-      FindCurrentCelebration();
-    }
-
-    private void FindCurrentCelebration()
-    {
-      if ( SelectCelebration.Items.Count <= 0 ) return;
-      var dateStart = DateTime.Today;
-      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
-      if ( day != null )
+      if ( Globals.IsDevExecutable ) // TODO remove code and controls
       {
-        var item = SelectCelebration.FindItemWithText(day.TorahEvent.ToString());
-        if ( item != null )
-        {
-          item.Focused = true;
-          item.Selected = true;
-        }
-      }
-      else
-      {
-        SelectCelebration.Items[0].Focused = true;
-        SelectCelebration.Items[0].Selected = true;
+        ActionImport.Visible = true;
+        ActionExport.Visible = true;
       }
     }
 
@@ -116,29 +90,67 @@ namespace Ordisoftware.Hebrew.Calendar
     private void CelebrationVersesBoardForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
+      PopulateLists();
+    }
+
+    private void PopulateLists()
+    {
+      var items = Enums.GetValues<TorahCelebration>()
+                       .Select(value => new ListViewItem(AppTranslations.TorahCelebrations.GetLang(value)) { Tag = value });
+      SelectCelebration.Items.Clear();
+      SelectCelebration.Items.AddRange(items.ToArray());
+      FindCurrentCelebration();
+    }
+
+    private void FindCurrentCelebration()
+    {
+      if ( SelectCelebration.Items.Count <= 0 ) return;
+      var dateStart = DateTime.Today;
+      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
+      if ( day != null )
+      {
+        foreach ( ListViewItem item in SelectCelebration.Items )
+          if ( ( (TorahCelebration)item.Tag ).ToString().StartsWith(day.TorahEvent.ToString()) )
+          {
+            item.Selected = true;
+            item.Focused = true;
+            break;
+          }
+      }
+      else
+      {
+        SelectCelebration.Items[0].Selected = true;
+        SelectCelebration.Items[0].Focused = true;
+      }
     }
 
     private void CelebrationVersesBoardForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      e.Cancel = true;
-      Hide();
+    }
+
+    private void CelebrationVersesBoardForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Instance = null;
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
-      Hide();
+      Close();
     }
 
+    // TODO remove
     private void ActionImport_Click(object sender, EventArgs e)
     {
-      TorahCelebrationVerses.Load();
+      TorahCelebrationVerses.Instance.Load();
       PopulateLists();
       DisplayManager.Show(SysTranslations.LoadFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
+    // TODO remove
     private void ActionExport_Click(object sender, EventArgs e)
     {
-      TorahCelebrationVerses.Save();
+      if ( !DisplayManager.QueryYesNo("Save and overwrite data file?") ) return;
+      TorahCelebrationVerses.Instance.Save();
       DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
@@ -171,7 +183,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( SelectCelebration.SelectedItems.Count <= 0 ) return;
       SelectVerse.Items.Clear();
-      var collection = TorahCelebrationVerses.Items[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag];
+      var collection = TorahCelebrationVerses.Instance.Items[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag];
+      if ( collection == null ) return;
       foreach ( var reference in collection )
       {
         var item = SelectVerse.Items.Add(reference.Item1.ToString());

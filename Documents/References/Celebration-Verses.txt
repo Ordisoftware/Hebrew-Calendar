@@ -1,7 +1,7 @@
 Pessah : Shemot - 12.1 - 12.51
 Pessah : Shemot - 13.1 - 13.22
-Pessah : Shemot - 23.15 - 
-Pessah : Shemot - 23.18 - 
+Pessah : Shemot - 23.15
+Pessah : Shemot - 23.18
 Pessah : Vayiqra - 23.5 - 23.8
 Pessah : Bamidbar - 9.1 - 9.14
 Pessah : Bamidbar - 28.16 - 28.25
@@ -12,13 +12,15 @@ Pessah : Melakim_II - 23.21 - 23.23
 Pessah : Ezra - 6.19 - 6.22
 Pessah : Divrei_HaYamim_II - 30.1 - 30.27
 Pessah : Divrei_HaYamim_II - 35.1 - 35.19
-Chavouot : Shemot - 23.16 - 
-Chavouot : Shemot - 23.19 - 
-Chavouot : Shemot - 34.22 - 
-Chavouot : Shemot - 34.26 - 
+
+Chavouot : Shemot - 23.16
+Chavouot : Shemot - 23.19
+Chavouot : Shemot - 34.22
+Chavouot : Shemot - 34.26
 Chavouot : Vayiqra - 23.9 - 23.22
 Chavouot : Bamidbar - 28.26 - 28.31
 Chavouot : Devarim - 16.9 - 16.12
+
 YomTerouah : Vayiqra - 23.23 - 23.25
 YomTerouah : Bamidbar - 10.1 - 10.10
 YomTerouah : Bamidbar - 29.1 - 29.6
@@ -26,9 +28,10 @@ YomTerouah : Nehemiah - 8.1 - 8.12
 YomTerouah : Tehilim - 66.1 - 66.20
 YomTerouah : Tehilim - 81.1 - 81.16
 YomTerouah : Tehilim - 100.1 - 100.5
+
 YomHaKipourim : Vayiqra - 16.1 - 16.34
 YomHaKipourim : Vayiqra - 23.26 - 23.32
-YomHaKipourim : Vayiqra - 25.9 - 
+YomHaKipourim : Vayiqra - 25.9
 YomHaKipourim : Bamidbar - 29.7 - 29.11
 YomHaKipourim : Tehilim - 3.1 - 3.8
 YomHaKipourim : Tehilim - 27.1 - 27.14
@@ -36,13 +39,14 @@ YomHaKipourim : Tehilim - 123.1 - 123.4
 YomHaKipourim : Tehilim - 124.1 - 124.8
 YomHaKipourim : Tehilim - 125.1 - 125.5
 YomHaKipourim : Tehilim - 126.1 - 126.14
+
 Soukot : Vayiqra - 23.33 - 23.43
 Soukot : Bamidbar - 29.12 - 29.39
 Soukot : Devarim - 16.13 - 16.17
 Soukot : Devarim - 31.10 - 31.13
-Soukot : Shoftim - 9.27 - 
+Soukot : Shoftim - 9.27
 Soukot : Melakim_I - 8.1 - 8.66
-Soukot : Yehezqel - 45.25 - 
+Soukot : Yehezqel - 45.25
 Soukot : Zekaria - 14.16 - 14.19
 Soukot : Ezra - 3.1 - 3.4
 Soukot : Nehemiah - 8.13 - 8.18

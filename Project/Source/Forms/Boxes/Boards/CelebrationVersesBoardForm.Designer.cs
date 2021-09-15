@@ -203,6 +203,7 @@
       this.Name = "CelebrationVersesBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationVersesBoardForm_FormClosing);
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationVersesBoardForm_FormClosed);
       this.Load += new System.EventHandler(this.CelebrationVersesBoardForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.ContextMenuVerse.ResumeLayout(false);
