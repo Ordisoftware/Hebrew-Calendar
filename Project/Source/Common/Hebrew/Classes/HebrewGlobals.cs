@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew
     /// Indicate file path of the celebration verses.
     /// </summary>
     static public string CelebrationVersesFilePath
-      => Path.Combine(BibleReferencesFolderPath, "Verses-Celebrations.txt");
+      => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
 
     /// <summary>
     /// Indicate file path of the hebrew grammar guide.
