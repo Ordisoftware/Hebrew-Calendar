@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void PopulateLists()
     {
       var items = Enums.GetValues<TorahCelebration>()
-                       .Select(value => new ListViewItem(value.ToString()) { Tag = value });
+                       .Select(value => new ListViewItem(AppTranslations.TorahCelebrations.GetLang(value)) { Tag = value });
       SelectCelebration.Items.Clear();
       SelectCelebration.Items.AddRange(items.ToArray());
       FindCurrentCelebration();
