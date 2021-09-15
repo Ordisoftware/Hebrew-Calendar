@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew
 
     public Parashah Get(string id)
     {
-      return All.FirstOrDefault(p => p?.ID == id) ?? null;
+      return All.FirstOrDefault(p => p.ID == id);
     }
 
     protected override void SetFilePath()
