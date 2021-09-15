@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -51,11 +51,25 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Le fichier n'est pas un exécutable :{Globals.NL2}{{0}}",
       };
 
+    static public readonly TranslationsDictionary LoadFileSuccess
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"File loaded:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Fichier chargé :{Globals.NL2}{{0}}",
+      };
+
     static public readonly TranslationsDictionary LoadFileError
       = new TranslationsDictionary
       {
         [Language.EN] = $"Error while loading file:{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
         [Language.FR] = $"Erreur de chargement du fichier :{Globals.NL2}{{0}}{Globals.NL2}{{1}}",
+      };
+
+    static public readonly TranslationsDictionary WriteFileSuccess
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"File saved:{Globals.NL2}{{0}}",
+        [Language.FR] = $"Fichier sauvegardé :{Globals.NL2}{{0}}",
       };
 
     static public readonly TranslationsDictionary WriteFileError

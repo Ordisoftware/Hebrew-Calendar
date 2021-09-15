@@ -124,8 +124,11 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void OpenBibleProvider(string url, string reference)
     {
-      int[] list = reference.Split('.').Select(int.Parse).ToArray();
-      OpenBibleProvider(url, list[0], list[1], list[2]);
+      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+      {
+        int[] list = reference.Split('.').Select(int.Parse).ToArray();
+        OpenBibleProvider(url, list[0], list[1], list[2]);
+      });
     }
 
     /// <summary>
@@ -134,27 +137,22 @@ namespace Ordisoftware.Hebrew
     static public void OpenBibleProvider(string url, int book, int chapter, int verse)
     {
       int bookchabad = BooksNames.Chabad[(Books)book] + chapter - 1;
-      if ( url.Contains("%BOOKSEFARIA%") )
-        url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(Books)book]
-                                                     .Replace("1", "I")
-                                                     .Replace("2", "II")
-                                                     .Replace(" ", "_"))
-                 .Replace("%CHAPTERNUM%", chapter.ToString())
-                 .Replace("%VERSENUM%", verse.ToString());
-      else
-        url = url.Replace("%BOOKSB%", BooksNames.StudyBible[(Books)book])
-                 .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)book])
-                 .Replace("%BOOKCHABAD%", bookchabad.ToString())
-                 .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)book])
-                 .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)book])
-                 .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)book])
-                 .Replace("%BOOKNUM%", book.ToString())
-                 .Replace("%CHAPTERNUM%", chapter.ToString())
-                 .Replace("%VERSENUM%", verse.ToString())
-                 .Replace("%BOOKNUM#2%", book.ToString("00"))
-                 .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
-                 .Replace("%VERSENUM#2%", verse.ToString("00"));
-
+      url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(Books)book]
+                                                   .Replace("1", "I")
+                                                   .Replace("2", "II")
+                                                   .Replace(" ", "_"))
+               .Replace("%BOOKSB%", BooksNames.StudyBible[(Books)book])
+               .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)book])
+               .Replace("%BOOKCHABAD%", bookchabad.ToString())
+               .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)book])
+               .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)book])
+               .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)book])
+               .Replace("%BOOKNUM%", book.ToString())
+               .Replace("%CHAPTERNUM%", chapter.ToString())
+               .Replace("%VERSENUM%", verse.ToString())
+               .Replace("%BOOKNUM#2%", book.ToString("00"))
+               .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
+               .Replace("%VERSENUM#2%", verse.ToString("00"));
       SystemManager.RunShell(url);
     }
 
