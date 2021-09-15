@@ -103,6 +103,7 @@
       this.SelectVerse.UseCompatibleStateImageBehavior = false;
       this.SelectVerse.View = System.Windows.Forms.View.Details;
       this.SelectVerse.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lists_KeyDown);
+      this.SelectVerse.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SelectVerse_MouseDoubleClick);
       // 
       // ColumnBook
       // 

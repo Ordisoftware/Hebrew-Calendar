@@ -142,6 +142,11 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
+    private void SelectVerse_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      SelectVerse.ContextMenuStrip.Show(Cursor.Position);
+    }
+
     private void Lists_KeyDown(object sender, KeyEventArgs e)
     {
       if ( e.KeyCode == Keys.Left )
