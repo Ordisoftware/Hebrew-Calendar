@@ -188,7 +188,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( collection == null ) return;
       foreach ( var reference in collection )
       {
-        var item = SelectVerse.Items.Add(reference.Item1.ToString());
+        var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace("_", " "));
         item.Tag = reference;
         item.SubItems.Add(reference.Item2.ToString());
         item.SubItems.Add(reference.Item3.ToString());
