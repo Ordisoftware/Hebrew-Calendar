@@ -126,13 +126,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CelebrationVersesBoardForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      e.Cancel = true;
-      Hide();
+    }
+
+    private void CelebrationVersesBoardForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Instance = null;
     }
 
     private void ActionClose_Click(object sender, EventArgs e)
     {
-      Hide();
+      Close();
     }
 
     private void ActionImport_Click(object sender, EventArgs e)
