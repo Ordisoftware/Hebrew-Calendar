@@ -124,10 +124,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void CelebrationVersesBoardForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-    }
-
     private void CelebrationVersesBoardForm_FormClosed(object sender, FormClosedEventArgs e)
     {
       Instance = null;

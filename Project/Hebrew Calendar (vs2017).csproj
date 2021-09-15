@@ -246,7 +246,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Unicode.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
@@ -1071,7 +1071,9 @@
   <ItemGroup>
     <Content Include="Licenses\MPL 2.0.htm" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source\Common\Hebrew\Parashot\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -24,9 +24,9 @@ namespace Ordisoftware.Hebrew
   public class TorahCelebrationVerses : ProviderSettings
   {
 
-    static public TorahCelebrationVerses Instance = new TorahCelebrationVerses();
+    static public readonly TorahCelebrationVerses Instance = new TorahCelebrationVerses();
 
-    public NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>> Items
+    public readonly NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>> Items
       = new NullSafeDictionary<TorahCelebration, List<Tuple<Books, string, string>>>();
 
     protected override void SetFilePath()

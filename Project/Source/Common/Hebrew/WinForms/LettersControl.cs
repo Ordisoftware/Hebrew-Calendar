@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew
     public const float DefaultFontSizeKeys = 8F;
     public const float DefaultFontSizeInput = 18F;
     public const int DefaultInputMaxLength = 12;
-    public const int DefaultMargin = 5;
+    public const int DefaultMarginSize = 5;
 
     /// <summary>
     /// Indicate view letter details event.
@@ -196,7 +196,7 @@ namespace Ordisoftware.Hebrew
     }
     private bool _ShowKeys = true;
 
-    [DefaultValue(DefaultMargin)]
+    [DefaultValue(DefaultMarginSize)]
     public int MarginX
     {
       get => _MarginX;
@@ -207,9 +207,9 @@ namespace Ordisoftware.Hebrew
         Redraw();
       }
     }
-    private int _MarginX = DefaultMargin;
+    private int _MarginX = DefaultMarginSize;
 
-    [DefaultValue(DefaultMargin)]
+    [DefaultValue(DefaultMarginSize)]
     public int MarginY
     {
       get => _MarginY;
@@ -220,7 +220,7 @@ namespace Ordisoftware.Hebrew
         Redraw();
       }
     }
-    private int _MarginY = DefaultMargin;
+    private int _MarginY = DefaultMarginSize;
 
     /// <summary>
     /// Indicate if an input key is processed.

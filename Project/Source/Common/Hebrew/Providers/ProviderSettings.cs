@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew
 
     protected string FilePath;
 
-    public ProviderSettings()
+    protected ProviderSettings()
     {
       SetFilePath();
       Load();
@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew
     abstract protected void SetFilePath();
     abstract protected void DoClear();
     abstract protected void DoLoad(string line);
-    abstract protected void DoSave(StreamWriter writer);
+    abstract protected void DoSave(StreamWriter stream);
 
     public void Load()
     {

@@ -19,5 +19,6 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Critical Code Smell", "S2365:Properties should not make collection or array copies", Justification = "Opinion based", Scope = "module")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S1121:Assignments should not be made from within sub-expressions", Justification = "Opinion based", Scope = "module")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "Opinion based", Scope = "module")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Critical Code Smell", "S1699:Constructors should only call non-overridable methods", Justification = "Opinion based", Scope = "module")]
 
 //[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "Hide", Scope = "type", Target = "~T:Ordisoftware.Hebrew.Calendar.Data.DataSet")]
