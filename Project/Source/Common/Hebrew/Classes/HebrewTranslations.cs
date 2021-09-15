@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew
     static public readonly TranslationsDictionary ParashahNotFound
       = new TranslationsDictionary
       {
-        [Language.EN] = "Parashah not found : it's Pesa'h or data are not generated.",
+        [Language.EN] = "Parashah not found : it's Pesach or data are not generated.",
         [Language.FR] = "Parashah non trouvée : c'est Pessa'h ou les données n'ont pas été générées."
       };
 
