@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
-        /*["9.0"] = new TranslationsDictionary
+        /*["x.y"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
                           "• Added a command-line option to show the lunar months board." + Globals.NL +
@@ -39,11 +39,15 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["8.10"] = new TranslationsDictionary
+        ["9.0"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Fixed showing linked parashah even if not linked.",
+          [Language.EN] = "• Added celebration verses board." + Globals.NL +
+                          "• Added a command-line option for this board." + Globals.NL +
+                          "• Some fixes and improvements.",
 
-          [Language.FR] = "• Correction de l'affichage de la parashah liée même si elle n'est pas liée."
+          [Language.FR] = "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
+                          "• Ajout d'une option de ligne de commande pour ce tableau." + Globals.NL +
+                          "• Quelques améliorations et corrections."
         },
 
         ["8.x"] = new TranslationsDictionary
