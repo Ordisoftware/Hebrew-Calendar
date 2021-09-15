@@ -71,64 +71,74 @@ namespace Ordisoftware.Hebrew
         [TorahCelebration.Soukot] = "souccot"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _5
+    static public readonly NullSafeDictionary<TorahCelebration, string> Loubavitch
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "pessa-h",
+        [TorahCelebration.Chavouot] = "chavouot",
+        [TorahCelebration.YomTerouah] = "roch-hachana",
+        [TorahCelebration.YomHaKipourim] = "yom-kippour",
+        [TorahCelebration.Soukot] = "souccot"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _6
+    static public readonly NullSafeDictionary<TorahCelebration, string> ChabadFR
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "495199/jewish/Pessah.htm",
+        [TorahCelebration.Chavouot] = "619292/jewish/Chavouot.htm",
+        [TorahCelebration.YomTerouah] = "565037/jewish/Roch-Hachana.htm",
+        [TorahCelebration.YomHaKipourim] = "567990/jewish/Yom-Kippour.htm",
+        [TorahCelebration.Soukot] = "3753669/jewish/Soukkot-et-Simhat-Torah.htm"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _7
+    static public readonly NullSafeDictionary<TorahCelebration, string> ChabadEN
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "holidays/passover/default_cdo/jewish/Passover.htm",
+        [TorahCelebration.Chavouot] = "library/article_cdo/aid/111377/jewish/Shavuot.htm",
+        [TorahCelebration.YomTerouah] = "library/article_cdo/aid/4644/jewish/Rosh-Hashanah.htm",
+        [TorahCelebration.YomHaKipourim] = "library/article_cdo/aid/4687/jewish/Yom-Kippur.htm",
+        [TorahCelebration.Soukot] = "library/article_cdo/aid/4126/jewish/Sukkot.htm"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _8
+    static public readonly NullSafeDictionary<TorahCelebration, string> TheYeshiva
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "c3/torah/holidays/pesach",
+        [TorahCelebration.Chavouot] = "c76/torah/holidays/shavuot",
+        [TorahCelebration.YomTerouah] = "c83/torah/holidays/rosh-hashanah",
+        [TorahCelebration.YomHaKipourim] = "c84/torah/holidays/yom-kippur",
+        [TorahCelebration.Soukot] = "c90/torah/holidays/sukkot"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _9
+    static public readonly NullSafeDictionary<TorahCelebration, string> AishFR
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "pessah",
+        [TorahCelebration.Chavouot] = "shavuot",
+        [TorahCelebration.YomTerouah] = "rosh_hashanah",
+        [TorahCelebration.YomHaKipourim] = "yom_kippour",
+        [TorahCelebration.Soukot] = "succot"
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> _Template
+    static public readonly NullSafeDictionary<TorahCelebration, string> AishEN
       = new NullSafeDictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "",
-        [TorahCelebration.Chavouot] = "",
-        [TorahCelebration.YomTerouah] = "",
-        [TorahCelebration.YomHaKipourim] = "",
-        [TorahCelebration.Soukot] = ""
+        [TorahCelebration.Pessah] = "pes",
+        [TorahCelebration.Chavouot] = "sh",
+        [TorahCelebration.YomTerouah] = "rh",
+        [TorahCelebration.YomHaKipourim] = "yom-kippur",
+        [TorahCelebration.Soukot] = "su"
+      };
+
+    static public readonly NullSafeDictionary<TorahCelebration, string> AishIW
+      = new NullSafeDictionary<TorahCelebration, string>
+      {
+        [TorahCelebration.Pessah] = "pes",
+        [TorahCelebration.Chavouot] = "sh",
+        [TorahCelebration.YomTerouah] = "hh/rh",
+        [TorahCelebration.YomHaKipourim] = "hh/yk",
+        [TorahCelebration.Soukot] = "su"
       };
 
   }
