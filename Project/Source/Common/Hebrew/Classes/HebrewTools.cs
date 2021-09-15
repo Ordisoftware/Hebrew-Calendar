@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -137,6 +137,15 @@ namespace Ordisoftware.Hebrew
     static public void OpenBibleProvider(string url, int book, int chapter, int verse)
     {
       int bookchabad = BooksNames.Chabad[(Books)book] + chapter - 1;
+      string chapterString = chapter.ToString();
+      if ( url.Contains("%BOOKMM%") && chapter >= 100 )
+      {
+        int dizaine = ( chapter - 100 ) / 10;
+        char centaine = 'a';
+        centaine += (char)dizaine;
+        chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
+        url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
+      }
       url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(Books)book]
                                                    .Replace("1", "I")
                                                    .Replace("2", "II")
@@ -148,7 +157,7 @@ namespace Ordisoftware.Hebrew
                .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)book])
                .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)book])
                .Replace("%BOOKNUM%", book.ToString())
-               .Replace("%CHAPTERNUM%", chapter.ToString())
+               .Replace("%CHAPTERNUM%", chapterString)
                .Replace("%VERSENUM%", verse.ToString())
                .Replace("%BOOKNUM#2%", book.ToString("00"))
                .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
