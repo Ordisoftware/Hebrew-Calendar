@@ -18,7 +18,7 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  static partial class OnlineCelebration
+  static class OnlineCelebration
   {
 
     static public readonly NullSafeDictionary<TorahCelebration, string> WikipediaEN

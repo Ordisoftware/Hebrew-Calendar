@@ -22,9 +22,9 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Torah celebrations days, durations and verses.
+  /// Torah celebrations days and durations.
   /// </summary>
-  static partial class TorahCelebrations
+  static class TorahCelebrations
   {
 
     /// <summary>

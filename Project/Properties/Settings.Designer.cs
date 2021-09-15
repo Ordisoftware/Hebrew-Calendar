@@ -2597,5 +2597,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CelebrationVersesBoardFormLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("384, 306")]
+        public global::System.Drawing.Size CelebrationVersesBoardFormClientSize {
+            get {
+                return ((global::System.Drawing.Size)(this["CelebrationVersesBoardFormClientSize"]));
+            }
+            set {
+                this["CelebrationVersesBoardFormClientSize"] = value;
+            }
+        }
     }
 }

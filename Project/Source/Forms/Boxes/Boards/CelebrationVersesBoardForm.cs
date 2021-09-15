@@ -41,17 +41,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       Instance.Show();
       Instance.ForceBringToFront();
-      var dateStart = DateTime.Today;
-      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
-      if ( day != null )
-      {
-        var item = Instance.SelectCelebration.FindItemWithText(day.TorahEvent.ToString());
-        if ( item != null )
-        {
-          item.Focused = true;
-          item.Selected = true;
-        }
-      }
     }
 
     public CelebrationVersesBoardForm()
@@ -60,10 +49,33 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
       ActiveControl = SelectCelebration;
+      PopulateLists();
+    }
+
+    private void PopulateLists()
+    {
       var items = Enums.GetValues<TorahCelebration>()
                        .Select(value => new ListViewItem(value.ToString()) { Tag = value });
+      SelectCelebration.Items.Clear();
       SelectCelebration.Items.AddRange(items.ToArray());
-      if ( SelectCelebration.Items.Count > 0 )
+      FindCurrentCelebration();
+    }
+
+    private void FindCurrentCelebration()
+    {
+      if ( SelectCelebration.Items.Count <= 0 ) return;
+      var dateStart = DateTime.Today;
+      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
+      if ( day != null )
+      {
+        var item = SelectCelebration.FindItemWithText(day.TorahEvent.ToString());
+        if ( item != null )
+        {
+          item.Focused = true;
+          item.Selected = true;
+        }
+      }
+      else
       {
         SelectCelebration.Items[0].Focused = true;
         SelectCelebration.Items[0].Selected = true;
@@ -81,11 +93,15 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
-        if ( SelectVerse.SelectedItems.Count <= 0 ) return;
         var menuitem = (ToolStripMenuItem)sender;
-        var verseitem = (Tuple<Books, string, string>)SelectVerse.SelectedItems[0].Tag;
-        var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
+        foreach ( ListViewItem item in SelectVerse.SelectedItems )
+        {
+          var verseitem = (Tuple<Books, string, string>)item.Tag;
+          var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
+          HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
+          if ( SelectVerse.SelectedItems.Count > 1 )
+            System.Threading.Thread.Sleep(1500);
+        }
       });
     }
 
@@ -113,6 +129,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Hide();
     }
 
+    private void ActionImport_Click(object sender, EventArgs e)
+    {
+      TorahCelebrationVerses.Load();
+      PopulateLists();
+      DisplayManager.Show(SysTranslations.LoadFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
+    }
+
+    private void ActionExport_Click(object sender, EventArgs e)
+    {
+      TorahCelebrationVerses.Save();
+      DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
+    }
+
+    private void SelectVerse_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      SelectVerse.ContextMenuStrip.Show(Cursor.Position);
+    }
+
     private void Lists_KeyDown(object sender, KeyEventArgs e)
     {
       if ( e.KeyCode == Keys.Left )
@@ -137,12 +171,18 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( SelectCelebration.SelectedItems.Count <= 0 ) return;
       SelectVerse.Items.Clear();
-      foreach ( var reference in TorahCelebrations.Verses[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag] )
+      var collection = TorahCelebrationVerses.Items[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag];
+      foreach ( var reference in collection )
       {
         var item = SelectVerse.Items.Add(reference.Item1.ToString());
         item.Tag = reference;
         item.SubItems.Add(reference.Item2.ToString());
         item.SubItems.Add(reference.Item3.ToString());
+      }
+      if ( SelectVerse.Items.Count > 0 )
+      {
+        SelectVerse.Items[0].Focused = true;
+        SelectVerse.Items[0].Selected = true;
       }
     }
 
