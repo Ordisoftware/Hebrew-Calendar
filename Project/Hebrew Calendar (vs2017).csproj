@@ -248,13 +248,13 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\HebrewAlphabet.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
+    <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebrations.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahJews.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahOrg.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebration.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.WikipediaEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadEN.cs" />
