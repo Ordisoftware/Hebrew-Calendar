@@ -136,7 +136,6 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void OpenBibleProvider(string url, int book, int chapter, int verse)
     {
-      int bookchabad = BooksNames.Chabad[(Books)book] + chapter - 1;
       string chapterString = chapter.ToString();
       if ( url.Contains("%BOOKMM%") && chapter >= 100 )
       {
@@ -152,7 +151,7 @@ namespace Ordisoftware.Hebrew
                                                    .Replace(" ", "_"))
                .Replace("%BOOKSB%", BooksNames.StudyBible[(Books)book])
                .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(Books)book])
-               .Replace("%BOOKCHABAD%", bookchabad.ToString())
+               .Replace("%BOOKCHABAD%", ( BooksNames.Chabad[(Books)book] + chapter - 1 ).ToString())
                .Replace("%BOOKMM%", BooksNames.MechonMamre[(Books)book])
                .Replace("%BOOKDJEP%", BooksNames.Djep[(Books)book])
                .Replace("%BOOKLE%", BooksNames.LEvangile[(Books)book])
