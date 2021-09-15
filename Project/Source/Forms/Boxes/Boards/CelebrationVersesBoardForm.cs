@@ -50,6 +50,11 @@ namespace Ordisoftware.Hebrew.Calendar
       Icon = MainForm.Instance.Icon;
       ActiveControl = SelectCelebration;
       PopulateLists();
+      if ( Globals.IsDevExecutable )
+      {
+        ActionImport.Visible = true;
+        ActionExport.Visible = true;
+      }
     }
 
     private void PopulateLists()
