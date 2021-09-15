@@ -24,6 +24,22 @@ namespace Ordisoftware.Hebrew
   static partial class HebrewTranslations
   {
 
+    static public readonly NullSafeDictionary<Language, string[]> Letters
+      = new NullSafeDictionary<Language, string[]>()
+      {
+        [Language.EN] = new string[]
+        {
+          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
+          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
+        },
+
+        [Language.FR] = new string[]
+        {
+          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
+          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
+        }
+      };
+
     static public readonly TranslationsDictionary GrammarGuideTitle
       = new TranslationsDictionary
       {

@@ -73,7 +73,7 @@ namespace Ordisoftware.Hebrew
       ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var parashah = ParashotFactory.Get(CurrentDataBoundItem.ID);
+        var parashah = ParashotFactory.Instance.Get(CurrentDataBoundItem.ID);
         HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
@@ -182,12 +182,12 @@ namespace Ordisoftware.Hebrew
         this.Popup();
         DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(Text),
                                   ActionSave.PerformClick,
-                                  ParashotFactory.Reset);
+                                  ParashotFactory.Instance.Reset);
       }
       else
         DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text),
                                         ActionSave.PerformClick,
-                                        ParashotFactory.Reset,
+                                        ParashotFactory.Instance.Reset,
                                         () => e.Cancel = true);
     }
 
@@ -238,7 +238,7 @@ namespace Ordisoftware.Hebrew
         }
         listTranslations.SaveKeyValuePairs(HebrewGlobals.ParashotTranslationsFilePath, " = ");
         listLettriqs.SaveKeyValuePairs(HebrewGlobals.ParashotLettriqsFilePath, " = ");
-        ParashotFactory.Reset();
+        ParashotFactory.Instance.Reset();
         DisplayManager.Show("Default files updated.");
       }
       ActiveControl = DataGridView;

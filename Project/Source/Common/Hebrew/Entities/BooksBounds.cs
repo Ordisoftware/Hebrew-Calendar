@@ -31,9 +31,9 @@ namespace Ordisoftware.Hebrew
 
   static partial class BooksBounds
   {
-    static public readonly BookBound Torah = Create<TorahBooks>();
-    static public readonly BookBound Neviim = Create<NeviimBooks>();
-    static public readonly BookBound Ketouvim = Create<KetouvimBooks>();
+    static public readonly BookBound Torah = Create<TorahBook>();
+    static public readonly BookBound Neviim = Create<NeviimBook>();
+    static public readonly BookBound Ketouvim = Create<KetouvimBook>();
     static private BookBound Create<T>() where T : struct, Enum
       => new BookBound(EnumHelper.Min<T>() + 1, EnumHelper.Max<T>() + 1);
   }

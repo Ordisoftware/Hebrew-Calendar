@@ -17,7 +17,7 @@ using System;
 namespace Ordisoftware.Core
 {
 
-  public enum PowerActions
+  public enum PowerAction
   {
     None,
     LockSession,

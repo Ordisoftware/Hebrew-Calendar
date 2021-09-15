@@ -19,12 +19,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew
 {
 
-  abstract public class ProviderSettings
+  abstract class ProviderSettings
   {
 
     protected string FilePath;
 
-    public ProviderSettings()
+    protected ProviderSettings()
     {
       SetFilePath();
       Load();
@@ -33,26 +33,37 @@ namespace Ordisoftware.Hebrew
     abstract protected void SetFilePath();
     abstract protected void DoClear();
     abstract protected void DoLoad(string line);
-    abstract protected void DoSave(StreamWriter writer);
+    abstract protected void DoSave(StreamWriter stream);
 
     public void Load()
     {
-      if ( !File.Exists(FilePath) )
+      string line = string.Empty;
+      try
       {
-        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePath));
-        return;
+        if ( !File.Exists(FilePath) )
+        {
+          DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePath));
+          return;
+        }
+        DoClear();
+        using ( var stream = File.OpenText(FilePath) )
+          while ( ( line = stream.ReadLine() ) != null )
+            if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
+              DoLoad(line);
       }
-      DoClear();
-      string line;
-      using ( var stream = File.OpenText(FilePath) )
-        while ( ( line = stream.ReadLine() ) != null )
-          DoLoad(line);
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(FilePath + Globals.NL2 + line, ex.Message));
+      }
     }
 
     public void Save()
     {
-      using ( var stream = File.CreateText(FilePath) )
-        DoSave(stream);
+      SystemManager.TryCatchManage(ShowExceptionMode.Simple, () =>
+      {
+        using ( var stream = File.CreateText(FilePath) )
+          DoSave(stream);
+      });
     }
 
   }

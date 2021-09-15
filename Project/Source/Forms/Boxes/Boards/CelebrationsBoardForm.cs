@@ -230,7 +230,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board = new DataTable(TableName);
       Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
-      foreach ( var value in TorahCelebrations.MajorEvents )
+      foreach ( var value in TorahCelebrationSettings.MajorEvents )
       {
         name = value.ToStringExport(AppTranslations.TorahCelebrationDays, EditEnglishTitles.Checked);
         if ( EditColumnUpperCase.Checked ) name = name.ToUpper();

@@ -13,8 +13,6 @@
 /// <created> 2020-03 </created>
 /// <edited> 2021-04 </edited>
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;

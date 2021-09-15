@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
       if ( today == null ) return (today, null);
-      if ( today.LunarMonth == TorahCelebrations.PessahMonth )
+      if ( today.LunarMonth == TorahCelebrationSettings.PessahMonth )
         if ( today.TorahEvent == TorahCelebrationDay.PessahD1 || today.TorahEvent == TorahCelebrationDay.PessahD7 )
           return (today, null);
         else
@@ -33,7 +33,7 @@ namespace Ordisoftware.Hebrew.Calendar
           return (today, null);
       if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
       today = today?.GetParashahReadingDay();
-      return (today, ParashotFactory.Get(today?.ParashahID) ?? null);
+      return (today, ParashotFactory.Instance.Get(today?.ParashahID) ?? null);
     }
 
     public bool ShowWeeklyParashahDescription()
@@ -41,7 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( MainForm.UserParashot == null ) return false;
       var weekParashah = GetWeeklyParashah();
       if ( weekParashah.Factory == null ) return false;
-      var parashah = MainForm.UserParashot.Find(p => p.ID == weekParashah.Factory.ID);
+      // TODO ??? parashah = MainForm.UserParashot.Find(p => p.ID == weekParashah.Factory.ID);
       if ( weekParashah.Factory == null ) return false;
       return ParashotForm.ShowParashahDescription(MainForm.Instance,
                                                   weekParashah.Factory,
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string GetParashahText(bool withBookAndRefIfRequired)
     {
       if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
-      var parashah = ParashotFactory.Get(ParashahID);
+      var parashah = ParashotFactory.Instance.Get(ParashahID);
       return parashah != null
              ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
              : SysTranslations.UndefinedSlot.GetLang();

@@ -299,7 +299,7 @@ namespace Ordisoftware.Hebrew.Calendar
           LunarMonthsForm.Instance.Relocalize();
           NavigationForm.Instance.Relocalize();
           DatesDiffCalculatorForm.Instance.Relocalize();
-          ParashotFactory.Reset();
+          ParashotFactory.Instance.Reset();
         }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.CreateSystemInformationMenu();

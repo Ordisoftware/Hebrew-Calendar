@@ -246,7 +246,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.LEvangile.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.MechonMamre.cs" />
-    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Original.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Unicode.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
@@ -296,6 +296,7 @@
     <Compile Include="Source\Common\Core\Managers.System\PowerActions.cs" />
     <Compile Include="Source\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Enums\TorahCelebrationSettings.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\CelebrationVersesBoardForm.cs">
       <SubType>Form</SubType>
@@ -583,7 +584,7 @@
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.CreateControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Enums\LunarMonthsListColors.cs" />
+    <Compile Include="Source\Enums\LunarMonthsListColor.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\LunarMonthsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -704,7 +705,6 @@
     <Compile Include="Source\Forms\Boxes\Select\SelectYearsForm.Designer.cs">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\TorahCelebrations.cs" />
     <Compile Include="Source\Enums\MoonRiseOccuring.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>

@@ -68,24 +68,6 @@ namespace Ordisoftware.Hebrew
 
 
     /// <summary>
-    /// Indicate phonetic letters names.
-    /// </summary>
-    static public readonly NullSafeDictionary<Language, string[]> Transcriptions
-      = new NullSafeDictionary<Language, string[]>()
-      {
-        [Language.EN] = new string[]
-        {
-          "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
-          "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
-        },
-        [Language.FR] = new string[]
-        {
-          "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
-          "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
-        }
-      };
-
-    /// <summary>
     /// Indicate final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =

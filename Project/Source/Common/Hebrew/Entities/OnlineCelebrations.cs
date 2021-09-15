@@ -13,7 +13,7 @@
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
 using System;
-using Ordisoftware.Core;
+using System.Collections.Generic;
 
 namespace Ordisoftware.Hebrew
 {
@@ -21,124 +21,124 @@ namespace Ordisoftware.Hebrew
   static class OnlineCelebration
   {
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> WikipediaEN
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> WikipediaEN
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "Passover",
-        [TorahCelebration.Chavouot] = "Shavuot",
-        [TorahCelebration.YomTerouah] = "Rosh_Hashanah",
-        [TorahCelebration.YomHaKipourim] = "Yom_Kippur",
-        [TorahCelebration.Soukot] = "Sukkot"
+        { TorahCelebration.Pessah, "Passover" },
+        { TorahCelebration.Chavouot, "Shavuot" },
+        { TorahCelebration.YomTerouah, "Rosh_Hashanah" },
+        { TorahCelebration.YomHaKipourim, "Yom_Kippur" },
+        { TorahCelebration.Soukot, "Sukkot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> WikipediaFR
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> WikipediaFR
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "Pessa'h",
-        [TorahCelebration.Chavouot] = "Chavouot",
-        [TorahCelebration.YomTerouah] = "Roch_Hachana",
-        [TorahCelebration.YomHaKipourim] = "Yom_Kippour",
-        [TorahCelebration.Soukot] = "Souccot"
+        { TorahCelebration.Pessah, "Pessa'h" },
+        { TorahCelebration.Chavouot, "Chavouot" },
+        { TorahCelebration.YomTerouah, "Roch_Hachana" },
+        { TorahCelebration.YomHaKipourim, "Yom_Kippour" },
+        { TorahCelebration.Soukot, "Souccot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> TorahOrg
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> TorahOrg
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "passover",
-        [TorahCelebration.Chavouot] = "shavuos",
-        [TorahCelebration.YomTerouah] = "rosh-hashana",
-        [TorahCelebration.YomHaKipourim] = "yom-kippur",
-        [TorahCelebration.Soukot] = "sukkot"
+        { TorahCelebration.Pessah, "passover" },
+        { TorahCelebration.Chavouot, "shavuos" },
+        { TorahCelebration.YomTerouah, "rosh-hashana" },
+        { TorahCelebration.YomHaKipourim, "yom-kippur" },
+        { TorahCelebration.Soukot, "sukkot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> TrueTorahJews
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> TrueTorahJews
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pesach",
-        [TorahCelebration.Chavouot] = "Shavuos",
-        [TorahCelebration.YomTerouah] = "rosh",
-        [TorahCelebration.YomHaKipourim] = "yomkippur",
-        [TorahCelebration.Soukot] = "succos"
+        { TorahCelebration.Pessah, "pesach" },
+        { TorahCelebration.Chavouot, "Shavuos" },
+        { TorahCelebration.YomTerouah, "rosh" },
+        { TorahCelebration.YomHaKipourim, "yomkippur" },
+        { TorahCelebration.Soukot, "succos" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> TorahBox
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> TorahBox
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pessah",
-        [TorahCelebration.Chavouot] = "chavouot",
-        [TorahCelebration.YomTerouah] = "roch-hachana",
-        [TorahCelebration.YomHaKipourim] = "yom-kippour",
-        [TorahCelebration.Soukot] = "souccot"
+        { TorahCelebration.Pessah, "pessah" },
+        { TorahCelebration.Chavouot, "chavouot" },
+        { TorahCelebration.YomTerouah, "roch-hachana" },
+        { TorahCelebration.YomHaKipourim, "yom-kippour" },
+        { TorahCelebration.Soukot, "souccot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> Loubavitch
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> Loubavitch
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pessa-h",
-        [TorahCelebration.Chavouot] = "chavouot",
-        [TorahCelebration.YomTerouah] = "roch-hachana",
-        [TorahCelebration.YomHaKipourim] = "yom-kippour",
-        [TorahCelebration.Soukot] = "souccot"
+        { TorahCelebration.Pessah, "pessa-h" },
+        { TorahCelebration.Chavouot, "chavouot" },
+        { TorahCelebration.YomTerouah, "roch-hachana" },
+        { TorahCelebration.YomHaKipourim, "yom-kippour" },
+        { TorahCelebration.Soukot, "souccot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> ChabadFR
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> ChabadFR
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "495199/jewish/Pessah.htm",
-        [TorahCelebration.Chavouot] = "619292/jewish/Chavouot.htm",
-        [TorahCelebration.YomTerouah] = "565037/jewish/Roch-Hachana.htm",
-        [TorahCelebration.YomHaKipourim] = "567990/jewish/Yom-Kippour.htm",
-        [TorahCelebration.Soukot] = "3753669/jewish/Soukkot-et-Simhat-Torah.htm"
+        { TorahCelebration.Pessah, "495199/jewish/Pessah.htm" },
+        { TorahCelebration.Chavouot, "619292/jewish/Chavouot.htm" },
+        { TorahCelebration.YomTerouah, "565037/jewish/Roch-Hachana.htm" },
+        { TorahCelebration.YomHaKipourim, "567990/jewish/Yom-Kippour.htm" },
+        { TorahCelebration.Soukot, "3753669/jewish/Soukkot-et-Simhat-Torah.htm" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> ChabadEN
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> ChabadEN
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "holidays/passover/default_cdo/jewish/Passover.htm",
-        [TorahCelebration.Chavouot] = "library/article_cdo/aid/111377/jewish/Shavuot.htm",
-        [TorahCelebration.YomTerouah] = "library/article_cdo/aid/4644/jewish/Rosh-Hashanah.htm",
-        [TorahCelebration.YomHaKipourim] = "library/article_cdo/aid/4687/jewish/Yom-Kippur.htm",
-        [TorahCelebration.Soukot] = "library/article_cdo/aid/4126/jewish/Sukkot.htm"
+        { TorahCelebration.Pessah, "holidays/passover/default_cdo/jewish/Passover.htm" },
+        { TorahCelebration.Chavouot, "library/article_cdo/aid/111377/jewish/Shavuot.htm" },
+        { TorahCelebration.YomTerouah, "library/article_cdo/aid/4644/jewish/Rosh-Hashanah.htm" },
+        { TorahCelebration.YomHaKipourim, "library/article_cdo/aid/4687/jewish/Yom-Kippur.htm" },
+        { TorahCelebration.Soukot, "library/article_cdo/aid/4126/jewish/Sukkot.htm" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> TheYeshiva
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> TheYeshiva
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "c3/torah/holidays/pesach",
-        [TorahCelebration.Chavouot] = "c76/torah/holidays/shavuot",
-        [TorahCelebration.YomTerouah] = "c83/torah/holidays/rosh-hashanah",
-        [TorahCelebration.YomHaKipourim] = "c84/torah/holidays/yom-kippur",
-        [TorahCelebration.Soukot] = "c90/torah/holidays/sukkot"
+        { TorahCelebration.Pessah, "c3/torah/holidays/pesach" },
+        { TorahCelebration.Chavouot, "c76/torah/holidays/shavuot" },
+        { TorahCelebration.YomTerouah, "c83/torah/holidays/rosh-hashanah" },
+        { TorahCelebration.YomHaKipourim, "c84/torah/holidays/yom-kippur" },
+        { TorahCelebration.Soukot, "c90/torah/holidays/sukkot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> AishFR
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> AishFR
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pessah",
-        [TorahCelebration.Chavouot] = "shavuot",
-        [TorahCelebration.YomTerouah] = "rosh_hashanah",
-        [TorahCelebration.YomHaKipourim] = "yom_kippour",
-        [TorahCelebration.Soukot] = "succot"
+        { TorahCelebration.Pessah, "pessah" },
+        { TorahCelebration.Chavouot, "shavuot" },
+        { TorahCelebration.YomTerouah, "rosh_hashanah" },
+        { TorahCelebration.YomHaKipourim, "yom_kippour" },
+        { TorahCelebration.Soukot, "succot" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> AishEN
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> AishEN
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pes",
-        [TorahCelebration.Chavouot] = "sh",
-        [TorahCelebration.YomTerouah] = "rh",
-        [TorahCelebration.YomHaKipourim] = "yom-kippur",
-        [TorahCelebration.Soukot] = "su"
+        { TorahCelebration.Pessah, "pes" },
+        { TorahCelebration.Chavouot, "sh" },
+        { TorahCelebration.YomTerouah, "rh" },
+        { TorahCelebration.YomHaKipourim, "yom-kippur" },
+        { TorahCelebration.Soukot, "su" }
       };
 
-    static public readonly NullSafeDictionary<TorahCelebration, string> AishIW
-      = new NullSafeDictionary<TorahCelebration, string>
+    static public readonly Dictionary<TorahCelebration, string> AishIW
+      = new Dictionary<TorahCelebration, string>
       {
-        [TorahCelebration.Pessah] = "pes",
-        [TorahCelebration.Chavouot] = "sh",
-        [TorahCelebration.YomTerouah] = "hh/rh",
-        [TorahCelebration.YomHaKipourim] = "hh/yk",
-        [TorahCelebration.Soukot] = "su"
+        { TorahCelebration.Pessah, "pes" },
+        { TorahCelebration.Chavouot, "sh" },
+        { TorahCelebration.YomTerouah, "hh/rh" },
+        { TorahCelebration.YomHaKipourim, "hh/yk" },
+        { TorahCelebration.Soukot, "su" }
       };
 
   }

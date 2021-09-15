@@ -268,7 +268,7 @@
     <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
     </Setting>
-    <Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColors" Scope="User">
+    <Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColor" Scope="User">
       <Value Profile="(Default)">Pastel</Value>
     </Setting>
     <Setting Name="LunarMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
@@ -619,7 +619,7 @@
     <Setting Name="BenchmarkTranslate" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerActions" Scope="User">
+    <Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerAction" Scope="User">
       <Value Profile="(Default)">LockSession</Value>
     </Setting>
     <Setting Name="LockSessionConfirmLogOffOrMore" Type="System.Boolean" Scope="User">

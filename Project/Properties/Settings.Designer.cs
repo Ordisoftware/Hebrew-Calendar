@@ -1068,9 +1068,9 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
-        public global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColors LunarMonthsFormUseColors {
+        public global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor LunarMonthsFormUseColors {
             get {
-                return ((global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColors)(this["LunarMonthsFormUseColors"]));
+                return ((global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor)(this["LunarMonthsFormUseColors"]));
             }
             set {
                 this["LunarMonthsFormUseColors"] = value;
@@ -2469,9 +2469,9 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LockSession")]
-        public global::Ordisoftware.Core.PowerActions LockSessionDefaultAction {
+        public global::Ordisoftware.Core.PowerAction LockSessionDefaultAction {
             get {
-                return ((global::Ordisoftware.Core.PowerActions)(this["LockSessionDefaultAction"]));
+                return ((global::Ordisoftware.Core.PowerAction)(this["LockSessionDefaultAction"]));
             }
             set {
                 this["LockSessionDefaultAction"] = value;

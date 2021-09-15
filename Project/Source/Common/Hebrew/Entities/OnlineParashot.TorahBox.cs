@@ -21,10 +21,10 @@ namespace Ordisoftware.Hebrew
   static partial class OnlineParashot
   {
 
-    static public readonly NullSafeDictionary<TorahBooks, NullSafeList<string>> TorahBox
-      = new NullSafeDictionary<TorahBooks, NullSafeList<string>>
+    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahBox
+      = new NullSafeDictionary<TorahBook, NullSafeList<string>>
       {
-        [TorahBooks.Bereshit] = new NullSafeList<string>
+        [TorahBook.Bereshit] = new NullSafeList<string>
         {
           "berechit-genese/berechit/",
           "berechit-genese/noah/",
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew
           "berechit-genese/vayigach/",
           "berechit-genese/vayehi/"
         },
-        [TorahBooks.Shemot] = new NullSafeList<string>
+        [TorahBook.Shemot] = new NullSafeList<string>
         {
           "chemot-exode/chemot/",
           "chemot-exode/vaera/",
@@ -53,7 +53,7 @@ namespace Ordisoftware.Hebrew
           "chemot-exode/vayakhel/",
           "chemot-exode/pekoude/"
         },
-        [TorahBooks.Vayiqra] = new NullSafeList<string>
+        [TorahBook.Vayiqra] = new NullSafeList<string>
         {
           "vayikra-levitique/vayikra/",
           "vayikra-levitique/tsav/",
@@ -66,7 +66,7 @@ namespace Ordisoftware.Hebrew
           "vayikra-levitique/behar/",
           "vayikra-levitique/behoukotai/"
         },
-        [TorahBooks.Bamidbar] = new NullSafeList<string>
+        [TorahBook.Bamidbar] = new NullSafeList<string>
         {
           "bamidbar-nombres/bamidbar/",
           "bamidbar-nombres/nasso/",
@@ -79,7 +79,7 @@ namespace Ordisoftware.Hebrew
           "bamidbar-nombres/matot/",
           "bamidbar-nombres/masse/"
         },
-        [TorahBooks.Devarim] = new NullSafeList<string>
+        [TorahBook.Devarim] = new NullSafeList<string>
         {
           "devarim-deuteronome/devarim/",
           "devarim-deuteronome/vaethanane/",

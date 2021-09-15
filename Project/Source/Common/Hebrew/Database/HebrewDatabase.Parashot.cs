@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew
       Interlocks.Take(ParashotTableName);
       if ( ParashotFirstTake )
       {
-        ParashotFactory.Reset();
+        ParashotFactory.Instance.Reset();
         ParashotFirstTake = false;
       }
       return CreateParashotDataIfNotExistAndLoad();
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew
             try
             {
               DeleteParashot(true);
-              var list = ParashotFactory.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
+              var list = ParashotFactory.Instance.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
               if ( notext ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
               Connection.InsertAll(list);
               Connection.Commit();

@@ -303,6 +303,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add celebration verses board.
 - Add `--celebration` command-line option to show the celebration verses board.
 - Some fixes and improvements.
+- Code refactoring and quality improvement.
 
 #### 2021.09.06 - Version 8.10
 
