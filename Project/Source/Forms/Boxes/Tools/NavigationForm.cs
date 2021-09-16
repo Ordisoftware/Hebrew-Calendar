@@ -283,8 +283,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( LabelParashahValue.Tag is LunisolarDay day )
       {
         var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-        if ( !ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah) )
-          ActionViewParashahInfos.Enabled = false;
+        ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
       }
     }
 

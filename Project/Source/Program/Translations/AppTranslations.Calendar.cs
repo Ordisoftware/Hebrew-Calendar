@@ -24,6 +24,34 @@ namespace Ordisoftware.Hebrew.Calendar
   static partial class AppTranslations
   {
 
+    static public readonly TranslationsDictionary Sunrise
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Sunrise {0}",
+        [Language.FR] = "Lever du soleil {0}"
+      };
+
+    static public readonly TranslationsDictionary Sunset
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Sunset {0}",
+        [Language.FR] = "Coucher du soleil {0}"
+      };
+
+    static public readonly TranslationsDictionary Moonrise
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Moonrise {0}",
+        [Language.FR] = "Lever de la lune {0}"
+      };
+
+    static public readonly TranslationsDictionary Moonset
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Moonset: {0}",
+        [Language.FR] = "Coucher de la lune : {0}"
+      };
+
     static public readonly TranslationsDictionary Today
       = new TranslationsDictionary
       {

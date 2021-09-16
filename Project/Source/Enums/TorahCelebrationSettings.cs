@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,15 +113,23 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly int PourimDay = 14;
 
     /// <summary>
-    /// Indicate major TorahEvent enums list.
+    /// Indicate managed events list.
     /// </summary>
-    static public readonly IEnumerable<TorahCelebrationDay> MajorEvents
+    static public readonly IEnumerable<TorahCelebrationDay> ManagedEvents
       = Enums.GetValues<TorahCelebrationDay>()
              .Skip(1)
              .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
 
     /// <summary>
-    /// Indicate minor TorahEvent enums list.
+    /// Indicate major avents list.
+    /// </summary>
+    static public readonly IEnumerable<TorahCelebrationDay> MajorEvents
+      = Enums.GetValues<TorahCelebrationDay>()
+             .SkipUntil(v => v == TorahCelebrationDay.PessahD1)
+             .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
+
+    /// <summary>
+    /// Indicate minor avents list.
     /// </summary>
     static public readonly IEnumerable<TorahCelebrationDay> MinorEvents
       = Enums.GetValues<TorahCelebrationDay>()

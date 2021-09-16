@@ -869,7 +869,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="moonPhaseImagePictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2001,16 +2001,16 @@
   </data>
   <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHBSURBVDhPpZPLSxtRFMbnzxApitj/oHRfiQ+66qpgbSsu
-        xfpAaou477qLQv+ELNwkBLIrpW58gVjalQs1iZkx6WS8c+88jZN8PedGawdn4eMM39zvHub7zbkDY5TL
-        ZVEqlVAsFu8kznDWYHPf4qzBNK5qtYKGWcPGz0PUT2o4rlQzdXTMqugMZ/8Bmqd1vPiyj4HVXQjbgnVq
-        wrR47enKm5aJWv1EZ9KARgOxtDG0totA2Gi1WjgTLlypIFypxZ57jeYfnUkBbLuJWLVogh3EngOlXIzk
-        xjA59RbvFpawuPweb6ZnMD7xnCBCZ1IAx3EQKYG+lS0CuJBSwvMDBGEEPwi12HPPOcsASCnQDiXQVkgi
-        BU/xyDclXDd7gtD36CP+wsf1A0x83sdFHNDbfCgvLal8AimdSQHO45DuMSxbYnB1m3wb3W4HXXI98QVc
-        dBKEUUTuElAoFPQGSYyv3yt4+mkP337buvVsJIeXk1OYnZvH/OIyXr2eRm50HB2CcHH2GoAE/SubeLy2
-        jUcfti572ZUkHb1qwNUReoP+X7Tv0tiZ6gH0ER78L+Tz+R9smFakkW4lepYznDWohklP7idj+C9riE1t
-        J8zuAgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
+        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
+        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
+        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
+        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
+        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
+        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
+        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3064,7 +3064,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 51</value>
@@ -3075,6 +3075,209 @@
   <metadata name="TimerKillProcesses.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>706, 12</value>
   </metadata>
+  <metadata name="ContextMenuStripDay.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>433, 90</value>
+  </metadata>
+  <data name="ContextMenuDayRise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ContextMenuDayRise.Text" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="ContextMenuDaySet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ContextMenuDaySet.Text" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 6</value>
+  </data>
+  <data name="ContextMenuDayNavigation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        m6x5xh3v2PFvin3ntOAqX/EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDayNavigation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
+    <value>Navigation window</value>
+  </data>
+  <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 6</value>
+  </data>
+  <data name="ContextMenuDayParashahShowDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
+        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
+        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
+        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
+        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
+        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
+        FOqQHJPYCDEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDayParashahShowDescription.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
+    <value>Show description</value>
+  </data>
+  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ContextMenuDayParashahStudy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
+        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
+        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
+        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
+        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
+        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
+        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
+        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
+        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
+        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDayParashahStudy.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
+    <value>Study online</value>
+  </data>
+  <data name="ContextMenuDayParashahRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
+        pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
+        drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
+        4f+GsH8UhhEnJDK9mlTIDFjxapGPOrAeNMBj7QWy67SdBzIJ+I1PEJ7SIhXxIfenBOdXEffqUCHTowBE
+        3P3IRhxIBfRwW3YB6QRmKbDsHcTqshdb6RSdzwFbSUQ9WlQ0FAAjwq4+bO0XyBeB8LiGnsBQBISvn/d/
+        ghKw5OotA4uOD/8C2z/xf0A2CWHs0zbAYcGuooCTAga4rfQW8ukikElS4OkewE/a6SkBjRzmbQpko0Ug
+        SD9H8PHYWIvTjb/g51oQ3gOYH1aVgZDlHXLRMaSCHBLT/YhMdGHO1olEaBQBcxui0yy9xmlkM+K/oSO3
+        ipBVQQEjiKTJBMGuAJITyAgWrAdYLDiU8DCtCI28wXf+OXy8EvGggzazRQBpLDu6IWniQKRyE4Zf10HX
+        UQ+2/T6GOh5A1/kQTGcDGFUrmPctYOgc234P7ItaMG13MfSyDrZXtThDu6Rarl+TynmcbjajcicWnHxk
+        w4iiuRDxubxmLuwVO2KX0FF1/NKdmmMXb10v5MLNa0fO1Vw+K9fFqh7zECOt/8gePX/jiri2vU/siF0R
+        EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ContextMenuDayParashahRead.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
+    <value>Read online</value>
+  </data>
+  <data name="ContextMenuDayParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAWxJREFUOE+tUMsuA2EYnRewxMJLSLwLiURZeA8VvECDCNFIWzZqLhXaaaczJa3a
+        WHgE6cpKtLQEPb7ztdNLBHE5ycnJP+fy/xnjX9DenLCxMQ6sjwlHu/oZu77kpVfRAcRGgOqycAm4jH5P
+        5piXng4EhzG8PNzB2orC2V7B8c6acFU1IzpI+swxz54OpJ1TvLaB3XgGrUcgmfBQu3lWfdJzoaf0mWOe
+        PR0w7QzwBszsGYgkDSzsC1MdnacKQ6XPHPPs6YDFAVmcFSN1bWBRigeDKsVQ6TPHPHs6oC8QTMcNzCXk
+        NrklZKR7DpU+c0TvBaZl64fsSRnNe6DoXuG21lRt1QEv11f6zBHs6cCRZekHzz+HXyojOLvos1QZoh+U
+        NUewNzSQdYuqeS9Ao9FQJdzCsIa5DwO5vCehohZDup4v6vdVfOaI3oBpd/7BT8FeZ8Bx6jykZTFtmqJf
+        UH1Ly+zpgGBSOPULsvcXGMY7KaVcuTYAtfkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDayParashah.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayParashah.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContextMenuDayParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ContextMenuDayParashah.Text" xml:space="preserve">
+    <value>Weekly parashah</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
+        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
+        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
+        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
+        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
+        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
+        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
+        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebration verses board</value>
+  </data>
+  <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 148</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
+    <value>ContextMenuStripDay</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3875,6 +4078,72 @@
   </data>
   <data name="&gt;&gt;TimerKillProcesses.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayRise.Name" xml:space="preserve">
+    <value>ContextMenuDayRise</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayRise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySet.Name" xml:space="preserve">
+    <value>ContextMenuDaySet</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator15.Name" xml:space="preserve">
+    <value>toolStripSeparator15</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashah.Name" xml:space="preserve">
+    <value>ContextMenuDayParashah</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahShowDescription.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahShowDescription</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahShowDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator16.Name" xml:space="preserve">
+    <value>toolStripSeparator16</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahStudy.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahStudy</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahStudy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahRead.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahRead</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayParashahRead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayCelebrationVersesBoard.Name" xml:space="preserve">
+    <value>ContextMenuDayCelebrationVersesBoard</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayCelebrationVersesBoard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayNavigation.Name" xml:space="preserve">
+    <value>ContextMenuDayNavigation</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayNavigation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator17.Name" xml:space="preserve">
+    <value>toolStripSeparator17</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

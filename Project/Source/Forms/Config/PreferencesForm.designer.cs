@@ -240,7 +240,6 @@
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
@@ -303,6 +302,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditMonthViewSunToolTips = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1723,7 +1723,6 @@
       this.TabPageMonthView.Controls.Add(this.EditUseColors);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSunToolTips);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
@@ -1768,6 +1767,7 @@
       this.PanelCalendarColors.Controls.Add(this.EditEventColorSeason);
       this.PanelCalendarColors.Controls.Add(this.LabelColorNoDay);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorNext);
+      this.PanelCalendarColors.Controls.Add(this.EditMonthViewSunToolTips);
       this.PanelCalendarColors.Controls.Add(this.label5);
       this.PanelCalendarColors.Controls.Add(this.EditEventColorMonth);
       this.PanelCalendarColors.Controls.Add(this.label4);
@@ -2050,13 +2050,6 @@
       this.EditCalendarShowParashah.Name = "EditCalendarShowParashah";
       this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
       this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
-      // 
-      // EditMonthViewSunToolTips
-      // 
-      resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
-      this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
-      this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // LabelMonthViewFontSize
       // 
@@ -2566,6 +2559,13 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditMonthViewSunToolTips
+      // 
+      resources.ApplyResources(this.EditMonthViewSunToolTips, "EditMonthViewSunToolTips");
+      this.EditMonthViewSunToolTips.Name = "EditMonthViewSunToolTips";
+      this.EditMonthViewSunToolTips.UseVisualStyleBackColor = true;
+      this.EditMonthViewSunToolTips.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2710,7 +2710,6 @@
     private System.Windows.Forms.CheckBox EditMainFormShownGoToToday;
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowToday;
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowWeeklyParashah;
-    private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
     private System.Windows.Forms.CheckBox EditPrintImageInLandscape;
     private System.Windows.Forms.CheckBox EditReminderCelebrationsEnabled;
     private System.Windows.Forms.CheckBox EditReminderShabatEnabled;
@@ -2914,5 +2913,6 @@
     private System.Windows.Forms.CheckBox EditNavigationWindowCloseOnShowMainForm;
     private System.Windows.Forms.CheckBox EditParashahCaptionWithBookAndRef;
     private System.Windows.Forms.CheckBox EditNavigationWindowUseUnicodeIcons;
+    private System.Windows.Forms.CheckBox EditMonthViewSunToolTips;
   }
 }

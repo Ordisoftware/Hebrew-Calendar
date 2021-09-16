@@ -55,6 +55,7 @@ namespace CodeProjectCalendar.NET
 
     // ORDISOFTWARE MODIF BEGIN
     public List<IEvent> TheEvents => _events;
+    internal List<CalendarEvent> CalendarEvents => _calendarEvents;
     // ORDISOFTWARE MODIF END
 
     private readonly List<IEvent> _events;
@@ -1040,7 +1041,14 @@ namespace CodeProjectCalendar.NET
           else if ( rogueDays > 0 )
           {
             int dm = DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) - rogueDays + 1;
-            // ORDISOFWTARE MODIF BEGIN
+            // ORDISOFWTARE MODIF BEGIN PREVIOUS MONTH
+            var evPrevious = new CalendarEvent
+            {
+              EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
+              Event = null,
+              Date = new DateTime(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month, dm)
+            };
+            _calendarEvents.Add(evPrevious);
             g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
             // ORDISOFWTARE MODIF END
             g.DrawString(dm.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
@@ -1057,14 +1065,28 @@ namespace CodeProjectCalendar.NET
             {
               if ( counter2 == 1 )
               {
-                // ORDISOFWTARE MODIF BEGIN
+                // ORDISOFWTARE MODIF BEGIN NEXT MONTH FIRST DAY
+                var evPrevious = new CalendarEvent
+                {
+                  EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
+                  Event = null,
+                  Date = new DateTime(_calendarDate.AddMonths(1).Year, _calendarDate.AddMonths(1).Month, counter2)
+                };
+                _calendarEvents.Add(evPrevious);
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
                 g.DrawString(_calendarDate.AddMonths(1).ToString("MMMM").Titleize() + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
               }
               else
               {
-                // ORDISOFWTARE MODIF BEGIN
+                // ORDISOFWTARE MODIF BEGIN NEXT MONTH DAYS
+                var evPrevious = new CalendarEvent
+                {
+                  EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
+                  Event = null,
+                  Date = new DateTime(_calendarDate.AddMonths(1).Year, _calendarDate.AddMonths(1).Month, counter2)
+                };
+                _calendarEvents.Add(evPrevious);
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
                 g.DrawString(counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
@@ -1164,11 +1186,12 @@ namespace CodeProjectCalendar.NET
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
-            if ( generateSunToolTips )
+            //if ( generateSunToolTips )
             {
               var ev = new CalendarEvent
               {
-                EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
+                //EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
+                EventArea = new Rectangle(point.X + 1, point.Y + 1, cellWidth - 1, cellHeight - 1),
                 Event = v,
                 Date = dt
               };

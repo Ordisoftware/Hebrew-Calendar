@@ -186,6 +186,18 @@
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
       this.TimerKillProcesses = new System.Windows.Forms.Timer(this.components);
+      this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuDayRise = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDaySet = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -205,6 +217,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
       this.MenuTray.SuspendLayout();
       this.ToolStrip.SuspendLayout();
+      this.ContextMenuStripDay.SuspendLayout();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -309,6 +322,7 @@
       this.CalendarMonth.ShowEventTooltips = true;
       this.CalendarMonth.ShowTodayButton = true;
       this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
       // 
       // TabPageGrid
       // 
@@ -1381,6 +1395,83 @@
       this.TimerKillProcesses.Interval = 5000;
       this.TimerKillProcesses.Tick += new System.EventHandler(this.TimerKillProcesses_Tick);
       // 
+      // ContextMenuStripDay
+      // 
+      this.ContextMenuStripDay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuDayRise,
+            this.ContextMenuDaySet,
+            this.toolStripSeparator15,
+            this.ContextMenuDayNavigation,
+            this.toolStripSeparator17,
+            this.ContextMenuDayParashah,
+            this.ContextMenuDayCelebrationVersesBoard});
+      this.ContextMenuStripDay.Name = "ContextMenuStripDay";
+      resources.ApplyResources(this.ContextMenuStripDay, "ContextMenuStripDay");
+      this.ContextMenuStripDay.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripDay_Opening);
+      // 
+      // ContextMenuDayRise
+      // 
+      this.ContextMenuDayRise.Name = "ContextMenuDayRise";
+      resources.ApplyResources(this.ContextMenuDayRise, "ContextMenuDayRise");
+      // 
+      // ContextMenuDaySet
+      // 
+      this.ContextMenuDaySet.Name = "ContextMenuDaySet";
+      resources.ApplyResources(this.ContextMenuDaySet, "ContextMenuDaySet");
+      // 
+      // toolStripSeparator15
+      // 
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
+      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+      // 
+      // ContextMenuDayParashah
+      // 
+      this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuDayParashahShowDescription,
+            this.toolStripSeparator16,
+            this.ContextMenuDayParashahStudy,
+            this.ContextMenuDayParashahRead});
+      resources.ApplyResources(this.ContextMenuDayParashah, "ContextMenuDayParashah");
+      this.ContextMenuDayParashah.Name = "ContextMenuDayParashah";
+      // 
+      // ContextMenuDayParashahShowDescription
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
+      this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
+      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashahShowDescription_Click);
+      // 
+      // toolStripSeparator16
+      // 
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
+      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+      // 
+      // ContextMenuDayParashahStudy
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahStudy, "ContextMenuDayParashahStudy");
+      this.ContextMenuDayParashahStudy.Name = "ContextMenuDayParashahStudy";
+      // 
+      // ContextMenuDayParashahRead
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahRead, "ContextMenuDayParashahRead");
+      this.ContextMenuDayParashahRead.Name = "ContextMenuDayParashahRead";
+      // 
+      // ContextMenuDayCelebrationVersesBoard
+      // 
+      resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
+      this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
+      this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
+      // 
+      // ContextMenuDayNavigation
+      // 
+      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
+      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
+      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
+      // 
+      // toolStripSeparator17
+      // 
+      this.toolStripSeparator17.Name = "toolStripSeparator17";
+      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1416,6 +1507,7 @@
       this.MenuTray.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
+      this.ContextMenuStripDay.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1576,6 +1668,18 @@
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuStripDay;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayRise;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySet;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayCelebrationVersesBoard;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashah;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahShowDescription;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahStudy;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahRead;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayNavigation;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
   }
 }
 
