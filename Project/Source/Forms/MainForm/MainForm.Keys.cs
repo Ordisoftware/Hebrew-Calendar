@@ -78,7 +78,8 @@ namespace Ordisoftware.Hebrew.Calendar
             ActionWeeklyParashah.DropDownItems[0].Select();
             return true;
           case Keys.Alt | Keys.L:
-            ActionWebLinks.ShowDropDown();
+            if ( ActionWebLinks.Enabled )
+              ActionWebLinks.ShowDropDown();
             return true;
           case Keys.Alt | Keys.V:
             ActionView.ShowDropDown();

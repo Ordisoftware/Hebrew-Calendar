@@ -679,8 +679,8 @@
   <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 17</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.Text" xml:space="preserve">
-    <value>Sélectionner un jour sur un simple  clic sinon un double</value>
+  <data name="EditMonthViewSelectDayDoubleClick.Text" xml:space="preserve">
+    <value>Sélectionner un jour sur un double clic sinon un simple</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>

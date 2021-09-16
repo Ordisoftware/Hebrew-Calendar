@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTextReportFontSize.Value = Settings.FontSize; });
       SystemManager.TryCatch(() => { EditGPSLatitude.Text = Settings.GPSLatitude; });
       SystemManager.TryCatch(() => { EditGPSLongitude.Text = Settings.GPSLongitude; });
-      SystemManager.TryCatch(() => { EditMonthViewSelectDaySingleClick.Checked = Settings.MonthViewSelectDaySingleClick; });
+      SystemManager.TryCatch(() => { EditMonthViewSelectDayDoubleClick.Checked = Settings.MonthViewSelectDayDoubleClick; });
       SystemManager.TryCatch(() => { EditNavigateBottomColor.BackColor = Settings.NavigateBottomColor; });
       SystemManager.TryCatch(() => { EditNavigateMiddleColor.BackColor = Settings.NavigateMiddleColor; });
       SystemManager.TryCatch(() => { EditNavigateTopColor.BackColor = Settings.NavigateTopColor; });

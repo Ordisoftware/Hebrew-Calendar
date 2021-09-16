@@ -431,11 +431,16 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
       ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;
       SeparatorMenuWeather.Visible = Settings.WeatherMenuItemsEnabled;
+      ActionWebLinks.Enabled = Settings.WebLinksMenuEnabled;
+      ActionLocalWeather.Enabled = Settings.WeatherMenuItemsEnabled;
+      ActionOnlineWeather.Enabled = Settings.WeatherMenuItemsEnabled;
+      SeparatorMenuWeather.Enabled = Settings.WeatherMenuItemsEnabled;
       var isVisible = Settings.WeatherMenuItemsEnabled ? (int?)null : int.MinValue;
       ActionLocalWeather.Tag = isVisible;
       ActionOnlineWeather.Tag = isVisible;
       SeparatorMenuWeather.Tag = isVisible;
       MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      MenuWebLinks.Enabled = Settings.WebLinksMenuEnabled;
       if ( Settings.WebLinksMenuEnabled )
       {
         ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);

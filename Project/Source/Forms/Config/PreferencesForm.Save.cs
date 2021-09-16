@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FontSize = (int)EditTextReportFontSize.Value;
       Settings.GPSLatitude = EditGPSLatitude.Text;
       Settings.GPSLongitude = EditGPSLongitude.Text;
-      Settings.MonthViewSelectDaySingleClick = EditMonthViewSelectDaySingleClick.Checked;
+      Settings.MonthViewSelectDayDoubleClick = EditMonthViewSelectDayDoubleClick.Checked;
       Settings.NavigateBottomColor = EditNavigateBottomColor.BackColor;
       Settings.NavigateMiddleColor = EditNavigateMiddleColor.BackColor;
       Settings.NavigateTopColor = EditNavigateTopColor.BackColor;

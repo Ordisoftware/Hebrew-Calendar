@@ -789,6 +789,9 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.ActionLocalWeather.Visible = enabled;
       MainForm.Instance.ActionOnlineWeather.Visible = enabled;
       MainForm.Instance.SeparatorMenuWeather.Visible = enabled;
+      MainForm.Instance.ActionLocalWeather.Enabled = enabled;
+      MainForm.Instance.ActionOnlineWeather.Enabled = enabled;
+      MainForm.Instance.SeparatorMenuWeather.Enabled = enabled;
       PanelWeatherOnline.Enabled = enabled;
     }
 

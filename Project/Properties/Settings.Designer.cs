@@ -1198,7 +1198,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% #%DAYNUM% [%MONTHNUM%]")]
+        [global::System.Configuration.DefaultSettingValueAttribute("#%DAYNUM% %MONTHNAME% [%MONTHNUM%]")]
         public string MoonDayTextFormat {
             get {
                 return ((string)(this["MoonDayTextFormat"]));
@@ -2613,12 +2613,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MonthViewSelectDaySingleClick {
+        public bool MonthViewSelectDayDoubleClick {
             get {
-                return ((bool)(this["MonthViewSelectDaySingleClick"]));
+                return ((bool)(this["MonthViewSelectDayDoubleClick"]));
             }
             set {
-                this["MonthViewSelectDaySingleClick"] = value;
+                this["MonthViewSelectDayDoubleClick"] = value;
             }
         }
     }

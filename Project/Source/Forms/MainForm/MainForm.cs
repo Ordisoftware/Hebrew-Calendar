@@ -1052,7 +1052,7 @@ namespace Ordisoftware.Hebrew.Calendar
       bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       if ( e.Button == MouseButtons.Left )
       {
-        if ( ( e.Clicks == 1 && Settings.MonthViewSelectDaySingleClick ) || e.Clicks > 1 )
+        if ( ( e.Clicks == 1 && !Settings.MonthViewSelectDayDoubleClick ) || e.Clicks > 1 )
           GoToDate(dayRow.Date);
       }
       else

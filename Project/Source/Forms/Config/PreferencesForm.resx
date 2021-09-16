@@ -301,44 +301,146 @@
   <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>12, 14</value>
   </metadata>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>#10 Nissan [1]</value>
+  </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>#10 Nissan (1)</value>
+  </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>#10 Nissan</value>
+  </data>
   <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan [1] #10</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan (1) #10</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan #10 [1]</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan #10 (1)</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Nissan #10</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan 10</value>
   </data>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>[10 Nissan (1)]</value>
+  </data>
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>(10 Nissan [1])</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
+    <value>[10 Nissan #1]</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>(10 Nissan #1)</value>
+  </data>
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>[10 Nissan]</value>
+  </data>
+  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>(10 Nissan)</value>
+  </data>
+  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>| 10 Nissan [1]</value>
+  </data>
+  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>| 10 Nissan (1)</value>
+  </data>
+  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>| 10 Nissan #1</value>
+  </data>
+  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem17.Text" xml:space="preserve">
+    <value>| 10 Nissan</value>
+  </data>
+  <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>- 10 Nissan [1]</value>
+  </data>
+  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>- 10 Nissan (1)</value>
+  </data>
+  <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem19.Text" xml:space="preserve">
+    <value>- 10 Nissan #1</value>
+  </data>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 22</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>- 10 Nissan</value>
+  </data>
   <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 136</value>
+    <value>125, 510</value>
   </data>
   <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
     <value>MenuSelectMoonDayTextFormat</value>
@@ -6245,43 +6347,43 @@
   <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.AutoSize" type="System.Boolean, mscorlib">
+  <data name="EditMonthViewSelectDayDoubleClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditMonthViewSelectDayDoubleClick.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditMonthViewSelectDayDoubleClick.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="EditMonthViewSelectDayDoubleClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="EditMonthViewSelectDayDoubleClick.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 90</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditMonthViewSelectDayDoubleClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 17</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.TabIndex" type="System.Int32, mscorlib">
+  <data name="EditMonthViewSelectDayDoubleClick.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.Text" xml:space="preserve">
-    <value>Select the day with a single click otherwise a double</value>
+  <data name="EditMonthViewSelectDayDoubleClick.Text" xml:space="preserve">
+    <value>Select the day with a double click otherwise a single</value>
   </data>
-  <data name="EditMonthViewSelectDaySingleClick.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="EditMonthViewSelectDayDoubleClick.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
   </data>
-  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Name" xml:space="preserve">
-    <value>EditMonthViewSelectDaySingleClick</value>
+  <data name="&gt;&gt;EditMonthViewSelectDayDoubleClick.Name" xml:space="preserve">
+    <value>EditMonthViewSelectDayDoubleClick</value>
   </data>
-  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewSelectDayDoubleClick.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Parent" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewSelectDayDoubleClick.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
   </data>
-  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;EditMonthViewSelectDayDoubleClick.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
@@ -8265,6 +8367,24 @@
   <data name="&gt;&gt;OpenExeFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
+    <value>toolStripMenuItem5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;nissan11ToolStripMenuItem.Name" xml:space="preserve">
     <value>nissan11ToolStripMenuItem</value>
   </data>
@@ -8299,6 +8419,90 @@
     <value>nissan1ToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;nissan1ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Name" xml:space="preserve">
+    <value>toolStripMenuItem11</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
+    <value>toolStripMenuItem8</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
+    <value>toolStripMenuItem9</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
+    <value>toolStripMenuItem7</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem12.Name" xml:space="preserve">
+    <value>toolStripMenuItem12</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem14.Name" xml:space="preserve">
+    <value>toolStripMenuItem14</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem13.Name" xml:space="preserve">
+    <value>toolStripMenuItem13</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem18.Name" xml:space="preserve">
+    <value>toolStripMenuItem18</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem17.Name" xml:space="preserve">
+    <value>toolStripMenuItem17</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Name" xml:space="preserve">
+    <value>toolStripMenuItem15</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem16.Name" xml:space="preserve">
+    <value>toolStripMenuItem16</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem19.Name" xml:space="preserve">
+    <value>toolStripMenuItem19</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
+    <value>toolStripMenuItem6</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FolderBrowserDialog.Name" xml:space="preserve">
