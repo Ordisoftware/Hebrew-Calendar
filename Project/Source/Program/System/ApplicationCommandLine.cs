@@ -37,8 +37,8 @@ namespace Ordisoftware.Hebrew.Calendar
     [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
     public bool OpenDiffDates { get; set; }
 
-    [Option("celebration", Required = false, HelpText = "Open celebration board.")]
-    public bool OpenCelebrationBoard { get; set; }
+    [Option("celebrationverses", Required = false, HelpText = "Open celebration verses board.")]
+    public bool OpenCelebrationVersesBoard { get; set; }
 
     [Option("celebrations", Required = false, HelpText = "Open celebrations board.")]
     public bool OpenCelebrationsBoard { get; set; }

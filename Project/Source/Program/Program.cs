@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionNavigate.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionCalculateDateDiff.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationBoard) )
+        if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationVersesBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionShowCelebrationVersesBoard.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewCelebrationsBoard.PerformClick());
@@ -205,8 +205,8 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNavigation));
       if ( ApplicationCommandLine.Instance.OpenDiffDates )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
-      if ( ApplicationCommandLine.Instance.OpenCelebrationBoard )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationBoard));
+      if ( ApplicationCommandLine.Instance.OpenCelebrationVersesBoard )
+        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationVersesBoard));
       if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
       if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
