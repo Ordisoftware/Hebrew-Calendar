@@ -1047,9 +1047,10 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( dayEvent == null ) return;
       var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
       if ( dayRow == null ) return;
+      bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       GoToDate(dayRow.Date);
       ContextMenuEventDay = dayRow;
-      if ( e.Button == MouseButtons.Right )
+      if ( showContextMenu && e.Button == MouseButtons.Right )
         ContextMenuStripDay.Show(Cursor.Position);
     }
 
