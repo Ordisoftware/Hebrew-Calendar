@@ -1057,6 +1057,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuStripDay_Opening(object sender, System.ComponentModel.CancelEventArgs e)
     {
+      ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       if ( Settings.TorahEventsCountAsMoon )
       {
         ContextMenuDayRise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
