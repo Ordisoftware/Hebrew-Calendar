@@ -1043,17 +1043,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
+      var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
+      if ( dayEvent == null ) return;
+      var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
+      if ( dayRow == null ) return;
+      GoToDate(dayRow.Date);
+      ContextMenuEventDay = dayRow;
       if ( e.Button == MouseButtons.Right )
-      {
-        var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
-        if ( dayEvent == null ) return;
-        var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
-        if ( dayRow != null )
-        {
-          ContextMenuEventDay = dayRow;
-          ContextMenuStripDay.Show(Cursor.Position);
-        }
-      }
+        ContextMenuStripDay.Show(Cursor.Position);
     }
 
     private LunisolarDay ContextMenuEventDay;
@@ -1098,6 +1095,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuEventDay.Date
                                                      && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
       CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
+    }
+
+    private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
+    {
+      ActionNavigate.PerformClick();
     }
 
     #endregion
