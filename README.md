@@ -304,6 +304,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
 - Add link in reminder box to open verses board.
+- Add Tools folder in the application's system start menu.
 - Some fixes and improvements.
 - Code refactoring.
 
