@@ -305,6 +305,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.19 - Version 9.0
 
 - Add select day on click in the visual month view.
+- Add option to use single or double-click to select day.
 - Add day context menu for in the visual month view.
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
