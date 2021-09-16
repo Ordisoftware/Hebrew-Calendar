@@ -33,26 +33,26 @@ namespace Ordisoftware.Hebrew
     /// <param name="path">Path of the application.</param>
     static public void OpenHebrewLetters(string word, string path)
     {
-      if ( !File.Exists(path) )
+      if ( File.Exists(path) )
       {
-        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
-        return;
+        word = Localizer.RemoveDiacritics(word);
+        bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
+        if ( isUnicode && ( word.EndsWith(" א") || word.EndsWith(" ב") ) )
+          word = word.Remove(word.Length - 2);
+        else
+        if ( word.StartsWith("a ") || word.StartsWith("b ") )
+          word = word.Remove(0, 2);
+        var items = word.Split(' ');
+        if ( isUnicode ) items = items.Reverse().ToArray();
+        foreach ( string item in items )
+        {
+          SystemManager.RunShell(path, item);
+          System.Threading.Thread.Sleep(250);
+        }
       }
-      word = Localizer.RemoveDiacritics(word);
-      bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
-      if ( isUnicode && ( word.EndsWith(" א") || word.EndsWith(" ב") ) )
-        word = word.Remove(word.Length - 2);
       else
-      if ( word.StartsWith("a ") || word.StartsWith("b ") )
-        word = word.Remove(0, 2);
-      var items = word.Split(' ');
-      if ( isUnicode ) items = items.Reverse().ToArray();
-      foreach ( string item in items )
-      {
-        SystemManager.RunShell(path, item);
-        System.Threading.Thread.Sleep(250);
-      }
+      if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
+        SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
     }
 
     /// <summary>
@@ -60,13 +60,11 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void OpenHebrewWordsGoToVerse(string reference, string path)
     {
-      if ( !File.Exists(path) )
-      {
-        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
-        return;
-      }
-      SystemManager.RunShell(path, "--verse " + reference);
+      if ( File.Exists(path) )
+        SystemManager.RunShell(path, "--verse " + reference);
+      else
+      if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+        SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
     }
 
     /// <summary>
@@ -74,13 +72,11 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void OpenHebrewWordsSearchWord(string word, string path)
     {
-      if ( !File.Exists(path) )
-      {
-        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
-        return;
-      }
-      SystemManager.RunShell(path, "--word " + word);
+      if ( File.Exists(path) )
+        SystemManager.RunShell(path, "--word " + word);
+      else
+      if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+        SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
     }
 
     /// <summary>
@@ -88,13 +84,11 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void OpenHebrewWordsSearchTranslated(string word, string path)
     {
-      if ( !File.Exists(path) )
-      {
-        if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-          SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
-        return;
-      }
-      SystemManager.RunShell(path, "--translated " + word);
+      if ( File.Exists(path) )
+        SystemManager.RunShell(path, "--translated " + word);
+      else
+      if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+        SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
     }
 
     /// <summary>
@@ -103,10 +97,13 @@ namespace Ordisoftware.Hebrew
     static public void OpenWordProvider(string link, string hebrew)
     {
       if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
-      string unicode = HebrewAlphabet.ToUnicode(hebrew);
-      link = link.Replace("%WORD%", unicode)
-                 .Replace("%FIRSTLETTER%", unicode[0].ToString());
-      SystemManager.RunShell(link);
+      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+      {
+        string unicode = HebrewAlphabet.ToUnicode(hebrew);
+        link = link.Replace("%WORD%", unicode)
+                   .Replace("%FIRSTLETTER%", unicode[0].ToString());
+        SystemManager.RunShell(link);
+      });
     }
 
     /// <summary>
@@ -115,8 +112,11 @@ namespace Ordisoftware.Hebrew
     static public void OpenWordConcordance(string link, int concordance)
     {
       if ( concordance < 1 ) return;
-      link = link.Replace("%CONCORDANCE%", concordance.ToString());
-      SystemManager.RunShell(link);
+      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+      {
+        link = link.Replace("%CONCORDANCE%", concordance.ToString());
+        SystemManager.RunShell(link);
+      });
     }
 
     /// <summary>
