@@ -35,6 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
       TimerMutex = true;
       CheckProcessRelicate();
+      SystemManager.TryCatch(Settings.Store);
       try
       {
         bool showbox = !IsReminderPaused;

@@ -305,7 +305,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Enabled;
-      var formState = WindowState;
+      //var formState = WindowState;
       ToolStrip.Enabled = false;
       try
       {
@@ -337,7 +337,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        WindowState = formState;
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         if ( dateOld == null )
@@ -347,6 +346,7 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateTitles(true);
         TimerReminder.Enabled = true;
         EnableReminderTimer();
+        //WindowState = formState;
       }
     }
 

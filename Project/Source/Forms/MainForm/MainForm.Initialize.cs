@@ -146,7 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CheckRegenerateCalendar(false, doforce || Globals.IsDatabaseUpgraded, true);
         if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
           ActionPreferences.PerformClick();
-        SystemManager.TryCatch(Settings.Save);
+        SystemManager.TryCatch(Settings.Store);
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         TimerMidnight.TimeReached += TimerMidnight_Tick;
       }
