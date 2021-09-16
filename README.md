@@ -34,6 +34,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Window showing a board of lunar months description.
 - Window showing a board of parashot.
 - Window showing a board of celebration verses.
+- Tools for study parashot and celebrations.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
@@ -153,7 +154,7 @@ Thus celebration dates may be wrong.
 
 - Show the celebration verses board:
 
-  `Ordisoftware.Hebrew.Calendar.exe --celebration`
+  `Ordisoftware.Hebrew.Calendar.exe --celebrationverses`
 
 - Show the celebrations board:
 
@@ -301,10 +302,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.19 - Version 9.0
 
 - Add celebration verses board.
-- Add `--celebration` command-line option to show the celebration verses board.
-- Add button in reminder box to open celebration verses board.
+- Add `--celebrationverses` command-line option to show this board.
+- Add link in reminder box to open verses board.
 - Some fixes and improvements.
-- Code refactoring and quality improvement.
+- Code refactoring.
 
 #### 2021.09.06 - Version 8.10
 
