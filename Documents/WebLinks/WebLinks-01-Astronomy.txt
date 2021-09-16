@@ -19,7 +19,7 @@ URL = https://www.solarsystemscope.com
 -
 
 Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
-URL = https://www.spaceweatherlive.com
+URL = https://www.spaceweatherlive.com/en.html
 
 Name = (FR) Activité aurorale et solaire en temps réel @ spaceweatherlive.com
 URL = https://www.spaceweatherlive.com/fr.html
