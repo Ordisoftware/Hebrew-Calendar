@@ -1039,6 +1039,69 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
+    #region Month View Context Menu
+
+    private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
+    {
+      if ( e.Button == MouseButtons.Right )
+      {
+        var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
+        if ( dayEvent == null ) return;
+        var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
+        if ( dayRow != null )
+        {
+          ContextMenuEventDay = dayRow;
+          ContextMenuStripDay.Show(Cursor.Position);
+        }
+      }
+    }
+
+    private LunisolarDay ContextMenuEventDay;
+
+    private void ContextMenuStripDay_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+      if ( Settings.TorahEventsCountAsMoon )
+      {
+        ContextMenuDayRise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
+        ContextMenuDaySet.Text = AppTranslations.Sunset.GetLang(ContextMenuEventDay?.SunsetAsString ?? "-");
+      }
+      else
+      {
+        if ( ContextMenuEventDay.MoonriseOccuring == MoonriseOccuring.AfterSet )
+        {
+          if ( ContextMenuEventDay.Moonset != null )
+            ContextMenuDayRise.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
+          if ( ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay )
+            ContextMenuDaySet.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
+        }
+        else
+        {
+          if ( ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay )
+            ContextMenuDayRise.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
+          if ( ContextMenuEventDay.Moonset != null )
+            ContextMenuDaySet.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
+        }
+      }
+    }
+
+    private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
+    {
+      var day = ContextMenuEventDay.GetParashahReadingDay();
+      if ( day == null ) return;
+      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+      if ( parashah == null ) return;
+      ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+    }
+
+    private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
+    {
+      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuEventDay.Date
+                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+      CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
+    }
+
+    #endregion
+
   }
 
 }

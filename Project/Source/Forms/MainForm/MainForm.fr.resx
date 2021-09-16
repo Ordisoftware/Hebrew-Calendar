@@ -133,6 +133,96 @@
   <data name="LabelGridGoToToday.Text" xml:space="preserve">
     <value>Aujourd'hui</value>
   </data>
+  <data name="LabelEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 22</value>
+  </data>
+  <data name="LabelEnumsAsTranslations.Text" xml:space="preserve">
+    <value>Exportation des énumérations sous forme de traductions humanisées</value>
+  </data>
+  <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 276</value>
+  </data>
+  <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuShowHide.Text" xml:space="preserve">
+    <value>Restaurer</value>
+  </data>
+  <data name="SeparatorTrayMenu1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
+  </data>
+  <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuNavigate.Text" xml:space="preserve">
+    <value>Naviguer</value>
+  </data>
+  <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuCelebrations.Text" xml:space="preserve">
+    <value>Célébrations</value>
+  </data>
+  <data name="SeparatorTrayMenu3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
+  </data>
+  <data name="MenuResetReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuResetReminder.Text" xml:space="preserve">
+    <value>Réinitialiser le rappeleur</value>
+  </data>
+  <data name="MenuEnableReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuEnableReminder.Text" xml:space="preserve">
+    <value>Activer le rappeleur</value>
+  </data>
+  <data name="MenuDisableReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuDisableReminder.Text" xml:space="preserve">
+    <value>Désactiver le rappeleur</value>
+  </data>
+  <data name="SeparatorTrayMenu2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
+  </data>
+  <data name="MenuTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuTools.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="MenuWebLinks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuWebLinks.Text" xml:space="preserve">
+    <value>Liens web</value>
+  </data>
+  <data name="SeparatorTrayMenu5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
+  </data>
+  <data name="MenuInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuInformation.Text" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="MenuPreferences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuPreferences.Text" xml:space="preserve">
+    <value>Préférences</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
+  </data>
+  <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="MenuExit.Text" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
   <data name="ActionSaveToFile.Text" xml:space="preserve">
     <value>Sauvegarder la vue dans un fichier</value>
   </data>
@@ -193,12 +283,6 @@
   <data name="ActionExit.ToolTipText" xml:space="preserve">
     <value>Envoyer vers la Tray Icon</value>
   </data>
-  <data name="ActionHelp.Text" xml:space="preserve">
-    <value>Aide</value>
-  </data>
-  <data name="ActionHelp.ToolTipText" xml:space="preserve">
-    <value>Aide (F11)</value>
-  </data>
   <data name="ActionResetReminder.Text" xml:space="preserve">
     <value>Réinitialiser le rappeleur</value>
   </data>
@@ -217,92 +301,143 @@
   <data name="ActionEnableReminder.ToolTipText" xml:space="preserve">
     <value>Activer le rappeleur</value>
   </data>
-  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+  <data name="ActionWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
   </data>
-  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
-    <value>Tableau des mois lunaires</value>
+  <data name="ActionWeeklyParashah.Text" xml:space="preserve">
+    <value>Parashah de la semaine</value>
   </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+  <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="ActionViewParashahDescription.Text" xml:space="preserve">
+    <value>Afficher la description</value>
+  </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 6</value>
+  </data>
+  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Étudier en ligne</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+    <value>Lire en ligne</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Tableau des versets des célébrations</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 6</value>
+  </data>
+  <data name="ActionShowParashahNotice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="ActionShowParashahNotice.Text" xml:space="preserve">
+    <value>Notice des Parashot</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Text" xml:space="preserve">
     <value>Notice des Célébrations</value>
   </data>
   <data name="ActionShowShabatNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionShowShabatNotice.Text" xml:space="preserve">
     <value>Notice du Shabat</value>
   </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 6</value>
   </data>
-  <data name="ActionCalculateDateDiff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
   </data>
-  <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
-    <value>Calculateur de différence de dates</value>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Tableau des Parashot</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
     <value>Tableau des célébrations</value>
   </data>
+  <data name="ActionViewNewMoonsBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
+    <value>Tableau des nouvelles lunes</value>
+  </data>
+  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
+    <value>Tableau des mois lunaires</value>
+  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+    <value>297, 6</value>
+  </data>
+  <data name="ActionCalculateDateDiff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
+  </data>
+  <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
+    <value>Calculateur de différence de dates</value>
   </data>
   <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Calculatrice Windows</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.Text" xml:space="preserve">
     <value>Date et heure de Windows</value>
   </data>
-  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 6</value>
   </data>
-  <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+  <data name="ActionLocalWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
   </data>
-  <data name="ActionViewLog.Text" xml:space="preserve">
-    <value>Voir le log en cours</value>
+  <data name="ActionLocalWeather.Text" xml:space="preserve">
+    <value>Météo Windows</value>
   </data>
-  <data name="ActionViewStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+  <data name="ActionOnlineWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
   </data>
-  <data name="ActionViewStats.Text" xml:space="preserve">
-    <value>Statistiques d'utilisation</value>
+  <data name="ActionOnlineWeather.Text" xml:space="preserve">
+    <value>Météo en ligne</value>
   </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+  <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 6</value>
   </data>
   <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionOpenExportFolder.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export</value>
   </data>
-  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 6</value>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 6</value>
   </data>
   <data name="ActionGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+    <value>300, 22</value>
   </data>
   <data name="ActionGenerate.Text" xml:space="preserve">
     <value>Générer le calendrier</value>
   </data>
-  <data name="ActionVacuumAtNextStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 22</value>
+  <data name="ActionVacuumDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 22</value>
   </data>
   <data name="ActionVacuumDB.Text" xml:space="preserve">
     <value>Optimiser la base de données</value>
@@ -418,125 +553,53 @@
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grille</value>
   </data>
-  <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 270</value>
+  <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 98</value>
   </data>
-  <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayRise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 22</value>
   </data>
-  <data name="MenuShowHide.Text" xml:space="preserve">
-    <value>Restaurer</value>
+  <data name="ContextMenuDaySet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 22</value>
   </data>
-  <data name="SeparatorTrayMenu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 6</value>
   </data>
-  <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 22</value>
   </data>
-  <data name="MenuNavigate.Text" xml:space="preserve">
-    <value>Naviguer</value>
+  <data name="ContextMenuDayParashah.Text" xml:space="preserve">
+    <value>Parashah de la semaine</value>
   </data>
-  <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
-  <data name="MenuCelebrations.Text" xml:space="preserve">
-    <value>Célébrations</value>
+  <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
+    <value>Afficher la description</value>
   </data>
-  <data name="SeparatorTrayMenu3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 6</value>
   </data>
-  <data name="MenuResetReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
-  <data name="MenuResetReminder.Text" xml:space="preserve">
-    <value>Réinitialiser le rappeleur</value>
+  <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
+    <value>Étudier en ligne</value>
   </data>
-  <data name="MenuEnableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
-  <data name="MenuEnableReminder.Text" xml:space="preserve">
-    <value>Activer le rappeleur</value>
+  <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
+    <value>Lire en ligne</value>
   </data>
-  <data name="MenuDisableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+  <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 22</value>
   </data>
-  <data name="MenuDisableReminder.Text" xml:space="preserve">
-    <value>Désactiver le rappeleur</value>
-  </data>
-  <data name="SeparatorTrayMenu2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
-  </data>
-  <data name="MenuTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="MenuTools.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="MenuWebLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="MenuWebLinks.Text" xml:space="preserve">
-    <value>Liens web</value>
-  </data>
-  <data name="MenuInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="MenuInformation.Text" xml:space="preserve">
-    <value>Informations</value>
-  </data>
-  <data name="SeparatorTrayMenu5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
-  </data>
-  <data name="MenuPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="MenuPreferences.Text" xml:space="preserve">
-    <value>Préférences</value>
-  </data>
-  <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="MenuExit.Text" xml:space="preserve">
-    <value>Quitter</value>
+  <data name="ContextMenuDayCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Tableau des versets des célébrations</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
-    <value>Tableau des nouvelles lunes</value>
-  </data>
-  <data name="ActionOnlineWeather.Text" xml:space="preserve">
-    <value>Météo en ligne</value>
-  </data>
-  <data name="LabelEnumsAsTranslations.Text" xml:space="preserve">
-    <value>Exportation des énumérations sous forme de traductions humanisées</value>
-  </data>
-  <data name="ActionLocalWeather.Text" xml:space="preserve">
-    <value>Météo Windows</value>
-  </data>
-  <data name="ActionShowParashahNotice.Text" xml:space="preserve">
-    <value>Notice des Parashot</value>
-  </data>
-  <data name="ActionViewParashot.Text" xml:space="preserve">
-    <value>Tableau des Parashot</value>
-  </data>
-  <data name="ActionWeeklyParashah.Text" xml:space="preserve">
-    <value>Parashah de la semaine</value>
-  </data>
-  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
-    <value>Lire en ligne</value>
-  </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
-    <value>Étudier en ligne</value>
-  </data>
-  <data name="ActionViewParashahDescription.Text" xml:space="preserve">
-    <value>Afficher la description</value>
-  </data>
-  <data name="ActionShowConvocationsVerses.Text" xml:space="preserve">
-    <value>Versets des convocations</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
-    <value>Tableau des versets des célébrations</value>
+    <value>NoControl</value>
   </data>
 </root>

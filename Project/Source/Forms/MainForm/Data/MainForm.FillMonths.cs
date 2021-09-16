@@ -76,7 +76,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         InitializeYearsInterval();
-        string strToolTip = "Error on getting sun rise and set";
+        //string strToolTip = "Error on getting sun rise and set";
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
         if ( LunisolarDays.Count == 0 ) return;
@@ -140,9 +140,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( IsCelebrationWeekEnd )
               IsCelebrationWeekStart = false;
             int rank = 0;
-            // Sun
-            strToolTip = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.SunriseAsString + Globals.NL
-                       + AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString;
+            // Moon phase
             Color colorMoon = Color.Black;
             string strMonthDay = row.DayAndMonthFormattedText;
             colorMoon = row.IsNewMoon
@@ -150,26 +148,33 @@ namespace Ordisoftware.Hebrew.Calendar
                       : ( row.IsFullMoon
                         ? Settings.CalendarColorFullMoon
                         : Settings.CalendarColorMoon );
-            // Moon
-            if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
+            if ( !Settings.TorahEventsCountAsMoon )
             {
-              if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
-              if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
-              else
-              if ( !Settings.TorahEventsCountAsMoon )
-                add(colorMoon, strMonthDay);
+              add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.SunriseAsString + " " + strMonthDay);
+              add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString);
             }
             else
             {
-              if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+              if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
+              {
+                if ( row.Moonset != null )
+                  add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+                if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                  add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                else
+                if ( !Settings.TorahEventsCountAsMoon )
+                  add(colorMoon, strMonthDay);
+              }
               else
-              if ( !Settings.TorahEventsCountAsMoon )
-                add(colorMoon, strMonthDay);
-              if ( row.Moonset != null )
-                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+              {
+                if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                  add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                else
+                if ( !Settings.TorahEventsCountAsMoon )
+                  add(colorMoon, strMonthDay);
+                if ( row.Moonset != null )
+                  add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+              }
             }
             //Torah
             add(Settings.CalendarColorTorahEvent, row.TorahEventText);
@@ -199,9 +204,9 @@ namespace Ordisoftware.Hebrew.Calendar
               }
               item.EventText = text;
               item.Rank = rank++;
-              item.TooltipEnabled = true;
+              //item.TooltipEnabled = true;
               item.IgnoreTimeComponent = true;
-              item.ToolTipText = strToolTip;
+              //item.ToolTipText = strToolTip;
               if ( Settings.UseColors )
                 item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
               CalendarMonth.AddEvent(item);

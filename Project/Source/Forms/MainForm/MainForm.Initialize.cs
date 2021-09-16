@@ -400,12 +400,29 @@ namespace Ordisoftware.Hebrew.Calendar
                                          weekParashah.Factory,
                                          weekParashah.Day.HasLinkedParashah);
       });
+      ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuEventDay.GetParashahReadingDay()?.ParashahID);
+        if ( weekParashah == null ) return;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         weekParashah,
+                                         ContextMenuEventDay.HasLinkedParashah);
+      });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
         var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
         if ( weekParashah.Factory == null ) return;
         string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+      });
+      ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuEventDay.GetParashahReadingDay()?.ParashahID);
+        if ( weekParashah == null ) return;
+        string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
       });
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;

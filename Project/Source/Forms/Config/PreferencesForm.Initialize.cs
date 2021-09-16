@@ -215,7 +215,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadEvents()
     {
-      foreach ( var value in TorahCelebrationSettings.MajorEvents )
+      foreach ( var value in TorahCelebrationSettings.ManagedEvents )
         SystemManager.TryCatch(() =>
           {
             var item = new TorahEventItem()

@@ -55,6 +55,7 @@ namespace CodeProjectCalendar.NET
 
     // ORDISOFTWARE MODIF BEGIN
     public List<IEvent> TheEvents => _events;
+    internal List<CalendarEvent> CalendarEvents => _calendarEvents;
     // ORDISOFTWARE MODIF END
 
     private readonly List<IEvent> _events;
@@ -1164,11 +1165,12 @@ namespace CodeProjectCalendar.NET
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
-            if ( generateSunToolTips )
+            //if ( generateSunToolTips )
             {
               var ev = new CalendarEvent
               {
-                EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
+                //EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
+                EventArea = new Rectangle(point.X + 1, point.Y + 1, cellWidth - 1, cellHeight - 1),
                 Event = v,
                 Date = dt
               };
