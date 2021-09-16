@@ -14,3 +14,5 @@ english.StartWithWindows_msg=Start with Windows
 french.StartWithWindows_msg=Démarrer avec Windows
 english.StartAndReset_msg=Reset %1 settings
 french.StartAndReset_msg=Réinitialiser les paramètres de %1
+english.ToolsMenu_msg=Tools
+french.ToolsMenu_msg=Outils
