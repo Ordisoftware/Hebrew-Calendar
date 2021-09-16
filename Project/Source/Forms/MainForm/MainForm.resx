@@ -3169,6 +3169,29 @@
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 6</value>
   </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
+        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
+        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
+        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
+        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
+        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
+        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
+        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="ContextMenuDayCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebration verses board</value>
+  </data>
   <data name="ContextMenuDayParashahShowDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3267,29 +3290,6 @@
   </data>
   <data name="ContextMenuDayParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
-  </data>
-  <data name="ContextMenuDayCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
-        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
-        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
-        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
-        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
-        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
-        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
-        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
-  <data name="ContextMenuDayCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
-  <data name="ContextMenuDayCelebrationVersesBoard.Text" xml:space="preserve">
-    <value>Celebration verses board</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 148</value>
