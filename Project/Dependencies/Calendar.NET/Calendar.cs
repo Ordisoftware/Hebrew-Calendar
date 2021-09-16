@@ -954,7 +954,7 @@ namespace CodeProjectCalendar.NET
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
-      var currentdaypen = new Pen(BrushText);
+      var currentdaypen = new Pen(brushDayBack); //BrushText
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
