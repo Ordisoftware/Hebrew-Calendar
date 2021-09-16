@@ -5124,7 +5124,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 245</value>
+    <value>473, 226</value>
   </data>
   <data name="ActionOpenTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5168,7 +5168,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSaveTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 245</value>
+    <value>503, 226</value>
   </data>
   <data name="ActionSaveTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5198,7 +5198,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 170</value>
+    <value>16, 161</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5225,7 +5225,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 188</value>
+    <value>20, 179</value>
   </data>
   <data name="EditEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5249,7 +5249,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 188</value>
+    <value>220, 179</value>
   </data>
   <data name="EditEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5273,7 +5273,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 188</value>
+    <value>120, 179</value>
   </data>
   <data name="EditEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5330,7 +5330,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 188</value>
+    <value>421, 179</value>
   </data>
   <data name="EditEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5350,48 +5350,6 @@
   <data name="&gt;&gt;EditEventColorNext.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="EditMonthViewSunToolTips.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 56</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 17</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.Text" xml:space="preserve">
-    <value>Show sun rise and set tooltip</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="EditMonthViewSunToolTips.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewSunToolTips.Name" xml:space="preserve">
-    <value>EditMonthViewSunToolTips</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewSunToolTips.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewSunToolTips.Parent" xml:space="preserve">
-    <value>PanelCalendarColors</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewSunToolTips.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5402,7 +5360,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 170</value>
+    <value>316, 161</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -5423,13 +5381,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="EditEventColorMonth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 188</value>
+    <value>319, 179</value>
   </data>
   <data name="EditEventColorMonth.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5447,7 +5405,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditEventColorMonth.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5459,7 +5417,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 170</value>
+    <value>416, 161</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -5480,7 +5438,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="ActionMonthViewThemeDark.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5492,7 +5450,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeDark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 255</value>
+    <value>17, 236</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5513,7 +5471,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;ActionMonthViewThemeDark.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="LabelColorText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5546,7 +5504,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorText.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="ActionMonthViewThemeLight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5558,7 +5516,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 235</value>
+    <value>17, 216</value>
   </data>
   <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5579,7 +5537,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;ActionMonthViewThemeLight.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5591,7 +5549,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 170</value>
+    <value>116, 161</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -5612,7 +5570,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5624,7 +5582,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 170</value>
+    <value>216, 161</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -5645,13 +5603,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="EditCurrentDayForeColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayForeColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 78</value>
+    <value>19, 75</value>
   </data>
   <data name="EditCurrentDayForeColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5669,7 +5627,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCurrentDayForeColor.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="EditMonthViewNoDaysBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -5693,13 +5651,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditMonthViewNoDaysBackColor.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="EditCalendarColorMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 133</value>
+    <value>219, 127</value>
   </data>
   <data name="EditCalendarColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5717,7 +5675,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorMoon.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="LabelColorToday.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5729,7 +5687,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 60</value>
+    <value>16, 57</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -5750,7 +5708,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorToday.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="LabelColorMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5762,7 +5720,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 115</value>
+    <value>216, 109</value>
   </data>
   <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -5783,7 +5741,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorMoon.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="EditMonthViewTextColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -5807,7 +5765,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditMonthViewTextColor.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="LabelColorParashah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5819,7 +5777,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 115</value>
+    <value>416, 109</value>
   </data>
   <data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -5840,7 +5798,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorParashah.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="LabelColorSeason.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5852,7 +5810,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 115</value>
+    <value>116, 109</value>
   </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -5873,13 +5831,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorSeason.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="EditCalendarColorFullMoon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 133</value>
+    <value>319, 127</value>
   </data>
   <data name="EditCalendarColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5897,13 +5855,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorFullMoon.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="EditCalendarColorParashah.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 133</value>
+    <value>421, 127</value>
   </data>
   <data name="EditCalendarColorParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5921,7 +5879,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorParashah.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>25</value>
   </data>
   <data name="LabelColorEmpty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5954,13 +5912,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorEmpty.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>26</value>
   </data>
   <data name="EditCalendarColorSeason.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 133</value>
+    <value>119, 127</value>
   </data>
   <data name="EditCalendarColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5978,13 +5936,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorSeason.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>27</value>
   </data>
   <data name="EditCurrentDayBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 78</value>
+    <value>119, 75</value>
   </data>
   <data name="EditCurrentDayBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6002,7 +5960,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCurrentDayBackColor.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>28</value>
   </data>
   <data name="LabelColorFullMoon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6014,7 +5972,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 115</value>
+    <value>316, 109</value>
   </data>
   <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -6035,7 +5993,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorFullMoon.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>29</value>
   </data>
   <data name="EditMonthViewBackColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6059,7 +6017,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditMonthViewBackColor.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>30</value>
   </data>
   <data name="LabelColorTorah.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6071,7 +6029,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 115</value>
+    <value>16, 109</value>
   </data>
   <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -6092,7 +6050,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>31</value>
   </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6104,7 +6062,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTodayBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 60</value>
+    <value>116, 57</value>
   </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
@@ -6125,13 +6083,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorTodayBack.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>32</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 133</value>
+    <value>19, 127</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6149,13 +6107,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>33</value>
   </data>
   <data name="PanelCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 110</value>
+    <value>23, 133</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 277</value>
+    <value>540, 254</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -6182,7 +6140,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 90</value>
+    <value>23, 110</value>
   </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 17</value>
@@ -6264,13 +6222,13 @@
     <value>23, 70</value>
   </data>
   <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
+    <value>111, 17</value>
   </data>
   <data name="EditCalendarShowParashah.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="EditCalendarShowParashah.Text" xml:space="preserve">
-    <value>Indicate Parashah</value>
+    <value>Indicate parashah</value>
   </data>
   <data name="EditCalendarShowParashah.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
@@ -6286,6 +6244,45 @@
   </data>
   <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 90</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.Text" xml:space="preserve">
+    <value>Select the day with a single click otherwise a double</value>
+  </data>
+  <data name="EditMonthViewSelectDaySingleClick.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Name" xml:space="preserve">
+    <value>EditMonthViewSelectDaySingleClick</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewSelectDaySingleClick.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6318,7 +6315,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6342,7 +6339,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6366,7 +6363,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6399,7 +6396,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6423,7 +6420,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>

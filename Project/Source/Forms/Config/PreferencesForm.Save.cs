@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Windows.Forms;
 using Base.Hotkeys;
@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FontSize = (int)EditTextReportFontSize.Value;
       Settings.GPSLatitude = EditGPSLatitude.Text;
       Settings.GPSLongitude = EditGPSLongitude.Text;
-      Settings.MonthViewSunToolTips = EditMonthViewSunToolTips.Checked;
+      Settings.MonthViewSelectDaySingleClick = EditMonthViewSelectDaySingleClick.Checked;
       Settings.NavigateBottomColor = EditNavigateBottomColor.BackColor;
       Settings.NavigateMiddleColor = EditNavigateMiddleColor.BackColor;
       Settings.NavigateTopColor = EditNavigateTopColor.BackColor;

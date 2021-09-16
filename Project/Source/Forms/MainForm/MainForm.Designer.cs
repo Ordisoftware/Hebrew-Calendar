@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -191,6 +191,7 @@
       this.ContextMenuDaySet = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayDatesDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,7 +199,6 @@
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayDatesDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -324,6 +324,7 @@
       this.CalendarMonth.ShowTodayButton = true;
       this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.CalendarMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
+      this.CalendarMonth.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
       // 
       // TabPageGrid
       // 
@@ -345,14 +346,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1432,6 +1433,12 @@
       this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
       this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
       // 
+      // ContextMenuDayDatesDiff
+      // 
+      resources.ApplyResources(this.ContextMenuDayDatesDiff, "ContextMenuDayDatesDiff");
+      this.ContextMenuDayDatesDiff.Name = "ContextMenuDayDatesDiff";
+      this.ContextMenuDayDatesDiff.Click += new System.EventHandler(this.ContextMenuDayDatesDiff_Click);
+      // 
       // toolStripSeparator17
       // 
       this.toolStripSeparator17.Name = "toolStripSeparator17";
@@ -1473,12 +1480,6 @@
       resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
       this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
       this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
-      // 
-      // ContextMenuDayDatesDiff
-      // 
-      resources.ApplyResources(this.ContextMenuDayDatesDiff, "ContextMenuDayDatesDiff");
-      this.ContextMenuDayDatesDiff.Name = "ContextMenuDayDatesDiff";
-      this.ContextMenuDayDatesDiff.Click += new System.EventHandler(this.ContextMenuDayDatesDiff_Click);
       // 
       // MainForm
       // 
