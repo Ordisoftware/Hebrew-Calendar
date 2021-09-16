@@ -204,9 +204,9 @@ namespace Ordisoftware.Hebrew.Calendar
               }
               item.EventText = text;
               item.Rank = rank++;
-              //item.TooltipEnabled = true;
               item.IgnoreTimeComponent = true;
-              //item.ToolTipText = strToolTip;
+              // TODO remove item.TooltipEnabled = true;
+              // TODO remove item.ToolTipText = strToolTip;
               if ( Settings.UseColors )
                 item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
               CalendarMonth.AddEvent(item);
