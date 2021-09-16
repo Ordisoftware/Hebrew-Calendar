@@ -608,4 +608,7 @@
   <data name="ContextMenuDayDatesDiff.Text" xml:space="preserve">
     <value>Calculateur de différence de dates</value>
   </data>
+  <data name="ContextMenuDaySelectDate.Text" xml:space="preserve">
+    <value>Sélectionner cette date</value>
+  </data>
 </root>
