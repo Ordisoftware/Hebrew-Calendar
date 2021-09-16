@@ -1198,7 +1198,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% #%DAYNUM% [%MONTHNUM%]")]
+        [global::System.Configuration.DefaultSettingValueAttribute("#%DAYNUM% %MONTHNAME% [%MONTHNUM%]")]
         public string MoonDayTextFormat {
             get {
                 return ((string)(this["MoonDayTextFormat"]));

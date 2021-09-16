@@ -301,44 +301,62 @@
   <metadata name="MenuSelectMoonDayTextFormat.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>12, 14</value>
   </metadata>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>#10 Nissan [1]</value>
+  </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>#10 Nissan (1)</value>
+  </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>#10 Nissan</value>
+  </data>
   <data name="nissan11ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan [1] #10</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan11ToolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan (1) #10</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan101ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan #10 [1]</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Nissan #10 (1)</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Nissan #10</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="nissan1ToolStripMenuItem.Text" xml:space="preserve">
     <value>Nissan 10</value>
   </data>
   <data name="MenuSelectMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 136</value>
+    <value>156, 224</value>
   </data>
   <data name="&gt;&gt;MenuSelectMoonDayTextFormat.Name" xml:space="preserve">
     <value>MenuSelectMoonDayTextFormat</value>
@@ -8330,6 +8348,24 @@
   </data>
   <data name="&gt;&gt;OpenSettingsDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
+    <value>toolStripMenuItem5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreferencesForm</value>

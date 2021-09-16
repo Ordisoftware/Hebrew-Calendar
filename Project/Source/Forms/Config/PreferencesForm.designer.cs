@@ -303,6 +303,9 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -397,6 +400,9 @@
       // MenuSelectMoonDayTextFormat
       // 
       this.MenuSelectMoonDayTextFormat.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
             this.nissan11ToolStripMenuItem,
             this.nissan11ToolStripMenuItem1,
             this.nissan101ToolStripMenuItem,
@@ -440,6 +446,7 @@
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
       resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
       this.toolStripMenuItem2.Tag = "%MONTHNAME% #%DAYNUM%";
+      this.toolStripMenuItem2.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // nissan1ToolStripMenuItem
       // 
@@ -2566,6 +2573,27 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // toolStripMenuItem3
+      // 
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      this.toolStripMenuItem3.Tag = "#%DAYNUM% %MONTHNAME% [%MONTHNUM%]";
+      this.toolStripMenuItem3.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem4
+      // 
+      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+      resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      this.toolStripMenuItem4.Tag = "#%DAYNUM% %MONTHNAME% (%MONTHNUM%)";
+      this.toolStripMenuItem4.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem5
+      // 
+      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+      resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+      this.toolStripMenuItem5.Tag = "#%DAYNUM% %MONTHNAME%";
+      this.toolStripMenuItem5.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2914,5 +2942,8 @@
     private System.Windows.Forms.CheckBox EditParashahCaptionWithBookAndRef;
     private System.Windows.Forms.CheckBox EditNavigationWindowUseUnicodeIcons;
     private System.Windows.Forms.CheckBox EditMonthViewSelectDaySingleClick;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
   }
 }
