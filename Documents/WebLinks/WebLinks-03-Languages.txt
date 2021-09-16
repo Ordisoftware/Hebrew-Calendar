@@ -71,11 +71,11 @@ URL = https://en.wikipedia.org/wiki/Sanskrit
 Name = (FR) Sanskrit @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Sanskrit
 
-Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
-URL = https://sanskrit.inria.fr/DICO/index.en.html
-
 Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
 URL = https://spokensanskrit.org
+
+Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.en.html
 
 Name = (FR) Dictionnaire Sanskrit Heritage @ sanskrit.inria.fr
 URL = https://sanskrit.inria.fr/DICO/index.fr.html
