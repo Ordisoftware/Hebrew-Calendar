@@ -38,6 +38,9 @@
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.OpenExeFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan11ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.nissan101ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -303,9 +306,20 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -408,10 +422,45 @@
             this.nissan101ToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.nissan1ToolStripMenuItem});
+            this.nissan1ToolStripMenuItem,
+            this.toolStripMenuItem10,
+            this.toolStripMenuItem11,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem9,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem12,
+            this.toolStripMenuItem14,
+            this.toolStripMenuItem13,
+            this.toolStripMenuItem18,
+            this.toolStripMenuItem17,
+            this.toolStripMenuItem15,
+            this.toolStripMenuItem16,
+            this.toolStripMenuItem19,
+            this.toolStripMenuItem6});
       this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
       this.MenuSelectMoonDayTextFormat.ShowImageMargin = false;
       resources.ApplyResources(this.MenuSelectMoonDayTextFormat, "MenuSelectMoonDayTextFormat");
+      // 
+      // toolStripMenuItem3
+      // 
+      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+      this.toolStripMenuItem3.Tag = "#%DAYNUM% %MONTHNAME% [%MONTHNUM%]";
+      this.toolStripMenuItem3.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem4
+      // 
+      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+      resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+      this.toolStripMenuItem4.Tag = "#%DAYNUM% %MONTHNAME% (%MONTHNUM%)";
+      this.toolStripMenuItem4.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem5
+      // 
+      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+      resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+      this.toolStripMenuItem5.Tag = "#%DAYNUM% %MONTHNAME%";
+      this.toolStripMenuItem5.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // nissan11ToolStripMenuItem
       // 
@@ -2573,26 +2622,103 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // toolStripMenuItem3
+      // toolStripMenuItem6
       // 
-      this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-      resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
-      this.toolStripMenuItem3.Tag = "#%DAYNUM% %MONTHNAME% [%MONTHNUM%]";
-      this.toolStripMenuItem3.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+      resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+      this.toolStripMenuItem6.Tag = "- %DAYNUM% %MONTHNAME%";
+      this.toolStripMenuItem6.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
-      // toolStripMenuItem4
+      // toolStripMenuItem7
       // 
-      this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-      resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
-      this.toolStripMenuItem4.Tag = "#%DAYNUM% %MONTHNAME% (%MONTHNUM%)";
-      this.toolStripMenuItem4.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+      resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+      this.toolStripMenuItem7.Tag = "[%DAYNUM% %MONTHNAME%]";
+      this.toolStripMenuItem7.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
-      // toolStripMenuItem5
+      // toolStripMenuItem8
       // 
-      this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-      resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-      this.toolStripMenuItem5.Tag = "#%DAYNUM% %MONTHNAME%";
-      this.toolStripMenuItem5.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+      resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
+      this.toolStripMenuItem8.Tag = "[%DAYNUM% %MONTHNAME% #%MONTHNUM%]";
+      this.toolStripMenuItem8.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem9
+      // 
+      this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+      resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
+      this.toolStripMenuItem9.Tag = "(%DAYNUM% %MONTHNAME% #%MONTHNUM%)";
+      this.toolStripMenuItem9.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem10
+      // 
+      this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+      resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
+      this.toolStripMenuItem10.Tag = "[%DAYNUM% %MONTHNAME% (%MONTHNUM%)]";
+      this.toolStripMenuItem10.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem11
+      // 
+      this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+      resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+      this.toolStripMenuItem11.Tag = "(%DAYNUM% %MONTHNAME% [%MONTHNUM%])";
+      this.toolStripMenuItem11.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem12
+      // 
+      this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+      resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
+      this.toolStripMenuItem12.Tag = "(%DAYNUM% %MONTHNAME%)";
+      this.toolStripMenuItem12.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem13
+      // 
+      this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+      resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
+      this.toolStripMenuItem13.Tag = "| %DAYNUM% %MONTHNAME% (%MONTHNUM%)";
+      this.toolStripMenuItem13.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem14
+      // 
+      this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+      resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+      this.toolStripMenuItem14.Tag = "| %DAYNUM% %MONTHNAME% [%MONTHNUM%]";
+      this.toolStripMenuItem14.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem15
+      // 
+      this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+      resources.ApplyResources(this.toolStripMenuItem15, "toolStripMenuItem15");
+      this.toolStripMenuItem15.Tag = "- %DAYNUM% %MONTHNAME% [%MONTHNUM%]";
+      this.toolStripMenuItem15.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem16
+      // 
+      this.toolStripMenuItem16.Name = "toolStripMenuItem16";
+      resources.ApplyResources(this.toolStripMenuItem16, "toolStripMenuItem16");
+      this.toolStripMenuItem16.Tag = "- %DAYNUM% %MONTHNAME% (%MONTHNUM%)";
+      this.toolStripMenuItem16.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem17
+      // 
+      this.toolStripMenuItem17.Name = "toolStripMenuItem17";
+      resources.ApplyResources(this.toolStripMenuItem17, "toolStripMenuItem17");
+      this.toolStripMenuItem17.Tag = "| %DAYNUM% %MONTHNAME%";
+      this.toolStripMenuItem17.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem18
+      // 
+      this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+      resources.ApplyResources(this.toolStripMenuItem18, "toolStripMenuItem18");
+      this.toolStripMenuItem18.Tag = "| %DAYNUM% %MONTHNAME% #%MONTHNUM%";
+      this.toolStripMenuItem18.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
+      // 
+      // toolStripMenuItem19
+      // 
+      this.toolStripMenuItem19.Name = "toolStripMenuItem19";
+      resources.ApplyResources(this.toolStripMenuItem19, "toolStripMenuItem19");
+      this.toolStripMenuItem19.Tag = "- %DAYNUM% %MONTHNAME% #%MONTHNUM%";
+      this.toolStripMenuItem19.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // PreferencesForm
       // 
@@ -2945,5 +3071,19 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
+    private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
   }
 }
