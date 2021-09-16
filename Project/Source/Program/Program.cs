@@ -97,6 +97,12 @@ namespace Ordisoftware.Hebrew.Calendar
           Settings.SetFirstAndUpgradeFlagsOff();
           Settings.FirstLaunch = true;
         }
+        // Check OS
+        if ( Settings.FirstLaunch )
+        {
+          if ( SystemStatistics.Instance.Platform.Contains("Windows 7") )
+            Settings.NavigationWindowUseUnicodeIcons = false;
+        }
         // Check language
         if ( Settings.UpgradeResetRequiredV5_10 )
           Settings.CurrentView = ViewMode.Month;
