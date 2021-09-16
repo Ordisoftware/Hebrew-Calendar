@@ -59,3 +59,17 @@ URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 
 Name = (FR) Les fêtes selon la Cabale Rav Chriqui *
 URL = https://www.youtube.com/playlist?list=PLI4WtgHMTlAeeu0BFOLjffigOYGdN97WW
+
+-
+
+Name = (FR) Exposé Les célébrations de la Torah
+URL = https://www.youtube.com/watch?v=gqjY4wwuAeQ&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=28
+
+Name = (FR) Exposé Pessah et la sortie de Mitsraïm
+URL = https://www.youtube.com/watch?v=7pYtMgQm6cs&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=16
+
+Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle
+URL = https://www.youtube.com/watch?v=dNKab1_yIzI&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=17
+
+Name = (FR) Exposé La réparation de la Téchouva
+URL = https://www.youtube.com/watch?v=HpJW4vsAwuA&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=18
