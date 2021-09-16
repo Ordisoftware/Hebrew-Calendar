@@ -99,7 +99,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         TabControl.SelectedTab = TabPageGeneration;
         Settings.SetFirstAndUpgradeFlagsOff();
-        SystemManager.TryCatch(Settings.Save);
+        SystemManager.TryCatch(Settings.Store);
       }
     }
 
@@ -121,8 +121,8 @@ namespace Ordisoftware.Hebrew.Calendar
         return;
       }
       SaveSettings();
-      SystemManager.TryCatch(Settings.Save);
-      SystemManager.TryCatch(() => 
+      SystemManager.TryCatch(Settings.Store);
+      SystemManager.TryCatch(() =>
       {
         Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
       });

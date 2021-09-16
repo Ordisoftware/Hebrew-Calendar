@@ -241,7 +241,7 @@ namespace Ordisoftware.Hebrew.Calendar
       LabelVolumeValue.Text = EditVolume.Value + "%";
       if ( !IsReady ) return;
       Settings.ApplicationVolume = EditVolume.Value;
-      SystemManager.TryCatch(Settings.Save);
+      SystemManager.TryCatch(Settings.Store);
       DisplayManager.DoSound(Globals.ClipboardSoundFilePath);
     }
 

@@ -61,7 +61,7 @@ namespace Ordisoftware.Hebrew.Calendar
       HebrewDatabase.Instance.ReleaseParashot();
       Globals.ChronoLoadData.Stop();
       Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-      SystemManager.TryCatch(Settings.Save);
+      SystemManager.TryCatch(Settings.Store);
     }
 
     private void LoadDataFill()

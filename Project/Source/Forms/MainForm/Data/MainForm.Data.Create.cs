@@ -100,7 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
           Globals.ChronoCreateData.Stop();
           Settings.BenchmarkGenerateYears = Globals.ChronoCreateData.ElapsedMilliseconds;
           Settings.LastGenerated = DateTime.Now;
-          SystemManager.TryCatch(Settings.Save);
+          SystemManager.TryCatch(Settings.Store);
           if ( !Globals.IsGenerating )
             LabelSubTitleGPS.Text = string.Empty;
           else
