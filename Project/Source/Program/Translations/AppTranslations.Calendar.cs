@@ -350,8 +350,8 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [TorahCelebrationDay.NewYearD10] = new TranslationsDictionary
         {
-          [Language.EN] = "Set Aside " + Start[Language.EN],
-          [Language.FR] = "Réserver " + Start[Language.FR]
+          [Language.EN] = "Set Aside " + Lamb[Language.EN],
+          [Language.FR] = "Réserver " + Lamb[Language.FR]
         },
         [TorahCelebrationDay.PessahD1] = new TranslationsDictionary
         {
@@ -370,8 +370,8 @@ namespace Ordisoftware.Hebrew.Calendar
         },
         [TorahCelebrationDay.Chavouot1] = new TranslationsDictionary
         {
-          [Language.EN] = TorahCelebrations[TorahCelebration.Chavouot][Language.EN] + " " + Start[Language.EN],
-          [Language.FR] = TorahCelebrations[TorahCelebration.Chavouot][Language.FR] + " " + Start[Language.FR]
+          [Language.EN] = TorahCelebrations[TorahCelebration.Chavouot][Language.EN] + " " + Lamb[Language.EN],
+          [Language.FR] = TorahCelebrations[TorahCelebration.Chavouot][Language.FR] + " " + Lamb[Language.FR]
         },
         [TorahCelebrationDay.Chavouot2] = new TranslationsDictionary
         {
