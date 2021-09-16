@@ -123,18 +123,27 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.CurrentView == ViewMode.Month && CurrentDay != null )
         switch ( keyData )
         {
+          case Keys.Apps:
+            var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.Date.Date == CurrentDay.Date.Date);
+            if ( dayEvent == null ) break;
+            int x = dayEvent.EventArea.Left + dayEvent.EventArea.Width / 2;
+            int y = dayEvent.EventArea.Top + dayEvent.EventArea.Height / 2;
+            var args = new MouseEventArgs(MouseButtons.Right, 2, dayEvent.EventArea.Left, dayEvent.EventArea.Top, 0);
+            Cursor.Position = CalendarMonth.PointToScreen(new System.Drawing.Point(x, y));
+            CalendarMonth_MouseClick(CalendarMonth, args);
+            return true;
           case Keys.Control | Keys.Home:
             search(true, v => v < 0);
-            break;
+            return true;
           case Keys.Control | Keys.End:
             search(false, v => v >= 0);
-            break;
+            return true;
           case Keys.Control | Keys.Left:
             search(false, v => v < 0);
-            break;
+            return true;
           case Keys.Control | Keys.Right:
             search(true, v => v >= 0);
-            break;
+            return true;
           case Keys.Home:
             GoToDate(new DateTime(YearFirst, 1, 1));
             return true;
@@ -143,17 +152,23 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
           case Keys.Up:
           case Keys.PageUp:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(-1));
+            GoToDate(CurrentDay.Date.AddYears(-1));
             return true;
           case Keys.Down:
           case Keys.PageDown:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(1));
+            GoToDate(CurrentDay.Date.AddYears(1));
             return true;
           case Keys.Left:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(-1));
+            GoToDate(CurrentDay.Date.AddMonths(-1));
             return true;
           case Keys.Right:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(1));
+            GoToDate(CurrentDay.Date.AddMonths(1));
+            return true;
+          case Keys.Subtract:
+            GoToDate(CurrentDay.Date.AddDays(-1));
+            return true;
+          case Keys.Add:
+            GoToDate(CurrentDay.Date.AddDays(+1));
             return true;
         }
       return base.ProcessCmdKey(ref msg, keyData);

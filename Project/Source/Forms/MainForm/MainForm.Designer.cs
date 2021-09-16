@@ -1406,8 +1406,8 @@
             this.ContextMenuDayNavigation,
             this.ContextMenuDayDatesDiff,
             this.toolStripSeparator17,
-            this.ContextMenuDayParashah,
-            this.ContextMenuDayCelebrationVersesBoard});
+            this.ContextMenuDayCelebrationVersesBoard,
+            this.ContextMenuDayParashah});
       this.ContextMenuStripDay.Name = "ContextMenuStripDay";
       resources.ApplyResources(this.ContextMenuStripDay, "ContextMenuStripDay");
       this.ContextMenuStripDay.Opened += new System.EventHandler(this.ContextMenuStripDay_Opened);
