@@ -605,4 +605,7 @@
   <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
+  <data name="ContextMenuDayDatesDiff.Text" xml:space="preserve">
+    <value>Calculateur de différence de dates</value>
+  </data>
 </root>
