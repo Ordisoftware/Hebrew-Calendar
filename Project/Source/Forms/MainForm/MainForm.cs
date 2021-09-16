@@ -1047,19 +1047,22 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( dayEvent == null ) return;
       var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
       if ( dayRow == null ) return;
+      bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       GoToDate(dayRow.Date);
       ContextMenuEventDay = dayRow;
-      if ( e.Button == MouseButtons.Right )
+      if ( showContextMenu && e.Button == MouseButtons.Right )
         ContextMenuStripDay.Show(Cursor.Position);
     }
 
     private LunisolarDay ContextMenuEventDay;
 
-    private void ContextMenuStripDay_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+    private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       if ( Settings.TorahEventsCountAsMoon )
       {
+        ContextMenuDayRise.Visible = !ContextMenuEventDay?.SunriseAsString.IsNullOrEmpty() ?? false;
+        ContextMenuDaySet.Visible = !ContextMenuEventDay?.SunsetAsString.IsNullOrEmpty() ?? false;
         ContextMenuDayRise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
         ContextMenuDaySet.Text = AppTranslations.Sunset.GetLang(ContextMenuEventDay?.SunsetAsString ?? "-");
       }
@@ -1067,19 +1070,24 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( ContextMenuEventDay.MoonriseOccuring == MoonriseOccuring.AfterSet )
         {
-          if ( ContextMenuEventDay.Moonset != null )
+          ContextMenuDayRise.Visible = ContextMenuEventDay.Moonset != null;
+          if ( ContextMenuDayRise.Visible )
             ContextMenuDayRise.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
-          if ( ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay )
+          ContextMenuDaySet.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
+          if ( ContextMenuDaySet.Visible )
             ContextMenuDaySet.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
         }
         else
         {
-          if ( ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay )
+          ContextMenuDayRise.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
+          if ( ContextMenuDayRise.Visible )
             ContextMenuDayRise.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
-          if ( ContextMenuEventDay.Moonset != null )
+          ContextMenuDaySet.Visible = ContextMenuEventDay.Moonset != null;
+          if ( ContextMenuDaySet.Visible )
             ContextMenuDaySet.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
         }
       }
+      ContextMenuDayTimesSeparator.Visible = ContextMenuDayRise.Visible || ContextMenuDaySet.Visible;
     }
 
     private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
