@@ -143,17 +143,17 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
           case Keys.Up:
           case Keys.PageUp:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(-1));
+            GoToDate(CurrentDay.Date.AddYears(-1));
             return true;
           case Keys.Down:
           case Keys.PageDown:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddYears(1));
+            GoToDate(CurrentDay.Date.AddYears(1));
             return true;
           case Keys.Left:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(-1));
+            GoToDate(CurrentDay.Date.AddMonths(-1));
             return true;
           case Keys.Right:
-            GoToDate(CurrentDay.Date.Change(day: 1).AddMonths(1));
+            GoToDate(CurrentDay.Date.AddMonths(1));
             return true;
         }
       return base.ProcessCmdKey(ref msg, keyData);
