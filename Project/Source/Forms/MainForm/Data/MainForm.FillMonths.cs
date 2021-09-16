@@ -178,13 +178,13 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             //Torah
             add(Settings.CalendarColorTorahEvent, row.TorahEventText);
+            // Season
+            if ( row.SeasonChange != 0 )
+              add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
             // Parashah
             if ( Settings.CalendarShowParashah )
               if ( !string.IsNullOrEmpty(row.ParashahID) )
                 add(Settings.CalendarColorParashah, row.GetParashahText(false));
-            // Season
-            if ( row.SeasonChange != 0 )
-              add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
             //
             void add(Color color, string text)
             {
