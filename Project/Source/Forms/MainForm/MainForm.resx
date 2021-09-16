@@ -2001,19 +2001,16 @@
   </data>
   <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAnVJREFUOE99kt1rUnEYx/0Lgm3l3M3+ga4igqi7LgoJerGXi6AgvJszBy2CCtpF
-        BGt0Fd7I2mXMllvn7LWSKFuopWZOdJsuqFzMaTr1+HL0uG/Pczw5VtEDD4/P83y+39/vnKPuz9BbBXtn
-        /1S1w/IcHX2UVLnnuYb8O3oGxOMsuDC6ggdv63CEAMcnSqrc85z3zGmSneBhz8Asbs8VIC79QHrdDWRd
-        GBkyY5vqRsoNIbKOW7Rn7i+TTrrmjekcvKsrQGkOSn4B1ewCKpkFSJvzKKdnoGRFvIvHMSjmwLwm1em6
-        bYL95KMonMEUUH6F06bLcI3bUS96IGVfo7jpRjHtJqOX2M7PY/xjCsyzTjXY2z9Vs7oyyKR9gLSIgM8J
-        08WrCPonoEg+VPKLKGXZzAM5/wabG14wz7qWgVXAdaEA1L1olPxoVoIIfZjE2XNXEPJPQqkEUNnyQcp5
-        IRfoENmr8qxrG/S5chiz3yU4BFmi165EEQ3P4tSZS/C9d6mzajGo7pljvm2wj36Yn6QBLNHpEdTLEaAR
-        xwnjeYQC03SzmDqTS5/VPXPMs65l0C/IJscaslv0BRoxNGoxKPIy0EzQTVapX4ZcIZNqTN0zxzzrVAO9
-        ecx56J4fIy/WyD1JUAJNmbKepJqEUkuQIZnRnPfMMc861YCil69z7GEUzwJfCPpG+VWr33f1vGdOu35v
-        S07RZRy0GGwzODocxtB0Ej8l+k8gA3HCoVbuec575pjXpO3Y02W8adFfE7H/jgeH74dxZDjaTu55znvm
-        mG/JdgcPDxrMj592WwXZYBPptFaqPc15r3H/DX62A5QM/07ud565HTrdLzXMSLCHYX+fAAAAAElFTkSu
-        QmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHBSURBVDhPpZPLSxtRFMbnzxApitj/oHRfiQ+66qpgbSsu
+        xfpAaou477qLQv+ELNwkBLIrpW58gVjalQs1iZkx6WS8c+88jZN8PedGawdn4eMM39zvHub7zbkDY5TL
+        ZVEqlVAsFu8kznDWYHPf4qzBNK5qtYKGWcPGz0PUT2o4rlQzdXTMqugMZ/8Bmqd1vPiyj4HVXQjbgnVq
+        wrR47enKm5aJWv1EZ9KARgOxtDG0totA2Gi1WjgTLlypIFypxZ57jeYfnUkBbLuJWLVogh3EngOlXIzk
+        xjA59RbvFpawuPweb6ZnMD7xnCBCZ1IAx3EQKYG+lS0CuJBSwvMDBGEEPwi12HPPOcsASCnQDiXQVkgi
+        BU/xyDclXDd7gtD36CP+wsf1A0x83sdFHNDbfCgvLal8AimdSQHO45DuMSxbYnB1m3wb3W4HXXI98QVc
+        dBKEUUTuElAoFPQGSYyv3yt4+mkP337buvVsJIeXk1OYnZvH/OIyXr2eRm50HB2CcHH2GoAE/SubeLy2
+        jUcfti572ZUkHb1qwNUReoP+X7Tv0tiZ6gH0ER78L+Tz+R9smFakkW4lepYznDWohklP7idj+C9riE1t
+        J8zuAgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">

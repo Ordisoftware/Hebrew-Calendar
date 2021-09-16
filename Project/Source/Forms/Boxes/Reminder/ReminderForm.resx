@@ -229,7 +229,7 @@
     <value>40, 26</value>
   </data>
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>OK</value>
@@ -462,45 +462,6 @@
   <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 98</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
-    <value>ContextMenuParashah</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuParashah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelParashahValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelParashahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 105</value>
-  </data>
-  <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 16</value>
-  </data>
-  <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LabelParashahValue.Text" xml:space="preserve">
-    <value>Parashah</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Name" xml:space="preserve">
-    <value>LabelParashahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -592,6 +553,45 @@
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
+  <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 98</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
+    <value>ContextMenuParashah</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LabelParashahValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelParashahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 105</value>
+  </data>
+  <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 16</value>
+  </data>
+  <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelParashahValue.Text" xml:space="preserve">
+    <value>Verses board</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Name" xml:space="preserve">
+    <value>LabelParashahValue</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="ActionLockout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -639,15 +639,6 @@
   <metadata name="ContextMenuStripLockout.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>192, 17</value>
   </metadata>
-  <data name="ContextMenuStripLockout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 26</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripLockout.Name" xml:space="preserve">
-    <value>ContextMenuStripLockout</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuStripLockout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="MenuDefaultLockout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -666,6 +657,15 @@
   </data>
   <data name="MenuDefaultLockout.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="ContextMenuStripLockout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 26</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripLockout.Name" xml:space="preserve">
+    <value>ContextMenuStripLockout</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStripLockout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ActionSetupSound.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>

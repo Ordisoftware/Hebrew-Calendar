@@ -247,7 +247,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         [TorahCelebration.Pessah] = new TranslationsDictionary
         {
-          [Language.EN] = "Pesa'h",
+          [Language.EN] = "Pesach",
           [Language.FR] = "Pessa'h"
         },
         [TorahCelebration.Chavouot] = new TranslationsDictionary

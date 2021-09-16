@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public CelebrationVersesBoardForm Instance { get; private set; }
 
-    static public void Run()
+    static public void Run(TorahCelebrationDay celebration = TorahCelebrationDay.None)
     {
       if ( Instance == null )
         Instance = new CelebrationVersesBoardForm();
@@ -37,10 +37,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Instance.Visible )
       {
         Instance.Popup();
+        Instance.FindCurrentCelebration(celebration);
         return;
       }
       Instance.Show();
       Instance.ForceBringToFront();
+      Instance.FindCurrentCelebration(celebration);
     }
 
     public CelebrationVersesBoardForm()
@@ -99,18 +101,21 @@ namespace Ordisoftware.Hebrew.Calendar
                        .Select(value => new ListViewItem(AppTranslations.TorahCelebrations.GetLang(value)) { Tag = value });
       SelectCelebration.Items.Clear();
       SelectCelebration.Items.AddRange(items.ToArray());
-      FindCurrentCelebration();
     }
 
-    private void FindCurrentCelebration()
+    private void FindCurrentCelebration(TorahCelebrationDay celebration = TorahCelebrationDay.None)
     {
       if ( SelectCelebration.Items.Count <= 0 ) return;
-      var dateStart = DateTime.Today;
-      var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
-      if ( day != null )
+      if ( celebration == TorahCelebrationDay.None )
+      {
+        var dateStart = DateTime.Today;
+        var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
+        if ( day != null ) celebration = day.TorahEvent;
+      }
+      if ( celebration != TorahCelebrationDay.None )
       {
         foreach ( ListViewItem item in SelectCelebration.Items )
-          if ( ( (TorahCelebration)item.Tag ).ToString().StartsWith(day.TorahEvent.ToString()) )
+          if ( celebration.ToString().StartsWith(( (TorahCelebration)item.Tag ).ToString()) )
           {
             item.Selected = true;
             item.Focused = true;
@@ -150,6 +155,11 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
+    private void SelectCelebration_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      SelectCelebration.ContextMenuStrip.Show(Cursor.Position);
+    }
+
     private void SelectVerse_MouseDoubleClick(object sender, MouseEventArgs e)
     {
       SelectVerse.ContextMenuStrip.Show(Cursor.Position);
@@ -183,7 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( collection == null ) return;
       foreach ( var reference in collection )
       {
-        var item = SelectVerse.Items.Add(reference.Item1.ToString());
+        var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace("_", " "));
         item.Tag = reference;
         item.SubItems.Add(reference.Item2.ToString());
         item.SubItems.Add(reference.Item3.ToString());

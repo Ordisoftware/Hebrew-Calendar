@@ -14,7 +14,6 @@
 /// <edited> 2021-05 </edited>
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -31,9 +30,8 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
-        var task = Task.Run(LoadDataInit);
         Program.UpdateLocalization();
-        task.Wait();
+        LoadDataInit();
         if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
           LoadDataFill();
         else

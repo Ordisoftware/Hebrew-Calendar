@@ -41,9 +41,9 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    static public void Run(LunisolarDay row, TorahCelebrationDay torahevent, ReminderTimes times)
+    static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
     {
-      bool isShabat = torahevent == TorahCelebrationDay.Shabat;
+      bool isShabat = celebration == TorahCelebrationDay.Shabat;
       bool showParashah = false;
       bool doLockSession = false;
       var dateNow = DateTime.Now;
@@ -59,11 +59,11 @@ namespace Ordisoftware.Hebrew.Calendar
           return;
         }
         else
-        if ( torahevent != TorahCelebrationDay.None )
+        if ( celebration != TorahCelebrationDay.None )
         {
-          if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(torahevent) )
+          if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(celebration) )
           {
-            Flash(MainForm.Instance.RemindCelebrationDayForms[torahevent]);
+            Flash(MainForm.Instance.RemindCelebrationDayForms[celebration]);
             return;
           }
         }
@@ -84,9 +84,9 @@ namespace Ordisoftware.Hebrew.Calendar
         var date = row.Date;
         form.LabelTitle.Text = isShabat
                                ? AppTranslations.Shabat.GetLang()
-                               : AppTranslations.TorahCelebrationDays.GetLang(torahevent == TorahCelebrationDay.None
+                               : AppTranslations.TorahCelebrationDays.GetLang(celebration == TorahCelebrationDay.None
                                                                     ? row.TorahEvent
-                                                                    : torahevent);
+                                                                    : celebration);
         form.LabelDate.Text = isShabat
                               ? date.ToLongDateString().Titleize()
                               : row.DayAndMonthWithYearText;
@@ -105,8 +105,6 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.Tag = date;
         form.Tag = row.Date;
         form.Text = " " + form.LabelTitle.Text;
-        form.LabelParashahValue.Text = "";
-        form.LabelParashahValue.Tag = null;
         if ( isShabat )
         {
           form.LabelTitle.Text += " " + row.DayAndMonthText;
@@ -118,13 +116,19 @@ namespace Ordisoftware.Hebrew.Calendar
             {
               form.LabelParashahValue.Text = rowParashah.GetParashahText(Program.Settings.ParashahCaptionWithBookAndRef);
               form.LabelParashahValue.Tag = row;
+              form.LabelParashahValue.Visible = true;
+            }
+            else
+            {
+              form.LabelParashahValue.Text = "";
+              form.LabelParashahValue.Tag = null;
             }
           }
           else
             form.LabelParashahValue.Enabled = false;
         }
-        if ( !showParashah && !doLockSession || ( !showParashah && !isLockSessionIcon ) )
-          form.Height -= form.LabelParashahValue.Height;
+        //if ( !showParashah && !doLockSession || ( !showParashah && !isLockSessionIcon ) )
+          //form.Height -= form.LabelParashahValue.Height;
         form.ActionLockout.Visible = isLockSessionIcon;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
@@ -133,10 +137,11 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( Program.Settings.UseColors )
           form.BackColor = doLockSession ? Program.Settings.EventColorTorah : Program.Settings.EventColorNext;
         form.IsShabat = isShabat;
+        form.Celebration = row.TorahEvent;
         if ( isShabat )
           MainForm.Instance.ShabatForm = form;
         else
-        if ( torahevent != TorahCelebrationDay.None )
+        if ( celebration != TorahCelebrationDay.None )
         {
           foreach ( var item in MainForm.Instance.RemindCelebrationForms.ToList() )
             if ( (DateTime)item.Tag == row.Date )
@@ -144,7 +149,7 @@ namespace Ordisoftware.Hebrew.Calendar
               item.Close();
               break;
             }
-          MainForm.Instance.RemindCelebrationDayForms.Add(torahevent, form);
+          MainForm.Instance.RemindCelebrationDayForms.Add(celebration, form);
         }
         else
           MainForm.Instance.RemindCelebrationForms.Add(form);
@@ -230,6 +235,8 @@ namespace Ordisoftware.Hebrew.Calendar
     protected override bool ShowWithoutActivation => true;
 
     private bool IsShabat;
+
+    private TorahCelebrationDay Celebration;
 
     private ReminderForm()
     {
@@ -357,6 +364,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      if ( LabelParashahValue.Tag == null )
+      {
+        ActiveControl = null;
+        CelebrationVersesBoardForm.Run(Celebration);
+      }
+      else
       if ( e.Button == MouseButtons.Left )
         ActionViewParashahDescription_Click(this, e);
     }

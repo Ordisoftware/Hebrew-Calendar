@@ -271,11 +271,17 @@
   <data name="ColumnVerseBegin.Text" xml:space="preserve">
     <value>Begin</value>
   </data>
+  <data name="ColumnVerseBegin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="ColumnVerseBegin.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
   <data name="ColumnVerseEnd.Text" xml:space="preserve">
     <value>End</value>
+  </data>
+  <data name="ColumnVerseEnd.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="ColumnVerseEnd.Width" type="System.Int32, mscorlib">
     <value>55</value>

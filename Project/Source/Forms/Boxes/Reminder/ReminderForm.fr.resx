@@ -132,4 +132,7 @@
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Tableau des parashot</value>
   </data>
+  <data name="LabelParashahValue.Text" xml:space="preserve">
+    <value>Tableau des versets</value>
+  </data>
 </root>
