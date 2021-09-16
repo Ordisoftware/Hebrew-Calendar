@@ -302,6 +302,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.19 - Version 9.0
 
+- Add click on a visual month day to change current day.
 - Add context menu for days in the visual month view to show sun or moon times and to study parashah and celebrations.
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
