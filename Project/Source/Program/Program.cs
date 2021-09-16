@@ -130,6 +130,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( File.Exists(pathWordsDefault) )
             Settings.HebrewWordsExe = pathWordsDefault;
         // Save settings
+        Settings.MonthViewSunToolTips = false;
         SystemManager.TryCatch(Settings.Save);
       }
       catch ( Exception ex )

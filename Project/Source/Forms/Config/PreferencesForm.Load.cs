@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -63,7 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTextReportFontSize.Value = Settings.FontSize; });
       SystemManager.TryCatch(() => { EditGPSLatitude.Text = Settings.GPSLatitude; });
       SystemManager.TryCatch(() => { EditGPSLongitude.Text = Settings.GPSLongitude; });
-      SystemManager.TryCatch(() => { EditMonthViewSunToolTips.Checked = Settings.MonthViewSunToolTips; });
+      SystemManager.TryCatch(() => { EditMonthViewSelectDaySingleClick.Checked = Settings.MonthViewSelectDaySingleClick; });
       SystemManager.TryCatch(() => { EditNavigateBottomColor.BackColor = Settings.NavigateBottomColor; });
       SystemManager.TryCatch(() => { EditNavigateMiddleColor.BackColor = Settings.NavigateMiddleColor; });
       SystemManager.TryCatch(() => { EditNavigateTopColor.BackColor = Settings.NavigateTopColor; });

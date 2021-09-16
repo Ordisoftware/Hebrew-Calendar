@@ -2609,5 +2609,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CelebrationVersesBoardFormClientSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewSelectDaySingleClick {
+            get {
+                return ((bool)(this["MonthViewSelectDaySingleClick"]));
+            }
+            set {
+                this["MonthViewSelectDaySingleClick"] = value;
+            }
+        }
     }
 }
