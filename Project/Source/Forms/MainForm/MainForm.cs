@@ -306,6 +306,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateOld = CurrentDay?.Date;
       bool calltimer = true;
       bool formEnabled = Enabled;
+      var formState = WindowState;
       ToolStrip.Enabled = false;
       try
       {
@@ -338,6 +339,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        WindowState = formState;
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         TimerReminder.Enabled = true;
