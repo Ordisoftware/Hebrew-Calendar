@@ -655,7 +655,7 @@
     <Setting Name="CelebrationVersesBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">384, 306</Value>
     </Setting>
-    <Setting Name="MonthViewSelectDaySingleClick" Type="System.Boolean" Scope="User">
+    <Setting Name="MonthViewSelectDayDoubleClick" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

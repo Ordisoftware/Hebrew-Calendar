@@ -2613,12 +2613,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MonthViewSelectDaySingleClick {
+        public bool MonthViewSelectDayDoubleClick {
             get {
-                return ((bool)(this["MonthViewSelectDaySingleClick"]));
+                return ((bool)(this["MonthViewSelectDayDoubleClick"]));
             }
             set {
-                this["MonthViewSelectDaySingleClick"] = value;
+                this["MonthViewSelectDayDoubleClick"] = value;
             }
         }
     }
