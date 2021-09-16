@@ -304,7 +304,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
-      bool calltimer = true;
       bool formEnabled = Enabled;
       var formState = WindowState;
       ToolStrip.Enabled = false;
@@ -325,9 +324,8 @@ namespace Ordisoftware.Hebrew.Calendar
           CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
           UpdateCalendarMonth(false);
           Thread.Sleep(1000);
-          ActionGenerate_Click(null, EventArgs.Empty);
+          ActionGenerate_Click(null, null);
           PanelViewMonth.Visible = true;
-          calltimer = false;
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
         CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
@@ -342,13 +340,13 @@ namespace Ordisoftware.Hebrew.Calendar
         WindowState = formState;
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
-        TimerReminder.Enabled = true;
-        EnableReminderTimer(calltimer);
         if ( dateOld == null )
           GoToDate(DateTime.Now.Date);
         else
           GoToDate(dateOld.Value);
         UpdateTitles(true);
+        TimerReminder.Enabled = true;
+        EnableReminderTimer();
       }
     }
 
@@ -1068,35 +1066,46 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
+      ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date.Date != CalendarMonth.CalendarDate.Date;
+      ContextMenuDayDatesDiff.Enabled = ContextMenuDaySelectDate.Enabled;
       if ( Settings.TorahEventsCountAsMoon )
       {
-        ContextMenuDayRise.Visible = !ContextMenuEventDay?.SunriseAsString.IsNullOrEmpty() ?? false;
-        ContextMenuDaySet.Visible = !ContextMenuEventDay?.SunsetAsString.IsNullOrEmpty() ?? false;
-        ContextMenuDayRise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
-        ContextMenuDaySet.Text = AppTranslations.Sunset.GetLang(ContextMenuEventDay?.SunsetAsString ?? "-");
+        ContextMenuDayMoonrise.Visible = false;
+        ContextMenuDayMoonset.Visible = false;
+        ContextMenuDaySunrise.Visible = !ContextMenuEventDay?.SunriseAsString.IsNullOrEmpty() ?? false;
+        ContextMenuDaySunset.Visible = !ContextMenuEventDay?.SunsetAsString.IsNullOrEmpty() ?? false;
+        ContextMenuDaySunrise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
+        ContextMenuDaySunset.Text = AppTranslations.Sunset.GetLang(ContextMenuEventDay?.SunsetAsString ?? "-");
       }
       else
       {
+        ContextMenuDaySunrise.Visible = false;
+        ContextMenuDaySunset.Visible = false;
         if ( ContextMenuEventDay.MoonriseOccuring == MoonriseOccuring.AfterSet )
         {
-          ContextMenuDayRise.Visible = ContextMenuEventDay.Moonset != null;
-          if ( ContextMenuDayRise.Visible )
-            ContextMenuDayRise.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
-          ContextMenuDaySet.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
-          if ( ContextMenuDaySet.Visible )
-            ContextMenuDaySet.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
+          ContextMenuDayMoonrise.Visible = ContextMenuEventDay.Moonset != null;
+          if ( ContextMenuDayMoonrise.Visible )
+            ContextMenuDayMoonrise.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
+          ContextMenuDayMoonset.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
+          if ( ContextMenuDayMoonset.Visible )
+            ContextMenuDayMoonset.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
+          ContextMenuDayMoonrise.ImageIndex = 3;
+          ContextMenuDayMoonset.ImageIndex = 2;
         }
         else
         {
-          ContextMenuDayRise.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
-          if ( ContextMenuDayRise.Visible )
-            ContextMenuDayRise.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
-          ContextMenuDaySet.Visible = ContextMenuEventDay.Moonset != null;
-          if ( ContextMenuDaySet.Visible )
-            ContextMenuDaySet.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
+          ContextMenuDayMoonrise.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
+          if ( ContextMenuDayMoonrise.Visible )
+            ContextMenuDayMoonrise.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
+          ContextMenuDayMoonset.Visible = ContextMenuEventDay.Moonset != null;
+          if ( ContextMenuDayMoonset.Visible )
+            ContextMenuDayMoonset.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
+          ContextMenuDayMoonrise.ImageIndex = 2;
+          ContextMenuDayMoonset.ImageIndex = 3;
         }
       }
-      ContextMenuDayTimesSeparator.Visible = ContextMenuDayRise.Visible || ContextMenuDaySet.Visible;
+      ContextMenuDayTimesSeparator.Visible = ContextMenuDaySunrise.Visible || ContextMenuDaySunset.Visible
+                                          || ContextMenuDayMoonrise.Visible || ContextMenuDayMoonset.Visible; ;
     }
 
     private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
@@ -1123,6 +1132,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDayDatesDiff_Click(object sender, EventArgs e)
     {
       DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(CalendarMonth.CalendarDate, ContextMenuEventDay.Date));
+    }
+
+    private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+    {
+      GoToDate(ContextMenuEventDay.Date);
     }
 
     #endregion

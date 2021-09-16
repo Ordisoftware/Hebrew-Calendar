@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -187,11 +187,14 @@
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
       this.TimerKillProcesses = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ContextMenuDayRise = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDaySet = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDaySunrise = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDaySunset = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayMoonrise = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayDatesDiff = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
@@ -199,6 +202,7 @@
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
+      this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -346,14 +350,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1400,11 +1404,14 @@
       // ContextMenuStripDay
       // 
       this.ContextMenuStripDay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuDayRise,
-            this.ContextMenuDaySet,
+            this.ContextMenuDaySunrise,
+            this.ContextMenuDaySunset,
+            this.ContextMenuDayMoonrise,
+            this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayNavigation,
             this.ContextMenuDayDatesDiff,
+            this.ContextMenuDaySelectDate,
             this.toolStripSeparator17,
             this.ContextMenuDayCelebrationVersesBoard,
             this.ContextMenuDayParashah});
@@ -1412,32 +1419,48 @@
       resources.ApplyResources(this.ContextMenuStripDay, "ContextMenuStripDay");
       this.ContextMenuStripDay.Opened += new System.EventHandler(this.ContextMenuStripDay_Opened);
       // 
-      // ContextMenuDayRise
+      // ContextMenuDaySunrise
       // 
-      this.ContextMenuDayRise.Name = "ContextMenuDayRise";
-      resources.ApplyResources(this.ContextMenuDayRise, "ContextMenuDayRise");
+      this.ContextMenuDaySunrise.Name = "ContextMenuDaySunrise";
+      resources.ApplyResources(this.ContextMenuDaySunrise, "ContextMenuDaySunrise");
       // 
-      // ContextMenuDaySet
+      // ContextMenuDaySunset
       // 
-      this.ContextMenuDaySet.Name = "ContextMenuDaySet";
-      resources.ApplyResources(this.ContextMenuDaySet, "ContextMenuDaySet");
+      this.ContextMenuDaySunset.Name = "ContextMenuDaySunset";
+      resources.ApplyResources(this.ContextMenuDaySunset, "ContextMenuDaySunset");
+      // 
+      // ContextMenuDayMoonrise
+      // 
+      this.ContextMenuDayMoonrise.Name = "ContextMenuDayMoonrise";
+      resources.ApplyResources(this.ContextMenuDayMoonrise, "ContextMenuDayMoonrise");
+      // 
+      // ContextMenuDayMoonset
+      // 
+      this.ContextMenuDayMoonset.Name = "ContextMenuDayMoonset";
+      resources.ApplyResources(this.ContextMenuDayMoonset, "ContextMenuDayMoonset");
       // 
       // ContextMenuDayTimesSeparator
       // 
       this.ContextMenuDayTimesSeparator.Name = "ContextMenuDayTimesSeparator";
       resources.ApplyResources(this.ContextMenuDayTimesSeparator, "ContextMenuDayTimesSeparator");
       // 
-      // ContextMenuDayNavigation
+      // ContextMenuDaySelectDate
       // 
-      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
-      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
-      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
+      resources.ApplyResources(this.ContextMenuDaySelectDate, "ContextMenuDaySelectDate");
+      this.ContextMenuDaySelectDate.Name = "ContextMenuDaySelectDate";
+      this.ContextMenuDaySelectDate.Click += new System.EventHandler(this.ContextMenuDaySelect_Click);
       // 
       // ContextMenuDayDatesDiff
       // 
       resources.ApplyResources(this.ContextMenuDayDatesDiff, "ContextMenuDayDatesDiff");
       this.ContextMenuDayDatesDiff.Name = "ContextMenuDayDatesDiff";
       this.ContextMenuDayDatesDiff.Click += new System.EventHandler(this.ContextMenuDayDatesDiff_Click);
+      // 
+      // ContextMenuDayNavigation
+      // 
+      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
+      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
+      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
       // 
       // toolStripSeparator17
       // 
@@ -1480,6 +1503,15 @@
       // 
       resources.ApplyResources(this.ContextMenuDayParashahRead, "ContextMenuDayParashahRead");
       this.ContextMenuDayParashahRead.Name = "ContextMenuDayParashahRead";
+      // 
+      // ImageListRisesAndSets
+      // 
+      this.ImageListRisesAndSets.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageListRisesAndSets.ImageStream")));
+      this.ImageListRisesAndSets.TransparentColor = System.Drawing.Color.Transparent;
+      this.ImageListRisesAndSets.Images.SetKeyName(0, "316109_sunrise_icon16.png");
+      this.ImageListRisesAndSets.Images.SetKeyName(1, "316110_sunset_icon16.png");
+      this.ImageListRisesAndSets.Images.SetKeyName(2, "316121_moonrise_icon16.png");
+      this.ImageListRisesAndSets.Images.SetKeyName(3, "316122_moonset_icon16.png");
       // 
       // MainForm
       // 
@@ -1678,8 +1710,8 @@
     internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripDay;
-    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayRise;
-    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySet;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayMoonrise;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayMoonset;
     private System.Windows.Forms.ToolStripSeparator ContextMenuDayTimesSeparator;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayCelebrationVersesBoard;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashah;
@@ -1690,6 +1722,10 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayNavigation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiff;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySelectDate;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunrise;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunset;
+    private System.Windows.Forms.ImageList ImageListRisesAndSets;
   }
 }
 

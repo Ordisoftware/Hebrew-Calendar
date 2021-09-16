@@ -48,6 +48,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Interlocks.Take();
       SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
       Text = Globals.AssemblyTitle;
+      ContextMenuStripDay.ImageList = ImageListRisesAndSets;
+      ContextMenuDaySunrise.ImageIndex = 1;
+      ContextMenuDaySunset.ImageIndex = 1;
       ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
       SystemEvents.SessionEnding += SessionEnding;
       SystemEvents.PowerModeChanged += PowerModeChanged;
