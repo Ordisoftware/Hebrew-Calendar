@@ -92,7 +92,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindChavouotDiet" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -113,7 +113,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ReminderShabatEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

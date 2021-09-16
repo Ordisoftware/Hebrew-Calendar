@@ -306,6 +306,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var dateOld = CurrentDay?.Date;
       bool calltimer = true;
       bool formEnabled = Enabled;
+      var formState = WindowState;
       ToolStrip.Enabled = false;
       try
       {
@@ -338,6 +339,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        WindowState = formState;
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         TimerReminder.Enabled = true;
@@ -1048,10 +1050,14 @@ namespace Ordisoftware.Hebrew.Calendar
       var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
       if ( dayRow == null ) return;
       bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
-      GoToDate(dayRow.Date);
-      ContextMenuEventDay = dayRow;
+      if ( e.Button == MouseButtons.Left )
+        GoToDate(dayRow.Date);
+      else
       if ( showContextMenu && e.Button == MouseButtons.Right )
+      {
+        ContextMenuEventDay = dayRow;
         ContextMenuStripDay.Show(Cursor.Position);
+      }
     }
 
     private LunisolarDay ContextMenuEventDay;
@@ -1109,6 +1115,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
     {
       ActionNavigate.PerformClick();
+    }
+
+    private void ContextMenuDayDatesDiff_Click(object sender, EventArgs e)
+    {
+      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(CalendarMonth.CalendarDate, ContextMenuEventDay.Date));
     }
 
     #endregion

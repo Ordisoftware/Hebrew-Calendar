@@ -3310,19 +3310,19 @@
     <value>433, 90</value>
   </metadata>
   <data name="ContextMenuDayRise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ContextMenuDayRise.Text" xml:space="preserve">
     <value>Sunrise</value>
   </data>
   <data name="ContextMenuDaySet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ContextMenuDaySet.Text" xml:space="preserve">
     <value>Sunset</value>
   </data>
   <data name="ContextMenuDayTimesSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 6</value>
+    <value>211, 6</value>
   </data>
   <data name="ContextMenuDayNavigation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3370,13 +3370,35 @@
 </value>
   </data>
   <data name="ContextMenuDayNavigation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
   </data>
+  <data name="ContextMenuDayDatesDiff.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
+        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
+        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
+        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
+        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
+        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
+        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
+        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayDatesDiff.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayDatesDiff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="ContextMenuDayDatesDiff.Text" xml:space="preserve">
+    <value>Dates difference calculator</value>
+  </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 6</value>
+    <value>211, 6</value>
   </data>
   <data name="ContextMenuDayParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3397,7 +3419,7 @@
     <value />
   </data>
   <data name="ContextMenuDayParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ContextMenuDayParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
@@ -3420,13 +3442,13 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="ContextMenuDayCelebrationVersesBoard.Text" xml:space="preserve">
     <value>Celebration verses board</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 148</value>
+    <value>215, 170</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -4374,6 +4396,12 @@
     <value>ContextMenuDayCelebrationVersesBoard</value>
   </data>
   <data name="&gt;&gt;ContextMenuDayCelebrationVersesBoard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayDatesDiff.Name" xml:space="preserve">
+    <value>ContextMenuDayDatesDiff</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayDatesDiff.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -63,8 +63,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 9.0**
 
-- Added context menu for days in the visual month view.
-- Added celebration verses board.
+- Added select day on click in the visual month view.
+- Added day context menu for in the visual month view.
+- Added celebration verses board and command-line option.
+- Changed month view to show sun times instead of moon when using sun omer.
 - Some fixes and improvements.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -302,14 +304,13 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.19 - Version 9.0
 
-- Add context menu for days in the visual month view to show sun or moon times and to study parashah and celebrations.
-- Add click on a visual month day to change the selected day.
-- Add rectangle around the selected day in visual month.
+- Add select day on click in the visual month view.
+- Add day context menu for in the visual month view.
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
 - Add link in reminder box to open verses board.
 - Add Tools folder in the application's system start menu.
-- Change visual month view to show sun times instead of moon when using sun omer.
+- Change month view to show sun times instead of moon when using sun omer.
 - Remove option to show sun times as tooltips because of the new context menu.
 - Some fixes and improvements.
 - Code refactoring.

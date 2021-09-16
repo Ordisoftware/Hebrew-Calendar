@@ -41,12 +41,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.0"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added celebration verses board." + Globals.NL +
-                          "• Added a command-line option for this board." + Globals.NL +
+          [Language.EN] = "• Added select day on click in the visual month view." + Globals.NL +
+                          "• Added day context menu for in the visual month view." + Globals.NL +
+                          "• Added celebration verses board." + Globals.NL +
+                          "• Added command-line option for this board." + Globals.NL +
+                          "• Changed month view to show sun times instead of moon when using sun omer." + Globals.NL +
                           "• Some fixes and improvements.",
 
-          [Language.FR] = "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
+          [Language.FR] = "• Ajout de la sélection d'un jour dans le calendrier visual du mois." + Globals.NL +
+                          "• Ajout d'un menu contextuel des jours du calendrier visual du mois." + Globals.NL +
+                          "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
                           "• Ajout d'une option de ligne de commande pour ce tableau." + Globals.NL +
+                          "• La vue par mois est changée pour afficher les heures du soleil au lieu de la lune en cas de omer du soleil." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 

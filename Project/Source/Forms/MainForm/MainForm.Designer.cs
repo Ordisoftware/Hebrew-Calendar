@@ -198,6 +198,7 @@
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayDatesDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1402,6 +1403,7 @@
             this.ContextMenuDaySet,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayNavigation,
+            this.ContextMenuDayDatesDiff,
             this.toolStripSeparator17,
             this.ContextMenuDayParashah,
             this.ContextMenuDayCelebrationVersesBoard});
@@ -1471,6 +1473,12 @@
       resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
       this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
       this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
+      // 
+      // ContextMenuDayDatesDiff
+      // 
+      resources.ApplyResources(this.ContextMenuDayDatesDiff, "ContextMenuDayDatesDiff");
+      this.ContextMenuDayDatesDiff.Name = "ContextMenuDayDatesDiff";
+      this.ContextMenuDayDatesDiff.Click += new System.EventHandler(this.ContextMenuDayDatesDiff_Click);
       // 
       // MainForm
       // 
@@ -1680,6 +1688,7 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahRead;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayNavigation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiff;
   }
 }
 
