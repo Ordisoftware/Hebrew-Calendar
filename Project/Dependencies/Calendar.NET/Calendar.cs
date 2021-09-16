@@ -1027,7 +1027,7 @@ namespace CodeProjectCalendar.NET
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                 if ( Program.Settings.UseColors )
                 {
-                  if ( _calendarDate.Day == counter1 )
+                  if ( _calendarDate.Day != counter1 )
                   {
                     g.FillRectangle(new SolidBrush(BackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
                     g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
