@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -189,15 +189,15 @@
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ContextMenuDayRise = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDaySet = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -344,14 +344,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1400,14 +1400,14 @@
       this.ContextMenuStripDay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuDayRise,
             this.ContextMenuDaySet,
-            this.toolStripSeparator15,
+            this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayNavigation,
             this.toolStripSeparator17,
             this.ContextMenuDayParashah,
             this.ContextMenuDayCelebrationVersesBoard});
       this.ContextMenuStripDay.Name = "ContextMenuStripDay";
       resources.ApplyResources(this.ContextMenuStripDay, "ContextMenuStripDay");
-      this.ContextMenuStripDay.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripDay_Opening);
+      this.ContextMenuStripDay.Opened += new System.EventHandler(this.ContextMenuStripDay_Opened);
       // 
       // ContextMenuDayRise
       // 
@@ -1419,10 +1419,21 @@
       this.ContextMenuDaySet.Name = "ContextMenuDaySet";
       resources.ApplyResources(this.ContextMenuDaySet, "ContextMenuDaySet");
       // 
-      // toolStripSeparator15
+      // ContextMenuDayTimesSeparator
       // 
-      this.toolStripSeparator15.Name = "toolStripSeparator15";
-      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
+      this.ContextMenuDayTimesSeparator.Name = "ContextMenuDayTimesSeparator";
+      resources.ApplyResources(this.ContextMenuDayTimesSeparator, "ContextMenuDayTimesSeparator");
+      // 
+      // ContextMenuDayNavigation
+      // 
+      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
+      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
+      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
+      // 
+      // toolStripSeparator17
+      // 
+      this.toolStripSeparator17.Name = "toolStripSeparator17";
+      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
       // 
       // ContextMenuDayParashah
       // 
@@ -1460,17 +1471,6 @@
       resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
       this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
       this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
-      // 
-      // ContextMenuDayNavigation
-      // 
-      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
-      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
-      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
-      // 
-      // toolStripSeparator17
-      // 
-      this.toolStripSeparator17.Name = "toolStripSeparator17";
-      resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
       // 
       // MainForm
       // 
@@ -1671,7 +1671,7 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripDay;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayRise;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySet;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+    private System.Windows.Forms.ToolStripSeparator ContextMenuDayTimesSeparator;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayCelebrationVersesBoard;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashah;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahShowDescription;

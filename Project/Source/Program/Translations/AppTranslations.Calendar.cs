@@ -27,29 +27,29 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary Sunrise
       = new TranslationsDictionary
       {
-        [Language.EN] = "Sunrise {0}",
-        [Language.FR] = "Lever du soleil {0}"
+        [Language.EN] = "{0} Sunrise",
+        [Language.FR] = "{0} Lever du soleil"
       };
 
     static public readonly TranslationsDictionary Sunset
       = new TranslationsDictionary
       {
-        [Language.EN] = "Sunset {0}",
-        [Language.FR] = "Coucher du soleil {0}"
+        [Language.EN] = "{0} Sunset",
+        [Language.FR] = "{0} Coucher du soleil"
       };
 
     static public readonly TranslationsDictionary Moonrise
       = new TranslationsDictionary
       {
-        [Language.EN] = "Moonrise {0}",
-        [Language.FR] = "Lever de la lune {0}"
+        [Language.EN] = "{0} Moonrise",
+        [Language.FR] = "{0} Lever de la lune"
       };
 
     static public readonly TranslationsDictionary Moonset
       = new TranslationsDictionary
       {
-        [Language.EN] = "Moonset: {0}",
-        [Language.FR] = "Coucher de la lune : {0}"
+        [Language.EN] = "{0} Moonset",
+        [Language.FR] = "{0} Coucher de la lune"
       };
 
     static public readonly TranslationsDictionary Today
