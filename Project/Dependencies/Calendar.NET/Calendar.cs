@@ -996,25 +996,38 @@ namespace CodeProjectCalendar.NET
             if ( first == false )
             {
               first = true;
+              string strCounter1 = monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture);
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
-                //ORDISOFTWARE MODIF BEGIN
+                //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
                 if ( Program.Settings.UseColors )
                 {
-                  string strCounter1 = monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture);
                   SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
-                  g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
-                  g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                  if ( _calendarDate.Day != counter1 )
+                  {
+                    g.FillRectangle(new SolidBrush(BackColor), xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                    g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width - 0, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, brushDayBack, xStart + 5, yStart + 2);
+                  }
+                  else
+                  {
+                    g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                  }
                 }
                 else
-                  g.DrawString(_calendarDate.ToString("MMM") + " " + counter1.ToString(CultureInfo.InvariantCulture), _todayFont, BrushText, xStart + 5, yStart + 2);
+                  g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
-                //ORDISOFTWARE MODIF BEGIN FIRST DAY
-                var font = _calendarDate.Day != counter1 ? _daysFont : new Font(_daysFont.FontFamily, _daysFont.Size, FontStyle.Underline);
-                g.DrawString(monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture), font, BrushText, xStart + 5, yStart + 2);
+                //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH
+                if ( _calendarDate.Day == counter1 )
+                {
+                  SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
+                  g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                }
+                g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
             }
