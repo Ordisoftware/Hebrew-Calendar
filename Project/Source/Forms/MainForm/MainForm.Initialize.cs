@@ -513,10 +513,7 @@ namespace Ordisoftware.Hebrew.Calendar
           = new SolidBrush(Color.FromArgb((int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.R * 0.92 ),
                                           (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.G * 0.92 ),
                                           (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.B * 0.92 )));
-        CalenderNet.PenBrushBlack = new Pen(CalenderNet.BrushBlack)
-        {
-          DashStyle = System.Drawing.Drawing2D.DashStyle.Dash
-        };
+        CalenderNet.PenBlack = new Pen(CalenderNet.BrushBlack);
       }
       else
       {
@@ -534,10 +531,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalenderNet.BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
         CalenderNet.BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
         CalenderNet.BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
-        CalenderNet.PenBrushBlack = new Pen(CalenderNet.BrushBlack)
-        {
-          DashStyle = System.Drawing.Drawing2D.DashStyle.Dash
-        };
+        CalenderNet.PenBlack = new Pen(CalenderNet.BrushBlack);
       }
       string fontname = "Calibri";
       CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
