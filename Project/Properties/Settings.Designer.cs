@@ -2648,7 +2648,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkGray")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
         public global::System.Drawing.Color CalendarColorMouseTracking {
             get {
                 return ((global::System.Drawing.Color)(this["CalendarColorMouseTracking"]));
