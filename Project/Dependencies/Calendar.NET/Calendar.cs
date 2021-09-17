@@ -83,10 +83,10 @@ namespace CodeProjectCalendar.NET
     static public Pen PenText = Pens.Black;
     static public Pen PenTextReduced = Pens.DarkGray;
     static public Brush BrushText = Brushes.Black;
-    static public SolidBrush BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
     static public SolidBrush BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
     static public SolidBrush BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
-    static public Pen PenBrushBlack = new Pen(BrushBlack) { DashStyle = DashStyle.Dash };
+    static public SolidBrush BrushBlack = new SolidBrush(Color.Black);
+    static public Pen PenBlack = new Pen(Color.Black); // { DashStyle = DashStyle.Dash };
     // ORDISOFTWARE MODIF END
 
     /// <summary>
@@ -985,7 +985,7 @@ namespace CodeProjectCalendar.NET
               if ( Program.Settings.UseColors )
               {
                 var brush = MainForm.Instance.GetDayBrush(counter1, _calendarDate.Month, _calendarDate.Year);
-                if ( brush != Brushes.Transparent )
+                if ( brush != null && brush != Brushes.Transparent )
                   g.FillRectangle(brush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
               }
             // ORDISOFTWARE MODIF END
@@ -1008,12 +1008,16 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( _calendarDate.Day != counter1 )
                   {
+                    var pen = Program.Settings.UseColors
+                              ? SelectedDayPen
+                              : PenBlack;
                     g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
                   {
+                    isselected = true;
                     g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                   }
@@ -1023,9 +1027,14 @@ namespace CodeProjectCalendar.NET
                   if ( _calendarDate.Day == counter1 )
                   {
                     isselected = true;
-                    g.DrawRectangle(Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
                   }
-                  g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                  else
+                  {
+                    g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                  }
                 }
                 //ORDISOFTWARE MODIF END
               }
@@ -1035,8 +1044,12 @@ namespace CodeProjectCalendar.NET
                 if ( _calendarDate.Day == counter1 )
                 {
                   isselected = true;
+                  isselectednotoday = true;
                   SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
-                  g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                  var pen = Program.Settings.UseColors
+                            ? Program.Settings.SelectedDayBoxColorOnlyCurrent ? PenText : SelectedDayPen
+                            : PenBlack;
+                  g.DrawRectangle(pen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
                 }
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1074,7 +1087,7 @@ namespace CodeProjectCalendar.NET
                   }
                   else
                   {
-                    g.DrawRectangle(Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                   }
                 }
@@ -1091,7 +1104,7 @@ namespace CodeProjectCalendar.NET
                   isselectednotoday = true;
                   var pen = Program.Settings.UseColors
                             ? Program.Settings.SelectedDayBoxColorOnlyCurrent ? PenText : SelectedDayPen
-                            : Pens.Black;
+                            : PenBlack;
                   g.DrawRectangle(pen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
                 }
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
@@ -1169,9 +1182,9 @@ namespace CodeProjectCalendar.NET
             {
               var pen = Program.Settings.UseColors
                         ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
-                          ? PenText 
+                          ? PenText
                           : SelectedDayPen
-                        : Pens.Black;
+                        : PenBlack;
               g.DrawRectangle(pen, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
               isselected = false;
               isselectednotoday = false;
@@ -1275,7 +1288,7 @@ namespace CodeProjectCalendar.NET
             g.FillRectangle(new SolidBrush(alphaColor), point.X + 2, pointYoffsetY, cellWidth - 3, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-              g.DrawRectangle(PenBrushBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
+              g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
             g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
