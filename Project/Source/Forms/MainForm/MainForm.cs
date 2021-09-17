@@ -305,7 +305,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Enabled;
-      //var formState = WindowState;
       ToolStrip.Enabled = false;
       try
       {
@@ -320,8 +319,8 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
-          CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
-          CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
+          CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
+          CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
           Thread.Sleep(1000);
           ActionGenerate_Click(null, null);
@@ -346,7 +345,6 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateTitles(true);
         TimerReminder.Enabled = true;
         EnableReminderTimer();
-        //WindowState = formState;
       }
     }
 
@@ -1065,6 +1063,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
+      var date = Program.Settings.TorahEventsCountAsMoon
+             ? ContextMenuEventDay.Moonrise ?? ContextMenuEventDay.Date
+             : ContextMenuEventDay.Sunrise ?? ContextMenuEventDay.Date;
+      var rowDay = ApplicationDatabase.Instance.GetDay(date);
+      ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
+      if ( Settings.MainFormTitleBarShowWeeklyParashah )
+      {
+        var parashah = ParashotFactory.Instance.Get(rowDay.GetParashahReadingDay()?.ParashahID);
+        if ( parashah != null )
+          ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
+      }
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date.Date != CalendarMonth.CalendarDate.Date;
       ContextMenuDayDatesDiff.Enabled = ContextMenuDaySelectDate.Enabled;

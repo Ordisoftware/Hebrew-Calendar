@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-06 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -24,14 +24,14 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
-    private Color[,,] DayColors;
+    private Brush[,,] DayBrushes;
 
-    public Color GetDayColor(int counter, int month, int year)
+    public Brush GetDayBrush(int counter, int month, int year)
     {
       int indexYear = YearLast - year;
-      return indexYear < 0 || indexYear > DayColors.GetUpperBound(0)
-             ? Color.Transparent
-             : DayColors[indexYear, month, counter];
+      return indexYear < 0 || indexYear > DayBrushes.GetUpperBound(0)
+             ? Brushes.Transparent
+             : DayBrushes[indexYear, month, counter];
     }
 
     static public Color MixColor(Color c1, Color c2)
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
         if ( LunisolarDays.Count == 0 ) return;
-        DayColors = new Color[YearsInterval, 13, 35];
+        DayBrushes = new Brush[YearsInterval, 13, 35];
         LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
                                         LunisolarDays.Count,
                                         Program.LoadingFormLoadDB);
@@ -136,7 +136,7 @@ namespace Ordisoftware.Hebrew.Calendar
             else
             if ( color1 == null )
               color1 = Settings.MonthViewBackColor;
-            DayColors[YearLast - date.Year, date.Month, date.Day] = color1.Value;
+            DayBrushes[YearLast - date.Year, date.Month, date.Day] = new SolidBrush(color1.Value);
             if ( IsCelebrationWeekEnd )
               IsCelebrationWeekStart = false;
             int rank = 0;
@@ -208,7 +208,7 @@ namespace Ordisoftware.Hebrew.Calendar
               // TODO remove item.TooltipEnabled = true;
               // TODO remove item.ToolTipText = strToolTip;
               if ( Settings.UseColors )
-                item.EventColor = GetDayColor(item.Date.Day, item.Date.Month, item.Date.Year);
+                item.EventColor = ( (SolidBrush)GetDayBrush(item.Date.Day, item.Date.Month, item.Date.Year) ).Color;
               CalendarMonth.AddEvent(item);
             }
           }

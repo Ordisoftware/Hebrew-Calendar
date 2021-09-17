@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       EditCurrentDayForeColor.BackColor = Color.White;
       EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditSelectedDayColor.BackColor = Color.FromArgb(200, 0, 0);
       EditCalendarColorParashah.BackColor = Color.Indigo;
       EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
       EditCalendarColorSeason.BackColor = Color.DarkGreen;
@@ -54,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       EditCurrentDayForeColor.BackColor = Color.White;
       EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditSelectedDayColor.BackColor = Color.FromArgb(200, 0, 0);
       EditCalendarColorParashah.BackColor = Color.Plum;
       EditCalendarColorTorahEvent.BackColor = Color.FromArgb(250, 190, 255);
       EditCalendarColorSeason.BackColor = Color.FromArgb(128, 255, 128);

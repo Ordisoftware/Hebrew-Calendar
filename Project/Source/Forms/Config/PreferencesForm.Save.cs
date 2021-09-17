@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CheckUpdateAtStartup = EditCheckUpdateAtStartup.Checked;
       Settings.CurrentDayBackColor = EditCurrentDayBackColor.BackColor;
       Settings.CurrentDayForeColor = EditCurrentDayForeColor.BackColor;
+      Settings.SelectedDayColor = EditSelectedDayColor.BackColor;
       Settings.EventColorMonth = EditEventColorMonth.BackColor;
       Settings.EventColorNext = EditEventColorNext.BackColor;
       Settings.EventColorSeason = EditEventColorSeason.BackColor;

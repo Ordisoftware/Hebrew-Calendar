@@ -2621,5 +2621,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["MonthViewSelectDayDoubleClick"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200, 0, 0")]
+        public global::System.Drawing.Color SelectedDayColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SelectedDayColor"]));
+            }
+            set {
+                this["SelectedDayColor"] = value;
+            }
+        }
     }
 }

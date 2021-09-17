@@ -75,8 +75,9 @@ namespace CodeProjectCalendar.NET
     private const int MarginSize = 5;
     internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
 
-    static public Color CurrentDayForeColor = Color.White;
-    static public Color CurrentDayBackColor = Color.Red;
+    static public SolidBrush CurrentDayForeBrush = new SolidBrush(Color.White);
+    static public SolidBrush CurrentDayBackBrush = new SolidBrush(Color.FromArgb(200, 0, 0));
+    static public Pen SelectedDayPen = new Pen(Color.FromArgb(200, 0, 0));
     static public Color ColorText = Color.Black;
     static public Pen PenText = Pens.Black;
     static public Pen PenTextReduced = Pens.DarkGray;
@@ -923,8 +924,6 @@ namespace CodeProjectCalendar.NET
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;
-      var brushDayFore = new SolidBrush(CurrentDayForeColor);
-      var brushDayBack = new SolidBrush(CurrentDayBackColor);
       _calendarDays.Clear();
       _calendarEvents.Clear();
       var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
@@ -954,7 +953,7 @@ namespace CodeProjectCalendar.NET
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
-      var currentdaypen = new Pen(brushDayBack); //BrushText
+      var backbrush = new SolidBrush(BackColor);
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -981,9 +980,9 @@ namespace CodeProjectCalendar.NET
             if ( MainForm.Instance != null )
               if ( Program.Settings.UseColors )
               {
-                var color = MainForm.Instance.GetDayColor(counter1, _calendarDate.Month, _calendarDate.Year);
-                if ( color != Color.Transparent )
-                  g.FillRectangle(new SolidBrush(color), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+                var brush = MainForm.Instance.GetDayBrush(counter1, _calendarDate.Month, _calendarDate.Year);
+                if ( brush != Brushes.Transparent )
+                  g.FillRectangle(brush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
               }
             // ORDISOFTWARE MODIF END
 
@@ -1005,20 +1004,20 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( _calendarDate.Day != counter1 )
                   {
-                    g.FillRectangle(new SolidBrush(BackColor), xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, brushDayBack, xStart + 5, yStart + 2);
+                    g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
                   {
-                    g.FillRectangle(brushDayBack, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                    g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                   }
                 }
                 else
                 {
                   if ( _calendarDate.Day == counter1 )
-                    g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                   g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                 }
                 //ORDISOFTWARE MODIF END
@@ -1029,7 +1028,7 @@ namespace CodeProjectCalendar.NET
                 if ( _calendarDate.Day == counter1 )
                 {
                   SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
-                  g.DrawRectangle(currentdaypen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                  g.DrawRectangle(SelectedDayPen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
                 }
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1046,20 +1045,20 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( _calendarDate.Day != counter1 )
                   {
-                    g.FillRectangle(new SolidBrush(BackColor), xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, brushDayBack, xStart + 5, yStart + 2);
+                    g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
                   {
-                    g.FillRectangle(brushDayBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, brushDayFore, xStart + 5, yStart + 2);
+                    g.FillRectangle(CurrentDayBackBrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                   }
                 }
                 else
                 {
                   if ( _calendarDate.Day == counter1 )
-                    g.DrawRectangle(currentdaypen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                   g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                 }
                 //ORDISOFTWARE MODIF END
@@ -1070,7 +1069,7 @@ namespace CodeProjectCalendar.NET
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
                 if ( _calendarDate.Day == counter1 )
-                  g.DrawRectangle(currentdaypen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                  g.DrawRectangle(SelectedDayPen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }

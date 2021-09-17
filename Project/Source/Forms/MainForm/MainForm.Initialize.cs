@@ -493,8 +493,9 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
         CalendarMonth.ForeColor = Settings.MonthViewTextColor;
         CalendarMonth.BackColor = Settings.MonthViewBackColor;
-        CalenderNet.CurrentDayForeColor = Settings.CurrentDayForeColor;
-        CalenderNet.CurrentDayBackColor = Settings.CurrentDayBackColor;
+        CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
+        CalenderNet.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
+        CalenderNet.SelectedDayPen = new Pen(Settings.SelectedDayColor);
         CalenderNet.ColorText = Settings.MonthViewTextColor;
         CalenderNet.PenText = new Pen(Settings.MonthViewTextColor);
         CalenderNet.PenTextReduced
@@ -522,10 +523,8 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;
-        CalenderNet.CurrentDayForeColor = Color.White;
-        CalenderNet.CurrentDayBackColor = Color.Black;
-        CalenderNet.CurrentDayForeColor = Color.White;
-        CalenderNet.CurrentDayBackColor = Color.Red;
+        CalenderNet.CurrentDayForeBrush = new SolidBrush(Color.White);
+        CalenderNet.CurrentDayBackBrush = new SolidBrush(Color.Black);
         CalenderNet.ColorText = Color.Black;
         CalenderNet.PenText = Pens.Black;
         CalenderNet.PenTextReduced = Pens.DarkGray;
