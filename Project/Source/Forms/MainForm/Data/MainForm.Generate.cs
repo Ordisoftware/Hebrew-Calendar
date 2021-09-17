@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -96,10 +96,14 @@ namespace Ordisoftware.Hebrew.Calendar
           UpdateButtons();
           if ( e != null )
           {
+            DateSelected = DateTime.Today;
             GoToDate(DateTime.Today);
             TimerReminder.Enabled = true;
             TimerReminder_Tick(null, null);
           }
+          else
+          if ( DateSelected < DateFirst || DateSelected > DateLast )
+            DateSelected = DateTime.Today;
         }
       }
       catch ( Exception ex )

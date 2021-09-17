@@ -958,7 +958,13 @@ namespace CodeProjectCalendar.NET
       var outofmonth = false;
       var isselected = false;
       var isselectednotoday = false;
+      int selectedday = MainForm.Instance.DateSelected.Day; //_calendarDate.Day;
+      int selectedmonth = MainForm.Instance.DateSelected.Month;
+      int selectedyear = MainForm.Instance.DateSelected.Year;
       // ORDISOFWTARE MODIF END
+
+      bool CheckSelected(int day)
+        => day == selectedday && _calendarDate.Month == selectedmonth && _calendarDate.Year == selectedyear;
 
       yStart += headerSpacing + controlsSpacing;
 
@@ -1006,7 +1012,7 @@ namespace CodeProjectCalendar.NET
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                 if ( Program.Settings.UseColors )
                 {
-                  if ( _calendarDate.Day != counter1 )
+                  if ( !CheckSelected(counter1) )
                   {
                     var pen = Program.Settings.UseColors
                               ? SelectedDayPen
@@ -1024,7 +1030,7 @@ namespace CodeProjectCalendar.NET
                 }
                 else
                 {
-                  if ( _calendarDate.Day == counter1 )
+                  if ( CheckSelected(counter1) )
                   {
                     isselected = true;
                     g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
@@ -1041,7 +1047,7 @@ namespace CodeProjectCalendar.NET
               else
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH
-                if ( _calendarDate.Day == counter1 )
+                if ( CheckSelected(counter1) )
                 {
                   isselected = true;
                   isselectednotoday = true;
@@ -1064,7 +1070,7 @@ namespace CodeProjectCalendar.NET
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                 if ( Program.Settings.UseColors )
                 {
-                  if ( _calendarDate.Day != counter1 )
+                  if ( !CheckSelected(counter1) )
                   {
                     g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
@@ -1079,7 +1085,7 @@ namespace CodeProjectCalendar.NET
                 }
                 else
                 {
-                  if ( _calendarDate.Day == counter1 )
+                  if ( CheckSelected(counter1) )
                   {
                     isselected = true;
                     g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
@@ -1098,7 +1104,7 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN OTHER DAYS
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
-                if ( _calendarDate.Day == counter1 )
+                if ( CheckSelected(counter1) )
                 {
                   isselected = true;
                   isselectednotoday = true;
@@ -1186,19 +1192,26 @@ namespace CodeProjectCalendar.NET
                           : SelectedDayPen
                         : PenBlack;
               g.DrawRectangle(pen, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
-              isselected = false;
               isselectednotoday = false;
             }
             else
-            if ( Program.Settings.CalendarUseMouseTracking )
             {
               var area = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
-              var mouse = PointToClient(Cursor.Position);
-              bool isMouseHover = area.Contains(mouse.X, mouse.Y);
-              if ( isselected || ( isMouseHover && !outofmonth ) )
-                g.DrawRectangle(MouseTrackingPen, area);
-              outofmonth = false;
+              if ( Program.Settings.CalendarUseMouseTracking )
+              {
+                var mouse = PointToClient(Cursor.Position);
+                bool isMouseHover = area.Contains(mouse.X, mouse.Y);
+                if ( isselected || ( isMouseHover && !outofmonth ) )
+                  g.DrawRectangle(MouseTrackingPen, area);
+              }
             }
+          if ( !isselected && !outofmonth )
+            if ( counter1 - 1 == _calendarDate.Day )
+            {
+              g.DrawRectangle(MouseTrackingPen, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+            }
+          isselected = false;
+          outofmonth = false;
           // ORDISOFWTARE MODIF END
 
           xStart += cellWidth;

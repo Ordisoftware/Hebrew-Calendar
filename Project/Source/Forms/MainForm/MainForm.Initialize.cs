@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
                                                                true, false, 410, 750, false, false);
         Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(15, 10, 10, 10);
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(10, 5, 5, 0);
         Globals.IsReady = true;
         SetGlobalHotKey();
         TimerUpdateTitles.Start();
@@ -156,7 +156,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
-      this.ForceBringToFront();// Popup();
+      this.ForceBringToFront();
       if ( Settings.StartupHide || Globals.ForceStartupHide )
         MenuShowHide.PerformClick();
       SystemManager.TryCatch(() =>

@@ -617,4 +617,13 @@
   <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
     <value>Tableau des parashot</value>
   </data>
+  <data name="ContextMenuDayGoToSelected.Text" xml:space="preserve">
+    <value>Aller au jour sélectionné</value>
+  </data>
+  <data name="ContextMenuDayGoToToday.Text" xml:space="preserve">
+    <value>Aller à aujourd'hui</value>
+  </data>
+  <data name="ContextMenuDayClearSelection.Text" xml:space="preserve">
+    <value>Enlever la sélection</value>
+  </data>
 </root>
