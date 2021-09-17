@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -195,7 +195,8 @@
       this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayDatesDiff = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayDatesDiffToToday = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayDatesDiffToSelected = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -352,14 +353,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1414,7 +1415,8 @@
             this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDaySelectDate,
-            this.ContextMenuDayDatesDiff,
+            this.ContextMenuDayDatesDiffToToday,
+            this.ContextMenuDayDatesDiffToSelected,
             this.ContextMenuDayNavigation,
             this.toolStripSeparator17,
             this.ContextMenuDayCelebrationVersesBoard,
@@ -1465,11 +1467,17 @@
       this.ContextMenuDaySelectDate.Name = "ContextMenuDaySelectDate";
       this.ContextMenuDaySelectDate.Click += new System.EventHandler(this.ContextMenuDaySelect_Click);
       // 
-      // ContextMenuDayDatesDiff
+      // ContextMenuDayDatesDiffToToday
       // 
-      resources.ApplyResources(this.ContextMenuDayDatesDiff, "ContextMenuDayDatesDiff");
-      this.ContextMenuDayDatesDiff.Name = "ContextMenuDayDatesDiff";
-      this.ContextMenuDayDatesDiff.Click += new System.EventHandler(this.ContextMenuDayDatesDiff_Click);
+      resources.ApplyResources(this.ContextMenuDayDatesDiffToToday, "ContextMenuDayDatesDiffToToday");
+      this.ContextMenuDayDatesDiffToToday.Name = "ContextMenuDayDatesDiffToToday";
+      this.ContextMenuDayDatesDiffToToday.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToToday_Click);
+      // 
+      // ContextMenuDayDatesDiffToSelected
+      // 
+      resources.ApplyResources(this.ContextMenuDayDatesDiffToSelected, "ContextMenuDayDatesDiffToSelected");
+      this.ContextMenuDayDatesDiffToSelected.Name = "ContextMenuDayDatesDiffToSelected";
+      this.ContextMenuDayDatesDiffToSelected.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToSelected_Click);
       // 
       // ContextMenuDayNavigation
       // 
@@ -1736,13 +1744,14 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahRead;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayNavigation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiff;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiffToSelected;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySelectDate;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunrise;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunset;
     private System.Windows.Forms.ImageList ImageListRisesAndSets;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayDate;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiffToToday;
   }
 }
 

@@ -32,15 +32,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new DatesDiffCalculatorForm();
     }
 
-    static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false)
+    static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
     {
       if ( dates != null )
       {
-        Instance.MonthCalendar1.SelectionStart = dates.Item1;
-        Instance.MonthCalendar2.SelectionStart = dates.Item2;
+        if ( ensureOrder )
+          if ( dates.Item1 < dates.Item2 )
+          {
+            Instance.MonthCalendar1.SelectionStart = dates.Item1;
+            Instance.MonthCalendar2.SelectionStart = dates.Item2;
+          }
+          else
+          {
+            Instance.MonthCalendar1.SelectionStart = dates.Item2;
+            Instance.MonthCalendar2.SelectionStart = dates.Item2;
+          }
       }
       else
-        if ( Instance.EditAutoSetRightToToday.Checked )
+      if ( Instance.EditAutoSetRightToToday.Checked )
         Instance.MonthCalendar2.SelectionStart = DateTime.Today;
       Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
       Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;

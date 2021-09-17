@@ -1076,7 +1076,9 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date.Date != CalendarMonth.CalendarDate.Date;
-      ContextMenuDayDatesDiff.Enabled = ContextMenuDaySelectDate.Enabled;
+      ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date.Date != DateTime.Now.Date;
+      ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled
+                                               && CalendarMonth.CalendarDate.Date != DateTime.Now.Date;
       if ( Settings.TorahEventsCountAsMoon )
       {
         ContextMenuDayMoonrise.Visible = false;
@@ -1117,13 +1119,14 @@ namespace Ordisoftware.Hebrew.Calendar
                                           || ContextMenuDayMoonrise.Visible || ContextMenuDayMoonset.Visible; ;
     }
 
-    private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
+    private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
-      var day = ContextMenuEventDay.GetParashahReadingDay();
-      if ( day == null ) return;
-      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      if ( parashah == null ) return;
-      ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+      GoToDate(ContextMenuEventDay.Date);
+    }
+
+    private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
+    {
+      ActionNavigate.PerformClick();
     }
 
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
@@ -1133,19 +1136,28 @@ namespace Ordisoftware.Hebrew.Calendar
       CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
     }
 
-    private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
+    private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
     {
-      ActionNavigate.PerformClick();
+      var day = ContextMenuEventDay.GetParashahReadingDay();
+      if ( day == null ) return;
+      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+      if ( parashah == null ) return;
+      ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
     }
 
-    private void ContextMenuDayDatesDiff_Click(object sender, EventArgs e)
+    private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
     {
-      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(CalendarMonth.CalendarDate, ContextMenuEventDay.Date));
+      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
     }
 
-    private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+    private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
     {
-      GoToDate(ContextMenuEventDay.Date);
+      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
+    }
+
+    private void ContextMenuDayDatesDiffTo(DateTime date)
+    {
+      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
     }
 
     #endregion
