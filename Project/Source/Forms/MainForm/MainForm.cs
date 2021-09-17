@@ -1142,9 +1142,10 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( day == null ) return;
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
       if ( parashah == null ) return;
-      if (sender == ContextMenuDayParashahShowDescription)
+      if ( sender == ContextMenuDayParashahShowDescription )
         ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
       else
+      if ( sender == ContextMenuDayParashotBoard )
         ParashotForm.Run(parashah);
     }
 
