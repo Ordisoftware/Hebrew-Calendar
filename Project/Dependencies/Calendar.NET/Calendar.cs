@@ -77,8 +77,8 @@ namespace CodeProjectCalendar.NET
 
     static public Pen MouseTrackingPen = new Pen(Program.Settings.CalendarColorMouseTracking);
     static public SolidBrush CurrentDayForeBrush = new SolidBrush(Color.White);
-    static public SolidBrush CurrentDayBackBrush = new SolidBrush(Color.FromArgb(200, 0, 0));
-    static public Pen SelectedDayPen = new Pen(Color.FromArgb(200, 0, 0));
+    static public SolidBrush CurrentDayBackBrush = new SolidBrush(Color.Firebrick);
+    static public Pen SelectedDayPen = new Pen(Color.Brown);
     static public Color ColorText = Color.Black;
     static public Pen PenText = Pens.Black;
     static public Pen PenTextReduced = Pens.DarkGray;
@@ -957,6 +957,7 @@ namespace CodeProjectCalendar.NET
       var backbrush = new SolidBrush(BackColor);
       var outofmonth = false;
       var isselected = false;
+      var isselectednotoday = false;
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -1087,7 +1088,11 @@ namespace CodeProjectCalendar.NET
                 if ( _calendarDate.Day == counter1 )
                 {
                   isselected = true;
-                  g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                  isselectednotoday = true;
+                  var pen = Program.Settings.UseColors
+                            ? Program.Settings.SelectedDayBoxColorOnlyCurrent ? PenText : SelectedDayPen
+                            : Pens.Black;
+                  g.DrawRectangle(pen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
                 }
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1162,8 +1167,14 @@ namespace CodeProjectCalendar.NET
           if ( Program.Settings.CalendarShowSelectedBox )
             if ( isselected )
             {
-              g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+              var pen = Program.Settings.UseColors
+                        ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
+                          ? PenText 
+                          : SelectedDayPen
+                        : Pens.Black;
+              g.DrawRectangle(pen, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
               isselected = false;
+              isselectednotoday = false;
             }
             else
             if ( Program.Settings.CalendarUseMouseTracking )

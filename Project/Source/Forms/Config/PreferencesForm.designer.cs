@@ -253,10 +253,10 @@
       this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
       this.LabelColorMouseTracking = new System.Windows.Forms.Label();
-      this.LabelColorSelectedDay = new System.Windows.Forms.Label();
+      this.LabelColorSelectedDayBox = new System.Windows.Forms.Label();
       this.EditCalendarColorMouseTracking = new System.Windows.Forms.Panel();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
-      this.EditSelectedDayColor = new System.Windows.Forms.Panel();
+      this.EditSelectedDayBoxColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
@@ -326,6 +326,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditSelectedDayBoxColorOnlyCurrent = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1883,6 +1884,7 @@
       this.TabPageMonthView.Controls.Add(this.EditUseColors);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
+      this.TabPageMonthView.Controls.Add(this.EditSelectedDayBoxColorOnlyCurrent);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
       this.TabPageMonthView.Controls.Add(this.EditCalendarUseMouseTracking);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewSelectDayDoubleClick);
@@ -1955,10 +1957,10 @@
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
       this.PanelCalendarColors.Controls.Add(this.LabelColorMouseTracking);
-      this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDay);
+      this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDayBox);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorMouseTracking);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
-      this.PanelCalendarColors.Controls.Add(this.EditSelectedDayColor);
+      this.PanelCalendarColors.Controls.Add(this.EditSelectedDayBoxColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
       resources.ApplyResources(this.PanelCalendarColors, "PanelCalendarColors");
       this.PanelCalendarColors.Name = "PanelCalendarColors";
@@ -2158,7 +2160,7 @@
       // 
       // EditCurrentDayBackColor
       // 
-      this.EditCurrentDayBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.EditCurrentDayBackColor.BackColor = System.Drawing.Color.Firebrick;
       this.EditCurrentDayBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCurrentDayBackColor, "EditCurrentDayBackColor");
       this.EditCurrentDayBackColor.Name = "EditCurrentDayBackColor";
@@ -2187,10 +2189,10 @@
       resources.ApplyResources(this.LabelColorMouseTracking, "LabelColorMouseTracking");
       this.LabelColorMouseTracking.Name = "LabelColorMouseTracking";
       // 
-      // LabelColorSelectedDay
+      // LabelColorSelectedDayBox
       // 
-      resources.ApplyResources(this.LabelColorSelectedDay, "LabelColorSelectedDay");
-      this.LabelColorSelectedDay.Name = "LabelColorSelectedDay";
+      resources.ApplyResources(this.LabelColorSelectedDayBox, "LabelColorSelectedDayBox");
+      this.LabelColorSelectedDayBox.Name = "LabelColorSelectedDayBox";
       // 
       // EditCalendarColorMouseTracking
       // 
@@ -2205,13 +2207,13 @@
       resources.ApplyResources(this.LabelColorTodayBack, "LabelColorTodayBack");
       this.LabelColorTodayBack.Name = "LabelColorTodayBack";
       // 
-      // EditSelectedDayColor
+      // EditSelectedDayBoxColor
       // 
-      this.EditSelectedDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.EditSelectedDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditSelectedDayColor, "EditSelectedDayColor");
-      this.EditSelectedDayColor.Name = "EditSelectedDayColor";
-      this.EditSelectedDayColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      this.EditSelectedDayBoxColor.BackColor = System.Drawing.Color.Brown;
+      this.EditSelectedDayBoxColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditSelectedDayBoxColor, "EditSelectedDayBoxColor");
+      this.EditSelectedDayBoxColor.Name = "EditSelectedDayBoxColor";
+      this.EditSelectedDayBoxColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // EditCalendarColorTorahEvent
       // 
@@ -2772,6 +2774,13 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditSelectedDayBoxColorOnlyCurrent
+      // 
+      resources.ApplyResources(this.EditSelectedDayBoxColorOnlyCurrent, "EditSelectedDayBoxColorOnlyCurrent");
+      this.EditSelectedDayBoxColorOnlyCurrent.Name = "EditSelectedDayBoxColorOnlyCurrent";
+      this.EditSelectedDayBoxColorOnlyCurrent.UseVisualStyleBackColor = true;
+      this.EditSelectedDayBoxColorOnlyCurrent.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3137,11 +3146,12 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
-    private System.Windows.Forms.Label LabelColorSelectedDay;
-    public System.Windows.Forms.Panel EditSelectedDayColor;
+    private System.Windows.Forms.Label LabelColorSelectedDayBox;
+    public System.Windows.Forms.Panel EditSelectedDayBoxColor;
     private System.Windows.Forms.CheckBox EditCalendarUseMouseTracking;
     private System.Windows.Forms.Label LabelColorMouseTracking;
     public System.Windows.Forms.Panel EditCalendarColorMouseTracking;
     private System.Windows.Forms.CheckBox EditCalendarShowSelectedBox;
+    private System.Windows.Forms.CheckBox EditSelectedDayBoxColorOnlyCurrent;
   }
 }

@@ -496,7 +496,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalenderNet.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
         CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
         CalenderNet.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
-        CalenderNet.SelectedDayPen = new Pen(Settings.SelectedDayColor);
+        CalenderNet.SelectedDayPen = new Pen(Settings.SelectedDayBoxColor);
         CalenderNet.ColorText = Settings.MonthViewTextColor;
         CalenderNet.PenText = new Pen(Settings.MonthViewTextColor);
         CalenderNet.PenTextReduced
@@ -529,7 +529,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalenderNet.CurrentDayBackBrush = new SolidBrush(Color.Black);
         CalenderNet.ColorText = Color.Black;
         CalenderNet.PenText = Pens.Black;
-        CalenderNet.PenTextReduced = Pens.DarkGray;
+        CalenderNet.PenTextReduced = Pens.LightGray;
         CalenderNet.BrushText = Brushes.Black;
         CalenderNet.BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
         CalenderNet.BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
