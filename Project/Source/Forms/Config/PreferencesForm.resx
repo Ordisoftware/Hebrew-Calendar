@@ -7639,6 +7639,111 @@
   <data name="&gt;&gt;ActionAutoGenerateHelp.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 334</value>
+  </data>
+  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
+    <value>EditGPSLatitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 249</value>
+  </data>
+  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>520, 60</value>
+  </data>
+  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
+    <value>EditTimeZone</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 334</value>
+  </data>
+  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
+    <value>EditGPSLongitude</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 171</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
+    <value>EditAutoGenerateYearsInterval</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
+    <value>TabPageGeneration</value>
+  </data>
+  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
   <data name="LabelDefaultLockoutAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -10733,111 +10838,6 @@
   </data>
   <data name="&gt;&gt;ActionSelectHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>15</value>
-  </data>
-  <data name="EditGPSLatitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 334</value>
-  </data>
-  <data name="EditGPSLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
-    <value>EditGPSLatitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLatitude.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="EditTimeZone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 249</value>
-  </data>
-  <data name="EditTimeZone.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTimeZone.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="EditTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 60</value>
-  </data>
-  <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
-    <value>EditTimeZone</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditTimeZone.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="EditGPSLongitude.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditGPSLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 334</value>
-  </data>
-  <data name="EditGPSLongitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
-    <value>EditGPSLongitude</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditGPSLongitude.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 171</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Name" xml:space="preserve">
-    <value>EditAutoGenerateYearsInterval</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
-    <value>TabPageGeneration</value>
-  </data>
-  <data name="&gt;&gt;EditAutoGenerateYearsInterval.ZOrder" xml:space="preserve">
-    <value>20</value>
   </data>
   <data name="EditHebrewWordsPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 179</value>

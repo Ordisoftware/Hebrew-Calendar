@@ -674,7 +674,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CalendarColorActiveDay" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">CornflowerBlue</Value>
+      <Value Profile="(Default)">LightSlateGray</Value>
     </Setting>
   </Settings>
 </SettingsFile>

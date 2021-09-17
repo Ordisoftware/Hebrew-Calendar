@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       EditCurrentDayForeColor.BackColor = Color.White;
       EditCurrentDayBackColor.BackColor = Color.Firebrick;
-      EditCalendarColorActiveDay.BackColor = Color.CornflowerBlue;
+      EditCalendarColorActiveDay.BackColor = Color.LightSlateGray;
       EditSelectedDayBoxColor.BackColor = Color.Brown;
       EditCalendarColorMouseTracking.BackColor = Color.Silver;
       EditCalendarColorParashah.BackColor = Color.Indigo;
