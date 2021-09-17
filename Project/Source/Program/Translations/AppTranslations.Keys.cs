@@ -45,6 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F7 : Search a gregorian month window" + Globals.NL +
                         "F8 (or Ctrl + N) : Navigation window" + Globals.NL +
                         "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
+                        "Ctrl + B (or Decimal) : Go to selected day" + Globals.NL +
                         "Ctrl + D : Search a day" + Globals.NL +
                         "Ctrl + S : Save current view to file" + Globals.NL +
                         "Ctrl + C : Copy current view to clipboard" + Globals.NL +
@@ -68,6 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F3 : New moons board" + Globals.NL +
                         "Ctrl + F4 : Lunar months board" + Globals.NL +
                         "Ctrl + F5 : Dates difference calculator" + Globals.NL +
+                        "Add or Sub : Change active day" + Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         "Up (ou PageUp) : Previous year" + Globals.NL +
@@ -96,6 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
                         "F8 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
                         "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
+                        "Ctrl + B (or Decimal) : Aller au jour sélectionné" + Globals.NL +
                         "Ctrl + D : Chercher un jour" + Globals.NL +
                         "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
                         "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
@@ -119,6 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
                         "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
                         "Ctrl + F5 : Calculateur de différence de dates" + Globals.NL +
+                        "Plus ou Moins : Changer de jour actif" + Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +

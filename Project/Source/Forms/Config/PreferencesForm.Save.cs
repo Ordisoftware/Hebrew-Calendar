@@ -56,6 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CurrentDayBackColor = EditCurrentDayBackColor.BackColor;
       Settings.CurrentDayForeColor = EditCurrentDayForeColor.BackColor;
       Settings.SelectedDayBoxColor = EditSelectedDayBoxColor.BackColor;
+      Settings.CalendarColorActiveDay = EditCalendarColorActiveDay.BackColor;
       Settings.CalendarColorMouseTracking = EditCalendarColorMouseTracking.BackColor;
       Settings.EventColorMonth = EditEventColorMonth.BackColor;
       Settings.EventColorNext = EditEventColorNext.BackColor;
@@ -65,7 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.FontSize = (int)EditTextReportFontSize.Value;
       Settings.GPSLatitude = EditGPSLatitude.Text;
       Settings.GPSLongitude = EditGPSLongitude.Text;
-      Settings.MonthViewSelectDayDoubleClick = EditMonthViewSelectDayDoubleClick.Checked;
+      Settings.MonthViewChangeDayOnClick = EditMonthViewChangeDayOnClick.Checked;
       Settings.NavigateBottomColor = EditNavigateBottomColor.BackColor;
       Settings.NavigateMiddleColor = EditNavigateMiddleColor.BackColor;
       Settings.NavigateTopColor = EditNavigateTopColor.BackColor;

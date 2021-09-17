@@ -252,7 +252,9 @@
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
       this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
+      this.LabelCalendarColorActiveDay = new System.Windows.Forms.Label();
       this.LabelColorMouseTracking = new System.Windows.Forms.Label();
+      this.EditCalendarColorActiveDay = new System.Windows.Forms.Panel();
       this.LabelColorSelectedDayBox = new System.Windows.Forms.Label();
       this.EditCalendarColorMouseTracking = new System.Windows.Forms.Panel();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
@@ -261,9 +263,10 @@
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
+      this.EditSelectedDayBoxColorOnlyCurrent = new System.Windows.Forms.CheckBox();
       this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
       this.EditCalendarUseMouseTracking = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSelectDayDoubleClick = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewChangeDayOnClick = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
@@ -326,7 +329,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditSelectedDayBoxColorOnlyCurrent = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1887,7 +1889,7 @@
       this.TabPageMonthView.Controls.Add(this.EditSelectedDayBoxColorOnlyCurrent);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
       this.TabPageMonthView.Controls.Add(this.EditCalendarUseMouseTracking);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSelectDayDoubleClick);
+      this.TabPageMonthView.Controls.Add(this.EditMonthViewChangeDayOnClick);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
@@ -1956,7 +1958,9 @@
       this.PanelCalendarColors.Controls.Add(this.LabelColorFullMoon);
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
+      this.PanelCalendarColors.Controls.Add(this.LabelCalendarColorActiveDay);
       this.PanelCalendarColors.Controls.Add(this.LabelColorMouseTracking);
+      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorActiveDay);
       this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDayBox);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorMouseTracking);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
@@ -2184,10 +2188,23 @@
       resources.ApplyResources(this.LabelColorTorah, "LabelColorTorah");
       this.LabelColorTorah.Name = "LabelColorTorah";
       // 
+      // LabelCalendarColorActiveDay
+      // 
+      resources.ApplyResources(this.LabelCalendarColorActiveDay, "LabelCalendarColorActiveDay");
+      this.LabelCalendarColorActiveDay.Name = "LabelCalendarColorActiveDay";
+      // 
       // LabelColorMouseTracking
       // 
       resources.ApplyResources(this.LabelColorMouseTracking, "LabelColorMouseTracking");
       this.LabelColorMouseTracking.Name = "LabelColorMouseTracking";
+      // 
+      // EditCalendarColorActiveDay
+      // 
+      this.EditCalendarColorActiveDay.BackColor = System.Drawing.Color.LightSlateGray;
+      this.EditCalendarColorActiveDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorActiveDay, "EditCalendarColorActiveDay");
+      this.EditCalendarColorActiveDay.Name = "EditCalendarColorActiveDay";
+      this.EditCalendarColorActiveDay.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // LabelColorSelectedDayBox
       // 
@@ -2245,6 +2262,13 @@
       this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
       this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
+      // EditSelectedDayBoxColorOnlyCurrent
+      // 
+      resources.ApplyResources(this.EditSelectedDayBoxColorOnlyCurrent, "EditSelectedDayBoxColorOnlyCurrent");
+      this.EditSelectedDayBoxColorOnlyCurrent.Name = "EditSelectedDayBoxColorOnlyCurrent";
+      this.EditSelectedDayBoxColorOnlyCurrent.UseVisualStyleBackColor = true;
+      this.EditSelectedDayBoxColorOnlyCurrent.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
       // EditCalendarShowSelectedBox
       // 
       resources.ApplyResources(this.EditCalendarShowSelectedBox, "EditCalendarShowSelectedBox");
@@ -2259,12 +2283,12 @@
       this.EditCalendarUseMouseTracking.UseVisualStyleBackColor = true;
       this.EditCalendarUseMouseTracking.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
-      // EditMonthViewSelectDayDoubleClick
+      // EditMonthViewChangeDayOnClick
       // 
-      resources.ApplyResources(this.EditMonthViewSelectDayDoubleClick, "EditMonthViewSelectDayDoubleClick");
-      this.EditMonthViewSelectDayDoubleClick.Name = "EditMonthViewSelectDayDoubleClick";
-      this.EditMonthViewSelectDayDoubleClick.UseVisualStyleBackColor = true;
-      this.EditMonthViewSelectDayDoubleClick.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      resources.ApplyResources(this.EditMonthViewChangeDayOnClick, "EditMonthViewChangeDayOnClick");
+      this.EditMonthViewChangeDayOnClick.Name = "EditMonthViewChangeDayOnClick";
+      this.EditMonthViewChangeDayOnClick.UseVisualStyleBackColor = true;
+      this.EditMonthViewChangeDayOnClick.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // LabelMonthViewFontSize
       // 
@@ -2774,13 +2798,6 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
-      // EditSelectedDayBoxColorOnlyCurrent
-      // 
-      resources.ApplyResources(this.EditSelectedDayBoxColorOnlyCurrent, "EditSelectedDayBoxColorOnlyCurrent");
-      this.EditSelectedDayBoxColorOnlyCurrent.Name = "EditSelectedDayBoxColorOnlyCurrent";
-      this.EditSelectedDayBoxColorOnlyCurrent.UseVisualStyleBackColor = true;
-      this.EditSelectedDayBoxColorOnlyCurrent.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3128,7 +3145,7 @@
     private System.Windows.Forms.CheckBox EditNavigationWindowCloseOnShowMainForm;
     private System.Windows.Forms.CheckBox EditParashahCaptionWithBookAndRef;
     private System.Windows.Forms.CheckBox EditNavigationWindowUseUnicodeIcons;
-    private System.Windows.Forms.CheckBox EditMonthViewSelectDayDoubleClick;
+    private System.Windows.Forms.CheckBox EditMonthViewChangeDayOnClick;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
@@ -3153,5 +3170,7 @@
     public System.Windows.Forms.Panel EditCalendarColorMouseTracking;
     private System.Windows.Forms.CheckBox EditCalendarShowSelectedBox;
     private System.Windows.Forms.CheckBox EditSelectedDayBoxColorOnlyCurrent;
+    private System.Windows.Forms.Label LabelCalendarColorActiveDay;
+    public System.Windows.Forms.Panel EditCalendarColorActiveDay;
   }
 }

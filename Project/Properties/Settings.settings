@@ -655,7 +655,7 @@
     <Setting Name="CelebrationVersesBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">384, 306</Value>
     </Setting>
-    <Setting Name="MonthViewSelectDayDoubleClick" Type="System.Boolean" Scope="User">
+    <Setting Name="MonthViewChangeDayOnClick" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="SelectedDayBoxColor" Type="System.Drawing.Color" Scope="User">
@@ -672,6 +672,9 @@
     </Setting>
     <Setting Name="SelectedDayBoxColorOnlyCurrent" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CalendarColorActiveDay" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightSlateGray</Value>
     </Setting>
   </Settings>
 </SettingsFile>

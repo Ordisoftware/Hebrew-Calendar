@@ -3126,71 +3126,6 @@
   <data name="ContextMenuDayTimesSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
-  <data name="ContextMenuDaySelectDate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAhlJREFUOE+Nkk9PE1EUxbs2YhCXujBhZ8KKdOsn8ANIXJAYdyZ244IV1jqxLRTr
-        0AmmBAi1QxCG6XQ61YXR2NREqsSiEEJITBhtrWGmY0GGwYXx+N78KbQp6i+5mXdf3j3v3TvHR5EVpSFm
-        s1jKZCCQoF+aS4qStQ/8C1GS0Akh9wzukb9Db6SonytQKzWoNcPO5/Kv/09AEEW7QNPr0BoWdhZuQAue
-        Rp05Bz18Hlr0IrTRXmjxS51bon1T9q1D7P8CdoZPkWQF+PGOfEmYZP1zDToRcUtaoQM7jhbsAvZKqBWG
-        oBeHMD0zTcRK2B250FkgxfMvqYggZfEk9wLGvW5gt4TGKgtrnUWMS2FuQUJ1rO/EmfSS6PfiO3OWCCzD
-        2hbwu7KIaDwJY+8Ak8kk4tzUZVrQAvFB3XvBvPwcRuiMM4ODMul9BcwIB9O0sLn1CdzEJNjExE231KHd
-        B1b+lv0XDKYHZqQHd6McvlRreLP8FuXVj0gkHuEhy0lu+ck+mH9apD33ByPjqFS/YVtV8b78AbMpHrEH
-        7NE8mj7QdBLEC7ojILpODN2PYWNzC3Iuj4ykwO/3XyHbdF4OTR+YZjMokpxzBJgwGCb8NRC4LbwqFBGJ
-        jC7ahR7tPvCQZNl7Jr2tb3Dw+tWpmVnExtiGs+3yOJ0uUBE6Cy9onub5gnvEo2v4TggDA9cCbt6kxQfH
-        gu63Q/e7naXP9weWjvb49vQlTQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ContextMenuDaySelectDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
-  </data>
-  <data name="ContextMenuDaySelectDate.Text" xml:space="preserve">
-    <value>Select this date</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToToday.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
-        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
-        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
-        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
-        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
-        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
-        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
-        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToToday.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToToday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToToday.Text" xml:space="preserve">
-    <value>Dates diff. from here to today</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToSelected.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
-        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
-        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
-        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
-        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
-        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
-        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
-        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToSelected.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 22</value>
-  </data>
-  <data name="ContextMenuDayDatesDiffToSelected.Text" xml:space="preserve">
-    <value>Dates diff. from here to selected</value>
-  </data>
   <data name="ContextMenuDayNavigation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3241,6 +3176,160 @@
   </data>
   <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
+  </data>
+  <data name="ContextMenuDaySetAsActive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVDhPlZDfS1NhGMffuqib6K5fd0F3QVdJdCeCYlRE
+        3UbUXyCbbm1tbU1Gzc25GaS1za0bXdSNMlNDKigIqSgkySAhSctz3ObOdtac++HZt/d997rN8qIe+MDz
+        fnk+XziH/Dn+4VFMv36DsZlPJ0TExxeNYfLtLMRz+8wZLqFyZi/QRtDhGcT0zHtkrh6H1robm7X8Pqbe
+        zQItBFr7HjBH6ISop3dhcyICxAI4q3fg2Yc5rE2OoBwLoTweBsaDNO/G1MfPwOggyk8jYI7QCZGPEigd
+        FyEdJHi5n+DFPgLpEMHy4SrykWr+nOYrB6q3zBE6IZ7wMDQAi6ksvqd/UXJYpHwTsH0ps17NlSy/ZY7Q
+        CfH2D6BCwyVJ2pFlWcbPeBxSIokfq6v0EmCO0Alxe/3QKhWsSPJfyHIcieQa0hkVuk4jUkqaF3j6+usF
+        LrcXFVoQTyYRTyRqJOhbyaQxP/8Fzts9GItN4OvCAi2W0NtY4HS5eatC21MppYaqZlEuldFlNGEk+hjR
+        R09ww2qD5aYdXv/deoHDeYcXqNksMqrKYXt+YwOXr1zDvYEAHgSGEAiGEQxFEBp6iF5fQ4Hd4eQF+fw6
+        crlcjUKhwPPWtna4PH3o6fXh3PkLHPbZQifEYrvFD0ulEpe2KBaL/N+waW5ugb7zOt/Z2Lud9QKTxS5i
+        QNO0bWwVsGlqOiU2wGy1NxbYRPzvwxyhE6LrMr4ymK3QG0zQ7QDL9QYz9MYq7JY5QudzjHLyP6EOIb8B
+        VGF9aYCFPrcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDaySetAsActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDaySetAsActive.Text" xml:space="preserve">
+    <value>Set as active day</value>
+  </data>
+  <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="ContextMenuDaySelectDate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGaSURBVDhPhVLBTsJQEORs1CgePfIJfgUXv0KvnjkZoiR6
+        5RMUDGotbSl6MJoQPEgk0YMfIIaEhBZEBasH4/hm25qCJUyymezOzuRRNkFYtj3QTRNn5TI0VWT2hm2b
+        1MlxOn0SoBsG4qBVLkCdHAf6JICJROu5jVa7g1anL/1R9UYWyATnoqs9gj4J0HRdBo7bgzPw0D3ZgJOd
+        Ry+3AndvVZi9zJXOPYI+PyB4wdD7xPAb6G7PqaYJvN8pViXclDl17hH0SQA/SBROdgF4a6BTy8CtZ4TZ
+        yzwC+iTgoFi8ZqMZJo4rV+jvLgGvDQwe8vAe88LsOafOPe7TJwEKKVVrYb3klpXhFt6Thp/2qTB7ztPp
+        9c3ILn1yB73wBSXrEv2dRf8bfNwDXwGrnnPq4Qvok4DJO/CqW/LV+7kkRvtJYfacRzHzDkrndVkgE7Pv
+        wHFVqVtw/QA9uEQywbnoao/4fwej0V8RhlWRBTIxqU+9gxCGZQUBVjAZB30ScFgo1NjwN4XFvlAs1qiT
+        43T6JEBh7A4i5f/PU/VE6hc0ashxhlVVpgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDaySelectDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDaySelectDate.Text" xml:space="preserve">
+    <value>Select this date</value>
+  </data>
+  <data name="ContextMenuDayClearSelection.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEtSURBVDhPjZLRasJAEEX9Fz/BL26T0kIad5OUQqUFwR+J
+        CD5Eiw+KfSndzplk4xpX9MIw7NyZy8zsjEBRVbvcWvc6nbpMDM/bVJWFx8d46lQgN8bFkJXvDh4fA3Uq
+        gCKolytXr9auXn/r++ltoQl4QFx5yQPUqUCW5xpoNlvX7I60tqXFzFj3XMzU87Zl+QdPHqCuFeg62B9/
+        3P63bS0G4vDkAepUAPUQFyMFLYegTgUe0vTLt/xSfmproGk2YjKWeEBc+W4k6lRAMBabeOtHOhx6A13L
+        fZ4YdXoHZ0sbjuRBPFwqdSowXNrHrBVhZm+8iYe4fgeDf77Fn+4gsrR7+NMdxJd2k7+4Aw9TFJqAj4E6
+        FXhMknlsaUmazuHxMZ46FRCc3UFg7T9f5Ufjf+Qv2h8rXTxMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ContextMenuDayClearSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayClearSelection.Text" xml:space="preserve">
+    <value>Remove selection</value>
+  </data>
+  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="ContextMenuDayGoToToday.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAhhJREFUOE+Vkc9rE1EUha8gFtS16E5xLQhuXCtiFyIo/h3GmtISaa0GGiNRg7Ra
+        wVZtMk1bBG1SY9DamqC4U9FKlqlNdKYxySSZNiP5MTl97/WFiZouvPAxvDvnOzPM0N+jRBdwb3IGt2ej
+        R+RKTODlIvyhCOTxz/nqPIdm9y7gBGEq9gZO7wh+XDgEnN6JRncXcJKgxBZx0TcGnCKW7QJ3pE5UPr4D
+        9fkJ4Pl9KK/jONtzDcnACKzIQ9Qi48DcGJSFBM70XAfCD9B4MQHuSJ1IO0goOs7j5z5CeDdhfi8he4CQ
+        2U9IM1RGeA8hwtBYhme5I3Wim+NBWABSBQOrpQ1kDBOrxm+slEykGN/LJtLliriX0g2R5Y7UiXz+UTTZ
+        Mq2qULNZ5Eslce1ERtVEljtSJ/L67sBqNqFqa8jl9Y5iC20tK7LckTqRx+tDky1/5XLQi8WOIqdsGMgX
+        Cuz5gMd7yy5we7xiqevbyxwuVzYqMCsm3MM37IIh97Ao4E8w1tdZgIe259lcBEpoxi4YHHKLAtPcCjQa
+        jX+kdpbiCURjr+wC18BVUVCr1VCtVlGv1zuKLZaTSfEWUifqcw2KAj6WZYkPymkfLqqaho+fPos/MT37
+        1C7odw3IWOd59/4Dlt4m8GX5G1KpFbELTk3bBY7LvXFn/xVccvbB0Ubr7L87ioASwpOAgkeTQTzewpC6
+        mMOMY//JUSKiTQKmmtbs3uP/AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ContextMenuDayGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayGoToToday.Text" xml:space="preserve">
+    <value>Go to today</value>
+  </data>
+  <data name="ContextMenuDayGoToSelected.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAkNJREFUOE+VkV1IU2EYx58gMug6qTah8qaLwmkX2o0XheWFXRREN110EXXXqoWy
+        0KSBa7FoVJJB2se2ZhGULksiNEfTYVFRipezJp3jsn22ndjm2b/3fTvrWNtND/x5OQ//3+980b9z/fBR
+        vG2qxTV2aisx7udjcPn8f+3+zCfLARRb1wC7CdOmjcCxNrypY+e+1VhurQL2ELyjYzjp7ANaiHWrwBkN
+        J0o1rULh6QDw5AaCdZuQO9KCEDtV/y3k/f3AUB+8LwNoO30BGL6J5ZEBcEbDieTNhIT5IL5WExMY8PNQ
+        M0ImAxY2ECIsEsvwOoKfRWYd3uWMhhNd6vdABRCOpRFkYGZ/I0L1BswnFYRZPqcURFJZfElmEI6nRZcz
+        Gk7kdPWiyJYRSWICI37sNQmRFI2WZUGSRZczGk7kcF6BWixCkhcxWV+DZPM2BNirVBLIi1HR5YyGE9kd
+        ThTZ8tvSEiYbapDYtZUJjGVwKp3G91iM3R+wOy7rApvdIZbxeAJTDUbE2a+s9AQczmayULIKbD0XdUG3
+        rUcI+B2md6xHcstahLZXsyIvl+fxkB9e3wNd0NVtEwJFyWLkxHFRCrQ0loGljE8E8Gz0hS6wdp4Xgnw+
+        j1wuh0KhUBEsZWZuTjyFhhO1W7uEgI+qquKD8qwcDkqyjHfvP4g/MfjwkS7osHZqtcrzOjiF8VcBfJyZ
+        RTg8L3ae+4O6wHzm7ISl4xxOWdphXpHStetqL9xeH+66vbh9z4M7v5PWcDG1LDv/MyYiol9Qnnd7N4r5
+        DgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayGoToSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayGoToSelected.Text" xml:space="preserve">
+    <value>Go to selected</value>
+  </data>
+  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToToday.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
+        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
+        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
+        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
+        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
+        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
+        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
+        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToToday.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToToday.Text" xml:space="preserve">
+    <value>Dates diff. from here to today</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToSelected.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
+        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
+        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
+        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
+        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
+        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
+        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
+        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToSelected.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToSelected.Text" xml:space="preserve">
+    <value>Dates diff. from here to selected</value>
   </data>
   <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
@@ -3390,7 +3479,7 @@
     <value>Weekly parashah</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 264</value>
+    <value>243, 392</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3406,7 +3495,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAXgBAAF4AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAaABAAGgAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4293,11 +4382,41 @@
   <data name="&gt;&gt;ContextMenuDayTimesSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ContextMenuDayGoToToday.Name" xml:space="preserve">
+    <value>ContextMenuDayGoToToday</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToSelected.Name" xml:space="preserve">
+    <value>ContextMenuDayGoToSelected</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToSelected.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator18.Name" xml:space="preserve">
+    <value>toolStripSeparator18</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ContextMenuDaySelectDate.Name" xml:space="preserve">
     <value>ContextMenuDaySelectDate</value>
   </data>
   <data name="&gt;&gt;ContextMenuDaySelectDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayClearSelection.Name" xml:space="preserve">
+    <value>ContextMenuDayClearSelection</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayClearSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator19.Name" xml:space="preserve">
+    <value>toolStripSeparator19</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ContextMenuDayDatesDiffToToday.Name" xml:space="preserve">
     <value>ContextMenuDayDatesDiffToToday</value>
@@ -4370,6 +4489,18 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">
+    <value>toolStripSeparator20</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySetAsActive.Name" xml:space="preserve">
+    <value>ContextMenuDaySetAsActive</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySetAsActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

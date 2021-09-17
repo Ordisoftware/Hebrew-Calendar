@@ -2613,12 +2613,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MonthViewSelectDayDoubleClick {
+        public bool MonthViewChangeDayOnClick {
             get {
-                return ((bool)(this["MonthViewSelectDayDoubleClick"]));
+                return ((bool)(this["MonthViewChangeDayOnClick"]));
             }
             set {
-                this["MonthViewSelectDayDoubleClick"] = value;
+                this["MonthViewChangeDayOnClick"] = value;
             }
         }
         
@@ -2679,6 +2679,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["SelectedDayBoxColorOnlyCurrent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightSlateGray")]
+        public global::System.Drawing.Color CalendarColorActiveDay {
+            get {
+                return ((global::System.Drawing.Color)(this["CalendarColorActiveDay"]));
+            }
+            set {
+                this["CalendarColorActiveDay"] = value;
             }
         }
     }

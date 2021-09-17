@@ -319,7 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
-          CodeProjectCalendar.NET.Calendar.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
+          CodeProjectCalendar.NET.Calendar.PenMouseTracking = new Pen(Settings.CalendarColorMouseTracking);
           CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
           CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
@@ -340,7 +340,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = true;
         if ( dateOld == null )
-          GoToDate(DateTime.Now.Date);
+          GoToDate(DateTime.Today);
         else
           GoToDate(dateOld.Value);
         UpdateTitles(true);
@@ -1040,32 +1040,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Month View Context Menu
 
-    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
-    {
-      CalendarMonth.Refresh();
-    }
-
-    private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
-    {
-      var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
-      if ( dayEvent == null ) return;
-      var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
-      if ( dayRow == null ) return;
-      bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
-      if ( e.Button == MouseButtons.Left )
-      {
-        if ( ( e.Clicks == 1 && !Settings.MonthViewSelectDayDoubleClick ) || e.Clicks > 1 )
-          GoToDate(dayRow.Date);
-      }
-      else
-      if ( showContextMenu && e.Button == MouseButtons.Right )
-      {
-        ContextMenuEventDay = dayRow;
-        ContextMenuStripDay.Show(Cursor.Position);
-      }
-    }
-
     private LunisolarDay ContextMenuEventDay;
+
+    internal DateTime DateSelected = DateTime.Today;
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
@@ -1080,11 +1057,18 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( parashah != null )
           ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
       }
+      ContextMenuDayGoToToday.Enabled = DateTime.Today.Year != CalendarMonth.CalendarDate.Year
+                                        || DateTime.Today.Month != CalendarMonth.CalendarDate.Month;
+      ContextMenuDayGoToSelected.Enabled = DateSelected != DateTime.Today
+                                           && ( CalendarMonth.CalendarDate.Year != DateSelected.Year
+                                                || CalendarMonth.CalendarDate.Month != DateSelected.Month );
+      ContextMenuDaySetAsActive.Enabled = CalendarMonth.CalendarDate.Date != ContextMenuEventDay.Date;
+      ContextMenuDayClearSelection.Enabled = DateSelected != DateTime.Today;
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
-      ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date.Date != CalendarMonth.CalendarDate.Date;
-      ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date.Date != DateTime.Now.Date;
+      ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date != DateSelected;
+      ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date != DateTime.Today;
       ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled
-                                               && CalendarMonth.CalendarDate.Date != DateTime.Now.Date;
+                                               && DateSelected != DateTime.Today;
       if ( Settings.TorahEventsCountAsMoon )
       {
         ContextMenuDayMoonrise.Visible = false;
@@ -1125,9 +1109,62 @@ namespace Ordisoftware.Hebrew.Calendar
                                           || ContextMenuDayMoonrise.Visible || ContextMenuDayMoonset.Visible; ;
     }
 
-    private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+    private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
+    {
+      var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
+      if ( dayEvent == null ) return;
+      var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
+      if ( dayRow == null ) return;
+      bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
+      if ( e.Button == MouseButtons.Left )
+      {
+        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
+          GoToDate(dayRow.Date);
+        else
+        if ( e.Clicks > 1 )
+        {
+          DateSelected = dayRow.Date;
+          CalendarMonth.Refresh();
+        }
+      }
+      else
+      if ( showContextMenu && e.Button == MouseButtons.Right )
+      {
+        ContextMenuEventDay = dayRow;
+        ContextMenuStripDay.Show(Cursor.Position);
+      }
+    }
+
+    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+    {
+      CalendarMonth.Refresh();
+    }
+
+    private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
     {
       GoToDate(ContextMenuEventDay.Date);
+    }
+
+    private void ContextMenuDayGoToToday_Click(object sender, EventArgs e)
+    {
+      GoToDate(DateTime.Today);
+    }
+
+    private void ContextMenuDayGoToSelected_Click(object sender, EventArgs e)
+    {
+      GoToDate(DateSelected);
+    }
+
+    private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+    {
+      DateSelected = ContextMenuEventDay.Date;
+      CalendarMonth.Refresh();
+    }
+
+    private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
+    {
+      DateSelected = DateTime.Today;
+      CalendarMonth.Refresh();
     }
 
     private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
@@ -1137,7 +1174,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
     {
-      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
+      ContextMenuDayDatesDiffTo(DateTime.Today);
     }
 
     private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
