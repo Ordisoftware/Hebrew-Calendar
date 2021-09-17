@@ -847,4 +847,7 @@
   <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
     <value>Afficher la case de sélection</value>
   </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
+    <value>Utiliser la couleur de case de jour sélectionné uniquement pour aujourd'hui</value>
+  </data>
 </root>

@@ -899,7 +899,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200, 0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Firebrick")]
         public global::System.Drawing.Color CurrentDayBackColor {
             get {
                 return ((global::System.Drawing.Color)(this["CurrentDayBackColor"]));
@@ -2624,13 +2624,13 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200, 0, 0")]
-        public global::System.Drawing.Color SelectedDayColor {
+        [global::System.Configuration.DefaultSettingValueAttribute("Brown")]
+        public global::System.Drawing.Color SelectedDayBoxColor {
             get {
-                return ((global::System.Drawing.Color)(this["SelectedDayColor"]));
+                return ((global::System.Drawing.Color)(this["SelectedDayBoxColor"]));
             }
             set {
-                this["SelectedDayColor"] = value;
+                this["SelectedDayBoxColor"] = value;
             }
         }
         
@@ -2648,7 +2648,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkGray")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
         public global::System.Drawing.Color CalendarColorMouseTracking {
             get {
                 return ((global::System.Drawing.Color)(this["CalendarColorMouseTracking"]));
@@ -2667,6 +2667,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["CalendarShowSelectedBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectedDayBoxColorOnlyCurrent {
+            get {
+                return ((bool)(this["SelectedDayBoxColorOnlyCurrent"]));
+            }
+            set {
+                this["SelectedDayBoxColorOnlyCurrent"] = value;
             }
         }
     }

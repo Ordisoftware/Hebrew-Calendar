@@ -227,7 +227,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">200, 0, 0</Value>
+      <Value Profile="(Default)">Firebrick</Value>
     </Setting>
     <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">240, 240, 240</Value>
@@ -658,16 +658,19 @@
     <Setting Name="MonthViewSelectDayDoubleClick" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SelectedDayColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">200, 0, 0</Value>
+    <Setting Name="SelectedDayBoxColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Brown</Value>
     </Setting>
     <Setting Name="CalendarUseMouseTracking" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CalendarColorMouseTracking" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">DarkGray</Value>
+      <Value Profile="(Default)">Silver</Value>
     </Setting>
     <Setting Name="CalendarShowSelectedBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SelectedDayBoxColorOnlyCurrent" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

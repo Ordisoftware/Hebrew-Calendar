@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCheckUpdateAtStartup.Checked = Settings.CheckUpdateAtStartup; });
       SystemManager.TryCatch(() => { EditCurrentDayBackColor.BackColor = Settings.CurrentDayBackColor; });
       SystemManager.TryCatch(() => { EditCurrentDayForeColor.BackColor = Settings.CurrentDayForeColor; });
-      SystemManager.TryCatch(() => { EditSelectedDayColor.BackColor = Settings.SelectedDayColor; });
+      SystemManager.TryCatch(() => { EditSelectedDayBoxColor.BackColor = Settings.SelectedDayBoxColor; });
       SystemManager.TryCatch(() => { EditCalendarColorMouseTracking.BackColor = Settings.CalendarColorMouseTracking; });
       SystemManager.TryCatch(() => { EditEventColorMonth.BackColor = Settings.EventColorMonth; });
       SystemManager.TryCatch(() => { EditEventColorNext.BackColor = Settings.EventColorNext; });
@@ -137,6 +137,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditNavigationWindowUseUnicodeIcons.Checked = Settings.NavigationWindowUseUnicodeIcons; });
       SystemManager.TryCatch(() => { EditCalendarUseMouseTracking.Checked = Settings.CalendarUseMouseTracking; });
       SystemManager.TryCatch(() => { EditCalendarShowSelectedBox.Checked = Settings.CalendarShowSelectedBox; });
+      SystemManager.TryCatch(() => { EditSelectedDayBoxColorOnlyCurrent.Checked = Settings.SelectedDayBoxColorOnlyCurrent; });
       // Hotkey
       InitHotKeyControls();
       // System

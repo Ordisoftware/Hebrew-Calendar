@@ -134,6 +134,10 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
         form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
         form.LabelStartTime.ForeColor = Program.Settings.MonthViewTextColor;
+        form.LabelEndTime.ForeColor = Program.Settings.MonthViewTextColor;
+        form.LabelStartDay.ForeColor = Program.Settings.MonthViewTextColor;
+        form.LabelEndDay.ForeColor = Program.Settings.MonthViewTextColor;
+        form.LabelParashahValue.LinkColor = Program.Settings.CalendarColorMoon;
         if ( Program.Settings.UseColors )
           form.BackColor = doLockSession ? Program.Settings.EventColorTorah : Program.Settings.EventColorNext;
         form.IsShabat = isShabat;
