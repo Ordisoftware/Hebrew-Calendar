@@ -980,9 +980,9 @@ namespace CodeProjectCalendar.NET
             if ( MainForm.Instance != null )
               if ( Program.Settings.UseColors )
               {
-                var color = MainForm.Instance.GetDayColor(counter1, _calendarDate.Month, _calendarDate.Year);
-                if ( color != Color.Transparent )
-                  g.FillRectangle(new SolidBrush(color), xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
+                var brush = MainForm.Instance.GetDayBrush(counter1, _calendarDate.Month, _calendarDate.Year);
+                if ( brush != Brushes.Transparent )
+                  g.FillRectangle(brush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
               }
             // ORDISOFTWARE MODIF END
 
