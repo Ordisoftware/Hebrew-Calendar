@@ -661,5 +661,11 @@
     <Setting Name="SelectedDayColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">200, 0, 0</Value>
     </Setting>
+    <Setting Name="CalendarUseMouseTracking" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CalendarColorMouseTracking" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DimGray</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

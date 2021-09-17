@@ -56,6 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCurrentDayBackColor.BackColor = Settings.CurrentDayBackColor; });
       SystemManager.TryCatch(() => { EditCurrentDayForeColor.BackColor = Settings.CurrentDayForeColor; });
       SystemManager.TryCatch(() => { EditSelectedDayColor.BackColor = Settings.SelectedDayColor; });
+      SystemManager.TryCatch(() => { EditCalendarColorMouseTracking.BackColor = Settings.CalendarColorMouseTracking; });
       SystemManager.TryCatch(() => { EditEventColorMonth.BackColor = Settings.EventColorMonth; });
       SystemManager.TryCatch(() => { EditEventColorNext.BackColor = Settings.EventColorNext; });
       SystemManager.TryCatch(() => { EditEventColorSeason.BackColor = Settings.EventColorSeason; });
@@ -134,6 +135,8 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditNavigationWindowCloseOnShowMainForm.Checked = Settings.NavigationWindowCloseOnShowMainForm; });
       SystemManager.TryCatch(() => { EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef; });
       SystemManager.TryCatch(() => { EditNavigationWindowUseUnicodeIcons.Checked = Settings.NavigationWindowUseUnicodeIcons; });
+      SystemManager.TryCatch(() => { EditCalendarUseMouseTracking.Checked = Settings.CalendarUseMouseTracking; });
+
       // Hotkey
       InitHotKeyControls();
       // System

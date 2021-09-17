@@ -319,6 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
+          CodeProjectCalendar.NET.Calendar.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
           CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
           CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
@@ -1038,6 +1039,11 @@ namespace Ordisoftware.Hebrew.Calendar
     #endregion
 
     #region Month View Context Menu
+
+    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+    {
+      CalendarMonth.Refresh();
+    }
 
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {

@@ -838,4 +838,10 @@
   <data name="LabelColorSelectedDay.Text" xml:space="preserve">
     <value>Jour sélectionné</value>
   </data>
+  <data name="EditCalendarUseMouseTracking.Text" xml:space="preserve">
+    <value>Utiliser le suivi de la souris</value>
+  </data>
+  <data name="LabelColorMouseTracking.Text" xml:space="preserve">
+    <value>Suivi de la souris</value>
+  </data>
 </root>

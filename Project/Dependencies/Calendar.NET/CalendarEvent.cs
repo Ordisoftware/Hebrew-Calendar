@@ -22,5 +22,8 @@ namespace CodeProjectCalendar.NET
       get;
       set;
     }
+
+    public bool TagForMouseHover;
+
   }
 }

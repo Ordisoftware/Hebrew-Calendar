@@ -75,6 +75,7 @@ namespace CodeProjectCalendar.NET
     private const int MarginSize = 5;
     internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
 
+    static public Pen MouseTrackingPen = new Pen(Program.Settings.CalendarColorMouseTracking);
     static public SolidBrush CurrentDayForeBrush = new SolidBrush(Color.White);
     static public SolidBrush CurrentDayBackBrush = new SolidBrush(Color.FromArgb(200, 0, 0));
     static public Pen SelectedDayPen = new Pen(Color.FromArgb(200, 0, 0));
@@ -954,6 +955,7 @@ namespace CodeProjectCalendar.NET
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
       var backbrush = new SolidBrush(BackColor);
+      var outofmonth = false;
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -1086,6 +1088,7 @@ namespace CodeProjectCalendar.NET
           {
             int dm = DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) - rogueDays + 1;
             // ORDISOFWTARE MODIF BEGIN PREVIOUS MONTH
+            outofmonth = true;
             var evPrevious = new CalendarEvent
             {
               EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1109,6 +1112,7 @@ namespace CodeProjectCalendar.NET
               if ( counter2 == 1 )
               {
                 // ORDISOFWTARE MODIF BEGIN NEXT MONTH FIRST DAY
+                outofmonth = true;
                 var evNextFirst = new CalendarEvent
                 {
                   EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1122,6 +1126,7 @@ namespace CodeProjectCalendar.NET
               else
               {
                 // ORDISOFWTARE MODIF BEGIN NEXT MONTH OTHERS
+                outofmonth = true;
                 var evNextOthers = new CalendarEvent
                 {
                   EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1135,6 +1140,17 @@ namespace CodeProjectCalendar.NET
               counter2++;
             }
           }
+
+          if ( Program.Settings.CalendarUseMouseTracking )
+          {
+            var area = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+            var mouse = PointToClient(Cursor.Position);
+            bool isMouseHover = area.Contains(mouse.X, mouse.Y);
+            if ( isMouseHover && !outofmonth )
+              g.DrawRectangle(MouseTrackingPen, area);
+          }
+          outofmonth = false;
+
           xStart += cellWidth;
         }
         xStart = MarginSize;
@@ -1219,7 +1235,7 @@ namespace CodeProjectCalendar.NET
             int pointYoffsetY = point.Y + offsetY;
 
             g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
-            g.FillRectangle(new SolidBrush(alphaColor), point.X + 1, pointYoffsetY, cellWidth - 1, sz.Height);
+            g.FillRectangle(new SolidBrush(alphaColor), point.X + 2, pointYoffsetY, cellWidth - 3, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
               g.DrawRectangle(PenBrushBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);

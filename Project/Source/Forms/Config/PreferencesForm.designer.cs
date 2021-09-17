@@ -322,6 +322,9 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalendarUseMouseTracking = new System.Windows.Forms.CheckBox();
+      this.EditCalendarColorMouseTracking = new System.Windows.Forms.Panel();
+      this.LabelColorMouseTracking = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1879,6 +1882,7 @@
       this.TabPageMonthView.Controls.Add(this.EditUseColors);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
+      this.TabPageMonthView.Controls.Add(this.EditCalendarUseMouseTracking);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewSelectDayDoubleClick);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
@@ -1948,7 +1952,9 @@
       this.PanelCalendarColors.Controls.Add(this.LabelColorFullMoon);
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
+      this.PanelCalendarColors.Controls.Add(this.LabelColorMouseTracking);
       this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDay);
+      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorMouseTracking);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
       this.PanelCalendarColors.Controls.Add(this.EditSelectedDayColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
@@ -2737,6 +2743,26 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditCalendarUseMouseTracking
+      // 
+      resources.ApplyResources(this.EditCalendarUseMouseTracking, "EditCalendarUseMouseTracking");
+      this.EditCalendarUseMouseTracking.Name = "EditCalendarUseMouseTracking";
+      this.EditCalendarUseMouseTracking.UseVisualStyleBackColor = true;
+      this.EditCalendarUseMouseTracking.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
+      // EditCalendarColorMouseTracking
+      // 
+      this.EditCalendarColorMouseTracking.BackColor = System.Drawing.Color.DimGray;
+      this.EditCalendarColorMouseTracking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorMouseTracking, "EditCalendarColorMouseTracking");
+      this.EditCalendarColorMouseTracking.Name = "EditCalendarColorMouseTracking";
+      this.EditCalendarColorMouseTracking.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      // 
+      // LabelColorMouseTracking
+      // 
+      resources.ApplyResources(this.LabelColorMouseTracking, "LabelColorMouseTracking");
+      this.LabelColorMouseTracking.Name = "LabelColorMouseTracking";
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3104,5 +3130,8 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
     private System.Windows.Forms.Label LabelColorSelectedDay;
     public System.Windows.Forms.Panel EditSelectedDayColor;
+    private System.Windows.Forms.CheckBox EditCalendarUseMouseTracking;
+    private System.Windows.Forms.Label LabelColorMouseTracking;
+    public System.Windows.Forms.Panel EditCalendarColorMouseTracking;
   }
 }
