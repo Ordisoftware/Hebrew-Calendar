@@ -1129,6 +1129,21 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionNavigate.PerformClick();
     }
 
+    private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
+    {
+      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
+    }
+
+    private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
+    {
+      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
+    }
+
+    private void ContextMenuDayDatesDiffTo(DateTime date)
+    {
+      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
+    }
+
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
     {
       var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuEventDay.Date
@@ -1147,21 +1162,6 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( sender == ContextMenuDayParashotBoard )
         ParashotForm.Run(parashah);
-    }
-
-    private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
-    {
-      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
-    }
-
-    private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
-    {
-      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
-    }
-
-    private void ContextMenuDayDatesDiffTo(DateTime date)
-    {
-      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
     }
 
     #endregion
