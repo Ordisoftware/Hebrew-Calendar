@@ -605,10 +605,16 @@
   <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
-  <data name="ContextMenuDayDatesDiff.Text" xml:space="preserve">
-    <value>Calculateur de différence de dates</value>
+  <data name="ContextMenuDayDatesDiffToSelected.Text" xml:space="preserve">
+    <value>Diff. de dates d'ici au sélectionné</value>
   </data>
   <data name="ContextMenuDaySelectDate.Text" xml:space="preserve">
     <value>Sélectionner cette date</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToToday.Text" xml:space="preserve">
+    <value>Diff. de dates d'ici à aujourd'hui</value>
+  </data>
+  <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
+    <value>Tableau des parashot</value>
   </data>
 </root>
