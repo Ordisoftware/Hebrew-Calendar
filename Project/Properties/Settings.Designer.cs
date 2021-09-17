@@ -2657,5 +2657,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarColorMouseTracking"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CalendarShowSelectedBox {
+            get {
+                return ((bool)(this["CalendarShowSelectedBox"]));
+            }
+            set {
+                this["CalendarShowSelectedBox"] = value;
+            }
+        }
     }
 }
