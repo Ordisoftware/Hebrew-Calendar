@@ -56,6 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCurrentDayBackColor.BackColor = Settings.CurrentDayBackColor; });
       SystemManager.TryCatch(() => { EditCurrentDayForeColor.BackColor = Settings.CurrentDayForeColor; });
       SystemManager.TryCatch(() => { EditSelectedDayBoxColor.BackColor = Settings.SelectedDayBoxColor; });
+      SystemManager.TryCatch(() => { EditCalendarColorActiveDay.BackColor = Settings.CalendarColorActiveDay; });
       SystemManager.TryCatch(() => { EditCalendarColorMouseTracking.BackColor = Settings.CalendarColorMouseTracking; });
       SystemManager.TryCatch(() => { EditEventColorMonth.BackColor = Settings.EventColorMonth; });
       SystemManager.TryCatch(() => { EditEventColorNext.BackColor = Settings.EventColorNext; });
@@ -65,7 +66,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTextReportFontSize.Value = Settings.FontSize; });
       SystemManager.TryCatch(() => { EditGPSLatitude.Text = Settings.GPSLatitude; });
       SystemManager.TryCatch(() => { EditGPSLongitude.Text = Settings.GPSLongitude; });
-      SystemManager.TryCatch(() => { EditMonthViewSelectDayDoubleClick.Checked = Settings.MonthViewSelectDayDoubleClick; });
+      SystemManager.TryCatch(() => { EditMonthViewChangeDayOnClick.Checked = Settings.MonthViewChangeDayOnClick; });
       SystemManager.TryCatch(() => { EditNavigateBottomColor.BackColor = Settings.NavigateBottomColor; });
       SystemManager.TryCatch(() => { EditNavigateMiddleColor.BackColor = Settings.NavigateMiddleColor; });
       SystemManager.TryCatch(() => { EditNavigateTopColor.BackColor = Settings.NavigateTopColor; });

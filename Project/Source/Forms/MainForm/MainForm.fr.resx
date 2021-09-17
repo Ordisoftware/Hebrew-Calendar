@@ -626,4 +626,7 @@
   <data name="ContextMenuDayClearSelection.Text" xml:space="preserve">
     <value>Enlever la sélection</value>
   </data>
+  <data name="ContextMenuDaySetAsActive.Text" xml:space="preserve">
+    <value>Définir comme jour actif</value>
+  </data>
 </root>

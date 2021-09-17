@@ -159,6 +159,12 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Right:
             GoToDate(CurrentDay.Date.AddMonths(1));
             return true;
+          case Keys.Subtract:
+            GoToDate(CurrentDay.Date.AddDays(-1));
+            return true;
+          case Keys.Add:
+            GoToDate(CurrentDay.Date.AddDays(+1));
+            return true;
         }
       return base.ProcessCmdKey(ref msg, keyData);
     }

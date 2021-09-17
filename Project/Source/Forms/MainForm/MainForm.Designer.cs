@@ -213,6 +213,7 @@
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDaySetAsActive = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -597,7 +598,7 @@
       // 
       resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
       this.EditExportDataEnumsAsTranslations.BackColor = System.Drawing.Color.Transparent;
-      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.Checked = true;
       this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
       // 
@@ -1423,6 +1424,7 @@
             this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayNavigation,
+            this.ContextMenuDaySetAsActive,
             this.toolStripSeparator20,
             this.ContextMenuDaySelectDate,
             this.ContextMenuDayClearSelection,
@@ -1588,6 +1590,12 @@
       // 
       this.toolStripSeparator20.Name = "toolStripSeparator20";
       resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
+      // 
+      // ContextMenuDaySetAsActive
+      // 
+      resources.ApplyResources(this.ContextMenuDaySetAsActive, "ContextMenuDaySetAsActive");
+      this.ContextMenuDaySetAsActive.Name = "ContextMenuDaySetAsActive";
+      this.ContextMenuDaySetAsActive.Click += new System.EventHandler(this.ContextMenuDaySetAsActive_Click);
       // 
       // MainForm
       // 
@@ -1812,6 +1820,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayClearSelection;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySetAsActive;
   }
 }
 

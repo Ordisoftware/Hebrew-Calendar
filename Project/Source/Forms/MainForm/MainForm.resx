@@ -3177,6 +3177,28 @@
   <data name="ContextMenuDayNavigation.Text" xml:space="preserve">
     <value>Navigation window</value>
   </data>
+  <data name="ContextMenuDaySetAsActive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVDhPlZDfS1NhGMffuqib6K5fd0F3QVdJdCeCYlRE
+        3UbUXyCbbm1tbU1Gzc25GaS1za0bXdSNMlNDKigIqSgkySAhSctz3ObOdtac++HZt/d997rN8qIe+MDz
+        fnk+XziH/Dn+4VFMv36DsZlPJ0TExxeNYfLtLMRz+8wZLqFyZi/QRtDhGcT0zHtkrh6H1robm7X8Pqbe
+        zQItBFr7HjBH6ISop3dhcyICxAI4q3fg2Yc5rE2OoBwLoTweBsaDNO/G1MfPwOggyk8jYI7QCZGPEigd
+        FyEdJHi5n+DFPgLpEMHy4SrykWr+nOYrB6q3zBE6IZ7wMDQAi6ksvqd/UXJYpHwTsH0ps17NlSy/ZY7Q
+        CfH2D6BCwyVJ2pFlWcbPeBxSIokfq6v0EmCO0Alxe/3QKhWsSPJfyHIcieQa0hkVuk4jUkqaF3j6+usF
+        LrcXFVoQTyYRTyRqJOhbyaQxP/8Fzts9GItN4OvCAi2W0NtY4HS5eatC21MppYaqZlEuldFlNGEk+hjR
+        R09ww2qD5aYdXv/deoHDeYcXqNksMqrKYXt+YwOXr1zDvYEAHgSGEAiGEQxFEBp6iF5fQ4Hd4eQF+fw6
+        crlcjUKhwPPWtna4PH3o6fXh3PkLHPbZQifEYrvFD0ulEpe2KBaL/N+waW5ugb7zOt/Z2Lud9QKTxS5i
+        QNO0bWwVsGlqOiU2wGy1NxbYRPzvwxyhE6LrMr4ymK3QG0zQ7QDL9QYz9MYq7JY5QudzjHLyP6EOIb8B
+        VGF9aYCFPrcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDaySetAsActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDaySetAsActive.Text" xml:space="preserve">
+    <value>Set as active day</value>
+  </data>
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
@@ -3457,7 +3479,7 @@
     <value>Weekly parashah</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 370</value>
+    <value>243, 392</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -4473,6 +4495,12 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySetAsActive.Name" xml:space="preserve">
+    <value>ContextMenuDaySetAsActive</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDaySetAsActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

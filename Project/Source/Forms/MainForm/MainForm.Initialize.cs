@@ -130,10 +130,10 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
         Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                                AppTranslations.NoticeKeyboardShortcuts,
-                                                               true, false, 410, 750, false, false);
+                                                               true, false, 430, 500, false, false);
         Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(10, 5, 5, 0);
+        Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
         Globals.IsReady = true;
         SetGlobalHotKey();
         TimerUpdateTitles.Start();
@@ -493,10 +493,11 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
         CalendarMonth.ForeColor = Settings.MonthViewTextColor;
         CalendarMonth.BackColor = Settings.MonthViewBackColor;
-        CalenderNet.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
+        CalenderNet.PenMouseTracking = new Pen(Settings.CalendarColorMouseTracking);
+        CalenderNet.PenActiveDay = new Pen(Settings.CalendarColorActiveDay);
         CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
         CalenderNet.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
-        CalenderNet.SelectedDayPen = new Pen(Settings.SelectedDayBoxColor);
+        CalenderNet.PenSelectedDay = new Pen(Settings.SelectedDayBoxColor);
         CalenderNet.ColorText = Settings.MonthViewTextColor;
         CalenderNet.PenText = new Pen(Settings.MonthViewTextColor);
         CalenderNet.PenTextReduced
@@ -518,12 +519,13 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       {
         PanelCalendar.BackColor = SystemColors.Window;
-        CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
+        CalendarMonth.RogueBrush = Brushes.WhiteSmoke;
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;
-        CalenderNet.MouseTrackingPen = new Pen(Color.Silver);
-        CalenderNet.CurrentDayForeBrush = new SolidBrush(Color.White);
-        CalenderNet.CurrentDayBackBrush = new SolidBrush(Color.Black);
+        CalenderNet.PenMouseTracking = Pens.Silver;
+        CalenderNet.PenActiveDay = Pens.LightGray;
+        CalenderNet.CurrentDayForeBrush = Brushes.White;
+        CalenderNet.CurrentDayBackBrush = Brushes.Black;
         CalenderNet.ColorText = Color.Black;
         CalenderNet.PenText = Pens.Black;
         CalenderNet.PenTextReduced = Pens.LightGray;
@@ -531,7 +533,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalenderNet.BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
         CalenderNet.BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
         CalenderNet.BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
-        CalenderNet.PenBlack = new Pen(CalenderNet.BrushBlack);
+        CalenderNet.PenBlack = Pens.Black;
       }
       string fontname = "Calibri";
       CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);

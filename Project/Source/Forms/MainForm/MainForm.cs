@@ -319,7 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
-          CodeProjectCalendar.NET.Calendar.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
+          CodeProjectCalendar.NET.Calendar.PenMouseTracking = new Pen(Settings.CalendarColorMouseTracking);
           CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
           CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
@@ -1062,7 +1062,8 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayGoToSelected.Enabled = DateSelected != DateTime.Today
                                            && ( CalendarMonth.CalendarDate.Year != DateSelected.Year
                                                 || CalendarMonth.CalendarDate.Month != DateSelected.Month );
-      ContextMenuDayClearSelection.Enabled = DateSelected != CalendarMonth.CalendarDate.Date;
+      ContextMenuDaySetAsActive.Enabled = CalendarMonth.CalendarDate.Date != ContextMenuEventDay.Date;
+      ContextMenuDayClearSelection.Enabled = DateSelected != DateTime.Today;
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date != DateSelected;
       ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date != DateTime.Today;
@@ -1117,7 +1118,10 @@ namespace Ordisoftware.Hebrew.Calendar
       bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       if ( e.Button == MouseButtons.Left )
       {
-        if ( ( e.Clicks == 1 && !Settings.MonthViewSelectDayDoubleClick ) || e.Clicks > 1 )
+        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
+          GoToDate(dayRow.Date);
+        else
+        if ( e.Clicks > 1 )
         {
           DateSelected = dayRow.Date;
           CalendarMonth.Refresh();
@@ -1134,6 +1138,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
       CalendarMonth.Refresh();
+    }
+
+    private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
+    {
+      GoToDate(ContextMenuEventDay.Date);
     }
 
     private void ContextMenuDayGoToToday_Click(object sender, EventArgs e)

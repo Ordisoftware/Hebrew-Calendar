@@ -69,6 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F3 : New moons board" + Globals.NL +
                         "Ctrl + F4 : Lunar months board" + Globals.NL +
                         "Ctrl + F5 : Dates difference calculator" + Globals.NL +
+                        "Add or Sub : Change active day" + Globals.NL +
                         "Home : First month available in the database" + Globals.NL +
                         "End : Last month available in the database" + Globals.NL +
                         "Up (ou PageUp) : Previous year" + Globals.NL +
@@ -121,6 +122,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
                         "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
                         "Ctrl + F5 : Calculateur de différence de dates" + Globals.NL +
+                        "Plus ou Moins : Changer de jour actif" + Globals.NL +
                         "Début : Premier mois disponible dans la base de données" + Globals.NL +
                         "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                         "Haut (ou PagePrec) : Année précédente" + Globals.NL +
