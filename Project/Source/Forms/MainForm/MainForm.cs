@@ -319,6 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
+          CodeProjectCalendar.NET.Calendar.MouseTrackingPen = new Pen(Settings.CalendarColorMouseTracking);
           CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
           CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
@@ -1039,6 +1040,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Month View Context Menu
 
+    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+    {
+      CalendarMonth.Refresh();
+    }
+
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
       var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
@@ -1129,6 +1135,21 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionNavigate.PerformClick();
     }
 
+    private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
+    {
+      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
+    }
+
+    private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
+    {
+      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
+    }
+
+    private void ContextMenuDayDatesDiffTo(DateTime date)
+    {
+      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
+    }
+
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
     {
       var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuEventDay.Date
@@ -1147,21 +1168,6 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( sender == ContextMenuDayParashotBoard )
         ParashotForm.Run(parashah);
-    }
-
-    private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
-    {
-      ContextMenuDayDatesDiffTo(DateTime.Now.Date);
-    }
-
-    private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
-    {
-      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
-    }
-
-    private void ContextMenuDayDatesDiffTo(DateTime date)
-    {
-      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
     }
 
     #endregion

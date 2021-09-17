@@ -5226,7 +5226,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 226</value>
+    <value>473, 209</value>
   </data>
   <data name="ActionOpenTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5270,7 +5270,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSaveTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 226</value>
+    <value>503, 209</value>
   </data>
   <data name="ActionSaveTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5552,7 +5552,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeDark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 236</value>
+    <value>116, 216</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5618,7 +5618,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 216</value>
+    <value>16, 216</value>
   </data>
   <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -6154,6 +6154,39 @@
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
+  <data name="LabelColorMouseTracking.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelColorMouseTracking.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelColorMouseTracking.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelColorMouseTracking.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 57</value>
+  </data>
+  <data name="LabelColorMouseTracking.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="LabelColorMouseTracking.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="LabelColorMouseTracking.Text" xml:space="preserve">
+    <value>Mouse tracking</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMouseTracking.Name" xml:space="preserve">
+    <value>LabelColorMouseTracking</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMouseTracking.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMouseTracking.Parent" xml:space="preserve">
+    <value>PanelCalendarColors</value>
+  </data>
+  <data name="&gt;&gt;LabelColorMouseTracking.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
   <data name="LabelColorSelectedDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6185,7 +6218,31 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorSelectedDay.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
+  </data>
+  <data name="EditCalendarColorMouseTracking.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarColorMouseTracking.Location" type="System.Drawing.Point, System.Drawing">
+    <value>319, 75</value>
+  </data>
+  <data name="EditCalendarColorMouseTracking.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditCalendarColorMouseTracking.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorMouseTracking.Name" xml:space="preserve">
+    <value>EditCalendarColorMouseTracking</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorMouseTracking.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorMouseTracking.Parent" xml:space="preserve">
+    <value>PanelCalendarColors</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarColorMouseTracking.ZOrder" xml:space="preserve">
+    <value>34</value>
   </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6218,7 +6275,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorTodayBack.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="EditSelectedDayColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6242,7 +6299,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditSelectedDayColor.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>36</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6266,13 +6323,13 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>37</value>
   </data>
   <data name="PanelCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 128</value>
+    <value>23, 150</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 254</value>
+    <value>540, 238</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -6299,7 +6356,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 110</value>
+    <value>23, 130</value>
   </data>
   <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 17</value>
@@ -6404,6 +6461,42 @@
   <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="EditCalendarUseMouseTracking.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 110</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.Text" xml:space="preserve">
+    <value>Use mouse tracking</value>
+  </data>
+  <data name="EditCalendarUseMouseTracking.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseMouseTracking.Name" xml:space="preserve">
+    <value>EditCalendarUseMouseTracking</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseMouseTracking.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseMouseTracking.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseMouseTracking.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="EditMonthViewSelectDayDoubleClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6441,7 +6534,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewSelectDayDoubleClick.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6474,7 +6567,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6498,7 +6591,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6522,7 +6615,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6555,7 +6648,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6579,7 +6672,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>

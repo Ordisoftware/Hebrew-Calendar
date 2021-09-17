@@ -2633,5 +2633,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["SelectedDayColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CalendarUseMouseTracking {
+            get {
+                return ((bool)(this["CalendarUseMouseTracking"]));
+            }
+            set {
+                this["CalendarUseMouseTracking"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
+        public global::System.Drawing.Color CalendarColorMouseTracking {
+            get {
+                return ((global::System.Drawing.Color)(this["CalendarColorMouseTracking"]));
+            }
+            set {
+                this["CalendarColorMouseTracking"] = value;
+            }
+        }
     }
 }

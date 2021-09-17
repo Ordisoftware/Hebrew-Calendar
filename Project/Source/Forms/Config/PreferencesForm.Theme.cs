@@ -35,6 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCurrentDayForeColor.BackColor = Color.White;
       EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
       EditSelectedDayColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditCalendarColorMouseTracking.BackColor = Color.DimGray;
       EditCalendarColorParashah.BackColor = Color.Indigo;
       EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
       EditCalendarColorSeason.BackColor = Color.DarkGreen;
@@ -56,6 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
       EditCurrentDayForeColor.BackColor = Color.White;
       EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
       EditSelectedDayColor.BackColor = Color.FromArgb(200, 0, 0);
+      EditCalendarColorMouseTracking.BackColor = Color.LightGray;
       EditCalendarColorParashah.BackColor = Color.Plum;
       EditCalendarColorTorahEvent.BackColor = Color.FromArgb(250, 190, 255);
       EditCalendarColorSeason.BackColor = Color.FromArgb(128, 255, 128);
