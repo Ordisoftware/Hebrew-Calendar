@@ -1063,6 +1063,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
+      var date = Program.Settings.TorahEventsCountAsMoon
+             ? ContextMenuEventDay.Moonrise ?? ContextMenuEventDay.Date
+             : ContextMenuEventDay.Sunrise ?? ContextMenuEventDay.Date;
+      var rowDay = ApplicationDatabase.Instance.GetDay(date);
+      ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
+      if ( Settings.MainFormTitleBarShowWeeklyParashah )
+      {
+        var parashah = ParashotFactory.Instance.Get(rowDay.GetParashahReadingDay()?.ParashahID);
+        if ( parashah != null )
+          ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
+      }
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
       ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date.Date != CalendarMonth.CalendarDate.Date;
       ContextMenuDayDatesDiff.Enabled = ContextMenuDaySelectDate.Enabled;

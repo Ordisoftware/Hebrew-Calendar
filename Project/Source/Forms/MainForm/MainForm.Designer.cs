@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -187,6 +187,7 @@
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
+      this.ContextMenuDayDate = new System.Windows.Forms.ToolStripMenuItem();
       this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
       this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -203,6 +204,7 @@
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.EditExportDataEnumsAsTranslations = new Ordisoftware.Core.CheckBoxToolStripItem();
+      this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -325,14 +327,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1261,6 +1263,8 @@
       // ContextMenuStripDay
       // 
       this.ContextMenuStripDay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuDayDate,
+            this.toolStripSeparator15,
             this.ContextMenuDaySunrise,
             this.ContextMenuDaySunset,
             this.ContextMenuDayMoonrise,
@@ -1369,6 +1373,11 @@
       this.ImageListRisesAndSets.Images.SetKeyName(1, "316110_sunset_icon16.png");
       this.ImageListRisesAndSets.Images.SetKeyName(2, "316121_moonrise_icon16.png");
       this.ImageListRisesAndSets.Images.SetKeyName(3, "316122_moonset_icon16.png");
+      // 
+      // ContextMenuDayDate
+      // 
+      resources.ApplyResources(this.ContextMenuDayDate, "ContextMenuDayDate");
+      this.ContextMenuDayDate.Name = "ContextMenuDayDate";
       // 
       // CalendarMonth
       // 
@@ -1512,6 +1521,11 @@
       this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
       this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
       this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
+      // 
+      // toolStripSeparator15
+      // 
+      this.toolStripSeparator15.Name = "toolStripSeparator15";
+      resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
       // 
       // MainForm
       // 
@@ -1726,6 +1740,8 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunrise;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySunset;
     private System.Windows.Forms.ImageList ImageListRisesAndSets;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayDate;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
   }
 }
 
