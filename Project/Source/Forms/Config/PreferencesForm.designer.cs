@@ -261,6 +261,7 @@
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
+      this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
       this.EditCalendarUseMouseTracking = new System.Windows.Forms.CheckBox();
       this.EditMonthViewSelectDayDoubleClick = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
@@ -325,7 +326,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -2194,7 +2194,7 @@
       // 
       // EditCalendarColorMouseTracking
       // 
-      this.EditCalendarColorMouseTracking.BackColor = System.Drawing.Color.DimGray;
+      this.EditCalendarColorMouseTracking.BackColor = System.Drawing.Color.DarkGray;
       this.EditCalendarColorMouseTracking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCalendarColorMouseTracking, "EditCalendarColorMouseTracking");
       this.EditCalendarColorMouseTracking.Name = "EditCalendarColorMouseTracking";
@@ -2242,6 +2242,13 @@
       this.EditCalendarShowParashah.Name = "EditCalendarShowParashah";
       this.EditCalendarShowParashah.UseVisualStyleBackColor = true;
       this.EditCalendarShowParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      // 
+      // EditCalendarShowSelectedBox
+      // 
+      resources.ApplyResources(this.EditCalendarShowSelectedBox, "EditCalendarShowSelectedBox");
+      this.EditCalendarShowSelectedBox.Name = "EditCalendarShowSelectedBox";
+      this.EditCalendarShowSelectedBox.UseVisualStyleBackColor = true;
+      this.EditCalendarShowSelectedBox.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // EditCalendarUseMouseTracking
       // 
@@ -2764,13 +2771,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // EditCalendarShowSelectedBox
-      // 
-      resources.ApplyResources(this.EditCalendarShowSelectedBox, "EditCalendarShowSelectedBox");
-      this.EditCalendarShowSelectedBox.Name = "EditCalendarShowSelectedBox";
-      this.EditCalendarShowSelectedBox.UseVisualStyleBackColor = true;
-      this.EditCalendarShowSelectedBox.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // PreferencesForm
       // 

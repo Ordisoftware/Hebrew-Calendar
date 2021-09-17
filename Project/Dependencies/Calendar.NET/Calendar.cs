@@ -1008,7 +1008,7 @@ namespace CodeProjectCalendar.NET
                   if ( _calendarDate.Day != counter1 )
                   {
                     g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
@@ -1022,7 +1022,7 @@ namespace CodeProjectCalendar.NET
                   if ( _calendarDate.Day == counter1 )
                   {
                     isselected = true;
-                    g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.DrawRectangle(Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                   }
                   g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                 }
@@ -1053,7 +1053,7 @@ namespace CodeProjectCalendar.NET
                   if ( _calendarDate.Day != counter1 )
                   {
                     g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawRectangle(SelectedDayPen, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
@@ -1068,9 +1068,14 @@ namespace CodeProjectCalendar.NET
                   if ( _calendarDate.Day == counter1 )
                   {
                     isselected = true;
-                    g.DrawRectangle(Program.Settings.UseColors ? SelectedDayPen : Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
                   }
-                  g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                  else
+                  {
+                    g.DrawRectangle(Pens.Black, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                  }
                 }
                 //ORDISOFTWARE MODIF END
               }
@@ -1153,6 +1158,7 @@ namespace CodeProjectCalendar.NET
             }
           }
 
+          // ORDISOFWTARE MODIF BEGIN
           if ( Program.Settings.CalendarShowSelectedBox )
             if ( isselected )
             {
@@ -1169,6 +1175,7 @@ namespace CodeProjectCalendar.NET
                 g.DrawRectangle(MouseTrackingPen, area);
               outofmonth = false;
             }
+          // ORDISOFWTARE MODIF END
 
           xStart += cellWidth;
         }
