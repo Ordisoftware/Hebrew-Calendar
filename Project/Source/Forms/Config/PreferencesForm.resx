@@ -6154,6 +6154,39 @@
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
+  <data name="LabelColorSelected.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelColorSelected.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelColorSelected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelColorSelected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 57</value>
+  </data>
+  <data name="LabelColorSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="LabelColorSelected.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="LabelColorSelected.Text" xml:space="preserve">
+    <value>Today back</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSelected.Name" xml:space="preserve">
+    <value>LabelColorSelected</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSelected.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSelected.Parent" xml:space="preserve">
+    <value>PanelCalendarColors</value>
+  </data>
+  <data name="&gt;&gt;LabelColorSelected.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6185,7 +6218,31 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;LabelColorTodayBack.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
+  </data>
+  <data name="EditSelectedDayColor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditSelectedDayColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 75</value>
+  </data>
+  <data name="EditSelectedDayColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="EditSelectedDayColor.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayColor.Name" xml:space="preserve">
+    <value>EditSelectedDayColor</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayColor.Parent" xml:space="preserve">
+    <value>PanelCalendarColors</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayColor.ZOrder" xml:space="preserve">
+    <value>34</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6209,7 +6266,7 @@
     <value>PanelCalendarColors</value>
   </data>
   <data name="&gt;&gt;EditCalendarColorTorahEvent.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="PanelCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 128</value>

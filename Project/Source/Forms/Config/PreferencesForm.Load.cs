@@ -55,6 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCheckUpdateAtStartup.Checked = Settings.CheckUpdateAtStartup; });
       SystemManager.TryCatch(() => { EditCurrentDayBackColor.BackColor = Settings.CurrentDayBackColor; });
       SystemManager.TryCatch(() => { EditCurrentDayForeColor.BackColor = Settings.CurrentDayForeColor; });
+      SystemManager.TryCatch(() => { EditSelectedDayColor.BackColor = Settings.SelectedDayColor; });
       SystemManager.TryCatch(() => { EditEventColorMonth.BackColor = Settings.EventColorMonth; });
       SystemManager.TryCatch(() => { EditEventColorNext.BackColor = Settings.EventColorNext; });
       SystemManager.TryCatch(() => { EditEventColorSeason.BackColor = Settings.EventColorSeason; });

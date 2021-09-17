@@ -252,7 +252,9 @@
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
       this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
+      this.LabelColorSelected = new System.Windows.Forms.Label();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
+      this.EditSelectedDayColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
@@ -1946,7 +1948,9 @@
       this.PanelCalendarColors.Controls.Add(this.LabelColorFullMoon);
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
+      this.PanelCalendarColors.Controls.Add(this.LabelColorSelected);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
+      this.PanelCalendarColors.Controls.Add(this.EditSelectedDayColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
       resources.ApplyResources(this.PanelCalendarColors, "PanelCalendarColors");
       this.PanelCalendarColors.Name = "PanelCalendarColors";
@@ -2170,10 +2174,23 @@
       resources.ApplyResources(this.LabelColorTorah, "LabelColorTorah");
       this.LabelColorTorah.Name = "LabelColorTorah";
       // 
+      // LabelColorSelected
+      // 
+      resources.ApplyResources(this.LabelColorSelected, "LabelColorSelected");
+      this.LabelColorSelected.Name = "LabelColorSelected";
+      // 
       // LabelColorTodayBack
       // 
       resources.ApplyResources(this.LabelColorTodayBack, "LabelColorTodayBack");
       this.LabelColorTodayBack.Name = "LabelColorTodayBack";
+      // 
+      // EditSelectedDayColor
+      // 
+      this.EditSelectedDayColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.EditSelectedDayColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditSelectedDayColor, "EditSelectedDayColor");
+      this.EditSelectedDayColor.Name = "EditSelectedDayColor";
+      this.EditSelectedDayColor.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // EditCalendarColorTorahEvent
       // 
@@ -3085,5 +3102,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
+    private System.Windows.Forms.Label LabelColorSelected;
+    public System.Windows.Forms.Panel EditSelectedDayColor;
   }
 }

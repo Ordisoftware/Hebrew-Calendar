@@ -305,7 +305,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Enabled;
-      //var formState = WindowState;
       ToolStrip.Enabled = false;
       try
       {
@@ -320,8 +319,8 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
-          CodeProjectCalendar.NET.Calendar.CurrentDayForeColor = Settings.CurrentDayForeColor;
-          CodeProjectCalendar.NET.Calendar.CurrentDayBackColor = Settings.CurrentDayBackColor;
+          CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
+          CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);
           Thread.Sleep(1000);
           ActionGenerate_Click(null, null);
@@ -346,7 +345,6 @@ namespace Ordisoftware.Hebrew.Calendar
         UpdateTitles(true);
         TimerReminder.Enabled = true;
         EnableReminderTimer();
-        //WindowState = formState;
       }
     }
 
