@@ -63,8 +63,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 9.0**
 
-- Added select day on click in the visual month view.
+- Added select a day in the visual month view.
 - Added day context menu for in the visual month view.
+- Added mouse tracking effect when hover a day box.
 - Added celebration verses board and command-line option.
 - Changed month view to show sun times instead of moon when using sun omer.
 - Some fixes and improvements.
@@ -249,6 +250,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | F7 | Search a gregorian month window |
 | F8 (or Ctrl + N)| Navigation window |
 | Ctrl + T (or Numpad0)| Go to today |
+| Ctrl + B (or Decimal)| Go to selected day |
 | Ctrl + D | Search a day |
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
@@ -272,6 +274,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + F3 | New moons board |
 | Ctrl + F4 | Lunar months board |
 | Ctrl + F5 | Dates difference calculator |
+| Add or Sub | Change active day |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -304,8 +307,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.19 - Version 9.0
 
-- Add select day on click in the visual month view.
+- Add select a day in the visual month view.
 - Add option to use single or double-click to select day.
+- Add Ctrl+B and Decimal shortcuts to go to selected day.
 - Add option for days mouse tracking in the visual month view.
 - Add day context menu for in the visual month view.
 - Add celebration verses board.
