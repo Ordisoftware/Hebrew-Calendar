@@ -6154,37 +6154,37 @@
   <data name="&gt;&gt;LabelColorTorah.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
-  <data name="LabelColorSelected.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LabelColorSelectedDay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LabelColorSelected.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LabelColorSelectedDay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="LabelColorSelected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LabelColorSelectedDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LabelColorSelected.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LabelColorSelectedDay.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 57</value>
   </data>
-  <data name="LabelColorSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+  <data name="LabelColorSelectedDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
   </data>
-  <data name="LabelColorSelected.TabIndex" type="System.Int32, mscorlib">
+  <data name="LabelColorSelectedDay.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="LabelColorSelected.Text" xml:space="preserve">
-    <value>Today back</value>
+  <data name="LabelColorSelectedDay.Text" xml:space="preserve">
+    <value>Selected day</value>
   </data>
-  <data name="&gt;&gt;LabelColorSelected.Name" xml:space="preserve">
-    <value>LabelColorSelected</value>
+  <data name="&gt;&gt;LabelColorSelectedDay.Name" xml:space="preserve">
+    <value>LabelColorSelectedDay</value>
   </data>
-  <data name="&gt;&gt;LabelColorSelected.Type" xml:space="preserve">
+  <data name="&gt;&gt;LabelColorSelectedDay.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LabelColorSelected.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LabelColorSelectedDay.Parent" xml:space="preserve">
     <value>PanelCalendarColors</value>
   </data>
-  <data name="&gt;&gt;LabelColorSelected.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelColorSelectedDay.ZOrder" xml:space="preserve">
     <value>32</value>
   </data>
   <data name="LabelColorTodayBack.AutoSize" type="System.Boolean, mscorlib">

@@ -252,7 +252,7 @@
       this.LabelColorFullMoon = new System.Windows.Forms.Label();
       this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
-      this.LabelColorSelected = new System.Windows.Forms.Label();
+      this.LabelColorSelectedDay = new System.Windows.Forms.Label();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
       this.EditSelectedDayColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
@@ -1948,7 +1948,7 @@
       this.PanelCalendarColors.Controls.Add(this.LabelColorFullMoon);
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
-      this.PanelCalendarColors.Controls.Add(this.LabelColorSelected);
+      this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDay);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
       this.PanelCalendarColors.Controls.Add(this.EditSelectedDayColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
@@ -2174,10 +2174,10 @@
       resources.ApplyResources(this.LabelColorTorah, "LabelColorTorah");
       this.LabelColorTorah.Name = "LabelColorTorah";
       // 
-      // LabelColorSelected
+      // LabelColorSelectedDay
       // 
-      resources.ApplyResources(this.LabelColorSelected, "LabelColorSelected");
-      this.LabelColorSelected.Name = "LabelColorSelected";
+      resources.ApplyResources(this.LabelColorSelectedDay, "LabelColorSelectedDay");
+      this.LabelColorSelectedDay.Name = "LabelColorSelectedDay";
       // 
       // LabelColorTodayBack
       // 
@@ -3102,7 +3102,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
-    private System.Windows.Forms.Label LabelColorSelected;
+    private System.Windows.Forms.Label LabelColorSelectedDay;
     public System.Windows.Forms.Panel EditSelectedDayColor;
   }
 }

@@ -835,4 +835,7 @@
   <data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
     <value>Utiliser les icônes unicode</value>
   </data>
+  <data name="LabelColorSelectedDay.Text" xml:space="preserve">
+    <value>Jour sélectionné</value>
+  </data>
 </root>
