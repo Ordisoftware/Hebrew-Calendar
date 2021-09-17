@@ -117,51 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;LabelDate.Name" xml:space="preserve">
-    <value>LabelDate</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.Parent" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 35</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="LabelDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -171,6 +131,7 @@
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 25</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -192,317 +153,32 @@
   <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Name" xml:space="preserve">
-    <value>LabelLunarMonthName</value>
+  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
+  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
-  <data name="&gt;&gt;LabelLunarMonthName.ZOrder" xml:space="preserve">
+  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 35</value>
+  </data>
+  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Name" xml:space="preserve">
-    <value>LabelCurrentDayValue</value>
+  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
+    <value>PanelTop</value>
   </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Name" xml:space="preserve">
-    <value>LabelParashahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Name" xml:space="preserve">
-    <value>LabelTorahNextDateValue</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Name" xml:space="preserve">
-    <value>LabelTorahNextValue</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Name" xml:space="preserve">
-    <value>LabelTorahNext</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Name" xml:space="preserve">
-    <value>LabelEventTorahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Name" xml:space="preserve">
-    <value>LabelEventTorah</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Name" xml:space="preserve">
-    <value>LabelParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Name" xml:space="preserve">
-    <value>LabelCurrentDay</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.Name" xml:space="preserve">
-    <value>LabelEventSeason</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Name" xml:space="preserve">
-    <value>LabelEventSeasonValue</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Name" xml:space="preserve">
-    <value>PictureMoon</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Name" xml:space="preserve">
-    <value>LabelMoonsetValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Name" xml:space="preserve">
-    <value>LabelMoonriseValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Name" xml:space="preserve">
-    <value>LabelSunsetValue</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Name" xml:space="preserve">
-    <value>LabelSunriseValue</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Name" xml:space="preserve">
-    <value>LabelMoonset</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Name" xml:space="preserve">
-    <value>LabelMoonrise</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Name" xml:space="preserve">
-    <value>LabelLunarDayEvent</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Name" xml:space="preserve">
-    <value>LabelLunarDayValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Name" xml:space="preserve">
-    <value>LabelLunarMonthValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Name" xml:space="preserve">
-    <value>LabelSunset</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Name" xml:space="preserve">
-    <value>LabelSunrise</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="PanelMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelMiddle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 36</value>
-  </data>
-  <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 305</value>
-  </data>
-  <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddle.Name" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddle.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMiddle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMiddle.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="LabelLunarMonthName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -576,8 +252,99 @@
   <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGeSURBVDhPlVPbSgJRFPVf+oQwu/kTXfCG+BdFSF5mJMoz
+        I4SvldBDvfTmD/QJEiE2iCXoCAqmKDIj6G7vPWcULTEXrNnnbPZaZ80ZxkO4zee/RS4HWU2DmwUKrkLX
+        iW0e/gsip8M61Go1yArxJCWLoJMJ5fI7GB8VZqVchlLpjfuJdJpr1TAo0bOUzeEa7EZU8MeumXuRDBhG
+        hfspRQHLtnlNSfB1X6TUgWtQr3+B2WwwG7g2jCr3i8UipFUVkjIJ3YmUOnANWmYD2q0mmFibzToafnJ/
+        GTQvpQ5cA19Ywegq9LodOI0XoNNuwcnFPVYTApcF8AadBCsNxqM+TMcDrqNBF/q9zowW7q1hj+dWGtDp
+        /tgVHEYzEEo8wmg44ARUg7jfCa1JgBmQE6SNSSywrSGMJWFqIZ0vsdLAF07jp1RwNeGTYWLD8fkdC4N4
+        B/9IsITplB6yzvHLQOhuAgUOoirs410E4g/cOzrDBAjae4MpXtO8lDrQ8EfaBDQvpQ4SyeQrNeVfJ6lx
+        VJeCiH2ao3kpnWELub0BaR7h8fwA8iVpw1FqE2QAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
+    <value>Show description</value>
+  </data>
+  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
+        rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
+        TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
+        2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
+        SRiG3wuybdv93S7gwcCSGYbhoTD+us5f7MdxnbXW8ScT6Obec0i7TAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionViewParashot.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
+        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
+        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
+        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
+        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
+        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
+        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
+        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
+        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
+        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Study online</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
+        pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
+        drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
+        4f+GsH8UhhEnJDK9mlTIDFjxapGPOrAeNMBj7QWy67SdBzIJ+I1PEJ7SIhXxIfenBOdXEffqUCHTowBE
+        3P3IRhxIBfRwW3YB6QRmKbDsHcTqshdb6RSdzwFbSUQ9WlQ0FAAjwq4+bO0XyBeB8LiGnsBQBISvn/d/
+        ghKw5OotA4uOD/8C2z/xf0A2CWHs0zbAYcGuooCTAga4rfQW8ukikElS4OkewE/a6SkBjRzmbQpko0Ug
+        SD9H8PHYWIvTjb/g51oQ3gOYH1aVgZDlHXLRMaSCHBLT/YhMdGHO1olEaBQBcxui0yy9xmlkM+K/oSO3
+        ipBVQQEjiKTJBMGuAJITyAgWrAdYLDiU8DCtCI28wXf+OXy8EvGggzazRQBpLDu6IWniQKRyE4Zf10HX
+        UQ+2/T6GOh5A1/kQTGcDGFUrmPctYOgc234P7ItaMG13MfSyDrZXtThDu6Rarl+TynmcbjajcicWnHxk
+        w4iiuRDxubxmLuwVO2KX0FF1/NKdmmMXb10v5MLNa0fO1Vw+K9fFqh7zECOt/8gePX/jiri2vU/siF0R
+        EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+    <value>Read online</value>
+  </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 98</value>
+    <value>181, 120</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -614,97 +381,6 @@
   </data>
   <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
-        IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
-        j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
-        hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
-        o2uqPpInZSykogQzDUbDN0xGfanDfhdvvc4HA9oHg57MzTTg0zf2T7GeKWI3e4vhoC8JuKZov7j7SwLK
-        QBwTQ0oSIAwGGGliEhCjJzHTYGmvQI/SoNVYTsY4xNbhlQhTdAd/SPAFkwl/6DrFNwNlxwkMrGVMrNJd
-        JI9vpLd5QAkIvF9I5WXN81oagV4U+eKv4HktjZDN5e64yf+wKUsSNaZiRm8leF5LPzBHnP8HeZ6QSLwD
-        FOqQHJPYCDEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="ActionViewParashahInfos.Text" xml:space="preserve">
-    <value>Show description</value>
-  </data>
-  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
-        rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
-        TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
-        2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
-        SRiG3wuybdv93S7gwcCSGYbhoTD+us5f7MdxnbXW8ScT6Obec0i7TAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="ActionViewParashot.Text" xml:space="preserve">
-    <value>Parashot board</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
-  </data>
-  <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
-    <value>Study online</value>
-  </data>
-  <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
-        aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
-        pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
-        drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
-        4f+GsH8UhhEnJDK9mlTIDFjxapGPOrAeNMBj7QWy67SdBzIJ+I1PEJ7SIhXxIfenBOdXEffqUCHTowBE
-        3P3IRhxIBfRwW3YB6QRmKbDsHcTqshdb6RSdzwFbSUQ9WlQ0FAAjwq4+bO0XyBeB8LiGnsBQBISvn/d/
-        ghKw5OotA4uOD/8C2z/xf0A2CWHs0zbAYcGuooCTAga4rfQW8ukikElS4OkewE/a6SkBjRzmbQpko0Ug
-        SD9H8PHYWIvTjb/g51oQ3gOYH1aVgZDlHXLRMaSCHBLT/YhMdGHO1olEaBQBcxui0yy9xmlkM+K/oSO3
-        ipBVQQEjiKTJBMGuAJITyAgWrAdYLDiU8DCtCI28wXf+OXy8EvGggzazRQBpLDu6IWniQKRyE4Zf10HX
-        UQ+2/T6GOh5A1/kQTGcDGFUrmPctYOgc234P7ItaMG13MfSyDrZXtThDu6Rarl+TynmcbjajcicWnHxk
-        w4iiuRDxubxmLuwVO2KX0FF1/NKdmmMXb10v5MLNa0fO1Vw+K9fFqh7zECOt/8gePX/jiri2vU/siF0R
-        EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
-    <value>Read online</value>
   </data>
   <data name="LabelTorahNextDateValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1353,6 +1029,30 @@
   </data>
   <data name="&gt;&gt;LabelSunrise.ZOrder" xml:space="preserve">
     <value>23</value>
+  </data>
+  <data name="PanelMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 36</value>
+  </data>
+  <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 305</value>
+  </data>
+  <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Name" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ActionNextDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
