@@ -667,5 +667,8 @@
     <Setting Name="CalendarColorMouseTracking" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">DimGray</Value>
     </Setting>
+    <Setting Name="CalendarShowSelectedBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

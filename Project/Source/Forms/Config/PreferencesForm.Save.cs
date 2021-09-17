@@ -126,6 +126,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
       Settings.NavigationWindowUseUnicodeIcons = EditNavigationWindowUseUnicodeIcons.Checked;
       Settings.CalendarUseMouseTracking = EditCalendarUseMouseTracking.Checked;
+      Settings.CalendarShowSelectedBox = EditCalendarShowSelectedBox.Checked;
       // Navigation window
       NavigationForm.Instance.Relocalize();
       // Month view

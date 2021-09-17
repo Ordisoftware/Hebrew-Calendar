@@ -844,4 +844,7 @@
   <data name="LabelColorMouseTracking.Text" xml:space="preserve">
     <value>Suivi de la souris</value>
   </data>
+  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
+    <value>Afficher la case de sélection</value>
+  </data>
 </root>
