@@ -524,7 +524,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarMonth.RogueBrush = new SolidBrush(Color.WhiteSmoke);
         CalendarMonth.ForeColor = Color.Black;
         CalendarMonth.BackColor = Color.White;
-        CalenderNet.MouseTrackingPen = new Pen(Color.DimGray);
+        CalenderNet.MouseTrackingPen = new Pen(Color.DarkGray);
         CalenderNet.CurrentDayForeBrush = new SolidBrush(Color.White);
         CalenderNet.CurrentDayBackBrush = new SolidBrush(Color.Black);
         CalenderNet.ColorText = Color.Black;
