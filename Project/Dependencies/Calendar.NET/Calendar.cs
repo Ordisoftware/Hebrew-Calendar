@@ -1153,6 +1153,7 @@ namespace CodeProjectCalendar.NET
             }
           }
 
+          // ORDISOFWTARE MODIF BEGIN
           if ( Program.Settings.CalendarShowSelectedBox )
             if ( isselected )
             {
@@ -1169,6 +1170,7 @@ namespace CodeProjectCalendar.NET
                 g.DrawRectangle(MouseTrackingPen, area);
               outofmonth = false;
             }
+          // ORDISOFWTARE MODIF END
 
           xStart += cellWidth;
         }
