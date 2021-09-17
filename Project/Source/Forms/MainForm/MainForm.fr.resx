@@ -614,4 +614,7 @@
   <data name="ContextMenuDayDatesDiffToToday.Text" xml:space="preserve">
     <value>Diff. de dates d'ici à aujourd'hui</value>
   </data>
+  <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
+    <value>Tableau des parashot</value>
+  </data>
 </root>

@@ -1136,13 +1136,16 @@ namespace Ordisoftware.Hebrew.Calendar
       CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
     }
 
-    private void ContextMenuDayParashahShowDescription_Click(object sender, EventArgs e)
+    private void ContextMenuDayParashah_Click(object sender, EventArgs e)
     {
       var day = ContextMenuEventDay.GetParashahReadingDay();
       if ( day == null ) return;
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
       if ( parashah == null ) return;
-      ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+      if (sender == ContextMenuDayParashahShowDescription)
+        ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+      else
+        ParashotForm.Run(parashah);
     }
 
     private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)

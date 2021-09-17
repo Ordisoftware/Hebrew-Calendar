@@ -202,6 +202,7 @@
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
@@ -1500,6 +1501,7 @@
       // 
       this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuDayParashahShowDescription,
+            this.ContextMenuDayParashotBoard,
             this.toolStripSeparator16,
             this.ContextMenuDayParashahStudy,
             this.ContextMenuDayParashahRead});
@@ -1510,7 +1512,13 @@
       // 
       resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
       this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
-      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashahShowDescription_Click);
+      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      // 
+      // ContextMenuDayParashotBoard
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
+      this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
+      this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
       // 
       // toolStripSeparator16
       // 
@@ -1752,6 +1760,7 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayDate;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiffToToday;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashotBoard;
   }
 }
 
