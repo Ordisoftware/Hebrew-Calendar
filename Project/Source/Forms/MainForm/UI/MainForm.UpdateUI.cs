@@ -221,8 +221,10 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             var parashah = ParashotFactory.Instance.Get(rowDay?.GetParashahReadingDay()?.ParashahID);
             if ( parashah != null )
+            {
               ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
-            ContextMenuDayParashah.Enabled = true;
+              ContextMenuDayParashah.Enabled = true;
+            }
           }
       ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != CalendarMonth.CalendarDate.Date;
       ContextMenuDayClearSelection.Enabled = DateSelected.HasValue && DateSelected != DateTime.Today;
