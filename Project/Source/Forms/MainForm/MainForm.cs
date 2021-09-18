@@ -1051,25 +1051,27 @@ namespace Ordisoftware.Hebrew.Calendar
              : ContextMenuEventDay.Sunrise ?? ContextMenuEventDay.Date;
       var rowDay = ApplicationDatabase.Instance.GetDay(date);
       ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
-      if ( Settings.MainFormTitleBarShowWeeklyParashah )
-      {
-        var parashah = ParashotFactory.Instance.Get(rowDay.GetParashahReadingDay()?.ParashahID);
-        if ( parashah != null )
-          ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
-      }
-      ContextMenuDayGoToToday.Enabled = DateTime.Today.Year != CalendarMonth.CalendarDate.Year
-                                        || DateTime.Today.Month != CalendarMonth.CalendarDate.Month;
+      ContextMenuDayParashah.Enabled = false;
+      if ( Settings.CalendarShowParashah )
+        if ( ContextMenuEventDay.TorahEvent == TorahCelebrationDay.None )
+          if ( ContextMenuEventDay.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )
+          {
+            var parashah = ParashotFactory.Instance.Get(rowDay.GetParashahReadingDay()?.ParashahID);
+            if ( parashah != null )
+              ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
+            ContextMenuDayParashah.Enabled = true;
+          }
+      ContextMenuDaySetAsActive.Enabled = ContextMenuEventDay.Date != CalendarMonth.CalendarDate.Date;
+      ContextMenuDayClearSelection.Enabled = DateSelected.HasValue;
+      ContextMenuDaySelectDate.Enabled = ( !DateSelected.HasValue && DateTime.Today != ContextMenuEventDay.Date )
+                                          || ( DateSelected.HasValue && DateSelected != ContextMenuEventDay.Date );
+      ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Year != DateTime.Today.Year
+                                        || CalendarMonth.CalendarDate.Month != DateTime.Today.Month;
       ContextMenuDayGoToSelected.Enabled = DateSelected.HasValue
-                                           && DateSelected != DateTime.Today
                                            && ( CalendarMonth.CalendarDate.Year != DateSelected.Value.Year
                                                 || CalendarMonth.CalendarDate.Month != DateSelected.Value.Month );
-      ContextMenuDaySetAsActive.Enabled = CalendarMonth.CalendarDate.Date != ContextMenuEventDay.Date;
-      ContextMenuDayClearSelection.Enabled = DateSelected.Value != DateTime.Today;
-      ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
-      ContextMenuDaySelectDate.Enabled = DateSelected.Value != ContextMenuEventDay.Date;
       ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date != DateTime.Today;
-      ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled
-                                                  && DateSelected.Value != DateTime.Today;
+      ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;
       if ( Settings.TorahEventsCountAsMoon )
       {
         ContextMenuDayMoonrise.Visible = false;
