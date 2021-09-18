@@ -1040,76 +1040,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Month View Context Menu
 
-    private LunisolarDay ContextMenuEventDay;
-
-    internal DateTime? DateSelected = null;
-
-    private void ContextMenuStripDay_Opened(object sender, EventArgs e)
-    {
-      var date = Program.Settings.TorahEventsCountAsMoon
-             ? ContextMenuEventDay.Moonrise ?? ContextMenuEventDay.Date
-             : ContextMenuEventDay.Sunrise ?? ContextMenuEventDay.Date;
-      var rowDay = ApplicationDatabase.Instance.GetDay(date);
-      ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
-      if ( Settings.MainFormTitleBarShowWeeklyParashah )
-      {
-        var parashah = ParashotFactory.Instance.Get(rowDay.GetParashahReadingDay()?.ParashahID);
-        if ( parashah != null )
-          ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
-      }
-      ContextMenuDayGoToToday.Enabled = DateTime.Today.Year != CalendarMonth.CalendarDate.Year
-                                        || DateTime.Today.Month != CalendarMonth.CalendarDate.Month;
-      ContextMenuDayGoToSelected.Enabled = DateSelected.HasValue
-                                           && DateSelected != DateTime.Today
-                                           && ( CalendarMonth.CalendarDate.Year != DateSelected.Value.Year
-                                                || CalendarMonth.CalendarDate.Month != DateSelected.Value.Month );
-      ContextMenuDaySetAsActive.Enabled = CalendarMonth.CalendarDate.Date != ContextMenuEventDay.Date;
-      ContextMenuDayClearSelection.Enabled = DateSelected.Value != DateTime.Today;
-      ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
-      ContextMenuDaySelectDate.Enabled = DateSelected.Value != ContextMenuEventDay.Date;
-      ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date != DateTime.Today;
-      ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled
-                                                  && DateSelected.Value != DateTime.Today;
-      if ( Settings.TorahEventsCountAsMoon )
-      {
-        ContextMenuDayMoonrise.Visible = false;
-        ContextMenuDayMoonset.Visible = false;
-        ContextMenuDaySunrise.Visible = !ContextMenuEventDay?.SunriseAsString.IsNullOrEmpty() ?? false;
-        ContextMenuDaySunset.Visible = !ContextMenuEventDay?.SunsetAsString.IsNullOrEmpty() ?? false;
-        ContextMenuDaySunrise.Text = AppTranslations.Sunrise.GetLang(ContextMenuEventDay?.SunriseAsString ?? "-");
-        ContextMenuDaySunset.Text = AppTranslations.Sunset.GetLang(ContextMenuEventDay?.SunsetAsString ?? "-");
-      }
-      else
-      {
-        ContextMenuDaySunrise.Visible = false;
-        ContextMenuDaySunset.Visible = false;
-        if ( ContextMenuEventDay.MoonriseOccuring == MoonriseOccuring.AfterSet )
-        {
-          ContextMenuDayMoonrise.Visible = ContextMenuEventDay.Moonset != null;
-          if ( ContextMenuDayMoonrise.Visible )
-            ContextMenuDayMoonrise.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
-          ContextMenuDayMoonset.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
-          if ( ContextMenuDayMoonset.Visible )
-            ContextMenuDayMoonset.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
-          ContextMenuDayMoonrise.ImageIndex = 3;
-          ContextMenuDayMoonset.ImageIndex = 2;
-        }
-        else
-        {
-          ContextMenuDayMoonrise.Visible = ContextMenuEventDay.MoonriseOccuring != MoonriseOccuring.NextDay;
-          if ( ContextMenuDayMoonrise.Visible )
-            ContextMenuDayMoonrise.Text = AppTranslations.Moonrise.GetLang(ContextMenuEventDay?.MoonriseAsString ?? "-");
-          ContextMenuDayMoonset.Visible = ContextMenuEventDay.Moonset != null;
-          if ( ContextMenuDayMoonset.Visible )
-            ContextMenuDayMoonset.Text = AppTranslations.Moonset.GetLang(ContextMenuEventDay?.MoonsetAsString ?? "-");
-          ContextMenuDayMoonrise.ImageIndex = 2;
-          ContextMenuDayMoonset.ImageIndex = 3;
-        }
-      }
-      ContextMenuDayTimesSeparator.Visible = ContextMenuDaySunrise.Visible || ContextMenuDaySunset.Visible
-                                          || ContextMenuDayMoonrise.Visible || ContextMenuDayMoonset.Visible; ;
-    }
-
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
       var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
@@ -1119,19 +1049,19 @@ namespace Ordisoftware.Hebrew.Calendar
       bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       if ( e.Button == MouseButtons.Left )
       {
-        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
-          GoToDate(dayRow.Date);
-        else
         if ( e.Clicks > 1 )
         {
           DateSelected = dayRow.Date;
           CalendarMonth.Refresh();
         }
+        else
+        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
+          GoToDate(dayRow.Date);
       }
       else
       if ( showContextMenu && e.Button == MouseButtons.Right )
       {
-        ContextMenuEventDay = dayRow;
+        ContextMenuDayCurrentEvent = dayRow;
         ContextMenuStripDay.Show(Cursor.Position);
       }
     }
@@ -1141,9 +1071,14 @@ namespace Ordisoftware.Hebrew.Calendar
       CalendarMonth.Refresh();
     }
 
+    private void ContextMenuStripDay_Opened(object sender, EventArgs e)
+    {
+      UpdateContextMenuStripDay();
+    }
+
     private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
     {
-      GoToDate(ContextMenuEventDay.Date);
+      GoToDate(ContextMenuDayCurrentEvent.Date);
     }
 
     private void ContextMenuDayGoToToday_Click(object sender, EventArgs e)
@@ -1158,7 +1093,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
-      DateSelected = ContextMenuEventDay.Date;
+      DateSelected = ContextMenuDayCurrentEvent.Date;
       CalendarMonth.Refresh();
     }
 
@@ -1185,19 +1120,19 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayDatesDiffTo(DateTime date)
     {
-      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuEventDay.Date, date), ensureOrder: true);
+      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date), ensureOrder: true);
     }
 
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
     {
-      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuEventDay.Date
-                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuDayCurrentEvent.Date
+                                                        && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
       CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
     }
 
     private void ContextMenuDayParashah_Click(object sender, EventArgs e)
     {
-      var day = ContextMenuEventDay.GetParashahReadingDay();
+      var day = ContextMenuDayCurrentEvent.GetParashahReadingDay();
       if ( day == null ) return;
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
       if ( parashah == null ) return;
