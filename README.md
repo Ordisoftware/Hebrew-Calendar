@@ -63,13 +63,14 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 9.0**
 
-- Added day context menu for the visual month view.
-- Added change active day by click in the visual month view.
-- Added select day by double click in the visual month view.
-- Added mouse tracking in the visual month view.
-- Added some options and colors for the visual month view.
+- Added context menu for days in month view.
+- Added change active day by click in month view.
+- Added select day by double click in month view.
+- Added mouse hover effect in month view.
+- Added some options and colors for month view.
+- Added Ctrl+B and Decimal shortcuts to go to selected day.
 - Added celebration verses board and command-line option.
-- Changed month view to show sun times instead of moon when using sun omer.
+- The month view shows sun times instead of moon when using sun omer.
 - Updated web links.
 - Some fixes and improvements.
 
@@ -311,21 +312,22 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.19 - Version 9.0
 
-- Add day context menu for the visual month view.
-- Add change active day by click in the visual month view.
-- Add select day by double click in the visual month view.
-- Add mouse tracking in the visual month view.
-- Add some options and colors for the visual month view.
+- Add context menu for days in month view.
+- Add change active day by click in month view.
+- Add select day by double click in month view.
+- Add options for that in preferences windows.
+- Add mouse hover effect in month view.
+- Add some options and colors for month view.
 - Add Ctrl+B and Decimal shortcuts to go to selected day.
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
 - Add link in reminder box to open verses board.
 - Add Tools folder in the application's system start menu.
-- Change month view to show sun times instead of moon when using sun omer.
+- The month view displays solar hours in case of sun omer.
 - Remove option to show sun times as tooltips because of the new context menu.
+- Update web links.
 - Some fixes and improvements.
 - Code refactoring.
-- Updat web links.
 
 #### 2021.09.06 - Version 8.10
 
