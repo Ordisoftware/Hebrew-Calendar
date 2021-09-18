@@ -406,11 +406,11 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuEventDay.GetParashahReadingDay()?.ParashahID);
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
         if ( weekParashah == null ) return;
         HebrewTools.OpenParashahProvider((string)menuitem.Tag,
                                          weekParashah,
-                                         ContextMenuEventDay.HasLinkedParashah);
+                                         ContextMenuDayCurrentEvent.HasLinkedParashah);
       });
       ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
@@ -423,7 +423,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
       {
         var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuEventDay.GetParashahReadingDay()?.ParashahID);
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
         if ( weekParashah == null ) return;
         string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);

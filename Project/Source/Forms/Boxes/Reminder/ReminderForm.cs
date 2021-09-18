@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
     {
       bool isShabat = celebration == TorahCelebrationDay.Shabat;
-      bool showParashah = false;
+      //bool showParashah = false;
       bool doLockSession = false;
       var dateNow = DateTime.Now;
       if ( times.DateStart != null && times.DateEnd != null )
@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
           form.LabelTitle.Text += " " + row.DayAndMonthText;
           if ( Program.Settings.ReminderShabatShowParashah )
           {
-            showParashah = true;
+            //showParashah = true;
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {

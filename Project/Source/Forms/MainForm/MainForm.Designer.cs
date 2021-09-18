@@ -194,15 +194,17 @@
       this.ContextMenuDayMoonrise = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayGoToToday = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayGoToSelected = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDaySetAsActive = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayClearSelection = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayGoToToday = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayGoToSelected = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayDatesDiffToToday = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayDatesDiffToSelected = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
@@ -212,8 +214,6 @@
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
-      this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDaySetAsActive = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1476,22 +1476,22 @@
       this.ContextMenuDayTimesSeparator.Name = "ContextMenuDayTimesSeparator";
       resources.ApplyResources(this.ContextMenuDayTimesSeparator, "ContextMenuDayTimesSeparator");
       // 
-      // ContextMenuDayGoToToday
+      // ContextMenuDayNavigation
       // 
-      resources.ApplyResources(this.ContextMenuDayGoToToday, "ContextMenuDayGoToToday");
-      this.ContextMenuDayGoToToday.Name = "ContextMenuDayGoToToday";
-      this.ContextMenuDayGoToToday.Click += new System.EventHandler(this.ContextMenuDayGoToToday_Click);
+      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
+      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
+      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
       // 
-      // ContextMenuDayGoToSelected
+      // ContextMenuDaySetAsActive
       // 
-      resources.ApplyResources(this.ContextMenuDayGoToSelected, "ContextMenuDayGoToSelected");
-      this.ContextMenuDayGoToSelected.Name = "ContextMenuDayGoToSelected";
-      this.ContextMenuDayGoToSelected.Click += new System.EventHandler(this.ContextMenuDayGoToSelected_Click);
+      resources.ApplyResources(this.ContextMenuDaySetAsActive, "ContextMenuDaySetAsActive");
+      this.ContextMenuDaySetAsActive.Name = "ContextMenuDaySetAsActive";
+      this.ContextMenuDaySetAsActive.Click += new System.EventHandler(this.ContextMenuDaySetAsActive_Click);
       // 
-      // toolStripSeparator18
+      // toolStripSeparator20
       // 
-      this.toolStripSeparator18.Name = "toolStripSeparator18";
-      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+      this.toolStripSeparator20.Name = "toolStripSeparator20";
+      resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
       // 
       // ContextMenuDaySelectDate
       // 
@@ -1510,6 +1510,23 @@
       this.toolStripSeparator19.Name = "toolStripSeparator19";
       resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
+      // ContextMenuDayGoToToday
+      // 
+      resources.ApplyResources(this.ContextMenuDayGoToToday, "ContextMenuDayGoToToday");
+      this.ContextMenuDayGoToToday.Name = "ContextMenuDayGoToToday";
+      this.ContextMenuDayGoToToday.Click += new System.EventHandler(this.ContextMenuDayGoToToday_Click);
+      // 
+      // ContextMenuDayGoToSelected
+      // 
+      resources.ApplyResources(this.ContextMenuDayGoToSelected, "ContextMenuDayGoToSelected");
+      this.ContextMenuDayGoToSelected.Name = "ContextMenuDayGoToSelected";
+      this.ContextMenuDayGoToSelected.Click += new System.EventHandler(this.ContextMenuDayGoToSelected_Click);
+      // 
+      // toolStripSeparator18
+      // 
+      this.toolStripSeparator18.Name = "toolStripSeparator18";
+      resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+      // 
       // ContextMenuDayDatesDiffToToday
       // 
       resources.ApplyResources(this.ContextMenuDayDatesDiffToToday, "ContextMenuDayDatesDiffToToday");
@@ -1521,12 +1538,6 @@
       resources.ApplyResources(this.ContextMenuDayDatesDiffToSelected, "ContextMenuDayDatesDiffToSelected");
       this.ContextMenuDayDatesDiffToSelected.Name = "ContextMenuDayDatesDiffToSelected";
       this.ContextMenuDayDatesDiffToSelected.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToSelected_Click);
-      // 
-      // ContextMenuDayNavigation
-      // 
-      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
-      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
-      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
       // 
       // toolStripSeparator17
       // 
@@ -1585,17 +1596,6 @@
       this.ImageListRisesAndSets.Images.SetKeyName(1, "316110_sunset_icon16.png");
       this.ImageListRisesAndSets.Images.SetKeyName(2, "316121_moonrise_icon16.png");
       this.ImageListRisesAndSets.Images.SetKeyName(3, "316122_moonset_icon16.png");
-      // 
-      // toolStripSeparator20
-      // 
-      this.toolStripSeparator20.Name = "toolStripSeparator20";
-      resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
-      // 
-      // ContextMenuDaySetAsActive
-      // 
-      resources.ApplyResources(this.ContextMenuDaySetAsActive, "ContextMenuDaySetAsActive");
-      this.ContextMenuDaySetAsActive.Name = "ContextMenuDaySetAsActive";
-      this.ContextMenuDaySetAsActive.Click += new System.EventHandler(this.ContextMenuDaySetAsActive_Click);
       // 
       // MainForm
       // 
