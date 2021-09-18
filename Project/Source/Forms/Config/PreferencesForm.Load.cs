@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditCurrentDayForeColor.BackColor = Settings.CurrentDayForeColor; });
       SystemManager.TryCatch(() => { EditSelectedDayBoxColor.BackColor = Settings.SelectedDayBoxColor; });
       SystemManager.TryCatch(() => { EditCalendarColorActiveDay.BackColor = Settings.CalendarColorActiveDay; });
-      SystemManager.TryCatch(() => { EditCalendarColorMouseTracking.BackColor = Settings.CalendarColorMouseTracking; });
+      SystemManager.TryCatch(() => { EditCalendarColorHoverEffect.BackColor = Settings.CalendarColorHoverEffect; });
       SystemManager.TryCatch(() => { EditEventColorMonth.BackColor = Settings.EventColorMonth; });
       SystemManager.TryCatch(() => { EditEventColorNext.BackColor = Settings.EventColorNext; });
       SystemManager.TryCatch(() => { EditEventColorSeason.BackColor = Settings.EventColorSeason; });
@@ -136,7 +136,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditNavigationWindowCloseOnShowMainForm.Checked = Settings.NavigationWindowCloseOnShowMainForm; });
       SystemManager.TryCatch(() => { EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef; });
       SystemManager.TryCatch(() => { EditNavigationWindowUseUnicodeIcons.Checked = Settings.NavigationWindowUseUnicodeIcons; });
-      SystemManager.TryCatch(() => { EditCalendarUseMouseTracking.Checked = Settings.CalendarUseMouseTracking; });
+      SystemManager.TryCatch(() => { EditCalendarUseHoverEffect.Checked = Settings.CalendarUseHoverEffect; });
       SystemManager.TryCatch(() => { EditCalendarShowSelectedBox.Checked = Settings.CalendarShowSelectedBox; });
       SystemManager.TryCatch(() => { EditSelectedDayBoxColorOnlyCurrent.Checked = Settings.SelectedDayBoxColorOnlyCurrent; });
       // Hotkey

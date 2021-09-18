@@ -835,11 +835,11 @@
   <data name="LabelColorSelectedDay.Text" xml:space="preserve">
     <value>Jour sélectionné</value>
   </data>
-  <data name="EditCalendarUseMouseTracking.Text" xml:space="preserve">
-    <value>Utiliser le suivi de la souris</value>
+  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
+    <value>Utiliser l'effet de survol</value>
   </data>
-  <data name="LabelColorMouseTracking.Text" xml:space="preserve">
-    <value>Suivi de la souris</value>
+  <data name="LabelColorHoverEffect.Text" xml:space="preserve">
+    <value>Effet de survol</value>
   </data>
   <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
     <value>Afficher la case du jour sélectionné</value>

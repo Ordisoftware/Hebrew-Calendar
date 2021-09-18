@@ -57,7 +57,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.CurrentDayForeColor = EditCurrentDayForeColor.BackColor;
       Settings.SelectedDayBoxColor = EditSelectedDayBoxColor.BackColor;
       Settings.CalendarColorActiveDay = EditCalendarColorActiveDay.BackColor;
-      Settings.CalendarColorMouseTracking = EditCalendarColorMouseTracking.BackColor;
+      Settings.CalendarColorHoverEffect = EditCalendarColorHoverEffect.BackColor;
       Settings.EventColorMonth = EditEventColorMonth.BackColor;
       Settings.EventColorNext = EditEventColorNext.BackColor;
       Settings.EventColorSeason = EditEventColorSeason.BackColor;
@@ -126,7 +126,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.NavigationWindowCloseOnShowMainForm = EditNavigationWindowCloseOnShowMainForm.Checked;
       Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
       Settings.NavigationWindowUseUnicodeIcons = EditNavigationWindowUseUnicodeIcons.Checked;
-      Settings.CalendarUseMouseTracking = EditCalendarUseMouseTracking.Checked;
+      Settings.CalendarUseHoverEffect = EditCalendarUseHoverEffect.Checked;
       Settings.CalendarShowSelectedBox = EditCalendarShowSelectedBox.Checked;
       Settings.SelectedDayBoxColorOnlyCurrent = EditSelectedDayBoxColorOnlyCurrent.Checked;
       // Navigation window

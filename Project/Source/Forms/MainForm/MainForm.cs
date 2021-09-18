@@ -305,11 +305,11 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Enabled;
+      ActionPreferences.Visible = false;
+      ActionPreferences.Visible = true;
       ToolStrip.Enabled = false;
       try
       {
-        ActionPreferences.Visible = false;
-        ActionPreferences.Visible = true;
         TimerReminder.Enabled = false;
         MenuTray.Enabled = false;
         ClearLists();
@@ -319,7 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Parent = null;
           PanelViewGrid.Parent = null;
           PanelViewMonth.Visible = false;
-          CodeProjectCalendar.NET.Calendar.PenMouseTracking = new Pen(Settings.CalendarColorMouseTracking);
+          CodeProjectCalendar.NET.Calendar.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
           CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
           CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
           UpdateCalendarMonth(false);

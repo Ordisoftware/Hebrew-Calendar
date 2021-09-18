@@ -86,7 +86,7 @@ namespace CodeProjectCalendar.NET
     static public Pen PenTextReduced = Pens.DarkGray;
     static public Pen PenActiveDay = Pens.MediumSlateBlue;
     static public Pen PenSelectedDay = Pens.Brown;
-    static public Pen PenMouseTracking = new Pen(Program.Settings.CalendarColorMouseTracking);
+    static public Pen PenHoverEffect = new Pen(Program.Settings.CalendarColorHoverEffect);
     // ORDISOFTWARE MODIF END
 
     /// <summary>
@@ -1211,12 +1211,12 @@ namespace CodeProjectCalendar.NET
             else
             {
               var area = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
-              if ( Program.Settings.CalendarUseMouseTracking )
+              if ( Program.Settings.CalendarUseHoverEffect )
               {
                 var mouse = PointToClient(Cursor.Position);
                 bool isMouseHover = area.Contains(mouse.X, mouse.Y);
                 if ( isselected || ( isMouseHover && !outofmonth ) )
-                  g.DrawRectangle(PenMouseTracking, area);
+                  g.DrawRectangle(PenHoverEffect, area);
               }
             }
           if ( !isselected && !outofmonth )

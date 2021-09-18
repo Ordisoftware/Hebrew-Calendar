@@ -2637,24 +2637,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CalendarUseMouseTracking {
+        public bool CalendarUseHoverEffect {
             get {
-                return ((bool)(this["CalendarUseMouseTracking"]));
+                return ((bool)(this["CalendarUseHoverEffect"]));
             }
             set {
-                this["CalendarUseMouseTracking"] = value;
+                this["CalendarUseHoverEffect"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
-        public global::System.Drawing.Color CalendarColorMouseTracking {
+        public global::System.Drawing.Color CalendarColorHoverEffect {
             get {
-                return ((global::System.Drawing.Color)(this["CalendarColorMouseTracking"]));
+                return ((global::System.Drawing.Color)(this["CalendarColorHoverEffect"]));
             }
             set {
-                this["CalendarColorMouseTracking"] = value;
+                this["CalendarColorHoverEffect"] = value;
             }
         }
         
