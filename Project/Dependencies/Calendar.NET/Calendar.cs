@@ -958,9 +958,9 @@ namespace CodeProjectCalendar.NET
       var outofmonth = false;
       var isselected = false;
       var isselectednotoday = false;
-      int selectedday = MainForm.Instance.DateSelected.Day; //_calendarDate.Day;
-      int selectedmonth = MainForm.Instance.DateSelected.Month;
-      int selectedyear = MainForm.Instance.DateSelected.Year;
+      int selectedday = MainForm.Instance.DateSelected?.Day ?? DateTime.Today.Day; //_calendarDate.Day;
+      int selectedmonth = MainForm.Instance.DateSelected?.Month ?? DateTime.Today.Month;
+      int selectedyear = MainForm.Instance.DateSelected?.Year ?? DateTime.Today.Year;
       // ORDISOFWTARE MODIF END
 
       bool CheckSelected(int day)

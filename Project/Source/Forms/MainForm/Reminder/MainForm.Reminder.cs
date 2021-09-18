@@ -103,12 +103,9 @@ namespace Ordisoftware.Hebrew.Calendar
         System.Threading.Thread.Sleep(1000);
         CheckRegenerateCalendar();
         CalendarMonth.Refresh();
-        if ( CurrentDay.Date == DateTime.Today.AddDays(-1) )
-        {
-          if ( DateSelected == CurrentDay.Date )
-            DateSelected = DateTime.Today;
-          GoToDate(DateTime.Today);
-        }
+        var today = DateTime.Today;
+        if ( CurrentDay.Date == today.AddDays(-1) )
+          GoToDate(today);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
       });
