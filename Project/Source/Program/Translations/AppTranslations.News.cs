@@ -41,18 +41,28 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.0"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added select day on click in the visual month view." + Globals.NL +
-                          "• Added day context menu for in the visual month view." + Globals.NL +
+          [Language.EN] = "• Added context menu for days in month view." + Globals.NL +
+                          "• Added change active day by click in month view." + Globals.NL +
+                          "• Added select day by double click in month view." + Globals.NL +
+                          "• Added mouse hover effect in month view." + Globals.NL +
+                          "• Added some options and colors for month view." + Globals.NL +
+                          "• Added Ctrl + B and Decimal shortcuts to go to selected day." + Globals.NL +
                           "• Added celebration verses board." + Globals.NL +
                           "• Added command-line option for this board." + Globals.NL +
-                          "• Changed month view to show sun times instead of moon when using sun omer." + Globals.NL +
+                          "• The month view displays solar hours in case of sun omer." + Globals.NL +
+                          "• Updated web links." + Globals.NL +
                           "• Some fixes and improvements.",
 
-          [Language.FR] = "• Ajout de la sélection d'un jour dans le calendrier visuel du mois." + Globals.NL +
-                          "• Ajout d'un menu contextuel des jours du calendrier visuel du mois." + Globals.NL +
+          [Language.FR] = "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
+                          "• Ajout du changement de jour actif avec un clic dans la vue mensuelle." + Globals.NL +
+                          "• Ajout de la sélection d'un jour avec un double clic dans la vue mensuelle." + Globals.NL +
+                          "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
+                          "• Ajout de quelques options et couleurs pour la vue mensuelle." + Globals.NL +
+                          "• Ajout des raccourcis Ctrl+B et Décimal pour aller au jour sélectionné." + Globals.NL +
                           "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
                           "• Ajout d'une option de ligne de commande pour ce tableau." + Globals.NL +
-                          "• La vue par mois est changée pour afficher les heures du soleil au lieu de la lune en cas de omer du soleil." + Globals.NL +
+                          "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
+                          "• Mise à jour les liens web." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 
@@ -137,7 +147,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout de la sauvegarde et restauration des signets de date." + Globals.NL +
                           "• Ajout de l'exportation et importation des paramètres." + Globals.NL +
                           "• Préférences améliorées." + Globals.NL +
-                          "• Mettre à jour les liens Web." + Globals.NL +
+                          "• Mise à jour les liens web." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 

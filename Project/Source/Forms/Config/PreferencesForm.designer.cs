@@ -253,10 +253,10 @@
       this.EditMonthViewBackColor = new System.Windows.Forms.Panel();
       this.LabelColorTorah = new System.Windows.Forms.Label();
       this.LabelCalendarColorActiveDay = new System.Windows.Forms.Label();
-      this.LabelColorMouseTracking = new System.Windows.Forms.Label();
+      this.LabelColorHoverEffect = new System.Windows.Forms.Label();
       this.EditCalendarColorActiveDay = new System.Windows.Forms.Panel();
       this.LabelColorSelectedDayBox = new System.Windows.Forms.Label();
-      this.EditCalendarColorMouseTracking = new System.Windows.Forms.Panel();
+      this.EditCalendarColorHoverEffect = new System.Windows.Forms.Panel();
       this.LabelColorTodayBack = new System.Windows.Forms.Label();
       this.EditSelectedDayBoxColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
@@ -265,7 +265,7 @@
       this.EditCalendarShowParashah = new System.Windows.Forms.CheckBox();
       this.EditSelectedDayBoxColorOnlyCurrent = new System.Windows.Forms.CheckBox();
       this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
-      this.EditCalendarUseMouseTracking = new System.Windows.Forms.CheckBox();
+      this.EditCalendarUseHoverEffect = new System.Windows.Forms.CheckBox();
       this.EditMonthViewChangeDayOnClick = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
@@ -1888,7 +1888,7 @@
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowParashah);
       this.TabPageMonthView.Controls.Add(this.EditSelectedDayBoxColorOnlyCurrent);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarUseMouseTracking);
+      this.TabPageMonthView.Controls.Add(this.EditCalendarUseHoverEffect);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewChangeDayOnClick);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
@@ -1959,10 +1959,10 @@
       this.PanelCalendarColors.Controls.Add(this.EditMonthViewBackColor);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTorah);
       this.PanelCalendarColors.Controls.Add(this.LabelCalendarColorActiveDay);
-      this.PanelCalendarColors.Controls.Add(this.LabelColorMouseTracking);
+      this.PanelCalendarColors.Controls.Add(this.LabelColorHoverEffect);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorActiveDay);
       this.PanelCalendarColors.Controls.Add(this.LabelColorSelectedDayBox);
-      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorMouseTracking);
+      this.PanelCalendarColors.Controls.Add(this.EditCalendarColorHoverEffect);
       this.PanelCalendarColors.Controls.Add(this.LabelColorTodayBack);
       this.PanelCalendarColors.Controls.Add(this.EditSelectedDayBoxColor);
       this.PanelCalendarColors.Controls.Add(this.EditCalendarColorTorahEvent);
@@ -2193,10 +2193,10 @@
       resources.ApplyResources(this.LabelCalendarColorActiveDay, "LabelCalendarColorActiveDay");
       this.LabelCalendarColorActiveDay.Name = "LabelCalendarColorActiveDay";
       // 
-      // LabelColorMouseTracking
+      // LabelColorHoverEffect
       // 
-      resources.ApplyResources(this.LabelColorMouseTracking, "LabelColorMouseTracking");
-      this.LabelColorMouseTracking.Name = "LabelColorMouseTracking";
+      resources.ApplyResources(this.LabelColorHoverEffect, "LabelColorHoverEffect");
+      this.LabelColorHoverEffect.Name = "LabelColorHoverEffect";
       // 
       // EditCalendarColorActiveDay
       // 
@@ -2211,13 +2211,13 @@
       resources.ApplyResources(this.LabelColorSelectedDayBox, "LabelColorSelectedDayBox");
       this.LabelColorSelectedDayBox.Name = "LabelColorSelectedDayBox";
       // 
-      // EditCalendarColorMouseTracking
+      // EditCalendarColorHoverEffect
       // 
-      this.EditCalendarColorMouseTracking.BackColor = System.Drawing.Color.DarkGray;
-      this.EditCalendarColorMouseTracking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      resources.ApplyResources(this.EditCalendarColorMouseTracking, "EditCalendarColorMouseTracking");
-      this.EditCalendarColorMouseTracking.Name = "EditCalendarColorMouseTracking";
-      this.EditCalendarColorMouseTracking.Click += new System.EventHandler(this.EditCalendarColor_Click);
+      this.EditCalendarColorHoverEffect.BackColor = System.Drawing.Color.DarkGray;
+      this.EditCalendarColorHoverEffect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      resources.ApplyResources(this.EditCalendarColorHoverEffect, "EditCalendarColorHoverEffect");
+      this.EditCalendarColorHoverEffect.Name = "EditCalendarColorHoverEffect";
+      this.EditCalendarColorHoverEffect.Click += new System.EventHandler(this.EditCalendarColor_Click);
       // 
       // LabelColorTodayBack
       // 
@@ -2276,12 +2276,12 @@
       this.EditCalendarShowSelectedBox.UseVisualStyleBackColor = true;
       this.EditCalendarShowSelectedBox.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
-      // EditCalendarUseMouseTracking
+      // EditCalendarUseHoverEffect
       // 
-      resources.ApplyResources(this.EditCalendarUseMouseTracking, "EditCalendarUseMouseTracking");
-      this.EditCalendarUseMouseTracking.Name = "EditCalendarUseMouseTracking";
-      this.EditCalendarUseMouseTracking.UseVisualStyleBackColor = true;
-      this.EditCalendarUseMouseTracking.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
+      resources.ApplyResources(this.EditCalendarUseHoverEffect, "EditCalendarUseHoverEffect");
+      this.EditCalendarUseHoverEffect.Name = "EditCalendarUseHoverEffect";
+      this.EditCalendarUseHoverEffect.UseVisualStyleBackColor = true;
+      this.EditCalendarUseHoverEffect.CheckedChanged += new System.EventHandler(this.EditMonthViewOptionChanged);
       // 
       // EditMonthViewChangeDayOnClick
       // 
@@ -3165,9 +3165,9 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
     private System.Windows.Forms.Label LabelColorSelectedDayBox;
     public System.Windows.Forms.Panel EditSelectedDayBoxColor;
-    private System.Windows.Forms.CheckBox EditCalendarUseMouseTracking;
-    private System.Windows.Forms.Label LabelColorMouseTracking;
-    public System.Windows.Forms.Panel EditCalendarColorMouseTracking;
+    private System.Windows.Forms.CheckBox EditCalendarUseHoverEffect;
+    private System.Windows.Forms.Label LabelColorHoverEffect;
+    public System.Windows.Forms.Panel EditCalendarColorHoverEffect;
     private System.Windows.Forms.CheckBox EditCalendarShowSelectedBox;
     private System.Windows.Forms.CheckBox EditSelectedDayBoxColorOnlyCurrent;
     private System.Windows.Forms.Label LabelCalendarColorActiveDay;
