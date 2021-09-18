@@ -1042,7 +1042,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private LunisolarDay ContextMenuEventDay;
 
-    internal DateTime DateSelected = DateTime.Today;
+    internal DateTime? DateSelected = null;
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
@@ -1059,16 +1059,17 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       ContextMenuDayGoToToday.Enabled = DateTime.Today.Year != CalendarMonth.CalendarDate.Year
                                         || DateTime.Today.Month != CalendarMonth.CalendarDate.Month;
-      ContextMenuDayGoToSelected.Enabled = DateSelected != DateTime.Today
-                                           && ( CalendarMonth.CalendarDate.Year != DateSelected.Year
-                                                || CalendarMonth.CalendarDate.Month != DateSelected.Month );
+      ContextMenuDayGoToSelected.Enabled = DateSelected.HasValue
+                                           && DateSelected != DateTime.Today
+                                           && ( CalendarMonth.CalendarDate.Year != DateSelected.Value.Year
+                                                || CalendarMonth.CalendarDate.Month != DateSelected.Value.Month );
       ContextMenuDaySetAsActive.Enabled = CalendarMonth.CalendarDate.Date != ContextMenuEventDay.Date;
-      ContextMenuDayClearSelection.Enabled = DateSelected != DateTime.Today;
+      ContextMenuDayClearSelection.Enabled = DateSelected.Value != DateTime.Today;
       ContextMenuDayParashah.Enabled = ContextMenuEventDay.GetParashahReadingDay() != null;
-      ContextMenuDaySelectDate.Enabled = ContextMenuEventDay.Date != DateSelected;
+      ContextMenuDaySelectDate.Enabled = DateSelected.Value != ContextMenuEventDay.Date;
       ContextMenuDayDatesDiffToToday.Enabled = ContextMenuEventDay.Date != DateTime.Today;
       ContextMenuDayDatesDiffToSelected.Enabled = ContextMenuDaySelectDate.Enabled
-                                               && DateSelected != DateTime.Today;
+                                                  && DateSelected.Value != DateTime.Today;
       if ( Settings.TorahEventsCountAsMoon )
       {
         ContextMenuDayMoonrise.Visible = false;
@@ -1152,7 +1153,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayGoToSelected_Click(object sender, EventArgs e)
     {
-      GoToDate(DateSelected);
+      GoToDate(DateSelected.Value);
     }
 
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
@@ -1163,7 +1164,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
     {
-      DateSelected = DateTime.Today;
+      DateSelected = null;
       CalendarMonth.Refresh();
     }
 

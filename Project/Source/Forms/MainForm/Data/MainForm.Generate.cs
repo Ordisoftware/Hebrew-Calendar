@@ -96,14 +96,15 @@ namespace Ordisoftware.Hebrew.Calendar
           UpdateButtons();
           if ( e != null )
           {
-            DateSelected = DateTime.Today;
+            DateSelected = null;
             GoToDate(DateTime.Today);
             TimerReminder.Enabled = true;
             TimerReminder_Tick(null, null);
           }
           else
-          if ( DateSelected < DateFirst || DateSelected > DateLast )
-            DateSelected = DateTime.Today;
+          if ( DateSelected.HasValue )
+            if ( DateSelected < DateFirst || DateSelected > DateLast )
+              DateSelected = null;
         }
       }
       catch ( Exception ex )
