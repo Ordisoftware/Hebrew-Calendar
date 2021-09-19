@@ -110,7 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
             GoToDate(DateTime.Today);
             return true;
           case Keys.Decimal:
-            if ( DateSelected.HasValue) GoToDate(DateSelected.Value);
+            if ( DateSelected.HasValue ) GoToDate(DateSelected.Value);
             return true;
         }
       // Visual month navigation

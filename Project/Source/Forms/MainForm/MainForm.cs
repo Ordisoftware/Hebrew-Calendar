@@ -506,10 +506,20 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
     {
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
-      if ( form == null )
-        form = new MessageBoxEx(title, text, width: width); form.ShowInTaskbar = true;
-      form.Popup(null, sender == null);
+      switch ( DisplayManager.FormStyle )
+      {
+        case MessageBoxFormStyle.System:
+          DisplayManager.Show(title.GetLang(), text.GetLang());
+          break;
+        case MessageBoxFormStyle.Advanced:
+          var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
+          if ( form == null )
+            form = new MessageBoxEx(title, text, width: width); form.ShowInTaskbar = true;
+          form.Popup(null, sender == null);
+          break;
+        default:
+          throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
+      }
     }
 
     /// <summary>
@@ -1079,6 +1089,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
     {
       GoToDate(ContextMenuDayCurrentEvent.Date);
+    }
+
+    private void ContextMenuDaySetTodayAsActive_Click(object sender, EventArgs e)
+    {
+      GoToDate(DateTime.Today);
     }
 
     private void ContextMenuDayGoToToday_Click(object sender, EventArgs e)

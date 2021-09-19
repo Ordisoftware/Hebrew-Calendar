@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -107,21 +107,27 @@ namespace Ordisoftware.Hebrew
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
       if ( form == null )
       {
-        form = new MessageBoxEx(title, notice.Value.GetLang(), width: MessageBoxEx.DefaultWidthMedium, justify: false);
+        string str = notice.Value.GetLang() + Globals.NL2 + SysTranslations.NavigationTip.GetLang();
+        form = new MessageBoxEx(title, str, width: MessageBoxEx.DefaultWidthMedium, justify: false);
         form.DoShownSound = false;
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
-        init(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true,
-             index => ActionReleaseNotes.PerformClick());
-        init(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
-        index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
-        init(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
-        index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-        init(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
-             index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-        init(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
-             index => ActionViewVersionNews.DropDownItems[0].PerformClick());
-        void init(Button button, string text, int width, bool enabled, Action<int> action)
+        form.ActionOK.KeyUp += onKeyUp;
+        form.ActionYes.DialogResult = DialogResult.None;
+        initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, null);
+        initButton(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
+                   index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
+        initButton(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
+                   index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
+        initButton(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
+                   index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
+        initButton(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
+                   index => ActionViewVersionNews.DropDownItems[0].PerformClick());
+        void openNotes()
+        {
+          SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace("x", "0")));
+        }
+        void initButton(Button button, string text, int width, bool enabled, Action<int> action)
         {
           button.Visible = true;
           button.Enabled = enabled;
@@ -129,12 +135,39 @@ namespace Ordisoftware.Hebrew
           button.Text = text;
           button.Click += (_s, _e) =>
           {
-            var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
-            var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
-            if ( found == null ) return;
-            form.Close();
-            action(ActionViewVersionNews.DropDownItems.IndexOf(found));
+            if ( action == null )
+            {
+              form.SendToBack();
+              openNotes();
+            }
+            else
+            {
+              var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
+              var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
+              if ( found == null ) return;
+              form.Close();
+              action(ActionViewVersionNews.DropDownItems.IndexOf(found));
+            }
           };
+          button.KeyUp += onKeyUp;
+        }
+        void onKeyUp(object _sender, KeyEventArgs _e)
+        {
+          switch ( _e.KeyCode )
+          {
+            case Keys.Home:
+              form.ActionNo.PerformClick();
+              break;
+            case Keys.PageUp:
+              form.ActionAbort.PerformClick();
+              break;
+            case Keys.PageDown:
+              form.ActionRetry.PerformClick();
+              break;
+            case Keys.End:
+              form.ActionIgnore.PerformClick();
+              break;
+          }
         }
       }
       form.ActiveControl = form.ActionOK;

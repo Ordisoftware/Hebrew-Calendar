@@ -187,6 +187,8 @@ namespace Ordisoftware.Core
           case MessageBoxFormStyle.Advanced:
             res = ShowAdvancedForm(title, text, buttons, icon);
             break;
+          default:
+            throw new AdvancedNotImplementedException(FormStyle);
         }
       });
       return res;

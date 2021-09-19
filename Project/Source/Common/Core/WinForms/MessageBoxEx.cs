@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -38,6 +38,25 @@ namespace Ordisoftware.Core
     static public void CloseAll()
     {
       Instances.ToList().ForEach(f => SystemManager.TryCatch(f.ForceClose));
+    }
+
+    static public DialogResult ShowDialogOrSystem(TranslationsDictionary title,
+                                                  TranslationsDictionary text,
+                                                  MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                                  MessageBoxIcon icon = MessageBoxIcon.None,
+                                                  int width = DefaultWidthSmall,
+                                                  bool justify = DefaultJustifyEnabled,
+                                                  bool sound = true)
+    {
+      switch ( DisplayManager.FormStyle )
+      {
+        case MessageBoxFormStyle.System:
+          return MessageBox.Show(text.GetLang(), title.GetLang(), buttons, icon);
+        case MessageBoxFormStyle.Advanced:
+          return new MessageBoxEx(title, text, buttons, icon, width, justify, sound).ShowDialog();
+        default:
+          throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
+      }
     }
 
     private TranslationsDictionary LocalizedTitle;
@@ -171,7 +190,9 @@ namespace Ordisoftware.Core
 
     internal void ActionClose_Click(object sender, EventArgs e)
     {
-      Close();
+      if ( sender is Button button )
+        if ( button.DialogResult != DialogResult.None )
+          Close();
     }
 
     public void SetIcon(MessageBoxIcon icon)

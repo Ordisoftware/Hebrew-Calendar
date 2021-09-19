@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -89,7 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionViewNotice_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(AppTranslations.NoticeLunarMonthsTitle, AppTranslations.NoticeLunarMonths).ShowDialog();
+      MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeLunarMonthsTitle, AppTranslations.NoticeLunarMonths);
     }
 
     private void ActionEditFiles_Click(object sender, EventArgs e)
