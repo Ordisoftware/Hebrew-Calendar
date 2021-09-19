@@ -190,7 +190,9 @@ namespace Ordisoftware.Core
 
     internal void ActionClose_Click(object sender, EventArgs e)
     {
-      Close();
+      if ( sender is Button button )
+        if ( button.DialogResult != DialogResult.None )
+          Close();
     }
 
     public void SetIcon(MessageBoxIcon icon)

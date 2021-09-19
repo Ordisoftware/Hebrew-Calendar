@@ -113,7 +113,8 @@ namespace Ordisoftware.Hebrew
         form.ShowInTaskbar = true;
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
         form.ActionOK.KeyUp += onKeyUp;
-        initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, index => openNotes());
+        form.ActionYes.DialogResult = DialogResult.None;
+        initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, null);
         initButton(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
                    index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
         initButton(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
@@ -134,11 +135,19 @@ namespace Ordisoftware.Hebrew
           button.Text = text;
           button.Click += (_s, _e) =>
           {
-            var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
-            var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
-            if ( found == null ) return;
-            form.Close();
-            action(ActionViewVersionNews.DropDownItems.IndexOf(found));
+            if ( action == null )
+            {
+              form.SendToBack();
+              openNotes();
+            }
+            else
+            {
+              var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
+              var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
+              if ( found == null ) return;
+              form.Close();
+              action(ActionViewVersionNews.DropDownItems.IndexOf(found));
+            }
           };
           button.KeyUp += onKeyUp;
         }
