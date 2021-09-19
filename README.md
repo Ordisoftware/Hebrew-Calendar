@@ -74,7 +74,6 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Updated web links.
 - Some fixes and improvements.
 
-
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
 ## Screenshots
