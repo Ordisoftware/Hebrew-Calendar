@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -32,6 +32,7 @@ namespace Ordisoftware.Core
     static public void CheckServerCertificate(string url)
     {
       Uri uri = new Uri(url);
+      uri = new Uri(uri.Scheme + "://" + uri.Host);
       string id = Guid.NewGuid().ToString();
       var point = ServicePointManager.FindServicePoint(uri);
       var request = WebRequest.Create(uri);
