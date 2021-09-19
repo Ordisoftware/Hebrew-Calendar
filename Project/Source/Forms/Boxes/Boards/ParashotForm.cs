@@ -501,7 +501,7 @@ namespace Ordisoftware.Hebrew
       form.ActionRetry.Click += (_s, _e) =>
       {
         Clipboard.SetText(message);
-        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
+        DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
                                           Globals.ClipboardSoundFilePath);
       };
       form.AllowClose = true;

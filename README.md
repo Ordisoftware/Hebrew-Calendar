@@ -31,10 +31,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Window listing the next celebrations.
 - Window showing a board of celebrations by years.
 - Window showing a board of new moons by years.
-- Window showing a board of lunar months description.
-- Window showing a board of parashot.
+- Window showing a board of lunar months with descriptions.
+- Window showing a board of parashot with descriptions.
 - Window showing a board of celebration verses.
-- Tools for study parashot and celebrations.
+- Tools for the study of parashot and celebrations.
 - Calculate the difference between two dates with bookmarks.
 - Advanced dialog to save, copy to the clipboard and print the view and the data.
 - Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.
@@ -73,7 +73,6 @@ A libre and open-source software written in C# that allows to generate a calenda
 - The month view shows sun times instead of moon when using sun omer.
 - Updated web links.
 - Some fixes and improvements.
-
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
