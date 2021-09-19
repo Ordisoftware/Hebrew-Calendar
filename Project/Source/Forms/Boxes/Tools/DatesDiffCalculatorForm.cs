@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -193,9 +193,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionHelp_Click(object sender, EventArgs e)
     {
-      new MessageBoxEx(AppTranslations.NoticeDatesDiffTitle,
-                       AppTranslations.NoticeDatesDiff,
-                       width: MessageBoxEx.DefaultWidthMedium).ShowDialog();
+      MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeDatesDiffTitle,
+                                      AppTranslations.NoticeDatesDiff,
+                                      width: MessageBoxEx.DefaultWidthMedium);
     }
 
     private void ActionSwapDates_Click(object sender, EventArgs e)

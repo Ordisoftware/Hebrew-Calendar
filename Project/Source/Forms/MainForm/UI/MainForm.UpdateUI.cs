@@ -230,11 +230,9 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayClearSelection.Enabled = DateSelected.HasValue && DateSelected != DateTime.Today;
       ContextMenuDaySelectDate.Enabled = ( !DateSelected.HasValue && DateTime.Today != ContextMenuDayCurrentEvent.Date )
                                           || ( DateSelected.HasValue && DateSelected != ContextMenuDayCurrentEvent.Date );
-      ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Year != DateTime.Today.Year
-                                        || CalendarMonth.CalendarDate.Month != DateTime.Today.Month;
+      ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Date != DateTime.Today;
       ContextMenuDayGoToSelected.Enabled = DateSelected.HasValue
-                                           && ( CalendarMonth.CalendarDate.Year != DateSelected.Value.Year
-                                                || CalendarMonth.CalendarDate.Month != DateSelected.Value.Month );
+                                           && DateSelected.Value != ContextMenuDayCurrentEvent.Date;
       ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;
       ContextMenuDayDatesDiffToSelected.Enabled = DateSelected.HasValue
                                                   && ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;
