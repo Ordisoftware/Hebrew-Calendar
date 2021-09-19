@@ -32,7 +32,10 @@ namespace Ordisoftware.Core
     static public void CheckServerCertificate(string url)
     {
       Uri uri = new Uri(url);
-      uri = new Uri(uri.Scheme + "://" + uri.Host);
+      var builder = new UriBuilder();
+      builder.Scheme = uri.Scheme;
+      builder.Host = uri.Host;
+      uri = builder.Uri;
       string id = Guid.NewGuid().ToString();
       var point = ServicePointManager.FindServicePoint(uri);
       var request = WebRequest.Create(uri);
