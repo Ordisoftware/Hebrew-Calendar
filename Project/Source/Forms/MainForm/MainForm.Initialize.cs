@@ -106,6 +106,7 @@ namespace Ordisoftware.Hebrew.Calendar
         Refresh();
         ClearLists();
         LoadData();
+        LoadMenuBookmarks(this);
       }
       catch
       {

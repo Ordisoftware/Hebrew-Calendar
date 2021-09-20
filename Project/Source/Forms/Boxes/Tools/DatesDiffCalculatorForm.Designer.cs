@@ -70,7 +70,7 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
@@ -338,7 +338,7 @@
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);

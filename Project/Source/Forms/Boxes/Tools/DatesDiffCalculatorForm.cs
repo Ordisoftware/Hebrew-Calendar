@@ -32,6 +32,23 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance = new DatesDiffCalculatorForm();
     }
 
+    static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
+    {
+      bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
+      items.Clear();
+      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
+      {
+        var date = Program.DateBookmarks[index];
+        string s = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
+        var menuitem = items.Add($"{index + 1:00}. {s}");
+        menuitem.MouseUp += action;
+        menuitem.Tag = index;
+        if ( onlyCalendar && date != DateTime.MinValue )
+          if ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast )
+            menuitem.Enabled = false;
+      }
+  }
+
     static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
     {
       if ( dates != null )
@@ -58,7 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     private DatesDiffItem Stats;
-    private Button CurrentBookmark;
+    private Button CurrentBookmarkButton;
 
     private DatesDiffCalculatorForm()
     {
@@ -77,20 +94,13 @@ namespace Ordisoftware.Hebrew.Calendar
     private void DateDiffForm_Load(object sender, EventArgs e)
     {
       this.CheckLocationOrCenterToMainFormElseScreen();
-      LoadMenuBookmarks();
+      LoadMenuBookmarks(this);
     }
 
-    public void LoadMenuBookmarks()
+    internal void LoadMenuBookmarks(Form caller)
     {
-      MenuBookmarks.Items.Clear();
-      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-      {
-        var date = Program.DateBookmarks[index];
-        string s = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
-        var menuitem = MenuBookmarks.Items.Add($"{index + 1:00}. {s}");
-        menuitem.MouseUp += Bookmarks_MouseUp;
-        menuitem.Tag = index;
-      }
+      LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
+      if ( caller != MainForm.Instance ) MainForm.Instance.LoadMenuBookmarks(this);
     }
 
     public void Relocalize()
@@ -132,8 +142,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
     {
       var menuitem = (ToolStripMenuItem)sender;
-      var control = CurrentBookmark;
+      var control = CurrentBookmarkButton;
       if ( e.Button == MouseButtons.Right )
+      {
         if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
           if ( !menuitem.Text.EndsWith(")") )
           {
@@ -142,30 +153,39 @@ namespace Ordisoftware.Hebrew.Calendar
             Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
             SystemManager.TryCatch(Settings.Save);
           }
-      if ( e.Button != MouseButtons.Left ) return;
-      if ( control == ActionSetBookmarkStart )
-        setBookmark(MonthCalendar1);
+      }
       else
-      if ( control == ActionSetBookmarkEnd )
-        setBookmark(MonthCalendar2);
-      else
-      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
-        if ( control == ActionUseBookmarkStart )
-          MonthCalendar1.SelectionStart = date;
+      if ( e.Button == MouseButtons.Left )
+      {
+        if ( control == ActionSetBookmarkStart )
+          setBookmark(MonthCalendar1);
         else
-        if ( control == ActionUseBookmarkEnd )
-          MonthCalendar2.SelectionStart = date;
+        if ( control == ActionSetBookmarkEnd )
+          setBookmark(MonthCalendar2);
+        else
+        if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+          if ( control == ActionUseBookmarkStart )
+            MonthCalendar1.SelectionStart = date;
+          else
+          if ( control == ActionUseBookmarkEnd )
+            MonthCalendar2.SelectionStart = date;
+      }
+      MainForm.Instance.LoadMenuBookmarks(this);
+      //
       void setBookmark(MonthCalendar calendar)
       {
+        var dateNew = calendar.SelectionStart.Date;
         for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         {
           var date = Program.DateBookmarks[index];
-          if ( calendar.SelectionStart.Date == date ) return;
+          if ( dateNew == date ) return;
         }
-        if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { calendar.SelectionStart.Date.ToLongDateString()}";
-        Program.DateBookmarks[(int)menuitem.Tag] = calendar.SelectionStart.Date;
+        var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
+        if ( dateOld != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
+            return;
+        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
+        Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
         SystemManager.TryCatch(Settings.Save);
       }
     }
@@ -173,7 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionBookmarksButton_Click(object sender, EventArgs e)
     {
       var control = sender as Button;
-      CurrentBookmark = control;
+      CurrentBookmarkButton = control;
       MenuBookmarks.Show(control, new Point(0, control.Height));
     }
 
@@ -183,7 +203,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         if ( EditDateBookmarksForm.Run() )
-          LoadMenuBookmarks();
+          LoadMenuBookmarks(this);
       }
       finally
       {

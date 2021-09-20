@@ -125,24 +125,26 @@ namespace Ordisoftware.Core
     /// <param name="onAbort">The on Abort button selected action.</param>
     static public DialogResult QueryYesNoAbort(string title, string caption, Action onYes = null, Action onNo = null, Action onAbort = null)
     {
-      var form = new MessageBoxEx(title, caption, buttons: MessageBoxButtons.YesNo, icon: MessageBoxIcon.Question);
-      form.ActionAbort.Visible = true;
-      var result = form.ShowDialog();
-      switch ( result )
+      using ( var form = new MessageBoxEx(title, caption, buttons: MessageBoxButtons.YesNo, icon: MessageBoxIcon.Question) )
       {
-        case DialogResult.Yes:
-          onYes?.Invoke();
-          break;
-        case DialogResult.No:
-          onNo?.Invoke();
-          break;
-        case DialogResult.Abort:
-          onAbort?.Invoke();
-          break;
-        default:
-          break;
+        form.ActionAbort.Visible = true;
+        var result = form.ShowDialog();
+        switch ( result )
+        {
+          case DialogResult.Yes:
+            onYes?.Invoke();
+            break;
+          case DialogResult.No:
+            onNo?.Invoke();
+            break;
+          case DialogResult.Abort:
+            onAbort?.Invoke();
+            break;
+          default:
+            break;
+        }
+        return result;
       }
-      return result;
     }
 
     /// <summary>

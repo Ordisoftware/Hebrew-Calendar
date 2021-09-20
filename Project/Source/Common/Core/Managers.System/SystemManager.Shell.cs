@@ -227,16 +227,19 @@ namespace Ordisoftware.Core
       {
         var list = processes.Select(p => p.ProcessName);
         var names = string.Join(Globals.NL, list.ToArray());
-        var form = new MessageBoxEx(Globals.AssemblyTitle,
-                                    SysTranslations.CloseApplicationsRequired.GetLang(reason, names.Indent(5, 5)),
-                                    MessageBoxButtons.RetryCancel,
-                                    MessageBoxIcon.Exclamation);
-        form.ActionYes.Visible = true;
-        form.AcceptButton = form.ActionYes;
-        form.CancelButton = form.ActionCancel;
-        form.ActiveControl = form.ActionRetry;
-        form.ShowInTaskbar = true;
-        result = form.ShowDialog();
+        string message = SysTranslations.CloseApplicationsRequired.GetLang(reason, names.Indent(5, 5));
+        using ( var form = new MessageBoxEx(Globals.AssemblyTitle,
+                                            message,
+                                            MessageBoxButtons.RetryCancel,
+                                            MessageBoxIcon.Exclamation) )
+        {
+          form.ActionYes.Visible = true;
+          form.AcceptButton = form.ActionYes;
+          form.CancelButton = form.ActionCancel;
+          form.ActiveControl = form.ActionRetry;
+          form.ShowInTaskbar = true;
+          result = form.ShowDialog();
+        }
         if ( result == DialogResult.Yes )
           foreach ( var process in processes )
             TryCatch(process.Kill);

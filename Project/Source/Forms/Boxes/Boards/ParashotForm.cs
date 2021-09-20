@@ -395,16 +395,18 @@ namespace Ordisoftware.Hebrew
     {
       if ( DataGridView.ReadOnly ) return;
       if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
-      var form = new EditMemoForm();
-      form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
-      form.TextBox.Text = CurrentDataBoundItem.Memo;
-      form.TextBox.SelectionStart = 0;
-      if ( form.ShowDialog() == DialogResult.OK )
+      using ( var form = new EditMemoForm() )
       {
-        CurrentDataBoundItem.Memo = form.TextBox.Text;
-        ActionSave.Enabled = true;
-        ActionUndo.Enabled = true;
-        DataGridView.RefreshEdit();
+        form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+        form.TextBox.Text = CurrentDataBoundItem.Memo;
+        form.TextBox.SelectionStart = 0;
+        if ( form.ShowDialog() == DialogResult.OK )
+        {
+          CurrentDataBoundItem.Memo = form.TextBox.Text;
+          ActionSave.Enabled = true;
+          ActionUndo.Enabled = true;
+          DataGridView.RefreshEdit();
+        }
       }
     }
 

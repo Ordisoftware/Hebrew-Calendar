@@ -72,7 +72,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public LunisolarDay CurrentDay { get; private set; }
 
-    public DateTime? DateSelected { get; private set; } = null;
+    private DateTime? _DateSelected = null;
+    public DateTime? DateSelected
+    {
+      get => _DateSelected;
+      private set => _DateSelected = value == DateTime.Today ? null : value;
+    }
 
     private LunisolarDay ContextMenuDayCurrentEvent;
 
@@ -106,7 +111,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Text = Globals.AssemblyTitle;
         TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
-        Application.OpenForms.GetAll().FirstOrDefault(f => f is EditDateBookmarksForm)?.Close();
+        Application.OpenForms.GetAll(f => f is EditDateBookmarksForm)?.ToList().ForEach(f => f.Close());
         ParashotForm.Instance?.Close();
         CelebrationsBoardForm.Instance?.Close();
         CelebrationVersesBoardForm.Instance?.Close();

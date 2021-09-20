@@ -98,6 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             DateSelected = null;
             GoToDate(DateTime.Today);
+            LoadMenuBookmarks(this);
             TimerReminder.Enabled = true;
             TimerReminder_Tick(null, null);
           }

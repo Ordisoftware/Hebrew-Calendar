@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -104,8 +104,8 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToReplaceBookmark
       = new TranslationsDictionary
       {
-        [Language.EN] = "Replace bookmark?",
-        [Language.FR] = "Remplacer le signet ?"
+        [Language.EN] = $"Replace bookmark?{Globals.NL2}Actual: {{0}}{Globals.NL2}New: {{1}}",
+        [Language.FR] = $"Remplacer le signet ?{Globals.NL2}Actuel : {{0}}{Globals.NL2}Nouveau : {{1}}",
       };
 
     static public readonly TranslationsDictionary ActionCancel

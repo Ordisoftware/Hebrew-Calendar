@@ -285,10 +285,31 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Duplicate menu subitems.
     /// </summary>
-    static public void DuplicateTo(this ToolStripDropDownButton source, ToolStripMenuItem destination, bool noshortcuts = true)
+    static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noshortcuts = true)
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.DropDownItems )
+        if ( !( item.Tag is int ) || (int)item.Tag != int.MinValue )
+          if ( item is ToolStripMenuItem menuItem )
+          {
+            var newitem = menuItem.Clone();
+            if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+            items.Add(newitem);
+          }
+          else
+          if ( item is ToolStripSeparator )
+            items.Add(new ToolStripSeparator());
+      destination.DropDownItems.Clear();
+      destination.DropDownItems.AddRange(items.ToArray());
+    }
+
+    /// <summary>
+    /// Duplicate menu subitems.
+    /// </summary>
+    static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noshortcuts = true)
+    {
+      var items = new List<ToolStripItem>();
+      foreach ( ToolStripItem item in source.Items )
         if ( !( item.Tag is int ) || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {

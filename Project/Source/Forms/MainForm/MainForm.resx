@@ -226,7 +226,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -869,7 +869,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="moonPhaseImagePictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3064,7 +3064,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 51</value>
@@ -3287,6 +3287,73 @@
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
+  <data name="ContextMenuDayGoToBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
+        URd+LGo3ulBBRVx0067ciGCmhKxF+xvSaWbGr4QuCq3N472TuLCQcXzgcO/cOc/L3OG4nKKGFLSHFXwf
+        7CYVVrylY2eoLfXwdZn8cAIOdkj6a52HqIE62N/ih3KPjKeKjLsS9jY47o9TaimPJe+uoT2+j9b8AM1f
+        g+at5vf7EcyWGvsA67O/rJAV4s/gI7LhOrJyFc9szqEGG8oHWPLnJXQh6FE3eruC3taAHqoV55+Q70Wb
+        r9j9H5a8tYARqceINWJ0NGE882CIALYXHcirHzh/E8OMezG7nmB2+jBFCOuzqK02clL+sOXpopB4itnd
+        XCwRwsqMkN3l5aMXIQofJzh9HuCkp5WT3qC15gbiFJYm7WUxELA4Tv5llItXbZyJOhX7s74I/+bH7GVJ
+        OuKRU8U3UUkxrrm3HVy8jvF39t3tcgnZYJUM+TWU4M/UqGP5BqlwI5eTIxwmAneXJelo8Tpie3e5xPV1
+        HOJyXQGkmgOhvnUD5gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayGoToBookmark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayGoToBookmark.Text" xml:space="preserve">
+    <value>Go to bookmark</value>
+  </data>
+  <data name="ContextMenuDaySaveBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAoNJREFUOE+Nkl1IU2EYx89FRNFFUCsUuvem6CLooqsGCaLdhBdRdwZBUEFe2ZZ9
+        2EUWRRclJZruw6igiDB0N96EIWipfTg3peS4Nbfp5na2ec7Ox/bveZ5GeCHUC/+9z/b8fs97OO+Uuq5Q
+        p6srhN03RrCrcwQ7/xFmmGWHXWUfFdMZYDzp4H8Xs+ywq+y5NYqvmQqUO4vSjCY0SgERynw8j3Ash8gv
+        DfOceE4YZtlhVwZMpKtQ3O3S9Ho88Hq9CASC8Pl8WMro6OjooO8B+H2DwijuK+LIgL1doxiLO9jW1g/T
+        qSC1UUGyVEWiYFOc2m4jrllIaCYMi9k+cdhVXDTl3Y8yDvSqKNs2rl31IOgPYlV34KF6KDCEgM+PdMmC
+        f2AAumkKyw67MuBlVEfDM5UezkbRdpAzHayXbeTpNM66aSNbNqGZFqpVCw39qjh/BtBj+OdKOBpYRmip
+        QEMcVGiQQ+F9c/gAZphlh126xlH0fSmi8VUCx1/EqRnD4cEYDg0s42AtXPNv3GOGWXbYlQE9M0WceruC
+        ltcJPJ9c4Re9aVUpFdm51/ImISw7MmA/fTz8XMTZ4RQ1kgQ6iKgZLNK9L9J/Iqxm8f3nKsJLaerZwjDL
+        Drsy4N4nDedCaZweTsKml1UwKvDc7Ib7RDPVVUTj61iIZWEbZWJSwrLzd0D3VBGXx7JoC63B2CjTSYC7
+        sRl3H/RIraY0qMk8jJIhDLPsyIC62yHcn9ZxfaKA9g95OsUSqanpJB497pV6NWdgLafD0k1hmGWHXcV1
+        6ekTLvhOt3vf49tsBJMzUZy/cLFVOXamdWZ2AeNTYXycmqPevDDMikOuQquecmSL7Khlq14tSv1vbU/x
+        i7m5HQgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDaySaveBookmark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDaySaveBookmark.Text" xml:space="preserve">
+    <value>Save bookmark</value>
+  </data>
+  <data name="ContextMenuDayManageBookmark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAlVJREFUOE+Vk0tPE1EYhrv0D2iCwELZuMBw0aSiUFJCXenSuNGIxugeRS5KL1gJ
+        xisIJgZxRUAjCYlcWpBLC6UtRSgBdYEiIRojMtMpirZQ9PHMgGikXfglb76ZOed95j2Zb3Rqma71KAX2
+        Hoz2XvQ1w9w7XsTYgTTqRN9fPcQhi4Ncc9e6LF0YbN0U2p2KZlZLNY/NhcixOJmIwWhmEpw9QiAjibEo
+        TMo/mZTWNvUqjAbZsOt0hQJw8oEXvdmBLwKejJ2snDDhE704AKWDCmX9EqVCJX0SwcUfWpINu3qEXk41
+        +kQCB+5vKiCZyDEDvsxkLk1A5bCC2S1R6ZKoGJQY/bS2FVDU6NcA/csCIIzLR/X4spIpD4LFo2AVAFVm
+        ARn5GIsPOCgAziUVkMLXw5kaqGQcyl0KFQOLXBFvN7tkBj/EyNsCeLgO6FRgJCuVsGEPbnGUf6tySOb5
+        /EpiQHtIALJTUXJ2C0AKxSLBhQGZi32fKRMprMMy3XOJAFYnbTJ4s1MIiU8ZL8FVT4hn76IY4gHUgXmy
+        IOZg73bCu7bhS9+BZQpsXoUqj4TdK1PjD9E+mwCQa+nm8XvoPH+O+x1B3CY916di3AgscXNU0XQrEObp
+        20QAMaots6vcmY5y++Uqdf4F7gaXqR0PU/tCWZe4bn0T2Qo4LQB5AtA8E6Vh8gv1wSXqf/eJ8KYaxH3z
+        TIR861+jbKru5UyTX3vYMhvj0evvNCWQutYq9hirHH8AxsttLhWi/hNGm0MD5YuIcSXWVHOBrWN+w65V
+        mtC+/1S6TqfT/QI/WGQSDJUWBAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ContextMenuDayManageBookmark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="ContextMenuDayManageBookmark.Text" xml:space="preserve">
+    <value>Manage bookmarks</value>
+  </data>
+  <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
   <data name="ContextMenuDayDatesDiffToToday.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3479,7 +3546,7 @@
     <value>Weekly parashah</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 370</value>
+    <value>243, 442</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3495,7 +3562,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAcABAAHAAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAdgBAAHYAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -3539,6 +3606,18 @@
         Af4BfwHgAf8B4AH/Af4BfwH+AX8B8QH/AfEF/wH9Af8B/Qn/Cw==
 </value>
   </data>
+  <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 94</value>
+  </metadata>
+  <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 26</value>
+  </data>
+  <data name="&gt;&gt;MenuBookmarks.Name" xml:space="preserve">
+    <value>MenuBookmarks</value>
+  </data>
+  <data name="&gt;&gt;MenuBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3550,9 +3629,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1004, 711</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1020, 750</value>
@@ -3568,6 +3644,90 @@
   </data>
   <data name="&gt;&gt;SaveTextDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn2</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn3</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn4</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn5</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn8</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn6</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn7</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn9</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn10</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn11</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn12</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn13</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
+    <value>LunisolarDaysBindingSource</value>
+  </data>
+  <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
@@ -3634,6 +3794,12 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator14.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
+    <value>EditExportDataEnumsAsTranslations</value>
+  </data>
+  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.CheckBoxToolStripItem, Ordisoftware.Hebrew.Calendar, Version=9.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LabelEnumsAsTranslations.Name" xml:space="preserve">
     <value>LabelEnumsAsTranslations</value>
@@ -4301,10 +4467,28 @@
   <data name="&gt;&gt;ContextMenuDayNavigation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator18.Name" xml:space="preserve">
+    <value>toolStripSeparator18</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ContextMenuDaySetAsActive.Name" xml:space="preserve">
     <value>ContextMenuDaySetAsActive</value>
   </data>
   <data name="&gt;&gt;ContextMenuDaySetAsActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToToday.Name" xml:space="preserve">
+    <value>ContextMenuDayGoToToday</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToSelected.Name" xml:space="preserve">
+    <value>ContextMenuDayGoToSelected</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayGoToSelected.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator20.Name" xml:space="preserve">
@@ -4331,17 +4515,29 @@
   <data name="&gt;&gt;toolStripSeparator19.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayGoToToday.Name" xml:space="preserve">
-    <value>ContextMenuDayGoToToday</value>
+  <data name="&gt;&gt;ContextMenuDayGoToBookmark.Name" xml:space="preserve">
+    <value>ContextMenuDayGoToBookmark</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayGoToToday.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuDayGoToBookmark.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayGoToSelected.Name" xml:space="preserve">
-    <value>ContextMenuDayGoToSelected</value>
+  <data name="&gt;&gt;ContextMenuDaySaveBookmark.Name" xml:space="preserve">
+    <value>ContextMenuDaySaveBookmark</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayGoToSelected.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuDaySaveBookmark.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayManageBookmark.Name" xml:space="preserve">
+    <value>ContextMenuDayManageBookmark</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuDayManageBookmark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator21.Name" xml:space="preserve">
+    <value>toolStripSeparator21</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ContextMenuDayDatesDiffToToday.Name" xml:space="preserve">
     <value>ContextMenuDayDatesDiffToToday</value>
@@ -4408,102 +4604,6 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn3</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn4</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn5</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn8</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn6</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn7</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn9</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn10</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn11</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn12</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn13</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
-    <value>LunisolarDaysBindingSource</value>
-  </data>
-  <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
-    <value>EditExportDataEnumsAsTranslations</value>
-  </data>
-  <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.CheckBoxToolStripItem, Ordisoftware.Hebrew.Calendar, Version=9.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator18.Name" xml:space="preserve">
-    <value>toolStripSeparator18</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
