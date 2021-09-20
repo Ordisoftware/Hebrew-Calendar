@@ -1208,14 +1208,17 @@ namespace Ordisoftware.Hebrew.Calendar
       //
       void setBookmark()
       {
+        var dateNew = ContextMenuDayCurrentEvent.Date;
         for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         {
           var date = Program.DateBookmarks[index];
-          if ( ContextMenuDayCurrentEvent.Date == date ) return;
+          if ( dateNew == date ) return;
         }
-        if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { ContextMenuDayCurrentEvent.Date.ToLongDateString()}";
+        var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
+        if ( dateOld != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
+            return;
+        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
         if ( menuitem.OwnerItem == ContextMenuDayGoToBookmark )
           ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
         else

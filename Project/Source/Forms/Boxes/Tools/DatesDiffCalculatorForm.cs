@@ -43,10 +43,11 @@ namespace Ordisoftware.Hebrew.Calendar
         var menuitem = items.Add($"{index + 1:00}. {s}");
         menuitem.MouseUp += action;
         menuitem.Tag = index;
-        if ( onlyCalendar && ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast ) )
-          menuitem.Enabled = false;
+        if ( onlyCalendar && date != DateTime.MinValue )
+          if ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast )
+            menuitem.Enabled = false;
       }
-    }
+  }
 
     static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
     {
@@ -154,7 +155,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
       }
       else
-      if ( e.Button != MouseButtons.Left )
+      if ( e.Button == MouseButtons.Left )
       {
         if ( control == ActionSetBookmarkStart )
           setBookmark(MonthCalendar1);
@@ -173,15 +174,18 @@ namespace Ordisoftware.Hebrew.Calendar
       //
       void setBookmark(MonthCalendar calendar)
       {
+        var dateNew = calendar.SelectionStart.Date;
         for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
         {
           var date = Program.DateBookmarks[index];
-          if ( calendar.SelectionStart.Date == date ) return;
+          if ( dateNew == date ) return;
         }
-        if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
-        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { calendar.SelectionStart.Date.ToLongDateString()}";
-        Program.DateBookmarks[(int)menuitem.Tag] = calendar.SelectionStart.Date;
+        var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
+        if ( dateOld != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
+            return;
+        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
+        Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
         SystemManager.TryCatch(Settings.Save);
       }
     }
