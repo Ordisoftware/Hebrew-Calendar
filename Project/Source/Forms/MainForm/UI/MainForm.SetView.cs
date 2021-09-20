@@ -111,6 +111,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if (view == ViewMode.Grid)
           if ( CalendarGrid.SelectedRows.Count > 0 )
             CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
+        if ( view == ViewMode.Text )
+          GoToDate(CurrentDay.Date);
       }
       catch ( Exception ex )
       {
