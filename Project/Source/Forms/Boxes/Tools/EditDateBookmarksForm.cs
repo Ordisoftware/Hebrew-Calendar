@@ -42,11 +42,19 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run()
     {
-      using ( var form = new EditDateBookmarksForm() )
-        return form.ShowDialog() == DialogResult.OK;
+      MainForm.Instance.MenuTray.Enabled = false;
+      try
+      {
+        using ( var form = new EditDateBookmarksForm() )
+          return form.ShowDialog() == DialogResult.OK;
+      }
+      finally
+      {
+        MainForm.Instance.Enabled = true;
+      }
     }
 
-    private EditDateBookmarksForm()
+      private EditDateBookmarksForm()
     {
       InitializeComponent();
       Icon = MainForm.Instance.Icon;

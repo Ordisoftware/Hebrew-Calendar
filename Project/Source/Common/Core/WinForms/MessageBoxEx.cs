@@ -53,7 +53,8 @@ namespace Ordisoftware.Core
         case MessageBoxFormStyle.System:
           return MessageBox.Show(text.GetLang(), title.GetLang(), buttons, icon);
         case MessageBoxFormStyle.Advanced:
-          return new MessageBoxEx(title, text, buttons, icon, width, justify, sound).ShowDialog();
+          using ( var form = new MessageBoxEx(title, text, buttons, icon, width, justify, sound) )
+            return form.ShowDialog();
         default:
           throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
       }

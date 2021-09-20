@@ -308,10 +308,10 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionPreferences.Visible = false;
       ActionPreferences.Visible = true;
       ToolStrip.Enabled = false;
+      TimerReminder.Enabled = false;
+      MenuTray.Enabled = false;
       try
       {
-        TimerReminder.Enabled = false;
-        MenuTray.Enabled = false;
         ClearLists();
         if ( PreferencesForm.Run(sender is int ? (int)sender : -1) )
         {
@@ -796,7 +796,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchEvent_Click(object sender, EventArgs e)
     {
-      new SearchEventForm().ShowDialog();
+      using ( var form = new SearchEventForm() )
+        form.ShowDialog();
     }
 
     /// <summary>
@@ -806,7 +807,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchMonth_Click(object sender, EventArgs e)
     {
-      new SearchLunarMonthForm().ShowDialog();
+      using ( var form = new SearchLunarMonthForm() )
+        form.ShowDialog();
     }
 
     /// <summary>
@@ -816,7 +818,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchGregorianMonth_Click(object sender, EventArgs e)
     {
-      new SearchGregorianMonthForm().ShowDialog();
+      using ( var form = new SearchGregorianMonthForm() )
+        form.ShowDialog();
     }
 
     /// <summary>

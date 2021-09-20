@@ -335,7 +335,8 @@ namespace Ordisoftware.Core
                                                  MessageBoxButtons buttons,
                                                  MessageBoxIcon icon)
     {
-      return new MessageBoxEx(title, text, buttons, icon).ShowDialog();
+      using ( var form = new MessageBoxEx(title, text, buttons, icon) )
+        return form.ShowDialog();
     }
 
   }
