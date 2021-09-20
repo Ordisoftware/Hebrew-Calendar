@@ -984,17 +984,15 @@
   </data>
   <data name="ActionUseBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAhdJREFUOE+VkU1rE1EUho8gFtS16E5xLQhuXCtiFyIo/g5jDW2JtFYDjZGoQVqt
-        YKs2maYRQZu0NWhtTVDcqWgly9QmOtOY72kzko/J23tvb5io04UHHoZ75n3eGWbo71HmF3BvMozb4bkj
-        ciUm8HIR/lAU8vjnfHWeQ6t7F3CCMBV7A6d3BD8uHAJO70Szuws4SVBii7joGwNOEct2gTtSJ6oc34HG
-        7ATw4j6U13Gc7bmGZGAEZvQh6tFxYGYMykICZ3quA5EHaM5NgDtSJ9IOEkqO8/i5jxDZTZjdS8geIGT2
-        E9IMlRHZQ4gyNJbhWe5InejmeBAmgFRBx2p5AxndwKr+GytlAynG94qBdKUq7qWKushyR+pEPv8oWmyZ
-        VlWo2Szy5bK42pFRNZHljtSJvL47MFstqNoacvmirdhGW8uKLHekTuTx+tBiy1+5HIqlkq3Iqeg68oUC
-        ez7g8d6yCtwer1gWi9vLHC5XN6owqgbcwzesgiH3sCjgT9DX11mAh7bn+UwUSihsFQwOuUWBYWwFms3m
-        P1InS/EE5mOvrALXwFVRUK/XUavV0Gg0bMU2y8mkeAupE/W5BkUBH9M0xQfldA4XVU3Dx0+fxZ+YfvrM
-        Kuh3DciY/bx7/wFLbxP4svwNqdSK2AWnpq0Cx+XeuLP/Ci45++DooH323x1FQAnhSUDBo8kgHm+hS13M
-        Ycax/+QoEdEm+yea1b/fgDkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVDhPlZJNSxtRFIbzE9xJkbqohapxjE1aE82XphKN
+        tAq2tFUUBVddiaAUdVEXfixqN7pQQUVcdNOu3IhgpoSsRfsb0mlmxq+ELgqtzeO9k7iwkHF84HDv3DnP
+        y9zhuJyihhS0hxV8H+wmFVa8pWNnqC318HWZ/HACDnZI+mudh6iBOtjf4odyj4ynioy7EvY2OO6PU2op
+        jyXvrqE9vo/W/ADNX4Pmreb3+xHMlhr7AOuzv6yQFeLP4COy4TqychXPbM6hBhvKB1jy5yV0IehRN3q7
+        gt7WgB6qFeefkO9Fm6/Y/R+WvLWAEanHiDVidDRhPPNgiAC2Fx3Iqx84fxPDjHsxu55gdvowRQjrs6it
+        NnJS/rDl6aKQeIrZ3VwsEcLKjJDd5eWjFyEKHyc4fR7gpKeVk96gteYG4hSWJu1lMRCwOE7+ZZSLV22c
+        iToV+7O+CP/mx+xlSTrikVPFN1FJMa65tx1cvI7xd/bd7XIJ2WCVDPk1lODP1Khj+QapcCOXkyMcJgJ3
+        lyXpaPE6Ynt3ucT1dRzicl0BpJoDob51A+YAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionUseBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1026,17 +1024,15 @@
   </data>
   <data name="ActionUseBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAhdJREFUOE+VkU1rE1EUho8gFtS16E5xLQhuXCtiFyIo/g5jDW2JtFYDjZGoQVqt
-        YKs2maYRQZu0NWhtTVDcqWgly9QmOtOY72kzko/J23tvb5io04UHHoZ75n3eGWbo71HmF3BvMozb4bkj
-        ciUm8HIR/lAU8vjnfHWeQ6t7F3CCMBV7A6d3BD8uHAJO70Szuws4SVBii7joGwNOEct2gTtSJ6oc34HG
-        7ATw4j6U13Gc7bmGZGAEZvQh6tFxYGYMykICZ3quA5EHaM5NgDtSJ9IOEkqO8/i5jxDZTZjdS8geIGT2
-        E9IMlRHZQ4gyNJbhWe5InejmeBAmgFRBx2p5AxndwKr+GytlAynG94qBdKUq7qWKushyR+pEPv8oWmyZ
-        VlWo2Szy5bK42pFRNZHljtSJvL47MFstqNoacvmirdhGW8uKLHekTuTx+tBiy1+5HIqlkq3Iqeg68oUC
-        ez7g8d6yCtwer1gWi9vLHC5XN6owqgbcwzesgiH3sCjgT9DX11mAh7bn+UwUSihsFQwOuUWBYWwFms3m
-        P1InS/EE5mOvrALXwFVRUK/XUavV0Gg0bMU2y8mkeAupE/W5BkUBH9M0xQfldA4XVU3Dx0+fxZ+YfvrM
-        Kuh3DciY/bx7/wFLbxP4svwNqdSK2AWnpq0Cx+XeuLP/Ci45++DooH323x1FQAnhSUDBo8kgHm+hS13M
-        Ycax/+QoEdEm+yea1b/fgDkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVDhPlZJNSxtRFIbzE9xJkbqohapxjE1aE82XphKN
+        tAq2tFUUBVddiaAUdVEXfixqN7pQQUVcdNOu3IhgpoSsRfsb0mlmxq+ELgqtzeO9k7iwkHF84HDv3DnP
+        y9zhuJyihhS0hxV8H+wmFVa8pWNnqC318HWZ/HACDnZI+mudh6iBOtjf4odyj4ynioy7EvY2OO6PU2op
+        jyXvrqE9vo/W/ADNX4Pmreb3+xHMlhr7AOuzv6yQFeLP4COy4TqychXPbM6hBhvKB1jy5yV0IehRN3q7
+        gt7WgB6qFeefkO9Fm6/Y/R+WvLWAEanHiDVidDRhPPNgiAC2Fx3Iqx84fxPDjHsxu55gdvowRQjrs6it
+        NnJS/rDl6aKQeIrZ3VwsEcLKjJDd5eWjFyEKHyc4fR7gpKeVk96gteYG4hSWJu1lMRCwOE7+ZZSLV22c
+        iToV+7O+CP/mx+xlSTrikVPFN1FJMa65tx1cvI7xd/bd7XIJ2WCVDPk1lODP1Khj+QapcCOXkyMcJgJ3
+        lyXpaPE6Ynt3ucT1dRzicl0BpJoDob51A+YAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionUseBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

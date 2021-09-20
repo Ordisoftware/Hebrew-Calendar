@@ -1158,6 +1158,73 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Run(parashah);
     }
 
+    private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
+    {
+      if ( EditDateBookmarksForm.Run() )
+        LoadMenuBookmarks(this);
+    }
+
+    private ToolStripMenuItem CurrentBookmarkMenu;
+
+    internal void LoadMenuBookmarks(Form caller)
+    {
+      DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
+      if ( caller != DatesDiffCalculatorForm.Instance ) DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+      MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
+      MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
+    }
+
+    private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)
+    {
+      CurrentBookmarkMenu = sender as ToolStripMenuItem;
+    }
+
+    private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var control = CurrentBookmarkMenu;
+      if ( e.Button == MouseButtons.Right )
+      {
+        if ( control == ContextMenuDaySaveBookmark )
+          if ( !menuitem.Text.EndsWith(")") )
+          {
+            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
+            menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
+            Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
+            SystemManager.TryCatch(Settings.Save);
+          }
+      }
+      else
+      if ( e.Button == MouseButtons.Left )
+      {
+        if ( control == ContextMenuDaySaveBookmark )
+          setBookmark();
+        else
+        if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+          if ( control == ContextMenuDayGoToBookmark )
+            GoToDate(date);
+      }
+      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+      //
+      void setBookmark()
+      {
+        for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
+        {
+          var date = Program.DateBookmarks[index];
+          if ( ContextMenuDayCurrentEvent.Date == date ) return;
+        }
+        if ( Program.DateBookmarks[(int)menuitem.Tag] != DateTime.MinValue )
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang()) ) return;
+        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { ContextMenuDayCurrentEvent.Date.ToLongDateString()}";
+        if ( menuitem.OwnerItem == ContextMenuDayGoToBookmark )
+          ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
+        else
+        if ( menuitem.OwnerItem == ContextMenuDaySaveBookmark )
+          ContextMenuDayGoToBookmark.DropDownItems[ContextMenuDaySaveBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text; Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
+        SystemManager.TryCatch(Settings.Save);
+      }
+    }
+
     #endregion
 
   }

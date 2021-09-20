@@ -629,4 +629,13 @@
   <data name="ContextMenuDaySetAsActive.Text" xml:space="preserve">
     <value>Définir comme jour actif</value>
   </data>
+  <data name="ContextMenuDayGoToBookmark.Text" xml:space="preserve">
+    <value>Aller au signet</value>
+  </data>
+  <data name="ContextMenuDayManageBookmark.Text" xml:space="preserve">
+    <value>Gérer les signets</value>
+  </data>
+  <data name="ContextMenuDaySaveBookmark.Text" xml:space="preserve">
+    <value>Sauver le signet</value>
+  </data>
 </root>

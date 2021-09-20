@@ -224,7 +224,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ActionManageBookmarks_Click(object sender, EventArgs e)
     {
       if ( EditDateBookmarksForm.Run() )
-        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
     }
 
     private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
@@ -232,7 +232,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !IsReady ) return;
       Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
       Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks();
+      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
     }
 
     private void EditVolume_ValueChanged(object sender, EventArgs e)
