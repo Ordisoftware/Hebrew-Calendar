@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -34,6 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
       GoToDateMutex = true;
+      if ( _DateSelected == date ) _DateSelected = null;
       SystemManager.TryCatch(() =>
       {
         if ( NavigationForm.Instance != null )

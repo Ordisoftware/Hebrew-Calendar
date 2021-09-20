@@ -72,7 +72,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public LunisolarDay CurrentDay { get; private set; }
 
-    public DateTime? DateSelected { get; private set; } = null;
+    private DateTime? _DateSelected = null;
+    public DateTime? DateSelected
+    {
+      get => _DateSelected;
+      private set => _DateSelected = value == DateTime.Today ? null : value;
+    }
 
     private LunisolarDay ContextMenuDayCurrentEvent;
 
