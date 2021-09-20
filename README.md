@@ -310,6 +310,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### 2021.09.22 - Version 9.1
+
+- Add parashot board link in shabat reminder box when no weekly parashah available.
+- Fix bug with no selected day on changing day at midnight.
+
 #### 2021.09.19 - Version 9.0
 
 - Add context menu for days in month view.
