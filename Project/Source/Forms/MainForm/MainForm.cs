@@ -1223,7 +1223,8 @@ namespace Ordisoftware.Hebrew.Calendar
           ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
         else
         if ( menuitem.OwnerItem == ContextMenuDaySaveBookmark )
-          ContextMenuDayGoToBookmark.DropDownItems[ContextMenuDaySaveBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text; Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
+          ContextMenuDayGoToBookmark.DropDownItems[ContextMenuDaySaveBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
+        Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
         SystemManager.TryCatch(Settings.Save);
       }
     }
