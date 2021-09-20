@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "• Added bookmarks to context menu in month view.",
 
-          [Language.FR] = "• Ajout des signets au  menu contextuel dans la vue mensuelle."
+          [Language.FR] = "• Ajout des signets au menu contextuel dans la vue mensuelle."
         },
 
         ["9.0"] = new TranslationsDictionary
