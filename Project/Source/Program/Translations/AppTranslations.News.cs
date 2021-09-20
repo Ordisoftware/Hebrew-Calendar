@@ -39,6 +39,13 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
+        ["9.1"] = new TranslationsDictionary
+        {
+          [Language.EN] = "• Added bookmarks to context menu in month view.",
+
+          [Language.FR] = "• Ajout des signets au  menu contextuel dans la vue mensuelle."
+        },
+
         ["9.0"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added context menu for days in month view." + Globals.NL +
