@@ -103,10 +103,10 @@ namespace Ordisoftware.Hebrew.Calendar
         CalendarText.BackColor = Settings.TextBackground;
         InitializeCalendarUI();
         InitializeReminderBoxDesktopLocation();
-        LoadMenuBookmarks(this);
         Refresh();
         ClearLists();
         LoadData();
+        LoadMenuBookmarks(this);
       }
       catch
       {

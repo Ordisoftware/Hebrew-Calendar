@@ -1863,7 +1863,7 @@
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDaySaveBookmark;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayManageBookmark;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator21;
-    private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
+    internal System.Windows.Forms.ContextMenuStrip MenuBookmarks;
   }
 }
 

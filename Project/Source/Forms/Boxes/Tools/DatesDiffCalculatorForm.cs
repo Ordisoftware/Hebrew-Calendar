@@ -34,6 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
     {
+      bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
       items.Clear();
       for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       {
@@ -42,6 +43,8 @@ namespace Ordisoftware.Hebrew.Calendar
         var menuitem = items.Add($"{index + 1:00}. {s}");
         menuitem.MouseUp += action;
         menuitem.Tag = index;
+        if ( onlyCalendar && ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast ) )
+          menuitem.Enabled = false;
       }
     }
 
