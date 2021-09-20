@@ -305,6 +305,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !ActionPreferences.Enabled ) return;
       var dateOld = CurrentDay?.Date;
       bool formEnabled = Enabled;
+      bool trayEnabled = MenuTray.Enabled;
       ActionPreferences.Visible = false;
       ActionPreferences.Visible = true;
       ToolStrip.Enabled = false;
@@ -338,7 +339,7 @@ namespace Ordisoftware.Hebrew.Calendar
       finally
       {
         ToolStrip.Enabled = formEnabled;
-        MenuTray.Enabled = true;
+        MenuTray.Enabled = trayEnabled;
         if ( dateOld == null )
           GoToDate(DateTime.Today);
         else

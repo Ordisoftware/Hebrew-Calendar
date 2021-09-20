@@ -42,6 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run()
     {
+      bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
       MainForm.Instance.MenuTray.Enabled = false;
       try
       {
@@ -50,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        MainForm.Instance.Enabled = true;
+        MainForm.Instance.MenuTray.Enabled = trayEnabled;
       }
     }
 
