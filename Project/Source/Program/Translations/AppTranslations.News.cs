@@ -41,12 +41,18 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.2"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Optimized code." + Globals.NL +
-                          "• Some fixes and improvements.",
+          [Language.EN] = "• Improved visual month to display active day before month name." + Globals.NL +
+                          "• Improved display of lists of web links by moving those in the current language to the top." + Globals.NL +
+                          "• Some fixes and improvements." + Globals.NL +
+                          "• Optimized code." + Globals.NL +
+                          "• Updated web links.",
 
 
-          [Language.FR] = "• Code optimisé." + Globals.NL +
-                          "• Quelques corrections et améliorations."
+          [Language.FR] = "• Amélioration du mois visuel pour afficher le jour actif devant le nom du mois." + Globals.NL +
+                          "• Amélioration de l'affichage des listes de liens web en déplaçant ceux dans la langue actuelle vers le haut." + Globals.NL +
+                          "• Quelques corrections et améliorations." + Globals.NL +
+                          "• Code optimisé." + Globals.NL +
+                          "• Mise à jour les liens web."
         },
 
         ["9.1"] = new TranslationsDictionary
