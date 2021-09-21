@@ -41,11 +41,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.2"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Code optimizated." + Globals.NL +
+          [Language.EN] = "• Optimized code." + Globals.NL +
                           "• Some fixes and improvements.",
 
 
-          [Language.FR] = "• Optimisation du code." + Globals.NL +
+          [Language.FR] = "• Code optimisé." + Globals.NL +
                           "• Quelques corrections et améliorations."
         },
 

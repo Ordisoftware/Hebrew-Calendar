@@ -61,7 +61,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 9.1**
+**What's new in the latest version 9.x**
 
 - Added context menu for days in month view.
 - Added bookmarks to context menu in month view.
@@ -72,8 +72,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added Ctrl+B and Decimal shortcuts to go to selected day.
 - Added celebration verses board and command-line option.
 - The month view shows sun times instead of moon when using sun omer.
-- Updated web links.
 - Some fixes and improvements.
+- Optimized code.
+- Updated web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -310,7 +311,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 9.2
+#### 2021.09.22 - Version 9.2
 
 - Improve visual month to display active day.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
