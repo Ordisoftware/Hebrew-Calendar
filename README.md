@@ -315,6 +315,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.22 - Version 9.2
 
 - Add Shift + Click to change active day even if the related option is disabled.
+- Add Apps keyboard shortcut to display the contextual menu in month view.
 - Improve visual month to display active day before month name.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
 - Improve web links menus to display those in the current language to the top.
