@@ -313,7 +313,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.2
 
 - Improve alert box for big calendar generation to disable option to ask confirmation.
-- Optimize code.
+- Optimize changing day.
 
 #### 2021.09.20 - Version 9.1
 
