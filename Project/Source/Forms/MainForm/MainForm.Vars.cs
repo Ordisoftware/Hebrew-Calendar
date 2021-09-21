@@ -18,7 +18,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DandTSoftware.Timers;
-using MoreLinq;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -76,7 +75,13 @@ namespace Ordisoftware.Hebrew.Calendar
     public DateTime? DateSelected
     {
       get => _DateSelected;
-      private set => _DateSelected = value == DateTime.Today ? null : value;
+      private set
+      {
+        if ( _DateSelected == value ) return;
+        _DateSelected = value == DateTime.Today ? null : value;
+        if ( Settings.CurrentView == ViewMode.Month )
+          CalendarMonth.Refresh();
+      }
     }
 
     private LunisolarDay ContextMenuDayCurrentEvent;

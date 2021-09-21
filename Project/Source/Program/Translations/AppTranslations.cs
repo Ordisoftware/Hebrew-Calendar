@@ -240,18 +240,6 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Coordonnées non trouvées."
       };
 
-    static public readonly TranslationsDictionary AskToRegenerate
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Current years interval is greater than {0} ({1})." + Globals.NL2 +
-                        "Do you want to regenerate the data for the next {0} years?" + Globals.NL2 +
-                        "Click Cancel to disable this option.",
-
-        [Language.FR] = "L'intervalle des années en cours est supérieur à {0} ({1})." + Globals.NL2 +
-                        "Voulez-vous régénérer les données pour les {0} prochaines années ?" + Globals.NL2 +
-                        "Cliquez sur Annuler pour désactiver cette option.",
-      };
-
   }
 
 }

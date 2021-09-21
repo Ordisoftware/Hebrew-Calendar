@@ -39,6 +39,16 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
+        ["9.2"] = new TranslationsDictionary
+        {
+          [Language.EN] = "• Code optimizated." + Globals.NL +
+                          "• Some fixes and improvements.",
+
+
+          [Language.FR] = "• Optimisation du code." + Globals.NL +
+                          "• Quelques corrections et améliorations."
+        },
+
         ["9.1"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added bookmarks to context menu in month view.",

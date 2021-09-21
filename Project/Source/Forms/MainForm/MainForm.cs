@@ -871,7 +871,6 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ClearLists();
       TimerReminder_Tick(null, null);
-      UpdateTitles(true);
     }
 
     /// <summary>
@@ -882,7 +881,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void MenuEnableReminder_Click(object sender, EventArgs e)
     {
       EnableReminderTimer();
-      UpdateTitles(true);
     }
 
     /// <summary>
@@ -1064,10 +1062,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( e.Button == MouseButtons.Left )
       {
         if ( e.Clicks > 1 )
-        {
           DateSelected = dayRow.Date;
-          CalendarMonth.Refresh();
-        }
         else
         if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
           GoToDate(dayRow.Date);
@@ -1082,7 +1077,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
-      CalendarMonth.Refresh();
+      //TODO remove ??? CalendarMonth.Refresh();
     }
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
@@ -1113,13 +1108,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
       DateSelected = ContextMenuDayCurrentEvent.Date;
-      CalendarMonth.Refresh();
     }
 
     private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
     {
       DateSelected = null;
-      CalendarMonth.Refresh();
     }
 
     private void ContextMenuDayNavigation_Click(object sender, EventArgs e)

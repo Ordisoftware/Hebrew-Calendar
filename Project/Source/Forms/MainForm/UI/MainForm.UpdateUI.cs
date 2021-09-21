@@ -31,6 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private string TitleGPS = "";
     private string TitleOmer = "";
+    private string TitleParashah = "";
 
     /// <summary>
     /// Center the form to the screen.
@@ -99,7 +100,6 @@ namespace Ordisoftware.Hebrew.Calendar
       UpdateTitlesMutex = true;
       try
       {
-        string str;
         Text = Globals.AssemblyTitle;
         SystemManager.TryCatch(() =>
         {
@@ -109,39 +109,40 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( Settings.MainFormTitleBarShowToday )
             Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
           // GPS
-          if ( !force && !TitleGPS.IsNullOrEmpty() )
-            str = TitleGPS;
-          else
+          if ( force || TitleGPS.IsNullOrEmpty() )
             if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
-            str = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
-          else
-            str = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
-          LabelSubTitleGPS.Text = str;
+              TitleGPS = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
+            else
+              TitleGPS = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
+          LabelSubTitleGPS.Text = TitleGPS;
           // Omer
-          if ( !force && !TitleOmer.IsNullOrEmpty() )
-            str = TitleOmer;
-          else
-            str = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
-          LabelSubTitleOmer.Text = str;
+          if ( force || TitleOmer.IsNullOrEmpty() )
+            TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+          LabelSubTitleOmer.Text = TitleOmer;
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
           {
-            var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-            if ( weekParashah.Factory != null )
+            if ( force || TitleParashah.IsNullOrEmpty() )
             {
-              ActionWeeklyParashah.Enabled = true;
-              if ( MenuTools.DropDownItems.Count > 0 )
-                MenuTools.DropDownItems[0].Enabled = true;
-              str = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
-                                                       weekParashah.Day.HasLinkedParashah);
-              Text += " - Parashah " + str.ToUpper();
+              var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+              if ( weekParashah.Factory != null )
+              {
+                ActionWeeklyParashah.Enabled = true;
+                if ( MenuTools.DropDownItems.Count > 0 )
+                  MenuTools.DropDownItems[0].Enabled = true;
+                TitleParashah = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
+                                                                   weekParashah.Day.HasLinkedParashah);
+                TitleParashah = " - Parashah " + TitleParashah.ToUpper();
+              }
+              else
+              {
+                TitleParashah = string.Empty;
+                ActionWeeklyParashah.Enabled = false;
+                if ( MenuTools.DropDownItems.Count > 0 )
+                  MenuTools.DropDownItems[0].Enabled = false;
+              }
             }
-            else
-            {
-              ActionWeeklyParashah.Enabled = false;
-              if ( MenuTools.DropDownItems.Count > 0 )
-                MenuTools.DropDownItems[0].Enabled = false;
-            }
+            Text += TitleParashah;
           }
         });
       }

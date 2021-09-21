@@ -934,6 +934,9 @@ namespace CodeProjectCalendar.NET
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
       string monthstr = _calendarDate.ToString("MMMM").Titleize();
+      string monthstrWithDay = monthstr;
+      if ( MainForm.Instance.CurrentDay != null )
+        monthstrWithDay = MainForm.Instance.CurrentDay.Date.Day + " " + monthstrWithDay;
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -941,7 +944,7 @@ namespace CodeProjectCalendar.NET
       SizeF thuSize = sunSize;// g.MeasureString("Thu", _dayOfWeekFont);
       SizeF friSize = sunSize;// g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = sunSize;// g.MeasureString("Sat", _dayOfWeekFont);
-      SizeF dateHeaderSize = g.MeasureString(monthstr + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+      SizeF dateHeaderSize = g.MeasureString(monthstrWithDay + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
       int headerSpacing = (int)sunSize.Height + 5;// Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
@@ -1262,7 +1265,7 @@ namespace CodeProjectCalendar.NET
 
       if ( _showDateInHeader )
       {
-        g.DrawString(monthstr + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
+        g.DrawString(monthstrWithDay + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       // ORDISOFTWARE MODIF BEGIN

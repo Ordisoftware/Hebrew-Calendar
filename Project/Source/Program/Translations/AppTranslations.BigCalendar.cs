@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2020-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -23,6 +23,26 @@ namespace Ordisoftware.Hebrew.Calendar
   /// </summary>
   static partial class AppTranslations
   {
+
+    static public readonly TranslationsDictionary ClickOnIgnoreToDisableOption
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Click Cancel to process and disable this option.",
+
+        [Language.FR] = "Cliquez sur Annuler pour valider et désactiver cette option.",
+      };
+
+    static public readonly TranslationsDictionary AskToRegenerate
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Current years interval is greater than {0} ({1})." + Globals.NL2 +
+                        "Do you want to regenerate the data for the next {0} years?" + Globals.NL2 +
+                        ClickOnIgnoreToDisableOption[Language.EN],
+
+        [Language.FR] = "L'intervalle des années en cours est supérieur à {0} ({1})." + Globals.NL2 +
+                        "Voulez-vous régénérer les données pour les {0} prochaines années ?" + Globals.NL2 +
+                        ClickOnIgnoreToDisableOption[Language.FR],
+      };
 
     static private readonly string AskToGenerateBigCalendarEN
       = "Generate a calendar for more than {0} ({1}) years is not recommanded and can cause ";
@@ -36,48 +56,58 @@ namespace Ordisoftware.Hebrew.Calendar
         new TranslationsDictionary
         {
           [Language.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.EN],
+                          SysTranslations.AskToContinue[Language.EN] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.EN],
 
           [Language.FR] = AskToGenerateBigCalendarFR + "un léger ralentissement." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.FR]
+                          SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.FR]
         },
         new TranslationsDictionary
         {
           [Language.EN] = AskToGenerateBigCalendarEN + "a noticeable slowdown." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.EN],
+                          SysTranslations.AskToContinue[Language.EN] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.EN],
 
           [Language.FR] = AskToGenerateBigCalendarFR + "un ralentissement notable." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.FR]
+                          SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.FR]
         },
         new TranslationsDictionary
         {
           [Language.EN] = AskToGenerateBigCalendarEN + "a significant slowdown." + Globals.NL2 +
                           "Do not use this value for a daily usage." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.EN],
+                          SysTranslations.AskToContinue[Language.EN] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.EN],
 
           [Language.FR] = AskToGenerateBigCalendarFR + "un ralentissement important." + Globals.NL2 +
                           "N'utilisez pas cette valeur pour un usage quotidien." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.FR]
+                          SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.FR]
         },
         new TranslationsDictionary
         {
           [Language.EN] = AskToGenerateBigCalendarEN + "a considerable slowdown." + Globals.NL2 +
                           "Use this value only for occasional searches." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.EN],
+                          SysTranslations.AskToContinue[Language.EN] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.EN],
 
           [Language.FR] = AskToGenerateBigCalendarFR + "ralentissement considérable." + Globals.NL2 +
                           "N'utilisez cette valeur que pour des recherches ponctuelles." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.FR]
+                          SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.FR]
         },
         new TranslationsDictionary
         {
           [Language.EN] = AskToGenerateBigCalendarEN + "a serious slowdown." + Globals.NL2 +
                           "Use this value only with a powerful computer." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.EN],
+                          SysTranslations.AskToContinue[Language.EN] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.EN],
 
           [Language.FR] = AskToGenerateBigCalendarFR + "ralentissement sévère." + Globals.NL2 +
                           "N'utiliser cette valeur qu'avec un ordinateur puissant." + Globals.NL2 +
-                          SysTranslations.AskToContinue[Language.FR]
+                          SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
+                          ClickOnIgnoreToDisableOption[Language.FR]
         }
       };
 
