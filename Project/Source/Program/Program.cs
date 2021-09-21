@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -258,6 +259,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public void UpdateLocalization()
     {
       Globals.ChronoTranslate.Restart();
+      Task task = null;
       try
       {
         void update(Form form)
@@ -271,6 +273,8 @@ namespace Ordisoftware.Hebrew.Calendar
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
+        task = new Task(HebrewGlobals.LoadProviders);
+        task.Start();
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
@@ -317,6 +321,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }

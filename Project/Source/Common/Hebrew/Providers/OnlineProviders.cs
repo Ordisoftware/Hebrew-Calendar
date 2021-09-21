@@ -131,7 +131,7 @@ namespace Ordisoftware.Hebrew
         {
           int index = 0;
           foreach ( var item in slice.ToList() )
-            if ( item.Language.ToUpper().Contains(Languages.CurrentCode.ToUpper()) )
+            if ( item.Language.ToUpper().Contains(Languages.Current.ToString()) )
             {
               slice.Remove(item);
               slice.Insert(index++, item);

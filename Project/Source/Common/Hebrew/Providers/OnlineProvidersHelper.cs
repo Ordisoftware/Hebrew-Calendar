@@ -110,6 +110,7 @@ namespace Ordisoftware.Hebrew
                                                OnlineProviders providers,
                                                EventHandler action)
     {
+      if ( providers == null ) return;
       SetItems(menuItem.DropDownItems, providers, action, () => InitializeFromProviders(menuItem, providers, action));
       menuItem.MouseUp += Menu_MouseUp;
     }
@@ -119,8 +120,10 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
     {
+      var providers = HebrewGlobals.WebLinksProviders;
+      if ( providers == null ) return;
       menuRoot.DropDownItems.Clear();
-      foreach ( var items in HebrewGlobals.WebLinksProviders )
+      foreach ( var items in providers )
         if ( items.Items.Count > 0 )
         {
           // Folder
