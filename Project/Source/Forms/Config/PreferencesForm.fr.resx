@@ -851,6 +851,6 @@
     <value>Jour actif</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
-    <value>Changer de jour sur un clic</value>
+    <value>Changer de jour sur un Clic sinon Maj + Clic</value>
   </data>
 </root>

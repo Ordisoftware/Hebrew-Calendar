@@ -1064,7 +1064,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( e.Clicks > 1 )
           DateSelected = dayRow.Date;
         else
-        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
+        if ( e.Clicks == 1 && ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) ) )
           GoToDate(dayRow.Date);
       }
       else
