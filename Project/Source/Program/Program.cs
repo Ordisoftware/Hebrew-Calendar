@@ -311,6 +311,10 @@ namespace Ordisoftware.Hebrew.Calendar
           NavigationForm.Instance.Relocalize();
           DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Instance.Reset();
+          SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+          {
+            MainForm.Instance.LoadMenuBookmarks(MainForm.Instance);
+          });
         }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.CreateSystemInformationMenu();
@@ -321,10 +325,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
-        {
-          MainForm.Instance.LoadMenuBookmarks(MainForm.Instance);
-        });
         task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
