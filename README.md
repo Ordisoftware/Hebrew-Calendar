@@ -314,9 +314,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.22 - Version 9.2
 
-- Add option to display links in current language first.
 - Improve visual month to display active day.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
+- Improve the display of lists of web links.
 - Update and fix web links.
 - Optimize code.
 
