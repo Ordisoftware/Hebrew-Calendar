@@ -69,6 +69,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added select day by double click in month view.
 - Added mouse hover effect in month view.
 - Added some options and colors for month view.
+- Added option to display links in current language first.
 - Added Ctrl+B and Decimal shortcuts to go to selected day.
 - Added celebration verses board and command-line option.
 - The month view shows sun times instead of moon when using sun omer.
@@ -313,8 +314,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.22 - Version 9.2
 
+- Add option to display links in current language first.
 - Improve visual month to display active day.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
+- Update and fix web links.
 - Optimize code.
 
 #### 2021.09.20 - Version 9.1
