@@ -115,6 +115,8 @@ namespace Ordisoftware.Hebrew.Calendar
             else
               TitleGPS = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
           LabelSubTitleGPS.Text = TitleGPS;
+          if ( CurrentDay != null)
+            LabelSubTitleGPS.Text += " - " + CurrentDay.Date.ToShortDateString();
           // Omer
           if ( force || TitleOmer.IsNullOrEmpty() )
             TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
