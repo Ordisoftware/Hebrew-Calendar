@@ -121,6 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
           case Keys.Apps:
             if ( Settings.CurrentView == ViewMode.Month )
               Mouse.RightButtonClick();
+            return true;
         }
       // Visual month navigation
       void search(bool isFuture, Func<int, bool> check)
