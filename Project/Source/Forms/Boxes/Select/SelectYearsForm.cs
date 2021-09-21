@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2020-11 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -131,10 +131,17 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( diff > Program.BigCalendarLevels[index] )
           {
             string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
-            if ( !DisplayManager.QueryYesNo(text) )
+            switch ( DisplayManager.QueryYesNoCancel(text) )
             {
-              DialogResult = DialogResult.None;
-              return;
+              case DialogResult.Yes:
+                break;
+              case DialogResult.No:
+                DialogResult = DialogResult.None;
+                return;
+              case DialogResult.Cancel:
+                Settings.BigCalendarWarningEnabled = false;
+                SystemManager.TryCatchManage(Settings.Save);
+                break;
             }
             break;
           }
