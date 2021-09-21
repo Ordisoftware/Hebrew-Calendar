@@ -34,7 +34,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
       GoToDateMutex = true;
-      if ( _DateSelected == date ) _DateSelected = null;
+      if ( _DateSelected == DateTime.Today ) _DateSelected = null;
       SystemManager.TryCatch(() =>
       {
         if ( NavigationForm.Instance != null )
