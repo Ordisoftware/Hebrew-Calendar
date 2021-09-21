@@ -656,7 +656,7 @@
       <Value Profile="(Default)">384, 306</Value>
     </Setting>
     <Setting Name="MonthViewChangeDayOnClick" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SelectedDayBoxColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Brown</Value>
