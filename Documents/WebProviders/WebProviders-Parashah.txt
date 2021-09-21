@@ -18,19 +18,19 @@ URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 
 -
 
+Name = (EN) Chabad.org
+URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
+
 Name = (EN) Torah.org
 URL = https://torah.org/parsha/%TORAHORG%/
 
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
-Name = (FR) Torah-Box.com
-URL = https://www.torah-box.com/paracha/%TORAHBOX%
-
 -
 
-Name = (EN) Chabad.org
-URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
+Name = (FR) Torah-Box.com
+URL = https://www.torah-box.com/paracha/%TORAHBOX%
 
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%

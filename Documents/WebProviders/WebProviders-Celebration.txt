@@ -18,6 +18,9 @@ URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 
 -
 
+Name = (EN) Chabad.org
+URL = https://www.chabad.org/%CHABAD-EN%
+
 Name = (EN) Torah.org
 URL = https://torah.org/%TORAHORG%/
 
@@ -27,13 +30,10 @@ URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
-Name = (FR) Torah-Box.com
-URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
-
 -
 
-Name = (EN) Chabad.org
-URL = https://www.chabad.org/%CHABAD-EN%
+Name = (FR) Torah-Box.com
+URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
 
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
