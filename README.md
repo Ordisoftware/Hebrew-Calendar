@@ -321,7 +321,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve web links menus to display those in the current language to the top.
 - Fix date difference from visual month context menu when starting day is after the actual or selected.
 - Some fixes and improvements.
-- Otimize code.
+- Optimize code.
 - Update web links.
 
 #### 2021.09.20 - Version 9.1
