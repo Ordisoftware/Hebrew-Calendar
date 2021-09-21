@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable ) // TODO remove when ready
+      if ( !Globals.IsDevExecutable ) // TODO remove when lunar months ready
       {
         ActionViewLunarMonths.Enabled = false;
         ActionViewLunarMonths.Visible = false;
@@ -193,7 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewParashot.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
         ActionViewParashahDescription.PerformClick();
-      if ( Globals.IsDebugExecutable ) // TODO remove when ready
+      if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
         if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
           ActionViewLunarMonths.PerformClick();
     }

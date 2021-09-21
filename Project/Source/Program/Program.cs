@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashahDescription.PerformClick());
-        if ( Globals.IsDebugExecutable ) // TODO remove when ready
+        if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
           if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
             MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
       }
@@ -222,7 +222,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
       if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox));
-      if ( Globals.IsDebugExecutable ) // TODO remove when ready
+      if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
         if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
           SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
     }

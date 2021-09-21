@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
       InitializeMenu();
       Icon = MainForm.Instance.Icon;
       ActiveControl = SelectCelebration;
-      if ( Globals.IsDevExecutable ) // TODO remove code and controls
+      if ( Globals.IsDevExecutable ) // TODO remove code and controls ?
       {
         ActionImport.Visible = true;
         ActionExport.Visible = true;
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Close();
     }
 
-    // TODO remove
+    // TODO remove code and controls ?
     private void ActionImport_Click(object sender, EventArgs e)
     {
       TorahCelebrationVerses.Instance.Load();
@@ -147,7 +147,7 @@ namespace Ordisoftware.Hebrew.Calendar
       DisplayManager.Show(SysTranslations.LoadFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
     }
 
-    // TODO remove
+    // TODO remove code and controls ?
     private void ActionExport_Click(object sender, EventArgs e)
     {
       if ( !DisplayManager.QueryYesNo("Save and overwrite data file?") ) return;

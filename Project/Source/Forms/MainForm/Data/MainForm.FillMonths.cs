@@ -76,7 +76,6 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         InitializeYearsInterval();
-        //string strToolTip = "Error on getting sun rise and set";
         bool IsCelebrationWeekStart = false;
         bool IsCelebrationWeekEnd = false;
         if ( LunisolarDays.Count == 0 ) return;
@@ -205,8 +204,6 @@ namespace Ordisoftware.Hebrew.Calendar
               item.EventText = text;
               item.Rank = rank++;
               item.IgnoreTimeComponent = true;
-              // TODO remove item.TooltipEnabled = true;
-              // TODO remove item.ToolTipText = strToolTip;
               if ( Settings.UseColors )
                 item.EventColor = ( (SolidBrush)GetDayBrush(item.Date.Day, item.Date.Month, item.Date.Year) ).Color;
               CalendarMonth.AddEvent(item);
