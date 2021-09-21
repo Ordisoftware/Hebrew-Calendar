@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -116,6 +116,8 @@ namespace Ordisoftware.Hebrew
                                                EventHandler action)
     {
       SetItems(menu.DropDownItems, items, action, () => InitializeFromProviders(menu, items, action));
+      if ( true )
+        menu.MouseUp += Menu_MouseUp;
     }
 
     /// <summary>
@@ -138,18 +140,7 @@ namespace Ordisoftware.Hebrew
             menuRoot.DropDownItems.Add(menu);
             menu.ImageScaling = ToolStripItemImageScaling.None;
             menu.Image = OnlineProviderItem.FolderImage;
-            menu.MouseUp += (sender, e) =>
-            {
-              if ( e.Button != MouseButtons.Right ) return;
-              ( (ToolStripDropDownButton)menu.OwnerItem ).HideDropDown();
-              if ( !DisplayManager.QueryYesNo(SysTranslations.AskToOpenAllLinks.GetLang(menu.Text)) ) return;
-              foreach ( ToolStripItem item in ( (ToolStripMenuItem)sender ).DropDownItems )
-                if ( item.Tag != null )
-                {
-                  SystemManager.OpenWebLink((string)item.Tag);
-                  Thread.Sleep(1500);
-                }
-            };
+            menu.MouseUp += Menu_MouseUp;
           }
           else
             menu = menuRoot;
@@ -166,9 +157,35 @@ namespace Ordisoftware.Hebrew
         menuRoot.DropDownItems.Add(new ToolStripSeparator());
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
-          if ( !DataFileEditorForm.Run(nameof(HebrewGlobals.WebLinksProviders), HebrewGlobals.WebLinksProviders) ) return;
-          reconstruct();
+          if ( DataFileEditorForm.Run(nameof(HebrewGlobals.WebLinksProviders), HebrewGlobals.WebLinksProviders) )
+            reconstruct();
         }));
+      }
+    }
+
+    private static void Menu_MouseUp(object sender, MouseEventArgs e)
+    {
+      if ( e.Button != MouseButtons.Right ) return;
+      if ( sender is ToolStripMenuItem menuItem )
+      {
+        if ( menuItem.Owner is ContextMenuStrip contextMenuSingle )
+          contextMenuSingle.Close();
+        if ( menuItem.OwnerItem is ToolStripDropDownButton button )
+          button.HideDropDown();
+        else
+        if ( menuItem.OwnerItem is ToolStripMenuItem ownerMenuItem )
+          if ( ownerMenuItem.Owner is ContextMenuStrip contextMenuInternal )
+            contextMenuInternal.Hide();
+          else
+            ownerMenuItem.HideDropDown();
+        string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.DropDownItems.Count, menuItem.Text);
+        if ( DisplayManager.QueryYesNo(msg) )
+          foreach ( ToolStripItem item in menuItem.DropDownItems )
+            if ( item.Tag != null )
+            {
+              item.PerformClick();
+              Thread.Sleep(1500);
+            }
       }
     }
 

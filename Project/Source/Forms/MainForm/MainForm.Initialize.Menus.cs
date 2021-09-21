@@ -109,8 +109,6 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
     }
 
-
-
   }
 
 }
