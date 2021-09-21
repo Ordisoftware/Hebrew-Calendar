@@ -321,6 +321,10 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+        {
+          MainForm.Instance.LoadMenuBookmarks(MainForm.Instance);
+        });
         task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
