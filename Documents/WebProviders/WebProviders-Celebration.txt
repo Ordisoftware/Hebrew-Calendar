@@ -57,15 +57,6 @@ URL = https://www.aish.co.il/h/%AISH-IW%/
 Name = (FR) TorahDeVie.com *
 URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 
-Name = (FR) Rav Yehia Benchetrit *
-URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTTgDadDmS-7eOfruomzI3w
-
-Name = (FR) Rav Yehia Benchetrit : Pessah *
-URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTJUZ-eKzZd83BBDTqGSoxB
-
-Name = (FR) Rav Yehia Benchetrit : Kippour *
-URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrev_lUQvOCLSOMVlxbHVN
-
 Name = (FR) Rav David Pinto *
 URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
 
@@ -74,6 +65,29 @@ URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAEofZFfLuRetOEcVKOOLGbm
 
 Name = (FR) Rav Chriqui *
 URL = https://www.youtube.com/playlist?list=PLI4WtgHMTlAeeu0BFOLjffigOYGdN97WW
+
+-
+
+Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes *
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTTgDadDmS-7eOfruomzI3w
+
+Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives *
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ49SreVMsp7SnxbsOy7ttf
+
+Name = (FR) Rav Yehia Benchetrit : Pessah *
+URL = https://www.youtube.com/watch?v=mabyc8tt_nE
+
+Name = (FR) Rav Yehia Benchetrit : Chavouoth  *
+URL = https://www.youtube.com/watch?v=n8zlWqiO008
+
+Name = (FR) Rav Yehia Benchetrit : Roch Hachana *
+URL = https://www.youtube.com/watch?v=5esO1clgA_U
+
+Name = (FR) Rav Yehia Benchetrit : Kippour *
+URL = https://www.youtube.com/watch?v=GZPx6kk3TL0
+
+Name = (FR) Rav Yehia Benchetrit : Souccot *
+URL = https://www.youtube.com/watch?v=HnbYwaJDawA
 
 -
 
