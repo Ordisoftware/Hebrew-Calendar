@@ -310,10 +310,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 9.2
-
-- Some fixes and improvements.
-
 #### 2021.09.20 - Version 9.1
 
 - Add bookmarks to context menu in month view.
