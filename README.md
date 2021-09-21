@@ -75,10 +75,6 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Updated web links.
 - Some fixes and improvements.
 
-- Add parashot board link in shabat reminder box when no weekly parashah available.
-- Fix bug with no selected day on changing day at midnight.
-
-
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
 ## Screenshots
@@ -313,6 +309,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add dark theme for month view.
 
 ## Changelog
+
+#### In progress - Version 9.2
+
+- Some fixes and improvements.
 
 #### 2021.09.20 - Version 9.1
 

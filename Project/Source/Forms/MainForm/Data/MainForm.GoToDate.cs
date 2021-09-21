@@ -53,19 +53,20 @@ namespace Ordisoftware.Hebrew.Calendar
           CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
         }
       });
-      SystemManager.TryCatch(() =>
-      {
-        string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
-        int position = CalendarText.Find(strDate);
-        if ( position != -1 )
+      if ( Settings.CurrentView == ViewMode.Text )
+        SystemManager.TryCatch(() =>
         {
-          CalendarText.SelectionStart = position - 6 - 119;
-          CalendarText.SelectionLength = 0;
-          CalendarText.ScrollToCaret();
-          CalendarText.SelectionStart = position - 6;
-          CalendarText.SelectionLength = 119;
-        }
-      });
+          string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
+          int position = CalendarText.Find(strDate);
+          if ( position != -1 )
+          {
+            CalendarText.SelectionStart = position - 6 - 119;
+            CalendarText.SelectionLength = 0;
+            CalendarText.ScrollToCaret();
+            CalendarText.SelectionStart = position - 6;
+            CalendarText.SelectionLength = 119;
+          }
+        });
       GoToDateMutex = false;
       if ( bringToFront )
       {
