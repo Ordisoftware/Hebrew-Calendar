@@ -73,51 +73,45 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Crate a list of menu items.
     /// </summary>
-    static private void SetItems(ToolStripItemCollection list,
-                                 OnlineProviders items,
+    static private void SetItems(ToolStripItemCollection menuItems,
+                                 OnlineProviders providers,
                                  EventHandler action,
                                  Action reconstruct)
     {
-      list.Clear();
-      string nameItems = StackMethods.NameOfFromStack(items, 3).Replace("Globals.", string.Empty);
-      if ( items.Configurable )
+      menuItems.Clear();
+      string nameItems = StackMethods.NameOfFromStack(providers, 3).Replace("Globals.", string.Empty);
+      foreach ( var item in providers.Items )
+        menuItems.Add(item.CreateMenuItem(action));
+      if ( HebrewGlobals.WebLinksProviders[0].Configurable )
       {
-        list.Insert(0, CreateConfigureMenuItem((sender, e) =>
+        menuItems.Add(new ToolStripSeparator());
+        menuItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
-          int countTotal = items.Items.Count;
-          if ( !DataFileEditorForm.Run(nameItems, items) ) return;
-          for ( int count = 0; count < countTotal; count++ )
-            list.RemoveAt(0);
-          list.RemoveAt(0);
-          list.RemoveAt(0);
-          reconstruct();
+          if ( DataFileEditorForm.Run(nameItems, providers) )
+            reconstruct();
         }));
-        list.Insert(0, new ToolStripSeparator());
       }
-      for ( int index = items.Items.Count - 1; index >= 0; index-- )
-        list.Insert(0, items.Items[index].CreateMenuItem(action));
     }
 
     /// <summary>
     /// Create submenu items for providers menu.
     /// </summary>
-    static public void InitializeFromProviders(this ContextMenuStrip menuRoot,
-                                               OnlineProviders items,
+    static public void InitializeFromProviders(this ContextMenuStrip contextMenu,
+                                               OnlineProviders providers,
                                                EventHandler action)
     {
-      SetItems(menuRoot.Items, items, action, () => InitializeFromProviders(menuRoot, items, action));
+      SetItems(contextMenu.Items, providers, action, () => InitializeFromProviders(contextMenu, providers, action));
     }
 
     /// <summary>
     /// Create submenu items for providers menu.
     /// </summary>
-    static public void InitializeFromProviders(this ToolStripMenuItem menu,
-                                               OnlineProviders items,
+    static public void InitializeFromProviders(this ToolStripMenuItem menuItem,
+                                               OnlineProviders providers,
                                                EventHandler action)
     {
-      SetItems(menu.DropDownItems, items, action, () => InitializeFromProviders(menu, items, action));
-      if ( true )
-        menu.MouseUp += Menu_MouseUp;
+      SetItems(menuItem.DropDownItems, providers, action, () => InitializeFromProviders(menuItem, providers, action));
+      menuItem.MouseUp += Menu_MouseUp;
     }
 
     /// <summary>
@@ -163,7 +157,7 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-    private static void Menu_MouseUp(object sender, MouseEventArgs e)
+    static private void Menu_MouseUp(object sender, MouseEventArgs e)
     {
       if ( e.Button != MouseButtons.Right ) return;
       if ( sender is ToolStripMenuItem menuItem )

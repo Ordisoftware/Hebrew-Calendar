@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
@@ -25,6 +26,8 @@ namespace Ordisoftware.Hebrew
   /// </summary>
   partial class OnlineProviders : DataFile
   {
+
+    static public bool MoveCurrentLanguageAtTop = true;
 
     /// <summary>
     /// Indicate display name tag.
@@ -39,7 +42,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Indicate items.
     /// </summary>
-    public List<OnlineProviderItem> Items { get; }
+    public List<OnlineProviderItem> Items { get; private set; }
      = new List<OnlineProviderItem>();
 
     /// <summary>
@@ -110,6 +113,7 @@ namespace Ordisoftware.Hebrew
           else
             showError();
         }
+        SortByLanguage();
       }
       catch ( Exception ex )
       {
@@ -118,6 +122,41 @@ namespace Ordisoftware.Hebrew
       }
     }
 
+    private void SortByLanguage()
+    {
+      if ( MoveCurrentLanguageAtTop )
+      {
+        var slices = Items.Split(item => item.Name == "-");
+        foreach ( var slice in slices )
+        {
+          int index = 0;
+          foreach ( var item in slice.ToList() )
+            if ( item.Language.ToUpper().Contains(Languages.CurrentCode.ToUpper()) )
+            {
+              slice.Remove(item);
+              slice.Insert(index++, item);
+            }
+        }
+        Items = slices.SelectMany(item => item).ToList();
+      }
+    }
+
+  }
+
+  static public class IEnumerableHelper
+  {
+    static public List<List<T>> Split<T>(this IEnumerable<T> list, Func<T, bool> predicate)
+    {
+      var slices = new List<List<T>>();
+      slices.Add(new List<T>());
+      foreach ( var item in list )
+      {
+        slices.Last().Add(item);
+        if ( predicate(item) )
+          slices.Add(new List<T>());
+      }
+      return slices;
+    }
   }
 
 }
