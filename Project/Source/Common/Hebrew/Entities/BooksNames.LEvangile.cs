@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-04 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 
@@ -38,8 +38,8 @@ namespace Ordisoftware.Hebrew
       { TanakBook.Melakim_II, "12" },
       { TanakBook.Yeshayahou, "23" },
       { TanakBook.Yirmeyahou, "24" },
-      { TanakBook.Yehezqel, "28" },
-      { TanakBook.Hoshea, "26" },
+      { TanakBook.Yehezqel, "26" },
+      { TanakBook.Hoshea, "28" },
       { TanakBook.Yoel, "29" },
       { TanakBook.Amos, "30" },
       { TanakBook.Obadyah, "31" },

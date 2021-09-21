@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using Ordisoftware.Core;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
@@ -182,7 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
         if ( command == nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashahDescription.PerformClick());
-        if ( Globals.IsDebugExecutable ) // TODO remove when ready
+        if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
           if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
             MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
       }
@@ -222,7 +223,7 @@ namespace Ordisoftware.Hebrew.Calendar
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
       if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
         SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox));
-      if ( Globals.IsDebugExecutable ) // TODO remove when ready
+      if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
         if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
           SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
     }
@@ -258,6 +259,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public void UpdateLocalization()
     {
       Globals.ChronoTranslate.Restart();
+      Task task = null;
       try
       {
         void update(Form form)
@@ -271,6 +273,8 @@ namespace Ordisoftware.Hebrew.Calendar
         var culture = new CultureInfo(lang);
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
+        task = new Task(HebrewGlobals.LoadProviders);
+        task.Start();
         if ( Globals.IsReady )
         {
           MessageBoxEx.CloseAll();
@@ -307,6 +311,10 @@ namespace Ordisoftware.Hebrew.Calendar
           NavigationForm.Instance.Relocalize();
           DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Instance.Reset();
+          SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+          {
+            MainForm.Instance.LoadMenuBookmarks(MainForm.Instance);
+          });
         }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         MainForm.Instance.CreateSystemInformationMenu();
@@ -317,6 +325,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }

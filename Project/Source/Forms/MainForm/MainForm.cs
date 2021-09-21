@@ -1064,7 +1064,7 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( e.Clicks > 1 )
           DateSelected = dayRow.Date;
         else
-        if ( e.Clicks == 1 && Settings.MonthViewChangeDayOnClick )
+        if ( e.Clicks == 1 && ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) ) )
           GoToDate(dayRow.Date);
       }
       else
@@ -1077,7 +1077,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
-      //TODO remove ??? CalendarMonth.Refresh();
+      CalendarMonth.Refresh();
     }
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)

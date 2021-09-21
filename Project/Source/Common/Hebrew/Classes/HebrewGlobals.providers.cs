@@ -115,11 +115,10 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Static constructor.
+    /// Load the providers files.
     /// </summary>
-    static HebrewGlobals()
+    static internal void LoadProviders()
     {
-      if ( Globals.IsVisualStudioDesigner ) return;
       var folder = DataFileFolder.ApplicationDocuments;
       WebProvidersWord = CreateOnlineProviders(folder, WebProvidersWordFilePath);
       WebProvidersConcordance = CreateOnlineProviders(folder, WebProvidersConcordanceFilePath);

@@ -54,6 +54,8 @@ namespace Ordisoftware.Hebrew
       }
     }
 
+    public string Language { get; private set; }
+
     public string Name { get; private set; }
 
     public string URL { get; private set; }
@@ -72,12 +74,13 @@ namespace Ordisoftware.Hebrew
 
     public OnlineProviderItem(string name, string url = "", Image image = null)
     {
+      string lang = string.Empty;
       if ( name[0] == '(' )
       {
         int pos = name.IndexOf(')');
         if ( pos >= 3 )
         {
-          string lang = name.Substring(0, pos + 1);
+          lang = name.Substring(0, pos + 1);
           if ( LanguageImages.ContainsKey(lang) )
           {
             name = name.Substring(pos + 1);
@@ -85,6 +88,7 @@ namespace Ordisoftware.Hebrew
           }
         }
       }
+      Language = lang;
       Name = name.Trim();
       URL = url.Trim();
       Image = image;

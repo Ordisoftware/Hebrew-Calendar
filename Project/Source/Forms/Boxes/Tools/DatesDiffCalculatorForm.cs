@@ -47,7 +47,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast )
             menuitem.Enabled = false;
       }
-  }
+    }
 
     static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
     {
@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
           else
           {
             Instance.MonthCalendar1.SelectionStart = dates.Item2;
-            Instance.MonthCalendar2.SelectionStart = dates.Item2;
+            Instance.MonthCalendar2.SelectionStart = dates.Item1;
           }
       }
       else

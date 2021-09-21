@@ -23,6 +23,8 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class MainForm
   {
 
+    static private InputSimulatorStandard.MouseSimulator Mouse = new InputSimulatorStandard.MouseSimulator();
+
     /// <summary>
     /// Process the command key.
     /// </summary>
@@ -115,6 +117,10 @@ namespace Ordisoftware.Hebrew.Calendar
               GoToDate(DateSelected.Value);
             else
               GoToDate(DateTime.Today);
+            return true;
+          case Keys.Apps:
+            if ( Settings.CurrentView != ViewMode.Month ) break;
+            Mouse.RightButtonClick();
             return true;
         }
       // Visual month navigation

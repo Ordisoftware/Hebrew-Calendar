@@ -69,8 +69,8 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToOpenAllLinks
       = new TranslationsDictionary
       {
-        [Language.EN] = "Do you want to open all \"{0}\" links?",
-        [Language.FR] = "Voulez-vous ouvrir tous les liens de \"{0}\" ?"
+        [Language.EN] = "Do you want to open all {0} links of \"{1}\"?",
+        [Language.FR] = "Voulez-vous ouvrir tous les {0} liens de \"{1}\" ?"
       };
 
     static public readonly TranslationsDictionary AskToEmptyHistory

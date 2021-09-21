@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Globals.AllowClose = false;
       foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
         LastCelebrationReminded.Add(value, null);
-      if ( !Globals.IsDevExecutable ) // TODO remove when ready
+      if ( !Globals.IsDevExecutable ) // TODO remove when lunar months ready
       {
         ActionViewLunarMonths.Enabled = false;
         ActionViewLunarMonths.Visible = false;
@@ -193,7 +193,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ActionViewParashot.PerformClick();
       if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
         ActionViewParashahDescription.PerformClick();
-      if ( Globals.IsDebugExecutable ) // TODO remove when ready
+      if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
         if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
           ActionViewLunarMonths.PerformClick();
     }
@@ -372,89 +372,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SoundItem.Initialize();
       SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
       SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
-    }
-
-    /// <summary>
-    /// Create system information menu items.
-    /// </summary>
-    public void CreateSystemInformationMenu()
-    {
-      CommonMenusControl.CreateInstance(ToolStrip,
-                                        ref ActionInformation,
-                                        AppTranslations.NoticeNewFeatures,
-                                        ActionAbout_Click,
-                                        ActionWebCheckUpdate_Click,
-                                        ActionViewLog_Click,
-                                        ActionViewStats_Click);
-      InitializeSpecialMenus();
-    }
-
-    /// <summary>
-    /// Initialize special menus (web links, tray icon and suspend).
-    /// </summary>
-    public void InitializeSpecialMenus()
-    {
-      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        if ( weekParashah.Factory == null ) return;
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         weekParashah.Factory,
-                                         weekParashah.Day.HasLinkedParashah);
-      });
-      ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-        if ( weekParashah == null ) return;
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         weekParashah,
-                                         ContextMenuDayCurrentEvent.HasLinkedParashah);
-      });
-      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        if ( weekParashah.Factory == null ) return;
-        string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-      });
-      ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-        if ( weekParashah == null ) return;
-        string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-      });
-      CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
-      CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-      ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
-      ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;
-      SeparatorMenuWeather.Visible = Settings.WeatherMenuItemsEnabled;
-      ActionWebLinks.Enabled = Settings.WebLinksMenuEnabled;
-      ActionLocalWeather.Enabled = Settings.WeatherMenuItemsEnabled;
-      ActionOnlineWeather.Enabled = Settings.WeatherMenuItemsEnabled;
-      SeparatorMenuWeather.Enabled = Settings.WeatherMenuItemsEnabled;
-      var isVisible = Settings.WeatherMenuItemsEnabled ? (int?)null : int.MinValue;
-      ActionLocalWeather.Tag = isVisible;
-      ActionOnlineWeather.Tag = isVisible;
-      SeparatorMenuWeather.Tag = isVisible;
-      MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      MenuWebLinks.Enabled = Settings.WebLinksMenuEnabled;
-      if ( Settings.WebLinksMenuEnabled )
-      {
-        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-        ActionWebLinks.DuplicateTo(MenuWebLinks);
-      }
-      ActionTools.DuplicateTo(MenuTools);
-      ActionInformation.DuplicateTo(MenuInformation);
-      if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
-        ActionEnableReminder.PerformClick();
-      ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
-      MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
     }
 
     /// <summary>
