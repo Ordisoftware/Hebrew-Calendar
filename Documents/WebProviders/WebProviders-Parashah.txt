@@ -35,16 +35,8 @@ URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
 
-Name = (FR) Loubavitch.fr*
+Name = (FR) Loubavitch.fr *
 URL = https://www.loubavitch.fr/etude/paracha
-
--
-
-Name = (EN) HevratPinto.org*
-URL = https://www.hevratpinto.org/parsha/path_to_follow.html
-
-Name = (FR) HevratPinto.org*
-URL = https://www.hevratpinto.org/voie%20a%20suivre_n/vas.html
 
 -
 
@@ -59,19 +51,46 @@ URL = https://www.aish.co.il/tp/%AISH-IW%.html
 
 -
 
-Name = (EN) HalachaYomit.co.il*
+Name = (EN) HevratPinto.org *
+URL = https://www.hevratpinto.org/parsha/path_to_follow.html
+
+Name = (FR) HevratPinto.org *
+URL = https://www.hevratpinto.org/voie%20a%20suivre_n/vas.html
+
+-
+
+Name = (EN) HalachaYomit.co.il *
 URL = http://halachayomit.co.il/en/Parasha.aspx
 
-Name = (FR) HalachaYomit.co.il*
+Name = (FR) HalachaYomit.co.il *
 URL = http://halachayomit.co.il/fr/Parasha.aspx
 
-Name = (IW) HalachaYomit.co.il*
+Name = (IW) HalachaYomit.co.il *
 URL = http://halachayomit.co.il/he/Parasha.aspx
+
+-
+
+Name = (FR) TorahDeVie.com *
+URL = http://www.torahdevie.com/category/paracha/
+
+Name = (FR) Rav Yossef Hay *
+URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAHGuYil7Axs_rpPf9sxMNJt
 
 - 
 
-Name = (FR) JudaismeEnMouvement.org (Site web)
+Name = (FR) Torah-Box : La Paracha en 1 minute *
+URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0i8Gd-lMeXTbpo4_6iDlIbn
+
+Name = (FR) Torah-Box : Le Message de la Paracha *
+URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0gARoETxiTu_ZN5o0SEHygj
+
+Name = (FR) Torah-Box : Vision 'Hassidique de la Paracha *
+URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0j3ki0dNfQb7rmPBkOid_ev
+
+- 
+
+Name = (FR) JudaismeEnMouvement.org (Site web) *
 URL = https://judaismeenmouvement.org/suivre/la-paracha-de-la-semaine/
 
-Name = (FR) JudaismeEnMouvement.org (YouTube)
+Name = (FR) JudaismeEnMouvement.org (YouTube) *
 URL = https://www.youtube.com/playlist?list=PLU4D_qR3BkAgutgERizAOhPFHdnPEDjSC
