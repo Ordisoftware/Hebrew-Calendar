@@ -10,26 +10,26 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Name = (EN) StudyBible.org (Literal with Strongs links)
+Name = (EN/IW) StudyBible.org (Literal with Strongs links)
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = (EN) BibleHub.com (Literal with Strongs links and transliteration)
+Name = (EN/IW) BibleHub.com (Literal with Strongs links and transliteration)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
 -
 
-Name = (EN) Sefaria.org (With contextual dictionary)
+Name = (EN/IW) Sefaria.org (With contextual dictionary)
 URL = https://www.sefaria.org/%BOOKSEFARIA%.%CHAPTERNUM%.%VERSENUM%?lang=bi&with=all&lang2=en
 
-Name = (EN) Chabad.org
+Name = (EN/IW) Chabad.org
 URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
 
 -
 
-Name = (EN) Mechon-Mamre.org
+Name = (EN/IW) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
-Name = (FR) Mechon-Mamre.org
+Name = (FR/IW) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
 -

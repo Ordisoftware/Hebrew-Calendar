@@ -46,6 +46,12 @@ URL = http://halakhah.com
 Name = (EN) Judaism @ sacred-texts.com
 URL = https://www.sacred-texts.com/jud/
 
+Name = (FR/IW) Torah et Talmud @ torah-box.com
+URL = https://www.torah-box.com/torah-pdf/
+
+Name = (FR/IW) Cours de parashah @ torah-box.com
+URL = https://www.torah-box.com/paracha/
+
 -
 
 Name = (IW) Tanak Hebrew Text @ fourmilab.ch
@@ -53,9 +59,6 @@ URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
 
 Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
 URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
-
-Name = (FR/IW) Parashah Texte, Audio et Cours @ torah-box.com
-URL = https://www.torah-box.com/paracha/
 
 -
 
