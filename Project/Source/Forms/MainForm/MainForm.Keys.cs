@@ -119,8 +119,8 @@ namespace Ordisoftware.Hebrew.Calendar
               GoToDate(DateTime.Today);
             return true;
           case Keys.Apps:
-            if ( Settings.CurrentView == ViewMode.Month )
-              Mouse.RightButtonClick();
+            if ( Settings.CurrentView != ViewMode.Month ) break;
+            Mouse.RightButtonClick();
             return true;
         }
       // Visual month navigation
