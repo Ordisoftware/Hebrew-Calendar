@@ -318,9 +318,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve visual month to display active day before month name.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
 - Improved display of lists of web links by moving those in the current language to the top.
+- Fix date difference from visual month context menu when starting day is after the actual or selected.
 - Some fixes and improvements.
 - Otimize code.
-- Update and fix web links.
+- Update web links.
 
 #### 2021.09.20 - Version 9.1
 
