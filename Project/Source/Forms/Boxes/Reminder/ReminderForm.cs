@@ -109,10 +109,8 @@ namespace Ordisoftware.Hebrew.Calendar
         form.Text = " " + form.LabelTitle.Text;
         if ( isShabat )
         {
-          // TODO remove form.LabelTitle.Text += " " + row.DayAndMonthText;
           if ( Program.Settings.ReminderShabatShowParashah )
           {
-            //showParashah = true;
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
@@ -130,8 +128,6 @@ namespace Ordisoftware.Hebrew.Calendar
           else
             form.LabelParashahValue.Enabled = false;
         }
-        //if ( !showParashah && !doLockSession || ( !showParashah && !isLockSessionIcon ) )
-        //form.Height -= form.LabelParashahValue.Height;
         form.ActionLockout.Visible = isLockSessionIcon;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
         form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;

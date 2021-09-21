@@ -137,8 +137,6 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
         Globals.IsReady = true;
         SetGlobalHotKey();
-        TimerUpdateTitles.Start();
-        TimerUpdateTitles_Tick(null, null);
         UpdateButtons();
         GoToDate(DateTime.Today);
         Globals.ChronoStartingApp.Stop();
@@ -155,6 +153,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         Cursor = Cursors.Default;
       }
+      TimerUpdateTitles.Start();
       TimerMidnight.Start();
       TimerReminder_Tick(null, null);
       this.ForceBringToFront();
