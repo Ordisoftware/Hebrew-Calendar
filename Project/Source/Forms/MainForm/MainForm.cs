@@ -1077,7 +1077,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
-      //TODO remove ??? CalendarMonth.Refresh();
+      CalendarMonth.Refresh();
     }
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
