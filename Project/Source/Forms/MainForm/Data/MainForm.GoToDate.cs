@@ -68,6 +68,8 @@ namespace Ordisoftware.Hebrew.Calendar
           }
         });
       GoToDateMutex = false;
+      if ( Settings.CurrentView == ViewMode.Month )
+        CalendarMonth.Refresh();
       if ( bringToFront )
       {
         if ( !Visible && !onlyIfOpened )

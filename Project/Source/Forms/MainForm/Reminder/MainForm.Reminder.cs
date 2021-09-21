@@ -105,10 +105,12 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         System.Threading.Thread.Sleep(1000);
         CheckRegenerateCalendar();
-        CalendarMonth.Refresh();
         var today = DateTime.Today;
         if ( CurrentDay.Date == today.AddDays(-1) )
           GoToDate(today);
+        else
+        if ( Settings.CurrentView == ViewMode.Month )
+          CalendarMonth.Refresh();
         UpdateTitles(true);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
