@@ -1208,21 +1208,27 @@ namespace CodeProjectCalendar.NET
             var mouse = PointToClient(Cursor.Position);
             isMouseHover = area1.Contains(mouse.X, mouse.Y);
           }
-          if ( Program.Settings.CalendarShowSelectedBox )
+          //if ( Program.Settings.CalendarShowSelectedBox )
           {
             var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
             if ( isselected )
             {
-              var pen = Program.Settings.UseColors
-                        ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
-                          ? PenText
-                          : PenSelectedDay
-                        : PenBlack;
-              g.DrawRectangle(pen, area1);
+              if ( Program.Settings.CalendarShowSelectedBox )
+              {
+                var pen = Program.Settings.UseColors
+                          ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
+                            ? PenText
+                            : PenSelectedDay
+                          : PenBlack;
+                g.DrawRectangle(pen, area1);
+              }
               isselectednotoday = false;
               if ( isMouseHover && !outofmonth )
               {
-                g.DrawRectangle(PenHoverEffect, area2);
+                if ( Program.Settings.CalendarShowSelectedBox )
+                  g.DrawRectangle(PenHoverEffect, area2);
+                else
+                  g.DrawRectangle(PenHoverEffect, area1);
                 isMouseHover = false;
               }
             }
