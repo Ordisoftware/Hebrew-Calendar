@@ -752,7 +752,7 @@
     <value>230, 17</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
-    <value>Changer de jour sur un Clic sinon Maj + Clic</value>
+    <value>Changer de jour sur un clic</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
