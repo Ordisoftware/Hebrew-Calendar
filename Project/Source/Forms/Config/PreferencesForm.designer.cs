@@ -144,6 +144,10 @@
       this.EditNavigateTopColor = new System.Windows.Forms.Panel();
       this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
+      this.LabelShabatDay = new System.Windows.Forms.Label();
+      this.EditShabatDay = new System.Windows.Forms.ComboBox();
+      this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
+      this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.LabelMaxYearsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
       this.ActionParashahHelp = new System.Windows.Forms.Button();
@@ -184,16 +188,12 @@
       this.LabelRemindShabatEveryMinutesIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindShabatHoursBeforeIntervalInfo = new System.Windows.Forms.Label();
       this.LabelRemindShabatHoursBefore = new System.Windows.Forms.Label();
-      this.LabelShabatDay = new System.Windows.Forms.Label();
       this.EditWeeklyParashahShowAtNewWeek = new System.Windows.Forms.CheckBox();
-      this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.EditReminderShabatEnabled = new System.Windows.Forms.CheckBox();
       this.LabelRemindShabatEveryMinutes = new System.Windows.Forms.Label();
       this.EditRemindShabatEveryMinutes = new System.Windows.Forms.NumericUpDown();
       this.EditReminderShabatShowParashah = new System.Windows.Forms.CheckBox();
       this.EditRemindShabatOnlyLight = new System.Windows.Forms.CheckBox();
-      this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
-      this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.EditRemindShabatHoursBefore = new System.Windows.Forms.NumericUpDown();
       this.TabPageCelebrations = new System.Windows.Forms.TabPage();
       this.ActionRemindEventsBeforeSelectNone = new System.Windows.Forms.Button();
@@ -1291,6 +1291,10 @@
       // 
       this.TabPageGeneration.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageGeneration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageGeneration.Controls.Add(this.LabelShabatDay);
+      this.TabPageGeneration.Controls.Add(this.EditShabatDay);
+      this.TabPageGeneration.Controls.Add(this.ActionUsePersonalShabat);
+      this.TabPageGeneration.Controls.Add(this.ActionPersonalShabatHelp);
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsIntervalInfo);
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsInterval);
       this.TabPageGeneration.Controls.Add(this.ActionParashahHelp);
@@ -1314,6 +1318,37 @@
       this.TabPageGeneration.Controls.Add(this.EditAutoGenerateYearsInterval);
       resources.ApplyResources(this.TabPageGeneration, "TabPageGeneration");
       this.TabPageGeneration.Name = "TabPageGeneration";
+      // 
+      // LabelShabatDay
+      // 
+      resources.ApplyResources(this.LabelShabatDay, "LabelShabatDay");
+      this.LabelShabatDay.Name = "LabelShabatDay";
+      // 
+      // EditShabatDay
+      // 
+      this.EditShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
+      this.EditShabatDay.FormattingEnabled = true;
+      this.EditShabatDay.Name = "EditShabatDay";
+      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_Changed);
+      // 
+      // ActionUsePersonalShabat
+      // 
+      this.ActionUsePersonalShabat.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
+      this.ActionUsePersonalShabat.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
+      this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
+      this.ActionUsePersonalShabat.TabStop = true;
+      this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
+      // 
+      // ActionPersonalShabatHelp
+      // 
+      this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
+      this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
+      this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
+      this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
       // 
       // LabelMaxYearsIntervalInfo
       // 
@@ -1600,16 +1635,12 @@
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatEveryMinutesIntervalInfo);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBeforeIntervalInfo);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatHoursBefore);
-      this.TabPageShabat.Controls.Add(this.LabelShabatDay);
       this.TabPageShabat.Controls.Add(this.EditWeeklyParashahShowAtNewWeek);
-      this.TabPageShabat.Controls.Add(this.ActionPersonalShabatHelp);
       this.TabPageShabat.Controls.Add(this.EditReminderShabatEnabled);
       this.TabPageShabat.Controls.Add(this.LabelRemindShabatEveryMinutes);
       this.TabPageShabat.Controls.Add(this.EditRemindShabatEveryMinutes);
       this.TabPageShabat.Controls.Add(this.EditReminderShabatShowParashah);
       this.TabPageShabat.Controls.Add(this.EditRemindShabatOnlyLight);
-      this.TabPageShabat.Controls.Add(this.ActionUsePersonalShabat);
-      this.TabPageShabat.Controls.Add(this.EditShabatDay);
       this.TabPageShabat.Controls.Add(this.EditRemindShabatHoursBefore);
       resources.ApplyResources(this.TabPageShabat, "TabPageShabat");
       this.TabPageShabat.Name = "TabPageShabat";
@@ -1631,24 +1662,11 @@
       resources.ApplyResources(this.LabelRemindShabatHoursBefore, "LabelRemindShabatHoursBefore");
       this.LabelRemindShabatHoursBefore.Name = "LabelRemindShabatHoursBefore";
       // 
-      // LabelShabatDay
-      // 
-      resources.ApplyResources(this.LabelShabatDay, "LabelShabatDay");
-      this.LabelShabatDay.Name = "LabelShabatDay";
-      // 
       // EditWeeklyParashahShowAtNewWeek
       // 
       resources.ApplyResources(this.EditWeeklyParashahShowAtNewWeek, "EditWeeklyParashahShowAtNewWeek");
       this.EditWeeklyParashahShowAtNewWeek.Name = "EditWeeklyParashahShowAtNewWeek";
       this.EditWeeklyParashahShowAtNewWeek.UseVisualStyleBackColor = true;
-      // 
-      // ActionPersonalShabatHelp
-      // 
-      this.ActionPersonalShabatHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionPersonalShabatHelp, "ActionPersonalShabatHelp");
-      this.ActionPersonalShabatHelp.Name = "ActionPersonalShabatHelp";
-      this.ActionPersonalShabatHelp.UseVisualStyleBackColor = true;
-      this.ActionPersonalShabatHelp.Click += new System.EventHandler(this.ActionPersonalShabatHelp_Click);
       // 
       // EditReminderShabatEnabled
       // 
@@ -1687,24 +1705,6 @@
       this.EditRemindShabatOnlyLight.Name = "EditRemindShabatOnlyLight";
       this.EditRemindShabatOnlyLight.UseVisualStyleBackColor = true;
       this.EditRemindShabatOnlyLight.CheckedChanged += new System.EventHandler(this.EditRemindShabat_Changed);
-      // 
-      // ActionUsePersonalShabat
-      // 
-      this.ActionUsePersonalShabat.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionUsePersonalShabat, "ActionUsePersonalShabat");
-      this.ActionUsePersonalShabat.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
-      this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
-      this.ActionUsePersonalShabat.TabStop = true;
-      this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
-      // 
-      // EditShabatDay
-      // 
-      this.EditShabatDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.EditShabatDay, "EditShabatDay");
-      this.EditShabatDay.FormattingEnabled = true;
-      this.EditShabatDay.Name = "EditShabatDay";
-      this.EditShabatDay.SelectedIndexChanged += new System.EventHandler(this.EditRemindShabat_Changed);
       // 
       // EditRemindShabatHoursBefore
       // 
