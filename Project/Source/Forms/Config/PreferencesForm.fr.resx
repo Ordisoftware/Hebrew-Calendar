@@ -172,6 +172,12 @@
   <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
     <value>Afficher aujourd'hui dans la barre de titre</value>
   </data>
+  <data name="EditParashahCaptionWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 17</value>
+  </data>
+  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
+    <value>Afficher la parashah de la semaine avec le nom du livre et la référence de verset</value>
+  </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
   </data>
@@ -354,6 +360,18 @@
   </data>
   <data name="LabelMiddleColor.Text" xml:space="preserve">
     <value>Centre</value>
+  </data>
+  <data name="EditNavigationWindowUseUnicodeIcons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
+    <value>Utiliser les icônes unicode</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
+    <value>Fermer à l'affichage de la fenêtre principale</value>
   </data>
   <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
@@ -565,6 +583,30 @@
   <data name="TabPageMonthView.Text" xml:space="preserve">
     <value>Vue par mois</value>
   </data>
+  <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="LabelCalendarDoubleClickAction.Text" xml:space="preserve">
+    <value>Action double clic</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSelect.Text" xml:space="preserve">
+    <value>Sélectionner jour</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionNothing.Text" xml:space="preserve">
+    <value>Rien</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSetActive.Text" xml:space="preserve">
+    <value>Définir jour actif</value>
+  </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 13</value>
   </data>
@@ -658,6 +700,18 @@
   <data name="LabelColorTorah.Text" xml:space="preserve">
     <value>Évènement Torah</value>
   </data>
+  <data name="LabelCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelCalendarColorActiveDay.Text" xml:space="preserve">
+    <value>Jour actif</value>
+  </data>
+  <data name="LabelColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="LabelColorHoverEffect.Text" xml:space="preserve">
+    <value>Effet de survol</value>
+  </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
   </data>
@@ -671,13 +725,34 @@
     <value>Utiliser les couleurs pour le calendrier et les boites de rappel</value>
   </data>
   <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
+    <value>122, 17</value>
   </data>
   <data name="EditCalendarShowParashah.Text" xml:space="preserve">
     <value>Indiquer la parashah</value>
   </data>
-  <data name="EditMonthViewSunToolTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 17</value>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 17</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
+    <value>Utiliser la couleur de case de jour sélectionné uniquement pour aujourd'hui</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
+    <value>Afficher la case du jour sélectionné</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
+    <value>Utiliser l'effet de survol</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
+    <value>Changer de jour sur un Clic sinon Maj + Clic</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
@@ -822,35 +897,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
-    <value>Fermer à l'affichage de la fenêtre principale</value>
-  </data>
-  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
-    <value>Afficher la parashah de la semaine avec le nom du livre et la référence de verset</value>
-  </data>
-  <data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
-    <value>Utiliser les icônes unicode</value>
-  </data>
-  <data name="LabelColorSelectedDay.Text" xml:space="preserve">
-    <value>Jour sélectionné</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
-    <value>Utiliser l'effet de survol</value>
-  </data>
-  <data name="LabelColorHoverEffect.Text" xml:space="preserve">
-    <value>Effet de survol</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
-    <value>Afficher la case du jour sélectionné</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
-    <value>Utiliser la couleur de case de jour sélectionné uniquement pour aujourd'hui</value>
-  </data>
-  <data name="LabelCalendarColorActiveDay.Text" xml:space="preserve">
-    <value>Jour actif</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
-    <value>Changer de jour sur un Clic sinon Maj + Clic</value>
   </data>
 </root>
