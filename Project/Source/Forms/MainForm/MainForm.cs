@@ -1106,11 +1106,6 @@ namespace Ordisoftware.Hebrew.Calendar
       GoToDate(ContextMenuDayCurrentEvent.Date);
     }
 
-    private void ContextMenuDaySetTodayAsActive_Click(object sender, EventArgs e)
-    {
-      GoToDate(DateTime.Today);
-    }
-
     private void ContextMenuDayGoToToday_Click(object sender, EventArgs e)
     {
       GoToDate(DateTime.Today);
@@ -1143,7 +1138,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
     {
-      ContextMenuDayDatesDiffTo(CalendarMonth.CalendarDate.Date);
+      if ( _DateSelected.HasValue ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
     }
 
     private void ContextMenuDayDatesDiffTo(DateTime date)
@@ -1154,7 +1149,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
     {
       var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuDayCurrentEvent.Date
-                                                        && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
       CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
     }
 
@@ -1171,13 +1166,13 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Run(parashah);
     }
 
+    private ToolStripMenuItem CurrentBookmarkMenu;
+
     private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
     {
       if ( EditDateBookmarksForm.Run() )
         LoadMenuBookmarks(this);
     }
-
-    private ToolStripMenuItem CurrentBookmarkMenu;
 
     internal void LoadMenuBookmarks(Form caller)
     {
