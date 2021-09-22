@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -19,6 +19,7 @@ using System.Configuration;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using InputSimulatorStandard;
 
 namespace Ordisoftware.Core
 {
@@ -30,6 +31,8 @@ namespace Ordisoftware.Core
   {
 
     public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+
+    static public readonly InputSimulator InputSimulator = new InputSimulator();
 
     /// <summary>
     /// Delete all app settings folders in User\AppData\Local.

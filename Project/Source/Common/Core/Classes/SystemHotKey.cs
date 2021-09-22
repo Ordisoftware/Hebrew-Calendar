@@ -38,8 +38,6 @@ namespace Ordisoftware.Core
     }
     static private HotkeyManager _Manager;
 
-    static private readonly InputSimulator InputSimulator = new InputSimulator();
-
     static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
 
     private Hotkey publicHotKey;
@@ -193,7 +191,7 @@ namespace Ordisoftware.Core
       try
       {
         Active = true;
-        InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
+        SystemManager.InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
         if ( !result )
           for ( int s = 1; s < 100; s++ )
           {
