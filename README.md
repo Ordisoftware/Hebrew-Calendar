@@ -320,6 +320,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve alert box for big calendar generation to disable option to ask confirmation.
 - Improve web links menus to display those in the current language to the top.
 - Fix date difference from monthly view context menu when starting day is after the actual or selected.
+- Fix hover effect not shown on selected or real today.
 - Some fixes and improvements.
 - Optimize code.
 - Update web links.

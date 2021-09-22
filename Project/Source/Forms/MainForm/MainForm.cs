@@ -1061,7 +1061,7 @@ namespace Ordisoftware.Hebrew.Calendar
       bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       if ( e.Button == MouseButtons.Left )
       {
-        if ( e.Clicks > 1 )
+        if ( e.Clicks > 1 && showContextMenu )
           DateSelected = dayRow.Date;
         else
         if ( e.Clicks == 1 && ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) ) )

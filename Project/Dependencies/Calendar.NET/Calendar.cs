@@ -964,6 +964,7 @@ namespace CodeProjectCalendar.NET
       int selectedday;
       int selectedmonth;
       int selectedyear;
+      var today = DateTime.Today;
       if ( MainForm.Instance.DateSelected.HasValue )
       {
         var date = MainForm.Instance.DateSelected.Value;
@@ -973,7 +974,6 @@ namespace CodeProjectCalendar.NET
       }
       else
       {
-        var today = DateTime.Today;
         selectedday = today.Day;
         selectedmonth = today.Month;
         selectedyear = today.Year;
@@ -1200,33 +1200,54 @@ namespace CodeProjectCalendar.NET
           }
 
           // ORDISOFWTARE MODIF BEGIN
-          if ( Program.Settings.CalendarShowSelectedBox )
+          bool isactiveday = counter1 - 1 == _calendarDate.Day;
+          bool isMouseHover = false;
+          var area1 = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+          if ( Program.Settings.CalendarUseHoverEffect )
+          {
+            var mouse = PointToClient(Cursor.Position);
+            isMouseHover = area1.Contains(mouse.X, mouse.Y);
+          }
+          //if ( Program.Settings.CalendarShowSelectedBox )
+          {
+            var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
             if ( isselected )
             {
-              var pen = Program.Settings.UseColors
-                        ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
-                          ? PenText
-                          : PenSelectedDay
-                        : PenBlack;
-              g.DrawRectangle(pen, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+              if ( Program.Settings.CalendarShowSelectedBox )
+              {
+                var pen = Program.Settings.UseColors
+                          ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
+                            ? PenText
+                            : PenSelectedDay
+                          : PenBlack;
+                g.DrawRectangle(pen, area1);
+              }
               isselectednotoday = false;
+              if ( isMouseHover && !outofmonth )
+              {
+                if ( Program.Settings.CalendarShowSelectedBox )
+                  g.DrawRectangle(PenHoverEffect, area2);
+                else
+                  g.DrawRectangle(PenHoverEffect, area1);
+                isMouseHover = false;
+              }
             }
             else
             {
-              var area = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
               if ( Program.Settings.CalendarUseHoverEffect )
-              {
-                var mouse = PointToClient(Cursor.Position);
-                bool isMouseHover = area.Contains(mouse.X, mouse.Y);
                 if ( isselected || ( isMouseHover && !outofmonth ) )
-                  g.DrawRectangle(PenHoverEffect, area);
-              }
+                  if ( counter1 - 1 == today.Day && isactiveday )
+                    g.DrawRectangle(PenHoverEffect, area2);
+                  else
+                  if ( isactiveday )
+                    g.DrawRectangle(PenHoverEffect, area2);
+                  else
+                    g.DrawRectangle(PenHoverEffect, area1);
             }
+          }
           if ( !isselected && !outofmonth )
-            if ( counter1 - 1 == _calendarDate.Day )
-            {
-              g.DrawRectangle(PenActiveDay, xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
-            }
+            if ( isactiveday )
+              g.DrawRectangle(PenActiveDay, area1);
           isselected = false;
           outofmonth = false;
           // ORDISOFWTARE MODIF END
@@ -1315,7 +1336,7 @@ namespace CodeProjectCalendar.NET
             int pointYoffsetY = point.Y + offsetY;
 
             g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
-            g.FillRectangle(new SolidBrush(alphaColor), point.X + 2, pointYoffsetY, cellWidth - 3, sz.Height);
+            g.FillRectangle(new SolidBrush(alphaColor), point.X + 3, pointYoffsetY, cellWidth - 5, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
               g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
