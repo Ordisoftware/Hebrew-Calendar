@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew.Calendar
             return true;
           case Keys.Apps:
             if ( Settings.CurrentView != ViewMode.Month ) break;
-            SystemHotKey.InputSimulator.Mouse.RightButtonClick();
+            SystemManager.InputSimulator.Mouse.RightButtonClick();
             return true;
         }
       // Visual month navigation
