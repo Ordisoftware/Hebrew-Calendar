@@ -175,6 +175,15 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( SelectOpenNextCelebrationsForm.Checked )
         Settings.TrayIconClickOpen = TrayIconClickOpen.NextCelebrationsForm;
+      // Calendar double click
+      if ( SelectCalendarDoubleClickActionNothing.Checked )
+        Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.Nothing;
+      else
+      if ( SelectCalendarDoubleClickActionSetActive.Checked )
+        Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.SetActive;
+      else
+      if ( SelectCalendarDoubleClickActionSelect.Checked )
+        Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.Select;
     }
 
   }

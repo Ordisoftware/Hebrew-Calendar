@@ -329,6 +329,10 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.LabelCalendarDoubleClickAction = new System.Windows.Forms.Label();
+      this.SelectCalendarDoubleClickActionSelect = new System.Windows.Forms.RadioButton();
+      this.SelectCalendarDoubleClickActionNothing = new System.Windows.Forms.RadioButton();
+      this.SelectCalendarDoubleClickActionSetActive = new System.Windows.Forms.RadioButton();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1878,6 +1882,10 @@
       // 
       this.TabPageMonthView.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonthView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageMonthView.Controls.Add(this.LabelCalendarDoubleClickAction);
+      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionSelect);
+      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionNothing);
+      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionSetActive);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSizeInterval);
       this.TabPageMonthView.Controls.Add(this.LabelMoonDayTextFormat);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatReset);
@@ -2798,6 +2806,31 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // LabelCalendarDoubleClickAction
+      // 
+      resources.ApplyResources(this.LabelCalendarDoubleClickAction, "LabelCalendarDoubleClickAction");
+      this.LabelCalendarDoubleClickAction.Name = "LabelCalendarDoubleClickAction";
+      // 
+      // SelectCalendarDoubleClickActionSelect
+      // 
+      resources.ApplyResources(this.SelectCalendarDoubleClickActionSelect, "SelectCalendarDoubleClickActionSelect");
+      this.SelectCalendarDoubleClickActionSelect.Name = "SelectCalendarDoubleClickActionSelect";
+      this.SelectCalendarDoubleClickActionSelect.UseVisualStyleBackColor = true;
+      // 
+      // SelectCalendarDoubleClickActionNothing
+      // 
+      resources.ApplyResources(this.SelectCalendarDoubleClickActionNothing, "SelectCalendarDoubleClickActionNothing");
+      this.SelectCalendarDoubleClickActionNothing.Checked = true;
+      this.SelectCalendarDoubleClickActionNothing.Name = "SelectCalendarDoubleClickActionNothing";
+      this.SelectCalendarDoubleClickActionNothing.TabStop = true;
+      this.SelectCalendarDoubleClickActionNothing.UseVisualStyleBackColor = true;
+      // 
+      // SelectCalendarDoubleClickActionSetActive
+      // 
+      resources.ApplyResources(this.SelectCalendarDoubleClickActionSetActive, "SelectCalendarDoubleClickActionSetActive");
+      this.SelectCalendarDoubleClickActionSetActive.Name = "SelectCalendarDoubleClickActionSetActive";
+      this.SelectCalendarDoubleClickActionSetActive.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3172,5 +3205,9 @@
     private System.Windows.Forms.CheckBox EditSelectedDayBoxColorOnlyCurrent;
     private System.Windows.Forms.Label LabelCalendarColorActiveDay;
     public System.Windows.Forms.Panel EditCalendarColorActiveDay;
+    private System.Windows.Forms.Label LabelCalendarDoubleClickAction;
+    private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionSelect;
+    private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionNothing;
+    private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionSetActive;
   }
 }
