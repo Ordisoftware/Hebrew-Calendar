@@ -75,7 +75,7 @@ Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives *
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ49SreVMsp7SnxbsOy7ttf
 
 Name = (FR) Rav Yehia Benchetrit : Pessah *
-URL = https://www.youtube.com/watch?v=mabyc8tt_nE
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTJUZ-eKzZd83BBDTqGSoxB
 
 Name = (FR) Rav Yehia Benchetrit : Chavouoth  *
 URL = https://www.youtube.com/watch?v=n8zlWqiO008
