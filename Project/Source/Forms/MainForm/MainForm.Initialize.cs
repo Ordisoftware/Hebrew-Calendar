@@ -135,10 +135,10 @@ namespace Ordisoftware.Hebrew.Calendar
         Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
         Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
         Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
-        Globals.IsReady = true;
         SetGlobalHotKey();
-        UpdateButtons();
+        Globals.IsReady = true;
         GoToDate(DateTime.Today);
+        UpdateButtons();
         Globals.ChronoStartingApp.Stop();
         Settings.BenchmarkStartingApp = Globals.ChronoStartingApp.ElapsedMilliseconds;
         bool doforce = ApplicationCommandLine.Instance?.Generate ?? false;
