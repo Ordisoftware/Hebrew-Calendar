@@ -63,16 +63,16 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 9.x**
 
-- Added context menu for days in month view.
-- Added bookmarks to context menu in month view.
-- Added change active day by click in month view.
-- Added select day by double click in month view.
-- Added mouse hover effect in month view.
-- Added some options and colors for month view.
+- Added context menu for days in monthly view.
+- Added bookmarks to context menu in monthly view.
+- Added change active day by click in monthly view.
+- Added select day by double click in monthly view.
+- Added mouse hover effect in monthly view.
+- Added some options and colors for monthly view.
 - Added Ctrl + B and Decimal shortcuts to go to selected day.
 - Added celebration verses board and command-line option.
 - Improved web links menus to display those in the current language to the top.
-- The month view shows sun times instead of moon when using sun omer.
+- The monthly view shows sun times instead of moon when using sun omer.
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
@@ -81,7 +81,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Screenshots
 
-[![Month view](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Text report view](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en.png)
+[![Monthly view](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Text report view](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en-400x295.png)](https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en.png)
 
 [![Next celebrations](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en-282x300.png)](https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Parashot board](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en-464x300.png)](https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en.png)
 
@@ -101,7 +101,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Videos
 
-[![Month view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
+[![Monthly view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
 ## Frequently asked questions
 
@@ -109,7 +109,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
 
-#### What to do if the calendar month view is ugly?
+#### What to do if the monthly view is ugly?
 
 Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.
 
@@ -308,42 +308,42 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Add dark theme for month view.
+- Add dark theme for monthly view.
 
 ## Changelog
 
 #### 2021.09.22 - Version 9.2
 
 - Add Shift + Click to change active day even if the related option is disabled.
-- Add Apps keyboard shortcut to display the contextual menu in month view.
-- Improve visual month to display active day before month name.
+- Add Apps keyboard shortcut to display the contextual menu in monthly view.
+- Improve monthly view to display active day before month name.
 - Improve alert box for big calendar generation to disable option to ask confirmation.
 - Improve web links menus to display those in the current language to the top.
-- Fix date difference from visual month context menu when starting day is after the actual or selected.
+- Fix date difference from monthly view context menu when starting day is after the actual or selected.
 - Some fixes and improvements.
 - Optimize code.
 - Update web links.
 
 #### 2021.09.20 - Version 9.1
 
-- Add bookmarks to context menu in month view.
+- Add bookmarks to context menu in monthly view.
 - Add parashot board link in shabat reminder box when no weekly parashah available.
 - Fix bug with no selected day on changing day at midnight.
 
 #### 2021.09.19 - Version 9.0
 
-- Add context menu for days in month view.
-- Add change active day by click in month view.
-- Add select day by double click in month view.
+- Add context menu for days in monthly view.
+- Add change active day by click in monthly view.
+- Add select day by double click in monthly view.
 - Add options for that in preferences windows.
-- Add mouse hover effect in month view.
-- Add some options and colors for month view.
+- Add mouse hover effect in monthly view.
+- Add some options and colors for monthly view.
 - Add Ctrl+B and Decimal shortcuts to go to selected day.
 - Add celebration verses board.
 - Add `--celebrationverses` command-line option to show this board.
 - Add link in reminder box to open verses board.
 - Add Tools folder in the application's system start menu.
-- The month view displays solar hours in case of sun omer.
+- The monthly view displays solar hours in case of sun omer.
 - Remove option to show sun times as tooltips because of the new context menu.
 - Update web links.
 - Some fixes and improvements.
@@ -405,7 +405,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve navigation window with more buttons.
 - Fix weekly parashah description box that does not show linked parashah.
 - Fix current day labels not correctly updated when new day is triggered.
-- Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the month view.
+- Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the monthly view.
 - Fix click on send to tray icon is selected when main form is reopened.
 - Fix reminder bug introduced in previous version : events are not reminded n-hours before when returning from fullscreen.
 - Fix suspend menu tray is disabled on start until preferences is opened and closed.
@@ -467,7 +467,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add menu item in Tools to the weekly parashah study page of some web sites.
 - Add option to set parashah generation for inside or outside of Israël.
 - Add option to set parashah reading always on saturday.
-- Add option to indicate parashah in the Shabatot of the visual month.
+- Add option to indicate parashah in the Shabatot of the monthly view.
 - Add option to indicate current parashah in the application title bar.
 - Add option to indicate current lunar day in the application title bar.
 - Add option to set visual calendar events line spacing that is reduced to display parashah.
@@ -481,7 +481,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add export to TXT support for all boards.
 - Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
 - Add command-line options (see FAQ).
-- Improve text report and month view to show long-week celebration intermediate days.
+- Improve text report and monthly view to show long-week celebration intermediate days.
 - Improve navigation form to show parashah long-week celebration intermediate days.
 - Improve search event, lunar month and gregorian month windows.
 - Improve celebrations and new moons boards to allow the use of english columns title and exports.
@@ -543,8 +543,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add launch system weather app like MSN Weather.
 - Add option to define system weather app.
 - Add option to enable Windows double-buffering drawing.
-- Optimize visual month painting speed.
-- Fix Rotate view is done only between visual month and grid.
+- Optimize monthly view painting speed.
+- Fix Rotate view is done only between monthly view and grid.
 - Fix null exception after changing current day once preferences form closed.
 - Fix exception when running application having a config file but no database if deleted.
 - Code refactoring (preferences).
@@ -583,8 +583,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add celebrations board with clickable dates and selection of years interval.
 - Add advanced print preview window.
-- Add select years interval to export/print, else process the entire report/grid or only the current month view.
-- Add option to set the default print month view page orientation.
+- Add select years interval to export/print, else process the entire report/grid or only the current monthly view.
+- Add option to set the default print monthly view page orientation.
 - Add option to set preferred data export file format (CSV/JSON)
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
 - Add export data to JSON file.
@@ -632,7 +632,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2020.12.06 - Version 5.11
 
 - Add navigation buttons to search event, lunar month and gregorian month windows.
-- Add save and load theme for month view, reminder boxes and navigation window.
+- Add save and load theme for monthly view, reminder boxes and navigation window.
 - Add print text report.
 - Add printing option tab in preferences form.
 - Add open export folder in tools menu.
@@ -644,7 +644,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2020.12.01 - Version 5.10
 
 - Add view selection for save to file, copy to clipboard and print.
-- Add preview dialog for print month view.
+- Add preview dialog for print monthly view.
 - Add option to show print preview dialog.
 - Add option to set printing margin.
 - Add option to auto-open exported file.
@@ -735,7 +735,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2020.09.06 - Version 5.0
 
-- Add keyboard shortcuts to navigate in the calendar month view.
+- Add keyboard shortcuts to navigate in the monthly view.
 - Add search gregorian month form.
 - Add tools menu duplicated in the Tray Icon.
 - Add force database optimize at next startup in tools menu
@@ -751,7 +751,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve dates diff calculator to show more stats in a form having bookmarks.
 - Improve generate years box with predefined intervals and change some constants.
 - Improve GPS finder to try to auto-select time zone based on country or city names.
-- Improve month view drawing speed by a half.
+- Improve monthly view drawing speed by a half.
 - Improve data generation speed by a half.
 - Improve keyboard shortcuts.
 - Remove the generate years selection box at startup if database is empty or new.
@@ -776,7 +776,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add bring to front app if process is started again.
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add left, right and up keys support to the navigation form.
-- Add option to define moon day text format for calendar month view.
+- Add option to define moon day text format for monthly view.
 - Add Windows date and time link in the tools menu.
 - Add release notes link in the information menu.
 - Add information menu duplicated in the Tray Icon.
@@ -793,7 +793,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Exit application at startup if user choose to download a newer version.
 - Add F1/F2/F3 shortcuts to select the view.
 - Add F4/F5/F6/F7 shortcuts to open searches windows.
-- Add moon month name to all days in the month view.
+- Add moon month name to all days in the monthly view.
 - Add suspend reminder menu in the main form and the Tray Icon.
 - Improve Tray Icon to show if the reminder is suspended.
 - Add preferences menu in the Tray Icon.
@@ -808,11 +808,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add celebrations and Shabat notices in tools menu.
 - Add calculate number of days between two dates in tools menu.
 - Add link to windows calculator in tools menu.
-- Add option to change month view text size.
-- Add option to change month view back and text colors for non-event days.
+- Add option to change monthly view text size.
+- Add option to change monthly view back and text colors for non-event days.
 - Add option to auto open destination folder of exports after done.
 - Fix controls tabs and focus in auto lock session form.
-- Fix reset default month view colors in preferences form.
+- Fix reset default monthly view colors in preferences form.
 - Fix edit report text font size in preferences form.
 - Fix print bitmap size if the main form is resized.
 - Fix search celebration and moon month forms when closing using the top-right cross.
@@ -934,7 +934,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2019.08.25 - Version 1.10
 
-- Add colors parameters for calendar month view.
+- Add colors parameters for monthly view.
 
 #### 2019.08.24 - Version 1.9
 
@@ -954,7 +954,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2019.01.28 - Version 1.5
 
-- Change current day color in month view.
+- Change current day color in monthly view.
 - Some code refactorings.
 - Some improvements.
 
@@ -967,7 +967,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add an option for the Tray Icon mouse click.
 - Add an option to show/hide the main form at startup.
-- Add a month view.
+- Add a monthly view.
 - Add a print menu.
 - Improve the grid view.
 
