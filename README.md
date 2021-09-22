@@ -69,8 +69,10 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added select day by double click in monthly view.
 - Added mouse hover effect in monthly view.
 - Added some options and colors for monthly view.
-- Added Ctrl + B and Decimal shortcuts to go to selected day.
+- Added option to choose action for double-click in visual month.
+- Added some keyboard shortcuts to move and select in monthly view.
 - Added celebration verses board and command-line option.
+- Moved day of shabat selection to the generation tab in preferences form.
 - Improved web links menus to display those in the current language to the top.
 - The monthly view shows sun times instead of moon when using sun omer.
 - Some fixes and improvements.
@@ -324,7 +326,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add Ctrl + Click to select day even if the related option is disabled.
 - Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.
 - Move day of shabat selection to the generation tab in preferences form.
-- Some fixes.
+- Some fixes and improvements.
 
 #### 2021.09.22 - Version 9.2
 
