@@ -297,6 +297,7 @@
     <Compile Include="Source\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Enums\TorahCelebrationSettings.cs" />
+    <Compile Include="Source\Enums\CalendarDoubleClickAction.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Forms\Boxes\Boards\CelebrationVersesBoardForm.cs">
       <SubType>Form</SubType>

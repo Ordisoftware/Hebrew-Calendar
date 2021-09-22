@@ -676,5 +676,8 @@
     <Setting Name="CalendarColorActiveDay" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">LightSlateGray</Value>
     </Setting>
+    <Setting Name="CalendarDoubleClickAction" Type="Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction" Scope="User">
+      <Value Profile="(Default)">SetActive</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

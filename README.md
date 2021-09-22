@@ -312,6 +312,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 9.3
+
+- Add option to choose action for double-click in visual month: nothing, set active or select day.
+- Add Ctrl + Click to select day even if the related option is disabled.
+
 #### 2021.09.22 - Version 9.2
 
 - Add Shift + Click to change active day even if the related option is disabled.

@@ -2693,5 +2693,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarColorActiveDay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SetActive")]
+        public global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction CalendarDoubleClickAction {
+            get {
+                return ((global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction)(this["CalendarDoubleClickAction"]));
+            }
+            set {
+                this["CalendarDoubleClickAction"] = value;
+            }
+        }
     }
 }

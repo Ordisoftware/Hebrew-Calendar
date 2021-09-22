@@ -173,6 +173,19 @@ namespace Ordisoftware.Hebrew.Calendar
           SelectOpenMainForm.Select();
           break;
       }
+      // Calendar double click
+      switch ( Settings.CalendarDoubleClickAction )
+      {
+        case CalendarDoubleClickAction.Nothing:
+          SelectCalendarDoubleClickActionNothing.Select();
+          break;
+        case CalendarDoubleClickAction.SetActive:
+          SelectCalendarDoubleClickActionSetActive.Select();
+          break;
+        default:
+          SelectCalendarDoubleClickActionSelect.Select();
+          break;
+      }
       // GPS
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionGetGPS_LinkClicked(null, null);

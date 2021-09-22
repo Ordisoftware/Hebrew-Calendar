@@ -1062,10 +1062,22 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( e.Button == MouseButtons.Left )
       {
         if ( e.Clicks > 1 && showContextMenu )
-          DateSelected = dayRow.Date;
+          switch ( Settings.CalendarDoubleClickAction )
+          {
+            case CalendarDoubleClickAction.SetActive:
+              GoToDate(dayRow.Date);
+              break;
+            case CalendarDoubleClickAction.Select:
+              DateSelected = dayRow.Date;
+              break;
+          }
         else
-        if ( e.Clicks == 1 && ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) ) )
-          GoToDate(dayRow.Date);
+        if ( e.Clicks == 1 )
+          if ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) )
+            GoToDate(dayRow.Date);
+          else
+          if ( ModifierKeys.HasFlag(Keys.Control) )
+            DateSelected = dayRow.Date;
       }
       else
       if ( showContextMenu && e.Button == MouseButtons.Right )
