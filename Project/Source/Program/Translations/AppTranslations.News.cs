@@ -41,32 +41,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.3"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Add option to choose action for double-click in visual month." + Globals.NL +
+          [Language.EN] = "• Added option to choose action for double-click in visual month." + Globals.NL +
                           "• Added keyboard shortcuts to move to previous or next day or week." + Globals.NL +
-                          "• Some fixes.",
+                          "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
+                          "• Some fixes and improvements.",
 
 
           [Language.FR] = "• Ajout d'une option pour choisir l'action pour le double-clic dans le mois visuel." + Globals.NL +
                           "• Ajout de raccourcis clavier pour passer au jour ou à la semaine précédent ou suivant." + Globals.NL +
-                          "• Quelques corrections."
-        },
-
-        ["9.2"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Add Shift + Click to change active day even if the related option is disabled." + Globals.NL +
-                          "• Improved monthly view to display active day before month name." + Globals.NL +
-                          "• Improved web links menus to display those in the current language to the top." + Globals.NL +
-                          "• Some fixes and improvements." + Globals.NL +
-                          "• Optimized code." + Globals.NL +
-                          "• Updated web links.",
-
-
-          [Language.FR] = "• Ajout de Maj + Clic pour changer le jour actif même si l'option associée est désactivée." + Globals.NL +
-                          "• Amélioration du mois visuel pour afficher le jour actif devant le nom du mois." + Globals.NL +
-                          "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
-                          "• Quelques corrections et améliorations." + Globals.NL +
-                          "• Code optimisé." + Globals.NL +
-                          "• Mise à jour les liens web."
+                          "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
+                          "• Quelques améliorations et corrections."
         },
 
         ["9.x"] = new TranslationsDictionary
@@ -80,9 +64,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Added Ctrl + B and Decimal shortcuts to go to selected day." + Globals.NL +
                           "• Added celebration verses board." + Globals.NL +
                           "• Added command-line option for this board." + Globals.NL +
+                          "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                           "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
-                          "• Updated web links." + Globals.NL +
-                          "• Some fixes and improvements.",
+                          "• Some fixes and improvements." + Globals.NL +
+                          "• Optimized code." + Globals.NL +
+                          "• Updated web links.",
 
           [Language.FR] = "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
                           "• Ajout des signets au menu contextuel dans la vue mensuelle." + Globals.NL +
@@ -93,9 +79,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout des raccourcis Ctrl+B et Décimal pour aller au jour sélectionné." + Globals.NL +
                           "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
                           "• Ajout d'une option de ligne de commande pour ce tableau." + Globals.NL +
+                          "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
                           "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
-                          "• Mise à jour les liens web." + Globals.NL +
-                          "• Quelques améliorations et corrections."
+                          "• Quelques corrections et améliorations." + Globals.NL +
+                          "• Code optimisé." + Globals.NL +
+                          "• Mise à jour les liens web."
         },
 
         ["8.x"] = new TranslationsDictionary
