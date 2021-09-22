@@ -295,6 +295,8 @@ namespace Ordisoftware.Hebrew.Calendar
         MenuExit_Click(MenuExit, null);
     }
 
+    internal bool PreferencesMutex;
+
     /// <summary>
     /// Event handler. Called by ActionPreferences for click events.
     /// </summary>
@@ -311,6 +313,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ToolStrip.Enabled = false;
       TimerReminder.Enabled = false;
       MenuTray.Enabled = false;
+      PreferencesMutex = true;
       try
       {
         ClearLists();
@@ -340,13 +343,14 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         ToolStrip.Enabled = formEnabled;
         MenuTray.Enabled = trayEnabled;
+        TimerReminder.Enabled = true;
+        EnableReminderTimer();
         if ( dateOld == null )
           GoToDate(DateTime.Today);
         else
           GoToDate(dateOld.Value);
         UpdateTitles(true);
-        TimerReminder.Enabled = true;
-        EnableReminderTimer();
+        PreferencesMutex = false;
       }
     }
 

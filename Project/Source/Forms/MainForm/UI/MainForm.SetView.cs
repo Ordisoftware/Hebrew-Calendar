@@ -112,7 +112,10 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( CalendarGrid.SelectedRows.Count > 0 )
             CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
         if ( view == ViewMode.Text )
-          GoToDate(CurrentDay.Date);
+          if ( CurrentDay != null)
+            GoToDate(CurrentDay.Date);
+          else
+            GoToDate(DateTime.Today);
       }
       catch ( Exception ex )
       {
