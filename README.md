@@ -291,6 +291,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + Right | Next month having a celebration |
 | Ctrl + Home | First month having a celebration |
 | Ctrl + End | Last month having a celebration |
+| Shit + Up | Semaine précédente |
+| Shit + Down | Previous week |
 | Shit + Left | Previous day |
 | Shit + Right | Next day |
 | Add or Sub | Change active day |
@@ -320,6 +322,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Add option to choose action for double-click in visual month: nothing, set active or select day.
 - Add Ctrl + Click to select day even if the related option is disabled.
+- Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.
 - Some fixes.
 
 #### 2021.09.22 - Version 9.2

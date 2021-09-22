@@ -79,7 +79,9 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + Right : Next month having a celebration" + Globals.NL +
                         "Ctrl + Home : First month having a celebration" + Globals.NL +
                         "Ctrl + End : Last month having a celebration" + Globals.NL +
-                        "Shit + Left : Previous day" + Globals.NL +
+                        "Shit + Up : Semaine précédente" + Globals.NL +
+                        "Shit + Down : Previous week" + Globals.NL +
+                        "Shit + Left : Next week" + Globals.NL +
                         "Shit + Right : Next day" + Globals.NL +
                         "Add or Sub : Change active day" + Globals.NL +
                         "Shift + Click : Set active day" + Globals.NL +
@@ -136,10 +138,12 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Ctrl + Droite : Mois suivant ayant une célébration" + Globals.NL +
                         "Ctrl + Début : Premier mois ayant une célébration" + Globals.NL +
                         "Ctrl + Fin : Dernier mois ayant une célébration" + Globals.NL +
-                        "Shit + Left : Jour précédent" + Globals.NL +
-                        "Shit + Right : Jour suivant" + Globals.NL +
+                        "Maj + Haut : Semaine précédente" + Globals.NL +
+                        "Maj + Bas : Semaine suivante" + Globals.NL +
+                        "Maj + Gauche : Jour précédent" + Globals.NL +
+                        "Maj + Droite : Jour suivant" + Globals.NL +
                         "Plus ou Moins : Changer de jour actif" + Globals.NL +
-                        "Shift + Click : Définir jour actif" + Globals.NL +
+                        "Maj + Click : Définir jour actif" + Globals.NL +
                         "Ctrl + Click : Selectionner jour" + Globals.NL +
                         "F9 : Préférences" + Globals.NL +
                         "F10 : Fenêtre du fichier log" + Globals.NL +
