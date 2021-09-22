@@ -170,10 +170,18 @@ namespace Ordisoftware.Hebrew.Calendar
             GoToDate(CurrentDay.Date.AddMonths(1));
             return true;
           case Keys.Subtract:
+          case Keys.Shift | Keys.Left:
             GoToDate(CurrentDay.Date.AddDays(-1));
             return true;
           case Keys.Add:
+          case Keys.Shift | Keys.Right:
             GoToDate(CurrentDay.Date.AddDays(+1));
+            return true;
+          case Keys.Shift | Keys.Up:
+            GoToDate(CurrentDay.Date.AddDays(-7));
+            return true;
+          case Keys.Shift | Keys.Down:
+            GoToDate(CurrentDay.Date.AddDays(+7));
             return true;
         }
       return base.ProcessCmdKey(ref msg, keyData);
