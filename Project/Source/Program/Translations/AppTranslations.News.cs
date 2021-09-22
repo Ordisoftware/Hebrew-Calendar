@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ["9.2"] = new TranslationsDictionary
         {
           [Language.EN] = "• Add Shift + Click to change active day even if the related option is disabled." + Globals.NL +
-                          "• Improved visual month to display active day before month name." + Globals.NL +
+                          "• Improved monthly view to display active day before month name." + Globals.NL +
                           "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                           "• Some fixes and improvements." + Globals.NL +
                           "• Optimized code." + Globals.NL +
@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["6.x"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Optimized visual month painting speed." + Globals.NL +
+          [Language.EN] = "• Optimized monthly view painting speed." + Globals.NL +
                           "• Added Windows global hotkey." + Globals.NL +
                           "• Added celebrations board." + Globals.NL +
                           "• Added new moons board." + Globals.NL +
@@ -182,7 +182,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Improved check update to securely download and auto-install." + Globals.NL +
                           "• Improved keyboard shortcuts." + Globals.NL +
                           "• Improved data generation speed by a half." + Globals.NL +
-                          "• Improved visual month view speed by a half." + Globals.NL +
+                          "• Improved monthly view view speed by a half." + Globals.NL +
                           "• Improved tray icon menu." + Globals.NL +
                           "• Improved preferences options." + Globals.NL +
                           "• Improved dialogs." + Globals.NL +
@@ -275,7 +275,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ["1.x"] = new TranslationsDictionary
         {
           [Language.EN] = "• Initial release." + Globals.NL +
-                          "• Text report only, and then visual month view." + Globals.NL +
+                          "• Text report only, and then monthly view view." + Globals.NL +
                           "• Next celebrations windows." + Globals.NL +
                           "• Day navigation windows." + Globals.NL +
                           "• Shabat reminder." + Globals.NL +
