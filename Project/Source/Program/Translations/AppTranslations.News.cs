@@ -41,20 +41,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.3"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Add Shift + Click to change active day even if the related option is disabled." + Globals.NL +
-                          "• Improved monthly view to display active day before month name." + Globals.NL +
-                          "• Improved web links menus to display those in the current language to the top." + Globals.NL +
-                          "• Some fixes and improvements." + Globals.NL +
-                          "• Optimized code." + Globals.NL +
-                          "• Updated web links.",
+          [Language.EN] = "• " + Globals.NL +
+                          "• " + Globals.NL +
+                          "• Some fixes.",
 
 
-          [Language.FR] = "• Ajout de Maj + Clic pour changer le jour actif même si l'option associée est désactivée." + Globals.NL +
-                          "• Amélioration du mois visuel pour afficher le jour actif devant le nom du mois." + Globals.NL +
-                          "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
-                          "• Quelques corrections et améliorations." + Globals.NL +
-                          "• Code optimisé." + Globals.NL +
-                          "• Mise à jour les liens web."
+          [Language.FR] = "• " + Globals.NL +
+                          "• " + Globals.NL +
+                          "• Quelques corrections."
         },
 
         ["9.2"] = new TranslationsDictionary
