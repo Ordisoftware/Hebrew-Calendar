@@ -38,7 +38,7 @@ namespace Ordisoftware.Core
     }
     static private HotkeyManager _Manager;
 
-    static private readonly InputSimulator InputSimulator = new InputSimulator();
+    static public readonly InputSimulator InputSimulator = new InputSimulator();
 
     static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
 

@@ -167,16 +167,28 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Lists_KeyDown(object sender, KeyEventArgs e)
     {
-      if ( e.KeyCode == Keys.Left )
+      switch ( e.KeyCode )
       {
-        SelectCelebration.Focus();
-        e.Handled = true;
-      }
-      else
-      if ( e.KeyCode == Keys.Right )
-      {
-        SelectVerse.Focus();
-        e.Handled = true;
+        case Keys.Left:
+          SelectCelebration.Focus();
+          e.Handled = true;
+          break;
+        case Keys.Right:
+          SelectVerse.Focus();
+          e.Handled = true;
+          break;
+        case Keys.Enter:
+          if ( sender is ListView control )
+            if ( control.FocusedItem != null )
+            {
+              int delta = (int)( control.Font.SizeInPoints * 1.5 );
+              var pos = control.PointToScreen(control.FocusedItem.Position);
+              pos.X += delta;
+              pos.Y += delta;
+              control.ContextMenuStrip.Show(pos);
+              e.Handled = true;
+            }
+          break;
       }
     }
 
