@@ -927,6 +927,7 @@ namespace CodeProjectCalendar.NET
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;
+      if ( !Globals.IsReady ) return;
       _calendarDays.Clear();
       _calendarEvents.Clear();
       var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);

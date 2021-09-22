@@ -30,57 +30,65 @@ namespace Ordisoftware.Hebrew.Calendar
                          bool onlyIfNotMinimized = false,
                          Form regetFocus = null)
     {
-      if ( !Globals.IsReady || Globals.IsGenerating || GoToDateMutex ) return;
+      if ( !Globals.IsReady || Globals.IsGenerating ) return;
+      if ( GoToDateMutex ) return;
       if ( date < DateFirst ) date = DateFirst;
       if ( date > DateLast ) date = DateLast;
-      GoToDateMutex = true;
       if ( _DateSelected == DateTime.Today ) _DateSelected = null;
-      SystemManager.TryCatch(() =>
+      GoToDateMutex = true;
+      try
       {
-        if ( NavigationForm.Instance != null )
-          NavigationForm.Instance.Date = date;
-      });
-      SystemManager.TryCatch(() =>
-      {
-        CalendarMonth.CalendarDate = date;
-      });
-      SystemManager.TryCatch(() =>
-      {
-        int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
-        if ( position >= 0 )
-        {
-          LunisolarDaysBindingSource.Position = position;
-          CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
-        }
-      });
-      if ( Settings.CurrentView == ViewMode.Text )
+        // Navigation window
         SystemManager.TryCatch(() =>
         {
-          string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
-          int position = CalendarText.Find(strDate);
-          if ( position != -1 )
+          if ( NavigationForm.Instance != null )
+            NavigationForm.Instance.Date = date;
+        });
+        // Datagridview and bindingsource
+        SystemManager.TryCatch(() =>
+        {
+          int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
+          if ( position >= 0 )
           {
-            CalendarText.SelectionStart = position - 6 - 119;
-            CalendarText.SelectionLength = 0;
-            CalendarText.ScrollToCaret();
-            CalendarText.SelectionStart = position - 6;
-            CalendarText.SelectionLength = 119;
+            LunisolarDaysBindingSource.Position = position;
+            CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
           }
         });
-      GoToDateMutex = false;
-      if ( Settings.CurrentView == ViewMode.Month )
-        CalendarMonth.Refresh();
-      if ( bringToFront )
+        // Visual month
+        SystemManager.TryCatch(() =>
+        {
+          CalendarMonth.CalendarDate = date;
+        });
+        if ( Settings.CurrentView == ViewMode.Text )
+          SystemManager.TryCatch(() =>
+          {
+            string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
+            int position = CalendarText.Find(strDate);
+            if ( position != -1 )
+            {
+              CalendarText.SelectionStart = position - 6 - 119;
+              CalendarText.SelectionLength = 0;
+              CalendarText.ScrollToCaret();
+              CalendarText.SelectionStart = position - 6;
+              CalendarText.SelectionLength = 119;
+            }
+          });
+      }
+      finally
       {
-        if ( !Visible && !onlyIfOpened )
-          MenuShowHide_Click(null, null);
-        else
-        if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
-          this.Restore();
-        else
-        if ( Visible && !this.IsVisibleOnTop(80) )
-          this.Popup();
-        regetFocus?.Popup();
+        GoToDateMutex = false;
+        if ( bringToFront )
+        {
+          if ( !Visible && !onlyIfOpened )
+            MenuShowHide_Click(null, null);
+          else
+          if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
+            this.Restore();
+          else
+          if ( Visible && !this.IsVisibleOnTop(80) )
+            this.Popup();
+          regetFocus?.Popup();
+        }
       }
     }
 
