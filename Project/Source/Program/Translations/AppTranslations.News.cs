@@ -59,16 +59,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.x"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added context menu for days in month view." + Globals.NL +
-                          "• Added bookmarks to context menu in month view." + Globals.NL +
-                          "• Added change active day by click in month view." + Globals.NL +
-                          "• Added select day by double click in month view." + Globals.NL +
-                          "• Added mouse hover effect in month view." + Globals.NL +
-                          "• Added some options and colors for month view." + Globals.NL +
+          [Language.EN] = "• Added context menu for days in monthly view." + Globals.NL +
+                          "• Added bookmarks to context menu in monthly view." + Globals.NL +
+                          "• Added change active day by click in monthly view." + Globals.NL +
+                          "• Added select day by double click in monthly view." + Globals.NL +
+                          "• Added mouse hover effect in monthly view." + Globals.NL +
+                          "• Added some options and colors for monthly view." + Globals.NL +
                           "• Added Ctrl + B and Decimal shortcuts to go to selected day." + Globals.NL +
                           "• Added celebration verses board." + Globals.NL +
                           "• Added command-line option for this board." + Globals.NL +
-                          "• The month view displays solar hours in case of sun omer." + Globals.NL +
+                          "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
                           "• Updated web links." + Globals.NL +
                           "• Some fixes and improvements.",
 
@@ -177,7 +177,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Improved check update to securely download and auto-install." + Globals.NL +
                           "• Improved keyboard shortcuts." + Globals.NL +
                           "• Improved data generation speed by a half." + Globals.NL +
-                          "• Improved monthly view view speed by a half." + Globals.NL +
+                          "• Improved monthly view speed by a half." + Globals.NL +
                           "• Improved tray icon menu." + Globals.NL +
                           "• Improved preferences options." + Globals.NL +
                           "• Improved dialogs." + Globals.NL +
@@ -270,7 +270,7 @@ namespace Ordisoftware.Hebrew.Calendar
         ["1.x"] = new TranslationsDictionary
         {
           [Language.EN] = "• Initial release." + Globals.NL +
-                          "• Text report only, and then monthly view view." + Globals.NL +
+                          "• Text report only, and then monthly view." + Globals.NL +
                           "• Next celebrations windows." + Globals.NL +
                           "• Day navigation windows." + Globals.NL +
                           "• Shabat reminder." + Globals.NL +
