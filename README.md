@@ -281,7 +281,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + F3 | New moons board |
 | Ctrl + F4 | Lunar months board |
 | Ctrl + F5 | Dates difference calculator |
-| Add or Sub | Change active day |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -292,6 +291,13 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 | Ctrl + Right | Next month having a celebration |
 | Ctrl + Home | First month having a celebration |
 | Ctrl + End | Last month having a celebration |
+| Shit + Up | Semaine précédente |
+| Shit + Down | Previous week |
+| Shit + Left | Previous day |
+| Shit + Right | Next day |
+| Add or Sub | Change active day |
+| Shift + Click | Set active day |
+| Ctrl + Click | Select day |
 | F9 | Preferences |
 | F10 | Log file window |
 | F11 | Usage statistics window |
@@ -312,10 +318,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### In progress - Version 9.3
+#### 2021.09.26 - Version 9.3
 
 - Add option to choose action for double-click in visual month: nothing, set active or select day.
 - Add Ctrl + Click to select day even if the related option is disabled.
+- Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.
+- Some fixes.
 
 #### 2021.09.22 - Version 9.2
 

@@ -922,6 +922,8 @@ namespace CodeProjectCalendar.NET
       }
     }
 
+    private string MonthWithDayText;
+
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;
@@ -933,10 +935,13 @@ namespace CodeProjectCalendar.NET
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
-      string monthstr = _calendarDate.ToString("MMMM").Titleize();
-      string monthstrWithDay = monthstr;
+      var today = DateTime.Today;
+      string monthText = _calendarDate.ToString("MMMM").Titleize();
       if ( MainForm.Instance.CurrentDay != null )
-        monthstrWithDay = MainForm.Instance.CurrentDay.Date.Day + " " + monthstrWithDay;
+        MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
+      else
+      if ( !MainForm.Instance.PreferencesMutex )
+        MonthWithDayText = today.Day + " " + monthText;
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -944,7 +949,7 @@ namespace CodeProjectCalendar.NET
       SizeF thuSize = sunSize;// g.MeasureString("Thu", _dayOfWeekFont);
       SizeF friSize = sunSize;// g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = sunSize;// g.MeasureString("Sat", _dayOfWeekFont);
-      SizeF dateHeaderSize = g.MeasureString(monthstrWithDay + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
+      SizeF dateHeaderSize = g.MeasureString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
       int headerSpacing = (int)sunSize.Height + 5;// Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
@@ -957,31 +962,30 @@ namespace CodeProjectCalendar.NET
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
-      var backbrush = new SolidBrush(BackColor);
-      var outofmonth = false;
-      var isselected = false;
-      var isselectednotoday = false;
-      int selectedday;
-      int selectedmonth;
-      int selectedyear;
-      var today = DateTime.Today;
+      var brushBack = new SolidBrush(BackColor);
+      var outOfMonth = false;
+      var isSelected = false;
+      var isSelectedNoToday = false;
+      int selectedDay;
+      int selectedMonth;
+      int selectedYear;
       if ( MainForm.Instance.DateSelected.HasValue )
       {
         var date = MainForm.Instance.DateSelected.Value;
-        selectedday = date.Day;
-        selectedmonth = date.Month;
-        selectedyear = date.Year;
+        selectedDay = date.Day;
+        selectedMonth = date.Month;
+        selectedYear = date.Year;
       }
       else
       {
-        selectedday = today.Day;
-        selectedmonth = today.Month;
-        selectedyear = today.Year;
+        selectedDay = today.Day;
+        selectedMonth = today.Month;
+        selectedYear = today.Year;
       }
       // ORDISOFWTARE MODIF END
 
       bool CheckSelected(int day)
-        => day == selectedday && _calendarDate.Month == selectedmonth && _calendarDate.Year == selectedyear;
+        => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
 
       yStart += headerSpacing + controlsSpacing;
 
@@ -1022,7 +1026,7 @@ namespace CodeProjectCalendar.NET
             if ( first == false )
             {
               first = true;
-              string strCounter1 = monthstr + " " + counter1.ToString(CultureInfo.InvariantCulture);
+              string strCounter1 = monthText + " " + counter1.ToString(CultureInfo.InvariantCulture);
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
@@ -1034,13 +1038,13 @@ namespace CodeProjectCalendar.NET
                     var pen = Program.Settings.UseColors
                               ? PenSelectedDay
                               : PenBlack;
-                    g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                    g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
                   {
-                    isselected = true;
+                    isSelected = true;
                     g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                   }
@@ -1049,7 +1053,7 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( CheckSelected(counter1) )
                   {
-                    isselected = true;
+                    isSelected = true;
                     g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
                   }
@@ -1066,8 +1070,8 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH
                 if ( CheckSelected(counter1) )
                 {
-                  isselected = true;
-                  isselectednotoday = true;
+                  isSelected = true;
+                  isSelectedNoToday = true;
                   SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
                   var pen = Program.Settings.UseColors
                             ? Program.Settings.SelectedDayBoxColorOnlyCurrent ? PenText : PenSelectedDay
@@ -1089,13 +1093,13 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( !CheckSelected(counter1) )
                   {
-                    g.FillRectangle(backbrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                    g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawRectangle(PenSelectedDay, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                   }
                   else
                   {
-                    isselected = true;
+                    isSelected = true;
                     g.FillRectangle(CurrentDayBackBrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                   }
@@ -1104,7 +1108,7 @@ namespace CodeProjectCalendar.NET
                 {
                   if ( CheckSelected(counter1) )
                   {
-                    isselected = true;
+                    isSelected = true;
                     g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
                     g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
                   }
@@ -1123,8 +1127,8 @@ namespace CodeProjectCalendar.NET
                 SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
                 if ( CheckSelected(counter1) )
                 {
-                  isselected = true;
-                  isselectednotoday = true;
+                  isSelected = true;
+                  isSelectedNoToday = true;
                   var pen = Program.Settings.UseColors
                             ? Program.Settings.SelectedDayBoxColorOnlyCurrent ? PenText : PenSelectedDay
                             : PenBlack;
@@ -1146,7 +1150,7 @@ namespace CodeProjectCalendar.NET
           {
             int dm = DateTime.DaysInMonth(_calendarDate.AddMonths(-1).Year, _calendarDate.AddMonths(-1).Month) - rogueDays + 1;
             // ORDISOFWTARE MODIF BEGIN PREVIOUS MONTH
-            outofmonth = true;
+            outOfMonth = true;
             var evPrevious = new CalendarEvent
             {
               EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1170,7 +1174,7 @@ namespace CodeProjectCalendar.NET
               if ( counter2 == 1 )
               {
                 // ORDISOFWTARE MODIF BEGIN NEXT MONTH FIRST DAY
-                outofmonth = true;
+                outOfMonth = true;
                 var evNextFirst = new CalendarEvent
                 {
                   EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1184,7 +1188,7 @@ namespace CodeProjectCalendar.NET
               else
               {
                 // ORDISOFWTARE MODIF BEGIN NEXT MONTH OTHERS
-                outofmonth = true;
+                outOfMonth = true;
                 var evNextOthers = new CalendarEvent
                 {
                   EventArea = new Rectangle(xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1),
@@ -1211,19 +1215,19 @@ namespace CodeProjectCalendar.NET
           //if ( Program.Settings.CalendarShowSelectedBox )
           {
             var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
-            if ( isselected )
+            if ( isSelected )
             {
               if ( Program.Settings.CalendarShowSelectedBox )
               {
                 var pen = Program.Settings.UseColors
-                          ? isselectednotoday && Program.Settings.SelectedDayBoxColorOnlyCurrent
+                          ? isSelectedNoToday && Program.Settings.SelectedDayBoxColorOnlyCurrent
                             ? PenText
                             : PenSelectedDay
                           : PenBlack;
                 g.DrawRectangle(pen, area1);
               }
-              isselectednotoday = false;
-              if ( isMouseHover && !outofmonth )
+              isSelectedNoToday = false;
+              if ( isMouseHover && !outOfMonth )
               {
                 if ( Program.Settings.CalendarShowSelectedBox )
                   g.DrawRectangle(PenHoverEffect, area2);
@@ -1235,7 +1239,7 @@ namespace CodeProjectCalendar.NET
             else
             {
               if ( Program.Settings.CalendarUseHoverEffect )
-                if ( isselected || ( isMouseHover && !outofmonth ) )
+                if ( isSelected || ( isMouseHover && !outOfMonth ) )
                   if ( counter1 - 1 == today.Day && isactiveday )
                     g.DrawRectangle(PenHoverEffect, area2);
                   else
@@ -1245,11 +1249,11 @@ namespace CodeProjectCalendar.NET
                     g.DrawRectangle(PenHoverEffect, area1);
             }
           }
-          if ( !isselected && !outofmonth )
+          if ( !isSelected && !outOfMonth )
             if ( isactiveday )
               g.DrawRectangle(PenActiveDay, area1);
-          isselected = false;
-          outofmonth = false;
+          isSelected = false;
+          outOfMonth = false;
           // ORDISOFWTARE MODIF END
 
           xStart += cellWidth;
@@ -1286,7 +1290,7 @@ namespace CodeProjectCalendar.NET
 
       if ( _showDateInHeader )
       {
-        g.DrawString(monthstrWithDay + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
+        g.DrawString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       // ORDISOFTWARE MODIF BEGIN

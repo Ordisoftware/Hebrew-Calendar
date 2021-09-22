@@ -39,6 +39,18 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
+        ["9.3"] = new TranslationsDictionary
+        {
+          [Language.EN] = "• Add option to choose action for double-click in visual month." + Globals.NL +
+                          "• Added keyboard shortcuts to move to previous or next day or week." + Globals.NL +
+                          "• Some fixes.",
+
+
+          [Language.FR] = "• Ajout d'une option pour choisir l'action pour le double-clic dans le mois visuel." + Globals.NL +
+                          "• Ajout de raccourcis clavier pour passer au jour ou à la semaine précédent ou suivant." + Globals.NL +
+                          "• Quelques corrections."
+        },
+
         ["9.2"] = new TranslationsDictionary
         {
           [Language.EN] = "• Add Shift + Click to change active day even if the related option is disabled." + Globals.NL +
