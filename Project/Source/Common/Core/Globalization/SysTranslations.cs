@@ -210,7 +210,7 @@ namespace Ordisoftware.Core
       = new TranslationsDictionary
       {
         [Language.EN] = "Tip: use Home, End, PageUp and PageDown to navigate.",
-        [Language.FR] = "Astuce: utilisez Début, Fin, PagePrec et PageSuiv pour naviguer."
+        [Language.FR] = "Astuce : utilisez Début, Fin, PagePrec et PageSuiv pour naviguer."
       };
 
     static public readonly TranslationsDictionary ReadOnly
