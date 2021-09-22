@@ -57,16 +57,10 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Mise à jour les liens web."
         },
 
-        ["9.1"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Added bookmarks to context menu in month view.",
-
-          [Language.FR] = "• Ajout des signets au menu contextuel dans la vue mensuelle."
-        },
-
-        ["9.0"] = new TranslationsDictionary
+        ["9.x"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added context menu for days in month view." + Globals.NL +
+                          "• Added bookmarks to context menu in month view." + Globals.NL +
                           "• Added change active day by click in month view." + Globals.NL +
                           "• Added select day by double click in month view." + Globals.NL +
                           "• Added mouse hover effect in month view." + Globals.NL +
@@ -79,6 +73,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Some fixes and improvements.",
 
           [Language.FR] = "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
+                          "• Ajout des signets au menu contextuel dans la vue mensuelle." + Globals.NL +
                           "• Ajout du changement de jour actif avec un clic dans la vue mensuelle." + Globals.NL +
                           "• Ajout de la sélection d'un jour avec un double clic dans la vue mensuelle." + Globals.NL +
                           "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
