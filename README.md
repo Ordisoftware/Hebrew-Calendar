@@ -323,6 +323,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to choose action for double-click in visual month: nothing, set active or select day.
 - Add Ctrl + Click to select day even if the related option is disabled.
 - Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.
+- Move day of shabat selection to the generation tab in preferences form.
 - Some fixes.
 
 #### 2021.09.22 - Version 9.2
