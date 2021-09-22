@@ -172,6 +172,7 @@ namespace Ordisoftware.Hebrew
       }
       form.ActiveControl = form.ActionOK;
       form.Popup(null);
+      form.ForceBringToFront();
     }
 
     private void ActionViewLog_Click(object sender, EventArgs e)
