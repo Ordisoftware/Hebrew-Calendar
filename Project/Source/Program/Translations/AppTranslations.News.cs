@@ -39,50 +39,47 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["9.3"] = new TranslationsDictionary
+        ["9.4"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added option to choose action for double-click in visual month." + Globals.NL +
-                          "• Added keyboard shortcuts to move to previous or next day or week." + Globals.NL +
-                          "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
-                          "• Fix printing to remove all special boxes." + Globals.NL +
-                          "• Some fixes and improvements.",
+          [Language.EN] = "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
+                          "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
+                          "• few fixes and improvements.",
 
-
-          [Language.FR] = "• Ajout d'une option pour choisir l'action pour le double-clic dans le mois visuel." + Globals.NL +
-                          "• Ajout de raccourcis clavier aller au jour ou semaine précédent ou suivant." + Globals.NL +
-                          "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
-                          "• Correction de l'impression pour enlever toutes les cases spéciales." + Globals.NL +
-                          "• Quelques améliorations et corrections."
+          [Language.FR] = "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+                          "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+                          "• Quelques corrections et améliorations."
         },
 
         ["9.x"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added context menu for days in monthly view." + Globals.NL +
+          [Language.EN] = "• Added mouse hover effect in monthly view." + Globals.NL +
+                          "• Added context menu for days in monthly view." + Globals.NL +
                           "• Added bookmarks to context menu in monthly view." + Globals.NL +
-                          "• Added change active day by click in monthly view." + Globals.NL +
-                          "• Added select day by double click in monthly view." + Globals.NL +
-                          "• Added mouse hover effect in monthly view." + Globals.NL +
                           "• Added some options and colors for monthly view." + Globals.NL +
-                          "• Added Ctrl + B and Decimal shortcuts to go to selected day." + Globals.NL +
-                          "• Added celebration verses board." + Globals.NL +
-                          "• Added command-line option for this board." + Globals.NL +
+                          "• Added option to set active day by click in monthly view." + Globals.NL +
+                          "• Added option for double-click in visual month to set active or select." + Globals.NL +
+                          "• Added some keyboard shortcuts to change and select day in monthly view." + Globals.NL +
+                          "• Added celebration verses board and its command-line option." + Globals.NL +
+                          "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
                           "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                           "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
+                          "• Fixed printing to remove all special boxes." + Globals.NL +
                           "• Some fixes and improvements." + Globals.NL +
                           "• Optimized code." + Globals.NL +
                           "• Updated web links.",
 
-          [Language.FR] = "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
+          [Language.FR] = "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
+                          "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
                           "• Ajout des signets au menu contextuel dans la vue mensuelle." + Globals.NL +
-                          "• Ajout du changement de jour actif avec un clic dans la vue mensuelle." + Globals.NL +
-                          "• Ajout de la sélection d'un jour avec un double clic dans la vue mensuelle." + Globals.NL +
-                          "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
                           "• Ajout de quelques options et couleurs pour la vue mensuelle." + Globals.NL +
-                          "• Ajout des raccourcis Ctrl+B et Décimal pour aller au jour sélectionné." + Globals.NL +
-                          "• Ajout d'un tableau des versets des célébrations." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour ce tableau." + Globals.NL +
+                          "• Ajout d'une option pour définir le jour actif pas un clic dans la vue mensuelle." + Globals.NL +
+                          "• Ajout d'une option pour choisir l'action pour le double-clic dans la vue mensuelle." + Globals.NL +
+                          "• Ajout de raccourcis clavier pour changer et sélectionner un jour dans la vue mensuelle." + Globals.NL +
+                          "• Ajout d'un tableau des versets des célébrations et de son option de ligne de commande." + Globals.NL +
+                          "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
                           "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
                           "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
+                          "• Correction de l'impression pour enlever toutes les cases spéciales." + Globals.NL +
                           "• Quelques corrections et améliorations." + Globals.NL +
                           "• Code optimisé." + Globals.NL +
                           "• Mise à jour les liens web."

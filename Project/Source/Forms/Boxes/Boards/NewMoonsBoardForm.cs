@@ -58,6 +58,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
+      EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;
+      EditColumnUpperCase.Checked = Settings.NewMoonsBoardFormUseTitleUpperCase;
+      EditShowMonthNumbers.Checked = Settings.NewMoonsBoardFormShowMonthNumbers;
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
@@ -92,6 +95,9 @@ namespace Ordisoftware.Hebrew.Calendar
         WindowState = FormWindowState.Normal;
       Settings.NewMoonsBoardFormLocation = Location;
       Settings.NewMoonsBoardFormClientSize = ClientSize;
+      Settings.NewMoonsBoardFormUseRealDays = EditUseRealDays.Checked;
+      Settings.NewMoonsBoardFormUseTitleUpperCase = EditColumnUpperCase.Checked;
+      Settings.NewMoonsBoardFormShowMonthNumbers = EditShowMonthNumbers.Checked;
       SystemManager.TryCatch(Settings.Save);
     }
 
@@ -221,6 +227,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CreateDataTable()
     {
+      DataGridView.DataSource = null;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board = new DataTable(TableName);
@@ -248,6 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName)
                                                      + ( EditUseRealDays.Checked ? " Moonset" : " Moonrise" );
+      MainForm.Instance.SaveDataBoardDialog.FileName += $" {SelectYear1.Value}-{SelectYear2.Value}";
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

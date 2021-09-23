@@ -149,7 +149,7 @@
     <value>Tableau des célébrations</value>
   </data>
   <data name="EditColumnUpperCase.Text" xml:space="preserve">
-    <value>Utiliser le titre de la colonne en majuscules</value>
+    <value>Utiliser le titre de colonne en majuscules</value>
   </data>
   <data name="EditUseAbbreviatedNames.Text" xml:space="preserve">
     <value>Utiliser les noms abrégés</value>

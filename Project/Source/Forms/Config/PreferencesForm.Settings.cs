@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.Configuration;
@@ -112,10 +112,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoExportSettings()
     {
-      SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
-      //for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-      //if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-      //SaveSettingsDialog.FilterIndex = index + 1;
+      var city = Settings.GPSCity;
+      var omer = AppTranslations.MainFormSubTitleOmer[EditTorahEventsCountAsMoon.Checked][Language.EN];
+      var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+      SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       TabControl.SelectedIndex = 0;
       SaveSettings();

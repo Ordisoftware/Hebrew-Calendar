@@ -47,9 +47,9 @@
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.EditUseRealDays = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -114,9 +114,8 @@
       // EditShowMonthNumbers
       // 
       resources.ApplyResources(this.EditShowMonthNumbers, "EditShowMonthNumbers");
-      this.EditShowMonthNumbers.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormShowMonthNumbers;
+      this.EditShowMonthNumbers.Checked = true;
       this.EditShowMonthNumbers.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditShowMonthNumbers.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormShowMonthNumbers", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditShowMonthNumbers.Name = "EditShowMonthNumbers";
       this.EditShowMonthNumbers.UseVisualStyleBackColor = true;
       this.EditShowMonthNumbers.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -124,9 +123,8 @@
       // EditColumnUpperCase
       // 
       resources.ApplyResources(this.EditColumnUpperCase, "EditColumnUpperCase");
-      this.EditColumnUpperCase.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseTitleUpperCase;
+      this.EditColumnUpperCase.Checked = true;
       this.EditColumnUpperCase.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditColumnUpperCase.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseTitleUpperCase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditColumnUpperCase.Name = "EditColumnUpperCase";
       this.EditColumnUpperCase.UseVisualStyleBackColor = true;
       this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -186,6 +184,7 @@
       this.SelectYear1.Name = "SelectYear1";
       this.SelectYear1.SelectedIndex = -1;
       this.SelectYear1.SelectedItem = null;
+      this.SelectYear1.Value = -1;
       this.SelectYear1.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // SelectYear2
@@ -194,6 +193,7 @@
       this.SelectYear2.Name = "SelectYear2";
       this.SelectYear2.SelectedIndex = -1;
       this.SelectYear2.SelectedItem = null;
+      this.SelectYear2.Value = -1;
       this.SelectYear2.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
       // LabelEnd
@@ -214,9 +214,8 @@
       // EditUseRealDays
       // 
       resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
-      this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NewMoonsBoardFormUseRealDays;
+      this.EditUseRealDays.Checked = true;
       this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "NewMoonsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseRealDays.Name = "EditUseRealDays";
       this.EditUseRealDays.UseVisualStyleBackColor = true;
       this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -235,10 +234,10 @@
       this.Load += new System.EventHandler(this.NewMoonsBoardForm_Load);
       this.Shown += new System.EventHandler(this.NewMoonsBoardForm_Shown);
       this.PanelBottom.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.ResumeLayout(false);
 
     }
