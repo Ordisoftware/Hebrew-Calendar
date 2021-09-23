@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew
   partial class OnlineProviders : DataFile
   {
 
-    static public bool MoveCurrentLanguageAtTop = true;
+    static public bool MoveCurrentLanguageAtTop { get; set; } = true;
 
     /// <summary>
     /// Indicate display name tag.

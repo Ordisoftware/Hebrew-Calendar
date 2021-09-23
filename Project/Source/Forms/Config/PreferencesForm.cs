@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
 using System.IO;
@@ -42,7 +42,6 @@ namespace Ordisoftware.Hebrew.Calendar
     public string OldTimeZone { get; private set; }
     public bool OldUseMoonDays { get; private set; }
     public bool OldUseSimhat { get; private set; }
-    public bool OldShowParashah { get; private set; }
     public bool MustRefreshMonthView { get; private set; }
 
     #endregion
@@ -522,7 +521,21 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditMonthViewOptionChanged(object sender, EventArgs e)
     {
-      if ( IsReady ) MustRefreshMonthView = true;
+      if ( !IsReady ) return;
+      MustRefreshMonthView = true;
+      if ( sender == EditCalendarShowParashah )
+      {
+        bool value = EditCalendarShowParashah.Checked;
+        string message = AppTranslations.SetAllParashahOptions[value].GetLang();
+        if ( DisplayManager.QueryYesNo(message) )
+        {
+          EditMainFormTitleBarShowWeeklyParashah.Checked = value;
+          EditParashahCaptionWithBookAndRef.Checked = value;
+          EditReminderShabatShowParashah.Checked = value;
+          EditWeeklyParashahShowAtStartup.Checked = value;
+          EditWeeklyParashahShowAtNewWeek.Checked = value;
+        }
+      }
     }
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)

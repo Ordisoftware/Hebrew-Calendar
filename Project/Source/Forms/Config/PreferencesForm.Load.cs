@@ -28,8 +28,6 @@ namespace Ordisoftware.Hebrew.Calendar
     private void LoadSettings()
     {
       SystemManager.TryCatch(() => { EditTrayIconUseSpecialDayIcon.Checked = Settings.TrayIconUseSpecialDayIcon; });
-      SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
-      SystemManager.TryCatch(() => { LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString(); });
       SystemManager.TryCatch(() => { EditMonthViewNoDaysBackColor.BackColor = Settings.MonthViewNoDaysBackColor; });
       SystemManager.TryCatch(() => { EditMonthViewBackColor.BackColor = Settings.MonthViewBackColor; });
       SystemManager.TryCatch(() => { EditMonthViewTextColor.BackColor = Settings.MonthViewTextColor; });
@@ -85,14 +83,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditTorahEventsCountAsMoon.Checked = Settings.TorahEventsCountAsMoon; });
       SystemManager.TryCatch(() => { EditUseSimhatTorahOutside.Checked = Settings.UseSimhatTorahOutside; });
       SystemManager.TryCatch(() => { EditUseColors.Checked = Settings.UseColors; });
-      SystemManager.TryCatch(() => { EditMonthViewFontSize.Value = Settings.MonthViewFontSize; });
-      SystemManager.TryCatch(() => { OldLatitude = Settings.GPSLatitude; });
-      SystemManager.TryCatch(() => { OldLongitude = Settings.GPSLongitude; });
-      SystemManager.TryCatch(() => { OldShabatDay = Settings.ShabatDay; });
-      SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
-      SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
-      SystemManager.TryCatch(() => { OldUseSimhat = Settings.UseSimhatTorahOutside; });
-      SystemManager.TryCatch(() => { OldShowParashah = Settings.CalendarShowParashah; });
       SystemManager.TryCatch(() => { EditMoonDayTextFormat.Text = Settings.MoonDayTextFormat; });
       SystemManager.TryCatch(() => { EditWebLinksMenuEnabled.Checked = Settings.WebLinksMenuEnabled; });
       SystemManager.TryCatch(() => { EditAllowSuspendReminder.Checked = Settings.AllowSuspendReminder; });
@@ -106,7 +96,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditLogEnabled.Checked = Settings.TraceEnabled; });
       SystemManager.TryCatch(() => { EditExportFolder.Text = Settings.ExportFolder; });
       SystemManager.TryCatch(() => { EditVolume.Value = Settings.ApplicationVolume; });
-      SystemManager.TryCatch(() => { EditDateBookmarksCount.Value = Settings.DateBookmarksCount; });
       SystemManager.TryCatch(() => { EditUsageStatisticsEnabled.Checked = Settings.UsageStatisticsEnabled; });
       SystemManager.TryCatch(() => { EditRestoreLastViewAtStartup.Checked = Settings.RestoreLastViewAtStartup; });
       SystemManager.TryCatch(() => { EditShowPrintDialog.Checked = Settings.ShowPrintPreviewDialog; });
@@ -120,25 +109,38 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWindowsDoubleBufferingEnabled.Checked = Settings.WindowsDoubleBufferingEnabled; });
       SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
-      SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
-      SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
-      SystemManager.TryCatch(() => { EditMainFormTitleBarShowWeeklyParashah.Checked = Settings.MainFormTitleBarShowWeeklyParashah; });
       SystemManager.TryCatch(() => { EditMainFormTitleBarShowToday.Checked = Settings.MainFormTitleBarShowToday; });
       SystemManager.TryCatch(() => { EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate; });
       SystemManager.TryCatch(() => { EditCalendarLineSpacing.Value = Settings.CalendarLineSpacing; });
-      SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
       SystemManager.TryCatch(() => { EditConfirmShutdown.Checked = Settings.LockSessionConfirmLogOffOrMore; });
       SystemManager.TryCatch(() => { EditAskRegenerateIfIntervalGreater.Checked = Settings.AskRegenerateIfIntervalGreater; });
-      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup; });
-      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek; });
       SystemManager.TryCatch(() => { EditReminderShowLockoutIcon.Checked = Settings.ReminderShowLockoutIcon; });
       SystemManager.TryCatch(() => { EditLoadingFormHidden.Checked = Settings.LoadingFormHidden; });
       SystemManager.TryCatch(() => { EditNavigationWindowCloseOnShowMainForm.Checked = Settings.NavigationWindowCloseOnShowMainForm; });
-      SystemManager.TryCatch(() => { EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef; });
       SystemManager.TryCatch(() => { EditNavigationWindowUseUnicodeIcons.Checked = Settings.NavigationWindowUseUnicodeIcons; });
       SystemManager.TryCatch(() => { EditCalendarUseHoverEffect.Checked = Settings.CalendarUseHoverEffect; });
       SystemManager.TryCatch(() => { EditCalendarShowSelectedBox.Checked = Settings.CalendarShowSelectedBox; });
       SystemManager.TryCatch(() => { EditSelectedDayBoxColorOnlyCurrent.Checked = Settings.SelectedDayBoxColorOnlyCurrent; });
+      SystemManager.TryCatch(() => { EditCalendarShowParashah.Checked = Settings.CalendarShowParashah; });
+      SystemManager.TryCatch(() => { EditMainFormTitleBarShowWeeklyParashah.Checked = Settings.MainFormTitleBarShowWeeklyParashah; });
+      SystemManager.TryCatch(() => { EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef; });
+      SystemManager.TryCatch(() => { EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah; });
+      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup; });
+      SystemManager.TryCatch(() => { EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek; });
+      // Assigned by the form on user action
+      SystemManager.TryCatch(() => { EditMonthViewFontSize.Value = Settings.MonthViewFontSize; });
+      SystemManager.TryCatch(() => { EditDateBookmarksCount.Value = Settings.DateBookmarksCount; });
+      SystemManager.TryCatch(() => { EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay; });
+      // Special
+      SystemManager.TryCatch(() => { LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString(); });
+      SystemManager.TryCatch(() => { LabelLastDBOptimizeDate.Text = Settings.VacuumLastDone.ToShortDateString() + " " + Settings.VacuumLastDone.ToShortTimeString(); });
+      //Old values
+      SystemManager.TryCatch(() => { OldLatitude = Settings.GPSLatitude; });
+      SystemManager.TryCatch(() => { OldLongitude = Settings.GPSLongitude; });
+      SystemManager.TryCatch(() => { OldShabatDay = Settings.ShabatDay; });
+      SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
+      SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
+      SystemManager.TryCatch(() => { OldUseSimhat = Settings.UseSimhatTorahOutside; });
       // Hotkey
       InitHotKeyControls();
       // System

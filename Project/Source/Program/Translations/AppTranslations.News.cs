@@ -41,12 +41,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.4"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
+          [Language.EN] = "• Added search next parashah from today in parashot board." + Globals.NL +
+                          "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
                           "• Fixed export to remove all active and selected day marks in the monthly view." + Globals.NL +
                           "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
                           "• few fixes and improvements.",
 
-          [Language.FR] = "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+          [Language.FR] = "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
+                          "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Correction de l'export pour enlever toutes les marques de jour actif et séléctionné dans la vue mensuelle." + Globals.NL +
                           "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Quelques corrections et améliorations."

@@ -31,10 +31,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public NavigationForm Instance { get; private set; }
 
+    static private int PanelAllExceptParashahTopDefault;
+    static private int PanelAllExceptParashahDelta;
+
     static NavigationForm()
     {
       Instance = new NavigationForm();
       Instance.Relocalize();
+      PanelAllExceptParashahTopDefault = Instance.PanelAllExceptParashah.Top;
+      PanelAllExceptParashahDelta = PanelAllExceptParashahTopDefault - Instance.LabelParashah.Top;
     }
 
     private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
@@ -122,6 +127,25 @@ namespace Ordisoftware.Hebrew.Calendar
             LabelMoonriseValue.Top = 105;
             LabelMoonset.Top = 125;
             LabelMoonsetValue.Top = 125;
+          }
+          if ( Settings.CalendarShowParashah && !LabelParashah.Enabled )
+          {
+            Top -= PanelAllExceptParashahDelta;
+            Height += PanelAllExceptParashahDelta;
+            LabelParashah.Enabled = true;
+            LabelParashah.Visible = true;
+            LabelParashahValue.Visible = true;
+            PanelAllExceptParashah.Top = PanelAllExceptParashahTopDefault;
+          }
+          else
+          if ( !Settings.CalendarShowParashah && LabelParashah.Enabled )
+          {
+            LabelParashah.Visible = false;
+            LabelParashah.Enabled = false;
+            LabelParashahValue.Visible = false;
+            PanelAllExceptParashah.Top = LabelParashah.Top;
+            Height -= PanelAllExceptParashahDelta;
+            Top += PanelAllExceptParashahDelta;
           }
           _Date = value;
         }

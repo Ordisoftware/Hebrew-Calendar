@@ -477,6 +477,9 @@
     <Compile Include="Source\Common\Core\Classes\SoundSource.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
+    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.ShowDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -526,6 +529,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
