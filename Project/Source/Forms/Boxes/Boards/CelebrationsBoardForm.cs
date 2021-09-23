@@ -130,7 +130,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReloadGrid(object sender, EventArgs e)
     {
-      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
+      MainForm.Instance.EditExportDataEnumsAsTranslations.Checked = EditExportDataEnumsAsTranslations.Checked;
       CreateDataTable();
       LoadGrid();
       DataGridView.Refresh();

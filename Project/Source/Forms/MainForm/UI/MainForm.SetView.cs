@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -99,6 +99,12 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         if ( Settings.CurrentView == view && !first ) return;
+        if ( first )
+        {
+          ActionViewReport.Checked = false;
+          ActionViewMonth.Checked = false;
+          ActionViewGrid.Checked = false;
+        }
         if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
           view = ViewMode.Month;
         ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
