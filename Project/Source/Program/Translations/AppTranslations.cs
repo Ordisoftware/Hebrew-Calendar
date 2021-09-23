@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -207,6 +207,20 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "La durée doit être inférieure à {0} secondes: {1}."
       };
 
+    static public readonly TranslationsDictionary OnlineWeatherError
+      = new TranslationsDictionary
+      {
+        [Language.EN] = $"Error on getting data from {{0}}:{Globals.NL2}{{1}}",
+        [Language.FR] = $"Erreur lors de la récupération des données depuis {{0}} :{Globals.NL2}{{1}}"
+      };
+
+    static public readonly TranslationsDictionary OnlineWeatherLocationNotFound
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Coordinates not found.",
+        [Language.FR] = "Coordonnées non trouvées."
+      };
+
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> BoardTimingsTitle
       = new NullSafeDictionary<bool, TranslationsDictionary>
       {
@@ -224,20 +238,6 @@ namespace Ordisoftware.Hebrew.Calendar
             [Language.FR] = "Jours ayant le lever"
           }
         }
-      };
-
-    static public readonly TranslationsDictionary OnlineWeatherError
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Error on getting data from {{0}}:{Globals.NL2}{{1}}",
-        [Language.FR] = $"Erreur lors de la récupération des données depuis {{0}} :{Globals.NL2}{{1}}"
-      };
-
-    static public readonly TranslationsDictionary OnlineWeatherLocationNotFound
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Coordinates not found.",
-        [Language.FR] = "Coordonnées non trouvées."
       };
 
     static public readonly NullSafeDictionary<bool, TranslationsDictionary> SetAllParashahOptions
