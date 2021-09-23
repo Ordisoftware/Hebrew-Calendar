@@ -39,6 +39,13 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
+        ["9.4"] = new TranslationsDictionary
+        {
+          [Language.EN] = "• Fixed some check boxes in celebrations and new moons boards.",
+
+          [Language.FR] = "• Correction de quelques cases à cocher des tableaux des célébrations et des nouvelles lunes."
+        },
+
         ["9.3"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added option to choose action for double-click in visual month." + Globals.NL +
