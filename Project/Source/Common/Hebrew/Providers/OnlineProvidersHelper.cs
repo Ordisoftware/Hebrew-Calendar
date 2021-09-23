@@ -78,6 +78,7 @@ namespace Ordisoftware.Hebrew
                                  EventHandler action,
                                  Action reconstruct)
     {
+      if ( providers == null ) return;
       menuItems.Clear();
       string nameItems = StackMethods.NameOfFromStack(providers, 3).Replace("Globals.", string.Empty);
       foreach ( var item in providers.Items )

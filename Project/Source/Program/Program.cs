@@ -87,8 +87,10 @@ namespace Ordisoftware.Hebrew.Calendar
           || Settings.UpgradeResetRequiredV4_1
           || Settings.UpgradeResetRequiredV5_10 )
         {
+#pragma warning disable S2583 // Conditionally executed code should be reachable
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
+#pragma warning restore S2583 // Conditionally executed code should be reachable
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
