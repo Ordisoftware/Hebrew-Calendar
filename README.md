@@ -75,7 +75,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Improved web links menus to display those in the current language to the top.
 - The monthly view shows sun times instead of moon when using sun omer.
 - Fixed some check boxes in celebrations and new moons boards.
-- Fixed printing to remove all special boxes.
+- Fixed export to remove all active and selected day marks.
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
@@ -324,6 +324,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.24 - Version 9.4
 
 - Improve export filename for celebrations and new moons boards.
+- Fix save and copy images to remove all special boxes.
 - Fix some check boxes in celebrations and new moons boards.
 - Few fixes and improvements.
  

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.Text;
 using System.Linq;
@@ -63,6 +63,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           try
           {
+            Globals.IsPrinting = true;
             CalendarMonth.ShowTodayButton = false;
             CalendarMonth.ShowArrowControls = false;
             if ( interval.IsDefined )
@@ -90,6 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           finally
           {
+            Globals.IsPrinting = false;
             CalendarMonth.ShowTodayButton = true;
             CalendarMonth.ShowArrowControls = true;
           }
