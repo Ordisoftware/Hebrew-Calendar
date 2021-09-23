@@ -112,7 +112,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoExportSettings()
     {
-      SaveSettingsDialog.FileName = "Settings " + Settings.GPSCity + " " + AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN];
+      SaveSettingsDialog.FileName = string.Format("Settings {0} {1} {2}",
+                                                  Settings.GPSCity, 
+                                                  AppTranslations.MainFormSubTitleOmer[Program.Settings.TorahEventsCountAsMoon][Language.EN], 
+                                                  (DayOfWeek)Settings.ShabatDay);
       if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
       TabControl.SelectedIndex = 0;
       SaveSettings();
