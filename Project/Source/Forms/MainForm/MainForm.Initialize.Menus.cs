@@ -46,43 +46,17 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     public void InitializeSpecialMenus()
     {
-      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        if ( weekParashah.Factory == null ) return;
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         weekParashah.Factory,
-                                         weekParashah.Day.HasLinkedParashah);
-      });
-      ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-        if ( weekParashah == null ) return;
-        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                         weekParashah,
-                                         ContextMenuDayCurrentEvent.HasLinkedParashah);
-      });
-      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-        if ( weekParashah.Factory == null ) return;
-        string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-      });
-      ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-      {
-        var menuitem = (ToolStripMenuItem)sender;
-        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-        if ( weekParashah == null ) return;
-        string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-      });
+      CreateProvidersLinks();
       CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
       CommonMenusControl.Instance.ActionViewLog.Enabled = DebugManager.TraceEnabled;
       ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      if ( Settings.WebLinksMenuEnabled )
+      {
+        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+        ActionWebLinks.DuplicateTo(MenuWebLinks);
+      }
+      MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
+      MenuWebLinks.Enabled = Settings.WebLinksMenuEnabled;
       ActionLocalWeather.Visible = Settings.WeatherMenuItemsEnabled;
       ActionOnlineWeather.Visible = Settings.WeatherMenuItemsEnabled;
       SeparatorMenuWeather.Visible = Settings.WeatherMenuItemsEnabled;
@@ -94,19 +68,55 @@ namespace Ordisoftware.Hebrew.Calendar
       ActionLocalWeather.Tag = isVisible;
       ActionOnlineWeather.Tag = isVisible;
       SeparatorMenuWeather.Tag = isVisible;
-      MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
-      MenuWebLinks.Enabled = Settings.WebLinksMenuEnabled;
-      if ( Settings.WebLinksMenuEnabled )
-      {
-        ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
-        ActionWebLinks.DuplicateTo(MenuWebLinks);
-      }
       ActionTools.DuplicateTo(MenuTools);
       ActionInformation.DuplicateTo(MenuInformation);
       if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
         ActionEnableReminder.PerformClick();
       ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
       MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
+    }
+
+    /// <summary>
+    /// Create providers links menu items.
+    /// </summary>
+    private void CreateProvidersLinks()
+    {
+      // Weekly parashah menu
+      ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+        if ( weekParashah.Factory == null ) return;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         weekParashah.Factory,
+                                         weekParashah.Day.HasLinkedParashah);
+      });
+      ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+        if ( weekParashah.Factory == null ) return;
+        string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+      });
+      // Visual month context menu
+      ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
+        if ( weekParashah == null ) return;
+        HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+                                         weekParashah,
+                                         ContextMenuDayCurrentEvent.HasLinkedParashah);
+      });
+      ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+      {
+        var menuitem = (ToolStripMenuItem)sender;
+        var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
+        if ( weekParashah == null ) return;
+        string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
+        HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+      });
     }
 
   }

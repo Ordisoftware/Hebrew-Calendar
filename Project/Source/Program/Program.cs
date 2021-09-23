@@ -319,6 +319,7 @@ namespace Ordisoftware.Hebrew.Calendar
           });
         }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
+        task?.Wait();
         MainForm.Instance.CreateSystemInformationMenu();
       }
       catch ( Exception ex )
@@ -327,7 +328,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        task?.Wait();
         Globals.ChronoTranslate.Stop();
         Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
       }
