@@ -515,7 +515,7 @@
     <value>27, 13</value>
   </data>
   <data name="LabelShabatDay.Text" xml:space="preserve">
-    <value>Jour</value>
+    <value>Jour du Shabat</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>381, 17</value>

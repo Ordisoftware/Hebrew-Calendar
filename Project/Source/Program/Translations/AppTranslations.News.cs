@@ -44,12 +44,14 @@ namespace Ordisoftware.Hebrew.Calendar
           [Language.EN] = "• Added option to choose action for double-click in visual month." + Globals.NL +
                           "• Added keyboard shortcuts to move to previous or next day or week." + Globals.NL +
                           "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
+                          "• Fix printing to remove all special boxes." + Globals.NL +
                           "• Some fixes and improvements.",
 
 
           [Language.FR] = "• Ajout d'une option pour choisir l'action pour le double-clic dans le mois visuel." + Globals.NL +
                           "• Ajout de raccourcis clavier aller au jour ou semaine précédent ou suivant." + Globals.NL +
                           "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
+                          "• Correction de l'impression pour enlever toutes les cases spéciales." + Globals.NL +
                           "• Quelques améliorations et corrections."
         },
 

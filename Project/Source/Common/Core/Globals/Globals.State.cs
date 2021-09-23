@@ -69,6 +69,11 @@ namespace Ordisoftware.Core
     static public bool IsGenerating { get; set; }
 
     /// <summary>
+    /// Indicate if data is being printed.
+    /// </summary>
+    static public bool IsPrinting { get; set; }
+       
+    /// <summary>
     /// Indicate if current processing must be cancelled.
     /// </summary>
     static public bool CancelRequired { get; set; }

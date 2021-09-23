@@ -41,6 +41,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       try
       {
+        Globals.IsPrinting = true;
         CalendarMonth.ShowTodayButton = false;
         CalendarMonth.ShowArrowControls = false;
         ActionPrint.Visible = false;
@@ -51,6 +52,7 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
+        Globals.IsPrinting = false;
         CalendarMonth.ShowTodayButton = true;
         CalendarMonth.ShowArrowControls = true;
         ToolStrip.Enabled = true;

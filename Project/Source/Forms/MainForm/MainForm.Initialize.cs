@@ -224,6 +224,7 @@ namespace Ordisoftware.Hebrew.Calendar
       this.SyncUI(() =>
       {
         MenuShowHide_Click(null, null);
+        CalendarMonth.Refresh();
         var forms = Application.OpenForms.GetAll().Where(f => f.Visible);
         forms.ToList().ForEach(f => f.ForceBringToFront());
         var form = forms.LastOrDefault();
