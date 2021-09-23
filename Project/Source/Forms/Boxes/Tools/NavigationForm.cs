@@ -326,6 +326,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       ActiveControl = LabelDate;
       MainForm.Instance.MenuShowHide_Click(null, null);
+      MainForm.Instance.Refresh();
       if ( e != null && Settings.NavigationWindowCloseOnShowMainForm )
         Close();
       else
