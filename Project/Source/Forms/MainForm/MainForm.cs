@@ -1055,7 +1055,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Month View Context Menu
+    #region Context Menu Management
 
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
@@ -1092,14 +1092,41 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
-    {
-      CalendarMonth.Refresh();
-    }
-
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
       UpdateContextMenuStripDay();
+    }
+
+    private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
+    {
+      ActionNavigate.PerformClick();
+    }
+
+    private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
+    {
+      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuDayCurrentEvent.Date
+                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+      CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
+    }
+
+    private void ContextMenuDayParashah_Click(object sender, EventArgs e)
+    {
+      if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+        if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
+          if ( sender == ContextMenuDayParashahShowDescription )
+            ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+          else
+          if ( sender == ContextMenuDayParashotBoard )
+            ParashotForm.Run(parashah);
+    }
+
+    #endregion
+
+    #region Context Menu Days
+
+    private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+    {
+      CalendarMonth.Refresh();
     }
 
     private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
@@ -1127,10 +1154,9 @@ namespace Ordisoftware.Hebrew.Calendar
       DateSelected = null;
     }
 
-    private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
-    {
-      ActionNavigate.PerformClick();
-    }
+    #endregion
+
+    #region Context Menu Dates Diff
 
     private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
     {
@@ -1144,41 +1170,21 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayDatesDiffTo(DateTime date)
     {
-      DatesDiffCalculatorForm.Run(new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date), ensureOrder: true);
+      var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);
+      DatesDiffCalculatorForm.Run(tuple, ensureOrder: true);
     }
 
-    private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
-    {
-      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuDayCurrentEvent.Date
-                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
-      CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
-    }
+    #endregion
 
-    private void ContextMenuDayParashah_Click(object sender, EventArgs e)
-    {
-      var day = ContextMenuDayCurrentEvent.GetParashahReadingDay();
-      if ( day == null ) return;
-      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      if ( parashah == null ) return;
-      if ( sender == ContextMenuDayParashahShowDescription )
-        ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
-      else
-      if ( sender == ContextMenuDayParashotBoard )
-        ParashotForm.Run(parashah);
-    }
+    #region Context Menu Bookmarks
 
     private ToolStripMenuItem CurrentBookmarkMenu;
-
-    private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
-    {
-      if ( EditDateBookmarksForm.Run() )
-        LoadMenuBookmarks(this);
-    }
 
     internal void LoadMenuBookmarks(Form caller)
     {
       DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
-      if ( caller != DatesDiffCalculatorForm.Instance ) DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+      if ( caller != DatesDiffCalculatorForm.Instance )
+        DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
       MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
       MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
     }
@@ -1190,52 +1196,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      var control = CurrentBookmarkMenu;
-      if ( e.Button == MouseButtons.Right )
-      {
-        if ( control == ContextMenuDaySaveBookmark )
-          if ( !menuitem.Text.EndsWith(")") )
-          {
-            if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
-            menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
-            Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
-            SystemManager.TryCatch(Settings.Save);
-          }
-      }
-      else
-      if ( e.Button == MouseButtons.Left )
-      {
-        if ( control == ContextMenuDaySaveBookmark )
-          setBookmark();
-        else
-        if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
-          if ( control == ContextMenuDayGoToBookmark )
-            GoToDate(date);
-      }
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-      //
-      void setBookmark()
-      {
-        var dateNew = ContextMenuDayCurrentEvent.Date;
-        for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-        {
-          var date = Program.DateBookmarks[index];
-          if ( dateNew == date ) return;
-        }
-        var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
-        if ( dateOld != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
-            return;
-        menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
-        if ( menuitem.OwnerItem == ContextMenuDayGoToBookmark )
-          ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
-        else
-        if ( menuitem.OwnerItem == ContextMenuDaySaveBookmark )
-          ContextMenuDayGoToBookmark.DropDownItems[ContextMenuDaySaveBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
-        Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
-        SystemManager.TryCatch(Settings.Save);
-      }
+      DoBookmarksMouseUp(sender, e);
+    }
+
+    private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
+    {
+      if ( EditDateBookmarksForm.Run() )
+        LoadMenuBookmarks(this);
     }
 
     #endregion

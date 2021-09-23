@@ -45,6 +45,7 @@ namespace Ordisoftware.Hebrew.Calendar
         IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
         IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
         if ( showbox && Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous - False warning due to try...finally
         if ( !IsSpecialDay && !IsSpecialDayOld )
           WeeklyParashahShownAtNewWeek = true;
         else
@@ -53,6 +54,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( IsSpecialDay )
           WeeklyParashahShownAtNewWeek = false;
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous - False warning due to try...finally
       }
       catch ( Exception ex )
       {
@@ -79,6 +81,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( LockSessionForm.Instance?.Visible ?? false )
             LockSessionForm.Instance.Popup();
         });
+#pragma warning disable S1871 // Two branches in a conditional structure should not have exactly the same implementation - Opinion
         if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
         {
           WeeklyParashahShownAtStartup = true;
@@ -95,6 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( IsSpecialDay )
           WeeklyParashahShownAtNewWeek = false;
+#pragma warning restore S1871 // Two branches in a conditional structure should not have exactly the same implementation - Opinion
       }
     }
 
