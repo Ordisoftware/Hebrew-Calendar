@@ -983,10 +983,10 @@ namespace CodeProjectCalendar.NET
         selectedMonth = today.Month;
         selectedYear = today.Year;
       }
-      // ORDISOFWTARE MODIF END
-
+      bool printmutex = MainForm.Instance.PrintMutex;
       bool CheckSelected(int day)
         => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
+      // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
 
@@ -1032,44 +1032,47 @@ namespace CodeProjectCalendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
-                if ( Program.Settings.UseColors )
-                {
-                  if ( !CheckSelected(counter1) )
+                if ( !printmutex )
+                  if ( Program.Settings.UseColors )
                   {
-                    var pen = Program.Settings.UseColors
-                              ? PenSelectedDay
-                              : PenBlack;
-                    g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
+                    if ( CheckSelected(counter1) && !printmutex )
+                    {
+                      isSelected = true;
+                      g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
+                    }
+                    else
+                    {
+                      var pen = Program.Settings.UseColors
+                                ? PenSelectedDay
+                                : PenBlack;
+                      g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
+                    }
                   }
                   else
                   {
-                    isSelected = true;
-                    g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
+                    if ( CheckSelected(counter1) && !printmutex )
+                    {
+                      isSelected = true;
+                      g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
+                    }
+                    else
+                    {
+                      g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                    }
                   }
-                }
                 else
-                {
-                  if ( CheckSelected(counter1) )
-                  {
-                    isSelected = true;
-                    g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
-                  }
-                  else
-                  {
-                    g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
-                  }
-                }
+                  g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH
-                if ( CheckSelected(counter1) )
+                if ( CheckSelected(counter1) && !printmutex )
                 {
                   isSelected = true;
                   isSelectedNoToday = true;
@@ -1090,35 +1093,38 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN ACTUAL REAL DAY
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
-                if ( Program.Settings.UseColors )
-                {
-                  if ( !CheckSelected(counter1) )
+                if ( !printmutex )
+                  if ( Program.Settings.UseColors )
                   {
-                    g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawRectangle(PenSelectedDay, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
+                    if ( CheckSelected(counter1) )
+                    {
+                      isSelected = true;
+                      g.FillRectangle(CurrentDayBackBrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
+                    }
+                    else
+                    {
+                      g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                      g.DrawRectangle(PenSelectedDay, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
+                    }
                   }
                   else
                   {
-                    isSelected = true;
-                    g.FillRectangle(CurrentDayBackBrush, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
+                    if ( CheckSelected(counter1) && !printmutex )
+                    {
+                      isSelected = true;
+                      g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
+                    }
+                    else
+                    {
+                      g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
+                      g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
+                    }
                   }
-                }
                 else
-                {
-                  if ( CheckSelected(counter1) )
-                  {
-                    isSelected = true;
-                    g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, Brushes.White, xStart + 5, yStart + 2);
-                  }
-                  else
-                  {
-                    g.DrawRectangle(PenBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
-                    g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
-                  }
-                }
+                  g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
               }
               else
@@ -1126,7 +1132,7 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN OTHER DAYS
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
-                if ( CheckSelected(counter1) )
+                if ( CheckSelected(counter1) && !printmutex )
                 {
                   isSelected = true;
                   isSelectedNoToday = true;
@@ -1205,56 +1211,59 @@ namespace CodeProjectCalendar.NET
           }
 
           // ORDISOFWTARE MODIF BEGIN
-          bool isactiveday = counter1 - 1 == _calendarDate.Day;
-          bool isMouseHover = false;
-          var area1 = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
-          if ( Program.Settings.CalendarUseHoverEffect )
+          if ( !printmutex )
           {
-            var mouse = PointToClient(Cursor.Position);
-            isMouseHover = area1.Contains(mouse.X, mouse.Y);
-          }
-          //if ( Program.Settings.CalendarShowSelectedBox )
-          {
-            var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
-            if ( isSelected )
+            bool isactiveday = counter1 - 1 == _calendarDate.Day;
+            bool isMouseHover = false;
+            var area1 = new Rectangle(xStart + 1, yStart + 1, cellWidth - 2, cellHeight - 2);
+            if ( Program.Settings.CalendarUseHoverEffect )
             {
-              if ( Program.Settings.CalendarShowSelectedBox )
-              {
-                var pen = Program.Settings.UseColors
-                          ? isSelectedNoToday && Program.Settings.SelectedDayBoxColorOnlyCurrent
-                            ? PenText
-                            : PenSelectedDay
-                          : PenBlack;
-                g.DrawRectangle(pen, area1);
-              }
-              isSelectedNoToday = false;
-              if ( isMouseHover && !outOfMonth )
+              var mouse = PointToClient(Cursor.Position);
+              isMouseHover = area1.Contains(mouse.X, mouse.Y);
+            }
+            //if ( Program.Settings.CalendarShowSelectedBox )
+            {
+              var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
+              if ( isSelected )
               {
                 if ( Program.Settings.CalendarShowSelectedBox )
-                  g.DrawRectangle(PenHoverEffect, area2);
-                else
-                  g.DrawRectangle(PenHoverEffect, area1);
-                isMouseHover = false;
-              }
-            }
-            else
-            {
-              if ( Program.Settings.CalendarUseHoverEffect )
-                if ( isSelected || ( isMouseHover && !outOfMonth ) )
-                  if ( counter1 - 1 == today.Day && isactiveday )
-                    g.DrawRectangle(PenHoverEffect, area2);
-                  else
-                  if ( isactiveday )
+                {
+                  var pen = Program.Settings.UseColors
+                            ? isSelectedNoToday && Program.Settings.SelectedDayBoxColorOnlyCurrent
+                              ? PenText
+                              : PenSelectedDay
+                            : PenBlack;
+                  g.DrawRectangle(pen, area1);
+                }
+                isSelectedNoToday = false;
+                if ( isMouseHover && !outOfMonth )
+                {
+                  if ( Program.Settings.CalendarShowSelectedBox )
                     g.DrawRectangle(PenHoverEffect, area2);
                   else
                     g.DrawRectangle(PenHoverEffect, area1);
+                  isMouseHover = false;
+                }
+              }
+              else
+              {
+                if ( Program.Settings.CalendarUseHoverEffect )
+                  if ( isSelected || ( isMouseHover && !outOfMonth ) )
+                    if ( counter1 - 1 == today.Day && isactiveday )
+                      g.DrawRectangle(PenHoverEffect, area2);
+                    else
+                    if ( isactiveday )
+                      g.DrawRectangle(PenHoverEffect, area2);
+                    else
+                      g.DrawRectangle(PenHoverEffect, area1);
+              }
             }
+            if ( !isSelected && !outOfMonth )
+              if ( isactiveday )
+                g.DrawRectangle(PenActiveDay, area1);
+            isSelected = false;
+            outOfMonth = false;
           }
-          if ( !isSelected && !outOfMonth )
-            if ( isactiveday )
-              g.DrawRectangle(PenActiveDay, area1);
-          isSelected = false;
-          outOfMonth = false;
           // ORDISOFWTARE MODIF END
 
           xStart += cellWidth;

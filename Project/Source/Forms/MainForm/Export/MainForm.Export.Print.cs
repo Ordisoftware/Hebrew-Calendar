@@ -26,6 +26,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private int PrinterCurrentLine;
 
+    public bool PrintMutex;
+
     private void ExportPrint()
     {
       var process = new ExportActions()
@@ -34,7 +36,17 @@ namespace Ordisoftware.Hebrew.Calendar
         [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
         [ViewMode.Grid] = null
       };
-      DoExport(ExportAction.Print, process, null);
+      PrintMutex = true;
+      try
+      {
+        CalendarMonth.Refresh();
+        DoExport(ExportAction.Print, process, null);
+      }
+      finally
+      {
+        PrintMutex = false; ;
+        CalendarMonth.Refresh();
+      }
     }
 
     private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
