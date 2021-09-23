@@ -324,7 +324,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.24 - Version 9.4
 
 - Fix some check boxes in celebrations and new moons boards.
-- Few fixes.
+- Few fixes and improvements.
  
 #### 2021.09.23 - Version 9.3
 
