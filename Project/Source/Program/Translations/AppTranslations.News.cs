@@ -41,9 +41,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.4"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Fixed some check boxes in celebrations and new moons boards.",
+          [Language.EN] = "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
+                          "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
+                          "• few fixes and improvements.",
 
-          [Language.FR] = "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes."
+          [Language.FR] = "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+                          "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+                          "• Quelques corrections et améliorations."
         },
 
         ["9.x"] = new TranslationsDictionary
