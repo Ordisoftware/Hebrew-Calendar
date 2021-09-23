@@ -320,6 +320,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### 2021.09.24 - Version 9.4
+
+- Fix some checkboxes in celebrations and new moons boards.
+
 #### 2021.09.23 - Version 9.3
 
 - Add option to choose action for double-click in visual month: nothing, set active or select day.
