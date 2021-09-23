@@ -70,7 +70,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added option to set active day by click in monthly view.
 - Added option for double-click in visual month to set active or select.
 - Added some keyboard shortcuts to change and select day in monthly view.
-- Added celebration verses board and command-line option.
+- Added celebration verses board and its command-line option.
 - Moved day of shabat selection to the generation tab of the preferences form.
 - Improved web links menus to display those in the current language to the top.
 - The monthly view shows sun times instead of moon when using sun omer.
