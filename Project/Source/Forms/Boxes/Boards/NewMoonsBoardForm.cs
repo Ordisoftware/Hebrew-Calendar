@@ -58,9 +58,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
+      EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;
       EditColumnUpperCase.Checked = Settings.NewMoonsBoardFormUseTitleUpperCase;
       EditShowMonthNumbers.Checked = Settings.NewMoonsBoardFormShowMonthNumbers;
-      EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
@@ -95,6 +95,9 @@ namespace Ordisoftware.Hebrew.Calendar
         WindowState = FormWindowState.Normal;
       Settings.NewMoonsBoardFormLocation = Location;
       Settings.NewMoonsBoardFormClientSize = ClientSize;
+      Settings.NewMoonsBoardFormUseRealDays = EditUseRealDays.Checked;
+      Settings.NewMoonsBoardFormUseTitleUpperCase = EditColumnUpperCase.Checked;
+      Settings.NewMoonsBoardFormShowMonthNumbers = EditShowMonthNumbers.Checked;
       SystemManager.TryCatch(Settings.Save);
     }
 
@@ -122,9 +125,6 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReloadGrid(object sender, EventArgs e)
     {
-      Settings.NewMoonsBoardFormUseTitleUpperCase = EditColumnUpperCase.Checked;
-      Settings.NewMoonsBoardFormShowMonthNumbers = EditShowMonthNumbers.Checked;
-      Settings.NewMoonsBoardFormUseRealDays = EditUseRealDays.Checked;
       CreateDataTable();
       LoadGrid();
     }

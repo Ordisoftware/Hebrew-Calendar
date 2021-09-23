@@ -130,8 +130,8 @@ namespace Ordisoftware.Hebrew
     static public readonly TranslationsDictionary BoardExportFileName
       = new TranslationsDictionary
       {
-        [Language.EN] = /*SysTranslations.Board[Language.EN] +*/ "Board {0}",
-        [Language.FR] = /*SysTranslations.Board[Language.FR] +*/ "Board {0}",
+        [Language.EN] = /* TODO remove ? SysTranslations.Board[Language.EN] +*/ "Board {0}",
+        [Language.FR] = /* TODO remove ? SysTranslations.Board[Language.FR] +*/ "Board {0}",
       };
 
     static public readonly TranslationsDictionary WeeklyParashah
