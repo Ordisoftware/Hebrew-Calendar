@@ -42,10 +42,12 @@ namespace Ordisoftware.Hebrew.Calendar
         ["9.4"] = new TranslationsDictionary
         {
           [Language.EN] = "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
+                          "• Fixed export to remove all active and selected day marks in the monthly view." + Globals.NL +
                           "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
                           "• few fixes and improvements.",
 
           [Language.FR] = "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
+                          "• Correction de l'export pour enlever toutes les marques de jour actif et séléctionné dans la vue mensuelle." + Globals.NL +
                           "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Quelques corrections et améliorations."
         },
@@ -63,7 +65,6 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
                           "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                           "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
-                          "• Fixed printing to remove all special boxes." + Globals.NL +
                           "• Some fixes and improvements." + Globals.NL +
                           "• Optimized code." + Globals.NL +
                           "• Updated web links.",
@@ -79,7 +80,6 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
                           "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
                           "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
-                          "• Correction de l'impression pour enlever toutes les cases spéciales." + Globals.NL +
                           "• Quelques corrections et améliorations." + Globals.NL +
                           "• Code optimisé." + Globals.NL +
                           "• Mise à jour les liens web."
