@@ -111,24 +111,24 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WindowsDoubleBufferingEnabled = EditWindowsDoubleBufferingEnabled.Checked;
       Settings.WeatherAppPath = EditWeatherAppPath.Text;
       Settings.WeatherMenuItemsEnabled = EditWeatherMenuItemsEnabled.Checked;
-      Settings.CalendarShowParashah = EditCalendarShowParashah.Checked;
-      Settings.MainFormTitleBarShowWeeklyParashah = EditMainFormTitleBarShowWeeklyParashah.Checked;
-      Settings.MainFormTitleBarShowToday = EditMainFormTitleBarShowToday.Checked;
       Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
+      Settings.MainFormTitleBarShowToday = EditMainFormTitleBarShowToday.Checked;
       Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
-      Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
       Settings.LockSessionConfirmLogOffOrMore = EditConfirmShutdown.Checked;
       Settings.AskRegenerateIfIntervalGreater = EditAskRegenerateIfIntervalGreater.Checked;
-      Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
-      Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
       Settings.ReminderShowLockoutIcon = EditReminderShowLockoutIcon.Checked;
       Settings.LoadingFormHidden = EditLoadingFormHidden.Checked;
       Settings.NavigationWindowCloseOnShowMainForm = EditNavigationWindowCloseOnShowMainForm.Checked;
-      Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
       Settings.NavigationWindowUseUnicodeIcons = EditNavigationWindowUseUnicodeIcons.Checked;
       Settings.CalendarUseHoverEffect = EditCalendarUseHoverEffect.Checked;
       Settings.CalendarShowSelectedBox = EditCalendarShowSelectedBox.Checked;
       Settings.SelectedDayBoxColorOnlyCurrent = EditSelectedDayBoxColorOnlyCurrent.Checked;
+      Settings.CalendarShowParashah = EditCalendarShowParashah.Checked;
+      Settings.MainFormTitleBarShowWeeklyParashah = EditMainFormTitleBarShowWeeklyParashah.Checked;
+      Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
+      Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
+      Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
+      Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
       // Navigation window
       NavigationForm.Instance.Relocalize();
       // Month view

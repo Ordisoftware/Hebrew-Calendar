@@ -240,6 +240,25 @@ namespace Ordisoftware.Hebrew.Calendar
         [Language.FR] = "Coordonnées non trouvées."
       };
 
+    static public readonly NullSafeDictionary<bool, TranslationsDictionary> SetAllParashahOptions
+      = new NullSafeDictionary<bool, TranslationsDictionary>
+      {
+        {
+          true, new TranslationsDictionary
+          {
+            [Language.EN] = "Do you want to enable all parashah options?",
+            [Language.FR] = "Voulez-vous activer toutes les options de parashah ?"
+          }
+          },
+        {
+          false, new TranslationsDictionary
+          {
+            [Language.EN] = "Do you want to disable all parashah options?",
+            [Language.FR] = "Voulez-vous désactiver toutes les options de parashah ?"
+          }
+        }
+      };
+
   }
 
 }

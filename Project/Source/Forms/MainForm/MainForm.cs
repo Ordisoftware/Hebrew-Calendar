@@ -713,6 +713,7 @@ namespace Ordisoftware.Hebrew.Calendar
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
       ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
       ApplicationStatistics.UpdateDBParashotMemorySizeRequired = true;
+      ApplicationStatistics.UpdateDBFileSizeRequired = true;
       DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
     }
 

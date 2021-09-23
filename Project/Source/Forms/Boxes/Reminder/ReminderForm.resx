@@ -464,19 +464,19 @@
   </metadata>
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGeSURBVDhPlVPbSgJRFPVf+oQwu/kTXfCG+BdFSF5mJMoz
-        I4SvldBDvfTmD/QJEiE2iCXoCAqmKDIj6G7vPWcULTEXrNnnbPZaZ80ZxkO4zee/RS4HWU2DmwUKrkLX
-        iW0e/gsip8M61Go1yArxJCWLoJMJ5fI7GB8VZqVchlLpjfuJdJpr1TAo0bOUzeEa7EZU8MeumXuRDBhG
-        hfspRQHLtnlNSfB1X6TUgWtQr3+B2WwwG7g2jCr3i8UipFUVkjIJ3YmUOnANWmYD2q0mmFibzToafnJ/
-        GTQvpQ5cA19Ywegq9LodOI0XoNNuwcnFPVYTApcF8AadBCsNxqM+TMcDrqNBF/q9zowW7q1hj+dWGtDp
-        /tgVHEYzEEo8wmg44ARUg7jfCa1JgBmQE6SNSSywrSGMJWFqIZ0vsdLAF07jp1RwNeGTYWLD8fkdC4N4
-        B/9IsITplB6yzvHLQOhuAgUOoirs410E4g/cOzrDBAjae4MpXtO8lDrQ8EfaBDQvpQ4SyeQrNeVfJ6lx
-        VJeCiH2ao3kpnWELub0BaR7h8fwA8iVpw1FqE2QAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
+        ITaIJegICqYoMiPobu89ZxQtMRes2eds9lpnzRnGQ7jN579FLgdZTYObBQquQteJbR7+CyKnwzrUajXI
+        CvEkJYugkwnl8jsYHxVmpVyGUumN+4l0mmvVMCjRs5TN4RrsRlTwx66Ze5EMGEaF+ylFAcu2eU1J8HVf
+        pNSBa1Cvf4HZbDAbuDaMKveLxSKkVRWSMgndiZQ6cA1aZgParSaYWJvNOhp+cn8ZNC+lDlwDX1jB6Cr0
+        uh04jReg027BycU9VhMClwXwBp0EKw3Goz5MxwOuo0EX+r3OjBburWGP51Ya0On+2BUcRjMQSjzCaDjg
+        BFSDuN8JrUmAGZATpI1JLLCtIYwlYWohnS+x0sAXTuOnVHA14ZNhYsPx+R0Lg3gH/0iwhOmUHrLO8ctA
+        6G4CBQ6iKuzjXQTiD9w7OsMECNp7gyle07yUOtDwR9oENC+lDhLJ5Cs15V8nqXFUl4KIfZqjeSmdYQu5
+        vQFpHuHx/ADyJWnDUWoTZAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
     <value>Show description</value>
@@ -498,13 +498,13 @@
     <value />
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>162, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -525,7 +525,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -548,13 +548,13 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 120</value>
+    <value>166, 98</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>

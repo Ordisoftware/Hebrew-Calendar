@@ -522,7 +522,21 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void EditMonthViewOptionChanged(object sender, EventArgs e)
     {
-      if ( IsReady ) MustRefreshMonthView = true;
+      if ( !IsReady ) return;
+      MustRefreshMonthView = true;
+      if ( sender == EditCalendarShowParashah )
+      {
+        bool value = EditCalendarShowParashah.Checked;
+        string message = AppTranslations.SetAllParashahOptions[value].GetLang();
+        if ( DisplayManager.QueryYesNo(message) )
+        {
+          EditMainFormTitleBarShowWeeklyParashah.Checked = value;
+          EditParashahCaptionWithBookAndRef.Checked = value;
+          EditReminderShabatShowParashah.Checked = value;
+          EditWeeklyParashahShowAtStartup.Checked = value;
+          EditWeeklyParashahShowAtNewWeek.Checked = value;
+        }
+      }
     }
 
     private void EditUseColors_CheckedChanged(object sender, EventArgs e)

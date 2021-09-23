@@ -126,7 +126,11 @@ namespace Ordisoftware.Hebrew.Calendar
             }
           }
           else
-            form.LabelParashahValue.Enabled = false;
+          {
+            form.LabelParashahValue.Text = string.Empty;
+            form.Height -= form.LabelParashahValue.Height;
+            form.ActionLockout.Top -= (int)(form.LabelParashahValue.Height * 0.75);
+          }
         }
         form.ActionLockout.Visible = isLockSessionIcon;
         form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
