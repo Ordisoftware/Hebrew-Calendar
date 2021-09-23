@@ -73,8 +73,8 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added celebration verses board and command-line option.
 - Moved day of shabat selection to the generation tab of the preferences form.
 - Improved web links menus to display those in the current language to the top.
-- Fix printing to remove all special boxes.
 - The monthly view shows sun times instead of moon when using sun omer.
+- Fix printing to remove all special boxes.
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
