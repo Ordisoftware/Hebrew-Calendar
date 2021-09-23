@@ -33,8 +33,17 @@
       this.PanelTop = new System.Windows.Forms.Panel();
       this.LabelDate = new System.Windows.Forms.Label();
       this.PanelMiddle = new System.Windows.Forms.Panel();
-      this.LabelLunarMonthName = new System.Windows.Forms.Label();
+      this.PanelAllExceptParashah = new System.Windows.Forms.Panel();
+      this.LabelEventSeasonValue = new System.Windows.Forms.Label();
+      this.LabelEventSeason = new System.Windows.Forms.Label();
       this.LabelCurrentDayValue = new System.Windows.Forms.LinkLabel();
+      this.LabelCurrentDay = new System.Windows.Forms.Label();
+      this.LabelEventTorah = new System.Windows.Forms.Label();
+      this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
+      this.LabelEventTorahValue = new System.Windows.Forms.Label();
+      this.LabelTorahNextValue = new System.Windows.Forms.Label();
+      this.LabelTorahNext = new System.Windows.Forms.Label();
+      this.LabelLunarMonthName = new System.Windows.Forms.Label();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,15 +51,7 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.LabelTorahNextDateValue = new System.Windows.Forms.LinkLabel();
-      this.LabelTorahNextValue = new System.Windows.Forms.Label();
-      this.LabelTorahNext = new System.Windows.Forms.Label();
-      this.LabelEventTorahValue = new System.Windows.Forms.Label();
-      this.LabelEventTorah = new System.Windows.Forms.Label();
       this.LabelParashah = new System.Windows.Forms.Label();
-      this.LabelCurrentDay = new System.Windows.Forms.Label();
-      this.LabelEventSeason = new System.Windows.Forms.Label();
-      this.LabelEventSeasonValue = new System.Windows.Forms.Label();
       this.PictureMoon = new System.Windows.Forms.PictureBox();
       this.LabelMoonsetValue = new System.Windows.Forms.Label();
       this.LabelMoonriseValue = new System.Windows.Forms.Label();
@@ -73,13 +74,12 @@
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
-      this.PanelAllExceptParashah = new System.Windows.Forms.Panel();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
+      this.PanelAllExceptParashah.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
       this.PanelBottom.SuspendLayout();
-      this.PanelAllExceptParashah.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelTop
@@ -116,10 +116,29 @@
       resources.ApplyResources(this.PanelMiddle, "PanelMiddle");
       this.PanelMiddle.Name = "PanelMiddle";
       // 
-      // LabelLunarMonthName
+      // PanelAllExceptParashah
       // 
-      resources.ApplyResources(this.LabelLunarMonthName, "LabelLunarMonthName");
-      this.LabelLunarMonthName.Name = "LabelLunarMonthName";
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeasonValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeason);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDayValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDay);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorah);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextDateValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorahValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNext);
+      resources.ApplyResources(this.PanelAllExceptParashah, "PanelAllExceptParashah");
+      this.PanelAllExceptParashah.Name = "PanelAllExceptParashah";
+      // 
+      // LabelEventSeasonValue
+      // 
+      resources.ApplyResources(this.LabelEventSeasonValue, "LabelEventSeasonValue");
+      this.LabelEventSeasonValue.Name = "LabelEventSeasonValue";
+      // 
+      // LabelEventSeason
+      // 
+      resources.ApplyResources(this.LabelEventSeason, "LabelEventSeason");
+      this.LabelEventSeason.Name = "LabelEventSeason";
       // 
       // LabelCurrentDayValue
       // 
@@ -129,6 +148,45 @@
       this.LabelCurrentDayValue.Name = "LabelCurrentDayValue";
       this.LabelCurrentDayValue.TabStop = true;
       this.LabelCurrentDayValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDay_LinkClicked);
+      // 
+      // LabelCurrentDay
+      // 
+      resources.ApplyResources(this.LabelCurrentDay, "LabelCurrentDay");
+      this.LabelCurrentDay.Name = "LabelCurrentDay";
+      // 
+      // LabelEventTorah
+      // 
+      resources.ApplyResources(this.LabelEventTorah, "LabelEventTorah");
+      this.LabelEventTorah.Name = "LabelEventTorah";
+      // 
+      // LabelTorahNextDateValue
+      // 
+      this.LabelTorahNextDateValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.LabelTorahNextDateValue, "LabelTorahNextDateValue");
+      this.LabelTorahNextDateValue.LinkColor = System.Drawing.Color.Navy;
+      this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";
+      this.LabelTorahNextDateValue.TabStop = true;
+      this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDay_LinkClicked);
+      // 
+      // LabelEventTorahValue
+      // 
+      resources.ApplyResources(this.LabelEventTorahValue, "LabelEventTorahValue");
+      this.LabelEventTorahValue.Name = "LabelEventTorahValue";
+      // 
+      // LabelTorahNextValue
+      // 
+      resources.ApplyResources(this.LabelTorahNextValue, "LabelTorahNextValue");
+      this.LabelTorahNextValue.Name = "LabelTorahNextValue";
+      // 
+      // LabelTorahNext
+      // 
+      resources.ApplyResources(this.LabelTorahNext, "LabelTorahNext");
+      this.LabelTorahNext.Name = "LabelTorahNext";
+      // 
+      // LabelLunarMonthName
+      // 
+      resources.ApplyResources(this.LabelLunarMonthName, "LabelLunarMonthName");
+      this.LabelLunarMonthName.Name = "LabelLunarMonthName";
       // 
       // LabelParashahValue
       // 
@@ -178,61 +236,17 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
-      // LabelTorahNextDateValue
-      // 
-      this.LabelTorahNextDateValue.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.LabelTorahNextDateValue, "LabelTorahNextDateValue");
-      this.LabelTorahNextDateValue.LinkColor = System.Drawing.Color.Navy;
-      this.LabelTorahNextDateValue.Name = "LabelTorahNextDateValue";
-      this.LabelTorahNextDateValue.TabStop = true;
-      this.LabelTorahNextDateValue.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelDay_LinkClicked);
-      // 
-      // LabelTorahNextValue
-      // 
-      resources.ApplyResources(this.LabelTorahNextValue, "LabelTorahNextValue");
-      this.LabelTorahNextValue.Name = "LabelTorahNextValue";
-      // 
-      // LabelTorahNext
-      // 
-      resources.ApplyResources(this.LabelTorahNext, "LabelTorahNext");
-      this.LabelTorahNext.Name = "LabelTorahNext";
-      // 
-      // LabelEventTorahValue
-      // 
-      resources.ApplyResources(this.LabelEventTorahValue, "LabelEventTorahValue");
-      this.LabelEventTorahValue.Name = "LabelEventTorahValue";
-      // 
-      // LabelEventTorah
-      // 
-      resources.ApplyResources(this.LabelEventTorah, "LabelEventTorah");
-      this.LabelEventTorah.Name = "LabelEventTorah";
-      // 
       // LabelParashah
       // 
       resources.ApplyResources(this.LabelParashah, "LabelParashah");
       this.LabelParashah.Name = "LabelParashah";
-      // 
-      // LabelCurrentDay
-      // 
-      resources.ApplyResources(this.LabelCurrentDay, "LabelCurrentDay");
-      this.LabelCurrentDay.Name = "LabelCurrentDay";
-      // 
-      // LabelEventSeason
-      // 
-      resources.ApplyResources(this.LabelEventSeason, "LabelEventSeason");
-      this.LabelEventSeason.Name = "LabelEventSeason";
-      // 
-      // LabelEventSeasonValue
-      // 
-      resources.ApplyResources(this.LabelEventSeasonValue, "LabelEventSeasonValue");
-      this.LabelEventSeasonValue.Name = "LabelEventSeasonValue";
       // 
       // PictureMoon
       // 
       resources.ApplyResources(this.PictureMoon, "PictureMoon");
       this.PictureMoon.Name = "PictureMoon";
       this.PictureMoon.TabStop = false;
-      this.PictureMoon.Click += new System.EventHandler(this.ActionViewCalendar_Click);
+      this.PictureMoon.Click += new System.EventHandler(this.PictureMoon_Click);
       // 
       // LabelMoonsetValue
       // 
@@ -363,20 +377,6 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
-      // PanelAllExceptParashah
-      // 
-      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeasonValue);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeason);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDayValue);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDay);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorah);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextDateValue);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorahValue);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextValue);
-      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNext);
-      resources.ApplyResources(this.PanelAllExceptParashah, "PanelAllExceptParashah");
-      this.PanelAllExceptParashah.Name = "PanelAllExceptParashah";
-      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -396,11 +396,11 @@
       this.PanelTop.ResumeLayout(false);
       this.PanelMiddle.ResumeLayout(false);
       this.PanelMiddle.PerformLayout();
+      this.PanelAllExceptParashah.ResumeLayout(false);
+      this.PanelAllExceptParashah.PerformLayout();
       this.ContextMenuParashah.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
       this.PanelBottom.ResumeLayout(false);
-      this.PanelAllExceptParashah.ResumeLayout(false);
-      this.PanelAllExceptParashah.PerformLayout();
       this.ResumeLayout(false);
 
     }
