@@ -58,6 +58,9 @@ namespace Ordisoftware.Hebrew.Calendar
       Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
       Title = Text + " - ";
       Icon = MainForm.Instance.Icon;
+      EditColumnUpperCase.Checked = Settings.NewMoonsBoardFormUseTitleUpperCase;
+      EditShowMonthNumbers.Checked = Settings.NewMoonsBoardFormShowMonthNumbers;
+      EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
@@ -119,6 +122,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReloadGrid(object sender, EventArgs e)
     {
+      Settings.NewMoonsBoardFormUseTitleUpperCase = EditColumnUpperCase.Checked;
+      Settings.NewMoonsBoardFormShowMonthNumbers = EditShowMonthNumbers.Checked;
+      Settings.NewMoonsBoardFormUseRealDays = EditUseRealDays.Checked;
       CreateDataTable();
       LoadGrid();
     }
@@ -221,6 +227,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CreateDataTable()
     {
+      DataGridView.DataSource = null;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board = new DataTable(TableName);

@@ -30,6 +30,7 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationsBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.DataGridView = new System.Windows.Forms.DataGridView();
@@ -46,11 +47,10 @@
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
-      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       this.PanelOptions.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -60,6 +60,15 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = true;
+      this.EditExportDataEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.ReloadGrid);
       // 
       // ActionExport
       // 
@@ -116,8 +125,6 @@
       // EditEnglishTitles
       // 
       resources.ApplyResources(this.EditEnglishTitles, "EditEnglishTitles");
-      this.EditEnglishTitles.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormEnglishColumns;
-      this.EditEnglishTitles.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormEnglishColumns", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditEnglishTitles.Name = "EditEnglishTitles";
       this.EditEnglishTitles.UseVisualStyleBackColor = true;
       this.EditEnglishTitles.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -135,9 +142,8 @@
       // EditUseRealDays
       // 
       resources.ApplyResources(this.EditUseRealDays, "EditUseRealDays");
-      this.EditUseRealDays.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormUseRealDays;
+      this.EditUseRealDays.Checked = true;
       this.EditUseRealDays.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditUseRealDays.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseRealDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditUseRealDays.Name = "EditUseRealDays";
       this.EditUseRealDays.UseVisualStyleBackColor = true;
       this.EditUseRealDays.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -155,9 +161,8 @@
       // EditColumnUpperCase
       // 
       resources.ApplyResources(this.EditColumnUpperCase, "EditColumnUpperCase");
-      this.EditColumnUpperCase.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationsBoardFormUseTitleUpperCase;
+      this.EditColumnUpperCase.Checked = true;
       this.EditColumnUpperCase.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditColumnUpperCase.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationsBoardFormUseTitleUpperCase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.EditColumnUpperCase.Name = "EditColumnUpperCase";
       this.EditColumnUpperCase.UseVisualStyleBackColor = true;
       this.EditColumnUpperCase.CheckedChanged += new System.EventHandler(this.ReloadGrid);
@@ -225,15 +230,6 @@
       resources.ApplyResources(this.LabelFontSize, "LabelFontSize");
       this.LabelFontSize.Name = "LabelFontSize";
       // 
-      // EditExportDataEnumsAsTranslations
-      // 
-      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
-      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
-      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.ReloadGrid);
-      // 
       // CelebrationsBoardForm
       // 
       resources.ApplyResources(this, "$this");
@@ -249,10 +245,10 @@
       this.Shown += new System.EventHandler(this.CelebrationsBoardForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
       this.ResumeLayout(false);
 
     }

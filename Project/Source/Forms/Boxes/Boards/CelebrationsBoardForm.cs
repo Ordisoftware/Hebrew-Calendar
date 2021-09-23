@@ -62,6 +62,10 @@ namespace Ordisoftware.Hebrew.Calendar
               ? AppTranslations.OmerMoon.GetLang()
               : AppTranslations.OmerSun.GetLang();
       Title = Text + " - ";
+      EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations;
+      EditEnglishTitles.Checked = Settings.CelebrationsBoardFormEnglishColumns;
+      EditColumnUpperCase.Checked = Settings.CelebrationsBoardFormUseTitleUpperCase;
+      EditUseRealDays.Checked = Settings.CelebrationsBoardFormUseRealDays;
       var list = MainForm.Instance.YearsIntervalArray;
       SelectYear1.Fill(list, list.Min());
       SelectYear2.Fill(list, list.Max());
@@ -123,8 +127,13 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ReloadGrid(object sender, EventArgs e)
     {
+      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
+      Settings.CelebrationsBoardFormEnglishColumns = EditEnglishTitles.Checked;
+      Settings.CelebrationsBoardFormUseTitleUpperCase = EditColumnUpperCase.Checked;
+      Settings.CelebrationsBoardFormUseRealDays = EditUseRealDays.Checked;
       CreateDataTable();
       LoadGrid();
+      DataGridView.Refresh();
     }
 
     private void RefreshGrid(object sender, EventArgs e)
@@ -225,7 +234,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CreateDataTable()
     {
-      Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
+      DataGridView.DataSource = null;
       string name = AppTranslations.Year.GetLang();
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board = new DataTable(TableName);
