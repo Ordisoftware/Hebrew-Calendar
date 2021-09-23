@@ -255,6 +255,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName)
                                                      + ( EditUseRealDays.Checked ? " Moonset" : " Moonrise" );
+      MainForm.Instance.SaveDataBoardDialog.FileName += $" {SelectYear1.Value}-{SelectYear2.Value}";
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
