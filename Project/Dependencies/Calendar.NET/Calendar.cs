@@ -928,6 +928,11 @@ namespace CodeProjectCalendar.NET
     {
       if ( IsVisualStudioDesigner ) return;
       if ( !Globals.IsReady ) return;
+      bool isPrinting = Globals.IsPrinting;
+      bool useColors = Program.Settings.UseColors;
+      bool useHoverEffect = Program.Settings.CalendarUseHoverEffect;
+      bool showSelectedox = Program.Settings.CalendarShowSelectedBox;
+      bool selectedBoxOnlyCurrent = Program.Settings.SelectedDayBoxColorOnlyCurrent;
       _calendarDays.Clear();
       _calendarEvents.Clear();
       var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
@@ -938,11 +943,14 @@ namespace CodeProjectCalendar.NET
       // ORDISOFWTARE MODIF BEGIN
       var today = DateTime.Today;
       string monthText = _calendarDate.ToString("MMMM").Titleize();
-      if ( MainForm.Instance.CurrentDay != null )
-        MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
+      if ( isPrinting )
+        MonthWithDayText = monthText;
       else
-      if ( !MainForm.Instance.PreferencesMutex )
-        MonthWithDayText = today.Day + " " + monthText;
+        if ( MainForm.Instance.CurrentDay != null )
+          MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
+        else
+        if ( !MainForm.Instance.PreferencesMutex )
+          MonthWithDayText = today.Day + " " + monthText;
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -983,11 +991,6 @@ namespace CodeProjectCalendar.NET
         selectedMonth = today.Month;
         selectedYear = today.Year;
       }
-      bool printmutex = Globals.IsPrinting;
-      bool useColors = Program.Settings.UseColors;
-      bool useHoverEffect = Program.Settings.CalendarUseHoverEffect;
-      bool showSelectedox = Program.Settings.CalendarShowSelectedBox;
-      bool selectedBoxOnlyCurrent = Program.Settings.SelectedDayBoxColorOnlyCurrent;
       bool CheckSelected(int day)
         => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
       // ORDISOFWTARE MODIF END
@@ -1036,10 +1039,10 @@ namespace CodeProjectCalendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
-                if ( !printmutex )
+                if ( !isPrinting )
                   if ( useColors )
                   {
-                    if ( CheckSelected(counter1) && !printmutex )
+                    if ( CheckSelected(counter1) && !isPrinting )
                     {
                       isSelected = true;
                       g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
@@ -1055,7 +1058,7 @@ namespace CodeProjectCalendar.NET
                   }
                   else
                   {
-                    if ( CheckSelected(counter1) && !printmutex )
+                    if ( CheckSelected(counter1) && !isPrinting )
                     {
                       isSelected = true;
                       g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
@@ -1074,7 +1077,7 @@ namespace CodeProjectCalendar.NET
               else
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH
-                if ( CheckSelected(counter1) && !printmutex )
+                if ( CheckSelected(counter1) && !isPrinting )
                 {
                   isSelected = true;
                   isSelectedNoToday = true;
@@ -1095,7 +1098,7 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN ACTUAL REAL DAY
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
-                if ( !printmutex )
+                if ( !isPrinting )
                   if ( useColors )
                   {
                     if ( CheckSelected(counter1) )
@@ -1113,7 +1116,7 @@ namespace CodeProjectCalendar.NET
                   }
                   else
                   {
-                    if ( CheckSelected(counter1) && !printmutex )
+                    if ( CheckSelected(counter1) && !isPrinting )
                     {
                       isSelected = true;
                       g.FillRectangle(BrushBlack, xStart + 5, yStart + 2 + 1, stringSize.Width + 1, stringSize.Height - 2);
@@ -1134,7 +1137,7 @@ namespace CodeProjectCalendar.NET
                 //ORDISOFTWARE MODIF BEGIN OTHER DAYS
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
                 SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
-                if ( CheckSelected(counter1) && !printmutex )
+                if ( CheckSelected(counter1) && !isPrinting )
                 {
                   isSelected = true;
                   isSelectedNoToday = true;
@@ -1213,7 +1216,7 @@ namespace CodeProjectCalendar.NET
           }
 
           // ORDISOFWTARE MODIF BEGIN
-          if ( !printmutex )
+          if ( !isPrinting )
           {
             bool isactiveday = counter1 - 1 == _calendarDate.Day;
             bool isMouseHover = false;
