@@ -141,7 +141,6 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { OldTimeZone = Settings.TimeZone; });
       SystemManager.TryCatch(() => { OldUseMoonDays = Settings.TorahEventsCountAsMoon; });
       SystemManager.TryCatch(() => { OldUseSimhat = Settings.UseSimhatTorahOutside; });
-      SystemManager.TryCatch(() => { OldShowParashah = Settings.CalendarShowParashah; });
       // Hotkey
       InitHotKeyControls();
       // System

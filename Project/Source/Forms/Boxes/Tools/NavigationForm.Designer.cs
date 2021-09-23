@@ -73,11 +73,13 @@
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.PanelAllExceptParashah = new System.Windows.Forms.Panel();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
       this.PanelBottom.SuspendLayout();
+      this.PanelAllExceptParashah.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelTop
@@ -95,18 +97,10 @@
       // PanelMiddle
       // 
       this.PanelMiddle.BackColor = System.Drawing.Color.AliceBlue;
+      this.PanelMiddle.Controls.Add(this.PanelAllExceptParashah);
       this.PanelMiddle.Controls.Add(this.LabelLunarMonthName);
-      this.PanelMiddle.Controls.Add(this.LabelCurrentDayValue);
       this.PanelMiddle.Controls.Add(this.LabelParashahValue);
-      this.PanelMiddle.Controls.Add(this.LabelTorahNextDateValue);
-      this.PanelMiddle.Controls.Add(this.LabelTorahNextValue);
-      this.PanelMiddle.Controls.Add(this.LabelTorahNext);
-      this.PanelMiddle.Controls.Add(this.LabelEventTorahValue);
-      this.PanelMiddle.Controls.Add(this.LabelEventTorah);
       this.PanelMiddle.Controls.Add(this.LabelParashah);
-      this.PanelMiddle.Controls.Add(this.LabelCurrentDay);
-      this.PanelMiddle.Controls.Add(this.LabelEventSeason);
-      this.PanelMiddle.Controls.Add(this.LabelEventSeasonValue);
       this.PanelMiddle.Controls.Add(this.PictureMoon);
       this.PanelMiddle.Controls.Add(this.LabelMoonsetValue);
       this.PanelMiddle.Controls.Add(this.LabelMoonriseValue);
@@ -369,6 +363,20 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
+      // PanelAllExceptParashah
+      // 
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeasonValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventSeason);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDayValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelCurrentDay);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorah);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextDateValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelEventTorahValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNextValue);
+      this.PanelAllExceptParashah.Controls.Add(this.LabelTorahNext);
+      resources.ApplyResources(this.PanelAllExceptParashah, "PanelAllExceptParashah");
+      this.PanelAllExceptParashah.Name = "PanelAllExceptParashah";
+      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -391,6 +399,8 @@
       this.ContextMenuParashah.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
       this.PanelBottom.ResumeLayout(false);
+      this.PanelAllExceptParashah.ResumeLayout(false);
+      this.PanelAllExceptParashah.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -439,5 +449,6 @@
     public System.Windows.Forms.Panel PanelMiddle;
     public System.Windows.Forms.Panel PanelTop;
     public System.Windows.Forms.PictureBox PictureMoon;
+    private System.Windows.Forms.Panel PanelAllExceptParashah;
   }
 }

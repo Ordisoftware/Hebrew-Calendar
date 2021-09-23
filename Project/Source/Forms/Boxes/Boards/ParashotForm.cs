@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -41,9 +41,13 @@ namespace Ordisoftware.Hebrew
         Instance.Select(parashah);
         return;
       }
-      Instance?.Show();
-      Instance?.ForceBringToFront();
-      Instance?.Select(parashah);
+      if ( Instance != null )
+      {
+        Instance.ActionGoToNextParashah.Visible = Program.Settings.CalendarShowParashah;
+        Instance.Show();
+        Instance.ForceBringToFront();
+        Instance.Select(parashah);
+      }
     }
 
     public readonly Properties.Settings Settings
@@ -460,55 +464,43 @@ namespace Ordisoftware.Hebrew
       ShowParashahDescription(this, CurrentDataBoundItem, false);
     }
 
-    static public bool ShowParashahDescription(Form owner, Parashah parashah, bool withLinked)
+    // Only Hebrew Calendar
+    private void ActionGoToNextParashah_Click(object sender, EventArgs e)
     {
-      string title = HebrewTranslations.WeeklyParashah.GetLang();
-      var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
-      if ( form != null )
-      {
-        form.Popup();
-        return true;
-      }
-      var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
-      if ( parashah == null ) return false;
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium);
-      form.StartPosition = FormStartPosition.CenterScreen;
-      form.ForceNoTopMost = true;
-      form.ShowInTaskbar = true;
-      // Open board
-      form.ActionYes.Visible = true;
-      form.ActionYes.Text = SysTranslations.Board.GetLang();
-      form.ActionYes.Click += async (_s, _e) =>
-      {
-        Run(parashah);
-        await System.Threading.Tasks.Task.Delay(1000);
-        Instance.Popup();
-      };
-      // Open memo
-      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionNo.Text = SysTranslations.Memo.GetLang();
-      form.ActionNo.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      // Copy to clipboard
-      form.ActionRetry.Visible = true;
-      form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
-      form.ActionRetry.DialogResult = DialogResult.None;
-      form.ActionRetry.Click -= form.ActionClose_Click;
-      form.ActionRetry.Click += (_s, _e) =>
-      {
-        Clipboard.SetText(message);
-        DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
-                                          Globals.ClipboardSoundFilePath);
-      };
-      form.AllowClose = true;
-      form.Show();
-      return true;
+      var today = DateTime.Today;
+      var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
+      var day = days.FirstOrDefault(item => item.Date >= today && item.ParashahID == CurrentDataBoundItem.ID);
+      if ( day != null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
+      // TODO remove ? 
+      //// Find nearst from current
+      //var current = MainForm.Instance.CurrentDay;
+      //if ( current.ParashahID == CurrentDataBoundItem.ID )
+      //{
+      //  MainForm.Instance.GoToDate(current.Date, true, false, false);
+      //  return;
+      //}
+      //var day1 = days.LastOrDefault(item => item.ParashahID == CurrentDataBoundItem.ID
+      //                                   && item.Date < MainForm.Instance.CurrentDay.Date);
+      //var day2 = days.FirstOrDefault(item => item.ParashahID == CurrentDataBoundItem.ID
+      //                                    && item.Date > MainForm.Instance.CurrentDay.Date);
+      //if ( day1 == null && day2 == null )
+      //  return;
+      //if ( day1 == null )
+      //{
+      //  MainForm.Instance.GoToDate(day1.Date, true, false, false);
+      //  return;
+      //}
+      //if ( day2 == null )
+      //{
+      //  MainForm.Instance.GoToDate(day2.Date, true, false, false);
+      //  return;
+      //}
+      //double diff1 = ( current.Date - day1.Date ).TotalDays;
+      //double diff2 = ( day2.Date - current.Date ).TotalDays;
+      //if ( diff1 >= diff2 )
+      //  MainForm.Instance.GoToDate(day2.Date, true, false, false);
+      //else
+      //  MainForm.Instance.GoToDate(day1.Date, true, false, false);
     }
 
   }

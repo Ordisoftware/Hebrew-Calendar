@@ -613,15 +613,15 @@
   </metadata>
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGeSURBVDhPlVPbSgJRFPVf+oQwu/kTXfCG+BdFSF5mJMoz
-        I4SvldBDvfTmD/QJEiE2iCXoCAqmKDIj6G7vPWcULTEXrNnnbPZaZ80ZxkO4zee/RS4HWU2DmwUKrkLX
-        iW0e/gsip8M61Go1yArxJCWLoJMJ5fI7GB8VZqVchlLpjfuJdJpr1TAo0bOUzeEa7EZU8MeumXuRDBhG
-        hfspRQHLtnlNSfB1X6TUgWtQr3+B2WwwG7g2jCr3i8UipFUVkjIJ3YmUOnANWmYD2q0mmFibzToafnJ/
-        GTQvpQ5cA19Ywegq9LodOI0XoNNuwcnFPVYTApcF8AadBCsNxqM+TMcDrqNBF/q9zowW7q1hj+dWGtDp
-        /tgVHEYzEEo8wmg44ARUg7jfCa1JgBmQE6SNSSywrSGMJWFqIZ0vsdLAF07jp1RwNeGTYWLD8fkdC4N4
-        B/9IsITplB6yzvHLQOhuAgUOoirs410E4g/cOzrDBAjae4MpXtO8lDrQ8EfaBDQvpQ4SyeQrNeVfJ6lx
-        VJeCiH2ao3kpnWELub0BaR7h8fwA8iVpw1FqE2QAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
+        ITaIJegICqYoMiPobu89ZxQtMRes2eds9lpnzRnGQ7jN579FLgdZTYObBQquQteJbR7+CyKnwzrUajXI
+        CvEkJYugkwnl8jsYHxVmpVyGUumN+4l0mmvVMCjRs5TN4RrsRlTwx66Ze5EMGEaF+ylFAcu2eU1J8HVf
+        pNSBa1Cvf4HZbDAbuDaMKveLxSKkVRWSMgndiZQ6cA1aZgParSaYWJvNOhp+cn8ZNC+lDlwDX1jB6Cr0
+        uh04jReg027BycU9VhMClwXwBp0EKw3Goz5MxwOuo0EX+r3OjBburWGP51Ya0On+2BUcRjMQSjzCaDjg
+        BFSDuN8JrUmAGZATpI1JLLCtIYwlYWohnS+x0sAXTuOnVHA14ZNhYsPx+R0Lg3gH/0iwhOmUHrLO8ctA
+        6G4CBQ6iKuzjXQTiD9w7OsMECNp7gyle07yUOtDwR9oENC+lDhLJ5Cs15V8nqXFUl4KIfZqjeSmdYQu5
+        vQFpHuHx/ADyJWnDUWoTZAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionViewParashahInfos.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -632,6 +632,24 @@
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
     <value>Show description</value>
+  </data>
+  <data name="ActionGoToNextParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAWxJREFUOE+tUMsuA2EYnRewxMJLSLwLiURZeA8VvECDCNFIWzZqLhXaaaczJa3a
+        WHgE6cpKtLQEPb7ztdNLBHE5ycnJP+fy/xnjX9DenLCxMQ6sjwlHu/oZu77kpVfRAcRGgOqycAm4jH5P
+        5piXng4EhzG8PNzB2orC2V7B8c6acFU1IzpI+swxz54OpJ1TvLaB3XgGrUcgmfBQu3lWfdJzoaf0mWOe
+        PR0w7QzwBszsGYgkDSzsC1MdnacKQ6XPHPPs6YDFAVmcFSN1bWBRigeDKsVQ6TPHPHs6oC8QTMcNzCXk
+        NrklZKR7DpU+c0TvBaZl64fsSRnNe6DoXuG21lRt1QEv11f6zBHs6cCRZekHzz+HXyojOLvos1QZoh+U
+        NUewNzSQdYuqeS9Ao9FQJdzCsIa5DwO5vCehohZDup4v6vdVfOaI3oBpd/7BT8FeZ8Bx6jykZTFtmqJf
+        UH1Ly+zpgGBSOPULsvcXGMY7KaVcuTYAtfkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionGoToNextParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="ActionGoToNextParashah.Text" xml:space="preserve">
+    <value>Search next day from today</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -899,7 +917,7 @@
     <value>247, 6</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 348</value>
+    <value>251, 370</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -994,9 +1012,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 676</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
   </data>
@@ -1012,6 +1027,24 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
+  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
+    <value>ColumnBook</value>
+  </data>
+  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
+    <value>ColumnNumber</value>
+  </data>
+  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
+    <value>ColumnName</value>
+  </data>
+  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ColumnTranslation.Name" xml:space="preserve">
     <value>ColumnTranslation</value>
   </data>
@@ -1022,6 +1055,18 @@
     <value>ColumnLettriq</value>
   </data>
   <data name="&gt;&gt;ColumnLettriq.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
+    <value>ColumnBegin</value>
+  </data>
+  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
+    <value>ColumnEnd</value>
+  </data>
+  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ColumnLinked.Name" xml:space="preserve">
@@ -1052,6 +1097,12 @@
     <value>ActionViewParashahInfos</value>
   </data>
   <data name="&gt;&gt;ActionViewParashahInfos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionGoToNextParashah.Name" xml:space="preserve">
+    <value>ActionGoToNextParashah</value>
+  </data>
+  <data name="&gt;&gt;ActionGoToNextParashah.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
@@ -1162,6 +1213,12 @@
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
+    <value>BindingSource</value>
+  </data>
+  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;bookDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>bookDataGridViewTextBoxColumn</value>
   </data>
@@ -1209,42 +1266,6 @@
   </data>
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnBook.Name" xml:space="preserve">
-    <value>ColumnBook</value>
-  </data>
-  <data name="&gt;&gt;ColumnBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Name" xml:space="preserve">
-    <value>ColumnNumber</value>
-  </data>
-  <data name="&gt;&gt;ColumnNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Name" xml:space="preserve">
-    <value>ColumnName</value>
-  </data>
-  <data name="&gt;&gt;ColumnName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Name" xml:space="preserve">
-    <value>ColumnBegin</value>
-  </data>
-  <data name="&gt;&gt;ColumnBegin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Name" xml:space="preserve">
-    <value>ColumnEnd</value>
-  </data>
-  <data name="&gt;&gt;ColumnEnd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Name" xml:space="preserve">
-    <value>BindingSource</value>
-  </data>
-  <data name="&gt;&gt;BindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>
