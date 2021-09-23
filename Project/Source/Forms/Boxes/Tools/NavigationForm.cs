@@ -317,11 +317,17 @@ namespace Ordisoftware.Hebrew.Calendar
         ParashotForm.Run(ParashotFactory.Instance.Get(day.ParashahID));
     }
 
+    private void PictureMoon_Click(object sender, EventArgs e)
+    {
+      ActionViewCalendar_Click(sender, null);
+    }
+
     private void ActionViewCalendar_Click(object sender, EventArgs e)
     {
       ActiveControl = LabelDate;
       MainForm.Instance.MenuShowHide_Click(null, null);
-      if ( Settings.NavigationWindowCloseOnShowMainForm )
+      MainForm.Instance.Refresh();
+      if ( e != null && Settings.NavigationWindowCloseOnShowMainForm )
         Close();
       else
         this.Popup();
