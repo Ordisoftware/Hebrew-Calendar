@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
           int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
                     ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
                     : -1;
-          if ( day > 0 && day < TorahCelebrationSettings.PessahLenght )
+          if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
             return AppTranslations.PessahDay.GetLang(day);
         }
         else
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
           int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
                     ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
                     : -1;
-          if ( day > 0 && day < TorahCelebrationSettings.SoukotLenght )
+          if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
             return AppTranslations.SoukotDay.GetLang(day);
         }
         else
