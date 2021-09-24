@@ -321,6 +321,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 9.5
+
+- Improve day context menu to indicate the celebration.
+
 #### 2021.09.24 - Version 9.4
 
 - Add search next parashah from today in parashot board.
