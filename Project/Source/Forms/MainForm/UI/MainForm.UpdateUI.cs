@@ -210,23 +210,31 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void UpdateContextMenuStripDay()
     {
+      // Day
       var date = Program.Settings.TorahEventsCountAsMoon
              ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
              : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
       var rowDay = ApplicationDatabase.Instance.GetDay(date);
       ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
       ContextMenuDayParashah.Enabled = false;
+      // Celebration
+      string weeklong = ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay();
+      bool b1 = weeklong.IsNullOrEmpty();
+      bool b2 = ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
+      if ( !b1 || b2 )
+        ContextMenuDayDate.Text += " - " + weeklong;
+      // Parashah 
       if ( Settings.CalendarShowParashah )
-        if ( ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.None )
-          if ( ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )
+        if ( b1 || b2 )
+        {
+          var parashah = ParashotFactory.Instance.Get(rowDay?.GetParashahReadingDay()?.ParashahID);
+          if ( parashah != null )
           {
-            var parashah = ParashotFactory.Instance.Get(rowDay?.GetParashahReadingDay()?.ParashahID);
-            if ( parashah != null )
-            {
-              ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
-              ContextMenuDayParashah.Enabled = true;
-            }
+            ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
+            ContextMenuDayParashah.Enabled = true;
           }
+        }
+      // Times
       ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != CalendarMonth.CalendarDate.Date;
       ContextMenuDayClearSelection.Enabled = DateSelected.HasValue && DateSelected != DateTime.Today;
       ContextMenuDaySelectDate.Enabled = ( !DateSelected.HasValue && DateTime.Today != ContextMenuDayCurrentEvent.Date )
