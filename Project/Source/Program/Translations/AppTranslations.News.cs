@@ -39,19 +39,17 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["9.4"] = new TranslationsDictionary
+        ["9.5"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added search next parashah from today in parashot board." + Globals.NL +
-                          "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
-                          "• Fixed export to remove all active and selected day marks in the monthly view." + Globals.NL +
-                          "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
-                          "• few fixes and improvements.",
+          [Language.EN] = "• Improved interaction with monthly view." + Globals.NL +
+                          "• Improved day context menu to indicate the celebration." + Globals.NL +
+                          "• Addd some parashah and celebrations online providers for the study in english and french." + Globals.NL +
+                          "• Updated web links.",
 
-          [Language.FR] = "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
-                          "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
-                          "• Correction de l'export pour enlever toutes les marques de jour actif et séléctionné dans la vue mensuelle." + Globals.NL +
-                          "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
-                          "• Quelques corrections et améliorations."
+          [Language.FR] = "• Amélioration de l'interaction avec la vue mensuelle." + Globals.NL +
+                          "• Amélioration du menu contextuel du jour pour indiquer la célébration." + Globals.NL +
+                          "• Ajout quelques fournisseurs en ligne de parashah et de célébrations pour l'étude en anglais et en français." + Globals.NL +
+                          "• Mettre à jour les liens Web."
         },
 
         ["9.x"] = new TranslationsDictionary
@@ -64,9 +62,12 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Added option for double-click in visual month to set active or select." + Globals.NL +
                           "• Added some keyboard shortcuts to change and select day in monthly view." + Globals.NL +
                           "• Added celebration verses board and its command-line option." + Globals.NL +
+                          "• Added search next parashah from today in parashot board." + Globals.NL +
                           "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
+                          "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
                           "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                           "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
+                          "• Fixed some check boxes in celebrations and new moons boards." + Globals.NL +
                           "• Some fixes and improvements." + Globals.NL +
                           "• Optimized code." + Globals.NL +
                           "• Updated web links.",
@@ -79,9 +80,12 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout d'une option pour choisir l'action pour le double-clic dans la vue mensuelle." + Globals.NL +
                           "• Ajout de raccourcis clavier pour changer et sélectionner un jour dans la vue mensuelle." + Globals.NL +
                           "• Ajout d'un tableau des versets des célébrations et de son option de ligne de commande." + Globals.NL +
+                          "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
                           "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
+                          "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
                           "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
+                          "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Quelques corrections et améliorations." + Globals.NL +
                           "• Code optimisé." + Globals.NL +
                           "• Mise à jour les liens web."
