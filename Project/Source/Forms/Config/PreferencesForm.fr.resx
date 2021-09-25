@@ -898,4 +898,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
+  <data name="TabPageColors.Text" xml:space="preserve">
+    <value>Couleurs</value>
+  </data>
 </root>

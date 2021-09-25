@@ -2081,7 +2081,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 220</value>
+    <value>23, 215</value>
   </data>
   <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -2114,7 +2114,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 176</value>
+    <value>23, 175</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -2210,7 +2210,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 198</value>
+    <value>23, 195</value>
   </data>
   <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 17</value>
@@ -2390,7 +2390,7 @@
     <value>4</value>
   </data>
   <data name="PanelBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 255</value>
+    <value>23, 250</value>
   </data>
   <data name="PanelBalloon.Size" type="System.Drawing.Size, System.Drawing">
     <value>485, 97</value>
@@ -3552,7 +3552,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3582,7 +3582,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3606,7 +3606,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3633,7 +3633,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -5076,7 +5076,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 91</value>
+    <value>20, 110</value>
   </data>
   <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -5109,13 +5109,13 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 150</value>
+    <value>23, 170</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 17</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
+    <value>6</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.Text" xml:space="preserve">
     <value>Select day</value>
@@ -5142,13 +5142,13 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 110</value>
+    <value>23, 130</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>4</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.Text" xml:space="preserve">
     <value>Nothing</value>
@@ -5175,13 +5175,13 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 130</value>
+    <value>23, 150</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
+    <value>5</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.Text" xml:space="preserve">
     <value>Set active day</value>
@@ -5208,7 +5208,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMonthViewFontSizeInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 43</value>
+    <value>66, 228</value>
   </data>
   <data name="LabelMonthViewFontSizeInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -5238,7 +5238,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+    <value>20, 320</value>
   </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -5283,13 +5283,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 36</value>
+    <value>354, 335</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;ActionMoonDayTextFormatReset.Name" xml:space="preserve">
     <value>ActionMoonDayTextFormatReset</value>
@@ -5313,7 +5313,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarLineSpacingInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 43</value>
+    <value>66, 283</value>
   </data>
   <data name="LabelCalendarLineSpacingInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -5335,6 +5335,415 @@
   </data>
   <data name="&gt;&gt;LabelCalendarLineSpacingInfo.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 335</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
+    <value>ActionMoonDayTextFormatHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EditCalendarShowParashah.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCalendarShowParashah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarShowParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCalendarShowParashah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
+  </data>
+  <data name="EditCalendarShowParashah.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
+    <value>Indicate parashah</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowParashah.Name" xml:space="preserve">
+    <value>EditCalendarShowParashah</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowParashah.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 60</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 17</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
+    <value>Show selected day box</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowSelectedBox.Name" xml:space="preserve">
+    <value>EditCalendarShowSelectedBox</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowSelectedBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowSelectedBox.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarShowSelectedBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 40</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 17</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
+    <value>Use hover effect</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseHoverEffect.Name" xml:space="preserve">
+    <value>EditCalendarUseHoverEffect</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseHoverEffect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseHoverEffect.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarUseHoverEffect.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 80</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
+    <value>Change day on click</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Name" xml:space="preserve">
+    <value>EditMonthViewChangeDayOnClick</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelMonthViewFontSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 205</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="LabelMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSize.Name" xml:space="preserve">
+    <value>LabelMonthViewFontSize</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSize.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 279</value>
+  </data>
+  <data name="EditCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="EditCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Name" xml:space="preserve">
+    <value>EditCalendarLineSpacing</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 224</value>
+  </data>
+  <data name="EditMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="EditMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
+    <value>EditMonthViewFontSize</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 260</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+    <value>Line spacing</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Name" xml:space="preserve">
+    <value>LabelCalendarLineSpacing</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 339</value>
+  </data>
+  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
+    <value>EditMoonDayTextFormat</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 49</value>
+  </data>
+  <data name="TabPageMonthView.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 395</value>
+  </data>
+  <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPageMonthView.Text" xml:space="preserve">
+    <value>Month view</value>
+  </data>
+  <data name="&gt;&gt;TabPageMonthView.Name" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;TabPageMonthView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageMonthView.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPageMonthView.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditUseColors.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditUseColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="EditUseColors.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditUseColors.Text" xml:space="preserve">
+    <value>Use colors for calendar and reminder boxes</value>
+  </data>
+  <data name="&gt;&gt;EditUseColors.Name" xml:space="preserve">
+    <value>EditUseColors</value>
+  </data>
+  <data name="&gt;&gt;EditUseColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditUseColors.Parent" xml:space="preserve">
+    <value>TabPageColors</value>
+  </data>
+  <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 40</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 17</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
+    <value>Use selected day box color only for today</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Name" xml:space="preserve">
+    <value>EditSelectedDayBoxColorOnlyCurrent</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Parent" xml:space="preserve">
+    <value>TabPageColors</value>
+  </data>
+  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ActionOpenTheme.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -5358,7 +5767,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 190</value>
+    <value>471, 283</value>
   </data>
   <data name="ActionOpenTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5402,7 +5811,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSaveTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 190</value>
+    <value>501, 283</value>
   </data>
   <data name="ActionSaveTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -5432,7 +5841,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 150</value>
+    <value>17, 185</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5459,7 +5868,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 166</value>
+    <value>21, 203</value>
   </data>
   <data name="EditEventColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5483,7 +5892,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorShabat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 166</value>
+    <value>221, 203</value>
   </data>
   <data name="EditEventColorShabat.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5507,7 +5916,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 166</value>
+    <value>121, 203</value>
   </data>
   <data name="EditEventColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5537,7 +5946,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorNoDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 3</value>
+    <value>217, 5</value>
   </data>
   <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -5564,7 +5973,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>422, 166</value>
+    <value>422, 203</value>
   </data>
   <data name="EditEventColorNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5594,7 +6003,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 150</value>
+    <value>317, 185</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -5621,7 +6030,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditEventColorMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 166</value>
+    <value>320, 203</value>
   </data>
   <data name="EditEventColorMonth.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5651,7 +6060,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 150</value>
+    <value>417, 185</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -5684,7 +6093,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeDark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 199</value>
+    <value>18, 275</value>
   </data>
   <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5717,7 +6126,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 3</value>
+    <value>17, 5</value>
   </data>
   <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -5750,7 +6159,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMonthViewThemeLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 199</value>
+    <value>17, 250</value>
   </data>
   <data name="ActionMonthViewThemeLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -5783,7 +6192,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 150</value>
+    <value>117, 185</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -5816,7 +6225,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 150</value>
+    <value>217, 185</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -5843,7 +6252,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayForeColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 68</value>
+    <value>20, 83</value>
   </data>
   <data name="EditCurrentDayForeColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5867,7 +6276,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMonthViewNoDaysBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 19</value>
+    <value>220, 23</value>
   </data>
   <data name="EditMonthViewNoDaysBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5891,7 +6300,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 117</value>
+    <value>220, 143</value>
   </data>
   <data name="EditCalendarColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -5921,7 +6330,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 52</value>
+    <value>17, 65</value>
   </data>
   <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -5954,7 +6363,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 101</value>
+    <value>217, 125</value>
   </data>
   <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -5981,7 +6390,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMonthViewTextColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 19</value>
+    <value>20, 23</value>
   </data>
   <data name="EditMonthViewTextColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6011,7 +6420,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 101</value>
+    <value>417, 125</value>
   </data>
   <data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -6044,7 +6453,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 101</value>
+    <value>117, 125</value>
   </data>
   <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -6071,7 +6480,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 117</value>
+    <value>320, 143</value>
   </data>
   <data name="EditCalendarColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6095,7 +6504,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>422, 117</value>
+    <value>422, 143</value>
   </data>
   <data name="EditCalendarColorParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6125,7 +6534,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorEmpty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 3</value>
+    <value>117, 5</value>
   </data>
   <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -6152,7 +6561,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorSeason.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 117</value>
+    <value>120, 143</value>
   </data>
   <data name="EditCalendarColorSeason.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6176,7 +6585,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCurrentDayBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 68</value>
+    <value>120, 83</value>
   </data>
   <data name="EditCurrentDayBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6206,7 +6615,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorFullMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 101</value>
+    <value>317, 125</value>
   </data>
   <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -6233,7 +6642,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMonthViewBackColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 19</value>
+    <value>120, 23</value>
   </data>
   <data name="EditMonthViewBackColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6263,7 +6672,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTorah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 101</value>
+    <value>17, 125</value>
   </data>
   <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -6296,7 +6705,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarColorActiveDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 52</value>
+    <value>317, 65</value>
   </data>
   <data name="LabelCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -6329,7 +6738,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorHoverEffect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 52</value>
+    <value>417, 65</value>
   </data>
   <data name="LabelColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -6356,7 +6765,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorActiveDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 68</value>
+    <value>320, 83</value>
   </data>
   <data name="EditCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6386,7 +6795,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorSelectedDayBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 52</value>
+    <value>217, 65</value>
   </data>
   <data name="LabelColorSelectedDayBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -6413,7 +6822,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorHoverEffect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 68</value>
+    <value>420, 83</value>
   </data>
   <data name="EditCalendarColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6443,7 +6852,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelColorTodayBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 52</value>
+    <value>117, 65</value>
   </data>
   <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
@@ -6470,7 +6879,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditSelectedDayBoxColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 68</value>
+    <value>220, 83</value>
   </data>
   <data name="EditSelectedDayBoxColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6494,7 +6903,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 117</value>
+    <value>20, 143</value>
   </data>
   <data name="EditCalendarColorTorahEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -6515,10 +6924,10 @@
     <value>39</value>
   </data>
   <data name="PanelCalendarColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 170</value>
+    <value>23, 65</value>
   </data>
   <data name="PanelCalendarColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 220</value>
+    <value>540, 320</value>
   </data>
   <data name="PanelCalendarColors.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
@@ -6530,437 +6939,37 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelCalendarColors.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
+    <value>TabPageColors</value>
   </data>
   <data name="&gt;&gt;PanelCalendarColors.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="EditUseColors.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditUseColors.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditUseColors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditUseColors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
-  </data>
-  <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
-  </data>
-  <data name="EditUseColors.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="EditUseColors.Text" xml:space="preserve">
-    <value>Use colors for calendar and reminder boxes</value>
-  </data>
-  <data name="&gt;&gt;EditUseColors.Name" xml:space="preserve">
-    <value>EditUseColors</value>
-  </data>
-  <data name="&gt;&gt;EditUseColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditUseColors.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditUseColors.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 36</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionMoonDayTextFormatHelp.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Name" xml:space="preserve">
-    <value>ActionMoonDayTextFormatHelp</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;ActionMoonDayTextFormatHelp.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="EditCalendarShowParashah.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditCalendarShowParashah.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="EditCalendarShowParashah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditCalendarShowParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditCalendarShowParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 65</value>
-  </data>
-  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
-  </data>
-  <data name="EditCalendarShowParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
-    <value>Indicate parashah</value>
-  </data>
-  <data name="EditCalendarShowParashah.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowParashah.Name" xml:space="preserve">
-    <value>EditCalendarShowParashah</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowParashah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowParashah.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowParashah.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 133</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 17</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
-    <value>Use selected day box color only for today</value>
-  </data>
-  <data name="EditSelectedDayBoxColorOnlyCurrent.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Name" xml:space="preserve">
-    <value>EditSelectedDayBoxColorOnlyCurrent</value>
-  </data>
-  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditSelectedDayBoxColorOnlyCurrent.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 116</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
-    <value>Show selected day box</value>
-  </data>
-  <data name="EditCalendarShowSelectedBox.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowSelectedBox.Name" xml:space="preserve">
-    <value>EditCalendarShowSelectedBox</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowSelectedBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowSelectedBox.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarShowSelectedBox.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 82</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
-    <value>Use hover effect</value>
-  </data>
-  <data name="EditCalendarUseHoverEffect.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarUseHoverEffect.Name" xml:space="preserve">
-    <value>EditCalendarUseHoverEffect</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarUseHoverEffect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarUseHoverEffect.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarUseHoverEffect.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 99</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
-    <value>Change day on click</value>
-  </data>
-  <data name="EditMonthViewChangeDayOnClick.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Name" xml:space="preserve">
-    <value>EditMonthViewChangeDayOnClick</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewChangeDayOnClick.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelMonthViewFontSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 20</value>
-  </data>
-  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="LabelMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
-    <value>Font size</value>
-  </data>
-  <data name="&gt;&gt;LabelMonthViewFontSize.Name" xml:space="preserve">
-    <value>LabelMonthViewFontSize</value>
-  </data>
-  <data name="&gt;&gt;LabelMonthViewFontSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMonthViewFontSize.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 39</value>
-  </data>
-  <data name="EditCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="EditCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarLineSpacing.Name" xml:space="preserve">
-    <value>EditCalendarLineSpacing</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarLineSpacing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarLineSpacing.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 39</value>
-  </data>
-  <data name="EditMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="EditMonthViewFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewFontSize.Name" xml:space="preserve">
-    <value>EditMonthViewFontSize</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewFontSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewFontSize.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 20</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
-    <value>Line spacing</value>
-  </data>
-  <data name="&gt;&gt;LabelCalendarLineSpacing.Name" xml:space="preserve">
-    <value>LabelCalendarLineSpacing</value>
-  </data>
-  <data name="&gt;&gt;LabelCalendarLineSpacing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCalendarLineSpacing.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 39</value>
-  </data>
-  <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 20</value>
-  </data>
-  <data name="EditMoonDayTextFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Name" xml:space="preserve">
-    <value>EditMoonDayTextFormat</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
-    <value>TabPageMonthView</value>
-  </data>
-  <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TabPageColors.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
   </data>
-  <data name="TabPageMonthView.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TabPageColors.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="TabPageMonthView.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TabPageColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 395</value>
   </data>
-  <data name="TabPageMonthView.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="TabPageColors.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="TabPageMonthView.Text" xml:space="preserve">
-    <value>Month view</value>
+  <data name="TabPageColors.Text" xml:space="preserve">
+    <value>Colors</value>
   </data>
-  <data name="&gt;&gt;TabPageMonthView.Name" xml:space="preserve">
-    <value>TabPageMonthView</value>
+  <data name="&gt;&gt;TabPageColors.Name" xml:space="preserve">
+    <value>TabPageColors</value>
   </data>
-  <data name="&gt;&gt;TabPageMonthView.Type" xml:space="preserve">
+  <data name="&gt;&gt;TabPageColors.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPageMonthView.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TabPageColors.Parent" xml:space="preserve">
     <value>TabControl</value>
   </data>
-  <data name="&gt;&gt;TabPageMonthView.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;TabPageColors.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="LabelTextReportFontSizeInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7248,7 +7257,7 @@
     <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPageTextReport.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditImageExportFileFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 344</value>
@@ -7803,7 +7812,7 @@
     <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPagePrint.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="ActionResetHebrewWordsPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -8602,7 +8611,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8623,7 +8632,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8644,7 +8653,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8665,7 +8674,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8686,7 +8695,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8719,7 +8728,7 @@
     <value>TabControl</value>
   </data>
   <data name="&gt;&gt;TabPagePaths.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
