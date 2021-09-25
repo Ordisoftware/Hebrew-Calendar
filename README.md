@@ -71,6 +71,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added option for double-click in visual month to set active or select.
 - Added some keyboard shortcuts to change and select day in monthly view.
 - Added celebration verses board and its command-line option.
+- Added some parashah and celebrations online providers for the study.
 - Moved day of shabat selection to the generation tab of the preferences form.
 - Improved web links menus to display those in the current language to the top.
 - The monthly view shows sun times instead of moon when using sun omer.
@@ -325,7 +326,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Improve interaction with monthly view.
 - Improve day context menu to indicate the celebration.
-- Add some parashah and celebrations online providers for the study in english and french.
+- Add some parashah and celebrations online providers for the study.
 - Update web links.
 
 #### 2021.09.24 - Version 9.4
