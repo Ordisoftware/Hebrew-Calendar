@@ -61,6 +61,16 @@ namespace Ordisoftware.Hebrew
         { TorahCelebration.Soukot, "succos" }
       };
 
+    static public readonly Dictionary<TorahCelebration, string> MyJewishLearning
+      = new Dictionary<TorahCelebration, string>
+      {
+        { TorahCelebration.Pessah, "passover" },
+        { TorahCelebration.Chavouot, "shavuot" },
+        { TorahCelebration.YomTerouah, "rosh-hashanah" },
+        { TorahCelebration.YomHaKipourim, "yom-kippur" },
+        { TorahCelebration.Soukot, "sukkot" }
+      };
+
     static public readonly Dictionary<TorahCelebration, string> TorahBox
       = new Dictionary<TorahCelebration, string>
       {

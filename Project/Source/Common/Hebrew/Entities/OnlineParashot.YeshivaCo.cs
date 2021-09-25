@@ -10,8 +10,8 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2021-03 </created>
-/// <edited> 2021-03 </edited>
+/// <created> 2021-09 </created>
+/// <edited> 2021-09 </edited>
 using System;
 using Ordisoftware.Core;
 

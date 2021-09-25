@@ -33,7 +33,6 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( dayEvent == null ) return;
       var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
       if ( dayRow == null ) return;
-      bool showContextMenu = true;// CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
       if ( e.Button == MouseButtons.Left )
       {
         if ( e.Clicks > 1 )
@@ -43,34 +42,27 @@ namespace Ordisoftware.Hebrew.Calendar
               GoToDate(dayRow.Date);
               break;
             case CalendarDoubleClickAction.Select:
-              if ( showContextMenu ) DateSelected = dayRow.Date;
+              DateSelected = dayRow.Date;
+              if ( CalendarMonth.CalendarDate.Month != dayRow.Date.Month )
+                GoToDate(dayRow.Date);
               break;
           }
         else
         if ( e.Clicks == 1 )
         {
-          bool valid = false;
-          if ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) )
-          {
-            GoToDate(dayRow.Date);
-            valid = true;
-          }
-          if ( ( showContextMenu || valid ) && ModifierKeys.HasFlag(Keys.Control) )
+          if ( ModifierKeys.HasFlag(Keys.Control) )
           {
             DateSelected = dayRow.Date;
             if ( CalendarMonth.CalendarDate.Month != dayRow.Date.Month )
               GoToDate(dayRow.Date);
           }
           else
-          if ( !showContextMenu && ModifierKeys.HasFlag(Keys.Control) )
-          {
+          if ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) )
             GoToDate(dayRow.Date);
-            DateSelected = dayRow.Date;
-          }
         }
       }
       else
-      if ( showContextMenu && e.Button == MouseButtons.Right )
+      if ( e.Button == MouseButtons.Right )
       {
         ContextMenuDayCurrentEvent = dayRow;
         ContextMenuStripDay.Show(Cursor.Position);

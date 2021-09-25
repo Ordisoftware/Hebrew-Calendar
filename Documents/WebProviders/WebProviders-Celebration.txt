@@ -33,6 +33,9 @@ URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
+Name = (EN) MyJewishLearning.com
+URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
+
 -
 
 Name = (FR) Torah-Box.com

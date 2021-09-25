@@ -107,6 +107,14 @@ URL = https://www.truetorahjews.org
 
 -
 
+Name = (EN) My Jewish Learning
+URL = https://www.myjewishlearning.com
+
+Name = (EN) The Rabbinical Assembly
+URL = https://www.rabbinicalassembly.org
+
+-
+
 Name = (FR) Aish
 URL = https://www.aish.fr
 
