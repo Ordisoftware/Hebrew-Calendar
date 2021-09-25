@@ -323,6 +323,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.09.26 - Version 9.5
 
+- Improve interaction with monthly view.
 - Improve day context menu to indicate the celebration.
 - Add some parashah and celebrations online providers for the study.
 - Update web links.
