@@ -325,7 +325,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Improve interaction with monthly view.
 - Improve day context menu to indicate the celebration.
-- Add some parashah and celebrations online providers for the study.
+- Add some parashah and celebrations online providers for the study in english and french.
 - Update web links.
 
 #### 2021.09.24 - Version 9.4
