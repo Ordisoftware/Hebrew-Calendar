@@ -72,14 +72,20 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
       ContextMenuDayParashah.Enabled = false;
       // Celebration
+      string celebration = AppTranslations.TorahCelebrationDays[ContextMenuDayCurrentEvent.TorahEvent].GetLang();
       string weeklong = ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay();
-      bool b1 = weeklong.IsNullOrEmpty();
-      bool b2 = ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
-      if ( !b1 || b2 )
-        ContextMenuDayDate.Text += " - " + weeklong;
+      bool isNoCelebration = celebration.IsNullOrEmpty();
+      bool isNoWeekLong = weeklong.IsNullOrEmpty();
+      bool isNoEvent = isNoCelebration && isNoWeekLong;
+      bool isSimhatTorah = ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
+      if ( !isNoEvent || isSimhatTorah )
+        if (!isNoWeekLong)
+          ContextMenuDayDate.Text += " - " + weeklong;
+        else
+          ContextMenuDayDate.Text += " - " + celebration;
       // Parashah 
       if ( Settings.CalendarShowParashah )
-        if ( b1 || b2 )
+        if ( isNoEvent || isSimhatTorah )
         {
           var parashah = ParashotFactory.Instance.Get(rowDay?.GetParashahReadingDay()?.ParashahID);
           if ( parashah != null )
