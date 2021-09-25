@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           [Language.EN] = "• Improved interaction with monthly view." + Globals.NL +
                           "• Improved day context menu to indicate the celebration." + Globals.NL +
-                          "• Addd some parashah and celebrations online providers for the study." + Globals.NL +
+                          "• Added some parashah and celebrations online providers for the study." + Globals.NL +
                           "• Updated web links.",
 
           [Language.FR] = "• Amélioration de l'interaction avec la vue mensuelle." + Globals.NL +
