@@ -27,6 +27,9 @@ URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 Name = (EN) Chabad.org
 URL = https://www.chabad.org/calendar/view/month.htm
 
+Name = (EN) Yeshiva.co
+URL = https://www.yeshiva.co/calendar
+
 Name = (EN) Hebcal.com
 URL = https://www.hebcal.com
 

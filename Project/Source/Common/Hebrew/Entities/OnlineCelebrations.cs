@@ -61,6 +61,16 @@ namespace Ordisoftware.Hebrew
         { TorahCelebration.Soukot, "succos" }
       };
 
+    static public readonly Dictionary<TorahCelebration, string> MyJewishLearning
+      = new Dictionary<TorahCelebration, string>
+      {
+        { TorahCelebration.Pessah, "passover" },
+        { TorahCelebration.Chavouot, "shavuot" },
+        { TorahCelebration.YomTerouah, "rosh-hashanah" },
+        { TorahCelebration.YomHaKipourim, "yom-kippur" },
+        { TorahCelebration.Soukot, "sukkot" }
+      };
+
     static public readonly Dictionary<TorahCelebration, string> TorahBox
       = new Dictionary<TorahCelebration, string>
       {
@@ -99,6 +109,16 @@ namespace Ordisoftware.Hebrew
         { TorahCelebration.YomTerouah, "library/article_cdo/aid/4644/jewish/Rosh-Hashanah.htm" },
         { TorahCelebration.YomHaKipourim, "library/article_cdo/aid/4687/jewish/Yom-Kippur.htm" },
         { TorahCelebration.Soukot, "library/article_cdo/aid/4126/jewish/Sukkot.htm" }
+      };
+
+    static public readonly Dictionary<TorahCelebration, string> YeshivaCo
+      = new Dictionary<TorahCelebration, string>
+      {
+            { TorahCelebration.Pessah, "103" },
+            { TorahCelebration.Chavouot, "90" },
+            { TorahCelebration.YomTerouah, "492" },
+            { TorahCelebration.YomHaKipourim, "73" },
+            { TorahCelebration.Soukot, "74" }
       };
 
     static public readonly Dictionary<TorahCelebration, string> TheYeshiva

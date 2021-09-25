@@ -542,6 +542,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       if ( IsReady ) MustRefreshMonthView = true;
       PanelCalendarColors.Enabled = EditUseColors.Checked;
+      EditSelectedDayBoxColorOnlyCurrent.Enabled = EditUseColors.Checked;
     }
 
     private void EditCalendarColor_Click(object sender, EventArgs e)

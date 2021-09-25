@@ -107,6 +107,9 @@ URL = https://www.youtube.com/user/AishIvrit
 
 -
 
+Name = (EN) My Jewish Learning 
+URL = https://www.youtube.com/user/myjewishlearning
+
 Name = (EN) The Yeshiva
 URL = https://www.youtube.com/user/TheYeshivaNet
 

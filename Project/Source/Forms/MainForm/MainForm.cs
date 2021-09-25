@@ -1055,46 +1055,16 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #endregion
 
-    #region Context Menu Management
+    #region Context Menu
 
     private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
-      var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
-      if ( dayEvent == null ) return;
-      var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
-      if ( dayRow == null ) return;
-      bool showContextMenu = CalendarMonth.CalendarDate.Month == dayRow.Date.Month;
-      if ( e.Button == MouseButtons.Left )
-      {
-        if ( e.Clicks > 1 && showContextMenu )
-          switch ( Settings.CalendarDoubleClickAction )
-          {
-            case CalendarDoubleClickAction.SetActive:
-              GoToDate(dayRow.Date);
-              break;
-            case CalendarDoubleClickAction.Select:
-              DateSelected = dayRow.Date;
-              break;
-          }
-        else
-        if ( e.Clicks == 1 )
-          if ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) )
-            GoToDate(dayRow.Date);
-          else
-          if ( ModifierKeys.HasFlag(Keys.Control) )
-            DateSelected = dayRow.Date;
-      }
-      else
-      if ( showContextMenu && e.Button == MouseButtons.Right )
-      {
-        ContextMenuDayCurrentEvent = dayRow;
-        ContextMenuStripDay.Show(Cursor.Position);
-      }
+      DoCalendarMonth_MouseClick(sender, e);
     }
 
     private void ContextMenuStripDay_Opened(object sender, EventArgs e)
     {
-      UpdateContextMenuStripDay();
+      DoContextMenuStripDay_Opened(sender, e);
     }
 
     private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
@@ -1120,10 +1090,6 @@ namespace Ordisoftware.Hebrew.Calendar
             ParashotForm.Run(parashah);
     }
 
-    #endregion
-
-    #region Context Menu Days
-
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
       CalendarMonth.Refresh();
@@ -1147,16 +1113,14 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
       DateSelected = ContextMenuDayCurrentEvent.Date;
+      if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
+        GoToDate(DateSelected.Value);
     }
 
     private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
     {
       DateSelected = null;
     }
-
-    #endregion
-
-    #region Context Menu Dates Diff
 
     private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
     {
@@ -1173,10 +1137,6 @@ namespace Ordisoftware.Hebrew.Calendar
       var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);
       DatesDiffCalculatorForm.Run(tuple, ensureOrder: true);
     }
-
-    #endregion
-
-    #region Context Menu Bookmarks
 
     private ToolStripMenuItem CurrentBookmarkMenu;
 
