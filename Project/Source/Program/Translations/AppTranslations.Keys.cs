@@ -143,8 +143,8 @@ namespace Ordisoftware.Hebrew.Calendar
                         "Maj + Gauche : Jour précédent" + Globals.NL +
                         "Maj + Droite : Jour suivant" + Globals.NL +
                         "Plus ou Moins : Changer de jour actif" + Globals.NL +
-                        "Maj + Click : Définir jour actif" + Globals.NL +
-                        "Ctrl + Click : Selectionner jour" + Globals.NL +
+                        "Maj + Clic : Définir jour actif" + Globals.NL +
+                        "Ctrl + Clic : Selectionner jour" + Globals.NL +
                         "F9 : Préférences" + Globals.NL +
                         "F10 : Fenêtre du fichier log" + Globals.NL +
                         "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +
