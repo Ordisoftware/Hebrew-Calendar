@@ -250,6 +250,8 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TheYeshivaNet.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.YeshivaCo.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\ProviderSettings.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebrations.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />

@@ -24,6 +24,9 @@ URL = https://www.chabad.org/%CHABAD-EN%
 Name = (EN) Torah.org
 URL = https://torah.org/%TORAHORG%/
 
+Name = (EN) Yeshiva.co
+URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
+
 Name = (EN) TheYeshiva.net
 URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
 

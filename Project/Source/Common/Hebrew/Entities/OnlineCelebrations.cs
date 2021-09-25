@@ -101,6 +101,16 @@ namespace Ordisoftware.Hebrew
         { TorahCelebration.Soukot, "library/article_cdo/aid/4126/jewish/Sukkot.htm" }
       };
 
+    static public readonly Dictionary<TorahCelebration, string> YeshivaCo
+      = new Dictionary<TorahCelebration, string>
+      {
+            { TorahCelebration.Pessah, "103" },
+            { TorahCelebration.Chavouot, "90" },
+            { TorahCelebration.YomTerouah, "492" },
+            { TorahCelebration.YomHaKipourim, "73" },
+            { TorahCelebration.Soukot, "74" }
+      };
+
     static public readonly Dictionary<TorahCelebration, string> TheYeshiva
       = new Dictionary<TorahCelebration, string>
       {

@@ -24,6 +24,12 @@ URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
 Name = (EN) Torah.org
 URL = https://torah.org/parsha/%TORAHORG%/
 
+Name = (EN) Yeshiva.co
+URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
+
+Name = (EN) TheYeshiva.net
+URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
+
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
