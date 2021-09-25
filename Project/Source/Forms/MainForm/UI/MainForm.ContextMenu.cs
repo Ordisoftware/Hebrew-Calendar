@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( Settings.MonthViewChangeDayOnClick || ModifierKeys.HasFlag(Keys.Shift) )
             GoToDate(dayRow.Date);
           else
-          if ( ModifierKeys.HasFlag(Keys.Control) )
+          if ( showContextMenu && ModifierKeys.HasFlag(Keys.Control) )
             DateSelected = dayRow.Date;
       }
       else
