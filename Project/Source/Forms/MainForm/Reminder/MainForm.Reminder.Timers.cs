@@ -137,8 +137,12 @@ namespace Ordisoftware.Hebrew.Calendar
                           && dayInfos.Value.Event != TorahCelebration.Soukot
                           || ( dayInfos.Value.Event == TorahCelebration.Soukot
                                && dayInfos.Value.Index == 8 && !Settings.UseSimhatTorahOutside )
+                        )
+                     || ( dayInfos.Value.Event == TorahCelebration.Soukot
+                          && dayInfos.Value.Index == 8
+                          && !Settings.UseSimhatTorahOutside
                         );
-            WeeklyParashahShownAtNewWeek = doshow;
+            //WeeklyParashahShownAtNewWeek = doshow;
           }
           if ( doshow )
           {
