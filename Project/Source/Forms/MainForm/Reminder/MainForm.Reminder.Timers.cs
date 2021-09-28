@@ -51,14 +51,14 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( TimerMutex ) return;
       if ( Globals.IsExiting ) return;
       if ( !Globals.IsReady ) return;
-      if ( !TimerReminder.Enabled ) return;
-      if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
-      TimerMutex = true;
-      UpdateTitlesMutex = true;
-      SystemManager.TryCatch(CheckProcessRelicate);
-      SystemManager.TryCatch(Settings.Store);
       try
       {
+        if ( !TimerReminder.Enabled ) return;
+        if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
+        TimerMutex = true;
+        UpdateTitlesMutex = true;
+        SystemManager.TryCatch(CheckProcessRelicate);
+        SystemManager.TryCatch(Settings.Store);
         bool showbox = !IsReminderPaused;
         bool IsSpecialDayOld = IsSpecialDay;
         IsSpecialDay = false;
