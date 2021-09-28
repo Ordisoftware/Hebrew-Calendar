@@ -322,6 +322,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 9.6
+
+- Fix show new parashah after shabat.
+
 #### 2021.09.26 - Version 9.5
 
 - Improve interaction with monthly view.
