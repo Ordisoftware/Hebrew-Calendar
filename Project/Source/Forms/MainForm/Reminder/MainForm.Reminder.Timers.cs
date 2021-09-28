@@ -125,7 +125,6 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( IsSpecialDay )
           WeeklyParashahShownAtNewWeek = false;
-        doshow = true;
         if ( doshow )
         {
           var dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
@@ -139,6 +138,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           || ( dayInfos.Value.Event == TorahCelebration.Soukot
                                && dayInfos.Value.Index == 8 && !Settings.UseSimhatTorahOutside )
                         );
+            WeeklyParashahShownAtNewWeek = doshow;
           }
           if ( doshow )
           {
