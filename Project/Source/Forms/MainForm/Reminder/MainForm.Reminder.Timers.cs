@@ -142,7 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           && dayInfos.Value.Index == 8
                           && !Settings.UseSimhatTorahOutside
                         );
-            //WeeklyParashahShownAtNewWeek = doshow;
+            WeeklyParashahShownAtNewWeek = doshow;
           }
           if ( doshow )
           {
