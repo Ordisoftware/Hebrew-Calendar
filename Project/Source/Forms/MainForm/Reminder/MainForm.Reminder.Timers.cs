@@ -116,7 +116,6 @@ namespace Ordisoftware.Hebrew.Calendar
       //
       void ShowNewParashah()
       {
-        (TorahCelebration Event, int Index, string Text)? dayInfos = null;
         bool doshow = false;
         if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
           doshow = true;
@@ -129,31 +128,18 @@ namespace Ordisoftware.Hebrew.Calendar
         doshow = true;
         if ( doshow )
         {
-          dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
+          var dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
           if ( dayInfos != null )
           {
-            doshow = dayInfos.Value.Event != TorahCelebration.Pessah
-                     && dayInfos.Value.Event != TorahCelebration.YomTerouah
-                     && dayInfos.Value.Event != TorahCelebration.YomHaKipourim
-                     && dayInfos.Value.Event != TorahCelebration.Soukot
-                     || ( dayInfos.Value.Event == TorahCelebration.Soukot
-                          && dayInfos.Value.Index == 8 && !Settings.UseSimhatTorahOutside );
-            if ( doshow )
-            {
-              WeeklyParashahShownAtStartup = true;
-              WeeklyParashahShownAtNewWeek = true;
-              ActionViewParashahDescription.PerformClick();
-            }
+            doshow = dayInfos.Value.Event == TorahCelebration.None
+                     || ( dayInfos.Value.Event != TorahCelebration.Pessah
+                          && dayInfos.Value.Event != TorahCelebration.YomTerouah
+                          && dayInfos.Value.Event != TorahCelebration.YomHaKipourim
+                          && dayInfos.Value.Event != TorahCelebration.Soukot
+                          || ( dayInfos.Value.Event == TorahCelebration.Soukot
+                               && dayInfos.Value.Index == 8 && !Settings.UseSimhatTorahOutside )
+                        );
           }
-        }
-        if ( !doshow )
-        {
-          if ( dayInfos == null )
-            dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
-          doshow = dayInfos != null
-                   && dayInfos.Value.Event == TorahCelebration.Soukot
-                   && dayInfos.Value.Index == 8
-                   && !Settings.UseSimhatTorahOutside;
           if ( doshow )
           {
             WeeklyParashahShownAtStartup = true;
