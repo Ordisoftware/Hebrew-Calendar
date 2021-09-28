@@ -13,113 +13,12 @@
 /// <created> 2019-01 </created>
 /// <edited> 2021-09 </edited>
 using System;
-using System.Linq;
-using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
 {
 
   partial class MainForm
   {
-
-    private bool IsSpecialDay;
-    private bool WeeklyParashahShownAtStartup;
-    private bool WeeklyParashahShownAtNewWeek;
-
-    public void DoTimerReminder()
-    {
-      if ( TimerMutex ) return;
-      if ( Globals.IsExiting ) return;
-      if ( !Globals.IsReady ) return;
-      if ( !TimerReminder.Enabled ) return;
-      if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
-      TimerMutex = true;
-      UpdateTitlesMutex = true;
-      CheckProcessRelicate();
-      SystemManager.TryCatch(Settings.Store);
-      try
-      {
-        bool showbox = !IsReminderPaused;
-        bool IsSpecialDayOld = IsSpecialDay;
-        IsSpecialDay = false;
-        IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
-        IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
-        if ( showbox && Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous - False warning due to try...finally
-        if ( !IsSpecialDay && !IsSpecialDayOld )
-          WeeklyParashahShownAtNewWeek = true;
-        else
-        if ( !IsSpecialDay && IsSpecialDayOld )
-          WeeklyParashahShownAtNewWeek = false;
-        else
-        if ( IsSpecialDay )
-          WeeklyParashahShownAtNewWeek = false;
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous - False warning due to try...finally
-      }
-      catch ( Exception ex )
-      {
-        if ( TimerErrorShown ) return;
-        TimerErrorShown = true;
-        ex.Manage();
-      }
-      finally
-      {
-        TimerMutex = false;
-        UpdateTitlesMutex = false;
-        UpdateTitles(true);
-        SystemManager.TryCatch(() =>
-        {
-          if ( Globals.IsExiting ) return;
-          if ( TrayIcon == null ) return;
-          if ( CommonMenusControl.Instance == null ) return;
-          CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-          AboutBox.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
-          TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
-        });
-        SystemManager.TryCatch(() =>
-        {
-          if ( LockSessionForm.Instance?.Visible ?? false )
-            LockSessionForm.Instance.Popup();
-        });
-#pragma warning disable S1871 // Two branches in a conditional structure should not have exactly the same implementation - Opinion
-        if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
-        {
-          WeeklyParashahShownAtStartup = true;
-          WeeklyParashahShownAtNewWeek = true;
-          ActionViewParashahDescription.PerformClick();
-        }
-        else
-        if ( !WeeklyParashahShownAtNewWeek && Settings.WeeklyParashahShowAtNewWeek && !IsSpecialDay )
-        {
-          WeeklyParashahShownAtStartup = true;
-          WeeklyParashahShownAtNewWeek = true;
-          ActionViewParashahDescription.PerformClick();
-        }
-        else
-        if ( IsSpecialDay )
-          WeeklyParashahShownAtNewWeek = false;
-#pragma warning restore S1871 // Two branches in a conditional structure should not have exactly the same implementation - Opinion
-      }
-    }
-
-    private void DoTimerMidnight()
-    {
-      if ( !Globals.IsReady ) return;
-      this.SyncUI(() =>
-      {
-        System.Threading.Thread.Sleep(1000);
-        CheckRegenerateCalendar();
-        var today = DateTime.Today;
-        if ( CurrentDay.Date == today.AddDays(-1) )
-          GoToDate(today);
-        else
-        if ( Settings.CurrentView == ViewMode.Month )
-          CalendarMonth.Refresh();
-        UpdateTitles(true);
-        if ( Settings.CheckUpdateEveryWeekWhileRunning )
-          ActionWebCheckUpdate_Click(null, null);
-      });
-    }
 
     private void EnableReminderTimer(bool calltimer = true)
     {
@@ -169,7 +68,6 @@ namespace Ordisoftware.Hebrew.Calendar
           TimerResumeReminder.Interval = delay.Value * 60 * 1000;
           TimerResumeReminder.Start();
         }
-        //TimerReminder_Tick(null, null);
       }
       finally
       {
@@ -177,24 +75,6 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
-    private void CheckProcessRelicate()
-    {
-      SystemManager.TryCatch(() =>
-      {
-        var processes = Globals.SameRunningProcessesNotThisOne;
-        if ( processes.Any() )
-          TimerKillProcesses.Start();
-      });
-    }
-
   }
 
 }
-
-/*if ( Settings.ReminderAnniversarySunEnabled )
-{
-  CheckAnniversarySunDay();
-  CheckAnniversaryMoonDay();
-  CheckAnniversarySun();
-  CheckAnniversaryMoon();
-}*/

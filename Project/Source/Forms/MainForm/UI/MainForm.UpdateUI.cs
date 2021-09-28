@@ -119,6 +119,8 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( force || TitleOmer.IsNullOrEmpty() )
             TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
           LabelSubTitleOmer.Text = TitleOmer;
+          // Celebration
+          // TODO add celebration in title bar ?
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
           {

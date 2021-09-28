@@ -540,6 +540,9 @@
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.Timers.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\UI\MainForm.TrayIcon.cs">
       <SubType>Form</SubType>
     </Compile>

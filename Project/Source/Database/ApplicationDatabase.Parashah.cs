@@ -29,11 +29,11 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( today.TorahEvent == TorahCelebrationDay.PessahD1 || today.TorahEvent == TorahCelebrationDay.PessahD7 )
           return (today, null);
         else
-        if ( !today.GetWeekLongCelebrationIntermediateDay().IsNullOrEmpty() )
+        if ( today.GetWeekLongCelebrationIntermediateDay().Event != TorahCelebration.None )
           return (today, null);
       if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
       today = today?.GetParashahReadingDay();
-      return (today, ParashotFactory.Instance.Get(today?.ParashahID) ?? null);
+      return (today, ParashotFactory.Instance.Get(today?.ParashahID));
     }
 
     public bool ShowWeeklyParashahDescription()
