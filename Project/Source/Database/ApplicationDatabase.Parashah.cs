@@ -31,6 +31,16 @@ namespace Ordisoftware.Hebrew.Calendar
         else
         if ( today.GetWeekLongCelebrationIntermediateDay().Event != TorahCelebration.None )
           return (today, null);
+      if ( today.LunarMonth == TorahCelebrationSettings.YomsMonth )
+        if ( today.TorahEvent == TorahCelebrationDay.YomTerouah || today.TorahEvent == TorahCelebrationDay.YomHaKipourim )
+          return (today, null);
+        else
+        {
+          var dayInfos = today.GetWeekLongCelebrationIntermediateDay();
+          if ( dayInfos.Event == TorahCelebration.Soukot )
+            if ( dayInfos.Index < 8 || ( dayInfos.Index == 8 && Program.Settings.UseSimhatTorahOutside ) )
+              return (today, null);
+        }
       if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
       today = today?.GetParashahReadingDay();
       return (today, ParashotFactory.Instance.Get(today?.ParashahID));

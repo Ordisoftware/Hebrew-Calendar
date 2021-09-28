@@ -135,8 +135,6 @@ namespace Ordisoftware.Hebrew.Calendar
                           && dayInfos.Value.Event != TorahCelebration.YomTerouah
                           && dayInfos.Value.Event != TorahCelebration.YomHaKipourim
                           && dayInfos.Value.Event != TorahCelebration.Soukot
-                          || ( dayInfos.Value.Event == TorahCelebration.Soukot
-                               && dayInfos.Value.Index == 8 && !Settings.UseSimhatTorahOutside )
                         )
                      || ( dayInfos.Value.Event == TorahCelebration.Soukot
                           && dayInfos.Value.Index == 8
