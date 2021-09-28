@@ -679,5 +679,8 @@
     <Setting Name="CalendarDoubleClickAction" Type="Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction" Scope="User">
       <Value Profile="(Default)">SetActive</Value>
     </Setting>
+    <Setting Name="MainFormTitleBarShowCelebration" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

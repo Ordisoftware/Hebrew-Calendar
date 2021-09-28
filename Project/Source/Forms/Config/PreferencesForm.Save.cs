@@ -113,6 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Settings.WeatherMenuItemsEnabled = EditWeatherMenuItemsEnabled.Checked;
       Settings.ShowLastNewInVersionAfterUpdate = EditShowLastNewInVersionAfterUpdate.Checked;
       Settings.MainFormTitleBarShowToday = EditMainFormTitleBarShowToday.Checked;
+      Settings.MainFormTitleBarShowCelebration = EditMainFormTitleBarShowCelebration.Checked;
       Settings.CalendarLineSpacing = (int)EditCalendarLineSpacing.Value;
       Settings.LockSessionConfirmLogOffOrMore = EditConfirmShutdown.Checked;
       Settings.AskRegenerateIfIntervalGreater = EditAskRegenerateIfIntervalGreater.Checked;

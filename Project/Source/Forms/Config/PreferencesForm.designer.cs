@@ -334,6 +334,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditMainFormTitleBarShowCelebration = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -675,6 +676,7 @@
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
+      this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowCelebration);
       this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowToday);
       this.TabPageApplication.Controls.Add(this.EditParashahCaptionWithBookAndRef);
       this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowWeeklyParashah);
@@ -2841,6 +2843,12 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // EditMainFormTitleBarShowCelebration
+      // 
+      resources.ApplyResources(this.EditMainFormTitleBarShowCelebration, "EditMainFormTitleBarShowCelebration");
+      this.EditMainFormTitleBarShowCelebration.Name = "EditMainFormTitleBarShowCelebration";
+      this.EditMainFormTitleBarShowCelebration.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3222,5 +3230,6 @@
     private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionNothing;
     private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionSetActive;
     private System.Windows.Forms.TabPage TabPageColors;
+    private System.Windows.Forms.CheckBox EditMainFormTitleBarShowCelebration;
   }
 }

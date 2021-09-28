@@ -32,6 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private string TitleGPS = "";
     private string TitleOmer = "";
     private string TitleParashah = "";
+    private string TitleCelebration = "";
 
     /// <summary>
     /// Center the form to the screen.
@@ -120,7 +121,13 @@ namespace Ordisoftware.Hebrew.Calendar
             TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
           LabelSubTitleOmer.Text = TitleOmer;
           // Celebration
-          // TODO add celebration in title bar ?
+          if ( Settings.MainFormTitleBarShowCelebration )
+            if ( force || TitleCelebration.IsNullOrEmpty() )
+            {
+              TitleCelebration = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
+              if ( !TitleCelebration.IsNullOrEmpty() )
+                Text += " - " + TitleCelebration;
+            }
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
           {

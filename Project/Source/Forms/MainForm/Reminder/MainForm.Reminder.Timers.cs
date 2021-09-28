@@ -14,6 +14,7 @@
 /// <edited> 2021-09 </edited>
 using System;
 using System.Linq;
+using System.Windows.Forms;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -85,10 +86,10 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         TimerMutex = false;
         UpdateTitlesMutex = false;
-        UpdateTitles(true);
         SystemManager.TryCatch(UpdateTrayIcon);
-        SystemManager.TryCatch(ShowLockSession);
+        SystemManager.TryCatch(UpdateUI);
         SystemManager.TryCatch(ShowNewParashah);
+        SystemManager.TryCatch(ShowLockSession);
       }
       //
       void CheckProcessRelicate()
@@ -96,12 +97,6 @@ namespace Ordisoftware.Hebrew.Calendar
         var processes = Globals.SameRunningProcessesNotThisOne;
         if ( processes.Any() )
           TimerKillProcesses.Start();
-      }
-      //
-      void ShowLockSession()
-      {
-        if ( LockSessionForm.Instance?.Visible ?? false )
-          LockSessionForm.Instance.Popup();
       }
       //
       void UpdateTrayIcon()
@@ -112,6 +107,17 @@ namespace Ordisoftware.Hebrew.Calendar
         CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
         AboutBox.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
         TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
+      }
+      //
+      void UpdateUI()
+      {
+        UpdateTitles(true);
+      }
+      //
+      void ShowLockSession()
+      {
+        if ( LockSessionForm.Instance?.Visible ?? false )
+          LockSessionForm.Instance.Popup();
       }
       //
       void ShowNewParashah()
