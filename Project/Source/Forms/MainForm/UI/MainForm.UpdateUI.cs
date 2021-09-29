@@ -106,9 +106,6 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           // Subtitle
           LabelSubTitleCalendar.Text = AppTranslations.Subtitle.GetLang();
-          // Today
-          if ( Settings.MainFormTitleBarShowToday )
-            Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
           // GPS
           if ( force || TitleGPS.IsNullOrEmpty() )
             if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
@@ -120,17 +117,20 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( force || TitleOmer.IsNullOrEmpty() )
             TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
           LabelSubTitleOmer.Text = TitleOmer;
+          // Today
+          if ( Settings.MainFormTitleBarShowToday )
+            Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
           // Celebration
           if ( Settings.MainFormTitleBarShowCelebration )
             if ( force || TitleCelebration.IsNullOrEmpty() )
             {
-              TitleCelebration = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
+              var today = ApplicationDatabase.Instance.GetToday();
+              TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
               if ( !TitleCelebration.IsNullOrEmpty() )
                 Text += " - " + TitleCelebration;
             }
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
-          {
             if ( force || TitleParashah.IsNullOrEmpty() )
             {
               var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
@@ -142,6 +142,7 @@ namespace Ordisoftware.Hebrew.Calendar
                 TitleParashah = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
                                                                    weekParashah.Day.HasLinkedParashah);
                 TitleParashah = " - Parashah " + TitleParashah.ToUpper();
+                Text += TitleParashah;
               }
               else
               {
@@ -151,8 +152,6 @@ namespace Ordisoftware.Hebrew.Calendar
                   MenuTools.DropDownItems[0].Enabled = false;
               }
             }
-            Text += TitleParashah;
-          }
         });
       }
       finally
