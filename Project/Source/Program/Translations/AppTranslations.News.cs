@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["9.5"] = new TranslationsDictionary
+        ["9.6"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added option to show current celebration in the title bar." + Globals.NL +
                           "• Fixed title bar not updated in case of fullscreen or screensacer." + Globals.NL +
