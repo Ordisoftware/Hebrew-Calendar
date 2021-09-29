@@ -20,7 +20,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
+#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop - Opinion
 namespace Ordisoftware.Core
 {
 
@@ -212,7 +212,6 @@ namespace Ordisoftware.Core
         {
           var method = frame.GetMethod();
           partMethod = method.DeclaringType.FullName;
-          //var type = Type.GetType(partMethod);
           Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
           if ( list.Contains(method.DeclaringType) )
             continue;
@@ -328,7 +327,6 @@ namespace Ordisoftware.Core
       TargetSite = ex.TargetSite;
       try
       {
-        //Emitter = Sender is ExceptionForm form ? form.Text : Globals.MainForm?.Text ?? ex.Source;
         Emitter = Globals.AssemblyTitleWithVersion;
         ExtractInherits();
         try

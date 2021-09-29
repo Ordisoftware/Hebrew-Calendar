@@ -32,17 +32,20 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( !Globals.IsReady ) return;
       this.SyncUI(() =>
       {
-        System.Threading.Thread.Sleep(1000);
-        CheckRegenerateCalendar();
-        var today = DateTime.Today;
-        if ( CurrentDay.Date == today.AddDays(-1) )
-          GoToDate(today);
-        else
-        if ( Settings.CurrentView == ViewMode.Month )
-          CalendarMonth.Refresh();
-        UpdateTitles(true);
-        if ( Settings.CheckUpdateEveryWeekWhileRunning )
-          ActionWebCheckUpdate_Click(null, null);
+        System.Threading.Thread.Sleep(2000);
+        SystemManager.TryCatch(() =>
+        {
+          CheckRegenerateCalendar();
+          var today = DateTime.Today;
+          if ( CurrentDay.Date == today.AddDays(-1) )
+            GoToDate(today);
+          else
+          if ( Settings.CurrentView == ViewMode.Month )
+            CalendarMonth.Refresh();
+          UpdateTitles(true);
+          if ( Settings.CheckUpdateEveryWeekWhileRunning )
+            ActionWebCheckUpdate_Click(null, null);
+        });
       });
     }
 
@@ -86,10 +89,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         TimerMutex = false;
         UpdateTitlesMutex = false;
-        SystemManager.TryCatch(UpdateTrayIcon);
-        SystemManager.TryCatch(UpdateUI);
-        SystemManager.TryCatch(ShowNewParashah);
-        SystemManager.TryCatch(ShowLockSession);
+        SystemManager.TryCatch(UpdateTrayIcon, UpdateUI, ShowNewParashah, ShowLockSession);
       }
       //
       void CheckProcessRelicate()
