@@ -19,6 +19,7 @@ namespace Ordisoftware.Hebrew
 
   public enum TorahCelebration
   {
+    None,
     Pessah,
     Chavouot,
     YomTerouah,

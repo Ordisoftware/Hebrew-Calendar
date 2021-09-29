@@ -901,4 +901,7 @@
   <data name="TabPageColors.Text" xml:space="preserve">
     <value>Couleurs</value>
   </data>
+  <data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
+    <value>Afficher la célébration en cours dans la barre de titre</value>
+  </data>
 </root>

@@ -114,6 +114,15 @@ namespace Ordisoftware.Hebrew
       }
     }
 
+    static private void LoadWebLinksProviders()
+    {
+      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+      {
+        var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
+        if ( item != null ) WebLinksProviders.Add(item);
+      }
+    }
+
     /// <summary>
     /// Load the providers files.
     /// </summary>
@@ -127,14 +136,7 @@ namespace Ordisoftware.Hebrew
       WebProvidersCelebration = CreateOnlineProviders(folder, WebProvidersCelebrationFilePath);
       WebLinksProviders = new List<OnlineProviders>();
       if ( Directory.Exists(WebLinksFolderPath) )
-        SystemManager.TryCatch(() =>
-        {
-          foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-          {
-            var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
-            if ( item != null ) WebLinksProviders.Add(item);
-          }
-        });
+        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, LoadWebLinksProviders);
     }
 
   }

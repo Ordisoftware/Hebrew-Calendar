@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunisolarDay
   {
 
-    public string GetWeekLongCelebrationIntermediateDay()
+    public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay()
     {
       int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
       if ( MoonriseOccuring != MoonriseOccuring.NextDay || deltaPessah != 0 )
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
                     ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
                     : -1;
           if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
-            return AppTranslations.PessahDay.GetLang(day);
+            return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
         }
         else
         if ( LunarMonth == TorahCelebrationSettings.YomsMonth )
@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
                     ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
                     : -1;
           if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
-            return AppTranslations.SoukotDay.GetLang(day);
+            return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
         }
         else
         if ( LunarMonth == 3 )
@@ -74,9 +74,11 @@ namespace Ordisoftware.Hebrew.Calendar
             && first.Date <= last.Date
             && this.Date >= first.Date
             && this.Date <= last.Date )
-            return AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang();
+            return (TorahCelebration.Chavouot,
+                    (int)( this.Date - first.Date ).TotalDays + 1,
+                    AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang());
         }
-      return string.Empty;
+      return (TorahCelebration.None, 0, string.Empty);
     }
 
   }

@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ContextMenuDayParashah.Enabled = false;
       // Celebration
       string celebration = AppTranslations.TorahCelebrationDays[ContextMenuDayCurrentEvent.TorahEvent].GetLang();
-      string weeklong = ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay();
+      string weeklong = ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay().Text;
       bool isNoCelebration = celebration.IsNullOrEmpty();
       bool isNoWeekLong = weeklong.IsNullOrEmpty();
       bool isNoEvent = isNoCelebration && isNoWeekLong;

@@ -291,7 +291,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( day.TorahEvent != TorahCelebrationDay.None )
               day.TorahEventText = AppTranslations.TorahCelebrationDays[day.TorahEvent].GetLang();
             else
-              day.TorahEventText = day.GetWeekLongCelebrationIntermediateDay();
+              day.TorahEventText = day.GetWeekLongCelebrationIntermediateDay().Text;
           }
           catch ( Exception ex )
           {

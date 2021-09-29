@@ -2705,5 +2705,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarDoubleClickAction"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MainFormTitleBarShowCelebration {
+            get {
+                return ((bool)(this["MainFormTitleBarShowCelebration"]));
+            }
+            set {
+                this["MainFormTitleBarShowCelebration"] = value;
+            }
+        }
     }
 }

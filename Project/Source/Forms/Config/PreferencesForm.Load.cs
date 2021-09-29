@@ -110,6 +110,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemManager.TryCatch(() => { EditWeatherAppPath.Text = Settings.WeatherAppPath; });
       SystemManager.TryCatch(() => { EditWeatherMenuItemsEnabled.Checked = Settings.WeatherMenuItemsEnabled; });
       SystemManager.TryCatch(() => { EditMainFormTitleBarShowToday.Checked = Settings.MainFormTitleBarShowToday; });
+      SystemManager.TryCatch(() => { EditMainFormTitleBarShowCelebration.Checked = Settings.MainFormTitleBarShowCelebration; });
       SystemManager.TryCatch(() => { EditShowLastNewInVersionAfterUpdate.Checked = Settings.ShowLastNewInVersionAfterUpdate; });
       SystemManager.TryCatch(() => { EditCalendarLineSpacing.Value = Settings.CalendarLineSpacing; });
       SystemManager.TryCatch(() => { EditConfirmShutdown.Checked = Settings.LockSessionConfirmLogOffOrMore; });
