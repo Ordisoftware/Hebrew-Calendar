@@ -323,7 +323,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.10.01 - Version 9.6
+#### 2021.09.29 - Version 9.6
 
 - Add option to show current celebration in the title bar.
 - Fix title bar not updated in case of fullscreen or screensacer.
