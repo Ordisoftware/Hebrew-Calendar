@@ -1092,6 +1092,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
     {
+      if ( IsCalendarReady ) return;
       if ( TimerMutex ) return;
       CalendarMonth.Refresh();
     }

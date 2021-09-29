@@ -164,8 +164,11 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( LockSessionForm.Instance?.Visible ?? false )
           LockSessionForm.Instance.Popup();
       });
-      ProcessNewsAndCommandLine();
+      SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
+      IsCalendarReady = false;
     }
+
+    private bool IsCalendarReady = true;
 
     /// <summary>
     /// Show news and process command line options.
@@ -173,8 +176,11 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ProcessNewsAndCommandLine()
     {
       if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-        if ( Globals.IsSettingsUpgraded && Settings.ShowLastNewInVersionAfterUpdate )
-          SystemManager.TryCatch(CommonMenusControl.Instance.ShowLastNews);
+      {
+        SystemManager.TryCatch(CommonMenusControl.Instance.ShowLastNews);
+        Application.DoEvents();
+        System.Threading.Thread.Sleep(500);
+      }
       if ( ApplicationCommandLine.Instance.Generate )
         ActionGenerate.PerformClick();
       if ( ApplicationCommandLine.Instance.ResetReminder )
