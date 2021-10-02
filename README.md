@@ -323,6 +323,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 9.8
+
+- Fix open all links count.
+- Update web links
+- Code refactoring.
+
 #### 2021.10.02 - Version 9.7
 
 - Fix a bug introduced in previous version for the celebration verses board.

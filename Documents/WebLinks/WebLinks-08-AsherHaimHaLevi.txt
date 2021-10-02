@@ -29,6 +29,17 @@ URL = https://asherhaimhalevi.ordisoftware.com/works/sefirot/
 
 -
 
+Name = (FR) Proposition logique pour un monde meilleur
+URL = https://asherhaimhalevi.ordisoftware.com
+
+Name = (FR) Théorie de santé-aide-justice
+URL = https://asherhaimhalevi.ordisoftware.com/logical-proposition/health-help-justice-theory/
+
+Name = (FR) Epitaphe pour Kémistes de Kémet
+URL = https://asherhaimhalevi.ordisoftware.com/works/epitaph/
+
+-
+
 Name = (FR) Bibliographie
 URL = https://asherhaimhalevi.ordisoftware.com/works/bibliography/
 
