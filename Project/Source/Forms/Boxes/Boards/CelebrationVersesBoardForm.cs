@@ -98,6 +98,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void PopulateLists()
     {
       var items = Enums.GetValues<TorahCelebration>()
+                       .Skip(1)
                        .Select(value => new ListViewItem(AppTranslations.TorahCelebrations.GetLang(value)) { Tag = value });
       SelectCelebration.Items.Clear();
       SelectCelebration.Items.AddRange(items.ToArray());
@@ -109,9 +110,15 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( celebration == TorahCelebrationDay.None )
       {
         var dateStart = DateTime.Today;
-        var day = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(d => d.Date >= dateStart && d.HasTorahEvent);
+        var day = ApplicationDatabase.Instance
+                                     .LunisolarDays
+                                     .FirstOrDefault(d => d.Date >= dateStart 
+                                                       && d.HasTorahEvent 
+                                                       && d.TorahEvent != TorahCelebrationDay.NewYearD1);
         if ( day != null ) celebration = day.TorahEvent;
       }
+      if ( celebration == TorahCelebrationDay.NewYearD10 )
+        celebration = TorahCelebrationDay.PessahD1;
       if ( celebration != TorahCelebrationDay.None )
       {
         foreach ( ListViewItem item in SelectCelebration.Items )
