@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.Linq;
 using System.Text;
@@ -116,7 +116,7 @@ namespace Ordisoftware.Hebrew
         form.ActionYes.DialogResult = DialogResult.None;
         initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, null);
         initButton(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
-                   index => ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>().Last().PerformClick());
+                   index => ActionViewVersionNews.DropDownItems.ToEnumerable().Last().PerformClick());
         initButton(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
                    index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
         initButton(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
@@ -142,7 +142,7 @@ namespace Ordisoftware.Hebrew
             }
             else
             {
-              var items = ActionViewVersionNews.DropDownItems.Cast<ToolStripItem>();
+              var items = ActionViewVersionNews.DropDownItems.ToEnumerable();
               var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
               if ( found == null ) return;
               form.Close();
