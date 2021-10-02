@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 
 namespace Ordisoftware.Core
@@ -69,8 +69,8 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary AskToOpenAllLinks
       = new TranslationsDictionary
       {
-        [Language.EN] = "Do you want to open all {0} links of \"{1}\"?",
-        [Language.FR] = "Voulez-vous ouvrir tous les {0} liens de \"{1}\" ?"
+        [Language.EN] = "Do you want to open all the {1} links of this menu?" + Globals.NL2 + "{0}",
+        [Language.FR] = "Voulez-vous ouvrir tous les {1} liens de ce menu ?" + Globals.NL2 + "{0}"
       };
 
     static public readonly TranslationsDictionary AskToEmptyHistory
