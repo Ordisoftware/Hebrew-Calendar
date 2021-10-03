@@ -67,6 +67,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added context menu for days in monthly view.
 - Added bookmarks to context menu in monthly view.
 - Added some options and colors for monthly view.
+- Added option to show current celebration in the title bar
 - Added option to set active day by click in monthly view.
 - Added option for double-click in visual month to set active or select.
 - Added some keyboard shortcuts to change and select day in monthly view.
@@ -325,10 +326,9 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9.8
 
-- Add celebration context menu to open verses board in navigation window.
+- Add celebration context menu to open verses board from navigation window.
 - Fix open all links count.
-- Code refactoring.
-- Update reorganize web links.
+- Update and reorganize web links.
 
 #### 2021.10.02 - Version 9.7
 

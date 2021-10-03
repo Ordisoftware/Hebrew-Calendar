@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -39,30 +39,15 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques améliorations et corrections."
         },*/
 
-        ["9.6"] = new TranslationsDictionary
+        ["9.8"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added option to show current celebration in the title bar." + Globals.NL +
-                          "• Fixed title bar not updated in case of fullscreen or screensacer." + Globals.NL +
-                          "• Fixed frozen reminder boxes while mouse is over the monthly view." + Globals.NL +
-                          "• Fixed showing new parashah description box after shabat when a celebration is in progress.",
+          [Language.EN] = "• Add celebration context menu to open verses board from navigation window." + Globals.NL +
+                          "• Fix open all links count." + Globals.NL +
+                          "• Update and reorganize web links.",
 
-          [Language.FR] = "• Ajout d'une option pour afficher la célébration en cours dans la barre de titre." + Globals.NL +
-                          "• Correction de la barre de titre non mise à jour en cas de plein écran ou d'écran de veille." + Globals.NL +
-                          "• Correction des boîtes de rappel gelées lorsque la souris est par dessus la vue mensuelle." + Globals.NL +
-                          "• Correction de l'affichage de la boîte de description de la nouvelle parasha après le shabat lorsqu'une célébration est en cours."
-        },
-
-        ["9.5"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Improved interaction with monthly view." + Globals.NL +
-                          "• Improved day context menu to indicate the celebration." + Globals.NL +
-                          "• Added some parashah and celebrations online providers for the study." + Globals.NL +
-                          "• Updated web links.",
-
-          [Language.FR] = "• Amélioration de l'interaction avec la vue mensuelle." + Globals.NL +
-                          "• Amélioration du menu contextuel du jour pour indiquer la célébration." + Globals.NL +
-                          "• Ajout quelques fournisseurs en ligne pour l'étude de la parashah et des célébrations ." + Globals.NL +
-                          "• Mettre à jour les liens Web."
+          [Language.FR] = "• Ajout d'un menu contextuel de célébration pour ouvrir le tableau des versets depuis la fenêtre de navigation." + Globals.NL +
+                          "• Correction du nombre de tous les liens à ouvrir." +Globals.NL +
+                          "• Mise à jour et réorganisation des liens Web."
         },
 
         ["9.x"] = new TranslationsDictionary
@@ -71,6 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Added context menu for days in monthly view." + Globals.NL +
                           "• Added bookmarks to context menu in monthly view." + Globals.NL +
                           "• Added some options and colors for monthly view." + Globals.NL +
+                          "• Added option to show current celebration in the title bar." + Globals.NL +
                           "• Added option to set active day by click in monthly view." + Globals.NL +
                           "• Added option for double-click in visual month to set active or select." + Globals.NL +
                           "• Added some keyboard shortcuts to change and select day in monthly view." + Globals.NL +
@@ -89,6 +75,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
                           "• Ajout des signets au menu contextuel dans la vue mensuelle." + Globals.NL +
                           "• Ajout de quelques options et couleurs pour la vue mensuelle." + Globals.NL +
+                          "• Ajout d'une option pour afficher la célébration en cours dans la barre de titre." + Globals.NL +
                           "• Ajout d'une option pour définir le jour actif pas un clic dans la vue mensuelle." + Globals.NL +
                           "• Ajout d'une option pour choisir l'action pour le double-clic dans la vue mensuelle." + Globals.NL +
                           "• Ajout de raccourcis clavier pour changer et sélectionner un jour dans la vue mensuelle." + Globals.NL +
@@ -101,7 +88,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                           "• Quelques corrections et améliorations." + Globals.NL +
                           "• Code optimisé." + Globals.NL +
-                          "• Mise à jour les liens web."
+                          "• Mise à jour des liens web."
         },
 
         ["8.x"] = new TranslationsDictionary
