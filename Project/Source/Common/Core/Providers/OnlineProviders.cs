@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -16,9 +16,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+namespace Ordisoftware.Core
 {
 
   /// <summary>
@@ -77,7 +76,11 @@ namespace Ordisoftware.Hebrew
         var lines = File.ReadAllLines(filePath);
         for ( int index = 0; index < lines.Length; index++ )
         {
-          void showError() => DisplayManager.ShowError(SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]));
+          void showError()
+          {
+            string message = SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]);
+            DisplayManager.ShowError(message);
+          }
           string line = lines[index].Trim();
           if ( line == string.Empty ) continue;
           if ( line.StartsWith(";") ) continue;
@@ -141,22 +144,6 @@ namespace Ordisoftware.Hebrew
       }
     }
 
-  }
-
-  static public class IEnumerableHelper
-  {
-    static public List<List<T>> Split<T>(this IEnumerable<T> list, Func<T, bool> predicate)
-    {
-      var slices = new List<List<T>>();
-      slices.Add(new List<T>());
-      foreach ( var item in list )
-      {
-        slices.Last().Add(item);
-        if ( predicate(item) )
-          slices.Add(new List<T>());
-      }
-      return slices;
-    }
   }
 
 }

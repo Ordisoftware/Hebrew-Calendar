@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -18,9 +18,8 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+namespace Ordisoftware.Core
 {
 
   /// <summary>
@@ -65,7 +64,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
-      var item = new ToolStripMenuItem(HebrewTranslations.ConfigureProviders.GetLang(), ImageConfigure);
+      var item = new ToolStripMenuItem(SysTranslations.ConfigureProviders.GetLang(), ImageConfigure);
       item.ImageScaling = ToolStripItemImageScaling.None;
       item.Click += click;
       return item;
@@ -84,7 +83,7 @@ namespace Ordisoftware.Hebrew
       string nameItems = StackMethods.NameOfFromStack(providers, 3).Replace("Globals.", string.Empty);
       foreach ( var item in providers.Items )
         menuItems.Add(item.CreateMenuItem(action));
-      if ( HebrewGlobals.WebLinksProviders[0].Configurable )
+      if ( Globals.WebLinksProviders[0].Configurable )
       {
         menuItems.Add(new ToolStripSeparator());
         menuItems.Add(CreateConfigureMenuItem((sender, e) =>
@@ -122,7 +121,7 @@ namespace Ordisoftware.Hebrew
     /// </summary>
     static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
     {
-      var providers = HebrewGlobals.WebLinksProviders;
+      var providers = Globals.WebLinksProviders;
       if ( providers == null ) return;
       menuRoot.DropDownItems.Clear();
       foreach ( var items in providers )
@@ -151,12 +150,12 @@ namespace Ordisoftware.Hebrew
               SystemManager.OpenWebLink(url);
             }));
         }
-      if ( menuRoot.DropDownItems.Count > 0 && HebrewGlobals.WebLinksProviders[0].Configurable )
+      if ( menuRoot.DropDownItems.Count > 0 && Globals.WebLinksProviders[0].Configurable )
       {
         menuRoot.DropDownItems.Add(new ToolStripSeparator());
         menuRoot.DropDownItems.Add(CreateConfigureMenuItem((sender, e) =>
         {
-          if ( DataFileEditorForm.Run(nameof(HebrewGlobals.WebLinksProviders), HebrewGlobals.WebLinksProviders) )
+          if ( DataFileEditorForm.Run(nameof(Globals.WebLinksProviders), Globals.WebLinksProviders) )
             reconstruct();
         }));
       }

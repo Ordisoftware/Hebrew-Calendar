@@ -66,6 +66,13 @@ namespace Ordisoftware.Core
         [Language.FR] = $"Effacer le fichier :{Globals.NL2}{{0}}?",
       };
 
+    static public readonly TranslationsDictionary ConfigureProviders
+      = new TranslationsDictionary
+      {
+        [Language.EN] = "Configure providers",
+        [Language.FR] = "Configurer les fournisseurs"
+      };
+
     static public readonly TranslationsDictionary AskToOpenAllLinks
       = new TranslationsDictionary
       {

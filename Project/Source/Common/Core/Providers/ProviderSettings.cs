@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -14,9 +14,8 @@
 /// <edited> 2021-09 </edited>
 using System;
 using System.IO;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+namespace Ordisoftware.Core
 {
 
   abstract class ProviderSettings

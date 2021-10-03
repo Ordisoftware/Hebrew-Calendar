@@ -170,6 +170,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
+    <Compile Include="Source\Common\Core\Collections\CollectionsHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\StackMethods.cs" />
     <Compile Include="Source\Common\Core\Data\DataFile.cs" />
     <Compile Include="Source\Common\Core\Data\DataFileFolder.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Source\Common\Core\Classes\ExportTarget.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\SystemHotKey.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Providers.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.IPC.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Power.cs" />
     <Compile Include="Source\Common\Core\Managers.System\SystemManager.Try.cs" />
@@ -253,7 +255,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.MyJewishLearning.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TheYeshivaNet.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.YeshivaCo.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\ProviderSettings.cs" />
+    <Compile Include="Source\Common\Core\Providers\ProviderSettings.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineCelebrations.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishEN.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishIW.cs" />
@@ -265,9 +267,9 @@
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahBox.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviderItem.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProviders.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\OnlineProvidersHelper.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProviderItem.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProviders.cs" />
+    <Compile Include="Source\Common\Core\Providers\OnlineProvidersHelper.cs" />
     <Compile Include="Source\Common\Hebrew\WinForms\CommonMenusControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
