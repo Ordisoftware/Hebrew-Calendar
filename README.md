@@ -325,9 +325,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9.8
 
+- Add celebration context menu to open verses board in navigation window.
 - Fix open all links count.
-- Update web links
 - Code refactoring.
+- Update reorganize web links.
 
 #### 2021.10.02 - Version 9.7
 
