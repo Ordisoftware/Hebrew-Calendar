@@ -29,6 +29,8 @@ URL = https://en.wikipedia.org/wiki/Hebrew_language
 Name = (FR) Hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/H%C3%A9breu
 
+-
+
 Name = (EN) Hebrew Verb Tables @ pealim.com
 URL = https://www.pealim.com
 
@@ -58,6 +60,8 @@ URL = https://en.wikipedia.org/wiki/Akkadian_language
 
 Name = (FR) Akkadien @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Akkadien
+
+-
 
 Name = (EN) Akkadian Dictionary @ assyrianlanguages.org
 URL = http://www.assyrianlanguages.org/akkadian/index_en.php?langui=english

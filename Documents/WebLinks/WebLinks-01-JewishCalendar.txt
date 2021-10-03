@@ -10,8 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Hebrew calendars
-Lang/FR = Calendriers hébraïque
+Lang/EN = Hebrew calendar
+Lang/FR = Calendrier hébraïque
 
 Name = (EN) Wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_calendar

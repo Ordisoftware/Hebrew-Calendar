@@ -19,6 +19,8 @@ URL = https://en.wikipedia.org/wiki/Sanskrit
 Name = (FR) Sanskrit @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Sanskrit
 
+-
+
 Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
 URL = https://spokensanskrit.org
 
@@ -35,6 +37,8 @@ URL = https://en.wikipedia.org/wiki/Greek_language
 
 Name = (FR) Grec @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Grec
+
+-
 
 Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
 URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
