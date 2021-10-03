@@ -19,6 +19,8 @@ URL = https://en.wikipedia.org/wiki/Egyptian_language
 Name = (FR) Égyptien ancien @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/%C3%89gyptien_ancien
 
+-
+
 Name = (EN) Egyptian hieroglyphs @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Egyptian_hieroglyphs
 
