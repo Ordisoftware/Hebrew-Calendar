@@ -217,7 +217,7 @@
       this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.EditExportDataEnumsAsTranslations = new Ordisoftware.Core.CheckBoxToolStripItem();
+      this.EditExportDataEnumsAsTranslations = new Ordisoftware.Core.ToolStripCheckBoxItem();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1821,7 +1821,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
     private System.Windows.Forms.ToolStripLabel LabelEnumsAsTranslations;
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
-    internal Core.CheckBoxToolStripItem EditExportDataEnumsAsTranslations;
+    internal Core.ToolStripCheckBoxItem EditExportDataEnumsAsTranslations;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationVersesBoard;
     private System.Windows.Forms.ContextMenuStrip ContextMenuStripDay;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayMoonrise;

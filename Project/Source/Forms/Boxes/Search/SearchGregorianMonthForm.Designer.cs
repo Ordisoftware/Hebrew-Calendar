@@ -36,7 +36,7 @@
       this.ListItems = new System.Windows.Forms.ListView();
       this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -133,6 +133,6 @@
     public System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader ColumnMonth;
     private System.Windows.Forms.ColumnHeader ColumnNumber;
-    private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
+    private Ordisoftware.Core.SelectYearsControl SelectYear;
   }
 }

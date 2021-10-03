@@ -37,7 +37,7 @@
       this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ColumnDate = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
       this.LabelLunarDay = new System.Windows.Forms.Label();
       this.SelectMoonDay = new System.Windows.Forms.ComboBox();
       this.PanelBottom.SuspendLayout();
@@ -158,7 +158,7 @@
     private System.Windows.Forms.ColumnHeader ColumnMonth;
     private System.Windows.Forms.ColumnHeader ColumnDate;
     private System.Windows.Forms.ColumnHeader ColumnNumber;
-    private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
+    private Ordisoftware.Core.SelectYearsControl SelectYear;
     private System.Windows.Forms.Label LabelLunarDay;
     private System.Windows.Forms.ComboBox SelectMoonDay;
   }

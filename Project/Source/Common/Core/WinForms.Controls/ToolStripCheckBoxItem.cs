@@ -12,7 +12,7 @@ namespace Ordisoftware.Core
   [DefaultEvent("CheckedChanged")]
   [DefaultProperty("Checked")]
   [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.ToolStrip | ToolStripItemDesignerAvailability.StatusStrip)]
-  public class CheckBoxToolStripItem : ToolStripControlHost
+  public class ToolStripCheckBoxItem : ToolStripControlHost
   {
 
     private readonly CheckBox CheckBox = new CheckBox();
@@ -29,7 +29,7 @@ namespace Ordisoftware.Core
       remove => CheckBox.CheckedChanged -= value;
     }
 
-    public CheckBoxToolStripItem() : base(new FlowLayoutPanel())
+    public ToolStripCheckBoxItem() : base(new FlowLayoutPanel())
     {
       var panel = (FlowLayoutPanel)Control;
       panel.BackColor = Color.Transparent;

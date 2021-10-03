@@ -42,8 +42,8 @@
       this.EditColumnUpperCase = new System.Windows.Forms.CheckBox();
       this.EditUseLongDateFormat = new System.Windows.Forms.CheckBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
-      this.SelectYear1 = new Ordisoftware.Hebrew.SelectYearsControl();
-      this.SelectYear2 = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.SelectYear1 = new Ordisoftware.Core.SelectYearsControl();
+      this.SelectYear2 = new Ordisoftware.Core.SelectYearsControl();
       this.LabelEnd = new System.Windows.Forms.Label();
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
@@ -261,8 +261,8 @@
     private System.Windows.Forms.Panel PanelOptions;
     private System.Windows.Forms.CheckBox EditUseLongDateFormat;
     private System.Windows.Forms.NumericUpDown EditFontSize;
-    private Ordisoftware.Hebrew.SelectYearsControl SelectYear1;
-    private Ordisoftware.Hebrew.SelectYearsControl SelectYear2;
+    private Ordisoftware.Core.SelectYearsControl SelectYear1;
+    private Ordisoftware.Core.SelectYearsControl SelectYear2;
     private System.Windows.Forms.Label LabelEnd;
     private System.Windows.Forms.Label LabelStart;
     private System.Windows.Forms.Label LabelFontSize;
