@@ -374,7 +374,7 @@
     <value>TextBoxCurrent</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Parent" xml:space="preserve">
     <value>TabPageCurrent</value>
@@ -431,7 +431,7 @@
     <value>TextBoxPrevious</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Parent" xml:space="preserve">
     <value>TabPagePrevious</value>
@@ -479,7 +479,7 @@
     <value>comboBoxNavigator1</value>
   </data>
   <data name="&gt;&gt;comboBoxNavigator1.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBoxNavigator1.Parent" xml:space="preserve">
     <value>panel1</value>
