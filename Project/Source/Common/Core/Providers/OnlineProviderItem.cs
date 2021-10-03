@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at 
@@ -11,14 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+namespace Ordisoftware.Core
 {
 
   /// <summary>
@@ -45,11 +44,11 @@ namespace Ordisoftware.Hebrew
     {
       try
       {
-        return Image.FromFile(System.IO.Path.Combine(HebrewGlobals.GuidesFolderPath, filePath));
+        return Image.FromFile(System.IO.Path.Combine(Globals.HelpFolderPath, filePath));
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
+        DebugManager.Trace(LogTraceEvent.Exception, new ExceptionInfo(null, ex).FullText);
         return null;
       }
     }

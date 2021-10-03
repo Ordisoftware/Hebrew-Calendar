@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using Ordisoftware.Core;
 
@@ -130,8 +130,8 @@ namespace Ordisoftware.Hebrew
     static public readonly TranslationsDictionary BoardExportFileName
       = new TranslationsDictionary
       {
-        [Language.EN] = /* TODO remove ? SysTranslations.Board[Language.EN] +*/ "Board {0}",
-        [Language.FR] = /* TODO remove ? SysTranslations.Board[Language.FR] +*/ "Board {0}",
+        [Language.EN] = "Board {0}",
+        [Language.FR] = "Board {0}",
       };
 
     static public readonly TranslationsDictionary WeeklyParashah
@@ -139,13 +139,6 @@ namespace Ordisoftware.Hebrew
       {
         [Language.EN] = "Weekly parashah",
         [Language.FR] = "Parashah de la semaine"
-      };
-
-    static public readonly TranslationsDictionary ConfigureProviders
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Configure providers",
-        [Language.FR] = "Configurer les fournisseurs"
       };
 
     static public readonly TranslationsDictionary ParashahNotFound

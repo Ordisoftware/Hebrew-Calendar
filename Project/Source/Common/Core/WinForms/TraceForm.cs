@@ -113,13 +113,16 @@ namespace Ordisoftware.Core
 
     public void AppendText(string text, bool scrollBottom = true)
     {
-      TextBoxCurrent.AppendText(text);
-      if ( text == string.Empty ) return;
-      if ( scrollBottom )
+      this.SyncUI(() =>
       {
-        TextBoxCurrent.SelectionStart = TextBoxCurrent.Text.Length - 1;
-        TextBoxCurrent.ScrollToCaret();
-      }
+        TextBoxCurrent.AppendText(text);
+        if ( text == string.Empty ) return;
+        if ( scrollBottom )
+        {
+          TextBoxCurrent.SelectionStart = TextBoxCurrent.Text.Length - 1;
+          TextBoxCurrent.ScrollToCaret();
+        }
+      });
     }
 
     private void TextBox_TextChanged(object sender, EventArgs e)
