@@ -37,7 +37,7 @@
       this.ColumnCelebration = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ColumnDate = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.ColumnLunarDay = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.SelectYear = new Ordisoftware.Hebrew.SelectYearsControl();
+      this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -139,7 +139,7 @@
     public System.Windows.Forms.ListView ListItems;
     private System.Windows.Forms.ColumnHeader ColumnCelebration;
     private System.Windows.Forms.ColumnHeader ColumnDate;
-    private Ordisoftware.Hebrew.SelectYearsControl SelectYear;
+    private Ordisoftware.Core.SelectYearsControl SelectYear;
     private System.Windows.Forms.ColumnHeader ColumnLunarDay;
   }
 }

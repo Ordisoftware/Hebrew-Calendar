@@ -182,7 +182,7 @@
     <value>372, 22</value>
   </data>
   <data name="ActionHebrewLetters.Text" xml:space="preserve">
-    <value>Hebrew Letters : étude et analyse des mots hébreux</value>
+    <value>Hebrew Letters : analyseur de mots hébreux lettre-par-lettre</value>
   </data>
   <data name="ActionDownloadHebrewWords.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 22</value>

@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.Hebrew
+﻿namespace Ordisoftware.Core
 {
   partial class CommonMenusControl
   {
