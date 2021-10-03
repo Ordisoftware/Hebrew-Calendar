@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -99,6 +99,16 @@ namespace Ordisoftware.Core
              let component = (Component)field.GetValue(form)
              where component != null
              select component;
+    }
+
+    /// <summary>
+    /// Get a IEnumerable from a ToolStripItemCollection.
+    /// </summary>
+    static public IEnumerable<ToolStripItem> ToEnumerable(this ToolStripItemCollection collection, Func<ToolStripItem, bool> predicate = null)
+    {
+      var result = collection.Cast<ToolStripItem>();
+      if ( predicate != null ) result = result.Where(predicate);
+      return result;
     }
 
     /// <summary>

@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Ordisoftware.Core;
@@ -176,7 +177,8 @@ namespace Ordisoftware.Hebrew
             contextMenuInternal.Hide();
           else
             ownerMenuItem.HideDropDown();
-        string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.DropDownItems.Count, menuItem.Text);
+        int count = menuItem.DropDownItems.ToEnumerable(item => !( item is ToolStripSeparator )).Count();
+        string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.Text, count);
         if ( DisplayManager.QueryYesNo(msg) )
           foreach ( ToolStripItem item in menuItem.DropDownItems )
             if ( item.Tag != null )

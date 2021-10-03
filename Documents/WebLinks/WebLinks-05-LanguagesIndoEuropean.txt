@@ -1,0 +1,60 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Indo-European languages
+Lang/FR = Langages indo-européens
+
+Name = (EN) Sanskrit @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Sanskrit
+
+Name = (FR) Sanskrit @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Sanskrit
+
+Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
+URL = https://spokensanskrit.org
+
+Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.en.html
+
+Name = (FR) Dictionnaire Sanskrit Heritage @ sanskrit.inria.fr
+URL = https://sanskrit.inria.fr/DICO/index.fr.html
+
+-
+
+Name = (EN) Greek @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Greek_language
+
+Name = (FR) Grec @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Grec
+
+Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
+URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
+
+-
+
+Name = (EN) Proto-Germanic @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Proto-Germanic_language
+
+Name = (FR) Proto-germanique @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Proto-germanique
+
+Name = (EN) Old Norse @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Old_Norse
+
+Name = (FR) Vieux norrois @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Vieux_norrois
+
+Name = (EN) Futhark @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Runes
+
+Name = (FR) Futhark @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Rune
