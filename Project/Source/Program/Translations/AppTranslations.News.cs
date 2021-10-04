@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
       = new NullSafeDictionary<string, TranslationsDictionary>
       {
 
-        /*["x.y"] = new TranslationsDictionary
+        /*["10.0"] = new TranslationsDictionary
         {
           [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
                           "• Added a command-line option to show the lunar months board." + Globals.NL +
@@ -41,12 +41,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.8"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Add celebration context menu to open verses board from navigation window." + Globals.NL +
-                          "• Fix open all links count." + Globals.NL +
-                          "• Update and reorganize web links.",
+          [Language.EN] = "• Added celebration context menu to open verses board from navigation window." + Globals.NL +
+                          "• Fixed main form title bar refresh." + Globals.NL +
+                          "• Fixed open all links count." + Globals.NL +
+                          "• Updated and reorganize web links.",
 
           [Language.FR] = "• Ajout d'un menu contextuel de célébration pour ouvrir le tableau des versets depuis la fenêtre de navigation." + Globals.NL +
-                          "• Correction du nombre de tous les liens à ouvrir." +Globals.NL +
+                          "• Correction de la mise à jour du titre de la fenêtre principale." + Globals.NL +
+                          "• Correction du nombre de tous les liens à ouvrir." + Globals.NL +
                           "• Mise à jour et réorganisation des liens Web."
         },
 
