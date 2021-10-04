@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -122,15 +122,19 @@ namespace Ordisoftware.Hebrew.Calendar
             Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
           // Celebration
           if ( Settings.MainFormTitleBarShowCelebration )
+          {
             if ( force || TitleCelebration.IsNullOrEmpty() )
             {
               var today = ApplicationDatabase.Instance.GetToday();
               TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
               if ( !TitleCelebration.IsNullOrEmpty() )
-                Text += " - " + TitleCelebration;
+                TitleCelebration = " - " + TitleCelebration;
             }
+            Text += TitleCelebration;
+          }
           // Parashah
           if ( Settings.MainFormTitleBarShowWeeklyParashah )
+          {
             if ( force || TitleParashah.IsNullOrEmpty() )
             {
               var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
@@ -142,7 +146,6 @@ namespace Ordisoftware.Hebrew.Calendar
                 TitleParashah = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
                                                                    weekParashah.Day.HasLinkedParashah);
                 TitleParashah = " - Parashah " + TitleParashah.ToUpper();
-                Text += TitleParashah;
               }
               else
               {
@@ -152,6 +155,8 @@ namespace Ordisoftware.Hebrew.Calendar
                   MenuTools.DropDownItems[0].Enabled = false;
               }
             }
+            Text += TitleParashah;
+          }
         });
       }
       finally
