@@ -258,7 +258,7 @@ namespace Ordisoftware.Hebrew.Calendar
       PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart };
       foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
       {
-        var item = (ToolStripMenuItem)ContextMenuStripLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
+        var item = (ToolStripMenuItem)ContextMenuLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
         item.Tag = value;
         item.Click += (_s, _e) =>
         {
@@ -395,7 +395,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionLockout_Click(object sender, EventArgs e)
     {
-      ContextMenuStripLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
+      ContextMenuLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
     }
 
     #endregion

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-10 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -1074,9 +1074,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
     {
-      var dayNext = LunisolarDays.FirstOrDefault(day => day.Date >= ContextMenuDayCurrentEvent.Date
-                                                     && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
-      CelebrationVersesBoardForm.Run(dayNext?.TorahEvent ?? TorahCelebrationDay.None);
+      CelebrationVersesBoardForm.Run(ContextMenuDayCurrentEvent.Date);
     }
 
     private void ContextMenuDayParashah_Click(object sender, EventArgs e)

@@ -29,6 +29,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public CelebrationVersesBoardForm Instance { get; private set; }
 
+    static public void Run(DateTime date)
+    {
+      var row = ApplicationDatabase.Instance
+                                   .LunisolarDays
+                                   .FirstOrDefault(day => day.Date >= date
+                                                       && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+      Run(row?.TorahEvent ?? TorahCelebrationDay.None);
+    }
+
     static public void Run(TorahCelebrationDay celebration = TorahCelebrationDay.None)
     {
       if ( Instance == null )
@@ -121,8 +130,9 @@ namespace Ordisoftware.Hebrew.Calendar
         celebration = TorahCelebrationDay.PessahD1;
       if ( celebration != TorahCelebrationDay.None )
       {
+        string str = celebration.ToString();
         foreach ( ListViewItem item in SelectCelebration.Items )
-          if ( celebration.ToString().StartsWith(( (TorahCelebration)item.Tag ).ToString()) )
+          if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString()) )
           {
             item.Selected = true;
             item.Focused = true;

@@ -48,12 +48,12 @@
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
-      this.ContextMenuStripLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetupSound = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
-      this.ContextMenuStripLockout.SuspendLayout();
+      this.ContextMenuLockout.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelTitle
@@ -187,12 +187,12 @@
       this.ActionLockout.UseVisualStyleBackColor = true;
       this.ActionLockout.Click += new System.EventHandler(this.ActionLockout_Click);
       // 
-      // ContextMenuStripLockout
+      // ContextMenuLockout
       // 
-      this.ContextMenuStripLockout.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ContextMenuLockout.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuDefaultLockout});
-      this.ContextMenuStripLockout.Name = "ContextMenuStripLockout";
-      resources.ApplyResources(this.ContextMenuStripLockout, "ContextMenuStripLockout");
+      this.ContextMenuLockout.Name = "ContextMenuStripLockout";
+      resources.ApplyResources(this.ContextMenuLockout, "ContextMenuLockout");
       // 
       // MenuDefaultLockout
       // 
@@ -238,7 +238,7 @@
       this.Click += new System.EventHandler(this.Form_Click);
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
-      this.ContextMenuStripLockout.ResumeLayout(false);
+      this.ContextMenuLockout.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -263,7 +263,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionViewParashahInfos;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     private System.Windows.Forms.Button ActionLockout;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuStripLockout;
+    private System.Windows.Forms.ContextMenuStrip ContextMenuLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
     private System.Windows.Forms.Button ActionSetupSound;
   }

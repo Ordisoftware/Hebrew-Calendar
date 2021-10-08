@@ -41,14 +41,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
         ["9.8"] = new TranslationsDictionary
         {
-          [Language.EN] = "• Added celebration context menu to open verses board from navigation window." + Globals.NL +
-                          "• Fixed main form title bar refresh." + Globals.NL +
+          [Language.EN] = "• Fixed main form title bar refresh." + Globals.NL +
                           "• Fixed open all links count." + Globals.NL +
+                          "• Code refactoring." + Globals.NL +
                           "• Updated and reorganize web links.",
 
-          [Language.FR] = "• Ajout d'un menu contextuel de célébration pour ouvrir le tableau des versets depuis la fenêtre de navigation." + Globals.NL +
-                          "• Correction de la mise à jour du titre de la fenêtre principale." + Globals.NL +
+          [Language.FR] = "• Correction de la mise à jour du titre de la fenêtre principale." + Globals.NL +
                           "• Correction du nombre de tous les liens à ouvrir." + Globals.NL +
+                          "• Refactorisation de code." + Globals.NL +
                           "• Mise à jour et réorganisation des liens Web."
         },
 
