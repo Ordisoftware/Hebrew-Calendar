@@ -324,7 +324,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.10.10 - Version 9.8
+#### 2021.10.08 - Version 9.8
 
 - Fix main form title bar refresh.
 - Fix open all links count.
