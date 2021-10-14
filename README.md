@@ -326,7 +326,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.10.XX - Version 9.9
 
-- Fix null exception on select select current day.
+- Fix null exception on select current day.
 
 #### 2021.10.08 - Version 9.8
 
