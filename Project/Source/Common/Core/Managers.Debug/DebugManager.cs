@@ -454,6 +454,16 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Get a readable formatted text of an exeption.
+    /// </summary>
+    /// <param name="ex">The exception to act on.</param>
+    /// <param name="sender">The sender object</param>
+    static public string ToStringFullText(this Exception ex, object sender = null)
+    {
+      return ex.Parse(sender, einfo => einfo.FullText);
+    }
+
+    /// <summary>
     /// Get a readable formatted text of an exeption including inners.
     /// </summary>
     /// <param name="ex">The exception to act on.</param>
