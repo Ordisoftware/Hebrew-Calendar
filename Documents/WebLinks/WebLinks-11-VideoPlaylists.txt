@@ -81,11 +81,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
 -
 
-Name = (FR) Le problème religieux
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
-
--
-
 Name = (FR) Mathématiques et physiques
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Boo3Ss5OZSYCNHEGpFXcPc
 
