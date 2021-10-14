@@ -1113,7 +1113,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
       DateSelected = ContextMenuDayCurrentEvent.Date;
-      if ( DateSelected != null)
+      if ( DateSelected != null )
         if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
           GoToDate(DateSelected.Value);
     }
@@ -1167,8 +1167,6 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     #endregion
-
-    interface Iinterface { }
 
   }
 
