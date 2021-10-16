@@ -39,6 +39,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 Name = (FR) Le couple selon le Judaïsme
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 
+Name = (FR) Autres playlists enregistrées
+URL = https://www.youtube.com/user/Ordisoftware/playlists?view=52&sort=dd&shelf_id=0
+
 -
 
 Name = (FR) Rav Menahem Altabe
