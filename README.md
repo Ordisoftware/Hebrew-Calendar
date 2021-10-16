@@ -324,9 +324,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.10.XX - Version 9.9
+#### 2021.10.17 - Version 9.9
 
 - Fix null exception on select current day.
+- Update web links.
 
 #### 2021.10.08 - Version 9.8
 
