@@ -1113,8 +1113,9 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ContextMenuDaySelect_Click(object sender, EventArgs e)
     {
       DateSelected = ContextMenuDayCurrentEvent.Date;
-      if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
-        GoToDate(DateSelected.Value);
+      if ( DateSelected != null )
+        if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
+          GoToDate(DateSelected.Value);
     }
 
     private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)

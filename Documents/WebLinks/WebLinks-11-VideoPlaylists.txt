@@ -39,6 +39,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 Name = (FR) Le couple selon le Judaïsme
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 
+Name = (FR) Autres playlists enregistrées
+URL = https://www.youtube.com/user/Ordisoftware/playlists?view=52&sort=dd&shelf_id=0
+
 -
 
 Name = (FR) Rav Menahem Altabe
@@ -78,11 +81,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
-
--
-
-Name = (FR) Le problème religieux
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
 
 -
 
