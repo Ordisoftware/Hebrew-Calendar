@@ -27,17 +27,20 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-C8x-a4WQBMvPbEQAPR4mhk
 Name = (FR/EN) Torah et religion
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 
+Name = (FR) Les célébrations de la Torah
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
+
+Name = (FR) Le couple selon le Judaïsme
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
+
 Name = (FR) Cours de Talmud
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
 
 Name = (FR) Cours de Kabalah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CoV3JgJLim0FmSsE1MDZJP
 
-Name = (FR) Les célébrations de la Torah
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
-
-Name = (FR) Le couple selon le Judaïsme
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
+Name = (FR) Georges Lahy
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
 Name = (FR) Autres playlists enregistrées
 URL = https://www.youtube.com/user/Ordisoftware/playlists?view=52&sort=dd&shelf_id=0
@@ -76,11 +79,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
 
 Name = (FR/EN) Rav Menachem Mendel Schneerson
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
-
--
-
-Name = (FR) Georges Lahy
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
 -
 
