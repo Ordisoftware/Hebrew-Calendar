@@ -2,7 +2,7 @@ Bereshit : 1 - בראשית - Bereshit - 1.1 - 6.8 - False
 Bereshit : 2 - נח - Noa'h - 6.9 - 11.32 - False
 Bereshit : 3 - לך לך - Lek Leka - 12.1 - 17.27 - False
 Bereshit : 4 - וירא - Vayera - 18.1 - 22.24 - False
-Bereshit : 5 - חיי שרה - Haye Sarah - 23.1 - 25.18 - False
+Bereshit : 5 - חיי שרה - 'Haye Sarah - 23.1 - 25.18 - False
 Bereshit : 6 - תולדות - Toledot - 25.19 - 28.9 - False
 Bereshit : 7 - ויצא - Vayetse - 28.10 - 32.3 - False
 Bereshit : 8 - וישלח - Vayishla'h - 32.4 - 36.43 - False
