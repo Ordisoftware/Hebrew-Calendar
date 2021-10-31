@@ -326,6 +326,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.11.02 - Version 9.10
 
+- Fix UI refresh after showing main form.
 - Update SQLitePCL.raw nuget.
 - Update web links.
 
