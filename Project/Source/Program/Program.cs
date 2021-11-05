@@ -87,10 +87,10 @@ namespace Ordisoftware.Hebrew.Calendar
           || Settings.UpgradeResetRequiredV4_1
           || Settings.UpgradeResetRequiredV5_10 )
         {
-#pragma warning disable S2583 // Conditionally executed code should be reachable
+#pragma warning disable S2583 // Conditionally executed code should be reachable - irrelevant
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-#pragma warning restore S2583 // Conditionally executed code should be reachable
+#pragma warning restore S2583 // Conditionally executed code should be reachable - irrelevant
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
@@ -151,9 +151,9 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         server.EndWaitForConnection(ar);
-#pragma warning disable S5773 // Types allowed to be deserialized should be restricted
+#pragma warning disable S5773 // Types allowed to be deserialized should be restricted - irrelevant
         if ( !( new BinaryFormatter().Deserialize(server) is string command ) ) return;
-#pragma warning restore S5773 // Types allowed to be deserialized should be restricted
+#pragma warning restore S5773 // Types allowed to be deserialized should be restricted - irrelevant
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));

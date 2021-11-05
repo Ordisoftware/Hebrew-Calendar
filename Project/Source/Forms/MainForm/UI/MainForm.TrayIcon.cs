@@ -100,6 +100,7 @@ namespace Ordisoftware.Hebrew.Calendar
             if ( IsTrayBallooned )
               NavigationForm.Instance.Hide();
             this.Popup();
+            CalendarMonth.Refresh();
           }
           if ( sender != null )
             if ( !NavigationForm.Instance.Visible )

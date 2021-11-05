@@ -58,7 +58,6 @@
       this.ActionTwitter = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionYouTube = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorAuthor2 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionTipeee = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLinkedIn = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSoftware = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
@@ -252,7 +251,6 @@
             this.ActionTwitter,
             this.ActionYouTube,
             this.SeparatorAuthor2,
-            this.ActionTipeee,
             this.ActionLinkedIn});
       resources.ApplyResources(this.MenuAuthor, "MenuAuthor");
       this.MenuAuthor.Name = "MenuAuthor";
@@ -296,14 +294,6 @@
       // 
       this.SeparatorAuthor2.Name = "SeparatorAuthor2";
       resources.ApplyResources(this.SeparatorAuthor2, "SeparatorAuthor2");
-      // 
-      // ActionTipeee
-      // 
-      this.ActionTipeee.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionTipeee, "ActionTipeee");
-      this.ActionTipeee.Name = "ActionTipeee";
-      this.ActionTipeee.Tag = "https://fr.tipeee.com/ordisoftware";
-      this.ActionTipeee.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // ActionLinkedIn
       // 
@@ -406,7 +396,6 @@
     public System.Windows.Forms.ToolStripMenuItem ActionTwitter;
     public System.Windows.Forms.ToolStripMenuItem ActionYouTube;
     private System.Windows.Forms.ToolStripSeparator SeparatorAuthor2;
-    public System.Windows.Forms.ToolStripMenuItem ActionTipeee;
     public System.Windows.Forms.ToolStripMenuItem ActionLinkedIn;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewCalendar;
     public System.Windows.Forms.ToolStripMenuItem ActionHebrewLetters;
