@@ -66,7 +66,7 @@ namespace Ordisoftware.Hebrew
         int deltaValues = _ShowValues ? sizeLabelValue.Height : -deltaValue2;
         int deltaKeys = _ShowKeys ? sizeLabelKey.Height : -deltaValue2;
         int deltaValuesAndKeys = _ShowValues && _ShowKeys ? deltaValues + deltaValue5 : deltaValues;
-        int deltaYAndValuesAndKeys = deltaY + deltaValuesAndKeys;
+        int deltaYAndValuesAndKeys = deltaY + deltaValuesAndKeys + deltaValue2;
         int deltaLine = deltaY + deltaBetweenLines + deltaValues + deltaKeys;
         var colorLabel = Color.DimGray;
         Button buttonLetter = null;

@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew
     public const KnownColor DefaultInputBackColor = KnownColor.AliceBlue;
     public const KnownColor DefaultPanelLettersBackColor = KnownColor.LightYellow;
     public const float DefaultFontSizeLetters = 18F;
-    public const float DefaultFontSizeValues = 6F;
+    public const float DefaultFontSizeValues = 6.5F;
     public const float DefaultFontSizeKeys = 8F;
     public const float DefaultFontSizeInput = 18F;
     public const int DefaultInputMaxLength = 12;
