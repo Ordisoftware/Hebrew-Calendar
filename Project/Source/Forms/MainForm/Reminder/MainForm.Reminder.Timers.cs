@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
         {
           CheckRegenerateCalendar();
           var today = DateTime.Today;
-          if ( CurrentDay.Date == today.AddDays(-1) )
+          if ( CurrentDay != null && CurrentDay.Date == today.AddDays(-1) )
             GoToDate(today);
           else
           if ( Settings.CurrentView == ViewMode.Month )
