@@ -324,7 +324,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
-#### 2021.11.07 - Version 9.10
+#### 2021.11.09 - Version 9.10
 
 - Fix UI refresh after showing main form.
 - Update system menu.
