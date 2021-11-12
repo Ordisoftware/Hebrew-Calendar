@@ -222,7 +222,7 @@ You can use traditional sun days by modifying the option in the reminder, hence 
 
 The Shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
 
-The tradition attributes this day to Saturday. We can however think according to Bereshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
+The tradition attributes this day to Saturday. We can however think according to Bereshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Bereshit 1.5 and 1.16 as well as from Shemot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
 The personal Shabat of a married or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin.
 
@@ -314,7 +314,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add lunar months board with hebrew names, meanings, lettriqs and tools.
+- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add `--lunarmonths` command-line option to show the lunar months board.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
@@ -354,7 +354,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.09.29 - Version 9.6
 
 - Add option to show current celebration in the title bar.
-- Fix title bar not updated in case of fullscreen or screensacer.
+- Fix title bar not updated in case of fullscreen or screensaver.
 - Fix frozen reminder boxes while mouse is over the monthly view.
 - Fix showing new parashah description box after shabat when a celebration is in progress.
 
@@ -415,7 +415,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add link in reminder box to open verses board.
 - Add Tools folder in the application's system start menu.
 - The monthly view displays solar hours in case of sun omer.
-- Remove option to show sun times as tooltips because of the new context menu.
+- Remove option to show sun times as tool tips because of the new context menu.
 - Update web links.
 - Some fixes and improvements.
 - Code refactoring.
@@ -433,7 +433,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.08.30 - Version 8.8
 
 - Add `--parashah` command-line option to show the weekly parashah description box.
-- Add option to enable or disable unicode icons in navigation window.
+- Add option to enable or disable Unicode icons in navigation window.
 - Change weekly parashah main menu icon.
 - Change database vacuum to be instantaneous.
 - Fix additional title bar text unassigned immediately after refreshing reminder.
