@@ -12,7 +12,6 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-11 </edited>
-using System;
 using Ordisoftware.Core;
 
 namespace Ordisoftware.Hebrew.Calendar
@@ -71,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
                         "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
                         "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
-                        "• Amélioration des menus de liens web pour affichager ceux dans la langue actuelle vers le haut." + Globals.NL +
+                        "• Amélioration des menus de liens web pour afficher ceux dans la langue actuelle vers le haut." + Globals.NL +
                         "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +
                         "• Correction de cases à cocher dans les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                         "• Quelques corrections et améliorations." + Globals.NL +
@@ -115,7 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Web update check is not performed on a day off while the application is running." + Globals.NL +
                         "• Fixed celebrations board showing moon times in the case of sun omer." + Globals.NL +
                         "• Boards are exportable as TXT files in addition to CSV and JSON." + Globals.NL +
-                        "• Added keyboard shortchuts to navigate between months having celebrations." + Globals.NL +
+                        "• Added keyboard shortcuts to navigate between months having celebrations." + Globals.NL +
                         "• Added New in version in the Information menu." + Globals.NL +
                         "• Update web links and Bible study providers." + Globals.NL +
                         "• Some improvements in appearance and function.",
@@ -140,7 +139,7 @@ namespace Ordisoftware.Hebrew.Calendar
       ["6.x"] = new TranslationsDictionary
       {
         [Language.EN] = "• Optimized monthly view painting speed." + Globals.NL +
-                        "• Added Windows global hotkey." + Globals.NL +
+                        "• Added Windows global hot-key." + Globals.NL +
                         "• Added celebrations board." + Globals.NL +
                         "• Added new moons board." + Globals.NL +
                         "• Added print preview for calendar export." + Globals.NL +
@@ -175,7 +174,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Improved preferences options." + Globals.NL +
                         "• Improved dialogs." + Globals.NL +
                         "• Added sounds." + Globals.NL +
-                        "• Added search gregorian month window." + Globals.NL +
+                        "• Added search Gregorian month window." + Globals.NL +
                         "• New advanced export and printing dialog box." + Globals.NL +
                         "• Rework of the preferences window design with more options." + Globals.NL +
                         "• New usage statistics window." + Globals.NL +
@@ -186,7 +185,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Amélioration des raccourcis clavier." + Globals.NL +
                         "• Amélioration de moitié de la vitesse de génération des données." + Globals.NL +
                         "• Amélioration de moitié de la vitesse d'affichage du mois visuel." + Globals.NL +
-                        "• Amélioration du menu de l'icônes de la barre d'état." + Globals.NL +
+                        "• Amélioration du menu de l'icône de la barre d'état." + Globals.NL +
                         "• Amélioration des options de préférences." + Globals.NL +
                         "• Amélioration des boites de dialogues." + Globals.NL +
                         "• Ajout de sons." + Globals.NL +
@@ -215,7 +214,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Préférences améliorées." + Globals.NL +
                         "• Ajout des notices de célébrations et du Shabat" + Globals.NL +
                         "• Ajout d'un calculateur de différence de dates." + Globals.NL +
-                        "• Ajout d'un suspendeur des rappels." + Globals.NL +
+                        "• Ajout d'un de la suspension des rappels." + Globals.NL +
                         "• Ajout d'un menu outils." + Globals.NL +
                         "• Ajout d'un menu liens Web." + Globals.NL +
                         "• Ajout d'un débogueur et d'un logger" + Globals.NL +
@@ -267,7 +266,7 @@ namespace Ordisoftware.Hebrew.Calendar
                         "• Next celebrations windows." + Globals.NL +
                         "• Day navigation windows." + Globals.NL +
                         "• Shabat reminder." + Globals.NL +
-                        "• Basic preferences and GPS coordonates.",
+                        "• Basic preferences and GPS coordinates.",
 
         [Language.FR] = "• Version initiale" + Globals.NL +
                         "• Rapport texte seul, puis vue du mois visuel." + Globals.NL +
