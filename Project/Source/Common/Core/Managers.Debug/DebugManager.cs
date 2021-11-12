@@ -295,7 +295,7 @@ namespace Ordisoftware.Core
     /// <param name="show">The show mode.</param>
     static public void Manage(this Exception ex, object sender, ShowExceptionMode show)
     {
-      if ( !( ex is AbortException ) )
+      if ( ex is not AbortException  )
       {
         StackSkip++;
         ManageInternal(sender, ex, show);

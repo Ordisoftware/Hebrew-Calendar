@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
 
     public int Value
     {
-      get => SelectValue.SelectedItem is int ? (int)SelectValue.SelectedItem : -1;
+      get => SelectValue.SelectedItem is int value ? value : -1;
       set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
     }
 

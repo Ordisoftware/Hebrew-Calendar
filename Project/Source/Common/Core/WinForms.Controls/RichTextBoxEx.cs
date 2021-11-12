@@ -79,7 +79,7 @@ namespace Ordisoftware.Core
     {
       get
       {
-        NativeMethods.PARAFORMAT fmt = new NativeMethods.PARAFORMAT();
+        var fmt = new NativeMethods.PARAFORMAT();
         fmt.cbSize = Marshal.SizeOf(fmt);
 
         // Get the alignment.
@@ -94,7 +94,7 @@ namespace Ordisoftware.Core
 
       set
       {
-        NativeMethods.PARAFORMAT fmt = new NativeMethods.PARAFORMAT();
+        var fmt = new NativeMethods.PARAFORMAT();
         fmt.cbSize = Marshal.SizeOf(fmt);
         fmt.dwMask = NativeMethods.PFM_ALIGNMENT;
         fmt.wAlignment = (short)value;

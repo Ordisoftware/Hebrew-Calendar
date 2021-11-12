@@ -93,7 +93,9 @@ namespace Ordisoftware.Core
     /// </summary>
     static public IEnumerable<Component> GetComponents(this Form form)
     {
+#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields - N/A
       var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields - N/A
       return from field in form.GetType().GetFields(flags)
              where typeof(Component).IsAssignableFrom(field.FieldType)
              let component = (Component)field.GetValue(form)
@@ -299,7 +301,7 @@ namespace Ordisoftware.Core
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.DropDownItems )
-        if ( !( item.Tag is int ) || (int)item.Tag != int.MinValue )
+        if ( item.Tag is not int  || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {
             var newitem = menuItem.Clone();
@@ -320,7 +322,7 @@ namespace Ordisoftware.Core
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.Items )
-        if ( !( item.Tag is int ) || (int)item.Tag != int.MinValue )
+        if ( item.Tag is not int  || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {
             var newitem = menuItem.Clone();
@@ -363,12 +365,10 @@ namespace Ordisoftware.Core
     /// </summary>
     static public Icon GetBySize(this Icon icon, Size size)
     {
-      using ( var stream = new MemoryStream() )
-      {
-        icon.Save(stream);
-        stream.Position = 0;
-        return new Icon(stream, size);
-      }
+      using var stream = new MemoryStream();
+      icon.Save(stream);
+      stream.Position = 0;
+      return new Icon(stream, size);
     }
 
     /// <summary>

@@ -43,7 +43,7 @@ namespace Ordisoftware.Core
     /// <returns>A cloned version of the toolstrip menu item</returns>
     public static ToolStripMenuItem Clone(this ToolStripMenuItem sourceToolStripMenuItem)
     {
-      ToolStripMenuItem menuItem = new ToolStripMenuItem();
+      var menuItem = new ToolStripMenuItem();
 
       var propInfoList = from p in typeof(ToolStripMenuItem).GetProperties()
                          let attributes = p.GetCustomAttributes(true)

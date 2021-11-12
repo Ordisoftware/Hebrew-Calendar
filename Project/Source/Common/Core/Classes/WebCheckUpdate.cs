@@ -77,16 +77,14 @@ namespace Ordisoftware.Core
         LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
         LoadingForm.Instance.Owner = Globals.MainForm;
         LoadingForm.Instance.DoProgress();
-        using ( var client = new WebClientEx() )
-        {
-          var fileInfo = GetVersionAndChecksum(client);
-          lastdone = DateTime.Now;
-          if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
-            return GetUserChoice(client, fileInfo);
-          else
-          if ( !auto )
-            DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
-        }
+        using var client = new WebClientEx();
+        var fileInfo = GetVersionAndChecksum(client);
+        lastdone = DateTime.Now;
+        if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
+          return GetUserChoice(client, fileInfo);
+        else
+        if ( !auto )
+          DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
       }
       catch ( UnauthorizedAccessException ex )
       {
@@ -134,8 +132,8 @@ namespace Ordisoftware.Core
     /// </summary>
     static private (Version, string) GetVersionAndChecksum(WebClient client)
     {
-      List<string> lines = null;
       SystemManager.CheckServerCertificate(Globals.CheckUpdateURL);
+      List<string> lines;
       try
       {
         lines = client.DownloadString(Globals.CheckUpdateURL).SplitNoEmptyLines().Take(2).ToList();
@@ -160,26 +158,19 @@ namespace Ordisoftware.Core
       Version version;
       try
       {
-        switch ( partsVersion.Length )
+        version = partsVersion.Length switch
         {
-          case 2:
-            version = new Version(Convert.ToInt32(partsVersion[0]),
-                                  Convert.ToInt32(partsVersion[1]));
-            break;
-          case 3:
-            version = new Version(Convert.ToInt32(partsVersion[0]),
-                                  Convert.ToInt32(partsVersion[1]),
-                                  Convert.ToInt32(partsVersion[2]));
-            break;
-          case 4:
-            version = new Version(Convert.ToInt32(partsVersion[0]),
-                                  Convert.ToInt32(partsVersion[1]),
-                                  Convert.ToInt32(partsVersion[2]),
-                                  Convert.ToInt32(partsVersion[3]));
-            break;
-          default:
-            throw new ArgumentException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()));
-        }
+          2 => new Version(Convert.ToInt32(partsVersion[0]),
+                                           Convert.ToInt32(partsVersion[1])),
+          3 => new Version(Convert.ToInt32(partsVersion[0]),
+                           Convert.ToInt32(partsVersion[1]),
+                           Convert.ToInt32(partsVersion[2])),
+          4 => new Version(Convert.ToInt32(partsVersion[0]),
+                           Convert.ToInt32(partsVersion[1]),
+                           Convert.ToInt32(partsVersion[2]),
+                           Convert.ToInt32(partsVersion[3])),
+          _ => throw new ArgumentException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine())),
+        };
       }
       catch ( Exception ex )
       {
@@ -233,13 +224,11 @@ namespace Ordisoftware.Core
         client.DownloadProgressChanged += progress;
         client.DownloadFileCompleted += completed;
         client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous
         while ( !finished )
         {
           Thread.Sleep(100);
           Application.DoEvents();
         }
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous
         if ( ex != null ) throw ex;
         if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
           throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));

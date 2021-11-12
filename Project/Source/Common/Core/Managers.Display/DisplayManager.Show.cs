@@ -179,17 +179,12 @@ namespace Ordisoftware.Core
       DialogResult res = DialogResult.None;
       SystemManager.TryCatchManage(() =>
       {
-        switch ( FormStyle )
+        res = FormStyle switch
         {
-          case MessageBoxFormStyle.System:
-            res = ShowWinForm(title, text, buttons, icon);
-            break;
-          case MessageBoxFormStyle.Advanced:
-            res = ShowAdvancedForm(title, text, buttons, icon);
-            break;
-          default:
-            throw new AdvancedNotImplementedException(FormStyle);
-        }
+          MessageBoxFormStyle.System => ShowWinForm(title, text, buttons, icon),
+          MessageBoxFormStyle.Advanced => ShowAdvancedForm(title, text, buttons, icon),
+          _ => throw new AdvancedNotImplementedException(FormStyle),
+        };
       });
       return res;
     }
@@ -335,8 +330,8 @@ namespace Ordisoftware.Core
                                                  MessageBoxButtons buttons,
                                                  MessageBoxIcon icon)
     {
-      using ( var form = new MessageBoxEx(title, text, buttons, icon) )
-        return form.ShowDialog();
+      using var form = new MessageBoxEx(title, text, buttons, icon);
+      return form.ShowDialog();
     }
 
   }

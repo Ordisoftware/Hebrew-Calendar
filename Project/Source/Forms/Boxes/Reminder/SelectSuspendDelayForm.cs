@@ -26,13 +26,11 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public int? Run()
     {
-      using ( var form = new SelectSuspendDelayForm() )
-      {
-        if ( form.ShowDialog() != DialogResult.OK ) return null;
-        int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
-        if ( value == -1 ) value = (int)form.EditDelay.Value;
-        return value;
-      }
+      using var form = new SelectSuspendDelayForm();
+      if ( form.ShowDialog() != DialogResult.OK ) return null;
+      int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
+      if ( value == -1 ) value = (int)form.EditDelay.Value;
+      return value;
     }
 
     private SelectSuspendDelayForm()

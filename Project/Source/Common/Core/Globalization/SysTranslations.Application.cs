@@ -24,7 +24,7 @@ namespace Ordisoftware.Core
   {
 
     static public readonly TranslationsDictionary UpgradeCommonDatabaseRequired
-      = new TranslationsDictionary
+      = new()
       {
         [Language.EN] = "One or more common tables must be updated:" + Globals.NL2 +
                         "     {0}" + Globals.NL2 +
@@ -35,8 +35,7 @@ namespace Ordisoftware.Core
                         "Une fois l'opération effectuée vous devrez vérifier la mise à jour web pour les autres applications de Torah, soit automatiquement en les lançant sans vous inquiéter du message d'erreur les concernant et cliquer sur continuer, soit en les téléchargeant manuellement depuis Internet pour plus de simplicité ou en cas de problème. Si aucune nouvelle version n'est disponible, tout va bien."
       };
 
-    static public readonly TranslationsDictionary CloseApplicationsRequired
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary CloseApplicationsRequired = new()
       {
         [Language.EN] = "{0}" + Globals.NL2 +
                         "This or these applications must be closed:" + Globals.NL2 +
@@ -49,8 +48,7 @@ namespace Ordisoftware.Core
                         "Voulez-vous tenter de les fermer automatiquement ?"
       };
 
-    static public readonly TranslationsDictionary NoticeNewFeaturesTitle
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary NoticeNewFeaturesTitle = new()
       {
         [Language.EN] = "New features in version {0}",
         [Language.FR] = "Nouvelles fonctionnalités de la version {0}"
@@ -71,50 +69,43 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _ApplicationMustExit;
 
-    static public readonly TranslationsDictionary ApplicationMustExitContactSupport
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary ApplicationMustExitContactSupport = new()
       {
         [Language.EN] = ApplicationMustExit[Language.EN] + Globals.NL2 + ContactSupport[Language.EN],
         [Language.FR] = ApplicationMustExit[Language.FR] + Globals.NL2 + ContactSupport[Language.FR]
       };
 
-    static public readonly TranslationsDictionary RestartRequired
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary RestartRequired = new()
       {
         [Language.EN] = "Application must be restarted",
         [Language.FR] = "L'application doit être redémarrée"
       };
 
-    static public readonly TranslationsDictionary AboutBoxTitle
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary AboutBoxTitle = new()
       {
         [Language.EN] = "About {0}",
         [Language.FR] = "À propos de {0}"
       };
 
-    static public readonly TranslationsDictionary AboutBoxVersion
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary AboutBoxVersion = new()
       {
         [Language.EN] = "Version {0}",
         [Language.FR] = "Version {0}"
       };
 
-    static public readonly TranslationsDictionary CheckUpdate
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary CheckUpdate = new()
       {
         [Language.EN] = "{0} Check Update",
         [Language.FR] = "Mise à jour de {0}"
       };
 
-    static public readonly TranslationsDictionary CheckInternetConnection
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary CheckInternetConnection = new()
       {
         [Language.EN] = "Please check the Internet connection.",
         [Language.FR] = "Veuillez vérifier la connexion internet."
       };
 
-    static public readonly TranslationsDictionary NoticePrivacyNoData
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary NoticePrivacyNoData = new()
       {
         [Language.EN] = "This software doesn't collect any personal information about you, your computer and your network, unless it is specified by its features." + Globals.NL2 +
                         "However, it can collect for debugging purposes the type of processor and operating system as well as errors caused by the code, but these information are only stored locally and only transmitted upon conscious validations by the user." + Globals.NL2 +
@@ -124,22 +115,19 @@ namespace Ordisoftware.Core
                         "Les liens vers des ressources et sites internet externes sont indiqués à titre informatif et ils n'engagent pas de responsabilité.",
       };
 
-    static public readonly TranslationsDictionary AskToExitApplication
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary AskToExitApplication = new()
       {
         [Language.EN] = "Exit application?",
         [Language.FR] = "Quitter l'application ?"
       };
 
-    static public readonly TranslationsDictionary CantExitWhileGenerating
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary CantExitWhileGenerating = new()
       {
         [Language.EN] = "Can't exit application while generating data.",
         [Language.FR] = "Impossible de quitter l'application durant la génération des données."
       };
 
-    static public readonly TranslationsDictionary AskToShutdownComputer
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary AskToShutdownComputer = new()
       {
         [Language.EN] = "All application will be closed and unsaved works lost." + Globals.NL2 +
                         "Shutdown the computer?",
@@ -147,16 +135,14 @@ namespace Ordisoftware.Core
                         "Arrêter l'ordinateur ?"
       };
 
-    static public readonly TranslationsDictionary AskToContinueOrTerminate
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary AskToContinueOrTerminate = new()
       {
         [Language.EN] = "You can choose Yes to continue or No to terminate.",
         [Language.FR] = "Vous pouvez choisir Oui pour continuer ou Non pour terminer."
       };
 
-    static public readonly NullSafeDictionary<bool, TranslationsDictionary> HideRestoreCaption
-      = new NullSafeDictionary<bool, TranslationsDictionary>
-      {
+    static public readonly NullSafeDictionary<bool, TranslationsDictionary> HideRestoreCaption = new()
+    {
         [true] = new TranslationsDictionary
         {
           [Language.EN] = "Hide",
@@ -169,8 +155,7 @@ namespace Ordisoftware.Core
         }
       };
 
-    static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle
-      = new NullSafeDictionary<ExportAction, TranslationsDictionary>
+    static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle = new()
       {
         [ExportAction.SaveToFile] = new TranslationsDictionary
         {
@@ -189,50 +174,43 @@ namespace Ordisoftware.Core
         }
       };
 
-    static public readonly TranslationsDictionary ScreenshotDone
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary ScreenshotDone = new()
       {
         [Language.EN] = "The window has been copied to the clipboard.",
         [Language.FR] = "La fenêtre a été copié dans le presse-papier."
       };
 
-    static public readonly TranslationsDictionary DataCopiedToClipboard
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary DataCopiedToClipboard = new()
       {
         [Language.EN] = "Data have been copied to the clipboard.",
         [Language.FR] = "Les données ont été copiées dans le presse-papier."
       };
 
-    static public readonly TranslationsDictionary ViewSavedToFile
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary ViewSavedToFile = new()
       {
         [Language.EN] = $"The view has been saved to :{Globals.NL2}{{0}}",
         [Language.FR] = $"La vue a été sauvée dans :{Globals.NL2}{{0}}",
       };
 
-    static public readonly TranslationsDictionary ViewCopiedToClipboard
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary ViewCopiedToClipboard = new()
       {
         [Language.EN] = "The view has been copied to the clipboard.",
         [Language.FR] = "La vue a été copiée dans le presse-papier."
       };
 
-    static public readonly TranslationsDictionary SelectionCopiedToClipboard
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary SelectionCopiedToClipboard = new()
       {
         [Language.EN] = "The selection has been copied to the clipboard.",
         [Language.FR] = "La sélection a été copiée dans le presse-papier."
       };
 
-    static public readonly TranslationsDictionary ViewPrinted
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary ViewPrinted = new()
       {
         [Language.EN] = "The view has been printed.",
         [Language.FR] = "La vue a été imprimée."
       };
 
-    static public readonly NullSafeDictionary<ControlLocation, TranslationsDictionary> ControlLocationText
-      = new NullSafeDictionary<ControlLocation, TranslationsDictionary>
+    static public readonly NullSafeDictionary<ControlLocation, TranslationsDictionary> ControlLocationText = new()
       {
         [ControlLocation.BottomLeft] = new TranslationsDictionary
         {
@@ -271,8 +249,7 @@ namespace Ordisoftware.Core
         }
       };
 
-    static public readonly NullSafeDictionary<PowerAction, TranslationsDictionary> PowerActionText
-      = new NullSafeDictionary<PowerAction, TranslationsDictionary>
+    static public readonly NullSafeDictionary<PowerAction, TranslationsDictionary> PowerActionText = new()
       {
         [PowerAction.Hibernate] = new TranslationsDictionary
         {

@@ -62,10 +62,10 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(ParashotFolderPath, "ParashotFactory.txt");
 
     static public string ParashotTranslationsFilePath
-      => Path.Combine(ParashotFolderPath, $"Parashot-Translations-{Languages.Current.ToString()}.txt");
+      => Path.Combine(ParashotFolderPath, $"Parashot-Translations-{Languages.Current}.txt");
 
     static public string ParashotLettriqsFilePath
-      => Path.Combine(ParashotFolderPath, $"Parashot-Lettriqs-{Languages.Current.ToString()}.txt");
+      => Path.Combine(ParashotFolderPath, $"Parashot-Lettriqs-{Languages.Current}.txt");
 
   }
 

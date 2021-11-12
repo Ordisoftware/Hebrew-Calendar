@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Runtime.Versioning;
 using System.Management;
 using Microsoft.Win32;
+using System.Text;
 
 namespace Ordisoftware.Core
 {
@@ -40,17 +41,19 @@ namespace Ordisoftware.Core
         if ( _Processor.IsNullOrEmpty() )
           try
           {
+            var builder = new StringBuilder();
             var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
             var enumerator = list.GetEnumerator();
             bool newline = false;
             if ( enumerator.MoveNext() )
               do
               {
-                _Processor = (string)enumerator.Current["Name"];
+                builder.Append((string)enumerator.Current["Name"]);
                 newline = enumerator.MoveNext();
-                if ( newline ) _Processor += Globals.NL;
+                if ( newline ) builder.Append(Globals.NL);
               }
               while ( newline );
+            _Processor = builder.ToString();
           }
           catch
           {
@@ -87,7 +90,8 @@ namespace Ordisoftware.Core
           _Platform = $"{osName} {osType} {osVersion}{osRelease}{Globals.NL}{dotnet}{Globals.NL}CLR {clr}";
         }
         return _Platform;
-        string get(Func<string> func)
+        //
+        static string get(Func<string> func)
         {
           try { return func(); }
           catch { return SysTranslations.UndefinedSlot.GetLang(); }

@@ -30,23 +30,21 @@ namespace Ordisoftware.Core
 
     static public WebUpdateSelection Run(Version version)
     {
-      using ( var form = new WebUpdateForm() )
-      {
-        form.LabelCurrentversion.Text += Globals.AssemblyVersion;
-        form.LabelNewVersion.Text += version;
-        form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
-        if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
-        if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
-        if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-        throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
-      }
+      using var form = new WebUpdateForm();
+      form.LabelCurrentversion.Text += Globals.AssemblyVersion;
+      form.LabelNewVersion.Text += version;
+      form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
+      if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
+      if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
+      if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
+      throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
     }
 
     private WebUpdateForm()
     {
       InitializeComponent();
       Icon = Globals.MainForm?.Icon;
-      Text = Text + Globals.AssemblyTitle;
+      Text += Globals.AssemblyTitle;
       this.CenterToMainFormElseScreen();
     }
 

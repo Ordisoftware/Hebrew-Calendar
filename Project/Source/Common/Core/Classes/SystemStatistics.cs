@@ -26,7 +26,7 @@ namespace Ordisoftware.Core
   partial class SystemStatistics
   {
 
-    static private Process Process = Process.GetCurrentProcess();
+    static private readonly Process Process = Process.GetCurrentProcess();
     static private PerformanceCounter PerformanceCounterCPULoad;
     static private PerformanceCounter PerformanceCounterCPUProcessLoad;
 
@@ -39,8 +39,7 @@ namespace Ordisoftware.Core
       }
     }
 
-    static public readonly SystemStatistics Instance
-      = new SystemStatistics();
+    static public readonly SystemStatistics Instance = new();
 
     public string Processor
       => SystemManager.Processor;
@@ -149,7 +148,7 @@ namespace Ordisoftware.Core
         }
         if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
         _CPUprocessLoadCount++;
-        _CPUProcessLoadAverage = _CPUProcessLoadAverage + (ulong)value;
+        _CPUProcessLoadAverage += (ulong)value;
         return value + "%";
       }
     }

@@ -30,31 +30,29 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public void Run(bool topmost = false)
     {
-      using ( var form = new SelectSoundForm() )
-      {
-        form.TopMost = topmost;
-        if ( form.ShowDialog() != DialogResult.OK ) return;
-        if ( form.SelectNone.Checked )
-          Settings.ReminderBoxSoundSource = SoundSource.None;
-        else
-        if ( form.SelectDialog.Checked )
-          Settings.ReminderBoxSoundSource = SoundSource.Dialog;
-        else
-        if ( form.SelectApplication.Checked )
-          Settings.ReminderBoxSoundSource = SoundSource.Application;
-        else
-        if ( form.SelectWindows.Checked )
-          Settings.ReminderBoxSoundSource = SoundSource.Windows;
-        else
-        if ( form.SelectCustom.Checked )
-          Settings.ReminderBoxSoundSource = SoundSource.Custom;
-        if ( form.SelectDialogSound.SelectedItem != null )
-          Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
-        Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
-        Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
-        Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
-        SystemManager.TryCatch(Settings.Save);
-      }
+      using var form = new SelectSoundForm();
+      form.TopMost = topmost;
+      if ( form.ShowDialog() != DialogResult.OK ) return;
+      if ( form.SelectNone.Checked )
+        Settings.ReminderBoxSoundSource = SoundSource.None;
+      else
+      if ( form.SelectDialog.Checked )
+        Settings.ReminderBoxSoundSource = SoundSource.Dialog;
+      else
+      if ( form.SelectApplication.Checked )
+        Settings.ReminderBoxSoundSource = SoundSource.Application;
+      else
+      if ( form.SelectWindows.Checked )
+        Settings.ReminderBoxSoundSource = SoundSource.Windows;
+      else
+      if ( form.SelectCustom.Checked )
+        Settings.ReminderBoxSoundSource = SoundSource.Custom;
+      if ( form.SelectDialogSound.SelectedItem != null )
+        Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
+      Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
+      Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
+      Settings.ReminderBoxSoundPath = form.EditFilePath.Text;
+      SystemManager.TryCatch(Settings.Save);
     }
 
     private SelectSoundForm()

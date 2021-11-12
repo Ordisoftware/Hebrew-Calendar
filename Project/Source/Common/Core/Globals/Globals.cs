@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -65,11 +65,11 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate StopWatches.
     /// </summary>
-    static public readonly Stopwatch ChronoStartingApp = new Stopwatch();
-    static public readonly Stopwatch ChronoTranslate = new Stopwatch();
-    static public readonly Stopwatch ChronoLoadData = new Stopwatch();
-    static public readonly Stopwatch ChronoCreateData = new Stopwatch();
-    static public readonly Stopwatch ChronoShowData = new Stopwatch();
+    static public readonly Stopwatch ChronoStartingApp = new();
+    static public readonly Stopwatch ChronoTranslate = new();
+    static public readonly Stopwatch ChronoLoadData = new();
+    static public readonly Stopwatch ChronoCreateData = new();
+    static public readonly Stopwatch ChronoShowData = new();
 
     /// <summary>
     /// Indicate keyboard shortcuts notice form.
@@ -173,8 +173,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate brint to front application system hot key.
     /// </summary>
-    static public readonly SystemHotKey BringToFrontApplicationHotKey
-      = new SystemHotKey();
+    static public readonly SystemHotKey BringToFrontApplicationHotKey = new();
 
     /// <summary>
     /// Static constructor.

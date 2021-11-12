@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew
         int width = PanelLetters.Width - 10;
         int deltaY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
         int deltaX = -(int)Math.Round(( width + 10 - ( deltaY / 2.0 ) ) / 11, MidpointRounding.AwayFromZero);
-        int deltaXabs = -deltaX;
+        //int deltaXabs = -deltaX;
         var sizeLabelValue = new Size(deltaY, 8);
         var sizeLabelKey = new Size(deltaY, 13);
         int deltaValue2 = 2;
@@ -124,7 +124,7 @@ namespace Ordisoftware.Hebrew
           else
           {
             posX = width + deltaX - _MarginX;
-            posY = posY + deltaLine;
+            posY += deltaLine;
             lineLetterCount = 0;
           }
         }

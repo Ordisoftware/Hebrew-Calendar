@@ -33,6 +33,23 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
+    /// Call an action without raising exceptions.
+    /// </summary>
+    static public bool TryCatch(Action action)
+    {
+      try
+      {
+        action();
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        ex.Manage(ShowExceptionMode.None);
+        return false;
+      }
+    }
+
+    /// <summary>
     /// Call actions without raising exceptions.
     /// </summary>
     static public void TryCatchManage(params Action[] actions)
@@ -48,23 +65,6 @@ namespace Ordisoftware.Core
     {
       foreach ( var action in actions )
         TryCatchManage(mode, action);
-    }
-
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatch(Action action)
-    {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(ShowExceptionMode.None);
-        return false;
-      }
     }
 
     /// <summary>

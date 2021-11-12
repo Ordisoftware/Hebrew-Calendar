@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     public const int DefaultWidthBig = 700;
     public const int DefaultWidthHuge = 800;
 
-    static public readonly List<MessageBoxEx> Instances = new List<MessageBoxEx>();
+    static public readonly List<MessageBoxEx> Instances = new();
 
     static public void CloseAll()
     {
@@ -60,11 +60,11 @@ namespace Ordisoftware.Core
       }
     }
 
-    private TranslationsDictionary LocalizedTitle;
-    private TranslationsDictionary LocalizedText;
-    private MessageBoxIcon IconStyle;
-    private int LabelMaxWidth;
-    private bool Justify;
+    private readonly TranslationsDictionary LocalizedTitle;
+    private readonly TranslationsDictionary LocalizedText;
+    private readonly MessageBoxIcon IconStyle;
+    private readonly int LabelMaxWidth;
+    private readonly bool Justify;
     public bool AllowClose;
 
     public bool DoShownSound = true;
@@ -98,7 +98,7 @@ namespace Ordisoftware.Core
       {
         SetIcon(icon);
         Label.Left = Label.Left + Label.Left / 2 + PictureBox.Width;
-        Label.Top = Label.Top + ( PictureBox.Height - Label.Height ) / 2;
+        Label.Top += ( PictureBox.Height - Label.Height ) / 2;
         width += PictureBox.Width;
         LabelMaxWidth -= PictureBox.Width + PictureBox.Width / 2;
       }

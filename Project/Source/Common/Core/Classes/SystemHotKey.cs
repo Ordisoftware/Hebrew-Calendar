@@ -38,7 +38,7 @@ namespace Ordisoftware.Core
     }
     static private HotkeyManager _Manager;
 
-    static public readonly List<SystemHotKey> AllActivated = new List<SystemHotKey>();
+    static public readonly List<SystemHotKey> AllActivated = new();
 
     private Hotkey publicHotKey;
     private int publicHotKeyID;

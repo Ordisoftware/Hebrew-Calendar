@@ -44,15 +44,17 @@ namespace Ordisoftware.Core
             foreach ( DataRow row in table.Rows )
             {
               foreach ( DataColumn column in table.Columns )
-                stream.WriteLine($"{column.ColumnName} = {row[column].ToString()}");
+                stream.WriteLine($"{column.ColumnName} = {row[column]}");
               stream.WriteLine();
             }
           break;
         case DataExportTarget.CSV:
-          var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count);
-          options.IncludeHeaderNames = true;
-          options.DateFormat = "yyyy-MM-dd HH:mm";
-          options.Encoding = Encoding.UTF8;
+          var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count)
+          {
+            IncludeHeaderNames = true,
+            DateFormat = "yyyy-MM-dd HH:mm",
+            Encoding = Encoding.UTF8
+          };
           CsvEngine.DataTableToCsv(table, filePath, options);
           break;
         case DataExportTarget.JSON:

@@ -67,19 +67,15 @@ namespace Ordisoftware.Core
 
     static public ImageFormat GetFormat(this ImageExportTarget value)
     {
-      switch ( value )
+      return value switch
       {
-        case ImageExportTarget.PNG:
-          return ImageFormat.Png;
-        case ImageExportTarget.JPG:
-          return ImageFormat.Jpeg;
-        case ImageExportTarget.TIFF:
-          return ImageFormat.Tiff;
-        case ImageExportTarget.BMP:
-          return ImageFormat.Bmp;
-        default:
-          throw new AdvancedNotImplementedException(value);
-      }
+        ImageExportTarget.PNG => ImageFormat.Png,
+        ImageExportTarget.JPG => ImageFormat.Jpeg,
+        ImageExportTarget.TIFF => ImageFormat.Tiff,
+        ImageExportTarget.BMP => ImageFormat.Bmp,
+        ImageExportTarget.GIF => ImageFormat.Gif,
+        _ => throw new AdvancedNotImplementedException(value),
+      };
     }
 
   }

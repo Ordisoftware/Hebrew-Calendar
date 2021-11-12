@@ -21,9 +21,9 @@ namespace Ordisoftware.Core
   partial class ShowTextForm : Form
   {
 
-    private bool HideOnClose;
-    private TranslationsDictionary LocalizedTitle;
-    private TranslationsDictionary LocalizedText;
+    private readonly bool HideOnClose;
+    private readonly TranslationsDictionary LocalizedTitle;
+    private readonly TranslationsDictionary LocalizedText;
 
     private ShowTextForm()
     {

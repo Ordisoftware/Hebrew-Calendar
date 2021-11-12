@@ -13,7 +13,7 @@ namespace Ordisoftware.Core
     {
       try
       {
-        StringBuilder lengthBuf = new StringBuilder(32);
+        StringBuilder lengthBuf = new(32);
         NativeMethods.mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
         NativeMethods.mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
         NativeMethods.mciSendString("close wave", null, 0, IntPtr.Zero);

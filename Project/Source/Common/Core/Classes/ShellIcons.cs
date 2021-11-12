@@ -28,8 +28,10 @@ namespace Ordisoftware.Core
 
     static ShellIcons()
     {
-      var sii = new NativeMethods.SHSTOCKICONINFO();
-      sii.cbSize = (UInt32)Marshal.SizeOf(typeof(NativeMethods.SHSTOCKICONINFO));
+      var sii = new NativeMethods.SHSTOCKICONINFO
+      {
+        cbSize = (uint)Marshal.SizeOf(typeof(NativeMethods.SHSTOCKICONINFO))
+      };
       Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_INFO, NativeMethods.SHGSI.SHGSI_ICON, ref sii));
       Information = Icon.FromHandle(sii.hIcon).ToBitmap();
       Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_HELP, NativeMethods.SHGSI.SHGSI_ICON, ref sii));

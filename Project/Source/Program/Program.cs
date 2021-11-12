@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -151,9 +151,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         server.EndWaitForConnection(ar);
-#pragma warning disable S5773 // Types allowed to be deserialized should be restricted - irrelevant
-        if ( !( new BinaryFormatter().Deserialize(server) is string command ) ) return;
-#pragma warning restore S5773 // Types allowed to be deserialized should be restricted - irrelevant
+        if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
         if ( !Globals.IsReady ) return;
         if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
           MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
@@ -264,10 +262,10 @@ namespace Ordisoftware.Hebrew.Calendar
       Task task = null;
       try
       {
-        void update(Form form)
+        static void update(Form form)
         {
           new Infralution.Localization.CultureManager().ManagedControl = form;
-          ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
+          ComponentResourceManager resources = new(form.GetType());
           resources.ApplyResources(form.Controls);
         }
         string lang = "en-US";

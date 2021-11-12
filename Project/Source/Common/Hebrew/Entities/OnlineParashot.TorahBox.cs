@@ -21,79 +21,78 @@ namespace Ordisoftware.Hebrew
   static partial class OnlineParashot
   {
 
-    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahBox
-      = new NullSafeDictionary<TorahBook, NullSafeList<string>>
+    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahBox = new()
+    {
+      [TorahBook.Bereshit] = new NullSafeList<string>
       {
-        [TorahBook.Bereshit] = new NullSafeList<string>
-        {
-          "berechit-genese/berechit/",
-          "berechit-genese/noah/",
-          "berechit-genese/lekh-lekha/",
-          "berechit-genese/vayera/",
-          "berechit-genese/haye-sarah/",
-          "berechit-genese/toledot/",
-          "berechit-genese/vayetse/",
-          "berechit-genese/vayichlah/",
-          "berechit-genese/vayechev/",
-          "berechit-genese/mikets/",
-          "berechit-genese/vayigach/",
-          "berechit-genese/vayehi/"
-        },
-        [TorahBook.Shemot] = new NullSafeList<string>
-        {
-          "chemot-exode/chemot/",
-          "chemot-exode/vaera/",
-          "chemot-exode/bo/",
-          "chemot-exode/bechalah/",
-          "chemot-exode/yitro/",
-          "chemot-exode/michpatim/",
-          "chemot-exode/terouma/",
-          "chemot-exode/tetsave/",
-          "chemot-exode/ki-tissa/",
-          "chemot-exode/vayakhel/",
-          "chemot-exode/pekoude/"
-        },
-        [TorahBook.Vayiqra] = new NullSafeList<string>
-        {
-          "vayikra-levitique/vayikra/",
-          "vayikra-levitique/tsav/",
-          "vayikra-levitique/chemini/",
-          "vayikra-levitique/tazria/",
-          "vayikra-levitique/metsora/",
-          "vayikra-levitique/ahare-mot/",
-          "vayikra-levitique/kedochim/",
-          "vayikra-levitique/emor/",
-          "vayikra-levitique/behar/",
-          "vayikra-levitique/behoukotai/"
-        },
-        [TorahBook.Bamidbar] = new NullSafeList<string>
-        {
-          "bamidbar-nombres/bamidbar/",
-          "bamidbar-nombres/nasso/",
-          "bamidbar-nombres/behaalotekha/",
-          "bamidbar-nombres/chelah-lekha/",
-          "bamidbar-nombres/korah/",
-          "bamidbar-nombres/houkat/",
-          "bamidbar-nombres/balak/",
-          "bamidbar-nombres/pinhas/",
-          "bamidbar-nombres/matot/",
-          "bamidbar-nombres/masse/"
-        },
-        [TorahBook.Devarim] = new NullSafeList<string>
-        {
-          "devarim-deuteronome/devarim/",
-          "devarim-deuteronome/vaethanane/",
-          "devarim-deuteronome/ekev/",
-          "devarim-deuteronome/ree/",
-          "devarim-deuteronome/choftim/",
-          "devarim-deuteronome/ki-tetse/",
-          "devarim-deuteronome/ki-tavo/",
-          "devarim-deuteronome/nitsavim/",
-          "devarim-deuteronome/vayelekh/",
-          "devarim-deuteronome/haazinou/",
-          "devarim-deuteronome/vezot-haberakha/"
-        }
-      };
+        "berechit-genese/berechit/",
+        "berechit-genese/noah/",
+        "berechit-genese/lekh-lekha/",
+        "berechit-genese/vayera/",
+        "berechit-genese/haye-sarah/",
+        "berechit-genese/toledot/",
+        "berechit-genese/vayetse/",
+        "berechit-genese/vayichlah/",
+        "berechit-genese/vayechev/",
+        "berechit-genese/mikets/",
+        "berechit-genese/vayigach/",
+        "berechit-genese/vayehi/"
+      },
+      [TorahBook.Shemot] = new NullSafeList<string>
+      {
+        "chemot-exode/chemot/",
+        "chemot-exode/vaera/",
+        "chemot-exode/bo/",
+        "chemot-exode/bechalah/",
+        "chemot-exode/yitro/",
+        "chemot-exode/michpatim/",
+        "chemot-exode/terouma/",
+        "chemot-exode/tetsave/",
+        "chemot-exode/ki-tissa/",
+        "chemot-exode/vayakhel/",
+        "chemot-exode/pekoude/"
+      },
+      [TorahBook.Vayiqra] = new NullSafeList<string>
+      {
+        "vayikra-levitique/vayikra/",
+        "vayikra-levitique/tsav/",
+        "vayikra-levitique/chemini/",
+        "vayikra-levitique/tazria/",
+        "vayikra-levitique/metsora/",
+        "vayikra-levitique/ahare-mot/",
+        "vayikra-levitique/kedochim/",
+        "vayikra-levitique/emor/",
+        "vayikra-levitique/behar/",
+        "vayikra-levitique/behoukotai/"
+      },
+      [TorahBook.Bamidbar] = new NullSafeList<string>
+      {
+        "bamidbar-nombres/bamidbar/",
+        "bamidbar-nombres/nasso/",
+        "bamidbar-nombres/behaalotekha/",
+        "bamidbar-nombres/chelah-lekha/",
+        "bamidbar-nombres/korah/",
+        "bamidbar-nombres/houkat/",
+        "bamidbar-nombres/balak/",
+        "bamidbar-nombres/pinhas/",
+        "bamidbar-nombres/matot/",
+        "bamidbar-nombres/masse/"
+      },
+      [TorahBook.Devarim] = new NullSafeList<string>
+      {
+        "devarim-deuteronome/devarim/",
+        "devarim-deuteronome/vaethanane/",
+        "devarim-deuteronome/ekev/",
+        "devarim-deuteronome/ree/",
+        "devarim-deuteronome/choftim/",
+        "devarim-deuteronome/ki-tetse/",
+        "devarim-deuteronome/ki-tavo/",
+        "devarim-deuteronome/nitsavim/",
+        "devarim-deuteronome/vayelekh/",
+        "devarim-deuteronome/haazinou/",
+        "devarim-deuteronome/vezot-haberakha/"
+      }
+    };
 
   }
 

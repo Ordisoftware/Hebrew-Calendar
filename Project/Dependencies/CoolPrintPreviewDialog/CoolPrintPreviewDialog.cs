@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
+#pragma warning disable IDE1006 // Styles d'affectation de noms
 namespace CoolPrintPreview
 {
   /// <summary>
@@ -23,12 +24,10 @@ namespace CoolPrintPreview
   internal partial class CoolPrintPreviewDialog : Form
   {
 
-    static public
-
     //--------------------------------------------------------------------
     #region ** fields
 
-    PrintDocument _doc;
+    static private PrintDocument _doc;
 
     #endregion
 
@@ -141,30 +140,28 @@ namespace CoolPrintPreview
 
     void _btnPrint_Click(object sender, EventArgs e)
     {
-      using ( var dlg = new PrintDialog() )
+      using var dlg = new PrintDialog();
+      // configure dialog
+      dlg.AllowSomePages = true;
+      dlg.AllowSelection = true;
+
+      // ORDISOFTWARE MODIF BEGIN
+      dlg.UseEXDialog = false;
+      dlg.Document = Document;
+      int indexPage = 0;
+      dlg.Document.PrintPage += (_s, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
+      // ORDISOFTWARE MODIF END
+
+      // show allowed page range
+      var ps = dlg.PrinterSettings;
+      ps.MinimumPage = ps.FromPage = 1;
+      ps.MaximumPage = ps.ToPage = _preview.PageCount;
+
+      // show dialog
+      if ( dlg.ShowDialog(this) == DialogResult.OK )
       {
-        // configure dialog
-        dlg.AllowSomePages = true;
-        dlg.AllowSelection = true;
-
-        // ORDISOFTWARE MODIF BEGIN
-        dlg.UseEXDialog = false;
-        dlg.Document = Document;
-        int indexPage = 0;
-        dlg.Document.PrintPage += (_s, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
-        // ORDISOFTWARE MODIF END
-
-        // show allowed page range
-        var ps = dlg.PrinterSettings;
-        ps.MinimumPage = ps.FromPage = 1;
-        ps.MaximumPage = ps.ToPage = _preview.PageCount;
-
-        // show dialog
-        if ( dlg.ShowDialog(this) == DialogResult.OK )
-        {
-          // print selected page range
-          _preview.Print();
-        }
+        // print selected page range
+        _preview.Print();
       }
     }
     void _btnPageSetup_Click(object sender, EventArgs e)
@@ -306,8 +303,7 @@ namespace CoolPrintPreview
     }
     void CommitPageNumber()
     {
-      int page;
-      if ( int.TryParse(_txtStartPage.Text, out page) )
+      if ( int.TryParse(_txtStartPage.Text, out int page) )
       {
         _preview.StartPage = page - 1;
       }
@@ -326,12 +322,11 @@ namespace CoolPrintPreview
       _lblPageCount.Text = string.Format(OfPageText.GetLang() + " {0}", _preview.PageCount);
     }
 
-    static private readonly TranslationsDictionary OfPageText
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "of",
-        [Language.FR] = "de",
-      };
+    static private readonly TranslationsDictionary OfPageText = new()
+    {
+      [Language.EN] = "of",
+      [Language.FR] = "de",
+    };
     // ORDISOFTWARE MODIF END
 
     #endregion
@@ -371,3 +366,4 @@ namespace CoolPrintPreview
     #endregion
   }
 }
+#pragma warning restore IDE1006 // Styles d'affectation de noms

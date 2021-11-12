@@ -201,7 +201,9 @@ namespace Ordisoftware.Core
           pos = result.LastIndexOf(spacechar, index + width, width);
           if ( pos == -1 )
           {
+#pragma warning disable IDE0059 // Assignation inutile d'une valeur - Error
             pos = result.IndexOf(spacechar, index + width);
+#pragma warning restore IDE0059 // Assignation inutile d'une valeur - Error
             break;
           }
           result = result.Remove(pos, 1);

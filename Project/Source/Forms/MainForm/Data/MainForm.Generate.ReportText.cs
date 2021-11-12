@@ -37,18 +37,17 @@ namespace Ordisoftware.Hebrew.Calendar
     const string MoonFullText = "o";
     public readonly string MoonNewText = "•";
 
-    private bool ShowWinterSummerHour = true;
-    private bool ShowShabat = true;
+    private readonly bool ShowWinterSummerHour = true;
+    private readonly bool ShowShabat = true;
 
-    private Dictionary<ReportFieldText, int> CalendarFieldSize
-      = new Dictionary<ReportFieldText, int>()
-      {
-        { ReportFieldText.Date, 16 },
-        { ReportFieldText.Month, 11 },
-        { ReportFieldText.Sun, 23 },
-        { ReportFieldText.Moon, 21 },
-        { ReportFieldText.Events, 42 },
-      };
+    private readonly Dictionary<ReportFieldText, int> CalendarFieldSize = new()
+    {
+      { ReportFieldText.Date, 16 },
+      { ReportFieldText.Month, 11 },
+      { ReportFieldText.Sun, 23 },
+      { ReportFieldText.Moon, 21 },
+      { ReportFieldText.Events, 42 },
+    };
 
     private string GenerateReportText(bool processInsert = false)
     {

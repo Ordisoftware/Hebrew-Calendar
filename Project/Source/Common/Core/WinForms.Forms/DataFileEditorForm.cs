@@ -27,26 +27,22 @@ namespace Ordisoftware.Core
 
     static public bool Run(string title, DataFile file)
     {
-      using ( var form = new DataFileEditorForm() )
-      {
-        form.Text = title;
-        AddTab(form.TabControl, file);
-        bool result = form.ShowDialog() == DialogResult.OK;
-        if ( result ) file.ReLoad();
-        return result;
-      }
+      using var form = new DataFileEditorForm();
+      form.Text = title;
+      AddTab(form.TabControl, file);
+      bool result = form.ShowDialog() == DialogResult.OK;
+      if ( result ) file.ReLoad();
+      return result;
     }
 
     static public bool Run(string title, IEnumerable<DataFile> files)
     {
-      using ( var form = new DataFileEditorForm() )
-      {
-        form.Text = title;
-        foreach ( var item in files ) AddTab(form.TabControl, item);
-        bool result = form.ShowDialog() == DialogResult.OK;
-        if ( result ) foreach ( var item in files ) item.ReLoad();
-        return result;
-      }
+      using var form = new DataFileEditorForm();
+      form.Text = title;
+      foreach ( var item in files ) AddTab(form.TabControl, item);
+      bool result = form.ShowDialog() == DialogResult.OK;
+      if ( result ) foreach ( var item in files ) item.ReLoad();
+      return result;
     }
 
     private static void AddTab(TabControl tabcontrol, DataFile file)
@@ -63,8 +59,7 @@ namespace Ordisoftware.Core
       textbox.ScrollBars = ScrollBars.Both;
       textbox.Dock = DockStyle.Fill;
       textbox.Text = File.ReadAllText(file.FilePath);
-      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty));
-      tabpage.Tag = file;
+      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);
     }

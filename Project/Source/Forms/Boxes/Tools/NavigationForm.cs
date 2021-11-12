@@ -31,8 +31,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public NavigationForm Instance { get; private set; }
 
-    static private int PanelAllExceptParashahTopDefault;
-    static private int PanelAllExceptParashahDelta;
+    static readonly private int PanelAllExceptParashahTopDefault;
+    static readonly private int PanelAllExceptParashahDelta;
 
     static NavigationForm()
     {

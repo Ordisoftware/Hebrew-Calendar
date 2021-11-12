@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SearchGregorianMonthForm : Form
   {
 
-    private MainForm MainForm = MainForm.Instance;
+    private readonly MainForm MainForm = MainForm.Instance;
 
     public LunisolarDay CurrentDay { get; private set; }
 

@@ -150,7 +150,8 @@ namespace Ordisoftware.Hebrew.Calendar
       setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
       setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
       setInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
-      void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
+      //
+      static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
       {
         control.Minimum = interval.Item1;
         control.Maximum = interval.Item2;

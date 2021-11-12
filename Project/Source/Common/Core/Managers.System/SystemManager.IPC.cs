@@ -29,9 +29,11 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Application mutex to allow only one process instance.
     /// </summary>
-#pragma warning disable S4487 // Unread "private" fields should be removed
+#pragma warning disable S4487 // Unread "private" fields should be removed - Opinion
+#pragma warning disable IDE0052 // Supprimer les membres privés non lus - Opinion
     static private Mutex ApplicationMutex;
-#pragma warning restore S4487 // Unread "private" fields should be removed
+#pragma warning restore IDE0052 // Supprimer les membres privés non lus - Opinion
+#pragma warning restore S4487 // Unread "private" fields should be removed - Opinion
 
     /// <summary>
     /// IPC server instance.
@@ -110,12 +112,10 @@ namespace Ordisoftware.Core
     {
       try
       {
-        using ( var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut) )
-        {
-          client.Connect();
-          new BinaryFormatter().Serialize(client, command);
-          client.Close();
-        }
+        using var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
+        client.Connect();
+        new BinaryFormatter().Serialize(client, command);
+        client.Close();
       }
       catch ( Exception ex )
       {

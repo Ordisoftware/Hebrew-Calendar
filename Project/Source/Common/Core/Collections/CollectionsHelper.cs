@@ -24,8 +24,7 @@ namespace Ordisoftware.Core
 
     static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
     {
-      var slices = new List<List<T>>();
-      slices.Add(new List<T>());
+      var slices = new List<List<T>> { new List<T>() };
       foreach ( var item in collection )
       {
         slices.Last().Add(item);

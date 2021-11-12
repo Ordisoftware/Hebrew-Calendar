@@ -389,18 +389,12 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
       {
         var anchor = DisplayManager.GetTaskbarAnchorStyle();
-        switch ( anchor )
+        Settings.ReminderBoxDesktopLocation = anchor switch
         {
-          case AnchorStyles.Top:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.TopRight;
-            break;
-          case AnchorStyles.Left:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomLeft;
-            break;
-          default:
-            Settings.ReminderBoxDesktopLocation = ControlLocation.BottomRight;
-            break;
-        }
+          AnchorStyles.Top => ControlLocation.TopRight,
+          AnchorStyles.Left => ControlLocation.BottomLeft,
+          _ => ControlLocation.BottomRight,
+        };
       }
     }
 

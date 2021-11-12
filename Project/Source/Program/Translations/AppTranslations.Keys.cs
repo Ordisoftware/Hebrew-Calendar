@@ -24,15 +24,13 @@ namespace Ordisoftware.Hebrew.Calendar
   static partial class AppTranslations
   {
 
-    static public readonly TranslationsDictionary NoticeKeyboardShortcutsTitle
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary NoticeKeyboardShortcutsTitle = new()
       {
         [Language.EN] = "Keyboard shortcuts notice",
         [Language.FR] = "Notice des raccourcis clavier"
       };
 
-    static public readonly TranslationsDictionary NoticeKeyboardShortcuts
-      = new TranslationsDictionary
+    static public readonly TranslationsDictionary NoticeKeyboardShortcuts = new()
       {
         [Language.EN] = "Ctrl + Tab : Next view" + Globals.NL +
                         "Shift + Ctrl + Tab : Previous view" + Globals.NL +

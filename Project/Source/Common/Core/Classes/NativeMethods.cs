@@ -4,8 +4,6 @@ using System.Runtime.InteropServices;
 
 #pragma warning disable S101 // Types should be named in PascalCase
 #pragma warning disable S2346 // Flags enumerations zero-value members should be named "None"
-#pragma warning disable S4487 // Unread "private" fields should be removed
-#pragma warning disable IDE1006 // Styles d'affectation de noms
 namespace Ordisoftware.Core
 {
 
@@ -381,5 +379,3 @@ namespace Ordisoftware.Core
 }
 #pragma warning restore S101 // Types should be named in PascalCase
 #pragma warning restore S2346 // Flags enumerations zero-value members should be named "None"
-#pragma warning restore S4487 // Unread "private" fields should be removed
-#pragma warning restore IDE1006 // Styles d'affectation de noms

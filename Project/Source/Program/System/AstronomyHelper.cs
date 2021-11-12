@@ -28,14 +28,12 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Indicate the system lunisolar calendar instance.
     /// </summary>
-    static public readonly VietnameseCalendar LunisolerCalendar
-      = new VietnameseCalendar();
+    static public readonly VietnameseCalendar LunisolerCalendar = new();
 
     /// <summary>
     /// Indicate the SunMoon instance.
     /// </summary>
-    static public readonly SunMoon SunMoon
-      = new SunMoon();
+    static public readonly SunMoon SunMoon = new();
 
     /// <summary>
     /// Get the moon phase type.
@@ -72,7 +70,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </returns>
     static public SunAndMoonRiseAndSet GetSunMoonEphemeris(this DateTime date)
     {
-      TimeSpan? calcEphem(string str)
+      static TimeSpan? calcEphem(string str)
       {
         if ( str == "2400" ) str = "0000";
         try

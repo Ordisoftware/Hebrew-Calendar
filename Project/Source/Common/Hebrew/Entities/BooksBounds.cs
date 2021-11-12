@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew
     static public readonly BookBound Neviim = Create<NeviimBook>();
     static public readonly BookBound Ketouvim = Create<KetouvimBook>();
     static private BookBound Create<T>() where T : struct, Enum
-      => new BookBound(EnumHelper.Min<T>() + 1, EnumHelper.Max<T>() + 1);
+      => new(EnumHelper.Min<T>() + 1, EnumHelper.Max<T>() + 1);
   }
 
 }

@@ -15,7 +15,7 @@ namespace Ordisoftware.Core
   public class ToolStripCheckBoxItem : ToolStripControlHost
   {
 
-    private readonly CheckBox CheckBox = new CheckBox();
+    private readonly CheckBox CheckBox = new();
 
     public bool Checked
     {

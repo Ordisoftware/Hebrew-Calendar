@@ -30,8 +30,10 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class PreferencesForm
   {
 
+#pragma warning disable IDE0044 // Ajouter un modificateur readonly - N/A
     private NullSafeOfStringDictionary<DataExportTarget> ExportTarget
       = ExportHelper.CreateExportTargets(DataExportTarget.XML);
+#pragma warning restore IDE0044 // Ajouter un modificateur readonly - N/A
 
     private void DoResetSettings()
     {

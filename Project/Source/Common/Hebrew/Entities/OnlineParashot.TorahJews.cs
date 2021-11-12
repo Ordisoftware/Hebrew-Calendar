@@ -21,79 +21,78 @@ namespace Ordisoftware.Hebrew
   static partial class OnlineParashot
   {
 
-    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahJews
-      = new NullSafeDictionary<TorahBook, NullSafeList<string>>
+    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahJews = new()
+    {
+      [TorahBook.Bereshit] = new NullSafeList<string>
       {
-        [TorahBook.Bereshit] = new NullSafeList<string>
-        {
-          "bereishis",
-          "noach",
-          "lech-lecha",
-          "vayera",
-          "chayei-sara",
-          "toldos",
-          "vayetzei",
-          "vayishlach",
-          "vayeshev",
-          "miketz",
-          "vayigash",
-          "vayechi"
-        },
-        [TorahBook.Shemot] = new NullSafeList<string>
-        {
-          "shemos",
-          "vaera",
-          "bo",
-          "beshalach",
-          "yisro",
-          "mishpatim",
-          "terumah",
-          "tetzaveh",
-          "ki-sisa",
-          "vayakhel",
-          "pekudei"
-        },
-        [TorahBook.Vayiqra] = new NullSafeList<string>
-        {
-          "vayikra",
-          "tzav",
-          "shmini",
-          "tazria",
-          "metzora",
-          "achrei",
-          "kedoshim",
-          "emor",
-          "behar",
-          "bechukosai"
-        },
-        [TorahBook.Bamidbar] = new NullSafeList<string>
-        {
-          "bamidbar",
-          "nasso",
-          "behaaloscha",
-          "shlach",
-          "korach",
-          "chukas",
-          "balak",
-          "pinchas",
-          "matos",
-          "masei"
-        },
-        [TorahBook.Devarim] = new NullSafeList<string>
-        {
-          "devarim",
-          "vaeschanan",
-          "eikev",
-          "reeh",
-          "shoftim",
-          "ki-seitzei",
-          "ki-savo",
-          "nitzavim",
-          "vayeilech",
-          "haazinu",
-          "vezos-haberachah"
-        }
-      };
+        "bereishis",
+        "noach",
+        "lech-lecha",
+        "vayera",
+        "chayei-sara",
+        "toldos",
+        "vayetzei",
+        "vayishlach",
+        "vayeshev",
+        "miketz",
+        "vayigash",
+        "vayechi"
+      },
+      [TorahBook.Shemot] = new NullSafeList<string>
+      {
+        "shemos",
+        "vaera",
+        "bo",
+        "beshalach",
+        "yisro",
+        "mishpatim",
+        "terumah",
+        "tetzaveh",
+        "ki-sisa",
+        "vayakhel",
+        "pekudei"
+      },
+      [TorahBook.Vayiqra] = new NullSafeList<string>
+      {
+        "vayikra",
+        "tzav",
+        "shmini",
+        "tazria",
+        "metzora",
+        "achrei",
+        "kedoshim",
+        "emor",
+        "behar",
+        "bechukosai"
+      },
+      [TorahBook.Bamidbar] = new NullSafeList<string>
+      {
+        "bamidbar",
+        "nasso",
+        "behaaloscha",
+        "shlach",
+        "korach",
+        "chukas",
+        "balak",
+        "pinchas",
+        "matos",
+        "masei"
+      },
+      [TorahBook.Devarim] = new NullSafeList<string>
+      {
+        "devarim",
+        "vaeschanan",
+        "eikev",
+        "reeh",
+        "shoftim",
+        "ki-seitzei",
+        "ki-savo",
+        "nitzavim",
+        "vayeilech",
+        "haazinu",
+        "vezos-haberachah"
+      }
+    };
 
   }
 

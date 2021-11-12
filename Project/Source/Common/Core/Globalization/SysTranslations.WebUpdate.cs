@@ -23,47 +23,41 @@ namespace Ordisoftware.Core
   static partial class SysTranslations
   {
 
-    static public readonly TranslationsDictionary CheckUpdateReadError
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Error on reading data from server:{Globals.NL2}{{0}}",
-        [Language.FR] = $"Erreur lors de la lecture des données depuis le serveur :{Globals.NL2}{{0}}",
-      };
+    static public readonly TranslationsDictionary CheckUpdateReadError = new()
+    {
+      [Language.EN] = $"Error on reading data from server:{Globals.NL2}{{0}}",
+      [Language.FR] = $"Erreur lors de la lecture des données depuis le serveur :{Globals.NL2}{{0}}",
+    };
 
-    static public readonly TranslationsDictionary CheckUpdateFileError
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Error in check update file: no version number found or bad format.{Globals.NL2}{{0}}",
-        [Language.FR] = $"Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect.{Globals.NL2}{{0}}"
-      };
+    static public readonly TranslationsDictionary CheckUpdateFileError = new()
+    {
+      [Language.EN] = $"Error in check update file: no version number found or bad format.{Globals.NL2}{{0}}",
+      [Language.FR] = $"Erreur dans le fichier de mise à jour : pas de numéro de version trouvé ou format incorrect.{Globals.NL2}{{0}}"
+    };
 
-    static public readonly TranslationsDictionary WebCheckUpdate
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Checking update server...",
-        [Language.FR] = "Vérification du serveur de mise à jour..."
-      };
+    static public readonly TranslationsDictionary WebCheckUpdate = new()
+    {
+      [Language.EN] = "Checking update server...",
+      [Language.FR] = "Vérification du serveur de mise à jour..."
+    };
 
-    static public readonly TranslationsDictionary NoNewVersionAvailable
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "There is no new version available.",
-        [Language.FR] = "Il n'y a pas de nouvelle version de disponible."
-      };
+    static public readonly TranslationsDictionary NoNewVersionAvailable = new()
+    {
+      [Language.EN] = "There is no new version available.",
+      [Language.FR] = "Il n'y a pas de nouvelle version de disponible."
+    };
 
-    static public readonly TranslationsDictionary DownloadingNewVersion
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Downloading new version...",
-        [Language.FR] = "Téléchargement de la nouvelle version..."
-      };
+    static public readonly TranslationsDictionary DownloadingNewVersion = new()
+    {
+      [Language.EN] = "Downloading new version...",
+      [Language.FR] = "Téléchargement de la nouvelle version..."
+    };
 
-    static public readonly TranslationsDictionary AskToOpenGitHubPage
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Do you want to open the project's GitHub repository?.",
-        [Language.FR] = "Voulez-vous ouvrir le dépôt GitHub du projet ?"
-      };
+    static public readonly TranslationsDictionary AskToOpenGitHubPage = new()
+    {
+      [Language.EN] = "Do you want to open the project's GitHub repository?.",
+      [Language.FR] = "Voulez-vous ouvrir le dépôt GitHub du projet ?"
+    };
 
   }
 

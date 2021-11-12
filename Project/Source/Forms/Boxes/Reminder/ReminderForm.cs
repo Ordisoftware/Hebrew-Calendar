@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Static Constructor and Run
 
-    static private Image Image;
+    static private readonly Image Image;
 
     static ReminderForm()
     {

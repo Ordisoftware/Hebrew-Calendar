@@ -22,9 +22,9 @@ namespace Ordisoftware.Core
   partial class TraceForm : Form
   {
 
-    private string LocationPropertyName;
-    private string ClientSizePropertyName;
-    private string FontSizepropertyName;
+    private readonly string LocationPropertyName;
+    private readonly string ClientSizePropertyName;
+    private readonly string FontSizepropertyName;
 
     private TraceForm()
     {

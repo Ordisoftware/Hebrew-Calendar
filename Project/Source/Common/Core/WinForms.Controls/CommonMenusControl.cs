@@ -100,7 +100,7 @@ namespace Ordisoftware.Core
 
     private void ShowNewInVersion(object sender, EventArgs e)
     {
-      if ( !( sender is ToolStripItem menuitem ) ) return;
+      if ( sender is not ToolStripItem menuitem  ) return;
       var notice = (TranslationPair)menuitem.Tag;
       string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(notice.Key);
       var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
@@ -221,7 +221,7 @@ namespace Ordisoftware.Core
 
     private void ActionOpenWebsiteURL_Click(object sender, EventArgs e)
     {
-      if ( !( sender is ToolStripItem menuitem ) ) return;
+      if ( sender is not ToolStripItem menuitem  ) return;
       SystemManager.OpenWebLink((string)menuitem.Tag);
     }
 

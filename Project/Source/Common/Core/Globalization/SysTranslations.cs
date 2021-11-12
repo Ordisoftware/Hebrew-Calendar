@@ -38,265 +38,229 @@ namespace Ordisoftware.Core
     }
     static private TranslationsDictionary _AskToContinue;
 
-    static public readonly TranslationsDictionary NotImplemented
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Not implemented: {0}",
-        [Language.FR] = "Non implémenté : {0}",
-      };
+    static public readonly TranslationsDictionary NotImplemented = new()
+    {
+      [Language.EN] = "Not implemented: {0}",
+      [Language.FR] = "Non implémenté : {0}",
+    };
 
-    static public readonly TranslationsDictionary NotYetAvailable
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Not yet available.",
-        [Language.FR] = "Pas encore disponible."
-      };
+    static public readonly TranslationsDictionary NotYetAvailable = new()
+    {
+      [Language.EN] = "Not yet available.",
+      [Language.FR] = "Pas encore disponible."
+    };
 
-    static public readonly TranslationsDictionary TermNotFound
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Term \"{0}\" not found.",
-        [Language.FR] = "Terme \"{0}\" non trouvé."
-      };
+    static public readonly TranslationsDictionary TermNotFound = new()
+    {
+      [Language.EN] = "Term \"{0}\" not found.",
+      [Language.FR] = "Terme \"{0}\" non trouvé."
+    };
 
-    static public readonly TranslationsDictionary AskToDeleteFile
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Delete file:{Globals.NL2}{{0}}?",
-        [Language.FR] = $"Effacer le fichier :{Globals.NL2}{{0}}?",
-      };
+    static public readonly TranslationsDictionary AskToDeleteFile = new()
+    {
+      [Language.EN] = $"Delete file:{Globals.NL2}{{0}}?",
+      [Language.FR] = $"Effacer le fichier :{Globals.NL2}{{0}}?",
+    };
 
-    static public readonly TranslationsDictionary ConfigureProviders
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Configure providers",
-        [Language.FR] = "Configurer les fournisseurs"
-      };
+    static public readonly TranslationsDictionary ConfigureProviders = new()
+    {
+      [Language.EN] = "Configure providers",
+      [Language.FR] = "Configurer les fournisseurs"
+    };
 
-    static public readonly TranslationsDictionary AskToOpenAllLinks
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Do you want to open all the {1} links of this menu?" + Globals.NL2 + "{0}",
-        [Language.FR] = "Voulez-vous ouvrir tous les {1} liens de ce menu ?" + Globals.NL2 + "{0}"
-      };
+    static public readonly TranslationsDictionary AskToOpenAllLinks = new()
+    {
+      [Language.EN] = "Do you want to open all the {1} links of this menu?" + Globals.NL2 + "{0}",
+      [Language.FR] = "Voulez-vous ouvrir tous les {1} liens de ce menu ?" + Globals.NL2 + "{0}"
+    };
 
-    static public readonly TranslationsDictionary AskToEmptyHistory
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Empty history?",
-        [Language.FR] = "Vider l'historique ?"
-      };
+    static public readonly TranslationsDictionary AskToEmptyHistory = new()
+    {
+      [Language.EN] = "Empty history?",
+      [Language.FR] = "Vider l'historique ?"
+    };
 
-    static public readonly TranslationsDictionary AskToEmptyBookmarks
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Empty bookmarks?",
-        [Language.FR] = "Vider les signets ?"
-      };
+    static public readonly TranslationsDictionary AskToEmptyBookmarks = new()
+    {
+      [Language.EN] = "Empty bookmarks?",
+      [Language.FR] = "Vider les signets ?"
+    };
 
-    static public readonly TranslationsDictionary AskToDeleteBookmark
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Erase the bookmark?",
-        [Language.FR] = "Effacer le signet ?"
-      };
+    static public readonly TranslationsDictionary AskToDeleteBookmark = new()
+    {
+      [Language.EN] = "Erase the bookmark?",
+      [Language.FR] = "Effacer le signet ?"
+    };
 
-    static public readonly TranslationsDictionary AskToDeleteBookmarkAll
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Erase all bookmarks?",
-        [Language.FR] = "Effacer tous les signets ?"
-      };
+    static public readonly TranslationsDictionary AskToDeleteBookmarkAll = new()
+    {
+      [Language.EN] = "Erase all bookmarks?",
+      [Language.FR] = "Effacer tous les signets ?"
+    };
 
-    static public readonly TranslationsDictionary AskToReplaceBookmark
-      = new TranslationsDictionary
-      {
-        [Language.EN] = $"Replace bookmark?{Globals.NL2}Actual: {{0}}{Globals.NL2}New: {{1}}",
-        [Language.FR] = $"Remplacer le signet ?{Globals.NL2}Actuel : {{0}}{Globals.NL2}Nouveau : {{1}}",
-      };
+    static public readonly TranslationsDictionary AskToReplaceBookmark = new()
+    {
+      [Language.EN] = $"Replace bookmark?{Globals.NL2}Actual: {{0}}{Globals.NL2}New: {{1}}",
+      [Language.FR] = $"Remplacer le signet ?{Globals.NL2}Actuel : {{0}}{Globals.NL2}Nouveau : {{1}}",
+    };
 
-    static public readonly TranslationsDictionary ActionCancel
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Cancel",
-        [Language.FR] = "Annuler",
-      };
+    static public readonly TranslationsDictionary ActionCancel = new()
+    {
+      [Language.EN] = "Cancel",
+      [Language.FR] = "Annuler",
+    };
 
-    static public readonly TranslationsDictionary ActionClose
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Close",
-        [Language.FR] = "Fermer",
-      };
+    static public readonly TranslationsDictionary ActionClose = new()
+    {
+      [Language.EN] = "Close",
+      [Language.FR] = "Fermer",
+    };
 
-    static public readonly TranslationsDictionary ActionCopy
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Copy",
-        [Language.FR] = "Copier",
-      };
+    static public readonly TranslationsDictionary ActionCopy = new()
+    {
+      [Language.EN] = "Copy",
+      [Language.FR] = "Copier",
+    };
 
-    static public readonly TranslationsDictionary Valid
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Valid",
-        [Language.FR] = "Valide"
-      };
+    static public readonly TranslationsDictionary Valid = new()
+    {
+      [Language.EN] = "Valid",
+      [Language.FR] = "Valide"
+    };
 
-    static public readonly TranslationsDictionary Invalid
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Invalid",
-        [Language.FR] = "Invalide"
-      };
+    static public readonly TranslationsDictionary Invalid = new()
+    {
+      [Language.EN] = "Invalid",
+      [Language.FR] = "Invalide"
+    };
 
-    static public readonly TranslationsDictionary Accepted
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Accepted",
-        [Language.FR] = "Accepté"
-      };
+    static public readonly TranslationsDictionary Accepted = new()
+    {
+      [Language.EN] = "Accepted",
+      [Language.FR] = "Accepté"
+    };
 
-    static public readonly TranslationsDictionary Rejected
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Rejected",
-        [Language.FR] = "Rejeté"
-      };
+    static public readonly TranslationsDictionary Rejected = new()
+    {
+      [Language.EN] = "Rejected",
+      [Language.FR] = "Rejeté"
+    };
 
-    static public readonly TranslationsDictionary First
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "First",
-        [Language.FR] = "Premier"
-      };
+    static public readonly TranslationsDictionary First = new()
+    {
+      [Language.EN] = "First",
+      [Language.FR] = "Premier"
+    };
 
-    static public readonly TranslationsDictionary Previous
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Previous",
-        [Language.FR] = "Précédent"
-      };
+    static public readonly TranslationsDictionary Previous = new()
+    {
+      [Language.EN] = "Previous",
+      [Language.FR] = "Précédent"
+    };
 
-    static public readonly TranslationsDictionary Next
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Next",
-        [Language.FR] = "Suivant"
-      };
+    static public readonly TranslationsDictionary Next = new()
+    {
+      [Language.EN] = "Next",
+      [Language.FR] = "Suivant"
+    };
 
-    static public readonly TranslationsDictionary Last
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Last",
-        [Language.FR] = "Dernier"
-      };
+    static public readonly TranslationsDictionary Last = new()
+    {
+      [Language.EN] = "Last",
+      [Language.FR] = "Dernier"
+    };
 
-    static public readonly TranslationsDictionary Notes
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Notes",
-        [Language.FR] = "Notes"
-      };
+    static public readonly TranslationsDictionary Notes = new()
+    {
+      [Language.EN] = "Notes",
+      [Language.FR] = "Notes"
+    };
 
-    static public readonly TranslationsDictionary Memo
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Memo",
-        [Language.FR] = "Mémo"
-      };
+    static public readonly TranslationsDictionary Memo = new()
+    {
+      [Language.EN] = "Memo",
+      [Language.FR] = "Mémo"
+    };
 
-    static public readonly TranslationsDictionary Board
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Board",
-        [Language.FR] = "Tableau"
-      };
+    static public readonly TranslationsDictionary Board = new()
+    {
+      [Language.EN] = "Board",
+      [Language.FR] = "Tableau"
+    };
 
-    static public readonly TranslationsDictionary NavigationTip
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Tip: use Home, End, PageUp and PageDown to navigate.",
-        [Language.FR] = "Astuce : utilisez Début, Fin, PagePrec et PageSuiv pour naviguer."
-      };
+    static public readonly TranslationsDictionary NavigationTip = new()
+    {
+      [Language.EN] = "Tip: use Home, End, PageUp and PageDown to navigate.",
+      [Language.FR] = "Astuce : utilisez Début, Fin, PagePrec et PageSuiv pour naviguer."
+    };
 
-    static public readonly TranslationsDictionary ReadOnly
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Read only",
-        [Language.FR] = "Lecture seule"
-      };
+    static public readonly TranslationsDictionary ReadOnly = new()
+    {
+      [Language.EN] = "Read only",
+      [Language.FR] = "Lecture seule"
+    };
 
-    static public readonly TranslationsDictionary Uncertain
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Uncertain",
-        [Language.FR] = "Incertain"
-      };
+    static public readonly TranslationsDictionary Uncertain = new()
+    {
+      [Language.EN] = "Uncertain",
+      [Language.FR] = "Incertain"
+    };
 
-    static public readonly TranslationsDictionary BadValue
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "Wrong value",
-        [Language.FR] = "Valeur incorrecte"
-      };
+    static public readonly TranslationsDictionary BadValue = new()
+    {
+      [Language.EN] = "Wrong value",
+      [Language.FR] = "Valeur incorrecte"
+    };
 
-    static public readonly TranslationsDictionary NullSlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(null)",
-        [Language.FR] = "(null)"
-      };
+    static public readonly TranslationsDictionary NullSlot = new()
+    {
+      [Language.EN] = "(null)",
+      [Language.FR] = "(null)"
+    };
 
     static public string GetOrNull(this string str) => str ?? EmptySlot.GetLang();
 
-    static public readonly TranslationsDictionary UnknownSlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(unknown)",
-        [Language.FR] = "(inconnu)"
-      };
+    static public readonly TranslationsDictionary UnknownSlot = new()
+    {
+      [Language.EN] = "(unknown)",
+      [Language.FR] = "(inconnu)"
+    };
 
     static public string GetOrUnknownIfNullOrEmpty(this string str) => str.IsNullOrEmpty() ? UnknownSlot.GetLang() : str;
     static public string GetOrUnknownIfEmpty(this string str) => str.IsEmpty() ? UnknownSlot.GetLang() : str;
 
-    static public readonly TranslationsDictionary UndefinedSlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(not defined)",
-        [Language.FR] = "(non définit)"
-      };
+    static public readonly TranslationsDictionary UndefinedSlot = new()
+    {
+      [Language.EN] = "(not defined)",
+      [Language.FR] = "(non définit)"
+    };
 
     static public string GetOrUndefinedIfNullOrEmpty(this string str) => str.IsNullOrEmpty() ? UndefinedSlot.GetLang() : str;
     static public string GetOrUndefinedIfEmpty(this string str) => str.IsEmpty() ? UndefinedSlot.GetLang() : str;
 
-    static public readonly TranslationsDictionary EmptySlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(empty)",
-        [Language.FR] = "(vide)"
-      };
+    static public readonly TranslationsDictionary EmptySlot = new()
+    {
+      [Language.EN] = "(empty)",
+      [Language.FR] = "(vide)"
+    };
 
     static public string GetOrEmpty(this string str) => str.IsEmpty() ? EmptySlot.GetLang() : str;
 
-    static public readonly TranslationsDictionary ErrorSlot
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "(error)",
-        [Language.FR] = "(erreur)"
-      };
+    static public readonly TranslationsDictionary ErrorSlot = new()
+    {
+      [Language.EN] = "(error)",
+      [Language.FR] = "(erreur)"
+    };
 
-    static public readonly TranslationsDictionary MemorySizeSuffix
-      = new TranslationsDictionary
-      {
-        [Language.EN] = "B",
-        [Language.FR] = "o"
-      };
+    static public readonly TranslationsDictionary MemorySizeSuffix = new()
+    {
+      [Language.EN] = "B",
+      [Language.FR] = "o"
+    };
 
-    static public readonly NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat
-      = new NullSafeDictionary<Language, NullSafeStringList>
-      {
-        [Language.EN] = new NullSafeStringList
+    static public readonly NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat = new()
+    {
+      [Language.EN] = new NullSafeStringList
         {
           "{4} ms",
           "{3} s",
@@ -304,7 +268,7 @@ namespace Ordisoftware.Core
           "{1} h {2} m {3} s",
           "{0} d {1} h {2} m {3} s",
         },
-        [Language.FR] = new NullSafeStringList
+      [Language.FR] = new NullSafeStringList
         {
           "{4} ms",
           "{3} s",
@@ -312,7 +276,7 @@ namespace Ordisoftware.Core
           "{1} h {2} m {3} s",
           "{0} j {1} h {2} m {3} s"
         }
-      };
+    };
 
   }
 

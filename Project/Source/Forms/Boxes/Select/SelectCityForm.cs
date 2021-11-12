@@ -27,8 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
-    static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS
-      = new SortedAutoDictionary<string, AutoResizedList<CityItem>>();
+    static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS = new();
 
     static SelectCityForm()
     {
@@ -49,9 +48,9 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( GPS.Keys.Count == 0 )
         {
           string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
-#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods
+#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods - Opinion
           throw new NullReferenceException(msg);
-#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods
+#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods - Opinion
         }
       }
       catch ( Exception ex )
@@ -80,19 +79,17 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run(bool canCancel)
     {
-      using ( var form = new SelectCityForm() )
-      {
-        form.ActionCancel.Enabled = canCancel;
-        if ( form.ShowDialog() != DialogResult.OK ) return false;
-        if ( form.EditTimeZone.SelectedItem != null )
-          Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
-        Settings.GPSLatitude = form.Latitude;
-        Settings.GPSLongitude = form.Longitude;
-        Settings.GPSCountry = form.Country;
-        Settings.GPSCity = form.City;
-        SystemManager.TryCatch(Settings.Save);
-        return true;
-      }
+      using var form = new SelectCityForm();
+      form.ActionCancel.Enabled = canCancel;
+      if ( form.ShowDialog() != DialogResult.OK ) return false;
+      if ( form.EditTimeZone.SelectedItem != null )
+        Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
+      Settings.GPSLatitude = form.Latitude;
+      Settings.GPSLongitude = form.Longitude;
+      Settings.GPSCountry = form.Country;
+      Settings.GPSCity = form.City;
+      SystemManager.TryCatch(Settings.Save);
+      return true;
     }
 
     private SelectCityForm()

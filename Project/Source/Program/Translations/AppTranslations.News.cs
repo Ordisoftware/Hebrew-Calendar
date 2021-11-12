@@ -24,37 +24,36 @@ namespace Ordisoftware.Hebrew.Calendar
   static partial class AppTranslations
   {
 
-    static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures
-      = new NullSafeDictionary<string, TranslationsDictionary>
+    static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
+    {
+
+      /*["10.0"] = new TranslationsDictionary
       {
+        [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
+                        "• Added a command-line option to show the lunar months board." + Globals.NL +
+                        "• Some fixes and improvements.",
 
-        /*["10.0"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
-                          "• Added a command-line option to show the lunar months board." + Globals.NL +
-                          "• Some fixes and improvements.",
+        [Language.FR] = "• Ajout d'un tableau des mois lunaires avec noms hébreux, significations, lettriques et outils." + Globals.NL +
+                        "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
+                        "• Quelques améliorations et corrections."
+      },*/
 
-          [Language.FR] = "• Ajout d'un tableau des mois lunaires avec noms hébreux, significations, lettriques et outils." + Globals.NL +
-                          "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
-                          "• Quelques améliorations et corrections."
-        },*/
-
-        ["9.8"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Fixed main form title bar refresh." + Globals.NL +
+      ["9.8"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Fixed main form title bar refresh." + Globals.NL +
                           "• Fixed open all links count." + Globals.NL +
                           "• Code refactoring." + Globals.NL +
                           "• Updated and reorganize web links.",
 
-          [Language.FR] = "• Correction de la mise à jour du titre de la fenêtre principale." + Globals.NL +
+        [Language.FR] = "• Correction de la mise à jour du titre de la fenêtre principale." + Globals.NL +
                           "• Correction du nombre de tous les liens à ouvrir." + Globals.NL +
                           "• Refactorisation de code." + Globals.NL +
                           "• Mise à jour et réorganisation des liens Web."
-        },
+      },
 
-        ["9.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Added mouse hover effect in monthly view." + Globals.NL +
+      ["9.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Added mouse hover effect in monthly view." + Globals.NL +
                           "• Added context menu for days in monthly view." + Globals.NL +
                           "• Added bookmarks to context menu in monthly view." + Globals.NL +
                           "• Added some options and colors for monthly view." + Globals.NL +
@@ -73,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Optimized code." + Globals.NL +
                           "• Updated web links.",
 
-          [Language.FR] = "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
+        [Language.FR] = "• Ajout d'un effet de survol de la souris dans la vue mensuelle." + Globals.NL +
                           "• Ajout d'un menu contextuel des jours dans la vue mensuelle." + Globals.NL +
                           "• Ajout des signets au menu contextuel dans la vue mensuelle." + Globals.NL +
                           "• Ajout de quelques options et couleurs pour la vue mensuelle." + Globals.NL +
@@ -91,11 +90,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Quelques corrections et améliorations." + Globals.NL +
                           "• Code optimisé." + Globals.NL +
                           "• Mise à jour des liens web."
-        },
+      },
 
-        ["8.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
+      ["8.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• SQLite ODBC Driver is no more needed." + Globals.NL +
                           "• Overall performances are optimized." + Globals.NL +
                           "• Added copy to clipboard button in parashah description box." + Globals.NL +
                           "• Added weekly parashah reminder." + Globals.NL +
@@ -105,7 +104,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Improved reminder boxes." + Globals.NL +
                           "• Some fixes and improvements.",
 
-          [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
+        [Language.FR] = "• Le pilote SQLite ODBC n'est plus nécessaire." + Globals.NL +
                           "• Les performances globales sont optimisées." + Globals.NL +
                           "• Ajout d'un bouton copier dans le presse-papier pour la boite de description de parashah." + Globals.NL +
                           "• Ajout d'un rappel de la parashah hebdomadaire." + Globals.NL +
@@ -114,11 +113,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Amélioration de la fenêtre de navigation." + Globals.NL +
                           "• Amélioration des boites de rappel." + Globals.NL +
                           "• Quelques corrections et améliorations."
-        },
+      },
 
-        ["7.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Added command-line options (see help FAQ)." + Globals.NL +
+      ["7.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Added command-line options (see help FAQ)." + Globals.NL +
                           "• The reminder box has been improved." + Globals.NL +
                           "• New editable parashot board." + Globals.NL +
                           "• Parashah of the week is indicated for Shabat in visual calendar and in navigation window." + Globals.NL +
@@ -134,7 +133,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Update web links and Bible study providers." + Globals.NL +
                           "• Some improvements in appearance and function.",
 
-          [Language.FR] = "• Ajout d'options de ligne de commande (voir la FAQ de l'aide)." + Globals.NL +
+        [Language.FR] = "• Ajout d'options de ligne de commande (voir la FAQ de l'aide)." + Globals.NL +
                           "• Boite de rappel a été améliorée." + Globals.NL +
                           "• Nouveau tableau des parashot modifiables" + Globals.NL +
                           "• Indication de la parashah de la semaine pour le Shabat dans le calendrier visuel et la fenêtre de navigation." + Globals.NL +
@@ -149,11 +148,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout des Nouveautés de version dans le menu Information." + Globals.NL +
                           "• Mise à jour des liens web et fournisseurs d'étude de la Bible." + Globals.NL +
                           "• Quelques améliorations d'aspect et de fonctionnement."
-        },
+      },
 
-        ["6.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Optimized monthly view painting speed." + Globals.NL +
+      ["6.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Optimized monthly view painting speed." + Globals.NL +
                           "• Added Windows global hotkey." + Globals.NL +
                           "• Added celebrations board." + Globals.NL +
                           "• Added new moons board." + Globals.NL +
@@ -165,7 +164,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Update web links." + Globals.NL +
                           "• Some improvements and fixes.",
 
-          [Language.FR] = "• Vitesse de peinture du mois visuel optimisée." + Globals.NL +
+        [Language.FR] = "• Vitesse de peinture du mois visuel optimisée." + Globals.NL +
                           "• Ajout d'un raccourci de clavier global Windows." + Globals.NL +
                           "• Ajout d'un tableau des célébrations." + Globals.NL +
                           "• Ajout d'un tableau des nouvelles lunes." + Globals.NL +
@@ -176,11 +175,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Préférences améliorées." + Globals.NL +
                           "• Mise à jour les liens web." + Globals.NL +
                           "• Quelques améliorations et corrections."
-        },
+      },
 
-        ["5.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Remove the generate dialog box at first startup and auto-regenerate." + Globals.NL +
+      ["5.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Remove the generate dialog box at first startup and auto-regenerate." + Globals.NL +
                           "• Improved check update to securely download and auto-install." + Globals.NL +
                           "• Improved keyboard shortcuts." + Globals.NL +
                           "• Improved data generation speed by a half." + Globals.NL +
@@ -195,7 +194,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• New usage statistics window." + Globals.NL +
                           "• General improvement and some fixes.",
 
-          [Language.FR] = "• Suppression de la boîte de dialogue de génération au premier démarrage et lors de la régénération automatiquement." + Globals.NL +
+        [Language.FR] = "• Suppression de la boîte de dialogue de génération au premier démarrage et lors de la régénération automatiquement." + Globals.NL +
                           "• Amélioration de la vérification de mise à jour pour télécharger et installer automatiquement de manière sécurisée." + Globals.NL +
                           "• Amélioration des raccourcis clavier." + Globals.NL +
                           "• Amélioration de moitié de la vitesse de génération des données." + Globals.NL +
@@ -209,11 +208,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Refonte de la fenêtre des préférences avec ajout d'options." + Globals.NL +
                           "• Nouvelle fenêtre de statistiques d'utilisation." + Globals.NL +
                           "• Amélioration générale et quelques corrections."
-        },
+      },
 
-        ["4.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Improved startup configuration." + Globals.NL +
+      ["4.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Improved startup configuration." + Globals.NL +
                           "• Improved visual calendar." + Globals.NL +
                           "• Improved preferences." + Globals.NL +
                           "• Added celebrations and Shabat notices" + Globals.NL +
@@ -224,7 +223,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Added debugger and logger." + Globals.NL +
                           "• General improvement and some fixes.",
 
-          [Language.FR] = "• Configuration de démarrage améliorée." + Globals.NL +
+        [Language.FR] = "• Configuration de démarrage améliorée." + Globals.NL +
                           "• Calendrier visuel amélioré." + Globals.NL +
                           "• Préférences améliorées." + Globals.NL +
                           "• Ajout des notices de célébrations et du Shabat" + Globals.NL +
@@ -234,11 +233,11 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Ajout d'un menu liens Web." + Globals.NL +
                           "• Ajout d'un débogueur et d'un logger" + Globals.NL +
                           "• Améliorations générales et quelques corrections."
-        },
+      },
 
-        ["3.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Improved speed." + Globals.NL +
+      ["3.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Improved speed." + Globals.NL +
                           "• Improved Tray Icon." + Globals.NL +
                           "• Improved reminder box." + Globals.NL +
                           "• Celebration reminder in addition to Shabat." + Globals.NL +
@@ -251,7 +250,7 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Regenerate data if today is near the end." + Globals.NL +
                           "• General improvement and some fixes.",
 
-          [Language.FR] = "• Amélioration de la vitesse." + Globals.NL +
+        [Language.FR] = "• Amélioration de la vitesse." + Globals.NL +
                           "• Amélioration de l'icône de la barre d'état." + Globals.NL +
                           "• Amélioration de la boîte de rappel." + Globals.NL +
                           "• Rappel de célébration en plus du Shabat." + Globals.NL +
@@ -263,35 +262,35 @@ namespace Ordisoftware.Hebrew.Calendar
                           "• Option pour sélectionner le soleil ou la lune omer." + Globals.NL +
                           "• Régénération des données si aujourd'hui est proche de la fin." + Globals.NL +
                           "• Amélioration générale et quelques corrections."
-        },
+      },
 
-        ["2.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Improve reminder system." + Globals.NL +
+      ["2.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Improve reminder system." + Globals.NL +
                           "• Some improvements and fixes.",
 
-          [Language.FR] = "• Amélioration du système de rappel." + Globals.NL +
+        [Language.FR] = "• Amélioration du système de rappel." + Globals.NL +
                           "• Quelques améliorations et corrections.",
-        },
+      },
 
-        ["1.x"] = new TranslationsDictionary
-        {
-          [Language.EN] = "• Initial release." + Globals.NL +
+      ["1.x"] = new TranslationsDictionary
+      {
+        [Language.EN] = "• Initial release." + Globals.NL +
                           "• Text report only, and then monthly view." + Globals.NL +
                           "• Next celebrations windows." + Globals.NL +
                           "• Day navigation windows." + Globals.NL +
                           "• Shabat reminder." + Globals.NL +
                           "• Basic preferences and GPS coordonates.",
 
-          [Language.FR] = "• Version initiale" + Globals.NL +
+        [Language.FR] = "• Version initiale" + Globals.NL +
                           "• Rapport texte seul, puis vue du mois visuel." + Globals.NL +
                           "• Fenêtre des prochaines célébrations." + Globals.NL +
                           "• Fenêtre de navigation par jour." + Globals.NL +
                           "• Rappel de Shabat." + Globals.NL +
                           "• Préférences de base et coordonnées GPS."
-        },
+      },
 
-      };
+    };
 
   }
 

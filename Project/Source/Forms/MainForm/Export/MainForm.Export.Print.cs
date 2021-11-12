@@ -63,37 +63,36 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
     {
       int margin = Settings.PrintingMargin;
-      using ( var document = new PrintDocument() )
+      using var document = new PrintDocument();
+      document.PrintPage += action;
+      document.DefaultPageSettings.Landscape = landscape;
+      document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
+      if ( Settings.ShowPrintPreviewDialog )
       {
-        document.PrintPage += action;
-        document.DefaultPageSettings.Landscape = landscape;
-        document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
-        if ( Settings.ShowPrintPreviewDialog )
+        var preview = new CoolPrintPreviewDialog();
+        preview.WindowState = FormWindowState.Maximized;
+        preview.ShowInTaskbar = true;
+        preview.ShowIcon = true;
+        preview.Icon = Icon;
+        preview.Document = document;
+        preview.ShowDialog(this);
+      }
+      else
+      {
+        var dialog = new PrintDialog();
+        dialog.UseEXDialog = false;
+        dialog.Document = document;
+        if ( dialog.ShowDialog(this) == DialogResult.OK )
         {
-          var preview = new CoolPrintPreviewDialog();
-          preview.WindowState = FormWindowState.Maximized;
-          preview.ShowInTaskbar = true;
-          preview.ShowIcon = true;
-          preview.Icon = Icon;
-          preview.Document = document;
-          preview.ShowDialog(this);
+          document.PrintPage += printed;
+          document.Print();
         }
-        else
-        {
-          var dialog = new PrintDialog();
-          dialog.UseEXDialog = false;
-          dialog.Document = document;
-          if ( dialog.ShowDialog(this) == DialogResult.OK )
-          {
-            document.PrintPage += printed;
-            document.Print();
-          }
-        }
-        void printed(object sender, PrintPageEventArgs e)
-        {
-          if ( !e.HasMorePages )
-            DisplayManager.ShowSuccessOrSound(SysTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
-        }
+      }
+      //
+      static void printed(object sender, PrintPageEventArgs e)
+      {
+        if ( !e.HasMorePages )
+          DisplayManager.ShowSuccessOrSound(SysTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
       }
 
     }
