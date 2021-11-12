@@ -99,11 +99,11 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 [![Lock session box](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;
 
-[![Prefences window 1](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 2](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png)
+[![Preferences window 1](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Preferences window 2](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png)
 
-[![Prefences window 3](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Prefences window 4](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
+[![Preferences window 3](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Preferences window 4](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png)
 
-[![Prefences window 5](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Export box](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
+[![Preferences window 5](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png)](https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Export box](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png)](https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png)
 
 ## Videos
 
@@ -177,7 +177,7 @@ Thus celebration dates may be wrong.
 
   `Ordisoftware.Hebrew.Calendar.exe --celebrations`
 
-- Show the new moons board board:
+- Show the new moons board:
  
   `Ordisoftware.Hebrew.Calendar.exe --newmoons`
 
@@ -216,15 +216,15 @@ The application uses by default moon omer for celebrations.
 
 If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.
 
-You can use traditionnals sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
+You can use traditional sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
 
 #### What is Shabat?
 
 The Shabat is the "day of rest" where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.
 
-The tradition attributes this day to Saturday. We can however think according to Béréshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
+The tradition attributes this day to Saturday. We can however think according to Bereshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Béréshit 1.5 and 1.16 as well as from Shémot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
-The personal Shabat of a maried or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin.
+The personal Shabat of a married or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin.
 
 So the man and the woman respect their mutual cycles. Indeed, during the period when the married or concubine or divorced woman is Nidah from the beginning to the end of the blood flow, her vital field is dissonant and the couple avoid touching each other (the virgin girl is not concerned as long as she had no relations through the openings of the begetting) to avoid to increase as well as to transmit this state to things and people (otherwise we follow the rules of the Torah about that).
 
@@ -580,7 +580,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.02.14 - Version 6.7
 
 - Reorganize, improve and update web links.
-- Add more jewish calendars entries.
+- Add more Jewish calendars entries.
 - Add more languages entries.
 
 #### 2021.02.07 - Version 6.6
@@ -602,8 +602,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to show or hide weather menu items.
 - Add option to set the corner of the desktop to place reminder boxes, default being bottom-right.
 - Improve preferences form to select *all*, *none* or *default* events in list boxes.
-- Fix automatic position of the navigation window beside the Tray Icon when the Taskbar is not at the bottom of the screen.
-- Fix date bookmarks count is not saved if chenged in preferences.
+- Fix automatic position of the navigation window beside the Tray Icon when the Task Bar is not at the bottom of the screen.
+- Fix date bookmarks count is not saved if changed in preferences.
 - Fix sound is played when opening preferences form if volume is less than 100%.
 - Update NuGet packages to last versions.
 - Code refactoring and code quality improvements.
@@ -623,7 +623,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.01.01 - Version 6.2
 
 - Add show online weather in browser using *meteoblue.com*.
-- Add new moons board with clickable dates and selection of years interval.
+- Add new moons board with click-able dates and selection of years interval.
 - Add option for boards to use abbreviated names of month and day of week.
 - Add option for boards to show real days having the moonset, else use the moonrise.
 - Add option for boards to show or hide hours.
@@ -651,7 +651,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2020.12.21 - Version 6.0
 
-- Add celebrations board with clickable dates and selection of years interval.
+- Add celebrations board with click-able dates and selection of years interval.
 - Add advanced print preview window.
 - Add select years interval to export/print, else process the entire report/grid or only the current monthly view.
 - Add option to set the default print monthly view page orientation.
@@ -688,8 +688,8 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Optimize statistics initialization at startup to be in a background task.
 - Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.
-- Fix buttons position in search event, lunar month and gregorian month windows.
-- Fix file and memory sizes diplayed only in english in usage statistics form.
+- Fix buttons position in search event, lunar month and Gregorian month windows.
+- Fix file and memory sizes displayed only in English in usage statistics form.
 - Fix date bookmarks storage format that altered the dates after language changed.
 - Improve UI/UX.
 - Few fixes.
@@ -701,7 +701,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2020.12.06 - Version 5.11
 
-- Add navigation buttons to search event, lunar month and gregorian month windows.
+- Add navigation buttons to search event, lunar month and Gregorian month windows.
 - Add save and load theme for monthly view, reminder boxes and navigation window.
 - Add print text report.
 - Add printing option tab in preferences form.
@@ -740,7 +740,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve preferences form.
 - Improve information menu.
 - Improve UI/UX.
-- Optimize by preloading sounds lists in a thread.
+- Optimize by pre-loading sounds lists in a thread.
 - Refactor project folders hierarchy.
 
 #### 2020.11.22 - Version 5.8
@@ -762,13 +762,13 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add keyboard shortcuts notice in windows settings menu.
 - Add option to set the Calculator application path.
 - Add option to set the Hebrew Letters application path.
-- Add option for date diff calculator form to set right date to today when opened.
+- Add option for date difference calculator form to set right date to today when opened.
 - Fix some preferences controls to be disabled when related options are disabled.
 - Fix use no colors option.
 - Fix print dialog does not have the focus when opened.
 - Fix french help.
 - Improve UI.
-- Update web links with Quran arabic lecture link.
+- Update web links with Quran Arabic lecture link.
 
 #### 2020.09.29 - Version 5.5
 
@@ -806,7 +806,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2020.09.06 - Version 5.0
 
 - Add keyboard shortcuts to navigate in the monthly view.
-- Add search gregorian month form.
+- Add search Gregorian month form.
 - Add tools menu duplicated in the Tray Icon.
 - Add force database optimize at next startup in tools menu
 - Add option to define the years interval for auto-generation.
@@ -818,7 +818,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add mute windows volume in addition to stop media playing in auto lock form.
 - Fix "stop media playing" to stop instead of play/pause media.
 - Fix day selection to allow only generated years interval.
-- Improve dates diff calculator to show more stats in a form having bookmarks.
+- Improve dates difference calculator to show more stats in a form having bookmarks.
 - Improve generate years box with predefined intervals and change some constants.
 - Improve GPS finder to try to auto-select time zone based on country or city names.
 - Improve monthly view drawing speed by a half.
@@ -830,7 +830,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add usage statistics form in tools menu.
 - Add option to enable or disable message boxes sounds.
 - Improve message boxes.
-- Improve check update to allow auto update or direct download or open app web page.
+- Improve check update to allow auto update or direct download or open application web page.
 - Improve debugger to support logging.
 - Improve exception form to view log.
 - Some UI/UX improvements.
@@ -843,7 +843,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2020.08.22 - Version 4.1
 
-- Add bring to front app if process is started again.
+- Add bring to front application if process is started again.
 - Add choosing a delay to allow auto enabling when suspending reminder.
 - Add left, right and up keys support to the navigation form.
 - Add option to define moon day text format for monthly view.
@@ -871,7 +871,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add celebrations dialog box notice.
 - Improve personal Shabat dialog box notice.
 - Improve preferences form.
-- Improve search celebration and moon month forms to use a combobox to select year.
+- Improve search celebration and moon month forms to use a combo-box to select year.
 - Improve text report : Ctrl+A select all text.
 - Add month number column in the search moon month form.
 - Add tools menu.
@@ -888,7 +888,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Fix search celebration and moon month forms when closing using the top-right cross.
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
-- Add menu for web links about judaism.
+- Add menu for web links about judaïsm.
 - Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
@@ -939,7 +939,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Improve celebration and lunar month finder.
 - Improve select city window.
-- Change exit button now doesn't shutdown app but minimize to Tray Icon.
+- Change exit button now doesn't shutdown application but minimize to Tray Icon.
 - Fix cities names having special diacritics.
 - Fix lunar month's first day duplicated if no moon rise on the next sun day.
 
@@ -967,7 +967,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve the reminder to flash the form if already displayed.
 - Improve reminder boxes location on the desktop.
 - Improve session ending.
-- Add loading data box instead of using a bottom progressbar.
+- Add loading data box instead of using a bottom progress bar.
 - Add displaying begin and end dates and times in the celebration reminder form like with the Shabat.
 - Add looming navigation popup from the Tray Icon when mouse is over.
 - Add celebration weeks, Shabat days and reminders popup colorization.
@@ -1016,7 +1016,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2019.04.25 - Version 1.7
 
-- Fix pessah length.
+- Fix Pesach length.
 
 #### 2019.04.08 - Version 1.6
 
