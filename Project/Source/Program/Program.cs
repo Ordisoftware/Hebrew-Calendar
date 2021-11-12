@@ -281,7 +281,8 @@ namespace Ordisoftware.Hebrew.Calendar
           AboutBox.Instance.Hide();
           MainForm.Instance.ClearLists();
         }
-        update(MainForm.Instance);
+        else
+          update(MainForm.Instance);
         new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
@@ -295,7 +296,9 @@ namespace Ordisoftware.Hebrew.Calendar
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
         foreach ( Form form in Application.OpenForms )
         {
-          if ( form != DebugManager.TraceForm && form != AboutBox.Instance && form != GrammarGuideForm )
+          if ( form != DebugManager.TraceForm
+            && form != AboutBox.Instance
+            && form != GrammarGuideForm )
             update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
