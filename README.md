@@ -450,7 +450,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### 2021.08.10 - Version 8.5
 
-- Fix navigation formthat open the wrong (next book) parashah for reading online.
+- Fix navigation form that open the wrong (next book) parashah for reading online.
 - Force showing loading form on web check update download.
 
 #### 2021.08.08 - Version 8.4
@@ -536,7 +536,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add generate weekly parashah lecture in the database.
 - Add menu item in Tools to the weekly parashah study page of some web sites.
 - Add option to set parashah generation for inside or outside of Israël.
-- Add option to set parashah reading always on saturday.
+- Add option to set parashah reading always on Saturday.
 - Add option to indicate parashah in the Shabatot of the monthly view.
 - Add option to indicate current parashah in the application title bar.
 - Add option to indicate current lunar day in the application title bar.
@@ -549,12 +549,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add show usage statistics from about box.
 - Add check update from about box.
 - Add export to TXT support for all boards.
-- Add Ctrl + Home/End/Left/Right shortchut to navigate between months having celebrations.
+- Add Ctrl + Home/End/Left/Right shortcut to navigate between months having celebrations.
 - Add command-line options (see FAQ).
 - Improve text report and monthly view to show long-week celebration intermediate days.
 - Improve navigation form to show parashah long-week celebration intermediate days.
-- Improve search event, lunar month and gregorian month windows.
-- Improve celebrations and new moons boards to allow the use of english columns title and exports.
+- Improve search event, lunar month and Gregorian month windows.
+- Improve celebrations and new moons boards to allow the use of English columns title and exports.
 - Improve celebrations board export file name to indicate moon or sun omer and set or rise.
 - Improve Tray Icon mouse move management.
 - Improve reminder box.
