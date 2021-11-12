@@ -36,9 +36,9 @@ namespace Ordisoftware.Hebrew.Calendar
           return (today, null);
         else
         {
-          var dayInfos = today.GetWeekLongCelebrationIntermediateDay();
-          if ( dayInfos.Event == TorahCelebration.Soukot )
-            if ( dayInfos.Index < 8 || ( dayInfos.Index == 8 && Program.Settings.UseSimhatTorahOutside ) )
+          var (Event, Index, _) = today.GetWeekLongCelebrationIntermediateDay();
+          if ( Event == TorahCelebration.Soukot )
+            if ( Index < 8 || ( Index == 8 && Program.Settings.UseSimhatTorahOutside ) )
               return (today, null);
         }
       if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
@@ -49,11 +49,9 @@ namespace Ordisoftware.Hebrew.Calendar
     public bool ShowWeeklyParashahDescription()
     {
       if ( MainForm.UserParashot == null ) return false;
-      var weekParashah = GetWeeklyParashah();
-      if ( weekParashah.Factory == null ) return false;
-      return ParashotForm.ShowParashahDescription(MainForm.Instance,
-                                                  weekParashah.Factory,
-                                                  weekParashah.Day.HasLinkedParashah);
+      var (Day, Factory) = GetWeeklyParashah();
+      if ( Factory == null ) return false;
+      return ParashotForm.ShowParashahDescription(MainForm.Instance, Factory, Day.HasLinkedParashah);
     }
 
   }

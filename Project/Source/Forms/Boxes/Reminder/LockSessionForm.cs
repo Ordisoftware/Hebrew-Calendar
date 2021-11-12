@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Instance.Popup();
     }
 
-    DateTime Start = DateTime.Now;
+    readonly DateTime Start = DateTime.Now;
 
     private LockSessionForm()
     {

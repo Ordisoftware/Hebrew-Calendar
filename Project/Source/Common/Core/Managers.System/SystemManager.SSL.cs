@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void CheckServerCertificate(string url)
     {
-      Uri uri = new Uri(url);
+      var uri = new Uri(url);
       var builder = new UriBuilder();
       builder.Scheme = uri.Scheme;
       builder.Host = uri.Host;
@@ -69,8 +69,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the application website SSL certificate information.
     /// </summary>
-    static private NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate
-      = new NullSafeOfStringDictionary<string>();
+    static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
 
     static public void LoadSSLCertificate()
     {

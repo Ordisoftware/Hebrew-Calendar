@@ -125,10 +125,12 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       else
       {
-#pragma warning disable S1481 // Unused local variables should be removed
+#pragma warning disable S1481 // Unused local variables should be removed - N/A
+#pragma warning disable IDE0059 // Assignation inutile d'une valeur - N/A
         string dummyMemoryGC = SystemStatistics.Instance.MemoryGC;
         string dummyCPUProcessLoad = SystemStatistics.Instance.CPUProcessLoad;
-#pragma warning restore S1481 // Unused local variables should be removed
+#pragma warning restore IDE0059 // Assignation inutile d'une valeur - N/A
+#pragma warning restore S1481 // Unused local variables should be removed - N/A
       }
     }
 

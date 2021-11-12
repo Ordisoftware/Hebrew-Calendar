@@ -55,8 +55,8 @@ namespace Ordisoftware.Core
     /// </summary>
     static OnlineProvidersHelper()
     {
-      using ( var stream = new MemoryStream(Convert.FromBase64String(ImageEditString)) )
-        ImageConfigure = Image.FromStream(stream);
+      using var stream = new MemoryStream(Convert.FromBase64String(ImageEditString));
+      ImageConfigure = Image.FromStream(stream);
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ namespace Ordisoftware.Core
     {
       if ( providers == null ) return;
       menuItems.Clear();
-      string nameItems = StackMethods.NameOfFromStack(providers, 3).Replace("Globals.", string.Empty);
+      string nameItems = StackMethods.NameOfFromStack(3).Replace("Globals.", string.Empty);
       foreach ( var item in providers.Items )
         menuItems.Add(item.CreateMenuItem(action));
       if ( Globals.WebLinksProviders[0].Configurable )
@@ -176,7 +176,7 @@ namespace Ordisoftware.Core
             contextMenuInternal.Hide();
           else
             ownerMenuItem.HideDropDown();
-        int count = menuItem.DropDownItems.ToEnumerable(item => !( item is ToolStripSeparator )).Count();
+        int count = menuItem.DropDownItems.ToEnumerable(item => item is not ToolStripSeparator ).Count();
         string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.Text, count);
         if ( DisplayManager.QueryYesNo(msg) )
           foreach ( ToolStripItem item in menuItem.DropDownItems )

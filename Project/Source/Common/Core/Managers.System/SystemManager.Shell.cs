@@ -209,9 +209,9 @@ namespace Ordisoftware.Core
     {
       try
       {
-        using ( var stream = File.OpenRead(filePath) )
-        using ( var sha = SHA512.Create() )
-          return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "").ToLower();
+        using var stream = File.OpenRead(filePath);
+        using var sha = SHA512.Create();
+        return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "").ToLower();
       }
       catch ( Exception ex )
       {

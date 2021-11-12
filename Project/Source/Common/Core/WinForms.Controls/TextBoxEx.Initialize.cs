@@ -25,15 +25,15 @@ namespace Ordisoftware.Core
     static private IContainer _Container;
     static private ContextMenuStrip ContextMenuEdit;
 
-    static public readonly ToolStripMenuItem ActionUndo = new ToolStripMenuItem();
-    static public readonly ToolStripMenuItem ActionRedo = new ToolStripMenuItem();
-    static public readonly ToolStripSeparator Separator1 = new ToolStripSeparator();
-    static public readonly ToolStripMenuItem ActionCopy = new ToolStripMenuItem();
-    static public readonly ToolStripMenuItem ActionCut = new ToolStripMenuItem();
-    static public readonly ToolStripMenuItem ActionPaste = new ToolStripMenuItem();
-    static public readonly ToolStripSeparator Separator2 = new ToolStripSeparator();
-    static public readonly ToolStripMenuItem ActionSelectAll = new ToolStripMenuItem();
-    static public readonly ToolStripMenuItem ActionDelete = new ToolStripMenuItem();
+    static public readonly ToolStripMenuItem ActionUndo = new();
+    static public readonly ToolStripMenuItem ActionRedo = new();
+    static public readonly ToolStripSeparator Separator1 = new();
+    static public readonly ToolStripMenuItem ActionCopy = new();
+    static public readonly ToolStripMenuItem ActionCut = new();
+    static public readonly ToolStripMenuItem ActionPaste = new();
+    static public readonly ToolStripSeparator Separator2 = new();
+    static public readonly ToolStripMenuItem ActionSelectAll = new();
+    static public readonly ToolStripMenuItem ActionDelete = new();
 
     static void InitializeContextMenu()
     {

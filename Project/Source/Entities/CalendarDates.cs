@@ -26,13 +26,11 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   {
 
-    static public readonly CalendarDates Instance = new CalendarDates();
+    static public readonly CalendarDates Instance = new();
 
-    static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons
-      = new Dictionary<int, SortedDictionary<DateTime, SeasonChange>>();
+    static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons = new();
 
-    static private readonly SortedDictionary<DateTime, CalendarDateItem> Items
-      = new SortedDictionary<DateTime, CalendarDateItem>();
+    static private readonly SortedDictionary<DateTime, CalendarDateItem> Items = new();
 
     public int Count
       => Items.Keys.Count;
@@ -74,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
       get
       {
         if ( Items.ContainsKey(key) ) return Items[key];
-        CalendarDateItem value = new CalendarDateItem
+        var value = new CalendarDateItem
         {
           Date = key,
           MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),

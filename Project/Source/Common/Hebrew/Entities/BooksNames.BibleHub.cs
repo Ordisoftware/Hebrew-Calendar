@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   static partial class BooksNames
   {
 
-    static public readonly Dictionary<TanakBook, string> BibleHub = new Dictionary<TanakBook, string>()
+    static public readonly Dictionary<TanakBook, string> BibleHub = new()
     {
       // Torah
       { TanakBook.Bereshit, "genesis" },
@@ -36,8 +36,8 @@ namespace Ordisoftware.Hebrew
       { TanakBook.Shemouel_II, "2_samuel" },
       { TanakBook.Melakim_I, "1_kings" },
       { TanakBook.Melakim_II, "2_kings" },
-      { TanakBook.Yeshayahou , "isaiah" },
-      { TanakBook.Yirmeyahou , "jeremiah" },
+      { TanakBook.Yeshayahou, "isaiah" },
+      { TanakBook.Yirmeyahou, "jeremiah" },
       { TanakBook.Yehezqel, "ezekiel" },
       { TanakBook.Hoshea, "hosea" },
       { TanakBook.Yoel, "joel" },

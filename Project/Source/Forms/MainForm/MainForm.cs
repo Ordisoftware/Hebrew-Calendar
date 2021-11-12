@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Linq;
 using System.Drawing;
@@ -248,7 +248,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private void ShowToolTip_OnMouseEnter(object sender, EventArgs e)
     {
       if ( !EditShowTips.Checked ) return;
-      if ( !( sender is ToolStripItem ) ) return;
+      if ( sender is not ToolStripItem ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
       if ( ( (ToolStripItem)sender ).ToolTipText == string.Empty ) return;
@@ -317,7 +317,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         ClearLists();
-        if ( PreferencesForm.Run(sender is int ? (int)sender : -1) )
+        if ( PreferencesForm.Run(sender is int index ? index : -1) )
         {
           PanelViewText.Parent = null;
           PanelViewMonth.Parent = null;
@@ -802,8 +802,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchEvent_Click(object sender, EventArgs e)
     {
-      using ( var form = new SearchEventForm() )
-        form.ShowDialog();
+      using var form = new SearchEventForm();
+      form.ShowDialog();
     }
 
     /// <summary>
@@ -813,8 +813,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchMonth_Click(object sender, EventArgs e)
     {
-      using ( var form = new SearchLunarMonthForm() )
-        form.ShowDialog();
+      using var form = new SearchLunarMonthForm();
+      form.ShowDialog();
     }
 
     /// <summary>
@@ -824,8 +824,8 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionSearchGregorianMonth_Click(object sender, EventArgs e)
     {
-      using ( var form = new SearchGregorianMonthForm() )
-        form.ShowDialog();
+      using var form = new SearchGregorianMonthForm();
+      form.ShowDialog();
     }
 
     /// <summary>

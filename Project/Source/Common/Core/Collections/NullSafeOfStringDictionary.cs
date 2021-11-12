@@ -116,26 +116,26 @@ namespace Ordisoftware.Core
                                          string separator,
                                          bool showError = true)
     {
-      using ( var stream = File.CreateText(filePath) )
-        try
-        {
-          foreach ( var item in list )
-            if ( !item.Key.StartsWith(";") && !item.Key.StartsWith("//") )
-              stream.WriteLine(item.Key + separator + item.Value);
-            else
-              stream.WriteLine(item.Key);
-          stream.Close();
-          return true;
-        }
-        catch ( Exception ex )
-        {
-          if ( showError )
-            MessageBox.Show(SysTranslations.LoadFileError.GetLang(filePath, ex.Message),
-                            Globals.AssemblyTitle,
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-          return false;
-        }
+      using var stream = File.CreateText(filePath);
+      try
+      {
+        foreach ( var item in list )
+          if ( !item.Key.StartsWith(";") && !item.Key.StartsWith("//") )
+            stream.WriteLine(item.Key + separator + item.Value);
+          else
+            stream.WriteLine(item.Key);
+        stream.Close();
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        if ( showError )
+          MessageBox.Show(SysTranslations.LoadFileError.GetLang(filePath, ex.Message),
+                          Globals.AssemblyTitle,
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Warning);
+        return false;
+      }
     }
   }
 

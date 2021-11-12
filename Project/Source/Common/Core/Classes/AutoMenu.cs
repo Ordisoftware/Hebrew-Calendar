@@ -31,17 +31,17 @@ namespace Ordisoftware.Core
 
   public partial class AutoMenu
   {
-    private string Separator => new string('-', SeperatorLength);
+    private string Separator => new('-', SeperatorLength);
 
-    private string Header;
+    private readonly string Header;
 
-    private List<MenuChoice> Choices;
+    private readonly List<MenuChoice> Choices;
 
-    private AutoMenu Root;
+    private readonly AutoMenu Root;
 
-    public int SeperatorLength = 100;
+    const int SeperatorLength = 100;
 
-    public string ExitMessage = "Goodbye.";
+    const string ExitMessage = "Goodbye.";
 
     public AutoMenu(string header, List<MenuChoice> choices, AutoMenu root)
     {
@@ -68,10 +68,7 @@ namespace Ordisoftware.Core
       uint choice = GetUserChoice();
       if ( choice == Choices.Count + 1 )
         if ( Root == null )
-        {
           Console.WriteLine(ExitMessage);
-          return;
-        }
         else
           Root.Run();
       else
@@ -90,7 +87,7 @@ namespace Ordisoftware.Core
 
     uint GetUserChoice()
     {
-      uint choice = 0;
+      uint choice;
       getInput();
       while ( choice < 1 || choice > Choices.Count + 1 )
       {
@@ -118,7 +115,7 @@ namespace Ordisoftware.Core
 
   public class MenuManager
   {
-    private AutoMenu Root;
+    private readonly AutoMenu Root;
 
     public MenuManager(AutoMenu root)
     {

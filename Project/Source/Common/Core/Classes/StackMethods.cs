@@ -79,7 +79,7 @@ namespace Ordisoftware.Core
     static public string JustifyParagraph(string text, int width, Font font)
     {
       var result = new StringBuilder();
-      List<string> ParagraphsList = new List<string>();
+      var ParagraphsList = new List<string>();
       ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None).ToList());
       int checkoverflow = 0;
       foreach ( string Paragraph in ParagraphsList )
@@ -169,11 +169,9 @@ namespace Ordisoftware.Core
         graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
         graphics.SmoothingMode = SmoothingMode.HighQuality;
         graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        using ( var wrapMode = new ImageAttributes() )
-        {
-          wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-          graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-        }
+        using var wrapMode = new ImageAttributes();
+        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+        graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
       }
       return destImage;
     }
@@ -250,7 +248,7 @@ namespace Ordisoftware.Core
     /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     static public void MenuItemDropDownOpening(object sender, EventArgs e)
     {
-      if ( !( sender is ToolStripMenuItem menuItem ) || !menuItem.HasDropDownItems ) return;
+      if ( sender is not ToolStripMenuItem menuItem  || !menuItem.HasDropDownItems ) return;
       Rectangle Bounds = menuItem.GetCurrentParent().Bounds;
       Screen CurrentScreen = Screen.FromPoint(Bounds.Location);
       int MaxWidth = 0;
@@ -319,8 +317,7 @@ namespace Ordisoftware.Core
     static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
     {
       if ( list == null ) return null;
-      var table = new DataTable();
-      table.TableName = name;
+      var table = new DataTable { TableName = name };
       PropertyInfo[] columns = null;
       foreach ( T item in list )
       {
@@ -453,11 +450,10 @@ namespace Ordisoftware.Core
 
     #region Stack Trace
 
-    static private Dictionary<string, string> AlreadyAcessedVarNames
-      = new Dictionary<string, string>();
+    static private readonly Dictionary<string, string> AlreadyAcessedVarNames = new();
 
     /// From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
-    static public string NameOfFromStack(this object instance, int level = 1)
+    static public string NameOfFromStack(int level = 1)
     {
       try
       {
@@ -467,15 +463,13 @@ namespace Ordisoftware.Core
         string id = filePath + lineNumber;
         if ( AlreadyAcessedVarNames.ContainsKey(id) )
           return AlreadyAcessedVarNames[id];
-        using ( var file = new StreamReader(filePath) )
-        {
-          for ( int i = 0; i < lineNumber - 1; i++ )
-            file.ReadLine();
-          string line = file.ReadLine();
-          string name = line.Split('(', ')')[1].TrimEnd(' ', ',');
-          AlreadyAcessedVarNames.Add(id, name);
-          return name;
-        }
+        using var file = new StreamReader(filePath);
+        for ( int i = 0; i < lineNumber - 1; i++ )
+          file.ReadLine();
+        string line = file.ReadLine();
+        string name = line.Split('(', ')')[1].TrimEnd(' ', ',');
+        AlreadyAcessedVarNames.Add(id, name);
+        return name;
       }
       catch
       {

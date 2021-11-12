@@ -45,10 +45,10 @@ namespace Ordisoftware.Core
           return;
         }
         DoClear();
-        using ( var stream = File.OpenText(FilePath) )
-          while ( ( line = stream.ReadLine() ) != null )
-            if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
-              DoLoad(line);
+        using var stream = File.OpenText(FilePath);
+        while ( ( line = stream.ReadLine() ) != null )
+          if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
+            DoLoad(line);
       }
       catch ( Exception ex )
       {
@@ -60,8 +60,8 @@ namespace Ordisoftware.Core
     {
       SystemManager.TryCatchManage(ShowExceptionMode.Simple, () =>
       {
-        using ( var stream = File.CreateText(FilePath) )
-          DoSave(stream);
+        using var stream = File.CreateText(FilePath);
+        DoSave(stream);
       });
     }
 

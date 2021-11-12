@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunarMonthsForm : Form
   {
 
-    private Color[] ColorsSystem = new Color[]
+    private readonly Color[] ColorsSystem = new Color[]
     {
       SystemColors.ControlText,
       SystemColors.ControlText,
@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
       SystemColors.ControlText
     };
 
-    private Color[] ColorsPastel = new Color[]
+    private readonly Color[] ColorsPastel = new Color[]
     {
       Color.FromArgb(255, 230, 80),
       Color.FromArgb(255, 230, 80),
@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Color.White
     };
 
-    private Color[] ColorsFlashy = new Color[]
+    private readonly Color[] ColorsFlashy = new Color[]
     {
       Color.Yellow,
       Color.Yellow,

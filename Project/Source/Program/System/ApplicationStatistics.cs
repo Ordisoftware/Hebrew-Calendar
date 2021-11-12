@@ -26,8 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class ApplicationStatistics
   {
 
-    static public readonly ApplicationStatistics Instance
-      = new ApplicationStatistics();
+    static public readonly ApplicationStatistics Instance = new();
 
     static private List<LunisolarDay> LunisolarDays
       => ApplicationDatabase.Instance.LunisolarDays;

@@ -27,7 +27,7 @@ namespace Ordisoftware.Core
   partial class SoundItem
   {
 
-    static private SoundPlayer SoundPlayer = new SoundPlayer();
+    static private readonly SoundPlayer SoundPlayer = new();
 
     static volatile private List<SoundItem> ApplicationSounds;
 

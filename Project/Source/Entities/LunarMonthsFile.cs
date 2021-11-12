@@ -26,7 +26,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class LunarMonthsFile : DataFile
   {
 
-    public readonly List<string> Items = new List<string>();
+    public readonly List<string> Items = new();
 
     public string this[int index]
       => index >= 0 && index < Items.Count ? Items[index] : string.Empty;

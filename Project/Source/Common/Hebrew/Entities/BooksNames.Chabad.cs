@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   static partial class BooksNames
   {
 
-    static public readonly Dictionary<TanakBook, int> Chabad = new Dictionary<TanakBook, int>()
+    static public readonly Dictionary<TanakBook, int> Chabad = new()
     {
       // Torah
       { TanakBook.Bereshit, 8165 },
@@ -36,8 +36,8 @@ namespace Ordisoftware.Hebrew
       { TanakBook.Shemouel_II, 15865 },
       { TanakBook.Melakim_I, 15885 },
       { TanakBook.Melakim_II, 15907 },
-      { TanakBook.Yeshayahou , 15932 },
-      { TanakBook.Yirmeyahou , 15998 },
+      { TanakBook.Yeshayahou, 15932 },
+      { TanakBook.Yirmeyahou, 15998 },
       { TanakBook.Yehezqel, 16099 },
       { TanakBook.Hoshea, 16155 },
       { TanakBook.Yoel, 16169 },

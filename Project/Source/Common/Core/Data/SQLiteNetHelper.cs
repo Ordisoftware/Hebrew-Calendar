@@ -105,8 +105,7 @@ namespace Ordisoftware.Core
     /// <param name="sql">The query.</param>
     static public SQLiteCommand CreateCommand(this SQLiteNetORM connection, string sql)
     {
-      var command = new SQLiteCommand(connection);
-      command.CommandText = sql;
+      var command = new SQLiteCommand(connection) { CommandText = sql };
       return command;
     }
 

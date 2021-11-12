@@ -49,7 +49,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DataTable Board;
     private bool Mutex;
-    private string Title;
+    private readonly string Title;
 
     private NewMoonsBoardForm()
     {

@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     public const int MaxGenerateErrors = 20;
 
-    private readonly List<string> GenerateErrors = new List<string>();
+    private readonly List<string> GenerateErrors = new();
 
     private int ProgressCount;
 
@@ -48,7 +48,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var einfo = new ExceptionInfo(this, ex);
       GenerateErrors.Add($"{GenerateErrors.Count + 1:00}) " +
-                         $"{method.PadRight(13)} {date} : " +
+                         $"{method,-13} {date} : " +
                          $"{einfo.SingleLineText}");
       return GenerateErrors.Count >= MaxGenerateErrors;
     }
@@ -169,8 +169,7 @@ namespace Ordisoftware.Hebrew.Calendar
               try
               {
                 LoadingForm.Instance.DoProgress();
-                var row = new LunisolarDay();
-                row.Date = new DateTime(year, month, day);
+                var row = new LunisolarDay { Date = new DateTime(year, month, day) };
                 if ( !InitializeDay(row) ) break;
                 LunisolarDays.Add(row);
               }

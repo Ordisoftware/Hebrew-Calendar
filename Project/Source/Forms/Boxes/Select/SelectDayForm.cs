@@ -24,33 +24,31 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
     {
-      using ( var form = new SelectDayForm() )
+      using var form = new SelectDayForm();
+      if ( isOnlyAvailable )
       {
-        if ( isOnlyAvailable )
-        {
-          form.MonthCalendar.MinDate = MainForm.Instance.DateFirst;
-          form.MonthCalendar.MaxDate = MainForm.Instance.DateLast;
-        }
-        else
-        {
-          form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-          form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-        }
-        if ( date < form.MonthCalendar.MinDate ) date = form.MonthCalendar.MinDate;
-        if ( date > form.MonthCalendar.MaxDate ) date = form.MonthCalendar.MaxDate;
-        form.MonthCalendar.SelectionStart = date;
-        form.MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
-        form.CurrentDay = MainForm.Instance.CurrentDay;
-        if ( !title.IsNullOrEmpty() )
-          form.Text = title;
-        else
-          form.MonthCalendar.SelectionStart = form.CurrentDay.Date;
-        form.IsGotoRealtime = isGotoRealtime;
-        form.TopMost = topmost;
-        bool result = form.ShowDialog() == DialogResult.OK;
-        date = result ? form.MonthCalendar.SelectionStart : DateTime.MinValue;
-        return result;
+        form.MonthCalendar.MinDate = MainForm.Instance.DateFirst;
+        form.MonthCalendar.MaxDate = MainForm.Instance.DateLast;
       }
+      else
+      {
+        form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+        form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      }
+      if ( date < form.MonthCalendar.MinDate ) date = form.MonthCalendar.MinDate;
+      if ( date > form.MonthCalendar.MaxDate ) date = form.MonthCalendar.MaxDate;
+      form.MonthCalendar.SelectionStart = date;
+      form.MonthCalendar.FirstDayOfWeek = (Day)Program.Settings.ShabatDay;
+      form.CurrentDay = MainForm.Instance.CurrentDay;
+      if ( !title.IsNullOrEmpty() )
+        form.Text = title;
+      else
+        form.MonthCalendar.SelectionStart = form.CurrentDay.Date;
+      form.IsGotoRealtime = isGotoRealtime;
+      form.TopMost = topmost;
+      bool result = form.ShowDialog() == DialogResult.OK;
+      date = result ? form.MonthCalendar.SelectionStart : DateTime.MinValue;
+      return result;
     }
 
     private bool IsGotoRealtime;

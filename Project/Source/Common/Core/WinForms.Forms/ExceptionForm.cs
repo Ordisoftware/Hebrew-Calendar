@@ -48,8 +48,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicates error messages.
     /// </summary>
-    private readonly List<string> ErrorMessages
-      = new List<string>();
+    private readonly List<string> ErrorMessages = new();
 
     private bool IsInner;
 
@@ -58,35 +57,33 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
-      using ( var form = new ExceptionForm() )
+      using var form = new ExceptionForm();
+      form.IsInner = isInner;
+      form.PictureBox.Image = ShellIcons.Error;
+      form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
+      form.ActionViewInner.Enabled = einfo.InnerInfo != null;
+      form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
+      if ( isInner )
       {
-        form.IsInner = isInner;
-        form.PictureBox.Image = ShellIcons.Error;
-        form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-        form.ActionViewInner.Enabled = einfo.InnerInfo != null;
-        form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
-        if ( isInner )
-        {
-          form.ActionSendToGitHub.Enabled = false;
-          form.ActionClose.Text = SysTranslations.NextException.GetLang();
-        }
-        form.EditType.Text = einfo.TypeText;
-        form.EditMessage.Text = einfo.Message;
-        form.LabelInfo1.Text += einfo.Emitter;
-        form.EditStack.Text = einfo.StackText;
-        form.ErrorMessages.Add(form.EditType.Text);
-        form.ErrorMessages.Add(Globals.NL);
-        form.ErrorMessages.Add(form.EditMessage.Text);
-        form.ErrorMessages.Add(Globals.NL);
-        form.ErrorMessages.Add(form.EditStack.Text);
-        form.OriginalHeight = form.Height;
-        form.ErrorInfo = einfo;
-        form.StackText = form.ActionViewStack.Text;
-        form.ActionViewStack.Text += " <<";
-        if ( !DebugManager.UseStack ) form.ActionViewStack_Click(null, null);
-        form.BringToFront();
-        form.ShowDialog();
+        form.ActionSendToGitHub.Enabled = false;
+        form.ActionClose.Text = SysTranslations.NextException.GetLang();
       }
+      form.EditType.Text = einfo.TypeText;
+      form.EditMessage.Text = einfo.Message;
+      form.LabelInfo1.Text += einfo.Emitter;
+      form.EditStack.Text = einfo.StackText;
+      form.ErrorMessages.Add(form.EditType.Text);
+      form.ErrorMessages.Add(Globals.NL);
+      form.ErrorMessages.Add(form.EditMessage.Text);
+      form.ErrorMessages.Add(Globals.NL);
+      form.ErrorMessages.Add(form.EditStack.Text);
+      form.OriginalHeight = form.Height;
+      form.ErrorInfo = einfo;
+      form.StackText = form.ActionViewStack.Text;
+      form.ActionViewStack.Text += " <<";
+      if ( !DebugManager.UseStack ) form.ActionViewStack_Click(null, null);
+      form.BringToFront();
+      form.ShowDialog();
     }
 
     /// <summary>

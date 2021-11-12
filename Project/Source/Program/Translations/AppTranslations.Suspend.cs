@@ -24,46 +24,45 @@ namespace Ordisoftware.Hebrew.Calendar
   static partial class AppTranslations
   {
 
-    static public readonly NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays
-      = new NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>>
+    static public readonly NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays = new()
+    {
+      [Language.EN] = new NullSafeList<SuspendDelayItem>
       {
-        [Language.EN] = new NullSafeList<SuspendDelayItem>
-        {
-          new SuspendDelayItem("None", 0),
-          new SuspendDelayItem("5 minutes", 5),
-          new SuspendDelayItem("10 minutes", 10),
-          new SuspendDelayItem("15 minutes", 15),
-          new SuspendDelayItem("30 minutes", 30),
-          new SuspendDelayItem("1 hour", 60),
-          new SuspendDelayItem("2 hours", 120),
-          new SuspendDelayItem("3 hours", 180),
-          new SuspendDelayItem("4 hours", 240),
-          new SuspendDelayItem("6 hours", 360),
-          new SuspendDelayItem("8 hours", 480),
-          new SuspendDelayItem("10 hours", 600),
-          new SuspendDelayItem("12 hours", 720),
-          new SuspendDelayItem("1 day", 1440),
-          new SuspendDelayItem("Custom", -1)
-        },
-        [Language.FR] = new NullSafeList<SuspendDelayItem>
-        {
-          new SuspendDelayItem("Aucun", 0),
-          new SuspendDelayItem("5 minutes", 5),
-          new SuspendDelayItem("10 minutes", 10),
-          new SuspendDelayItem("15 minutes", 15),
-          new SuspendDelayItem("30 minutes", 30),
-          new SuspendDelayItem("1 heure", 60),
-          new SuspendDelayItem("2 heures", 120),
-          new SuspendDelayItem("3 heures", 180),
-          new SuspendDelayItem("4 heures", 240),
-          new SuspendDelayItem("6 heures", 360),
-          new SuspendDelayItem("8 heures", 480),
-          new SuspendDelayItem("10 heures", 600),
-          new SuspendDelayItem("12 heures", 720),
-          new SuspendDelayItem("1 jour", 1440),
-          new SuspendDelayItem("Personnalisé", -1)
-        }
-      };
+        new SuspendDelayItem("None", 0),
+        new SuspendDelayItem("5 minutes", 5),
+        new SuspendDelayItem("10 minutes", 10),
+        new SuspendDelayItem("15 minutes", 15),
+        new SuspendDelayItem("30 minutes", 30),
+        new SuspendDelayItem("1 hour", 60),
+        new SuspendDelayItem("2 hours", 120),
+        new SuspendDelayItem("3 hours", 180),
+        new SuspendDelayItem("4 hours", 240),
+        new SuspendDelayItem("6 hours", 360),
+        new SuspendDelayItem("8 hours", 480),
+        new SuspendDelayItem("10 hours", 600),
+        new SuspendDelayItem("12 hours", 720),
+        new SuspendDelayItem("1 day", 1440),
+        new SuspendDelayItem("Custom", -1)
+      },
+      [Language.FR] = new NullSafeList<SuspendDelayItem>
+      {
+        new SuspendDelayItem("Aucun", 0),
+        new SuspendDelayItem("5 minutes", 5),
+        new SuspendDelayItem("10 minutes", 10),
+        new SuspendDelayItem("15 minutes", 15),
+        new SuspendDelayItem("30 minutes", 30),
+        new SuspendDelayItem("1 heure", 60),
+        new SuspendDelayItem("2 heures", 120),
+        new SuspendDelayItem("3 heures", 180),
+        new SuspendDelayItem("4 heures", 240),
+        new SuspendDelayItem("6 heures", 360),
+        new SuspendDelayItem("8 heures", 480),
+        new SuspendDelayItem("10 heures", 600),
+        new SuspendDelayItem("12 heures", 720),
+        new SuspendDelayItem("1 jour", 1440),
+        new SuspendDelayItem("Personnalisé", -1)
+      }
+    };
 
   }
 

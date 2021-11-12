@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   static partial class BooksNames
   {
 
-    static public readonly Dictionary<TanakBook, string> Unicode = new Dictionary<TanakBook, string>()
+    static public readonly Dictionary<TanakBook, string> Unicode = new()
     {
       // Torah
       { TanakBook.Bereshit, "בראשית" },

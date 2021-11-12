@@ -31,12 +31,11 @@ namespace Ordisoftware.Hebrew.Calendar
     // true, false = TrayIconDefault
     // false, true  = TrayIconEventPause
     // false, false = TrayIconDefaultPause
-    static private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons
-      = new Dictionary<bool, NullSafeDictionary<bool, Icon>>()
-      {
-        { true, new NullSafeDictionary<bool, Icon>() },
-        { false, new NullSafeDictionary<bool, Icon>() }
-      };
+    static private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons = new()
+    {
+      { true, new NullSafeDictionary<bool, Icon>() },
+      { false, new NullSafeDictionary<bool, Icon>() }
+    };
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -44,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
-    private ToolTip LastToolTip = new ToolTip();
+    private ToolTip LastToolTip = new();
 
     private Point TrayIconMouse;
 
@@ -56,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool IsReminderPaused;
 
-    private MidnightTimer TimerMidnight = new MidnightTimer();
+    private MidnightTimer TimerMidnight = new();
 
     public float CurrentGPSLatitude { get; set; }
     public float CurrentGPSLongitude { get; set; }
@@ -89,25 +88,20 @@ namespace Ordisoftware.Hebrew.Calendar
     public int CurrentDayYear
       => CurrentDay?.Date.Year ?? 0;
 
-    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindList
-      = new Dictionary<TorahCelebrationDay, bool>();
+    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
 
-    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList
-      = new Dictionary<TorahCelebrationDay, bool>();
+    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
 
-    internal readonly NullSafeList<ReminderForm> RemindCelebrationForms
-      = new NullSafeList<ReminderForm>();
+    internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
 
-    private readonly List<DateTime> RemindCelebrationDates
-      = new List<DateTime>();
+    private readonly List<DateTime> RemindCelebrationDates = new();
 
-    private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded
-      = new Dictionary<TorahCelebrationDay, DateTime?>();
+    private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = new();
 
-    internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms
-      = new Dictionary<TorahCelebrationDay, ReminderForm>();
+    internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = new();
 
     private DateTime? LastShabatReminded;
+
     internal ReminderForm ShabatForm = null;
 
     public void ClearLists()

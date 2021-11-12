@@ -56,8 +56,8 @@ namespace Ordisoftware.Core
 
     private bool SetTextMutex;
     //private UndoRedoItem Previous = new UndoRedoItem();
-    private Stack<UndoRedoItem> UndoStack = new Stack<UndoRedoItem>();
-    private Stack<UndoRedoItem> RedoStack = new Stack<UndoRedoItem>();
+    private readonly Stack<UndoRedoItem> UndoStack = new();
+    private readonly Stack<UndoRedoItem> RedoStack = new();
 
     public CaretPositionAfterPaste CaretAfterPaste { get; set; }
       = CaretPositionAfterPaste.Ending;
@@ -168,17 +168,12 @@ namespace Ordisoftware.Core
 
     private void SetCaret(int pos, int length)
     {
-      switch ( CaretAfterPaste )
+      SelectionStart = CaretAfterPaste switch
       {
-        case CaretPositionAfterPaste.Beginning:
-          SelectionStart = pos;
-          break;
-        case CaretPositionAfterPaste.Ending:
-          SelectionStart = pos + length;
-          break;
-        default:
-          throw new AdvancedNotImplementedException(CaretAfterPaste);
-      }
+        CaretPositionAfterPaste.Beginning => pos,
+        CaretPositionAfterPaste.Ending => pos + length,
+        _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
+      };
     }
 
     private void TextChangedEvent(object sender, EventArgs e)

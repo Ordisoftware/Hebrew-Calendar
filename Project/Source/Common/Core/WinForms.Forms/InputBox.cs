@@ -109,9 +109,7 @@ namespace Ordisoftware.Core
     /// <param name="e">Event information.</param>
     private void ActionOK_Click(object sender, EventArgs e)
     {
-#pragma warning disable S1854 // Unused assignments should be removed
       T value = default;
-#pragma warning restore S1854 // Unused assignments should be removed
       bool b = true;
       try
       {

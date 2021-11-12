@@ -58,23 +58,14 @@ namespace Ordisoftware.Core
       ShowFileNotFound = showFileNotFound;
       Configurable = configurable;
       Folder = folder;
-      switch ( folder )
+      FilePath = folder switch
       {
-        case DataFileFolder.ApplicationDocuments:
-          FilePath = FilePathDefault;
-          break;
-        case DataFileFolder.ProgramData:
-          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath);
-          break;
-        case DataFileFolder.UserHebrewCommon:
-          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath);
-          break;
-        case DataFileFolder.UserApplication:
-          FilePath = filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath);
-          break;
-        default:
-          throw new AdvancedNotImplementedException(folder);
-      }
+        DataFileFolder.ApplicationDocuments => FilePathDefault,
+        DataFileFolder.ProgramData => filePath.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath),
+        DataFileFolder.UserHebrewCommon => filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath),
+        DataFileFolder.UserApplication => filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath),
+        _ => throw new AdvancedNotImplementedException(folder),
+      };
       ReLoad();
     }
 

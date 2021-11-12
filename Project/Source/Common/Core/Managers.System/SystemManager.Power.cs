@@ -31,8 +31,7 @@ namespace Ordisoftware.Core
 
     static public List<PowerAction> GetAvailablePowerActions()
     {
-      var list = new List<PowerAction>();
-      list.Add(PowerAction.LockSession);
+      var list = new List<PowerAction> { PowerAction.LockSession };
       if ( CanStandby ) list.Add(PowerAction.StandBy);
       if ( CanHibernate ) list.Add(PowerAction.Hibernate);
       list.Add(PowerAction.LogOff);
@@ -60,12 +59,12 @@ namespace Ordisoftware.Core
       {
         try
         {
-          using ( RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power") )
-            if ( key != null )
-            {
-              var value = key.GetValue("HibernateEnabled", 0);
-              return value != null && (bool)value;
-            }
+          using RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power");
+          if ( key != null )
+          {
+            var value = key.GetValue("HibernateEnabled", 0);
+            return value != null && (bool)value;
+          }
         }
         catch
         {
@@ -96,7 +95,7 @@ namespace Ordisoftware.Core
     static public bool IsForegroundFullScreen(Screen screen = null)
     {
       if ( screen == null ) screen = Screen.PrimaryScreen;
-      NativeMethods.RECT rect = new NativeMethods.RECT();
+      NativeMethods.RECT rect = new();
       NativeMethods.GetWindowRect(new HandleRef(null, NativeMethods.GetForegroundWindow()), ref rect);
       var rectangle = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
       return rectangle.Contains(screen.Bounds);
@@ -143,25 +142,17 @@ namespace Ordisoftware.Core
 
     static public bool DoPowerAction(PowerAction action, bool confirmLogOffOrMore)
     {
-      switch ( action )
+      return action switch
       {
-        case PowerAction.None:
-          return true;
-        case PowerAction.LockSession:
-          return LockWorkStation();
-        case PowerAction.StandBy:
-          return StandBy();
-        case PowerAction.Hibernate:
-          return Hibernate();
-        case PowerAction.LogOff:
-          return LogOff(confirmLogOffOrMore);
-        case PowerAction.Restart:
-          return Restart(confirmLogOffOrMore);
-        case PowerAction.Shutdown:
-          return Shutdown(confirmLogOffOrMore);
-        default:
-          throw new AdvancedNotImplementedException(action);
-      }
+        PowerAction.None => true,
+        PowerAction.LockSession => LockWorkStation(),
+        PowerAction.StandBy => StandBy(),
+        PowerAction.Hibernate => Hibernate(),
+        PowerAction.LogOff => LogOff(confirmLogOffOrMore),
+        PowerAction.Restart => Restart(confirmLogOffOrMore),
+        PowerAction.Shutdown => Shutdown(confirmLogOffOrMore),
+        _ => throw new AdvancedNotImplementedException(action),
+      };
     }
 
   }

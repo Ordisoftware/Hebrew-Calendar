@@ -23,12 +23,10 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run(out TimeSpan time)
     {
-      using ( var form = new SelectBirthTimeForm() )
-      {
-        bool result = form.ShowDialog() == DialogResult.OK;
-        time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
-        return result;
-      }
+      using var form = new SelectBirthTimeForm();
+      bool result = form.ShowDialog() == DialogResult.OK;
+      time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
+      return result;
     }
 
     private SelectBirthTimeForm()

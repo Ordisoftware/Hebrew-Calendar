@@ -25,11 +25,11 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Provide mapping table for Calendar.NET names.
     /// </summary>
-    static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Names
-      = new Dictionary<DayOfWeek, DayOfWeek[]>()
+    static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Names = new()
+    {
       {
-        { DayOfWeek.Monday,
-          new DayOfWeek[]
+        DayOfWeek.Monday,
+        new DayOfWeek[]
           {
             DayOfWeek.Tuesday,
             DayOfWeek.Wednesday,
@@ -39,9 +39,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Sunday,
             DayOfWeek.Monday,
           }
-        },
-        { DayOfWeek.Tuesday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Tuesday,
+        new DayOfWeek[]
           {
             DayOfWeek.Wednesday,
             DayOfWeek.Thursday,
@@ -51,9 +52,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Monday,
             DayOfWeek.Tuesday,
           }
-        },
-        { DayOfWeek.Wednesday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Wednesday,
+        new DayOfWeek[]
           {
             DayOfWeek.Thursday,
             DayOfWeek.Friday,
@@ -63,9 +65,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Tuesday,
             DayOfWeek.Wednesday,
           }
-        },
-        { DayOfWeek.Thursday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Thursday,
+        new DayOfWeek[]
           {
             DayOfWeek.Friday,
             DayOfWeek.Saturday,
@@ -75,9 +78,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Wednesday,
             DayOfWeek.Thursday,
           }
-        },
-        { DayOfWeek.Friday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Friday,
+        new DayOfWeek[]
           {
             DayOfWeek.Saturday,
             DayOfWeek.Sunday,
@@ -87,9 +91,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Thursday,
             DayOfWeek.Friday,
           }
-        },
-        { DayOfWeek.Saturday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Saturday,
+        new DayOfWeek[]
           {
             DayOfWeek.Sunday,
             DayOfWeek.Monday,
@@ -99,9 +104,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Friday,
             DayOfWeek.Saturday,
           }
-        },
-        { DayOfWeek.Sunday,
-          new DayOfWeek[]
+      },
+      {
+        DayOfWeek.Sunday,
+        new DayOfWeek[]
           {
             DayOfWeek.Monday,
             DayOfWeek.Tuesday,
@@ -111,11 +117,10 @@ namespace Ordisoftware.Hebrew.Calendar
             DayOfWeek.Saturday,
             DayOfWeek.Sunday,
           }
-        },
-      };
+      },
+    };
 
-    static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText
-      = new Dictionary<Language, Dictionary<DayOfWeek, List<string>>>();
+    static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = new();
 
     static DayOfWeekMap()
     {

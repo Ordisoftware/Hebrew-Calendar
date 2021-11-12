@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
   partial class SearchLunarMonthForm : Form
   {
 
-    private MainForm MainForm = MainForm.Instance;
+    private readonly MainForm MainForm = MainForm.Instance;
 
     private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 

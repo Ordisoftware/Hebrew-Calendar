@@ -23,12 +23,12 @@ namespace Ordisoftware.Core
   partial class HTMLBrowserForm : Form
   {
 
-    private string LocationPropertyName;
-    private string ClientSizePropertyName;
+    private readonly string LocationPropertyName;
+    private readonly string ClientSizePropertyName;
 
-    private TranslationsDictionary Title;
+    private readonly TranslationsDictionary Title;
 
-    private string FilePathTemplate;
+    private readonly string FilePathTemplate;
 
     private HTMLBrowserForm()
     {

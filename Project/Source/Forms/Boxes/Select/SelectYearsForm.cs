@@ -27,16 +27,14 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run(bool canCancel, out int first, out int last)
     {
-      using ( var form = new SelectYearsForm() )
-      {
-        first = 0;
-        last = 0;
-        if ( !canCancel ) form.ActionCancel.Enabled = false;
-        if ( form.ShowDialog() == DialogResult.Cancel ) return false;
-        first = (int)form.EditYearFirst.Value;
-        last = (int)form.EditYearLast.Value;
-        return true;
-      }
+      using var form = new SelectYearsForm();
+      first = 0;
+      last = 0;
+      if ( !canCancel ) form.ActionCancel.Enabled = false;
+      if ( form.ShowDialog() == DialogResult.Cancel ) return false;
+      first = (int)form.EditYearFirst.Value;
+      last = (int)form.EditYearLast.Value;
+      return true;
     }
 
     private bool Mutex;

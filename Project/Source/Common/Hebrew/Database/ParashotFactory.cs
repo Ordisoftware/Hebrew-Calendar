@@ -25,10 +25,9 @@ namespace Ordisoftware.Hebrew
   class ParashotFactory : ProviderSettings
   {
 
-    static public readonly ParashotFactory Instance = new ParashotFactory();
+    static public readonly ParashotFactory Instance = new();
 
-    public readonly NullSafeDictionary<TorahBook, NullSafeList<Parashah>> Items
-      = new NullSafeDictionary<TorahBook, NullSafeList<Parashah>>();
+    public readonly NullSafeDictionary<TorahBook, NullSafeList<Parashah>> Items = new();
 
     public IEnumerable<Parashah> All => Items.SelectMany(item => item.Value);
 

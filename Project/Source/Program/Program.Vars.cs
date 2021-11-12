@@ -143,7 +143,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate date bookmarks.
     /// </summary>
     static public readonly DateBookmarks DateBookmarks
-      = new DateBookmarks(DateBookmarksFilePath);
+      = new(DateBookmarksFilePath);
 
     /// <summary>
     /// Indicate world cities documents folder.
@@ -167,13 +167,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicate file path of the lunar months meanings.
     /// </summary>
     static public string LunarMonthsMeaningsFilePath
-      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current.ToString()}.txt");
+      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current}.txt");
 
     /// <summary>
     /// Indicate file path of the lunar months lettriqs.
     /// </summary>
     static public string LunarMonthsLettriqsFilePath
-      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current.ToString()}.txt");
+      => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current}.txt");
 
     /// <summary>
     /// Indicate lunar months meanings.

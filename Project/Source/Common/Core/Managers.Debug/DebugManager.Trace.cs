@@ -54,8 +54,10 @@ namespace Ordisoftware.Core
     static private int StackSkip = 1;
     static private int EnterCount = 0;
     static private int CurrentMargin = 0;
-    static private int TraceEventMaxLength;
-    static private string Separator = new string('-', 120);
+#pragma warning disable IDE0044 // Ajouter un modificateur readonly - Opinion
+    static private int TraceEventMaxLength = 0;
+    static private string Separator = new('-', 120);
+#pragma warning restore IDE0044 // Ajouter un modificateur readonly - Opinion
 
     static DebugManager()
     {
@@ -92,7 +94,7 @@ namespace Ordisoftware.Core
       Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
     }
 
-    static private Dictionary<LogTraceEvent, char> Signes = new Dictionary<LogTraceEvent, char>
+    static private readonly Dictionary<LogTraceEvent, char> Signes = new()
     {
       [LogTraceEvent.System] = ' ',
       [LogTraceEvent.Start] = '>',
@@ -132,7 +134,7 @@ namespace Ordisoftware.Core
 
     static private void WriteHeader()
     {
-      string platform = "";
+      string platform;
       try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); }
       catch { platform = "Unknown platform"; }
       Trace(LogTraceEvent.Start, Globals.AssemblyTitle);

@@ -28,17 +28,16 @@ namespace Ordisoftware.Core
 
     static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");
 
-    static public readonly Dictionary<string, Image> LanguageImages
-      = new Dictionary<string, Image>()
-      {
-        ["(NONE)"] = CreateImage("web_layout.png"),
-        ["(FR)"] = CreateImage("flag_france.png"),
-        ["(EN)"] = CreateImage("flag_great_britain.png"),
-        ["(IW)"] = CreateImage("flag_israel.png"),
-        ["(EN/IW)"] = CreateImage("flag_en_iw.png"),
-        ["(FR/IW)"] = CreateImage("flag_fr_iw.png"),
-        ["(FR/EN)"] = CreateImage("flag_fr_en.png")
-      };
+    static public readonly Dictionary<string, Image> LanguageImages = new()
+    {
+      ["(NONE)"] = CreateImage("web_layout.png"),
+      ["(FR)"] = CreateImage("flag_france.png"),
+      ["(EN)"] = CreateImage("flag_great_britain.png"),
+      ["(IW)"] = CreateImage("flag_israel.png"),
+      ["(EN/IW)"] = CreateImage("flag_en_iw.png"),
+      ["(FR/IW)"] = CreateImage("flag_fr_iw.png"),
+      ["(FR/EN)"] = CreateImage("flag_fr_en.png")
+    };
 
     static private Image CreateImage(string filePath)
     {

@@ -32,60 +32,58 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)
     {
-      using ( var form = new SelectExportTargetForm() )
+      using var form = new SelectExportTargetForm();
+      form.ActionToDo = action;
+      form.Text += SysTranslations.ViewActionTitle.GetLang(action);
+      form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
+      form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
+      form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
+      form.EditAutoOpenExportedFile.Enabled = action == ExportAction.SaveToFile;
+      form.EditAutoOpenExportFolder.Enabled = action == ExportAction.SaveToFile;
+      form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
+      form.EditPrintImageInLandscape.Enabled = action == ExportAction.Print;
+      form.EditPrintImageInLandscape.Tag = form.EditPrintImageInLandscape.Enabled;
+      if ( view == ViewMode.Text && form.SelectText.Enabled )
+        form.SelectText.Checked = true;
+      else
+      if ( view == ViewMode.Month && form.SelectMonth.Enabled )
+        form.SelectMonth.Checked = true;
+      else
+      if ( view == ViewMode.Grid && form.SelectGrid.Enabled )
+        form.SelectGrid.Checked = true;
+      else
+        form.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Enabled).Checked = true;
+      bool result = form.ShowDialog() == DialogResult.OK;
+      if ( result )
       {
-        form.ActionToDo = action;
-        form.Text += SysTranslations.ViewActionTitle.GetLang(action);
-        form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
-        form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
-        form.SelectGrid.Enabled = available.HasFlag(ViewMode.Grid);
-        form.EditAutoOpenExportedFile.Enabled = action == ExportAction.SaveToFile;
-        form.EditAutoOpenExportFolder.Enabled = action == ExportAction.SaveToFile;
-        form.EditShowPrintPreviewDialog.Enabled = action == ExportAction.Print;
-        form.EditPrintImageInLandscape.Enabled = action == ExportAction.Print;
-        form.EditPrintImageInLandscape.Tag = form.EditPrintImageInLandscape.Enabled;
-        if ( view == ViewMode.Text && form.SelectText.Enabled )
-          form.SelectText.Checked = true;
-        else
-        if ( view == ViewMode.Month && form.SelectMonth.Enabled )
-          form.SelectMonth.Checked = true;
-        else
-        if ( view == ViewMode.Grid && form.SelectGrid.Enabled )
-          form.SelectGrid.Checked = true;
-        else
-          form.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Enabled).Checked = true;
-        bool result = form.ShowDialog() == DialogResult.OK;
-        if ( result )
-        {
-          if ( form.SelectText.Checked )
-            view = ViewMode.Text;
-          if ( form.SelectMonth.Checked )
-            view = ViewMode.Month;
-          if ( form.SelectGrid.Checked )
-            view = ViewMode.Grid;
-        }
-        if ( form.SelectInterval.Checked )
-        {
-          var year1 = form.SelectYear1.Value;
-          var year2 = form.SelectYear2.Value;
-          if ( year2 > year1 )
-          {
-            interval.Start = new DateTime(year1, 1, 1);
-            interval.End = new DateTime(year2, 12, 31);
-          }
-          else
-          {
-            interval.Start = new DateTime(year2, 1, 1);
-            interval.End = new DateTime(year1, 12, 31);
-          }
-        }
-        else
-        {
-          interval.Start = null;
-          interval.End = null;
-        }
-        return result;
+        if ( form.SelectText.Checked )
+          view = ViewMode.Text;
+        if ( form.SelectMonth.Checked )
+          view = ViewMode.Month;
+        if ( form.SelectGrid.Checked )
+          view = ViewMode.Grid;
       }
+      if ( form.SelectInterval.Checked )
+      {
+        var year1 = form.SelectYear1.Value;
+        var year2 = form.SelectYear2.Value;
+        if ( year2 > year1 )
+        {
+          interval.Start = new DateTime(year1, 1, 1);
+          interval.End = new DateTime(year2, 12, 31);
+        }
+        else
+        {
+          interval.Start = new DateTime(year2, 1, 1);
+          interval.End = new DateTime(year1, 12, 31);
+        }
+      }
+      else
+      {
+        interval.Start = null;
+        interval.End = null;
+      }
+      return result;
     }
 
     private ExportAction ActionToDo;

@@ -46,8 +46,8 @@ namespace Ordisoftware.Hebrew.Calendar
       MainForm.Instance.MenuTray.Enabled = false;
       try
       {
-        using ( var form = new EditDateBookmarksForm() )
-          return form.ShowDialog() == DialogResult.OK;
+        using var form = new EditDateBookmarksForm();
+        return form.ShowDialog() == DialogResult.OK;
       }
       finally
       {
