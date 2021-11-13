@@ -11,15 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
 using System.Management;
 using Microsoft.Win32;
-using System.Text;
-using Microsoft.VisualBasic;
 using System.Collections.Generic;
 
 namespace Ordisoftware.Core
