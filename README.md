@@ -326,6 +326,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9.11
 
+- Fix Windows version detection.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update setup for Framework .NET 4.8
 - Code refactoring.
