@@ -87,10 +87,12 @@ namespace Ordisoftware.Hebrew.Calendar
           || Settings.UpgradeResetRequiredV4_1
           || Settings.UpgradeResetRequiredV5_10 )
         {
+#pragma warning disable IDE0079 // Retirer la suppression inutile - irrelevant
 #pragma warning disable S2583 // Conditionally executed code should be reachable - irrelevant
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
 #pragma warning restore S2583 // Conditionally executed code should be reachable - irrelevant
+#pragma warning restore IDE0079 // Retirer la suppression inutile - irrelevant
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
