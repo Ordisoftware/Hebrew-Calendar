@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -53,24 +53,26 @@ namespace Ordisoftware.Hebrew
       Connection.CreateTable<TermAnalysis>();
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
     public override void LoadAll()
     {
       string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
       throw new NotImplementedException(message);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
     protected override void DoSaveAll()
     {
-      throw new NotImplementedException();
+      string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");
+      throw new NotImplementedException(message);
     }
 
     protected override void UpgradeSchema()
     {
       base.UpgradeSchema();
-      string table = "ProcessLocks";
-      if ( Connection.CheckTable(table) )
-        if ( Globals.ConcurrentRunningProcesses.Any() )
-          Connection.DropTableIfExists(table);
+      const string table = "ProcessLocks";
+      if ( Connection.CheckTable(table) && Globals.ConcurrentRunningProcesses.Any() )
+        Connection.DropTableIfExists(table);
     }
 
   }

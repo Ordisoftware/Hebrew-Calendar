@@ -37,7 +37,7 @@ namespace Ordisoftware.Core
     #region Public static methods
 
     /// <summary>
-    /// Clones the specified source tool strip menu item. 
+    /// Clones the specified source tool strip menu item.
     /// </summary>
     /// <param name="sourceToolStripMenuItem">The source tool strip menu item.</param>
     /// <returns>A cloned version of the toolstrip menu item</returns>
@@ -49,8 +49,8 @@ namespace Ordisoftware.Core
                          let attributes = p.GetCustomAttributes(true)
                          let notBrowseable = ( from a in attributes
                                                where a is BrowsableAttribute
-                                               select !( a as BrowsableAttribute ).Browsable ).FirstOrDefault()
-                         where !notBrowseable && p.CanRead && p.CanWrite && p.Name != "DropDown"
+                                               select !( a as BrowsableAttribute )?.Browsable ).FirstOrDefault()
+                         where notBrowseable == false && p.CanRead && p.CanWrite && p.Name != "DropDown"
                          orderby p.Name
                          select p;
 
@@ -93,7 +93,7 @@ namespace Ordisoftware.Core
         }
         else
         {
-          throw new NotImplementedException("Menu item is not a ToolStripMenuItem or a ToolStripSeparatorr");
+          throw new ArgumentOutOfRangeException("Menu item is not a ToolStripMenuItem or a ToolStripSeparatorr");
         }
 
         menuItem.DropDownItems.Add(newItem);

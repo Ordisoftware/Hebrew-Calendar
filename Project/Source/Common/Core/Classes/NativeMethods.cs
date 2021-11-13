@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 
-#pragma warning disable S101 // Types should be named in PascalCase
 #pragma warning disable S2346 // Flags enumerations zero-value members should be named "None"
 namespace Ordisoftware.Core
 {
@@ -26,10 +25,11 @@ namespace Ordisoftware.Core
     [Flags]
     public enum EXECUTIONSTATE : uint
     {
-      EsAwaymodeRequired = 0x00000040,
-      EsContinuous = 0x80000000,
+      None = 0,
+      EsSystemRequired = 0x00000001,
       EsDisplayRequired = 0x00000002,
-      EsSystemRequired = 0x00000001
+      EsAwaymodeRequired = 0x00000040,
+      EsContinuous = 0x80000000
     }
 
     public const EXECUTIONSTATE SleepDisallow = EXECUTIONSTATE.EsContinuous
@@ -294,13 +294,12 @@ namespace Ordisoftware.Core
     [Flags]
     public enum SHGSI : uint
     {
-      SHGSI_ICONLOCATION = 0,
+      SHGSI_LARGEICON = 0,
+      SHGSI_SMALLICON = 0x000000001,
       SHGSI_ICON = 0x000000100,
       SHGSI_SYSICONINDEX = 0x000004000,
       SHGSI_LINKOVERLAY = 0x000008000,
       SHGSI_SELECTED = 0x000010000,
-      SHGSI_LARGEICON = 0x000000000,
-      SHGSI_SMALLICON = 0x000000001,
       SHGSI_SHELLICONSIZE = 0x000000004
     }
 
@@ -377,5 +376,4 @@ namespace Ordisoftware.Core
   }
 
 }
-#pragma warning restore S101 // Types should be named in PascalCase
 #pragma warning restore S2346 // Flags enumerations zero-value members should be named "None"

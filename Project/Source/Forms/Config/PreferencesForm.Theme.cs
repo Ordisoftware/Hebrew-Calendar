@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -78,10 +78,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void OpenTheme()
     {
-      SystemManager.TryCatch(() =>
-      {
-        OpenThemeDialog.InitialDirectory = Settings.GetExportDirectory();
-      });
+      SystemManager.TryCatch(() => OpenThemeDialog.InitialDirectory = Settings.GetExportDirectory());
       if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new NullSafeOfStringDictionary<string>();
       if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
@@ -108,11 +105,13 @@ namespace Ordisoftware.Hebrew.Calendar
       });
       if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
       var items = new List<string>();
-      PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel =>
-      {
-        items.Add(panel.Name.Substring(4) + "=" + ColorTranslator.ToHtml(panel.BackColor));
-      });
+      PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel => items.Add(makeLine(panel)));
       File.WriteAllLines(SaveThemeDialog.FileName, items);
+      //
+      static string makeLine(Panel panel)
+      {
+        return panel.Name.Substring(4) + "=" + ColorTranslator.ToHtml(panel.BackColor);
+      }
     }
 
   }

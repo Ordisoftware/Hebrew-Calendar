@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -50,7 +50,7 @@ namespace Ordisoftware.Hebrew
         var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
         var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
         var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
-        int lettersPerLine = 11;
+        const int lettersPerLine = 11;
         int lineLetterCount = 1;
         int width = PanelLetters.Width - 10;
         int deltaY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
@@ -58,9 +58,9 @@ namespace Ordisoftware.Hebrew
         //int deltaXabs = -deltaX;
         var sizeLabelValue = new Size(deltaY, 8);
         var sizeLabelKey = new Size(deltaY, 13);
-        int deltaValue2 = 2;
-        int deltaValue5 = 5;
-        int deltaBetweenLines = 15;
+        const int deltaValue2 = 2;
+        const int deltaValue5 = 5;
+        const int deltaBetweenLines = 15;
         int posX = width + deltaX + deltaValue2 - _MarginX;
         int posY = _MarginY + deltaValue5;
         int deltaValues = _ShowValues ? sizeLabelValue.Height : -deltaValue2;
@@ -75,44 +75,50 @@ namespace Ordisoftware.Hebrew
         for ( int index = 0, indexControl = 0; index < countLetters; index++ )
         {
           // Button letter
-          buttonLetter = new Button();
-          buttonLetter.Location = new Point(posX, posY);
-          buttonLetter.Size = new Size(deltaY, deltaY);
-          buttonLetter.TabStop = false;
-          buttonLetter.FlatStyle = FlatStyle.Flat;
+          buttonLetter = new Button
+          {
+            Location = new Point(posX, posY),
+            Size = new Size(deltaY, deltaY),
+            TabStop = false,
+            Cursor = Cursors.Hand,
+            Font = fontLetter,
+            Text = HebrewAlphabet.Codes[index],
+            ContextMenuStrip = ContextMenuLetter,
+            BackColor = Color.Transparent,
+            FlatStyle = FlatStyle.Flat,
+          };
           buttonLetter.FlatAppearance.BorderSize = 0;
           buttonLetter.FlatAppearance.BorderColor = SystemColors.Control;
-          buttonLetter.Cursor = Cursors.Hand;
-          buttonLetter.Font = fontLetter;
-          buttonLetter.Text = HebrewAlphabet.Codes[index];
-          buttonLetter.BackColor = Color.Transparent;
           buttonLetter.Click += ButtonLetter_Click;
-          buttonLetter.ContextMenuStrip = ContextMenuLetter;
           controls[indexControl++] = buttonLetter;
           // Label value
           if ( _ShowValues )
           {
-            labelValue = new Label();
-            labelValue.Location = new Point(posX, posY + deltaY);
-            labelValue.Size = sizeLabelKey;
-            labelValue.Font = fontValue;
-            labelValue.ForeColor = colorLabel;
-            labelValue.BackColor = Color.Transparent;
-            labelValue.Text = HebrewAlphabet.ValuesSimple[index].ToString();
-            labelValue.TextAlign = ContentAlignment.MiddleCenter;
+            labelValue = new Label
+            {
+              Location = new Point(posX, posY + deltaY),
+              Size = sizeLabelKey,
+              Font = fontValue,
+              ForeColor = colorLabel,
+              BackColor = Color.Transparent,
+              Text = HebrewAlphabet.ValuesSimple[index].ToString(),
+              TextAlign = ContentAlignment.MiddleCenter
+            };
             controls[indexControl++] = labelValue;
           }
           // Label key
           if ( _ShowKeys )
           {
-            labelKey = new Label();
-            labelKey.Location = new Point(posX, posY + deltaYAndValuesAndKeys);
-            labelKey.Font = fontKey;
-            labelKey.Size = sizeLabelKey;
-            labelKey.Text = HebrewAlphabet.Codes[index];
-            labelKey.ForeColor = colorLabel;
-            labelKey.BackColor = Color.Transparent;
-            labelKey.TextAlign = ContentAlignment.MiddleCenter;
+            labelKey = new Label
+            {
+              Location = new Point(posX, posY + deltaYAndValuesAndKeys),
+              Font = fontKey,
+              Size = sizeLabelKey,
+              Text = HebrewAlphabet.Codes[index],
+              ForeColor = colorLabel,
+              BackColor = Color.Transparent,
+              TextAlign = ContentAlignment.MiddleCenter
+            };
             controls[indexControl++] = labelKey;
           }
           // Loop

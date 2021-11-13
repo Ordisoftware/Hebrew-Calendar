@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -29,35 +29,37 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide exception helper.
   /// </summary>
-  /// <remarks> Using enter-Leave system :
-  ///                                                           
-  /// void Function()                                          
-  /// {                                                        
-  ///   try                                                    
-  ///   {                                                      
-  ///     DebugManager.Enter();                                     
-  ///     DoSomething();                                                  
-  ///   }                                                      
-  ///   finally                                    
-  ///   {                                                      
-  ///     DebugManager.Leave();                                     
-  ///   }                                                      
-  /// }                                                          
-  /// 
-  /// void Function()                                          
-  /// {                                                        
-  ///   try                                                    
-  ///   {                                                      
-  ///     DebugManager.Enter();                                     
-  ///     DoSomething();                                                  
-  ///     DebugManager.Leave();                                     
-  ///   }                                                      
-  ///   catch (Exception ex)                                    
-  ///   {                                                      
+  /// <remarks>
+  /// <para>Using enter-Leave system :</para>
+  /// <para>
+  /// void Function()
+  /// {
+  ///   try
+  ///   {
+  ///     DebugManager.Enter();
+  ///     DoSomething();
+  ///   }
+  ///   finally
+  ///   {
+  ///     DebugManager.Leave();
+  ///   }
+  /// }
+  /// </para>
+  /// <para>
+  /// void Function()
+  /// {
+  ///   try
+  ///   {
+  ///     DebugManager.Enter();
+  ///     DoSomething();
+  ///     DebugManager.Leave();
+  ///   }
+  ///   catch (Exception ex)
+  ///   {
   ///     e.Manage(this, ex, false); // The Leave() will be automatically called
-  ///   }                                                      
-  /// }                                                          
-  /// 
+  ///   }
+  /// }
+  /// </para>
   /// </remarks>
   static partial class DebugManager
   {
@@ -78,7 +80,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate Exception show alternative handler.
     /// </summary>
-    static public event SubstitureShowExceptionEventHandler SubstituteShowException;
+    static public event EventHandler<ExceptionInfo> SubstituteShowException;
 
     /// <summary>
     /// Indicate if stack infos are used.
@@ -295,7 +297,7 @@ namespace Ordisoftware.Core
     /// <param name="show">The show mode.</param>
     static public void Manage(this Exception ex, object sender, ShowExceptionMode show)
     {
-      if ( ex is not AbortException  )
+      if ( ex is not AbortException )
       {
         StackSkip++;
         ManageInternal(sender, ex, show);
@@ -369,6 +371,7 @@ namespace Ordisoftware.Core
           DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
       }
     }
+
 
     /// <summary>
     /// Show an exception with the exception form else a message box.

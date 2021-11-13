@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -29,9 +29,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void DoCalendarMonth_MouseClick(object sender, MouseEventArgs e)
     {
-      var dayEvent = CalendarMonth.CalendarEvents.FirstOrDefault(item => item.EventArea.Contains(e.X, e.Y));
+      var dayEvent = CalendarMonth.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));
       if ( dayEvent == null ) return;
-      var dayRow = ApplicationDatabase.Instance.LunisolarDays.FirstOrDefault(day => day.Date == dayEvent.Date);
+      var dayRow = ApplicationDatabase.Instance.LunisolarDays.Find(day => day.Date == dayEvent.Date);
       if ( dayRow == null ) return;
       if ( e.Button == MouseButtons.Left )
       {
@@ -86,7 +86,7 @@ namespace Ordisoftware.Hebrew.Calendar
       bool isNoEvent = isNoCelebration && isNoWeekLong;
       bool isSimhatTorah = ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
       if ( !isNoEvent || isSimhatTorah )
-        if (!isNoWeekLong)
+        if ( !isNoWeekLong )
           ContextMenuDayDate.Text += " - " + weeklong;
         else
           ContextMenuDayDate.Text += " - " + celebration;

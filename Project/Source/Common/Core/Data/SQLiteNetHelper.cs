@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -169,7 +169,7 @@ namespace Ordisoftware.Core
     /// <param name="table"></param>
     static public void DropTableIfExists(this SQLiteNetORM connection, string table)
     {
-      string argnameTable = nameof(table);
+      const string argnameTable = nameof(table);
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
       try
       {
@@ -189,8 +189,8 @@ namespace Ordisoftware.Core
     /// <param name="tableNewName">New name.</param>
     static public void RenameTableIfExists(this SQLiteNetORM connection, string tableOldName, string tableNewName)
     {
-      string argnameTableOld = nameof(tableOldName);
-      string argnameTableNew = nameof(tableNewName);
+      const string argnameTableOld = nameof(tableOldName);
+      const string argnameTableNew = nameof(tableNewName);
       if ( tableOldName.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTableOld);
       if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTableNew);
       try
@@ -215,7 +215,7 @@ namespace Ordisoftware.Core
       try
       {
         if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
-        string sqlSelect = $"SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
+        const string sqlSelect = "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
         if ( connection.ExecuteScalar<long>(sqlSelect, table) != 0 ) return true;
         if ( !sql.IsNullOrEmpty() )
           try
@@ -246,7 +246,7 @@ namespace Ordisoftware.Core
       try
       {
         if ( index.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(index));
-        string sqlCheck = $"SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
+        const string sqlCheck = "SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
         if ( connection.ExecuteScalar<long>(sqlCheck, index) != 0 ) return true;
         if ( !sql.IsNullOrEmpty() )
           try
@@ -280,7 +280,7 @@ namespace Ordisoftware.Core
         if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
         if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
         if ( !connection.CheckTable(table) ) return false;
-        string sqlCheck = $"SELECT COUNT(*) AS CNTREC FROM pragma_table_info(?) WHERE name = ?";
+        const string sqlCheck = "SELECT COUNT(*) AS CNTREC FROM pragma_table_info(?) WHERE name = ?";
         if ( connection.ExecuteScalar<long>(sqlCheck, table, column) > 0 ) return true;
         if ( !sql.IsNullOrEmpty() )
           try

@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -55,20 +55,21 @@ namespace Ordisoftware.Hebrew.Calendar
       Chrono.Start();
       try
       {
-
+#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
         string headerSep = SeparatorV;
         string headerTxt = SeparatorV;
         foreach ( var field in Enums.GetValues<ReportFieldText>() )
         {
           string str = AppTranslations.ReportFields.GetLang(field);
-          headerSep += new string(SeparatorH[0], CalendarFieldSize[field]) + SeparatorV.ToString();
-          headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV.ToString();
+          headerSep += new string(SeparatorH[0], CalendarFieldSize[field]) + SeparatorV;
+          headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV;
         }
         headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
+#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
         var content = new StringBuilder();
-        content.Append(headerSep + Globals.NL);
-        content.Append(headerTxt + Globals.NL);
-        if ( LunisolarDays.Count <= 0 ) return string.Empty;
+        content.AppendLine(headerSep);
+        content.AppendLine(headerTxt);
+        if ( LunisolarDays.Count == 0 ) return string.Empty;
         var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
         LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                         LunisolarDays.Count,
@@ -81,7 +82,7 @@ namespace Ordisoftware.Hebrew.Calendar
             LoadingForm.Instance.DoProgress();
             if ( day.LunarMonth == 0 ) continue;
             if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-            if ( day.IsNewMoon ) content.Append(headerSep + Globals.NL);
+            if ( day.IsNewMoon ) content.AppendLine(headerSep);
             string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? $"{day.LunarMonth:00}" : "  ";
             string strDay = day.MoonriseOccuring == MoonriseOccuring.NextDay && Settings.TorahEventsCountAsMoon
                             ? "  "
@@ -140,7 +141,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             GenerateErrors.Add($"{day.DateAsString}: [{nameof(GenerateReportText)}] { ex.Message}");
           }
-        content.Append(headerSep + Globals.NL);
+        content.AppendLine(headerSep);
         try
         {
           File.WriteAllText(Program.TextReportFilePath, content.ToString(), Encoding.UTF8);

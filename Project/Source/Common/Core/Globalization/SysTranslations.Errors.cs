@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -27,13 +27,11 @@ namespace Ordisoftware.Core
     {
       get
       {
-        if ( _ContactSupport == null )
-          _ContactSupport = new TranslationsDictionary
-          {
-            [Language.EN] = "Please contact support.",
-            [Language.FR] = "Veuillez contacter le support."
-          };
-        return _ContactSupport;
+        return _ContactSupport ??= new TranslationsDictionary
+        {
+          [Language.EN] = "Please contact support.",
+          [Language.FR] = "Veuillez contacter le support."
+        };
       }
     }
     static private TranslationsDictionary _ContactSupport;
@@ -58,7 +56,7 @@ namespace Ordisoftware.Core
 
     static public readonly TranslationsDictionary UnhandledException = new()
     {
-      [Language.EN] = "Unhandled Exception has occured in {0}" + Globals.NL +
+      [Language.EN] = "Unhandled Exception has occurred in {0}" + Globals.NL +
                       "<{1}>" + Globals.NL2 +
                       "{2}",
 
@@ -76,7 +74,7 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary HotKeyUnregisterError = new()
     {
       [Language.EN] = "Error on unregistering the HotKey.",
-      [Language.FR] = "Erreur au désenregistrement du HotKey."
+      [Language.FR] = "Erreur à la libération du HotKey."
     };
 
     static public readonly TranslationsDictionary HotKeyRefusedBySystem = new()
@@ -94,7 +92,7 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary LockSessionError = new()
     {
       [Language.EN] = $"Lock session error:{Globals.NL2}{{0}}",
-      [Language.FR] = $"Erreur de vérouillage de la session :{Globals.NL2}{{0}}"
+      [Language.FR] = $"Erreur de verrouillage de la session :{Globals.NL2}{{0}}"
     };
 
     static public readonly TranslationsDictionary CallMethodError = new()
@@ -114,7 +112,7 @@ namespace Ordisoftware.Core
 
     static public readonly TranslationsDictionary IndexCantBeNegative = new()
     {
-      [Language.EN] = "Index can''t be negative in {0}: {1}",
+      [Language.EN] = "Index can\'t be negative in {0}: {1}",
       [Language.FR] = "Index ne peut pas être négatif dans {0}: {1}"
     };
 

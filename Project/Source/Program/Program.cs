@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -87,12 +87,12 @@ namespace Ordisoftware.Hebrew.Calendar
           || Settings.UpgradeResetRequiredV4_1
           || Settings.UpgradeResetRequiredV5_10 )
         {
-#pragma warning disable IDE0079 // Retirer la suppression inutile - irrelevant
-#pragma warning disable S2583 // Conditionally executed code should be reachable - irrelevant
+#pragma warning disable IDE0079 // Retirer la suppression inutile - Irrelevant
+#pragma warning disable S2583 // Conditionally executed code should be reachable - Irrelevant
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-#pragma warning restore S2583 // Conditionally executed code should be reachable - irrelevant
-#pragma warning restore IDE0079 // Retirer la suppression inutile - irrelevant
+#pragma warning restore S2583 // Conditionally executed code should be reachable
+#pragma warning restore IDE0079 // Retirer la suppression inutile
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
@@ -244,9 +244,7 @@ namespace Ordisoftware.Hebrew.Calendar
           CheckSettingsReset(true);
         }
         else
-        if ( !Settings.FirstLaunch
-          && SystemManager.CommandLineOptions != null
-          && SystemManager.CommandLineOptions.HideMainForm )
+        if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
           Globals.ForceStartupHide = true;
       }
       catch ( Exception ex )
@@ -316,10 +314,8 @@ namespace Ordisoftware.Hebrew.Calendar
           NavigationForm.Instance.Relocalize();
           DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Instance.Reset();
-          SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
-          {
-            MainForm.Instance.LoadMenuBookmarks(MainForm.Instance);
-          });
+          SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
+                                       () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
         }
         MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
         task?.Wait();

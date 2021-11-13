@@ -103,25 +103,27 @@ namespace Ordisoftware.Core
       if ( sender is not ToolStripItem menuitem  ) return;
       var notice = (TranslationPair)menuitem.Tag;
       string title = SysTranslations.NoticeNewFeaturesTitle.GetLang(notice.Key);
-      var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title);
+      var form = MessageBoxEx.Instances.Find(f => f.Text == title);
       if ( form == null )
       {
         string str = notice.Value.GetLang() + Globals.NL2 + SysTranslations.NavigationTip.GetLang();
-        form = new MessageBoxEx(title, str, width: MessageBoxEx.DefaultWidthMedium, justify: false);
-        form.DoShownSound = false;
-        form.ShowInTaskbar = true;
+        form = new MessageBoxEx(title, str, width: MessageBoxEx.DefaultWidthMedium, justify: false)
+        {
+          DoShownSound = false,
+          ShowInTaskbar = true
+        };
         form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
         form.ActionOK.KeyUp += onKeyUp;
         form.ActionYes.DialogResult = DialogResult.None;
         initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, null);
         initButton(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
-                   index => ActionViewVersionNews.DropDownItems.ToEnumerable().Last().PerformClick());
+                   _ => ActionViewVersionNews.DropDownItems.ToEnumerable().Last().PerformClick());
         initButton(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
                    index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
         initButton(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
                    index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
         initButton(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
-                   index => ActionViewVersionNews.DropDownItems[0].PerformClick());
+                   _ => ActionViewVersionNews.DropDownItems[0].PerformClick());
         void openNotes()
         {
           SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace("x", "0")));
@@ -232,8 +234,7 @@ namespace Ordisoftware.Core
       string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
       File.WriteAllText(filePath, fileLines, Encoding.UTF8);
       SystemManager.RunShell(filePath);
-      var timer = new Timer();
-      timer.Interval = 60000;
+      var timer = new Timer { Interval = 60000 };
       timer.Tick += (_s, _e) =>
       {
         timer.Stop();

@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -28,9 +28,15 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     [Serializable]
-    public partial class TooManyErrorsException : Exception
+    public class TooManyErrorsException : Exception
     {
+      public TooManyErrorsException()
+      {
+      }
       public TooManyErrorsException(string message) : base(message)
+      {
+      }
+      public TooManyErrorsException(string message, Exception innerException) : base(message, innerException)
       {
       }
       protected TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
@@ -163,7 +169,6 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         for ( int year = yearFirst; year <= yearLast; year++ )
-        {
           for ( int month = 1; month <= 12; month++ )
             for ( int day = 1; day <= DateTime.DaysInMonth(year, month); day++ )
               try
@@ -178,7 +183,6 @@ namespace Ordisoftware.Hebrew.Calendar
                 if ( AddGenerateErrorAndCheckIfTooMany(nameof(PopulateDays), $"{year}-{month:00}-{day:00}", ex) )
                   return false;
               }
-        }
       }
       finally
       {
@@ -278,8 +282,8 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             LoadingForm.Instance.DoProgress();
             date = day.Date;
-            if ( day.IsNewMoon )
-              if ( !AnalyzeDay(day, date, ref month) ) break;
+            if ( day.IsNewMoon && !AnalyzeDay(day, date, ref month) )
+              break;
             day.LunarMonth = month;
             if ( day.IsNewMoon )
               delta = 0;
@@ -316,8 +320,7 @@ namespace Ordisoftware.Hebrew.Calendar
           dayRemap1 = day;
         }
         else
-        if ( !shabatMutex && date.DayOfWeek == shabatDay
-          && indexParashah >= 0 && indexParashah < parashot.Count )
+        if ( !shabatMutex && date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < parashot.Count )
         {
           day.ParashahID = parashot[indexParashah].ID;
           indexParashah++;
@@ -364,7 +367,7 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         if ( Settings.TorahEventsCountAsMoon )
         {
-          var rowStart = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+          var rowStart = LunisolarDays.Find(d => d.Date == thedate);
           int index = LunisolarDays.IndexOf(rowStart);
           int count = 0;
           if ( forceSunOmer )
@@ -374,14 +377,14 @@ namespace Ordisoftware.Hebrew.Calendar
               if ( LunisolarDays[index + i].MoonriseOccuring == MoonriseOccuring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
-          var row = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+          var row = LunisolarDays.Find(d => d.Date == thedate);
           if ( row != null )
             if ( row.MoonriseOccuring == MoonriseOccuring.NextDay )
               thedate = thedate.AddDays(1);
         }
         else
           thedate = thedate.AddDays(toadd);
-        var rowEnd = LunisolarDays.FirstOrDefault(d => d.Date == thedate);
+        var rowEnd = LunisolarDays.Find(d => d.Date == thedate);
         if ( rowEnd != null )
           rowEnd.TorahEvent = type;
         return thedate;

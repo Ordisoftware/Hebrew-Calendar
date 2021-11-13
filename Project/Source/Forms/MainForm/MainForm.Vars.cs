@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
     // true, false = TrayIconDefault
     // false, true  = TrayIconEventPause
     // false, false = TrayIconDefaultPause
-    static private Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons = new()
+    static private readonly Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons = new()
     {
       { true, new NullSafeDictionary<bool, Icon>() },
       { false, new NullSafeDictionary<bool, Icon>() }
@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
-    private ToolTip LastToolTip = new();
+    private readonly ToolTip LastToolTip = new();
 
     private Point TrayIconMouse;
 
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private bool IsReminderPaused;
 
-    private MidnightTimer TimerMidnight = new();
+    private readonly MidnightTimer TimerMidnight = new();
 
     public float CurrentGPSLatitude { get; set; }
     public float CurrentGPSLongitude { get; set; }
@@ -69,6 +69,8 @@ namespace Ordisoftware.Hebrew.Calendar
     public int[] YearsIntervalArray { get; private set; }
 
     public LunisolarDay CurrentDay { get; private set; }
+
+    public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
 
     private DateTime? _DateSelected = null;
     public DateTime? DateSelected
@@ -85,12 +87,9 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private LunisolarDay ContextMenuDayCurrentEvent;
 
-    public int CurrentDayYear
-      => CurrentDay?.Date.Year ?? 0;
+    private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
 
-    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
-
-    private Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
+    private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
 
     internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
 
@@ -102,7 +101,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private DateTime? LastShabatReminded;
 
-    internal ReminderForm ShabatForm = null;
+    internal ReminderForm ShabatForm;
 
     public void ClearLists()
     {

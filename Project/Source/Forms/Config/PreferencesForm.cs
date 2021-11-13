@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -327,7 +327,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
-      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag ).OriginalValue;
+      var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag ).OriginalValue;
       EditAutoGenerateYearsInterval.Text = value.ToString();
     }
 
@@ -500,7 +500,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
     {
-      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem ).Tag;
+      EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
     }
 
     private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
@@ -623,24 +623,15 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void ActionSelectExportFolder_Click(object sender, EventArgs e)
     {
-      SystemManager.TryCatch(() =>
-      {
-        FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory();
-      });
+      SystemManager.TryCatch(() => FolderBrowserDialog.SelectedPath = Settings.GetExportDirectory());
       if ( FolderBrowserDialog.ShowDialog() == DialogResult.OK )
         EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
     }
 
     private void DoActionSelectPath(FileDialog dialog, TextBox edit)
     {
-      SystemManager.TryCatch(() =>
-      {
-        dialog.InitialDirectory = Path.GetDirectoryName(edit.Text);
-      });
-      SystemManager.TryCatch(() =>
-      {
-        dialog.FileName = Path.GetFileName(edit.Text);
-      });
+      SystemManager.TryCatch(() => dialog.InitialDirectory = Path.GetDirectoryName(edit.Text));
+      SystemManager.TryCatch(() => dialog.FileName = Path.GetFileName(edit.Text));
       if ( OpenExeFileDialog.ShowDialog() == DialogResult.OK )
         edit.Text = dialog.FileName;
     }
@@ -791,7 +782,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var checkbox = (CheckBox)sender;
       if ( checkbox.Checked ) return true;
-      if ( !PanelHotKey.Controls.OfType<CheckBox>().Where(c => c != checkbox).All(c => !c.Checked) )
+      if ( PanelHotKey.Controls.OfType<CheckBox>().Any(c => c != checkbox && c.Checked))
         return true;
       checkbox.Checked = true;
       return false;

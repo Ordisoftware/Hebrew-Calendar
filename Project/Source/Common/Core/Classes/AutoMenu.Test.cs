@@ -16,9 +16,9 @@ namespace Ordisoftware.Core
       var choices1 = new List<MenuChoice>();
       var choices2 = new List<MenuChoice>();
 
-      string headerMain = "WELCOME";
-      string header1 = "Menu 1";
-      string header2 = "Menu 2";
+      const string headerMain = "WELCOME";
+      const string header1 = "Menu 1";
+      const string header2 = "Menu 2";
 
       var root = new AutoMenu(headerMain, choicesMain, null);
       var menu1 = new AutoMenu(header1, choices1, root);

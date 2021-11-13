@@ -52,13 +52,15 @@ namespace Ordisoftware.Core
         DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
         return;
       }
-      var textbox = new TextBoxEx();
-      textbox.Font = new Font("Consolas", 9.75F);
-      textbox.Multiline = true;
-      textbox.WordWrap = false;
-      textbox.ScrollBars = ScrollBars.Both;
-      textbox.Dock = DockStyle.Fill;
-      textbox.Text = File.ReadAllText(file.FilePath);
+      var textbox = new TextBoxEx
+      {
+        Font = new Font("Consolas", 9.75F),
+        Multiline = true,
+        WordWrap = false,
+        ScrollBars = ScrollBars.Both,
+        Dock = DockStyle.Fill,
+        Text = File.ReadAllText(file.FilePath)
+      };
       var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
       tabpage.Controls.Add(textbox);
       tabcontrol.TabPages.Add(tabpage);

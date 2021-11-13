@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -55,7 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
       Mutex = true;
       int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
       int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
-      int min = Program.GenerateIntervalMinimum;
+      const int min = Program.GenerateIntervalMinimum;
       int max = Settings.GenerateIntervalMaximum;
       CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;
       if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
@@ -96,7 +96,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void PredefinedYearsItem_Click(object sender, EventArgs e)
     {
-      var interval = (YearsIntervalItem)( sender as ToolStripMenuItem ).Tag;
+      var interval = (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag;
+      if ( interval == null ) return;
       decimal first = CurrentYear - interval.YearsBefore;
       if ( first < EditYearFirst.Minimum ) first = EditYearFirst.Minimum;
       if ( first > EditYearFirst.Maximum ) first = EditYearFirst.Maximum;

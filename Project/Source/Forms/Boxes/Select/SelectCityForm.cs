@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -39,18 +39,20 @@ namespace Ordisoftware.Hebrew.Calendar
           foreach ( var item in parser )
           {
             var country = GPS[item.country.RemoveDiacritics()];
-            var city = new CityItem();
-            city.Name = item.city_ascii;
-            city.Latitude = item.lat;
-            city.Longitude = item.lng;
+            var city = new CityItem
+            {
+              Name = item.city_ascii,
+              Latitude = item.lat,
+              Longitude = item.lng
+            };
             country.Add(city);
           }
         if ( GPS.Keys.Count == 0 )
         {
           string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
-#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods - Opinion
+#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods
           throw new NullReferenceException(msg);
-#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods - Opinion
+#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods
         }
       }
       catch ( Exception ex )

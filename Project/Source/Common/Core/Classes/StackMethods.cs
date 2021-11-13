@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
 
     #region Enums
 
-    /// From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Next<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -36,7 +36,7 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    /// From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+    // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
     static public T Previous<T>(this T value, params T[] skip) where T : Enum
     {
       var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -57,11 +57,11 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Create a readable string from a size in bytes.
     /// </summary>
-    /// From https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
+    // From https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
     static public string FormatBytesSize(this ulong bytes)
     {
       string suffix = SysTranslations.MemorySizeSuffix.GetLang();
-      ulong unit = 1024;
+      const ulong unit = 1024;
       if ( bytes < unit ) return $"{bytes} {suffix}";
       var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
       string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}i{suffix}";
@@ -75,7 +75,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Apply "justify" to the text of a control.
     /// </summary>
-    /// From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
+    // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     static public string JustifyParagraph(string text, int width, Font font)
     {
       var result = new StringBuilder();
@@ -89,7 +89,7 @@ namespace Ordisoftware.Core
         if ( ParagraphWidth > width )
         {
           string[] Words = Paragraph.Split(' ');
-          line.Append(Words[0] + ' ');
+          line.Append(Words[0]).Append(' ');
           for ( int x = 1; x < Words.Length; x++ )
           {
             string tmpLine = line + ( Words[x] + (char)32 );
@@ -101,30 +101,30 @@ namespace Ordisoftware.Core
                 DebugManager.Trace(LogTraceEvent.Error, $"Stack Overflow in {nameof(JustifyParagraph)}:{Globals.NL2}{text}");
                 return text;
               }
-              result.Append(Justify(line.ToString().TrimEnd()) + Globals.NL);
+              result.AppendLine(Justify(line.ToString().TrimEnd()));
               line.Clear();
               --x;
             }
             else
-              line.Append(Words[x] + ' ');
+              line.Append(Words[x]).Append(' ');
           }
-          if ( line.Length > 0 ) result.Append(line + Globals.NL);
+          if ( line.Length > 0 ) result.AppendLine(line.ToString());
         }
         else
-          result.Append(Paragraph + Globals.NL);
+          result.AppendLine(Paragraph);
       }
       return result.ToString().TrimEnd(Globals.NL.ToCharArray());
       string Justify(string str)
       {
-        char SpaceChar = (char)0x200A;
+        const char SpaceChar = (char)0x200A;
         List<string> WordsList = str.Split(' ').ToList();
         if ( WordsList.Capacity < 2 ) return str;
         int NumberOfWords = WordsList.Capacity - 1;
         int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
         int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
                            - TextRenderer.MeasureText(WordsList[0], font).Width;
-        int AverageSpace = ( ( width - WordsWidth ) / NumberOfWords ) / SpaceCharWidth;
-        float AdjustSpace = ( width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) );
+        int AverageSpace = ( width - WordsWidth ) / NumberOfWords / SpaceCharWidth;
+        float AdjustSpace =  width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) ;
         return ( (Func<string>)( () =>
         {
           var Spaces = new StringBuilder();
@@ -133,7 +133,7 @@ namespace Ordisoftware.Core
             Spaces.Append(SpaceChar);
           foreach ( string Word in WordsList )
           {
-            AdjustedWords.Append(Word + Spaces);
+            AdjustedWords.Append(Word).Append(Spaces);
             if ( AdjustSpace > 0 )
             {
               AdjustedWords.Append(SpaceChar);
@@ -267,7 +267,7 @@ namespace Ordisoftware.Core
 
     #region WinForms ListBox
 
-    /// From https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
+    // From https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
     static public void MoveSelectedItem(this ListBox listBox, int direction)
     {
       if ( listBox.SelectedItem == null || listBox.SelectedIndex < 0 ) return;
@@ -280,10 +280,10 @@ namespace Ordisoftware.Core
       listBox.Items.Remove(selected);
       listBox.Items.Insert(newIndex, selected);
       listBox.SetSelected(newIndex, true);
-      if ( checkedListBox != null ) checkedListBox.SetItemCheckState(newIndex, checkState);
+      checkedListBox?.SetItemCheckState(newIndex, checkState);
     }
 
-    /// From https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
+    // From https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
     static public void Sort(this ListBox listBox, Func<object, object, int> compare)
     {
       bool swapped;
@@ -300,7 +300,7 @@ namespace Ordisoftware.Core
             listBox.Items[counter - 1] = temp;
             swapped = true;
           }
-          counter -= 1;
+          counter--;
         }
       }
       while ( swapped );
@@ -340,7 +340,7 @@ namespace Ordisoftware.Core
       return table;
     }
 
-    /// From https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
+    // From https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
     static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
     {
       try
@@ -428,7 +428,7 @@ namespace Ordisoftware.Core
 
     #region Assembly
 
-    /// From https://stackoverflow.com/questions/1600962/displaying-the-build-date
+    // From https://stackoverflow.com/questions/1600962/displaying-the-build-date
     static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
     {
       var filePath = assembly.Location;
@@ -452,7 +452,7 @@ namespace Ordisoftware.Core
 
     static private readonly Dictionary<string, string> AlreadyAcessedVarNames = new();
 
-    /// From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
+    // From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
     static public string NameOfFromStack(int level = 1)
     {
       try

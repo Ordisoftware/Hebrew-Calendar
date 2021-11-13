@@ -3,10 +3,10 @@
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -95,11 +95,11 @@ namespace Ordisoftware.Hebrew
 
     static public readonly TranslationsDictionary AskToDownloadHebrewLetters = new()
     {
-      [Language.EN] = $"Hebrew Letters not found." + Globals.NL +
+      [Language.EN] = "Hebrew Letters not found." + Globals.NL +
                       SysTranslations.AskToCheckPreferences[Language.EN] + Globals.NL2 +
                       AskToDownload[Language.EN],
 
-      [Language.FR] = $"Hebrew Letters n'a pas été trouvé." + Globals.NL +
+      [Language.FR] = "Hebrew Letters n'a pas été trouvé." + Globals.NL +
                       SysTranslations.AskToCheckPreferences[Language.FR] + Globals.NL2 +
                       AskToDownload[Language.FR]
     };
@@ -136,12 +136,12 @@ namespace Ordisoftware.Hebrew
     static public readonly TranslationsDictionary NoticeOnlineWordProvider = new()
     {
       [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
-                      "%WORD% : the unicode value" + Globals.NL +
-                      "%FIRSTLETTER% : first letter of the unicode value",
+                      "%WORD% : the Unicode value" + Globals.NL +
+                      "%FIRSTLETTER% : first letter of the Unicode value",
 
       [Language.FR] = "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
-                      "%WORD% : la valeur unicode" + Globals.NL +
-                      "%FIRSTLETTER% : première lettre de la valeur unicode"
+                      "%WORD% : la valeur Unicode" + Globals.NL +
+                      "%FIRSTLETTER% : première lettre de la valeur Unicode"
     };
 
     static public readonly TranslationsDictionary NoticeOnlineBibleProvider = new()
@@ -171,7 +171,7 @@ namespace Ordisoftware.Hebrew
                       "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Globals.NL +
                       Globals.NL +
                       "%BOOKNUM% : Numéro du livre" + Globals.NL +
-                      "%CHAPTERNUM% : Numéro du chaptre" + Globals.NL +
+                      "%CHAPTERNUM% : Numéro du chapitre" + Globals.NL +
                       "%VERSENUM% : Numéro du verset" + Globals.NL +
                       Globals.NL +
                       "%BOOKNUM#2% : Numéro du livre sur 2 digits" + Globals.NL +
