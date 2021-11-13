@@ -314,8 +314,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
-- Add `--lunarmonths` command-line option to show the lunar months board.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -324,8 +322,14 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 ## Changelog
 
+#### In progress - Version 10.0
+
+- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+- Add `--lunarmonths` command-line option to show the lunar months board.
+
 #### In progress - Version 9.11
 
+- Fix Windows version detection.
 - Upgrade to Visual Studio 2022 and C# 10.
 - Update setup for Framework .NET 4.8
 - Code refactoring.
