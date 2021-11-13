@@ -19,7 +19,7 @@ using System.Configuration;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using InputSimulatorStandard;
+using GregsStack.InputSimulatorStandard;
 
 namespace Ordisoftware.Core
 {
