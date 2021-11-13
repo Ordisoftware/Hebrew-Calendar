@@ -56,7 +56,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.7.2
+- Framework .NET 4.8
 - SQLite 3.35.5
 
 ## Download
@@ -327,6 +327,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.11
 
 - Upgrade to Visual Studio 2022 and C# 10.
+- Update setup for Framework .NET 4.8
 - Code refactoring.
 
 #### 2021.11.09 - Version 9.10
