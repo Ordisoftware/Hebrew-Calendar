@@ -705,14 +705,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionVacuumDB_Click(object sender, EventArgs e)
     {
-      Program.Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                           .Connection
-                                                           .Optimize(Program.Settings.VacuumLastDone,
-                                                                     Program.Settings.VacuumAtStartupDaysInterval,
-                                                                     true);
+      Settings.VacuumLastDone = ApplicationDatabase.Instance
+                                                   .Connection
+                                                   .Optimize(Settings.VacuumLastDone,
+                                                             Settings.VacuumAtStartupDaysInterval,
+                                                             true);
       HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
       ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
-      ApplicationStatistics.UpdateDBParashotMemorySizeRequired = true;
       ApplicationStatistics.UpdateDBFileSizeRequired = true;
       DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
     }
