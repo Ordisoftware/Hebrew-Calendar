@@ -56,7 +56,6 @@ namespace Ordisoftware.Hebrew
     static public void Release(string name = null)
     {
       if ( !IsLockedByCurrentProcess(name) ) return;
-      // TODO remove : name = Convert(name);
       string sql = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
       Instance.Connection.Execute(sql, Globals.ProcessId);
     }
