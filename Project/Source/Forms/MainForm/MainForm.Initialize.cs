@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -46,7 +46,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       new Task(InitializeIconsAndSound).Start();
       Interlocks.Take();
-      SystemManager.TryCatch(() => { Icon = new Icon(Globals.ApplicationIconFilePath); });
+      SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
       Text = Globals.AssemblyTitle;
       ContextMenuStripDay.ImageList = ImageListRisesAndSets;
       ContextMenuDaySunrise.ImageIndex = 1;
@@ -211,8 +211,8 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var shortcutKey = DefaultHotKeyKey;
       var shortcutModifiers = DefaultHotKeyModifiers;
-      SystemManager.TryCatch(() => { shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey; });
-      SystemManager.TryCatch(() => { shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers; });
+      SystemManager.TryCatch(() => shortcutKey = (Keys)Settings.GlobalHotKeyPopupMainFormKey);
+      SystemManager.TryCatch(() => shortcutModifiers = (Modifiers)Settings.GlobalHotKeyPopupMainFormModifiers);
       Globals.BringToFrontApplicationHotKey.Key = shortcutKey;
       Globals.BringToFrontApplicationHotKey.Modifiers = shortcutModifiers;
       Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKeyPressed;
@@ -234,7 +234,7 @@ namespace Ordisoftware.Hebrew.Calendar
         var forms = Application.OpenForms.GetAll().Where(f => f.Visible);
         forms.ToList().ForEach(f => f.ForceBringToFront());
         var form = forms.LastOrDefault();
-        if ( form != null && form.Visible )
+        if ( form?.Visible == true )
           form.Popup();
       });
     }
@@ -453,7 +453,7 @@ namespace Ordisoftware.Hebrew.Calendar
         CalenderNet.BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
         CalenderNet.PenBlack = Pens.Black;
       }
-      string fontname = "Calibri";
+      const string fontname = "Calibri";
       CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
       CalendarMonth.DayOfWeekFont = new Font(fontname, sizeFont + 1);
       CalendarMonth.DayViewTimeFont = new Font(fontname, sizeFont + 1, FontStyle.Bold);

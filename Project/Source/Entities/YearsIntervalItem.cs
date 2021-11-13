@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -56,11 +56,13 @@ namespace Ordisoftware.Hebrew.Calendar
         var interval = new YearsIntervalItem(value);
         if ( interval.Length <= max && interval.Length <= Program.Settings.GenerateIntervalMaximum )
         {
-          var item = new ToolStripMenuItem();
-          item.Text = value >= 0
-                      ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
-                      : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value);
-          item.Tag = interval;
+          var item = new ToolStripMenuItem
+          {
+            Text = value >= 0
+                   ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
+                   : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
+            Tag = interval
+          };
           item.Click += handler;
           menu.Items.Add(item);
         }

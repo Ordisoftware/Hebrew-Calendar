@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -93,9 +93,9 @@ namespace Ordisoftware.Core
     /// </summary>
     static public IEnumerable<Component> GetComponents(this Form form)
     {
-#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields - N/A
-      var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields - N/A
+#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
+      const BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
       return from field in form.GetType().GetFields(flags)
              where typeof(Component).IsAssignableFrom(field.FieldType)
              let component = (Component)field.GetValue(form)
@@ -182,9 +182,7 @@ namespace Ordisoftware.Core
     static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
     {
       if ( form == null ) return;
-      if ( source != null
-        && source.Visible
-        && source.WindowState != FormWindowState.Minimized )
+      if ( source?.Visible == true && source.WindowState != FormWindowState.Minimized )
         form.Center(source.Bounds);
       else
         form.CenterToMainFormElseScreen();
@@ -235,7 +233,7 @@ namespace Ordisoftware.Core
     /// <param name="dialog">True if show dialog.</param>
     static public void Popup(this Form form, Form sender = null, bool dialog = false)
     {
-      if ( form == null || form.IsDisposed ) return;
+      if ( form?.IsDisposed != false ) return;
       if ( form.InvokeRequired )
       {
         var method = new PopupMethod(Popup);
@@ -301,7 +299,7 @@ namespace Ordisoftware.Core
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.DropDownItems )
-        if ( item.Tag is not int  || (int)item.Tag != int.MinValue )
+        if ( item.Tag is not int || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {
             var newitem = menuItem.Clone();
@@ -322,7 +320,7 @@ namespace Ordisoftware.Core
     {
       var items = new List<ToolStripItem>();
       foreach ( ToolStripItem item in source.Items )
-        if ( item.Tag is not int  || (int)item.Tag != int.MinValue )
+        if ( item.Tag is not int || (int)item.Tag != int.MinValue )
           if ( item is ToolStripMenuItem menuItem )
           {
             var newitem = menuItem.Clone();

@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
           control = menuContext.SourceControl as TextBoxEx;
         else
         if ( sender is ToolStripMenuItem menuItem )
-          control = ( menuItem.GetCurrentParent() as ContextMenuStrip ).SourceControl as TextBoxEx;
+          control = ( menuItem.GetCurrentParent() as ContextMenuStrip )?.SourceControl as TextBoxEx;
       if ( control == null )
       {
         var form = FormsHelper.GetActiveForm();
@@ -45,10 +45,10 @@ namespace Ordisoftware.Core
             control = form.ActiveControl as TextBoxEx;
           else
           if ( form.ActiveControl is UserControl )
-            control = ( form.ActiveControl as UserControl ).ActiveControl as TextBoxEx;
+            control = ( form.ActiveControl as UserControl )?.ActiveControl as TextBoxEx;
         }
       }
-      if ( doFocus && control != null && control.Enabled && !control.Focused )
+      if ( doFocus && control?.Enabled == true && !control.Focused )
         control.Focus();
       return control;
     }
@@ -56,14 +56,14 @@ namespace Ordisoftware.Core
     static private void ActionSelectAll_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       textbox.SelectAll();
     }
 
     static private void ActionCopy_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       Clipboard.SetText(textbox.SelectedText);
     }
@@ -71,7 +71,7 @@ namespace Ordisoftware.Core
     static private void ActionCut_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       if ( textbox.ReadOnly ) return;
       if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       try
@@ -92,7 +92,7 @@ namespace Ordisoftware.Core
     static private void ActionDelete_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       if ( textbox.ReadOnly ) return;
       if ( textbox.SelectedText.IsNullOrEmpty() ) return;
       try
@@ -112,7 +112,7 @@ namespace Ordisoftware.Core
     static private void ActionPaste_Click(object sender, EventArgs e)
     {
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       if ( textbox.ReadOnly ) return;
       if ( Clipboard.GetText().IsNullOrEmpty() ) return;
       try
@@ -165,7 +165,7 @@ namespace Ordisoftware.Core
       //}
 
       var textbox = GetTextBoxAndFocus(sender);
-      if ( textbox == null || !textbox.Enabled ) return;
+      if ( textbox?.Enabled != true ) return;
       if ( textbox.ReadOnly ) return;
       //if ( textbox.UndoStack.Count == 0 ) return;
       try

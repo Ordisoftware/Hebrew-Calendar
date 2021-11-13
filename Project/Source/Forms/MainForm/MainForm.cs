@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -251,7 +251,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( sender is not ToolStripItem ) return;
       if ( LastToolTip.Tag == sender ) return;
       LastToolTip.Tag = sender;
-      if ( ( (ToolStripItem)sender ).ToolTipText == string.Empty ) return;
+      if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
       TimerTooltip.Enabled = true;
     }
 
@@ -517,9 +517,9 @@ namespace Ordisoftware.Hebrew.Calendar
           DisplayManager.Show(title.GetLang(), text.GetLang());
           break;
         case MessageBoxFormStyle.Advanced:
-          var form = MessageBoxEx.Instances.FirstOrDefault(f => f.Text == title.GetLang());
-          if ( form == null )
-            form = new MessageBoxEx(title, text, width: width); form.ShowInTaskbar = true;
+          var form = MessageBoxEx.Instances.Find(f => f.Text == title.GetLang())
+                     ?? new MessageBoxEx(title, text, width: width);
+          form.ShowInTaskbar = true;
           form.Popup(null, sender == null);
           break;
         default:
@@ -860,7 +860,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void ActionViewCelebrations_Click(object sender, EventArgs e)
     {
-      if ( NextCelebrationsForm.Instance != null && NextCelebrationsForm.Instance.Visible )
+      if ( NextCelebrationsForm.Instance?.Visible == true )
         NextCelebrationsForm.Instance.BringToFront();
       else
         NextCelebrationsForm.Run();
@@ -1034,9 +1034,11 @@ namespace Ordisoftware.Hebrew.Calendar
       MenuEnableReminder.PerformClick();
     }
 
+
     /// <summary>
     /// Event handler. Called by TimerMidnight for tick events.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
     private void TimerMidnight_Tick(DateTime Time)
     {
       DoTimerMidnight();
@@ -1081,7 +1083,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
         if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
           if ( sender == ContextMenuDayParashahShowDescription )
-            ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+            ParashotForm.ShowParashahDescription(parashah, day.HasLinkedParashah);
           else
           if ( sender == ContextMenuDayParashotBoard )
             ParashotForm.Run(parashah);

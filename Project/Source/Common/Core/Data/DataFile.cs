@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -27,27 +27,27 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate source file path in application documents folder.
     /// </summary>
-    public string FilePathDefault { get; private set; }
+    public string FilePathDefault { get; }
 
     /// <summary>
     /// Indicate source file path in user data folder.
     /// </summary>
-    public string FilePath { get; private set; }
+    public string FilePath { get; }
 
     /// <summary>
     /// Indicate if file not found error must be shown on load.
     /// </summary>
-    public bool ShowFileNotFound { get; private set; }
+    public bool ShowFileNotFound { get; }
 
     /// <summary>
     /// Indicate if the list is configurable by using the user data folder.
     /// </summary>
-    public bool Configurable { get; private set; }
+    public bool Configurable { get; }
 
     /// <summary>
     /// Indicate the folder.
     /// </summary>
-    public DataFileFolder Folder { get; private set; }
+    public DataFileFolder Folder { get; }
 
     /// <summary>
     /// Constructor.

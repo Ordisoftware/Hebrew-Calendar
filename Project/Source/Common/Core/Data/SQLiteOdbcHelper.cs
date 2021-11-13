@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -80,7 +80,7 @@ namespace Ordisoftware.Core
       try
       {
         Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-        var key = Registry.CurrentUser.OpenSubKey(@"Software", true);
+        var key = Registry.CurrentUser.OpenSubKey("Software", true);
         key = key.CreateSubKey("ODBC", true);
         key = key.CreateSubKey("ODBC.INI", true);
         key = key.CreateSubKey("ODBC Data Sources", true);
@@ -161,9 +161,9 @@ namespace Ordisoftware.Core
     {
       SystemManager.TryCatchManage(() =>
       {
-        using ( var command = new OdbcCommand("VACUUM", connection) )
-          if ( command.ExecuteNonQuery() != 0 )
-            throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang());
+        using var command = new OdbcCommand("VACUUM", connection);
+        if ( command.ExecuteNonQuery() != 0 )
+          throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang());
       });
     }
 
@@ -174,19 +174,19 @@ namespace Ordisoftware.Core
     /// <param name="table"></param>
     static public void DropTableIfExists(this OdbcConnection connection, string table)
     {
-      string argnameTable = nameof(table);
+      const string argnameTable = nameof(table);
       SystemManager.TryCatchManage(() =>
       {
         if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
-        using ( var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection) )
-          try
-          {
-            command.ExecuteNonQuery();
-          }
-          catch ( Exception ex )
-          {
-            throw new SQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
-          }
+        using var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection);
+        try
+        {
+          command.ExecuteNonQuery();
+        }
+        catch ( Exception ex )
+        {
+          throw new SQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
+        }
       });
     }
 
@@ -202,22 +202,20 @@ namespace Ordisoftware.Core
       try
       {
         if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
-        using ( var commandCheck = connection.CreateCommand() )
-        {
-          commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
-          commandCheck.Parameters.Add("@table", OdbcType.Text).Value = table;
-          if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
-          if ( !sql.IsNullOrEmpty() )
-            using ( var commandCreate = new OdbcCommand(sql, connection) )
-              try
-              {
-                commandCreate.ExecuteNonQuery();
-              }
-              catch ( Exception ex )
-              {
-                throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
-              }
-        }
+        using var commandCheck = connection.CreateCommand();
+        commandCheck.CommandText = "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
+        commandCheck.Parameters.Add("@table", OdbcType.Text).Value = table;
+        if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
+        if ( !sql.IsNullOrEmpty() )
+          using ( var commandCreate = new OdbcCommand(sql, connection) )
+            try
+            {
+              commandCreate.ExecuteNonQuery();
+            }
+            catch ( Exception ex )
+            {
+              throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
+            }
       }
       catch ( Exception ex )
       {
@@ -238,22 +236,20 @@ namespace Ordisoftware.Core
       try
       {
         if ( index.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(index));
-        using ( var commandCheck = connection.CreateCommand() )
-        {
-          commandCheck.CommandText = $"SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
-          commandCheck.Parameters.Add("@index", OdbcType.Text).Value = index;
-          if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
-          if ( !sql.IsNullOrEmpty() )
-            using ( var commandCreate = new OdbcCommand(sql, connection) )
-              try
-              {
-                commandCreate.ExecuteNonQuery();
-              }
-              catch ( Exception ex )
-              {
-                throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
-              }
-        }
+        using var commandCheck = connection.CreateCommand();
+        commandCheck.CommandText = "SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
+        commandCheck.Parameters.Add("@index", OdbcType.Text).Value = index;
+        if ( (int)commandCheck.ExecuteScalar() != 0 ) return true;
+        if ( !sql.IsNullOrEmpty() )
+          using ( var commandCreate = new OdbcCommand(sql, connection) )
+            try
+            {
+              commandCreate.ExecuteNonQuery();
+            }
+            catch ( Exception ex )
+            {
+              throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(UnformatSQL(sql)), ex);
+            }
       }
       catch ( Exception ex )
       {
@@ -276,25 +272,23 @@ namespace Ordisoftware.Core
       {
         if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
         if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
-        using ( var commandCheck = new OdbcCommand($"PRAGMA table_info({table})", connection) )
-        using ( var readerCheck = commandCheck.ExecuteReader() )
+        using var commandCheck = new OdbcCommand($"PRAGMA table_info({table})", connection);
+        using var readerCheck = commandCheck.ExecuteReader();
+        int nameIndex = readerCheck.GetOrdinal("Name");
+        while ( readerCheck.Read() )
+          if ( readerCheck.GetString(nameIndex).Equals(column) )
+            return true;
+        if ( !sql.IsNullOrEmpty() )
         {
-          int nameIndex = readerCheck.GetOrdinal("Name");
-          while ( readerCheck.Read() )
-            if ( readerCheck.GetString(nameIndex).Equals(column) )
-              return true;
-          if ( !sql.IsNullOrEmpty() )
+          sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
+          using var commandCreate = new OdbcCommand(sql, connection);
+          try
           {
-            sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
-            using ( var commandCreate = new OdbcCommand(sql, connection) )
-              try
-              {
-                commandCreate.ExecuteNonQuery();
-              }
-              catch ( Exception ex )
-              {
-                throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
-              }
+            commandCreate.ExecuteNonQuery();
+          }
+          catch ( Exception ex )
+          {
+            throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
           }
         }
       }
@@ -342,11 +336,9 @@ namespace Ordisoftware.Core
       int count = -1;
       try
       {
-        using ( var command = new OdbcCommand($"SELECT COUNT(ID) FROM [{table}]", connection) )
-        {
-          var reader = command.ExecuteReader();
-          if ( reader.Read() ) count = (int)reader[0];
-        }
+        using var command = new OdbcCommand($"SELECT COUNT(ID) FROM [{table}]", connection);
+        var reader = command.ExecuteReader();
+        if ( reader.Read() ) count = (int)reader[0];
       }
       catch ( Exception ex )
       {

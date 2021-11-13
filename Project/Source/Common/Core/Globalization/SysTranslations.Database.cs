@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -38,14 +38,14 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary FatalGenerateError = new()
     {
       [Language.EN] = "Fatal error while generating data." + Globals.NL +
-                       ApplicationMustExit[Language.EN] + Globals.NL +
-                       ContactSupport[Language.EN] + Globals.NL2 +
-                       "{0}",
+                      ApplicationMustExit[Language.EN] + Globals.NL +
+                      ContactSupport[Language.EN] + Globals.NL2 +
+                      "{0}",
 
       [Language.FR] = "Erreur fatale lors de la génération des données." + Globals.NL +
-                       ApplicationMustExit[Language.FR] + Globals.NL +
-                       ContactSupport[Language.FR] + Globals.NL2 +
-                       "{0}"
+                      ApplicationMustExit[Language.FR] + Globals.NL +
+                      ContactSupport[Language.FR] + Globals.NL2 +
+                      "{0}"
     };
 
     static public readonly TranslationsDictionary DatabaseIntegrityError = new()
@@ -68,12 +68,12 @@ namespace Ordisoftware.Core
     static public readonly TranslationsDictionary DatabaseVacuumError = new()
     {
       [Language.EN] = "Database vacuum failed.",
-      [Language.FR] = "Echec du vacuum de la base de données."
+      [Language.FR] = "Échec du vacuum de la base de données."
     };
 
     static public readonly TranslationsDictionary DatabaseVacuumSuccess = new()
     {
-      [Language.EN] = "Database vacuum successed.",
+      [Language.EN] = "Database vacuum succeeded.",
       [Language.FR] = "Succès du vacuum de la base de données."
     };
 
@@ -114,7 +114,7 @@ namespace Ordisoftware.Core
                       AskToContinue[Language.EN],
 
       [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut." + Globals.NL2 +
-                      "Toutes les moidifications seront perdues et l'action ne pourra pas être annulée." + Globals.NL2 +
+                      "Toutes les modifications seront perdues et l'action ne pourra pas être annulée." + Globals.NL2 +
                       AskToContinue[Language.FR]
     };
 

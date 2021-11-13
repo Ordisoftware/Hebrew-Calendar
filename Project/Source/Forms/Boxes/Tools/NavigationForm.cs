@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -72,12 +72,11 @@ namespace Ordisoftware.Hebrew.Calendar
           LabelMoonsetValue.Visible = row.Moonset != null;
           LabelMoonset.Visible = row.Moonset != null;
           LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
-          if ( LabelEventSeasonValue.Text == string.Empty ) LabelEventSeasonValue.Text = NoDataField;
+          if ( LabelEventSeasonValue.Text.Length == 0 ) LabelEventSeasonValue.Text = NoDataField;
           LabelEventTorahValue.Text = row.TorahEventText;
-          if ( LabelEventTorahValue.Text == string.Empty )
+          if ( LabelEventTorahValue.Text.Length == 0 )
             LabelEventTorahValue.Text = NoDataField;
-          var rowNext = LunisolarDays.FirstOrDefault(day => day.Date > value
-                                                         && day.TorahEvent != TorahCelebrationDay.None);
+          var rowNext = LunisolarDays.Find(day => day.Date > value && day.TorahEvent != TorahCelebrationDay.None);
           if ( rowNext != null )
           {
             var date = rowNext.Date;
@@ -307,7 +306,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( LabelParashahValue.Tag is LunisolarDay day )
       {
         var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-        ParashotForm.ShowParashahDescription(this, parashah, day.HasLinkedParashah);
+        ParashotForm.ShowParashahDescription(parashah, day.HasLinkedParashah);
       }
     }
 

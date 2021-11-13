@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -31,10 +31,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public void Run(DateTime date)
     {
-      var row = ApplicationDatabase.Instance
-                                   .LunisolarDays
-                                   .FirstOrDefault(day => day.Date >= date
-                                                       && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+      var days = ApplicationDatabase.Instance.LunisolarDays;
+      var row = days.Find(day => day.Date >= date && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
       Run(row?.TorahEvent ?? TorahCelebrationDay.None);
     }
 
@@ -119,11 +117,8 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( celebration == TorahCelebrationDay.None )
       {
         var dateStart = DateTime.Today;
-        var day = ApplicationDatabase.Instance
-                                     .LunisolarDays
-                                     .FirstOrDefault(d => d.Date >= dateStart 
-                                                       && d.HasTorahEvent 
-                                                       && d.TorahEvent != TorahCelebrationDay.NewYearD1);
+        var days = ApplicationDatabase.Instance.LunisolarDays;
+        var day = days.Find(d => d.Date >= dateStart && d.HasTorahEvent && d.TorahEvent != TorahCelebrationDay.NewYearD1);
         if ( day != null ) celebration = day.TorahEvent;
       }
       if ( celebration == TorahCelebrationDay.NewYearD10 )
@@ -224,8 +219,8 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace("_", " "));
         item.Tag = reference;
-        item.SubItems.Add(reference.Item2.ToString());
-        item.SubItems.Add(reference.Item3.ToString());
+        item.SubItems.Add(reference.Item2);
+        item.SubItems.Add(reference.Item3);
       }
       if ( SelectVerse.Items.Count > 0 )
       {

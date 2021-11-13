@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -165,7 +165,7 @@ namespace Ordisoftware.Core
       SystemManager.TryCatchManage(() =>
       {
         var query = new StringBuilder();
-        query.Append("&title=" + ErrorInfo.Instance.GetType().Name + " in " + Globals.AssemblyTitleWithVersion);
+        query.Append("&title=").Append(ErrorInfo.Instance.GetType().Name).Append(" in ").Append(Globals.AssemblyTitleWithVersion);
         query.Append("&labels=type: bug");
         query.Append("&body=");
         query.Append(WebUtility.UrlEncode(CreateBody().ToString()));
@@ -186,16 +186,15 @@ namespace Ordisoftware.Core
       if ( ErrorInfo == null ) return;
       SystemManager.TryCatchManage(() =>
       {
-        var message = new MailMessage();
+        using var message = new MailMessage();
         message.To.Add(Globals.SupportEMail);
         message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
         string body = CreateBody().ToString();
         if ( body.Length > 2000 )
-          message.Body = body.ToString().Substring(0, 2000);
+          message.Body = body.Substring(0, 2000);
         else
-          message.Body = body.ToString();
-        string query = message.ToUrl();
-        SystemManager.RunShell(query.ToString());
+          message.Body = body;
+        SystemManager.RunShell(message.ToUrl());
       });
     }
 
@@ -213,11 +212,11 @@ namespace Ordisoftware.Core
       body.AppendLine();
       body.AppendLine("```");
       body.AppendLine(SystemManager.Platform);
-      body.AppendLine("Total Memory: " + SystemManager.TotalVisibleMemory);
-      body.AppendLine("Free Memory: " + SystemManager.PhysicalMemoryFree);
+      body.Append("Total Memory: ").AppendLine(SystemManager.TotalVisibleMemory);
+      body.Append("Free Memory: ").AppendLine(SystemManager.PhysicalMemoryFree);
       body.AppendLine("```");
       body.AppendLine();
-      body.AppendLine("## ERROR : " + ErrorInfo.Instance.GetType().Name);
+      body.Append("## ERROR : ").AppendLine(ErrorInfo.Instance.GetType().Name);
       body.AppendLine();
       body.AppendLine(ErrorInfo.Message);
       body.AppendLine();
@@ -230,7 +229,7 @@ namespace Ordisoftware.Core
       while ( inner != null )
       {
         body.AppendLine();
-        body.AppendLine("## INNER : " + inner.Instance.GetType().Name);
+        body.Append("## INNER : ").AppendLine(inner.Instance.GetType().Name);
         body.AppendLine();
         body.AppendLine(inner.Message);
         body.AppendLine();

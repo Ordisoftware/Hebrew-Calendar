@@ -3,10 +3,10 @@
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Ordisoftware.Core
 {
@@ -64,7 +65,8 @@ namespace Ordisoftware.Core
 
     public event InsertingTextEventHandler InsertingText;
 
-    public event System.ComponentModel.CancelEventHandler ContextMenuEditOpening
+#pragma warning disable RCS1159 // Use EventHandler<T>.
+    public event CancelEventHandler ContextMenuEditOpening
     {
       add { ContextMenuEdit.Opening += value; }
       remove { ContextMenuEdit.Opening -= value; }
@@ -81,6 +83,7 @@ namespace Ordisoftware.Core
       add { ContextMenuEdit.Closed += value; }
       remove { ContextMenuEdit.Closed -= value; }
     }
+#pragma warning restore RCS1159 // Use EventHandler<T>.
 
     public override string Text
     {

@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -35,9 +35,11 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         string CSVSeparator = Globals.CSVSeparator.ToString();
         string headerTxt = string.Empty;
+#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
         foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
           headerTxt += field.ToString() + Globals.CSVSeparator;
         headerTxt = headerTxt.Remove(headerTxt.Length - 1);
+#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
         var result = new StringBuilder();
         result.AppendLine(headerTxt);
         if ( LunisolarDays.Count == 0 ) return null;
@@ -52,22 +54,22 @@ namespace Ordisoftware.Hebrew.Calendar
           var dayDate = day.Date;
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-          result.Append(day.DateAsString + CSVSeparator);
-          result.Append(day.IsNewMoon + CSVSeparator);
-          result.Append(day.IsFullMoon + CSVSeparator);
-          result.Append(day.LunarMonth + CSVSeparator);
-          result.Append(day.LunarDay + CSVSeparator);
-          result.Append(day.SunriseAsString + CSVSeparator);
-          result.Append(day.SunsetAsString + CSVSeparator);
-          result.Append(day.MoonriseAsString + CSVSeparator);
-          result.Append(day.MoonsetAsString + CSVSeparator);
+          result.Append(day.DateAsString).Append(CSVSeparator);
+          result.Append(day.IsNewMoon).Append(CSVSeparator);
+          result.Append(day.IsFullMoon).Append(CSVSeparator);
+          result.Append(day.LunarMonth).Append(CSVSeparator);
+          result.Append(day.LunarDay).Append(CSVSeparator);
+          result.Append(day.SunriseAsString).Append(CSVSeparator);
+          result.Append(day.SunsetAsString).Append(CSVSeparator);
+          result.Append(day.MoonriseAsString).Append(CSVSeparator);
+          result.Append(day.MoonsetAsString).Append(CSVSeparator);
           string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings);
           string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases);
           string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges);
           string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays);
-          result.Append(strMoonriseType + CSVSeparator);
-          result.Append(strPhase + CSVSeparator);
-          result.Append(strSeason + CSVSeparator);
+          result.Append(strMoonriseType).Append(CSVSeparator);
+          result.Append(strPhase).Append(CSVSeparator);
+          result.Append(strSeason).Append(CSVSeparator);
           result.AppendLine(strEvent);
         }
         return result.ToString();

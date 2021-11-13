@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -59,7 +59,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly TranslationsDictionary AskToResetPreferences = new()
     {
       [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
-                      "GPS location, Shabat day and bookmarks will be keeped." + Globals.NL2 +
+                      "GPS location, Shabat day and bookmarks will be kept." + Globals.NL2 +
                       SysTranslations.AskToContinue[Language.EN],
 
       [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
@@ -69,7 +69,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public readonly TranslationsDictionary LoadingCitiesError = new()
     {
-      [Language.EN] = "Error on loading the cities' GPS coordonates." + Globals.NL +
+      [Language.EN] = "Error on loading the cities' GPS coordinates." + Globals.NL +
                       SysTranslations.ApplicationMustExit[Language.EN],
 
       [Language.FR] = "Impossible de charger les coordonnées GPS des villes." + Globals.NL +
@@ -114,7 +114,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static public readonly TranslationsDictionary AskToUseLastDayOfSukotForSimhatTorah = new()
     {
-      [Language.EN] = "Do you want to use the last day of Sukot for Simhat Torah, otherwise outside?",
+      [Language.EN] = "Do you want to use the last day of Sukot for Sim'hat Torah, otherwise outside?",
       [Language.FR] = "Voulez-vous utiliser le dernier jour de Soukot pour Sim'hat Torah, sinon en dehors ?"
     };
 

@@ -3,10 +3,10 @@
 /// Copyright 2016-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at 
+/// If a copy of the MPL was not distributed with this file, You can obtain one at
 /// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file, 
-/// then You may include the notice in a location(such as a LICENSE file in a 
+/// If it is not possible or desirable to put the notice in a particular file,
+/// then You may include the notice in a location(such as a LICENSE file in a
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
@@ -44,11 +44,9 @@ namespace Ordisoftware.Hebrew.Calendar
     static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
     {
       bool isShabat = celebration == TorahCelebrationDay.Shabat;
-      //bool showParashah = false;
-      bool doLockSession = false;
+      bool doLockSession;
       var dateNow = DateTime.Now;
-      if ( times.DateStart != null && times.DateEnd != null )
-        doLockSession = dateNow >= times.DateStart && dateNow <= times.DateEnd;
+      doLockSession = dateNow >= times.DateStart && dateNow <= times.DateEnd;
       bool isLockSessionIcon = doLockSession && Program.Settings.ReminderShowLockoutIcon;
       try
       {
@@ -80,25 +78,24 @@ namespace Ordisoftware.Hebrew.Calendar
               return;
             }
         }
-        form = new ReminderForm();
-        form.IsShabat = isShabat;
-        form.Celebration = row.TorahEvent;
+        form = new ReminderForm
+        {
+          IsShabat = isShabat,
+          Celebration = row.TorahEvent
+        };
         var date = row.Date;
         form.LabelTitle.Text = isShabat
                                ? AppTranslations.Shabat.GetLang()
                                : AppTranslations.TorahCelebrationDays.GetLang(celebration == TorahCelebrationDay.None
-                                                                    ? row.TorahEvent
-                                                                    : celebration);
+                                 ? row.TorahEvent
+                                 : celebration);
         form.LabelDate.Text = isShabat
                               ? date.ToLongDateString().Titleize()
                               : row.DayAndMonthWithYearText;
-        if ( times.DateStart != null && times.DateEnd != null )
-        {
-          form.LabelStartTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
-          form.LabelEndTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
-          form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
-          form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
-        }
+        form.LabelStartTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
+        form.LabelEndTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
+        form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
+        form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
         int left1 = form.LabelStartTime.Left + form.LabelStartTime.Width;
         int left2 = left1 + form.LabelArrow.Width;
         form.LabelArrow.Left = left1;
@@ -129,7 +126,7 @@ namespace Ordisoftware.Hebrew.Calendar
           {
             form.LabelParashahValue.Text = string.Empty;
             form.Height -= form.LabelParashahValue.Height;
-            form.ActionLockout.Top -= (int)(form.LabelParashahValue.Height * 0.75);
+            form.ActionLockout.Top -= (int)( form.LabelParashahValue.Height * 0.75 );
           }
         }
         form.ActionLockout.Visible = isLockSessionIcon;
