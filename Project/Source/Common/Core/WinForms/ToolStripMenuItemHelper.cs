@@ -44,16 +44,16 @@ namespace Ordisoftware.Core
     public static ToolStripMenuItem Clone(this ToolStripMenuItem sourceToolStripMenuItem)
     {
       var menuItem = new ToolStripMenuItem();
-
+#pragma warning disable RCS1202 // Avoid NullReferenceException.
       var propInfoList = from p in typeof(ToolStripMenuItem).GetProperties()
                          let attributes = p.GetCustomAttributes(true)
                          let notBrowseable = ( from a in attributes
                                                where a is BrowsableAttribute
-                                               select !( a as BrowsableAttribute )?.Browsable ).FirstOrDefault()
-                         where notBrowseable == false && p.CanRead && p.CanWrite && p.Name != "DropDown"
+                                               select !( a as BrowsableAttribute ).Browsable ).FirstOrDefault()
+                         where !notBrowseable && p.CanRead && p.CanWrite && p.Name != "DropDown"
                          orderby p.Name
                          select p;
-
+#pragma warning restore RCS1202 // Avoid NullReferenceException.
       // Copy over using reflections
       foreach ( var propertyInfo in propInfoList )
       {
