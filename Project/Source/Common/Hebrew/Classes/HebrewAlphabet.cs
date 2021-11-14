@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew
   /// Provide hebrew letters class to manage hebrew font and unicode chars
   /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
   /// </summary>
-  static partial class HebrewAlphabet
+  static class HebrewAlphabet
   {
 
     public const int ConcordanceFirst = 1;
