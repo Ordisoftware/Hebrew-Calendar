@@ -126,7 +126,7 @@
     <value>0, 0</value>
   </data>
   <data name="PanelLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 150</value>
+    <value>510, 160</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelLetters.TabIndex" type="System.Int32, mscorlib">
@@ -148,7 +148,7 @@
     <value>Bottom</value>
   </data>
   <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 150</value>
+    <value>0, 160</value>
   </data>
   <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>510, 8</value>
@@ -174,7 +174,7 @@
   <data name="ActionLetterAddAtCaret.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAIBJREFUOE9jGAU0AFlZWcfT0tL+Jycn/09KSgJjEBskBpKDKsMN0tPT/9+6fef/
+        vAAADrwBlbxySQAAAIBJREFUOE9jGAU0AFlZWcfT0tL+Jycn/09KSgJjEBskBpKDKsMN0tPT/9+6fef/
         k6cv/j989BSMQWyQGEgOqgwvME4G2rpv/4H/m7ZuB2MQGyQGkoMoIQyMQc5eu249GIPYIDGIFPHAGORk
         ELaysoqBipEMQLaCMBeYNwpoARgYAI5dTX4pDTi0AAAAAElFTkSuQmCC
 </value>
@@ -188,7 +188,7 @@
   <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
+        wgAADsIBFShKgAAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
         Vf8fPX7yv66uDsVQnGD12vX/q2vqwYorKyv+P3v+/P/CxUv/19bWEmfAitVr/5dV1Pyvqa7+/+Hjp/+r
         gAZu2LSFeAOWrVj1v7ik/H9NTc3/t+/e/t+5Z+//vQcPgflQJfjB4qXL/+cXFIMUG4O88ODR4//nL14i
         3oAFS5b+z84thCk2BgXi0WPHiQ/ECZOnHMrIzEFWbAyMQlAYfIbyCQIVIDaGMOEAxDeAMIcRYGAAAHbg
@@ -204,7 +204,7 @@
   <data name="ActionLetterAddAtStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
+        wgAADsIBFShKgAAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
         pL6x5f+6DZtQDMUJamtr/y9cvPT/o8dP/ldWVoA1VdfU/1+9dj3xBmzYtAWs4e279/9rqqv/l1XU/F+x
         ei1xBtTU1Pzfd/DQ/5179/1/9fr1fxC/uKT8/7IVq4g34PzFS//v3rsP9EIlSJNxfkHx/8VLlxNnACgQ
         Dxw69L8aEojGILHs3ML/C5YsJc6A0tLSg9BoBGsGgYzMnP8TJk85BOUSBCpADNcMBSA+SHx4AQYGABFB
@@ -223,7 +223,7 @@
   <data name="ActionLetterViewDetails.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAnNJREFUOE+Vkt9Lk1EYx18omCMIggJH0B/QRb+8iOiimyiq/6Uru9EhWWJQSIho
+        vAAADrwBlbxySQAAAnNJREFUOE+Vkt9Lk1EYx18omCMIggJH0B/QRb+8iOiimyiq/6Uru9EhWWJQSIho
         tc3pzKVb5lbsfd3mTGuba/4s5973ne2HY2v2a2ory1X27Tmn+WpQF37hy3nO4Xk+z3MOR2CyOtwdnQ4X
         LP2Dmq2OQfQNuFqP35SO7G8KnDDc8NVs+hD5YLPvZKXYFfeHp6Fk3+H1m6Jmlfaj41O4anNjd70XOqOE
         qnqRLEFP8d4GCdVNvqJgoc7ppRVEYymEZ1XN0VgSmcIKLA8e4X9iEA5Q0nksf1lHqbyB4loZpfUN2peh
@@ -259,7 +259,7 @@
     <value>Hebrew, 18pt, style=Bold</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 158</value>
+    <value>0, 168</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>510, 42</value>
@@ -274,7 +274,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -289,7 +289,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 200</value>
+    <value>510, 210</value>
   </data>
   <data name="&gt;&gt;ActionLetterAddAtCaret.Name" xml:space="preserve">
     <value>ActionLetterAddAtCaret</value>
