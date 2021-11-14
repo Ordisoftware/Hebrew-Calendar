@@ -169,4 +169,7 @@
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Tableau des parashot</value>
   </data>
+  <data name="LabelCurrentDayValue.Text" xml:space="preserve">
+    <value>Jour</value>
+  </data>
 </root>

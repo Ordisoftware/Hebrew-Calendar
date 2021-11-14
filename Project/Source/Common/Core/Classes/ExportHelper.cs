@@ -22,11 +22,11 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide export helper.
   /// </summary>
-  static partial class ExportHelper
+  static class ExportHelper
   {
 
     static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
-      where T : struct, Enum
+    where T : struct, Enum
     {
       var result = new NullSafeOfStringDictionary<T>();
       foreach ( var value in Enums.GetValues<T>() )
@@ -36,7 +36,7 @@ namespace Ordisoftware.Core
     }
 
     static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
-      where T : struct, Enum
+    where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => !list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
@@ -44,7 +44,7 @@ namespace Ordisoftware.Core
     }
 
     static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
-      where T : struct, Enum
+    where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
     }
 
     static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
-      where T : struct, Enum
+    where T : struct, Enum
     {
       string str = SysTranslations.FileExtensionFilter.GetLang();
       var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");

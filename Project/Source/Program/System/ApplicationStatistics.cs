@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// provide application statistics.
   /// </summary>
-  partial class ApplicationStatistics
+  class ApplicationStatistics
   {
 
     static public readonly ApplicationStatistics Instance = new();

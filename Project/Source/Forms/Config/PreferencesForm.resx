@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1422,7 +1422,7 @@
     <value>5</value>
   </data>
   <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
-    <value>Check frequency in number of days:</value>
+    <value>Check frequency in number of days</value>
   </data>
   <data name="&gt;&gt;LabelCheckUpdateFrequency.Name" xml:space="preserve">
     <value>LabelCheckUpdateFrequency</value>
@@ -4263,7 +4263,7 @@
     <value>6</value>
   </data>
   <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
-    <value>Hours before remind </value>
+    <value>Hours before remind</value>
   </data>
   <data name="&gt;&gt;LabelRemindShabatHoursBefore.Name" xml:space="preserve">
     <value>LabelRemindShabatHoursBefore</value>

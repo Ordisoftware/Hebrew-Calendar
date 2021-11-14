@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide date item read only dictionary wher items are initialized each time a date is not present.
   /// </summary>
-  partial class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
+  class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   {
 
     static public readonly CalendarDates Instance = new();

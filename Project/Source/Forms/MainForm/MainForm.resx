@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Text files|*.txt</value>
   </data>
   <data name="CalendarText.AccessibleDescription" xml:space="preserve">
-    <value>w</value>
+    <value></value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CalendarText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -394,7 +394,7 @@
     <value>de {0}</value>
   </data>
   <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
-    <value>Nombre total d'éléments</value>
+    <value></value>
   </data>
   <data name="LabelGridGoToToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 22</value>
@@ -423,7 +423,7 @@
     <value>23, 22</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Text" xml:space="preserve">
-    <value>Placer en premier</value>
+    <value></value>
   </data>
   <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -441,13 +441,13 @@
     <value>23, 22</value>
   </data>
   <data name="bindingNavigatorMovePreviousItem.Text" xml:space="preserve">
-    <value>Déplacer vers le haut</value>
+    <value></value>
   </data>
   <data name="bindingNavigatorSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
   <data name="bindingNavigatorPositionItem.AccessibleName" xml:space="preserve">
-    <value>Position</value>
+    <value></value>
   </data>
   <data name="bindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -465,7 +465,7 @@
     <value>Center</value>
   </data>
   <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
-    <value>Position actuelle</value>
+    <value></value>
   </data>
   <data name="bindingNavigatorSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -486,7 +486,7 @@
     <value>23, 22</value>
   </data>
   <data name="bindingNavigatorMoveNextItem.Text" xml:space="preserve">
-    <value>Déplacer vers le bas</value>
+    <value></value>
   </data>
   <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -506,7 +506,7 @@
     <value>23, 22</value>
   </data>
   <data name="bindingNavigatorMoveLastItem.Text" xml:space="preserve">
-    <value>Placer en dernier</value>
+    <value></value>
   </data>
   <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>

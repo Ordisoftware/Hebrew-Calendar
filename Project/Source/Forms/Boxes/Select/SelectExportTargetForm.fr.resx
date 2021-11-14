@@ -172,9 +172,6 @@
   <data name="GroupBoxView.Text" xml:space="preserve">
     <value>Vue</value>
   </data>
-  <data name="GroupBoxOptions.Text" xml:space="preserve">
-    <value>Options :</value>
-  </data>
   <data name="GroupBoxSettings.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>

@@ -28,7 +28,7 @@ namespace Ordisoftware.Core
     }
 
     public ComboBox.ObjectCollection Items
-      => SelectValue?.Items ?? null;
+      => SelectValue?.Items;
 
     public int Count
       => SelectValue?.Items.Count ?? -1;
@@ -41,7 +41,7 @@ namespace Ordisoftware.Core
 
     public object SelectedItem
     {
-      get => SelectValue?.SelectedItem ?? null;
+      get => SelectValue?.SelectedItem;
       set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
     }
 

@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide astronomy helper.
   /// </summary>
-  static partial class AstronomyHelper
+  static class AstronomyHelper
   {
 
     /// <summary>

@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide Torah event item to be displayed in a control.
   /// </summary>
-  partial class TorahEventItem
+  class TorahEventItem
   {
 
     /// <summary>

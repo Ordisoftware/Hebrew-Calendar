@@ -24,12 +24,12 @@ namespace Infralution.Localization
 {
   /// <summary>
   /// Defines a component for managing the User Interface culture for
-  /// a form (or control) and allows the <see cref="UICulture"/> of an individual form 
+  /// a form (or control) and allows the <see cref="UICulture"/> of an individual form
   /// or entire application be changed dynamically.
   /// </summary>
   /// <remarks>
-  /// This handles forms and components developed in C# and VB.NET but may or may not 
-  /// work for components/forms developed in other languages depending on how the language 
+  /// This handles forms and components developed in C# and VB.NET but may or may not
+  /// work for components/forms developed in other languages depending on how the language
   /// handles resource naming and serialization.
   /// </remarks>
   [ToolboxItem(true)]
@@ -68,62 +68,42 @@ namespace Infralution.Localization
     private CultureInfo _uiCulture;
 
     /// <summary>
-    /// If true form size is preserved when changing culture
-    /// </summary>
-    private bool _preserveFormSize = true;
-
-    /// <summary>
-    /// If true form location is preserved when changing culture
-    /// </summary>
-    private bool _preserveFormLocation = true;
-
-    /// <summary>
     /// Properties to be excluded when applying culture resources
     /// </summary>
-    private List<string> _excludeProperties = new List<string>();
-
-    /// <summary>
-    /// Should the Form <see cref="UICulture"/> be changed when the 
-    /// <see cref="ApplicationUICulture"/> changes.
-    /// </summary>
-    private bool _synchronizeUICulture = true;
+    private List<string> _excludeProperties = new();
 
     /// <summary>
     /// The current auto scale factor
     /// </summary>
-    private SizeF _autoScaleFactor = new SizeF(1, 1);
+    private SizeF _autoScaleFactor = new(1, 1);
 
     #endregion
 
     #region Public Static Methods
 
     /// <summary>
-    /// Represents the method that will handle the <see cref="UICultureChanged"/> event   
+    /// Represents the method that will handle the <see cref="UICultureChanged"/> event
     /// </summary>
     public delegate void CultureChangedHandler(CultureInfo newCulture);
 
     /// <summary>
-    /// Raised when the <see cref="ApplicationUICulture"/> is changed  
+    /// Raised when the <see cref="ApplicationUICulture"/> is changed
     /// </summary>
     public static event CultureChangedHandler ApplicationUICultureChanged;
 
     /// <summary>
-    /// Set/Get the UICulture for whole application. 
+    /// Set/Get the UICulture for whole application.
     /// </summary>
     /// <remarks>
-    /// Setting this property changes the <see cref="Thread.CurrentUICulture"/> 
-    /// and sets the <see cref="UICulture"/> for all <see cref="CultureManager">CultureManagers</see> 
-    /// to the given culture.  
+    /// Setting this property changes the <see cref="Thread.CurrentUICulture"/>
+    /// and sets the <see cref="UICulture"/> for all <see cref="CultureManager">CultureManagers</see>
+    /// to the given culture.
     /// </remarks>
     public static CultureInfo ApplicationUICulture
     {
       get
       {
-        if ( _applicationUICulture == null )
-        {
-          _applicationUICulture = Thread.CurrentThread.CurrentUICulture;
-        }
-        return _applicationUICulture;
+        return _applicationUICulture ??= Thread.CurrentThread.CurrentUICulture;
       }
       set
       {
@@ -133,10 +113,7 @@ namespace Infralution.Localization
         {
           _applicationUICulture = value;
           SetThreadUICulture(SynchronizeThreadCulture);
-          if ( ApplicationUICultureChanged != null )
-          {
-            ApplicationUICultureChanged(value);
-          }
+          ApplicationUICultureChanged?.Invoke(value);
         }
       }
     }
@@ -160,8 +137,8 @@ namespace Infralution.Localization
     }
 
     /// <summary>
-    /// Set the <see cref="Thread.CurrentUICulture"/>, and optionally <see cref="Thread.CurrentCulture"/>, of the current thread 
-    /// to match the <see cref="ApplicationUICulture"/>. 
+    /// Set the <see cref="Thread.CurrentUICulture"/>, and optionally <see cref="Thread.CurrentCulture"/>, of the current thread
+    /// to match the <see cref="ApplicationUICulture"/>.
     /// </summary>
     /// <param name="synchronizeThreadCulture">If true the <see cref="Thread.CurrentCulture"/> property is set to a compatible culture</param>
     public static void SetThreadUICulture(bool synchronizeThreadCulture)
@@ -192,7 +169,7 @@ namespace Infralution.Localization
     public event CultureChangedHandler UICultureChanged;
 
     /// <summary>
-    /// Represents the method that will handle the <see cref="ExcludeResource"/> event   
+    /// Represents the method that will handle the <see cref="ExcludeResource"/> event
     /// </summary>
     public delegate bool ExcludedResourceHandler(string componentName, string propertyName);
 
@@ -212,8 +189,7 @@ namespace Infralution.Localization
     /// <summary>
     /// Create a new instance of the component
     /// </summary>
-    public CultureManager(IContainer container)
-        : this()
+    public CultureManager(IContainer container) : this()
     {
       container.Add(this);
     }
@@ -231,7 +207,7 @@ namespace Infralution.Localization
           if ( Site != null )
           {
             IDesignerHost host = Site.GetService(typeof(IDesignerHost)) as IDesignerHost;
-            if ( host != null && host.Container != null && host.Container.Components.Count > 0 )
+            if ( host?.Container?.Components.Count > 0 )
             {
               _managedControl = host.Container.Components[0] as Control;
             }
@@ -250,22 +226,14 @@ namespace Infralution.Localization
     /// </summary>
     [DefaultValue(true)]
     [Description("Should the form size be preserved when the culture is changed")]
-    public bool PreserveFormSize
-    {
-      get { return _preserveFormSize; }
-      set { _preserveFormSize = value; }
-    }
+    public bool PreserveFormSize { get; set; } = true;
 
     /// <summary>
     /// Should the form location be preserved when the culture is changed
     /// </summary>
     [DefaultValue(true)]
     [Description("Should the form location be preserved when the culture is changed")]
-    public bool PreserveFormLocation
-    {
-      get { return _preserveFormLocation; }
-      set { _preserveFormLocation = value; }
-    }
+    public bool PreserveFormLocation { get; set; } = true;
 
     /// <summary>
     /// List of properties to exclude when applying culture specific resources
@@ -278,8 +246,7 @@ namespace Infralution.Localization
       get { return _excludeProperties; }
       set
       {
-        if ( value == null ) throw new ArgumentNullException();
-        _excludeProperties = value;
+        _excludeProperties = value ?? throw new ArgumentNullException();
       }
     }
 
@@ -287,24 +254,25 @@ namespace Infralution.Localization
     /// Called by framework to determine whether the ExcludeProperties should be serialised
     /// </summary>
     /// <returns>True if the style should be serialized</returns>
-    private bool ShouldSerializeExcludeProperties()
-    {
-      return ( _excludeProperties.Count > 0 );
-    }
+    //private bool ShouldSerializeExcludeProperties()
+    //{
+    //  return _excludeProperties.Count > 0;
+    //}
 
     /// <summary>
     /// Called by framework to reset the ExcludeProperties
     /// </summary>
-    private void ResetExcludeProperties()
-    {
-      _excludeProperties.Clear();
-    }
+    //private void ResetExcludeProperties()
+    //{
+    //_excludeProperties.Clear();
+    //}
+
     /// <summary>
-    /// The current user interface culture for the <see cref="ManagedControl"/>. 
+    /// The current user interface culture for the <see cref="ManagedControl"/>.
     /// </summary>
     /// <remarks>
     /// This can be set independently of the <see cref="ApplicationUICulture"/>, allowing
-    /// you to have an application simultaneously displaying forms with different cultures.   
+    /// you to have an application simultaneously displaying forms with different cultures.
     /// Set the <see cref="ApplicationUICulture"/> to change the <see cref="UICulture"/> of
     /// all forms in the application which have associated CultureManagers.
     /// </remarks>
@@ -314,11 +282,7 @@ namespace Infralution.Localization
     {
       get
       {
-        if ( _uiCulture == null )
-        {
-          _uiCulture = ApplicationUICulture;
-        }
-        return _uiCulture;
+        return _uiCulture ??= ApplicationUICulture;
       }
       set
       {
@@ -333,11 +297,7 @@ namespace Infralution.Localization
     /// </summary>
     [DefaultValue(true)]
     [Description("Should the UICulture of this form be changed when the ApplicationUICulture")]
-    public bool SynchronizeUICulture
-    {
-      get { return _synchronizeUICulture; }
-      set { _synchronizeUICulture = value; }
-    }
+    public bool SynchronizeUICulture { get; set; } = true;
 
     #endregion
 
@@ -371,15 +331,12 @@ namespace Infralution.Localization
     }
 
     /// <summary>
-    /// 
+    /// OnUICultureChanged
     /// </summary>
     /// <param name="newCulture"></param>
     protected virtual void OnUICultureChanged(CultureInfo newCulture)
     {
-      if ( UICultureChanged != null )
-      {
-        UICultureChanged(newCulture);
-      }
+      UICultureChanged?.Invoke(newCulture);
     }
 
     /// <summary>
@@ -585,55 +542,55 @@ namespace Infralution.Localization
     protected virtual void ApplyExtenderResource(Dictionary<Type, IExtenderProvider> extenderProviders,
                                                  Control control, string propertyName, object value)
     {
-      IExtenderProvider extender = null;
+      IExtenderProvider extender;
 
       if ( propertyName == "ToolTip" )
       {
         if ( extenderProviders.TryGetValue(typeof(ToolTip), out extender) )
         {
-          ( extender as ToolTip ).SetToolTip(control, value as string);
+          ( extender as ToolTip )?.SetToolTip(control, value as string);
         }
       }
       else if ( propertyName == "HelpKeyword" )
       {
         if ( extenderProviders.TryGetValue(typeof(HelpProvider), out extender) )
         {
-          ( extender as HelpProvider ).SetHelpKeyword(control, value as string);
+          ( extender as HelpProvider )?.SetHelpKeyword(control, value as string);
         }
       }
       else if ( propertyName == "HelpString" )
       {
         if ( extenderProviders.TryGetValue(typeof(HelpProvider), out extender) )
         {
-          ( extender as HelpProvider ).SetHelpString(control, value as string);
+          ( extender as HelpProvider )?.SetHelpString(control, value as string);
         }
       }
       else if ( propertyName == "ShowHelp" )
       {
         if ( extenderProviders.TryGetValue(typeof(HelpProvider), out extender) )
         {
-          ( extender as HelpProvider ).SetShowHelp(control, (bool)value);
+          ( extender as HelpProvider )?.SetShowHelp(control, (bool)value);
         }
       }
       else if ( propertyName == "Error" )
       {
         if ( extenderProviders.TryGetValue(typeof(ErrorProvider), out extender) )
         {
-          ( extender as ErrorProvider ).SetError(control, value as string);
+          ( extender as ErrorProvider )?.SetError(control, value as string);
         }
       }
       else if ( propertyName == "IconAlignment" )
       {
         if ( extenderProviders.TryGetValue(typeof(ErrorProvider), out extender) )
         {
-          ( extender as ErrorProvider ).SetIconAlignment(control, (ErrorIconAlignment)value);
+          ( extender as ErrorProvider )?.SetIconAlignment(control, (ErrorIconAlignment)value);
         }
       }
       else if ( propertyName == "IconPadding" )
       {
         if ( extenderProviders.TryGetValue(typeof(ErrorProvider), out extender) )
         {
-          ( extender as ErrorProvider ).SetIconPadding(control, (int)value);
+          ( extender as ErrorProvider )?.SetIconPadding(control, (int)value);
         }
       }
     }
@@ -675,8 +632,7 @@ namespace Infralution.Localization
     /// <returns>True if the assembly was compiled using VB</returns>
     protected static bool IsVBAssembly(Assembly assembly)
     {
-      AssemblyName[] referencedAssemblies = assembly.GetReferencedAssemblies();
-      foreach ( AssemblyName refAssembly in referencedAssemblies )
+      foreach ( AssemblyName refAssembly in assembly.GetReferencedAssemblies() )
       {
         if ( refAssembly.Name == "Microsoft.VisualBasic" )
           return true;
@@ -707,23 +663,27 @@ namespace Infralution.Localization
 
       // load the resources for this IComponent type into a sorted list
       //
-      ComponentResourceManager resourceManager = new ComponentResourceManager(componentType);
-      SortedList<string, object> resources = new SortedList<string, object>();
+      ComponentResourceManager resourceManager = new(componentType);
+      SortedList<string, object> resources = new();
       LoadResources(resourceManager, culture, resources);
 
       // build a lookup table of components indexed by resource name
       //
-      Dictionary<string, IComponent> components = new Dictionary<string, IComponent>();
+      Dictionary<string, IComponent> components = new();
 
       // build a lookup table of extender providers indexed by type
       //
-      Dictionary<Type, IExtenderProvider> extenderProviders = new Dictionary<Type, IExtenderProvider>();
+      Dictionary<Type, IExtenderProvider> extenderProviders = new();
 
       bool isVB = IsVBAssembly(componentType.Assembly);
 
       components["$this"] = instance;
-      FieldInfo[] fields = componentType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-      foreach ( FieldInfo field in fields )
+#pragma warning disable RCS1118 // Mark local variable as const.
+#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
+      var flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
+#pragma warning restore RCS1118 // Mark local variable as const.
+      foreach ( FieldInfo field in componentType.GetFields(flags) )
       {
         string fieldName = field.Name;
 
@@ -740,8 +700,7 @@ namespace Infralution.Localization
         string resourceName = ">>" + fieldName + ".Name";
         if ( resources.ContainsKey(resourceName) )
         {
-          IComponent childComponent = field.GetValue(instance) as IComponent;
-          if ( childComponent != null )
+          if ( field.GetValue(instance) is IComponent childComponent )
           {
             components[fieldName] = childComponent;
 
@@ -772,8 +731,7 @@ namespace Infralution.Localization
         if ( componentName.StartsWith(">>") ) continue;
         if ( IsExcluded(componentName, propertyName) ) continue;
 
-        IComponent component = null;
-        if ( !components.TryGetValue(componentName, out component) ) continue;
+        if ( !components.TryGetValue(componentName, out IComponent component) ) continue;
 
         // some special case handling for control sizes/locations
         //
@@ -805,7 +763,7 @@ namespace Infralution.Localization
         // use the property descriptor to set the resource value
         //
         PropertyDescriptor pd = TypeDescriptor.GetProperties(component).Find(propertyName, false);
-        if ( ( ( pd != null ) && !pd.IsReadOnly ) && ( ( resourceValue == null ) || pd.PropertyType.IsInstanceOfType(resourceValue) ) )
+        if ( ( pd?.IsReadOnly == false ) && ( ( resourceValue == null ) || pd.PropertyType.IsInstanceOfType(resourceValue) ) )
         {
           try
           {

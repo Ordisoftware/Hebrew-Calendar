@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide system statistics.
   /// </summary>
-  partial class SystemStatistics
+  class SystemStatistics
   {
 
     static private readonly Process Process = Process.GetCurrentProcess();

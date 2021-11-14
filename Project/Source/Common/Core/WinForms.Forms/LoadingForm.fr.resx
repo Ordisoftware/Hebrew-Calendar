@@ -124,4 +124,10 @@
   <data name="LabelOperation.Text" xml:space="preserve">
     <value>Chargement des données...</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Progression</value>
+  </data>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>Titre</value>
+  </data>
 </root>

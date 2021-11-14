@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// </summary>
   [Serializable]
   public class NullSafeList<T> : List<T>
-    where T : class
+  where T : class
   {
 
     public NullSafeList()
@@ -58,7 +58,8 @@ namespace Ordisoftware.Core
     private void CheckIndex(int index)
     {
       if ( index >= 0 ) return;
-      throw new IndexOutOfRangeException(SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
+      string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
+      throw new IndexOutOfRangeException(msg);
     }
 
     private void CreateOutOfRange(int index, T value)

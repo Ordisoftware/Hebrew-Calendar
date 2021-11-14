@@ -15,7 +15,7 @@ namespace Ordisoftware.Core
   /// while it is being updated. Additional formatting features
   /// have also been added.
   /// </remarks>
-  partial class RichTextBoxEx : RichTextBox
+  class RichTextBoxEx : RichTextBox
   {
     /// <summary>
     /// Maintains performance while updating.

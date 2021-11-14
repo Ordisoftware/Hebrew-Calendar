@@ -27,6 +27,8 @@ namespace Ordisoftware.Hebrew.Calendar
 
     #region Static Constructor and Run
 
+    static private readonly Properties.Settings Settings = Program.Settings;
+
     static private readonly Image Image;
 
     static ReminderForm()
@@ -37,7 +39,8 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ApplicationImage64FilePath, ex.Message));
+        string msg = SysTranslations.LoadFileError.GetLang(Program.ApplicationImage64FilePath, ex.Message);
+        DisplayManager.ShowError(msg);
       }
     }
 
@@ -92,8 +95,10 @@ namespace Ordisoftware.Hebrew.Calendar
         form.LabelDate.Text = isShabat
                               ? date.ToLongDateString().Titleize()
                               : row.DayAndMonthWithYearText;
-        form.LabelStartTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek) + " " + times.TimeStart.ToString(@"hh\:mm");
-        form.LabelEndTime.Text = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek) + " " + times.TimeEnd.ToString(@"hh\:mm");
+        string textDate1 = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek);
+        string textDate2 = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek);
+        form.LabelStartTime.Text = textDate1 + " " + times.TimeStart.ToString(@"hh\:mm");
+        form.LabelEndTime.Text = textDate2 + " " + times.TimeEnd.ToString(@"hh\:mm");
         form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
         form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
         int left1 = form.LabelStartTime.Left + form.LabelStartTime.Width;
@@ -111,7 +116,7 @@ namespace Ordisoftware.Hebrew.Calendar
             var rowParashah = row.GetParashahReadingDay();
             if ( rowParashah != null )
             {
-              form.LabelParashahValue.Text = rowParashah.GetParashahText(Program.Settings.ParashahCaptionWithBookAndRef);
+              form.LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
               form.LabelParashahValue.Tag = row;
               form.LabelParashahValue.Visible = true;
             }

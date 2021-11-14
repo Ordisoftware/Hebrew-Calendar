@@ -275,4 +275,16 @@
   <data name="ActionGoToNextParashah.Text" xml:space="preserve">
     <value>Chercher le prochain jour depuis aujourd'hui</value>
   </data>
+  <data name="ActionExport.Text" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="ActionSaveAsDefaults.Text" xml:space="preserve">
+    <value>Sauver comme source</value>
+  </data>
+  <data name="bookDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Livre</value>
+  </data>
+  <data name="ColumnMemo.HeaderText" xml:space="preserve">
+    <value>Mémo</value>
+  </data>
 </root>

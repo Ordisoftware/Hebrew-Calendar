@@ -167,8 +167,8 @@ namespace Ordisoftware.Hebrew.Calendar
       EditFilter.SelectionStart = EditFilter.Text.Length;
     }
 
-    private bool FoundCountry = false;
-    private bool FoundCity = false;
+    private bool FoundCountry;
+    private bool FoundCity;
 
     private void EditFilter_TextChanged(object sender, EventArgs e)
     {
@@ -192,9 +192,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !resultCountry.Any() ) return;
         string strCountry = resultCountry.ElementAt(0).Key;
         FoundCountry = resultCountry.Count() == 1;
-        if ( !FoundCountry )
-          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
-            FoundCountry = true;
+        if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
+          FoundCountry = true;
         if ( FoundCountry && !EditFilter.Text.Contains(",") )
         {
           EditFilter.Text = strCountry + ", ";
@@ -217,9 +216,8 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( !resultCity.Any() ) return;
         string strCity = resultCity.ElementAt(0).Name;
         FoundCity = resultCity.Count() == 1;
-        if ( !FoundCity )
-          if ( resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
-            FoundCity = true;
+        if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
+          FoundCity = true;
         if ( FoundCity )
         {
           EditFilter.Text = strCountry + ", " + strCity;

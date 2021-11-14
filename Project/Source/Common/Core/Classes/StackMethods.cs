@@ -378,8 +378,7 @@ namespace Ordisoftware.Core
       {
         if ( !Directory.Exists(sourcepath) ) return;
         string path = sourcepath;
-        string[] files = Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories);
-        foreach ( string file in files )
+        foreach ( string file in Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories) )
         {
           var xdoc = XDocument.Load(file);
           var elements = xdoc.Root.Elements("data");
@@ -442,8 +441,7 @@ namespace Ordisoftware.Core
       var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
       var linkTimeUtc = epoch.AddSeconds(secondsSince1970);
       var tz = target ?? TimeZoneInfo.Local;
-      var localTime = TimeZoneInfo.ConvertTimeFromUtc(linkTimeUtc, tz);
-      return localTime;
+      return TimeZoneInfo.ConvertTimeFromUtc(linkTimeUtc, tz);
     }
 
     #endregion

@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide SQLite-Net helper.
   /// </summary>
-  static partial class SQLiteNetHelper
+  static class SQLiteNetHelper
   {
 
     static public int DefaultOptimizeDaysInterval { get; set; } = 7;
@@ -105,8 +105,7 @@ namespace Ordisoftware.Core
     /// <param name="sql">The query.</param>
     static public SQLiteCommand CreateCommand(this SQLiteNetORM connection, string sql)
     {
-      var command = new SQLiteCommand(connection) { CommandText = sql };
-      return command;
+      return new SQLiteCommand(connection) { CommandText = sql };
     }
 
     /// <summary>

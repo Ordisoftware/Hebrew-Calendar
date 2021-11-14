@@ -157,9 +157,6 @@
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="ActionCalculate.Text" xml:space="preserve">
-    <value>Calculer</value>
-  </data>
   <data name="GroupBoxSun.Text" xml:space="preserve">
     <value>SOLEIL</value>
   </data>
@@ -168,9 +165,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Calculateur de différence de dates</value>
-  </data>
-  <data name="EditAlwaysLiveCalculate.Text" xml:space="preserve">
-    <value>Calcul en temps réel (intervale d'années)</value>
   </data>
   <data name="moonYearsLabel.Text" xml:space="preserve">
     <value>Années lunaires :</value>

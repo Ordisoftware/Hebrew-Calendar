@@ -89,15 +89,15 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var actions = new NullSafeDictionary<PowerAction, Delegate>
       {
-        [PowerAction.LockSession] = (Action<object, EventArgs>)ActionLock_Click,
-        [PowerAction.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionStandby_Click,
-        [PowerAction.Hibernate] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionHibernate_Click,
-        [PowerAction.Shutdown] = (Action<object, LinkLabelLinkClickedEventArgs>)ActionShutdown_Click
+        [PowerAction.LockSession] = ActionLock_LinkClicked,
+        [PowerAction.Shutdown] = ActionStandby_LinkClicked,
+        [PowerAction.Hibernate] = ActionHibernate_LinkClicked,
+        [PowerAction.Shutdown] = ActionShutdown_LinkClicked
       };
       actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
     }
 
-    private void ActionLock_Click(object sender, EventArgs e)
+    private void ActionLock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
       DoMediaPlayingAndVolumeAction();
@@ -105,26 +105,29 @@ namespace Ordisoftware.Hebrew.Calendar
         MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
-    private void ActionStandby_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionStandby_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
       DoMediaPlayingAndVolumeAction();
-      SystemManager.StandBy();
+      if ( !SystemManager.StandBy() )
+        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
-    private void ActionHibernate_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionHibernate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
       DoMediaPlayingAndVolumeAction();
-      SystemManager.Hibernate();
+      if ( !SystemManager.Hibernate() )
+        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
     }
 
-    private void ActionShutdown_Click(object sender, LinkLabelLinkClickedEventArgs e)
+    private void ActionShutdown_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Close();
-      if ( !SystemManager.Shutdown(Program.Settings.LockSessionConfirmLogOffOrMore) ) return;
-      DoMediaPlayingAndVolumeAction();
-      MainForm.Instance.SessionEnding(null, null);
+      if ( !SystemManager.Shutdown(Program.Settings.LockSessionConfirmLogOffOrMore) )
+        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+      else
+        MainForm.Instance.SessionEnding(null, null);
     }
 
     private void DoMediaPlayingAndVolumeAction()

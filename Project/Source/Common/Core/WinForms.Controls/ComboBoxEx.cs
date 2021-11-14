@@ -18,7 +18,7 @@ using System.Windows.Forms;
 namespace Ordisoftware.Core
 {
 
-  public partial class ComboBoxEx : ComboBox
+  public class ComboBoxEx : ComboBox
   {
 
     private bool Mutex;

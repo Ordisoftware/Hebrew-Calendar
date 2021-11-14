@@ -127,9 +127,11 @@ namespace Ordisoftware.Hebrew.Calendar
       var diff = EditYearLast.Value - EditYearFirst.Value + 1;
       if ( Settings.BigCalendarWarningEnabled )
         for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
-          if ( diff > Program.BigCalendarLevels[index] )
+        {
+          int count = Program.BigCalendarLevels[index];
+          if ( diff > count )
           {
-            string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(Program.BigCalendarLevels[index], diff);
+            string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(count, diff);
             switch ( DisplayManager.QueryYesNoCancel(text) )
             {
               case DialogResult.Yes:
@@ -144,6 +146,7 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             break;
           }
+        }
       ActionCancel.Enabled = true;
     }
 

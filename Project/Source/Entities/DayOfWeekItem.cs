@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide day of week item to be displayed in a control.
   /// </summary>
-  partial class DayOfWeekItem
+  class DayOfWeekItem
   {
 
     /// <summary>

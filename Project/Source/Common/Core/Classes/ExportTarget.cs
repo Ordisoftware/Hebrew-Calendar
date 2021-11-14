@@ -46,11 +46,11 @@ namespace Ordisoftware.Core
     GIF
   }
 
-  static partial class ImageExportTargetHelper
+  static class ImageExportTargetHelper
   {
 
     static public void Fill<T>(this ComboBox combobox, NullSafeOfStringDictionary<T> list, T valueDefault)
-      where T : struct, Enum
+    where T : struct, Enum
     {
       foreach ( KeyValuePair<T, string> item in list )
       {

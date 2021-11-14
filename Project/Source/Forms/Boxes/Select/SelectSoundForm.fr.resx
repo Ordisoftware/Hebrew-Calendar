@@ -142,4 +142,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Sélection du son du rappel</value>
   </data>
+  <data name="OpenFileDialog.Filter" xml:space="preserve">
+    <value>Fichiers son (*.wav)|*.wav</value>
+  </data>
 </root>

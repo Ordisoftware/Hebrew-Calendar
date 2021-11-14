@@ -152,4 +152,16 @@ Appuyez sur Verrouiller pour le faire maintenant ou sur Annuler pour ignorer cet
   <data name="$this.Text" xml:space="preserve">
     <value>Verrouillage automatique de la session</value>
   </data>
+  <data name="ActionHibernate.Text" xml:space="preserve">
+    <value>Hiberner</value>
+  </data>
+  <data name="ActionLock.Text" xml:space="preserve">
+    <value>Verrouiller</value>
+  </data>
+  <data name="ActionShutdown.Text" xml:space="preserve">
+    <value>Eteindre</value>
+  </data>
+  <data name="ActionStandby.Text" xml:space="preserve">
+    <value>Veille</value>
+  </data>
 </root>

@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Media;
-using System.Threading.Tasks;
 
 namespace Ordisoftware.Core
 {
@@ -24,7 +23,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide sound item.
   /// </summary>
-  partial class SoundItem
+  class SoundItem
   {
 
     static private readonly SoundPlayer SoundPlayer = new();
@@ -47,8 +46,7 @@ namespace Ordisoftware.Core
     {
       var result = new List<SoundItem>();
       if ( !Directory.Exists(path) ) return result;
-      var files = Directory.GetFiles(path, filter, SearchOption.AllDirectories);
-      foreach ( string file in files )
+      foreach ( string file in Directory.GetFiles(path, filter, SearchOption.AllDirectories) )
         result.Add(new SoundItem(file));
       return result;
     }

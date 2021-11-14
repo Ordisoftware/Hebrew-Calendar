@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide SQLite date helper.
   /// </summary>
-  static partial class SQLiteDate
+  static class SQLiteDate
   {
 
     /// <summary>
@@ -81,14 +81,17 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="date">The date time.</param>
     /// <returns>An empty string if time is null</returns>
-    static string ToStringFromTime(DateTime? date)
-    {
-      return date.HasValue ? $"{date.Value.Hour:00}:{date.Value.Minute:00}" : string.Empty;
-    }
+    //static string ToStringFromTime(DateTime? date)
+    //{
+    //  return date.HasValue ? $"{date.Value.Hour:00}:{date.Value.Minute:00}" : string.Empty;
+    //}
 
+    /// <summary>
+    /// Add hours and minutes from a time span to a date else return null if time is null.
+    /// </summary>
     static public DateTime? Add(TimeSpan? time, DateTime date)
     {
-      return time.HasValue ? (DateTime?)date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
+      return time.HasValue ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
     }
 
     /// <summary>

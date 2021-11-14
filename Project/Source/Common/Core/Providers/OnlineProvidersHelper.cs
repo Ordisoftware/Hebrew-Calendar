@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide online providers list helper to create menu items.
   /// </summary>
-  static partial class OnlineProvidersHelper
+  static class OnlineProvidersHelper
   {
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate image of the configure menu item.
     /// </summary>
-    static public Image ImageConfigure { get; private set; }
+    static public Image ImageConfigure { get; }
 
     /// <summary>
     /// Static constructor.
@@ -64,11 +64,10 @@ namespace Ordisoftware.Core
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
-      var item = new ToolStripMenuItem(SysTranslations.ConfigureProviders.GetLang(), ImageConfigure, click)
+      return new ToolStripMenuItem(SysTranslations.ConfigureProviders.GetLang(), ImageConfigure, click)
       {
         ImageScaling = ToolStripItemImageScaling.None
       };
-      return item;
     }
 
     /// <summary>

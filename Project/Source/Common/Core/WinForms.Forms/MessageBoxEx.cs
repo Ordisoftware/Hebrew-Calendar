@@ -82,7 +82,7 @@ namespace Ordisoftware.Core
                         int width = DefaultWidthSmall,
                         bool justify = DefaultJustifyEnabled,
                         bool sound = true)
-      : this()
+    : this()
     {
       Text = title;
       SetButtons(buttons);
@@ -130,7 +130,7 @@ namespace Ordisoftware.Core
                         int width = DefaultWidthSmall,
                         bool justify = DefaultJustifyEnabled,
                         bool sound = true)
-      : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound)
+    : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound)
     {
       LocalizedTitle = title;
       LocalizedText = text;
@@ -191,9 +191,8 @@ namespace Ordisoftware.Core
 
     internal void ActionClose_Click(object sender, EventArgs e)
     {
-      if ( sender is Button button )
-        if ( button.DialogResult != DialogResult.None )
-          Close();
+      if ( sender is Button button && button.DialogResult != DialogResult.None )
+        Close();
     }
 
     public void SetIcon(MessageBoxIcon icon)

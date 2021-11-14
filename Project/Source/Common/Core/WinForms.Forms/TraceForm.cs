@@ -33,7 +33,7 @@ namespace Ordisoftware.Core
     }
 
     public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
-      : this()
+    : this()
     {
       LocationPropertyName = locationPropertyName;
       ClientSizePropertyName = clientSizePropertyName;

@@ -19,7 +19,7 @@ using System.Globalization;
 namespace Ordisoftware.Core
 {
 
-  static partial class EnumHelper
+  static class EnumHelper
   {
 
     static public string ToStringFull<T>(this T value) where T : Enum
@@ -38,7 +38,7 @@ namespace Ordisoftware.Core
     }
 
     static public T SetFlag<T>(this T flags, T flag, bool value)
-      where T : Enum, IComparable, IFormattable, IConvertible
+    where T : Enum, IComparable, IFormattable, IConvertible
     {
       int flagsInt = flags.ToInt32(NumberFormatInfo.CurrentInfo);
       int flagInt = flag.ToInt32(NumberFormatInfo.CurrentInfo);

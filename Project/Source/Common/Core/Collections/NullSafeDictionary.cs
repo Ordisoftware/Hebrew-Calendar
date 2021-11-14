@@ -24,7 +24,7 @@ namespace Ordisoftware.Core
   /// </summary>
   [Serializable]
   public class NullSafeDictionary<TKey, TValue> : Dictionary<TKey, TValue>
-    where TValue : class
+  where TValue : class
   {
 
     public NullSafeDictionary()

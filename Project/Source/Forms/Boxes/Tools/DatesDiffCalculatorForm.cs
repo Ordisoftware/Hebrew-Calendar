@@ -182,8 +182,12 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
         if ( dateOld != DateTime.MinValue )
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
-            return;
+        {
+          string date1 = dateOld.ToShortDateString();
+          string date2 = dateNew.ToShortDateString();
+          string msg = SysTranslations.AskToReplaceBookmark.GetLang(date1, date2);
+          if ( !DisplayManager.QueryYesNo(msg) ) return;
+        }
         menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
         Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
         SystemManager.TryCatch(Settings.Save);

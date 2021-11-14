@@ -72,10 +72,10 @@ namespace Ordisoftware.Hebrew.Calendar
           }
           if ( first != null && last != null
             && first.Date <= last.Date
-            && this.Date >= first.Date
-            && this.Date <= last.Date )
+            && Date >= first.Date
+            && Date <= last.Date )
             return (TorahCelebration.Chavouot,
-                    (int)( this.Date - first.Date ).TotalDays + 1,
+                    (int)( Date - first.Date ).TotalDays + 1,
                     AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang());
         }
       return (TorahCelebration.None, 0, string.Empty);

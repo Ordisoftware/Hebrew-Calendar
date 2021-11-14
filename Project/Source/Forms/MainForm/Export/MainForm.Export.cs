@@ -88,9 +88,9 @@ namespace Ordisoftware.Hebrew.Calendar
   }
 
   [Serializable]
-  partial class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
+  class ExportActions : NullSafeDictionary<ViewMode, Func<ExportInterval, bool>>
   {
-    public ExportActions() : base()
+    public ExportActions()
     {
     }
     protected ExportActions(SerializationInfo info, StreamingContext context) : base(info, context)

@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// </summary>
   [Serializable]
   public class AutoResizedList<T> : List<T>
-    where T : new()
+  where T : new()
   {
 
     public AutoResizedList()
