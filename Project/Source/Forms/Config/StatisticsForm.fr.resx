@@ -272,7 +272,7 @@
     <value>114, 13</value>
   </data>
   <data name="processPriorityLabel.Text" xml:space="preserve">
-    <value>Priorité du processus : </value>
+    <value>Priorité du processus :</value>
   </data>
   <data name="currentThreadPriorityLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -407,6 +407,12 @@
     <value>Statistiques</value>
   </data>
   <data name="translateTimeLabel.Text" xml:space="preserve">
-    <value>Traduction</value>
+    <value>Traduction :</value>
+  </data>
+  <data name="EditFolderUserLocalData.Text" xml:space="preserve">
+    <value>Données utilisateur locales</value>
+  </data>
+  <data name="GroupBoxFolders.Text" xml:space="preserve">
+    <value>Dossiers</value>
   </data>
 </root>

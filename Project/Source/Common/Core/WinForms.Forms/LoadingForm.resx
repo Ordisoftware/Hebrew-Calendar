@@ -196,7 +196,7 @@
     <value>1</value>
   </data>
   <data name="LabelTitle.Text" xml:space="preserve">
-    <value>LabelTitle</value>
+    <value>Title</value>
   </data>
   <data name="&gt;&gt;LabelTitle.Name" xml:space="preserve">
     <value>LabelTitle</value>
@@ -259,7 +259,7 @@
     <value>1</value>
   </data>
   <data name="LabelOperation.Text" xml:space="preserve">
-    <value>LabelOperation</value>
+    <value>Loading data...</value>
   </data>
   <data name="LabelOperation.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -313,7 +313,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>LoadingForm</value>
+    <value>Progress</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>LoadingForm</value>

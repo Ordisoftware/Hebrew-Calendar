@@ -120,4 +120,10 @@
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="ActionNext.Text" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="ActionPrevious.Text" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
 </root>

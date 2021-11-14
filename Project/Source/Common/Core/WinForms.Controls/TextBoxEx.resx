@@ -324,4 +324,7 @@
         Pt9f7E2nW7hqsi0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="ActionDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>

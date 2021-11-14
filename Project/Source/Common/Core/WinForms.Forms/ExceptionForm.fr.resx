@@ -137,7 +137,7 @@
     <value>343, 13</value>
   </data>
   <data name="LabelInfo2.Text" xml:space="preserve">
-    <value>Vous pouvez choisir de Continuer l'exécution ou Terminer le programme</value>
+    <value>Vous pouvez choisir de Continuer l'exécution ou Terminer le programme.</value>
   </data>
   <data name="ActionSendToGitHub.Text" xml:space="preserve">
     <value>Créer une Issue GitHub</value>

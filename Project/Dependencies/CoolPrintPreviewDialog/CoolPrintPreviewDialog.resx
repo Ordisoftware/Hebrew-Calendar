@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -618,7 +618,7 @@
     <value>0</value>
   </data>
   <data name="_toolStrip.Text" xml:space="preserve">
-    <value>toolStrip1</value>
+    <value></value>
   </data>
   <data name="&gt;&gt;_toolStrip.Name" xml:space="preserve">
     <value>_toolStrip</value>

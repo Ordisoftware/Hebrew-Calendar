@@ -250,7 +250,7 @@
     <value>44</value>
   </data>
   <data name="dBLastYearLabel.Text" xml:space="preserve">
-    <value>Last year</value>
+    <value>Last year:</value>
   </data>
   <data name="&gt;&gt;dBLastYearLabel.Name" xml:space="preserve">
     <value>dBLastYearLabel</value>

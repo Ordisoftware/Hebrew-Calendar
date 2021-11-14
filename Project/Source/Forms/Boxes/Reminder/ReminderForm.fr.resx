@@ -135,4 +135,10 @@
   <data name="LabelParashahValue.Text" xml:space="preserve">
     <value>Tableau des versets</value>
   </data>
+  <data name="LabelTitle.Text" xml:space="preserve">
+    <value>Célébration</value>
+  </data>
+  <data name="MenuDefaultLockout.Text" xml:space="preserve">
+    <value>Défaut</value>
+  </data>
 </root>

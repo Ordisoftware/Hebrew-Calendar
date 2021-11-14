@@ -169,4 +169,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Tableau des mois lunaires</value>
   </data>
+  <data name="ActionCopyName.Text" xml:space="preserve">
+    <value>Copier le nom (caractères de translittération)</value>
+  </data>
+  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
+    <value>Guide de grammaire</value>
+  </data>
 </root>

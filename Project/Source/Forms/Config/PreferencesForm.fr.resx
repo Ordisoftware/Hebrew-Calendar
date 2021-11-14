@@ -215,7 +215,7 @@
     <value>114, 13</value>
   </data>
   <data name="LabelLastDBOptimize.Text" xml:space="preserve">
-    <value>Dernière optimisation : </value>
+    <value>Dernière optimisation :</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 17</value>
@@ -227,7 +227,7 @@
     <value>110, 13</value>
   </data>
   <data name="LabelLastStartupCheck.Text" xml:space="preserve">
-    <value>Dernière vérification : </value>
+    <value>Dernière vérification :</value>
   </data>
   <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 13</value>
@@ -903,5 +903,17 @@
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
     <value>Afficher la célébration en cours dans la barre de titre</value>
+  </data>
+  <data name="LabelColorSelectedDayBox.Text" xml:space="preserve">
+    <value>Jour sélectionné</value>
+  </data>
+  <data name="OpenExeFileDialog.Filter" xml:space="preserve">
+    <value>Fichiers EXE (*.exe)|*.exe</value>
+  </data>
+  <data name="SaveThemeDialog.Filter" xml:space="preserve">
+    <value>Fichiers de thème (*.ini)|*.ini</value>
+  </data>
+  <data name="OpenThemeDialog.Filter" xml:space="preserve">
+    <value>Fichiers de thème (*.ini)|*.ini</value>
   </data>
 </root>
