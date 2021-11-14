@@ -15,8 +15,8 @@ OutputDir=.\
 LicenseFile=..\Project\Licenses\MPL 2.0.rtf
 InfoBeforeFile =
 
-DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
 UninstallFilesDir={app}\Uninstall
+DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
 DefaultGroupName={#MyAppPublisher}
 
 Compression=zip
