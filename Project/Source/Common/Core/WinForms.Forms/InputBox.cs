@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class InputBox<T> : Form
-    where T : IConvertible
+  where T : IConvertible
   {
 
     /// <summary>

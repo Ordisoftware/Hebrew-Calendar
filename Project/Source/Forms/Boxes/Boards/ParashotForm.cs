@@ -168,8 +168,10 @@ namespace Ordisoftware.Hebrew
 
     private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      string list = string.Join(Globals.NL, Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName)).Indent(4);
-      string msg = SysTranslations.DatabaseTableLocked.GetLang(HebrewDatabase.Instance.ParashotTableName, list, Timer.Interval / 1000);
+      var table = Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName);
+      string list = string.Join(Globals.NL, table).Indent(4);
+      string name = HebrewDatabase.Instance.ParashotTableName;
+      string msg = SysTranslations.DatabaseTableLocked.GetLang(name, list, Timer.Interval / 1000);
       DisplayManager.Show(msg);
     }
 
@@ -251,7 +253,8 @@ namespace Ordisoftware.Hebrew
     private void ActionExport_Click(object sender, EventArgs e)
     {
       ActionSave.PerformClick();
-      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(HebrewDatabase.Instance.ParashotTableName);
+      string name = HebrewDatabase.Instance.ParashotTableName;
+      MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(name);
       for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
         if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
           MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

@@ -400,7 +400,7 @@ namespace Ordisoftware.Core
       int heightDiv2 = control.Height / 2;
       int widthDiv4 = widthDiv2 / 4;
       int heightDiv4 = heightDiv2 / 4;
-      var points = new List<Point>
+      return new List<Point>
       {
         // Center
         new Point(control.Left + widthDiv2, control.Top + heightDiv2),
@@ -420,7 +420,6 @@ namespace Ordisoftware.Core
         new Point(control.Left + margin, control.Top + heightDiv2),
         new Point(control.Right - margin, control.Top + heightDiv2)
       };
-      return points;
     }
 
   }

@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
 
     public object SelectedItem
     {
-      get { return _ComboBox?.SelectedItem ?? null; }
+      get { return _ComboBox?.SelectedItem; }
       set { if ( _ComboBox != null ) _ComboBox.SelectedItem = value; }
     }
 

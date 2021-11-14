@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// </summary>
   [Serializable]
   public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
-    where TValue : new()
+  where TValue : new()
   {
 
     public SortedAutoDictionary()

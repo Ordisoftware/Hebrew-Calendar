@@ -26,6 +26,11 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Critical Code Smell", "S2696:Instance members should not write to \"static\" fields", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S3973:A conditionally executed single line should be denoted by indentation", Justification = "Opinion based", Scope = "module")]
 
+[assembly: SuppressMessage("Simplification", "RCS1061:Merge 'if' with nested 'if'.", Justification = "Opinion based", Scope = "module")]
+[assembly: SuppressMessage("Style", "IDE0011:Ajouter des accolades", Justification = "Opinion based", Scope = "module")]
+[assembly: SuppressMessage("Style", "IDE0008:Utiliser un type explicite", Justification = "Opinion based", Scope = "module")]
+
+[assembly: SuppressMessage("Maintainability", "RCS1141:Add 'param' element to documentation comment.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Readability", "RCS1018:Add accessibility modifiers (or vice versa).", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Readability", "RCS1123:Add parentheses when necessary.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1001:Add braces (when expression spans over multiple lines).", Justification = "Opinion based", Scope = "module")]

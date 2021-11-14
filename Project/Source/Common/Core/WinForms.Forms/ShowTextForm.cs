@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
                         int height = 300,
                         bool wrap = true,
                         bool justify = true)
-      : this()
+    : this()
     {
       Text = title;
       if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
@@ -61,7 +61,7 @@ namespace Ordisoftware.Core
                         int height = 300,
                         bool wrap = true,
                         bool justify = true)
-      : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
+    : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
     {
       LocalizedTitle = title;
       LocalizedText = text;

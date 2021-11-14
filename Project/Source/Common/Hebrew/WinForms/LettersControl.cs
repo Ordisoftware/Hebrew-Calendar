@@ -414,9 +414,9 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Provide LetterEventArgs class.
   /// </summary>
-  partial class LetterEventArgs : EventArgs
+  class LetterEventArgs : EventArgs
   {
-    public string LetterCode { get; private set; }
+    public string LetterCode { get; }
     public LetterEventArgs(string lettercode) { LetterCode = lettercode; }
   }
 

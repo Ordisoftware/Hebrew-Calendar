@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
   /// <summary>
   /// Localization strings.
   /// </summary>
-  static partial class HebrewTranslations
+  static class HebrewTranslations
   {
 
     static public readonly NullSafeDictionary<Language, string[]> Letters = new()

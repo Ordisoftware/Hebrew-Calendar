@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
   /// Provide abort exception.
   /// </summary>
   [Serializable]
-  public partial class AbortException : Exception
+  public class AbortException : Exception
   {
 
     /// <summary>
@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     /// Default constructor.
     /// </summary>
     public AbortException()
-      : base(msgcode)
+    : base(msgcode)
     {
     }
 
@@ -48,7 +48,7 @@ namespace Ordisoftware.Core
     /// </summary>
     /// <param name="message">The message.</param>
     public AbortException(string message)
-      : base(msgcode)
+    : base(msgcode)
     {
       Data.Add(argname, message);
     }
@@ -59,7 +59,7 @@ namespace Ordisoftware.Core
     /// <param name="message">The message.</param>
     /// <param name="innerException">The inner exception.</param>
     public AbortException(string message, Exception innerException)
-      : base(msgcode, innerException)
+    : base(msgcode, innerException)
     {
       Data.Add(argname, message);
     }

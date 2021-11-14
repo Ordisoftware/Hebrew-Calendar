@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide online providers list.
   /// </summary>
-  partial class OnlineProviders : DataFile
+  class OnlineProviders : DataFile
   {
 
     static public bool MoveCurrentLanguageAtTop { get; set; } = true;
@@ -59,7 +59,7 @@ namespace Ordisoftware.Core
     /// Constructor.
     /// </summary>
     public OnlineProviders(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filePath, showFileNotFound, configurable, folder)
+    : base(filePath, showFileNotFound, configurable, folder)
     {
     }
 

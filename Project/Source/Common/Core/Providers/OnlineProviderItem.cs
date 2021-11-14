@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide online provider item.
   /// </summary>
-  partial class OnlineProviderItem
+  class OnlineProviderItem
   {
 
     static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");
@@ -52,13 +52,13 @@ namespace Ordisoftware.Core
       }
     }
 
-    public string Language { get; private set; }
+    public string Language { get; }
 
-    public string Name { get; private set; }
+    public string Name { get; }
 
-    public string URL { get; private set; }
+    public string URL { get; }
 
-    public Image Image { get; private set; }
+    public Image Image { get; }
 
     public ToolStripItem CreateMenuItem(EventHandler action)
     {

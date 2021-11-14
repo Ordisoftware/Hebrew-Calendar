@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide lunar months file.
   /// </summary>
-  partial class LunarMonthsFile : DataFile
+  class LunarMonthsFile : DataFile
   {
 
     public readonly List<string> Items = new();
@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
       => index >= 0 && index < Items.Count ? Items[index] : string.Empty;
 
     public LunarMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
-      : base(filePath, showFileNotFound, configurable, folder)
+    : base(filePath, showFileNotFound, configurable, folder)
     {
     }
 

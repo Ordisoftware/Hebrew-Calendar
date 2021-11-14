@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
   [Serializable]
   class SQLiteException : DbException
   {
-    public SQLiteException() : base() { }
+    public SQLiteException() { }
     public SQLiteException(string message) : base(message) { }
     public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
     public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }

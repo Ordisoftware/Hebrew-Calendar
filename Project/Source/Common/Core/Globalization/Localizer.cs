@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
   [Serializable]
   class TranslationsDictionary : NullSafeOfStringDictionary<Language>
   {
-    public TranslationsDictionary() : base()
+    public TranslationsDictionary()
     {
     }
     protected TranslationsDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
@@ -86,7 +86,7 @@ namespace Ordisoftware.Core
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>list.</param>
     static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<Language, NullSafeList<T>> values)
-      where T : class
+    where T : class
     {
       return values?[Languages.Current] ?? values?[Languages.Default] ?? new NullSafeList<T>();
     }
@@ -107,7 +107,7 @@ namespace Ordisoftware.Core
     /// <param name="values">The dictionary containing lang>value>translation.</param>
     /// <param name="value">The value to translate.</param>
     static public string GetLang<T>(this NullSafeDictionary<Language, NullSafeOfStringDictionary<T>> values, T value)
-      where T : Enum
+    where T : Enum
     {
       return values?[Languages.Current]?[value] ?? values?[Languages.Default]?[value] ?? ERR;
     }

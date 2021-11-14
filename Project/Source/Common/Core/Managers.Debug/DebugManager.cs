@@ -171,7 +171,7 @@ namespace Ordisoftware.Core
             {
               string datetime = DateTime.Now.ToString(Globals.TraceSessionFileTemplate);
               string filePath = Globals.SinkFileNoRollingFilePatternPath.Replace(Globals.SinkFileNoRollingPatternPathDateTag,
-                                                                             datetime);
+                                                                                 datetime);
               Log.Logger = logconf.WriteTo.File(filePath,
                                                 outputTemplate: Globals.SinkFileEventTemplate,
                                                 fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes)

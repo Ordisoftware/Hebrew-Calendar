@@ -41,8 +41,8 @@ namespace Ordisoftware.Core
     {
       SystemManager.TryCatch(() =>
       {
-        var files = Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*"));
-        foreach ( string s in files ) SystemManager.TryCatch(() => File.Delete(s));
+        foreach ( string s in Directory.GetFiles(Path.GetTempPath(), string.Format(Globals.SetupFileName, "*")) )
+          SystemManager.TryCatch(() => File.Delete(s));
       });
     }
 

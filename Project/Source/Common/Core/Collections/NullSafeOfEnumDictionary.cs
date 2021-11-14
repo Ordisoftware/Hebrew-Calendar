@@ -24,7 +24,7 @@ namespace Ordisoftware.Core
   /// </summary>
   [Serializable]
   public class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>
-    where TValue : Enum
+  where TValue : Enum
   {
 
     public NullSafeOfEnumDictionary()

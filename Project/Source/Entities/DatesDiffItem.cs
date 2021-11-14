@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   /// <summary>
   /// Provide dates difference item.
   /// </summary>
-  partial class DatesDiffItem
+  class DatesDiffItem
   {
 
     private DateTime Date1;

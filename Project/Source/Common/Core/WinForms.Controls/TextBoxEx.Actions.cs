@@ -13,7 +13,6 @@
 /// <created> 2020-04 </created>
 /// <edited> 2021-02 </edited>
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ordisoftware.Core

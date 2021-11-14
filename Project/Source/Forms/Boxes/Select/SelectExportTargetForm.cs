@@ -19,8 +19,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using MoreLinq;
 using Ordisoftware.Core;
-using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
-using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
 
 namespace Ordisoftware.Hebrew.Calendar
 {

@@ -183,8 +183,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     private void SetLocation()
     {
-      var anchor = DisplayManager.GetTaskbarAnchorStyle();
-      switch ( anchor )
+      switch ( DisplayManager.GetTaskbarAnchorStyle() )
       {
         case AnchorStyles.Top:
           this.SetLocation(ControlLocation.TopRight);

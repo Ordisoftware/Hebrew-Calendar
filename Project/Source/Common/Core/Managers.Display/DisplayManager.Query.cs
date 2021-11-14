@@ -97,8 +97,6 @@ namespace Ordisoftware.Core
         case DialogResult.Cancel:
           onCancel?.Invoke();
           break;
-        default:
-          break;
       }
       return result;
     }
@@ -138,8 +136,6 @@ namespace Ordisoftware.Core
           break;
         case DialogResult.Abort:
           onAbort?.Invoke();
-          break;
-        default:
           break;
       }
       return result;
@@ -256,8 +252,6 @@ namespace Ordisoftware.Core
           break;
         case DialogResult.Abort:
           onAbort?.Invoke();
-          break;
-        default:
           break;
       }
       return result;

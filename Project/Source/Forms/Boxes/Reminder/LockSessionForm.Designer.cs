@@ -78,7 +78,7 @@
       this.ActionShutdown.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionShutdown.Name = "ActionShutdown";
       this.ActionShutdown.TabStop = true;
-      this.ActionShutdown.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionShutdown_Click);
+      this.ActionShutdown.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionShutdown_LinkClicked);
       // 
       // ActionHibernate
       // 
@@ -87,7 +87,7 @@
       this.ActionHibernate.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionHibernate.Name = "ActionHibernate";
       this.ActionHibernate.TabStop = true;
-      this.ActionHibernate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionHibernate_Click);
+      this.ActionHibernate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionHibernate_LinkClicked);
       // 
       // ActionStandby
       // 
@@ -96,7 +96,7 @@
       this.ActionStandby.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionStandby.Name = "ActionStandby";
       this.ActionStandby.TabStop = true;
-      this.ActionStandby.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_Click);
+      this.ActionStandby.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_LinkClicked);
       // 
       // LabelMessage
       // 
@@ -123,7 +123,7 @@
       this.ActionLock.LinkColor = System.Drawing.Color.DarkBlue;
       this.ActionLock.Name = "ActionLock";
       this.ActionLock.TabStop = true;
-      this.ActionLock.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionStandby_Click);
+      this.ActionLock.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionLock_LinkClicked);
       // 
       // ActionPreferences
       // 

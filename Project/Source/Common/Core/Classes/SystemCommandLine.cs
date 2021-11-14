@@ -18,7 +18,7 @@ using CommandLine;
 namespace Ordisoftware.Core
 {
 
-  partial class SystemCommandLine
+  class SystemCommandLine
   {
     [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
     public bool ResetSettings { get; set; }

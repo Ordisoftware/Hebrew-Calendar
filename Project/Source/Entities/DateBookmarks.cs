@@ -20,13 +20,12 @@ using Ordisoftware.Core;
 namespace Ordisoftware.Hebrew.Calendar
 {
 
-  partial class DateBookmarks
+  class DateBookmarks
   {
 
-    private string FilePath { get; set; }
+    private string FilePath { get; }
 
-    private DateTime[] Items
-      = new DateTime[Program.Settings.DateBookmarksCount];
+    private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
 
     public DateTime this[int index]
     {

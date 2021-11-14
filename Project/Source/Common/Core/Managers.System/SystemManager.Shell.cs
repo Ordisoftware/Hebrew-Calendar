@@ -45,7 +45,7 @@ namespace Ordisoftware.Core
     /// Analyse command line arguments.
     /// </summary>
     static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
-      where T : SystemCommandLine
+    where T : SystemCommandLine
     {
       try
       {

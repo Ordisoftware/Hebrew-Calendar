@@ -27,28 +27,28 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provide exception information.
   /// </summary>
-  partial class ExceptionInfo
+  class ExceptionInfo
   {
 
     /// <summary>
     /// Indicate the sender.
     /// </summary>
-    public object Sender { get; private set; }
+    public object Sender { get; }
 
     /// <summary>
     /// Indicate the emitter.
     /// </summary>
-    public string Emitter { get; private set; }
+    public string Emitter { get; }
 
     /// <summary>
     /// Indicate the instance.
     /// </summary>
-    public Exception Instance { get; private set; }
+    public Exception Instance { get; }
 
     /// <summary>
     /// Indicate the inner exception.
     /// </summary>
-    public ExceptionInfo InnerInfo { get; private set; }
+    public ExceptionInfo InnerInfo { get; }
 
     /// <summary>
     /// Indicate the type text.
@@ -103,7 +103,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the target site.
     /// </summary>
-    public MethodBase TargetSite { get; private set; }
+    public MethodBase TargetSite { get; }
 
     /// <summary>
     /// Indicate the message.
@@ -138,17 +138,17 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Indicate the full stack text.
     /// </summary>
-    public string StackText { get; private set; }
+    public string StackText { get; }
 
     /// <summary>
     /// Indicate the exception stack list.
     /// </summary>
-    public List<string> ExceptionStackList { get; private set; } = new List<string>();
+    public List<string> ExceptionStackList { get; } = new List<string>();
 
     /// <summary>
     /// Indicate the thread stack list.
     /// </summary>
-    public List<string> ThreadStackList { get; private set; } = new List<string>();
+    public List<string> ThreadStackList { get; } = new List<string>();
 
     /// <summary>
     /// Indicate caller name.
