@@ -203,16 +203,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Hebrew-Calendar")]
-        public string ConnectionString {
-            get {
-                return ((string)(this["ConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
@@ -462,18 +452,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["ReminderShabatEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewSunToolTips {
-            get {
-                return ((bool)(this["MonthViewSunToolTips"]));
-            }
-            set {
-                this["MonthViewSunToolTips"] = value;
             }
         }
         
