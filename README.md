@@ -672,7 +672,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add option to set preferred data export file format (CSV/JSON)
 - Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).
 - Add export data to JSON file.
-- Add option for grid export to use enums names instead of translations
+- Add option for grid export to use enumerations names instead of translations
 - Add option to set global HotKey to popup the main form.
 - Add some keyboard shortcuts and change few.
 - Fix CSV export to add moon rise type field.
@@ -902,7 +902,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Fix search celebration and moon month forms when closing using the top-right cross.
 - Fix celebration reminder that can be shown even the next day too with bad times.
 - Few UI fixes.
-- Add menu for web links about judaïsm.
+- Add menu for web links about Judaism.
 - Add option to auto optimize database at startup once a week.
 - Add option to enable debugger.
 - Add debugger (exception information form with GitHub issue creation).
