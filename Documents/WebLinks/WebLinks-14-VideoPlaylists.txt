@@ -10,8 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Video Playlists
-Lang/FR = Vidéo Playlists
+Lang/EN = Video playlists
+Lang/FR = Playlists vidéo 
 
 Name = (IW) Bénédictions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN

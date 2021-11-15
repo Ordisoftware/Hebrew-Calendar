@@ -1,0 +1,77 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+FOLDER-SEPARATOR
+
+Lang/EN = Torah Lessons 1
+Lang/FR = Cours de Torah 1
+
+Name = (FR) Rav Yehia Benchetrit
+URL = http://ravbenchetrit.com
+
+Name = (FR) Rav Emmanuel Bensimon
+URL = https://nafshi.fr
+
+Name = (FR) Rav Azriel Cohen-Arazi
+URL = http://www.torahacademy.fr
+
+Name = (FR) Rav Avraham Ifrah
+URL = https://breslev.fr
+
+Name = (EN) Rabbi Yosef Yitzchak Jacobson
+URL = https://www.theyeshiva.net
+
+Name = (FR/EN) Rav David Pinto
+URL = https://hevratpinto.org
+
+Name = (FR) Rav Yakov Sitruk
+URL = https://www.alef-ledoroth.com
+
+Name = (EN) Rabbi Adin Steinsaltz
+URL = https://steinsaltz.org
+
+-
+
+Name = (FR) Halacha Yomit
+URL = http://halachayomit.co.il/fr/default.aspx
+
+Name = (EN) Halacha Yomit
+URL = http://halachayomit.co.il/en/Default.aspx
+
+Name = (IW) Halacha Yomit
+URL = http://halachayomit.co.il/he/default.aspx
+
+-
+
+Name = (FR) Hassidout
+URL = http://hassidout.org
+
+Name = (FR) Beth Loubavitch
+URL = https://www.loubavitch.fr
+
+Name = (FR) 'Habad Loubavitch
+URL = https://fr.chabad.org
+
+Name = (EN) 'Habad Loubavitch
+URL = https://www.chabad.org
+
+-
+
+Name = (FR) Aish
+URL = https://www.aish.fr
+
+Name = (EN) Aish
+URL = https://www.aish.com
+
+Name = (IW) Aish
+URL = https://www.aish.co.il
+
