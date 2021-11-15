@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// Export a DataTable to a file depending its extension.
+    /// Exports a DataTable to a file depending its extension.
     /// </summary>
     static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
     {

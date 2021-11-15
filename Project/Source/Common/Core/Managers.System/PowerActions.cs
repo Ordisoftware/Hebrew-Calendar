@@ -17,6 +17,9 @@ using System;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides power action enum.
+  /// </summary>
   public enum PowerAction
   {
     None,

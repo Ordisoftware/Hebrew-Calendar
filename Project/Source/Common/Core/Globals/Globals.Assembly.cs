@@ -29,8 +29,6 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Gets an attribute instance.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
     static private T GetAttribute<T>() where T : Attribute
     {
       object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);

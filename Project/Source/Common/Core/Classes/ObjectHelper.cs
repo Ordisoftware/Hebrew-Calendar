@@ -17,6 +17,9 @@ using System;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides object helper.
+  /// </summary>
   static class ObjectHelper
   {
 

@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew
   delegate void ViewLetterDetails(LettersControl sender, string code);
 
   /// <summary>
-  /// Provides Letters input panel Control class.
+  /// Provides Letters input panel Control.
   /// </summary>
   partial class LettersControl : UserControl
   {
@@ -63,6 +63,10 @@ namespace Ordisoftware.Hebrew
       remove { TextBox.TextChanged -= value; }
     }
 
+    /// <summary>
+    /// Indicates Input Text property.
+    /// </summary>
+    /// <value>The input text.</value>
     [DefaultValue("")]
     public string InputText
     {
@@ -196,6 +200,9 @@ namespace Ordisoftware.Hebrew
     }
     private bool _ShowKeys = true;
 
+    /// <summary>
+    /// Indicates the X margin.
+    /// </summary>
     [DefaultValue(DefaultMarginSize)]
     public int MarginX
     {
@@ -209,6 +216,9 @@ namespace Ordisoftware.Hebrew
     }
     private int _MarginX = DefaultMarginSize;
 
+    /// <summary>
+    /// Indicates the Y margin.
+    /// </summary>
     [DefaultValue(DefaultMarginSize)]
     public int MarginY
     {
@@ -374,6 +384,11 @@ namespace Ordisoftware.Hebrew
       TextBox.Focus();
     }
 
+    /// <summary>
+    /// Handles the Click event of the ActionLetterAddAtBegin control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event information.</param>
     private void ActionLetterAddAtBegin_Click(object sender, EventArgs e)
     {
       TextBox.SelectionLength = 0;
@@ -381,6 +396,11 @@ namespace Ordisoftware.Hebrew
       ButtonLetter_Click(sender, e);
     }
 
+    /// <summary>
+    /// Handles the Click event of the ActionLetterAddAtEnd control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event information.</param>
     private void ActionLetterAddAtEnd_Click(object sender, EventArgs e)
     {
       TextBox.SelectionLength = 0;
@@ -388,11 +408,21 @@ namespace Ordisoftware.Hebrew
       ButtonLetter_Click(sender, e);
     }
 
+    /// <summary>
+    /// Handles the Click event of the ActionLetterAddAtCaret control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event information.</param>
     private void ActionLetterAddAtCaret_Click(object sender, EventArgs e)
     {
       ButtonLetter_Click(sender, e);
     }
 
+    /// <summary>
+    /// Handles the Click event of the ActionLetterViewDetails control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event information.</param>
     private void ActionLetterViewDetails_Click(object sender, EventArgs e)
     {
       if ( ViewLetterDetails == null ) return;
@@ -400,6 +430,11 @@ namespace Ordisoftware.Hebrew
       ViewLetterDetails(this, button.Text);
     }
 
+    /// <summary>
+    /// Handles the Opened event of the ContextMenuLetter control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event information.</param>
     private void ContextMenuLetter_Opened(object sender, EventArgs e)
     {
       ActionLetterAddAtStart.Enabled = TextBox.Text.Length < TextBox.MaxLength;
@@ -412,7 +447,7 @@ namespace Ordisoftware.Hebrew
   }
 
   /// <summary>
-  /// Provides LetterEventArgs class.
+  /// Provides LetterEventArgs.
   /// </summary>
   class LetterEventArgs : EventArgs
   {

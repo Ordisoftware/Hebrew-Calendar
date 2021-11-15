@@ -22,6 +22,9 @@ namespace Ordisoftware.Core
   public delegate void LoadingDataEventHandler(Type type);
   public delegate void DataLoadedEventHandler();
 
+  /// <summary>
+  /// Provide SQLite database wrapper.
+  /// </summary>
   abstract class SQLiteDatabase
   {
 

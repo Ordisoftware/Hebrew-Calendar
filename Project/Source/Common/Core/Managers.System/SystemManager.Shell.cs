@@ -26,7 +26,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides SystemManager helper.
+  /// Provides system management.
   /// </summary>
   static partial class SystemManager
   {
@@ -219,6 +219,10 @@ namespace Ordisoftware.Core
       }
     }
 
+    /// <summary>
+    /// Closes the running applications being the same as the current.
+    /// </summary>
+    /// <param name="reason">The reason.</param>
     static public void CloseRunningApplications(string reason)
     {
       var result = DialogResult.None;

@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides input value box result.
+  /// Provides input value box result enum.
   /// </summary>
   public enum InputValueResult
   {

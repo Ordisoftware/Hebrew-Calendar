@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provides Letters input panel Control class.
+  /// Provides Letters input panel Control.
   /// </summary>
   partial class LettersControl
   {

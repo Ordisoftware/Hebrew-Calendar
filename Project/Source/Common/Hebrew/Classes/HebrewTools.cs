@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provides hebrew tools.
+  /// Provides Hebrew tools.
   /// </summary>
   static class HebrewTools
   {

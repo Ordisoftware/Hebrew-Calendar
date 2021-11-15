@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Runtime.InteropServices;
+using static Ordisoftware.Core.NativeMethods;
 
 namespace Ordisoftware.Core
 {
@@ -14,9 +15,9 @@ namespace Ordisoftware.Core
       try
       {
         StringBuilder lengthBuf = new(32);
-        NativeMethods.mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
-        NativeMethods.mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
-        NativeMethods.mciSendString("close wave", null, 0, IntPtr.Zero);
+        mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+        mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
+        mciSendString("close wave", null, 0, IntPtr.Zero);
         if ( int.TryParse(lengthBuf.ToString(), out int length) )
           return length;
       }
@@ -28,8 +29,8 @@ namespace Ordisoftware.Core
 
     static public void StopPlaying()
     {
-      var input = new NativeMethods.INPUT { Type = 1 };
-      input.Data.Keyboard = new NativeMethods.KEYBDINPUT
+      var input = new INPUT { Type = 1 };
+      input.Data.Keyboard = new KEYBDINPUT
       {
         Vk = 0xB2,
         Scan = 0,
@@ -37,15 +38,15 @@ namespace Ordisoftware.Core
         Time = 0,
         ExtraInfo = IntPtr.Zero
       };
-      var inputs = new NativeMethods.INPUT[] { input };
-      NativeMethods.SendInput(1, inputs, Marshal.SizeOf(typeof(NativeMethods.INPUT)));
+      var inputs = new INPUT[] { input };
+      SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
     }
 
     static public void MuteVolume(IntPtr? handle = null)
     {
       if ( !handle.HasValue ) handle = Globals.MainForm?.Handle;
       if ( !handle.HasValue ) return;
-      NativeMethods.SendMessageW(handle.Value, NativeMethods.WM_APPCOMMAND, handle.Value, (IntPtr)NativeMethods.APPCOMMAND_VOLUME_MUTE);
+      SendMessageW(handle.Value, WM_APPCOMMAND, handle.Value, (IntPtr)APPCOMMAND_VOLUME_MUTE);
     }
 
     static public float? GetApplicationVolume(int pid)
@@ -223,7 +224,7 @@ namespace Ordisoftware.Core
     int GetDisplayName([MarshalAs(UnmanagedType.LPWStr)] out string pRetVal);
 
     [PreserveSig]
-    int SetDisplayName([MarshalAs(UnmanagedType.LPWStr)]string Value, [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
+    int SetDisplayName([MarshalAs(UnmanagedType.LPWStr)] string Value, [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
 
     [PreserveSig]
     int GetIconPath([MarshalAs(UnmanagedType.LPWStr)] out string pRetVal);

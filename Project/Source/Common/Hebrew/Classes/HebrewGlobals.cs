@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provides hebrew global variables.
+  /// Provides Hebrew global variables.
   /// </summary>
   static partial class HebrewGlobals
   {
@@ -44,7 +44,7 @@ namespace Ordisoftware.Hebrew
       => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
 
     /// <summary>
-    /// Indicates file path of the hebrew grammar guide.
+    /// Indicates file path of the Hebrew grammar guide.
     /// </summary>
     static public string HebrewGrammarGuideFilePath
       => Path.Combine(GuidesFolderPath, "Guide-Grammar-{0}.htm");
@@ -55,15 +55,27 @@ namespace Ordisoftware.Hebrew
     static public string LettriqMethodNoticeFilePath
       => Path.Combine(GuidesFolderPath, "Method-Lettriq-{0}.htm");
 
+    /// <summary>
+    /// Indicates the parashot factory folder.
+    /// </summary>
     static public string ParashotFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Parashot");
 
+    /// <summary>
+    /// Indicates file path of the parashot factory.
+    /// </summary>
     static public string ParashotFactoryFilePath
       => Path.Combine(ParashotFolderPath, "ParashotFactory.txt");
 
+    /// <summary>
+    /// Indicates the parashot lettriqs folder.
+    /// </summary>
     static public string ParashotTranslationsFilePath
       => Path.Combine(ParashotFolderPath, $"Parashot-Translations-{Languages.Current}.txt");
 
+    /// <summary>
+    /// Indicates file path of the parashot lettriqs.
+    /// </summary>
     static public string ParashotLettriqsFilePath
       => Path.Combine(ParashotFolderPath, $"Parashot-Lettriqs-{Languages.Current}.txt");
 

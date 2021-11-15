@@ -18,13 +18,13 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provides hebrew months names.
+  /// Provides Hebrew months names.
   /// </summary>
   static class HebrewMonths
   {
 
     /// <summary>
-    /// Indicates unicode lunar months names.
+    /// Indicates Unicode lunar months names.
     /// </summary>
     static public readonly string[] Unicode =
     {

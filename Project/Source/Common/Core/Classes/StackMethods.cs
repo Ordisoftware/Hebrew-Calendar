@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static Ordisoftware.Core.NativeMethods;
 
 namespace Ordisoftware.Core
 {
@@ -195,7 +196,7 @@ namespace Ordisoftware.Core
       if ( !all ) required = required * requiredPercent / 100;
       foreach ( var point in points )
       {
-        var handle = NativeMethods.WindowFromPoint(new NativeMethods.PointStruct(point.X, point.Y));
+        var handle = WindowFromPoint(new PointStruct(point.X, point.Y));
         if ( handle == control.Handle || controls.Contains(handle) )
         {
           if ( ++found == required ) return true;
@@ -415,9 +416,9 @@ namespace Ordisoftware.Core
     /// From https://stackoverflow.com/questions/3677182/taskbar-location
     static public Rectangle GetTaskbarCoordonates()
     {
-      var data = new NativeMethods.APPBARDATA();
+      var data = new APPBARDATA();
       data.cbSize = Marshal.SizeOf(data);
-      IntPtr retval = NativeMethods.SHAppBarMessage(NativeMethods.ABM_GETTASKBARPOS, ref data);
+      IntPtr retval = SHAppBarMessage(ABM_GETTASKBARPOS, ref data);
       if ( retval == IntPtr.Zero )
         throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));
       return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);

@@ -18,6 +18,9 @@ using CommandLine;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides system command line options.
+  /// </summary>
   class SystemCommandLine
   {
     [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]

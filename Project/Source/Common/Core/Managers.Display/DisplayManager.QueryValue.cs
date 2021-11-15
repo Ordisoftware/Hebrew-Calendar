@@ -18,13 +18,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide multithreaded messages output and messages box.
+  /// Provides multi-threaded messages output and messages box.
   /// </summary>
   static public partial class DisplayManager
   {
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -71,7 +71,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -88,7 +88,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -121,7 +121,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -138,7 +138,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value.
@@ -156,7 +156,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Query a value.
+    /// Queries a value.
     /// </summary>
     /// <returns>
     /// The value window forms.

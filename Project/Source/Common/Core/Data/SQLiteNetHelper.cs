@@ -21,6 +21,9 @@ using SQLite;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides specialized SQLiteConnection.
+  /// </summary>
   public class SQLiteNetORM : SQLiteConnection
   {
     public SQLiteNetORM(SQLiteConnectionString connectionString) : base(connectionString) { }

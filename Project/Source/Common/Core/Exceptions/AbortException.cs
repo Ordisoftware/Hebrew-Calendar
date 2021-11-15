@@ -64,6 +64,9 @@ namespace Ordisoftware.Core
       Data.Add(argname, message);
     }
 
+    /// <summary>
+    /// Constructor.
+    /// </summary>
     protected AbortException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }

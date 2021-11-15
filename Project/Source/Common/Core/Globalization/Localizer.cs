@@ -20,6 +20,9 @@ using System.Text;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides translations dictionary.
+  /// </summary>
   [Serializable]
   class TranslationsDictionary : NullSafeOfStringDictionary<Language>
   {

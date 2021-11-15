@@ -23,6 +23,9 @@ using Base.Hotkeys;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides HotkeyManager wrapper.
+  /// </summary>
   class SystemHotKey
   {
 

@@ -11,20 +11,29 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Globalization;
 using System.Collections.Generic;
+using System.Linq;
+using MoreLinq;
 
 namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides system helper.
+  /// Provides string helper.
   /// </summary>
   static partial class StringHelper
   {
 
+    /// <summary>
+    /// Indicates if a string is empty.
+    /// </summary>
+    /// <returns>
+    /// true if empty, false if not.
+    /// </returns>
+    /// <param name="str">The string to act on.</param>
     static public bool IsEmpty(this string str)
     {
       return str.Length == 0;
@@ -36,7 +45,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// true if a null or is empty, false if not.
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     static public bool IsNullOrEmpty(this string str)
     {
       return string.IsNullOrEmpty(str);
@@ -45,10 +54,19 @@ namespace Ordisoftware.Core
     /// <summary>
     /// Sets all first letter to upper case.
     /// </summary>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     static public string Titleize(this string str)
     {
       return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+    }
+
+    /// <summary>
+    /// Trims any first and last char.
+    /// </summary>
+    /// <param name="str">The string to act on.</param>
+    static public string TrimFirstLast(this string str)
+    {
+      return new string(str.Skip(1).SkipLast(1).ToArray());
     }
 
     /// <summary>
@@ -57,7 +75,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string[].
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     static public string[] SplitNoEmptyLines(this string str)
     {
       return str.Split(Globals.NL, StringSplitOptions.RemoveEmptyEntries);
@@ -69,7 +87,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string[].
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     /// <param name="separator">The separator.</param>
     static public string[] SplitNoEmptyLines(this string str, string separator)
     {
@@ -94,7 +112,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string[].
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     /// <param name="separator">The separator.</param>
     static public string[] SplitKeepEmptyLines(this string str, string separator)
     {
@@ -107,7 +125,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string[].
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     /// <param name="separator">The separator.</param>
     /// <param name="stringSplitOptions">Options for controlling the operation.</param>
     static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
@@ -158,7 +176,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string.
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     /// <param name="margin">Margin.</param>
     static public string Indent(this string str, int margin)
     {
@@ -171,7 +189,7 @@ namespace Ordisoftware.Core
     /// <returns>
     /// A string.
     /// </returns>
-    /// <param name="str">The str to act on.</param>
+    /// <param name="str">The string to act on.</param>
     /// <param name="first">First line indentation.</param>
     /// <param name="corpus">Other lines indentation.</param>
     static public string Indent(this string str, int first, int corpus)
@@ -179,40 +197,6 @@ namespace Ordisoftware.Core
       return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
     }
 
-    /// <summary>
-    /// Wraps a string.
-    /// </summary>
-    /// <param name="str">The text.</param>
-    /// <param name="width">The width.</param>
-    static public string Wrap(this string str, int width)
-    {
-      const char spacechar = ' ';
-      string newline = Environment.NewLine;
-      if ( width <= 0 || str.Length <= width ) return str;
-      string result = str;
-      int index = 0, pos;
-      while ( index < result.Length - width )
-      {
-        pos = result.LastIndexOf(newline, index + width, width);
-        if ( pos != -1 )
-          index = pos + newline.Length;
-        else
-        {
-          pos = result.LastIndexOf(spacechar, index + width, width);
-          if ( pos == -1 )
-          {
-#pragma warning disable IDE0059 // Assignation inutile d'une valeur - Analysis Error
-            pos = result.IndexOf(spacechar, index + width);
-#pragma warning restore IDE0059 // Assignation inutile d'une valeur
-            break;
-          }
-          result = result.Remove(pos, 1);
-          result = result.Insert(pos, newline);
-          index = pos + newline.Length;
-        }
-      }
-      return result;
-    }
   }
 
 }

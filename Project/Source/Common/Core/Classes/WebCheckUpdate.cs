@@ -30,9 +30,9 @@ namespace Ordisoftware.Core
   static class WebCheckUpdate
   {
 
-    static public int DefaultCheckDaysInterval { get; set; } = 7;
-
     static private bool Mutex;
+
+    static public int DefaultCheckDaysInterval { get; set; } = 7;
 
     /// <summary>
     /// Deletes temp files.

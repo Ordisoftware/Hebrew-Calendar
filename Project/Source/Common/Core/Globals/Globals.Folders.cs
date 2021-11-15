@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.IO;
 using System.Windows.Forms;
+using static System.Environment;
 
 namespace Ordisoftware.Core
 {
@@ -74,12 +75,17 @@ namespace Ordisoftware.Core
       => $"\"{Application.ExecutablePath}\" --hide";
 
     /// <summary>
+    /// Indicates the bin folder path of the application.
+    /// </summary>
+    static public string BinFolderPath
+      => Path.GetDirectoryName(Application.ExecutablePath
+                                          .Replace(DebugDirectoryCombination, BinDirectoryName)
+                                          .Replace(ReleaseDirectoryCombination, BinDirectoryName));
+    /// <summary>
     /// Indicates the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
-      => Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath
-                                                              .Replace(DebugDirectoryCombination, BinDirectoryName)
-                                                              .Replace(ReleaseDirectoryCombination, BinDirectoryName))).FullName;
+      => Directory.GetParent(BinFolderPath).FullName;
 
     /// <summary>
     /// Indicates the application executable path.
@@ -142,7 +148,7 @@ namespace Ordisoftware.Core
       => Path.Combine(RootFolderPath, "Sounds");
 
     /// <summary>
-    /// Indicates the user applicationdatabase folder path.
+    /// Indicates the user application database folder path.
     /// </summary>
     static public string DatabaseFolderPath
       => UserDataFolderPath;
@@ -151,57 +157,55 @@ namespace Ordisoftware.Core
     /// Indicates the company program files folder path.
     /// </summary>
     static public string CompanyProgramFilesFolderPath
-      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), AssemblyCompany);
+      => Path.Combine(GetFolderPath(SpecialFolder.ProgramFiles), AssemblyCompany);
 
     /// <summary>
     /// Indicates the Windows media folder path.
     /// </summary>
     static public string WindowsMediaFolderPath
-      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Media");
+      => Path.Combine(GetFolderPath(SpecialFolder.Windows), "Media");
 
     /// <summary>
     /// Indicates the user music folder path.
     /// </summary>
     static public string UserMusicFolderPath
-      => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Media");
+      => Path.Combine(GetFolderPath(SpecialFolder.MyMusic), "Media");
 
     /// <summary>
     /// Indicates the user documents folder path.
     /// </summary>
     static public string UserDocumentsFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.MyDocuments, AssemblyTitle);
+      => GetSpecialFolderPath(SpecialFolder.MyDocuments, AssemblyTitle);
 
     /// <summary>
     /// Indicates the user data folder in local.
     /// </summary>
     static public string UserLocalDataFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, string.Empty);
+      => GetSpecialFolderPath(SpecialFolder.LocalApplicationData, string.Empty);
 
     /// <summary>
     /// Indicates the user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, AssemblyTitle);
+      => GetSpecialFolderPath(SpecialFolder.ApplicationData, AssemblyTitle);
 
     /// <summary>
-    /// Indicates the hebrew common data folder in roaming.
+    /// Indicates the Hebrew common data folder in roaming.
     /// </summary>
     static public string UserDataCommonFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, HebrewCommonDirectoryName);
+      => GetSpecialFolderPath(SpecialFolder.ApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
-    /// Indicates the hebrew common data folder in program data.
+    /// Indicates the Hebrew common data folder in program data.
     /// </summary>
     static public string ProgramDataFolderPath
-      => CreateSpecialFolderPath(Environment.SpecialFolder.CommonApplicationData, HebrewCommonDirectoryName);
+      => GetSpecialFolderPath(SpecialFolder.CommonApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
-    /// Indicates a path for in a special folder path.
+    /// Indicates a path for in a special folder path that is created if does not exist.
     /// </summary>
-    static public string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
-      => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),
-                                                AssemblyCompany,
-                                                directory)).FullName;
+    static public string GetSpecialFolderPath(SpecialFolder folder, string directory)
+      => Directory.CreateDirectory(Path.Combine(GetFolderPath(folder), AssemblyCompany, directory)).FullName;
 
   }
 

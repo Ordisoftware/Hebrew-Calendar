@@ -176,7 +176,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Extract the inherits.
+    /// Extracts the inherits.
     /// </summary>
     private void ExtractInherits()
     {
@@ -195,7 +195,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Extract the stack.
+    /// Extracts the stack.
     /// </summary>
     private void ExtractStack(bool full)
     {
@@ -254,7 +254,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Initialise the texts.
+    /// Initializes the texts.
     /// </summary>
     private void InitializeTexts()
     {

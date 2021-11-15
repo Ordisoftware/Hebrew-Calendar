@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides SystemManager helper.
+  /// Provides system management.
   /// </summary>
   static partial class SystemManager
   {
@@ -68,6 +68,9 @@ namespace Ordisoftware.Core
     /// </summary>
     static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
 
+    /// <summary>
+    /// Loads the SSL certificate.
+    /// </summary>
     static public void LoadSSLCertificate()
     {
       if ( Globals.IsVisualStudioDesigner ) return;

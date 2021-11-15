@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2011-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides multi-threaded messages output and messages box.
+  /// Provides messages and questions with waiting user communication feedback as well as UI sync.
   /// </summary>
   static partial class DisplayManager
   {
@@ -82,8 +82,7 @@ namespace Ordisoftware.Core
       if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
       Exception exception = null;
       Semaphore semaphore = null;
-#pragma warning disable IDE0039 // Utiliser une fonction locale - Must be a method
-      Action processAction = () =>
+      var processAction = () =>
       {
         try
         {
@@ -94,12 +93,11 @@ namespace Ordisoftware.Core
           exception = ex;
         }
       };
-      Action processActionWait = () =>
+      var processActionWait = () =>
       {
         processAction();
         semaphore?.Release();
       };
-#pragma warning restore IDE0039 // Utiliser une fonction locale
       if ( control.InvokeRequired && Thread.CurrentThread != MainThread )
       {
         if ( wait ) semaphore = new Semaphore(0, 1);
