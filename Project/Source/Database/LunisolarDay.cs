@@ -37,7 +37,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public string SunsetAsString { get; set; }
     public string MoonriseAsString { get; set; }
     public string MoonsetAsString { get; set; }
-    public MoonriseOccuring MoonriseOccuring { get; set; }
+    public MoonriseOccurring MoonriseOccuring { get; set; }
     public bool IsNewMoon { get; set; }
     public bool IsFullMoon { get; set; }
     public MoonPhase MoonPhase { get; set; }

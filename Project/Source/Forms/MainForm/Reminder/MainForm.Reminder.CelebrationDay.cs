@@ -39,7 +39,7 @@ namespace Ordisoftware.Hebrew.Calendar
       if ( row == null ) return result;
       var torahevent = row.TorahEvent;
       if ( row.Date.Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccuring.BeforeSet )
+        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
           return result;
       var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
       if ( times == null ) return result;

@@ -24,7 +24,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay()
     {
       int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
-      if ( MoonriseOccuring != MoonriseOccuring.NextDay || deltaPessah != 0 )
+      if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
         if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
         {
           int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah

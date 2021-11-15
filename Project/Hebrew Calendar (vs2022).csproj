@@ -736,7 +736,7 @@
     <Compile Include="Source\Forms\Boxes\Select\SelectYearsForm.Designer.cs">
       <DependentUpon>SelectYearsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Enums\MoonRiseOccuring.cs" />
+    <Compile Include="Source\Enums\MoonriseOccurring.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
     <Compile Include="Source\Forms\Config\AboutBox.cs">
