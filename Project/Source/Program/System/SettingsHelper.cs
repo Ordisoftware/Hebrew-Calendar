@@ -162,6 +162,9 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     }
 
+    /// <summary>
+    /// Sets the upgrade flags off.
+    /// </summary>
     static internal void SetUpgradeFlagsOff(this Settings settings)
     {
       settings.UpgradeResetRequiredV3_0 = false;
@@ -171,6 +174,9 @@ namespace Ordisoftware.Hebrew.Calendar
       settings.UpgradeRequired = false;
     }
 
+    /// <summary>
+    /// Sets the first and upgrade flags off.
+    /// </summary>
     static internal void SetFirstAndUpgradeFlagsOff(this Settings settings)
     {
       settings.SetUpgradeFlagsOff();

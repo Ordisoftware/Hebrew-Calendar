@@ -49,12 +49,21 @@ namespace Ordisoftware.Hebrew.Calendar
     static public string ApplicationEventIconFilePath
       => Path.Combine(Globals.SystemFolderPath, "ApplicationEvent.ico");
 
+    /// <summary>
+    /// Indicate data grid export targets
+    /// </summary>
     static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
       = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
 
+    /// <summary>
+    /// Indicate board export targets
+    /// </summary>
     static public readonly NullSafeOfStringDictionary<DataExportTarget> BoardExportTargets
       = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
 
+    /// <summary>
+    /// Indicate image export targets
+    /// </summary>
     static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
       = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
 
@@ -81,8 +90,14 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </remarks>
     public const int GenerateIntervalMinimum = 2;
 
+    /// <summary>
+    /// Indicate the automatic generate years maximum interval
+    /// </summary>
     public const int AutoGenerateYearsIntervalMax = 50;
 
+    /// <summary>
+    /// Indicate the generate interval previous years
+    /// </summary>
     public const int GenerateIntervalPreviousYears = 2;
 
     /// <summary>
