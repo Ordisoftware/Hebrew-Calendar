@@ -55,8 +55,7 @@ namespace Ordisoftware.Hebrew.Calendar
         DoScreenPositionMutex = true;
         if ( sender is ToolStripMenuItem menuItem )
         {
-          var list = ( (ToolStripMenuItem)menuItem.OwnerItem ).DropDownItems;
-          foreach ( ToolStripMenuItem item in list )
+          foreach ( ToolStripMenuItem item in ( (ToolStripMenuItem)menuItem.OwnerItem ).DropDownItems )
             item.Checked = item == menuItem;
         }
         if ( Globals.IsReady ) Settings.Store();

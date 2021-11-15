@@ -173,10 +173,13 @@ namespace Ordisoftware.Core
     {
       var res = InputValueResult.Unchanged;
       T newvalue = value;
-      SystemManager.TryCatch(() =>
+      try
       {
         Globals.MainForm.SyncUI(() => res = InputBox<T>.Run(title, caption, ref newvalue, ispassword, validator));
-      });
+      }
+      catch
+      {
+      }
       if ( res == InputValueResult.Modified ) value = newvalue;
       return res;
     }

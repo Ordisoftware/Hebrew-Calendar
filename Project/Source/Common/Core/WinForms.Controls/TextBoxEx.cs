@@ -160,7 +160,7 @@ namespace Ordisoftware.Core
 
     private void AddUndo()
     {
-      return;
+      //return;
       //
       //if ( base.Text == null ) return;
       //Previous.Set(base.Text, SelectionStart/*, SelectionLength*/);
@@ -181,7 +181,7 @@ namespace Ordisoftware.Core
 
     private void TextChangedEvent(object sender, EventArgs e)
     {
-      if ( SetTextMutex ) return;
+      //if ( SetTextMutex ) return;
       //UndoStack.Push(Previous);
       //RedoStack.Clear();
     }
