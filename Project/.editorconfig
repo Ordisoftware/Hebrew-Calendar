@@ -1,0 +1,25 @@
+﻿[*.cs]
+
+# RCS1043: Remove 'partial' modifier from type with a single part.
+dotnet_diagnostic.RCS1043.severity = suggestion
+
+# RCS1071: Remove redundant base constructor call.
+dotnet_diagnostic.RCS1071.severity = suggestion
+
+# RCS1124: Inline local variable.
+dotnet_diagnostic.RCS1124.severity = suggestion
+
+# IDE0005: La directive using n'est pas nécessaire.
+dotnet_diagnostic.IDE0005.severity = silent
+
+# RCS1188: Remove redundant auto-property initialization.
+dotnet_diagnostic.RCS1188.severity = silent
+
+# RCS1070: Remove redundant default switch section.
+dotnet_diagnostic.RCS1070.severity = suggestion
+
+# RCS1143: Simplify coalesce expression.
+dotnet_diagnostic.RCS1143.severity = suggestion
+
+# IDE0004: Supprimer le cast inutile
+dotnet_diagnostic.IDE0004.severity = suggestion

@@ -85,10 +85,10 @@ namespace Ordisoftware.Hebrew.Calendar
           break;
         }
       }
-      if ( rowFirst?.MoonriseOccuring == MoonriseOccuring.AfterSet )
+      if ( rowFirst?.MoonriseOccuring == MoonriseOccurring.AfterSet )
         return rowFirst;
       else
-      if ( rowLast?.MoonriseOccuring == MoonriseOccuring.BeforeSet )
+      if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
         return rowLast;
       else
       if ( rowFirst != null && rowLast != null )

@@ -154,11 +154,11 @@ namespace Ordisoftware.Hebrew.Calendar
             }
             else
             {
-              if ( row.MoonriseOccuring == MoonriseOccuring.AfterSet )
+              if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
               {
                 if ( row.Moonset != null )
                   add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
-                if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
                   add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
                 else
                 if ( !Settings.TorahEventsCountAsMoon )
@@ -166,7 +166,7 @@ namespace Ordisoftware.Hebrew.Calendar
               }
               else
               {
-                if ( row.MoonriseOccuring != MoonriseOccuring.NextDay )
+                if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
                   add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
                 else
                 if ( !Settings.TorahEventsCountAsMoon )

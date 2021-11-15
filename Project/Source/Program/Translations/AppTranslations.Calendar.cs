@@ -111,19 +111,19 @@ namespace Ordisoftware.Hebrew.Calendar
       }
     };
 
-    static public readonly NullSafeDictionary<MoonriseOccuring, TranslationsDictionary> MoonriseOccurings = new()
+    static public readonly NullSafeDictionary<MoonriseOccurring, TranslationsDictionary> MoonriseOccurings = new()
     {
-      [MoonriseOccuring.AfterSet] = new TranslationsDictionary
+      [MoonriseOccurring.AfterSet] = new TranslationsDictionary
       {
         [Language.EN] = "After the set",
         [Language.FR] = "Après le lever"
       },
-      [MoonriseOccuring.BeforeSet] = new TranslationsDictionary
+      [MoonriseOccurring.BeforeSet] = new TranslationsDictionary
       {
         [Language.EN] = "Before the set",
         [Language.FR] = "Avant le lever"
       },
-      [MoonriseOccuring.NextDay] = new TranslationsDictionary
+      [MoonriseOccurring.NextDay] = new TranslationsDictionary
       {
         [Language.EN] = "The next day",
         [Language.FR] = "Le jour d'après"

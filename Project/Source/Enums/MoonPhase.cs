@@ -24,42 +24,42 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// The new moon.
+    /// New moon.
     /// </summary>
     New,
 
     /// <summary>
-    /// The waxing crescent moon.
+    /// Waxing crescent moon.
     /// </summary>
     WaxingCrescent,
 
     /// <summary>
-    /// The first quarter moon.
+    /// First quarter moon.
     /// </summary>
     FirstQuarter,
 
     /// <summary>
-    /// The waxing gibbous moon.
+    /// Waxing gibbous moon.
     /// </summary>
     WaxingGibbous,
 
     /// <summary>
-    /// The full moon.
+    /// Full moon.
     /// </summary>
     Full,
 
     /// <summary>
-    /// The waning gibbous moon.
+    /// Waning gibbous moon.
     /// </summary>
     WaningGibbous,
 
     /// <summary>
-    /// The last quarter moon.
+    /// Last quarter moon.
     /// </summary>
     LastQuarter,
 
     /// <summary>
-    /// The waning crescent moon.
+    /// Waning crescent moon.
     /// </summary>
     WaningCrescent
 

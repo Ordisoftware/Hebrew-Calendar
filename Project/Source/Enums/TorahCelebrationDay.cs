@@ -26,86 +26,86 @@ namespace Ordisoftware.Hebrew.Calendar
     // Database values for major celebrations
 
     /// <summary>
-    /// The no event.
+    /// No event.
     /// </summary>
     None,
 
     /// <summary>
-    /// The new year day 1.
+    /// New year day 1.
     /// </summary>
     NewYearD1,
 
     /// <summary>
-    /// The new year day 10.
+    /// New year day 10.
     /// </summary>
     NewYearD10,
 
     /// <summary>
-    /// The pessah first day.
+    /// Pessah first day.
     /// </summary>
     PessahD1,
 
     /// <summary>
-    /// The pessah last day.
+    /// Pessah last day.
     /// </summary>
     PessahD7,
 
     /// <summary>
-    /// The chavouot diet start.
+    /// Chavouot diet start.
     /// </summary>
     ChavouotDiet,
 
     /// <summary>
-    /// The chavouot first celebration.
+    /// Shavouot first celebration.
     /// </summary>
     Chavouot1,
 
     /// <summary>
-    /// The chavouot second celebration.
+    /// The Shavouot second celebration.
     /// </summary>
     Chavouot2,
 
     /// <summary>
-    /// The yom terouah.
+    /// Yom terouah.
     /// </summary>
     YomTerouah,
 
     /// <summary>
-    /// The yom hakipourim.
+    /// Yom hakipourim.
     /// </summary>
     YomHaKipourim,
 
     /// <summary>
-    /// The soukot first day.
+    /// Soukot first day.
     /// </summary>
     SoukotD1,
 
     /// <summary>
-    /// The soukot last day.
+    /// Soukot last day.
     /// </summary>
     SoukotD8,
 
     // Database values for minor celebrations
 
     /// <summary>
-    /// The 'hanouka first day.
+    /// 'Hanouka first day.
     /// </summary>
     HanoukaD1,
 
     /// <summary>
-    /// The 'hanouka last day.
+    /// 'Hanouka last day.
     /// </summary>
     HanoukaD8,
 
     /// <summary>
-    /// The pourim day.
+    /// Pourim day.
     /// </summary>
     Pourim,
 
     // Non database values (always at the end)
 
     /// <summary>
-    /// The Shabat day.
+    /// Shabat day.
     /// </summary>
     Shabat
 
@@ -115,12 +115,12 @@ namespace Ordisoftware.Hebrew.Calendar
 
 /*
 /// <summary>
-/// The sun aniversary.
+/// Sun anniversary.
 /// </summary>
 AnniversarySun,
 
 /// <summary>
-/// The moon aniversary.
+/// Moon anniversary.
 /// </summary>
 AnniversaryMoon
 */

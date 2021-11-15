@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
       else
       if ( useRealDay )
       {
-        if ( day.MoonriseOccuring == MoonriseOccuring.BeforeSet || day.Moonset == null )
+        if ( day.MoonriseOccuring == MoonriseOccurring.BeforeSet || day.Moonset == null )
         {
           int index = Table.IndexOf(day) - 1;
           if ( index < 0 )
@@ -80,13 +80,13 @@ namespace Ordisoftware.Hebrew.Calendar
         if ( rowNext.Date == DateTime.Today )
           times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
         else
-        if ( Moonset != null && MoonriseOccuring == MoonriseOccuring.AfterSet )
+        if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.AfterSet )
           times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
         else
-        if ( Moonset != null && MoonriseOccuring == MoonriseOccuring.NextDay )
+        if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.NextDay )
           times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
         else
-        if ( Moonset != null && MoonriseOccuring == MoonriseOccuring.BeforeSet )
+        if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.BeforeSet )
           times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, delta3);
         else
         if ( Moonset == null )

@@ -125,12 +125,12 @@ namespace Ordisoftware.Hebrew.Calendar
       {
         ContextMenuDaySunrise.Visible = false;
         ContextMenuDaySunset.Visible = false;
-        if ( ContextMenuDayCurrentEvent.MoonriseOccuring == MoonriseOccuring.AfterSet )
+        if ( ContextMenuDayCurrentEvent.MoonriseOccuring == MoonriseOccurring.AfterSet )
         {
           ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.Moonset != null;
           if ( ContextMenuDayMoonrise.Visible )
             ContextMenuDayMoonrise.Text = AppTranslations.Moonset.GetLang(ContextMenuDayCurrentEvent?.MoonsetAsString ?? "-");
-          ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccuring.NextDay;
+          ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
           if ( ContextMenuDayMoonset.Visible )
             ContextMenuDayMoonset.Text = AppTranslations.Moonrise.GetLang(ContextMenuDayCurrentEvent?.MoonriseAsString ?? "-");
           ContextMenuDayMoonrise.ImageIndex = 3;
@@ -138,7 +138,7 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
         {
-          ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccuring.NextDay;
+          ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
           if ( ContextMenuDayMoonrise.Visible )
             ContextMenuDayMoonrise.Text = AppTranslations.Moonrise.GetLang(ContextMenuDayCurrentEvent?.MoonriseAsString ?? "-");
           ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.Moonset != null;
