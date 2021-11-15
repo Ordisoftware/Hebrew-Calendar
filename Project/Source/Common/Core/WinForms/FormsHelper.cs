@@ -382,6 +382,11 @@ namespace Ordisoftware.Core
       return bitmap;
     }
 
+    /// <summary>
+    /// Sets the color of the background.
+    /// </summary>
+    /// <param name="grid">The grid.</param>
+    /// <param name="color">The color.</param>
     static public void SetBackColor(this DataGridView grid, Color color)
     {
       for ( int row = 0; row < grid.Rows.Count; row++ )
@@ -389,11 +394,22 @@ namespace Ordisoftware.Core
           grid[col, row].Style.BackColor = color;
     }
 
+    /// <summary>
+    /// Sets the text justified.
+    /// </summary>
+    /// <param name="control">The control.</param>
+    /// <param name="text">The text.</param>
+    /// <param name="width">The width.</param>
     static public void SetTextJustified(this Control control, string text, int width)
     {
       control.Text = StackMethods.JustifyParagraph(text, width, control.Font);
     }
 
+    /// <summary>
+    /// Gets the grid points.
+    /// </summary>
+    /// <param name="control">The control.</param>
+    /// <param name="margin">The margin.</param>
     static public List<Point> GetGridPoints(this Control control, int margin = 15)
     {
       int widthDiv2 = control.Width / 2;

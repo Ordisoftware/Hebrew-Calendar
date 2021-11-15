@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Measures an action reapeted several times.
+    /// Measures an action repeated several times.
     /// </summary>
     static public long Measure(int count, Action action, Control control = null)
     {

@@ -63,13 +63,14 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provides messages and questions with waiting user communication feedback.
+  /// Provides messages and questions with waiting user communication feedback as well as UI sync.
   /// </summary>
   static partial class DisplayManager
   {
 
     static public bool AdvancedFormUseSounds { get; set; } = true;
     static public bool ShowSuccessDialogs { get; set; } = true;
+
     static public MessageBoxFormStyle FormStyle { get; set; } = MessageBoxFormStyle.Advanced;
     static public MessageBoxIconStyle IconStyle { get; set; } = MessageBoxIconStyle.ForceInformation;
 

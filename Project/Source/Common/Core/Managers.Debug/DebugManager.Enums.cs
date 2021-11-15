@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Indicates show exception mode.
+  /// Provides show exception mode enum.
   /// </summary>
   public enum ShowExceptionMode
   {
@@ -29,7 +29,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Indicates trace file roll over mode.
+  /// Provides trace file roll over mode enum.
   /// </summary>
   public enum TraceFileRollOverMode
   {

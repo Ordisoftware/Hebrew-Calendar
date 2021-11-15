@@ -17,6 +17,9 @@ using System;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides export action enum.
+  /// </summary>
   public enum ExportAction
   {
     SaveToFile,

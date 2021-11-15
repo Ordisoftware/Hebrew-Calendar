@@ -46,6 +46,9 @@ namespace Ordisoftware.Core
     GIF
   }
 
+  /// <summary>
+  /// Provides image export targe helper.
+  /// </summary>
   static class ImageExportTargetHelper
   {
 
@@ -60,11 +63,20 @@ namespace Ordisoftware.Core
       }
     }
 
+    /// <summary>
+    /// Gets the image format from a string extension.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <param name="extension">The extension.</param>
     static public ImageFormat GetFormat(this NullSafeOfStringDictionary<ImageExportTarget> list, string extension)
     {
       return list.FirstOrDefault(v => v.Value == extension).Key.GetFormat();
     }
 
+    /// <summary>
+    /// Gets the image format from an enum value.
+    /// </summary>
+    /// <param name="value">The value.</param>
     static public ImageFormat GetFormat(this ImageExportTarget value)
     {
       return value switch

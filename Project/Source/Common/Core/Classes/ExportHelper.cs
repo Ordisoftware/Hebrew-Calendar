@@ -25,6 +25,10 @@ namespace Ordisoftware.Core
   static class ExportHelper
   {
 
+    /// <summary>
+    /// Creates the export targets.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
     where T : struct, Enum
     {
@@ -35,7 +39,23 @@ namespace Ordisoftware.Core
       return result;
     }
 
-    static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
+    /// <summary>
+    /// Creates the filters for dialog boxes.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
+    where T : struct, Enum
+    {
+      string str = SysTranslations.FileExtensionFilter.GetLang();
+      var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");
+      return string.Join("|", list);
+    }
+
+    /// <summary>
+    /// Sets the targets that are supported.
+    /// </summary>
+    static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values,
+                                                                params T[] list)
     where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => !list.Contains(p.Key)).ToList() )
@@ -43,20 +63,16 @@ namespace Ordisoftware.Core
       return values;
     }
 
-    static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values, params T[] list)
+    /// <summary>
+    /// Sets the targets that are not supported.
+    /// </summary>
+    static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values,
+                                                                  params T[] list)
     where T : struct, Enum
     {
       foreach ( var pair in values.Where(p => list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
       return values;
-    }
-
-    static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
-    where T : struct, Enum
-    {
-      string str = SysTranslations.FileExtensionFilter.GetLang();
-      var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");
-      return string.Join("|", list);
     }
 
   }

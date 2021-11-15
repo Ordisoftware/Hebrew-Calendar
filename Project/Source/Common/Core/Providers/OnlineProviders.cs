@@ -125,6 +125,9 @@ namespace Ordisoftware.Core
       }
     }
 
+    /// <summary>
+    /// Sorts the by language.
+    /// </summary>
     private void SortByLanguage()
     {
       if ( MoveCurrentLanguageAtTop )

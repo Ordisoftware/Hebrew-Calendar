@@ -21,7 +21,6 @@ namespace Ordisoftware.Core
   /// <summary>
   /// Provides input box.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class InputBox<T> : Form
   where T : IConvertible
   {

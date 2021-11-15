@@ -52,12 +52,10 @@ namespace Ordisoftware.Core
     static public int EnterCountSkip { get; set; } = 2;
 
     static private int StackSkip = 1;
-    static private int EnterCount = 0;
-    static private int CurrentMargin = 0;
-#pragma warning disable IDE0044 // Ajouter un modificateur readonly
-    static private int TraceEventMaxLength = 0;
-    static private string Separator = new('-', 120);
-#pragma warning restore IDE0044 // Ajouter un modificateur readonly
+    static private int EnterCount;
+    static private int CurrentMargin;
+    static private readonly int TraceEventMaxLength;
+    static private readonly string Separator = new('-', 120);
 
     static DebugManager()
     {

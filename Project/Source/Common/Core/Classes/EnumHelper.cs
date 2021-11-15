@@ -19,24 +19,39 @@ using System.Globalization;
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides enum helper.
+  /// </summary>
   static class EnumHelper
   {
 
+    /// <summary>
+    /// Converts to a full string representation like "type.value".
+    /// </summary>
     static public string ToStringFull<T>(this T value) where T : Enum
     {
       return value.GetType().Name + "." + value.ToString();
     }
 
+    /// <summary>
+    /// Determines the minimum of the parameters.
+    /// </summary>
     static public int Min<T>() where T : Enum
     {
       return Enum.GetValues(typeof(T)).Cast<int>().Min();
     }
 
+    /// <summary>
+    /// Determines the maximum of the parameters.
+    /// </summary>
     static public int Max<T>() where T : Enum
     {
       return Enum.GetValues(typeof(T)).Cast<int>().Max();
     }
 
+    /// <summary>
+    /// Sets the flag.
+    /// </summary>
     static public T SetFlag<T>(this T flags, T flag, bool value)
     where T : Enum, IComparable, IFormattable, IConvertible
     {

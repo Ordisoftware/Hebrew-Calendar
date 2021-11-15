@@ -125,7 +125,7 @@ namespace Ordisoftware.Core
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
 
     /// <summary>
-    /// Indicates the file path of the emptysound.
+    /// Indicates the file path of the empty sound.
     /// </summary>
     static public string EmptySoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Empty.wav");

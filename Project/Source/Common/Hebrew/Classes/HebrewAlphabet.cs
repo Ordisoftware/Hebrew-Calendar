@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provides hebrew letters class to manage hebrew font and unicode chars
+  /// Provides Hebrew letters class to manage Hebrew font and Unicode chars
   /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
   /// </summary>
   static class HebrewAlphabet
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew
     public const int ConcordanceLast = 8674;
 
     /// <summary>
-    /// Indicates letters keyboard codes for hebrew font.
+    /// Indicates letters keyboard codes for Hebrew font.
     /// </summary>
     static public readonly string[] Codes =
     {
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicates letters names in hebrew font chars.
+    /// Indicates letters names in Hebrew font chars.
     /// </summary>
     static public readonly string[] Names =
     {
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew
 
 
     /// <summary>
-    /// Indicates final letters disabled keyboard codes for hebrew font.
+    /// Indicates final letters disabled keyboard codes for Hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =
     {
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicates final letters enabled keyboard codes for hebrew font.
+    /// Indicates final letters enabled keyboard codes for Hebrew font.
     /// </summary>
     static private readonly char[][] FinalEnable =
     {
@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicates if a string contains some hebrew unicode chars.
+    /// Indicates if a string contains some Hebrew Unicode chars.
     /// </summary>
     static public bool ContainsUnicode(string str)
     {
@@ -100,7 +100,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicates if a string contains only hebrew unicode chars or spaces regardless of diacritics and capitals.
+    /// Indicates if a string contains only Hebrew Unicode chars or spaces regardless of diacritics and capitals.
     /// </summary>
     static public bool IsValidUnicode(string str)
     {
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicates if a string contains only hebrew font chars or spaces regardless of diacritics and capitals and finals.
+    /// Indicates if a string contains only Hebrew font chars or spaces regardless of diacritics and capitals and finals.
     /// </summary>
     static public bool IsValidHebrew(string str)
     {
@@ -120,7 +120,7 @@ namespace Ordisoftware.Hebrew
     /// <summary>
     /// Sets final letter.
     /// </summary>
-    /// <param name="hebrew">The word in hebrew font chars.</param>
+    /// <param name="hebrew">The word in Hebrew font chars.</param>
     /// <param name="enable">On else off</param>
     static public string SetFinal(string hebrew, bool enable)
     {
@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Returns only allowed chars for hebrew font.
+    /// Returns only allowed chars for Hebrew font.
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Returns only allowed chars for hebrew font.
+    /// Returns only allowed chars for Hebrew font.
     /// </summary>
     static public string OnlyUnicode(string str)
     {
@@ -178,19 +178,19 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Converts unicode hebrew chars to hebrew font chars.
+    /// Converts Unicode Hebrew chars to Hebrew font chars.
     /// </summary>
-    static public string ToHebrewFont(string unicode)
+    static public string ToHebrewFont(string Unicode)
     {
-      if ( unicode.IsNullOrEmpty() ) return string.Empty;
+      if ( Unicode.IsNullOrEmpty() ) return string.Empty;
       string result = string.Empty;
-      foreach ( char c in unicode.RemoveDiacritics().ToLower() )
+      foreach ( char c in Unicode.RemoveDiacritics().ToLower() )
         result = UnicodeToHebrew(c) + result;
       return result;
     }
 
     /// <summary>
-    /// Converts hebrew font chars to unicode hebrew chars.
+    /// Converts Hebrew font chars to Unicode Hebrew chars.
     /// </summary>
     static public string ToUnicode(string str)
     {
@@ -202,7 +202,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Converts unicode hebrew chars to hebrew font chars.
+    /// Converts Unicode Hebrew chars to Hebrew font chars.
     /// </summary>
     static public char UnicodeToHebrew(char c)
     {
@@ -242,7 +242,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Converts hebrew font chars to unicode hebrew chars.
+    /// Converts Hebrew font chars to Unicode Hebrew chars.
     /// </summary>
     static public char HebrewToUnicode(char c)
     {

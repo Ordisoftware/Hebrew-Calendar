@@ -14,13 +14,13 @@
 /// <edited> 2021-09 </edited>
 using System;
 
-#pragma warning disable RCS1214 // Unnecessary interpolated string.
 namespace Ordisoftware.Core
 {
 
   /// <summary>
   /// Localization strings.
   /// </summary>
+  [System.Diagnostics.CodeAnalysis.SuppressMessage("Simplification", "RCS1214:Unnecessary interpolated string.", Justification = "Readability")]
   static partial class SysTranslations
   {
 
@@ -146,4 +146,3 @@ namespace Ordisoftware.Core
   }
 
 }
-#pragma warning restore RCS1214 // Unnecessary interpolated string.

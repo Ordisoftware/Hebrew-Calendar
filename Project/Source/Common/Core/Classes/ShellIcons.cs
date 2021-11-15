@@ -11,35 +11,36 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using static Ordisoftware.Core.NativeMethods;
 
 namespace Ordisoftware.Core
 {
 
+  /// <summary>
+  /// Provides shell icons for message boxes.
+  /// </summary>
   static class ShellIcons
   {
     static public readonly Bitmap Warning;
     static public readonly Bitmap Error;
     static public readonly Bitmap Information;
     static public readonly Bitmap Question;
-
     static ShellIcons()
     {
-      var sii = new NativeMethods.SHSTOCKICONINFO
+      var sii = new SHSTOCKICONINFO { cbSize = (uint)Marshal.SizeOf(typeof(SHSTOCKICONINFO)) };
+      Information = process(SHSTOCKICONID.SIID_INFO);
+      Question = process(SHSTOCKICONID.SIID_HELP);
+      Warning = process(SHSTOCKICONID.SIID_WARNING);
+      Error = process(SHSTOCKICONID.SIID_ERROR);
+      Bitmap process(SHSTOCKICONID id)
       {
-        cbSize = (uint)Marshal.SizeOf(typeof(NativeMethods.SHSTOCKICONINFO))
-      };
-      Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_INFO, NativeMethods.SHGSI.SHGSI_ICON, ref sii));
-      Information = Icon.FromHandle(sii.hIcon).ToBitmap();
-      Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_HELP, NativeMethods.SHGSI.SHGSI_ICON, ref sii));
-      Question = Icon.FromHandle(sii.hIcon).ToBitmap();
-      Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_WARNING, NativeMethods.SHGSI.SHGSI_ICON, ref sii));
-      Warning = Icon.FromHandle(sii.hIcon).ToBitmap();
-      Marshal.ThrowExceptionForHR(NativeMethods.SHGetStockIconInfo(NativeMethods.SHSTOCKICONID.SIID_ERROR, NativeMethods.SHGSI.SHGSI_ICON, ref sii));
-      Error = Icon.FromHandle(sii.hIcon).ToBitmap();
+        Marshal.ThrowExceptionForHR(SHGetStockIconInfo(id, SHGSI.SHGSI_ICON, ref sii));
+        return Icon.FromHandle(sii.hIcon).ToBitmap();
+      }
     }
 
   }
