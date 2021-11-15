@@ -1,0 +1,36 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Vedic sacred texts
+Lang/FR = Textes sacrés védiques
+
+Name = (EN) Vedas @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Vedas
+
+Name = (FR) Véda @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Veda
+
+-
+
+Name = (EN) Bhagavad Gita word-for-word (PDF 63 MiB)
+URL = http://www.prabhupada-books.de/translations/gita-english/Bhagavad-gita-As-It-Is_McMillan1972.pdf
+
+Name = (FR) Bhagavad Gita mot-à-mot (PDF 42 Mio)
+URL = http://www.prabhupada-books.de/translations/gita-french/La_Bhagavad-gita_telle_quelle_est_Bhaktivedanta_Swami_Prabhupada.pdf
+
+-
+
+Name = (EN) Yoga Sutra of Patanjali word-for-word (PDF 363 KiB)
+URL = http://www.arlingtoncenter.org/Sanskrit-English.pdf
+
+Name = (FR) Yoga Sutra de Patanjali mot-à-mot (PDF 176 Kio)
+URL = http://www.lilashtanga.com/wp-content/uploads/2017/05/Sutra-de-patanjali-texte-.pdf

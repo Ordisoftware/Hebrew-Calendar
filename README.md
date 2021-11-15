@@ -331,9 +331,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 - Fix second click on date in reminder box sometimes goes to the first day.
 - Fix lock session link in auto-lock box that do a standby.
-- French and English corrections.
-- Code refactoring.
 - Few fixes.
+- Code refactoring.
+- French and English corrections.
+- Reorganize web links to avoid problems on small screens.
 
 #### 2021.11.14 - Version 9.11
 
