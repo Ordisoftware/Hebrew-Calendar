@@ -322,6 +322,7 @@ namespace CodeProjectCalendar.NET
       get { return _calendarDate; }
       set
       {
+        if ( _calendarDate == value ) return;
         _calendarDate = value;
         Refresh();
       }
@@ -947,10 +948,10 @@ namespace CodeProjectCalendar.NET
         MonthWithDayText = monthText;
       else
         if ( MainForm.Instance.CurrentDay != null )
-          MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
-        else
+        MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
+      else
         if ( !MainForm.Instance.PreferencesMutex )
-          MonthWithDayText = today.Day + " " + monthText;
+        MonthWithDayText = today.Day + " " + monthText;
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -1226,7 +1227,7 @@ namespace CodeProjectCalendar.NET
               var mouse = PointToClient(Cursor.Position);
               isMouseHover = area1.Contains(mouse.X, mouse.Y);
             }
-              var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
+            var area2 = new Rectangle(xStart + 2, yStart + 2, cellWidth - 4, cellHeight - 4);
             if ( isSelected )
             {
               if ( showSelectedox )

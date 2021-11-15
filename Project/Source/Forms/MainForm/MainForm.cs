@@ -989,6 +989,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <param name="e">Event information.</param>
     private void LunisolarDaysBindingSource_CurrentItemChanged(object sender, EventArgs e)
     {
+      if ( GoToDateMutex ) return;
       SystemManager.TryCatch(() =>
       {
         if ( LunisolarDaysBindingSource.Current != null )

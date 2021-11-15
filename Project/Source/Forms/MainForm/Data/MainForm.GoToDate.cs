@@ -73,19 +73,20 @@ namespace Ordisoftware.Hebrew.Calendar
       }
       finally
       {
-        GoToDateMutex = false;
         if ( bringToFront )
-        {
-          if ( !Visible && !onlyIfOpened )
-            MenuShowHide_Click(null, null);
-          else
-          if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
-            this.Restore();
-          else
-          if ( Visible && !this.IsVisibleOnTop(80) )
-            this.Popup();
-          regetFocus?.Popup();
-        }
+          SystemManager.TryCatch(() =>
+          {
+            if ( !Visible && !onlyIfOpened )
+              MenuShowHide_Click(null, null);
+            else
+            if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
+              this.Restore();
+            else
+            if ( Visible && !this.IsVisibleOnTop(80) )
+              this.Popup();
+            regetFocus?.Popup();
+          });
+        GoToDateMutex = false;
       }
     }
 
