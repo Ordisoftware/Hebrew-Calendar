@@ -17,6 +17,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.IO.Pipes;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Threading.Tasks;
@@ -78,21 +79,14 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private static void CheckSettingsReset(bool force = false)
     {
+      var resetForceVersions = new bool[] { Settings.UpgradeResetRequiredV3_0, Settings.UpgradeResetRequiredV3_6, Settings.UpgradeResetRequiredV4_1, Settings.UpgradeResetRequiredV5_10 };
       try
       {
         // Check reset
-        if ( force
-          || Settings.UpgradeResetRequiredV3_0
-          || Settings.UpgradeResetRequiredV3_6
-          || Settings.UpgradeResetRequiredV4_1
-          || Settings.UpgradeResetRequiredV5_10 )
+        if ( force || resetForceVersions.Contains(true) )
         {
-#pragma warning disable IDE0079 // Retirer la suppression inutile - Irrelevant
-#pragma warning disable S2583 // Conditionally executed code should be reachable - Irrelevant
           if ( !force && !Settings.FirstLaunch )
             DisplayManager.ShowInformation(SysTranslations.UpgradeResetRequired.GetLang());
-#pragma warning restore S2583 // Conditionally executed code should be reachable
-#pragma warning restore IDE0079 // Retirer la suppression inutile
           Settings.Reset();
           Settings.LanguageSelected = Languages.Current;
           Settings.SetUpgradeFlagsOff();
@@ -102,17 +96,14 @@ namespace Ordisoftware.Hebrew.Calendar
           Settings.SetFirstAndUpgradeFlagsOff();
           Settings.FirstLaunch = true;
         }
-        // Check OS
-        if ( Settings.FirstLaunch )
-        {
-          if ( SystemStatistics.Instance.Platform.Contains("Windows 7") )
-            Settings.NavigationWindowUseUnicodeIcons = false;
-        }
         // Check language
         if ( Settings.UpgradeResetRequiredV5_10 )
           Settings.CurrentView = ViewMode.Month;
         if ( Settings.LanguageSelected == Language.None )
           Settings.LanguageSelected = Languages.Current;
+        // Check OS
+        if ( Settings.FirstLaunch && SystemStatistics.Instance.Platform.Contains("Windows 7") )
+          Settings.NavigationWindowUseUnicodeIcons = false;
         // Check applications
         string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
         string pathWordsFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Words", "Bin");
@@ -120,14 +111,14 @@ namespace Ordisoftware.Hebrew.Calendar
         string pathWordsOld = Path.Combine(pathWordsFolder, "Ordisoftware.HebrewWords.exe");
         string pathLettersDefault = (string)Settings.Properties["HebrewLettersExe"].DefaultValue;
         string pathWordsDefault = (string)Settings.Properties["HebrewWordsExe"].DefaultValue;
-        // Check Letters
+        // Check applications : Letters
         if ( !File.Exists(Settings.HebrewLettersExe) )
           if ( File.Exists(pathLettersOld) )
             Settings.HebrewLettersExe = pathLettersOld;
           else
           if ( File.Exists(pathLettersDefault) )
             Settings.HebrewLettersExe = pathLettersDefault;
-        // Check Words
+        // Check applications : Words
         if ( !File.Exists(Settings.HebrewWordsExe) )
           if ( File.Exists(pathWordsOld) )
             Settings.HebrewWordsExe = pathWordsOld;
@@ -135,7 +126,6 @@ namespace Ordisoftware.Hebrew.Calendar
           if ( File.Exists(pathWordsDefault) )
             Settings.HebrewWordsExe = pathWordsDefault;
         // Save settings
-        Settings.MonthViewSunToolTips = false;
         SystemManager.TryCatch(Settings.Save);
       }
       catch ( Exception ex )
@@ -283,8 +273,8 @@ namespace Ordisoftware.Hebrew.Calendar
         }
         else
           update(MainForm.Instance);
-        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
+        new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
         new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
@@ -294,12 +284,10 @@ namespace Ordisoftware.Hebrew.Calendar
         new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
         new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
         Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-        foreach ( Form form in Application.OpenForms )
+        var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
+        foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
         {
-          if ( form != DebugManager.TraceForm
-            && form != AboutBox.Instance
-            && form != GrammarGuideForm )
-            update(form);
+          update(form);
           if ( form is ShowTextForm formShowText )
             formShowText.Relocalize();
         }
@@ -312,8 +300,8 @@ namespace Ordisoftware.Hebrew.Calendar
           GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
           LunarMonthsForm.Instance.Relocalize();
           NavigationForm.Instance.Relocalize();
-          DatesDiffCalculatorForm.Instance.Relocalize();
           ParashotFactory.Instance.Reset();
+          DatesDiffCalculatorForm.Instance.Relocalize();
           SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
                                        () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
         }

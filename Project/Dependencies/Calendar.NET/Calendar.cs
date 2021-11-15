@@ -1307,7 +1307,6 @@ namespace CodeProjectCalendar.NET
       // ORDISOFTWARE MODIF BEGIN
       //_events.Sort(new EventComparer());
       // ORDISOFTWARE MODIF END
-      bool generateSunToolTips = Program.Settings.MonthViewSunToolTips;
       for ( int i = 1; i <= daysinmonth; i++ )
       {
         int renderOffsetY = -3 + Program.Settings.CalendarLineSpacing;

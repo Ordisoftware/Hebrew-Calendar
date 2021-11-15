@@ -332,7 +332,7 @@ namespace Ordisoftware.Hebrew.Calendar
           PanelViewMonth.Visible = true;
         }
         TimerBallon.Interval = Settings.BalloonLoomingDelay;
-        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
+        CalendarMonth.ShowEventTooltips = false;
         InitializeSpecialMenus();
       }
       catch ( Exception ex )

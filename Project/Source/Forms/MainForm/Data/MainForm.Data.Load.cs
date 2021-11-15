@@ -30,7 +30,6 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
-        Program.UpdateLocalization();
         LoadDataInit();
         if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
           LoadDataFill();
@@ -125,7 +124,7 @@ namespace Ordisoftware.Hebrew.Calendar
       try
       {
         Globals.ChronoStartingApp.Stop();
-        CalendarMonth.ShowEventTooltips = Settings.MonthViewSunToolTips;
+        CalendarMonth.ShowEventTooltips = false;
         TimerReminder.Enabled = true;
         TimerReminder_Tick(null, null);
         Globals.ChronoStartingApp.Start();
