@@ -42,7 +42,7 @@ namespace Ordisoftware.Core
           try
           {
             var procs = new List<string>();
-            var list = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor").Get();
+            var list = new ManagementObjectSearcher(@"root\CIMV2", "SELECT * FROM Win32_Processor").Get();
             var enumerator = list.GetEnumerator();
             bool newline = false;
             int index = 0;
@@ -77,41 +77,51 @@ namespace Ordisoftware.Core
       {
         if ( _Platform.IsNullOrEmpty() )
         {
-          string clr = Environment.Version.ToString();
-          string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
           string osName = get(() => Registry.GetValue(HKLMWinNTCurrent, "ProductName", string.Empty).ToString());
           //
           string osDisplayVersion = get(() => Registry.GetValue(HKLMWinNTCurrent, "DisplayVersion", string.Empty).ToString());
-          if ( !osDisplayVersion.IsNullOrEmpty() ) osDisplayVersion = $" {osDisplayVersion}";
+          if ( osDisplayVersion.IsNullOrEmpty() )
+            osDisplayVersion = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", string.Empty).ToString());
+          if ( !osDisplayVersion.IsNullOrEmpty() )
+            osDisplayVersion = $" {osDisplayVersion}";
+          //
+          string osSP = get(() => Registry.GetValue(HKLMWinNTCurrent, "CSDVersion", string.Empty).ToString());
+          if ( !osSP.IsNullOrEmpty() )
+            osDisplayVersion += $" {osSP.Replace("Service Pack ", "SP")}";
           //
           string osVersion = get(() => Registry.GetValue(HKLMWinNTCurrent, "CurrentVersion", string.Empty).ToString());
-          if ( osVersion.IsNullOrEmpty() ) osVersion = $"v{Environment.OSVersion.Version}";
-          if ( osVersion.IsNullOrEmpty() ) osVersion = "-";
-          //
-          string osBuild = get(() => Registry.GetValue(HKLMWinNTCurrent, "CurrentBuildNumber", string.Empty).ToString());
-          if ( osBuild.IsNullOrEmpty() ) osBuild = "-";
-          //
-          string osRelease = get(() => Registry.GetValue(HKLMWinNTCurrent, "ReleaseId", string.Empty).ToString());
-          if ( osRelease.IsNullOrEmpty() ) osRelease = "-";
+          if ( osVersion.IsNullOrEmpty() )
+            osVersion = Environment.OSVersion.Version.ToString();
+          else
+          if ( !osVersion.IsNullOrEmpty() )
+          {
+            string osBuild = get(() => Registry.GetValue(HKLMWinNTCurrent, "CurrentBuild", string.Empty).ToString());
+            if ( !osBuild.IsNullOrEmpty() )
+              osVersion += $".{osBuild}";
+          }
+          if ( !osVersion.IsNullOrEmpty() )
+            osVersion = $" v{osVersion}";
           //
           string dotnet = get(() =>
           {
             var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
             var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
             return result == null
-                   ? ".NET Framework " + SysTranslations.UndefinedSlot.GetLang()
+                   ? ".NET " + SysTranslations.UndefinedSlot.GetLang()
                    : result.NamedArguments[0].TypedValue.Value.ToString();
           });
-          _Platform = $"{osName}{osDisplayVersion} {osType} ({osVersion}.{osBuild}-{osRelease})" + Globals.NL +
+          //
+          string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
+          _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}" + Globals.NL +
                       $"{dotnet}" + Globals.NL +
-                      $"CLR {clr}";
+                      $"CLR {Environment.Version}";
         }
         return _Platform;
         //
         static string get(Func<string> func)
         {
-          try { return func(); }
-          catch { return SysTranslations.UndefinedSlot.GetLang(); }
+          try { return func().Trim(); }
+          catch { return string.Empty; }
         }
       }
     }

@@ -158,6 +158,7 @@ namespace Ordisoftware.Core
       UpdateMenuItems(this);
     }
 
+#pragma warning disable IDE0051 // Supprimer les membres privés non utilisés
     private void AddUndo()
     {
       //return;
@@ -178,10 +179,13 @@ namespace Ordisoftware.Core
         _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
       };
     }
+#pragma warning restore IDE0051 // Supprimer les membres privés non utilisés
 
     private void TextChangedEvent(object sender, EventArgs e)
     {
-      //if ( SetTextMutex ) return;
+#pragma warning disable S3626 // Jump statements should not be redundant
+      if ( SetTextMutex ) return;
+#pragma warning restore S3626 // Jump statements should not be redundant
       //UndoStack.Push(Previous);
       //RedoStack.Clear();
     }
