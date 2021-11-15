@@ -20,37 +20,37 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide hebrew global variables.
+  /// Provides hebrew global variables.
   /// </summary>
   static partial class HebrewGlobals
   {
 
     /// <summary>
-    /// Indicate the application guides folder.
+    /// Indicates the application guides folder.
     /// </summary>
     static public string GuidesFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "Guides");
 
     /// <summary>
-    /// Indicate the bible references folder.
+    /// Indicates the bible references folder.
     /// </summary>
     static public string BibleReferencesFolderPath
       => Path.Combine(Globals.DocumentsFolderPath, "References");
 
     /// <summary>
-    /// Indicate file path of the celebration verses.
+    /// Indicates file path of the celebration verses.
     /// </summary>
     static public string CelebrationVersesFilePath
       => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
 
     /// <summary>
-    /// Indicate file path of the hebrew grammar guide.
+    /// Indicates file path of the hebrew grammar guide.
     /// </summary>
     static public string HebrewGrammarGuideFilePath
       => Path.Combine(GuidesFolderPath, "Guide-Grammar-{0}.htm");
 
     /// <summary>
-    /// Indicate file path of the lettriq method notice.
+    /// Indicates file path of the lettriq method notice.
     /// </summary>
     static public string LettriqMethodNoticeFilePath
       => Path.Combine(GuidesFolderPath, "Method-Lettriq-{0}.htm");

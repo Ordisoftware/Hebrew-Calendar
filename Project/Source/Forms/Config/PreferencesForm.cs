@@ -25,7 +25,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide form to edit the preferences.
+  /// Provides form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class PreferencesForm : Form
@@ -782,7 +782,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       var checkbox = (CheckBox)sender;
       if ( checkbox.Checked ) return true;
-      if ( PanelHotKey.Controls.OfType<CheckBox>().Any(c => c != checkbox && c.Checked))
+      if ( PanelHotKey.Controls.OfType<CheckBox>().Any(c => c != checkbox && c.Checked) )
         return true;
       checkbox.Checked = true;
       return false;

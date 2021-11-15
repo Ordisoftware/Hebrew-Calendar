@@ -18,23 +18,23 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide day of week item to be displayed in a control.
+  /// Provides day of week item to be displayed in a control.
   /// </summary>
   class DayOfWeekItem
   {
 
     /// <summary>
-    /// Indicate the text of the day.
+    /// Indicates the text of the day.
     /// </summary>
     public string Text { get; set; }
 
     /// <summary>
-    /// Indicate the day of week public enum value.
+    /// Indicates the day of week public enum value.
     /// </summary>
     public DayOfWeek Day { get; set; }
 
     /// <summary>
-    /// Return a <see cref="T:System.String" /> that represents the day.
+    /// Returns a <see cref="T:System.String" /> that represents the day.
     /// </summary>
     public override string ToString() => Text;
 

@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide sun and moon rise and set structure.
+  /// Provides sun and moon rise and set structure.
   /// </summary>
   public struct SunAndMoonRiseAndSet
   {

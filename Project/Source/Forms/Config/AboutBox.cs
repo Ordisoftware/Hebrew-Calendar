@@ -21,14 +21,14 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide the about box.
+  /// Provides the about box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class AboutBox : Form
   {
 
     /// <summary>
-    /// Indicate the singleton instance.
+    /// Indicates the singleton instance.
     /// </summary>
     static public AboutBox Instance { get; private set; }
 

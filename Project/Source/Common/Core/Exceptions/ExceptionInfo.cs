@@ -25,133 +25,133 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide exception information.
+  /// Provides exception information.
   /// </summary>
   class ExceptionInfo
   {
 
     /// <summary>
-    /// Indicate the sender.
+    /// Indicates the sender.
     /// </summary>
     public object Sender { get; }
 
     /// <summary>
-    /// Indicate the emitter.
+    /// Indicates the emitter.
     /// </summary>
     public string Emitter { get; }
 
     /// <summary>
-    /// Indicate the instance.
+    /// Indicates the instance.
     /// </summary>
     public Exception Instance { get; }
 
     /// <summary>
-    /// Indicate the inner exception.
+    /// Indicates the inner exception.
     /// </summary>
     public ExceptionInfo InnerInfo { get; }
 
     /// <summary>
-    /// Indicate the type text.
+    /// Indicates the type text.
     /// </summary>
     public string TypeText { get; private set; }
 
     /// <summary>
-    /// Indicate the inherits from.
+    /// Indicates the inherits from.
     /// </summary>
     public string InheritsFrom { get; private set; }
 
     /// <summary>
-    /// Indicate the name of the thread.
+    /// Indicates the name of the thread.
     /// </summary>
     public string ThreadName { get; private set; }
 
     /// <summary>
-    /// Indicate the name of the assembly.
+    /// Indicates the name of the assembly.
     /// </summary>
     public string AssemblyName { get; private set; }
 
     /// <summary>
-    /// Indicate the name of the module.
+    /// Indicates the name of the module.
     /// </summary>
     public string ModuleName { get; private set; }
 
     /// <summary>
-    /// Indicate the namespace.
+    /// Indicates the namespace.
     /// </summary>
     public string Namespace { get; private set; }
 
     /// <summary>
-    /// Indicate the name of the class.
+    /// Indicates the name of the class.
     /// </summary>
     public string ClassName { get; private set; }
 
     /// <summary>
-    /// Indicate the name of the method.
+    /// Indicates the name of the method.
     /// </summary>
     public string MethodName { get; private set; }
 
     /// <summary>
-    /// Indicate the code line number.
+    /// Indicates the code line number.
     /// </summary>
     public int LineNumber { get; private set; }
 
     /// <summary>
-    /// Indicate the code file name.
+    /// Indicates the code file name.
     /// </summary>
     public string FileName { get; private set; }
 
     /// <summary>
-    /// Indicate the target site.
+    /// Indicates the target site.
     /// </summary>
     public MethodBase TargetSite { get; }
 
     /// <summary>
-    /// Indicate the message.
+    /// Indicates the message.
     /// </summary>
     public string Message { get; private set; }
 
     /// <summary>
-    /// Indicate the full text.
+    /// Indicates the full text.
     /// </summary>
     public string FullText { get; private set; }
 
     /// <summary>
-    /// Indicate the readable text.
+    /// Indicates the readable text.
     /// </summary>
     public string ReadableText { get; private set; }
 
     /// <summary>
-    /// Indicate the single line text.
+    /// Indicates the single line text.
     /// </summary>
     public string SingleLineText { get; private set; }
 
     /// <summary>
-    /// Indicate the exception stack text.
+    /// Indicates the exception stack text.
     /// </summary>
     public string ExceptionStackText { get; private set; }
 
     /// <summary>
-    /// Indicate the thread stack text.
+    /// Indicates the thread stack text.
     /// </summary>
     public string ThreadStackText { get; private set; }
 
     /// <summary>
-    /// Indicate the full stack text.
+    /// Indicates the full stack text.
     /// </summary>
     public string StackText { get; }
 
     /// <summary>
-    /// Indicate the exception stack list.
+    /// Indicates the exception stack list.
     /// </summary>
     public List<string> ExceptionStackList { get; } = new List<string>();
 
     /// <summary>
-    /// Indicate the thread stack list.
+    /// Indicates the thread stack list.
     /// </summary>
     public List<string> ThreadStackList { get; } = new List<string>();
 
     /// <summary>
-    /// Indicate caller name.
+    /// Indicates caller name.
     /// </summary>
     /// <returns>
     /// The caller name.

@@ -25,23 +25,23 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide exception form.
+  /// Provides exception form.
   /// </summary>
   partial class ExceptionForm : Form
   {
 
     /// <summary>
-    /// Indicate the button stack text.
+    /// Indicates the button stack text.
     /// </summary>
     private string StackText;
 
     /// <summary>
-    /// Indicate the error information.
+    /// Indicates the error information.
     /// </summary>
     private ExceptionInfo ErrorInfo;
 
     /// <summary>
-    /// Indicate the original form height.
+    /// Indicates the original form height.
     /// </summary>
     private int OriginalHeight;
 
@@ -53,7 +53,7 @@ namespace Ordisoftware.Core
     private bool IsInner;
 
     /// <summary>
-    /// Run the form.
+    /// Runs the form.
     /// </summary>
     static public void Run(ExceptionInfo einfo, bool isInner = false)
     {
@@ -199,7 +199,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create the body for send by mail or to GitHub.
+    /// Creates the body for send by mail or to GitHub.
     /// </summary>
     private StringBuilder CreateBody()
     {

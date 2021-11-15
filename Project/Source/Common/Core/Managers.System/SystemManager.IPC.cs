@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system manager.
+  /// Provides system manager.
   /// </summary>
   static partial class SystemManager
   {
@@ -46,12 +46,12 @@ namespace Ordisoftware.Core
     static public Action IPCSendCommands { get; set; }
 
     /// <summary>
-    /// Indicate if the several instances of the application can run at same time.
+    /// Indicates if the several instances of the application can run at same time.
     /// </summary>
     static public bool AllowMultipleInstances { get; private set; } = true;
 
     /// <summary>
-    /// Check if the process is already running.
+    /// Checks if the process is already running.
     /// </summary>
     static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
     {
@@ -84,7 +84,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create IPC server instance.
+    /// Creates IPC server instance.
     /// </summary>
     static public void CreateIPCServer(AsyncCallback ipcRequests)
     {
@@ -106,7 +106,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Send an IPC command.
+    /// Sends an IPC command.
     /// </summary>
     static public void IPCSend(string command)
     {

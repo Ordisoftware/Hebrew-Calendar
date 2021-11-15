@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system manager.
+  /// Provides system manager.
   /// </summary>
   static partial class SystemManager
   {
@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
     static public readonly InputSimulator InputSimulator = new();
 
     /// <summary>
-    /// Delete all app settings folders in User\AppData\Local.
+    /// Deletes all app settings folders in User\AppData\Local.
     /// </summary>
     static public void CleanAllLocalAppSettingsFolders()
     {
@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check is application's settings must be upgraded and apply it if necessary.
+    /// Checks is application's settings must be upgraded and apply it if necessary.
     /// </summary>
     static public void CheckUpgradeRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
     {
@@ -75,7 +75,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate if the application stars with windows user session or not.
+    /// Indicates if the application stars with windows user session or not.
     /// </summary>
     static public bool StartWithWindowsUserRegistry
     {
@@ -97,7 +97,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Exit the application process.
+    /// Exits the application process.
     /// </summary>
     static public void Exit()
     {
@@ -107,7 +107,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Hard terminate the application process.
+    /// Does a hard termination of the application process.
     /// </summary>
     static public void Terminate()
     {
@@ -117,7 +117,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the memory size of a serializable object.
+    /// Gets the memory size of a serializable object.
     /// </summary>
     static public long SizeOf(this object instance)
     {
@@ -146,7 +146,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a file size.
+    /// Gets a file size.
     /// </summary>
     static public long GetFileSize(string filePath)
     {
@@ -156,7 +156,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate if a file is locked or not.
+    /// Indicates if a file is locked or not.
     /// </summary>
     static public bool IsFileLocked(string filePath)
     {

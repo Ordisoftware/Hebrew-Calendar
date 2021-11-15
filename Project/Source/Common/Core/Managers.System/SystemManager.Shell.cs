@@ -26,23 +26,23 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide SystemManager helper.
+  /// Provides SystemManager helper.
   /// </summary>
   static partial class SystemManager
   {
 
     /// <summary>
-    /// Indicate command line arguments.
+    /// Indicates command line arguments.
     /// </summary>
     static public string[] CommandLineArguments { get; private set; }
 
     /// <summary>
-    /// Indicate command line arguments options instance.
+    /// Indicates command line arguments options instance.
     /// </summary>
     static public SystemCommandLine CommandLineOptions { get; private set; }
 
     /// <summary>
-    /// Analyse command line arguments.
+    /// Analyses the command line arguments.
     /// </summary>
     static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
     where T : SystemCommandLine
@@ -65,7 +65,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if a file is an executable.
+    /// Checks if a file is an executable.
     /// </summary>
     static public bool CheckIfFileIsExecutable(string filePath)
     {
@@ -83,7 +83,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Start a process.
+    /// Starts a process.
     /// </summary>
     /// <param name="filePath">The file path.</param>
     /// <param name="arguments">The comamnd line arguments.</param>
@@ -113,7 +113,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Add "mailto:" to a string if it does not start with "mailto:".
+    /// Adds "mailto:" to a string if it does not start with "mailto:".
     /// </summary>
     /// <param name="link">The link.</param>
     /// <returns>
@@ -125,7 +125,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open a mail link.
+    /// Opens a mail link.
     /// </summary>
     /// <param name="link">The mail address.</param>
     static public void OpenMailLink(string link)
@@ -134,7 +134,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Add "http://" to a string if it does not start with http:// or https://.
+    /// Adds "http://" to a string if it does not start with http:// or https://.
     /// </summary>
     /// <param name="link">The link.</param>
     /// <returns>
@@ -146,7 +146,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open a web link.
+    /// Opens a web link.
     /// </summary>
     /// <param name="link">The link.</param>
     static public void OpenWebLink(string link)
@@ -155,7 +155,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open the application home page.
+    /// Opens the application home page.
     /// </summary>
     static public void OpenApplicationHome()
     {
@@ -163,7 +163,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open the application home page.
+    /// Opens the application home page.
     /// </summary>
     static public void OpenApplicationReleaseNotes()
     {
@@ -171,7 +171,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open the author home page.
+    /// Opens the author home page.
     /// </summary>
     static public void OpenAuthorHome()
     {
@@ -179,7 +179,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open the author contact page.
+    /// Opens the author contact page.
     /// </summary>
     static public void OpenContactPage()
     {
@@ -187,7 +187,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Open GitHub repository.
+    /// Opens GitHub repository.
     /// </summary>
     static public void OpenGitHupRepo()
     {
@@ -195,7 +195,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a GitHub issue.
+    /// Creates a GitHub issue.
     /// </summary>
     static public void CreateGitHubIssue(string query = "")
     {
@@ -203,7 +203,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    ///  Get the SHA-512 checksum of a file.
+    /// Gets the SHA-512 checksum of a file.
     /// </summary>
     static public string GetChecksum512(string filePath)
     {

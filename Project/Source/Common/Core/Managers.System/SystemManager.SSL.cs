@@ -21,13 +21,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide SystemManager helper.
+  /// Provides SystemManager helper.
   /// </summary>
   static partial class SystemManager
   {
 
     /// <summary>
-    /// Check the validity of the remote website SSL certificate.
+    /// Checks the validity of the remote website SSL certificate.
     /// </summary>
     static public void CheckServerCertificate(string url)
     {
@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate the application website SSL certificate information.
+    /// Indicates the application website SSL certificate information.
     /// </summary>
     static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
 

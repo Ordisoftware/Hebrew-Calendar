@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system statistics.
+  /// Provides system statistics.
   /// </summary>
   class SystemStatistics
   {

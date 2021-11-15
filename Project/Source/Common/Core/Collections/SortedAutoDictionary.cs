@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide sorted auto dictionary.
+  /// Provides sorted auto dictionary.
   /// </summary>
   [Serializable]
   public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>

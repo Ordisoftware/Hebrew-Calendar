@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
     #region Numbers
 
     /// <summary>
-    /// Create a readable string from a size in bytes.
+    /// Creates a readable string from a size in bytes.
     /// </summary>
     // From https://stackoverflow.com/questions/14488796/does-net-provide-an-easy-way-convert-bytes-to-kb-mb-gb-etc
     static public string FormatBytesSize(this ulong bytes)
@@ -73,7 +73,7 @@ namespace Ordisoftware.Core
     #region Text
 
     /// <summary>
-    /// Apply "justify" to the text of a control.
+    /// Applies "justify" to the text of a control.
     /// </summary>
     // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
     static public string JustifyParagraph(string text, int width, Font font)
@@ -181,7 +181,7 @@ namespace Ordisoftware.Core
     #region WinForms Controls
 
     /// <summary>
-    /// Indicate if a control is visible on the screen over others.
+    /// Indicates if a control is visible on the screen over others.
     /// </summary>
     /// From https://stackoverflow.com/questions/1649959/how-to-check-if-window-is-really-visible-in-windows-forms
     static public bool IsVisibleOnTop(this Control control, int requiredPercent = 100, int margin = 15)
@@ -311,7 +311,7 @@ namespace Ordisoftware.Core
     #region DataTable
 
     /// <summary>
-    /// Convert a collection of T to a DataTable.
+    /// Converts a collection of T to a DataTable.
     /// </summary>
     /// From https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
     static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
@@ -410,7 +410,7 @@ namespace Ordisoftware.Core
     #region WinTaskBar
 
     /// <summary>
-    /// Get task bar coordonates.
+    /// Gets task bar coordonates.
     /// </summary>
     /// From https://stackoverflow.com/questions/3677182/taskbar-location
     static public Rectangle GetTaskbarCoordonates()

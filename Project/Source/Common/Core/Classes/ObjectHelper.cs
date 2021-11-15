@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
   {
 
     /// <summary>
-    /// Convert the type of a convertible object to another type.
+    /// Converts the type of a convertible object to another type.
     /// </summary>
     /// <typeparam name="T">Convertible generic type parameter.</typeparam>
     /// <param name="obj">The obj to act on.</param>

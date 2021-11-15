@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide null safe string list.
+  /// Provides null safe string list.
   /// </summary>
   [Serializable]
   public class NullSafeStringList : List<string>

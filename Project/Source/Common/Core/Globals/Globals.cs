@@ -23,13 +23,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Indicate new line.
+    /// Indicates new line.
     /// </summary>
     static public readonly string NL = Environment.NewLine;
     static public readonly string NL2 = NL + NL;
@@ -38,32 +38,32 @@ namespace Ordisoftware.Core
     static public readonly string NL5 = NL4 + NL;
 
     /// <summary>
-    /// Indicate bullet.
+    /// Indicates bullet.
     /// </summary>
     static public string Bullet { get; set; } = "•";
 
     /// <summary>
-    /// Indicate list separator.
+    /// Indicates list separator.
     /// </summary>
     static public string ListSeparator { get; set; } = "-";
 
     /// <summary>
-    /// Indicate CSV separator.
+    /// Indicates CSV separator.
     /// </summary>
     static public char CSVSeparator { get; set; } = ';';
 
     /// <summary>
-    /// Indicate if SSL certificate is preloaded.
+    /// Indicates if SSL certificate is preloaded.
     /// </summary>
     static public bool PreLoadSSLCertificate { get; set; } = true;
 
     /// <summary>
-    /// Indicate if the application must go to tray icon at startup.
+    /// Indicates if the application must go to tray icon at startup.
     /// </summary>
     static public bool ForceStartupHide { get; set; }
 
     /// <summary>
-    /// Indicate StopWatches.
+    /// Indicates StopWatches.
     /// </summary>
     static public readonly Stopwatch ChronoStartingApp = new();
     static public readonly Stopwatch ChronoTranslate = new();
@@ -72,60 +72,60 @@ namespace Ordisoftware.Core
     static public readonly Stopwatch ChronoShowData = new();
 
     /// <summary>
-    /// Indicate keyboard shortcuts notice form.
+    /// Indicates keyboard shortcuts notice form.
     /// </summary>
     static public ShowTextForm NoticeKeyboardShortcutsForm { get; internal set; }
 
     /// <summary>
-    /// Indicate the application code (title without space).
+    /// Indicates the application code (title without space).
     /// </summary>
     static public string ApplicationCode
       => AssemblyTitle.Replace(" ", string.Empty);
 
     /// <summary>
-    /// Indicate the application GitHub code (title with '-' instead of space.
+    /// Indicates the application GitHub code (title with '-' instead of space.
     /// </summary>
     static public string ApplicationGitHubCode
       => AssemblyTitle.Replace(" ", "-");
 
     /// <summary>
-    /// Indicate the application process name.
+    /// Indicates the application process name.
     /// </summary>
     static public string ProcessName
       => Path.GetFileNameWithoutExtension(Application.ExecutablePath);
 
     /// <summary>
-    /// Indicate the application process ID.
+    /// Indicates the application process ID.
     /// </summary>
     static public int ProcessId
       => Process.GetCurrentProcess().Id;
 
     /// <summary>
-    /// Indicate the number of application running processes count.
+    /// Indicates the number of application running processes count.
     /// </summary>
     static public int ApplicationInstancesCount
       => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
 
     /// <summary>
-    /// Indicate running processes whose names starts with "AssemblyCompany.".
+    /// Indicates running processes whose names starts with "AssemblyCompany.".
     /// </summary>
     static public IEnumerable<Process> SameCompanyRunningProcesses
       => Process.GetProcesses().Where(p => p.ProcessName.StartsWith(AssemblyCompany + "."));
 
     /// <summary>
-    /// Indicate running processes whose names starts with "[AssemblyCompany]." not being this one.
+    /// Indicates running processes whose names starts with "[AssemblyCompany]." not being this one.
     /// </summary>
     static public IEnumerable<Process> ConcurrentRunningProcesses
       => SameCompanyRunningProcesses.Where(p => p.Id != ProcessId);
 
     /// <summary>
-    /// Indicate running processes being the same as this application not being this one.
+    /// Indicates running processes being the same as this application not being this one.
     /// </summary>
     static public IEnumerable<Process> SameRunningProcessesNotThisOne
       => ConcurrentRunningProcesses.Where(p => p.ProcessName == ProcessName);
 
     /// <summary>
-    /// Indicate if the executable has been generated in debug mode.
+    /// Indicates if the executable has been generated in debug mode.
     /// </summary>
     static public bool IsDebugExecutable
     {
@@ -142,26 +142,26 @@ namespace Ordisoftware.Core
       => isDebug = true;
 
     /// <summary>
-    /// Indicate if the running app is from dev folder else user installed.
+    /// Indicates if the running app is from dev folder else user installed.
     /// </summary>
     static public bool IsDevExecutable
       => Application.ExecutablePath.Contains(DebugDirectoryCombination)
       || Application.ExecutablePath.Contains(ReleaseDirectoryCombination);
 
     /// <summary>
-    /// Indicate if the code is in design time
+    /// Indicates if the code is in design time
     /// </summary>
     public static bool IsDesignTime
       => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
 
     /// <summary>
-    /// Indicate if the code is executed from the IDE else from a running app.
+    /// Indicates if the code is executed from the IDE else from a running app.
     /// </summary>
     public static bool IsVisualStudioDesigner
       => ProcessName == "devenv";
 
     /// <summary>
-    /// Indicate the main form.
+    /// Indicates the main form.
     /// </summary>
     static public Form MainForm
     {
@@ -171,7 +171,7 @@ namespace Ordisoftware.Core
     static private Form _MainForm;
 
     /// <summary>
-    /// Indicate brint to front application system hot key.
+    /// Indicates brint to front application system hot key.
     /// </summary>
     static public readonly SystemHotKey BringToFrontApplicationHotKey = new();
 

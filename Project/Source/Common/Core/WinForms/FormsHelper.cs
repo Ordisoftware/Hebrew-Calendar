@@ -25,13 +25,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide win forms helper.
+  /// Provides win forms helper.
   /// </summary>
   static class FormsHelper
   {
 
     /// <summary>
-    /// Apply localized resources.
+    /// Applies localized resources.
     /// </summary>
     static public void ApplyResources(this ComponentResourceManager resources, Control.ControlCollection controls)
     {
@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get active form else last opened else main form.
+    /// Gets active form else last opened else main form.
     /// </summary>
     static public Form GetActiveForm()
     {
@@ -55,7 +55,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a list of open forms.
+    /// Gets a list of open forms.
     /// </summary>
     static public void CloseAll(Func<Form, bool> keep = null)
     {
@@ -66,7 +66,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get all opened forms.
+    /// Gets all opened forms.
     /// </summary>
     static public IEnumerable<Form> GetAll(this FormCollection forms, Func<Form, bool> select = null)
     {
@@ -80,7 +80,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get all controls of a control.
+    /// Gets all controls of a control.
     /// </summary>
     static public IEnumerable<T> GetAll<T>(this Control control)
     {
@@ -89,7 +89,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get all components of a form.
+    /// Gets all components of a form.
     /// </summary>
     static public IEnumerable<Component> GetComponents(this Form form)
     {
@@ -104,7 +104,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a IEnumerable from a ToolStripItemCollection.
+    /// Gets a IEnumerable from a ToolStripItemCollection.
     /// </summary>
     static public IEnumerable<ToolStripItem> ToEnumerable(this ToolStripItemCollection collection, Func<ToolStripItem, bool> predicate = null)
     {
@@ -114,7 +114,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Set a form location.
+    /// Sets a form location.
     /// </summary>
     /// <param name="form">The form.</param>
     /// <param name="location">The location.</param>
@@ -201,7 +201,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if location is in the screen else center to main form else to screen.
+    /// Checks if location is in the screen else center to main form else to screen.
     /// </summary>
     /// <param name="form">The form.</param>
     static public void CheckLocationOrCenterToMainFormElseScreen(this Form form)
@@ -335,7 +335,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get an icon from an image.
+    /// Gets an icon from an image.
     /// </summary>
     static public Icon GetIcon(this Image image)
     {
@@ -343,7 +343,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get an icon from a ToolStripItem image.
+    /// Gets an icon from a ToolStripItem image.
     /// </summary>
     static public Icon GetIcon(this ToolStripItem item)
     {
@@ -351,7 +351,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get an icon from an icon by size.
+    /// Gets an icon from an icon by size.
     /// </summary>
     static public Icon GetBySize(this Icon icon, int width, int height)
     {
@@ -359,7 +359,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get an icon from an icon by size.
+    /// Gets an icon from an icon by size.
     /// </summary>
     static public Icon GetBySize(this Icon icon, Size size)
     {
@@ -370,7 +370,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a bitmap of a control.
+    /// Gets a bitmap of a control.
     /// </summary>
     /// <param name="control">The control</param>
     /// <returns>The bitmap.</returns>

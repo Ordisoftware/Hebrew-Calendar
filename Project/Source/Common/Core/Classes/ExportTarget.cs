@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Indicate supported data file format for export.
+  /// Indicates supported data file format for export.
   /// </summary>
   public enum DataExportTarget
   {
@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Indicate supported image file format for export.
+  /// Indicates supported image file format for export.
   /// </summary>
   public enum ImageExportTarget
   {

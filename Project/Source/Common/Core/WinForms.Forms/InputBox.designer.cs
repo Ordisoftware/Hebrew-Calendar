@@ -5,7 +5,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide input box.
+  /// Provides input box.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class InputBox<T> : Form

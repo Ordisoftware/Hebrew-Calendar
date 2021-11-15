@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide auto list.
+  /// Provides auto list.
   /// </summary>
   [Serializable]
   public class AutoResizedList<T> : List<T>

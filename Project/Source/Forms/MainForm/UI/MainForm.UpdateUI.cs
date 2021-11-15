@@ -35,7 +35,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private string TitleCelebration = "";
 
     /// <summary>
-    /// Center the form to the screen.
+    /// Centers the form to the screen.
     /// </summary>
     public new void CenterToScreen()
     {
@@ -43,7 +43,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Execute the screen location operation.
+    /// Executes the screen location operation.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="e">Event information.</param>
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Enable double-buffering.
+    /// Enables double-buffering.
     /// </summary>
     protected override CreateParams CreateParams
     {
@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool UpdateTitlesMutex;
 
     /// <summary>
-    /// Update form title bar and sub-title texts.
+    /// Updates form title bar and sub-title texts.
     /// </summary>
     private void UpdateTitles(bool force = false)
     {
@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Update the buttons.
+    /// Updates the buttons.
     /// </summary>
     public void UpdateButtons()
     {
@@ -187,7 +187,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Update the text view aspect.
+    /// Updates the text view aspect.
     /// </summary>
     public void UpdateTextCalendar()
     {
@@ -195,7 +195,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Update the month view.
+    /// Updates the month view.
     /// </summary>
     public void UpdateCalendarMonth(bool doFill)
     {

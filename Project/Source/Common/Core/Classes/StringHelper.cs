@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system helper.
+  /// Provides system helper.
   /// </summary>
   static partial class StringHelper
   {
@@ -31,7 +31,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate if a string is null or empty.
+    /// Indicates if a string is null or empty.
     /// </summary>
     /// <returns>
     /// true if a null or is empty, false if not.
@@ -43,7 +43,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Set all first letter to upper case.
+    /// Sets all first letter to upper case.
     /// </summary>
     /// <param name="str">The str to act on.</param>
     static public string Titleize(this string str)
@@ -52,7 +52,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Split a string by new line and remove empty lines.
+    /// Splits a string by new line and remove empty lines.
     /// </summary>
     /// <returns>
     /// A string[].
@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Split a string and remove empty lines.
+    /// Splits a string and remove empty lines.
     /// </summary>
     /// <returns>
     /// A string[].
@@ -77,7 +77,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Split a string by new line and keep empty lines.
+    /// Splits a string by new line and keep empty lines.
     /// </summary>
     /// <returns>
     /// A string[].
@@ -89,7 +89,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Split a string and remove empty lines.
+    /// Splits a string and remove empty lines.
     /// </summary>
     /// <returns>
     /// A string[].
@@ -102,7 +102,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Split a string.
+    /// Splits a string.
     /// </summary>
     /// <returns>
     /// A string[].
@@ -116,7 +116,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a string from a string enumeration.
+    /// Creates a string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -129,7 +129,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a multi-spaced string from a string enumeration.
+    /// Creates a multi-spaced string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -141,7 +141,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a multi-newlined string from a string enumeration.
+    /// Creates a multi-newlined string from a string enumeration.
     /// </summary>
     /// <returns>
     /// A string.
@@ -166,7 +166,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Left indent a text.
+    /// Does a left indent a text.
     /// </summary>
     /// <returns>
     /// A string.
@@ -180,7 +180,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Wrap a string.
+    /// Wraps a string.
     /// </summary>
     /// <param name="str">The text.</param>
     /// <param name="width">The width.</param>

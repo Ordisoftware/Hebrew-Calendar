@@ -20,24 +20,24 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Indicate the application web links folder.
+    /// Indicates the application web links folder.
     /// </summary>
     static public string WebLinksFolderPath
       => Path.Combine(DocumentsFolderPath, "WebLinks");
 
     /// <summary>
-    /// Indicate the web links providers.
+    /// Indicates the web links providers.
     /// </summary>
     static public List<OnlineProviders> WebLinksProviders { get; private set; }
 
     /// <summary>
-    /// Create an OnlineProviders instance.
+    /// Creates an OnlineProviders instance.
     /// </summary>
     static public OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filePath)
     {
@@ -53,7 +53,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Load web links providers files.
+    /// Loads web links providers files.
     /// </summary>
     static public void LoadWebLinksProviders()
     {

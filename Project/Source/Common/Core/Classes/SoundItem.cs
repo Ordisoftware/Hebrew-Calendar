@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide sound item.
+  /// Provides sound item.
   /// </summary>
   class SoundItem
   {

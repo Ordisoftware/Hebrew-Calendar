@@ -113,7 +113,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static public readonly int PourimDay = 14;
 
     /// <summary>
-    /// Indicate managed events list.
+    /// Indicates managed events list.
     /// </summary>
     static public readonly IEnumerable<TorahCelebrationDay> ManagedEvents
       = Enums.GetValues<TorahCelebrationDay>()
@@ -121,7 +121,7 @@ namespace Ordisoftware.Hebrew.Calendar
              .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
 
     /// <summary>
-    /// Indicate major avents list.
+    /// Indicates major avents list.
     /// </summary>
     static public readonly IEnumerable<TorahCelebrationDay> MajorEvents
       = Enums.GetValues<TorahCelebrationDay>()
@@ -129,7 +129,7 @@ namespace Ordisoftware.Hebrew.Calendar
              .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
 
     /// <summary>
-    /// Indicate minor avents list.
+    /// Indicates minor avents list.
     /// </summary>
     static public readonly IEnumerable<TorahCelebrationDay> MinorEvents
       = Enums.GetValues<TorahCelebrationDay>()
@@ -137,7 +137,7 @@ namespace Ordisoftware.Hebrew.Calendar
              .TakeUntil(v => v == TorahCelebrationDay.Pourim);
 
     /// <summary>
-    /// Indicate special celebration days.
+    /// Indicates special celebration days.
     /// </summary>
     static public readonly IEnumerable<TorahCelebrationDay> SpecialDays
       = new List<TorahCelebrationDay>

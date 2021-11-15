@@ -25,14 +25,14 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide form to edit the preferences.
+  /// Provides form to edit the preferences.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class PreferencesForm
   {
 
     /// <summary>
-    /// Do form load.
+    /// Does form load.
     /// </summary>
     private void DoFormLoad()
     {
@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do form show.
+    /// Does form show.
     /// </summary>
     private void DoFormShow()
     {
@@ -75,6 +75,9 @@ namespace Ordisoftware.Hebrew.Calendar
       IsReady = true;
     }
 
+    /// <summary>
+    /// Checks the first launch to show notices and ask user preferences for generation.
+    /// </summary>
     private void CheckFirstLaunchNoticesAndChoices()
     {
       bool changed = false;
@@ -104,7 +107,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do form closing.
+    /// Does form closing.
     /// </summary>
     private void DoFormClosing(object sender, FormClosingEventArgs e)
     {
@@ -126,7 +129,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load edit intervals.
+    /// Loads edit intervals.
     /// </summary>
     private void LoadEditIntervals()
     {
@@ -159,7 +162,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load export file formats.
+    /// Loads export file formats.
     /// </summary>
     private void LoadExportFileFormats()
     {
@@ -168,7 +171,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load reminder boxes locations.
+    /// Loads reminder boxes locations.
     /// </summary>
     private void LoadReminderBoxesLocations()
     {
@@ -181,7 +184,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load week days.
+    /// Loads week days.
     /// </summary>
     private void LoadPowerActions()
     {
@@ -195,7 +198,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load week days.
+    /// Loads week days.
     /// </summary>
     private void LoadDays()
     {
@@ -209,7 +212,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load Torah events.
+    /// Loads Torah events.
     /// </summary>
     private void LoadEvents()
     {
@@ -231,7 +234,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load fonts names.
+    /// Loads fonts names.
     /// </summary>
     private void LoadFonts()
     {
@@ -245,7 +248,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Load hotkeys.
+    /// Loads Hot-Keys.
     /// </summary>
     private void LoadHotKeys()
     {
@@ -255,7 +258,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize HotKey.
+    /// Initializes HotKey.
     /// </summary>
     private void InitHotKeyControls()
     {
@@ -271,7 +274,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Check HotKey combination.
+    /// Checks HotKey combination.
     /// </summary>
     private void CheckHotKeyCombination(Action action)
     {

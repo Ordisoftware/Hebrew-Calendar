@@ -20,61 +20,61 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Indicate Hebrew Common directory name.
+    /// Indicates Hebrew Common directory name.
     /// </summary>
     static public string HebrewCommonDirectoryName
       => "Hebrew Common";
 
     /// <summary>
-    /// Indicate generated executable bin directory name.
+    /// Indicates generated executable bin directory name.
     /// </summary>
     static public string BinDirectoryName
       => "Bin";
 
     /// <summary>
-    /// Indicate generated executable bin\debug directory combination.
+    /// Indicates generated executable bin\debug directory combination.
     /// </summary>
     static public string DebugDirectoryCombination
       => Path.Combine(BinDirectoryName, "Debug");
 
     /// <summary>
-    /// Indicate generated executable bin\release directory combination.
+    /// Indicates generated executable bin\release directory combination.
     /// </summary>
     static public string ReleaseDirectoryCombination
       => Path.Combine(BinDirectoryName, "Release");
 
     /// <summary>
-    /// Indicate the application executable file path.
+    /// Indicates the application executable file path.
     /// </summary>
     static public string ApplicationExeFullPath
       => System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
 
     /// <summary>
-    /// Indicate the application executable file name.
+    /// Indicates the application executable file name.
     /// </summary>
     static public string ApplicationExeFileName
       => Path.GetFileNameWithoutExtension(ApplicationExeFullPath);
 
     /// <summary>
-    /// Indicate the application full file name.
+    /// Indicates the application full file name.
     /// </summary>
     static public string ApplicationFullFileName
       => ApplicationExeFileName.Replace(".", " ");
 
     /// <summary>
-    /// Indicate the application startup regustry value in Run key.
+    /// Indicates the application startup regustry value in Run key.
     /// </summary>
     static public string ApplicationStartupRegistryValue
       => $"\"{Application.ExecutablePath}\" --hide";
 
     /// <summary>
-    /// Indicate the root folder path of the application.
+    /// Indicates the root folder path of the application.
     /// </summary>
     static public string RootFolderPath
       => Directory.GetParent(Path.GetDirectoryName(Application.ExecutablePath
@@ -82,121 +82,121 @@ namespace Ordisoftware.Core
                                                               .Replace(ReleaseDirectoryCombination, BinDirectoryName))).FullName;
 
     /// <summary>
-    /// Indicate the application executable path.
+    /// Indicates the application executable path.
     /// </summary>
     static public string ApplicationExePath
       => Application.StartupPath;
 
     /// <summary>
-    /// Indicate the application system folder path.
+    /// Indicates the application system folder path.
     /// </summary>
     static public string SystemFolderPath
       => Path.Combine(RootFolderPath, "System");
 
     /// <summary>
-    /// Indicate the application help folder path.
+    /// Indicates the application help folder path.
     /// </summary>
     static public string HelpFolderPath
       => Path.Combine(RootFolderPath, "Help");
 
     /// <summary>
-    /// Indicate the application documents folder path.
+    /// Indicates the application documents folder path.
     /// </summary>
     static public string DocumentsFolderPath
       => Path.Combine(RootFolderPath, "Documents");
 
     /// <summary>
-    /// Indicate the application project folder path.
+    /// Indicates the application project folder path.
     /// </summary>
     static public string ProjectFolderPath
       => Path.Combine(RootFolderPath, "Project");
 
     /// <summary>
-    /// Indicate the application source code folder path.
+    /// Indicates the application source code folder path.
     /// </summary>
     static public string ProjectSourceFolderPath
       => Path.Combine(ProjectFolderPath, "Source");
 
     /// <summary>
-    /// Indicate the project sounds folder path.
+    /// Indicates the project sounds folder path.
     /// </summary>
     static public string ProjectMediasFolderPath
       => Path.Combine(ProjectFolderPath, "Medias");
 
     /// <summary>
-    /// Indicate the project icons folder path.
+    /// Indicates the project icons folder path.
     /// </summary>
     static public string ProjectIconsFolderPath
       => Path.Combine(ProjectMediasFolderPath, "Icons");
 
     /// <summary>
-    /// Indicate the project sounds folder path.
+    /// Indicates the project sounds folder path.
     /// </summary>
     static public string ProjectSoundsFolderPath
       => Path.Combine(ProjectMediasFolderPath, "Sounds");
 
     /// <summary>
-    /// Indicate the application sounds folder.
+    /// Indicates the application sounds folder.
     /// </summary>
     static public string ApplicationSoundsFolderPath
       => Path.Combine(RootFolderPath, "Sounds");
 
     /// <summary>
-    /// Indicate the user applicationdatabase folder path.
+    /// Indicates the user applicationdatabase folder path.
     /// </summary>
     static public string DatabaseFolderPath
       => UserDataFolderPath;
 
     /// <summary>
-    /// Indicate the company program files folder path.
+    /// Indicates the company program files folder path.
     /// </summary>
     static public string CompanyProgramFilesFolderPath
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), AssemblyCompany);
 
     /// <summary>
-    /// Indicate the Windows media folder path.
+    /// Indicates the Windows media folder path.
     /// </summary>
     static public string WindowsMediaFolderPath
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Media");
 
     /// <summary>
-    /// Indicate the user music folder path.
+    /// Indicates the user music folder path.
     /// </summary>
     static public string UserMusicFolderPath
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic), "Media");
 
     /// <summary>
-    /// Indicate the user documents folder path.
+    /// Indicates the user documents folder path.
     /// </summary>
     static public string UserDocumentsFolderPath
       => CreateSpecialFolderPath(Environment.SpecialFolder.MyDocuments, AssemblyTitle);
 
     /// <summary>
-    /// Indicate the user data folder in local.
+    /// Indicates the user data folder in local.
     /// </summary>
     static public string UserLocalDataFolderPath
       => CreateSpecialFolderPath(Environment.SpecialFolder.LocalApplicationData, string.Empty);
 
     /// <summary>
-    /// Indicate the user data folder in roaming.
+    /// Indicates the user data folder in roaming.
     /// </summary>
     static public string UserDataFolderPath
       => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, AssemblyTitle);
 
     /// <summary>
-    /// Indicate the hebrew common data folder in roaming.
+    /// Indicates the hebrew common data folder in roaming.
     /// </summary>
     static public string UserDataCommonFolderPath
       => CreateSpecialFolderPath(Environment.SpecialFolder.ApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
-    /// Indicate the hebrew common data folder in program data.
+    /// Indicates the hebrew common data folder in program data.
     /// </summary>
     static public string ProgramDataFolderPath
       => CreateSpecialFolderPath(Environment.SpecialFolder.CommonApplicationData, HebrewCommonDirectoryName);
 
     /// <summary>
-    /// Indicate a path for in a special folder path.
+    /// Indicates a path for in a special folder path.
     /// </summary>
     static public string CreateSpecialFolderPath(Environment.SpecialFolder folder, string directory)
       => Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(folder),

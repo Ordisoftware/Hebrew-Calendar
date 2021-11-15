@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide abort exception.
+  /// Provides abort exception.
   /// </summary>
   [Serializable]
   public class AbortException : Exception

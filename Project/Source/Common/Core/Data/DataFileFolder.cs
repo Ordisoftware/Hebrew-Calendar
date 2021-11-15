@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Indicate data file storage folder.
+  /// Indicates data file storage folder.
   /// </summary>
   public enum DataFileFolder
   {
@@ -33,12 +33,12 @@ namespace Ordisoftware.Core
     ProgramData,
 
     /// <summary>
-    /// User appdata common folder.
+    /// User application data common folder.
     /// </summary>
     UserHebrewCommon,
 
     /// <summary>
-    /// User appdata application folder.
+    /// User application data application folder.
     /// </summary>
     UserApplication
   }

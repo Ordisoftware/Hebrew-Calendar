@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Provide mapping table for Calendar.NET positions.
+    /// Provides mapping table for Calendar.NET positions.
     /// </summary>
     static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Position = new()
     {

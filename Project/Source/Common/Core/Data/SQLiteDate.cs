@@ -19,13 +19,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide SQLite date helper.
+  /// Provides SQLite date helper.
   /// </summary>
   static class SQLiteDate
   {
 
     /// <summary>
-    /// Get a date from a string like "Year-Month-Day Hour-Min-Sec".
+    /// Gets a date from a string like "Year-Month-Day Hour-Min-Sec".
     /// </summary>
     /// <param name="date">The date.</param>
     /// <param name="withTime">True to add time, else only date.</param>
@@ -41,7 +41,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a date like "Year-Month-Day Hour:Min:Sec".
+    /// Gets a date like "Year-Month-Day Hour:Min:Sec".
     /// </summary>
     /// <param name="date">The date.</param>
     /// <param name="withTime">True to add time, else only date.</param>
@@ -56,7 +56,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a date like "Year-Month-Day".
+    /// Gets a date like "Year-Month-Day".
     /// </summary>
     /// <param name="year">The year.</param>
     /// <param name="month">The month.</param>
@@ -67,7 +67,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a time like "18:00".
+    /// Gets a time like "18:00".
     /// </summary>
     /// <param name="time">The time.</param>
     /// <returns>An empty string if time is null</returns>
@@ -77,7 +77,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a time like "18:00".
+    /// Gets a time like "18:00".
     /// </summary>
     /// <param name="date">The date time.</param>
     /// <returns>An empty string if time is null</returns>
@@ -87,7 +87,7 @@ namespace Ordisoftware.Core
     //}
 
     /// <summary>
-    /// Add hours and minutes from a time span to a date else return null if time is null.
+    /// Adds hours and minutes from a time span to a date else return null if time is null.
     /// </summary>
     static public DateTime? Add(TimeSpan? time, DateTime date)
     {

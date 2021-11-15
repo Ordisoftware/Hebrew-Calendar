@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Indicate the location of a control.
+  /// Indicates the location of a control.
   /// </summary>
   [Serializable]
   public enum ControlLocation

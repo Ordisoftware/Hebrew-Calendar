@@ -20,23 +20,23 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide astronomy helper.
+  /// Provides astronomy helper.
   /// </summary>
   static class AstronomyHelper
   {
 
     /// <summary>
-    /// Indicate the system lunisolar calendar instance.
+    /// Indicates the system lunisolar calendar instance.
     /// </summary>
     static public readonly VietnameseCalendar LunisolerCalendar = new();
 
     /// <summary>
-    /// Indicate the SunMoon instance.
+    /// Indicates the SunMoon instance.
     /// </summary>
     static public readonly SunMoon SunMoon = new();
 
     /// <summary>
-    /// Get the moon phase type.
+    /// Gets the moon phase type.
     /// </summary>
     /// <remarks>
     /// Adapted from http://jivebay.com/2008/09/07/calculating-the-moon-phase.
@@ -62,7 +62,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Get the sun and moon ephemeris.
+    /// Gets the sun and moon ephemeris.
     /// </summary>
     /// <param name="date">The date.</param>
     /// <returns>

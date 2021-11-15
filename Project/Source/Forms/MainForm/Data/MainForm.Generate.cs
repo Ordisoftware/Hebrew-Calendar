@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Check if the calendar must be generated again in it comes near the end.
+    /// Checks if the calendar must be generated again in it comes near the end.
     /// </summary>
     private string CheckRegenerateCalendar(bool auto = false, bool force = false, bool checkover = false)
     {

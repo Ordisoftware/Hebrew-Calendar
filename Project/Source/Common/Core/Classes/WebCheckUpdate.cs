@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide web check update.
+  /// Provides web check update.
   /// </summary>
   static class WebCheckUpdate
   {
@@ -35,7 +35,7 @@ namespace Ordisoftware.Core
     static private bool Mutex;
 
     /// <summary>
-    /// Delete temp files.
+    /// Deletes temp files.
     /// </summary>
     static public void CleanTemp()
     {
@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if an update is available online and offer to install, download or open product web page.
+    /// Checks if an update is available online and offer to install, download or open product web page.
     /// App version is "MAJOR.MINOR".
     /// </summary>
     /// <param name="checkAtStartup"></param>
@@ -128,7 +128,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the version available online with the file checksum.
+    /// Gets the version available online with the file checksum.
     /// </summary>
     static private (Version, string) GetVersionAndChecksum(WebClient client)
     {
@@ -182,7 +182,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Ask to the user what to do.
+    /// Asks to the user what to do.
     /// </summary>
     static private bool GetUserChoice(WebClient client, (Version version, string checksum) fileInfo)
     {
@@ -206,7 +206,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Process the automatic download and installation.
+    /// Processes the automatic download and installation.
     /// </summary>
     static private bool ProcessAutoInstall(WebClient client,
                                            (Version version, string checksum) fileInfo,
@@ -273,7 +273,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide web client with timeout.
+  /// Provides web client with timeout.
   /// </summary>
   public class WebClientEx : WebClient
   {

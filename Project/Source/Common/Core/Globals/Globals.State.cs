@@ -23,73 +23,73 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Indicate the process start date and time.
+    /// Indicates the process start date and time.
     /// </summary>
     static public readonly DateTime StartDateTime = DateTime.Now;
 
     /// <summary>
-    /// Indicate the application settings.
+    /// Indicates the application settings.
     /// </summary>
     static public ApplicationSettingsBase Settings { get; set; }
 
     /// <summary>
-    /// Indicate if database has been upgraded.
+    /// Indicates if database has been upgraded.
     /// </summary>
     static public bool IsSettingsUpgraded { get; set; }
 
     /// <summary>
-    /// Indicate if database has been upgraded.
+    /// Indicates if database has been upgraded.
     /// </summary>
     static public bool IsDatabaseUpgraded { get; set; }
 
     /// <summary>
-    /// Indicate if the application is in loading data stage.
+    /// Indicates if the application is in loading data stage.
     /// </summary>
     static public bool IsLoadingData { get; set; }
 
     /// <summary>
-    /// Indicate if the application is ready to interact with the user or do its purpose.
+    /// Indicates if the application is ready to interact with the user or do its purpose.
     /// </summary>
     static public bool IsReady { get; set; }
 
     /// <summary>
-    /// Indicate if data are read only.
+    /// Indicates if data are read only.
     /// </summary>
     static public bool IsReadOnly { get; set; }
 
     /// <summary>
-    /// Indicate if data is being generated.
+    /// Indicates if data is being generated.
     /// </summary>
     static public bool IsGenerating { get; set; }
 
     /// <summary>
-    /// Indicate if data is being printed.
+    /// Indicates if data is being printed.
     /// </summary>
     static public bool IsPrinting { get; set; }
 
     /// <summary>
-    /// Indicate if current processing must be cancelled.
+    /// Indicates if current processing must be cancelled.
     /// </summary>
     static public bool CancelRequired { get; set; }
 
     /// <summary>
-    /// Indicate if the windows session is ending.
+    /// Indicates if the windows session is ending.
     /// </summary>
     static public bool IsSessionEnding { get; set; }
 
     /// <summary>
-    /// Indicate if the application is exiting.
+    /// Indicates if the application is exiting.
     /// </summary>
     static public bool IsExiting { get; set; }
 
     /// <summary>
-    /// Indicate if the application can be closed.
+    /// Indicates if the application can be closed.
     /// </summary>
     static public bool AllowClose { get; set; } = true;
 

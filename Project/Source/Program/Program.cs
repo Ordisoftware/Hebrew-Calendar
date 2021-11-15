@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide Program class.
+  /// Provides Program class.
   /// </summary>
   static partial class Program
   {
@@ -74,7 +74,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Check if settings must be reseted.
+    /// Checks if settings must be reseted.
     /// </summary>
     private static void CheckSettingsReset(bool force = false)
     {
@@ -198,7 +198,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Send IPC commands.
+    /// Sends IPC commands.
     /// </summary>
     static private void IPCSendCommands()
     {
@@ -231,7 +231,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Process command line options.
+    /// Processes command line options.
     /// </summary>
     static private void ProcessCommandLineOptions()
     {
@@ -254,7 +254,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Update localization strings to the whole application.
+    /// Updates localization strings to the whole application.
     /// </summary>
     static public void UpdateLocalization()
     {

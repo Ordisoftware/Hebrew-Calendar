@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide suspend reminder delay item.
+  /// Provides suspend reminder delay item.
   /// </summary>
   class SuspendDelayItem
   {

@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide years interval item.
+  /// Provides years interval item.
   /// </summary>
   class YearsIntervalItem
   {

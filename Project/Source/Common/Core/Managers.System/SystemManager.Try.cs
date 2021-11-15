@@ -18,7 +18,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system manager.
+  /// Provides system manager.
   /// </summary>
   static partial class SystemManager
   {

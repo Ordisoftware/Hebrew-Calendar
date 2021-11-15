@@ -29,7 +29,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide SQLite-Net helper.
+  /// Provides SQLite-Net helper.
   /// </summary>
   static class SQLiteNetHelper
   {
@@ -37,17 +37,17 @@ namespace Ordisoftware.Core
     static public int DefaultOptimizeDaysInterval { get; set; } = 7;
 
     /// <summary>
-    /// Indicate the database engine name and version.
+    /// Indicates the database engine name and version.
     /// </summary>
     static public string EngineNameAndVersion { get; private set; }
 
     /// <summary>
-    /// Indicate the provider name.
+    /// Indicates the provider name.
     /// </summary>
     static public string ProviderName { get; private set; }
 
     /// <summary>
-    /// Get a single line of a string.
+    /// Gets a single line of a string.
     /// </summary>
     /// <param name="sql"></param>
     static public string UnformatSQL(string sql)
@@ -56,10 +56,9 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Return true if only one instance of the process is running else false.
+    /// Returns true if only one instance of the process is running else false.
     /// </summary>
     /// <param name="silent">True if no message is shown else shown.</param>
-    /// <returns></returns>
     static public bool CheckProcessConcurency(bool silent = false)
     {
       var list = System.Diagnostics.Process.GetProcessesByName(Globals.ProcessName);
@@ -70,7 +69,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the version of the engine.
+    /// Gets the version of the engine.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public void InitializeVersion(this SQLiteNetORM connection)
@@ -90,7 +89,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a SQL command.
+    /// Creates a SQL command.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public SQLiteCommand CreateCommand(this SQLiteNetORM connection)
@@ -99,7 +98,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a SQL command.
+    /// Creates a SQL command.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="sql">The query.</param>
@@ -109,7 +108,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Optimize the database.
+    /// Optimizes the database.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="lastdone">The last done date.</param>
@@ -130,7 +129,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check the database integrity.
+    /// Checks the database integrity.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public void CheckIntegrity(this SQLiteNetORM connection)
@@ -146,7 +145,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    ///  Vacuum the database.
+    /// Does the database Vacuum.
     /// </summary>
     /// <param name="connection">The connection.</param>
     static public void Vacuum(this SQLiteNetORM connection)
@@ -162,7 +161,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Drop a table if exists.
+    /// Drops a table if exists.
     /// </summary>
     /// <param name="connection"></param>
     /// <param name="table"></param>
@@ -181,7 +180,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Rename a table if exists.
+    /// Renames a table if exists.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="tableOldName">Old name.</param>
@@ -203,7 +202,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if a table exists and create it if not.
+    /// Checks if a table exists and create it if not.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
@@ -234,7 +233,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if a index exists and create it if not.
+    /// Checks if a index exists and create it if not.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="index">The index name.</param>
@@ -265,7 +264,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if a column of a table exists and create it if not.
+    /// Checks if a column of a table exists and create it if not.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
@@ -300,7 +299,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if a column of a table exists and create it if not.
+    /// Checks if a column of a table exists and create it if not.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
@@ -332,11 +331,10 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the number of rows in a table.
+    /// Gets the number of rows in a table.
     /// </summary>
     /// <param name="connection">The connection.</param>
     /// <param name="table">The table name.</param>
-    /// <returns></returns>
     static public long GetRowsCount(this SQLiteNetORM connection, string table)
     {
       try

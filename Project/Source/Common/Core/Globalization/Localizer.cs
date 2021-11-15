@@ -32,7 +32,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide localization helper.
+  /// Provides localization helper.
   /// </summary>
   static class Localizer
   {
@@ -40,7 +40,7 @@ namespace Ordisoftware.Core
     private const string ERR = "<Not translated>";
 
     /// <summary>
-    /// Get the string translation.
+    /// Gets the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     static public string GetLang(this TranslationsDictionary values)
@@ -49,7 +49,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the string translation.
+    /// Gets the string translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translation.</param>
     /// <param name="parameters">Parameters for the translated string.</param>
@@ -59,7 +59,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the string translation.
+    /// Gets the string translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing value>lang>translation.</param>
@@ -72,7 +72,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the list translation.
+    /// Gets the list translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>list.</param>
     static public NullSafeStringList GetLang(this NullSafeDictionary<Language, NullSafeStringList> values)
@@ -81,7 +81,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the list translation.
+    /// Gets the list translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>list.</param>
@@ -92,7 +92,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the string list translation.
+    /// Gets the string list translation.
     /// </summary>
     /// <param name="values">The dictionary containing lang>translations.</param>
     static public string[] GetLang(this NullSafeDictionary<Language, string[]> values)
@@ -101,7 +101,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the string translation.
+    /// Gets the string translation.
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
     /// <param name="values">The dictionary containing lang>value>translation.</param>
@@ -113,7 +113,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Remove diacritics signs.
+    /// Removes diacritics signs.
     /// </summary>
     public static string RemoveDiacritics(this string str)
     {

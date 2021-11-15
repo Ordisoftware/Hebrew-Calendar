@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide improved not implemented exception.
+  /// Provides improved not implemented exception.
   /// </summary>
   [Serializable]
   class AdvancedNotImplementedException : NotImplementedException

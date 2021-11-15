@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide online provider item.
+  /// Provides online provider item.
   /// </summary>
   class OnlineProviderItem
   {

@@ -22,7 +22,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide MessageBoxForm style enum.
+  /// Provides MessageBoxForm style enum.
   /// </summary>
   public enum MessageBoxFormStyle
   {
@@ -40,7 +40,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide MessageBoxForm icon enum.
+  /// Provides MessageBoxForm icon enum.
   /// </summary>
   public enum MessageBoxIconStyle
   {
@@ -63,7 +63,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide messages and questions with waiting user communication feedback.
+  /// Provides messages and questions with waiting user communication feedback.
   /// </summary>
   static partial class DisplayManager
   {
@@ -96,7 +96,7 @@ namespace Ordisoftware.Core
     static private string _Title;
 
     /// <summary>
-    /// Play the sound associated to a message box icon.
+    /// Plays the sound associated to a message box icon.
     /// </summary>
     static public void DoSound(MessageBoxIcon icon)
     {
@@ -119,7 +119,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Play the sound associated to a file.
+    /// Plays the sound associated to a file.
     /// </summary>
     static public void DoSound(string pathSound)
     {
@@ -127,7 +127,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a success message or play a sound else do nothing.
+    /// Shows a success message or play a sound else do nothing.
     /// </summary>
     static public void ShowSuccessOrSound(string text, string pathSound)
     {
@@ -139,7 +139,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a message.
+    /// Shows a message.
     /// </summary>
     /// <returns>
     /// A DialogResult.
@@ -155,7 +155,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a message.
+    /// Shows a message.
     /// </summary>
     /// <returns>
     /// A DialogResult.
@@ -190,7 +190,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an information message.
+    /// Shows an information message.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowInformation(string text)
@@ -199,7 +199,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an information message.
+    /// Shows an information message.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -209,7 +209,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a warning message.
+    /// Shows a warning message.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowWarning(string text)
@@ -218,7 +218,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a warning message.
+    /// Shows a warning message.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -228,7 +228,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message.
+    /// Shows an error message.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowError(string text)
@@ -237,7 +237,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message.
+    /// Shows an error message.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -248,7 +248,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and throw an AbortException.
+    /// Shows an error message and throw an AbortException.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowAndAbort(string text)
@@ -257,7 +257,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and throw an AbortException.
+    /// Shows an error message and throw an AbortException.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -268,7 +268,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and exit the process.
+    /// Shows an error message and exit the process.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowAndExit(string text)
@@ -277,7 +277,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and exit the process.
+    /// Shows an error message and exit the process.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -288,7 +288,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and terminate the process.
+    /// Shows an error message and terminate the process.
     /// </summary>
     /// <param name="text">The text.</param>
     static public void ShowAndTerminate(string text)
@@ -297,7 +297,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an error message and terminate the process.
+    /// Shows an error message and terminate the process.
     /// </summary>
     /// <param name="title">The title.</param>
     /// <param name="text">The text.</param>
@@ -308,7 +308,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a windows forms message box.
+    /// Shows a windows forms message box.
     /// </summary>
     /// <returns>
     /// A DialogResult.

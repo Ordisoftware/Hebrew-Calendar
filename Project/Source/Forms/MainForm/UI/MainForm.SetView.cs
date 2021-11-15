@@ -28,7 +28,7 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Provide view connector.
+    /// Provides view connector.
     /// </summary>
     private class ViewConnector
     {
@@ -51,7 +51,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Set the view panel.
+    /// Sets the view panel.
     /// </summary>
     /// <param name="view">The view mode.</param>
     public void SetView(ViewMode view)
@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Set the view panel.
+    /// Sets the view panel.
     /// </summary>
     /// <param name="view">The view mode.</param>
     /// <param name="first">true to first.</param>

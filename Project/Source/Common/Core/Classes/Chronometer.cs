@@ -21,13 +21,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide benchmark helper.
+  /// Provides benchmark helper.
   /// </summary>
   static class Chronometer
   {
 
     /// <summary>
-    /// Measure an action.
+    /// Measures an action.
     /// </summary>
     static public Stopwatch Measure(Action action)
     {
@@ -39,7 +39,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Measure an action reapeted several times.
+    /// Measures an action reapeted several times.
     /// </summary>
     static public long Measure(int count, Action action, Control control = null)
     {
