@@ -10,8 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Torah Lessons 2
-Lang/FR = Cours de Torah 2
+Lang/EN = Judaism
+Lang/FR = Judaïsme
 
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
@@ -64,6 +64,34 @@ URL = https://www.torahcafe.com
 
 Name = (EN) Torah Jews
 URL = https://www.truetorahjews.org
+
+
+-
+
+Name = (FR) Hassidout
+URL = http://hassidout.org
+
+Name = (FR) Beth Loubavitch
+URL = https://www.loubavitch.fr
+
+Name = (FR) 'Habad Loubavitch
+URL = https://fr.chabad.org
+
+Name = (EN) 'Habad Loubavitch
+URL = https://www.chabad.org
+
+-
+
+Name = (FR) Aish
+URL = https://www.aish.fr
+
+Name = (EN) Aish
+URL = https://www.aish.com
+
+Name = (IW) Aish
+URL = https://www.aish.co.il
+
+-
 
 Name = (EN) My Jewish Learning
 URL = https://www.myjewishlearning.com

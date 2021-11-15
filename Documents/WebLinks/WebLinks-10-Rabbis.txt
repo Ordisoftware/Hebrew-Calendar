@@ -12,8 +12,8 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = Torah Lessons 1
-Lang/FR = Cours de Torah 1
+Lang/EN = Rabbis
+Lang/FR = Rabbins
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
@@ -49,29 +49,3 @@ URL = http://halachayomit.co.il/en/Default.aspx
 
 Name = (IW) Halacha Yomit
 URL = http://halachayomit.co.il/he/default.aspx
-
--
-
-Name = (FR) Hassidout
-URL = http://hassidout.org
-
-Name = (FR) Beth Loubavitch
-URL = https://www.loubavitch.fr
-
-Name = (FR) 'Habad Loubavitch
-URL = https://fr.chabad.org
-
-Name = (EN) 'Habad Loubavitch
-URL = https://www.chabad.org
-
--
-
-Name = (FR) Aish
-URL = https://www.aish.fr
-
-Name = (EN) Aish
-URL = https://www.aish.com
-
-Name = (IW) Aish
-URL = https://www.aish.co.il
-
