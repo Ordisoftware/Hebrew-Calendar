@@ -124,7 +124,7 @@ namespace Ordisoftware.Core
         int SpaceCharWidth = TextRenderer.MeasureText(WordsList[0] + SpaceChar, font).Width
                            - TextRenderer.MeasureText(WordsList[0], font).Width;
         int AverageSpace = ( width - WordsWidth ) / NumberOfWords / SpaceCharWidth;
-        float AdjustSpace =  width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) ) ;
+        float AdjustSpace = width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) );
         return ( (Func<string>)( () =>
         {
           var Spaces = new StringBuilder();
@@ -248,7 +248,7 @@ namespace Ordisoftware.Core
     /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
     static public void MenuItemDropDownOpening(object sender, EventArgs e)
     {
-      if ( sender is not ToolStripMenuItem menuItem  || !menuItem.HasDropDownItems ) return;
+      if ( sender is not ToolStripMenuItem menuItem || !menuItem.HasDropDownItems ) return;
       Rectangle Bounds = menuItem.GetCurrentParent().Bounds;
       Screen CurrentScreen = Screen.FromPoint(Bounds.Location);
       int MaxWidth = 0;
