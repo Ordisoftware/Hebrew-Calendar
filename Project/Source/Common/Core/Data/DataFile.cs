@@ -19,33 +19,33 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide data file management.
+  /// Provides data file management.
   /// </summary>
   public abstract class DataFile
   {
 
     /// <summary>
-    /// Indicate source file path in application documents folder.
+    /// Indicates source file path in application documents folder.
     /// </summary>
     public string FilePathDefault { get; }
 
     /// <summary>
-    /// Indicate source file path in user data folder.
+    /// Indicates source file path in user data folder.
     /// </summary>
     public string FilePath { get; }
 
     /// <summary>
-    /// Indicate if file not found error must be shown on load.
+    /// Indicates if file not found error must be shown on load.
     /// </summary>
     public bool ShowFileNotFound { get; }
 
     /// <summary>
-    /// Indicate if the list is configurable by using the user data folder.
+    /// Indicates if the list is configurable by using the user data folder.
     /// </summary>
     public bool Configurable { get; }
 
     /// <summary>
-    /// Indicate the folder.
+    /// Indicates the folder.
     /// </summary>
     public DataFileFolder Folder { get; }
 
@@ -70,12 +70,12 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Load or reload data from disk.
+    /// Loads or reload data from disk.
     /// </summary>
     protected abstract void DoReLoad(string filePath);
 
     /// <summary>
-    /// Load or reload data from disk.
+    /// Loads or reload data from disk.
     /// </summary>
     public void ReLoad(bool reset = false)
     {
@@ -83,7 +83,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Check if file exists in user data folder.
+    /// Checks if file exists in user data folder.
     /// </summary>
     /// <param name="reset">True if must be reseted from application documents folder.</param>
     protected string CheckFile(bool reset)

@@ -19,36 +19,36 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Indicate the support email.
+    /// Indicates the support email.
     /// </summary>
     static public string SupportEMail { get; set; }
 
     /// <summary>
-    /// Indicate the author home URL.
+    /// Indicates the author home URL.
     /// </summary>
     static public string AuthorHomeURL { get; set; }
       = AssemblyTrademark;
 
     /// <summary>
-    /// Indicate the author projects URL.
+    /// Indicates the author projects URL.
     /// </summary>
     static public string AuthorProjectsURL { get; set; }
       = AssemblyTrademark + "/projects/";
 
     /// <summary>
-    /// Indicate the author contact URL.
+    /// Indicates the author contact URL.
     /// </summary>
     static public string AuthorContactURL { get; set; }
       = AssemblyTrademark + "/contact/";
 
     /// <summary>
-    /// Indicate the application home URL.
+    /// Indicates the application home URL.
     /// </summary>
     static public string ApplicationHomeURL { get; set; }
       = AssemblyProduct;
@@ -60,168 +60,168 @@ namespace Ordisoftware.Core
       = $"{ApplicationHomeURL}/#whatsnew";
 
     /// <summary>
-    /// Indicate the application website SSL certificate information.
+    /// Indicates the application website SSL certificate information.
     /// </summary>
     static public string ApplicationHomeSSLFilePath { get; set; }
       = Path.Combine(RootFolderPath, "Setup\\SSL", AssemblyTrademark + ".ssl");
 
     /// <summary>
-    /// Indicate the check update URL.
+    /// Indicates the check update URL.
     /// </summary>
     static public string CheckUpdateURL { get; set; }
       = $"https://{AssemblyTrademark}/files/{ApplicationCode}.sha-update";
 
     /// <summary>
-    /// Indicate the setup file name.
+    /// Indicates the setup file name.
     /// </summary>
     static public string SetupFileName { get; set; }
       = $"{AssemblyCompany}{ApplicationCode}Setup-{{0}}.exe";
 
     /// <summary>
-    /// Indicate the new version setup file.
+    /// Indicates the new version setup file.
     /// </summary>
     static public string SetupFileURL { get; set; }
       = $"https://{AssemblyTrademark}/download/{SetupFileName}";
 
     /// <summary>
-    /// Indicate the GitHub repository.
+    /// Indicates the GitHub repository.
     /// </summary>
     static public string GitHubRepositoryURL { get; set; }
       = $"https://github.com/{AssemblyCompany}/{ApplicationGitHubCode}";
 
     /// <summary>
-    /// Indicate the create GitHub issue url.
+    /// Indicates the create GitHub issue url.
     /// </summary>
     static public string GitHubCreateIssueURL { get; set; }
       = GitHubRepositoryURL + "/issues/new?assignees=" + AssemblyCompany;
 
     /// <summary>
-    /// Indicate the Softpedia url.
+    /// Indicates the Softpedia url.
     /// </summary>
     static public string SoftpediaURL { get; set; }
 
     /// <summary>
-    /// Indicate the AlternativeTo url.
+    /// Indicates the AlternativeTo url.
     /// </summary>
     static public string AlternativeToURL { get; set; }
       = $"https://alternativeto.net/user/{AssemblyCompany.ToLower()}/";
 
     /// <summary>
-    /// Indicate the file path of the application's icon.
+    /// Indicates the file path of the application's icon.
     /// </summary>
     static public string ApplicationIconFilePath
       => Path.Combine(SystemFolderPath, "Application.ico");
 
     /// <summary>
-    /// Indicate the file path of the application's readme markdown file.
+    /// Indicates the file path of the application's readme markdown file.
     /// </summary>
     static public string ApplicationReadmeMDPath
       => Path.Combine(RootFolderPath, "README.md");
 
     /// <summary>
-    /// Indicate the file path of the help.
+    /// Indicates the file path of the help.
     /// </summary>
     static public string HelpFilePath
       => Path.Combine(HelpFolderPath, $"index-{Languages.CurrentCode}.htm");
 
     /// <summary>
-    /// Indicate the file path of the emptysound.
+    /// Indicates the file path of the emptysound.
     /// </summary>
     static public string EmptySoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Empty.wav");
 
     /// <summary>
-    /// Indicate the file path of the screenshot sound.
+    /// Indicates the file path of the screenshot sound.
     /// </summary>
     static public string ScreenshotSoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Screenshot.wav");
 
     /// <summary>
-    /// Indicate the file path of the clipboard sound.
+    /// Indicates the file path of the clipboard sound.
     /// </summary>
     static public string ClipboardSoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Clipboard.wav");
 
     /// <summary>
-    /// Indicate the file path of the keyboard sound.
+    /// Indicates the file path of the keyboard sound.
     /// </summary>
     static public string KeyboardSoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Keyboard.wav");
 
     /// <summary>
-    /// Indicate the file path of the printer sound.
+    /// Indicates the file path of the printer sound.
     /// </summary>
     static public string PrinterSoundFilePath
       => Path.Combine(ProjectSoundsFolderPath, "Printer.wav");
 
     /// <summary>
-    /// Indicate the SQLite system DLL file path.
+    /// Indicates the SQLite system DLL file path.
     /// </summary>
     static public string SQLiteSystemDLLFilePath
       => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "system32", "sqlite3odbc.dll");
 
     /// <summary>
-    /// Indicate the extension of database files.
+    /// Indicates the extension of database files.
     /// </summary>
     static public string DatabaseFileExtension { get; set; }
       = ".sqlite";
 
     /// <summary>
-    /// Indicate the application ODBC DSN of the database.
+    /// Indicates the application ODBC DSN of the database.
     /// </summary>
     static public string ApplicationDatabaseOdbcDSN
       => ApplicationGitHubCode;
 
     /// <summary>
-    /// Indicate the file name of the application database.
+    /// Indicates the file name of the application database.
     /// </summary>
     static public string ApplicationDatabaseFileName
       => ApplicationDatabaseOdbcDSN + DatabaseFileExtension;
 
     /// <summary>
-    /// Indicate the file path of the application database.
+    /// Indicates the file path of the application database.
     /// </summary>
     static public string ApplicationDatabaseFilePath
       => Path.Combine(DatabaseFolderPath, ApplicationDatabaseFileName);
 
     /// <summary>
-    /// Indicate the common ODBC DSN of the database.
+    /// Indicates the common ODBC DSN of the database.
     /// </summary>
     static public string CommonDatabaseOdbcDSN
       => HebrewCommonDirectoryName.Replace(" ", "-");
 
     /// <summary>
-    /// Indicate the application database ODBC connection string.
+    /// Indicates the application database ODBC connection string.
     /// </summary>
     static public string ApplicationOdbcConnectionString
       => "Dsn=" + ApplicationDatabaseOdbcDSN;
 
     /// <summary>
-    /// Indicate the file name of the common database.
+    /// Indicates the file name of the common database.
     /// </summary>
     static public string CommonDatabaseFileName
       => CommonDatabaseOdbcDSN + DatabaseFileExtension;
 
     /// <summary>
-    /// Indicate the file path of the common database.
+    /// Indicates the file path of the common database.
     /// </summary>
     static public string CommonDatabaseFilePath
       => Path.Combine(UserDataCommonFolderPath, CommonDatabaseFileName);
 
     /// <summary>
-    /// Indicate the application database SQLite connection string.
+    /// Indicates the application database SQLite connection string.
     /// </summary>
     static public string ApplicationSQLiteNetConnectionString
       => "Datasource=" + ApplicationDatabaseFilePath;
 
     /// <summary>
-    /// Indicate the common database ODBC connection string.
+    /// Indicates the common database ODBC connection string.
     /// </summary>
     static public string CommonOdbcConnectionString
       => "Dsn=" + CommonDatabaseOdbcDSN;
 
     /// <summary>
-    /// Indicate the common database SQLite connection string.
+    /// Indicates the common database SQLite connection string.
     /// </summary>
     static public string CommonSQLiteNetConnectionString
       => "Datasource=" + CommonDatabaseFilePath;

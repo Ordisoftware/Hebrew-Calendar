@@ -21,13 +21,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide global variables.
+  /// Provides global variables.
   /// </summary>
   static partial class Globals
   {
 
     /// <summary>
-    /// Get an attribute instance.
+    /// Gets an attribute instance.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
@@ -38,7 +38,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the assembly title.
+    /// Gets the assembly title.
     /// </summary>
     static public string AssemblyTitle
     {
@@ -53,55 +53,55 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get the assembly version.
+    /// Gets the assembly version.
     /// </summary>
     static public string AssemblyVersion
       => Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
 
     /// <summary>
-    /// Get the assembly title with version.
+    /// Gets the assembly title with version.
     /// </summary>
     static public string AssemblyTitleWithVersion
       => AssemblyTitle + " " + AssemblyVersion;
 
     /// <summary>
-    /// Get information describing the assembly.
+    /// Gets information describing the assembly.
     /// </summary>
     static public string AssemblyDescription
       => GetAttribute<AssemblyDescriptionAttribute>().Description;
 
     /// <summary>
-    /// Get the assembly product.
+    /// Gets the assembly product.
     /// </summary>
     static public string AssemblyProduct
       => GetAttribute<AssemblyProductAttribute>().Product;
 
     /// <summary>
-    /// Get the assembly copyright.
+    /// Gets the assembly copyright.
     /// </summary>
     static public string AssemblyCopyright
       => GetAttribute<AssemblyCopyrightAttribute>().Copyright;
 
     /// <summary>
-    /// Get the assembly company.
+    /// Gets the assembly company.
     /// </summary>
     static public string AssemblyCompany
       => GetAttribute<AssemblyCompanyAttribute>().Company;
 
     /// <summary>
-    /// Get the assembly trademark.
+    /// Gets the assembly trademark.
     /// </summary>
     static public string AssemblyTrademark
       => GetAttribute<AssemblyTrademarkAttribute>().Trademark;
 
     /// <summary>
-    /// Get the assembly GUID.
+    /// Gets the assembly GUID.
     /// </summary>
     static public string AssemblyGUID
       => GetAttribute<GuidAttribute>().Value;
 
     /// <summary>
-    /// Get the assembly compiled DateTime.
+    /// Gets the assembly compiled DateTime.
     /// </summary>
     static public DateTime CompiledDateTime
       => Assembly.GetExecutingAssembly().GetLinkerTime();

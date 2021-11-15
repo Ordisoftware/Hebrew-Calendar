@@ -18,13 +18,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system helper.
+  /// Provides system helper.
   /// </summary>
   static partial class StringHelper
   {
 
     /// <summary>
-    /// Create a readable string from a size in bytes.
+    /// Creates a readable string from a size in bytes.
     /// </summary>
     static public string FormatBytesSize(this long bytes)
     {
@@ -32,7 +32,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create a readable string from a milliseconds value.
+    /// Creates a readable string from a milliseconds value.
     /// </summary>
     static public string FormatMilliseconds(this long ms, bool excludems = false)
     {

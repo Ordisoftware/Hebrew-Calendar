@@ -19,7 +19,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide null safe sorted dictionary.
+  /// Provides null safe sorted dictionary.
   /// </summary>
   [Serializable]
   public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>

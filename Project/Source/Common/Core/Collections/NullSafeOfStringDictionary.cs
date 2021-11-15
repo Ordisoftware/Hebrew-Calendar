@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide null safe of string dictionary.
+  /// Provides null safe of string dictionary.
   /// </summary>
   [Serializable]
   public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
@@ -74,7 +74,7 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Provide NullSafeOfStringDictionary helper.
+  /// Provides NullSafeOfStringDictionary helper.
   /// </summary>
   static class NullSafeOfStringDictionaryHelper
   {

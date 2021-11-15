@@ -24,17 +24,17 @@ namespace Ordisoftware.Hebrew.Calendar
   {
 
     /// <summary>
-    /// Open the main form.
+    /// Main form.
     /// </summary>
     MainForm,
 
     /// <summary>
-    /// Open the navigation form.
+    /// Navigation form.
     /// </summary>
     NavigationForm,
 
     /// <summary>
-    /// Open the next celebrations form.
+    /// Celebrations form.
     /// </summary>
     NextCelebrationsForm,
 

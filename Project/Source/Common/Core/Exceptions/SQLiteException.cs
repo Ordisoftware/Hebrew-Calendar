@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide SQLite exception.
+  /// Provides SQLite exception.
   /// </summary>
   [Serializable]
   class SQLiteException : DbException

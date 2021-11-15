@@ -22,7 +22,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide Settings helper.
+  /// Provides Settings helper.
   /// </summary>
   static class SettingsHelper
   {
@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     static private bool Mutex;
 
     /// <summary>
-    /// Indicate the main form instance.
+    /// Indicates the main form instance.
     /// </summary>
     static private readonly MainForm MainForm = MainForm.Instance;
 

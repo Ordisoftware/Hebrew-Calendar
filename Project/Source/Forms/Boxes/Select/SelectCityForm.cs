@@ -65,7 +65,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Indicate if the cities are loaded and ready, else there is an error.
+    /// Indicates if the cities are loaded and ready, else there is an error.
     /// </summary>
     public static bool Enable { get; set; } = true;
 

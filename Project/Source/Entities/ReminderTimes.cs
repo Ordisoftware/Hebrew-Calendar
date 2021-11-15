@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide reminder times.
+  /// Provides reminder times.
   /// </summary>
   class ReminderTimes
   {

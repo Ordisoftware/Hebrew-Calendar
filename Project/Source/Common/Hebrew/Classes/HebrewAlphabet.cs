@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide hebrew letters class to manage hebrew font and unicode chars
+  /// Provides hebrew letters class to manage hebrew font and unicode chars
   /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
   /// </summary>
   static class HebrewAlphabet
@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew
     public const int ConcordanceLast = 8674;
 
     /// <summary>
-    /// Indicate letters keyboard codes for hebrew font.
+    /// Indicates letters keyboard codes for hebrew font.
     /// </summary>
     static public readonly string[] Codes =
     {
@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate letters simple values.
+    /// Indicates letters simple values.
     /// </summary>
     static public readonly int[] ValuesSimple =
     {
@@ -49,7 +49,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate letters full values.
+    /// Indicates letters full values.
     /// </summary>
     static public readonly int[] ValuesFull =
     {
@@ -58,7 +58,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate letters names in hebrew font chars.
+    /// Indicates letters names in hebrew font chars.
     /// </summary>
     static public readonly string[] Names =
     {
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew
 
 
     /// <summary>
-    /// Indicate final letters disabled keyboard codes for hebrew font.
+    /// Indicates final letters disabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalDisable =
     {
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate final letters enabled keyboard codes for hebrew font.
+    /// Indicates final letters enabled keyboard codes for hebrew font.
     /// </summary>
     static private readonly char[][] FinalEnable =
     {
@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew
     };
 
     /// <summary>
-    /// Indicate if a string contains some hebrew unicode chars.
+    /// Indicates if a string contains some hebrew unicode chars.
     /// </summary>
     static public bool ContainsUnicode(string str)
     {
@@ -100,7 +100,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate if a string contains only hebrew unicode chars or spaces regardless of diacritics and capitals.
+    /// Indicates if a string contains only hebrew unicode chars or spaces regardless of diacritics and capitals.
     /// </summary>
     static public bool IsValidUnicode(string str)
     {
@@ -109,7 +109,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate if a string contains only hebrew font chars or spaces regardless of diacritics and capitals and finals.
+    /// Indicates if a string contains only hebrew font chars or spaces regardless of diacritics and capitals and finals.
     /// </summary>
     static public bool IsValidHebrew(string str)
     {
@@ -118,7 +118,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Set final letter.
+    /// Sets final letter.
     /// </summary>
     /// <param name="hebrew">The word in hebrew font chars.</param>
     /// <param name="enable">On else off</param>
@@ -139,7 +139,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Convert all final letters to non final.
+    /// Converts all final letters to non final.
     /// </summary>
     /// <param name="hebrew">The sentence having some words.</param>
     static public string UnFinalAll(string hebrew)
@@ -151,7 +151,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Return only allowed chars for hebrew font.
+    /// Returns only allowed chars for hebrew font.
     /// </summary>
     static public string OnlyHebrewFont(string str)
     {
@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Return only allowed chars for hebrew font.
+    /// Returns only allowed chars for hebrew font.
     /// </summary>
     static public string OnlyUnicode(string str)
     {
@@ -178,7 +178,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Convert unicode hebrew chars to hebrew font chars.
+    /// Converts unicode hebrew chars to hebrew font chars.
     /// </summary>
     static public string ToHebrewFont(string unicode)
     {
@@ -190,7 +190,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Convert hebrew font chars to unicode hebrew chars.
+    /// Converts hebrew font chars to unicode hebrew chars.
     /// </summary>
     static public string ToUnicode(string str)
     {
@@ -202,7 +202,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Convert unicode hebrew chars to hebrew font chars.
+    /// Converts unicode hebrew chars to hebrew font chars.
     /// </summary>
     static public char UnicodeToHebrew(char c)
     {
@@ -242,7 +242,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Convert hebrew font chars to unicode hebrew chars.
+    /// Converts hebrew font chars to unicode hebrew chars.
     /// </summary>
     static public char HebrewToUnicode(char c)
     {

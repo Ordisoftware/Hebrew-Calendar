@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide export helper.
+  /// Provides export helper.
   /// </summary>
   static class ExportHelper
   {

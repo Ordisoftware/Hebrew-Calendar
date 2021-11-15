@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// provide application statistics.
+  /// Provides application statistics.
   /// </summary>
   class ApplicationStatistics
   {

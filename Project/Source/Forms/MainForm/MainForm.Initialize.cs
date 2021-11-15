@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide application's main form.
+  /// Provides application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class MainForm
@@ -40,7 +40,7 @@ namespace Ordisoftware.Hebrew.Calendar
     public const Keys DefaultHotKeyKey = Keys.C;
 
     /// <summary>
-    /// Do constructor
+    /// Does constructor
     /// </summary>
     private void DoConstructor()
     {
@@ -67,7 +67,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do Form Load event.
+    /// Does Form Load event.
     /// </summary>
     private void DoFormLoad(object sender, EventArgs e)
     {
@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do Form Shown event.
+    /// Does Form Shown event.
     /// </summary>
     private void DoFormShown(object sender, EventArgs e)
     {
@@ -171,7 +171,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool IsCalendarReady = true;
 
     /// <summary>
-    /// Show news and process command line options.
+    /// Shows news and process command line options.
     /// </summary>
     private void ProcessNewsAndCommandLine()
     {
@@ -205,7 +205,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Set global HotKey combination.
+    /// Sets global HotKey combination.
     /// </summary>
     public void SetGlobalHotKey(bool noactive = false)
     {
@@ -223,7 +223,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Execute Global HotKey.
+    /// Executes Global HotKey.
     /// </summary>
     private void BrintToFrontApplicationHotKeyPressed()
     {
@@ -240,7 +240,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    ///  Do Form Closing event.
+    /// Does Form Closing event.
     /// </summary>
     private void DoFormClosing(object sender, FormClosingEventArgs e)
     {
@@ -259,7 +259,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do Form Closed event.
+    /// Does Form Closed event.
     /// </summary>
     private void DoFormClosed(object sender, FormClosedEventArgs e)
     {
@@ -301,7 +301,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Do Session Ending event.
+    /// Does Session Ending event.
     /// </summary>
     public void SessionEnding(object sender, SessionEndingEventArgs e)
     {
@@ -335,7 +335,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize current time zone.
+    /// Initializes current time zone.
     /// </summary>
     public void InitializeCurrentTimeZone()
     {
@@ -349,7 +349,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Set the initial directories of dialog boxes.
+    /// Sets the initial directories of dialog boxes.
     /// </summary>
     public void InitializeDialogsDirectory()
     {
@@ -365,7 +365,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize icons
+    /// Initializes icons
     /// </summary>
     private void InitializeIconsAndSound()
     {
@@ -382,7 +382,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Set reminder boxes location.
+    /// Sets reminder boxes location.
     /// </summary>
     public void InitializeReminderBoxDesktopLocation()
     {
@@ -399,7 +399,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize the calendar month view aspect.
+    /// Initializes the calendar month view aspect.
     /// </summary>
     private void InitializeCalendarUI()
     {

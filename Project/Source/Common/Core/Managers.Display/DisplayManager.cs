@@ -20,13 +20,13 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide multithreaded messages output and messages box.
+  /// Provides multi-threaded messages output and messages box.
   /// </summary>
   static partial class DisplayManager
   {
 
     /// <summary>
-    /// Indicate main thread.
+    /// Indicates main thread.
     /// </summary>
     static public Thread MainThread { get; private set; }
 
@@ -41,7 +41,7 @@ namespace Ordisoftware.Core
     public const int TaskbarWidthCheckTrigger = 250;
 
     /// <summary>
-    /// Get task bar anchor style.
+    /// Gets task bar anchor style.
     /// </summary>
     static public AnchorStyles GetTaskbarAnchorStyle()
     {
@@ -59,7 +59,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Run an action synchronized in the main form thread and wait for completion.
+    /// Runs an action synchronized in the main form thread and wait for completion.
     /// </summary>
     /// <param name="action">The action.</param>
     /// <param name="wait">true to wait.</param>
@@ -69,7 +69,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Run an action synchronized with the visual thread and wait for completion.
+    /// Runs an action synchronized with the visual thread and wait for completion.
     /// </summary>
     /// <Exception cref="ThreadInterruptedException">Thrown when a Thread Interrupted error
     /// condition occurs.</Exception>

@@ -20,7 +20,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide null safe of string dictionary.
+  /// Provides null safe of string dictionary.
   /// </summary>
   [Serializable]
   public class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>

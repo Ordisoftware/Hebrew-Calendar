@@ -30,12 +30,12 @@ namespace Ordisoftware.Hebrew
   }
 
   /// <summary>
-  /// Provide view letter details delegate.
+  /// Provides view letter details delegate.
   /// </summary>
   delegate void ViewLetterDetails(LettersControl sender, string code);
 
   /// <summary>
-  /// Provide Letters input panel Control class.
+  /// Provides Letters input panel Control class.
   /// </summary>
   partial class LettersControl : UserControl
   {
@@ -50,12 +50,12 @@ namespace Ordisoftware.Hebrew
     public const int DefaultMarginSize = 5;
 
     /// <summary>
-    /// Indicate view letter details event.
+    /// Indicates view letter details event.
     /// </summary>
     public event ViewLetterDetails ViewLetterDetails;
 
     /// <summary>
-    /// Indicate Input TextChanged event.
+    /// Indicates Input TextChanged event.
     /// </summary>
     public event EventHandler InputTextChanged
     {
@@ -71,7 +71,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate Input MaxLength property.
+    /// Indicates Input MaxLength property.
     /// </summary>
     [DefaultValue(DefaultInputMaxLength)]
     public int InputMaxLength
@@ -81,7 +81,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate the background color of letters panel.
+    /// Indicates the background color of letters panel.
     /// </summary>
     [DefaultValue(typeof(Color), "LightYellow")]
     public Color LettersBackColor
@@ -91,7 +91,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate the background color of input textbox.
+    /// Indicates the background color of input textbox.
     /// </summary>
     [DefaultValue(typeof(Color), "AliceBlue")]
     public Color InputBackColor
@@ -101,7 +101,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Indicate hebrew letters font size
+    /// Indicates hebrew letters font size
     /// </summary>
     [DefaultValue(DefaultFontSizeLetters)]
     public float FontSizeLetters
@@ -117,7 +117,7 @@ namespace Ordisoftware.Hebrew
     private float _FontSizeLetters = DefaultFontSizeLetters;
 
     /// <summary>
-    /// Indicate values font size.
+    /// Indicates values font size.
     /// </summary>
     [DefaultValue(DefaultFontSizeValues)]
     public float FontSizeValues
@@ -133,7 +133,7 @@ namespace Ordisoftware.Hebrew
     private float _FontSizeValues = DefaultFontSizeValues;
 
     /// <summary>
-    /// Indicate keys font size.
+    /// Indicates keys font size.
     /// </summary>
     [DefaultValue(DefaultFontSizeKeys)]
     public float FontSizeKeys
@@ -149,7 +149,7 @@ namespace Ordisoftware.Hebrew
     private float _FontSizeKeys = DefaultFontSizeKeys;
 
     /// <summary>
-    /// Indicate Input font size.
+    /// Indicates Input font size.
     /// </summary>
     [DefaultValue(DefaultFontSizeInput)]
     public float FontSizeInput
@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew
     private float _FontSizeInput = DefaultFontSizeInput;
 
     /// <summary>
-    /// Indicate if letters values must be shown.
+    /// Indicates if letters values must be shown.
     /// </summary>
     [DefaultValue(true)]
     public bool ShowValues
@@ -181,7 +181,7 @@ namespace Ordisoftware.Hebrew
     private bool _ShowValues = true;
 
     /// <summary>
-    /// Indicate if keys codes must be shown.
+    /// Indicates if keys codes must be shown.
     /// </summary>
     [DefaultValue(true)]
     public bool ShowKeys
@@ -223,7 +223,7 @@ namespace Ordisoftware.Hebrew
     private int _MarginY = DefaultMarginSize;
 
     /// <summary>
-    /// Indicate if an input key is processed.
+    /// Indicates if an input key is processed.
     /// </summary>
     private bool KeyProcessed;
 
@@ -412,7 +412,7 @@ namespace Ordisoftware.Hebrew
   }
 
   /// <summary>
-  /// Provide LetterEventArgs class.
+  /// Provides LetterEventArgs class.
   /// </summary>
   class LetterEventArgs : EventArgs
   {

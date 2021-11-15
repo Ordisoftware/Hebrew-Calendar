@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide Letters input panel Control class.
+  /// Provides Letters input panel Control class.
   /// </summary>
   partial class LettersControl
   {
@@ -29,7 +29,7 @@ namespace Ordisoftware.Hebrew
     private bool RedrawMutex;
 
     /// <summary>
-    /// Create letters buttons and labels.
+    /// Creates letters buttons and labels.
     /// </summary>
     public void Redraw()
     {

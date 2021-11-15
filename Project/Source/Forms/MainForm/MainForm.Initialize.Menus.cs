@@ -20,14 +20,14 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide application's main form.
+  /// Provides application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   partial class MainForm
   {
 
     /// <summary>
-    /// Create system information menu items.
+    /// Creates system information menu items.
     /// </summary>
     public void CreateSystemInformationMenu()
     {
@@ -42,7 +42,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Initialize special menus (web links, tray icon and suspend).
+    /// Initializes special menus (web links, tray icon and suspend).
     /// </summary>
     public void InitializeSpecialMenus()
     {
@@ -77,7 +77,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Create providers links menu items.
+    /// Creates providers links menu items.
     /// </summary>
     private void CreateProvidersLinks()
     {

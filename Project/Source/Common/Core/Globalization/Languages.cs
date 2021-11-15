@@ -31,38 +31,38 @@ namespace Ordisoftware.Core
   }
 
   /// <summary>
-  /// Indicate supported languages.
+  /// Indicates supported languages.
   /// </summary>
   static class Languages
   {
 
     /// <summary>
-    /// Indicate language codes.
+    /// Indicates language codes.
     /// </summary>
     static public readonly NullSafeOfEnumDictionary<string, Language> Values;
 
     /// <summary>
-    /// Indicate language codes.
+    /// Indicates language codes.
     /// </summary>
     static public readonly NullSafeOfStringDictionary<Language> Codes;
 
     /// <summary>
-    /// Indicate managed languages.
+    /// Indicates managed languages.
     /// </summary>
     static public readonly Language[] Managed;
 
     /// <summary>
-    /// Indicate default language.
+    /// Indicates default language.
     /// </summary>
     static public readonly Language Default = Language.EN;
 
     /// <summary>
-    /// Indicate current language code.
+    /// Indicates current language code.
     /// </summary>
     static public string CurrentCode => Codes[Current];
 
     /// <summary>
-    /// Indicate current language.
+    /// Indicates current language.
     /// </summary>
     static public Language Current
     {

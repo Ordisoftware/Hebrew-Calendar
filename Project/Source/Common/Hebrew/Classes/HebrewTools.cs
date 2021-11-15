@@ -21,13 +21,13 @@ namespace Ordisoftware.Hebrew
 {
 
   /// <summary>
-  /// Provide hebrew tools.
+  /// Provides hebrew tools.
   /// </summary>
   static class HebrewTools
   {
 
     /// <summary>
-    /// Start Hebrew Letters.
+    /// Starts Hebrew Letters.
     /// </summary>
     /// <param name="word">The unicode or hebrew font chars of the word.</param>
     /// <param name="path">Path of the application.</param>
@@ -56,7 +56,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words.
+    /// Starts Hebrew Words.
     /// </summary>
     static public void OpenHebrewWordsGoToVerse(string reference, string path)
     {
@@ -68,7 +68,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words.
+    /// Starts Hebrew Words.
     /// </summary>
     static public void OpenHebrewWordsSearchWord(string word, string path)
     {
@@ -80,7 +80,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Start Hebrew Words.
+    /// Starts Hebrew Words.
     /// </summary>
     static public void OpenHebrewWordsSearchTranslated(string word, string path)
     {
@@ -92,7 +92,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online word provider.
+    /// Opens online word provider.
     /// </summary>
     static public void OpenWordProvider(string link, string hebrew)
     {
@@ -107,7 +107,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online concordance provider.
+    /// Opens online concordance provider.
     /// </summary>
     static public void OpenWordConcordance(string link, int concordance)
     {
@@ -120,7 +120,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online bible provider.
+    /// Opens online bible provider.
     /// </summary>
     static public void OpenBibleProvider(string url, string reference)
     {
@@ -132,7 +132,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online bible provider.
+    /// Opens online bible provider.
     /// </summary>
     static public void OpenBibleProvider(string url, int book, int chapter, int verse)
     {
@@ -165,7 +165,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online parashah provider.
+    /// Opens online parashah provider.
     /// </summary>
     static public void OpenParashahProvider(string url, Parashah parashah, bool openLinked = false)
     {
@@ -201,7 +201,7 @@ namespace Ordisoftware.Hebrew
     }
 
     /// <summary>
-    /// Open online celebration provider.
+    /// Opens online celebration provider.
     /// </summary>
     static public void OpenCelebrationProvider(string url, TorahCelebration celebration)
     {

@@ -21,7 +21,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide online providers list.
+  /// Provides online providers list.
   /// </summary>
   class OnlineProviders : DataFile
   {
@@ -29,29 +29,29 @@ namespace Ordisoftware.Core
     static public bool MoveCurrentLanguageAtTop { get; set; } = true;
 
     /// <summary>
-    /// Indicate display name tag.
+    /// Indicates display name tag.
     /// </summary>
     private const string TagName = "Name = ";
 
     /// <summary>
-    /// Indicate url tag.
+    /// Indicates url tag.
     /// </summary>
     private const string TagURL = "URL = ";
 
     /// <summary>
-    /// Indicate items.
+    /// Indicates items.
     /// </summary>
     public List<OnlineProviderItem> Items { get; private set; }
      = new List<OnlineProviderItem>();
 
     /// <summary>
-    /// Indicate the multilingual title of the list to create a folder
+    /// Indicates the multilingual title of the list to create a folder
     /// </summary>
     public TranslationsDictionary Title { get; }
       = new TranslationsDictionary();
 
     /// <summary>
-    /// Indicate if a separator must be inserted before the folder
+    /// Indicates if a separator must be inserted before the folder
     /// </summary>
     public bool SeparatorBeforeFolder { get; private set; }
 
@@ -64,7 +64,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Load or reload data from disk.
+    /// Loads or reload data from disk.
     /// </summary>
     protected override void DoReLoad(string filePath)
     {

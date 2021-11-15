@@ -18,23 +18,23 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide Torah event item to be displayed in a control.
+  /// Provides Torah event item to be displayed in a control.
   /// </summary>
   class TorahEventItem
   {
 
     /// <summary>
-    /// Indicate the text of the event.
+    /// Indicates the text of the event.
     /// </summary>
     public string Text { get; set; }
 
     /// <summary>
-    /// Indicate the event public enum value.
+    /// Indicates the event public enum value.
     /// </summary>
     public TorahCelebrationDay Event { get; set; }
 
     /// <summary>
-    /// Return a <see cref="T:System.String" /> that represents the day.
+    /// Returns a <see cref="T:System.String" /> that represents the day.
     /// </summary>
     public override string ToString() => Text;
 

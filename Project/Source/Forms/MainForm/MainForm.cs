@@ -23,7 +23,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide application's main form.
+  /// Provides application's main form.
   /// </summary>
   /// <seealso cref="T:System.Windows.Forms.Form"/>
   public partial class MainForm : Form
@@ -32,7 +32,7 @@ namespace Ordisoftware.Hebrew.Calendar
     #region Singleton
 
     /// <summary>
-    /// Indicate the singleton instance.
+    /// Indicates the singleton instance.
     /// </summary>
     static public MainForm Instance { get; private set; }
 
@@ -507,7 +507,7 @@ namespace Ordisoftware.Hebrew.Calendar
     #region Menu Tools
 
     /// <summary>
-    /// Show a notice.
+    /// Shows a notice.
     /// </summary>
     private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
     {
@@ -958,7 +958,7 @@ namespace Ordisoftware.Hebrew.Calendar
       switch ( e.ColumnIndex )
       {
         case 5:
-          e.Value = ( (MoonriseOccuring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
+          e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
           break;
         case 8:
         case 9:

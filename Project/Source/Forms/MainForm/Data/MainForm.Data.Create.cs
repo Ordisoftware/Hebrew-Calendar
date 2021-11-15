@@ -60,7 +60,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Create the calendar days items.
+    /// Creates the calendar days items.
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
@@ -155,7 +155,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Create the days.
+    /// Creates the days.
     /// </summary>
     /// <param name="yearFirst">The first year.</param>
     /// <param name="yearLast">The last year.</param>
@@ -196,7 +196,7 @@ namespace Ordisoftware.Hebrew.Calendar
     private bool isMoonriseDelayed;
 
     /// <summary>
-    /// Initialize a day.
+    /// Initializes a day.
     /// </summary>
     private bool InitializeDay(LunisolarDay day)
     {
@@ -232,14 +232,14 @@ namespace Ordisoftware.Hebrew.Calendar
         day.SunsetAsString = SQLiteDate.ToString(ephemeris.Sunset);
         day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
         day.MoonsetAsString = SQLiteDate.ToString(ephemeris.Moonset);
-        MoonriseOccuring moonrisetype;
+        MoonriseOccurring moonrisetype;
         if ( ephemeris.Moonrise == null )
-          moonrisetype = MoonriseOccuring.NextDay;
+          moonrisetype = MoonriseOccurring.NextDay;
         else
         if ( ephemeris.Moonrise < ephemeris.Moonset )
-          moonrisetype = MoonriseOccuring.BeforeSet;
+          moonrisetype = MoonriseOccurring.BeforeSet;
         else
-          moonrisetype = MoonriseOccuring.AfterSet;
+          moonrisetype = MoonriseOccurring.AfterSet;
         day.MoonriseOccuring = moonrisetype;
         day.SeasonChange = data.RealSeasonChange;
         day.TorahEvent = TorahCelebrationDay.None;
@@ -256,7 +256,7 @@ namespace Ordisoftware.Hebrew.Calendar
     }
 
     /// <summary>
-    /// Create the calendar items.
+    /// Creates the calendar items.
     /// </summary>
     private bool AnalyseDays()
     {
@@ -287,7 +287,7 @@ namespace Ordisoftware.Hebrew.Calendar
             day.LunarMonth = month;
             if ( day.IsNewMoon )
               delta = 0;
-            if ( day.MoonriseOccuring == MoonriseOccuring.NextDay && Settings.TorahEventsCountAsMoon )
+            if ( day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
               delta = 1;
             day.LunarDay -= delta;
             checkParashah(day);
@@ -374,12 +374,12 @@ namespace Ordisoftware.Hebrew.Calendar
             count = toadd;
           else
             for ( int i = 0; i < toadd; i++, count++ )
-              if ( LunisolarDays[index + i].MoonriseOccuring == MoonriseOccuring.NextDay )
+              if ( LunisolarDays[index + i].MoonriseOccuring == MoonriseOccurring.NextDay )
                 count++;
           thedate = thedate.AddDays(count);
           var row = LunisolarDays.Find(d => d.Date == thedate);
           if ( row != null )
-            if ( row.MoonriseOccuring == MoonriseOccuring.NextDay )
+            if ( row.MoonriseOccuring == MoonriseOccurring.NextDay )
               thedate = thedate.AddDays(1);
         }
         else

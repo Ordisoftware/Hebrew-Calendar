@@ -25,7 +25,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide DataTable helper.
+  /// Provides DataTable helper.
   /// </summary>
   static class DataTableHelper
   {

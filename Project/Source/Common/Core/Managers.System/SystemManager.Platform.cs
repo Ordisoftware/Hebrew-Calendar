@@ -24,7 +24,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide system manager.
+  /// Provides system manager.
   /// </summary>
   static partial class SystemManager
   {
@@ -32,7 +32,7 @@ namespace Ordisoftware.Core
     private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
 
     /// <summary>
-    /// Indicate the processor name.
+    /// Indicates the processor name.
     /// </summary>
     static public string Processor
     {
@@ -69,7 +69,7 @@ namespace Ordisoftware.Core
     static private string _Processor;
 
     /// <summary>
-    /// Indicate the operating system, framework and CLR names and versions.
+    /// Indicates the operating system, framework and CLR names and versions.
     /// </summary>
     static public string Platform
     {
@@ -128,7 +128,7 @@ namespace Ordisoftware.Core
     static private string _Platform;
 
     /// <summary>
-    /// Indicate the free physical memory formatted.
+    /// Indicates the free physical memory formatted.
     /// </summary>
     static public string PhysicalMemoryFree
     {
@@ -140,7 +140,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate the total physical memory formatted.
+    /// Indicates the total physical memory formatted.
     /// </summary>
     static public string TotalVisibleMemory
     {
@@ -160,7 +160,7 @@ namespace Ordisoftware.Core
 
 
     /// <summary>
-    /// Get a Windows Management Object value.
+    /// Gets a Windows Management Object value.
     /// </summary>
     static public object GetWin32OperatingSystemValue(string name)
     {

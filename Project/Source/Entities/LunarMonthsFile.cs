@@ -21,7 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide lunar months file.
+  /// Provides lunar months file.
   /// </summary>
   class LunarMonthsFile : DataFile
   {

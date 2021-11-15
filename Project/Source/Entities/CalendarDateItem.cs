@@ -19,7 +19,7 @@ namespace Ordisoftware.Hebrew.Calendar
 {
 
   /// <summary>
-  /// Provide calendar date item.
+  /// Provides calendar date item.
   /// </summary>
   class CalendarDateItem
   {

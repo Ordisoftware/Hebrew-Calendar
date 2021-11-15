@@ -23,7 +23,7 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provide online providers list helper to create menu items.
+  /// Provides online providers list helper to create menu items.
   /// </summary>
   static class OnlineProvidersHelper
   {
@@ -46,7 +46,7 @@ namespace Ordisoftware.Core
       + "BCcQLQAAAABJRU5ErkJggg==";
 
     /// <summary>
-    /// Indicate image of the configure menu item.
+    /// Indicates image of the configure menu item.
     /// </summary>
     static public Image ImageConfigure { get; }
 
@@ -60,7 +60,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create configure menu item.
+    /// Creates configure menu item.
     /// </summary>
     static ToolStripMenuItem CreateConfigureMenuItem(EventHandler click)
     {
@@ -71,7 +71,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Crate a list of menu items.
+    /// Creates a list of menu items.
     /// </summary>
     static private void SetItems(ToolStripItemCollection menuItems,
                                  OnlineProviders providers,
@@ -95,7 +95,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create submenu items for providers menu.
+    /// Creates submenu items for providers menu.
     /// </summary>
     static public void InitializeFromProviders(this ContextMenuStrip contextMenu,
                                                OnlineProviders providers,
@@ -105,7 +105,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create submenu items for providers menu.
+    /// Creates submenu items for providers menu.
     /// </summary>
     static public void InitializeFromProviders(this ToolStripMenuItem menuItem,
                                                OnlineProviders providers,
@@ -117,7 +117,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Create submenu items for web links menu.
+    /// Creates submenu items for web links menu.
     /// </summary>
     static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
     {
@@ -161,6 +161,11 @@ namespace Ordisoftware.Core
       }
     }
 
+    /// <summary>
+    /// Handles the MouseUp event of the Menu control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
     static private void Menu_MouseUp(object sender, MouseEventArgs e)
     {
       if ( e.Button != MouseButtons.Right ) return;

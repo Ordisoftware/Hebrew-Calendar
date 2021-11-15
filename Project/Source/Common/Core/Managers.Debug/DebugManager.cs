@@ -27,7 +27,7 @@ namespace Ordisoftware.Core
   public delegate void DebugManagerHandler(bool value);
 
   /// <summary>
-  /// Provide exception helper.
+  /// Provides exception helper.
   /// </summary>
   /// <remarks>
   /// <para>Using enter-Leave system :</para>
@@ -68,48 +68,48 @@ namespace Ordisoftware.Core
     static public event DebugManagerHandler TraceEnabledChanged;
 
     /// <summary>
-    /// Indicate before Exception event.
+    /// Indicates before Exception event.
     /// </summary>
     static public event BeforeShowExceptionEventHandler BeforeShowException;
 
     /// <summary>
-    /// Indicate after Exception event.
+    /// Indicates after Exception event.
     /// </summary>
     static public event AfterShowExceptionEventHandler AfterShowException;
 
     /// <summary>
-    /// Indicate Exception show alternative handler.
+    /// Indicates Exception show alternative handler.
     /// </summary>
     static public event EventHandler<ExceptionInfo> SubstituteShowException;
 
     /// <summary>
-    /// Indicate if stack infos are used.
+    /// Indicates if stack infos are used.
     /// </summary>
     static public bool UseStack { get; set; } = true;
 
     /// <summary>
-    /// Indicate if only the program stack is used.
+    /// Indicates if only the program stack is used.
     /// </summary>
     static public bool StackOnlyProgram { get; set; } = true;
 
     /// <summary>
-    /// Indicate if stack in specialized form is hidded by default.
+    /// Indicates if stack in specialized form is hidded by default.
     /// </summary>
     //static public bool AutoHideStack { get; set; } = false;
 
     /// <summary>
-    /// Indicate if Exception form show a terminate button.
+    /// Indicates if Exception form show a terminate button.
     /// </summary>
     static public bool UserCanTerminate { get; set; } = true;
 
     /// <summary>
-    /// Indicate if a specialized form is used to show Exception.
+    /// Indicates if a specialized form is used to show Exception.
     /// </summary>
     static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
       = ShowExceptionMode.Advanced;
 
     /// <summary>
-    /// Indicate the trace listener.
+    /// Indicates the trace listener.
     /// </summary>
     static public bool TraceEnabled
     {
@@ -139,7 +139,7 @@ namespace Ordisoftware.Core
     static private bool _TraceEnabled = false;
 
     /// <summary>
-    /// Indicate if the debug manager is enabled or not.
+    /// Indicates if the debug manager is enabled or not.
     /// </summary>
     static public bool Enabled
     {
@@ -207,12 +207,12 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Indicate if the debug manager is enabled or not.
+    /// Indicates if the debug manager is enabled or not.
     /// </summary>
     static private bool _Enabled = false;
 
     /// <summary>
-    /// Start the debug manager.
+    /// Starts the debug manager.
     /// </summary>
     static public void Start(object sender = null, EventArgs e = null)
     {
@@ -228,7 +228,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage unhandled domain exception.
+    /// Manages unhandled domain exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="args">Event information to send to registered event handlers.</param>
@@ -239,7 +239,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage unhandled thread exception.
+    /// Manages unhandled thread exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="args">Event information to send to registered event handlers.</param>
@@ -250,7 +250,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Handle an axception.
+    /// Handles an axception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
@@ -261,7 +261,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an axception.
+    /// Manages an axception.
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
     static public void Manage(this Exception ex)
@@ -270,7 +270,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an axception.
+    /// Manages an axception.
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
     /// <param name="show">The show mode.</param>
@@ -280,7 +280,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an axception.
+    /// Manages an axception.
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
@@ -290,7 +290,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an axception.
+    /// Manages an axception.
     /// </summary>
     /// <param name="ex">The Exception to act on.</param>
     /// <param name="sender">Source of the event.</param>
@@ -306,7 +306,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an exception.
+    /// Manages an exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
@@ -316,7 +316,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Manage an exception.
+    /// Manages an exception.
     /// </summary>
     /// <param name="sender">Source of the event.</param>
     /// <param name="ex">The ex.</param>
@@ -374,7 +374,7 @@ namespace Ordisoftware.Core
 
 
     /// <summary>
-    /// Show an exception with the exception form else a message box.
+    /// Shows an exception with the exception form else a message box.
     /// </summary>
     /// <param name="einfo">The exception information.</param>
     static private void ShowAdvanced(ExceptionInfo einfo)
@@ -401,7 +401,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show an sxception with a message box.
+    /// Shows an sxception with a message box.
     /// </summary>
     /// <param name="einfo">The exception information.</param>
     static private void ShowSimple(ExceptionInfo einfo)
@@ -426,7 +426,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Show a message when an error occurs on showing an exception.
+    /// Shows a message when an error occurs on showing an exception.
     /// </summary>
     /// <param name="ex">The exception.</param>
     /// <param name="einfo">The exception information.</param>
@@ -447,7 +447,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a full formatted text of an exeption including inners.
+    /// Gets a full formatted text of an exeption including inners.
     /// </summary>
     /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">The sender object</param>
@@ -457,7 +457,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a readable formatted text of an exeption.
+    /// Gets a readable formatted text of an exeption.
     /// </summary>
     /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">The sender object</param>
@@ -467,7 +467,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Get a readable formatted text of an exeption including inners.
+    /// Gets a readable formatted text of an exeption including inners.
     /// </summary>
     /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">The sender object</param>
@@ -477,7 +477,7 @@ namespace Ordisoftware.Core
     }
 
     /// <summary>
-    /// Parse an exception and all inners.
+    /// Parses an exception and all inners.
     /// </summary>
     /// <param name="ex">The exception to act on.</param>
     /// <param name="sender">The sender object</param>
