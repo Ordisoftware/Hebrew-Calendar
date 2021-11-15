@@ -1,0 +1,66 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = YouTube Judaism
+Lang/FR = YouTube Judaïsme
+
+Name = (FR) 613 TV
+URL = https://www.youtube.com/channel/UC0iLLG9ha8yShk7BPXvDXJw
+
+Name = (FR) Beit Ha-Zohar 
+URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
+
+Name = (FR) Chiourim.com
+URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
+
+Name = (FR) Espace Torah
+URL = https://www.youtube.com/channel/UCS3TXWo_jE-_hzG5tCzfTkA
+
+Name = (FR) Hidabroot
+URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
+
+Name = (FR) Israël Torah
+URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
+
+Name = (FR) Judaïsme En Mouvement
+URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
+
+Name = (FR) Torah Box
+URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
+
+Name = (FR) Torah Times
+URL = https://www.youtube.com/user/laparacha
+
+Name = (FR) Tsarfat
+URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+-
+
+Name = (EN) My Jewish Learning 
+URL = https://www.youtube.com/user/myjewishlearning
+
+Name = (EN) Torah Anytime
+URL = https://www.youtube.com/user/torahanytime1
+
+Name = (EN) Torah Jews
+URL = https://www.youtube.com/torahjews
+
+-
+
+Name = (FR) Aish
+URL = https://www.youtube.com/user/AishFr
+
+Name = (EN) Aish
+URL = https://www.youtube.com/user/AishVideo
+
+Name = (IW) Aish
+URL = https://www.youtube.com/user/AishIvrit
