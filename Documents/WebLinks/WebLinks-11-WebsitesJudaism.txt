@@ -11,7 +11,7 @@
 ; --------------------------------------------------------------------------------------------------
 
 Lang/EN = Judaism websites
-Lang/FR = Sites Web sur la judaïsme
+Lang/FR = Sites Web sur le judaïsme
 
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
