@@ -18,26 +18,6 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides show exception mode enum.
-  /// </summary>
-  public enum ShowExceptionMode
-  {
-    None,
-    Simple,
-    Advanced,
-    OnlyMessage
-  }
-
-  /// <summary>
-  /// Provides trace file roll over mode enum.
-  /// </summary>
-  public enum TraceFileRollOverMode
-  {
-    Session,
-    SinkFile
-  }
-
-  /// <summary>
   /// Provides log event enum.
   /// </summary>
   public enum LogTraceEvent

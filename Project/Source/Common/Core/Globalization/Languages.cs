@@ -21,16 +21,6 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Supported languages enum.
-  /// </summary>
-  public enum Language
-  {
-    None,
-    EN,
-    FR
-  }
-
-  /// <summary>
   /// Indicates supported languages.
   /// </summary>
   static class Languages

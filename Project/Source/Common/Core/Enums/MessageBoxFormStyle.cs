@@ -10,34 +10,29 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2009-08 </created>
-/// <edited> 2009-08 </edited>
+/// <created> 2007-05 </created>
+/// <edited> 2021-04 </edited>
 using System;
 
 namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides input value box result enum.
+  /// Provides MessageBoxForm style enum.
   /// </summary>
-  public enum InputValueResult
+  public enum MessageBoxFormStyle
   {
 
     /// <summary>
-    /// Input is cancelled.
+    /// Use standard Windows MessageBox class.
     /// </summary>
-    Cancelled,
+    System,
 
     /// <summary>
-    /// Value is unchanged.
+    /// Use custom form.
     /// </summary>
-    Unchanged,
+    Advanced
 
-    /// <summary>
-    /// Value is modified.
-    /// </summary>
-    Modified,
-
-  };
+  }
 
 }
