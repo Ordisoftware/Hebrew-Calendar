@@ -12,7 +12,7 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = Sémitic languages
+Lang/EN = Semitic languages
 Lang/FR = Langages sémitiques
 
 Name = (EN) Wiktionary.org

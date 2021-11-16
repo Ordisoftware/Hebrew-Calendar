@@ -12,8 +12,8 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = YouTube Rabbis
-Lang/FR = YouTube Rabbins
+Lang/EN = Rabbis YouTube Channels
+Lang/FR = Chaînes YouTube de rabbins
 
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ

@@ -12,8 +12,8 @@
 
 FOLDER-SEPARATOR
 
-Lang/EN = Rabbis
-Lang/FR = Rabbins
+Lang/EN = Rabbis websites
+Lang/FR = Sites Web de Rabbins
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
@@ -41,11 +41,11 @@ URL = https://steinsaltz.org
 
 -
 
-Name = (FR) Halacha Yomit
+Name = (FR) Halacha Yomit (Rav Ovadia Yossef)
 URL = http://halachayomit.co.il/fr/default.aspx
 
-Name = (EN) Halacha Yomit
+Name = (EN) Halacha Yomit (Rabbi Ovadia Yosef)
 URL = http://halachayomit.co.il/en/Default.aspx
 
-Name = (IW) Halacha Yomit
+Name = (IW) Halacha Yomit (Rabbi Ovadia Yosef)
 URL = http://halachayomit.co.il/he/default.aspx

@@ -10,7 +10,7 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = health and herbology
+Lang/EN = Health and herbology
 Lang/FR = Santé et herbologie
 
 Name = (EN) Ayurveda
