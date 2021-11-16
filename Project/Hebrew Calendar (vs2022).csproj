@@ -1070,7 +1070,7 @@
     <None Include="..\README.md">
       <Link>README.md</Link>
     </None>
-    <None Include=".editorconfig" />
+    <None Include="Source\Common\Core\.editorconfig" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

@@ -31,11 +31,19 @@ URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
 
 -
 
+Name = (EN) Talmud @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Weekly_Torah_portion
+
+Name = (FR) Talmud @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Parasha_de_la_semaine
+
+-
+
 Name = (EN) Haggadah @ en.wikipedia.org
-URL = https://en.wikipedia.org/wiki/Haggadah
+URL = https://en.wikipedia.org/wiki/Talmud
 
 Name = (FR) Haggadah @ fr.wikipedia.org
-URL = https://fr.wikipedia.org/wiki/Haggada
+URL = https://fr.wikipedia.org/wiki/Talmud
 
 -
 
