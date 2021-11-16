@@ -11,9 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-01 </edited>
+/// <edited> 2021-11 </edited>
 using System;
+using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Windows.Forms;
 using EnumsNET;
 
 namespace Ordisoftware.Core
@@ -73,6 +76,50 @@ namespace Ordisoftware.Core
       foreach ( var pair in values.Where(p => list.Contains(p.Key)).ToList() )
         values.Remove(pair.Key);
       return values;
+    }
+
+    /// <summary>
+    /// Fills a combo box with the specified list of targets.
+    /// </summary>
+    /// <param name="combobox">The combobox.</param>
+    /// <param name="list">The list.</param>
+    /// <param name="valueDefault">The default value.</param>
+    static public void Fill<T>(this ComboBox combobox, NullSafeOfStringDictionary<T> list, T valueDefault)
+    where T : struct, Enum
+    {
+      foreach ( KeyValuePair<T, string> item in list )
+      {
+        int index = combobox.Items.Add(item);
+        if ( item.Key.Equals(valueDefault) )
+          combobox.SelectedIndex = index;
+      }
+    }
+
+    /// <summary>
+    /// Gets the image format from a string extension.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <param name="extension">The extension.</param>
+    static public ImageFormat GetFormat(this NullSafeOfStringDictionary<ImageExportTarget> list, string extension)
+    {
+      return list.FirstOrDefault(v => v.Value == extension).Key.GetFormat();
+    }
+
+    /// <summary>
+    /// Gets the image format from an enum value.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    static public ImageFormat GetFormat(this ImageExportTarget value)
+    {
+      return value switch
+      {
+        ImageExportTarget.PNG => ImageFormat.Png,
+        ImageExportTarget.JPG => ImageFormat.Jpeg,
+        ImageExportTarget.TIFF => ImageFormat.Tiff,
+        ImageExportTarget.BMP => ImageFormat.Bmp,
+        ImageExportTarget.GIF => ImageFormat.Gif,
+        _ => throw new AdvancedNotImplementedException(value),
+      };
     }
 
   }

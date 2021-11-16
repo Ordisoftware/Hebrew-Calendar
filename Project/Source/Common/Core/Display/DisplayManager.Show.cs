@@ -22,47 +22,6 @@ namespace Ordisoftware.Core
 {
 
   /// <summary>
-  /// Provides MessageBoxForm style enum.
-  /// </summary>
-  public enum MessageBoxFormStyle
-  {
-
-    /// <summary>
-    /// Use standard Windows MessageBox class.
-    /// </summary>
-    System,
-
-    /// <summary>
-    /// Use custom form.
-    /// </summary>
-    Advanced
-
-  }
-
-  /// <summary>
-  /// Provides MessageBoxForm icon enum.
-  /// </summary>
-  public enum MessageBoxIconStyle
-  {
-
-    /// <summary>
-    /// Use system settings.
-    /// </summary>
-    System,
-
-    /// <summary>
-    /// Force none icon as information.
-    /// </summary>
-    ForceNone,
-
-    /// <summary>
-    /// Force information and question icon as none.
-    /// </summary>
-    ForceInformation,
-
-  }
-
-  /// <summary>
   /// Provides messages and questions with waiting user communication feedback as well as UI sync.
   /// </summary>
   static partial class DisplayManager
