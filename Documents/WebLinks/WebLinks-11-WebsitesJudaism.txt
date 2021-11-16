@@ -10,8 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Judaism
-Lang/FR = Judaïsme
+Lang/EN = Judaism websites
+Lang/FR = Sites Web sur la Judaïsme
 
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
