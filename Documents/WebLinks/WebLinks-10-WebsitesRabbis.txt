@@ -13,7 +13,7 @@
 FOLDER-SEPARATOR
 
 Lang/EN = Rabbis websites
-Lang/FR = Sites Web de Rabbins
+Lang/FR = Sites Web de rabbins
 
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com

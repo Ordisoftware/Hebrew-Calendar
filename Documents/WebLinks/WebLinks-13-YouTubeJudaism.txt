@@ -10,7 +10,7 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = YouTube channels on Judaism 
+Lang/EN = Judaism YouTube channels
 Lang/FR = Chaînes YouTube sur le judaïsme
 
 Name = (FR) 613 TV
