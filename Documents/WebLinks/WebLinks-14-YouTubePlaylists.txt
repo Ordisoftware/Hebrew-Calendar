@@ -11,7 +11,7 @@
 ; --------------------------------------------------------------------------------------------------
 
 Lang/EN = YouTube playlists
-Lang/FR = YouTube playlistes
+Lang/FR = Playlistes YouTube
 
 Name = (IW) Bénédictions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
