@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.Drawing;
 using System.IO;
@@ -78,12 +78,12 @@ namespace Ordisoftware.Core
                                  EventHandler action,
                                  Action reconstruct)
     {
-      if ( providers == null ) return;
+      if ( providers == null || providers.Items.Count == 0 ) return;
       menuItems.Clear();
       string nameItems = StackMethods.NameOfFromStack(3).Replace("Globals.", string.Empty);
       foreach ( var item in providers.Items )
         menuItems.Add(item.CreateMenuItem(action));
-      if ( Globals.WebLinksProviders[0].Configurable )
+      if ( providers.Configurable )
       {
         menuItems.Add(new ToolStripSeparator());
         menuItems.Add(CreateConfigureMenuItem((sender, e) =>
