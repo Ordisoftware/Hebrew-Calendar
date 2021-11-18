@@ -30,7 +30,7 @@ namespace Ordisoftware.Hebrew.Calendar
     /// <summary>
     /// Provides view connector.
     /// </summary>
-    private class ViewConnector
+    private sealed class ViewConnector
     {
 
       /// <summary>
