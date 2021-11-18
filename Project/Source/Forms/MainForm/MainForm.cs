@@ -135,6 +135,16 @@ namespace Ordisoftware.Hebrew.Calendar
       DoMenuShowHide_Click(sender, e);
     }
 
+    public void ForceHideToTray()
+    {
+      if ( Visible )
+      {
+        if ( WindowState == FormWindowState.Minimized )
+          MenuShowHide.PerformClick();
+        MenuShowHide.PerformClick();
+      }
+    }
+
     /// <summary>
     /// Event handler. Called by TrayIcon for mouse click events.
     /// </summary>

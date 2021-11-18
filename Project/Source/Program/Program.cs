@@ -145,39 +145,28 @@ namespace Ordisoftware.Hebrew.Calendar
         server.EndWaitForConnection(ar);
         if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
         if ( !Globals.IsReady ) return;
-        if ( command == nameof(ApplicationCommandLine.Instance.ShowMainForm) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.MenuShowHide_Click(null, null));
-        if ( command == nameof(ApplicationCommandLine.Instance.HideMainForm) )
-          MainForm.Instance.SyncUI(() =>
-          {
-            if ( MainForm.Instance.Visible )
-            {
-              if ( MainForm.Instance.WindowState == FormWindowState.Minimized )
-                MainForm.Instance.MenuShowHide.PerformClick();
-              MainForm.Instance.MenuShowHide.PerformClick();
-            }
-          });
-        if ( command == nameof(ApplicationCommandLine.Instance.Generate) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionGenerate.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.ResetReminder) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionResetReminder.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenNavigation) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionNavigate.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenDiffDates) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionCalculateDateDiff.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationVersesBoard) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionShowCelebrationVersesBoard.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewCelebrationsBoard.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewNewMoonsBoard.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenParashotBoard) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashot.PerformClick());
-        if ( command == nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox) )
-          MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewParashahDescription.PerformClick());
-        if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
+        var form = MainForm.Instance;
+        var cmd = ApplicationCommandLine.Instance;
+        Action action = command switch
+        {
+          nameof(cmd.ShowMainForm) => () => form.MenuShowHide_Click(null, null),
+          nameof(cmd.HideMainForm) => () => form.ForceHideToTray(),
+          nameof(cmd.Generate) => () => form.ActionGenerate.PerformClick(),
+          nameof(cmd.ResetReminder) => () => form.ActionResetReminder.PerformClick(),
+          nameof(cmd.OpenNavigation) => () => form.ActionNavigate.PerformClick(),
+          nameof(cmd.OpenDiffDates) => () => form.ActionCalculateDateDiff.PerformClick(),
+          nameof(cmd.OpenCelebrationVersesBoard) => () => form.ActionShowCelebrationVersesBoard.PerformClick(),
+          nameof(cmd.OpenCelebrationsBoard) => () => form.ActionViewCelebrationsBoard.PerformClick(),
+          nameof(cmd.OpenNewMoonsBoard) => () => form.ActionViewNewMoonsBoard.PerformClick(),
+          nameof(cmd.OpenParashotBoard) => () => form.ActionViewParashot.PerformClick(),
+          nameof(cmd.OpenWeeklyParashahBox) => () => form.ActionViewParashahDescription.PerformClick(),
+          _ => null
+        };
+        if ( Globals.IsDebugExecutable ) // TODO remove and move to switch when lunar months ready
           if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
-            MainForm.Instance.SyncUI(() => MainForm.Instance.ActionViewLunarMonths.PerformClick());
+            action = form.ActionViewLunarMonths.PerformClick;
+        if ( action != null )
+          MainForm.Instance.ToolStrip.SyncUI(action);
       }
       finally
       {
@@ -192,32 +181,22 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     static private void IPCSendCommands()
     {
-      if ( ApplicationCommandLine.Instance == null ) return;
-      if ( ApplicationCommandLine.Instance.HideMainForm )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.HideMainForm));
-      if ( ApplicationCommandLine.Instance.ShowMainForm )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ShowMainForm));
-      if ( ApplicationCommandLine.Instance.Generate )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.Generate));
-      if ( ApplicationCommandLine.Instance.ResetReminder )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.ResetReminder));
-      if ( ApplicationCommandLine.Instance.OpenNavigation )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNavigation));
-      if ( ApplicationCommandLine.Instance.OpenDiffDates )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenDiffDates));
-      if ( ApplicationCommandLine.Instance.OpenCelebrationVersesBoard )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationVersesBoard));
-      if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenCelebrationsBoard));
-      if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenNewMoonsBoard));
-      if ( ApplicationCommandLine.Instance.OpenParashotBoard )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenParashotBoard));
-      if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
-        SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenWeeklyParashahBox));
+      var cmd = ApplicationCommandLine.Instance;
+      if ( cmd == null ) return;
+      if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
+      if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
+      if ( cmd.Generate ) SystemManager.IPCSend(nameof(cmd.Generate));
+      if ( cmd.ResetReminder ) SystemManager.IPCSend(nameof(cmd.ResetReminder));
+      if ( cmd.OpenNavigation ) SystemManager.IPCSend(nameof(cmd.OpenNavigation));
+      if ( cmd.OpenDiffDates ) SystemManager.IPCSend(nameof(cmd.OpenDiffDates));
+      if ( cmd.OpenCelebrationVersesBoard ) SystemManager.IPCSend(nameof(cmd.OpenCelebrationVersesBoard));
+      if ( cmd.OpenCelebrationsBoard ) SystemManager.IPCSend(nameof(cmd.OpenCelebrationsBoard));
+      if ( cmd.OpenNewMoonsBoard ) SystemManager.IPCSend(nameof(cmd.OpenNewMoonsBoard));
+      if ( cmd.OpenParashotBoard ) SystemManager.IPCSend(nameof(cmd.OpenParashotBoard));
+      if ( cmd.OpenWeeklyParashahBox ) SystemManager.IPCSend(nameof(cmd.OpenWeeklyParashahBox));
       if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
-        if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-          SystemManager.IPCSend(nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard));
+        if ( cmd.OpenLunarMonthsBoard )
+          SystemManager.IPCSend(nameof(cmd.OpenLunarMonthsBoard));
     }
 
     /// <summary>
