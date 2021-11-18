@@ -160,13 +160,11 @@ namespace Ordisoftware.Hebrew.Calendar
           nameof(cmd.OpenNewMoonsBoard) => () => form.ActionViewNewMoonsBoard.PerformClick(),
           nameof(cmd.OpenParashotBoard) => () => form.ActionViewParashot.PerformClick(),
           nameof(cmd.OpenWeeklyParashahBox) => () => form.ActionViewParashahDescription.PerformClick(),
+          // TODO remove when lunar months ready
+          nameof(cmd.OpenLunarMonthsBoard) => Globals.IsDebugExecutable ? () => form.ActionViewLunarMonths.PerformClick() : null,
           _ => null
         };
-        if ( Globals.IsDebugExecutable ) // TODO remove and move to switch when lunar months ready
-          if ( command == nameof(ApplicationCommandLine.Instance.OpenLunarMonthsBoard) )
-            action = form.ActionViewLunarMonths.PerformClick;
-        if ( action != null )
-          MainForm.Instance.ToolStrip.SyncUI(action);
+        if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
       }
       finally
       {
