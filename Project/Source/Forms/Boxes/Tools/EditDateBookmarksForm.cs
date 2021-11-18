@@ -31,7 +31,7 @@ namespace Ordisoftware.Hebrew.Calendar
 
     static private readonly Properties.Settings Settings = Program.Settings;
 
-    private class DateItem
+    private sealed class DateItem
     {
       public DateTime Date { get; set; }
       public override string ToString()

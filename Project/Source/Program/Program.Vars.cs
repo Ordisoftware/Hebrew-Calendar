@@ -132,13 +132,13 @@ namespace Ordisoftware.Hebrew.Calendar
     /// Indicates file path of application image 64x64.
     /// </summary>
     static public string ApplicationImage64FilePath
-      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew-calendar-64.png");
+      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew_calendar64.png");
 
     /// <summary>
     /// Indicates file path of application image 32x32.
     /// </summary>
     static public string ApplicationImage32FilePath
-      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew-calendar-32.png");
+      => Path.Combine(Globals.ProjectIconsFolderPath, "hebrew_calendar32.png");
 
     /// <summary>
     /// Indicates file path of the text report.

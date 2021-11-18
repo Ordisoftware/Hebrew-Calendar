@@ -16,6 +16,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Ordisoftware.Core
 {
@@ -122,14 +123,18 @@ namespace Ordisoftware.Core
           {
             var process = Process.GetCurrentProcess();
             var name = string.Empty;
-            foreach ( var instance in new PerformanceCounterCategory("Process").GetInstanceNames() )
-              if ( instance.StartsWith(process.ProcessName) )
-                using ( var processId = new PerformanceCounter("Process", "ID Process", instance, true) )
-                  if ( process.Id == (int)processId.RawValue )
-                  {
-                    name = instance;
-                    break;
-                  }
+            foreach ( var instance in from instance in new PerformanceCounterCategory("Process").GetInstanceNames()
+                                      where instance.StartsWith(process.ProcessName)
+                                      select instance )
+            {
+              using var processId = new PerformanceCounter("Process", "ID Process", instance, true);
+              if ( process.Id == (int)processId.RawValue )
+              {
+                name = instance;
+                break;
+              }
+            }
+
             PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", name, true);
             CPUProcessLoadInitMutex = false;
           }).Start();

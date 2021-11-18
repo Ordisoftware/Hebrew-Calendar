@@ -158,9 +158,8 @@ namespace Ordisoftware.Hebrew
       if ( str.IsNullOrEmpty() ) return string.Empty;
       var result = new StringBuilder();
       str = UnFinalAll(str);
-      foreach ( char c in str.RemoveDiacritics().ToLower() )
-        if ( Codes.Contains(c.ToString()) )
-          result.Append(c);
+      foreach ( var c in str.RemoveDiacritics().ToLower().Where(c => Codes.Contains(c.ToString())) )
+        result.Append(c);
       return result.ToString();
     }
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-11 </edited>
 using System;
 using System.IO;
 using System.Linq;
@@ -132,16 +132,16 @@ namespace Ordisoftware.Core
     {
       if ( MoveCurrentLanguageAtTop )
       {
+        string lang = Languages.Current.ToString();
         var slices = Items.Split(item => item.Name == "-");
         foreach ( var slice in slices )
         {
           int index = 0;
-          foreach ( var item in slice.ToList() )
-            if ( item.Language.ToUpper().Contains(Languages.Current.ToString()) )
-            {
-              slice.Remove(item);
-              slice.Insert(index++, item);
-            }
+          foreach ( var item in slice.Where(item => item.Language.ToUpper().Contains(lang)).ToList() )
+          {
+            slice.Remove(item);
+            slice.Insert(index++, item);
+          }
         }
         Items = slices.SelectMany(item => item).ToList();
       }
