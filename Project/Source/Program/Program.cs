@@ -164,7 +164,7 @@ namespace Ordisoftware.Hebrew.Calendar
           nameof(cmd.OpenLunarMonthsBoard) => Globals.IsDebugExecutable ? () => form.ActionViewLunarMonths.PerformClick() : null,
           _ => null
         };
-        if ( action != null ) form.ToolStrip.SyncUI(action);
+        if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
       }
       finally
       {
