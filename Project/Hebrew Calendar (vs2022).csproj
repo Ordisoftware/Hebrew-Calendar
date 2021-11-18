@@ -171,7 +171,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
-    <Compile Include="Source\Common\Core\Classes\Chronometer.cs" />
+    <Compile Include="Source\Common\Core\Diagnostics\Chronometer.cs" />
     <Compile Include="Source\Common\Core\Classes\EnumHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\ExportHelper.cs" />
     <Compile Include="Source\Common\Core\Classes\ObjectHelper.cs" />
@@ -194,9 +194,9 @@
     <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteNetHelper.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteOdbcHelper.cs" />
-    <Compile Include="Source\Common\Core\Debug\DebugManager.cs" />
-    <Compile Include="Source\Common\Core\Debug\DebugManager.Delegates.cs" />
-    <Compile Include="Source\Common\Core\Debug\DebugManager.Trace.cs" />
+    <Compile Include="Source\Common\Core\Diagnostics\DebugManager.cs" />
+    <Compile Include="Source\Common\Core\Diagnostics\DebugManager.Delegates.cs" />
+    <Compile Include="Source\Common\Core\Diagnostics\DebugManager.Trace.cs" />
     <Compile Include="Source\Common\Core\Display\AutoMenu.cs" />
     <Compile Include="Source\Common\Core\Display\AutoMenu.Test.cs" />
     <Compile Include="Source\Common\Core\Display\DisplayManager.cs" />
