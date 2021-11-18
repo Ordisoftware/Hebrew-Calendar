@@ -35,15 +35,13 @@ namespace Ordisoftware.Core
     /// </summary>
     static public void ApplyResources(this ComponentResourceManager resources, Control.ControlCollection controls)
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        foreach ( Control control in controls )
+      foreach ( Control control in controls )
+        SystemManager.TryCatch(() =>
         {
           if ( control is Label )
             resources.ApplyResources(control, control.Name);
           resources.ApplyResources(control.Controls);
-        }
-      });
+        });
     }
 
     /// <summary>
