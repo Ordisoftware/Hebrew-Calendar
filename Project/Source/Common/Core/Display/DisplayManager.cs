@@ -98,7 +98,7 @@ namespace Ordisoftware.Core
         processAction();
         semaphore?.Release();
       };
-      if ( control.Created && control.InvokeRequired && Thread.CurrentThread != MainThread )
+      if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
       {
         if ( wait ) semaphore = new Semaphore(0, 1);
         control.BeginInvoke(wait ? processActionWait : processAction);
