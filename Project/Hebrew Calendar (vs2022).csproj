@@ -400,13 +400,13 @@
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.AishFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.ChabadFR.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\OnlineParashot.TorahBox.cs" />
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.cs">
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Designer.cs">
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Designer.cs">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Common\Hebrew\WinForms\LettersControl.Redraw.cs">
+    <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
@@ -863,10 +863,10 @@
     <EmbeddedResource Include="Source\Common\Core\WinForms\WebUpdateForm.resx">
       <DependentUpon>WebUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.fr.resx">
+    <EmbeddedResource Include="Source\Common\Hebrew\WinControls\LettersControl.fr.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Common\Hebrew\WinForms\LettersControl.resx">
+    <EmbeddedResource Include="Source\Common\Hebrew\WinControls\LettersControl.resx">
       <DependentUpon>LettersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\CelebrationVersesBoardForm.fr.resx">
