@@ -72,7 +72,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       SystemManager.TryCatchManage(() =>
       {
-        if ( Visible && WindowState == FormWindowState.Minimized && sender == null )
+        if ( Visible && WindowState == FormWindowState.Minimized && ( sender is null or NotifyIcon ) )
         {
           WindowState = Settings.MainFormState;
           UpdateTitles(true);
