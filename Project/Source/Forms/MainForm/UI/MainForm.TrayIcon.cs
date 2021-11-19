@@ -110,6 +110,11 @@ namespace Ordisoftware.Hebrew.Calendar
                 GoToDate(CalendarMonth.CalendarDate.Date);
         }
         else
+        if ( Visible && !this.IsVisibleOnTop(80) )
+        {
+          this.Popup();
+        }
+        else
         {
           Settings.MainFormState = WindowState;
           WindowState = FormWindowState.Minimized;
