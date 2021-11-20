@@ -238,13 +238,15 @@ namespace Ordisoftware.Hebrew.Calendar
     /// </summary>
     private void LoadFonts()
     {
-      foreach ( var value in new InstalledFontCollection().Families.OrderBy(f => f.Name) )
-        if ( MonoSpacedFonts.Contains(value.Name.ToLower()) )
-        {
-          int index = EditTextReportFontName.Items.Add(value.Name);
-          if ( value.Name == Settings.FontName )
-            EditTextReportFontName.SelectedIndex = index;
-        }
+      var fonts = new InstalledFontCollection().Families
+                                               .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
+                                               .OrderBy(f => f.Name);
+      foreach ( var value in fonts )
+      {
+        int index = EditTextReportFontName.Items.Add(value.Name);
+        if ( value.Name == Settings.FontName )
+          EditTextReportFontName.SelectedIndex = index;
+      }
     }
 
     /// <summary>
