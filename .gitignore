@@ -27,10 +27,10 @@ Project/[Pp]ackages/
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
+[Bb]in/[Dd]ebug/
+[Bb]in/[Dd]ebugPublic/
+[Bb]in/[Rr]elease/
+[Bb]in/[Rr]eleases/
 x64/
 x86/
 bld/
