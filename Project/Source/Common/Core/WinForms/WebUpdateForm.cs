@@ -12,56 +12,53 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+public enum WebUpdateSelection
+{
+  None,
+  Install,
+  Download,
+}
+
+partial class WebUpdateForm : Form
 {
 
-  public enum WebUpdateSelection
+  static public WebUpdateSelection Run(Version version)
   {
-    None,
-    Install,
-    Download,
+    using var form = new WebUpdateForm();
+    form.LabelCurrentversion.Text += Globals.AssemblyVersion;
+    form.LabelNewVersion.Text += version;
+    form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
+    if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
+    if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
+    if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
+    throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
   }
 
-  partial class WebUpdateForm : Form
+  private WebUpdateForm()
   {
-
-    static public WebUpdateSelection Run(Version version)
-    {
-      using var form = new WebUpdateForm();
-      form.LabelCurrentversion.Text += Globals.AssemblyVersion;
-      form.LabelNewVersion.Text += version;
-      form.ActionReleaseNotes.Tag = string.Format(Globals.ApplicationReleaseNotesURL, version);
-      if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
-      if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
-      if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-      throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
-    }
-
-    private WebUpdateForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
-      Text += Globals.AssemblyTitle;
-      this.CenterToMainFormElseScreen();
-    }
-
-    private void WebUpdateForm_Shown(object sender, EventArgs e)
-    {
-      DisplayManager.DoSound(MessageBoxIcon.Question);
-    }
-
-    private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      SystemManager.OpenWebLink((string)( (LinkLabel)sender ).Tag);
-    }
-
-    private void ActionNews_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      SystemManager.OpenWebLink(Globals.ApplicationReleaseNews);
-    }
+    InitializeComponent();
+    Icon = Globals.MainForm?.Icon;
+    Text += Globals.AssemblyTitle;
+    this.CenterToMainFormElseScreen();
   }
 
+  private void WebUpdateForm_Shown(object sender, EventArgs e)
+  {
+    DisplayManager.DoSound(MessageBoxIcon.Question);
+  }
+
+  private void ActionOpenWebPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    SystemManager.OpenWebLink((string)( (LinkLabel)sender ).Tag);
+  }
+
+  private void ActionNews_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    SystemManager.OpenWebLink(Globals.ApplicationReleaseNews);
+  }
 }

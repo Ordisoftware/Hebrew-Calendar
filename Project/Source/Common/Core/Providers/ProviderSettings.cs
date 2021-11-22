@@ -12,59 +12,56 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.IO;
 
-namespace Ordisoftware.Core
+abstract class ProviderSettings
 {
 
-  abstract class ProviderSettings
+  protected string FilePath;
+
+  protected ProviderSettings()
   {
+    SetFilePath();
+    Load();
+  }
 
-    protected string FilePath;
+  abstract protected void SetFilePath();
+  abstract protected void DoClear();
+  abstract protected void DoLoad(string line);
+  abstract protected void DoSave(StreamWriter stream);
 
-    protected ProviderSettings()
+  public void Load()
+  {
+    string line = string.Empty;
+    try
     {
-      SetFilePath();
-      Load();
-    }
-
-    abstract protected void SetFilePath();
-    abstract protected void DoClear();
-    abstract protected void DoLoad(string line);
-    abstract protected void DoSave(StreamWriter stream);
-
-    public void Load()
-    {
-      string line = string.Empty;
-      try
+      if ( !File.Exists(FilePath) )
       {
-        if ( !File.Exists(FilePath) )
-        {
-          DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePath));
-          return;
-        }
-        DoClear();
-        using var stream = File.OpenText(FilePath);
-        while ( ( line = stream.ReadLine() ) != null )
-          if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
-            DoLoad(line);
+        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(FilePath));
+        return;
       }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(FilePath + Globals.NL2 + line, ex.Message));
-      }
+      DoClear();
+      using var stream = File.OpenText(FilePath);
+      while ( ( line = stream.ReadLine() ) != null )
+        if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
+          DoLoad(line);
     }
-
-    public void Save()
+    catch ( Exception ex )
     {
-      SystemManager.TryCatchManage(ShowExceptionMode.Simple, () =>
-      {
-        using var stream = File.CreateText(FilePath);
-        DoSave(stream);
-      });
+      DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(FilePath + Globals.NL2 + line, ex.Message));
     }
+  }
 
+  public void Save()
+  {
+    SystemManager.TryCatchManage(ShowExceptionMode.Simple, () =>
+    {
+      using var stream = File.CreateText(FilePath);
+      DoSave(stream);
+    });
   }
 
 }

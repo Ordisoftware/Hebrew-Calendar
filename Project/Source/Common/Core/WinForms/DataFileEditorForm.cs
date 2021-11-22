@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Text;
 using System.Collections.Generic;
@@ -19,118 +21,113 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class DataFileEditorForm : Form
 {
 
-  partial class DataFileEditorForm : Form
+  static public bool Run(string title, DataFile file)
   {
+    using var form = new DataFileEditorForm();
+    form.Text = title;
+    AddTab(form.TabControl, file);
+    bool result = form.ShowDialog() == DialogResult.OK;
+    if ( result ) file.ReLoad();
+    return result;
+  }
 
-    static public bool Run(string title, DataFile file)
+  static public bool Run(string title, IEnumerable<DataFile> files)
+  {
+    using var form = new DataFileEditorForm();
+    form.Text = title;
+    foreach ( var item in files ) AddTab(form.TabControl, item);
+    bool result = form.ShowDialog() == DialogResult.OK;
+    if ( result ) foreach ( var item in files ) item.ReLoad();
+    return result;
+  }
+
+  private static void AddTab(TabControl tabcontrol, DataFile file)
+  {
+    if ( !File.Exists(file.FilePath) )
     {
-      using var form = new DataFileEditorForm();
-      form.Text = title;
-      AddTab(form.TabControl, file);
-      bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result ) file.ReLoad();
-      return result;
+      DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
+      return;
     }
-
-    static public bool Run(string title, IEnumerable<DataFile> files)
+    var textbox = new TextBoxEx
     {
-      using var form = new DataFileEditorForm();
-      form.Text = title;
-      foreach ( var item in files ) AddTab(form.TabControl, item);
-      bool result = form.ShowDialog() == DialogResult.OK;
-      if ( result ) foreach ( var item in files ) item.ReLoad();
-      return result;
-    }
+      Font = new Font("Consolas", 9.75F),
+      Multiline = true,
+      WordWrap = false,
+      ScrollBars = ScrollBars.Both,
+      Dock = DockStyle.Fill,
+      Text = File.ReadAllText(file.FilePath)
+    };
+    var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
+    tabpage.Controls.Add(textbox);
+    tabcontrol.TabPages.Add(tabpage);
+  }
 
-    private static void AddTab(TabControl tabcontrol, DataFile file)
-    {
-      if ( !File.Exists(file.FilePath) )
+  private DataFileEditorForm()
+  {
+    InitializeComponent();
+    Icon = Globals.MainForm?.Icon;
+  }
+
+  private void EditProvidersForm_Load(object sender, EventArgs e)
+  {
+    this.CheckLocationOrCenterToMainFormElseScreen();
+  }
+
+  private void EditProvidersForm_Shown(object sender, EventArgs e)
+  {
+    var textbox = (TextBox)TabControl.TabPages[0].Controls[0];
+    textbox.Focus();
+    textbox.SelectionStart = 0;
+    textbox.SelectionLength = 0;
+  }
+
+  private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    var textbox = (TextBox)TabControl.SelectedTab.Controls[0];
+    textbox.Focus();
+    textbox.SelectionLength = 0;
+  }
+
+  private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToLoadInstalledData.GetLang()) ) return;
+    string filePath = SysTranslations.UndefinedSlot.GetLang();
+    foreach ( TabPage page in TabControl.TabPages )
+      try
       {
-        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
-        return;
+        filePath = ( (DataFile)page.Tag ).FilePathDefault;
+        ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filePath);
       }
-      var textbox = new TextBoxEx
+      catch ( Exception ex )
       {
-        Font = new Font("Consolas", 9.75F),
-        Multiline = true,
-        WordWrap = false,
-        ScrollBars = ScrollBars.Both,
-        Dock = DockStyle.Fill,
-        Text = File.ReadAllText(file.FilePath)
-      };
-      var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
-      tabpage.Controls.Add(textbox);
-      tabcontrol.TabPages.Add(tabpage);
-    }
+        string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
+        DisplayManager.ShowError(msg);
+      }
+    EditProvidersForm_Shown(this, null);
+  }
 
-    private DataFileEditorForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
-    }
+  private void ActionOK_Click(object sender, EventArgs e)
+  {
+    string filePath = SysTranslations.UndefinedSlot.GetLang();
+    foreach ( TabPage page in TabControl.TabPages )
+      try
+      {
+        filePath = ( (DataFile)page.Tag ).FilePath;
+        File.WriteAllText(filePath, ( (TextBox)page.Controls[0] ).Text, Encoding.UTF8);
+      }
+      catch ( Exception ex )
+      {
+        string msg = SysTranslations.WriteFileError.GetLang(filePath, ex.Message);
+        DisplayManager.ShowError(msg);
+      }
+  }
 
-    private void EditProvidersForm_Load(object sender, EventArgs e)
-    {
-      this.CheckLocationOrCenterToMainFormElseScreen();
-    }
-
-    private void EditProvidersForm_Shown(object sender, EventArgs e)
-    {
-      var textbox = (TextBox)TabControl.TabPages[0].Controls[0];
-      textbox.Focus();
-      textbox.SelectionStart = 0;
-      textbox.SelectionLength = 0;
-    }
-
-    private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      var textbox = (TextBox)TabControl.SelectedTab.Controls[0];
-      textbox.Focus();
-      textbox.SelectionLength = 0;
-    }
-
-    private void ActionReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToLoadInstalledData.GetLang()) ) return;
-      string filePath = SysTranslations.UndefinedSlot.GetLang();
-      foreach ( TabPage page in TabControl.TabPages )
-        try
-        {
-          filePath = ( (DataFile)page.Tag ).FilePathDefault;
-          ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filePath);
-        }
-        catch ( Exception ex )
-        {
-          string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
-          DisplayManager.ShowError(msg);
-        }
-      EditProvidersForm_Shown(this, null);
-    }
-
-    private void ActionOK_Click(object sender, EventArgs e)
-    {
-      string filePath = SysTranslations.UndefinedSlot.GetLang();
-      foreach ( TabPage page in TabControl.TabPages )
-        try
-        {
-          filePath = ( (DataFile)page.Tag ).FilePath;
-          File.WriteAllText(filePath, ( (TextBox)page.Controls[0] ).Text, Encoding.UTF8);
-        }
-        catch ( Exception ex )
-        {
-          string msg = SysTranslations.WriteFileError.GetLang(filePath, ex.Message);
-          DisplayManager.ShowError(msg);
-        }
-    }
-
-    private void ActionCancel_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
+  private void ActionCancel_Click(object sender, EventArgs e)
+  {
+    Close();
   }
 
 }

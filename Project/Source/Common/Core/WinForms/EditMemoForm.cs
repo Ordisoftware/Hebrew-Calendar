@@ -12,21 +12,17 @@
 /// </license>
 /// <created> 2020-03  </created>
 /// <edited> 2020-03 </edited>
-using System;
+namespace Ordisoftware.Core;
+
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class EditMemoForm : Form
 {
 
-  partial class EditMemoForm : Form
+  public EditMemoForm()
   {
-
-    public EditMemoForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm.Icon;
-    }
-
+    InitializeComponent();
+    Icon = Globals.MainForm.Icon;
   }
 
 }

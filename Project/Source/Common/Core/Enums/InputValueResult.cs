@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2009-08 </created>
 /// <edited> 2009-08 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides input value box result enum.
+/// </summary>
+public enum InputValueResult
 {
 
   /// <summary>
-  /// Provides input value box result enum.
+  /// Input is canceled.
   /// </summary>
-  public enum InputValueResult
-  {
+  Cancelled,
 
-    /// <summary>
-    /// Input is canceled.
-    /// </summary>
-    Cancelled,
+  /// <summary>
+  /// Value is unchanged.
+  /// </summary>
+  Unchanged,
 
-    /// <summary>
-    /// Value is unchanged.
-    /// </summary>
-    Unchanged,
+  /// <summary>
+  /// Value is modified.
+  /// </summary>
+  Modified,
 
-    /// <summary>
-    /// Value is modified.
-    /// </summary>
-    Modified,
-
-  };
-
-}
+};

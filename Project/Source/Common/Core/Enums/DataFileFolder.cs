@@ -12,35 +12,30 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Indicates data file storage folder.
+/// </summary>
+public enum DataFileFolder
 {
+  /// <summary>
+  /// Application documents folder.
+  /// </summary>
+  ApplicationDocuments,
 
   /// <summary>
-  /// Indicates data file storage folder.
+  /// Common program data folder.
   /// </summary>
-  public enum DataFileFolder
-  {
-    /// <summary>
-    /// Application documents folder.
-    /// </summary>
-    ApplicationDocuments,
+  ProgramData,
 
-    /// <summary>
-    /// Common program data folder.
-    /// </summary>
-    ProgramData,
+  /// <summary>
+  /// User application data common folder.
+  /// </summary>
+  UserHebrewCommon,
 
-    /// <summary>
-    /// User application data common folder.
-    /// </summary>
-    UserHebrewCommon,
-
-    /// <summary>
-    /// User application data application folder.
-    /// </summary>
-    UserApplication
-  }
-
+  /// <summary>
+  /// User application data application folder.
+  /// </summary>
+  UserApplication
 }

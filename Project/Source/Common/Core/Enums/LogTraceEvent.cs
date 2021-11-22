@@ -12,67 +12,62 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides log event enum.
+/// </summary>
+public enum LogTraceEvent
 {
 
   /// <summary>
-  /// Provides log event enum.
+  /// System event (no event level).
   /// </summary>
-  public enum LogTraceEvent
-  {
+  System,
 
-    /// <summary>
-    /// System event (no event level).
-    /// </summary>
-    System,
+  /// <summary>
+  /// Start process event.
+  /// </summary>
+  Start,
 
-    /// <summary>
-    /// Start process event.
-    /// </summary>
-    Start,
+  /// <summary>
+  /// Stop process event.
+  /// </summary>
+  Stop,
 
-    /// <summary>
-    /// Stop process event.
-    /// </summary>
-    Stop,
+  /// <summary>
+  /// Enter method event.
+  /// </summary>
+  Enter,
 
-    /// <summary>
-    /// Enter method event.
-    /// </summary>
-    Enter,
+  /// <summary>
+  /// Leave method event.
+  /// </summary>
+  Leave,
 
-    /// <summary>
-    /// Leave method event.
-    /// </summary>
-    Leave,
+  /// <summary>
+  /// Finished method event.
+  /// </summary>
+  Complete,
 
-    /// <summary>
-    /// Finished method event.
-    /// </summary>
-    Complete,
+  /// <summary>
+  /// Message event.
+  /// </summary>
+  Message,
 
-    /// <summary>
-    /// Message event.
-    /// </summary>
-    Message,
+  /// <summary>
+  /// Data event.
+  /// </summary>
+  Data,
 
-    /// <summary>
-    /// Data event.
-    /// </summary>
-    Data,
+  /// <summary>
+  /// Error event.
+  /// </summary>
+  Error,
 
-    /// <summary>
-    /// Error event.
-    /// </summary>
-    Error,
-
-    /// <summary>
-    /// Exception event.
-    /// </summary>
-    Exception
-
-  }
+  /// <summary>
+  /// Exception event.
+  /// </summary>
+  Exception
 
 }

@@ -12,18 +12,13 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides trace file roll over mode enum.
+/// </summary>
+public enum TraceFileRollOverMode
 {
-
-  /// <summary>
-  /// Provides trace file roll over mode enum.
-  /// </summary>
-  public enum TraceFileRollOverMode
-  {
-    Session,
-    SinkFile
-  }
-
+  Session,
+  SinkFile
 }

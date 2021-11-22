@@ -12,112 +12,109 @@
 /// </license>
 /// <created> 2019-09 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class HTMLBrowserForm : Form
 {
 
-  partial class HTMLBrowserForm : Form
+  private readonly string LocationPropertyName;
+  private readonly string ClientSizePropertyName;
+
+  private readonly TranslationsDictionary Title;
+
+  private readonly string FilePathTemplate;
+
+  private HTMLBrowserForm()
   {
+    InitializeComponent();
+    Icon = Globals.MainForm?.Icon;
+    ActiveControl = WebBrowser;
+  }
 
-    private readonly string LocationPropertyName;
-    private readonly string ClientSizePropertyName;
-
-    private readonly TranslationsDictionary Title;
-
-    private readonly string FilePathTemplate;
-
-    private HTMLBrowserForm()
+  public HTMLBrowserForm(TranslationsDictionary title,
+                         string filePathTemplate = null,
+                         string locationPropertyName = null,
+                         string clientSizePropertyName = null,
+                         bool menuEnabled = true) : this()
+  {
+    Title = title;
+    ToolStrip.Visible = menuEnabled;
+    FilePathTemplate = filePathTemplate;
+    LocationPropertyName = locationPropertyName;
+    ClientSizePropertyName = clientSizePropertyName;
+    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
     {
-      InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
-      ActiveControl = WebBrowser;
+      Location = (Point)Globals.Settings[locationPropertyName];
+      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
     }
+  }
 
-    public HTMLBrowserForm(TranslationsDictionary title,
-                           string filePathTemplate = null,
-                           string locationPropertyName = null,
-                           string clientSizePropertyName = null,
-                           bool menuEnabled = true) : this()
+  private void HTMLBrowserForm_Load(object sender, EventArgs e)
+  {
+    this.CheckLocationOrCenterToMainFormElseScreen();
+  }
+
+  public void HTMLBrowserForm_Shown(object sender, EventArgs e)
+  {
+    if ( Title != null ) Text = Title.GetLang();
+    if ( FilePathTemplate.IsNullOrEmpty() ) return;
+    string filePath = string.Format(FilePathTemplate, Languages.Current.ToString());
+    if ( File.Exists(filePath) )
+      WebBrowser.Navigate(filePath);
+    else
+      DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(filePath));
+  }
+
+  private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)
+  {
+    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
     {
-      Title = title;
-      ToolStrip.Visible = menuEnabled;
-      FilePathTemplate = filePathTemplate;
-      LocationPropertyName = locationPropertyName;
-      ClientSizePropertyName = clientSizePropertyName;
-      if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
-      {
-        Location = (Point)Globals.Settings[locationPropertyName];
-        ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-      }
+      Globals.Settings[LocationPropertyName] = Location;
+      Globals.Settings[ClientSizePropertyName] = ClientSize;
     }
+  }
 
-    private void HTMLBrowserForm_Load(object sender, EventArgs e)
-    {
-      this.CheckLocationOrCenterToMainFormElseScreen();
-    }
+  private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    e.Cancel = true;
+    Hide();
+  }
 
-    public void HTMLBrowserForm_Shown(object sender, EventArgs e)
+  protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+  {
+    if ( keyData == Keys.Escape )
     {
-      if ( Title != null ) Text = Title.GetLang();
-      if ( FilePathTemplate.IsNullOrEmpty() ) return;
-      string filePath = string.Format(FilePathTemplate, Languages.Current.ToString());
-      if ( File.Exists(filePath) )
-        WebBrowser.Navigate(filePath);
-      else
-        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(filePath));
-    }
-
-    private void HTMLBrowserForm_Deactivate(object sender, EventArgs e)
-    {
-      if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
-      {
-        Globals.Settings[LocationPropertyName] = Location;
-        Globals.Settings[ClientSizePropertyName] = ClientSize;
-      }
-    }
-
-    private void HTMLBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      e.Cancel = true;
-      Hide();
-    }
-
-    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-    {
-      if ( keyData == Keys.Escape )
-      {
-        Close();
-        return true;
-      }
-      return base.ProcessCmdKey(ref msg, keyData);
-    }
-
-    private void WebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-    {
-      ActionPrevious.Enabled = WebBrowser.CanGoBack;
-      ActionNext.Enabled = WebBrowser.CanGoForward;
-    }
-
-    private void ActionPrevious_Click(object sender, EventArgs e)
-    {
-      WebBrowser.GoBack();
-    }
-
-    private void ActionNext_Click(object sender, EventArgs e)
-    {
-      WebBrowser.GoForward();
-    }
-
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      ActiveControl = WebBrowser;
       Close();
+      return true;
     }
+    return base.ProcessCmdKey(ref msg, keyData);
+  }
 
+  private void WebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+  {
+    ActionPrevious.Enabled = WebBrowser.CanGoBack;
+    ActionNext.Enabled = WebBrowser.CanGoForward;
+  }
+
+  private void ActionPrevious_Click(object sender, EventArgs e)
+  {
+    WebBrowser.GoBack();
+  }
+
+  private void ActionNext_Click(object sender, EventArgs e)
+  {
+    WebBrowser.GoForward();
+  }
+
+  private void ActionClose_Click(object sender, EventArgs e)
+  {
+    ActiveControl = WebBrowser;
+    Close();
   }
 
 }

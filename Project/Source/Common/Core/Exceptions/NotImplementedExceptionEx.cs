@@ -12,43 +12,40 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Runtime.Serialization;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides improved NotImplementedException.
+/// </summary>
+[Serializable]
+class AdvancedNotImplementedException : NotImplementedException
 {
 
-  /// <summary>
-  /// Provides improved NotImplementedException.
-  /// </summary>
-  [Serializable]
-  class AdvancedNotImplementedException : NotImplementedException
+  public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);
+
+  public AdvancedNotImplementedException()
   {
-
-    public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);
-
-    public AdvancedNotImplementedException()
-    {
-    }
-
-    public AdvancedNotImplementedException(Enum value)
-    : base(value.ToStringFull())
-    {
-    }
-
-    public AdvancedNotImplementedException(string message)
-    : base(message)
-    {
-    }
-
-    public AdvancedNotImplementedException(string message, Exception inner)
-    : base(message, inner)
-    {
-    }
-
-    protected AdvancedNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
   }
 
+  public AdvancedNotImplementedException(Enum value)
+  : base(value.ToStringFull())
+  {
+  }
+
+  public AdvancedNotImplementedException(string message)
+  : base(message)
+  {
+  }
+
+  public AdvancedNotImplementedException(string message, Exception inner)
+  : base(message, inner)
+  {
+  }
+
+  protected AdvancedNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
+  {
+  }
 }

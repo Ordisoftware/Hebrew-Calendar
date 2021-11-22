@@ -12,65 +12,62 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Runtime.Serialization;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides abort exception.
+/// </summary>
+[Serializable]
+public class AbortException : Exception
 {
 
   /// <summary>
-  /// Provides abort exception.
+  /// The msgcode.
   /// </summary>
-  [Serializable]
-  public class AbortException : Exception
+  private const string msgcode = "ThreadAbort";
+
+  /// <summary>
+  /// The argname.
+  /// </summary>
+  private const string argname = "Message";
+
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public AbortException()
+  : base(msgcode)
   {
+  }
 
-    /// <summary>
-    /// The msgcode.
-    /// </summary>
-    private const string msgcode = "ThreadAbort";
+  /// <summary>
+  /// Constructor.
+  /// </summary>
+  /// <param name="message">The message.</param>
+  public AbortException(string message)
+  : base(msgcode)
+  {
+    Data.Add(argname, message);
+  }
 
-    /// <summary>
-    /// The argname.
-    /// </summary>
-    private const string argname = "Message";
+  /// <summary>
+  /// Constructor.
+  /// </summary>
+  /// <param name="message">The message.</param>
+  /// <param name="innerException">The inner exception.</param>
+  public AbortException(string message, Exception innerException)
+  : base(msgcode, innerException)
+  {
+    Data.Add(argname, message);
+  }
 
-    /// <summary>
-    /// Default constructor.
-    /// </summary>
-    public AbortException()
-    : base(msgcode)
-    {
-    }
-
-    /// <summary>
-    /// Constructor.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    public AbortException(string message)
-    : base(msgcode)
-    {
-      Data.Add(argname, message);
-    }
-
-    /// <summary>
-    /// Constructor.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    public AbortException(string message, Exception innerException)
-    : base(msgcode, innerException)
-    {
-      Data.Add(argname, message);
-    }
-
-    /// <summary>
-    /// Constructor.
-    /// </summary>
-    protected AbortException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
-
+  /// <summary>
+  /// Constructor.
+  /// </summary>
+  protected AbortException(SerializationInfo info, StreamingContext context) : base(info, context)
+  {
   }
 
 }

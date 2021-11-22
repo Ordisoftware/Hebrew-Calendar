@@ -12,79 +12,76 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2020-11 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class ShowTextForm : Form
 {
 
-  partial class ShowTextForm : Form
+  private readonly bool HideOnClose;
+  private readonly TranslationsDictionary LocalizedTitle;
+  private readonly TranslationsDictionary LocalizedText;
+
+  private ShowTextForm()
   {
+    InitializeComponent();
+    Icon = Globals.MainForm?.Icon;
+  }
 
-    private readonly bool HideOnClose;
-    private readonly TranslationsDictionary LocalizedTitle;
-    private readonly TranslationsDictionary LocalizedText;
+  public ShowTextForm(string title,
+                      string text,
+                      bool hideOnClose = false,
+                      bool sizeable = true,
+                      int width = 400,
+                      int height = 300,
+                      bool wrap = true,
+                      bool justify = true)
+  : this()
+  {
+    Text = title;
+    if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
+    if ( !sizeable ) MaximumSize = new System.Drawing.Size(0, 0);
+    TextBox.Text = text;
+    Width = width;
+    Height = height;
+    this.CenterToMainFormElseScreen();
+    if ( !sizeable ) FormBorderStyle = FormBorderStyle.FixedSingle;
+    TextBox.WordWrap = wrap;
+    HideOnClose = hideOnClose;
+  }
 
-    private ShowTextForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
-    }
+  public ShowTextForm(TranslationsDictionary title,
+                      TranslationsDictionary text,
+                      bool hideOnClose = false,
+                      bool sizeable = true,
+                      int width = 400,
+                      int height = 300,
+                      bool wrap = true,
+                      bool justify = true)
+  : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
+  {
+    LocalizedTitle = title;
+    LocalizedText = text;
+  }
 
-    public ShowTextForm(string title,
-                        string text,
-                        bool hideOnClose = false,
-                        bool sizeable = true,
-                        int width = 400,
-                        int height = 300,
-                        bool wrap = true,
-                        bool justify = true)
-    : this()
-    {
-      Text = title;
-      if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
-      if ( !sizeable ) MaximumSize = new System.Drawing.Size(0, 0);
-      TextBox.Text = text;
-      Width = width;
-      Height = height;
-      this.CenterToMainFormElseScreen();
-      if ( !sizeable ) FormBorderStyle = FormBorderStyle.FixedSingle;
-      TextBox.WordWrap = wrap;
-      HideOnClose = hideOnClose;
-    }
+  public void Relocalize()
+  {
+    if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
+    if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
+  }
 
-    public ShowTextForm(TranslationsDictionary title,
-                        TranslationsDictionary text,
-                        bool hideOnClose = false,
-                        bool sizeable = true,
-                        int width = 400,
-                        int height = 300,
-                        bool wrap = true,
-                        bool justify = true)
-    : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
-    {
-      LocalizedTitle = title;
-      LocalizedText = text;
-    }
+  private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    if ( !HideOnClose ) return;
+    e.Cancel = true;
+    Hide();
+  }
 
-    public void Relocalize()
-    {
-      if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-      if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
-    }
-
-    private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( !HideOnClose ) return;
-      e.Cancel = true;
-      Hide();
-    }
-
-    private void ActionClose_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
+  private void ActionClose_Click(object sender, EventArgs e)
+  {
+    Close();
   }
 
 }

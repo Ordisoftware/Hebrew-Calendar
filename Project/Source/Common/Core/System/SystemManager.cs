@@ -12,175 +12,172 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Core;
+
 using System;
-using System.Linq;
-using System.IO;
 using System.Configuration;
+using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using Microsoft.Win32;
 using GregsStack.InputSimulatorStandard;
+using Microsoft.Win32;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system management.
+/// </summary>
+static partial class SystemManager
 {
 
+  public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+
+  static public readonly InputSimulator InputSimulator = new();
+
   /// <summary>
-  /// Provides system management.
+  /// Deletes all app settings folders in User\AppData\Local.
   /// </summary>
-  static partial class SystemManager
+  static public void CleanAllLocalAppSettingsFolders()
   {
-
-    public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
-
-    static public readonly InputSimulator InputSimulator = new();
-
-    /// <summary>
-    /// Deletes all app settings folders in User\AppData\Local.
-    /// </summary>
-    static public void CleanAllLocalAppSettingsFolders()
+    try
     {
+      string filter = Globals.ApplicationExeFileName.Substring(0, 25) + "*";
+      string filterold = filter.Replace("Hebrew.", "Hebrew");
+      var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
+                          .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));
+      foreach ( var item in list )
+        Directory.Delete(item, true);
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
+
+  /// <summary>
+  /// Checks is application's settings must be upgraded and apply it if necessary.
+  /// </summary>
+  static public void CheckUpgradeRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
+  {
+    try
+    {
+      if ( upgradeRequired )
+      {
+        settings.Upgrade();
+        upgradeRequired = false;
+        try { settings.Save(); } catch { }
+      }
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
+
+  /// <summary>
+  /// Indicates if the application stars with windows user session or not.
+  /// </summary>
+  static public bool StartWithWindowsUserRegistry
+  {
+    get
+    {
+      var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
+      return (string)key.GetValue(Globals.ApplicationFullFileName) == Globals.ApplicationStartupRegistryValue;
+    }
+    set
+    {
+      var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
+      if ( value )
+        key.SetValue(Globals.ApplicationFullFileName, Globals.ApplicationStartupRegistryValue);
+      else
+      {
+        key.DeleteValue(Globals.ApplicationFullFileName);
+      }
+    }
+  }
+
+  /// <summary>
+  /// Exits the application process.
+  /// </summary>
+  static public void Exit()
+  {
+    Globals.IsExiting = true;
+    TryCatch(() => DebugManager.Stop());
+    Application.Exit();
+  }
+
+  /// <summary>
+  /// Does a hard termination of the application process.
+  /// </summary>
+  static public void Terminate()
+  {
+    Globals.IsExiting = true;
+    TryCatch(() => DebugManager.Stop());
+    Environment.Exit(-1);
+  }
+
+  /// <summary>
+  /// Gets the memory size of a serializable object.
+  /// </summary>
+  static public long SizeOf(this object instance)
+  {
+    long result = -1;
+    if ( instance == null ) return 0;
+    if ( instance.GetType().IsSerializable )
       try
       {
-        string filter = Globals.ApplicationExeFileName.Substring(0, 25) + "*";
-        string filterold = filter.Replace("Hebrew.", "Hebrew");
-        var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
-                            .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));
-        foreach ( var item in list )
-          Directory.Delete(item, true);
+        using var stream = new MemoryStream();
+        new BinaryFormatter().Serialize(stream, instance);
+        result = stream.Length;
       }
-      catch ( Exception ex )
+      catch ( Exception ex1 )
       {
-        ex.Manage();
-      }
-    }
-
-    /// <summary>
-    /// Checks is application's settings must be upgraded and apply it if necessary.
-    /// </summary>
-    static public void CheckUpgradeRequired(this ApplicationSettingsBase settings, ref bool upgradeRequired)
-    {
-      try
-      {
-        if ( upgradeRequired )
-        {
-          settings.Upgrade();
-          upgradeRequired = false;
-          try { settings.Save(); } catch { }
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-    }
-
-    /// <summary>
-    /// Indicates if the application stars with windows user session or not.
-    /// </summary>
-    static public bool StartWithWindowsUserRegistry
-    {
-      get
-      {
-        var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
-        return (string)key.GetValue(Globals.ApplicationFullFileName) == Globals.ApplicationStartupRegistryValue;
-      }
-      set
-      {
-        var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
-        if ( value )
-          key.SetValue(Globals.ApplicationFullFileName, Globals.ApplicationStartupRegistryValue);
-        else
-        {
-          key.DeleteValue(Globals.ApplicationFullFileName);
-        }
-      }
-    }
-
-    /// <summary>
-    /// Exits the application process.
-    /// </summary>
-    static public void Exit()
-    {
-      Globals.IsExiting = true;
-      TryCatch(() => DebugManager.Stop());
-      Application.Exit();
-    }
-
-    /// <summary>
-    /// Does a hard termination of the application process.
-    /// </summary>
-    static public void Terminate()
-    {
-      Globals.IsExiting = true;
-      TryCatch(() => DebugManager.Stop());
-      Environment.Exit(-1);
-    }
-
-    /// <summary>
-    /// Gets the memory size of a serializable object.
-    /// </summary>
-    static public long SizeOf(this object instance)
-    {
-      long result = -1;
-      if ( instance == null ) return 0;
-      if ( instance.GetType().IsSerializable )
+        ex1.Manage(ShowExceptionMode.None);
         try
         {
-          using var stream = new MemoryStream();
-          new BinaryFormatter().Serialize(stream, instance);
-          result = stream.Length;
+          result = System.Runtime.InteropServices.Marshal.SizeOf(instance);
         }
-        catch ( Exception ex1 )
+        catch ( Exception ex2 )
         {
-          ex1.Manage(ShowExceptionMode.None);
-          try
-          {
-            result = System.Runtime.InteropServices.Marshal.SizeOf(instance);
-          }
-          catch ( Exception ex2 )
-          {
-            ex2.Manage(ShowExceptionMode.None);
-          }
+          ex2.Manage(ShowExceptionMode.None);
         }
-      return result;
-    }
-
-    /// <summary>
-    /// Gets a file size.
-    /// </summary>
-    static public long GetFileSize(string filePath)
-    {
-      long result = -1;
-      TryCatch(() => { if ( File.Exists(filePath) ) result = new FileInfo(filePath).Length; });
-      return result;
-    }
-
-    /// <summary>
-    /// Indicates if a file is locked or not.
-    /// </summary>
-    static public bool IsFileLocked(string filePath)
-    {
-      try
-      {
-        using ( FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None) )
-          stream.Close();
-        return false;
       }
-      catch ( IOException )
-      {
-        return true;
-      }
-    }
+    return result;
+  }
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static SystemManager()
+  /// <summary>
+  /// Gets a file size.
+  /// </summary>
+  static public long GetFileSize(string filePath)
+  {
+    long result = -1;
+    TryCatch(() => { if ( File.Exists(filePath) ) result = new FileInfo(filePath).Length; });
+    return result;
+  }
+
+  /// <summary>
+  /// Indicates if a file is locked or not.
+  /// </summary>
+  static public bool IsFileLocked(string filePath)
+  {
+    try
     {
-      if ( Globals.PreLoadSSLCertificate )
-        LoadSSLCertificate();
+      using ( FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None) )
+        stream.Close();
+      return false;
     }
+    catch ( IOException )
+    {
+      return true;
+    }
+  }
 
+  /// <summary>
+  /// Static constructor.
+  /// </summary>
+  static SystemManager()
+  {
+    if ( Globals.PreLoadSSLCertificate )
+      LoadSSLCertificate();
   }
 
 }

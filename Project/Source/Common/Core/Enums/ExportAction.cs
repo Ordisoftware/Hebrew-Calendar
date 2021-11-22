@@ -12,19 +12,14 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2020-12 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides export action enum.
+/// </summary>
+public enum ExportAction
 {
-
-  /// <summary>
-  /// Provides export action enum.
-  /// </summary>
-  public enum ExportAction
-  {
-    SaveToFile,
-    CopyToClipboard,
-    Print
-  }
-
+  SaveToFile,
+  CopyToClipboard,
+  Print
 }

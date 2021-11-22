@@ -12,141 +12,138 @@
 /// </license>
 /// <created> 2020-03 </created>
 /// <edited> 2021-11 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides online providers list.
+/// </summary>
+class OnlineProviders : DataFile
 {
 
+  static public bool MoveCurrentLanguageAtTop { get; set; } = true;
+
   /// <summary>
-  /// Provides online providers list.
+  /// Indicates display name tag.
   /// </summary>
-  class OnlineProviders : DataFile
+  private const string TagName = "Name = ";
+
+  /// <summary>
+  /// Indicates url tag.
+  /// </summary>
+  private const string TagURL = "URL = ";
+
+  /// <summary>
+  /// Indicates items.
+  /// </summary>
+  public List<OnlineProviderItem> Items { get; private set; }
+   = new List<OnlineProviderItem>();
+
+  /// <summary>
+  /// Indicates the multilingual title of the list to create a folder
+  /// </summary>
+  public TranslationsDictionary Title { get; }
+    = new TranslationsDictionary();
+
+  /// <summary>
+  /// Indicates if a separator must be inserted before the folder
+  /// </summary>
+  public bool SeparatorBeforeFolder { get; private set; }
+
+  /// <summary>
+  /// Constructor.
+  /// </summary>
+  public OnlineProviders(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+  : base(filePath, showFileNotFound, configurable, folder)
   {
+  }
 
-    static public bool MoveCurrentLanguageAtTop { get; set; } = true;
-
-    /// <summary>
-    /// Indicates display name tag.
-    /// </summary>
-    private const string TagName = "Name = ";
-
-    /// <summary>
-    /// Indicates url tag.
-    /// </summary>
-    private const string TagURL = "URL = ";
-
-    /// <summary>
-    /// Indicates items.
-    /// </summary>
-    public List<OnlineProviderItem> Items { get; private set; }
-     = new List<OnlineProviderItem>();
-
-    /// <summary>
-    /// Indicates the multilingual title of the list to create a folder
-    /// </summary>
-    public TranslationsDictionary Title { get; }
-      = new TranslationsDictionary();
-
-    /// <summary>
-    /// Indicates if a separator must be inserted before the folder
-    /// </summary>
-    public bool SeparatorBeforeFolder { get; private set; }
-
-    /// <summary>
-    /// Constructor.
-    /// </summary>
-    public OnlineProviders(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
-    : base(filePath, showFileNotFound, configurable, folder)
+  /// <summary>
+  /// Loads or reload data from disk.
+  /// </summary>
+  protected override void DoReLoad(string filePath)
+  {
+    if ( filePath.IsNullOrEmpty() ) return;
+    try
     {
-    }
-
-    /// <summary>
-    /// Loads or reload data from disk.
-    /// </summary>
-    protected override void DoReLoad(string filePath)
-    {
-      if ( filePath.IsNullOrEmpty() ) return;
-      try
+      Title.Clear();
+      Items.Clear();
+      var lines = File.ReadAllLines(filePath);
+      for ( int index = 0; index < lines.Length; index++ )
       {
-        Title.Clear();
-        Items.Clear();
-        var lines = File.ReadAllLines(filePath);
-        for ( int index = 0; index < lines.Length; index++ )
+        void showError()
         {
-          void showError()
-          {
-            string message = SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]);
-            DisplayManager.ShowError(message);
-          }
-          string line = lines[index].Trim();
-          if ( line.Length == 0 ) continue;
-          if ( line.StartsWith(";") ) continue;
-          if ( line.StartsWith("FOLDER-SEPARATOR") )
-            SeparatorBeforeFolder = true;
-          else
-          if ( line.StartsWith("-") )
-            Items.Add(new OnlineProviderItem("-"));
-          else
-          if ( line.StartsWith("Lang/") )
-          {
-            var parts = line.Split('/', '=');
-            if ( parts.Length == 3 )
-              Title.Add(Languages.Values[parts[1].Trim().ToLower()], parts[2].Trim());
-            else
-              showError();
-          }
-          else
-          if ( line.StartsWith(TagName) )
-          {
-            string name = line.Substring(TagName.Length);
-            if ( ++index >= lines.Length )
-            {
-              showError();
-              break;
-            }
-            line = lines[index].Trim();
-            if ( line.StartsWith(TagURL) )
-              Items.Add(new OnlineProviderItem(name, line.Substring(TagURL.Length)));
-            else
-              showError();
-          }
+          string message = SysTranslations.ErrorInFile.GetLang(filePath, index + 1, lines[index]);
+          DisplayManager.ShowError(message);
+        }
+        string line = lines[index].Trim();
+        if ( line.Length == 0 ) continue;
+        if ( line.StartsWith(";") ) continue;
+        if ( line.StartsWith("FOLDER-SEPARATOR") )
+          SeparatorBeforeFolder = true;
+        else
+        if ( line.StartsWith("-") )
+          Items.Add(new OnlineProviderItem("-"));
+        else
+        if ( line.StartsWith("Lang/") )
+        {
+          var parts = line.Split('/', '=');
+          if ( parts.Length == 3 )
+            Title.Add(Languages.Values[parts[1].Trim().ToLower()], parts[2].Trim());
           else
             showError();
         }
-        SortByLanguage();
-      }
-      catch ( Exception ex )
-      {
-        string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
-        DisplayManager.ShowError(msg);
-      }
-    }
-
-    /// <summary>
-    /// Sorts the by language.
-    /// </summary>
-    private void SortByLanguage()
-    {
-      if ( MoveCurrentLanguageAtTop )
-      {
-        string lang = Languages.Current.ToString();
-        var slices = Items.Split(item => item.Name == "-");
-        foreach ( var slice in slices )
+        else
+        if ( line.StartsWith(TagName) )
         {
-          int index = 0;
-          foreach ( var item in slice.Where(item => item.Language.ToUpper().Contains(lang)).ToList() )
+          string name = line.Substring(TagName.Length);
+          if ( ++index >= lines.Length )
           {
-            slice.Remove(item);
-            slice.Insert(index++, item);
+            showError();
+            break;
           }
+          line = lines[index].Trim();
+          if ( line.StartsWith(TagURL) )
+            Items.Add(new OnlineProviderItem(name, line.Substring(TagURL.Length)));
+          else
+            showError();
         }
-        Items = slices.SelectMany(item => item).ToList();
+        else
+          showError();
       }
+      SortByLanguage();
     }
+    catch ( Exception ex )
+    {
+      string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
+      DisplayManager.ShowError(msg);
+    }
+  }
 
+  /// <summary>
+  /// Sorts the by language.
+  /// </summary>
+  private void SortByLanguage()
+  {
+    if ( MoveCurrentLanguageAtTop )
+    {
+      string lang = Languages.Current.ToString();
+      var slices = Items.Split(item => item.Name == "-");
+      foreach ( var slice in slices )
+      {
+        int index = 0;
+        foreach ( var item in slice.Where(item => item.Language.ToUpper().Contains(lang)).ToList() )
+        {
+          slice.Remove(item);
+          slice.Insert(index++, item);
+        }
+      }
+      Items = slices.SelectMany(item => item).ToList();
+    }
   }
 
 }

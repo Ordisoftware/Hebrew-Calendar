@@ -12,72 +12,69 @@
 /// </license>
 /// <created> 2020-09 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system management.
+/// </summary>
+static partial class SystemManager
 {
 
   /// <summary>
-  /// Provides system management.
+  /// Checks the validity of the remote website SSL certificate.
   /// </summary>
-  static partial class SystemManager
+  static public void CheckServerCertificate(string url)
   {
-
-    /// <summary>
-    /// Checks the validity of the remote website SSL certificate.
-    /// </summary>
-    static public void CheckServerCertificate(string url)
+    var uri = new Uri(url);
+    uri = new UriBuilder(uri.Scheme, uri.Host).Uri;
+    string id = Guid.NewGuid().ToString();
+    var point = ServicePointManager.FindServicePoint(uri);
+    var request = WebRequest.Create(uri);
+    request.ConnectionGroupName = id;
+    request.Timeout = WebClientEx.DefaultTimeOutSeconds * 1000;
+    using ( var response = request.GetResponse() ) { }
+    point.CloseConnectionGroup(id);
+    if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.Issuer
+      || AuthorWebsiteSSLCertificate["Subject"] != point.Certificate.Subject
+      /*|| AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
+      || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
     {
-      var uri = new Uri(url);
-      uri = new UriBuilder(uri.Scheme, uri.Host).Uri;
-      string id = Guid.NewGuid().ToString();
-      var point = ServicePointManager.FindServicePoint(uri);
-      var request = WebRequest.Create(uri);
-      request.ConnectionGroupName = id;
-      request.Timeout = WebClientEx.DefaultTimeOutSeconds * 1000;
-      using ( var response = request.GetResponse() ) { }
-      point.CloseConnectionGroup(id);
-      if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.Issuer
-        || AuthorWebsiteSSLCertificate["Subject"] != point.Certificate.Subject
-        /*|| AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
-        || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
-      {
-        string str1 = AuthorWebsiteSSLCertificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
-        string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
-                      "Subject = " + point.Certificate.Subject/* + Globals.NL +
+      string str1 = AuthorWebsiteSSLCertificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
+      string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
+                    "Subject = " + point.Certificate.Subject/* + Globals.NL +
                       "Serial = " + point.Certificate.GetSerialNumberString() + Globals.NL +
                       "PublicKey = " + point.Certificate.GetPublicKeyString()*/;
-        string msg = SysTranslations.WrongSSLCertificate.GetLang(uri.Host, str1, str2);
-        throw new UnauthorizedAccessException(msg);
-      }
-      if ( DateTime.Now < Convert.ToDateTime(point.Certificate.GetEffectiveDateString())
-        || DateTime.Now > Convert.ToDateTime(point.Certificate.GetExpirationDateString()) )
-      {
-        string msg = SysTranslations.ExpiredSSLCertificate.GetLang(uri.Host,
-                                                                   point.Certificate.GetEffectiveDateString(),
-                                                                   point.Certificate.GetExpirationDateString());
-        throw new UnauthorizedAccessException(msg);
-      }
+      string msg = SysTranslations.WrongSSLCertificate.GetLang(uri.Host, str1, str2);
+      throw new UnauthorizedAccessException(msg);
     }
-
-    /// <summary>
-    /// Indicates the application website SSL certificate information.
-    /// </summary>
-    static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
-
-    /// <summary>
-    /// Loads the SSL certificate.
-    /// </summary>
-    static public void LoadSSLCertificate()
+    if ( DateTime.Now < Convert.ToDateTime(point.Certificate.GetEffectiveDateString())
+      || DateTime.Now > Convert.ToDateTime(point.Certificate.GetExpirationDateString()) )
     {
-      if ( Globals.IsVisualStudioDesigner ) return;
-      if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
-        AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
+      string msg = SysTranslations.ExpiredSSLCertificate.GetLang(uri.Host,
+                                                                 point.Certificate.GetEffectiveDateString(),
+                                                                 point.Certificate.GetExpirationDateString());
+      throw new UnauthorizedAccessException(msg);
     }
+  }
 
+  /// <summary>
+  /// Indicates the application website SSL certificate information.
+  /// </summary>
+  static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
+
+  /// <summary>
+  /// Loads the SSL certificate.
+  /// </summary>
+  static public void LoadSSLCertificate()
+  {
+    if ( Globals.IsVisualStudioDesigner ) return;
+    if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
+      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
   }
 
 }

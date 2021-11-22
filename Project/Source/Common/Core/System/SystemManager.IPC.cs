@@ -12,117 +12,114 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.IO.Pipes;
-using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system management.
+/// </summary>
+static partial class SystemManager
 {
 
   /// <summary>
-  /// Provides system management.
+  /// Application mutex to allow only one process instance.
   /// </summary>
-  static partial class SystemManager
-  {
-
-    /// <summary>
-    /// Application mutex to allow only one process instance.
-    /// </summary>
 #pragma warning disable S4487 // Unread "private" fields should be removed
 #pragma warning disable IDE0052 // Supprimer les membres privés non lus
-    static private Mutex ApplicationMutex;
+  static private Mutex ApplicationMutex;
 #pragma warning restore IDE0052 // Supprimer les membres privés non lus
 #pragma warning restore S4487 // Unread "private" fields should be removed
 
-    /// <summary>
-    /// IPC server instance.
-    /// </summary>
-    static private NamedPipeServerStream IPCServer;
+  /// <summary>
+  /// IPC server instance.
+  /// </summary>
+  static private NamedPipeServerStream IPCServer;
 
-    /// <summary>
-    /// IPC answers callback.
-    /// </summary>
-    static public Action IPCSendCommands { get; set; }
+  /// <summary>
+  /// IPC answers callback.
+  /// </summary>
+  static public Action IPCSendCommands { get; set; }
 
-    /// <summary>
-    /// Indicates if the several instances of the application can run at same time.
-    /// </summary>
-    static public bool AllowMultipleInstances { get; private set; } = true;
+  /// <summary>
+  /// Indicates if the several instances of the application can run at same time.
+  /// </summary>
+  static public bool AllowMultipleInstances { get; private set; } = true;
 
-    /// <summary>
-    /// Checks if the process is already running.
-    /// </summary>
-    static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
+  /// <summary>
+  /// Checks if the process is already running.
+  /// </summary>
+  static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
+  {
+    try
     {
-      try
+      AllowMultipleInstances = false;
+      ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
+      if ( created )
+        CreateIPCServer(ipcRequests);
+      else
       {
-        AllowMultipleInstances = false;
-        ApplicationMutex = new Mutex(true, Globals.AssemblyGUID, out bool created);
-        if ( created )
-          CreateIPCServer(ipcRequests);
-        else
+        if ( CommandLineArguments?.Length == 0 )
+          CommandLineOptions.ShowMainForm = true;
+        try
         {
-          if ( CommandLineArguments?.Length == 0 )
-            CommandLineOptions.ShowMainForm = true;
-          try
-          {
-            IPCSendCommands?.Invoke();
-          }
-          catch ( Exception ex )
-          {
-            ex.Manage();
-          }
+          IPCSendCommands?.Invoke();
         }
-        return created;
+        catch ( Exception ex )
+        {
+          ex.Manage();
+        }
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-        return false;
-      }
+      return created;
     }
-
-    /// <summary>
-    /// Creates IPC server instance.
-    /// </summary>
-    static public void CreateIPCServer(AsyncCallback ipcRequests)
+    catch ( Exception ex )
     {
-      if ( ipcRequests == null ) return;
-      try
-      {
-        IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
-                                              PipeDirection.InOut,
-                                              1,
-                                              PipeTransmissionMode.Message,
-                                              PipeOptions.Asynchronous);
-        IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
-      }
-      catch ( Exception ex )
-      {
-        IPCServer = null;
-        ex.Manage();
-      }
+      ex.Manage();
+      return false;
     }
+  }
 
-    /// <summary>
-    /// Sends an IPC command.
-    /// </summary>
-    static public void IPCSend(string command)
+  /// <summary>
+  /// Creates IPC server instance.
+  /// </summary>
+  static public void CreateIPCServer(AsyncCallback ipcRequests)
+  {
+    if ( ipcRequests == null ) return;
+    try
     {
-      try
-      {
-        using var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
-        client.Connect();
-        new BinaryFormatter().Serialize(client, command);
-        client.Close();
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
+                                            PipeDirection.InOut,
+                                            1,
+                                            PipeTransmissionMode.Message,
+                                            PipeOptions.Asynchronous);
+      IPCServer.BeginWaitForConnection(ipcRequests, IPCServer);
     }
+    catch ( Exception ex )
+    {
+      IPCServer = null;
+      ex.Manage();
+    }
+  }
 
+  /// <summary>
+  /// Sends an IPC command.
+  /// </summary>
+  static public void IPCSend(string command)
+  {
+    try
+    {
+      using var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
+      client.Connect();
+      new BinaryFormatter().Serialize(client, command);
+      client.Close();
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
   }
 
 }

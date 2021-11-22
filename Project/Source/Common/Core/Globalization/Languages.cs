@@ -12,80 +12,77 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
+namespace Ordisoftware.Core;
+
 using System;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 using EnumsNET;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Indicates supported languages.
+/// </summary>
+static class Languages
 {
 
   /// <summary>
-  /// Indicates supported languages.
+  /// Indicates language codes.
   /// </summary>
-  static class Languages
+  static public readonly NullSafeOfEnumDictionary<string, Language> Values;
+
+  /// <summary>
+  /// Indicates language codes.
+  /// </summary>
+  static public readonly NullSafeOfStringDictionary<Language> Codes;
+
+  /// <summary>
+  /// Indicates managed languages.
+  /// </summary>
+  static public readonly Language[] Managed;
+
+  /// <summary>
+  /// Indicates default language.
+  /// </summary>
+  static public readonly Language Default = Language.EN;
+
+  /// <summary>
+  /// Indicates current language code.
+  /// </summary>
+  static public string CurrentCode => Codes[Current];
+
+  /// <summary>
+  /// Indicates current language.
+  /// </summary>
+  static public Language Current
   {
-
-    /// <summary>
-    /// Indicates language codes.
-    /// </summary>
-    static public readonly NullSafeOfEnumDictionary<string, Language> Values;
-
-    /// <summary>
-    /// Indicates language codes.
-    /// </summary>
-    static public readonly NullSafeOfStringDictionary<Language> Codes;
-
-    /// <summary>
-    /// Indicates managed languages.
-    /// </summary>
-    static public readonly Language[] Managed;
-
-    /// <summary>
-    /// Indicates default language.
-    /// </summary>
-    static public readonly Language Default = Language.EN;
-
-    /// <summary>
-    /// Indicates current language code.
-    /// </summary>
-    static public string CurrentCode => Codes[Current];
-
-    /// <summary>
-    /// Indicates current language.
-    /// </summary>
-    static public Language Current
+    get
     {
-      get
-      {
-        string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        var result = Values[lang];
-        if ( !Managed.Contains(result) ) result = Default;
-        return result;
-      }
+      string lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+      var result = Values[lang];
+      if ( !Managed.Contains(result) ) result = Default;
+      return result;
     }
+  }
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static Languages()
+  /// <summary>
+  /// Static constructor.
+  /// </summary>
+  static Languages()
+  {
+    try
     {
-      try
-      {
-        Managed = Enums.GetValues<Language>().Skip(1).ToArray();
-        Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
-        Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
-      }
-      catch ( Exception ex )
-      {
-        string str = "Exception in Language static class constructor." + Globals.NL2 +
-                     "Please contact support.";
-        var einfo = new ExceptionInfo(null, ex);
-        if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;
-        DisplayManager.ShowAndTerminate(str);
-      }
+      Managed = Enums.GetValues<Language>().Skip(1).ToArray();
+      Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
+      Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
     }
-
+    catch ( Exception ex )
+    {
+      string str = "Exception in Language static class constructor." + Globals.NL2 +
+                   "Please contact support.";
+      var einfo = new ExceptionInfo(null, ex);
+      if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;
+      DisplayManager.ShowAndTerminate(str);
+    }
   }
 
 }

@@ -12,71 +12,67 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-07 </edited>
-using System;
+namespace Ordisoftware.Core;
+
 using System.IO;
 using Serilog;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides global variables.
+/// </summary>
+static partial class Globals
 {
 
-  /// <summary>
-  /// Provides global variables.
-  /// </summary>
-  static partial class Globals
-  {
+  static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
+    = TraceFileRollOverMode.Session;
 
-    static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
-      = TraceFileRollOverMode.Session;
+  static public RollingInterval SinkFileRollingInterval { get; set; }
+    = IsVisualStudioDesigner ? 0 : RollingInterval.Day;
 
-    static public RollingInterval SinkFileRollingInterval { get; set; }
-      = IsVisualStudioDesigner ? 0 : RollingInterval.Day;
+  static public int SinkFileRetainedFileCountLimit { get; set; }
+    = 7;
 
-    static public int SinkFileRetainedFileCountLimit { get; set; }
-      = 7;
+  static public int SessionFileRetainedFileCountLimit { get; set; }
+    = 20;
 
-    static public int SessionFileRetainedFileCountLimit { get; set; }
-      = 20;
+  static public int SinkFileSizeLimitBytes { get; set; }
+    = 100 * 1024 * 1024;
 
-    static public int SinkFileSizeLimitBytes { get; set; }
-      = 100 * 1024 * 1024;
+  static public string SinkFileEventTemplate { get; set; }
+    = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
+      "P{ProcessId}:T{ThreadId} " +
+      "{Message:lj}{NewLine}{Exception}";
 
-    static public string SinkFileEventTemplate { get; set; }
-      = "{Timestamp:yyyy-MM-dd HH:mm:ss} " +
-        "P{ProcessId}:T{ThreadId} " +
-        "{Message:lj}{NewLine}{Exception}";
+  static public int SinkFileEventTemplateSize { get; set; }
+    = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
-    static public int SinkFileEventTemplateSize { get; set; }
-      = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
+  static public string TraceDirectoryName { get; set; }
+    = "Serilog";
 
-    static public string TraceDirectoryName { get; set; }
-      = "Serilog";
+  static public string TraceFileExtension { get; set; }
+    = ".log";
 
-    static public string TraceFileExtension { get; set; }
-      = ".log";
+  static public string TraceSessionFileTemplate { get; set; }
+    = "yyyy-MM-dd@HH-mm-ss";
 
-    static public string TraceSessionFileTemplate { get; set; }
-      = "yyyy-MM-dd@HH-mm-ss";
+  static public string SinkFileCode { get; set; }
+    = ApplicationGitHubCode + "-Trace-";
 
-    static public string SinkFileCode { get; set; }
-      = ApplicationGitHubCode + "-Trace-";
+  static public string SinkFileFolderPath
+    => Directory.CreateDirectory(Path.Combine(UserDataFolderPath, TraceDirectoryName)).FullName;
 
-    static public string SinkFileFolderPath
-      => Directory.CreateDirectory(Path.Combine(UserDataFolderPath, TraceDirectoryName)).FullName;
+  static public string SinkFileNoRollingPatternPathDateTag { get; set; }
+    = "%DATETIME%";
 
-    static public string SinkFileNoRollingPatternPathDateTag { get; set; }
-      = "%DATETIME%";
+  static public string SinkFileNoRollingFilePatternPath
+    => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileNoRollingPatternPathDateTag + TraceFileExtension;
 
-    static public string SinkFileNoRollingFilePatternPath
-      => Path.Combine(SinkFileFolderPath, SinkFileCode) + SinkFileNoRollingPatternPathDateTag + TraceFileExtension;
+  static public string SinkFileRollingFilePatternPath
+    => Path.Combine(SinkFileFolderPath, SinkFileCode) + TraceFileExtension;
 
-    static public string SinkFileRollingFilePatternPath
-      => Path.Combine(SinkFileFolderPath, SinkFileCode) + TraceFileExtension;
+  static public string OldTraceFolderPath
+    => Path.Combine(UserDataFolderPath, OldTraceDirectoryName);
 
-    static public string OldTraceFolderPath
-      => Path.Combine(UserDataFolderPath, OldTraceDirectoryName);
-
-    public const string OldTraceDirectoryName = "Logs";
-
-  }
+  public const string OldTraceDirectoryName = "Logs";
 
 }

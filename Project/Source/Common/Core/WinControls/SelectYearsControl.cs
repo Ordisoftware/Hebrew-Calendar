@@ -12,51 +12,49 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class SelectYearsControl : UserControl
 {
-  partial class SelectYearsControl : UserControl
+
+  public event EventHandler SelectedIndexChanged
   {
-
-    public event EventHandler SelectedIndexChanged
-    {
-      add { if ( SelectValue != null ) SelectValue.SelectedIndexChanged += value; }
-      remove { if ( SelectValue != null ) SelectValue.SelectedIndexChanged -= value; }
-    }
-
-    public ComboBox.ObjectCollection Items
-      => SelectValue?.Items;
-
-    public int Count
-      => SelectValue?.Items.Count ?? -1;
-
-    public int SelectedIndex
-    {
-      get => SelectValue?.SelectedIndex ?? -1;
-      set { if ( SelectValue != null ) SelectValue.SelectedIndex = value; }
-    }
-
-    public object SelectedItem
-    {
-      get => SelectValue?.SelectedItem;
-      set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
-    }
-
-    public int Value
-    {
-      get => SelectValue.SelectedItem is int value ? value : -1;
-      set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
-    }
-
-    public SelectYearsControl()
-      => InitializeComponent();
-
-    public void Fill(IEnumerable<int> list, int selected = -1)
-      => Navigator.Fill(list, selected);
-
+    add { if ( SelectValue != null ) SelectValue.SelectedIndexChanged += value; }
+    remove { if ( SelectValue != null ) SelectValue.SelectedIndexChanged -= value; }
   }
+
+  public ComboBox.ObjectCollection Items
+    => SelectValue?.Items;
+
+  public int Count
+    => SelectValue?.Items.Count ?? -1;
+
+  public int SelectedIndex
+  {
+    get => SelectValue?.SelectedIndex ?? -1;
+    set { if ( SelectValue != null ) SelectValue.SelectedIndex = value; }
+  }
+
+  public object SelectedItem
+  {
+    get => SelectValue?.SelectedItem;
+    set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
+  }
+
+  public int Value
+  {
+    get => SelectValue.SelectedItem is int value ? value : -1;
+    set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
+  }
+
+  public SelectYearsControl()
+    => InitializeComponent();
+
+  public void Fill(IEnumerable<int> list, int selected = -1)
+    => Navigator.Fill(list, selected);
 
 }

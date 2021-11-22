@@ -12,42 +12,37 @@
 /// </license>
 /// <created> 2020-09 </created>
 /// <edited> 2020-09 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Sound source enum.
+/// </summary>
+public enum SoundSource
 {
 
   /// <summary>
-  /// Sound source enum.
+  /// No sound.
   /// </summary>
-  public enum SoundSource
-  {
+  None,
 
-    /// <summary>
-    /// No sound.
-    /// </summary>
-    None,
+  /// <summary>
+  /// Custom path.
+  /// </summary>
+  Custom,
 
-    /// <summary>
-    /// Custom path.
-    /// </summary>
-    Custom,
+  /// <summary>
+  /// Windows dialog sound.
+  /// </summary>
+  Dialog,
 
-    /// <summary>
-    /// Windows dialog sound.
-    /// </summary>
-    Dialog,
+  /// <summary>
+  /// Windows media folder.
+  /// </summary>
+  Windows,
 
-    /// <summary>
-    /// Windows media folder.
-    /// </summary>
-    Windows,
-
-    /// <summary>
-    /// Application media folder.
-    /// </summary>
-    Application
-
-  }
+  /// <summary>
+  /// Application media folder.
+  /// </summary>
+  Application
 
 }
