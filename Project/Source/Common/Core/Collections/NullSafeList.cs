@@ -12,65 +12,62 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides null safe list.
+/// </summary>
+[Serializable]
+public class NullSafeList<T> : List<T>
+where T : class
 {
 
-  /// <summary>
-  /// Provides null safe list.
-  /// </summary>
-  [Serializable]
-  public class NullSafeList<T> : List<T>
-  where T : class
+  public NullSafeList()
   {
+  }
 
-    public NullSafeList()
+  public NullSafeList(int capacity) : base(capacity)
+  {
+  }
+
+  public NullSafeList(IEnumerable<T> collection) : base(collection)
+  {
+  }
+
+  public new T this[int index]
+  {
+    get
     {
+      CheckIndex(index);
+      return index < Count ? base[index] : null;
     }
-
-    public NullSafeList(int capacity) : base(capacity)
+    set
     {
+      CheckIndex(index);
+      if ( index < Count )
+        base[index] = value;
+      else
+        CreateOutOfRange(index, value);
     }
+  }
 
-    public NullSafeList(IEnumerable<T> collection) : base(collection)
-    {
-    }
+  private void CheckIndex(int index)
+  {
+    if ( index >= 0 ) return;
+    string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
+    throw new IndexOutOfRangeException(msg);
+  }
 
-    public new T this[int index]
-    {
-      get
-      {
-        CheckIndex(index);
-        return index < Count ? base[index] : null;
-      }
-      set
-      {
-        CheckIndex(index);
-        if ( index < Count )
-          base[index] = value;
-        else
-          CreateOutOfRange(index, value);
-      }
-    }
-
-    private void CheckIndex(int index)
-    {
-      if ( index >= 0 ) return;
-      string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
-      throw new IndexOutOfRangeException(msg);
-    }
-
-    private void CreateOutOfRange(int index, T value)
-    {
-      Capacity = index + 1;
-      int count = index + 1 - Count;
-      for ( int i = 0; i < count; i++ )
-        Add(null);
-      base[index] = value;
-    }
-
+  private void CreateOutOfRange(int index, T value)
+  {
+    Capacity = index + 1;
+    int count = index + 1 - Count;
+    for ( int i = 0; i < count; i++ )
+      Add(null);
+    base[index] = value;
   }
 
 }

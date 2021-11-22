@@ -12,66 +12,66 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides auto resized list.
+/// </summary>
+[Serializable]
+public class AutoResizedList<T> : List<T>
+where T : new()
 {
 
-  /// <summary>
-  /// Provides auto resized list.
-  /// </summary>
-  [Serializable]
-  public class AutoResizedList<T> : List<T>
-  where T : new()
+  public AutoResizedList()
   {
+  }
 
-    public AutoResizedList()
-    {
-    }
+  public AutoResizedList(int capacity) : base(capacity)
+  {
+  }
 
-    public AutoResizedList(int capacity) : base(capacity)
-    {
-    }
+  public AutoResizedList(IEnumerable<T> collection) : base(collection)
+  {
+  }
 
-    public AutoResizedList(IEnumerable<T> collection) : base(collection)
+  public new T this[int index]
+  {
+    get
     {
+      CheckIndex(index);
+      if ( index < Count ) return base[index];
+      var item = new T();
+      CreateOutOfRange(index, item);
+      return item;
     }
+    set
+    {
+      CheckIndex(index);
+      if ( index < Count )
+        base[index] = value;
+      else
+        CreateOutOfRange(index, value);
+    }
+  }
+  private void CheckIndex(int index)
+  {
+    if ( index < 0 )
+    {
+      string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
+      throw new IndexOutOfRangeException(msg);
+    }
+  }
 
-    public new T this[int index]
-    {
-      get
-      {
-        CheckIndex(index);
-        if ( index < Count ) return base[index];
-        var item = new T();
-        CreateOutOfRange(index, item);
-        return item;
-      }
-      set
-      {
-        CheckIndex(index);
-        if ( index < Count )
-          base[index] = value;
-        else
-          CreateOutOfRange(index, value);
-      }
-    }
-    private void CheckIndex(int index)
-    {
-      if ( index < 0 )
-        throw new IndexOutOfRangeException(SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index));
-    }
-
-    private void CreateOutOfRange(int index, T value)
-    {
-      Capacity = index + 1;
-      int count = index + 1 - Count;
-      for ( int i = 0; i < count; i++ )
-        Add(new T());
-      base[index] = value;
-    }
-
+  private void CreateOutOfRange(int index, T value)
+  {
+    Capacity = index + 1;
+    int count = index + 1 - Count;
+    for ( int i = 0; i < count; i++ )
+      Add(new T());
+    base[index] = value;
   }
 
 }

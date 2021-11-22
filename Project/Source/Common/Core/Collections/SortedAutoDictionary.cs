@@ -12,54 +12,51 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides sorted auto dictionary.
+/// </summary>
+[Serializable]
+public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+where TValue : new()
 {
 
-  /// <summary>
-  /// Provides sorted auto dictionary.
-  /// </summary>
-  [Serializable]
-  public class SortedAutoDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
-  where TValue : new()
+  public SortedAutoDictionary()
   {
+  }
 
-    public SortedAutoDictionary()
+  public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
+  {
+  }
+
+  public SortedAutoDictionary(IComparer<TKey> comparer) : base(comparer)
+  {
+  }
+
+  public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary, IComparer<TKey> comparer) : base(dictionary, comparer)
+  {
+  }
+
+  public new TValue this[TKey key]
+  {
+    get
     {
+      if ( ContainsKey(key) ) return base[key];
+      var value = new TValue();
+      Add(key, value);
+      return value;
     }
-
-    public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
+    set
     {
-    }
-
-    public SortedAutoDictionary(IComparer<TKey> comparer) : base(comparer)
-    {
-    }
-
-    public SortedAutoDictionary(IDictionary<TKey, TValue> dictionary, IComparer<TKey> comparer) : base(dictionary, comparer)
-    {
-    }
-
-    public new TValue this[TKey key]
-    {
-      get
-      {
-        if ( ContainsKey(key) ) return base[key];
-        var value = new TValue();
+      if ( ContainsKey(key) )
+        base[key] = value;
+      else
         Add(key, value);
-        return value;
-      }
-      set
-      {
-        if ( ContainsKey(key) )
-          base[key] = value;
-        else
-          Add(key, value);
-      }
     }
-
   }
 
 }

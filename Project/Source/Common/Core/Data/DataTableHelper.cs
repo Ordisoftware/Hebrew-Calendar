@@ -12,64 +12,60 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Core;
+
 using System.Data;
 using System.IO;
-using System.Text;
 using System.Linq;
+using System.Text;
 using FileHelpers;
 using FileHelpers.Options;
 using Newtonsoft.Json;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides DataTable helper.
+/// </summary>
+static class DataTableHelper
 {
 
   /// <summary>
-  /// Provides DataTable helper.
+  /// Exports a DataTable to a file depending its extension.
   /// </summary>
-  static class DataTableHelper
+  static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
   {
-
-    /// <summary>
-    /// Exports a DataTable to a file depending its extension.
-    /// </summary>
-    static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
+    string extension = Path.GetExtension(filePath);
+    var selected = targets.First(p => p.Value == extension).Key;
+    switch ( selected )
     {
-      string extension = Path.GetExtension(filePath);
-      var selected = targets.First(p => p.Value == extension).Key;
-      switch ( selected )
-      {
-        case DataExportTarget.TXT:
-          using ( var stream = File.CreateText(filePath) )
-            foreach ( DataRow row in table.Rows )
-            {
-              foreach ( DataColumn column in table.Columns )
-                stream.WriteLine($"{column.ColumnName} = {row[column]}");
-              stream.WriteLine();
-            }
-          break;
-        case DataExportTarget.CSV:
-          var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count)
+      case DataExportTarget.TXT:
+        using ( var stream = File.CreateText(filePath) )
+          foreach ( DataRow row in table.Rows )
           {
-            IncludeHeaderNames = true,
-            DateFormat = "yyyy-MM-dd HH:mm",
-            Encoding = Encoding.UTF8
-          };
-          CsvEngine.DataTableToCsv(table, filePath, options);
-          break;
-        case DataExportTarget.JSON:
-          var dataset = new DataSet(Globals.AssemblyTitle);
-          dataset.Tables.Add(table);
-          string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-          File.WriteAllText(filePath, lines, Encoding.UTF8);
-          dataset.Tables.Clear();
-          dataset.Dispose();
-          break;
-        default:
-          throw new AdvancedNotImplementedException(selected);
-      }
+            foreach ( DataColumn column in table.Columns )
+              stream.WriteLine($"{column.ColumnName} = {row[column]}");
+            stream.WriteLine();
+          }
+        break;
+      case DataExportTarget.CSV:
+        var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count)
+        {
+          IncludeHeaderNames = true,
+          DateFormat = "yyyy-MM-dd HH:mm",
+          Encoding = Encoding.UTF8
+        };
+        CsvEngine.DataTableToCsv(table, filePath, options);
+        break;
+      case DataExportTarget.JSON:
+        var dataset = new DataSet(Globals.AssemblyTitle);
+        dataset.Tables.Add(table);
+        string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+        File.WriteAllText(filePath, lines, Encoding.UTF8);
+        dataset.Tables.Clear();
+        dataset.Dispose();
+        break;
+      default:
+        throw new AdvancedNotImplementedException(selected);
     }
-
   }
 
 }

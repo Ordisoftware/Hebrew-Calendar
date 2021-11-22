@@ -12,51 +12,48 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides null safe sorted dictionary.
+/// </summary>
+[Serializable]
+public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
+  where TValue : class
 {
 
-  /// <summary>
-  /// Provides null safe sorted dictionary.
-  /// </summary>
-  [Serializable]
-  public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
-  where TValue : class
+  public NullSafeSortedDictionary()
   {
+  }
 
-    public NullSafeSortedDictionary()
+  public NullSafeSortedDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
+  {
+  }
+
+  public NullSafeSortedDictionary(IComparer<TKey> comparer) : base(comparer)
+  {
+  }
+
+  public NullSafeSortedDictionary(IDictionary<TKey, TValue> dictionary, IComparer<TKey> comparer) : base(dictionary, comparer)
+  {
+  }
+
+  public new TValue this[TKey key]
+  {
+    get
     {
+      return ContainsKey(key) ? base[key] : null;
     }
-
-    public NullSafeSortedDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
+    set
     {
+      if ( ContainsKey(key) )
+        base[key] = value;
+      else
+        Add(key, value);
     }
-
-    public NullSafeSortedDictionary(IComparer<TKey> comparer) : base(comparer)
-    {
-    }
-
-    public NullSafeSortedDictionary(IDictionary<TKey, TValue> dictionary, IComparer<TKey> comparer) : base(dictionary, comparer)
-    {
-    }
-
-    public new TValue this[TKey key]
-    {
-      get
-      {
-        return ContainsKey(key) ? base[key] : null;
-      }
-      set
-      {
-        if ( ContainsKey(key) )
-          base[key] = value;
-        else
-          Add(key, value);
-      }
-    }
-
   }
 
 }

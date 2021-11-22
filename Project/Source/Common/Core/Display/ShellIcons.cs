@@ -12,37 +12,33 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-11 </edited>
-using System;
+namespace Ordisoftware.Core;
+
 using System.Drawing;
 using System.Runtime.InteropServices;
 using static Ordisoftware.Core.NativeMethods;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides shell icons for message boxes.
+/// </summary>
+static class ShellIcons
 {
-
-  /// <summary>
-  /// Provides shell icons for message boxes.
-  /// </summary>
-  static class ShellIcons
+  static public readonly Bitmap Warning;
+  static public readonly Bitmap Error;
+  static public readonly Bitmap Information;
+  static public readonly Bitmap Question;
+  static ShellIcons()
   {
-    static public readonly Bitmap Warning;
-    static public readonly Bitmap Error;
-    static public readonly Bitmap Information;
-    static public readonly Bitmap Question;
-    static ShellIcons()
+    var sii = new SHSTOCKICONINFO { cbSize = (uint)Marshal.SizeOf(typeof(SHSTOCKICONINFO)) };
+    Information = process(SHSTOCKICONID.SIID_INFO);
+    Question = process(SHSTOCKICONID.SIID_HELP);
+    Warning = process(SHSTOCKICONID.SIID_WARNING);
+    Error = process(SHSTOCKICONID.SIID_ERROR);
+    Bitmap process(SHSTOCKICONID id)
     {
-      var sii = new SHSTOCKICONINFO { cbSize = (uint)Marshal.SizeOf(typeof(SHSTOCKICONINFO)) };
-      Information = process(SHSTOCKICONID.SIID_INFO);
-      Question = process(SHSTOCKICONID.SIID_HELP);
-      Warning = process(SHSTOCKICONID.SIID_WARNING);
-      Error = process(SHSTOCKICONID.SIID_ERROR);
-      Bitmap process(SHSTOCKICONID id)
-      {
-        Marshal.ThrowExceptionForHR(SHGetStockIconInfo(id, SHGSI.SHGSI_ICON, ref sii));
-        return Icon.FromHandle(sii.hIcon).ToBitmap();
-      }
+      Marshal.ThrowExceptionForHR(SHGetStockIconInfo(id, SHGSI.SHGSI_ICON, ref sii));
+      return Icon.FromHandle(sii.hIcon).ToBitmap();
     }
-
   }
 
 }

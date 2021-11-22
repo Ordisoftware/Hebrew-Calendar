@@ -12,288 +12,284 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-04 </edited>
-using System;
-using System.Media;
+namespace Ordisoftware.Core;
+
 using System.Diagnostics;
 using System.IO;
+using System.Media;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides messages and questions with waiting user communication feedback as well as UI sync.
+/// </summary>
+static partial class DisplayManager
 {
 
+  static public bool AdvancedFormUseSounds { get; set; } = true;
+  static public bool ShowSuccessDialogs { get; set; } = true;
+
+  static public MessageBoxFormStyle FormStyle { get; set; } = MessageBoxFormStyle.Advanced;
+  static public MessageBoxIconStyle IconStyle { get; set; } = MessageBoxIconStyle.ForceInformation;
+
   /// <summary>
-  /// Provides messages and questions with waiting user communication feedback as well as UI sync.
+  /// Indicates application title initialized from file version info or executable path.
   /// </summary>
-  static partial class DisplayManager
+  static public string Title
   {
-
-    static public bool AdvancedFormUseSounds { get; set; } = true;
-    static public bool ShowSuccessDialogs { get; set; } = true;
-
-    static public MessageBoxFormStyle FormStyle { get; set; } = MessageBoxFormStyle.Advanced;
-    static public MessageBoxIconStyle IconStyle { get; set; } = MessageBoxIconStyle.ForceInformation;
-
-    /// <summary>
-    /// Indicates application title initialized from file version info or executable path.
-    /// </summary>
-    static public string Title
+    get
     {
-      get
+      if ( _Title.IsNullOrEmpty() )
       {
+        _Title = FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
         if ( _Title.IsNullOrEmpty() )
-        {
-          _Title = FileVersionInfo.GetVersionInfo(Application.ExecutablePath).FileDescription;
-          if ( _Title.IsNullOrEmpty() )
-            _Title = Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath));
-        }
-        return _Title;
+          _Title = Path.GetFileNameWithoutExtension(Path.GetFileName(Application.ExecutablePath));
       }
-      set
+      return _Title;
+    }
+    set
+    {
+      _Title = value;
+    }
+  }
+  static private string _Title;
+
+  /// <summary>
+  /// Plays the sound associated to a message box icon.
+  /// </summary>
+  static public void DoSound(MessageBoxIcon icon)
+  {
+    if ( !AdvancedFormUseSounds ) return;
+    switch ( icon )
+    {
+      case MessageBoxIcon.Information:
+        SystemSounds.Beep.Play();
+        break;
+      case MessageBoxIcon.Question:
+        SystemSounds.Hand.Play();
+        break;
+      case MessageBoxIcon.Warning:
+        SystemSounds.Exclamation.Play();
+        break;
+      case MessageBoxIcon.Error:
+        SystemSounds.Hand.Play();
+        break;
+    }
+  }
+
+  /// <summary>
+  /// Plays the sound associated to a file.
+  /// </summary>
+  static public void DoSound(string pathSound)
+  {
+    new SoundPlayer(pathSound).Play();
+  }
+
+  /// <summary>
+  /// Shows a success message or play a sound else do nothing.
+  /// </summary>
+  static public void ShowSuccessOrSound(string text, string pathSound)
+  {
+    if ( ShowSuccessDialogs )
+      Show(text);
+    else
+    if ( AdvancedFormUseSounds )
+      DoSound(pathSound);
+  }
+
+  /// <summary>
+  /// Shows a message.
+  /// </summary>
+  /// <returns>
+  /// A DialogResult.
+  /// </returns>
+  /// <param name="text">The text.</param>
+  /// <param name="buttons">The buttons.</param>
+  /// <param name="icon">The icon.</param>
+  static public DialogResult Show(string text,
+                                  MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                  MessageBoxIcon icon = MessageBoxIcon.None)
+  {
+    return Show(Title, text, buttons, icon);
+  }
+
+  /// <summary>
+  /// Shows a message.
+  /// </summary>
+  /// <returns>
+  /// A DialogResult.
+  /// </returns>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  /// <param name="buttons">The buttons.</param>
+  /// <param name="icon">The icon.</param>
+  static public DialogResult Show(string title,
+                                  string text,
+                                  MessageBoxButtons buttons = MessageBoxButtons.OK,
+                                  MessageBoxIcon icon = MessageBoxIcon.None)
+  {
+    if ( icon == MessageBoxIcon.None
+      && IconStyle == MessageBoxIconStyle.ForceInformation )
+      icon = MessageBoxIcon.Information;
+    else
+    if ( ( icon == MessageBoxIcon.Information || icon == MessageBoxIcon.Question )
+      && IconStyle == MessageBoxIconStyle.ForceNone )
+      icon = MessageBoxIcon.None;
+    DialogResult res = DialogResult.None;
+    SystemManager.TryCatchManage(() =>
+    {
+      res = FormStyle switch
       {
-        _Title = value;
-      }
-    }
-    static private string _Title;
+        MessageBoxFormStyle.System => ShowWinForm(title, text, buttons, icon),
+        MessageBoxFormStyle.Advanced => ShowAdvancedForm(title, text, buttons, icon),
+        _ => throw new AdvancedNotImplementedException(FormStyle),
+      };
+    });
+    return res;
+  }
 
-    /// <summary>
-    /// Plays the sound associated to a message box icon.
-    /// </summary>
-    static public void DoSound(MessageBoxIcon icon)
-    {
-      if ( !AdvancedFormUseSounds ) return;
-      switch ( icon )
-      {
-        case MessageBoxIcon.Information:
-          SystemSounds.Beep.Play();
-          break;
-        case MessageBoxIcon.Question:
-          SystemSounds.Hand.Play();
-          break;
-        case MessageBoxIcon.Warning:
-          SystemSounds.Exclamation.Play();
-          break;
-        case MessageBoxIcon.Error:
-          SystemSounds.Hand.Play();
-          break;
-      }
-    }
+  /// <summary>
+  /// Shows an information message.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowInformation(string text)
+  {
+    ShowInformation(Title, text);
+  }
 
-    /// <summary>
-    /// Plays the sound associated to a file.
-    /// </summary>
-    static public void DoSound(string pathSound)
-    {
-      new SoundPlayer(pathSound).Play();
-    }
+  /// <summary>
+  /// Shows an information message.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowInformation(string title, string text)
+  {
+    Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+  }
 
-    /// <summary>
-    /// Shows a success message or play a sound else do nothing.
-    /// </summary>
-    static public void ShowSuccessOrSound(string text, string pathSound)
-    {
-      if ( ShowSuccessDialogs )
-        Show(text);
-      else
-      if ( AdvancedFormUseSounds )
-        DoSound(pathSound);
-    }
+  /// <summary>
+  /// Shows a warning message.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowWarning(string text)
+  {
+    ShowWarning(Title, text);
+  }
 
-    /// <summary>
-    /// Shows a message.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="text">The text.</param>
-    /// <param name="buttons">The buttons.</param>
-    /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string text,
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                    MessageBoxIcon icon = MessageBoxIcon.None)
-    {
-      return Show(Title, text, buttons, icon);
-    }
+  /// <summary>
+  /// Shows a warning message.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowWarning(string title, string text)
+  {
+    Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+  }
 
-    /// <summary>
-    /// Shows a message.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    /// <param name="buttons">The buttons.</param>
-    /// <param name="icon">The icon.</param>
-    static public DialogResult Show(string title,
-                                    string text,
-                                    MessageBoxButtons buttons = MessageBoxButtons.OK,
-                                    MessageBoxIcon icon = MessageBoxIcon.None)
-    {
-      if ( icon == MessageBoxIcon.None
-        && IconStyle == MessageBoxIconStyle.ForceInformation )
-        icon = MessageBoxIcon.Information;
-      else
-      if ( ( icon == MessageBoxIcon.Information || icon == MessageBoxIcon.Question )
-        && IconStyle == MessageBoxIconStyle.ForceNone )
-        icon = MessageBoxIcon.None;
-      DialogResult res = DialogResult.None;
-      SystemManager.TryCatchManage(() =>
-      {
-        res = FormStyle switch
-        {
-          MessageBoxFormStyle.System => ShowWinForm(title, text, buttons, icon),
-          MessageBoxFormStyle.Advanced => ShowAdvancedForm(title, text, buttons, icon),
-          _ => throw new AdvancedNotImplementedException(FormStyle),
-        };
-      });
-      return res;
-    }
+  /// <summary>
+  /// Shows an error message.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowError(string text)
+  {
+    ShowError(Title, text);
+  }
 
-    /// <summary>
-    /// Shows an information message.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowInformation(string text)
-    {
-      ShowInformation(Title, text);
-    }
+  /// <summary>
+  /// Shows an error message.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowError(string title, string text)
+  {
+    Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+    DebugManager.Trace(LogTraceEvent.Error, text);
+  }
 
-    /// <summary>
-    /// Shows an information message.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowInformation(string title, string text)
-    {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
+  /// <summary>
+  /// Shows an error message and throw an AbortException.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowAndAbort(string text)
+  {
+    ShowAndAbort(Title, text);
+  }
 
-    /// <summary>
-    /// Shows a warning message.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowWarning(string text)
-    {
-      ShowWarning(Title, text);
-    }
+  /// <summary>
+  /// Shows an error message and throw an AbortException.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowAndAbort(string title, string text)
+  {
+    ShowError(title, text);
+    throw new AbortException();
+  }
 
-    /// <summary>
-    /// Shows a warning message.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowWarning(string title, string text)
-    {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-    }
+  /// <summary>
+  /// Shows an error message and exit the process.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowAndExit(string text)
+  {
+    ShowAndExit(Title, text);
+  }
 
-    /// <summary>
-    /// Shows an error message.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowError(string text)
-    {
-      ShowError(Title, text);
-    }
+  /// <summary>
+  /// Shows an error message and exit the process.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowAndExit(string title, string text)
+  {
+    ShowError(title, text);
+    SystemManager.Exit();
+  }
 
-    /// <summary>
-    /// Shows an error message.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowError(string title, string text)
-    {
-      Show(title, text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-      DebugManager.Trace(LogTraceEvent.Error, text);
-    }
+  /// <summary>
+  /// Shows an error message and terminate the process.
+  /// </summary>
+  /// <param name="text">The text.</param>
+  static public void ShowAndTerminate(string text)
+  {
+    ShowAndTerminate(Title, text);
+  }
 
-    /// <summary>
-    /// Shows an error message and throw an AbortException.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowAndAbort(string text)
-    {
-      ShowAndAbort(Title, text);
-    }
+  /// <summary>
+  /// Shows an error message and terminate the process.
+  /// </summary>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  static public void ShowAndTerminate(string title, string text)
+  {
+    ShowError(title, text);
+    SystemManager.Terminate();
+  }
 
-    /// <summary>
-    /// Shows an error message and throw an AbortException.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowAndAbort(string title, string text)
-    {
-      ShowError(title, text);
-      throw new AbortException();
-    }
+  /// <summary>
+  /// Shows a windows forms message box.
+  /// </summary>
+  /// <returns>
+  /// A DialogResult.
+  /// </returns>
+  /// <param name="title">The title.</param>
+  /// <param name="text">The text.</param>
+  /// <param name="buttons">The buttons.</param>
+  /// <param name="icon">The icon.</param>
+  static private DialogResult ShowWinForm(string title,
+                                          string text,
+                                          MessageBoxButtons buttons,
+                                          MessageBoxIcon icon)
+  {
+    return MessageBox.Show(text, title, buttons, icon);
+  }
 
-    /// <summary>
-    /// Shows an error message and exit the process.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowAndExit(string text)
-    {
-      ShowAndExit(Title, text);
-    }
-
-    /// <summary>
-    /// Shows an error message and exit the process.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowAndExit(string title, string text)
-    {
-      ShowError(title, text);
-      SystemManager.Exit();
-    }
-
-    /// <summary>
-    /// Shows an error message and terminate the process.
-    /// </summary>
-    /// <param name="text">The text.</param>
-    static public void ShowAndTerminate(string text)
-    {
-      ShowAndTerminate(Title, text);
-    }
-
-    /// <summary>
-    /// Shows an error message and terminate the process.
-    /// </summary>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    static public void ShowAndTerminate(string title, string text)
-    {
-      ShowError(title, text);
-      SystemManager.Terminate();
-    }
-
-    /// <summary>
-    /// Shows a windows forms message box.
-    /// </summary>
-    /// <returns>
-    /// A DialogResult.
-    /// </returns>
-    /// <param name="title">The title.</param>
-    /// <param name="text">The text.</param>
-    /// <param name="buttons">The buttons.</param>
-    /// <param name="icon">The icon.</param>
-    static private DialogResult ShowWinForm(string title,
-                                            string text,
-                                            MessageBoxButtons buttons,
-                                            MessageBoxIcon icon)
-    {
-      return MessageBox.Show(text, title, buttons, icon);
-    }
-
-    static private DialogResult ShowAdvancedForm(string title,
-                                                 string text,
-                                                 MessageBoxButtons buttons,
-                                                 MessageBoxIcon icon)
-    {
-      using var form = new MessageBoxEx(title, text, buttons, icon);
-      return form.ShowDialog();
-    }
-
+  static private DialogResult ShowAdvancedForm(string title,
+                                               string text,
+                                               MessageBoxButtons buttons,
+                                               MessageBoxIcon icon)
+  {
+    using var form = new MessageBoxEx(title, text, buttons, icon);
+    return form.ShowDialog();
   }
 
 }

@@ -12,63 +12,60 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides null safe of string dictionary.
+/// </summary>
+[Serializable]
+public class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+where TValue : Enum
 {
 
-  /// <summary>
-  /// Provides null safe of string dictionary.
-  /// </summary>
-  [Serializable]
-  public class NullSafeOfEnumDictionary<TKey, TValue> : Dictionary<TKey, TValue>
-  where TValue : Enum
+  public NullSafeOfEnumDictionary()
   {
-
-    public NullSafeOfEnumDictionary()
-    {
-    }
-
-    public NullSafeOfEnumDictionary(int capacity) : base(capacity)
-    {
-    }
-
-    public NullSafeOfEnumDictionary(IEqualityComparer<TKey> comparer) : base(comparer)
-    {
-    }
-
-    public NullSafeOfEnumDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
-    {
-    }
-
-    public NullSafeOfEnumDictionary(int capacity, IEqualityComparer<TKey> comparer) : base(capacity, comparer)
-    {
-    }
-
-    public NullSafeOfEnumDictionary(IDictionary<TKey, TValue> dictionary, IEqualityComparer<TKey> comparer) : base(dictionary, comparer)
-    {
-    }
-
-    protected NullSafeOfEnumDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
-
-    public new TValue this[TKey key]
-    {
-      get
-      {
-        return ContainsKey(key) ? base[key] : default;
-      }
-      set
-      {
-        if ( ContainsKey(key) )
-          base[key] = value;
-        else
-          Add(key, value);
-      }
-    }
   }
 
+  public NullSafeOfEnumDictionary(int capacity) : base(capacity)
+  {
+  }
+
+  public NullSafeOfEnumDictionary(IEqualityComparer<TKey> comparer) : base(comparer)
+  {
+  }
+
+  public NullSafeOfEnumDictionary(IDictionary<TKey, TValue> dictionary) : base(dictionary)
+  {
+  }
+
+  public NullSafeOfEnumDictionary(int capacity, IEqualityComparer<TKey> comparer) : base(capacity, comparer)
+  {
+  }
+
+  public NullSafeOfEnumDictionary(IDictionary<TKey, TValue> dictionary, IEqualityComparer<TKey> comparer) : base(dictionary, comparer)
+  {
+  }
+
+  protected NullSafeOfEnumDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
+  {
+  }
+
+  public new TValue this[TKey key]
+  {
+    get
+    {
+      return ContainsKey(key) ? base[key] : default;
+    }
+    set
+    {
+      if ( ContainsKey(key) )
+        base[key] = value;
+      else
+        Add(key, value);
+    }
+  }
 }
