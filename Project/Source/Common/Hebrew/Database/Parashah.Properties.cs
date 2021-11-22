@@ -12,60 +12,56 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Linq;
 using SQLite;
 using Ordisoftware.Core;
 using System.ComponentModel;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew
+public partial class Parashah
 {
 
-  public partial class Parashah
+  [PrimaryKey]
+  public string ID { get; set; }
+
+  public TorahBook Book { get; set; }
+  public int Number { get; set; }
+
+  public string VerseBegin { get; set; }
+  public string VerseEnd { get; set; }
+
+  public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
+
+  public string Name { get; set; }
+  public string Unicode { get; set; }
+  public string Hebrew { get; set; }
+
+  public string Translation { get; set; }
+  public string Lettriq { get; set; }
+
+  public Parashah GetLinked(List<Parashah> owner = null)
   {
-
-    [PrimaryKey]
-    public string ID { get; set; }
-
-    public TorahBook Book { get; set; }
-    public int Number { get; set; }
-
-    public string VerseBegin { get; set; }
-    public string VerseEnd { get; set; }
-
-    public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
-
-    public string Name { get; set; }
-    public string Unicode { get; set; }
-    public string Hebrew { get; set; }
-
-    public string Translation { get; set; }
-    public string Lettriq { get; set; }
-
-    public Parashah GetLinked(List<Parashah> owner = null)
-    {
-      if ( !IsLinkedToNext ) return null;
-      if ( owner != null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
-      var list = ParashotFactory.Instance.All.ToList();
-      return list[list.FindIndex(p => p.ID == ID) + 1];
-    }
-
-    public string Memo
-    {
-      get => _Memo;
-      set
-      {
-        _Memo = value;
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasMemo"));
-      }
-    }
-    private string _Memo;
-
-    public bool HasMemo => !Memo.IsNullOrEmpty();
-
-    public bool IsLinkedToNext { get; set; }
-
+    if ( !IsLinkedToNext ) return null;
+    if ( owner != null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
+    var list = ParashotFactory.Instance.All.ToList();
+    return list[list.FindIndex(p => p.ID == ID) + 1];
   }
+
+  public string Memo
+  {
+    get => _Memo;
+    set
+    {
+      _Memo = value;
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasMemo"));
+    }
+  }
+  private string _Memo;
+
+  public bool HasMemo => !Memo.IsNullOrEmpty();
+
+  public bool IsLinkedToNext { get; set; }
 
 }

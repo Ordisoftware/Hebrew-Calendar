@@ -12,19 +12,15 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using SQLite;
 
-namespace Ordisoftware.Hebrew
+[Table("Interlocks")]
+public class Interlock
 {
-
-  [Table("Interlocks")]
-  public class Interlock
-  {
-    [PrimaryKey, AutoIncrement]
-    public int ID { get; set; }
-    public int ProcessID { get; set; }
-    public string Name { get; set; }
-  }
-
+  [PrimaryKey, AutoIncrement]
+  public int ID { get; set; }
+  public int ProcessID { get; set; }
+  public string Name { get; set; }
 }

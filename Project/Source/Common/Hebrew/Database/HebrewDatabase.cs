@@ -12,69 +12,66 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-08 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
 using System.Linq;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+partial class HebrewDatabase : SQLiteDatabase
 {
 
-  partial class HebrewDatabase : SQLiteDatabase
+  static new public HebrewDatabase Instance { get; protected set; }
+
+  static HebrewDatabase()
   {
+    Instance = new HebrewDatabase();
+    SQLiteDatabase.Instance = Instance;
+  }
 
-    static new public HebrewDatabase Instance { get; protected set; }
+  private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
+  {
+    AutoLoadAllAtOpen = false;
+    Open();
+    CheckConnected();
+  }
 
-    static HebrewDatabase()
-    {
-      Instance = new HebrewDatabase();
-      SQLiteDatabase.Instance = Instance;
-    }
+  protected override void DoClose()
+  {
+    ReleaseParashot();
+    ReleaseLettriqs();
+  }
 
-    private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
-    {
-      AutoLoadAllAtOpen = false;
-      Open();
-      CheckConnected();
-    }
+  protected override void CreateTables()
+  {
+    CheckConnected();
+    Connection.CreateTable<Interlock>();
+    Connection.CreateTable<Parashah>();
+    Connection.CreateTable<TermHebrew>();
+    Connection.CreateTable<TermLettriq>();
+    Connection.CreateTable<TermAnalysis>();
+  }
 
-    protected override void DoClose()
-    {
-      ReleaseParashot();
-      ReleaseLettriqs();
-    }
+  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  public override void LoadAll()
+  {
+    string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
+    throw new NotImplementedException(message);
+  }
 
-    protected override void CreateTables()
-    {
-      CheckConnected();
-      Connection.CreateTable<Interlock>();
-      Connection.CreateTable<Parashah>();
-      Connection.CreateTable<TermHebrew>();
-      Connection.CreateTable<TermLettriq>();
-      Connection.CreateTable<TermAnalysis>();
-    }
+  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  protected override void DoSaveAll()
+  {
+    string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");
+    throw new NotImplementedException(message);
+  }
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
-    public override void LoadAll()
-    {
-      string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
-      throw new NotImplementedException(message);
-    }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
-    protected override void DoSaveAll()
-    {
-      string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");
-      throw new NotImplementedException(message);
-    }
-
-    protected override void UpgradeSchema()
-    {
-      base.UpgradeSchema();
-      const string table = "ProcessLocks";
-      if ( Connection.CheckTable(table) && Globals.ConcurrentRunningProcesses.Any() )
-        Connection.DropTableIfExists(table);
-    }
-
+  protected override void UpgradeSchema()
+  {
+    base.UpgradeSchema();
+    const string table = "ProcessLocks";
+    if ( Connection.CheckTable(table) && Globals.ConcurrentRunningProcesses.Any() )
+      Connection.DropTableIfExists(table);
   }
 
 }

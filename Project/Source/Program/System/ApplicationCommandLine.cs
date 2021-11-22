@@ -12,49 +12,45 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using CommandLine;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+class ApplicationCommandLine : SystemCommandLine
 {
 
-  class ApplicationCommandLine : SystemCommandLine
-  {
+  static public ApplicationCommandLine Instance
+    => SystemManager.CommandLineOptions as ApplicationCommandLine;
 
-    static public ApplicationCommandLine Instance
-      => SystemManager.CommandLineOptions as ApplicationCommandLine;
+  [Option("generate", Required = false, HelpText = "Generate calendar.")]
+  public bool Generate { get; set; }
 
-    [Option("generate", Required = false, HelpText = "Generate calendar.")]
-    public bool Generate { get; set; }
+  [Option("resetreminder", Required = false, HelpText = "Reset reminder.")]
+  public bool ResetReminder { get; set; }
 
-    [Option("resetreminder", Required = false, HelpText = "Reset reminder.")]
-    public bool ResetReminder { get; set; }
+  [Option("navigate", Required = false, HelpText = "Open navigation window.")]
+  public bool OpenNavigation { get; set; }
 
-    [Option("navigate", Required = false, HelpText = "Open navigation window.")]
-    public bool OpenNavigation { get; set; }
+  [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
+  public bool OpenDiffDates { get; set; }
 
-    [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
-    public bool OpenDiffDates { get; set; }
+  [Option("celebrationverses", Required = false, HelpText = "Open celebration verses board.")]
+  public bool OpenCelebrationVersesBoard { get; set; }
 
-    [Option("celebrationverses", Required = false, HelpText = "Open celebration verses board.")]
-    public bool OpenCelebrationVersesBoard { get; set; }
+  [Option("celebrations", Required = false, HelpText = "Open celebrations board.")]
+  public bool OpenCelebrationsBoard { get; set; }
 
-    [Option("celebrations", Required = false, HelpText = "Open celebrations board.")]
-    public bool OpenCelebrationsBoard { get; set; }
+  [Option("newmoons", Required = false, HelpText = "Open new moons board.")]
+  public bool OpenNewMoonsBoard { get; set; }
 
-    [Option("newmoons", Required = false, HelpText = "Open new moons board.")]
-    public bool OpenNewMoonsBoard { get; set; }
+  [Option("parashot", Required = false, HelpText = "Open parashot board.")]
+  public bool OpenParashotBoard { get; set; }
 
-    [Option("parashot", Required = false, HelpText = "Open parashot board.")]
-    public bool OpenParashotBoard { get; set; }
+  [Option("parashah", Required = false, HelpText = "Open weekly parashah description box.")]
+  public bool OpenWeeklyParashahBox { get; set; }
 
-    [Option("parashah", Required = false, HelpText = "Open weekly parashah description box.")]
-    public bool OpenWeeklyParashahBox { get; set; }
-
-    [Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
-    public bool OpenLunarMonthsBoard { get; set; }
-
-  }
+  [Option("lunarmonths", Required = false, HelpText = "Open lunar months board.")]
+  public bool OpenLunarMonthsBoard { get; set; }
 
 }

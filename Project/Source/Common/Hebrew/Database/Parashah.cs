@@ -12,53 +12,50 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-05 </edited>
-using System;
-using SQLite;
-using System.ComponentModel;
+namespace Ordisoftware.Hebrew;
 
-namespace Ordisoftware.Hebrew
+using System;
+using System.ComponentModel;
+using SQLite;
+
+[Serializable]
+[Table("Parashot")]
+public partial class Parashah : INotifyPropertyChanged
 {
 
-  [Serializable]
-  [Table("Parashot")]
-  public partial class Parashah : INotifyPropertyChanged
+  public event PropertyChangedEventHandler PropertyChanged;
+
+  public Parashah()
   {
+  }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+  public Parashah(TorahBook book,
+                  int number,
+                  string name,
+                  string unicode,
+                  string verseBegin,
+                  string verseEnd,
+                  bool isLinkedToNext = false,
+                  string translation = "",
+                  string lettriq = "")
+  {
+    Book = book;
+    Number = number;
+    Name = name;
+    Unicode = unicode;
+    Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
+    VerseBegin = verseBegin;
+    VerseEnd = verseEnd;
+    IsLinkedToNext = isLinkedToNext;
+    Translation = translation;
+    Lettriq = lettriq;
+    Memo = string.Empty;
+    ID = $"{(int)book}.{number}";
+  }
 
-    public Parashah()
-    {
-    }
-
-    public Parashah(TorahBook book,
-                    int number,
-                    string name,
-                    string unicode,
-                    string verseBegin,
-                    string verseEnd,
-                    bool isLinkedToNext = false,
-                    string translation = "",
-                    string lettriq = "")
-    {
-      Book = book;
-      Number = number;
-      Name = name;
-      Unicode = unicode;
-      Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-      VerseBegin = verseBegin;
-      VerseEnd = verseEnd;
-      IsLinkedToNext = isLinkedToNext;
-      Translation = translation;
-      Lettriq = lettriq;
-      Memo = string.Empty;
-      ID = $"{(int)book}.{number}";
-    }
-
-    public object Clone()
-    {
-      return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
-    }
-
+  public object Clone()
+  {
+    return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
   }
 
 }

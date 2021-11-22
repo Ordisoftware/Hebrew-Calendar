@@ -12,39 +12,34 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2020-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
 
-namespace Ordisoftware.Hebrew
+/// <summary>
+/// Provides Hebrew months names.
+/// </summary>
+static class HebrewMonths
 {
 
   /// <summary>
-  /// Provides Hebrew months names.
+  /// Indicates Unicode lunar months names.
   /// </summary>
-  static class HebrewMonths
+  static public readonly string[] Unicode =
   {
+    string.Empty,
+    "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
+    "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+    "אדר ב"
+  };
 
-    /// <summary>
-    /// Indicates Unicode lunar months names.
-    /// </summary>
-    static public readonly string[] Unicode =
-    {
-      string.Empty,
-      "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
-      "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
-      "אדר ב"
-    };
-
-    /// <summary>
-    /// Indicates phonetic lunar months names.
-    /// </summary>
-    static public readonly string[] Transcriptions =
-    {
-      string.Empty,
-      "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-      "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-      "Adar II"
-    };
-
-  }
+  /// <summary>
+  /// Indicates phonetic lunar months names.
+  /// </summary>
+  static public readonly string[] Transcriptions =
+  {
+    string.Empty,
+    "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
+    "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
+    "Adar II"
+  };
 
 }
