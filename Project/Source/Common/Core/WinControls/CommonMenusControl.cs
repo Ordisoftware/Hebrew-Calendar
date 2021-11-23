@@ -14,13 +14,9 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using Markdig;
-using TranslationPair = System.Collections.Generic.KeyValuePair<string, Ordisoftware.Core.TranslationsDictionary>;
+
+using TranslationPair = KeyValuePair<string, TranslationsDictionary>;
 
 partial class CommonMenusControl : UserControl
 {
@@ -233,7 +229,7 @@ partial class CommonMenusControl : UserControl
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
     File.WriteAllText(filePath, fileLines, Encoding.UTF8);
     SystemManager.RunShell(filePath);
-    var timer = new Timer { Interval = 60000 };
+    var timer = new System.Windows.Forms.Timer { Interval = 60000 };
     timer.Tick += (_s, _e) =>
     {
       timer.Stop();

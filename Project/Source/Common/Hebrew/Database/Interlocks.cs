@@ -14,13 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using Ordisoftware.Core;
-
 static class Interlocks
 {
 

@@ -14,10 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 /// <summary>
 /// Provides null safe dictionary.
 /// </summary>

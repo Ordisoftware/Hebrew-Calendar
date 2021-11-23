@@ -14,11 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Linq;
-using System.Text;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides Hebrew letters class to manage Hebrew font and Unicode chars
 /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.

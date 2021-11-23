@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// <summary>
 /// View mode enum.
 /// </summary>
-[System.Flags]
+[Flags]
 public enum ViewMode
 {
 

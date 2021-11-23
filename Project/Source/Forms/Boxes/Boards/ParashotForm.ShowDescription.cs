@@ -14,9 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Linq;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using MainForm = Calendar.MainForm;
 
 partial class ParashotForm : Form

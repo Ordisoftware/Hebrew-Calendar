@@ -14,10 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Collections.Generic;
-using Ordisoftware.Core;
-
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
@@ -68,7 +64,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     LunisolarDays = Connection.Table<LunisolarDay>().ToList();
   }
 
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");

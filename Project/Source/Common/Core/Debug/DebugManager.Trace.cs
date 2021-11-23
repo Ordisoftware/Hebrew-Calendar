@@ -14,12 +14,6 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using MoreLinq;
 using Serilog;
 using Serilog.Core;
 using Serilog.Events;
@@ -62,7 +56,7 @@ static partial class DebugManager
     TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize", "TraceFormTextBoxFontSize");
   }
 
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
+  [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
   static private void TraceEventAdded(string sourceContext, string str)
   {
     if ( TraceForm == null ) return;

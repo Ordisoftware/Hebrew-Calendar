@@ -14,8 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides form to edit the preferences.
 /// </summary>

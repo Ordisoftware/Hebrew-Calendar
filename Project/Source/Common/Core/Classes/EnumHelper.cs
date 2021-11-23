@@ -14,10 +14,6 @@
 /// <edited> 2021-02 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Globalization;
-using System.Linq;
-
 /// <summary>
 /// Provides enum helper.
 /// </summary>

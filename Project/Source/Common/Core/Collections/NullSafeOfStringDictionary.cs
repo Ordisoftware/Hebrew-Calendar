@@ -14,13 +14,6 @@
 /// <edited> 2021-02 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides null safe of string dictionary.
 /// </summary>

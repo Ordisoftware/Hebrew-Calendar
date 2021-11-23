@@ -14,12 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using EnumsNET;
-using Ordisoftware.Core;
-
 class TorahCelebrationVerses : ProviderSettings
 {
 

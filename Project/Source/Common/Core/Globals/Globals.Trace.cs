@@ -14,9 +14,6 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Core;
 
-using System.IO;
-using Serilog;
-
 /// <summary>
 /// Provides global variables.
 /// </summary>
@@ -26,8 +23,8 @@ static partial class Globals
   static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
     = TraceFileRollOverMode.Session;
 
-  static public RollingInterval SinkFileRollingInterval { get; set; }
-    = IsVisualStudioDesigner ? 0 : RollingInterval.Day;
+  static public Serilog.RollingInterval SinkFileRollingInterval { get; set; }
+    = IsVisualStudioDesigner ? 0 : Serilog.RollingInterval.Day;
 
   static public int SinkFileRetainedFileCountLimit { get; set; }
     = 7;

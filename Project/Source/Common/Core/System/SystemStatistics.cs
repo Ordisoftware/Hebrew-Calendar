@@ -14,12 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
 /// <summary>
 /// Provides system statistics.
 /// </summary>

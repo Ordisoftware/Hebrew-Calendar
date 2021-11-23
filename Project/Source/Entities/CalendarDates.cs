@@ -14,9 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using AASharp;
 
 /// <summary>

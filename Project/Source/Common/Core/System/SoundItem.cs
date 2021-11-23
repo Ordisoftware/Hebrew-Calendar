@@ -14,11 +14,6 @@
 /// <edited> 2021-01 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Media;
-
 /// <summary>
 /// Provides sound item.
 /// </summary>

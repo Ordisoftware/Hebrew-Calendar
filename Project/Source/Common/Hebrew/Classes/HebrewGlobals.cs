@@ -14,9 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.IO;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides Hebrew global variables.
 /// </summary>

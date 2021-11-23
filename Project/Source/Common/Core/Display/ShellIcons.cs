@@ -14,8 +14,8 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System.Drawing;
 using System.Runtime.InteropServices;
+
 using static Ordisoftware.Core.NativeMethods;
 
 /// <summary>

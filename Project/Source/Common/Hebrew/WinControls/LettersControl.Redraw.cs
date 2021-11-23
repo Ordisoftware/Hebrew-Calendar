@@ -14,11 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides Letters input panel Control.
 /// </summary>

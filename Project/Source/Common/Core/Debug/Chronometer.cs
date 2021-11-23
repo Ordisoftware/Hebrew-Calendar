@@ -14,11 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides benchmark helper.
 /// </summary>

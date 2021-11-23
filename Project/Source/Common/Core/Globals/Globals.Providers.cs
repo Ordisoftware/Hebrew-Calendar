@@ -14,10 +14,6 @@
 /// <edited> 2021-10 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-
 /// <summary>
 /// Provides global variables.
 /// </summary>

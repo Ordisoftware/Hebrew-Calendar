@@ -14,15 +14,6 @@
 /// <edited> 2021-10 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides win forms helper.
 /// </summary>

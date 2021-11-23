@@ -239,6 +239,7 @@
     <Compile Include="Source\Common\Core\Globals\Globals.Providers.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.State.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.Trace.cs" />
+    <Compile Include="Source\Common\Core\Globals\GlobalUsings.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProviders.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProvidersHelper.cs" />
@@ -753,12 +754,6 @@
     <Compile Include="Source\Enums\MoonriseOccurring.cs" />
     <Compile Include="Dependencies\MoonPhaseImage\MoonPhaseImage.cs">
     </Compile>
-    <Compile Include="Source\Forms\Config\AboutBoxOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Forms\Config\AboutBoxOld.Designer.cs">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1028,13 +1023,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Reminder\SelectSuspendDelayForm.resx">
       <DependentUpon>SelectSuspendDelayForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\AboutBoxOld.fr.resx">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Config\AboutBoxOld.resx">
-      <DependentUpon>AboutBoxOld.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectBirthTimeForm.fr.resx">
       <DependentUpon>SelectBirthTimeForm.cs</DependentUpon>

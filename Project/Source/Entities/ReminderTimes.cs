@@ -14,8 +14,6 @@
 /// <edited> 2021-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-
 /// <summary>
 /// Provides reminder times.
 /// </summary>

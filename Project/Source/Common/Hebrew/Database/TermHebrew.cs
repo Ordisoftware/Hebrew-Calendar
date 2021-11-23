@@ -14,9 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using SQLite;
 
 [Serializable]

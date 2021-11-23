@@ -14,8 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-
 partial class LunisolarDay
 {
 

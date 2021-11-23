@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Localization strings.
 /// </summary>
-[System.Diagnostics.CodeAnalysis.SuppressMessage("Simplification", "RCS1214:Unnecessary interpolated string.", Justification = "Readability")]
+[SuppressMessage("Simplification", "RCS1214:Unnecessary interpolated string.", Justification = "Readability")]
 static partial class SysTranslations
 {
 

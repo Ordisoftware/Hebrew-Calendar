@@ -14,12 +14,8 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-using System;
 using System.Configuration;
-using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows.Forms;
 using GregsStack.InputSimulatorStandard;
 using Microsoft.Win32;
 

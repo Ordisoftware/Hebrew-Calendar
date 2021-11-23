@@ -14,9 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-
 /// <summary>
 /// Provides sorted auto dictionary.
 /// </summary>

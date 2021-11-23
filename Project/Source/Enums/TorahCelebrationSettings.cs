@@ -14,11 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Collections.Generic;
-using System.Linq;
-using EnumsNET;
-using MoreLinq;
-
 /// <summary>
 /// Torah celebrations days and durations.
 /// </summary>

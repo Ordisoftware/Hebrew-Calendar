@@ -14,8 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-
 /// <summary>
 /// Indicates the location of a control enum.
 /// </summary>

@@ -14,15 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Data;
-using System.Text;
-using System.IO;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using Ordisoftware.Core;
-
 partial class EditDateBookmarksForm : Form
 {
 

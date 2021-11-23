@@ -15,8 +15,6 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Printing;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using CoolPrintPreview;
 
 partial class MainForm

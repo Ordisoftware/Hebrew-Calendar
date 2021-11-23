@@ -14,12 +14,7 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using Microsoft.Win32;
 
 /// <summary>

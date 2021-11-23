@@ -14,14 +14,8 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-using KVPDataExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.DataExportTarget, string>;
-using KVPImageExportTarget = System.Collections.Generic.KeyValuePair<Ordisoftware.Core.ImageExportTarget, string>;
+using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
+using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
 
 /// <summary>
 /// Provides form to edit the preferences.

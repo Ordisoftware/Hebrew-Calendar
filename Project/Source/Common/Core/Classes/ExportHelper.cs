@@ -14,13 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Windows.Forms;
-using EnumsNET;
-
 /// <summary>
 /// Provides export helper.
 /// </summary>

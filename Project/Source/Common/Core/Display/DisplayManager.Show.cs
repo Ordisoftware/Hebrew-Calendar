@@ -14,11 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System.Diagnostics;
-using System.IO;
-using System.Media;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides messages and questions with waiting user communication feedback as well as UI sync.
 /// </summary>

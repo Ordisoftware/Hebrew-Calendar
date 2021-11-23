@@ -14,8 +14,6 @@
 /// <edited> 2020-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using Ordisoftware.Core;
-
 /// <summary>
 /// Localization strings.
 /// </summary>

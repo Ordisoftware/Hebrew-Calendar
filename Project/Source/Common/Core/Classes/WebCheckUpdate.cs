@@ -11,17 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using System.Windows.Forms;
 
 /// <summary>
 /// Provides web check update.
@@ -64,6 +55,7 @@ static class WebCheckUpdate
     var form = FormsHelper.GetActiveForm();
     bool formEnabled = form?.Enabled ?? false;
     bool formTopMost = form?.TopMost ?? false;
+    bool formHidden = LoadingForm.Instance.Hidden;
     try
     {
       Mutex = true;
@@ -73,6 +65,7 @@ static class WebCheckUpdate
         form.TopMost = formTopMost;
         form.Enabled = false;
       }
+      LoadingForm.Instance.Hidden = false;
       LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
       LoadingForm.Instance.Owner = Globals.MainForm;
       LoadingForm.Instance.DoProgress();
@@ -115,6 +108,7 @@ static class WebCheckUpdate
     finally
     {
       Mutex = false;
+      LoadingForm.Instance.Hidden = formHidden;
       LoadingForm.Instance.Hide();
       if ( form != null )
       {

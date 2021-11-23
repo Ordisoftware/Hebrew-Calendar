@@ -14,11 +14,6 @@
 /// <edited> 2020-12 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
-
 /// <summary>
 /// Provides global variables.
 /// </summary>
@@ -94,7 +89,7 @@ static partial class Globals
   /// Gets the assembly GUID.
   /// </summary>
   static public string AssemblyGUID
-    => GetAttribute<GuidAttribute>().Value;
+    => GetAttribute<System.Runtime.InteropServices.GuidAttribute>().Value;
 
   /// <summary>
   /// Gets the assembly compiled DateTime.

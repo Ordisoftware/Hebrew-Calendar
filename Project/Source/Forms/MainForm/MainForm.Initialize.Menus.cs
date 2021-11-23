@@ -14,9 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides application's main form.
 /// </summary>

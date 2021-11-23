@@ -14,8 +14,6 @@
 /// <edited> 2012-02 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-
 /// <summary>
 /// Provides object helper.
 /// </summary>

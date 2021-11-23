@@ -14,10 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides years interval item.
 /// </summary>

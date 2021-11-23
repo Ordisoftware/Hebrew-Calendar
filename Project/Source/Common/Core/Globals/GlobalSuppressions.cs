@@ -2,7 +2,6 @@
 // attributes that are applied to this project.
 // Project-level suppressions either have no target or are given 
 // a specific target and scoped to a namespace, type, member, etc.
-using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Info Code Smell", "S1135:Track uses of \"TODO\" tags", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Major Code Smell", "S1066:Collapsible \"if\" statements should be merged", Justification = "Opinion based", Scope = "module")]
@@ -38,5 +37,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Redundancy", "RCS1036:Remove redundant empty line.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Performance", "RCS1096:Convert 'HasFlag' call to bitwise operation (or vice versa).", Justification = "Opinion based", Scope = "module")]
 
-
-//[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "Hide", Scope = "type", Target = "~T:Ordisoftware.Hebrew.Calendar.Data.DataSet")]
+//[assembly: SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "Hide", Scope = "type", Target = "~T:Ordisoftware.Hebrew.Calendar.Data.DataSet")]

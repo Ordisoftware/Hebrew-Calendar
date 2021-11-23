@@ -14,8 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-
 /// <summary>
 /// Provides sun and moon rise and set structure.
 /// </summary>

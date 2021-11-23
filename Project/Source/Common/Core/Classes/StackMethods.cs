@@ -14,24 +14,7 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using static Ordisoftware.Core.NativeMethods;
-
 
 static class StackMethods
 {
@@ -395,7 +378,7 @@ static class StackMethods
       string path = sourcepath;
       foreach ( string file in Directory.GetFiles(path, "*fr.resx", SearchOption.AllDirectories) )
       {
-        var xdoc = XDocument.Load(file);
+        var xdoc = System.Xml.Linq.XDocument.Load(file);
         var elements = xdoc.Root.Elements("data");
         var items = elements.Where(item => ( (string)item.Attribute("name") ).Contains(".Image")).ToList();
         if ( items.Count > 0 )
@@ -431,7 +414,7 @@ static class StackMethods
   static public Rectangle GetTaskbarCoordonates()
   {
     var data = new APPBARDATA();
-    data.cbSize = Marshal.SizeOf(data);
+    data.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(data);
     IntPtr retval = SHAppBarMessage(ABM_GETTASKBARPOS, ref data);
     if ( retval == IntPtr.Zero )
       throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));

@@ -14,10 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Linq;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides about box.
 /// </summary>
@@ -72,6 +68,7 @@ partial class AboutBox : Form
     LabelTrademark.Text = Globals.AssemblyTrademark;
     EditLicense.Rtf = LicenseAsRTF;
     Width = LabelDescription.Left + LabelDescription.Width + LabelDescription.Left + LabelDescription.Left;
+    Height = (int)( Width * 0.75 );
     Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     this.CenterToMainFormElseScreen();
   }

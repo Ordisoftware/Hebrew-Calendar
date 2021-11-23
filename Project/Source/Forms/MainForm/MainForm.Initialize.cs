@@ -14,18 +14,11 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
 using System.Xml;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 using Microsoft.Win32;
-using Ordisoftware.Core;
-using EnumsNET;
+
 using CalenderNet = CodeProjectCalendar.NET.Calendar;
 using Modifiers = Base.Hotkeys.Modifiers;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Provides application's main form.

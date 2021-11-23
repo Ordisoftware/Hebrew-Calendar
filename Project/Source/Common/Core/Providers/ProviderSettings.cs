@@ -14,9 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-
 abstract class ProviderSettings
 {
 

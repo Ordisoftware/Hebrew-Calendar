@@ -14,8 +14,6 @@
 /// <edited> 2021-10 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Text;
 using System.Runtime.InteropServices;
 
 #pragma warning disable S2346 // Flags enumerations zero-value members should be named "None"

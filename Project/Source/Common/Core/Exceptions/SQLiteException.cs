@@ -14,15 +14,11 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Data.Common;
-using System.Runtime.Serialization;
-
 /// <summary>
 /// Provides SQLite exception.
 /// </summary>
 [Serializable]
-class SQLiteException : DbException
+class SQLiteException : System.Data.Common.DbException
 {
   public SQLiteException() { }
   public SQLiteException(string message) : base(message) { }

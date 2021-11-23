@@ -14,9 +14,6 @@
 /// <edited> 2021-02 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Windows.Forms;
-
 partial class TextBoxEx
 {
 

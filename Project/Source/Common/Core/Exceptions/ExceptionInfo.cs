@@ -14,14 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
-
 #pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
 /// <summary>
 /// Provides exception information.

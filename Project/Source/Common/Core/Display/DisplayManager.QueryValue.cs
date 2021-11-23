@@ -14,8 +14,6 @@
 /// <edited> 2021-03 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-
 /// <summary>
 /// Provides multi-threaded messages output and messages box.
 /// </summary>

@@ -14,11 +14,7 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Linq;
 using SQLite;
-using Ordisoftware.Core;
-using System.ComponentModel;
-using System.Collections.Generic;
 
 public partial class Parashah
 {

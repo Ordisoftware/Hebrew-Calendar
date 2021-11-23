@@ -14,14 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using MoreLinq;
-using Ordisoftware.Core;
-
 partial class SelectExportTargetForm : Form
 {
 

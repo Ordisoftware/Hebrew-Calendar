@@ -14,13 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 public enum LettersControlFocusSelect
 {
   None,
@@ -320,7 +313,7 @@ partial class LettersControl : UserControl
   /// <summary>
   /// Input TextChanging event.
   /// </summary>
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
+  [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
   private void Input_TextChanging(object sender, TextUpdating mode, ref string text)
   {
     text = text.RemoveDiacritics().Replace(" ", string.Empty);

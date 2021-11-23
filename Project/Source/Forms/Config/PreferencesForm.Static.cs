@@ -15,12 +15,6 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using EnumsNET;
-using Ordisoftware.Core;
 
 /// <summary>
 /// Provides form to edit the preferences.

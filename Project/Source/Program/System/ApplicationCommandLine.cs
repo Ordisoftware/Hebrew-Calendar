@@ -15,7 +15,6 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CommandLine;
-using Ordisoftware.Core;
 
 class ApplicationCommandLine : SystemCommandLine
 {

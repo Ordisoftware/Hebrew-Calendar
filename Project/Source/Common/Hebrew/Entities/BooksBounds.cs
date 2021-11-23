@@ -14,9 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using Ordisoftware.Core;
-
 public struct BookBound
 {
   public int Min { get; }

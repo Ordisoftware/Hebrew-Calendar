@@ -14,10 +14,6 @@
 /// <edited> 2020-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 partial class SelectDayForm : Form
 {
 

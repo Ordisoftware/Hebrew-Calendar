@@ -14,19 +14,19 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Localization strings.
 /// </summary>
 static partial class AppTranslations
 {
 
-  static public string ToStringExport<T>(this Enum value, NullSafeDictionary<T, TranslationsDictionary> translations, bool forceEnglish = false)
+  static public string ToStringExport<T>(this Enum value, NullSafeDictionary<T, TranslationsDictionary> translations,
+                                         bool forceEnglish = false)
   where T : Enum
   {
-    return Program.Settings.ExportDataEnumsAsTranslations ? translations.GetLang((T)value, forceEnglish) : ( (T)value ).ToString();
+    return Program.Settings.ExportDataEnumsAsTranslations
+           ? translations.GetLang((T)value, forceEnglish)
+           : ( (T)value ).ToString();
   }
 
   static public readonly TranslationsDictionary ApplicationDescription = new()

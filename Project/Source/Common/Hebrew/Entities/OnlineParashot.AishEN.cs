@@ -14,8 +14,6 @@
 /// <edited> 2021-03 </edited>
 namespace Ordisoftware.Hebrew;
 
-using Ordisoftware.Core;
-
 static partial class OnlineParashot
 {
 

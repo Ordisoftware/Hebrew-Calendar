@@ -14,11 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.IO;
-using System.Collections.Generic;
-using Ordisoftware.Core;
-
 class DateBookmarks
 {
 

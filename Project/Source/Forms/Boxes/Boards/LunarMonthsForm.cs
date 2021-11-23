@@ -14,11 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 partial class LunarMonthsForm : Form
 {
 
