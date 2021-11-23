@@ -14,10 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Linq;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides about box.
 /// </summary>

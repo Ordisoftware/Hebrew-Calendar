@@ -14,9 +14,6 @@
 /// <edited> 2020-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Windows.Forms;
-
 partial class ShowTextForm : Form
 {
 

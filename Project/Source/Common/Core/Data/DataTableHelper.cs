@@ -14,14 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text;
-using FileHelpers;
-using FileHelpers.Options;
-using Newtonsoft.Json;
-
 /// <summary>
 /// Provides DataTable helper.
 /// </summary>

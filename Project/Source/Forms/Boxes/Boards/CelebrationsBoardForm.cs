@@ -14,15 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.IO;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using System.Globalization;
-using Ordisoftware.Core;
-
 partial class CelebrationsBoardForm : Form
 {
 

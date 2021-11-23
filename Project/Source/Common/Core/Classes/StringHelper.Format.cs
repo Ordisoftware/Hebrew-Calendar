@@ -14,8 +14,6 @@
 /// <edited> 2020-12 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-
 /// <summary>
 /// Provides system helper.
 /// </summary>

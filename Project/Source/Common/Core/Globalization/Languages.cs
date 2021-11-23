@@ -14,11 +14,6 @@
 /// <edited> 2021-01 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Globalization;
-using System.Linq;
-using EnumsNET;
-
 /// <summary>
 /// Indicates supported languages.
 /// </summary>

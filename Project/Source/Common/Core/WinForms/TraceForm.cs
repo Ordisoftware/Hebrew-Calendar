@@ -14,11 +14,6 @@
 /// <edited> 2020-12 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-
 partial class TraceForm : Form
 {
 

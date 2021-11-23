@@ -14,8 +14,6 @@
 /// <edited> 2020-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides form to edit the preferences.
 /// </summary>

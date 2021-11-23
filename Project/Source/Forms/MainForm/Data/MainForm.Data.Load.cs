@@ -14,10 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.IO;
-using Ordisoftware.Core;
-
 partial class MainForm
 {
 

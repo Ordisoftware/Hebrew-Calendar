@@ -14,10 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Collections.Generic;
-using System.Linq;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides application statistics.
 /// </summary>

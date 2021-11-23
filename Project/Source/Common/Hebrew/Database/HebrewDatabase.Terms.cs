@@ -14,9 +14,7 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Collections.Generic;
 using Equin.ApplicationFramework;
-using Ordisoftware.Core;
 
 partial class HebrewDatabase : SQLiteDatabase
 {

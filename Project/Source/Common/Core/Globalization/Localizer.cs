@@ -14,11 +14,6 @@
 /// <edited> 2021-02 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Globalization;
-using System.Runtime.Serialization;
-using System.Text;
-
 /// <summary>
 /// Provides translations dictionary.
 /// </summary>

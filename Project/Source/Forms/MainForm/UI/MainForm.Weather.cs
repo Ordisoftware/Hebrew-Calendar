@@ -14,12 +14,7 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Net;
-using System.Threading;
 using Newtonsoft.Json.Linq;
-using Ordisoftware.Core;
 
 partial class MainForm
 {

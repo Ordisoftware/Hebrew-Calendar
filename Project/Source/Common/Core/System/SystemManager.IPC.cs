@@ -14,10 +14,8 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System;
 using System.IO.Pipes;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Threading;
 
 /// <summary>
 /// Provides system management.

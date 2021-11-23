@@ -14,17 +14,8 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.IO;
 using System.IO.Pipes;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 
 /// <summary>
 /// Provides Program class.

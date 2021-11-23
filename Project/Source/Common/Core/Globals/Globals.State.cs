@@ -14,9 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Configuration;
-
 public enum ApplicationState
 {
 }
@@ -35,7 +32,7 @@ static partial class Globals
   /// <summary>
   /// Indicates the application settings.
   /// </summary>
-  static public ApplicationSettingsBase Settings { get; set; }
+  static public System.Configuration.ApplicationSettingsBase Settings { get; set; }
 
   /// <summary>
   /// Indicates if database has been upgraded.

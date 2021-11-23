@@ -14,9 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides calendar date item.
 /// </summary>

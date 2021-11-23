@@ -14,13 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides application's main form.
 /// </summary>
@@ -1035,7 +1028,7 @@ public partial class MainForm : Form
   /// <summary>
   /// Event handler. Called by TimerMidnight for tick events.
   /// </summary>
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
+  [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
   private void TimerMidnight_Tick(DateTime Time)
   {
     DoTimerMidnight();

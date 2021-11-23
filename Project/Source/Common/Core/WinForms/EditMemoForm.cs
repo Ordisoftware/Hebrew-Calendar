@@ -14,8 +14,6 @@
 /// <edited> 2020-03 </edited>
 namespace Ordisoftware.Core;
 
-using System.Windows.Forms;
-
 partial class EditMemoForm : Form
 {
 

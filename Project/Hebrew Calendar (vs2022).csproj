@@ -239,6 +239,7 @@
     <Compile Include="Source\Common\Core\Globals\Globals.Providers.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.State.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.Trace.cs" />
+    <Compile Include="Source\Common\Core\Globals\GlobalUsings.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProviderItem.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProviders.cs" />
     <Compile Include="Source\Common\Core\Providers\OnlineProvidersHelper.cs" />

@@ -14,13 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-
 partial class DataFileEditorForm : Form
 {
 

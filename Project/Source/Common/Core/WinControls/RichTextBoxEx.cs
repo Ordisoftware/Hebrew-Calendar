@@ -1,8 +1,6 @@
 ﻿namespace Ordisoftware.Core;
 
-using System;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 /// <summary>
 /// Represents a standard <see cref="RichTextBox"/> with some

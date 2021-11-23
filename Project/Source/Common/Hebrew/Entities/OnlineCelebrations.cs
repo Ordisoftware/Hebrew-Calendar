@@ -14,8 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Collections.Generic;
-
 static class OnlineCelebration
 {
 

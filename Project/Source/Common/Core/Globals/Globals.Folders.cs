@@ -14,9 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System.IO;
-using System.Windows.Forms;
-
 using static System.Environment;
 
 /// <summary>

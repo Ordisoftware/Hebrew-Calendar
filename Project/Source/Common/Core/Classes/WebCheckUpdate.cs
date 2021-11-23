@@ -14,15 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides web check update.
 /// </summary>

@@ -14,12 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using MoreLinq;
-
 /// <summary>
 /// Provides string helper.
 /// </summary>

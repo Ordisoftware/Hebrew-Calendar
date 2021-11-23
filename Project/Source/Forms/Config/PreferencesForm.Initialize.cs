@@ -14,14 +14,8 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
 using System.Drawing.Text;
-using System.Linq;
-using System.Windows.Forms;
 using System.Xml;
-using EnumsNET;
-using MoreLinq;
-using Ordisoftware.Core;
 
 /// <summary>
 /// Provides form to edit the preferences.

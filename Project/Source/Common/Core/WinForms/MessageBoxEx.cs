@@ -14,12 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-
 partial class MessageBoxEx : Form
 {
 

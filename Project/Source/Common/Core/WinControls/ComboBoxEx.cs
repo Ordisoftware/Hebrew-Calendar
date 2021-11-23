@@ -14,9 +14,6 @@
 /// <edited> 2021-03 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Windows.Forms;
-
 public class ComboBoxEx : ComboBox
 {
 

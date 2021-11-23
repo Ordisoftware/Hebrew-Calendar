@@ -19,6 +19,7 @@ namespace Ordisoftware.Core;
 /// </summary>
 public enum DataFileFolder
 {
+
   /// <summary>
   /// Application documents folder.
   /// </summary>
@@ -38,4 +39,5 @@ public enum DataFileFolder
   /// User application data application folder.
   /// </summary>
   UserApplication
+
 }

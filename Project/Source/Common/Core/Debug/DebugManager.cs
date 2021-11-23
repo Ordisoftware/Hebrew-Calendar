@@ -14,11 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-using System.Windows.Forms;
 using Serilog;
 using Serilog.Formatting.Display;
 using Serilog.Sinks.WinForms;

@@ -14,12 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.IO;
-using System.Linq;
-using System.Drawing;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using Program = Calendar.Program;
 using Properties = Calendar.Properties;
 using MainForm = Calendar.MainForm;

@@ -14,11 +14,7 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Management;
-using System.Reflection;
 using System.Runtime.Versioning;
 using Microsoft.Win32;
 

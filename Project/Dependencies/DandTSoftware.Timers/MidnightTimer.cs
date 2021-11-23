@@ -1,5 +1,7 @@
 using System;
-using System.Timers;
+using Timer = System.Timers.Timer;
+using ElapsedEventArgs = System.Timers.ElapsedEventArgs;
+using ElapsedEventHandler = System.Timers.ElapsedEventHandler;
 
 namespace DandTSoftware.Timers
 {

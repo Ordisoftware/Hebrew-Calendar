@@ -14,13 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides online providers list helper to create menu items.
 /// </summary>

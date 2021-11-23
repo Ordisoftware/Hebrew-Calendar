@@ -14,7 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
 using SQLite;
 
 [Serializable]

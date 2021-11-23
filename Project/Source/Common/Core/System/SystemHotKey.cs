@@ -14,12 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Windows.Forms;
 using Base.Hotkeys;
-using EnumsNET;
 using GregsStack.InputSimulatorStandard.Native;
 
 /// <summary>

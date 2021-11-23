@@ -14,11 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.ComponentModel;
-
 public struct UndoRedoItem
 {
   public string Text { get; set; }

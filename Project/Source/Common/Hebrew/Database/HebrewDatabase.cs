@@ -14,10 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.Linq;
-using Ordisoftware.Core;
-
 partial class HebrewDatabase : SQLiteDatabase
 {
 
@@ -52,14 +48,14 @@ partial class HebrewDatabase : SQLiteDatabase
     Connection.CreateTable<TermAnalysis>();
   }
 
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   public override void LoadAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
     throw new NotImplementedException(message);
   }
 
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");

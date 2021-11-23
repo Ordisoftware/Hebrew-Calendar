@@ -14,12 +14,7 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Odbc;
-using System.IO;
-using System.Linq;
 using Microsoft.Win32;
 
 /// <summary>

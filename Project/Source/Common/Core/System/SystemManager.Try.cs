@@ -14,8 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-
 /// <summary>
 /// Provides system management.
 /// </summary>

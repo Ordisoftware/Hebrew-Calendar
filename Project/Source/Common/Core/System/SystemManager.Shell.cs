@@ -14,16 +14,6 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
-using CommandLine;
-
 /// <summary>
 /// Provides system management.
 /// </summary>
@@ -49,9 +39,9 @@ static partial class SystemManager
     try
     {
       CommandLineArguments = args;
-      ParserResult<T> options = Parser.Default.ParseArguments<T>(args);
-      if ( options.Tag != ParserResultType.Parsed ) return;
-      CommandLineOptions = ( (Parsed<T>)options ).Value;
+      CommandLine.ParserResult<T> options = CommandLine.Parser.Default.ParseArguments<T>(args);
+      if ( options.Tag != CommandLine.ParserResultType.Parsed ) return;
+      CommandLineOptions = ( (CommandLine.Parsed<T>)options ).Value;
       if ( !CommandLineOptions.Language.IsNullOrEmpty() )
         foreach ( var lang in Languages.Values )
           if ( CommandLineOptions.Language.ToLower() == lang.Key )
@@ -209,7 +199,7 @@ static partial class SystemManager
     try
     {
       using var stream = File.OpenRead(filePath);
-      using var sha = SHA512.Create();
+      using var sha = System.Security.Cryptography.SHA512.Create();
       return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "").ToLower();
     }
     catch ( Exception ex )

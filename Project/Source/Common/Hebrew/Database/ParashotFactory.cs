@@ -14,12 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using EnumsNET;
-using Ordisoftware.Core;
-
 class ParashotFactory : ProviderSettings
 {
 

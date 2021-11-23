@@ -14,13 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Runtime.Serialization;
-using Ordisoftware.Core;
-
 partial class MainForm
 {
 
@@ -61,7 +54,8 @@ partial class MainForm
                                     .Skip(3)
                                     .SkipWhile(line => filter(line, interval.Start.Value, true))
                                     .TakeWhile(line => filter(line, interval.End.Value, false));
-    return CalendarText.Lines.Take(3).Concat(linesFiltered).Append(CalendarText.Lines.Last());
+    var result = CalendarText.Lines.Take(3).Concat(linesFiltered);
+    return Enumerable.Append(result, CalendarText.Lines.Last());
     //
     bool filter(string line, DateTime dateTrigger, bool strict)
     {

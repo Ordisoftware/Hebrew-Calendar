@@ -14,10 +14,6 @@
 /// <edited> 2021-08 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Data;
-using System.Linq;
-using MoreLinq;
 using SQLite;
 
 /// <summary>

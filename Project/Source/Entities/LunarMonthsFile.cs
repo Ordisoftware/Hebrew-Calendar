@@ -14,10 +14,6 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Collections.Generic;
-using System.IO;
-using Ordisoftware.Core;
-
 /// <summary>
 /// Provides lunar months file.
 /// </summary>

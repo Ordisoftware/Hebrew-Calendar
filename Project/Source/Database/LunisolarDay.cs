@@ -14,10 +14,7 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Collections.Generic;
 using SQLite;
-using Ordisoftware.Core;
 
 [Serializable]
 [Table("LunisolarDays")]

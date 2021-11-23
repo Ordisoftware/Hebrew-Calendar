@@ -14,11 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-using System.Linq;
-using System.Net;
-
 /// <summary>
 /// Provides system management.
 /// </summary>

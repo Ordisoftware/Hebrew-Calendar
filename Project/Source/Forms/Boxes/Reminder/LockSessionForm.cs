@@ -14,10 +14,7 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Ordisoftware.Core;
 
 partial class LockSessionForm : Form
 {

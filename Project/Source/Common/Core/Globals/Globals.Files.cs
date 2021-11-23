@@ -14,9 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-
 /// <summary>
 /// Provides global variables.
 /// </summary>

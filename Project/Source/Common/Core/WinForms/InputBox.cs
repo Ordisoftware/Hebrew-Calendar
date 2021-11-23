@@ -14,9 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides input box.
 /// </summary>

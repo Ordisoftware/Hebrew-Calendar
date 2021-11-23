@@ -14,13 +14,6 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-using FileHelpers;
-
 partial class SelectCityForm : Form
 {
 

@@ -14,8 +14,6 @@
 /// <edited> 2019-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Globalization;
 using Keith_Burnett_moonr2cs;
 
 /// <summary>

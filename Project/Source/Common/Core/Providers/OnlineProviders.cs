@@ -14,11 +14,6 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
-
 /// <summary>
 /// Provides online providers list.
 /// </summary>

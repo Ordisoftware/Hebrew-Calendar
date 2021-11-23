@@ -14,10 +14,6 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Text;
-using System.Windows.Forms;
-using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Calendar.Properties;
 
 /// <summary>

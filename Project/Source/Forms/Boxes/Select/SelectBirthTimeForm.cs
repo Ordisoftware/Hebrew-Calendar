@@ -14,9 +14,6 @@
 /// <edited> 2019-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Windows.Forms;
-
 partial class SelectBirthTimeForm : Form
 {
 

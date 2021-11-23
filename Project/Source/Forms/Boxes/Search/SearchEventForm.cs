@@ -14,12 +14,6 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using Ordisoftware.Core;
-
 partial class SearchEventForm : Form
 {
 

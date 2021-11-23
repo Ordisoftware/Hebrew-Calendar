@@ -14,11 +14,6 @@
 /// <edited> 2021-10 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-
 /// <summary>
 /// Provides online provider item.
 /// </summary>

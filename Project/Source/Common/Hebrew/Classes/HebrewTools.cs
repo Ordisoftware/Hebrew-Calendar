@@ -14,12 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System;
-using System.IO;
-using System.Linq;
-using Ordisoftware.Core;
-
-
 /// <summary>
 /// Provides Hebrew tools.
 /// </summary>

@@ -14,9 +14,6 @@
 /// <edited> 2019-11 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
-
 public class MenuChoice
 {
   public string Title { get; }

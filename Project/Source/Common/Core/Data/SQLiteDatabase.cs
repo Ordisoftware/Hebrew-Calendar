@@ -14,8 +14,6 @@
 /// <edited> 2021-07 </edited>
 namespace Ordisoftware.Core;
 
-using System;
-using System.Collections.Generic;
 using SQLite;
 
 public delegate void LoadingDataEventHandler(Type type);

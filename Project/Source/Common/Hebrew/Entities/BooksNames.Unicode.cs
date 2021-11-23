@@ -14,8 +14,6 @@
 /// <edited> 2019-01 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Collections.Generic;
-
 static partial class BooksNames
 {
 
