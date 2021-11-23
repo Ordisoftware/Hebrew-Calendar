@@ -14,10 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Core;
 
-public enum ApplicationState
-{
-}
-
 /// <summary>
 /// Provides global variables.
 /// </summary>
@@ -70,11 +66,6 @@ static partial class Globals
   static public bool IsPrinting { get; set; }
 
   /// <summary>
-  /// Indicates if current processing must be cancelled.
-  /// </summary>
-  static public bool CancelRequired { get; set; }
-
-  /// <summary>
   /// Indicates if the windows session is ending.
   /// </summary>
   static public bool IsSessionEnding { get; set; }
@@ -88,5 +79,10 @@ static partial class Globals
   /// Indicates if the application can be closed.
   /// </summary>
   static public bool AllowClose { get; set; } = true;
+
+  /// <summary>
+  /// Indicates if current processing must be cancelled.
+  /// </summary>
+  static public bool CancelRequired { get; set; }
 
 }
