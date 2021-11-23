@@ -327,6 +327,12 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add `--lunarmonths` command-line option to show the lunar months board.
 
+#### In progress - Version 9.13
+
+- Improve about box.
+- Few fixes.
+- Code refactoring.
+
 #### 2021.11.21 - Version 9.12
 
 - Fix second click on date in reminder box sometimes goes to the first day.
