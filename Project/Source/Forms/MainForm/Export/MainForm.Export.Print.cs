@@ -12,93 +12,89 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using CoolPrintPreview;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private int PrinterCurrentLine;
+
+  private void ExportPrint()
   {
-
-    private int PrinterCurrentLine;
-
-    private void ExportPrint()
+    var process = new ExportActions()
     {
-      var process = new ExportActions()
+      [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
+      [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
+      [ViewMode.Grid] = null
+    };
+    DoExport(ExportAction.Print, process, null);
+  }
+
+  private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
+  {
+    try
+    {
+      Globals.IsPrinting = true;
+      CalendarMonth.ShowTodayButton = false;
+      CalendarMonth.ShowArrowControls = false;
+      ActionPrint.Visible = false;
+      ActionPrint.Visible = true;
+      ToolStrip.Enabled = false;
+      MenuTray.Enabled = false;
+      ExportPrintRunAction(landscape, (s, e) => action(s, e));
+    }
+    finally
+    {
+      Globals.IsPrinting = false;
+      CalendarMonth.ShowTodayButton = true;
+      CalendarMonth.ShowArrowControls = true;
+      ToolStrip.Enabled = true;
+      MenuTray.Enabled = true;
+    }
+  }
+
+  private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
+  {
+    int margin = Settings.PrintingMargin;
+    using var document = new PrintDocument();
+    document.PrintPage += action;
+    document.DefaultPageSettings.Landscape = landscape;
+    document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
+    if ( Settings.ShowPrintPreviewDialog )
+    {
+      var preview = new CoolPrintPreviewDialog
       {
-        [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
-        [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
-        [ViewMode.Grid] = null
+        WindowState = FormWindowState.Maximized,
+        ShowInTaskbar = true,
+        ShowIcon = true,
+        Icon = Icon,
+        Document = document
       };
-      DoExport(ExportAction.Print, process, null);
+      preview.ShowDialog(this);
     }
-
-    private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
+    else
     {
-      try
+      var dialog = new PrintDialog
       {
-        Globals.IsPrinting = true;
-        CalendarMonth.ShowTodayButton = false;
-        CalendarMonth.ShowArrowControls = false;
-        ActionPrint.Visible = false;
-        ActionPrint.Visible = true;
-        ToolStrip.Enabled = false;
-        MenuTray.Enabled = false;
-        ExportPrintRunAction(landscape, (s, e) => action(s, e));
-      }
-      finally
+        UseEXDialog = false,
+        Document = document
+      };
+      if ( dialog.ShowDialog(this) == DialogResult.OK )
       {
-        Globals.IsPrinting = false;
-        CalendarMonth.ShowTodayButton = true;
-        CalendarMonth.ShowArrowControls = true;
-        ToolStrip.Enabled = true;
-        MenuTray.Enabled = true;
+        document.PrintPage += printed;
+        document.Print();
       }
     }
-
-    private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
+    //
+    static void printed(object sender, PrintPageEventArgs e)
     {
-      int margin = Settings.PrintingMargin;
-      using var document = new PrintDocument();
-      document.PrintPage += action;
-      document.DefaultPageSettings.Landscape = landscape;
-      document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
-      if ( Settings.ShowPrintPreviewDialog )
-      {
-        var preview = new CoolPrintPreviewDialog
-        {
-          WindowState = FormWindowState.Maximized,
-          ShowInTaskbar = true,
-          ShowIcon = true,
-          Icon = Icon,
-          Document = document
-        };
-        preview.ShowDialog(this);
-      }
-      else
-      {
-        var dialog = new PrintDialog
-        {
-          UseEXDialog = false,
-          Document = document
-        };
-        if ( dialog.ShowDialog(this) == DialogResult.OK )
-        {
-          document.PrintPage += printed;
-          document.Print();
-        }
-      }
-      //
-      static void printed(object sender, PrintPageEventArgs e)
-      {
-        if ( !e.HasMorePages )
-          DisplayManager.ShowSuccessOrSound(SysTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
-      }
-
+      if ( !e.HasMorePages )
+        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewPrinted.GetLang(), Globals.PrinterSoundFilePath);
     }
 
   }

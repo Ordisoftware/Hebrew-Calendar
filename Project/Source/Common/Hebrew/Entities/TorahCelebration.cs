@@ -12,19 +12,14 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
 
-namespace Ordisoftware.Hebrew
+public enum TorahCelebration
 {
-
-  public enum TorahCelebration
-  {
-    None,
-    Pessah,
-    Chavouot,
-    YomTerouah,
-    YomHaKipourim,
-    Soukot
-  }
-
+  None,
+  Pessah,
+  Chavouot,
+  YomTerouah,
+  YomHaKipourim,
+  Soukot
 }

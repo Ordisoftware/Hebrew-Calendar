@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2020-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Tray Icon click open enum.
+/// </summary>
+public enum TrayIconClickOpen
 {
 
   /// <summary>
-  /// Tray Icon click open enum.
+  /// Main form.
   /// </summary>
-  public enum TrayIconClickOpen
-  {
+  MainForm,
 
-    /// <summary>
-    /// Main form.
-    /// </summary>
-    MainForm,
+  /// <summary>
+  /// Navigation form.
+  /// </summary>
+  NavigationForm,
 
-    /// <summary>
-    /// Navigation form.
-    /// </summary>
-    NavigationForm,
-
-    /// <summary>
-    /// Celebrations form.
-    /// </summary>
-    NextCelebrationsForm,
-
-  }
+  /// <summary>
+  /// Celebrations form.
+  /// </summary>
+  NextCelebrationsForm,
 
 }

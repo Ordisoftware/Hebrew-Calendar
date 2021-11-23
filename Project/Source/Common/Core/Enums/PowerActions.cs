@@ -12,23 +12,18 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides power action enum.
+/// </summary>
+public enum PowerAction
 {
-
-  /// <summary>
-  /// Provides power action enum.
-  /// </summary>
-  public enum PowerAction
-  {
-    None,
-    LockSession,
-    StandBy,
-    Hibernate,
-    LogOff,
-    Restart,
-    Shutdown
-  }
-
+  None,
+  LockSession,
+  StandBy,
+  Hibernate,
+  LogOff,
+  Restart,
+  Shutdown
 }

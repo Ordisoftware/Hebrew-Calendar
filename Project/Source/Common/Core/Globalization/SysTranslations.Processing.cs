@@ -12,47 +12,42 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-02 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Localization strings.
+/// </summary>
+static partial class SysTranslations
 {
 
-  /// <summary>
-  /// Localization strings.
-  /// </summary>
-  static partial class SysTranslations
+  static public readonly TranslationsDictionary Initializing = new()
   {
+    [Language.EN] = "Initializing...",
+    [Language.FR] = "Initialisation..."
+  };
 
-    static public readonly TranslationsDictionary Initializing = new()
-    {
-      [Language.EN] = "Initializing...",
-      [Language.FR] = "Initialisation..."
-    };
+  static public readonly TranslationsDictionary Processing = new()
+  {
+    [Language.EN] = "Processing...",
+    [Language.FR] = "Traitement..."
+  };
 
-    static public readonly TranslationsDictionary Processing = new()
-    {
-      [Language.EN] = "Processing...",
-      [Language.FR] = "Traitement..."
-    };
+  static public readonly TranslationsDictionary ProgressLoadingData = new()
+  {
+    [Language.EN] = "Loading data...",
+    [Language.FR] = "Chargement des données..."
+  };
 
-    static public readonly TranslationsDictionary ProgressLoadingData = new()
-    {
-      [Language.EN] = "Loading data...",
-      [Language.FR] = "Chargement des données..."
-    };
+  static public readonly TranslationsDictionary ProgressCreatingData = new()
+  {
+    [Language.EN] = "Creating data...",
+    [Language.FR] = "Création des données..."
+  };
 
-    static public readonly TranslationsDictionary ProgressCreatingData = new()
-    {
-      [Language.EN] = "Creating data...",
-      [Language.FR] = "Création des données..."
-    };
-
-    static public readonly TranslationsDictionary ProgressSavingData = new()
-    {
-      [Language.EN] = "Saving data...",
-      [Language.FR] = "Sauvegarde des données..."
-    };
-
-  }
+  static public readonly TranslationsDictionary ProgressSavingData = new()
+  {
+    [Language.EN] = "Saving data...",
+    [Language.FR] = "Sauvegarde des données..."
+  };
 
 }

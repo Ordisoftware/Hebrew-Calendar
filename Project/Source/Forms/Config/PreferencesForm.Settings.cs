@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Linq;
 using System.Configuration;
@@ -20,110 +22,105 @@ using System.Xml.XPath;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides form to edit the preferences.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class PreferencesForm
 {
 
-  /// <summary>
-  /// Provides form to edit the preferences.
-  /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class PreferencesForm
+  private readonly NullSafeOfStringDictionary<DataExportTarget> ExportTarget
+    = ExportHelper.CreateExportTargets(DataExportTarget.XML);
+
+  private void DoResetSettings()
   {
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
+    MainForm.Instance.MenuShowHide_Click(null, null);
+    LunarMonthsForm.Instance.Hide();
+    StatisticsForm.Instance.Hide();
+    string country = Settings.GPSCountry;
+    string city = Settings.GPSCity;
+    string lat = Settings.GPSLatitude;
+    string lng = Settings.GPSLongitude;
+    string timezone = Settings.TimeZone;
+    long starttime = Settings.BenchmarkStartingApp;
+    long loadtime = Settings.BenchmarkLoadData;
+    int Shabat = EditShabatDay.SelectedIndex;
+    int bookmarksCount = Settings.DateBookmarksCount;
+    var lastupdate = Settings.CheckUpdateLastDone;
+    var lastvacuum = Settings.VacuumLastDone;
+    Settings.Reset();
+    Settings.SetFirstAndUpgradeFlagsOff();
+    Settings.CheckUpdateLastDone = lastupdate;
+    Settings.VacuumLastDone = lastvacuum;
+    Settings.DateBookmarksCount = bookmarksCount;
+    Settings.GPSCountry = country;
+    Settings.GPSCity = city;
+    Settings.GPSLatitude = lat;
+    Settings.GPSLongitude = lng;
+    Settings.TimeZone = timezone;
+    Settings.ShabatDay = Shabat;
+    Settings.LanguageSelected = Languages.Current;
+    Settings.BenchmarkStartingApp = starttime;
+    Settings.BenchmarkLoadData = loadtime;
+    Settings.RestoreMainForm();
+    SystemManager.TryCatch(Settings.Store);
+    MainForm.Instance.InitializeReminderBoxDesktopLocation();
+    DoReset = true;
+    Reseted = true;
+    Close();
+  }
 
-    private readonly NullSafeOfStringDictionary<DataExportTarget> ExportTarget
-      = ExportHelper.CreateExportTargets(DataExportTarget.XML);
-
-    private void DoResetSettings()
+  private void DoImportSettings()
+  {
+    OpenSettingsDialog.FileName = string.Empty;
+    if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
+    MainForm.Instance.MenuShowHide_Click(null, null);
+    LunarMonthsForm.Instance.Hide();
+    StatisticsForm.Instance.Hide();
+    long starttime = Settings.BenchmarkStartingApp;
+    long loadtime = Settings.BenchmarkLoadData;
+    try
     {
-      if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetPreferences.GetLang()) ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null);
-      LunarMonthsForm.Instance.Hide();
-      StatisticsForm.Instance.Hide();
-      string country = Settings.GPSCountry;
-      string city = Settings.GPSCity;
-      string lat = Settings.GPSLatitude;
-      string lng = Settings.GPSLongitude;
-      string timezone = Settings.TimeZone;
-      long starttime = Settings.BenchmarkStartingApp;
-      long loadtime = Settings.BenchmarkLoadData;
-      int Shabat = EditShabatDay.SelectedIndex;
-      int bookmarksCount = Settings.DateBookmarksCount;
-      var lastupdate = Settings.CheckUpdateLastDone;
-      var lastvacuum = Settings.VacuumLastDone;
-      Settings.Reset();
-      Settings.SetFirstAndUpgradeFlagsOff();
-      Settings.CheckUpdateLastDone = lastupdate;
-      Settings.VacuumLastDone = lastvacuum;
-      Settings.DateBookmarksCount = bookmarksCount;
-      Settings.GPSCountry = country;
-      Settings.GPSCity = city;
-      Settings.GPSLatitude = lat;
-      Settings.GPSLongitude = lng;
-      Settings.TimeZone = timezone;
-      Settings.ShabatDay = Shabat;
-      Settings.LanguageSelected = Languages.Current;
+      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+      string context = Properties.Settings.Default.Context["GroupName"].ToString();
+      var xmldata = XDocument.Load(OpenSettingsDialog.FileName);
+      var settings = xmldata.XPathSelectElements("//" + context);
+      var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
+      section.SetRawXml(settings.Single().ToString());
+      config.Save(ConfigurationSaveMode.Modified);
+      ConfigurationManager.RefreshSection("userSettings");
+      Settings.Reload();
       Settings.BenchmarkStartingApp = starttime;
       Settings.BenchmarkLoadData = loadtime;
-      Settings.RestoreMainForm();
       SystemManager.TryCatch(Settings.Store);
-      MainForm.Instance.InitializeReminderBoxDesktopLocation();
+      Settings.Retrieve();
+      Settings.SetFirstAndUpgradeFlagsOff();
+      Program.UpdateLocalization();
+      LanguageChanged = true;
       DoReset = true;
       Reseted = true;
       Close();
     }
-
-    private void DoImportSettings()
+    catch ( Exception ex )
     {
-      OpenSettingsDialog.FileName = string.Empty;
-      if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      MainForm.Instance.MenuShowHide_Click(null, null);
-      LunarMonthsForm.Instance.Hide();
-      StatisticsForm.Instance.Hide();
-      long starttime = Settings.BenchmarkStartingApp;
-      long loadtime = Settings.BenchmarkLoadData;
-      try
-      {
-        var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-        string context = Properties.Settings.Default.Context["GroupName"].ToString();
-        var xmldata = XDocument.Load(OpenSettingsDialog.FileName);
-        var settings = xmldata.XPathSelectElements("//" + context);
-        var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
-        section.SetRawXml(settings.Single().ToString());
-        config.Save(ConfigurationSaveMode.Modified);
-        ConfigurationManager.RefreshSection("userSettings");
-        Settings.Reload();
-        Settings.BenchmarkStartingApp = starttime;
-        Settings.BenchmarkLoadData = loadtime;
-        SystemManager.TryCatch(Settings.Store);
-        Settings.Retrieve();
-        Settings.SetFirstAndUpgradeFlagsOff();
-        Program.UpdateLocalization();
-        LanguageChanged = true;
-        DoReset = true;
-        Reseted = true;
-        Close();
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(ex.Message);
-        Settings.Reload();
-      }
+      DisplayManager.ShowError(ex.Message);
+      Settings.Reload();
     }
+  }
 
-    private void DoExportSettings()
-    {
-      var city = Settings.GPSCity;
-      var omer = AppTranslations.MainFormSubTitleOmer[EditTorahEventsCountAsMoon.Checked][Language.EN];
-      var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-      SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
-      if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-      TabControl.SelectedIndex = 0;
-      SaveSettings();
-      Settings.Store();
-      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-      config.SaveAs(SaveSettingsDialog.FileName);
-    }
-
+  private void DoExportSettings()
+  {
+    var city = Settings.GPSCity;
+    var omer = AppTranslations.MainFormSubTitleOmer[EditTorahEventsCountAsMoon.Checked][Language.EN];
+    var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+    SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
+    if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
+    TabControl.SelectedIndex = 0;
+    SaveSettings();
+    Settings.Store();
+    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+    config.SaveAs(SaveSettingsDialog.FileName);
   }
 
 }

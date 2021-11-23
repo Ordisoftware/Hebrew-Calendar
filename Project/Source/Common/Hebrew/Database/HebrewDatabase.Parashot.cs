@@ -12,123 +12,120 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+partial class HebrewDatabase : SQLiteDatabase
 {
 
-  partial class HebrewDatabase : SQLiteDatabase
+  public readonly string ParashotTableName = nameof(Parashot);
+
+  public List<Parashah> Parashot { get; private set; }
+
+  public BindingList<Parashah> ParashotAsBindingList { get; private set; }
+
+  private bool CreateParashotDataMutex;
+  private bool ParashotFirstTake = true;
+
+  public bool IsParashotReadOnly()
   {
+    CheckConnected();
+    return Interlocks.GetCount(ParashotTableName) > 1;
+  }
 
-    public readonly string ParashotTableName = nameof(Parashot);
-
-    public List<Parashah> Parashot { get; private set; }
-
-    public BindingList<Parashah> ParashotAsBindingList { get; private set; }
-
-    private bool CreateParashotDataMutex;
-    private bool ParashotFirstTake = true;
-
-    public bool IsParashotReadOnly()
+  public List<Parashah> TakeParashot(bool reload = false)
+  {
+    CheckConnected();
+    if ( !reload && Parashot != null ) return Parashot;
+    Interlocks.Take(ParashotTableName);
+    if ( ParashotFirstTake )
     {
-      CheckConnected();
-      return Interlocks.GetCount(ParashotTableName) > 1;
+      ParashotFactory.Instance.Reset();
+      ParashotFirstTake = false;
     }
+    return CreateParashotDataIfNotExistAndLoad();
+  }
 
-    public List<Parashah> TakeParashot(bool reload = false)
+  public void ReleaseParashot()
+  {
+    if ( Parashot == null ) return;
+    Interlocks.Release(ParashotTableName);
+    if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
+    Parashot = null;
+  }
+
+  private List<Parashah> LoadParashot()
+  {
+    Parashot = Load(Connection.Table<Parashah>());
+    ParashotAsBindingList = new BindingList<Parashah>(Parashot);
+    return Parashot;
+  }
+
+  public void SaveParashot()
+  {
+    CheckConnected();
+    CheckAccess(Parashot, nameof(Parashot));
+    Connection.BeginTransaction();
+    try
     {
-      CheckConnected();
-      if ( !reload && Parashot != null ) return Parashot;
-      Interlocks.Take(ParashotTableName);
-      if ( ParashotFirstTake )
-      {
-        ParashotFactory.Instance.Reset();
-        ParashotFirstTake = false;
-      }
-      return CreateParashotDataIfNotExistAndLoad();
+      Connection.UpdateAll(Parashot);
+      Connection.Commit();
     }
-
-    public void ReleaseParashot()
+    catch
     {
-      if ( Parashot == null ) return;
-      Interlocks.Release(ParashotTableName);
-      if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
-      Parashot = null;
+      Connection.Rollback();
+      throw;
     }
+  }
 
-    private List<Parashah> LoadParashot()
-    {
-      Parashot = Load(Connection.Table<Parashah>());
-      ParashotAsBindingList = new BindingList<Parashah>(Parashot);
-      return Parashot;
-    }
+  public void DeleteParashot(bool nocheckaccess = false)
+  {
+    CheckConnected();
+    if ( !nocheckaccess ) CheckAccess(Parashot, nameof(Parashot));
+    Connection.DeleteAll<Parashah>();
+    Parashot?.Clear();
+  }
 
-    public void SaveParashot()
+  public List<Parashah> CreateParashotDataIfNotExistAndLoad(bool reset = false, bool notext = false)
+  {
+    CheckConnected();
+    if ( CreateParashotDataMutex )
+      throw new SystemException($"{nameof(CreateParashotDataIfNotExistAndLoad)} is already running.");
+    bool temp = Globals.IsReady;
+    Globals.IsReady = false;
+    CreateParashotDataMutex = true;
+    try
     {
-      CheckConnected();
-      CheckAccess(Parashot, nameof(Parashot));
-      Connection.BeginTransaction();
-      try
-      {
-        Connection.UpdateAll(Parashot);
-        Connection.Commit();
-      }
-      catch
-      {
-        Connection.Rollback();
-        throw;
-      }
-    }
-
-    public void DeleteParashot(bool nocheckaccess = false)
-    {
-      CheckConnected();
-      if ( !nocheckaccess ) CheckAccess(Parashot, nameof(Parashot));
-      Connection.DeleteAll<Parashah>();
-      Parashot?.Clear();
-    }
-
-    public List<Parashah> CreateParashotDataIfNotExistAndLoad(bool reset = false, bool notext = false)
-    {
-      CheckConnected();
-      if ( CreateParashotDataMutex )
-        throw new SystemException($"{nameof(CreateParashotDataIfNotExistAndLoad)} is already running.");
-      bool temp = Globals.IsReady;
-      Globals.IsReady = false;
-      CreateParashotDataMutex = true;
-      try
-      {
-        if ( reset || Connection.GetRowsCount(ParashotTableName) != 54 )
-          SystemManager.TryCatchManage(() =>
+      if ( reset || Connection.GetRowsCount(ParashotTableName) != 54 )
+        SystemManager.TryCatchManage(() =>
+        {
+          Connection.BeginTransaction();
+          try
           {
-            Connection.BeginTransaction();
-            try
-            {
-              DeleteParashot(true);
-              var list = ParashotFactory.Instance.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
-              if ( notext ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
-              Connection.InsertAll(list);
-              Connection.Commit();
-            }
-            catch
-            {
-              Connection.Rollback();
-              throw;
-            }
-          });
-        return LoadParashot();
-      }
-      finally
-      {
-        CreateParashotDataMutex = false;
-        Globals.IsReady = temp;
-      }
+            DeleteParashot(true);
+            var list = ParashotFactory.Instance.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
+            if ( notext ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
+            Connection.InsertAll(list);
+            Connection.Commit();
+          }
+          catch
+          {
+            Connection.Rollback();
+            throw;
+          }
+        });
+      return LoadParashot();
     }
-
+    finally
+    {
+      CreateParashotDataMutex = false;
+      Globals.IsReady = temp;
+    }
   }
 
 }

@@ -12,53 +12,50 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using EnumsNET;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+class TorahCelebrationVerses : ProviderSettings
 {
 
-  class TorahCelebrationVerses : ProviderSettings
+  static public readonly TorahCelebrationVerses Instance = new();
+
+  public readonly NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>> Items = new();
+
+  protected override void SetFilePath()
   {
+    FilePath = HebrewGlobals.CelebrationVersesFilePath;
+  }
 
-    static public readonly TorahCelebrationVerses Instance = new();
+  protected override void DoClear()
+  {
+    Items.Clear();
+  }
 
-    public readonly NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>> Items = new();
+  protected override void DoLoad(string line)
+  {
+    var pair = line.Split(':');
+    if ( pair.Length < 2 ) return;
+    var celebration = Enums.Parse<TorahCelebration>(pair[0].Trim());
+    if ( Items[celebration] == null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
+    var items = pair[1].Split('-');
+    if ( items.Length < 2 ) return;
+    var book = Enums.Parse<TanakBook>(items[0].Trim());
+    string verse1 = items[1].Trim();
+    string verse2 = items.Length > 2 ? items[2].Trim() : string.Empty;
+    Items[celebration].Add(new Tuple<TanakBook, string, string>(book, verse1, verse2));
+  }
 
-    protected override void SetFilePath()
-    {
-      FilePath = HebrewGlobals.CelebrationVersesFilePath;
-    }
-
-    protected override void DoClear()
-    {
-      Items.Clear();
-    }
-
-    protected override void DoLoad(string line)
-    {
-      var pair = line.Split(':');
-      if ( pair.Length < 2 ) return;
-      var celebration = Enums.Parse<TorahCelebration>(pair[0].Trim());
-      if ( Items[celebration] == null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
-      var items = pair[1].Split('-');
-      if ( items.Length < 2 ) return;
-      var book = Enums.Parse<TanakBook>(items[0].Trim());
-      string verse1 = items[1].Trim();
-      string verse2 = items.Length > 2 ? items[2].Trim() : string.Empty;
-      Items[celebration].Add(new Tuple<TanakBook, string, string>(book, verse1, verse2));
-    }
-
-    protected override void DoSave(StreamWriter stream)
-    {
-      foreach ( var kvp in Items )
-        foreach ( var item in kvp.Value )
-          stream.WriteLine($"{kvp.Key} : {item.Item1} - {item.Item2} - {item.Item3}");
-    }
-
+  protected override void DoSave(StreamWriter stream)
+  {
+    foreach ( var kvp in Items )
+      foreach ( var item in kvp.Value )
+        stream.WriteLine($"{kvp.Key} : {item.Item1} - {item.Item2} - {item.Item3}");
   }
 
 }

@@ -12,27 +12,24 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Ordisoftware.Core
+static public class CollectionsHelper
 {
 
-  static public class CollectionsHelper
+  static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
   {
-
-    static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
+    var slices = new List<List<T>> { new List<T>() };
+    foreach ( var item in collection )
     {
-      var slices = new List<List<T>> { new List<T>() };
-      foreach ( var item in collection )
-      {
-        slices.Last().Add(item);
-        if ( predicate(item) )
-          slices.Add(new List<T>());
-      }
-      return slices;
+      slices.Last().Add(item);
+      if ( predicate(item) )
+        slices.Add(new List<T>());
     }
+    return slices;
   }
-
 }

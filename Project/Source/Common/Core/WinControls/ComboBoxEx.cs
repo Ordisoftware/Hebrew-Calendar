@@ -12,38 +12,35 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-03 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+public class ComboBoxEx : ComboBox
 {
 
-  public class ComboBoxEx : ComboBox
+  private bool Mutex;
+
+  private int SelectedIndexLast = -1;
+
+  public int SelectedIndexPrevious { get; private set; }
+
+  public ComboBoxEx()
   {
+    SelectedIndexPrevious = SelectedIndexLast;
+  }
 
-    private bool Mutex;
-
-    private int SelectedIndexLast = -1;
-
-    public int SelectedIndexPrevious { get; private set; }
-
-    public ComboBoxEx()
-    {
-      SelectedIndexPrevious = SelectedIndexLast;
-    }
-
-    protected override void OnSelectedIndexChanged(EventArgs e)
-    {
-      if ( Mutex ) return;
-      Mutex = true;
-      bool isSeparator = SelectedIndex >= 0 && (string)Items[SelectedIndex] == Globals.ListSeparator;
-      if ( isSeparator ) SelectedIndex = SelectedIndexLast;
-      SelectedIndexPrevious = SelectedIndexLast;
-      SelectedIndexLast = SelectedIndex;
-      if ( !isSeparator ) base.OnSelectedIndexChanged(e);
-      Mutex = false;
-    }
-
+  protected override void OnSelectedIndexChanged(EventArgs e)
+  {
+    if ( Mutex ) return;
+    Mutex = true;
+    bool isSeparator = SelectedIndex >= 0 && (string)Items[SelectedIndex] == Globals.ListSeparator;
+    if ( isSeparator ) SelectedIndex = SelectedIndexLast;
+    SelectedIndexPrevious = SelectedIndexLast;
+    SelectedIndexLast = SelectedIndex;
+    if ( !isSeparator ) base.OnSelectedIndexChanged(e);
+    Mutex = false;
   }
 
 }

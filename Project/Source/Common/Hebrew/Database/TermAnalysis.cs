@@ -12,22 +12,19 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
 using SQLite;
 
-namespace Ordisoftware.Hebrew
+[Serializable]
+[Table("TermAnalysis")]
+public class TermAnalysis
 {
-
-  [Serializable]
-  [Table("TermAnalysis")]
-  public class TermAnalysis
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string TermID { get; set; }
-    public string LettriqID { get; set; }
-    public string Meaning { get; set; }
-    public int Position { get; set; }
-  }
-
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string TermID { get; set; }
+  public string LettriqID { get; set; }
+  public string Meaning { get; set; }
+  public int Position { get; set; }
 }

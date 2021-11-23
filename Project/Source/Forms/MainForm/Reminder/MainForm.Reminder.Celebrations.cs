@@ -12,41 +12,38 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Data;
 using System.Linq;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void CheckCelebrations()
   {
-
-    private void CheckCelebrations()
+    bool check(TorahCelebrationDay item)
     {
-      bool check(TorahCelebrationDay item)
-      {
-        return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
-      }
-      var dateNow = DateTime.Now;
-      dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
-      var dateToday = DateTime.Today;
-      var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
-      var rows = from day in LunisolarDays
-                 where !RemindCelebrationDates.Contains(day.Date)
-                    && check(day.TorahEvent)
-                    && day.Date >= dateToday
-                    && day.Date <= dateLimit
-                 select day;
-      foreach ( var row in rows )
-      {
-        var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
-        if ( times == null ) continue;
-        RemindCelebrationDates.Add(row.Date);
-        ReminderForm.Run(row, TorahCelebrationDay.None, times);
-      }
+      return TorahEventRemindList.ContainsKey(item) && TorahEventRemindList[item];
     }
-
+    var dateNow = DateTime.Now;
+    dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
+    var dateToday = DateTime.Today;
+    var dateLimit = dateNow.AddDays((int)Settings.ReminderCelebrationsInterval);
+    var rows = from day in LunisolarDays
+               where !RemindCelebrationDates.Contains(day.Date)
+                  && check(day.TorahEvent)
+                  && day.Date >= dateToday
+                  && day.Date <= dateLimit
+               select day;
+    foreach ( var row in rows )
+    {
+      var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
+      if ( times == null ) continue;
+      RemindCelebrationDates.Add(row.Date);
+      ReminderForm.Run(row, TorahCelebrationDay.None, times);
+    }
   }
 
 }

@@ -12,98 +12,94 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2020-12 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides global variables.
+/// </summary>
+static partial class Globals
 {
 
   /// <summary>
-  /// Provides global variables.
+  /// Gets an attribute instance.
   /// </summary>
-  static partial class Globals
+  static private T GetAttribute<T>() where T : Attribute
   {
-
-    /// <summary>
-    /// Gets an attribute instance.
-    /// </summary>
-    static private T GetAttribute<T>() where T : Attribute
-    {
-      object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);
-      return attributes.Length > 0 ? ( (T)attributes[0] ) : null;
-    }
-
-    /// <summary>
-    /// Gets the assembly title.
-    /// </summary>
-    static public string AssemblyTitle
-    {
-      get
-      {
-        var attribute = GetAttribute<AssemblyTitleAttribute>();
-        if ( attribute != null )
-          if ( attribute.Title != string.Empty )
-            return attribute.Title;
-        return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-      }
-    }
-
-    /// <summary>
-    /// Gets the assembly version.
-    /// </summary>
-    static public string AssemblyVersion
-      => Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
-
-    /// <summary>
-    /// Gets the assembly title with version.
-    /// </summary>
-    static public string AssemblyTitleWithVersion
-      => AssemblyTitle + " " + AssemblyVersion;
-
-    /// <summary>
-    /// Gets information describing the assembly.
-    /// </summary>
-    static public string AssemblyDescription
-      => GetAttribute<AssemblyDescriptionAttribute>().Description;
-
-    /// <summary>
-    /// Gets the assembly product.
-    /// </summary>
-    static public string AssemblyProduct
-      => GetAttribute<AssemblyProductAttribute>().Product;
-
-    /// <summary>
-    /// Gets the assembly copyright.
-    /// </summary>
-    static public string AssemblyCopyright
-      => GetAttribute<AssemblyCopyrightAttribute>().Copyright;
-
-    /// <summary>
-    /// Gets the assembly company.
-    /// </summary>
-    static public string AssemblyCompany
-      => GetAttribute<AssemblyCompanyAttribute>().Company;
-
-    /// <summary>
-    /// Gets the assembly trademark.
-    /// </summary>
-    static public string AssemblyTrademark
-      => GetAttribute<AssemblyTrademarkAttribute>().Trademark;
-
-    /// <summary>
-    /// Gets the assembly GUID.
-    /// </summary>
-    static public string AssemblyGUID
-      => GetAttribute<GuidAttribute>().Value;
-
-    /// <summary>
-    /// Gets the assembly compiled DateTime.
-    /// </summary>
-    static public DateTime CompiledDateTime
-      => Assembly.GetExecutingAssembly().GetLinkerTime();
-
+    object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);
+    return attributes.Length > 0 ? ( (T)attributes[0] ) : null;
   }
+
+  /// <summary>
+  /// Gets the assembly title.
+  /// </summary>
+  static public string AssemblyTitle
+  {
+    get
+    {
+      var attribute = GetAttribute<AssemblyTitleAttribute>();
+      return attribute != null && attribute.Title != string.Empty
+             ? attribute.Title
+             : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+    }
+  }
+
+  /// <summary>
+  /// Gets the assembly version.
+  /// </summary>
+  static public string AssemblyVersion
+    => Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+
+  /// <summary>
+  /// Gets the assembly title with version.
+  /// </summary>
+  static public string AssemblyTitleWithVersion
+    => AssemblyTitle + " " + AssemblyVersion;
+
+  /// <summary>
+  /// Gets information describing the assembly.
+  /// </summary>
+  static public string AssemblyDescription
+    => GetAttribute<AssemblyDescriptionAttribute>().Description;
+
+  /// <summary>
+  /// Gets the assembly product.
+  /// </summary>
+  static public string AssemblyProduct
+    => GetAttribute<AssemblyProductAttribute>().Product;
+
+  /// <summary>
+  /// Gets the assembly copyright.
+  /// </summary>
+  static public string AssemblyCopyright
+    => GetAttribute<AssemblyCopyrightAttribute>().Copyright;
+
+  /// <summary>
+  /// Gets the assembly company.
+  /// </summary>
+  static public string AssemblyCompany
+    => GetAttribute<AssemblyCompanyAttribute>().Company;
+
+  /// <summary>
+  /// Gets the assembly trademark.
+  /// </summary>
+  static public string AssemblyTrademark
+    => GetAttribute<AssemblyTrademarkAttribute>().Trademark;
+
+  /// <summary>
+  /// Gets the assembly GUID.
+  /// </summary>
+  static public string AssemblyGUID
+    => GetAttribute<GuidAttribute>().Value;
+
+  /// <summary>
+  /// Gets the assembly compiled DateTime.
+  /// </summary>
+  static public DateTime CompiledDateTime
+    => Assembly.GetExecutingAssembly().GetLinkerTime();
 
 }

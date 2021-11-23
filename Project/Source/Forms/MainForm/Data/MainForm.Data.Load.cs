@@ -12,131 +12,128 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.IO;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void LoadData()
   {
-
-    private void LoadData()
+    bool formEnabled = Enabled;
+    ToolStrip.Enabled = false;
+    Globals.IsGenerating = true;
+    try
     {
-      bool formEnabled = Enabled;
-      ToolStrip.Enabled = false;
-      Globals.IsGenerating = true;
-      try
-      {
-        LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
-        LoadDataInit();
-        if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
-          LoadDataFill();
-        else
-          LoadDataGenerate();
-      }
-      catch ( Exception ex )
-      {
-        Globals.ChronoStartingApp.Stop();
-        ex.Manage();
-        DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExitContactSupport.GetLang());
-      }
-      finally
-      {
-        Globals.IsGenerating = false;
-        LabelSubTitleGPS.Text = string.Empty;
-        ToolStrip.Enabled = formEnabled;
-        LoadDataEnd();
-      }
+      LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
+      LoadDataInit();
+      if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
+        LoadDataFill();
+      else
+        LoadDataGenerate();
     }
-
-    private void LoadDataInit()
-    {
-      Globals.ChronoLoadData.Start();
-      ApplicationDatabase.Instance.Open();
-      LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDays;
-      UserParashot = HebrewDatabase.Instance.TakeParashot();
-      HebrewDatabase.Instance.ReleaseParashot();
-      Globals.ChronoLoadData.Stop();
-      Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
-      SystemManager.TryCatch(Settings.Store);
-    }
-
-    private void LoadDataFill()
-    {
-      FillMonths();
-      LoadDataFillReport();
-      GoToDate(DateTime.Today);
-    }
-
-    private void LoadDataFillReport()
-    {
-      bool isTextReportLoaded = false;
-      if ( File.Exists(Program.TextReportFilePath) )
-        try
-        {
-          Globals.ChronoLoadData.Start();
-          CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
-          Globals.ChronoLoadData.Stop();
-          isTextReportLoaded = true;
-        }
-        catch ( Exception ex )
-        {
-          Globals.ChronoStartingApp.Stop();
-          string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
-          DisplayManager.ShowWarning(msg);
-          Globals.ChronoStartingApp.Start();
-        }
-      if ( !isTextReportLoaded )
-        CalendarText.Text = GenerateReportText();
-    }
-
-    private void LoadDataGenerate()
+    catch ( Exception ex )
     {
       Globals.ChronoStartingApp.Stop();
-      PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
-      string errors = CheckRegenerateCalendar(true);
-      Globals.ChronoStartingApp.Start();
-      if ( errors != null )
-      {
-        SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
-        throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
-      }
+      ex.Manage();
+      DisplayManager.ShowAndTerminate(SysTranslations.ApplicationMustExitContactSupport.GetLang());
     }
-
-    private void LoadDataEnd()
+    finally
     {
-      try
-      {
-        if ( Settings.RestoreLastViewAtStartup )
-          SetView(Settings.CurrentView, true);
-        else
-          SetView(ViewMode.Month, true);
-        UpdateButtons();
-      }
-      catch ( Exception ex )
-      {
-        Globals.ChronoStartingApp.Stop();
-        ex.Manage();
-        Globals.ChronoStartingApp.Start();
-      }
-      try
-      {
-        Globals.ChronoStartingApp.Stop();
-        CalendarMonth.ShowEventTooltips = false;
-        TimerReminder.Enabled = true;
-        TimerReminder_Tick(null, null);
-        Globals.ChronoStartingApp.Start();
-      }
-      catch ( Exception ex )
-      {
-        Globals.ChronoStartingApp.Stop();
-        ex.Manage();
-        Globals.ChronoStartingApp.Start();
-      }
+      Globals.IsGenerating = false;
+      LabelSubTitleGPS.Text = string.Empty;
+      ToolStrip.Enabled = formEnabled;
+      LoadDataEnd();
     }
+  }
 
+  private void LoadDataInit()
+  {
+    Globals.ChronoLoadData.Start();
+    ApplicationDatabase.Instance.Open();
+    LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDays;
+    UserParashot = HebrewDatabase.Instance.TakeParashot();
+    HebrewDatabase.Instance.ReleaseParashot();
+    Globals.ChronoLoadData.Stop();
+    Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
+    SystemManager.TryCatch(Settings.Store);
+  }
+
+  private void LoadDataFill()
+  {
+    FillMonths();
+    LoadDataFillReport();
+    GoToDate(DateTime.Today);
+  }
+
+  private void LoadDataFillReport()
+  {
+    bool isTextReportLoaded = false;
+    if ( File.Exists(Program.TextReportFilePath) )
+      try
+      {
+        Globals.ChronoLoadData.Start();
+        CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
+        Globals.ChronoLoadData.Stop();
+        isTextReportLoaded = true;
+      }
+      catch ( Exception ex )
+      {
+        Globals.ChronoStartingApp.Stop();
+        string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
+        DisplayManager.ShowWarning(msg);
+        Globals.ChronoStartingApp.Start();
+      }
+    if ( !isTextReportLoaded )
+      CalendarText.Text = GenerateReportText();
+  }
+
+  private void LoadDataGenerate()
+  {
+    Globals.ChronoStartingApp.Stop();
+    PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
+    string errors = CheckRegenerateCalendar(true);
+    Globals.ChronoStartingApp.Start();
+    if ( errors != null )
+    {
+      SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
+      throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
+    }
+  }
+
+  private void LoadDataEnd()
+  {
+    try
+    {
+      if ( Settings.RestoreLastViewAtStartup )
+        SetView(Settings.CurrentView, true);
+      else
+        SetView(ViewMode.Month, true);
+      UpdateButtons();
+    }
+    catch ( Exception ex )
+    {
+      Globals.ChronoStartingApp.Stop();
+      ex.Manage();
+      Globals.ChronoStartingApp.Start();
+    }
+    try
+    {
+      Globals.ChronoStartingApp.Stop();
+      CalendarMonth.ShowEventTooltips = false;
+      TimerReminder.Enabled = true;
+      TimerReminder_Tick(null, null);
+      Globals.ChronoStartingApp.Start();
+    }
+    catch ( Exception ex )
+    {
+      Globals.ChronoStartingApp.Stop();
+      ex.Manage();
+      Globals.ChronoStartingApp.Start();
+    }
   }
 
 }

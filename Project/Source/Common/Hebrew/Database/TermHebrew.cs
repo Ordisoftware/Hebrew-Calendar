@@ -12,25 +12,22 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using SQLite;
 
-namespace Ordisoftware.Hebrew
+[Serializable]
+[Table("TermHebrew")]
+public class TermHebrew
 {
-
-  [Serializable]
-  [Table("TermHebrew")]
-  public class TermHebrew
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string Unicode { get; set; }
-    public string Hebrew { get; set; }
-    public List<TermLettriq> Lettriqs
-      => HebrewDatabase.Instance.TermLettriqs.Where(item => item.TermID == ID)
-                                             .OrderBy(s => s.Sentence).ToList();
-  }
-
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string Unicode { get; set; }
+  public string Hebrew { get; set; }
+  public List<TermLettriq> Lettriqs
+    => HebrewDatabase.Instance.TermLettriqs.Where(item => item.TermID == ID)
+                                           .OrderBy(s => s.Sentence).ToList();
 }

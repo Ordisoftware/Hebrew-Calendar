@@ -12,28 +12,24 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-02 </edited>
-using System;
+namespace Ordisoftware.Core;
+
 using CommandLine;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system command line options.
+/// </summary>
+class SystemCommandLine
 {
+  [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
+  public bool ResetSettings { get; set; }
 
-  /// <summary>
-  /// Provides system command line options.
-  /// </summary>
-  class SystemCommandLine
-  {
-    [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
-    public bool ResetSettings { get; set; }
+  [Option("hide", Required = false, HelpText = "Start the application without showing the main form.")]
+  public bool HideMainForm { get; set; }
 
-    [Option("hide", Required = false, HelpText = "Start the application without showing the main form.")]
-    public bool HideMainForm { get; set; }
+  [Option("show", Required = false, HelpText = "Start the application and show the main form.")]
+  public bool ShowMainForm { get; set; }
 
-    [Option("show", Required = false, HelpText = "Start the application and show the main form.")]
-    public bool ShowMainForm { get; set; }
-
-    [Option("lang", Required = false, HelpText = "Change the interface language.")]
-    public string Language { get; set; }
-  }
-
+  [Option("lang", Required = false, HelpText = "Change the interface language.")]
+  public string Language { get; set; }
 }

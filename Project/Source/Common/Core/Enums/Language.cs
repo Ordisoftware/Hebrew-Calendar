@@ -12,19 +12,14 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-01 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides supported languages enum.
+/// </summary>
+public enum Language
 {
-
-  /// <summary>
-  /// Provides supported languages enum.
-  /// </summary>
-  public enum Language
-  {
-    None,
-    EN,
-    FR
-  }
-
+  None,
+  EN,
+  FR
 }

@@ -12,16 +12,11 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+public enum CalendarDoubleClickAction
 {
-
-  public enum CalendarDoubleClickAction
-  {
-    Nothing,
-    SetActive,
-    Select
-  }
-
+  Nothing,
+  SetActive,
+  Select
 }

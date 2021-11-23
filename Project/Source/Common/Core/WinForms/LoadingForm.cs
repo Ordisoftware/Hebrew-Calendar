@@ -12,121 +12,118 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class LoadingForm : Form
 {
 
-  partial class LoadingForm : Form
+  public const int QuantaTotalDefault = 10;
+
+  static public LoadingForm Instance { get; private set; }
+
+  static LoadingForm()
   {
+    Instance = new LoadingForm();
+  }
 
-    public const int QuantaTotalDefault = 10;
+  private bool UseQuanta;
+  private int QuantaTotal;
+  private int QuantaLevel;
+  private int CurrentQuanta;
 
-    static public LoadingForm Instance { get; private set; }
+  public event Action Progressing;
+  public bool CancelRequired { get; set; }
+  public bool Hidden { get; set; }
 
-    static LoadingForm()
-    {
-      Instance = new LoadingForm();
-    }
+  private LoadingForm()
+  {
+    InitializeComponent();
+    Icon = Globals.MainForm?.Icon;
+  }
 
-    private bool UseQuanta;
-    private int QuantaTotal;
-    private int QuantaLevel;
-    private int CurrentQuanta;
+  private void LoadingForm_Load(object sender, EventArgs e)
+  {
+    Relocalize();
+  }
 
-    public event Action Progressing;
-    public bool CancelRequired { get; set; }
-    public bool Hidden { get; set; }
+  public void Relocalize()
+  {
+    LabelTitle.Text = Globals.AssemblyTitle;
+  }
 
-    private LoadingForm()
-    {
-      InitializeComponent();
-      Icon = Globals.MainForm?.Icon;
-    }
-
-    private void LoadingForm_Load(object sender, EventArgs e)
-    {
-      Relocalize();
-    }
-
-    public void Relocalize()
-    {
-      LabelTitle.Text = Globals.AssemblyTitle;
-    }
-
-    public void Initialize(string text,
-                           int count,
-                           int minimum = 0,
-                           bool quantify = true,
-                           int quantaTotal = QuantaTotalDefault,
-                           bool showCounter = false,
-                           bool canCancel = false,
-                           bool topMost = false)
-    {
-      Relocalize();
-      TopMost = topMost;
-      CancelRequired = false;
-      ActionCancel.Visible = canCancel;
-      LabelCount.Visible = showCounter;
-      QuantaTotal = quantaTotal;
-      this.CenterToMainFormElseScreen();
-      if ( !Hidden )
-        if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
-        {
-          Show();
-          BringToFront();
-        }
-      if ( count <= 0 ) count = 1;
-      UseQuanta = quantify && count > QuantaTotal;
-      QuantaLevel = UseQuanta ? count / QuantaTotal : 1;
-      CurrentQuanta = 0;
-      ProgressBar.Value = 0;
-      ProgressBar.Maximum = UseQuanta ? QuantaTotal - 1 : count - 1;
-      ProgressBar.Refresh();
-      LabelOperation.Text = text;
-      LabelCount.Text = LabelCount.Visible ? $"{minimum}/{count}" : string.Empty;
-      Refresh();
-      Application.DoEvents();
-    }
-
-    public void DoProgress(int index = -1)
-    {
-      bool process = true;
-      if ( UseQuanta )
+  public void Initialize(string text,
+                         int count,
+                         int minimum = 0,
+                         bool quantify = true,
+                         int quantaTotal = QuantaTotalDefault,
+                         bool showCounter = false,
+                         bool canCancel = false,
+                         bool topMost = false)
+  {
+    Relocalize();
+    TopMost = topMost;
+    CancelRequired = false;
+    ActionCancel.Visible = canCancel;
+    LabelCount.Visible = showCounter;
+    QuantaTotal = quantaTotal;
+    this.CenterToMainFormElseScreen();
+    if ( !Hidden )
+      if ( minimum == 0 || ( minimum > 0 && count > minimum ) )
       {
-        CurrentQuanta++;
-        if ( CurrentQuanta >= QuantaLevel )
-          CurrentQuanta = 0;
-        else
-          process = false;
-      }
-      if ( process )
-      {
-        if ( index == -1 )
-          ProgressBar.PerformStep();
-        else
-          ProgressBar.Value = index;
-        if ( LabelCount.Visible ) LabelCount.Text = $"{ProgressBar.Value}/{ProgressBar.Maximum}";
-        ProgressBar.Refresh();
-        Refresh();
+        Show();
         BringToFront();
       }
-      SystemManager.TryCatchManage(() => Progressing?.Invoke());
-      if ( ActionCancel.Visible ) Application.DoEvents();
-    }
+    if ( count <= 0 ) count = 1;
+    UseQuanta = quantify && count > QuantaTotal;
+    QuantaLevel = UseQuanta ? count / QuantaTotal : 1;
+    CurrentQuanta = 0;
+    ProgressBar.Value = 0;
+    ProgressBar.Maximum = UseQuanta ? QuantaTotal - 1 : count - 1;
+    ProgressBar.Refresh();
+    LabelOperation.Text = text;
+    LabelCount.Text = LabelCount.Visible ? $"{minimum}/{count}" : string.Empty;
+    Refresh();
+    Application.DoEvents();
+  }
 
-    public void SetProgress(int index)
+  public void DoProgress(int index = -1)
+  {
+    bool process = true;
+    if ( UseQuanta )
     {
-      ProgressBar.Value = index > ProgressBar.Maximum ? ProgressBar.Maximum : index;
+      CurrentQuanta++;
+      if ( CurrentQuanta >= QuantaLevel )
+        CurrentQuanta = 0;
+      else
+        process = false;
+    }
+    if ( process )
+    {
+      if ( index == -1 )
+        ProgressBar.PerformStep();
+      else
+        ProgressBar.Value = index;
+      if ( LabelCount.Visible ) LabelCount.Text = $"{ProgressBar.Value}/{ProgressBar.Maximum}";
       ProgressBar.Refresh();
+      Refresh();
+      BringToFront();
     }
+    SystemManager.TryCatchManage(() => Progressing?.Invoke());
+    if ( ActionCancel.Visible ) Application.DoEvents();
+  }
 
-    private void ActionCancel_Click(object sender, EventArgs e)
-    {
-      CancelRequired = true;
-    }
+  public void SetProgress(int index)
+  {
+    ProgressBar.Value = index > ProgressBar.Maximum ? ProgressBar.Maximum : index;
+    ProgressBar.Refresh();
+  }
 
+  private void ActionCancel_Click(object sender, EventArgs e)
+  {
+    CancelRequired = true;
   }
 
 }

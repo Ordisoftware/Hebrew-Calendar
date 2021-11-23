@@ -12,20 +12,15 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides show exception mode enum.
+/// </summary>
+public enum ShowExceptionMode
 {
-
-  /// <summary>
-  /// Provides show exception mode enum.
-  /// </summary>
-  public enum ShowExceptionMode
-  {
-    None,
-    Simple,
-    Advanced,
-    OnlyMessage
-  }
-
+  None,
+  Simple,
+  Advanced,
+  OnlyMessage
 }

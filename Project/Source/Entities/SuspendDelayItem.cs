@@ -12,24 +12,19 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides suspend reminder delay item.
+/// </summary>
+class SuspendDelayItem
 {
-
-  /// <summary>
-  /// Provides suspend reminder delay item.
-  /// </summary>
-  class SuspendDelayItem
+  public string Text { get; set; }
+  public int Minutes { get; set; }
+  public override string ToString() => Text;
+  public SuspendDelayItem(string text, int minutes)
   {
-    public string Text { get; set; }
-    public int Minutes { get; set; }
-    public override string ToString() => Text;
-    public SuspendDelayItem(string text, int minutes)
-    {
-      Text = text;
-      Minutes = minutes;
-    }
+    Text = text;
+    Minutes = minutes;
   }
-
 }

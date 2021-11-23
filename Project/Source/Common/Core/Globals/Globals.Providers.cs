@@ -12,63 +12,60 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-10 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides global variables.
+/// </summary>
+static partial class Globals
 {
 
   /// <summary>
-  /// Provides global variables.
+  /// Indicates the application web links folder.
   /// </summary>
-  static partial class Globals
+  static public string WebLinksFolderPath
+    => Path.Combine(DocumentsFolderPath, "WebLinks");
+
+  /// <summary>
+  /// Indicates the web links providers.
+  /// </summary>
+  static public List<OnlineProviders> WebLinksProviders { get; private set; }
+
+  /// <summary>
+  /// Creates an OnlineProviders instance.
+  /// </summary>
+  static public OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filePath)
   {
-
-    /// <summary>
-    /// Indicates the application web links folder.
-    /// </summary>
-    static public string WebLinksFolderPath
-      => Path.Combine(DocumentsFolderPath, "WebLinks");
-
-    /// <summary>
-    /// Indicates the web links providers.
-    /// </summary>
-    static public List<OnlineProviders> WebLinksProviders { get; private set; }
-
-    /// <summary>
-    /// Creates an OnlineProviders instance.
-    /// </summary>
-    static public OnlineProviders CreateOnlineProviders(DataFileFolder folder, string filePath)
+    try
     {
-      try
-      {
-        return new OnlineProviders(filePath, true, IsDebugExecutable, folder);
-      }
-      catch ( Exception ex )
-      {
-        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
-        return null;
-      }
+      return new OnlineProviders(filePath, true, IsDebugExecutable, folder);
     }
-
-    /// <summary>
-    /// Loads web links providers files.
-    /// </summary>
-    static public void LoadWebLinksProviders()
+    catch ( Exception ex )
     {
-      if ( !Directory.Exists(WebLinksFolderPath) ) return;
-      WebLinksProviders = new List<OnlineProviders>();
-      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
-      {
-        foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
-        {
-          var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
-          if ( item != null ) WebLinksProviders.Add(item);
-        }
-      });
+      DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
+      return null;
     }
+  }
 
+  /// <summary>
+  /// Loads web links providers files.
+  /// </summary>
+  static public void LoadWebLinksProviders()
+  {
+    if ( !Directory.Exists(WebLinksFolderPath) ) return;
+    WebLinksProviders = new List<OnlineProviders>();
+    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    {
+      foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
+      {
+        var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
+        if ( item != null ) WebLinksProviders.Add(item);
+      }
+    });
   }
 
 }

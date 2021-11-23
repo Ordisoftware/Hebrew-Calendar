@@ -12,27 +12,22 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides MessageBoxForm style enum.
+/// </summary>
+public enum MessageBoxFormStyle
 {
 
   /// <summary>
-  /// Provides MessageBoxForm style enum.
+  /// Use standard Windows MessageBox class.
   /// </summary>
-  public enum MessageBoxFormStyle
-  {
+  System,
 
-    /// <summary>
-    /// Use standard Windows MessageBox class.
-    /// </summary>
-    System,
-
-    /// <summary>
-    /// Use custom form.
-    /// </summary>
-    Advanced
-
-  }
+  /// <summary>
+  /// Use custom form.
+  /// </summary>
+  Advanced
 
 }

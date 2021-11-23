@@ -12,24 +12,21 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides calendar date item.
+/// </summary>
+class CalendarDateItem
 {
-
-  /// <summary>
-  /// Provides calendar date item.
-  /// </summary>
-  class CalendarDateItem
-  {
-    public DateTime Date { get; set; }
-    public int MoonDay { get; set; }
-    public MoonPhase MoonPhase { get; set; }
-    public SeasonChange TorahSeasonChange { get; set; }
-    public SeasonChange RealSeasonChange { get; set; }
-    public SunAndMoonRiseAndSet Ephemerisis { get; set; }
-    public override string ToString() => SQLiteDate.ToString(Date);
-  }
-
+  public DateTime Date { get; set; }
+  public int MoonDay { get; set; }
+  public MoonPhase MoonPhase { get; set; }
+  public SeasonChange TorahSeasonChange { get; set; }
+  public SeasonChange RealSeasonChange { get; set; }
+  public SunAndMoonRiseAndSet Ephemerisis { get; set; }
+  public override string ToString() => SQLiteDate.ToString(Date);
 }

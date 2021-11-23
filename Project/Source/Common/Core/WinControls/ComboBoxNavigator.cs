@@ -12,152 +12,150 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2021-02 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class ComboBoxNavigator : UserControl
 {
-  partial class ComboBoxNavigator : UserControl
+
+  private bool Mutex;
+
+  public ComboBox ComboBox
   {
-
-    private bool Mutex;
-
-    public ComboBox ComboBox
+    get => _ComboBox;
+    set
     {
-      get => _ComboBox;
-      set
+      if ( _ComboBox == value ) return;
+      if ( value != null )
       {
-        if ( _ComboBox == value ) return;
-        if ( value != null )
-        {
-          _ComboBox = value;
-          _ComboBox.VisibleChanged += ComboBox_VisibleChanged;
-          _ComboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
-        }
-        else
-        {
-          _ComboBox.VisibleChanged -= ComboBox_VisibleChanged;
-          _ComboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
-          _ComboBox = null;
-        }
+        _ComboBox = value;
+        _ComboBox.VisibleChanged += ComboBox_VisibleChanged;
+        _ComboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+      }
+      else
+      {
+        _ComboBox.VisibleChanged -= ComboBox_VisibleChanged;
+        _ComboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+        _ComboBox = null;
       }
     }
-    private ComboBox _ComboBox;
+  }
+  private ComboBox _ComboBox;
 
-    public ComboBox.ObjectCollection Items
+  public ComboBox.ObjectCollection Items
+  {
+    get { return _ComboBox.Items; }
+  }
+
+  public int Count
+  {
+    get { return _ComboBox?.Items.Count ?? -1; }
+  }
+
+  public int SelectedIndex
+  {
+    get { return _ComboBox?.SelectedIndex ?? -1; }
+    set { if ( _ComboBox != null ) _ComboBox.SelectedIndex = value; }
+  }
+
+  public object SelectedItem
+  {
+    get { return _ComboBox?.SelectedItem; }
+    set { if ( _ComboBox != null ) _ComboBox.SelectedItem = value; }
+  }
+
+  public event EventHandler SelectedIndexChanged
+  {
+    add { if ( _ComboBox != null ) _ComboBox.SelectedIndexChanged += value; }
+    remove { if ( _ComboBox != null ) _ComboBox.SelectedIndexChanged -= value; }
+  }
+
+  public event EventHandler Navigated;
+
+  public ComboBoxNavigator()
+  {
+    InitializeComponent();
+  }
+
+  public void Fill(IEnumerable<int> list, int selected = -1)
+  {
+    if ( _ComboBox == null ) return;
+    Mutex = true;
+    foreach ( int value in list )
     {
-      get { return _ComboBox.Items; }
+      int index = _ComboBox.Items.Add(value);
+      if ( value == selected )
+        _ComboBox.SelectedIndex = index;
     }
+    if ( _ComboBox.SelectedIndex == -1 )
+      if ( _ComboBox.Items.Count > 0 )
+        _ComboBox.SelectedIndex = 0;
+    Mutex = false;
+  }
 
-    public int Count
+  public override void Refresh()
+  {
+    if ( Mutex ) return;
+    Mutex = true;
+    try
     {
-      get { return _ComboBox?.Items.Count ?? -1; }
+      base.Refresh();
+      bool notNull = _ComboBox != null;
+      ActionFirst.Enabled = notNull && _ComboBox.SelectedIndex > 0;
+      ActionPrevious.Enabled = ActionFirst.Enabled;
+      ActionLast.Enabled = notNull && _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1;
+      ActionNext.Enabled = ActionLast.Enabled;
     }
-
-    public int SelectedIndex
+    finally
     {
-      get { return _ComboBox?.SelectedIndex ?? -1; }
-      set { if ( _ComboBox != null ) _ComboBox.SelectedIndex = value; }
-    }
-
-    public object SelectedItem
-    {
-      get { return _ComboBox?.SelectedItem; }
-      set { if ( _ComboBox != null ) _ComboBox.SelectedItem = value; }
-    }
-
-    public event EventHandler SelectedIndexChanged
-    {
-      add { if ( _ComboBox != null ) _ComboBox.SelectedIndexChanged += value; }
-      remove { if ( _ComboBox != null ) _ComboBox.SelectedIndexChanged -= value; }
-    }
-
-    public event EventHandler Navigated;
-
-    public ComboBoxNavigator()
-    {
-      InitializeComponent();
-    }
-
-    public void Fill(IEnumerable<int> list, int selected = -1)
-    {
-      if ( _ComboBox == null ) return;
-      Mutex = true;
-      foreach ( int value in list )
-      {
-        int index = _ComboBox.Items.Add(value);
-        if ( value == selected )
-          _ComboBox.SelectedIndex = index;
-      }
-      if ( _ComboBox.SelectedIndex == -1 )
-        if ( _ComboBox.Items.Count > 0 )
-          _ComboBox.SelectedIndex = 0;
       Mutex = false;
     }
+  }
 
-    public override void Refresh()
-    {
-      if ( Mutex ) return;
-      Mutex = true;
-      try
-      {
-        base.Refresh();
-        bool notNull = _ComboBox != null;
-        ActionFirst.Enabled = notNull && _ComboBox.SelectedIndex > 0;
-        ActionPrevious.Enabled = ActionFirst.Enabled;
-        ActionLast.Enabled = notNull && _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1;
-        ActionNext.Enabled = ActionLast.Enabled;
-      }
-      finally
-      {
-        Mutex = false;
-      }
-    }
+  private void ComboBoxNavigator_EnabledChanged(object sender, EventArgs e)
+  {
+    Refresh();
+  }
 
-    private void ComboBoxNavigator_EnabledChanged(object sender, EventArgs e)
-    {
-      Refresh();
-    }
+  private void ComboBox_VisibleChanged(object sender, EventArgs e)
+  {
+    Refresh();
+  }
 
-    private void ComboBox_VisibleChanged(object sender, EventArgs e)
-    {
-      Refresh();
-    }
+  private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    Refresh();
+  }
 
-    private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      Refresh();
-    }
+  private void ActionFirst_Click(object sender, EventArgs e)
+  {
+    _ComboBox.SelectedIndex = 0;
+    ActiveControl = ActionNext;
+    Navigated?.Invoke(sender, e);
+  }
 
-    private void ActionFirst_Click(object sender, EventArgs e)
-    {
-      _ComboBox.SelectedIndex = 0;
-      ActiveControl = ActionNext;
-      Navigated?.Invoke(sender, e);
-    }
+  private void ActionPrevious_Click(object sender, EventArgs e)
+  {
+    if ( _ComboBox.SelectedIndex > 0 ) _ComboBox.SelectedIndex--;
+    if ( _ComboBox.SelectedIndex == 0 ) ActiveControl = ActionNext;
+    Navigated?.Invoke(sender, e);
+  }
 
-    private void ActionPrevious_Click(object sender, EventArgs e)
-    {
-      if ( _ComboBox.SelectedIndex > 0 ) _ComboBox.SelectedIndex--;
-      if ( _ComboBox.SelectedIndex == 0 ) ActiveControl = ActionNext;
-      Navigated?.Invoke(sender, e);
-    }
+  private void ActionNext_Click(object sender, EventArgs e)
+  {
+    if ( _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1 ) _ComboBox.SelectedIndex++;
+    if ( _ComboBox.SelectedIndex == _ComboBox.Items.Count - 1 ) ActiveControl = ActionPrevious;
+    Navigated?.Invoke(sender, e);
+  }
 
-    private void ActionNext_Click(object sender, EventArgs e)
-    {
-      if ( _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1 ) _ComboBox.SelectedIndex++;
-      if ( _ComboBox.SelectedIndex == _ComboBox.Items.Count - 1 ) ActiveControl = ActionPrevious;
-      Navigated?.Invoke(sender, e);
-    }
-
-    private void ActionLast_Click(object sender, EventArgs e)
-    {
-      _ComboBox.SelectedIndex = _ComboBox.Items.Count - 1;
-      ActiveControl = ActionPrevious;
-      Navigated?.Invoke(sender, e);
-    }
-
+  private void ActionLast_Click(object sender, EventArgs e)
+  {
+    _ComboBox.SelectedIndex = _ComboBox.Items.Count - 1;
+    ActiveControl = ActionPrevious;
+    Navigated?.Invoke(sender, e);
   }
 
 }

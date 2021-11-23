@@ -1287,7 +1287,7 @@
     <value>13</value>
   </data>
   <data name="LabelLastDBOptimize.Text" xml:space="preserve">
-    <value>Last optimization: </value>
+    <value>Last optimization:</value>
   </data>
   <data name="&gt;&gt;LabelLastDBOptimize.Name" xml:space="preserve">
     <value>LabelLastDBOptimize</value>

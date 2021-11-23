@@ -12,71 +12,68 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class SelectSuspendDelayForm : Form
 {
 
-  partial class SelectSuspendDelayForm : Form
+  static private readonly Properties.Settings Settings = Program.Settings;
+
+  static public int? Run()
   {
+    using var form = new SelectSuspendDelayForm();
+    if ( form.ShowDialog() != DialogResult.OK ) return null;
+    int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
+    if ( value == -1 ) value = (int)form.EditDelay.Value;
+    return value;
+  }
 
-    static private readonly Properties.Settings Settings = Program.Settings;
+  private SelectSuspendDelayForm()
+  {
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
+  }
 
-    static public int? Run()
-    {
-      using var form = new SelectSuspendDelayForm();
-      if ( form.ShowDialog() != DialogResult.OK ) return null;
-      int value = ( (SuspendDelayItem)form.SelectDelay.SelectedItem ).Minutes;
-      if ( value == -1 ) value = (int)form.EditDelay.Value;
-      return value;
-    }
-
-    private SelectSuspendDelayForm()
-    {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-    }
-
-    private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
-    {
-      if ( MainForm.Instance.Visible )
-        this.CenterToMainFormElseScreen();
-      else
-        this.SetLocation(ControlLocation.BottomRight);
-      SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
-      SelectDelay.SelectedIndex = -1;
-      foreach ( SuspendDelayItem item in SelectDelay.Items )
-        if ( Settings.LastSuspendDelaySelected == item.Minutes )
-        {
-          SelectDelay.SelectedItem = item;
-          break;
-        }
-      if ( SelectDelay.SelectedIndex == -1 )
+  private void SelectSuspendDelayForm_Load(object sender, EventArgs e)
+  {
+    if ( MainForm.Instance.Visible )
+      this.CenterToMainFormElseScreen();
+    else
+      this.SetLocation(ControlLocation.BottomRight);
+    SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
+    SelectDelay.SelectedIndex = -1;
+    foreach ( SuspendDelayItem item in SelectDelay.Items )
+      if ( Settings.LastSuspendDelaySelected == item.Minutes )
       {
-        SelectDelay.SelectedIndex = SelectDelay.Items.Count - 1;
-        EditDelay.Value = Settings.LastSuspendDelaySelected;
+        SelectDelay.SelectedItem = item;
+        break;
       }
-    }
-
-    private void SelectDelay_SelectedIndexChanged(object sender, EventArgs e)
+    if ( SelectDelay.SelectedIndex == -1 )
     {
-      int value = ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
-      EditDelay.Enabled = value == -1;
-      LabelCustom.Enabled = EditDelay.Enabled;
-      if ( !EditDelay.Enabled )
-        EditDelay.Value = value;
+      SelectDelay.SelectedIndex = SelectDelay.Items.Count - 1;
+      EditDelay.Value = Settings.LastSuspendDelaySelected;
     }
+  }
 
-    private void ActionOK_Click(object sender, EventArgs e)
-    {
-      Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
-                                          ? (int)EditDelay.Value
-                                          : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
-      SystemManager.TryCatch(Settings.Save);
-    }
+  private void SelectDelay_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    int value = ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
+    EditDelay.Enabled = value == -1;
+    LabelCustom.Enabled = EditDelay.Enabled;
+    if ( !EditDelay.Enabled )
+      EditDelay.Value = value;
+  }
 
+  private void ActionOK_Click(object sender, EventArgs e)
+  {
+    Settings.LastSuspendDelaySelected = SelectDelay.SelectedIndex == SelectDelay.Items.Count - 1
+                                        ? (int)EditDelay.Value
+                                        : ( (SuspendDelayItem)SelectDelay.SelectedItem ).Minutes;
+    SystemManager.TryCatch(Settings.Save);
   }
 
 }

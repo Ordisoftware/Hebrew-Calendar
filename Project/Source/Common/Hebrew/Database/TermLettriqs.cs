@@ -12,31 +12,28 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-08 </edited>
+namespace Ordisoftware.Hebrew;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using SQLite;
 
-namespace Ordisoftware.Hebrew
+[Serializable]
+[Table("TermLettriq")]
+public class TermLettriq
 {
-
-  [Serializable]
-  [Table("TermLettriq")]
-  public class TermLettriq
-  {
-    [PrimaryKey]
-    public string ID { get; set; }
-    public string TermID { get; set; }
-    public string ConcordanceID { get; set; }
-    public string Transcription { get; set; }
-    public string Dictionary { get; set; }
-    public string Sentence { get; set; }
-    public string Memo { get; set; }
-    public List<TermAnalysis> Analyzes
-      => HebrewDatabase.Instance
-                       .TermAnalyzes
-                       .Where(item => item.LettriqID == ID)
-                       .OrderBy(meaning => meaning.Position).ToList();
-  }
-
+  [PrimaryKey]
+  public string ID { get; set; }
+  public string TermID { get; set; }
+  public string ConcordanceID { get; set; }
+  public string Transcription { get; set; }
+  public string Dictionary { get; set; }
+  public string Sentence { get; set; }
+  public string Memo { get; set; }
+  public List<TermAnalysis> Analyzes
+    => HebrewDatabase.Instance
+                     .TermAnalyzes
+                     .Where(item => item.LettriqID == ID)
+                     .OrderBy(meaning => meaning.Position).ToList();
 }

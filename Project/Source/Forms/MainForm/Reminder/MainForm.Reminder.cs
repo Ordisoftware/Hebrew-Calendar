@@ -12,69 +12,64 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void EnableReminderTimer(bool calltimer = true)
   {
-
-    private void EnableReminderTimer(bool calltimer = true)
+    TimerResumeReminder.Enabled = false;
+    ActionResetReminder.Enabled = true;
+    ActionEnableReminder.Visible = false;
+    ActionDisableReminder.Visible = true;
+    ActionEnableReminder.Enabled = false;
+    ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
+    MenuResetReminder.Enabled = true;
+    MenuEnableReminder.Visible = false;
+    MenuDisableReminder.Visible = true;
+    MenuEnableReminder.Enabled = false;
+    MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
+    IsReminderPaused = false;
+    if ( calltimer )
     {
-      TimerResumeReminder.Enabled = false;
-      ActionResetReminder.Enabled = true;
-      ActionEnableReminder.Visible = false;
-      ActionDisableReminder.Visible = true;
-      ActionEnableReminder.Enabled = false;
-      ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
-      MenuResetReminder.Enabled = true;
-      MenuEnableReminder.Visible = false;
-      MenuDisableReminder.Visible = true;
-      MenuEnableReminder.Enabled = false;
-      MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
-      IsReminderPaused = false;
-      if ( calltimer )
-      {
-        ClearLists();
-        TimerReminder_Tick(null, null);
-      }
-      else
-        UpdateTitles(true);
+      ClearLists();
+      TimerReminder_Tick(null, null);
     }
+    else
+      UpdateTitles(true);
+  }
 
-    private void DisableReminderTimer()
+  private void DisableReminderTimer()
+  {
+    try
     {
-      try
+      MenuTray.Enabled = false;
+      var delay = SelectSuspendDelayForm.Run();
+      if ( delay == null ) return;
+      IsReminderPaused = true;
+      ActionResetReminder.Enabled = false;
+      ActionEnableReminder.Visible = true;
+      ActionDisableReminder.Visible = false;
+      ActionEnableReminder.Enabled = true;
+      ActionDisableReminder.Enabled = false;
+      MenuResetReminder.Enabled = false;
+      MenuEnableReminder.Visible = true;
+      MenuDisableReminder.Visible = false;
+      MenuEnableReminder.Enabled = true;
+      MenuDisableReminder.Enabled = false;
+      ClearLists();
+      UpdateTitles(true);
+      if ( delay > 0 )
       {
-        MenuTray.Enabled = false;
-        var delay = SelectSuspendDelayForm.Run();
-        if ( delay == null ) return;
-        IsReminderPaused = true;
-        ActionResetReminder.Enabled = false;
-        ActionEnableReminder.Visible = true;
-        ActionDisableReminder.Visible = false;
-        ActionEnableReminder.Enabled = true;
-        ActionDisableReminder.Enabled = false;
-        MenuResetReminder.Enabled = false;
-        MenuEnableReminder.Visible = true;
-        MenuDisableReminder.Visible = false;
-        MenuEnableReminder.Enabled = true;
-        MenuDisableReminder.Enabled = false;
-        ClearLists();
-        UpdateTitles(true);
-        if ( delay > 0 )
-        {
-          TimerResumeReminder.Interval = delay.Value * 60 * 1000;
-          TimerResumeReminder.Start();
-        }
-      }
-      finally
-      {
-        MenuTray.Enabled = true;
+        TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+        TimerResumeReminder.Start();
       }
     }
-
+    finally
+    {
+      MenuTray.Enabled = true;
+    }
   }
 
 }

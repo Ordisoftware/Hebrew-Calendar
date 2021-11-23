@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides MessageBoxForm icon enum.
+/// </summary>
+public enum MessageBoxIconStyle
 {
 
   /// <summary>
-  /// Provides MessageBoxForm icon enum.
+  /// Use system settings.
   /// </summary>
-  public enum MessageBoxIconStyle
-  {
+  System,
 
-    /// <summary>
-    /// Use system settings.
-    /// </summary>
-    System,
+  /// <summary>
+  /// Force none icon as information.
+  /// </summary>
+  ForceNone,
 
-    /// <summary>
-    /// Force none icon as information.
-    /// </summary>
-    ForceNone,
-
-    /// <summary>
-    /// Force information and question icon as none.
-    /// </summary>
-    ForceInformation,
-
-  }
+  /// <summary>
+  /// Force information and question icon as none.
+  /// </summary>
+  ForceInformation,
 
 }

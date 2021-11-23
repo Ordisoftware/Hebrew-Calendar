@@ -12,75 +12,72 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Data;
 using System.Linq;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private bool CheckCelebrationDay(bool showbox)
   {
-
-    private bool CheckCelebrationDay(bool showbox)
+    bool check(TorahCelebrationDay item)
     {
-      bool check(TorahCelebrationDay item)
-      {
-        return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
-      }
-      bool result = false;
-      var dateNow = DateTime.Now;
-      dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
-      var dateToday = DateTime.Today;
-      var row = ( from day in LunisolarDays
-                  where day.HasTorahEvent && check(day.TorahEvent)
-                     && day.Date >= dateToday.AddDays(-1)
-                  select day ).FirstOrDefault();
-      if ( row == null ) return result;
-      var torahevent = row.TorahEvent;
-      if ( row.Date.Day < dateNow.Day )
-        if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
-          return result;
-      var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) return result;
-      result = dateNow >= times.DateStart && dateNow < times.DateEnd;
-      var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindCelebrationHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
-      {
-        LastCelebrationReminded[torahevent] = null;
-        if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
-          RemindCelebrationDayForms[torahevent].Close();
+      return TorahEventRemindDayList.ContainsKey(item) && TorahEventRemindDayList[item];
+    }
+    bool result = false;
+    var dateNow = DateTime.Now;
+    dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
+    var dateToday = DateTime.Today;
+    var row = ( from day in LunisolarDays
+                where day.HasTorahEvent && check(day.TorahEvent)
+                   && day.Date >= dateToday.AddDays(-1)
+                select day ).FirstOrDefault();
+    if ( row == null ) return result;
+    var torahevent = row.TorahEvent;
+    if ( row.Date.Day < dateNow.Day )
+      if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
         return result;
-      }
-      else
-      if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
-      {
-        if ( LastCelebrationReminded[torahevent].HasValue )
-          return result;
-        else
-          LastCelebrationReminded[torahevent] = dateNow;
-      }
-      else
-      if ( LastCelebrationReminded[torahevent].HasValue )
-      {
-        if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent].Value < times.DateStart )
-        {
-          if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
-            RemindCelebrationDayForms[torahevent].Close();
-          LastCelebrationReminded[torahevent] = dateNow;
-        }
-        else
-        if ( dateNow < LastCelebrationReminded[torahevent].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
-          return result;
-        else
-          LastCelebrationReminded[torahevent] = dateNow;
-      }
-      else
-        LastCelebrationReminded[torahevent] = dateNow;
-      if ( showbox ) ReminderForm.Run(row, torahevent, times);
+    var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
+    if ( times == null ) return result;
+    result = dateNow >= times.DateStart && dateNow < times.DateEnd;
+    var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindCelebrationHoursBefore);
+    if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
+    {
+      LastCelebrationReminded[torahevent] = null;
+      if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
+        RemindCelebrationDayForms[torahevent].Close();
       return result;
     }
-
+    else
+    if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
+    {
+      if ( LastCelebrationReminded[torahevent].HasValue )
+        return result;
+      else
+        LastCelebrationReminded[torahevent] = dateNow;
+    }
+    else
+    if ( LastCelebrationReminded[torahevent].HasValue )
+    {
+      if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent].Value < times.DateStart )
+      {
+        if ( RemindCelebrationDayForms.ContainsKey(torahevent) )
+          RemindCelebrationDayForms[torahevent].Close();
+        LastCelebrationReminded[torahevent] = dateNow;
+      }
+      else
+      if ( dateNow < LastCelebrationReminded[torahevent].Value.AddMinutes((double)Settings.RemindCelebrationEveryMinutes) )
+        return result;
+      else
+        LastCelebrationReminded[torahevent] = dateNow;
+    }
+    else
+      LastCelebrationReminded[torahevent] = dateNow;
+    if ( showbox ) ReminderForm.Run(row, torahevent, times);
+    return result;
   }
 
 }

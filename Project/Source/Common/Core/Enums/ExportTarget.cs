@@ -12,34 +12,29 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-04 </edited>
-using System;
+namespace Ordisoftware.Core;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Indicates supported data file format for export.
+/// </summary>
+public enum DataExportTarget
 {
+  TXT,
+  HTML,
+  DOCX,
+  CSV,
+  JSON,
+  XML
+}
 
-  /// <summary>
-  /// Indicates supported data file format for export.
-  /// </summary>
-  public enum DataExportTarget
-  {
-    TXT,
-    HTML,
-    DOCX,
-    CSV,
-    JSON,
-    XML
-  }
-
-  /// <summary>
-  /// Indicates supported image file format for export.
-  /// </summary>
-  public enum ImageExportTarget
-  {
-    PNG,
-    JPG,
-    TIFF,
-    BMP,
-    GIF
-  }
-
+/// <summary>
+/// Indicates supported image file format for export.
+/// </summary>
+public enum ImageExportTarget
+{
+  PNG,
+  JPG,
+  TIFF,
+  BMP,
+  GIF
 }

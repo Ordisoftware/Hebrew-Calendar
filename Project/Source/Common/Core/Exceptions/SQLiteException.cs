@@ -12,24 +12,21 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Data.Common;
 using System.Runtime.Serialization;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides SQLite exception.
+/// </summary>
+[Serializable]
+class SQLiteException : DbException
 {
-
-  /// <summary>
-  /// Provides SQLite exception.
-  /// </summary>
-  [Serializable]
-  class SQLiteException : DbException
-  {
-    public SQLiteException() { }
-    public SQLiteException(string message) : base(message) { }
-    public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
-    public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-    public SQLiteException(string message, int errorCode) : base(message, errorCode) { }
-  }
-
+  public SQLiteException() { }
+  public SQLiteException(string message) : base(message) { }
+  public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
+  public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+  public SQLiteException(string message, int errorCode) : base(message, errorCode) { }
 }

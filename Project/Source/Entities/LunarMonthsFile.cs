@@ -12,53 +12,49 @@
 /// </license>
 /// <created> 2020-03 </created>
 /// <edited> 2020-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System.Collections.Generic;
 using System.IO;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides lunar months file.
+/// </summary>
+class LunarMonthsFile : DataFile
 {
 
-  /// <summary>
-  /// Provides lunar months file.
-  /// </summary>
-  class LunarMonthsFile : DataFile
+  public readonly List<string> Items = new();
+
+  public string this[int index]
+    => index >= 0 && index < Items.Count ? Items[index] : string.Empty;
+
+  public LunarMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+  : base(filePath, showFileNotFound, configurable, folder)
   {
+  }
 
-    public readonly List<string> Items = new();
-
-    public string this[int index]
-      => index >= 0 && index < Items.Count ? Items[index] : string.Empty;
-
-    public LunarMonthsFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
-    : base(filePath, showFileNotFound, configurable, folder)
+  protected override void DoReLoad(string filePath)
+  {
+    if ( filePath.IsNullOrEmpty() ) return;
+    SystemManager.TryCatch(() =>
     {
-    }
-
-    protected override void DoReLoad(string filePath)
-    {
-      if ( filePath.IsNullOrEmpty() ) return;
-      SystemManager.TryCatch(() =>
+      Items.Clear();
+      Items.Add(string.Empty);
+      var lines = File.ReadAllLines(filePath);
+      for ( int index = 0; index < lines.Length; index++ )
       {
-        Items.Clear();
-        Items.Add(string.Empty);
-        var lines = File.ReadAllLines(filePath);
-        for ( int index = 0; index < lines.Length; index++ )
-        {
-          if ( index >= HebrewMonths.Transcriptions.Length )
-            break;
-          string line = lines[index];
-          if ( line.Trim().Length == 0 )
-            continue;
-          if ( line.StartsWith(";") )
-            continue;
-          var parts = line.Split(new char[] { '=' }, 2);
-          Items.Add(parts[1].Trim());
-        }
-      });
-    }
-
+        if ( index >= HebrewMonths.Transcriptions.Length )
+          break;
+        string line = lines[index];
+        if ( line.Trim().Length == 0 )
+          continue;
+        if ( line.StartsWith(";") )
+          continue;
+        var parts = line.Split(new char[] { '=' }, 2);
+        Items.Add(parts[1].Trim());
+      }
+    });
   }
 
 }

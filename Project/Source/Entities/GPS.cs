@@ -12,35 +12,31 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2020-12 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using FileHelpers;
 
-namespace Ordisoftware.Hebrew.Calendar
+class CityItem
 {
+  public string Name;
+  public string Latitude;
+  public string Longitude;
+  public override string ToString() => Name;
+}
 
-  class CityItem
-  {
-    public string Name;
-    public string Latitude;
-    public string Longitude;
-    public override string ToString() => Name;
-  }
-
-  [IgnoreFirst(1)]
-  [DelimitedRecord(",")]
-  class WorldCities
-  {
-    [FieldQuoted] public string city;
-    [FieldQuoted] public string city_ascii;
-    [FieldQuoted] public string lat;
-    [FieldQuoted] public string lng;
-    [FieldQuoted] public string country;
-    [FieldQuoted] public string iso2;
-    [FieldQuoted] public string iso3;
-    [FieldQuoted] public string admin_name;
-    [FieldQuoted] public string capital;
-    [FieldQuoted] public string population;
-    [FieldQuoted] public string id;
-  }
-
+[IgnoreFirst(1)]
+[DelimitedRecord(",")]
+class WorldCities
+{
+  [FieldQuoted] public string city;
+  [FieldQuoted] public string city_ascii;
+  [FieldQuoted] public string lat;
+  [FieldQuoted] public string lng;
+  [FieldQuoted] public string country;
+  [FieldQuoted] public string iso2;
+  [FieldQuoted] public string iso3;
+  [FieldQuoted] public string admin_name;
+  [FieldQuoted] public string capital;
+  [FieldQuoted] public string population;
+  [FieldQuoted] public string id;
 }

@@ -12,96 +12,92 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system management.
+/// </summary>
+static partial class SystemManager
 {
 
   /// <summary>
-  /// Provides system management.
+  /// Call actions without raising exceptions.
   /// </summary>
-  static partial class SystemManager
+  static public void TryCatch(params Action[] actions)
   {
+    foreach ( var action in actions )
+      TryCatch(action);
+  }
 
-    /// <summary>
-    /// Call actions without raising exceptions.
-    /// </summary>
-    static public void TryCatch(params Action[] actions)
+  /// <summary>
+  /// Call an action without raising exceptions.
+  /// </summary>
+  static public bool TryCatch(Action action)
+  {
+    try
     {
-      foreach ( var action in actions )
-        TryCatch(action);
+      action();
+      return true;
     }
-
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatch(Action action)
+    catch ( Exception ex )
     {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(ShowExceptionMode.None);
-        return false;
-      }
+      ex.Manage(ShowExceptionMode.None);
+      return false;
     }
+  }
 
-    /// <summary>
-    /// Call actions without raising exceptions.
-    /// </summary>
-    static public void TryCatchManage(params Action[] actions)
+  /// <summary>
+  /// Call actions without raising exceptions.
+  /// </summary>
+  static public void TryCatchManage(params Action[] actions)
+  {
+    foreach ( var action in actions )
+      TryCatchManage(action);
+  }
+
+  /// <summary>
+  /// Call actions without raising exceptions.
+  /// </summary>
+  static public void TryCatchManage(ShowExceptionMode mode, params Action[] actions)
+  {
+    foreach ( var action in actions )
+      TryCatchManage(mode, action);
+  }
+
+  /// <summary>
+  /// Call an action without raising exceptions.
+  /// </summary>
+  static public bool TryCatchManage(Action action)
+  {
+    try
     {
-      foreach ( var action in actions )
-        TryCatchManage(action);
+      action();
+      return true;
     }
-
-    /// <summary>
-    /// Call actions without raising exceptions.
-    /// </summary>
-    static public void TryCatchManage(ShowExceptionMode mode, params Action[] actions)
+    catch ( Exception ex )
     {
-      foreach ( var action in actions )
-        TryCatchManage(mode, action);
+      ex.Manage();
+      return false;
     }
+  }
 
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatchManage(Action action)
+  /// <summary>
+  /// Call an action without raising exceptions.
+  /// </summary>
+  static public bool TryCatchManage(ShowExceptionMode mode, Action action)
+  {
+    try
     {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-        return false;
-      }
+      action();
+      return true;
     }
-
-    /// <summary>
-    /// Call an action without raising exceptions.
-    /// </summary>
-    static public bool TryCatchManage(ShowExceptionMode mode, Action action)
+    catch ( Exception ex )
     {
-      try
-      {
-        action();
-        return true;
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage(mode);
-        return false;
-      }
+      ex.Manage(mode);
+      return false;
     }
-
-
   }
 
 }

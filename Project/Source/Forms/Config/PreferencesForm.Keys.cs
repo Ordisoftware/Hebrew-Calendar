@@ -12,49 +12,45 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2020-11 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides form to edit the preferences.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class PreferencesForm
 {
 
   /// <summary>
-  /// Provides form to edit the preferences.
+  /// Process the command key.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class PreferencesForm
+  /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
+  protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
-
-    /// <summary>
-    /// Process the command key.
-    /// </summary>
-    /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
-    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    if ( keyData >= Keys.F1 && keyData < Keys.F1 + TabControl.TabCount )
     {
-      if ( keyData >= Keys.F1 && keyData < Keys.F1 + TabControl.TabCount )
-      {
-        TabControl.SelectTab(keyData - Keys.F1);
-        return true;
-      }
-      if ( keyData == ( Keys.Control | Keys.Tab ) )
-      {
-        if ( TabControl.SelectedIndex == TabControl.TabCount - 1 )
-          TabControl.SelectedIndex = 0;
-        else
-          TabControl.SelectedIndex++;
-        return true;
-      }
-      if ( keyData == ( Keys.Control | Keys.Shift | Keys.Tab ) )
-      {
-        if ( TabControl.SelectedIndex == 0 )
-          TabControl.SelectedIndex = TabControl.TabCount - 1;
-        else
-          TabControl.SelectedIndex--;
-        return true;
-      }
-      return base.ProcessCmdKey(ref msg, keyData);
+      TabControl.SelectTab(keyData - Keys.F1);
+      return true;
     }
-
+    if ( keyData == ( Keys.Control | Keys.Tab ) )
+    {
+      if ( TabControl.SelectedIndex == TabControl.TabCount - 1 )
+        TabControl.SelectedIndex = 0;
+      else
+        TabControl.SelectedIndex++;
+      return true;
+    }
+    if ( keyData == ( Keys.Control | Keys.Shift | Keys.Tab ) )
+    {
+      if ( TabControl.SelectedIndex == 0 )
+        TabControl.SelectedIndex = TabControl.TabCount - 1;
+      else
+        TabControl.SelectedIndex--;
+      return true;
+    }
+    return base.ProcessCmdKey(ref msg, keyData);
   }
 
 }

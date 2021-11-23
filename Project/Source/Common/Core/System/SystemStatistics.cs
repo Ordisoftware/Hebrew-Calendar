@@ -12,181 +12,178 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2021-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides system statistics.
+/// </summary>
+class SystemStatistics
 {
 
-  /// <summary>
-  /// Provides system statistics.
-  /// </summary>
-  class SystemStatistics
+  static private readonly Process Process = Process.GetCurrentProcess();
+  static private PerformanceCounter PerformanceCounterCPULoad;
+  static private PerformanceCounter PerformanceCounterCPUProcessLoad;
+
+  static public ProcessPriorityClass RealProcessPriority
   {
-
-    static private readonly Process Process = Process.GetCurrentProcess();
-    static private PerformanceCounter PerformanceCounterCPULoad;
-    static private PerformanceCounter PerformanceCounterCPUProcessLoad;
-
-    static public ProcessPriorityClass RealProcessPriority
+    get
     {
-      get
-      {
-        var list = Process.GetProcessesByName(Globals.ProcessName);
-        return list.Length == 1 ? list[0].PriorityClass : 0;
-      }
+      var list = Process.GetProcessesByName(Globals.ProcessName);
+      return list.Length == 1 ? list[0].PriorityClass : 0;
     }
+  }
 
-    static public readonly SystemStatistics Instance = new();
+  static public readonly SystemStatistics Instance = new();
 
-    public string Processor
-      => SystemManager.Processor;
+  public string Processor
+    => SystemManager.Processor;
 
-    public string Platform
-      => SystemManager.Platform;
+  public string Platform
+    => SystemManager.Platform;
 
-    public string ProcessPriority
-      => RealProcessPriority.ToString();
+  public string ProcessPriority
+    => RealProcessPriority.ToString();
 
-    public string ThreadPriority
-      => Thread.CurrentThread.Priority.ToString();
+  public string ThreadPriority
+    => Thread.CurrentThread.Priority.ToString();
 
-    public string RunningTime
-      => ( (long)( DateTime.Now - Globals.StartDateTime ).TotalMilliseconds ).FormatMilliseconds(true);
+  public string RunningTime
+    => ( (long)( DateTime.Now - Globals.StartDateTime ).TotalMilliseconds ).FormatMilliseconds(true);
 
-    public string ProcessorTime
-      => ( (long)Process.TotalProcessorTime.TotalMilliseconds ).FormatMilliseconds(true);
+  public string ProcessorTime
+    => ( (long)Process.TotalProcessorTime.TotalMilliseconds ).FormatMilliseconds(true);
 
-    public string ExecutableMode
-      => Globals.IsDebugExecutable ? "Debug" : "Release";
+  public string ExecutableMode
+    => Globals.IsDebugExecutable ? "Debug" : "Release";
 
-    public string CompiledDate
-      => Globals.CompiledDateTime.ToString("g");
+  public string CompiledDate
+    => Globals.CompiledDateTime.ToString("g");
 
-    public string TotalVisibleMemory
-      => SystemManager.TotalVisibleMemory;
+  public string TotalVisibleMemory
+    => SystemManager.TotalVisibleMemory;
 
-    public string PhysicalMemoryFree
-      => SystemManager.PhysicalMemoryFree;
+  public string PhysicalMemoryFree
+    => SystemManager.PhysicalMemoryFree;
 
-    public string MemoryPrivate
-      => Process.PrivateMemorySize64.FormatBytesSize();
+  public string MemoryPrivate
+    => Process.PrivateMemorySize64.FormatBytesSize();
 
-    public string MemoryWorking
-      => Process.WorkingSet64.FormatBytesSize();
+  public string MemoryWorking
+    => Process.WorkingSet64.FormatBytesSize();
 
-    public string MemoryWorkingPeak
-      => Process.PeakWorkingSet64.FormatBytesSize();
+  public string MemoryWorkingPeak
+    => Process.PeakWorkingSet64.FormatBytesSize();
 
-    public string MemoryPaged
-      => Process.PagedMemorySize64.FormatBytesSize();
+  public string MemoryPaged
+    => Process.PagedMemorySize64.FormatBytesSize();
 
-    public string MemoryPagedPeak
-      => Process.PeakPagedMemorySize64.FormatBytesSize();
+  public string MemoryPagedPeak
+    => Process.PeakPagedMemorySize64.FormatBytesSize();
 
-    public string MemoryPagedSystem
-      => Process.PagedSystemMemorySize64.FormatBytesSize();
+  public string MemoryPagedSystem
+    => Process.PagedSystemMemorySize64.FormatBytesSize();
 
-    public string MemoryVirtual
-      => Process.VirtualMemorySize64.FormatBytesSize();
+  public string MemoryVirtual
+    => Process.VirtualMemorySize64.FormatBytesSize();
 
-    public string MemoryVirtualPeak
-      => Process.PeakVirtualMemorySize64.FormatBytesSize();
+  public string MemoryVirtualPeak
+    => Process.PeakVirtualMemorySize64.FormatBytesSize();
 
-    public string MemoryGCPeak
-      => _MemoryGCPeak.FormatBytesSize();
+  public string MemoryGCPeak
+    => _MemoryGCPeak.FormatBytesSize();
 
-    public string MemoryGC
+  public string MemoryGC
+  {
+    get
     {
-      get
-      {
-        long value = GC.GetTotalMemory(true);
-        if ( value > _MemoryGCPeak ) _MemoryGCPeak = value;
-        return value.FormatBytesSize();
-      }
+      long value = GC.GetTotalMemory(true);
+      if ( value > _MemoryGCPeak ) _MemoryGCPeak = value;
+      return value.FormatBytesSize();
     }
-    static private long _MemoryGCPeak;
+  }
+  static private long _MemoryGCPeak;
 
-    static private bool CPUProcessLoadInitMutex;
+  static private bool CPUProcessLoadInitMutex;
 
-    public string CPUProcessLoad
+  public string CPUProcessLoad
+  {
+    get
     {
-      get
+      if ( PerformanceCounterCPUProcessLoad == null )
       {
-        if ( PerformanceCounterCPUProcessLoad == null )
+        CPUProcessLoadInitMutex = true;
+        new Task(() =>
         {
-          CPUProcessLoadInitMutex = true;
-          new Task(() =>
+          var process = Process.GetCurrentProcess();
+          var name = string.Empty;
+          foreach ( var instance in from instance in new PerformanceCounterCategory("Process").GetInstanceNames()
+                                    where instance.StartsWith(process.ProcessName)
+                                    select instance )
           {
-            var process = Process.GetCurrentProcess();
-            var name = string.Empty;
-            foreach ( var instance in from instance in new PerformanceCounterCategory("Process").GetInstanceNames()
-                                      where instance.StartsWith(process.ProcessName)
-                                      select instance )
+            using var processId = new PerformanceCounter("Process", "ID Process", instance, true);
+            if ( process.Id == (int)processId.RawValue )
             {
-              using var processId = new PerformanceCounter("Process", "ID Process", instance, true);
-              if ( process.Id == (int)processId.RawValue )
-              {
-                name = instance;
-                break;
-              }
+              name = instance;
+              break;
             }
+          }
 
-            PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", name, true);
-            CPUProcessLoadInitMutex = false;
-          }).Start();
-        }
-        if ( CPUProcessLoadInitMutex ) return "(init)";
-        int value = 0;
-        try
-        {
-          do
-            value = (int)PerformanceCounterCPUProcessLoad.NextValue();
-          while ( value > 100 );
-        }
-        catch
-        {
-          PerformanceCounterCPUProcessLoad = null;
-        }
-        if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
-        _CPUprocessLoadCount++;
-        _CPUProcessLoadAverage += (ulong)value;
-        return value + "%";
+          PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", name, true);
+          CPUProcessLoadInitMutex = false;
+        }).Start();
       }
-    }
-    static private int _CPUProcessLoadMax;
-    static private ulong _CPUprocessLoadCount;
-    static private ulong _CPUProcessLoadAverage;
-
-    public string CPUProcessLoadAverage
-      => _CPUprocessLoadCount == 0 ? "-" : _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
-
-    public string CPUProcessLoadMax
-      => _CPUProcessLoadMax + "%";
-
-    static private bool CPULoadInitMutex;
-
-    public string CPULoad
-    {
-      get
+      if ( CPUProcessLoadInitMutex ) return "(init)";
+      int value = 0;
+      try
       {
-        if ( PerformanceCounterCPULoad == null )
-        {
-          CPULoadInitMutex = true;
-          new Task(() =>
-          {
-            PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-            CPULoadInitMutex = false;
-          }).Start();
-        }
-        if ( CPULoadInitMutex ) return "(init)";
-        return (int)PerformanceCounterCPULoad.NextValue() + "%";
+        do
+          value = (int)PerformanceCounterCPUProcessLoad.NextValue();
+        while ( value > 100 );
       }
+      catch
+      {
+        PerformanceCounterCPUProcessLoad = null;
+      }
+      if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
+      _CPUprocessLoadCount++;
+      _CPUProcessLoadAverage += (ulong)value;
+      return value + "%";
     }
+  }
+  static private int _CPUProcessLoadMax;
+  static private ulong _CPUprocessLoadCount;
+  static private ulong _CPUProcessLoadAverage;
 
+  public string CPUProcessLoadAverage
+    => _CPUprocessLoadCount == 0 ? "-" : _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
+
+  public string CPUProcessLoadMax
+    => _CPUProcessLoadMax + "%";
+
+  static private bool CPULoadInitMutex;
+
+  public string CPULoad
+  {
+    get
+    {
+      if ( PerformanceCounterCPULoad == null )
+      {
+        CPULoadInitMutex = true;
+        new Task(() =>
+        {
+          PerformanceCounterCPULoad = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+          CPULoadInitMutex = false;
+        }).Start();
+      }
+      if ( CPULoadInitMutex ) return "(init)";
+      return (int)PerformanceCounterCPULoad.NextValue() + "%";
+    }
   }
 
 }

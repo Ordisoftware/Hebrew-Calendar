@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Text;
 using System.Linq;
@@ -20,72 +22,67 @@ using System.Windows.Forms;
 using EnumsNET;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private string ExportSaveCSV(ExportInterval interval)
   {
-
-    private string ExportSaveCSV(ExportInterval interval)
+    UpdateButtons();
+    var cursor = Cursor;
+    Cursor = Cursors.WaitCursor;
+    try
     {
-      UpdateButtons();
-      var cursor = Cursor;
-      Cursor = Cursors.WaitCursor;
-      try
-      {
-        string CSVSeparator = Globals.CSVSeparator.ToString();
-        string headerTxt = string.Empty;
+      string CSVSeparator = Globals.CSVSeparator.ToString();
+      string headerTxt = string.Empty;
 #pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
-        foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
-          headerTxt += field.ToString() + Globals.CSVSeparator;
-        headerTxt = headerTxt.Remove(headerTxt.Length - 1);
+      foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
+        headerTxt += field.ToString() + Globals.CSVSeparator;
+      headerTxt = headerTxt.Remove(headerTxt.Length - 1);
 #pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
-        var result = new StringBuilder();
-        result.AppendLine(headerTxt);
-        if ( LunisolarDays.Count == 0 ) return null;
-        var items = GetDayRows(interval);
-        var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
-        LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                        items.Count(),
-                                        Program.LoadingFormLoadDB);
-        foreach ( LunisolarDay day in items )
-        {
-          LoadingForm.Instance.DoProgress();
-          var dayDate = day.Date;
-          if ( day.LunarMonth == 0 ) continue;
-          if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-          result.Append(day.DateAsString).Append(CSVSeparator);
-          result.Append(day.IsNewMoon).Append(CSVSeparator);
-          result.Append(day.IsFullMoon).Append(CSVSeparator);
-          result.Append(day.LunarMonth).Append(CSVSeparator);
-          result.Append(day.LunarDay).Append(CSVSeparator);
-          result.Append(day.SunriseAsString).Append(CSVSeparator);
-          result.Append(day.SunsetAsString).Append(CSVSeparator);
-          result.Append(day.MoonriseAsString).Append(CSVSeparator);
-          result.Append(day.MoonsetAsString).Append(CSVSeparator);
-          string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings);
-          string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases);
-          string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges);
-          string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays);
-          result.Append(strMoonriseType).Append(CSVSeparator);
-          result.Append(strPhase).Append(CSVSeparator);
-          result.Append(strSeason).Append(CSVSeparator);
-          result.AppendLine(strEvent);
-        }
-        return result.ToString();
-      }
-      catch ( Exception ex )
+      var result = new StringBuilder();
+      result.AppendLine(headerTxt);
+      if ( LunisolarDays.Count == 0 ) return null;
+      var items = GetDayRows(interval);
+      var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
+      LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
+                                      items.Count(),
+                                      Program.LoadingFormLoadDB);
+      foreach ( LunisolarDay day in items )
       {
-        ex.Manage();
-        return null;
+        LoadingForm.Instance.DoProgress();
+        var dayDate = day.Date;
+        if ( day.LunarMonth == 0 ) continue;
+        if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
+        result.Append(day.DateAsString).Append(CSVSeparator);
+        result.Append(day.IsNewMoon).Append(CSVSeparator);
+        result.Append(day.IsFullMoon).Append(CSVSeparator);
+        result.Append(day.LunarMonth).Append(CSVSeparator);
+        result.Append(day.LunarDay).Append(CSVSeparator);
+        result.Append(day.SunriseAsString).Append(CSVSeparator);
+        result.Append(day.SunsetAsString).Append(CSVSeparator);
+        result.Append(day.MoonriseAsString).Append(CSVSeparator);
+        result.Append(day.MoonsetAsString).Append(CSVSeparator);
+        string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings);
+        string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases);
+        string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges);
+        string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays);
+        result.Append(strMoonriseType).Append(CSVSeparator);
+        result.Append(strPhase).Append(CSVSeparator);
+        result.Append(strSeason).Append(CSVSeparator);
+        result.AppendLine(strEvent);
       }
-      finally
-      {
-        Cursor = cursor;
-        UpdateButtons();
-      }
+      return result.ToString();
     }
-
+    catch ( Exception ex )
+    {
+      ex.Manage();
+      return null;
+    }
+    finally
+    {
+      Cursor = cursor;
+      UpdateButtons();
+    }
   }
 
 }

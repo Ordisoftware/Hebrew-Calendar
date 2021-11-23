@@ -12,169 +12,167 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2020-12 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+partial class TraceForm : Form
 {
-  partial class TraceForm : Form
+
+  private readonly string LocationPropertyName;
+  private readonly string ClientSizePropertyName;
+  private readonly string FontSizepropertyName;
+
+  private TraceForm()
   {
+    InitializeComponent();
+    ActiveControl = TabControl;
+  }
 
-    private readonly string LocationPropertyName;
-    private readonly string ClientSizePropertyName;
-    private readonly string FontSizepropertyName;
-
-    private TraceForm()
+  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
+  : this()
+  {
+    LocationPropertyName = locationPropertyName;
+    ClientSizePropertyName = clientSizePropertyName;
+    FontSizepropertyName = fontSizepropertyName;
+    try
     {
-      InitializeComponent();
-      ActiveControl = TabControl;
+      Location = (Point)Globals.Settings[locationPropertyName];
+      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+      TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
     }
-
-    public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
-    : this()
+    catch
     {
-      LocationPropertyName = locationPropertyName;
-      ClientSizePropertyName = clientSizePropertyName;
-      FontSizepropertyName = fontSizepropertyName;
+    }
+  }
+
+  private void LogForm_Load(object sender, EventArgs e)
+  {
+    this.CheckLocationOrCenterToMainFormElseScreen();
+    TrackBarFontSize_ValueChanged(null, null);
+  }
+
+  private void TraceForm_Shown(object sender, EventArgs e)
+  {
+    Icon = Globals.MainForm?.Icon;
+  }
+
+  private void LogForm_Activated(object sender, EventArgs e)
+  {
+    ActionClearLogs.Enabled = DebugManager.Enabled;
+    ActionRefreshFiles_Click(ActionRefreshFiles, EventArgs.Empty);
+  }
+
+  private void TraceForm_Deactivate(object sender, EventArgs e)
+  {
+    if ( Globals.Settings != null )
       try
       {
-        Location = (Point)Globals.Settings[locationPropertyName];
-        ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-        TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+        Globals.Settings[LocationPropertyName] = Location;
+        Globals.Settings[ClientSizePropertyName] = ClientSize;
+        Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
+        SystemManager.TryCatch(Globals.Settings.Save);
       }
       catch
       {
       }
-    }
+  }
 
-    private void LogForm_Load(object sender, EventArgs e)
-    {
-      this.CheckLocationOrCenterToMainFormElseScreen();
-      TrackBarFontSize_ValueChanged(null, null);
-    }
+  private void TraceForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    e.Cancel = true;
+    Hide();
+  }
 
-    private void TraceForm_Shown(object sender, EventArgs e)
-    {
-      Icon = Globals.MainForm?.Icon;
-    }
+  private void ActionClose_Click(object sender, EventArgs e)
+  {
+    Close();
+  }
 
-    private void LogForm_Activated(object sender, EventArgs e)
-    {
-      ActionClearLogs.Enabled = DebugManager.Enabled;
-      ActionRefreshFiles_Click(ActionRefreshFiles, EventArgs.Empty);
-    }
+  private void TrackBarFontSize_ValueChanged(object sender, EventArgs e)
+  {
+    TextBoxCurrent.Font = new Font("Courier New", TrackBarFontSize.Value);
+    TextBoxPrevious.Font = new Font("Courier New", TrackBarFontSize.Value);
+  }
 
-    private void TraceForm_Deactivate(object sender, EventArgs e)
-    {
-      if ( Globals.Settings != null )
-        try
-        {
-          Globals.Settings[LocationPropertyName] = Location;
-          Globals.Settings[ClientSizePropertyName] = ClientSize;
-          Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
-          SystemManager.TryCatch(Globals.Settings.Save);
-        }
-        catch
-        {
-        }
-    }
+  private void ActionOpenLogsFolder_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Globals.SinkFileFolderPath);
+  }
 
-    private void TraceForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      e.Cancel = true;
-      Hide();
-    }
+  private void ActionClearLogs_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToClearLogs.GetLang()) ) return;
+    DebugManager.ClearTraces(false, true);
+    Show();
+    BringToFront();
+  }
 
-    private void ActionClose_Click(object sender, EventArgs e)
+  public void AppendText(string text, bool scrollBottom = true)
+  {
+    TextBoxCurrent.SyncUI(() =>
     {
-      Close();
-    }
-
-    private void TrackBarFontSize_ValueChanged(object sender, EventArgs e)
-    {
-      TextBoxCurrent.Font = new Font("Courier New", TrackBarFontSize.Value);
-      TextBoxPrevious.Font = new Font("Courier New", TrackBarFontSize.Value);
-    }
-
-    private void ActionOpenLogsFolder_Click(object sender, EventArgs e)
-    {
-      SystemManager.RunShell(Globals.SinkFileFolderPath);
-    }
-
-    private void ActionClearLogs_Click(object sender, EventArgs e)
-    {
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToClearLogs.GetLang()) ) return;
-      DebugManager.ClearTraces(false, true);
-      Show();
-      BringToFront();
-    }
-
-    public void AppendText(string text, bool scrollBottom = true)
-    {
-      TextBoxCurrent.SyncUI(() =>
+      try
       {
-        try
+        if ( text.Length == 0 ) return;
+        TextBoxCurrent.AppendText(text);
+        if ( scrollBottom )
         {
-          if ( text.Length == 0 ) return;
-          TextBoxCurrent.AppendText(text);
-          if ( scrollBottom )
-          {
-            TextBoxCurrent.SelectionStart = TextBoxCurrent.Text.Length - 1;
-            TextBoxCurrent.ScrollToCaret();
-          }
+          TextBoxCurrent.SelectionStart = TextBoxCurrent.Text.Length - 1;
+          TextBoxCurrent.ScrollToCaret();
         }
-        catch
-        {
-        }
-      });
-    }
-
-    private void TextBox_TextChanged(object sender, EventArgs e)
-    {
-      if ( TabControl.SelectedIndex == 0 )
-        LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxCurrent.Lines.Length);
-      else
-      {
-        LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxPrevious.Lines.Length);
-        ActiveControl = SelectFile;
       }
-    }
+      catch
+      {
+      }
+    });
+  }
 
-    private void ActionRefreshFiles_Click(object sender, EventArgs e)
+  private void TextBox_TextChanged(object sender, EventArgs e)
+  {
+    if ( TabControl.SelectedIndex == 0 )
+      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxCurrent.Lines.Length);
+    else
     {
-      TextBoxPrevious.Clear();
-      SelectFile.Items.Clear();
-      foreach ( var file in DebugManager.GetTraceFiles(false) )
-        SelectFile.Items.Add(file);
-      SelectFile.Enabled = SelectFile.Items.Count > 0;
-      ActionDeleteFile.Enabled = SelectFile.Enabled;
-      if ( SelectFile.Enabled )
-        SelectFile.SelectedIndex = SelectFile.Items.Count - 1;
+      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxPrevious.Lines.Length);
+      ActiveControl = SelectFile;
     }
+  }
 
-    private void SelectFile_Format(object sender, ListControlConvertEventArgs e)
-    {
-      e.Value = Path.GetFileNameWithoutExtension((string)e.Value);
-    }
+  private void ActionRefreshFiles_Click(object sender, EventArgs e)
+  {
+    TextBoxPrevious.Clear();
+    SelectFile.Items.Clear();
+    foreach ( var file in DebugManager.GetTraceFiles(false) )
+      SelectFile.Items.Add(file);
+    SelectFile.Enabled = SelectFile.Items.Count > 0;
+    ActionDeleteFile.Enabled = SelectFile.Enabled;
+    if ( SelectFile.Enabled )
+      SelectFile.SelectedIndex = SelectFile.Items.Count - 1;
+  }
 
-    private void ActionDeleteFile_Click(object sender, EventArgs e)
-    {
-      if ( SelectFile.SelectedIndex < 0 ) return;
-      string filePath = (string)SelectFile.SelectedItem;
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteFile.GetLang(SelectFile.Text)) ) return;
-      File.Delete(filePath);
-      ActionRefreshFiles.PerformClick();
-    }
+  private void SelectFile_Format(object sender, ListControlConvertEventArgs e)
+  {
+    e.Value = Path.GetFileNameWithoutExtension((string)e.Value);
+  }
 
-    private void SelectFile_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( SelectFile.SelectedIndex < 0 ) return;
-      TextBoxPrevious.Clear();
-      TextBoxPrevious.Lines = File.ReadAllLines((string)SelectFile.SelectedItem);
-    }
+  private void ActionDeleteFile_Click(object sender, EventArgs e)
+  {
+    if ( SelectFile.SelectedIndex < 0 ) return;
+    string filePath = (string)SelectFile.SelectedItem;
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteFile.GetLang(SelectFile.Text)) ) return;
+    File.Delete(filePath);
+    ActionRefreshFiles.PerformClick();
+  }
 
+  private void SelectFile_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( SelectFile.SelectedIndex < 0 ) return;
+    TextBoxPrevious.Clear();
+    TextBoxPrevious.Lines = File.ReadAllLines((string)SelectFile.SelectedItem);
   }
 
 }

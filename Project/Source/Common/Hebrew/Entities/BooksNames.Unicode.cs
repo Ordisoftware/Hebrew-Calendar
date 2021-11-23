@@ -12,61 +12,57 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2019-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew
+static partial class BooksNames
 {
 
-  static partial class BooksNames
+  static public readonly Dictionary<TanakBook, string> Unicode = new()
   {
-
-    static public readonly Dictionary<TanakBook, string> Unicode = new()
-    {
-      // Torah
-      { TanakBook.Bereshit, "בראשית" },
-      { TanakBook.Shemot, "שמות" },
-      { TanakBook.Vayiqra, "ויקרא" },
-      { TanakBook.Bamidbar, "במדבר" },
-      { TanakBook.Devarim, "דברים" },
-      // Nevi'im
-      { TanakBook.Yehoshoua, "יהושע" },
-      { TanakBook.Shoftim, "שופטים" },
-      { TanakBook.Shemouel_I, "שמואל" },
-      { TanakBook.Shemouel_II, "שמואל" },
-      { TanakBook.Melakim_I, "מלכים" },
-      { TanakBook.Melakim_II, "מלכים" },
-      { TanakBook.Yeshayahou, "ישעיהו" },
-      { TanakBook.Yirmeyahou, "ירמיהו" },
-      { TanakBook.Yehezqel, "יחזקאל" },
-      { TanakBook.Hoshea, "הושע" },
-      { TanakBook.Yoel, "יואל" },
-      { TanakBook.Amos, "עמוס" },
-      { TanakBook.Obadyah, "עובדיה" },
-      { TanakBook.Yonah, "יונה" },
-      { TanakBook.Mikah, "מיכה" },
-      { TanakBook.Nahoum, "נחום" },
-      { TanakBook.Habaqouq, "חבקוק" },
-      { TanakBook.Tsephaniah, "צפניה" },
-      { TanakBook.Hagai, "חגי" },
-      { TanakBook.Zekaria, "זכריה" },
-      { TanakBook.Malaki, "מלאכי" },
-      // Ketouvim
-      { TanakBook.Tehilim, "תהילים" },
-      { TanakBook.Mishlei, "משלי" },
-      { TanakBook.Iyov, "איוב" },
-      { TanakBook.Shir_HaShirim, "שיר השירים" },
-      { TanakBook.Ruth, "רות" },
-      { TanakBook.Eikah, "איכה" },
-      { TanakBook.Qohelet, "קהלת" },
-      { TanakBook.Esther, "אסתר" },
-      { TanakBook.Daniel, "דניאל" },
-      { TanakBook.Ezra, "עזרא" },
-      { TanakBook.Nehemiah, "ונחמיה" },
-      { TanakBook.Divrei_HaYamim_I, "דברי הימים" },
-      { TanakBook.Divrei_HaYamim_II, "דברי הימים" }
-    };
-
-  }
+    // Torah
+    { TanakBook.Bereshit, "בראשית" },
+    { TanakBook.Shemot, "שמות" },
+    { TanakBook.Vayiqra, "ויקרא" },
+    { TanakBook.Bamidbar, "במדבר" },
+    { TanakBook.Devarim, "דברים" },
+    // Nevi'im
+    { TanakBook.Yehoshoua, "יהושע" },
+    { TanakBook.Shoftim, "שופטים" },
+    { TanakBook.Shemouel_I, "שמואל" },
+    { TanakBook.Shemouel_II, "שמואל" },
+    { TanakBook.Melakim_I, "מלכים" },
+    { TanakBook.Melakim_II, "מלכים" },
+    { TanakBook.Yeshayahou, "ישעיהו" },
+    { TanakBook.Yirmeyahou, "ירמיהו" },
+    { TanakBook.Yehezqel, "יחזקאל" },
+    { TanakBook.Hoshea, "הושע" },
+    { TanakBook.Yoel, "יואל" },
+    { TanakBook.Amos, "עמוס" },
+    { TanakBook.Obadyah, "עובדיה" },
+    { TanakBook.Yonah, "יונה" },
+    { TanakBook.Mikah, "מיכה" },
+    { TanakBook.Nahoum, "נחום" },
+    { TanakBook.Habaqouq, "חבקוק" },
+    { TanakBook.Tsephaniah, "צפניה" },
+    { TanakBook.Hagai, "חגי" },
+    { TanakBook.Zekaria, "זכריה" },
+    { TanakBook.Malaki, "מלאכי" },
+    // Ketouvim
+    { TanakBook.Tehilim, "תהילים" },
+    { TanakBook.Mishlei, "משלי" },
+    { TanakBook.Iyov, "איוב" },
+    { TanakBook.Shir_HaShirim, "שיר השירים" },
+    { TanakBook.Ruth, "רות" },
+    { TanakBook.Eikah, "איכה" },
+    { TanakBook.Qohelet, "קהלת" },
+    { TanakBook.Esther, "אסתר" },
+    { TanakBook.Daniel, "דניאל" },
+    { TanakBook.Ezra, "עזרא" },
+    { TanakBook.Nehemiah, "ונחמיה" },
+    { TanakBook.Divrei_HaYamim_I, "דברי הימים" },
+    { TanakBook.Divrei_HaYamim_II, "דברי הימים" }
+  };
 
 }

@@ -12,88 +12,85 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-08 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  partial class ApplicationDatabase : SQLiteDatabase
+  static new public ApplicationDatabase Instance { get; protected set; }
+
+  static ApplicationDatabase()
   {
+    Instance = new ApplicationDatabase();
+    SQLiteDatabase.Instance = Instance;
+  }
 
-    static new public ApplicationDatabase Instance { get; protected set; }
+  public List<LunisolarDay> LunisolarDays { get; private set; }
 
-    static ApplicationDatabase()
+  private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
+  {
+  }
+
+  public override void Open()
+  {
+    base.Open();
+    if ( Program.Settings.VacuumAtStartup )
     {
-      Instance = new ApplicationDatabase();
-      SQLiteDatabase.Instance = Instance;
-    }
-
-    public List<LunisolarDay> LunisolarDays { get; private set; }
-
-    private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
-    {
-    }
-
-    public override void Open()
-    {
-      base.Open();
-      if ( Program.Settings.VacuumAtStartup )
+      var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone,
+                                        Program.Settings.VacuumAtStartupDaysInterval);
+      if ( Program.Settings.VacuumLastDone != dateNew )
       {
-        var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone,
-                                          Program.Settings.VacuumAtStartupDaysInterval);
-        if ( Program.Settings.VacuumLastDone != dateNew )
-        {
-          HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
-          Program.Settings.VacuumLastDone = dateNew;
-        }
+        HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
+        Program.Settings.VacuumLastDone = dateNew;
       }
     }
+  }
 
-    protected override void DoClose()
+  protected override void DoClose()
+  {
+    if ( LunisolarDays == null ) return;
+    if ( ClearListsOnCloseAndRelease ) LunisolarDays.Clear();
+    LunisolarDays = null;
+  }
+
+  protected override void CreateTables()
+  {
+    Connection.CreateTable<LunisolarDay>();
+  }
+
+  public override void LoadAll()
+  {
+    base.LoadAll();
+    LunisolarDays = Connection.Table<LunisolarDay>().ToList();
+  }
+
+  [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  protected override void DoSaveAll()
+  {
+    string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
+    throw new NotImplementedException(message);
+  }
+
+  public void DeleteAll()
+  {
+    CheckConnected();
+    CheckAccess(LunisolarDays, nameof(LunisolarDays));
+    Connection.DeleteAll<LunisolarDay>();
+    LunisolarDays.Clear();
+  }
+
+  protected override void UpgradeSchema()
+  {
+    base.UpgradeSchema();
+    if ( Connection.CheckTable(nameof(LunisolarDays)) )
     {
-      if ( LunisolarDays == null ) return;
-      if ( ClearListsOnCloseAndRelease ) LunisolarDays.Clear();
-      LunisolarDays = null;
+      if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
+        Connection.DropTableIfExists(nameof(LunisolarDays));
     }
-
-    protected override void CreateTables()
-    {
-      Connection.CreateTable<LunisolarDay>();
-    }
-
-    public override void LoadAll()
-    {
-      base.LoadAll();
-      LunisolarDays = Connection.Table<LunisolarDay>().ToList();
-    }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
-    protected override void DoSaveAll()
-    {
-      string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
-      throw new NotImplementedException(message);
-    }
-
-    public void DeleteAll()
-    {
-      CheckConnected();
-      CheckAccess(LunisolarDays, nameof(LunisolarDays));
-      Connection.DeleteAll<LunisolarDay>();
-      LunisolarDays.Clear();
-    }
-
-    protected override void UpgradeSchema()
-    {
-      base.UpgradeSchema();
-      if ( Connection.CheckTable(nameof(LunisolarDays)) )
-      {
-        if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
-          Connection.DropTableIfExists(nameof(LunisolarDays));
-      }
-    }
-
   }
 
 }

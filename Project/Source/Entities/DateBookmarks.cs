@@ -12,76 +12,73 @@
 /// </license>
 /// <created> 2020-09 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.IO;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+class DateBookmarks
 {
 
-  class DateBookmarks
+  private string FilePath { get; }
+
+  private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
+
+  public DateTime this[int index]
   {
+    get { return Items[index]; }
+    set { Items[index] = value; Save(); }
+  }
 
-    private string FilePath { get; }
+  public void Resize(int size)
+  {
+    Array.Resize(ref Items, size);
+    Save();
+  }
 
-    private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
-
-    public DateTime this[int index]
+  private void Load()
+  {
+    SystemManager.TryCatchManage(() =>
     {
-      get { return Items[index]; }
-      set { Items[index] = value; Save(); }
-    }
-
-    public void Resize(int size)
-    {
-      Array.Resize(ref Items, size);
-      Save();
-    }
-
-    private void Load()
-    {
-      SystemManager.TryCatchManage(() =>
+      if ( !File.Exists(FilePath) ) return;
+      int index = 0;
+      foreach ( string item in File.ReadAllLines(FilePath) )
       {
-        if ( !File.Exists(FilePath) ) return;
-        int index = 0;
-        foreach ( string item in File.ReadAllLines(FilePath) )
+        if ( item.Length == 0 )
+          continue;
+        DateTime date = DateTime.MinValue;
+        try
         {
-          if ( item.Length == 0 )
-            continue;
-          DateTime date = DateTime.MinValue;
-          try
-          {
-            date = SQLiteDate.ToDateTime(item);
-          }
-          catch
-          {
-            DateTime.TryParse(item, out date);
-          }
-          Items[index] = date;
-          if ( ++index >= Program.Settings.DateBookmarksCount )
-            break;
+          date = SQLiteDate.ToDateTime(item);
         }
-      });
-    }
+        catch
+        {
+          DateTime.TryParse(item, out date);
+        }
+        Items[index] = date;
+        if ( ++index >= Program.Settings.DateBookmarksCount )
+          break;
+      }
+    });
+  }
 
-    private void Save()
+  private void Save()
+  {
+    SystemManager.TryCatchManage(() =>
     {
-      SystemManager.TryCatchManage(() =>
-      {
-        var items = new List<string>();
-        foreach ( var item in Items )
-          items.Add(SQLiteDate.ToString(item));
-        File.WriteAllLines(FilePath, items);
-      });
-    }
+      var items = new List<string>();
+      foreach ( var item in Items )
+        items.Add(SQLiteDate.ToString(item));
+      File.WriteAllLines(FilePath, items);
+    });
+  }
 
-    public DateBookmarks(string filePath)
-    {
-      FilePath = filePath;
-      Load();
-    }
-
+  public DateBookmarks(string filePath)
+  {
+    FilePath = filePath;
+    Load();
   }
 
 }

@@ -12,135 +12,132 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-11 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void DoTrayIconMouse_Click(object sender, MouseEventArgs e)
   {
-
-    private void DoTrayIconMouse_Click(object sender, MouseEventArgs e)
+    if ( !Globals.IsReady ) return;
+    SystemManager.TryCatchManage(() =>
     {
-      if ( !Globals.IsReady ) return;
-      SystemManager.TryCatchManage(() =>
+      TimerBallon.Stop();
+      TimerTrayMouseMove.Stop();
+      if ( e != null )
       {
-        TimerBallon.Stop();
-        TimerTrayMouseMove.Stop();
-        if ( e != null )
-        {
-          if ( e.Button == MouseButtons.Left )
-            switch ( Settings.TrayIconClickOpen )
-            {
-              case TrayIconClickOpen.MainForm:
-                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
-                break;
-              case TrayIconClickOpen.NextCelebrationsForm:
-                if ( NextCelebrationsForm.Instance?.Visible == true )
-                  NextCelebrationsForm.Instance.Close();
-                else
-                  ActionViewCelebrations.PerformClick();
-                break;
-              case TrayIconClickOpen.NavigationForm:
-                var form = NavigationForm.Instance;
-                if ( form.Visible )
-                  form.Visible = false;
-                else
-                  SystemManager.TryCatchManage(() =>
-                  {
-                    if ( Settings.MainFormShownGoToToday )
-                      form.Date = DateTime.Today;
-                    else
-                      GoToDate(CalendarMonth.CalendarDate.Date);
-                    form.Visible = true;
-                  });
-                break;
-              default:
-                throw new AdvancedNotImplementedException(Settings.TrayIconClickOpen);
-            }
-          else
-        if ( e.Button == MouseButtons.Right )
-            if ( NavigationForm.Instance.Visible )
-              ActionNavigate.PerformClick();
-        }
-      });
-    }
-
-    public void DoMenuShowHide_Click(object sender, EventArgs e)
-    {
-      SystemManager.TryCatchManage(() =>
-      {
-        if ( Visible && WindowState == FormWindowState.Minimized && ( sender is null or NotifyIcon ) )
-        {
-          WindowState = Settings.MainFormState;
-          UpdateTitles(true);
-          this.Popup();
-        }
-        else
-        if ( !Visible || e == null )
-        {
-          FormBorderStyle = FormBorderStyle.Sizable;
-          UpdateTitles(true);
-          Visible = true;
-          ShowInTaskbar = true;
-          bool temp = Globals.IsReady;
-          try
+        if ( e.Button == MouseButtons.Left )
+          switch ( Settings.TrayIconClickOpen )
           {
-            Globals.IsReady = false;
-            WindowState = Settings.MainFormState;
-          }
-          finally
-          {
-            Globals.IsReady = temp;
-          }
-          if ( Globals.IsReady )
-          {
-            if ( IsTrayBallooned )
-              NavigationForm.Instance.Hide();
-            this.Popup();
-            CalendarMonth.Refresh();
-          }
-          if ( sender != null )
-            if ( !NavigationForm.Instance.Visible )
-              if ( Settings.MainFormShownGoToToday )
-                GoToDate(DateTime.Today);
+            case TrayIconClickOpen.MainForm:
+              MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
+              break;
+            case TrayIconClickOpen.NextCelebrationsForm:
+              if ( NextCelebrationsForm.Instance?.Visible == true )
+                NextCelebrationsForm.Instance.Close();
               else
-                GoToDate(CalendarMonth.CalendarDate.Date);
-        }
+                ActionViewCelebrations.PerformClick();
+              break;
+            case TrayIconClickOpen.NavigationForm:
+              var form = NavigationForm.Instance;
+              if ( form.Visible )
+                form.Visible = false;
+              else
+                SystemManager.TryCatchManage(() =>
+                {
+                  if ( Settings.MainFormShownGoToToday )
+                    form.Date = DateTime.Today;
+                  else
+                    GoToDate(CalendarMonth.CalendarDate.Date);
+                  form.Visible = true;
+                });
+              break;
+            default:
+              throw new AdvancedNotImplementedException(Settings.TrayIconClickOpen);
+          }
         else
-        if ( Visible && !this.IsVisibleOnTop(80) )
-        {
-          this.Popup();
-        }
-        else
-        {
-          Settings.MainFormState = WindowState;
-          WindowState = FormWindowState.Minimized;
-          Visible = false;
-          ShowInTaskbar = false;
-          FormBorderStyle = FormBorderStyle.SizableToolWindow;
-          Settings.Store();
-        }
-        MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-      });
-    }
-
-    private void DoMenuExit_Click(object sender, EventArgs e)
-    {
-      if ( Globals.IsGenerating )
-      {
-        DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
-        return;
+      if ( e.Button == MouseButtons.Right )
+          if ( NavigationForm.Instance.Visible )
+            ActionNavigate.PerformClick();
       }
-      if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
-        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
-          return;
-      Globals.AllowClose = true;
-      Close();
-    }
+    });
+  }
 
+  public void DoMenuShowHide_Click(object sender, EventArgs e)
+  {
+    SystemManager.TryCatchManage(() =>
+    {
+      if ( Visible && WindowState == FormWindowState.Minimized && ( sender is null or NotifyIcon ) )
+      {
+        WindowState = Settings.MainFormState;
+        UpdateTitles(true);
+        this.Popup();
+      }
+      else
+      if ( !Visible || e == null )
+      {
+        FormBorderStyle = FormBorderStyle.Sizable;
+        UpdateTitles(true);
+        Visible = true;
+        ShowInTaskbar = true;
+        bool temp = Globals.IsReady;
+        try
+        {
+          Globals.IsReady = false;
+          WindowState = Settings.MainFormState;
+        }
+        finally
+        {
+          Globals.IsReady = temp;
+        }
+        if ( Globals.IsReady )
+        {
+          if ( IsTrayBallooned )
+            NavigationForm.Instance.Hide();
+          this.Popup();
+          CalendarMonth.Refresh();
+        }
+        if ( sender != null )
+          if ( !NavigationForm.Instance.Visible )
+            if ( Settings.MainFormShownGoToToday )
+              GoToDate(DateTime.Today);
+            else
+              GoToDate(CalendarMonth.CalendarDate.Date);
+      }
+      else
+      if ( Visible && !this.IsVisibleOnTop(80) )
+      {
+        this.Popup();
+      }
+      else
+      {
+        Settings.MainFormState = WindowState;
+        WindowState = FormWindowState.Minimized;
+        Visible = false;
+        ShowInTaskbar = false;
+        FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        Settings.Store();
+      }
+      MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
+    });
+  }
+
+  private void DoMenuExit_Click(object sender, EventArgs e)
+  {
+    if ( Globals.IsGenerating )
+    {
+      DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
+      return;
+    }
+    if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
+        return;
+    Globals.AllowClose = true;
+    Close();
   }
 
 }

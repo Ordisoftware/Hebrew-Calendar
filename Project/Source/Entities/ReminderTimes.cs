@@ -12,35 +12,32 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2021-03 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides reminder times.
+/// </summary>
+class ReminderTimes
 {
-
-  /// <summary>
-  /// Provides reminder times.
-  /// </summary>
-  class ReminderTimes
+  public TimeSpan TimeStart;
+  public TimeSpan TimeEnd;
+  public DateTime DateStartCheck;
+  public DateTime DateStart;
+  public DateTime DateEnd;
+  public void Set(DateTime date,
+                  TimeSpan timeStart,
+                  TimeSpan timeEnd,
+                  int deltaDayStart,
+                  int deltaDayEnd,
+                  decimal deltaRemindBefore)
   {
-    public TimeSpan TimeStart;
-    public TimeSpan TimeEnd;
-    public DateTime DateStartCheck;
-    public DateTime DateStart;
-    public DateTime DateEnd;
-    public void Set(DateTime date,
-                    TimeSpan timeStart,
-                    TimeSpan timeEnd,
-                    int deltaDayStart,
-                    int deltaDayEnd,
-                    decimal deltaRemindBefore)
-    {
-      TimeStart = timeStart;
-      TimeEnd = timeEnd;
-      DateStart = date.AddDays(deltaDayStart).AddHours(timeStart.Hours).AddMinutes(timeStart.Minutes);
-      DateStartCheck = DateStart.AddMinutes((double)-deltaRemindBefore);
-      DateEnd = date.AddDays(deltaDayEnd).AddHours(timeEnd.Hours).AddMinutes(timeEnd.Minutes);
-    }
-
+    TimeStart = timeStart;
+    TimeEnd = timeEnd;
+    DateStart = date.AddDays(deltaDayStart).AddHours(timeStart.Hours).AddMinutes(timeStart.Minutes);
+    DateStartCheck = DateStart.AddMinutes((double)-deltaRemindBefore);
+    DateEnd = date.AddDays(deltaDayEnd).AddHours(timeEnd.Hours).AddMinutes(timeEnd.Minutes);
   }
 
 }

@@ -12,19 +12,14 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Lunar months colors public enum to display the list in a form.
+/// </summary>
+public enum LunarMonthsListColor
 {
-
-  /// <summary>
-  /// Lunar months colors public enum to display the list in a form.
-  /// </summary>
-  public enum LunarMonthsListColor
-  {
-    Pastel,
-    Flashy,
-    System
-  }
-
+  Pastel,
+  Flashy,
+  System
 }

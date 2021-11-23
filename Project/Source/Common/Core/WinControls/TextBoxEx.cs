@@ -12,231 +12,228 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace Ordisoftware.Core
+public struct UndoRedoItem
+{
+  public string Text { get; set; }
+  public int SelectionStart { get; set; }
+  //public int SelectionLength { get; set; }
+  public UndoRedoItem Set(string text, int selectionStart/*, int selectionLength*/)
+  {
+    Text = text;
+    SelectionStart = selectionStart;
+    //SelectionLength = selectionLength;
+    return this;
+  }
+}
+
+public enum CaretPositionAfterPaste
+{
+  Beginning,
+  Ending
+}
+
+public enum TextUpdating
+{
+  Text,
+  Selected
+}
+
+
+
+public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
+
+//public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
+
+partial class TextBoxEx : TextBox
 {
 
-  public struct UndoRedoItem
-  {
-    public string Text { get; set; }
-    public int SelectionStart { get; set; }
-    //public int SelectionLength { get; set; }
-    public UndoRedoItem Set(string text, int selectionStart/*, int selectionLength*/)
-    {
-      Text = text;
-      SelectionStart = selectionStart;
-      //SelectionLength = selectionLength;
-      return this;
-    }
-  }
+  private bool SetTextMutex;
+  //private UndoRedoItem Previous = new UndoRedoItem();
+  private readonly Stack<UndoRedoItem> UndoStack = new();
+  private readonly Stack<UndoRedoItem> RedoStack = new();
 
-  public enum CaretPositionAfterPaste
-  {
-    Beginning,
-    Ending
-  }
+  public CaretPositionAfterPaste CaretAfterPaste { get; set; }
+    = CaretPositionAfterPaste.Ending;
 
-  public enum TextUpdating
-  {
-    Text,
-    Selected
-  }
-
-
-
-  public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
-
-  //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
-
-  partial class TextBoxEx : TextBox
-  {
-
-    private bool SetTextMutex;
-    //private UndoRedoItem Previous = new UndoRedoItem();
-    private readonly Stack<UndoRedoItem> UndoStack = new();
-    private readonly Stack<UndoRedoItem> RedoStack = new();
-
-    public CaretPositionAfterPaste CaretAfterPaste { get; set; }
-      = CaretPositionAfterPaste.Ending;
-
-    public event InsertingTextEventHandler InsertingText;
+  public event InsertingTextEventHandler InsertingText;
 
 #pragma warning disable RCS1159 // Use EventHandler<T>.
-    public event CancelEventHandler ContextMenuEditOpening
-    {
-      add { ContextMenuEdit.Opening += value; }
-      remove { ContextMenuEdit.Opening -= value; }
-    }
+  public event CancelEventHandler ContextMenuEditOpening
+  {
+    add { ContextMenuEdit.Opening += value; }
+    remove { ContextMenuEdit.Opening -= value; }
+  }
 
-    public event EventHandler ContextMenuEditOpened
-    {
-      add { ContextMenuEdit.Opened += value; }
-      remove { ContextMenuEdit.Opened -= value; }
-    }
+  public event EventHandler ContextMenuEditOpened
+  {
+    add { ContextMenuEdit.Opened += value; }
+    remove { ContextMenuEdit.Opened -= value; }
+  }
 
-    public event ToolStripDropDownClosedEventHandler ContextMenuEditClosed
-    {
-      add { ContextMenuEdit.Closed += value; }
-      remove { ContextMenuEdit.Closed -= value; }
-    }
+  public event ToolStripDropDownClosedEventHandler ContextMenuEditClosed
+  {
+    add { ContextMenuEdit.Closed += value; }
+    remove { ContextMenuEdit.Closed -= value; }
+  }
 #pragma warning restore RCS1159 // Use EventHandler<T>.
 
-    public override string Text
+  public override string Text
+  {
+    get => base.Text;
+    set
     {
-      get => base.Text;
-      set
+      InsertingText?.Invoke(this, TextUpdating.Text, ref value);
+      if ( value == null ) value = string.Empty;
+      if ( value == Text ) return;
+      if ( value.Length > MaxLength ) return;
+      base.Text = value;
+      /*try
       {
-        InsertingText?.Invoke(this, TextUpdating.Text, ref value);
-        if ( value == null ) value = string.Empty;
-        if ( value == Text ) return;
-        if ( value.Length > MaxLength ) return;
+        bool first = Text.IsNullOrEmpty() && UndoStack.Count == 0;
+        if ( !SetTextMutex )
+        {
+          SetTextMutex = true;
+          if ( !first ) AddUndo();
+        }
         base.Text = value;
-        /*try
-        {
-          bool first = Text.IsNullOrEmpty() && UndoStack.Count == 0;
-          if ( !SetTextMutex )
-          {
-            SetTextMutex = true;
-            if ( !first ) AddUndo();
-          }
-          base.Text = value;
-          if ( !first ) SetCaret(0, value.Length);
-          SelectionLength = 0;
-        }
-        finally
-        {
-          SetTextMutex = false;
-        }*/
+        if ( !first ) SetCaret(0, value.Length);
+        SelectionLength = 0;
       }
-    }
-
-    public override string SelectedText
-    {
-      get => base.SelectedText;
-      set
+      finally
       {
-        InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
-        if ( value == null ) value = string.Empty;
-        if ( value == base.SelectedText ) return;
-        if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
-        base.SelectedText = value;
-        /*try
+        SetTextMutex = false;
+      }*/
+    }
+  }
+
+  public override string SelectedText
+  {
+    get => base.SelectedText;
+    set
+    {
+      InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
+      if ( value == null ) value = string.Empty;
+      if ( value == base.SelectedText ) return;
+      if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
+      base.SelectedText = value;
+      /*try
+      {
+        if ( !SetTextMutex )
         {
-          if ( !SetTextMutex )
-          {
-            SetTextMutex = true;
-            AddUndo();
-          }
-          int selectionStart = SelectionStart;
-          base.SelectedText = value;
-          SetCaret(selectionStart, value.Length);
+          SetTextMutex = true;
+          AddUndo();
         }
-        finally
-        {
-          SetTextMutex = false;
-        }*/
+        int selectionStart = SelectionStart;
+        base.SelectedText = value;
+        SetCaret(selectionStart, value.Length);
       }
+      finally
+      {
+        SetTextMutex = false;
+      }*/
     }
+  }
 
-    public TextBoxEx()
-    {
-      InitializeComponent();
-      if ( ContextMenuEdit == null )
-        InitializeContextMenu();
-      ContextMenuStrip = ContextMenuEdit;
-      TextChanged += TextChangedEvent;
-      KeyPress += KeyPressEvent;
-      KeyDown += KeyDownEvent;
-    }
+  public TextBoxEx()
+  {
+    InitializeComponent();
+    if ( ContextMenuEdit == null )
+      InitializeContextMenu();
+    ContextMenuStrip = ContextMenuEdit;
+    TextChanged += TextChangedEvent;
+    KeyPress += KeyPressEvent;
+    KeyDown += KeyDownEvent;
+  }
 
-    public void UpdateMenuItems()
-    {
-      UpdateMenuItems(this);
-    }
+  public void UpdateMenuItems()
+  {
+    UpdateMenuItems(this);
+  }
 
 #pragma warning disable IDE0051 // Supprimer les membres privés non utilisés
-    private void AddUndo()
-    {
-      //return;
-      //
-      //if ( base.Text == null ) return;
-      //Previous.Set(base.Text, SelectionStart/*, SelectionLength*/);
-      //UndoStack.Push(Previous);
-      //if ( RedoStack.Count > 0 )
-      //  RedoStack.Clear();
-    }
+  private void AddUndo()
+  {
+    //return;
+    //
+    //if ( base.Text == null ) return;
+    //Previous.Set(base.Text, SelectionStart/*, SelectionLength*/);
+    //UndoStack.Push(Previous);
+    //if ( RedoStack.Count > 0 )
+    //  RedoStack.Clear();
+  }
 
-    private void SetCaret(int pos, int length)
+  private void SetCaret(int pos, int length)
+  {
+    SelectionStart = CaretAfterPaste switch
     {
-      SelectionStart = CaretAfterPaste switch
-      {
-        CaretPositionAfterPaste.Beginning => pos,
-        CaretPositionAfterPaste.Ending => pos + length,
-        _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
-      };
-    }
+      CaretPositionAfterPaste.Beginning => pos,
+      CaretPositionAfterPaste.Ending => pos + length,
+      _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
+    };
+  }
 #pragma warning restore IDE0051 // Supprimer les membres privés non utilisés
 
-    private void TextChangedEvent(object sender, EventArgs e)
-    {
+  private void TextChangedEvent(object sender, EventArgs e)
+  {
 #pragma warning disable S3626 // Jump statements should not be redundant
-      if ( SetTextMutex ) return;
+    if ( SetTextMutex ) return;
 #pragma warning restore S3626 // Jump statements should not be redundant
-      //UndoStack.Push(Previous);
-      //RedoStack.Clear();
-    }
+    //UndoStack.Push(Previous);
+    //RedoStack.Clear();
+  }
 
-    private void KeyPressEvent(object sender, KeyPressEventArgs e)
+  private void KeyPressEvent(object sender, KeyPressEventArgs e)
+  {
+    if ( e.KeyChar == '\u0018' ) // Ctrl+X
+      ActionCut_Click(sender, null);
+    else
+    if ( e.KeyChar == '\u0003' ) // Ctrl+C
+      ActionCopy_Click(sender, null);
+    else
+    if ( e.KeyChar == '\u0016' ) // Ctrl+V
+      ActionPaste_Click(sender, null);
+    /*else
+    if ( e.KeyChar == '\b' && SelectionStart > 0 ) // Back Space
     {
-      if ( e.KeyChar == '\u0018' ) // Ctrl+X
-        ActionCut_Click(sender, null);
-      else
-      if ( e.KeyChar == '\u0003' ) // Ctrl+C
-        ActionCopy_Click(sender, null);
-      else
-      if ( e.KeyChar == '\u0016' ) // Ctrl+V
-        ActionPaste_Click(sender, null);
-      /*else
-      if ( e.KeyChar == '\b' && SelectionStart > 0 ) // Back Space
-      {
-        var pos = SelectionStart;
-        //Text = Text.Remove(SelectionStart - 1, 1);
-        SelectionStart = pos - 1;
-        SelectionLength = 1;
-        ActionDelete_Click(this, EventArgs.Empty);
-        //if ( Multiline ) ScrollToCaret();
-      }*/
-      else
-        return;
-      e.Handled = true;
-    }
+      var pos = SelectionStart;
+      //Text = Text.Remove(SelectionStart - 1, 1);
+      SelectionStart = pos - 1;
+      SelectionLength = 1;
+      ActionDelete_Click(this, EventArgs.Empty);
+      //if ( Multiline ) ScrollToCaret();
+    }*/
+    else
+      return;
+    e.Handled = true;
+  }
 
-    private void KeyDownEvent(object sender, KeyEventArgs e)
+  private void KeyDownEvent(object sender, KeyEventArgs e)
+  {
+    bool check(bool condition, Keys key, Action<object, EventArgs> action)
     {
-      bool check(bool condition, Keys key, Action<object, EventArgs> action)
-      {
-        if ( !condition || e.KeyCode != key ) return false;
-        e.SuppressKeyPress = true;
-        action?.Invoke(this, null);
-        return true;
-      }
-      UpdateMenuItems(this);
-      if ( !check(e.Control, Keys.A, ActionSelectAll_Click)
-        && !check(e.Control, Keys.Z, ActionUndo_Click)
-        && !check(e.Control, Keys.Y, ActionRedo_Click)
-        && !check(e.Control, Keys.Insert, ActionCopy_Click)
-        && !check(e.Shift, Keys.Delete, ActionCut_Click)
-        && !check(e.Shift, Keys.Insert, ActionPaste_Click) )
-      {
-        // NOP required
-        // OR TODO Previous.Set(Text, SelectionStart /*, SelectionLength*/);
-      }
+      if ( !condition || e.KeyCode != key ) return false;
+      e.SuppressKeyPress = true;
+      action?.Invoke(this, null);
+      return true;
     }
-
+    UpdateMenuItems(this);
+    if ( !check(e.Control, Keys.A, ActionSelectAll_Click)
+      && !check(e.Control, Keys.Z, ActionUndo_Click)
+      && !check(e.Control, Keys.Y, ActionRedo_Click)
+      && !check(e.Control, Keys.Insert, ActionCopy_Click)
+      && !check(e.Shift, Keys.Delete, ActionCut_Click)
+      && !check(e.Shift, Keys.Insert, ActionPaste_Click) )
+    {
+      // NOP required
+      // OR TODO Previous.Set(Text, SelectionStart /*, SelectionLength*/);
+    }
   }
 
 }

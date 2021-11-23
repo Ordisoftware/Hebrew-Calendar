@@ -12,104 +12,101 @@
 /// </license>
 /// <created> 2011-12 </created>
 /// <edited> 2021-11 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides messages and questions with waiting user communication feedback as well as UI sync.
+/// </summary>
+static partial class DisplayManager
 {
 
   /// <summary>
-  /// Provides messages and questions with waiting user communication feedback as well as UI sync.
+  /// Indicates main thread.
   /// </summary>
-  static partial class DisplayManager
+  static public Thread MainThread { get; private set; }
+
+  /// <summary>
+  /// Static constructor.
+  /// </summary>
+  static DisplayManager()
   {
+    MainThread = Thread.CurrentThread;
+  }
 
-    /// <summary>
-    /// Indicates main thread.
-    /// </summary>
-    static public Thread MainThread { get; private set; }
+  public const int TaskbarWidthCheckTrigger = 250;
 
-    /// <summary>
-    /// Static constructor.
-    /// </summary>
-    static DisplayManager()
-    {
-      MainThread = Thread.CurrentThread;
-    }
-
-    public const int TaskbarWidthCheckTrigger = 250;
-
-    /// <summary>
-    /// Gets task bar anchor style.
-    /// </summary>
-    static public AnchorStyles GetTaskbarAnchorStyle()
-    {
-      var coordonates = StackMethods.GetTaskbarCoordonates();
-      if ( coordonates.Left == 0 && coordonates.Top == 0 )
-        if ( coordonates.Width > TaskbarWidthCheckTrigger )
-          return AnchorStyles.Top;
-        else
-          return AnchorStyles.Left;
-      else
+  /// <summary>
+  /// Gets task bar anchor style.
+  /// </summary>
+  static public AnchorStyles GetTaskbarAnchorStyle()
+  {
+    var coordonates = StackMethods.GetTaskbarCoordonates();
+    if ( coordonates.Left == 0 && coordonates.Top == 0 )
       if ( coordonates.Width > TaskbarWidthCheckTrigger )
-        return AnchorStyles.Bottom;
+        return AnchorStyles.Top;
       else
-        return AnchorStyles.Right;
-    }
+        return AnchorStyles.Left;
+    else
+    if ( coordonates.Width > TaskbarWidthCheckTrigger )
+      return AnchorStyles.Bottom;
+    else
+      return AnchorStyles.Right;
+  }
 
-    /// <summary>
-    /// Runs an action synchronized in the main form thread and wait for completion.
-    /// </summary>
-    /// <param name="action">The action.</param>
-    /// <param name="wait">true to wait.</param>
-    static public void SyncMainUI(Action action, bool wait = true)
-    {
-      Globals.MainForm.SyncUI(action, wait);
-    }
+  /// <summary>
+  /// Runs an action synchronized in the main form thread and wait for completion.
+  /// </summary>
+  /// <param name="action">The action.</param>
+  /// <param name="wait">true to wait.</param>
+  static public void SyncMainUI(Action action, bool wait = true)
+  {
+    Globals.MainForm.SyncUI(action, wait);
+  }
 
-    /// <summary>
-    /// Runs an action synchronized with the visual thread and wait for completion.
-    /// </summary>
-    /// <Exception cref="ThreadInterruptedException">Thrown when a Thread Interrupted error
-    /// condition occurs.</Exception>
-    /// <param name="control">The control to act on.</param>
-    /// <param name="action">The action.</param>
-    /// <param name="wait">true to wait.</param>
-    static public void SyncUI(this Control control, Action action, bool wait = true)
+  /// <summary>
+  /// Runs an action synchronized with the visual thread and wait for completion.
+  /// </summary>
+  /// <Exception cref="ThreadInterruptedException">Thrown when a Thread Interrupted error
+  /// condition occurs.</Exception>
+  /// <param name="control">The control to act on.</param>
+  /// <param name="action">The action.</param>
+  /// <param name="wait">true to wait.</param>
+  static public void SyncUI(this Control control, Action action, bool wait = true)
+  {
+    if ( control == null ) throw new ArgumentNullException(nameof(control));
+    if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
+    Exception exception = null;
+    Semaphore semaphore = null;
+    var processAction = () =>
     {
-      if ( control == null ) throw new ArgumentNullException(nameof(control));
-      if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
-      Exception exception = null;
-      Semaphore semaphore = null;
-      var processAction = () =>
+      try
       {
-        try
-        {
-          action();
-        }
-        catch ( Exception ex )
-        {
-          exception = ex;
-        }
-      };
-      var processActionWait = () =>
-      {
-        processAction();
-        semaphore?.Release();
-      };
-      if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
-      {
-        if ( wait ) semaphore = new Semaphore(0, 1);
-        control.BeginInvoke(wait ? processActionWait : processAction);
-        semaphore?.WaitOne();
+        action();
       }
-      else
-        processAction();
-      if ( exception != null )
-        throw exception;
+      catch ( Exception ex )
+      {
+        exception = ex;
+      }
+    };
+    var processActionWait = () =>
+    {
+      processAction();
+      semaphore?.Release();
+    };
+    if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
+    {
+      if ( wait ) semaphore = new Semaphore(0, 1);
+      control.BeginInvoke(wait ? processActionWait : processAction);
+      semaphore?.WaitOne();
     }
-
+    else
+      processAction();
+    if ( exception != null )
+      throw exception;
   }
 
 }

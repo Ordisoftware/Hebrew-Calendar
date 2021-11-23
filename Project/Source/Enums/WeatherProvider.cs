@@ -12,19 +12,14 @@
 /// </license>
 /// <created> 2021-01 </created>
 /// <edited> 2021-07 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Weather provider enum.
+/// </summary>
+public enum WeatherProvider
 {
-
-  /// <summary>
-  /// Weather provider enum.
-  /// </summary>
-  public enum WeatherProvider
-  {
-    MeteoblueDotCom,
-    WeatherDotCom,
-    MicrosoftNetworkDotCom
-  }
-
+  MeteoblueDotCom,
+  WeatherDotCom,
+  MicrosoftNetworkDotCom
 }

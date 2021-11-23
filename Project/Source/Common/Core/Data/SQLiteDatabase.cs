@@ -12,162 +12,159 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-07 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using SQLite;
 
-namespace Ordisoftware.Core
+public delegate void LoadingDataEventHandler(Type type);
+public delegate void DataLoadedEventHandler();
+
+/// <summary>
+/// Provide SQLite database wrapper.
+/// </summary>
+abstract class SQLiteDatabase
 {
 
-  public delegate void LoadingDataEventHandler(Type type);
-  public delegate void DataLoadedEventHandler();
+  static public SQLiteDatabase Instance { get; protected set; }
 
-  /// <summary>
-  /// Provide SQLite database wrapper.
-  /// </summary>
-  abstract class SQLiteDatabase
+  protected bool AutoLoadAllAtOpen = true;
+
+  public string ConnectionString { get; }
+
+  public bool Initialized { get; private set; }
+
+  public bool ClearListsOnCloseAndRelease { get; set; }
+
+  public SQLiteNetORM Connection
   {
-
-    static public SQLiteDatabase Instance { get; protected set; }
-
-    protected bool AutoLoadAllAtOpen = true;
-
-    public string ConnectionString { get; }
-
-    public bool Initialized { get; private set; }
-
-    public bool ClearListsOnCloseAndRelease { get; set; }
-
-    public SQLiteNetORM Connection
-    {
-      get => _Connection;
-      private set => _Connection = value;
-    }
-    [NonSerialized]
-    public SQLiteNetORM _Connection;
-
-    public bool UseTransactionByDefault { get; set; } = true;
-
-    public event LoadingDataEventHandler LoadingData;
-
-    public event DataLoadedEventHandler DataLoaded;
-
-    protected SQLiteDatabase(string connectionString)
-    {
-      if ( Globals.IsVisualStudioDesigner ) return;
-      ConnectionString = connectionString;
-      Connection = new SQLiteNetORM(ConnectionString);
-    }
-
-    protected void CheckConnected()
-    {
-      if ( Connection == null ) throw new SQLiteException("Not connected.");
-    }
-
-    protected void CheckAccess(object table, string name)
-    {
-      if ( table == null ) throw new SQLiteException("Table is not loaded: " + name);
-    }
-
-    public virtual void Open()
-    {
-      CheckConnected();
-      if ( Initialized ) return;
-      UpgradeSchema();
-      CreateTables();
-      if ( AutoLoadAllAtOpen ) LoadAll();
-      CreateDataIfNotExist();
-      Initialized = true;
-    }
-
-    public void Close()
-    {
-      if ( Connection == null ) return;
-      Rollback();
-      DoClose();
-      Connection.Close();
-      Connection = null;
-    }
-
-    protected abstract void DoClose();
-
-    protected virtual void UpgradeSchema()
-    {
-      CheckConnected();
-    }
-
-    protected abstract void CreateTables();
-
-    public virtual void CreateDataIfNotExist(bool reset = false)
-    {
-      CheckConnected();
-    }
-
-    public virtual void LoadAll()
-    {
-      Rollback();
-    }
-
-    protected List<T> Load<T>(TableQuery<T> query)
-    {
-      CheckConnected();
-      LoadingData?.Invoke(typeof(T));
-      var result = query.ToList();
-      DataLoaded?.Invoke();
-      return result;
-    }
-
-    public bool IsInTransaction => Connection.IsInTransaction;
-
-    public void BeginTransaction()
-    {
-      CheckConnected();
-      if ( !Connection.IsInTransaction )
-        Connection.BeginTransaction();
-    }
-
-    public void Commit()
-    {
-      CheckConnected();
-      if ( Connection.IsInTransaction )
-        Connection.Commit();
-    }
-
-    public void Rollback()
-    {
-      CheckConnected();
-      if ( Connection.IsInTransaction )
-        Connection.Rollback();
-    }
-
-    public void SaveAll()
-    {
-      SaveAll(UseTransactionByDefault);
-    }
-
-    public void SaveAll(bool useTransaction)
-    {
-      CheckConnected();
-      if ( !useTransaction )
-      {
-        DoSaveAll();
-        return;
-      }
-      BeginTransaction();
-      try
-      {
-        DoSaveAll();
-        Connection.Commit();
-      }
-      catch
-      {
-        Rollback();
-        throw;
-      }
-    }
-
-    protected abstract void DoSaveAll();
-
+    get => _Connection;
+    private set => _Connection = value;
   }
+  [NonSerialized]
+  public SQLiteNetORM _Connection;
+
+  public bool UseTransactionByDefault { get; set; } = true;
+
+  public event LoadingDataEventHandler LoadingData;
+
+  public event DataLoadedEventHandler DataLoaded;
+
+  protected SQLiteDatabase(string connectionString)
+  {
+    if ( Globals.IsVisualStudioDesigner ) return;
+    ConnectionString = connectionString;
+    Connection = new SQLiteNetORM(ConnectionString);
+  }
+
+  protected void CheckConnected()
+  {
+    if ( Connection == null ) throw new SQLiteException("Not connected.");
+  }
+
+  protected void CheckAccess(object table, string name)
+  {
+    if ( table == null ) throw new SQLiteException("Table is not loaded: " + name);
+  }
+
+  public virtual void Open()
+  {
+    CheckConnected();
+    if ( Initialized ) return;
+    UpgradeSchema();
+    CreateTables();
+    if ( AutoLoadAllAtOpen ) LoadAll();
+    CreateDataIfNotExist();
+    Initialized = true;
+  }
+
+  public void Close()
+  {
+    if ( Connection == null ) return;
+    Rollback();
+    DoClose();
+    Connection.Close();
+    Connection = null;
+  }
+
+  protected abstract void DoClose();
+
+  protected virtual void UpgradeSchema()
+  {
+    CheckConnected();
+  }
+
+  protected abstract void CreateTables();
+
+  public virtual void CreateDataIfNotExist(bool reset = false)
+  {
+    CheckConnected();
+  }
+
+  public virtual void LoadAll()
+  {
+    Rollback();
+  }
+
+  protected List<T> Load<T>(TableQuery<T> query)
+  {
+    CheckConnected();
+    LoadingData?.Invoke(typeof(T));
+    var result = query.ToList();
+    DataLoaded?.Invoke();
+    return result;
+  }
+
+  public bool IsInTransaction => Connection.IsInTransaction;
+
+  public void BeginTransaction()
+  {
+    CheckConnected();
+    if ( !Connection.IsInTransaction )
+      Connection.BeginTransaction();
+  }
+
+  public void Commit()
+  {
+    CheckConnected();
+    if ( Connection.IsInTransaction )
+      Connection.Commit();
+  }
+
+  public void Rollback()
+  {
+    CheckConnected();
+    if ( Connection.IsInTransaction )
+      Connection.Rollback();
+  }
+
+  public void SaveAll()
+  {
+    SaveAll(UseTransactionByDefault);
+  }
+
+  public void SaveAll(bool useTransaction)
+  {
+    CheckConnected();
+    if ( !useTransaction )
+    {
+      DoSaveAll();
+      return;
+    }
+    BeginTransaction();
+    try
+    {
+      DoSaveAll();
+      Connection.Commit();
+    }
+    catch
+    {
+      Rollback();
+      throw;
+    }
+  }
+
+  protected abstract void DoSaveAll();
 
 }

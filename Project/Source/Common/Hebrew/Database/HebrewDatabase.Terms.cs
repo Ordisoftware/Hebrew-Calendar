@@ -12,89 +12,85 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-05 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Collections.Generic;
 using Equin.ApplicationFramework;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+partial class HebrewDatabase : SQLiteDatabase
 {
 
-  partial class HebrewDatabase : SQLiteDatabase
+  public List<TermHebrew> TermsHebrew { get; private set; }
+  public List<TermLettriq> TermLettriqs { get; private set; }
+  public List<TermAnalysis> TermAnalyzes { get; private set; }
+
+  public BindingListView<TermHebrew> TermsHebrewAsBindingList { get; private set; }
+  public BindingListView<TermLettriq> TermLettriqsAsBindingList { get; private set; }
+
+  public List<TermHebrew> TakeLettriqs(bool reload = false)
   {
+    CheckConnected();
+    if ( !reload && TermsHebrew != null ) return TermsHebrew;
+    Interlocks.Take(nameof(TermsHebrew));
+    TermsHebrew = Load(Connection.Table<TermHebrew>());
+    TermLettriqs = Load(Connection.Table<TermLettriq>());
+    TermAnalyzes = Load(Connection.Table<TermAnalysis>());
+    TermsHebrewAsBindingList = new BindingListView<TermHebrew>(TermsHebrew);
+    TermLettriqsAsBindingList = new BindingListView<TermLettriq>(TermLettriqs);
+    Instance.TermsHebrewAsBindingList.ApplySort((item1, item2) => item1.Hebrew[item1.Hebrew.Length - 1].CompareTo(item2.Hebrew[item2.Hebrew.Length - 1]));
+    Instance.TermLettriqsAsBindingList.ApplySort(nameof(TermLettriq.Sentence));
+    return TermsHebrew;
+  }
 
-    public List<TermHebrew> TermsHebrew { get; private set; }
-    public List<TermLettriq> TermLettriqs { get; private set; }
-    public List<TermAnalysis> TermAnalyzes { get; private set; }
-
-    public BindingListView<TermHebrew> TermsHebrewAsBindingList { get; private set; }
-    public BindingListView<TermLettriq> TermLettriqsAsBindingList { get; private set; }
-
-    public List<TermHebrew> TakeLettriqs(bool reload = false)
+  public void ReleaseLettriqs()
+  {
+    if ( TermsHebrew == null && TermLettriqs == null && TermAnalyzes == null ) return;
+    Interlocks.Release(nameof(TermsHebrew));
+    if ( ClearListsOnCloseAndRelease )
     {
-      CheckConnected();
-      if ( !reload && TermsHebrew != null ) return TermsHebrew;
-      Interlocks.Take(nameof(TermsHebrew));
-      TermsHebrew = Load(Connection.Table<TermHebrew>());
-      TermLettriqs = Load(Connection.Table<TermLettriq>());
-      TermAnalyzes = Load(Connection.Table<TermAnalysis>());
-      TermsHebrewAsBindingList = new BindingListView<TermHebrew>(TermsHebrew);
-      TermLettriqsAsBindingList = new BindingListView<TermLettriq>(TermLettriqs);
-      Instance.TermsHebrewAsBindingList.ApplySort((item1, item2) => item1.Hebrew[item1.Hebrew.Length - 1].CompareTo(item2.Hebrew[item2.Hebrew.Length - 1]));
-      Instance.TermLettriqsAsBindingList.ApplySort(nameof(TermLettriq.Sentence));
-      return TermsHebrew;
+      TermAnalyzes?.Clear();
+      TermLettriqs?.Clear();
+      TermsHebrew?.Clear();
     }
+    TermAnalyzes = null;
+    TermLettriqs = null;
+    TermsHebrew = null;
+  }
 
-    public void ReleaseLettriqs()
+  public void SaveLettriqs()
+  {
+    CheckConnected();
+    CheckAccess(TermLettriqs, nameof(TermLettriqs));
+    CheckAccess(TermsHebrew, nameof(TermsHebrew));
+    CheckAccess(TermAnalyzes, nameof(TermAnalyzes));
+    Connection.BeginTransaction();
+    try
     {
-      if ( TermsHebrew == null && TermLettriqs == null && TermAnalyzes == null ) return;
-      Interlocks.Release(nameof(TermsHebrew));
-      if ( ClearListsOnCloseAndRelease )
-      {
-        TermAnalyzes?.Clear();
-        TermLettriqs?.Clear();
-        TermsHebrew?.Clear();
-      }
-      TermAnalyzes = null;
-      TermLettriqs = null;
-      TermsHebrew = null;
+      Connection.UpdateAll(TermsHebrew);
+      Connection.UpdateAll(TermLettriqs);
+      Connection.UpdateAll(TermAnalyzes);
+      Connection.Commit();
     }
-
-    public void SaveLettriqs()
+    catch
     {
-      CheckConnected();
-      CheckAccess(TermLettriqs, nameof(TermLettriqs));
-      CheckAccess(TermsHebrew, nameof(TermsHebrew));
-      CheckAccess(TermAnalyzes, nameof(TermAnalyzes));
-      Connection.BeginTransaction();
-      try
-      {
-        Connection.UpdateAll(TermsHebrew);
-        Connection.UpdateAll(TermLettriqs);
-        Connection.UpdateAll(TermAnalyzes);
-        Connection.Commit();
-      }
-      catch
-      {
-        Connection.Rollback();
-        throw;
-      }
+      Connection.Rollback();
+      throw;
     }
+  }
 
-    public void DeleteLettriqs()
-    {
-      CheckConnected();
-      CheckAccess(TermLettriqs, nameof(TermLettriqs));
-      CheckAccess(TermsHebrew, nameof(TermsHebrew));
-      CheckAccess(TermAnalyzes, nameof(TermAnalyzes));
-      Connection.DeleteAll<TermAnalysis>();
-      Connection.DeleteAll<TermHebrew>();
-      Connection.DeleteAll<TermLettriq>();
-      TermAnalyzes.Clear();
-      TermLettriqs.Clear();
-      TermsHebrew.Clear();
-    }
-
+  public void DeleteLettriqs()
+  {
+    CheckConnected();
+    CheckAccess(TermLettriqs, nameof(TermLettriqs));
+    CheckAccess(TermsHebrew, nameof(TermsHebrew));
+    CheckAccess(TermAnalyzes, nameof(TermAnalyzes));
+    Connection.DeleteAll<TermAnalysis>();
+    Connection.DeleteAll<TermHebrew>();
+    Connection.DeleteAll<TermLettriq>();
+    TermAnalyzes.Clear();
+    TermLettriqs.Clear();
+    TermsHebrew.Clear();
   }
 
 }

@@ -12,86 +12,83 @@
 /// </license>
 /// <created> 2020-03 </created>
 /// <edited> 2021-10 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides online provider item.
+/// </summary>
+class OnlineProviderItem
 {
 
-  /// <summary>
-  /// Provides online provider item.
-  /// </summary>
-  class OnlineProviderItem
+  static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");
+
+  static public readonly Dictionary<string, Image> LanguageImages = new()
   {
+    ["(NONE)"] = CreateImage("web_layout.png"),
+    ["(FR)"] = CreateImage("flag_france.png"),
+    ["(EN)"] = CreateImage("flag_great_britain.png"),
+    ["(IW)"] = CreateImage("flag_israel.png"),
+    ["(EN/IW)"] = CreateImage("flag_en_iw.png"),
+    ["(FR/IW)"] = CreateImage("flag_fr_iw.png"),
+    ["(FR/EN)"] = CreateImage("flag_fr_en.png")
+  };
 
-    static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");
-
-    static public readonly Dictionary<string, Image> LanguageImages = new()
+  static private Image CreateImage(string filePath)
+  {
+    try
     {
-      ["(NONE)"] = CreateImage("web_layout.png"),
-      ["(FR)"] = CreateImage("flag_france.png"),
-      ["(EN)"] = CreateImage("flag_great_britain.png"),
-      ["(IW)"] = CreateImage("flag_israel.png"),
-      ["(EN/IW)"] = CreateImage("flag_en_iw.png"),
-      ["(FR/IW)"] = CreateImage("flag_fr_iw.png"),
-      ["(FR/EN)"] = CreateImage("flag_fr_en.png")
+      return Image.FromFile(System.IO.Path.Combine(Globals.HelpFolderPath, filePath));
+    }
+    catch ( Exception ex )
+    {
+      DebugManager.Trace(LogTraceEvent.Exception, new ExceptionInfo(null, ex).FullText);
+      return null;
+    }
+  }
+
+  public string Language { get; }
+
+  public string Name { get; }
+
+  public string URL { get; }
+
+  public Image Image { get; }
+
+  public ToolStripItem CreateMenuItem(EventHandler action)
+  {
+    if ( Name == "-" ) return new ToolStripSeparator();
+    return new ToolStripMenuItem(Name, Image, action)
+    {
+      ImageScaling = ToolStripItemImageScaling.None,
+      Tag = URL
     };
+  }
 
-    static private Image CreateImage(string filePath)
+  public OnlineProviderItem(string name, string url = "", Image image = null)
+  {
+    string lang = string.Empty;
+    if ( name[0] == '(' )
     {
-      try
+      int pos = name.IndexOf(')');
+      if ( pos >= 3 )
       {
-        return Image.FromFile(System.IO.Path.Combine(Globals.HelpFolderPath, filePath));
-      }
-      catch ( Exception ex )
-      {
-        DebugManager.Trace(LogTraceEvent.Exception, new ExceptionInfo(null, ex).FullText);
-        return null;
-      }
-    }
-
-    public string Language { get; }
-
-    public string Name { get; }
-
-    public string URL { get; }
-
-    public Image Image { get; }
-
-    public ToolStripItem CreateMenuItem(EventHandler action)
-    {
-      if ( Name == "-" ) return new ToolStripSeparator();
-      return new ToolStripMenuItem(Name, Image, action)
-      {
-        ImageScaling = ToolStripItemImageScaling.None,
-        Tag = URL
-      };
-    }
-
-    public OnlineProviderItem(string name, string url = "", Image image = null)
-    {
-      string lang = string.Empty;
-      if ( name[0] == '(' )
-      {
-        int pos = name.IndexOf(')');
-        if ( pos >= 3 )
+        lang = name.Substring(0, pos + 1);
+        if ( LanguageImages.ContainsKey(lang) )
         {
-          lang = name.Substring(0, pos + 1);
-          if ( LanguageImages.ContainsKey(lang) )
-          {
-            name = name.Substring(pos + 1);
-            image = LanguageImages[lang];
-          }
+          name = name.Substring(pos + 1);
+          image = LanguageImages[lang];
         }
       }
-      Language = lang;
-      Name = name.Trim();
-      URL = url.Trim();
-      Image = image;
     }
-
+    Language = lang;
+    Name = name.Trim();
+    URL = url.Trim();
+    Image = image;
   }
 
 }

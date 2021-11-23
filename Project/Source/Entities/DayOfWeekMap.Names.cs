@@ -12,133 +12,130 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Collections.Generic;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+static partial class DayOfWeekMap
 {
 
-  static partial class DayOfWeekMap
+  /// <summary>
+  /// Provides mapping table for Calendar.NET names.
+  /// </summary>
+  static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Names = new()
   {
-
-    /// <summary>
-    /// Provides mapping table for Calendar.NET names.
-    /// </summary>
-    static public readonly Dictionary<DayOfWeek, DayOfWeek[]> Names = new()
     {
-      {
-        DayOfWeek.Monday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-          }
-      },
+      DayOfWeek.Monday,
+      new DayOfWeek[]
       {
         DayOfWeek.Tuesday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-          }
-      },
+        DayOfWeek.Wednesday,
+        DayOfWeek.Thursday,
+        DayOfWeek.Friday,
+        DayOfWeek.Saturday,
+        DayOfWeek.Sunday,
+        DayOfWeek.Monday,
+      }
+    },
+    {
+      DayOfWeek.Tuesday,
+      new DayOfWeek[]
       {
         DayOfWeek.Wednesday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-          }
-      },
+        DayOfWeek.Thursday,
+        DayOfWeek.Friday,
+        DayOfWeek.Saturday,
+        DayOfWeek.Sunday,
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+      }
+    },
+    {
+      DayOfWeek.Wednesday,
+      new DayOfWeek[]
       {
         DayOfWeek.Thursday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-          }
-      },
+        DayOfWeek.Friday,
+        DayOfWeek.Saturday,
+        DayOfWeek.Sunday,
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+        DayOfWeek.Wednesday,
+      }
+    },
+    {
+      DayOfWeek.Thursday,
+      new DayOfWeek[]
       {
         DayOfWeek.Friday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-          }
-      },
+        DayOfWeek.Saturday,
+        DayOfWeek.Sunday,
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+        DayOfWeek.Wednesday,
+        DayOfWeek.Thursday,
+    }
+    },
+    {
+      DayOfWeek.Friday,
+      new DayOfWeek[]
       {
         DayOfWeek.Saturday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Sunday,
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-          }
-      },
+        DayOfWeek.Sunday,
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+        DayOfWeek.Wednesday,
+        DayOfWeek.Thursday,
+        DayOfWeek.Friday,
+      }
+    },
+    {
+      DayOfWeek.Saturday,
+      new DayOfWeek[]
       {
         DayOfWeek.Sunday,
-        new DayOfWeek[]
-          {
-            DayOfWeek.Monday,
-            DayOfWeek.Tuesday,
-            DayOfWeek.Wednesday,
-            DayOfWeek.Thursday,
-            DayOfWeek.Friday,
-            DayOfWeek.Saturday,
-            DayOfWeek.Sunday,
-          }
-      },
-    };
-
-    static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = new();
-
-    static DayOfWeekMap()
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+        DayOfWeek.Wednesday,
+        DayOfWeek.Thursday,
+        DayOfWeek.Friday,
+        DayOfWeek.Saturday,
+      }
+    },
     {
-      foreach ( var lang in Languages.Managed )
+      DayOfWeek.Sunday,
+      new DayOfWeek[]
       {
-        var dic = new Dictionary<DayOfWeek, List<string>>();
-        LocalizedNamesText.Add(lang, dic);
-        foreach ( var kvp in Names )
+        DayOfWeek.Monday,
+        DayOfWeek.Tuesday,
+        DayOfWeek.Wednesday,
+        DayOfWeek.Thursday,
+        DayOfWeek.Friday,
+        DayOfWeek.Saturday,
+        DayOfWeek.Sunday,
+      }
+    },
+  };
+
+  static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = new();
+
+  static DayOfWeekMap()
+  {
+    foreach ( var lang in Languages.Managed )
+    {
+      var dic = new Dictionary<DayOfWeek, List<string>>();
+      LocalizedNamesText.Add(lang, dic);
+      foreach ( var kvp in Names )
+      {
+        dic.Add(kvp.Key, new List<string>());
+        foreach ( var item in kvp.Value )
         {
-          dic.Add(kvp.Key, new List<string>());
-          foreach ( var item in kvp.Value )
-          {
-            dic[kvp.Key].Add(AppTranslations.DaysOfWeek[item][lang].Substring(0, 3));
-          }
+          dic[kvp.Key].Add(AppTranslations.DaysOfWeek[item][lang].Substring(0, 3));
         }
       }
     }
-
   }
 
 }

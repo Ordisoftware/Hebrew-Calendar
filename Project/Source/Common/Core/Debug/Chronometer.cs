@@ -12,61 +12,58 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
-using System.Linq;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides benchmark helper.
+/// </summary>
+static class Chronometer
 {
 
   /// <summary>
-  /// Provides benchmark helper.
+  /// Measures an action.
   /// </summary>
-  static class Chronometer
+  static public Stopwatch Measure(Action action)
   {
+    var chrono = new Stopwatch();
+    chrono.Start();
+    action();
+    chrono.Stop();
+    return chrono;
+  }
 
-    /// <summary>
-    /// Measures an action.
-    /// </summary>
-    static public Stopwatch Measure(Action action)
+  /// <summary>
+  /// Measures an action repeated several times.
+  /// </summary>
+  static public long Measure(int count, Action action, Control control = null)
+  {
+    Cursor temp = null;
+    var times = new long[count];
+    if ( control != null )
     {
-      var chrono = new Stopwatch();
-      chrono.Start();
-      action();
-      chrono.Stop();
-      return chrono;
+      temp = control.Cursor;
+      control.Cursor = Cursors.WaitCursor;
+      control.SuspendLayout();
     }
-
-    /// <summary>
-    /// Measures an action repeated several times.
-    /// </summary>
-    static public long Measure(int count, Action action, Control control = null)
+    try
     {
-      Cursor temp = null;
-      var times = new long[count];
+      for ( int index = 0; index < count; index++ )
+        times[index] = Measure(action).ElapsedMilliseconds;
+    }
+    finally
+    {
       if ( control != null )
       {
-        temp = control.Cursor;
-        control.Cursor = Cursors.WaitCursor;
-        control.SuspendLayout();
+        control.ResumeLayout();
+        control.Cursor = temp;
       }
-      try
-      {
-        for ( int index = 0; index < count; index++ )
-          times[index] = Measure(action).ElapsedMilliseconds;
-      }
-      finally
-      {
-        if ( control != null )
-        {
-          control.ResumeLayout();
-          control.Cursor = temp;
-        }
-      }
-      return (long)times.Average();
     }
-
+    return (long)times.Average();
   }
 
 }

@@ -12,21 +12,16 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Text report field enum.
+/// </summary>
+public enum ReportFieldText
 {
-
-  /// <summary>
-  /// Text report field enum.
-  /// </summary>
-  public enum ReportFieldText
-  {
-    Date,
-    Month,
-    Sun,
-    Moon,
-    Events
-  }
-
+  Date,
+  Month,
+  Sun,
+  Moon,
+  Events
 }

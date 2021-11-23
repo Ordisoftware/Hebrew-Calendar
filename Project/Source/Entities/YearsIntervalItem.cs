@@ -12,62 +12,59 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides years interval item.
+/// </summary>
+class YearsIntervalItem
 {
 
-  /// <summary>
-  /// Provides years interval item.
-  /// </summary>
-  class YearsIntervalItem
+  public int YearsBefore { get; }
+  public int YearsAfter { get; }
+  public int Length { get; }
+  public int OriginalValue { get; }
+
+  public YearsIntervalItem(int length)
   {
-
-    public int YearsBefore { get; }
-    public int YearsAfter { get; }
-    public int Length { get; }
-    public int OriginalValue { get; }
-
-    public YearsIntervalItem(int length)
+    OriginalValue = length;
+    if ( length >= 0 )
     {
-      OriginalValue = length;
-      if ( length >= 0 )
-      {
-        YearsBefore = 0;
-        YearsAfter = length;
-        Length = length;
-      }
-      else
-      {
-        length = -length;
-        YearsBefore = length;
-        YearsAfter = length;
-        Length = length + length;
-      }
+      YearsBefore = 0;
+      YearsAfter = length;
+      Length = length;
     }
-
-    static public void InitializeMenu(ContextMenuStrip menu, int max, EventHandler handler)
+    else
     {
-      menu.Items.Clear();
-      foreach ( int value in Program.PredefinedYearsIntervals )
-      {
-        var interval = new YearsIntervalItem(value);
-        if ( interval.Length <= max && interval.Length <= Program.Settings.GenerateIntervalMaximum )
-        {
-          var item = new ToolStripMenuItem
-          {
-            Text = value >= 0
-                   ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
-                   : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
-            Tag = interval
-          };
-          item.Click += handler;
-          menu.Items.Add(item);
-        }
-      }
+      length = -length;
+      YearsBefore = length;
+      YearsAfter = length;
+      Length = length + length;
+    }
+  }
 
+  static public void InitializeMenu(ContextMenuStrip menu, int max, EventHandler handler)
+  {
+    menu.Items.Clear();
+    foreach ( int value in Program.PredefinedYearsIntervals )
+    {
+      var interval = new YearsIntervalItem(value);
+      if ( interval.Length <= max && interval.Length <= Program.Settings.GenerateIntervalMaximum )
+      {
+        var item = new ToolStripMenuItem
+        {
+          Text = value >= 0
+                 ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
+                 : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
+          Tag = interval
+        };
+        item.Click += handler;
+        menu.Items.Add(item);
+      }
     }
 
   }

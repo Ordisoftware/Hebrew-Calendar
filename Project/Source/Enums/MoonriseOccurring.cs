@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Moon rise occurring enum.
+/// </summary>
+public enum MoonriseOccurring
 {
 
   /// <summary>
-  /// Moon rise occurring enum.
+  /// Moonrise is after moonset.
   /// </summary>
-  public enum MoonriseOccurring
-  {
+  AfterSet,
 
-    /// <summary>
-    /// Moonrise is after moonset.
-    /// </summary>
-    AfterSet,
+  /// <summary>
+  /// Moonrise is before moonset.
+  /// </summary>
+  BeforeSet,
 
-    /// <summary>
-    /// Moonrise is before moonset.
-    /// </summary>
-    BeforeSet,
-
-    /// <summary>
-    /// Moonrise is on next day.
-    /// </summary>
-    NextDay
-
-  }
+  /// <summary>
+  /// Moonrise is on next day.
+  /// </summary>
+  NextDay
 
 }

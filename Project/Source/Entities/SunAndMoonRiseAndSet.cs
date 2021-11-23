@@ -12,20 +12,17 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides sun and moon rise and set structure.
+/// </summary>
+public struct SunAndMoonRiseAndSet
 {
-
-  /// <summary>
-  /// Provides sun and moon rise and set structure.
-  /// </summary>
-  public struct SunAndMoonRiseAndSet
-  {
-    public TimeSpan? Sunrise { get; set; }
-    public TimeSpan? Sunset { get; set; }
-    public TimeSpan? Moonrise { get; set; }
-    public TimeSpan? Moonset { get; set; }
-  }
-
+  public TimeSpan? Sunrise { get; set; }
+  public TimeSpan? Sunset { get; set; }
+  public TimeSpan? Moonrise { get; set; }
+  public TimeSpan? Moonset { get; set; }
 }

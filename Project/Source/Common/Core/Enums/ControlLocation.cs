@@ -12,53 +12,50 @@
 /// </license>
 /// <created> 2020-03 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Indicates the location of a control enum.
+/// </summary>
+[Serializable]
+public enum ControlLocation
 {
 
   /// <summary>
-  /// Indicates the location of a control enum.
+  /// Loose position.
   /// </summary>
-  [Serializable]
-  public enum ControlLocation
-  {
+  Loose,
 
-    /// <summary>
-    /// Loose position.
-    /// </summary>
-    Loose,
+  /// <summary>
+  /// Top-left corner.
+  /// </summary>
+  TopLeft,
 
-    /// <summary>
-    /// Top-left corner.
-    /// </summary>
-    TopLeft,
+  /// <summary>
+  /// Top-right corner.
+  /// </summary>
+  TopRight,
 
-    /// <summary>
-    /// Top-right corner.
-    /// </summary>
-    TopRight,
+  /// <summary>
+  /// Bottom-left corner.
+  /// </summary>
+  BottomLeft,
 
-    /// <summary>
-    /// Bottom-left corner.
-    /// </summary>
-    BottomLeft,
+  /// <summary>
+  /// Bottom-right corner.
+  /// </summary>
+  BottomRight,
 
-    /// <summary>
-    /// Bottom-right corner.
-    /// </summary>
-    BottomRight,
+  /// <summary>
+  /// Centered on the screen.
+  /// </summary>
+  Center,
 
-    /// <summary>
-    /// Centered on the screen.
-    /// </summary>
-    Center,
-
-    /// <summary>
-    /// Fixed or center to parent.
-    /// </summary>
-    Fixed
-
-  }
+  /// <summary>
+  /// Fixed or center to parent.
+  /// </summary>
+  Fixed
 
 }

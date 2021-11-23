@@ -12,36 +12,31 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Ephemeris enum.
+/// </summary>
+public enum Ephemeris
 {
+  /// <summary>
+  /// Moon or sun rise.
+  /// </summary>
+  Rise,
 
   /// <summary>
-  /// Ephemeris enum.
+  /// Moon or sun set.
   /// </summary>
-  public enum Ephemeris
-  {
-    /// <summary>
-    /// Moon or sun rise.
-    /// </summary>
-    Rise,
+  Set,
 
-    /// <summary>
-    /// Moon or sun set.
-    /// </summary>
-    Set,
+  /// <summary>
+  /// In daylight saving time.
+  /// </summary>
+  SummerHour,
 
-    /// <summary>
-    /// In daylight saving time.
-    /// </summary>
-    SummerHour,
-
-    /// <summary>
-    /// Not in daylight saving time.
-    /// </summary>
-    WinterHour
-
-  }
+  /// <summary>
+  /// Not in daylight saving time.
+  /// </summary>
+  WinterHour
 
 }

@@ -12,39 +12,36 @@
 /// </license>
 /// <created> 2007-05 </created>
 /// <edited> 2012-02 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides object helper.
+/// </summary>
+static class ObjectHelper
 {
 
   /// <summary>
-  /// Provides object helper.
+  /// Converts the type of a convertible object to another type.
   /// </summary>
-  static class ObjectHelper
+  /// <typeparam name="T">Convertible generic type parameter.</typeparam>
+  /// <param name="obj">The obj to act on.</param>
+  /// <param name="returnDefaultOnError">True to return default value in case of error, else throw it.</param>
+  /// <returns>
+  /// The converted object.
+  /// </returns>
+  static public T ConvertTo<T>(this object obj, bool returnDefaultOnError = false)
+  where T : IConvertible
   {
-
-    /// <summary>
-    /// Converts the type of a convertible object to another type.
-    /// </summary>
-    /// <typeparam name="T">Convertible generic type parameter.</typeparam>
-    /// <param name="obj">The obj to act on.</param>
-    /// <param name="returnDefaultOnError">True to return default value in case of error, else throw it.</param>
-    /// <returns>
-    /// The converted object.
-    /// </returns>
-    static public T ConvertTo<T>(this object obj, bool returnDefaultOnError = false)
-    where T : IConvertible
+    try
     {
-      try
-      {
-        return (T)Convert.ChangeType(obj, typeof(T));
-      }
-      catch when ( returnDefaultOnError )
-      {
-        return default;
-      }
+      return (T)Convert.ChangeType(obj, typeof(T));
     }
-
+    catch when ( returnDefaultOnError )
+    {
+      return default;
+    }
   }
 
 }

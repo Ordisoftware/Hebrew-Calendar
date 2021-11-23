@@ -12,138 +12,135 @@
 /// </license>
 /// <created> 2019-11 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class LockSessionForm : Form
 {
 
-  partial class LockSessionForm : Form
+  static public LockSessionForm Instance { get; private set; }
+
+  static public void Run()
   {
+    ( Instance ??= new LockSessionForm() ).Popup();
+  }
 
-    static public LockSessionForm Instance { get; private set; }
+  readonly DateTime Start = DateTime.Now;
 
-    static public void Run()
+  private LockSessionForm()
+  {
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
+    ActiveControl = ActionOk;
+  }
+
+  private void LockSessionForm_Load(object sender, EventArgs e)
+  {
+    LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
+    int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
+    if ( width > Width ) Width = width;
+    ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
+    ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerAction.LockSession);
+    ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerAction.StandBy);
+    ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Hibernate);
+    ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Shutdown);
+    ActionStandby.Left = ActionLock.Left + ActionLock.Width + 5;
+    ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
+    ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
+    ActionHibernate.Enabled = SystemManager.CanHibernate;
+    ActionStandby.Enabled = SystemManager.CanStandby;
+    CenterToScreen();
+    Timer.Start();
+    Timer_Tick(null, null);
+  }
+
+  private void LockSessionForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    Timer.Stop();
+    Instance = null;
+  }
+
+  private void Timer_Tick(object sender, EventArgs e)
+  {
+    int remain = Program.Settings.AutoLockSessionTimeOut - ( DateTime.Now - Start ).Seconds;
+    LabelCountDown.Text = remain.ToString();
+    if ( remain != 0 ) return;
+    ActionOk.PerformClick();
+  }
+
+  private void ActionDisable_Click(object sender, EventArgs e)
+  {
+    Program.Settings.AutoLockSession = false;
+    SystemManager.TryCatch(Program.Settings.Save);
+    ActionCancel.PerformClick();
+  }
+
+  private void ActionCancel_Click(object sender, EventArgs e)
+  {
+    Close();
+  }
+
+  private void ActionOk_Click(object sender, EventArgs e)
+  {
+    var actions = new NullSafeDictionary<PowerAction, Delegate>
     {
-      ( Instance ??= new LockSessionForm() ).Popup();
-    }
+      [PowerAction.LockSession] = ActionLock_LinkClicked,
+      [PowerAction.Shutdown] = ActionStandby_LinkClicked,
+      [PowerAction.Hibernate] = ActionHibernate_LinkClicked,
+      [PowerAction.Shutdown] = ActionShutdown_LinkClicked
+    };
+    actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
+  }
 
-    readonly DateTime Start = DateTime.Now;
+  private void ActionLock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    Close();
+    DoMediaPlayingAndVolumeAction();
+    if ( !SystemManager.LockWorkStation() )
+      MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+  }
 
-    private LockSessionForm()
+  private void ActionStandby_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    Close();
+    DoMediaPlayingAndVolumeAction();
+    if ( !SystemManager.StandBy() )
+      MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+  }
+
+  private void ActionHibernate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    Close();
+    DoMediaPlayingAndVolumeAction();
+    if ( !SystemManager.Hibernate() )
+      MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+  }
+
+  private void ActionShutdown_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    Close();
+    if ( !SystemManager.Shutdown(Program.Settings.LockSessionConfirmLogOffOrMore) )
+      MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
+    else
+      MainForm.Instance.SessionEnding(null, null);
+  }
+
+  private void DoMediaPlayingAndVolumeAction()
+  {
+    if ( EditMediaStop.Checked )
     {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-      ActiveControl = ActionOk;
+      MediaMixer.StopPlaying();
+      MediaMixer.MuteVolume();
     }
+  }
 
-    private void LockSessionForm_Load(object sender, EventArgs e)
-    {
-      LabelMessage.Text = string.Format(LabelMessage.Text, Program.Settings.AutoLockSessionTimeOut);
-      int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
-      if ( width > Width ) Width = width;
-      ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
-      ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerAction.LockSession);
-      ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerAction.StandBy);
-      ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Hibernate);
-      ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Shutdown);
-      ActionStandby.Left = ActionLock.Left + ActionLock.Width + 5;
-      ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
-      ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
-      ActionHibernate.Enabled = SystemManager.CanHibernate;
-      ActionStandby.Enabled = SystemManager.CanStandby;
-      CenterToScreen();
-      Timer.Start();
-      Timer_Tick(null, null);
-    }
-
-    private void LockSessionForm_FormClosed(object sender, FormClosedEventArgs e)
-    {
-      Timer.Stop();
-      Instance = null;
-    }
-
-    private void Timer_Tick(object sender, EventArgs e)
-    {
-      int remain = Program.Settings.AutoLockSessionTimeOut - ( DateTime.Now - Start ).Seconds;
-      LabelCountDown.Text = remain.ToString();
-      if ( remain != 0 ) return;
-      ActionOk.PerformClick();
-    }
-
-    private void ActionDisable_Click(object sender, EventArgs e)
-    {
-      Program.Settings.AutoLockSession = false;
-      SystemManager.TryCatch(Program.Settings.Save);
-      ActionCancel.PerformClick();
-    }
-
-    private void ActionCancel_Click(object sender, EventArgs e)
-    {
-      Close();
-    }
-
-    private void ActionOk_Click(object sender, EventArgs e)
-    {
-      var actions = new NullSafeDictionary<PowerAction, Delegate>
-      {
-        [PowerAction.LockSession] = ActionLock_LinkClicked,
-        [PowerAction.Shutdown] = ActionStandby_LinkClicked,
-        [PowerAction.Hibernate] = ActionHibernate_LinkClicked,
-        [PowerAction.Shutdown] = ActionShutdown_LinkClicked
-      };
-      actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
-    }
-
-    private void ActionLock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Close();
-      DoMediaPlayingAndVolumeAction();
-      if ( !SystemManager.LockWorkStation() )
-        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
-    }
-
-    private void ActionStandby_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Close();
-      DoMediaPlayingAndVolumeAction();
-      if ( !SystemManager.StandBy() )
-        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
-    }
-
-    private void ActionHibernate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Close();
-      DoMediaPlayingAndVolumeAction();
-      if ( !SystemManager.Hibernate() )
-        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
-    }
-
-    private void ActionShutdown_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-      Close();
-      if ( !SystemManager.Shutdown(Program.Settings.LockSessionConfirmLogOffOrMore) )
-        MessageBox.Show(SysTranslations.LockSessionError.GetLang(Marshal.GetLastWin32Error()));
-      else
-        MainForm.Instance.SessionEnding(null, null);
-    }
-
-    private void DoMediaPlayingAndVolumeAction()
-    {
-      if ( EditMediaStop.Checked )
-      {
-        MediaMixer.StopPlaying();
-        MediaMixer.MuteVolume();
-      }
-    }
-
-    private void ActionPreferences_Click(object sender, EventArgs e)
-    {
-      MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexReminder, null);
-    }
-
+  private void ActionPreferences_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.ActionPreferences_Click(PreferencesForm.TabIndexReminder, null);
   }
 
 }

@@ -12,71 +12,67 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-08 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
-using MainForm = Ordisoftware.Hebrew.Calendar.MainForm;
+using MainForm = Calendar.MainForm;
 
-namespace Ordisoftware.Hebrew
+partial class ParashotForm : Form
 {
 
-  partial class ParashotForm : Form
+  static public bool ShowParashahDescription(Parashah parashah, bool withLinked)
   {
-
-    static public bool ShowParashahDescription(Parashah parashah, bool withLinked)
+    string title = HebrewTranslations.WeeklyParashah.GetLang();
+    var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
+    if ( form != null )
     {
-      string title = HebrewTranslations.WeeklyParashah.GetLang();
-      var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
-      if ( form != null )
-      {
-        form.Popup();
-        return true;
-      }
-      var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
-      if ( parashah == null ) return false;
-      var message = parashah.ToStringReadable();
-      message += Globals.NL2 + linked?.ToStringReadable();
-      form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
-      {
-        StartPosition = FormStartPosition.CenterScreen,
-        ForceNoTopMost = true,
-        ShowInTaskbar = true,
-        AllowClose = true
-      };
-      // Open board
-      form.ActionYes.Visible = true;
-      form.ActionYes.Text = SysTranslations.Board.GetLang();
-      form.ActionYes.Click += async (_s, _e) =>
-      {
-        Run(parashah);
-        await System.Threading.Tasks.Task.Delay(1000).ConfigureAwait(false);
-        Instance.Popup();
-      };
-      // Open memo
-      form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
-      form.ActionNo.Text = SysTranslations.Memo.GetLang();
-      form.ActionNo.Click += (_s, _e) =>
-      {
-        string memo1 = parashah.Memo;
-        string memo2 = linked?.Memo ?? "";
-        DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-      };
-      // Copy to clipboard
-      form.ActionRetry.Visible = true;
-      form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
-      form.ActionRetry.DialogResult = DialogResult.None;
-      form.ActionRetry.Click -= form.ActionClose_Click;
-      form.ActionRetry.Click += (_s, _e) =>
-      {
-        Clipboard.SetText(message);
-        DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
-                                          Globals.ClipboardSoundFilePath);
-      };
-      form.Show();
+      form.Popup();
       return true;
     }
-
+    var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
+    if ( parashah == null ) return false;
+    var message = parashah.ToStringReadable();
+    message += Globals.NL2 + linked?.ToStringReadable();
+    form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
+    {
+      StartPosition = FormStartPosition.CenterScreen,
+      ForceNoTopMost = true,
+      ShowInTaskbar = true,
+      AllowClose = true
+    };
+    // Open board
+    form.ActionYes.Visible = true;
+    form.ActionYes.Text = SysTranslations.Board.GetLang();
+    form.ActionYes.Click += async (_s, _e) =>
+    {
+      Run(parashah);
+      await System.Threading.Tasks.Task.Delay(1000).ConfigureAwait(false);
+      Instance.Popup();
+    };
+    // Open memo
+    form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
+    form.ActionNo.Text = SysTranslations.Memo.GetLang();
+    form.ActionNo.Click += (_s, _e) =>
+    {
+      string memo1 = parashah.Memo;
+      string memo2 = linked?.Memo ?? "";
+      DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
+    };
+    // Copy to clipboard
+    form.ActionRetry.Visible = true;
+    form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
+    form.ActionRetry.DialogResult = DialogResult.None;
+    form.ActionRetry.Click -= form.ActionClose_Click;
+    form.ActionRetry.Click += (_s, _e) =>
+    {
+      Clipboard.SetText(message);
+      DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
+                                        Globals.ClipboardSoundFilePath);
+    };
+    form.Show();
+    return true;
   }
 
 }

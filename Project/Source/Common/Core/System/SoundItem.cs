@@ -12,81 +12,78 @@
 /// </license>
 /// <created> 2020-09 </created>
 /// <edited> 2021-01 </edited>
+namespace Ordisoftware.Core;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Media;
 
-namespace Ordisoftware.Core
+/// <summary>
+/// Provides sound item.
+/// </summary>
+class SoundItem
 {
 
-  /// <summary>
-  /// Provides sound item.
-  /// </summary>
-  class SoundItem
+  static private readonly SoundPlayer SoundPlayer = new();
+
+  static volatile private List<SoundItem> ApplicationSounds;
+
+  static volatile private List<SoundItem> WindowsSounds;
+
+  static public List<SoundItem> GetApplicationSounds()
   {
+    return ApplicationSounds ??= GetSounds(Globals.ApplicationSoundsFolderPath);
+  }
 
-    static private readonly SoundPlayer SoundPlayer = new();
+  static public List<SoundItem> GetWindowsSounds()
+  {
+    return WindowsSounds ??= GetSounds(Globals.WindowsMediaFolderPath);
+  }
 
-    static volatile private List<SoundItem> ApplicationSounds;
+  static private List<SoundItem> GetSounds(string path, string filter = "*.wav")
+  {
+    var result = new List<SoundItem>();
+    if ( !Directory.Exists(path) ) return result;
+    foreach ( string file in Directory.GetFiles(path, filter, SearchOption.AllDirectories) )
+      result.Add(new SoundItem(file));
+    return result;
+  }
 
-    static volatile private List<SoundItem> WindowsSounds;
+  static public void Initialize()
+  {
+    GetApplicationSounds();
+    GetWindowsSounds();
+  }
 
-    static public List<SoundItem> GetApplicationSounds()
-    {
-      return ApplicationSounds ??= GetSounds(Globals.ApplicationSoundsFolderPath);
-    }
+  public string FilePath { get; }
 
-    static public List<SoundItem> GetWindowsSounds()
-    {
-      return WindowsSounds ??= GetSounds(Globals.WindowsMediaFolderPath);
-    }
+  public int DurationMS { get; }
 
-    static private List<SoundItem> GetSounds(string path, string filter = "*.wav")
-    {
-      var result = new List<SoundItem>();
-      if ( !Directory.Exists(path) ) return result;
-      foreach ( string file in Directory.GetFiles(path, filter, SearchOption.AllDirectories) )
-        result.Add(new SoundItem(file));
-      return result;
-    }
+  public override string ToString()
+    => Path.GetFileNameWithoutExtension(FilePath);
 
-    static public void Initialize()
-    {
-      GetApplicationSounds();
-      GetWindowsSounds();
-    }
+  public SoundItem(string path)
+  {
+    FilePath = path;
+    DurationMS = MediaMixer.GetSoundLengthMS(path);
+  }
 
-    public string FilePath { get; }
-
-    public int DurationMS { get; }
-
-    public override string ToString()
-      => Path.GetFileNameWithoutExtension(FilePath);
-
-    public SoundItem(string path)
-    {
-      FilePath = path;
-      DurationMS = MediaMixer.GetSoundLengthMS(path);
-    }
-
-    public bool Play()
-    {
-      if ( File.Exists(FilePath) )
-        try
-        {
-          SoundPlayer.SoundLocation = FilePath;
-          SoundPlayer.Load();
-          SoundPlayer.Play();
-          return true;
-        }
-        catch ( Exception ex )
-        {
-          DisplayManager.ShowError(ex.Message);
-        }
-      return false;
-    }
-
+  public bool Play()
+  {
+    if ( File.Exists(FilePath) )
+      try
+      {
+        SoundPlayer.SoundLocation = FilePath;
+        SoundPlayer.Load();
+        SoundPlayer.Play();
+        return true;
+      }
+      catch ( Exception ex )
+      {
+        DisplayManager.ShowError(ex.Message);
+      }
+    return false;
   }
 
 }

@@ -12,137 +12,134 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class SearchLunarMonthForm : Form
 {
 
-  partial class SearchLunarMonthForm : Form
+  private readonly MainForm MainForm = MainForm.Instance;
+
+  private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+
+  public LunisolarDay CurrentDay { get; private set; }
+
+  private int CurrentDayIndex = -1;
+
+  public SearchLunarMonthForm()
   {
+    InitializeComponent();
+    Icon = MainForm.Icon;
+    ActiveControl = ListItems;
+    CurrentDay = MainForm.CurrentDay;
+    int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
+    SelectYear.Fill(MainForm.YearsIntervalArray, year);
+  }
 
-    private readonly MainForm MainForm = MainForm.Instance;
+  private void SearchEventForm_Load(object sender, EventArgs e)
+  {
+    this.CheckLocationOrCenterToMainFormElseScreen();
+  }
 
-    private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  private void SearchLunarMonthForm_Shown(object sender, EventArgs e)
+  {
+    ListItems_SelectedIndexChanged(null, null);
+  }
 
-    public LunisolarDay CurrentDay { get; private set; }
+  private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
+      MainForm.GoToDate(CurrentDay.Date);
+  }
 
-    private int CurrentDayIndex = -1;
+  private void ListItems_DoubleClick(object sender, EventArgs e)
+  {
+    ActionOK.PerformClick();
+  }
 
-    public SearchLunarMonthForm()
+  private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    int year = SelectYear.Value;
+    var rows = LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year);
+    string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
+    CurrentDayIndex = SelectMoonDay.SelectedIndex;
+    ListItems.Items.Clear();
+    ListViewItem itemToSelect = null;
+    ListViewItem itemToSelectDefault = null;
+    foreach ( var row in rows.Where(row => row.LunarMonth > 0) )
     {
-      InitializeComponent();
-      Icon = MainForm.Icon;
-      ActiveControl = ListItems;
-      CurrentDay = MainForm.CurrentDay;
-      int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
-      SelectYear.Fill(MainForm.YearsIntervalArray, year);
+      string key = row.LunarMonth.ToString();
+      string date = row.Date.ToLongDateString();
+      var item = ListItems.Items.Add(key);
+      item.SubItems.Add(HebrewMonths.Transcriptions[row.LunarMonth]);
+      item.SubItems.Add(date.Titleize());
+      item.Tag = row;
+      if ( selectedKey != null && key == selectedKey && itemToSelect == null )
+        itemToSelect = item;
+      if ( row.IsNewYear )
+        itemToSelectDefault = item;
     }
-
-    private void SearchEventForm_Load(object sender, EventArgs e)
+    if ( itemToSelect != null )
     {
-      this.CheckLocationOrCenterToMainFormElseScreen();
+      itemToSelect.Focused = true;
+      itemToSelect.Selected = true;
     }
-
-    private void SearchLunarMonthForm_Shown(object sender, EventArgs e)
+    else
+    if ( itemToSelectDefault != null )
     {
-      ListItems_SelectedIndexChanged(null, null);
+      itemToSelectDefault.Focused = true;
+      itemToSelectDefault.Selected = true;
     }
-
-    private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
+    else
+    if ( ListItems.Items.Count > 0 )
     {
-      if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
-        MainForm.GoToDate(CurrentDay.Date);
+      ListItems.Items[0].Focused = true;
+      ListItems.Items[0].Selected = true;
     }
+    ListItems.Columns[ListItems.Columns.Count - 1].Width = -2;
+  }
 
-    private void ListItems_DoubleClick(object sender, EventArgs e)
+  private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( ListItems.SelectedItems.Count > 0 )
     {
-      ActionOK.PerformClick();
-    }
-
-    private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
-    {
+      var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
+      SelectMoonDay.Items.Clear();
       int year = SelectYear.Value;
-      var rows = LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year);
-      string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
-      CurrentDayIndex = SelectMoonDay.SelectedIndex;
-      ListItems.Items.Clear();
-      ListViewItem itemToSelect = null;
-      ListViewItem itemToSelectDefault = null;
-      foreach ( var row in rows.Where(row => row.LunarMonth > 0) )
-      {
-        string key = row.LunarMonth.ToString();
-        string date = row.Date.ToLongDateString();
-        var item = ListItems.Items.Add(key);
-        item.SubItems.Add(HebrewMonths.Transcriptions[row.LunarMonth]);
-        item.SubItems.Add(date.Titleize());
-        item.Tag = row;
-        if ( selectedKey != null && key == selectedKey && itemToSelect == null )
-          itemToSelect = item;
-        if ( row.IsNewYear )
-          itemToSelectDefault = item;
-      }
-      if ( itemToSelect != null )
-      {
-        itemToSelect.Focused = true;
-        itemToSelect.Selected = true;
-      }
-      else
-      if ( itemToSelectDefault != null )
-      {
-        itemToSelectDefault.Focused = true;
-        itemToSelectDefault.Selected = true;
-      }
-      else
-      if ( ListItems.Items.Count > 0 )
-      {
-        ListItems.Items[0].Focused = true;
-        ListItems.Items[0].Selected = true;
-      }
-      ListItems.Columns[ListItems.Columns.Count - 1].Width = -2;
+      var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
+      SelectMoonDay.Items.AddRange(days.ToArray());
+      if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
+      if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
+        CurrentDayIndex = SelectMoonDay.Items.Count - 1;
+      SelectMoonDay.SelectedIndex = CurrentDayIndex;
     }
+  }
 
-    private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
+  private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)
+  {
+    e.Value = ( (LunisolarDay)e.ListItem ).LunarDay.ToString();
+  }
+
+  private void SelectMoonDay_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    if ( SelectMoonDay.SelectedItem != null )
+      MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
+  }
+
+  protected override CreateParams CreateParams
+  {
+    get
     {
-      if ( ListItems.SelectedItems.Count > 0 )
-      {
-        var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
-        SelectMoonDay.Items.Clear();
-        int year = SelectYear.Value;
-        var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
-        SelectMoonDay.Items.AddRange(days.ToArray());
-        if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
-        if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
-          CurrentDayIndex = SelectMoonDay.Items.Count - 1;
-        SelectMoonDay.SelectedIndex = CurrentDayIndex;
-      }
+      var cp = base.CreateParams;
+      if ( Program.Settings.WindowsDoubleBufferingEnabled )
+        cp.ExStyle |= 0x02000000;
+      return cp;
     }
-
-    private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)
-    {
-      e.Value = ( (LunisolarDay)e.ListItem ).LunarDay.ToString();
-    }
-
-    private void SelectMoonDay_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if ( SelectMoonDay.SelectedItem != null )
-        MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
-    }
-
-    protected override CreateParams CreateParams
-    {
-      get
-      {
-        var cp = base.CreateParams;
-        if ( Program.Settings.WindowsDoubleBufferingEnabled )
-          cp.ExStyle |= 0x02000000;
-        return cp;
-      }
-    }
-
   }
 
 }
