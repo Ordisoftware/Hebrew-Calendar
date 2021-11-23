@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class AboutBox
+  partial class AboutBoxOld
   {
     /// <summary>
     /// Variable nécessaire au concepteur.
@@ -27,7 +27,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBoxOld));
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelVersion = new System.Windows.Forms.Label();
       this.LabelCopyright = new System.Windows.Forms.Label();

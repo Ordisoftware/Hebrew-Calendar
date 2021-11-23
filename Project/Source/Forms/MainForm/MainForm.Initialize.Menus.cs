@@ -32,7 +32,6 @@ partial class MainForm
     CommonMenusControl.CreateInstance(ToolStrip,
                                       ref ActionInformation,
                                       AppTranslations.NoticeNewFeatures,
-                                      ActionAbout_Click,
                                       ActionWebCheckUpdate_Click,
                                       ActionViewLog_Click,
                                       ActionViewStats_Click);

@@ -33,7 +33,7 @@ public partial class MainForm : Form
   /// <summary>
   /// Indicates the singleton instance.
   /// </summary>
-  static public MainForm Instance { get; private set; }
+  static internal MainForm Instance { get; private set; }
 
   /// <summary>
   /// Static constructor.
@@ -447,19 +447,6 @@ public partial class MainForm : Form
   #endregion
 
   #region Menu Information
-
-  /// <summary>
-  /// Event handler. Called by ActionAbout for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionAbout_Click(object sender, EventArgs e)
-  {
-    if ( AboutBox.Instance.Visible )
-      AboutBox.Instance.BringToFront();
-    else
-      AboutBox.Instance.ShowDialog();
-  }
 
   /// <summary>
   /// Event handler. Called by ActionWebCheckUpdate for click events.

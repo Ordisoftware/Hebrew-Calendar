@@ -124,7 +124,7 @@
   <data name="dummyVersionNews.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        wQAADsEBuJFr7QAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
         IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
         j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
         hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
@@ -279,7 +279,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionApplicationHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionApplicationHome.Text" xml:space="preserve">
     <value>Website</value>
@@ -307,18 +307,18 @@
     <value>Magenta</value>
   </data>
   <data name="ActionGitHubRepo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionGitHubRepo.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="SeparatorOnlineArchive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>140, 6</value>
   </data>
   <data name="ActionSoftpedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjRJREFUOE99ks1rE0EYxmd20uajLbG0qXoRNE2zmf1I0xpoFeyhRAR78NKb4Mne
+        wQAADsEBuJFr7QAAAjRJREFUOE99ks1rE0EYxmd20uajLbG0qXoRNE2zmf1I0xpoFeyhRAR78NKb4Mne
         FLI7u5ndbLoG8QM9WXrpRUHxpCCCd6v/QyGgvagHW01F1IuXcXYzTZom9gfPYdj3eWffZ16wD2MMJgpu
         FWHagJOkCdJmrzK0CTF5JSzdDGrWM6jVGchRLru/lBqTMHknLB0SM9WLUK0xIBMuU4gbDgvXGMwa74Wt
         QyJP14LuLSNhaMr4g1R7CynkQwRbXyJZ8jUiWzsR7O1G9coLYesQn6YPuhoo9s+RYm395IU7paWV5+Oi
@@ -334,7 +334,7 @@
     <value>None</value>
   </data>
   <data name="ActionSoftpedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionSoftpedia.Text" xml:space="preserve">
     <value>Softpedia</value>
@@ -342,7 +342,7 @@
   <data name="ActionAlternativeTo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAR9JREFUOE9jEChc9p8SjGEAf96i/5xRrf+Z3DL+M9jHgzGzZ+5/rrguFHUwjGEA
+        wQAADsEBuJFr7QAAAR9JREFUOE9jEChc9p8SjGEAf96i/5xRrf+Z3DL+M9jHgzGzZ+5/rrguFHUwjGEA
         e0jN/zmrtv5/+ebdfxi4++jp/9qJ88FyIAuQ1WMYALIRFwAZDHIdinpkDgiDbOmdt+p/REkH2LDs5in/
         v3z9DjYA5CqQ15DVYw1Ezqg2sEKQZnTvgAxFVovVBSD/ImtCBngN4EmZAnY6MgAFIF4XiOTM/Q/D7H4l
         /4+euQxV+h/sEhaP7P8Xr9+BikAMQNaDYgBIEgZANoM0s3oXUGYACIPYMIDXAHTFOw6eBGNkgNcAnuhW
@@ -354,7 +354,7 @@
     <value>None</value>
   </data>
   <data name="ActionAlternativeTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>143, 22</value>
   </data>
   <data name="ActionAlternativeTo.Text" xml:space="preserve">
     <value>AlternativeTo</value>
@@ -390,7 +390,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionHelp.Text" xml:space="preserve">
     <value>Help</value>
@@ -415,13 +415,13 @@
     <value>None</value>
   </data>
   <data name="ActionForumQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionForumQA.Text" xml:space="preserve">
     <value>Forum Q&amp;&amp;A</value>
   </data>
   <data name="SeparatorForumQA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -447,7 +447,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionCreateGitHubIssueBug.Text" xml:space="preserve">
     <value>Submit a problem</value>
@@ -474,7 +474,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionCreateGitHubIssueFeature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="ActionCreateGitHubIssueFeature.Text" xml:space="preserve">
     <value>Submit a feature</value>
@@ -482,7 +482,7 @@
   <data name="MenuAssistance.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAvxJREFUOE9dU2tIk1EYVryhc+q80EVFBS2lqMQUDSHCaq6c+MMu3lBS0cwLXoPM
+        wQAADsEBuJFr7QAAAvxJREFUOE9dU2tIk1EYVryhc+q80EVFBS2lqMQUDSHCaq6c+MMu3lBS0cwLXoPM
         6o8aYiEjLwSB+5X2K9R5Iw03r6ibW17SVFbhbZtlOLd9m/J0vs+7Dzy85z3P+z7n+w7nNaMhFAqxz2lz
         8yq5HWtrgmWPCRaLocLGRjvE47UdrWMaaewlQXf4/Li6/HyTJucJtjtagLFBYFACjPRjR/QZ61kZILox
         LjHxMV1/YEIv3ggElwW1tfit0WBzSgFTdRV0L8ugLX0GbdlzUJXl0I4M45dKA7quuqYm4phBfUGBUale
@@ -533,7 +533,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionAuthorHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="ActionAuthorHome.Text" xml:space="preserve">
     <value>Website</value>
@@ -562,13 +562,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="ActionContact.Text" xml:space="preserve">
     <value>Contact</value>
   </data>
   <data name="SeparatorAuthor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>117, 6</value>
   </data>
   <data name="ActionTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -588,7 +588,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="ActionTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
@@ -613,13 +613,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="ActionYouTube.Text" xml:space="preserve">
     <value>YouTube</value>
   </data>
   <data name="SeparatorAuthor2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>117, 6</value>
   </data>
   <data name="ActionLinkedIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -649,7 +649,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionLinkedIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>120, 22</value>
   </data>
   <data name="ActionLinkedIn.Text" xml:space="preserve">
     <value>LinkedIn</value>
@@ -657,7 +657,7 @@
   <data name="MenuAuthor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgFJREFUOE+tk19IU1Ecx/eWCCXrpUgYiPgShA6n5uZ2t2tTszsnoQhjdqfT7Gq3
+        wQAADsEBuJFr7QAAAgFJREFUOE+tk19IU1Ecx/eWCCXrpUgYiPgShA6n5uZ2t2tTszsnoQhjdqfT7Gq3
         LOhhsqdgMgq6tKe5GTHG9rDNVlBzijjBFzNSxD+QBBEMRoEPmQ+xl28715MwirmHPvDj3N/3+z2/e+Bw
         FP9iQq/snO6/iCcD1XBzF/IPGGUXtU5HaKlqnBVUmPc0452HgX9cA0F/CbYrVY00UppJ4/l8zHUZi0/N
         WHw2AP/ddoimOjjUyjyNlEZkzkFyqBAQW5CZuYO9t27MPOwCX38WNFKasaYKHGx4gVwYh9vPkVubxvLs
@@ -724,7 +724,7 @@
   <data name="ActionHebrewWords.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAL5JREFUOE/dk8ENwyAQBOkEyW9elOCXS6AAftRA1RRANCcvwkmIk29WWp19u3s+
+        wQAADsEBuJFr7QAAAL5JREFUOE/dk8ENwyAQBOkEyW9elOCXS6AAftRA1RRANCcvwkmIk29WWp19u3s+
         JOxASqnv+95ba90aH4AHL5lLo9baSym3A/DgHR+MMVoD5pytnt4XzB5I1m3bZuvoGCGE8f5MNK0Pydr5
         BVZi8gpoeASybwdQ9RVx1gT6ywF6Fn8asMLXA6j0Z86aQP8fj8BNoyogzppgA7hZAsbjOC7BmdIEsna/
         vfcmjh9kATQ8eMmQNYFV7sKChtj6zrkHF5d9S1Yr/wgAAAAASUVORK5CYII=
@@ -742,7 +742,7 @@
   <data name="MenuSoftware.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoFJREFUOE+lk0lPU1EYhu8PMHFr4gKiJqAxYuPGOBDcuHXhEnGpJkoQBKNFcUQZ
+        wQAADsEBuJFr7QAAAoFJREFUOE+lk0lPU1EYhu8PMHFr4gKiJqAxYuPGOBDcuHXhEnGpJkoQBKNFcUQZ
         YohFAQEZ2oKAFgpClRkMWEqd0xQRtDK0TFZEBhWBx+/c6MLElZzkyU3OeZ/zvfcmV1v1MmR77VtNXsKy
         vKzLfMvEy0beu5sZ6BXkOSj4XrQy4m3Hk9rOh+vNrL8zSHhOP4acPru2Pc3F61nIHQD35AIsjsJ3/28C
         8HMcmCLpfAo++xC9t3oYSCzH0z9DRKYbLeJcE46hFa50fITP3RB0Cj2CC6afw+wbEoxXGR6b5FJGGg1J

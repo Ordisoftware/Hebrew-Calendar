@@ -65,6 +65,9 @@ static partial class Program
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();
       LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
+      AboutBox.LicenseAsRTF = Properties.Resources.MPL_2_0;
+      AboutBox.DescriptionText = AppTranslations.ApplicationDescription;
+      AboutBox.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
     }
     catch ( Exception ex )
     {
@@ -78,7 +81,13 @@ static partial class Program
   /// </summary>
   private static void CheckSettingsReset(bool force = false)
   {
-    var resetForceVersions = new bool[] { Settings.UpgradeResetRequiredV3_0, Settings.UpgradeResetRequiredV3_6, Settings.UpgradeResetRequiredV4_1, Settings.UpgradeResetRequiredV5_10 };
+    var resetForceVersions = new bool[]
+    {
+      Settings.UpgradeResetRequiredV3_0,
+      Settings.UpgradeResetRequiredV3_6,
+      Settings.UpgradeResetRequiredV4_1,
+      Settings.UpgradeResetRequiredV5_10
+    };
     try
     {
       // Check reset
