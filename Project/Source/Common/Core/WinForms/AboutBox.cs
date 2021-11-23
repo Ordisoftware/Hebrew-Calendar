@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// This file is part of Ordisoftware Core Library.
+/// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,20 +11,28 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
-namespace Ordisoftware.Hebrew.Calendar;
+/// <edited> 2021-11 </edited>
+namespace Ordisoftware.Core;
 
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using Ordisoftware.Core;
 
 /// <summary>
-/// Provides the about box.
+/// Provides about box.
 /// </summary>
-/// <seealso cref="T:System.Windows.Forms.Form"/>
 partial class AboutBox : Form
 {
+
+  /// <summary>
+  /// Indicates the license as RTF.
+  /// </summary>
+  static public string LicenseAsRTF { get; set; }
+
+  /// <summary>
+  /// Indicates the description.
+  /// </summary>
+  static public TranslationsDictionary DescriptionText { get; set; }
 
   /// <summary>
   /// Indicates the singleton instance.
@@ -45,9 +53,8 @@ partial class AboutBox : Form
   private AboutBox()
   {
     InitializeComponent();
-    Icon = MainForm.Instance.Icon;
+    Icon = Globals.MainForm?.Icon;
     ActiveControl = ActionClose;
-    ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;
   }
 
   /// <summary>
@@ -57,9 +64,16 @@ partial class AboutBox : Form
   /// <param name="e">Event information.</param>
   private void AboutBox_Load(object sender, EventArgs e)
   {
-    this.CenterToMainFormElseScreen();
-    EditLicense.Rtf = Properties.Resources.MPL_2_0;
+    Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
+    LabelTitle.Text = Globals.AssemblyTitle;
+    LabelDescription.Text = DescriptionText.GetLang();
+    LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
+    LabelCopyright.Text = Globals.AssemblyCopyright;
+    LabelTrademark.Text = Globals.AssemblyTrademark;
+    EditLicense.Rtf = LicenseAsRTF;
+    Width = LabelDescription.Left + LabelDescription.Width + LabelDescription.Left + LabelDescription.Left;
     Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
+    this.CenterToMainFormElseScreen();
   }
 
   /// <summary>
@@ -69,14 +83,7 @@ partial class AboutBox : Form
   /// <param name="e">Event information.</param>
   public void AboutBox_Shown(object sender, EventArgs e)
   {
-    Text = SysTranslations.AboutBoxTitle.GetLang(Globals.AssemblyTitle);
-    ActionViewStats.Enabled = Program.Settings.UsageStatisticsEnabled;
-    LabelTitle.Text = Globals.AssemblyTitle;
-    LabelDescription.Text = AppTranslations.ApplicationDescription.GetLang();
-    LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
-    LabelCopyright.Text = Globals.AssemblyCopyright;
-    LabelTrademark.Text = Globals.AssemblyTrademark;
-    TopMost = MainForm.Instance.TopMost;
+    TopMost = Globals.MainForm?.TopMost ?? false;
     BringToFront();
   }
 
@@ -118,27 +125,6 @@ partial class AboutBox : Form
   private void ActionPrivacyNotice_Click(object sender, EventArgs e)
   {
     DisplayManager.ShowInformation(SysTranslations.NoticePrivacyNoData.GetLang());
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionViewStats for link clicked events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Link clicked event information.</param>
-  private void ActionViewStats_Click(object sender, EventArgs e)
-  {
-    StatisticsForm.Run();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionCheckUpdate for link clicked events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Link clicked event information.</param>
-  private void ActionCheckUpdate_Click(object sender, EventArgs e)
-  {
-    MainForm.Instance.ActionWebCheckUpdate_Click(sender, EventArgs.Empty);
-    BringToFront();
   }
 
 }

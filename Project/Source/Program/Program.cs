@@ -65,6 +65,9 @@ static partial class Program
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();
       LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
+      AboutBox.LicenseAsRTF = Properties.Resources.MPL_2_0;
+      AboutBox.DescriptionText = AppTranslations.ApplicationDescription;
+      AboutBox.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
     }
     catch ( Exception ex )
     {

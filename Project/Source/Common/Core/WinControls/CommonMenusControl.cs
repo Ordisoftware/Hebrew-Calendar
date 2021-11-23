@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 using System;
@@ -30,7 +30,6 @@ partial class CommonMenusControl : UserControl
   static public void CreateInstance(ToolStrip toolStrip,
                                     ref ToolStripDropDownButton buttonToReplace,
                                     NullSafeDictionary<string, TranslationsDictionary> notices,
-                                    EventHandler aboutClick,
                                     EventHandler updateClick,
                                     EventHandler viewLogClick,
                                     EventHandler viewStatsClick)
@@ -43,10 +42,11 @@ partial class CommonMenusControl : UserControl
     toolStrip.ResumeLayout();
     buttonToReplace = Instance.ActionInformation;
     Instance.SetNewInVersionItems(notices);
-    Instance.ActionAbout.Click += aboutClick;
-    Instance.ActionCheckUpdate.Click += updateClick;
     Instance.ActionViewLog.Click += viewLogClick;
     Instance.ActionViewStats.Click += viewStatsClick;
+    AboutBox.Instance.ActionViewStats.Click += viewStatsClick;
+    Instance.ActionCheckUpdate.Click += updateClick;
+    AboutBox.Instance.ActionCheckUpdate.Click += updateClick;
   }
 
   private NullSafeDictionary<string, TranslationsDictionary> Notices;
@@ -240,6 +240,14 @@ partial class CommonMenusControl : UserControl
       SystemManager.TryCatch(() => File.Delete(filePath));
     };
     timer.Start();
+  }
+
+  private void ActionAbout_Click(object sender, EventArgs e)
+  {
+    if ( AboutBox.Instance.Visible )
+      AboutBox.Instance.BringToFront();
+    else
+      AboutBox.Instance.ShowDialog();
   }
 
 }

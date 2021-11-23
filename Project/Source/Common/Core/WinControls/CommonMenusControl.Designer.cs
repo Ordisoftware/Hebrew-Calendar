@@ -359,6 +359,7 @@
       this.ActionAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
+      this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
       // CommonMenusControl
       // 
