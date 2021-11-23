@@ -12,42 +12,37 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Season change enum.
+/// </summary>
+public enum SeasonChange
 {
 
   /// <summary>
-  /// Season change enum.
+  /// No season change.
   /// </summary>
-  public enum SeasonChange
-  {
+  None,
 
-    /// <summary>
-    /// No season change.
-    /// </summary>
-    None,
+  /// <summary>
+  /// The spring equinox.
+  /// </summary>
+  SpringEquinox,
 
-    /// <summary>
-    /// The spring equinox.
-    /// </summary>
-    SpringEquinox,
+  /// <summary>
+  /// The summer solstice.
+  /// </summary>
 
-    /// <summary>
-    /// The summer solstice.
-    /// </summary>
+  SummerSolstice,
+  /// <summary>
+  /// The autumn equinox.
+  /// </summary>
+  AutumnEquinox,
 
-    SummerSolstice,
-    /// <summary>
-    /// The autumn equinox.
-    /// </summary>
-    AutumnEquinox,
-
-    /// <summary>
-    /// The winter solstice.
-    /// </summary>
-    WinterSolstice
-
-  }
+  /// <summary>
+  /// The winter solstice.
+  /// </summary>
+  WinterSolstice
 
 }

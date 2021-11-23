@@ -12,99 +12,96 @@
 /// </license>
 /// <created> 2020-08 </created>
 /// <edited> 2020-08 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides dates difference item.
+/// </summary>
+class DatesDiffItem
 {
 
-  /// <summary>
-  /// Provides dates difference item.
-  /// </summary>
-  class DatesDiffItem
+  private DateTime Date1;
+  private DateTime Date2;
+
+  public int SolarDays { get; set; }
+  public int SolarWeeks { get; set; }
+  public int SolarMonths { get; set; }
+  public int SolarYears { get; set; }
+  public int MoonDays { get; set; }
+  public int LunarMonths { get; set; }
+  public int MoonYears { get; set; }
+
+  public DatesDiffItem(Form sender, DateTime date1, DateTime date2)
   {
+    SetDates(sender, date1, date2);
+  }
 
-    private DateTime Date1;
-    private DateTime Date2;
-
-    public int SolarDays { get; set; }
-    public int SolarWeeks { get; set; }
-    public int SolarMonths { get; set; }
-    public int SolarYears { get; set; }
-    public int MoonDays { get; set; }
-    public int LunarMonths { get; set; }
-    public int MoonYears { get; set; }
-
-    public DatesDiffItem(Form sender, DateTime date1, DateTime date2)
+  public void SetDates(Form sender, DateTime date1, DateTime date2)
+  {
+    date1 = date1.Date;
+    date2 = date2.Date;
+    if ( date1 > date2 )
     {
-      SetDates(sender, date1, date2);
+      var temp = date1;
+      date1 = date2;
+      date2 = temp;
     }
+    if ( Date1 == date1 && Date2 == date2 ) return;
+    Date1 = date1;
+    Date2 = date2;
+    Calculate(sender);
+  }
 
-    public void SetDates(Form sender, DateTime date1, DateTime date2)
+  private void Calculate(Form sender)
+  {
+    try
     {
-      date1 = date1.Date;
-      date2 = date2.Date;
-      if ( date1 > date2 )
+      int count = (int)( Date2 - Date1 ).TotalDays;
+      int countData = CalendarDates.Instance.Count;
+      if ( count - countData >= Program.LoadingFormDatesDiff )
       {
-        var temp = date1;
-        date1 = date2;
-        date2 = temp;
+        LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
+                                        count,
+                                        Program.LoadingFormDatesDiff + 1);
+        if ( sender != null ) sender.Enabled = false;
       }
-      if ( Date1 == date1 && Date2 == date2 ) return;
-      Date1 = date1;
-      Date2 = date2;
-      Calculate(sender);
-    }
-
-    private void Calculate(Form sender)
-    {
-      try
+      var data = CalendarDates.Instance[Date1];
+      SolarDays = ( Date2 - Date1 ).Days + 1;
+      SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
+      SolarMonths = 1;
+      SolarYears = 1;
+      MoonDays = 0;
+      LunarMonths = 1;
+      MoonYears = 1;
+      if ( Date1.Day == 1 ) SolarMonths = 0;
+      if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
+      if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) LunarMonths = 0;
+      if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
+      for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
       {
-        int count = (int)( Date2 - Date1 ).TotalDays;
-        int countData = CalendarDates.Instance.Count;
-        if ( count - countData >= Program.LoadingFormDatesDiff )
-        {
-          LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
-                                          count,
-                                          Program.LoadingFormDatesDiff + 1);
-          if ( sender != null ) sender.Enabled = false;
-        }
-        var data = CalendarDates.Instance[Date1];
-        SolarDays = ( Date2 - Date1 ).Days + 1;
-        SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
-        SolarMonths = 1;
-        SolarYears = 1;
-        MoonDays = 0;
-        LunarMonths = 1;
-        MoonYears = 1;
-        if ( Date1.Day == 1 ) SolarMonths = 0;
-        if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
-        if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) LunarMonths = 0;
-        if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
-        for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
-        {
-          if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
-          data = CalendarDates.Instance[index];
-          if ( index.Day == 1 ) SolarMonths++;
-          if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
-          if ( data.Ephemerisis.Moonrise == null ) continue;
-          MoonDays++;
-          if ( data.MoonDay == 1 ) LunarMonths++;
-          if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
-        }
-      }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
-      finally
-      {
-        if ( sender?.Enabled == false ) sender.Enabled = true;
-        if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
+        if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
+        data = CalendarDates.Instance[index];
+        if ( index.Day == 1 ) SolarMonths++;
+        if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
+        if ( data.Ephemerisis.Moonrise == null ) continue;
+        MoonDays++;
+        if ( data.MoonDay == 1 ) LunarMonths++;
+        if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;
       }
     }
-
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+    finally
+    {
+      if ( sender?.Enabled == false ) sender.Enabled = true;
+      if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
+    }
   }
 
 }

@@ -12,75 +12,72 @@
 /// </license>
 /// <created> 2020-12 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class LunisolarDay
 {
 
-  partial class LunisolarDay
+  public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay()
   {
-
-    public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay()
-    {
-      int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
-      if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
-        if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
+    int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
+    if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
+      if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
+      {
+        int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
+                  ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
+                  : -1;
+        if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
+          return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
+      }
+      else
+      if ( LunarMonth == TorahCelebrationSettings.YomsMonth )
+      {
+        int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
+                  ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
+                  : -1;
+        if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
+          return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
+      }
+      else
+      if ( LunarMonth == 3 )
+      {
+        int indexCurrent = Table.IndexOf(this);
+        int indexStart = Math.Max(0, indexCurrent - 7);
+        int indexEnd = Math.Min(indexCurrent + 7, Table.Count - 1);
+        LunisolarDay first = null;
+        LunisolarDay last = null;
+        for ( int index = indexStart; index <= indexEnd; index++ )
         {
-          int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
-                    ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
-                    : -1;
-          if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
-            return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
-        }
-        else
-        if ( LunarMonth == TorahCelebrationSettings.YomsMonth )
-        {
-          int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
-                    ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
-                    : -1;
-          if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
-            return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
-        }
-        else
-        if ( LunarMonth == 3 )
-        {
-          int indexCurrent = Table.IndexOf(this);
-          int indexStart = Math.Max(0, indexCurrent - 7);
-          int indexEnd = Math.Min(indexCurrent + 7, Table.Count - 1);
-          LunisolarDay first = null;
-          LunisolarDay last = null;
-          for ( int index = indexStart; index <= indexEnd; index++ )
+          var row = Table[index];
+          if ( row.TorahEvent == TorahCelebrationDay.ChavouotDiet )
           {
-            var row = Table[index];
-            if ( row.TorahEvent == TorahCelebrationDay.ChavouotDiet )
+            first = row;
+            if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             {
-              first = row;
-              if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-              {
-                last = row;
-                break;
-              }
+              last = row;
+              break;
             }
-            else
-            if ( first != null )
-              if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
-              {
-                last = row;
-                break;
-              }
           }
-          if ( first != null && last != null
-            && first.Date <= last.Date
-            && Date >= first.Date
-            && Date <= last.Date )
-            return (TorahCelebration.Chavouot,
-                    (int)( Date - first.Date ).TotalDays + 1,
-                    AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang());
+          else
+          if ( first != null )
+            if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            {
+              last = row;
+              break;
+            }
         }
-      return (TorahCelebration.None, 0, string.Empty);
-    }
-
+        if ( first != null && last != null
+          && first.Date <= last.Date
+          && Date >= first.Date
+          && Date <= last.Date )
+          return (TorahCelebration.Chavouot,
+                  (int)( Date - first.Date ).TotalDays + 1,
+                  AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang());
+      }
+    return (TorahCelebration.None, 0, string.Empty);
   }
 
 }

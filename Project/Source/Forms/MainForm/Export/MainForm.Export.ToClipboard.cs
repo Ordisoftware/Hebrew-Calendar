@@ -12,68 +12,64 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void ExportToClipboard()
   {
-
-    private void ExportToClipboard()
+    var process = new ExportActions
     {
-      var process = new ExportActions
+      [ViewMode.Text] = (interval) =>
       {
-        [ViewMode.Text] = (interval) =>
-        {
-          Clipboard.SetText(string.Join(Globals.NL, GetTextReportLines(interval)));
-          return true;
-        },
-        [ViewMode.Month] = (_) =>
-        {
-          try
-          {
-            Globals.IsPrinting = true;
-            CalendarMonth.ShowTodayButton = false;
-            CalendarMonth.ShowArrowControls = false;
-            Clipboard.SetImage(CalendarMonth.GetBitmap());
-            return true;
-          }
-          finally
-          {
-            Globals.IsPrinting = false;
-            CalendarMonth.ShowTodayButton = true;
-            CalendarMonth.ShowArrowControls = true;
-          }
-        },
-        [ViewMode.Grid] = (interval) =>
-        {
-          switch ( Settings.ExportDataPreferredTarget )
-          {
-            case DataExportTarget.CSV:
-              Clipboard.SetText(ExportSaveCSV(interval));
-              break;
-            case DataExportTarget.JSON:
-              Clipboard.SetText(ExportSaveJSON(interval));
-              break;
-            default:
-              throw new AdvancedNotImplementedException(Settings.ExportDataPreferredTarget);
-          }
-          return true;
-        },
-      };
-      //
-      static void after(ViewMode view)
+        Clipboard.SetText(string.Join(Globals.NL, GetTextReportLines(interval)));
+        return true;
+      },
+      [ViewMode.Month] = (_) =>
       {
-        DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
-                                          view == ViewMode.Month ? Globals.ScreenshotSoundFilePath
-                                                                 : Globals.ClipboardSoundFilePath);
-      }
-      DoExport(ExportAction.CopyToClipboard, process, after);
+        try
+        {
+          Globals.IsPrinting = true;
+          CalendarMonth.ShowTodayButton = false;
+          CalendarMonth.ShowArrowControls = false;
+          Clipboard.SetImage(CalendarMonth.GetBitmap());
+          return true;
+        }
+        finally
+        {
+          Globals.IsPrinting = false;
+          CalendarMonth.ShowTodayButton = true;
+          CalendarMonth.ShowArrowControls = true;
+        }
+      },
+      [ViewMode.Grid] = (interval) =>
+      {
+        switch ( Settings.ExportDataPreferredTarget )
+        {
+          case DataExportTarget.CSV:
+            Clipboard.SetText(ExportSaveCSV(interval));
+            break;
+          case DataExportTarget.JSON:
+            Clipboard.SetText(ExportSaveJSON(interval));
+            break;
+          default:
+            throw new AdvancedNotImplementedException(Settings.ExportDataPreferredTarget);
+        }
+        return true;
+      },
+    };
+    //
+    static void after(ViewMode view)
+    {
+      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewCopiedToClipboard.GetLang(),
+                                        view == ViewMode.Month ? Globals.ScreenshotSoundFilePath
+                                                               : Globals.ClipboardSoundFilePath);
     }
-
+    DoExport(ExportAction.CopyToClipboard, process, after);
   }
 
 }

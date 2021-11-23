@@ -12,35 +12,30 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-07 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// View mode enum.
+/// </summary>
+[System.Flags]
+public enum ViewMode
 {
 
+  None = 0,
+
   /// <summary>
-  /// View mode enum.
+  /// Text view mode to display the report.
   /// </summary>
-  [Flags]
-  public enum ViewMode
-  {
+  Text = 1,
 
-    None = 0,
+  /// <summary>
+  /// Month view mode to display the month calendar.
+  /// </summary>
+  Month = 2,
 
-    /// <summary>
-    /// Text view mode to display the report.
-    /// </summary>
-    Text = 1,
-
-    /// <summary>
-    /// Month view mode to display the month calendar.
-    /// </summary>
-    Month = 2,
-
-    /// <summary>
-    /// Grid view mode to display the database table.
-    /// </summary>
-    Grid = 4
-
-  }
+  /// <summary>
+  /// Grid view mode to display the database table.
+  /// </summary>
+  Grid = 4
 
 }

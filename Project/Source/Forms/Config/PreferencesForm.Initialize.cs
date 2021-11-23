@@ -12,304 +12,301 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
-using System.Linq;
-using System.Xml;
 using System.Drawing.Text;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
 using EnumsNET;
 using MoreLinq;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides form to edit the preferences.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class PreferencesForm
 {
 
   /// <summary>
-  /// Provides form to edit the preferences.
+  /// Does form load.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class PreferencesForm
+  private void DoFormLoad()
   {
+    SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+    OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
+    SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
+    OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
+    LoadEditIntervals();
+    LoadExportFileFormats();
+    LoadReminderBoxesLocations();
+    LoadPowerActions();
+    LoadDays();
+    LoadEvents();
+    LoadFonts();
+    LoadHotKeys();
+  }
 
-    /// <summary>
-    /// Does form load.
-    /// </summary>
-    private void DoFormLoad()
+  /// <summary>
+  /// Does form show.
+  /// </summary>
+  private void DoFormShow()
+  {
+    SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
+    TopMost = MainForm.Instance.TopMost;
+    BringToFront();
+    UpdateLanguagesButtons();
+    LoadSettings();
+    CheckFirstLaunchNoticesAndChoices();
+    EditVacuumAtStartup_CheckedChanged(null, null);
+    EditCheckUpdateAtStartup_CheckedChanged(null, null);
+    EditBalloon_CheckedChanged(null, null);
+    EditAutoRegenerate_CheckedChanged(null, null);
+    EditRemindAutoLock_CheckedChanged(null, null);
+    EditRemindShabat_Changed(null, null);
+    EditRemindCelebrations_Changed(null, null);
+    EditUseColors_CheckedChanged(null, null);
+    EditLogEnabled_CheckedChanged(null, null);
+    ActiveControl = ActionClose;
+    ActionResetSettings.TabStop = false;
+    IsReady = true;
+  }
+
+  /// <summary>
+  /// Checks the first launch to show notices and ask user preferences for generation.
+  /// </summary>
+  private void CheckFirstLaunchNoticesAndChoices()
+  {
+    bool changed = false;
+    if ( Settings.FirstLaunch )
     {
-      SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
-      OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
-      SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
-      OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;
-      LoadEditIntervals();
-      LoadExportFileFormats();
-      LoadReminderBoxesLocations();
-      LoadPowerActions();
-      LoadDays();
-      LoadEvents();
-      LoadFonts();
-      LoadHotKeys();
+      changed = true;
+      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+      Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
+      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+      if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
+        ActionUsePersonalShabat_LinkClicked(null, null);
     }
-
-    /// <summary>
-    /// Does form show.
-    /// </summary>
-    private void DoFormShow()
+    if ( changed || Settings.FirstLaunchV7_0 )
     {
-      SystemManager.TryCatchManage(() => Globals.BringToFrontApplicationHotKey.Active = false);
-      TopMost = MainForm.Instance.TopMost;
-      BringToFront();
-      UpdateLanguagesButtons();
-      LoadSettings();
-      CheckFirstLaunchNoticesAndChoices();
-      EditVacuumAtStartup_CheckedChanged(null, null);
-      EditCheckUpdateAtStartup_CheckedChanged(null, null);
-      EditBalloon_CheckedChanged(null, null);
-      EditAutoRegenerate_CheckedChanged(null, null);
-      EditRemindAutoLock_CheckedChanged(null, null);
-      EditRemindShabat_Changed(null, null);
-      EditRemindCelebrations_Changed(null, null);
-      EditUseColors_CheckedChanged(null, null);
-      EditLogEnabled_CheckedChanged(null, null);
-      ActiveControl = ActionClose;
-      ActionResetSettings.TabStop = false;
-      IsReady = true;
+      changed = true;
+      MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+      DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+                                () => EditUseSimhatTorahOutside.Checked = false,
+                                () => EditUseSimhatTorahOutside.Checked = true);
     }
-
-    /// <summary>
-    /// Checks the first launch to show notices and ask user preferences for generation.
-    /// </summary>
-    private void CheckFirstLaunchNoticesAndChoices()
+    if ( changed )
     {
-      bool changed = false;
-      if ( Settings.FirstLaunch )
-      {
-        changed = true;
-        MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
-        Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
-        MainForm.Instance.ActionShowShabatNotice_Click(null, null);
-        if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
-          ActionUsePersonalShabat_LinkClicked(null, null);
-      }
-      if ( changed || Settings.FirstLaunchV7_0 )
-      {
-        changed = true;
-        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
-                                  () => EditUseSimhatTorahOutside.Checked = false,
-                                  () => EditUseSimhatTorahOutside.Checked = true);
-      }
-      if ( changed )
-      {
-        TabControl.SelectedTab = TabPageGeneration;
-        Settings.SetFirstAndUpgradeFlagsOff();
-        SystemManager.TryCatch(Settings.Store);
-      }
-    }
-
-    /// <summary>
-    /// Does form closing.
-    /// </summary>
-    private void DoFormClosing(object sender, FormClosingEventArgs e)
-    {
-      if ( DoReset ) return;
-      try
-      {
-        XmlConvert.ToDouble(EditGPSLatitude.Text);
-        XmlConvert.ToDouble(EditGPSLongitude.Text);
-      }
-      catch
-      {
-        DisplayManager.ShowError("Invalid GPS coordinates.");
-        e.Cancel = true;
-        return;
-      }
-      SaveSettings();
+      TabControl.SelectedTab = TabPageGeneration;
+      Settings.SetFirstAndUpgradeFlagsOff();
       SystemManager.TryCatch(Settings.Store);
-      SystemManager.TryCatch(() => Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled);
     }
+  }
 
-    /// <summary>
-    /// Loads edit intervals.
-    /// </summary>
-    private void LoadEditIntervals()
+  /// <summary>
+  /// Does form closing.
+  /// </summary>
+  private void DoFormClosing(object sender, FormClosingEventArgs e)
+  {
+    if ( DoReset ) return;
+    try
     {
-      setInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
-      setInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
-      setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
-      setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
-      setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-      setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
-      setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
-      setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
-      setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
-      setInterval(EditRemindCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
-      setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
-      setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
-      setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
-      setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
-      setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
-      setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
-      setInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
-      //
-      static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
-      {
-        control.Minimum = interval.Item1;
-        control.Maximum = interval.Item2;
-        control.Value = interval.Item3;
-        control.Increment = interval.Item4;
-        if ( label != null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
-      }
+      XmlConvert.ToDouble(EditGPSLatitude.Text);
+      XmlConvert.ToDouble(EditGPSLongitude.Text);
     }
-
-    /// <summary>
-    /// Loads export file formats.
-    /// </summary>
-    private void LoadExportFileFormats()
+    catch
     {
-      EditDataExportFileFormat.Fill(Program.GridExportTargets, Settings.ExportDataPreferredTarget);
-      EditImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
+      DisplayManager.ShowError("Invalid GPS coordinates.");
+      e.Cancel = true;
+      return;
     }
+    SaveSettings();
+    SystemManager.TryCatch(Settings.Store);
+    SystemManager.TryCatch(() => Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled);
+  }
 
-    /// <summary>
-    /// Loads reminder boxes locations.
-    /// </summary>
-    private void LoadReminderBoxesLocations()
+  /// <summary>
+  /// Loads edit intervals.
+  /// </summary>
+  private void LoadEditIntervals()
+  {
+    setInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
+    setInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
+    setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
+    setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+    setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
+    setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
+    setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
+    setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
+    setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
+    setInterval(EditRemindCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+    setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
+    setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
+    setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
+    setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
+    setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
+    setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+    setInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
+    //
+    static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
     {
-      foreach ( var value in Enums.GetValues<ControlLocation>().Skip(1).SkipLast(2) )
-      {
-        SelectReminderBoxDesktopLocation.Items.Add(value);
-        if ( Settings.ReminderBoxDesktopLocation == value )
-          SelectReminderBoxDesktopLocation.SelectedItem = value;
-      }
+      control.Minimum = interval.Item1;
+      control.Maximum = interval.Item2;
+      control.Value = interval.Item3;
+      control.Increment = interval.Item4;
+      if ( label != null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
     }
+  }
 
-    /// <summary>
-    /// Loads week days.
-    /// </summary>
-    private void LoadPowerActions()
+  /// <summary>
+  /// Loads export file formats.
+  /// </summary>
+  private void LoadExportFileFormats()
+  {
+    EditDataExportFileFormat.Fill(Program.GridExportTargets, Settings.ExportDataPreferredTarget);
+    EditImageExportFileFormat.Fill(Program.ImageExportTargets, Settings.ExportImagePreferredTarget);
+  }
+
+  /// <summary>
+  /// Loads reminder boxes locations.
+  /// </summary>
+  private void LoadReminderBoxesLocations()
+  {
+    foreach ( var value in Enums.GetValues<ControlLocation>().Skip(1).SkipLast(2) )
     {
-      PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown };
-      foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
-      {
-        SelectLockSessionDefaultAction.Items.Add(value);
-        if ( Settings.LockSessionDefaultAction == value )
-          SelectLockSessionDefaultAction.SelectedItem = value;
-      }
+      SelectReminderBoxDesktopLocation.Items.Add(value);
+      if ( Settings.ReminderBoxDesktopLocation == value )
+        SelectReminderBoxDesktopLocation.SelectedItem = value;
     }
+  }
 
-    /// <summary>
-    /// Loads week days.
-    /// </summary>
-    private void LoadDays()
+  /// <summary>
+  /// Loads week days.
+  /// </summary>
+  private void LoadPowerActions()
+  {
+    PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown };
+    foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
-      foreach ( var value in Enums.GetValues<DayOfWeek>() )
-      {
-        var item = new DayOfWeekItem() { Text = AppTranslations.DaysOfWeek.GetLang(value), Day = value };
-        EditShabatDay.Items.Add(item);
-        if ( (DayOfWeek)Settings.ShabatDay == value )
-          EditShabatDay.SelectedItem = item;
-      }
+      SelectLockSessionDefaultAction.Items.Add(value);
+      if ( Settings.LockSessionDefaultAction == value )
+        SelectLockSessionDefaultAction.SelectedItem = value;
     }
+  }
 
-    /// <summary>
-    /// Loads Torah events.
-    /// </summary>
-    private void LoadEvents()
+  /// <summary>
+  /// Loads week days.
+  /// </summary>
+  private void LoadDays()
+  {
+    foreach ( var value in Enums.GetValues<DayOfWeek>() )
     {
-      foreach ( var value in TorahCelebrationSettings.ManagedEvents )
-        SystemManager.TryCatch(() =>
+      var item = new DayOfWeekItem() { Text = AppTranslations.DaysOfWeek.GetLang(value), Day = value };
+      EditShabatDay.Items.Add(item);
+      if ( (DayOfWeek)Settings.ShabatDay == value )
+        EditShabatDay.SelectedItem = item;
+    }
+  }
+
+  /// <summary>
+  /// Loads Torah events.
+  /// </summary>
+  private void LoadEvents()
+  {
+    foreach ( var value in TorahCelebrationSettings.ManagedEvents )
+      SystemManager.TryCatch(() =>
+        {
+          var item = new TorahEventItem()
           {
-            var item = new TorahEventItem()
-            {
-              Text = AppTranslations.TorahCelebrationDays.GetLang(value),
-              Event = value
-            };
-            int index = SelectRemindEventsBefore.Items.Add(item);
-            if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
-              SelectRemindEventsBefore.SetItemChecked(index, true);
-            index = SelectRemindEventsDay.Items.Add(item);
-            if ( (bool)Settings["TorahEventRemindDay" + value.ToString()] )
-              SelectRemindEventsDay.SetItemChecked(index, true);
-          });
-    }
+            Text = AppTranslations.TorahCelebrationDays.GetLang(value),
+            Event = value
+          };
+          int index = SelectRemindEventsBefore.Items.Add(item);
+          if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
+            SelectRemindEventsBefore.SetItemChecked(index, true);
+          index = SelectRemindEventsDay.Items.Add(item);
+          if ( (bool)Settings["TorahEventRemindDay" + value.ToString()] )
+            SelectRemindEventsDay.SetItemChecked(index, true);
+        });
+  }
 
-    /// <summary>
-    /// Loads fonts names.
-    /// </summary>
-    private void LoadFonts()
+  /// <summary>
+  /// Loads fonts names.
+  /// </summary>
+  private void LoadFonts()
+  {
+    var fonts = new InstalledFontCollection().Families
+                                             .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
+                                             .OrderBy(f => f.Name);
+    foreach ( var value in fonts )
     {
-      var fonts = new InstalledFontCollection().Families
-                                               .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
-                                               .OrderBy(f => f.Name);
-      foreach ( var value in fonts )
-      {
-        int index = EditTextReportFontName.Items.Add(value.Name);
-        if ( value.Name == Settings.FontName )
-          EditTextReportFontName.SelectedIndex = index;
-      }
+      int index = EditTextReportFontName.Items.Add(value.Name);
+      if ( value.Name == Settings.FontName )
+        EditTextReportFontName.SelectedIndex = index;
     }
+  }
 
-    /// <summary>
-    /// Loads Hot-Keys.
-    /// </summary>
-    private void LoadHotKeys()
+  /// <summary>
+  /// Loads Hot-Keys.
+  /// </summary>
+  private void LoadHotKeys()
+  {
+    SelectGlobalHotKeyPopupMainFormKey.Items.Clear();
+    foreach ( var item in AvailableHotKeyKeys )
+      SelectGlobalHotKeyPopupMainFormKey.Items.Add(item);
+  }
+
+  /// <summary>
+  /// Initializes HotKey.
+  /// </summary>
+  private void InitHotKeyControls()
+  {
+    MainForm.Instance.SetGlobalHotKey(true);
+    InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
+    EditGlobalHotKeyPopupMainFormShift.Checked = Globals.BringToFrontApplicationHotKey.Shift;
+    EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
+    EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
+    EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
+    string key = Globals.BringToFrontApplicationHotKey.Key.ToString();
+    SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(key);
+    CheckHotKeyCombination(null);
+  }
+
+  /// <summary>
+  /// Checks HotKey combination.
+  /// </summary>
+  private void CheckHotKeyCombination(Action action)
+  {
+    if ( action == null && !EditGlobalHotKeyPopupMainFormEnabled.Checked ) return;
+    var tempActiveControl = ActiveControl;
+    var tempIsReady = IsReady;
+    PanelHotKey.Enabled = false;
+    try
     {
-      SelectGlobalHotKeyPopupMainFormKey.Items.Clear();
-      foreach ( var item in AvailableHotKeyKeys )
-        SelectGlobalHotKeyPopupMainFormKey.Items.Add(item);
+      action?.Invoke();
+      if ( !Globals.BringToFrontApplicationHotKey.IsValid() )
+        throw new Exception(SysTranslations.HotKeyCapturedByAnotherApplication.GetLang());
+      LabelHotKeyStatus.Text = SysTranslations.Valid.GetLang();
+      IsReady = false;
+      EditGlobalHotKeyPopupMainFormEnabled.Checked = InitialHotKeyEnabled;
+      EditGlobalHotKeyPopupMainFormEnabled.Enabled = true;
+      IsReady = tempIsReady;
     }
-
-    /// <summary>
-    /// Initializes HotKey.
-    /// </summary>
-    private void InitHotKeyControls()
+    catch ( Exception ex )
     {
-      MainForm.Instance.SetGlobalHotKey(true);
-      InitialHotKeyEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
-      EditGlobalHotKeyPopupMainFormShift.Checked = Globals.BringToFrontApplicationHotKey.Shift;
-      EditGlobalHotKeyPopupMainFormCtrl.Checked = Globals.BringToFrontApplicationHotKey.Control;
-      EditGlobalHotKeyPopupMainFormAlt.Checked = Globals.BringToFrontApplicationHotKey.Alt;
-      EditGlobalHotKeyPopupMainFormWin.Checked = Globals.BringToFrontApplicationHotKey.Windows;
-      string key = Globals.BringToFrontApplicationHotKey.Key.ToString();
-      SelectGlobalHotKeyPopupMainFormKey.SelectedIndex = SelectGlobalHotKeyPopupMainFormKey.FindString(key);
-      CheckHotKeyCombination(null);
+      LabelHotKeyStatus.Text = ex.Message;
+      IsReady = false;
+      EditGlobalHotKeyPopupMainFormEnabled.Checked = false;
+      EditGlobalHotKeyPopupMainFormEnabled.Enabled = false;
+      IsReady = tempIsReady;
     }
-
-    /// <summary>
-    /// Checks HotKey combination.
-    /// </summary>
-    private void CheckHotKeyCombination(Action action)
+    finally
     {
-      if ( action == null && !EditGlobalHotKeyPopupMainFormEnabled.Checked ) return;
-      var tempActiveControl = ActiveControl;
-      var tempIsReady = IsReady;
-      PanelHotKey.Enabled = false;
-      try
-      {
-        action?.Invoke();
-        if ( !Globals.BringToFrontApplicationHotKey.IsValid() )
-          throw new Exception(SysTranslations.HotKeyCapturedByAnotherApplication.GetLang());
-        LabelHotKeyStatus.Text = SysTranslations.Valid.GetLang();
-        IsReady = false;
-        EditGlobalHotKeyPopupMainFormEnabled.Checked = InitialHotKeyEnabled;
-        EditGlobalHotKeyPopupMainFormEnabled.Enabled = true;
-        IsReady = tempIsReady;
-      }
-      catch ( Exception ex )
-      {
-        LabelHotKeyStatus.Text = ex.Message;
-        IsReady = false;
-        EditGlobalHotKeyPopupMainFormEnabled.Checked = false;
-        EditGlobalHotKeyPopupMainFormEnabled.Enabled = false;
-        IsReady = tempIsReady;
-      }
-      finally
-      {
-        PanelHotKey.Enabled = true;
-        ActiveControl = tempActiveControl;
-      }
+      PanelHotKey.Enabled = true;
+      ActiveControl = tempActiveControl;
     }
-
   }
 
 }

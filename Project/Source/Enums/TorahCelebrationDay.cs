@@ -12,104 +12,99 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-09 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Torah event enum.
+/// </summary>
+public enum TorahCelebrationDay
 {
 
+  // Database values for major celebrations
+
   /// <summary>
-  /// Torah event enum.
+  /// No event.
   /// </summary>
-  public enum TorahCelebrationDay
-  {
+  None,
 
-    // Database values for major celebrations
+  /// <summary>
+  /// New year day 1.
+  /// </summary>
+  NewYearD1,
 
-    /// <summary>
-    /// No event.
-    /// </summary>
-    None,
+  /// <summary>
+  /// New year day 10.
+  /// </summary>
+  NewYearD10,
 
-    /// <summary>
-    /// New year day 1.
-    /// </summary>
-    NewYearD1,
+  /// <summary>
+  /// Pessah first day.
+  /// </summary>
+  PessahD1,
 
-    /// <summary>
-    /// New year day 10.
-    /// </summary>
-    NewYearD10,
+  /// <summary>
+  /// Pessah last day.
+  /// </summary>
+  PessahD7,
 
-    /// <summary>
-    /// Pessah first day.
-    /// </summary>
-    PessahD1,
+  /// <summary>
+  /// Chavouot diet start.
+  /// </summary>
+  ChavouotDiet,
 
-    /// <summary>
-    /// Pessah last day.
-    /// </summary>
-    PessahD7,
+  /// <summary>
+  /// Shavouot first celebration.
+  /// </summary>
+  Chavouot1,
 
-    /// <summary>
-    /// Chavouot diet start.
-    /// </summary>
-    ChavouotDiet,
+  /// <summary>
+  /// The Shavouot second celebration.
+  /// </summary>
+  Chavouot2,
 
-    /// <summary>
-    /// Shavouot first celebration.
-    /// </summary>
-    Chavouot1,
+  /// <summary>
+  /// Yom terouah.
+  /// </summary>
+  YomTerouah,
 
-    /// <summary>
-    /// The Shavouot second celebration.
-    /// </summary>
-    Chavouot2,
+  /// <summary>
+  /// Yom hakipourim.
+  /// </summary>
+  YomHaKipourim,
 
-    /// <summary>
-    /// Yom terouah.
-    /// </summary>
-    YomTerouah,
+  /// <summary>
+  /// Soukot first day.
+  /// </summary>
+  SoukotD1,
 
-    /// <summary>
-    /// Yom hakipourim.
-    /// </summary>
-    YomHaKipourim,
+  /// <summary>
+  /// Soukot last day.
+  /// </summary>
+  SoukotD8,
 
-    /// <summary>
-    /// Soukot first day.
-    /// </summary>
-    SoukotD1,
+  // Database values for minor celebrations
 
-    /// <summary>
-    /// Soukot last day.
-    /// </summary>
-    SoukotD8,
+  /// <summary>
+  /// 'Hanouka first day.
+  /// </summary>
+  HanoukaD1,
 
-    // Database values for minor celebrations
+  /// <summary>
+  /// 'Hanouka last day.
+  /// </summary>
+  HanoukaD8,
 
-    /// <summary>
-    /// 'Hanouka first day.
-    /// </summary>
-    HanoukaD1,
+  /// <summary>
+  /// Pourim day.
+  /// </summary>
+  Pourim,
 
-    /// <summary>
-    /// 'Hanouka last day.
-    /// </summary>
-    HanoukaD8,
+  // Non database values (always at the end)
 
-    /// <summary>
-    /// Pourim day.
-    /// </summary>
-    Pourim,
-
-    // Non database values (always at the end)
-
-    /// <summary>
-    /// Shabat day.
-    /// </summary>
-    Shabat
-
-  }
+  /// <summary>
+  /// Shabat day.
+  /// </summary>
+  Shabat
 
 }
 

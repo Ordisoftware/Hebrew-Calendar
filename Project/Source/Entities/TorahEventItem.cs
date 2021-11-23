@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides Torah event item to be displayed in a control.
+/// </summary>
+class TorahEventItem
 {
 
   /// <summary>
-  /// Provides Torah event item to be displayed in a control.
+  /// Indicates the text of the event.
   /// </summary>
-  class TorahEventItem
-  {
+  public string Text { get; set; }
 
-    /// <summary>
-    /// Indicates the text of the event.
-    /// </summary>
-    public string Text { get; set; }
+  /// <summary>
+  /// Indicates the event public enum value.
+  /// </summary>
+  public TorahCelebrationDay Event { get; set; }
 
-    /// <summary>
-    /// Indicates the event public enum value.
-    /// </summary>
-    public TorahCelebrationDay Event { get; set; }
-
-    /// <summary>
-    /// Returns a <see cref="T:System.String" /> that represents the day.
-    /// </summary>
-    public override string ToString() => Text;
-
-  }
+  /// <summary>
+  /// Returns a <see cref="T:System.String" /> that represents the day.
+  /// </summary>
+  public override string ToString() => Text;
 
 }

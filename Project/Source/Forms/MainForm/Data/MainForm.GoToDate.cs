@@ -12,84 +12,81 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private bool GoToDateMutex;
+
+  public void GoToDate(DateTime date,
+                       bool bringToFront = false,
+                       bool onlyIfOpened = true,
+                       bool onlyIfNotMinimized = false,
+                       Form regetFocus = null)
   {
-
-    private bool GoToDateMutex;
-
-    public void GoToDate(DateTime date,
-                         bool bringToFront = false,
-                         bool onlyIfOpened = true,
-                         bool onlyIfNotMinimized = false,
-                         Form regetFocus = null)
+    if ( !Globals.IsReady || Globals.IsGenerating ) return;
+    if ( GoToDateMutex ) return;
+    if ( date < DateFirst ) date = DateFirst;
+    if ( date > DateLast ) date = DateLast;
+    if ( _DateSelected == DateTime.Today ) _DateSelected = null;
+    GoToDateMutex = true;
+    try
     {
-      if ( !Globals.IsReady || Globals.IsGenerating ) return;
-      if ( GoToDateMutex ) return;
-      if ( date < DateFirst ) date = DateFirst;
-      if ( date > DateLast ) date = DateLast;
-      if ( _DateSelected == DateTime.Today ) _DateSelected = null;
-      GoToDateMutex = true;
-      try
+      // Navigation window
+      SystemManager.TryCatch(() =>
       {
-        // Navigation window
+        if ( NavigationForm.Instance != null )
+          NavigationForm.Instance.Date = date;
+      });
+      // Datagridview and bindingsource
+      SystemManager.TryCatch(() =>
+      {
+        int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
+        if ( position >= 0 )
+        {
+          LunisolarDaysBindingSource.Position = position;
+          CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
+        }
+      });
+      // Visual month
+      SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
+      if ( Settings.CurrentView == ViewMode.Text )
         SystemManager.TryCatch(() =>
         {
-          if ( NavigationForm.Instance != null )
-            NavigationForm.Instance.Date = date;
-        });
-        // Datagridview and bindingsource
-        SystemManager.TryCatch(() =>
-        {
-          int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
-          if ( position >= 0 )
+          string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
+          int position = CalendarText.Find(strDate);
+          if ( position != -1 )
           {
-            LunisolarDaysBindingSource.Position = position;
-            CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
+            CalendarText.SelectionStart = position - 6 - 119;
+            CalendarText.SelectionLength = 0;
+            CalendarText.ScrollToCaret();
+            CalendarText.SelectionStart = position - 6;
+            CalendarText.SelectionLength = 119;
           }
         });
-        // Visual month
-        SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
-        if ( Settings.CurrentView == ViewMode.Text )
-          SystemManager.TryCatch(() =>
-          {
-            string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
-            int position = CalendarText.Find(strDate);
-            if ( position != -1 )
-            {
-              CalendarText.SelectionStart = position - 6 - 119;
-              CalendarText.SelectionLength = 0;
-              CalendarText.ScrollToCaret();
-              CalendarText.SelectionStart = position - 6;
-              CalendarText.SelectionLength = 119;
-            }
-          });
-      }
-      finally
-      {
-        if ( bringToFront )
-          SystemManager.TryCatch(() =>
-          {
-            if ( !Visible && !onlyIfOpened )
-              MenuShowHide_Click(null, null);
-            else
-            if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
-              this.Restore();
-            else
-            if ( Visible && !this.IsVisibleOnTop(80) )
-              this.Popup();
-            regetFocus?.Popup();
-          });
-        GoToDateMutex = false;
-      }
     }
-
+    finally
+    {
+      if ( bringToFront )
+        SystemManager.TryCatch(() =>
+        {
+          if ( !Visible && !onlyIfOpened )
+            MenuShowHide_Click(null, null);
+          else
+          if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
+            this.Restore();
+          else
+          if ( Visible && !this.IsVisibleOnTop(80) )
+            this.Popup();
+          regetFocus?.Popup();
+        });
+      GoToDateMutex = false;
+    }
   }
 
 }

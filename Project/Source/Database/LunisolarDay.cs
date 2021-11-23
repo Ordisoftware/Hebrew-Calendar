@@ -12,68 +12,65 @@
 /// </license>
 /// <created> 2021-05 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Collections.Generic;
 using SQLite;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+[Serializable]
+[Table("LunisolarDays")]
+public partial class LunisolarDay
 {
+  [PrimaryKey]
+  public DateTime Date { get; set; }
+  public int LunarMonth { get; set; }
+  public int LunarDay { get; set; }
+  public DateTime? Sunrise { get; set; }
+  public DateTime? Sunset { get; set; }
+  public DateTime? Moonrise { get; set; }
+  public DateTime? Moonset { get; set; }
+  public string DateAsString { get; set; }
+  public string SunriseAsString { get; set; }
+  public string SunsetAsString { get; set; }
+  public string MoonriseAsString { get; set; }
+  public string MoonsetAsString { get; set; }
+  public MoonriseOccurring MoonriseOccuring { get; set; }
+  public bool IsNewMoon { get; set; }
+  public bool IsFullMoon { get; set; }
+  public MoonPhase MoonPhase { get; set; }
+  public SeasonChange SeasonChange { get; set; }
+  public TorahCelebrationDay TorahEvent { get; set; }
+  public string TorahEventText { get; set; }
+  public string ParashahID { get; set; }
+  public string LinkedParashahID { get; set; }
 
-  [Serializable]
-  [Table("LunisolarDays")]
-  public partial class LunisolarDay
-  {
-    [PrimaryKey]
-    public DateTime Date { get; set; }
-    public int LunarMonth { get; set; }
-    public int LunarDay { get; set; }
-    public DateTime? Sunrise { get; set; }
-    public DateTime? Sunset { get; set; }
-    public DateTime? Moonrise { get; set; }
-    public DateTime? Moonset { get; set; }
-    public string DateAsString { get; set; }
-    public string SunriseAsString { get; set; }
-    public string SunsetAsString { get; set; }
-    public string MoonriseAsString { get; set; }
-    public string MoonsetAsString { get; set; }
-    public MoonriseOccurring MoonriseOccuring { get; set; }
-    public bool IsNewMoon { get; set; }
-    public bool IsFullMoon { get; set; }
-    public MoonPhase MoonPhase { get; set; }
-    public SeasonChange SeasonChange { get; set; }
-    public TorahCelebrationDay TorahEvent { get; set; }
-    public string TorahEventText { get; set; }
-    public string ParashahID { get; set; }
-    public string LinkedParashahID { get; set; }
+  [Ignore]
+  public bool HasLinkedParashah => !LinkedParashahID.IsNullOrEmpty();
 
-    [Ignore]
-    public bool HasLinkedParashah => !LinkedParashahID.IsNullOrEmpty();
+  [Ignore]
+  public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
 
-    [Ignore]
-    public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
+  public bool IsNewYear
+    => TorahEvent == TorahCelebrationDay.NewYearD1;
 
-    public bool IsNewYear
-      => TorahEvent == TorahCelebrationDay.NewYearD1;
+  public bool HasSeasonChange
+    => SeasonChange != SeasonChange.None;
 
-    public bool HasSeasonChange
-      => SeasonChange != SeasonChange.None;
+  public bool HasTorahEvent
+    => TorahEvent != TorahCelebrationDay.None;
 
-    public bool HasTorahEvent
-      => TorahEvent != TorahCelebrationDay.None;
+  public string DayAndMonthText
+    => LunarDay + " " + HebrewMonths.Transcriptions[LunarMonth];
 
-    public string DayAndMonthText
-      => LunarDay + " " + HebrewMonths.Transcriptions[LunarMonth];
+  public string DayAndMonthWithYearText
+    => DayAndMonthText + " " + Date.Year;
 
-    public string DayAndMonthWithYearText
-      => DayAndMonthText + " " + Date.Year;
-
-    public string DayAndMonthFormattedText
-      => Program.Settings.MoonDayTextFormat.ToUpper()
-                .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
-                .Replace("%MONTHNUM%", LunarMonth.ToString())
-                .Replace("%DAYNUM%", LunarDay.ToString());
-
-  }
+  public string DayAndMonthFormattedText
+    => Program.Settings.MoonDayTextFormat.ToUpper()
+              .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
+              .Replace("%MONTHNUM%", LunarMonth.ToString())
+              .Replace("%DAYNUM%", LunarDay.ToString());
 
 }

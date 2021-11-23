@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2021-01 </created>
 /// <edited> 2021-07 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Linq;
 using System.Net;
@@ -19,110 +21,105 @@ using System.Threading;
 using Newtonsoft.Json.Linq;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private void OpenOlineWeather()
   {
-
-    private void OpenOlineWeather()
+    switch ( Settings.WeatherOnlineProvider )
     {
-      switch ( Settings.WeatherOnlineProvider )
-      {
-        case WeatherProvider.MeteoblueDotCom:
-          DoOnlineWeatherMeteoBlueDotCom();
-          break;
-        case WeatherProvider.WeatherDotCom:
-          DoOnlineWeatherWeatherDotCom();
-          break;
-        case WeatherProvider.MicrosoftNetworkDotCom:
-          DoMicrosoftNetworkDotCom();
-          break;
-        default:
-          throw new AdvancedNotImplementedException(Settings.WeatherOnlineProvider);
-      }
+      case WeatherProvider.MeteoblueDotCom:
+        DoOnlineWeatherMeteoBlueDotCom();
+        break;
+      case WeatherProvider.WeatherDotCom:
+        DoOnlineWeatherWeatherDotCom();
+        break;
+      case WeatherProvider.MicrosoftNetworkDotCom:
+        DoMicrosoftNetworkDotCom();
+        break;
+      default:
+        throw new AdvancedNotImplementedException(Settings.WeatherOnlineProvider);
     }
+  }
 
-    static public class WeatherProviders
+  static public class WeatherProviders
+  {
+    // Meteoblue
+    public const string MeteoblueDotComQueryDay = "current";
+    public const string MeteoblueDotComQueryWeek = "week";
+    public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
+    public const string MeteoblueDotComResult = "https://www.meteoblue.com/weather/%MODE%/%LOCATION%";
+    // Weather
+    public const string WeatherDotComQueryDay = "today";
+    public const string WeatherDotComQueryWeek = "tenday";
+    public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
+    // MSN
+    public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
+  }
+
+  private void DoOnlineWeatherWeatherDotCom()
+  {
+    string cmd = WeatherProviders.WeatherDotComResult
+                                 .Replace("%LANG%", Languages.CurrentCode)
+                                 .Replace("%LAT%", Settings.GPSLatitude)
+                                 .Replace("%LON%", Settings.GPSLongitude)
+                                 .Replace("%MODE%", Settings.WeatherOnlineUseDay
+                                                    ? WeatherProviders.WeatherDotComQueryDay
+                                                    : WeatherProviders.WeatherDotComQueryWeek);
+    SystemManager.RunShell(cmd);
+  }
+
+  private void DoOnlineWeatherMeteoBlueDotCom()
+  {
+    string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
+    string url = WeatherProviders.MeteoblueDotComQuery;
+    url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
+    using var client = new WebClient();
+    JObject data = null;
+    string json = string.Empty;
+    try
     {
-      // Meteoblue
-      public const string MeteoblueDotComQueryDay = "current";
-      public const string MeteoblueDotComQueryWeek = "week";
-      public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
-      public const string MeteoblueDotComResult = "https://www.meteoblue.com/weather/%MODE%/%LOCATION%";
-      // Weather
-      public const string WeatherDotComQueryDay = "today";
-      public const string WeatherDotComQueryWeek = "tenday";
-      public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
-      // MSN
-      public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
+      json = client.DownloadString(url);
+      data = JObject.Parse(json);
     }
-
-    private void DoOnlineWeatherWeatherDotCom()
+    catch ( Exception ex )
     {
-      string cmd = WeatherProviders.WeatherDotComResult
-                                   .Replace("%LANG%", Languages.CurrentCode)
-                                   .Replace("%LAT%", Settings.GPSLatitude)
-                                   .Replace("%LON%", Settings.GPSLongitude)
+      string msg = ex.Message;
+      if ( ex.InnerException != null )
+        msg += Globals.NL2 + ex.InnerException.Message;
+      msg += Globals.NL2 + url;
+      if ( !string.IsNullOrEmpty(json) )
+        msg += Globals.NL2 + json;
+      DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
+      return;
+    }
+    string location = string.Empty;
+    var results = data["results"];
+    if ( results?.Any() == true )
+      location = results[0]["url"]?.ToString();
+    if ( !string.IsNullOrEmpty(location) )
+    {
+      string cmd = WeatherProviders.MeteoblueDotComResult
+                                   .Replace("%LOCATION%", location)
                                    .Replace("%MODE%", Settings.WeatherOnlineUseDay
-                                                      ? WeatherProviders.WeatherDotComQueryDay
-                                                      : WeatherProviders.WeatherDotComQueryWeek);
+                                                      ? WeatherProviders.MeteoblueDotComQueryDay
+                                                      : WeatherProviders.MeteoblueDotComQueryWeek);
       SystemManager.RunShell(cmd);
     }
-
-    private void DoOnlineWeatherMeteoBlueDotCom()
+    else
     {
-      string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
-      string url = WeatherProviders.MeteoblueDotComQuery;
-      url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
-      using var client = new WebClient();
-      JObject data = null;
-      string json = string.Empty;
-      try
-      {
-        json = client.DownloadString(url);
-        data = JObject.Parse(json);
-      }
-      catch ( Exception ex )
-      {
-        string msg = ex.Message;
-        if ( ex.InnerException != null )
-          msg += Globals.NL2 + ex.InnerException.Message;
-        msg += Globals.NL2 + url;
-        if ( !string.IsNullOrEmpty(json) )
-          msg += Globals.NL2 + json;
-        DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-        return;
-      }
-      string location = string.Empty;
-      var results = data["results"];
-      if ( results?.Any() == true )
-        location = results[0]["url"]?.ToString();
-      if ( !string.IsNullOrEmpty(location) )
-      {
-        string cmd = WeatherProviders.MeteoblueDotComResult
-                                     .Replace("%LOCATION%", location)
-                                     .Replace("%MODE%", Settings.WeatherOnlineUseDay
-                                                        ? WeatherProviders.MeteoblueDotComQueryDay
-                                                        : WeatherProviders.MeteoblueDotComQueryWeek);
-        SystemManager.RunShell(cmd);
-      }
-      else
-      {
-        string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();
-        DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
-      }
+      string msg = AppTranslations.OnlineWeatherLocationNotFound.GetLang();
+      DisplayManager.ShowError(AppTranslations.OnlineWeatherError.GetLang(server, msg));
     }
+  }
 
-    private void DoMicrosoftNetworkDotCom()
-    {
-      string cmd = WeatherProviders.MicrosoftNetworkDotComResult
-                                   .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
-                                   .Replace("%LAT%", Settings.GPSLatitude)
-                                   .Replace("%LON%", Settings.GPSLongitude);
-      SystemManager.RunShell(cmd);
-    }
-
+  private void DoMicrosoftNetworkDotCom()
+  {
+    string cmd = WeatherProviders.MicrosoftNetworkDotComResult
+                                 .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
+                                 .Replace("%LAT%", Settings.GPSLatitude)
+                                 .Replace("%LON%", Settings.GPSLongitude);
+    SystemManager.RunShell(cmd);
   }
 
 }

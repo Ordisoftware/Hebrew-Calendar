@@ -12,32 +12,27 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Provides day of week item to be displayed in a control.
+/// </summary>
+class DayOfWeekItem
 {
 
   /// <summary>
-  /// Provides day of week item to be displayed in a control.
+  /// Indicates the text of the day.
   /// </summary>
-  class DayOfWeekItem
-  {
+  public string Text { get; set; }
 
-    /// <summary>
-    /// Indicates the text of the day.
-    /// </summary>
-    public string Text { get; set; }
+  /// <summary>
+  /// Indicates the day of week public enum value.
+  /// </summary>
+  public System.DayOfWeek Day { get; set; }
 
-    /// <summary>
-    /// Indicates the day of week public enum value.
-    /// </summary>
-    public DayOfWeek Day { get; set; }
-
-    /// <summary>
-    /// Returns a <see cref="T:System.String" /> that represents the day.
-    /// </summary>
-    public override string ToString() => Text;
-
-  }
+  /// <summary>
+  /// Returns a <see cref="T:System.String" /> that represents the day.
+  /// </summary>
+  public override string ToString() => Text;
 
 }

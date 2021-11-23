@@ -12,61 +12,60 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// The application's main form.
+/// </summary>
+/// <seealso cref="T:System.Windows.Forms.Form"/>
+partial class MainForm
 {
 
   /// <summary>
-  /// The application's main form.
+  /// Provides view connector.
   /// </summary>
-  /// <seealso cref="T:System.Windows.Forms.Form"/>
-  partial class MainForm
+  private sealed class ViewConnector
   {
 
     /// <summary>
-    /// Provides view connector.
+    /// The menu item.
     /// </summary>
-    private sealed class ViewConnector
-    {
-
-      /// <summary>
-      /// The menu item.
-      /// </summary>
-      public ToolStripMenuItem MenuItem;
-
-      /// <summary>
-      /// The panel.
-      /// </summary>
-      public Panel Panel;
-
-      /// <summary>
-      /// The focused control.
-      /// </summary>
-      public Control Focused;
-
-    }
+    public ToolStripMenuItem MenuItem;
 
     /// <summary>
-    /// Sets the view panel.
+    /// The panel.
     /// </summary>
-    /// <param name="view">The view mode.</param>
-    public void SetView(ViewMode view)
-    {
-      SetView(view, false);
-    }
+    public Panel Panel;
 
     /// <summary>
-    /// Sets the view panel.
+    /// The focused control.
     /// </summary>
-    /// <param name="view">The view mode.</param>
-    /// <param name="first">true to first.</param>
-    public void SetView(ViewMode view, bool first)
-    {
-      var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
+    public Control Focused;
+
+  }
+
+  /// <summary>
+  /// Sets the view panel.
+  /// </summary>
+  /// <param name="view">The view mode.</param>
+  public void SetView(ViewMode view)
+  {
+    SetView(view, false);
+  }
+
+  /// <summary>
+  /// Sets the view panel.
+  /// </summary>
+  /// <param name="view">The view mode.</param>
+  /// <param name="first">true to first.</param>
+  public void SetView(ViewMode view, bool first)
+  {
+    var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
       {
         {
           ViewMode.Text,
@@ -96,39 +95,37 @@ namespace Ordisoftware.Hebrew.Calendar
           }
         }
       };
-      try
+    try
+    {
+      if ( Settings.CurrentView == view && !first ) return;
+      if ( first )
       {
-        if ( Settings.CurrentView == view && !first ) return;
-        if ( first )
-        {
-          ActionViewReport.Checked = false;
-          ActionViewMonth.Checked = false;
-          ActionViewGrid.Checked = false;
-        }
-        if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
-          view = ViewMode.Month;
-        ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
-        ViewPanels[Settings.CurrentView].Panel.Parent = null;
-        ViewPanels[view].MenuItem.Checked = true;
-        ViewPanels[view].Panel.Parent = PanelCalendar;
-        ViewPanels[view].Focused.Focus();
-        Settings.CurrentView = view;
-        UpdateButtons();
-        if ( view == ViewMode.Grid )
-          if ( CalendarGrid.SelectedRows.Count > 0 )
-            CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
-        if ( view == ViewMode.Text )
-          if ( CurrentDay != null )
-            GoToDate(CurrentDay.Date);
-          else
-            GoToDate(DateTime.Today);
+        ActionViewReport.Checked = false;
+        ActionViewMonth.Checked = false;
+        ActionViewGrid.Checked = false;
       }
-      catch ( Exception ex )
-      {
-        ex.Manage();
-      }
+      if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
+        view = ViewMode.Month;
+      ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
+      ViewPanels[Settings.CurrentView].Panel.Parent = null;
+      ViewPanels[view].MenuItem.Checked = true;
+      ViewPanels[view].Panel.Parent = PanelCalendar;
+      ViewPanels[view].Focused.Focus();
+      Settings.CurrentView = view;
+      UpdateButtons();
+      if ( view == ViewMode.Grid )
+        if ( CalendarGrid.SelectedRows.Count > 0 )
+          CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
+      if ( view == ViewMode.Text )
+        if ( CurrentDay != null )
+          GoToDate(CurrentDay.Date);
+        else
+          GoToDate(DateTime.Today);
     }
-
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
   }
 
 }

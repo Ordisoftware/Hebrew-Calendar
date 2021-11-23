@@ -12,29 +12,24 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2019-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// CSV report field enum.
+/// </summary>
+public enum ReportFieldCSV
 {
-
-  /// <summary>
-  /// CSV report field enum.
-  /// </summary>
-  public enum ReportFieldCSV
-  {
-    Date,
-    IsNewMoon,
-    IsFullMoon,
-    Month,
-    Day,
-    Sunrise,
-    Sunset,
-    Moonrise,
-    Moonset,
-    MoonPhase,
-    MoonRiseOccuring,
-    Season,
-    Event
-  }
-
+  Date,
+  IsNewMoon,
+  IsFullMoon,
+  Month,
+  Day,
+  Sunrise,
+  Sunset,
+  Moonrise,
+  Moonset,
+  MoonPhase,
+  MoonRiseOccuring,
+  Season,
+  Event
 }

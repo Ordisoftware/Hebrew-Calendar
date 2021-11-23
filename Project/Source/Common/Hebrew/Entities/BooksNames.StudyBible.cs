@@ -12,61 +12,57 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2019-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew
+static partial class BooksNames
 {
 
-  static partial class BooksNames
+  static public readonly Dictionary<TanakBook, string> StudyBible = new()
   {
-
-    static public readonly Dictionary<TanakBook, string> StudyBible = new()
-    {
-      // Torah
-      { TanakBook.Bereshit, "Genesis" },
-      { TanakBook.Shemot, "Exodus" },
-      { TanakBook.Vayiqra, "Leviticus" },
-      { TanakBook.Bamidbar, "Numbers" },
-      { TanakBook.Devarim, "Deuteronomy" },
-      // Nevi'im
-      { TanakBook.Yehoshoua, "Joshua" },
-      { TanakBook.Shoftim, "Judges" },
-      { TanakBook.Shemouel_I, "1 Samuel" },
-      { TanakBook.Shemouel_II, "2 Samuel" },
-      { TanakBook.Melakim_I, "1 Kings" },
-      { TanakBook.Melakim_II, "2 Kings" },
-      { TanakBook.Yeshayahou, "Isaiah" },
-      { TanakBook.Yirmeyahou, "Jeremiah" },
-      { TanakBook.Yehezqel, "Ezekiel" },
-      { TanakBook.Hoshea, "Hosea" },
-      { TanakBook.Yoel, "Joel" },
-      { TanakBook.Amos, "Amos" },
-      { TanakBook.Obadyah, "Obadiah" },
-      { TanakBook.Yonah, "Jonah" },
-      { TanakBook.Mikah, "Micah" },
-      { TanakBook.Nahoum, "Nahum" },
-      { TanakBook.Habaqouq, "Habakkuk" },
-      { TanakBook.Tsephaniah, "Zephaniah" },
-      { TanakBook.Hagai, "Haggai" },
-      { TanakBook.Zekaria, "Zechariah" },
-      { TanakBook.Malaki, "Malachi" },
-      // Ketouvim
-      { TanakBook.Tehilim, "Psalms" },
-      { TanakBook.Mishlei, "Proverbs" },
-      { TanakBook.Iyov, "Job" },
-      { TanakBook.Shir_HaShirim, "Song of Songs" },
-      { TanakBook.Ruth, "Ruth" },
-      { TanakBook.Eikah, "Lamentations" },
-      { TanakBook.Qohelet, "Ecclesiastes" },
-      { TanakBook.Esther, "Esther" },
-      { TanakBook.Daniel, "Daniel" },
-      { TanakBook.Ezra, "Ezra" },
-      { TanakBook.Nehemiah, "Nehemiah" },
-      { TanakBook.Divrei_HaYamim_I, "1 Chronicles" },
-      { TanakBook.Divrei_HaYamim_II, "2 Chronicles" }
-    };
-
-  }
+    // Torah
+    { TanakBook.Bereshit, "Genesis" },
+    { TanakBook.Shemot, "Exodus" },
+    { TanakBook.Vayiqra, "Leviticus" },
+    { TanakBook.Bamidbar, "Numbers" },
+    { TanakBook.Devarim, "Deuteronomy" },
+    // Nevi'im
+    { TanakBook.Yehoshoua, "Joshua" },
+    { TanakBook.Shoftim, "Judges" },
+    { TanakBook.Shemouel_I, "1 Samuel" },
+    { TanakBook.Shemouel_II, "2 Samuel" },
+    { TanakBook.Melakim_I, "1 Kings" },
+    { TanakBook.Melakim_II, "2 Kings" },
+    { TanakBook.Yeshayahou, "Isaiah" },
+    { TanakBook.Yirmeyahou, "Jeremiah" },
+    { TanakBook.Yehezqel, "Ezekiel" },
+    { TanakBook.Hoshea, "Hosea" },
+    { TanakBook.Yoel, "Joel" },
+    { TanakBook.Amos, "Amos" },
+    { TanakBook.Obadyah, "Obadiah" },
+    { TanakBook.Yonah, "Jonah" },
+    { TanakBook.Mikah, "Micah" },
+    { TanakBook.Nahoum, "Nahum" },
+    { TanakBook.Habaqouq, "Habakkuk" },
+    { TanakBook.Tsephaniah, "Zephaniah" },
+    { TanakBook.Hagai, "Haggai" },
+    { TanakBook.Zekaria, "Zechariah" },
+    { TanakBook.Malaki, "Malachi" },
+    // Ketouvim
+    { TanakBook.Tehilim, "Psalms" },
+    { TanakBook.Mishlei, "Proverbs" },
+    { TanakBook.Iyov, "Job" },
+    { TanakBook.Shir_HaShirim, "Song of Songs" },
+    { TanakBook.Ruth, "Ruth" },
+    { TanakBook.Eikah, "Lamentations" },
+    { TanakBook.Qohelet, "Ecclesiastes" },
+    { TanakBook.Esther, "Esther" },
+    { TanakBook.Daniel, "Daniel" },
+    { TanakBook.Ezra, "Ezra" },
+    { TanakBook.Nehemiah, "Nehemiah" },
+    { TanakBook.Divrei_HaYamim_I, "1 Chronicles" },
+    { TanakBook.Divrei_HaYamim_II, "2 Chronicles" }
+  };
 
 }

@@ -12,88 +12,84 @@
 /// </license>
 /// <created> 2021-03 </created>
 /// <edited> 2021-03 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew
+static partial class OnlineParashot
 {
 
-  static partial class OnlineParashot
+  static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishIW = new()
   {
-
-    static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishIW = new()
+    [TorahBook.Bereshit] = new NullSafeList<string>
     {
-      [TorahBook.Bereshit] = new NullSafeList<string>
-      {
-        "43907672",
-        "43907667",
-        "43907662",
-        "43907657",
-        "43907652",
-        "43907647",
-        "43907642",
-        "43907627",
-        "43907622",
-        "43907617",
-        "43907612",
-        "43907607"
-      },
-      [TorahBook.Shemot] = new NullSafeList<string>
-      {
-        "43907602",
-        "43907597",
-        "43907592",
-        "43907587",
-        "43907582",
-        "43907577",
-        "43907572",
-        "43907567",
-        "43907562",
-        "43907557",
-        "43907552"
-      },
-      [TorahBook.Vayiqra] = new NullSafeList<string>
-      {
-        "43907547",
-        "43907542",
-        "43907537",
-        "43907527",
-        "43907522",
-        "43907517",
-        "43907512",
-        "43907507",
-        "43907502",
-        "43907492"
-      },
-      [TorahBook.Bamidbar] = new NullSafeList<string>
-      {
-        "43907477",
-        "43907472",
-        "43907467",
-        "43907462",
-        "43907457",
-        "43907452",
-        "43907447",
-        "43907442",
-        "43907432",
-        "43907427"
-      },
-      [TorahBook.Devarim] = new NullSafeList<string>
-      {
-        "43907422",
-        "43907417",
-        "43907407",
-        "43907397",
-        "43907392",
-        "43907382",
-        "43907377",
-        "43907372",
-        "43907367",
-        "43907362",
-        "43907357"
-      }
-    };
-
-  }
+      "43907672",
+      "43907667",
+      "43907662",
+      "43907657",
+      "43907652",
+      "43907647",
+      "43907642",
+      "43907627",
+      "43907622",
+      "43907617",
+      "43907612",
+      "43907607"
+    },
+    [TorahBook.Shemot] = new NullSafeList<string>
+    {
+      "43907602",
+      "43907597",
+      "43907592",
+      "43907587",
+      "43907582",
+      "43907577",
+      "43907572",
+      "43907567",
+      "43907562",
+      "43907557",
+      "43907552"
+    },
+    [TorahBook.Vayiqra] = new NullSafeList<string>
+    {
+      "43907547",
+      "43907542",
+      "43907537",
+      "43907527",
+      "43907522",
+      "43907517",
+      "43907512",
+      "43907507",
+      "43907502",
+      "43907492"
+    },
+    [TorahBook.Bamidbar] = new NullSafeList<string>
+    {
+      "43907477",
+      "43907472",
+      "43907467",
+      "43907462",
+      "43907457",
+      "43907452",
+      "43907447",
+      "43907442",
+      "43907432",
+      "43907427"
+    },
+    [TorahBook.Devarim] = new NullSafeList<string>
+    {
+      "43907422",
+      "43907417",
+      "43907407",
+      "43907397",
+      "43907392",
+      "43907382",
+      "43907377",
+      "43907372",
+      "43907367",
+      "43907362",
+      "43907357"
+    }
+  };
 
 }

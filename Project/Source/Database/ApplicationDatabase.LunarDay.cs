@@ -12,111 +12,108 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2021-05 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  partial class ApplicationDatabase : SQLiteDatabase
+  private const int SearchDayInterval = 7;
+
+  private const int GetTodayCacheInSeconds = 60;
+
+  private DateTime DayChecked = DateTime.MinValue;
+
+  private LunisolarDay LastCheck;
+
+  public LunisolarDay GetToday()
   {
-
-    private const int SearchDayInterval = 7;
-
-    private const int GetTodayCacheInSeconds = 60;
-
-    private DateTime DayChecked = DateTime.MinValue;
-
-    private LunisolarDay LastCheck;
-
-    public LunisolarDay GetToday()
-    {
-      var now = DateTime.Now;
-      var diff = now - DayChecked;
-      if ( LastCheck != null && diff.TotalSeconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
-        return LastCheck;
-      DayChecked = now;
-      LastCheck = GetDay(now);
+    var now = DateTime.Now;
+    var diff = now - DayChecked;
+    if ( LastCheck != null && diff.TotalSeconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
       return LastCheck;
-    }
+    DayChecked = now;
+    LastCheck = GetDay(now);
+    return LastCheck;
+  }
 
-    public LunisolarDay GetDay(DateTime datetime)
-    {
-      return Program.Settings.TorahEventsCountAsMoon
-             ? GetDayMoon(datetime)
-             : GetDaySun(datetime);
-    }
+  public LunisolarDay GetDay(DateTime datetime)
+  {
+    return Program.Settings.TorahEventsCountAsMoon
+           ? GetDayMoon(datetime)
+           : GetDaySun(datetime);
+  }
 
-    private LunisolarDay GetDayMoon(DateTime datetime)
+  private LunisolarDay GetDayMoon(DateTime datetime)
+  {
+    var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
+    int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
+    int indexStart = Math.Max(0, indexRowCurrent - SearchDayInterval);
+    int indexEnd = Math.Min(indexRowCurrent + SearchDayInterval, LunisolarDays.Count - 1);
+    bool isInBounds = false;
+    LunisolarDay rowFirst = null;
+    LunisolarDay rowLast = null;
+    LunisolarDay rowPrevious = rowCurrent;
+    for ( int index = indexStart; index <= indexEnd; index++ )
     {
-      var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
-      int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
-      int indexStart = Math.Max(0, indexRowCurrent - SearchDayInterval);
-      int indexEnd = Math.Min(indexRowCurrent + SearchDayInterval, LunisolarDays.Count - 1);
-      bool isInBounds = false;
-      LunisolarDay rowFirst = null;
-      LunisolarDay rowLast = null;
-      LunisolarDay rowPrevious = rowCurrent;
-      for ( int index = indexStart; index <= indexEnd; index++ )
+      rowCurrent = LunisolarDays[index];
+      if ( !isInBounds )
+      {
+        if ( rowCurrent.Moonset != null )
+          if ( datetime < rowCurrent.Moonset )
+          {
+            rowFirst = rowPrevious;
+            if ( rowCurrent.Moonset != null )
+            {
+              rowLast = rowCurrent;
+              break;
+            }
+            isInBounds = true;
+          }
+          else
+          {
+            rowPrevious = rowCurrent;
+          }
+      }
+      else
+      if ( rowCurrent.Moonset != null )
+      {
+        rowLast = rowCurrent;
+        break;
+      }
+    }
+    if ( rowFirst?.MoonriseOccuring == MoonriseOccurring.AfterSet )
+      return rowFirst;
+    else
+    if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      return rowLast;
+    else
+    if ( rowFirst != null && rowLast != null )
+    {
+      indexStart = LunisolarDays.IndexOf(rowFirst);
+      indexEnd = LunisolarDays.IndexOf(rowLast);
+      for ( int index = indexStart + 1; index <= indexEnd - 1; index++ )
       {
         rowCurrent = LunisolarDays[index];
-        if ( !isInBounds )
-        {
-          if ( rowCurrent.Moonset != null )
-            if ( datetime < rowCurrent.Moonset )
-            {
-              rowFirst = rowPrevious;
-              if ( rowCurrent.Moonset != null )
-              {
-                rowLast = rowCurrent;
-                break;
-              }
-              isInBounds = true;
-            }
-            else
-            {
-              rowPrevious = rowCurrent;
-            }
-        }
-        else
-        if ( rowCurrent.Moonset != null )
-        {
-          rowLast = rowCurrent;
-          break;
-        }
+        if ( rowCurrent.Moonrise != null )
+          return rowCurrent;
       }
-      if ( rowFirst?.MoonriseOccuring == MoonriseOccurring.AfterSet )
-        return rowFirst;
-      else
-      if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
-        return rowLast;
-      else
-      if ( rowFirst != null && rowLast != null )
-      {
-        indexStart = LunisolarDays.IndexOf(rowFirst);
-        indexEnd = LunisolarDays.IndexOf(rowLast);
-        for ( int index = indexStart + 1; index <= indexEnd - 1; index++ )
-        {
-          rowCurrent = LunisolarDays[index];
-          if ( rowCurrent.Moonrise != null )
-            return rowCurrent;
-        }
-      }
-      return null;
     }
+    return null;
+  }
 
-    private LunisolarDay GetDaySun(DateTime datetime)
-    {
-      var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
-      int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
-      if ( datetime < rowCurrent.Sunset )
-        return rowCurrent;
-      else
-      if ( indexRowCurrent < LunisolarDays.Count - 1 )
-        return LunisolarDays[indexRowCurrent + 1];
-      return null;
-    }
-
+  private LunisolarDay GetDaySun(DateTime datetime)
+  {
+    var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
+    int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
+    if ( datetime < rowCurrent.Sunset )
+      return rowCurrent;
+    else
+    if ( indexRowCurrent < LunisolarDays.Count - 1 )
+      return LunisolarDays[indexRowCurrent + 1];
+    return null;
   }
 
 }

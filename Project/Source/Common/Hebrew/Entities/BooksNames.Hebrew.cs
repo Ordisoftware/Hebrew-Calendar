@@ -12,61 +12,57 @@
 /// </license>
 /// <created> 2012-10 </created>
 /// <edited> 2019-01 </edited>
-using System;
+namespace Ordisoftware.Hebrew;
+
 using System.Collections.Generic;
 
-namespace Ordisoftware.Hebrew
+static partial class BooksNames
 {
 
-  static partial class BooksNames
+  static public readonly Dictionary<TanakBook, string> Hebrew = new()
   {
-
-    static public readonly Dictionary<TanakBook, string> Hebrew = new()
-    {
-      // Torah
-      { TanakBook.Bereshit, "ty>arb" },
-      { TanakBook.Shemot, "tvm>" },
-      { TanakBook.Vayiqra, "arqyv" },
-      { TanakBook.Bamidbar, "rbdmb" },
-      { TanakBook.Devarim, "myrbd" },
-      // Nevi'im
-      { TanakBook.Yehoshoua, "i>vhy" },
-      { TanakBook.Shoftim, "mytpv>" },
-      { TanakBook.Shemouel_I, "a lavm>" },
-      { TanakBook.Shemouel_II, "b lavm>" },
-      { TanakBook.Melakim_I, "a myklm" },
-      { TanakBook.Melakim_II, "b myklm" },
-      { TanakBook.Yeshayahou, "hyi>y" },
-      { TanakBook.Yirmeyahou, "hymry" },
-      { TanakBook.Yehezqel, "laqzxy" },
-      { TanakBook.Hoshea, "i>vh" },
-      { TanakBook.Yoel, "lavy" },
-      { TanakBook.Amos, "cvmi" },
-      { TanakBook.Obadyah, "hydbvi" },
-      { TanakBook.Yonah, "hnvy" },
-      { TanakBook.Mikah, "hkym" },
-      { TanakBook.Nahoum, "mvxn" },
-      { TanakBook.Habaqouq, "qvqbx" },
-      { TanakBook.Tsephaniah, "hynpj" },
-      { TanakBook.Hagai, "ygx" },
-      { TanakBook.Zekaria, "hyrkz" },
-      { TanakBook.Malaki, "ykalm" },
-      // Ketouvim
-      { TanakBook.Tehilim, "mylht" },
-      { TanakBook.Mishlei, "yl>m" },
-      { TanakBook.Iyov, "bvya" },
-      { TanakBook.Shir_HaShirim, "myry>h ry>" },
-      { TanakBook.Ruth, "tvr" },
-      { TanakBook.Eikah, "hkya" },
-      { TanakBook.Qohelet, "tlhq" },
-      { TanakBook.Esther, "rt>a" },
-      { TanakBook.Daniel, "lanyd" },
-      { TanakBook.Ezra, "arzi" },
-      { TanakBook.Nehemiah, "hymxn" },
-      { TanakBook.Divrei_HaYamim_I, "a mymyh yrbd" },
-      { TanakBook.Divrei_HaYamim_II, "b mymyh yrbd" }
-    };
-
-  }
+    // Torah
+    { TanakBook.Bereshit, "ty>arb" },
+    { TanakBook.Shemot, "tvm>" },
+    { TanakBook.Vayiqra, "arqyv" },
+    { TanakBook.Bamidbar, "rbdmb" },
+    { TanakBook.Devarim, "myrbd" },
+    // Nevi'im
+    { TanakBook.Yehoshoua, "i>vhy" },
+    { TanakBook.Shoftim, "mytpv>" },
+    { TanakBook.Shemouel_I, "a lavm>" },
+    { TanakBook.Shemouel_II, "b lavm>" },
+    { TanakBook.Melakim_I, "a myklm" },
+    { TanakBook.Melakim_II, "b myklm" },
+    { TanakBook.Yeshayahou, "hyi>y" },
+    { TanakBook.Yirmeyahou, "hymry" },
+    { TanakBook.Yehezqel, "laqzxy" },
+    { TanakBook.Hoshea, "i>vh" },
+    { TanakBook.Yoel, "lavy" },
+    { TanakBook.Amos, "cvmi" },
+    { TanakBook.Obadyah, "hydbvi" },
+    { TanakBook.Yonah, "hnvy" },
+    { TanakBook.Mikah, "hkym" },
+    { TanakBook.Nahoum, "mvxn" },
+    { TanakBook.Habaqouq, "qvqbx" },
+    { TanakBook.Tsephaniah, "hynpj" },
+    { TanakBook.Hagai, "ygx" },
+    { TanakBook.Zekaria, "hyrkz" },
+    { TanakBook.Malaki, "ykalm" },
+    // Ketouvim
+    { TanakBook.Tehilim, "mylht" },
+    { TanakBook.Mishlei, "yl>m" },
+    { TanakBook.Iyov, "bvya" },
+    { TanakBook.Shir_HaShirim, "myry>h ry>" },
+    { TanakBook.Ruth, "tvr" },
+    { TanakBook.Eikah, "hkya" },
+    { TanakBook.Qohelet, "tlhq" },
+    { TanakBook.Esther, "rt>a" },
+    { TanakBook.Daniel, "lanyd" },
+    { TanakBook.Ezra, "arzi" },
+    { TanakBook.Nehemiah, "hymxn" },
+    { TanakBook.Divrei_HaYamim_I, "a mymyh yrbd" },
+    { TanakBook.Divrei_HaYamim_II, "b mymyh yrbd" }
+  };
 
 }

@@ -12,67 +12,63 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2020-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class LunarMonthsForm : Form
 {
 
-  partial class LunarMonthsForm : Form
+  private readonly Color[] ColorsSystem = new Color[]
   {
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText,
+    SystemColors.ControlText
+  };
 
-    private readonly Color[] ColorsSystem = new Color[]
-    {
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText,
-      SystemColors.ControlText
-    };
+  private readonly Color[] ColorsPastel = new Color[]
+  {
+    Color.FromArgb(255, 230, 80),
+    Color.FromArgb(255, 230, 80),
+    Color.FromArgb(255, 230, 80),
+    Color.Orchid,
+    Color.Orchid,
+    Color.Orchid,
+    Color.SpringGreen,
+    Color.SpringGreen,
+    Color.SpringGreen,
+    Color.White,
+    Color.White,
+    Color.White,
+    Color.White
+  };
 
-    private readonly Color[] ColorsPastel = new Color[]
-    {
-      Color.FromArgb(255, 230, 80),
-      Color.FromArgb(255, 230, 80),
-      Color.FromArgb(255, 230, 80),
-      Color.Orchid,
-      Color.Orchid,
-      Color.Orchid,
-      Color.SpringGreen,
-      Color.SpringGreen,
-      Color.SpringGreen,
-      Color.White,
-      Color.White,
-      Color.White,
-      Color.White
-    };
-
-    private readonly Color[] ColorsFlashy = new Color[]
-    {
-      Color.Yellow,
-      Color.Yellow,
-      Color.Yellow,
-      Color.Fuchsia,
-      Color.Fuchsia,
-      Color.Fuchsia,
-      Color.Lime,
-      Color.Lime,
-      Color.Lime,
-      Color.White,
-      Color.White,
-      Color.White,
-      Color.White
-    };
-
-  }
+  private readonly Color[] ColorsFlashy = new Color[]
+  {
+    Color.Yellow,
+    Color.Yellow,
+    Color.Yellow,
+    Color.Fuchsia,
+    Color.Fuchsia,
+    Color.Fuchsia,
+    Color.Lime,
+    Color.Lime,
+    Color.Lime,
+    Color.White,
+    Color.White,
+    Color.White,
+    Color.White
+  };
 
 }

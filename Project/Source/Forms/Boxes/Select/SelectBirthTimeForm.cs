@@ -12,29 +12,26 @@
 /// </license>
 /// <created> 2019-10 </created>
 /// <edited> 2019-10 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Windows.Forms;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class SelectBirthTimeForm : Form
 {
 
-  partial class SelectBirthTimeForm : Form
+  static public bool Run(out TimeSpan time)
   {
+    using var form = new SelectBirthTimeForm();
+    bool result = form.ShowDialog() == DialogResult.OK;
+    time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
+    return result;
+  }
 
-    static public bool Run(out TimeSpan time)
-    {
-      using var form = new SelectBirthTimeForm();
-      bool result = form.ShowDialog() == DialogResult.OK;
-      time = result ? form.EditTime.Value.TimeOfDay : TimeSpan.MinValue;
-      return result;
-    }
-
-    private SelectBirthTimeForm()
-    {
-      InitializeComponent();
-      Icon = MainForm.Instance.Icon;
-    }
-
+  private SelectBirthTimeForm()
+  {
+    InitializeComponent();
+    Icon = MainForm.Instance.Icon;
   }
 
 }

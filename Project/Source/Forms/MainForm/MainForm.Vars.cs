@@ -12,6 +12,8 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-09 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,119 +22,114 @@ using System.Windows.Forms;
 using DandTSoftware.Timers;
 using Ordisoftware.Core;
 
-namespace Ordisoftware.Hebrew.Calendar
+public partial class MainForm
 {
 
-  public partial class MainForm
+  // Active>SpecialDay:
+  // true, true  = TrayIconEvent
+  // true, false = TrayIconDefault
+  // false, true  = TrayIconEventPause
+  // false, false = TrayIconDefaultPause
+  static private readonly Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons = new()
   {
+    { true, new NullSafeDictionary<bool, Icon>() },
+    { false, new NullSafeDictionary<bool, Icon>() }
+  };
 
-    // Active>SpecialDay:
-    // true, true  = TrayIconEvent
-    // true, false = TrayIconDefault
-    // false, true  = TrayIconEventPause
-    // false, false = TrayIconDefaultPause
-    static private readonly Dictionary<bool, NullSafeDictionary<bool, Icon>> TrayIcons = new()
+  static private readonly Properties.Settings Settings = Program.Settings;
+
+  static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+
+  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+
+  private readonly ToolTip LastToolTip = new();
+
+  private Point TrayIconMouse;
+
+  private bool TrayIconCanBallon = true;
+  private bool IsTrayBallooned;
+
+  private bool TimerMutex;
+  private bool TimerErrorShown;
+
+  private bool IsReminderPaused;
+
+  private readonly MidnightTimer TimerMidnight = new();
+
+  public float CurrentGPSLatitude { get; set; }
+  public float CurrentGPSLongitude { get; set; }
+  public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
+
+  public DateTime DateFirst { get; private set; }
+  public DateTime DateLast { get; private set; }
+  public int YearFirst { get; private set; }
+  public int YearLast { get; private set; }
+  public int YearsInterval { get; private set; }
+  public int[] YearsIntervalArray { get; private set; }
+
+  public LunisolarDay CurrentDay { get; private set; }
+
+  public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
+
+  private DateTime? _DateSelected = null;
+  public DateTime? DateSelected
+  {
+    get => _DateSelected;
+    private set
     {
-      { true, new NullSafeDictionary<bool, Icon>() },
-      { false, new NullSafeDictionary<bool, Icon>() }
-    };
+      if ( _DateSelected == value ) return;
+      _DateSelected = value == DateTime.Today ? null : value;
+      if ( Settings.CurrentView == ViewMode.Month )
+        CalendarMonth.Refresh();
+    }
+  }
 
-    static private readonly Properties.Settings Settings = Program.Settings;
+  private LunisolarDay ContextMenuDayCurrentEvent;
 
-    static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
 
-    static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
 
-    private readonly ToolTip LastToolTip = new();
+  internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
 
-    private Point TrayIconMouse;
+  private readonly List<DateTime> RemindCelebrationDates = new();
 
-    private bool TrayIconCanBallon = true;
-    private bool IsTrayBallooned;
+  private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = new();
 
-    private bool TimerMutex;
-    private bool TimerErrorShown;
+  internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = new();
 
-    private bool IsReminderPaused;
+  private DateTime? LastShabatReminded;
 
-    private readonly MidnightTimer TimerMidnight = new();
+  internal ReminderForm ShabatForm;
 
-    public float CurrentGPSLatitude { get; set; }
-    public float CurrentGPSLongitude { get; set; }
-    public TimeZoneInfo CurrentTimeZoneInfo { get; private set; }
-
-    public DateTime DateFirst { get; private set; }
-    public DateTime DateLast { get; private set; }
-    public int YearFirst { get; private set; }
-    public int YearLast { get; private set; }
-    public int YearsInterval { get; private set; }
-    public int[] YearsIntervalArray { get; private set; }
-
-    public LunisolarDay CurrentDay { get; private set; }
-
-    public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
-
-    private DateTime? _DateSelected = null;
-    public DateTime? DateSelected
+  public void ClearLists()
+  {
+    SystemManager.TryCatchManage(() =>
     {
-      get => _DateSelected;
-      private set
+      Text = Globals.AssemblyTitle;
+      TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
+      Application.OpenForms.GetAll(f => f is EditDateBookmarksForm)?.ToList().ForEach(f => f.Close());
+      ParashotForm.Instance?.Close();
+      CelebrationsBoardForm.Instance?.Close();
+      CelebrationVersesBoardForm.Instance?.Close();
+      NewMoonsBoardForm.Instance?.Close();
+      NextCelebrationsForm.Instance?.Hide();
+      TorahEventRemindList.Clear();
+      TorahEventRemindDayList.Clear();
+      RemindCelebrationDates.Clear();
+      LastShabatReminded = null;
+      ShabatForm?.Close();
+      LockSessionForm.Instance?.Close();
+      CurrentDay = null;
+      foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
+      foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
+      foreach ( var value in TorahCelebrationSettings.ManagedEvents )
       {
-        if ( _DateSelected == value ) return;
-        _DateSelected = value == DateTime.Today ? null : value;
-        if ( Settings.CurrentView == ViewMode.Month )
-          CalendarMonth.Refresh();
+        TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
+        TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);
+        LastCelebrationReminded[value] = null;
       }
-    }
-
-    private LunisolarDay ContextMenuDayCurrentEvent;
-
-    private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
-
-    private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
-
-    internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
-
-    private readonly List<DateTime> RemindCelebrationDates = new();
-
-    private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = new();
-
-    internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = new();
-
-    private DateTime? LastShabatReminded;
-
-    internal ReminderForm ShabatForm;
-
-    public void ClearLists()
-    {
-      SystemManager.TryCatchManage(() =>
-      {
-        Text = Globals.AssemblyTitle;
-        TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
-        Application.OpenForms.GetAll(f => f is EditDateBookmarksForm)?.ToList().ForEach(f => f.Close());
-        ParashotForm.Instance?.Close();
-        CelebrationsBoardForm.Instance?.Close();
-        CelebrationVersesBoardForm.Instance?.Close();
-        NewMoonsBoardForm.Instance?.Close();
-        NextCelebrationsForm.Instance?.Hide();
-        TorahEventRemindList.Clear();
-        TorahEventRemindDayList.Clear();
-        RemindCelebrationDates.Clear();
-        LastShabatReminded = null;
-        ShabatForm?.Close();
-        LockSessionForm.Instance?.Close();
-        CurrentDay = null;
-        foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
-        foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
-        foreach ( var value in TorahCelebrationSettings.ManagedEvents )
-        {
-          TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);
-          TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value.ToString()]);
-          LastCelebrationReminded[value] = null;
-        }
-      });
-    }
-
+    });
   }
 
 }

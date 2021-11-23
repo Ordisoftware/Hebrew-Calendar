@@ -12,57 +12,52 @@
 /// </license>
 /// <created> 2016-04 </created>
 /// <edited> 2016-04 </edited>
-using System;
+namespace Ordisoftware.Hebrew.Calendar;
 
-namespace Ordisoftware.Hebrew.Calendar
+/// <summary>
+/// Moon phase enum.
+/// </summary>
+public enum MoonPhase
 {
 
   /// <summary>
-  /// Moon phase enum.
+  /// New moon.
   /// </summary>
-  public enum MoonPhase
-  {
+  New,
 
-    /// <summary>
-    /// New moon.
-    /// </summary>
-    New,
+  /// <summary>
+  /// Waxing crescent moon.
+  /// </summary>
+  WaxingCrescent,
 
-    /// <summary>
-    /// Waxing crescent moon.
-    /// </summary>
-    WaxingCrescent,
+  /// <summary>
+  /// First quarter moon.
+  /// </summary>
+  FirstQuarter,
 
-    /// <summary>
-    /// First quarter moon.
-    /// </summary>
-    FirstQuarter,
+  /// <summary>
+  /// Waxing gibbous moon.
+  /// </summary>
+  WaxingGibbous,
 
-    /// <summary>
-    /// Waxing gibbous moon.
-    /// </summary>
-    WaxingGibbous,
+  /// <summary>
+  /// Full moon.
+  /// </summary>
+  Full,
 
-    /// <summary>
-    /// Full moon.
-    /// </summary>
-    Full,
+  /// <summary>
+  /// Waning gibbous moon.
+  /// </summary>
+  WaningGibbous,
 
-    /// <summary>
-    /// Waning gibbous moon.
-    /// </summary>
-    WaningGibbous,
+  /// <summary>
+  /// Last quarter moon.
+  /// </summary>
+  LastQuarter,
 
-    /// <summary>
-    /// Last quarter moon.
-    /// </summary>
-    LastQuarter,
-
-    /// <summary>
-    /// Waning crescent moon.
-    /// </summary>
-    WaningCrescent
-
-  }
+  /// <summary>
+  /// Waning crescent moon.
+  /// </summary>
+  WaningCrescent
 
 }

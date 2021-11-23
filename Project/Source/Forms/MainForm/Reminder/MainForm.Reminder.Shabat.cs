@@ -12,67 +12,64 @@
 /// </license>
 /// <created> 2019-01 </created>
 /// <edited> 2021-04 </edited>
+namespace Ordisoftware.Hebrew.Calendar;
+
 using System;
 using System.Data;
 using System.Linq;
 
-namespace Ordisoftware.Hebrew.Calendar
+partial class MainForm
 {
 
-  partial class MainForm
+  private bool CheckShabat(bool showbox)
   {
-
-    private bool CheckShabat(bool showbox)
+    bool result = false;
+    var dateNow = DateTime.Now;
+    dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
+    var dateToday = DateTime.Today;
+    var row = ( from day in LunisolarDays
+                where day.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay
+                   && day.Date >= dateToday
+                select day ).FirstOrDefault();
+    if ( row == null ) return result;
+    var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
+    if ( times == null ) return result;
+    result = dateNow >= times.DateStart && dateNow < times.DateEnd;
+    var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindShabatHoursBefore);
+    if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
     {
-      bool result = false;
-      var dateNow = DateTime.Now;
-      dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
-      var dateToday = DateTime.Today;
-      var row = ( from day in LunisolarDays
-                  where day.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                     && day.Date >= dateToday
-                  select day ).FirstOrDefault();
-      if ( row == null ) return result;
-      var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
-      if ( times == null ) return result;
-      result = dateNow >= times.DateStart && dateNow < times.DateEnd;
-      var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindShabatHoursBefore);
-      if ( dateNow < dateTrigger || dateNow >= times.DateEnd )
-      {
-        LastShabatReminded = null;
-        ShabatForm?.Close();
-        return result;
-      }
-      else
+      LastShabatReminded = null;
+      ShabatForm?.Close();
+      return result;
+    }
+    else
 #pragma warning disable S2589 // Boolean expressions should not be gratuitous -Analysis Error
       if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
 #pragma warning restore S2589 // Boolean expressions should not be gratuitous
-      {
-        if ( LastShabatReminded.HasValue )
-          return result;
-        else
-          LastShabatReminded = dateNow;
-      }
-      else
+    {
       if ( LastShabatReminded.HasValue )
-      {
-        if ( dateNow > times.DateStart && LastShabatReminded.Value < times.DateStart )
-        {
-          ShabatForm?.Close();
-          LastShabatReminded = dateNow;
-        }
-        else
-        if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Settings.RemindShabatEveryMinutes) )
-          return result;
-        else
-          LastShabatReminded = dateNow;
-      }
+        return result;
       else
         LastShabatReminded = dateNow;
-      if ( showbox ) ReminderForm.Run(row, TorahCelebrationDay.Shabat, times);
-      return result;
     }
-
+    else
+      if ( LastShabatReminded.HasValue )
+    {
+      if ( dateNow > times.DateStart && LastShabatReminded.Value < times.DateStart )
+      {
+        ShabatForm?.Close();
+        LastShabatReminded = dateNow;
+      }
+      else
+      if ( dateNow < LastShabatReminded.Value.AddMinutes((double)Settings.RemindShabatEveryMinutes) )
+        return result;
+      else
+        LastShabatReminded = dateNow;
+    }
+    else
+      LastShabatReminded = dateNow;
+    if ( showbox ) ReminderForm.Run(row, TorahCelebrationDay.Shabat, times);
+    return result;
   }
 
 }
