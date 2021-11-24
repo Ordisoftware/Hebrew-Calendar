@@ -52,8 +52,17 @@ partial class AboutBox : Form
     Icon = Globals.MainForm?.Icon;
     ActiveControl = ActionClose;
     //
-    initLinks(Globals.ProjectDependenciesFolderPath, DataGridViewDependencies);
-    initLinks(Globals.ProjectMediasFolderPath, DataGridViewMedias);
+    bool b1 = Directory.Exists(Globals.ProjectDependenciesFolderPath);
+    bool b2 = Directory.Exists(Globals.ProjectFolderPath);
+    bool b3 = Directory.Exists(Globals.ProjectMediasFolderPath);
+    bool b4 = Directory.Exists(Globals.ApplicationSoundsFolderPath);
+    ActionOpenFolderDependencies.Visible = b1;
+    ActionOpenFolderSource.Visible = b2;
+    ActionOpenFolderMedias.Visible = b3 || b4;
+    //
+    if ( b1 ) initLinks(Globals.ProjectDependenciesFolderPath, DataGridViewDependencies);
+    if ( b3 ) initLinks(Globals.ProjectMediasFolderPath, DataGridViewMedias);
+    if ( b4 ) initLinks(Globals.ApplicationSoundsFolderPath, DataGridViewMedias);
     //
     static void initLinks(string path, DataGridView grid)
     {
@@ -89,7 +98,7 @@ partial class AboutBox : Form
     LabelVersion.Text = SysTranslations.AboutBoxVersion.GetLang(Globals.AssemblyVersion);
     LabelCopyright.Text = Globals.AssemblyCopyright;
     LabelTrademark.Text = Globals.AssemblyTrademark;
-    EditLicense.Rtf = LicenseAsRTF;
+    EditLicense.Rtf = LicenseAsRTF ?? SysTranslations.ErrorSlot.GetLang();
     Width = LabelDescription.Left + LabelDescription.Width + LabelDescription.Left + LabelDescription.Left;
     Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     this.CenterToMainFormElseScreen();
@@ -167,6 +176,7 @@ partial class AboutBox : Form
     if ( Directory.Exists(Globals.ApplicationSoundsFolderPath) )
       SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
   }
+
 
   /// <summary>
   /// Event handler. Called by DataGridView for cell content clicked events.

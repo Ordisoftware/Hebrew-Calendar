@@ -348,6 +348,66 @@
   <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
+    <value>ActionCheckUpdate</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Name" xml:space="preserve">
+    <value>ActionViewStats</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
+    <value>ActionPrivacyNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 551</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionCheckUpdate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -476,30 +536,6 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 551</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="LabelDependencies.AutoSize" type="System.Boolean, mscorlib">
@@ -649,7 +685,7 @@
   <data name="ActionOpenFolderMedias.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -694,7 +730,7 @@
   <data name="ActionOpenFolderDependencies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -874,7 +910,7 @@
   <data name="ActionOpenFolderSource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vQAADr0BR/uQrQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
