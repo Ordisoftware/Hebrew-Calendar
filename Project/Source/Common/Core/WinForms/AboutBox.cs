@@ -55,12 +55,12 @@ partial class AboutBox : Form
     initLinks(Globals.ProjectDependenciesFolderPath, DataGridViewDependencies);
     initLinks(Globals.ProjectMediasFolderPath, DataGridViewMedias);
     //
-    void initLinks(string path, DataGridView grid)
+    static void initLinks(string path, DataGridView grid)
     {
       foreach ( var item in Directory.GetFiles(path, "*.url", SearchOption.AllDirectories) )
       {
         var lines = File.ReadAllLines(item);
-        var url = lines.Where(line => line.ToLower().StartsWith("url="))
+        var url = lines.Where(line => line.StartsWith("url=", StringComparison.OrdinalIgnoreCase))
                        .Select(line => line.Substring(4))
                        .FirstOrDefault();
         var row = new DataGridViewRow();
