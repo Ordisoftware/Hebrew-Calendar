@@ -53,16 +53,17 @@
       this.ActionOpenFolderDependencies = new System.Windows.Forms.Button();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.panel2 = new System.Windows.Forms.Panel();
       this.panel6 = new System.Windows.Forms.Panel();
+      this.ActionOpenFolderSource = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).BeginInit();
       this.tableLayoutPanel1.SuspendLayout();
       this.panel1.SuspendLayout();
-      this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.panel6.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -254,19 +255,19 @@
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
-      // panel2
-      // 
-      this.panel2.Controls.Add(this.DataGridViewMedias);
-      this.panel2.Controls.Add(this.panel6);
-      resources.ApplyResources(this.panel2, "panel2");
-      this.panel2.Name = "panel2";
-      // 
       // panel3
       // 
       this.panel3.Controls.Add(this.LabelDependencies);
       this.panel3.Controls.Add(this.ActionOpenFolderDependencies);
       resources.ApplyResources(this.panel3, "panel3");
       this.panel3.Name = "panel3";
+      // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.DataGridViewMedias);
+      this.panel2.Controls.Add(this.panel6);
+      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.Name = "panel2";
       // 
       // panel6
       // 
@@ -275,12 +276,22 @@
       resources.ApplyResources(this.panel6, "panel6");
       this.panel6.Name = "panel6";
       // 
+      // ActionOpenFolderSource
+      // 
+      this.ActionOpenFolderSource.AllowDrop = true;
+      resources.ApplyResources(this.ActionOpenFolderSource, "ActionOpenFolderSource");
+      this.ActionOpenFolderSource.FlatAppearance.BorderSize = 0;
+      this.ActionOpenFolderSource.Name = "ActionOpenFolderSource";
+      this.ActionOpenFolderSource.UseVisualStyleBackColor = true;
+      this.ActionOpenFolderSource.Click += new System.EventHandler(this.ActionOpenFolderSource_Click);
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.tableLayoutPanel1);
+      this.Controls.Add(this.ActionOpenFolderSource);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.EditLicense);
       this.Controls.Add(this.LabelDescription);
@@ -299,9 +310,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).EndInit();
       this.tableLayoutPanel1.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
-      this.panel2.ResumeLayout(false);
       this.panel3.ResumeLayout(false);
       this.panel3.PerformLayout();
+      this.panel2.ResumeLayout(false);
       this.panel6.ResumeLayout(false);
       this.panel6.PerformLayout();
       this.ResumeLayout(false);
@@ -335,5 +346,6 @@
     private Panel panel2;
     private Panel panel3;
     private Panel panel6;
+    public Button ActionOpenFolderSource;
   }
 }

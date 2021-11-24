@@ -50,7 +50,7 @@ static partial class Globals
   /// Indicates the application executable file path.
   /// </summary>
   static public string ApplicationExeFullPath
-    => System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+    => Process.GetCurrentProcess().MainModule.FileName;
 
   /// <summary>
   /// Indicates the application executable file name.
@@ -171,7 +171,7 @@ static partial class Globals
   /// Indicates the user music folder path.
   /// </summary>
   static public string UserMusicFolderPath
-    => Path.Combine(GetFolderPath(SpecialFolder.MyMusic), "Media");
+    => GetFolderPath(SpecialFolder.MyMusic);
 
   /// <summary>
   /// Indicates the user documents folder path.

@@ -137,6 +137,16 @@ partial class AboutBox : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionOpenFolderSource for clicked events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Link clicked event information.</param>
+  private void ActionOpenFolderSource_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Globals.ProjectFolderPath);
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionOpenFolderDependencies for clicked events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -154,6 +164,8 @@ partial class AboutBox : Form
   private void ActionOpenFolderMedias_Click(object sender, EventArgs e)
   {
     SystemManager.RunShell(Globals.ProjectMediasFolderPath);
+    if ( Directory.Exists(Globals.ApplicationSoundsFolderPath) )
+      SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
   }
 
   /// <summary>
