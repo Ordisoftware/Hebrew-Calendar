@@ -80,6 +80,7 @@ partial class AboutBox : Form
         cell.LinkColor = Color.Navy;
         cell.VisitedLinkColor = Color.Navy;
         cell.ActiveLinkColor = Color.MediumBlue;
+        cell.LinkBehavior = LinkBehavior.HoverUnderline;
         grid.Rows.Add(row);
       }
     }

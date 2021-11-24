@@ -47,6 +47,12 @@ static partial class Globals
     => Path.Combine(BinDirectoryName, "Release");
 
   /// <summary>
+  /// Indicates the application executable startup folder path.
+  /// </summary>
+  static public string StartupFolderPath
+    => Application.StartupPath;
+
+  /// <summary>
   /// Indicates the application executable file path.
   /// </summary>
   static public string ApplicationExeFullPath
