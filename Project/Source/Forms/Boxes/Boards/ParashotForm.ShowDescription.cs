@@ -21,6 +21,7 @@ partial class ParashotForm : Form
 
   static public bool ShowParashahDescription(Parashah parashah, bool withLinked)
   {
+    // Prepare
     string title = HebrewTranslations.WeeklyParashah.GetLang();
     var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
     if ( form != null )
@@ -30,6 +31,7 @@ partial class ParashotForm : Form
     }
     var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
     if ( parashah == null ) return false;
+    // Message box
     var message = parashah.ToStringReadable();
     message += Globals.NL2 + linked?.ToStringReadable();
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
@@ -39,16 +41,16 @@ partial class ParashotForm : Form
       ShowInTaskbar = true,
       AllowClose = true
     };
-    // Open board
+    // Button Open board
     form.ActionYes.Visible = true;
     form.ActionYes.Text = SysTranslations.Board.GetLang();
     form.ActionYes.Click += async (_s, _e) =>
     {
       Run(parashah);
-      await System.Threading.Tasks.Task.Delay(1000).ConfigureAwait(false);
+      await Task.Delay(1000).ConfigureAwait(false);
       Instance.Popup();
     };
-    // Open memo
+    // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
     form.ActionNo.Text = SysTranslations.Memo.GetLang();
     form.ActionNo.Click += (_s, _e) =>
@@ -57,7 +59,7 @@ partial class ParashotForm : Form
       string memo2 = linked?.Memo ?? "";
       DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
     };
-    // Copy to clipboard
+    // Button Copy to clipboard
     form.ActionRetry.Visible = true;
     form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
     form.ActionRetry.DialogResult = DialogResult.None;
@@ -68,6 +70,7 @@ partial class ParashotForm : Form
       DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
                                         Globals.ClipboardSoundFilePath);
     };
+    // Show
     form.Show();
     return true;
   }

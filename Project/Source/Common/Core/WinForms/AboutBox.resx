@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelVersion.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="LabelCopyright.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -226,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelCopyright.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="LabelTrademark.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -262,13 +262,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelTrademark.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 2</value>
+    <value>483, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -292,13 +292,13 @@
     <value>3</value>
   </data>
   <data name="EditLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="EditLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 125</value>
+    <value>17, 125</value>
   </data>
   <data name="EditLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>453, 204</value>
+    <value>550, 230</value>
   </data>
   <data name="EditLicense.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;EditLicense.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="LabelDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +346,67 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
+    <value>ActionCheckUpdate</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCheckUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Name" xml:space="preserve">
+    <value>ActionViewStats</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewStats.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
+    <value>ActionPrivacyNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 551</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="ActionCheckUpdate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -354,7 +414,7 @@
   <data name="ActionCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAiRJREFUOE+tkFtI01EAh4+zfBDBDJ1FbFFeQrIZ/cEHdZQKtqiRD2Zpo6ILGGk1
+        vAAADrwBlbxySQAAAiRJREFUOE+tkFtI01EAh4+zfBDBDJ1FbFFeQrIZ/cEHdZQKtqiRD2Zpo6ILGGk1
         qxFEF6GLRUIXioyk0RSDLgzngtrcupiXgoUlFOLKhzAos7WaGllf/2WDShwSffDjvJzvO3DEf8WSoraa
         58ykTq2kTjU2s7zrCTMQJoGojETsibb+uj6eoMwjF7Q7xtbhlE95Lge9OBjgLsIoRybisjoBWmwM5WsI
         LF3EsE6CAona9Aw2uhfwfMSO2B4xcaBhViw0XeODlMxgVjq+bA2jmRr0+Rms7Urj8acmxI4wgUzDOai/
@@ -396,7 +456,7 @@
   <data name="ActionViewStats.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAt1JREFUOE91kXtMzWEYx89m1Uw6J12UjFquywmJoqNDLl2cCBVJhRNCS/MPpsY/
+        vAAADrwBlbxySQAAAt1JREFUOE91kXtMzWEYx89m1Uw6J12UjFquywmJoqNDLl2cCBVJhRNCS/MPpsY/
         1UxJKIm5pky2ImuzIVaYEBWjXKqVS27lFqdWH++v85tD5rt9t3fv+3w/e5/nUfwpzlkrewuV2b1nVJ2U
         WsPFIUaLc+9ZVaf0RrFSJZf/K2rWw8NJ8EKEntsLO8gearx7MBkeJyOXm6TZUqhziy/WU+4M30rgfQw0
         jhIeL3s0tIVDd5EAjPsboN1c6DxrezG+KTc5uDeannI1tAvIxwRo9TL6UyL0lNBRMZbGbR6UKwbNkuMK
@@ -441,7 +501,7 @@
   <data name="ActionPrivacyNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAkBJREFUOE+Nkl1Ik2EUx8+FzBAWFIQWEYug6Cqii4iCaC1HNPq4bNHNCLzriyBQ
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkl1Ik2EUx8+FzBAWFIQWEYug6Cqii4iCaC1HNPq4bNHNCLzriyBQ
         6cbUSdvStbleGxGyxbqolhgVRSxrzdxL82NNnMXCwgg0NTJvgn/n7H1Cx4z6w4Hnfc75/c95nuel5XTk
         Kllq3fTL1kqQkLXsqfS/ZWuhH/GsC4WfARQWArj/zgWbm+ZVulyHPBSvbeNuLYR9lwmnIxakplwIfiBo
         9wj9n124eHcr9nLOyjU8EYRROJGd4bGFRmS/12N4rgFDM42IjtegM0/o6iXcTq6BPnMe6W910Dly8xeK
@@ -478,29 +538,221 @@
   <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="LabelDependencies.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 343</value>
+  <data name="LabelDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 28</value>
+  <data name="LabelDependencies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 366</value>
   </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+  <data name="LabelDependencies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
+  <data name="LabelDependencies.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LabelDependencies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+  <data name="LabelDependencies.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="LabelDependencies.Text" xml:space="preserve">
+    <value>Dependencies</value>
+  </data>
+  <data name="LabelDependencies.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelDependencies.Name" xml:space="preserve">
+    <value>LabelDependencies</value>
+  </data>
+  <data name="&gt;&gt;LabelDependencies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDependencies.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LabelDependencies.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>Column1</value>
+  </data>
+  <data name="DataGridViewDependencies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 385</value>
+  </data>
+  <data name="DataGridViewDependencies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 150</value>
+  </data>
+  <data name="DataGridViewDependencies.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewDependencies.Name" xml:space="preserve">
+    <value>DataGridViewDependencies</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewDependencies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewDependencies.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewDependencies.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelMedias.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMedias.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMedias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 366</value>
+  </data>
+  <data name="LabelMedias.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
+  </data>
+  <data name="LabelMedias.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="LabelMedias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="LabelMedias.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="LabelMedias.Text" xml:space="preserve">
+    <value>Medias</value>
+  </data>
+  <data name="LabelMedias.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelMedias.Name" xml:space="preserve">
+    <value>LabelMedias</value>
+  </data>
+  <data name="&gt;&gt;LabelMedias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMedias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelMedias.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="dataGridViewLinkColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridViewLinkColumn1.HeaderText" xml:space="preserve">
+    <value>Column1</value>
+  </data>
+  <data name="DataGridViewMedias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 385</value>
+  </data>
+  <data name="DataGridViewMedias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 150</value>
+  </data>
+  <data name="DataGridViewMedias.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewMedias.Name" xml:space="preserve">
+    <value>DataGridViewMedias</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewMedias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewMedias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DataGridViewMedias.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionOpenFolderMedias.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOpenFolderMedias.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
+        1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
+        IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
+        B+aW3wGOAOl30CNXoUe7UIh2G5avQ4t0wjdhwWd7DVXDZa+C6/5BuB/W/mklyQDcg805Lu5EymVDeqEN
+        abfQzsUnsfbyjNFKNkgB8suWmYVBTOAmmoD1aQScIlN1yb0afJ8/Cz3cAS3QyraakfddpiYUYr3Ixp/h
+        dX/tnKIO1yMTvIvQpAUofuFmMRtPAlqMbXRxKFrpJo6F8DVgdRKJtz2Y6KhoVDwjx7A6b0PiTTuQeoVi
+        jP3HbtBNFL7eots79KAYv8OKn8PrPMVbpOwTFwnhqdPIRAaAH0/x81sv9RkS/bv0AckRZEJ2ll83Ky6W
+        uF3cDDPPeJqn8QTYGKShveWmsDJ7Cc4rB87LY/SMWlOiCtVRz5tmglsy72lxiG9Hw7ooXwbgU0GVZdpP
+        xrP77yoPlF9ZpMeGhzZOEwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenFolderMedias.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOpenFolderMedias.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 358</value>
+  </data>
+  <data name="ActionOpenFolderMedias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionOpenFolderMedias.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderMedias.Name" xml:space="preserve">
+    <value>ActionOpenFolderMedias</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderMedias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderMedias.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderMedias.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
+        1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
+        IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
+        B+aW3wGOAOl30CNXoUe7UIh2G5avQ4t0wjdhwWd7DVXDZa+C6/5BuB/W/mklyQDcg805Lu5EymVDeqEN
+        abfQzsUnsfbyjNFKNkgB8suWmYVBTOAmmoD1aQScIlN1yb0afJ8/Cz3cAS3QyraakfddpiYUYr3Ixp/h
+        dX/tnKIO1yMTvIvQpAUofuFmMRtPAlqMbXRxKFrpJo6F8DVgdRKJtz2Y6KhoVDwjx7A6b0PiTTuQeoVi
+        jP3HbtBNFL7eots79KAYv8OKn8PrPMVbpOwTFwnhqdPIRAaAH0/x81sv9RkS/bv0AckRZEJ2ll83Ky6W
+        uF3cDDPPeJqn8QTYGKShveWmsDJ7Cc4rB87LY/SMWlOiCtVRz5tmglsy72lxiG9Hw7ooXwbgU0GVZdpP
+        xrP77yoPlF9ZpMeGhzZOEwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 358</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionOpenFolderDependencies.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDependencies.Name" xml:space="preserve">
+    <value>ActionOpenFolderDependencies</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDependencies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDependencies.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDependencies.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -509,10 +761,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>484, 381</value>
+    <value>584, 589</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 420</value>
+    <value>600, 450</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -522,6 +774,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About </value>
+  </data>
+  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
+    <value>Column1</value>
+  </data>
+  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewLinkColumn1.Name" xml:space="preserve">
+    <value>dataGridViewLinkColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewLinkColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewLinkColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutBox</value>
