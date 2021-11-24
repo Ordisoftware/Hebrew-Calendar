@@ -330,7 +330,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.13
 
 - Improve about box.
-- Few fixes.
 - Code refactoring.
 
 #### 2021.11.21 - Version 9.12
