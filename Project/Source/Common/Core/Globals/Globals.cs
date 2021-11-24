@@ -69,6 +69,36 @@ static partial class Globals
   static public ShowTextForm NoticeKeyboardShortcutsForm { get; internal set; }
 
   /// <summary>
+  /// Indicates IDE name.
+  /// </summary>
+  static public readonly string IDEName = "Visual Studio";
+
+  /// <summary>
+  /// Indicates IDE version.
+  /// </summary>
+  static public readonly string IDEVersion = "2022";
+
+  /// <summary>
+  /// Indicates programming language name.
+  /// </summary>
+  static public readonly string DevLanguageName = "C#";
+
+  /// <summary>
+  /// Indicates programming language version.
+  /// </summary>
+  static public readonly string DevLanguageVersion = "10.0";
+
+  /// <summary>
+  /// Indicates IDE name and version.
+  /// </summary>
+  static public string IDENameAndVersion => $"{IDEName} {IDEVersion}";
+
+  /// <summary>
+  /// Indicates programming language name and version.
+  /// </summary>
+  static public string DevLanguageNameAndVersion => $"{DevLanguageName} {DevLanguageVersion}";
+
+  /// <summary>
   /// Indicates the application code (title without space).
   /// </summary>
   static public string ApplicationCode

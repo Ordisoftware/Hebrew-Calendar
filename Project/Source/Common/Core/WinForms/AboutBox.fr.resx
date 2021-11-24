@@ -129,4 +129,7 @@
   <data name="LabelDependencies.Text" xml:space="preserve">
     <value>Dépendances</value>
   </data>
+  <data name="LabelIDE.Text" xml:space="preserve">
+    <value>Fabriqué avec {0} et {1}</value>
+  </data>
 </root>
