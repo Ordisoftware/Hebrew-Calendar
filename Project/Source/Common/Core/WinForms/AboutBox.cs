@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
