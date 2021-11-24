@@ -685,7 +685,7 @@
   <data name="ActionOpenFolderMedias.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vwAADr8BOAVTJAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -701,7 +701,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenFolderMedias.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 0</value>
+    <value>235, 0</value>
   </data>
   <data name="ActionOpenFolderMedias.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -730,7 +730,7 @@
   <data name="ActionOpenFolderDependencies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vwAADr8BOAVTJAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -746,7 +746,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenFolderDependencies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 0</value>
+    <value>235, 0</value>
   </data>
   <data name="ActionOpenFolderDependencies.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -958,7 +958,7 @@
   <data name="ActionOpenFolderSource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -974,7 +974,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenFolderSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>543, 97</value>
+    <value>542, 99</value>
   </data>
   <data name="ActionOpenFolderSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>

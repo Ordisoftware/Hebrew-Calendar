@@ -28,10 +28,10 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelVersion = new System.Windows.Forms.Label();
       this.LabelCopyright = new System.Windows.Forms.Label();
@@ -156,8 +156,8 @@
       this.DataGridViewDependencies.AllowUserToDeleteRows = false;
       this.DataGridViewDependencies.AllowUserToResizeColumns = false;
       this.DataGridViewDependencies.AllowUserToResizeRows = false;
-      dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-      this.DataGridViewDependencies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+      this.DataGridViewDependencies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
       this.DataGridViewDependencies.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridViewDependencies.BackgroundColor = System.Drawing.SystemColors.Control;
       this.DataGridViewDependencies.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -170,10 +170,10 @@
       this.DataGridViewDependencies.Name = "DataGridViewDependencies";
       this.DataGridViewDependencies.ReadOnly = true;
       this.DataGridViewDependencies.RowHeadersVisible = false;
-      dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-      this.DataGridViewDependencies.RowsDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      this.DataGridViewDependencies.RowsDefaultCellStyle = dataGridViewCellStyle10;
       this.DataGridViewDependencies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.DataGridViewDependencies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
       // 
@@ -195,8 +195,8 @@
       this.DataGridViewMedias.AllowUserToDeleteRows = false;
       this.DataGridViewMedias.AllowUserToResizeColumns = false;
       this.DataGridViewMedias.AllowUserToResizeRows = false;
-      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-      this.DataGridViewMedias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+      dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+      this.DataGridViewMedias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
       this.DataGridViewMedias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridViewMedias.BackgroundColor = System.Drawing.SystemColors.Control;
       this.DataGridViewMedias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -209,10 +209,10 @@
       this.DataGridViewMedias.Name = "DataGridViewMedias";
       this.DataGridViewMedias.ReadOnly = true;
       this.DataGridViewMedias.RowHeadersVisible = false;
-      dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-      this.DataGridViewMedias.RowsDefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      this.DataGridViewMedias.RowsDefaultCellStyle = dataGridViewCellStyle12;
       this.DataGridViewMedias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.DataGridViewMedias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
       // 
