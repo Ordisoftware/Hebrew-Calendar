@@ -65,14 +65,14 @@ static class WebCheckUpdate
         form.TopMost = formTopMost;
         form.Enabled = false;
       }
-      LoadingForm.Instance.Hidden = false;
+      LoadingForm.Instance.Hidden = auto;
       LoadingForm.Instance.Initialize(SysTranslations.WebCheckUpdate.GetLang(), 3, 0, false);
       LoadingForm.Instance.Owner = Globals.MainForm;
       LoadingForm.Instance.DoProgress();
       using var client = new WebClientEx();
       var fileInfo = GetVersionAndChecksum(client);
       lastdone = DateTime.Now;
-      if ( fileInfo.Item1.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version) > 0 )
+      if ( fileInfo.Item1.CompareTo(Assembly.GetExecutingAssembly().GetName().Version) > 0 )
         return GetUserChoice(client, fileInfo);
       else
       if ( !auto )
