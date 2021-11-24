@@ -122,6 +122,12 @@ static partial class Globals
   /// <summary>
   /// Indicates the project sounds folder path.
   /// </summary>
+  static public string ProjectDependenciesFolderPath
+    => Path.Combine(ProjectFolderPath, "Dependencies");
+
+  /// <summary>
+  /// Indicates the project sounds folder path.
+  /// </summary>
   static public string ProjectMediasFolderPath
     => Path.Combine(ProjectFolderPath, "Medias");
 

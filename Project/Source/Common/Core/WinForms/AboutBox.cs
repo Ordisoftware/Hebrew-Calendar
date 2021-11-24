@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Windows.Forms;
+/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -51,6 +52,29 @@ partial class AboutBox : Form
     InitializeComponent();
     Icon = Globals.MainForm?.Icon;
     ActiveControl = ActionClose;
+    //
+    initLinks(Globals.ProjectDependenciesFolderPath, DataGridViewDependencies);
+    initLinks(Globals.ProjectMediasFolderPath, DataGridViewMedias);
+    //
+    void initLinks(string path, DataGridView grid)
+    {
+      foreach ( var item in Directory.GetFiles(path, "*.url", SearchOption.AllDirectories) )
+      {
+        var lines = File.ReadAllLines(item);
+        var url = lines.Where(line => line.ToLower().StartsWith("url="))
+                       .Select(line => line.Substring(4))
+                       .FirstOrDefault();
+        var row = new DataGridViewRow();
+        var cell = new DataGridViewLinkCell();
+        row.Cells.Add(cell);
+        cell.Value = Path.GetFileNameWithoutExtension(item);
+        cell.Tag = url;
+        cell.LinkColor = Color.Navy;
+        cell.VisitedLinkColor = Color.Navy;
+        cell.ActiveLinkColor = Color.MediumBlue;
+        grid.Rows.Add(row);
+      }
+    }
   }
 
   /// <summary>
@@ -68,7 +92,6 @@ partial class AboutBox : Form
     LabelTrademark.Text = Globals.AssemblyTrademark;
     EditLicense.Rtf = LicenseAsRTF;
     Width = LabelDescription.Left + LabelDescription.Width + LabelDescription.Left + LabelDescription.Left;
-    Height = (int)( Width * 0.75 );
     Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     this.CenterToMainFormElseScreen();
   }
@@ -82,16 +105,6 @@ partial class AboutBox : Form
   {
     TopMost = Globals.MainForm?.TopMost ?? false;
     BringToFront();
-  }
-
-  /// <summary>
-  /// Event handler. Called by LabelProvider for link clicked events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Link label link clicked event information.</param>
-  private void LabelProvider_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  {
-    SystemManager.OpenWebLink(( (LinkLabel)sender ).Text);
   }
 
   /// <summary>
@@ -122,6 +135,37 @@ partial class AboutBox : Form
   private void ActionPrivacyNotice_Click(object sender, EventArgs e)
   {
     DisplayManager.ShowInformation(SysTranslations.NoticePrivacyNoData.GetLang());
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenFolderDependencies for clicked events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Link clicked event information.</param>
+  private void ActionOpenFolderDependencies_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Globals.ProjectDependenciesFolderPath);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenFolderMedias for clicked events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Link clicked event information.</param>
+  private void ActionOpenFolderMedias_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Globals.ProjectMediasFolderPath);
+  }
+
+  /// <summary>
+  /// Event handler. Called by DataGridView for cell content clicked events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Link clicked event information.</param>
+  private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    var grid = sender as DataGridView;
+    SystemManager.OpenWebLink((string)grid[e.ColumnIndex, e.RowIndex].Tag);
   }
 
 }

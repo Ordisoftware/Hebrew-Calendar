@@ -123,4 +123,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>A propos de </value>
   </data>
+  <data name="LabelMedias.Text" xml:space="preserve">
+    <value>Médias</value>
+  </data>
+  <data name="LabelDependencies.Text" xml:space="preserve">
+    <value>Dépendances</value>
+  </data>
 </root>
