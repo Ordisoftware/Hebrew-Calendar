@@ -67,7 +67,8 @@ partial class ParashotForm : Form
     form.ActionRetry.Click += (_s, _e) =>
     {
       Clipboard.SetText(message);
-      DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(), Globals.ClipboardSoundFilePath);
+      DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
+                                        Globals.ClipboardSoundFilePath);
     };
     // Show
     form.Show();
