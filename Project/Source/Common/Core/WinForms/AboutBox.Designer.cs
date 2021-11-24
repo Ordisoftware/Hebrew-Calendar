@@ -51,9 +51,19 @@
       this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
       this.ActionOpenFolderMedias = new System.Windows.Forms.Button();
       this.ActionOpenFolderDependencies = new System.Windows.Forms.Button();
+      this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.panel6 = new System.Windows.Forms.Panel();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).BeginInit();
+      this.tableLayoutPanel1.SuspendLayout();
+      this.panel1.SuspendLayout();
+      this.panel2.SuspendLayout();
+      this.panel3.SuspendLayout();
+      this.panel6.SuspendLayout();
       this.SuspendLayout();
       // 
       // LabelTitle
@@ -215,8 +225,8 @@
       // ActionOpenFolderMedias
       // 
       this.ActionOpenFolderMedias.AllowDrop = true;
-      this.ActionOpenFolderMedias.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOpenFolderMedias, "ActionOpenFolderMedias");
+      this.ActionOpenFolderMedias.FlatAppearance.BorderSize = 0;
       this.ActionOpenFolderMedias.Name = "ActionOpenFolderMedias";
       this.ActionOpenFolderMedias.UseVisualStyleBackColor = true;
       this.ActionOpenFolderMedias.Click += new System.EventHandler(this.ActionOpenFolderMedias_Click);
@@ -224,28 +234,58 @@
       // ActionOpenFolderDependencies
       // 
       this.ActionOpenFolderDependencies.AllowDrop = true;
-      this.ActionOpenFolderDependencies.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionOpenFolderDependencies, "ActionOpenFolderDependencies");
+      this.ActionOpenFolderDependencies.FlatAppearance.BorderSize = 0;
       this.ActionOpenFolderDependencies.Name = "ActionOpenFolderDependencies";
       this.ActionOpenFolderDependencies.UseVisualStyleBackColor = true;
       this.ActionOpenFolderDependencies.Click += new System.EventHandler(this.ActionOpenFolderDependencies_Click);
+      // 
+      // tableLayoutPanel1
+      // 
+      resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+      this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+      this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
+      this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+      // 
+      // panel1
+      // 
+      this.panel1.Controls.Add(this.DataGridViewDependencies);
+      this.panel1.Controls.Add(this.panel3);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.DataGridViewMedias);
+      this.panel2.Controls.Add(this.panel6);
+      resources.ApplyResources(this.panel2, "panel2");
+      this.panel2.Name = "panel2";
+      // 
+      // panel3
+      // 
+      this.panel3.Controls.Add(this.LabelDependencies);
+      this.panel3.Controls.Add(this.ActionOpenFolderDependencies);
+      resources.ApplyResources(this.panel3, "panel3");
+      this.panel3.Name = "panel3";
+      // 
+      // panel6
+      // 
+      this.panel6.Controls.Add(this.LabelMedias);
+      this.panel6.Controls.Add(this.ActionOpenFolderMedias);
+      resources.ApplyResources(this.panel6, "panel6");
+      this.panel6.Name = "panel6";
       // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.DataGridViewMedias);
-      this.Controls.Add(this.ActionOpenFolderDependencies);
-      this.Controls.Add(this.ActionOpenFolderMedias);
-      this.Controls.Add(this.DataGridViewDependencies);
+      this.Controls.Add(this.tableLayoutPanel1);
       this.Controls.Add(this.PanelBottom);
       this.Controls.Add(this.EditLicense);
       this.Controls.Add(this.LabelDescription);
       this.Controls.Add(this.LabelTrademark);
       this.Controls.Add(this.LabelCopyright);
-      this.Controls.Add(this.LabelMedias);
-      this.Controls.Add(this.LabelDependencies);
       this.Controls.Add(this.LabelVersion);
       this.Controls.Add(this.LabelTitle);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -257,6 +297,13 @@
       this.PanelBottom.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).EndInit();
+      this.tableLayoutPanel1.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
+      this.panel2.ResumeLayout(false);
+      this.panel3.ResumeLayout(false);
+      this.panel3.PerformLayout();
+      this.panel6.ResumeLayout(false);
+      this.panel6.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -283,5 +330,10 @@
     private DataGridViewLinkColumn dataGridViewLinkColumn1;
     public Button ActionOpenFolderMedias;
     public Button ActionOpenFolderDependencies;
+    private TableLayoutPanel tableLayoutPanel1;
+    private Panel panel1;
+    private Panel panel2;
+    private Panel panel3;
+    private Panel panel6;
   }
 }
