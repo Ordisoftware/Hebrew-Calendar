@@ -426,6 +426,7 @@ static class StackMethods
   #region Assembly
 
   // From https://stackoverflow.com/questions/1600962/displaying-the-build-date
+  // Need "Deterministic>false</Deterministic>" in CSPROJ file.
   static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
   {
     var filePath = assembly.Location;
