@@ -28,10 +28,10 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelVersion = new System.Windows.Forms.Label();
       this.LabelCopyright = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel6 = new System.Windows.Forms.Panel();
       this.ActionOpenFolderSource = new System.Windows.Forms.Button();
+      this.LabelIDE = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).BeginInit();
@@ -156,8 +157,8 @@
       this.DataGridViewDependencies.AllowUserToDeleteRows = false;
       this.DataGridViewDependencies.AllowUserToResizeColumns = false;
       this.DataGridViewDependencies.AllowUserToResizeRows = false;
-      dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-      this.DataGridViewDependencies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      this.DataGridViewDependencies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
       this.DataGridViewDependencies.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridViewDependencies.BackgroundColor = System.Drawing.SystemColors.Control;
       this.DataGridViewDependencies.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -170,10 +171,10 @@
       this.DataGridViewDependencies.Name = "DataGridViewDependencies";
       this.DataGridViewDependencies.ReadOnly = true;
       this.DataGridViewDependencies.RowHeadersVisible = false;
-      dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-      this.DataGridViewDependencies.RowsDefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      this.DataGridViewDependencies.RowsDefaultCellStyle = dataGridViewCellStyle2;
       this.DataGridViewDependencies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.DataGridViewDependencies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
       // 
@@ -195,8 +196,8 @@
       this.DataGridViewMedias.AllowUserToDeleteRows = false;
       this.DataGridViewMedias.AllowUserToResizeColumns = false;
       this.DataGridViewMedias.AllowUserToResizeRows = false;
-      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-      this.DataGridViewMedias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+      this.DataGridViewMedias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
       this.DataGridViewMedias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.DataGridViewMedias.BackgroundColor = System.Drawing.SystemColors.Control;
       this.DataGridViewMedias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -209,10 +210,10 @@
       this.DataGridViewMedias.Name = "DataGridViewMedias";
       this.DataGridViewMedias.ReadOnly = true;
       this.DataGridViewMedias.RowHeadersVisible = false;
-      dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-      this.DataGridViewMedias.RowsDefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+      this.DataGridViewMedias.RowsDefaultCellStyle = dataGridViewCellStyle4;
       this.DataGridViewMedias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.DataGridViewMedias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
       // 
@@ -285,6 +286,11 @@
       this.ActionOpenFolderSource.UseVisualStyleBackColor = true;
       this.ActionOpenFolderSource.Click += new System.EventHandler(this.ActionOpenFolderSource_Click);
       // 
+      // LabelIDE
+      // 
+      resources.ApplyResources(this.LabelIDE, "LabelIDE");
+      this.LabelIDE.Name = "LabelIDE";
+      // 
       // AboutBox
       // 
       resources.ApplyResources(this, "$this");
@@ -297,6 +303,7 @@
       this.Controls.Add(this.LabelDescription);
       this.Controls.Add(this.LabelTrademark);
       this.Controls.Add(this.LabelCopyright);
+      this.Controls.Add(this.LabelIDE);
       this.Controls.Add(this.LabelVersion);
       this.Controls.Add(this.LabelTitle);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -347,5 +354,6 @@
     private Panel panel3;
     private Panel panel6;
     public Button ActionOpenFolderSource;
+    private Label LabelIDE;
   }
 }

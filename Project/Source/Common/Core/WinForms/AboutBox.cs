@@ -99,8 +99,8 @@ partial class AboutBox : Form
     LabelCopyright.Text = Globals.AssemblyCopyright;
     LabelTrademark.Text = Globals.AssemblyTrademark;
     EditLicense.Rtf = LicenseAsRTF ?? SysTranslations.ErrorSlot.GetLang();
+    LabelIDE.Text = string.Format(LabelIDE.Text, Globals.IDENameAndVersion, Globals.DevLanguageNameAndVersion);
     Width = LabelDescription.Left + LabelDescription.Width + LabelDescription.Left + LabelDescription.Left;
-    Controls.OfType<LinkLabel>().Where(c => c.Name.StartsWith("linkLabel")).ToList().ForEach(c => c.TabStop = false);
     this.CenterToMainFormElseScreen();
   }
 

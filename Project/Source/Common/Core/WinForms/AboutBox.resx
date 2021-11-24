@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelTitle.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,13 +169,13 @@
     <value>0, 17</value>
   </data>
   <data name="LabelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>42, 13</value>
   </data>
   <data name="LabelVersion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="LabelVersion.Text" xml:space="preserve">
-    <value>Version </value>
+    <value>Version</value>
   </data>
   <data name="LabelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelVersion.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LabelCopyright.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -324,6 +324,9 @@
   <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 9pt, style=Bold</value>
   </data>
+  <data name="LabelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
   </data>
@@ -347,66 +350,6 @@
   </data>
   <data name="&gt;&gt;LabelDescription.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
-    <value>ActionCheckUpdate</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionCheckUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionViewStats.Name" xml:space="preserve">
-    <value>ActionViewStats</value>
-  </data>
-  <data name="&gt;&gt;ActionViewStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionViewStats.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionViewStats.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionPrivacyNotice.Name" xml:space="preserve">
-    <value>ActionPrivacyNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionPrivacyNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionPrivacyNotice.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 551</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="ActionCheckUpdate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -538,14 +481,41 @@
   <data name="&gt;&gt;ActionPrivacyNotice.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 573</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="LabelDependencies.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="LabelDependencies.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="LabelDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="LabelDependencies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
+    <value>-2, 6</value>
   </data>
   <data name="LabelDependencies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
@@ -554,7 +524,7 @@
     <value>0, 17</value>
   </data>
   <data name="LabelDependencies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>88, 13</value>
   </data>
   <data name="LabelDependencies.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -610,11 +580,14 @@
   <data name="LabelMedias.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="LabelMedias.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
   <data name="LabelMedias.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="LabelMedias.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
+    <value>-2, 6</value>
   </data>
   <data name="LabelMedias.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 3, 0</value>
@@ -623,7 +596,7 @@
     <value>0, 17</value>
   </data>
   <data name="LabelMedias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>47, 13</value>
   </data>
   <data name="LabelMedias.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -685,7 +658,7 @@
   <data name="ActionOpenFolderMedias.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vAAADrwBlbxySQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -730,7 +703,7 @@
   <data name="ActionOpenFolderDependencies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vAAADrwBlbxySQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -767,7 +740,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -910,7 +883,7 @@
   <data name="ActionOpenFolderSource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
+        vAAADrwBlbxySQAAAhZJREFUOE+l08tPE0EcB/D9C/xXxCAvHy1oqyfjzZOiHkSgEFRATcTEELhoRYWC
         gPSABw4SEw8cwAd6UqOlbOm7xdqE2IBNDLS0tLutX78zqxSJHBo3+WQns5nfY2ZWAfBf/jlZDmVp9PgL
         1XEUi4OHJDH2PG5Y4jy/Wf42ZlG8wriVTkiKWIDCMrAVMmhRLAxUwf2objtoyWGZgMGD2wHEJLb8yHsu
         IKdeRDE5A2TDQC5iyEcZlAkEnRCHOmyCd8xaWQqQ/YS8v4XayCbHGunBVmi+Zmx8aERK+HgOuZUZWcX7
@@ -946,6 +919,48 @@
   <data name="&gt;&gt;ActionOpenFolderSource.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LabelIDE.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelIDE.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="LabelIDE.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelIDE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 545</value>
+  </data>
+  <data name="LabelIDE.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
+  </data>
+  <data name="LabelIDE.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="LabelIDE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 13</value>
+  </data>
+  <data name="LabelIDE.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelIDE.Text" xml:space="preserve">
+    <value>Made with {0} and {1}</value>
+  </data>
+  <data name="LabelIDE.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelIDE.Name" xml:space="preserve">
+    <value>LabelIDE</value>
+  </data>
+  <data name="&gt;&gt;LabelIDE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelIDE.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelIDE.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -953,10 +968,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 589</value>
+    <value>584, 611</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 450</value>
+    <value>600, 650</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
