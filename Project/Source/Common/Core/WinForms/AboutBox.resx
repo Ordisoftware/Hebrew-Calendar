@@ -560,7 +560,7 @@
     <value>0, 0</value>
   </data>
   <data name="DataGridViewDependencies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 134</value>
+    <value>259, 134</value>
   </data>
   <data name="DataGridViewDependencies.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -632,7 +632,7 @@
     <value>0, 0</value>
   </data>
   <data name="DataGridViewMedias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 134</value>
+    <value>259, 134</value>
   </data>
   <data name="DataGridViewMedias.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -674,7 +674,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenFolderMedias.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 0</value>
+    <value>239, 0</value>
   </data>
   <data name="ActionOpenFolderMedias.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -719,7 +719,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOpenFolderDependencies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 0</value>
+    <value>239, 0</value>
   </data>
   <data name="ActionOpenFolderDependencies.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -752,7 +752,7 @@
     <value>0, 26</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 138</value>
+    <value>263, 138</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -776,7 +776,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 26</value>
+    <value>263, 26</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -800,7 +800,7 @@
     <value>3, 3</value>
   </data>
   <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 10, 0</value>
+    <value>0, 0, 6, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 164</value>
@@ -824,10 +824,10 @@
     <value>Fill</value>
   </data>
   <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 26</value>
+    <value>6, 26</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 138</value>
+    <value>263, 138</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -848,10 +848,10 @@
     <value>Top</value>
   </data>
   <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 0</value>
+    <value>6, 0</value>
   </data>
   <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 26</value>
+    <value>263, 26</value>
   </data>
   <data name="panel6.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -875,7 +875,7 @@
     <value>278, 3</value>
   </data>
   <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
+    <value>6, 0, 0, 0</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 164</value>
