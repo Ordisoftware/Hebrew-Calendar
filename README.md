@@ -10,13 +10,11 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6)](#)&nbsp;
 [![.Net](https://img.shields.io/badge/.NET-5C2D91)](#)&nbsp;
 [![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg)](#)&nbsp;
-[![C#](https://img.shields.io/badge/c%23-%23239120.svg)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg)](#)&nbsp;
+[![C#](https://img.shields.io/badge/C%23-%23239120.svg)](#)&nbsp;
+[![SQLite](https://img.shields.io/badge/SQlite-%2307405e.svg)](#)&nbsp;
 
-> Licensed under the terms of the [Mozilla Public License 2.0](LICENSE)<br/>
-> This project follows the [Manufacturing Software Guidelines](https://github.com/Ordisoftware/Guidelines).<br/>
-> [Website](https://www.ordisoftware.com/projects/hebrew-calendar)<br/>
-> [Twitter](https://twitter.com/ordisoftware)<br/>
+[![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
+[![Guidelines](https://img.shields.io/badge/-Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
 A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.
 
