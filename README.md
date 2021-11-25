@@ -330,6 +330,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.11.28 - Version 9.13
 
 - Improve about box to dynamically display the list of dependencies and media used.
+- Add show only log files having errors in trace form.
 - Few fixes and improvements.
 - Code refactoring.
 
