@@ -1,6 +1,6 @@
 # Hebrew Calendar
 
-[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](#)&nbsp;
+[![GitHub](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)]()&nbsp;
 [![GitHub all releases](https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total)](#)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
