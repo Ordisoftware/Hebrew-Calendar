@@ -53,7 +53,7 @@ static partial class DebugManager
   static DebugManager()
   {
     TraceEventMaxLength = Enum.GetNames(typeof(LogTraceEvent)).Max(v => v.Length);
-    TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize", "TraceFormTextBoxFontSize");
+    TraceForm = new TraceForm("TraceFormLocation", "TraceFormSize", "TraceFormTextBoxFontSize", "TraceFormShowOnlyErrors");
   }
 
   [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
@@ -86,7 +86,7 @@ static partial class DebugManager
     Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
   }
 
-  static private readonly Dictionary<LogTraceEvent, char> Signes = new()
+  static public readonly Dictionary<LogTraceEvent, char> Signs = new()
   {
     [LogTraceEvent.System] = ' ',
     [LogTraceEvent.Start] = '>',
@@ -100,6 +100,8 @@ static partial class DebugManager
     [LogTraceEvent.Exception] = '!'
   };
 
+  static public readonly string EventSeparator = "|";
+
   static public void Trace(LogTraceEvent traceEvent, string text = "")
   {
     if ( !_Enabled || !_TraceEnabled ) return;
@@ -109,7 +111,7 @@ static partial class DebugManager
       if ( traceEvent != LogTraceEvent.System )
       {
         string traceEventName = traceEvent.ToString().ToUpper().PadLeft(TraceEventMaxLength);
-        message += $"| {Signes[traceEvent]} | {traceEventName} | ";
+        message += $"{EventSeparator} {Signs[traceEvent]} {EventSeparator} {traceEventName} {EventSeparator} ";
       }
       if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
       message += text.Indent(CurrentMargin, Globals.SinkFileEventTemplateSize + CurrentMargin + message.Length);
@@ -127,20 +129,20 @@ static partial class DebugManager
   static private void WriteHeader()
   {
     string platform;
-    try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join(" | "); }
+    try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join($" {EventSeparator} "); }
     catch { platform = "Unknown platform"; }
     Trace(LogTraceEvent.Start, Globals.AssemblyTitle);
     Trace(LogTraceEvent.Start, Globals.ApplicationExeFullPath);
     Trace(LogTraceEvent.Start, platform);
     Trace(LogTraceEvent.Start, $"FreeMem: {SystemStatistics.Instance.PhysicalMemoryFree}" +
-                               $" | RAM: {SystemStatistics.Instance.TotalVisibleMemory}");
+                               $" {EventSeparator} RAM: {SystemStatistics.Instance.TotalVisibleMemory}");
   }
 
   static private void WriteFooter()
   {
     Trace(LogTraceEvent.Stop, Globals.AssemblyTitle + $" (Unleft: {EnterCount})");
     Trace(LogTraceEvent.Stop, $"GC: {SystemStatistics.Instance.MemoryGC}" +
-                              $" | Peak: {SystemStatistics.Instance.MemoryGCPeak}");
+                              $" {EventSeparator} Peak: {SystemStatistics.Instance.MemoryGCPeak}");
   }
 
   static public IEnumerable<string> GetTraceFiles(bool sortByDateOnly)

@@ -191,10 +191,10 @@
     <value>Hebrew Words : traducteur littéral mot-à-mot de la Bible</value>
   </data>
   <data name="ActionViewLog.Text" xml:space="preserve">
-    <value>Voir le log en cours</value>
+    <value>Fichiers log</value>
   </data>
   <data name="ActionViewStats.Text" xml:space="preserve">
-    <value>Statistiques d'utilisation</value>
+    <value>Statistiques d'usage</value>
   </data>
   <data name="ActionViewVersionNews.Text" xml:space="preserve">
     <value>Nouveautés</value>

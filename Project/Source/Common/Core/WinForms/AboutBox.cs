@@ -77,6 +77,7 @@ partial class AboutBox : Form
         row.Cells.Add(cell);
         cell.Value = Path.GetFileNameWithoutExtension(item);
         cell.Tag = url;
+        cell.ToolTipText = url;
         cell.LinkColor = Color.Navy;
         cell.VisitedLinkColor = Color.Navy;
         cell.ActiveLinkColor = Color.MediumBlue;

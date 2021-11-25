@@ -20,6 +20,8 @@ partial class TraceForm : Form
   private readonly string LocationPropertyName;
   private readonly string ClientSizePropertyName;
   private readonly string FontSizepropertyName;
+  private readonly string OnlyErrorsPropertyName;
+
 
   private TraceForm()
   {
@@ -27,17 +29,19 @@ partial class TraceForm : Form
     ActiveControl = TabControl;
   }
 
-  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName)
+  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName, string onlyErrorsPropertyName)
   : this()
   {
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
     FontSizepropertyName = fontSizepropertyName;
+    OnlyErrorsPropertyName = onlyErrorsPropertyName;
     try
     {
       Location = (Point)Globals.Settings[locationPropertyName];
       ClientSize = (Size)Globals.Settings[clientSizePropertyName];
       TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+      EditOnlyErrors.Checked = (bool)Globals.Settings[onlyErrorsPropertyName];
     }
     catch
     {
@@ -69,6 +73,7 @@ partial class TraceForm : Form
         Globals.Settings[LocationPropertyName] = Location;
         Globals.Settings[ClientSizePropertyName] = ClientSize;
         Globals.Settings[FontSizepropertyName] = TrackBarFontSize.Value;
+        Globals.Settings[OnlyErrorsPropertyName] = EditOnlyErrors.Checked;
         SystemManager.TryCatch(Globals.Settings.Save);
       }
       catch
@@ -142,9 +147,21 @@ partial class TraceForm : Form
     TextBoxPrevious.Clear();
     SelectFile.Items.Clear();
     foreach ( var file in DebugManager.GetTraceFiles(false) )
-      SelectFile.Items.Add(file);
+      if ( !EditOnlyErrors.Checked )
+        SelectFile.Items.Add(file);
+      else
+      {
+        var content = File.ReadAllText(file);
+        string str1 = $"{LogTraceEvent.Error} {DebugManager.EventSeparator}";
+        string str2 = $"{LogTraceEvent.Exception} {DebugManager.EventSeparator}";
+        if ( content.IndexOf(str1, StringComparison.OrdinalIgnoreCase) >= 0
+          || content.IndexOf(str2, StringComparison.OrdinalIgnoreCase) >= 0 )
+          SelectFile.Items.Add(file);
+      }
+    SelectFileNavigator.Refresh();
     SelectFile.Enabled = SelectFile.Items.Count > 0;
     ActionDeleteFile.Enabled = SelectFile.Enabled;
+    LabelFilesCount.Text = SysTranslations.TraceFilesCount.GetLang(SelectFile.Items.Count);
     if ( SelectFile.Enabled )
       SelectFile.SelectedIndex = SelectFile.Items.Count - 1;
   }

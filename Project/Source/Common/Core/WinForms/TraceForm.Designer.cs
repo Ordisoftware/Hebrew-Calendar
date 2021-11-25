@@ -42,8 +42,10 @@
       this.TabPagePrevious = new System.Windows.Forms.TabPage();
       this.TextBoxPrevious = new Ordisoftware.Core.RichTextBoxEx();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.comboBoxNavigator1 = new Ordisoftware.Core.ComboBoxNavigator();
+      this.EditOnlyErrors = new System.Windows.Forms.CheckBox();
+      this.SelectFileNavigator = new Ordisoftware.Core.ComboBoxNavigator();
       this.SelectFile = new System.Windows.Forms.ComboBox();
+      this.LabelFilesCount = new System.Windows.Forms.Label();
       this.ActionRefreshFiles = new System.Windows.Forms.Button();
       this.ActionDeleteFile = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
@@ -154,20 +156,31 @@
       // 
       // panel1
       // 
-      this.panel1.Controls.Add(this.comboBoxNavigator1);
+      this.panel1.Controls.Add(this.EditOnlyErrors);
+      this.panel1.Controls.Add(this.SelectFileNavigator);
+      this.panel1.Controls.Add(this.LabelFilesCount);
       this.panel1.Controls.Add(this.SelectFile);
       this.panel1.Controls.Add(this.ActionRefreshFiles);
       this.panel1.Controls.Add(this.ActionDeleteFile);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
-      // comboBoxNavigator1
+      // EditOnlyErrors
       // 
-      resources.ApplyResources(this.comboBoxNavigator1, "comboBoxNavigator1");
-      this.comboBoxNavigator1.ComboBox = this.SelectFile;
-      this.comboBoxNavigator1.Name = "comboBoxNavigator1";
-      this.comboBoxNavigator1.SelectedIndex = -1;
-      this.comboBoxNavigator1.SelectedItem = null;
+      resources.ApplyResources(this.EditOnlyErrors, "EditOnlyErrors");
+      this.EditOnlyErrors.Checked = true;
+      this.EditOnlyErrors.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditOnlyErrors.Name = "EditOnlyErrors";
+      this.EditOnlyErrors.UseVisualStyleBackColor = true;
+      this.EditOnlyErrors.CheckedChanged += new System.EventHandler(this.ActionRefreshFiles_Click);
+      // 
+      // SelectFileNavigator
+      // 
+      resources.ApplyResources(this.SelectFileNavigator, "SelectFileNavigator");
+      this.SelectFileNavigator.ComboBox = this.SelectFile;
+      this.SelectFileNavigator.Name = "SelectFileNavigator";
+      this.SelectFileNavigator.SelectedIndex = -1;
+      this.SelectFileNavigator.SelectedItem = null;
       // 
       // SelectFile
       // 
@@ -177,6 +190,11 @@
       this.SelectFile.Name = "SelectFile";
       this.SelectFile.SelectedIndexChanged += new System.EventHandler(this.SelectFile_SelectedIndexChanged);
       this.SelectFile.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectFile_Format);
+      // 
+      // LabelFilesCount
+      // 
+      resources.ApplyResources(this.LabelFilesCount, "LabelFilesCount");
+      this.LabelFilesCount.Name = "LabelFilesCount";
       // 
       // ActionRefreshFiles
       // 
@@ -239,6 +257,8 @@
     private System.Windows.Forms.ComboBox SelectFile;
     private System.Windows.Forms.Button ActionRefreshFiles;
     private System.Windows.Forms.Button ActionDeleteFile;
-    private ComboBoxNavigator comboBoxNavigator1;
+    private ComboBoxNavigator SelectFileNavigator;
+    private CheckBox EditOnlyErrors;
+    private Label LabelFilesCount;
   }
 }
