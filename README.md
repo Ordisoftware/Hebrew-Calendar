@@ -4,11 +4,11 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](#)&nbsp;<br/>
-[![Windows](https://img.shields.io/badge/Windows%207+-0078D6)](#)&nbsp;
-[![.Net](https://img.shields.io/badge/.NET%204.8-5C2D91)](#)&nbsp;
-[![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg)](#)&nbsp;
-[![C#](https://img.shields.io/badge/C%23%2010-%23239120.svg)](#)&nbsp;
-[![SQLite](https://img.shields.io/badge/SQlite%203.35-%2307405e.svg)](#)&nbsp;<br/>
+[![Windows](https://img.shields.io/badge/Windows%207%2B-0078D6?label=os)](#)&nbsp;
+[![.Net](https://img.shields.io/badge/.NET%204.8-5C2D91?label=framework)](#)&nbsp;
+[![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg?label=ide)](#)&nbsp;
+[![C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](#)&nbsp;
+[![SQLite](https://img.shields.io/badge/SQlite%203.35-%2307405e.svg?label=db)](#)&nbsp;<br/>
 [![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
