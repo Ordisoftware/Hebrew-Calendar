@@ -10,7 +10,7 @@
 [![C#](https://img.shields.io/badge/C%23%2010-%23239120.svg)](#)&nbsp;
 [![SQLite](https://img.shields.io/badge/SQlite%203.35-%2307405e.svg)](#)&nbsp;<br/>
 [![Ordisoftware.com](https://img.shields.io/badge/-Ordisoftware.com-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
-[![Guidelines](https://img.shields.io/badge/-Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
+[![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
 # Hebrew Calendar
 
