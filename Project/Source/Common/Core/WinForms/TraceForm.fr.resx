@@ -129,4 +129,7 @@
   <data name="TabPagePrevious.Text" xml:space="preserve">
     <value>Précédents</value>
   </data>
+  <data name="EditOnlyErrors.Text" xml:space="preserve">
+    <value>Seulement les erreurs</value>
+  </data>
 </root>

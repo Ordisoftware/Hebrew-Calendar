@@ -124,7 +124,7 @@
   <data name="dummyVersionNews.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
+        vwAADr8BOAVTJAAAAZZJREFUOE+VU1tSwkAQ5C4ewfv41kv4KFCK8hBqKY8ENUti+adi+c8ltAxGFAhQ
         IJAA7cxkI+WDUruqmd1hurfZkATj4vLSV44Dq1TC+Scqqcq2UXKcFxn+Ccqx8RtqtRospQwt+Qw+meG6
         j/CeqsKq6+L+/kH62UJB6rPnwbJtU8umiA2W0yY29s+EK+kiPK8q/bxhIAhDWXMS+rmWlkaIDer1V/jN
         hrBBa897ln6lUkHBNJHTSfhOtDRCbNDyG2i3mvCpNpt1MnyR/lfwvJZGiA2W9gyKbqLX7WDnuIxOu4Xt
@@ -169,7 +169,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionViewVersionNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewVersionNews.Text" xml:space="preserve">
     <value>What's new</value>
@@ -197,7 +197,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionReleaseNotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionReleaseNotes.Text" xml:space="preserve">
     <value>Release notes</value>
@@ -218,13 +218,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionReadme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionReadme.Text" xml:space="preserve">
     <value>Readme</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionCheckUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -248,13 +248,13 @@
     <value>Magenta</value>
   </data>
   <data name="ActionCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionCheckUpdate.Text" xml:space="preserve">
     <value>Check update</value>
   </data>
   <data name="Separator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionApplicationHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -318,7 +318,7 @@
   <data name="ActionSoftpedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAjRJREFUOE99ks1rE0EYxmd20uajLbG0qXoRNE2zmf1I0xpoFeyhRAR78NKb4Mne
+        vwAADr8BOAVTJAAAAjRJREFUOE99ks1rE0EYxmd20uajLbG0qXoRNE2zmf1I0xpoFeyhRAR78NKb4Mne
         FLI7u5ndbLoG8QM9WXrpRUHxpCCCd6v/QyGgvagHW01F1IuXcXYzTZom9gfPYdj3eWffZ16wD2MMJgpu
         FWHagJOkCdJmrzK0CTF5JSzdDGrWM6jVGchRLru/lBqTMHknLB0SM9WLUK0xIBMuU4gbDgvXGMwa74Wt
         QyJP14LuLSNhaMr4g1R7CynkQwRbXyJZ8jUiWzsR7O1G9coLYesQn6YPuhoo9s+RYm395IU7paWV5+Oi
@@ -342,7 +342,7 @@
   <data name="ActionAlternativeTo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAR9JREFUOE9jEChc9p8SjGEAf96i/5xRrf+Z3DL+M9jHgzGzZ+5/rrguFHUwjGEA
+        vwAADr8BOAVTJAAAAR9JREFUOE9jEChc9p8SjGEAf96i/5xRrf+Z3DL+M9jHgzGzZ+5/rrguFHUwjGEA
         e0jN/zmrtv5/+ebdfxi4++jp/9qJ88FyIAuQ1WMYALIRFwAZDHIdinpkDgiDbOmdt+p/REkH2LDs5in/
         v3z9DjYA5CqQ15DVYw1Ezqg2sEKQZnTvgAxFVovVBSD/ImtCBngN4EmZAnY6MgAFIF4XiOTM/Q/D7H4l
         /4+euQxV+h/sEhaP7P8Xr9+BikAMQNaDYgBIEgZANoM0s3oXUGYACIPYMIDXAHTFOw6eBGNkgNcAnuhW
@@ -363,7 +363,7 @@
     <value>None</value>
   </data>
   <data name="MenuApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuApplication.Text" xml:space="preserve">
     <value>Application</value>
@@ -482,7 +482,7 @@
   <data name="MenuAssistance.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAvxJREFUOE9dU2tIk1EYVryhc+q80EVFBS2lqMQUDSHCaq6c+MMu3lBS0cwLXoPM
+        vwAADr8BOAVTJAAAAvxJREFUOE9dU2tIk1EYVryhc+q80EVFBS2lqMQUDSHCaq6c+MMu3lBS0cwLXoPM
         6o8aYiEjLwSB+5X2K9R5Iw03r6ibW17SVFbhbZtlOLd9m/J0vs+7Dzy85z3P+z7n+w7nNaMhFAqxz2lz
         8yq5HWtrgmWPCRaLocLGRjvE47UdrWMaaewlQXf4/Li6/HyTJucJtjtagLFBYFACjPRjR/QZ61kZILox
         LjHxMV1/YEIv3ggElwW1tfit0WBzSgFTdRV0L8ugLX0GbdlzUJXl0I4M45dKA7quuqYm4phBfUGBUale
@@ -502,13 +502,13 @@
     <value>None</value>
   </data>
   <data name="MenuAssistance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuAssistance.Text" xml:space="preserve">
     <value>Assistance</value>
   </data>
   <data name="Separator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionAuthorHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -657,7 +657,7 @@
   <data name="MenuAuthor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAgFJREFUOE+tk19IU1Ecx/eWCCXrpUgYiPgShA6n5uZ2t2tTszsnoQhjdqfT7Gq3
+        vwAADr8BOAVTJAAAAgFJREFUOE+tk19IU1Ecx/eWCCXrpUgYiPgShA6n5uZ2t2tTszsnoQhjdqfT7Gq3
         LOhhsqdgMgq6tKe5GTHG9rDNVlBzijjBFzNSxD+QBBEMRoEPmQ+xl28715MwirmHPvDj3N/3+z2/e+Bw
         FP9iQq/snO6/iCcD1XBzF/IPGGUXtU5HaKlqnBVUmPc0452HgX9cA0F/CbYrVY00UppJ4/l8zHUZi0/N
         WHw2AP/ddoimOjjUyjyNlEZkzkFyqBAQW5CZuYO9t27MPOwCX38WNFKasaYKHGx4gVwYh9vPkVubxvLs
@@ -673,7 +673,7 @@
     <value>None</value>
   </data>
   <data name="MenuAuthor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuAuthor.Text" xml:space="preserve">
     <value>Author</value>
@@ -724,7 +724,7 @@
   <data name="ActionHebrewWords.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAL5JREFUOE/dk8ENwyAQBOkEyW9elOCXS6AAftRA1RRANCcvwkmIk29WWp19u3s+
+        vwAADr8BOAVTJAAAAL5JREFUOE/dk8ENwyAQBOkEyW9elOCXS6AAftRA1RRANCcvwkmIk29WWp19u3s+
         JOxASqnv+95ba90aH4AHL5lLo9baSym3A/DgHR+MMVoD5pytnt4XzB5I1m3bZuvoGCGE8f5MNK0Pydr5
         BVZi8gpoeASybwdQ9RVx1gT6ywF6Fn8asMLXA6j0Z86aQP8fj8BNoyogzppgA7hZAsbjOC7BmdIEsna/
         vfcmjh9kATQ8eMmQNYFV7sKChtj6zrkHF5d9S1Yr/wgAAAAASUVORK5CYII=
@@ -742,7 +742,7 @@
   <data name="MenuSoftware.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAoFJREFUOE+lk0lPU1EYhu8PMHFr4gKiJqAxYuPGOBDcuHXhEnGpJkoQBKNFcUQZ
+        vwAADr8BOAVTJAAAAoFJREFUOE+lk0lPU1EYhu8PMHFr4gKiJqAxYuPGOBDcuHXhEnGpJkoQBKNFcUQZ
         YohFAQEZ2oKAFgpClRkMWEqd0xQRtDK0TFZEBhWBx+/c6MLElZzkyU3OeZ/zvfcmV1v1MmR77VtNXsKy
         vKzLfMvEy0beu5sZ6BXkOSj4XrQy4m3Hk9rOh+vNrL8zSHhOP4acPru2Pc3F61nIHQD35AIsjsJ3/28C
         8HMcmCLpfAo++xC9t3oYSCzH0z9DRKYbLeJcE46hFa50fITP3RB0Cj2CC6afw+wbEoxXGR6b5FJGGg1J
@@ -760,13 +760,13 @@
     <value>None</value>
   </data>
   <data name="MenuSoftware.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="MenuSoftware.Text" xml:space="preserve">
     <value>Other software</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionViewLog.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -795,10 +795,10 @@
     <value>F10</value>
   </data>
   <data name="ActionViewLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewLog.Text" xml:space="preserve">
-    <value>View current log</value>
+    <value>Log files</value>
   </data>
   <data name="ActionViewStats.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -831,13 +831,13 @@
     <value>F11</value>
   </data>
   <data name="ActionViewStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewStats.Text" xml:space="preserve">
     <value>Usage statistics</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -863,7 +863,7 @@
     <value>F12</value>
   </data>
   <data name="ActionAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionAbout.Text" xml:space="preserve">
     <value>About</value>

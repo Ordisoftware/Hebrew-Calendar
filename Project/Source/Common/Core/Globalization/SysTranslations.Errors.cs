@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -43,6 +43,12 @@ static partial class SysTranslations
   {
     [Language.EN] = "{0} lines",
     [Language.FR] = "{0} lignes"
+  };
+
+  static public readonly TranslationsDictionary TraceFilesCount = new()
+  {
+    [Language.EN] = "{0} files",
+    [Language.FR] = "{0} fichiers"
   };
 
   static public readonly TranslationsDictionary GitHubIssueComment = new()

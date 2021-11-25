@@ -2695,5 +2695,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["MainFormTitleBarShowCelebration"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TraceFormShowOnlyErrors {
+            get {
+                return ((bool)(this["TraceFormShowOnlyErrors"]));
+            }
+            set {
+                this["TraceFormShowOnlyErrors"] = value;
+            }
+        }
     }
 }
