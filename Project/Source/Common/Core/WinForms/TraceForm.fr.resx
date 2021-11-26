@@ -130,6 +130,6 @@
     <value>Précédents</value>
   </data>
   <data name="EditOnlyErrors.Text" xml:space="preserve">
-    <value>Seulement les erreurs</value>
+    <value>Seulement avec erreurs</value>
   </data>
 </root>
