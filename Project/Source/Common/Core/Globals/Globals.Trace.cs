@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -43,6 +43,8 @@ static partial class Globals
   static public int SinkFileEventTemplateSize { get; set; }
     = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
+  static internal readonly string OldTraceDirectoryName = "Logs";
+
   static public string TraceDirectoryName { get; set; }
     = "Serilog";
 
@@ -70,6 +72,20 @@ static partial class Globals
   static public string OldTraceFolderPath
     => Path.Combine(UserDataFolderPath, OldTraceDirectoryName);
 
-  public const string OldTraceDirectoryName = "Logs";
+  static public readonly Dictionary<LogTraceEvent, char> TraceSigns = new()
+  {
+    [LogTraceEvent.System] = ' ',
+    [LogTraceEvent.Start] = '>',
+    [LogTraceEvent.Stop] = '.',
+    [LogTraceEvent.Enter] = '+',
+    [LogTraceEvent.Leave] = '-',
+    [LogTraceEvent.Completed] = ':',
+    [LogTraceEvent.Message] = '#',
+    [LogTraceEvent.Data] = '*',
+    [LogTraceEvent.Error] = '!',
+    [LogTraceEvent.Exception] = '!'
+  };
+
+
 
 }

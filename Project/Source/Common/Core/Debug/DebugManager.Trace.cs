@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 using Serilog;
@@ -86,20 +86,6 @@ static partial class DebugManager
     Trace(LogTraceEvent.Leave, ExceptionInfo.GetCallerName(EnterCountSkip + StackSkip));
   }
 
-  static public readonly Dictionary<LogTraceEvent, char> Signs = new()
-  {
-    [LogTraceEvent.System] = ' ',
-    [LogTraceEvent.Start] = '>',
-    [LogTraceEvent.Stop] = '.',
-    [LogTraceEvent.Enter] = '+',
-    [LogTraceEvent.Leave] = '-',
-    [LogTraceEvent.Complete] = ':',
-    [LogTraceEvent.Message] = '#',
-    [LogTraceEvent.Data] = '*',
-    [LogTraceEvent.Error] = '!',
-    [LogTraceEvent.Exception] = '!'
-  };
-
   static public readonly string EventSeparator = "|";
 
   static public void Trace(LogTraceEvent traceEvent, string text = "")
@@ -111,7 +97,7 @@ static partial class DebugManager
       if ( traceEvent != LogTraceEvent.System )
       {
         string traceEventName = traceEvent.ToString().ToUpper().PadLeft(TraceEventMaxLength);
-        message += $"{EventSeparator} {Signs[traceEvent]} {EventSeparator} {traceEventName} {EventSeparator} ";
+        message += $"{EventSeparator} {Globals.TraceSigns[traceEvent]} {EventSeparator} {traceEventName} {EventSeparator} ";
       }
       if ( traceEvent == LogTraceEvent.Leave ) CurrentMargin -= MarginSize;
       message += text.Indent(CurrentMargin, Globals.SinkFileEventTemplateSize + CurrentMargin + message.Length);
@@ -190,7 +176,7 @@ static partial class DebugManager
         if ( !norestart && isEnabled )
         {
           Start();
-          if ( all ) Trace(LogTraceEvent.Complete, $"{nameof(DebugManager)}.{nameof(ClearTraces)}(all)");
+          if ( all ) Trace(LogTraceEvent.Completed, $"{nameof(DebugManager)}.{nameof(ClearTraces)}(all)");
         }
       }
     }
