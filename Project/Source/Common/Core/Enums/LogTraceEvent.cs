@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -46,9 +46,9 @@ public enum LogTraceEvent
   Leave,
 
   /// <summary>
-  /// Finished method event.
+  /// Finished processing event.
   /// </summary>
-  Complete,
+  Completed,
 
   /// <summary>
   /// Message event.

@@ -128,7 +128,7 @@
   <data name="ActionOpenLogsFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
+        vQAADr0BR/uQrQAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
         Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
         irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
         kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
@@ -231,7 +231,7 @@
   <data name="ActionClearLogs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
+        vQAADr0BR/uQrQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
         c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
         2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
         Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi
@@ -349,59 +349,32 @@
   <data name="TabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>Buttons</value>
   </data>
-  <data name="&gt;&gt;TabPageCurrent.Name" xml:space="preserve">
-    <value>TabPageCurrent</value>
-  </data>
-  <data name="&gt;&gt;TabPageCurrent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageCurrent.Parent" xml:space="preserve">
-    <value>TabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPageCurrent.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Name" xml:space="preserve">
-    <value>TabPagePrevious</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Parent" xml:space="preserve">
-    <value>TabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TextBoxCurrent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+  <data name="TextBoxCurrent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
   </data>
-  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 603</value>
+  <data name="TextBoxCurrent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+  <data name="TextBoxCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>856, 574</value>
   </data>
-  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
-    <value>TabControl</value>
-  </data>
-  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
+  <data name="TextBoxCurrent.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="TextBoxCurrent.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBoxCurrent.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Name" xml:space="preserve">
     <value>TextBoxCurrent</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Parent" xml:space="preserve">
     <value>TabPageCurrent</value>
@@ -433,87 +406,6 @@
   <data name="&gt;&gt;TabPageCurrent.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TextBoxCurrent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TextBoxCurrent.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8.25pt</value>
-  </data>
-  <data name="TextBoxCurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TextBoxCurrent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>856, 574</value>
-  </data>
-  <data name="TextBoxCurrent.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TextBoxCurrent.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TextBoxCurrent.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;TextBoxCurrent.Name" xml:space="preserve">
-    <value>TextBoxCurrent</value>
-  </data>
-  <data name="&gt;&gt;TextBoxCurrent.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TextBoxCurrent.Parent" xml:space="preserve">
-    <value>TabPageCurrent</value>
-  </data>
-  <data name="&gt;&gt;TextBoxCurrent.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TextBoxPrevious.Name" xml:space="preserve">
-    <value>TextBoxPrevious</value>
-  </data>
-  <data name="&gt;&gt;TextBoxPrevious.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TextBoxPrevious.Parent" xml:space="preserve">
-    <value>TabPagePrevious</value>
-  </data>
-  <data name="&gt;&gt;TextBoxPrevious.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>TabPagePrevious</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TabPagePrevious.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="TabPagePrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>856, 574</value>
-  </data>
-  <data name="TabPagePrevious.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TabPagePrevious.Text" xml:space="preserve">
-    <value>Previous</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Name" xml:space="preserve">
-    <value>TabPagePrevious</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.Parent" xml:space="preserve">
-    <value>TabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPagePrevious.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="TextBoxPrevious.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -539,97 +431,13 @@
     <value>TextBoxPrevious</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Parent" xml:space="preserve">
     <value>TabPagePrevious</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditOnlyErrors.Name" xml:space="preserve">
-    <value>EditOnlyErrors</value>
-  </data>
-  <data name="&gt;&gt;EditOnlyErrors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditOnlyErrors.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;EditOnlyErrors.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SelectFileNavigator.Name" xml:space="preserve">
-    <value>SelectFileNavigator</value>
-  </data>
-  <data name="&gt;&gt;SelectFileNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;SelectFileNavigator.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;SelectFileNavigator.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelFilesCount.Name" xml:space="preserve">
-    <value>LabelFilesCount</value>
-  </data>
-  <data name="&gt;&gt;LabelFilesCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelFilesCount.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;LabelFilesCount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionRefreshFiles.Name" xml:space="preserve">
-    <value>ActionRefreshFiles</value>
-  </data>
-  <data name="&gt;&gt;ActionRefreshFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRefreshFiles.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ActionRefreshFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ActionDeleteFile.Name" xml:space="preserve">
-    <value>ActionDeleteFile</value>
-  </data>
-  <data name="&gt;&gt;ActionDeleteFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionDeleteFile.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ActionDeleteFile.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>856, 36</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>TabPagePrevious</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="EditOnlyErrors.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -641,16 +449,16 @@
     <value>MiddleRight</value>
   </data>
   <data name="EditOnlyErrors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>777, 10</value>
+    <value>755, 10</value>
   </data>
   <data name="EditOnlyErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="EditOnlyErrors.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="EditOnlyErrors.Text" xml:space="preserve">
-    <value>Only errors</value>
+    <value>Only with errors</value>
   </data>
   <data name="&gt;&gt;EditOnlyErrors.Name" xml:space="preserve">
     <value>EditOnlyErrors</value>
@@ -704,7 +512,7 @@
     <value>SelectFileNavigator</value>
   </data>
   <data name="&gt;&gt;SelectFileNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Letters, Version=6.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectFileNavigator.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -748,7 +556,7 @@
   <data name="ActionRefreshFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAgZJREFUOE+dUs1LlGEQn8Wgk4GbdVgpQq+Fh0XwJqjr+m7apbJo1RQvdfJQhw55
+        vQAADr0BR/uQrQAAAgZJREFUOE+dUs1LlGEQn8Wgk4GbdVgpQq+Fh0XwJqjr+m7apbJo1RQvdfJQhw55
         sNjcr0SR0l2NtBTfffGDDokfIOiaqZm0rrLCfhzCjkH9Bb9m9n3Xb8v8wfDMzDO/3zwzPHQSXPfRT8VH
         MML/R2NvATa/D6Cs7QQidi+pFR5CuZuNCXb22z8Sxpby8CXVg9K/iSg+E/rmK7GYqMVSyonPqXtYTDoR
         jtciECZoqxfYd6HSe4SIwkntWxE+xK5gOJqN4Y1sqGziD0bOIbhCCEXPYyb26LBAtT/r1YtpC9T4Wbhm
@@ -790,7 +598,7 @@
   <data name="ActionDeleteFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
+        vQAADr0BR/uQrQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
         c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
         2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
         Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi
@@ -826,6 +634,78 @@
   </data>
   <data name="&gt;&gt;ActionDeleteFile.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>856, 36</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>TabPagePrevious</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabPagePrevious.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="TabPagePrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>856, 574</value>
+  </data>
+  <data name="TabPagePrevious.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TabPagePrevious.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="&gt;&gt;TabPagePrevious.Name" xml:space="preserve">
+    <value>TabPagePrevious</value>
+  </data>
+  <data name="&gt;&gt;TabPagePrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPagePrevious.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabPagePrevious.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 603</value>
+  </data>
+  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
