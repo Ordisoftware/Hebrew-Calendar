@@ -1,15 +1,15 @@
-[![License](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
+[![License MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total)](#)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](#)&nbsp;<br/>
-[![Windows](https://img.shields.io/badge/Windows%207%2B-0078D6?label=os)](https://www.microsoft.com/windows/)&nbsp;
-[![UI](https://img.shields.io/badge/WinForms-0078D6?label=ui)](https://github.com/dotnet/winforms)&nbsp;
-[![.Net](https://img.shields.io/badge/.NET%204.8-5C2D91?label=framework)](https://dotnet.microsoft.com)&nbsp;
-[![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
-[![C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![SQLite](https://img.shields.io/badge/SQLite%203.35-gold.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-0078D6?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![UI: WinForms](https://img.shields.io/badge/WinForms-0078D6?label=ui)](https://github.com/dotnet/winforms)&nbsp;
+[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-5C2D91?label=framework)](https://dotnet.microsoft.com)&nbsp;
+[![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
+[![Lang: C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.35-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 

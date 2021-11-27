@@ -68,6 +68,7 @@
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGitHub = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -251,7 +252,8 @@
             this.ActionTwitter,
             this.ActionYouTube,
             this.SeparatorAuthor2,
-            this.ActionLinkedIn});
+            this.ActionLinkedIn,
+            this.ActionGitHub});
       resources.ApplyResources(this.MenuAuthor, "MenuAuthor");
       this.MenuAuthor.Name = "MenuAuthor";
       // 
@@ -361,6 +363,14 @@
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
       // 
+      // ActionGitHub
+      // 
+      this.ActionGitHub.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionGitHub, "ActionGitHub");
+      this.ActionGitHub.Name = "ActionGitHub";
+      this.ActionGitHub.Tag = "https://github.com/Ordisoftware";
+      this.ActionGitHub.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // CommonMenusControl
       // 
       resources.ApplyResources(this, "$this");
@@ -415,5 +425,6 @@
     private System.Windows.Forms.ToolStripMenuItem dummyVersionNews;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     public System.Windows.Forms.ToolStripMenuItem ActionHelp;
+    public ToolStripMenuItem ActionGitHub;
   }
 }
