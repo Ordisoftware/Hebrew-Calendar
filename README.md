@@ -4,10 +4,10 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](#)&nbsp;<br/>
-[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-0078D6?label=os)](https://www.microsoft.com/windows/)&nbsp;
-[![UI: WinForms](https://img.shields.io/badge/WinForms-0078D6?label=ui)](https://github.com/dotnet/winforms)&nbsp;
-[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-5C2D91?label=framework)](https://dotnet.microsoft.com)&nbsp;
-[![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
+[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
+[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
+[![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
 [![Lang: C#](https://img.shields.io/badge/C%23%2010-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
 [![DB: SQLite](https://img.shields.io/badge/SQLite%203.35-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
