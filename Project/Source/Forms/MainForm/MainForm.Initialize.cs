@@ -36,8 +36,9 @@ partial class MainForm
   /// </summary>
   private void DoConstructor()
   {
-    new Task(InitializeIconsAndSound).Start();
     Interlocks.Take();
+    new Task(SelectCityForm.Preload).Start();
+    new Task(InitializeIconsAndSound).Start();
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ContextMenuStripDay.ImageList = ImageListRisesAndSets;
