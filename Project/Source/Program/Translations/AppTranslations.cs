@@ -119,8 +119,8 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary WorldCitiesUpdated = new()
   {
-    [Language.EN] = $"The World Cities Database has been updated.{Globals.NL2}Please check the GPS.",
-    [Language.FR] = $"La base de données des villes du monde a été mise à jour.{Globals.NL2}Vérifiez le GPS, SVP."
+    [Language.EN] = $"The World Cities Database has been updated.{Globals.NL2}Please re-validate the city.",
+    [Language.FR] = $"La base de données des villes du monde a été mise à jour.{Globals.NL2}Veuillez à nouveau valider la ville."
   };
 
   static public readonly TranslationsDictionary DateNotFound = new()
