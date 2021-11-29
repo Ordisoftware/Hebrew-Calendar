@@ -340,6 +340,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.11.30 - Version 9.14
 
 - Update WorldCities DB to the latest version (41,000 instead of 13,000 and some corrections).
+- Improve loading cities to be done in background at the startup.
 
 #### 2021.11.25 - Version 9.13
 
