@@ -337,6 +337,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add `--lunarmonths` command-line option to show the lunar months board.
 
+#### 2021.11.30 - Version 9.14
+
+- Update of the WorldCities CSV database to the latest version to have 41,000 instead of 13,000 with GPS corrections.
+
 #### 2021.11.25 - Version 9.13
 
 - Improve about box to dynamically display the list of dependencies and media used.
