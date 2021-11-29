@@ -23,6 +23,12 @@ partial class SelectCityForm : Form
 
   static SelectCityForm()
   {
+    Preload();
+  }
+
+  static public void Preload()
+  {
+    if ( GPS.Count > 0 ) return;
     try
     {
       string filePath = Program.GPSFilePath;
@@ -42,9 +48,7 @@ partial class SelectCityForm : Form
       if ( GPS.Keys.Count == 0 )
       {
         string msg = $"{nameof(SelectCityForm)}.{nameof(GPS)} = {SysTranslations.UndefinedSlot.GetLang()}";
-#pragma warning disable S3877 // Exceptions should not be thrown from unexpected methods
         throw new NullReferenceException(msg);
-#pragma warning restore S3877 // Exceptions should not be thrown from unexpected methods
       }
     }
     catch ( Exception ex )
