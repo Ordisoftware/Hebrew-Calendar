@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -178,6 +178,7 @@ static class SettingsHelper
     settings.FirstLaunch = false;
     settings.FirstLaunchV4 = false;
     settings.FirstLaunchV7_0 = false;
+    settings.FirstLaunchV9_14 = false;
   }
 
   /// <summary>

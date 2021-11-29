@@ -2707,5 +2707,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["TraceFormShowOnlyErrors"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV9_14 {
+            get {
+                return ((bool)(this["FirstLaunchV9_14"]));
+            }
+            set {
+                this["FirstLaunchV9_14"] = value;
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -20,7 +20,7 @@ partial class MainForm
   /// <summary>
   /// Checks if the calendar must be generated again in it comes near the end.
   /// </summary>
-  private string CheckRegenerateCalendar(bool auto = false, bool force = false, bool checkover = false)
+  private string CheckRegenerateCalendar(bool auto = false, bool force = false, bool checkover = false, bool keepYears = false)
   {
     try
     {
@@ -36,11 +36,16 @@ partial class MainForm
       if ( force || DateTime.Today.Year >= YearLast - Program.GenerateIntervalPreviousYears )
         if ( force || auto || Settings.AutoRegenerate )
         {
-          var interval = new YearsIntervalItem(Settings.AutoGenerateYearsInternal);
-          int year = DateTime.Today.Year - Program.GenerateIntervalPreviousYears;
-          int yearFirst = year - interval.YearsBefore;
-          int yearLast = year + interval.YearsAfter - 1;
-          return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
+          if ( keepYears )
+            return DoGenerate(new Tuple<int, int>(YearFirst, YearLast), EventArgs.Empty);
+          else
+          {
+            var interval = new YearsIntervalItem(Settings.AutoGenerateYearsInternal);
+            int year = DateTime.Today.Year - Program.GenerateIntervalPreviousYears;
+            int yearFirst = year - interval.YearsBefore;
+            int yearLast = year + interval.YearsAfter - 1;
+            return DoGenerate(new Tuple<int, int>(yearFirst, yearLast), EventArgs.Empty);
+          }
         }
         else
           ActionGenerate_Click(ActionGenerate, null);

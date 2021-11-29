@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -27,9 +27,13 @@ partial class MainForm
       LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
       LoadDataInit();
       if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
+      {
         LoadDataFill();
+        if ( Settings.FirstLaunchV9_14 )
+          LoadDataGenerate(true);
+      }
       else
-        LoadDataGenerate();
+        LoadDataGenerate(false);
     }
     catch ( Exception ex )
     {
@@ -87,11 +91,11 @@ partial class MainForm
       CalendarText.Text = GenerateReportText();
   }
 
-  private void LoadDataGenerate()
+  private void LoadDataGenerate(bool keepYears)
   {
     Globals.ChronoStartingApp.Stop();
     PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
-    string errors = CheckRegenerateCalendar(true);
+    string errors = CheckRegenerateCalendar(true, force: keepYears, keepYears: keepYears);
     Globals.ChronoStartingApp.Start();
     if ( errors != null )
     {

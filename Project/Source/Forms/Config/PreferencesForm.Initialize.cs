@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Text;
@@ -83,13 +83,21 @@ partial class PreferencesForm
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
         ActionUsePersonalShabat_LinkClicked(null, null);
     }
-    if ( changed || Settings.FirstLaunchV7_0 )
+    if ( changed || Settings.FirstLaunchV7_0 || Settings.FirstLaunchV9_14 )
     {
       changed = true;
-      MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-      DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
-                                () => EditUseSimhatTorahOutside.Checked = false,
-                                () => EditUseSimhatTorahOutside.Checked = true);
+      if ( Settings.FirstLaunchV7_0 )
+      {
+        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+                                  () => EditUseSimhatTorahOutside.Checked = false,
+                                  () => EditUseSimhatTorahOutside.Checked = true);
+      }
+      if ( !Settings.FirstLaunch && Settings.FirstLaunchV9_14 )
+      {
+        DisplayManager.Show(AppTranslations.WorldCitiesUpdated.GetLang());
+        ActionGetGPS_LinkClicked(null, null);
+      }
     }
     if ( changed )
     {

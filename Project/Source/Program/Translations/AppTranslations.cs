@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -115,6 +115,12 @@ static partial class AppTranslations
   {
     [Language.EN] = "Do you want to use the last day of Sukot for Sim'hat Torah, otherwise outside?",
     [Language.FR] = "Voulez-vous utiliser le dernier jour de Soukot pour Sim'hat Torah, sinon en dehors ?"
+  };
+
+  static public readonly TranslationsDictionary WorldCitiesUpdated = new()
+  {
+    [Language.EN] = $"The World Cities Database has been updated.{Globals.NL2}Please check the GPS.",
+    [Language.FR] = $"La base de données des villes du monde a été mise à jour.{Globals.NL2}Vérifiez le GPS, SVP."
   };
 
   static public readonly TranslationsDictionary DateNotFound = new()
