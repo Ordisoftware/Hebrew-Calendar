@@ -71,7 +71,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 9.x**
+**What's new in the latest version 9**
 
 - Added mouse hover effect in monthly view.
 - Added context menu for days in monthly view.
