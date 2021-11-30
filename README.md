@@ -19,16 +19,16 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Table of content
 
-1. [Functionalities](#Functionalities)
-2. [Review](#Review)
-3. [Requirements](#Requirements)
-4. [Download](#Download)
-5. [Screenshots](#Screenshots)
-6. [Videos](#Videos)
-7. [Frequently asked questions](#Frequently-asked-questions)
-8. [Keyboard shortcuts](#Keyboard-shortcuts)
-9. [Future improvements](#Future-improvements)
-10. [Changelog](#Changelog)
+1. [Functionalities](#functionalities)
+2. [Review](#review)
+3. [Requirements](#requirements)
+4. [Download](#download)
+5. [Screenshots](#screenshots)
+6. [Videos](#videos)
+7. [Frequently asked questions](#frequently-asked-questions)
+8. [Keyboard shortcuts](#keyboard-shortcuts)
+9. [Future improvements](#future-improvements)
+10. [Changelog](#changelog)
 
 ## Functionalities
 
