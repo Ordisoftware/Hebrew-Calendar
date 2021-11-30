@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Core;
 
 partial class TraceForm : Form
@@ -36,16 +36,17 @@ partial class TraceForm : Form
     ClientSizePropertyName = clientSizePropertyName;
     FontSizepropertyName = fontSizepropertyName;
     OnlyErrorsPropertyName = onlyErrorsPropertyName;
-    try
-    {
-      Location = (Point)Globals.Settings[locationPropertyName];
-      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-      TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
-      EditOnlyErrors.Checked = (bool)Globals.Settings[onlyErrorsPropertyName];
-    }
-    catch
-    {
-    }
+    if ( Globals.Settings != null )
+      try
+      {
+        Location = (Point)Globals.Settings[locationPropertyName];
+        ClientSize = (Size)Globals.Settings[clientSizePropertyName];
+        TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+        EditOnlyErrors.Checked = (bool)Globals.Settings[onlyErrorsPropertyName];
+      }
+      catch
+      {
+      }
   }
 
   private void LogForm_Load(object sender, EventArgs e)
