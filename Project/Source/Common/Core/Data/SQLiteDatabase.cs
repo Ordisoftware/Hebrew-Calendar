@@ -11,13 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
 
-public delegate void LoadingDataEventHandler(Type type);
-public delegate void DataLoadedEventHandler();
+public delegate void LoadingDataEventHandler(string caption);
+public delegate void DataLoadedEventHandler(string caption);
 
 /// <summary>
 /// Provide SQLite database wrapper.
@@ -33,7 +33,7 @@ abstract class SQLiteDatabase
 
   public bool Initialized { get; private set; }
 
-  public bool ClearListsOnCloseAndRelease { get; set; }
+  public bool ClearListsOnCloseOrRelease { get; set; }
 
   public SQLiteNetORM Connection
   {
@@ -48,6 +48,16 @@ abstract class SQLiteDatabase
   public event LoadingDataEventHandler LoadingData;
 
   public event DataLoadedEventHandler DataLoaded;
+
+  protected virtual void OnLoadingData(string caption)
+  {
+    LoadingData?.Invoke(caption);
+  }
+
+  protected virtual void OnDataLoaded(string caption)
+  {
+    DataLoaded?.Invoke(caption);
+  }
 
   protected SQLiteDatabase(string connectionString)
   {
@@ -108,9 +118,10 @@ abstract class SQLiteDatabase
   protected List<T> Load<T>(TableQuery<T> query)
   {
     CheckConnected();
-    LoadingData?.Invoke(typeof(T));
+    var caption = typeof(T).Name;
+    OnLoadingData(caption);
     var result = query.ToList();
-    DataLoaded?.Invoke();
+    OnDataLoaded(caption);
     return result;
   }
 

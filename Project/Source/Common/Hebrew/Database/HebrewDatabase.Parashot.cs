@@ -49,7 +49,7 @@ partial class HebrewDatabase : SQLiteDatabase
   {
     if ( Parashot == null ) return;
     Interlocks.Release(ParashotTableName);
-    if ( ClearListsOnCloseAndRelease ) Parashot.Clear();
+    if ( ClearListsOnCloseOrRelease ) Parashot.Clear();
     Parashot = null;
   }
 
