@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 partial class LoadingForm : Form
@@ -86,9 +86,10 @@ partial class LoadingForm : Form
     Application.DoEvents();
   }
 
-  public void DoProgress(int index = -1)
+  public void DoProgress(int index = -1, string operation = null)
   {
     bool process = true;
+    bool refresh = false;
     if ( UseQuanta )
     {
       CurrentQuanta++;
@@ -97,6 +98,11 @@ partial class LoadingForm : Form
       else
         process = false;
     }
+    if ( !operation.IsNullOrEmpty() )
+    {
+      LabelOperation.Text = operation;
+      refresh = true;
+    }
     if ( process )
     {
       if ( index == -1 )
@@ -104,11 +110,11 @@ partial class LoadingForm : Form
       else
         ProgressBar.Value = index;
       if ( LabelCount.Visible ) LabelCount.Text = $"{ProgressBar.Value}/{ProgressBar.Maximum}";
-      ProgressBar.Refresh();
-      Refresh();
+      refresh = true;
       BringToFront();
     }
-    SystemManager.TryCatchManage(() => Progressing?.Invoke());
+    if ( refresh ) Refresh();
+    if ( Progressing != null ) SystemManager.TryCatchManage(() => Progressing.Invoke());
     if ( ActionCancel.Visible ) Application.DoEvents();
   }
 
