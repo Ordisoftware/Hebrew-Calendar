@@ -36,8 +36,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     base.Open();
     if ( Program.Settings.VacuumAtStartup )
     {
-      var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone,
-                                        Program.Settings.VacuumAtStartupDaysInterval);
+      var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone, Program.Settings.VacuumAtStartupDaysInterval);
       if ( Program.Settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
@@ -64,7 +63,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     LunisolarDays = Connection.Table<LunisolarDay>().ToList();
   }
 
-  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
+  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "Not used")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
