@@ -1,0 +1,2 @@
+Issuer => CN=DigiCert SHA2 High Assurance Server CA, OU=www.digicert.com, O=DigiCert Inc, C=US
+Subject => CN=www.github.com, O="GitHub, Inc.", L=San Francisco, S=California, C=US

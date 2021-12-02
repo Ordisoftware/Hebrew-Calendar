@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -69,9 +69,9 @@ static partial class StringHelper
   /// A string[].
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  static public string[] SplitNoEmptyLines(this string str)
+  static public string[] SplitNoEmptyLines(this string str, bool isUnix = false)
   {
-    return str.Split(Globals.NL, StringSplitOptions.RemoveEmptyEntries);
+    return str.Split(isUnix ? "\n" : Globals.NL, StringSplitOptions.RemoveEmptyEntries);
   }
 
   /// <summary>

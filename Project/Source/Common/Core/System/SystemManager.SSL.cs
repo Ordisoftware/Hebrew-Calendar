@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -23,9 +23,14 @@ static partial class SystemManager
   /// <summary>
   /// Checks the validity of the remote website SSL certificate.
   /// </summary>
-  static public void CheckServerCertificate(string url)
+  static public void CheckServerCertificate(string url, bool useGitHib, bool isGitHubContent)
   {
     var uri = new Uri(url);
+    var certificate = useGitHib
+                      ? isGitHubContent
+                        ? GitHubUserContentSSLCertificate
+                        : GitHubSSLCertificate
+                      : AuthorWebsiteSSLCertificate;
     uri = new UriBuilder(uri.Scheme, uri.Host).Uri;
     string id = Guid.NewGuid().ToString();
     var point = ServicePointManager.FindServicePoint(uri);
@@ -34,12 +39,12 @@ static partial class SystemManager
     request.Timeout = WebClientEx.DefaultTimeOutSeconds * 1000;
     using ( var response = request.GetResponse() ) { }
     point.CloseConnectionGroup(id);
-    if ( AuthorWebsiteSSLCertificate["Issuer"] != point.Certificate.Issuer
-      || AuthorWebsiteSSLCertificate["Subject"] != point.Certificate.Subject
-      /*|| AuthorWebsiteSSLCertificate["Serial"] != point.Certificate.GetSerialNumberString()
-      || AuthorWebsiteSSLCertificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
+    if ( certificate["Issuer"] != point.Certificate.Issuer
+      || certificate["Subject"] != point.Certificate.Subject
+      /*|| certificate["Serial"] != point.Certificate.GetSerialNumberString()
+      || certificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
     {
-      string str1 = AuthorWebsiteSSLCertificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
+      string str1 = certificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
       string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
                     "Subject = " + point.Certificate.Subject/* + Globals.NL +
                       "Serial = " + point.Certificate.GetSerialNumberString() + Globals.NL +
@@ -63,6 +68,16 @@ static partial class SystemManager
   static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
 
   /// <summary>
+  /// Indicates the GitHub website SSL certificate information.
+  /// </summary>
+  static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = new();
+
+  /// <summary>
+  /// Indicates the GitHub user content website SSL certificate information.
+  /// </summary>
+  static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = new();
+
+  /// <summary>
   /// Loads the SSL certificate.
   /// </summary>
   static public void LoadSSLCertificate()
@@ -70,6 +85,10 @@ static partial class SystemManager
     if ( Globals.IsVisualStudioDesigner ) return;
     if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
       AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
+    if ( File.Exists(Globals.GitHubSSLFilePath) )
+      GitHubSSLCertificate.LoadKeyValuePairs(Globals.GitHubSSLFilePath, "=>");
+    if ( File.Exists(Globals.GitHubUserContentSSLFilePath) )
+      GitHubUserContentSSLCertificate.LoadKeyValuePairs(Globals.GitHubUserContentSSLFilePath, "=>");
   }
 
 }
