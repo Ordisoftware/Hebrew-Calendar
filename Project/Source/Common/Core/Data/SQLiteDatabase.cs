@@ -41,10 +41,16 @@ abstract class SQLiteDatabase
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 
+  public event Action<SQLiteDatabase, object> Modified;
+  public event Action<SQLiteDatabase> Saved;
+
   public void AddToModified(object instance)
   {
     if ( Loaded && !ModifiedObjects.Contains(instance) )
+    {
       ModifiedObjects.Add(instance);
+      Modified?.Invoke(this, instance);
+    }
   }
 
   public SQLiteNetORM Connection
@@ -176,6 +182,7 @@ abstract class SQLiteDatabase
     if ( !useTransaction )
     {
       DoSaveAll();
+      Saved?.Invoke(this);
       return;
     }
     BeginTransaction();
@@ -183,6 +190,7 @@ abstract class SQLiteDatabase
     {
       DoSaveAll();
       Connection.Commit();
+      Saved?.Invoke(this);
     }
     catch
     {
