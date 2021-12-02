@@ -22,11 +22,34 @@ public partial class MainForm
 {
 
   private bool DoScreenPositionMutex;
+  private bool UpdateTitlesMutex;
+
 
   private string TitleGPS = "";
   private string TitleOmer = "";
   private string TitleParashah = "";
   private string TitleCelebration = "";
+
+  /// <summary>
+  /// Enables double-buffering.
+  /// </summary>
+  protected override CreateParams CreateParams
+  {
+    get
+    {
+      var cp = base.CreateParams;
+      if ( Settings.WindowsDoubleBufferingEnabled )
+        switch ( Settings.CurrentView )
+        {
+          case ViewMode.Text:
+          case ViewMode.Month:
+            cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
+            //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
+            break;
+        }
+      return cp;
+    }
+  }
 
   /// <summary>
   /// Centers the form to the screen.
@@ -60,29 +83,6 @@ public partial class MainForm
       DoScreenPositionMutex = false;
     }
   }
-
-  /// <summary>
-  /// Enables double-buffering.
-  /// </summary>
-  protected override CreateParams CreateParams
-  {
-    get
-    {
-      var cp = base.CreateParams;
-      if ( Settings.WindowsDoubleBufferingEnabled )
-        switch ( Settings.CurrentView )
-        {
-          case ViewMode.Text:
-          case ViewMode.Month:
-            cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
-                                      //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
-            break;
-        }
-      return cp;
-    }
-  }
-
-  private bool UpdateTitlesMutex;
 
   /// <summary>
   /// Updates form title bar and sub-title texts.
@@ -159,6 +159,14 @@ public partial class MainForm
   }
 
   /// <summary>
+  /// Updates the text view aspect.
+  /// </summary>
+  public void UpdateTextCalendar()
+  {
+    CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
+  }
+
+  /// <summary>
   /// Updates the buttons.
   /// </summary>
   public void UpdateButtons()
@@ -178,14 +186,6 @@ public partial class MainForm
       ActionViewCelebrations.Enabled = ActionSaveToFile.Enabled;
       Refresh();
     });
-  }
-
-  /// <summary>
-  /// Updates the text view aspect.
-  /// </summary>
-  public void UpdateTextCalendar()
-  {
-    CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
   }
 
   /// <summary>
