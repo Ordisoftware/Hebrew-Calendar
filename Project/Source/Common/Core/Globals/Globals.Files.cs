@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -62,6 +62,18 @@ static partial class Globals
     = Path.Combine(RootFolderPath, "Setup\\SSL", AssemblyTrademark + ".ssl");
 
   /// <summary>
+  /// Indicates the GitHub website SSL certificate information.
+  /// </summary>
+  static public string GitHubSSLFilePath { get; set; }
+    = Path.Combine(RootFolderPath, "Setup\\SSL", "github.com.ssl");
+
+  /// <summary>
+  /// Indicates the GitHub user content website SSL certificate information.
+  /// </summary>
+  static public string GitHubUserContentSSLFilePath { get; set; }
+    = Path.Combine(RootFolderPath, "Setup\\SSL", "githubusercontent.com.ssl");
+
+  /// <summary>
   /// Indicates the check update URL.
   /// </summary>
   static public string CheckUpdateURL { get; set; }
@@ -80,10 +92,33 @@ static partial class Globals
     = $"https://{AssemblyTrademark}/download/{SetupFileName}";
 
   /// <summary>
+  /// Indicates the new version setup file from GitHub.
+  /// </summary>
+  static public string SetupFileGitHubURL { get; set; }
+    = $"https://github.com/{AssemblyCompany}/{ApplicationGitHubCode}/releases/download/v{{0}}/{SetupFileName}";
+
+  /// <summary>
+  /// Indicates the GitHub repository.
+  /// </summary>
+  static public string GitHubRootURL { get; set; }
+    = $"https://github.com/{AssemblyCompany}";
+
+  /// <summary>
+  /// Indicates the GitHub check update url for current application.
+  /// </summary>
+  static public string CheckUpdateGitHubURL { get; set; }
+  = $"https://raw.githubusercontent.com/{AssemblyCompany}/Updates/main/{ApplicationCode}.sha-update";
+  /// <summary>
   /// Indicates the GitHub repository.
   /// </summary>
   static public string GitHubRepositoryURL { get; set; }
-    = $"https://github.com/{AssemblyCompany}/{ApplicationGitHubCode}";
+    = $"{GitHubRootURL}/{ApplicationGitHubCode}";
+
+  /// <summary>
+  /// Indicates the GitHub download url.
+  /// </summary>
+  static public string GitHubDownloadURL { get; set; }
+  = $"{GitHubRepositoryURL}/releases/latest";
 
   /// <summary>
   /// Indicates the create GitHub issue url.

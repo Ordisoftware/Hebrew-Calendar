@@ -324,6 +324,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 ## Future improvements
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add option to set primary source for check update between author website or GitHub.
 - Add print boards.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -340,6 +341,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 
 #### In progress - Version 9.15
 
+- Change web check update to use GitHub as an alternative if author's website is down.
 - Improve database management code.
 - Fix web check update to not display timeout error in auto check mode.
 - Few fixes and improvements.
