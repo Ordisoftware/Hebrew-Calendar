@@ -14,10 +14,10 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
 /// <summary>
 /// Provides exception information.
 /// </summary>
+[SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "Opinion")]
 class ExceptionInfo
 {
 
@@ -342,4 +342,3 @@ class ExceptionInfo
   }
 
 }
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop

@@ -69,6 +69,7 @@ static partial class StringHelper
   /// A string[].
   /// </returns>
   /// <param name="str">The string to act on.</param>
+  /// <param name="isUnix">True if is unix, false if not.</param>
   static public string[] SplitNoEmptyLines(this string str, bool isUnix = false)
   {
     return str.Split(isUnix ? "\n" : Globals.NL, StringSplitOptions.RemoveEmptyEntries);

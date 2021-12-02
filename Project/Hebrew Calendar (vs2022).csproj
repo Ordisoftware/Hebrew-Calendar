@@ -562,7 +562,7 @@
     <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Bookmarks.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.Bookmarks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
@@ -687,7 +687,7 @@
     <Compile Include="Source\Forms\MainForm\Data\MainForm.Generate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\Data\MainForm.GoToDate.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.GoToDate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\Reminder\MainForm.Reminder.CelebrationDay.cs">
@@ -764,7 +764,7 @@
     <Compile Include="Source\Forms\MainForm\Data\MainForm.Generate.ReportText.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\MainForm.Keys.cs">
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.Keys.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Enums\SeasonChange.cs" />

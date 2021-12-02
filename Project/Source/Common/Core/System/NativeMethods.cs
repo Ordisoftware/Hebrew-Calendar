@@ -16,7 +16,6 @@ namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
 
-#pragma warning disable S2346 // Flags enumerations zero-value members should be named "None"
 static class NativeMethods
 {
 
@@ -303,6 +302,7 @@ static class NativeMethods
   }
 
   [Flags]
+  [SuppressMessage("Critical Code Smell", "S2346:Flags enumerations zero-value members should be named \"None\"", Justification = "N/A")]
   public enum SHGSI : uint
   {
     SHGSI_LARGEICON = 0,
@@ -385,4 +385,3 @@ static class NativeMethods
   #endregion
 
 }
-#pragma warning restore S2346 // Flags enumerations zero-value members should be named "None"

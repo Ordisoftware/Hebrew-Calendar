@@ -53,9 +53,11 @@ static class FormsHelper
     foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
   }
 
+
   /// <summary>
   /// Gets all opened forms.
   /// </summary>
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "Error")]
   static public IEnumerable<Form> GetAll(this FormCollection forms, Func<Form, bool> select = null)
   {
     if ( select == null )
@@ -79,11 +81,10 @@ static class FormsHelper
   /// <summary>
   /// Gets all components of a form.
   /// </summary>
+  [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
   static public IEnumerable<Component> GetComponents(this Form form)
   {
-#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
     const BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
     return from field in form.GetType().GetFields(flags)
            where typeof(Component).IsAssignableFrom(field.FieldType)
            let component = (Component)field.GetValue(form)
@@ -302,7 +303,7 @@ static class FormsHelper
   }
 
   /// <summary>
-  /// Duplicate menu subitems.
+  /// Duplicate menu sub-items.
   /// </summary>
   static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noshortcuts = true)
   {
