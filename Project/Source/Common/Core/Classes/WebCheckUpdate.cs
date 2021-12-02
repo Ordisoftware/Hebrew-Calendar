@@ -134,7 +134,6 @@ static class WebCheckUpdate
         form.TopMost = formTopMost;
         form.Enabled = formEnabled;
       }
-
     }
   }
 
