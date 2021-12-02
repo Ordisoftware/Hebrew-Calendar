@@ -39,7 +39,7 @@ abstract class SQLiteDatabase
 
   protected readonly List<object> ModifiedObjects = new();
 
-  public bool Modified => ModifiedObjects.Count > 0;
+  public bool HasChanges => ModifiedObjects.Count > 0;
 
   public void AddToModified(object instance)
   {
