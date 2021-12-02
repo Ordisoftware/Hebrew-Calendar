@@ -341,7 +341,6 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.15
 
 - Improve database management code.
-- Fix data not available when the application is started for the very first time since v6.0.
 - Fix web check update to not display timeout error in auto check mode.
 - Few fixes and improvements.
 
