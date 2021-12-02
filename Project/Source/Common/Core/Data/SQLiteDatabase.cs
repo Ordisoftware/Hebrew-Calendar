@@ -40,8 +40,11 @@ abstract class SQLiteDatabase
     get => _Connection;
     private set => _Connection = value;
   }
+
   [NonSerialized]
-  public SQLiteNetORM _Connection;
+  private SQLiteNetORM _Connection;
+
+  public bool IsInTransaction => Connection.IsInTransaction;
 
   public bool UseTransactionByDefault { get; set; } = true;
 
@@ -83,9 +86,12 @@ abstract class SQLiteDatabase
     UpgradeSchema();
     CreateTables();
     if ( AutoLoadAllAtOpen ) LoadAll();
-    CreateDataIfNotExist();
     Initialized = true;
   }
+
+  protected virtual void UpgradeSchema() { }
+
+  protected abstract void CreateTables();
 
   public void Close()
   {
@@ -98,34 +104,29 @@ abstract class SQLiteDatabase
 
   protected abstract void DoClose();
 
-  protected virtual void UpgradeSchema()
+  public void LoadAll()
   {
     CheckConnected();
-  }
-
-  protected abstract void CreateTables();
-
-  public virtual void CreateDataIfNotExist(bool reset = false)
-  {
-    CheckConnected();
-  }
-
-  public virtual void LoadAll()
-  {
     Rollback();
+    DoLoadAll();
+    CreateDataIfNotExist();
+    CreateBindingInstances();
   }
+
+  protected abstract void DoLoadAll();
+
+  protected virtual void CreateDataIfNotExist(bool reset = false) { }
+
+  protected virtual void CreateBindingInstances() { }
 
   protected List<T> Load<T>(TableQuery<T> query)
   {
-    CheckConnected();
     var caption = typeof(T).Name;
     OnLoadingData(caption);
     var result = query.ToList();
     OnDataLoaded(caption);
     return result;
   }
-
-  public bool IsInTransaction => Connection.IsInTransaction;
 
   public void BeginTransaction()
   {

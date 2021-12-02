@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -97,7 +97,10 @@ static class WebCheckUpdate
       CleanTemp();
       string msg = ex.Message;
       if ( ex.Status == WebExceptionStatus.Timeout )
+      {
+        if ( auto ) return false;
         msg += Globals.NL2 + SysTranslations.CheckInternetConnection.GetLang();
+      }
       DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);
     }
     catch ( Exception ex )

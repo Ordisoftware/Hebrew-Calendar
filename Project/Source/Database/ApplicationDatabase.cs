@@ -57,9 +57,8 @@ partial class ApplicationDatabase : SQLiteDatabase
     Connection.CreateTable<LunisolarDay>();
   }
 
-  public override void LoadAll()
+  protected override void DoLoadAll()
   {
-    base.LoadAll();
     LunisolarDays = Connection.Table<LunisolarDay>().ToList();
   }
 
