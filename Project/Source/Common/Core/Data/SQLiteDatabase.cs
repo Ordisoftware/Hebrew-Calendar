@@ -11,13 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
 
-public delegate void LoadingDataEventHandler(Type type);
-public delegate void DataLoadedEventHandler();
+public delegate void LoadingDataEventHandler(string caption);
+public delegate void DataLoadedEventHandler(string caption);
 
 /// <summary>
 /// Provide SQLite database wrapper.
@@ -27,27 +27,52 @@ abstract class SQLiteDatabase
 
   static public SQLiteDatabase Instance { get; protected set; }
 
-  protected bool AutoLoadAllAtOpen = true;
+  protected bool AutoLoadAllAtOpen { get; init; } = true;
 
   public string ConnectionString { get; }
 
   public bool Initialized { get; private set; }
 
-  public bool ClearListsOnCloseAndRelease { get; set; }
+  public bool Loaded { get; protected set; }
+
+  public bool ClearListsOnCloseOrRelease { get; set; }
+
+  protected readonly List<object> ModifiedObjects = new();
+
+  public bool HasChanges => ModifiedObjects.Count > 0;
+
+  public void AddToModified(object instance)
+  {
+    if ( Loaded && !ModifiedObjects.Contains(instance) )
+      ModifiedObjects.Add(instance);
+  }
 
   public SQLiteNetORM Connection
   {
     get => _Connection;
     private set => _Connection = value;
   }
+
   [NonSerialized]
-  public SQLiteNetORM _Connection;
+  private SQLiteNetORM _Connection;
+
+  public bool IsInTransaction => Connection.IsInTransaction;
 
   public bool UseTransactionByDefault { get; set; } = true;
 
   public event LoadingDataEventHandler LoadingData;
 
   public event DataLoadedEventHandler DataLoaded;
+
+  protected virtual void OnLoadingData(string caption)
+  {
+    LoadingData?.Invoke(caption);
+  }
+
+  protected virtual void OnDataLoaded(string caption)
+  {
+    DataLoaded?.Invoke(caption);
+  }
 
   protected SQLiteDatabase(string connectionString)
   {
@@ -72,10 +97,16 @@ abstract class SQLiteDatabase
     if ( Initialized ) return;
     UpgradeSchema();
     CreateTables();
-    if ( AutoLoadAllAtOpen ) LoadAll();
-    CreateDataIfNotExist();
+    Vacuum();
     Initialized = true;
+    if ( AutoLoadAllAtOpen ) LoadAll();
   }
+
+  protected virtual void Vacuum() { }
+
+  protected virtual void UpgradeSchema() { }
+
+  protected abstract void CreateTables();
 
   public void Close()
   {
@@ -88,33 +119,30 @@ abstract class SQLiteDatabase
 
   protected abstract void DoClose();
 
-  protected virtual void UpgradeSchema()
+  public void LoadAll()
   {
     CheckConnected();
-  }
-
-  protected abstract void CreateTables();
-
-  public virtual void CreateDataIfNotExist(bool reset = false)
-  {
-    CheckConnected();
-  }
-
-  public virtual void LoadAll()
-  {
     Rollback();
+    DoLoadAll();
+    Loaded = true;
+    CreateDataIfNotExist();
+    CreateBindingInstances();
   }
+
+  protected abstract void DoLoadAll();
+
+  protected virtual void CreateDataIfNotExist(bool reset = false) { }
+
+  protected virtual void CreateBindingInstances() { }
 
   protected List<T> Load<T>(TableQuery<T> query)
   {
-    CheckConnected();
-    LoadingData?.Invoke(typeof(T));
+    var caption = typeof(T).Name;
+    OnLoadingData(caption);
     var result = query.ToList();
-    DataLoaded?.Invoke();
+    OnDataLoaded(caption);
     return result;
   }
-
-  public bool IsInTransaction => Connection.IsInTransaction;
 
   public void BeginTransaction()
   {

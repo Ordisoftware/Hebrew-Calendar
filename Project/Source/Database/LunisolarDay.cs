@@ -43,10 +43,8 @@ public partial class LunisolarDay
   public string ParashahID { get; set; }
   public string LinkedParashahID { get; set; }
 
-  [Ignore]
   public bool HasLinkedParashah => !LinkedParashahID.IsNullOrEmpty();
 
-  [Ignore]
   public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
 
   public bool IsNewYear

@@ -29,7 +29,6 @@ partial class HebrewDatabase : SQLiteDatabase
   {
     AutoLoadAllAtOpen = false;
     Open();
-    CheckConnected();
   }
 
   protected override void DoClose()
@@ -40,7 +39,6 @@ partial class HebrewDatabase : SQLiteDatabase
 
   protected override void CreateTables()
   {
-    CheckConnected();
     Connection.CreateTable<Interlock>();
     Connection.CreateTable<Parashah>();
     Connection.CreateTable<TermHebrew>();
@@ -49,7 +47,7 @@ partial class HebrewDatabase : SQLiteDatabase
   }
 
   [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
-  public override void LoadAll()
+  protected override void DoLoadAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
     throw new NotImplementedException(message);

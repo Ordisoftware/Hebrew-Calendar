@@ -45,7 +45,7 @@ partial class HebrewDatabase : SQLiteDatabase
   {
     if ( TermsHebrew == null && TermLettriqs == null && TermAnalyzes == null ) return;
     Interlocks.Release(nameof(TermsHebrew));
-    if ( ClearListsOnCloseAndRelease )
+    if ( ClearListsOnCloseOrRelease )
     {
       TermAnalyzes?.Clear();
       TermLettriqs?.Clear();
