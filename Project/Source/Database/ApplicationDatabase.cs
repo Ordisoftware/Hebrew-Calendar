@@ -31,9 +31,8 @@ partial class ApplicationDatabase : SQLiteDatabase
   {
   }
 
-  public override void Open()
+  protected override void Vacuum()
   {
-    base.Open();
     if ( Program.Settings.VacuumAtStartup )
     {
       var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone, Program.Settings.VacuumAtStartupDaysInterval);

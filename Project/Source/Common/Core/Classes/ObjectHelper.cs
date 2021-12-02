@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2012-02 </edited>
+/// <edited> 2012-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -40,6 +40,36 @@ static class ObjectHelper
     {
       return default;
     }
+  }
+
+  /// <summary>
+  /// A bool extension method that determine if one is true and some others not.
+  /// </summary>
+  /// <param name="first">The first to act on.</param>
+  /// <param name="others">A variable-length parameters list containing others.</param>
+  /// <returns>
+  /// True if it succeeds, false if it fails.
+  /// </returns>
+  static public bool CheckIfOneIsTrueAndSomeOthersNot(this bool first, params bool[] others)
+  {
+    return CheckIfOneIsTrueAndSomeOthersNot(( new bool[] { first } ).Concat(others).ToArray());
+  }
+
+  /// <summary>
+  /// A bool extension method that determine if one is true and some others not.
+  /// </summary>
+  /// <param name="values">A variable-length parameters list containing values.</param>
+  /// <returns>
+  /// True if it succeeds, false if it fails.
+  /// </returns>
+  static public bool CheckIfOneIsTrueAndSomeOthersNot(params bool[] values)
+  {
+    bool firstIsTrue = values[0];
+    bool result = firstIsTrue ^ values[1];
+    if ( values.Length > 2 )
+      for ( int index = 2; index < values.Length; index++ )
+        result = result || ( firstIsTrue ^ values[index] );
+    return result;
   }
 
 }

@@ -27,13 +27,25 @@ abstract class SQLiteDatabase
 
   static public SQLiteDatabase Instance { get; protected set; }
 
-  protected bool AutoLoadAllAtOpen = true;
+  protected bool AutoLoadAllAtOpen { get; init; } = true;
 
   public string ConnectionString { get; }
 
   public bool Initialized { get; private set; }
 
+  public bool Loaded { get; protected set; }
+
   public bool ClearListsOnCloseOrRelease { get; set; }
+
+  protected readonly List<object> ModifiedObjects = new();
+
+  public bool Modified => ModifiedObjects.Count > 0;
+
+  public void AddToModified(object instance)
+  {
+    if ( Loaded && !ModifiedObjects.Contains(instance) )
+      ModifiedObjects.Add(instance);
+  }
 
   public SQLiteNetORM Connection
   {
@@ -85,9 +97,12 @@ abstract class SQLiteDatabase
     if ( Initialized ) return;
     UpgradeSchema();
     CreateTables();
-    if ( AutoLoadAllAtOpen ) LoadAll();
+    Vacuum();
     Initialized = true;
+    if ( AutoLoadAllAtOpen ) LoadAll();
   }
+
+  protected virtual void Vacuum() { }
 
   protected virtual void UpgradeSchema() { }
 
@@ -109,6 +124,7 @@ abstract class SQLiteDatabase
     CheckConnected();
     Rollback();
     DoLoadAll();
+    Loaded = true;
     CreateDataIfNotExist();
     CreateBindingInstances();
   }
