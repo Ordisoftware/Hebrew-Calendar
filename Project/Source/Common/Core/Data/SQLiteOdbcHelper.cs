@@ -18,7 +18,7 @@ using System.Data.Odbc;
 using Microsoft.Win32;
 
 /// <summary>
-/// Provide SQLite ODBC helper.
+/// Provides SQLite ODBC helper.
 /// </summary>
 static class SQLiteOdbcHelper
 {

@@ -20,7 +20,7 @@ public delegate void LoadingDataEventHandler(string caption);
 public delegate void DataLoadedEventHandler(string caption);
 
 /// <summary>
-/// Provide SQLite database wrapper.
+/// Provides SQLite database wrapper.
 /// </summary>
 abstract class SQLiteDatabase
 {
@@ -85,6 +85,7 @@ abstract class SQLiteDatabase
     if ( Globals.IsVisualStudioDesigner ) return;
     ConnectionString = connectionString;
     Connection = new SQLiteNetORM(ConnectionString);
+    Connection.InitializeVersion();
   }
 
   protected void CheckConnected()

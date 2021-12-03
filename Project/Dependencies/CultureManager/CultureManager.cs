@@ -640,12 +640,14 @@ namespace Infralution.Localization
       return false;
     }
 
+
     /// <summary>
     /// Recursively apply localized resources to a component and its constituent components
     /// </summary>
     /// <param name="componentType">The type we are applying resources for</param>
     /// <param name="instance">The component instance to apply resources to</param>
     /// <param name="culture">The culture resources to apply</param>
+    [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
     protected virtual void ApplyResources(Type componentType, IComponent instance, CultureInfo culture)
     {
       // check whether there are localizable resources for the type - if not we are done
@@ -678,11 +680,7 @@ namespace Infralution.Localization
       bool isVB = IsVBAssembly(componentType.Assembly);
 
       components["$this"] = instance;
-#pragma warning disable RCS1118 // Mark local variable as const.
-#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
-      var flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
-#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
-#pragma warning restore RCS1118 // Mark local variable as const.
+      const BindingFlags flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
       foreach ( FieldInfo field in componentType.GetFields(flags) )
       {
         string fieldName = field.Name;

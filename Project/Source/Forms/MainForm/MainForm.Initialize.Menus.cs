@@ -75,7 +75,7 @@ partial class MainForm
   /// </summary>
   private void CreateProvidersLinks()
   {
-    // Weekly parashah menu
+    // Weekly parashah study
     ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
@@ -85,6 +85,7 @@ partial class MainForm
                                        weekParashah.Factory,
                                        weekParashah.Day.HasLinkedParashah);
     });
+    // Weekly parashah read
     ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
@@ -93,7 +94,7 @@ partial class MainForm
       string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
-    // Visual month context menu
+    // Visual month parashah study
     ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
@@ -103,6 +104,7 @@ partial class MainForm
                                        weekParashah,
                                        ContextMenuDayCurrentEvent.HasLinkedParashah);
     });
+    // Visual month parashah read
     ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;

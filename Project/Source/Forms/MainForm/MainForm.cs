@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// Provides application's main form.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
-public partial class MainForm : Form
+partial class MainForm : Form
 {
 
   #region Singleton
@@ -101,6 +101,53 @@ public partial class MainForm : Form
     if ( Globals.IsExiting ) return;
     if ( WindowState != FormWindowState.Normal ) return;
     EditScreenNone.PerformClick();
+  }
+
+  #endregion
+
+  #region Top Menu Tool-Tips
+
+  /// <summary>
+  /// Event handler. Called by TimerTooltip for tick events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void TimerTooltip_Tick(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    var item = (ToolStripItem)LastToolTip.Tag;
+    var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
+    LastToolTip.Tag = sender;
+    LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+    TimerTooltip.Enabled = false;
+  }
+
+  /// <summary>
+  /// Event handler. Called by ShowToolTip for on mouse enter events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ShowToolTip_OnMouseEnter(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    if ( sender is not ToolStripItem ) return;
+    if ( LastToolTip.Tag == sender ) return;
+    LastToolTip.Tag = sender;
+    if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
+    TimerTooltip.Enabled = true;
+  }
+
+  /// <summary>
+  /// Event handler. Called by ShowToolTip for on mouse leave events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ShowToolTip_OnMouseLeave(object sender, EventArgs e)
+  {
+    if ( !EditShowTips.Checked ) return;
+    TimerTooltip.Enabled = false;
+    LastToolTip.Tag = null;
+    LastToolTip.Hide(ToolStrip);
   }
 
   #endregion
@@ -225,53 +272,6 @@ public partial class MainForm : Form
 
   #endregion
 
-  #region Top Menu Tooltips
-
-  /// <summary>
-  /// Event handler. Called by TimerTooltip for tick events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void TimerTooltip_Tick(object sender, EventArgs e)
-  {
-    if ( !EditShowTips.Checked ) return;
-    var item = (ToolStripItem)LastToolTip.Tag;
-    var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
-    LastToolTip.Tag = sender;
-    LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
-    TimerTooltip.Enabled = false;
-  }
-
-  /// <summary>
-  /// Event handler. Called by ShowToolTip for on mouse enter events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ShowToolTip_OnMouseEnter(object sender, EventArgs e)
-  {
-    if ( !EditShowTips.Checked ) return;
-    if ( sender is not ToolStripItem ) return;
-    if ( LastToolTip.Tag == sender ) return;
-    LastToolTip.Tag = sender;
-    if ( ( (ToolStripItem)sender ).ToolTipText.Length == 0 ) return;
-    TimerTooltip.Enabled = true;
-  }
-
-  /// <summary>
-  /// Event handler. Called by ShowToolTip for on mouse leave events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ShowToolTip_OnMouseLeave(object sender, EventArgs e)
-  {
-    if ( !EditShowTips.Checked ) return;
-    TimerTooltip.Enabled = false;
-    LastToolTip.Tag = null;
-    LastToolTip.Hide(ToolStrip);
-  }
-
-  #endregion
-
   #region Menu System
 
   /// <summary>
@@ -336,6 +336,7 @@ public partial class MainForm : Form
       TimerBallon.Interval = Settings.BalloonLoomingDelay;
       CalendarMonth.ShowEventTooltips = false;
       InitializeSpecialMenus();
+      InitializeDialogsDirectory();
     }
     catch ( Exception ex )
     {
@@ -423,7 +424,7 @@ public partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void EditShowSuccessDialogs_CheckedChanged(object sender, EventArgs e)
   {
-    Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
+    // TODO add setting Settings.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
     DisplayManager.ShowSuccessDialogs = EditShowSuccessDialogs.Checked;
   }
 
@@ -707,7 +708,7 @@ public partial class MainForm : Form
 
   #endregion
 
-  #region Menu Application
+  #region Menu Application View
 
   /// <summary>
   /// Event handler. Called by ActionViewReport for click events.
@@ -739,6 +740,10 @@ public partial class MainForm : Form
     SetView(ViewMode.Grid);
   }
 
+  #endregion
+
+  #region Menu Application Export
+
   /// <summary>
   /// Event handler. Called by ActionSave for click events.
   /// </summary>
@@ -768,6 +773,10 @@ public partial class MainForm : Form
   {
     ExportPrint();
   }
+
+  #endregion
+
+  #region Menu Application Search
 
   /// <summary>
   /// Event handler. Called by ActionSearchDay for click events.
@@ -854,6 +863,10 @@ public partial class MainForm : Form
     else
       NextCelebrationsForm.Run();
   }
+
+  #endregion
+
+  #region Menu Application Reminder
 
   /// <summary>
   /// Event handler. Called by MenuRefreshReminder for click events.

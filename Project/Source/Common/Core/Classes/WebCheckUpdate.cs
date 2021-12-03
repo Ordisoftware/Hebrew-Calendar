@@ -40,11 +40,14 @@ static class WebCheckUpdate
   /// Checks if an update is available online and offer to install, download or open product web page.
   /// App version is "MAJOR.MINOR".
   /// </summary>
-  /// <param name="checkAtStartup"></param>
+  /// <returns>
+  /// True if application must exist else false.
+  /// </returns>
+  /// <param name="checkAtStartup">True if it is a startup check.</param>
   /// <param name="lastdone">The last done date.</param>
   /// <param name="interval">Days interval to check.</param>
-  /// <param name="auto">True if no user interaction else false</param>
-  /// <returns>True if application must exist else false.</returns>
+  /// <param name="auto">True if no user interaction else false.</param>
+  /// <param name="useGitHub">True to use GitHub.</param>
   static public bool Run(bool checkAtStartup, ref DateTime lastdone, int interval, bool auto, bool useGitHub = false)
   {
     if ( interval == -1 ) interval = DefaultCheckDaysInterval;

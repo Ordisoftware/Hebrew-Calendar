@@ -62,6 +62,7 @@ static partial class Globals
   static public readonly Stopwatch ChronoLoadData = new();
   static public readonly Stopwatch ChronoCreateData = new();
   static public readonly Stopwatch ChronoShowData = new();
+  static public readonly Stopwatch ChronoRendering = new();
 
   /// <summary>
   /// Indicates keyboard shortcuts notice form.
