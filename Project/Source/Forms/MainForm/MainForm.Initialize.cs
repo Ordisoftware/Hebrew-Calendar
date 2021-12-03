@@ -37,8 +37,9 @@ partial class MainForm
   private void DoConstructor()
   {
     Interlocks.Take();
-    new Task(SelectCityForm.Preload).Start();
     new Task(InitializeIconsAndSound).Start();
+    new Task(InitializeDialogsDirectory).Start();
+    new Task(SelectCityForm.Preload).Start();
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ContextMenuStripDay.ImageList = ImageListRisesAndSets;
@@ -88,7 +89,6 @@ partial class MainForm
         Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
       });
     new Task(InitializeCurrentTimeZone).Start();
-    new Task(InitializeDialogsDirectory).Start();
     Cursor = Cursors.WaitCursor;
     try
     {
@@ -172,7 +172,7 @@ partial class MainForm
     {
       SystemManager.TryCatch(CommonMenusControl.Instance.ShowLastNews);
       Application.DoEvents();
-      System.Threading.Thread.Sleep(500);
+      Thread.Sleep(500);
     }
     if ( ApplicationCommandLine.Instance.Generate )
       ActionGenerate.PerformClick();
@@ -240,9 +240,7 @@ partial class MainForm
     if ( !Globals.IsReady ) return;
     if ( Globals.IsExiting ) return;
     if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
-    {
       Globals.IsExiting = true;
-    }
     else
     if ( !Globals.AllowClose )
     {
@@ -256,29 +254,21 @@ partial class MainForm
   /// </summary>
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
-    DebugManager.Enter();
-    try
-    {
-      DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-      Globals.IsExiting = true;
-      Globals.IsSessionEnding = true;
-      Globals.AllowClose = true;
-      Interlocks.Release();
-      Settings.Store();
-      TimerTooltip.Stop();
-      TimerBallon.Stop();
-      TimerTrayMouseMove.Stop();
-      TimerMidnight.Stop();
-      TimerReminder.Stop();
-      TimerResumeReminder.Stop();
-      LockSessionForm.Instance?.Timer.Stop();
-      SystemManager.TryCatch(() => ClearLists());
-      FormsHelper.CloseAll();
-    }
-    finally
-    {
-      DebugManager.Leave();
-    }
+    DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
+    Globals.IsExiting = true;
+    Globals.IsSessionEnding = true;
+    Globals.AllowClose = true;
+    SystemManager.TryCatch(Settings.Store);
+    Interlocks.Release();
+    TimerTooltip.Stop();
+    TimerBallon.Stop();
+    TimerTrayMouseMove.Stop();
+    TimerMidnight.Stop();
+    TimerReminder.Stop();
+    TimerResumeReminder.Stop();
+    LockSessionForm.Instance?.Timer.Stop();
+    SystemManager.TryCatch(ClearLists);
+    FormsHelper.CloseAll();
   }
 
   /// <summary>
@@ -288,7 +278,7 @@ partial class MainForm
   {
     if ( e.Mode == PowerModes.Resume )
     {
-      System.Threading.Thread.Sleep(10000);
+      Thread.Sleep(10000);
       DoTimerMidnight();
     }
   }
@@ -370,7 +360,7 @@ partial class MainForm
       TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(16, 16);
     });
     SoundItem.Initialize();
-    SystemManager.TryCatch(() => new System.Media.SoundPlayer(Globals.EmptySoundFilePath).Play());
+    SystemManager.TryCatch(() => new SoundPlayer(Globals.EmptySoundFilePath).Play());
     SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
   }
 

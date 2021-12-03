@@ -20,7 +20,7 @@ public delegate void LoadingDataEventHandler(string caption);
 public delegate void DataLoadedEventHandler(string caption);
 
 /// <summary>
-/// Provide SQLite database wrapper.
+/// Provides SQLite database wrapper.
 /// </summary>
 abstract class SQLiteDatabase
 {

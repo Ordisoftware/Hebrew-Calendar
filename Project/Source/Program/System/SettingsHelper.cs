@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -45,9 +45,9 @@ static class SettingsHelper
     MainForm.EditScreenBottomLeft.Checked = false;
     MainForm.EditScreenBottomRight.Checked = false;
     MainForm.EditScreenCenter.Checked = true;
+    MainForm.EditESCtoExit.Checked = true;
     MainForm.EditConfirmClosing.Checked = true;
     MainForm.EditShowTips.Checked = true;
-    MainForm.EditESCtoExit.Checked = true;
     MainForm.EditSoundsEnabled.Checked = true;
     DisplayManager.AdvancedFormUseSounds = true;
     MainForm.EditUseAdvancedDialogBoxes.Checked = true;
@@ -98,9 +98,9 @@ static class SettingsHelper
       MainForm.EditScreenPosition_Click(null, null);
       MainForm.WindowState = settings.MainFormState;
       //
+      MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
       MainForm.EditConfirmClosing.Checked = settings.ConfirmClosing;
       MainForm.EditShowTips.Checked = settings.ShowTips;
-      MainForm.EditESCtoExit.Checked = settings.ESCtoExit;
       MainForm.EditSoundsEnabled.Checked = settings.SoundsEnabled;
       MainForm.EditUseAdvancedDialogBoxes.Checked = settings.AdvancedDialogBoxes;
       MainForm.EditShowSuccessDialogs.Checked = settings.ShowSuccessDialogs;
@@ -143,9 +143,9 @@ static class SettingsHelper
       if ( MainForm.EditScreenBottomRight.Checked ) settings.MainFormPosition = ControlLocation.BottomRight;
       if ( MainForm.EditScreenCenter.Checked ) settings.MainFormPosition = ControlLocation.Center;
       //
+      settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
       settings.ConfirmClosing = MainForm.EditConfirmClosing.Checked;
       settings.ShowTips = MainForm.EditShowTips.Checked;
-      settings.ESCtoExit = MainForm.EditESCtoExit.Checked;
       settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
@@ -182,6 +182,17 @@ static class SettingsHelper
   }
 
   /// <summary>
+  /// Get the export directory.
+  /// </summary>
+  static internal string GetExportDirectory(this Settings settings)
+  {
+    string directory = settings.ExportFolder;
+    if ( directory == "%USER_APP_DOCUMENTS%" )
+      directory = Globals.UserDocumentsFolderPath;
+    return directory;
+  }
+
+  /// <summary>
   /// Returns a string representing the GPS location.
   /// </summary>
   static internal string GetGPSText(this Settings settings)
@@ -197,14 +208,6 @@ static class SettingsHelper
         break;
       }
     return builder.ToString();
-  }
-
-  static internal string GetExportDirectory(this Settings settings)
-  {
-    string directory = settings.ExportFolder;
-    if ( directory == "%USER_APP_DOCUMENTS%" )
-      directory = Globals.UserDocumentsFolderPath;
-    return directory;
   }
 
 }
