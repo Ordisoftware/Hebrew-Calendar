@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -116,7 +116,6 @@ static class SQLiteNetHelper
   static public DateTime Optimize(this SQLiteNetORM connection, DateTime lastdone, int interval = -1, bool force = false)
   {
     if ( interval == -1 ) interval = DefaultOptimizeDaysInterval;
-    InitializeVersion(connection);
     if ( force || lastdone.AddDays(interval) < DateTime.Now )
     {
       connection.CheckIntegrity();

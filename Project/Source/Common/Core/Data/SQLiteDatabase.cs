@@ -85,6 +85,7 @@ abstract class SQLiteDatabase
     if ( Globals.IsVisualStudioDesigner ) return;
     ConnectionString = connectionString;
     Connection = new SQLiteNetORM(ConnectionString);
+    Connection.InitializeVersion();
   }
 
   protected void CheckConnected()
