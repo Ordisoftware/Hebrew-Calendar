@@ -21,6 +21,17 @@ static class ObjectHelper
 {
 
   /// <summary>
+  /// Gets an IEnumerable<typeparamref name="T"/> from a ComboBox.Items collection.
+  /// </summary>
+  /// <typeparam name="T">Generic type parameter.</typeparam>
+  /// <param name="collection">The collection.</param>
+  static public IEnumerable<T> AsIEnumerable<T>(this ComboBox.ObjectCollection collection)
+  {
+    foreach ( T item in collection )
+      yield return item;
+  }
+
+  /// <summary>
   /// Converts the type of a convertible object to another type.
   /// </summary>
   /// <typeparam name="T">Convertible generic type parameter.</typeparam>
