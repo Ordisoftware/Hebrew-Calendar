@@ -125,7 +125,6 @@ partial class PreferencesForm
         form.ShowInTaskbar = true;
       form.ShowDialog();
     }
-    MainForm.Instance.InitializeDialogsDirectory();
     bool result = Reseted
                || form.OldShabatDay != Settings.ShabatDay
                || form.OldLatitude != Settings.GPSLatitude

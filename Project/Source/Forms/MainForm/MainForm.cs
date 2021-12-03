@@ -336,6 +336,7 @@ partial class MainForm : Form
       TimerBallon.Interval = Settings.BalloonLoomingDelay;
       CalendarMonth.ShowEventTooltips = false;
       InitializeSpecialMenus();
+      InitializeDialogsDirectory();
     }
     catch ( Exception ex )
     {

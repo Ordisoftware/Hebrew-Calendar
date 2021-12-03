@@ -142,13 +142,13 @@ static class HebrewTranslations
 
   static public readonly TranslationsDictionary NoticeOnlineBibleProvider = new()
   {
-    [Language.EN] = "Use the following tags to replace values:" + Globals.NL2 +
-                    "%BOOKSB% : StudyBible.org book name" + Globals.NL +
-                    "%BOOKBIBLEHUB% : BibleHub.org and SainteBible.com book name" + Globals.NL +
-                    "%BOOKSEFARIA% : Sefaria.org book name" + Globals.NL +
-                    "%BOOKCHABAD% : Chabad.org book name" + Globals.NL +
-                    "%BOOKMM% : Mechon-Mamre.org book name" + Globals.NL +
-                    "%BOOKDJEP% : Djep.hd.free.fr book name" + Globals.NL +
+    [Language.EN] = "Use the following name tags to replace values:" + Globals.NL2 +
+                    "%BOOKSB% : StudyBible.org book" + Globals.NL +
+                    "%BOOKBIBLEHUB% : BibleHub.org and SainteBible.com book" + Globals.NL +
+                    "%BOOKSEFARIA% : Sefaria.org book" + Globals.NL +
+                    "%BOOKCHABAD% : Chabad.org book" + Globals.NL +
+                    "%BOOKMM% : Mechon-Mamre.org book" + Globals.NL +
+                    "%BOOKDJEP% : Djep.hd.free.fr book" + Globals.NL +
                     Globals.NL +
                     "%BOOKNUM% : Book number" + Globals.NL +
                     "%CHAPTERNUM% : Chapter number" + Globals.NL +
@@ -158,13 +158,13 @@ static class HebrewTranslations
                     "%CHAPTERNUM#2% : Chapter number in two digits" + Globals.NL +
                     "%VERSENUM#2% : Verse number in two digits",
 
-    [Language.FR] = "Utiliser les tags suivants pour remplacer les valeurs :" + Globals.NL2 +
-                    "%BOOKSB% : Nom du livre StudyBible.org" + Globals.NL +
-                    "%BOOKBIBLEHUB% : Nom du livre BibleHub.org et SainteBible.com" + Globals.NL +
-                    "%BOOKSEFARIA% : Sefaria.org book name" + Globals.NL +
-                    "%BOOKCHABAD% : Nom du livre Chabad.org" + Globals.NL +
-                    "%BOOKMM% : Nom du livre Mechon-Mamre.org" + Globals.NL +
-                    "%BOOKDJEP% : Nom du livre Djep.hd.free.fr" + Globals.NL +
+    [Language.FR] = "Utiliser les noms de tags suivants pour remplacer les valeurs :" + Globals.NL2 +
+                    "%BOOKSB% : Livre StudyBible.org" + Globals.NL +
+                    "%BOOKBIBLEHUB% : Livre BibleHub.org et SainteBible.com" + Globals.NL +
+                    "%BOOKSEFARIA% : Livre Sefaria.org" + Globals.NL +
+                    "%BOOKCHABAD% : Livre Chabad.org" + Globals.NL +
+                    "%BOOKMM% : Livre Mechon-Mamre.org" + Globals.NL +
+                    "%BOOKDJEP% : Livre Djep.hd.free.fr" + Globals.NL +
                     Globals.NL +
                     "%BOOKNUM% : Numéro du livre" + Globals.NL +
                     "%CHAPTERNUM% : Numéro du chapitre" + Globals.NL +
