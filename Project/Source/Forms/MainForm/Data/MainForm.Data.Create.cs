@@ -68,7 +68,7 @@ partial class MainForm
     try
     {
       UpdateButtons();
-      LabelSubTitleGPS.Text = SysTranslations.ProgressCreatingData.GetLang();
+      LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
       CalendarText.Clear();
       CalendarMonth.TheEvents.Clear();
       ApplicationDatabase.Instance.DeleteAll();

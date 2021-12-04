@@ -104,7 +104,7 @@ partial class ParashotForm : Form
     PanelBottom.Enabled = false;
     try
     {
-      LoadingForm.Instance.Initialize(SysTranslations.ProgressLoadingData.GetLang(), 4);
+      LoadingForm.Instance.Initialize(SysTranslations.LoadingData.GetLang(), 4);
       LoadingForm.Instance.DoProgress();
       MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot();
       LoadingForm.Instance.DoProgress();

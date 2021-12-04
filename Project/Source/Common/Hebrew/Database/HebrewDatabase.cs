@@ -17,12 +17,11 @@ namespace Ordisoftware.Hebrew;
 partial class HebrewDatabase : SQLiteDatabase
 {
 
-  static new public HebrewDatabase Instance { get; protected set; }
+  static public HebrewDatabase Instance { get; protected set; }
 
   static HebrewDatabase()
   {
     Instance = new HebrewDatabase();
-    SQLiteDatabase.Instance = Instance;
   }
 
   private HebrewDatabase() : base(Globals.CommonDatabaseFilePath)
