@@ -44,6 +44,12 @@ static partial class SysTranslations
     [Language.FR] = "Chargement des données..."
   };
 
+  static public readonly TranslationsDictionary LoadingDataDetailed = new()
+  {
+    [Language.EN] = "Loading data... {0}",
+    [Language.FR] = "Chargement des données... {0}"
+  };
+
   static public readonly TranslationsDictionary BindingData = new()
   {
     [Language.EN] = "Binding data...",
