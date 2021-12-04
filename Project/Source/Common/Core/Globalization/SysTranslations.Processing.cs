@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -42,6 +42,12 @@ static partial class SysTranslations
   {
     [Language.EN] = "Loading data...",
     [Language.FR] = "Chargement des données..."
+  };
+
+  static public readonly TranslationsDictionary BindingData = new()
+  {
+    [Language.EN] = "Binding data...",
+    [Language.FR] = "Liaison des données..."
   };
 
   static public readonly TranslationsDictionary CreatingData = new()

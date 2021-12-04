@@ -19,6 +19,8 @@ partial class ComboBoxNavigator : UserControl
 
   private bool Mutex;
 
+  public bool KeepFocus { get; set; } = true;
+
   public ComboBox ComboBox
   {
     get => _ComboBox;
@@ -129,28 +131,28 @@ partial class ComboBoxNavigator : UserControl
   private void ActionFirst_Click(object sender, EventArgs e)
   {
     _ComboBox.SelectedIndex = 0;
-    ActiveControl = ActionNext;
+    if ( KeepFocus ) ActiveControl = ActionNext;
     Navigated?.Invoke(sender, e);
   }
 
   private void ActionPrevious_Click(object sender, EventArgs e)
   {
     if ( _ComboBox.SelectedIndex > 0 ) _ComboBox.SelectedIndex--;
-    if ( _ComboBox.SelectedIndex == 0 ) ActiveControl = ActionNext;
+    if ( _ComboBox.SelectedIndex == 0 && KeepFocus ) ActiveControl = ActionNext;
     Navigated?.Invoke(sender, e);
   }
 
   private void ActionNext_Click(object sender, EventArgs e)
   {
     if ( _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1 ) _ComboBox.SelectedIndex++;
-    if ( _ComboBox.SelectedIndex == _ComboBox.Items.Count - 1 ) ActiveControl = ActionPrevious;
+    if ( _ComboBox.SelectedIndex == _ComboBox.Items.Count - 1 && KeepFocus ) ActiveControl = ActionPrevious;
     Navigated?.Invoke(sender, e);
   }
 
   private void ActionLast_Click(object sender, EventArgs e)
   {
     _ComboBox.SelectedIndex = _ComboBox.Items.Count - 1;
-    ActiveControl = ActionPrevious;
+    if ( KeepFocus ) ActiveControl = ActionPrevious;
     Navigated?.Invoke(sender, e);
   }
 
