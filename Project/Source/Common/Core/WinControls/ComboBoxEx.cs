@@ -28,6 +28,9 @@ public class ComboBoxEx : ComboBox
     SelectedIndexPrevious = SelectedIndexLast;
   }
 
+  /// <summary>
+  /// Disallows the selection of separator item.
+  /// </summary>
   protected override void OnSelectedIndexChanged(EventArgs e)
   {
     if ( Mutex ) return;
