@@ -32,19 +32,25 @@ static partial class SysTranslations
     [Language.FR] = "Traitement..."
   };
 
-  static public readonly TranslationsDictionary ProgressLoadingData = new()
+  static public readonly TranslationsDictionary Finalizing = new()
+  {
+    [Language.EN] = "Finalizing...",
+    [Language.FR] = "Finalisation..."
+  };
+
+  static public readonly TranslationsDictionary LoadingData = new()
   {
     [Language.EN] = "Loading data...",
     [Language.FR] = "Chargement des données..."
   };
 
-  static public readonly TranslationsDictionary ProgressCreatingData = new()
+  static public readonly TranslationsDictionary CreatingData = new()
   {
     [Language.EN] = "Creating data...",
     [Language.FR] = "Création des données..."
   };
 
-  static public readonly TranslationsDictionary ProgressSavingData = new()
+  static public readonly TranslationsDictionary SavingData = new()
   {
     [Language.EN] = "Saving data...",
     [Language.FR] = "Sauvegarde des données..."

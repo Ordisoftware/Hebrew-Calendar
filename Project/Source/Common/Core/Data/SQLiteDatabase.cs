@@ -25,8 +25,6 @@ public delegate void DataLoadedEventHandler(string caption);
 abstract class SQLiteDatabase
 {
 
-  static public SQLiteDatabase Instance { get; protected set; }
-
   protected bool AutoLoadAllAtOpen { get; init; } = true;
 
   public string ConnectionString { get; }

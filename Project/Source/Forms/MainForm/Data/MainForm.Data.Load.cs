@@ -24,7 +24,7 @@ partial class MainForm
     Globals.IsGenerating = true;
     try
     {
-      LabelSubTitleGPS.Text = SysTranslations.ProgressLoadingData.GetLang();
+      LabelSubTitleGPS.Text = SysTranslations.LoadingData.GetLang();
       LoadDataInit();
       if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
       {

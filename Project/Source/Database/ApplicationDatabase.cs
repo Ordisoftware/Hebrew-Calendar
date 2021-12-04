@@ -22,7 +22,6 @@ partial class ApplicationDatabase : SQLiteDatabase
   static ApplicationDatabase()
   {
     Instance = new ApplicationDatabase();
-    SQLiteDatabase.Instance = Instance;
   }
 
   public List<LunisolarDay> LunisolarDays { get; private set; }
