@@ -45,6 +45,25 @@ static partial class StringHelper
   }
 
   /// <summary>
+  /// Indicates if a string contains a substring ignoring case, diacritics and symbols.
+  /// </summary>
+  /// <returns>
+  /// True if it succeeds, false if it fails.
+  /// </returns>
+  /// <param name="str">The string to act on.</param>
+  /// <param name="substr">The substr.</param>
+  static public bool RawContains(this string str, string substr)
+  {
+    return RawComparer.IndexOf(str, substr, RawContainsFlags) >= 0;
+  }
+
+  static private CompareOptions RawContainsFlags = CompareOptions.IgnoreCase
+                                                 | CompareOptions.IgnoreNonSpace
+                                                 | CompareOptions.IgnoreSymbols;
+
+  static private CompareInfo RawComparer = CultureInfo.InvariantCulture.CompareInfo;
+
+  /// <summary>
   /// Sets all first letter to upper case.
   /// </summary>
   /// <param name="str">The string to act on.</param>
