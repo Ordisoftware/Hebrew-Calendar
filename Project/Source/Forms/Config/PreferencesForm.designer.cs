@@ -84,6 +84,7 @@
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditWeatherMenuItemsEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
+      this.EditMainFormTitleBarShowCelebration = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowToday = new System.Windows.Forms.CheckBox();
       this.EditParashahCaptionWithBookAndRef = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowWeeklyParashah = new System.Windows.Forms.CheckBox();
@@ -334,7 +335,6 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditMainFormTitleBarShowCelebration = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -798,6 +798,12 @@
       resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
       this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
       this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
+      // 
+      // EditMainFormTitleBarShowCelebration
+      // 
+      resources.ApplyResources(this.EditMainFormTitleBarShowCelebration, "EditMainFormTitleBarShowCelebration");
+      this.EditMainFormTitleBarShowCelebration.Name = "EditMainFormTitleBarShowCelebration";
+      this.EditMainFormTitleBarShowCelebration.UseVisualStyleBackColor = true;
       // 
       // EditMainFormTitleBarShowToday
       // 
@@ -2842,12 +2848,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // EditMainFormTitleBarShowCelebration
-      // 
-      resources.ApplyResources(this.EditMainFormTitleBarShowCelebration, "EditMainFormTitleBarShowCelebration");
-      this.EditMainFormTitleBarShowCelebration.Name = "EditMainFormTitleBarShowCelebration";
-      this.EditMainFormTitleBarShowCelebration.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
