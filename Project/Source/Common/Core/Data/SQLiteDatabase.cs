@@ -104,7 +104,7 @@ abstract class SQLiteDatabase
     CreateTables();
     Vacuum();
     Initialized = true;
-    if ( AutoLoadAllAtOpen ) LoadAll();
+    if ( AutoLoadAllAtOpen ) LoadAll(true);
   }
 
   protected virtual void Vacuum() { }
@@ -124,19 +124,21 @@ abstract class SQLiteDatabase
 
   protected abstract void DoClose();
 
-  public void LoadAll()
+  public bool LoadAll(bool bindEvenIfDataCreated)
   {
     CheckConnected();
     Rollback();
     DoLoadAll();
     Loaded = true;
-    CreateDataIfNotExist();
+    var result = CreateDataIfNotExist();
+    if ( result && !bindEvenIfDataCreated ) return result;
     CreateBindingInstances();
+    return result;
   }
 
   protected abstract void DoLoadAll();
 
-  protected virtual void CreateDataIfNotExist(bool reset = false) { }
+  protected virtual bool CreateDataIfNotExist(bool reset = false) { return false; }
 
   protected virtual void CreateBindingInstances() { }
 
