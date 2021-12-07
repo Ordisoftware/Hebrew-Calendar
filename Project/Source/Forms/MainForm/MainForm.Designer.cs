@@ -77,9 +77,6 @@
       this.LabelEnumsAsTranslations = new System.Windows.Forms.ToolStripLabel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
-      this.LabelSubTitleGPS = new System.Windows.Forms.Label();
-      this.LabelSubTitleCalendar = new System.Windows.Forms.Label();
-      this.LabelSubTitleOmer = new System.Windows.Forms.Label();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -218,6 +215,10 @@
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.PanelTitleInner = new System.Windows.Forms.Panel();
+      this.LabelSubTitleOmer = new System.Windows.Forms.Label();
+      this.LabelSubTitleGPS = new System.Windows.Forms.Label();
+      this.LabelSubTitleCalendar = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -238,6 +239,7 @@
       this.MenuTray.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripDay.SuspendLayout();
+      this.PanelTitleInner.SuspendLayout();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -619,29 +621,9 @@
       // PanelTitle
       // 
       this.PanelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelTitle.Controls.Add(this.LabelSubTitleGPS);
-      this.PanelTitle.Controls.Add(this.LabelSubTitleCalendar);
-      this.PanelTitle.Controls.Add(this.LabelSubTitleOmer);
+      this.PanelTitle.Controls.Add(this.PanelTitleInner);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
-      // 
-      // LabelSubTitleGPS
-      // 
-      this.LabelSubTitleGPS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleGPS, "LabelSubTitleGPS");
-      this.LabelSubTitleGPS.Name = "LabelSubTitleGPS";
-      // 
-      // LabelSubTitleCalendar
-      // 
-      this.LabelSubTitleCalendar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleCalendar, "LabelSubTitleCalendar");
-      this.LabelSubTitleCalendar.Name = "LabelSubTitleCalendar";
-      // 
-      // LabelSubTitleOmer
-      // 
-      this.LabelSubTitleOmer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleOmer, "LabelSubTitleOmer");
-      this.LabelSubTitleOmer.Name = "LabelSubTitleOmer";
       // 
       // moonPhaseImagePictureBox
       // 
@@ -1628,6 +1610,33 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
+      // PanelTitleInner
+      // 
+      this.PanelTitleInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleGPS);
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleOmer);
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleCalendar);
+      resources.ApplyResources(this.PanelTitleInner, "PanelTitleInner");
+      this.PanelTitleInner.Name = "PanelTitleInner";
+      // 
+      // LabelSubTitleOmer
+      // 
+      this.LabelSubTitleOmer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleOmer, "LabelSubTitleOmer");
+      this.LabelSubTitleOmer.Name = "LabelSubTitleOmer";
+      // 
+      // LabelSubTitleGPS
+      // 
+      this.LabelSubTitleGPS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleGPS, "LabelSubTitleGPS");
+      this.LabelSubTitleGPS.Name = "LabelSubTitleGPS";
+      // 
+      // LabelSubTitleCalendar
+      // 
+      this.LabelSubTitleCalendar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleCalendar, "LabelSubTitleCalendar");
+      this.LabelSubTitleCalendar.Name = "LabelSubTitleCalendar";
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1664,6 +1673,7 @@
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripDay.ResumeLayout(false);
+      this.PanelTitleInner.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1674,7 +1684,6 @@
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
-    internal System.Windows.Forms.Label LabelSubTitleCalendar;
     private System.Windows.Forms.Panel PanelCalendarOuter;
     private System.Windows.Forms.Panel PanelCalendarInner;
     private System.Windows.Forms.TabControl TabControl;
@@ -1772,8 +1781,6 @@
     public System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
-    private System.Windows.Forms.Label LabelSubTitleOmer;
-    private System.Windows.Forms.Label LabelSubTitleGPS;
     public System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
     public System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
     private System.Windows.Forms.Timer TimerUpdateTitles;
@@ -1856,6 +1863,10 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator21;
     internal System.Windows.Forms.ContextMenuStrip MenuBookmarks;
     internal System.Windows.Forms.ToolStrip ToolStrip;
+    private Panel PanelTitleInner;
+    private Label LabelSubTitleGPS;
+    private Label LabelSubTitleOmer;
+    internal Label LabelSubTitleCalendar;
   }
 }
 

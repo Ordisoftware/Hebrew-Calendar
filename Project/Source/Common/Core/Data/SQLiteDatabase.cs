@@ -124,7 +124,7 @@ abstract class SQLiteDatabase
 
   protected abstract void DoClose();
 
-  public bool LoadAll(bool bindEvenIfDataCreated)
+  public bool LoadAll(bool bindEvenIfDataCreated = true)
   {
     CheckConnected();
     Rollback();
@@ -138,9 +138,9 @@ abstract class SQLiteDatabase
 
   protected abstract void DoLoadAll();
 
-  protected virtual bool CreateDataIfNotExist(bool reset = false) { return false; }
+  protected abstract bool CreateDataIfNotExist(bool reset = false);
 
-  protected virtual void CreateBindingInstances() { }
+  protected abstract void CreateBindingInstances();
 
   protected List<T> Load<T>(TableQuery<T> query)
   {

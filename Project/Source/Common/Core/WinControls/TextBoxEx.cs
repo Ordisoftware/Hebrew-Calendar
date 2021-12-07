@@ -46,7 +46,7 @@ public delegate void InsertingTextEventHandler(object sender, TextUpdating mode,
 
 //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
 
-partial class TextBoxEx : TextBox
+public partial class TextBoxEx : TextBox
 {
 
   private bool SetTextMutex;
