@@ -57,7 +57,7 @@ partial class HebrewDatabase : SQLiteDatabase
     return false;
   }
 
-  protected override void CreateBindingInstances()
+  protected override void CreateBindingLists()
   {
     // NOP
   }

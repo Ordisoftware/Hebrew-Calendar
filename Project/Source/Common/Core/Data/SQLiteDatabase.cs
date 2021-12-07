@@ -132,7 +132,7 @@ abstract class SQLiteDatabase
     Loaded = true;
     var result = CreateDataIfNotExist();
     if ( result && !bindEvenIfDataCreated ) return result;
-    CreateBindingInstances();
+    CreateBindingLists();
     return result;
   }
 
@@ -140,7 +140,7 @@ abstract class SQLiteDatabase
 
   protected abstract bool CreateDataIfNotExist(bool reset = false);
 
-  protected abstract void CreateBindingInstances();
+  protected abstract void CreateBindingLists();
 
   protected List<T> Load<T>(TableQuery<T> query)
   {
