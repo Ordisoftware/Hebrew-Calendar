@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -53,7 +53,6 @@ static class FormsHelper
     foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
   }
 
-
   /// <summary>
   /// Gets all opened forms.
   /// </summary>
@@ -76,6 +75,25 @@ static class FormsHelper
   {
     var controls = control.Controls.OfType<T>();
     return control.Controls.Cast<Control>().SelectMany(c => c.GetAll<T>()).Concat(controls);
+  }
+
+  /// <summary>
+  /// A Control extension method that dispose all controls.
+  /// </summary>
+  /// <param name="control">The control.</param>
+  static public void DisposeAllControls(this Control control)
+  {
+    if ( control == null ) return;
+    control.SuspendLayout();
+    try
+    {
+      while ( control.Controls.Count > 0 )
+        control.Controls[0].Dispose();
+    }
+    finally
+    {
+      control.ResumeLayout();
+    }
   }
 
   /// <summary>
