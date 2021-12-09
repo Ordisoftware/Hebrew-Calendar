@@ -22,6 +22,7 @@ static class StackMethods
   #region Enums
 
   // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Next<T>(this T value, params T[] skip) where T : Enum
   {
     var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
@@ -35,6 +36,7 @@ static class StackMethods
   }
 
   // From https://stackoverflow.com/questions/642542/how-to-get-next-or-previous-public enum-value-in-c-sharp
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Previous<T>(this T value, params T[] skip) where T : Enum
   {
     var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
