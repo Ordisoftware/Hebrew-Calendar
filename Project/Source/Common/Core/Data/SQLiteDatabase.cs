@@ -35,16 +35,19 @@ abstract class SQLiteDatabase
 
   public bool ClearListsOnCloseOrRelease { get; set; }
 
+  public bool BindingsEnabled { get; set; } = true;
+
   protected readonly List<object> ModifiedObjects = new();
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 
   public event Action<SQLiteDatabase, object> Modified;
+
   public event Action<SQLiteDatabase> Saved;
 
   public void AddToModified(object instance)
   {
-    if ( Loaded && !ModifiedObjects.Contains(instance) )
+    if ( Loaded && BindingsEnabled && !ModifiedObjects.Contains(instance) )
     {
       ModifiedObjects.Add(instance);
       Modified?.Invoke(this, instance);

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -21,27 +21,37 @@ static class HebrewTools
 {
 
   /// <summary>
+  /// Remove diacritics and numbers Alef or Bet.
+  /// </summary>
+  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
+  static public (string Word, bool IsUnicode) RemoveNumberingAndDiacritics(string word)
+  {
+    word = word.RemoveDiacritics();
+    bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
+    if ( isUnicode && ( word.EndsWith(" א") || word.EndsWith(" ב") ) )
+      word = word.Remove(word.Length - 2);
+    else
+    if ( word.StartsWith("a ") || word.StartsWith("b ") )
+      word = word.Remove(0, 2);
+    return (word, isUnicode);
+  }
+
+  /// <summary>
   /// Starts Hebrew Letters.
   /// </summary>
-  /// <param name="word">The unicode or hebrew font chars of the word.</param>
+  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
   /// <param name="path">Path of the application.</param>
   static public void OpenHebrewLetters(string word, string path)
   {
     if ( File.Exists(path) )
     {
-      word = word.RemoveDiacritics();
-      bool isUnicode = HebrewAlphabet.ContainsUnicode(word);
-      if ( isUnicode && ( word.EndsWith(" א") || word.EndsWith(" ב") ) )
-        word = word.Remove(word.Length - 2);
-      else
-      if ( word.StartsWith("a ") || word.StartsWith("b ") )
-        word = word.Remove(0, 2);
-      var items = word.Split(' ');
-      if ( isUnicode ) items = items.Reverse().ToArray();
+      var wordAnalyzed = RemoveNumberingAndDiacritics(word);
+      var items = wordAnalyzed.Word.Split(' ');
+      if ( wordAnalyzed.IsUnicode ) items = items.Reverse().ToArray();
       foreach ( string item in items )
       {
         SystemManager.RunShell(path, item);
-        System.Threading.Thread.Sleep(250);
+        Thread.Sleep(250);
       }
     }
     else
