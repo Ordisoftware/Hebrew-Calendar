@@ -47,7 +47,7 @@ abstract class SQLiteDatabase
 
   public void AddToModified(object instance)
   {
-    if ( Loaded && BindingsEnabled && !ModifiedObjects.Contains(instance) )
+    if ( Loaded && !ModifiedObjects.Contains(instance) )
     {
       ModifiedObjects.Add(instance);
       Modified?.Invoke(this, instance);
@@ -110,7 +110,7 @@ abstract class SQLiteDatabase
     if ( AutoLoadAllAtOpen ) LoadAll(true);
   }
 
-  protected virtual void Vacuum() { }
+  protected virtual void Vacuum(bool force = false) { }
 
   protected virtual void UpgradeSchema() { }
 
@@ -123,6 +123,7 @@ abstract class SQLiteDatabase
     DoClose();
     Connection.Close();
     Connection = null;
+    Loaded = false;
   }
 
   protected abstract void DoClose();
@@ -131,6 +132,7 @@ abstract class SQLiteDatabase
   {
     CheckConnected();
     Rollback();
+    Loaded = false;
     DoLoadAll();
     Loaded = true;
     var result = CreateDataIfNotExist();
