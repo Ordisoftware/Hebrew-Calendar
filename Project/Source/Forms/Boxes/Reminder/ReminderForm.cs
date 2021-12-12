@@ -29,10 +29,13 @@ partial class ReminderForm : Form
     {
       Image = Image.FromFile(Program.ApplicationImage64FilePath);
     }
+    catch ( FileNotFoundException )
+    {
+      DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(Program.ApplicationImage64FilePath));
+    }
     catch ( Exception ex )
     {
-      string msg = SysTranslations.LoadFileError.GetLang(Program.ApplicationImage64FilePath, ex.Message);
-      DisplayManager.ShowError(msg);
+      DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(Program.ApplicationImage64FilePath, ex.Message));
     }
   }
 

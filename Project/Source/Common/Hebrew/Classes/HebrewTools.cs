@@ -41,6 +41,7 @@ static class HebrewTools
   /// </summary>
   /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
   /// <param name="path">Path of the application.</param>
+  [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
   static public void OpenHebrewLetters(string word, string path)
   {
     if ( File.Exists(path) )

@@ -30,7 +30,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   {
   }
 
-  protected override void Vacuum()
+  protected override void Vacuum(bool force = false)
   {
     if ( Program.Settings.VacuumAtStartup )
     {

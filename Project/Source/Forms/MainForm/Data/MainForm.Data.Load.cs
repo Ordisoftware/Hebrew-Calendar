@@ -83,8 +83,7 @@ partial class MainForm
       catch ( Exception ex )
       {
         Globals.ChronoStartingApp.Stop();
-        string msg = SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message);
-        DisplayManager.ShowWarning(msg);
+        DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
         Globals.ChronoStartingApp.Start();
       }
     if ( !isTextReportLoaded )

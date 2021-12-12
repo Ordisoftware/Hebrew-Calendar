@@ -138,7 +138,7 @@ partial class MainForm
       }
       catch ( Exception ex )
       {
-        DisplayManager.ShowWarning(SysTranslations.LoadFileError.GetLang(Program.TextReportFilePath, ex.Message));
+        DisplayManager.ShowWarning(SysTranslations.WriteFileError.GetLang(Program.TextReportFilePath, ex.Message));
       }
       return content.ToString();
     }

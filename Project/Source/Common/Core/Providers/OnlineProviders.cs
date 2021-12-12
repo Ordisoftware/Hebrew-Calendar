@@ -112,6 +112,11 @@ class OnlineProviders : DataFile
       }
       SortByLanguage();
     }
+    catch ( FileNotFoundException )
+    {
+      string msg = SysTranslations.FileNotFound.GetLang(filePath);
+      DisplayManager.ShowError(msg);
+    }
     catch ( Exception ex )
     {
       string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);

@@ -101,7 +101,7 @@ partial class ComboBoxNavigator : UserControl
     try
     {
       base.Refresh();
-      bool notNull = _ComboBox != null && _ComboBox.Items.Count > 0;
+      bool notNull = _ComboBox?.Items.Count > 0;
       ActionFirst.Enabled = notNull && _ComboBox.SelectedIndex > 0;
       ActionPrevious.Enabled = ActionFirst.Enabled;
       ActionLast.Enabled = notNull && _ComboBox.SelectedIndex < _ComboBox.Items.Count - 1;

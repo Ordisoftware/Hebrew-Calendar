@@ -40,6 +40,11 @@ static partial class Globals
     {
       return new OnlineProviders(filePath, true, IsDebugExecutable, folder);
     }
+    catch ( FileNotFoundException )
+    {
+      DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(filePath));
+      return null;
+    }
     catch ( Exception ex )
     {
       DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
