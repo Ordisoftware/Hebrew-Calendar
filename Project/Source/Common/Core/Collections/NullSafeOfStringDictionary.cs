@@ -94,6 +94,15 @@ static class NullSafeOfStringDictionaryHelper
         }
       return true;
     }
+    catch ( FileNotFoundException )
+    {
+      if ( showError )
+        MessageBox.Show(SysTranslations.FileNotFound.GetLang(filePath),
+                        Globals.AssemblyTitle,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+      return false;
+    }
     catch ( Exception ex )
     {
       if ( showError )
@@ -120,6 +129,15 @@ static class NullSafeOfStringDictionaryHelper
           stream.WriteLine(item.Key);
       stream.Close();
       return true;
+    }
+    catch ( FileNotFoundException )
+    {
+      if ( showError )
+        MessageBox.Show(SysTranslations.FileNotFound.GetLang(filePath),
+                        Globals.AssemblyTitle,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+      return false;
     }
     catch ( Exception ex )
     {

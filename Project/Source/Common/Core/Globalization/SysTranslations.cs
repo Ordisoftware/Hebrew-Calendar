@@ -83,8 +83,8 @@ static partial class SysTranslations
 
   static public readonly TranslationsDictionary AskToDeleteBookmark = new()
   {
-    [Language.EN] = "Erase the bookmark?",
-    [Language.FR] = "Effacer le signet ?"
+    [Language.EN] = "Erase the bookmark?" + Globals.NL2 + "{0}",
+    [Language.FR] = "Effacer le signet ?" + Globals.NL2 + "{0}"
   };
 
   static public readonly TranslationsDictionary AskToDeleteBookmarkAll = new()

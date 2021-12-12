@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 public partial class CelebrationVersesBoardForm : Form
@@ -75,7 +75,7 @@ public partial class CelebrationVersesBoardForm : Form
         var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
         if ( SelectVerse.SelectedItems.Count > 1 )
-          System.Threading.Thread.Sleep(1500);
+          Thread.Sleep(1500);
       }
     });
   }
@@ -84,7 +84,7 @@ public partial class CelebrationVersesBoardForm : Form
   {
     if ( SelectVerse.SelectedItems.Count <= 0 ) return;
     var verseitem = (Tuple<TanakBook, string, string>)SelectVerse.SelectedItems[0].Tag;
-    var reference = $"{verseitem.Item1}.{verseitem.Item2}";
+    var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
     HebrewTools.OpenHebrewWordsGoToVerse(reference, Settings.HebrewWordsExe);
   }
 

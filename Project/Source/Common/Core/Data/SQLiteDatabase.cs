@@ -35,11 +35,14 @@ abstract class SQLiteDatabase
 
   public bool ClearListsOnCloseOrRelease { get; set; }
 
+  public bool BindingsEnabled { get; set; } = true;
+
   protected readonly List<object> ModifiedObjects = new();
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 
   public event Action<SQLiteDatabase, object> Modified;
+
   public event Action<SQLiteDatabase> Saved;
 
   public void AddToModified(object instance)
@@ -104,10 +107,10 @@ abstract class SQLiteDatabase
     CreateTables();
     Vacuum();
     Initialized = true;
-    if ( AutoLoadAllAtOpen ) LoadAll();
+    if ( AutoLoadAllAtOpen ) LoadAll(true);
   }
 
-  protected virtual void Vacuum() { }
+  protected virtual void Vacuum(bool force = false) { }
 
   protected virtual void UpgradeSchema() { }
 
@@ -120,25 +123,29 @@ abstract class SQLiteDatabase
     DoClose();
     Connection.Close();
     Connection = null;
+    Loaded = false;
   }
 
   protected abstract void DoClose();
 
-  public void LoadAll()
+  public bool LoadAll(bool bindEvenIfDataCreated = true)
   {
     CheckConnected();
     Rollback();
+    Loaded = false;
     DoLoadAll();
     Loaded = true;
-    CreateDataIfNotExist();
-    CreateBindingInstances();
+    var result = CreateDataIfNotExist();
+    if ( result && !bindEvenIfDataCreated ) return result;
+    CreateBindingLists();
+    return result;
   }
 
   protected abstract void DoLoadAll();
 
-  protected virtual void CreateDataIfNotExist(bool reset = false) { }
+  protected abstract bool CreateDataIfNotExist(bool reset = false);
 
-  protected virtual void CreateBindingInstances() { }
+  protected abstract void CreateBindingLists();
 
   protected List<T> Load<T>(TableQuery<T> query)
   {

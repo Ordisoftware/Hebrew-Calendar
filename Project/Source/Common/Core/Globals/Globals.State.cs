@@ -61,6 +61,11 @@ static partial class Globals
   static public bool IsGenerating { get; set; }
 
   /// <summary>
+  /// Indicates if data is being rendered.
+  /// </summary>
+  static public bool IsRendering { get; set; }
+
+  /// <summary>
   /// Indicates if data is being printed.
   /// </summary>
   static public bool IsPrinting { get; set; }

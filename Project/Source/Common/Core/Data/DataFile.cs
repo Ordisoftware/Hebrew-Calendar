@@ -107,7 +107,7 @@ public abstract class DataFile
         }
         catch ( Exception ex )
         {
-          string msg = SysTranslations.LoadFileError.GetLang(filePath1, filePath2, ex.Message);
+          string msg = SysTranslations.CopyFileError.GetLang(filePath1, filePath2, ex.Message);
           DisplayManager.ShowError(msg);
           return string.Empty;
         }

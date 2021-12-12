@@ -159,6 +159,7 @@ partial class MainForm
     });
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     IsCalendarReady = false;
+    PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
   }
 
   private bool IsCalendarReady = true;
@@ -174,6 +175,7 @@ partial class MainForm
       Application.DoEvents();
       Thread.Sleep(500);
     }
+    if ( ApplicationCommandLine.Instance == null ) return;
     if ( ApplicationCommandLine.Instance.Generate )
       ActionGenerate.PerformClick();
     if ( ApplicationCommandLine.Instance.ResetReminder )

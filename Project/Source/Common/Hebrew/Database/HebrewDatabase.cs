@@ -52,6 +52,16 @@ partial class HebrewDatabase : SQLiteDatabase
     throw new NotImplementedException(message);
   }
 
+  protected override bool CreateDataIfNotExist(bool reset = false)
+  {
+    return false;
+  }
+
+  protected override void CreateBindingLists()
+  {
+    // NOP
+  }
+
   [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   protected override void DoSaveAll()
   {

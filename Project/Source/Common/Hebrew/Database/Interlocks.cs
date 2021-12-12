@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Linq;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Copyright 2012-2021 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -19,15 +20,14 @@ static class Interlocks
 
   static public readonly string TableName = nameof(Interlocks);
 
+  static private SQLiteNetORM Connection => HebrewDatabase.Instance.Connection;
+
   static private void Purge()
   {
     string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
-    foreach ( var item in HebrewDatabase.Instance.Connection.Query<Interlock>(sql) )
-    {
-      if ( Process.GetProcesses().Any(p => p.Id == item.ProcessID) ) continue;
-      sql = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
-      HebrewDatabase.Instance.Connection.Execute(sql, item.ProcessID);
-    }
+    var processes = Process.GetProcesses();
+    foreach ( var item in Connection.Query<Interlock>(sql).Where(item => !processes.Any(p => p.Id == item.ProcessID)) )
+      Connection.Execute($"DELETE FROM {TableName} WHERE ProcessID = (?)", item.ProcessID);
   }
 
   static private string Convert(string name = null)
@@ -41,21 +41,21 @@ static class Interlocks
     if ( IsLockedByCurrentProcess(name) ) return;
     name = Convert(name);
     var item = new Interlock { ProcessID = Globals.ProcessId, Name = name };
-    HebrewDatabase.Instance.Connection.Insert(item);
+    Connection.Insert(item);
   }
 
   static public void Release(string name = null)
   {
     if ( !IsLockedByCurrentProcess(name) ) return;
     string sql = $"DELETE FROM {TableName} WHERE ProcessID = (?)";
-    HebrewDatabase.Instance.Connection.Execute(sql, Globals.ProcessId);
+    Connection.Execute(sql, Globals.ProcessId);
   }
 
   static public bool IsLockedByCurrentProcess(string name = null)
   {
     name = Convert(name);
     string sql = $"SELECT Count(ProcessID) FROM {TableName} WHERE ProcessID = (?) AND Name = (?)";
-    return HebrewDatabase.Instance.Connection.ExecuteScalar<long>(sql, Globals.ProcessId, name) > 0;
+    return Connection.ExecuteScalar<long>(sql, Globals.ProcessId, name) > 0;
   }
 
   static public bool IsReadOnly()
@@ -67,7 +67,7 @@ static class Interlocks
   {
     name = Convert(name);
     string sql = $"SELECT Count(Name) FROM {TableName} WHERE Name = (?)";
-    return HebrewDatabase.Instance.Connection.ExecuteScalar<long>(sql, name);
+    return Connection.ExecuteScalar<long>(sql, name);
   }
 
   static public List<string> GetLockers(string name = null)
@@ -75,17 +75,15 @@ static class Interlocks
     name = Convert(name);
     string sql = $"SELECT ProcessID FROM {TableName} WHERE Name = (?)";
     var dictionary = new Dictionary<string, int>();
-    foreach ( var item in HebrewDatabase.Instance.Connection.Query<Interlock>(sql, name) )
-    {
-      var id = item.ProcessID;
-      if ( id == Globals.ProcessId ) continue;
-      var process = Array.Find(Process.GetProcesses(), p => p.Id == id);
-      string processName = process?.ProcessName ?? "PID " + id;
-      if ( dictionary.ContainsKey(processName) )
-        dictionary[processName]++;
+    var processes = Process.GetProcesses();
+    var list = from item in Connection.Query<Interlock>(sql, name).Where(item => item.ProcessID != Globals.ProcessId)
+               let process = Array.Find(processes, p => p.Id == item.ProcessID)
+               select process?.ProcessName ?? "PID " + item.ProcessID;
+    foreach ( var item in list )
+      if ( dictionary.ContainsKey(item) )
+        dictionary[item]++;
       else
-        dictionary.Add(processName, 1);
-    }
+        dictionary.Add(item, 1);
     return dictionary.Select(pair => $"{pair.Key} ({pair.Value})").ToList();
   }
 

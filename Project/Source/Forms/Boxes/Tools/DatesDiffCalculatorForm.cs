@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class DatesDiffCalculatorForm : Form
@@ -142,7 +142,9 @@ partial class DatesDiffCalculatorForm : Form
       if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
         if ( !menuitem.Text.EndsWith(")") )
         {
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang()) ) return;
+          var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
+          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
+            return;
           menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
           Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
           SystemManager.TryCatch(Settings.Save);

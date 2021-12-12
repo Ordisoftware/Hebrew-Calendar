@@ -94,10 +94,13 @@ partial class DataFileEditorForm : Form
         filePath = ( (DataFile)page.Tag ).FilePathDefault;
         ( (TextBox)page.Controls[0] ).Text = File.ReadAllText(filePath);
       }
+      catch ( FileNotFoundException )
+      {
+        DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(filePath));
+      }
       catch ( Exception ex )
       {
-        string msg = SysTranslations.LoadFileError.GetLang(filePath, ex.Message);
-        DisplayManager.ShowError(msg);
+        DisplayManager.ShowError(SysTranslations.LoadFileError.GetLang(filePath, ex.Message));
       }
     EditProvidersForm_Shown(this, null);
   }

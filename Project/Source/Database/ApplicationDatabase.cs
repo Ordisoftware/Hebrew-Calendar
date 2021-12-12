@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  static new public ApplicationDatabase Instance { get; protected set; }
+  static public ApplicationDatabase Instance { get; protected set; }
 
   static ApplicationDatabase()
   {
@@ -30,7 +30,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   {
   }
 
-  protected override void Vacuum()
+  protected override void Vacuum(bool force = false)
   {
     if ( Program.Settings.VacuumAtStartup )
     {
@@ -58,6 +58,16 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDay>().ToList();
+  }
+
+  protected override bool CreateDataIfNotExist(bool reset = false)
+  {
+    return false;
+  }
+
+  protected override void CreateBindingLists()
+  {
+    // NOP
   }
 
   [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "Not used")]

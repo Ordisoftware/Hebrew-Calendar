@@ -57,11 +57,13 @@ static partial class StringHelper
     return RawComparer.IndexOf(str, substr, RawContainsFlags) >= 0;
   }
 
-  static private CompareOptions RawContainsFlags = CompareOptions.IgnoreCase
-                                                 | CompareOptions.IgnoreNonSpace
-                                                 | CompareOptions.IgnoreSymbols;
+  [SuppressMessage("Design", "IDE0036:Use constant instead of field.", Justification = "Opinion")]
+  [SuppressMessage("Design", "RCS1187:Use constant instead of field.", Justification = "Opinion")]
+  static readonly private CompareOptions RawContainsFlags = CompareOptions.IgnoreCase
+                                                          | CompareOptions.IgnoreNonSpace
+                                                          | CompareOptions.IgnoreSymbols;
 
-  static private CompareInfo RawComparer = CultureInfo.InvariantCulture.CompareInfo;
+  static readonly private CompareInfo RawComparer = CultureInfo.InvariantCulture.CompareInfo;
 
   /// <summary>
   /// Sets all first letter to upper case.
