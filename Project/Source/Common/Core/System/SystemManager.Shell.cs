@@ -42,7 +42,7 @@ static partial class SystemManager
       CommandLine.ParserResult<T> options = CommandLine.Parser.Default.ParseArguments<T>(args);
       if ( options.Tag != CommandLine.ParserResultType.Parsed ) return;
       CommandLineOptions = ( (CommandLine.Parsed<T>)options ).Value;
-      if ( !CommandLineOptions.Language.IsNullOrEmpty() )
+      if ( language != null && !CommandLineOptions.Language.IsNullOrEmpty() )
         foreach ( var lang in Languages.Values )
           if ( CommandLineOptions.Language.ToLower() == lang.Key )
             language = lang.Value;
