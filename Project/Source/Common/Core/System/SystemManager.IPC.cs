@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using System.IO.Pipes;
@@ -110,13 +110,18 @@ static partial class SystemManager
     try
     {
       using var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
-      client.Connect();
-      new BinaryFormatter().Serialize(client, command);
-      client.Close();
+      client.Connect(2000);
+      try
+      {
+        new BinaryFormatter().Serialize(client, command);
+      }
+      finally
+      {
+        client.Close();
+      }
     }
-    catch ( Exception ex )
+    catch
     {
-      ex.Manage();
     }
   }
 
