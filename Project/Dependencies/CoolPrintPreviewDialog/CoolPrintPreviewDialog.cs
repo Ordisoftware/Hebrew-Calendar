@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 
-#pragma warning disable IDE1006 // Styles d'affectation de noms
 namespace CoolPrintPreview
 {
   /// <summary>
@@ -21,6 +20,7 @@ namespace CoolPrintPreview
   /// a better UI based on the <see cref="ToolStrip"/> control, and built-in
   /// PDF export.
   /// </remarks>
+  [SuppressMessage("Style", "IDE1006:Styles d'affectation de noms", Justification = "N/A")]
   internal partial class CoolPrintPreviewDialog : Form
   {
 
@@ -366,4 +366,3 @@ namespace CoolPrintPreview
     #endregion
   }
 }
-#pragma warning restore IDE1006 // Styles d'affectation de noms

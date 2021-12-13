@@ -39,13 +39,13 @@ partial class MainForm
     { ReportFieldText.Events, 42 },
   };
 
+  [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   private string GenerateReportText(bool processInsert = false)
   {
     var Chrono = new Stopwatch();
     Chrono.Start();
     try
     {
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
       string headerSep = SeparatorV;
       string headerTxt = SeparatorV;
       foreach ( var field in Enums.GetValues<ReportFieldText>() )
@@ -55,7 +55,6 @@ partial class MainForm
         headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV;
       }
       headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
       var content = new StringBuilder();
       content.AppendLine(headerSep);
       content.AppendLine(headerTxt);

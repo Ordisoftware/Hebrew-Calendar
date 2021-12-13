@@ -46,6 +46,7 @@ public delegate void InsertingTextEventHandler(object sender, TextUpdating mode,
 
 //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);
 
+[SuppressMessage("Usage", "RCS1159:Use EventHandler<T>.", Justification = "N/A")]
 public partial class TextBoxEx : TextBox
 {
 
@@ -59,7 +60,6 @@ public partial class TextBoxEx : TextBox
 
   public event InsertingTextEventHandler InsertingText;
 
-#pragma warning disable RCS1159 // Use EventHandler<T>.
   public event CancelEventHandler ContextMenuEditOpening
   {
     add { ContextMenuEdit.Opening += value; }
@@ -77,7 +77,6 @@ public partial class TextBoxEx : TextBox
     add { ContextMenuEdit.Closed += value; }
     remove { ContextMenuEdit.Closed -= value; }
   }
-#pragma warning restore RCS1159 // Use EventHandler<T>.
 
   public override string Text
   {
@@ -152,7 +151,7 @@ public partial class TextBoxEx : TextBox
     UpdateMenuItems(this);
   }
 
-#pragma warning disable IDE0051 // Supprimer les membres privés non utilisés
+  [SuppressMessage("CodeQuality", "IDE0051:Supprimer les membres privés non utilisés", Justification = "To be implemented")]
   private void AddUndo()
   {
     //return;
@@ -164,6 +163,7 @@ public partial class TextBoxEx : TextBox
     //  RedoStack.Clear();
   }
 
+  [SuppressMessage("CodeQuality", "IDE0051:Supprimer les membres privés non utilisés", Justification = "To be implemented")]
   private void SetCaret(int pos, int length)
   {
     SelectionStart = CaretAfterPaste switch
@@ -173,13 +173,11 @@ public partial class TextBoxEx : TextBox
       _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
     };
   }
-#pragma warning restore IDE0051 // Supprimer les membres privés non utilisés
 
+  [SuppressMessage("Minor Code Smell", "S3626:Jump statements should not be redundant", Justification = "To be implemented")]
   private void TextChangedEvent(object sender, EventArgs e)
   {
-#pragma warning disable S3626 // Jump statements should not be redundant
     if ( SetTextMutex ) return;
-#pragma warning restore S3626 // Jump statements should not be redundant
     //UndoStack.Push(Previous);
     //RedoStack.Clear();
   }

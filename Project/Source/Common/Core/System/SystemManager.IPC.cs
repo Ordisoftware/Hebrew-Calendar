@@ -26,11 +26,8 @@ static partial class SystemManager
   /// <summary>
   /// Application mutex to allow only one process instance.
   /// </summary>
-#pragma warning disable S4487 // Unread "private" fields should be removed
-#pragma warning disable IDE0052 // Supprimer les membres privés non lus
+  [SuppressMessage("CodeQuality", "IDE0052:Supprimer les membres privés non lus", Justification = "Required")]
   static private Mutex ApplicationMutex;
-#pragma warning restore IDE0052 // Supprimer les membres privés non lus
-#pragma warning restore S4487 // Unread "private" fields should be removed
 
   /// <summary>
   /// IPC server instance.

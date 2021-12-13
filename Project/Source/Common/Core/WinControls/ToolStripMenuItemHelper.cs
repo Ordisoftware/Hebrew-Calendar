@@ -40,10 +40,10 @@ public static class ToolStripMenuItemHelper
   /// </summary>
   /// <param name="sourceToolStripMenuItem">The source tool strip menu item.</param>
   /// <returns>A cloned version of the toolstrip menu item</returns>
+  [SuppressMessage("Usage", "RCS1202:Avoid NullReferenceException.", Justification = "N/A")]
   public static ToolStripMenuItem Clone(this ToolStripMenuItem sourceToolStripMenuItem)
   {
     var menuItem = new ToolStripMenuItem();
-#pragma warning disable RCS1202 // Avoid NullReferenceException.
     var propInfoList = from p in typeof(ToolStripMenuItem).GetProperties()
                        let attributes = p.GetCustomAttributes(true)
                        let notBrowseable = ( from a in attributes
@@ -52,7 +52,6 @@ public static class ToolStripMenuItemHelper
                        where !notBrowseable && p.CanRead && p.CanWrite && p.Name != "DropDown"
                        orderby p.Name
                        select p;
-#pragma warning restore RCS1202 // Avoid NullReferenceException.
     // Copy over using reflections
     foreach ( var propertyInfo in propInfoList )
     {
@@ -120,16 +119,16 @@ public static class ToolStripMenuItemHelper
     destEventHandlerList.AddHandlers(sourceEventHandlerList);
   }
 
+
   /// <summary>
   /// Gets the event handler list from a component
   /// </summary>
   /// <param name="component">The source component.</param>
   /// <returns>The EventHanderList or null if none</returns>
+  [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
   public static EventHandlerList GetEventHandlerList(this IComponent component)
   {
-#pragma warning disable S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
     var eventsInfo = component.GetType().GetProperty("Events", BindingFlags.Instance | BindingFlags.NonPublic);
-#pragma warning restore S3011 // Reflection should not be used to increase accessibility of classes, methods, or fields
     return (EventHandlerList)eventsInfo.GetValue(component, null);
   }
 

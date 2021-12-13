@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
+  [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   private string ExportSaveCSV(ExportInterval interval)
   {
     UpdateButtons();
@@ -26,11 +27,9 @@ partial class MainForm
     {
       string CSVSeparator = Globals.CSVSeparator.ToString();
       string headerTxt = string.Empty;
-#pragma warning disable S1643 // Strings should not be concatenated using '+' in a loop
       foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
         headerTxt += field.ToString() + Globals.CSVSeparator;
       headerTxt = headerTxt.Remove(headerTxt.Length - 1);
-#pragma warning restore S1643 // Strings should not be concatenated using '+' in a loop
       var result = new StringBuilder();
       result.AppendLine(headerTxt);
       if ( LunisolarDays.Count == 0 ) return null;

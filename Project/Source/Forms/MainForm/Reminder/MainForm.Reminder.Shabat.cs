@@ -39,7 +39,7 @@ partial class MainForm
       return result;
     }
     else
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous -Analysis Error
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous - Analysis Error
       if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
 #pragma warning restore S2589 // Boolean expressions should not be gratuitous
     {
