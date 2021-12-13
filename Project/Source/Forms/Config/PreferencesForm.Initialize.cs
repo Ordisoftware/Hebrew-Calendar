@@ -241,11 +241,12 @@ partial class PreferencesForm
   {
     var fonts = new InstalledFontCollection().Families
                                              .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
-                                             .OrderBy(f => f.Name);
-    foreach ( var value in fonts )
+                                             .Select(font => font.Name)
+                                             .OrderBy(name => name);
+    foreach ( var name in fonts )
     {
-      int index = EditTextReportFontName.Items.Add(value.Name);
-      if ( value.Name == Settings.FontName )
+      int index = EditTextReportFontName.Items.Add(name);
+      if ( name == Settings.FontName )
         EditTextReportFontName.SelectedIndex = index;
     }
   }

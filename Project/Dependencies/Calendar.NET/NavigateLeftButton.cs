@@ -6,10 +6,10 @@
     {
       Size = new System.Drawing.Size(42, 29);
       ButtonText = "<";
-    }
+    //}
 
-    private void InitializeComponent()
-    {
+    //private void InitializeComponent()
+    //{
       this.SuspendLayout();
       // 
       // NavigateLeftButton

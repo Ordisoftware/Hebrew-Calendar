@@ -129,7 +129,7 @@ namespace CodeProjectCalendar.NET
 
     private void CoolButtonLoad(object sender, EventArgs e)
     {
-
+      //
     }
 
     private void CoolButtonPaint(object sender, PaintEventArgs e)
@@ -220,10 +220,7 @@ namespace CodeProjectCalendar.NET
         return;
       if ( _mouseDown )
       {
-        if ( ButtonClicked != null )
-        {
-          ButtonClicked(this);
-        }
+        ButtonClicked?.Invoke(this);
       }
       _mouseDown = false;
     }

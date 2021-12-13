@@ -103,6 +103,7 @@ public partial class CelebrationVersesBoardForm : Form
     SelectCelebration.Items.AddRange(items.ToArray());
   }
 
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   private void FindCurrentCelebration(TorahCelebrationDay celebration = TorahCelebrationDay.None)
   {
     if ( SelectCelebration.Items.Count <= 0 ) return;

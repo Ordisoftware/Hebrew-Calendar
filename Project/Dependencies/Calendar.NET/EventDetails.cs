@@ -32,7 +32,7 @@ namespace CodeProjectCalendar.NET
 
     private void EventDetailsLoad(object sender, EventArgs e)
     {
-
+      //
     }
 
     private void PopulateComboBox()
@@ -78,42 +78,21 @@ namespace CodeProjectCalendar.NET
 
     private string RecurringFrequencyToString(RecurringFrequencies f)
     {
-      string retval = "";
 
-      switch ( f )
+      return f switch
       {
-        case RecurringFrequencies.Custom:
-          retval = "Custom";
-          break;
-        case RecurringFrequencies.Daily:
-          retval = "Daily";
-          break;
-        case RecurringFrequencies.EveryMonWedFri:
-          retval = "Every Monday, Wednesday and Friday";
-          break;
-        case RecurringFrequencies.EveryTueThurs:
-          retval = "Every Tuesday and Thursday";
-          break;
-        case RecurringFrequencies.EveryWeekday:
-          retval = "Every Week Day (Mon - Fri)";
-          break;
-        case RecurringFrequencies.EveryWeekend:
-          retval = "Every Weekend (Sat & Sun)";
-          break;
-        case RecurringFrequencies.Monthly:
-          retval = "Every Month";
-          break;
-        case RecurringFrequencies.None:
-          retval = "None";
-          break;
-        case RecurringFrequencies.Weekly:
-          retval = "Every week";
-          break;
-        case RecurringFrequencies.Yearly:
-          retval = "Every year";
-          break;
-      }
-      return retval;
+        RecurringFrequencies.Custom => "Custom",
+        RecurringFrequencies.Daily => "Daily",
+        RecurringFrequencies.EveryMonWedFri => "Every Monday, Wednesday and Friday",
+        RecurringFrequencies.EveryTueThurs => "Every Tuesday and Thursday",
+        RecurringFrequencies.EveryWeekday => "Every Week Day (Mon - Fri)",
+        RecurringFrequencies.EveryWeekend => "Every Weekend (Sat & Sun)",
+        RecurringFrequencies.Monthly => "Every Month",
+        RecurringFrequencies.None => "None",
+        RecurringFrequencies.Weekly => "Every week",
+        RecurringFrequencies.Yearly => "Every year",
+        _ => "",
+      };
     }
 
     private void FillValues()

@@ -105,7 +105,7 @@ namespace CodeProjectCalendar.NET
 
     private void EventToolTipLoad(object sender, EventArgs e)
     {
-
+      //
     }
 
     public Size CalculateSize()

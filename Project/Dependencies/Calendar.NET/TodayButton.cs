@@ -6,10 +6,10 @@
     {
       Size = new System.Drawing.Size(85, 29);
       ButtonText = "Today";
-    }
+    //}
 
-    private void InitializeComponent()
-    {
+    //private void InitializeComponent()
+    //{
       this.SuspendLayout();
       // 
       // TodayButton

@@ -10,7 +10,7 @@ namespace Base.Hotkeys
     public Dictionary<ushort, HotkeyAction> Hotkeys { get; }
     public Dictionary<int, ushort> IDs { get; }
     public bool Active { get; set; }
-    private HotkeyForm form;
+    private readonly HotkeyForm form;
 
     public HotkeyManager()
     {
@@ -34,39 +34,29 @@ namespace Base.Hotkeys
 
     protected virtual void Dispose(bool disposing)
     {
-      if ( disposing )
-        if ( form != null )
-          form.Dispose();
+      if ( disposing ) form?.Dispose();
     }
 
     private void HotkeyPressed(object sender, HotkeyEventArgs args)
     {
       if ( Active )
       {
-        HotkeyAction ha = Hotkeys[args.id];
-        if ( ha != null )
-          if ( ha.Active )
-          {
-            Thread t = new Thread(() => ha.Execute());
-            t.IsBackground = true;
-            t.Start();
-          }
+        HotkeyAction ha = Hotkeys[args.Id];
+        if ( ha?.Active == true )
+          new Thread(() => ha.Execute()) { IsBackground = true }.Start();
       }
     }
 
     public bool RegisterHotkey(int id, HotkeyAction ha)
     {
-      if ( ha != null )
+      if ( ha != null && ha.Hotkey.Status != HotkeyStatus.Registered && ha.Hotkey.IsValid )
       {
-        if ( ha.Hotkey.Status != HotkeyStatus.Registered && ha.Hotkey.IsValid )
+        form.RegisterHotkey(ha.Hotkey);
+        if ( ha.Hotkey.Status == HotkeyStatus.Registered )
         {
-          form.RegisterHotkey(ha.Hotkey);
-          if ( ha.Hotkey.Status == HotkeyStatus.Registered )
-          {
-            IDs.Add(id, ha.Hotkey.ID);
-            Hotkeys.Add(ha.Hotkey.ID, ha);
-            return true;
-          }
+          IDs.Add(id, ha.Hotkey.ID);
+          Hotkeys.Add(ha.Hotkey.ID, ha);
+          return true;
         }
       }
       return false;

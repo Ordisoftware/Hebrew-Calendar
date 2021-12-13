@@ -7,13 +7,13 @@ namespace Base.Hotkeys
   public class HotkeyEventArgs : EventArgs
   {
 
-    public ushort id;
+    public ushort Id { get; }
     public Keys Key { get; set; }
     public Modifiers Mods { get; set; }
 
     public HotkeyEventArgs(ushort id, Keys key, Modifiers mods)
     {
-      this.id = id;
+      Id = id;
       Key = key;
       Mods = mods;
     }

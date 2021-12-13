@@ -44,7 +44,7 @@ namespace CoolPrintPreview
   /// </summary>
   /// <remarks>
   /// This control is similar to the standard <see cref="PrintPreviewControl"/> but
-  /// it displays pages as they are rendered. By contrast, the standard control 
+  /// it displays pages as they are rendered. By contrast, the standard control
   /// waits until the entire document is rendered before it displays anything.
   /// </remarks>
   internal class CoolPrintPreviewControl : UserControl
@@ -58,8 +58,7 @@ namespace CoolPrintPreview
     int _startPage;
     Brush _backBrush;
     Point _ptLast;
-    PointF _himm2pix = new PointF(-1, -1);
-    PageImageList _img = new PageImageList();
+    PointF _himm2pix = new(-1, -1);
     bool _cancel, _rendering;
 
     const int MARGIN = 4;
@@ -109,7 +108,7 @@ namespace CoolPrintPreview
       if ( _doc != null )
       {
         // prepare to render preview document
-        _img.Clear();
+        PageImages.Clear();
         PrintController savePC = _doc.PrintController;
 
         // render preview document
@@ -118,16 +117,16 @@ namespace CoolPrintPreview
           _cancel = false;
           _rendering = true;
           _doc.PrintController = new PreviewPrintController();
-          _doc.PrintPage += _doc_PrintPage;
-          _doc.EndPrint += _doc_EndPrint;
+          _doc.PrintPage += Doc_PrintPage;
+          _doc.EndPrint += Doc_EndPrint;
           _doc.Print();
         }
         finally
         {
           _cancel = false;
           _rendering = false;
-          _doc.PrintPage -= _doc_PrintPage;
-          _doc.EndPrint -= _doc_EndPrint;
+          _doc.PrintPage -= Doc_PrintPage;
+          _doc.EndPrint -= Doc_EndPrint;
           _doc.PrintController = savePC;
         }
       }
@@ -232,7 +231,7 @@ namespace CoolPrintPreview
     ]
     public int PageCount
     {
-      get { return _img.Count; }
+      get { return PageImages.Count; }
     }
     /// <summary>
     /// Gets or sets the control's background color.
@@ -251,10 +250,7 @@ namespace CoolPrintPreview
     /// Gets a list containing the images of the pages in the document.
     /// </summary>
     [Browsable(false)]
-    public PageImageList PageImages
-    {
-      get { return _img; }
-    }
+    public PageImageList PageImages { get; } = new();
     /// <summary>
     /// Prints the current document honoring the selected page range.
     /// </summary>
@@ -305,10 +301,7 @@ namespace CoolPrintPreview
     /// <param name="e"><see cref="EventArgs"/> that provides the event data.</param>
     protected void OnStartPageChanged(EventArgs e)
     {
-      if ( StartPageChanged != null )
-      {
-        StartPageChanged(this, e);
-      }
+      StartPageChanged?.Invoke(this, e);
     }
     /// <summary>
     /// Occurs when the value of the <see cref="PageCount"/> property changes.
@@ -320,10 +313,7 @@ namespace CoolPrintPreview
     /// <param name="e"><see cref="EventArgs"/> that provides the event data/</param>
     protected void OnPageCountChanged(EventArgs e)
     {
-      if ( PageCountChanged != null )
-      {
-        PageCountChanged(this, e);
-      }
+      PageCountChanged?.Invoke(this, e);
     }
     /// <summary>
     /// Occurs when the value of the <see cref="ZoomMode"/> property changes.
@@ -335,10 +325,7 @@ namespace CoolPrintPreview
     /// <param name="e"><see cref="EventArgs"/> that contains the event data.</param>
     protected void OnZoomModeChanged(EventArgs e)
     {
-      if ( ZoomModeChanged != null )
-      {
-        ZoomModeChanged(this, e);
-      }
+      ZoomModeChanged?.Invoke(this, e);
     }
 
     #endregion
@@ -434,19 +421,11 @@ namespace CoolPrintPreview
     // keyboard support
     protected override bool IsInputKey(Keys keyData)
     {
-      switch ( keyData )
+      return keyData switch
       {
-        case Keys.Left:
-        case Keys.Up:
-        case Keys.Right:
-        case Keys.Down:
-        case Keys.PageUp:
-        case Keys.PageDown:
-        case Keys.Home:
-        case Keys.End:
-          return true;
-      }
-      return base.IsInputKey(keyData);
+        Keys.Left or Keys.Up or Keys.Right or Keys.Down or Keys.PageUp or Keys.PageDown or Keys.Home or Keys.End => true,
+        _ => base.IsInputKey(keyData),
+      };
     }
     protected override void OnKeyDown(KeyEventArgs e)
     {
@@ -522,7 +501,7 @@ namespace CoolPrintPreview
     //-------------------------------------------------------------
     #region ** implementation
 
-    void _doc_PrintPage(object sender, PrintPageEventArgs e)
+    void Doc_PrintPage(object sender, PrintPageEventArgs e)
     {
       SyncPageImages(false);
       if ( _cancel )
@@ -530,7 +509,7 @@ namespace CoolPrintPreview
         e.Cancel = true;
       }
     }
-    void _doc_EndPrint(object sender, PrintEventArgs e)
+    void Doc_EndPrint(object sender, PrintEventArgs e)
     {
       SyncPageImages(true);
     }
@@ -541,10 +520,10 @@ namespace CoolPrintPreview
       {
         var pageInfo = pv.GetPreviewPageInfo();
         int count = lastPageReady ? pageInfo.Length : pageInfo.Length - 1;
-        for ( int i = _img.Count; i < count; i++ )
+        for ( int i = PageImages.Count; i < count; i++ )
         {
           var img = pageInfo[i].Image;
-          _img.Add(img);
+          PageImages.Add(img);
 
           OnPageCountChanged(EventArgs.Empty);
 
@@ -559,16 +538,16 @@ namespace CoolPrintPreview
     }
     Image GetImage(int page)
     {
-      return page > -1 && page < PageCount ? _img[page] : null;
+      return page > -1 && page < PageCount ? PageImages[page] : null;
     }
     Rectangle GetImageRectangle(Image img)
     {
       // start with regular image rectangle
       Size sz = GetImageSizeInPixels(img);
-      Rectangle rc = new Rectangle(0, 0, sz.Width, sz.Height);
+      Rectangle rc = new(0, 0, sz.Width, sz.Height);
 
       // calculate zoom
-      Rectangle rcCli = this.ClientRectangle;
+      Rectangle rcCli = ClientRectangle;
       switch ( _zoomMode )
       {
         case ZoomMode.ActualSize:
@@ -618,11 +597,9 @@ namespace CoolPrintPreview
         // get screen resolution
         if ( _himm2pix.X < 0 )
         {
-          using ( Graphics g = this.CreateGraphics() )
-          {
-            _himm2pix.X = g.DpiX / 2540f;
-            _himm2pix.Y = g.DpiY / 2540f;
-          }
+          using Graphics g = CreateGraphics();
+          _himm2pix.X = g.DpiX / 2540f;
+          _himm2pix.Y = g.DpiY / 2540f;
         }
 
         // convert himetric to pixels
@@ -654,22 +631,22 @@ namespace CoolPrintPreview
     {
       // get image rectangle to adjust scroll size
       Rectangle rc = Rectangle.Empty;
-      Image img = this.GetImage(StartPage);
+      Image img = GetImage(StartPage);
       if ( img != null )
       {
         rc = GetImageRectangle(img);
       }
 
       // calculate new scroll size
-      Size scrollSize = new Size(0, 0);
+      Size scrollSize = new(0, 0);
       switch ( _zoomMode )
       {
         case ZoomMode.PageWidth:
-          scrollSize = new Size(0, rc.Height + 2 * MARGIN);
+          scrollSize = new(0, rc.Height + 2 * MARGIN);
           break;
         case ZoomMode.ActualSize:
         case ZoomMode.Custom:
-          scrollSize = new Size(rc.Width + 2 * MARGIN, rc.Height + 2 * MARGIN);
+          scrollSize = new(rc.Width + 2 * MARGIN, rc.Height + 2 * MARGIN);
           break;
       }
 
@@ -699,8 +676,10 @@ namespace CoolPrintPreview
     // helper class that prints the selected page range in a PrintDocument.
     internal class DocumentPrinter : PrintDocument
     {
-      int _first, _last, _index;
-      PageImageList _imgList;
+      readonly PageImageList _imgList;
+      readonly int _first;
+      readonly int _last;
+      int _index;
 
       public DocumentPrinter(CoolPrintPreviewControl preview, int first, int last)
       {

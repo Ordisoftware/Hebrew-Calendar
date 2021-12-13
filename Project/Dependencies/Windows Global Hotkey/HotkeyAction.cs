@@ -17,12 +17,11 @@ namespace Base.Hotkeys
 
     public HotkeyAction(Hotkey hotkey, Action execute, bool active = true)
     {
-
       Hotkey = hotkey;
       Execute = execute;
       Active = active;
-
     }
 
   }
+
 }
