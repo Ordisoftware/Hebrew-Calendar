@@ -23,7 +23,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Instance { get; private set; }
 
-  static public void Run(Parashah parashah = null)
+  static public ParashotForm Run(Parashah parashah = null)
   {
     if ( Instance == null )
       Instance = new ParashotForm();
@@ -32,15 +32,13 @@ partial class ParashotForm : Form
     {
       Instance.Popup();
       Instance.Select(parashah);
-      return;
+      return Instance;
     }
-    if ( Instance != null )
-    {
-      Instance.ActionGoToNextParashah.Visible = Program.Settings.CalendarShowParashah;
-      Instance.Show();
-      Instance.ForceBringToFront();
-      Instance.Select(parashah);
-    }
+    Instance.ActionGoToNextParashah.Visible = Program.Settings.CalendarShowParashah;
+    Instance.Show();
+    Instance.ForceBringToFront();
+    Instance.Select(parashah);
+    return Instance;
   }
 
   public readonly Properties.Settings Settings
@@ -454,48 +452,17 @@ partial class ParashotForm : Form
     Clipboard.SetText(CurrentDataBoundItem.ToString(false));
   }
 
-  private void ActionViewParashahInfos_Click(object sender, EventArgs e)
+  private void ActionShowDescription_Click(object sender, EventArgs e)
   {
-    ShowParashahDescription(CurrentDataBoundItem, false);
+    MainForm.UserParashot.ShowDescription(CurrentDataBoundItem, false, () => Run(CurrentDataBoundItem));
   }
 
-  // Only Hebrew Calendar
   private void ActionGoToNextParashah_Click(object sender, EventArgs e)
   {
     var today = DateTime.Today;
     var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
     var day = days.Find(item => item.Date >= today && item.ParashahID == CurrentDataBoundItem.ID);
     if ( day != null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
-    // TODO remove ? 
-    //// Find nearest from current
-    //var current = MainForm.Instance.CurrentDay;
-    //if ( current.ParashahID == CurrentDataBoundItem.ID )
-    //{
-    //  MainForm.Instance.GoToDate(current.Date, true, false, false);
-    //  return;
-    //}
-    //var day1 = days.LastOrDefault(item => item.ParashahID == CurrentDataBoundItem.ID
-    //                                   && item.Date < MainForm.Instance.CurrentDay.Date);
-    //var day2 = days.FirstOrDefault(item => item.ParashahID == CurrentDataBoundItem.ID
-    //                                    && item.Date > MainForm.Instance.CurrentDay.Date);
-    //if ( day1 == null && day2 == null )
-    //  return;
-    //if ( day1 == null )
-    //{
-    //  MainForm.Instance.GoToDate(day1.Date, true, false, false);
-    //  return;
-    //}
-    //if ( day2 == null )
-    //{
-    //  MainForm.Instance.GoToDate(day2.Date, true, false, false);
-    //  return;
-    //}
-    //double diff1 = ( current.Date - day1.Date ).TotalDays;
-    //double diff2 = ( day2.Date - current.Date ).TotalDays;
-    //if ( diff1 >= diff2 )
-    //  MainForm.Instance.GoToDate(day2.Date, true, false, false);
-    //else
-    //  MainForm.Instance.GoToDate(day1.Date, true, false, false);
   }
 
 }

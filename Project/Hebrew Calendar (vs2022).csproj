@@ -377,6 +377,7 @@
     <Compile Include="Source\Common\Hebrew\Database\ParashotFactory.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Interlock.cs" />
     <Compile Include="Source\Common\Hebrew\Database\Interlocks.cs" />
+    <Compile Include="Source\Common\Hebrew\Database\ParashotHelper.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermAnalysis.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermHebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
@@ -507,9 +508,6 @@
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
     <Compile Include="Source\Entities\DateBookmarks.cs" />
-    <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.ShowDescription.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>

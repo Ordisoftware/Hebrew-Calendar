@@ -11,15 +11,16 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew;
 
-using MainForm = Calendar.MainForm;
-
-partial class ParashotForm : Form
+static class ParashotHelper
 {
 
-  static public bool ShowParashahDescription(Parashah parashah, bool withLinked)
+  static public bool ShowDescription(this List<Parashah> parashot,
+                                     Parashah parashah,
+                                     bool withLinked,
+                                     Func<Form> runBoard)
   {
     // Prepare
     string title = HebrewTranslations.WeeklyParashah.GetLang();
@@ -29,7 +30,7 @@ partial class ParashotForm : Form
       form.Popup();
       return true;
     }
-    var linked = withLinked ? parashah.GetLinked(MainForm.UserParashot) : null;
+    var linked = withLinked ? parashah.GetLinked(parashot) : null;
     if ( parashah == null ) return false;
     // Message box
     var message = parashah.ToStringReadable();
@@ -42,13 +43,13 @@ partial class ParashotForm : Form
       AllowClose = true
     };
     // Button Open board
-    form.ActionYes.Visible = true;
+    form.ActionYes.Visible = runBoard != null;
     form.ActionYes.Text = SysTranslations.Board.GetLang();
     form.ActionYes.Click += async (_s, _e) =>
     {
-      Run(parashah);
+      var form = runBoard.Invoke();
       await Task.Delay(1000).ConfigureAwait(false);
-      Instance.Popup();
+      form.Popup();
     };
     // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );

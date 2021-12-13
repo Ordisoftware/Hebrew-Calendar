@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -1086,7 +1086,7 @@ partial class MainForm : Form
     if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         if ( sender == ContextMenuDayParashahShowDescription )
-          ParashotForm.ShowParashahDescription(parashah, day.HasLinkedParashah);
+          UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
         else
         if ( sender == ContextMenuDayParashotBoard )
           ParashotForm.Run(parashah);

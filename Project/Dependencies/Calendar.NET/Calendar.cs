@@ -502,6 +502,7 @@ namespace CodeProjectCalendar.NET
         RenderDayCalendar(e);
     }
 
+    [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
     private void CalendarMouseMove(object sender, MouseEventArgs e)
     {
       if ( !_showEventTooltips )
