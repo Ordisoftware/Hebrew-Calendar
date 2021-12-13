@@ -13,112 +13,75 @@ namespace Base.Hotkeys
 
     public HotkeyForm()
     {
-
-      hwnd = this.Handle;
-
+      hwnd = Handle;
     }
 
     private void KeyPressed(ushort id, Keys key, Modifiers mods)
     {
-
-      if ( HotkeyPressed != null )
-      {
-
-        HotkeyEventArgs args = new HotkeyEventArgs(id, key, mods);
-        HotkeyPressed(null, args);
-
-      }
-
+      HotkeyPressed?.Invoke(null, new HotkeyEventArgs(id, key, mods));
     }
 
     protected override void WndProc(ref Message m)
     {
-
       if ( m.Msg == NativeMethods.HOTKEY )
       {
-
         ushort id = (ushort)m.WParam;
         Keys key = (Keys)( ( (int)m.LParam >> 16 ) & 0xFFFF );
         Modifiers mods = (Modifiers)( (int)m.LParam & 0xFFFF );
         KeyPressed(id, key, mods);
-        return;
-
       }
-
-      base.WndProc(ref m);
-
+      else
+        base.WndProc(ref m);
     }
 
     public void RegisterHotkey(Hotkey key)
     {
-
       if ( key != null && key.Status != HotkeyStatus.Registered )
       {
-
         if ( !key.IsValid )
         {
           key.Status = HotkeyStatus.Failed;
           return;
         }
-
         if ( key.ID == 0 )
         {
-          ushort id = (ushort)System.Threading.Interlocked.Increment(ref _id);
-          key.ID = id;
-
+          key.ID = (ushort)System.Threading.Interlocked.Increment(ref _id);
           if ( key.ID == 0 )
           {
             key.Status = HotkeyStatus.Failed;
             return;
           }
         }
-
         if ( !NativeMethods.RegisterHotKey(hwnd, key.ID, (uint)key.ModifiersEnum, (uint)key.KeyCode) )
         {
-
           key.ID = 0;
           key.Status = HotkeyStatus.Failed;
           return;
-
         }
-
         key.Status = HotkeyStatus.Registered;
-
       }
-
     }
 
     public bool UnregisterHotkey(Hotkey key)
     {
-
       if ( key != null )
       {
-
         if ( key.ID > 0 )
         {
-
           bool rel = NativeMethods.UnregisterHotKey(Handle, key.ID);
-
           if ( rel )
           {
-
             key.ID = 0;
             key.Status = HotkeyStatus.None;
             return true;
-
           }
-
         }
-
         key.Status = HotkeyStatus.Failed;
-
       }
-
       return false;
-
     }
 
-    public static int _id = 1;
+    private int _id = 1;
 
     static private class NativeMethods
     {

@@ -20,7 +20,7 @@ namespace CodeProjectCalendar.NET
     [DllImport("user32.dll")]
     static extern short GetKeyState(int nVirtKey);
 
-    public event MouseEventHandler RightButtonClicked;
+    public event EventHandler<MouseEventArgs> RightButtonClicked;
 
     public ScrollPanel()
     {
@@ -92,8 +92,7 @@ namespace CodeProjectCalendar.NET
     {
       if ( e.Button == MouseButtons.Right )
       {
-        if ( RightButtonClicked != null )
-          RightButtonClicked(sender, e);
+        RightButtonClicked?.Invoke(sender, e);
       }
     }
   }

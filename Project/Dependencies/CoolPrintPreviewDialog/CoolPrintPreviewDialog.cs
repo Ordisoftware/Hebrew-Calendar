@@ -110,7 +110,7 @@ namespace CoolPrintPreview
     #region ** overloads
 
     /// <summary>
-    /// Overridden to assign document to preview control only after the 
+    /// Overridden to assign document to preview control only after the
     /// initial activation.
     /// </summary>
     /// <param name="e"><see cref="EventArgs"/> that contains the event data.</param>

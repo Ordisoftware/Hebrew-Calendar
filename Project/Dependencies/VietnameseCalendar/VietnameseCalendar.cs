@@ -21,8 +21,7 @@ namespace System.Globalization
   {
     #region "constants"
     // TODOVIETCAL: must use Environment.GetResourceString()
-    private static readonly Resources.ResourceManager resource =
-      new Resources.ResourceManager("mscorlib", Reflection.Assembly.GetAssembly(typeof(int)));
+    private static readonly Resources.ResourceManager resource = new("mscorlib", Assembly.GetAssembly(typeof(int)));
 
     // TODOVIETCAL: translate to English
     /*
@@ -129,19 +128,19 @@ namespace System.Globalization
       get { return new int[] { VietnameseEra }; }
     }
 
-    private static readonly DateTime minDate = new DateTime(1800, 1, 25, 0, 0, 0);  // Tet am lich 1800
-                                                                                    /// <summary>
-                                                                                    /// Gets the minimum date and time supported by the VietnameseCalendar class.</summary>
-                                                                                    /// <returns>A <see cref="DateTime"/> object that represents January 25, 1800
-                                                                                    /// in the Gregorian calendar, which is equivalent to the constructor
-                                                                                    /// DateTime(1800, 1, 25).</returns>
+    private static readonly DateTime minDate = new(1800, 1, 25, 0, 0, 0);  // Tet am lich 1800
+    /// <summary>
+    /// Gets the minimum date and time supported by the VietnameseCalendar class.</summary>
+    /// <returns>A <see cref="DateTime"/> object that represents January 25, 1800
+    /// in the Gregorian calendar, which is equivalent to the constructor
+    /// DateTime(1800, 1, 25).</returns>
     [ComVisible(false)]
     public override DateTime MinSupportedDateTime
     {
       get { return minDate; }
     }
 
-    private static readonly DateTime maxDate = new DateTime(2199, 12, 31, 23, 59, 59);
+    private static readonly DateTime maxDate = new(2199, 12, 31, 23, 59, 59);
     /// <summary>
     /// Gets the maximum date and time supported by the VietnameseCalendar class.</summary>
     /// <returns>A <see cref="DateTime"/> object that represents the last moment on December 31, 2199
@@ -169,18 +168,18 @@ namespace System.Globalization
         {
           // Call Win32 ::GetCalendarInfo() to retrieve CAL_ITWODIGITYEARMAX value
           base.TwoDigitYearMax = GetSystemTwoDigitYearSetting(
-            1/*CAL_GREGORIAN - Gregorian (localized)*/, this.GetYear(maxDate));
+            1/*CAL_GREGORIAN - Gregorian (localized)*/, GetYear(maxDate));
         }
         return base.TwoDigitYearMax;
       }
       set
       {
-        this.VerifyWritable();
-        if ( ( value < MinCalendarYear ) || ( value > MaxCalendarYear ) )
-        {
-          throw new ArgumentOutOfRangeException("value", string.Format(CultureInfo.CurrentCulture,
-            resource.GetString("ArgumentOutOfRange_Range"), MinCalendarYear, MaxCalendarYear));
-        }
+        VerifyWritable();
+        if ( value < MinCalendarYear || value > MaxCalendarYear )
+          throw new ArgumentOutOfRangeException(nameof(value),
+                                                string.Format(CultureInfo.CurrentCulture,
+                                                              resource.GetString("ArgumentOutOfRange_Range"),
+                                                              MinCalendarYear, MaxCalendarYear));
         base.TwoDigitYearMax = value;
       }
     }
@@ -262,8 +261,7 @@ namespace System.Globalization
         RegistryKey key = null;
         try
         {
-          key = Registry.CurrentUser.OpenSubKey(
-            @"Control Panel\International\Calendars\TwoDigitYearMax", false);
+          key = Registry.CurrentUser.OpenSubKey(@"Control Panel\International\Calendars\TwoDigitYearMax", false);
         }
         catch ( ObjectDisposedException ) { }
         catch ( ArgumentException ) { }
@@ -289,43 +287,35 @@ namespace System.Globalization
 
     internal void VerifyWritable()
     {
-      if ( this.IsReadOnly )
-      {
-        throw new InvalidOperationException(resource.GetString("InvalidOperation_ReadOnly"));
-      }
+      if ( IsReadOnly ) throw new InvalidOperationException(resource.GetString("InvalidOperation_ReadOnly"));
     }
     internal void CheckTicksRange(long ticks)
     {
-      if ( ( ticks < MinSupportedDateTime.Ticks ) || ( ticks > MaxSupportedDateTime.Ticks ) )
-      {
-        throw new ArgumentOutOfRangeException("time", string.Format(CultureInfo.InvariantCulture,
-          resource.GetString("ArgumentOutOfRange_CalendarRange"),
-          this.MinSupportedDateTime, this.MaxSupportedDateTime));
-      }
+      if ( ticks < MinSupportedDateTime.Ticks || ticks > MaxSupportedDateTime.Ticks )
+        throw new ArgumentOutOfRangeException(nameof(ticks),
+                                              string.Format(CultureInfo.InvariantCulture,
+                                                            resource.GetString("ArgumentOutOfRange_CalendarRange"),
+                                                            MinSupportedDateTime,
+                                                            MaxSupportedDateTime));
     }
     internal void CheckEraRange(int era)
     {
       if ( era != 0 && era != VietnameseEra )
-      {
-        throw new ArgumentOutOfRangeException("era",
-          resource.GetString("ArgumentOutOfRange_InvalidEraValue"));
-      }
+        throw new ArgumentOutOfRangeException(nameof(era), resource.GetString("ArgumentOutOfRange_InvalidEraValue"));
     }
     internal void CheckYearRange(int year)
     {
-      if ( ( year < this.MinCalendarYear ) || ( year > this.MaxCalendarYear ) )
-      {
-        throw new ArgumentOutOfRangeException("year", string.Format(CultureInfo.CurrentCulture,
-          resource.GetString("ArgumentOutOfRange_Range"), MinCalendarYear, MaxCalendarYear));
-      }
+      if ( year < MinCalendarYear || year > MaxCalendarYear )
+        throw new ArgumentOutOfRangeException(nameof(year),
+                                              string.Format(CultureInfo.CurrentCulture,
+                                                            resource.GetString("ArgumentOutOfRange_Range"),
+                                                            MinCalendarYear,
+                                                            MaxCalendarYear));
     }
     internal void CheckMonthRange(int month, int leapMonth)
     {
-      if ( ( month < 1 ) || ( month > 13 ) || ( ( month == 13 ) && ( leapMonth == 0 ) ) )
-      {
-        throw new ArgumentOutOfRangeException("month",
-          resource.GetString("ArgumentOutOfRange_Month"));
-      }
+      if ( month < 1 || month > 13 || ( month == 13 && leapMonth == 0 ) )
+        throw new ArgumentOutOfRangeException(nameof(month), resource.GetString("ArgumentOutOfRange_Month"));
     }
     #endregion
 
@@ -339,8 +329,7 @@ namespace System.Globalization
     /// </summary>
     private static DateTime GetLunarNewYear(int year)
     {
-      DateTime date = new DateTime(year, 1, 1, 0, 0, 0);    // New Year's Day
-      return date.AddDays(GetYearCode(year) >> 17); // offset of Tet (Lunar New Year's Day)
+      return new DateTime(year, 1, 1, 0, 0, 0).AddDays(GetYearCode(year) >> 17); // offset of Tet (Lunar New Year's Day)
     }
     /// <summary>
     /// Returns number of days in specified month of the year.
@@ -355,7 +344,7 @@ namespace System.Globalization
         if ( month == leapMonth ) month = 0;
         else if ( month > leapMonth ) month--;
       }
-      return ( ( ( GetYearCode(year) >> ( 16 - month ) ) & 0x1 ) == 0 ? 29 : 30 );
+      return ( ( GetYearCode(year) >> ( 16 - month ) ) & 0x1 ) == 0 ? 29 : 30;
     }
     #endregion
 
@@ -371,7 +360,7 @@ namespace System.Globalization
     [ComVisible(false)]
     public override int GetEra(DateTime time)
     {
-      this.CheckTicksRange(time.Ticks);
+      CheckTicksRange(time.Ticks);
       return VietnameseEra;
     }
 
@@ -389,9 +378,9 @@ namespace System.Globalization
       // DEBUG
       //Console.WriteLine("VietnameseCalendar.GetYear(), >> time = '{0}'", time);
 
-      this.CheckTicksRange(time.Ticks);
+      CheckTicksRange(time.Ticks);
       DateTime date = GetLunarNewYear(time.Year);
-      return ( time < date ? time.Year - 1 : time.Year );
+      return time < date ? time.Year - 1 : time.Year;
     }
 
     /// <summary>
@@ -405,16 +394,14 @@ namespace System.Globalization
       // DEBUG
       //Console.WriteLine("VietnameseCalendar.GetMonth(), >> time = '{0}'", time);
 
-      int year = this.GetYear(time);
+      int year = GetYear(time);
       DateTime date = GetLunarNewYear(year);
-      int leapMonth = this.GetLeapMonth(year, 0), month = 1;
+      int leapMonth = GetLeapMonth(year, 0), month = 1;
       while ( date < time )
         date = date.AddDays(GetMonthLength(year, month++, leapMonth));
-      month = ( date > time ? month - 1 : month );
-
       // DEBUG
       //Console.WriteLine("VietnameseCalendar.GetMonth(), << month = {0}", month);
-      return month;
+      return date > time ? month - 1 : month;
     }
 
     /// <summary>
@@ -428,15 +415,17 @@ namespace System.Globalization
       // DEBUG
       //Console.WriteLine("VietnameseCalendar.GetDayOfMonth(), >> time = '{0}'", time);
 
-      int year = this.GetYear(time);
+      int year = GetYear(time);
       DateTime date = GetLunarNewYear(year), date2 = date;
-      int leapMonth = this.GetLeapMonth(year, 0), month = 1;
+      int leapMonth = GetLeapMonth(year, 0), month = 1;
       while ( date < time )
       {
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous
         if ( date < time ) date2 = date;
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous
         date = date.AddDays(GetMonthLength(year, month++, leapMonth));
       }
-      return ( date > time ? ( time - date2 ).Days + 1 : 1 );
+      return date > time ? ( time - date2 ).Days + 1 : 1;
     }
 
     /// <summary>
@@ -450,7 +439,7 @@ namespace System.Globalization
     /// </exception>
     public override DayOfWeek GetDayOfWeek(DateTime time)
     {
-      this.CheckTicksRange(time.Ticks);
+      CheckTicksRange(time.Ticks);
       return (DayOfWeek)( ( (int)Math.Round((double)time.Ticks / 864000000000 + 1) ) % 7 );
     }
 
@@ -465,7 +454,7 @@ namespace System.Globalization
       // DEBUG
       //Console.WriteLine("VietnameseCalendar.GetDayOfYear(), >> time = '{0}'", time);
 
-      int year = this.GetYear(time);
+      int year = GetYear(time);
       DateTime date = GetLunarNewYear(year);
       return ( time - date ).Days + 1;
     }
@@ -474,51 +463,52 @@ namespace System.Globalization
     /// Determines whether the specified year in the specified era is a leap year.
     /// </summary>
     /// <returns>true if the specified year is a leap year; otherwise, false.</returns>
-    /// <param name="era">An integer that represents the era.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year or era is outside the range supported
     /// by this calendar.</exception>
     public override bool IsLeapYear(int year, int era)
     {
-      return ( this.GetLeapMonth(year, era) > 0 );
+      return GetLeapMonth(year, era) > 0;
     }
 
     /// <summary>
     /// Determines whether the specified month in the specified year and era is a leap month.
     /// </summary>
     /// <returns>true if the month parameter is a leap month; otherwise, false.</returns>
-    /// <param name="era">An integer that represents the era.</param>
-    /// <param name="month">An integer from 1 through 13 that represents the month.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="month">An integer from 1 through 13 that represents the month.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, or era is outside the range
     /// supported by this calendar.</exception>
     public override bool IsLeapMonth(int year, int month, int era)
     {
-      int leapMonth = this.GetLeapMonth(year, era);
-      this.CheckMonthRange(month, leapMonth);
-      return ( ( leapMonth > 0 ) && ( month == leapMonth ) );
+      int leapMonth = GetLeapMonth(year, era);
+      CheckMonthRange(month, leapMonth);
+      return leapMonth > 0 && month == leapMonth;
     }
 
     /// <summary>
     /// Determines whether the specified date in the specified era is a leap day.
     /// </summary>
     /// <returns>true if the specified day is a leap day; otherwise, false.</returns>
-    /// <param name="era">An integer that represents the era.</param>
+    /// <param name="year">An integer that represents the year.</param>
     /// <param name="month">An integer from 1 through 13 that represents the month.</param>
     /// <param name="day">An integer from 1 through 30 that represents the day.</param>
-    /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, day, or era is outside
     /// the range supported by this calendar.</exception>
     public override bool IsLeapDay(int year, int month, int day, int era)
     {
-      bool ret = this.IsLeapMonth(year, month, era);
-      int daysInMonth = GetMonthLength(year, month, this.GetLeapMonth(year, era));
-      if ( ( day < 1 ) || ( day > daysInMonth ) )
-      {
-        throw new ArgumentOutOfRangeException("day", string.Format(CultureInfo.CurrentCulture,
-          resource.GetString("ArgumentOutOfRange_Day"), daysInMonth, month));
-      }
-      return ret;
+      bool ret = IsLeapMonth(year, month, era);
+      int daysInMonth = GetMonthLength(year, month, GetLeapMonth(year, era));
+      return day < 1 || day > daysInMonth
+             ? throw new ArgumentOutOfRangeException(nameof(day),
+                                                     string.Format(CultureInfo.CurrentCulture,
+                                                                   resource.GetString("ArgumentOutOfRange_Day"),
+                                                                   daysInMonth,
+                                                                   month))
+             : ret;
     }
 
     /// <summary>
@@ -526,29 +516,29 @@ namespace System.Globalization
     /// </summary>
     /// <returns>The number of months in the specified year in the specified era.
     /// The return value is 12 months in a common year or 13 months in a leap year.</returns>
-    /// <param name="era">An integer that represents the era.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year or era is outside the range supported
     /// by this calendar.</exception>
     public override int GetMonthsInYear(int year, int era)
     {
-      return this.IsLeapYear(year, era) ? 13 : 12;
+      return IsLeapYear(year, era) ? 13 : 12;
     }
 
     /// <summary>
     /// Calculates the number of days in the specified month of the specified year and era.
     /// </summary>
     /// <returns>The number of days in the specified month of the specified year and era.</returns>
-    /// <param name="era">An integer that represents the era.</param>
+    /// <param name="year">An integer that represents the year.</param>
     /// <param name="month">An integer from 1 through 12 in a common year,
     /// or 1 through 13 in a leap year, that represents the month.</param>
-    /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, or era is outside the range
     /// supported by this calendar.</exception>
     public override int GetDaysInMonth(int year, int month, int era)
     {
-      int leapMonth = this.GetLeapMonth(year, era);
-      this.CheckMonthRange(month, leapMonth);
+      int leapMonth = GetLeapMonth(year, era);
+      CheckMonthRange(month, leapMonth);
       return GetMonthLength(year, month, leapMonth);
     }
 
@@ -556,13 +546,13 @@ namespace System.Globalization
     /// Calculates the number of days in the specified year and era.
     /// </summary>
     /// <returns>The number of days in the specified year and era.</returns>
-    /// <param name="era">An integer that represents the era.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year or era is outside the range supported
     /// by this calendar.</exception>
     public override int GetDaysInYear(int year, int era)
     {
-      int leapMonth = this.GetLeapMonth(year, era), count = 0;
+      int leapMonth = GetLeapMonth(year, era), count = 0;
       for ( int month = 1, len = ( leapMonth > 0 ? 13 : 12 ); month <= len; month++ )
         count += GetMonthLength(year, month, leapMonth);
       return count;
@@ -573,8 +563,8 @@ namespace System.Globalization
     /// </summary>
     /// <returns>A new <see cref="DateTime"/> object that results from adding the specified
     /// number of months to the time parameter.</returns>
-    /// <param name="months">The number of months to add.</param>
     /// <param name="time">The <see cref="DateTime"/> object to add months to.</param>
+    /// <param name="months">The number of months to add.</param>
     /// <exception cref="ArgumentOutOfRangeException">months is less than -120000 or greater than 120000.
     /// -or- time is less than <see cref="MinSupportedDateTime"/> or greater than
     /// <see cref="MaxSupportedDateTime"/>.</exception>
@@ -588,8 +578,8 @@ namespace System.Globalization
 
       /*
 			int year = time.Year, month = time.Month, day = time.Day;
-			// TODOVIETCAL: this.FromDateTime(time, out year, out month, out day);
-			int leapMonth = this.GetLeapMonth(year, 0);
+			// TODOVIETCAL: FromDateTime(time, out year, out month, out day);
+			int leapMonth = GetLeapMonth(year, 0);
 
 			// adds months
 			int inc; month += months;
@@ -597,7 +587,7 @@ namespace System.Globalization
 			{
 				inc = ((month < 1) ? -1 : 1);
 				// re-calculates the lunar year
-				leapMonth = this.GetLeapMonth((year = year + inc), 0);
+				leapMonth = GetLeapMonth((year = year + inc), 0);
 				month += ((leapMonth > 0) ? 13 : 12) * (-inc);
 			}
 
@@ -631,7 +621,7 @@ namespace System.Globalization
       /*
 			int year = time.Year + years, month = time.Month, day = time.Day;
 			// TODOVIETCAL: re-calculates the lunar month
-			int leapMonth = this.GetLeapMonth(year, 0);
+			int leapMonth = GetLeapMonth(year, 0);
 			if (month > 12 && leapMonth == 0) month = 12;
 
 			// TODOVIETCAL: decrease the lunar day when overload
@@ -648,14 +638,14 @@ namespace System.Globalization
     /// </summary>
     /// <returns>A <see cref="DateTime"/> object that is set to the specified date, time, and era.
     /// </returns>
-    /// <param name="era">An integer that represents the era.</param>
-    /// <param name="month">An integer from 1 through 13 that represents the month.</param>
-    /// <param name="millisecond">An integer from 0 through 999 that represents the millisecond.</param>
-    /// <param name="day">An integer from 1 through 30 that represents the day.</param>
-    /// <param name="minute">An integer from 0 through 59 that represents the minute.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="month">An integer from 1 through 13 that represents the month.</param>
+    /// <param name="day">An integer from 1 through 30 that represents the day.</param>
     /// <param name="hour">An integer from 0 through 23 that represents the hour.</param>
+    /// <param name="minute">An integer from 0 through 59 that represents the minute.</param>
     /// <param name="second">An integer from 0 through 59 that represents the second.</param>
+    /// <param name="millisecond">An integer from 0 through 999 that represents the millisecond.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, day, hour, minute, second,
     /// millisecond, or era is outside the range supported by this calendar.</exception>
     public override DateTime ToDateTime(int year, int month, int day, int hour, int minute,
@@ -667,14 +657,15 @@ namespace System.Globalization
 				year, month, day, hour, minute, second, millisecond, era);*/
 
       // validate parameters
-      int leapMonth = this.GetLeapMonth(year, era);
-      this.CheckMonthRange(month, leapMonth);
+      int leapMonth = GetLeapMonth(year, era);
+      CheckMonthRange(month, leapMonth);
       int days = GetMonthLength(year, month, leapMonth);
-      if ( ( day < 1 ) || ( day > days ) )
-      {
-        throw new ArgumentOutOfRangeException("day", string.Format(CultureInfo.CurrentCulture,
-          resource.GetString("ArgumentOutOfRange_Day"), days, month));
-      }
+      if ( day < 1 || day > days )
+        throw new ArgumentOutOfRangeException(nameof(day),
+                                              string.Format(CultureInfo.CurrentCulture,
+                                                            resource.GetString("ArgumentOutOfRange_Day"),
+                                                            days,
+                                                            month));
       // Lunar New Year's Day
       DateTime time = GetLunarNewYear(year);
 
@@ -697,14 +688,14 @@ namespace System.Globalization
     /// -or-
     /// Zero if this calendar does not support a leap month, or if the year and era parameters
     /// do not specify a leap year.</returns>
-    /// <param name="era">An integer that represents the era.</param>
     /// <param name="year">An integer that represents the year.</param>
+    /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year or era is outside the range supported
     /// by this calendar.</exception>
     public override int GetLeapMonth(int year, int era)
     {
-      this.CheckEraRange(era);
-      this.CheckYearRange(year);
+      CheckEraRange(era);
+      CheckYearRange(year);
       int leapMonth = GetYearCode(year) & 0xf;
       return ( leapMonth > 0 ) ? ( leapMonth + 1 ) : 0;
     }
@@ -719,7 +710,7 @@ namespace System.Globalization
     public override int ToFourDigitYear(int year)
     {
       year = base.ToFourDigitYear(year);
-      this.CheckYearRange(year);
+      CheckYearRange(year);
       return year;
     }
 
@@ -734,7 +725,7 @@ namespace System.Globalization
     /// by this calendar.</exception>
     public virtual void FromDateTime(DateTime time, out int year, out int month, out int day)
     {
-      this.CheckTicksRange(time.Ticks);
+      CheckTicksRange(time.Ticks);
       // calculates the lunar-year
       DateTime date = GetLunarNewYear(time.Year);
       if ( time < date ) date = GetLunarNewYear(time.Year - 1);
@@ -747,7 +738,9 @@ namespace System.Globalization
       // scans the floor month nearest with the solar-day
       while ( date < time )
       {
+#pragma warning disable S2589 // Boolean expressions should not be gratuitous
         if ( date < time ) date2 = date;
+#pragma warning restore S2589 // Boolean expressions should not be gratuitous
         date = date.AddDays(GetMonthLength(year, month++, leapMonth));
       }
       if ( date > time )
@@ -780,9 +773,9 @@ namespace System.Globalization
       double jdn = JulianDayNumber(time) + 0.5 - 7 /* Vietnam TimeZone */ / 24.0;
 
       // Time in Julian centuries from 2000-01-01 12:00:00 GMT
+      const double dr = Math.PI / 180;  // degree to radian
       double t = ( jdn - 2451545.0 ) / 36525;
       double t2 = t * t;
-      double dr = Math.PI / 180;  // degree to radian
                                   // mean anomaly, degree
       double m = 357.52910 + 35999.05030 * t - 0.0001559 * t2 - 0.00000048 * t * t2;
       double l0 = 280.46645 + 36000.76983 * t + 0.0003032 * t2; // mean longitude, degree
@@ -794,7 +787,7 @@ namespace System.Globalization
       double omega = 125.04 - 1934.136 * t;
       double lambda = theta - 0.00569 - 0.00478 * Math.Sin(omega * dr);
       // Convert to radians
-      lambda = lambda * dr;
+      lambda *= dr;
       // Normalize to (0, 2*PI)
       return lambda - Math.PI * 2 * ( Math.Floor(lambda / ( Math.PI * 2 )) );
     }
@@ -811,7 +804,7 @@ namespace System.Globalization
     /// </remarks>
     public virtual string GetMinorSolarTerms(DateTime date)
     {
-      this.CheckTicksRange(date.Ticks);
+      CheckTicksRange(date.Ticks);
       return minorSolarTerms[(int)Math.Floor(SunLongitude(date) / Math.PI * 12)];
     }
 
@@ -824,7 +817,7 @@ namespace System.Globalization
     /// by this calendar.</exception>
     public virtual string GetYearName(int year)
     {
-      this.CheckYearRange(year);
+      CheckYearRange(year);
       return selestialStems[( year + 6 ) % 10] + " " + terrestrialBranches[( year + 8 ) % 12];
     }
 
@@ -836,7 +829,7 @@ namespace System.Globalization
     /// by this calendar.</exception>
     public virtual string GetDayName(DateTime date)
     {
-      this.CheckTicksRange(date.Ticks);
+      CheckTicksRange(date.Ticks);
       int jd = (int)Math.Floor(JulianDayNumber(date));
       return selestialStems[( jd + 9 ) % 10] + " " + terrestrialBranches[( jd + 1 ) % 12];
     }
@@ -850,8 +843,8 @@ namespace System.Globalization
     /// by this calendar.</exception>
     public virtual string GetMonthName(int year, int month)
     {
-      int leapMonth = this.GetLeapMonth(year, 0);
-      this.CheckMonthRange(month, leapMonth);
+      int leapMonth = GetLeapMonth(year, 0);
+      CheckMonthRange(month, leapMonth);
       int i = ( ( leapMonth > 0 && month >= leapMonth ) ? -1 : 0 );
       return selestialStems[( year * 12 + month + i + 3 ) % 10] + " "
         + terrestrialBranches[( month + i + 1 ) % 12]
@@ -864,7 +857,7 @@ namespace System.Globalization
       int chiOfDay = ( jdn + 1 ) % 12, count = 0;
       // same values for Ty' (1) and Ngo. (6), for Suu and Mui etc.
       string gioHD = propitiousHour[chiOfDay % 6];
-      StringBuilder ret = new StringBuilder();
+      var ret = new StringBuilder();
       for ( int i = 0; i < 12; i++ )
       {
         if ( gioHD[i] != '0' )
