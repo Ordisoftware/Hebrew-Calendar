@@ -27,6 +27,9 @@ URL = https://www.youtube.com/channel/UC9x_d0qPTAy-K5GmIwwQfAQ
 Name = (FR) Rav Emmanuel Bensimon
 URL = https://www.youtube.com/channel/UCFZbll_XlLWy8gqwIrkTZ0g
 
+Name = (FR) Rav Menahem Berros 
+URL = https://www.youtube.com/c/RavMenahemBerros
+
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
