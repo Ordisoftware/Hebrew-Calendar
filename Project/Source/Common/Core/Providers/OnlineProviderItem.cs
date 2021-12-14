@@ -33,11 +33,11 @@ class OnlineProviderItem
     ["(FR/EN)"] = CreateImage("flag_fr_en.png")
   };
 
-  static private Image CreateImage(string filePath)
+  static private Image CreateImage(string fileName)
   {
     try
     {
-      return Image.FromFile(System.IO.Path.Combine(Globals.HelpFolderPath, filePath));
+      return Image.FromFile(Path.Combine(Globals.HelpFolderPath, fileName));
     }
     catch ( Exception ex )
     {

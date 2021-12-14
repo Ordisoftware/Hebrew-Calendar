@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using static System.Environment;
@@ -142,6 +142,30 @@ static partial class Globals
   /// </summary>
   static public string ProjectIconsFolderPath
     => Path.Combine(ProjectMediasFolderPath, "Icons");
+
+  /// <summary>
+  /// Indicates the project applications icons folder path.
+  /// </summary>
+  static public string ProjectIconsApplicationsFolderPath
+    => Path.Combine(ProjectIconsFolderPath, "Applications");
+
+  /// <summary>
+  /// Indicates the project custom icons folder path.
+  /// </summary>
+  static public string ProjectIconsCustomFolderPath
+    => Path.Combine(ProjectIconsFolderPath, "Custom");
+
+  /// <summary>
+  /// Indicates the project fatcow icons folder path.
+  /// </summary>
+  static public string ProjectIconsFatcowFolderPath
+    => Path.Combine(ProjectIconsFolderPath, "Fatcow");
+
+  /// <summary>
+  /// Indicates the project social icons folder path.
+  /// </summary>
+  static public string ProjectIconsSocialFolderPath
+    => Path.Combine(ProjectIconsFolderPath, "Social");
 
   /// <summary>
   /// Indicates the project sounds folder path.
