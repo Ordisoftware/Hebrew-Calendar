@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -223,6 +223,19 @@ partial class LettersControl : UserControl
     }
   }
   private int _MarginY = DefaultMarginSize;
+
+  /// <summary>
+  /// Indicate if details menu item is visible or not.
+  /// </summary>
+  public bool ContextMenuDetailsVisible
+  {
+    get => ActionLetterViewDetails.Visible;
+    set
+    {
+      ActionLetterViewDetails.Visible = value;
+      MenuItemSeparator.Visible = value;
+    }
+  }
 
   /// <summary>
   /// Indicates if an input key is processed.
