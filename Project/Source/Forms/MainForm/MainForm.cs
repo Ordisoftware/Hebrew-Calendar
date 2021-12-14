@@ -1047,16 +1047,6 @@ partial class MainForm : Form
     DoTimerMidnight();
   }
 
-  private void TimerKillProcesses_Tick(object sender, EventArgs e)
-  {
-    TimerKillProcesses.Stop();
-    SystemManager.TryCatch(() =>
-    {
-      foreach ( var process in Globals.SameRunningProcessesNotThisOne )
-        SystemManager.TryCatch(process.Kill);
-    });
-  }
-
   #endregion
 
   #region Context Menu

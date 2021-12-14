@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
 using System.IO.Pipes;
@@ -26,11 +26,8 @@ static partial class SystemManager
   /// <summary>
   /// Application mutex to allow only one process instance.
   /// </summary>
-#pragma warning disable S4487 // Unread "private" fields should be removed
-#pragma warning disable IDE0052 // Supprimer les membres privés non lus
+  [SuppressMessage("CodeQuality", "IDE0052:Supprimer les membres privés non lus", Justification = "Required")]
   static private Mutex ApplicationMutex;
-#pragma warning restore IDE0052 // Supprimer les membres privés non lus
-#pragma warning restore S4487 // Unread "private" fields should be removed
 
   /// <summary>
   /// IPC server instance.
@@ -110,13 +107,18 @@ static partial class SystemManager
     try
     {
       using var client = new NamedPipeClientStream(".", Globals.AssemblyGUID, PipeDirection.InOut);
-      client.Connect();
-      new BinaryFormatter().Serialize(client, command);
-      client.Close();
+      client.Connect(2000);
+      try
+      {
+        new BinaryFormatter().Serialize(client, command);
+      }
+      finally
+      {
+        client.Close();
+      }
     }
-    catch ( Exception ex )
+    catch
     {
-      ex.Manage();
     }
   }
 

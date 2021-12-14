@@ -77,6 +77,10 @@
       this.LabelEnumsAsTranslations = new System.Windows.Forms.ToolStripLabel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
       this.PanelTitle = new System.Windows.Forms.Panel();
+      this.PanelTitleInner = new System.Windows.Forms.Panel();
+      this.LabelSubTitleGPS = new System.Windows.Forms.Label();
+      this.LabelSubTitleOmer = new System.Windows.Forms.Label();
+      this.LabelSubTitleCalendar = new System.Windows.Forms.Label();
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
@@ -181,7 +185,6 @@
       this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
-      this.TimerKillProcesses = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ContextMenuDayDate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
@@ -215,10 +218,6 @@
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.PanelTitleInner = new System.Windows.Forms.Panel();
-      this.LabelSubTitleOmer = new System.Windows.Forms.Label();
-      this.LabelSubTitleGPS = new System.Windows.Forms.Label();
-      this.LabelSubTitleCalendar = new System.Windows.Forms.Label();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -235,11 +234,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
+      this.PanelTitleInner.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
       this.MenuTray.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripDay.SuspendLayout();
-      this.PanelTitleInner.SuspendLayout();
       this.SuspendLayout();
       // 
       // SaveTextDialog
@@ -624,6 +623,33 @@
       this.PanelTitle.Controls.Add(this.PanelTitleInner);
       resources.ApplyResources(this.PanelTitle, "PanelTitle");
       this.PanelTitle.Name = "PanelTitle";
+      // 
+      // PanelTitleInner
+      // 
+      this.PanelTitleInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleGPS);
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleOmer);
+      this.PanelTitleInner.Controls.Add(this.LabelSubTitleCalendar);
+      resources.ApplyResources(this.PanelTitleInner, "PanelTitleInner");
+      this.PanelTitleInner.Name = "PanelTitleInner";
+      // 
+      // LabelSubTitleGPS
+      // 
+      this.LabelSubTitleGPS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleGPS, "LabelSubTitleGPS");
+      this.LabelSubTitleGPS.Name = "LabelSubTitleGPS";
+      // 
+      // LabelSubTitleOmer
+      // 
+      this.LabelSubTitleOmer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleOmer, "LabelSubTitleOmer");
+      this.LabelSubTitleOmer.Name = "LabelSubTitleOmer";
+      // 
+      // LabelSubTitleCalendar
+      // 
+      this.LabelSubTitleCalendar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      resources.ApplyResources(this.LabelSubTitleCalendar, "LabelSubTitleCalendar");
+      this.LabelSubTitleCalendar.Name = "LabelSubTitleCalendar";
       // 
       // moonPhaseImagePictureBox
       // 
@@ -1388,11 +1414,6 @@
       this.TimerUpdateTitles.Interval = 60000;
       this.TimerUpdateTitles.Tick += new System.EventHandler(this.TimerUpdateTitles_Tick);
       // 
-      // TimerKillProcesses
-      // 
-      this.TimerKillProcesses.Interval = 5000;
-      this.TimerKillProcesses.Tick += new System.EventHandler(this.TimerKillProcesses_Tick);
-      // 
       // ContextMenuStripDay
       // 
       this.ContextMenuStripDay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1610,33 +1631,6 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // PanelTitleInner
-      // 
-      this.PanelTitleInner.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      this.PanelTitleInner.Controls.Add(this.LabelSubTitleGPS);
-      this.PanelTitleInner.Controls.Add(this.LabelSubTitleOmer);
-      this.PanelTitleInner.Controls.Add(this.LabelSubTitleCalendar);
-      resources.ApplyResources(this.PanelTitleInner, "PanelTitleInner");
-      this.PanelTitleInner.Name = "PanelTitleInner";
-      // 
-      // LabelSubTitleOmer
-      // 
-      this.LabelSubTitleOmer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleOmer, "LabelSubTitleOmer");
-      this.LabelSubTitleOmer.Name = "LabelSubTitleOmer";
-      // 
-      // LabelSubTitleGPS
-      // 
-      this.LabelSubTitleGPS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleGPS, "LabelSubTitleGPS");
-      this.LabelSubTitleGPS.Name = "LabelSubTitleGPS";
-      // 
-      // LabelSubTitleCalendar
-      // 
-      this.LabelSubTitleCalendar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-      resources.ApplyResources(this.LabelSubTitleCalendar, "LabelSubTitleCalendar");
-      this.LabelSubTitleCalendar.Name = "LabelSubTitleCalendar";
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1668,12 +1662,12 @@
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
+      this.PanelTitleInner.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
       this.MenuTray.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();
       this.ContextMenuStripDay.ResumeLayout(false);
-      this.PanelTitleInner.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1810,7 +1804,6 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionViewParashahDescription;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     internal System.Windows.Forms.Timer TimerBallon;
-    private System.Windows.Forms.Timer TimerKillProcesses;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

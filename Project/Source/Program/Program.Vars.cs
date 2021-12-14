@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -130,13 +130,13 @@ static partial class Program
   /// Indicates file path of application image 64x64.
   /// </summary>
   static public string ApplicationImage64FilePath
-    => Path.Combine(Globals.ProjectIconsFolderPath, "Applications", "hebrew_calendar64.png");
+    => Path.Combine(Globals.ProjectIconsApplicationsFolderPath, "hebrew_calendar64.png");
 
   /// <summary>
   /// Indicates file path of application image 32x32.
   /// </summary>
   static public string ApplicationImage32FilePath
-    => Path.Combine(Globals.ProjectIconsFolderPath, "Applications", "hebrew_calendar32.png");
+    => Path.Combine(Globals.ProjectIconsApplicationsFolderPath, "hebrew_calendar32.png");
 
   /// <summary>
   /// Indicates file path of the text report.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.IO.Pipes;
@@ -168,8 +168,7 @@ static partial class Program
     finally
     {
       server.Close();
-      if ( Globals.IsReady )
-        SystemManager.CreateIPCServer(IPCRequests);
+      SystemManager.CreateIPCServer(IPCRequests);
     }
   }
 

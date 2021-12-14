@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -26,7 +26,7 @@ partial class MainForm
     if ( !Globals.IsReady ) return;
     this.SyncUI(() =>
     {
-      System.Threading.Thread.Sleep(2000);
+      Thread.Sleep(2000);
       SystemManager.TryCatch(() =>
       {
         CheckRegenerateCalendar();
@@ -54,7 +54,6 @@ partial class MainForm
       if ( SystemManager.IsForegroundFullScreenOrScreensaverRunning ) return;
       TimerMutex = true;
       UpdateTitlesMutex = true;
-      SystemManager.TryCatch(CheckProcessRelicate);
       SystemManager.TryCatch(Settings.Store);
       bool showbox = !IsReminderPaused;
       bool IsSpecialDayOld = IsSpecialDay;
@@ -84,13 +83,6 @@ partial class MainForm
       TimerMutex = false;
       UpdateTitlesMutex = false;
       SystemManager.TryCatch(UpdateTrayIcon, UpdateUI, ShowNewParashah, ShowLockSession);
-    }
-    //
-    void CheckProcessRelicate()
-    {
-      var processes = Globals.SameRunningProcessesNotThisOne;
-      if ( processes.Any() )
-        TimerKillProcesses.Start();
     }
     //
     void UpdateTrayIcon()
