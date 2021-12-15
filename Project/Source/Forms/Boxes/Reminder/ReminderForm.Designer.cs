@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReminderForm));
       this.LabelTitle = new System.Windows.Forms.Label();
       this.LabelDate = new System.Windows.Forms.LinkLabel();
@@ -40,14 +41,14 @@
       this.LabelStartDay = new System.Windows.Forms.Label();
       this.LabelEndDay = new System.Windows.Forms.Label();
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
-      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
-      this.ContextMenuLockout = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetupSound = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();

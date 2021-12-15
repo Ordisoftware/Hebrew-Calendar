@@ -656,18 +656,18 @@
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVDhPnZJPSNNhHMa/CHWwAungsYMEBdHJS7cgyIMR
-        bEVll/7RyRU0Km1FaEF2UVDYsCItOrQUOhSChPln85e1Gdq69I9VQnNiS7eVlc7t6fu87++y6NQLD3t4
-        ns/z+71jk7/P+GWpdQIyFG0SRM5b0TNj52L/Ps4lCcWvb8DXyXPA0iBQdKzUM4u3rYcy/S5eflhMdVQD
-        Cz3AvAf4LMBHV/TMFvsw1V7Nh4TcmT28WuxaJYrpW0CyCsW3guK8H6XsHSN6ZqZL3wTZsq8TaZaRueFD
-        KCV3ofBax5/qUJhtQiHlt1JvMu3IkI1ckFF3rjcICFbeB1BKKPBK3zRzAKvJvVj5UG9Ez4wdGbLcuHP7
-        gOI7P7qOCNobBMGTVVic2ILl6a1G9MzYkSFb/oCLguXEMfweFxSeCSa7K9Drq0D26RojembsyJDlxp2b
-        XwDfnXr8HFJgRK84pp/Dgh9PrOhNph0Zsty4c5HBsxL78mAzuk+sQ8dBQade9cZxQe6xFT0zdmTIcuPO
-        RZr3iDfWKsgPbMKvR4LdG/UtDwWZsBU9M3b5gRqQ5cadm1MZ9knPm3t1SEWDSDu3kXLuYq5/uxG9ybQj
-        Q5YbO9UzGw3tnBkNZhYSYaymx4Bvz4FsHNlEnxE9M3ZkyHJjxpmJIHLTvdB/B5CPATkdL73Ei/sBNO5Y
-        a0TPzHRklOWGW7lyej9aT+1Di8+LlkaPfnpw9UwDDtcIjm6zomfGzjJes+GWl+B/+j8ltX8AUwsaqOHK
-        R1gAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
+        AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
+        +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
+        IeW3Um8y7ciQjVyQUXeuNwgIVt4HUEoo8ErfNHMAq8m9WPlQb0TPjB0Zsty4c/uA4js/uo4I2hsEwZNV
+        WJzYguXprUb0zNiRIVv+gIuC5cQx/B4XFJ4JJrsr0OurQPbpGiN6ZuzIkOXGnZtfAN+devwcUmBErzim
+        n8OCH0+s6E2mHRmy3LhzkcGzEvvyYDO6T6xDx0FBp171xnFB7rEVPTN2ZMhy485FmveIN9YqyA9swq9H
+        gt0b9S0PBZmwFT0zdvmBGpDlxp2bUxn2Sc+be3VIRYNIO7eRcu5irn+7Eb3JtCNDlhs71TMbDe2cGQ1m
+        FhJhrKbHgG/PgWwc2USfET0zdmTIcmPGmYkgctO90H8HkI8BOR0vvcSL+wE07lhrRM/MdGSU5YZbuXJ6
+        P1pP7UOLz4uWRo9+enD1TAMO1wiObrOiZ8bOMl6z4ZaX4H/6PyW1fwBTCxqo4cpHWAAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -762,7 +762,7 @@
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        wAAADsABataJCQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
         aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
         C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
         AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
@@ -779,7 +779,7 @@
   <data name="ActionOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        wAAADsABataJCQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
         BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
         gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
         FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
@@ -795,7 +795,7 @@
   <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        wAAADsABataJCQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
         BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
         gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
         FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC

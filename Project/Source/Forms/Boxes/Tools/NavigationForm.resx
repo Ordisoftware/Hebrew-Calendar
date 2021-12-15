@@ -117,51 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;LabelDate.Name" xml:space="preserve">
-    <value>LabelDate</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.Parent" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 35</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
-    <value>PanelTop</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="LabelDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LabelDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -171,6 +131,7 @@
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 25</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -192,626 +153,32 @@
   <data name="&gt;&gt;LabelDate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Name" xml:space="preserve">
-    <value>LabelEventSeasonValue</value>
+  <data name="PanelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PanelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
+  <data name="PanelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeasonValue.ZOrder" xml:space="preserve">
+  <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 35</value>
+  </data>
+  <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeason.Name" xml:space="preserve">
-    <value>LabelEventSeason</value>
+  <data name="&gt;&gt;PanelTop.Name" xml:space="preserve">
+    <value>PanelTop</value>
   </data>
-  <data name="&gt;&gt;LabelEventSeason.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelEventSeason.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Name" xml:space="preserve">
-    <value>LabelCurrentDayValue</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDayValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Name" xml:space="preserve">
-    <value>LabelCurrentDay</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelCurrentDay.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Name" xml:space="preserve">
-    <value>LabelEventTorah</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorah.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Name" xml:space="preserve">
-    <value>LabelTorahNextDateValue</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextDateValue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Name" xml:space="preserve">
-    <value>LabelEventTorahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelEventTorahValue.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Name" xml:space="preserve">
-    <value>LabelTorahNextValue</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNextValue.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Name" xml:space="preserve">
-    <value>LabelTorahNext</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.Parent" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelTorahNext.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="PanelAllExceptParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 180</value>
-  </data>
-  <data name="PanelAllExceptParashah.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="PanelAllExceptParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 115</value>
-  </data>
-  <data name="PanelAllExceptParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;PanelAllExceptParashah.Name" xml:space="preserve">
-    <value>PanelAllExceptParashah</value>
-  </data>
-  <data name="&gt;&gt;PanelAllExceptParashah.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelAllExceptParashah.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;PanelAllExceptParashah.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LabelLunarMonthName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLunarMonthName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="LabelLunarMonthName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelLunarMonthName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 15</value>
-  </data>
-  <data name="LabelLunarMonthName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 16</value>
-  </data>
-  <data name="LabelLunarMonthName.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="LabelLunarMonthName.Text" xml:space="preserve">
-    <value>Month name</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Name" xml:space="preserve">
-    <value>LabelLunarMonthName</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthName.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelParashahValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 98</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
-    <value>ContextMenuParashah</value>
-  </data>
-  <data name="&gt;&gt;ContextMenuParashah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LabelParashahValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelParashahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 155</value>
-  </data>
-  <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 16</value>
-  </data>
-  <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelParashahValue.Text" xml:space="preserve">
-    <value>Parashah</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Name" xml:space="preserve">
-    <value>LabelParashahValue</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LabelParashah.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelParashah.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 155</value>
-  </data>
-  <data name="LabelParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 16</value>
-  </data>
-  <data name="LabelParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="LabelParashah.Text" xml:space="preserve">
-    <value>Parashah:</value>
-  </data>
-  <data name="LabelParashah.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Name" xml:space="preserve">
-    <value>LabelParashah</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelParashah.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="PictureMoon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 2</value>
-  </data>
-  <data name="PictureMoon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 75</value>
-  </data>
-  <data name="PictureMoon.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Name" xml:space="preserve">
-    <value>PictureMoon</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;PictureMoon.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelMoonsetValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonsetValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelMoonsetValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 125</value>
-  </data>
-  <data name="LabelMoonsetValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 16</value>
-  </data>
-  <data name="LabelMoonsetValue.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="LabelMoonsetValue.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Name" xml:space="preserve">
-    <value>LabelMoonsetValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonsetValue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LabelMoonriseValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonriseValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelMoonriseValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 105</value>
-  </data>
-  <data name="LabelMoonriseValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 16</value>
-  </data>
-  <data name="LabelMoonriseValue.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LabelMoonriseValue.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Name" xml:space="preserve">
-    <value>LabelMoonriseValue</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonriseValue.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LabelSunsetValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSunsetValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelSunsetValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 80</value>
-  </data>
-  <data name="LabelSunsetValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 16</value>
-  </data>
-  <data name="LabelSunsetValue.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="LabelSunsetValue.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Name" xml:space="preserve">
-    <value>LabelSunsetValue</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunsetValue.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LabelSunriseValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSunriseValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelSunriseValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 60</value>
-  </data>
-  <data name="LabelSunriseValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 16</value>
-  </data>
-  <data name="LabelSunriseValue.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="LabelSunriseValue.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Name" xml:space="preserve">
-    <value>LabelSunriseValue</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunriseValue.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="LabelMoonset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonset.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelMoonset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 125</value>
-  </data>
-  <data name="LabelMoonset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 16</value>
-  </data>
-  <data name="LabelMoonset.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="LabelMoonset.Text" xml:space="preserve">
-    <value>Moonset</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Name" xml:space="preserve">
-    <value>LabelMoonset</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonset.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="LabelMoonrise.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelMoonrise.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelMoonrise.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 105</value>
-  </data>
-  <data name="LabelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 16</value>
-  </data>
-  <data name="LabelMoonrise.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="LabelMoonrise.Text" xml:space="preserve">
-    <value>Moonrise</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Name" xml:space="preserve">
-    <value>LabelMoonrise</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelMoonrise.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="LabelLunarDayEvent.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLunarDayEvent.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="LabelLunarDayEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelLunarDayEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 35</value>
-  </data>
-  <data name="LabelLunarDayEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 16</value>
-  </data>
-  <data name="LabelLunarDayEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LabelLunarDayEvent.Text" xml:space="preserve">
-    <value>Day event</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Name" xml:space="preserve">
-    <value>LabelLunarDayEvent</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayEvent.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="LabelLunarDayValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLunarDayValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="LabelLunarDayValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 35</value>
-  </data>
-  <data name="LabelLunarDayValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 16</value>
-  </data>
-  <data name="LabelLunarDayValue.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="LabelLunarDayValue.Text" xml:space="preserve">
-    <value>Day No. XX</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Name" xml:space="preserve">
-    <value>LabelLunarDayValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarDayValue.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="LabelLunarMonthValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLunarMonthValue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="LabelLunarMonthValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 15</value>
-  </data>
-  <data name="LabelLunarMonthValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 16</value>
-  </data>
-  <data name="LabelLunarMonthValue.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="LabelLunarMonthValue.Text" xml:space="preserve">
-    <value>Month No. XX</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Name" xml:space="preserve">
-    <value>LabelLunarMonthValue</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelLunarMonthValue.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="LabelSunset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSunset.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelSunset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 60</value>
-  </data>
-  <data name="LabelSunset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 16</value>
-  </data>
-  <data name="LabelSunset.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="LabelSunset.Text" xml:space="preserve">
-    <value>Sunrise</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Name" xml:space="preserve">
-    <value>LabelSunset</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunset.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="LabelSunrise.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSunrise.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="LabelSunrise.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 80</value>
-  </data>
-  <data name="LabelSunrise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 16</value>
-  </data>
-  <data name="LabelSunrise.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="LabelSunrise.Text" xml:space="preserve">
-    <value>Sunset</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Name" xml:space="preserve">
-    <value>LabelSunrise</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.Parent" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;LabelSunrise.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="PanelMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="PanelMiddle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 36</value>
-  </data>
-  <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 305</value>
-  </data>
-  <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddle.Name" xml:space="preserve">
-    <value>PanelMiddle</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelMiddle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelTop.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMiddle.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;PanelTop.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="LabelEventSeasonValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -823,7 +190,7 @@
     <value>90, 0</value>
   </data>
   <data name="LabelEventSeasonValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 16</value>
+    <value>104, 16</value>
   </data>
   <data name="LabelEventSeasonValue.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -889,7 +256,7 @@
     <value>90, 91</value>
   </data>
   <data name="LabelCurrentDayValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 16</value>
+    <value>32, 16</value>
   </data>
   <data name="LabelCurrentDayValue.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -988,7 +355,7 @@
     <value>90, 63</value>
   </data>
   <data name="LabelTorahNextDateValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 16</value>
+    <value>105, 16</value>
   </data>
   <data name="LabelTorahNextDateValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1021,7 +388,7 @@
     <value>90, 25</value>
   </data>
   <data name="LabelEventTorahValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 16</value>
+    <value>80, 16</value>
   </data>
   <data name="LabelEventTorahValue.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1054,7 +421,7 @@
     <value>90, 45</value>
   </data>
   <data name="LabelTorahNextValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 16</value>
+    <value>73, 16</value>
   </data>
   <data name="LabelTorahNextValue.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1107,10 +474,73 @@
   <data name="&gt;&gt;LabelTorahNext.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="PanelAllExceptParashah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 180</value>
+  </data>
+  <data name="PanelAllExceptParashah.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="PanelAllExceptParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 115</value>
+  </data>
+  <data name="PanelAllExceptParashah.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;PanelAllExceptParashah.Name" xml:space="preserve">
+    <value>PanelAllExceptParashah</value>
+  </data>
+  <data name="&gt;&gt;PanelAllExceptParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelAllExceptParashah.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;PanelAllExceptParashah.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelLunarMonthName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarMonthName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarMonthName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLunarMonthName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 15</value>
+  </data>
+  <data name="LabelLunarMonthName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 16</value>
+  </data>
+  <data name="LabelLunarMonthName.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="LabelLunarMonthName.Text" xml:space="preserve">
+    <value>Month name</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Name" xml:space="preserve">
+    <value>LabelLunarMonthName</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelParashahValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="ContextMenuParashah.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
+        wgAADsIBFShKgAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
         ITaIJegICqYoMiPobu89ZxQtMRes2eds9lpnzRnGQ7jN579FLgdZTYObBQquQteJbR7+CyKnwzrUajXI
         CvEkJYugkwnl8jsYHxVmpVyGUumN+4l0mmvVMCjRs5TN4RrsRlTwx66Ze5EMGEaF+ylFAcu2eU1J8HVf
         pNSBa1Cvf4HZbDAbuDaMKveLxSKkVRWSMgndiZQ6cA1aZgParSaYWJvNOhp+cn8ZNC+lDlwDX1jB6Cr0
@@ -1121,19 +551,19 @@
 </value>
   </data>
   <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
-        rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
-        TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
-        2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
-        SRiG3wuybdv93S7gwcCSGYbhoTD+us5f7MdxnbXW8ScT6Obec0i7TAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVDhPxZM9CsJAFIT3DHaexjNYeANrW0vBI4hdDqCx
+        sVNEPYKVaQWxCDb2SUyi84U1Irr+ITjwkby8mSFbrLEaioWoFdNz4cFLplBVLEVd9PnwQnjwkiFrVqIl
+        usITTeESOzx4yZA1GzEWIzETazFwwA4PXjJkzeBkFcfxXnPHjndiJ8/BjsyUXguyLIsx5Xl+WZZoVxTo
+        ebR2dwHvlIRhWPJxwSO9XfCTIxD4yxESTF8fIYqinWaPgiRJbo6QpikBj7+09rJgbudTEARzzRPRdjDx
+        fb9n7RTgNw2xFVPBBakIl9jhwUuGbKEvr7MxZzZU0vTpPlfdAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -1143,34 +573,35 @@
     <value />
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVDhPnZJPSNNhHMa/CHWwAungsYMEBdHJS7cgyIMR
+        bEVll/7RyRU0Km1FaEF2UVDYsCItOrQUOhSChPln85e1Gdq69I9VQnNiS7eVlc7t6fu87++y6NQLD3t4
+        ns/z+71jk7/P+GWpdQIyFG0SRM5b0TNj52L/Ps4lCcWvb8DXyXPA0iBQdKzUM4u3rYcy/S5eflhMdVQD
+        Cz3AvAf4LMBHV/TMFvsw1V7Nh4TcmT28WuxaJYrpW0CyCsW3guK8H6XsHSN6ZqZL3wTZsq8TaZaRueFD
+        KCV3ofBax5/qUJhtQiHlt1JvMu3IkI1ckFF3rjcICFbeB1BKKPBK3zRzAKvJvVj5UG9Ez4wdGbLcuHP7
+        gOI7P7qOCNobBMGTVVic2ILl6a1G9MzYkSFb/oCLguXEMfweFxSeCSa7K9Drq0D26RojembsyJDlxp2b
+        XwDfnXr8HFJgRK84pp/Dgh9PrOhNph0Zsty4c5HBsxL78mAzuk+sQ8dBQade9cZxQe6xFT0zdmTIcuPO
+        RZr3iDfWKsgPbMKvR4LdG/UtDwWZsBU9M3b5gRqQ5cadm1MZ9knPm3t1SEWDSDu3kXLuYq5/uxG9ybQj
+        Q5YbO9UzGw3tnBkNZhYSYaymx4Bvz4FsHNlEnxE9M3ZkyHJjxpmJIHLTvdB/B5CPATkdL73Ei/sBNO5Y
+        a0TPzHRklOWGW7lyej9aT+1Di8+LlkaPfnpw9UwDDtcIjm6zomfGzjJes+GWl+B/+j8ltX8AUwsaqOHK
+        R1gAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -1178,7 +609,7 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        wgAADsIBFShKgAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
         aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
         pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
         drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
@@ -1193,10 +624,460 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
+  </data>
+  <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 120</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
+    <value>ContextMenuParashah</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LabelParashahValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelParashahValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelParashahValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 155</value>
+  </data>
+  <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 16</value>
+  </data>
+  <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelParashahValue.Text" xml:space="preserve">
+    <value>Parashah</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Name" xml:space="preserve">
+    <value>LabelParashahValue</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelParashahValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelParashah.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelParashah.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelParashah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 155</value>
+  </data>
+  <data name="LabelParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 16</value>
+  </data>
+  <data name="LabelParashah.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="LabelParashah.Text" xml:space="preserve">
+    <value>Parashah:</value>
+  </data>
+  <data name="LabelParashah.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelParashah.Name" xml:space="preserve">
+    <value>LabelParashah</value>
+  </data>
+  <data name="&gt;&gt;LabelParashah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelParashah.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelParashah.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PictureMoon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 2</value>
+  </data>
+  <data name="PictureMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 75</value>
+  </data>
+  <data name="PictureMoon.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;PictureMoon.Name" xml:space="preserve">
+    <value>PictureMoon</value>
+  </data>
+  <data name="&gt;&gt;PictureMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureMoon.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;PictureMoon.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelMoonsetValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMoonsetValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelMoonsetValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 125</value>
+  </data>
+  <data name="LabelMoonsetValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 16</value>
+  </data>
+  <data name="LabelMoonsetValue.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="LabelMoonsetValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonsetValue.Name" xml:space="preserve">
+    <value>LabelMoonsetValue</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonsetValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonsetValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonsetValue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LabelMoonriseValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMoonriseValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelMoonriseValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 105</value>
+  </data>
+  <data name="LabelMoonriseValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 16</value>
+  </data>
+  <data name="LabelMoonriseValue.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LabelMoonriseValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonriseValue.Name" xml:space="preserve">
+    <value>LabelMoonriseValue</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonriseValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonriseValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonriseValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LabelSunsetValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSunsetValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelSunsetValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 80</value>
+  </data>
+  <data name="LabelSunsetValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 16</value>
+  </data>
+  <data name="LabelSunsetValue.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="LabelSunsetValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;LabelSunsetValue.Name" xml:space="preserve">
+    <value>LabelSunsetValue</value>
+  </data>
+  <data name="&gt;&gt;LabelSunsetValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSunsetValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelSunsetValue.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LabelSunriseValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSunriseValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelSunriseValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 60</value>
+  </data>
+  <data name="LabelSunriseValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 16</value>
+  </data>
+  <data name="LabelSunriseValue.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="LabelSunriseValue.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;LabelSunriseValue.Name" xml:space="preserve">
+    <value>LabelSunriseValue</value>
+  </data>
+  <data name="&gt;&gt;LabelSunriseValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSunriseValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelSunriseValue.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LabelMoonset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMoonset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelMoonset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 125</value>
+  </data>
+  <data name="LabelMoonset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 16</value>
+  </data>
+  <data name="LabelMoonset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LabelMoonset.Text" xml:space="preserve">
+    <value>Moonset</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonset.Name" xml:space="preserve">
+    <value>LabelMoonset</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonset.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonset.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LabelMoonrise.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMoonrise.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelMoonrise.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 105</value>
+  </data>
+  <data name="LabelMoonrise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 16</value>
+  </data>
+  <data name="LabelMoonrise.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LabelMoonrise.Text" xml:space="preserve">
+    <value>Moonrise</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonrise.Name" xml:space="preserve">
+    <value>LabelMoonrise</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonrise.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelMoonrise.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="LabelLunarDayEvent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarDayEvent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarDayEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLunarDayEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 35</value>
+  </data>
+  <data name="LabelLunarDayEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 16</value>
+  </data>
+  <data name="LabelLunarDayEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelLunarDayEvent.Text" xml:space="preserve">
+    <value>Day event</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Name" xml:space="preserve">
+    <value>LabelLunarDayEvent</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayEvent.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="LabelLunarDayValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarDayValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarDayValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 35</value>
+  </data>
+  <data name="LabelLunarDayValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 16</value>
+  </data>
+  <data name="LabelLunarDayValue.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelLunarDayValue.Text" xml:space="preserve">
+    <value>Day No. XX</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayValue.Name" xml:space="preserve">
+    <value>LabelLunarDayValue</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarDayValue.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="LabelLunarMonthValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLunarMonthValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelLunarMonthValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 15</value>
+  </data>
+  <data name="LabelLunarMonthValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 16</value>
+  </data>
+  <data name="LabelLunarMonthValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="LabelLunarMonthValue.Text" xml:space="preserve">
+    <value>Month No. XX</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthValue.Name" xml:space="preserve">
+    <value>LabelLunarMonthValue</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthValue.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelLunarMonthValue.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="LabelSunset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSunset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelSunset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 60</value>
+  </data>
+  <data name="LabelSunset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 16</value>
+  </data>
+  <data name="LabelSunset.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LabelSunset.Text" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="&gt;&gt;LabelSunset.Name" xml:space="preserve">
+    <value>LabelSunset</value>
+  </data>
+  <data name="&gt;&gt;LabelSunset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSunset.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelSunset.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="LabelSunrise.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSunrise.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="LabelSunrise.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 80</value>
+  </data>
+  <data name="LabelSunrise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="LabelSunrise.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LabelSunrise.Text" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="&gt;&gt;LabelSunrise.Name" xml:space="preserve">
+    <value>LabelSunrise</value>
+  </data>
+  <data name="&gt;&gt;LabelSunrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSunrise.Parent" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;LabelSunrise.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="PanelMiddle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 36</value>
+  </data>
+  <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 305</value>
+  </data>
+  <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Name" xml:space="preserve">
+    <value>PanelMiddle</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelMiddle.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ActionNextDay.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1323,81 +1204,6 @@
   </data>
   <data name="&gt;&gt;PanelSeparatorTop.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;ActionDatesDiff.Name" xml:space="preserve">
-    <value>ActionDatesDiff</value>
-  </data>
-  <data name="&gt;&gt;ActionDatesDiff.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionDatesDiff.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionDatesDiff.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionSettings.Name" xml:space="preserve">
-    <value>ActionSettings</value>
-  </data>
-  <data name="&gt;&gt;ActionSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSettings.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ActionViewCalendar.Name" xml:space="preserve">
-    <value>ActionViewCalendar</value>
-  </data>
-  <data name="&gt;&gt;ActionViewCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionViewCalendar.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionViewCalendar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 341</value>
-  </data>
-  <data name="PanelBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 40</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="ActionDatesDiff.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1535,6 +1341,33 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 341</value>
+  </data>
+  <data name="PanelBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 40</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="PanelSeparatorBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
