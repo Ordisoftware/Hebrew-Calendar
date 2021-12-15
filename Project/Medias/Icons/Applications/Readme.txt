@@ -2,4 +2,4 @@
 
 "hebrew_letters.ico" is a custom icon made with Axialis IconWorkshop.
 
-"hebrew_words.ico" is a linkware from Iconarchive.
+"hebrew_words.ico" is a custom icon made with Axialis IconWorkshop.
