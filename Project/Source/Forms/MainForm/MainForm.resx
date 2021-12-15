@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="SaveTextDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>333, 51</value>
+    <value>523, 51</value>
   </metadata>
   <data name="SaveTextDialog.Filter" xml:space="preserve">
     <value>Text files|*.txt</value>
@@ -935,13 +935,13 @@
     <value>121, 12</value>
   </metadata>
   <metadata name="SaveDataGridDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>468, 51</value>
+    <value>658, 51</value>
   </metadata>
   <metadata name="TrayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>963, 12</value>
+    <value>824, 10</value>
   </metadata>
   <metadata name="MenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>857, 12</value>
+    <value>704, 10</value>
   </metadata>
   <data name="MenuShowHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1267,22 +1267,22 @@
     <value>393, 12</value>
   </metadata>
   <metadata name="TimerBallon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>629, 51</value>
+    <value>819, 51</value>
   </metadata>
   <metadata name="TimerTrayMouseMove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>745, 51</value>
+    <value>935, 51</value>
   </metadata>
   <metadata name="TimerResumeReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>528, 12</value>
   </metadata>
   <metadata name="SaveImageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>187, 51</value>
+    <value>377, 51</value>
   </metadata>
   <data name="SaveImageDialog.Filter" xml:space="preserve">
     <value>PNG files|*.png</value>
   </data>
   <metadata name="FolderDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1061, 12</value>
+    <value>35, 50</value>
   </metadata>
   <data name="ActionSaveToFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1932,34 +1932,35 @@
     <value>None</value>
   </data>
   <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashahDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+        wQAADsEBuJFr7QAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
+        AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
+        +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
+        IeW3Um8y7ciQjVyQUXeuNwgIVt4HUEoo8ErfNHMAq8m9WPlQb0TPjB0Zsty4c/uA4js/uo4I2hsEwZNV
+        WJzYguXprUb0zNiRIVv+gIuC5cQx/B4XFJ4JJrsr0OurQPbpGiN6ZuzIkOXGnZtfAN+devwcUmBErzim
+        n8OCH0+s6E2mHRmy3LhzkcGzEvvyYDO6T6xDx0FBp171xnFB7rEVPTN2ZMhy485FmveIN9YqyA9swq9H
+        gt0b9S0PBZmwFT0zdvmBGpDlxp2bUxn2Sc+be3VIRYNIO7eRcu5irn+7Eb3JtCNDlhs71TMbDe2cGQ1m
+        FhJhrKbHgG/PgWwc2USfET0zdmTIcmPGmYkgctO90H8HkI8BOR0vvcSL+wE07lhrRM/MdGSU5YZbuXJ6
+        P1pP7UOLz4uWRo9+enD1TAMO1wiObrOiZ8bOMl6z4ZaX4H/6PyW1fwBTCxqo4cpHWAAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -1985,7 +1986,7 @@
     <value>None</value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
@@ -2049,11 +2050,11 @@
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
-        rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
-        TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
-        2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
-        SRiG3wuybdv93S7gwcCSGYbhoTD+us5f7MdxnbXW8ScT6Obec0i7TAAAAABJRU5ErkJggg==
+        wgAADsIBFShKgAAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
+        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
+        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
+        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2921,7 +2922,7 @@
     <value>F1</value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -2962,7 +2963,7 @@
     <value>F2</value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -3001,7 +3002,7 @@
     <value>F3</value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
@@ -3082,7 +3083,7 @@
     <value>4</value>
   </data>
   <metadata name="SaveDataBoardDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 51</value>
+    <value>207, 51</value>
   </metadata>
   <metadata name="TimerUpdateTitles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>242, 12</value>
@@ -3453,19 +3454,19 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="ContextMenuDayParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
-        rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
-        TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
-        2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
-        SRiG3wuybdv93S7gwcCSGYbhoTD+us5f7MdxnbXW8ScT6Obec0i7TAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVDhPxZM9CsJAFIT3DHaexjNYeANrW0vBI4hdDqCx
+        sVNEPYKVaQWxCDb2SUyi84U1Irr+ITjwkby8mSFbrLEaioWoFdNz4cFLplBVLEVd9PnwQnjwkiFrVqIl
+        usITTeESOzx4yZA1GzEWIzETazFwwA4PXjJkzeBkFcfxXnPHjndiJ8/BjsyUXguyLIsx5Xl+WZZoVxTo
+        ebR2dwHvlIRhWPJxwSO9XfCTIxD4yxESTF8fIYqinWaPgiRJbo6QpikBj7+09rJgbudTEARzzRPRdjDx
+        fb9n7RTgNw2xFVPBBakIl9jhwUuGbKEvr7MxZzZU0vTpPlfdAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ContextMenuDayParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3475,34 +3476,35 @@
     <value />
   </data>
   <data name="ContextMenuDayParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+        wQAADsEBuJFr7QAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
+        AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
+        +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
+        IeW3Um8y7ciQjVyQUXeuNwgIVt4HUEoo8ErfNHMAq8m9WPlQb0TPjB0Zsty4c/uA4js/uo4I2hsEwZNV
+        WJzYguXprUb0zNiRIVv+gIuC5cQx/B4XFJ4JJrsr0OurQPbpGiN6ZuzIkOXGnZtfAN+devwcUmBErzim
+        n8OCH0+s6E2mHRmy3LhzkcGzEvvyYDO6T6xDx0FBp171xnFB7rEVPTN2ZMhy485FmveIN9YqyA9swq9H
+        gt0b9S0PBZmwFT0zdvmBGpDlxp2bUxn2Sc+be3VIRYNIO7eRcu5irn+7Eb3JtCNDlhs71TMbDe2cGQ1m
+        FhJhrKbHgG/PgWwc2USfET0zdmTIcmPGmYkgctO90H8HkI8BOR0vvcSL+wE07lhrRM/MdGSU5YZbuXJ6
+        P1pP7UOLz4uWRo9+enD1TAMO1wiObrOiZ8bOMl6z4ZaX4H/6PyW1fwBTCxqo4cpHWAAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ContextMenuDayParashahStudy.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
     <value>Study online</value>
@@ -3528,7 +3530,7 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
     <value>Read online</value>
@@ -3574,7 +3576,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAWABAQFgAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAXgBAQF4AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

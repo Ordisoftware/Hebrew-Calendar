@@ -465,4 +465,8 @@ partial class ParashotForm : Form
     if ( day != null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
   }
 
+  private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+  {
+    ;
+  }
 }
