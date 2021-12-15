@@ -36,8 +36,6 @@ URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 Name = (EN) MyJewishLearning.com
 URL = https://www.myjewishlearning.com/torah-portions/%MYJEWISHLEARNING%/
 
--
-
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/paracha/%TORAHBOX%
 
