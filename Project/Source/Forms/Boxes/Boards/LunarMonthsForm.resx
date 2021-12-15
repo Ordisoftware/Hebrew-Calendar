@@ -117,15 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;ActionSwapColors.Name" xml:space="preserve">
+    <value>ActionSwapColors</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionSwapColors.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Name" xml:space="preserve">
+    <value>ActionEditFiles</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionEditFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Name" xml:space="preserve">
+    <value>ActionViewNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionViewNotice.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 521</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 40</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="ActionSwapColors.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionSwapColors.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
+        wQAADsEBuJFr7QAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
         IRJJiml1x05TRhsCWi4m5qqNCMQbKq5om3g3mqhBILJFuS2XonF3YbmIgJN9+33nLHthd9rJTGZ6Zp55
         9/3Ot/O9/P85/6qg64nWp2u0Rs8GGEcx9U7aNrIZXUPNJdQ39I2vRMmbZwRSvnYlldh8Skh9ouzlElG5
         DKIyjljqAHuqf79cy3N5OF8jTDS894tO9O4h9jpAvn9vD/p+1QPq89pwTuBySx4uNmfjUkuODfZXWnKx
@@ -169,7 +242,6 @@
   <data name="ActionSwapColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionSwapColors.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
   </data>
@@ -191,7 +263,7 @@
   <data name="ActionEditFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
+        wQAADsEBuJFr7QAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
         F3TKSShEEeQmKpcFRDFwFZbJEgVSF3ZhF0XFRFMyUZCbu7C7LAu7y16Qp/f9vl1Y3CWRkWfmGWbPnvM8
         z/uec76PDSDcFyvNPxojlSMqNQ9RKfeQpMe6rM8+bOYPY3nSaIL12Ue088UETspoaWqE/mYzTLoWdLaN
         nLyedViPwfrsI9r5YiK3i2HQtmBKRClei1Jh+taRk9ezDusxtpA++4h2vugP0Nneijmp5zF/9wUsyBo5
@@ -250,7 +322,7 @@
   <data name="ActionViewNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
+        wQAADsEBuJFr7QAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
         6iIoCKMDFRFEB+iiAyrpmDPPc7aac1lSbeYSo4uenu/eQQr7Sc7fqBc+iPDueZ59v9/fu98b97+sGTar
         6ZHDaoS92hBTxEO8xFNZqzXLUWMEhs4DH4QSUqozoklteoiXeCprtebYqxKBkYeAnX9bTLFBtOkhXuKp
         rNWKt1clAMMPwptTAUeavoimaNNDvMRTWaulAgTuwP/YAP8TC/xPU/RFNKktHtoB/DcBbzkwUEWqdYaa
@@ -322,30 +394,6 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 521</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 40</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="ContextMenuItems.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -408,15 +456,13 @@
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAbdJREFUOE+dkzlrQkEUhd/vcPkTVpoiYFDSuIBip5WVCCqCjViKFvY24la4/BTB
-        MjESTIrYPHFpVNz1xDP4Ho4GQjJwGeZw7/fu3DNPsdvtD/F4/CORSLz9JVKpVN/pdD4pmUzmBf9cZ8i7
-        QtrljEAgAJvNhsPhgOPxeFGBdrsNRVHudNbqAC2JUS6Xsd/vRQGXprvdbux2O5xOJ6FLgOFwqCcyarWa
-        ADCsVquuezweHRKJRAY6gEKj0ZAg9XpdAAqFgqRrHYZCIVUCMDmfz0vJuVwOJpMJ1WoVBoMBFosF3W4X
-        y+VSBnDxGn6/H9lsVoJ4vV6MRiP0ej2oqorJZILtdnsPMJvNaDabmM1mqFQqEqRUKmG1WolCtk83wuHw
-        lw7QXDAajej3+1iv12IG1xAOlsW/usC7DgYD8bVbiDZYhtTBrQvshC3TsmsI4YvFQlzhRxc4cS2Rg9Me
-        VDQa1XUO8s5GXiGZTMLn88HlcqHT6UiAVqsluioWizKAf9V1B/P5XLgwnU6x2Wz0t8+d3o/HY7HzHIvF
-        Pvk7P6bT6Vd2cn6aH6QGg0GVO8/UteDQqDNY43A4nr8B6PK1N5dwt+EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAElSURBVDhPpZMxdoJAEIa35QIUpqSnwhdPQMER6DkAJ8BO
+        C9Ikac0tohZqcghqrGhJUgToRv/ZXbK65PnU/715j/3Z+XZmFgSUpiklSXJVIKdPvlUMuQeASixAURRU
+        17VaSf02Db0vl2r1JwuAxGNX9DiZKEfK8zxyXZeqqlKOlNUCTnIchyFRFCmXyPd99gApy71y/2nh+eWV
+        NyPCMGRonj/1HpK0BgFIiOO4T0A7QTCmzXbHVV2sAGucuFi89e0AcD5YCHtPAKDrMjEwE4JKUJ2pQYBO
+        gP/1/WNVYkIsQNt1NJvNeTMC3wRkQrJsyh5kzaBtO74FbB6NHpQrxacdAYBpDQ5x9/HJcf7RrFZrvglT
+        g4BrpKqSf6QOUHWYvvlePwshxAEeEv3DWAZCSgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
@@ -430,15 +476,12 @@
   </data>
   <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAbdJREFUOE+dkzlrQkEUhd/vcPkTVpoiYFDSuIBip5WVCCqCjViKFvY24la4/BTB
-        MjESTIrYPHFpVNz1xDP4Ho4GQjJwGeZw7/fu3DNPsdvtD/F4/CORSLz9JVKpVN/pdD4pmUzmBf9cZ8i7
-        QtrljEAgAJvNhsPhgOPxeFGBdrsNRVHudNbqAC2JUS6Xsd/vRQGXprvdbux2O5xOJ6FLgOFwqCcyarWa
-        ADCsVquuezweHRKJRAY6gEKj0ZAg9XpdAAqFgqRrHYZCIVUCMDmfz0vJuVwOJpMJ1WoVBoMBFosF3W4X
-        y+VSBnDxGn6/H9lsVoJ4vV6MRiP0ej2oqorJZILtdnsPMJvNaDabmM1mqFQqEqRUKmG1WolCtk83wuHw
-        lw7QXDAajej3+1iv12IG1xAOlsW/usC7DgYD8bVbiDZYhtTBrQvshC3TsmsI4YvFQlzhRxc4cS2Rg9Me
-        VDQa1XUO8s5GXiGZTMLn88HlcqHT6UiAVqsluioWizKAf9V1B/P5XLgwnU6x2Wz0t8+d3o/HY7HzHIvF
-        Pvk7P6bT6Vd2cn6aH6QGg0GVO8/UteDQqDNY43A4nr8B6PK1N5dwt+EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD3SURBVDhPnZIxDoJAEEU5AaeQhANwFU2wJxJKOuywxQtg
+        jRfACxBrrDCRghg8AAUnGPNXhgC7ROUnEzLMzNvPLBrk+z4tiX54qQTEcZwu/V9KQFHcKU0v1DSNFFMp
+        AZ7n4duUYVnWCCR6p4AkOSuHOYJg33USYVYCVNVTWMNJbdv2gTwMD2Tb265zBhDHJxEq5fntOyDLrrRe
+        b7psLCx4WFPuAFZN0xS2p2IA12avcWUYys9gd3wTkgMM87Z3riu5wP8xBEg7wAkY1nWdouj4GwA2WCg8
+        ypLq+tU3DQUgrpnBAoBFLJVYIgQXSPAElWP4flr/DGvaG7FwJVA+m7aqAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
