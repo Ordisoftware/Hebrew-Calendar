@@ -342,6 +342,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.16
 
 - Maintenance release.
+- Update application's icons.
 - Some fixes.
 - Refactoring.
 
