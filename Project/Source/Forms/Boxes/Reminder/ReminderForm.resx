@@ -162,7 +162,7 @@
     <value>106, 40</value>
   </data>
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 16</value>
+    <value>36, 16</value>
   </data>
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -256,7 +256,7 @@
     <value>106, 62</value>
   </data>
   <data name="LabelStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 16</value>
   </data>
   <data name="LabelStartTime.TabIndex" type="System.Int32, mscorlib">
     <value>63</value>
@@ -285,7 +285,7 @@
   <data name="ActionPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
+        wgAADsIBFShKgAAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
         O4qU2JSAJsZUrFFqYkxitGIujVBny/3tcyw6cOgPC37W+tbO7u7x/a/xpzO5bDqbl5XZ8dzo3+NPOdl8
         ysl8M/t0POno6OinFTseGQwshT/HvxFLbL6oVLX7+o2iG3EViyV1ep+t2PHIYGDpuFV3pmLx5KD2qq7h
         cKTBYKDJ5Idq9V0rdjwyGFg6btWdE0YXVx9FVa3Vtd9s6dn2jpJOWk4mZ3c8MhhYr2PHH1ldz0XWoioU
@@ -334,7 +334,7 @@
     <value>234, 62</value>
   </data>
   <data name="LabelEndTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 16</value>
   </data>
   <data name="LabelEndTime.TabIndex" type="System.Int32, mscorlib">
     <value>63</value>
@@ -403,7 +403,7 @@
     <value>106, 80</value>
   </data>
   <data name="LabelStartDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 16</value>
   </data>
   <data name="LabelStartDay.TabIndex" type="System.Int32, mscorlib">
     <value>63</value>
@@ -436,7 +436,7 @@
     <value>234, 81</value>
   </data>
   <data name="LabelEndDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 16</value>
   </data>
   <data name="LabelEndDay.TabIndex" type="System.Int32, mscorlib">
     <value>63</value>
@@ -465,7 +465,7 @@
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
+        wgAADsIBFShKgAAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
         ITaIJegICqYoMiPobu89ZxQtMRes2eds9lpnzRnGQ7jN579FLgdZTYObBQquQteJbR7+CyKnwzrUajXI
         CvEkJYugkwnl8jsYHxVmpVyGUumN+4l0mmvVMCjRs5TN4RrsRlTwx66Ze5EMGEaF+ylFAcu2eU1J8HVf
         pNSBa1Cvf4HZbDAbuDaMKveLxSKkVRWSMgndiZQ6cA1aZgParSaYWJvNOhp+cn8ZNC+lDlwDX1jB6Cr0
@@ -476,7 +476,7 @@
 </value>
   </data>
   <data name="ActionViewParashahInfos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashahInfos.Text" xml:space="preserve">
     <value>Show description</value>
@@ -484,7 +484,7 @@
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
+        wgAADsIBFShKgAAAAQJJREFUOE/VkzGKhEAQRfsieyHB0MQLKGpkoMZGnkDMzAwGMVcQzCbxAsaTmXiD
         rt232IuMM+wa7ocKuv771TZYSkRuaZqK53kyz/ND/SIYWDJk1bquNxrjOEpRFDSdnT0JDwaWDFnluq40
         TSNlWUqe59J1nWitY+Bj0cODgSVDVtm2LXEcS5IkEgSBOI4jWZa9LDwYWDJkFYbRsixSVdV+OgsPxojs
         2wHmVlPo0gDUtu1PocsDnnVpAP1joctf8E+fwJ9m9PwEvNMA3/f3o8g0TRJFkdR1/bLwYIzIqr7v75Zl
@@ -498,34 +498,35 @@
     <value />
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVDhPnZJPSNNhHMa/CHWwAungsYMEBdHJS7cgyIMR
+        bEVll/7RyRU0Km1FaEF2UVDYsCItOrQUOhSChPln85e1Gdq69I9VQnNiS7eVlc7t6fu87++y6NQLD3t4
+        ns/z+71jk7/P+GWpdQIyFG0SRM5b0TNj52L/Ps4lCcWvb8DXyXPA0iBQdKzUM4u3rYcy/S5eflhMdVQD
+        Cz3AvAf4LMBHV/TMFvsw1V7Nh4TcmT28WuxaJYrpW0CyCsW3guK8H6XsHSN6ZqZL3wTZsq8TaZaRueFD
+        KCV3ofBax5/qUJhtQiHlt1JvMu3IkI1ckFF3rjcICFbeB1BKKPBK3zRzAKvJvVj5UG9Ez4wdGbLcuHP7
+        gOI7P7qOCNobBMGTVVic2ILl6a1G9MzYkSFb/oCLguXEMfweFxSeCSa7K9Drq0D26RojembsyJDlxp2b
+        XwDfnXr8HFJgRK84pp/Dgh9PrOhNph0Zsty4c5HBsxL78mAzuk+sQ8dBQade9cZxQe6xFT0zdmTIcuPO
+        RZr3iDfWKsgPbMKvR4LdG/UtDwWZsBU9M3b5gRqQ5cadm1MZ9knPm3t1SEWDSDu3kXLuYq5/uxG9ybQj
+        Q5YbO9UzGw3tnBkNZhYSYaymx4Bvz4FsHNlEnxE9M3ZkyHJjxpmJIHLTvdB/B5CPATkdL73Ei/sBNO5Y
+        a0TPzHRklOWGW7lyej9aT+1Di8+LlkaPfnpw9UwDDtcIjm6zomfGzjJes+GWl+B/+j8ltX8AUwsaqOHK
+        R1gAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -533,7 +534,7 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        wgAADsIBFShKgAAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
         aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
         pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
         drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
@@ -548,13 +549,13 @@
 </value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 98</value>
+    <value>181, 120</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -572,7 +573,7 @@
     <value>106, 105</value>
   </data>
   <data name="LabelParashahValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 16</value>
+    <value>89, 16</value>
   </data>
   <data name="LabelParashahValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -598,7 +599,7 @@
   <data name="ActionLockout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAnNJREFUOE+Nkt9LU2EYx5+7rqKbIKEbMzTHwlChPyMorSCUtGxdaF10EXQV1FXI
+        wgAADsIBFShKgAAAAnNJREFUOE+Nkt9LU2EYx5+7rqKbIKEbMzTHwlChPyMorSCUtGxdaF10EXQV1FXI
         NlJxqdskd9bcL6frzGUhYdkS2w+dOco2N4eWdvR04UWzwm/POTukoEVf+PC+PM/z/fK+7zm0W6IY7hZD
         zyCGwhq855rW/rf8Q8GVeGIWkiThq7QOWf7GqwSlpvS0sf3l9vq7p6ejWEhnMBoeg8vtVVH2Sk3pKTPa
         +F4JzkHEEjMYGhbRbu7o4lKtgsn0sDPANaX3xOWBOryfeu1OTMeScHpGlKGSYlVVSa9dQJR7Hk/w7wFG
@@ -642,7 +643,7 @@
   <data name="MenuDefaultLockout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAANlJREFUOE+ljjEKwkAQRecIVpbpPIFHECTRK9gJnsBKQVsTRCwEEQsvYClYKYIQ
+        wgAADsIBFShKgAAAANlJREFUOE+ljjEKwkAQRecIVpbpPIFHECTRK9gJnsBKQVsTRCwEEQsvYClYKYIQ
         rRTbFF5lnL8x4k62cHHh8fmPD7PEzH/hlD44pQ9O6YNbymtPaRkmxM2YGIkOX9pqATDubiq8z/p8eA5M
         osPrrVUKIrm4y3o8SwOenKsm0eH11ioFoXx7da/x+EQ8OpJJdHi9tUpBSy7FF+LkKpm+Uzq83lqloDGk
         bWdNPL8RLx55osPrrVU+kijAGBcj+TYSHb601cLI/AVC/Qv08lYLX5zSB6f0wSl/h+kFpri01rI6P6cA
@@ -676,7 +677,7 @@
   <data name="ActionSetupSound.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoRJREFUOE+1k0tME1EUhkfDxsdOXJg0MT4SDEaNKUqlRFzo0r0uNEZxqWxMMCLh
+        wgAADsIBFShKgAAAAoRJREFUOE+1k0tME1EUhkfDxsdOXJg0MT4SDEaNKUqlRFzo0r0uNEZxqWxMMCLh
         FV1ptE4phLZUhFLaMlNFqQgitEA70BlKa2loaaAUDDHRBSqYCPp7ZjqwMRo2/smfO+feOd+cc+8d5r/J
         aOncy1qdi8ZmF0xPuWF1enNiba4LlvYuCJEk3qcWIEOabJxOXf63DFan3dnVD3FyBi1uLyLJebAWJx4b
         rcXqK0whl54qdiZ3K8G3cPXzFakCaxO3UGt0wesTEYqlIEPsnl4CZAjQAYOpaaMCXWvUpufTUIJl6S6A

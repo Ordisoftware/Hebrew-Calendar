@@ -125,7 +125,7 @@
   <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
+        wAAADsABataJCQAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
         MGA0gRYMUcxGO4Hu6g7dGkKwxYVdOMSq1iRWk4UKojiP8fPeV5VKm5VBDxzuqXr3nPte1bP+GWs7RoZW
         tjkkWxwSzQ62YTaq81rXtU/7I2sIfbkYrJL+yBoi2ZINV8Z3wJ09UNpNW3YG7u4yNLokurTTtNW3LgyQ
         LSpah6dozwR0OAGduWlOOs8NO/PTnMoFnMkHHBz2zJEiawi7OWMCKp9g8jME3+Bc1qMqtfodzucrvJb1
@@ -170,7 +170,7 @@
   <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
+        wAAADsABataJCQAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
         jMXGlSgtJu8lkvhRsHaVtAv1JUKTaKF1IcRPVKw9zkye+aAbiz1w3hzuzJw7996n/itaAwsf73sNaG4D
         9gEDDqFuxarmPNe1BhMlq7UMXvwXcL3VWgbvIFh9DHzuAtaewqv/AL48EYpeI815gubWqwYtgQQaXkQl
         4Y/l4dOLCBhFDMbzCBoFIWu/XoBn/rvUabSh1U7jv4zgQcYB9WwWv34DO+fANnFINyVe68IZsHUi/XQf
@@ -292,7 +292,7 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        wAAADsABataJCQAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
         aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
         pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
         drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
@@ -317,13 +317,12 @@
   </data>
   <data name="ActionOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD+SURBVDhPpZIxCoNAEEX3BJ4iggfwKgmYC8TCNpaCac0V
-        IngBS2tJbSoDsZBgDmDhCTb8wRF1V4LmwyDr7Lz9OzsCCsOLXBtRdJVUnKap3CqC/AOAEwVQlk+ZZZls
-        21aJubQAz/NwN23Ytj0BBUGgApIk0RZzoIhFh80Bdf2WZ9+nk7quGwJrWHacY79zAXCLYwqdiuLxG5Dn
-        d7nfH/rVVGjwOAenCgBWLcsi23MxgHOLz7gzTe012B2/hOIAxdztk+sqLjAfY4DSA5yAYsMwaExXA5B4
-        VZVsms+waSwA8cwMJgAGZ6uoiRCsAYQpA5UDa/yHS3zRNM6hyUII8QXM0zqnoHDMLgAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAP5JREFUOE+lkjEKg0AQRfcEniKCB/AqCZgLxMI2loJpzRUieAFLa0ltKgOxkGAO
+        YOEJNvzBEXVXgubDIOvsvP07OwIKw4tcG1F0lVScpqncKoL8A4ATBVCWT5llmWzbVom5tADP83A3bdi2
+        PQEFQaACkiTRFnOgiEWHzQF1/ZZn36eTuq4bAmtYdpxjv3MBcItjCp2K4vEbkOd3ud8f+tVUaPA4B6cK
+        AFYtyyLbczGAc4vPuDNN7TXYHb+E4gDF3O2T6youMB9jgNIDnIBiwzBoTFcDkHhVlWyaz7BpLADxzAwm
+        AAZnq6iJEKwBhCkDlQNr/IdLfNE0zqHJQgjxBczTOqegcMwuAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
@@ -333,7 +332,7 @@
     <value>Hebrew Words Verse</value>
   </data>
   <data name="ContextMenuVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 76</value>
+    <value>183, 54</value>
   </data>
   <data name="&gt;&gt;ContextMenuVerse.Name" xml:space="preserve">
     <value>ContextMenuVerse</value>
@@ -382,30 +381,31 @@
   </metadata>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAjVJREFUOE+Nk+trE0EUxfcvE0GRSgVBiy+KxVIUtVSkUiiCLT6o0Zj0kbTbhsSo
-        SazV1FTbPDZxm2eTtnmYZLN5EE0UoYgIflDw23Hnxo1Nk4IXhtndmflx7tkz3N76/fM7akknKlELjYJo
-        RGZtAuz73y2tJfJn4dMfxbvZUwhbBrBhH4Lkn8LXapyGCth6NUprIXN/K0gKzCDpGgcDRa0XkVgcVt7H
-        kPM+Qj29QpAvktACCBh74NV10f4mgC2um85jc2kE6Td3kBMmm23Utl8qsGV8zq4is3oTOd9tyKIG5Yi+
-        HeCb7EbAcFxR1IOwuRfRJ/0ohXgCfMq6FPgosp5xaqsY1KqAsRaAf+YYxLmTCJrOIWK9ADnIK4o0SDqH
-        GwD3LcWnex0A873/ALMnEH9xDZHHfYg9G0D8+VXFh+tIuUZQL3uQFrT7A4SpbuX5NOS4mdoobdtQ2rQq
-        81NU3i+hVnQjE9CTD1zeP90GYL81GbSjmLCgnHJA3jAhHzJAivAE+SCtICtOoxCY2A/QhbDzPirpRQIU
-        YvPIiTpIYSPKW1ZUc8vIh3nygWOp2wvw6o7AY+hDNe8iyUy+HFuglhjwo/yW1OWFu+C+1VMEiNkGGwBF
-        vkd7mHxgvbLNXv5yw0jHFSUnQ0i+vtHMA6Xx14+dNgCbmdu78xC3X2oC1DwQQC0V4H54iHwgwK48xGws
-        6oOUh52yr/PlIsCDg+SDmofgwhlUE47OBzrVmuYA5PW5/zjAcX8AYG+B2zWPUTIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVDhPnZJPSNNhHMa/CHWwAungsYMEBdHJS7cgyIMR
+        bEVll/7RyRU0Km1FaEF2UVDYsCItOrQUOhSChPln85e1Gdq69I9VQnNiS7eVlc7t6fu87++y6NQLD3t4
+        ns/z+71jk7/P+GWpdQIyFG0SRM5b0TNj52L/Ps4lCcWvb8DXyXPA0iBQdKzUM4u3rYcy/S5eflhMdVQD
+        Cz3AvAf4LMBHV/TMFvsw1V7Nh4TcmT28WuxaJYrpW0CyCsW3guK8H6XsHSN6ZqZL3wTZsq8TaZaRueFD
+        KCV3ofBax5/qUJhtQiHlt1JvMu3IkI1ckFF3rjcICFbeB1BKKPBK3zRzAKvJvVj5UG9Ez4wdGbLcuHP7
+        gOI7P7qOCNobBMGTVVic2ILl6a1G9MzYkSFb/oCLguXEMfweFxSeCSa7K9Drq0D26RojembsyJDlxp2b
+        XwDfnXr8HFJgRK84pp/Dgh9PrOhNph0Zsty4c5HBsxL78mAzuk+sQ8dBQade9cZxQe6xFT0zdmTIcuPO
+        RZr3iDfWKsgPbMKvR4LdG/UtDwWZsBU9M3b5gRqQ5cadm1MZ9knPm3t1SEWDSDu3kXLuYq5/uxG9ybQj
+        Q5YbO9UzGw3tnBkNZhYSYaymx4Bvz4FsHNlEnxE9M3ZkyHJjxpmJIHLTvdB/B5CPATkdL73Ei/sBNO5Y
+        a0TPzHRklOWGW7lyej9aT+1Di8+LlkaPfnpw9UwDDtcIjm6zomfGzjJes+GWl+B/+j8ltX8AUwsaqOHK
+        R1gAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
   </data>
   <data name="ContextMenuCelebration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 26</value>
+    <value>181, 48</value>
   </data>
   <data name="&gt;&gt;ContextMenuCelebration.Name" xml:space="preserve">
     <value>ContextMenuCelebration</value>
