@@ -125,11 +125,11 @@
     private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
     public Ordisoftware.Core.TextBoxEx TextBox;
-    private System.Windows.Forms.ContextMenuStrip ContextMenuLetter;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtStart;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtEnd;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtCaret;
     private System.Windows.Forms.ToolStripSeparator MenuItemSeparator;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterViewDetails;
+    private ContextMenuStrip ContextMenuLetter;
   }
 }

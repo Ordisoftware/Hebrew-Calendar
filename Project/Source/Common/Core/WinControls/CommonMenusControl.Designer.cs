@@ -59,6 +59,7 @@
       this.ActionYouTube = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorAuthor2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLinkedIn = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGitHub = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuSoftware = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewCalendar = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,6 @@
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionAbout = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionGitHub = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -305,6 +305,14 @@
       this.ActionLinkedIn.Tag = "https://www.linkedin.com/in/ordisoftware";
       this.ActionLinkedIn.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
+      // ActionGitHub
+      // 
+      this.ActionGitHub.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionGitHub, "ActionGitHub");
+      this.ActionGitHub.Name = "ActionGitHub";
+      this.ActionGitHub.Tag = "https://github.com/Ordisoftware";
+      this.ActionGitHub.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
+      // 
       // MenuSoftware
       // 
       this.MenuSoftware.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -362,14 +370,6 @@
       resources.ApplyResources(this.ActionAbout, "ActionAbout");
       this.ActionAbout.Name = "ActionAbout";
       this.ActionAbout.Click += new System.EventHandler(this.ActionAbout_Click);
-      // 
-      // ActionGitHub
-      // 
-      this.ActionGitHub.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionGitHub, "ActionGitHub");
-      this.ActionGitHub.Name = "ActionGitHub";
-      this.ActionGitHub.Tag = "https://github.com/Ordisoftware";
-      this.ActionGitHub.Click += new System.EventHandler(this.ActionOpenWebsiteURL_Click);
       // 
       // CommonMenusControl
       // 

@@ -21,6 +21,9 @@ URL = http://ravbenchetrit.com
 Name = (FR) Rav Emmanuel Bensimon
 URL = https://nafshi.fr
 
+Name = (FR) Rav Menahem Berros 
+URL = https://www.ravmenahemberros.com
+
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = http://www.torahacademy.fr
 
