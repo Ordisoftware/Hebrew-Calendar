@@ -117,88 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;ActionSwapColors.Name" xml:space="preserve">
-    <value>ActionSwapColors</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionSwapColors.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Name" xml:space="preserve">
-    <value>ActionEditFiles</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionEditFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionViewNotice.Name" xml:space="preserve">
-    <value>ActionViewNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionViewNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionViewNotice.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionViewNotice.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 521</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 40</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ActionSwapColors.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionSwapColors.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
+        wAAADsABataJCQAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
         IRJJiml1x05TRhsCWi4m5qqNCMQbKq5om3g3mqhBILJFuS2XonF3YbmIgJN9+33nLHthd9rJTGZ6Zp55
         9/3Ot/O9/P85/6qg64nWp2u0Rs8GGEcx9U7aNrIZXUPNJdQ39I2vRMmbZwRSvnYlldh8Skh9ouzlElG5
         DKIyjljqAHuqf79cy3N5OF8jTDS894tO9O4h9jpAvn9vD/p+1QPq89pwTuBySx4uNmfjUkuODfZXWnKx
@@ -242,6 +169,7 @@
   <data name="ActionSwapColors.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionSwapColors.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
   </data>
@@ -263,7 +191,7 @@
   <data name="ActionEditFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
+        wAAADsABataJCQAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
         F3TKSShEEeQmKpcFRDFwFZbJEgVSF3ZhF0XFRFMyUZCbu7C7LAu7y16Qp/f9vl1Y3CWRkWfmGWbPnvM8
         z/uec76PDSDcFyvNPxojlSMqNQ9RKfeQpMe6rM8+bOYPY3nSaIL12Ue088UETspoaWqE/mYzTLoWdLaN
         nLyedViPwfrsI9r5YiK3i2HQtmBKRClei1Jh+taRk9ezDusxtpA++4h2vugP0Nneijmp5zF/9wUsyBo5
@@ -322,7 +250,7 @@
   <data name="ActionViewNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
+        wAAADsABataJCQAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
         6iIoCKMDFRFEB+iiAyrpmDPPc7aac1lSbeYSo4uenu/eQQr7Sc7fqBc+iPDueZ59v9/fu98b97+sGTar
         6ZHDaoS92hBTxEO8xFNZqzXLUWMEhs4DH4QSUqozoklteoiXeCprtebYqxKBkYeAnX9bTLFBtOkhXuKp
         rNWKt1clAMMPwptTAUeavoimaNNDvMRTWaulAgTuwP/YAP8TC/xPU/RFNKktHtoB/DcBbzkwUEWqdYaa
@@ -394,6 +322,30 @@
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 521</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 40</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="ContextMenuItems.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -415,13 +367,13 @@
 </value>
   </data>
   <data name="ActionSearchOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -446,52 +398,52 @@
     <value>Magenta</value>
   </data>
   <data name="ActionShowGrammarGuide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAElSURBVDhPpZMxdoJAEIa35QIUpqSnwhdPQMER6DkAJ8BO
-        C9Ikac0tohZqcghqrGhJUgToRv/ZXbK65PnU/715j/3Z+XZmFgSUpiklSXJVIKdPvlUMuQeASixAURRU
-        17VaSf02Db0vl2r1JwuAxGNX9DiZKEfK8zxyXZeqqlKOlNUCTnIchyFRFCmXyPd99gApy71y/2nh+eWV
-        NyPCMGRonj/1HpK0BgFIiOO4T0A7QTCmzXbHVV2sAGucuFi89e0AcD5YCHtPAKDrMjEwE4JKUJ2pQYBO
-        gP/1/WNVYkIsQNt1NJvNeTMC3wRkQrJsyh5kzaBtO74FbB6NHpQrxacdAYBpDQ5x9/HJcf7RrFZrvglT
-        g4BrpKqSf6QOUHWYvvlePwshxAEeEv3DWAZCSgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
+        C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
+        AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
+        m815MwLfBGRCsmzKHmTNoG07vgVsHo0elCvFpx0BgGkNDnH38clx/tGsVmu+CVODgGukqpJ/pA5QdZi+
+        +V4/CyHEAR4S/cNYBkJKAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionOpenHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Hebrew Letters</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD3SURBVDhPnZIxDoJAEEU5AaeQhANwFU2wJxJKOuywxQtg
-        jRfACxBrrDCRghg8AAUnGPNXhgC7ROUnEzLMzNvPLBrk+z4tiX54qQTEcZwu/V9KQFHcKU0v1DSNFFMp
-        AZ7n4duUYVnWCCR6p4AkOSuHOYJg33USYVYCVNVTWMNJbdv2gTwMD2Tb265zBhDHJxEq5fntOyDLrrRe
-        b7psLCx4WFPuAFZN0xS2p2IA12avcWUYys9gd3wTkgMM87Z3riu5wP8xBEg7wAkY1nWdouj4GwA2WCg8
-        ypLq+tU3DQUgrpnBAoBFLJVYIgQXSPAElWP4flr/DGvaG7FwJVA+m7aqAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
+        gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
+        FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
+        gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
     <value>Hebrew Words Search</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -508,10 +460,10 @@
 </value>
   </data>
   <data name="ActionCopyName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copy name (transliteration chars)</value>
+    <value>Copy name (transcription chars)</value>
   </data>
   <data name="ActionCopyHebrewChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -528,7 +480,7 @@
 </value>
   </data>
   <data name="ActionCopyHebrewChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionCopyHebrewChars.Text" xml:space="preserve">
     <value>Copy name (hebrew font chars)</value>
@@ -548,13 +500,13 @@
 </value>
   </data>
   <data name="ActionCopyUnicodeChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionCopyUnicodeChars.Text" xml:space="preserve">
     <value>Copy name (unicode chars)</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="ActionCopyLineHebrew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -571,7 +523,7 @@
 </value>
   </data>
   <data name="ActionCopyLineHebrew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionCopyLineHebrew.Text" xml:space="preserve">
     <value>Copy line (hebrew font chars)</value>
@@ -591,13 +543,13 @@
 </value>
   </data>
   <data name="ActionCopyLineUnicode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>244, 22</value>
   </data>
   <data name="ActionCopyLineUnicode.Text" xml:space="preserve">
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 254</value>
+    <value>245, 254</value>
   </data>
   <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
     <value>ContextMenuItems</value>

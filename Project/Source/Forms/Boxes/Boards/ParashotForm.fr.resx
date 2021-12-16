@@ -231,7 +231,7 @@
     <value>313, 22</value>
   </data>
   <data name="ActionCopyName.Text" xml:space="preserve">
-    <value>Copier le nom (caractères de translittération)</value>
+    <value>Copier le nom (caractères de transcription)</value>
   </data>
   <data name="ActionCopyHebrewChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
