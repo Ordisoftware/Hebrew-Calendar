@@ -223,6 +223,7 @@
       this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -988,18 +989,19 @@
             this.toolStripSeparator8,
             this.ActionOpenCalculator,
             this.ActionOpenSystemDateAndTime,
-            this.toolStripSeparator9,
+            this.SeparatorMenuWeather,
             this.ActionLocalWeather,
             this.ActionOnlineWeather,
-            this.toolStripSeparator10,
-            this.ActionOpenExportFolder,
-            this.ActionGenerate,
-            this.ActionVacuumDB,
-            this.SeparatorMenuWeather,
+            this.toolStripSeparator9,
             this.ActionShowMonthsAndDaysNotice,
             this.ActionShowCelebrationsNotice,
             this.ActionShowShabatNotice,
-            this.ActionShowParashahNotice});
+            this.ActionShowParashahNotice,
+            this.toolStripSeparator10,
+            this.ActionOpenExportFolder,
+            this.ActionGenerate,
+            this.toolStripSeparator23,
+            this.ActionVacuumDB});
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
@@ -1669,6 +1671,11 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
+      // toolStripSeparator23
+      // 
+      this.toolStripSeparator23.Name = "toolStripSeparator23";
+      resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1903,6 +1910,7 @@
     private ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private ToolStripSeparator toolStripSeparator1;
     private ToolStripSeparator toolStripSeparator22;
+    public ToolStripSeparator toolStripSeparator23;
   }
 }
 
