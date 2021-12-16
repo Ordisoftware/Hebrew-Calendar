@@ -354,6 +354,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.17
 
 - Add open parashah in Hebrew Words menu items in main form, navigation window and reminder box.
+- Change items order of Tools menu.
 
 #### 2021.12.16 - Version 9.16
 
