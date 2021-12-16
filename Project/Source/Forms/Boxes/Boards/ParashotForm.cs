@@ -23,7 +23,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Instance { get; private set; }
 
-  static public ParashotForm Run(Parashah parashah = null)
+  static public ParashotForm Run(Parashah parashah)
   {
     if ( Instance == null )
       Instance = new ParashotForm();
@@ -387,6 +387,7 @@ partial class ParashotForm : Form
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
   {
+    if ( e.RowIndex < 0 || e.ColumnIndex < 0 ) return;
     DataGridView.BeginEdit(false);
   }
 
