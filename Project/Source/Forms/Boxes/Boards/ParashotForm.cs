@@ -23,7 +23,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Instance { get; private set; }
 
-  static public ParashotForm Run(Parashah parashah)
+  static public ParashotForm Run(Parashah parashah = null)
   {
     if ( Instance == null )
       Instance = new ParashotForm();
