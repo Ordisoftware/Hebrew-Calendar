@@ -45,16 +45,19 @@ static class HebrewTools
   static public void OpenHebrewLetters(string word, string path)
   {
     if ( File.Exists(path) )
-    {
-      var wordAnalyzed = RemoveNumberingAndDiacritics(word);
-      var items = wordAnalyzed.Word.Split(' ');
-      if ( wordAnalyzed.IsUnicode ) items = items.Reverse().ToArray();
-      foreach ( string item in items )
+      if ( word.IsNullOrEmpty() )
+        SystemManager.RunShell(path);
+      else
       {
-        SystemManager.RunShell(path, item);
-        Thread.Sleep(250);
+        var wordAnalyzed = RemoveNumberingAndDiacritics(word);
+        var items = wordAnalyzed.Word.Split(' ');
+        if ( wordAnalyzed.IsUnicode ) items = items.Reverse().ToArray();
+        foreach ( string item in items )
+        {
+          SystemManager.RunShell(path, item);
+          Thread.Sleep(250);
+        }
       }
-    }
     else
     if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
       SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");

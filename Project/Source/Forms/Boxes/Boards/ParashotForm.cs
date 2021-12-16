@@ -467,6 +467,8 @@ partial class ParashotForm : Form
 
   private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
-    ;
+    DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
+    e.Exception.Manage();
   }
+
 }
