@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ReminderForm : Form
@@ -388,6 +388,12 @@ partial class ReminderForm : Form
   private void ActionViewParashot_Click(object sender, EventArgs e)
   {
     ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
+  }
+
+  private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin,
+                                         Settings.HebrewWordsExe);
   }
 
   private void ActionLockout_Click(object sender, EventArgs e)
