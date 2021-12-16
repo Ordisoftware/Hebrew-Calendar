@@ -145,18 +145,19 @@
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+      this.SeparatorMenuWeather = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionVacuumDB = new System.Windows.Forms.ToolStripMenuItem();
-      this.SeparatorMenuWeather = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowMonthsAndDaysNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowParashahNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionVacuumDB = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
@@ -223,7 +224,7 @@
       this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1110,10 +1111,10 @@
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
       // 
-      // toolStripSeparator9
+      // SeparatorMenuWeather
       // 
-      this.toolStripSeparator9.Name = "toolStripSeparator9";
-      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+      this.SeparatorMenuWeather.Name = "SeparatorMenuWeather";
+      resources.ApplyResources(this.SeparatorMenuWeather, "SeparatorMenuWeather");
       // 
       // ActionLocalWeather
       // 
@@ -1129,33 +1130,10 @@
       this.ActionOnlineWeather.Name = "ActionOnlineWeather";
       this.ActionOnlineWeather.Click += new System.EventHandler(this.ActionOnlineWeather_Click);
       // 
-      // toolStripSeparator10
+      // toolStripSeparator9
       // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
-      // 
-      // ActionOpenExportFolder
-      // 
-      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
-      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
-      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
-      // 
-      // ActionGenerate
-      // 
-      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
-      this.ActionGenerate.Name = "ActionGenerate";
-      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
-      // 
-      // ActionVacuumDB
-      // 
-      resources.ApplyResources(this.ActionVacuumDB, "ActionVacuumDB");
-      this.ActionVacuumDB.Name = "ActionVacuumDB";
-      this.ActionVacuumDB.Click += new System.EventHandler(this.ActionVacuumDB_Click);
-      // 
-      // SeparatorMenuWeather
-      // 
-      this.SeparatorMenuWeather.Name = "SeparatorMenuWeather";
-      resources.ApplyResources(this.SeparatorMenuWeather, "SeparatorMenuWeather");
+      this.toolStripSeparator9.Name = "toolStripSeparator9";
+      resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
       // 
       // ActionShowMonthsAndDaysNotice
       // 
@@ -1180,6 +1158,34 @@
       resources.ApplyResources(this.ActionShowParashahNotice, "ActionShowParashahNotice");
       this.ActionShowParashahNotice.Name = "ActionShowParashahNotice";
       this.ActionShowParashahNotice.Click += new System.EventHandler(this.ActionShowParashahNotice_Click);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+      // 
+      // ActionOpenExportFolder
+      // 
+      resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
+      this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
+      this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      // 
+      // ActionGenerate
+      // 
+      resources.ApplyResources(this.ActionGenerate, "ActionGenerate");
+      this.ActionGenerate.Name = "ActionGenerate";
+      this.ActionGenerate.Click += new System.EventHandler(this.ActionGenerate_Click);
+      // 
+      // toolStripSeparator23
+      // 
+      this.toolStripSeparator23.Name = "toolStripSeparator23";
+      resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+      // 
+      // ActionVacuumDB
+      // 
+      resources.ApplyResources(this.ActionVacuumDB, "ActionVacuumDB");
+      this.ActionVacuumDB.Name = "ActionVacuumDB";
+      this.ActionVacuumDB.Click += new System.EventHandler(this.ActionVacuumDB_Click);
       // 
       // ActionWebLinks
       // 
@@ -1609,6 +1615,7 @@
       // 
       this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuDayParashahShowDescription,
+            this.toolStripSeparator24,
             this.ContextMenuDayParashotBoard,
             this.toolStripSeparator16,
             this.ContextMenuDayParashahStudy,
@@ -1671,10 +1678,10 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // toolStripSeparator23
+      // toolStripSeparator24
       // 
-      this.toolStripSeparator23.Name = "toolStripSeparator23";
-      resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+      this.toolStripSeparator24.Name = "toolStripSeparator24";
+      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
       // MainForm
       // 
@@ -1911,6 +1918,7 @@
     private ToolStripSeparator toolStripSeparator1;
     private ToolStripSeparator toolStripSeparator22;
     public ToolStripSeparator toolStripSeparator23;
+    private ToolStripSeparator toolStripSeparator24;
   }
 }
 
