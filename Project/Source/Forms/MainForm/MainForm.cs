@@ -518,6 +518,19 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionShowMonthsAndDaysNotice for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  public void ActionShowMonthsAndDaysNotice_Click(object sender, EventArgs e)
+  {
+    ShowNotice(sender,
+               AppTranslations.NoticeMonthsAndDaysTitle,
+               AppTranslations.NoticeMonthsAndDays,
+               MessageBoxEx.DefaultWidthMedium);
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionShowCelebrationsNotice for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>

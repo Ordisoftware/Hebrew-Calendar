@@ -122,6 +122,11 @@ partial class PreferencesForm : Form
     MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
   }
 
+  private void ActionAstronomyInfo_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
+  }
+
   private void ActionParashahHelp_Click(object sender, EventArgs e)
   {
     MainForm.Instance.ActionShowParashahNotice_Click(null, null);

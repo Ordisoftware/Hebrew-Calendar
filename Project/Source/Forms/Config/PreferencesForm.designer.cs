@@ -335,6 +335,7 @@
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.ActionAstronomyInfo = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1308,6 +1309,7 @@
       this.TabPageGeneration.Controls.Add(this.ActionPersonalShabatHelp);
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsIntervalInfo);
       this.TabPageGeneration.Controls.Add(this.LabelMaxYearsInterval);
+      this.TabPageGeneration.Controls.Add(this.ActionAstronomyInfo);
       this.TabPageGeneration.Controls.Add(this.ActionParashahHelp);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
@@ -2849,6 +2851,14 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // ActionAstronomyInfo
+      // 
+      this.ActionAstronomyInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAstronomyInfo, "ActionAstronomyInfo");
+      this.ActionAstronomyInfo.Name = "ActionAstronomyInfo";
+      this.ActionAstronomyInfo.UseVisualStyleBackColor = true;
+      this.ActionAstronomyInfo.Click += new System.EventHandler(this.ActionAstronomyInfo_Click);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3231,5 +3241,6 @@
     private System.Windows.Forms.RadioButton SelectCalendarDoubleClickActionSetActive;
     private System.Windows.Forms.TabPage TabPageColors;
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowCelebration;
+    private Button ActionAstronomyInfo;
   }
 }

@@ -77,6 +77,7 @@ partial class PreferencesForm
     if ( Settings.FirstLaunch )
     {
       changed = true;
+      MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
       MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
       Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
