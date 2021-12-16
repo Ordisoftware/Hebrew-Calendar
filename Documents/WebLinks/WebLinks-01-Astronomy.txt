@@ -16,6 +16,9 @@ Lang/FR = Astronomie
 Name = (FR/EN) Solar System Scope Application (online and offline)
 URL = https://www.solarsystemscope.com
 
+Name = (EN) Time and Date Website @ timeanddate.com
+URL = https://www.timeanddate.com
+
 -
 
 Name = (EN) Real-time auroral and solar activity @ spaceweatherlive.com
@@ -41,6 +44,15 @@ Name = (FR) Calendrier grégorien avec phases de la lune @ kalender-365.de
 URL = https://kalender-365.de/calendrier-lunaire.php
 
 -
+
+Name = (EN) Moon phases and moon calendar @ moongiant.com
+URL = https://www.moongiant.com
+
+Name = (EN) Moon phases and moon calendar @ moonphases.co.uk
+URL = https://moonphases.co.uk
+
+Name = (FR) Phases de la lune @ calendrier-365.fr
+URL = https://www.calendrier-365.fr/lune/phases-de-la-lune.html
 
 Name = (FR) Calendrier lunaire @ calendrier-lunaire.net
 URL = http://www.calendrier-lunaire.net

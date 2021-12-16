@@ -71,7 +71,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 9**
+**What's new in the latest version 9.x**
 
 - Added mouse hover effect in monthly view.
 - Added context menu for days in monthly view.
@@ -84,11 +84,11 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added celebration verses board and its command-line option.
 - Added option to show current celebration in the title bar.
 - Added some parashah and celebrations online providers for the study.
-- Moved day of shabat selection to the generation tab of the preferences form.
-- Improved web links menus to display those in the current language to the top.
 - The monthly view shows sun times instead of moon when using sun omer.
-- Fixed some check boxes in celebrations and new moons boards.
-- Fixed export to remove all active and selected day marks.
+- Web links menus displays those in the current language to the top.
+- Moved day of shabat selection to the generation tab of the preferences form.
+- Fixed some check-boxes in celebrations and new moons boards.
+- Fixed export monthly view to remove all active and selected day marks.
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
@@ -216,6 +216,18 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
   return
 ```
 
+#### Why do the dates generated differ from those in the Hebrew authorities' calendar?
+
+Astronomically speaking, there is no mistake, unless there is a mistake to be corrected.
+
+The software calculates the days according to the moon and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.
+
+Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of this new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.
+
+It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesach which is that Pesach is the 14th day of the first seasonal month in the first full moon following the spring equinox.
+
+But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa.
+
 #### What are the times of celebration?
 
 The times of the Torah's celebrations are Pesach or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
@@ -339,12 +351,15 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 
-#### In progress - Version 9.16
+#### 2021.12.19 - Version 9.16
 
 - Maintenance release.
-- Update application's icons.
+- Add months and days notice.
 - Some fixes.
 - Refactoring.
+- Update help.
+- Update web links.
+- Update hebrew applications' icons.
 
 #### 2021.12.05 - Version 9.15
 
