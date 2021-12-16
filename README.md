@@ -354,6 +354,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### 2021.12.19 - Version 9.16
 
 - Maintenance release.
+- Add months and days notice.
 - Some fixes.
 - Refactoring.
 - Update help.
