@@ -129,7 +129,6 @@
   <data name="ColumnVerseEnd.Text" xml:space="preserve">
     <value>Fin</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ColumnCelebration.Text" xml:space="preserve">
     <value>Célébration</value>
   </data>
@@ -141,8 +140,5 @@
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
-  </data>
-  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words Verset</value>
   </data>
 </root>
