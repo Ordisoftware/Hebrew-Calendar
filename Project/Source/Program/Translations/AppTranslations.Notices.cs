@@ -35,12 +35,12 @@ static partial class AppTranslations
                     "It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesach which is that Pesach is the 14th day of the first seasonal month in the first full moon following the spring equinox." + Globals.NL2 +
                     "But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni.",
 
-    [Language.FR] = "Les dates générées peuvent diffère de celles du calendrier des autorités hébraïques." + Globals.NL2 +
+    [Language.FR] = "Les dates générées peuvent différer de celles du calendrier des autorités hébraïques." + Globals.NL2 +
                     "Astronomiquement parlant, il n'y a pas d'erreur, à moins d'un problème à corriger." + Globals.NL2 +
                     "Le logiciel calcule en effet les jours selon la lune et divers paramètres relatifs aux astres et aux saisons qui font que les dates peuvent parfois différer en certains points du calendrier établit selon les normes traditionnelles." + Globals.NL2 +
                     "Ainsi le logiciel peut indiquer parfois les mêmes jours que le calendrier officiel, et parfois un à deux ou trois jours de décalage, en raison de cette date de nouvelle lune qui n'est parfois pas en correspondance astronomique, et il en va de même pour le calcul des fêtes." + Globals.NL2 +
-                    "Il peut également arriver que sur 10 ou 20 ans il y ait un décalage d'un mois à cause du Adar II en raison de la règle de calcul utilisée pour déterminer le 1er Nissan et Pessah qui est que Pessah est le 14ème jour du premier mois saisonnier en première pleine lune qui suit l'équinoxe de printemps." + Globals.NL2 +
-                    "Mais même avec ces décalages, Pessa'h, selon le logiciel, est toujours la première nouvelle lune qui suit l'équinoxe de printemps, et en cas de décalage il tombe au pire en tant que Pessah Sheni du calendrier traditionnel."
+                    "Il peut également arriver que sur 10 ou 20 ans il y ait un décalage d'un mois à cause du Adar II en raison de la règle de calcul utilisée pour déterminer le 1er Nissan et Pessa'h qui est que Pessa'h est le 14ème jour du premier mois saisonnier en première pleine lune qui suit l'équinoxe de printemps." + Globals.NL2 +
+                    "Mais même avec ces décalages, Pessa'h, selon le logiciel, est toujours la première nouvelle lune qui suit l'équinoxe de printemps, et en cas de décalage il tombe au pire en tant que Pessa'h Sheni du calendrier traditionnel."
   };
 
   static public readonly TranslationsDictionary NoticeCelebrationsTitle = new()
