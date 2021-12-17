@@ -133,22 +133,25 @@ public partial class MainForm
             var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
             if ( weekParashah.Factory != null )
             {
-              ActionWeeklyParashah.Enabled = true;
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = true;
-              TitleParashah = weekParashah.Factory.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
-                                                                 weekParashah.Day.HasLinkedParashah);
-              TitleParashah = " - Parashah " + TitleParashah.ToUpper();
+              var parashah = weekParashah.Factory;
+              TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
+                                                     weekParashah.Day.HasLinkedParashah);
+              TitleParashah = $"Parashah {TitleParashah}";
+              ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, true)}";
+              ActionWeeklyParashah.Enabled = true;
             }
             else
             {
               TitleParashah = string.Empty;
               ActionWeeklyParashah.Enabled = false;
+              ActionWeeklyParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ActionWeeklyParashah.Text");
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = false;
             }
           }
-          Text += TitleParashah;
+          if ( !TitleParashah.IsEmpty() ) Text += $" - {TitleParashah/*.ToUpper()*/}";
         }
       });
     }

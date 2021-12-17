@@ -270,7 +270,7 @@
     <value>Hebrew Letters Analyse</value>
   </data>
   <data name="ActionGoToNextParashah.Text" xml:space="preserve">
-    <value>Chercher le prochain jour depuis aujourd'hui</value>
+    <value>Localiser le prochain jour depuis aujourd'hui</value>
   </data>
   <data name="ActionExport.Text" xml:space="preserve">
     <value>Exporter</value>

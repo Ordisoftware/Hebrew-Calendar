@@ -2347,7 +2347,7 @@
   <data name="ActionShowMonthsAndDaysNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAcRJREFUOE/FUk1PGlEUHWSCK2vcGeIHnWGomYEHgxGwFKlfaZO2mxqNK5uZgX9g
+        vAAADrwBlbxySQAAAcRJREFUOE/FUk1PGlEUHWSCK2vcGeIHnWGomYEHgxGwFKlfaZO2mxqNK5uZgX9g
         /4SyZkE/durW38VyMgSQj9N7r4W4aGLSjTccct555513381oL19KqftsNgvHcZ6Fbdtz8JrO3Wt8uNls
         Igh8+L6PRqMh60YQwPc8eISAOOvMZ2AvB0nA/uERqrU9VKrvUD84BDWGWv09SpVd7BCqe3XRfnQ6KL+t
         CjrEM5kMNMex4QVNnJ6dg+vimyfmn79+y5rr5vZOtNF4jK8nZ4RTPIxGSJsmBzj49PkLJpMx+v0+jj98
@@ -3513,31 +3513,6 @@
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
   </data>
-  <data name="ContextMenuDayParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
-        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
-        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
-        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
-        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ContextMenuDayParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ContextMenuDayParashotBoard.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ContextMenuDayParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
-    <value>Parashot board</value>
-  </data>
-  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
   <data name="ContextMenuDayParashahStudy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3608,6 +3583,31 @@
   <data name="ContextMenuOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Hebrew Words</value>
   </data>
+  <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="ContextMenuDayParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
+        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
+        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
+        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ContextMenuDayParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ContextMenuDayParashotBoard.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContextMenuDayParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
   <data name="ContextMenuDayParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3633,7 +3633,7 @@
     <value>Weekly parashah</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 464</value>
+    <value>243, 442</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3649,7 +3649,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAbABAQGwAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAbgBAQG4AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4674,6 +4674,12 @@
   <data name="&gt;&gt;ContextMenuDayParashahShowDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
+    <value>toolStripSeparator24</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ContextMenuDayParashotBoard.Name" xml:space="preserve">
     <value>ContextMenuDayParashotBoard</value>
   </data>
@@ -4715,12 +4721,6 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
-    <value>toolStripSeparator24</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

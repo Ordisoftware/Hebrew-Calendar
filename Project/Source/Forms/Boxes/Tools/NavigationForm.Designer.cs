@@ -47,6 +47,7 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +77,6 @@
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.PanelAllExceptParashah.SuspendLayout();
@@ -205,13 +205,13 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
-            this.toolStripSeparator3,
-            this.ActionViewParashot,
-            this.toolStripSeparator2,
+            this.toolStripSeparator1,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
-            this.toolStripSeparator1,
-            this.ActionOpenHebrewWordsVerse});
+            this.toolStripSeparator2,
+            this.ActionOpenHebrewWordsVerse,
+            this.toolStripSeparator3,
+            this.ActionViewParashot});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -220,6 +220,11 @@
       resources.ApplyResources(this.ActionViewParashahInfos, "ActionViewParashahInfos");
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahDescription_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // ActionViewParashot
       // 
@@ -393,11 +398,6 @@
       this.PanelSeparatorBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
-      // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
       // NavigationForm
       // 

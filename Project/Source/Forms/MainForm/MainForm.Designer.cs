@@ -216,6 +216,7 @@
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,7 +225,6 @@
       this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1616,12 +1616,12 @@
       this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuDayParashahShowDescription,
             this.toolStripSeparator24,
-            this.ContextMenuDayParashotBoard,
-            this.toolStripSeparator16,
             this.ContextMenuDayParashahStudy,
             this.ContextMenuDayParashahRead,
             this.toolStripSeparator22,
-            this.ContextMenuOpenHebrewWordsVerse});
+            this.ContextMenuOpenHebrewWordsVerse,
+            this.toolStripSeparator16,
+            this.ContextMenuDayParashotBoard});
       resources.ApplyResources(this.ContextMenuDayParashah, "ContextMenuDayParashah");
       this.ContextMenuDayParashah.Name = "ContextMenuDayParashah";
       // 
@@ -1630,6 +1630,11 @@
       resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
       this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
       this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      // 
+      // toolStripSeparator24
+      // 
+      this.toolStripSeparator24.Name = "toolStripSeparator24";
+      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
       // ContextMenuDayParashotBoard
       // 
@@ -1677,11 +1682,6 @@
       this.MenuBookmarks.Name = "MenuBookmarks";
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      // 
-      // toolStripSeparator24
-      // 
-      this.toolStripSeparator24.Name = "toolStripSeparator24";
-      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
       // MainForm
       // 

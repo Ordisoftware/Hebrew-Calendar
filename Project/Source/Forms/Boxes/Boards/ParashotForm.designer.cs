@@ -77,7 +77,6 @@
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,6 +93,7 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -406,25 +406,25 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionShowDescription,
-            this.ActionGoToNextParashah,
             this.toolStripSeparator3,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
             this.toolStripSeparator1,
+            this.ActionOpenHebrewWordsVerse,
+            this.ActionOpenHebrewWordsSearch,
+            this.ActionOpenHebrewLetters,
+            this.toolStripSeparator4,
             this.ActionSearchOnline,
             this.ActionShowGrammarGuide,
             this.toolStripSeparator2,
-            this.ActionOpenHebrewLetters,
-            this.ActionOpenHebrewWordsVerse,
-            this.ActionOpenHebrewWordsSearch,
-            this.MenuSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
             this.ActionCopyUnicodeChars,
             this.MenuSeparator3,
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode,
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.ActionGoToNextParashah});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -493,11 +493,6 @@
       resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
       this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
       this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
-      // 
-      // MenuSeparator2
-      // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyName
       // 
@@ -598,6 +593,11 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -627,7 +627,6 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuParashah;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
-    private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
     private System.Windows.Forms.ToolStripSeparator MenuSeparator3;
@@ -676,5 +675,6 @@
     private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToNextParashah;
+    private ToolStripSeparator toolStripSeparator4;
   }
 }

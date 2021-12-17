@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class LunisolarDay
 {
 
-  public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay()
+  public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
     int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
     if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
@@ -30,7 +30,7 @@ partial class LunisolarDay
           return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
       }
       else
-      if ( LunarMonth == TorahCelebrationSettings.YomsMonth )
+      if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.YomsMonth )
       {
         int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
                   ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
@@ -39,7 +39,7 @@ partial class LunisolarDay
           return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
       }
       else
-      if ( LunarMonth == 3 )
+      if ( !onlyPessah && LunarMonth == 3 )
       {
         int indexCurrent = Table.IndexOf(this);
         int indexStart = Math.Max(0, indexCurrent - 7);
