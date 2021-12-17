@@ -86,7 +86,7 @@ partial class MainForm
         ClearLists();
         Text = Globals.AssemblyTitle;
         LabelSubTitleCalendar.Text = string.Empty;
-        LabelSubTitleGPS.Text = string.Empty;
+        LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
         LabelSubTitleOmer.Text = string.Empty;
         InitializeCurrentTimeZone();
         return CreateData(yearFirst, yearLast);
@@ -94,6 +94,7 @@ partial class MainForm
       finally
       {
         MenuTray.Enabled = true;
+        LabelSubTitleGPS.Text = string.Empty;
         UpdateButtons();
         if ( e != null )
         {
