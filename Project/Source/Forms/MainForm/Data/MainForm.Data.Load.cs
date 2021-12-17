@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -24,16 +24,23 @@ partial class MainForm
     Globals.IsGenerating = true;
     try
     {
+      LabelSubTitleGPS.Visible = true;
       LabelSubTitleGPS.Text = SysTranslations.LoadingData.GetLang();
+      LabelSubTitleGPS.Refresh();
       LoadDataInit();
       if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
       {
         LoadDataFill();
         if ( Settings.FirstLaunchV9_14 )
-          LoadDataGenerate(true);
+          LoadDataGenerate(true, true);
+        else
+        if ( Settings.FirstLaunchV9_17 )
+          LoadDataGenerate(true, false);
+        Settings.FirstLaunchV9_14 = false;
+        Settings.FirstLaunchV9_17 = false;
       }
       else
-        LoadDataGenerate(false);
+        LoadDataGenerate(false, true);
     }
     catch ( Exception ex )
     {
@@ -45,6 +52,7 @@ partial class MainForm
     {
       Globals.IsGenerating = false;
       LabelSubTitleGPS.Text = string.Empty;
+      LabelSubTitleGPS.Refresh();
       ToolStrip.Enabled = formEnabled;
       LoadDataEnd();
     }
@@ -90,10 +98,12 @@ partial class MainForm
       CalendarText.Text = GenerateReportText();
   }
 
-  private void LoadDataGenerate(bool keepYears)
+  private void LoadDataGenerate(bool keepYears, bool runPreferences)
   {
     Globals.ChronoStartingApp.Stop();
-    PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
+    LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
+    LabelSubTitleGPS.Refresh();
+    if ( runPreferences ) PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
     string errors = CheckRegenerateCalendar(true, force: keepYears, keepYears: keepYears);
     Globals.ChronoStartingApp.Start();
     if ( errors != null )

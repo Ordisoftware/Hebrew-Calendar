@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -81,11 +81,11 @@ public partial class MainForm
     {
       var dayParashah = rowDay?.GetParashahReadingDay();
       var weeklong = rowDay.GetWeekLongCelebrationIntermediateDay();
-      bool isSimhatTorah = ( rowDay.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside )
-                        || ( ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside );
+      bool isSimhatTorah1 = ( rowDay.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside );
+      bool isSimhatTorah2 = ( ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside );
       bool show1 = weeklong.Event != TorahCelebration.Pessah;
       bool show2 = !( weeklong.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
-      if ( ( show1 && show2 ) || isSimhatTorah || rowDay == dayParashah )
+      if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
         var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);
         if ( parashah != null )

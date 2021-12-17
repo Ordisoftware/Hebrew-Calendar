@@ -2719,5 +2719,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["FirstLaunchV9_14"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV9_17 {
+            get {
+                return ((bool)(this["FirstLaunchV9_17"]));
+            }
+            set {
+                this["FirstLaunchV9_17"] = value;
+            }
+        }
     }
 }
