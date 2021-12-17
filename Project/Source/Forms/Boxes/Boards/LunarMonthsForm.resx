@@ -125,7 +125,7 @@
   <data name="ActionSwapColors.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
+        vgAADr4B6kKxwAAAB3tJREFUWEfFlwtQVOcZhv+kcWp0HFaDGmmyICTKoqh4hYCCi1IRjBijRIjNoI6T
         IRJJiml1x05TRhsCWi4m5qqNCMQbKq5om3g3mqhBILJFuS2XonF3YbmIgJN9+33nLHthd9rJTGZ6Zp55
         9/3Ot/O9/P85/6qg64nWp2u0Rs8GGEcx9U7aNrIZXUPNJdQ39I2vRMmbZwRSvnYlldh8Skh9ouzlElG5
         DKIyjljqAHuqf79cy3N5OF8jTDS894tO9O4h9jpAvn9vD/p+1QPq89pwTuBySx4uNmfjUkuODfZXWnKx
@@ -191,7 +191,7 @@
   <data name="ActionEditFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
+        vgAADr4B6kKxwAAABftJREFUWEe1V2tQlFUYxplqqsnKTCfLmmosrR9l+aNpJk2zqWYc89bFKdGmSSMT
         F3TKSShEEeQmKpcFRDFwFZbJEgVSF3ZhF0XFRFMyUZCbu7C7LAu7y16Qp/f9vl1Y3CWRkWfmGWbPnvM8
         z/uec76PDSDcFyvNPxojlSMqNQ9RKfeQpMe6rM8+bOYPY3nSaIL12Ue088UETspoaWqE/mYzTLoWdLaN
         nLyedViPwfrsI9r5YiK3i2HQtmBKRClei1Jh+taRk9ezDusxtpA++4h2vugP0Nneijmp5zF/9wUsyBo5
@@ -250,7 +250,7 @@
   <data name="ActionViewNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
+        vgAADr4B6kKxwAAAA2pJREFUWEfNl9tL02Ecxr2oy6Cb/Ce6St3cJiloZQfLjpbRwc5ZVmJHooIyj6gz
         6iIoCKMDFRFEB+iiAyrpmDPPc7aac1lSbeYSo4uenu/eQQr7Sc7fqBc+iPDueZ59v9/fu98b97+sGTar
         6ZHDaoS92hBTxEO8xFNZqzXLUWMEhs4DH4QSUqozoklteoiXeCprtebYqxKBkYeAnX9bTLFBtOkhXuKp
         rNWKt1clAMMPwptTAUeavoimaNNDvMRTWaulAgTuwP/YAP8TC/xPU/RFNKktHtoB/DcBbzkwUEWqdYaa
@@ -375,6 +375,25 @@
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 6</value>
   </data>
+  <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
+        gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
+        FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
+        gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Hebrew Words</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 6</value>
+  </data>
   <data name="ActionShowGrammarGuide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -403,13 +422,10 @@
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        wAAADsABataJCQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
         aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
         C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
         AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
@@ -424,25 +440,6 @@
     <value>Hebrew Letters</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
-        BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
-        gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
-        FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
-        gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 22</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Hebrew Words Search</value>
-  </data>
-  <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 6</value>
   </data>
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -549,7 +546,7 @@
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 254</value>
+    <value>245, 248</value>
   </data>
   <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
     <value>ContextMenuItems</value>
@@ -608,10 +605,10 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
-    <value>ActionShowGrammarGuide</value>
+  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Name" xml:space="preserve">
+    <value>ActionOpenHebrewWordsSearch</value>
   </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
@@ -626,22 +623,16 @@
   <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
+    <value>ActionShowGrammarGuide</value>
+  </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
     <value>toolStripSeparator4</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Name" xml:space="preserve">
-    <value>ActionOpenHebrewWordsSearch</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuSeparator2.Name" xml:space="preserve">
-    <value>MenuSeparator2</value>
-  </data>
-  <data name="&gt;&gt;MenuSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCopyName.Name" xml:space="preserve">

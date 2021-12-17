@@ -38,12 +38,11 @@
       this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.MenuSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyUnicodeChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,12 +105,11 @@
       this.ContextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionSearchOnline,
             this.toolStripSeparator3,
-            this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator1,
+            this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator4,
-            this.ActionOpenHebrewWordsSearch,
-            this.MenuSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
             this.ActionCopyUnicodeChars,
@@ -131,11 +129,11 @@
       this.toolStripSeparator3.Name = "toolStripSeparator3";
       resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
       // 
-      // ActionShowGrammarGuide
+      // ActionOpenHebrewWordsSearch
       // 
-      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
-      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
-      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
+      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
+      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
       // 
       // toolStripSeparator1
       // 
@@ -148,21 +146,16 @@
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
       // toolStripSeparator4
       // 
       this.toolStripSeparator4.Name = "toolStripSeparator4";
       resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      // 
-      // ActionOpenHebrewWordsSearch
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
-      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
-      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
-      // 
-      // MenuSeparator2
-      // 
-      this.MenuSeparator2.Name = "MenuSeparator2";
-      resources.ApplyResources(this.MenuSeparator2, "MenuSeparator2");
       // 
       // ActionCopyName
       // 
@@ -231,7 +224,7 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuItems;
     private System.Windows.Forms.ToolStripMenuItem ActionSearchOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewLetters;
-    private System.Windows.Forms.ToolStripSeparator MenuSeparator2;
+    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyHebrewChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyUnicodeChars;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyLineHebrew;
@@ -246,6 +239,5 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     private System.Windows.Forms.ToolStripMenuItem ActionShowGrammarGuide;
     private System.Windows.Forms.ToolStripMenuItem ActionCopyName;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
   }
 }

@@ -245,7 +245,7 @@ partial class ParashotForm : Form
   {
     ActionSave.PerformClick();
     string name = HebrewDatabase.Instance.ParashotTableName;
-    MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(name);
+    MainForm.Instance.SaveDataBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(name);
     for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
       if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
         MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;

@@ -151,6 +151,12 @@ static partial class SysTranslations
     }
   };
 
+  static public readonly TranslationsDictionary BoardExportFileName = new()
+  {
+    [Language.EN] = "Board {0}",
+    [Language.FR] = "Board {0}",
+  };
+
   static public readonly NullSafeDictionary<ExportAction, TranslationsDictionary> ViewActionTitle = new()
   {
     [ExportAction.SaveToFile] = new TranslationsDictionary
