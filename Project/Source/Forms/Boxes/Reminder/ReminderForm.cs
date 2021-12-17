@@ -106,7 +106,7 @@ partial class ReminderForm : Form
       form.Text = " " + form.LabelTitle.Text;
       if ( isShabat )
       {
-        if ( Program.Settings.ReminderShabatShowParashah )
+        if ( Program.Settings.CalendarShowParashah && Program.Settings.ReminderShabatShowParashah )
         {
           var rowParashah = row.GetParashahReadingDay();
           if ( rowParashah != null )

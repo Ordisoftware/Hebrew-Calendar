@@ -59,6 +59,8 @@ partial class ParashotForm : Form
     InitializeMenu();
     Icon = Globals.MainForm.Icon;
     ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
+    ActionGoToNextParashah.Visible = Settings.CalendarShowParashah;
+    SeparatorParashah.Visible = Settings.CalendarShowParashah;
     DataGridView.Visible = false;
     this.InitDropDowns();
   }
@@ -190,6 +192,7 @@ partial class ParashotForm : Form
 
   private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
   {
+    Timer.Stop();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -468,8 +471,9 @@ partial class ParashotForm : Form
 
   private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
-    DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-    e.Exception.Manage();
+    e.ThrowException = false;
+    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
+    //e.Exception.Manage();
   }
 
 }

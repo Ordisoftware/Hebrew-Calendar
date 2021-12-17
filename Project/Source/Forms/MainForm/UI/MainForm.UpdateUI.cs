@@ -126,7 +126,7 @@ public partial class MainForm
           Text += TitleCelebration;
         }
         // Parashah
-        if ( Settings.MainFormTitleBarShowWeeklyParashah )
+        if ( Settings.CalendarShowParashah && Settings.MainFormTitleBarShowWeeklyParashah )
         {
           if ( force || TitleParashah.IsNullOrEmpty() )
           {
@@ -153,6 +153,7 @@ public partial class MainForm
           }
           if ( !TitleParashah.IsEmpty() ) Text += $" - {TitleParashah/*.ToUpper()*/}";
         }
+        ActionWeeklyParashah.Visible = Settings.CalendarShowParashah;
       });
     }
     finally
