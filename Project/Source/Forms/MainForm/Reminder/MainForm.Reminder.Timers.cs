@@ -109,10 +109,10 @@ partial class MainForm
     void ShowNewParashah()
     {
       bool doshow = false;
-      if ( !IsSpecialDay && !WeeklyParashahShownAtStartup && Settings.WeeklyParashahShowAtStartup )
+      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
         doshow = true;
       else
-      if ( !WeeklyParashahShownAtNewWeek && Settings.WeeklyParashahShowAtNewWeek && !IsSpecialDay )
+      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtNewWeek && !WeeklyParashahShownAtNewWeek && !IsSpecialDay )
         doshow = true;
       else
       if ( IsSpecialDay )

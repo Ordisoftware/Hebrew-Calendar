@@ -217,12 +217,12 @@
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.PanelMain.SuspendLayout();
@@ -1636,17 +1636,6 @@
       this.toolStripSeparator24.Name = "toolStripSeparator24";
       resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
-      // ContextMenuDayParashotBoard
-      // 
-      resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
-      this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
-      this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
-      // 
-      // toolStripSeparator16
-      // 
-      this.toolStripSeparator16.Name = "toolStripSeparator16";
-      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
-      // 
       // ContextMenuDayParashahStudy
       // 
       resources.ApplyResources(this.ContextMenuDayParashahStudy, "ContextMenuDayParashahStudy");
@@ -1667,6 +1656,17 @@
       resources.ApplyResources(this.ContextMenuOpenHebrewWordsVerse, "ContextMenuOpenHebrewWordsVerse");
       this.ContextMenuOpenHebrewWordsVerse.Name = "ContextMenuOpenHebrewWordsVerse";
       this.ContextMenuOpenHebrewWordsVerse.Click += new System.EventHandler(this.ContextMenuOpenHebrewWordsVerse_Click);
+      // 
+      // toolStripSeparator16
+      // 
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
+      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+      // 
+      // ContextMenuDayParashotBoard
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
+      this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
+      this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
       // 
       // ImageListRisesAndSets
       // 

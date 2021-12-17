@@ -24,9 +24,8 @@ partial class MainForm
     Globals.IsGenerating = true;
     try
     {
-      LabelSubTitleGPS.Visible = true;
+      PanelTitleInner.Visible = true;
       LabelSubTitleGPS.Text = SysTranslations.LoadingData.GetLang();
-      LabelSubTitleGPS.Refresh();
       LoadDataInit();
       if ( LunisolarDays.Count > 0 && !Settings.FirstLaunch && !Settings.FirstLaunchV7_0 )
       {
@@ -52,7 +51,6 @@ partial class MainForm
     {
       Globals.IsGenerating = false;
       LabelSubTitleGPS.Text = string.Empty;
-      LabelSubTitleGPS.Refresh();
       ToolStrip.Enabled = formEnabled;
       LoadDataEnd();
     }
@@ -101,8 +99,6 @@ partial class MainForm
   private void LoadDataGenerate(bool keepYears, bool runPreferences)
   {
     Globals.ChronoStartingApp.Stop();
-    LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
-    LabelSubTitleGPS.Refresh();
     if ( runPreferences ) PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
     string errors = CheckRegenerateCalendar(true, force: keepYears, keepYears: keepYears);
     Globals.ChronoStartingApp.Start();
