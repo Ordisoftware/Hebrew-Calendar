@@ -243,7 +243,7 @@ partial class NewMoonsBoardForm : Form
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName)
+    MainForm.Instance.SaveDataBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(TableName)
                                                    + ( EditUseRealDays.Checked ? " Moonset" : " Moonrise" );
     MainForm.Instance.SaveDataBoardDialog.FileName += $" {SelectYear1.Value}-{SelectYear2.Value}";
     for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )

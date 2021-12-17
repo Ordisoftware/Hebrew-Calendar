@@ -111,10 +111,22 @@ static class HebrewTranslations
                     AskToDownload[Language.FR]
   };
 
-  static public readonly TranslationsDictionary BoardExportFileName = new()
+  static public readonly TranslationsDictionary HebrewLettersAnalysis = new()
   {
-    [Language.EN] = "Board {0}",
-    [Language.FR] = "Board {0}",
+    [Language.EN] = "Hebrew Letters Analysis",
+    [Language.FR] = "Hebrew Letters Analyse"
+  };
+
+  static public readonly TranslationsDictionary HebrewWordsVerse = new()
+  {
+    [Language.EN] = "Hebrew Words Verse",
+    [Language.FR] = "Hebrew Words Verset"
+  };
+
+  static public readonly TranslationsDictionary HebrewWordsSearch = new()
+  {
+    [Language.EN] = "Hebrew Words Search",
+    [Language.FR] = "Hebrew Words Recherche"
   };
 
   static public readonly TranslationsDictionary WeeklyParashah = new()

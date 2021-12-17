@@ -249,7 +249,7 @@ partial class CelebrationsBoardForm : Form
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.SaveDataBoardDialog.FileName = HebrewTranslations.BoardExportFileName.GetLang(TableName) + " "
+    MainForm.Instance.SaveDataBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(TableName) + " "
                                                    + AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon][Language.EN];
     if ( Settings.TorahEventsCountAsMoon )
       MainForm.Instance.SaveDataBoardDialog.FileName += EditUseRealDays.Checked ? " Moonset" : " Moonrise";

@@ -192,7 +192,7 @@
     <value>313, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
-    <value>Recherche en ligne</value>
+    <value>Chercher en ligne</value>
   </data>
   <data name="MenuSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -216,13 +216,13 @@
     <value>313, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words Verset</value>
+    <value>Ouvrir avec Hebrew Words</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Hebrew Words Recherche</value>
+    <value>Chercher avec Hebrew Words</value>
   </data>
   <data name="MenuSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
@@ -265,9 +265,6 @@
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
-  </data>
-  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
-    <value>Hebrew Letters Analyse</value>
   </data>
   <data name="ActionGoToNextParashah.Text" xml:space="preserve">
     <value>Localiser le prochain jour depuis aujourd'hui</value>
