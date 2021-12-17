@@ -351,6 +351,16 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 
+#### 2021.12.19 - Version 9.17
+
+- Add open parashah in Hebrew Words menu items in main form, navigation window and reminder box.
+- Improve weekly parashah menu items in main form, navigation window and reminder box.
+- Remove upper case of parashah in main form title bar.
+- Change items order of context menu of parashot board.
+- Change items order of Tools menu.
+- Fix monthly view parashah context menu.
+- Fix generation of weekly parashah days concerning certain cases of Sukot and Sim'hat Torah.
+
 #### 2021.12.16 - Version 9.16
 
 - Maintenance release.
@@ -359,7 +369,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Refactoring.
 - Update help.
 - Update web links.
-- Update hebrew applications' icons.
+- Update Hebrew applications' icons.
 
 #### 2021.12.05 - Version 9.15
 

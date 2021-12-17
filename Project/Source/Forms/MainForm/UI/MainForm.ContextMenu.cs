@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -67,34 +67,36 @@ public partial class MainForm
   {
     // Day
     var date = Program.Settings.TorahEventsCountAsMoon
-           ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
-           : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
+               ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
+               : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
     var rowDay = ApplicationDatabase.Instance.GetDay(date);
     ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
     ContextMenuDayParashah.Enabled = false;
+    ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
+    ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     // Celebration
-    string celebration = AppTranslations.TorahCelebrationDays[ContextMenuDayCurrentEvent.TorahEvent].GetLang();
-    string weeklong = ContextMenuDayCurrentEvent.GetWeekLongCelebrationIntermediateDay().Text;
-    bool isNoCelebration = celebration.IsNullOrEmpty();
-    bool isNoWeekLong = weeklong.IsNullOrEmpty();
-    bool isNoEvent = isNoCelebration && isNoWeekLong;
-    bool isSimhatTorah = ContextMenuDayCurrentEvent.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
-    if ( !isNoEvent || isSimhatTorah )
-      if ( !isNoWeekLong )
-        ContextMenuDayDate.Text += " - " + weeklong;
-      else
-        ContextMenuDayDate.Text += " - " + celebration;
+    if ( !rowDay.TorahEventText.IsNullOrEmpty() ) ContextMenuDayDate.Text += $" - {rowDay.TorahEventText}";
     // Parashah 
     if ( Settings.CalendarShowParashah )
-      if ( isNoEvent || isSimhatTorah )
+    {
+      var dayParashah = rowDay?.GetParashahReadingDay();
+      var weeklong = rowDay.GetWeekLongCelebrationIntermediateDay();
+      bool isSimhatTorah1 = ( rowDay.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside );
+      bool isSimhatTorah2 = ( ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside );
+      bool show1 = weeklong.Event != TorahCelebration.Pessah;
+      bool show2 = !( weeklong.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
+      if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
-        var parashah = ParashotFactory.Instance.Get(rowDay?.GetParashahReadingDay()?.ParashahID);
+        var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);
         if ( parashah != null )
         {
-          ContextMenuDayDate.Text += " - " + parashah.ToStringShort(false, rowDay.HasLinkedParashah);
+          string captionParashah = parashah.ToStringShort(false, dayParashah.HasLinkedParashah);
+          ContextMenuDayDate.Text += $" - {captionParashah}";
+          ContextMenuDayParashah.Text = $"Parashah {captionParashah}";
           ContextMenuDayParashah.Enabled = true;
         }
       }
+    }
     // Times
     ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != CalendarMonth.CalendarDate.Date;
     ContextMenuDayClearSelection.Enabled = DateSelected.HasValue && DateSelected != DateTime.Today;

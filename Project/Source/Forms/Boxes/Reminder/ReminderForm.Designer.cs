@@ -43,10 +43,13 @@
       this.LabelParashahValue = new System.Windows.Forms.LinkLabel();
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLockout = new System.Windows.Forms.Button();
       this.ContextMenuLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,10 +146,13 @@
       // 
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
-            this.ActionViewParashot,
-            this.toolStripSeparator2,
+            this.toolStripSeparator1,
             this.ActionStudyOnline,
-            this.ActionOpenVerseOnline});
+            this.ActionOpenVerseOnline,
+            this.toolStripSeparator2,
+            this.ActionOpenHebrewWordsVerse,
+            this.toolStripSeparator3,
+            this.ActionViewParashot});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -156,16 +162,21 @@
       this.ActionViewParashahInfos.Name = "ActionViewParashahInfos";
       this.ActionViewParashahInfos.Click += new System.EventHandler(this.ActionViewParashahDescription_Click);
       // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+      // 
       // ActionViewParashot
       // 
       resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
       this.ActionViewParashot.Name = "ActionViewParashot";
       this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
-      // toolStripSeparator2
+      // toolStripSeparator1
       // 
-      this.toolStripSeparator2.Name = "toolStripSeparator2";
-      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // ActionStudyOnline
       // 
@@ -176,6 +187,17 @@
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
+      // toolStripSeparator2
+      // 
+      this.toolStripSeparator2.Name = "toolStripSeparator2";
+      resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+      // 
+      // ActionOpenHebrewWordsVerse
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
+      this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
+      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
       // ActionLockout
       // 
@@ -266,5 +288,8 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuLockout;
     private System.Windows.Forms.ToolStripMenuItem MenuDefaultLockout;
     private System.Windows.Forms.Button ActionSetupSound;
+    private ToolStripMenuItem ActionOpenHebrewWordsVerse;
+    private ToolStripSeparator toolStripSeparator1;
+    private ToolStripSeparator toolStripSeparator3;
   }
 }

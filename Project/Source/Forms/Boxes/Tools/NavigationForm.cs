@@ -307,6 +307,13 @@ partial class NavigationForm : Form
       ParashotForm.Run(ParashotFactory.Instance.Get(day.ParashahID));
   }
 
+  private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
+  {
+    if ( LabelParashahValue.Tag is LunisolarDay day )
+      HebrewTools.OpenHebrewWordsGoToVerse(ParashotFactory.Instance.Get(day.ParashahID).FullReferenceBegin,
+                                           Settings.HebrewWordsExe);
+  }
+
   private void PictureMoon_Click(object sender, EventArgs e)
   {
     ActionViewCalendar_Click(sender, null);

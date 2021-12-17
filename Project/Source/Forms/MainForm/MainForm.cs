@@ -580,6 +580,17 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionOpenHebrewWordsVerse for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenHebrewWordsVerse_Click_1(object sender, EventArgs e)
+  {
+    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin,
+                                         Settings.HebrewWordsExe);
+  }
+
+  /// <summary>
   /// Event handler. Called by CelebrationVersesBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -1093,6 +1104,13 @@ partial class MainForm : Form
         else
         if ( sender == ContextMenuDayParashotBoard )
           ParashotForm.Run(parashah);
+  }
+
+  private void ContextMenuOpenHebrewWordsVerse_Click(object sender, EventArgs e)
+  {
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+      if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
+        HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin, Settings.HebrewWordsExe);
   }
 
   private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)

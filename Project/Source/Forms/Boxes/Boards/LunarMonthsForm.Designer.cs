@@ -28,13 +28,14 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LunarMonthsForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionSwapColors = new System.Windows.Forms.Button();
       this.ActionEditFiles = new System.Windows.Forms.Button();
       this.ActionViewNotice = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
-      this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();

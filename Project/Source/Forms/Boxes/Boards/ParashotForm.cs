@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
@@ -387,6 +387,7 @@ partial class ParashotForm : Form
 
   private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
   {
+    if ( e.RowIndex < 0 || e.ColumnIndex < 0 ) return;
     DataGridView.BeginEdit(false);
   }
 
