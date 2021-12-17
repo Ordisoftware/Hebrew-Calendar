@@ -360,6 +360,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Change items order of Tools menu.
 - Fix monthly view parashah context menu.
 - Fix generation of weekly parashah days concerning certain cases of Sukot and Sim'hat Torah.
+- Few UI fixes.
 
 #### 2021.12.16 - Version 9.16
 
