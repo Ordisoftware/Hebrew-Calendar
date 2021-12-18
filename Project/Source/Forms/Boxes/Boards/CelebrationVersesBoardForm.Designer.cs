@@ -31,8 +31,6 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationVersesBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
-      this.ActionExport = new System.Windows.Forms.Button();
-      this.ActionImport = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.SelectVerse = new System.Windows.Forms.ListView();
       this.ColumnBook = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,29 +55,9 @@
       // 
       // PanelBottom
       // 
-      this.PanelBottom.Controls.Add(this.ActionExport);
-      this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
-      // 
-      // ActionExport
-      // 
-      this.ActionExport.AllowDrop = true;
-      this.ActionExport.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionExport, "ActionExport");
-      this.ActionExport.Name = "ActionExport";
-      this.ActionExport.UseVisualStyleBackColor = true;
-      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
-      // 
-      // ActionImport
-      // 
-      this.ActionImport.AllowDrop = true;
-      this.ActionImport.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionImport, "ActionImport");
-      this.ActionImport.Name = "ActionImport";
-      this.ActionImport.UseVisualStyleBackColor = true;
-      this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
       // 
       // ActionClose
       // 
@@ -230,8 +208,6 @@
     private System.Windows.Forms.ContextMenuStrip ContextMenuVerse;
     private System.Windows.Forms.ContextMenuStrip ContextMenuCelebration;
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
-    private System.Windows.Forms.Button ActionExport;
-    private System.Windows.Forms.Button ActionImport;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
   }

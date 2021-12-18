@@ -443,6 +443,9 @@
   <data name="bindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="bindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="bindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
   </data>
@@ -1923,13 +1926,13 @@
     <value>None</value>
   </data>
   <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionViewParashahDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>207, 6</value>
   </data>
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1951,7 +1954,7 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
@@ -1977,13 +1980,13 @@
     <value>None</value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>207, 6</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1999,10 +2002,10 @@
     <value>None</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>210, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words</value>
+    <value>Open with Hebrew Words</value>
   </data>
   <data name="ActionWeeklyParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3493,13 +3496,13 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>216, 22</value>
   </data>
   <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>213, 6</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3521,7 +3524,7 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>216, 22</value>
   </data>
   <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
     <value>Study online</value>
@@ -3547,13 +3550,13 @@
     <value>None</value>
   </data>
   <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>216, 22</value>
   </data>
   <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>213, 6</value>
   </data>
   <data name="ContextMenuOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3566,13 +3569,13 @@
 </value>
   </data>
   <data name="ContextMenuOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>216, 22</value>
   </data>
   <data name="ContextMenuOpenHebrewWordsVerse.Text" xml:space="preserve">
-    <value>Hebrew Words</value>
+    <value>Search with Hebrew Words</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 6</value>
+    <value>213, 6</value>
   </data>
   <data name="ContextMenuDayParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3591,7 +3594,7 @@
     <value />
   </data>
   <data name="ContextMenuDayParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>216, 22</value>
   </data>
   <data name="ContextMenuDayParashotBoard.Text" xml:space="preserve">
     <value>Parashot board</value>
@@ -3621,7 +3624,7 @@
     <value>Weekly parashah</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 442</value>
+    <value>243, 464</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3637,7 +3640,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAcABAQHAAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAdABAQHQAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

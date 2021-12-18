@@ -373,7 +373,7 @@ static partial class AppTranslations
       [Language.EN] = TorahCelebrations[TorahCelebration.Soukot][Language.EN] + " " + End[Language.EN],
       [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " " + End[Language.FR]
     }
-    // TODO manage as user custom remind list
+    // TODO Manage as user custom remind list
     /*[TorahCelebrationDay.HanoukaD1] = new TranslationsDictionary
     {
       [Language.EN] = "'Hanouka start",

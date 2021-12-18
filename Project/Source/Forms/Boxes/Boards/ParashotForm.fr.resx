@@ -284,4 +284,7 @@
   <data name="isLinkedToNextDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>Lié</value>
   </data>
+  <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
+    <value>Analyser avec Hebrew Letters</value>
+  </data>
 </root>

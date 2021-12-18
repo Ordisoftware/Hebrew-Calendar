@@ -60,6 +60,7 @@ partial class ParashotForm : Form
     Icon = Globals.MainForm.Icon;
     ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
     ActionGoToNextParashah.Visible = Settings.CalendarShowParashah;
+    ActionGoToNextParashah.Visible = Settings.CalendarShowParashah;
     SeparatorParashah.Visible = Settings.CalendarShowParashah;
     DataGridView.Visible = false;
     this.InitDropDowns();
@@ -334,6 +335,20 @@ partial class ParashotForm : Form
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
 
+  private void BindingSource_DataSourceChanged(object sender, EventArgs e)
+  {
+    if ( DataGridView.DataSource == null ) return;
+    if ( HebrewDatabase.Instance.Parashot == null ) return;
+    UpdateStats();
+  }
+
+  private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+  {
+    e.ThrowException = false; // TODO Investigate error on Dispose
+    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
+    //e.Exception.Manage();
+  }
+
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
   {
     if ( e.Control && e.KeyCode == Keys.S )
@@ -345,13 +360,6 @@ partial class ParashotForm : Form
       return;
     e.Handled = true;
     e.SuppressKeyPress = true;
-  }
-
-  private void BindingSource_DataSourceChanged(object sender, EventArgs e)
-  {
-    if ( DataGridView.DataSource == null ) return;
-    if ( HebrewDatabase.Instance.Parashot == null ) return;
-    UpdateStats();
   }
 
   private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -467,13 +475,6 @@ partial class ParashotForm : Form
     var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
     var day = days.Find(item => item.Date >= today && item.ParashahID == CurrentDataBoundItem.ID);
     if ( day != null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
-  }
-
-  private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
-  {
-    e.ThrowException = false;
-    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-    //e.Exception.Manage();
   }
 
 }
