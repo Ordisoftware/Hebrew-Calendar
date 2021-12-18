@@ -49,7 +49,6 @@ partial class LettersControl
       int width = PanelLetters.Width - 10;
       int deltaY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
       int deltaX = -(int)Math.Round(( width + 10 - ( deltaY / 2.0 ) ) / 11, MidpointRounding.AwayFromZero);
-      //int deltaXabs = -deltaX;
       var sizeLabelValue = new Size(deltaY, 8);
       var sizeLabelKey = new Size(deltaY, 13);
       const int deltaValue2 = 2;

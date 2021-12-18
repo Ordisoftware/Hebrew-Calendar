@@ -14,8 +14,6 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-// TODO remove all +1 or -1 in Words
-
 public enum TanakBook
 {
   // Torah

@@ -73,7 +73,6 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -94,6 +93,9 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -409,13 +411,15 @@
             this.toolStripSeparator3,
             this.ActionStudyOnline,
             this.ActionOpenVerseOnline,
+            this.toolStripSeparator4,
             this.ActionOpenHebrewWordsVerse,
-            this.toolStripSeparator1,
+            this.toolStripSeparator7,
             this.ActionSearchOnline,
-            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator5,
-            this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
+            this.ActionOpenHebrewWordsSearch,
+            this.toolStripSeparator1,
+            this.ActionShowGrammarGuide,
             this.toolStripSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -470,11 +474,6 @@
       resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
       this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
       this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
-      // 
-      // toolStripSeparator5
-      // 
-      this.toolStripSeparator5.Name = "toolStripSeparator5";
-      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
       // 
       // ActionShowGrammarGuide
       // 
@@ -598,6 +597,21 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -675,6 +689,8 @@
     private System.Windows.Forms.DataGridViewCheckBoxColumn HasMemo;
     private System.Windows.Forms.DataGridViewButtonColumn ColumnMemo;
     private System.Windows.Forms.ToolStripMenuItem ActionGoToNextParashah;
+    private ToolStripSeparator toolStripSeparator4;
+    private ToolStripSeparator toolStripSeparator7;
     private ToolStripSeparator toolStripSeparator5;
   }
 }

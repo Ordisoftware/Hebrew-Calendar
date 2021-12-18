@@ -141,4 +141,7 @@
   <data name="MenuDefaultLockout.Text" xml:space="preserve">
     <value>Défaut</value>
   </data>
+  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Ouvrir avec Hebrew Words</value>
+  </data>
 </root>

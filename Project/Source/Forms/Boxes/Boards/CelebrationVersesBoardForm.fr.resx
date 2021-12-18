@@ -141,4 +141,7 @@
   <data name="ActionStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
+  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Ouvrir avec Hebrew Words</value>
+  </data>
 </root>

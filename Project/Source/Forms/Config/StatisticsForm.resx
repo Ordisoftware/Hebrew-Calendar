@@ -1144,7 +1144,7 @@
     <value>119</value>
   </data>
   <data name="generateAnalyseDaysTimeLabel.Text" xml:space="preserve">
-    <value>Analyse days:</value>
+    <value>Analyze days:</value>
   </data>
   <data name="&gt;&gt;generateAnalyseDaysTimeLabel.Name" xml:space="preserve">
     <value>generateAnalyseDaysTimeLabel</value>

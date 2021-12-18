@@ -50,11 +50,6 @@ public partial class CelebrationVersesBoardForm : Form
     InitializeMenu();
     Icon = MainForm.Instance.Icon;
     ActiveControl = SelectCelebration;
-    if ( Globals.IsDevExecutable ) // TODO remove code and controls ?
-    {
-      ActionImport.Visible = true;
-      ActionExport.Visible = true;
-    }
   }
 
   private void InitializeMenu()
@@ -142,22 +137,6 @@ public partial class CelebrationVersesBoardForm : Form
   private void ActionClose_Click(object sender, EventArgs e)
   {
     Close();
-  }
-
-  // TODO remove code and controls ?
-  private void ActionImport_Click(object sender, EventArgs e)
-  {
-    TorahCelebrationVerses.Instance.Load();
-    PopulateLists();
-    DisplayManager.Show(SysTranslations.LoadFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
-  }
-
-  // TODO remove code and controls ?
-  private void ActionExport_Click(object sender, EventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo("Save and overwrite data file?") ) return;
-    TorahCelebrationVerses.Instance.Save();
-    DisplayManager.Show(SysTranslations.WriteFileSuccess.GetLang(HebrewGlobals.CelebrationVersesFilePath));
   }
 
   private void SelectCelebration_MouseDoubleClick(object sender, MouseEventArgs e)

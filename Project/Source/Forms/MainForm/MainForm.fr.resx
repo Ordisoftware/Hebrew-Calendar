@@ -647,4 +647,10 @@
   <data name="ActionShowMonthsAndDaysNotice.Text" xml:space="preserve">
     <value>Notice des mois et des jours</value>
   </data>
+  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Ouvrir avec Hebrew Words</value>
+  </data>
+  <data name="ContextMenuOpenHebrewWordsVerse.Text" xml:space="preserve">
+    <value>Chercher avec Hebrew Words</value>
+  </data>
 </root>
