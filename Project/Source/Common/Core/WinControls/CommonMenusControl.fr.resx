@@ -176,7 +176,7 @@
     <value>372, 22</value>
   </data>
   <data name="ActionHebrewCalendar.Text" xml:space="preserve">
-    <value>Hebrew Calendar : suivre les évènements de la Torah</value>
+    <value>Hebrew Calendar : calendrier luni-solaire pour les événements de la Torah</value>
   </data>
   <data name="ActionDownloadHebrewLetters.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 22</value>
