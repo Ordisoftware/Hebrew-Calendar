@@ -113,20 +113,20 @@ static class HebrewTranslations
 
   static public readonly TranslationsDictionary HebrewLettersAnalysis = new()
   {
-    [Language.EN] = "Hebrew Letters Analysis",
-    [Language.FR] = "Hebrew Letters Analyse"
+    [Language.EN] = "Analyze with Hebrew Letters",
+    [Language.FR] = "Analyser avec Hebrew Letters"
   };
 
   static public readonly TranslationsDictionary HebrewWordsVerse = new()
   {
-    [Language.EN] = "Hebrew Words Verse",
-    [Language.FR] = "Hebrew Words Verset"
+    [Language.EN] = "Open with Hebrew Words",
+    [Language.FR] = "Ouvrir avec Hebrew Words"
   };
 
   static public readonly TranslationsDictionary HebrewWordsSearch = new()
   {
-    [Language.EN] = "Hebrew Words Search",
-    [Language.FR] = "Hebrew Words Recherche"
+    [Language.EN] = "Search with Hebrew Words",
+    [Language.FR] = "Chercher avec Hebrew Words"
   };
 
   static public readonly TranslationsDictionary WeeklyParashah = new()

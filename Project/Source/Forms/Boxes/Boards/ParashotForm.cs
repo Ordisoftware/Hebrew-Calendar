@@ -87,22 +87,13 @@ partial class ParashotForm : Form
     });
   }
 
-  private void Select(Parashah parashah)
-  {
-    if ( parashah == null ) return;
-    foreach ( DataGridViewRow row in DataGridView.Rows )
-      if ( ( (Parashah)row.DataBoundItem ).ID == parashah.ID )
-      {
-        DataGridView.CurrentCell = row.Cells[0];
-        DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
-        break;
-      }
-  }
-
   private void ParashotForm_Load(object sender, EventArgs e)
   {
+    MainForm.Instance.Cursor = Cursors.WaitCursor;
     Cursor = Cursors.WaitCursor;
     PanelBottom.Enabled = false;
+    bool temp = LoadingForm.Instance.Hidden;
+    LoadingForm.Instance.Hidden = false;
     try
     {
       LoadingForm.Instance.Initialize(SysTranslations.LoadingData.GetLang(), 4);
@@ -125,6 +116,8 @@ partial class ParashotForm : Form
     {
       PanelBottom.Enabled = true;
       Cursor = Cursors.Default;
+      MainForm.Instance.Cursor = Cursors.Default;
+      LoadingForm.Instance.Hidden = temp;
       LoadingForm.Instance.Hide();
     }
   }
@@ -134,6 +127,18 @@ partial class ParashotForm : Form
     DataGridView.Visible = true;
     ActiveControl = DataGridView;
     EditFontSize_ValueChanged(null, null);
+  }
+
+  private void Select(Parashah parashah)
+  {
+    if ( parashah == null ) return;
+    foreach ( DataGridViewRow row in DataGridView.Rows )
+      if ( ( (Parashah)row.DataBoundItem ).ID == parashah.ID )
+      {
+        DataGridView.CurrentCell = row.Cells[0];
+        DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
+        break;
+      }
   }
 
   private void Timer_Tick(object sender, EventArgs e)
@@ -205,6 +210,7 @@ partial class ParashotForm : Form
     Settings.ParashotFormColumnTranslationWidth = ColumnTranslation.Width;
     Settings.ParashotFormFontSize = EditFontSize.Value;
     SystemManager.TryCatch(Settings.Save);
+    BindingSource.DataSource = null;
     MainForm.UserParashot = HebrewDatabase.Instance.Parashot;
     HebrewDatabase.Instance.ReleaseParashot();
     UpdateStats();
@@ -337,13 +343,13 @@ partial class ParashotForm : Form
 
   private void BindingSource_DataSourceChanged(object sender, EventArgs e)
   {
-    if ( DataGridView.DataSource == null ) return;
-    if ( HebrewDatabase.Instance.Parashot == null ) return;
-    UpdateStats();
+    if ( DataGridView.DataSource != null && HebrewDatabase.Instance.Parashot != null )
+      UpdateStats();
   }
 
   private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
+    e.Exception.Manage(ShowExceptionMode.None);
     e.ThrowException = false; // TODO Investigate error on Dispose
     //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
     //e.Exception.Manage();
@@ -373,11 +379,10 @@ partial class ParashotForm : Form
   {
     if ( e.Value == null ) return;
     if ( e.ColumnIndex == ColumnLinked.Index )
-      e.Value = Convert.ToBoolean(e.Value) ? Globals.Bullet : string.Empty;
+      e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
     else
     if ( e.ColumnIndex == ColumnBook.Index )
-      if ( e.ColumnIndex == ColumnBook.Index && e.RowIndex > 0
-        && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
+      if ( e.RowIndex > 0 && e.Value.Equals(DataGridView[e.ColumnIndex, e.RowIndex - 1].Value) )
         e.Value = string.Empty;
   }
 
