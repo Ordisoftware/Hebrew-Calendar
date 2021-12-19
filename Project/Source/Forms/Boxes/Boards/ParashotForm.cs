@@ -92,6 +92,8 @@ partial class ParashotForm : Form
     MainForm.Instance.Cursor = Cursors.WaitCursor;
     Cursor = Cursors.WaitCursor;
     PanelBottom.Enabled = false;
+    bool temp = LoadingForm.Instance.Hidden;
+    LoadingForm.Instance.Hidden = false;
     try
     {
       LoadingForm.Instance.Initialize(SysTranslations.LoadingData.GetLang(), 4);
@@ -115,6 +117,7 @@ partial class ParashotForm : Form
       PanelBottom.Enabled = true;
       Cursor = Cursors.Default;
       MainForm.Instance.Cursor = Cursors.Default;
+      LoadingForm.Instance.Hidden = temp;
       LoadingForm.Instance.Hide();
     }
   }
@@ -348,8 +351,8 @@ partial class ParashotForm : Form
   {
     e.Exception.Manage(ShowExceptionMode.None);
     e.ThrowException = false; // TODO Investigate error on Dispose
-                              //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-                              //e.Exception.Manage();
+    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
+    //e.Exception.Manage();
   }
 
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
