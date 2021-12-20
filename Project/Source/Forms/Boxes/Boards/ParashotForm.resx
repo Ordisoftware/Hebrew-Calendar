@@ -703,6 +703,22 @@
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Open with Hebrew Words</value>
   </data>
+  <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
+        gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
+        FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
+        gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
+    <value>Search with Hebrew Words</value>
+  </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 6</value>
   </data>
@@ -729,9 +745,6 @@
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 6</value>
-  </data>
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -748,22 +761,6 @@
   </data>
   <data name="ActionOpenHebrewLetters.Text" xml:space="preserve">
     <value>Analyze with Hebrew Letters</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
-        BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
-        gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
-        FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
-        gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 22</value>
-  </data>
-  <data name="ActionOpenHebrewWordsSearch.Text" xml:space="preserve">
-    <value>Search with Hebrew Words</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 6</value>
@@ -923,8 +920,33 @@
   <data name="ActionGoToNextParashah.Text" xml:space="preserve">
     <value>Locate next day from today</value>
   </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 6</value>
+  </data>
+  <data name="ActionEditMemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAl9JREFUOE+dk81LVFEYxu//EEHr2gQZfdh8NUKb6EOFsKIoqGzIzEWLxgkqdMCv
+        8aPRuaZGRm1aVBalYWNQmFJITjh3HLUxMU3TxjKaKXPVol/vuTOQi5Towo9z7j3P85z3nHuOZlyxJ40G
+        KwP1Fgb8/4DolF75NPWoF+arYE6I+4TqFZBxpRO98pkBA/5M+NEJYZvgBCNredS40ole+dIBWyHZRiJo
+        I9HlJPEka3nUeJdU/O2uBGxZEvD1Fsz6hYCgr4CMx+vg+w2MwPolS5i/KSXuFrIhkrM8Q3sgtoNwWZio
+        7/XSgFaI7oPB/dIe+DvDeTCajdtbz0RHnL6WMEZJB1q4wQJfrsLIYREd+cNQGtV/I4wd4lxpM9NzScou
+        1xG8+IzQmVY0Q7cx1S6C8ZMicsFbaUfzxXRCQoWY9MddvPBsIjHeibemieDzlxRdKlVLyNQijQ5mHh0l
+        VGulv0aotjB5e5cEFUjQKXhXSI9Hqnwl3+6tZehBJQXFVYw1Z6T2INK4ndmHTha67TKrbOT7QgnZBhNn
+        TVLmvXB/I7Supjl/MyTqiOrpc2DoDhZDuUy1OUk+TYWEasX0wUOvW8R9O2XmDWJeQyBfzsC0W06jD7V3
+        qYCAnZ/R4yz0ZZshC90OOSRWEh3yV+Ly34fL4NoqdGWeuSBVFUtbad6JVIAus056zJDF/lw+tjv59Pgg
+        1ytcBO+U82skQJNLlvS5QoxeqaDUvA9GIH0XenyWXhWiKlHLGZRNjbXYOF90jPLTOcQa8og2WYnoVrNs
+        8zaKud9vmzYD5FknZP4HGZqmab8BnjWh/4l6XXUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionEditMemo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="ActionEditMemo.Text" xml:space="preserve">
+    <value>Edit memo</value>
+  </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 382</value>
+    <value>245, 404</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1124,16 +1146,22 @@
   <data name="&gt;&gt;ActionOpenVerseOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsVerse.Name" xml:space="preserve">
     <value>ActionOpenHebrewWordsVerse</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsVerse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
+  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
+    <value>toolStripSeparator7</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchOnline.Name" xml:space="preserve">
@@ -1142,22 +1170,28 @@
   <data name="&gt;&gt;ActionSearchOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
+    <value>ActionOpenHebrewLetters</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Name" xml:space="preserve">
     <value>ActionOpenHebrewWordsSearch</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
     <value>ActionShowGrammarGuide</value>
   </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
-    <value>ActionOpenHebrewLetters</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
@@ -1268,23 +1302,17 @@
   <data name="&gt;&gt;Timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
-    <value>toolStripSeparator7</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
     <value>toolStripSeparator5</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionEditMemo.Name" xml:space="preserve">
+    <value>ActionEditMemo</value>
+  </data>
+  <data name="&gt;&gt;ActionEditMemo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ParashotForm</value>

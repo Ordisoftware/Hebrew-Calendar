@@ -69,12 +69,14 @@
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCopyName = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyHebrewChars = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,9 +95,8 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -413,11 +414,10 @@
             this.ActionOpenVerseOnline,
             this.toolStripSeparator4,
             this.ActionOpenHebrewWordsVerse,
+            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator7,
             this.ActionSearchOnline,
-            this.toolStripSeparator5,
             this.ActionOpenHebrewLetters,
-            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator1,
             this.ActionShowGrammarGuide,
             this.toolStripSeparator2,
@@ -428,7 +428,9 @@
             this.ActionCopyLineHebrew,
             this.ActionCopyLineUnicode,
             this.SeparatorParashah,
-            this.ActionGoToNextParashah});
+            this.ActionGoToNextParashah,
+            this.toolStripSeparator5,
+            this.ActionEditMemo});
       this.ContextMenuParashah.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuParashah, "ContextMenuParashah");
       // 
@@ -453,21 +455,32 @@
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
       // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
       // ActionOpenHebrewWordsVerse
       // 
       resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
       this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
-      // toolStripSeparator1
+      // toolStripSeparator7
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
       // 
       // ActionSearchOnline
       // 
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
+      // 
+      // ActionOpenHebrewLetters
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
+      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
+      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // ActionOpenHebrewWordsSearch
       // 
@@ -475,17 +488,16 @@
       this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
       this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // ActionShowGrammarGuide
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
       this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
       this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
-      // ActionOpenHebrewLetters
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
-      this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
-      this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
       // 
       // toolStripSeparator2
       // 
@@ -597,20 +609,16 @@
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      // 
-      // toolStripSeparator7
-      // 
-      this.toolStripSeparator7.Name = "toolStripSeparator7";
-      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
-      // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
       resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // ActionEditMemo
+      // 
+      resources.ApplyResources(this.ActionEditMemo, "ActionEditMemo");
+      this.ActionEditMemo.Name = "ActionEditMemo";
+      this.ActionEditMemo.Click += new System.EventHandler(this.ActionEditMemo_Click);
       // 
       // ParashotForm
       // 
@@ -691,6 +699,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionGoToNextParashah;
     private ToolStripSeparator toolStripSeparator4;
     private ToolStripSeparator toolStripSeparator7;
+    private ToolStripMenuItem ActionEditMemo;
     private ToolStripSeparator toolStripSeparator5;
   }
 }
