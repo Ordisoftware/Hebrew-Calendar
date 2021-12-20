@@ -75,16 +75,17 @@ public partial class MainForm
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     // Celebration
-    if ( !rowDay.TorahEventText.IsNullOrEmpty() ) ContextMenuDayDate.Text += $" - {rowDay.TorahEventText}";
+    if ( rowDay?.TorahEventText.IsNullOrEmpty() == false )
+      ContextMenuDayDate.Text += $" - {rowDay.TorahEventText}";
     // Parashah 
     if ( Settings.CalendarShowParashah )
     {
       var dayParashah = rowDay?.GetParashahReadingDay();
-      var weeklong = rowDay.GetWeekLongCelebrationIntermediateDay();
-      bool isSimhatTorah1 = ( rowDay.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside );
-      bool isSimhatTorah2 = ( ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside );
-      bool show1 = weeklong.Event != TorahCelebration.Pessah;
-      bool show2 = !( weeklong.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
+      var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
+      bool isSimhatTorah1 = rowDay?.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
+      bool isSimhatTorah2 = ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside;
+      bool show1 = weeklong?.Event != TorahCelebration.Pessah;
+      bool show2 = !( weeklong?.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
       if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
         var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);

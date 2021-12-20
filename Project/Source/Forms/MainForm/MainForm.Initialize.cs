@@ -160,6 +160,7 @@ partial class MainForm
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     IsCalendarReady = false;
     PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
+    Settings.SetFirstAndUpgradeFlagsOff();
   }
 
   private bool IsCalendarReady = true;
