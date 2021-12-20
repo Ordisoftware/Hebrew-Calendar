@@ -82,8 +82,7 @@ partial class ParashotForm : Form
     ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      foreach ( string word in CurrentDataBoundItem.Hebrew.Split(' ') )
-        HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, CurrentDataBoundItem.Hebrew);
     });
   }
 
@@ -411,6 +410,11 @@ partial class ParashotForm : Form
   {
     if ( DataGridView.ReadOnly ) return;
     if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
+    ActionEditMemo.PerformClick();
+  }
+
+  private void ActionEditMemo_Click(object sender, EventArgs e)
+  {
     using var form = new EditMemoForm();
     form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
     form.TextBox.Text = CurrentDataBoundItem.Memo;

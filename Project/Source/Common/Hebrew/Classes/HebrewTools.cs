@@ -23,7 +23,6 @@ static class HebrewTools
   /// <summary>
   /// Remove diacritics and numbers Alef or Bet.
   /// </summary>
-  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
   static public (string Word, bool IsUnicode) RemoveNumberingAndDiacritics(string word)
   {
     word = word.RemoveDiacritics();
@@ -34,33 +33,6 @@ static class HebrewTools
     if ( word.StartsWith("a ") || word.StartsWith("b ") )
       word = word.Remove(0, 2);
     return (word, isUnicode);
-  }
-
-  /// <summary>
-  /// Starts Hebrew Letters.
-  /// </summary>
-  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
-  /// <param name="path">Path of the application.</param>
-  [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
-  static public void OpenHebrewLetters(string word, string path)
-  {
-    if ( File.Exists(path) )
-      if ( word.IsNullOrEmpty() )
-        SystemManager.RunShell(path);
-      else
-      {
-        var wordAnalyzed = RemoveNumberingAndDiacritics(word);
-        var items = wordAnalyzed.Word.Split(' ');
-        if ( wordAnalyzed.IsUnicode ) items = items.Reverse().ToArray();
-        foreach ( string item in items )
-        {
-          SystemManager.RunShell(path, item);
-          Thread.Sleep(250);
-        }
-      }
-    else
-    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
-      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
   }
 
   /// <summary>
@@ -100,17 +72,54 @@ static class HebrewTools
   }
 
   /// <summary>
+  /// Starts Hebrew Letters.
+  /// </summary>
+  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
+  /// <param name="path">Path of the application.</param>
+  [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
+  static public void OpenHebrewLetters(string word, string path)
+  {
+    if ( File.Exists(path) )
+      if ( word.IsNullOrEmpty() )
+        SystemManager.RunShell(path);
+      else
+      {
+        var wordAnalyzed = RemoveNumberingAndDiacritics(word);
+        var items = wordAnalyzed.Word.Split(' ');
+        if ( wordAnalyzed.IsUnicode )
+          items = items.Reverse().ToArray();
+        foreach ( string item in items )
+        {
+          SystemManager.RunShell(path, item);
+          Thread.Sleep(250);
+        }
+      }
+    else
+    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
+      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
+  }
+
+  /// <summary>
   /// Opens online word provider.
   /// </summary>
-  static public void OpenWordProvider(string link, string hebrew)
+  /// <param name="link">Web provider link.</param>
+  /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
+  [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
+  static public void OpenWordProvider(string link, string word)
   {
-    if ( hebrew.Length > 1 ) hebrew = HebrewAlphabet.SetFinal(hebrew, true);
+    if ( word.Length > 1 ) word = HebrewAlphabet.SetFinal(word, true);
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
     {
-      string unicode = HebrewAlphabet.ToUnicode(hebrew);
-      link = link.Replace("%WORD%", unicode)
-                 .Replace("%FIRSTLETTER%", unicode[0].ToString());
-      SystemManager.RunShell(link);
+      var wordAnalyzed = RemoveNumberingAndDiacritics(word);
+      var items = wordAnalyzed.Word.Split(' ');
+      if ( !wordAnalyzed.IsUnicode )
+        items = items.Select(w => HebrewAlphabet.ToUnicode(HebrewAlphabet.SetFinal(w, true))).ToArray();
+      foreach ( string item in items )
+      {
+        string url = link.Replace("%WORD%", item).Replace("%FIRSTLETTER%", item[0].ToString());
+        SystemManager.RunShell(url, item);
+        Thread.Sleep(250);
+      }
     });
   }
 

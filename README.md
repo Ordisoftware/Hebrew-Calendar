@@ -71,7 +71,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 9.x**
+**What's new in the latest version 9**
 
 - Added mouse hover effect in monthly view.
 - Added context menu for days in monthly view.
@@ -350,6 +350,10 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
+
+#### In progress - Version 9.18
+
+- Few fixes and imrovements.
 
 #### 2021.12.19 - Version 9.17
 
