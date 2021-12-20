@@ -71,10 +71,10 @@
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -86,6 +86,8 @@
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorParashah = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGoToNextParashah = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
       this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,8 +97,6 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -414,12 +414,12 @@
             this.ActionOpenVerseOnline,
             this.toolStripSeparator4,
             this.ActionOpenHebrewWordsVerse,
-            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator7,
             this.ActionSearchOnline,
-            this.ActionOpenHebrewLetters,
+            this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator1,
             this.ActionShowGrammarGuide,
+            this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
             this.ActionCopyName,
             this.ActionCopyHebrewChars,
@@ -466,6 +466,12 @@
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
       this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
+      // ActionOpenHebrewWordsSearch
+      // 
+      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
+      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
+      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
+      // 
       // toolStripSeparator7
       // 
       this.toolStripSeparator7.Name = "toolStripSeparator7";
@@ -481,12 +487,6 @@
       resources.ApplyResources(this.ActionOpenHebrewLetters, "ActionOpenHebrewLetters");
       this.ActionOpenHebrewLetters.Name = "ActionOpenHebrewLetters";
       this.ActionOpenHebrewLetters.Click += new System.EventHandler(this.ActionOpenHebrewLetters_Click);
-      // 
-      // ActionOpenHebrewWordsSearch
-      // 
-      resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
-      this.ActionOpenHebrewWordsSearch.Name = "ActionOpenHebrewWordsSearch";
-      this.ActionOpenHebrewWordsSearch.Click += new System.EventHandler(this.ActionOpenHebrewWordsSearch_Click);
       // 
       // toolStripSeparator1
       // 
@@ -550,6 +550,17 @@
       this.ActionGoToNextParashah.Name = "ActionGoToNextParashah";
       this.ActionGoToNextParashah.Click += new System.EventHandler(this.ActionGoToNextParashah_Click);
       // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // ActionEditMemo
+      // 
+      resources.ApplyResources(this.ActionEditMemo, "ActionEditMemo");
+      this.ActionEditMemo.Name = "ActionEditMemo";
+      this.ActionEditMemo.Click += new System.EventHandler(this.ActionEditMemo_Click);
+      // 
       // BindingSource
       // 
       this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Parashah);
@@ -608,17 +619,6 @@
       // 
       this.Timer.Interval = 5000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-      // 
-      // toolStripSeparator5
-      // 
-      this.toolStripSeparator5.Name = "toolStripSeparator5";
-      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-      // 
-      // ActionEditMemo
-      // 
-      resources.ApplyResources(this.ActionEditMemo, "ActionEditMemo");
-      this.ActionEditMemo.Name = "ActionEditMemo";
-      this.ActionEditMemo.Click += new System.EventHandler(this.ActionEditMemo_Click);
       // 
       // ParashotForm
       // 
