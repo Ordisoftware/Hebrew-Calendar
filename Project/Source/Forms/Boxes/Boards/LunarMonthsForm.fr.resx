@@ -128,7 +128,7 @@
     <value>313, 22</value>
   </data>
   <data name="ActionSearchOnline.Text" xml:space="preserve">
-    <value>Recherche en ligne</value>
+    <value>Chercher en ligne</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 6</value>
