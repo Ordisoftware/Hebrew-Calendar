@@ -82,8 +82,7 @@ partial class ParashotForm : Form
     ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      foreach ( string word in CurrentDataBoundItem.Hebrew.Split(' ') )
-        HebrewTools.OpenWordProvider((string)menuitem.Tag, word);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, CurrentDataBoundItem.Hebrew);
     });
   }
 
