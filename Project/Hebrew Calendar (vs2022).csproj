@@ -417,6 +417,10 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Database\ApplicationDatabase.Generate.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Generate.Sod.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Generate.Report.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.Generate.Omer.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
     <Compile Include="Source\Database\LunisolarDay.Helper.cs" />
     <Compile Include="Source\Database\LunisolarDay.Times.cs" />
@@ -757,9 +761,6 @@
     </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Forms\MainForm\Data\MainForm.Generate.ReportText.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\MainForm\UI\MainForm.Keys.cs">
       <SubType>Form</SubType>

@@ -48,8 +48,9 @@ partial class MainForm
   private IEnumerable<string> GetTextReportLines(ExportInterval interval)
   {
     if ( !interval.IsDefined ) return CalendarText.Lines;
-    int lengthToCheck = CalendarFieldSize[ReportFieldText.Date] + ColumnSepLeft.Length;
-    int lengthToExtract = ColumnSepLeft.Length + 4;
+    int lengthToCheck = ApplicationDatabase.CalendarFieldSize[ReportFieldText.Date]
+                      + ApplicationDatabase.ColumnSepLeft.Length;
+    int lengthToExtract = ApplicationDatabase.ColumnSepLeft.Length + 4;
     var linesFiltered = CalendarText.Lines
                                     .Skip(3)
                                     .SkipWhile(line => filter(line, interval.Start.Value, true))
