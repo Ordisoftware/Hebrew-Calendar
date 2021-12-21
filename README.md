@@ -351,7 +351,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 
-#### In progress - Version 9.18
+#### 2021.12.21 - Version 9.18
 
 - Few fixes and imrovements.
 - Add Judaism 101 website link.
