@@ -55,13 +55,13 @@ static partial class AppTranslations
                     "These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun." + Globals.NL2 +
                     "The application uses by default moon omer for celebrations." + Globals.NL2 +
                     "If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set." + Globals.NL2 +
-                    "You can use traditional sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.",
+                    "You can use traditional sun days by modifying the option of the generator, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.",
 
     [Language.FR] = "Les temps de célébration de la Torah sont Pessa'h ou Pâques qui est la libération des illusions, Shavou'ot ou Semaines qui est le don de la connaissance, Terou'ah ou Sonnerie qui est la joie d'être libéré, Kipourim ou Pénitence qui est les peines des pertes, et Soukot ou Cabanes qui est la construction du futur." + Globals.NL2 +
                     "Ce sont les moments importants de l'année lunaire au sein du cycle solaire dont la finalité est de procurer une évolution bienveillante de la conscience par la connaissance des lois de l'univers et de la vie. La Torah indique de compter ces jours selon la lune, par opposition au Shabat qui se compte selon le soleil." + Globals.NL2 +
                     "L'application utilise par défaut un omer selon la lune pour les célébrations." + Globals.NL2 +
                     "Si vous utilisez le omer de la lune alors les dates des célébrations seront calculées selon les saisons et il y aura une inversion entre les hémisphères nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant." + Globals.NL2 +
-                    "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant."
+                    "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option du générateur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant."
   };
 
   static public readonly TranslationsDictionary NoticeShabatTitle = new()
