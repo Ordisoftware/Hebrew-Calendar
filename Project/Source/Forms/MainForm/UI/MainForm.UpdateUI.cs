@@ -108,7 +108,9 @@ public partial class MainForm
         LabelSubTitleGPS.Text = TitleGPS;
         // Omer
         if ( force || TitleOmer.IsNullOrEmpty() )
-          TitleOmer = AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+          TitleOmer = Settings.UseSodHaibour
+                      ? AppTranslations.MainFormSubTitleSod.GetLang().ToUpper()
+                      : AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )

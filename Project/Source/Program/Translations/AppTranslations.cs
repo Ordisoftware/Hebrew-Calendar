@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -53,6 +53,12 @@ static partial class AppTranslations
       [Language.EN] = "Sun Omer",
       [Language.FR] = "Omer du Soleil"
     }
+  };
+
+  static public readonly TranslationsDictionary MainFormSubTitleSod = new()
+  {
+    [Language.EN] = "Sod Ha'ibur Omer",
+    [Language.FR] = "Omer du Sod Ha'ibour"
   };
 
   static public readonly TranslationsDictionary AskToResetPreferences = new()

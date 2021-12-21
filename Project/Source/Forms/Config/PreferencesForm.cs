@@ -34,6 +34,7 @@ partial class PreferencesForm : Form
   public string OldLongitude { get; private set; }
   public string OldTimeZone { get; private set; }
   public bool OldUseMoonDays { get; private set; }
+  public bool OldUseSod { get; private set; }
   public bool OldUseSimhat { get; private set; }
   public bool MustRefreshMonthView { get; private set; }
 
@@ -119,17 +120,18 @@ partial class PreferencesForm : Form
 
   private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
   {
+    // TODO complete celebrations notice with sod haibour 
     MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
-  }
-
-  private void ActionAstronomyInfo_Click(object sender, EventArgs e)
-  {
-    MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
   }
 
   private void ActionParashahHelp_Click(object sender, EventArgs e)
   {
     MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+  }
+
+  private void ActionAstronomyInfo_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
   }
 
   private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
