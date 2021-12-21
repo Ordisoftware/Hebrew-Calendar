@@ -18,10 +18,15 @@ partial class ApplicationDatabase
 {
 
   /// <summary>
-  /// Creates the calendar items using Sod Haibour.
+  /// Creates the calendar items using Sod Ha'ibur.
   /// </summary>
+  /// <remarkl>
+  /// Omer is implicitly as sun and there is no difference between north and south hemisphere,
+  /// thus all days are precalculated as sun omer.
+  /// </remarkl>
   public bool AnalyseDaysSod(int progressCount)
   {
+    // TODO Define months, celebrations, and parashot.
     return false;
   }
 
