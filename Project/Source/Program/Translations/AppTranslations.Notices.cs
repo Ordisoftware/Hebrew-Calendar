@@ -26,6 +26,7 @@ static partial class AppTranslations
     [Language.FR] = "Notice des mois et des jours"
   };
 
+  // TODO update notice when sod will be ready
   static public readonly TranslationsDictionary NoticeMonthsAndDays = new()
   {
     [Language.EN] = "The dates generated can differ from those in the Hebrew authorities' calendar, but astronomically speaking, there is no mistake, unless there is a problem to be corrected." + Globals.NL2 +
