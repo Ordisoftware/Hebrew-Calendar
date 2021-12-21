@@ -16,6 +16,9 @@ Lang/FR = Sites Web sur le judaïsme
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
 
+Name = (EN) Judaism 101
+URL = https://www.jewfaq.org
+
 -
 
 Name = (FR) Chiourim.com
@@ -100,9 +103,6 @@ Name = (EN) The Rabbinical Assembly
 URL = https://www.rabbinicalassembly.org
 
 -
-
-Name = (EN) Judaism 101
-URL = https://www.jewfaq.org
 
 Name = (FR) Lamed.fr
 URL = https://www.lamed.fr

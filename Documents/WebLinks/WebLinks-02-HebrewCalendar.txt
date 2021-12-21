@@ -21,6 +21,14 @@ URL = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
 
 -
 
+Name = (EN) Jewfaq.com Basic
+URL = https://www.jewfaq.org/calendar.htm
+
+Name = (EN) Jewfaq.com Advanced
+URL = https://www.jewfaq.org/calendr2.htm
+
+-
+
 Name = (EN) Aish.com
 URL = https://www.aish.com/jewish-calendar/Jewish_Calendar.html
 
