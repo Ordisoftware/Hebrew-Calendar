@@ -397,9 +397,6 @@
   <data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 17</value>
   </data>
-  <data name="EditWeekParashahIsOnSaturday.Text" xml:space="preserve">
-    <value>Toujours générer les Parashot pour le samedi</value>
-  </data>
   <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 17</value>
   </data>
@@ -408,9 +405,6 @@
   </data>
   <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 17</value>
-  </data>
-  <data name="EditTorahEventsCountAsMoon.Text" xml:space="preserve">
-    <value>Utiliser les jours de la lune au lieu du soleil</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
@@ -915,5 +909,14 @@
   </data>
   <data name="OpenThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
+  </data>
+  <data name="SelectOmerMoon.Text" xml:space="preserve">
+    <value>Utiliser le omer des jours de la lune</value>
+  </data>
+  <data name="SelectOmerSun.Text" xml:space="preserve">
+    <value>Utiliser le omer des jours du soleil</value>
+  </data>
+  <data name="SelectUseSodHaibour.Text" xml:space="preserve">
+    <value>Utiliser le omer du sod ha'ibour</value>
   </data>
 </root>

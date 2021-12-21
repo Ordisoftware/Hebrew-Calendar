@@ -76,7 +76,6 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditStartupHide.Checked = Settings.StartupHide);
     SystemManager.TryCatch(() => EditTextReportBackColor.BackColor = Settings.TextBackground);
     SystemManager.TryCatch(() => EditTextReportTextColor.BackColor = Settings.TextColor);
-    SystemManager.TryCatch(() => EditTorahEventsCountAsMoon.Checked = Settings.TorahEventsCountAsMoon);
     SystemManager.TryCatch(() => EditUseSimhatTorahOutside.Checked = Settings.UseSimhatTorahOutside);
     SystemManager.TryCatch(() => EditUseColors.Checked = Settings.UseColors);
     SystemManager.TryCatch(() => EditMoonDayTextFormat.Text = Settings.MoonDayTextFormat);
@@ -137,8 +136,17 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => OldShabatDay = Settings.ShabatDay);
     SystemManager.TryCatch(() => OldTimeZone = Settings.TimeZone);
     SystemManager.TryCatch(() => OldUseMoonDays = Settings.TorahEventsCountAsMoon);
+    SystemManager.TryCatch(() => OldUseSod = Settings.UseSodHaibour);
     SystemManager.TryCatch(() => OldUseSimhat = Settings.UseSimhatTorahOutside);
-    // Hotkey
+    // Moon/Sun/Sod
+    if ( Settings.UseSodHaibour )
+      SelectUseSodHaibour.Checked = true;
+    else
+    if ( Settings.TorahEventsCountAsMoon )
+      SelectOmerMoon.Checked = true;
+    else
+      SelectOmerSun.Checked = true;
+    // Hot-key
     InitHotKeyControls();
     // System
     EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;

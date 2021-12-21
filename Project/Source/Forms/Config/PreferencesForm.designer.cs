@@ -145,18 +145,20 @@
       this.EditNavigateTopColor = new System.Windows.Forms.Panel();
       this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
+      this.SelectUseSodHaibour = new System.Windows.Forms.RadioButton();
+      this.SelectOmerSun = new System.Windows.Forms.RadioButton();
+      this.SelectOmerMoon = new System.Windows.Forms.RadioButton();
       this.LabelShabatDay = new System.Windows.Forms.Label();
       this.EditShabatDay = new System.Windows.Forms.ComboBox();
       this.ActionUsePersonalShabat = new System.Windows.Forms.LinkLabel();
       this.ActionPersonalShabatHelp = new System.Windows.Forms.Button();
       this.LabelMaxYearsIntervalInfo = new System.Windows.Forms.Label();
       this.LabelMaxYearsInterval = new System.Windows.Forms.Label();
+      this.ActionAstronomyInfo = new System.Windows.Forms.Button();
       this.ActionParashahHelp = new System.Windows.Forms.Button();
       this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
-      this.EditWeekParashahIsOnSaturday = new System.Windows.Forms.CheckBox();
       this.EditUseSimhatTorahOutside = new System.Windows.Forms.CheckBox();
-      this.EditTorahEventsCountAsMoon = new System.Windows.Forms.CheckBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
       this.LabelGPSLatitude = new System.Windows.Forms.Label();
@@ -166,10 +168,6 @@
       this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
-      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelDefaultLockoutAction = new System.Windows.Forms.Label();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
@@ -233,7 +231,6 @@
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageColors = new System.Windows.Forms.TabPage();
       this.EditUseColors = new System.Windows.Forms.CheckBox();
       this.EditSelectedDayBoxColorOnlyCurrent = new System.Windows.Forms.CheckBox();
@@ -330,12 +327,16 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
+      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
-      this.ActionAstronomyInfo = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1303,6 +1304,9 @@
       // 
       this.TabPageGeneration.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageGeneration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageGeneration.Controls.Add(this.SelectUseSodHaibour);
+      this.TabPageGeneration.Controls.Add(this.SelectOmerSun);
+      this.TabPageGeneration.Controls.Add(this.SelectOmerMoon);
       this.TabPageGeneration.Controls.Add(this.LabelShabatDay);
       this.TabPageGeneration.Controls.Add(this.EditShabatDay);
       this.TabPageGeneration.Controls.Add(this.ActionUsePersonalShabat);
@@ -1313,9 +1317,7 @@
       this.TabPageGeneration.Controls.Add(this.ActionParashahHelp);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
-      this.TabPageGeneration.Controls.Add(this.EditWeekParashahIsOnSaturday);
       this.TabPageGeneration.Controls.Add(this.EditUseSimhatTorahOutside);
-      this.TabPageGeneration.Controls.Add(this.EditTorahEventsCountAsMoon);
       this.TabPageGeneration.Controls.Add(this.ActionGetGPS);
       this.TabPageGeneration.Controls.Add(this.SelectAutoGenerateYearsInterval);
       this.TabPageGeneration.Controls.Add(this.LabelGPSLatitude);
@@ -1331,6 +1333,27 @@
       this.TabPageGeneration.Controls.Add(this.EditAutoGenerateYearsInterval);
       resources.ApplyResources(this.TabPageGeneration, "TabPageGeneration");
       this.TabPageGeneration.Name = "TabPageGeneration";
+      // 
+      // SelectUseSodHaibour
+      // 
+      resources.ApplyResources(this.SelectUseSodHaibour, "SelectUseSodHaibour");
+      this.SelectUseSodHaibour.Name = "SelectUseSodHaibour";
+      this.SelectUseSodHaibour.TabStop = true;
+      this.SelectUseSodHaibour.UseVisualStyleBackColor = true;
+      // 
+      // SelectOmerSun
+      // 
+      resources.ApplyResources(this.SelectOmerSun, "SelectOmerSun");
+      this.SelectOmerSun.Name = "SelectOmerSun";
+      this.SelectOmerSun.TabStop = true;
+      this.SelectOmerSun.UseVisualStyleBackColor = true;
+      // 
+      // SelectOmerMoon
+      // 
+      resources.ApplyResources(this.SelectOmerMoon, "SelectOmerMoon");
+      this.SelectOmerMoon.Name = "SelectOmerMoon";
+      this.SelectOmerMoon.TabStop = true;
+      this.SelectOmerMoon.UseVisualStyleBackColor = true;
       // 
       // LabelShabatDay
       // 
@@ -1374,6 +1397,14 @@
       resources.ApplyResources(this.LabelMaxYearsInterval, "LabelMaxYearsInterval");
       this.LabelMaxYearsInterval.Name = "LabelMaxYearsInterval";
       // 
+      // ActionAstronomyInfo
+      // 
+      this.ActionAstronomyInfo.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionAstronomyInfo, "ActionAstronomyInfo");
+      this.ActionAstronomyInfo.Name = "ActionAstronomyInfo";
+      this.ActionAstronomyInfo.UseVisualStyleBackColor = true;
+      this.ActionAstronomyInfo.Click += new System.EventHandler(this.ActionAstronomyInfo_Click);
+      // 
       // ActionParashahHelp
       // 
       this.ActionParashahHelp.FlatAppearance.BorderSize = 0;
@@ -1408,26 +1439,11 @@
             0});
       this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
       // 
-      // EditWeekParashahIsOnSaturday
-      // 
-      resources.ApplyResources(this.EditWeekParashahIsOnSaturday, "EditWeekParashahIsOnSaturday");
-      this.EditWeekParashahIsOnSaturday.Name = "EditWeekParashahIsOnSaturday";
-      this.EditWeekParashahIsOnSaturday.UseVisualStyleBackColor = true;
-      this.EditWeekParashahIsOnSaturday.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
-      // 
       // EditUseSimhatTorahOutside
       // 
       resources.ApplyResources(this.EditUseSimhatTorahOutside, "EditUseSimhatTorahOutside");
       this.EditUseSimhatTorahOutside.Name = "EditUseSimhatTorahOutside";
       this.EditUseSimhatTorahOutside.UseVisualStyleBackColor = true;
-      this.EditUseSimhatTorahOutside.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
-      // 
-      // EditTorahEventsCountAsMoon
-      // 
-      resources.ApplyResources(this.EditTorahEventsCountAsMoon, "EditTorahEventsCountAsMoon");
-      this.EditTorahEventsCountAsMoon.Name = "EditTorahEventsCountAsMoon";
-      this.EditTorahEventsCountAsMoon.UseVisualStyleBackColor = true;
-      this.EditTorahEventsCountAsMoon.CheckedChanged += new System.EventHandler(this.EditRemindCelebrations_Changed);
       // 
       // ActionGetGPS
       // 
@@ -1489,38 +1505,6 @@
       this.ActionAutoGenerateHelp.Name = "ActionAutoGenerateHelp";
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
-      // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.TabStop = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.TabStop = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.TabStop = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.TabStop = false;
       // 
       // TabPageReminder
       // 
@@ -2043,14 +2027,6 @@
       // 
       resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
       this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
       // 
       // TabPageColors
       // 
@@ -2811,6 +2787,46 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.TabStop = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.TabStop = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.TabStop = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.TabStop = false;
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.EditMoonDayTextFormat_TextChanged);
+      // 
       // EditHebrewWordsPath
       // 
       this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
@@ -2850,14 +2866,6 @@
       resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
-      // 
-      // ActionAstronomyInfo
-      // 
-      this.ActionAstronomyInfo.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionAstronomyInfo, "ActionAstronomyInfo");
-      this.ActionAstronomyInfo.Name = "ActionAstronomyInfo";
-      this.ActionAstronomyInfo.UseVisualStyleBackColor = true;
-      this.ActionAstronomyInfo.Click += new System.EventHandler(this.ActionAstronomyInfo_Click);
       // 
       // PreferencesForm
       // 
@@ -3016,7 +3024,6 @@
     private System.Windows.Forms.CheckBox EditShowReminderInTaskBar;
     private System.Windows.Forms.CheckBox EditStartupHide;
     private System.Windows.Forms.CheckBox EditStartWithWindows;
-    private System.Windows.Forms.CheckBox EditTorahEventsCountAsMoon;
     private System.Windows.Forms.CheckBox EditTrayIconUseSpecialDayIcon;
     private System.Windows.Forms.CheckBox EditUsageStatisticsEnabled;
     private System.Windows.Forms.CheckBox EditUseColors;
@@ -3025,7 +3032,6 @@
     private System.Windows.Forms.CheckBox EditWeatherMenuItemsEnabled;
     private System.Windows.Forms.CheckBox EditWeatherOnlineUseDay;
     private System.Windows.Forms.CheckBox EditWebLinksMenuEnabled;
-    private System.Windows.Forms.CheckBox EditWeekParashahIsOnSaturday;
     private System.Windows.Forms.CheckBox EditWindowsDoubleBufferingEnabled;
     private System.Windows.Forms.CheckedListBox SelectRemindEventsBefore;
     private System.Windows.Forms.CheckedListBox SelectRemindEventsDay;
@@ -3242,5 +3248,8 @@
     private System.Windows.Forms.TabPage TabPageColors;
     private System.Windows.Forms.CheckBox EditMainFormTitleBarShowCelebration;
     private Button ActionAstronomyInfo;
+    private RadioButton SelectOmerSun;
+    private RadioButton SelectOmerMoon;
+    private RadioButton SelectUseSodHaibour;
   }
 }

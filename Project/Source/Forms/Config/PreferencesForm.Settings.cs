@@ -108,7 +108,9 @@ partial class PreferencesForm
   private void DoExportSettings()
   {
     var city = Settings.GPSCity;
-    var omer = AppTranslations.MainFormSubTitleOmer[EditTorahEventsCountAsMoon.Checked][Language.EN];
+    var omer = SelectUseSodHaibour.Checked
+               ? AppTranslations.MainFormSubTitleSod.GetLang()
+               : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
     var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
     SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;

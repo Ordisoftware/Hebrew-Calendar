@@ -78,7 +78,6 @@ partial class PreferencesForm
     Settings.StartupHide = EditStartupHide.Checked;
     Settings.TextBackground = EditTextReportBackColor.BackColor;
     Settings.TextColor = EditTextReportTextColor.BackColor;
-    Settings.TorahEventsCountAsMoon = EditTorahEventsCountAsMoon.Checked;
     Settings.UseSimhatTorahOutside = EditUseSimhatTorahOutside.Checked;
     Settings.UseColors = EditUseColors.Checked;
     Settings.MoonDayTextFormat = EditMoonDayTextFormat.Text;
@@ -126,6 +125,9 @@ partial class PreferencesForm
     Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
     Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
     Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
+    // Moon/Sun/Sod
+    Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
+    Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
     // Navigation window
     NavigationForm.Instance.Relocalize();
     // Month view
@@ -135,7 +137,7 @@ partial class PreferencesForm
     // Reminder boxes location
     Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
     Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
-    // Loclout action
+    // Lockout action
     Settings.LockSessionDefaultAction = (PowerAction)SelectLockSessionDefaultAction.SelectedItem;
     // Events
     for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )

@@ -73,6 +73,7 @@ partial class ApplicationDatabase
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           if ( day.IsNewMoon ) content.AppendLine(headerSep);
           string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? $"{day.LunarMonth:00}" : "  ";
+          // TODO what to do for sod ?
           string strDay = day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
                           ? "  "
                           : $"{day.LunarDay:00}";

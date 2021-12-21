@@ -130,6 +130,7 @@ partial class PreferencesForm
                || form.OldLatitude != Settings.GPSLatitude
                || form.OldLongitude != Settings.GPSLongitude
                || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
+               || form.OldUseSod != Settings.UseSodHaibour
                || form.OldTimeZone != Settings.TimeZone
                || form.OldUseSimhat != Settings.UseSimhatTorahOutside
                || lang != Settings.LanguageSelected;
