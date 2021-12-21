@@ -52,11 +52,7 @@ partial class PreferencesForm : Form
     ActionMonthViewThemeDark.Visible = Globals.IsDevExecutable; // TODO remove when dark theme will be ready
     this.InitDropDowns();
     if ( !Globals.IsDebugExecutable ) // TODO remove when sod will be ready
-    {
-      ActionParashahHelp.Top -= 23;
-      EditUseSimhatTorahOutside.Top -= 23;
       SelectUseSodHaibour.Enabled = false;
-    }
   }
 
   /// <summary>
