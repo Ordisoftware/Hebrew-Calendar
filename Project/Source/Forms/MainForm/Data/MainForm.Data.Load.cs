@@ -33,10 +33,11 @@ partial class MainForm
         if ( Settings.FirstLaunchV9_14 )
           LoadDataGenerate(true, true);
         else
-        if ( Settings.FirstLaunchV9_17 )
+        if ( Settings.FirstLaunchV9_17 || Settings.FirstLaunchV9_18 )
           LoadDataGenerate(true, false);
         Settings.FirstLaunchV9_14 = false;
         Settings.FirstLaunchV9_17 = false;
+        Settings.FirstLaunchV9_18 = false;
       }
       else
         LoadDataGenerate(false, true);
