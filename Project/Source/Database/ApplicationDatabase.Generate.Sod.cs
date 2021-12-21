@@ -52,4 +52,5 @@ partial class ApplicationDatabase
     }
     return true;
   }
+
 }
