@@ -26,8 +26,31 @@ partial class ApplicationDatabase
   /// </remarkl>
   public bool AnalyseDaysSod(int progressCount)
   {
-    // TODO Define months, celebrations, and parashot.
-    return false;
+    LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
+                                    progressCount,
+                                    Program.LoadingFormGenerate);
+    var Chrono = new Stopwatch();
+    Chrono.Start();
+    var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
+    try
+    {
+      foreach ( var day in LunisolarDays )
+        try
+        {
+          LoadingForm.Instance.DoProgress();
+          return false; // TODO define months, celebrations, and parashot.
+        }
+        catch ( Exception ex )
+        {
+          if ( AddGenerateErrorAndCheckIfTooMany(nameof(AnalyseDaysOmer), day.DateAsString, ex) )
+            return false;
+        }
+    }
+    finally
+    {
+      Chrono.Stop();
+      Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
+    }
+    return true;
   }
-
 }
