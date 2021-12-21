@@ -228,7 +228,7 @@ It can also happen that over 10 or 20 years there is a lag of one month due to A
 
 But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa.
 
-The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod Ha'ibour (science of moving stars).
+The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod Ha'ibur (science of moving stars).
 
 #### What are the times of celebration?
 
