@@ -74,7 +74,7 @@ partial class ApplicationDatabase
             {
               LoadingForm.Instance.DoProgress();
               var row = new LunisolarDay { Date = new DateTime(year, month, day) };
-              if ( !InitializeDayOmer(row) ) break;
+              if ( !InitializeDay(row) ) break;
               LunisolarDays.Add(row);
             }
             catch ( Exception ex )
@@ -99,7 +99,7 @@ partial class ApplicationDatabase
   /// <summary>
   /// Initializes a day.
   /// </summary>
-  private bool InitializeDayOmer(LunisolarDay day)
+  private bool InitializeDay(LunisolarDay day)
   {
     try
     {
@@ -150,7 +150,7 @@ partial class ApplicationDatabase
     }
     catch ( Exception ex )
     {
-      if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDayOmer), day.DateAsString, ex) )
+      if ( AddGenerateErrorAndCheckIfTooMany(nameof(InitializeDay), day.DateAsString, ex) )
         return false;
     }
     return true;
