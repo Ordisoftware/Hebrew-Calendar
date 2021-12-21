@@ -207,12 +207,13 @@ partial class MainForm
         }
         catch ( Exception ex )
         {
-          if ( AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
+          if ( ApplicationDatabase.Instance.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
             return;
         }
     }
     finally
     {
+      // TODO show errors like with generatedays
       Globals.ChronoShowData.Stop();
       Settings.BenchmarkFillCalendar = Globals.ChronoShowData.ElapsedMilliseconds;
       SystemManager.TryCatch(Settings.Store);

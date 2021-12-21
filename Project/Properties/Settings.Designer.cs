@@ -2743,5 +2743,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["FirstLaunchV9_18"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseSodHaibour {
+            get {
+                return ((bool)(this["UseSodHaibour"]));
+            }
+            set {
+                this["UseSodHaibour"] = value;
+            }
+        }
     }
 }

@@ -94,7 +94,7 @@ partial class MainForm
         Globals.ChronoStartingApp.Start();
       }
     if ( !isTextReportLoaded )
-      CalendarText.Text = GenerateReportText();
+      CalendarText.Text = ApplicationDatabase.Instance.GenerateReport();
   }
 
   private void LoadDataGenerate(bool keepYears, bool runPreferences)

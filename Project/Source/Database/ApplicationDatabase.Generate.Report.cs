@@ -14,23 +14,23 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class MainForm
+partial class ApplicationDatabase
 {
 
-  const string SeparatorV = "|";
-  const string SeparatorH = "-";
-  const string ColumnSepLeft = SeparatorV + " ";
-  const string ColumnSepInner = " " + SeparatorV + " ";
-  const string ColumnSepRight = " " + SeparatorV;
-  const string MoonNoText = "        ";
-  const string ShabatText = "[S]";
-  const string MoonFullText = "o";
-  public readonly string MoonNewText = "•";
+  public const string SeparatorV = "|";
+  public const string SeparatorH = "-";
+  public const string ColumnSepLeft = SeparatorV + " ";
+  public const string ColumnSepInner = " " + SeparatorV + " ";
+  public const string ColumnSepRight = " " + SeparatorV;
+  public const string MoonNoText = "        ";
+  public const string ShabatText = "[S]";
+  public const string MoonFullText = "o";
+  public const string MoonNewText = "•";
 
-  private readonly bool ShowWinterSummerHour = true;
-  private readonly bool ShowShabat = true;
+  static public bool ShowWinterSummerHour { get; set; } = true;
+  static public bool ShowShabat { get; set; } = true;
 
-  private readonly Dictionary<ReportFieldText, int> CalendarFieldSize = new()
+  static public readonly Dictionary<ReportFieldText, int> CalendarFieldSize = new()
   {
     { ReportFieldText.Date, 16 },
     { ReportFieldText.Month, 11 },
@@ -40,7 +40,7 @@ partial class MainForm
   };
 
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
-  private string GenerateReportText(bool processInsert = false)
+  public string GenerateReport(bool processInsert = false)
   {
     var Chrono = new Stopwatch();
     Chrono.Start();
@@ -66,7 +66,7 @@ partial class MainForm
       foreach ( LunisolarDay day in LunisolarDays )
         try
         {
-          if ( processInsert ) ApplicationDatabase.Instance.Connection.Insert(day);
+          if ( processInsert ) Connection.Insert(day);
           var dayDate = day.Date;
           LoadingForm.Instance.DoProgress();
           if ( day.LunarMonth == 0 ) continue;
@@ -128,7 +128,7 @@ partial class MainForm
         }
         catch ( Exception ex )
         {
-          GenerateErrors.Add($"{day.DateAsString}: [{nameof(GenerateReportText)}] { ex.Message}");
+          LastGenerationErrors.Add($"{day.DateAsString}: [{nameof(GenerateReport)}] { ex.Message}");
         }
       content.AppendLine(headerSep);
       try
