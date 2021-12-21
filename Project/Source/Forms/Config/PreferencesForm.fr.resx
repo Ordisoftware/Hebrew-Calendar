@@ -917,6 +917,6 @@
     <value>Utiliser le omer des jours du soleil</value>
   </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
-    <value>Utiliser le omer du sod ha'ibour</value>
+    <value>Utiliser le sod ha'ibour (omer du soleil)</value>
   </data>
 </root>
