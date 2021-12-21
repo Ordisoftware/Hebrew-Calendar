@@ -218,7 +218,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### Why do the dates generated differ from those in the Hebrew authorities' calendar?
 
-Astronomically speaking, there is no mistake, unless there is a mistake to be corrected.
+The dates generated with the strict omer of the moon or the sun can differ from those in the Hebrew authorities' calendar, but astronomically speaking, there is no mistake, unless there is a problem to be corrected.
 
 The software calculates the days according to the moon and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.
 
