@@ -55,7 +55,7 @@ partial class PreferencesForm : Form
     {
       ActionParashahHelp.Top -= 23;
       EditUseSimhatTorahOutside.Top -= 23;
-      SelectUseSodHaibour.Visible = false;
+      SelectUseSodHaibour.Enabled = false;
     }
   }
 
