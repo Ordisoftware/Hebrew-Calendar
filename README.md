@@ -228,6 +228,8 @@ It can also happen that over 10 or 20 years there is a lag of one month due to A
 
 But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa.
 
+The software does not yet offer an option to generate a calendar conforming to Halakhah and Sod Ha'ibour (Knowledge of the cycle of stars, or Mystery of the light of moving stars).
+
 #### What are the times of celebration?
 
 The times of the Torah's celebrations are Pesach or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
