@@ -2834,13 +2834,13 @@
     <value>310, 79</value>
   </data>
   <data name="SelectUseSodHaibour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
+    <value>150, 17</value>
   </data>
   <data name="SelectUseSodHaibour.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
-    <value>Use sod ha'ibur omer</value>
+    <value>Use sod ha'ibur (sun omer)</value>
   </data>
   <data name="SelectUseSodHaibour.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8862,9 +8862,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>599, 501</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
