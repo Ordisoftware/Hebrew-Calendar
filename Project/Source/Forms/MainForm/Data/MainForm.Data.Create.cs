@@ -259,6 +259,7 @@ partial class MainForm
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     bool shabatMutex = false;
     int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
+    int simhatTorahRoot = simhatTorah;
     LunisolarDay dayRemap1 = null;
     LunisolarDay dayRemap2 = null;
     DateTime date;
@@ -303,17 +304,24 @@ partial class MainForm
     {
       if ( day.TorahEvent == TorahCelebrationDay.PessahD1 )
         shabatMutex = true;
-      if ( day.LunarMonth == 7 && day.LunarDay == simhatTorah - 1 )
+      if ( day.LunarMonth == 7 && day.LunarDay == simhatTorah )
       {
-        remap(day);
-        indexParashah = 0;
-        dayRemap1 = day;
+        if ( day.Date.DayOfWeek == shabatDay )
+          simhatTorah++;
+        else
+        {
+          remap(day);
+          indexParashah = 0;
+          dayRemap1 = day;
+        }
       }
       else
       if ( !shabatMutex && date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < parashot.Count )
       {
         day.ParashahID = parashot[indexParashah].ID;
         indexParashah++;
+        if ( simhatTorahRoot != simhatTorah )
+          simhatTorah = simhatTorahRoot;
       }
       if ( day.TorahEvent == TorahCelebrationDay.PessahD7 )
         shabatMutex = false;
