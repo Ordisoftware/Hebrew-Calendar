@@ -354,6 +354,7 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 #### In progress - Version 9.18
 
 - Few fixes and imrovements.
+- Add Judaism 101 website link.
 
 #### 2021.12.19 - Version 9.17
 
