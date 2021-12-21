@@ -338,10 +338,11 @@ The generation of parashot relating to Shabatot is not guaranteed to be traditio
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Add option to set primary source for check update between author website or GitHub.
 - Add print boards.
+- Add dark theme for monthly view.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Add dark theme for monthly view.
+- Add option to generate calendar using the rules of the Sod Ha'ibour instead of the strict astronomical moon or sun omer.
 
 ## Changelog
 
