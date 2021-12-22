@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -45,11 +45,14 @@ partial class MainForm
     {
       [ViewMode.Text] = (interval) =>
       {
-        SaveTextDialog.FileName = GetExportDataFilename(interval);
-        if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
-        filePath = SaveTextDialog.FileName;
-        File.WriteAllText(filePath, string.Join(Globals.NL, GetTextReportLines(interval)), Encoding.UTF8);
-        return true;
+        return ProcessTextExport(interval, lines =>
+        {
+          SaveTextDialog.FileName = GetExportDataFilename(interval);
+          if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
+          filePath = SaveTextDialog.FileName;
+          File.WriteAllText(filePath, string.Join(Globals.NL, lines), Encoding.UTF8);
+          return true;
+        });
       },
       [ViewMode.Month] = (interval) =>
       {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Printing;
@@ -26,8 +26,19 @@ partial class MainForm
   {
     var process = new ExportActions()
     {
-      [ViewMode.Text] = (interval) => { ExportPrintTextReport(interval); return true; },
-      [ViewMode.Month] = (interval) => { ExportPrintMonth(interval); return true; },
+      [ViewMode.Text] = (interval) =>
+      {
+        return ProcessTextExport(interval, lines =>
+        {
+          ExportPrintTextReport(lines);
+          return true;
+        });
+      },
+      [ViewMode.Month] = (interval) =>
+      {
+        ExportPrintMonth(interval);
+        return true;
+      },
       [ViewMode.Grid] = null
     };
     DoExport(ExportAction.Print, process, null);

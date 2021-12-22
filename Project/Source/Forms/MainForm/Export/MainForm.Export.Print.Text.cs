@@ -11,22 +11,21 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
 {
 
-  private void ExportPrintTextReport(ExportInterval interval)
+  private void ExportPrintTextReport(IEnumerable<string> lines)
   {
-    var lines = GetTextReportLines(interval).ToList();
     var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
     float fontHeight = -1;
     float marginLeft = -1;
     float marginTop = -1;
     int linesPerPage = -1;
     int countPages = -1;
-    int countTotalLines = lines.Count;
+    int countTotalLines = lines.Count();
     bool askToContinue = true;
     PrinterCurrentLine = 0;
     ExportPrintRun(false, (s, e) =>
@@ -59,7 +58,7 @@ partial class MainForm
           askToContinue = false;
       while ( countLinesInPage < linesPerPage && PrinterCurrentLine < countTotalLines )
       {
-        string line = lines[PrinterCurrentLine];
+        string line = lines.ElementAt(PrinterCurrentLine);
         posY = marginTop + countLinesInPage * fontHeight;
         e.Graphics.DrawString(line, font, Brushes.Black, marginLeft, posY);
         countLinesInPage++;
