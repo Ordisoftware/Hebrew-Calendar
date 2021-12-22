@@ -3228,7 +3228,7 @@
     <value>87, 13</value>
   </data>
   <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Open GPS finder</value>
@@ -3450,7 +3450,7 @@
     <value>266, 17</value>
   </data>
   <data name="EditAskRegenerateIfIntervalGreater.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
     <value>Ask to regenerate at startup if the interval is greater</value>
@@ -3532,7 +3532,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionAutoGenerateHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.Name" xml:space="preserve">
     <value>ActionAutoGenerateHelp</value>
@@ -3556,7 +3556,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
     <value>EditGPSLatitude</value>
@@ -3586,7 +3586,7 @@
     <value>520, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
     <value>EditTimeZone</value>
@@ -3610,7 +3610,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
     <value>EditGPSLongitude</value>
@@ -8876,7 +8876,7 @@
     <value>579, 448</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
     <value>TabControl</value>
