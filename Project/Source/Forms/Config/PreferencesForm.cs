@@ -470,6 +470,20 @@ partial class PreferencesForm : Form
 
   #endregion
 
+  #region Parashah
+
+  private void EditCalendarShowParashah_Changed(object sender, EventArgs e)
+  {
+    if ( IsReady ) MustRefreshMonthView = true;
+    EditMainFormTitleBarShowWeeklyParashah.Enabled = EditCalendarShowParashah.Checked;
+    EditParashahCaptionWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
+    EditReminderShabatShowParashah.Enabled = EditCalendarShowParashah.Checked;
+    EditWeeklyParashahShowAtStartup.Enabled = EditCalendarShowParashah.Checked;
+    EditWeeklyParashahShowAtNewWeek.Enabled = EditCalendarShowParashah.Checked;
+  }
+
+  #endregion
+
   #region Text Report
 
   private void EditTextReportFontName_Changed(object sender, EventArgs e)
@@ -505,12 +519,7 @@ partial class PreferencesForm : Form
     EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
   }
 
-  private void EditMonthViewFontSize_ValueChanged(object sender, EventArgs e)
-  {
-    if ( IsReady ) MustRefreshMonthView = EditMonthViewFontSize.Value != Settings.MonthViewFontSize;
-  }
-
-  private void EditMoonDayTextFormat_TextChanged(object sender, EventArgs e)
+  private void EditMonthViewOption_Changed(object sender, EventArgs e)
   {
     if ( IsReady ) MustRefreshMonthView = true;
   }
@@ -519,25 +528,6 @@ partial class PreferencesForm : Form
   {
     MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
                                      new Point(0, ActionMoonDayTextFormatReset.Height));
-  }
-
-  private void EditMonthViewOptionChanged(object sender, EventArgs e)
-  {
-    if ( !IsReady ) return;
-    MustRefreshMonthView = true;
-    if ( sender == EditCalendarShowParashah )
-    {
-      bool value = EditCalendarShowParashah.Checked;
-      string message = AppTranslations.SetAllParashahOptions[value].GetLang();
-      if ( DisplayManager.QueryYesNo(message) )
-      {
-        EditMainFormTitleBarShowWeeklyParashah.Checked = value;
-        EditParashahCaptionWithBookAndRef.Checked = value;
-        EditReminderShabatShowParashah.Checked = value;
-        EditWeeklyParashahShowAtStartup.Checked = value;
-        EditWeeklyParashahShowAtNewWeek.Checked = value;
-      }
-    }
   }
 
   private void EditUseColors_CheckedChanged(object sender, EventArgs e)
