@@ -226,7 +226,7 @@ Thus the software can sometimes indicate the same days as the official calendar,
 
 It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesach which is that Pesach is the 14th day of the first seasonal month in the first full moon following the spring equinox.
 
-But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa.
+But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.
 
 The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod Ha'ibur (science of moving stars).
 
