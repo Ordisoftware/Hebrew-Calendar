@@ -291,7 +291,7 @@
       <Value Profile="(Default)">250, 250, 250</Value>
     </Setting>
     <Setting Name="MoonDayTextFormat" Type="System.String" Scope="User">
-      <Value Profile="(Default)">#%DAYNUM% %MONTHNAME% [%MONTHNUM%]</Value>
+      <Value Profile="(Default)">%MONTHNAME% [%MONTHNUM%] #%DAYNUM%</Value>
     </Setting>
     <Setting Name="LastSuspendDelaySelected" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">60</Value>
