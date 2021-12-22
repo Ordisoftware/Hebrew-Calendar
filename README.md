@@ -220,7 +220,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 The dates generated with the strict omer of the moon or the sun can differ from those in the Hebrew authorities' calendar, but astronomically speaking, there is no mistake, unless there is a problem to be corrected.
 
-The software calculates the days according to the moon and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.
+The software calculates the days according to the moon or the sun and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.
 
 Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of this new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.
 
