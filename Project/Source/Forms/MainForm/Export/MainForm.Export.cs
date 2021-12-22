@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -67,6 +67,14 @@ partial class MainForm
       else
         return true;
     }
+  }
+
+  private bool ProcessTextExport(ExportInterval interval, Func<IEnumerable<string>, bool> action)
+  {
+    var lines = GetTextReportLines(interval);
+    if ( lines.Any() ) return action(lines);
+    DisplayManager.ShowInformation(SysTranslations.EmptySlot.GetLang().TrimFirstLast().Titleize());
+    return false;
   }
 
 }

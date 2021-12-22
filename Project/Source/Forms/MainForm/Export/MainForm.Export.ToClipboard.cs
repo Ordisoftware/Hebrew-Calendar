@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -23,8 +23,11 @@ partial class MainForm
     {
       [ViewMode.Text] = (interval) =>
       {
-        Clipboard.SetText(string.Join(Globals.NL, GetTextReportLines(interval)));
-        return true;
+        return ProcessTextExport(interval, lines =>
+        {
+          Clipboard.SetText(string.Join(Globals.NL, lines));
+          return true;
+        });
       },
       [ViewMode.Month] = (_) =>
       {
