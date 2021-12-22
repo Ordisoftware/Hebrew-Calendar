@@ -537,7 +537,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionManageBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
     <value>ActionManageBookmarks</value>
@@ -594,7 +594,7 @@
     <value>40, 20</value>
   </data>
   <data name="EditDateBookmarksCount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.Name" xml:space="preserve">
     <value>EditDateBookmarksCount</value>
@@ -621,7 +621,7 @@
     <value>490, 18</value>
   </data>
   <data name="EditVolume.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;EditVolume.Name" xml:space="preserve">
     <value>EditVolume</value>
@@ -981,7 +981,7 @@
     <value>210, 17</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
     <value>Show current celebration in the title bar</value>
@@ -2753,7 +2753,7 @@
     <value>166, 17</value>
   </data>
   <data name="SelectUseSodHaibour.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>5</value>
   </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Use sod ha'ibur with sun omer</value>
@@ -2783,7 +2783,7 @@
     <value>115, 17</value>
   </data>
   <data name="SelectOmerSun.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>4</value>
   </data>
   <data name="SelectOmerSun.Text" xml:space="preserve">
     <value>Use sun days omer</value>
@@ -2813,7 +2813,7 @@
     <value>124, 17</value>
   </data>
   <data name="SelectOmerMoon.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>3</value>
   </data>
   <data name="SelectOmerMoon.Text" xml:space="preserve">
     <value>Use moon days omer</value>
@@ -2979,7 +2979,7 @@
     <value>28, 13</value>
   </data>
   <data name="LabelMaxYearsIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="LabelMaxYearsIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
@@ -3055,7 +3055,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionAstronomyInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionAstronomyInfo.Name" xml:space="preserve">
     <value>ActionAstronomyInfo</value>
@@ -3098,7 +3098,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionParashahHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionParashahHelp.Name" xml:space="preserve">
     <value>ActionParashahHelp</value>
@@ -3141,7 +3141,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionCountAsMoonHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ActionCountAsMoonHelp.Name" xml:space="preserve">
     <value>ActionCountAsMoonHelp</value>
@@ -3165,7 +3165,7 @@
     <value>50, 20</value>
   </data>
   <data name="EditMaxYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;EditMaxYearsInterval.Name" xml:space="preserve">
     <value>EditMaxYearsInterval</value>
@@ -3195,7 +3195,7 @@
     <value>190, 17</value>
   </data>
   <data name="EditUseSimhatTorahOutside.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Use Sim'hat Torah outside of Israël</value>
@@ -3228,7 +3228,7 @@
     <value>87, 13</value>
   </data>
   <data name="ActionGetGPS.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>21</value>
   </data>
   <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Open GPS finder</value>
@@ -3273,7 +3273,7 @@
     <value>26, 26</value>
   </data>
   <data name="SelectAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;SelectAutoGenerateYearsInterval.Name" xml:space="preserve">
     <value>SelectAutoGenerateYearsInterval</value>
@@ -3378,7 +3378,7 @@
     <value>185, 17</value>
   </data>
   <data name="EditBigCalendarWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Display an alert for a large interval</value>
@@ -3450,7 +3450,7 @@
     <value>266, 17</value>
   </data>
   <data name="EditAskRegenerateIfIntervalGreater.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>17</value>
   </data>
   <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
     <value>Ask to regenerate at startup if the interval is greater</value>
@@ -3486,7 +3486,7 @@
     <value>271, 17</value>
   </data>
   <data name="EditAutoRegenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
     <value>Auto-generate data for these years interval if expired</value>
@@ -3532,7 +3532,7 @@
     <value>26, 26</value>
   </data>
   <data name="ActionAutoGenerateHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;ActionAutoGenerateHelp.Name" xml:space="preserve">
     <value>ActionAutoGenerateHelp</value>
@@ -3556,7 +3556,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Name" xml:space="preserve">
     <value>EditGPSLatitude</value>
@@ -3586,7 +3586,7 @@
     <value>520, 60</value>
   </data>
   <data name="EditTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Name" xml:space="preserve">
     <value>EditTimeZone</value>
@@ -3610,7 +3610,7 @@
     <value>75, 20</value>
   </data>
   <data name="EditGPSLongitude.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Name" xml:space="preserve">
     <value>EditGPSLongitude</value>
@@ -3634,7 +3634,7 @@
     <value>35, 20</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>14</value>
   </data>
   <data name="EditAutoGenerateYearsInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -5020,7 +5020,7 @@
     <value>202, 17</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
     <value>Show weekly parashah in the title bar</value>
@@ -5053,7 +5053,7 @@
     <value>228, 17</value>
   </data>
   <data name="EditReminderShabatShowParashah.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
     <value>Show weekly parashah in the reminder box</value>
@@ -5083,7 +5083,7 @@
     <value>312, 17</value>
   </data>
   <data name="EditParashahCaptionWithBookAndRef.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>5</value>
   </data>
   <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
     <value>Show weekly parashah with book name and verse reference</value>
@@ -5119,7 +5119,7 @@
     <value>257, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
     <value>Show weekly parashah description on new week</value>
@@ -5188,7 +5188,7 @@
     <value>237, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
     <value>Show weekly parashah description at startup</value>
@@ -8876,7 +8876,7 @@
     <value>579, 448</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
     <value>TabControl</value>
