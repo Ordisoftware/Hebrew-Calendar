@@ -722,7 +722,7 @@
     <value>122, 17</value>
   </data>
   <data name="EditCalendarShowParashah.Text" xml:space="preserve">
-    <value>Indiquer la parashah</value>
+    <value>Activer la parashah de la semaine</value>
   </data>
   <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 17</value>

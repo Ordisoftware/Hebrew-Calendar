@@ -63,6 +63,7 @@ partial class PreferencesForm
     EditRemindCelebrations_Changed(null, null);
     EditUseColors_CheckedChanged(null, null);
     EditLogEnabled_CheckedChanged(null, null);
+    EditCalendarShowParashah_Changed(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
