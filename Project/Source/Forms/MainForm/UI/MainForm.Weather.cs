@@ -19,7 +19,7 @@ using Newtonsoft.Json.Linq;
 partial class MainForm
 {
 
-  private void OpenOlineWeather()
+  private void OpenOnlineWeather()
   {
     switch ( Settings.WeatherOnlineProvider )
     {

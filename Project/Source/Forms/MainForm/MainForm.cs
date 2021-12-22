@@ -686,7 +686,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOnlineWeather_Click(object sender, EventArgs e)
   {
-    OpenOlineWeather();
+    OpenOnlineWeather();
   }
 
   /// <summary>
