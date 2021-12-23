@@ -357,7 +357,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### 2021.12.26 - Version 9.19
 
 - Improve preferences form.
-- Fix celebrations notice.
+- Improve notices.
 
 #### 2021.12.21 - Version 9.18
 
