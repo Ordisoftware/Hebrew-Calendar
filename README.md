@@ -270,7 +270,7 @@ Israël is the conceptual worldwide land of the righteous benevolent whose body+
 
 The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.
 
-The generation of parashot relating to Shabatot is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
+The generation of parashot relating to Shabatot with the omer of the moon or the sun without the sod ha'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
 
 ## Keyboard shortcuts
 
