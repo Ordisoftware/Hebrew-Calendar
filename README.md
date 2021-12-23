@@ -354,7 +354,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 
-#### 2021.12.26 - Version 9.19
+#### 2021.12.23 - Version 9.19
 
 - Improve preferences form.
 - Improve notices.
