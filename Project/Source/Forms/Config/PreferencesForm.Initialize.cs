@@ -82,6 +82,13 @@ partial class PreferencesForm
       MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
       // TODO update query when sod will be ready
       Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
+      if ( Settings.UseSodHaibour )
+        SelectUseSodHaibour.Checked = true;
+      else
+      if ( Settings.TorahEventsCountAsMoon )
+        SelectOmerMoon.Checked = true;
+      else
+        SelectOmerSun.Checked = true;
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
         ActionUsePersonalShabat_LinkClicked(null, null);
