@@ -26,16 +26,21 @@ partial class MainForm
     if ( Globals.IsReady )
       switch ( keyData )
       {
-        // System close
+        // Top menu system
+        case Keys.Alt | Keys.S:
+          ActionSettings.ShowDropDown();
+          return true;
+        case Keys.Alt | Keys.I:
+          ActionInformation.ShowDropDown();
+          return true;
+        case Keys.F9:
+          ActionPreferences.PerformClick();
+          return true;
         case Keys.Alt | Keys.Control | Keys.F4:
           MenuExit.PerformClick();
           return true;
         case Keys.Escape:
           if ( EditESCtoExit.Checked ) Close();
-          return true;
-        // System tools
-        case Keys.F9:
-          ActionPreferences.PerformClick();
           return true;
         // Change view
         case Keys.Control | Keys.Shift | Keys.Tab:
@@ -44,7 +49,18 @@ partial class MainForm
         case Keys.Control | Keys.Tab:
           SetView(Settings.CurrentView.Next(ViewMode.None));
           return true;
-        // Application functions
+        case Keys.Alt | Keys.V:
+          ActionView.ShowDropDown();
+          return true;
+        // Top menu system
+        case Keys.Alt | Keys.T:
+          ActionTools.ShowDropDown();
+          return true;
+        case Keys.Alt | Keys.L:
+          if ( ActionWebLinks.Enabled )
+            ActionWebLinks.ShowDropDown();
+          return true;
+        // Top menu actions
         case Keys.F4:
           ActionViewCelebrations.PerformClick();
           return true;
@@ -61,29 +77,12 @@ partial class MainForm
         case Keys.Control | Keys.N:
           ActionNavigate.PerformClick();
           return true;
-        // Application menus
-        case Keys.Alt | Keys.T:
-          ActionTools.ShowDropDown();
-          return true;
+        // Weekly parashah
         case Keys.Alt | Keys.P:
           if ( !ActionWeeklyParashah.Enabled || ActionWeeklyParashah.DropDownItems.Count <= 0 ) break;
           ActionTools.ShowDropDown();
           ActionWeeklyParashah.ShowDropDown();
           ActionWeeklyParashah.DropDownItems[0].Select();
-          return true;
-        case Keys.Alt | Keys.L:
-          if ( ActionWebLinks.Enabled )
-            ActionWebLinks.ShowDropDown();
-          return true;
-        case Keys.Alt | Keys.V:
-          ActionView.ShowDropDown();
-          return true;
-        // System menus
-        case Keys.Alt | Keys.S:
-          ActionSettings.ShowDropDown();
-          return true;
-        case Keys.Alt | Keys.I:
-          ActionInformation.ShowDropDown();
           return true;
         // Export
         case Keys.Control | Keys.S:
@@ -110,6 +109,7 @@ partial class MainForm
           else
             GoToDate(DateTime.Today);
           return true;
+        // Context menu
         case Keys.Apps:
           if ( Settings.CurrentView != ViewMode.Month ) break;
           SystemManager.InputSimulator.Mouse.RightButtonClick();
