@@ -39,7 +39,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   public LunisolarDay GetDay(DateTime datetime)
   {
     // TODO remove implicit sod check & check all var usage in code
-    return Program.Settings.TorahEventsCountAsMoon && !Program.Settings.UseSodHaibour 
+    return Program.Settings.TorahEventsCountAsMoon && !Program.Settings.UseSodHaibour
            ? GetDayMoon(datetime)
            : GetDaySun(datetime);
   }

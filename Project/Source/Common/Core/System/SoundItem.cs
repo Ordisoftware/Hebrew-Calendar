@@ -26,14 +26,16 @@ class SoundItem
 
   static volatile private List<SoundItem> WindowsSounds;
 
+  static private readonly object Locker = new();
+
   static public List<SoundItem> GetApplicationSounds()
   {
-    return ApplicationSounds ??= GetSounds(Globals.ApplicationSoundsFolderPath);
+    lock ( Locker ) return ApplicationSounds ??= GetSounds(Globals.ApplicationSoundsFolderPath);
   }
 
   static public List<SoundItem> GetWindowsSounds()
   {
-    return WindowsSounds ??= GetSounds(Globals.WindowsMediaFolderPath);
+    lock ( Locker ) return WindowsSounds ??= GetSounds(Globals.WindowsMediaFolderPath);
   }
 
   static private List<SoundItem> GetSounds(string path, string filter = "*.wav")

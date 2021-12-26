@@ -76,7 +76,7 @@ static partial class DisplayManager
     if ( control == null ) throw new ArgumentNullException(nameof(control));
     if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
     Exception exception = null;
-    Semaphore semaphore = null;
+    SemaphoreSlim semaphore = null;
     var processAction = () =>
     {
       try
@@ -95,9 +95,9 @@ static partial class DisplayManager
     };
     if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
     {
-      if ( wait ) semaphore = new Semaphore(0, 1);
+      if ( wait ) semaphore = new SemaphoreSlim(0, 1);
       control.BeginInvoke(wait ? processActionWait : processAction);
-      semaphore?.WaitOne();
+      semaphore?.Wait();
     }
     else
       processAction();
