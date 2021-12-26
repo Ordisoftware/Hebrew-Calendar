@@ -30,7 +30,7 @@ partial class ApplicationDatabase
                                     Program.LoadingFormGenerate);
     var Chrono = new Stopwatch();
     Chrono.Start();
-    var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
+    //var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
     try
     {
       foreach ( var day in LunisolarDays )

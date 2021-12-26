@@ -80,4 +80,10 @@ static partial class SysTranslations
     [Language.FR] = "Sauvegarde des données..."
   };
 
+  static public readonly TranslationsDictionary CalcutalingDataMemorySize = new()
+  {
+    [Language.EN] = "Calculating data memory size...",
+    [Language.FR] = "Calcul de la taille mémoire des données..."
+  };
+
 }
