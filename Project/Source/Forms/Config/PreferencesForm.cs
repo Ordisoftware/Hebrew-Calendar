@@ -122,7 +122,6 @@ partial class PreferencesForm : Form
 
   private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
   {
-    // TODO complete celebrations notice with sod haibour 
     MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
   }
 
