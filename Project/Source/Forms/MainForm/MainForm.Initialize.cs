@@ -43,7 +43,7 @@ partial class MainForm
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ContextMenuStripDay.ImageList = ImageListRisesAndSets;
-    ContextMenuDaySunrise.ImageIndex = 1;
+    ContextMenuDaySunrise.ImageIndex = 0;
     ContextMenuDaySunset.ImageIndex = 1;
     ToolStrip.Renderer = new CheckedButtonsToolStripRenderer();
     SystemEvents.SessionEnding += SessionEnding;
