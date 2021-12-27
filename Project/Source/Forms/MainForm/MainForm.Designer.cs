@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -197,7 +197,16 @@
       this.ContextMenuDayMoonrise = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySetAsActive = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayGoToToday = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,16 +222,7 @@
       this.ContextMenuDayDatesDiffToToday = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayDatesDiffToSelected = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.PanelMain.SuspendLayout();
@@ -374,14 +374,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1460,13 +1460,13 @@
             this.ContextMenuDayParashah,
             this.ContextMenuDayCelebrationVersesBoard,
             this.toolStripSeparator18,
+            this.ContextMenuDaySelectDate,
+            this.ContextMenuDayClearSelection,
+            this.toolStripSeparator19,
             this.ContextMenuDaySetAsActive,
             this.ContextMenuDayGoToToday,
             this.ContextMenuDayGoToSelected,
             this.toolStripSeparator20,
-            this.ContextMenuDaySelectDate,
-            this.ContextMenuDayClearSelection,
-            this.toolStripSeparator19,
             this.ContextMenuDayGoToBookmark,
             this.ContextMenuDaySaveBookmark,
             this.ContextMenuDayManageBookmark,
@@ -1514,11 +1514,68 @@
       this.ContextMenuDayTimesSeparator.Name = "ContextMenuDayTimesSeparator";
       resources.ApplyResources(this.ContextMenuDayTimesSeparator, "ContextMenuDayTimesSeparator");
       // 
-      // ContextMenuDayNavigation
+      // ContextMenuDayParashah
       // 
-      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
-      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
-      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
+      this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuDayParashahShowDescription,
+            this.toolStripSeparator24,
+            this.ContextMenuDayParashahStudy,
+            this.ContextMenuDayParashahRead,
+            this.toolStripSeparator22,
+            this.ContextMenuOpenHebrewWordsVerse,
+            this.toolStripSeparator16,
+            this.ContextMenuDayParashotBoard});
+      resources.ApplyResources(this.ContextMenuDayParashah, "ContextMenuDayParashah");
+      this.ContextMenuDayParashah.Name = "ContextMenuDayParashah";
+      // 
+      // ContextMenuDayParashahShowDescription
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
+      this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
+      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      // 
+      // toolStripSeparator24
+      // 
+      this.toolStripSeparator24.Name = "toolStripSeparator24";
+      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
+      // 
+      // ContextMenuDayParashahStudy
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahStudy, "ContextMenuDayParashahStudy");
+      this.ContextMenuDayParashahStudy.Name = "ContextMenuDayParashahStudy";
+      // 
+      // ContextMenuDayParashahRead
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahRead, "ContextMenuDayParashahRead");
+      this.ContextMenuDayParashahRead.Name = "ContextMenuDayParashahRead";
+      // 
+      // toolStripSeparator22
+      // 
+      this.toolStripSeparator22.Name = "toolStripSeparator22";
+      resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+      // 
+      // ContextMenuOpenHebrewWordsVerse
+      // 
+      resources.ApplyResources(this.ContextMenuOpenHebrewWordsVerse, "ContextMenuOpenHebrewWordsVerse");
+      this.ContextMenuOpenHebrewWordsVerse.Name = "ContextMenuOpenHebrewWordsVerse";
+      this.ContextMenuOpenHebrewWordsVerse.Click += new System.EventHandler(this.ContextMenuOpenHebrewWordsVerse_Click);
+      // 
+      // toolStripSeparator16
+      // 
+      this.toolStripSeparator16.Name = "toolStripSeparator16";
+      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
+      // 
+      // ContextMenuDayParashotBoard
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
+      this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
+      this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      // 
+      // ContextMenuDayCelebrationVersesBoard
+      // 
+      resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
+      this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
+      this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
       // 
       // toolStripSeparator18
       // 
@@ -1605,68 +1662,11 @@
       this.toolStripSeparator17.Name = "toolStripSeparator17";
       resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
       // 
-      // ContextMenuDayCelebrationVersesBoard
+      // ContextMenuDayNavigation
       // 
-      resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
-      this.ContextMenuDayCelebrationVersesBoard.Name = "ContextMenuDayCelebrationVersesBoard";
-      this.ContextMenuDayCelebrationVersesBoard.Click += new System.EventHandler(this.ContextMenuDayCelebrationVersesBoard_Click);
-      // 
-      // ContextMenuDayParashah
-      // 
-      this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuDayParashahShowDescription,
-            this.toolStripSeparator24,
-            this.ContextMenuDayParashahStudy,
-            this.ContextMenuDayParashahRead,
-            this.toolStripSeparator22,
-            this.ContextMenuOpenHebrewWordsVerse,
-            this.toolStripSeparator16,
-            this.ContextMenuDayParashotBoard});
-      resources.ApplyResources(this.ContextMenuDayParashah, "ContextMenuDayParashah");
-      this.ContextMenuDayParashah.Name = "ContextMenuDayParashah";
-      // 
-      // ContextMenuDayParashahShowDescription
-      // 
-      resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
-      this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
-      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
-      // 
-      // toolStripSeparator24
-      // 
-      this.toolStripSeparator24.Name = "toolStripSeparator24";
-      resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
-      // 
-      // ContextMenuDayParashahStudy
-      // 
-      resources.ApplyResources(this.ContextMenuDayParashahStudy, "ContextMenuDayParashahStudy");
-      this.ContextMenuDayParashahStudy.Name = "ContextMenuDayParashahStudy";
-      // 
-      // ContextMenuDayParashahRead
-      // 
-      resources.ApplyResources(this.ContextMenuDayParashahRead, "ContextMenuDayParashahRead");
-      this.ContextMenuDayParashahRead.Name = "ContextMenuDayParashahRead";
-      // 
-      // toolStripSeparator22
-      // 
-      this.toolStripSeparator22.Name = "toolStripSeparator22";
-      resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
-      // 
-      // ContextMenuOpenHebrewWordsVerse
-      // 
-      resources.ApplyResources(this.ContextMenuOpenHebrewWordsVerse, "ContextMenuOpenHebrewWordsVerse");
-      this.ContextMenuOpenHebrewWordsVerse.Name = "ContextMenuOpenHebrewWordsVerse";
-      this.ContextMenuOpenHebrewWordsVerse.Click += new System.EventHandler(this.ContextMenuOpenHebrewWordsVerse_Click);
-      // 
-      // toolStripSeparator16
-      // 
-      this.toolStripSeparator16.Name = "toolStripSeparator16";
-      resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
-      // 
-      // ContextMenuDayParashotBoard
-      // 
-      resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
-      this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
-      this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      resources.ApplyResources(this.ContextMenuDayNavigation, "ContextMenuDayNavigation");
+      this.ContextMenuDayNavigation.Name = "ContextMenuDayNavigation";
+      this.ContextMenuDayNavigation.Click += new System.EventHandler(this.ContextMenuDayNavigation_Click);
       // 
       // ImageListRisesAndSets
       // 
