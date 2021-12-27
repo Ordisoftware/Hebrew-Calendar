@@ -357,6 +357,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress - Version 9.21
 
 - Change context menu items order for monthly view.
+- Fix context menu items sun icons for monthly view.
 
 #### 2021.12.24 - Version 9.20
 
