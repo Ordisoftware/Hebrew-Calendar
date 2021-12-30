@@ -23,9 +23,7 @@ public partial class CelebrationVersesBoardForm : Form
 
   static public void Run(DateTime date)
   {
-    var days = ApplicationDatabase.Instance.LunisolarDays;
-    var row = days.Find(day => day.Date >= date && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
-    Run(row?.TorahEvent ?? TorahCelebrationDay.None);
+    Run(ApplicationDatabase.Instance.GetCurrentOrNextCelebration(date)?.TorahEvent ?? TorahCelebrationDay.None);
   }
 
   static public void Run(TorahCelebrationDay celebration = TorahCelebrationDay.None)

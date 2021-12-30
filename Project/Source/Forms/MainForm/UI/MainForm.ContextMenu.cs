@@ -74,14 +74,40 @@ public partial class MainForm
     ContextMenuDayParashah.Enabled = false;
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
+    var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
+    var torahevent = weeklong.Value.Event;
     // Celebration
-    if ( rowDay?.TorahEventText.IsNullOrEmpty() == false )
-      ContextMenuDayDate.Text += $" - {rowDay.TorahEventText}";
+    if ( rowDay.TorahEvent != TorahCelebrationDay.None )
+    {
+      string nameCelebration = AppTranslations.TorahCelebrationDays.GetLang(rowDay.TorahEvent);
+      ContextMenuDayDate.Text += $" - {nameCelebration}";
+      ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(nameCelebration);
+    }
+    else
+    if ( torahevent != TorahCelebration.None )
+    {
+      string nameCelebration = AppTranslations.TorahCelebrations.GetLang(torahevent);
+      ContextMenuDayDate.Text += $" - {nameCelebration}";
+      ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(nameCelebration);
+    }
+    else
+    {
+      var rowNextCelebration = ApplicationDatabase.Instance.GetCurrentOrNextCelebration(date);
+      if ( rowNextCelebration != null )
+      {
+        var weeklongNext = rowNextCelebration?.GetWeekLongCelebrationIntermediateDay();
+        var toraheventNext = weeklongNext.Value.Event;
+        if ( toraheventNext != TorahCelebration.None )
+        {
+          string nameCelebrationNext = AppTranslations.TorahCelebrations.GetLang(toraheventNext);
+          ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(nameCelebrationNext);
+        }
+      }
+    }
     // Parashah 
     if ( Settings.CalendarShowParashah )
     {
       var dayParashah = rowDay?.GetParashahReadingDay();
-      var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
       bool isSimhatTorah1 = rowDay?.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
       bool isSimhatTorah2 = ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside;
       bool show1 = weeklong?.Event != TorahCelebration.Pessah;

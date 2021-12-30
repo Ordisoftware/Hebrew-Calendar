@@ -118,7 +118,7 @@ static class TorahCelebrationSettings
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> MajorEvents
     = Enums.GetValues<TorahCelebrationDay>()
-           .SkipUntil(v => v == TorahCelebrationDay.PessahD1)
+           .SkipUntil(v => v == TorahCelebrationDay.NewYearD10)
            .TakeUntil(v => v == TorahCelebrationDay.SoukotD8);
 
   /// <summary>

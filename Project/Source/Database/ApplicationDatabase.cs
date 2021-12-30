@@ -95,4 +95,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     }
   }
 
+  public LunisolarDay GetCurrentOrNextCelebration(DateTime date)
+    => LunisolarDays.Find(day => day.Date >= date && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
+
 }
