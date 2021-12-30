@@ -143,4 +143,18 @@ static class TorahCelebrationSettings
         TorahCelebrationDay.SoukotD8
     };
 
+  static public TorahCelebration Convert(TorahCelebrationDay torahevent) => torahevent switch
+  {
+    TorahCelebrationDay.NewYearD10 => TorahCelebration.Pessah,
+    TorahCelebrationDay.PessahD1 => TorahCelebration.Pessah,
+    TorahCelebrationDay.PessahD7 => TorahCelebration.Pessah,
+    TorahCelebrationDay.Chavouot1 => TorahCelebration.Chavouot,
+    TorahCelebrationDay.ChavouotDiet => TorahCelebration.Chavouot,
+    TorahCelebrationDay.Chavouot2 => TorahCelebration.Chavouot,
+    TorahCelebrationDay.YomTerouah => TorahCelebration.YomTerouah,
+    TorahCelebrationDay.YomHaKipourim => TorahCelebration.YomHaKipourim,
+    TorahCelebrationDay.SoukotD1 => TorahCelebration.Soukot,
+    TorahCelebrationDay.SoukotD8 => TorahCelebration.Soukot
+  };
+
 }
