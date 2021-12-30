@@ -76,14 +76,9 @@ public partial class MainForm
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
     var torahevent = weeklong.Value.Event;
+    if ( torahevent == TorahCelebration.None )
+      torahevent = TorahCelebrationSettings.Convert(rowDay.TorahEvent);
     // Celebration
-    if ( rowDay.TorahEvent != TorahCelebrationDay.None )
-    {
-      string nameCelebration = AppTranslations.TorahCelebrationDays.GetLang(rowDay.TorahEvent);
-      ContextMenuDayDate.Text += $" - {nameCelebration}";
-      ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(nameCelebration);
-    }
-    else
     if ( torahevent != TorahCelebration.None )
     {
       string nameCelebration = AppTranslations.TorahCelebrations.GetLang(torahevent);
@@ -97,6 +92,8 @@ public partial class MainForm
       {
         var weeklongNext = rowNextCelebration?.GetWeekLongCelebrationIntermediateDay();
         var toraheventNext = weeklongNext.Value.Event;
+        if ( toraheventNext == TorahCelebration.None )
+          toraheventNext = TorahCelebrationSettings.Convert(rowNextCelebration.TorahEvent);
         if ( toraheventNext != TorahCelebration.None )
         {
           string nameCelebrationNext = AppTranslations.TorahCelebrations.GetLang(toraheventNext);

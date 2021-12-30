@@ -154,7 +154,8 @@ static class TorahCelebrationSettings
     TorahCelebrationDay.YomTerouah => TorahCelebration.YomTerouah,
     TorahCelebrationDay.YomHaKipourim => TorahCelebration.YomHaKipourim,
     TorahCelebrationDay.SoukotD1 => TorahCelebration.Soukot,
-    TorahCelebrationDay.SoukotD8 => TorahCelebration.Soukot
+    TorahCelebrationDay.SoukotD8 => TorahCelebration.Soukot,
+    _ => TorahCelebration.None
   };
 
 }
