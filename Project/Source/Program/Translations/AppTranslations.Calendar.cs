@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -309,6 +309,18 @@ static partial class AppTranslations
   {
     [Language.EN] = "Lamb",
     [Language.FR] = "Agneau"
+  };
+
+  static public readonly TranslationsDictionary VersesAboutCurrentCelebration = new()
+  {
+    [Language.EN] = "Verses about {0}",
+    [Language.FR] = "Versets sur {0}"
+  };
+
+  static public readonly TranslationsDictionary VersesAboutNextCelebration = new()
+  {
+    [Language.EN] = "Verses about next {0}",
+    [Language.FR] = "Versets sur prochain {0}"
   };
 
   static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> TorahCelebrationDays = new()
