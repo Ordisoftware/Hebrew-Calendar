@@ -337,10 +337,17 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 ## Future improvements
 
+#### Application
+
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author website or GitHub.
-- Add print boards.
+- Add preference tab to setup keyboard shortcuts
 - Add dark theme for monthly view.
+- Add print boards.
+
+#### Data
+
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
@@ -352,7 +359,6 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
-- Add option to indicate parashah and Torah reference in upper or sentence case.
 
 #### 2021.12.31 - Version 9.22
 
