@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunarMonthsForm : Form
@@ -171,6 +171,14 @@ partial class LunarMonthsForm : Form
     int index = (int)control.Tag;
     HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
                                           Settings.HebrewWordsExe);
+  }
+
+  private void ActionSearchWikipedia_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    int index = (int)control.Tag;
+    SystemManager.RunShell(AppTranslations.WikipediaMonths.GetLang()[index]);
   }
 
 }
