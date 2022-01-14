@@ -178,13 +178,13 @@ static partial class Program
   /// Indicates file path of the lunar months meanings.
   /// </summary>
   static public string LunarMonthsMeaningsFilePath
-    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current}.txt");
+    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Meanings-{0}.txt");
 
   /// <summary>
   /// Indicates file path of the lunar months lettriqs.
   /// </summary>
   static public string LunarMonthsLettriqsFilePath
-    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current}.txt");
+    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Lettriqs-{0}.txt");
 
   /// <summary>
   /// Indicates lunar months meanings.
