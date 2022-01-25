@@ -33,6 +33,9 @@ URL = https://breslev.fr
 Name = (EN) Rabbi Yosef Yitzchak Jacobson
 URL = https://www.theyeshiva.net
 
+Name = (FR) Rav Nathan Mrejen
+URL = https://www.darkeihaim.com
+
 Name = (FR/EN) Rav David Pinto
 URL = https://hevratpinto.org
 
