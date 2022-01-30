@@ -364,6 +364,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Code refactoring.
 - Few fixes.
+- Update web links.
 
 #### 2021.12.31 - Version 9.22
 
