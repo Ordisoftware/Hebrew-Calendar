@@ -45,7 +45,6 @@ partial class HebrewDatabase : SQLiteDatabase
     Connection.CreateTable<TermAnalysis>();
   }
 
-  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   protected override void DoLoadAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
@@ -62,7 +61,6 @@ partial class HebrewDatabase : SQLiteDatabase
     // NOP
   }
 
-  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "N/A")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");

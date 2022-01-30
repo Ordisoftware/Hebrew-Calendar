@@ -22,10 +22,10 @@ namespace System.Globalization
 
     #region "constants"
 
-    // TODOVIETCAL: must use Environment.GetResourceString()
+    // VIETCALTODO: must use Environment.GetResourceString()
     private static readonly Resources.ResourceManager resource = new("mscorlib", Assembly.GetAssembly(typeof(int)));
 
-    // TODOVIETCAL: translate to English
+    // VIETCALTODO: translate to English
     /*
 		 * Moi nam duong lich se duoc ma hoa voi 3 bytes (24 bits).
 		 * - 7 bits cao: so ngay tinh tu 1/1 duong lich den 1/1 am lich.
@@ -782,7 +782,7 @@ namespace System.Globalization
         month--;    // lunar-month
         day += ( time - date2 ).Days;
       }
-      // TODOVIETCAL: exception!
+      // VIETCALTODO: exception!
     }
 
     /// <summary>

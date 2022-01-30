@@ -75,9 +75,9 @@ public partial class MainForm
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
-    var torahevent = weeklong.Value.Event;
+    var torahevent = ( weeklong?.Event ) ?? TorahCelebration.None;
     if ( torahevent == TorahCelebration.None )
-      torahevent = TorahCelebrationSettings.Convert(rowDay.TorahEvent);
+      torahevent = rowDay != null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
     // Celebration
     if ( torahevent != TorahCelebration.None )
     {

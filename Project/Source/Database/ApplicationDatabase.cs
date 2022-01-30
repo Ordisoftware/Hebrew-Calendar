@@ -70,7 +70,6 @@ partial class ApplicationDatabase : SQLiteDatabase
     // NOP
   }
 
-  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "Not used")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
