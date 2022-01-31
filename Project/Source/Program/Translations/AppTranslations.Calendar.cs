@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -321,6 +321,44 @@ static partial class AppTranslations
   {
     [Language.EN] = "Verses about next {0}",
     [Language.FR] = "Versets sur prochain {0}"
+  };
+
+  static public readonly NullSafeDictionary<Language, NullSafeList<string>> WikipediaMonths = new()
+  {
+    [Language.EN] = new()
+    {
+      "https://en.wikipedia.org/wiki/Hebrew_calendar",
+      "https://en.wikipedia.org/wiki/Nisan",
+      "https://en.wikipedia.org/wiki/Iyar",
+      "https://en.wikipedia.org/wiki/Sivan",
+      "https://en.wikipedia.org/wiki/Tammuz_(Hebrew_month)",
+      "https://en.wikipedia.org/wiki/Av",
+      "https://en.wikipedia.org/wiki/Elul",
+      "https://en.wikipedia.org/wiki/Tishrei",
+      "https://en.wikipedia.org/wiki/Cheshvan",
+      "https://en.wikipedia.org/wiki/Kislev",
+      "https://en.wikipedia.org/wiki/Tevet",
+      "https://en.wikipedia.org/wiki/Shevat",
+      "https://en.wikipedia.org/wiki/Adar",
+      "https://en.wikipedia.org/wiki/Adar"
+    },
+    [Language.EN] = new()
+    {
+      "https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque",
+      "https://fr.wikipedia.org/wiki/Nissan_(mois)",
+      "https://fr.wikipedia.org/wiki/Iyar",
+      "https://fr.wikipedia.org/wiki/Sivan",
+      "https://fr.wikipedia.org/wiki/Tammouz",
+      "https://fr.wikipedia.org/wiki/Av",
+      "https://fr.wikipedia.org/wiki/Eloul",
+      "https://fr.wikipedia.org/wiki/Tishri",
+      "https://fr.wikipedia.org/wiki/Heshvan",
+      "https://fr.wikipedia.org/wiki/Kislev",
+      "https://fr.wikipedia.org/wiki/Tevet",
+      "https://fr.wikipedia.org/wiki/Shevat",
+      "https://fr.wikipedia.org/wiki/Adar",
+      "https://fr.wikipedia.org/wiki/Adar"
+    }
   };
 
   static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> TorahCelebrationDays = new()

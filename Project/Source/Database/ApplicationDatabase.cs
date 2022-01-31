@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -70,7 +70,6 @@ partial class ApplicationDatabase : SQLiteDatabase
     // NOP
   }
 
-  [SuppressMessage("General", "RCS1079:Throwing of new NotImplementedException.", Justification = "Not used")]
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunarMonthsForm : Form
@@ -171,6 +171,14 @@ partial class LunarMonthsForm : Form
     int index = (int)control.Tag;
     HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
                                           Settings.HebrewWordsExe);
+  }
+
+  private void ActionSearchWikipedia_Click(object sender, EventArgs e)
+  {
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
+    int index = (int)control.Tag;
+    SystemManager.RunShell(AppTranslations.WikipediaMonths.GetLang()[index]);
   }
 
 }

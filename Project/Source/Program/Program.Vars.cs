@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -178,13 +178,13 @@ static partial class Program
   /// Indicates file path of the lunar months meanings.
   /// </summary>
   static public string LunarMonthsMeaningsFilePath
-    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current}.txt");
+    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Meanings-{0}.txt");
 
   /// <summary>
   /// Indicates file path of the lunar months lettriqs.
   /// </summary>
   static public string LunarMonthsLettriqsFilePath
-    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current}.txt");
+    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Lettriqs-{0}.txt");
 
   /// <summary>
   /// Indicates lunar months meanings.

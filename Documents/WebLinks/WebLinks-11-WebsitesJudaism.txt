@@ -21,6 +21,9 @@ URL = https://www.jewfaq.org
 
 -
 
+Name = (FR) Beit HaZohar
+URL = https://www.beithazohar.com
+
 Name = (FR) Chiourim.com
 URL = https://www.chiourim.com
 

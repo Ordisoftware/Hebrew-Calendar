@@ -13,6 +13,14 @@
 Lang/EN = Indo-European languages
 Lang/FR = Langages indo-européens
 
+Name = (EN) Indo-European languages @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Indo-European_languages
+
+Name = (FR) Langues indo-européennes @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Langues_indo-europ%C3%A9ennes
+
+-
+
 Name = (EN) Sanskrit @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Sanskrit
 

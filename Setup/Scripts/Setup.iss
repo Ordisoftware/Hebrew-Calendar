@@ -12,8 +12,6 @@ VersionInfoDescription={#MyAppPublisher} {#MyAppName}
 
 OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup-{#MyAppVersion}
 OutputDir=.\
-LicenseFile=..\Project\Licenses\MPL 2.0.rtf
-InfoBeforeFile =
 
 UninstallFilesDir={app}\Uninstall
 DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
@@ -24,13 +22,12 @@ SolidCompression=true
 InternalCompressLevel=normal
 
 PrivilegesRequired=admin
-MinVersion=0,6.1sp1
-ArchitecturesAllowed=x86 x64 ia64
-ArchitecturesInstallIn64BitMode=x64 ia64
+ArchitecturesAllowed=x86 x64 ia64 arm64
+ArchitecturesInstallIn64BitMode=x64 ia64 arm64
 
+WizardStyle=Modern
 DisableStartupPrompt=false
 ShowLanguageDialog=yes
-WizardStyle=Modern
 AllowNoIcons=true
 ShowTasksTreeLines=true
 CloseApplications=force

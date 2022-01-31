@@ -372,10 +372,33 @@
   <data name="ActionSearchOnline.Text" xml:space="preserve">
     <value>Search online</value>
   </data>
+  <data name="ActionSearchWikipedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAndJREFUOE+VkUlMU0EYx+fk0RvGaGJi5KAXLi4QFTc0cvCkHkQoi0Wo0JhIkAMc
+        FGsNBri4gFqwD0oBCVRwSReEKAG6EbZqIVChuBAkXdzjQvL3m2FMowkmfskvM2/e9/vPm3mM10G9Pbr3
+        kg3JF63YTfAxudyKPeU2iVyT8N4Uvb1CyLz4wuBMGAOBEPoJ50wE7mAUnrll+Nw9G6H1MJwvidmwCJE6
+        Y3wHx4sFpBuc6J1YRNodJzblmbH6WK0gPt8MVb0LasWD7LtuOPwL4qukzgNs6BybR2a9Gw9G55FwthXT
+        b6L4XYG3UWw714bTDV4R0kW93JE6HYEeWr2vkEUBjc4g/MEQvvxYwrWeKcHXn0uYfh0Ru+dSwD3q5Y7U
+        GdtH5zEOBJFNATd7p8WuVbZJ+my3oJrmvDIMLhGgUC93pL4cUPM0gBzaodI2IZoLb/ch9Wo3Dlc4UHCr
+        T6xl1LnEMWqfBf4M2E8P1Y4pqI0e6B75sfjxGxbCn5BZ5YCq0o65dx9EwKoj1+kOvKKXO1Jn7IDODv1j
+        v0i/0PVcjOHP34X0d/GL1lEvd6TOWMplO8o6fdCYhlBqGadzesWFqerc9GtdOF4zIHWIiy697wN3pM7Y
+        oSvdKOnwQdsygqL2cRQ2jwgKiDPmEeSZhpGjDAk05mEUt/vAHakztqvsITZkKVibrmDNSSPBxxhxtBaX
+        tgx/v06lYGO2EgvYrDGjp88OvO8Fwk+A0D+I9GBy0GDUto7HArZomrC9qM2f3+JDbtMY1KaVOdU4iqM3
+        nEjVW/1SZyz+RGVDgrYZSSUWJBZ3YMcK8HeJxRYknbdgJ/VKXdR6Yuv/w9gv3DJiGG1w/f8AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="ActionSearchWikipedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="ActionSearchWikipedia.Text" xml:space="preserve">
+    <value>Search on Wikipedia</value>
+  </data>
   <data name="ActionOpenHebrewWordsSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
+        vQAADr0BR/uQrQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
         BScY81eGALtE5ScTMszM288sGuT7Pi2JfnipBMRxnC79X0pAUdwpTS/UNI0UUykBnufh25RhWdYIJHqn
         gCQ5K4c5gmDfdRJhVgJU1VNYw0lt2/aBPAwPZNvbrnMGEMcnESrl+e07IMuutF5vumwsLHhYU+4AVk3T
         FLanYgDXZq9xZRjKz2B3fBOSAwzztneuK7nA/zEESDvACRjWdZ2i6PgbADZYKDzKkur61TcNBSCumcEC
@@ -422,7 +445,7 @@
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
+        vQAADr0BR/uQrQAAASVJREFUOE+lkzF2gkAQhrflAhSmpKfCF09AwRHoOQAnwE4L0iRpzS2iFmpyCGqs
         aElSBOhG/9ldsrrk+dT/vXmP/dn5dmYWBJSmKSVJclUgp0++VQy5B4BKLEBRFFTXtVpJ/TYNvS+XavUn
         C4DEY1f0OJkoR8rzPHJdl6qqUo6U1QJOchyHIVEUKZfI9332ACnLvXL/aeH55ZU3I8IwZGieP/UekrQG
         AUiI47hPQDtBMKbNdsdVXawAa5y4WLz17QBwPlgIe08AoOsyMTATgkpQnalBgE6A//X9Y1ViQixA23U0
@@ -543,7 +566,7 @@
     <value>Copy line (unicode chars)</value>
   </data>
   <data name="ContextMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 242</value>
+    <value>245, 264</value>
   </data>
   <data name="&gt;&gt;ContextMenuItems.Name" xml:space="preserve">
     <value>ContextMenuItems</value>
@@ -596,28 +619,28 @@
   <data name="&gt;&gt;ActionSearchOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
-    <value>ActionOpenHebrewLetters</value>
-  </data>
-  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Name" xml:space="preserve">
     <value>ActionOpenHebrewWordsSearch</value>
   </data>
   <data name="&gt;&gt;ActionOpenHebrewWordsSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
     <value>ActionShowGrammarGuide</value>
   </data>
   <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Name" xml:space="preserve">
+    <value>ActionOpenHebrewLetters</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenHebrewLetters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
@@ -660,6 +683,12 @@
     <value>ActionCopyLineUnicode</value>
   </data>
   <data name="&gt;&gt;ActionCopyLineUnicode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWikipedia.Name" xml:space="preserve">
+    <value>ActionSearchWikipedia</value>
+  </data>
+  <data name="&gt;&gt;ActionSearchWikipedia.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

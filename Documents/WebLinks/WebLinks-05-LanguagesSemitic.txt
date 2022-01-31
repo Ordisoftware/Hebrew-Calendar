@@ -15,11 +15,11 @@ FOLDER-SEPARATOR
 Lang/EN = Semitic languages
 Lang/FR = Langages sémitiques
 
-Name = (EN) Wiktionary.org
-URL = https://en.wiktionary.org
+Name = (EN) Semitic languages @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Semitic_languages
 
-Name = (FR) Wiktionary.org
-URL = https://fr.wiktionary.org
+Name = (FR) Langues sémitiques @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Langues_s%C3%A9mitiques
 
 -
 

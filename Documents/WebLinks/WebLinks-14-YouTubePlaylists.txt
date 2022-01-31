@@ -62,6 +62,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
 Name = (FR) Rav Yonathan Benchetrit
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dh6eRE1EGpvsJM-Urlmdre
 
+Name = (FR) Rav Menahem Berros
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AVp4Ngd3XuciymreoELu-9
+
 Name = (FR) Rav Mordekhai Chriqui
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
 
@@ -76,6 +79,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
 
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
+
+Name = (FR) Rav Yves Marciano
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BYiFkGEEVWJit3dAj1qGDR
 
 Name = (FR) Rav David Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2021 Olivier Rogier.
+/// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -75,9 +75,9 @@ public partial class MainForm
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
-    var torahevent = weeklong.Value.Event;
+    var torahevent = ( weeklong?.Event ) ?? TorahCelebration.None;
     if ( torahevent == TorahCelebration.None )
-      torahevent = TorahCelebrationSettings.Convert(rowDay.TorahEvent);
+      torahevent = rowDay != null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
     // Celebration
     if ( torahevent != TorahCelebration.None )
     {
