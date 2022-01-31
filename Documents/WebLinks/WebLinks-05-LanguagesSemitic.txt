@@ -15,14 +15,6 @@ FOLDER-SEPARATOR
 Lang/EN = Semitic languages
 Lang/FR = Langages sémitiques
 
-Name = (EN) Wiktionary.org
-URL = https://en.wiktionary.org
-
-Name = (FR) Wiktionary.org
-URL = https://fr.wiktionary.org
-
--
-
 Name = (EN) Hebrew @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_language
 
