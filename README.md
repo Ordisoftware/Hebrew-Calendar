@@ -360,10 +360,10 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### In progress  - Version 9.23
+#### 2022.02.01 - Version 9.23
 
 - Refactor and fix code.
-- Update web links.
+- Update web links about languages, judaism, rabbis and playlists.
 
 #### 2021.12.31 - Version 9.22
 
