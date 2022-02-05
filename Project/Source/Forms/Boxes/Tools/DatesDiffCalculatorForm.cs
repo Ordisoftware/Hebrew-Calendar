@@ -45,7 +45,7 @@ partial class DatesDiffCalculatorForm : Form
 
   static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
   {
-    if ( dates != null )
+    if ( dates is not null )
     {
       if ( ensureOrder )
         if ( dates.Item1 < dates.Item2 )
@@ -249,7 +249,7 @@ partial class DatesDiffCalculatorForm : Form
 
   private void DateChanged(bool force = false)
   {
-    if ( MonthCalendar1.Tag == null ) return;
+    if ( MonthCalendar1.Tag is null ) return;
     bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
     bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
     if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;
@@ -259,7 +259,7 @@ partial class DatesDiffCalculatorForm : Form
     Cursor = Cursors.WaitCursor;
     try
     {
-      if ( Stats == null )
+      if ( Stats is null )
       {
         Stats = new DatesDiffItem(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
         DatesDiffItemBindingSource.DataSource = Stats;

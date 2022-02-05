@@ -73,7 +73,7 @@ static partial class DisplayManager
   /// <param name="wait">true to wait.</param>
   static public void SyncUI(this Control control, Action action, bool wait = true)
   {
-    if ( control == null ) throw new ArgumentNullException(nameof(control));
+    if ( control is null ) throw new ArgumentNullException(nameof(control));
     if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
     Exception exception = null;
     SemaphoreSlim semaphore = null;
@@ -101,7 +101,7 @@ static partial class DisplayManager
     }
     else
       processAction();
-    if ( exception != null )
+    if ( exception is not null )
       throw exception;
   }
 

@@ -176,7 +176,7 @@ partial class MainForm
       Application.DoEvents();
       Thread.Sleep(500);
     }
-    if ( ApplicationCommandLine.Instance == null ) return;
+    if ( ApplicationCommandLine.Instance is null ) return;
     if ( ApplicationCommandLine.Instance.Generate )
       ActionGenerate.PerformClick();
     if ( ApplicationCommandLine.Instance.ResetReminder )

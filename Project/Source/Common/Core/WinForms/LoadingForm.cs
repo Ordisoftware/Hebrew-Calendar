@@ -114,7 +114,7 @@ partial class LoadingForm : Form
       BringToFront();
     }
     if ( refresh ) Refresh();
-    if ( Progressing != null ) SystemManager.TryCatchManage(() => Progressing.Invoke());
+    if ( Progressing is not null ) SystemManager.TryCatchManage(() => Progressing.Invoke());
     if ( ActionCancel.Visible ) Application.DoEvents();
   }
 

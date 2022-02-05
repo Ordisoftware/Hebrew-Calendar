@@ -117,7 +117,7 @@ static partial class SystemManager
   static public long SizeOf(this object instance)
   {
     long result = -1;
-    if ( instance == null ) return 0;
+    if ( instance is null ) return 0;
     if ( instance.GetType().IsSerializable )
       try
       {

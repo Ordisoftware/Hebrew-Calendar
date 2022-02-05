@@ -25,7 +25,7 @@ partial class CelebrationsBoardForm : Form
 
   static public void Run()
   {
-    if ( Instance == null )
+    if ( Instance is null )
       Instance = new CelebrationsBoardForm();
     else
     if ( Instance.Visible )

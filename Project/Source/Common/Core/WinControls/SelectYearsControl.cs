@@ -19,8 +19,8 @@ partial class SelectYearsControl : UserControl
 
   public event EventHandler SelectedIndexChanged
   {
-    add { if ( SelectValue != null ) SelectValue.SelectedIndexChanged += value; }
-    remove { if ( SelectValue != null ) SelectValue.SelectedIndexChanged -= value; }
+    add { if ( SelectValue is not null ) SelectValue.SelectedIndexChanged += value; }
+    remove { if ( SelectValue is not null ) SelectValue.SelectedIndexChanged -= value; }
   }
 
   public ComboBox.ObjectCollection Items
@@ -32,19 +32,19 @@ partial class SelectYearsControl : UserControl
   public int SelectedIndex
   {
     get => SelectValue?.SelectedIndex ?? -1;
-    set { if ( SelectValue != null ) SelectValue.SelectedIndex = value; }
+    set { if ( SelectValue is not null ) SelectValue.SelectedIndex = value; }
   }
 
   public object SelectedItem
   {
     get => SelectValue?.SelectedItem;
-    set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
+    set { if ( SelectValue is not null ) SelectValue.SelectedItem = value; }
   }
 
   public int Value
   {
     get => SelectValue.SelectedItem is int value ? value : -1;
-    set { if ( SelectValue != null ) SelectValue.SelectedItem = value; }
+    set { if ( SelectValue is not null ) SelectValue.SelectedItem = value; }
   }
 
   public SelectYearsControl()

@@ -186,7 +186,7 @@ static class HebrewTools
   /// </summary>
   static public void OpenParashahProvider(string url, Parashah parashah, bool openLinked = false)
   {
-    if ( parashah == null )
+    if ( parashah is null )
     {
       DisplayManager.Show(HebrewTranslations.ParashahNotFound.GetLang());
       return;
@@ -195,7 +195,7 @@ static class HebrewTools
     if ( openLinked && url.Contains("%") )
     {
       var linked = parashah.GetLinked();
-      if ( linked != null ) open(linked);
+      if ( linked is not null ) open(linked);
     }
     //
     void open(Parashah item)

@@ -154,7 +154,7 @@ partial class ApplicationDatabase
       else
         thedate = thedate.AddDays(toadd);
       var rowEnd = LunisolarDays.Find(d => d.Date == thedate);
-      if ( rowEnd != null )
+      if ( rowEnd is not null )
         rowEnd.TorahEvent = type;
       return thedate;
     }

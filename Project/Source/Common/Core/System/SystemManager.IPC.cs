@@ -82,7 +82,7 @@ static partial class SystemManager
   /// </summary>
   static public void CreateIPCServer(AsyncCallback ipcRequests)
   {
-    if ( ipcRequests == null ) return;
+    if ( ipcRequests is null ) return;
     try
     {
       IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,

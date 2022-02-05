@@ -20,7 +20,7 @@ public partial class Parashah
   public string ToStringShort(bool withBookAndref, bool withLinked)
   {
     string result = Name;
-    if ( withLinked ) result += GetLinked() != null ? " - " + GetLinked().Name : string.Empty;
+    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().Name : string.Empty;
     if ( withBookAndref ) result += $" ({Book} {VerseBegin})";
     return result;
   }

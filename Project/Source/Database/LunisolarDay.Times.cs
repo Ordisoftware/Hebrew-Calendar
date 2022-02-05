@@ -36,7 +36,7 @@ partial class LunisolarDay
     else
     if ( useRealDay )
     {
-      if ( day.MoonriseOccuring == MoonriseOccurring.BeforeSet || day.Moonset == null )
+      if ( day.MoonriseOccuring == MoonriseOccurring.BeforeSet || day.Moonset is null )
       {
         int index = Table.IndexOf(day) - 1;
         if ( index < 0 )
@@ -54,7 +54,7 @@ partial class LunisolarDay
     var times = new ReminderTimes();
     var dateRow = Date;
     var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
-    if ( rowPrevious == null )
+    if ( rowPrevious is null )
       return null;
     if ( Program.Settings.RemindShabatOnlyLight )
       times.Set(dateRow, Sunrise.Value.TimeOfDay, Sunset.Value.TimeOfDay, 0, 0, delta3);
@@ -69,23 +69,23 @@ partial class LunisolarDay
     var dateRow = Date;
     var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
     var rowNext = Table.Find(d => d.Date == dateRow.AddDays(+1));
-    if ( rowPrevious == null || rowNext == null )
+    if ( rowPrevious is null || rowNext is null )
       return null;
     if ( Program.Settings.TorahEventsCountAsMoon )
     {
       if ( rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.AfterSet )
+      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.AfterSet )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.NextDay )
+      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.NextDay )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset != null && MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.BeforeSet )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, delta3);
       else
-      if ( Moonset == null )
+      if ( Moonset is null )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, -1, 1, delta3);
       else
         throw new Exception("Error on calculating celebration dates and times.");

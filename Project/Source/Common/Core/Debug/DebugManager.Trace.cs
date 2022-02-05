@@ -59,7 +59,7 @@ static partial class DebugManager
   [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
   static private void TraceEventAdded(string sourceContext, string str)
   {
-    if ( TraceForm == null ) return;
+    if ( TraceForm is null ) return;
     if ( TraceForm.IsDisposed ) return;
     TraceForm.AppendText(str);
   }
@@ -88,6 +88,7 @@ static partial class DebugManager
 
   static public readonly string EventSeparator = "|";
 
+  [SuppressMessage("CodeQuality", "Serilog004:Constant MessageTemplate verifier", Justification = "N/A")]
   static public void Trace(LogTraceEvent traceEvent, string text = "")
   {
     if ( !_Enabled || !_TraceEnabled ) return;

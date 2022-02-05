@@ -163,7 +163,7 @@ static partial class Program
         nameof(cmd.OpenLunarMonthsBoard) => Globals.IsDebugExecutable ? () => form.ActionViewLunarMonths.PerformClick() : null,
         _ => null
       };
-      if ( action != null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
+      if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
     }
     finally
     {
@@ -178,7 +178,7 @@ static partial class Program
   static private void IPCSendCommands()
   {
     var cmd = ApplicationCommandLine.Instance;
-    if ( cmd == null ) return;
+    if ( cmd is null ) return;
     if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
     if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
     if ( cmd.Generate ) SystemManager.IPCSend(nameof(cmd.Generate));
@@ -202,7 +202,7 @@ static partial class Program
   {
     try
     {
-      if ( SystemManager.CommandLineOptions == null ) return;
+      if ( SystemManager.CommandLineOptions is null ) return;
       if ( SystemManager.CommandLineOptions.ResetSettings )
       {
         SystemManager.CleanAllLocalAppSettingsFolders();

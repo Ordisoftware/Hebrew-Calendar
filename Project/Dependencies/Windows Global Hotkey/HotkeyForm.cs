@@ -36,7 +36,7 @@ namespace Base.Hotkeys
 
     public void RegisterHotkey(Hotkey key)
     {
-      if ( key != null && key.Status != HotkeyStatus.Registered )
+      if ( key is not null && key.Status != HotkeyStatus.Registered )
       {
         if ( !key.IsValid )
         {
@@ -64,7 +64,7 @@ namespace Base.Hotkeys
 
     public bool UnregisterHotkey(Hotkey key)
     {
-      if ( key != null )
+      if ( key is not null )
       {
         if ( key.ID > 0 )
         {

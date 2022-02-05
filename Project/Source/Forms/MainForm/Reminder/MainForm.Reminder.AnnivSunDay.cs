@@ -36,7 +36,7 @@ namespace Ordisoftware.Hebrew.Calendar
       var row = ( from day in LunisolarDays
                   where day.Date == dateBirth
                   select day ).FirstOrDefault() as LunisolarDay;
-      if ( row == null )
+      if ( row is null )
         return;
       var dateRow = row.Date;
       var rowPrevious = LunisolarDays.FindByDate(SQLiteDate.ToString(dateRow.AddDays(-1)));

@@ -36,7 +36,7 @@ partial class TraceForm : Form
     ClientSizePropertyName = clientSizePropertyName;
     FontSizepropertyName = fontSizepropertyName;
     OnlyErrorsPropertyName = onlyErrorsPropertyName;
-    if ( Globals.Settings != null )
+    if ( Globals.Settings is not null )
       try
       {
         Location = (Point)Globals.Settings[locationPropertyName];
@@ -68,7 +68,7 @@ partial class TraceForm : Form
 
   private void TraceForm_Deactivate(object sender, EventArgs e)
   {
-    if ( Globals.Settings != null )
+    if ( Globals.Settings is not null )
       try
       {
         Globals.Settings[LocationPropertyName] = Location;

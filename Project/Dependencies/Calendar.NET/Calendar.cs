@@ -486,7 +486,7 @@ namespace CodeProjectCalendar.NET
 
     private void CalendarLoad(object sender, EventArgs e)
     {
-      if ( Parent != null )
+      if ( Parent is not null )
         Parent.Resize += ParentResize;
       ResizeScrollPanel();
     }
@@ -617,7 +617,7 @@ namespace CodeProjectCalendar.NET
 
     private void MenuItemPropertiesClick(object sender, EventArgs e)
     {
-      if ( _clickedEvent == null )
+      if ( _clickedEvent is null )
         return;
 
       var ed = new EventDetails { Event = _clickedEvent.Event };
@@ -870,7 +870,7 @@ namespace CodeProjectCalendar.NET
     {
       Control c = this;
 
-      while ( c != null )
+      while ( c is not null )
       {
         if ( c.BackColor != Color.Transparent )
           return c.BackColor;
@@ -929,7 +929,7 @@ namespace CodeProjectCalendar.NET
       if ( isPrinting )
         MonthWithDayText = monthText;
       else
-        if ( MainForm.Instance.CurrentDay != null )
+        if ( MainForm.Instance.CurrentDay is not null )
         MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
       else
         if ( !MainForm.Instance.PreferencesMutex )
@@ -999,11 +999,11 @@ namespace CodeProjectCalendar.NET
           if ( rogueDays == 0 && counter1 <= daysinmonth )
           {
             // ORDISOFTWARE MODIF BEGIN
-            if ( MainForm.Instance != null )
+            if ( MainForm.Instance is not null )
               if ( useColors )
               {
                 var brush = MainForm.Instance.GetDayBrush(counter1, _calendarDate.Month, _calendarDate.Year);
-                if ( brush != null && brush != Brushes.Transparent )
+                if ( brush is not null && brush != Brushes.Transparent )
                   g.FillRectangle(brush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
               }
             // ORDISOFTWARE MODIF END
@@ -1382,7 +1382,7 @@ namespace CodeProjectCalendar.NET
         return DayForward(evnt, day);
       if ( evnt.RecurringFrequency == RecurringFrequencies.Monthly && evnt.Date.Day == day.Day )
         return DayForward(evnt, day);
-      if ( evnt.RecurringFrequency == RecurringFrequencies.Custom && evnt.CustomRecurringFunction != null )
+      if ( evnt.RecurringFrequency == RecurringFrequencies.Custom && evnt.CustomRecurringFunction is not null )
         if ( evnt.CustomRecurringFunction(evnt, day) )
           return DayForward(evnt, day);
         else

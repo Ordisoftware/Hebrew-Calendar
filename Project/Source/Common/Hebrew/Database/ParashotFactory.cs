@@ -43,7 +43,7 @@ class ParashotFactory : ProviderSettings
     var pair = line.Split(':');
     if ( pair.Length < 2 ) return;
     var book = Enums.Parse<TorahBook>(pair[0].Trim());
-    if ( Items[book] == null ) Items[book] = new NullSafeList<Parashah>();
+    if ( Items[book] is null ) Items[book] = new NullSafeList<Parashah>();
     var items = pair[1].Split('-');
     if ( items.Length != 6 ) return;
     Items[book].Add(new Parashah(book,

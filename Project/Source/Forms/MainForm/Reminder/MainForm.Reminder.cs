@@ -46,7 +46,7 @@ partial class MainForm
     {
       MenuTray.Enabled = false;
       var delay = SelectSuspendDelayForm.Run();
-      if ( delay == null ) return;
+      if ( delay is null ) return;
       IsReminderPaused = true;
       ActionResetReminder.Enabled = false;
       ActionEnableReminder.Visible = true;

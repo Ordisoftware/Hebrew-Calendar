@@ -25,7 +25,7 @@ partial class NewMoonsBoardForm : Form
 
   static public void Run()
   {
-    if ( Instance == null )
+    if ( Instance is null )
       Instance = new NewMoonsBoardForm();
     else
     if ( Instance.Visible )

@@ -35,7 +35,7 @@ partial class HebrewDatabase : SQLiteDatabase
   public List<Parashah> TakeParashot(bool reload = false)
   {
     CheckConnected();
-    if ( !reload && Parashot != null ) return Parashot;
+    if ( !reload && Parashot is not null ) return Parashot;
     Interlocks.Take(ParashotTableName);
     if ( ParashotFirstTake )
     {
@@ -47,7 +47,7 @@ partial class HebrewDatabase : SQLiteDatabase
 
   public void ReleaseParashot()
   {
-    if ( Parashot == null ) return;
+    if ( Parashot is null ) return;
     Interlocks.Release(ParashotTableName);
     if ( ClearListsOnCloseOrRelease ) Parashot.Clear();
     Parashot = null;

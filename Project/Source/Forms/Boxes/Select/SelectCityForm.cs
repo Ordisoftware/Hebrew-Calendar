@@ -80,7 +80,7 @@ partial class SelectCityForm : Form
     using var form = new SelectCityForm();
     form.ActionCancel.Enabled = canCancel;
     if ( form.ShowDialog() != DialogResult.OK ) return false;
-    if ( form.EditTimeZone.SelectedItem != null )
+    if ( form.EditTimeZone.SelectedItem is not null )
       Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
     Settings.GPSLatitude = form.Latitude;
     Settings.GPSLongitude = form.Longitude;
@@ -156,7 +156,7 @@ partial class SelectCityForm : Form
     City = ( (CityItem)ListBoxCities.SelectedItem ).Name;
     Latitude = ( (CityItem)ListBoxCities.SelectedItem ).Latitude;
     Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
-    ActionOK.Enabled = EditTimeZone.SelectedItem != null;
+    ActionOK.Enabled = EditTimeZone.SelectedItem is not null;
     if ( Mutex ) return;
     EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", " + ListBoxCities.SelectedItem.ToString();
     EditFilter.Focus();
@@ -188,7 +188,7 @@ partial class SelectCityForm : Form
       if ( !resultCountry.Any() ) return;
       string strCountry = resultCountry.ElementAt(0).Key;
       FoundCountry = resultCountry.Count() == 1;
-      if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key != null )
+      if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key is not null )
         FoundCountry = true;
       if ( FoundCountry && !EditFilter.Text.Contains(",") )
       {
@@ -212,7 +212,7 @@ partial class SelectCityForm : Form
       if ( !resultCity.Any() ) return;
       string strCity = resultCity.ElementAt(0).Name;
       FoundCity = resultCity.Count() == 1;
-      if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key != null )
+      if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key is not null )
         FoundCity = true;
       if ( FoundCity )
       {
@@ -230,7 +230,7 @@ partial class SelectCityForm : Form
     }
     finally
     {
-      ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem != null;
+      ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem is not null;
       if ( !IsLoading )
         if ( !FoundCountry || !FoundCity )
           EditTimeZone.SelectedItem = null;
@@ -260,7 +260,7 @@ partial class SelectCityForm : Form
 
   private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
   {
-    ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem != null;
+    ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem is not null;
   }
 
 }

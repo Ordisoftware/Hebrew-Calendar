@@ -295,12 +295,12 @@ namespace System.Globalization
         catch ( ArgumentException )
         {
         }
-        if ( key != null )
+        if ( key is not null )
         {
           try
           {
             object obj = key.GetValue(calendarId.ToString(CultureInfo.InvariantCulture));
-            if ( obj != null )
+            if ( obj is not null )
             {
               try { num = int.Parse(obj.ToString(), CultureInfo.InvariantCulture); }
               catch ( ArgumentException ) { }

@@ -31,13 +31,13 @@ partial class MainForm
                 where day.HasTorahEvent && check(day.TorahEvent)
                    && day.Date >= dateToday.AddDays(-1)
                 select day ).FirstOrDefault();
-    if ( row == null ) return result;
+    if ( row is null ) return result;
     var torahevent = row.TorahEvent;
     if ( row.Date.Day < dateNow.Day )
       if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
         return result;
     var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
-    if ( times == null ) return result;
+    if ( times is null ) return result;
     result = dateNow >= times.DateStart && dateNow < times.DateEnd;
     var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindCelebrationHoursBefore);
     if ( dateNow < dateTrigger || dateNow >= times.DateEnd )

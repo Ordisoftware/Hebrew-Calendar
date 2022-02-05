@@ -76,7 +76,7 @@ partial class TextBoxEx
 
   static public void Relocalize()
   {
-    if ( ContextMenuEdit == null ) return;
+    if ( ContextMenuEdit is null ) return;
     var resources = new ComponentResourceManager(typeof(TextBoxEx));
     resources.ApplyResources(ContextMenuEdit, "ContextMenuEdit");
     resources.ApplyResources(ActionUndo, "ActionUndo");
@@ -95,7 +95,7 @@ partial class TextBoxEx
 
   static private void UpdateMenuItems(TextBoxEx textbox)
   {
-    if ( textbox == null ) return;
+    if ( textbox is null ) return;
     bool b1 = textbox.Enabled;
     bool b2 = textbox.Enabled && !textbox.ReadOnly;
     bool b3 = !textbox.SelectedText.IsNullOrEmpty();

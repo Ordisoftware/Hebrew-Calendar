@@ -87,7 +87,7 @@ public class MidnightTimer : IDisposable
   /// </summary>
   public void Stop()
   {
-    if ( Timer == null ) return;
+    if ( Timer is null ) return;
     Timer.Stop();
     Microsoft.Win32.SystemEvents.TimeChanged -= WindowsTimeChangeHandler;
   }

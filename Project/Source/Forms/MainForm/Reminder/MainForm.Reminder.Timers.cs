@@ -31,7 +31,7 @@ partial class MainForm
       {
         CheckRegenerateCalendar();
         var today = DateTime.Today;
-        if ( CurrentDay != null && CurrentDay.Date == today.AddDays(-1) )
+        if ( CurrentDay is not null && CurrentDay.Date == today.AddDays(-1) )
           GoToDate(today);
         else
         if ( Settings.CurrentView == ViewMode.Month )
@@ -88,8 +88,8 @@ partial class MainForm
     void UpdateTrayIcon()
     {
       if ( Globals.IsExiting ) return;
-      if ( TrayIcon == null ) return;
-      if ( CommonMenusControl.Instance == null ) return;
+      if ( TrayIcon is null ) return;
+      if ( CommonMenusControl.Instance is null ) return;
       CommonMenusControl.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
       AboutBox.Instance.ActionCheckUpdate.Enabled = !IsSpecialDay;
       TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
@@ -120,7 +120,7 @@ partial class MainForm
       if ( doshow )
       {
         var dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
-        if ( dayInfos != null )
+        if ( dayInfos is not null )
         {
           doshow = dayInfos.Value.Event == TorahCelebration.None
                    || ( dayInfos.Value.Event != TorahCelebration.Pessah

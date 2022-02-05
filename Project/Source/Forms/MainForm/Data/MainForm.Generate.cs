@@ -61,13 +61,13 @@ partial class MainForm
   {
     try
     {
-      if ( e != null ) TimerReminder.Enabled = false;
+      if ( e is not null ) TimerReminder.Enabled = false;
       MenuTray.Enabled = false;
       try
       {
         int yearFirst;
         int yearLast;
-        if ( sender != null )
+        if ( sender is not null )
           if ( sender is Tuple<int, int> values )
           {
             yearFirst = values.Item1;
@@ -75,7 +75,7 @@ partial class MainForm
           }
           else
           {
-            if ( !SelectYearsForm.Run(e != null, out yearFirst, out yearLast) )
+            if ( !SelectYearsForm.Run(e is not null, out yearFirst, out yearLast) )
               return null;
           }
         else
@@ -96,7 +96,7 @@ partial class MainForm
         MenuTray.Enabled = true;
         LabelSubTitleGPS.Text = string.Empty;
         UpdateButtons();
-        if ( e != null )
+        if ( e is not null )
         {
           DateSelected = null;
           GoToDate(DateTime.Today);

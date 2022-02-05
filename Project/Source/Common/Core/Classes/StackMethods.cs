@@ -218,7 +218,7 @@ static class StackMethods
   /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
   static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
   {
-    if ( action == null ) action = MenuItemDropDownOpening;
+    if ( action is null ) action = MenuItemDropDownOpening;
     var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>().ToList();
     var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
     var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
@@ -233,7 +233,7 @@ static class StackMethods
   /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
   static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
   {
-    if ( action == null ) action = MenuItemDropDownOpening;
+    if ( action is null ) action = MenuItemDropDownOpening;
     var items1 = menu.Items.OfType<ToolStripMenuItem>().ToList();
     var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
     var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
@@ -270,13 +270,13 @@ static class StackMethods
   // From https://stackoverflow.com/questions/4796109/how-to-move-item-in-listbox-up-and-down#9684966
   static public void MoveSelectedItem(this ListBox listBox, int direction)
   {
-    if ( listBox.SelectedItem == null || listBox.SelectedIndex < 0 ) return;
+    if ( listBox.SelectedItem is null || listBox.SelectedIndex < 0 ) return;
     int newIndex = listBox.SelectedIndex + direction;
     if ( newIndex < 0 || newIndex >= listBox.Items.Count ) return;
     object selected = listBox.SelectedItem;
     var checkedListBox = listBox as CheckedListBox;
     var checkState = CheckState.Unchecked;
-    if ( checkedListBox != null ) checkState = checkedListBox.GetItemCheckState(checkedListBox.SelectedIndex);
+    if ( checkedListBox is not null ) checkState = checkedListBox.GetItemCheckState(checkedListBox.SelectedIndex);
     listBox.Items.Remove(selected);
     listBox.Items.Insert(newIndex, selected);
     listBox.SetSelected(newIndex, true);
@@ -316,12 +316,12 @@ static class StackMethods
   /// From https://stackoverflow.com/questions/4460654/best-practice-convert-linq-query-result-to-a-datatable-without-looping#31586395
   static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
   {
-    if ( list == null ) return null;
+    if ( list is null ) return null;
     var table = new DataTable { TableName = name };
     PropertyInfo[] columns = null;
     foreach ( T item in list )
     {
-      if ( columns == null )
+      if ( columns is null )
       {
         columns = item.GetType().GetProperties();
         foreach ( var column in columns )

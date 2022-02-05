@@ -24,7 +24,7 @@ partial class MainForm
     {
       TimerBallon.Stop();
       TimerTrayMouseMove.Stop();
-      if ( e != null )
+      if ( e is not null )
       {
         if ( e.Button == MouseButtons.Left )
           switch ( Settings.TrayIconClickOpen )
@@ -74,7 +74,7 @@ partial class MainForm
         this.Popup();
       }
       else
-      if ( !Visible || e == null )
+      if ( !Visible || e is null )
       {
         FormBorderStyle = FormBorderStyle.Sizable;
         UpdateTitles(true);
@@ -97,7 +97,7 @@ partial class MainForm
           this.Popup();
           CalendarMonth.Refresh();
         }
-        if ( sender != null )
+        if ( sender is not null )
           if ( !NavigationForm.Instance.Visible )
             if ( Settings.MainFormShownGoToToday )
               GoToDate(DateTime.Today);
@@ -129,7 +129,7 @@ partial class MainForm
       DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
       return;
     }
-    if ( EditConfirmClosing.Checked || ( e == null && !Globals.IsDevExecutable ) )
+    if ( EditConfirmClosing.Checked || ( e is null && !Globals.IsDevExecutable ) )
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
         return;
     Globals.AllowClose = true;

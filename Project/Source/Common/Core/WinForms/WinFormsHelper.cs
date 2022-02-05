@@ -47,7 +47,7 @@ static class FormsHelper
   /// </summary>
   static public void CloseAll(Func<Form, bool> keep = null)
   {
-    var list = keep == null
+    var list = keep is null
                ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
                : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
     foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
@@ -59,7 +59,7 @@ static class FormsHelper
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "Error")]
   static public IEnumerable<Form> GetAll(this FormCollection forms, Func<Form, bool> select = null)
   {
-    if ( select == null )
+    if ( select is null )
       foreach ( Form form in forms )
         yield return form;
     else
@@ -83,7 +83,7 @@ static class FormsHelper
   /// <param name="control">The control.</param>
   static public void DisposeAllControls(this Control control)
   {
-    if ( control == null ) return;
+    if ( control is null ) return;
     control.SuspendLayout();
     try
     {
@@ -106,7 +106,7 @@ static class FormsHelper
     return from field in form.GetType().GetFields(flags)
            where typeof(Component).IsAssignableFrom(field.FieldType)
            let component = (Component)field.GetValue(form)
-           where component != null
+           where component is not null
            select component;
   }
 
@@ -116,7 +116,7 @@ static class FormsHelper
   static public IEnumerable<ToolStripItem> ToEnumerable(this ToolStripItemCollection collection, Func<ToolStripItem, bool> predicate = null)
   {
     var result = collection.Cast<ToolStripItem>();
-    if ( predicate != null ) result = result.Where(predicate);
+    if ( predicate is not null ) result = result.Where(predicate);
     return result;
   }
 
@@ -127,7 +127,7 @@ static class FormsHelper
   /// <param name="location">The location.</param>
   static public void SetLocation(this Form form, ControlLocation location)
   {
-    if ( form == null ) return;
+    if ( form is null ) return;
     var area = SystemInformation.WorkingArea;
     switch ( location )
     {
@@ -171,8 +171,8 @@ static class FormsHelper
   /// <param name="form">The form.</param>
   static public void CenterToMainFormElseScreen(this Form form)
   {
-    if ( form == null ) return;
-    var area = Globals.MainForm != null
+    if ( form is null ) return;
+    var area = Globals.MainForm is not null
             && Globals.MainForm != form
             && Globals.MainForm.Visible
             && Globals.MainForm.WindowState != FormWindowState.Minimized
@@ -188,7 +188,7 @@ static class FormsHelper
   /// <param name="source">The source form.</param>
   static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
   {
-    if ( form == null ) return;
+    if ( form is null ) return;
     if ( source?.Visible == true && source.WindowState != FormWindowState.Minimized )
       form.Center(source.Bounds);
     else
@@ -202,7 +202,7 @@ static class FormsHelper
   /// <param name="area">The area.</param>
   static public void Center(this Form form, Rectangle area)
   {
-    if ( form == null ) return;
+    if ( form is null ) return;
     form.Location = new Point(area.Left + area.Width / 2 - form.Width / 2,
                               area.Top + area.Height / 2 - form.Height / 2);
   }
@@ -213,7 +213,7 @@ static class FormsHelper
   /// <param name="form">The form.</param>
   static public void CheckLocationOrCenterToMainFormElseScreen(this Form form)
   {
-    if ( form == null ) return;
+    if ( form is null ) return;
     if ( form.Location.X < 0 || form.Location.Y < 0
       || form.Left > SystemInformation.WorkingArea.Width - form.Width / 2
       || form.Top > SystemInformation.WorkingArea.Height - form.Height / 2 )
@@ -251,12 +251,12 @@ static class FormsHelper
       if ( !dialog )
       {
         form.Restore();
-        if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+        if ( sender is not null ) form.CenterToFormElseMainFormElseScreen(sender);
         form.ForceBringToFront();
       }
       else
       {
-        if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+        if ( sender is not null ) form.CenterToFormElseMainFormElseScreen(sender);
         if ( !form.Modal )
         {
           form.Visible = false;
@@ -270,7 +270,7 @@ static class FormsHelper
       form.ShowDialog();
     else
     {
-      if ( sender != null ) form.CenterToFormElseMainFormElseScreen(sender);
+      if ( sender is not null ) form.CenterToFormElseMainFormElseScreen(sender);
       form.Show();
     }
     form.Activate();
@@ -383,7 +383,7 @@ static class FormsHelper
   /// <returns>The bitmap.</returns>
   static public Bitmap GetBitmap(this Control control)
   {
-    if ( control == null ) return null;
+    if ( control is null ) return null;
     var bitmap = new Bitmap(control.Width, control.Height);
     control.DrawToBitmap(bitmap, new Rectangle(0, 0, control.Width, control.Height));
     return bitmap;

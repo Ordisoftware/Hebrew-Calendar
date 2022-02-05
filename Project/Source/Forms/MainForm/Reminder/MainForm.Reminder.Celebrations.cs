@@ -36,7 +36,7 @@ partial class MainForm
     foreach ( var row in rows )
     {
       var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) continue;
+      if ( times is null ) continue;
       RemindCelebrationDates.Add(row.Date);
       ReminderForm.Run(row, TorahCelebrationDay.None, times);
     }

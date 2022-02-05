@@ -25,16 +25,16 @@ partial class TextBoxEx
   static public TextBoxEx GetTextBoxAndFocus(object sender, bool doFocus = true)
   {
     TextBoxEx control = sender as TextBoxEx;
-    if ( control == null )
+    if ( control is null )
       if ( sender is ContextMenuStrip menuContext )
         control = menuContext.SourceControl as TextBoxEx;
       else
       if ( sender is ToolStripMenuItem menuItem )
         control = ( menuItem.GetCurrentParent() as ContextMenuStrip )?.SourceControl as TextBoxEx;
-    if ( control == null )
+    if ( control is null )
     {
       var form = FormsHelper.GetActiveForm();
-      if ( form != null )
+      if ( form is not null )
       {
         if ( form.ActiveControl is TextBoxEx )
           control = form.ActiveControl as TextBoxEx;
@@ -114,7 +114,7 @@ partial class TextBoxEx
     {
       int pos = textbox.SelectionStart;
       string strTemp = null;
-      if ( textbox.InsertingText != null )
+      if ( textbox.InsertingText is not null )
       {
         strTemp = Clipboard.GetText();
         string str = strTemp;
@@ -127,7 +127,7 @@ partial class TextBoxEx
       textbox.Paste();
       if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )
         textbox.SelectionStart = pos;
-      if ( strTemp != null )
+      if ( strTemp is not null )
         Clipboard.SetText(strTemp);
       /*textbox.SetTextMutex = true;
       textbox.SelectedText = Clipboard.GetText();
@@ -201,7 +201,7 @@ partial class TextBoxEx
     //}
 
     /*var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox == null || !textbox.Enabled ) return;
+    if ( textbox is null || !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( textbox.RedoStack.Count == 0 ) return;
     try

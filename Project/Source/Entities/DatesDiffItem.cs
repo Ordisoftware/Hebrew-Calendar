@@ -63,7 +63,7 @@ class DatesDiffItem
         LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
                                         count,
                                         Program.LoadingFormDatesDiff + 1);
-        if ( sender != null ) sender.Enabled = false;
+        if ( sender is not null ) sender.Enabled = false;
       }
       var data = CalendarDates.Instance[Date1];
       SolarDays = ( Date2 - Date1 ).Days + 1;
@@ -75,7 +75,7 @@ class DatesDiffItem
       MoonYears = 1;
       if ( Date1.Day == 1 ) SolarMonths = 0;
       if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
-      if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise != null ) LunarMonths = 0;
+      if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise is not null ) LunarMonths = 0;
       if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
       for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
       {
@@ -83,7 +83,7 @@ class DatesDiffItem
         data = CalendarDates.Instance[index];
         if ( index.Day == 1 ) SolarMonths++;
         if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
-        if ( data.Ephemerisis.Moonrise == null ) continue;
+        if ( data.Ephemerisis.Moonrise is null ) continue;
         MoonDays++;
         if ( data.MoonDay == 1 ) LunarMonths++;
         if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;

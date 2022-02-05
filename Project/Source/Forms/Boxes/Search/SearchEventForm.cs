@@ -29,7 +29,7 @@ partial class SearchEventForm : Form
     Icon = MainForm.Icon;
     ActiveControl = ListItems;
     CurrentDay = MainForm.CurrentDay;
-    int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
+    int year = CurrentDay is null ? DateTime.Today.Year : MainForm.CurrentDayYear;
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
   }
 
@@ -45,7 +45,7 @@ partial class SearchEventForm : Form
 
   private void SearchEventForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
+    if ( DialogResult == DialogResult.Cancel && CurrentDay is not null )
       MainForm.GoToDate(CurrentDay.Date);
   }
 
@@ -70,18 +70,18 @@ partial class SearchEventForm : Form
       item.SubItems.Add(date.Titleize());
       item.SubItems.Add(row.DayAndMonthText);
       item.Tag = row;
-      if ( selectedKey != null && key == selectedKey && itemToSelect == null )
+      if ( selectedKey is not null && key == selectedKey && itemToSelect is null )
         itemToSelect = item;
       if ( row.IsNewYear )
         itemToSelectDefault = item;
     }
-    if ( itemToSelect != null )
+    if ( itemToSelect is not null )
     {
       itemToSelect.Focused = true;
       itemToSelect.Selected = true;
     }
     else
-    if ( itemToSelectDefault != null )
+    if ( itemToSelectDefault is not null )
     {
       itemToSelectDefault.Focused = true;
       itemToSelectDefault.Selected = true;

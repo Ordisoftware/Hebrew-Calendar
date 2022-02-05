@@ -50,7 +50,7 @@ public partial class AutoMenu
   {
     for ( int index = 0; index < Choices.Count; index++ )
       Console.WriteLine($"{index + 1} - {Choices[index].Title}");
-    Console.WriteLine($"{Choices.Count + 1} - {( Root == null ? "Exit" : "Previous menu" )}");
+    Console.WriteLine($"{Choices.Count + 1} - {( Root is null ? "Exit" : "Previous menu" )}");
   }
 
   public void Run()
@@ -63,14 +63,14 @@ public partial class AutoMenu
     Console.WriteLine(Separator);
     uint choice = GetUserChoice();
     if ( choice == Choices.Count + 1 )
-      if ( Root == null )
+      if ( Root is null )
         Console.WriteLine(ExitMessage);
       else
         Root.Run();
     else
     {
       var action = Choices[(int)choice - 1].Action;
-      if ( action != null )
+      if ( action is not null )
         action();
       else
       {

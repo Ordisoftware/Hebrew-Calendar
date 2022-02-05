@@ -28,7 +28,7 @@ public partial class CelebrationVersesBoardForm : Form
 
   static public void Run(TorahCelebrationDay celebration = TorahCelebrationDay.None)
   {
-    if ( Instance == null )
+    if ( Instance is null )
       Instance = new CelebrationVersesBoardForm();
     else
     if ( Instance.Visible )
@@ -105,7 +105,7 @@ public partial class CelebrationVersesBoardForm : Form
       var dateStart = DateTime.Today;
       var days = ApplicationDatabase.Instance.LunisolarDays;
       var day = days.Find(d => d.Date >= dateStart && d.HasTorahEvent && d.TorahEvent != TorahCelebrationDay.NewYearD1);
-      if ( day != null ) celebration = day.TorahEvent;
+      if ( day is not null ) celebration = day.TorahEvent;
     }
     if ( celebration == TorahCelebrationDay.NewYearD10 )
       celebration = TorahCelebrationDay.PessahD1;
@@ -161,7 +161,7 @@ public partial class CelebrationVersesBoardForm : Form
         break;
       case Keys.Enter:
         if ( sender is ListView control )
-          if ( control.FocusedItem != null )
+          if ( control.FocusedItem is not null )
           {
             int delta = (int)( control.Font.SizeInPoints * 1.5 );
             var pos = control.PointToScreen(control.FocusedItem.Position);
@@ -184,7 +184,7 @@ public partial class CelebrationVersesBoardForm : Form
     if ( SelectCelebration.SelectedItems.Count <= 0 ) return;
     SelectVerse.Items.Clear();
     var collection = TorahCelebrationVerses.Instance.Items[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag];
-    if ( collection == null ) return;
+    if ( collection is null ) return;
     foreach ( var reference in collection )
     {
       var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace("_", " "));

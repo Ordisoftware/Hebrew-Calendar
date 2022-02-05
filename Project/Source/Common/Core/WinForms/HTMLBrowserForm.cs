@@ -56,7 +56,7 @@ partial class HTMLBrowserForm : Form
 
   public void HTMLBrowserForm_Shown(object sender, EventArgs e)
   {
-    if ( Title != null ) Text = Title.GetLang();
+    if ( Title is not null ) Text = Title.GetLang();
     if ( FilePathTemplate.IsNullOrEmpty() ) return;
     string filePath = string.Format(FilePathTemplate, Languages.Current.ToString());
     if ( File.Exists(filePath) )

@@ -39,7 +39,7 @@ static class Chronometer
   {
     Cursor temp = null;
     var times = new long[count];
-    if ( control != null )
+    if ( control is not null )
     {
       temp = control.Cursor;
       control.Cursor = Cursors.WaitCursor;
@@ -52,7 +52,7 @@ static class Chronometer
     }
     finally
     {
-      if ( control != null )
+      if ( control is not null )
       {
         control.ResumeLayout();
         control.Cursor = temp;

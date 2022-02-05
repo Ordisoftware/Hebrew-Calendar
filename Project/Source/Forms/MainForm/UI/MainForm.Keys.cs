@@ -124,9 +124,9 @@ partial class MainForm
                   where check(day.Date.CompareTo(date)) && ( day.HasTorahEvent || day.HasSeasonChange ) && !day.IsNewYear
                   select day;
       var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
-      if ( found != null ) GoToDate(found.Date);
+      if ( found is not null ) GoToDate(found.Date);
     }
-    if ( Settings.CurrentView == ViewMode.Month && CurrentDay != null )
+    if ( Settings.CurrentView == ViewMode.Month && CurrentDay is not null )
       switch ( keyData )
       {
         case Keys.Control | Keys.Home:

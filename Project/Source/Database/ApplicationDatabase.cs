@@ -45,7 +45,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoClose()
   {
-    if ( LunisolarDays == null ) return;
+    if ( LunisolarDays is null ) return;
     if ( ClearListsOnCloseOrRelease ) LunisolarDays.Clear();
     LunisolarDays = null;
   }

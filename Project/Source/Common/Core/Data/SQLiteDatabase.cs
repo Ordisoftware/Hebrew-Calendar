@@ -91,12 +91,12 @@ abstract class SQLiteDatabase
 
   protected void CheckConnected()
   {
-    if ( Connection == null ) throw new SQLiteException("Not connected.");
+    if ( Connection is null ) throw new SQLiteException("Not connected.");
   }
 
   protected void CheckAccess(object table, string name)
   {
-    if ( table == null ) throw new SQLiteException("Table is not loaded: " + name);
+    if ( table is null ) throw new SQLiteException("Table is not loaded: " + name);
   }
 
   public virtual void Open()
@@ -118,7 +118,7 @@ abstract class SQLiteDatabase
 
   public void Close()
   {
-    if ( Connection == null ) return;
+    if ( Connection is null ) return;
     Rollback();
     DoClose();
     Connection.Close();
