@@ -355,7 +355,7 @@ partial class PreferencesForm : Form
 
   private void ActionGetGPS_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    if ( !SelectCityForm.Run(e != null) ) return;
+    if ( !SelectCityForm.Run(e is not null) ) return;
     EditGPSLatitude.Text = Settings.GPSLatitude;
     EditGPSLongitude.Text = Settings.GPSLongitude;
     EditTimeZone.Text = Settings.GetGPSText();

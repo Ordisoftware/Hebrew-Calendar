@@ -59,17 +59,17 @@ partial class NavigationForm : Form
         LabelSunsetValue.Text = row.SunsetAsString;
         LabelMoonriseValue.Text = row.MoonriseAsString;
         LabelMoonsetValue.Text = row.MoonsetAsString;
-        LabelMoonriseValue.Visible = row.Moonrise != null;
-        LabelMoonrise.Visible = row.Moonrise != null;
-        LabelMoonsetValue.Visible = row.Moonset != null;
-        LabelMoonset.Visible = row.Moonset != null;
+        LabelMoonriseValue.Visible = row.Moonrise is not null;
+        LabelMoonrise.Visible = row.Moonrise is not null;
+        LabelMoonsetValue.Visible = row.Moonset is not null;
+        LabelMoonset.Visible = row.Moonset is not null;
         LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 ) LabelEventSeasonValue.Text = NoDataField;
         LabelEventTorahValue.Text = row.TorahEventText;
         if ( LabelEventTorahValue.Text.Length == 0 )
           LabelEventTorahValue.Text = NoDataField;
         var rowNext = LunisolarDays.Find(day => day.Date > value && day.TorahEvent != TorahCelebrationDay.None);
-        if ( rowNext != null )
+        if ( rowNext is not null )
         {
           var date = rowNext.Date;
           LabelTorahNextValue.Text = rowNext.TorahEventText;
@@ -83,7 +83,7 @@ partial class NavigationForm : Form
           LabelTorahNextDateValue.Tag = null;
         }
         var today = ApplicationDatabase.Instance.GetToday();
-        LabelCurrentDayValue.Text = today != null
+        LabelCurrentDayValue.Text = today is not null
                                     ? today.DayAndMonthWithYearText
                                     : SysTranslations.NullSlot.GetLang();
         LabelCurrentDayValue.Tag = today?.Date;
@@ -97,8 +97,8 @@ partial class NavigationForm : Form
                      && row.LunarDay >= TorahCelebrationSettings.SoukotStartDay
                      && ( ( Settings.UseSimhatTorahOutside && row.LunarDay <= TorahCelebrationSettings.SoukotEndDay )
                        || ( row.LunarDay < TorahCelebrationSettings.SoukotEndDay ) );
-        LabelParashahValue.Enabled = rowParashah != null && !isPessah && !isSoukot;
-        if ( LabelParashahValue.Enabled && rowParashah != null )
+        LabelParashahValue.Enabled = rowParashah is not null && !isPessah && !isSoukot;
+        if ( LabelParashahValue.Enabled && rowParashah is not null )
         {
           LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
           LabelParashahValue.Tag = rowParashah;
@@ -281,14 +281,14 @@ partial class NavigationForm : Form
 
   private void LabelDay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    if ( sender is LinkLabel label && label.Tag != null )
+    if ( sender is LinkLabel label && label.Tag is not null )
       MainForm.Instance.GoToDate((DateTime)label.Tag, true, true, true);
   }
 
   private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     if ( e.Button == MouseButtons.Left )
-      if ( LabelParashahValue.Tag != null )
+      if ( LabelParashahValue.Tag is not null )
         ActionViewParashahDescription_Click(sender, e);
   }
 
@@ -324,7 +324,7 @@ partial class NavigationForm : Form
     ActiveControl = LabelDate;
     MainForm.Instance.MenuShowHide_Click(null, null);
     MainForm.Instance.Refresh();
-    if ( e != null && Settings.NavigationWindowCloseOnShowMainForm )
+    if ( e is not null && Settings.NavigationWindowCloseOnShowMainForm )
       Close();
     else
       this.Popup();

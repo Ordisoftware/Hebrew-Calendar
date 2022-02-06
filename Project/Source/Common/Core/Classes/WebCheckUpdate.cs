@@ -62,7 +62,7 @@ static class WebCheckUpdate
     try
     {
       Mutex = true;
-      if ( form != null )
+      if ( form is not null )
       {
         form.TopMost = true;
         form.TopMost = formTopMost;
@@ -99,6 +99,7 @@ static class WebCheckUpdate
     {
       CleanTemp();
       string msg = ex.Message;
+      // TODO manage domain name resolution failed and create advanced box to retry-cancel instead of OK
       if ( ex.Status == WebExceptionStatus.Timeout )
       {
         doFinally();
@@ -131,7 +132,7 @@ static class WebCheckUpdate
       Mutex = false;
       LoadingForm.Instance.Hidden = formHidden;
       LoadingForm.Instance.Hide();
-      if ( form != null )
+      if ( form is not null )
       {
         form.TopMost = true;
         form.TopMost = formTopMost;
@@ -245,12 +246,12 @@ static class WebCheckUpdate
         Thread.Sleep(100);
         Application.DoEvents();
       }
-      if ( ex != null ) throw ex;
+      if ( ex is not null ) throw ex;
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
         throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
       if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
         throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
-      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") != null )
+      if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") is not null )
       {
         Globals.IsExiting = true;
         return true;
@@ -270,7 +271,7 @@ static class WebCheckUpdate
     void completed(object sender, AsyncCompletedEventArgs e)
     {
       finished = true;
-      if ( e.Error == null ) return;
+      if ( e.Error is null ) return;
       HttpStatusCode code = 0;
       WebExceptionStatus status = 0;
       if ( e.Error is WebException we )

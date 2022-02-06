@@ -30,7 +30,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     foreach ( var item in query )
     {
       var row = table.Rows.Find(item.date.Year);
-      if ( row != null )
+      if ( row is not null )
         row[(int)item.torah] = item.date;
       else
       {
@@ -65,7 +65,7 @@ partial class ApplicationDatabase : SQLiteDatabase
       }
       if ( year < year1 ) continue;
       var row = table.Rows.Find(year);
-      if ( row != null )
+      if ( row is not null )
         row[item.month] = item.date;
       else
       if ( item.month > 0 )

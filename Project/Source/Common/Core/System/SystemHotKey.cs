@@ -67,7 +67,7 @@ class SystemHotKey
     set
     {
       if ( _Key == value || value == Keys.None ) return;
-      if ( publicHotKey != null )
+      if ( publicHotKey is not null )
       {
         Active = false;
         Key = value;
@@ -84,7 +84,7 @@ class SystemHotKey
     set
     {
       if ( _Modifiers == value || value == Modifiers.None ) return;
-      if ( publicHotKey != null )
+      if ( publicHotKey is not null )
       {
         Active = false;
         Modifiers = value;
@@ -101,7 +101,7 @@ class SystemHotKey
     set
     {
       if ( _KeyPressed == value ) return;
-      if ( publicHotKey != null )
+      if ( publicHotKey is not null )
       {
         Active = false;
         KeyPressed = value;
@@ -114,7 +114,7 @@ class SystemHotKey
 
   public bool Active
   {
-    get { return publicHotKey != null; }
+    get { return publicHotKey is not null; }
     set
     {
       if ( Active == value ) return;
@@ -127,7 +127,7 @@ class SystemHotKey
 
   private void Register()
   {
-    if ( publicHotKey == null && Key != Keys.None && Modifiers != Modifiers.None )
+    if ( publicHotKey is null && Key != Keys.None && Modifiers != Modifiers.None )
     {
       var key = Key;
       if ( Shift ) key |= Keys.Shift;
@@ -160,7 +160,7 @@ class SystemHotKey
 
   private void Unregister()
   {
-    if ( publicHotKey != null )
+    if ( publicHotKey is not null )
     {
       if ( !Manager.UnregisterHotkey(publicHotKeyID) )
         throw new Exception(SysTranslations.HotKeyUnregisterError.GetLang());
@@ -171,7 +171,7 @@ class SystemHotKey
 
   public bool IsValid()
   {
-    if ( publicHotKey != null ) return true;
+    if ( publicHotKey is not null ) return true;
     bool result = false;
     var key = (VirtualKeyCode)Key;
     var modifiers = new List<VirtualKeyCode>();

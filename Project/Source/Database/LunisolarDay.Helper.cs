@@ -59,14 +59,14 @@ partial class LunisolarDay
             }
           }
           else
-          if ( first != null )
+          if ( first is not null )
             if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
             {
               last = row;
               break;
             }
         }
-        if ( first != null && last != null
+        if ( first is not null && last is not null
           && first.Date <= last.Date
           && Date >= first.Date
           && Date <= last.Date )

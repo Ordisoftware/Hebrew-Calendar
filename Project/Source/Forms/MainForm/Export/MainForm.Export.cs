@@ -27,9 +27,9 @@ partial class MainForm
     var interval = new ExportInterval();
     var available = ViewMode.None;
     var view = Settings.CurrentView;
-    foreach ( var item in process.Where(p => p.Value != null) ) available |= item.Key;
+    foreach ( var item in process.Where(p => p.Value is not null) ) available |= item.Key;
     if ( !SelectExportTargetForm.Run(action, ref view, available, ref interval) ) return;
-    if ( process[view] == null ) throw new AdvancedNotImplementedException(Settings.CurrentView);
+    if ( process[view] is null ) throw new AdvancedNotImplementedException(Settings.CurrentView);
     if ( interval.IsDefined )
     {
       interval.Start = check(interval.Start.Value.Year, 0);

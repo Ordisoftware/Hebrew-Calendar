@@ -133,7 +133,7 @@ public partial class MainForm
           if ( force || TitleParashah.IsNullOrEmpty() )
           {
             var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-            if ( weekParashah.Factory != null )
+            if ( weekParashah.Factory is not null )
             {
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = true;

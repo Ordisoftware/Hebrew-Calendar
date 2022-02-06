@@ -45,7 +45,7 @@ namespace CodeProjectCalendar.NET
       var c = (Calendar)Parent;
 
       Bitmap bmp = c.RequestImage();
-      if ( bmp == null )
+      if ( bmp is null )
         return;
 
       e.Graphics.DrawImage(bmp, new Rectangle(0, 0, ClientSize.Width, ClientSize.Height),

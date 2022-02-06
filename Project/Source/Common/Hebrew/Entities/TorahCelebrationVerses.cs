@@ -36,7 +36,7 @@ class TorahCelebrationVerses : ProviderSettings
     var pair = line.Split(':');
     if ( pair.Length < 2 ) return;
     var celebration = Enums.Parse<TorahCelebration>(pair[0].Trim());
-    if ( Items[celebration] == null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
+    if ( Items[celebration] is null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
     var items = pair[1].Split('-');
     if ( items.Length < 2 ) return;
     var book = Enums.Parse<TanakBook>(items[0].Trim());

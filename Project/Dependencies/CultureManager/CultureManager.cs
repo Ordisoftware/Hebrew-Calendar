@@ -107,7 +107,7 @@ namespace Infralution.Localization
       }
       set
       {
-        if ( value == null ) throw new ArgumentNullException();
+        if ( value is null ) throw new ArgumentNullException();
 
         if ( !value.Equals(_applicationUICulture) )
         {
@@ -202,9 +202,9 @@ namespace Infralution.Localization
     {
       get
       {
-        if ( _managedControl == null )
+        if ( _managedControl is null )
         {
-          if ( Site != null )
+          if ( Site is not null )
           {
             IDesignerHost host = Site.GetService(typeof(IDesignerHost)) as IDesignerHost;
             if ( host?.Container?.Components.Count > 0 )
@@ -286,7 +286,7 @@ namespace Infralution.Localization
       }
       set
       {
-        if ( value == null ) throw new ArgumentNullException();
+        if ( value is null ) throw new ArgumentNullException();
         ChangeUICulture(value);
       }
     }
@@ -348,7 +348,7 @@ namespace Infralution.Localization
       if ( !culture.Equals(_uiCulture) )
       {
         _uiCulture = culture;
-        if ( _managedControl != null )
+        if ( _managedControl is not null )
         {
           _managedControl.SuspendLayout();
           foreach ( Control childControl in _managedControl.Controls )
@@ -388,7 +388,7 @@ namespace Infralution.Localization
         LoadResources(rm, culture.Parent, resources);
       }
       ResourceSet resourceSet = rm.GetResourceSet(culture, true, true);
-      if ( resourceSet != null )
+      if ( resourceSet is not null )
       {
         foreach ( DictionaryEntry entry in resourceSet )
         {
@@ -618,7 +618,7 @@ namespace Infralution.Localization
           if ( value == propertyName ) return true;
         }
       }
-      if ( ExcludeResource != null )
+      if ( ExcludeResource is not null )
       {
         return ExcludeResource(componentName, propertyName);
       }
@@ -653,12 +653,12 @@ namespace Infralution.Localization
       // check whether there are localizable resources for the type - if not we are done
       //
       System.IO.Stream resourceStream = componentType.Assembly.GetManifestResourceStream(componentType.FullName + ".resources");
-      if ( resourceStream == null ) return;
+      if ( resourceStream is null ) return;
 
       // recursively apply the resources localized in the base type
       //
       Type parentType = componentType.BaseType;
-      if ( parentType != null )
+      if ( parentType is not null )
       {
         ApplyResources(parentType, instance, culture);
       }
@@ -734,7 +734,7 @@ namespace Infralution.Localization
         // some special case handling for control sizes/locations
         //
         Control control = component as Control;
-        if ( control != null )
+        if ( control is not null )
         {
           switch ( propertyName )
           {
@@ -761,7 +761,7 @@ namespace Infralution.Localization
         // use the property descriptor to set the resource value
         //
         PropertyDescriptor pd = TypeDescriptor.GetProperties(component).Find(propertyName, false);
-        if ( ( pd?.IsReadOnly == false ) && ( ( resourceValue == null ) || pd.PropertyType.IsInstanceOfType(resourceValue) ) )
+        if ( ( pd?.IsReadOnly == false ) && ( ( resourceValue is null ) || pd.PropertyType.IsInstanceOfType(resourceValue) ) )
         {
           try
           {
@@ -778,7 +778,7 @@ namespace Infralution.Localization
           // there was no property corresponding to the given resource name.  If this is a control
           // the property may be an extender property so try applying it as an extender resource
           //
-          if ( control != null )
+          if ( control is not null )
           {
             ApplyExtenderResource(extenderProviders, control, propertyName, resourceValue);
           }

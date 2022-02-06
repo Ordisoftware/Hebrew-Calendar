@@ -41,6 +41,9 @@ URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
 
+Name = (FR) Chiourim.com
+URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
+
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
 

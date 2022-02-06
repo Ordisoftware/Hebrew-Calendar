@@ -80,7 +80,7 @@ partial class MainForm
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-      if ( weekParashah.Factory == null ) return;
+      if ( weekParashah.Factory is null ) return;
       HebrewTools.OpenParashahProvider((string)menuitem.Tag,
                                        weekParashah.Factory,
                                        weekParashah.Day.HasLinkedParashah);
@@ -90,7 +90,7 @@ partial class MainForm
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-      if ( weekParashah.Factory == null ) return;
+      if ( weekParashah.Factory is null ) return;
       string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
@@ -99,7 +99,7 @@ partial class MainForm
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-      if ( weekParashah == null ) return;
+      if ( weekParashah is null ) return;
       HebrewTools.OpenParashahProvider((string)menuitem.Tag,
                                        weekParashah,
                                        ContextMenuDayCurrentEvent.HasLinkedParashah);
@@ -109,7 +109,7 @@ partial class MainForm
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-      if ( weekParashah == null ) return;
+      if ( weekParashah is null ) return;
       string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });

@@ -25,7 +25,7 @@ partial class ParashotForm : Form
 
   static public ParashotForm Run(Parashah parashah = null)
   {
-    if ( Instance == null )
+    if ( Instance is null )
       Instance = new ParashotForm();
     else
     if ( Instance.Visible )
@@ -130,7 +130,7 @@ partial class ParashotForm : Form
 
   private void Select(Parashah parashah)
   {
-    if ( parashah == null ) return;
+    if ( parashah is null ) return;
     foreach ( DataGridViewRow row in DataGridView.Rows )
       if ( ( (Parashah)row.DataBoundItem ).ID == parashah.ID )
       {
@@ -342,7 +342,7 @@ partial class ParashotForm : Form
 
   private void BindingSource_DataSourceChanged(object sender, EventArgs e)
   {
-    if ( DataGridView.DataSource != null && HebrewDatabase.Instance.Parashot != null )
+    if ( DataGridView.DataSource is not null && HebrewDatabase.Instance.Parashot is not null )
       UpdateStats();
   }
 
@@ -376,7 +376,7 @@ partial class ParashotForm : Form
 
   private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
-    if ( e.Value == null ) return;
+    if ( e.Value is null ) return;
     if ( e.ColumnIndex == ColumnLinked.Index )
       e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
     else
@@ -483,7 +483,7 @@ partial class ParashotForm : Form
     var today = DateTime.Today;
     var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
     var day = days.Find(item => item.Date >= today && item.ParashahID == CurrentDataBoundItem.ID);
-    if ( day != null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
+    if ( day is not null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
   }
 
 }

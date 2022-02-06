@@ -348,7 +348,7 @@ partial class MainForm : Form
       MenuTray.Enabled = trayEnabled;
       TimerReminder.Enabled = true;
       EnableReminderTimer();
-      if ( dateOld == null )
+      if ( dateOld is null )
         GoToDate(DateTime.Today);
       else
         GoToDate(dateOld.Value);
@@ -457,7 +457,7 @@ partial class MainForm : Form
       bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
                                      ref lastdone,
                                      Settings.CheckUpdateAtStartupDaysInterval,
-                                     e == null);
+                                     e is null);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
       {
@@ -509,7 +509,7 @@ partial class MainForm : Form
         var form = MessageBoxEx.Instances.Find(f => f.Text == title.GetLang())
                    ?? new MessageBoxEx(title, text, width: width);
         form.ShowInTaskbar = true;
-        form.Popup(null, sender == null);
+        form.Popup(null, sender is null);
         break;
       default:
         throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
@@ -809,7 +809,7 @@ partial class MainForm : Form
   private void ActionSearchDay_Click(object sender, EventArgs e)
   {
     DateTime date = DateTime.Today;
-    if ( sender != null )
+    if ( sender is not null )
       if ( !SelectDayForm.Run(null, ref date, false, true, true) )
         return;
     GoToDate(date);
@@ -858,7 +858,7 @@ partial class MainForm : Form
     SystemManager.TryCatchManage(() =>
     {
       TimerBallon.Stop();
-      IsTrayBallooned = sender == null;
+      IsTrayBallooned = sender is null;
       if ( NavigationForm.Instance.Visible )
       {
         NavigationForm.Instance.Hide();
@@ -1017,7 +1017,7 @@ partial class MainForm : Form
     if ( GoToDateMutex ) return;
     SystemManager.TryCatch(() =>
     {
-      if ( LunisolarDaysBindingSource.Current != null )
+      if ( LunisolarDaysBindingSource.Current is not null )
         GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
     });
   }
@@ -1137,7 +1137,7 @@ partial class MainForm : Form
   private void ContextMenuDaySelect_Click(object sender, EventArgs e)
   {
     DateSelected = ContextMenuDayCurrentEvent.Date;
-    if ( DateSelected != null )
+    if ( DateSelected is not null )
       if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
         GoToDate(DateSelected.Value);
   }

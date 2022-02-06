@@ -42,7 +42,7 @@ abstract class ProviderSettings
       }
       DoClear();
       using var stream = File.OpenText(FilePath);
-      while ( ( line = stream.ReadLine() ) != null )
+      while ( ( line = stream.ReadLine() ) is not null )
         if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
           DoLoad(line);
     }

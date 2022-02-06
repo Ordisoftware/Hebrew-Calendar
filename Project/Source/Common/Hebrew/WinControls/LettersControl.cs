@@ -379,7 +379,7 @@ partial class LettersControl : UserControl
       else
       if ( sender is ToolStripMenuItem menuItem )
         button = (Button)( (ContextMenuStrip)menuItem.Owner ).SourceControl;
-      if ( button != null )
+      if ( button is not null )
       {
         TextBox.Paste(button.Text);
         TextBox.SelectionStart--;
@@ -430,7 +430,7 @@ partial class LettersControl : UserControl
   /// <param name="e">The event information.</param>
   private void ActionLetterViewDetails_Click(object sender, EventArgs e)
   {
-    if ( ViewLetterDetails == null ) return;
+    if ( ViewLetterDetails is null ) return;
     var button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
     ViewLetterDetails(this, button.Text);
   }
@@ -445,7 +445,7 @@ partial class LettersControl : UserControl
     ActionLetterAddAtStart.Enabled = TextBox.Text.Length < TextBox.MaxLength;
     ActionLetterAddAtEnd.Enabled = ActionLetterAddAtStart.Enabled;
     ActionLetterAddAtCaret.Enabled = ActionLetterAddAtStart.Enabled || TextBox.SelectionLength > 0;
-    ActionLetterViewDetails.Enabled = ViewLetterDetails != null;
+    ActionLetterViewDetails.Enabled = ViewLetterDetails is not null;
     MenuItemSeparator.Enabled = ActionLetterViewDetails.Enabled;
   }
 

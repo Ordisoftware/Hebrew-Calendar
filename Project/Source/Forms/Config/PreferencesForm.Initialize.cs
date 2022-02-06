@@ -168,7 +168,7 @@ partial class PreferencesForm
       control.Maximum = interval.Item2;
       control.Value = interval.Item3;
       control.Increment = interval.Item4;
-      if ( label != null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+      if ( label is not null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
     }
   }
 
@@ -292,7 +292,7 @@ partial class PreferencesForm
   /// </summary>
   private void CheckHotKeyCombination(Action action)
   {
-    if ( action == null && !EditGlobalHotKeyPopupMainFormEnabled.Checked ) return;
+    if ( action is null && !EditGlobalHotKeyPopupMainFormEnabled.Checked ) return;
     var tempActiveControl = ActiveControl;
     var tempIsReady = IsReady;
     PanelHotKey.Enabled = false;

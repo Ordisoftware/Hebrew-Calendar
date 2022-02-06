@@ -65,8 +65,8 @@ partial class ShowTextForm : Form
 
   public void Relocalize()
   {
-    if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-    if ( LocalizedText != null ) TextBox.Text = LocalizedText.GetLang();
+    if ( LocalizedTitle is not null ) Text = LocalizedTitle.GetLang();
+    if ( LocalizedText is not null ) TextBox.Text = LocalizedText.GetLang();
   }
 
   private void ShowTextForm_FormClosing(object sender, FormClosingEventArgs e)

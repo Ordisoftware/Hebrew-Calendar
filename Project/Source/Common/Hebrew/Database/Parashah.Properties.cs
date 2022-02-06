@@ -40,7 +40,7 @@ public partial class Parashah
   public Parashah GetLinked(List<Parashah> owner = null)
   {
     if ( !IsLinkedToNext ) return null;
-    if ( owner != null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
+    if ( owner is not null ) return owner[owner.FindIndex(p => p.ID == ID) + 1];
     var list = ParashotFactory.Instance.All.ToList();
     return list[list.FindIndex(p => p.ID == ID) + 1];
   }

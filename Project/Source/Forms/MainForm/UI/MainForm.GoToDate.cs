@@ -36,7 +36,7 @@ partial class MainForm
       // Navigation window
       SystemManager.TryCatch(() =>
       {
-        if ( NavigationForm.Instance != null )
+        if ( NavigationForm.Instance is not null )
           NavigationForm.Instance.Date = date;
       });
       // Datagridview and bindingsource

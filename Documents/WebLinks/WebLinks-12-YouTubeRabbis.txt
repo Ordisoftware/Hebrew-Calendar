@@ -59,7 +59,7 @@ URL = https://www.youtube.com/channel/UCDIGQLzR9CylDHD00XU9LRw
 Name = (FR) Sitré Haïm (Rav Yossef Hay)
 URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
-Name = (EN) The Yeshiva (Rabbi YY Jacobson)
+Name = (EN) The Yeshiva (Rabbi Yosef Yitzchak Jacobson)
 URL = https://www.youtube.com/user/TheYeshivaNet
 
 -

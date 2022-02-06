@@ -132,8 +132,8 @@ partial class MessageBoxEx : Form
 
   public void RelocalizeText()
   {
-    if ( LocalizedTitle != null ) Text = LocalizedTitle.GetLang();
-    if ( LocalizedText != null )
+    if ( LocalizedTitle is not null ) Text = LocalizedTitle.GetLang();
+    if ( LocalizedText is not null )
     {
       AutoSize = false;
       Label.AutoSize = false;

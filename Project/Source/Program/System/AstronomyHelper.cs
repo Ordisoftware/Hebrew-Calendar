@@ -81,7 +81,7 @@ static class AstronomyHelper
         return new TimeSpan?();
       }
     }
-    if ( MainForm.Instance.CurrentTimeZoneInfo == null )
+    if ( MainForm.Instance.CurrentTimeZoneInfo is null )
       throw new InvalidTimeZoneException();
     int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours +
                    ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );

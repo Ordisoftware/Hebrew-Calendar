@@ -27,7 +27,7 @@ partial class SearchGregorianMonthForm : Form
     Icon = MainForm.Icon;
     ActiveControl = ListItems;
     CurrentDay = MainForm.CurrentDay;
-    int year = CurrentDay == null ? DateTime.Today.Year : MainForm.CurrentDayYear;
+    int year = CurrentDay is null ? DateTime.Today.Year : MainForm.CurrentDayYear;
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
   }
 
@@ -43,7 +43,7 @@ partial class SearchGregorianMonthForm : Form
 
   private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( DialogResult == DialogResult.Cancel && CurrentDay != null )
+    if ( DialogResult == DialogResult.Cancel && CurrentDay is not null )
       MainForm.GoToDate(CurrentDay.Date);
   }
 

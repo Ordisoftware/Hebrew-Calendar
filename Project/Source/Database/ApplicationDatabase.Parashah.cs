@@ -20,7 +20,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   public (LunisolarDay Day, Parashah Factory) GetWeeklyParashah()
   {
     var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
-    if ( today == null ) return (today, null);
+    if ( today is null ) return (today, null);
     if ( today.LunarMonth == TorahCelebrationSettings.PessahMonth )
       if ( today.TorahEvent == TorahCelebrationDay.PessahD1 || today.TorahEvent == TorahCelebrationDay.PessahD7 )
         return (today, null);
@@ -44,9 +44,9 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   public bool ShowWeeklyParashahDescription()
   {
-    if ( MainForm.UserParashot == null ) return false;
+    if ( MainForm.UserParashot is null ) return false;
     var (Day, Factory) = GetWeeklyParashah();
-    if ( Factory == null ) return false;
+    if ( Factory is null ) return false;
     return MainForm.UserParashot.ShowDescription(Factory, Day.HasLinkedParashah, () => ParashotForm.Run(Factory));
   }
 
@@ -61,7 +61,7 @@ partial class LunisolarDay
   {
     if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
     var parashah = ParashotFactory.Instance.Get(ParashahID);
-    return parashah != null
+    return parashah is not null
            ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
            : SysTranslations.UndefinedSlot.GetLang();
   }

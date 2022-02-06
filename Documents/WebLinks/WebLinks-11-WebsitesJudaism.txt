@@ -16,16 +16,13 @@ Lang/FR = Sites Web sur le judaïsme
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
 
-Name = (EN) Judaism 101
+Name = (EN) Judaism 101 (Jew FAQ)
 URL = https://www.jewfaq.org
 
 -
 
 Name = (FR) Beit HaZohar
 URL = https://www.beithazohar.com
-
-Name = (FR) Chiourim.com
-URL = https://www.chiourim.com
 
 Name = (FR) Dvar Torah
 URL = https://www.dvartorah.org
@@ -85,6 +82,20 @@ URL = https://fr.chabad.org
 
 Name = (EN) 'Habad Loubavitch
 URL = https://www.chabad.org
+
+-
+
+Name = (FR) Chiourim.com
+URL = https://www.chiourim.com
+
+Name = (FR) Chiourim AlloRav
+URL = https://allorav.com
+
+Name = (FR) Chiourim Questions
+URL = https://www.techouvot.com
+
+Name = (FR) Chiourim Zivoug
+URL = https://www.zivoug.com
 
 -
 

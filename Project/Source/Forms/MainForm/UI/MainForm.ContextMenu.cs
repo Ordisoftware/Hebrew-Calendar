@@ -24,9 +24,9 @@ public partial class MainForm
   private void DoCalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
     var dayEvent = CalendarMonth.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));
-    if ( dayEvent == null ) return;
+    if ( dayEvent is null ) return;
     var dayRow = ApplicationDatabase.Instance.LunisolarDays.Find(day => day.Date == dayEvent.Date);
-    if ( dayRow == null ) return;
+    if ( dayRow is null ) return;
     if ( e.Button == MouseButtons.Left )
     {
       if ( e.Clicks > 1 )
@@ -77,7 +77,7 @@ public partial class MainForm
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
     var torahevent = ( weeklong?.Event ) ?? TorahCelebration.None;
     if ( torahevent == TorahCelebration.None )
-      torahevent = rowDay != null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
+      torahevent = rowDay is not null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
     // Celebration
     if ( torahevent != TorahCelebration.None )
     {
@@ -88,7 +88,7 @@ public partial class MainForm
     else
     {
       var rowNextCelebration = ApplicationDatabase.Instance.GetCurrentOrNextCelebration(date);
-      if ( rowNextCelebration != null )
+      if ( rowNextCelebration is not null )
       {
         var weeklongNext = rowNextCelebration?.GetWeekLongCelebrationIntermediateDay();
         var toraheventNext = weeklongNext.Value.Event;
@@ -112,7 +112,7 @@ public partial class MainForm
       if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
         var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);
-        if ( parashah != null )
+        if ( parashah is not null )
         {
           string captionParashah = parashah.ToStringShort(false, dayParashah.HasLinkedParashah);
           ContextMenuDayDate.Text += $" - {captionParashah}";
@@ -147,7 +147,7 @@ public partial class MainForm
       ContextMenuDaySunset.Visible = false;
       if ( ContextMenuDayCurrentEvent.MoonriseOccuring == MoonriseOccurring.AfterSet )
       {
-        ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.Moonset != null;
+        ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.Moonset is not null;
         if ( ContextMenuDayMoonrise.Visible )
           ContextMenuDayMoonrise.Text = AppTranslations.Moonset.GetLang(ContextMenuDayCurrentEvent?.MoonsetAsString ?? "-");
         ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
@@ -161,7 +161,7 @@ public partial class MainForm
         ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
         if ( ContextMenuDayMoonrise.Visible )
           ContextMenuDayMoonrise.Text = AppTranslations.Moonrise.GetLang(ContextMenuDayCurrentEvent?.MoonriseAsString ?? "-");
-        ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.Moonset != null;
+        ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.Moonset is not null;
         if ( ContextMenuDayMoonset.Visible )
           ContextMenuDayMoonset.Text = AppTranslations.Moonset.GetLang(ContextMenuDayCurrentEvent?.MoonsetAsString ?? "-");
         ContextMenuDayMoonrise.ImageIndex = 2;

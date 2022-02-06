@@ -105,7 +105,7 @@ namespace CoolPrintPreview
     public void RefreshPreview()
     {
       // render into PrintController
-      if ( _doc != null )
+      if ( _doc is not null )
       {
         // prepare to render preview document
         PageImages.Clear();
@@ -342,7 +342,7 @@ namespace CoolPrintPreview
     protected override void OnPaint(PaintEventArgs e)
     {
       Image img = GetImage(StartPage);
-      if ( img != null )
+      if ( img is not null )
       {
         Rectangle rc = GetImageRectangle(img);
         if ( rc.Width > 2 && rc.Height > 2 )
@@ -363,7 +363,7 @@ namespace CoolPrintPreview
 
             // render second page
             img = GetImage(StartPage + 1);
-            if ( img != null )
+            if ( img is not null )
             {
               // update bounds in case orientation changed
               rc = GetImageRectangle(img);
@@ -516,7 +516,7 @@ namespace CoolPrintPreview
     void SyncPageImages(bool lastPageReady)
     {
       var pv = (PreviewPrintController)_doc.PrintController;
-      if ( pv != null )
+      if ( pv is not null )
       {
         var pageInfo = pv.GetPreviewPageInfo();
         int count = lastPageReady ? pageInfo.Length : pageInfo.Length - 1;
@@ -555,7 +555,9 @@ namespace CoolPrintPreview
           break;
         case ZoomMode.TwoPages:
           rc.Width *= 2; // << two pages side-by-side
+#pragma warning disable F00001 // GotoConsideredHarmful
           goto case ZoomMode.FullPage;
+#pragma warning restore F00001 // GotoConsideredHarmful
         case ZoomMode.FullPage:
           double zoomX = ( rc.Width > 0 ) ? rcCli.Width / (double)rc.Width : 0;
           double zoomY = ( rc.Height > 0 ) ? rcCli.Height / (double)rc.Height : 0;
@@ -632,7 +634,7 @@ namespace CoolPrintPreview
       // get image rectangle to adjust scroll size
       Rectangle rc = Rectangle.Empty;
       Image img = GetImage(StartPage);
-      if ( img != null )
+      if ( img is not null )
       {
         rc = GetImageRectangle(img);
       }

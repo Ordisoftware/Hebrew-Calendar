@@ -27,7 +27,7 @@ namespace Ordisoftware.Hebrew.Calendar
     {
       // TODO use anniversary form like shabat ?
       if ( RemindCelebrationDayForms.ContainsKey(TorahEvent.AnniversarySun) )
-        if ( RemindCelebrationDayForms[TorahEvent.AnniversarySun] != null )
+        if ( RemindCelebrationDayForms[TorahEvent.AnniversarySun] is not null )
           return;
 
       var dateBirth = BirthDate.Change(year: DateTime.Today.Year);
@@ -40,9 +40,9 @@ namespace Ordisoftware.Hebrew.Calendar
                       && day.Date == dateBirth
                       && day.Date <= dateLimit
                   select day ).FirstOrDefault();
-      if ( row == null ) return;
+      if ( row is null ) return;
       var times = CreateCelebrationTimes(row, Settings.RemindCelebrationEveryMinutes);
-      if ( times == null ) return;
+      if ( times is null ) return;
       RemindCelebrationDates.Add(row.Date); // TODO use anniversary date like shabat ?
       ReminderForm.Run(row, TorahEvent.AnniversarySun, times);
     }

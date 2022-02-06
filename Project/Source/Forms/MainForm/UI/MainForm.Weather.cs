@@ -80,7 +80,7 @@ partial class MainForm
     catch ( Exception ex )
     {
       string msg = ex.Message;
-      if ( ex.InnerException != null )
+      if ( ex.InnerException is not null )
         msg += Globals.NL2 + ex.InnerException.Message;
       msg += Globals.NL2 + url;
       if ( !string.IsNullOrEmpty(json) )

@@ -49,7 +49,7 @@ partial class ReminderForm : Form
     try
     {
       ReminderForm form = null;
-      if ( isShabat && MainForm.Instance.ShabatForm != null )
+      if ( isShabat && MainForm.Instance.ShabatForm is not null )
       {
         Flash(MainForm.Instance.ShabatForm);
         return;
@@ -109,7 +109,7 @@ partial class ReminderForm : Form
         if ( Program.Settings.CalendarShowParashah && Program.Settings.ReminderShabatShowParashah )
         {
           var rowParashah = row.GetParashahReadingDay();
-          if ( rowParashah != null )
+          if ( rowParashah is not null )
           {
             form.LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
             form.LabelParashahValue.Tag = row;
@@ -192,7 +192,7 @@ partial class ReminderForm : Form
   static private void SetFormsLocation()
   {
     var list = new List<ReminderForm>();
-    if ( MainForm.Instance.ShabatForm != null )
+    if ( MainForm.Instance.ShabatForm is not null )
       list.Add(MainForm.Instance.ShabatForm);
     foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
       list.Add(item.Value);
@@ -245,7 +245,7 @@ partial class ReminderForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
-    if ( Image != null ) PictureBox.Image = Image;
+    if ( Image is not null ) PictureBox.Image = Image;
     InitializeParashahMenu();
     this.InitDropDowns();
   }
@@ -349,7 +349,7 @@ partial class ReminderForm : Form
 
   private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    if ( LabelDate.Tag == null ) return;
+    if ( LabelDate.Tag is null ) return;
     MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, this);
   }
 
@@ -366,7 +366,7 @@ partial class ReminderForm : Form
 
   private void LabelParashahValue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
-    if ( LabelParashahValue.Tag == null )
+    if ( LabelParashahValue.Tag is null )
     {
       ActiveControl = null;
       if ( Celebration == TorahCelebrationDay.Shabat )

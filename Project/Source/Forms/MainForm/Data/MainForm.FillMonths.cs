@@ -109,25 +109,25 @@ partial class MainForm
             color2 = Settings.EventColorTorah;
           if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
             color3 = Settings.EventColorShabat;
-          if ( color1 != null && color2 != null && color3 != null )
+          if ( color1 is not null && color2 is not null && color3 is not null )
             color1 = MixColor(color1.Value, color2.Value, color3.Value);
           else
-          if ( color1 != null && color2 != null && color3 == null )
+          if ( color1 is not null && color2 is not null && color3 is null )
             color1 = MixColor(color1.Value, color2.Value);
           else
-          if ( color1 != null && color2 == null && color3 != null )
+          if ( color1 is not null && color2 is null && color3 is not null )
             color1 = MixColor(color1.Value, color3.Value);
           else
-          if ( color1 == null && color2 != null && color3 != null )
+          if ( color1 is null && color2 is not null && color3 is not null )
             color1 = MixColor(color2.Value, color3.Value);
           else
-          if ( color2 != null )
+          if ( color2 is not null )
             color1 = color2;
           else
-          if ( color3 != null )
+          if ( color3 is not null )
             color1 = color3;
           else
-          if ( color1 == null )
+          if ( color1 is null )
             color1 = Settings.MonthViewBackColor;
           DayBrushes[YearLast - date.Year, date.Month, date.Day] = new SolidBrush(color1.Value);
           if ( IsCelebrationWeekEnd )
@@ -150,7 +150,7 @@ partial class MainForm
           {
             if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
             {
-              if ( row.Moonset != null )
+              if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
                 add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
@@ -165,7 +165,7 @@ partial class MainForm
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
-              if ( row.Moonset != null )
+              if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
             }
           }

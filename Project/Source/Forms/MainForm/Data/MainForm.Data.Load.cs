@@ -103,7 +103,7 @@ partial class MainForm
     if ( runPreferences ) PreferencesForm.Run(PreferencesForm.TabIndexGeneration);
     string errors = CheckRegenerateCalendar(true, force: keepYears, keepYears: keepYears);
     Globals.ChronoStartingApp.Start();
-    if ( errors != null )
+    if ( errors is not null )
     {
       SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
       throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));

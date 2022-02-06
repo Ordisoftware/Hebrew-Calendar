@@ -91,7 +91,7 @@ partial class SelectYearsForm : Form
   private void PredefinedYearsItem_Click(object sender, EventArgs e)
   {
     var interval = (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag;
-    if ( interval == null ) return;
+    if ( interval is null ) return;
     decimal first = CurrentYear - interval.YearsBefore;
     if ( first < EditYearFirst.Minimum ) first = EditYearFirst.Minimum;
     if ( first > EditYearFirst.Maximum ) first = EditYearFirst.Maximum;

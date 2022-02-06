@@ -109,7 +109,7 @@ class SystemStatistics
   {
     get
     {
-      if ( PerformanceCounterCPUProcessLoad == null )
+      if ( PerformanceCounterCPUProcessLoad is null )
       {
         CPUProcessLoadInitMutex = true;
         new Task(() =>
@@ -166,7 +166,7 @@ class SystemStatistics
   {
     get
     {
-      if ( PerformanceCounterCPULoad == null )
+      if ( PerformanceCounterCPULoad is null )
       {
         CPULoadInitMutex = true;
         new Task(() =>

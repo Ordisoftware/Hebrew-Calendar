@@ -29,7 +29,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   {
     var now = DateTime.Now;
     var diff = now - DayChecked;
-    if ( LastCheck != null && diff.TotalSeconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
+    if ( LastCheck is not null && diff.TotalSeconds < GetTodayCacheInSeconds && LunisolarDays.Contains(LastCheck) )
       return LastCheck;
     DayChecked = now;
     LastCheck = GetDay(now);
@@ -58,11 +58,11 @@ partial class ApplicationDatabase : SQLiteDatabase
       rowCurrent = LunisolarDays[index];
       if ( !isInBounds )
       {
-        if ( rowCurrent.Moonset != null )
+        if ( rowCurrent.Moonset is not null )
           if ( datetime < rowCurrent.Moonset )
           {
             rowFirst = rowPrevious;
-            if ( rowCurrent.Moonset != null )
+            if ( rowCurrent.Moonset is not null )
             {
               rowLast = rowCurrent;
               break;
@@ -75,7 +75,7 @@ partial class ApplicationDatabase : SQLiteDatabase
           }
       }
       else
-      if ( rowCurrent.Moonset != null )
+      if ( rowCurrent.Moonset is not null )
       {
         rowLast = rowCurrent;
         break;
@@ -87,14 +87,14 @@ partial class ApplicationDatabase : SQLiteDatabase
     if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
       return rowLast;
     else
-    if ( rowFirst != null && rowLast != null )
+    if ( rowFirst is not null && rowLast is not null )
     {
       indexStart = LunisolarDays.IndexOf(rowFirst);
       indexEnd = LunisolarDays.IndexOf(rowLast);
       for ( int index = indexStart + 1; index <= indexEnd - 1; index++ )
       {
         rowCurrent = LunisolarDays[index];
-        if ( rowCurrent.Moonrise != null )
+        if ( rowCurrent.Moonrise is not null )
           return rowCurrent;
       }
     }

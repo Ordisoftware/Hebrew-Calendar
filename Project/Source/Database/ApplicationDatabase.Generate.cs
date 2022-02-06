@@ -134,7 +134,7 @@ partial class ApplicationDatabase
       day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
       day.MoonsetAsString = SQLiteDate.ToString(ephemeris.Moonset);
       MoonriseOccurring moonrisetype;
-      if ( ephemeris.Moonrise == null )
+      if ( ephemeris.Moonrise is null )
         moonrisetype = MoonriseOccurring.NextDay;
       else
       if ( ephemeris.Moonrise < ephemeris.Moonset )

@@ -228,7 +228,7 @@ static partial class DebugManager
   /// <param name="args">Event information to send to registered event handlers.</param>
   static private void OnAppDomainException(object sender, UnhandledExceptionEventArgs args)
   {
-    if ( args.ExceptionObject == null ) return;
+    if ( args.ExceptionObject is null ) return;
     Handle(sender, (Exception)args.ExceptionObject);
   }
 
@@ -239,7 +239,7 @@ static partial class DebugManager
   /// <param name="args">Event information to send to registered event handlers.</param>
   static private void OnThreadException(object sender, ThreadExceptionEventArgs args)
   {
-    if ( args.Exception == null ) return;
+    if ( args.Exception is null ) return;
     Handle(sender, args.Exception);
   }
 
@@ -376,7 +376,7 @@ static partial class DebugManager
     if ( einfo.Instance is AbortException ) return;
     try
     {
-      if ( SubstituteShowException != null )
+      if ( SubstituteShowException is not null )
         SubstituteShowException.Invoke(einfo.Sender, einfo);
       else
         try
@@ -481,7 +481,7 @@ static partial class DebugManager
     var einfo = new ExceptionInfo(sender, ex);
     var list = new List<string> { getText(einfo) };
     einfo = einfo.InnerInfo;
-    while ( einfo != null )
+    while ( einfo is not null )
     {
       list.Add("[Inner] " + getText(einfo));
       einfo = einfo.InnerInfo;

@@ -63,7 +63,7 @@ partial class SelectDayForm : Form
 
   private void ActionCancel_Click(object sender, EventArgs e)
   {
-    if ( IsGotoRealtime && CurrentDay != null )
+    if ( IsGotoRealtime && CurrentDay is not null )
       MainForm.Instance.GoToDate(CurrentDay.Date);
   }
 

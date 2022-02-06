@@ -40,7 +40,7 @@ partial class SelectSoundForm : Form
     else
     if ( form.SelectCustom.Checked )
       Settings.ReminderBoxSoundSource = SoundSource.Custom;
-    if ( form.SelectDialogSound.SelectedItem != null )
+    if ( form.SelectDialogSound.SelectedItem is not null )
       Settings.ReminderBoxSoundDialog = (MessageBoxIcon)form.SelectDialogSound.SelectedItem;
     Settings.ReminderBoxSoundApplication = ( form.SelectApplicationSound.SelectedItem as SoundItem )?.FilePath;
     Settings.ReminderBoxSoundWindows = ( form.SelectWindowsSound.SelectedItem as SoundItem )?.FilePath;
@@ -63,11 +63,11 @@ partial class SelectSoundForm : Form
     var item = ( from SoundItem sound in SelectApplicationSound.Items
                  where sound.FilePath == Settings.ReminderBoxSoundApplication
                  select sound ).FirstOrDefault();
-    if ( item != null ) SelectApplicationSound.SelectedItem = item;
+    if ( item is not null ) SelectApplicationSound.SelectedItem = item;
     item = ( from SoundItem sound in SelectWindowsSound.Items
              where sound.FilePath == Settings.ReminderBoxSoundWindows
              select sound ).FirstOrDefault();
-    if ( item != null ) SelectWindowsSound.SelectedItem = item;
+    if ( item is not null ) SelectWindowsSound.SelectedItem = item;
     if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 )
       SelectDialogSound.SelectedIndex = 0;
     if ( SelectApplicationSound.Items.Count > 0 && SelectApplicationSound.SelectedIndex == -1 )

@@ -82,7 +82,7 @@ partial class SelectExportTargetForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     var control = this.GetAll<CheckBox>().OrderByDescending(c => c.Width).FirstOrDefault();
-    if ( control != null )
+    if ( control is not null )
     {
       int width = control.Left * 3 + control.Width + GroupBoxView.Left * 2;
       if ( width > Width ) Width = width;
@@ -94,7 +94,7 @@ partial class SelectExportTargetForm : Form
     EditAutoOpenExportedFile.Checked = Settings.AutoOpenExportedFile;
     EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder;
     var CurrentDay = MainForm.Instance.CurrentDay;
-    int year = CurrentDay == null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
+    int year = CurrentDay is null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
     if ( year == MainForm.Instance.DateLast.Year ) year--;
     var list = MainForm.Instance.YearsIntervalArray.SkipLast(1);
     SelectYear1.Fill(list, year);

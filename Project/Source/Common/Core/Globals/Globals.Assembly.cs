@@ -37,7 +37,7 @@ static partial class Globals
     get
     {
       var attribute = GetAttribute<AssemblyTitleAttribute>();
-      return attribute != null && attribute.Title != string.Empty
+      return attribute is not null && attribute.Title != string.Empty
              ? attribute.Title
              : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
     }

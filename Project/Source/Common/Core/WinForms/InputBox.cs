@@ -82,9 +82,9 @@ where T : IConvertible
     if ( dx > 0 ) f.Width = f.Width + dx + 10;
     f.Value = value;
     f.Validator = validator;
-    if ( value != null ) f.TextBox.Text = value.ToString();
+    if ( value is not null ) f.TextBox.Text = value.ToString();
     if ( f.ShowDialog() == DialogResult.Cancel ) return InputValueResult.Cancelled;
-    if ( value != null && f.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
+    if ( value is not null && f.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
     value = f.Value;
     return InputValueResult.Modified;
   }
@@ -109,7 +109,7 @@ where T : IConvertible
     try
     {
       value = TextBox.Text.ConvertTo<T>();
-      if ( Validator != null )
+      if ( Validator is not null )
         b = Validator(value);
     }
     catch

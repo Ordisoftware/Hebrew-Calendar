@@ -27,9 +27,9 @@ partial class MainForm
                 where day.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                    && day.Date >= dateToday
                 select day ).FirstOrDefault();
-    if ( row == null ) return result;
+    if ( row is null ) return result;
     var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
-    if ( times == null ) return result;
+    if ( times is null ) return result;
     result = dateNow >= times.DateStart && dateNow < times.DateEnd;
     var dateTrigger = times.DateStartCheck.AddHours((double)-Settings.RemindShabatHoursBefore);
     if ( dateNow < dateTrigger || dateNow >= times.DateEnd )

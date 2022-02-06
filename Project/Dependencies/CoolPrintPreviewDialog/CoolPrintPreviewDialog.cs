@@ -47,7 +47,7 @@ namespace CoolPrintPreview
     public CoolPrintPreviewDialog(Control parentForm)
     {
       InitializeComponent();
-      if ( parentForm != null )
+      if ( parentForm is not null )
       {
         Size = parentForm.Size;
       }
@@ -79,7 +79,7 @@ namespace CoolPrintPreview
       set
       {
         // unhook event handlers
-        if ( _doc != null )
+        if ( _doc is not null )
         {
           _doc.BeginPrint -= _doc_BeginPrint;
           _doc.EndPrint -= _doc_EndPrint;
@@ -89,7 +89,7 @@ namespace CoolPrintPreview
         _doc = value;
 
         // hook up event handlers
-        if ( _doc != null )
+        if ( _doc is not null )
         {
           _doc.BeginPrint += _doc_BeginPrint;
           _doc.EndPrint += _doc_EndPrint;

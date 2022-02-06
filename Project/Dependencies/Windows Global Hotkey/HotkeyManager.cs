@@ -49,7 +49,7 @@ namespace Base.Hotkeys
 
     public bool RegisterHotkey(int id, HotkeyAction ha)
     {
-      if ( ha != null && ha.Hotkey.Status != HotkeyStatus.Registered && ha.Hotkey.IsValid )
+      if ( ha is not null && ha.Hotkey.Status != HotkeyStatus.Registered && ha.Hotkey.IsValid )
       {
         form.RegisterHotkey(ha.Hotkey);
         if ( ha.Hotkey.Status == HotkeyStatus.Registered )

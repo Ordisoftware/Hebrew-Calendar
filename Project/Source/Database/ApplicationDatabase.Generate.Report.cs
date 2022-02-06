@@ -87,10 +87,10 @@ partial class ApplicationDatabase
           strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                             ? ShabatText
                             : "   " );
-          string strMoonrise = day.Moonrise == null
+          string strMoonrise = day.Moonrise is null
                              ? MoonNoText
                              : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + day.MoonriseAsString;
-          string strMoonset = day.Moonset == null
+          string strMoonset = day.Moonset is null
                             ? MoonNoText
                             : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + day.MoonsetAsString;
           string strMoon = day.MoonriseOccuring == MoonriseOccurring.BeforeSet

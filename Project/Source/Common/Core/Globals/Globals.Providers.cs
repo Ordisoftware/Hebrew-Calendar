@@ -64,7 +64,7 @@ static partial class Globals
       foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )
       {
         var item = CreateOnlineProviders(DataFileFolder.ApplicationDocuments, file);
-        if ( item != null ) WebLinksProviders.Add(item);
+        if ( item is not null ) WebLinksProviders.Add(item);
       }
     });
   }
