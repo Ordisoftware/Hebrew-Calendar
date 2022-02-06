@@ -71,6 +71,15 @@ static class OnlineCelebration
     { TorahCelebration.Soukot, "souccot" }
   };
 
+  static public readonly Dictionary<TorahCelebration, string> Chiourim = new()
+  {
+    { TorahCelebration.Pessah, "pessah" },
+    { TorahCelebration.Chavouot, "chavouot" },
+    { TorahCelebration.YomTerouah, "eloul" },
+    { TorahCelebration.YomHaKipourim, "eloul" },
+    { TorahCelebration.Soukot, "tichri" }
+  };
+
   static public readonly Dictionary<TorahCelebration, string> Loubavitch = new()
   {
     { TorahCelebration.Pessah, "pessa-h" },
