@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-02 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class OnlineCelebration
