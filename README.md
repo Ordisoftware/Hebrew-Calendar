@@ -363,7 +363,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress - Version 9.24
 
 - Code refactoring.
-- Update judaism web links.
+- Update web links about celebrations, calendar and judaism.
 
 #### 2022.02.01 - Version 9.23
 
