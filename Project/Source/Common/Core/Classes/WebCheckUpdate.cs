@@ -99,7 +99,7 @@ static class WebCheckUpdate
     {
       CleanTemp();
       string msg = ex.Message;
-      // TODO manage domain name resolution failed
+      // TODO manage domain name resolution failed and create advanced box to retry-cancel instead of OK
       if ( ex.Status == WebExceptionStatus.Timeout )
       {
         doFinally();
