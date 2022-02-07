@@ -524,6 +524,12 @@
     <Compile Include="Source\Forms\Boxes\Boards\ParashotForm.designer.cs">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.Designer.cs">
+      <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -594,11 +600,11 @@
     <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.Designer.cs">
       <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.Designer.cs">
-      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Designer.cs">
+      <DependentUpon>ManageBookmarksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Config\StatisticsForm.cs">
       <SubType>Form</SubType>
@@ -957,11 +963,18 @@
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.fr.resx">
-      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.fr.resx">
+      <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\EditDateBookmarksForm.resx">
-      <DependentUpon>EditDateBookmarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.resx">
+      <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.fr.resx">
+      <DependentUpon>ManageBookmarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.resx">
+      <DependentUpon>ManageBookmarksForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectExportTargetForm.fr.resx">
       <DependentUpon>SelectExportTargetForm.cs</DependentUpon>

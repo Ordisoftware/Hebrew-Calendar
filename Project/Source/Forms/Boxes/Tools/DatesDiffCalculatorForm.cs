@@ -202,7 +202,7 @@ partial class DatesDiffCalculatorForm : Form
     Enabled = false;
     try
     {
-      if ( EditDateBookmarksForm.Run() )
+      if ( ManageBookmarksForm.Run() )
         LoadMenuBookmarks(this);
     }
     finally

@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class EditDateBookmarksForm
+  partial class ManageBookmarksForm
   {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDateBookmarksForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionImport = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
       // 
-      // EditDateBookmarksForm
+      // ManageBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,7 @@
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ManageDateBookmarksFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "EditDateBookmarksForm";
+      this.Name = "ManageBookmarksForm";
       this.ShowInTaskbar = false;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageDateBookmarks_FormClosed);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);

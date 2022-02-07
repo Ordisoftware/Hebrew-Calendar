@@ -1186,7 +1186,7 @@ partial class MainForm : Form
 
   private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( EditDateBookmarksForm.Run() )
+    if ( ManageBookmarksForm.Run() )
       LoadMenuBookmarks(this);
   }
 

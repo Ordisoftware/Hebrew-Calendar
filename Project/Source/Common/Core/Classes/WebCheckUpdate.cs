@@ -102,7 +102,7 @@ static class WebCheckUpdate
       // TODO manage domain name resolution failed and create advanced box to retry-cancel instead of OK
       if ( ex.Status == WebExceptionStatus.Timeout )
       {
-        doFinally();
+        //doFinally();
         if ( auto )
           if ( useGitHub )
             return false;

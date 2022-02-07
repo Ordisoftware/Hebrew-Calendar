@@ -14,7 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class EditDateBookmarksForm : Form
+partial class ManageBookmarksForm : Form
 {
 
   private const string TableName = "Date Bookmarks";
@@ -36,7 +36,7 @@ partial class EditDateBookmarksForm : Form
     MainForm.Instance.MenuTray.Enabled = false;
     try
     {
-      using var form = new EditDateBookmarksForm();
+      using var form = new ManageBookmarksForm();
       return form.ShowDialog() == DialogResult.OK;
     }
     finally
@@ -45,7 +45,7 @@ partial class EditDateBookmarksForm : Form
     }
   }
 
-  private EditDateBookmarksForm()
+  private ManageBookmarksForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
@@ -213,7 +213,6 @@ partial class EditDateBookmarksForm : Form
     {
       DisplayManager.ShowError(ex.Message);
     }
-
   }
 
 }
