@@ -170,5 +170,4 @@ partial class ManageAcquaintanceEventsForm : Form
     //  DisplayManager.ShowError(ex.Message);
     //}
   }
-
 }

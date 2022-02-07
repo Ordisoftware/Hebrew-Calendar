@@ -686,5 +686,8 @@
     <Setting Name="UseSodHaibour" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ManageAcquaintanceEventsForm" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">584, 361</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

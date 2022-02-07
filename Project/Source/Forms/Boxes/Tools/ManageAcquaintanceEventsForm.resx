@@ -117,80 +117,90 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;ActionExport.Name" xml:space="preserve">
-    <value>ActionExport</value>
-  </data>
-  <data name="&gt;&gt;ActionExport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionExport.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionImport.Name" xml:space="preserve">
-    <value>ActionImport</value>
-  </data>
-  <data name="&gt;&gt;ActionImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionImport.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
-    <value>ActionCancel</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 323</value>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
+        MGA0gRYMUcxGO4Hu6g7dGkKwxYVdOMSq1iRWk4UKojiP8fPeV5VKm5VBDxzuqXr3nPte1bP+GWs7RoZW
+        tjkkWxwSzQ62YTaq81rXtU/7I2sIfbkYrJL+yBoi2ZINV8Z3wJ09UNpNW3YG7u4yNLokurTTtNW3LgyQ
+        LSpah6dozwR0OAGduWlOOs8NO/PTnMoFnMkHHBz2zJEiawi7OWMCKp9g8jME3+Bc1qMqtfodzucrvJb1
+        d0Lr6BB7/e3Une6eD5kLqH6FGTG9+Kkmj5dSX83CxWIF69AN4U32DZRpcutodG2WH+8PQ+YCujKP6XYm
+        uDDicang0yNV2Sdap24S4/ryUtbdX2K4+cEa81figDcy8a1M/CC6t+DxUaqcitQtny0PG8zUjW59HKDP
+        fwR8+SWU+kN4uegheUge18eeYh1JG+4fdGksJ9hQXoZ9tkuPsC0OSBUmSBWfcOW2z8BYhf5R33Bw/Bnp
+        0iTOvSnzEZvcJCt6D4dmRTIKqMXVUS9ScK1GH0g/Qvtjs2KxN3F1+4KL1HAi915DNDlxLIOtFG1qjdZ1
+        vcbaH1ljbBXqlv6W2v+/YFm/ASTqJNKXvI4rAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 28</value>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 1</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
     <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="button4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
+        jMXGlSgtJu8lkvhRsHaVtAv1JUKTaKF1IcRPVKw9zkye+aAbiz1w3hzuzJw7996n/itaAwsf73sNaG4D
+        9gEDDqFuxarmPNe1BhMlq7UMXvwXcL3VWgbvIFh9DHzuAtaewqv/AL48EYpeI815gubWqwYtgQQaXkQl
+        4Y/l4dOLCBhFDMbzCBoFIWu/XoBn/rvUabSh1U7jv4zgQcYB9WwWv34DO+fANnFINyVe68IZsHUi/XQf
+        MShHfwyN/VGo3g9wphUefmuC6p7BPhXs/QFGF0zskiFzJGHi5wWZk0nFoC1tA9OVviMGYvL1HlTPHMKL
+        OYylcnhNJsw3ySxCiU280terBi6r+S+D53OgATCeMnFMkfk2aeKIYumSPgQxaHLHoNERbJ5Jae6w7uEa
+        k2RA0wvDpOkEOOUEQQwInczm4RDaM3Zpnl3dwvRKFu+Xs4h8ymGKIpP1uyUTE6mNOgMBP+PdvvIz1mJ6
+        2bRUvWZotQaEzlv/iU5//IAX2dlOz8tPzGNKrNGc5zqnL35otVbwiCh3ckNy/W2g1BX3aDCxKWCzKQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>502, 1</value>
+  </data>
+  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="button4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button4.Name" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -234,7 +244,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="ActionImport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -278,7 +288,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -308,7 +318,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -338,7 +348,31 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 323</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>564, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="ActionClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -497,41 +531,8 @@
   <metadata name="OpenBookmarksDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>186, 17</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 294</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -556,6 +557,27 @@
   </metadata>
   <data name="Column4.HeaderText" xml:space="preserve">
     <value>Use EC date</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 294</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="ActionDeleteMeaning.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -916,9 +938,6 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 361</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 700</value>

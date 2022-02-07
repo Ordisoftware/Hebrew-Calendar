@@ -50,12 +50,16 @@
       this.button2 = new System.Windows.Forms.Button();
       this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
+      this.button3 = new System.Windows.Forms.Button();
+      this.button4 = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.button3);
+      this.PanelBottom.Controls.Add(this.button4);
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionCancel);
@@ -191,10 +195,27 @@
       this.ActionSave.Name = "ActionSave";
       this.ActionSave.UseVisualStyleBackColor = true;
       // 
+      // button3
+      // 
+      this.button3.AllowDrop = true;
+      this.button3.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button3, "button3");
+      this.button3.Name = "button3";
+      this.button3.UseVisualStyleBackColor = true;
+      // 
+      // button4
+      // 
+      this.button4.AllowDrop = true;
+      this.button4.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.button4, "button4");
+      this.button4.Name = "button4";
+      this.button4.UseVisualStyleBackColor = true;
+      // 
       // ManageAcquaintanceEventsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ManageAcquaintanceEventsForm;
       this.Controls.Add(this.ActionUndo);
       this.Controls.Add(this.ActionSave);
       this.Controls.Add(this.ActionDeleteMeaning);
@@ -206,6 +227,7 @@
       this.Controls.Add(this.PanelSeparator);
       this.Controls.Add(this.ActionDelete);
       this.Controls.Add(this.PanelBottom);
+      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ManageAcquaintanceEventsForm", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ManageAcquaintanceEventsForm";
@@ -241,5 +263,7 @@
     private Button button2;
     private Button ActionUndo;
     private Button ActionSave;
+    private Button button3;
+    private Button button4;
   }
 }

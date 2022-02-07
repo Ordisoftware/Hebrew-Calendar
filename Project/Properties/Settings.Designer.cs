@@ -2755,5 +2755,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["UseSodHaibour"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("584, 361")]
+        public global::System.Drawing.Size ManageAcquaintanceEventsForm {
+            get {
+                return ((global::System.Drawing.Size)(this["ManageAcquaintanceEventsForm"]));
+            }
+            set {
+                this["ManageAcquaintanceEventsForm"] = value;
+            }
+        }
     }
 }
