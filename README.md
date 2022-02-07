@@ -349,6 +349,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### Data
 
 - Add comments to bookmarks.
+- Add special alarms table to remind other people's birthday and yahrzeit events.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
