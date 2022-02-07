@@ -348,7 +348,6 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### Data
 
-- Add comments to bookmarks.
 - Add special alarms table to remind other people's birthday and yahrzeit events.
 - Add user reminders for solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -360,6 +359,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress - Version 10.0
 
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+- Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
 #### In progress - Version 9.24
