@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -33,6 +33,13 @@ static partial class AppTranslations
                       "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
                       "• Quelques améliorations et corrections."
     },*/
+
+    ["9.24"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Fix Tetsave hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.",
+
+      [Language.FR] = "• Correction du nom hébreu de Tetsave et de la lettrique : le tableau des parashot doit être restaurée ou édité, voir ParashotFactory.txt et Parashot-Lettriqs.txt dans le dossier de documents de l'application."
+    },
 
     ["9.x"] = new TranslationsDictionary
     {
