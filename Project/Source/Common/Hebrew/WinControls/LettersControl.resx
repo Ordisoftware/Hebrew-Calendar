@@ -188,7 +188,7 @@
   <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
+        wAAADsABataJCQAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
         Vf8fPX7yv66uDsVQnGD12vX/q2vqwYorKyv+P3v+/P/CxUv/19bWEmfAitVr/5dV1Pyvqa7+/+Hjp/+r
         gAZu2LSFeAOWrVj1v7ik/H9NTc3/t+/e/t+5Z+//vQcPgflQJfjB4qXL/+cXFIMUG4O88ODR4//nL14i
         3oAFS5b+z84thCk2BgXi0WPHiQ/ECZOnHMrIzEFWbAyMQlAYfIbyCQIVIDaGMOEAxDeAMIcRYGAAAHbg
@@ -204,7 +204,7 @@
   <data name="ActionLetterAddAtStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
+        wAAADsABataJCQAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
         pL6x5f+6DZtQDMUJamtr/y9cvPT/o8dP/ldWVoA1VdfU/1+9dj3xBmzYtAWs4e279/9rqqv/l1XU/F+x
         ei1xBtTU1Pzfd/DQ/5179/1/9fr1fxC/uKT8/7IVq4g34PzFS//v3rsP9EIlSJNxfkHx/8VLlxNnACgQ
         Dxw69L8aEojGILHs3ML/C5YsJc6A0tLSg9BoBGsGgYzMnP8TJk85BOUSBCpADNcMBSA+SHx4AQYGABFB
@@ -274,7 +274,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>$this</value>

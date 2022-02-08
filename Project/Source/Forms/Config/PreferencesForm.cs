@@ -223,7 +223,7 @@ partial class PreferencesForm : Form
 
   private void ActionManageBookmarks_Click(object sender, EventArgs e)
   {
-    if ( EditDateBookmarksForm.Run() )
+    if ( ManageBookmarksForm.Run() )
       DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
   }
 

@@ -97,12 +97,11 @@ static class WebCheckUpdate
     }
     catch ( WebException ex )
     {
+      // TODO create advanced box to retry-cancel
       CleanTemp();
       string msg = ex.Message;
-      // TODO manage domain name resolution failed and create advanced box to retry-cancel instead of OK
       if ( ex.Status == WebExceptionStatus.Timeout )
       {
-        doFinally();
         if ( auto )
           if ( useGitHub )
             return false;
