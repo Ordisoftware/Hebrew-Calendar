@@ -364,6 +364,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress - Version 9.24
 
+- Fix Tetsave hebrew name and lettriq.
 - Code refactoring.
 - Update web links about celebrations, calendar and judaism.
 
