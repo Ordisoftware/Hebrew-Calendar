@@ -229,13 +229,16 @@ partial class LettersControl : UserControl
   /// </summary>
   public bool ContextMenuDetailsVisible
   {
-    get => ActionLetterViewDetails.Visible;
+    get => _ContextMenuDetailsVisible;
     set
     {
+      if ( !Globals.IsReady ) return;
+      _ContextMenuDetailsVisible = value;
       ActionLetterViewDetails.Visible = value;
       MenuItemSeparator.Visible = value;
     }
   }
+  private bool _ContextMenuDetailsVisible;
 
   /// <summary>
   /// Indicates if an input key is processed.
@@ -262,6 +265,7 @@ partial class LettersControl : UserControl
   /// <param name="e"></param>
   private void LettersControl_Load(object sender, EventArgs e)
   {
+    ActionLetterViewDetails_VisibleChanged(null, null);
     Redraw();
   }
 
@@ -447,6 +451,11 @@ partial class LettersControl : UserControl
     ActionLetterAddAtCaret.Enabled = ActionLetterAddAtStart.Enabled || TextBox.SelectionLength > 0;
     ActionLetterViewDetails.Enabled = ViewLetterDetails is not null;
     MenuItemSeparator.Enabled = ActionLetterViewDetails.Enabled;
+  }
+
+  private void ActionLetterViewDetails_VisibleChanged(object sender, EventArgs e)
+  {
+    ContextMenuDetailsVisible = ActionLetterViewDetails.Visible;
   }
 
 }

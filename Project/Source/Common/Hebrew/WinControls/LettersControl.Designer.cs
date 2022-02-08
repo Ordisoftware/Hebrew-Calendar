@@ -93,6 +93,7 @@
       resources.ApplyResources(this.ActionLetterViewDetails, "ActionLetterViewDetails");
       this.ActionLetterViewDetails.Name = "ActionLetterViewDetails";
       this.ActionLetterViewDetails.Click += new System.EventHandler(this.ActionLetterViewDetails_Click);
+      this.ActionLetterViewDetails.VisibleChanged += new System.EventHandler(this.ActionLetterViewDetails_VisibleChanged);
       // 
       // TextBox
       // 
