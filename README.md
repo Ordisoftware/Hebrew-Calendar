@@ -364,7 +364,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress - Version 9.24
 
-- Fix Tetsave hebrew name and lettriq.
+- Fix Tetsave hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.
 - Code refactoring.
 - Update web links about celebrations, calendar and judaism.
 
