@@ -47,7 +47,7 @@ partial class LunarMonthsForm : Form
       string word = HebrewMonths.Unicode[(int)LastControl.Tag]
                                 .Replace(" א", string.Empty)
                                 .Replace(" ב", string.Empty);
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word));
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word), Settings.CustomWebSearch);
     });
     this.InitDropDowns();
   }

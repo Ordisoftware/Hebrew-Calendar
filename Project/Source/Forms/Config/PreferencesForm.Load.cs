@@ -123,6 +123,9 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah);
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup);
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek);
+
+    // TODO add custom web search to preferences
+
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
