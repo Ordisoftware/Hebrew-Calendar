@@ -18,7 +18,7 @@ Shemot : 4 - בשלח - Beshala'h - 13.17 - 17.16 - False
 Shemot : 5 - יתרו - Yitro - 18.1 - 20.23 - False
 Shemot : 6 - משפטים - Mishpatim - 21.1 - 24.18 - False
 Shemot : 7 - תרומה - Teroumah - 25.1 - 27.19 - False
-Shemot : 8 - תצוה - Tetsave - 27.20 - 30.10 - False
+Shemot : 8 - תצוה - Tetsaveh - 27.20 - 30.10 - False
 Shemot : 9 - כי תשא - Ki Tissa - 30.11 - 34.35 - False
 Shemot : 10 - ויקהל - Vayaqhel - 35.1 - 38.20 - True
 Shemot : 11 - פקודי - Peqoudei - 38.21 - 40.38 - False
