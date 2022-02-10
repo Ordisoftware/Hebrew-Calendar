@@ -2767,5 +2767,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["ManageAcquaintanceEventsForm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%" +
+            "WORD%")]
+        public string CustomWebSearch {
+            get {
+                return ((string)(this["CustomWebSearch"]));
+            }
+            set {
+                this["CustomWebSearch"] = value;
+            }
+        }
     }
 }
