@@ -105,7 +105,7 @@ static class HebrewTools
   /// <param name="link">Web provider link.</param>
   /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
   [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
-  static public void OpenWordProvider(string link, string word)
+  static public void OpenWordProvider(string link, string word, string customSearch)
   {
     if ( word.Length > 1 ) word = HebrewAlphabet.SetFinal(word, true);
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
@@ -116,7 +116,7 @@ static class HebrewTools
         items = items.Select(w => HebrewAlphabet.ToUnicode(HebrewAlphabet.SetFinal(w, true))).ToArray();
       foreach ( string item in items )
       {
-        string url = link.Replace("%WORD%", item).Replace("%FIRSTLETTER%", item[0].ToString());
+        string url = link.Replace("%CUSTOM%", customSearch).Replace("%WORD%", item).Replace("%FIRSTLETTER%", item[0].ToString());
         SystemManager.RunShell(url, item);
         Thread.Sleep(250);
       }

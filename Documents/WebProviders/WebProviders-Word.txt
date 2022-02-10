@@ -92,3 +92,6 @@ URL = https://www.google.com/search?q=hebrew+strong+%WORD%
 
 Name = (NONE) Bing Search
 URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
+
+Name = (NONE) Custom web search
+URL = %CUSTOM%
