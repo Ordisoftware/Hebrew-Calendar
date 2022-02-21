@@ -42,8 +42,11 @@ URL = https://www.torah-box.com/paracha/%TORAHBOX%
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
 
-Name = (FR) Loubavitch.fr *
+Name = (FR) Loubavitch.fr (textes) *
 URL = https://www.loubavitch.fr/etude/paracha
+
+Name = (FR) Loubavitch.fr (vidéos) *
+URL = https://www.loubavitch.fr/multimedia/la-paracha-de-la-semaine
 
 -
 
