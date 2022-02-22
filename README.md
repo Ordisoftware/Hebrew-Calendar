@@ -362,9 +362,10 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### 2022.02.08 - Version 9.25
+#### 2022.02.25 - Version 9.25
 
 - Fix Tetsave hebrew transcription by adding the ending `h`.
+- Update web links with Tehilim playlist.
 
 #### 2022.02.08 - Version 9.24
 
