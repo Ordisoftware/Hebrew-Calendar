@@ -677,6 +677,12 @@ partial class PreferencesForm : Form
       EditHebrewWordsPath.Text = (string)Settings.Properties[nameof(Settings.HebrewWordsExe)].DefaultValue;
   }
 
+  private void ActionResetCustomWebSearch_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.CustomWebSearch)].DefaultValue;
+  }
+
   private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
   {
     Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;

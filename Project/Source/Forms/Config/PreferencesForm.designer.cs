@@ -311,19 +311,12 @@
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.ActionResetCustomWebSearch = new System.Windows.Forms.Button();
+      this.LabelCustomWebSearch = new System.Windows.Forms.Label();
+      this.EditCustomWebSearch = new Ordisoftware.Core.TextBoxEx();
       this.ActionResetHebrewWordsPath = new System.Windows.Forms.Button();
       this.LabelHebrewWordsPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewWordsPath = new System.Windows.Forms.Button();
-      this.PanelWeatherOnline = new System.Windows.Forms.Panel();
-      this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
-      this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
-      this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
-      this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
-      this.SelectWeatherOnlineMicrosoftNetworkDotCom = new System.Windows.Forms.RadioButton();
-      this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
-      this.LabelWeatherAppPath = new System.Windows.Forms.Label();
-      this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
-      this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
       this.LabelExportFolder = new System.Windows.Forms.Label();
       this.ActionResetExportFolder = new System.Windows.Forms.Button();
       this.ActionSelectExportFolder = new System.Windows.Forms.Button();
@@ -334,48 +327,60 @@
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
       this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
       this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
       this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
+      this.TabPageWeather = new System.Windows.Forms.TabPage();
+      this.LabelWeatherAppPath = new System.Windows.Forms.Label();
+      this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
+      this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.PanelWeatherOnline = new System.Windows.Forms.Panel();
+      this.LabelSelectOnlineWeatherProvider = new System.Windows.Forms.Label();
+      this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
+      this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
+      this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
+      this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDateBookmarksCount ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabPageStartup.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).BeginInit();
       this.TabPageTrayIcon.SuspendLayout();
       this.PanelHotKey.SuspendLayout();
       this.PanelBalloon.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBalloonLoomingDelay ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).BeginInit();
       this.TabPageNavigation.SuspendLayout();
       this.TabPageGeneration.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxYearsInterval ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).BeginInit();
       this.TabPageReminder.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoLockSessionTimeOut ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).BeginInit();
       this.TabPageShabat.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatEveryMinutes ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatHoursBefore ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatEveryMinutes)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).BeginInit();
       this.TabPageCelebrations.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationEveryMinutes ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationHoursBefore ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationsDaysBefore ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).BeginInit();
       this.TabPageParashah.SuspendLayout();
       this.TabPageColors.SuspendLayout();
       this.PanelCalendarColors.SuspendLayout();
       this.TabPageMonthView.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCalendarLineSpacing ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMonthViewFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditTextReportFontSize ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).BeginInit();
       this.TabPagePrint.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditSaveImageCountWarning ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintPageCountWarning ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintingMargin ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).BeginInit();
       this.TabPagePaths.SuspendLayout();
+      this.TabPageWeather.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -659,6 +664,7 @@
       this.TabControl.Controls.Add(this.TabPageTextReport);
       this.TabControl.Controls.Add(this.TabPagePrint);
       this.TabControl.Controls.Add(this.TabPagePaths);
+      this.TabControl.Controls.Add(this.TabPageWeather);
       this.TabControl.Multiline = true;
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
@@ -2016,7 +2022,7 @@
       // 
       // EditEventColorTorah
       // 
-      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 230 ) ) ) ));
+      this.EditEventColorTorah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
       this.EditEventColorTorah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorTorah, "EditEventColorTorah");
       this.EditEventColorTorah.Name = "EditEventColorTorah";
@@ -2024,7 +2030,7 @@
       // 
       // EditEventColorShabat
       // 
-      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ), ( (int)( ( (byte)( 243 ) ) ) ));
+      this.EditEventColorShabat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
       this.EditEventColorShabat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorShabat, "EditEventColorShabat");
       this.EditEventColorShabat.Name = "EditEventColorShabat";
@@ -2032,7 +2038,7 @@
       // 
       // EditEventColorSeason
       // 
-      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 245 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 240 ) ) ) ));
+      this.EditEventColorSeason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
       this.EditEventColorSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditEventColorSeason, "EditEventColorSeason");
       this.EditEventColorSeason.Name = "EditEventColorSeason";
@@ -2114,7 +2120,7 @@
       // 
       // EditMonthViewNoDaysBackColor
       // 
-      this.EditMonthViewNoDaysBackColor.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
+      this.EditMonthViewNoDaysBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.EditMonthViewNoDaysBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditMonthViewNoDaysBackColor, "EditMonthViewNoDaysBackColor");
       this.EditMonthViewNoDaysBackColor.Name = "EditMonthViewNoDaysBackColor";
@@ -2158,7 +2164,7 @@
       // 
       // EditCalendarColorFullMoon
       // 
-      this.EditCalendarColorFullMoon.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 150 ) ) ) ), ( (int)( ( (byte)( 100 ) ) ) ), ( (int)( ( (byte)( 0 ) ) ) ));
+      this.EditCalendarColorFullMoon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
       this.EditCalendarColorFullMoon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditCalendarColorFullMoon, "EditCalendarColorFullMoon");
       this.EditCalendarColorFullMoon.Name = "EditCalendarColorFullMoon";
@@ -2494,7 +2500,7 @@
       // 
       // EditTextReportBackColor
       // 
-      this.EditTextReportBackColor.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
+      this.EditTextReportBackColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
       this.EditTextReportBackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.EditTextReportBackColor, "EditTextReportBackColor");
       this.EditTextReportBackColor.Name = "EditTextReportBackColor";
@@ -2649,13 +2655,12 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.ActionResetCustomWebSearch);
+      this.TabPagePaths.Controls.Add(this.LabelCustomWebSearch);
+      this.TabPagePaths.Controls.Add(this.EditCustomWebSearch);
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.LabelHebrewWordsPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewWordsPath);
-      this.TabPagePaths.Controls.Add(this.PanelWeatherOnline);
-      this.TabPagePaths.Controls.Add(this.LabelWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.ActionResetWeatherAppPath);
-      this.TabPagePaths.Controls.Add(this.ActionSelectWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.LabelExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionResetExportFolder);
       this.TabPagePaths.Controls.Add(this.ActionSelectExportFolder);
@@ -2666,12 +2671,31 @@
       this.TabPagePaths.Controls.Add(this.LabelHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.ActionSelectHebrewLettersPath);
       this.TabPagePaths.Controls.Add(this.EditHebrewWordsPath);
-      this.TabPagePaths.Controls.Add(this.EditWeatherAppPath);
       this.TabPagePaths.Controls.Add(this.EditExportFolder);
       this.TabPagePaths.Controls.Add(this.EditCalculatorPath);
       this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
+      // 
+      // ActionResetCustomWebSearch
+      // 
+      this.ActionResetCustomWebSearch.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetCustomWebSearch, "ActionResetCustomWebSearch");
+      this.ActionResetCustomWebSearch.Name = "ActionResetCustomWebSearch";
+      this.ActionResetCustomWebSearch.UseVisualStyleBackColor = true;
+      this.ActionResetCustomWebSearch.Click += new System.EventHandler(this.ActionResetCustomWebSearch_Click);
+      // 
+      // LabelCustomWebSearch
+      // 
+      resources.ApplyResources(this.LabelCustomWebSearch, "LabelCustomWebSearch");
+      this.LabelCustomWebSearch.Name = "LabelCustomWebSearch";
+      // 
+      // EditCustomWebSearch
+      // 
+      this.EditCustomWebSearch.BackColor = System.Drawing.SystemColors.Window;
+      this.EditCustomWebSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCustomWebSearch, "EditCustomWebSearch");
+      this.EditCustomWebSearch.Name = "EditCustomWebSearch";
       // 
       // ActionResetHebrewWordsPath
       // 
@@ -2693,84 +2717,6 @@
       this.ActionSelectHebrewWordsPath.Name = "ActionSelectHebrewWordsPath";
       this.ActionSelectHebrewWordsPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewWordsPath.Click += new System.EventHandler(this.ActionSelectHebrewWordsPath_Click);
-      // 
-      // PanelWeatherOnline
-      // 
-      this.PanelWeatherOnline.Controls.Add(this.LabelSelectOnlineWeatherProvider);
-      this.PanelWeatherOnline.Controls.Add(this.EditWeatherOnlineUseDay);
-      this.PanelWeatherOnline.Controls.Add(this.ActionWeatherOnlineTest);
-      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
-      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMicrosoftNetworkDotCom);
-      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
-      resources.ApplyResources(this.PanelWeatherOnline, "PanelWeatherOnline");
-      this.PanelWeatherOnline.Name = "PanelWeatherOnline";
-      // 
-      // LabelSelectOnlineWeatherProvider
-      // 
-      resources.ApplyResources(this.LabelSelectOnlineWeatherProvider, "LabelSelectOnlineWeatherProvider");
-      this.LabelSelectOnlineWeatherProvider.Name = "LabelSelectOnlineWeatherProvider";
-      // 
-      // EditWeatherOnlineUseDay
-      // 
-      resources.ApplyResources(this.EditWeatherOnlineUseDay, "EditWeatherOnlineUseDay");
-      this.EditWeatherOnlineUseDay.Name = "EditWeatherOnlineUseDay";
-      this.EditWeatherOnlineUseDay.UseVisualStyleBackColor = true;
-      this.EditWeatherOnlineUseDay.CheckedChanged += new System.EventHandler(this.EditWeatherOnlineUseDay_CheckedChanged);
-      // 
-      // ActionWeatherOnlineTest
-      // 
-      this.ActionWeatherOnlineTest.ActiveLinkColor = System.Drawing.Color.MediumBlue;
-      resources.ApplyResources(this.ActionWeatherOnlineTest, "ActionWeatherOnlineTest");
-      this.ActionWeatherOnlineTest.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.ActionWeatherOnlineTest.LinkColor = System.Drawing.Color.Navy;
-      this.ActionWeatherOnlineTest.Name = "ActionWeatherOnlineTest";
-      this.ActionWeatherOnlineTest.TabStop = true;
-      this.ActionWeatherOnlineTest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionWeatherOnlineTest_LinkClicked);
-      // 
-      // SelectWeatherOnlineWeatherDotCom
-      // 
-      resources.ApplyResources(this.SelectWeatherOnlineWeatherDotCom, "SelectWeatherOnlineWeatherDotCom");
-      this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
-      this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
-      this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
-      // 
-      // SelectWeatherOnlineMicrosoftNetworkDotCom
-      // 
-      resources.ApplyResources(this.SelectWeatherOnlineMicrosoftNetworkDotCom, "SelectWeatherOnlineMicrosoftNetworkDotCom");
-      this.SelectWeatherOnlineMicrosoftNetworkDotCom.Name = "SelectWeatherOnlineMicrosoftNetworkDotCom";
-      this.SelectWeatherOnlineMicrosoftNetworkDotCom.UseVisualStyleBackColor = true;
-      this.SelectWeatherOnlineMicrosoftNetworkDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMicrosoftNetworkDotCom_CheckedChanged);
-      // 
-      // SelectWeatherOnlineMeteoblueDotCom
-      // 
-      resources.ApplyResources(this.SelectWeatherOnlineMeteoblueDotCom, "SelectWeatherOnlineMeteoblueDotCom");
-      this.SelectWeatherOnlineMeteoblueDotCom.Checked = true;
-      this.SelectWeatherOnlineMeteoblueDotCom.Name = "SelectWeatherOnlineMeteoblueDotCom";
-      this.SelectWeatherOnlineMeteoblueDotCom.TabStop = true;
-      this.SelectWeatherOnlineMeteoblueDotCom.UseVisualStyleBackColor = true;
-      this.SelectWeatherOnlineMeteoblueDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
-      // 
-      // LabelWeatherAppPath
-      // 
-      resources.ApplyResources(this.LabelWeatherAppPath, "LabelWeatherAppPath");
-      this.LabelWeatherAppPath.Name = "LabelWeatherAppPath";
-      // 
-      // ActionResetWeatherAppPath
-      // 
-      this.ActionResetWeatherAppPath.AllowDrop = true;
-      this.ActionResetWeatherAppPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionResetWeatherAppPath, "ActionResetWeatherAppPath");
-      this.ActionResetWeatherAppPath.Name = "ActionResetWeatherAppPath";
-      this.ActionResetWeatherAppPath.UseVisualStyleBackColor = true;
-      this.ActionResetWeatherAppPath.Click += new System.EventHandler(this.ActionResetWeatherAppPath_Click);
-      // 
-      // ActionSelectWeatherAppPath
-      // 
-      this.ActionSelectWeatherAppPath.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSelectWeatherAppPath, "ActionSelectWeatherAppPath");
-      this.ActionSelectWeatherAppPath.Name = "ActionSelectWeatherAppPath";
-      this.ActionSelectWeatherAppPath.UseVisualStyleBackColor = true;
-      this.ActionSelectWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWeatherAppPath_Click);
       // 
       // LabelExportFolder
       // 
@@ -2843,14 +2789,6 @@
       this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
       this.EditHebrewWordsPath.ReadOnly = true;
       // 
-      // EditWeatherAppPath
-      // 
-      this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditWeatherAppPath, "EditWeatherAppPath");
-      this.EditWeatherAppPath.Name = "EditWeatherAppPath";
-      this.EditWeatherAppPath.ReadOnly = true;
-      // 
       // EditExportFolder
       // 
       this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
@@ -2875,6 +2813,104 @@
       this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
       this.EditHebrewLettersPath.ReadOnly = true;
       // 
+      // TabPageWeather
+      // 
+      this.TabPageWeather.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageWeather.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageWeather.Controls.Add(this.LabelWeatherAppPath);
+      this.TabPageWeather.Controls.Add(this.ActionSelectWeatherAppPath);
+      this.TabPageWeather.Controls.Add(this.EditWeatherAppPath);
+      this.TabPageWeather.Controls.Add(this.PanelWeatherOnline);
+      this.TabPageWeather.Controls.Add(this.ActionResetWeatherAppPath);
+      resources.ApplyResources(this.TabPageWeather, "TabPageWeather");
+      this.TabPageWeather.Name = "TabPageWeather";
+      // 
+      // LabelWeatherAppPath
+      // 
+      resources.ApplyResources(this.LabelWeatherAppPath, "LabelWeatherAppPath");
+      this.LabelWeatherAppPath.Name = "LabelWeatherAppPath";
+      // 
+      // ActionSelectWeatherAppPath
+      // 
+      this.ActionSelectWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSelectWeatherAppPath, "ActionSelectWeatherAppPath");
+      this.ActionSelectWeatherAppPath.Name = "ActionSelectWeatherAppPath";
+      this.ActionSelectWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionSelectWeatherAppPath.Click += new System.EventHandler(this.ActionSelectWeatherAppPath_Click);
+      // 
+      // EditWeatherAppPath
+      // 
+      this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditWeatherAppPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditWeatherAppPath, "EditWeatherAppPath");
+      this.EditWeatherAppPath.Name = "EditWeatherAppPath";
+      this.EditWeatherAppPath.ReadOnly = true;
+      // 
+      // PanelWeatherOnline
+      // 
+      this.PanelWeatherOnline.Controls.Add(this.LabelSelectOnlineWeatherProvider);
+      this.PanelWeatherOnline.Controls.Add(this.EditWeatherOnlineUseDay);
+      this.PanelWeatherOnline.Controls.Add(this.ActionWeatherOnlineTest);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMicrosoftNetworkDotCom);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
+      resources.ApplyResources(this.PanelWeatherOnline, "PanelWeatherOnline");
+      this.PanelWeatherOnline.Name = "PanelWeatherOnline";
+      // 
+      // LabelSelectOnlineWeatherProvider
+      // 
+      resources.ApplyResources(this.LabelSelectOnlineWeatherProvider, "LabelSelectOnlineWeatherProvider");
+      this.LabelSelectOnlineWeatherProvider.Name = "LabelSelectOnlineWeatherProvider";
+      // 
+      // EditWeatherOnlineUseDay
+      // 
+      resources.ApplyResources(this.EditWeatherOnlineUseDay, "EditWeatherOnlineUseDay");
+      this.EditWeatherOnlineUseDay.Name = "EditWeatherOnlineUseDay";
+      this.EditWeatherOnlineUseDay.UseVisualStyleBackColor = true;
+      this.EditWeatherOnlineUseDay.CheckedChanged += new System.EventHandler(this.EditWeatherOnlineUseDay_CheckedChanged);
+      // 
+      // ActionWeatherOnlineTest
+      // 
+      this.ActionWeatherOnlineTest.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionWeatherOnlineTest, "ActionWeatherOnlineTest");
+      this.ActionWeatherOnlineTest.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionWeatherOnlineTest.LinkColor = System.Drawing.Color.Navy;
+      this.ActionWeatherOnlineTest.Name = "ActionWeatherOnlineTest";
+      this.ActionWeatherOnlineTest.TabStop = true;
+      this.ActionWeatherOnlineTest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionWeatherOnlineTest_LinkClicked);
+      // 
+      // SelectWeatherOnlineWeatherDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineWeatherDotCom, "SelectWeatherOnlineWeatherDotCom");
+      this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
+      this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
+      // 
+      // SelectWeatherOnlineMicrosoftNetworkDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMicrosoftNetworkDotCom, "SelectWeatherOnlineMicrosoftNetworkDotCom");
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.Name = "SelectWeatherOnlineMicrosoftNetworkDotCom";
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineMicrosoftNetworkDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMicrosoftNetworkDotCom_CheckedChanged);
+      // 
+      // SelectWeatherOnlineMeteoblueDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineMeteoblueDotCom, "SelectWeatherOnlineMeteoblueDotCom");
+      this.SelectWeatherOnlineMeteoblueDotCom.Checked = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.Name = "SelectWeatherOnlineMeteoblueDotCom";
+      this.SelectWeatherOnlineMeteoblueDotCom.TabStop = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineMeteoblueDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineMeteoblueDotCom_CheckedChanged);
+      // 
+      // ActionResetWeatherAppPath
+      // 
+      this.ActionResetWeatherAppPath.AllowDrop = true;
+      this.ActionResetWeatherAppPath.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetWeatherAppPath, "ActionResetWeatherAppPath");
+      this.ActionResetWeatherAppPath.Name = "ActionResetWeatherAppPath";
+      this.ActionResetWeatherAppPath.UseVisualStyleBackColor = true;
+      this.ActionResetWeatherAppPath.Click += new System.EventHandler(this.ActionResetWeatherAppPath_Click);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2897,36 +2933,36 @@
       this.TabControl.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditDateBookmarksCount ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
       this.TabPageStartup.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCheckUpdateAtStartupInterval ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVacuumAtStartupInterval ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVacuumAtStartupInterval)).EndInit();
       this.TabPageTrayIcon.ResumeLayout(false);
       this.TabPageTrayIcon.PerformLayout();
       this.PanelHotKey.ResumeLayout(false);
       this.PanelHotKey.PerformLayout();
       this.PanelBalloon.ResumeLayout(false);
       this.PanelBalloon.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditBalloonLoomingDelay ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditBalloonLoomingDelay)).EndInit();
       this.TabPageNavigation.ResumeLayout(false);
       this.TabPageNavigation.PerformLayout();
       this.TabPageGeneration.ResumeLayout(false);
       this.TabPageGeneration.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMaxYearsInterval ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMaxYearsInterval)).EndInit();
       this.TabPageReminder.ResumeLayout(false);
       this.TabPageReminder.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditAutoLockSessionTimeOut ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditAutoLockSessionTimeOut)).EndInit();
       this.TabPageShabat.ResumeLayout(false);
       this.TabPageShabat.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatEveryMinutes ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindShabatHoursBefore ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatEveryMinutes)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindShabatHoursBefore)).EndInit();
       this.TabPageCelebrations.ResumeLayout(false);
       this.TabPageCelebrations.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationEveryMinutes ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationHoursBefore ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditRemindCelebrationsDaysBefore ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationEveryMinutes)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationHoursBefore)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditRemindCelebrationsDaysBefore)).EndInit();
       this.TabPageParashah.ResumeLayout(false);
       this.TabPageParashah.PerformLayout();
       this.TabPageColors.ResumeLayout(false);
@@ -2935,18 +2971,20 @@
       this.PanelCalendarColors.PerformLayout();
       this.TabPageMonthView.ResumeLayout(false);
       this.TabPageMonthView.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditCalendarLineSpacing ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditMonthViewFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewFontSize)).EndInit();
       this.TabPageTextReport.ResumeLayout(false);
       this.TabPageTextReport.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditTextReportFontSize ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).EndInit();
       this.TabPagePrint.ResumeLayout(false);
       this.TabPagePrint.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditSaveImageCountWarning ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintPageCountWarning ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditPrintingMargin ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditPrintingMargin)).EndInit();
       this.TabPagePaths.ResumeLayout(false);
       this.TabPagePaths.PerformLayout();
+      this.TabPageWeather.ResumeLayout(false);
+      this.TabPageWeather.PerformLayout();
       this.PanelWeatherOnline.ResumeLayout(false);
       this.PanelWeatherOnline.PerformLayout();
       this.ResumeLayout(false);
@@ -3262,5 +3300,9 @@
     private RadioButton SelectOmerMoon;
     private RadioButton SelectUseSodHaibour;
     private TabPage TabPageParashah;
+    private TabPage TabPageWeather;
+    private Button ActionResetCustomWebSearch;
+    private Label LabelCustomWebSearch;
+    private TextBoxEx EditCustomWebSearch;
   }
 }
