@@ -36,6 +36,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 Name = (FR) Le temple et les sacrifices
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AiSB_UbS8L_f1yc8x7Vjnp
 
+Name = (FR) Cours de Tehilim
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DiKeomxWIcsjEX4kBjLEpO
+
 Name = (FR) Cours de Talmud
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
 
