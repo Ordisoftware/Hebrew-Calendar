@@ -104,6 +104,7 @@ static class HebrewTools
   /// </summary>
   /// <param name="link">Web provider link.</param>
   /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
+  /// <param name="customSearch">Custom web search link.</param>
   [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
   static public void OpenWordProvider(string link, string word, string customSearch)
   {
