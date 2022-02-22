@@ -125,6 +125,7 @@ partial class PreferencesForm
     Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
     Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
     Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
+    Settings.CustomWebSearch = EditCustomWebSearch.Text;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

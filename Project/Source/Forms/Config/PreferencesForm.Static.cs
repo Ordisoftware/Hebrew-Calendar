@@ -36,6 +36,7 @@ partial class PreferencesForm
   static public int TabIndexTextReport { get; private set; }
   static public int TabIndexTrayIcon { get; private set; }
   static public int TabIndexParashah { get; private set; }
+  static public int TabIndexWeather { get; private set; }
 
   // Mono spaced fonts list
   static private readonly string[] MonoSpacedFonts =
@@ -93,6 +94,7 @@ partial class PreferencesForm
       TabIndexTextReport = form.TabControl.TabPages.IndexOf(form.TabPageTextReport);
       TabIndexTrayIcon = form.TabControl.TabPages.IndexOf(form.TabPageTrayIcon);
       TabIndexParashah = form.TabControl.TabPages.IndexOf(form.TabPageParashah);
+      TabIndexWeather = form.TabControl.TabPages.IndexOf(form.TabPageWeather);
     }
     var filter1 = new Regex("(^F[0-9]{1,2}$)");
     var filter2 = new Regex("(^[A-Z]$)");

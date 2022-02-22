@@ -919,4 +919,10 @@
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Utiliser le sod ha'ibour avec le omer du soleil</value>
   </data>
+  <data name="TabPageWeather.Text" xml:space="preserve">
+    <value>Météo</value>
+  </data>
+  <data name="LabelCustomWebSearch.Text" xml:space="preserve">
+    <value>Recherche web personnalisée</value>
+  </data>
 </root>
