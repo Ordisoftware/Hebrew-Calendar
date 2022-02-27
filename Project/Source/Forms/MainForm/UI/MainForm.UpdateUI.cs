@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-02 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -139,7 +139,7 @@ public partial class MainForm
                 MenuTools.DropDownItems[0].Enabled = true;
               var parashah = weekParashah.Factory;
               TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
-                                                     weekParashah.Day.HasLinkedParashah);
+                                                     ApplicationDatabase.Instance.GetToday().HasLinkedParashah);
               TitleParashah = $"Parashah {TitleParashah}";
               ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, true)}";
               ActionWeeklyParashah.Enabled = true;
