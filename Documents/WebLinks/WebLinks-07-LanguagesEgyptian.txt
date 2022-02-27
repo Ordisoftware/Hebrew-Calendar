@@ -27,6 +27,9 @@ URL = https://en.wikipedia.org/wiki/Egyptian_hieroglyphs
 Name = (FR) Écriture hiéroglyphique égyptienne @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/%C3%89criture_hi%C3%A9roglyphique_%C3%A9gyptienne
 
+Name = (FR) Grammaire d'égyptien hiéroglyphique @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Grammaire_d%27%C3%A9gyptien_hi%C3%A9roglyphique
+
 -
 
 Name = (EN) Gardiner's sign list @ en.wikipedia.org
@@ -40,8 +43,25 @@ URL = https://en.wikipedia.org/wiki/Egyptian_numerals
 
 -
 
-Name = (FR/EN) Gardiner’s Sign List of Egyptian Hieroglyphs (Auto-translated)
+Name = (FR/EN) Gardiner’s Sign List of Egyptian Hieroglyphs (Auto-translated) @ ganino.com
 URL = https://www.ganino.com/anteanus/gardiner_s_sign_list_of_egyptian_hieroglyphs
+
+Name = (EN) The 1071 hieroglyphs appearance and sources @ st-andrews.ac.uk
+URL = https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/tablemain.html
+
+Name = (EN) The 1071 hieroglyphs functions and meanings @ st-andrews.ac.uk
+URL = https://mjn.host.cs.st-andrews.ac.uk/egyptian/unicode/tablemeaning.html
+
+Name = (EN) List of all the signs referenced in the database @ phrp.be
+URL = https://www.phrp.be/ListAllSigns.php
+
+Name = (EN) A palaeography of polychrome hieroglyphs @ phrp.be
+URL = https://www.phrp.be/Palaeography.php
+
+-
+
+Name = (FR) Dictionnaire @ hieroglyphs.net
+URL = http://hieroglyphs.net
 
 Name = (EN) The Google's Fabricius Workbench
 URL = https://artsexperiments.withgoogle.com/fabricius
@@ -53,6 +73,9 @@ URL = http://jfbradu.free.fr/egypte/HIEROGLYPHES/DECHIFFREMENT/DECHIFFREMENT.php
 
 Name = (FR) Listes de shenous ou cartouches @ egyptos.net
 URL = https://www.egyptos.net
+
+Name = (FR) Projet Rosette @ projetrosette.info
+URL = http://www.projetrosette.info
 
 -
 
