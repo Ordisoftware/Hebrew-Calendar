@@ -53,7 +53,7 @@
       this.button3 = new System.Windows.Forms.Button();
       this.button4 = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.dataGridView1 ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -74,7 +74,6 @@
       this.ActionExport.FlatAppearance.BorderSize = 0;
       this.ActionExport.Name = "ActionExport";
       this.ActionExport.UseVisualStyleBackColor = true;
-      this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
       // 
       // ActionImport
       // 
@@ -83,7 +82,6 @@
       this.ActionImport.FlatAppearance.BorderSize = 0;
       this.ActionImport.Name = "ActionImport";
       this.ActionImport.UseVisualStyleBackColor = true;
-      this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
       // 
       // ActionCancel
       // 
@@ -105,7 +103,6 @@
       this.ActionClear.FlatAppearance.BorderSize = 0;
       this.ActionClear.Name = "ActionClear";
       this.ActionClear.UseVisualStyleBackColor = true;
-      this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
       // ActionDelete
       // 
@@ -113,7 +110,6 @@
       this.ActionDelete.FlatAppearance.BorderSize = 0;
       this.ActionDelete.Name = "ActionDelete";
       this.ActionDelete.UseVisualStyleBackColor = true;
-      this.ActionDelete.Click += new System.EventHandler(this.ActionDelete_Click);
       // 
       // PanelSeparator
       // 
@@ -235,7 +231,7 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageDateBookmarks_FormClosed);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.dataGridView1 ) ).EndInit();
       this.ResumeLayout(false);
 
     }

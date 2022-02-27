@@ -42,8 +42,8 @@
       this.ActionHelp = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
-      this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
-      this.MonthCalendar2 = new System.Windows.Forms.MonthCalendar();
+      this.DateStart = new System.Windows.Forms.MonthCalendar();
+      this.DateEnd = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
       this.DatesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
       this.GroupBoxSun = new System.Windows.Forms.GroupBox();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-      this.DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+      this.DatePickerStart = new System.Windows.Forms.DateTimePicker();
+      this.DatePickerEnd = new System.Windows.Forms.DateTimePicker();
       this.ActionSetBookmarkStart = new System.Windows.Forms.Button();
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
@@ -153,19 +153,19 @@
       this.ActionManageBookmarks.UseVisualStyleBackColor = true;
       this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 
-      // MonthCalendar1
+      // DateStart
       // 
-      resources.ApplyResources(this.MonthCalendar1, "MonthCalendar1");
-      this.MonthCalendar1.MaxSelectionCount = 1;
-      this.MonthCalendar1.Name = "MonthCalendar1";
-      this.MonthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar1_DateChanged);
+      resources.ApplyResources(this.DateStart, "DateStart");
+      this.DateStart.MaxSelectionCount = 1;
+      this.DateStart.Name = "DateStart";
+      this.DateStart.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.DateStart_DateChanged);
       // 
-      // MonthCalendar2
+      // DateEnd
       // 
-      resources.ApplyResources(this.MonthCalendar2, "MonthCalendar2");
-      this.MonthCalendar2.MaxSelectionCount = 1;
-      this.MonthCalendar2.Name = "MonthCalendar2";
-      this.MonthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar2_DateChanged);
+      resources.ApplyResources(this.DateEnd, "DateEnd");
+      this.DateEnd.MaxSelectionCount = 1;
+      this.DateEnd.Name = "DateEnd";
+      this.DateEnd.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.DateEnd_DateChanged);
       // 
       // lunationsLabel1
       // 
@@ -239,19 +239,19 @@
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
-      // DateTimePicker1
+      // DatePickerStart
       // 
-      resources.ApplyResources(this.DateTimePicker1, "DateTimePicker1");
-      this.DateTimePicker1.Name = "DateTimePicker1";
-      this.DateTimePicker1.ShowUpDown = true;
-      this.DateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+      resources.ApplyResources(this.DatePickerStart, "DatePickerStart");
+      this.DatePickerStart.Name = "DatePickerStart";
+      this.DatePickerStart.ShowUpDown = true;
+      this.DatePickerStart.ValueChanged += new System.EventHandler(this.DatePickerStart_ValueChanged);
       // 
-      // DateTimePicker2
+      // DatePickerEnd
       // 
-      resources.ApplyResources(this.DateTimePicker2, "DateTimePicker2");
-      this.DateTimePicker2.Name = "DateTimePicker2";
-      this.DateTimePicker2.ShowUpDown = true;
-      this.DateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
+      resources.ApplyResources(this.DatePickerEnd, "DatePickerEnd");
+      this.DatePickerEnd.Name = "DatePickerEnd";
+      this.DatePickerEnd.ShowUpDown = true;
+      this.DatePickerEnd.ValueChanged += new System.EventHandler(this.DatePickerEnd_ValueChanged);
       // 
       // ActionSetBookmarkStart
       // 
@@ -323,12 +323,12 @@
       this.Controls.Add(this.ActionUseBookmarkEnd);
       this.Controls.Add(this.ActionSetBookmarkStart);
       this.Controls.Add(this.ActionUseBookmarkStart);
-      this.Controls.Add(this.DateTimePicker2);
-      this.Controls.Add(this.DateTimePicker1);
+      this.Controls.Add(this.DatePickerEnd);
+      this.Controls.Add(this.DatePickerStart);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.GroupBoxSun);
-      this.Controls.Add(this.MonthCalendar2);
-      this.Controls.Add(this.MonthCalendar1);
+      this.Controls.Add(this.DateEnd);
+      this.Controls.Add(this.DateStart);
       this.Controls.Add(this.PanelBottom);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
@@ -351,8 +351,8 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionClose;
-    private System.Windows.Forms.MonthCalendar MonthCalendar1;
-    private System.Windows.Forms.MonthCalendar MonthCalendar2;
+    private System.Windows.Forms.MonthCalendar DateStart;
+    private System.Windows.Forms.MonthCalendar DateEnd;
     private System.Windows.Forms.BindingSource DatesDiffItemBindingSource;
     private System.Windows.Forms.Label lunationsLabel1;
     private System.Windows.Forms.Label moonDaysLabel1;
@@ -362,8 +362,8 @@
     private System.Windows.Forms.Label solarYearsLabel1;
     private System.Windows.Forms.GroupBox GroupBoxSun;
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.DateTimePicker DateTimePicker1;
-    private System.Windows.Forms.DateTimePicker DateTimePicker2;
+    private System.Windows.Forms.DateTimePicker DatePickerStart;
+    private System.Windows.Forms.DateTimePicker DatePickerEnd;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button ActionSetBookmarkStart;
     private System.Windows.Forms.Button ActionUseBookmarkStart;

@@ -141,7 +141,7 @@ public partial class MainForm
               TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
                                                      weekParashah.Day.HasLinkedParashah);
               TitleParashah = $"Parashah {TitleParashah}";
-              ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, true)}";
+              ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, weekParashah.Day.HasLinkedParashah)}";
               ActionWeeklyParashah.Enabled = true;
             }
             else

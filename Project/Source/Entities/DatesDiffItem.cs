@@ -40,13 +40,11 @@ class DatesDiffItem
   {
     date1 = date1.Date;
     date2 = date2.Date;
+    if ( Date1 == date1 && Date2 == date2 )
+      return;
+    else
     if ( date1 > date2 )
-    {
-      var temp = date1;
-      date1 = date2;
-      date2 = temp;
-    }
-    if ( Date1 == date1 && Date2 == date2 ) return;
+      (date2, date1) = (date1, date2);
     Date1 = date1;
     Date2 = date2;
     Calculate(sender);

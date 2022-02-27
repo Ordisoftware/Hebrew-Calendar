@@ -208,13 +208,13 @@
       this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+      this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayClearSelection = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySetAsActive = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayGoToToday = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayGoToSelected = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayClearSelection = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayGoToBookmark = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDaySaveBookmark = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayManageBookmark = new System.Windows.Forms.ToolStripMenuItem();
@@ -986,10 +986,10 @@
             this.ActionViewCelebrationsBoard,
             this.ActionViewNewMoonsBoard,
             this.ActionViewLunarMonths,
-            this.ActionCalculateDateDiff,
             this.toolStripSeparator8,
-            this.ActionOpenCalculator,
+            this.ActionCalculateDateDiff,
             this.ActionOpenSystemDateAndTime,
+            this.ActionOpenCalculator,
             this.SeparatorMenuWeather,
             this.ActionLocalWeather,
             this.ActionOnlineWeather,
@@ -1582,6 +1582,23 @@
       this.toolStripSeparator18.Name = "toolStripSeparator18";
       resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
       // 
+      // ContextMenuDaySelectDate
+      // 
+      resources.ApplyResources(this.ContextMenuDaySelectDate, "ContextMenuDaySelectDate");
+      this.ContextMenuDaySelectDate.Name = "ContextMenuDaySelectDate";
+      this.ContextMenuDaySelectDate.Click += new System.EventHandler(this.ContextMenuDaySelect_Click);
+      // 
+      // ContextMenuDayClearSelection
+      // 
+      resources.ApplyResources(this.ContextMenuDayClearSelection, "ContextMenuDayClearSelection");
+      this.ContextMenuDayClearSelection.Name = "ContextMenuDayClearSelection";
+      this.ContextMenuDayClearSelection.Click += new System.EventHandler(this.ContextMenuDayClearSelection_Click);
+      // 
+      // toolStripSeparator19
+      // 
+      this.toolStripSeparator19.Name = "toolStripSeparator19";
+      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
+      // 
       // ContextMenuDaySetAsActive
       // 
       resources.ApplyResources(this.ContextMenuDaySetAsActive, "ContextMenuDaySetAsActive");
@@ -1604,23 +1621,6 @@
       // 
       this.toolStripSeparator20.Name = "toolStripSeparator20";
       resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
-      // 
-      // ContextMenuDaySelectDate
-      // 
-      resources.ApplyResources(this.ContextMenuDaySelectDate, "ContextMenuDaySelectDate");
-      this.ContextMenuDaySelectDate.Name = "ContextMenuDaySelectDate";
-      this.ContextMenuDaySelectDate.Click += new System.EventHandler(this.ContextMenuDaySelect_Click);
-      // 
-      // ContextMenuDayClearSelection
-      // 
-      resources.ApplyResources(this.ContextMenuDayClearSelection, "ContextMenuDayClearSelection");
-      this.ContextMenuDayClearSelection.Name = "ContextMenuDayClearSelection";
-      this.ContextMenuDayClearSelection.Click += new System.EventHandler(this.ContextMenuDayClearSelection_Click);
-      // 
-      // toolStripSeparator19
-      // 
-      this.toolStripSeparator19.Name = "toolStripSeparator19";
-      resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
       // 
       // ContextMenuDayGoToBookmark
       // 
