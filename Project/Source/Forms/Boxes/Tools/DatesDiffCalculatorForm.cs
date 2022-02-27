@@ -50,39 +50,40 @@ partial class DatesDiffCalculatorForm : Form
       if ( ensureOrder )
         if ( dates.Item1 < dates.Item2 )
         {
-          Instance.MonthCalendar1.SelectionStart = dates.Item1;
-          Instance.MonthCalendar2.SelectionStart = dates.Item2;
+          Instance.DateStart.SelectionStart = dates.Item1;
+          Instance.DateEnd.SelectionStart = dates.Item2;
         }
         else
         {
-          Instance.MonthCalendar1.SelectionStart = dates.Item2;
-          Instance.MonthCalendar2.SelectionStart = dates.Item1;
+          Instance.DateStart.SelectionStart = dates.Item2;
+          Instance.DateEnd.SelectionStart = dates.Item1;
         }
     }
     else
     if ( Instance.EditAutoSetRightToToday.Checked )
-      Instance.MonthCalendar2.SelectionStart = DateTime.Today;
-    Instance.MonthCalendar1.Tag = Instance.MonthCalendar1.SelectionStart;
-    Instance.MonthCalendar2.Tag = Instance.MonthCalendar2.SelectionStart;
+      Instance.DateEnd.SelectionStart = DateTime.Today;
+    Instance.DateStart.Tag = Instance.DateStart.SelectionStart;
+    Instance.DateEnd.Tag = Instance.DateEnd.SelectionStart;
     Instance.DateChanged(true);
     if ( !initonly ) Instance.Popup();
   }
 
   private DatesDiffItem Stats;
+
   private Button CurrentBookmarkButton;
 
   private DatesDiffCalculatorForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    MonthCalendar1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    MonthCalendar1.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    MonthCalendar2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    MonthCalendar2.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DateTimePicker1.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateTimePicker1.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DateTimePicker2.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateTimePicker2.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DateStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+    DateStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DateEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+    DateEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DatePickerStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+    DatePickerStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DatePickerEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
+    DatePickerEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
   }
 
   private void DateDiffForm_Load(object sender, EventArgs e)
@@ -100,15 +101,15 @@ partial class DatesDiffCalculatorForm : Form
   public void Relocalize()
   {
     if ( !Globals.IsReady ) return;
-    var date1 = MonthCalendar1.SelectionStart;
-    var date2 = MonthCalendar2.SelectionStart;
+    var date1 = DateStart.SelectionStart;
+    var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
     Instance.Dispose();
     Instance = new DatesDiffCalculatorForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
-    Instance.MonthCalendar1.Tag = date1;
-    Instance.MonthCalendar2.Tag = date2;
+    Instance.DateStart.Tag = date1;
+    Instance.DateEnd.Tag = date2;
     Instance.DateChanged(true);
     AllowClose = true;
     Close();
@@ -154,17 +155,17 @@ partial class DatesDiffCalculatorForm : Form
     if ( e.Button == MouseButtons.Left )
     {
       if ( control == ActionSetBookmarkStart )
-        setBookmark(MonthCalendar1);
+        setBookmark(DateStart);
       else
       if ( control == ActionSetBookmarkEnd )
-        setBookmark(MonthCalendar2);
+        setBookmark(DateEnd);
       else
       if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
         if ( control == ActionUseBookmarkStart )
-          MonthCalendar1.SelectionStart = date;
+          DateStart.SelectionStart = date;
         else
         if ( control == ActionUseBookmarkEnd )
-          MonthCalendar2.SelectionStart = date;
+          DateEnd.SelectionStart = date;
     }
     MainForm.Instance.LoadMenuBookmarks(this);
     //
@@ -220,40 +221,38 @@ partial class DatesDiffCalculatorForm : Form
 
   private void ActionSwapDates_Click(object sender, EventArgs e)
   {
-    var temp = MonthCalendar1.SelectionStart;
-    MonthCalendar1.SelectionStart = MonthCalendar2.SelectionStart;
-    MonthCalendar2.SelectionStart = temp;
+    (DateEnd.SelectionStart, DateStart.SelectionStart) = (DateStart.SelectionStart, DateEnd.SelectionStart);
   }
 
-  private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+  private void DatePickerStart_ValueChanged(object sender, EventArgs e)
   {
-    MonthCalendar1.SelectionStart = DateTimePicker1.Value.Date;
+    DateStart.SelectionStart = DatePickerStart.Value.Date;
   }
 
-  private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+  private void DatePickerEnd_ValueChanged(object sender, EventArgs e)
   {
-    MonthCalendar2.SelectionStart = DateTimePicker2.Value.Date;
+    DateEnd.SelectionStart = DatePickerEnd.Value.Date;
   }
 
-  private void MonthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+  private void DateStart_DateChanged(object sender, DateRangeEventArgs e)
   {
-    DateTimePicker1.Value = MonthCalendar1.SelectionStart.Date;
+    DatePickerStart.Value = DateStart.SelectionStart.Date;
     DateChanged();
   }
 
-  private void MonthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+  private void DateEnd_DateChanged(object sender, DateRangeEventArgs e)
   {
-    DateTimePicker2.Value = MonthCalendar2.SelectionStart.Date;
+    DatePickerEnd.Value = DateEnd.SelectionStart.Date;
     DateChanged();
   }
 
   private void DateChanged(bool force = false)
   {
-    if ( MonthCalendar1.Tag is null ) return;
-    bool b1 = (DateTime)MonthCalendar1.Tag != MonthCalendar1.SelectionStart;
-    bool b2 = (DateTime)MonthCalendar2.Tag != MonthCalendar2.SelectionStart;
-    if ( b1 ) MonthCalendar1.Tag = MonthCalendar1.SelectionStart;
-    if ( b2 ) MonthCalendar2.Tag = MonthCalendar2.SelectionStart;
+    if ( DateStart.Tag is null ) return;
+    bool b1 = (DateTime)DateStart.Tag != DateStart.SelectionStart;
+    bool b2 = (DateTime)DateEnd.Tag != DateEnd.SelectionStart;
+    if ( b1 ) DateStart.Tag = DateStart.SelectionStart;
+    if ( b2 ) DateEnd.Tag = DateEnd.SelectionStart;
     if ( !force && !b1 && !b2 ) return;
     var cursor = Cursor;
     Cursor = Cursors.WaitCursor;
@@ -261,12 +260,12 @@ partial class DatesDiffCalculatorForm : Form
     {
       if ( Stats is null )
       {
-        Stats = new DatesDiffItem(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
+        Stats = new DatesDiffItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
         DatesDiffItemBindingSource.DataSource = Stats;
       }
       else
       {
-        Stats.SetDates(this, MonthCalendar1.SelectionStart, MonthCalendar2.SelectionStart);
+        Stats.SetDates(this, DateStart.SelectionStart, DateEnd.SelectionStart);
         DatesDiffItemBindingSource.ResetBindings(false);
       }
     }

@@ -295,9 +295,7 @@ static class StackMethods
       {
         if ( compare(listBox.Items[counter], listBox.Items[counter - 1]) == -1 )
         {
-          object temp = listBox.Items[counter];
-          listBox.Items[counter] = listBox.Items[counter - 1];
-          listBox.Items[counter - 1] = temp;
+          (listBox.Items[counter - 1], listBox.Items[counter]) = (listBox.Items[counter], listBox.Items[counter - 1]);
           swapped = true;
         }
         counter--;

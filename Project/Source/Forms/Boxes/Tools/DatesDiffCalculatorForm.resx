@@ -375,6 +375,78 @@
   <data name="&gt;&gt;moonYearsLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;EditAutoSetRightToToday.Name" xml:space="preserve">
+    <value>EditAutoSetRightToToday</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSetRightToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSetRightToToday.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSetRightToToday.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Name" xml:space="preserve">
+    <value>ActionHelp</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
+    <value>ActionClose</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
+    <value>ActionManageBookmarks</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 383</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 28</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="EditAutoSetRightToToday.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -481,7 +553,7 @@
   <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAlBJREFUOE+V00tPE1EYh3GWfgFNEFgoGxcYLppUFEqq1pUujRuNaIzuUeQSaClW
+        wQAADsEBuJFr7QAAAlBJREFUOE+V00tPE1EYh3GWfgFNEFgoGxcYLppUFEqq1pUujRuNaIzuUeQSaClW
         gvEKgolBXBHQSEIilwJyaaG0pQgleFmgSIjGiLSdomgLRR/fGWI10i48yT9nZs6c37xn5kwSkGS82q8c
         tPZhsPajqx3l7olCJvalUy/93poRDpht5Jm6N2LuRm/p4bC1T1HnaoA6eWI+SK65l6kojGclw7mjeDOT
         mYjAdOAn0/71WF6F0JAYIBqn7rvQmWy4w+DM3M7qSSNu6Yu8UDKsUDrop0RSPODHt/RDqyQGyBI43eSW
@@ -518,70 +590,46 @@
   <data name="&gt;&gt;ActionManageBookmarks.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 383</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="MonthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="DateStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DateStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 44</value>
   </data>
-  <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
+  <data name="DateStart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar1.Name" xml:space="preserve">
-    <value>MonthCalendar1</value>
+  <data name="&gt;&gt;DateStart.Name" xml:space="preserve">
+    <value>DateStart</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar1.Type" xml:space="preserve">
+  <data name="&gt;&gt;DateStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DateStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DateStart.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="MonthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="DateEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="MonthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DateEnd.Location" type="System.Drawing.Point, System.Drawing">
     <value>278, 44</value>
   </data>
-  <data name="MonthCalendar2.TabIndex" type="System.Int32, mscorlib">
+  <data name="DateEnd.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar2.Name" xml:space="preserve">
-    <value>MonthCalendar2</value>
+  <data name="&gt;&gt;DateEnd.Name" xml:space="preserve">
+    <value>DateEnd</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar2.Type" xml:space="preserve">
+  <data name="&gt;&gt;DateEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DateEnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;MonthCalendar2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DateEnd.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <metadata name="DatesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -620,6 +668,9 @@
   <data name="&gt;&gt;lunationsLabel1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="DatesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="moonDaysLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -818,30 +869,6 @@
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 66</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="label2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
@@ -881,46 +908,82 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="DateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 66</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="label2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DatePickerStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 213</value>
   </data>
-  <data name="DateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DatePickerStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
   </data>
-  <data name="DateTimePicker1.TabIndex" type="System.Int32, mscorlib">
+  <data name="DatePickerStart.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker1.Name" xml:space="preserve">
-    <value>DateTimePicker1</value>
+  <data name="&gt;&gt;DatePickerStart.Name" xml:space="preserve">
+    <value>DatePickerStart</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker1.Type" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerStart.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="DateTimePicker2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DatePickerEnd.Location" type="System.Drawing.Point, System.Drawing">
     <value>278, 213</value>
   </data>
-  <data name="DateTimePicker2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DatePickerEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 20</value>
   </data>
-  <data name="DateTimePicker2.TabIndex" type="System.Int32, mscorlib">
+  <data name="DatePickerEnd.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker2.Name" xml:space="preserve">
-    <value>DateTimePicker2</value>
+  <data name="&gt;&gt;DatePickerEnd.Name" xml:space="preserve">
+    <value>DatePickerEnd</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker2.Type" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerEnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DateTimePicker2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DatePickerEnd.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -941,7 +1004,7 @@
   <data name="ActionSetBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
+        wQAADsEBuJFr7QAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
         B9FoHIQoAaEtGDXRGIOhXVgMhoQq4A+lhSi5tJa20NLettzb+9O+nnNsDAOJ3uTtd9rzPOe7ud+tcuhO
         sKuuO4i9N8exp2scu/8RZphlh13lABUzGWAy6eB/L2bZYVfZdzuAr5kKlLtL0owmNEoBEcpCPI9wLIfI
         Lw0LnHhOGGbZYVcGTKWrUFwd0vS43fB4PPD7R+D1erGc0dHZ2Unf/fB5h4VRXFfFkQH7uwOYiDvY0TYI
@@ -984,15 +1047,15 @@
   </data>
   <data name="ActionUseBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVDhPlZJNSxtRFIbzE9xJkbqohapxjE1aE82XphKN
-        tAq2tFUUBVddiaAUdVEXfixqN7pQQUVcdNOu3IhgpoSsRfsb0mlmxq+ELgqtzeO9k7iwkHF84HDv3DnP
-        y9zhuJyihhS0hxV8H+wmFVa8pWNnqC318HWZ/HACDnZI+mudh6iBOtjf4odyj4ynioy7EvY2OO6PU2op
-        jyXvrqE9vo/W/ADNX4Pmreb3+xHMlhr7AOuzv6yQFeLP4COy4TqychXPbM6hBhvKB1jy5yV0IehRN3q7
-        gt7WgB6qFeefkO9Fm6/Y/R+WvLWAEanHiDVidDRhPPNgiAC2Fx3Iqx84fxPDjHsxu55gdvowRQjrs6it
-        NnJS/rDl6aKQeIrZ3VwsEcLKjJDd5eWjFyEKHyc4fR7gpKeVk96gteYG4hSWJu1lMRCwOE7+ZZSLV22c
-        iToV+7O+CP/mx+xlSTrikVPFN1FJMa65tx1cvI7xd/bd7XIJ2WCVDPk1lODP1Khj+QapcCOXkyMcJgJ3
-        lyXpaPE6Ynt3ucT1dRzicl0BpJoDob51A+YAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
+        URd+LGo3ulBBRVx0067ciGCmhKxF+xvSaWbGr4QuCq3N472TuLCQcXzgcO/cOc/L3OG4nKKGFLSHFXwf
+        7CYVVrylY2eoLfXwdZn8cAIOdkj6a52HqIE62N/ih3KPjKeKjLsS9jY47o9TaimPJe+uoT2+j9b8AM1f
+        g+at5vf7EcyWGvsA67O/rJAV4s/gI7LhOrJyFc9szqEGG8oHWPLnJXQh6FE3eruC3taAHqoV55+Q70Wb
+        r9j9H5a8tYARqceINWJ0NGE882CIALYXHcirHzh/E8OMezG7nmB2+jBFCOuzqK02clL+sOXpopB4itnd
+        XCwRwsqMkN3l5aMXIQofJzh9HuCkp5WT3qC15gbiFJYm7WUxELA4Tv5llItXbZyJOhX7s74I/+bH7GVJ
+        OuKRU8U3UUkxrrm3HVy8jvF39t3tcgnZYJUM+TWU4M/UqGP5BqlwI5eTIxwmAneXJelo8Tpie3e5xPV1
+        HOJyXQGkmgOhvnUD5gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionUseBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1024,15 +1087,15 @@
   </data>
   <data name="ActionUseBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGbSURBVDhPlZJNSxtRFIbzE9xJkbqohapxjE1aE82XphKN
-        tAq2tFUUBVddiaAUdVEXfixqN7pQQUVcdNOu3IhgpoSsRfsb0mlmxq+ELgqtzeO9k7iwkHF84HDv3DnP
-        y9zhuJyihhS0hxV8H+wmFVa8pWNnqC318HWZ/HACDnZI+mudh6iBOtjf4odyj4ynioy7EvY2OO6PU2op
-        jyXvrqE9vo/W/ADNX4Pmreb3+xHMlhr7AOuzv6yQFeLP4COy4TqychXPbM6hBhvKB1jy5yV0IehRN3q7
-        gt7WgB6qFeefkO9Fm6/Y/R+WvLWAEanHiDVidDRhPPNgiAC2Fx3Iqx84fxPDjHsxu55gdvowRQjrs6it
-        NnJS/rDl6aKQeIrZ3VwsEcLKjJDd5eWjFyEKHyc4fR7gpKeVk96gteYG4hSWJu1lMRCwOE7+ZZSLV22c
-        iToV+7O+CP/mx+xlSTrikVPFN1FJMa65tx1cvI7xd/bd7XIJ2WCVDPk1lODP1Khj+QapcCOXkyMcJgJ3
-        lyXpaPE6Ynt3ucT1dRzicl0BpJoDob51A+YAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
+        URd+LGo3ulBBRVx0067ciGCmhKxF+xvSaWbGr4QuCq3N472TuLCQcXzgcO/cOc/L3OG4nKKGFLSHFXwf
+        7CYVVrylY2eoLfXwdZn8cAIOdkj6a52HqIE62N/ih3KPjKeKjLsS9jY47o9TaimPJe+uoT2+j9b8AM1f
+        g+at5vf7EcyWGvsA67O/rJAV4s/gI7LhOrJyFc9szqEGG8oHWPLnJXQh6FE3eruC3taAHqoV55+Q70Wb
+        r9j9H5a8tYARqceINWJ0NGE882CIALYXHcirHzh/E8OMezG7nmB2+jBFCOuzqK02clL+sOXpopB4itnd
+        XCwRwsqMkN3l5aMXIQofJzh9HuCkp5WT3qC15gbiFJYm7WUxELA4Tv5llItXbZyJOhX7s74I/+bH7GVJ
+        OuKRU8U3UUkxrrm3HVy8jvF39t3tcgnZYJUM+TWU4M/UqGP5BqlwI5eTIxwmAneXJelo8Tpie3e5xPV1
+        HOJyXQGkmgOhvnUD5gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ActionUseBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1065,7 +1128,7 @@
   <data name="ActionSetBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
+        wQAADsEBuJFr7QAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
         B9FoHIQoAaEtGDXRGIOhXVgMhoQq4A+lhSi5tJa20NLettzb+9O+nnNsDAOJ3uTtd9rzPOe7ud+tcuhO
         sKuuO4i9N8exp2scu/8RZphlh13lABUzGWAy6eB/L2bZYVfZdzuAr5kKlLtL0owmNEoBEcpCPI9wLIfI
         Lw0LnHhOGGbZYVcGTKWrUFwd0vS43fB4PPD7R+D1erGc0dHZ2Unf/fB5h4VRXFfFkQH7uwOYiDvY0TYI
@@ -1109,7 +1172,7 @@
   <data name="ActionSwapDates.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAORJREFUOE/tkcsKgkAUhudhWrT33URFHV8lok0RRbQRMkqollHbKLtRkFnWC/zN
+        wQAADsEBuJFr7QAAAORJREFUOE/tkcsKgkAUhudhWrT33URFHV8lok0RRbQRMkqollHbKLtRkFnWC/zN
         qbEI7bIN+mDgP/+5DHOG/cmGcxuO40xkyISOOeeQ4XsMw8BytYZt2/cG0kEwB+WklY2u69hstygUS7As
         615MmjwaTDXSfsY0TcSnM8rVGuqNZmoAeRWRiw5HUK1MPSBzH0VwWx68rv9URLotPNdrYxeG2QMEiq5p
         mC9WGI7GqQHkTWdB8gTllkmj0KJ6/UFqiR3fT5b4sjlBoS8TN41lzFRV7cpv/NicQIX5m7ySE+fr5p+C
