@@ -14,6 +14,8 @@
 /// <edited> 2022-02 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Resources;
+
 /// <summary>
 /// The application's main form.
 /// </summary>
@@ -92,6 +94,7 @@ public partial class MainForm
     if ( !Globals.IsReady || Globals.IsGenerating ) return;
     if ( UpdateTitlesMutex ) return;
     UpdateTitlesMutex = true;
+    LunisolarDay today = null;
     try
     {
       Text = Globals.AssemblyTitle;
@@ -114,13 +117,14 @@ public partial class MainForm
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText
+                          ?? SysTranslations.NullSlot.GetLang() );
         // Celebration
         if ( Settings.MainFormTitleBarShowCelebration )
         {
           if ( force || TitleCelebration.IsNullOrEmpty() )
           {
-            var today = ApplicationDatabase.Instance.GetToday();
+            today = ApplicationDatabase.Instance.GetToday();
             TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
             if ( !TitleCelebration.IsNullOrEmpty() )
               TitleCelebration = " - " + TitleCelebration;
@@ -138,8 +142,9 @@ public partial class MainForm
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = true;
               var parashah = weekParashah.Factory;
+              if ( today is null ) today = ApplicationDatabase.Instance.GetToday();
               TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
-                                                     ApplicationDatabase.Instance.GetToday().HasLinkedParashah);
+                                                     today.HasLinkedParashah);
               TitleParashah = $"Parashah {TitleParashah}";
               ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, true)}";
               ActionWeeklyParashah.Enabled = true;
@@ -148,7 +153,7 @@ public partial class MainForm
             {
               TitleParashah = string.Empty;
               ActionWeeklyParashah.Enabled = false;
-              ActionWeeklyParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ActionWeeklyParashah.Text");
+              ActionWeeklyParashah.Text = new ResourceManager(GetType()).GetString("ActionWeeklyParashah.Text");
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = false;
             }
