@@ -385,6 +385,7 @@
     <Compile Include="Source\Common\Hebrew\Entities\BooksBounds.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.BibleHub.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Entities\BooksNames.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Common.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Djep.cs" />
     <Compile Include="Source\Common\Hebrew\Entities\BooksNames.Hebrew.cs" />

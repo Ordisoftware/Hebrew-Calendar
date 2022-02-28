@@ -26,6 +26,9 @@ URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%
 
 -
 
+Name = (FR/IW) Torah-Box.org (Avec Rachi)
+URL = https://www.torah-box.com/torah-pdf/%BOOKTORAHBOX%/%CHAPTERNUM%.html
+
 Name = (EN/IW) Mechon-Mamre.org
 URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 

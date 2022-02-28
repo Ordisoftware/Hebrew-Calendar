@@ -171,6 +171,7 @@ static class HebrewTools
              .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(TanakBook)book])
              .Replace("%BOOKCHABAD%", ( BooksNames.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
              .Replace("%BOOKMM%", BooksNames.MechonMamre[(TanakBook)book])
+             .Replace("%BOOKTORAHBOX%", BooksNames.TorahBox[(TanakBook)book])
              .Replace("%BOOKDJEP%", BooksNames.Djep[(TanakBook)book])
              .Replace("%BOOKLE%", BooksNames.LEvangile[(TanakBook)book])
              .Replace("%BOOKNUM%", book.ToString())
