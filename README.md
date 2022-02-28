@@ -365,6 +365,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### 2022.03.01 - Version 9.26
 
 - Fix and improve Tools menu.
+- Add read online using Torah-Box.
 - Update web links with more resources on hieroglyphs.
 
 #### 2022.02.22 - Version 9.25
