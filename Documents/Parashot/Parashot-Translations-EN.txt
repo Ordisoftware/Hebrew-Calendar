@@ -22,7 +22,7 @@ Teroumah = Contribution
 Tetsaveh = She will order
 Ki Tissa = Since she will carry
 Vayaqhel = He will have assembled
-Peqoudei = They allocated for me
+Peqoudei = They allocated for Me
 // BOOK VAYIQRA
 Vayikra = He will have chosen
 Tsav = Recommendation
