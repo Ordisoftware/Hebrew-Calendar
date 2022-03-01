@@ -31,6 +31,9 @@ URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
 Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 
+Name = (FR) Jewish Educational Media Loubavitch
+URL = https://www.youtube.com/channel/UCqxhJ0eBEcK-OVydaAxo6aw
+
 Name = (FR) Judaïsme En Mouvement
 URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
 
@@ -45,17 +48,6 @@ URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
 -
 
-Name = (EN) My Jewish Learning 
-URL = https://www.youtube.com/user/myjewishlearning
-
-Name = (EN) Torah Anytime
-URL = https://www.youtube.com/user/torahanytime1
-
-Name = (EN) Torah Jews
-URL = https://www.youtube.com/torahjews
-
--
-
 Name = (FR) Aish
 URL = https://www.youtube.com/user/AishFr
 
@@ -64,3 +56,14 @@ URL = https://www.youtube.com/user/AishVideo
 
 Name = (IW) Aish
 URL = https://www.youtube.com/user/AishIvrit
+
+-
+
+Name = (EN) My Jewish Learning 
+URL = https://www.youtube.com/user/myjewishlearning
+
+Name = (EN) Torah Anytime
+URL = https://www.youtube.com/user/torahanytime1
+
+Name = (EN) Torah Jews
+URL = https://www.youtube.com/torahjews
