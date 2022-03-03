@@ -83,6 +83,9 @@ URL = https://fr.chabad.org
 Name = (EN) 'Habad Loubavitch
 URL = https://www.chabad.org
 
+Name = (EN) Jewish Educational Media Loubavitch
+URL = https://jemcentral.org
+
 -
 
 Name = (FR) Chiourim.com
