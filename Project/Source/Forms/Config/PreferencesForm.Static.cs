@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -41,13 +41,18 @@ partial class PreferencesForm
   // Mono spaced fonts list
   static private readonly string[] MonoSpacedFonts =
   {
-    "andalé mono", "bitstream vera sans mono", "cascadia code", "consolas", "courier new", "courier",
+    "andalé mono", "bitstream vera sans mono", "consolas", "courier new", "courier",
     "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
     "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
     "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
     "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
     "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
-    "tex gyre cursor", "ubuntu mono", "um typewriter"
+    "tex gyre cursor", "ubuntu mono", "um typewriter",
+    "@mingliu_hkscs-extb", "@mingliu-extb", "@ms gothic", "@nsimsun", "@simsun", "@simsun-extb",
+    "cascadia code", "cascadia code extralight", "cascadia code light", "cascadia code semibold",
+    "cascadia code semilight", "cascadia mono", "cascadia mono extralight", "cascadia mono light",
+    "cascadia mono semibold", "cascadia mono semilight", "lucida sans typewriter", "mingliu-extb",
+    "ms gothic", "nsimsun", "ocr a extended", "simsun", "simsun-extb"
   };
 
   // Intervals Min, Max, Default, Increment
