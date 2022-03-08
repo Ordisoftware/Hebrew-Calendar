@@ -70,11 +70,11 @@ URL = https://www.librairieness.fr
 ;Name = (FR) Librairie Sifrey Sajet
 ;URL = http://sifreysajet.fr
 
-Name = (FR) Silver Store
-URL = https://silverstore.fr
-
 Name = (FR) Librairie du Temple
 URL = https://www.librairiedutemple.fr
+
+Name = (FR) Silver Store
+URL = https://silverstore.fr
 
 -
 
