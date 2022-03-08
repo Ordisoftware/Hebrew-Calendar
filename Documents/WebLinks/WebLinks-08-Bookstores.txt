@@ -71,7 +71,7 @@ URL = https://www.librairieness.fr
 ;URL = http://sifreysajet.fr
 
 Name = (FR) Silver Store
-URL = silverstore.fr
+URL = https://silverstore.fr
 
 Name = (FR) Librairie du Temple
 URL = https://www.librairiedutemple.fr
