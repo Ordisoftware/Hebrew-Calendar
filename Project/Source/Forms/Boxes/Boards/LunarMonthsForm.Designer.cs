@@ -37,6 +37,7 @@
       this.ActionClose = new System.Windows.Forms.Button();
       this.ContextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionSearchWikipedia = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
       this.ActionCopyLineHebrew = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionCopyLineUnicode = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMonths = new System.Windows.Forms.Panel();
-      this.ActionSearchWikipedia = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuItems.SuspendLayout();
       this.SuspendLayout();
@@ -124,6 +124,12 @@
       resources.ApplyResources(this.ActionSearchOnline, "ActionSearchOnline");
       this.ActionSearchOnline.Name = "ActionSearchOnline";
       // 
+      // ActionSearchWikipedia
+      // 
+      resources.ApplyResources(this.ActionSearchWikipedia, "ActionSearchWikipedia");
+      this.ActionSearchWikipedia.Name = "ActionSearchWikipedia";
+      this.ActionSearchWikipedia.Click += new System.EventHandler(this.ActionSearchWikipedia_Click);
+      // 
       // ActionOpenHebrewWordsSearch
       // 
       resources.ApplyResources(this.ActionOpenHebrewWordsSearch, "ActionOpenHebrewWordsSearch");
@@ -191,12 +197,6 @@
       // 
       resources.ApplyResources(this.PanelMonths, "PanelMonths");
       this.PanelMonths.Name = "PanelMonths";
-      // 
-      // ActionSearchWikipedia
-      // 
-      resources.ApplyResources(this.ActionSearchWikipedia, "ActionSearchWikipedia");
-      this.ActionSearchWikipedia.Name = "ActionSearchWikipedia";
-      this.ActionSearchWikipedia.Click += new System.EventHandler(this.ActionSearchWikipedia_Click);
       // 
       // LunarMonthsForm
       // 

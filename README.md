@@ -345,6 +345,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add preference tab to setup keyboard shortcuts
 - Add dark theme for monthly view.
 - Add print boards.
+- Rewrite the reminder.
 
 #### Data
 

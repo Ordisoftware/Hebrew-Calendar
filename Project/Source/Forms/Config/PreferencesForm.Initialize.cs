@@ -249,7 +249,8 @@ partial class PreferencesForm
   /// </summary>
   private void LoadFonts()
   {
-    var fonts = new InstalledFontCollection().Families
+    var list = new InstalledFontCollection().Families;
+    var fonts = list
                                              .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
                                              .Select(font => font.Name)
                                              .OrderBy(name => name);
