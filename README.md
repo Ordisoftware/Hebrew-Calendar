@@ -121,9 +121,24 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Frequently asked questions
 
+#### What code analyzers are used?
+
+- [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
+- [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
+- [F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)
+- [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
+- [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
+- [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
+
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
 The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.
+
+#### What is the Windows double-buffering?
+
+When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
+
+When disabled, top menu painting may cause latency.
 
 #### What to do if the monthly view is ugly?
 
@@ -136,12 +151,6 @@ Use the Start Menu link:
 &emsp;`Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings`
 
 This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.
-
-#### What is the Windows double-buffering?
-
-When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.
-
-When disabled, top menu painting may cause latency.
 
 #### What are known problems?
 
