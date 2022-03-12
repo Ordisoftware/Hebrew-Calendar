@@ -80,7 +80,7 @@ static class StackMethods
   {
     var result = new StringBuilder();
     var ParagraphsList = new List<string>();
-    ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None).ToList());
+    ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None));
     int checkoverflow = 0;
     foreach ( string Paragraph in ParagraphsList )
     {
