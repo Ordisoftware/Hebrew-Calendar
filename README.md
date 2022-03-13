@@ -212,7 +212,7 @@ Thus celebration dates may be wrong.
 
   `Ordisoftware.Hebrew.Calendar.exe --parashah`
 
-These options are cumulative and can be used to control the software when it is already running.
+These options are cumulative, and can be used to control the software when it is already running, but if this case this only works for administrator users.
 
 It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this Shift + Ctrl + Alt + P command:
 
@@ -375,6 +375,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress - Version 9.27
 
 - Code refactoring
+- Improve setup to allow installation by non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
 #### 2022.03.01 - Version 9.26
