@@ -14,7 +14,7 @@ OutputBaseFilename={#MyAppPublisher}{#MyAppNameNoSpace}Setup-{#MyAppVersion}
 OutputDir=.\
 
 UninstallFilesDir={app}\Uninstall
-DefaultDirName={commonpf}\{#MyAppPublisher}\{#MyAppName}
+DefaultDirName={autopf}\{#MyAppPublisher}\{#MyAppName}
 DefaultGroupName={#MyAppPublisher}
 
 Compression=zip

@@ -8,6 +8,9 @@ Name: {app}\Sounds\*; Type: filesandordirs
 Name: {app}\System\*; Type: filesandordirs
 Name: {app}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
 Name: {group}\{cm:LaunchProgram,{#MyAppName}}.*; Type: files
+Name: {group}\{cm:ProgramOnTheWeb,{#MyAppPublisher}}.lnk; Type: files
 Name: {group}\{#MyAppName}; Type: filesandordirs
 Name: {commonstartup}\{#MyAppName}.*; Type: files
 Name: {commondesktop}\{#MyAppName}.lnk; Type: files
+Name: {userstartup}\{#MyAppName}.*; Type: files
+Name: {userdesktop}\{#MyAppName}.lnk; Type: files
