@@ -375,6 +375,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress - Version 9.27
 
 - Code refactoring
+- Disable IPC intercom for non-admin users.
 - Improve setup to allow installation by non-admin users.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
