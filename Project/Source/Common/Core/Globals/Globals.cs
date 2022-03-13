@@ -11,8 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
+
+using Meziantou.Framework.Win32;
 
 /// <summary>
 /// Provides global variables.
@@ -116,6 +118,47 @@ static partial class Globals
   /// </summary>
   static public string ProcessName
     => Path.GetFileNameWithoutExtension(Application.ExecutablePath);
+
+  /// <summary>
+  /// Indicates if the current process is in admin mode.
+  /// </summary>
+  static public bool IsCurrentProcessAdmin
+  {
+    get
+    {
+      using var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+      var principal = new System.Security.Principal.WindowsPrincipal(identity);
+      return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+    }
+  }
+
+  /// <summary>
+  /// Indicates if the current user is an admin.
+  /// </summary>
+  /// <remarks>
+  /// See https://www.meziantou.net/check-if-the-current-user-is-an-administrator.htm
+  /// </remarks>
+  static public bool IsCurrentUserAdmin
+  {
+    get
+    {
+      using var token = AccessToken.OpenCurrentProcessToken(TokenAccessLevels.Query);
+      if ( !IsAdministrator(token) && token.GetElevationType() == TokenElevationType.Limited )
+        using ( var linkedToken = token.GetLinkedToken() )
+          return IsAdministrator(linkedToken);
+      else
+        return false;
+      //
+      static bool IsAdministrator(AccessToken accessToken)
+      {
+        var adminSid = SecurityIdentifier.FromWellKnown(WellKnownSidType.WinBuiltinAdministratorsSid);
+        foreach ( var group in accessToken.EnumerateGroups() )
+          if ( group.Attributes.HasFlag(GroupSidAttributes.SE_GROUP_ENABLED) && group.Sid == adminSid )
+            return true;
+        return false;
+      }
+    }
+  }
 
   /// <summary>
   /// Indicates the application process ID.

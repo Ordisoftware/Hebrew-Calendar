@@ -29,7 +29,7 @@ class SystemStatistics
     get
     {
       var list = Process.GetProcessesByName(Globals.ProcessName);
-      return list.Length == 1 ? list[0].PriorityClass : 0;
+      return list.Length >= 1 ? list[0].PriorityClass : 0;
     }
   }
 

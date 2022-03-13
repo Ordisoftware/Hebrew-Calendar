@@ -164,6 +164,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\Meziantou.AccessToken\AccessToken.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\GroupSidAttributes.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\MandatoryIntegrityLevel.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\Natives\NativeMethods.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\Natives\TokenInformationClass.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\PrivilegeAttribute.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\Privileges.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\SecurityIdentifier.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\SecurityImpersonationLevel.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenAccessLevels.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenElevationType.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenEntry.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenGroupEntry.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenPrivilegeEntry.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\TokenType.cs" />
+    <Compile Include="Dependencies\Meziantou.AccessToken\WellKnownSidType.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\Hotkey.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyAction.cs" />
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyEventArgs.cs" />
