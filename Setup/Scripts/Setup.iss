@@ -21,7 +21,8 @@ Compression=zip
 SolidCompression=true
 InternalCompressLevel=normal
 
-;PrivilegesRequired=admin
+PrivilegesRequired=lowest
+PrivilegesRequiredOverridesAllowed=commandline dialog
 ArchitecturesAllowed=x86 x64 ia64 arm64
 ArchitecturesInstallIn64BitMode=x64 ia64 arm64
 
