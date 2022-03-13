@@ -11,11 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using System.IO.Pipes;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 /// <summary>
 /// Provides system management.
@@ -61,7 +63,8 @@ static partial class SystemManager
           CommandLineOptions.ShowMainForm = true;
         try
         {
-          IPCSendCommands?.Invoke();
+          if ( Globals.IsCurrentUserAdmin )
+            IPCSendCommands?.Invoke();
         }
         catch ( Exception ex )
         {
@@ -83,6 +86,7 @@ static partial class SystemManager
   static public void CreateIPCServer(AsyncCallback ipcRequests)
   {
     if ( ipcRequests is null ) return;
+    if ( !Globals.IsCurrentUserAdmin ) return;
     try
     {
       IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
