@@ -372,6 +372,11 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
+#### In progress - Version 9.27
+
+- Code refactoring
+- Add Hebrew font version available on Fonts2u (can be manually installed).
+
 #### 2022.03.01 - Version 9.26
 
 - Fix and improve Tools menu.
