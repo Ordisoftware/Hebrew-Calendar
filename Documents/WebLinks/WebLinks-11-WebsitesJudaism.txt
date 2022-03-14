@@ -74,6 +74,9 @@ URL = https://www.truetorahjews.org
 Name = (FR) Hassidout
 URL = http://hassidout.org
 
+Name = (FR) Loubavitch France-Europe
+URL = https://www.loubavitchfrance.fr
+
 Name = (FR) Beth Loubavitch
 URL = https://www.loubavitch.fr
 

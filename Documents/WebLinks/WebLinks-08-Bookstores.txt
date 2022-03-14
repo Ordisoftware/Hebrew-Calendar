@@ -32,6 +32,9 @@ URL = http://librairiegallia.fr
 Name = (FR) Editions La Délivrance
 URL = http://www.ladelivrance.org
 
+Name = (FR) Editions Kehot Loubavitch
+URL = https://www.kehot.fr
+
 Name = (FR) Editions Loubavitch
 URL = http://www.editions-loubavitch.fr
 

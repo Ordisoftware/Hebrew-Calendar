@@ -13,53 +13,53 @@
 Lang/EN = Health and herbology
 Lang/FR = Santé et herbologie
 
-Name = (EN) Ayurveda
+Name = (EN) Ayurveda @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Ayurveda
 
-Name = (FR) Ayurveda
+Name = (FR) Ayurveda @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Ayurveda
 
-Name = (EN) Traditional Chinese medicine
+Name = (EN) Traditional Chinese medicine @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Traditional_Chinese_medicine
 
-Name = (FR) Médecine traditionnelle chinoise
+Name = (FR) Médecine traditionnelle chinoise @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/M%C3%A9decine_traditionnelle_chinoise
 
 -
 
-Name = (EN) Yoga
+Name = (EN) Yoga @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Yoga
 
-Name = (FR) Yoga
+Name = (FR) Yoga @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Yoga
 
-Name = (EN) Qigong
+Name = (EN) Qigong @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Qigong
 
-Name = (FR) Qi gong
+Name = (FR) Qi gong @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Qi_gong
 
-Name = (EN) Bodybuilding
+Name = (EN) Bodybuilding @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Bodybuilding
 
-Name = (FR) Bodybuilding
+Name = (FR) Bodybuilding @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Culturisme
 
 -
 
-Name = (EN) History of herbalism
+Name = (EN) History of herbalism @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/History_of_herbalism
 
-Name = (EN) Medicinal plants
+Name = (EN) Medicinal plants @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Medicinal_plants
 
-Name = (FR) Plante médicinale
+Name = (FR) Plante médicinale @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale
 
-Name = (EN) Chinese herbology
+Name = (EN) Chinese herbology @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Chinese_herbology
 
-Name = (FR) Pharmacopée chinoise
+Name = (FR) Pharmacopée chinoise @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Pharmacop%C3%A9e_chinoise
 
 -

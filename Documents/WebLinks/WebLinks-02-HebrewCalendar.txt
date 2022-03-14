@@ -13,10 +13,10 @@
 Lang/EN = Hebrew calendar
 Lang/FR = Calendrier hébraïque
 
-Name = (EN) Wikipedia.org
+Name = (EN) Hebrew calendar @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_calendar
 
-Name = (FR) Wikipedia.org
+Name = (FR) Calendrier hébraïque @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque
 
 -

@@ -366,17 +366,18 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 ## Changelog
 
-#### In progress - Version 10.0
+#### In progress for 2022 - Version 10.0
 
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### In progress - Version 9.27
+#### 2022.03.16 - Version 9.27
 
 - Code refactoring
 - Disable IPC intercom for non-admin users.
 - Improve setup to allow installation by non-admin users.
+- Update web links with more resources on Loubavitch.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
 #### 2022.03.01 - Version 9.26
