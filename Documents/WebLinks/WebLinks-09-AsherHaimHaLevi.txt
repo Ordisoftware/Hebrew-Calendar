@@ -37,15 +37,16 @@ URL = https://asherhaimhalevi.ordisoftware.com/works/bibliography/
 
 -
 
-Name = (FR) YouTube Playlist
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
--
-
 Name = (FR) Proposition logique pour un monde meilleur
 URL = https://asherhaimhalevi.ordisoftware.com
 
 Name = (FR) Théorie de santé-aide-justice
 URL = https://asherhaimhalevi.ordisoftware.com/logical-proposition/health-help-justice-theory/
+
+-
+
+Name = (FR) YouTube Playlist Exposés tirés des ouvrages
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
 
 -
 
