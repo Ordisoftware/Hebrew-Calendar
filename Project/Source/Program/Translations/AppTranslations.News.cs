@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-01 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -34,11 +34,30 @@ static partial class AppTranslations
                       "• Quelques améliorations et corrections."
     },*/
 
+    ["9.27"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Code refactoring." + Globals.NL +
+                      "• Disable IPC intercom for non-administrator users." + Globals.NL +
+                      "• Improve setup to allow installation by non-administrator users." + Globals.NL +
+                      "• Update web links with more resources on Loubavitch." + Globals.NL +
+                      "• Update web links with several changes." + Globals.NL +
+                      "• Update FAQ and Help." + Globals.NL +
+                      "• Add Hebrew font version available on Fonts2u(can be manually installed).",
+
+      [Language.FR] = "• Refactorisation du code." + Globals.NL +
+                      "• Désactivation de l'inter-com IPC pour les utilisateurs non administrateurs." + Globals.NL +
+                      "• Amélioration du setup pour permettre l'installation par des utilisateurs non administrateurs." + Globals.NL +
+                      "• Mise à jour les liens Web avec plus de ressources sur Loubavitch." + Globals.NL +
+                      "• Mise à jour les liens Web avec plusieurs modifications." + Globals.NL +
+                      "• Mise à jour la FAQ et l'aide." + Globals.NL +
+                      "• Ajout de la version de police Hebrew disponible sur Fonts2u (peut être installée manuellement)."
+    },
+
     ["9.24"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Fix Tetsave hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.",
+      [Language.EN] = "• Fix Tetsaveh hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.",
 
-      [Language.FR] = "• Correction du nom hébreu de Tetsave et de la lettrique : le tableau des parashot doit être restaurée ou édité, voir ParashotFactory.txt et Parashot-Lettriqs.txt dans le dossier de documents de l'application."
+      [Language.FR] = "• Correction du nom hébreu de Tetsaveh et de la lettrique : le tableau des parashot doit être restaurée ou édité, voir ParashotFactory.txt et Parashot-Lettriqs.txt dans le dossier de documents de l'application."
     },
 
     ["9.x"] = new TranslationsDictionary

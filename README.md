@@ -92,6 +92,8 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
+- Disable IPC intercom for non-administrator users.
+- Improve setup to allow installation by non-administrator users.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -129,6 +131,12 @@ A libre and open-source software written in C# that allows to generate a calenda
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
+
+#### What are the difference between installing "only for me" and "for all users"?
+
+The first option does not need to have administrator rights and the software is installed in the `AppData\Local` user folder. The second option uses the common `Program Files` folder and requires the use of an elevated account. There is no other difference for the application that uses a per user data storage, except what is mentioned later in the command-line section in case of running the program under a limited account.
+
+Inter-process communication will therefore not be available for limited user accounts for the time being.
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
@@ -372,12 +380,14 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### 2022.03.16 - Version 9.27
+#### 2022.03.20 - Version 9.27
 
-- Code refactoring
+- Code refactoring.
 - Disable IPC intercom for non-admin users.
 - Improve setup to allow installation by non-admin users.
 - Update web links with more resources on Loubavitch.
+- Update web links with several changes.
+- Update FAQ and Help.
 - Add Hebrew font version available on Fonts2u (can be manually installed).
 
 #### 2022.03.01 - Version 9.26
