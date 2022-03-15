@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -106,8 +106,13 @@ static partial class SysTranslations
 
   static public readonly TranslationsDictionary WrongFileChecksum = new()
   {
-    [Language.EN] = $"Wrong checksum for file:{Globals.NL2}{{0}}",
-    [Language.FR] = $"Mauvaise somme de contrôle pour le fichier :{Globals.NL2}{{0}}"
+    [Language.EN] = "Wrong checksum for file:" + Globals.NL2 +
+                    "{0}" + Globals.NL2 +
+                    "Either the value indicated by the server is wrong and it is necessary to contact the support to correct it, or the file was corrupted during the download or it was corrupted on the server. ",
+
+    [Language.FR] = "Mauvaise somme de contrôle pour le fichier :" + Globals.NL2 +
+                    "{0}" + Globals.NL2 +
+                    "Soit la valeur indiquée par le serveur est erronée et il est nécessaire de contacter le support pour la corriger, soit le fichier a été corrompu lors du téléchargement ou il l'a été sur le serveur."
   };
 
   static public readonly TranslationsDictionary AskToPrintLotsOfPages = new()
