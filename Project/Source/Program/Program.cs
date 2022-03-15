@@ -136,6 +136,8 @@ static partial class Program
   /// <summary>
   /// IPC requests.
   /// </summary>
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
+  [SuppressMessage("Vulnerability", "SEC0029:Insecure Deserialization", Justification = "N/A")]
   static void IPCRequests(IAsyncResult ar)
   {
     var server = ar.AsyncState as NamedPipeServerStream;

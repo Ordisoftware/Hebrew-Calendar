@@ -427,6 +427,8 @@ static class StackMethods
 
   // From https://stackoverflow.com/questions/1600962/displaying-the-build-date
   // Need "Deterministic>false</Deterministic>" in CSPROJ file.
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
+  [SuppressMessage("Vulnerability", "SEC0112:Unvalidated File Path", Justification = "N/A")]
   static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
   {
     var filePath = assembly.Location;
