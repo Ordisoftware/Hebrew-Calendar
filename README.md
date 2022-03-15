@@ -123,7 +123,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Frequently asked questions
 
-#### What code analyzers are used?
+#### What code analyzers are used in addition to Visual Studio?
 
 - [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
 - [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
