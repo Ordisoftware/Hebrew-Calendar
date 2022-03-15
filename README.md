@@ -131,7 +131,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
-- [PumaScan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
+- [Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
 
 #### What are the differences between "only for me" and "for all users" installation?
 
@@ -145,7 +145,9 @@ Inter-process communication will therefore not be available for limited user acc
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
-The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. You can manually check the latest version available online in case of problem.
+The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it.
+
+You can manually check the latest version available online in case of problem.
 
 #### What to do if the application does not work normally despite restoring settings?
 
@@ -167,13 +169,13 @@ Reset the preferences to default: it will restore the corrupted values in case o
 
 #### What are known problems?
 
-Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.
+Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris and various problems with ranges.
 
 Thus celebration dates may be wrong.
 
 #### What are command-line options?
 
-- Change interface language (does not change the text report unless using --generate):
+- Change interface language (does not change the data unless using --generate):
 
   `Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]`
 
@@ -227,7 +229,7 @@ Thus celebration dates may be wrong.
 
 These options are cumulative, and can be used to control the software when it is already running, but if this case this only works for administrator users.
 
-It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this Shift + Ctrl + Alt + P command:
+It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this `Shift + Ctrl + Alt + P` command:
 
 ```
 !^+P:: 
@@ -363,19 +365,19 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
-- Add option to set primary source for check update between author website or GitHub.
-- Add preference tab to setup keyboard shortcuts
+- Add option to set primary source for check update between author's website or GitHub.
+- Add preference tab to setup keyboard shortcuts.
 - Add dark theme for monthly view.
 - Add print boards.
 - Rewrite the reminder.
 
 #### Data
 
-- Add special alarms table to remind other people's birthday and yahrzeit events.
-- Add user reminders for solar and lunar anniversary of birth.
+- Add user reminders for other people's events like birthday and yahrzeit.
+- Add user reminders for personnal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
-- Add 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Add option to generate calendar using the rules of the Sod Ha'ibour instead of the strict astronomical moon or sun omer.
+- Add reminders for 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
+- Add option to generate calendar using the rules of the Sod Ha'ibur instead of the strict astronomical moon or sun omer.
 
 ## Changelog
 
