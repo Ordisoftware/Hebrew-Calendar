@@ -380,7 +380,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### 2022.03.16 - Version 9.27
+#### 2022.03.20 - Version 9.27
 
 - Code refactoring.
 - Disable IPC intercom for non-admin users.
