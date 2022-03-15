@@ -132,7 +132,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
 
-#### What are the difference between installing "only for me" and "for all users"?
+#### What are the differences between "only for me" and "for all users" installation?
 
 The first option does not need to have administrator rights and the software is installed in the `AppData\Local` user folder.
 
