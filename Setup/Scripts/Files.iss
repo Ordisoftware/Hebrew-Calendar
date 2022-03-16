@@ -7,4 +7,4 @@ Source: ..\Help\*; DestDir: {app}\Help; Flags: ignoreversion recursesubdirs skip
 Source: ..\Sounds\*; DestDir: {app}\Sounds; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
 Source: ..\System\*; DestDir: {app}\System; Flags: ignoreversion recursesubdirs skipifsourcedoesntexist; Excludes: *.bak
 Source: ..\Project\*; DestDir: {app}\Project; Flags: ignoreversion recursesubdirs; Excludes: *.bak, *.psess, *.vsp, *.suo, *.user, obj, packages, .vs
-Source: ..\Project\Medias\Fonts\Hebrew.ttf; DestDir: {autofonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall skipifsourcedoesntexist
+Source: ..\Project\Medias\Fonts\Hebrew.ttf; DestDir: {commonfonts}; FontInstall: Hebrew Normal; Flags: onlyifdoesntexist uninsneveruninstall skipifsourcedoesntexist

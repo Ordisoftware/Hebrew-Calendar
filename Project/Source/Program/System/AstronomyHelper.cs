@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2019-10 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Keith_Burnett_moonr2cs;
@@ -82,7 +82,11 @@ static class AstronomyHelper
       }
     }
     if ( MainForm.Instance.CurrentTimeZoneInfo is null )
-      throw new InvalidTimeZoneException();
+    {
+      MainForm.Instance.InitializeCurrentTimeZone();
+      if ( MainForm.Instance.CurrentTimeZoneInfo is null )
+        throw new InvalidTimeZoneException();
+    }
     int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours +
                    ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
     var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,

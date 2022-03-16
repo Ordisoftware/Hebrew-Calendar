@@ -22,16 +22,16 @@ Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.</p>
         <li>Generate a calendar with sun and moon rises and sets.</li>
         <li>View by tabular text report, visual month or data grid.</li>
         <li>Balloon tip from the Tray Icon to navigate between days with a summary.</li>
-        <li>Event reminder for shabat and celebrations.</li>
-        <li>Indicate the weekly Parashah.</li>
-        <li>Search for a day, a month,&nbsp;or a celebration.</li>
+        <li>Event reminder for Shabat and celebrations.</li>
+        <li>Indicate the weekly parashah.</li>
+        <li>Search for a day, a month, or a celebration.</li>
         <li>Window listing the next celebrations.</li>
         <li>Window showing a board of celebrations by years.</li>
         <li>Window showing a board of new moons by years.</li>
         <li>Window showing a board of lunar months with descriptions.</li>
         <li>Window showing a board of parashot with descriptions.</li>
         <li>Window showing a board of celebration verses.</li>
-        <li><span class="VIiyi" lang="en"><span class="JLqJ4b ChMk0b" data-language-for-alternatives="en" data-language-to-translate-into="fr" data-phrase-index="0">Tools for the study of parashot and celebrations.</span></span></li>
+        <li>Tools for the study of parashot and celebrations.</li>
         <li>Calculate the difference between two dates with bookmarks.</li>
         <li>Advanced dialog to save, copy to the clipboard and print the view and the data.</li>
         <li>Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.</li>
@@ -104,22 +104,46 @@ Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.</p>
     <h3><iframe src="https://www.youtube.com/embed/u9LD-0u3wdE" allowfullscreen="allowfullscreen" data-mce-fragment="1" width="500" height="280"></iframe></h3>
     <p><iframe src="https://www.youtube.com/embed/EJni1fiXpMk" allowfullscreen="allowfullscreen" data-mce-fragment="1" width="500" height="280"></iframe></p>
     <h3>Frequently asked questions</h3>
-    <h4>What to do if the check update tells that the SSL certificate is wrong or expired?</h4>
-    <p>The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it. This certificate is normally updated within the two months of its annual expiration and a new version is released. You can manually check the latest version available online in case of problem.</p>
-    <h4>What to do if the monthly view is ugly?</h4>
-    <p>Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.</p>
-    <h4>What to do if the application does not work normally despite restoring settings?</h4>
-    <p>Use the start menu link &quot;Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings&quot;. This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.</p>
-    <h4>What is the Windows double-buffering?</h4>
+    <h4 id="what-code-analyzers-are-used-in-addition-to-visual-studio">What code analyzers are used in addition to Visual Studio?</h4>
+    <ul>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022">SonarLint</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022">Roslynator</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS">F0.Analyzers</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper">Parallel Helper</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker">Parallel Checker</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019">Security Code Scan</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan">Puma Scan</a></li>
+    </ul>
+    <h4 id="what-to-do-if-the-check-update-tells-that-the-ssl-certificate-is-wrong-or-expired">What to do if the check update tells that the SSL certificate is wrong or expired?</h4>
+    <p>The software verifies the validity of the certificate of the update 
+server in addition to the SHA-512 checksum of the installation file 
+before downloading and running it.</p>
+    <p>You can manually check the latest version available online in case of problem.</p>
+    <h4 id="what-to-do-if-the-application-does-not-work-normally-despite-restoring-settings">What to do if the application does not work normally despite restoring settings?</h4>
+    <p>Use the Start Menu link:    </p>
+    <ul>
+        <p><code>Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings</code></p>
+    </ul>
+    <p>This will erase all settings as well as those of old versions, which 
+should resolve issues if there is a conflict, otherwise please contact 
+support.</p>
+    <h4 id="what-is-the-windows-double-buffering">What is the Windows double-buffering?</h4>
     <p>When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.</p>
-    <p>When disabled, top menu painting may cause a latency.</p>
-    <h4>What are known problems?</h4>
-    <p>Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris.</p>
+    <p>When disabled, top menu and some controls painting may cause latency,
+ and dynamic items can be generated slowly the larger the number.</p>
+    <h4 id="what-to-do-if-the-monthly-view-is-ugly">What to do if the monthly view is ugly?</h4>
+    <p>Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.</p>
+    <h4 id="what-are-known-problems">What are known problems?</h4>
+    <p>Data generated for cities near the poles can be inconsistent the 
+closer we get, especially with the moon omer, due to some weird 
+ephemeris and various problems with ranges.</p>
     <p>Thus celebration dates may be wrong.</p>
     <h4>What are command-line options?</h4>
     <ul>
         <li>
-            <p>Change interface language (does not change the text report unless using <code>--generate</code>):</p>
+            <p>Change interface language (does not change the data unless <code>--generate</code>):</p>
+        </li>
+        <li>
             <p><code>Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]</code></p>
         </li>
     </ul>
@@ -187,7 +211,9 @@ Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.</p>
             <p><code>Ordisoftware.Hebrew.Calendar.exe --parashah</code></p>
         </li>
     </ul>
-    <p>These options are cumulative and can be used to control the software when it is already running.</p>
+    <p>These options are cumulative, and can be used to control the software
+ when it is already running, but if this case this only works for 
+administrator users.</p>
     <p>It is therefore possible to use <a href="https://www.autohotkey.com" target="_blank">AutoHotKey</a>&nbsp;to define for example this Shift + Ctrl + Alt + P command:</p>
     <p><code>!^+P::
 <br>
@@ -526,7 +552,6 @@ Last month having a celebration</td>
             </td>
         </tr>
     </table>
-    <p>&nbsp;</p>
     <h3>More information</h3>
     <p><a href="https://github.com/Ordisoftware/Hebrew-Calendar" target="_blank" rel="noopener">GitHub repository</a></p>
 </div>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -19,6 +19,19 @@ namespace Ordisoftware.Core;
 /// </summary>
 static partial class SysTranslations
 {
+
+  static public readonly TranslationsDictionary IPCNotAvailable = new()
+  {
+    [Language.EN] = "IPC intercom does not yet work under a limited user account." + Globals.NL2 +
+                    "An application that is not running can be launched from another but cannot be controlled once running." + Globals.NL2 +
+                    "Therefore this command-line will not be processed:" + Globals.NL2 +
+                    "{0}",
+
+    [Language.FR] = "L'intercom IPC ne fonctionne pas encore sous un compte d'utilisateur limité." + Globals.NL2 +
+                    "Une application qui ne s'exécute pas peut être lancée à partir d'une autre mais ne peut pas être contrôlée une fois en cours d'exécution." + Globals.NL2 +
+                    "Cette ligne de commande ne sera donc pas traitée :" + Globals.NL2 +
+                    "{0}"
+  };
 
   static public readonly TranslationsDictionary UpgradeCommonDatabaseRequired = new()
   {
