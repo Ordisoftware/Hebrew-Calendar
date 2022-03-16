@@ -92,8 +92,6 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Some fixes and improvements.
 - Optimized code.
 - Updated web links.
-- Disable IPC intercom for non-administrator users.
-- Improve setup to allow installation by non-administrator users.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -381,7 +379,6 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Code refactoring.
 - Disable IPC intercom for non-admin users.
-- Improve setup to allow installation by non-admin users.
 - Update web links with more resources on Loubavitch.
 - Update web links with several changes.
 - Update FAQ and Help.
