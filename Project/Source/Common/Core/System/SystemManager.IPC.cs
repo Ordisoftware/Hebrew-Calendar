@@ -16,8 +16,6 @@ namespace Ordisoftware.Core;
 
 using System.IO.Pipes;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.AccessControl;
-using System.Security.Principal;
 
 /// <summary>
 /// Provides system management.
@@ -37,14 +35,32 @@ static partial class SystemManager
   static private NamedPipeServerStream IPCServer;
 
   /// <summary>
+  /// Indicates if the several instances of the application can run at same time.
+  /// </summary>
+  static public bool AllowMultipleInstances { get; private set; } = true;
+
+  /// <summary>
   /// IPC answers callback.
   /// </summary>
   static public Action IPCSendCommands { get; set; }
 
   /// <summary>
-  /// Indicates if the several instances of the application can run at same time.
+  /// Indicates if IPC is available.
   /// </summary>
-  static public bool AllowMultipleInstances { get; private set; } = true;
+  static public bool IsIPCAllowed => Globals.IsCurrentUserAdmin;
+
+  /// <summary>
+  /// Checks if IPC is available and returns true, else shows a message and returns false.
+  /// </summary>
+  static public bool CheckIPCAllowed()
+  {
+    if ( Globals.IsCurrentUserAdmin )
+    {
+      string str = CommandLineArguments.Length > 0 ? string.Join(" ", CommandLineArguments) : "show";
+      DisplayManager.ShowWarning(SysTranslations.IPCNotAvailable.GetLang($"'{str}'"));
+    }
+    return !Globals.IsCurrentUserAdmin;
+  }
 
   /// <summary>
   /// Checks if the process is already running.
@@ -63,7 +79,7 @@ static partial class SystemManager
           CommandLineOptions.ShowMainForm = true;
         try
         {
-          if ( Globals.IsCurrentUserAdmin )
+          if ( CheckIPCAllowed() )
             IPCSendCommands?.Invoke();
         }
         catch ( Exception ex )
