@@ -38,7 +38,6 @@ static partial class AppTranslations
     {
       [Language.EN] = "• Code refactoring." + Globals.NL +
                       "• Disable IPC intercom for non-administrator users." + Globals.NL +
-                      "• Improve setup to allow installation by non-administrator users." + Globals.NL +
                       "• Update web links with more resources on Loubavitch." + Globals.NL +
                       "• Update web links with several changes." + Globals.NL +
                       "• Update FAQ and Help." + Globals.NL +
@@ -46,7 +45,6 @@ static partial class AppTranslations
 
       [Language.FR] = "• Refactorisation du code." + Globals.NL +
                       "• Désactivation de l'inter-com IPC pour les utilisateurs non administrateurs." + Globals.NL +
-                      "• Amélioration du setup pour permettre l'installation par des utilisateurs non administrateurs." + Globals.NL +
                       "• Mise à jour les liens Web avec plus de ressources sur Loubavitch." + Globals.NL +
                       "• Mise à jour les liens Web avec plusieurs modifications." + Globals.NL +
                       "• Mise à jour la FAQ et l'aide." + Globals.NL +
