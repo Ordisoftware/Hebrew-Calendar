@@ -54,12 +54,12 @@ static partial class SystemManager
   /// </summary>
   static public bool CheckIPCAllowed()
   {
-    if ( Globals.IsCurrentUserAdmin )
+    if ( !Globals.IsCurrentUserAdmin )
     {
       string str = CommandLineArguments.Length > 0 ? string.Join(" ", CommandLineArguments) : "show";
       DisplayManager.ShowWarning(SysTranslations.IPCNotAvailable.GetLang($"'{str}'"));
     }
-    return !Globals.IsCurrentUserAdmin;
+    return Globals.IsCurrentUserAdmin;
   }
 
   /// <summary>
