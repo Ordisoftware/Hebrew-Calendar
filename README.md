@@ -379,6 +379,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Code refactoring.
 - Fix open navigation window from calendar's context menu.
+- Fix order of controls in generation tab of preferences.
 - Disable IPC intercom for non-admin users.
 - Update web links with more resources on Loubavitch.
 - Update web links with several changes.
