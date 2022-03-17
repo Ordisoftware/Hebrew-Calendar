@@ -362,7 +362,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### Data
 
 - Add user reminders for other people's events like birthday and yahrzeit.
-- Add user reminders for personnal solar and lunar anniversary of birth.
+- Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add reminders for 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
 - Add option to generate calendar using the rules of the Sod Ha'ibur instead of the strict astronomical moon or sun omer.
@@ -378,6 +378,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### 2022.03.20 - Version 9.27
 
 - Code refactoring.
+- Fix open navigation window from calendar's context menu.
 - Disable IPC intercom for non-admin users.
 - Update web links with more resources on Loubavitch.
 - Update web links with several changes.
@@ -392,12 +393,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2022.02.22 - Version 9.25
 
-- Fix Tetsave Hebrew transcription by adding the ending `h`.
+- Fix Tetsaveh Hebrew transcription by adding the ending `h`.
 - Update web links with Tehilim playlist.
 
 #### 2022.02.08 - Version 9.24
 
-- Fix Tetsave Hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.
+- Fix Tetsaveh Hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.
 - Code refactoring.
 - Update web links about celebrations, calendar and Judaism.
 
