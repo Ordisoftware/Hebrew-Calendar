@@ -37,6 +37,7 @@ static partial class AppTranslations
     ["9.27"] = new TranslationsDictionary
     {
       [Language.EN] = "• Code refactoring." + Globals.NL +
+                      "• Fix open navigation window from calendar's context menu." + Globals.NL +
                       "• Disable IPC intercom for non-administrator users." + Globals.NL +
                       "• Update web links with more resources on Loubavitch." + Globals.NL +
                       "• Update web links with several changes." + Globals.NL +
@@ -44,6 +45,7 @@ static partial class AppTranslations
                       "• Add Hebrew font version available on Fonts2u(can be manually installed).",
 
       [Language.FR] = "• Refactorisation du code." + Globals.NL +
+                      "• Correction de l'ouverture de la fenêtre de navigation depuis le menu contextuel du calendrier." + Globals.NL +
                       "• Désactivation de l'inter-com IPC pour les utilisateurs non administrateurs." + Globals.NL +
                       "• Mise à jour les liens Web avec plus de ressources sur Loubavitch." + Globals.NL +
                       "• Mise à jour les liens Web avec plusieurs modifications." + Globals.NL +
