@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -1086,7 +1086,11 @@ partial class MainForm : Form
 
   private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
   {
-    ActionNavigate.PerformClick();
+    if ( !NavigationForm.Instance.Visible )
+      ActionNavigate.PerformClick();
+    else
+      NavigationForm.Instance.Popup();
+    NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
   }
 
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
