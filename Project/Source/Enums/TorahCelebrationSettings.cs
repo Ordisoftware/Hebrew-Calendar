@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -21,87 +21,92 @@ static class TorahCelebrationSettings
 {
 
   /// <summary>
-  /// The pessah month.
+  /// Pessa'h month.
   /// </summary>
   static public readonly int PessahMonth = 1;
 
   /// <summary>
-  /// The spring lamb day.
+  /// Spring lamb day.
   /// </summary>
   static public readonly int NewLambDay = 10;
 
   /// <summary>
-  /// The pessah start day.
+  /// Pessa'h start day.
   /// </summary>
   static public readonly int PessahStartDay = 14;
 
   /// <summary>
-  /// The pessah length.
+  /// Pessa'h length.
   /// </summary>
   static public readonly int PessahLenght = 7;
 
   /// <summary>
-  /// The pessah last day.
+  /// Pessa'h last day.
   /// </summary>
   static public readonly int PessahEndDay = PessahStartDay + PessahLenght - 1;
 
   /// <summary>
-  /// The chavouot length.
+  /// Shavou'ot length.
   /// </summary>
   static public readonly int ChavouotLenght = 50;
 
   /// <summary>
-  /// The Yoms month.
+  /// Yoms month.
   /// </summary>
   static public readonly int YomsMonth = 7;
 
   /// <summary>
-  /// The hakipourim day.
+  /// Yom Terou'ah day.
+  /// </summary>
+  static public readonly int YomTerouahDay = 1;
+
+  /// <summary>
+  /// Yom HaKipourim day.
   /// </summary>
   static public readonly int YomHaKipourimDay = 10;
 
   /// <summary>
-  /// The soukot start day.
+  /// Soukot start day.
   /// </summary>
   static public readonly int SoukotStartDay = 15;
 
   /// <summary>
-  /// The soukot length.
+  /// Soukot length.
   /// </summary>
   static public readonly int SoukotLenght = 7 + 1;
 
   /// <summary>
-  /// The soukot last day.
+  /// Soukot last day.
   /// </summary>
   static public readonly int SoukotEndDay = SoukotStartDay + SoukotLenght - 1;
 
   /// <summary>
-  /// The 'hanouka month.
+  /// 'Hanouka month.
   /// </summary>
   static public readonly int HanoukaMonth = 9;
 
   /// <summary>
-  /// The 'hanouka day.
+  /// 'Hanouka day.
   /// </summary>
   static public readonly int HanoukaStartDay = 25;
 
   /// <summary>
-  /// The 'hanouka length.
+  /// 'Hanouka length.
   /// </summary>
   static public readonly int HanoukaLenght = 7 + 1;
 
   /// <summary>
-  /// The 'hanouka last day.
+  /// 'Hanouka last day.
   /// </summary>
   static public readonly int HanoukaEndDay = HanoukaStartDay + HanoukaEndDay - 1;
 
   /// <summary>
-  /// The pourim month.
+  /// Pourim month.
   /// </summary>
-  static public readonly int PourimMonth = 12;
+  static public readonly int PourimMonth = 12; // or 13 for a year with Adar II
 
   /// <summary>
-  /// The pourim day.
+  /// Pourim day.
   /// </summary>
   static public readonly int PourimDay = 14;
 
