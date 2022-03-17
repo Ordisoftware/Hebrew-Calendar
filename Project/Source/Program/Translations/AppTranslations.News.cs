@@ -38,6 +38,7 @@ static partial class AppTranslations
     {
       [Language.EN] = "• Code refactoring." + Globals.NL +
                       "• Fix open navigation window from calendar's context menu." + Globals.NL +
+                      "• Fix order of controls in generation tab of preferences." + Globals.NL +
                       "• Disable IPC intercom for non-administrator users." + Globals.NL +
                       "• Update web links with more resources on Loubavitch." + Globals.NL +
                       "• Update web links with several changes." + Globals.NL +
@@ -46,6 +47,7 @@ static partial class AppTranslations
 
       [Language.FR] = "• Refactorisation du code." + Globals.NL +
                       "• Correction de l'ouverture de la fenêtre de navigation depuis le menu contextuel du calendrier." + Globals.NL +
+                      "• Correction de l'ordre des contrôles dans l'onglet génération des préférences." + Globals.NL +
                       "• Désactivation de l'inter-com IPC pour les utilisateurs non administrateurs." + Globals.NL +
                       "• Mise à jour les liens Web avec plus de ressources sur Loubavitch." + Globals.NL +
                       "• Mise à jour les liens Web avec plusieurs modifications." + Globals.NL +

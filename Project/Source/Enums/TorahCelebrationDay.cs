@@ -38,37 +38,37 @@ public enum TorahCelebrationDay
   NewYearD10,
 
   /// <summary>
-  /// Pessah first day.
+  /// Pessa'h first day.
   /// </summary>
   PessahD1,
 
   /// <summary>
-  /// Pessah last day.
+  /// Pessa'h last day.
   /// </summary>
   PessahD7,
 
   /// <summary>
-  /// Chavouot diet start.
+  /// Shavou'ot diet start.
   /// </summary>
   ChavouotDiet,
 
   /// <summary>
-  /// Shavouot first celebration.
+  /// Shavou'ot first celebration.
   /// </summary>
   Chavouot1,
 
   /// <summary>
-  /// The Shavouot second celebration.
+  /// Shavou'ot second celebration.
   /// </summary>
   Chavouot2,
 
   /// <summary>
-  /// Yom terouah.
+  /// Yom Terou'ah.
   /// </summary>
   YomTerouah,
 
   /// <summary>
-  /// Yom hakipourim.
+  /// Yom HaKipourim.
   /// </summary>
   YomHaKipourim,
 

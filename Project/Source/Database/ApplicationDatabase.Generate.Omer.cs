@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
@@ -199,7 +199,7 @@ partial class ApplicationDatabase
         monthMoon++;
       if ( monthMoon == TorahCelebrationSettings.YomsMonth )
       {
-        dayDate = calculate(dayDate, 0, TorahCelebrationDay.YomTerouah, false);
+        dayDate = calculate(dayDate, TorahCelebrationSettings.YomTerouahDay - 1, TorahCelebrationDay.YomTerouah, false);
         calculate(dayDate, TorahCelebrationSettings.YomHaKipourimDay - 1, TorahCelebrationDay.YomHaKipourim, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.SoukotStartDay - 1, TorahCelebrationDay.SoukotD1, false);
         calculate(dayDate, TorahCelebrationSettings.SoukotLenght - 1, TorahCelebrationDay.SoukotD8, false);
