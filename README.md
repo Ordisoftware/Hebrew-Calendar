@@ -372,8 +372,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### In progress for 2022 - Version 10.0
 
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
-- Add comments to bookmarks.
 - Add command-line option `--lunarmonths` to show the lunar months board.
+- Add comments to bookmarks.
+
+#### In progress
+
+- Improve bookmark import to automatically extend length to multiple of 5.
 
 #### 2022.03.20 - Version 9.27
 
