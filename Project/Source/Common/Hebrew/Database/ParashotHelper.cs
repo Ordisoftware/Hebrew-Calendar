@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class ParashotHelper
@@ -34,7 +34,8 @@ static class ParashotHelper
     if ( parashah is null ) return false;
     // Message box
     var message = parashah.ToStringReadable();
-    message += Globals.NL2 + linked?.ToStringReadable();
+    if ( linked != null )
+      message += Globals.NL2 + linked.ToStringReadable();
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
       StartPosition = FormStartPosition.CenterScreen,
