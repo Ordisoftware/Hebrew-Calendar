@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -95,11 +95,11 @@ partial class MainForm
       CalendarText.ForeColor = Settings.TextColor;
       CalendarText.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
-      InitializeReminderBoxDesktopLocation();
       Refresh();
       ClearLists();
       LoadData();
       LoadMenuBookmarks(this);
+      Settings.InitializeReminderBoxDesktopLocation();
     }
     catch
     {
@@ -159,7 +159,8 @@ partial class MainForm
     });
     SystemManager.TryCatchManage(ProcessNewsAndCommandLine);
     IsCalendarReady = false;
-    PanelTitleInner.Controls.OfType<Label>().ToList().ForEach(label => label.Visible = true);
+    foreach ( var label in PanelTitleInner.Controls.OfType<Label>() )
+      label.Visible = true;
     Settings.SetFirstAndUpgradeFlagsOff();
   }
 
@@ -227,11 +228,13 @@ partial class MainForm
     {
       MenuShowHide_Click(null, null);
       CalendarMonth.Refresh();
-      var forms = Application.OpenForms.GetAll().Where(f => f.Visible);
-      forms.ToList().ForEach(f => f.ForceBringToFront());
-      var form = forms.LastOrDefault();
-      if ( form?.Visible == true )
-        form.Popup();
+      var forms = Application.OpenForms.GetAll().Where(f => f.Visible).ToList();
+      if ( forms.Count > 0 )
+      {
+        foreach ( var form in forms )
+          form.ForceBringToFront();
+        forms[forms.Count - 1].Popup();
+      }
     });
   }
 
@@ -365,23 +368,6 @@ partial class MainForm
     SoundItem.Initialize();
     SystemManager.TryCatch(() => new SoundPlayer(Globals.EmptySoundFilePath).Play());
     SystemManager.TryCatch(() => MediaMixer.SetApplicationVolume(Globals.ProcessId, Settings.ApplicationVolume));
-  }
-
-  /// <summary>
-  /// Sets reminder boxes location.
-  /// </summary>
-  public void InitializeReminderBoxDesktopLocation()
-  {
-    if ( Settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
-    {
-      var anchor = DisplayManager.GetTaskbarAnchorStyle();
-      Settings.ReminderBoxDesktopLocation = anchor switch
-      {
-        AnchorStyles.Top => ControlLocation.TopRight,
-        AnchorStyles.Left => ControlLocation.BottomLeft,
-        _ => ControlLocation.BottomRight,
-      };
-    }
   }
 
   /// <summary>

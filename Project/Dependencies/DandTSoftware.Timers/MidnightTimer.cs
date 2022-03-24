@@ -140,7 +140,7 @@ public class MidnightTimer : IDisposable
   /// </summary>
   /// <param name="MinutesAfterMidnight">How many minuets after midnight to add?</param>
   /// <returns></returns>
-  private DateTime GetMidnight(int MinutesAfterMidnight)
+  static private DateTime GetMidnight(int MinutesAfterMidnight)
   {
     // Lets work out the next occuring midnight
     // Add 1 day and use hours 0, min 0 and second 0 (remember this is 24 hour time)

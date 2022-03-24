@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -150,7 +150,7 @@ static class HebrewAlphabet
   static public string OnlyHebrewFont(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
-    var result = new StringBuilder();
+    var result = new StringBuilder(str.Length);
     str = UnFinalAll(str);
     foreach ( var c in str.RemoveDiacritics().ToLower().Where(c => Codes.Contains(c.ToString())) )
       result.Append(c);
@@ -163,7 +163,7 @@ static class HebrewAlphabet
   static public string OnlyUnicode(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
-    var result = new StringBuilder();
+    var result = new StringBuilder(str.Length);
     foreach ( char c in str.RemoveDiacritics().ToLower() )
       if ( c >= '\u0590' && c <= '\u05FF' )
         result.Append(c);

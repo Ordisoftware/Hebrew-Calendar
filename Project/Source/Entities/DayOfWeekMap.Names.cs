@@ -11,8 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
+
+using EnumsNET;
 
 static partial class DayOfWeekMap
 {
@@ -117,15 +119,17 @@ static partial class DayOfWeekMap
 
   static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = new();
 
+  static private readonly int CountWeekDays = Enums.GetMemberCount<DayOfWeek>();
+
   static DayOfWeekMap()
   {
     foreach ( var lang in Languages.Managed )
     {
-      var dic = new Dictionary<DayOfWeek, List<string>>();
+      var dic = new Dictionary<DayOfWeek, List<string>>(CountWeekDays);
       LocalizedNamesText.Add(lang, dic);
       foreach ( var kvp in Names )
       {
-        dic.Add(kvp.Key, new List<string>());
+        dic.Add(kvp.Key, new List<string>(CountWeekDays));
         foreach ( var item in kvp.Value )
         {
           dic[kvp.Key].Add(AppTranslations.DaysOfWeek[item][lang].Substring(0, 3));

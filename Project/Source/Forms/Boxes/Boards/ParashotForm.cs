@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
@@ -480,9 +480,10 @@ partial class ParashotForm : Form
 
   private void ActionGoToNextParashah_Click(object sender, EventArgs e)
   {
+    string id = CurrentDataBoundItem.ID;
     var today = DateTime.Today;
     var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
-    var day = days.Find(item => item.Date >= today && item.ParashahID == CurrentDataBoundItem.ID);
+    var day = days.Find(item => item.Date >= today && item.ParashahID == id);
     if ( day is not null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
   }
 

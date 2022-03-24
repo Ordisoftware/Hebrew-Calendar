@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 partial class MessageBoxEx : Form
@@ -28,6 +28,7 @@ partial class MessageBoxEx : Form
 
   static public readonly List<MessageBoxEx> Instances = new();
 
+  [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   static public void CloseAll()
   {
     Instances.ToList().ForEach(f => SystemManager.TryCatch(f.ForceClose));
@@ -68,6 +69,7 @@ partial class MessageBoxEx : Form
     Icon = Globals.MainForm?.Icon;
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   public MessageBoxEx(string title,
                       string text,
                       MessageBoxButtons buttons = MessageBoxButtons.OK,

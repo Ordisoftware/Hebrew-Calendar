@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -73,11 +73,11 @@ partial class PreferencesForm
     if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
     var items = new NullSafeOfStringDictionary<string>();
     if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
-    PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel =>
+    PanelCalendarColors.Controls.OfType<Panel>().ForEach(panel =>
     {
       string name = panel.Name.Substring(4);
-      if ( items.ContainsKey(name) )
-        panel.BackColor = ColorTranslator.FromHtml(items[name]);
+      if ( items.TryGetValue(name, out var color) )
+        panel.BackColor = ColorTranslator.FromHtml(color);
     });
     NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
     NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
@@ -96,7 +96,7 @@ partial class PreferencesForm
     });
     if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
     var items = new List<string>();
-    PanelCalendarColors.Controls.OfType<Panel>().ToList().ForEach(panel => items.Add(makeLine(panel)));
+    PanelCalendarColors.Controls.OfType<Panel>().ForEach(panel => items.Add(makeLine(panel)));
     File.WriteAllLines(SaveThemeDialog.FileName, items);
     //
     static string makeLine(Panel panel)

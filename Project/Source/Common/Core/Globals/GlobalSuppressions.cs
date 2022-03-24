@@ -33,8 +33,13 @@
 [assembly: SuppressMessage("Readability", "RCS1123:Add parentheses when necessary.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1001:Add braces (when expression spans over multiple lines).", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1003:Add braces to if-else (when expression spans over multiple lines).", Justification = "Opinion based", Scope = "module")]
+[assembly: SuppressMessage("Style", "IDE0062:Rendre la fonction locale 'static'", Justification = "Less optimized proc call", Scope = "module")]
 [assembly: SuppressMessage("Design", "RCS1225:Make class sealed.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Redundancy", "RCS1036:Remove redundant empty line.", Justification = "Opinion based", Scope = "module")]
 [assembly: SuppressMessage("Performance", "RCS1096:Convert 'HasFlag' call to bitwise operation (or vice versa).", Justification = "Opinion based", Scope = "module")]
 
 [assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.RunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
+
+[assembly: SuppressMessage("Performance", "U2U1002:Method can be declared static", Justification = "Can be opinion or anti-pattern (analyzer may be improved)", Scope = "module")]
+[assembly: SuppressMessage("Performance", "U2U1201:Local collections should be initialized with capacity", Justification = "Can be opinion", Scope = "module")]
+[assembly: SuppressMessage("Performance", "U2U1010:Internal leaf classes can be sealed", Justification = "Can be opinion", Scope = "module")]

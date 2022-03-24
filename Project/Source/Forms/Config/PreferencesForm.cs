@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -619,7 +619,7 @@ partial class PreferencesForm : Form
       EditExportFolder.Text = FolderBrowserDialog.SelectedPath;
   }
 
-  private void DoActionSelectPath(FileDialog dialog, TextBox edit)
+  private void DoActionSelectPath(OpenFileDialog dialog, TextBoxEx edit)
   {
     SystemManager.TryCatch(() => dialog.InitialDirectory = Path.GetDirectoryName(edit.Text));
     SystemManager.TryCatch(() => dialog.FileName = Path.GetFileName(edit.Text));

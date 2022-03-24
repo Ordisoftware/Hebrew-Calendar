@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using AASharp;
@@ -67,8 +67,8 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   {
     get
     {
-      if ( Items.ContainsKey(key) ) return Items[key];
-      var value = new CalendarDateItem
+      if ( Items.TryGetValue(key, out var value) ) return value;
+      value = new CalendarDateItem
       {
         Date = key,
         MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
@@ -77,8 +77,8 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
       };
       if ( !TorahSeasons.ContainsKey(key.Year) )
         InitializeSeasons(key.Year);
-      if ( TorahSeasons[key.Year].ContainsKey(key) )
-        value.TorahSeasonChange = TorahSeasons[key.Year][key];
+      if ( TorahSeasons[key.Year].TryGetValue(key, out var season) )
+        value.TorahSeasonChange = season;
       value.RealSeasonChange = value.TorahSeasonChange;
       if ( value.TorahSeasonChange != SeasonChange.None
         && MainForm.Instance.CurrentGPSLatitude < 0

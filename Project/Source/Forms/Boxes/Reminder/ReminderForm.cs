@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ReminderForm : Form
@@ -39,6 +39,7 @@ partial class ReminderForm : Form
     }
   }
 
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;
@@ -57,9 +58,9 @@ partial class ReminderForm : Form
       else
       if ( celebration != TorahCelebrationDay.None )
       {
-        if ( MainForm.Instance.RemindCelebrationDayForms.ContainsKey(celebration) )
+        if ( MainForm.Instance.RemindCelebrationDayForms.TryGetValue(celebration, out form) )
         {
-          Flash(MainForm.Instance.RemindCelebrationDayForms[celebration]);
+          Flash(form);
           return;
         }
       }

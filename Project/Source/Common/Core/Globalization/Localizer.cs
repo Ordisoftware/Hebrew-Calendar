@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -116,7 +116,7 @@ static class Localizer
   {
     if ( str.IsNullOrEmpty() ) return str;
     var normalized = str.Normalize(NormalizationForm.FormD);
-    var builder = new StringBuilder();
+    var builder = new StringBuilder(str.Length);
     foreach ( var c in normalized )
       if ( CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark )
         builder.Append(c);

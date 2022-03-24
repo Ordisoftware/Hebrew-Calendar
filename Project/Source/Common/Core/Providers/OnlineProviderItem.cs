@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -73,10 +73,10 @@ class OnlineProviderItem
       if ( pos >= 3 )
       {
         lang = name.Substring(0, pos + 1);
-        if ( LanguageImages.ContainsKey(lang) )
+        if ( LanguageImages.TryGetValue(lang, out var filename) )
         {
           name = name.Substring(pos + 1);
-          image = LanguageImages[lang];
+          image = filename;
         }
       }
     }

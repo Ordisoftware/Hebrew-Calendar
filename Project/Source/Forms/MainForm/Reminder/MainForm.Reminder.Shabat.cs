@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -23,10 +23,8 @@ partial class MainForm
     var dateNow = DateTime.Now;
     dateNow = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, dateNow.Hour, dateNow.Minute, 0);
     var dateToday = DateTime.Today;
-    var row = ( from day in LunisolarDays
-                where day.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                   && day.Date >= dateToday
-                select day ).FirstOrDefault();
+    var dayShabat = (DayOfWeek)Settings.ShabatDay;
+    var row = LunisolarDays.Find(day => day.Date.DayOfWeek == dayShabat && day.Date >= dateToday);
     if ( row is null ) return result;
     var times = row.GetTimesForShabat(Settings.RemindShabatEveryMinutes);
     if ( times is null ) return result;

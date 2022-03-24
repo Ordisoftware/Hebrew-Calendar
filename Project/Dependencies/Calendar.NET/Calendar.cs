@@ -28,6 +28,7 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// A Winforms Calendar Control
   /// </summary>
+  [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;
@@ -368,7 +369,7 @@ namespace CodeProjectCalendar.NET
 
     private void InitializeComponent()
     {
-      System.ComponentModel.IContainer components;
+      Container components;
       ToolStripMenuItem _miProperties;
       components = new System.ComponentModel.Container();
       _btnToday = new TodayButton();
@@ -765,7 +766,7 @@ namespace CodeProjectCalendar.NET
       return dt.Month == evnt.Date.Month && dt2.Day == dt.Date.Day;
     }
 
-    private DateTime LastDayOfWeekInMonth(DateTime day, DayOfWeek dow)
+    static private DateTime LastDayOfWeekInMonth(DateTime day, DayOfWeek dow)
     {
       DateTime lastDay = new DateTime(day.Year, day.Month, 1).AddMonths(1).AddDays(-1);
       DayOfWeek lastDow = lastDay.DayOfWeek;
@@ -784,7 +785,7 @@ namespace CodeProjectCalendar.NET
     //  return (int)value.Max(i => Math.Ceiling(i));
     //}
 
-    private bool DayForward(IEvent evnt, DateTime day)
+    static private bool DayForward(IEvent evnt, DateTime day)
     {
       if ( evnt.ThisDayForwardOnly )
       {
@@ -890,9 +891,10 @@ namespace CodeProjectCalendar.NET
 
     private void RenderDayCalendar(PaintEventArgs e)
     {
-      Graphics g = e.Graphics;
       if ( _showDateInHeader )
       {
+        Graphics g = e.Graphics;
+
         SizeF dateHeaderSize = g.MeasureString(
             _calendarDate.ToString("MMMM") + " " + _calendarDate.Day.ToString(CultureInfo.InvariantCulture) +
             ", " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), DateHeaderFont);
@@ -941,7 +943,6 @@ namespace CodeProjectCalendar.NET
       SizeF thuSize = sunSize;// g.MeasureString("Thu", _dayOfWeekFont);
       SizeF friSize = sunSize;// g.MeasureString("Fri", _dayOfWeekFont);
       SizeF satSize = sunSize;// g.MeasureString("Sat", _dayOfWeekFont);
-      SizeF dateHeaderSize = g.MeasureString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
       int headerSpacing = (int)sunSize.Height + 5;// Max(sunSize.Height, monSize.Height, tueSize.Height, wedSize.Height, thuSize.Height, friSize.Height, satSize.Height) + 5;
       int controlsSpacing = ( ( !_showTodayButton ) && ( !_showDateInHeader ) && ( !_showArrowControls ) ) ? 0 : 30;
       //int numWeeks = NumberOfWeeks(_calendarDate.Year, _calendarDate.Month);
@@ -1021,8 +1022,9 @@ namespace CodeProjectCalendar.NET
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
-                SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                 if ( !isPrinting )
+                {
+                  SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                   if ( useColors )
                   {
                     if ( CheckSelected(counter1) && !isPrinting )
@@ -1053,6 +1055,7 @@ namespace CodeProjectCalendar.NET
                       g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                     }
                   }
+                }
                 else
                   g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1080,8 +1083,9 @@ namespace CodeProjectCalendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN ACTUAL REAL DAY
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
-                SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                 if ( !isPrinting )
+                {
+                  SizeF stringSize = g.MeasureString(strCounter1, _todayFont);
                   if ( useColors )
                   {
                     if ( CheckSelected(counter1) )
@@ -1111,6 +1115,7 @@ namespace CodeProjectCalendar.NET
                       g.DrawString(strCounter1, _todayFont, BrushText, xStart + 5, yStart + 2);
                     }
                   }
+                }
                 else
                   g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1119,9 +1124,9 @@ namespace CodeProjectCalendar.NET
               {
                 //ORDISOFTWARE MODIF BEGIN OTHER DAYS
                 string strCounter1 = counter1.ToString(CultureInfo.InvariantCulture);
-                SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
                 if ( CheckSelected(counter1) && !isPrinting )
                 {
+                  SizeF stringSize = g.MeasureString(strCounter1, _daysFont);
                   isSelected = true;
                   isSelectedNoToday = true;
                   var pen = useColors
@@ -1283,6 +1288,7 @@ namespace CodeProjectCalendar.NET
 
       if ( _showDateInHeader )
       {
+        SizeF dateHeaderSize = g.MeasureString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
         g.DrawString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 

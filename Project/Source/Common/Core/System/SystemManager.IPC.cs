@@ -75,7 +75,7 @@ static partial class SystemManager
         CreateIPCServer(ipcRequests);
       else
       {
-        if ( CommandLineArguments?.Length == 0 )
+        if ( CommandLineArguments.Length == 0 )
           CommandLineOptions.ShowMainForm = true;
         try
         {

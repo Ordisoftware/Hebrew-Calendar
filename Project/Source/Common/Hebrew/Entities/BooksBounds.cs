@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
-public struct BookBound
+[SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
+public readonly struct BookBound
 {
   public int Min { get; }
   public int Max { get; }

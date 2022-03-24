@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -199,7 +199,7 @@ static class SettingsHelper
   /// </summary>
   static internal string GetGPSText(this Settings settings)
   {
-    var builder = new StringBuilder();
+    var builder = new StringBuilder(128);
     builder.Append("• ").AppendLine(settings.GPSCountry);
     builder.Append("• ").Append(settings.GPSCity);
     foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
@@ -210,6 +210,23 @@ static class SettingsHelper
         break;
       }
     return builder.ToString();
+  }
+
+  /// <summary>
+  /// Sets reminder boxes location.
+  /// </summary>
+  static internal void InitializeReminderBoxDesktopLocation(this Settings settings)
+  {
+    if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+    {
+      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      settings.ReminderBoxDesktopLocation = anchor switch
+      {
+        AnchorStyles.Top => ControlLocation.TopRight,
+        AnchorStyles.Left => ControlLocation.BottomLeft,
+        _ => ControlLocation.BottomRight,
+      };
+    }
   }
 
 }

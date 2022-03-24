@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using DandTSoftware.Timers;
@@ -96,6 +96,8 @@ public partial class MainForm
 
   internal ReminderForm ShabatForm;
 
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
+  [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   public void ClearLists()
   {
     SystemManager.TryCatchManage(() =>

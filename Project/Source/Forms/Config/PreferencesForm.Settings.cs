@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Configuration;
@@ -60,8 +60,8 @@ partial class PreferencesForm
     Settings.BenchmarkStartingApp = starttime;
     Settings.BenchmarkLoadData = loadtime;
     Settings.RestoreMainForm();
+    Settings.InitializeReminderBoxDesktopLocation();
     SystemManager.TryCatch(Settings.Store);
-    MainForm.Instance.InitializeReminderBoxDesktopLocation();
     DoReset = true;
     Reseted = true;
     Close();

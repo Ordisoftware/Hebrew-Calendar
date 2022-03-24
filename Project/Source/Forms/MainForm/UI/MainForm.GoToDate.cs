@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -58,7 +58,7 @@ partial class MainForm
           int position = CalendarText.Find(strDate);
           if ( position != -1 )
           {
-            CalendarText.SelectionStart = position - 6 - 119;
+            CalendarText.SelectionStart = position - ( 6 - 119 );
             CalendarText.SelectionLength = 0;
             CalendarText.ScrollToCaret();
             CalendarText.SelectionStart = position - 6;

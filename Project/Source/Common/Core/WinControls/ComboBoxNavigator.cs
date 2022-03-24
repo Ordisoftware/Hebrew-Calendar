@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 partial class ComboBoxNavigator : UserControl
@@ -78,6 +78,7 @@ partial class ComboBoxNavigator : UserControl
     InitializeComponent();
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   public void Fill(IEnumerable<int> list, int selected = -1)
   {
     if ( _ComboBox is null ) return;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -21,8 +21,8 @@ partial class MainForm
   {
     DateTime check(int year, int delta)
     {
-      var query = LunisolarDays.Where(day => day.Date.Year == year && day.IsNewYear);
-      return query.FirstOrDefault()?.Date.AddDays(delta) ?? DateTime.MinValue;
+      return LunisolarDays.Find(day => day.Date.Year == year && day.IsNewYear)?.Date.AddDays(delta)
+             ?? DateTime.MinValue;
     }
     var interval = new ExportInterval();
     var available = ViewMode.None;
@@ -39,12 +39,14 @@ partial class MainForm
       after?.Invoke(view);
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private IEnumerable<LunisolarDay> GetDayRows(ExportInterval interval)
   {
     if ( !interval.IsDefined ) return LunisolarDays;
     return LunisolarDays.Where(day => day.Date >= interval.Start.Value && day.Date <= interval.End.Value);
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private IEnumerable<string> GetTextReportLines(ExportInterval interval)
   {
     if ( !interval.IsDefined ) return CalendarText.Lines;
@@ -79,6 +81,7 @@ partial class MainForm
 
 }
 
+[SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
 public struct ExportInterval
 {
   public DateTime? Start { get; set; }

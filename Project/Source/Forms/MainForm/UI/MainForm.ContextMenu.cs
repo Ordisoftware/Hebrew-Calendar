@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -21,6 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 public partial class MainForm
 {
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void DoCalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
     var dayEvent = CalendarMonth.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));

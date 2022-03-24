@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -219,7 +219,7 @@ static partial class Globals
   /// Indicates the common ODBC DSN of the database.
   /// </summary>
   static public string CommonDatabaseOdbcDSN
-    => HebrewCommonDirectoryName.Replace(" ", "-");
+    => HebrewCommonDirectoryName.Replace(' ', '-');
 
   /// <summary>
   /// Indicates the application database ODBC connection string.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 public partial class CelebrationVersesBoardForm : Form
@@ -187,7 +187,7 @@ public partial class CelebrationVersesBoardForm : Form
     if ( collection is null ) return;
     foreach ( var reference in collection )
     {
-      var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace("_", " "));
+      var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace('_', ' '));
       item.Tag = reference;
       item.SubItems.Add(reference.Item2);
       item.SubItems.Add(reference.Item3);

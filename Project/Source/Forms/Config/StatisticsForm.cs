@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class StatisticsForm : Form
@@ -28,7 +28,7 @@ partial class StatisticsForm : Form
 
   static public void Run(bool isPrepare = false, bool enabled = true)
   {
-    LoadingForm.Instance.Progressing += FormLoadingProgressing;
+    LoadingForm.Instance.Progressing += Application.DoEvents;
     if ( isPrepare )
       Instance.Timer.Interval = 5000;
     else
@@ -62,7 +62,7 @@ partial class StatisticsForm : Form
 
   private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    LoadingForm.Instance.Progressing -= FormLoadingProgressing;
+    LoadingForm.Instance.Progressing -= Application.DoEvents;
     Timer.Interval = 5000;
     e.Cancel = true;
     Hide();
@@ -76,11 +76,6 @@ partial class StatisticsForm : Form
   private void ActionClose_Click(object sender, EventArgs e)
   {
     Close();
-  }
-
-  private static void FormLoadingProgressing()
-  {
-    Application.DoEvents();
   }
 
   private void ActionViewLog_Click(object sender, EventArgs e)

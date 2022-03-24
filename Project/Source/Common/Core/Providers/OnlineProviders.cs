@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -77,11 +77,11 @@ class OnlineProviders : DataFile
         }
         string line = lines[index].Trim();
         if ( line.Length == 0 ) continue;
-        if ( line.StartsWith(";") ) continue;
+        if ( line.StartsWith(";", StringComparison.Ordinal) ) continue;
         if ( line.StartsWith("FOLDER-SEPARATOR") )
           SeparatorBeforeFolder = true;
         else
-        if ( line.StartsWith("-") )
+        if ( line.StartsWith("-", StringComparison.Ordinal) )
           Items.Add(new OnlineProviderItem("-"));
         else
         if ( line.StartsWith("Lang/") )
@@ -127,6 +127,7 @@ class OnlineProviders : DataFile
   /// <summary>
   /// Sorts the by language.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   private void SortByLanguage()
   {
     if ( MoveCurrentLanguageAtTop )
@@ -136,7 +137,7 @@ class OnlineProviders : DataFile
       foreach ( var slice in slices )
       {
         int index = 0;
-        foreach ( var item in slice.Where(item => item.Language.ToUpper().Contains(lang)).ToList() )
+        foreach ( var item in slice.Where(item => item.Language.RawContains(lang)).ToList() )
         {
           slice.Remove(item);
           slice.Insert(index++, item);

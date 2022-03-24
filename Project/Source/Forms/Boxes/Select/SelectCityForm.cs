@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectCityForm : Form
@@ -26,6 +26,8 @@ partial class SelectCityForm : Form
     Preload();
   }
 
+  [SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   static public void Preload()
   {
     if ( GPS.Count > 0 ) return;
@@ -96,6 +98,7 @@ partial class SelectCityForm : Form
     Icon = MainForm.Instance.Icon;
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   private void SelectCityForm_Load(object sender, EventArgs e)
   {
     IsLoading = true;
@@ -182,15 +185,15 @@ partial class SelectCityForm : Form
       list[0] = list[0].Trim().RemoveDiacritics().ToLower();
       if ( list[0].Length < 3 ) return;
       var resultCountry = from country in GPS
-                          where country.Key.ToLower().StartsWith(list[0])
+                          where country.Key.StartsWith(list[0], StringComparison.OrdinalIgnoreCase)
                           orderby country.Key
                           select country;
       if ( !resultCountry.Any() ) return;
       string strCountry = resultCountry.ElementAt(0).Key;
       FoundCountry = resultCountry.Count() == 1;
-      if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[0]).Key is not null )
+      if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.RawEquals(list[0])).Key is not null )
         FoundCountry = true;
-      if ( FoundCountry && !EditFilter.Text.Contains(",") )
+      if ( FoundCountry && EditFilter.Text.IndexOf(',') < 0 )
       {
         EditFilter.Text = strCountry + ", ";
         tempo(EditFilter.Text);
@@ -206,13 +209,13 @@ partial class SelectCityForm : Form
       var resultCity = from country in GPS
                        from city in country.Value
                        where country.Key == strCountry
-                          && city.Name.ToLower().StartsWith(list[1])
+                          && city.Name.StartsWith(list[1], StringComparison.OrdinalIgnoreCase)
                        orderby city.Name
                        select city;
       if ( !resultCity.Any() ) return;
       string strCity = resultCity.ElementAt(0).Name;
       FoundCity = resultCity.Count() == 1;
-      if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.ToLower() == list[1]).Key is not null )
+      if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.RawEquals(list[1])).Key is not null )
         FoundCity = true;
       if ( FoundCity )
       {
@@ -246,7 +249,7 @@ partial class SelectCityForm : Form
         EditFilter.Text = str;
         EditFilter.Enabled = false;
         Application.DoEvents();
-        if ( IsReady ) System.Threading.Thread.Sleep(DefaultDelay);
+        if ( IsReady ) Thread.Sleep(DefaultDelay);
         Application.DoEvents();
         EditTimeZone.Enabled = true;
         EditFilter.Enabled = true;

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -42,6 +42,19 @@ static partial class StringHelper
   static public bool IsNullOrEmpty(this string str)
   {
     return string.IsNullOrEmpty(str);
+  }
+
+  /// <summary>
+  /// Indicates if a string equals another string ignoring case and diacritics.
+  /// </summary>
+  /// <returns>
+  /// True if it succeeds, false if it fails.
+  /// </returns>
+  /// <param name="str1">The string to act on.</param>
+  /// <param name="str2">The other string.</param>
+  static public bool RawEquals(this string str1, string str2)
+  {
+    return str1.Equals(str2, StringComparison.OrdinalIgnoreCase);
   }
 
   /// <summary>

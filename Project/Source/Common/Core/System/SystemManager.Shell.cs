@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -43,9 +43,8 @@ static partial class SystemManager
       if ( options.Tag != CommandLine.ParserResultType.Parsed ) return;
       CommandLineOptions = ( (CommandLine.Parsed<T>)options ).Value;
       if ( !CommandLineOptions.Language.IsNullOrEmpty() )
-        foreach ( var lang in Languages.Values )
-          if ( CommandLineOptions.Language.ToLower() == lang.Key )
-            language = lang.Value;
+        foreach ( var lang in Languages.Values.Where(lang => CommandLineOptions.Language.RawEquals(lang.Key)) )
+          language = lang.Value;
     }
     catch ( Exception ex )
     {

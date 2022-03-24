@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using static System.Environment;
@@ -68,7 +68,7 @@ static partial class Globals
   /// Indicates the application full file name.
   /// </summary>
   static public string ApplicationFullFileName
-    => ApplicationExeFileName.Replace(".", " ");
+    => ApplicationExeFileName.Replace('.', ' ');
 
   /// <summary>
   /// Indicates the application startup regustry value in Run key.

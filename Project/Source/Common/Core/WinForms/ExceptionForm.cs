@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using System.Net;
@@ -157,7 +157,7 @@ partial class ExceptionForm : Form
     if ( ErrorInfo is null ) return;
     SystemManager.TryCatchManage(() =>
     {
-      var query = new StringBuilder();
+      var query = new StringBuilder(1024);
       query.Append("&title=").Append(ErrorInfo.Instance.GetType().Name).Append(" in ").Append(Globals.AssemblyTitleWithVersion);
       query.Append("&labels=type: bug");
       query.Append("&body=");
@@ -196,7 +196,7 @@ partial class ExceptionForm : Form
   /// </summary>
   private StringBuilder CreateBody()
   {
-    var body = new StringBuilder();
+    var body = new StringBuilder(1024);
     body.AppendLine("## COMMENT");
     body.AppendLine();
     body.AppendLine(SysTranslations.GitHubIssueComment.GetLang());
@@ -239,8 +239,8 @@ partial class ExceptionForm : Form
     var lines = DebugManager.TraceForm
                             .TextBoxCurrent
                             .Lines
-                            .Select(l => ( l.StartsWith("# ") ? l.Remove(0, 2) : l ).TrimStart())
-                            .Where(l => !l.StartsWith("--"))
+                            .Select(l => ( l.StartsWith("# ", StringComparison.Ordinal) ? l.Remove(0, 2) : l ).TrimStart())
+                            .Where(l => !l.StartsWith("--", StringComparison.Ordinal))
                             .TakeLast(100);
     body.AppendLine("```");
     body.AppendLine(lines.AsMultiLine());
@@ -262,11 +262,11 @@ public static class MailHelper
 
   static IEnumerable<string> Parameters(MailMessage message)
   {
-    if ( message.To.Any() )
+    if ( message.To.Count > 0 )
       yield return "to=" + Recipients(message.To);
-    if ( message.CC.Any() )
+    if ( message.CC.Count > 0 )
       yield return "cc=" + Recipients(message.CC);
-    if ( message.Bcc.Any() )
+    if ( message.Bcc.Count > 0 )
       yield return "bcc=" + Recipients(message.Bcc);
     if ( !string.IsNullOrWhiteSpace(message.Subject) )
       yield return "subject=" + Uri.EscapeDataString(message.Subject);

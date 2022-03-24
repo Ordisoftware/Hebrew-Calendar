@@ -802,6 +802,7 @@ namespace System.Globalization
     /// Compute the longitude of the sun at any time.
     /// Algorithm from: "Astronomical Algorithms" by Jean Meeus, 1998.
     /// </summary>
+    [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
     public static double SunLongitude(DateTime time)
     {
       double jdn = JulianDayNumber(time) + 0.5 - 7 /* Vietnam TimeZone */ / 24.0;
@@ -836,6 +837,7 @@ namespace System.Globalization
     /// From the day after March equinox and the 1st major term after March equinox, 0 is returned.
     /// After that, return 1, 2, 3 ...
     /// </remarks>
+    [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
     public virtual string GetMinorSolarTerms(DateTime date)
     {
       CheckTicksRange(date.Ticks);
@@ -885,6 +887,7 @@ namespace System.Globalization
            + ( ( leapMonth > 0 && month == leapMonth ) ? " (nhu\u1EADn)" : "" );
     }
 
+    [SuppressMessage("Performance", "U2U1108:StringBuilders should be initialized with capacity", Justification = "<En attente>")]
     public virtual string GetPropitiousHour(DateTime date)
     {
       int jdn = (int)Math.Floor(JulianDayNumber(date));

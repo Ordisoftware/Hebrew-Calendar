@@ -381,7 +381,7 @@ namespace Infralution.Localization
     /// <remarks>
     /// Recursively loads the resources by loading the resources for the parent culture first.
     /// </remarks>
-    private void LoadResources(ComponentResourceManager rm, CultureInfo culture, SortedList<string, object> resources)
+    static private void LoadResources(ComponentResourceManager rm, CultureInfo culture, SortedList<string, object> resources)
     {
       if ( !culture.Equals(CultureInfo.InvariantCulture) )
       {
@@ -606,7 +606,7 @@ namespace Infralution.Localization
       string resourceName = componentName + "." + propertyName;
       foreach ( string value in _excludeProperties )
       {
-        if ( value.Contains(".") )
+        if ( value.IndexOf('.') >= 0 )
         {
           if ( resourceName.Contains(value) ) return true;
         }
@@ -726,7 +726,7 @@ namespace Infralution.Localization
         string componentName = resourceNameParts[0];
         string propertyName = resourceNameParts[1];
 
-        if ( componentName.StartsWith(">>") ) continue;
+        if ( componentName.StartsWith(">>", StringComparison.Ordinal) ) continue;
         if ( IsExcluded(componentName, propertyName) ) continue;
 
         if ( !components.TryGetValue(componentName, out IComponent component) ) continue;
@@ -770,7 +770,7 @@ namespace Infralution.Localization
           catch ( Exception e )
           {
             string error = e.GetType().Name + " - " + e.Message;
-            Debug.WriteLine(String.Format("CultureManager Error ({0}) setting property ({1}) for component ({2})", error, propertyName, componentName));
+            Debug.WriteLine($"CultureManager Error ({error}) setting property ({propertyName}) for component ({componentName})");
           }
         }
         else

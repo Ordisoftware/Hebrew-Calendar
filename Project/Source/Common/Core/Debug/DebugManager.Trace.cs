@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using Serilog;
@@ -132,6 +132,7 @@ static partial class DebugManager
                               $" {EventSeparator} Peak: {SystemStatistics.Instance.MemoryGCPeak}");
   }
 
+  [SuppressMessage("Performance", "U2U1011:Return types should be specific", Justification = "N/A")]
   static public IEnumerable<string> GetTraceFiles(bool sortByDateOnly)
   {
     string folder = Globals.SinkFileFolderPath;

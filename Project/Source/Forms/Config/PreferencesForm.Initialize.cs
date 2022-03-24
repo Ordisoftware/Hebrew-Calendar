@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Text;
@@ -247,6 +247,7 @@ partial class PreferencesForm
   /// <summary>
   /// Loads fonts names.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   private void LoadFonts()
   {
     var list = new InstalledFontCollection().Families;

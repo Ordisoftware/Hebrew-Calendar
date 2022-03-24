@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using System.Management;
@@ -29,6 +29,7 @@ static partial class SystemManager
   /// <summary>
   /// Indicates the processor name.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   static public string Processor
   {
     get
@@ -40,8 +41,9 @@ static partial class SystemManager
           var list = new ManagementObjectSearcher(@"root\CIMV2", "SELECT * FROM Win32_Processor").Get();
           var enumerator = list.GetEnumerator();
           bool newline = false;
-          int index = 0;
           if ( enumerator.MoveNext() )
+          {
+            int index = 0;
             do
             {
               string name = (string)enumerator.Current["Name"];
@@ -52,6 +54,7 @@ static partial class SystemManager
                 procs.Add(name.Trim());
             }
             while ( newline );
+          }
           _Processor = string.Join(" | ", procs);
         }
         catch

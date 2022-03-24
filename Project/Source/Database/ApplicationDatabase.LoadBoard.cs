@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase : SQLiteDatabase
@@ -43,6 +43,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     table.AcceptChanges();
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   public void LoadNewMoons(DataTable table, int year1, int year2, bool useRealDay)
   {
     table.Rows.Clear();

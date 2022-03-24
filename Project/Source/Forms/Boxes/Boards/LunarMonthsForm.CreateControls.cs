@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunarMonthsForm : Form
@@ -30,7 +30,7 @@ partial class LunarMonthsForm : Form
     int xmax = 0;
     int y = 10;
     const int maxLabelWidth = 900;
-    Color[] colorsMonth = new Color[0];
+    Color[] colorsMonth;
     Color colorLinkTextMeaning = SystemColors.ControlText;
     Color colorLinkTextLettriq = SystemColors.ControlText;
     Color colorActiveLink;

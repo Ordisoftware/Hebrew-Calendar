@@ -56,7 +56,7 @@ namespace CoolPrintPreview
     ZoomMode _zoomMode;
     double _zoom;
     int _startPage;
-    Brush _backBrush;
+    SolidBrush _backBrush;
     Point _ptLast;
     PointF _himm2pix = new(-1, -1);
     bool _cancel, _rendering;
@@ -612,7 +612,7 @@ namespace CoolPrintPreview
       // done
       return Size.Truncate(szf);
     }
-    void RenderPage(Graphics g, Image img, Rectangle rc)
+    static void RenderPage(Graphics g, Image img, Rectangle rc)
     {
       // draw the page
       rc.Offset(1, 1);

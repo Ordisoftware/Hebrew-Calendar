@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -46,9 +46,11 @@ static class ExportHelper
     return string.Join("|", list);
   }
 
+
   /// <summary>
   /// Sets the targets that are supported.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   static public NullSafeOfStringDictionary<T> SetSupported<T>(this NullSafeOfStringDictionary<T> values,
                                                               params T[] list)
   where T : struct, Enum
@@ -58,9 +60,11 @@ static class ExportHelper
     return values;
   }
 
+
   /// <summary>
   /// Sets the targets that are not supported.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   static public NullSafeOfStringDictionary<T> SetUnsupported<T>(this NullSafeOfStringDictionary<T> values,
                                                                 params T[] list)
   where T : struct, Enum
