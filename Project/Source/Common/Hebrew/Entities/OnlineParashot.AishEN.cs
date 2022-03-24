@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-03 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 static partial class OnlineParashot
@@ -21,72 +21,72 @@ static partial class OnlineParashot
   {
     [TorahBook.Bereshit] = new NullSafeList<string>
     {
-      "43919122",
-      "43919117",
-      "43919112",
-      "43919107",
-      "43919102",
-      "43919097",
-      "43919087",
-      "43919077",
-      "43919062",
-      "43919047",
-      "43919042",
-      "43919037"
+      "bereishit",
+      "noach",
+      "lech-lecha",
+      "vayeira",
+      "chayei-sarah",
+      "toldot",
+      "vayetzei",
+      "vayishlach",
+      "vayeshev",
+      "mikeitz",
+      "vayigash",
+      "vayechi"
     },
     [TorahBook.Shemot] = new NullSafeList<string>
     {
-      "43919032",
-      "43919027",
-      "43919022",
-      "43919017",
-      "43919012",
-      "43919007",
-      "43919002",
-      "43918997",
-      "43918992",
-      "43918987",
-      "43918977"
+      "shmot",
+      "vaeira",
+      "bo",
+      "beshalach",
+      "yitro",
+      "mishpatim",
+      "trumah",
+      "tetzaveh",
+      "ki-tisa",
+      "vayakhel",
+      "pekudei"
     },
     [TorahBook.Vayiqra] = new NullSafeList<string>
     {
-      "43918972",
-      "43918967",
-      "43918962",
-      "43918957",
-      "43918952",
-      "43918947",
-      "43918942",
-      "43918937",
-      "43918932",
-      "43918927"
+      "vayikra",
+      "tzav",
+      "shmini",
+      "tazria",
+      "metzora",
+      "acharei-mot",
+      "kedoshim",
+      "emor",
+      "behar",
+      "bechukotai"
     },
     [TorahBook.Bamidbar] = new NullSafeList<string>
     {
-      "43918922",
-      "43918917",
-      "43918912",
-      "43918907",
-      "43918902",
-      "43918897",
-      "43918892",
-      "43918887",
-      "43918882",
-      "43918877"
+      "bamidbar",
+      "naso",
+      "behalotcha",
+      "shlach",
+      "korach",
+      "chukat",
+      "balak",
+      "pinchas",
+      "matot",
+      "masay"
     },
     [TorahBook.Devarim] = new NullSafeList<string>
     {
-      "43918872",
-      "43918867",
-      "43918862",
-      "43918857",
-      "43918852",
-      "43918842",
-      "43918837",
-      "43918832",
-      "43918822",
-      "43918817",
-      "43918812"
+      "devarim",
+      "vetchanan",
+      "ekev",
+      "reeh",
+      "shoftim",
+      "ki-tetzei",
+      "ki-tavo",
+      "nitzavim",
+      "vayelech",
+      "haazinu",
+      "vZot-haBracha"
     }
   };
 
