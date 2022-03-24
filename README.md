@@ -384,6 +384,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 >- Improve bookmark import to automatically extend length to multiple of 5.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
 - Code refactoring and optimization with more analyzers.
+- Update Aish web links for parashot.
 
 #### 2022.03.20 - Version 9.27
 
