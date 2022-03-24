@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
 /// Provides sun and moon rise and set structure.
 /// </summary>
+[SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
 public struct SunAndMoonRiseAndSet
 {
   public TimeSpan? Sunrise { get; set; }

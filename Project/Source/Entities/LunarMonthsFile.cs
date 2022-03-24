@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -45,7 +45,7 @@ class LunarMonthsFile : DataFile
         string line = lines[index];
         if ( line.Trim().Length == 0 )
           continue;
-        if ( line.StartsWith(";") )
+        if ( line.StartsWith(";", StringComparison.Ordinal) )
           continue;
         var parts = line.Split(new char[] { '=' }, 2);
         Items.Add(parts[1].Trim());

@@ -20,10 +20,14 @@ namespace Ordisoftware.Core;
 static partial class DisplayManager
 {
 
+  static public bool DoubleBufferingEnabled { get; set; }
+
   static public bool AdvancedFormUseSounds { get; set; } = true;
+
   static public bool ShowSuccessDialogs { get; set; } = true;
 
   static public MessageBoxFormStyle FormStyle { get; set; } = MessageBoxFormStyle.Advanced;
+
   static public MessageBoxIconStyle IconStyle { get; set; } = MessageBoxIconStyle.ForceInformation;
 
   /// <summary>

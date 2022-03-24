@@ -104,13 +104,11 @@ partial class ApplicationDatabase
       if ( indexParashah > 0 && indexParashah < parashot.Count )
       {
         dayRemap2 = day;
-        var query = from row in LunisolarDays
-                    where row.Date >= dayRemap1.Date
-                       && row.Date <= dayRemap2.Date
-                       && !row.ParashahID.IsNullOrEmpty()
-                    select row;
+        DateTime date1 = dayRemap1.Date;
+        DateTime date2 = dayRemap2.Date;
         indexParashah = 0;
-        foreach ( var row in query )
+        foreach ( var row in LunisolarDays.Where(row => !row.ParashahID.IsNullOrEmpty()
+                                                        && row.Date >= date1 && row.Date <= date2) )
           if ( indexParashah >= parashot.Count )
             row.ParashahID = string.Empty;
           else
@@ -133,26 +131,28 @@ partial class ApplicationDatabase
   /// </summary>
   private bool AnalyzeDayOmer(LunisolarDay day, DateTime dayDate, ref int monthMoon)
   {
-    DateTime calculate(DateTime thedate, int toadd, TorahCelebrationDay type, bool forceSunOmer)
+    DateTime calculate(DateTime thedate, int daysToAdd, TorahCelebrationDay type, bool forceSunOmer)
     {
       if ( Settings.TorahEventsCountAsMoon )
       {
-        var rowStart = LunisolarDays.Find(d => d.Date == thedate);
-        int index = LunisolarDays.IndexOf(rowStart);
         int count = 0;
         if ( forceSunOmer )
-          count = toadd;
+          count = daysToAdd;
         else
-          for ( int i = 0; i < toadd; i++, count++ )
-            if ( LunisolarDays[index + i].MoonriseOccuring == MoonriseOccurring.NextDay )
+        {
+          var rowStart = LunisolarDays.Find(d => d.Date == thedate);
+          int index = LunisolarDays.IndexOf(rowStart);
+          for ( int indexToAdd = 0; indexToAdd < daysToAdd; indexToAdd++, count++ )
+            if ( LunisolarDays[index + indexToAdd].MoonriseOccuring == MoonriseOccurring.NextDay )
               count++;
+        }
         thedate = thedate.AddDays(count);
         var row = LunisolarDays.Find(d => d.Date == thedate);
         if ( row?.MoonriseOccuring == MoonriseOccurring.NextDay )
           thedate = thedate.AddDays(1);
       }
       else
-        thedate = thedate.AddDays(toadd);
+        thedate = thedate.AddDays(daysToAdd);
       var rowEnd = LunisolarDays.Find(d => d.Date == thedate);
       if ( rowEnd is not null )
         rowEnd.TorahEvent = type;
@@ -174,12 +174,12 @@ partial class ApplicationDatabase
         monthExuinoxe--;
         dayEquinoxe += 30;
       }
-      int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
       bool isNewYear = ( dayDate.Month == monthExuinoxe && dayDate.Day >= dayEquinoxe )
                     || ( dayDate.Month == monthExuinoxe + 1 );
       if ( isNewYear && ( monthMoon == 0 || monthMoon >= 12 ) )
       {
         monthMoon = 1;
+        int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
         calculate(dayDate, 0, TorahCelebrationDay.NewYearD1, false);
         calculate(dayDate, TorahCelebrationSettings.NewLambDay - 1, TorahCelebrationDay.NewYearD10, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + delta, TorahCelebrationDay.PessahD1, false);

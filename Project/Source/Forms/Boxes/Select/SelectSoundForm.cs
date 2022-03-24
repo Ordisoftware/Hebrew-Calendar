@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectSoundForm : Form
@@ -48,32 +48,37 @@ partial class SelectSoundForm : Form
     SystemManager.TryCatch(Settings.Save);
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private SelectSoundForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
+    //
     SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds().ToArray());
     SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
     SelectDialogSound.Items.Add(MessageBoxIcon.Information);
     SelectDialogSound.Items.Add(MessageBoxIcon.Question);
     SelectDialogSound.Items.Add(MessageBoxIcon.Exclamation);
     SelectDialogSound.Items.Add(MessageBoxIcon.Hand);
+    //
     EditFilePath.Text = Settings.ReminderBoxSoundPath;
     SelectDialogSound.SelectedIndex = SelectDialogSound.Items.IndexOf(Settings.ReminderBoxSoundDialog);
-    var item = ( from SoundItem sound in SelectApplicationSound.Items
-                 where sound.FilePath == Settings.ReminderBoxSoundApplication
-                 select sound ).FirstOrDefault();
-    if ( item is not null ) SelectApplicationSound.SelectedItem = item;
-    item = ( from SoundItem sound in SelectWindowsSound.Items
-             where sound.FilePath == Settings.ReminderBoxSoundWindows
-             select sound ).FirstOrDefault();
-    if ( item is not null ) SelectWindowsSound.SelectedItem = item;
+    //
+    var soundsApp = from SoundItem sound in SelectApplicationSound.Items select sound;
+    var soundApp = soundsApp.FirstOrDefault(sound => sound.FilePath == Settings.ReminderBoxSoundApplication);
+    if ( soundApp is not null ) SelectApplicationSound.SelectedItem = soundApp;
+    //
+    var soundsWin = from SoundItem sound in SelectWindowsSound.Items select sound;
+    var soundWin = soundsWin.FirstOrDefault(sound => sound.FilePath == Settings.ReminderBoxSoundWindows);
+    if ( soundWin is not null ) SelectWindowsSound.SelectedItem = soundWin;
+    //
     if ( SelectDialogSound.Items.Count > 0 && SelectDialogSound.SelectedIndex == -1 )
       SelectDialogSound.SelectedIndex = 0;
     if ( SelectApplicationSound.Items.Count > 0 && SelectApplicationSound.SelectedIndex == -1 )
       SelectApplicationSound.SelectedIndex = 0;
     if ( SelectWindowsSound.Items.Count > 0 && SelectWindowsSound.SelectedIndex == -1 )
       SelectWindowsSound.SelectedIndex = 0;
+    //
     switch ( Settings.ReminderBoxSoundSource )
     {
       case SoundSource.None:

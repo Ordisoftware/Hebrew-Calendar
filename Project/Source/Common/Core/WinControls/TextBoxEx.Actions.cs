@@ -11,9 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-03 </edited>
+
 namespace Ordisoftware.Core;
 
+[SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]
 partial class TextBoxEx
 {
 
@@ -104,6 +106,7 @@ partial class TextBoxEx
     }
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   static private void ActionPaste_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);

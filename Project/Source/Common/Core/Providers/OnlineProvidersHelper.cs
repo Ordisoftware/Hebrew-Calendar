@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -65,6 +65,7 @@ static class OnlineProvidersHelper
   /// <summary>
   /// Creates a list of menu items.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
   static private void SetItems(ToolStripItemCollection menuItems,
                                OnlineProviders providers,
                                EventHandler action,
@@ -122,7 +123,7 @@ static class OnlineProvidersHelper
         // Folder
         string title = items.Title.GetLang();
         ToolStripDropDownItem menu;
-        if ( title != string.Empty )
+        if ( title.Length != 0 )
         {
           if ( items.SeparatorBeforeFolder )
             menuRoot.DropDownItems.Add(new ToolStripSeparator());

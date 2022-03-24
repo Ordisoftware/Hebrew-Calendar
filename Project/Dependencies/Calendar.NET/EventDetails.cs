@@ -49,7 +49,7 @@ namespace CodeProjectCalendar.NET
       cbRecurringFrequency.Items.Add("Every year");
     }
 
-    private RecurringFrequencies StringToRecurringFrequencies(string f)
+    static private RecurringFrequencies StringToRecurringFrequencies(string f)
     {
       RecurringFrequencies retval = RecurringFrequencies.None;
 
@@ -76,7 +76,7 @@ namespace CodeProjectCalendar.NET
       return retval;
     }
 
-    private string RecurringFrequencyToString(RecurringFrequencies f)
+    static private string RecurringFrequencyToString(RecurringFrequencies f)
     {
 
       return f switch

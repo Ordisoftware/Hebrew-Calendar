@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SearchLunarMonthForm : Form
@@ -59,13 +59,12 @@ partial class SearchLunarMonthForm : Form
   private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
   {
     int year = SelectYear.Value;
-    var rows = LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year);
     string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
     CurrentDayIndex = SelectMoonDay.SelectedIndex;
     ListItems.Items.Clear();
     ListViewItem itemToSelect = null;
     ListViewItem itemToSelectDefault = null;
-    foreach ( var row in rows.Where(row => row.LunarMonth > 0) )
+    foreach ( var row in LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year && row.LunarMonth > 0) )
     {
       string key = row.LunarMonth.ToString();
       string date = row.Date.ToLongDateString();
@@ -98,6 +97,7 @@ partial class SearchLunarMonthForm : Form
     ListItems.Columns[ListItems.Columns.Count - 1].Width = -2;
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( ListItems.SelectedItems.Count > 0 )
@@ -123,17 +123,6 @@ partial class SearchLunarMonthForm : Form
   {
     if ( SelectMoonDay.SelectedItem is not null )
       MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
-  }
-
-  protected override CreateParams CreateParams
-  {
-    get
-    {
-      var cp = base.CreateParams;
-      if ( Program.Settings.WindowsDoubleBufferingEnabled )
-        cp.ExStyle |= 0x02000000;
-      return cp;
-    }
   }
 
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase : SQLiteDatabase
@@ -43,6 +43,7 @@ partial class ApplicationDatabase : SQLiteDatabase
            : GetDaySun(datetime);
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private LunisolarDay GetDayMoon(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
@@ -101,15 +102,18 @@ partial class ApplicationDatabase : SQLiteDatabase
     return null;
   }
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private LunisolarDay GetDaySun(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
-    int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
     if ( datetime < rowCurrent.Sunset )
       return rowCurrent;
     else
-    if ( indexRowCurrent < LunisolarDays.Count - 1 )
-      return LunisolarDays[indexRowCurrent + 1];
+    {
+      int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
+      if ( indexRowCurrent < LunisolarDays.Count - 1 )
+        return LunisolarDays[indexRowCurrent + 1];
+    }
     return null;
   }
 

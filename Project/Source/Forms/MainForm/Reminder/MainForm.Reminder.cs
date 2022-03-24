@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -62,7 +62,7 @@ partial class MainForm
       UpdateTitles(true);
       if ( delay > 0 )
       {
-        TimerResumeReminder.Interval = delay.Value * 60 * 1000;
+        TimerResumeReminder.Interval = delay.Value * ( 60 * 1000 );
         TimerResumeReminder.Start();
       }
     }

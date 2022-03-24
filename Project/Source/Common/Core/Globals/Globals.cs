@@ -111,7 +111,7 @@ static partial class Globals
   /// Indicates the application GitHub code (title with '-' instead of space.
   /// </summary>
   static public string ApplicationGitHubCode
-    => AssemblyTitle.Replace(" ", "-");
+    => AssemblyTitle.Replace(' ', '-');
 
   /// <summary>
   /// Indicates the application process name.
@@ -175,6 +175,7 @@ static partial class Globals
   /// <summary>
   /// Indicates running processes whose names starts with "AssemblyCompany.".
   /// </summary>
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static public IEnumerable<Process> SameCompanyRunningProcesses
     => Process.GetProcesses().Where(p => p.ProcessName.StartsWith(AssemblyCompany + "."));
 

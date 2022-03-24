@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using Serilog;
@@ -278,6 +278,8 @@ static partial class DebugManager
   /// </summary>
   /// <param name="ex">The Exception to act on.</param>
   /// <param name="sender">Source of the event.</param>
+  [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   static public void Manage(this Exception ex, object sender)
   {
     Manage(ex, sender, DeaultShowExceptionMode);

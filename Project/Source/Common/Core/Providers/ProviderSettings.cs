@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 abstract class ProviderSettings
@@ -43,8 +43,12 @@ abstract class ProviderSettings
       DoClear();
       using var stream = File.OpenText(FilePath);
       while ( ( line = stream.ReadLine() ) is not null )
-        if ( line != string.Empty && !line.StartsWith(";") && !line.StartsWith("//") )
+      {
+        if ( line.Trim().Length != 0
+          && !line.StartsWith(";", StringComparison.Ordinal)
+          && !line.StartsWith("//", StringComparison.Ordinal) )
           DoLoad(line);
+      }
     }
     catch ( Exception ex )
     {

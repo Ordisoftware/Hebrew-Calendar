@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2011-12 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -71,6 +71,7 @@ static partial class DisplayManager
   /// <param name="control">The control to act on.</param>
   /// <param name="action">The action.</param>
   /// <param name="wait">true to wait.</param>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   static public void SyncUI(this Control control, Action action, bool wait = true)
   {
     if ( control is null ) throw new ArgumentNullException(nameof(control));

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -67,6 +67,7 @@ partial class LettersControl
       Label labelKey = null;
       for ( int index = 0, indexControl = 0; index < countLetters; index++ )
       {
+        ref string letter = ref HebrewAlphabet.Codes[index];
         // Button letter
         buttonLetter = new Button
         {
@@ -75,7 +76,7 @@ partial class LettersControl
           TabStop = false,
           Cursor = Cursors.Hand,
           Font = fontLetter,
-          Text = HebrewAlphabet.Codes[index],
+          Text = letter,
           ContextMenuStrip = ContextMenuLetter,
           BackColor = Color.Transparent,
           FlatStyle = FlatStyle.Flat,
@@ -107,7 +108,7 @@ partial class LettersControl
             Location = new Point(posX, posY + deltaYAndValuesAndKeys),
             Font = fontKey,
             Size = sizeLabelKey,
-            Text = HebrewAlphabet.Codes[index],
+            Text = letter,
             ForeColor = colorLabel,
             BackColor = Color.Transparent,
             TextAlign = ContentAlignment.MiddleCenter

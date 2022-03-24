@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
@@ -55,7 +55,7 @@ partial class ApplicationDatabase
         headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV;
       }
       headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
-      var content = new StringBuilder();
+      var content = new StringBuilder(LunisolarDays.Count * headerSep.Length);
       content.AppendLine(headerSep);
       content.AppendLine(headerTxt);
       if ( LunisolarDays.Count == 0 ) return string.Empty;
@@ -101,10 +101,10 @@ partial class ApplicationDatabase
           textDate += $"{dayDate.Day:00}.";
           textDate += $"{dayDate.Month:00}.";
           textDate += dayDate.Year;
-          string strDesc = string.Empty;
+          string strDesc;
           string s1 = day.TorahEventText;
           string s2 = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
-          strDesc = s1 != string.Empty && s2 != string.Empty ? s1 + " - " + s2 : s1 + s2;
+          strDesc = s1.Length != 0 && s2.Length != 0 ? s1 + " - " + s2 : s1 + s2;
           int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )

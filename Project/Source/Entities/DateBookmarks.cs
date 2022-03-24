@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 class DateBookmarks
@@ -43,7 +43,7 @@ class DateBookmarks
       {
         if ( item.Length == 0 )
           continue;
-        DateTime date = DateTime.MinValue;
+        DateTime date;
         try
         {
           date = SQLiteDate.ToDateTime(item);

@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
+[SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
 public struct UndoRedoItem
 {
   public string Text { get; set; }

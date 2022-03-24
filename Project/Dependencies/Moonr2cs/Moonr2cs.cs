@@ -1,6 +1,4 @@
 // http://samik26.webgarden.cz/temata/class-sun-moonrise-set
-using System;
-
 namespace Keith_Burnett_moonr2cs
 {
 
@@ -14,7 +12,7 @@ namespace Keith_Burnett_moonr2cs
     //
     //  *** Functions go here - mostly adapted from Montenbruck and Pfleger section 3.8 ***
     //
-    string Hrsmin(double hours)
+    static string Hrsmin(double hours)
     {
       //
       //	takes decimal hours and returns a string in hhmm format
@@ -32,7 +30,7 @@ namespace Keith_Burnett_moonr2cs
       return ( (int)dum ).ToString("0000");
     }
 
-    double Ipart(double x)
+    static double Ipart(double x)
     {
       //
       //	returns the integer part - like int() in basic
@@ -40,7 +38,7 @@ namespace Keith_Burnett_moonr2cs
       return x > 0 ? Math.Floor(x) : Math.Ceiling(x);
     }
 
-    double Frac(double x)
+    static double Frac(double x)
     {
       //
       //	returns the fractional part of x as used in minimoon and minisun
@@ -56,13 +54,13 @@ namespace Keith_Burnett_moonr2cs
     // found in an OReilly book which means if dp is null
     // you get 2 decimal places.
     //
-    double Round(double num, int dp)
+    static double Round(double num, int dp)
     {
       //   dp = (!dp ? 2: dp);
       return Math.Round(num * Math.Pow(10, dp)) / Math.Pow(10, dp);
     }
 
-    double Range(double x)
+    static double Range(double x)
     {
       //
       //	returns an angle in degrees in the range 0 to 360
@@ -77,7 +75,7 @@ namespace Keith_Burnett_moonr2cs
       return a;
     }
 
-    double Mjd(int day, int month, int year, int hour)
+    static double Mjd(int day, int month, int year, int hour)
     {
       //
       //	Takes the day, month, year and hours in the day and returns the
@@ -103,7 +101,7 @@ namespace Keith_Burnett_moonr2cs
       return a + b + Math.Floor(30.6001 * ( month + 1 )) + day + hour / 24.0;
     }
 
-    string Caldat(double mjd)
+    static string Caldat(double mjd)
     {
       //
       //	Takes mjd and returns the civil calendar date in Gregorian calendar
@@ -178,7 +176,7 @@ namespace Keith_Burnett_moonr2cs
       return quadout;
     }
 
-    double Lmst(double mjd, double glong)
+    static double Lmst(double mjd, double glong)
     {
       //
       //	Takes the mjd and the longitude (west negative) and then returns
@@ -339,11 +337,12 @@ namespace Keith_Burnett_moonr2cs
       //
       for ( j = 0; j < 4; j++ )
       {
+        ref double element = ref sinho[j];
         rise = false;
         sett = false;
         above = false;
         hour = 1.0;
-        ym = Sin_alt(2.0, date, hour - 1.0, glong, cglat, sglat) - sinho[j];
+        ym = Sin_alt(2.0, date, hour - 1.0, glong, cglat, sglat) - element;
         if ( ym > 0.0 ) above = true;
         //
         // the while loop finds the sin(alt) for sets of three consecutive
@@ -353,8 +352,8 @@ namespace Keith_Burnett_moonr2cs
         //
         while ( hour < 25 && ( !sett || !rise ) )
         {
-          yz = Sin_alt(2, date, hour, glong, cglat, sglat) - sinho[j];
-          yp = Sin_alt(2, date, hour + 1.0, glong, cglat, sglat) - sinho[j];
+          yz = Sin_alt(2, date, hour, glong, cglat, sglat) - element;
+          yp = Sin_alt(2, date, hour + 1.0, glong, cglat, sglat) - element;
           quadout = Quad(ym, yz, yp);
           nz = quadout[0];
           z1 = quadout[1];

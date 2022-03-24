@@ -126,8 +126,12 @@ A libre and open-source software written in C# that allows to generate a calenda
 - [SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)
 - [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
 - [F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)
+- [U2U Consult Performance Analyzers](https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7)
 - [Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)
 - [Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)
+- [AsyncFixer](https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022)
+- [Async Method Name Fixer](https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer)
+- [T-SQL Analyzer](https://marketplace.visualstudio.com/items?itemName=EF8980CD-E5F2-4113-92AE-5789026D677C.SqlAnalyzerVS22)
 - [Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)
 - [Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)
 
@@ -377,8 +381,10 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress
 
-- Improve bookmark import to automatically extend length to multiple of 5.
+>- Improve bookmark import to automatically extend length to multiple of 5.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
+- Code refactoring and optimization with more analyzers.
+- Update Aish web links for parashot.
 
 #### 2022.03.20 - Version 9.27
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -228,9 +228,9 @@ class ExceptionInfo
         if ( line != 0 )
         {
           partMethod = $"{partFileName} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
-          if ( result != string.Empty ) partMethod = Globals.NL + partMethod;
+          if ( result.Length != 0 ) partMethod = Globals.NL + partMethod;
         }
-        if ( result != string.Empty ) result += Globals.NL;
+        if ( result.Length != 0 ) result += Globals.NL;
         result += partMethod;
         ( full ? ThreadStackList : ExceptionStackList ).Add(partMethod.SplitNoEmptyLines().AsMultiSpace());
       }

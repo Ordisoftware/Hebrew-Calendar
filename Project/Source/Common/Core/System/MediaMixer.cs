@@ -25,7 +25,7 @@ static class MediaMixer
     try
     {
       StringBuilder lengthBuf = new(32);
-      mciSendString(string.Format("open \"{0}\" type waveaudio alias wave", fileName), null, 0, IntPtr.Zero);
+      mciSendString($"open \"{fileName}\" type waveaudio alias wave", null, 0, IntPtr.Zero);
       mciSendString("status wave length", lengthBuf, lengthBuf.Capacity, IntPtr.Zero);
       mciSendString("close wave", null, 0, IntPtr.Zero);
       if ( int.TryParse(lengthBuf.ToString(), out int length) )
@@ -81,14 +81,14 @@ static class MediaMixer
     return mute;
   }
 
-  static public bool SetApplicationVolume(int pid, float level)
+  static public bool SetApplicationVolume(int pid, int level)
   {
     ISimpleAudioVolume volume = GetVolumeObject(pid);
     if ( volume is null )
       return false;
 
     Guid guid = Guid.Empty;
-    volume.SetMasterVolume(level / 100, ref guid);
+    volume.SetMasterVolume(level / 100f, ref guid);
     Marshal.ReleaseComObject(volume);
     return true;
   }

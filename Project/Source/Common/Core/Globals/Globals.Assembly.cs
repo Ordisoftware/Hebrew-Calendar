@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -37,7 +37,7 @@ static partial class Globals
     get
     {
       var attribute = GetAttribute<AssemblyTitleAttribute>();
-      return attribute is not null && attribute.Title != string.Empty
+      return attribute is not null && attribute.Title.Length != 0
              ? attribute.Title
              : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
     }

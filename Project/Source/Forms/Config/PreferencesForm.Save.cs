@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -184,6 +184,8 @@ partial class PreferencesForm
     else
     if ( SelectCalendarDoubleClickActionSelect.Checked )
       Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.Select;
+    // Double buffering
+    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }
 
 }

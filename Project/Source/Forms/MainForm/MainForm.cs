@@ -506,7 +506,8 @@ partial class MainForm : Form
         DisplayManager.Show(title.GetLang(), text.GetLang());
         break;
       case MessageBoxFormStyle.Advanced:
-        var form = MessageBoxEx.Instances.Find(f => f.Text == title.GetLang())
+        string titleTranslated = title.GetLang();
+        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
                    ?? new MessageBoxEx(title, text, width: width);
         form.ShowInTaskbar = true;
         form.Popup(null, sender is null);

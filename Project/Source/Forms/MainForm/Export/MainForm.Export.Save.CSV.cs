@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -25,18 +25,18 @@ partial class MainForm
     Cursor = Cursors.WaitCursor;
     try
     {
+      var items = GetDayRows(interval).ToList();
+      var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
       string CSVSeparator = Globals.CSVSeparator.ToString();
       string headerTxt = string.Empty;
       foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
         headerTxt += field.ToString() + Globals.CSVSeparator;
       headerTxt = headerTxt.Remove(headerTxt.Length - 1);
-      var result = new StringBuilder();
+      var result = new StringBuilder(items.Count * 120);
       result.AppendLine(headerTxt);
       if ( LunisolarDays.Count == 0 ) return null;
-      var items = GetDayRows(interval);
-      var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
-                                      items.Count(),
+                                      items.Count,
                                       Program.LoadingFormLoadDB);
       foreach ( LunisolarDay day in items )
       {

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
@@ -134,7 +134,7 @@ partial class MainForm
             IsCelebrationWeekStart = false;
           int rank = 0;
           // Moon phase
-          Color colorMoon = Color.Black;
+          Color colorMoon;
           string strMonthDay = row.DayAndMonthFormattedText;
           colorMoon = row.IsNewMoon
                     ? Settings.CalendarColorTorahEvent

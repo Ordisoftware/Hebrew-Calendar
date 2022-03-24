@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -143,7 +143,7 @@ static class WebCheckUpdate
   /// <summary>
   /// Gets the version available online with the file checksum.
   /// </summary>
-  static private (Version, string) GetVersionAndChecksum(WebClient client, bool useGitHub)
+  static private (Version, string) GetVersionAndChecksum(WebClientEx client, bool useGitHub)
   {
     SystemManager.CheckServerCertificate(useGitHub ? Globals.CheckUpdateGitHubURL : Globals.CheckUpdateURL, useGitHub, true);
     List<string> lines;
@@ -198,7 +198,7 @@ static class WebCheckUpdate
   /// <summary>
   /// Asks to the user what to do.
   /// </summary>
-  static private bool GetUserChoice(WebClient client, (Version version, string checksum) fileInfo, bool useGitHub)
+  static private bool GetUserChoice(WebClientEx client, (Version version, string checksum) fileInfo, bool useGitHub)
   {
     LoadingForm.Instance.Hide();
     string path = useGitHub ? Globals.SetupFileGitHubURL : Globals.SetupFileURL;
@@ -223,12 +223,12 @@ static class WebCheckUpdate
   /// <summary>
   /// Processes the automatic download and installation.
   /// </summary>
-  static private bool ProcessAutoInstall(WebClient client,
+  static private bool ProcessAutoInstall(WebClientEx client,
                                          (Version version, string checksum) fileInfo,
                                          string fileURL,
                                          bool useGitHub)
   {
-    Exception ex = null;
+    WebException ex = null;
     bool finished = false;
     bool hidden = LoadingForm.Instance.Hidden;
     try

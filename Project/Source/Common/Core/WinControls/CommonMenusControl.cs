@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using Markdig;
@@ -121,7 +121,7 @@ partial class CommonMenusControl : UserControl
                  _ => ActionViewVersionNews.DropDownItems[0].PerformClick());
       void openNotes()
       {
-        SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace("x", "0")));
+        SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace('x', '0')));
       }
       void initButton(Button button, string text, int width, bool enabled, Action<int> action)
       {

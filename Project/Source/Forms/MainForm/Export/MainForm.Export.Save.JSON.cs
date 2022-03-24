@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -26,8 +26,8 @@ partial class MainForm
       var data = GetDayRows(interval).Select(day => new
       {
         day.DateAsString,
-        IsNewMoon = Convert.ToBoolean(day.IsNewMoon),
-        IsFullMoon = Convert.ToBoolean(day.IsFullMoon),
+        day.IsNewMoon,
+        day.IsFullMoon,
         day.LunarMonth,
         day.LunarDay,
         day.Sunrise,

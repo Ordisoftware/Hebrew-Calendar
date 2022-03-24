@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunisolarDay
@@ -53,7 +53,8 @@ partial class LunisolarDay
   {
     var times = new ReminderTimes();
     var dateRow = Date;
-    var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
+    var dayPrevious = dateRow.AddDays(-1);
+    var rowPrevious = Table.Find(d => d.Date == dayPrevious);
     if ( rowPrevious is null )
       return null;
     if ( Program.Settings.RemindShabatOnlyLight )
@@ -67,8 +68,10 @@ partial class LunisolarDay
   {
     var times = new ReminderTimes();
     var dateRow = Date;
-    var rowPrevious = Table.Find(d => d.Date == dateRow.AddDays(-1));
-    var rowNext = Table.Find(d => d.Date == dateRow.AddDays(+1));
+    var dayPrevious = dateRow.AddDays(-1);
+    var dayNext = dateRow.AddDays(+1);
+    var rowPrevious = Table.Find(d => d.Date == dayPrevious);
+    var rowNext = Table.Find(d => d.Date == dayNext);
     if ( rowPrevious is null || rowNext is null )
       return null;
     if ( Program.Settings.TorahEventsCountAsMoon )

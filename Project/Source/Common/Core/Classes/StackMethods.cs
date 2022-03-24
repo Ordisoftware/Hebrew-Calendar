@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using static Ordisoftware.Core.NativeMethods;
@@ -76,15 +76,16 @@ static class StackMethods
   /// Applies "justify" to the text of a control.
   /// </summary>
   // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
   static public string JustifyParagraph(string text, int width, Font font)
   {
-    var result = new StringBuilder();
+    var result = new StringBuilder(text.Length + 20);
     var ParagraphsList = new List<string>();
     ParagraphsList.AddRange(text.Split(new[] { Globals.NL }, StringSplitOptions.None));
     int checkoverflow = 0;
     foreach ( string Paragraph in ParagraphsList )
     {
-      var line = new StringBuilder();
+      var line = new StringBuilder(Paragraph.Length + 5);
       int ParagraphWidth = TextRenderer.MeasureText(Paragraph, font).Width;
       if ( ParagraphWidth > width )
       {
@@ -127,8 +128,8 @@ static class StackMethods
       float AdjustSpace = width - ( WordsWidth + ( AverageSpace * NumberOfWords * SpaceCharWidth ) );
       return ( (Func<string>)( () =>
       {
-        var Spaces = new StringBuilder();
-        var AdjustedWords = new StringBuilder();
+        var Spaces = new StringBuilder(str.Length);
+        var AdjustedWords = new StringBuilder(str.Length + 5);
         for ( int h = 0; h < AverageSpace; h++ )
           Spaces.Append(SpaceChar);
         foreach ( string Word in WordsList )
@@ -219,9 +220,9 @@ static class StackMethods
   static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
   {
     if ( action is null ) action = MenuItemDropDownOpening;
-    var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>().ToList();
-    var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-    var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+    var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>();
+    var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
+    var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
     items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
     items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
@@ -234,9 +235,9 @@ static class StackMethods
   static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
   {
     if ( action is null ) action = MenuItemDropDownOpening;
-    var items1 = menu.Items.OfType<ToolStripMenuItem>().ToList();
-    var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
-    var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>()).ToList();
+    var items1 = menu.Items.OfType<ToolStripMenuItem>();
+    var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
+    var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
     items1.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
     items2.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
@@ -449,6 +450,7 @@ static class StackMethods
 
   #region Stack Trace
 
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<string, string> AlreadyAcessedVarNames = new();
 
   // From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
@@ -460,8 +462,8 @@ static class StackMethods
       string filePath = frame.GetFileName();
       int lineNumber = frame.GetFileLineNumber();
       string id = filePath + lineNumber;
-      if ( AlreadyAcessedVarNames.ContainsKey(id) )
-        return AlreadyAcessedVarNames[id];
+      if ( AlreadyAcessedVarNames.TryGetValue(id, out var value) )
+        return value;
       using var file = new StreamReader(filePath);
       for ( int i = 0; i < lineNumber - 1; i++ )
         file.ReadLine();

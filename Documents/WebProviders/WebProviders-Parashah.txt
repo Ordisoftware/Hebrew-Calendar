@@ -45,19 +45,20 @@ URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
 Name = (FR) Loubavitch.fr (textes) *
 URL = https://www.loubavitch.fr/etude/paracha
 
-Name = (FR) Loubavitch.fr (vidéos) *
-URL = https://www.loubavitch.fr/multimedia/la-paracha-de-la-semaine
+;TODO check if available again
+;Name = (FR) Loubavitch.fr (vidéos) *
+;URL = https://www.loubavitch.fr/multimedia/la-paracha-de-la-semaine
 
 -
 
 Name = (EN) Aish.com
-URL = https://www.aish.com/tp/%AISH-EN%.html
+URL = https://www.aish.com/parsha/%AISH-EN%
 
 Name = (FR) Aish.fr
-URL = https://www.aish.fr/tp/%AISH-FR%.html
+URL = https://www.aish.fr/tp/%AISH-FR%
 
 Name = (IW) Aish.co.il
-URL = https://www.aish.co.il/tp/%AISH-IW%.html
+URL = https://www.aish.co.il/tp/%AISH-IW%
 
 -
 

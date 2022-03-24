@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-02 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -151,9 +151,11 @@ static class HebrewTools
     });
   }
 
+
   /// <summary>
   /// Opens online bible provider.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1103:Index strings correctly", Justification = "For code readability")]
   static public void OpenBibleProvider(string url, int book, int chapter, int verse)
   {
     string chapterString = chapter.ToString();
@@ -196,7 +198,7 @@ static class HebrewTools
       return;
     }
     open(parashah);
-    if ( openLinked && url.Contains("%") )
+    if ( openLinked && url.IndexOf('%') >= 0 )
     {
       var linked = parashah.GetLinked();
       if ( linked is not null ) open(linked);

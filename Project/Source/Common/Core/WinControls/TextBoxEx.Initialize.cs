@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
+
 namespace Ordisoftware.Core;
 
 partial class TextBoxEx
 {
 
-  static private IContainer _Container;
+  static private Container _Container;
   static private ContextMenuStrip ContextMenuEdit;
 
   static public readonly ToolStripMenuItem ActionUndo = new();

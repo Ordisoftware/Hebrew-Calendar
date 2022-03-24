@@ -1,5 +1,4 @@
-﻿using System.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
 /// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -12,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class Interlocks
@@ -22,6 +21,7 @@ static class Interlocks
 
   static private SQLiteNetORM Connection => HebrewDatabase.Instance.Connection;
 
+  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static private void Purge()
   {
     string sql = $"SELECT ProcessID, count(ProcessID) FROM {TableName} GROUP BY ProcessID";
@@ -70,6 +70,7 @@ static class Interlocks
     return Connection.ExecuteScalar<long>(sql, name);
   }
 
+  [SuppressMessage("Performance", "U2U1209:Use dictionaries efficiently", Justification = "N/A")]
   static public List<string> GetLockers(string name = null)
   {
     name = Convert(name);

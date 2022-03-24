@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectYearsForm : Form
@@ -52,12 +52,12 @@ partial class SelectYearsForm : Form
     const int min = Program.GenerateIntervalMinimum;
     int max = Settings.GenerateIntervalMaximum;
     CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;
-    if ( CurrentYear < yearMin || CurrentYear + min - 1 > yearMax )
+    if ( CurrentYear < yearMin || CurrentYear + ( min - 1 ) > yearMax )
       throw new ArgumentOutOfRangeException(AppTranslations.NotSupportedYear.GetLang(CurrentYear));
-    EditYearFirst.Minimum = CurrentYear + min - max + 1;
+    EditYearFirst.Minimum = CurrentYear + ( min - max + 1 );
     EditYearFirst.Maximum = CurrentYear;
     EditYearLast.Minimum = CurrentYear + min;
-    EditYearLast.Maximum = CurrentYear + max - 1;
+    EditYearLast.Maximum = CurrentYear + ( max - 1 );
     if ( EditYearFirst.Minimum < yearMin + 1 ) EditYearFirst.Minimum = yearMin + 1;
     if ( EditYearLast.Maximum > yearMax - 1 ) EditYearLast.Maximum = yearMax - 1;
     Mutex = false;
@@ -118,8 +118,9 @@ partial class SelectYearsForm : Form
 
   private void ActionOK_Click(object sender, EventArgs e)
   {
-    var diff = EditYearLast.Value - EditYearFirst.Value + 1;
     if ( Settings.BigCalendarWarningEnabled )
+    {
+      var diff = EditYearLast.Value - EditYearFirst.Value + 1;
       for ( int index = Program.BigCalendarLevels.Length - 1; index >= 0; index-- )
       {
         int count = Program.BigCalendarLevels[index];
@@ -141,6 +142,7 @@ partial class SelectYearsForm : Form
           break;
         }
       }
+    }
     ActionCancel.Enabled = true;
   }
 

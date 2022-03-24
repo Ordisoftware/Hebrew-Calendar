@@ -1,7 +1,4 @@
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
 using Meziantou.Framework.Win32.Natives;
 
 namespace Meziantou.Framework.Win32;
@@ -134,7 +131,7 @@ public sealed class AccessToken : IDisposable
   {
     return GetTokenInformation<T, T>(type, Identity);
 
-    static T Identity(T arg) => arg;
+    T Identity(T arg) => arg;
   }
 
   private TResult GetTokenInformation<T, TResult>(TokenInformationClass type, Func<T, TResult> func)

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -80,7 +80,7 @@ static class NullSafeOfStringDictionaryHelper
     {
       list.Clear();
       foreach ( string line in File.ReadAllLines(filePath) )
-        if ( !line.StartsWith(";") && !line.StartsWith("//") )
+        if ( !line.StartsWith(";", StringComparison.Ordinal) && !line.StartsWith("//", StringComparison.Ordinal) )
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
@@ -123,7 +123,7 @@ static class NullSafeOfStringDictionaryHelper
     try
     {
       foreach ( var item in list )
-        if ( !item.Key.StartsWith(";") && !item.Key.StartsWith("//") )
+        if ( !item.Key.StartsWith(";", StringComparison.Ordinal) && !item.Key.StartsWith("//", StringComparison.Ordinal) )
           stream.WriteLine(item.Key + separator + item.Value);
         else
           stream.WriteLine(item.Key);
