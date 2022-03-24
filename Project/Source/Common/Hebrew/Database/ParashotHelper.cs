@@ -34,7 +34,7 @@ static class ParashotHelper
     if ( parashah is null ) return false;
     // Message box
     var message = parashah.ToStringReadable();
-    if ( linked != null )
+    if ( linked is not null )
       message += Globals.NL2 + linked.ToStringReadable();
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
