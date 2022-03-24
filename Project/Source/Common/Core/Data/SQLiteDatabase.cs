@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -45,6 +45,8 @@ abstract class SQLiteDatabase
 
   public event Action<SQLiteDatabase> Saved;
 
+  [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   public void AddToModified(object instance)
   {
     if ( Loaded && !ModifiedObjects.Contains(instance) )
