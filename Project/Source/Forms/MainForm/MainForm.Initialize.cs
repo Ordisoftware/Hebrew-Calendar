@@ -67,6 +67,7 @@ partial class MainForm
   {
     if ( Globals.IsExiting ) return;
     Settings.Retrieve();
+    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
     Program.UpdateLocalization();
     StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
     Globals.ChronoStartingApp.Stop();

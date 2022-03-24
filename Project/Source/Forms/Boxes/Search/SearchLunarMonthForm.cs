@@ -125,15 +125,4 @@ partial class SearchLunarMonthForm : Form
       MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
   }
 
-  protected override CreateParams CreateParams
-  {
-    get
-    {
-      var cp = base.CreateParams;
-      if ( Program.Settings.WindowsDoubleBufferingEnabled )
-        cp.ExStyle |= 0x02000000;
-      return cp;
-    }
-  }
-
 }

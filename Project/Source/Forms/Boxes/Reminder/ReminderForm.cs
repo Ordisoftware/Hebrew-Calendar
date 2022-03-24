@@ -329,7 +329,7 @@ partial class ReminderForm : Form
     }
     Application.DoEvents();
     if ( Program.Settings.ReminderBoxSoundSource != SoundSource.None )
-      System.Threading.Thread.Sleep(400);
+      Thread.Sleep(400);
   }
 
   private void Form_Click(object sender, EventArgs e)
