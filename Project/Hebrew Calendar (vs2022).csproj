@@ -1084,6 +1084,9 @@
     <None Include="Licenses\MPL 2.0.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Setup\OrdisoftwareHebrewCalendarSetup.iss">
+      <Link>OrdisoftwareHebrewCalendarSetup.iss</Link>
+    </Content>
     <Content Include="Licenses\MPL 2.0.htm" />
   </ItemGroup>
   <ItemGroup>
