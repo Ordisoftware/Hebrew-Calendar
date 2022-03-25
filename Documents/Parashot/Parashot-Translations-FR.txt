@@ -44,7 +44,7 @@ Kora'h = Celui qui est froid (sans coeur {sans amour pour autrui et la loi visan
 Balaq = Celui qui dépouille [les victimes, de leur santé et de leurs biens]
 Pin'has = Celui qui parle de l'avenir par conjectures
 Matot = Groupes dirigeants (tribus, branches, factions, partis, influenceurs)
-Massei = Évolution (trajets, cheminements, étapes, degrés)
+Masse'i = Évolution (trajets, cheminements, étapes, degrés)
 // BOOK DEVARIM
 Devarim = Mots (déclarations, consignes, recommandations, promesses)
 Vaet'hanan = J'aurais imploré
