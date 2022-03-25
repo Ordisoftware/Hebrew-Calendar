@@ -107,8 +107,7 @@ partial class ApplicationDatabase
         DateTime date1 = dayRemap1.Date;
         DateTime date2 = dayRemap2.Date;
         indexParashah = 0;
-        foreach ( var row in LunisolarDays.Where(row => !row.ParashahID.IsNullOrEmpty()
-                                                        && row.Date >= date1 && row.Date <= date2) )
+        foreach ( var row in LunisolarDays.Where(r => r.ParashahID.Length != 0 && r.Date >= date1 && r.Date <= date2) )
           if ( indexParashah >= parashot.Count )
             row.ParashahID = string.Empty;
           else
