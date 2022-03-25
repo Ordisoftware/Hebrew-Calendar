@@ -141,10 +141,10 @@
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
       this.SeparatorMenuWeather = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
@@ -312,6 +312,7 @@
       this.CalendarText.HideSelection = false;
       this.CalendarText.Name = "CalendarText";
       this.CalendarText.ReadOnly = true;
+      this.CalendarText.SelectionChanged += new System.EventHandler(this.CalendarText_SelectionChanged);
       this.CalendarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyDown);
       // 
       // TabPageMonth
@@ -1086,23 +1087,16 @@
       this.ActionViewLunarMonths.Name = "ActionViewLunarMonths";
       this.ActionViewLunarMonths.Click += new System.EventHandler(this.ActionViewLunarMonths_Click);
       // 
-      // ActionCalculateDateDiff
-      // 
-      resources.ApplyResources(this.ActionCalculateDateDiff, "ActionCalculateDateDiff");
-      this.ActionCalculateDateDiff.Name = "ActionCalculateDateDiff";
-      this.ActionCalculateDateDiff.Click += new System.EventHandler(this.ActionCalculateDateDiff_Click);
-      // 
       // toolStripSeparator8
       // 
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
       // 
-      // ActionOpenCalculator
+      // ActionCalculateDateDiff
       // 
-      this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
-      this.ActionOpenCalculator.Name = "ActionOpenCalculator";
-      this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
+      resources.ApplyResources(this.ActionCalculateDateDiff, "ActionCalculateDateDiff");
+      this.ActionCalculateDateDiff.Name = "ActionCalculateDateDiff";
+      this.ActionCalculateDateDiff.Click += new System.EventHandler(this.ActionCalculateDateDiff_Click);
       // 
       // ActionOpenSystemDateAndTime
       // 
@@ -1110,6 +1104,13 @@
       resources.ApplyResources(this.ActionOpenSystemDateAndTime, "ActionOpenSystemDateAndTime");
       this.ActionOpenSystemDateAndTime.Name = "ActionOpenSystemDateAndTime";
       this.ActionOpenSystemDateAndTime.Click += new System.EventHandler(this.ActionOpenSystemDateAndTime_Click);
+      // 
+      // ActionOpenCalculator
+      // 
+      this.ActionOpenCalculator.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      resources.ApplyResources(this.ActionOpenCalculator, "ActionOpenCalculator");
+      this.ActionOpenCalculator.Name = "ActionOpenCalculator";
+      this.ActionOpenCalculator.Click += new System.EventHandler(this.ActionOpenCalculator_Click);
       // 
       // SeparatorMenuWeather
       // 

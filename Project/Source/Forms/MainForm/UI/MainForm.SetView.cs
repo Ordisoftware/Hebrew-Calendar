@@ -100,7 +100,7 @@ partial class MainForm
       Settings.CurrentView = view;
       UpdateButtons();
       if ( view == ViewMode.Text )
-        GoToDate(CurrentDay?.Date ?? DateTime.Today);
+        GoToDate(CurrentDay?.Date ?? DateTime.Today, scroll: ViewScrollOverride.ForceTextReport);
       else
       if ( view == ViewMode.Grid && CalendarGrid.SelectedRows.Count > 0 )
         CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
