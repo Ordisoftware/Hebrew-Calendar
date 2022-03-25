@@ -1085,7 +1085,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Setup\OrdisoftwareHebrewCalendarSetup.iss">
-      <Link>OrdisoftwareHebrewCalendarSetup.iss</Link>
+      <Link>Properties\OrdisoftwareHebrewCalendarSetup.iss</Link>
     </Content>
     <Content Include="Licenses\MPL 2.0.htm" />
   </ItemGroup>
