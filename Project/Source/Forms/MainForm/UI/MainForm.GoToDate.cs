@@ -23,7 +23,8 @@ partial class MainForm
                        bool bringToFront = false,
                        bool onlyIfOpened = true,
                        bool onlyIfNotMinimized = false,
-                       Form regetFocus = null)
+                       Form regetFocus = null,
+                       ViewScrollOverride scroll = ViewScrollOverride.None)
   {
     if ( !Globals.IsReady || Globals.IsGenerating ) return;
     if ( GoToDateMutex ) return;
@@ -49,9 +50,9 @@ partial class MainForm
           CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
         }
       });
-      // Visual month
+      // Visual month and text report
       SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
-      if ( Settings.CurrentView == ViewMode.Text )
+      if ( scroll == ViewScrollOverride.ForceTextReport || ( Settings.CurrentView == ViewMode.Text && scroll != ViewScrollOverride.NoTextReport ) )
         SystemManager.TryCatch(() =>
         {
           string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";

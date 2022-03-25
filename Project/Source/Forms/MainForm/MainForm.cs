@@ -949,6 +949,25 @@ partial class MainForm : Form
     }
   }
 
+  /// <summary>
+  /// Event handler. Called by CalendarText for selection changed events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void CalendarText_SelectionChanged(object sender, EventArgs e)
+  {
+    int index = CalendarText.SelectionStart;
+    int line = CalendarText.GetLineFromCharIndex(index);
+    if ( CalendarText.Lines[line].Length >= 16 )
+    {
+      string str = CalendarText.Lines[line].Substring(6, 10);
+      if ( DateTime.TryParse(str, out var date) )
+        GoToDate(date, scroll: ViewScrollOverride.NoTextReport);
+    }
+  }
+
+  public enum ViewScrollOverride { None, NoTextReport, ForceTextReport }
+
   #endregion
 
   #region Data Grid View
