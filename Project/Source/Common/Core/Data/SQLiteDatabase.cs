@@ -96,6 +96,8 @@ abstract class SQLiteDatabase
     if ( Connection is null ) throw new SQLiteException("Not connected.");
   }
 
+  [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   protected void CheckAccess(object table, string name)
   {
     if ( table is null ) throw new SQLiteException("Table is not loaded: " + name);
