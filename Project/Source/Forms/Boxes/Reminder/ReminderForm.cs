@@ -98,10 +98,10 @@ partial class ReminderForm : Form
       form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
       form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
       int leftLabelArrow = form.LabelStartTime.Left + form.LabelStartTime.Width;
-      int LabelEndTime = leftLabelArrow + form.LabelArrow.Width;
+      int leftLabelEndTime = leftLabelArrow + form.LabelArrow.Width;
       form.LabelArrow.Left = leftLabelArrow;
-      form.LabelEndTime.Left = LabelEndTime;
-      form.LabelEndDay.Left = LabelEndTime;
+      form.LabelEndTime.Left = leftLabelEndTime;
+      form.LabelEndDay.Left = leftLabelEndTime;
       form.LabelDate.Tag = date;
       form.Tag = row.Date;
       form.Text = " " + form.LabelTitle.Text;
