@@ -93,6 +93,7 @@ static partial class DisplayManager
     {
       processAction();
       semaphore?.Release();
+      semaphore?.Dispose();
     };
     if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
     {
