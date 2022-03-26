@@ -62,19 +62,23 @@ static partial class SystemManager
     }
   }
 
+
   /// <summary>
   /// Indicates the application website SSL certificate information.
   /// </summary>
+  [SuppressMessage("Usage", "MA0002:IEqualityComparer<string> or IComparer<string> is missing", Justification = "N/A")]
   static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
 
   /// <summary>
   /// Indicates the GitHub website SSL certificate information.
   /// </summary>
+  [SuppressMessage("Usage", "MA0002:IEqualityComparer<string> or IComparer<string> is missing", Justification = "N/A")]
   static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = new();
 
   /// <summary>
   /// Indicates the GitHub user content website SSL certificate information.
   /// </summary>
+  [SuppressMessage("Usage", "MA0002:IEqualityComparer<string> or IComparer<string> is missing", Justification = "N/A")]
   static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = new();
 
   /// <summary>

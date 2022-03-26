@@ -23,6 +23,8 @@ partial class CommonMenusControl : UserControl
 
   static public CommonMenusControl Instance { get; private set; }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   static public void CreateInstance(ToolStrip toolStrip,
                                     ref ToolStripDropDownButton buttonToReplace,
                                     NullSafeDictionary<string, TranslationsDictionary> notices,
@@ -70,6 +72,7 @@ partial class CommonMenusControl : UserControl
     }
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
   public void SetNewInVersionItems(NullSafeDictionary<string, TranslationsDictionary> notices)
   {
     ActionViewVersionNews.DropDownItems.Clear();
@@ -93,6 +96,7 @@ partial class CommonMenusControl : UserControl
                          .PerformClick();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
   private void ShowNewInVersion(object sender, EventArgs e)
   {
     if ( sender is not ToolStripItem menuitem ) return;
