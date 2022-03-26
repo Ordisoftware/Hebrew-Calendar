@@ -17,7 +17,6 @@ namespace System.Globalization
   /// Vietnamese calendar, while days and months are calculated using the lunisolar calendar.
   /// </summary>
   [Serializable()]
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   public class VietnameseCalendar : Calendar
   {
 

@@ -115,7 +115,6 @@ static partial class Program
   /// <summary>
   /// Indicates the grammar guide form.
   /// </summary>
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "Classic lazy init")]
   static public HTMLBrowserForm GrammarGuideForm
   {
     get

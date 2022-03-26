@@ -28,8 +28,8 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// A Winforms Calendar Control
   /// </summary>
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "TODO")]
   [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;

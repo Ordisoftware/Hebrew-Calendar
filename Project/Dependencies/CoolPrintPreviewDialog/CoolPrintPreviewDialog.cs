@@ -21,7 +21,6 @@ namespace CoolPrintPreview
   /// PDF export.
   /// </remarks>
   [SuppressMessage("Style", "IDE1006:Styles d'affectation de noms", Justification = "N/A")]
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   internal partial class CoolPrintPreviewDialog : Form
   {
 

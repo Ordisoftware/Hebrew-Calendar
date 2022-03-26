@@ -47,7 +47,6 @@ namespace CoolPrintPreview
   /// it displays pages as they are rendered. By contrast, the standard control
   /// waits until the entire document is rendered before it displays anything.
   /// </remarks>
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------

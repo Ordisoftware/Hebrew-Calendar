@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace CodeProjectCalendar.NET
 {
-  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
   internal partial class EventToolTip : UserControl
   {
     private Color _eventToolTipColor;
