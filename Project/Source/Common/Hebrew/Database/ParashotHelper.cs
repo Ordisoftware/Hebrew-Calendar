@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 static class ParashotHelper
 {
   [SuppressMessage("AsyncUsage", "AsyncFixer03:Fire-and-forget async-void methods or delegates", Justification = "N/A (event)")]
+  [SuppressMessage("Usage", "VSTHRD101:Avoid unsupported async delegates", Justification = "<En attente>")]
   static public bool ShowDescription(this List<Parashah> parashot,
                                      Parashah parashah,
                                      bool withLinked,
@@ -48,9 +49,10 @@ static class ParashotHelper
     form.ActionYes.Text = SysTranslations.Board.GetLang();
     form.ActionYes.Click += async (_s, _e) =>
     {
-      var form = runBoard.Invoke();
+      Form form = null;
+      SystemManager.TryCatchManage(() => form = runBoard.Invoke());
       await Task.Delay(1000).ConfigureAwait(false);
-      form.Popup();
+      if ( form is not null ) SystemManager.TryCatchManage(() => form.Popup());
     };
     // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );

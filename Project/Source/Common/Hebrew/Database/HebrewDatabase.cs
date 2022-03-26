@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 partial class HebrewDatabase : SQLiteDatabase
@@ -48,7 +48,7 @@ partial class HebrewDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(LoadAll)}");
-    throw new NotImplementedException(message);
+    throw new NotSupportedException(message);
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -64,7 +64,7 @@ partial class HebrewDatabase : SQLiteDatabase
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(HebrewDatabase)}.{nameof(DoSaveAll)}");
-    throw new NotImplementedException(message);
+    throw new NotSupportedException(message);
   }
 
   protected override void UpgradeSchema()

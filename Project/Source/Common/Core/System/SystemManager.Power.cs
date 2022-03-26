@@ -69,12 +69,7 @@ static partial class SystemManager
   }
 
   static public bool IsForegroundFullScreenOrScreensaverRunning
-  {
-    get
-    {
-      return IsForegroundFullScreen() || IsScreensaverRunning;
-    }
-  }
+    => IsForegroundFullScreen() || IsScreensaverRunning;
 
   static public bool IsScreensaverRunning
   {

@@ -31,9 +31,7 @@ namespace CodeProjectCalendar.NET
     }
 
     public int ScrollOffset
-    {
-      get { return _scrollOffset; }
-    }
+      => _scrollOffset;
 
     private void ScrollPanel_Load(object sender, EventArgs e)
     {

@@ -15,6 +15,7 @@
 namespace Ordisoftware.Hebrew;
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
+[StructLayout(LayoutKind.Auto)]
 public readonly struct BookBound
 {
   public int Min { get; }

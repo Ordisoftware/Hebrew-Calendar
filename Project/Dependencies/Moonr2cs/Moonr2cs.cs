@@ -151,7 +151,8 @@ namespace Keith_Burnett_moonr2cs
       //
       double nz, a, b, c, dis, dx, xe, ye, z1, z2;
       //var quadout = new Array;
-      z1 = z2 = 0;
+      z1 = 0;
+      z2 = 0;
       nz = 0;
       a = 0.5 * ( ym + yp ) - yz;
       b = 0.5 * ( yp - ym );
@@ -302,6 +303,7 @@ namespace Keith_Burnett_moonr2cs
     }
 
     [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "<En attente>")]
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     string Find_sun_and_twi_events_for_date(double mjd, double tz, double glong, double glat)
     {
       //

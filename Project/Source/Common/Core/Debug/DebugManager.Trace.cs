@@ -34,7 +34,7 @@ static partial class DebugManager
   {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
-      var id = Thread.CurrentThread.ManagedThreadId.ToString(IdWidth);
+      var id = Environment.CurrentManagedThreadId.ToString(IdWidth);
       logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("ThreadId", id));
     }
   }

@@ -55,7 +55,7 @@ static partial class SystemManager
             }
             while ( newline );
           }
-          _Processor = string.Join(" | ", procs);
+          _Processor = procs.Join(" | ");
         }
         catch
         {

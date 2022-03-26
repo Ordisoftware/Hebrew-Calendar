@@ -25,7 +25,7 @@ partial class MainForm
       {
         return ProcessTextExport(interval, lines =>
         {
-          Clipboard.SetText(string.Join(Globals.NL, lines));
+          Clipboard.SetText(lines.AsMultiLine());
           return true;
         });
       },

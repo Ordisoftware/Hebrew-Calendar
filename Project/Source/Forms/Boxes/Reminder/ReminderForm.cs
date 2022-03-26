@@ -40,6 +40,7 @@ partial class ReminderForm : Form
   }
 
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;
@@ -91,17 +92,17 @@ partial class ReminderForm : Form
       form.LabelDate.Text = isShabat
                             ? date.ToLongDateString().Titleize()
                             : row.DayAndMonthWithYearText;
-      string textDate1 = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek);
-      string textDate2 = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek);
-      form.LabelStartTime.Text = textDate1 + " " + times.TimeStart.ToString(@"hh\:mm");
-      form.LabelEndTime.Text = textDate2 + " " + times.TimeEnd.ToString(@"hh\:mm");
+      string textDateStart = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek);
+      string textDateEnd = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek);
+      form.LabelStartTime.Text = $"{textDateStart} {times.TimeStart:hh\\:mm}";
+      form.LabelEndTime.Text = $"{textDateEnd} {times.TimeEnd:hh\\:mm}";
       form.LabelStartDay.Text = times.DateStart.ToString("d MMM yyyy");
       form.LabelEndDay.Text = times.DateEnd.ToString("d MMM yyyy");
-      int left1 = form.LabelStartTime.Left + form.LabelStartTime.Width;
-      int left2 = left1 + form.LabelArrow.Width;
-      form.LabelArrow.Left = left1;
-      form.LabelEndTime.Left = left2;
-      form.LabelEndDay.Left = left2;
+      int leftLabelArrow = form.LabelStartTime.Left + form.LabelStartTime.Width;
+      int leftLabelEndTime = leftLabelArrow + form.LabelArrow.Width;
+      form.LabelArrow.Left = leftLabelArrow;
+      form.LabelEndTime.Left = leftLabelEndTime;
+      form.LabelEndDay.Left = leftLabelEndTime;
       form.LabelDate.Tag = date;
       form.Tag = row.Date;
       form.Text = " " + form.LabelTitle.Text;
@@ -183,10 +184,10 @@ partial class ReminderForm : Form
   static private void Flash(ReminderForm form)
   {
     form.Hide();
-    System.Threading.Thread.Sleep(500);
+    Thread.Sleep(500);
     form.Show();
     form.BringToFront();
-    form.DoSound();
+    DoSound();
     BringMainForm();
   }
 
@@ -258,7 +259,7 @@ partial class ReminderForm : Form
     {
       var item = (ToolStripMenuItem)ContextMenuLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
       item.Tag = value;
-      item.Click += (_s, _e) =>
+      item.Click += (_s, _) =>
       {
         var action = (PowerAction)( (ToolStripItem)_s ).Tag;
         SystemManager.DoPowerAction(action, Program.Settings.LockSessionConfirmLogOffOrMore);
@@ -288,7 +289,7 @@ partial class ReminderForm : Form
 
   private void InitializeParashahMenu()
   {
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, _) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var day = (LunisolarDay)LabelParashahValue.Tag;
@@ -296,7 +297,7 @@ partial class ReminderForm : Form
                                        ParashotFactory.Instance.Get(day.ParashahID),
                                        day.HasLinkedParashah);
     });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, _) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var day = (LunisolarDay)LabelParashahValue.Tag;
@@ -310,7 +311,7 @@ partial class ReminderForm : Form
 
   #region Instance User Interactions
 
-  private void DoSound()
+  static private void DoSound()
   {
     switch ( Program.Settings.ReminderBoxSoundSource )
     {

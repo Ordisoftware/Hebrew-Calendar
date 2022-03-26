@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class NavigationForm : Form
@@ -36,6 +36,7 @@ partial class NavigationForm : Form
 
   private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public DateTime Date
   {
     get => _Date;

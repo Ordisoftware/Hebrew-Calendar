@@ -282,7 +282,7 @@ namespace CoolPrintPreview
       }
 
       // print using helper class
-      var dp = new DocumentPrinter(this, first, last);
+      using var dp = new DocumentPrinter(this, first, last);
       dp.Print();
     }
 
@@ -319,6 +319,7 @@ namespace CoolPrintPreview
     /// Occurs when the value of the <see cref="ZoomMode"/> property changes.
     /// </summary>
     public event EventHandler ZoomModeChanged;
+
     /// <summary>
     /// Raises the <see cref="ZoomModeChanged"/> event.
     /// </summary>

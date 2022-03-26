@@ -175,9 +175,9 @@ static partial class Globals
   /// <summary>
   /// Indicates running processes whose names starts with "AssemblyCompany.".
   /// </summary>
-  [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   static public IEnumerable<Process> SameCompanyRunningProcesses
-    => Process.GetProcesses().Where(p => p.ProcessName.StartsWith(AssemblyCompany + "."));
+    => Process.GetProcesses().Where(p => p.ProcessName.StartsWith($"{AssemblyCompany}.",
+                                                                  StringComparison.CurrentCultureIgnoreCase));
 
   /// <summary>
   /// Indicates running processes whose names starts with "[AssemblyCompany]." not being this one.

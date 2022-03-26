@@ -98,7 +98,11 @@ static partial class DisplayManager
     {
       if ( wait ) semaphore = new SemaphoreSlim(0, 1);
       control.BeginInvoke(wait ? processActionWait : processAction);
-      semaphore?.Wait();
+      if ( wait )
+      {
+        semaphore.Wait();
+        semaphore.Dispose();
+      }
     }
     else
       processAction();

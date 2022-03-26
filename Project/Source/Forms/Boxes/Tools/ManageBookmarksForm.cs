@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ManageBookmarksForm : Form
@@ -109,13 +109,13 @@ partial class ManageBookmarksForm : Form
   // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
   private void ActionSort_Click(object sender, EventArgs e)
   {
-    ListBox.Sort((item1, item2) =>
+    ListBox.Sort((itemFirst, itemLast) =>
     {
-      var date1 = ( (DateItem)item1 ).Date;
-      var date2 = ( (DateItem)item2 ).Date;
-      if ( date1 == DateTime.MinValue ) date1 = DateTime.MaxValue;
-      if ( date2 == DateTime.MinValue ) date2 = DateTime.MaxValue;
-      return date1.CompareTo(date2);
+      var dateFirst = ( (DateItem)itemFirst ).Date;
+      var dateLast = ( (DateItem)itemLast ).Date;
+      if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
+      if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
+      return dateFirst.CompareTo(dateLast);
     });
     ListBox_SelectedIndexChanged(null, null);
     ListBox.Focus();

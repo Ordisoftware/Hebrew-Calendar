@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -20,8 +20,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 class DatesDiffItem
 {
 
-  private DateTime Date1;
-  private DateTime Date2;
+  private DateTime DateStart;
+  private DateTime DateEnd;
 
   public int SolarDays { get; set; }
   public int SolarWeeks { get; set; }
@@ -40,13 +40,13 @@ class DatesDiffItem
   {
     date1 = date1.Date;
     date2 = date2.Date;
-    if ( Date1 == date1 && Date2 == date2 )
+    if ( DateStart == date1 && DateEnd == date2 )
       return;
     else
     if ( date1 > date2 )
       (date2, date1) = (date1, date2);
-    Date1 = date1;
-    Date2 = date2;
+    DateStart = date1;
+    DateEnd = date2;
     Calculate(sender);
   }
 
@@ -54,7 +54,7 @@ class DatesDiffItem
   {
     try
     {
-      int count = (int)( Date2 - Date1 ).TotalDays;
+      int count = (int)( DateEnd - DateStart ).TotalDays;
       int countData = CalendarDates.Instance.Count;
       if ( count - countData >= Program.LoadingFormDatesDiff )
       {
@@ -63,19 +63,19 @@ class DatesDiffItem
                                         Program.LoadingFormDatesDiff + 1);
         if ( sender is not null ) sender.Enabled = false;
       }
-      var data = CalendarDates.Instance[Date1];
-      SolarDays = ( Date2 - Date1 ).Days + 1;
+      var data = CalendarDates.Instance[DateStart];
+      SolarDays = ( DateEnd - DateStart ).Days + 1;
       SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
       SolarMonths = 1;
       SolarYears = 1;
       MoonDays = 0;
       LunarMonths = 1;
       MoonYears = 1;
-      if ( Date1.Day == 1 ) SolarMonths = 0;
-      if ( Date1.Month == 1 && Date1.Day == 1 ) SolarYears = 0;
+      if ( DateStart.Day == 1 ) SolarMonths = 0;
+      if ( DateStart.Month == 1 && DateStart.Day == 1 ) SolarYears = 0;
       if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise is not null ) LunarMonths = 0;
       if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
-      for ( DateTime index = Date1; index <= Date2; index = index.AddDays(1) )
+      for ( DateTime index = DateStart; index <= DateEnd; index = index.AddDays(1) )
       {
         if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.DoProgress();
         data = CalendarDates.Instance[index];

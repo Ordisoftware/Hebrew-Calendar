@@ -81,6 +81,7 @@ public partial class AutoMenu
     }
   }
 
+  [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "<En attente>")]
   uint GetUserChoice()
   {
     uint choice;

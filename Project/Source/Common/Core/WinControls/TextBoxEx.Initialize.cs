@@ -75,6 +75,7 @@ partial class TextBoxEx
                                    });
   }
 
+  [SuppressMessage("Usage", "MA0011:IFormatProvider is missing", Justification = "N/A")]
   static public void Relocalize()
   {
     if ( ContextMenuEdit is null ) return;

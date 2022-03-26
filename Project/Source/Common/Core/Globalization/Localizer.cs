@@ -52,7 +52,7 @@ static class Localizer
   /// <param name="parameters">Parameters for the translated string.</param>
   static public string GetLang(this TranslationsDictionary values, params object[] parameters)
   {
-    return string.Format(values?.GetLang(), parameters) ?? ERR + " " + string.Join(",", parameters);
+    return string.Format(values?.GetLang(), parameters) ?? $"{ERR} {parameters.AsMultiComma()}";
   }
 
   /// <summary>

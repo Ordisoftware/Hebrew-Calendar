@@ -107,7 +107,7 @@ namespace Infralution.Localization
       }
       set
       {
-        if ( value is null ) throw new ArgumentNullException();
+        if ( value is null ) throw new ArgumentNullException(nameof(value));
 
         if ( !value.Equals(_applicationUICulture) )
         {
@@ -246,7 +246,7 @@ namespace Infralution.Localization
       get { return _excludeProperties; }
       set
       {
-        _excludeProperties = value ?? throw new ArgumentNullException();
+        _excludeProperties = value ?? throw new ArgumentNullException(nameof(value));
       }
     }
 
@@ -278,6 +278,7 @@ namespace Infralution.Localization
     /// </remarks>
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "Analysis error")]
     public CultureInfo UICulture
     {
       get
@@ -286,7 +287,7 @@ namespace Infralution.Localization
       }
       set
       {
-        if ( value is null ) throw new ArgumentNullException();
+        if ( value is null ) throw new ArgumentNullException(nameof(value));
         ChangeUICulture(value);
       }
     }
@@ -603,7 +604,7 @@ namespace Infralution.Localization
     /// <returns></returns>
     protected virtual bool IsExcluded(string componentName, string propertyName)
     {
-      string resourceName = componentName + "." + propertyName;
+      string resourceName = $"{componentName}.{propertyName}";
       foreach ( string value in _excludeProperties )
       {
         if ( value.IndexOf('.') >= 0 )
@@ -648,6 +649,7 @@ namespace Infralution.Localization
     /// <param name="instance">The component instance to apply resources to</param>
     /// <param name="culture">The culture resources to apply</param>
     [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     protected virtual void ApplyResources(Type componentType, IComponent instance, CultureInfo culture)
     {
       // check whether there are localizable resources for the type - if not we are done

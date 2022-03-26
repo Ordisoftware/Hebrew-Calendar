@@ -118,7 +118,7 @@ class SystemStatistics
           var process = Process.GetCurrentProcess();
           var name = string.Empty;
           foreach ( var instance in from instance in new PerformanceCounterCategory("Process").GetInstanceNames()
-                                    where instance.StartsWith(process.ProcessName)
+                                    where instance.StartsWith(process.ProcessName, StringComparison.CurrentCultureIgnoreCase)
                                     select instance )
           {
             using var processId = new PerformanceCounter("Process", "ID Process", instance, true);
@@ -148,7 +148,7 @@ class SystemStatistics
       if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
       _CPUprocessLoadCount++;
       _CPUProcessLoadAverage += (ulong)value;
-      return value + "%";
+      return $"{value}%";
     }
   }
   static private int _CPUProcessLoadMax;
@@ -156,10 +156,10 @@ class SystemStatistics
   static private ulong _CPUProcessLoadAverage;
 
   public string CPUProcessLoadAverage
-    => _CPUprocessLoadCount == 0 ? "-" : _CPUProcessLoadAverage / _CPUprocessLoadCount + "%";
+    => _CPUprocessLoadCount == 0 ? "-" : $"{_CPUProcessLoadAverage / _CPUprocessLoadCount}%";
 
   public string CPUProcessLoadMax
-    => _CPUProcessLoadMax + "%";
+    => $"{_CPUProcessLoadMax}%";
 
   static private bool CPULoadInitMutex;
 
@@ -177,7 +177,7 @@ class SystemStatistics
         }).Start();
       }
       if ( CPULoadInitMutex ) return "(init)";
-      return (int)PerformanceCounterCPULoad.NextValue() + "%";
+      return $"{(int)PerformanceCounterCPULoad.NextValue()}%";
     }
   }
 

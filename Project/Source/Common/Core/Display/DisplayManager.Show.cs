@@ -45,10 +45,7 @@ static partial class DisplayManager
       }
       return _Title;
     }
-    set
-    {
-      _Title = value;
-    }
+    set => _Title = value;
   }
   static private string _Title;
 

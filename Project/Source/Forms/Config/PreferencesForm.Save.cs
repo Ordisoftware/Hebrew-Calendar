@@ -23,6 +23,7 @@ using Base.Hotkeys;
 partial class PreferencesForm
 {
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void SaveSettings()
   {
     Settings.TrayIconUseSpecialDayIcon = EditTrayIconUseSpecialDayIcon.Checked;

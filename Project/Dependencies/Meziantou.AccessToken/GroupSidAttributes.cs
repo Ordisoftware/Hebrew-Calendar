@@ -3,6 +3,7 @@ namespace Meziantou.Framework.Win32;
 [Flags]
 [SuppressMessage("Major Code Smell", "S4070:Non-flags enums should not be marked with \"FlagsAttribute\"", Justification = "<En attente>")]
 [SuppressMessage("Roslynator", "RCS1157:Composite enum value contains undefined flag.", Justification = "<En attente>")]
+[SuppressMessage("Design", "MA0062:Non-flags enums should not be marked with \"FlagsAttribute\"", Justification = "<En attente>")]
 public enum GroupSidAttributes : uint
 {
   None = 0,

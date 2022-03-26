@@ -58,7 +58,7 @@ partial class MainForm
                                     .SkipWhile(line => filter(line, interval.Start.Value, true))
                                     .TakeWhile(line => filter(line, interval.End.Value, false));
     var result = CalendarText.Lines.Take(3).Concat(linesFiltered);
-    return Enumerable.Append(result, CalendarText.Lines.Last());
+    return Enumerable.Append(result, CalendarText.Lines[CalendarText.Lines.Length - 1]);
     //
     bool filter(string line, DateTime dateTrigger, bool strict)
     {
@@ -82,14 +82,15 @@ partial class MainForm
 }
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
+[StructLayout(LayoutKind.Auto)]
 public struct ExportInterval
 {
   public DateTime? Start { get; set; }
   public DateTime? End { get; set; }
-  public bool IsDefined => Start.HasValue && End.HasValue;
-  public int MonthsCount => IsDefined
-                            ? ( End.Value.Year - Start.Value.Year ) * 12 + End.Value.Month - Start.Value.Month
-                            : 0;
+  public readonly bool IsDefined => Start is not null && End is not null;
+  public readonly int MonthsCount => IsDefined
+                                     ? ( End.Value.Year - Start.Value.Year ) * 12 + End.Value.Month - Start.Value.Month
+                                     : 0;
 }
 
 [Serializable]

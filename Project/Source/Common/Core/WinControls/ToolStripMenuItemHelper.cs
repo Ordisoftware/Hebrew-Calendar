@@ -60,7 +60,7 @@ public static class ToolStripMenuItemHelper
     }
 
     // Create a new menu name
-    menuItem.Name = sourceToolStripMenuItem.Name + "-" + menuNameCounter++;
+    menuItem.Name = $"{sourceToolStripMenuItem.Name} - {menuNameCounter++}";
 
     // Process any other properties
     if ( sourceToolStripMenuItem.ImageIndex != -1 )
@@ -91,7 +91,7 @@ public static class ToolStripMenuItemHelper
       }
       else
       {
-        throw new ArgumentOutOfRangeException("Menu item is not a ToolStripMenuItem or a ToolStripSeparatorr");
+        throw new TypeAccessException("Menu item is not a ToolStripMenuItem or a ToolStripSeparatorr");
       }
 
       menuItem.DropDownItems.Add(newItem);
@@ -126,6 +126,7 @@ public static class ToolStripMenuItemHelper
   /// <param name="component">The source component.</param>
   /// <returns>The EventHanderList or null if none</returns>
   [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
+  [SuppressMessage("ReflectionAnalyzers.SystemReflection", "REFL003:The member does not exist", Justification = "N/A")]
   public static EventHandlerList GetEventHandlerList(this IComponent component)
   {
     var eventsInfo = component.GetType().GetProperty("Events", BindingFlags.Instance | BindingFlags.NonPublic);

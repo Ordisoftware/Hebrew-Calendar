@@ -64,6 +64,7 @@ partial class MainForm
     YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
   }
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public void FillMonths()
   {
     Globals.ChronoShowData.Restart();
@@ -143,7 +144,7 @@ partial class MainForm
                       : Settings.CalendarColorMoon );
           if ( !Settings.TorahEventsCountAsMoon )
           {
-            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.SunriseAsString + " " + strMonthDay);
+            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.SunriseAsString} {strMonthDay}");
             add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString);
           }
           else
@@ -153,7 +154,7 @@ partial class MainForm
               if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -161,7 +162,7 @@ partial class MainForm
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);

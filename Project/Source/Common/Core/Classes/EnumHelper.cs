@@ -25,7 +25,7 @@ static class EnumHelper
   /// </summary>
   static public string ToStringFull<T>(this T value) where T : Enum
   {
-    return value.GetType().Name + "." + value.ToString();
+    return $"{value.GetType().Name}.{value}";
   }
 
   /// <summary>

@@ -149,7 +149,7 @@ namespace CoolPrintPreview
       dlg.UseEXDialog = false;
       dlg.Document = Document;
       int indexPage = 0;
-      dlg.Document.PrintPage += (_s, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
+      dlg.Document.PrintPage += (_, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
       // ORDISOFTWARE MODIF END
 
       // show allowed page range

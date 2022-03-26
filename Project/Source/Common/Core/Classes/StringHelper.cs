@@ -175,6 +175,19 @@ static partial class StringHelper
   }
 
   /// <summary>
+  /// Creates a string from an object enumeration.
+  /// </summary>
+  /// <returns>
+  /// A string.
+  /// </returns>
+  /// <param name="list">The enumeration to act on.</param>
+  /// <param name="separator">The separator.</param>
+  static public string Join(this IEnumerable<object> list, string separator)
+  {
+    return string.Join(separator, list.Select(o => o.ToString()));
+  }
+
+  /// <summary>
   /// Creates a multi-spaced string from a string enumeration.
   /// </summary>
   /// <returns>
@@ -187,6 +200,34 @@ static partial class StringHelper
   }
 
   /// <summary>
+  /// Creates a multi-comma string from a string enumeration.
+  /// </summary>
+  /// <returns>
+  /// A string.
+  /// </returns>
+  /// <param name="list">The enumeration to act on.</param>
+  /// <param name="withSpaceAfter">True to add a space after each comma, else without.</param>
+  static public string AsMultiComma(this IEnumerable<string> list, bool withSpaceAfter)
+  {
+    string separator = withSpaceAfter ? ", " : ",";
+    return string.Join(separator, list);
+  }
+
+  /// <summary>
+  /// Creates a multi-comma string from an object enumeration.
+  /// </summary>
+  /// <returns>
+  /// A string.
+  /// </returns>
+  /// <param name="list">The enumeration to act on.</param>
+  /// <param name="withSpaceAfter">True to add a space after each comma, else without.</param>
+  static public string AsMultiComma(this IEnumerable<object> list, bool withSpaceAfter = false)
+  {
+    string separator = withSpaceAfter ? ", " : ",";
+    return string.Join(separator, list.Select(o => o.ToString()));
+  }
+
+  /// <summary>
   /// Creates a multi-newlined string from a string enumeration.
   /// </summary>
   /// <returns>
@@ -196,6 +237,18 @@ static partial class StringHelper
   static public string AsMultiLine(this IEnumerable<string> list)
   {
     return string.Join(Globals.NL, list);
+  }
+
+  /// <summary>
+  /// Creates a multi-newlined string from a string enumeration.
+  /// </summary>
+  /// <returns>
+  /// A string.
+  /// </returns>
+  /// <param name="list">The enumeration to act on.</param>
+  static public string AsMultiDoubleLine(this IEnumerable<string> list)
+  {
+    return string.Join(Globals.NL2, list);
   }
 
   /// <summary>

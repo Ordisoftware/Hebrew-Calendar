@@ -56,7 +56,7 @@ static partial class SystemManager
   {
     if ( !Globals.IsCurrentUserAdmin )
     {
-      string str = CommandLineArguments.Length > 0 ? string.Join(" ", CommandLineArguments) : "show";
+      string str = CommandLineArguments.Length > 0 ? CommandLineArguments.AsMultiSpace() : "show";
       DisplayManager.ShowWarning(SysTranslations.IPCNotAvailable.GetLang($"'{str}'"));
     }
     return Globals.IsCurrentUserAdmin;

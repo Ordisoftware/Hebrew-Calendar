@@ -30,7 +30,7 @@ static class ExportHelper
     var result = new NullSafeOfStringDictionary<T>();
     foreach ( var value in Enums.GetValues<T>() )
       if ( list.Length == 0 || list.Contains(value) )
-        result.Add(value, "." + value.ToString().ToLower());
+        result.Add(value, $".{value.ToString().ToLower()}");
     return result;
   }
 
@@ -43,7 +43,7 @@ static class ExportHelper
   {
     string str = SysTranslations.FileExtensionFilter.GetLang();
     var list = values.Select(v => $"{string.Format(str, v.Key)}|*{v.Value}");
-    return string.Join("|", list);
+    return list.Join("|");
   }
 
 

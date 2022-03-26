@@ -228,6 +228,7 @@ static class StackMethods
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
   }
 
+
   /// <summary>
   /// Ensure drop down menu items are displayed on the same screen.
   /// </summary>
@@ -430,6 +431,7 @@ static class StackMethods
   // Need "Deterministic>false</Deterministic>" in CSPROJ file.
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   [SuppressMessage("Vulnerability", "SEC0112:Unvalidated File Path", Justification = "N/A")]
+  [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
   static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
   {
     var filePath = assembly.Location;
@@ -461,7 +463,7 @@ static class StackMethods
       var frame = new StackTrace(true).GetFrame(level);
       string filePath = frame.GetFileName();
       int lineNumber = frame.GetFileLineNumber();
-      string id = filePath + lineNumber;
+      string id = $"{filePath}{lineNumber}";
       if ( AlreadyAcessedVarNames.TryGetValue(id, out var value) )
         return value;
       using var file = new StreamReader(filePath);

@@ -61,6 +61,7 @@ class SystemHotKey
     set => Modifiers = Modifiers.SetFlag(Modifiers.Win, value);
   }
 
+  [SuppressMessage("Reliability", "CA2011:Éviter la récursivité infinie", Justification = "Required")]
   public Keys Key
   {
     get { return _Key; }
@@ -78,6 +79,7 @@ class SystemHotKey
   }
   public Keys _Key;
 
+  [SuppressMessage("Reliability", "CA2011:Éviter la récursivité infinie", Justification = "Required")]
   public Modifiers Modifiers
   {
     get { return _Modifiers; }
@@ -95,6 +97,7 @@ class SystemHotKey
   }
   public Modifiers _Modifiers;
 
+  [SuppressMessage("Reliability", "CA2011:Éviter la récursivité infinie", Justification = "Required")]
   public Action KeyPressed
   {
     get { return _KeyPressed; }

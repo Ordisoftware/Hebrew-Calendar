@@ -69,6 +69,7 @@ static class OnlineProvidersHelper
   static private void SetItems(ToolStripItemCollection menuItems,
                                OnlineProviders providers,
                                EventHandler action,
+                               Action finished,
                                Action reconstruct)
   {
     if ( providers is null || providers.Items.Count == 0 ) return;
@@ -76,6 +77,7 @@ static class OnlineProvidersHelper
     string nameItems = StackMethods.NameOfFromStack(3).Replace("Globals.", string.Empty);
     foreach ( var item in providers.Items )
       menuItems.Add(item.CreateMenuItem(action));
+    finished?.Invoke();
     if ( providers.Configurable )
     {
       menuItems.Add(new ToolStripSeparator());
@@ -88,29 +90,39 @@ static class OnlineProvidersHelper
   }
 
   /// <summary>
-  /// Creates submenu items for providers menu.
+  /// Creates sub-menu items for providers menu.
   /// </summary>
   static public void InitializeFromProviders(this ContextMenuStrip contextMenu,
                                              OnlineProviders providers,
-                                             EventHandler action)
+                                             EventHandler action,
+                                             Action finished = null)
   {
-    SetItems(contextMenu.Items, providers, action, () => InitializeFromProviders(contextMenu, providers, action));
+    SetItems(contextMenu.Items,
+             providers,
+             action,
+             finished,
+             () => InitializeFromProviders(contextMenu, providers, action, finished));
   }
 
   /// <summary>
-  /// Creates submenu items for providers menu.
+  /// Creates sub-menu items for providers menu.
   /// </summary>
   static public void InitializeFromProviders(this ToolStripMenuItem menuItem,
                                              OnlineProviders providers,
-                                             EventHandler action)
+                                             EventHandler action,
+                                             Action finished = null)
   {
     if ( providers is null ) return;
-    SetItems(menuItem.DropDownItems, providers, action, () => InitializeFromProviders(menuItem, providers, action));
+    SetItems(menuItem.DropDownItems,
+             providers,
+             action,
+             finished,
+             () => InitializeFromProviders(menuItem, providers, action, finished));
     menuItem.MouseUp += Menu_MouseUp;
   }
 
   /// <summary>
-  /// Creates submenu items for web links menu.
+  /// Creates sub-menu items for web links menu.
   /// </summary>
   static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
   {

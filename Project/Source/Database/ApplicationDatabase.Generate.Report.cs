@@ -40,6 +40,7 @@ partial class ApplicationDatabase
   };
 
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)
   {
     var Chrono = new Stopwatch();
@@ -52,7 +53,7 @@ partial class ApplicationDatabase
       {
         string str = AppTranslations.ReportFields.GetLang(field);
         headerSep += new string(SeparatorH[0], CalendarFieldSize[field]) + SeparatorV;
-        headerTxt += " " + str + new string(' ', CalendarFieldSize[field] - str.Length - 2) + " " + SeparatorV;
+        headerTxt += $" {str}{new string(' ', CalendarFieldSize[field] - str.Length - 2)} {SeparatorV}";
       }
       headerSep = headerSep.Remove(headerSep.Length - 1) + SeparatorV;
       var content = new StringBuilder(LunisolarDays.Count * headerSep.Length);
@@ -82,7 +83,7 @@ partial class ApplicationDatabase
                    ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
                        ? AppTranslations.EphemerisCodes.GetLang(Ephemeris.SummerHour)
                        : AppTranslations.EphemerisCodes.GetLang(Ephemeris.WinterHour) )
-                     + " " + strSun
+                     + $" {strSun}"
                    : strSun + new string(' ', 3 + 1);
           strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
                             ? ShabatText
@@ -102,9 +103,9 @@ partial class ApplicationDatabase
           textDate += $"{dayDate.Month:00}.";
           textDate += dayDate.Year;
           string strDesc;
-          string s1 = day.TorahEventText;
-          string s2 = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
-          strDesc = s1.Length != 0 && s2.Length != 0 ? s1 + " - " + s2 : s1 + s2;
+          string strEvent = day.TorahEventText;
+          string sSeason = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
+          strDesc = strEvent.Length != 0 && sSeason.Length != 0 ? strEvent + " - " + sSeason : strEvent + sSeason;
           int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )

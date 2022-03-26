@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2020-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase : SQLiteDatabase
@@ -73,7 +73,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoSaveAll()
   {
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
-    throw new NotImplementedException(message);
+    throw new NotSupportedException(message);
   }
 
   public void DeleteAll()

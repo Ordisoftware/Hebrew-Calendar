@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 /// while it is being updated. Additional formatting features
 /// have also been added.
 /// </remarks>
+[SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
 class RichTextBoxEx : RichTextBox
 {
   /// <summary>

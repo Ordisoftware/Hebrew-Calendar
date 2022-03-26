@@ -29,6 +29,7 @@ namespace CodeProjectCalendar.NET
   /// A Winforms Calendar Control
   /// </summary>
   [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;
@@ -61,7 +62,7 @@ namespace CodeProjectCalendar.NET
     private readonly List<Rectangle> _rectangles;
     private readonly Dictionary<int, Point> _calendarDays;
     private readonly EventToolTip _eventTip;
-    private ContextMenuStrip _contextMenuStrip1;
+    private ContextMenuStrip _contextMenuStrip;
 
     public event Action<DateTime> CalendarDateChanged;
 
@@ -97,6 +98,7 @@ namespace CodeProjectCalendar.NET
         else Refresh();
       }
     }
+
 
     /// <summary>
     /// Indicates the type of calendar to render, Month or Day view
@@ -367,6 +369,7 @@ namespace CodeProjectCalendar.NET
       Controls.Add(_scrollPanel);
     }
 
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     private void InitializeComponent()
     {
       Container components;
@@ -375,9 +378,9 @@ namespace CodeProjectCalendar.NET
       _btnToday = new TodayButton();
       _btnLeft = new NavigateLeftButton();
       _btnRight = new NavigateRightButton();
-      _contextMenuStrip1 = new ContextMenuStrip(components);
+      _contextMenuStrip = new ContextMenuStrip(components);
       _miProperties = new ToolStripMenuItem();
-      _contextMenuStrip1.SuspendLayout();
+      _contextMenuStrip.SuspendLayout();
       SuspendLayout();
       // 
       // _btnToday
@@ -435,10 +438,10 @@ namespace CodeProjectCalendar.NET
       // 
       // _contextMenuStrip1
       // 
-      _contextMenuStrip1.Items.AddRange(new ToolStripItem[] {
+      _contextMenuStrip.Items.AddRange(new ToolStripItem[] {
             _miProperties});
-      _contextMenuStrip1.Name = "_contextMenuStrip1";
-      _contextMenuStrip1.Size = new Size(137, 26);
+      _contextMenuStrip.Name = "_contextMenuStrip1";
+      _contextMenuStrip.Size = new Size(137, 26);
       // 
       // _miProperties
       // 
@@ -460,7 +463,7 @@ namespace CodeProjectCalendar.NET
       MouseMove += CalendarMouseMove;
       Resize += CalendarResize;
       DoubleBuffered = true;
-      _contextMenuStrip1.ResumeLayout(false);
+      _contextMenuStrip.ResumeLayout(false);
       ResumeLayout(false);
 
     }
@@ -550,7 +553,7 @@ namespace CodeProjectCalendar.NET
           if ( z.EventArea.Contains(e.X, e.Y + _scrollPanel.ScrollOffset) && !z.Event.ReadOnlyEvent )
           {
             _clickedEvent = z;
-            _contextMenuStrip1.Show(_scrollPanel, new Point(e.X, e.Y));
+            _contextMenuStrip.Show(_scrollPanel, new Point(e.X, e.Y));
             _eventTip.Visible = false;
             _eventTip.ShouldRender = false;
             break;
@@ -573,7 +576,7 @@ namespace CodeProjectCalendar.NET
             if ( z.EventArea.Contains(e.X, e.Y) && !z.Event.ReadOnlyEvent )
             {
               _clickedEvent = z;
-              _contextMenuStrip1.Show(this, e.Location);
+              _contextMenuStrip.Show(this, e.Location);
               _eventTip.Visible = false;
               _eventTip.ShouldRender = false;
               break;
@@ -596,7 +599,8 @@ namespace CodeProjectCalendar.NET
     {
       if ( _calendarView == CalendarViews.Month )
         _calendarDate = _calendarDate.AddMonths(-1);
-      else if ( _calendarView == CalendarViews.Day )
+      else
+      if ( _calendarView == CalendarViews.Day )
         _calendarDate = _calendarDate.AddDays(-1);
       Refresh();
       // ORDISOFTWARE MODIF BEGIN
@@ -735,31 +739,31 @@ namespace CodeProjectCalendar.NET
       AddEvent(christmas);
     }
 
-    [CustomRecurringAttribute("Thanksgiving Day Handler", "Selects the fourth Thursday in the month")]
+    [CustomRecurring("Thanksgiving Day Handler", "Selects the fourth Thursday in the month")]
     private bool ThanksgivingDayHandler(IEvent evnt, DateTime dt)
     {
       return dt.DayOfWeek == DayOfWeek.Thursday && dt.Day > 21 && dt.Day <= 28 && dt.Month == evnt.Date.Month;
     }
 
-    [CustomRecurringAttribute("Columbus Day Handler", "Selects the second Monday in the month")]
+    [CustomRecurring("Columbus Day Handler", "Selects the second Monday in the month")]
     private bool ColumbusDayHandler(IEvent evnt, DateTime dt)
     {
       return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 7 && dt.Day <= 14 && dt.Month == evnt.Date.Month;
     }
 
-    [CustomRecurringAttribute("Labor Day Handler", "Selects the first Monday in the month")]
+    [CustomRecurring("Labor Day Handler", "Selects the first Monday in the month")]
     private bool LaborDayHandler(IEvent evnt, DateTime dt)
     {
       return dt.DayOfWeek == DayOfWeek.Monday && dt.Day <= 7 && dt.Month == evnt.Date.Month;
     }
 
-    [CustomRecurringAttribute("Martin Luther King Jr. Day Handler", "Selects the third Monday in the month")]
+    [CustomRecurring("Martin Luther King Jr. Day Handler", "Selects the third Monday in the month")]
     private bool MlkDayHandler(IEvent evnt, DateTime dt)
     {
       return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 14 && dt.Day <= 21 && dt.Month == evnt.Date.Month;
     }
 
-    [CustomRecurringAttribute("Memorial Day Handler", "Selects the last Monday in the month")]
+    [CustomRecurring("Memorial Day Handler", "Selects the last Monday in the month")]
     private bool MemorialDayHandler(IEvent evnt, DateTime dt)
     {
       DateTime dt2 = LastDayOfWeekInMonth(dt, DayOfWeek.Monday);
@@ -896,19 +900,22 @@ namespace CodeProjectCalendar.NET
         Graphics g = e.Graphics;
 
         SizeF dateHeaderSize = g.MeasureString(
-            _calendarDate.ToString("MMMM") + " " + _calendarDate.Day.ToString(CultureInfo.InvariantCulture) +
-            ", " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), DateHeaderFont);
+            $"{_calendarDate:MMMM} {_calendarDate.Day.ToString(CultureInfo.InvariantCulture)}" +
+            $", {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}",
+            DateHeaderFont);
 
         g.DrawString(
-            _calendarDate.ToString("MMMM") + " " + _calendarDate.Day.ToString(CultureInfo.InvariantCulture) +
-            ", " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture),
-            _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width,
+            $"{_calendarDate:MMMM} {_calendarDate.Day.ToString(CultureInfo.InvariantCulture)}" +
+            $", {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}",
+            _dateHeaderFont, BrushText,
+            ClientSize.Width - MarginSize - dateHeaderSize.Width,
             MarginSize);
       }
     }
 
     private string MonthWithDayText;
 
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;
@@ -931,11 +938,11 @@ namespace CodeProjectCalendar.NET
       if ( isPrinting )
         MonthWithDayText = monthText;
       else
-        if ( MainForm.Instance.CurrentDay is not null )
-        MonthWithDayText = MainForm.Instance.CurrentDay.Date.Day + " " + monthText;
+      if ( MainForm.Instance.CurrentDay is not null )
+        MonthWithDayText = $"{MainForm.Instance.CurrentDay.Date.Day} {monthText}";
       else
-        if ( !MainForm.Instance.PreferencesMutex )
-        MonthWithDayText = today.Day + " " + monthText;
+      if ( !MainForm.Instance.PreferencesMutex )
+        MonthWithDayText = $"{today.Day} {monthText}";
       int daysinmonth = DateTime.DaysInMonth(_calendarDate.Year, _calendarDate.Month);
       SizeF monSize = sunSize;// g.MeasureString("Mon", _dayOfWeekFont);
       SizeF tueSize = sunSize;// g.MeasureString("Tue", _dayOfWeekFont);
@@ -962,7 +969,7 @@ namespace CodeProjectCalendar.NET
       int selectedDay;
       int selectedMonth;
       int selectedYear;
-      if ( MainForm.Instance.DateSelected.HasValue )
+      if ( MainForm.Instance.DateSelected is not null )
       {
         var date = MainForm.Instance.DateSelected.Value;
         selectedDay = date.Day;
@@ -1018,7 +1025,7 @@ namespace CodeProjectCalendar.NET
             if ( !first )
             {
               first = true;
-              string strCounter1 = monthText + " " + counter1.ToString(CultureInfo.InvariantCulture);
+              string strCounter1 = $"{monthText} {counter1.ToString(CultureInfo.InvariantCulture)}";
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
@@ -1183,7 +1190,7 @@ namespace CodeProjectCalendar.NET
                 CalendarEvents.Add(evNextFirst);
                 g.FillRectangle(RogueBrush, xStart + 1, yStart + 1, cellWidth - 1, cellHeight - 1);
                 // ORDISOFWTARE MODIF END
-                g.DrawString(_calendarDate.AddMonths(1).ToString("MMMM").Titleize() + " " + counter2.ToString(CultureInfo.InvariantCulture), _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
+                g.DrawString($"{_calendarDate.AddMonths(1).ToString("MMMM").Titleize()} {counter2.ToString(CultureInfo.InvariantCulture)}", _daysFont, BrushGrayMedium, xStart + 5, yStart + 2);
               }
               else
               {
@@ -1288,8 +1295,8 @@ namespace CodeProjectCalendar.NET
 
       if ( _showDateInHeader )
       {
-        SizeF dateHeaderSize = g.MeasureString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont);
-        g.DrawString(MonthWithDayText + " " + _calendarDate.Year.ToString(CultureInfo.InvariantCulture), _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
+        SizeF dateHeaderSize = g.MeasureString($"{MonthWithDayText} {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}", _dateHeaderFont);
+        g.DrawString($"{MonthWithDayText} {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}", _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
 
       // ORDISOFTWARE MODIF BEGIN

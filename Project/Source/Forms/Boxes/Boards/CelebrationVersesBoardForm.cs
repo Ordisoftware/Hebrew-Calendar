@@ -113,7 +113,7 @@ public partial class CelebrationVersesBoardForm : Form
     {
       string str = celebration.ToString();
       foreach ( ListViewItem item in SelectCelebration.Items )
-        if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString()) )
+        if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString(), StringComparison.Ordinal) )
         {
           item.Selected = true;
           item.Focused = true;

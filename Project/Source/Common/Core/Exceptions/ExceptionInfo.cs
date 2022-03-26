@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides exception information.
 /// </summary>
-[SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "Opinion")]
+[SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "To do")]
 class ExceptionInfo
 {
 
@@ -156,9 +156,11 @@ class ExceptionInfo
     {
       var frame = new StackFrame(skip, true);
       var method = frame.GetMethod();
-      result = $"{method.DeclaringType.FullName}.{method.Name}" +
-               $" ({Path.GetFileName(frame.GetFileName())}" +
-               $" line {frame.GetFileLineNumber()})";
+      result = string.Format("{0}.{1} ({2} line {3})",
+                             method.DeclaringType.FullName,
+                             method.Name,
+                             Path.GetFileName(frame.GetFileName()),
+                             frame.GetFileLineNumber());
     }
     catch
     {
@@ -176,9 +178,9 @@ class ExceptionInfo
       var type = Instance.GetType();
       TypeText = type.ToString();
       type = type.BaseType;
-      InheritsFrom += type.ToString();
+      InheritsFrom = type.ToString();
       while ( ( type = type.BaseType ) is not null )
-        InheritsFrom += " > " + type.ToString();
+        InheritsFrom += $" > {type}";
     }
     catch
     {
@@ -224,7 +226,7 @@ class ExceptionInfo
           FileName = partFileName;
           LineNumber = line;
         }
-        partMethod += "." + method.Name;
+        partMethod += $".{method.Name}";
         if ( line != 0 )
         {
           partMethod = $"{partFileName} line {line}:{Globals.NL}{partMethod}{Globals.NL}";
@@ -252,9 +254,9 @@ class ExceptionInfo
     try
     {
       ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                   ? Thread.CurrentThread.ManagedThreadId == 1
+                   ? Environment.CurrentManagedThreadId == 1
                      ? "Main"
-                     : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
+                     : "ID = " + Environment.CurrentManagedThreadId.ToString()
                    : Thread.CurrentThread.Name;
 
       try

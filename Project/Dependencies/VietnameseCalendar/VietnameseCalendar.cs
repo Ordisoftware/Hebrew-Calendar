@@ -308,7 +308,11 @@ namespace System.Globalization
               catch ( OverflowException ) { }
             }
           }
-          finally { key.Close(); }
+          finally
+          {
+            key.Close();
+            key.Dispose();
+          }
         }
         if ( num < 0 ) num = defaultYearValue;
       }

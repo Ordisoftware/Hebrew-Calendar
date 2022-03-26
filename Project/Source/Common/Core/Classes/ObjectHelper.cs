@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2012-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -45,7 +45,7 @@ static class ObjectHelper
   {
     try
     {
-      return (T)Convert.ChangeType(obj, typeof(T));
+      return (T)Convert.ChangeType(obj, typeof(T), CultureInfo.InvariantCulture);
     }
     catch when ( returnDefaultOnError )
     {

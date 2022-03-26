@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using static Ordisoftware.Core.NativeMethods;
 
 // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
+[SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
 static class MediaMixer
 {
 
@@ -54,8 +55,8 @@ static class MediaMixer
 
   static public void MuteVolume(IntPtr? handle = null)
   {
-    if ( !handle.HasValue ) handle = Globals.MainForm?.Handle;
-    if ( !handle.HasValue ) return;
+    if ( handle is null ) handle = Globals.MainForm?.Handle;
+    if ( handle is null ) return;
     SendMessageW(handle.Value, WM_APPCOMMAND, handle.Value, (IntPtr)APPCOMMAND_VOLUME_MUTE);
   }
 

@@ -62,7 +62,7 @@ partial class MainForm
       if ( dateOld != DateTime.MinValue )
         if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
           return;
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
+      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
       if ( menuitem.OwnerItem == ContextMenuDayGoToBookmark )
         ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
       else

@@ -228,7 +228,7 @@ partial class MainForm : Form
         }
         else
           lines.Add(DateTime.Today.ToShortDateString());
-        TrayIcon.Text = new string(string.Join(Globals.NL, lines).Take(63).ToArray());
+        TrayIcon.Text = new string(lines.AsMultiLine().Take(63).ToArray());
       }
       else
         TrayIcon.Text = string.Empty;
@@ -1178,7 +1178,7 @@ partial class MainForm : Form
 
   private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
   {
-    if ( _DateSelected.HasValue ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
+    if ( _DateSelected is not null ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
   }
 
   private void ContextMenuDayDatesDiffTo(DateTime date)

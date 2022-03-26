@@ -21,6 +21,7 @@ namespace Base.Hotkeys
       form.HotkeyPressed += HotkeyPressed;
     }
 
+    [SuppressMessage("Design", "MA0055:Do not use finalizer", Justification = "N/A")]
     ~HotkeyManager()
     {
       Dispose(false);

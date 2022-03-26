@@ -53,7 +53,7 @@ static partial class Globals
   /// Gets the assembly title with version.
   /// </summary>
   static public string AssemblyTitleWithVersion
-    => AssemblyTitle + " " + AssemblyVersion;
+    => $"{AssemblyTitle} {AssemblyVersion}";
 
   /// <summary>
   /// Gets information describing the assembly.

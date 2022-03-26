@@ -55,6 +55,7 @@ static partial class SystemManager
   /// <summary>
   /// Checks if a file is an executable.
   /// </summary>
+  [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
   static public bool CheckIfFileIsExecutable(string filePath)
   {
     try
@@ -109,7 +110,7 @@ static partial class SystemManager
   /// </returns>
   static public string MakeMailLink(string link)
   {
-    return !link.StartsWith("mailto:") ? "mailto:" + link : link;
+    return !link.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ? "mailto:" + link : link;
   }
 
   /// <summary>
@@ -118,7 +119,7 @@ static partial class SystemManager
   /// <param name="link">The mail address.</param>
   static public void OpenMailLink(string link)
   {
-    RunShell(MakeMailLink(link));
+    using var process = RunShell(MakeMailLink(link));
   }
 
   /// <summary>
@@ -130,7 +131,11 @@ static partial class SystemManager
   /// </returns>
   static public string MakeWebLink(string link)
   {
-    return !link.StartsWith("http://") && !link.StartsWith("https://") ? "http://" + link : link;
+    if ( !link.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+      && !link.StartsWith("https://", StringComparison.OrdinalIgnoreCase) )
+      return "http://" + link;
+    else
+      return link;
   }
 
   /// <summary>
@@ -140,7 +145,7 @@ static partial class SystemManager
   static public void OpenWebLink(string link)
   {
     if ( link.IsNullOrEmpty() ) return;
-    RunShell(MakeWebLink(link));
+    using var process = RunShell(MakeWebLink(link));
   }
 
   /// <summary>
@@ -191,10 +196,11 @@ static partial class SystemManager
     OpenWebLink(Globals.GitHubCreateIssueURL + query);
   }
 
+
   /// <summary>
   /// Gets the SHA-512 checksum of a file.
   /// </summary>
-  static public string GetChecksum512(string filePath)
+  static public string GetChecksumSha512(string filePath)
   {
     try
     {
@@ -219,7 +225,7 @@ static partial class SystemManager
     while ( processes.Any() && result != DialogResult.Cancel )
     {
       var list = processes.Select(p => p.ProcessName);
-      var names = string.Join(Globals.NL, list.ToArray());
+      var names = list.AsMultiLine();
       string message = SysTranslations.CloseApplicationsRequired.GetLang(reason, names.Indent(5, 5));
       using ( var form = new MessageBoxEx(Globals.AssemblyTitle,
                                           message,
