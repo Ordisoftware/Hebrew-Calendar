@@ -127,7 +127,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Source\Common\Core\Classes\CompilerHelper.cs" />
     <Compile Include="Source\Common\Core\Debug\Chronometer.cs" />
     <Compile Include="Source\Common\Core\Classes\EnumHelper.cs" />

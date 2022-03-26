@@ -18,8 +18,8 @@ public class ToolStripCheckBoxItem : ToolStripControlHost
 
   public bool Checked
   {
-    get { return CheckBox.Checked; }
-    set { CheckBox.Checked = value; }
+    get => CheckBox.Checked;
+    set => CheckBox.Checked = value;
   }
 
   public event EventHandler CheckedChanged

@@ -20,6 +20,7 @@ using GregsStack.InputSimulatorStandard.Native;
 /// <summary>
 /// Provides HotkeyManager wrapper.
 /// </summary>
+[SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
 class SystemHotKey
 {
 

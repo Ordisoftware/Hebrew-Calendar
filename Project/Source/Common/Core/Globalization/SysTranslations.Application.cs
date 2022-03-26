@@ -63,6 +63,7 @@ static partial class SysTranslations
     [Language.FR] = "Nouvelles fonctionnalités de la version {0}"
   };
 
+  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   static public TranslationsDictionary ApplicationMustExit
   {
     get

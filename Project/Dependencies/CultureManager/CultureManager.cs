@@ -279,6 +279,7 @@ namespace Infralution.Localization
     /// </remarks>
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "Analysis error")]
     public CultureInfo UICulture
     {
       get

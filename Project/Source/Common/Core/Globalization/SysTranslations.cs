@@ -20,6 +20,7 @@ namespace Ordisoftware.Core;
 static partial class SysTranslations
 {
 
+  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "N/A")]
   static public TranslationsDictionary AskToContinue
   {
     get

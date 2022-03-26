@@ -45,23 +45,23 @@ partial class ComboBoxNavigator : UserControl
 
   public ComboBox.ObjectCollection Items
   {
-    get { return _ComboBox.Items; }
+    get => _ComboBox.Items;
   }
 
   public int Count
   {
-    get { return _ComboBox?.Items.Count ?? -1; }
+    get => _ComboBox?.Items.Count ?? -1;
   }
 
   public int SelectedIndex
   {
-    get { return _ComboBox?.SelectedIndex ?? -1; }
+    get => _ComboBox?.SelectedIndex ?? -1;
     set { if ( _ComboBox is not null ) _ComboBox.SelectedIndex = value; }
   }
 
   public object SelectedItem
   {
-    get { return _ComboBox?.SelectedItem; }
+    get => _ComboBox?.SelectedItem;
     set { if ( _ComboBox is not null ) _ComboBox.SelectedItem = value; }
   }
 
