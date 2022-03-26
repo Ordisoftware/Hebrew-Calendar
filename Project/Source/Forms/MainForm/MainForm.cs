@@ -968,7 +968,7 @@ partial class MainForm : Form
     if ( line < CalendarText.Lines.Length && CalendarText.Lines[line].Length >= 16 )
     {
       string str = CalendarText.Lines[line].Substring(6, 10);
-      if ( DateTime.TryParse(str, out var date) )
+      if ( DateTime.TryParseExact(str, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) )
         GoToDate(date, scroll: ViewScrollOverride.NoTextReport);
     }
   }
