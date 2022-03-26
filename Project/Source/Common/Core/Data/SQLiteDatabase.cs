@@ -62,6 +62,7 @@ abstract class SQLiteDatabase
     private set => _Connection = value;
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
   [NonSerialized]
   private SQLiteNetORM _Connection;
 

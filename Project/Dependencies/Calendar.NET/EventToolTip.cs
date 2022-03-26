@@ -6,7 +6,9 @@ using System.Windows.Forms;
 namespace CodeProjectCalendar.NET
 {
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   internal partial class EventToolTip : UserControl
   {
     private Color _eventToolTipColor;

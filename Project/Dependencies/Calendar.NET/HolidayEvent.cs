@@ -6,6 +6,7 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// An event that defines a holiday
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   public class HolidayEvent : IEvent
   {
     // ORDISOFTWARE MODIF BEGIN
