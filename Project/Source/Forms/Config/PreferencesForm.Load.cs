@@ -21,6 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class PreferencesForm
 {
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void LoadSettings()
   {
     SystemManager.TryCatch(() => EditTrayIconUseSpecialDayIcon.Checked = Settings.TrayIconUseSpecialDayIcon);

@@ -64,6 +64,7 @@ partial class MainForm
     YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
   }
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public void FillMonths()
   {
     Globals.ChronoShowData.Restart();

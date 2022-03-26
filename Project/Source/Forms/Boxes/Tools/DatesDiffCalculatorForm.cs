@@ -106,7 +106,6 @@ partial class DatesDiffCalculatorForm : Form
     var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
-    Instance.Dispose();
     Instance = new DatesDiffCalculatorForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
     Instance.DateStart.Tag = date1;

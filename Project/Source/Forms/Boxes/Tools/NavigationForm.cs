@@ -36,6 +36,7 @@ partial class NavigationForm : Form
 
   private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public DateTime Date
   {
     get => _Date;

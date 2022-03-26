@@ -25,6 +25,7 @@ partial class LettersControl
   /// <summary>
   /// Creates letters buttons and labels.
   /// </summary>
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public void Redraw()
   {
     if ( !Created || RedrawMutex ) return;

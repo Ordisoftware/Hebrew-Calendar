@@ -184,6 +184,7 @@ static class NativeMethods
 
   public const int ABM_GETTASKBARPOS = 5;
 
+  [StructLayout(LayoutKind.Sequential)]
   public struct APPBARDATA
   {
     public int cbSize;

@@ -101,10 +101,10 @@ partial class PreferencesForm
       TabIndexParashah = form.TabControl.TabPages.IndexOf(form.TabPageParashah);
       TabIndexWeather = form.TabControl.TabPages.IndexOf(form.TabPageWeather);
     }
-    var filter1 = new Regex("(^F[0-9]{1,2}$)");
-    var filter2 = new Regex("(^[A-Z]$)");
-    var filter3 = new Regex("(^D[0-D9]$)");
-    var filter4 = new Regex("(^NumPad[0-D9]$)");
+    var filter1 = new Regex("(^F[0-9]{1,2}$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
+    var filter2 = new Regex("(^[A-Z]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
+    var filter3 = new Regex("(^D[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
+    var filter4 = new Regex("(^NumPad[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     AvailableHotKeyKeys = Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success)
                                .Concat(Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success))
                                .Concat(Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success))

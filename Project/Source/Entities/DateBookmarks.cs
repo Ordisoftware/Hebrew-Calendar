@@ -33,6 +33,7 @@ class DateBookmarks
     Save();
   }
 
+  [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
   private void Load()
   {
     SystemManager.TryCatchManage(() =>

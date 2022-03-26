@@ -66,6 +66,7 @@ public partial class MainForm
     }
   }
 
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void DoContextMenuStripDay_Opened(object sender, EventArgs e)
   {
     // Day

@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using static Ordisoftware.Core.NativeMethods;
 
 // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
+[SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
 static class MediaMixer
 {
 

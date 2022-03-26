@@ -140,9 +140,11 @@ static class WebCheckUpdate
     }
   }
 
+
   /// <summary>
   /// Gets the version available online with the file checksum.
   /// </summary>
+  [SuppressMessage("Usage", "MA0015:Specify the parameter name in ArgumentException", Justification = "N/A")]
   static private (Version, string) GetVersionAndChecksum(WebClientEx client, bool useGitHub)
   {
     SystemManager.CheckServerCertificate(useGitHub ? Globals.CheckUpdateGitHubURL : Globals.CheckUpdateURL, useGitHub, true);
@@ -220,9 +222,11 @@ static class WebCheckUpdate
     return false;
   }
 
+
   /// <summary>
   /// Processes the automatic download and installation.
   /// </summary>
+  [SuppressMessage("Usage", "MA0099:Use Explicit enum value instead of 0", Justification = "N/A")]
   static private bool ProcessAutoInstall(WebClientEx client,
                                          (Version version, string checksum) fileInfo,
                                          string fileURL,

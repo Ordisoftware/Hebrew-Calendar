@@ -254,9 +254,9 @@ class ExceptionInfo
     try
     {
       ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                   ? Thread.CurrentThread.ManagedThreadId == 1
+                   ? Environment.CurrentManagedThreadId == 1
                      ? "Main"
-                     : "ID = " + Thread.CurrentThread.ManagedThreadId.ToString()
+                     : "ID = " + Environment.CurrentManagedThreadId.ToString()
                    : Thread.CurrentThread.Name;
 
       try

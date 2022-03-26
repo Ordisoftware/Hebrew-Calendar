@@ -40,6 +40,7 @@ partial class ApplicationDatabase
   };
 
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)
   {
     var Chrono = new Stopwatch();

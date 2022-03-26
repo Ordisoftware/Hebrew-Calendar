@@ -40,6 +40,7 @@ partial class ReminderForm : Form
   }
 
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;

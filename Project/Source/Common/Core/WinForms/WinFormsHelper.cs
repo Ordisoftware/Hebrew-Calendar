@@ -224,6 +224,7 @@ static class FormsHelper
   /// Restore a minimized form.
   /// </summary>
   /// <param name="form">The form.</param>
+  [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
   static public void Restore(this Form form)
   {
     if ( form.Visible && form.WindowState == FormWindowState.Minimized )

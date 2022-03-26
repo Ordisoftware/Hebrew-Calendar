@@ -55,6 +55,7 @@ static partial class SystemManager
   /// <summary>
   /// Checks if a file is an executable.
   /// </summary>
+  [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
   static public bool CheckIfFileIsExecutable(string filePath)
   {
     try

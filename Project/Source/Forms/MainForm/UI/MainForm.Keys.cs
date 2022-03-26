@@ -21,6 +21,7 @@ partial class MainForm
   /// Process the command key.
   /// </summary>
   /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
+  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
     if ( Globals.IsReady )

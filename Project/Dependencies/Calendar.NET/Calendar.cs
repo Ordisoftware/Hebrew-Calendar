@@ -369,6 +369,7 @@ namespace CodeProjectCalendar.NET
       Controls.Add(_scrollPanel);
     }
 
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     private void InitializeComponent()
     {
       Container components;
@@ -914,6 +915,7 @@ namespace CodeProjectCalendar.NET
 
     private string MonthWithDayText;
 
+    [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;

@@ -169,6 +169,7 @@ partial class SelectCityForm : Form
   private bool FoundCountry;
   private bool FoundCity;
 
+  [SuppressMessage("Performance", "MA0031:Optimize Enumerable.Count() usage", Justification = "Opinion")]
   private void EditFilter_TextChanged(object sender, EventArgs e)
   {
     if ( Mutex ) return;

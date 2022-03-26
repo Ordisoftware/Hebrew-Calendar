@@ -67,6 +67,7 @@ static class SQLiteDate
   /// </summary>
   /// <param name="time">The time.</param>
   /// <returns>An empty string if time is null</returns>
+  [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
   static public string ToString(TimeSpan? time)
   {
     return time is not null ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
@@ -85,6 +86,7 @@ static class SQLiteDate
   /// <summary>
   /// Adds hours and minutes from a time span to a date else return null if time is null.
   /// </summary>
+  [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
   static public DateTime? Add(TimeSpan? time, DateTime date)
   {
     return time is not null ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;

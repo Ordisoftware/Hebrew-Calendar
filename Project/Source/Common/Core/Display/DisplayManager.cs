@@ -93,13 +93,16 @@ static partial class DisplayManager
     {
       processAction();
       semaphore?.Release();
-      semaphore?.Dispose();
     };
     if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
     {
       if ( wait ) semaphore = new SemaphoreSlim(0, 1);
       control.BeginInvoke(wait ? processActionWait : processAction);
-      semaphore?.Wait();
+      if ( wait )
+      {
+        semaphore.Wait();
+        semaphore.Dispose();
+      }
     }
     else
       processAction();

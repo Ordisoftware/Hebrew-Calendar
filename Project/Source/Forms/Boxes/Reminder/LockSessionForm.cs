@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Runtime.InteropServices;
@@ -86,7 +86,7 @@ partial class LockSessionForm : Form
     var actions = new NullSafeDictionary<PowerAction, Delegate>
     {
       [PowerAction.LockSession] = ActionLock_LinkClicked,
-      [PowerAction.Shutdown] = ActionStandby_LinkClicked,
+      [PowerAction.StandBy] = ActionStandby_LinkClicked,
       [PowerAction.Hibernate] = ActionHibernate_LinkClicked,
       [PowerAction.Shutdown] = ActionShutdown_LinkClicked
     };
