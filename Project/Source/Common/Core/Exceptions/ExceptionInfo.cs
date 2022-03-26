@@ -156,7 +156,7 @@ class ExceptionInfo
     {
       var frame = new StackFrame(skip, true);
       var method = frame.GetMethod();
-      result = string.Format("{0}.{1} ({2} line {3)",
+      result = string.Format("{0}.{1} ({2} line {3})",
                              method.DeclaringType.FullName,
                              method.Name,
                              Path.GetFileName(frame.GetFileName()),
