@@ -1103,6 +1103,11 @@
     <PackageReference Include="Equin.ApplicationFramework.BindingListView">
       <Version>1.4.5222.35545</Version>
     </PackageReference>
+    <PackageReference Include="ErrorProne.NET.Structs">
+      <Version>0.1.2</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="FileHelpers">
       <Version>3.5.1</Version>
     </PackageReference>
