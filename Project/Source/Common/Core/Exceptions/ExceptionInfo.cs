@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides exception information.
 /// </summary>
-[SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "Opinion")]
+[SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "To do")]
 class ExceptionInfo
 {
 

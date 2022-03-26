@@ -78,13 +78,13 @@ class OnlineProviders : DataFile
         string line = lines[index].Trim();
         if ( line.Length == 0 ) continue;
         if ( line.StartsWith(";", StringComparison.Ordinal) ) continue;
-        if ( line.StartsWith("FOLDER-SEPARATOR") )
+        if ( line.StartsWith("FOLDER-SEPARATOR", StringComparison.OrdinalIgnoreCase) )
           SeparatorBeforeFolder = true;
         else
         if ( line.StartsWith("-", StringComparison.Ordinal) )
           Items.Add(new OnlineProviderItem("-"));
         else
-        if ( line.StartsWith("Lang/") )
+        if ( line.StartsWith("Lang/", StringComparison.OrdinalIgnoreCase) )
         {
           var parts = line.Split('/', '=');
           if ( parts.Length == 3 )
@@ -93,7 +93,7 @@ class OnlineProviders : DataFile
             showError();
         }
         else
-        if ( line.StartsWith(TagName) )
+        if ( line.StartsWith(TagName, StringComparison.OrdinalIgnoreCase) )
         {
           string name = line.Substring(TagName.Length);
           if ( ++index >= lines.Length )
@@ -102,7 +102,7 @@ class OnlineProviders : DataFile
             break;
           }
           line = lines[index].Trim();
-          if ( line.StartsWith(TagURL) )
+          if ( line.StartsWith(TagURL, StringComparison.OrdinalIgnoreCase) )
             Items.Add(new OnlineProviderItem(name, line.Substring(TagURL.Length)));
           else
             showError();

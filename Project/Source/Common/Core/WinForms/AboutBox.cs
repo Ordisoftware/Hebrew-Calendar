@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -174,9 +174,14 @@ partial class AboutBox : Form
   /// <param name="e">Link clicked event information.</param>
   private void ActionOpenFolderMedias_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Globals.ProjectMediasFolderPath);
+    if ( Directory.Exists(Globals.ProjectMediasFolderPath) )
+    {
+      using var processMediasFolder = SystemManager.RunShell(Globals.ProjectMediasFolderPath);
+    }
     if ( Directory.Exists(Globals.ApplicationSoundsFolderPath) )
-      SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
+    {
+      using var processSoundsFolder = SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
+    }
   }
 
 

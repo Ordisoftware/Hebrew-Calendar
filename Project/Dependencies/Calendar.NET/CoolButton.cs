@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace CodeProjectCalendar.NET
 {
+  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   internal partial class CoolButton : UserControl
   {
     private Color _buttonColor;
@@ -152,7 +153,7 @@ namespace CodeProjectCalendar.NET
       else
       {
         g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-        GraphicsPath path = RoundedRectangle.Create(0, 0, ClientSize.Width - 4, ClientSize.Height - 4);
+        using GraphicsPath path = RoundedRectangle.Create(0, 0, ClientSize.Width - 4, ClientSize.Height - 4);
         SizeF fontSize = g.MeasureString(_buttonText, _buttonFont);
         int horWidth = ( ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2 );
         int verHeight = ( ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2 );

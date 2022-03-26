@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using SQLite;
@@ -57,10 +57,10 @@ public partial class LunisolarDay
     => TorahEvent != TorahCelebrationDay.None;
 
   public string DayAndMonthText
-    => LunarDay + " " + HebrewMonths.Transcriptions[LunarMonth];
+    => $"{LunarDay} {HebrewMonths.Transcriptions[LunarMonth]}";
 
   public string DayAndMonthWithYearText
-    => DayAndMonthText + " " + Date.Year;
+    => $"{DayAndMonthText} {Date.Year}";
 
   public string DayAndMonthFormattedText
     => Program.Settings.MoonDayTextFormat.ToUpper()

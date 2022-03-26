@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 static public class CollectionsHelper
@@ -22,7 +22,7 @@ static public class CollectionsHelper
     var slices = new List<List<T>> { new List<T>() };
     foreach ( var item in collection )
     {
-      slices.Last().Add(item);
+      slices[slices.Count - 1].Add(item);
       if ( predicate(item) )
         slices.Add(new List<T>());
     }

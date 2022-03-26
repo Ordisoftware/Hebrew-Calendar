@@ -248,7 +248,7 @@ static class WebCheckUpdate
       if ( ex is not null ) throw ex;
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
         throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
-      if ( SystemManager.GetChecksum512(filePathTemp) != fileInfo.checksum )
+      if ( SystemManager.GetChecksumSha512(filePathTemp) != fileInfo.checksum )
         throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
       if ( SystemManager.RunShell(filePathTemp, "/SP- /SILENT") is not null )
       {

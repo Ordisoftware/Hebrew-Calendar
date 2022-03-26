@@ -55,11 +55,11 @@ partial class CommonMenusControl : UserControl
     MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
     ActionSoftpedia.Tag = Globals.SoftpediaURL;
     ActionAlternativeTo.Tag = Globals.AlternativeToURL;
-    bool b1 = !Globals.SoftpediaURL.IsNullOrEmpty();
-    bool b2 = !Globals.AlternativeToURL.IsNullOrEmpty();
-    ActionSoftpedia.Visible = b1;
-    ActionAlternativeTo.Visible = b2;
-    SeparatorOnlineArchive.Visible = b1 || b2;
+    bool enableSofpedia = !Globals.SoftpediaURL.IsNullOrEmpty();
+    bool enableAlternativeTo = !Globals.AlternativeToURL.IsNullOrEmpty();
+    ActionSoftpedia.Visible = enableSofpedia;
+    ActionAlternativeTo.Visible = enableAlternativeTo;
+    SeparatorOnlineArchive.Visible = enableSofpedia || enableAlternativeTo;
     check(ActionHebrewCalendar);
     check(ActionHebrewLetters);
     check(ActionHebrewWords);
@@ -129,7 +129,7 @@ partial class CommonMenusControl : UserControl
         button.Enabled = enabled;
         button.Width = width;
         button.Text = text;
-        button.Click += (_s, _e) =>
+        button.Click += (_, _) =>
         {
           if ( action is null )
           {
@@ -178,7 +178,7 @@ partial class CommonMenusControl : UserControl
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Globals.HelpFilePath);
+    using var process = SystemManager.RunShell(Globals.HelpFilePath);
   }
 
   private void ActionReleaseNotes_Click(object sender, EventArgs e)
@@ -228,12 +228,13 @@ partial class CommonMenusControl : UserControl
                                     new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
     File.WriteAllText(filePath, fileLines, Encoding.UTF8);
-    SystemManager.RunShell(filePath);
+    using var process = SystemManager.RunShell(filePath);
     var timer = new System.Windows.Forms.Timer { Interval = 60000 };
-    timer.Tick += (_s, _e) =>
+    timer.Tick += (_, _) =>
     {
       timer.Stop();
       SystemManager.TryCatch(() => File.Delete(filePath));
+      timer.Dispose();
     };
     timer.Start();
   }

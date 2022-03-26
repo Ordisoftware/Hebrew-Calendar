@@ -54,7 +54,7 @@ public partial class MainForm
   /// <summary>
   /// Centers the form to the screen.
   /// </summary>
-  public new void CenterToScreen()
+  public void CenterToScreen()
   {
     base.CenterToScreen();
   }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -104,7 +104,7 @@ partial class MainForm
           return true;
         case Keys.Decimal:
         case Keys.Control | Keys.B:
-          if ( DateSelected.HasValue )
+          if ( DateSelected is not null )
             GoToDate(DateSelected.Value);
           else
             GoToDate(DateTime.Today);

@@ -151,7 +151,8 @@ namespace Keith_Burnett_moonr2cs
       //
       double nz, a, b, c, dis, dx, xe, ye, z1, z2;
       //var quadout = new Array;
-      z1 = z2 = 0;
+      z1 = 0;
+      z2 = 0;
       nz = 0;
       a = 0.5 * ( ym + yp ) - yz;
       b = 0.5 * ( yp - ym );

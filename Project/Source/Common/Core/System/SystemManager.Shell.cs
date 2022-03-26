@@ -109,7 +109,7 @@ static partial class SystemManager
   /// </returns>
   static public string MakeMailLink(string link)
   {
-    return !link.StartsWith("mailto:") ? "mailto:" + link : link;
+    return !link.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ? "mailto:" + link : link;
   }
 
   /// <summary>
@@ -118,7 +118,7 @@ static partial class SystemManager
   /// <param name="link">The mail address.</param>
   static public void OpenMailLink(string link)
   {
-    RunShell(MakeMailLink(link));
+    using var process = RunShell(MakeMailLink(link));
   }
 
   /// <summary>
@@ -130,7 +130,11 @@ static partial class SystemManager
   /// </returns>
   static public string MakeWebLink(string link)
   {
-    return !link.StartsWith("http://") && !link.StartsWith("https://") ? "http://" + link : link;
+    if ( !link.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+      && !link.StartsWith("https://", StringComparison.OrdinalIgnoreCase) )
+      return "http://" + link;
+    else
+      return link;
   }
 
   /// <summary>
@@ -140,7 +144,7 @@ static partial class SystemManager
   static public void OpenWebLink(string link)
   {
     if ( link.IsNullOrEmpty() ) return;
-    RunShell(MakeWebLink(link));
+    using var process = RunShell(MakeWebLink(link));
   }
 
   /// <summary>
@@ -191,10 +195,11 @@ static partial class SystemManager
     OpenWebLink(Globals.GitHubCreateIssueURL + query);
   }
 
+
   /// <summary>
   /// Gets the SHA-512 checksum of a file.
   /// </summary>
-  static public string GetChecksum512(string filePath)
+  static public string GetChecksumSha512(string filePath)
   {
     try
     {

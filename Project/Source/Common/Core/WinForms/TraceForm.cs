@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 partial class TraceForm : Form
@@ -153,10 +153,10 @@ partial class TraceForm : Form
       else
       {
         var content = File.ReadAllText(file);
-        string str1 = $"{LogTraceEvent.Error} {DebugManager.EventSeparator}";
-        string str2 = $"{LogTraceEvent.Exception} {DebugManager.EventSeparator}";
-        if ( content.IndexOf(str1, StringComparison.OrdinalIgnoreCase) >= 0
-          || content.IndexOf(str2, StringComparison.OrdinalIgnoreCase) >= 0 )
+        string strError = $"{LogTraceEvent.Error} {DebugManager.EventSeparator}";
+        string strException = $"{LogTraceEvent.Exception} {DebugManager.EventSeparator}";
+        if ( content.IndexOf(strError, StringComparison.OrdinalIgnoreCase) >= 0
+          || content.IndexOf(strException, StringComparison.OrdinalIgnoreCase) >= 0 )
           SelectFile.Items.Add(file);
       }
     SelectFileNavigator.Refresh();

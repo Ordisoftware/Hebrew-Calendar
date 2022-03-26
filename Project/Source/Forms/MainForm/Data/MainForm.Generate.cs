@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -24,15 +24,17 @@ partial class MainForm
   {
     try
     {
-      if ( checkover && Settings.AutoRegenerate && YearsInterval > Settings.AutoGenerateYearsInternal )
-        if ( Settings.AskRegenerateIfIntervalGreater )
-        {
-          string msg = AppTranslations.AskToRegenerate.GetLang(Settings.AutoGenerateYearsInternal, YearsInterval);
-          DisplayManager.QueryYesNoCancel(msg,
-          () => force = true,
-          null,
-          () => Settings.AskRegenerateIfIntervalGreater = false);
-        }
+      if ( checkover
+        && Settings.AutoRegenerate
+        && YearsInterval > Settings.AutoGenerateYearsInternal
+        && Settings.AskRegenerateIfIntervalGreater )
+      {
+        string msg = AppTranslations.AskToRegenerate.GetLang(Settings.AutoGenerateYearsInternal, YearsInterval);
+        DisplayManager.QueryYesNoCancel(msg,
+        () => force = true,
+        null,
+        () => Settings.AskRegenerateIfIntervalGreater = false);
+      }
       if ( force || DateTime.Today.Year >= YearLast - Program.GenerateIntervalPreviousYears )
         if ( force || auto || Settings.AutoRegenerate )
         {
@@ -105,7 +107,7 @@ partial class MainForm
           TimerReminder_Tick(null, null);
         }
         else
-        if ( DateSelected.HasValue )
+        if ( DateSelected is not null )
           if ( DateSelected < DateFirst || DateSelected > DateLast )
             DateSelected = null;
       }

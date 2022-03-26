@@ -41,6 +41,8 @@ public partial class MainForm
             if ( CalendarMonth.CalendarDate.Month != dayRow.Date.Month )
               GoToDate(dayRow.Date);
             break;
+          default:
+            throw new AdvancedNotImplementedException(Settings.CalendarDoubleClickAction);
         }
       else
       if ( e.Clicks == 1 )
@@ -124,14 +126,14 @@ public partial class MainForm
     }
     // Times
     ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != CalendarMonth.CalendarDate.Date;
-    ContextMenuDayClearSelection.Enabled = DateSelected.HasValue && DateSelected != DateTime.Today;
-    ContextMenuDaySelectDate.Enabled = ( !DateSelected.HasValue && DateTime.Today != ContextMenuDayCurrentEvent.Date )
-                                        || ( DateSelected.HasValue && DateSelected != ContextMenuDayCurrentEvent.Date );
+    ContextMenuDayClearSelection.Enabled = DateSelected is not null && DateSelected != DateTime.Today;
+    ContextMenuDaySelectDate.Enabled = ( DateSelected is null && DateTime.Today != ContextMenuDayCurrentEvent.Date )
+                                        || ( DateSelected is not null && DateSelected != ContextMenuDayCurrentEvent.Date );
     ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Date != DateTime.Today;
-    ContextMenuDayGoToSelected.Enabled = DateSelected.HasValue
+    ContextMenuDayGoToSelected.Enabled = DateSelected is not null
                                          && DateSelected.Value != ContextMenuDayCurrentEvent.Date;
     ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;
-    ContextMenuDayDatesDiffToSelected.Enabled = DateSelected.HasValue
+    ContextMenuDayDatesDiffToSelected.Enabled = DateSelected is not null
                                                 && ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;
     if ( Settings.TorahEventsCountAsMoon )
     {

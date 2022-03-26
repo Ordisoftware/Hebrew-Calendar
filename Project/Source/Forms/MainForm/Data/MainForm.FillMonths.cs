@@ -143,7 +143,7 @@ partial class MainForm
                       : Settings.CalendarColorMoon );
           if ( !Settings.TorahEventsCountAsMoon )
           {
-            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.SunriseAsString + " " + strMonthDay);
+            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.SunriseAsString} {strMonthDay}");
             add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString);
           }
           else
@@ -153,7 +153,7 @@ partial class MainForm
               if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -161,7 +161,7 @@ partial class MainForm
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + row.MoonriseAsString + " " + strMonthDay);
+                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);

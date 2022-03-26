@@ -176,7 +176,8 @@ static partial class Globals
   /// Indicates running processes whose names starts with "AssemblyCompany.".
   /// </summary>
   static public IEnumerable<Process> SameCompanyRunningProcesses
-    => Process.GetProcesses().Where(p => p.ProcessName.StartsWith($"{AssemblyCompany}."));
+    => Process.GetProcesses().Where(p => p.ProcessName.StartsWith($"{AssemblyCompany}.",
+                                                                  StringComparison.CurrentCultureIgnoreCase));
 
   /// <summary>
   /// Indicates running processes whose names starts with "[AssemblyCompany]." not being this one.

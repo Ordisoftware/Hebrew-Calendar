@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -69,7 +69,7 @@ static class SQLiteDate
   /// <returns>An empty string if time is null</returns>
   static public string ToString(TimeSpan? time)
   {
-    return time.HasValue ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
+    return time is not null ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
   }
 
   /// <summary>
@@ -79,7 +79,7 @@ static class SQLiteDate
   /// <returns>An empty string if time is null</returns>
   //static string ToStringFromTime(DateTime? date)
   //{
-  //  return date.HasValue ? $"{date.Value.Hour:00}:{date.Value.Minute:00}" : string.Empty;
+  //  return date is not null ? $"{date.Value.Hour:00}:{date.Value.Minute:00}" : string.Empty;
   //}
 
   /// <summary>
@@ -87,7 +87,7 @@ static class SQLiteDate
   /// </summary>
   static public DateTime? Add(TimeSpan? time, DateTime date)
   {
-    return time.HasValue ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
+    return time is not null ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
   }
 
   /// <summary>

@@ -228,6 +228,7 @@ static class StackMethods
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
   }
 
+
   /// <summary>
   /// Ensure drop down menu items are displayed on the same screen.
   /// </summary>

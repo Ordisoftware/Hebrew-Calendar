@@ -48,13 +48,13 @@ partial class MainForm
     else
     if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
     {
-      if ( LastCelebrationReminded[torahevent].HasValue )
+      if ( LastCelebrationReminded[torahevent] is not null )
         return result;
       else
         LastCelebrationReminded[torahevent] = dateNow;
     }
     else
-    if ( LastCelebrationReminded[torahevent].HasValue )
+    if ( LastCelebrationReminded[torahevent] is not null )
     {
       if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent].Value < times.DateStart )
       {

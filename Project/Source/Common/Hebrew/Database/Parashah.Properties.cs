@@ -51,7 +51,7 @@ public partial class Parashah
     set
     {
       _Memo = value;
-      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HasMemo"));
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasMemo)));
     }
   }
   private string _Memo;

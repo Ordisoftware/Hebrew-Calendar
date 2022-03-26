@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -164,8 +164,7 @@ static class SQLiteNetHelper
   /// <param name="table"></param>
   static public void DropTableIfExists(this SQLiteNetORM connection, string table)
   {
-    const string argnameTable = nameof(table);
-    if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
+    if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     try
     {
       connection.Execute($"DROP TABLE IF EXISTS [{table}]");
@@ -182,6 +181,7 @@ static class SQLiteNetHelper
   /// <param name="connection">The connection.</param>
   /// <param name="tableOldName">Old name.</param>
   /// <param name="tableNewName">New name.</param>
+  [SuppressMessage("Usage", "MA0043:Use nameof operator in ArgumentException", Justification = "N/A")]
   static public void RenameTableIfExists(this SQLiteNetORM connection, string tableOldName, string tableNewName)
   {
     const string argnameTableOld = nameof(tableOldName);

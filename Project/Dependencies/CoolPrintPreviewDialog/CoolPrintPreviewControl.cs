@@ -47,6 +47,7 @@ namespace CoolPrintPreview
   /// it displays pages as they are rendered. By contrast, the standard control
   /// waits until the entire document is rendered before it displays anything.
   /// </remarks>
+  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------
@@ -282,7 +283,7 @@ namespace CoolPrintPreview
       }
 
       // print using helper class
-      var dp = new DocumentPrinter(this, first, last);
+      using var dp = new DocumentPrinter(this, first, last);
       dp.Print();
     }
 
@@ -319,6 +320,7 @@ namespace CoolPrintPreview
     /// Occurs when the value of the <see cref="ZoomMode"/> property changes.
     /// </summary>
     public event EventHandler ZoomModeChanged;
+
     /// <summary>
     /// Raises the <see cref="ZoomModeChanged"/> event.
     /// </summary>

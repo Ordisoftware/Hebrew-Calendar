@@ -1178,7 +1178,7 @@ partial class MainForm : Form
 
   private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
   {
-    if ( _DateSelected.HasValue ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
+    if ( _DateSelected is not null ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
   }
 
   private void ContextMenuDayDatesDiffTo(DateTime date)

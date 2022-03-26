@@ -37,17 +37,17 @@ partial class MainForm
       return result;
     }
     else
-#pragma warning disable S2589 // Boolean expressions should not be gratuitous - Analysis Error
-      if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
-#pragma warning restore S2589 // Boolean expressions should not be gratuitous
+    //#pragma warning disable S2589 // Boolean expressions should not be gratuitous - Analysis Error
+    if ( dateNow >= dateTrigger && dateNow < times.DateStartCheck )
     {
-      if ( LastShabatReminded.HasValue )
+      if ( LastShabatReminded is not null )
         return result;
       else
         LastShabatReminded = dateNow;
     }
+    //#pragma warning restore S2589 // Boolean expressions should not be gratuitous
     else
-      if ( LastShabatReminded.HasValue )
+      if ( LastShabatReminded is not null )
     {
       if ( dateNow > times.DateStart && LastShabatReminded.Value < times.DateStart )
       {

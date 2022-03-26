@@ -25,6 +25,7 @@ static class HebrewTools
   /// <summary>
   /// Remove diacritics and numbers Alef or Bet.
   /// </summary>
+  [SuppressMessage("Usage", "MA0074:Avoid implicit culture-sensitive methods", Justification = "N/A")]
   static public (string Word, bool IsUnicode) RemoveNumberingAndDiacritics(string word)
   {
     word = word.RemoveDiacritics();

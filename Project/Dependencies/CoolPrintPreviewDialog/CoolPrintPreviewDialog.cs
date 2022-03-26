@@ -21,6 +21,7 @@ namespace CoolPrintPreview
   /// PDF export.
   /// </remarks>
   [SuppressMessage("Style", "IDE1006:Styles d'affectation de noms", Justification = "N/A")]
+  [SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC020:Prefer expression body accessor.", Justification = "<En attente>")]
   internal partial class CoolPrintPreviewDialog : Form
   {
 
@@ -149,7 +150,7 @@ namespace CoolPrintPreview
       dlg.UseEXDialog = false;
       dlg.Document = Document;
       int indexPage = 0;
-      dlg.Document.PrintPage += (_s, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
+      dlg.Document.PrintPage += (_, _e) => _e.HasMorePages = ++indexPage < _preview.PageCount;
       // ORDISOFTWARE MODIF END
 
       // show allowed page range
