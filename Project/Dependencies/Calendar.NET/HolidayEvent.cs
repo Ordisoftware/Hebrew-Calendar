@@ -114,6 +114,7 @@ namespace CodeProjectCalendar.NET
       RecurringFrequency = RecurringFrequencies.None;
     }
 
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
     public IEvent Clone()
     {
       return new HolidayEvent

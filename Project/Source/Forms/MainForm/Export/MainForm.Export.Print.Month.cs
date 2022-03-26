@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -61,7 +61,7 @@ partial class MainForm
       //
       void process()
       {
-        var bitmap = CalendarMonth.GetBitmap();
+        using var bitmap = CalendarMonth.GetBitmap();
         int delta = !redone ? 0 : e.PageBounds.Height / 2;
         e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
         if ( multi )

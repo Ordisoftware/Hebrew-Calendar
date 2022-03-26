@@ -76,7 +76,7 @@ partial class MainForm
     document.DefaultPageSettings.Margins = new Margins(margin, margin, margin, margin);
     if ( Settings.ShowPrintPreviewDialog )
     {
-      var preview = new CoolPrintPreviewDialog
+      using var preview = new CoolPrintPreviewDialog
       {
         WindowState = FormWindowState.Maximized,
         ShowInTaskbar = true,
@@ -88,7 +88,7 @@ partial class MainForm
     }
     else
     {
-      var dialog = new PrintDialog
+      using var dialog = new PrintDialog
       {
         UseEXDialog = false,
         Document = document

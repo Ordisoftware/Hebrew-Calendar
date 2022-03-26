@@ -237,6 +237,7 @@ namespace CoolPrintPreview
     /// Gets or sets the control's background color.
     /// </summary>
     [DefaultValue(typeof(Color), "AppWorkspace")]
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "<En attente>")]
     public override Color BackColor
     {
       get { return base.BackColor; }

@@ -127,8 +127,10 @@ public partial class CelebrationVersesBoardForm : Form
     }
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void CelebrationVersesBoardForm_FormClosed(object sender, FormClosedEventArgs e)
   {
+    Instance?.Dispose();
     Instance = null;
   }
 

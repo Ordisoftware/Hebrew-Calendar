@@ -75,8 +75,10 @@ partial class NewMoonsBoardForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void NewMoonsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
   {
+    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -215,6 +217,7 @@ partial class NewMoonsBoardForm : Form
     MainForm.Instance.GoToDate((DateTime)value, true);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   private void CreateDataTable()
   {
     DataGridView.DataSource = null;

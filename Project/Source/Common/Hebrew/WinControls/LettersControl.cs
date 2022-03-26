@@ -278,6 +278,7 @@ partial class LettersControl : UserControl
   {
     if ( !first ) return;
     first = false;
+    TextBox.Font?.Dispose();
     TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
     Redraw();
   }

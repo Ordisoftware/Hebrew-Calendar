@@ -252,6 +252,7 @@ partial class ReminderForm : Form
     this.InitDropDowns();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   private void ReminderForm_Load(object sender, EventArgs e)
   {
     PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart };

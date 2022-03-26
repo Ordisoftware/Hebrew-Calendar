@@ -250,11 +250,11 @@ partial class PreferencesForm
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   private void LoadFonts()
   {
-    var list = new InstalledFontCollection().Families;
-    var fonts = list
-                                             .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
-                                             .Select(font => font.Name)
-                                             .OrderBy(name => name);
+    using var list = new InstalledFontCollection();
+    var fonts = list.Families
+                    .Where(value => MonoSpacedFonts.Contains(value.Name.ToLower()))
+                    .Select(font => font.Name)
+                    .OrderBy(name => name);
     foreach ( var name in fonts )
     {
       int index = EditTextReportFontName.Items.Add(name);

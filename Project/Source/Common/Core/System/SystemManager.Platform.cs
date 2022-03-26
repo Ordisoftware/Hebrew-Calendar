@@ -38,7 +38,7 @@ static partial class SystemManager
         try
         {
           var procs = new List<string>();
-          var list = new ManagementObjectSearcher(@"root\CIMV2", "SELECT * FROM Win32_Processor").Get();
+          using var list = new ManagementObjectSearcher(@"root\CIMV2", "SELECT * FROM Win32_Processor").Get();
           var enumerator = list.GetEnumerator();
           bool newline = false;
           if ( enumerator.MoveNext() )
@@ -165,7 +165,7 @@ static partial class SystemManager
     try
     {
       var wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
-      var list = new ManagementObjectSearcher(wql).Get();
+      using var list = new ManagementObjectSearcher(wql).Get();
       if ( list.Count > 0 )
       {
         var enumerator = list.GetEnumerator();

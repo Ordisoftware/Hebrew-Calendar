@@ -121,9 +121,12 @@ static class OnlineProvidersHelper
     menuItem.MouseUp += Menu_MouseUp;
   }
 
+
   /// <summary>
   /// Creates sub-menu items for web links menu.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "<En attente>")]
   static public void InitializeFromWebLinks(this ToolStripDropDownButton menuRoot, Action reconstruct)
   {
     var providers = Globals.WebLinksProviders;

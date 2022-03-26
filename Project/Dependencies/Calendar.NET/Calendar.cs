@@ -30,6 +30,7 @@ namespace CodeProjectCalendar.NET
   /// </summary>
   [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;
@@ -370,6 +371,7 @@ namespace CodeProjectCalendar.NET
     }
 
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
     private void InitializeComponent()
     {
       Container components;

@@ -121,6 +121,7 @@ partial class ManageBookmarksForm : Form
     ListBox.Focus();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   private void ActionExport_Click(object sender, EventArgs e)
   {
     SaveBookmarksDialog.FileName = TableName;

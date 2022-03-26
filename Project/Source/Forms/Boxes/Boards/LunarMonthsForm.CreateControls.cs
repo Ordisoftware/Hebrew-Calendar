@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class LunarMonthsForm : Form
 {
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   public void CreateControls()
   {
     PanelMonths.Controls.Clear();

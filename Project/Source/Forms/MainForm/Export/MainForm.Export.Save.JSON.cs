@@ -39,11 +39,10 @@ partial class MainForm
         SeasonChange = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges),
         TorahEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays),
       });
-      var dataset = new DataSet(Globals.AssemblyTitle);
+      using var dataset = new DataSet(Globals.AssemblyTitle);
       dataset.Tables.Add(data.ToDataTable(nameof(LunisolarDays)));
       string result = JsonConvert.SerializeObject(dataset, Formatting.Indented);
       dataset.Tables.Clear();
-      dataset.Dispose();
       return result;
     }
     finally

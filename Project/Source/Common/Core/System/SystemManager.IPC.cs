@@ -65,6 +65,7 @@ static partial class SystemManager
   /// <summary>
   /// Checks if the process is already running.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   static public bool CheckApplicationOnlyOneInstance(AsyncCallback ipcRequests)
   {
     try
@@ -105,6 +106,7 @@ static partial class SystemManager
     if ( !Globals.IsCurrentUserAdmin ) return;
     try
     {
+      IPCServer?.Dispose();
       IPCServer = new NamedPipeServerStream(Globals.AssemblyGUID,
                                             PipeDirection.InOut,
                                             1,
@@ -114,6 +116,7 @@ static partial class SystemManager
     }
     catch ( Exception ex )
     {
+      IPCServer?.Dispose();
       IPCServer = null;
       ex.Manage();
     }

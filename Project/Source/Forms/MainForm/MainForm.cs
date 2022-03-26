@@ -299,11 +299,13 @@ partial class MainForm : Form
 
   internal bool PreferencesMutex;
 
+
   /// <summary>
   /// Event handler. Called by ActionPreferences for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     if ( !ActionPreferences.Enabled ) return;
@@ -325,6 +327,9 @@ partial class MainForm : Form
         PanelViewMonth.Parent = null;
         PanelViewGrid.Parent = null;
         PanelViewMonth.Visible = false;
+        CodeProjectCalendar.NET.Calendar.PenHoverEffect?.Dispose();
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush?.Dispose();
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush?.Dispose();
         CodeProjectCalendar.NET.Calendar.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
         CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
         CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
@@ -498,6 +503,7 @@ partial class MainForm : Form
   /// <summary>
   /// Shows a notice.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
   private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
   {
     switch ( DisplayManager.FormStyle )

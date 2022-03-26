@@ -26,6 +26,7 @@ partial class DatesDiffCalculatorForm : Form
     Instance = new DatesDiffCalculatorForm();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
     bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
@@ -99,6 +100,7 @@ partial class DatesDiffCalculatorForm : Form
   }
 
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   public void Relocalize()
   {
     if ( !Globals.IsReady ) return;
@@ -106,6 +108,7 @@ partial class DatesDiffCalculatorForm : Form
     var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
+    Instance?.Dispose();
     Instance = new DatesDiffCalculatorForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
     Instance.DateStart.Tag = date1;

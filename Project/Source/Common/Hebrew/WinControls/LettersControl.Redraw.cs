@@ -25,7 +25,7 @@ partial class LettersControl
   /// <summary>
   /// Creates letters buttons and labels.
   /// </summary>
-  [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   public void Redraw()
   {
     if ( !Created || RedrawMutex ) return;
@@ -36,6 +36,7 @@ partial class LettersControl
     {
       // TODO calculate buttons and labels size from fonts size at startup and future setting changed
       PanelLetters.Controls.Clear();
+      TextBox.Font?.Dispose();
       TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
       int countLetters = HebrewAlphabet.Codes.Length;
       int countControls = countLetters;
@@ -43,8 +44,8 @@ partial class LettersControl
       if ( _ShowKeys ) countControls += countLetters;
       var controls = new Control[countControls];
       var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
-      var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
-      var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
+      using var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
+      using var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
       const int lettersPerLine = 11;
       int lineLetterCount = 1;
       int width = PanelLetters.Width - 10;
@@ -63,14 +64,11 @@ partial class LettersControl
       int deltaYAndValuesAndKeys = deltaY + deltaValuesAndKeys + deltaValue2;
       int deltaLine = deltaY + deltaBetweenLines + deltaValues + deltaKeys;
       var colorLabel = Color.DimGray;
-      Button buttonLetter = null;
-      Label labelValue = null;
-      Label labelKey = null;
       for ( int index = 0, indexControl = 0; index < countLetters; index++ )
       {
         ref string letter = ref HebrewAlphabet.Codes[index];
         // Button letter
-        buttonLetter = new Button
+        var buttonLetter = new Button
         {
           Location = new Point(posX, posY),
           Size = new Size(deltaY, deltaY),
@@ -89,7 +87,7 @@ partial class LettersControl
         // Label value
         if ( _ShowValues )
         {
-          labelValue = new Label
+          controls[indexControl++] = new Label
           {
             Location = new Point(posX, posY + deltaY),
             Size = sizeLabelKey,
@@ -99,12 +97,11 @@ partial class LettersControl
             Text = HebrewAlphabet.ValuesSimple[index].ToString(),
             TextAlign = ContentAlignment.MiddleCenter
           };
-          controls[indexControl++] = labelValue;
         }
         // Label key
         if ( _ShowKeys )
         {
-          labelKey = new Label
+          controls[indexControl++] = new Label
           {
             Location = new Point(posX, posY + deltaYAndValuesAndKeys),
             Font = fontKey,
@@ -114,7 +111,6 @@ partial class LettersControl
             BackColor = Color.Transparent,
             TextAlign = ContentAlignment.MiddleCenter
           };
-          controls[indexControl++] = labelKey;
         }
         // Loop
         lineLetterCount++;
