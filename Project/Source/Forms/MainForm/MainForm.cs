@@ -962,9 +962,10 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void CalendarText_SelectionChanged(object sender, EventArgs e)
   {
+    if ( Globals.IsGenerating ) return;
     int index = CalendarText.SelectionStart;
     int line = CalendarText.GetLineFromCharIndex(index);
-    if ( CalendarText.Lines[line].Length >= 16 )
+    if ( line < CalendarText.Lines.Length && CalendarText.Lines[line].Length >= 16 )
     {
       string str = CalendarText.Lines[line].Substring(6, 10);
       if ( DateTime.TryParse(str, out var date) )
