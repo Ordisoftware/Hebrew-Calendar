@@ -90,7 +90,7 @@ static class NullSafeOfStringDictionaryHelper
             list.Add(parts[0].Trim(), parts[1].Trim());
           else
           if ( parts.Length > 2 )
-            list.Add(parts[0].Trim(), string.Join(separator, parts.Skip(1)));
+            list.Add(parts[0].Trim(), parts.Skip(1).Join(separator));
         }
       return true;
     }

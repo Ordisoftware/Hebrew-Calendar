@@ -219,7 +219,7 @@ static partial class SystemManager
     while ( processes.Any() && result != DialogResult.Cancel )
     {
       var list = processes.Select(p => p.ProcessName);
-      var names = string.Join(Globals.NL, list.ToArray());
+      var names = list.AsMultiLine();
       string message = SysTranslations.CloseApplicationsRequired.GetLang(reason, names.Indent(5, 5));
       using ( var form = new MessageBoxEx(Globals.AssemblyTitle,
                                           message,

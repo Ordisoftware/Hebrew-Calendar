@@ -488,7 +488,7 @@ static partial class DebugManager
       list.Add("[Inner] " + getText(einfo));
       einfo = einfo.InnerInfo;
     }
-    return list.Join(Globals.NL2);
+    return list.AsMultiDoubleLine();
   }
 
 }

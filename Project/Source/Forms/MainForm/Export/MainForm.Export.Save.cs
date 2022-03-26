@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -50,7 +50,7 @@ partial class MainForm
           SaveTextDialog.FileName = GetExportDataFilename(interval);
           if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
           filePath = SaveTextDialog.FileName;
-          File.WriteAllText(filePath, string.Join(Globals.NL, lines), Encoding.UTF8);
+          File.WriteAllText(filePath, lines.AsMultiLine(), Encoding.UTF8);
           return true;
         });
       },

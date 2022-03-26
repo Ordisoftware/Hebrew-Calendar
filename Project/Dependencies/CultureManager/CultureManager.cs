@@ -603,7 +603,7 @@ namespace Infralution.Localization
     /// <returns></returns>
     protected virtual bool IsExcluded(string componentName, string propertyName)
     {
-      string resourceName = componentName + "." + propertyName;
+      string resourceName = $"{componentName}.{propertyName}";
       foreach ( string value in _excludeProperties )
       {
         if ( value.IndexOf('.') >= 0 )

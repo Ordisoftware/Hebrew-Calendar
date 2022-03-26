@@ -167,7 +167,7 @@ partial class ParashotForm : Form
   private void ActionViewLockers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     var table = Interlocks.GetLockers(HebrewDatabase.Instance.ParashotTableName);
-    string list = string.Join(Globals.NL, table).Indent(4);
+    string list = table.AsMultiLine().Indent(4);
     string name = HebrewDatabase.Instance.ParashotTableName;
     string msg = SysTranslations.DatabaseTableLocked.GetLang(name, list, Timer.Interval / 1000);
     DisplayManager.Show(msg);
