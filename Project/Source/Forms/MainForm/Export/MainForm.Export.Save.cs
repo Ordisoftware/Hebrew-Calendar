@@ -79,7 +79,7 @@ partial class MainForm
                 SaveImageDialog.FilterIndex = index + 1;
             if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
             filePath = SaveImageDialog.FileName;
-            var bitmap = CalendarMonth.GetBitmap();
+            using var bitmap = CalendarMonth.GetBitmap();
             bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
             return true;
           }
@@ -128,7 +128,7 @@ partial class MainForm
       {
         string filename = $"{nameof(LunisolarDays)} {CalendarMonth.CalendarDate.Year}-{CalendarMonth.CalendarDate.Month:00}"
                         + Program.ImageExportTargets[Settings.ExportImagePreferredTarget];
-        var bitmap = CalendarMonth.GetBitmap();
+        using var bitmap = CalendarMonth.GetBitmap();
         bitmap.Save(Path.Combine(path, filename), Settings.ExportImagePreferredTarget.GetFormat());
         CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
         HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;

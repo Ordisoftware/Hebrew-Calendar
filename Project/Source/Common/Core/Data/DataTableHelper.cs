@@ -23,6 +23,7 @@ static class DataTableHelper
   /// <summary>
   /// Exports a DataTable to a file depending its extension.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
   {
     string extension = Path.GetExtension(filePath);

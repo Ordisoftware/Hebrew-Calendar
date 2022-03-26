@@ -126,6 +126,7 @@ abstract class SQLiteDatabase
     Rollback();
     DoClose();
     Connection.Close();
+    Connection.Dispose();
     Connection = null;
     Loaded = false;
   }

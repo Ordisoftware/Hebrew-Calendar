@@ -650,6 +650,7 @@ namespace Infralution.Localization
     /// <param name="culture">The culture resources to apply</param>
     [SuppressMessage("Major Code Smell", "S3011:Reflection should not be used to increase accessibility of classes, methods, or fields", Justification = "N/A")]
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
     protected virtual void ApplyResources(Type componentType, IComponent instance, CultureInfo culture)
     {
       // check whether there are localizable resources for the type - if not we are done

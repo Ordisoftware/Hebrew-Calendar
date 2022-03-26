@@ -36,7 +36,8 @@ partial class MainForm
           Globals.IsPrinting = true;
           CalendarMonth.ShowTodayButton = false;
           CalendarMonth.ShowArrowControls = false;
-          Clipboard.SetImage(CalendarMonth.GetBitmap());
+          using var bitmap = CalendarMonth.GetBitmap();
+          Clipboard.SetImage(bitmap);
           return true;
         }
         finally

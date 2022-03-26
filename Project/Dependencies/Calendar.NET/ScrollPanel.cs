@@ -42,7 +42,7 @@ namespace CodeProjectCalendar.NET
     {
       var c = (Calendar)Parent;
 
-      Bitmap bmp = c.RequestImage();
+      using Bitmap bmp = c.RequestImage();
       if ( bmp is null )
         return;
 
@@ -51,7 +51,6 @@ namespace CodeProjectCalendar.NET
                            GraphicsUnit.Pixel);
       _bmpSize = bmp.Height;
       //e.Graphics.Dispose();
-      bmp.Dispose();
     }
 
     private void ScrollPanel_MouseDown(object sender, MouseEventArgs e)

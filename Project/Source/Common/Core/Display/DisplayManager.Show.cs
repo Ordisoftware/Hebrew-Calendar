@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2023-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -77,7 +77,8 @@ static partial class DisplayManager
   /// </summary>
   static public void DoSound(string pathSound)
   {
-    new SoundPlayer(pathSound).Play();
+    using var sound = new SoundPlayer(pathSound);
+    sound.Play();
   }
 
   /// <summary>

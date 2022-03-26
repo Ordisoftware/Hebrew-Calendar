@@ -72,13 +72,13 @@ static partial class SystemManager
   }
 
   /// <summary>
-  /// Starts a process.
+  /// Starts a process and return its managed instance.
   /// </summary>
   /// <param name="filePath">The file path.</param>
-  /// <param name="arguments">The comamnd line arguments.</param>
+  /// <param name="arguments">The command line arguments.</param>
   /// <param name="asAdmin">True if run as admin.</param>
   /// <param name="style">Process Window Style.</param>
-  static public Process RunShell(string filePath, string arguments = "", bool asAdmin = false, ProcessWindowStyle style = ProcessWindowStyle.Normal)
+  static public Process GetRunShell(string filePath, string arguments = "", bool asAdmin = false, ProcessWindowStyle style = ProcessWindowStyle.Normal)
   {
     var process = new Process();
     try
@@ -102,6 +102,18 @@ static partial class SystemManager
   }
 
   /// <summary>
+  /// Starts a process.
+  /// </summary>
+  /// <param name="filePath">The file path.</param>
+  /// <param name="arguments">The command line arguments.</param>
+  /// <param name="asAdmin">True if run as admin.</param>
+  /// <param name="style">Process Window Style.</param>
+  static public void RunShell(string filePath, string arguments = "", bool asAdmin = false, ProcessWindowStyle style = ProcessWindowStyle.Normal)
+  {
+    using var process = GetRunShell(filePath, arguments, asAdmin, style);
+  }
+
+  /// <summary>
   /// Adds "mailto:" to a string if it does not start with "mailto:".
   /// </summary>
   /// <param name="link">The link.</param>
@@ -119,7 +131,7 @@ static partial class SystemManager
   /// <param name="link">The mail address.</param>
   static public void OpenMailLink(string link)
   {
-    using var process = RunShell(MakeMailLink(link));
+    RunShell(MakeMailLink(link));
   }
 
   /// <summary>
@@ -145,7 +157,7 @@ static partial class SystemManager
   static public void OpenWebLink(string link)
   {
     if ( link.IsNullOrEmpty() ) return;
-    using var process = RunShell(MakeWebLink(link));
+    RunShell(MakeWebLink(link));
   }
 
   /// <summary>

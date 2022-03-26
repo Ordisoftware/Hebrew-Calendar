@@ -34,7 +34,7 @@ partial class SelectCityForm : Form
     try
     {
       string filePath = Program.GPSFilePath;
-      var parser = new FileHelperAsyncEngine<WorldCities>(Encoding.UTF8);
+      using var parser = new FileHelperAsyncEngine<WorldCities>(Encoding.UTF8);
       using ( parser.BeginReadFile(filePath) )
         foreach ( var item in parser )
         {

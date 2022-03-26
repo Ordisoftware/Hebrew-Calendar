@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2009-08 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -69,23 +69,23 @@ where T : IConvertible
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
+  /// <param name="isPassword">true to ispassword.</param>
   /// <param name="validator">The validator.</param>
-  static public InputValueResult Run(string title, string caption, ref T value, bool ispassword, Func<T, bool> validator)
+  static public InputValueResult Run(string title, string caption, ref T value, bool isPassword, Func<T, bool> validator)
   {
-    var f = new InputBox<T>();
-    f.TextBox.PasswordChar = ispassword ? '*' : '\0';
-    int dx = f.TextBox.Width;
-    if ( !title.IsNullOrEmpty() ) f.Text = title;
-    if ( !caption.IsNullOrEmpty() ) f.Label.Text = caption;
-    dx = f.Label.Width - dx;
-    if ( dx > 0 ) f.Width = f.Width + dx + 10;
-    f.Value = value;
-    f.Validator = validator;
-    if ( value is not null ) f.TextBox.Text = value.ToString();
-    if ( f.ShowDialog() == DialogResult.Cancel ) return InputValueResult.Cancelled;
-    if ( value is not null && f.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
-    value = f.Value;
+    using var form = new InputBox<T>();
+    form.TextBox.PasswordChar = isPassword ? '*' : '\0';
+    int dx = form.TextBox.Width;
+    if ( !title.IsNullOrEmpty() ) form.Text = title;
+    if ( !caption.IsNullOrEmpty() ) form.Label.Text = caption;
+    dx = form.Label.Width - dx;
+    if ( dx > 0 ) form.Width = form.Width + dx + 10;
+    form.Value = value;
+    form.Validator = validator;
+    if ( value is not null ) form.TextBox.Text = value.ToString();
+    if ( form.ShowDialog() == DialogResult.Cancel ) return InputValueResult.Cancelled;
+    if ( value is not null && form.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;
+    value = form.Value;
     return InputValueResult.Modified;
   }
 

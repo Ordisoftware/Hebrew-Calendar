@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -19,7 +19,7 @@ partial class MainForm
 
   private void ExportPrintTextReport(IEnumerable<string> lines)
   {
-    var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
+    using var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
     float fontHeight = -1;
     float marginLeft = -1;
     float marginTop = -1;
@@ -65,7 +65,7 @@ partial class MainForm
         PrinterCurrentLine++;
       }
       e.HasMorePages = PrinterCurrentLine < countTotalLines;
-      System.Threading.Thread.Sleep(10);
+      Thread.Sleep(10);
       Application.DoEvents();
     });
   }

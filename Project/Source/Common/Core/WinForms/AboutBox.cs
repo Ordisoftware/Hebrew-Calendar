@@ -175,15 +175,10 @@ partial class AboutBox : Form
   private void ActionOpenFolderMedias_Click(object sender, EventArgs e)
   {
     if ( Directory.Exists(Globals.ProjectMediasFolderPath) )
-    {
-      using var processMediasFolder = SystemManager.RunShell(Globals.ProjectMediasFolderPath);
-    }
+      SystemManager.RunShell(Globals.ProjectMediasFolderPath);
     if ( Directory.Exists(Globals.ApplicationSoundsFolderPath) )
-    {
-      using var processSoundsFolder = SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
-    }
+      SystemManager.RunShell(Globals.ApplicationSoundsFolderPath);
   }
-
 
   /// <summary>
   /// Event handler. Called by DataGridView for cell content clicked events.

@@ -11,17 +11,19 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Equin.ApplicationFramework;
 
+[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
 partial class HebrewDatabase : SQLiteDatabase
 {
 
   public List<TermHebrew> TermsHebrew { get; private set; }
   public List<TermLettriq> TermLettriqs { get; private set; }
   public List<TermAnalysis> TermAnalyzes { get; private set; }
+
 
   public BindingListView<TermHebrew> TermsHebrewAsBindingList { get; private set; }
   public BindingListView<TermLettriq> TermLettriqsAsBindingList { get; private set; }
@@ -34,7 +36,9 @@ partial class HebrewDatabase : SQLiteDatabase
     TermsHebrew = Load(Connection.Table<TermHebrew>());
     TermLettriqs = Load(Connection.Table<TermLettriq>());
     TermAnalyzes = Load(Connection.Table<TermAnalysis>());
+    TermsHebrewAsBindingList?.Dispose();
     TermsHebrewAsBindingList = new BindingListView<TermHebrew>(TermsHebrew);
+    TermLettriqsAsBindingList?.Dispose();
     TermLettriqsAsBindingList = new BindingListView<TermLettriq>(TermLettriqs);
     Instance.TermsHebrewAsBindingList.ApplySort((item1, item2) => item1.Hebrew[item1.Hebrew.Length - 1].CompareTo(item2.Hebrew[item2.Hebrew.Length - 1]));
     Instance.TermLettriqsAsBindingList.ApplySort(nameof(TermLettriq.Sentence));

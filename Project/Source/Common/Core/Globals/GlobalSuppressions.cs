@@ -38,7 +38,7 @@
 [assembly: SuppressMessage("Style", "RCS1001:Add braces (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1003:Add braces to if-else (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
 
-[assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.RunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
+[assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.GetRunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
 
 [assembly: SuppressMessage("Performance", "U2U1002:Method can be declared static", Justification = "Can be opinion or anti-pattern (analyzer may be improved)", Scope = "module")]
 [assembly: SuppressMessage("Performance", "U2U1010:Internal leaf classes can be sealed", Justification = "Can be opinion", Scope = "module")]
@@ -56,10 +56,10 @@
 [assembly: SuppressMessage("Design", "MA0048:File name must match type name", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0053:Make class sealed", Justification = "Can be opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0056:Do not call overridable members in constructor", Justification = "N/A", Scope = "module")]
-[assembly: SuppressMessage("Design", "MA0076:Do not use implicit culture-sensitive ToString in interpolated strings", Justification = "<En attente>", Scope = "module")]
+[assembly: SuppressMessage("Design", "MA0076:Do not use implicit culture-sensitive ToString in interpolated strings", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0003:Add parameter name to improve readability", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0007:Add a comma after the last value", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Usage", "MA0006:Use String.Equals instead of equality operator", Justification = "<En attente>", Scope = "module")]
+[assembly: SuppressMessage("Usage", "MA0006:Use String.Equals instead of equality operator", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0071:Avoid using redundant else", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Usage", "MA0091:Sender should be 'this' for instance events", Justification = "N/A", Scope = "module")]
 

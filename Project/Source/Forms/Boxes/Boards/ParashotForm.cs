@@ -195,9 +195,11 @@ partial class ParashotForm : Form
                                       () => e.Cancel = true);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
   {
     Timer.Stop();
+    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -274,7 +276,7 @@ partial class ParashotForm : Form
 
   private void DoExportTable(string filePath)
   {
-    var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
+    using var table = HebrewDatabase.Instance.Parashot.ToDataTable(HebrewDatabase.Instance.ParashotTableName);
     table.Export(filePath, Program.BoardExportTargets);
   }
 

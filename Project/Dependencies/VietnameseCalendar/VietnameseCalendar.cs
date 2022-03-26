@@ -279,6 +279,7 @@ namespace System.Globalization
 
     #region "internal methods"
 
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
     internal static int GetSystemTwoDigitYearSetting(int calendarId, int defaultYearValue)
     {
       int num = GetTwoDigitYearMax(calendarId);

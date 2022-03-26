@@ -182,7 +182,7 @@ partial class CommonMenusControl : UserControl
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    using var process = SystemManager.RunShell(Globals.HelpFilePath);
+    SystemManager.RunShell(Globals.HelpFilePath);
   }
 
   private void ActionReleaseNotes_Click(object sender, EventArgs e)
@@ -232,7 +232,7 @@ partial class CommonMenusControl : UserControl
                                     new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
     File.WriteAllText(filePath, fileLines, Encoding.UTF8);
-    using var process = SystemManager.RunShell(filePath);
+    SystemManager.RunShell(filePath);
     var timer = new System.Windows.Forms.Timer { Interval = 60000 };
     timer.Tick += (_, _) =>
     {

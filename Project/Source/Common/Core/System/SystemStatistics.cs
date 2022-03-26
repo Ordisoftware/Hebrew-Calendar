@@ -106,6 +106,7 @@ class SystemStatistics
   static private bool CPUProcessLoadInitMutex;
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   public string CPUProcessLoad
   {
     get
@@ -143,6 +144,7 @@ class SystemStatistics
       }
       catch
       {
+        PerformanceCounterCPUProcessLoad?.Dispose();
         PerformanceCounterCPUProcessLoad = null;
       }
       if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;

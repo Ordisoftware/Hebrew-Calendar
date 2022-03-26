@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class CelebrationsBoardForm : Form
@@ -80,8 +80,10 @@ partial class CelebrationsBoardForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void CelebrationsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
   {
+    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -222,6 +224,7 @@ partial class CelebrationsBoardForm : Form
     MainForm.Instance.GoToDate((DateTime)value);
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   private void CreateDataTable()
   {
     DataGridView.DataSource = null;

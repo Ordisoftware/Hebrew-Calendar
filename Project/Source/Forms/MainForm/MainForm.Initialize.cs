@@ -354,9 +354,11 @@ partial class MainForm
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
   }
 
+
   /// <summary>
   /// Initializes icons
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "N/A")]
   private void InitializeIconsAndSound()
   {
     SystemManager.TryCatch(() =>
@@ -374,6 +376,7 @@ partial class MainForm
   /// <summary>
   /// Initializes the calendar month view aspect.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   private void InitializeCalendarUI()
   {
     CalendarMonth.TheEvents.Clear();
@@ -381,15 +384,15 @@ partial class MainForm
     if ( Settings.UseColors )
     {
       PanelCalendar.BackColor = Settings.MonthViewNoDaysBackColor;
-      CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
+      CalenderNet.ColorText = Settings.MonthViewTextColor;
       CalendarMonth.ForeColor = Settings.MonthViewTextColor;
       CalendarMonth.BackColor = Settings.MonthViewBackColor;
+      CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
       CalenderNet.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
       CalenderNet.PenActiveDay = new Pen(Settings.CalendarColorActiveDay);
       CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
       CalenderNet.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
       CalenderNet.PenSelectedDay = new Pen(Settings.SelectedDayBoxColor);
-      CalenderNet.ColorText = Settings.MonthViewTextColor;
       CalenderNet.PenText = new Pen(Settings.MonthViewTextColor);
       CalenderNet.PenTextReduced
         = new Pen(Color.FromArgb(CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.R * 2 / 3,

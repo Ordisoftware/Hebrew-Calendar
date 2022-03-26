@@ -72,6 +72,7 @@ static partial class DisplayManager
   /// <param name="action">The action.</param>
   /// <param name="wait">true to wait.</param>
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "Done")]
   static public void SyncUI(this Control control, Action action, bool wait = true)
   {
     if ( control is null ) throw new ArgumentNullException(nameof(control));

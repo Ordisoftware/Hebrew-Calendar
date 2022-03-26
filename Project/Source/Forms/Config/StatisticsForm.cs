@@ -85,7 +85,8 @@ partial class StatisticsForm : Form
 
   private void ActionScreenshot_Click(object sender, EventArgs e)
   {
-    Clipboard.SetImage(PanelMain.GetBitmap());
+    using var bitmap = PanelMain.GetBitmap();
+    Clipboard.SetImage(bitmap);
     DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
                                       Globals.ScreenshotSoundFilePath);
   }

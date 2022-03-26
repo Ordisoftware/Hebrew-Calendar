@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using System.Configuration;
@@ -76,12 +76,12 @@ static partial class SystemManager
   {
     get
     {
-      var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
+      using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
       return (string)key.GetValue(Globals.ApplicationFullFileName) == Globals.ApplicationStartupRegistryValue;
     }
     set
     {
-      var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
+      using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyRun, true);
       if ( value )
         key.SetValue(Globals.ApplicationFullFileName, Globals.ApplicationStartupRegistryValue);
       else
