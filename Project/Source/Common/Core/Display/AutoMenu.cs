@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2019-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 public class MenuChoice
@@ -61,7 +61,7 @@ public partial class AutoMenu
     Console.WriteLine();
     Print();
     Console.WriteLine(Separator);
-    uint choice = GetUserChoice();
+    int choice = (int)GetUserChoice();
     if ( choice == Choices.Count + 1 )
       if ( Root is null )
         Console.WriteLine(ExitMessage);
@@ -69,7 +69,7 @@ public partial class AutoMenu
         Root.Run();
     else
     {
-      var action = Choices[(int)choice - 1].Action;
+      var action = Choices[choice - 1].Action;
       if ( action is not null )
         action();
       else

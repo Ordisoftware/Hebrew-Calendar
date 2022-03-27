@@ -146,7 +146,7 @@ partial class SelectCityForm : Form
     ListBoxCities.DataSource = GPS[(string)ListBoxCountries.SelectedItem].OrderBy(c => c.Name).ToList();
     ListBoxCities.SelectedIndex = -1;
     if ( Mutex ) return;
-    EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", ";
+    EditFilter.Text = ListBoxCountries.SelectedItem + ", ";
     EditFilter.Focus();
     EditFilter.SelectionStart = EditFilter.Text.Length;
   }
@@ -161,7 +161,7 @@ partial class SelectCityForm : Form
     Longitude = ( (CityItem)ListBoxCities.SelectedItem ).Longitude;
     ActionOK.Enabled = EditTimeZone.SelectedItem is not null;
     if ( Mutex ) return;
-    EditFilter.Text = ListBoxCountries.SelectedItem.ToString() + ", " + ListBoxCities.SelectedItem.ToString();
+    EditFilter.Text = ListBoxCountries.SelectedItem + ", " + ListBoxCities.SelectedItem;
     EditFilter.Focus();
     EditFilter.SelectionStart = EditFilter.Text.Length;
   }

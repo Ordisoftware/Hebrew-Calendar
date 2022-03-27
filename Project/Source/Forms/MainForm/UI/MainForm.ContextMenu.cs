@@ -67,12 +67,13 @@ public partial class MainForm
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void DoContextMenuStripDay_Opened(object sender, EventArgs e)
   {
     // Day
     var date = Program.Settings.TorahEventsCountAsMoon
-               ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
-               : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
+      ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
+      : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
     var rowDay = ApplicationDatabase.Instance.GetDay(date);
     ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
     ContextMenuDayParashah.Enabled = false;

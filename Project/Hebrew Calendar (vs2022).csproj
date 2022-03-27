@@ -71,6 +71,7 @@
           Ordisoftware*.xml;
     </AllowedReferenceRelatedFileExtensions>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>

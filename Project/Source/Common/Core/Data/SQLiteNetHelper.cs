@@ -32,7 +32,7 @@ public class SQLiteNetORM : SQLiteConnection
 static class SQLiteNetHelper
 {
 
-  static public int DefaultOptimizeDaysInterval { get; set; } = 7;
+  static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
   /// <summary>
   /// Indicates the database engine name and version.
@@ -47,7 +47,6 @@ static class SQLiteNetHelper
   /// <summary>
   /// Gets a single line of a string.
   /// </summary>
-  /// <param name="sql"></param>
   static public string UnformatSQL(string sql)
   {
     return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultiSpace();
@@ -160,8 +159,6 @@ static class SQLiteNetHelper
   /// <summary>
   /// Drops a table if exists.
   /// </summary>
-  /// <param name="connection"></param>
-  /// <param name="table"></param>
   static public void DropTableIfExists(this SQLiteNetORM connection, string table)
   {
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
@@ -332,7 +329,7 @@ static class SQLiteNetHelper
   /// </summary>
   /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
-  static public long GetRowsCount(this SQLiteNetORM connection, string table)
+  static public long CountRows(this SQLiteNetORM connection, string table)
   {
     try
     {
@@ -340,7 +337,7 @@ static class SQLiteNetHelper
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(GetRowsCount)}", ex);
+      throw new SQLiteException($"Error in {nameof(CountRows)}", ex);
     }
   }
 

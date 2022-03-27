@@ -39,12 +39,13 @@ partial class ApplicationDatabase
     { ReportFieldText.Events, 42 },
   };
 
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)
   {
-    var Chrono = new Stopwatch();
-    Chrono.Start();
+    var chrono = new Stopwatch();
+    chrono.Start();
     try
     {
       string headerSep = SeparatorV;
@@ -73,30 +74,37 @@ partial class ApplicationDatabase
           if ( day.LunarMonth == 0 ) continue;
           if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
           if ( day.IsNewMoon ) content.AppendLine(headerSep);
-          string strMonth = day.IsNewMoon && day.LunarMonth != 0 ? $"{day.LunarMonth:00}" : "  ";
+          string strMonth = day.IsNewMoon && day.LunarMonth != 0
+            ? $"{day.LunarMonth:00}"
+            : "  ";
           string strDay = day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
-                          ? "  "
-                          : $"{day.LunarDay:00}";
-          strDay += " " + ( day.IsNewMoon ? MoonNewText : day.IsFullMoon ? MoonFullText : " " );
+            ? "  "
+            : $"{day.LunarDay:00}";
+          strDay += " ";
+          strDay += day.IsNewMoon
+            ? MoonNewText
+            : day.IsFullMoon
+              ? MoonFullText
+              : " ";
           string strSun = day.SunriseAsString + " - " + day.SunsetAsString;
           strSun = ShowWinterSummerHour
-                   ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
-                       ? AppTranslations.EphemerisCodes.GetLang(Ephemeris.SummerHour)
-                       : AppTranslations.EphemerisCodes.GetLang(Ephemeris.WinterHour) )
-                     + $" {strSun}"
-                   : strSun + new string(' ', 3 + 1);
-          strSun += " " + ( ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
-                            ? ShabatText
-                            : "   " );
+            ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
+              ? AppTranslations.EphemerisCodes.GetLang(Ephemeris.SummerHour)
+              : AppTranslations.EphemerisCodes.GetLang(Ephemeris.WinterHour) ) + $" {strSun}"
+            : strSun + new string(' ', 3 + 1);
+          strSun += " ";
+          strSun += ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
+            ? ShabatText
+            : "   ";
           string strMoonrise = day.Moonrise is null
-                             ? MoonNoText
-                             : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + day.MoonriseAsString;
+            ? MoonNoText
+            : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + day.MoonriseAsString;
           string strMoonset = day.Moonset is null
-                            ? MoonNoText
-                            : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + day.MoonsetAsString;
+            ? MoonNoText
+            : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + day.MoonsetAsString;
           string strMoon = day.MoonriseOccuring == MoonriseOccurring.BeforeSet
-                         ? strMoonrise + ColumnSepInner + strMoonset
-                         : strMoonset + ColumnSepInner + strMoonrise;
+            ? strMoonrise + ColumnSepInner + strMoonset
+            : strMoonset + ColumnSepInner + strMoonrise;
           string textDate = AppTranslations.DaysOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
           textDate = textDate.Replace(".", string.Empty) + " ";
           textDate += $"{dayDate.Day:00}.";
@@ -105,7 +113,9 @@ partial class ApplicationDatabase
           string strDesc;
           string strEvent = day.TorahEventText;
           string sSeason = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
-          strDesc = strEvent.Length != 0 && sSeason.Length != 0 ? strEvent + " - " + sSeason : strEvent + sSeason;
+          strDesc = strEvent.Length != 0 && sSeason.Length != 0
+            ? strEvent + " - " + sSeason
+            : strEvent + sSeason;
           int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )
@@ -144,8 +154,8 @@ partial class ApplicationDatabase
     }
     finally
     {
-      Chrono.Stop();
-      Settings.BenchmarkGenerateTextReport = Chrono.ElapsedMilliseconds;
+      chrono.Stop();
+      Settings.BenchmarkGenerateTextReport = chrono.ElapsedMilliseconds;
     }
   }
 

@@ -34,8 +34,8 @@ partial class DatesDiffCalculatorForm : Form
     for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
     {
       var date = Program.DateBookmarks[index];
-      string s = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
-      var menuitem = items.Add($"{index + 1:00}. {s}");
+      string dateText = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
+      var menuitem = items.Add($"{index + 1:00}. {dateText}");
       menuitem.MouseUp += action;
       menuitem.Tag = index;
       if ( onlyCalendar && date != DateTime.MinValue )
@@ -100,7 +100,7 @@ partial class DatesDiffCalculatorForm : Form
   }
 
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "Analysis error")]
   public void Relocalize()
   {
     if ( !Globals.IsReady ) return;
@@ -108,7 +108,6 @@ partial class DatesDiffCalculatorForm : Form
     var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
-    Instance?.Dispose();
     Instance = new DatesDiffCalculatorForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
     Instance.DateStart.Tag = date1;

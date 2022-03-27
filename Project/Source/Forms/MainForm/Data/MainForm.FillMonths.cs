@@ -67,6 +67,7 @@ partial class MainForm
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   public void FillMonths()
   {
     Globals.ChronoShowData.Restart();
@@ -140,10 +141,10 @@ partial class MainForm
           Color colorMoon;
           string strMonthDay = row.DayAndMonthFormattedText;
           colorMoon = row.IsNewMoon
-                    ? Settings.CalendarColorTorahEvent
-                    : ( row.IsFullMoon
-                      ? Settings.CalendarColorFullMoon
-                      : Settings.CalendarColorMoon );
+            ? Settings.CalendarColorTorahEvent
+            : row.IsFullMoon
+              ? Settings.CalendarColorFullMoon
+              : Settings.CalendarColorMoon;
           if ( !Settings.TorahEventsCountAsMoon )
           {
             add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.SunriseAsString} {strMonthDay}");

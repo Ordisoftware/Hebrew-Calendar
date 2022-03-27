@@ -58,10 +58,8 @@ static class Interlocks
     return Connection.ExecuteScalar<long>(sql, Globals.ProcessId, name) > 0;
   }
 
-  static public bool IsReadOnly()
-  {
-    return GetCount() > 1;
-  }
+  static public bool IsReadOnly
+    => GetCount() > 1;
 
   static public long GetCount(string name = null)
   {

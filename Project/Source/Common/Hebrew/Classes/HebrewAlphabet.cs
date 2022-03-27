@@ -122,14 +122,14 @@ static class HebrewAlphabet
     hebrew = hebrew.Trim();
     if ( hebrew.IsNullOrEmpty() ) return string.Empty;
     var array = enable ? FinalEnable : FinalDisable;
-    char c = hebrew[0];
-    foreach ( var v in array )
-      if ( c == v[0] )
+    char letter = hebrew[0];
+    foreach ( var value in array )
+      if ( letter == value[0] )
       {
-        c = v[1];
+        letter = value[1];
         break;
       }
-    return c + hebrew.Remove(0, 1);
+    return letter + hebrew.Remove(0, 1);
   }
 
   /// <summary>
@@ -173,11 +173,11 @@ static class HebrewAlphabet
   /// <summary>
   /// Converts Unicode Hebrew chars to Hebrew font chars.
   /// </summary>
-  static public string ToHebrewFont(string Unicode)
+  static public string ToHebrewFont(string unicode)
   {
-    if ( Unicode.IsNullOrEmpty() ) return string.Empty;
+    if ( unicode.IsNullOrEmpty() ) return string.Empty;
     string result = string.Empty;
-    foreach ( char c in Unicode.RemoveDiacritics().ToLower() )
+    foreach ( char c in unicode.RemoveDiacritics().ToLower() )
       result = UnicodeToHebrew(c) + result;
     return result;
   }
@@ -197,9 +197,9 @@ static class HebrewAlphabet
   /// <summary>
   /// Converts Unicode Hebrew chars to Hebrew font chars.
   /// </summary>
-  static public char UnicodeToHebrew(char c)
+  static public char UnicodeToHebrew(char letter)
   {
-    return c switch
+    return letter switch
     {
       'א' => 'a',
       'ב' => 'b',
@@ -237,9 +237,9 @@ static class HebrewAlphabet
   /// <summary>
   /// Converts Hebrew font chars to Unicode Hebrew chars.
   /// </summary>
-  static public char HebrewToUnicode(char c)
+  static public char HebrewToUnicode(char letter)
   {
-    return c switch
+    return letter switch
     {
       'a' => 'א',
       'b' => 'ב',

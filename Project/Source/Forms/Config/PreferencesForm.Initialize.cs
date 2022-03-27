@@ -72,6 +72,7 @@ partial class PreferencesForm
   /// <summary>
   /// Checks the first launch to show notices and ask user preferences for generation.
   /// </summary>
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   private void CheckFirstLaunchNoticesAndChoices()
   {
     bool changed = false;
@@ -117,9 +118,11 @@ partial class PreferencesForm
     }
   }
 
+
   /// <summary>
   /// Does form closing.
   /// </summary>
+  [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void DoFormClosing(object sender, FormClosingEventArgs e)
   {
     if ( DoReset ) return;
@@ -215,7 +218,7 @@ partial class PreferencesForm
   {
     foreach ( var value in Enums.GetValues<DayOfWeek>() )
     {
-      var item = new DayOfWeekItem() { Text = AppTranslations.DaysOfWeek.GetLang(value), Day = value };
+      var item = new DayOfWeekItem { Text = AppTranslations.DaysOfWeek.GetLang(value), Day = value };
       EditShabatDay.Items.Add(item);
       if ( (DayOfWeek)Settings.ShabatDay == value )
         EditShabatDay.SelectedItem = item;
@@ -230,16 +233,16 @@ partial class PreferencesForm
     foreach ( var value in TorahCelebrationSettings.ManagedEvents )
       SystemManager.TryCatch(() =>
         {
-          var item = new TorahEventItem()
+          var item = new TorahEventItem
           {
             Text = AppTranslations.TorahCelebrationDays.GetLang(value),
             Event = value
           };
           int index = SelectRemindEventsBefore.Items.Add(item);
-          if ( (bool)Settings["TorahEventRemind" + value.ToString()] )
+          if ( (bool)Settings["TorahEventRemind" + value] )
             SelectRemindEventsBefore.SetItemChecked(index, true);
           index = SelectRemindEventsDay.Items.Add(item);
-          if ( (bool)Settings["TorahEventRemindDay" + value.ToString()] )
+          if ( (bool)Settings["TorahEventRemindDay" + value] )
             SelectRemindEventsDay.SetItemChecked(index, true);
         });
   }

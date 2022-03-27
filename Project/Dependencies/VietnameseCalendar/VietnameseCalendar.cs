@@ -16,8 +16,13 @@ namespace System.Globalization
   /// Represents time in divisions, such as months, days, and years. Years are calculated using the
   /// Vietnamese calendar, while days and months are calculated using the lunisolar calendar.
   /// </summary>
-  [Serializable()]
+  [Serializable]
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Usage", "GCop536:Remove empty xml node documentation", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
   public class VietnameseCalendar : Calendar
   {
 
@@ -545,17 +550,18 @@ namespace System.Globalization
     /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, day, or era is outside
     /// the range supported by this calendar.</exception>
+    [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "<En attente>")]
     public override bool IsLeapDay(int year, int month, int day, int era)
     {
       bool ret = IsLeapMonth(year, month, era);
       int daysInMonth = GetMonthLength(year, month, GetLeapMonth(year, era));
       return day < 1 || day > daysInMonth
-             ? throw new ArgumentOutOfRangeException(nameof(day),
-                                                     string.Format(CultureInfo.CurrentCulture,
-                                                                   resource.GetString("ArgumentOutOfRange_Day"),
-                                                                   daysInMonth,
-                                                                   month))
-             : ret;
+        ? throw new ArgumentOutOfRangeException(nameof(day),
+                                                string.Format(CultureInfo.CurrentCulture,
+                                                resource.GetString("ArgumentOutOfRange_Day"),
+                                                daysInMonth,
+                                                month))
+        : ret;
     }
 
     /// <summary>
@@ -599,10 +605,10 @@ namespace System.Globalization
     /// by this calendar.</exception>
     public override int GetDaysInYear(int year, int era)
     {
-      int leapMonth = GetLeapMonth(year, era), count = 0;
-      for ( int month = 1, len = ( leapMonth > 0 ? 13 : 12 ); month <= len; month++ )
-        count += GetMonthLength(year, month, leapMonth);
-      return count;
+      int leapMonth = GetLeapMonth(year, era), result = 0;
+      for ( int month = 1, len = leapMonth > 0 ? 13 : 12; month <= len; month++ )
+        result += GetMonthLength(year, month, leapMonth);
+      return result;
     }
 
     /// <summary>

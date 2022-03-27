@@ -16,6 +16,7 @@ using System.Windows.Forms;
 /// <summary>
 /// This is a set of extensions for accessing the Event Handlers as well as cloning menu items
 /// </summary>
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public static class ToolStripMenuItemHelper
 {
 
@@ -43,6 +44,7 @@ public static class ToolStripMenuItemHelper
   /// <returns>A cloned version of the toolstrip menu item</returns>
   [SuppressMessage("Usage", "RCS1202:Avoid NullReferenceException.", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
+  [SuppressMessage("Performance", "GCop318:This will cause the query to be computed multiple times. Instead call .ToList() on the variable declaration line to avoid unwanted extra processing.", Justification = "<En attente>")]
   public static ToolStripMenuItem Clone(this ToolStripMenuItem sourceToolStripMenuItem)
   {
     var menuItem = new ToolStripMenuItem();
@@ -57,7 +59,7 @@ public static class ToolStripMenuItemHelper
     // Copy over using reflections
     foreach ( var propertyInfo in propInfoList )
     {
-      object propertyInfoValue = propertyInfo.GetValue(sourceToolStripMenuItem, null);
+      var propertyInfoValue = propertyInfo.GetValue(sourceToolStripMenuItem, null);
       propertyInfo.SetValue(menuItem, propertyInfoValue, null);
     }
 

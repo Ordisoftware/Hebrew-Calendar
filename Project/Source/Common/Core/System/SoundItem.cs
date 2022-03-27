@@ -26,6 +26,7 @@ class SoundItem
 
   static volatile private List<SoundItem> WindowsSounds;
 
+  [SuppressMessage("Design", "GCop139:Use constant instead of field.", Justification = "Analysis error")]
   static private readonly object Locker = new();
 
   static public List<SoundItem> GetApplicationSounds()

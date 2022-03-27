@@ -95,6 +95,7 @@ partial class TextBoxEx
     UpdateMenuItems(GetTextBoxAndFocus(sender));
   }
 
+  [SuppressMessage("Design", "GCop129:Change to an instance method, instead of taking a parameter '{0}' with the same type as the class.", Justification = "Need static")]
   static private void UpdateMenuItems(TextBoxEx textbox)
   {
     if ( textbox is null ) return;

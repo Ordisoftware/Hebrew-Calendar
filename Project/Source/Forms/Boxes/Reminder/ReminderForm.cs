@@ -39,8 +39,9 @@ partial class ReminderForm : Form
     }
   }
 
-  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
+  [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;
@@ -85,13 +86,13 @@ partial class ReminderForm : Form
       };
       var date = row.Date;
       form.LabelTitle.Text = isShabat
-                             ? AppTranslations.Shabat.GetLang()
-                             : AppTranslations.TorahCelebrationDays.GetLang(celebration == TorahCelebrationDay.None
-                               ? row.TorahEvent
-                               : celebration);
+        ? AppTranslations.Shabat.GetLang()
+        : AppTranslations.TorahCelebrationDays.GetLang(celebration == TorahCelebrationDay.None
+          ? row.TorahEvent
+          : celebration);
       form.LabelDate.Text = isShabat
-                            ? date.ToLongDateString().Titleize()
-                            : row.DayAndMonthWithYearText;
+        ? date.ToLongDateString().Titleize()
+        : row.DayAndMonthWithYearText;
       string textDateStart = AppTranslations.DaysOfWeek.GetLang(times.DateStart.DayOfWeek);
       string textDateEnd = AppTranslations.DaysOfWeek.GetLang(times.DateEnd.DayOfWeek);
       form.LabelStartTime.Text = $"{textDateStart} {times.TimeStart:hh\\:mm}";
@@ -181,6 +182,7 @@ partial class ReminderForm : Form
     Application.DoEvents();
   }
 
+  [SuppressMessage("Design", "GCop129:Change to an instance method, instead of taking a parameter '{0}' with the same type as the class.", Justification = "Need static")]
   static private void Flash(ReminderForm form)
   {
     form.Hide();
@@ -328,6 +330,8 @@ partial class ReminderForm : Form
       case SoundSource.Custom:
         new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
         break;
+      default:
+        throw new AdvancedNotImplementedException(Program.Settings.ReminderBoxSoundSource);
     }
     Application.DoEvents();
     if ( Program.Settings.ReminderBoxSoundSource != SoundSource.None )

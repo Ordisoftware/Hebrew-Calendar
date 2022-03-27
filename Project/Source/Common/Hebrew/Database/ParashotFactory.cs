@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 class ParashotFactory : ProviderSettings
@@ -24,19 +24,13 @@ class ParashotFactory : ProviderSettings
   public IEnumerable<Parashah> All => Items.SelectMany(item => item.Value);
 
   public Parashah Get(string id)
-  {
-    return All.FirstOrDefault(p => p.ID == id);
-  }
+    => All.FirstOrDefault(p => p.ID == id);
 
   protected override void SetFilePath()
-  {
-    FilePath = HebrewGlobals.ParashotFactoryFilePath;
-  }
+    => FilePath = HebrewGlobals.ParashotFactoryFilePath;
 
   protected override void DoClear()
-  {
-    Items.Clear();
-  }
+    => Items.Clear();
 
   protected override void DoLoad(string line)
   {

@@ -114,7 +114,9 @@ class SystemStatistics
       if ( PerformanceCounterCPUProcessLoad is null )
       {
         CPUProcessLoadInitMutex = true;
-        new Task(() =>
+        new Task(process).Start();
+        //
+        void process()
         {
           var process = Process.GetCurrentProcess();
           var name = string.Empty;
@@ -129,10 +131,9 @@ class SystemStatistics
               break;
             }
           }
-
           PerformanceCounterCPUProcessLoad = new PerformanceCounter("Process", "% Processor Time", name, true);
           CPUProcessLoadInitMutex = false;
-        }).Start();
+        }
       }
       if ( CPUProcessLoadInitMutex ) return "(init)";
       int value = 0;

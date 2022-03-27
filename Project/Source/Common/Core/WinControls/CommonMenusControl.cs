@@ -97,6 +97,7 @@ partial class CommonMenusControl : UserControl
   }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   private void ShowNewInVersion(object sender, EventArgs e)
   {
     if ( sender is not ToolStripItem menuitem ) return;
@@ -123,56 +124,56 @@ partial class CommonMenusControl : UserControl
                  index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
       initButton(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
                  _ => ActionViewVersionNews.DropDownItems[0].PerformClick());
-      void openNotes()
-      {
-        SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace('x', '0')));
-      }
-      void initButton(Button button, string text, int width, bool enabled, Action<int> action)
-      {
-        button.Visible = true;
-        button.Enabled = enabled;
-        button.Width = width;
-        button.Text = text;
-        button.Click += (_, _) =>
-        {
-          if ( action is null )
-          {
-            form.SendToBack();
-            openNotes();
-          }
-          else
-          {
-            var items = ActionViewVersionNews.DropDownItems.ToEnumerable();
-            var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
-            if ( found is null ) return;
-            form.Close();
-            action(ActionViewVersionNews.DropDownItems.IndexOf(found));
-          }
-        };
-        button.KeyUp += onKeyUp;
-      }
-      void onKeyUp(object _sender, KeyEventArgs _e)
-      {
-        switch ( _e.KeyCode )
-        {
-          case Keys.Home:
-            form.ActionNo.PerformClick();
-            break;
-          case Keys.PageUp:
-            form.ActionAbort.PerformClick();
-            break;
-          case Keys.PageDown:
-            form.ActionRetry.PerformClick();
-            break;
-          case Keys.End:
-            form.ActionIgnore.PerformClick();
-            break;
-        }
-      }
     }
     form.ActiveControl = form.ActionOK;
     form.Popup(null);
     form.ForceBringToFront();
+    //
+    void initButton(Button button, string text, int width, bool enabled, Action<int> action)
+    {
+      button.Visible = true;
+      button.Enabled = enabled;
+      button.Width = width;
+      button.Text = text;
+      button.Click += onClick;
+      button.KeyUp += onKeyUp;
+      //
+      void onClick(object senderOnClick, EventArgs eOnClick)
+      {
+        if ( action is null )
+        {
+          form.SendToBack();
+          SystemManager.OpenWebLink(string.Format(Globals.ApplicationReleaseNotesURL, notice.Key.Replace('x', '0')));
+        }
+        else
+        {
+          var items = ActionViewVersionNews.DropDownItems.ToEnumerable();
+          var found = items.FirstOrDefault(item => item.Text == SysTranslations.AboutBoxVersion.GetLang(notice.Key));
+          if ( found is null ) return;
+          form.Close();
+          action(ActionViewVersionNews.DropDownItems.IndexOf(found));
+        }
+      }
+    }
+    //
+    void onKeyUp(object senderOnKeyUp, KeyEventArgs eOnKeyUp)
+    {
+      switch ( eOnKeyUp.KeyCode )
+      {
+        case Keys.Home:
+          form.ActionNo.PerformClick();
+          break;
+        case Keys.PageUp:
+          form.ActionAbort.PerformClick();
+          break;
+        case Keys.PageDown:
+          form.ActionRetry.PerformClick();
+          break;
+        case Keys.End:
+          form.ActionIgnore.PerformClick();
+          break;
+      }
+    }
   }
 
   private void ActionViewLog_Click(object sender, EventArgs e)

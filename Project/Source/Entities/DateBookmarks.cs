@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 class DateBookmarks
 {
 
-  private string FilePath { get; }
+  private readonly string FilePath;
 
   private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
 

@@ -409,19 +409,16 @@ partial class MainForm : Form
     Settings.SoundsEnabled = EditSoundsEnabled.Checked;
     DisplayManager.AdvancedFormUseSounds = EditSoundsEnabled.Checked;
     DisplayManager.FormStyle = EditUseAdvancedDialogBoxes.Checked
-                               ? MessageBoxFormStyle.Advanced
-                               : MessageBoxFormStyle.System;
-    switch ( DisplayManager.FormStyle )
+      ? MessageBoxFormStyle.Advanced
+      : MessageBoxFormStyle.System;
+    DisplayManager.IconStyle = DisplayManager.FormStyle switch
     {
-      case MessageBoxFormStyle.System:
-        DisplayManager.IconStyle = EditSoundsEnabled.Checked
-                                   ? MessageBoxIconStyle.ForceInformation
-                                   : MessageBoxIconStyle.ForceNone;
-        break;
-      case MessageBoxFormStyle.Advanced:
-        DisplayManager.IconStyle = MessageBoxIconStyle.ForceInformation;
-        break;
-    }
+      MessageBoxFormStyle.System => EditSoundsEnabled.Checked
+        ? MessageBoxIconStyle.ForceInformation
+        : MessageBoxIconStyle.ForceNone,
+      MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
+      _ => throw new AdvancedNotImplementedException(DisplayManager.FormStyle),
+    };
   }
 
   /// <summary>
@@ -725,6 +722,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuumDB_Click(object sender, EventArgs e)
   {
     Settings.VacuumLastDone = ApplicationDatabase.Instance
@@ -817,7 +815,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchDay_Click(object sender, EventArgs e)
   {
-    DateTime date = DateTime.Today;
+    var date = DateTime.Today;
     if ( sender is not null )
       if ( !SelectDayForm.Run(null, ref date, false, true, true) )
         return;
@@ -1014,7 +1012,9 @@ partial class MainForm : Form
       e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
     else
     if ( e.ColumnIndex == GridColumnNewMoon.Index || e.ColumnIndex == GridColumnFullMoon.Index )
-      e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
+      e.Value = (bool)e.Value
+        ? Globals.Bullet
+        : string.Empty;
     else
     if ( e.ColumnIndex == GridColumnMoonPhase.Index )
       e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhases);
@@ -1023,15 +1023,15 @@ partial class MainForm : Form
     {
       var season = (SeasonChange)e.Value;
       e.Value = season == SeasonChange.None
-                ? string.Empty
-                : season.ToStringExport(AppTranslations.SeasonChanges);
+        ? string.Empty
+        : season.ToStringExport(AppTranslations.SeasonChanges);
     }
     else if ( e.ColumnIndex == GridColumnTorahEvent.Index )
     {
       var torah = (TorahCelebrationDay)e.Value;
       e.Value = torah == TorahCelebrationDay.None
-                ? string.Empty
-                : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
+        ? string.Empty
+        : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
     }
   }
 

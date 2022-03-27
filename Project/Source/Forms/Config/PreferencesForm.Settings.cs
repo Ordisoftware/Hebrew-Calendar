@@ -41,7 +41,7 @@ partial class PreferencesForm
     string timezone = Settings.TimeZone;
     long starttime = Settings.BenchmarkStartingApp;
     long loadtime = Settings.BenchmarkLoadData;
-    int Shabat = EditShabatDay.SelectedIndex;
+    int shabat = EditShabatDay.SelectedIndex;
     int bookmarksCount = Settings.DateBookmarksCount;
     var lastupdate = Settings.CheckUpdateLastDone;
     var lastvacuum = Settings.VacuumLastDone;
@@ -55,7 +55,7 @@ partial class PreferencesForm
     Settings.GPSLatitude = lat;
     Settings.GPSLongitude = lng;
     Settings.TimeZone = timezone;
-    Settings.ShabatDay = Shabat;
+    Settings.ShabatDay = shabat;
     Settings.LanguageSelected = Languages.Current;
     Settings.BenchmarkStartingApp = starttime;
     Settings.BenchmarkLoadData = loadtime;
@@ -105,12 +105,13 @@ partial class PreferencesForm
     }
   }
 
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void DoExportSettings()
   {
     var city = Settings.GPSCity;
     var omer = SelectUseSodHaibour.Checked
-               ? AppTranslations.MainFormSubTitleSod.GetLang()
-               : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
+      ? AppTranslations.MainFormSubTitleSod.GetLang()
+      : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
     var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
     SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;

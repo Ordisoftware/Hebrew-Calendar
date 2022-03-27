@@ -108,6 +108,7 @@ static class MediaMixer
     Marshal.ReleaseComObject(volume);
   }
 
+  [SuppressMessage("Naming", "GCop206:Avoid using underscores in {0}", Justification = "<En attente>")]
   static private ISimpleAudioVolume GetVolumeObject(int pid)
   {
     // get the speakers (1st render + multimedia) device
@@ -217,6 +218,7 @@ public interface IAudioSessionEnumerator
 
 [Guid("87CE5498-68D6-44E5-9215-6DA47EF883D8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
+[SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
 public interface ISimpleAudioVolume
 {
   [PreserveSig]

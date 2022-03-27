@@ -254,11 +254,10 @@ class ExceptionInfo
     try
     {
       ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                   ? Environment.CurrentManagedThreadId == 1
-                     ? "Main"
-                     : $"ID = {Environment.CurrentManagedThreadId}"
-                   : Thread.CurrentThread.Name;
-
+        ? Environment.CurrentManagedThreadId == 1
+          ? "Main"
+          : $"ID = {Environment.CurrentManagedThreadId}"
+        : Thread.CurrentThread.Name;
       try
       {
         Message = Instance.Message;

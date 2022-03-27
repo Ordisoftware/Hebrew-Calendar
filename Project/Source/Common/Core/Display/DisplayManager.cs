@@ -76,7 +76,8 @@ static partial class DisplayManager
   static public void SyncUI(this Control control, Action action, bool wait = true)
   {
     if ( control is null ) throw new ArgumentNullException(nameof(control));
-    if ( !Thread.CurrentThread.IsAlive ) throw new ThreadStateException();
+    if ( !Thread.CurrentThread.IsAlive )
+      throw new ThreadStateException(SysTranslations.ErrorSlot.GetLang().TrimFirstLast());
     Exception exception = null;
     SemaphoreSlim semaphore = null;
     var processAction = () =>

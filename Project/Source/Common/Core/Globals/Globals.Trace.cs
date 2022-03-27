@@ -27,7 +27,7 @@ static partial class Globals
     = IsVisualStudioDesigner ? 0 : Serilog.RollingInterval.Day;
 
   static public int SinkFileRetainedFileCountLimit { get; set; }
-    = 7;
+    = Globals.DaysOfWeekCount;
 
   static public int SessionFileRetainedFileCountLimit { get; set; }
     = 20;

@@ -127,10 +127,9 @@ public partial class CelebrationVersesBoardForm : Form
     }
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "Analysis error")]
   private void CelebrationVersesBoardForm_FormClosed(object sender, FormClosedEventArgs e)
   {
-    Instance?.Dispose();
     Instance = null;
   }
 
@@ -149,6 +148,7 @@ public partial class CelebrationVersesBoardForm : Form
     SelectVerse.ContextMenuStrip.Show(Cursor.Position);
   }
 
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   private void Lists_KeyDown(object sender, KeyEventArgs e)
   {
     switch ( e.KeyCode )

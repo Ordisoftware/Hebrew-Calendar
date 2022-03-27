@@ -36,7 +36,7 @@ static partial class Program
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Language lang = Settings.LanguageSelected;
+      var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       SystemManager.IPCSendCommands = IPCSendCommands;
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
@@ -236,7 +236,7 @@ static partial class Program
       static void update(Form form)
       {
         new Infralution.Localization.CultureManager().ManagedControl = form;
-        ComponentResourceManager resources = new(form.GetType());
+        var resources = new ComponentResourceManager(form.GetType());
         resources.ApplyResources(form.Controls);
       }
       string lang = "en-US";

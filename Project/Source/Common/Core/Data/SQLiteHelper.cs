@@ -27,7 +27,7 @@ namespace Ordisoftware.Core
   static partial class SQLiteHelper
   {
 
-    static public int DefaultOptimizeDaysInterval { get; set; } = 7;
+    static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
     /// <summary>
     /// Indicate the database engine name and version.

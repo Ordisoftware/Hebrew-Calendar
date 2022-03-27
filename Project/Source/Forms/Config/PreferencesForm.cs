@@ -341,11 +341,11 @@ partial class PreferencesForm : Form
 
   private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
   {
-    bool b = EditAutoRegenerate.Checked;
-    EditAutoGenerateYearsInterval.Enabled = b;
-    SelectAutoGenerateYearsInterval.Enabled = b;
-    ActionAutoGenerateHelp.Enabled = b;
-    EditAskRegenerateIfIntervalGreater.Enabled = b;
+    bool isChecked = EditAutoRegenerate.Checked;
+    EditAutoGenerateYearsInterval.Enabled = isChecked;
+    SelectAutoGenerateYearsInterval.Enabled = isChecked;
+    ActionAutoGenerateHelp.Enabled = isChecked;
+    EditAskRegenerateIfIntervalGreater.Enabled = isChecked;
   }
 
   private void SelectAutoGenerateYearsInterval_Click(object sender, EventArgs e)

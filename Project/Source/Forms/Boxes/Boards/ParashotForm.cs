@@ -143,12 +143,10 @@ partial class ParashotForm : Form
   private void Timer_Tick(object sender, EventArgs e)
   {
     UpdateControls();
-    if ( Created && !DataGridView.ReadOnly )
-    {
-      ActionUndo.PerformClick();
-      MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
-      BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
-    }
+    if ( !Created || DataGridView.ReadOnly ) return;
+    ActionUndo.PerformClick();
+    MainForm.UserParashot = HebrewDatabase.Instance.TakeParashot(true);
+    BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
   }
 
   private void UpdateControls()
@@ -195,11 +193,10 @@ partial class ParashotForm : Form
                                       () => e.Cancel = true);
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "Analysis error")]
   private void ParashotForm_FormClosed(object sender, FormClosedEventArgs e)
   {
     Timer.Stop();
-    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;
@@ -282,34 +279,30 @@ partial class ParashotForm : Form
 
   private void ActionReset_Click(object sender, EventArgs e)
   {
-    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) )
-    {
-      int index = DataGridView.CurrentRow.Index;
-      MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true);
-      BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
-      DataGridView.Rows[index].Selected = true;
-      DataGridView.FirstDisplayedScrollingRowIndex = index;
-      ActionSave.Enabled = false;
-      ActionUndo.Enabled = false;
-      ActiveControl = DataGridView;
-      UpdateStats();
-    }
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetData.GetLang()) ) return;
+    int index = DataGridView.CurrentRow.Index;
+    MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true);
+    BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+    DataGridView.Rows[index].Selected = true;
+    DataGridView.FirstDisplayedScrollingRowIndex = index;
+    ActionSave.Enabled = false;
+    ActionUndo.Enabled = false;
+    ActiveControl = DataGridView;
+    UpdateStats();
   }
 
   private void ActionEmpty_Click(object sender, EventArgs e)
   {
-    if ( DisplayManager.QueryYesNo(SysTranslations.AskToClearCustomData.GetLang()) )
-    {
-      int index = DataGridView.CurrentRow.Index;
-      MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true, true);
-      BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
-      DataGridView.Rows[index].Selected = true;
-      DataGridView.FirstDisplayedScrollingRowIndex = index;
-      ActionSave.Enabled = false;
-      ActionUndo.Enabled = false;
-      ActiveControl = DataGridView;
-      UpdateStats();
-    }
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToClearCustomData.GetLang()) ) return;
+    int index = DataGridView.CurrentRow.Index;
+    MainForm.UserParashot = HebrewDatabase.Instance.CreateParashotDataIfNotExistAndLoad(true, true);
+    BindingSource.DataSource = HebrewDatabase.Instance.ParashotAsBindingList;
+    DataGridView.Rows[index].Selected = true;
+    DataGridView.FirstDisplayedScrollingRowIndex = index;
+    ActionSave.Enabled = false;
+    ActionUndo.Enabled = false;
+    ActiveControl = DataGridView;
+    UpdateStats();
   }
 
   private void ActionSave_Click(object sender, EventArgs e)
@@ -415,6 +408,7 @@ partial class ParashotForm : Form
     ActionEditMemo.PerformClick();
   }
 
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
     using var form = new EditMemoForm();

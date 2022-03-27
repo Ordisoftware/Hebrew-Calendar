@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// <summary>
 /// Provides application statistics.
 /// </summary>
+[SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
 class ApplicationStatistics
 {
 
@@ -110,7 +111,9 @@ class ApplicationStatistics
         UpdateDBFileSizeRequired = false;
         _DBFileSize = SystemManager.GetFileSize(Globals.ApplicationDatabaseFilePath).FormatBytesSize();
       }
-      return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBFileSize;
+      return Globals.IsGenerating
+        ? SysTranslations.Processing.GetLang()
+        : _DBFileSize;
     }
   }
   static private string _DBFileSize;
@@ -125,12 +128,14 @@ class ApplicationStatistics
         UpdateDBMemorySizeRequired = false;
         long size = ApplicationDatabase.Instance.LunisolarDays?.SizeOf() ?? 0;
         _DBMemorySize = size > 0
-                        ? size.FormatBytesSize()
-                          : size == 0
-                            ? SysTranslations.DatabaseTableClosed.GetLang()
-                            : "-";
+          ? size.FormatBytesSize()
+          : size == 0
+            ? SysTranslations.DatabaseTableClosed.GetLang()
+            : "-";
       }
-      return Globals.IsGenerating ? SysTranslations.Processing.GetLang() : _DBMemorySize;
+      return Globals.IsGenerating
+        ? SysTranslations.Processing.GetLang()
+        : _DBMemorySize;
     }
   }
   static private string _DBMemorySize;
@@ -160,10 +165,10 @@ class ApplicationStatistics
         UpdateDBParashotMemorySizeRequired = false;
         long size = HebrewDatabase.Instance.Parashot?.SizeOf() ?? 0;
         _DBParashotMemorySize = size > 0
-                                ? size.FormatBytesSize()
-                                  : size == 0
-                                    ? SysTranslations.DatabaseTableClosed.GetLang()
-                                    : "-";
+          ? size.FormatBytesSize()
+          : size == 0
+            ? SysTranslations.DatabaseTableClosed.GetLang()
+            : "-";
       }
       return _DBParashotMemorySize;
     }

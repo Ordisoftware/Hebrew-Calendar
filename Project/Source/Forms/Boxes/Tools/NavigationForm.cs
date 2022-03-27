@@ -232,8 +232,9 @@ partial class NavigationForm : Form
       case Keys.Up:
         ActionSelectDay.PerformClick();
         return true;
+      default:
+        return base.ProcessCmdKey(ref msg, keyData);
     }
-    return base.ProcessCmdKey(ref msg, keyData);
   }
 
   private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)

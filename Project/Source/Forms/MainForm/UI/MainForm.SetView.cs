@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -51,7 +51,7 @@ partial class MainForm
   /// <param name="first">true to first.</param>
   public void SetView(ViewMode view, bool first = false)
   {
-    var ViewPanels = new Dictionary<ViewMode, ViewConnector>()
+    var viewPanels = new Dictionary<ViewMode, ViewConnector>
       {
         {
           ViewMode.Text,
@@ -92,11 +92,11 @@ partial class MainForm
       }
       if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
         view = ViewMode.Month;
-      ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
-      ViewPanels[Settings.CurrentView].Panel.Parent = null;
-      ViewPanels[view].MenuItem.Checked = true;
-      ViewPanels[view].Panel.Parent = PanelCalendar;
-      ViewPanels[view].Focused.Focus();
+      viewPanels[Settings.CurrentView].MenuItem.Checked = false;
+      viewPanels[Settings.CurrentView].Panel.Parent = null;
+      viewPanels[view].MenuItem.Checked = true;
+      viewPanels[view].Panel.Parent = PanelCalendar;
+      viewPanels[view].Focused.Focus();
       Settings.CurrentView = view;
       UpdateButtons();
       if ( view == ViewMode.Text )

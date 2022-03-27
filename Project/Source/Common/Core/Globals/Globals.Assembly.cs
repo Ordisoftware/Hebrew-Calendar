@@ -25,8 +25,10 @@ static partial class Globals
   /// </summary>
   static private T GetAttribute<T>() where T : Attribute
   {
-    object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);
-    return attributes.Length > 0 ? ( (T)attributes[0] ) : null;
+    var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);
+    return attributes.Length > 0
+      ? (T)attributes[0]
+      : null;
   }
 
   /// <summary>
@@ -38,8 +40,8 @@ static partial class Globals
     {
       var attribute = GetAttribute<AssemblyTitleAttribute>();
       return attribute is not null && attribute.Title.Length != 0
-             ? attribute.Title
-             : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+        ? attribute.Title
+        : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
     }
   }
 

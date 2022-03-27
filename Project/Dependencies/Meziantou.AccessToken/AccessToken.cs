@@ -4,6 +4,8 @@ using Meziantou.Framework.Win32.Natives;
 namespace Meziantou.Framework.Win32;
 
 //[SupportedOSPlatform("windows")]
+[SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+[SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
 public sealed class AccessToken : IDisposable
 {
   private IntPtr _token;
@@ -42,15 +44,18 @@ public sealed class AccessToken : IDisposable
     return GetTokenInformation<Natives.NativeMethods.TOKEN_ELEVATION>(TokenInformationClass.TokenElevation).TokenIsElevated;
   }
 
-  public AccessToken GetLinkedToken() => GetTokenInformation<Natives.NativeMethods.TOKEN_LINKED_TOKEN, AccessToken>(
-          TokenInformationClass.TokenLinkedToken,
-          linkedToken =>
-          {
-            if ( linkedToken.LinkedToken == IntPtr.Zero )
-              return null;
+  public AccessToken GetLinkedToken()
+  {
+    return GetTokenInformation<Natives.NativeMethods.TOKEN_LINKED_TOKEN, AccessToken>(
+      TokenInformationClass.TokenLinkedToken,
+      linkedToken =>
+      {
+        if ( linkedToken.LinkedToken == IntPtr.Zero )
+          return null;
 
-            return new AccessToken(linkedToken.LinkedToken);
-          });
+        return new AccessToken(linkedToken.LinkedToken);
+      });
+  }
 
   public TokenEntry GetMandatoryIntegrityLevel()
   {

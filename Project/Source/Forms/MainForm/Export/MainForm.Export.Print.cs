@@ -24,7 +24,7 @@ partial class MainForm
 
   private void ExportPrint()
   {
-    var process = new ExportActions()
+    var process = new ExportActions
     {
       [ViewMode.Text] = (interval) =>
       {
@@ -44,6 +44,7 @@ partial class MainForm
     DoExport(ExportAction.Print, process, null);
   }
 
+  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
   {
     try
@@ -67,6 +68,7 @@ partial class MainForm
     }
   }
 
+  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   private void ExportPrintRunAction(bool landscape, PrintPageEventHandler action)
   {
     int margin = Settings.PrintingMargin;

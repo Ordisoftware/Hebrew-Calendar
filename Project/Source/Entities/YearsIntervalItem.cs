@@ -43,6 +43,7 @@ class YearsIntervalItem
     }
   }
 
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   static public void InitializeMenu(ContextMenuStrip menu, int max, EventHandler handler)
   {
     menu.Items.Clear();
@@ -54,8 +55,8 @@ class YearsIntervalItem
         var item = new ToolStripMenuItem
         {
           Text = value >= 0
-                 ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
-                 : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
+            ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
+            : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
           Tag = interval
         };
         item.Click += handler;

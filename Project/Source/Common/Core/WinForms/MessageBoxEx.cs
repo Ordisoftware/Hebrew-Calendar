@@ -131,7 +131,7 @@ partial class MessageBoxEx : Form
     LocalizedText = text;
   }
 
-
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   public void RelocalizeText()
   {
     if ( LocalizedTitle is not null ) Text = LocalizedTitle.GetLang();
@@ -258,6 +258,9 @@ partial class MessageBoxEx : Form
         ActiveControl = ActionRetry;
         AcceptButton = ActionRetry;
         CancelButton = ActionIgnore;
+        break;
+      default:
+        // NOP
         break;
     }
   }

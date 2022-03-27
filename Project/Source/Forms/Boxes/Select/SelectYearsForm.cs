@@ -19,6 +19,7 @@ partial class SelectYearsForm : Form
 
   static public readonly Properties.Settings Settings = Properties.Settings.Default;
 
+  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   static public bool Run(bool canCancel, out int first, out int last)
   {
     using var form = new SelectYearsForm();
@@ -116,6 +117,7 @@ partial class SelectYearsForm : Form
       EditYearFirst.Value = EditYearLast.Value - Settings.GenerateIntervalMaximum + 1;
   }
 
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   private void ActionOK_Click(object sender, EventArgs e)
   {
     if ( Settings.BigCalendarWarningEnabled )

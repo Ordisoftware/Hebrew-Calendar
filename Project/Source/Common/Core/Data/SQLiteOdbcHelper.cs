@@ -23,7 +23,7 @@ using Microsoft.Win32;
 static class SQLiteOdbcHelper
 {
 
-  static public int DefaultOptimizeDaysInterval { get; set; } = 7;
+  static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
   /// <summary>
   /// Indicate the database engine name and version.

@@ -17,9 +17,9 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  private const int SearchDayInterval = 7;
+  private readonly int SearchDayInterval = Globals.DaysOfWeekCount;
 
-  private const int GetTodayCacheInSeconds = 60;
+  private readonly int GetTodayCacheInSeconds = Globals.SecondsInOneMinute;
 
   private DateTime DayChecked = DateTime.MinValue;
 
@@ -39,8 +39,8 @@ partial class ApplicationDatabase : SQLiteDatabase
   public LunisolarDay GetDay(DateTime datetime)
   {
     return Program.Settings.TorahEventsCountAsMoon && !Program.Settings.UseSodHaibour
-           ? GetDayMoon(datetime)
-           : GetDaySun(datetime);
+      ? GetDayMoon(datetime)
+      : GetDaySun(datetime);
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
@@ -53,7 +53,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     bool isInBounds = false;
     LunisolarDay rowFirst = null;
     LunisolarDay rowLast = null;
-    LunisolarDay rowPrevious = rowCurrent;
+    var rowPrevious = rowCurrent;
     for ( int index = indexStart; index <= indexEnd; index++ )
     {
       rowCurrent = LunisolarDays[index];

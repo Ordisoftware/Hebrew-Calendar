@@ -18,6 +18,7 @@ namespace Ordisoftware.Core;
 /// Localization strings.
 /// </summary>
 [SuppressMessage("Simplification", "RCS1214:Unnecessary interpolated string.", Justification = "Readability")]
+[SuppressMessage("Usage", "GCop505:Avoid interpolated string with no interpolation", Justification = "Opinion")]
 static partial class SysTranslations
 {
 

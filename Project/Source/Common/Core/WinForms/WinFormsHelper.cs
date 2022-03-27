@@ -48,9 +48,10 @@ static class FormsHelper
   static public void CloseAll(Func<Form, bool> keep = null)
   {
     var list = keep is null
-               ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
-               : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
-    foreach ( Form form in list ) SystemManager.TryCatch(() => form.Close());
+      ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
+      : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
+    foreach ( Form form in list )
+      SystemManager.TryCatch(() => form.Close());
   }
 
   /// <summary>

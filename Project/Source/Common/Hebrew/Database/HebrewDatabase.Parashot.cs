@@ -95,7 +95,7 @@ partial class HebrewDatabase : SQLiteDatabase
     CreateParashotDataMutex = true;
     try
     {
-      if ( reset || Connection.GetRowsCount(ParashotTableName) != 54 )
+      if ( reset || Connection.CountRows(ParashotTableName) != 54 )
         SystemManager.TryCatchManage(() =>
         {
           Connection.BeginTransaction();

@@ -33,6 +33,7 @@ public partial class MainForm
   /// <summary>
   /// Enables double-buffering.
   /// </summary>
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   protected override CreateParams CreateParams
   {
     get
@@ -87,6 +88,7 @@ public partial class MainForm
   /// <summary>
   /// Updates form title bar and sub-title texts.
   /// </summary>
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void UpdateTitles(bool force = false)
   {
     if ( !Globals.IsReady || Globals.IsGenerating ) return;
@@ -101,16 +103,15 @@ public partial class MainForm
         LabelSubTitleCalendar.Text = AppTranslations.Subtitle.GetLang();
         // GPS
         if ( force || TitleGPS.IsNullOrEmpty() )
-          if ( !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity) )
-            TitleGPS = $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper();
-          else
-            TitleGPS = "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
+          TitleGPS = !string.IsNullOrEmpty(Settings.GPSCountry) && !string.IsNullOrEmpty(Settings.GPSCity)
+            ? $"{Settings.GPSCountry} - {Settings.GPSCity}".ToUpper()
+            : "GPS " + SysTranslations.UndefinedSlot.GetLang().ToUpper();
         LabelSubTitleGPS.Text = TitleGPS;
         // Omer
         if ( force || TitleOmer.IsNullOrEmpty() )
           TitleOmer = Settings.UseSodHaibour
-                      ? AppTranslations.MainFormSubTitleSod.GetLang().ToUpper()
-                      : AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
+            ? AppTranslations.MainFormSubTitleSod.GetLang().ToUpper()
+            : AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon].GetLang().ToUpper();
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )

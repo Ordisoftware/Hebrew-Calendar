@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase : SQLiteDatabase
@@ -61,9 +61,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
-  {
-    return false;
-  }
+    => false;
 
   protected override void CreateBindingLists()
   {

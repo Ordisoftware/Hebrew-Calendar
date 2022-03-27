@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 /// have also been added.
 /// </remarks>
 [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 class RichTextBoxEx : RichTextBox
 {
   /// <summary>

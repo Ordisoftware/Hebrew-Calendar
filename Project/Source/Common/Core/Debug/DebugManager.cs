@@ -132,9 +132,11 @@ static partial class DebugManager
   }
   static private bool _TraceEnabled = false;
 
+
   /// <summary>
   /// Indicates if the debug manager is enabled or not.
   /// </summary>
+  [SuppressMessage("Style", "GCop423:This condition was just checked on line {0}.", Justification = "Opinion")]
   static public bool Enabled
   {
     get => _Enabled;
@@ -342,9 +344,6 @@ static partial class DebugManager
       switch ( show )
       {
         case ShowExceptionMode.None:
-          break;
-        case ShowExceptionMode.Simple:
-          ShowSimple(einfo);
           break;
         case ShowExceptionMode.Advanced:
           ShowAdvanced(einfo);

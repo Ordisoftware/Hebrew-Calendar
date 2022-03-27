@@ -156,6 +156,7 @@ static class HebrewTools
   /// Opens online bible provider.
   /// </summary>
   [SuppressMessage("Performance", "U2U1103:Index strings correctly", Justification = "For code readability")]
+  [SuppressMessage("Style", "GCop414:Remove .ToString() as it's unnecessary.", Justification = "Opinion")]
   static public void OpenBibleProvider(string url, int book, int chapter, int verse)
   {
     string chapterString = chapter.ToString();

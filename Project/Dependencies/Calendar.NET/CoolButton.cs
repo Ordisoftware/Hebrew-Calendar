@@ -12,6 +12,7 @@ namespace CodeProjectCalendar.NET
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "GCop406:Mark {0} field as read-only.", Justification = "<En attente>")]
   internal partial class CoolButton : UserControl
   {
     private Color _buttonColor;
@@ -149,8 +150,8 @@ namespace CodeProjectCalendar.NET
         g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
         GraphicsPath path = RoundedRectangle.Create(0, 0, ClientSize.Width - 4, ClientSize.Height - 4);
         SizeF fontSize = g.MeasureString(_buttonText, _buttonFont);
-        int horWidth = ( ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2 );
-        int verHeight = ( ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2 );
+        int horWidth = ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2;
+        int verHeight = ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2;
 
         g.FillPath(new SolidBrush(_buttonColor), path);
         g.DrawPath(Focused ? new Pen(_focusColor) : new Pen(_borderColor), path);
@@ -161,8 +162,8 @@ namespace CodeProjectCalendar.NET
         g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
         using GraphicsPath path = RoundedRectangle.Create(0, 0, ClientSize.Width - 4, ClientSize.Height - 4);
         SizeF fontSize = g.MeasureString(_buttonText, _buttonFont);
-        int horWidth = ( ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2 );
-        int verHeight = ( ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2 );
+        int horWidth = ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2;
+        int verHeight = ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2;
 
         g.FillPath(new SolidBrush(_highlightButtonColor), path);
         g.DrawPath(ContainsFocus ? new Pen(_focusColor) : new Pen(_borderColor), path);

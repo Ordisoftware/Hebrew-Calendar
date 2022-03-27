@@ -23,7 +23,6 @@ static class ExportHelper
   /// <summary>
   /// Creates the export targets.
   /// </summary>
-  /// <typeparam name="T"></typeparam>
   static public NullSafeOfStringDictionary<T> CreateExportTargets<T>(params T[] list)
   where T : struct, Enum
   {
@@ -37,7 +36,6 @@ static class ExportHelper
   /// <summary>
   /// Creates the filters for dialog boxes.
   /// </summary>
-  /// <typeparam name="T"></typeparam>
   static public string CreateFilters<T>(this NullSafeOfStringDictionary<T> values)
   where T : struct, Enum
   {

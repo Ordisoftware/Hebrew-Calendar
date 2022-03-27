@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2023-03 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -60,14 +60,15 @@ static partial class DisplayManager
       case MessageBoxIcon.Information:
         SystemSounds.Beep.Play();
         break;
-      case MessageBoxIcon.Question:
-        SystemSounds.Hand.Play();
-        break;
       case MessageBoxIcon.Warning:
         SystemSounds.Exclamation.Play();
         break;
+      case MessageBoxIcon.Question:
       case MessageBoxIcon.Error:
         SystemSounds.Hand.Play();
+        break;
+      default:
+        // NOP
         break;
     }
   }
@@ -131,7 +132,7 @@ static partial class DisplayManager
     if ( ( icon == MessageBoxIcon.Information || icon == MessageBoxIcon.Question )
       && IconStyle == MessageBoxIconStyle.ForceNone )
       icon = MessageBoxIcon.None;
-    DialogResult res = DialogResult.None;
+    var res = DialogResult.None;
     SystemManager.TryCatchManage(() =>
     {
       res = FormStyle switch

@@ -23,6 +23,10 @@ namespace CoolPrintPreview
   [SuppressMessage("Style", "IDE1006:Styles d'affectation de noms", Justification = "N/A")]
   [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
+  [SuppressMessage("Style", "GCop401:Instead of setting the properties in separate lines, use constructor initializers.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "GCop406:Mark {0} field as read-only.", Justification = "<En attente>")]
   internal partial class CoolPrintPreviewDialog : Form
   {
 

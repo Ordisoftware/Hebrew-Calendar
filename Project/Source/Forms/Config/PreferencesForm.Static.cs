@@ -115,14 +115,10 @@ partial class PreferencesForm
   static public bool Run(int index = -1)
   {
     Reseted = false;
-    Language lang = Settings.LanguageSelected;
+    var lang = Settings.LanguageSelected;
     var form = new PreferencesForm();
-    if ( !MainForm.Instance.Visible )
-      form.ShowInTaskbar = true;
-    if ( index >= 0 )
-      form.TabControl.SelectedIndex = index;
-    else
-      form.TabControl.SelectedIndex = Settings.PreferencesFormSelectedTabIndex;
+    if ( !MainForm.Instance.Visible ) form.ShowInTaskbar = true;
+    form.TabControl.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
     form.ShowDialog();
     while ( LanguageChanged || DoReset )
     {

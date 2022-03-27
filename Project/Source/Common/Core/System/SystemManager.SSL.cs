@@ -27,10 +27,10 @@ static partial class SystemManager
   {
     var uri = new Uri(url);
     var certificate = useGitHib
-                      ? isGitHubContent
-                        ? GitHubUserContentSSLCertificate
-                        : GitHubSSLCertificate
-                      : AuthorWebsiteSSLCertificate;
+      ? isGitHubContent
+        ? GitHubUserContentSSLCertificate
+          : GitHubSSLCertificate
+      : AuthorWebsiteSSLCertificate;
     uri = new UriBuilder(uri.Scheme, uri.Host).Uri;
     string id = Guid.NewGuid().ToString();
     var point = ServicePointManager.FindServicePoint(uri);
