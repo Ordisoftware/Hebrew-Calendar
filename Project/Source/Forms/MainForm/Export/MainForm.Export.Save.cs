@@ -123,15 +123,15 @@ partial class MainForm
     {
       var current = CalendarMonth.CalendarDate;
       CalendarMonth.CalendarDate = interval.Start.Value;
-      bool HasMorePages = true;
-      while ( HasMorePages )
+      bool hasMorePages = true;
+      while ( hasMorePages )
       {
         string filename = $"{nameof(LunisolarDays)} {CalendarMonth.CalendarDate.Year}-{CalendarMonth.CalendarDate.Month:00}"
                         + Program.ImageExportTargets[Settings.ExportImagePreferredTarget];
         using var bitmap = CalendarMonth.GetBitmap();
         bitmap.Save(Path.Combine(path, filename), Settings.ExportImagePreferredTarget.GetFormat());
         CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-        HasMorePages = CalendarMonth.CalendarDate <= interval.End.Value;
+        hasMorePages = CalendarMonth.CalendarDate <= interval.End;
       }
       CalendarMonth.CalendarDate = current;
       return true;

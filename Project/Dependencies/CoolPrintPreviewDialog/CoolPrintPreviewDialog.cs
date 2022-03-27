@@ -21,6 +21,8 @@ namespace CoolPrintPreview
   /// PDF export.
   /// </remarks>
   [SuppressMessage("Style", "IDE1006:Styles d'affectation de noms", Justification = "N/A")]
+  [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   internal partial class CoolPrintPreviewDialog : Form
   {
 

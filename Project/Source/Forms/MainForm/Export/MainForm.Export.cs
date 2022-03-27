@@ -43,7 +43,7 @@ partial class MainForm
   private IEnumerable<LunisolarDay> GetDayRows(ExportInterval interval)
   {
     if ( !interval.IsDefined ) return LunisolarDays;
-    return LunisolarDays.Where(day => day.Date >= interval.Start.Value && day.Date <= interval.End.Value);
+    return LunisolarDays.Where(day => day.Date >= interval.Start && day.Date <= interval.End);
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]

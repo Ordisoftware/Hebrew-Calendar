@@ -5,6 +5,7 @@ using System.Windows.Forms;
 namespace CodeProjectCalendar.NET
 {
   [SuppressMessage("Usage", "MA0001:StringComparison is missing", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   internal partial class EventDetails : Form
   {
     private IEvent _event;

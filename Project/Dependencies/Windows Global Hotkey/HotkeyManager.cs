@@ -4,6 +4,7 @@ using System.Threading;
 
 namespace Base.Hotkeys
 {
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   public class HotkeyManager : IDisposable
   {
 

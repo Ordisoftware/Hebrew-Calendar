@@ -420,6 +420,7 @@ static class FormsHelper
   /// </summary>
   /// <param name="control">The control.</param>
   /// <param name="margin">The margin.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public List<Point> GetGridPoints(this Control control, int margin = 15)
   {
     int widthDiv2 = control.Width / 2;

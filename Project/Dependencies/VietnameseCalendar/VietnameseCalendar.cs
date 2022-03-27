@@ -17,6 +17,7 @@ namespace System.Globalization
   /// Vietnamese calendar, while days and months are calculated using the lunisolar calendar.
   /// </summary>
   [Serializable()]
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   public class VietnameseCalendar : Calendar
   {
 
@@ -142,7 +143,9 @@ namespace System.Globalization
       get { return new int[] { VietnameseEra }; }
     }
 
+    [SuppressMessage("Design", "GCop139:Use constant instead of field.", Justification = "Analysis error")]
     private static readonly DateTime minDate = new(1800, 1, 25, 0, 0, 0);  // Tet am lich 1800
+
     /// <summary>
     /// Gets the minimum date and time supported by the VietnameseCalendar class.</summary>
     /// <returns>A <see cref="DateTime"/> object that represents January 25, 1800
@@ -154,6 +157,7 @@ namespace System.Globalization
       get { return minDate; }
     }
 
+    [SuppressMessage("Design", "GCop139:Use constant instead of field.", Justification = "Analysis error")]
     private static readonly DateTime maxDate = new(2199, 12, 31, 23, 59, 59);
 
     /// <summary>

@@ -4,11 +4,15 @@ using System.Windows.Forms;
 
 namespace Base.Hotkeys
 {
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   public class HotkeyForm : Form
   {
 
     public event EventHandler<HotkeyEventArgs> HotkeyPressed;
 
+    [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
     private readonly IntPtr hwnd;
 
     public HotkeyForm()
@@ -21,17 +25,17 @@ namespace Base.Hotkeys
       HotkeyPressed?.Invoke(null, new HotkeyEventArgs(id, key, mods));
     }
 
-    protected override void WndProc(ref Message m)
+    protected override void WndProc(ref Message message)
     {
-      if ( m.Msg == NativeMethods.HOTKEY )
+      if ( message.Msg == NativeMethods.HOTKEY )
       {
-        ushort id = (ushort)m.WParam;
-        Keys key = (Keys)( ( (int)m.LParam >> 16 ) & 0xFFFF );
-        Modifiers mods = (Modifiers)( (int)m.LParam & 0xFFFF );
+        ushort id = (ushort)message.WParam;
+        Keys key = (Keys)( ( (int)message.LParam >> 16 ) & 0xFFFF );
+        Modifiers mods = (Modifiers)( (int)message.LParam & 0xFFFF );
         KeyPressed(id, key, mods);
       }
       else
-        base.WndProc(ref m);
+        base.WndProc(ref message);
     }
 
     public void RegisterHotkey(Hotkey key)

@@ -56,7 +56,7 @@ partial class MainForm
     else
     if ( LastCelebrationReminded[torahevent] is not null )
     {
-      if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent].Value < times.DateStart )
+      if ( dateNow > times.DateStart && LastCelebrationReminded[torahevent] < times.DateStart )
       {
         if ( RemindCelebrationDayForms.TryGetValue(torahevent, out var form) )
           form.Close();

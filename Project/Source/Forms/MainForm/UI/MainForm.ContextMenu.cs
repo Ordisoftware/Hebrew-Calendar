@@ -132,7 +132,7 @@ public partial class MainForm
                                         || ( DateSelected is not null && DateSelected != ContextMenuDayCurrentEvent.Date );
     ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Date != DateTime.Today;
     ContextMenuDayGoToSelected.Enabled = DateSelected is not null
-                                         && DateSelected.Value != ContextMenuDayCurrentEvent.Date;
+                                         && DateSelected != ContextMenuDayCurrentEvent.Date;
     ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;
     ContextMenuDayDatesDiffToSelected.Enabled = DateSelected is not null
                                                 && ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;

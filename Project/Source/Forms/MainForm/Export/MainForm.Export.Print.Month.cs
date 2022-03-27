@@ -67,7 +67,7 @@ partial class MainForm
         if ( multi )
         {
           CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-          if ( CalendarMonth.CalendarDate <= interval.End.Value )
+          if ( CalendarMonth.CalendarDate <= interval.End )
           {
             e.HasMorePages = true;
             if ( !redone && !e.PageSettings.Landscape )

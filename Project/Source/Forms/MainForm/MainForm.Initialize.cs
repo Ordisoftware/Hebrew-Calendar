@@ -72,10 +72,10 @@ partial class MainForm
     StatisticsForm.Run(true, Settings.UsageStatisticsEnabled);
     Globals.ChronoStartingApp.Stop();
     var lastdone = Settings.CheckUpdateLastDone;
-    bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                   ref lastdone,
+    bool exit = WebCheckUpdate.Run(ref lastdone,
                                    Settings.CheckUpdateAtStartupDaysInterval,
-                                   true);
+                                   true,
+                                   Settings.CheckUpdateAtStartup);
     Settings.CheckUpdateLastDone = lastdone;
     if ( exit )
     {
@@ -311,15 +311,15 @@ partial class MainForm
   /// <summary>
   /// WndProc override.
   /// </summary>
-  protected override void WndProc(ref Message m)
+  protected override void WndProc(ref Message message)
   {
-    switch ( m.Msg )
+    switch ( message.Msg )
     {
       case NativeMethods.WM_QUERYENDSESSION:
         SessionEnding(this, null);
         break;
       default:
-        base.WndProc(ref m);
+        base.WndProc(ref message);
         break;
     }
   }

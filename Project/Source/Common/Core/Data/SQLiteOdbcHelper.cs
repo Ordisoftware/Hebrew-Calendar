@@ -168,10 +168,9 @@ static class SQLiteOdbcHelper
   /// <param name="table"></param>
   static public void DropTableIfExists(this OdbcConnection connection, string table)
   {
-    const string argnameTable = nameof(table);
     SystemManager.TryCatchManage(() =>
     {
-      if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTable);
+      if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
       using var command = new OdbcCommand($"DROP TABLE IF EXISTS {table}", connection);
       try
       {

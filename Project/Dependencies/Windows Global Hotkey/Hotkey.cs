@@ -21,6 +21,7 @@ namespace Base.Hotkeys
     Win = 8
   }
 
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   public class Hotkey
   {
 

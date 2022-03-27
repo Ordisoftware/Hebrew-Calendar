@@ -112,6 +112,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void TimerTooltip_Tick(object sender, EventArgs e)
   {
     if ( !EditShowTips.Checked ) return;
@@ -209,6 +210,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
   {
     if ( !Globals.IsReady ) return;
@@ -459,10 +461,10 @@ partial class MainForm : Form
     {
       MenuTray.Enabled = false;
       var lastdone = Settings.CheckUpdateLastDone;
-      bool exit = WebCheckUpdate.Run(Settings.CheckUpdateAtStartup,
-                                     ref lastdone,
+      bool exit = WebCheckUpdate.Run(ref lastdone,
                                      Settings.CheckUpdateAtStartupDaysInterval,
-                                     e is null);
+                                     e is null,
+                                     Settings.CheckUpdateAtStartup);
       Settings.CheckUpdateLastDone = lastdone;
       if ( exit )
       {
@@ -960,6 +962,7 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void CalendarText_SelectionChanged(object sender, EventArgs e)
   {
     if ( Globals.IsGenerating ) return;
@@ -1007,30 +1010,28 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
-    switch ( e.ColumnIndex )
+    if ( e.ColumnIndex == GridColumnMoonriseOccuring.Index )
+      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
+    else
+    if ( e.ColumnIndex == GridColumnNewMoon.Index || e.ColumnIndex == GridColumnFullMoon.Index )
+      e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
+    else
+    if ( e.ColumnIndex == GridColumnMoonPhase.Index )
+      e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhases);
+    else
+    if ( e.ColumnIndex == GridColumnSeasonChange.Index )
     {
-      case 5:
-        e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
-        break;
-      case 8:
-      case 9:
-        e.Value = (bool)e.Value ? Globals.Bullet : string.Empty;
-        break;
-      case 10:
-        e.Value = ( (MoonPhase)e.Value ).ToStringExport(AppTranslations.MoonPhases);
-        break;
-      case 11:
-        var season = (SeasonChange)e.Value;
-        e.Value = season == SeasonChange.None
-                  ? string.Empty
-                  : season.ToStringExport(AppTranslations.SeasonChanges);
-        break;
-      case 12:
-        var torah = (TorahCelebrationDay)e.Value;
-        e.Value = torah == TorahCelebrationDay.None
-                  ? string.Empty
-                  : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
-        break;
+      var season = (SeasonChange)e.Value;
+      e.Value = season == SeasonChange.None
+                ? string.Empty
+                : season.ToStringExport(AppTranslations.SeasonChanges);
+    }
+    else if ( e.ColumnIndex == GridColumnTorahEvent.Index )
+    {
+      var torah = (TorahCelebrationDay)e.Value;
+      e.Value = torah == TorahCelebrationDay.None
+                ? string.Empty
+                : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
     }
   }
 
@@ -1092,7 +1093,7 @@ partial class MainForm : Form
   /// Event handler. Called by TimerMidnight for tick events.
   /// </summary>
   [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Event Handler")]
-  private void TimerMidnight_Tick(DateTime Time)
+  private void TimerMidnight_Tick(DateTime time)
   {
     DoTimerMidnight();
   }

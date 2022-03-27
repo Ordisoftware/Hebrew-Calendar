@@ -12,6 +12,7 @@ public delegate void TimeReachedEventHandler(DateTime Time);
 /// <summary>
 /// Provides the means to detect when midnight is reached.
 /// </summary>
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 public class MidnightTimer : IDisposable
 {
 
@@ -112,8 +113,6 @@ public class MidnightTimer : IDisposable
   /// <summary>
   /// Handles Windows Time Changes which cause the timer to stop/start aka Reset
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
   private void WindowsTimeChangeHandler(object sender, EventArgs e)
   {
     // Please see https://connect.microsoft.com/VisualStudio/feedback/details/776003/systemevent-timechanged-is-fired-twice
@@ -126,8 +125,6 @@ public class MidnightTimer : IDisposable
   /// <summary>
   /// Executes when the timer has elasped
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
   private void Timer_Elapsed(object sender, ElapsedEventArgs e)
   {
     Timer.Stop(); // swapped order thanks to Jeremy
@@ -139,7 +136,6 @@ public class MidnightTimer : IDisposable
   /// Obtains a DateTime of Midngiht
   /// </summary>
   /// <param name="MinutesAfterMidnight">How many minuets after midnight to add?</param>
-  /// <returns></returns>
   static private DateTime GetMidnight(int MinutesAfterMidnight)
   {
     // Lets work out the next occuring midnight
