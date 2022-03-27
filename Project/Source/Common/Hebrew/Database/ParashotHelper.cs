@@ -49,7 +49,7 @@ static class ParashotHelper
     // Button Open board
     form.ActionYes.Visible = runBoard is not null;
     form.ActionYes.Text = SysTranslations.Board.GetLang();
-    form.ActionYes.Click += async (_s, _e) =>
+    form.ActionYes.Click += async (_, _) =>
     {
       Form form = null;
       SystemManager.TryCatchManage(() => form = runBoard.Invoke());
@@ -59,7 +59,7 @@ static class ParashotHelper
     // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
     form.ActionNo.Text = SysTranslations.Memo.GetLang();
-    form.ActionNo.Click += (_s, _e) =>
+    form.ActionNo.Click += (_, _) =>
     {
       string memo1 = parashah.Memo;
       string memo2 = linked?.Memo ?? "";
@@ -70,7 +70,7 @@ static class ParashotHelper
     form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
     form.ActionRetry.DialogResult = DialogResult.None;
     form.ActionRetry.Click -= form.ActionClose_Click;
-    form.ActionRetry.Click += (_s, _e) =>
+    form.ActionRetry.Click += (_, _) =>
     {
       Clipboard.SetText(message);
       DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),

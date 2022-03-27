@@ -48,6 +48,7 @@ static class WebCheckUpdate
   /// <param name="auto">True if no user interaction else false.</param>
   /// <param name="checkAtStartup">True if it is a startup check.</param>
   /// <param name="useGitHub">True to use GitHub.</param>
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   static public bool Run(ref DateTime lastdone, int interval, bool auto, bool checkAtStartup, bool useGitHub = false)
   {
     if ( interval == -1 ) interval = DefaultCheckDaysInterval;

@@ -105,7 +105,6 @@ partial class PreferencesForm
     }
   }
 
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void DoExportSettings()
   {
     var city = Settings.GPSCity;

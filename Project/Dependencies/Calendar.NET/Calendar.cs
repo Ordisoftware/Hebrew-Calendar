@@ -924,7 +924,6 @@ namespace CodeProjectCalendar.NET
     private string MonthWithDayText;
 
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
-    [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "<En attente>")]
     [SuppressMessage("Design", "GCop178:Use parenthesis to clarify your boolean logic intention.", Justification = "<En attente>")]
     [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "<En attente>")]
     private void RenderMonthCalendar(PaintEventArgs e)

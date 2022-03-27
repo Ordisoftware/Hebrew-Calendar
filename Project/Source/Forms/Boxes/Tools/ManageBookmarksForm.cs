@@ -122,6 +122,7 @@ partial class ManageBookmarksForm : Form
   }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   private void ActionExport_Click(object sender, EventArgs e)
   {
     SaveBookmarksDialog.FileName = TableName;

@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class LunisolarDay
 {
 
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
     int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
@@ -24,8 +25,8 @@ partial class LunisolarDay
       if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
       {
         int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
-                  ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
-                  : -1;
+          ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
+          : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
           return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
       }
@@ -33,8 +34,8 @@ partial class LunisolarDay
       if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.YomsMonth )
       {
         int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
-                  ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
-                  : -1;
+          ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
+          : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
           return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
       }

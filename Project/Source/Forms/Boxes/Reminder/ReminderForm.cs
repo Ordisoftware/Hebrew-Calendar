@@ -40,7 +40,6 @@ partial class ReminderForm : Form
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
@@ -262,9 +261,9 @@ partial class ReminderForm : Form
     {
       var item = (ToolStripMenuItem)ContextMenuLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
       item.Tag = value;
-      item.Click += (_s, _) =>
+      item.Click += (senderItemClick, _) =>
       {
-        var action = (PowerAction)( (ToolStripItem)_s ).Tag;
+        var action = (PowerAction)( (ToolStripItem)senderItemClick ).Tag;
         SystemManager.DoPowerAction(action, Program.Settings.LockSessionConfirmLogOffOrMore);
       };
       if ( Program.Settings.LockSessionDefaultAction == value )

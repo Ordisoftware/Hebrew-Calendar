@@ -21,8 +21,7 @@ partial class SelectExportTargetForm : Form
 
   static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)
   {
-    using var form = new SelectExportTargetForm();
-    form.ActionToDo = action;
+    using var form = new SelectExportTargetForm { ActionToDo = action };
     form.Text += SysTranslations.ViewActionTitle.GetLang(action);
     form.SelectText.Enabled = available.HasFlag(ViewMode.Text);
     form.SelectMonth.Enabled = available.HasFlag(ViewMode.Month);
@@ -140,8 +139,8 @@ partial class SelectExportTargetForm : Form
       checkbox.TabIndex = index++;
       if ( item.Key.Equals(Settings[setting]) )
         checkbox.Checked = true;
-      checkbox.CheckedChanged += (_s, _e) =>
-        Settings[setting] = ( (KeyValuePair<T, string>)( (RadioButton)_s ).Tag ).Key;
+      checkbox.CheckedChanged += (senderCheckedChange, _) =>
+        Settings[setting] = ( (KeyValuePair<T, string>)( (RadioButton)senderCheckedChange ).Tag ).Key;
       if ( index == 3 )
       {
         posX = 15 + ( GroupBoxFormat.Width - 30 ) / 2;

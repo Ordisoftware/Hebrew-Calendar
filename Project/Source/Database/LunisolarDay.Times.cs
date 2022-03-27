@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class LunisolarDay
 {
 
+  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   internal DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
   {
     var day = this;

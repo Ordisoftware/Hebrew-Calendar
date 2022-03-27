@@ -550,7 +550,6 @@ namespace System.Globalization
     /// <param name="era">An integer that represents the era.</param>
     /// <exception cref="ArgumentOutOfRangeException">year, month, day, or era is outside
     /// the range supported by this calendar.</exception>
-    [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "<En attente>")]
     public override bool IsLeapDay(int year, int month, int day, int era)
     {
       bool ret = IsLeapMonth(year, month, era);
