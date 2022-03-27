@@ -372,11 +372,11 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add comments to bookmarks.
 - Improve bookmark import to automatically extend length to multiple of 5.
 
-#### 2022.03.30 - Version 9.28
+#### 2022.04.05 - Version 9.28
 
 - Add current day change when cursor changes line in text report.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
-- Code refactoring, optimization and fixes with more analyzers.
+- Massive code refactorings, optimizations and fixes with more analyzers.
 - Update Markdig NuGet.
 - Update Aish web links for parashot study.
 
