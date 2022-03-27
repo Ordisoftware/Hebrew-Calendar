@@ -37,6 +37,7 @@
 [assembly: SuppressMessage("Simplification", "RCS1061:Merge 'if' with nested 'if'.", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1001:Add braces (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1003:Add braces to if-else (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Style", "RCS1217:Convert interpolated string to concatenation.", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.GetRunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
 

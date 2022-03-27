@@ -79,7 +79,7 @@ static class Interlocks
     var processes = Process.GetProcesses();
     var list = from item in Connection.Query<Interlock>(sql, name).Where(item => item.ProcessID != Globals.ProcessId)
                let process = Array.Find(processes, p => p.Id == item.ProcessID)
-               select process?.ProcessName ?? "PID " + item.ProcessID;
+               select process?.ProcessName ?? $"PID {item.ProcessID}";
     foreach ( var item in list )
       if ( dictionary.ContainsKey(item) )
         dictionary[item]++;

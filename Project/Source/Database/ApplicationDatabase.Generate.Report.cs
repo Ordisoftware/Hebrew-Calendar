@@ -110,8 +110,8 @@ partial class ApplicationDatabase
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )
             throw new Exception("Field if too short." + Globals.NL +
-                                "    Available chars: " + lengthAvailable + Globals.NL +
-                                "    Missing chars: " + length);
+                                "    Available chars: {lengthAvailable}" + Globals.NL +
+                                "    Missing chars: {length}");
           strDesc += new string(' ', length) + ColumnSepRight;
           content.Append(ColumnSepLeft);
           content.Append(textDate);

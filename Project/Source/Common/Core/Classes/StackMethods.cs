@@ -109,7 +109,7 @@ static class StackMethods
           else
             line.Append(Words[x]).Append(' ');
         }
-        if ( line.Length > 0 ) result.AppendLine(line.ToString());
+        if ( line.Length > 0 ) result.Append(line).AppendLine();
       }
       else
         result.AppendLine(Paragraph);
@@ -244,10 +244,12 @@ static class StackMethods
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
   }
 
+
   /// <summary>
   /// Ensure drop down menu items are displayed on the same screen.
   /// </summary>
   /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "Analysis error")]
   static public void MenuItemDropDownOpening(object sender, EventArgs e)
   {
     if ( sender is not ToolStripMenuItem menuItem || !menuItem.HasDropDownItems ) return;
@@ -317,7 +319,7 @@ static class StackMethods
   static public DataTable ToDataTable<T>(this IEnumerable<T> list, string name = "") where T : class
   {
     if ( list is null ) return null;
-    var table = new DataTable { TableName = name };
+    var table = new DataTable(name);
     PropertyInfo[] columns = null;
     foreach ( T item in list )
     {
@@ -340,7 +342,9 @@ static class StackMethods
     return table;
   }
 
+
   // From https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   static public DataTable ToDataTable(this DataGridView datagridview, string name = "", bool IgnoreHiddenColumns = false)
   {
     try

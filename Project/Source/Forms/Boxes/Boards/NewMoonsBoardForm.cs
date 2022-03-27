@@ -230,7 +230,7 @@ partial class NewMoonsBoardForm : Form
     {
       name = month;
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
-      Board.Columns.Add(( EditShowMonthNumbers.Checked ? index++ + " - " : "" ) + name, typeof(DateTime));
+      Board.Columns.Add(( EditShowMonthNumbers.Checked ? $"{index++} - " : "" ) + name, typeof(DateTime));
     }
     DataGridView.DataSource = Board;
   }

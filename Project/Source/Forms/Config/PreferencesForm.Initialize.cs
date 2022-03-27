@@ -168,7 +168,7 @@ partial class PreferencesForm
       control.Maximum = interval.Item2;
       control.Value = interval.Item3;
       control.Increment = interval.Item4;
-      if ( label is not null ) label.Text = interval.Item1 + " - " + interval.Item2 + " (" + interval.Item3 + ")";
+      if ( label is not null ) label.Text = $"{interval.Item1} - {interval.Item2} ({interval.Item3})";
     }
   }
 
