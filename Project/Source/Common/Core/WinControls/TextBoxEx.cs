@@ -41,8 +41,6 @@ public enum TextUpdating
   Selected
 }
 
-
-
 public delegate void InsertingTextEventHandler(object sender, TextUpdating mode, ref string text);
 
 //public delegate void ShowingContextMenuEventHandler(object sender, TextUpdating mode, ref string text);

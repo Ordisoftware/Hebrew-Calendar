@@ -152,7 +152,6 @@ static class HebrewTools
     });
   }
 
-
   /// <summary>
   /// Opens online bible provider.
   /// </summary>

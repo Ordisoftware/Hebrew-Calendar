@@ -140,7 +140,6 @@ static class WebCheckUpdate
     }
   }
 
-
   /// <summary>
   /// Gets the version available online with the file checksum.
   /// </summary>
@@ -221,7 +220,6 @@ static class WebCheckUpdate
     }
     return false;
   }
-
 
   /// <summary>
   /// Processes the automatic download and installation.

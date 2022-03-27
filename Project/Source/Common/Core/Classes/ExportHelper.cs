@@ -46,7 +46,6 @@ static class ExportHelper
     return list.Join("|");
   }
 
-
   /// <summary>
   /// Sets the targets that are supported.
   /// </summary>
@@ -59,7 +58,6 @@ static class ExportHelper
       values.Remove(pair.Key);
     return values;
   }
-
 
   /// <summary>
   /// Sets the targets that are not supported.

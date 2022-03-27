@@ -23,7 +23,6 @@ static class FormsHelper
   /// <summary>
   /// Applies localized resources.
   /// </summary>
-  //[SuppressMessage("Usage", "MA0011:IFormatProvider is missing", Justification = "N/A")]
   static public void ApplyResources(this ComponentResourceManager resources, Control.ControlCollection controls)
   {
     foreach ( Control control in controls )

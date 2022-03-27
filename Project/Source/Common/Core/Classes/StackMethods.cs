@@ -244,7 +244,6 @@ static class StackMethods
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
   }
 
-
   /// <summary>
   /// Ensure drop down menu items are displayed on the same screen.
   /// </summary>
@@ -341,7 +340,6 @@ static class StackMethods
     }
     return table;
   }
-
 
   // From https://stackoverflow.com/questions/6295161/how-to-build-a-datatable-from-a-datagridview#13344318
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]

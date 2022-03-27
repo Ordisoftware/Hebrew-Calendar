@@ -18,6 +18,7 @@ using System.Windows.Forms;
 /// </summary>
 public static class ToolStripMenuItemHelper
 {
+
   //////////////////////////////////////////////////
   // Private static fields
   //////////////////////////////////////////////////
@@ -120,7 +121,6 @@ public static class ToolStripMenuItemHelper
     destEventHandlerList.AddHandlers(sourceEventHandlerList);
   }
 
-
   /// <summary>
   /// Gets the event handler list from a component
   /// </summary>
@@ -139,4 +139,5 @@ public static class ToolStripMenuItemHelper
   //////////////////////////////////////////////////
   // Private static methods
   //////////////////////////////////////////////////
+
 }

@@ -234,6 +234,7 @@ namespace CoolPrintPreview
     {
       get { return PageImages.Count; }
     }
+
     /// <summary>
     /// Gets or sets the control's background color.
     /// </summary>
