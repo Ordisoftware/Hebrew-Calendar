@@ -31,6 +31,10 @@ static partial class Globals
   static public readonly string NL4 = NL3 + NL;
   static public readonly string NL5 = NL4 + NL;
 
+  static public readonly int DaysOfWeekCount = Enums.GetValues<DayOfWeek>().Count;
+  static public readonly int SecondsInOneMinute = 60;
+  static public readonly int HoursInOneDay = 24;
+
   /// <summary>
   /// Indicates bullet.
   /// </summary>

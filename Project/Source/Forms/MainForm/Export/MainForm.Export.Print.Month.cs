@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "Anti-pattern on numeric types and strings")]
+  [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "<En attente>")]
   private void ExportPrintMonth(ExportInterval interval)
   {
     var current = CalendarMonth.CalendarDate;

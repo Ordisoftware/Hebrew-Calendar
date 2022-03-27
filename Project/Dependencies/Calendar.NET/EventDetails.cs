@@ -6,6 +6,10 @@ namespace CodeProjectCalendar.NET
 {
   [SuppressMessage("Usage", "MA0001:StringComparison is missing", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "GCop448:Replace Equals with == when comparing strings", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "GCop406:Mark {0} field as read-only.", Justification = "<En attente>")]
   internal partial class EventDetails : Form
   {
     private IEvent _event;

@@ -156,9 +156,6 @@ partial class PreferencesForm
     // Weather online provider
     switch ( Settings.WeatherOnlineProvider )
     {
-      case WeatherProvider.MeteoblueDotCom:
-        SelectWeatherOnlineMeteoblueDotCom.Select();
-        break;
       case WeatherProvider.WeatherDotCom:
         SelectWeatherOnlineWeatherDotCom.Select();
         break;

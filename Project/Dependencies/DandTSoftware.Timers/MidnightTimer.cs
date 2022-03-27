@@ -13,6 +13,7 @@ public delegate void TimeReachedEventHandler(DateTime Time);
 /// Provides the means to detect when midnight is reached.
 /// </summary>
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
 public class MidnightTimer : IDisposable
 {
 

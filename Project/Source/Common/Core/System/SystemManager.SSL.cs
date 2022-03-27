@@ -23,14 +23,15 @@ static partial class SystemManager
   /// <summary>
   /// Checks the validity of the remote website SSL certificate.
   /// </summary>
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   static public void CheckServerCertificate(string url, bool useGitHib, bool isGitHubContent)
   {
     var uri = new Uri(url);
     var certificate = useGitHib
-                      ? isGitHubContent
-                        ? GitHubUserContentSSLCertificate
-                        : GitHubSSLCertificate
-                      : AuthorWebsiteSSLCertificate;
+      ? isGitHubContent
+        ? GitHubUserContentSSLCertificate
+          : GitHubSSLCertificate
+      : AuthorWebsiteSSLCertificate;
     uri = new UriBuilder(uri.Scheme, uri.Host).Uri;
     string id = Guid.NewGuid().ToString();
     var point = ServicePointManager.FindServicePoint(uri);

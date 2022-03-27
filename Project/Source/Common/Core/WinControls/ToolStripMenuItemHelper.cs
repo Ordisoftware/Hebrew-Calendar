@@ -16,6 +16,7 @@ using System.Windows.Forms;
 /// <summary>
 /// This is a set of extensions for accessing the Event Handlers as well as cloning menu items
 /// </summary>
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public static class ToolStripMenuItemHelper
 {
 
@@ -57,7 +58,7 @@ public static class ToolStripMenuItemHelper
     // Copy over using reflections
     foreach ( var propertyInfo in propInfoList )
     {
-      object propertyInfoValue = propertyInfo.GetValue(sourceToolStripMenuItem, null);
+      var propertyInfoValue = propertyInfo.GetValue(sourceToolStripMenuItem, null);
       propertyInfo.SetValue(menuItem, propertyInfoValue, null);
     }
 

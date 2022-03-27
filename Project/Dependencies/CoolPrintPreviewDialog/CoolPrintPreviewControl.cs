@@ -49,6 +49,11 @@ namespace CoolPrintPreview
   /// </remarks>
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------

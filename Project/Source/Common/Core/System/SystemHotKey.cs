@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-04 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using Base.Hotkeys;
@@ -23,19 +23,14 @@ using GregsStack.InputSimulatorStandard.Native;
 class SystemHotKey
 {
 
-  static private HotkeyManager Manager
-  {
-    get
-    {
-      return _Manager ??= new HotkeyManager();
-    }
-  }
+  static private HotkeyManager Manager => _Manager ??= new HotkeyManager();
+
   static private HotkeyManager _Manager;
 
   static public readonly List<SystemHotKey> AllActivated = new();
 
-  private Hotkey publicHotKey;
-  private int publicHotKeyID;
+  private Hotkey _PublicHotKey;
+  private int _PublicHotKeyID;
 
   public bool Shift
   {
@@ -68,7 +63,7 @@ class SystemHotKey
     set
     {
       if ( _Key == value || value == Keys.None ) return;
-      if ( publicHotKey is not null )
+      if ( _PublicHotKey is not null )
       {
         Active = false;
         Key = value;
@@ -86,7 +81,7 @@ class SystemHotKey
     set
     {
       if ( _Modifiers == value || value == Modifiers.None ) return;
-      if ( publicHotKey is not null )
+      if ( _PublicHotKey is not null )
       {
         Active = false;
         Modifiers = value;
@@ -104,7 +99,7 @@ class SystemHotKey
     set
     {
       if ( _KeyPressed == value ) return;
-      if ( publicHotKey is not null )
+      if ( _PublicHotKey is not null )
       {
         Active = false;
         KeyPressed = value;
@@ -117,7 +112,7 @@ class SystemHotKey
 
   public bool Active
   {
-    get { return publicHotKey is not null; }
+    get { return _PublicHotKey is not null; }
     set
     {
       if ( Active == value ) return;
@@ -130,51 +125,48 @@ class SystemHotKey
 
   private void Register()
   {
-    if ( publicHotKey is null && Key != Keys.None && Modifiers != Modifiers.None )
+    if ( _PublicHotKey is not null || Key == Keys.None || Modifiers == Modifiers.None ) return;
+    var key = Key;
+    if ( Shift ) key |= Keys.Shift;
+    if ( Control ) key |= Keys.Control;
+    if ( Alt ) key |= Keys.Alt;
+    _PublicHotKey = new Hotkey(key);
+    if ( Windows ) _PublicHotKey.Win = true;
+    try
     {
-      var key = Key;
-      if ( Shift ) key |= Keys.Shift;
-      if ( Control ) key |= Keys.Control;
-      if ( Alt ) key |= Keys.Alt;
-      publicHotKey = new Hotkey(key);
-      if ( Windows ) publicHotKey.Win = true;
+      var hka = new HotkeyAction(_PublicHotKey, KeyPressed);
+      _PublicHotKeyID = 1;
+      if ( !Manager.RegisterHotkey(_PublicHotKeyID, hka) )
+        throw new Exception(SysTranslations.HotKeyRefusedBySystem.GetLang());
+    }
+    catch ( Exception ex )
+    {
       try
       {
-        var hka = new HotkeyAction(publicHotKey, KeyPressed);
-        publicHotKeyID = 1;
-        if ( !Manager.RegisterHotkey(publicHotKeyID, hka) )
-          throw new Exception(SysTranslations.HotKeyRefusedBySystem.GetLang());
+        Unregister();
       }
-      catch ( Exception ex )
+      catch ( Exception inner )
       {
-        try
-        {
-          Unregister();
-        }
-        catch ( Exception inner )
-        {
-          throw new Exception(ex.Message, inner);
-        }
-        throw;
+        throw new Exception(ex.Message, inner);
       }
-      AllActivated.Add(this);
+      throw;
     }
+    AllActivated.Add(this);
   }
 
   private void Unregister()
   {
-    if ( publicHotKey is not null )
-    {
-      if ( !Manager.UnregisterHotkey(publicHotKeyID) )
-        throw new Exception(SysTranslations.HotKeyUnregisterError.GetLang());
-      publicHotKey = null;
-      AllActivated.Remove(this);
-    }
+    if ( _PublicHotKey is null )
+      return;
+    if ( !Manager.UnregisterHotkey(_PublicHotKeyID) )
+      throw new Exception(SysTranslations.HotKeyUnregisterError.GetLang());
+    _PublicHotKey = null;
+    AllActivated.Remove(this);
   }
 
   public bool IsValid()
   {
-    if ( publicHotKey is not null ) return true;
+    if ( _PublicHotKey is not null ) return true;
     bool result = false;
     var key = (VirtualKeyCode)Key;
     var modifiers = new List<VirtualKeyCode>();

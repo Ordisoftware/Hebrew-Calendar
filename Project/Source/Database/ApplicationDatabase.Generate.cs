@@ -62,8 +62,8 @@ partial class ApplicationDatabase
     LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
                                     progressCount,
                                     Program.LoadingFormGenerate);
-    var Chrono = new Stopwatch();
-    Chrono.Start();
+    var chrono = new Stopwatch();
+    chrono.Start();
     try
     {
       LastGenerationErrors.Clear();
@@ -85,16 +85,16 @@ partial class ApplicationDatabase
     }
     finally
     {
-      Chrono.Stop();
-      Settings.BenchmarkPopulateDays = Chrono.ElapsedMilliseconds;
+      chrono.Stop();
+      Settings.BenchmarkPopulateDays = chrono.ElapsedMilliseconds;
     }
     return Globals.IsGenerating && Settings.UseSodHaibour
-                                   ? Instance.AnalyseDaysSod(progressCount)
-                                   : Instance.AnalyseDaysOmer(progressCount);
+      ? Instance.AnalyseDaysSod(progressCount)
+      : Instance.AnalyseDaysOmer(progressCount);
   }
 
   private TimeSpan? DelayMoonrise;
-  private bool isMoonriseDelayed;
+  private bool IsMoonriseDelayed;
 
   /// <summary>
   /// Initializes a day.
@@ -105,10 +105,10 @@ partial class ApplicationDatabase
     {
       var data = CalendarDates.Instance[day.Date];
       var ephemeris = data.Ephemerisis;
-      if ( isMoonriseDelayed )
+      if ( IsMoonriseDelayed )
       {
         ephemeris.Moonrise = DelayMoonrise;
-        isMoonriseDelayed = false;
+        IsMoonriseDelayed = false;
       }
       else
       if ( CalendarDates.Instance[day.Date.AddDays(1)].Ephemerisis.Moonrise is null )
@@ -116,10 +116,10 @@ partial class ApplicationDatabase
         {
           DelayMoonrise = ephemeris.Moonrise;
           ephemeris.Moonrise = null;
-          isMoonriseDelayed = true;
+          IsMoonriseDelayed = true;
         }
       day.LunarDay = data.MoonDay;
-      if ( isMoonriseDelayed ) day.LunarDay++;
+      if ( IsMoonriseDelayed ) day.LunarDay++;
       day.LunarMonth = 0;
       day.IsNewMoon = day.LunarDay == 1;
       day.MoonPhase = data.MoonPhase;

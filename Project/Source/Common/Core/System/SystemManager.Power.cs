@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
@@ -20,6 +20,8 @@ using Microsoft.Win32;
 /// <summary>
 /// Provides system management.
 /// </summary>
+[SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "Opinion")]
+[SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "Opinion")]
 static partial class SystemManager
 {
 
@@ -34,18 +36,13 @@ static partial class SystemManager
     return list;
   }
 
-  static public bool IsUserSession { get; private set; }
-
-  static public bool IsSessionLocked { get; private set; }
-
-  static public void PreventSleep()
-    => NativeMethods.SetThreadExecutionState(NativeMethods.SleepDisallow);
-
-  static public void AllowSleep()
-    => NativeMethods.SetThreadExecutionState(NativeMethods.SleepAllow);
-
   static public bool CanStandby
-    => NativeMethods.IsPwrSuspendAllowed();
+  {
+    get
+    {
+      return NativeMethods.IsPwrSuspendAllowed();
+    }
+  }
 
   static public bool CanHibernate
   {
@@ -53,7 +50,7 @@ static partial class SystemManager
     {
       try
       {
-        using RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power");
+        using var key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Power");
         if ( key is not null )
         {
           var value = key.GetValue("HibernateEnabled", 0);
@@ -69,7 +66,12 @@ static partial class SystemManager
   }
 
   static public bool IsForegroundFullScreenOrScreensaverRunning
-    => IsForegroundFullScreen() || IsScreensaverRunning;
+  {
+    get
+    {
+      return IsForegroundFullScreen() || IsScreensaverRunning;
+    }
+  }
 
   static public bool IsScreensaverRunning
   {
@@ -84,7 +86,7 @@ static partial class SystemManager
   static public bool IsForegroundFullScreen(Screen screen = null)
   {
     if ( screen is null ) screen = Screen.PrimaryScreen;
-    NativeMethods.RECT rect = new();
+    var rect = new NativeMethods.RECT();
     NativeMethods.GetWindowRect(new HandleRef(null, NativeMethods.GetForegroundWindow()), ref rect);
     var rectangle = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
     return rectangle.Contains(screen.Bounds);
@@ -140,6 +142,16 @@ static partial class SystemManager
       PowerAction.Shutdown => Shutdown(confirmLogOffOrMore),
       _ => throw new AdvancedNotImplementedException(action),
     };
+  }
+
+  static public void PreventSleep()
+  {
+    NativeMethods.SetThreadExecutionState(NativeMethods.SleepDisallow);
+  }
+
+  static public void AllowSleep()
+  {
+    NativeMethods.SetThreadExecutionState(NativeMethods.SleepAllow);
   }
 
 }

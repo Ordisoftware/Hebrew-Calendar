@@ -6,6 +6,8 @@ using Meziantou.Framework.Win32.Natives;
 namespace Meziantou.Framework.Win32;
 
 //[SupportedOSPlatform("windows")]
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+[SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
 public sealed class SecurityIdentifier : IEquatable<SecurityIdentifier>
 {
   private const byte MaxSubAuthorities = 15;

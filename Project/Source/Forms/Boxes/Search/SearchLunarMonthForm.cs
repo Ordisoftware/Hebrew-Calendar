@@ -100,18 +100,16 @@ partial class SearchLunarMonthForm : Form
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( ListItems.SelectedItems.Count > 0 )
-    {
-      var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
-      SelectMoonDay.Items.Clear();
-      int year = SelectYear.Value;
-      var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
-      SelectMoonDay.Items.AddRange(days.ToArray());
-      if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
-      if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
-        CurrentDayIndex = SelectMoonDay.Items.Count - 1;
-      SelectMoonDay.SelectedIndex = CurrentDayIndex;
-    }
+    if ( ListItems.SelectedItems.Count <= 0 ) return;
+    var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
+    SelectMoonDay.Items.Clear();
+    int year = SelectYear.Value;
+    var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
+    SelectMoonDay.Items.AddRange(days.ToArray());
+    if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
+    if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
+      CurrentDayIndex = SelectMoonDay.Items.Count - 1;
+    SelectMoonDay.SelectedIndex = CurrentDayIndex;
   }
 
   private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)

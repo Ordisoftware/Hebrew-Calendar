@@ -34,6 +34,13 @@ namespace CodeProjectCalendar.NET
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop617:Avoid deep nesting of IF statements. Break the method down into smaller methods, or return early if possible.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop616:Reverse your IF criteria and use 'continue'. That will eliminate the need for a big IF block and make the code more readable.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop202:Don’t end the name of {0} with the same name as the {1}", Justification = "<En attente>")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;
@@ -74,6 +81,7 @@ namespace CodeProjectCalendar.NET
     internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
 
     static public Color ColorText { get; set; } = Color.Black;
+
     static public Brush BrushGrayMedium { get; set; } = new SolidBrush(Color.FromArgb(170, 170, 170));
     static public Brush BrushGrayLight { get; set; } = new SolidBrush(Color.FromArgb(234, 234, 234));
     static public Brush BrushText { get; set; } = Brushes.Black;
@@ -378,13 +386,13 @@ namespace CodeProjectCalendar.NET
     private void InitializeComponent()
     {
       Container components;
-      ToolStripMenuItem _miProperties;
+      ToolStripMenuItem miProperties;
       components = new System.ComponentModel.Container();
       _btnToday = new TodayButton();
       _btnLeft = new NavigateLeftButton();
       _btnRight = new NavigateRightButton();
       _contextMenuStrip = new ContextMenuStrip(components);
-      _miProperties = new ToolStripMenuItem();
+      miProperties = new ToolStripMenuItem();
       _contextMenuStrip.SuspendLayout();
       SuspendLayout();
       // 
@@ -444,16 +452,16 @@ namespace CodeProjectCalendar.NET
       // _contextMenuStrip1
       // 
       _contextMenuStrip.Items.AddRange(new ToolStripItem[] {
-            _miProperties});
+            miProperties});
       _contextMenuStrip.Name = "_contextMenuStrip1";
       _contextMenuStrip.Size = new Size(137, 26);
       // 
       // _miProperties
       // 
-      _miProperties.Name = "_miProperties";
-      _miProperties.Size = new Size(136, 22);
-      _miProperties.Text = "Properties...";
-      _miProperties.Click += MenuItemPropertiesClick;
+      miProperties.Name = "_miProperties";
+      miProperties.Size = new Size(136, 22);
+      miProperties.Text = "Properties...";
+      miProperties.Click += MenuItemPropertiesClick;
       // 
       // Calendar
       // 
@@ -789,6 +797,7 @@ namespace CodeProjectCalendar.NET
       return lastDay.AddDays(diff);
     }
 
+
     //private int Max(params float[] value)
     //{
     //  return (int)value.Max(i => Math.Ceiling(i));
@@ -904,23 +913,20 @@ namespace CodeProjectCalendar.NET
       {
         Graphics g = e.Graphics;
 
-        SizeF dateHeaderSize = g.MeasureString(
-            $"{_calendarDate:MMMM} {_calendarDate.Day.ToString(CultureInfo.InvariantCulture)}" +
-            $", {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}",
-            DateHeaderFont);
+        string str = $"{_calendarDate:MMMM} {_calendarDate.Day.ToString(CultureInfo.InvariantCulture)}" +
+                     $", {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}";
+        SizeF dateHeaderSize = g.MeasureString(str, DateHeaderFont);
 
-        g.DrawString(
-            $"{_calendarDate:MMMM} {_calendarDate.Day.ToString(CultureInfo.InvariantCulture)}" +
-            $", {_calendarDate.Year.ToString(CultureInfo.InvariantCulture)}",
-            _dateHeaderFont, BrushText,
-            ClientSize.Width - MarginSize - dateHeaderSize.Width,
-            MarginSize);
+        g.DrawString(str, _dateHeaderFont, BrushText, ClientSize.Width - MarginSize - dateHeaderSize.Width, MarginSize);
       }
     }
 
     private string MonthWithDayText;
 
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+    [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "<En attente>")]
+    [SuppressMessage("Design", "GCop178:Use parenthesis to clarify your boolean logic intention.", Justification = "<En attente>")]
+    [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "<En attente>")]
     private void RenderMonthCalendar(PaintEventArgs e)
     {
       if ( IsVisualStudioDesigner ) return;

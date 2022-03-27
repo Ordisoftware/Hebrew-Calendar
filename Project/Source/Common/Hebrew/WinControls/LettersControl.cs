@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -261,8 +261,6 @@ partial class LettersControl : UserControl
   /// <summary>
   /// Control load event.
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
   private void LettersControl_Load(object sender, EventArgs e)
   {
     ActionLetterViewDetails_VisibleChanged(null, null);
@@ -272,24 +270,20 @@ partial class LettersControl : UserControl
   /// <summary>
   /// Control paint event.
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
   private void LettersControl_Paint(object sender, PaintEventArgs e)
   {
-    if ( !first ) return;
-    first = false;
+    if ( !First ) return;
+    First = false;
     TextBox.Font?.Dispose();
     TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
     Redraw();
   }
 
-  private bool first = true;
+  private bool First = true;
 
   /// <summary>
   /// Control size chenged event.
   /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
   private void LettersControl_SizeChanged(object sender, EventArgs e)
   {
     Redraw();

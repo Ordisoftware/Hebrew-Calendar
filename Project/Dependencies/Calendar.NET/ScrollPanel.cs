@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace CodeProjectCalendar.NET
 {
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   internal partial class ScrollPanel : UserControl
   {
     private int _scrollOffset;

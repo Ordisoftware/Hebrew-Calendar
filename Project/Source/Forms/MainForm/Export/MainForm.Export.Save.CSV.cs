@@ -27,7 +27,7 @@ partial class MainForm
     {
       var items = GetDayRows(interval).ToList();
       var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
-      string CSVSeparator = Globals.CSVSeparator.ToString();
+      string csvSeparator = Globals.CSVSeparator.ToString();
       string headerTxt = string.Empty;
       foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
         headerTxt += field.ToString() + Globals.CSVSeparator;
@@ -44,22 +44,22 @@ partial class MainForm
         var dayDate = day.Date;
         if ( day.LunarMonth == 0 ) continue;
         if ( dayDate.Year == lastyear && day.LunarMonth == 1 ) break;
-        result.Append(day.DateAsString).Append(CSVSeparator);
-        result.Append(day.IsNewMoon).Append(CSVSeparator);
-        result.Append(day.IsFullMoon).Append(CSVSeparator);
-        result.Append(day.LunarMonth).Append(CSVSeparator);
-        result.Append(day.LunarDay).Append(CSVSeparator);
-        result.Append(day.SunriseAsString).Append(CSVSeparator);
-        result.Append(day.SunsetAsString).Append(CSVSeparator);
-        result.Append(day.MoonriseAsString).Append(CSVSeparator);
-        result.Append(day.MoonsetAsString).Append(CSVSeparator);
+        result.Append(day.DateAsString).Append(csvSeparator);
+        result.Append(day.IsNewMoon).Append(csvSeparator);
+        result.Append(day.IsFullMoon).Append(csvSeparator);
+        result.Append(day.LunarMonth).Append(csvSeparator);
+        result.Append(day.LunarDay).Append(csvSeparator);
+        result.Append(day.SunriseAsString).Append(csvSeparator);
+        result.Append(day.SunsetAsString).Append(csvSeparator);
+        result.Append(day.MoonriseAsString).Append(csvSeparator);
+        result.Append(day.MoonsetAsString).Append(csvSeparator);
         string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings);
         string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases);
         string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges);
         string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays);
-        result.Append(strMoonriseType).Append(CSVSeparator);
-        result.Append(strPhase).Append(CSVSeparator);
-        result.Append(strSeason).Append(CSVSeparator);
+        result.Append(strMoonriseType).Append(csvSeparator);
+        result.Append(strPhase).Append(csvSeparator);
+        result.Append(strSeason).Append(csvSeparator);
         result.AppendLine(strEvent);
       }
       return result.ToString();

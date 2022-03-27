@@ -145,13 +145,13 @@ partial class PreferencesForm
     for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
       SystemManager.TryCatch(() =>
       {
-        string name = "TorahEventRemind" + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event.ToString();
+        string name = "TorahEventRemind" + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event;
         Settings[name] = SelectRemindEventsBefore.GetItemChecked(index);
       });
     for ( int index = 0; index < SelectRemindEventsDay.Items.Count; index++ )
       SystemManager.TryCatch(() =>
       {
-        string name = "TorahEventRemindDay" + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event.ToString();
+        string name = "TorahEventRemindDay" + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event;
         Settings[name] = SelectRemindEventsDay.GetItemChecked(index);
       });
     // HotKey

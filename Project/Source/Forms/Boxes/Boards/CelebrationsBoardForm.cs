@@ -80,10 +80,9 @@ partial class CelebrationsBoardForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "Analysis error")]
   private void CelebrationsBoardForm_FormClosed(object sender, FormClosedEventArgs e)
   {
-    Instance?.Dispose();
     Instance = null;
     if ( WindowState == FormWindowState.Minimized )
       WindowState = FormWindowState.Normal;

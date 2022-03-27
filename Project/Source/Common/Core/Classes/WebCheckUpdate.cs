@@ -22,7 +22,7 @@ static class WebCheckUpdate
 
   static private bool Mutex;
 
-  static public int DefaultCheckDaysInterval { get; set; } = Enums.GetValues<DayOfWeek>().Count;
+  static public int DefaultCheckDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
   /// <summary>
   /// Deletes temp files.
@@ -169,7 +169,7 @@ static class WebCheckUpdate
     string fileChecksum = list["Checksum"];
     if ( fileVersion.IsNullOrEmpty() || fileChecksum.IsNullOrEmpty() )
       throw new WebException(SysTranslations.CheckUpdateFileError.GetLang(lines.AsMultiLine()));
-    string[] partsVersion = fileVersion.Split('.');
+    var partsVersion = fileVersion.Split('.');
     Version version;
     try
     {
@@ -203,7 +203,7 @@ static class WebCheckUpdate
   {
     LoadingForm.Instance.Hide();
     string path = useGitHub ? Globals.SetupFileGitHubURL : Globals.SetupFileURL;
-    string fileURL = string.Format(path, fileInfo.version.ToString());
+    string fileURL = string.Format(path, fileInfo.version);
     var result = WebUpdateForm.Run(fileInfo.version);
     switch ( result )
     {
@@ -238,7 +238,7 @@ static class WebCheckUpdate
       LoadingForm.Instance.Hidden = false;
       LoadingForm.Instance.Initialize(SysTranslations.DownloadingNewVersion.GetLang(), 100, 0, false);
       SystemManager.CheckServerCertificate(fileURL, useGitHub, false);
-      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version.ToString());
+      string filePathTemp = Path.GetTempPath() + string.Format(Globals.SetupFileName, fileInfo.version);
       client.DownloadProgressChanged += progress;
       client.DownloadFileCompleted += completed;
       client.DownloadFileAsync(new Uri(fileURL), filePathTemp);
@@ -309,9 +309,9 @@ public class WebClientEx : WebClient
 
   protected override WebRequest GetWebRequest(Uri address)
   {
-    var request = base.GetWebRequest(address);
-    request.Timeout = TimeOutSeconds * 1000;
-    return request;
+    var result = base.GetWebRequest(address);
+    result.Timeout = TimeOutSeconds * 1000;
+    return result;
   }
 
 }

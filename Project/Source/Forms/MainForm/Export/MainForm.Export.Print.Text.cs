@@ -14,9 +14,10 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Drawing.Printing;
+
 partial class MainForm
 {
-
   private void ExportPrintTextReport(IEnumerable<string> lines)
   {
     using var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);
@@ -28,7 +29,9 @@ partial class MainForm
     int countTotalLines = lines.Count();
     bool askToContinue = true;
     PrinterCurrentLine = 0;
-    ExportPrintRun(false, (s, e) =>
+    ExportPrintRun(false, action);
+    //
+    void action(object sender, PrintPageEventArgs e)
     {
       float posY = 0;
       int countLinesInPage = 0;
@@ -67,7 +70,7 @@ partial class MainForm
       e.HasMorePages = PrinterCurrentLine < countTotalLines;
       Thread.Sleep(10);
       Application.DoEvents();
-    });
+    }
   }
 
 }

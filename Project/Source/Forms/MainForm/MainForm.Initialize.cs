@@ -34,6 +34,7 @@ partial class MainForm
   /// <summary>
   /// Does constructor
   /// </summary>
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   private void DoConstructor()
   {
     Interlocks.Take();
@@ -311,15 +312,16 @@ partial class MainForm
   /// <summary>
   /// WndProc override.
   /// </summary>
-  protected override void WndProc(ref Message message)
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "Overrided")]
+  protected override void WndProc(ref Message m)
   {
-    switch ( message.Msg )
+    switch ( m.Msg )
     {
       case NativeMethods.WM_QUERYENDSESSION:
         SessionEnding(this, null);
         break;
       default:
-        base.WndProc(ref message);
+        base.WndProc(ref m);
         break;
     }
   }

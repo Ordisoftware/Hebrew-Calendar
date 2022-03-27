@@ -39,7 +39,7 @@ static partial class SystemManager
     try
     {
       CommandLineArguments = args;
-      CommandLine.ParserResult<T> options = CommandLine.Parser.Default.ParseArguments<T>(args);
+      var options = CommandLine.Parser.Default.ParseArguments<T>(args);
       if ( options.Tag != CommandLine.ParserResultType.Parsed ) return;
       CommandLineOptions = ( (CommandLine.Parsed<T>)options ).Value;
       if ( !CommandLineOptions.Language.IsNullOrEmpty() )
@@ -122,7 +122,9 @@ static partial class SystemManager
   /// </returns>
   static public string MakeMailLink(string link)
   {
-    return !link.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase) ? "mailto:" + link : link;
+    return !link.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase)
+      ? "mailto:" + link
+      : link;
   }
 
   /// <summary>

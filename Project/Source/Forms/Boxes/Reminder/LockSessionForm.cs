@@ -55,11 +55,10 @@ partial class LockSessionForm : Form
     Timer_Tick(null, null);
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "Analysis error")]
   private void LockSessionForm_FormClosed(object sender, FormClosedEventArgs e)
   {
     Timer.Stop();
-    Instance?.Dispose();
     Instance = null;
   }
 

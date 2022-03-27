@@ -105,11 +105,14 @@ static partial class SystemManager
           var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
           var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
           return result is null
-                 ? ".NET " + SysTranslations.UndefinedSlot.GetLang()
-                 : result.NamedArguments[0].TypedValue.Value.ToString();
+            ? ".NET " + SysTranslations.UndefinedSlot.GetLang()
+            : result.NamedArguments[0].TypedValue.Value.ToString();
         });
         //
-        string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
+        string osType = Environment.Is64BitOperatingSystem
+          ? "64-bits"
+          : "32-bits";
+        //
         _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}" + Globals.NL +
                     $"{dotnet}" + Globals.NL +
                     $"CLR {Environment.Version}";
@@ -132,8 +135,10 @@ static partial class SystemManager
   {
     get
     {
-      object value = GetWin32OperatingSystemValue("FreePhysicalMemory");
-      return value is not null ? ( (ulong)value * 1024 ).FormatBytesSize() : SysTranslations.UndefinedSlot.GetLang();
+      var value = GetWin32OperatingSystemValue("FreePhysicalMemory");
+      return value is not null
+        ? ( (ulong)value * 1024 ).FormatBytesSize()
+        : SysTranslations.UndefinedSlot.GetLang();
     }
   }
 
@@ -146,10 +151,10 @@ static partial class SystemManager
     {
       if ( _TotalVisibleMemory.IsNullOrEmpty() )
       {
-        object value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
+        var value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
         _TotalVisibleMemory = value is not null
-                              ? ( (ulong)value * 1024 ).FormatBytesSize()
-                              : SysTranslations.UndefinedSlot.GetLang();
+          ? ( (ulong)value * 1024 ).FormatBytesSize()
+          : SysTranslations.UndefinedSlot.GetLang();
       }
       return _TotalVisibleMemory;
     }

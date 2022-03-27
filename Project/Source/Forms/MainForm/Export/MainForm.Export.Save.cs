@@ -32,9 +32,9 @@ partial class MainForm
       year1 = YearFirst;
       year2 = YearLast;
     }
-    result += " " + year1.ToString();
+    result += $" {year1}";
     if ( year1 != year2 )
-      result += "-" + year2.ToString();
+      result += $"-{year2}";
     return result;
   }
 

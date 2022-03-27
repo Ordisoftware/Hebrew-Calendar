@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
 /// Provides system helper.
 /// </summary>
+[SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
 static partial class StringHelper
 {
 
@@ -24,26 +25,26 @@ static partial class StringHelper
   /// Creates a readable string from a size in bytes.
   /// </summary>
   static public string FormatBytesSize(this long bytes)
-  {
-    return bytes >= 0 ? ( (ulong)bytes ).FormatBytesSize() : SysTranslations.UndefinedSlot.GetLang();
-  }
+    => bytes >= 0
+       ? ( (ulong)bytes ).FormatBytesSize()
+       : SysTranslations.UndefinedSlot.GetLang();
 
   /// <summary>
   /// Creates a readable string from a milliseconds value.
   /// </summary>
   static public string FormatMilliseconds(this long ms, bool excludems = false)
   {
-    TimeSpan time = TimeSpan.FromMilliseconds(ms);
+    var time = TimeSpan.FromMilliseconds(ms);
     var list = SysTranslations.MillisecondsFormat.GetLang();
     int index = time.Days == 0 && time.Hours == 0 && time.Minutes == 0 && time.Seconds == 0
-                ? 0
-                : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
-                  ? 1
-                  : time.Days == 0 && time.Hours == 0
-                    ? 2
-                    : time.Days == 0
-                      ? 3
-                      : 4;
+      ? 0
+      : time.Days == 0 && time.Hours == 0 && time.Minutes == 0
+        ? 1
+        : time.Days == 0 && time.Hours == 0
+          ? 2
+          : time.Days == 0
+            ? 3
+            : 4;
     string result = list[index];
     if ( index > 0 && !excludems ) result += " " + list[0];
     if ( index == 0 && excludems ) result = list[1];

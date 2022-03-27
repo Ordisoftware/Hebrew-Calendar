@@ -71,6 +71,7 @@ where T : IConvertible
   /// <param name="value">[in,out] The value.</param>
   /// <param name="isPassword">true to ispassword.</param>
   /// <param name="validator">The validator.</param>
+  [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   static public InputValueResult Run(string title, string caption, ref T value, bool isPassword, Func<T, bool> validator)
   {
     using var form = new InputBox<T>();
@@ -104,19 +105,19 @@ where T : IConvertible
   /// <param name="e">Event information.</param>
   private void ActionOK_Click(object sender, EventArgs e)
   {
-    T value = default;
-    bool b = true;
+    var value = default(T);
+    bool isValid = true;
     try
     {
       value = TextBox.Text.ConvertTo<T>();
       if ( Validator is not null )
-        b = Validator(value);
+        isValid = Validator(value);
     }
     catch
     {
-      b = false;
+      isValid = false;
     }
-    if ( !b )
+    if ( !isValid )
     {
       DisplayManager.Show("BadValue");
       DialogResult = DialogResult.None;

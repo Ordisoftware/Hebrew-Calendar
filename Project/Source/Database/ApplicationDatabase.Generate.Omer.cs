@@ -32,11 +32,11 @@ partial class ApplicationDatabase
     bool shabatMutex = false;
     int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
     int simhatTorahRoot = simhatTorah;
-    LunisolarDay dayRemap1 = null;
-    LunisolarDay dayRemap2 = null;
+    LunisolarDay dayRemapStart = null;
+    LunisolarDay dayRemapEnd = null;
     DateTime date;
-    var Chrono = new Stopwatch();
-    Chrono.Start();
+    var chrono = new Stopwatch();
+    chrono.Start();
     var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
     try
     {
@@ -67,8 +67,8 @@ partial class ApplicationDatabase
     }
     finally
     {
-      Chrono.Stop();
-      Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
+      chrono.Stop();
+      Settings.BenchmarkAnalyseDays = chrono.ElapsedMilliseconds;
     }
     return true;
     //
@@ -84,7 +84,7 @@ partial class ApplicationDatabase
         {
           remap(day);
           indexParashah = 0;
-          dayRemap1 = day;
+          dayRemapStart = day;
         }
       }
       else
@@ -103,11 +103,11 @@ partial class ApplicationDatabase
     {
       if ( indexParashah > 0 && indexParashah < parashot.Count )
       {
-        dayRemap2 = day;
-        DateTime date1 = dayRemap1.Date;
-        DateTime date2 = dayRemap2.Date;
+        dayRemapEnd = day;
+        var dateStart = dayRemapStart.Date;
+        var dateEnd = dayRemapEnd.Date;
         indexParashah = 0;
-        foreach ( var row in LunisolarDays.Where(r => r.ParashahID.Length != 0 && r.Date >= date1 && r.Date <= date2) )
+        foreach ( var row in LunisolarDays.Where(r => r.ParashahID.Length != 0 && r.Date >= dateStart && r.Date <= dateEnd) )
           if ( indexParashah >= parashot.Count )
             row.ParashahID = string.Empty;
           else

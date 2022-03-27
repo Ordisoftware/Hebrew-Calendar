@@ -22,7 +22,7 @@ partial class LunarMonthsForm : Form
   public void CreateControls()
   {
     PanelMonths.Controls.Clear();
-    const int x = 10;
+    const int xpos = 10;
     const int dx1 = 80;
     const int dx2 = 150;
     const int dy1 = 4;
@@ -30,11 +30,11 @@ partial class LunarMonthsForm : Form
     const int dy3 = 4;
     const int dyline = 5;
     int xmax = 0;
-    int y = 10;
+    int ypos = 10;
     const int maxLabelWidth = 900;
     Color[] colorsMonth;
-    Color colorLinkTextMeaning = SystemColors.ControlText;
-    Color colorLinkTextLettriq = SystemColors.ControlText;
+    var colorLinkTextMeaning = SystemColors.ControlText;
+    var colorLinkTextLettriq = SystemColors.ControlText;
     Color colorActiveLink;
     switch ( Program.Settings.LunarMonthsFormUseColors )
     {
@@ -80,7 +80,7 @@ partial class LunarMonthsForm : Form
         label.LinkClicked += Label_LinkClicked;
         label.ContextMenuStrip = ContextMenuItems;
         if ( isAlignRight )
-          label.Left = x + dx1 - 5 - label.Width;
+          label.Left = xpos + dx1 - 5 - label.Width;
         if ( checkWidth )
         {
           int dx = label.Left + label.Width;
@@ -90,31 +90,31 @@ partial class LunarMonthsForm : Form
         if ( tabstop ) label.TabIndex = index;
         return label;
       }
-      createLabel(x, y,
+      createLabel(xpos, ypos,
                   HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
                   colorsMonth[index - 1],
                   new Font("Hebrew", 14f),
                   true, true, false);
-      createLabel(x + dx1, y + dy1,
+      createLabel(xpos + dx1, ypos + dy1,
                   HebrewMonths.Transcriptions[index],
                   colorsMonth[index - 1],
                   new Font("Microsoft Sans Serif", 10f),
                   false, false, false);
-      var label3 = createLabel(x + dx2, y + dy2,
+      var label3 = createLabel(xpos + dx2, ypos + dy2,
                                Program.LunarMonthsMeanings[Languages.Current][index],
                                colorLinkTextMeaning,
                                new Font("Microsoft Sans Serif", 10f),
                                false, false, true);
-      var label4 = createLabel(x + dx2, label3.Top + label3.Height + dy3,
+      var label4 = createLabel(xpos + dx2, label3.Top + label3.Height + dy3,
                                Program.LunarMonthsLettriqs[Languages.Current][index],
                                colorLinkTextLettriq,
                                new Font("Microsoft Sans Serif", 10f),
                                false, false, true);
-      y = label4.Top + label4.Height + dyline;
+      ypos = label4.Top + label4.Height + dyline;
     }
     int width = xmax + 30;
     Width = width < 600 ? 600 : width;
-    Height = y + PanelBottom.Height + 50;
+    Height = ypos + PanelBottom.Height + 50;
   }
 
 }

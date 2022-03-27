@@ -28,9 +28,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="str">The string to act on.</param>
   static public bool IsEmpty(this string str)
-  {
-    return str.Length == 0;
-  }
+    => str.Length == 0;
 
   /// <summary>
   /// Indicates if a string is null or empty.
@@ -40,9 +38,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="str">The string to act on.</param>
   static public bool IsNullOrEmpty(this string str)
-  {
-    return string.IsNullOrEmpty(str);
-  }
+    => string.IsNullOrEmpty(str);
 
   /// <summary>
   /// Indicates if a string equals another string ignoring case and diacritics.
@@ -53,9 +49,7 @@ static partial class StringHelper
   /// <param name="str1">The string to act on.</param>
   /// <param name="str2">The other string.</param>
   static public bool RawEquals(this string str1, string str2)
-  {
-    return str1.Equals(str2, StringComparison.OrdinalIgnoreCase);
-  }
+   => str1.Equals(str2, StringComparison.OrdinalIgnoreCase);
 
   /// <summary>
   /// Indicates if a string contains a substring ignoring case, diacritics and symbols.
@@ -66,9 +60,7 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   /// <param name="substr">The substr.</param>
   static public bool RawContains(this string str, string substr)
-  {
-    return RawComparer.IndexOf(str, substr, RawContainsFlags) >= 0;
-  }
+    => RawComparer.IndexOf(str, substr, RawContainsFlags) >= 0;
 
   [SuppressMessage("Design", "IDE0036:Use constant instead of field.", Justification = "Opinion")]
   [SuppressMessage("Design", "RCS1187:Use constant instead of field.", Justification = "Opinion")]
@@ -83,18 +75,14 @@ static partial class StringHelper
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string Titleize(this string str)
-  {
-    return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
-  }
+    => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
 
   /// <summary>
   /// Trims any first and last char.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimFirstLast(this string str)
-  {
-    return new string(str.Skip(1).SkipLast(1).ToArray());
-  }
+    => new(str.Skip(1).SkipLast(1).ToArray());
 
   /// <summary>
   /// Splits a string by new line and remove empty lines.
@@ -105,9 +93,7 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   /// <param name="isUnix">True if is unix, false if not.</param>
   static public string[] SplitNoEmptyLines(this string str, bool isUnix = false)
-  {
-    return str.Split(isUnix ? "\n" : Globals.NL, StringSplitOptions.RemoveEmptyEntries);
-  }
+    => str.Split(isUnix ? "\n" : Globals.NL, StringSplitOptions.RemoveEmptyEntries);
 
   /// <summary>
   /// Splits a string and remove empty lines.
@@ -118,9 +104,7 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   /// <param name="separator">The separator.</param>
   static public string[] SplitNoEmptyLines(this string str, string separator)
-  {
-    return str.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-  }
+    => str.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
   /// <summary>
   /// Splits a string by new line and keep empty lines.
@@ -130,9 +114,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="str">The string to act on.</param>
   static public string[] SplitKeepEmptyLines(this string str)
-  {
-    return str.Split(Globals.NL, StringSplitOptions.None);
-  }
+    => str.Split(Globals.NL, StringSplitOptions.None);
 
   /// <summary>
   /// Splits a string and remove empty lines.
@@ -143,9 +125,7 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   /// <param name="separator">The separator.</param>
   static public string[] SplitKeepEmptyLines(this string str, string separator)
-  {
-    return str.Split(separator, StringSplitOptions.None);
-  }
+    => str.Split(separator, StringSplitOptions.None);
 
   /// <summary>
   /// Splits a string.
@@ -157,9 +137,7 @@ static partial class StringHelper
   /// <param name="separator">The separator.</param>
   /// <param name="stringSplitOptions">Options for controlling the operation.</param>
   static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
-  {
-    return str.Split(new string[] { separator }, stringSplitOptions);
-  }
+    => str.Split(new string[] { separator }, stringSplitOptions);
 
   /// <summary>
   /// Creates a string from a string enumeration.
@@ -170,9 +148,7 @@ static partial class StringHelper
   /// <param name="list">The enumeration to act on.</param>
   /// <param name="separator">The separator.</param>
   static public string Join(this IEnumerable<string> list, string separator)
-  {
-    return string.Join(separator, list);
-  }
+    => string.Join(separator, list);
 
   /// <summary>
   /// Creates a string from an object enumeration.
@@ -183,9 +159,7 @@ static partial class StringHelper
   /// <param name="list">The enumeration to act on.</param>
   /// <param name="separator">The separator.</param>
   static public string Join(this IEnumerable<object> list, string separator)
-  {
-    return string.Join(separator, list.Select(o => o.ToString()));
-  }
+    => string.Join(separator, list.Select(o => o.ToString()));
 
   /// <summary>
   /// Creates a multi-spaced string from a string enumeration.
@@ -195,9 +169,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="list">The enumeration to act on.</param>
   static public string AsMultiSpace(this IEnumerable<string> list)
-  {
-    return string.Join(" ", list);
-  }
+    => string.Join(" ", list);
 
   /// <summary>
   /// Creates a multi-comma string from a string enumeration.
@@ -208,10 +180,7 @@ static partial class StringHelper
   /// <param name="list">The enumeration to act on.</param>
   /// <param name="withSpaceAfter">True to add a space after each comma, else without.</param>
   static public string AsMultiComma(this IEnumerable<string> list, bool withSpaceAfter)
-  {
-    string separator = withSpaceAfter ? ", " : ",";
-    return string.Join(separator, list);
-  }
+    => string.Join(withSpaceAfter ? ", " : ",", list);
 
   /// <summary>
   /// Creates a multi-comma string from an object enumeration.
@@ -222,10 +191,7 @@ static partial class StringHelper
   /// <param name="list">The enumeration to act on.</param>
   /// <param name="withSpaceAfter">True to add a space after each comma, else without.</param>
   static public string AsMultiComma(this IEnumerable<object> list, bool withSpaceAfter = false)
-  {
-    string separator = withSpaceAfter ? ", " : ",";
-    return string.Join(separator, list.Select(o => o.ToString()));
-  }
+    => string.Join(withSpaceAfter ? ", " : ",", list.Select(o => o.ToString()));
 
   /// <summary>
   /// Creates a multi-newlined string from a string enumeration.
@@ -235,9 +201,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="list">The enumeration to act on.</param>
   static public string AsMultiLine(this IEnumerable<string> list)
-  {
-    return string.Join(Globals.NL, list);
-  }
+    => string.Join(Globals.NL, list);
 
   /// <summary>
   /// Creates a multi-newlined string from a string enumeration.
@@ -247,9 +211,7 @@ static partial class StringHelper
   /// </returns>
   /// <param name="list">The enumeration to act on.</param>
   static public string AsMultiDoubleLine(this IEnumerable<string> list)
-  {
-    return string.Join(Globals.NL2, list);
-  }
+    => string.Join(Globals.NL2, list);
 
   /// <summary>
   /// Left indent a text.
@@ -260,9 +222,7 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   /// <param name="margin">Margin.</param>
   static public string Indent(this string str, int margin)
-  {
-    return str.Indent(margin, margin);
-  }
+    => str.Indent(margin, margin);
 
   /// <summary>
   /// Does a left indent a text.
@@ -274,8 +234,6 @@ static partial class StringHelper
   /// <param name="first">First line indentation.</param>
   /// <param name="corpus">Other lines indentation.</param>
   static public string Indent(this string str, int first, int corpus)
-  {
-    return new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
-  }
+    => new string(' ', first) + str.Replace(Globals.NL, Globals.NL + new string(' ', corpus));
 
 }

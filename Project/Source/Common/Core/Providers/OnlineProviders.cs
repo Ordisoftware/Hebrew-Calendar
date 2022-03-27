@@ -130,21 +130,19 @@ class OnlineProviders : DataFile
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   private void SortByLanguage()
   {
-    if ( MoveCurrentLanguageAtTop )
+    if ( !MoveCurrentLanguageAtTop ) return;
+    string lang = Languages.Current.ToString();
+    var slices = Items.Split(item => item.Name == "-");
+    foreach ( var slice in slices )
     {
-      string lang = Languages.Current.ToString();
-      var slices = Items.Split(item => item.Name == "-");
-      foreach ( var slice in slices )
+      int index = 0;
+      foreach ( var item in slice.Where(item => item.Language.RawContains(lang)).ToList() )
       {
-        int index = 0;
-        foreach ( var item in slice.Where(item => item.Language.RawContains(lang)).ToList() )
-        {
-          slice.Remove(item);
-          slice.Insert(index++, item);
-        }
+        slice.Remove(item);
+        slice.Insert(index++, item);
       }
-      Items = slices.SelectMany(item => item).ToList();
     }
+    Items = slices.SelectMany(item => item).ToList();
   }
 
 }

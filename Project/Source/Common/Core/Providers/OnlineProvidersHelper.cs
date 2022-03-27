@@ -176,28 +176,26 @@ static class OnlineProvidersHelper
   static private void Menu_MouseUp(object sender, MouseEventArgs e)
   {
     if ( e.Button != MouseButtons.Right ) return;
-    if ( sender is ToolStripMenuItem menuItem )
-    {
-      if ( menuItem.Owner is ContextMenuStrip contextMenuSingle )
-        contextMenuSingle.Close();
-      if ( menuItem.OwnerItem is ToolStripDropDownButton button )
-        button.HideDropDown();
+    if ( sender is not ToolStripMenuItem menuItem  ) return;
+    if ( menuItem.Owner is ContextMenuStrip contextMenuSingle )
+      contextMenuSingle.Close();
+    if ( menuItem.OwnerItem is ToolStripDropDownButton button )
+      button.HideDropDown();
+    else
+    if ( menuItem.OwnerItem is ToolStripMenuItem ownerMenuItem )
+      if ( ownerMenuItem.Owner is ContextMenuStrip contextMenuInternal )
+        contextMenuInternal.Hide();
       else
-      if ( menuItem.OwnerItem is ToolStripMenuItem ownerMenuItem )
-        if ( ownerMenuItem.Owner is ContextMenuStrip contextMenuInternal )
-          contextMenuInternal.Hide();
-        else
-          ownerMenuItem.HideDropDown();
-      int count = menuItem.DropDownItems.ToEnumerable(item => item is not ToolStripSeparator).Count();
-      string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.Text, count);
-      if ( DisplayManager.QueryYesNo(msg) )
-        foreach ( ToolStripItem item in menuItem.DropDownItems )
-          if ( item.Tag is not null )
-          {
-            item.PerformClick();
-            Thread.Sleep(1500);
-          }
-    }
+        ownerMenuItem.HideDropDown();
+    int count = menuItem.DropDownItems.ToEnumerable(item => item is not ToolStripSeparator).Count();
+    string msg = SysTranslations.AskToOpenAllLinks.GetLang(menuItem.Text, count);
+    if ( DisplayManager.QueryYesNo(msg) )
+      foreach ( ToolStripItem item in menuItem.DropDownItems )
+        if ( item.Tag is not null )
+        {
+          item.PerformClick();
+          Thread.Sleep(1500);
+        }
   }
 
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -56,16 +56,16 @@ partial class MainForm
       UpdateTitlesMutex = true;
       SystemManager.TryCatch(Settings.Store);
       bool showbox = !IsReminderPaused;
-      bool IsSpecialDayOld = IsSpecialDay;
+      bool isSpecialDayOld = IsSpecialDay;
       IsSpecialDay = false;
       IsSpecialDay = CheckShabat(showbox && Settings.ReminderShabatEnabled) || IsSpecialDay;
       IsSpecialDay = CheckCelebrationDay(showbox && Settings.ReminderCelebrationsEnabled) || IsSpecialDay;
       if ( showbox && Settings.ReminderCelebrationsEnabled ) CheckCelebrations();
 #pragma warning disable S2589 // Boolean expressions should not be gratuitous - False warning due to try...finally
-      if ( !IsSpecialDay && !IsSpecialDayOld )
+      if ( !IsSpecialDay && !isSpecialDayOld )
         WeeklyParashahShownAtNewWeek = true;
       else
-      if ( !IsSpecialDay && IsSpecialDayOld )
+      if ( !IsSpecialDay && isSpecialDayOld )
         WeeklyParashahShownAtNewWeek = false;
       else
       if ( IsSpecialDay )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2023-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -24,25 +24,19 @@ static class EnumHelper
   /// Converts to a full string representation like "type.value".
   /// </summary>
   static public string ToStringFull<T>(this T value) where T : Enum
-  {
-    return $"{value.GetType().Name}.{value}";
-  }
+    => $"{value.GetType().Name}.{value}";
 
   /// <summary>
   /// Determines the minimum of the parameters.
   /// </summary>
   static public int Min<T>() where T : Enum
-  {
-    return Enum.GetValues(typeof(T)).Cast<int>().Min();
-  }
+    => Enum.GetValues(typeof(T)).Cast<int>().Min();
 
   /// <summary>
   /// Determines the maximum of the parameters.
   /// </summary>
   static public int Max<T>() where T : Enum
-  {
-    return Enum.GetValues(typeof(T)).Cast<int>().Max();
-  }
+    => Enum.GetValues(typeof(T)).Cast<int>().Max();
 
   /// <summary>
   /// Sets the flag.

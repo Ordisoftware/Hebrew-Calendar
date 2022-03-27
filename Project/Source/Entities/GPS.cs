@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 class CityItem
@@ -24,6 +24,7 @@ class CityItem
 
 [IgnoreFirst(1)]
 [DelimitedRecord(",")]
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 class WorldCities
 {
   [FieldQuoted] public string city;

@@ -183,10 +183,7 @@ partial class ExceptionForm : Form
       message.To.Add(Globals.SupportEMail);
       message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
       string body = CreateBody().ToString();
-      if ( body.Length > 2000 )
-        message.Body = body.Substring(0, 2000);
-      else
-        message.Body = body;
+      message.Body = body.Length > 2000 ? body.Substring(0, 2000) : body;
       SystemManager.RunShell(message.ToUrl());
     });
   }
@@ -218,7 +215,7 @@ partial class ExceptionForm : Form
     body.AppendLine("```");
     body.AppendLine(ErrorInfo.StackText);
     body.AppendLine("```");
-    ExceptionInfo inner = ErrorInfo.InnerInfo;
+    var inner = ErrorInfo.InnerInfo;
     while ( inner is not null )
     {
       body.AppendLine();
@@ -239,7 +236,9 @@ partial class ExceptionForm : Form
     var lines = DebugManager.TraceForm
                             .TextBoxCurrent
                             .Lines
-                            .Select(l => ( l.StartsWith("# ", StringComparison.Ordinal) ? l.Remove(0, 2) : l ).TrimStart())
+                            .Select(l => ( l.StartsWith("# ", StringComparison.Ordinal)
+                                           ? l.Remove(0, 2)
+                                           : l ).TrimStart())
                             .Where(l => !l.StartsWith("--", StringComparison.Ordinal))
                             .TakeLast(100);
     body.AppendLine("```");

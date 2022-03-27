@@ -16,6 +16,8 @@ namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
 
+[SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 static class NativeMethods
 {
 

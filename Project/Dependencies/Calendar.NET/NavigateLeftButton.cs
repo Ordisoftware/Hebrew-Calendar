@@ -1,15 +1,16 @@
 ﻿namespace CodeProjectCalendar.NET
 {
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   internal class NavigateLeftButton : CoolButton
   {
     public NavigateLeftButton()
     {
       Size = new System.Drawing.Size(42, 29);
       ButtonText = "<";
-    //}
+      //}
 
-    //private void InitializeComponent()
-    //{
+      //private void InitializeComponent()
+      //{
       this.SuspendLayout();
       // 
       // NavigateLeftButton

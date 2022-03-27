@@ -2,6 +2,8 @@
 
 namespace CodeProjectCalendar.NET
 {
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop617:Avoid deep nesting of IF statements. Break the method down into smaller methods, or return early if possible.", Justification = "<En attente>")]
   internal class EventComparer : IComparer<IEvent>
   {
     public int Compare(IEvent x, IEvent y)

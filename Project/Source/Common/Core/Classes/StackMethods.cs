@@ -67,7 +67,7 @@ static class StackMethods
     const ulong unit = 1024;
     if ( bytes < unit ) return $"{bytes} {suffix}";
     var exp = (int)( Math.Log(bytes) / Math.Log(unit) );
-    string result = $"{bytes / Math.Pow(unit, exp):F2} {( "KMGTPEZY" )[exp - 1]}i{suffix}";
+    string result = $"{bytes / Math.Pow(unit, exp):F2} {"KMGTPEZY"[exp - 1]}i{suffix}";
     return result.Replace(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator + "00", string.Empty);
   }
 
@@ -80,6 +80,7 @@ static class StackMethods
   /// </summary>
   // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "N/A")]
   static public string JustifyParagraph(string text, int width, Font font)
   {
     var result = new StringBuilder(text.Length + 20);
@@ -205,9 +206,7 @@ static class StackMethods
         if ( ++found == required ) return true;
       }
       else
-      {
-        if ( all ) return false;
-      }
+      if ( all ) return false;
     }
     return false;
   }
@@ -263,10 +262,9 @@ static class StackMethods
     MaxWidth += 10;
     int FarRight = Bounds.Right + MaxWidth;
     int CurrentMonitorRight = CurrentScreen.Bounds.Right;
-    if ( FarRight > CurrentMonitorRight )
-      menuItem.DropDownDirection = ToolStripDropDownDirection.Left;
-    else
-      menuItem.DropDownDirection = ToolStripDropDownDirection.Right;
+    menuItem.DropDownDirection = FarRight > CurrentMonitorRight
+      ? ToolStripDropDownDirection.Left
+      : ToolStripDropDownDirection.Right;
   }
 
   #endregion

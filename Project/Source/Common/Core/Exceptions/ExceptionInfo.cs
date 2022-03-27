@@ -249,16 +249,16 @@ class ExceptionInfo
   /// <summary>
   /// Initializes the texts.
   /// </summary>
+  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void InitializeTexts()
   {
     try
     {
       ThreadName = Thread.CurrentThread.Name.IsNullOrEmpty()
-                   ? Environment.CurrentManagedThreadId == 1
-                     ? "Main"
-                     : $"ID = {Environment.CurrentManagedThreadId}"
-                   : Thread.CurrentThread.Name;
-
+        ? Environment.CurrentManagedThreadId == 1
+          ? "Main"
+          : $"ID = {Environment.CurrentManagedThreadId}"
+        : Thread.CurrentThread.Name;
       try
       {
         Message = Instance.Message;

@@ -7,6 +7,8 @@ namespace Keith_Burnett_moonr2cs
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop206:Avoid using underscores in {0}", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
   public class SunMoon
   {
     string outstring;
@@ -48,9 +50,9 @@ namespace Keith_Burnett_moonr2cs
       //
       //	returns the fractional part of x as used in minimoon and minisun
       //
-      double a = x - Math.Floor(x);
-      if ( a < 0 ) a++;
-      return a;
+      double result = x - Math.Floor(x);
+      if ( result < 0 ) result++;
+      return result;
     }
 
     //
@@ -136,10 +138,7 @@ namespace Keith_Burnett_moonr2cs
       hour = 24.0 * ( jd + 0.5 - jd0 ) + 5;
       //hour = _wtoi(hrsmin(hour));
       hour = Convert.ToUInt32(Hrsmin(hour));
-      double calout = Round(year * 10000.0 + month * 100.0 + day + hour / 10000, 4);
-      double dum1 = calout;
-      string cc = dum1.ToString("########");
-      return cc;
+      return Round(year * 10000.0 + month * 100.0 + day + hour / 10000, 4).ToString("########");
     }
 
     double[] Quad(double ym, double yz, double yp)

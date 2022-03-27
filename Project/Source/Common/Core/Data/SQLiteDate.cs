@@ -17,6 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides SQLite date helper.
 /// </summary>
+[SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
 static class SQLiteDate
 {
 
@@ -27,14 +28,13 @@ static class SQLiteDate
   /// <param name="withTime">True to add time, else only date.</param>
   /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
   static public DateTime ToDateTime(string date, bool withTime = false, bool ignoreSeconds = false)
-  {
-    if ( date.IsNullOrEmpty() ) return DateTime.MinValue;
-    return withTime
-           ? ignoreSeconds
-             ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)
-             : DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
-           : DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-  }
+    => date.IsNullOrEmpty()
+       ? DateTime.MinValue
+       : withTime
+         ? ignoreSeconds
+           ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)
+           : DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
+         : DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
   /// <summary>
   /// Gets a date like "Year-Month-Day Hour:Min:Sec".
@@ -43,13 +43,11 @@ static class SQLiteDate
   /// <param name="withTime">True to add time, else only date.</param>
   /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
   static public string ToString(DateTime date, bool withTime = false, bool ignoreSeconds = false)
-  {
-    return withTime
-           ? ignoreSeconds
-             ? date.ToString("yyyy-MM-dd HH:mm")
-             : date.ToString("yyyy-MM-dd HH:mm:ss")
-           : date.ToString("yyyy-MM-dd");
-  }
+    => withTime
+       ? ignoreSeconds
+         ? date.ToString("yyyy-MM-dd HH:mm")
+         : date.ToString("yyyy-MM-dd HH:mm:ss")
+      : date.ToString("yyyy-MM-dd");
 
   /// <summary>
   /// Gets a date like "Year-Month-Day".
@@ -58,9 +56,7 @@ static class SQLiteDate
   /// <param name="month">The month.</param>
   /// <param name="day">The day.</param>
   static public string ToString(int year, int month, int day)
-  {
-    return $"{year:0000}-{month:00)}-{day:00}";
-  }
+    => $"{year:0000}-{month:00)}-{day:00}";
 
   /// <summary>
   /// Gets a time like "18:00".
@@ -69,9 +65,7 @@ static class SQLiteDate
   /// <returns>An empty string if time is null</returns>
   [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
   static public string ToString(TimeSpan? time)
-  {
-    return time is not null ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
-  }
+    => time is not null ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
 
   /// <summary>
   /// Gets a time like "18:00".
@@ -88,9 +82,7 @@ static class SQLiteDate
   /// </summary>
   [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
   static public DateTime? Add(TimeSpan? time, DateTime date)
-  {
-    return time is not null ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
-  }
+    => time is not null ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
 
   /// <summary>
   /// CHange the year and month and day of a date.
@@ -101,11 +93,6 @@ static class SQLiteDate
   /// <param name="day">The new day.</param>
   /// <returns>The new date without time</returns>
   static public DateTime Change(this DateTime date, int year = -1, int month = -1, int day = -1)
-  {
-    if ( year == -1 ) year = date.Year;
-    if ( month == -1 ) month = date.Month;
-    if ( day == -1 ) day = date.Day;
-    return new DateTime(year, month, day);
-  }
+    => new(year == -1 ? date.Year : year, month == -1 ? date.Month : month, day == -1 ? date.Day : day);
 
 }

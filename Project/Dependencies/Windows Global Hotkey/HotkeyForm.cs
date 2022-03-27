@@ -6,13 +6,13 @@ namespace Base.Hotkeys
 {
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   public class HotkeyForm : Form
   {
 
     public event EventHandler<HotkeyEventArgs> HotkeyPressed;
 
-    [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
     private readonly IntPtr hwnd;
 
     public HotkeyForm()
@@ -25,19 +25,21 @@ namespace Base.Hotkeys
       HotkeyPressed?.Invoke(null, new HotkeyEventArgs(id, key, mods));
     }
 
-    protected override void WndProc(ref Message message)
+    [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "Overrided")]
+    protected override void WndProc(ref Message m)
     {
-      if ( message.Msg == NativeMethods.HOTKEY )
+      if ( m.Msg == NativeMethods.HOTKEY )
       {
-        ushort id = (ushort)message.WParam;
-        Keys key = (Keys)( ( (int)message.LParam >> 16 ) & 0xFFFF );
-        Modifiers mods = (Modifiers)( (int)message.LParam & 0xFFFF );
+        ushort id = (ushort)m.WParam;
+        Keys key = (Keys)( ( (int)m.LParam >> 16 ) & 0xFFFF );
+        Modifiers mods = (Modifiers)( (int)m.LParam & 0xFFFF );
         KeyPressed(id, key, mods);
       }
       else
-        base.WndProc(ref message);
+        base.WndProc(ref m);
     }
 
+    [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "<En attente>")]
     public void RegisterHotkey(Hotkey key)
     {
       if ( key is not null && key.Status != HotkeyStatus.Registered )

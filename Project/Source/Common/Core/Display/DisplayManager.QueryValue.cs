@@ -11,12 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2008-05 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
 /// Provides multi-threaded messages output and messages box.
 /// </summary>
+[SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
 static public partial class DisplayManager
 {
 
@@ -169,7 +170,7 @@ static public partial class DisplayManager
     where T : IConvertible
   {
     var res = InputValueResult.Unchanged;
-    T newvalue = value;
+    var newvalue = value;
     try
     {
       Globals.MainForm.SyncUI(() => res = InputBox<T>.Run(title, caption, ref newvalue, ispassword, validator));

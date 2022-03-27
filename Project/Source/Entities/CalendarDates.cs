@@ -38,24 +38,16 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
     => Items.Values;
 
   public bool ContainsKey(DateTime key)
-  {
-    return Items.ContainsKey(key);
-  }
+    => Items.ContainsKey(key);
 
   public IEnumerator<KeyValuePair<DateTime, CalendarDateItem>> GetEnumerator()
-  {
-    return Items.GetEnumerator();
-  }
+    => Items.GetEnumerator();
 
   IEnumerator IEnumerable.GetEnumerator()
-  {
-    return Items.GetEnumerator();
-  }
+    => Items.GetEnumerator();
 
   public bool TryGetValue(DateTime key, out CalendarDateItem value)
-  {
-    return Items.TryGetValue(key, out value);
-  }
+    => Items.TryGetValue(key, out value);
 
   public void Clear()
   {
@@ -83,21 +75,14 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
       if ( value.TorahSeasonChange != SeasonChange.None
         && MainForm.Instance.CurrentGPSLatitude < 0
         && !Program.Settings.TorahEventsCountAsMoon )
-        switch ( value.TorahSeasonChange )
+        value.RealSeasonChange = value.TorahSeasonChange switch
         {
-          case SeasonChange.SpringEquinox:
-            value.RealSeasonChange = SeasonChange.AutumnEquinox;
-            break;
-          case SeasonChange.AutumnEquinox:
-            value.RealSeasonChange = SeasonChange.SpringEquinox;
-            break;
-          case SeasonChange.WinterSolstice:
-            value.RealSeasonChange = SeasonChange.SummerSolstice;
-            break;
-          case SeasonChange.SummerSolstice:
-            value.RealSeasonChange = SeasonChange.WinterSolstice;
-            break;
-        }
+          SeasonChange.SpringEquinox => SeasonChange.AutumnEquinox,
+          SeasonChange.AutumnEquinox => SeasonChange.SpringEquinox,
+          SeasonChange.WinterSolstice => SeasonChange.SummerSolstice,
+          SeasonChange.SummerSolstice => SeasonChange.WinterSolstice,
+          _ => throw new AdvancedNotImplementedException(value.TorahSeasonChange),
+        };
       Items.Add(key, value);
       return value;
     }

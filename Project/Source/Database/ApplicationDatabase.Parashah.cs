@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase : SQLiteDatabase
@@ -62,8 +62,8 @@ partial class LunisolarDay
     if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
     var parashah = ParashotFactory.Instance.Get(ParashahID);
     return parashah is not null
-           ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
-           : SysTranslations.UndefinedSlot.GetLang();
+      ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
+      : SysTranslations.UndefinedSlot.GetLang();
   }
 
   public LunisolarDay GetParashahReadingDay()

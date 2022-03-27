@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-12 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2023-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
@@ -28,8 +28,8 @@ partial class ApplicationDatabase
     LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
                                     progressCount,
                                     Program.LoadingFormGenerate);
-    var Chrono = new Stopwatch();
-    Chrono.Start();
+    var chrono = new Stopwatch();
+    chrono.Start();
     //var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
     try
     {
@@ -47,8 +47,8 @@ partial class ApplicationDatabase
     }
     finally
     {
-      Chrono.Stop();
-      Settings.BenchmarkAnalyseDays = Chrono.ElapsedMilliseconds;
+      chrono.Stop();
+      Settings.BenchmarkAnalyseDays = chrono.ElapsedMilliseconds;
     }
     return true;
   }

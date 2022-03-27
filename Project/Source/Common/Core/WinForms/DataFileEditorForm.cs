@@ -21,8 +21,7 @@ partial class DataFileEditorForm : Form
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   static public bool Run(string title, DataFile file)
   {
-    using var form = new DataFileEditorForm();
-    form.Text = title;
+    using var form = new DataFileEditorForm { Text = title };
     AddTab(form.TabControl, file);
     bool result = form.ShowDialog() == DialogResult.OK;
     if ( result ) file.ReLoad();

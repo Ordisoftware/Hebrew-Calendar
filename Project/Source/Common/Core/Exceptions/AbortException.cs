@@ -24,18 +24,18 @@ public class AbortException : Exception
   /// <summary>
   /// The msgcode.
   /// </summary>
-  private const string msgcode = "ThreadAbort";
+  private const string MessageCode = "ThreadAbort";
 
   /// <summary>
   /// The argname.
   /// </summary>
-  private const string argname = "Message";
+  private const string ArgumentName = "Message";
 
   /// <summary>
   /// Default constructor.
   /// </summary>
   public AbortException()
-  : base(msgcode)
+  : base(MessageCode)
   {
   }
 
@@ -44,9 +44,9 @@ public class AbortException : Exception
   /// </summary>
   /// <param name="message">The message.</param>
   public AbortException(string message)
-  : base(msgcode)
+  : base(MessageCode)
   {
-    Data.Add(argname, message);
+    Data.Add(ArgumentName, message);
   }
 
   /// <summary>
@@ -55,9 +55,9 @@ public class AbortException : Exception
   /// <param name="message">The message.</param>
   /// <param name="innerException">The inner exception.</param>
   public AbortException(string message, Exception innerException)
-  : base(msgcode, innerException)
+  : base(MessageCode, innerException)
   {
-    Data.Add(argname, message);
+    Data.Add(ArgumentName, message);
   }
 
   /// <summary>

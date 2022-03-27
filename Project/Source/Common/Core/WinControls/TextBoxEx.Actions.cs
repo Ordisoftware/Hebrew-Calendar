@@ -19,13 +19,11 @@ partial class TextBoxEx
 {
 
   static public TextBoxEx GetTextBox(object sender)
-  {
-    return GetTextBoxAndFocus(sender, false);
-  }
+    => GetTextBoxAndFocus(sender, false);
 
   static public TextBoxEx GetTextBoxAndFocus(object sender, bool doFocus = true)
   {
-    TextBoxEx control = sender as TextBoxEx;
+    var control = sender as TextBoxEx;
     if ( control is null )
       if ( sender is ContextMenuStrip menuContext )
         control = menuContext.SourceControl as TextBoxEx;

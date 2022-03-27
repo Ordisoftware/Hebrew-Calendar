@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-11 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectExportTargetForm : Form
@@ -41,7 +41,10 @@ partial class SelectExportTargetForm : Form
     if ( view == ViewMode.Grid && form.SelectGrid.Enabled )
       form.SelectGrid.Checked = true;
     else
-      form.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Enabled).Checked = true;
+    {
+      if ( form.GroupBoxView.Controls.OfType<RadioButton>().FirstOrDefault(c => c.Enabled) is RadioButton button )
+        button.Checked = true;
+    }
     bool result = form.ShowDialog() == DialogResult.OK;
     if ( result )
     {
@@ -93,8 +96,8 @@ partial class SelectExportTargetForm : Form
   {
     EditAutoOpenExportedFile.Checked = Settings.AutoOpenExportedFile;
     EditAutoOpenExportFolder.Checked = Settings.AutoOpenExportFolder;
-    var CurrentDay = MainForm.Instance.CurrentDay;
-    int year = CurrentDay is null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
+    var currentDay = MainForm.Instance.CurrentDay;
+    int year = currentDay is null ? DateTime.Today.Year : MainForm.Instance.CurrentDayYear;
     if ( year == MainForm.Instance.DateLast.Year ) year--;
     var list = MainForm.Instance.YearsIntervalArray.SkipLast(1);
     SelectYear1.Fill(list, year);

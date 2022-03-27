@@ -51,11 +51,16 @@ partial class HebrewDatabase : SQLiteDatabase
     throw new NotSupportedException(message);
   }
 
+  [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "Opinion")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
+    // NOP
     return false;
   }
 
+  [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "Opinion")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   protected override void CreateBindingLists()
   {
     // NOP

@@ -32,6 +32,7 @@ static class AstronomyHelper
   /// </summary>
   static public readonly SunMoon SunMoon = new();
 
+
   /// <summary>
   /// Gets the moon phase type.
   /// </summary>
@@ -42,6 +43,7 @@ static class AstronomyHelper
   /// <returns>
   /// The moon phase.
   /// </returns>
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "Anti-pattern on numeric types and strings")]
   static public MoonPhase GetMoonPhase(this DateTime date)
   {
     int year = date.Year;
@@ -73,8 +75,8 @@ static class AstronomyHelper
       try
       {
         return str != "----" && str != "****" && str != "...."
-               ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
-               : new TimeSpan?();
+          ? new TimeSpan(Convert.ToInt32(str.Substring(0, 2)), Convert.ToInt32(str.Substring(2, 2)), 0)
+          : new TimeSpan?();
       }
       catch
       {
@@ -85,16 +87,16 @@ static class AstronomyHelper
     {
       MainForm.Instance.InitializeCurrentTimeZone();
       if ( MainForm.Instance.CurrentTimeZoneInfo is null )
-        throw new InvalidTimeZoneException();
+        throw new InvalidTimeZoneException(nameof(MainForm.Instance.CurrentTimeZoneInfo));
     }
-    int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours +
-                   ( MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0 );
+    int timezone = MainForm.Instance.CurrentTimeZoneInfo.BaseUtcOffset.Hours;
+    timezone += MainForm.Instance.CurrentTimeZoneInfo.IsDaylightSavingTime(date.AddDays(1)) ? 1 : 0;
     var strEphem = SunMoon.Get(date.Year, date.Month, date.Day,
                                MainForm.Instance.CurrentGPSLatitude,
                                MainForm.Instance.CurrentGPSLongitude,
                                timezone,
                                1);
-    return new SunAndMoonRiseAndSet()
+    return new SunAndMoonRiseAndSet
     {
       Sunrise = calcEphem(strEphem.Substring(10, 4)),
       Sunset = calcEphem(strEphem.Substring(15, 4)),
