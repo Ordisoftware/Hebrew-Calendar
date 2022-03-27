@@ -72,6 +72,12 @@
 
 [assembly: SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC001:The class has mutable properties and should implement INotifyPropertyChanged.", Justification = "Opinion", Scope = "module")]
 
-
-
-
+[assembly: SuppressMessage("Design", "GCop116:Break this down into smaller methods. If such methods would become meaningless as standalone methods in the context of the class, you can refactor this method into a Stateful Service class", Justification = "N/A (using Meziantou.Analyzer)", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop101:Too many parameters as argument. Define a container and encapsulate them", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop112:This class is too large. Break its responsibilities down into more classes.", Justification = "N/A or Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop117:The meaning of \"{0}\" is not obvious. Specify the parameter's name explicitly.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop119:Don’t use {0} parameters in method definition. To return several objects, define a class or struct for your method return type.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop136:All constants and class fields should be defined at the top of the class, before all methods.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop138:When you catch an exception you should throw exception or at least log error", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop148:All constructors should be before all methods in a class.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]

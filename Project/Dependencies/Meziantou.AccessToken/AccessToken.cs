@@ -201,6 +201,7 @@ public sealed class AccessToken : IDisposable
     AdjustPrivilege(privilegeName, PrivilegeOperation.Remove);
   }
 
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
   private void AdjustPrivilege(string privilegeName, PrivilegeOperation operation)
   {
     if ( !Natives.NativeMethods.LookupPrivilegeValueW(lpSystemName: null, privilegeName, out var luid) )

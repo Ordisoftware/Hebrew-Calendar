@@ -117,8 +117,8 @@ public partial class MainForm
       ShabatForm?.Close();
       LockSessionForm.Instance?.Close();
       CurrentDay = null;
-      foreach ( Form form in RemindCelebrationForms.ToList() ) form.Close();
-      foreach ( Form form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
+      foreach ( var form in RemindCelebrationForms.ToList() ) form.Close();
+      foreach ( var form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
       foreach ( var value in TorahCelebrationSettings.ManagedEvents )
       {
         TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value.ToString()]);

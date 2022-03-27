@@ -49,7 +49,7 @@ partial class MainForm
     else
       if ( LastShabatReminded is not null )
     {
-      if ( dateNow > times.DateStart && LastShabatReminded.Value < times.DateStart )
+      if ( dateNow > times.DateStart && LastShabatReminded < times.DateStart )
       {
         ShabatForm?.Close();
         LastShabatReminded = dateNow;

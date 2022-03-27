@@ -18,6 +18,9 @@ using static Ordisoftware.Core.NativeMethods;
 
 // https://stackoverflow.com/questions/20938934/controlling-applications-volume-by-process-id
 [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
+[SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 static class MediaMixer
 {
 
@@ -150,6 +153,7 @@ class MMDeviceEnumerator
 {
 }
 
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public enum EDataFlow
 {
   eRender,
@@ -158,6 +162,7 @@ public enum EDataFlow
   EDataFlow_enum_count
 }
 
+[SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public enum ERole
 {
   eConsole,
@@ -187,6 +192,7 @@ public interface IMMDevice
 }
 
 [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 public interface IAudioSessionManager2
 {
   int NotImpl1();
@@ -199,6 +205,7 @@ public interface IAudioSessionManager2
 }
 
 [Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 public interface IAudioSessionEnumerator
 {
   [PreserveSig]
@@ -209,6 +216,7 @@ public interface IAudioSessionEnumerator
 }
 
 [Guid("87CE5498-68D6-44E5-9215-6DA47EF883D8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 public interface ISimpleAudioVolume
 {
   [PreserveSig]
@@ -225,6 +233,7 @@ public interface ISimpleAudioVolume
 }
 
 [Guid("bfb7ff88-7239-4fc9-8fa2-07c950be9c6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
 public interface IAudioSessionControl2
 {
   // IAudioSessionControl

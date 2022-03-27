@@ -29,21 +29,23 @@ partial class MainForm
            : DayBrushes[indexYear, month, counter];
   }
 
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   static public Color MixColor(Color c1, Color c2)
   {
-    int _r = Math.Min(( c1.R + c2.R ) / 2, 255);
-    int _g = Math.Min(( c1.G + c2.G ) / 2, 255);
-    int _b = Math.Min(( c1.B + c2.B ) / 2, 255);
-    return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
+    int r = Math.Min(( c1.R + c2.R ) / 2, 255);
+    int g = Math.Min(( c1.G + c2.G ) / 2, 255);
+    int b = Math.Min(( c1.B + c2.B ) / 2, 255);
+    return Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
   }
 
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   static public Color MixColor(Color c1, Color c2, Color c3)
   {
 
-    int _r = Math.Min(( c1.R + c2.R + c3.R ) / 3, 255);
-    int _g = Math.Min(( c1.G + c2.G + c3.G ) / 3, 255);
-    int _b = Math.Min(( c1.B + c2.B + c3.B ) / 3, 255);
-    return Color.FromArgb(Convert.ToByte(_r), Convert.ToByte(_g), Convert.ToByte(_b));
+    int r = Math.Min(( c1.R + c2.R + c3.R ) / 3, 255);
+    int g = Math.Min(( c1.G + c2.G + c3.G ) / 3, 255);
+    int b = Math.Min(( c1.B + c2.B + c3.B ) / 3, 255);
+    return Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
   }
 
   private void InitializeYearsInterval()
@@ -71,8 +73,8 @@ partial class MainForm
     try
     {
       InitializeYearsInterval();
-      bool IsCelebrationWeekStart = false;
-      bool IsCelebrationWeekEnd = false;
+      bool isCelebrationWeekStart = false;
+      bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
       LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
@@ -87,8 +89,8 @@ partial class MainForm
           if ( ev == TorahCelebrationDay.PessahD1
             || ev == TorahCelebrationDay.SoukotD1
             || ev == TorahCelebrationDay.ChavouotDiet )
-            IsCelebrationWeekStart = true;
-          IsCelebrationWeekEnd = ev == TorahCelebrationDay.PessahD7
+            isCelebrationWeekStart = true;
+          isCelebrationWeekEnd = ev == TorahCelebrationDay.PessahD7
                               || ev == TorahCelebrationDay.SoukotD8
                               || ev == TorahCelebrationDay.Chavouot1;
           var date = row.Date;
@@ -106,7 +108,7 @@ partial class MainForm
                               Settings.EventColorSeason,
                               Settings.EventColorNext);
           else
-          if ( IsCelebrationWeekStart || ev != TorahCelebrationDay.None )
+          if ( isCelebrationWeekStart || ev != TorahCelebrationDay.None )
             color2 = Settings.EventColorTorah;
           if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
             color3 = Settings.EventColorShabat;
@@ -131,8 +133,8 @@ partial class MainForm
           if ( color1 is null )
             color1 = Settings.MonthViewBackColor;
           DayBrushes[YearLast - date.Year, date.Month, date.Day] = new SolidBrush(color1.Value);
-          if ( IsCelebrationWeekEnd )
-            IsCelebrationWeekStart = false;
+          if ( isCelebrationWeekEnd )
+            isCelebrationWeekStart = false;
           int rank = 0;
           // Moon phase
           Color colorMoon;

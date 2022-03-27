@@ -22,7 +22,7 @@ static class WebCheckUpdate
 
   static private bool Mutex;
 
-  static public int DefaultCheckDaysInterval { get; set; } = 7;
+  static public int DefaultCheckDaysInterval { get; set; } = Enums.GetValues<DayOfWeek>().Count;
 
   /// <summary>
   /// Deletes temp files.
@@ -43,12 +43,12 @@ static class WebCheckUpdate
   /// <returns>
   /// True if application must exist else false.
   /// </returns>
-  /// <param name="checkAtStartup">True if it is a startup check.</param>
   /// <param name="lastdone">The last done date.</param>
   /// <param name="interval">Days interval to check.</param>
   /// <param name="auto">True if no user interaction else false.</param>
+  /// <param name="checkAtStartup">True if it is a startup check.</param>
   /// <param name="useGitHub">True to use GitHub.</param>
-  static public bool Run(bool checkAtStartup, ref DateTime lastdone, int interval, bool auto, bool useGitHub = false)
+  static public bool Run(ref DateTime lastdone, int interval, bool auto, bool checkAtStartup, bool useGitHub = false)
   {
     if ( interval == -1 ) interval = DefaultCheckDaysInterval;
     CleanTemp();
@@ -106,12 +106,12 @@ static class WebCheckUpdate
           if ( useGitHub )
             return false;
           else
-            return Run(checkAtStartup, ref lastdone, interval, auto, true);
+            return Run(ref lastdone, interval, auto, checkAtStartup, true);
         else
         if ( useGitHub )
           msg += Globals.NL2 + SysTranslations.CheckInternetConnection.GetLang();
         else
-          return Run(checkAtStartup, ref lastdone, interval, auto, true);
+          return Run(ref lastdone, interval, auto, checkAtStartup, true);
       }
       DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);
     }

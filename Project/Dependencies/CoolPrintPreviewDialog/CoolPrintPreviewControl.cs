@@ -47,6 +47,8 @@ namespace CoolPrintPreview
   /// it displays pages as they are rendered. By contrast, the standard control
   /// waits until the entire document is rendered before it displays anything.
   /// </remarks>
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------
@@ -431,6 +433,7 @@ namespace CoolPrintPreview
         _ => base.IsInputKey(keyData),
       };
     }
+
     protected override void OnKeyDown(KeyEventArgs e)
     {
       base.OnKeyDown(e);
@@ -560,7 +563,9 @@ namespace CoolPrintPreview
         case ZoomMode.TwoPages:
           rc.Width *= 2; // << two pages side-by-side
 #pragma warning disable F00001 // GotoConsideredHarmful
+#pragma warning disable GCop141 // Avoid using goto command
           goto case ZoomMode.FullPage;
+#pragma warning restore GCop141 // Avoid using goto command
 #pragma warning restore F00001 // GotoConsideredHarmful
         case ZoomMode.FullPage:
           double zoomX = ( rc.Width > 0 ) ? rcCli.Width / (double)rc.Width : 0;

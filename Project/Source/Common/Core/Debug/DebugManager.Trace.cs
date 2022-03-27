@@ -48,6 +48,8 @@ static partial class DebugManager
   static private int EnterCount;
   static private int CurrentMargin;
   static private readonly int TraceEventMaxLength;
+
+  [SuppressMessage("Design", "GCop139:Use constant instead of field.", Justification = "Analysis error")]
   static private readonly string Separator = new('-', 120);
 
   static DebugManager()
@@ -141,7 +143,7 @@ static partial class DebugManager
     var list = Directory.GetFiles(folder, code + "*" + extension)
                         .Where(f => !SystemManager.IsFileLocked(f))
                         .OrderBy(f => new FileInfo(f).CreationTime);
-    return sortByDateOnly ? list : list.OrderBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
+    return sortByDateOnly ? list : list.ThenBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
   }
 
   static public void ClearTraces(bool norestart = false, bool all = false)

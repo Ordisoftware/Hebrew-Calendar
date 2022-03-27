@@ -2,6 +2,11 @@
 namespace Keith_Burnett_moonr2cs
 {
 
+  [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "GCop206:Avoid using underscores in {0}", Justification = "<En attente>")]
   public class SunMoon
   {
     string outstring;
