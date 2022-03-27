@@ -19,6 +19,7 @@ using Keith_Burnett_moonr2cs;
 /// <summary>
 /// Provides astronomy helper.
 /// </summary>
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 static class AstronomyHelper
 {
 

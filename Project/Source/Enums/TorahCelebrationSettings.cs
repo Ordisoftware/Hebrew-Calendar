@@ -23,6 +23,11 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Pessa'h month.
   /// </summary>
+  static public readonly int SimhatTorah = 22;
+
+  /// <summary>
+  /// Pessa'h month.
+  /// </summary>
   static public readonly int PessahMonth = 1;
 
   /// <summary>
