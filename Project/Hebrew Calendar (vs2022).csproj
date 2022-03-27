@@ -1051,7 +1051,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Source\Licenses\MPL 2.0.rtf" />
     <None Include=".editorconfig" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
@@ -1083,13 +1082,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Licenses\MPL 2.0.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="..\Setup\OrdisoftwareHebrewCalendarSetup.iss">
       <Link>Properties\OrdisoftwareHebrewCalendarSetup.iss</Link>
     </Content>
-    <Content Include="Source\Licenses\MPL 2.0.htm" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AASharp">
