@@ -89,3 +89,4 @@
 [assembly: SuppressMessage("Style", "GCop436:As the implementation is relatively long, change this into a standard method implementation.", Justification = "Opinion or N/A (need a parameter for the analyzer)", Scope = "module")]
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion", Scope = "module")]

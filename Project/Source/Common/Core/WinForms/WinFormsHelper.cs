@@ -45,7 +45,6 @@ static class FormsHelper
   /// <summary>
   /// Gets a list of open forms.
   /// </summary>
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   static public void CloseAll(Func<Form, bool> keep = null)
   {
     var list = keep is null

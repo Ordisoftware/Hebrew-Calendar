@@ -249,7 +249,6 @@ class ExceptionInfo
   /// <summary>
   /// Initializes the texts.
   /// </summary>
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void InitializeTexts()
   {
     try

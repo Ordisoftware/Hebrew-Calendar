@@ -44,6 +44,7 @@ public static class ToolStripMenuItemHelper
   /// <returns>A cloned version of the toolstrip menu item</returns>
   [SuppressMessage("Usage", "RCS1202:Avoid NullReferenceException.", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
+  [SuppressMessage("Performance", "GCop318:This will cause the query to be computed multiple times. Instead call .ToList() on the variable declaration line to avoid unwanted extra processing.", Justification = "<En attente>")]
   public static ToolStripMenuItem Clone(this ToolStripMenuItem sourceToolStripMenuItem)
   {
     var menuItem = new ToolStripMenuItem();

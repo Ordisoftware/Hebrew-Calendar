@@ -23,7 +23,6 @@ static partial class SystemManager
   /// <summary>
   /// Checks the validity of the remote website SSL certificate.
   /// </summary>
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   static public void CheckServerCertificate(string url, bool useGitHib, bool isGitHubContent)
   {
     var uri = new Uri(url);

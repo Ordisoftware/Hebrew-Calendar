@@ -50,8 +50,7 @@ partial class ExceptionForm : Form
   /// </summary>
   static public void Run(ExceptionInfo einfo, bool isInner = false)
   {
-    using var form = new ExceptionForm();
-    form.IsInner = isInner;
+    using var form = new ExceptionForm { IsInner = isInner };
     form.PictureBox.Image = ShellIcons.Error;
     form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
     form.ActionViewInner.Enabled = einfo.InnerInfo is not null;

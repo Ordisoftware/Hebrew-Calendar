@@ -17,7 +17,6 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides system helper.
 /// </summary>
-[SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
 static partial class StringHelper
 {
 
