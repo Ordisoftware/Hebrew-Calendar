@@ -376,7 +376,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 - Add current day change when cursor changes line in text report.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
-- Code refactoring, optimization and fixes with more analyzers.
+- Massive code refactoring, optimization and fixes with more analyzers.
 - Update Markdig NuGet.
 - Update Aish web links for parashot study.
 
