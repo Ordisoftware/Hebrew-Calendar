@@ -12,7 +12,6 @@
 /// </license>
 /// <created> 2020-04 </created>
 /// <edited> 2022-03 </edited>
-
 namespace Ordisoftware.Core;
 
 [SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]

@@ -6,6 +6,8 @@ using System.Windows.Forms;
 namespace CodeProjectCalendar.NET
 {
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   internal partial class CoolButton : UserControl
   {
     private Color _buttonColor;

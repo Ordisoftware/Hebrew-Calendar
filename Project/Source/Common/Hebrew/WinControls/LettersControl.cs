@@ -327,7 +327,6 @@ partial class LettersControl : UserControl
     }
   }
 
-
   /// <summary>
   /// Input TextChanging event.
   /// </summary>

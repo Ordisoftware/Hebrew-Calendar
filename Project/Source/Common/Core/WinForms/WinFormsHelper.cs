@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -23,7 +23,6 @@ static class FormsHelper
   /// <summary>
   /// Applies localized resources.
   /// </summary>
-  [SuppressMessage("Usage", "MA0011:IFormatProvider is missing", Justification = "N/A")]
   static public void ApplyResources(this ComponentResourceManager resources, Control.ControlCollection controls)
   {
     foreach ( Control control in controls )
@@ -348,7 +347,8 @@ static class FormsHelper
   /// </summary>
   static public Icon GetIcon(this Image image)
   {
-    return Icon.FromHandle(new Bitmap(image).GetHicon());
+    using var bitmap = new Bitmap(image);
+    return Icon.FromHandle(bitmap.GetHicon());
   }
 
   /// <summary>
@@ -356,7 +356,8 @@ static class FormsHelper
   /// </summary>
   static public Icon GetIcon(this ToolStripItem item)
   {
-    return Icon.FromHandle(new Bitmap(item.Image).GetHicon());
+    using var bitmap = new Bitmap(item.Image);
+    return Icon.FromHandle(bitmap.GetHicon());
   }
 
   /// <summary>

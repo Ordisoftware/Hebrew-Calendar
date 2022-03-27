@@ -238,7 +238,7 @@ partial class PreferencesForm : Form
   private void EditVolume_ValueChanged(object sender, EventArgs e)
   {
     MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);
-    LabelVolumeValue.Text = EditVolume.Value + "%";
+    LabelVolumeValue.Text = $"{EditVolume.Value}%";
     if ( !IsReady ) return;
     Settings.ApplicationVolume = EditVolume.Value;
     SystemManager.TryCatch(Settings.Store);

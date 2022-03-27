@@ -6,6 +6,7 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// A custom or user-defined event
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   public class CustomEvent : IEvent
   {
     // ORDISOFTWARE MODIF BEGIN

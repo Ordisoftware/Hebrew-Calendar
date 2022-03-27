@@ -222,9 +222,11 @@ static partial class Program
     }
   }
 
+
   /// <summary>
   /// Updates localization strings to the whole application.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   static public void UpdateLocalization()
   {
     Globals.ChronoTranslate.Restart();

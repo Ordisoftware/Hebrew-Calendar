@@ -28,9 +28,12 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// A Winforms Calendar Control
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   [SuppressMessage("Performance", "U2U1008:Parentheses can be used to enable constant evaluation", Justification = "TODO")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "<En attente>")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;

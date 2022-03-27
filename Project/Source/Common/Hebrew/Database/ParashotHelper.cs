@@ -16,6 +16,7 @@ namespace Ordisoftware.Hebrew;
 
 static class ParashotHelper
 {
+
   [SuppressMessage("AsyncUsage", "AsyncFixer03:Fire-and-forget async-void methods or delegates", Justification = "N/A (event)")]
   [SuppressMessage("Usage", "VSTHRD101:Avoid unsupported async delegates", Justification = "<En attente>")]
   static public bool ShowDescription(this List<Parashah> parashot,

@@ -169,7 +169,6 @@ partial class SelectCityForm : Form
   private bool FoundCountry;
   private bool FoundCity;
 
-  [SuppressMessage("Performance", "MA0031:Optimize Enumerable.Count() usage", Justification = "Opinion")]
   private void EditFilter_TextChanged(object sender, EventArgs e)
   {
     if ( Mutex ) return;
@@ -191,7 +190,7 @@ partial class SelectCityForm : Form
                           select country;
       if ( !resultCountry.Any() ) return;
       string strCountry = resultCountry.ElementAt(0).Key;
-      FoundCountry = resultCountry.Count() == 1;
+      FoundCountry = resultCountry.Take(2).Count() == 1;
       if ( !FoundCountry && resultCountry.SingleOrDefault(c => c.Key.RawEquals(list[0])).Key is not null )
         FoundCountry = true;
       if ( FoundCountry && EditFilter.Text.IndexOf(',') < 0 )
@@ -215,7 +214,7 @@ partial class SelectCityForm : Form
                        select city;
       if ( !resultCity.Any() ) return;
       string strCity = resultCity.ElementAt(0).Name;
-      FoundCity = resultCity.Count() == 1;
+      FoundCity = resultCity.Take(2).Count() == 1;
       if ( !FoundCity && resultCountry.SingleOrDefault(c => c.Key.RawEquals(list[1])).Key is not null )
         FoundCity = true;
       if ( FoundCity )

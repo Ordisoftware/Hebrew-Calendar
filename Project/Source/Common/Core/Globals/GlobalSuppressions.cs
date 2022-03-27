@@ -37,6 +37,7 @@
 [assembly: SuppressMessage("Simplification", "RCS1061:Merge 'if' with nested 'if'.", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1001:Add braces (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1003:Add braces to if-else (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Style", "RCS1217:Convert interpolated string to concatenation.", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.GetRunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
 
@@ -59,8 +60,10 @@
 [assembly: SuppressMessage("Design", "MA0076:Do not use implicit culture-sensitive ToString in interpolated strings", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0003:Add parameter name to improve readability", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0007:Add a comma after the last value", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Usage", "MA0006:Use String.Equals instead of equality operator", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0071:Avoid using redundant else", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Usage", "MA0002:IEqualityComparer<string> or IComparer<string> is missing", Justification = "Opinion or N/A", Scope = "module")]
+[assembly: SuppressMessage("Usage", "MA0006:Use String.Equals instead of equality operator", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Usage", "MA0011:IFormatProvider is missing", Justification = "Opinion or N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "MA0091:Sender should be 'this' for instance events", Justification = "N/A", Scope = "module")]
 
 [assembly: SuppressMessage("CodeSmell", "EPC12:Suspicious exception handling: only Message property is observed in exception block.", Justification = "Opinion based or N/A", Scope = "module")]

@@ -641,7 +641,6 @@ namespace Infralution.Localization
       return false;
     }
 
-
     /// <summary>
     /// Recursively apply localized resources to a component and its constituent components
     /// </summary>

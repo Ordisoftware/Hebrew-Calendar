@@ -56,6 +56,7 @@ namespace CoolPrintPreview
     ZoomMode _zoomMode;
     double _zoom;
     int _startPage;
+    [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
     SolidBrush _backBrush;
     Point _ptLast;
     PointF _himm2pix = new(-1, -1);
@@ -233,6 +234,7 @@ namespace CoolPrintPreview
     {
       get { return PageImages.Count; }
     }
+
     /// <summary>
     /// Gets or sets the control's background color.
     /// </summary>

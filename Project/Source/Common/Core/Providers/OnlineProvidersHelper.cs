@@ -121,7 +121,6 @@ static class OnlineProvidersHelper
     menuItem.MouseUp += Menu_MouseUp;
   }
 
-
   /// <summary>
   /// Creates sub-menu items for web links menu.
   /// </summary>
