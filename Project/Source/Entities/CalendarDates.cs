@@ -81,7 +81,7 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
           SeasonChange.AutumnEquinox => SeasonChange.SpringEquinox,
           SeasonChange.WinterSolstice => SeasonChange.SummerSolstice,
           SeasonChange.SummerSolstice => SeasonChange.WinterSolstice,
-          _ => throw new AdvancedNotImplementedException(value.TorahSeasonChange),
+          _ => throw new AdvNotImplementedException(value.TorahSeasonChange),
         };
       Items.Add(key, value);
       return value;

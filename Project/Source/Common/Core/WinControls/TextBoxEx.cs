@@ -169,7 +169,7 @@ public partial class TextBoxEx : TextBox
     {
       CaretPositionAfterPaste.Beginning => pos,
       CaretPositionAfterPaste.Ending => pos + length,
-      _ => throw new AdvancedNotImplementedException(CaretAfterPaste),
+      _ => throw new AdvNotImplementedException(CaretAfterPaste),
     };
   }
 

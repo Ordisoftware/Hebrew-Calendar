@@ -155,7 +155,7 @@ partial class MainForm
         File.WriteAllText(filePath, ExportSaveJSON(interval), Encoding.UTF8);
         break;
       default:
-        throw new AdvancedNotImplementedException(selected);
+        throw new AdvNotImplementedException(selected);
     }
     return true;
   }

@@ -23,8 +23,7 @@ partial class SelectSoundForm : Form
 
   static public void Run(bool topmost = false)
   {
-    using var form = new SelectSoundForm();
-    form.TopMost = topmost;
+    using var form = new SelectSoundForm { TopMost = topmost };
     if ( form.ShowDialog() != DialogResult.OK ) return;
     if ( form.SelectNone.Checked )
       Settings.ReminderBoxSoundSource = SoundSource.None;
@@ -97,7 +96,7 @@ partial class SelectSoundForm : Form
         SelectCustom.Checked = true;
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.ReminderBoxSoundSource);
+        throw new AdvNotImplementedException(Settings.ReminderBoxSoundSource);
     }
   }
 

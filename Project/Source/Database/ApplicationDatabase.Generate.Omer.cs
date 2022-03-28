@@ -30,7 +30,8 @@ partial class ApplicationDatabase
     int indexParashah = -1;
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     bool shabatMutex = false;
-    int simhatTorah = Settings.UseSimhatTorahOutside ? 23 : 22;
+    int simhatTorah = TorahCelebrationSettings.SimhatTorah;
+    if ( Settings.UseSimhatTorahOutside ) simhatTorah++;
     int simhatTorahRoot = simhatTorah;
     LunisolarDay dayRemapStart = null;
     LunisolarDay dayRemapEnd = null;
@@ -76,7 +77,7 @@ partial class ApplicationDatabase
     {
       if ( day.TorahEvent == TorahCelebrationDay.PessahD1 )
         shabatMutex = true;
-      if ( day.LunarMonth == 7 && day.LunarDay == simhatTorah )
+      if ( day.LunarMonth == TorahCelebrationSettings.YomsMonth && day.LunarDay == simhatTorah )
       {
         if ( day.Date.DayOfWeek == shabatDay )
           simhatTorah++;

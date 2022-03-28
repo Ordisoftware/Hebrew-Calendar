@@ -153,7 +153,7 @@ static class FormsHelper
       case ControlLocation.Loose:
         break;
       default:
-        throw new AdvancedNotImplementedException(location);
+        throw new AdvNotImplementedException(location);
     }
   }
 

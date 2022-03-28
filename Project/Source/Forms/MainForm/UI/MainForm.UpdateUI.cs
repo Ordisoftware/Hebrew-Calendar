@@ -88,7 +88,6 @@ public partial class MainForm
   /// <summary>
   /// Updates form title bar and sub-title texts.
   /// </summary>
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void UpdateTitles(bool force = false)
   {
     if ( !Globals.IsReady || Globals.IsGenerating ) return;

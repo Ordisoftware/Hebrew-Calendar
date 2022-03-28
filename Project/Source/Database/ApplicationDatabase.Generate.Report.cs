@@ -39,7 +39,6 @@ partial class ApplicationDatabase
     { ReportFieldText.Events, 42 },
   };
 
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)

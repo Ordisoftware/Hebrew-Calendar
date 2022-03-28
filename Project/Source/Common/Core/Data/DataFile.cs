@@ -60,7 +60,7 @@ public abstract class DataFile
       DataFileFolder.ProgramData => filePath.Replace(Globals.DocumentsFolderPath, Globals.ProgramDataFolderPath),
       DataFileFolder.UserHebrewCommon => filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataCommonFolderPath),
       DataFileFolder.UserApplication => filePath.Replace(Globals.DocumentsFolderPath, Globals.UserDataFolderPath),
-      _ => throw new AdvancedNotImplementedException(folder),
+      _ => throw new AdvNotImplementedException(folder),
     };
     ReLoad();
   }

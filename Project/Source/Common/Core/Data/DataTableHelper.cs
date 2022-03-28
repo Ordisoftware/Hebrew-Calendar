@@ -57,7 +57,7 @@ static class DataTableHelper
         dataset.Dispose();
         break;
       default:
-        throw new AdvancedNotImplementedException(selected);
+        throw new AdvNotImplementedException(selected);
     }
   }
 

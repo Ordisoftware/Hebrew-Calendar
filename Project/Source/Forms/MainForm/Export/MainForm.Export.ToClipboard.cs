@@ -58,7 +58,7 @@ partial class MainForm
             Clipboard.SetText(ExportSaveJSON(interval));
             break;
           default:
-            throw new AdvancedNotImplementedException(Settings.ExportDataPreferredTarget);
+            throw new AdvNotImplementedException(Settings.ExportDataPreferredTarget);
         }
         return true;
       },

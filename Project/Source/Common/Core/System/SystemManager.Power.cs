@@ -140,7 +140,7 @@ static partial class SystemManager
       PowerAction.LogOff => LogOff(confirmLogOffOrMore),
       PowerAction.Restart => Restart(confirmLogOffOrMore),
       PowerAction.Shutdown => Shutdown(confirmLogOffOrMore),
-      _ => throw new AdvancedNotImplementedException(action),
+      _ => throw new AdvNotImplementedException(action),
     };
   }
 

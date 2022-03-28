@@ -42,7 +42,7 @@ public partial class MainForm
               GoToDate(dayRow.Date);
             break;
           default:
-            throw new AdvancedNotImplementedException(Settings.CalendarDoubleClickAction);
+            throw new AdvNotImplementedException(Settings.CalendarDoubleClickAction);
         }
       else
       if ( e.Clicks == 1 )
@@ -67,7 +67,6 @@ public partial class MainForm
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
-  [SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
   private void DoContextMenuStripDay_Opened(object sender, EventArgs e)
   {
     // Day

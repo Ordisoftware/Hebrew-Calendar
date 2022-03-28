@@ -176,7 +176,7 @@
     <Compile Include="Source\Common\Core\Enums\TraceFileRollOverMode.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\ExceptionInfo.cs" />
-    <Compile Include="Source\Common\Core\Exceptions\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\AdvNotImplementedException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\Globalization\Languages.cs" />
     <Compile Include="Source\Common\Core\Globalization\Localizer.cs" />
@@ -1051,7 +1051,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Source\Licenses\MPL 2.0.rtf" />
     <None Include=".editorconfig" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
     <None Include="Properties\DataSources\DatesDiffItem.datasource" />
@@ -1070,7 +1069,6 @@
     <Compile Include="Source\Program\System\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
-    <None Include="Source\Common\Core\Globals\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -1083,13 +1081,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Licenses\MPL 2.0.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="..\Setup\OrdisoftwareHebrewCalendarSetup.iss">
       <Link>Properties\OrdisoftwareHebrewCalendarSetup.iss</Link>
     </Content>
-    <Content Include="Source\Licenses\MPL 2.0.htm" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AASharp">

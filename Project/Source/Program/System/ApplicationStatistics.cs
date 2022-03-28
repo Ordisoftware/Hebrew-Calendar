@@ -17,7 +17,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// <summary>
 /// Provides application statistics.
 /// </summary>
-[SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion")]
 class ApplicationStatistics
 {
 

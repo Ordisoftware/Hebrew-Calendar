@@ -33,7 +33,7 @@ partial class WebUpdateForm : Form
     if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
     if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
     if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-    throw new AdvancedNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
+    throw new AdvNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
   }
 
   private WebUpdateForm()

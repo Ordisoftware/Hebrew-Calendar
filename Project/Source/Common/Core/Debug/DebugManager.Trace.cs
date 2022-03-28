@@ -163,7 +163,7 @@ static partial class DebugManager
             if ( !all || !delete(Globals.SinkFileRetainedFileCountLimit) ) return;
             break;
           default:
-            throw new AdvancedNotImplementedException(Globals.TraceFileRollOverMode);
+            throw new AdvNotImplementedException(Globals.TraceFileRollOverMode);
         }
         TraceForm?.TextBoxCurrent.Clear();
         //

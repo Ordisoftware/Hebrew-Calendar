@@ -18,31 +18,31 @@ namespace Ordisoftware.Core;
 /// Provides improved NotImplementedException.
 /// </summary>
 [Serializable]
-class AdvancedNotImplementedException : NotImplementedException
+class AdvNotImplementedException : NotImplementedException
 {
 
   public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);
 
-  public AdvancedNotImplementedException()
+  public AdvNotImplementedException()
   {
   }
 
-  public AdvancedNotImplementedException(Enum value)
+  public AdvNotImplementedException(Enum value)
   : base(value.ToStringFull())
   {
   }
 
-  public AdvancedNotImplementedException(string message)
+  public AdvNotImplementedException(string message)
   : base(message)
   {
   }
 
-  public AdvancedNotImplementedException(string message, Exception inner)
+  public AdvNotImplementedException(string message, Exception inner)
   : base(message, inner)
   {
   }
 
-  protected AdvancedNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
+  protected AdvNotImplementedException(SerializationInfo info, StreamingContext context) : base(info, context)
   {
   }
 }

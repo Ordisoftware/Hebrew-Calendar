@@ -110,7 +110,7 @@ static class ExportHelper
       ImageExportTarget.TIFF => ImageFormat.Tiff,
       ImageExportTarget.BMP => ImageFormat.Bmp,
       ImageExportTarget.GIF => ImageFormat.Gif,
-      _ => throw new AdvancedNotImplementedException(value),
+      _ => throw new AdvNotImplementedException(value),
     };
   }
 
