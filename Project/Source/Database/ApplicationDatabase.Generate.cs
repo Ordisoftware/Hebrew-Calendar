@@ -34,9 +34,7 @@ public class TooManyErrorsException : Exception
 partial class ApplicationDatabase
 {
 
-  static private readonly Properties.Settings Settings = Program.Settings;
-
-  static public int MaxGenerateErrors { get; set; } = 20;
+  static public int MaxGenerateErrors { get; set; } = Globals.MaxErrorsAllowed;
 
   public readonly List<string> LastGenerationErrors = new();
 
@@ -94,6 +92,7 @@ partial class ApplicationDatabase
   }
 
   private TimeSpan? DelayMoonrise;
+
   private bool IsMoonriseDelayed;
 
   /// <summary>

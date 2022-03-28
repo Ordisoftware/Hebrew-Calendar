@@ -19,6 +19,7 @@ partial class SelectExportTargetForm : Form
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public bool Run(ExportAction action, ref ViewMode view, ViewMode available, ref ExportInterval interval)
   {
     using var form = new SelectExportTargetForm { ActionToDo = action };
@@ -122,6 +123,7 @@ partial class SelectExportTargetForm : Form
       CreateFormatRedioButtons(Program.GridExportTargets, "ExportDataPreferredTarget");
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void CreateFormatRedioButtons<T>(NullSafeOfStringDictionary<T> list, string setting) where T : Enum
   {
     int posX = 15;

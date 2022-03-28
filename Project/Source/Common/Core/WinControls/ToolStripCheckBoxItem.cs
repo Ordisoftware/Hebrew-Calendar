@@ -28,6 +28,7 @@ public class ToolStripCheckBoxItem : ToolStripControlHost
     remove => CheckBox.CheckedChanged -= value;
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public ToolStripCheckBoxItem() : base(new FlowLayoutPanel())
   {
     var panel = (FlowLayoutPanel)Control;

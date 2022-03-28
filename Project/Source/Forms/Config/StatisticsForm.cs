@@ -30,11 +30,11 @@ partial class StatisticsForm : Form
   {
     LoadingForm.Instance.Progressing += Application.DoEvents;
     if ( isPrepare )
-      Instance.Timer.Interval = 5000;
+      Instance.Timer.Interval = SystemStatistics.TimerIntervalIdle;
     else
     {
       Instance.Popup();
-      Instance.Timer.Interval = 1000;
+      Instance.Timer.Interval = SystemStatistics.TimerIntervalActive;
     }
     if ( enabled )
     {
@@ -63,7 +63,7 @@ partial class StatisticsForm : Form
   private void SystemStatisticsForm_FormClosing(object sender, FormClosingEventArgs e)
   {
     LoadingForm.Instance.Progressing -= Application.DoEvents;
-    Timer.Interval = 5000;
+    Timer.Interval = SystemStatistics.TimerIntervalIdle;
     e.Cancel = true;
     Hide();
   }

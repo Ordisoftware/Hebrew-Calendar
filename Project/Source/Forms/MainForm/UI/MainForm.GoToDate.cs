@@ -19,6 +19,7 @@ partial class MainForm
 
   private bool GoToDateMutex;
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void GoToDate(DateTime date,
                        bool bringToFront = false,
                        bool onlyIfOpened = true,
@@ -40,7 +41,7 @@ partial class MainForm
         if ( NavigationForm.Instance is not null )
           NavigationForm.Instance.Date = date;
       });
-      // Datagridview and bindingsource
+      // Datagridview and binding source
       SystemManager.TryCatch(() =>
       {
         int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
@@ -78,7 +79,7 @@ partial class MainForm
           if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )
             this.Restore();
           else
-          if ( Visible && !this.IsVisibleOnTop(80) )
+          if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )
             this.Popup();
           regetFocus?.Popup();
         });

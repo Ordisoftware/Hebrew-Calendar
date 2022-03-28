@@ -62,7 +62,7 @@ partial class MainForm
       UpdateTitles(true);
       if ( delay > 0 )
       {
-        TimerResumeReminder.Interval = delay.Value * ( 60 * 1000 );
+        TimerResumeReminder.Interval = delay.Value * Globals.MilliSecondsInOneMinute;
         TimerResumeReminder.Start();
       }
     }

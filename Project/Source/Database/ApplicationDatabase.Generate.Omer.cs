@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase
 {
 
+  private const int EquinoxeDayDelta = 30;
+
   /// <summary>
   /// Creates the calendar items using moon or sun omer.
   /// </summary>
@@ -172,7 +174,7 @@ partial class ApplicationDatabase
       if ( dayEquinoxe < 1 )
       {
         monthExuinoxe--;
-        dayEquinoxe += 30;
+        dayEquinoxe += EquinoxeDayDelta;
       }
       bool isNewYear = ( dayDate.Month == monthExuinoxe && dayDate.Day >= dayEquinoxe )
                     || ( dayDate.Month == monthExuinoxe + 1 );

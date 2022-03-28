@@ -31,9 +31,25 @@ static partial class Globals
   static public readonly string NL4 = NL3 + NL;
   static public readonly string NL5 = NL4 + NL;
 
+  public const int WS_EX_COMPOSITED = 0x02000000;
+  public const int WS_CLIPCHILDREN = ~0x02000000;
+
+  public const int MaxErrorsAllowed = 20;
+  public const int MaxFilesAllowed = 20;
+
+  public const int ToolTipDelay = 3000;
+  public const int TrayIconTextLimit = 63;
+  public const int WindowDetectionMargin = 80;
+
   static public readonly int DaysOfWeekCount = Enums.GetValues<DayOfWeek>().Count;
-  static public readonly int SecondsInOneMinute = 60;
-  static public readonly int HoursInOneDay = 24;
+
+  public const int MilliSecondsInOneMinute = 60000;
+  public const int SecondsInOneMinute = 60;
+  public const int HoursInOneDay = 24;
+
+  static public readonly Size IconSize16 = new(16, 16);
+
+  static public readonly Color VeryLightGray = Color.FromArgb(250, 250, 250);
 
   /// <summary>
   /// Indicates bullet.

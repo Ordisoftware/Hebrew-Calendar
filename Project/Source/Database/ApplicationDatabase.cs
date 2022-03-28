@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
+  static private readonly Properties.Settings Settings = Program.Settings;
+
   static public ApplicationDatabase Instance { get; protected set; }
 
   static ApplicationDatabase()
@@ -32,13 +34,13 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void Vacuum(bool force = false)
   {
-    if ( Program.Settings.VacuumAtStartup )
+    if ( Settings.VacuumAtStartup )
     {
-      var dateNew = Connection.Optimize(Program.Settings.VacuumLastDone, Program.Settings.VacuumAtStartupDaysInterval);
-      if ( Program.Settings.VacuumLastDone != dateNew )
+      var dateNew = Connection.Optimize(Settings.VacuumLastDone, Settings.VacuumAtStartupDaysInterval);
+      if ( Settings.VacuumLastDone != dateNew )
       {
         HebrewDatabase.Instance.Connection.Optimize(dateNew, force: true);
-        Program.Settings.VacuumLastDone = dateNew;
+        Settings.VacuumLastDone = dateNew;
       }
     }
   }

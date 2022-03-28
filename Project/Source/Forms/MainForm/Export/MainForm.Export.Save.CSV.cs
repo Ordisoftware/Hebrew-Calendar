@@ -32,7 +32,7 @@ partial class MainForm
       foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
         headerTxt += field.ToString() + Globals.CSVSeparator;
       headerTxt = headerTxt.Remove(headerTxt.Length - 1);
-      var result = new StringBuilder(items.Count * 120);
+      var result = new StringBuilder(items.Count * headerTxt.Length);
       result.AppendLine(headerTxt);
       if ( LunisolarDays.Count == 0 ) return null;
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),

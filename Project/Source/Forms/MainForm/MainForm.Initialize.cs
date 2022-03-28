@@ -114,6 +114,7 @@ partial class MainForm
   /// <summary>
   /// Does Form Shown event.
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void DoFormShown(object sender, EventArgs e)
   {
     if ( Globals.IsExiting ) return;
@@ -365,10 +366,10 @@ partial class MainForm
   {
     SystemManager.TryCatch(() =>
     {
-      TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(16, 16);
-      TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(16, 16);
-      TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(16, 16);
-      TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(16, 16);
+      TrayIcons[false][true] = new Icon(Program.ApplicationPauseEventIconFilePath).GetBySize(Globals.IconSize16);
+      TrayIcons[false][false] = new Icon(Program.ApplicationPauseIconFilePath).GetBySize(Globals.IconSize16);
+      TrayIcons[true][true] = new Icon(Program.ApplicationEventIconFilePath).GetBySize(Globals.IconSize16);
+      TrayIcons[true][false] = new Icon(Globals.ApplicationIconFilePath).GetBySize(Globals.IconSize16);
     });
     SoundItem.Initialize();
     SystemManager.TryCatch(() => DisplayManager.DoSound(Globals.EmptySoundFilePath));
@@ -379,6 +380,7 @@ partial class MainForm
   /// Initializes the calendar month view aspect.
   /// </summary>
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void InitializeCalendarUI()
   {
     CalendarMonth.TheEvents.Clear();

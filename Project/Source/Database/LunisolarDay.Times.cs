@@ -21,7 +21,7 @@ partial class LunisolarDay
   internal DateTime GetEventStartDateTime(bool useRealDay, bool isMoon)
   {
     var day = this;
-    if ( !isMoon && !Program.Settings.TorahEventsCountAsMoon )
+    if ( !isMoon && !Settings.TorahEventsCountAsMoon )
     {
       if ( useRealDay )
       {
@@ -58,7 +58,7 @@ partial class LunisolarDay
     var rowPrevious = Table.Find(d => d.Date == dayPrevious);
     if ( rowPrevious is null )
       return null;
-    if ( Program.Settings.RemindShabatOnlyLight )
+    if ( Settings.RemindShabatOnlyLight )
       times.Set(dateRow, Sunrise.Value.TimeOfDay, Sunset.Value.TimeOfDay, 0, 0, delta3);
     else
       times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, delta3);
@@ -75,7 +75,7 @@ partial class LunisolarDay
     var rowNext = Table.Find(d => d.Date == dayNext);
     if ( rowPrevious is null || rowNext is null )
       return null;
-    if ( Program.Settings.TorahEventsCountAsMoon )
+    if ( Settings.TorahEventsCountAsMoon )
     {
       if ( rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);

@@ -44,8 +44,8 @@ public partial class MainForm
         {
           case ViewMode.Text:
           case ViewMode.Month:
-            cp.ExStyle |= 0x02000000; // + WS_EX_COMPOSITED
-            //cp.Style &= ~0x02000000;  // - WS_CLIPCHILDREN
+            cp.ExStyle |= Globals.WS_EX_COMPOSITED;
+            //cp.Style &= Globals.WS_CLIPCHILDREN;
             break;
         }
       return cp;

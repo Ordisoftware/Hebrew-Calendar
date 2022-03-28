@@ -31,15 +31,15 @@ partial class ShowTextForm : Form
                       string text,
                       bool hideOnClose = false,
                       bool sizeable = true,
-                      int width = 400,
-                      int height = 300,
+                      int width = MessageBoxEx.DefaultWidthSmall,
+                      int height = MessageBoxEx.DefaultHeightSmall,
                       bool wrap = true,
                       bool justify = true)
   : this()
   {
     Text = title;
     if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
-    if ( !sizeable ) MaximumSize = new System.Drawing.Size(0, 0);
+    if ( !sizeable ) MaximumSize = new Size(0, 0);
     TextBox.Text = text;
     Width = width;
     Height = height;
@@ -53,8 +53,8 @@ partial class ShowTextForm : Form
                       TranslationsDictionary text,
                       bool hideOnClose = false,
                       bool sizeable = true,
-                      int width = 400,
-                      int height = 300,
+                      int width = MessageBoxEx.DefaultWidthSmall,
+                      int height = MessageBoxEx.DefaultHeightSmall,
                       bool wrap = true,
                       bool justify = true)
   : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
@@ -87,7 +87,7 @@ partial class ShowTextForm : Form
     {
       var cp = base.CreateParams;
       if ( DisplayManager.DoubleBufferingEnabled )
-        cp.ExStyle |= 0x02000000;
+        cp.ExStyle |= Globals.WS_EX_COMPOSITED;
       return cp;
     }
   }

@@ -105,7 +105,7 @@ partial class MainForm
               GoToDate(CalendarMonth.CalendarDate.Date);
       }
       else
-      if ( Visible && !this.IsVisibleOnTop(80) )
+      if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )
       {
         this.Popup();
       }

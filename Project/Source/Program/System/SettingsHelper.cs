@@ -193,6 +193,7 @@ static class SettingsHelper
   /// <summary>
   /// Returns a string representing the GPS location.
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static internal string GetGPSText(this Settings settings)
   {
     var builder = new StringBuilder(128);

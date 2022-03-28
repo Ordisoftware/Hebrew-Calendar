@@ -23,20 +23,14 @@ using System.Net.Mail;
 partial class ExceptionForm : Form
 {
 
-  /// <summary>
-  /// Indicates the button stack text.
-  /// </summary>
-  private string StackText;
+  private const int BodyLengthLimit = 8000;
+
+  private const int BodyLengthLimitQuarter = BodyLengthLimit / 4;
 
   /// <summary>
   /// Indicates the error information.
   /// </summary>
   private ExceptionInfo ErrorInfo;
-
-  /// <summary>
-  /// Indicates the original form height.
-  /// </summary>
-  private int OriginalHeight;
 
   /// <summary>
   /// Indicates error messages.
@@ -62,18 +56,22 @@ partial class ExceptionForm : Form
     }
     form.EditType.Text = einfo.TypeText;
     form.EditMessage.Text = einfo.Message;
-    form.LabelInfo1.Text += einfo.Emitter;
+    form.LabelInfoProgram.Text += einfo.Emitter;
     form.EditStack.Text = einfo.StackText;
     form.ErrorMessages.Add(form.EditType.Text);
     form.ErrorMessages.Add(Globals.NL);
     form.ErrorMessages.Add(form.EditMessage.Text);
     form.ErrorMessages.Add(Globals.NL);
     form.ErrorMessages.Add(form.EditStack.Text);
-    form.OriginalHeight = form.Height;
     form.ErrorInfo = einfo;
-    form.StackText = form.ActionViewStack.Text;
-    form.ActionViewStack.Text += " <<";
-    if ( !DebugManager.UseStack ) form.ActionViewStack_Click(null, null);
+    if ( !DebugManager.UseStack )
+    {
+      int deltaHeight = form.EditStack.Height + form.Padding.Bottom;
+      form.MinimumSize = new Size(form.MinimumSize.Width, form.MinimumSize.Height - deltaHeight);
+      form.Height -= deltaHeight;
+      form.SizeGripStyle = SizeGripStyle.Hide;
+      form.FormBorderStyle = FormBorderStyle.FixedSingle;
+    }
     form.BringToFront();
     form.ShowDialog();
   }
@@ -118,25 +116,6 @@ partial class ExceptionForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewStack for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionViewStack_Click(object sender, EventArgs e)
-  {
-    if ( Height == OriginalHeight )
-    {
-      Height = EditStack.Top + 40;
-      ActionViewStack.Text = StackText + " >>";
-    }
-    else
-    {
-      Height = OriginalHeight;
-      ActionViewStack.Text = StackText + " <<";
-    }
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionViewLog for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -161,8 +140,8 @@ partial class ExceptionForm : Form
       query.Append("&labels=type: bug");
       query.Append("&body=");
       query.Append(WebUtility.UrlEncode(CreateBody().ToString()));
-      if ( query.Length > 8000 )
-        SystemManager.CreateGitHubIssue(query.ToString().Substring(0, 8000).TrimEnd('%'));
+      if ( query.Length > BodyLengthLimit )
+        SystemManager.CreateGitHubIssue(query.ToString().Substring(0, BodyLengthLimit).TrimEnd('%'));
       else
         SystemManager.CreateGitHubIssue(query.ToString());
     });
@@ -182,7 +161,7 @@ partial class ExceptionForm : Form
       message.To.Add(Globals.SupportEMail);
       message.Subject = $"[{Globals.AssemblyTitleWithVersion}] {ErrorInfo.Instance.GetType().Name}";
       string body = CreateBody().ToString();
-      message.Body = body.Length > 2000 ? body.Substring(0, 2000) : body;
+      message.Body = body.Length > BodyLengthLimitQuarter ? body.Substring(0, BodyLengthLimitQuarter) : body;
       SystemManager.RunShell(message.ToUrl());
     });
   }

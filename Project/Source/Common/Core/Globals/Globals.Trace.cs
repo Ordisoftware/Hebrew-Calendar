@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -27,10 +27,10 @@ static partial class Globals
     = IsVisualStudioDesigner ? 0 : Serilog.RollingInterval.Day;
 
   static public int SinkFileRetainedFileCountLimit { get; set; }
-    = Globals.DaysOfWeekCount;
+    = DaysOfWeekCount;
 
   static public int SessionFileRetainedFileCountLimit { get; set; }
-    = 20;
+    = MaxFilesAllowed;
 
   static public int SinkFileSizeLimitBytes { get; set; }
     = 100 * 1024 * 1024;
@@ -85,7 +85,5 @@ static partial class Globals
     [LogTraceEvent.Error] = '!',
     [LogTraceEvent.Exception] = '!'
   };
-
-
 
 }

@@ -22,6 +22,7 @@ partial class MainForm
   /// </summary>
   /// <param name="yearFirst">The first year.</param>
   /// <param name="yearLast">The last year.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private string CreateData(int yearFirst, int yearLast)
   {
     Globals.IsGenerating = true;
@@ -96,7 +97,10 @@ partial class MainForm
       ApplicationDatabase.Instance.LastGenerationErrors.Clear();
       errors = Settings.GetGPSText() + Globals.NL2 + errors;
       DebugManager.Trace(LogTraceEvent.Data, errors);
-      using ( var form = new ShowTextForm(Text, errors, false, true, 600, 400, false, false) )
+      using ( var form = new ShowTextForm(Text, errors,
+                                          false, true,
+                                          MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
+                                          false, false) )
       {
         form.TextBox.Font = new Font("Courier new", 8);
         form.ShowDialog();
