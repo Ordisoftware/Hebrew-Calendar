@@ -176,7 +176,7 @@
     <Compile Include="Source\Common\Core\Enums\TraceFileRollOverMode.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\ExceptionInfo.cs" />
-    <Compile Include="Source\Common\Core\Exceptions\NotImplementedExceptionEx.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\AdvNotImplementedException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\SQLiteException.cs" />
     <Compile Include="Source\Common\Core\Globalization\Languages.cs" />
     <Compile Include="Source\Common\Core\Globalization\Localizer.cs" />
@@ -1069,7 +1069,6 @@
     <Compile Include="Source\Program\System\AstronomyHelper.cs" />
     <Compile Include="Dependencies\Moonr2cs\Moonr2cs.cs" />
     <Compile Include="Source\Program\Program.cs" />
-    <None Include="Source\Common\Core\Globals\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

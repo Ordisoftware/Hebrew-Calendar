@@ -157,7 +157,7 @@ partial class ManageBookmarksForm : Form
         dataset.Dispose();
         break;
       default:
-        throw new AdvancedNotImplementedException(selected);
+        throw new AdvNotImplementedException(selected);
     }
   }
 
@@ -208,7 +208,7 @@ partial class ManageBookmarksForm : Form
           }
           break;
         default:
-          throw new AdvancedNotImplementedException(selected);
+          throw new AdvNotImplementedException(selected);
       }
     }
     catch ( Exception ex )

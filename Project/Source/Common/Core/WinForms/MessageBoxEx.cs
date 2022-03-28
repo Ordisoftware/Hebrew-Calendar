@@ -50,7 +50,7 @@ partial class MessageBoxEx : Form
         using ( var form = new MessageBoxEx(title, text, buttons, icon, width, justify, sound) )
           return form.ShowDialog();
       default:
-        throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
+        throw new AdvNotImplementedException(DisplayManager.FormStyle);
     }
   }
 

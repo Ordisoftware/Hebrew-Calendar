@@ -228,7 +228,7 @@ partial class ReminderForm : Form
           form.Location = new Point(posX, posY);
           break;
         default:
-          throw new AdvancedNotImplementedException(location);
+          throw new AdvNotImplementedException(location);
       }
     }
   }
@@ -330,7 +330,7 @@ partial class ReminderForm : Form
         new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.ReminderBoxSoundSource);
+        throw new AdvNotImplementedException(Program.Settings.ReminderBoxSoundSource);
     }
     Application.DoEvents();
     if ( Program.Settings.ReminderBoxSoundSource != SoundSource.None )

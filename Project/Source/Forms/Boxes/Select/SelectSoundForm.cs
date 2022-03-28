@@ -96,7 +96,7 @@ partial class SelectSoundForm : Form
         SelectCustom.Checked = true;
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.ReminderBoxSoundSource);
+        throw new AdvNotImplementedException(Settings.ReminderBoxSoundSource);
     }
   }
 

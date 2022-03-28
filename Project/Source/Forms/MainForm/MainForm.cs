@@ -416,7 +416,7 @@ partial class MainForm : Form
         ? MessageBoxIconStyle.ForceInformation
         : MessageBoxIconStyle.ForceNone,
       MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
-      _ => throw new AdvancedNotImplementedException(DisplayManager.FormStyle),
+      _ => throw new AdvNotImplementedException(DisplayManager.FormStyle),
     };
   }
 
@@ -517,7 +517,7 @@ partial class MainForm : Form
         form.Popup(null, sender is null);
         break;
       default:
-        throw new AdvancedNotImplementedException(DisplayManager.FormStyle);
+        throw new AdvNotImplementedException(DisplayManager.FormStyle);
     }
   }
 

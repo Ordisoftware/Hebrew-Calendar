@@ -33,7 +33,7 @@ partial class MainForm
         DoMicrosoftNetworkDotCom();
         break;
       default:
-        throw new AdvancedNotImplementedException(Settings.WeatherOnlineProvider);
+        throw new AdvNotImplementedException(Settings.WeatherOnlineProvider);
     }
   }
 

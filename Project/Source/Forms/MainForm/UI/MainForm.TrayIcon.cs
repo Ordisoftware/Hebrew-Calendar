@@ -53,7 +53,7 @@ partial class MainForm
                 });
               break;
             default:
-              throw new AdvancedNotImplementedException(Settings.TrayIconClickOpen);
+              throw new AdvNotImplementedException(Settings.TrayIconClickOpen);
           }
         else
       if ( e.Button == MouseButtons.Right )

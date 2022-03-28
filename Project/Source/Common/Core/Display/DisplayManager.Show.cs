@@ -139,7 +139,7 @@ static partial class DisplayManager
       {
         MessageBoxFormStyle.System => ShowWinForm(title, text, buttons, icon),
         MessageBoxFormStyle.Advanced => ShowAdvancedForm(title, text, buttons, icon),
-        _ => throw new AdvancedNotImplementedException(FormStyle),
+        _ => throw new AdvNotImplementedException(FormStyle),
       };
     });
     return res;

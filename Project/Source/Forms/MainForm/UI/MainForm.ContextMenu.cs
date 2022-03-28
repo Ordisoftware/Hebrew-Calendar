@@ -42,7 +42,7 @@ public partial class MainForm
               GoToDate(dayRow.Date);
             break;
           default:
-            throw new AdvancedNotImplementedException(Settings.CalendarDoubleClickAction);
+            throw new AdvNotImplementedException(Settings.CalendarDoubleClickAction);
         }
       else
       if ( e.Clicks == 1 )

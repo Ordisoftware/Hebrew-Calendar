@@ -217,7 +217,7 @@ static class WebCheckUpdate
       case WebUpdateSelection.Install:
         return ProcessAutoInstall(client, fileInfo, fileURL, useGitHub);
       default:
-        throw new AdvancedNotImplementedException(result);
+        throw new AdvNotImplementedException(result);
     }
     return false;
   }

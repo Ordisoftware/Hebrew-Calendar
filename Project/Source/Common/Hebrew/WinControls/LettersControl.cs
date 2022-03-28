@@ -317,7 +317,7 @@ partial class LettersControl : UserControl
         TextBox.SelectionLength = TextBox.TextLength;
         break;
       default:
-        throw new AdvancedNotImplementedException(selection);
+        throw new AdvNotImplementedException(selection);
     }
   }
 

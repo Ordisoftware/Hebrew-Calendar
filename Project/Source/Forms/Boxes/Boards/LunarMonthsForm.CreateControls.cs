@@ -58,7 +58,7 @@ partial class LunarMonthsForm : Form
         colorsMonth = ColorsFlashy;
         break;
       default:
-        throw new AdvancedNotImplementedException(Program.Settings.LunarMonthsFormUseColors);
+        throw new AdvNotImplementedException(Program.Settings.LunarMonthsFormUseColors);
     }
     for ( int index = 1; index < HebrewMonths.Transcriptions.Length; index++ )
     {
