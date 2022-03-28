@@ -26,8 +26,8 @@ Shemot : 11 - פקודי - Peqoudei - 38.21 - 40.38 - False
 Vayiqra : 1 - ויקרא - Vayikra - 1.1 - 5.26 - False
 Vayiqra : 2 - צו - Tsav - 6.1 - 8.36 - False
 Vayiqra : 3 - שמיני - Shemini - 9.1 - 11.47 - False
-Vayiqra : 4 - תזריע - Tazria - 12.1 - 13.59 - True
-Vayiqra : 5 - מצורע - Metsora - 14.1 - 15.33 - False
+Vayiqra : 4 - תזריע - Tazria' - 12.1 - 13.59 - True
+Vayiqra : 5 - מצורע - Metsora' - 14.1 - 15.33 - False
 Vayiqra : 6 - אחרי מות - A'harei Mot - 16.1 - 18.30 - True
 Vayiqra : 7 - קדושים - Kedoshim - 19.1 - 20.27 - False
 Vayiqra : 8 - אמור - Emor - 21.1 - 24.23 - False
