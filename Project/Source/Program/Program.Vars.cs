@@ -179,13 +179,13 @@ static partial class Program
   /// Indicates file path of the lunar months meanings.
   /// </summary>
   static public string LunarMonthsMeaningsFilePath
-    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Meanings-{0}.txt");
+    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Meanings-{Languages.Current}.txt");
 
   /// <summary>
   /// Indicates file path of the lunar months lettriqs.
   /// </summary>
   static public string LunarMonthsLettriqsFilePath
-    => Path.Combine(LunarMonthsFolderPath, "LunarMonths-Lettriqs-{0}.txt");
+    => Path.Combine(LunarMonthsFolderPath, $"LunarMonths-Lettriqs-{Languages.Current}.txt");
 
   /// <summary>
   /// Indicates lunar months meanings.
@@ -207,18 +207,14 @@ static partial class Program
     LunarMonthsLettriqs = new NullSafeDictionary<Language, LunarMonthsFile>();
     foreach ( Language lang in Languages.Managed )
     {
-      LunarMonthsMeanings.Add(lang,
-                              new LunarMonthsFile(string.Format(LunarMonthsMeaningsFilePath,
-                                                                Languages.Codes[lang].ToUpper()),
-                                                  true,
-                                                  Globals.IsDevExecutable,
-                                                  DataFileFolder.ApplicationDocuments));
-      LunarMonthsLettriqs.Add(lang,
-                              new LunarMonthsFile(string.Format(LunarMonthsLettriqsFilePath,
-                                                                Languages.Codes[lang].ToUpper()),
-                                                  true,
-                                                  Globals.IsDevExecutable,
-                                                  DataFileFolder.ApplicationDocuments));
+      LunarMonthsMeanings.Add(lang, new LunarMonthsFile(LunarMonthsMeaningsFilePath,
+                                                        true,
+                                                        Globals.IsDevExecutable,
+                                                        DataFileFolder.ApplicationDocuments));
+      LunarMonthsLettriqs.Add(lang, new LunarMonthsFile(LunarMonthsLettriqsFilePath,
+                                                        true,
+                                                        Globals.IsDevExecutable,
+                                                        DataFileFolder.ApplicationDocuments));
     }
   }
 
