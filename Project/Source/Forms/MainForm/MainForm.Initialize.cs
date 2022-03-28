@@ -127,10 +127,13 @@ partial class MainForm
       MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
       Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                              AppTranslations.NoticeKeyboardShortcuts,
-                                                             true, false, 430, 500, false, false);
+                                                             true, false,
+                                                             MessageBoxEx.DefaultHeightMedium,
+                                                             MessageBoxEx.DefaultHeightBig,
+                                                             false, false);
       Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
       Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 20, 20);
+      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
       SetGlobalHotKey();
       Globals.IsReady = true;
       GoToDate(DateTime.Today);

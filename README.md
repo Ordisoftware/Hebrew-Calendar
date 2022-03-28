@@ -374,6 +374,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2022.04.05 - Version 9.28
 
+- Maintenance release.
 - Add current day change when cursor changes line in text report.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
 - Massive code refactorings, optimizations and fixes with more analyzers.
