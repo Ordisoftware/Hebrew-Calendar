@@ -20,6 +20,9 @@ using SQLite;
 [Table("LunisolarDays")]
 public partial class LunisolarDay
 {
+
+  static private readonly Properties.Settings Settings = Program.Settings;
+
   [PrimaryKey]
   public DateTime Date { get; set; }
   public int LunarMonth { get; set; }
@@ -43,9 +46,11 @@ public partial class LunisolarDay
   public string ParashahID { get; set; }
   public string LinkedParashahID { get; set; }
 
-  public bool HasLinkedParashah => !LinkedParashahID.IsNullOrEmpty();
+  public bool HasLinkedParashah
+    => !LinkedParashahID.IsNullOrEmpty();
 
-  public List<LunisolarDay> Table => ApplicationDatabase.Instance.LunisolarDays;
+  public List<LunisolarDay> Table
+    => ApplicationDatabase.Instance.LunisolarDays;
 
   public bool IsNewYear
     => TorahEvent == TorahCelebrationDay.NewYearD1;
@@ -63,9 +68,10 @@ public partial class LunisolarDay
     => $"{DayAndMonthText} {Date.Year}";
 
   public string DayAndMonthFormattedText
-    => Program.Settings.MoonDayTextFormat.ToUpper()
-              .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
-              .Replace("%MONTHNUM%", LunarMonth.ToString())
-              .Replace("%DAYNUM%", LunarDay.ToString());
+    => Settings.MoonDayTextFormat
+               .ToUpper()
+               .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
+               .Replace("%MONTHNUM%", LunarMonth.ToString())
+               .Replace("%DAYNUM%", LunarDay.ToString());
 
 }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunisolarDay
@@ -20,7 +20,7 @@ partial class LunisolarDay
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
-    int deltaPessah = Program.Settings.TorahEventsCountAsMoon ? 0 : -1;
+    int deltaPessah = Settings.TorahEventsCountAsMoon ? 0 : -1;
     if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
       if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
       {
@@ -40,11 +40,11 @@ partial class LunisolarDay
           return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
       }
       else
-      if ( !onlyPessah && LunarMonth == 3 )
+      if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.ChavouotMonth )
       {
         int indexCurrent = Table.IndexOf(this);
-        int indexStart = Math.Max(0, indexCurrent - 7);
-        int indexEnd = Math.Min(indexCurrent + 7, Table.Count - 1);
+        int indexStart = Math.Max(0, indexCurrent - Globals.DaysOfWeekCount);
+        int indexEnd = Math.Min(indexCurrent + Globals.DaysOfWeekCount, Table.Count - 1);
         LunisolarDay first = null;
         LunisolarDay last = null;
         for ( int index = indexStart; index <= indexEnd; index++ )
@@ -53,7 +53,7 @@ partial class LunisolarDay
           if ( row.TorahEvent == TorahCelebrationDay.ChavouotDiet )
           {
             first = row;
-            if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
             {
               last = row;
               break;
@@ -61,7 +61,7 @@ partial class LunisolarDay
           }
           else
           if ( first is not null )
-            if ( row.Date.DayOfWeek == (DayOfWeek)Program.Settings.ShabatDay )
+            if ( row.Date.DayOfWeek == (DayOfWeek)Settings.ShabatDay )
             {
               last = row;
               break;
@@ -71,9 +71,10 @@ partial class LunisolarDay
           && first.Date <= last.Date
           && Date >= first.Date
           && Date <= last.Date )
-          return (TorahCelebration.Chavouot,
-                  (int)( Date - first.Date ).TotalDays + 1,
-                  AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang());
+        {
+          string str = AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang();
+          return (TorahCelebration.Chavouot, (int)( Date - first.Date ).TotalDays + 1, str);
+        }
       }
     return (TorahCelebration.None, 0, string.Empty);
   }

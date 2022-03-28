@@ -46,7 +46,7 @@ partial class NewMoonsBoardForm : Form
     InitializeComponent();
     Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
     Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
-    Title = Text + " - ";
+    Title = $"{Text} - ";
     Icon = MainForm.Instance.Icon;
     EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;
     EditColumnUpperCase.Checked = Settings.NewMoonsBoardFormUseTitleUpperCase;
@@ -181,10 +181,10 @@ partial class NewMoonsBoardForm : Form
       }
       else
         e.Value = ( (DateTime)e.Value ).ToShortDateString();
-      if ( !EditHideHours.Checked ) e.Value += " " + date.ToString("HH:mm");
+      if ( !EditHideHours.Checked ) e.Value += $" {date:HH:mm}";
     }
     else
-      e.CellStyle.BackColor = Color.FromArgb(250, 250, 250);
+      e.CellStyle.BackColor = Globals.VeryLightGray;
   }
 
   private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -41,6 +41,7 @@ partial class ReminderForm : Form
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;

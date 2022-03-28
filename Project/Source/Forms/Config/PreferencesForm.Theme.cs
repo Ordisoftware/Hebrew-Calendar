@@ -21,6 +21,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class PreferencesForm
 {
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void SetThemeLight()
   {
     EditCurrentDayForeColor.BackColor = Color.White;
@@ -40,10 +41,11 @@ partial class PreferencesForm
     EditEventColorNext.BackColor = Color.FromArgb(240, 240, 240);
     EditMonthViewBackColor.BackColor = Color.White;
     EditMonthViewTextColor.BackColor = Color.Black;
-    EditMonthViewNoDaysBackColor.BackColor = Color.FromArgb(250, 250, 250);
+    EditMonthViewNoDaysBackColor.BackColor = Globals.VeryLightGray;
     MustRefreshMonthView = true;
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void SetThemeDark()
   {
     EditCurrentDayForeColor.BackColor = Color.White;
@@ -101,7 +103,7 @@ partial class PreferencesForm
     //
     static string makeLine(Panel panel)
     {
-      return panel.Name.Substring(4) + "=" + ColorTranslator.ToHtml(panel.BackColor);
+      return $"{panel.Name.Substring(4)}={ColorTranslator.ToHtml(panel.BackColor)}";
     }
   }
 

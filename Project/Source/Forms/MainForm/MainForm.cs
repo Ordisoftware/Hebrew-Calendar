@@ -112,14 +112,13 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void TimerTooltip_Tick(object sender, EventArgs e)
   {
     if ( !EditShowTips.Checked ) return;
     var item = (ToolStripItem)LastToolTip.Tag;
     var location = new Point(item.Bounds.Left, item.Bounds.Top + ActionExit.Height + 5);
     LastToolTip.Tag = sender;
-    LastToolTip.Show(item.ToolTipText, ToolStrip, location, 3000);
+    LastToolTip.Show(item.ToolTipText, ToolStrip, location, Globals.ToolTipDelay);
     TimerTooltip.Enabled = false;
   }
 
@@ -229,7 +228,7 @@ partial class MainForm : Form
         }
         else
           lines.Add(DateTime.Today.ToShortDateString());
-        TrayIcon.Text = new string(lines.AsMultiLine().Take(63).ToArray());
+        TrayIcon.Text = new string(lines.AsMultiLine().Take(Globals.TrayIconTextLimit).ToArray());
       }
       else
         TrayIcon.Text = string.Empty;

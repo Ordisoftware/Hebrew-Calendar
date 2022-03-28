@@ -23,11 +23,6 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Pessa'h month.
   /// </summary>
-  static public readonly int SimhatTorah = 22;
-
-  /// <summary>
-  /// Pessa'h month.
-  /// </summary>
   static public readonly int PessahMonth = 1;
 
   /// <summary>
@@ -54,6 +49,11 @@ static class TorahCelebrationSettings
   /// Shavou'ot length.
   /// </summary>
   static public readonly int ChavouotLenght = 50;
+
+  /// <summary>
+  /// 'Hanouka month.
+  /// </summary>
+  static public readonly int ChavouotMonth = 3;
 
   /// <summary>
   /// Yoms month.
@@ -84,6 +84,11 @@ static class TorahCelebrationSettings
   /// Soukot last day.
   /// </summary>
   static public readonly int SoukotEndDay = SoukotStartDay + SoukotLenght - 1;
+
+  /// <summary>
+  /// Pessa'h month.
+  /// </summary>
+  static public readonly int SimhatTorah = 22;
 
   /// <summary>
   /// 'Hanouka month.

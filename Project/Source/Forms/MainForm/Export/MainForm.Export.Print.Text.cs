@@ -18,6 +18,8 @@ using System.Drawing.Printing;
 
 partial class MainForm
 {
+
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void ExportPrintTextReport(IEnumerable<string> lines)
   {
     using var font = new Font(CalendarText.Font.Name, Settings.PrintingMargin > 75 ? 6 : 7);

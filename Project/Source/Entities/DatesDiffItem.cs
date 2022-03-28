@@ -65,7 +65,7 @@ class DatesDiffItem
       }
       var data = CalendarDates.Instance[DateStart];
       SolarDays = ( DateEnd - DateStart ).Days + 1;
-      SolarWeeks = (int)Math.Ceiling(SolarDays / 7d);
+      SolarWeeks = (int)Math.Ceiling((decimal)SolarDays / Globals.DaysOfWeekCount);
       SolarMonths = 1;
       SolarYears = 1;
       MoonDays = 0;

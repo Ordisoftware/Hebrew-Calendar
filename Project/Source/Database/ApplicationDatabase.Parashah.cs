@@ -19,7 +19,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   public (LunisolarDay Day, Parashah Factory) GetWeeklyParashah()
   {
-    var today = Program.Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
+    var today = Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
     if ( today is null ) return (today, null);
     if ( today.LunarMonth == TorahCelebrationSettings.PessahMonth )
       if ( today.TorahEvent == TorahCelebrationDay.PessahD1 || today.TorahEvent == TorahCelebrationDay.PessahD7 )
@@ -34,10 +34,11 @@ partial class ApplicationDatabase : SQLiteDatabase
       {
         var (Event, Index, _) = today.GetWeekLongCelebrationIntermediateDay();
         if ( Event == TorahCelebration.Soukot )
-          if ( Index < 8 || ( Index == 8 && Program.Settings.UseSimhatTorahOutside ) )
+          if ( Index < TorahCelebrationSettings.SoukotLenght
+            || ( Index == TorahCelebrationSettings.SoukotLenght && Settings.UseSimhatTorahOutside ) )
             return (today, null);
       }
-    if ( Program.Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
+    if ( Settings.TorahEventsCountAsMoon ) today = GetDaySun(DateTime.Now);
     today = today?.GetParashahReadingDay();
     return (today, ParashotFactory.Instance.Get(today?.ParashahID));
   }
@@ -48,40 +49,6 @@ partial class ApplicationDatabase : SQLiteDatabase
     var (Day, Factory) = GetWeeklyParashah();
     if ( Factory is null ) return false;
     return MainForm.UserParashot.ShowDescription(Factory, Day.HasLinkedParashah, () => ParashotForm.Run(Factory));
-  }
-
-}
-
-partial class LunisolarDay
-{
-
-  private const int SearchParashahInterval = 14;
-
-  public string GetParashahText(bool withBookAndRefIfRequired)
-  {
-    if ( ParashahID.IsNullOrEmpty() ) return string.Empty;
-    var parashah = ParashotFactory.Instance.Get(ParashahID);
-    return parashah is not null
-      ? parashah.ToStringShort(withBookAndRefIfRequired, HasLinkedParashah)
-      : SysTranslations.UndefinedSlot.GetLang();
-  }
-
-  public LunisolarDay GetParashahReadingDay()
-  {
-    LunisolarDay result = null;
-    var shabatDay = (DayOfWeek)Program.Settings.ShabatDay;
-    int indexStart = Table.IndexOf(this);
-    int indexEnd = Math.Min(indexStart + SearchParashahInterval, Table.Count);
-    for ( int index = indexStart; index < indexEnd; index++ )
-    {
-      var row = Table[index];
-      if ( row.Date.DayOfWeek == shabatDay )
-      {
-        result = row;
-        break;
-      }
-    }
-    return result?.ParashahID.IsNullOrEmpty() != false ? null : result;
   }
 
 }

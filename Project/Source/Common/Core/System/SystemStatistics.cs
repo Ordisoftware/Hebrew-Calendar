@@ -20,6 +20,9 @@ namespace Ordisoftware.Core;
 class SystemStatistics
 {
 
+  public const int TimerIntervalActive = 1000;
+  public const int TimerIntervalIdle = 5000;
+
   static private readonly Process Process = Process.GetCurrentProcess();
   static private PerformanceCounter PerformanceCounterCPULoad;
   static private PerformanceCounter PerformanceCounterCPUProcessLoad;

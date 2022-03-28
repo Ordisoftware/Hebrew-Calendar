@@ -17,11 +17,14 @@ namespace Ordisoftware.Hebrew;
 class ParashotFactory : ProviderSettings
 {
 
+  private const int DataColumnsCount = 6;
+
   static public readonly ParashotFactory Instance = new();
 
   public readonly NullSafeDictionary<TorahBook, NullSafeList<Parashah>> Items = new();
 
-  public IEnumerable<Parashah> All => Items.SelectMany(item => item.Value);
+  public IEnumerable<Parashah> All
+    => Items.SelectMany(item => item.Value);
 
   public Parashah Get(string id)
     => All.FirstOrDefault(p => p.ID == id);
@@ -39,14 +42,14 @@ class ParashotFactory : ProviderSettings
     var book = Enums.Parse<TorahBook>(pair[0].Trim());
     if ( Items[book] is null ) Items[book] = new NullSafeList<Parashah>();
     var items = pair[1].Split('-');
-    if ( items.Length != 6 ) return;
+    if ( items.Length != DataColumnsCount ) return;
     Items[book].Add(new Parashah(book,
                                  int.Parse(items[0].Trim()),
-                                 items[2].Trim(),
-                                 items[1].Trim(),
-                                 items[3].Trim(),
-                                 items[4].Trim(),
-                                 bool.Parse(items[5].Trim())));
+                                           items[2].Trim(),
+                                           items[1].Trim(),
+                                           items[3].Trim(),
+                                           items[4].Trim(),
+                                           bool.Parse(items[5].Trim())));
   }
 
   protected override void DoSave(StreamWriter stream)

@@ -37,6 +37,7 @@ partial class DataFileEditorForm : Form
     return result;
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private static void AddTab(TabControl tabcontrol, DataFile file)
   {
     if ( !File.Exists(file.FilePath) )

@@ -125,6 +125,7 @@ static partial class SystemManager
   /// <summary>
   /// Sends an IPC command.
   /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public void IPCSend(string command)
   {
     try

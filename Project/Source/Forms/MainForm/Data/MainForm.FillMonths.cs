@@ -30,6 +30,7 @@ partial class MainForm
   }
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
   static public Color MixColor(Color c1, Color c2)
   {
     int r = Math.Min(( c1.R + c2.R ) / 2, 255);
@@ -39,6 +40,7 @@ partial class MainForm
   }
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
   static public Color MixColor(Color c1, Color c2, Color c3)
   {
 

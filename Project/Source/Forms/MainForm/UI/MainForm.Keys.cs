@@ -172,10 +172,10 @@ partial class MainForm
           GoToDate(CurrentDay.Date.AddDays(+1));
           return true;
         case Keys.Shift | Keys.Up:
-          GoToDate(CurrentDay.Date.AddDays(-7));
+          GoToDate(CurrentDay.Date.AddDays(-Globals.DaysOfWeekCount));
           return true;
         case Keys.Shift | Keys.Down:
-          GoToDate(CurrentDay.Date.AddDays(+7));
+          GoToDate(CurrentDay.Date.AddDays(+Globals.DaysOfWeekCount));
           return true;
       }
     return base.ProcessCmdKey(ref msg, keyData);

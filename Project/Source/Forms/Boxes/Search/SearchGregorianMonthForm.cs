@@ -52,6 +52,7 @@ partial class SearchGregorianMonthForm : Form
     ActionOK.PerformClick();
   }
 
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
   {
     int selectedKey = ListItems.SelectedIndices.Count > 0 ? ListItems.SelectedIndices[0] : -1;

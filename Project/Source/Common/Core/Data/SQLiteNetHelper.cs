@@ -69,6 +69,7 @@ static class SQLiteNetHelper
   /// Gets the version of the engine.
   /// </summary>
   /// <param name="connection">The connection.</param>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public void InitializeVersion(this SQLiteNetORM connection)
   {
     ProviderName = connection?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();

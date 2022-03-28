@@ -17,8 +17,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  private readonly int SearchDayInterval = Globals.DaysOfWeekCount;
-
   private readonly int GetTodayCacheInSeconds = Globals.SecondsInOneMinute;
 
   private DateTime DayChecked = DateTime.MinValue;
@@ -38,7 +36,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   public LunisolarDay GetDay(DateTime datetime)
   {
-    return Program.Settings.TorahEventsCountAsMoon && !Program.Settings.UseSodHaibour
+    return Settings.TorahEventsCountAsMoon && !Settings.UseSodHaibour
       ? GetDayMoon(datetime)
       : GetDaySun(datetime);
   }
@@ -48,8 +46,8 @@ partial class ApplicationDatabase : SQLiteDatabase
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
     int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
-    int indexStart = Math.Max(0, indexRowCurrent - SearchDayInterval);
-    int indexEnd = Math.Min(indexRowCurrent + SearchDayInterval, LunisolarDays.Count - 1);
+    int indexStart = Math.Max(0, indexRowCurrent - Globals.DaysOfWeekCount);
+    int indexEnd = Math.Min(indexRowCurrent + Globals.DaysOfWeekCount, LunisolarDays.Count - 1);
     bool isInBounds = false;
     LunisolarDay rowFirst = null;
     LunisolarDay rowLast = null;

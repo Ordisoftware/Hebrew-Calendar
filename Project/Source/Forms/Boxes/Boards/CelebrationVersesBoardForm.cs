@@ -17,6 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 public partial class CelebrationVersesBoardForm : Form
 {
 
+  private const float FontFactor = 1.5f;
+
   static private readonly Properties.Settings Settings = Program.Settings;
 
   static public CelebrationVersesBoardForm Instance { get; private set; }
@@ -162,16 +164,15 @@ public partial class CelebrationVersesBoardForm : Form
         e.Handled = true;
         break;
       case Keys.Enter:
-        if ( sender is ListView control )
-          if ( control.FocusedItem is not null )
-          {
-            int delta = (int)( control.Font.SizeInPoints * 1.5 );
-            var pos = control.PointToScreen(control.FocusedItem.Position);
-            pos.X += delta;
-            pos.Y += delta;
-            control.ContextMenuStrip.Show(pos);
-            e.Handled = true;
-          }
+        if ( sender is ListView control && control.FocusedItem is not null )
+        {
+          int delta = (int)( control.Font.SizeInPoints * FontFactor );
+          var pos = control.PointToScreen(control.FocusedItem.Position);
+          pos.X += delta;
+          pos.Y += delta;
+          control.ContextMenuStrip.Show(pos);
+          e.Handled = true;
+        }
         break;
     }
   }

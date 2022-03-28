@@ -40,16 +40,14 @@ namespace Ordisoftware.Core
       this.PictureBox = new System.Windows.Forms.PictureBox();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionTerminate = new System.Windows.Forms.Button();
-      this.ActionViewStack = new System.Windows.Forms.Button();
       this.EditStack = new System.Windows.Forms.TextBox();
-      this.LabelInfo1 = new System.Windows.Forms.Label();
+      this.LabelInfoProgram = new System.Windows.Forms.Label();
       this.EditType = new System.Windows.Forms.TextBox();
-      this.LabelInfo2 = new System.Windows.Forms.Label();
+      this.LabelInfoAction = new System.Windows.Forms.Label();
       this.ActionViewInner = new System.Windows.Forms.Button();
-      this.ActionSendMail = new System.Windows.Forms.Button();
       this.ActionSendToGitHub = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.SuspendLayout();
       // 
       // EditMessage
@@ -83,13 +81,6 @@ namespace Ordisoftware.Core
       this.ActionTerminate.UseVisualStyleBackColor = true;
       this.ActionTerminate.Click += new System.EventHandler(this.ActionTerminate_Click);
       // 
-      // ActionViewStack
-      // 
-      resources.ApplyResources(this.ActionViewStack, "ActionViewStack");
-      this.ActionViewStack.Name = "ActionViewStack";
-      this.ActionViewStack.UseVisualStyleBackColor = true;
-      this.ActionViewStack.Click += new System.EventHandler(this.ActionViewStack_Click);
-      // 
       // EditStack
       // 
       resources.ApplyResources(this.EditStack, "EditStack");
@@ -98,10 +89,10 @@ namespace Ordisoftware.Core
       this.EditStack.ReadOnly = true;
       this.EditStack.TabStop = false;
       // 
-      // LabelInfo1
+      // LabelInfoProgram
       // 
-      resources.ApplyResources(this.LabelInfo1, "LabelInfo1");
-      this.LabelInfo1.Name = "LabelInfo1";
+      resources.ApplyResources(this.LabelInfoProgram, "LabelInfoProgram");
+      this.LabelInfoProgram.Name = "LabelInfoProgram";
       // 
       // EditType
       // 
@@ -111,10 +102,10 @@ namespace Ordisoftware.Core
       this.EditType.ReadOnly = true;
       this.EditType.TabStop = false;
       // 
-      // LabelInfo2
+      // LabelInfoAction
       // 
-      resources.ApplyResources(this.LabelInfo2, "LabelInfo2");
-      this.LabelInfo2.Name = "LabelInfo2";
+      resources.ApplyResources(this.LabelInfoAction, "LabelInfoAction");
+      this.LabelInfoAction.Name = "LabelInfoAction";
       // 
       // ActionViewInner
       // 
@@ -123,22 +114,13 @@ namespace Ordisoftware.Core
       this.ActionViewInner.UseVisualStyleBackColor = true;
       this.ActionViewInner.Click += new System.EventHandler(this.ActionViewInner_Click);
       // 
-      // ActionSendMail
-      // 
-      this.ActionSendMail.FlatAppearance.BorderSize = 0;
-      this.ActionSendMail.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ));
-      resources.ApplyResources(this.ActionSendMail, "ActionSendMail");
-      this.ActionSendMail.Name = "ActionSendMail";
-      this.ActionSendMail.UseVisualStyleBackColor = true;
-      this.ActionSendMail.Click += new System.EventHandler(this.ActionSendMail_Click);
-      // 
       // ActionSendToGitHub
       // 
       resources.ApplyResources(this.ActionSendToGitHub, "ActionSendToGitHub");
       this.ActionSendToGitHub.FlatAppearance.BorderSize = 0;
-      this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ));
-      this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
-      this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
+      this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ActionSendToGitHub.Name = "ActionSendToGitHub";
       this.ActionSendToGitHub.UseVisualStyleBackColor = true;
       this.ActionSendToGitHub.Click += new System.EventHandler(this.ActionSendToGitHub_Click);
@@ -146,9 +128,9 @@ namespace Ordisoftware.Core
       // ActionViewLog
       // 
       this.ActionViewLog.FlatAppearance.BorderSize = 0;
-      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ));
-      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
-      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
+      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.Name = "ActionViewLog";
       this.ActionViewLog.UseVisualStyleBackColor = true;
@@ -158,24 +140,22 @@ namespace Ordisoftware.Core
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.ActionSendMail);
       this.Controls.Add(this.ActionSendToGitHub);
       this.Controls.Add(this.ActionViewLog);
       this.Controls.Add(this.ActionViewInner);
       this.Controls.Add(this.EditType);
-      this.Controls.Add(this.LabelInfo2);
-      this.Controls.Add(this.LabelInfo1);
+      this.Controls.Add(this.LabelInfoAction);
+      this.Controls.Add(this.LabelInfoProgram);
       this.Controls.Add(this.EditStack);
       this.Controls.Add(this.ActionTerminate);
       this.Controls.Add(this.ActionClose);
       this.Controls.Add(this.PictureBox);
       this.Controls.Add(this.EditMessage);
-      this.Controls.Add(this.ActionViewStack);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ExceptionForm";
       this.Shown += new System.EventHandler(this.ExceptionForm_Shown);
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -204,11 +184,6 @@ namespace Ordisoftware.Core
     private System.Windows.Forms.Button ActionTerminate;
 
     /// <summary>
-    /// Stack of button views.
-    /// </summary>
-    private System.Windows.Forms.Button ActionViewStack;
-
-    /// <summary>
     /// Stack of texts.
     /// </summary>
     private System.Windows.Forms.TextBox EditStack;
@@ -216,7 +191,7 @@ namespace Ordisoftware.Core
     /// <summary>
     /// The label information 1 control.
     /// </summary>
-    private System.Windows.Forms.Label LabelInfo1;
+    private System.Windows.Forms.Label LabelInfoProgram;
 
     /// <summary>
     /// The text Exception control.
@@ -226,13 +201,12 @@ namespace Ordisoftware.Core
     /// <summary>
     /// The label information 2 control.
     /// </summary>
-    private System.Windows.Forms.Label LabelInfo2;
+    private System.Windows.Forms.Label LabelInfoAction;
 
     /// <summary>
     /// The button view inner control.
     /// </summary>
     private System.Windows.Forms.Button ActionViewInner;
-    private System.Windows.Forms.Button ActionSendMail;
     private System.Windows.Forms.Button ActionSendToGitHub;
     private System.Windows.Forms.Button ActionViewLog;
   }

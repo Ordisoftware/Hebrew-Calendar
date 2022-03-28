@@ -21,6 +21,9 @@ using TranslationPair = KeyValuePair<string, TranslationsDictionary>;
 partial class CommonMenusControl : UserControl
 {
 
+  private const int WidthButtonSmall = 35;
+  private const int WidthButtonMedium = 55;
+
   static public CommonMenusControl Instance { get; private set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
@@ -54,7 +57,7 @@ partial class CommonMenusControl : UserControl
     InitializeComponent();
     ActionViewVersionNews.DropDownItems.Remove(dummyVersionNews);
     MenuApplication.Text = Globals.AssemblyTitle;
-    MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(16, 16).ToBitmap();
+    MenuApplication.Image = Globals.MainForm?.Icon.GetBySize(Globals.IconSize16).ToBitmap();
     ActionSoftpedia.Tag = Globals.SoftpediaURL;
     ActionAlternativeTo.Tag = Globals.AlternativeToURL;
     bool enableSofpedia = !Globals.SoftpediaURL.IsNullOrEmpty();
@@ -115,14 +118,14 @@ partial class CommonMenusControl : UserControl
       form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
       form.ActionOK.KeyUp += onKeyUp;
       form.ActionYes.DialogResult = DialogResult.None;
-      initButton(form.ActionYes, SysTranslations.Notes.GetLang(), 55, true, null);
-      initButton(form.ActionNo, "<<", 35, Notices.Keys.Last() != notice.Key,
+      initButton(form.ActionYes, SysTranslations.Notes.GetLang(), WidthButtonMedium, true, null);
+      initButton(form.ActionNo, "<<", WidthButtonSmall, Notices.Keys.Last() != notice.Key,
                  _ => ActionViewVersionNews.DropDownItems.ToEnumerable().Last().PerformClick());
-      initButton(form.ActionAbort, "<", 35, Notices.Keys.Last() != notice.Key,
+      initButton(form.ActionAbort, "<", WidthButtonSmall, Notices.Keys.Last() != notice.Key,
                  index => ActionViewVersionNews.DropDownItems[index + 1].PerformClick());
-      initButton(form.ActionRetry, ">", 35, Notices.Keys.First() != notice.Key,
+      initButton(form.ActionRetry, ">", WidthButtonSmall, Notices.Keys.First() != notice.Key,
                  index => ActionViewVersionNews.DropDownItems[index - 1].PerformClick());
-      initButton(form.ActionIgnore, ">>", 35, Notices.Keys.First() != notice.Key,
+      initButton(form.ActionIgnore, ">>", WidthButtonSmall, Notices.Keys.First() != notice.Key,
                  _ => ActionViewVersionNews.DropDownItems[0].PerformClick());
     }
     form.ActiveControl = form.ActionOK;
@@ -234,7 +237,7 @@ partial class CommonMenusControl : UserControl
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
     File.WriteAllText(filePath, fileLines, Encoding.UTF8);
     SystemManager.RunShell(filePath);
-    var timer = new System.Windows.Forms.Timer { Interval = 60000 };
+    var timer = new System.Windows.Forms.Timer { Interval = Globals.MilliSecondsInOneMinute };
     timer.Tick += (_, _) =>
     {
       timer.Stop();
