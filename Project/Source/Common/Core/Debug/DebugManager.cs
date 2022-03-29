@@ -246,18 +246,17 @@ static partial class DebugManager
   }
 
   /// <summary>
-  /// Handles an axception.
+  /// Handles an exception.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="ex">The ex.</param>
   static private void Handle(object sender, Exception ex)
   {
-    if ( ex is AbortException ) return;
     ManageInternal(sender, ex);
   }
 
   /// <summary>
-  /// Manages an axception.
+  /// Manages an exception.
   /// </summary>
   /// <param name="ex">The Exception to act on.</param>
   static public void Manage(this Exception ex)
@@ -266,7 +265,7 @@ static partial class DebugManager
   }
 
   /// <summary>
-  /// Manages an axception.
+  /// Manages an exception.
   /// </summary>
   /// <param name="ex">The Exception to act on.</param>
   /// <param name="show">The show mode.</param>
@@ -276,7 +275,7 @@ static partial class DebugManager
   }
 
   /// <summary>
-  /// Manages an axception.
+  /// Manages an exception.
   /// </summary>
   /// <param name="ex">The Exception to act on.</param>
   /// <param name="sender">Source of the event.</param>
@@ -288,7 +287,7 @@ static partial class DebugManager
   }
 
   /// <summary>
-  /// Manages an axception.
+  /// Manages an exception.
   /// </summary>
   /// <param name="ex">The Exception to act on.</param>
   /// <param name="sender">Source of the event.</param>
@@ -325,46 +324,49 @@ static partial class DebugManager
     var einfo = new ExceptionInfo(sender, ex);
     if ( !_Enabled )
     {
-      if ( show != ShowExceptionMode.None )
+      if ( ex is not AbortException && show != ShowExceptionMode.None )
         ShowSimple(einfo);
       return;
     }
-    try
-    {
-      BeforeShowException?.Invoke(sender, einfo, ref process);
-    }
-    catch ( Exception err )
-    {
-      if ( show != ShowExceptionMode.None )
-        DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
-    }
+    if ( ex is not AbortException )
+      try
+      {
+        BeforeShowException?.Invoke(sender, einfo, ref process);
+      }
+      catch ( Exception err )
+      {
+        if ( show != ShowExceptionMode.None )
+          DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
+      }
     if ( process )
     {
       Trace(LogTraceEvent.Exception, einfo.FullText);
-      switch ( show )
+      if ( ex is not AbortException )
+        switch ( show )
+        {
+          case ShowExceptionMode.None:
+            break;
+          case ShowExceptionMode.Advanced:
+            ShowAdvanced(einfo);
+            break;
+          case ShowExceptionMode.OnlyMessage:
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          default:
+            ShowSimple(einfo);
+            break;
+        }
+    }
+    if ( ex is not AbortException )
+      try
       {
-        case ShowExceptionMode.None:
-          break;
-        case ShowExceptionMode.Advanced:
-          ShowAdvanced(einfo);
-          break;
-        case ShowExceptionMode.OnlyMessage:
-          MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        default:
-          ShowSimple(einfo);
-          break;
+        AfterShowException?.Invoke(sender, einfo, process);
       }
-    }
-    try
-    {
-      AfterShowException?.Invoke(sender, einfo, process);
-    }
-    catch ( Exception err )
-    {
-      if ( show != ShowExceptionMode.None )
-        DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
-    }
+      catch ( Exception err )
+      {
+        if ( show != ShowExceptionMode.None )
+          DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
+      }
   }
 
 
@@ -396,7 +398,7 @@ static partial class DebugManager
   }
 
   /// <summary>
-  /// Shows an sxception with a message box.
+  /// Shows an exception with a message box.
   /// </summary>
   /// <param name="einfo">The exception information.</param>
   static private void ShowSimple(ExceptionInfo einfo)

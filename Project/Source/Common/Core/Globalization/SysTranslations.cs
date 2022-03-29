@@ -99,13 +99,13 @@ static partial class SysTranslations
     [Language.FR] = $"Remplacer le signet ?{Globals.NL2}Actuel : {{0}}{Globals.NL2}Nouveau : {{1}}",
   };
 
-  static public readonly TranslationsDictionary ImportBookmarksError = new()
+  static public readonly TranslationsDictionary ImportBookmarksTooManyBookmarks = new()
   {
-    [Language.EN] = $"Can't import more that {{0}} bookmarks.{Globals.NL}" +
+    [Language.EN] = $"Can't import more than {{0}} bookmarks.{Globals.NL}" +
                     $"Please check the file having {{1}}:{Globals.NL2}{{2}}",
 
     [Language.FR] = $"Impossible d'importer plus de {{0}} signets.{Globals.NL}" +
-                    $"Veuillez vérifier le fichier qui en a {{1}} :{Globals.NL2}{{2}}",
+                    $"Veuillez vérifier le fichier qui en contient {{1}} :{Globals.NL2}{{2}}",
   };
 
   static public readonly TranslationsDictionary ActionCancel = new()
