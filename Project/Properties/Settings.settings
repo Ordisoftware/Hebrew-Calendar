@@ -1,696 +1,696 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ordisoftware.Hebrew.Calendar.Properties" GeneratedClassName="Settings">
-	<Profiles />
-	<Settings>
-		<Setting Name="MainFormPosition" Type="Ordisoftware.Core.ControlLocation" Scope="User">
-			<Value Profile="(Default)">Center</Value>
-		</Setting>
-		<Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="MainFormTop" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="MainFormWidth" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="MainFormHeight" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="MainFormState" Type="System.Windows.Forms.FormWindowState" Scope="User">
-			<Value Profile="(Default)">Normal</Value>
-		</Setting>
-		<Setting Name="ESCtoExit" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ConfirmClosing" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FontName" Type="System.String" Scope="User">
-			<Value Profile="(Default)">Courier New</Value>
-		</Setting>
-		<Setting Name="FontSize" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">10</Value>
-		</Setting>
-		<Setting Name="ShowTips" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ShabatDay" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">6</Value>
-		</Setting>
-		<Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Calendar.ViewMode" Scope="User">
-			<Value Profile="(Default)">Month</Value>
-		</Setting>
-		<Setting Name="GPSLatitude" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="GPSLongitude" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="TextColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Black</Value>
-		</Setting>
-		<Setting Name="TextBackground" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">White</Value>
-		</Setting>
-		<Setting Name="NavigateTopColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">LemonChiffon</Value>
-		</Setting>
-		<Setting Name="NavigateMiddleColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">AliceBlue</Value>
-		</Setting>
-		<Setting Name="NavigateBottomColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Honeydew</Value>
-		</Setting>
-		<Setting Name="TrayIconClickOpen" Type="Ordisoftware.Hebrew.Calendar.TrayIconClickOpen" Scope="User">
-			<Value Profile="(Default)">MainForm</Value>
-		</Setting>
-		<Setting Name="StartupHide" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ReminderCelebrationsInterval" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">14</Value>
-		</Setting>
-		<Setting Name="ReminderCelebrationsEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindNewYearD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindNewYearD10" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindPessahD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindChavouotDiet" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindChavouot1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindChavouot2" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindYomTerouah" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindYomHaKipourim" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ReminderShabatEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CurrentDayForeColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">White</Value>
-		</Setting>
-		<Setting Name="CalendarColorTorahEvent" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">DarkRed</Value>
-		</Setting>
-		<Setting Name="CalendarColorSeason" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">DarkGreen</Value>
-		</Setting>
-		<Setting Name="CalendarColorMoon" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">DarkBlue</Value>
-		</Setting>
-		<Setting Name="CalendarColorFullMoon" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">150, 100, 0</Value>
-		</Setting>
-		<Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="RemindShabatHoursBefore" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">6</Value>
-		</Setting>
-		<Setting Name="RemindShabatEveryMinutes" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">15</Value>
-		</Setting>
-		<Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="LanguageSelected" Type="Ordisoftware.Core.Language" Scope="User">
-			<Value Profile="(Default)">None</Value>
-		</Setting>
-		<Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">24</Value>
-		</Setting>
-		<Setting Name="RemindCelebrationEveryMinutes" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">15</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayNewYearD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayPessahD7" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayChavouotDiet" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayChavouot1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayChavouot2" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayYomTerouah" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDayYomHaKipourim" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDaySoukotD1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TorahEventRemindDaySoukotD8" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="GPSCountry" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="GPSCity" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="BalloonEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ShowReminderInTaskBar" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="BalloonAutoHide" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="EventColorTorah" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">255, 255, 230</Value>
-		</Setting>
-		<Setting Name="UseColors" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="EventColorShabat" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">240, 240, 240</Value>
-		</Setting>
-		<Setting Name="EventColorSeason" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">245, 255, 240</Value>
-		</Setting>
-		<Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="UpgradeResetRequiredV3_0" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Firebrick</Value>
-		</Setting>
-		<Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">240, 240, 240</Value>
-		</Setting>
-		<Setting Name="EventColorMonth" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">AliceBlue</Value>
-		</Setting>
-		<Setting Name="TorahEventsCountAsMoon" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FirstLaunch" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="BalloonLoomingDelay" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">1000</Value>
-		</Setting>
-		<Setting Name="SearchLunarMonthFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="SearchCelebrationFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="TimeZone" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="UpgradeResetRequiredV3_6" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="AutoLockSession" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="AutoLockSessionTimeOut" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">30</Value>
-		</Setting>
-		<Setting Name="LockSessionMediaStop" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
-			<Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
-		</Setting>
-		<Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColor" Scope="User">
-			<Value Profile="(Default)">Pastel</Value>
-		</Setting>
-		<Setting Name="LunarMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="MonthViewFontSize" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">9</Value>
-		</Setting>
-		<Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FirstLaunchV4" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="DebuggerEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="MonthViewBackColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">White</Value>
-		</Setting>
-		<Setting Name="MonthViewTextColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Black</Value>
-		</Setting>
-		<Setting Name="MonthViewNoDaysBackColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">250, 250, 250</Value>
-		</Setting>
-		<Setting Name="MoonDayTextFormat" Type="System.String" Scope="User">
-			<Value Profile="(Default)">%MONTHNAME% [%MONTHNUM%] #%DAYNUM%</Value>
-		</Setting>
-		<Setting Name="LastSuspendDelaySelected" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">60</Value>
-		</Setting>
-		<Setting Name="UpgradeResetRequiredV4_1" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="WebLinksMenuEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="AllowSuspendReminder" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="SearchGregorianMonthFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="AutoRegenerate" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="GenerateIntervalMaximum" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">120</Value>
-		</Setting>
-		<Setting Name="BenchmarkLoadData" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="BenchmarkFillCalendar" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="BenchmarkGenerateYears" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="BenchmarkStartingApp" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="StatisticsFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="AutoGenerateYearsInternal" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">10</Value>
-		</Setting>
-		<Setting Name="LastGenerated" Type="System.DateTime" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="StatisticsFormAlwaysOnTop" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="BenchmarkPopulateDays" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="BenchmarkAnalyseDays" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="BenchmarkGenerateTextReport" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="ReminderFormCloseOnClick" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="BigCalendarWarningEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TraceFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="TraceFormSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">884, 661</Value>
-		</Setting>
-		<Setting Name="TraceFormTextBoxFontSize" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">8</Value>
-		</Setting>
-		<Setting Name="TraceEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="SoundsEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="AdvancedDialogBoxes" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ReminderBoxSoundPath" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="ReminderBoxSoundSource" Type="Ordisoftware.Core.SoundSource" Scope="User">
-			<Value Profile="(Default)">Dialog</Value>
-		</Setting>
-		<Setting Name="ReminderBoxSoundDialog" Type="System.Windows.Forms.MessageBoxIcon" Scope="User">
-			<Value Profile="(Default)">Asterisk</Value>
-		</Setting>
-		<Setting Name="ReminderBoxSoundWindows" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="CalculatorExe" Type="System.String" Scope="User">
-			<Value Profile="(Default)">calc.exe</Value>
-		</Setting>
-		<Setting Name="DatesDiffCalculatorFormAutoSetRightToToday" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="VacuumAtStartupDaysInterval" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">7</Value>
-		</Setting>
-		<Setting Name="CheckUpdateAtStartupDaysInterval" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">7</Value>
-		</Setting>
-		<Setting Name="CheckUpdateEveryWeekWhileRunning" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ExportFolder" Type="System.String" Scope="User">
-			<Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
-		</Setting>
-		<Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ReminderBoxSoundApplication" Type="System.String" Scope="User">
-			<Value Profile="(Default)" />
-		</Setting>
-		<Setting Name="ApplicationVolume" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">100</Value>
-		</Setting>
-		<Setting Name="BalloonOnlyIfMainFormIsHidden" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="UsageStatisticsEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="DateBookmarksCount" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">15</Value>
-		</Setting>
-		<Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">264, 311</Value>
-		</Setting>
-		<Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="RestoreLastViewAtStartup" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ShowPrintPreviewDialog" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="PrintingMargin" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">50</Value>
-		</Setting>
-		<Setting Name="UpgradeResetRequiredV5_10" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="PrintPageCountWarning" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">20</Value>
-		</Setting>
-		<Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Core.DataExportTarget" Scope="User">
-			<Value Profile="(Default)">CSV</Value>
-		</Setting>
-		<Setting Name="PrintImageInLandscape" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ExportDataEnumsAsTranslations" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="SaveImageCountWarning" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">50</Value>
-		</Setting>
-		<Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
-			<Value Profile="(Default)">PNG</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormFontSize" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">8</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="GlobalHotKeyPopupMainFormKey" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">67</Value>
-		</Setting>
-		<Setting Name="GlobalHotKeyPopupMainFormModifiers" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">7</Value>
-		</Setting>
-		<Setting Name="GlobalHotKeyPopupMainFormEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
-			<Value Profile="(Default)">Normal</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">984, 461</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="MainFormShownGoToToday" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormFontSize" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">8</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormHideHours" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormHideHours" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
-			<Value Profile="(Default)">Normal</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">984, 461</Value>
-		</Setting>
-		<Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="WeatherAppPath" Type="System.String" Scope="User">
-			<Value Profile="(Default)">msnweather:</Value>
-		</Setting>
-		<Setting Name="WeatherMenuItemsEnabled" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
-			<Value Profile="(Default)">Fixed</Value>
-		</Setting>
-		<Setting Name="WeatherOnlineProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
-			<Value Profile="(Default)">MeteoblueDotCom</Value>
-		</Setting>
-		<Setting Name="WeatherOnlineUseDay" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="CalendarColorParashah" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Indigo</Value>
-		</Setting>
-		<Setting Name="CalendarShowParashah" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="HebrewWordsExe" Type="System.String" Scope="User">
-			<Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.Hebrew.Words.exe</Value>
-		</Setting>
-		<Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">542, 666</Value>
-		</Setting>
-		<Setting Name="ParashotFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="ParashotFormClientSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">984, 676</Value>
-		</Setting>
-		<Setting Name="ParashotFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
-			<Value Profile="(Default)">Normal</Value>
-		</Setting>
-		<Setting Name="ParashotFormColumnTranslationWidth" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">-1</Value>
-		</Setting>
-		<Setting Name="TrayIconUseSpecialDayIcon" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ParashotFormFontSize" Type="System.Decimal" Scope="User">
-			<Value Profile="(Default)">8</Value>
-		</Setting>
-		<Setting Name="CelebrationsBoardFormEnglishColumns" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="NewMoonsBoardFormShowMonthNumbers" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="FirstLaunchV7_0" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="UseSimhatTorahOutside" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="MainFormTitleBarShowWeeklyParashah" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ShowLastNewInVersionAfterUpdate" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="MainFormTitleBarShowToday" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CalendarLineSpacing" Type="System.Int32" Scope="User">
-			<Value Profile="(Default)">5</Value>
-		</Setting>
-		<Setting Name="ReminderShabatShowParashah" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="BenchmarkTranslate" Type="System.Int64" Scope="User">
-			<Value Profile="(Default)">0</Value>
-		</Setting>
-		<Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerAction" Scope="User">
-			<Value Profile="(Default)">LockSession</Value>
-		</Setting>
-		<Setting Name="LockSessionConfirmLogOffOrMore" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="AskRegenerateIfIntervalGreater" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="WeeklyParashahShowAtStartup" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="WeeklyParashahShowAtNewWeek" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="ReminderShowLockoutIcon" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="NavigationWindowCloseOnShowMainForm" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ParashahCaptionWithBookAndRef" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="NavigationWindowUseUnicodeIcons" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CelebrationVersesBoardFormLocation" Type="System.Drawing.Point" Scope="User">
-			<Value Profile="(Default)">-1, -1</Value>
-		</Setting>
-		<Setting Name="CelebrationVersesBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">384, 306</Value>
-		</Setting>
-		<Setting Name="MonthViewChangeDayOnClick" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="SelectedDayBoxColor" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Brown</Value>
-		</Setting>
-		<Setting Name="CalendarUseHoverEffect" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CalendarColorHoverEffect" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">Silver</Value>
-		</Setting>
-		<Setting Name="CalendarShowSelectedBox" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="SelectedDayBoxColorOnlyCurrent" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="CalendarColorActiveDay" Type="System.Drawing.Color" Scope="User">
-			<Value Profile="(Default)">LightSlateGray</Value>
-		</Setting>
-		<Setting Name="CalendarDoubleClickAction" Type="Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction" Scope="User">
-			<Value Profile="(Default)">SetActive</Value>
-		</Setting>
-		<Setting Name="MainFormTitleBarShowCelebration" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="TraceFormShowOnlyErrors" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FirstLaunchV9_14" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FirstLaunchV9_17" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="FirstLaunchV9_18" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">True</Value>
-		</Setting>
-		<Setting Name="UseSodHaibour" Type="System.Boolean" Scope="User">
-			<Value Profile="(Default)">False</Value>
-		</Setting>
-		<Setting Name="ManageAcquaintanceEventsForm" Type="System.Drawing.Size" Scope="User">
-			<Value Profile="(Default)">584, 361</Value>
-		</Setting>
-		<Setting Name="CustomWebSearch" Type="System.String" Scope="User">
-			<Value Profile="(Default)">https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%WORD%</Value>
-		</Setting>
-	</Settings>
+  <Profiles />
+  <Settings>
+    <Setting Name="MainFormPosition" Type="Ordisoftware.Core.ControlLocation" Scope="User">
+      <Value Profile="(Default)">Center</Value>
+    </Setting>
+    <Setting Name="MainFormLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MainFormTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MainFormWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MainFormHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MainFormState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="ESCtoExit" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ConfirmClosing" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FontName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Courier New</Value>
+    </Setting>
+    <Setting Name="FontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="ShowTips" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShabatDay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="CurrentView" Type="Ordisoftware.Hebrew.Calendar.ViewMode" Scope="User">
+      <Value Profile="(Default)">Month</Value>
+    </Setting>
+    <Setting Name="GPSLatitude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GPSLongitude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="TextBackground" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="NavigateTopColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LemonChiffon</Value>
+    </Setting>
+    <Setting Name="NavigateMiddleColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AliceBlue</Value>
+    </Setting>
+    <Setting Name="NavigateBottomColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Honeydew</Value>
+    </Setting>
+    <Setting Name="TrayIconClickOpen" Type="Ordisoftware.Hebrew.Calendar.TrayIconClickOpen" Scope="User">
+      <Value Profile="(Default)">MainForm</Value>
+    </Setting>
+    <Setting Name="StartupHide" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ReminderCelebrationsInterval" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="ReminderCelebrationsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindNewYearD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindNewYearD10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindPessahD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindPessahD7" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindChavouotDiet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindChavouot1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindChavouot2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindYomTerouah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindYomHaKipourim" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindSoukotD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindSoukotD8" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ReminderShabatEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CurrentDayForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="CalendarColorTorahEvent" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkRed</Value>
+    </Setting>
+    <Setting Name="CalendarColorSeason" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkGreen</Value>
+    </Setting>
+    <Setting Name="CalendarColorMoon" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkBlue</Value>
+    </Setting>
+    <Setting Name="CalendarColorFullMoon" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">150, 100, 0</Value>
+    </Setting>
+    <Setting Name="RemindShabatOnlyLight" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RemindShabatHoursBefore" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="RemindShabatEveryMinutes" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="CheckUpdateAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LanguageSelected" Type="Ordisoftware.Core.Language" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="RemindCelebrationHoursBefore" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="RemindCelebrationEveryMinutes" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayNewYearD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayPessahD7" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouotDiet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouot1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayChavouot2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayYomTerouah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDayYomHaKipourim" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDaySoukotD1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TorahEventRemindDaySoukotD8" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GPSCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="GPSCity" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BalloonEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowReminderInTaskBar" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BalloonAutoHide" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EventColorTorah" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 255, 230</Value>
+    </Setting>
+    <Setting Name="UseColors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EventColorShabat" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">240, 240, 240</Value>
+    </Setting>
+    <Setting Name="EventColorSeason" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">245, 255, 240</Value>
+    </Setting>
+    <Setting Name="NextCelebrationsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="UpgradeResetRequiredV3_0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CurrentDayBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Firebrick</Value>
+    </Setting>
+    <Setting Name="EventColorNext" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">240, 240, 240</Value>
+    </Setting>
+    <Setting Name="EventColorMonth" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AliceBlue</Value>
+    </Setting>
+    <Setting Name="TorahEventsCountAsMoon" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BalloonLoomingDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="SearchLunarMonthFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="SearchCelebrationFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="TimeZone" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UpgradeResetRequiredV3_6" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoLockSession" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoLockSessionTimeOut" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="LockSessionMediaStop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HebrewLettersExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Letters\Bin\Ordisoftware.Hebrew.Letters.exe</Value>
+    </Setting>
+    <Setting Name="LunarMonthsFormUseColors" Type="Ordisoftware.Hebrew.Calendar.LunarMonthsListColor" Scope="User">
+      <Value Profile="(Default)">Pastel</Value>
+    </Setting>
+    <Setting Name="LunarMonthsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="MonthViewFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportFolder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV4" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DebuggerEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MonthViewBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="MonthViewTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="MonthViewNoDaysBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">250, 250, 250</Value>
+    </Setting>
+    <Setting Name="MoonDayTextFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%MONTHNAME% [%MONTHNUM%] #%DAYNUM%</Value>
+    </Setting>
+    <Setting Name="LastSuspendDelaySelected" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="UpgradeResetRequiredV4_1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WebLinksMenuEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AllowSuspendReminder" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SearchGregorianMonthFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="CheckUpdateLastDone" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AutoRegenerate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GenerateIntervalMaximum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="BenchmarkLoadData" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkFillCalendar" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkGenerateYears" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkStartingApp" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="StatisticsFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="AutoGenerateYearsInternal" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="LastGenerated" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatisticsFormAlwaysOnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BenchmarkPopulateDays" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkAnalyseDays" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BenchmarkGenerateTextReport" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ReminderFormCloseOnClick" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BigCalendarWarningEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TraceFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="TraceFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">884, 661</Value>
+    </Setting>
+    <Setting Name="TraceFormTextBoxFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="TraceEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SoundsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdvancedDialogBoxes" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReminderBoxSoundSource" Type="Ordisoftware.Core.SoundSource" Scope="User">
+      <Value Profile="(Default)">Dialog</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundDialog" Type="System.Windows.Forms.MessageBoxIcon" Scope="User">
+      <Value Profile="(Default)">Asterisk</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundWindows" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PreferencesFormSelectedTabIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CalculatorExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">calc.exe</Value>
+    </Setting>
+    <Setting Name="DatesDiffCalculatorFormAutoSetRightToToday" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VacuumAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="CheckUpdateAtStartupDaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="CheckUpdateEveryWeekWhileRunning" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USER_APP_DOCUMENTS%</Value>
+    </Setting>
+    <Setting Name="ShowSuccessDialogs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ReminderBoxSoundApplication" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ApplicationVolume" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="BalloonOnlyIfMainFormIsHidden" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UsageStatisticsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DateBookmarksCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">264, 311</Value>
+    </Setting>
+    <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RestoreLastViewAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowPrintPreviewDialog" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PrintingMargin" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="UpgradeResetRequiredV5_10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PrintPageCountWarning" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="ExportDataPreferredTarget" Type="Ordisoftware.Core.DataExportTarget" Scope="User">
+      <Value Profile="(Default)">CSV</Value>
+    </Setting>
+    <Setting Name="PrintImageInLandscape" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExportDataEnumsAsTranslations" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SaveImageCountWarning" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="ExportImagePreferredTarget" Type="Ordisoftware.Core.ImageExportTarget" Scope="User">
+      <Value Profile="(Default)">PNG</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormKey" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">67</Value>
+    </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormModifiers" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="GlobalHotKeyPopupMainFormEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 461</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainFormShownGoToToday" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormUseTitleUpperCase" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormUseLongDateFormat" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormUseAbbreviatedNames" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormUseRealDays" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormHideHours" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormHideHours" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 461</Value>
+    </Setting>
+    <Setting Name="WindowsDoubleBufferingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WeatherAppPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">msnweather:</Value>
+    </Setting>
+    <Setting Name="WeatherMenuItemsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReminderBoxDesktopLocation" Type="Ordisoftware.Core.ControlLocation" Scope="User">
+      <Value Profile="(Default)">Fixed</Value>
+    </Setting>
+    <Setting Name="WeatherOnlineProvider" Type="Ordisoftware.Hebrew.Calendar.WeatherProvider" Scope="User">
+      <Value Profile="(Default)">MeteoblueDotCom</Value>
+    </Setting>
+    <Setting Name="WeatherOnlineUseDay" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CalendarColorParashah" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Indigo</Value>
+    </Setting>
+    <Setting Name="CalendarShowParashah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HebrewWordsExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Ordisoftware\Hebrew Words\Bin\Ordisoftware.Hebrew.Words.exe</Value>
+    </Setting>
+    <Setting Name="GrammarGuideFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="GrammarGuideFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">542, 666</Value>
+    </Setting>
+    <Setting Name="ParashotFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="ParashotFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">984, 676</Value>
+    </Setting>
+    <Setting Name="ParashotFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="ParashotFormColumnTranslationWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="TrayIconUseSpecialDayIcon" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ParashotFormFontSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="CelebrationsBoardFormEnglishColumns" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewMoonsBoardFormShowMonthNumbers" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV7_0" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseSimhatTorahOutside" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainFormTitleBarShowWeeklyParashah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowLastNewInVersionAfterUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainFormTitleBarShowToday" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CalendarLineSpacing" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ReminderShabatShowParashah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BenchmarkTranslate" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LockSessionDefaultAction" Type="Ordisoftware.Core.PowerAction" Scope="User">
+      <Value Profile="(Default)">LockSession</Value>
+    </Setting>
+    <Setting Name="LockSessionConfirmLogOffOrMore" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AskRegenerateIfIntervalGreater" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WeeklyParashahShowAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WeeklyParashahShowAtNewWeek" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReminderShowLockoutIcon" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LoadingFormHidden" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NavigationWindowCloseOnShowMainForm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ParashahCaptionWithBookAndRef" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NavigationWindowUseUnicodeIcons" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CelebrationVersesBoardFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="CelebrationVersesBoardFormClientSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">384, 306</Value>
+    </Setting>
+    <Setting Name="MonthViewChangeDayOnClick" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SelectedDayBoxColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Brown</Value>
+    </Setting>
+    <Setting Name="CalendarUseHoverEffect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CalendarColorHoverEffect" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Silver</Value>
+    </Setting>
+    <Setting Name="CalendarShowSelectedBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SelectedDayBoxColorOnlyCurrent" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CalendarColorActiveDay" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightSlateGray</Value>
+    </Setting>
+    <Setting Name="CalendarDoubleClickAction" Type="Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction" Scope="User">
+      <Value Profile="(Default)">SetActive</Value>
+    </Setting>
+    <Setting Name="MainFormTitleBarShowCelebration" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TraceFormShowOnlyErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV9_14" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV9_17" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstLaunchV9_18" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseSodHaibour" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ManageAcquaintanceEventsForm" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">584, 361</Value>
+    </Setting>
+    <Setting Name="CustomWebSearch" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%WORD%</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

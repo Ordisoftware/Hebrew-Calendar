@@ -198,10 +198,8 @@ partial class ReminderForm : Form
     var list = new List<ReminderForm>();
     if ( MainForm.Instance.ShabatForm is not null )
       list.Add(MainForm.Instance.ShabatForm);
-    foreach ( var item in MainForm.Instance.RemindCelebrationDayForms )
-      list.Add(item.Value);
-    foreach ( ReminderForm item in MainForm.Instance.RemindCelebrationForms )
-      list.Add(item);
+    list.AddRange(MainForm.Instance.RemindCelebrationDayForms.Values);
+    list.AddRange(MainForm.Instance.RemindCelebrationForms);
     var location = Program.Settings.ReminderBoxDesktopLocation;
     int posY = 0;
     int posX = 0;

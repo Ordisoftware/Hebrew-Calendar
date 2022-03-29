@@ -28,6 +28,7 @@ partial class PreferencesForm
   static public int TabIndexGeneration { get; private set; }
   static public int TabIndexMonthView { get; private set; }
   static public int TabIndexNavigation { get; private set; }
+  static public int TabIndexParashah { get; private set; }
   static public int TabIndexPaths { get; private set; }
   static public int TabIndexPrint { get; private set; }
   static public int TabIndexReminder { get; private set; }
@@ -35,7 +36,6 @@ partial class PreferencesForm
   static public int TabIndexStartup { get; private set; }
   static public int TabIndexTextReport { get; private set; }
   static public int TabIndexTrayIcon { get; private set; }
-  static public int TabIndexParashah { get; private set; }
   static public int TabIndexWeather { get; private set; }
 
   // Mono spaced fonts list
@@ -57,7 +57,7 @@ partial class PreferencesForm
 
   // Intervals Min, Max, Default, Increment
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 30, 15, 1);
+  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 40, 20, 1);
   static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
   static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
   static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
@@ -91,6 +91,7 @@ partial class PreferencesForm
       TabIndexGeneration = form.TabControl.TabPages.IndexOf(form.TabPageGeneration);
       TabIndexMonthView = form.TabControl.TabPages.IndexOf(form.TabPageMonthView);
       TabIndexNavigation = form.TabControl.TabPages.IndexOf(form.TabPageNavigation);
+      TabIndexParashah = form.TabControl.TabPages.IndexOf(form.TabPageParashah);
       TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
       TabIndexPrint = form.TabControl.TabPages.IndexOf(form.TabPagePrint);
       TabIndexReminder = form.TabControl.TabPages.IndexOf(form.TabPageReminder);
@@ -98,7 +99,6 @@ partial class PreferencesForm
       TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
       TabIndexTextReport = form.TabControl.TabPages.IndexOf(form.TabPageTextReport);
       TabIndexTrayIcon = form.TabControl.TabPages.IndexOf(form.TabPageTrayIcon);
-      TabIndexParashah = form.TabControl.TabPages.IndexOf(form.TabPageParashah);
       TabIndexWeather = form.TabControl.TabPages.IndexOf(form.TabPageWeather);
     }
     var filter1 = new Regex("(^F[0-9]{1,2}$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
@@ -131,13 +131,13 @@ partial class PreferencesForm
       form.ShowDialog();
     }
     bool result = Reseted
-               || form.OldShabatDay != Settings.ShabatDay
                || form.OldLatitude != Settings.GPSLatitude
                || form.OldLongitude != Settings.GPSLongitude
-               || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
-               || form.OldUseSod != Settings.UseSodHaibour
+               || form.OldShabatDay != Settings.ShabatDay
                || form.OldTimeZone != Settings.TimeZone
+               || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
                || form.OldUseSimhat != Settings.UseSimhatTorahOutside
+               || form.OldUseSod != Settings.UseSodHaibour
                || lang != Settings.LanguageSelected;
     if ( !result && form.MustRefreshMonthView )
       MainForm.Instance.UpdateCalendarMonth(true);

@@ -1479,12 +1479,14 @@
             this.ContextMenuDayNavigation});
       this.ContextMenuStripDay.Name = "ContextMenuStripDay";
       resources.ApplyResources(this.ContextMenuStripDay, "ContextMenuStripDay");
+      this.ContextMenuStripDay.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.ContextMenuStripDay_Closing);
       this.ContextMenuStripDay.Opened += new System.EventHandler(this.ContextMenuStripDay_Opened);
       // 
       // ContextMenuDayDate
       // 
       resources.ApplyResources(this.ContextMenuDayDate, "ContextMenuDayDate");
       this.ContextMenuDayDate.Name = "ContextMenuDayDate";
+      this.ContextMenuDayDate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
       // toolStripSeparator15
       // 
@@ -1495,21 +1497,25 @@
       // 
       this.ContextMenuDaySunrise.Name = "ContextMenuDaySunrise";
       resources.ApplyResources(this.ContextMenuDaySunrise, "ContextMenuDaySunrise");
+      this.ContextMenuDaySunrise.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
       // ContextMenuDaySunset
       // 
       this.ContextMenuDaySunset.Name = "ContextMenuDaySunset";
       resources.ApplyResources(this.ContextMenuDaySunset, "ContextMenuDaySunset");
+      this.ContextMenuDaySunset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
       // ContextMenuDayMoonrise
       // 
       this.ContextMenuDayMoonrise.Name = "ContextMenuDayMoonrise";
       resources.ApplyResources(this.ContextMenuDayMoonrise, "ContextMenuDayMoonrise");
+      this.ContextMenuDayMoonrise.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
       // ContextMenuDayMoonset
       // 
       this.ContextMenuDayMoonset.Name = "ContextMenuDayMoonset";
       resources.ApplyResources(this.ContextMenuDayMoonset, "ContextMenuDayMoonset");
+      this.ContextMenuDayMoonset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
       // ContextMenuDayTimesSeparator
       // 

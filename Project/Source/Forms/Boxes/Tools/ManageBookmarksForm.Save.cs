@@ -100,19 +100,23 @@ partial class ManageBookmarksForm : Form
       ActionClear.Enabled = ListBox.Items.Count > 0;
       ActionSort.Enabled = ListBox.Items.Count > 0;
     }
+    catch ( AbortException )
+    {
+    }
     catch ( Exception ex )
     {
       DisplayManager.ShowError(ex.Message);
     }
     //
-    void checkCount(int count)
+    int checkCount(int count)
     {
       if ( count > PreferencesForm.DateBookmarksCountInterval.Item2 )
       {
-        DisplayManager.ShowError(SysTranslations.ImportBookmarksError.GetLang(PreferencesForm.DateBookmarksCountInterval.Item2,
-                                                                              count,
-                                                                              OpenBookmarksDialog.FileName));
-        throw new AbortException();
+        var message = SysTranslations.ImportBookmarksTooManyBookmarks;
+        DisplayManager.ShowWarning(message.GetLang(PreferencesForm.DateBookmarksCountInterval.Item2,
+                                                   count,
+                                                   OpenBookmarksDialog.FileName));
+        count = PreferencesForm.DateBookmarksCountInterval.Item2;
       }
       if ( count > Settings.DateBookmarksCount )
       {
@@ -120,15 +124,16 @@ partial class ManageBookmarksForm : Form
         Settings.DateBookmarksCount = count;
         Settings.Save();
       }
+      return count;
     }
     //
     void importTextOrCSV(string[] lines)
     {
-      checkCount(lines.Length);
-      foreach ( string line in lines )
+      int count = checkCount(lines.Length);
+      for ( int index = 0; index < count; index++ )
       {
         var date = DateTime.MinValue;
-        try { date = SQLiteDate.ToDateTime(line); }
+        try { date = SQLiteDate.ToDateTime(lines[index]); }
         catch { }
         ListBox.Items.Add(new DateItem { Date = date });
       }
@@ -136,9 +141,9 @@ partial class ManageBookmarksForm : Form
     //
     void importJSON(DataSet dataset)
     {
-      checkCount(dataset.Tables[0].Rows.Count);
-      foreach ( DataRow row in dataset.Tables[0].Rows )
-        ListBox.Items.Add(new DateItem { Date = (DateTime)row[0] });
+      int count = checkCount(dataset.Tables[0].Rows.Count);
+      for ( int index = 0; index < count; index++ )
+        ListBox.Items.Add(new DateItem { Date = (DateTime)dataset.Tables[0].Rows[index][0] });
     }
   }
 
