@@ -58,20 +58,20 @@ partial class PreferencesForm
   // Intervals Min, Max, Default, Increment
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
   static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 30, 15, 1);
+  static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
+  static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
+  static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
   static public readonly (int, int, int, int) PrintingMarginInterval = (10, 150, 50, 10);
   static public readonly (int, int, int, int) PrintPageCountWarningInterval = (10, 100, 20, 10);
-  static public readonly (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
-  static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
-  static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
-  static public readonly (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
-  static public readonly (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
-  static public readonly (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
-  static public readonly (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
-  static public readonly (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
   static public readonly (int, int, int, int) RemindAutoLockTimeOutInterval = (10, 300, 30, 5);
+  static public readonly (int, int, int, int) RemindCelebrationDaysBeforeInterval = (1, 60, 14, 1);
+  static public readonly (int, int, int, int) RemindCelebrationEveryMinutesInterval = (5, 120, 15, 5);
+  static public readonly (int, int, int, int) RemindCelebrationHoursBeforeInterval = (1, 48, 24, 1);
+  static public readonly (int, int, int, int) RemindShabatEveryMinutesInterval = (5, 120, 15, 5);
+  static public readonly (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
+  static public readonly (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
   static public readonly (int, int, int, int) TextReportFontSizeInterval = (7, 30, 10, 1);
   static public readonly (int, int, int, int) VisualMonthFontSizeInterval = (7, 30, 9, 1);
-  static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
 
   // Available keys for hotkey keys
   static private readonly List<Keys> AvailableHotKeyKeys;

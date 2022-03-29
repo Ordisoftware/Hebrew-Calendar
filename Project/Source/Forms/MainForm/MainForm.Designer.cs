@@ -47,6 +47,19 @@
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
       this.CalendarGrid = new System.Windows.Forms.DataGridView();
+      this.GridColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnLunarMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnLunarDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnSunrise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnSunset = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnMoonriseOccuring = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnMoonrise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnMoonset = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnNewMoon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnFullMoon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnMoonPhase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnSeasonChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.GridColumnTorahEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
       this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -212,19 +225,6 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.GridColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnLunarMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnLunarDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnSunrise = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnSunset = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnMoonriseOccuring = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnMoonrise = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnMoonset = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnNewMoon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnFullMoon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnMoonPhase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnSeasonChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.GridColumnTorahEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -236,13 +236,13 @@
       this.PanelViewMonth.SuspendLayout();
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.CalendarGrid ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingSource ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingNavigator ) ).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
       this.PanelTitle.SuspendLayout();
       this.PanelTitleInner.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.moonPhaseImagePictureBox ) ).BeginInit();
       this.MenuTray.SuspendLayout();
       this.ToolStrip.SuspendLayout();
       this.ContextMenuStripDay.SuspendLayout();
@@ -307,13 +307,14 @@
       // CalendarText
       // 
       resources.ApplyResources(this.CalendarText, "CalendarText");
-      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ), ( (int)( ( (byte)( 250 ) ) ) ));
       this.CalendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.CalendarText.HideSelection = false;
       this.CalendarText.Name = "CalendarText";
       this.CalendarText.ReadOnly = true;
       this.CalendarText.SelectionChanged += new System.EventHandler(this.CalendarText_SelectionChanged);
       this.CalendarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyDown);
+      this.CalendarText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyUp);
       // 
       // TabPageMonth
       // 
@@ -335,10 +336,10 @@
       this.CalendarMonth.BackColor = System.Drawing.Color.White;
       this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
       this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
+      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.CalendarMonth.DimDisabledEvents = true;
       resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
       this.CalendarMonth.HighlightCurrentDay = false;
@@ -350,7 +351,7 @@
       this.CalendarMonth.ShowDisabledEvents = false;
       this.CalendarMonth.ShowEventTooltips = true;
       this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       this.CalendarMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
       this.CalendarMonth.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
       this.CalendarMonth.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseMove);
@@ -377,7 +378,7 @@
       this.CalendarGrid.AutoGenerateColumns = false;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -407,6 +408,111 @@
       this.CalendarGrid.RowHeadersVisible = false;
       this.CalendarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.CalendarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
+      // 
+      // GridColumnDate
+      // 
+      this.GridColumnDate.DataPropertyName = "Date";
+      resources.ApplyResources(this.GridColumnDate, "GridColumnDate");
+      this.GridColumnDate.Name = "GridColumnDate";
+      this.GridColumnDate.ReadOnly = true;
+      this.GridColumnDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnLunarMonth
+      // 
+      this.GridColumnLunarMonth.DataPropertyName = "LunarMonth";
+      resources.ApplyResources(this.GridColumnLunarMonth, "GridColumnLunarMonth");
+      this.GridColumnLunarMonth.Name = "GridColumnLunarMonth";
+      this.GridColumnLunarMonth.ReadOnly = true;
+      this.GridColumnLunarMonth.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnLunarDay
+      // 
+      this.GridColumnLunarDay.DataPropertyName = "LunarDay";
+      resources.ApplyResources(this.GridColumnLunarDay, "GridColumnLunarDay");
+      this.GridColumnLunarDay.Name = "GridColumnLunarDay";
+      this.GridColumnLunarDay.ReadOnly = true;
+      this.GridColumnLunarDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnSunrise
+      // 
+      this.GridColumnSunrise.DataPropertyName = "SunriseAsString";
+      resources.ApplyResources(this.GridColumnSunrise, "GridColumnSunrise");
+      this.GridColumnSunrise.Name = "GridColumnSunrise";
+      this.GridColumnSunrise.ReadOnly = true;
+      this.GridColumnSunrise.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnSunset
+      // 
+      this.GridColumnSunset.DataPropertyName = "SunsetAsString";
+      resources.ApplyResources(this.GridColumnSunset, "GridColumnSunset");
+      this.GridColumnSunset.Name = "GridColumnSunset";
+      this.GridColumnSunset.ReadOnly = true;
+      this.GridColumnSunset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnMoonriseOccuring
+      // 
+      this.GridColumnMoonriseOccuring.DataPropertyName = "MoonriseOccuring";
+      resources.ApplyResources(this.GridColumnMoonriseOccuring, "GridColumnMoonriseOccuring");
+      this.GridColumnMoonriseOccuring.Name = "GridColumnMoonriseOccuring";
+      this.GridColumnMoonriseOccuring.ReadOnly = true;
+      this.GridColumnMoonriseOccuring.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnMoonrise
+      // 
+      this.GridColumnMoonrise.DataPropertyName = "MoonriseAsString";
+      resources.ApplyResources(this.GridColumnMoonrise, "GridColumnMoonrise");
+      this.GridColumnMoonrise.Name = "GridColumnMoonrise";
+      this.GridColumnMoonrise.ReadOnly = true;
+      this.GridColumnMoonrise.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnMoonset
+      // 
+      this.GridColumnMoonset.DataPropertyName = "MoonsetAsString";
+      resources.ApplyResources(this.GridColumnMoonset, "GridColumnMoonset");
+      this.GridColumnMoonset.Name = "GridColumnMoonset";
+      this.GridColumnMoonset.ReadOnly = true;
+      this.GridColumnMoonset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnNewMoon
+      // 
+      this.GridColumnNewMoon.DataPropertyName = "IsNewMoon";
+      resources.ApplyResources(this.GridColumnNewMoon, "GridColumnNewMoon");
+      this.GridColumnNewMoon.Name = "GridColumnNewMoon";
+      this.GridColumnNewMoon.ReadOnly = true;
+      this.GridColumnNewMoon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnFullMoon
+      // 
+      this.GridColumnFullMoon.DataPropertyName = "IsFullMoon";
+      resources.ApplyResources(this.GridColumnFullMoon, "GridColumnFullMoon");
+      this.GridColumnFullMoon.Name = "GridColumnFullMoon";
+      this.GridColumnFullMoon.ReadOnly = true;
+      this.GridColumnFullMoon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnMoonPhase
+      // 
+      this.GridColumnMoonPhase.DataPropertyName = "MoonPhase";
+      resources.ApplyResources(this.GridColumnMoonPhase, "GridColumnMoonPhase");
+      this.GridColumnMoonPhase.Name = "GridColumnMoonPhase";
+      this.GridColumnMoonPhase.ReadOnly = true;
+      this.GridColumnMoonPhase.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnSeasonChange
+      // 
+      this.GridColumnSeasonChange.DataPropertyName = "SeasonChange";
+      resources.ApplyResources(this.GridColumnSeasonChange, "GridColumnSeasonChange");
+      this.GridColumnSeasonChange.Name = "GridColumnSeasonChange";
+      this.GridColumnSeasonChange.ReadOnly = true;
+      this.GridColumnSeasonChange.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // GridColumnTorahEvent
+      // 
+      this.GridColumnTorahEvent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.GridColumnTorahEvent.DataPropertyName = "TorahEvent";
+      resources.ApplyResources(this.GridColumnTorahEvent, "GridColumnTorahEvent");
+      this.GridColumnTorahEvent.Name = "GridColumnTorahEvent";
+      this.GridColumnTorahEvent.ReadOnly = true;
+      this.GridColumnTorahEvent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
       // LunisolarDaysBindingSource
       // 
@@ -1566,7 +1672,7 @@
       // 
       // ImageListRisesAndSets
       // 
-      this.ImageListRisesAndSets.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageListRisesAndSets.ImageStream")));
+      this.ImageListRisesAndSets.ImageStream = ( (System.Windows.Forms.ImageListStreamer)( resources.GetObject("ImageListRisesAndSets.ImageStream") ) );
       this.ImageListRisesAndSets.TransparentColor = System.Drawing.Color.White;
       this.ImageListRisesAndSets.Images.SetKeyName(0, "316109_sunrise_icon16.png");
       this.ImageListRisesAndSets.Images.SetKeyName(1, "316110_sunset_icon16.png");
@@ -1578,111 +1684,6 @@
       this.MenuBookmarks.Name = "MenuBookmarks";
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      // 
-      // GridColumnDate
-      // 
-      this.GridColumnDate.DataPropertyName = "Date";
-      resources.ApplyResources(this.GridColumnDate, "GridColumnDate");
-      this.GridColumnDate.Name = "GridColumnDate";
-      this.GridColumnDate.ReadOnly = true;
-      this.GridColumnDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnLunarMonth
-      // 
-      this.GridColumnLunarMonth.DataPropertyName = "LunarMonth";
-      resources.ApplyResources(this.GridColumnLunarMonth, "GridColumnLunarMonth");
-      this.GridColumnLunarMonth.Name = "GridColumnLunarMonth";
-      this.GridColumnLunarMonth.ReadOnly = true;
-      this.GridColumnLunarMonth.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnLunarDay
-      // 
-      this.GridColumnLunarDay.DataPropertyName = "LunarDay";
-      resources.ApplyResources(this.GridColumnLunarDay, "GridColumnLunarDay");
-      this.GridColumnLunarDay.Name = "GridColumnLunarDay";
-      this.GridColumnLunarDay.ReadOnly = true;
-      this.GridColumnLunarDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnSunrise
-      // 
-      this.GridColumnSunrise.DataPropertyName = "SunriseAsString";
-      resources.ApplyResources(this.GridColumnSunrise, "GridColumnSunrise");
-      this.GridColumnSunrise.Name = "GridColumnSunrise";
-      this.GridColumnSunrise.ReadOnly = true;
-      this.GridColumnSunrise.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnSunset
-      // 
-      this.GridColumnSunset.DataPropertyName = "SunsetAsString";
-      resources.ApplyResources(this.GridColumnSunset, "GridColumnSunset");
-      this.GridColumnSunset.Name = "GridColumnSunset";
-      this.GridColumnSunset.ReadOnly = true;
-      this.GridColumnSunset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnMoonriseOccuring
-      // 
-      this.GridColumnMoonriseOccuring.DataPropertyName = "MoonriseOccuring";
-      resources.ApplyResources(this.GridColumnMoonriseOccuring, "GridColumnMoonriseOccuring");
-      this.GridColumnMoonriseOccuring.Name = "GridColumnMoonriseOccuring";
-      this.GridColumnMoonriseOccuring.ReadOnly = true;
-      this.GridColumnMoonriseOccuring.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnMoonrise
-      // 
-      this.GridColumnMoonrise.DataPropertyName = "MoonriseAsString";
-      resources.ApplyResources(this.GridColumnMoonrise, "GridColumnMoonrise");
-      this.GridColumnMoonrise.Name = "GridColumnMoonrise";
-      this.GridColumnMoonrise.ReadOnly = true;
-      this.GridColumnMoonrise.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnMoonset
-      // 
-      this.GridColumnMoonset.DataPropertyName = "MoonsetAsString";
-      resources.ApplyResources(this.GridColumnMoonset, "GridColumnMoonset");
-      this.GridColumnMoonset.Name = "GridColumnMoonset";
-      this.GridColumnMoonset.ReadOnly = true;
-      this.GridColumnMoonset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnNewMoon
-      // 
-      this.GridColumnNewMoon.DataPropertyName = "IsNewMoon";
-      resources.ApplyResources(this.GridColumnNewMoon, "GridColumnNewMoon");
-      this.GridColumnNewMoon.Name = "GridColumnNewMoon";
-      this.GridColumnNewMoon.ReadOnly = true;
-      this.GridColumnNewMoon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnFullMoon
-      // 
-      this.GridColumnFullMoon.DataPropertyName = "IsFullMoon";
-      resources.ApplyResources(this.GridColumnFullMoon, "GridColumnFullMoon");
-      this.GridColumnFullMoon.Name = "GridColumnFullMoon";
-      this.GridColumnFullMoon.ReadOnly = true;
-      this.GridColumnFullMoon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnMoonPhase
-      // 
-      this.GridColumnMoonPhase.DataPropertyName = "MoonPhase";
-      resources.ApplyResources(this.GridColumnMoonPhase, "GridColumnMoonPhase");
-      this.GridColumnMoonPhase.Name = "GridColumnMoonPhase";
-      this.GridColumnMoonPhase.ReadOnly = true;
-      this.GridColumnMoonPhase.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnSeasonChange
-      // 
-      this.GridColumnSeasonChange.DataPropertyName = "SeasonChange";
-      resources.ApplyResources(this.GridColumnSeasonChange, "GridColumnSeasonChange");
-      this.GridColumnSeasonChange.Name = "GridColumnSeasonChange";
-      this.GridColumnSeasonChange.ReadOnly = true;
-      this.GridColumnSeasonChange.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // GridColumnTorahEvent
-      // 
-      this.GridColumnTorahEvent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.GridColumnTorahEvent.DataPropertyName = "TorahEvent";
-      resources.ApplyResources(this.GridColumnTorahEvent, "GridColumnTorahEvent");
-      this.GridColumnTorahEvent.Name = "GridColumnTorahEvent";
-      this.GridColumnTorahEvent.ReadOnly = true;
-      this.GridColumnTorahEvent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
       // 
       // MainForm
       // 
@@ -1709,14 +1710,14 @@
       this.TabPageGrid.ResumeLayout(false);
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.CalendarGrid ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingSource ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.LunisolarDaysBindingNavigator ) ).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
       this.LunisolarDaysBindingNavigator.PerformLayout();
       this.PanelTitle.ResumeLayout(false);
       this.PanelTitleInner.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.moonPhaseImagePictureBox)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.moonPhaseImagePictureBox ) ).EndInit();
       this.MenuTray.ResumeLayout(false);
       this.ToolStrip.ResumeLayout(false);
       this.ToolStrip.PerformLayout();

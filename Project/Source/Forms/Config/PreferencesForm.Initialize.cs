@@ -147,32 +147,48 @@ partial class PreferencesForm
   /// </summary>
   private void LoadEditIntervals()
   {
-    setInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
-    setInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
-    setInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
-    setInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
-    setInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-    setInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
-    setInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
-    setInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
-    setInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
-    setInterval(EditRemindCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
-    setInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
-    setInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
-    setInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
-    setInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
-    setInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
-    setInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
-    setInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
-    //
-    static void setInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
-    {
-      control.Minimum = interval.Item1;
-      control.Maximum = interval.Item2;
-      control.Value = interval.Item3;
-      control.Increment = interval.Item4;
-      if ( label is not null ) label.Text = $"{interval.Item1} - {interval.Item2} ({interval.Item3})";
-    }
+    InitializeNumericInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
+    InitializeNumericInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
+    InitializeNumericInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
+    InitializeNumericInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
+    InitializeNumericInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
+    InitializeNumericInterval(EditPrintPageCountWarning, LabelPrintPageCountWarningIntervalInfo, PrintPageCountWarningInterval);
+    InitializeNumericInterval(EditSaveImageCountWarning, LabelSaveImageCountWarningIntervalInfo, SaveImageCountWarningInterval);
+    InitializeNumericInterval(EditBalloonLoomingDelay, LabelLoomingDelayIntervalInfo, LoomingDelayInterval);
+    InitializeNumericInterval(EditRemindCelebrationsDaysBefore, LabelReminderCelebrationsIntervalInfo, RemindCelebrationDaysBeforeInterval);
+    InitializeNumericInterval(EditRemindShabatHoursBefore, LabelRemindShabatHoursBeforeIntervalInfo, RemindShabatHoursBeforeInterval);
+    InitializeNumericInterval(EditRemindShabatEveryMinutes, LabelRemindShabatEveryMinutesIntervalInfo, RemindShabatEveryMinutesInterval);
+    InitializeNumericInterval(EditRemindCelebrationHoursBefore, LabelRemindCelebrationHoursBeforeIntervalInfo, RemindCelebrationHoursBeforeInterval);
+    InitializeNumericInterval(EditRemindCelebrationEveryMinutes, LabelRemindCelebrationEveryMinutesIntervalInfo, RemindCelebrationEveryMinutesInterval);
+    InitializeNumericInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
+    InitializeNumericInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
+    InitializeNumericInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
+    InitializeNumericInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
+    int countBookmarks = Program.DateBookmarks.MaxCount;
+    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
+    LabelDateBookmarksCountIntervalInfo.Text = countBookmarks.ToString();
+    EditDateBookmarksCount.Minimum = countBookmarks;
+    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
+  }
+
+  /// <summary>
+  /// Initialize minimum, maximum, value and increment of a numeric edit, and update the associated label info text.
+  /// </summary>
+  static void InitializeNumericInterval(NumericUpDown control, Label label, (int, int, int, int) interval)
+  {
+    control.Minimum = interval.Item1;
+    control.Maximum = interval.Item2;
+    control.Value = interval.Item3;
+    control.Increment = interval.Item4;
+    SetNumericLabelText(control, label);
+  }
+
+  /// <summary>
+  /// Update the associated label info text of a numeric edit.
+  /// </summary>
+  static void SetNumericLabelText(NumericUpDown control, Label label)
+  {
+    if ( label is not null ) label.Text = $"{control.Minimum} - {control.Maximum} ({control.Value})";
   }
 
   /// <summary>

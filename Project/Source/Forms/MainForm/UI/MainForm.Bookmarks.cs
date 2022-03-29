@@ -25,18 +25,18 @@ partial class MainForm
   {
     var menuitem = (ToolStripMenuItem)sender;
     var control = CurrentBookmarkMenu;
-    if ( e.Button == MouseButtons.Right )
+    if ( e.Button == MouseButtons.Right && control == ContextMenuDaySaveBookmark
+      && !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
     {
-      if ( control == ContextMenuDaySaveBookmark )
-        if ( !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
-        {
-          var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
-            return;
-          menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
-          Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
-          SystemManager.TryCatch(Settings.Save);
-        }
+      var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
+        return;
+      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
+      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Text = menuitem.Text;
+      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = false;
+      Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
+      SystemManager.TryCatch(Settings.Save);
+
     }
     else
     if ( e.Button == MouseButtons.Left )
@@ -59,15 +59,13 @@ partial class MainForm
         if ( dateNew == date ) return;
       }
       var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( dateOld != DateTime.MinValue )
-        if ( !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(), dateNew.ToShortDateString())) )
-          return;
+      if ( dateOld != DateTime.MinValue
+        && !DisplayManager.QueryYesNo(SysTranslations.AskToReplaceBookmark.GetLang(dateOld.ToShortDateString(),
+                                                                                   dateNew.ToShortDateString())) )
+        return;
       menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
-      if ( menuitem.OwnerItem == ContextMenuDayGoToBookmark )
-        ContextMenuDaySaveBookmark.DropDownItems[ContextMenuDayGoToBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
-      else
-      if ( menuitem.OwnerItem == ContextMenuDaySaveBookmark )
-        ContextMenuDayGoToBookmark.DropDownItems[ContextMenuDaySaveBookmark.DropDownItems.IndexOf(menuitem)].Text = menuitem.Text;
+      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Text = menuitem.Text;
+      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = true;
       Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
       SystemManager.TryCatch(Settings.Save);
     }

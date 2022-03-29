@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -97,6 +97,15 @@ static partial class SysTranslations
   {
     [Language.EN] = $"Replace bookmark?{Globals.NL2}Actual: {{0}}{Globals.NL2}New: {{1}}",
     [Language.FR] = $"Remplacer le signet ?{Globals.NL2}Actuel : {{0}}{Globals.NL2}Nouveau : {{1}}",
+  };
+
+  static public readonly TranslationsDictionary ImportBookmarksError = new()
+  {
+    [Language.EN] = $"Can't import more that {{0}} bookmarks.{Globals.NL}" +
+                    $"Please check the file having {{1}}:{Globals.NL2}{{2}}",
+
+    [Language.FR] = $"Impossible d'importer plus de {{0}} signets.{Globals.NL}" +
+                    $"Veuillez vérifier le fichier qui en a {{1}} :{Globals.NL2}{{2}}",
   };
 
   static public readonly TranslationsDictionary ActionCancel = new()

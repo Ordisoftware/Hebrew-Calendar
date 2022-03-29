@@ -2964,7 +2964,7 @@
     <value>F1</value>
   </data>
   <data name="ActionViewReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewReport.Text" xml:space="preserve">
     <value>Report</value>
@@ -3005,7 +3005,7 @@
     <value>F2</value>
   </data>
   <data name="ActionViewMonth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewMonth.Text" xml:space="preserve">
     <value>Month</value>
@@ -3044,7 +3044,7 @@
     <value>F3</value>
   </data>
   <data name="ActionViewGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 38</value>
+    <value>196, 38</value>
   </data>
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
@@ -3640,7 +3640,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAQgBAgEIAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAARABAgEQAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -3722,6 +3722,84 @@
   </data>
   <data name="&gt;&gt;SaveTextDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnDate.Name" xml:space="preserve">
+    <value>GridColumnDate</value>
+  </data>
+  <data name="&gt;&gt;GridColumnDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnLunarMonth.Name" xml:space="preserve">
+    <value>GridColumnLunarMonth</value>
+  </data>
+  <data name="&gt;&gt;GridColumnLunarMonth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnLunarDay.Name" xml:space="preserve">
+    <value>GridColumnLunarDay</value>
+  </data>
+  <data name="&gt;&gt;GridColumnLunarDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSunrise.Name" xml:space="preserve">
+    <value>GridColumnSunrise</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSunrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSunset.Name" xml:space="preserve">
+    <value>GridColumnSunset</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSunset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonriseOccuring.Name" xml:space="preserve">
+    <value>GridColumnMoonriseOccuring</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonriseOccuring.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonrise.Name" xml:space="preserve">
+    <value>GridColumnMoonrise</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonrise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonset.Name" xml:space="preserve">
+    <value>GridColumnMoonset</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnNewMoon.Name" xml:space="preserve">
+    <value>GridColumnNewMoon</value>
+  </data>
+  <data name="&gt;&gt;GridColumnNewMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnFullMoon.Name" xml:space="preserve">
+    <value>GridColumnFullMoon</value>
+  </data>
+  <data name="&gt;&gt;GridColumnFullMoon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonPhase.Name" xml:space="preserve">
+    <value>GridColumnMoonPhase</value>
+  </data>
+  <data name="&gt;&gt;GridColumnMoonPhase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSeasonChange.Name" xml:space="preserve">
+    <value>GridColumnSeasonChange</value>
+  </data>
+  <data name="&gt;&gt;GridColumnSeasonChange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridColumnTorahEvent.Name" xml:space="preserve">
+    <value>GridColumnTorahEvent</value>
+  </data>
+  <data name="&gt;&gt;GridColumnTorahEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LunisolarDaysBindingSource.Name" xml:space="preserve">
     <value>LunisolarDaysBindingSource</value>
@@ -4634,84 +4712,6 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnDate.Name" xml:space="preserve">
-    <value>GridColumnDate</value>
-  </data>
-  <data name="&gt;&gt;GridColumnDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnLunarMonth.Name" xml:space="preserve">
-    <value>GridColumnLunarMonth</value>
-  </data>
-  <data name="&gt;&gt;GridColumnLunarMonth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnLunarDay.Name" xml:space="preserve">
-    <value>GridColumnLunarDay</value>
-  </data>
-  <data name="&gt;&gt;GridColumnLunarDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSunrise.Name" xml:space="preserve">
-    <value>GridColumnSunrise</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSunrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSunset.Name" xml:space="preserve">
-    <value>GridColumnSunset</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSunset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonriseOccuring.Name" xml:space="preserve">
-    <value>GridColumnMoonriseOccuring</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonriseOccuring.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonrise.Name" xml:space="preserve">
-    <value>GridColumnMoonrise</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonrise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonset.Name" xml:space="preserve">
-    <value>GridColumnMoonset</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnNewMoon.Name" xml:space="preserve">
-    <value>GridColumnNewMoon</value>
-  </data>
-  <data name="&gt;&gt;GridColumnNewMoon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnFullMoon.Name" xml:space="preserve">
-    <value>GridColumnFullMoon</value>
-  </data>
-  <data name="&gt;&gt;GridColumnFullMoon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonPhase.Name" xml:space="preserve">
-    <value>GridColumnMoonPhase</value>
-  </data>
-  <data name="&gt;&gt;GridColumnMoonPhase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSeasonChange.Name" xml:space="preserve">
-    <value>GridColumnSeasonChange</value>
-  </data>
-  <data name="&gt;&gt;GridColumnSeasonChange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GridColumnTorahEvent.Name" xml:space="preserve">
-    <value>GridColumnTorahEvent</value>
-  </data>
-  <data name="&gt;&gt;GridColumnTorahEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -370,11 +370,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
-- Improve bookmark import to automatically extend length to multiple of 5.
 
 #### 2022.04.05 - Version 9.28
 
-- Maintenance release.
+- Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item.
+- Improve the setting of the number of bookmarks by limiting it to the last index defined.
+- Improve bookmark import to automatically extend the length to match.
 - Add current day change when cursor changes line in text report.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
 - Massive code refactorings, optimizations and fixes with more analyzers.
