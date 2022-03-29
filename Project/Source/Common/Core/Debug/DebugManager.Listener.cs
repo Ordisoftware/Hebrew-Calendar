@@ -148,7 +148,7 @@ namespace Ordisoftware.Core
               return false;
             }
           }
-          var list = Directory.GetFiles(Folder, Code + "*" + Extension)
+          var list = Directory.GetFiles(Folder, $"{Code}*{Extension}")
                               .Select(path => new FileItem { FilePath = path })
                               .Where(item => ResolveDate(item));
           DateTime limit;
