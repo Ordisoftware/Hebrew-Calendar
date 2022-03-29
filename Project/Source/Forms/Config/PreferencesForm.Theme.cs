@@ -21,7 +21,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class PreferencesForm
 {
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void SetThemeLight()
   {
     EditCurrentDayForeColor.BackColor = Color.White;
@@ -33,39 +32,38 @@ partial class PreferencesForm
     EditCalendarColorTorahEvent.BackColor = Color.DarkRed;
     EditCalendarColorSeason.BackColor = Color.DarkGreen;
     EditCalendarColorMoon.BackColor = Color.DarkBlue;
-    EditCalendarColorFullMoon.BackColor = Color.FromArgb(150, 100, 0);
-    EditEventColorTorah.BackColor = Color.FromArgb(255, 255, 230);
-    EditEventColorSeason.BackColor = Color.FromArgb(245, 255, 240);
-    EditEventColorShabat.BackColor = Color.FromArgb(243, 243, 243);
+    EditCalendarColorFullMoon.BackColor = CustomColor.VeryDarkGoldenrod;
+    EditEventColorTorah.BackColor = CustomColor.VeryLightYellow;
+    EditEventColorSeason.BackColor = CustomColor.HoneydewLight;
+    EditEventColorShabat.BackColor = CustomColor.WhiteSmokeDark;
     EditEventColorMonth.BackColor = Color.AliceBlue;
-    EditEventColorNext.BackColor = Color.FromArgb(240, 240, 240);
+    EditEventColorNext.BackColor = CustomColor.WhiteSmokeVeryDark;
     EditMonthViewBackColor.BackColor = Color.White;
     EditMonthViewTextColor.BackColor = Color.Black;
-    EditMonthViewNoDaysBackColor.BackColor = Globals.VeryLightGray;
+    EditMonthViewNoDaysBackColor.BackColor = CustomColor.WhiteSmokeVeryLight;
     MustRefreshMonthView = true;
   }
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void SetThemeDark()
   {
     EditCurrentDayForeColor.BackColor = Color.White;
-    EditCurrentDayBackColor.BackColor = Color.FromArgb(200, 0, 0);
+    EditCurrentDayBackColor.BackColor = CustomColor.RedDarker;
     EditCalendarColorActiveDay.BackColor = Color.LightGray;
-    EditSelectedDayBoxColor.BackColor = Color.FromArgb(200, 0, 0);
+    EditSelectedDayBoxColor.BackColor = CustomColor.RedDarker;
     EditCalendarColorHoverEffect.BackColor = Color.DarkGray;
     EditCalendarColorParashah.BackColor = Color.Plum;
-    EditCalendarColorTorahEvent.BackColor = Color.FromArgb(250, 190, 255);
-    EditCalendarColorSeason.BackColor = Color.FromArgb(128, 255, 128);
-    EditCalendarColorMoon.BackColor = Color.FromArgb(128, 255, 255);
-    EditCalendarColorFullMoon.BackColor = Color.FromArgb(255, 255, 128);
-    EditEventColorTorah.BackColor = Color.FromArgb(70, 70, 40);
-    EditEventColorSeason.BackColor = Color.FromArgb(0, 64, 0);
-    EditEventColorShabat.BackColor = Color.FromArgb(60, 50, 60);
-    EditEventColorMonth.BackColor = Color.FromArgb(0, 50, 100);
-    EditEventColorNext.BackColor = Color.FromArgb(20, 20, 20);
+    EditCalendarColorTorahEvent.BackColor = CustomColor.PlumLight;
+    EditCalendarColorSeason.BackColor = CustomColor.ScreaminGreen;
+    EditCalendarColorMoon.BackColor = CustomColor.ElectricBlue;
+    EditCalendarColorFullMoon.BackColor = CustomColor.UnmellowYellowLight;
+    EditEventColorTorah.BackColor = CustomColor.RifleGreenGolden;
+    EditEventColorSeason.BackColor = CustomColor.VeryDarkGreen;
+    EditEventColorShabat.BackColor = CustomColor.PurpleTaupeDark;
+    EditEventColorMonth.BackColor = CustomColor.DarkMidnightBlue;
+    EditEventColorNext.BackColor = CustomColor.BlackLight;
     EditMonthViewBackColor.BackColor = Color.Black;
     EditMonthViewTextColor.BackColor = Color.White;
-    EditMonthViewNoDaysBackColor.BackColor = Color.FromArgb(80, 80, 80);
+    EditMonthViewNoDaysBackColor.BackColor = CustomColor.DimGrayDark;
     MustRefreshMonthView = true;
   }
 

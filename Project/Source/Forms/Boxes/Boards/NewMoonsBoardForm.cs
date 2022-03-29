@@ -184,7 +184,7 @@ partial class NewMoonsBoardForm : Form
       if ( !EditHideHours.Checked ) e.Value += $" {date:HH:mm}";
     }
     else
-      e.CellStyle.BackColor = Globals.VeryLightGray;
+      e.CellStyle.BackColor = CustomColor.WhiteSmokeVeryLight;
   }
 
   private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

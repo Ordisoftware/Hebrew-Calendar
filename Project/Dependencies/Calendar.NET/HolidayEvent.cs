@@ -103,9 +103,9 @@ namespace CodeProjectCalendar.NET
     /// </summary>
     public HolidayEvent()
     {
-      EventColor = Color.FromArgb(80, 170, 255);
+      EventColor = CustomColor.ArgentinianBlueDark;
       EventFont = new Font("Arial", 8, FontStyle.Bold);
-      EventTextColor = Color.FromArgb(255, 255, 255);
+      EventTextColor = Color.White;
       Rank = 1;
       EventLengthInHours = 24;
       ReadOnlyEvent = true;

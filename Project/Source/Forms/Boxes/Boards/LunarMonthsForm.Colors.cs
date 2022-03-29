@@ -36,9 +36,9 @@ partial class LunarMonthsForm : Form
 
   private readonly Color[] ColorsPastel = new Color[]
   {
-    Color.FromArgb(255, 230, 80),
-    Color.FromArgb(255, 230, 80),
-    Color.FromArgb(255, 230, 80),
+    CustomColor.BananaYellowLight,
+    CustomColor.BananaYellowLight,
+    CustomColor.BananaYellowLight,
     Color.Orchid,
     Color.Orchid,
     Color.Orchid,

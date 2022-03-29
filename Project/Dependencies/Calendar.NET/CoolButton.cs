@@ -114,11 +114,11 @@ namespace CodeProjectCalendar.NET
     {
       InitializeComponent();
 
-      _buttonColor = Color.FromArgb(243, 243, 243);
-      _borderColor = Color.FromArgb(220, 220, 220);
-      _highlightBorderColor = Color.FromArgb(198, 198, 198);
-      _highlightButtonColor = Color.FromArgb(246, 246, 246);
-      _focusColor = Color.FromArgb(77, 144, 254);
+      _buttonColor = CustomColor.WhiteSmokeDark;
+      _borderColor = Color.Gainsboro;
+      _highlightBorderColor = CustomColor.NeonSilverDark;
+      _highlightButtonColor = CustomColor.WhiteSmokeLight;
+      _focusColor = CustomColor.MoroccanBlueVeryLighter;
       _buttonFont = new Font("Arial", 8, FontStyle.Bold);
       _buttonText = "button";
       _textColor = Color.Black;
@@ -169,9 +169,9 @@ namespace CodeProjectCalendar.NET
         g.DrawPath(ContainsFocus ? new Pen(_focusColor) : new Pen(_borderColor), path);
         g.DrawString(_buttonText, _buttonFont, new SolidBrush(_textColor), horWidth, verHeight);
 
-        Color a1 = Color.FromArgb(255, 198, 198, 198);
-        Color a2 = Color.FromArgb(128, 198, 198, 198);
-        Color a3 = Color.FromArgb(64, 198, 198, 198);
+        Color a1 = CustomColor.NeonSilverDark;
+        Color a2 = Color.FromArgb(128, CustomColor.NeonSilverDark);
+        Color a3 = Color.FromArgb(64, CustomColor.NeonSilverDark);
 
         var shadowBmp = new Bitmap(1, 3);
         var shadowBmp2 = new Bitmap(3, 1);
