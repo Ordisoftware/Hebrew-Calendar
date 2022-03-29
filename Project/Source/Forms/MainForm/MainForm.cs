@@ -1115,9 +1115,25 @@ partial class MainForm : Form
 
   #region Context Menu
 
+  private bool ContextMenuStripDayNoClose;
+
   private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
     DoCalendarMonth_MouseClick(sender, e);
+  }
+
+  private void ContextMenuDayDate_MouseDown(object sender, MouseEventArgs e)
+  {
+    ContextMenuStripDayNoClose = true;
+  }
+
+  private void ContextMenuStripDay_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+  {
+    if ( ContextMenuStripDayNoClose )
+    {
+      ContextMenuStripDayNoClose = false;
+      e.Cancel = true;
+    }
   }
 
   private void ContextMenuStripDay_Opened(object sender, EventArgs e)
