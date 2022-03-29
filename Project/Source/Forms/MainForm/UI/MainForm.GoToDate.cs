@@ -53,11 +53,16 @@ partial class MainForm
       });
       // Visual month and text report
       SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
-      if ( scroll == ViewScrollOverride.ForceTextReport || ( Settings.CurrentView == ViewMode.Text && scroll != ViewScrollOverride.NoTextReport ) )
-        SystemManager.TryCatch(() =>
+      SystemManager.TryCatch(() =>
+      {
+        if ( scroll == ViewScrollOverride.NoTextReport ) return;
+        string strDatePattern = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
+        string line = CalendarText.Lines[CalendarText.GetLineFromCharIndex(CalendarText.SelectionStart)];
+        bool isCaretVisible = line.IndexOf(strDatePattern, StringComparison.Ordinal) != -1;
+        if ( ( scroll == ViewScrollOverride.ForceTextReport && !isCaretVisible )
+            || ( Settings.CurrentView == ViewMode.Text && !isCaretVisible ) )
         {
-          string strDate = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
-          int position = CalendarText.Find(strDate);
+          int position = CalendarText.Find(strDatePattern);
           if ( position != -1 )
           {
             CalendarText.SelectionStart = position - ( 6 - 119 );
@@ -66,7 +71,8 @@ partial class MainForm
             CalendarText.SelectionStart = position - 6;
             CalendarText.SelectionLength = 119;
           }
-        });
+        }
+      });
     }
     finally
     {

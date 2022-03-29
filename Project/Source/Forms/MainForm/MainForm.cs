@@ -931,6 +931,8 @@ partial class MainForm : Form
 
   #region View Text Report
 
+  private bool CalendarTextReportMutex;
+
   /// <summary>
   /// Event handler. Called by CalendarText for key down events.
   /// </summary>
@@ -938,6 +940,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void CalendarText_KeyDown(object sender, KeyEventArgs e)
   {
+    CalendarTextReportMutex = true;
     if ( e.Control && e.KeyCode == Keys.A )
     {
       CalendarText.SelectAll();
@@ -954,6 +957,17 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by CalendarText for key up events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void CalendarText_KeyUp(object sender, KeyEventArgs e)
+  {
+    CalendarTextReportMutex = false;
+    CalendarText_SelectionChanged(sender, e);
+  }
+
+  /// <summary>
   /// Event handler. Called by CalendarText for selection changed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -961,6 +975,7 @@ partial class MainForm : Form
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void CalendarText_SelectionChanged(object sender, EventArgs e)
   {
+    if ( CalendarTextReportMutex ) return;
     if ( Globals.IsGenerating ) return;
     int index = CalendarText.SelectionStart;
     int line = CalendarText.GetLineFromCharIndex(index);
