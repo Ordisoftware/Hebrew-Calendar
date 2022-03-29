@@ -21,6 +21,17 @@ class DateBookmarks
 
   private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
 
+  public int MaxCount
+  {
+    get
+    {
+      for ( int index = Items.Length - 1; index >= 0; index-- )
+        if ( Items[index] != DateTime.MinValue )
+          return index + 1;
+      return 0;
+    }
+  }
+
   public DateTime this[int index]
   {
     get { return Items[index]; }
@@ -39,8 +50,15 @@ class DateBookmarks
     SystemManager.TryCatchManage(() =>
     {
       if ( !File.Exists(FilePath) ) return;
+      var lines = File.ReadAllLines(FilePath);
+      if ( lines.Length > Items.Length )
+      {
+        Array.Resize(ref Items, lines.Length);
+        Program.Settings.DateBookmarksCount = lines.Length;
+        Program.Settings.Save();
+      }
       int index = 0;
-      foreach ( string item in File.ReadAllLines(FilePath) )
+      foreach ( string item in lines )
       {
         if ( item.Length == 0 )
           continue;

@@ -490,6 +490,9 @@
     <Compile Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.Designer.cs">
       <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Save.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
       <SubType>Form</SubType>
     </Compile>

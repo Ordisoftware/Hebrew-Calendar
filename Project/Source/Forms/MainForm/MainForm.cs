@@ -1217,6 +1217,11 @@ partial class MainForm : Form
       DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
     MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
+    foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
+    {
+      var value = Program.DateBookmarks[(int)menuitem.Tag];
+      if ( value == DateTime.MinValue ) menuitem.Enabled = false;
+    }
   }
 
   private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)

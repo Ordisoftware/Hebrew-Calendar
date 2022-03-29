@@ -17,8 +17,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ManageBookmarksForm : Form
 {
 
-  private const string TableName = "Date Bookmarks";
-
   static private readonly Properties.Settings Settings = Program.Settings;
 
   private sealed class DateItem
@@ -59,10 +57,13 @@ partial class ManageBookmarksForm : Form
   {
     this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
     ListBox.Items.Clear();
+    if ( Settings.DateBookmarksCount == 0 ) return;
     for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
+    ActionClear.Enabled = ListBox.Items.Count > 0;
+    ActionSort.Enabled = ListBox.Items.Count > 0;
   }
 
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
@@ -79,6 +80,16 @@ partial class ManageBookmarksForm : Form
     ActionDown.Enabled = ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0
                         && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
+  }
+
+  private void ActionExport_Click(object sender, EventArgs e)
+  {
+    DoActionExport_Click(sender, e);
+  }
+
+  private void ActionImport_Click(object sender, EventArgs e)
+  {
+    DoActionImport_Click(sender, e);
   }
 
   private void ActionClear_Click(object sender, EventArgs e)
@@ -119,102 +130,6 @@ partial class ManageBookmarksForm : Form
     });
     ListBox_SelectedIndexChanged(null, null);
     ListBox.Focus();
-  }
-
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
-  [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
-  private void ActionExport_Click(object sender, EventArgs e)
-  {
-    SaveBookmarksDialog.FileName = TableName;
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        SaveBookmarksDialog.FilterIndex = index + 1;
-    if ( SaveBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
-    string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
-    var selected = Program.BoardExportTargets.First(p => p.Value == extension).Key;
-    switch ( selected )
-    {
-      case DataExportTarget.TXT:
-        using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
-          foreach ( DateItem item in ListBox.Items )
-            stream.WriteLine(SQLiteDate.ToString(item.Date));
-        break;
-      case DataExportTarget.CSV:
-        using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
-        {
-          stream.WriteLine("Date");
-          foreach ( DateItem item in ListBox.Items )
-            stream.WriteLine(SQLiteDate.ToString(item.Date));
-        }
-        break;
-      case DataExportTarget.JSON:
-        var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
-        var dataset = new DataSet(Globals.AssemblyTitle);
-        dataset.Tables.Add(data.ToDataTable(TableName));
-        string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-        File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
-        dataset.Tables.Clear();
-        dataset.Dispose();
-        break;
-      default:
-        throw new AdvNotImplementedException(selected);
-    }
-  }
-
-  private void ActionImport_Click(object sender, EventArgs e)
-  {
-    OpenBookmarksDialog.FileName = string.Empty;
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        OpenBookmarksDialog.FilterIndex = index + 1;
-    if ( OpenBookmarksDialog.ShowDialog() != DialogResult.OK ) return;
-    string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
-    var selected = Program.BoardExportTargets.First(p => p.Value == extension).Key;
-    int indexListBox = 0;
-    string[] lines;
-    try
-    {
-      switch ( selected )
-      {
-        case DataExportTarget.TXT:
-          lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
-          foreach ( string line in lines )
-          {
-            if ( indexListBox > ListBox.Items.Count ) break;
-            var date = DateTime.MinValue;
-            try { date = SQLiteDate.ToDateTime(line); }
-            catch { }
-            ListBox.Items[indexListBox++] = new DateItem { Date = date };
-          }
-          break;
-        case DataExportTarget.CSV:
-          lines = File.ReadAllLines(OpenBookmarksDialog.FileName);
-          foreach ( string line in lines.Skip(1) )
-          {
-            if ( indexListBox > ListBox.Items.Count ) break;
-            var date = DateTime.MinValue;
-            try { date = SQLiteDate.ToDateTime(line); }
-            catch { }
-            ListBox.Items[indexListBox++] = new DateItem { Date = date };
-          }
-          break;
-        case DataExportTarget.JSON:
-          string str = File.ReadAllText(OpenBookmarksDialog.FileName);
-          var dataset = JsonConvert.DeserializeObject<DataSet>(str);
-          foreach ( DataRow row in dataset.Tables[0].Rows )
-          {
-            if ( indexListBox > ListBox.Items.Count ) break;
-            ListBox.Items[indexListBox++] = new DateItem { Date = (DateTime)row[0] };
-          }
-          break;
-        default:
-          throw new AdvNotImplementedException(selected);
-      }
-    }
-    catch ( Exception ex )
-    {
-      DisplayManager.ShowError(ex.Message);
-    }
   }
 
 }
