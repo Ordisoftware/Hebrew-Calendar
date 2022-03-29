@@ -123,7 +123,7 @@ static partial class SystemManager
   static public string MakeMailLink(string link)
   {
     return !link.StartsWith("mailto:", StringComparison.OrdinalIgnoreCase)
-      ? "mailto:" + link
+      ? $"mailto:{link}"
       : link;
   }
 
@@ -145,11 +145,10 @@ static partial class SystemManager
   /// </returns>
   static public string MakeWebLink(string link)
   {
-    if ( !link.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
-      && !link.StartsWith("https://", StringComparison.OrdinalIgnoreCase) )
-      return "http://" + link;
-    else
-      return link;
+    return !link.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+        && !link.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
+      ? $"http://{link}"
+      : link;
   }
 
   /// <summary>

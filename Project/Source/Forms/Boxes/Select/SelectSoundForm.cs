@@ -17,7 +17,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class SelectSoundForm : Form
 {
 
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public int DefaultReminderSoundMaxDuration { get; set; } = 3000;
 
   static private readonly Properties.Settings Settings = Program.Settings;
@@ -194,8 +193,9 @@ partial class SelectSoundForm : Form
     var sound = new SoundItem(OpenFileDialog.FileName);
     if ( sound.DurationMS > DefaultReminderSoundMaxDuration )
     {
-      string msg = AppTranslations.SoundTooLong.GetLang(DefaultReminderSoundMaxDuration / 1000,
-                                                        ( (long)sound.DurationMS ).FormatMilliseconds());
+      string delayMax = ( DefaultReminderSoundMaxDuration / Globals.MilliSecondsInOneSecond ).ToString();
+      string delayCurrent = ( (long)sound.DurationMS ).FormatMilliseconds();
+      string msg = AppTranslations.SoundTooLong.GetLang(delayMax, delayCurrent);
       DisplayManager.ShowWarning(msg);
     }
     else

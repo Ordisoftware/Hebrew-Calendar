@@ -78,12 +78,12 @@ namespace CodeProjectCalendar.NET
     public event Action<DateTime> CalendarDateChanged;
 
     private const int MarginSize = 5;
-    internal Brush RogueBrush = new SolidBrush(Color.FromArgb(255, 250, 250, 250));
+    internal Brush RogueBrush = new SolidBrush(CustomColor.WhiteSmokeVeryLight);
 
     static public Color ColorText { get; set; } = Color.Black;
 
-    static public Brush BrushGrayMedium { get; set; } = new SolidBrush(Color.FromArgb(170, 170, 170));
-    static public Brush BrushGrayLight { get; set; } = new SolidBrush(Color.FromArgb(234, 234, 234));
+    static public Brush BrushGrayMedium { get; set; } = new SolidBrush(Color.DarkGray);
+    static public Brush BrushGrayLight { get; set; } = new SolidBrush(CustomColor.PlatinumLight);
     static public Brush BrushText { get; set; } = Brushes.Black;
     static public Brush BrushBlack { get; set; } = Brushes.Black;
     static public Brush CurrentDayForeBrush { get; set; } = Brushes.White;
@@ -399,15 +399,15 @@ namespace CodeProjectCalendar.NET
       // _btnToday
       // 
       _btnToday.BackColor = Color.Transparent;
-      _btnToday.BorderColor = Color.FromArgb(220, 220, 220);
-      _btnToday.ButtonColor = Color.FromArgb(243, 243, 243);
+      _btnToday.BorderColor = Color.Gainsboro;
+      _btnToday.ButtonColor = CustomColor.WhiteSmokeDark;
       _btnToday.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       // ORDISOFTWARE MODIF BEGIN
       _btnToday.ButtonText = DesignMode || IsVisualStudioDesigner ? "Today" : AppTranslations.Today.GetLang();
       // ORDISOFTWARE MODIF END
-      _btnToday.FocusColor = Color.FromArgb(77, 144, 244);
-      _btnToday.HighlightBorderColor = Color.FromArgb(198, 198, 198);
-      _btnToday.HighlightButtonColor = Color.FromArgb(246, 246, 246);
+      _btnToday.FocusColor = CustomColor.MoroccanBlueLight;
+      _btnToday.HighlightBorderColor = CustomColor.NeonSilverDark;
+      _btnToday.HighlightButtonColor = CustomColor.WhiteSmokeLight;
       _btnToday.Location = new Point(19, 10);
       _btnToday.Name = "_btnToday";
       //_btnToday.Size = new Size(72, 29);
@@ -418,13 +418,13 @@ namespace CodeProjectCalendar.NET
       // _btnLeft
       // 
       _btnLeft.BackColor = Color.Transparent;
-      _btnLeft.BorderColor = Color.FromArgb(220, 220, 220);
-      _btnLeft.ButtonColor = Color.FromArgb(243, 243, 243);
+      _btnLeft.BorderColor = Color.Gainsboro;
+      _btnLeft.ButtonColor = CustomColor.WhiteSmokeDark;
       _btnLeft.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       _btnLeft.ButtonText = "<";
-      _btnLeft.FocusColor = Color.FromArgb(77, 144, 254);
-      _btnLeft.HighlightBorderColor = Color.FromArgb(198, 198, 198);
-      _btnLeft.HighlightButtonColor = Color.FromArgb(246, 246, 246);
+      _btnLeft.FocusColor = CustomColor.MoroccanBlueVeryLighter;
+      _btnLeft.HighlightBorderColor = CustomColor.NeonSilverDark;
+      _btnLeft.HighlightButtonColor = CustomColor.WhiteSmokeLight;
       _btnLeft.Location = new Point(98, 10);
       _btnLeft.Name = "_btnLeft";
       //_btnLeft.Size = new Size(42, 29);
@@ -435,13 +435,13 @@ namespace CodeProjectCalendar.NET
       // _btnRight
       // 
       _btnRight.BackColor = Color.Transparent;
-      _btnRight.BorderColor = Color.FromArgb(220, 220, 220);
-      _btnRight.ButtonColor = Color.FromArgb(243, 243, 243);
+      _btnRight.BorderColor = Color.Gainsboro;
+      _btnRight.ButtonColor = CustomColor.WhiteSmokeDark;
       _btnRight.ButtonFont = new Font("Arial", 8F, FontStyle.Bold);
       _btnRight.ButtonText = ">";
-      _btnRight.FocusColor = Color.FromArgb(77, 144, 254);
-      _btnRight.HighlightBorderColor = Color.FromArgb(198, 198, 198);
-      _btnRight.HighlightButtonColor = Color.FromArgb(246, 246, 246);
+      _btnRight.FocusColor = CustomColor.MoroccanBlueVeryLighter;
+      _btnRight.HighlightBorderColor = CustomColor.NeonSilverDark;
+      _btnRight.HighlightButtonColor = CustomColor.WhiteSmokeLight;
       _btnRight.Location = new Point(138 + 5, 10);
       _btnRight.Name = "_btnRight";
       //_btnRight.Size = new Size(42, 29);

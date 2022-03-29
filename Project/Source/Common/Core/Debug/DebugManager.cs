@@ -484,7 +484,7 @@ static partial class DebugManager
     einfo = einfo.InnerInfo;
     while ( einfo is not null )
     {
-      list.Add("[Inner] " + getText(einfo));
+      list.Add($"[Inner] {getText(einfo)}");
       einfo = einfo.InnerInfo;
     }
     return list.AsMultiDoubleLine();

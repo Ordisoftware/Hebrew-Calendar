@@ -72,8 +72,7 @@ static class Languages
     }
     catch ( Exception ex )
     {
-      string str = "Exception in Language static class constructor." + Globals.NL2 +
-                   "Please contact support.";
+      string str = "Exception in Language static class constructor." + Globals.NL2 + "Please contact support.";
       var einfo = new ExceptionInfo(null, ex);
       if ( !einfo.ReadableText.IsNullOrEmpty() ) str += Globals.NL2 + einfo.ReadableText;
       DisplayManager.ShowAndTerminate(str);

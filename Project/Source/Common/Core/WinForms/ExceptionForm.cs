@@ -232,7 +232,7 @@ public static class MailHelper
 {
 
   public static string ToUrl(this MailMessage message)
-    => "mailto:?" + Parameters(message).Join("&");
+    => $"mailto:?{Parameters(message).Join("&")}";
 
   static string Recipients(MailAddressCollection addresses)
     => ( from r in addresses select Uri.EscapeDataString(r.Address) ).Join(",");
@@ -240,15 +240,15 @@ public static class MailHelper
   static IEnumerable<string> Parameters(MailMessage message)
   {
     if ( message.To.Count > 0 )
-      yield return "to=" + Recipients(message.To);
+      yield return $"to={Recipients(message.To)}";
     if ( message.CC.Count > 0 )
-      yield return "cc=" + Recipients(message.CC);
+      yield return $"cc={Recipients(message.CC)}";
     if ( message.Bcc.Count > 0 )
-      yield return "bcc=" + Recipients(message.Bcc);
+      yield return $"bcc={Recipients(message.Bcc)}";
     if ( !string.IsNullOrWhiteSpace(message.Subject) )
-      yield return "subject=" + Uri.EscapeDataString(message.Subject);
+      yield return $"subject={Uri.EscapeDataString(message.Subject)}";
     if ( !string.IsNullOrWhiteSpace(message.Body) )
-      yield return "body=" + Uri.EscapeDataString(message.Body);
+      yield return $"body={Uri.EscapeDataString(message.Body)}";
   }
 
 }

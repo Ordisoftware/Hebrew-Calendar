@@ -44,11 +44,11 @@ static partial class SystemManager
       /*|| certificate["Serial"] != point.Certificate.GetSerialNumberString()
       || certificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
     {
-      string str1 = certificate.Select(item => item.Key + " = " + item.Value).AsMultiLine();
-      string str2 = "Issuer = " + point.Certificate.Issuer + Globals.NL +
-                    "Subject = " + point.Certificate.Subject/* + Globals.NL +
-                      "Serial = " + point.Certificate.GetSerialNumberString() + Globals.NL +
-                      "PublicKey = " + point.Certificate.GetPublicKeyString()*/;
+      string str1 = certificate.Select(item => $"{item.Key} = {item.Value}").AsMultiLine();
+      string str2 = $"Issuer = {point.Certificate.Issuer}{Globals.NL}" +
+                    $"Subject = {point.Certificate.Subject}"/*{Globals.NL}" +
+                    $"Serial = {point.Certificate.GetSerialNumberString()}{Globals.NL}" +
+                    $"PublicKey {point.Certificate.GetPublicKeyString()}"*/;
       string msg = SysTranslations.WrongSSLCertificate.GetLang(uri.Host, str1, str2);
       throw new UnauthorizedAccessException(msg);
     }

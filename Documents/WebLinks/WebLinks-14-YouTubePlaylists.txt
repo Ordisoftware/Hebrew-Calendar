@@ -30,7 +30,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dkv3zE0tAo494c64BBGTwz
 Name = (FR) Les célébrations de la Torah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 
-Name = (FR) Le couple selon le Judaïsme
+Name = (FR) Le couple et les enfants
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 
 Name = (FR) Le temple et les sacrifices

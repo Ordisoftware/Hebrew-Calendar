@@ -103,9 +103,9 @@ namespace CodeProjectCalendar.NET
     /// </summary>
     public CustomEvent()
     {
-      EventColor = Color.FromArgb(255, 80, 80);
+      EventColor = CustomColor.CoralRedLight;
       EventFont = new Font("Arial", 8, FontStyle.Bold);
-      EventTextColor = Color.FromArgb(255, 255, 255);
+      EventTextColor = Color.White;
       Rank = 2;
       EventLengthInHours = 1.0f;
       ReadOnlyEvent = false;

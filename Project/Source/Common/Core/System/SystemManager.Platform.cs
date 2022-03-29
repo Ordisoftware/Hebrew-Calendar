@@ -49,7 +49,7 @@ static partial class SystemManager
               string name = (string)enumerator.Current["Name"];
               newline = enumerator.MoveNext();
               if ( newline )
-                procs.Add($"P{++index}: " + name.Trim());
+                procs.Add($"P{++index}: {name.Trim()}");
               else
                 procs.Add(name.Trim());
             }
@@ -105,7 +105,7 @@ static partial class SystemManager
           var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
           var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
           return result is null
-            ? ".NET " + SysTranslations.UndefinedSlot.GetLang()
+            ? $".NET {SysTranslations.UndefinedSlot.GetLang()}"
             : result.NamedArguments[0].TypedValue.Value.ToString();
         });
         //
@@ -113,8 +113,8 @@ static partial class SystemManager
           ? "64-bits"
           : "32-bits";
         //
-        _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}" + Globals.NL +
-                    $"{dotnet}" + Globals.NL +
+        _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}{Globals.NL}" +
+                    $"{dotnet}{Globals.NL}" +
                     $"CLR {Environment.Version}";
       }
       return _Platform;

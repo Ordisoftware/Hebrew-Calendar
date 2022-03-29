@@ -44,12 +44,11 @@ static partial class Globals
   static public readonly int DaysOfWeekCount = Enums.GetValues<DayOfWeek>().Count;
 
   public const int MilliSecondsInOneMinute = 60000;
+  public const int MilliSecondsInOneSecond = 1000;
   public const int SecondsInOneMinute = 60;
   public const int HoursInOneDay = 24;
 
   static public readonly Size IconSize16 = new(16, 16);
-
-  static public readonly Color VeryLightGray = Color.FromArgb(250, 250, 250);
 
   /// <summary>
   /// Indicates bullet.

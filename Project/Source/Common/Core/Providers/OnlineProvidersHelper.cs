@@ -176,7 +176,7 @@ static class OnlineProvidersHelper
   static private void Menu_MouseUp(object sender, MouseEventArgs e)
   {
     if ( e.Button != MouseButtons.Right ) return;
-    if ( sender is not ToolStripMenuItem menuItem  ) return;
+    if ( sender is not ToolStripMenuItem menuItem ) return;
     if ( menuItem.Owner is ContextMenuStrip contextMenuSingle )
       contextMenuSingle.Close();
     if ( menuItem.OwnerItem is ToolStripDropDownButton button )

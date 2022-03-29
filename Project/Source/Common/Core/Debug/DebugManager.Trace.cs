@@ -141,7 +141,7 @@ static partial class DebugManager
     string folder = Globals.SinkFileFolderPath;
     string code = Globals.SinkFileCode;
     string extension = Globals.TraceFileExtension;
-    var list = Directory.GetFiles(folder, code + "*" + extension)
+    var list = Directory.GetFiles(folder, $"{code}*{extension}")
                         .Where(f => !SystemManager.IsFileLocked(f))
                         .OrderBy(f => new FileInfo(f).CreationTime);
     return sortByDateOnly ? list : list.ThenBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);

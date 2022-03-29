@@ -431,9 +431,9 @@ partial class MainForm
       CalenderNet.PenText = Pens.Black;
       CalenderNet.PenTextReduced = Pens.LightGray;
       CalenderNet.BrushText = Brushes.Black;
-      CalenderNet.BrushBlack = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
-      CalenderNet.BrushGrayMedium = new SolidBrush(Color.FromArgb(170, 170, 170));
-      CalenderNet.BrushGrayLight = new SolidBrush(Color.FromArgb(234, 234, 234));
+      CalenderNet.BrushBlack = new SolidBrush(Color.Black);
+      CalenderNet.BrushGrayMedium = new SolidBrush(Color.DarkGray);
+      CalenderNet.BrushGrayLight = new SolidBrush(CustomColor.PlatinumLight);
       CalenderNet.PenBlack = Pens.Black;
     }
     const string fontname = "Calibri";
