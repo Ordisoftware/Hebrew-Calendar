@@ -41,7 +41,7 @@ partial class MainForm
         if ( NavigationForm.Instance is not null )
           NavigationForm.Instance.Date = date;
       });
-      // Datagridview and binding source
+      // Grid and binding source
       SystemManager.TryCatch(() =>
       {
         int position = LunisolarDaysBindingSource.IndexOf(LunisolarDays.Find(day => day.Date == date));
@@ -53,26 +53,34 @@ partial class MainForm
       });
       // Visual month and text report
       SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
-      SystemManager.TryCatch(() =>
-      {
-        if ( scroll == ViewScrollOverride.NoTextReport ) return;
-        string strDatePattern = $"{date.Day:00}.{date.Month:00}.{date.Year:0000}";
-        string line = CalendarText.Lines[CalendarText.GetLineFromCharIndex(CalendarText.SelectionStart)];
-        bool isCaretVisible = line.IndexOf(strDatePattern, StringComparison.Ordinal) != -1;
-        if ( ( scroll == ViewScrollOverride.ForceTextReport && !isCaretVisible )
-            || ( Settings.CurrentView == ViewMode.Text && !isCaretVisible ) )
-        {
-          int position = CalendarText.Find(strDatePattern);
-          if ( position != -1 )
+      if ( scroll != ViewScrollOverride.NoTextReport )
+        if ( scroll == ViewScrollOverride.ForceTextReport || Settings.CurrentView == ViewMode.Text )
+          SystemManager.TryCatch(() =>
           {
-            CalendarText.SelectionStart = position - ( 6 - 119 );
-            CalendarText.SelectionLength = 0;
-            CalendarText.ScrollToCaret();
-            CalendarText.SelectionStart = position - 6;
-            CalendarText.SelectionLength = 119;
-          }
-        }
-      });
+            var tempSep = SQLiteDate.DaySeparator;
+            var tempOrder = SQLiteDate.DayOrder;
+            try
+            {
+              SQLiteDate.DaySeparator = SQLiteDateDayTextSeparator.Point;
+              SQLiteDate.DayOrder = SQLiteDateDayTextOrder.DayFirst;
+              string strDatePattern = SQLiteDate.ToString(date);
+              int position = CalendarText.Find(strDatePattern);
+              if ( position != -1 )
+              {
+                string line = CalendarText.Lines[CalendarText.GetLineFromCharIndex(CalendarText.SelectionStart)];
+                bool needScroll = line.IndexOf(strDatePattern, StringComparison.Ordinal) == -1;
+                CalendarText.SelectionStart = position - 6;
+                CalendarText.SelectionLength = 119;
+                if ( needScroll )
+                  CalendarText.ScrollToCaret();
+              }
+            }
+            finally
+            {
+              SQLiteDate.DaySeparator = tempSep;
+              SQLiteDate.DayOrder = tempOrder;
+            }
+          });
     }
     finally
     {

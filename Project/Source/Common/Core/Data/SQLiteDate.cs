@@ -17,8 +17,40 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides SQLite date helper.
 /// </summary>
-static class SQLiteDate
+[SuppressMessage("Performance ", "EPS05: Use in-modifier for a readonly struct", Justification = "Analysis error(https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
+static partial class SQLiteDate
 {
+
+  /// <summary>
+  /// Static constructor.
+  /// </summary>
+  static SQLiteDate()
+  {
+    Initialize();
+  }
+
+  /// <summary>
+  /// Initializes the string separators.
+  /// </summary>
+  static private void Initialize()
+  {
+    string sepDay = DaySeparatorText[_DaySeparator];
+    string sepHour = HourSeparatorText[_HourSeparator];
+    string sepDayHour = DayHourSeparatorText[_DayHourSeparator];
+    DayFormatOnlyDayText = _DayOrder switch
+    {
+      SQLiteDateDayTextOrder.DayFirst => $"dd{sepDay}MM{sepDay}yyyy",
+      SQLiteDateDayTextOrder.YearFirst => $"yyyy{sepDay}MM{sepDay}dd",
+      _ => throw new AdvNotImplementedException(_DayOrder)
+    };
+    DayFormatOnlyTimeNoSecondsText = $"HH{sepHour}mm";
+    DayFormatOnlyTimeText = $"{DayFormatOnlyTimeNoSecondsText}{sepHour}ss";
+    DayHourFormatNoSecondsText = $"{DayFormatOnlyDayText}{sepDayHour}{DayFormatOnlyTimeNoSecondsText}";
+    DayHourFormatText = $"{DayHourFormatNoSecondsText}{sepHour}ss";
+    DateToDayFormatText = $"{{0:0000}}{sepDay}{{1:00}}{DaySeparatorText[_DaySeparator]}{{2:00}}";
+    TimeToHourNoSecondsFormatText = $"{{0:00}}{sepHour}{{1:00}}";
+    TimeToHourFormatText = $"{{0:00}}{sepHour}{{1:00}}{sepHour}{{2:00}}";
+  }
 
   /// <summary>
   /// Gets a date from a string like "Year-Month-Day Hour-Min-Sec".
@@ -28,12 +60,12 @@ static class SQLiteDate
   /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
   static public DateTime ToDateTime(string date, bool withTime = false, bool ignoreSeconds = false)
     => date.IsNullOrEmpty()
-       ? DateTime.MinValue
+      ? DateTime.MinValue
        : withTime
          ? ignoreSeconds
-           ? DateTime.ParseExact(date, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)
-           : DateTime.ParseExact(date, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)
-         : DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+           ? DateTime.ParseExact(date, DayHourFormatNoSecondsText, CultureInfo.InvariantCulture)
+           : DateTime.ParseExact(date, DayHourFormatText, CultureInfo.InvariantCulture)
+         : DateTime.ParseExact(date, DayFormatOnlyDayText, CultureInfo.InvariantCulture);
 
   /// <summary>
   /// Gets a date like "Year-Month-Day Hour:Min:Sec".
@@ -44,9 +76,9 @@ static class SQLiteDate
   static public string ToString(DateTime date, bool withTime = false, bool ignoreSeconds = false)
     => withTime
        ? ignoreSeconds
-         ? date.ToString("yyyy-MM-dd HH:mm")
-         : date.ToString("yyyy-MM-dd HH:mm:ss")
-      : date.ToString("yyyy-MM-dd");
+         ? date.ToString(DayHourFormatNoSecondsText)
+         : date.ToString(DayHourFormatText)
+      : date.ToString(DayFormatOnlyDayText);
 
   /// <summary>
   /// Gets a date like "Year-Month-Day".
@@ -55,43 +87,42 @@ static class SQLiteDate
   /// <param name="month">The month.</param>
   /// <param name="day">The day.</param>
   static public string ToString(int year, int month, int day)
-    => $"{year:0000}-{month:00)}-{day:00}";
+    => string.Format(DateToDayFormatText, year, month, day);
 
   /// <summary>
   /// Gets a time like "18:00".
   /// </summary>
   /// <param name="time">The time.</param>
-  /// <returns>An empty string if time is null</returns>
-  [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
-  static public string ToString(TimeSpan? time)
-    => time is not null ? $"{time.Value.Hours:00}:{time.Value.Minutes:00}" : string.Empty;
-
-  /// <summary>
-  /// Gets a time like "18:00".
-  /// </summary>
-  /// <param name="date">The date time.</param>
-  /// <returns>An empty string if time is null</returns>
-  //static string ToStringFromTime(DateTime? date)
-  //{
-  //  return date is not null ? $"{date.Value.Hour:00}:{date.Value.Minute:00}" : string.Empty;
-  //}
+  /// <param name="ignoreSeconds">True to ignore seconds, else add them.</param>
+  static public string ToString(TimeSpan? time, bool ignoreSeconds = true)
+    => time is not null
+       ? ignoreSeconds
+         ? string.Format(TimeToHourNoSecondsFormatText, time.Value.Hours, time.Value.Minutes)
+         : string.Format(TimeToHourFormatText, time.Value.Hours, time.Value.Minutes, time.Value.Seconds)
+       : string.Empty;
 
   /// <summary>
   /// Adds hours and minutes from a time span to a date else return null if time is null.
   /// </summary>
-  [SuppressMessage("Performance", "EPS05:Use in-modifier for a readonly struct", Justification = "Analysis error (https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
   static public DateTime? Add(TimeSpan? time, DateTime date)
-    => time is not null ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes) : null;
+    => time is not null
+       ? date.AddHours(time.Value.Hours).AddMinutes(time.Value.Minutes)
+       : null;
 
   /// <summary>
-  /// CHange the year and month and day of a date.
+  /// Changes the year and month and day of a date with or without keeping the time.
   /// </summary>
   /// <param name="date">The DateTime instance.</param>
   /// <param name="year">The new year.</param>
   /// <param name="month">The new month.</param>
   /// <param name="day">The new day.</param>
-  /// <returns>The new date without time</returns>
-  static public DateTime Change(this DateTime date, int year = -1, int month = -1, int day = -1)
-    => new(year == -1 ? date.Year : year, month == -1 ? date.Month : month, day == -1 ? date.Day : day);
+  /// <param name="keepTime">True to keep time, else 00:00.</param>
+  static public DateTime Change(this DateTime date, int year = -1, int month = -1, int day = -1, bool keepTime = false)
+  {
+    var result = new DateTime(year == -1 ? date.Year : year,
+                              month == -1 ? date.Month : month,
+                              day == -1 ? date.Day : day);
+    return keepTime ? result + date.TimeOfDay : result;
+  }
 
 }

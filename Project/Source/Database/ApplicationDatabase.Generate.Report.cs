@@ -43,6 +43,8 @@ partial class ApplicationDatabase
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)
   {
+    var tempSep = SQLiteDate.DaySeparator;
+    var tempOrder = SQLiteDate.DayOrder;
     var chrono = new Stopwatch();
     chrono.Start();
     try
@@ -60,6 +62,8 @@ partial class ApplicationDatabase
       content.AppendLine(headerSep);
       content.AppendLine(headerTxt);
       if ( LunisolarDays.Count == 0 ) return string.Empty;
+      SQLiteDate.DaySeparator = SQLiteDateDayTextSeparator.Point;
+      SQLiteDate.DayOrder = SQLiteDateDayTextOrder.DayFirst;
       var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       LunisolarDays.Count,
@@ -104,11 +108,8 @@ partial class ApplicationDatabase
           string strMoon = day.MoonriseOccuring == MoonriseOccurring.BeforeSet
             ? strMoonrise + ColumnSepInner + strMoonset
             : strMoonset + ColumnSepInner + strMoonrise;
-          string textDate = AppTranslations.DaysOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
-          textDate = textDate.Replace(".", string.Empty) + " ";
-          textDate += $"{dayDate.Day:00}.";
-          textDate += $"{dayDate.Month:00}.";
-          textDate += dayDate.Year;
+          string textDay = AppTranslations.DaysOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);
+          string textDate = $"{textDay} {SQLiteDate.ToString(dayDate)}";
           string strDesc;
           string strEvent = day.TorahEventText;
           string sSeason = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
@@ -118,9 +119,9 @@ partial class ApplicationDatabase
           int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )
-            throw new Exception("Field if too short." + Globals.NL +
-                                "    Available chars: {lengthAvailable}" + Globals.NL +
-                                "    Missing chars: {length}");
+            throw new Exception(SysTranslations.ColumnTooShort.GetLang(nameof(ReportFieldText.Events),
+                                                                       lengthAvailable,
+                                                                       length));
           strDesc += new string(' ', length) + ColumnSepRight;
           content.Append(ColumnSepLeft);
           content.Append(textDate);
@@ -138,7 +139,8 @@ partial class ApplicationDatabase
         }
         catch ( Exception ex )
         {
-          LastGenerationErrors.Add($"{day.DateAsString}: [{nameof(GenerateReport)}] { ex.Message}");
+          if ( AddGenerateErrorAndCheckIfTooMany(nameof(GenerateReport), day.DateAsString, ex) )
+            break;
         }
       content.AppendLine(headerSep);
       try
@@ -155,6 +157,8 @@ partial class ApplicationDatabase
     {
       chrono.Stop();
       Settings.BenchmarkGenerateTextReport = chrono.ElapsedMilliseconds;
+      SQLiteDate.DaySeparator = tempSep;
+      SQLiteDate.DayOrder = tempOrder;
     }
   }
 

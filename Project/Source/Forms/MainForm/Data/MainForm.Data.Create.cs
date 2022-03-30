@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -96,7 +96,7 @@ partial class MainForm
       string errors = ApplicationDatabase.Instance.LastGenerationErrors.AsMultiLine();
       ApplicationDatabase.Instance.LastGenerationErrors.Clear();
       errors = Settings.GetGPSText() + Globals.NL2 + errors;
-      DebugManager.Trace(LogTraceEvent.Data, errors);
+      DebugManager.Trace(LogTraceEvent.Error, errors);
       using ( var form = new ShowTextForm(Text, errors,
                                           false, true,
                                           MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
