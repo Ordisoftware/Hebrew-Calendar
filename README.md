@@ -376,9 +376,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item.
 - Improve the setting of the number of bookmarks by limiting it to the last index defined.
 - Improve bookmark import to automatically extend the length to match.
+- Improve SQLite dates string formatting.
 - Add current day change when cursor changes line in text report.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
-- Massive code refactorings, optimizations and fixes with more analyzers.
+- Some data generation improvements and fixes.
+- Some UI/UX improvements and fixes.
+- Massive code refactorings, optimizations and fixes using more analyzers.
 - Update Markdig NuGet.
 - Update Aish web links for parashot study.
 

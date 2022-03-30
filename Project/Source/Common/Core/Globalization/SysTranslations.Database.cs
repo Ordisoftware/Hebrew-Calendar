@@ -147,31 +147,42 @@ static partial class SysTranslations
   static public readonly TranslationsDictionary DBDropTableError = new()
   {
     [Language.EN] = $"Error on drop table:{Globals.NL2}{{0}}",
-    [Language.FR] = $"Erreur à la suppression de la table :{Globals.NL2}{{0}}",
+    [Language.FR] = $"Erreur à la suppression de la table :{Globals.NL2}{{0}}"
   };
 
   static public readonly TranslationsDictionary DBRenameTableError = new()
   {
     [Language.EN] = $"Error on rename table:{Globals.NL2}{{0}} -> {{1}}",
-    [Language.FR] = $"Erreur au renommage de la table :{Globals.NL2}{{0}} -> {{1}}",
+    [Language.FR] = $"Erreur au renommage de la table :{Globals.NL2}{{0}} -> {{1}}"
   };
 
   static public readonly TranslationsDictionary DBCreateTableError = new()
   {
     [Language.EN] = $"Error on create table: {{0}}{Globals.NL2}{{1}}",
-    [Language.FR] = $"Erreur à la création de la table : {{0}}{Globals.NL2}{{1}}",
+    [Language.FR] = $"Erreur à la création de la table : {{0}}{Globals.NL2}{{1}}"
   };
 
   static public readonly TranslationsDictionary DBCreateIndexError = new()
   {
     [Language.EN] = $"Error on create index : {{0}}{Globals.NL2}{{1}}",
-    [Language.FR] = $"Erreur à la création de l'index : {{0}}{Globals.NL2}{{1}}",
+    [Language.FR] = $"Erreur à la création de l'index : {{0}}{Globals.NL2}{{1}}"
   };
 
   static public readonly TranslationsDictionary DBCreateColumnError = new()
   {
     [Language.EN] = $"Error on create column:{Globals.NL2}{{0}}",
-    [Language.FR] = $"Erreur à la création de la colonne :{Globals.NL2}{{0}}",
+    [Language.FR] = $"Erreur à la création de la colonne :{Globals.NL2}{{0}}"
+  };
+
+  static public readonly TranslationsDictionary ColumnTooShort = new()
+  {
+    [Language.EN] = "Column '{0}' is too short." + Globals.NL2 +
+                    "    Available chars: {1}" + Globals.NL +
+                    "    Missing chars: {2}",
+
+    [Language.FR] = "La colonne '{0}' est trop petite." + Globals.NL2 +
+                    "    Available chars: {1}" + Globals.NL +
+                    "    Missing chars: {2}",
   };
 
 }
