@@ -14,7 +14,7 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class BooksNames
+static partial class OnlineBooks
 {
 
   static public readonly NullSafeDictionary<Language, NullSafeOfStringDictionary<TanakBook>> Common = new()

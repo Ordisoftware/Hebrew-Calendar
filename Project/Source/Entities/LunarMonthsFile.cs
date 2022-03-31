@@ -40,7 +40,7 @@ class LunarMonthsFile : DataFile
       var lines = File.ReadAllLines(filePath);
       for ( int index = 0; index < lines.Length; index++ )
       {
-        if ( index >= HebrewMonths.Transcriptions.Length )
+        if ( index >= HebrewMonths.Transcriptions.GetLang().Length )
           break;
         string line = lines[index];
         if ( line.Trim().Length == 0 )

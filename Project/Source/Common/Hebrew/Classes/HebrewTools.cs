@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 /// <summary>
 /// Provides Hebrew tools.
 /// </summary>
+[SuppressMessage("Roslynator", "RCS1021:Convert lambda expression body to expression body.", Justification = "Opinion")]
 static class HebrewTools
 {
 
@@ -38,51 +39,58 @@ static class HebrewTools
     return (word, isUnicode);
   }
 
+  static private void ProcessHebrewSoftware(string appcode, Func<string> getExePath, Action<string> process)
+  {
+    string path = getExePath?.Invoke() ?? throw new SystemException($"Delegate not assigned: {nameof(getExePath)}");
+    if ( File.Exists(path) )
+      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () => process(path));
+    else
+    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
+      SystemManager.RunShell($"{Globals.AuthorProjectsURL}/{appcode}");
+  }
+
   /// <summary>
   /// Starts Hebrew Words.
   /// </summary>
-  static public void OpenHebrewWordsGoToVerse(string reference, string path)
+  static public void OpenHebrewWordsGoToVerse(string reference)
   {
-    if ( File.Exists(path) )
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    {
       SystemManager.RunShell(path, "--verse " + reference);
-    else
-    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+    });
   }
 
   /// <summary>
   /// Starts Hebrew Words.
   /// </summary>
-  static public void OpenHebrewWordsSearchWord(string word, string path)
+  static public void OpenHebrewWordsSearchWord(string word)
   {
-    if ( File.Exists(path) )
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    {
       SystemManager.RunShell(path, "--word " + word);
-    else
-    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+    });
   }
 
   /// <summary>
   /// Starts Hebrew Words.
   /// </summary>
-  static public void OpenHebrewWordsSearchTranslated(string word, string path)
+  static public void OpenHebrewWordsSearchTranslated(string word)
   {
-    if ( File.Exists(path) )
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    {
       SystemManager.RunShell(path, "--translated " + word);
-    else
-    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
-      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-words");
+    });
   }
 
   /// <summary>
   /// Starts Hebrew Letters.
   /// </summary>
   /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
-  /// <param name="path">Path of the application.</param>
   [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
-  static public void OpenHebrewLetters(string word, string path)
+  static public void OpenHebrewLetters(string word)
   {
-    if ( File.Exists(path) )
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewLetters, HebrewGlobals.GetHebrewLettersExePath, path =>
+    {
       if ( word.IsNullOrEmpty() )
         SystemManager.RunShell(path);
       else
@@ -97,9 +105,7 @@ static class HebrewTools
           Thread.Sleep(250);
         }
       }
-    else
-    if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewLetters.GetLang()) )
-      SystemManager.RunShell(Globals.AuthorProjectsURL + "/hebrew-letters");
+    });
   }
 
   /// <summary>
@@ -107,9 +113,8 @@ static class HebrewTools
   /// </summary>
   /// <param name="link">Web provider link.</param>
   /// <param name="word">The Unicode or Hebrew font chars of the word.</param>
-  /// <param name="customSearch">Custom web search link.</param>
   [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
-  static public void OpenWordProvider(string link, string word, string customSearch)
+  static public void OpenWordProvider(string link, string word)
   {
     if ( word.Length > 1 ) word = HebrewAlphabet.SetFinal(word, true);
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
@@ -120,7 +125,9 @@ static class HebrewTools
         items = items.Select(w => HebrewAlphabet.ToUnicode(HebrewAlphabet.SetFinal(w, true))).ToArray();
       foreach ( string item in items )
       {
-        string url = link.Replace("%CUSTOM%", customSearch).Replace("%WORD%", item).Replace("%FIRSTLETTER%", item[0].ToString());
+        string url = link.Replace("%CUSTOM%", HebrewGlobals.GetCustomWebSearchPattern?.Invoke() ?? string.Empty)
+                         .Replace("%WORD%", item)
+                         .Replace("%FIRSTLETTER%", item[0].ToString());
         SystemManager.RunShell(url, item);
         Thread.Sleep(250);
       }
@@ -159,33 +166,36 @@ static class HebrewTools
   [SuppressMessage("Style", "GCop414:Remove .ToString() as it's unnecessary.", Justification = "Opinion")]
   static public void OpenBibleProvider(string url, int book, int chapter, int verse)
   {
-    string chapterString = chapter.ToString();
-    if ( url.Contains("%BOOKMM%") && chapter >= 100 )
+    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
     {
-      int dizaine = ( chapter - 100 ) / 10;
-      char centaine = 'a';
-      centaine += (char)dizaine;
-      chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
-      url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
-    }
-    url = url.Replace("%BOOKSEFARIA%", BooksNames.StudyBible[(TanakBook)book]
-                                                 .Replace("1", "I")
-                                                 .Replace("2", "II")
-                                                 .Replace(" ", "_"))
-             .Replace("%BOOKSB%", BooksNames.StudyBible[(TanakBook)book])
-             .Replace("%BOOKBIBLEHUB%", BooksNames.BibleHub[(TanakBook)book])
-             .Replace("%BOOKCHABAD%", ( BooksNames.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
-             .Replace("%BOOKMM%", BooksNames.MechonMamre[(TanakBook)book])
-             .Replace("%BOOKTORAHBOX%", BooksNames.TorahBox[(TanakBook)book])
-             .Replace("%BOOKDJEP%", BooksNames.Djep[(TanakBook)book])
-             .Replace("%BOOKLE%", BooksNames.LEvangile[(TanakBook)book])
-             .Replace("%BOOKNUM%", book.ToString())
-             .Replace("%CHAPTERNUM%", chapterString)
-             .Replace("%VERSENUM%", verse.ToString())
-             .Replace("%BOOKNUM#2%", book.ToString("00"))
-             .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
-             .Replace("%VERSENUM#2%", verse.ToString("00"));
-    SystemManager.RunShell(url);
+      string chapterString = chapter.ToString();
+      if ( url.Contains("%BOOKMM%") && chapter >= 100 )
+      {
+        int dizaine = ( chapter - 100 ) / 10;
+        char centaine = 'a';
+        centaine += (char)dizaine;
+        chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
+        url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
+      }
+      url = url.Replace("%BOOKSEFARIA%", OnlineBooks.StudyBible[(TanakBook)book]
+                                                   .Replace("1", "I")
+                                                   .Replace("2", "II")
+                                                   .Replace(" ", "_"))
+               .Replace("%BOOKSB%", OnlineBooks.StudyBible[(TanakBook)book])
+               .Replace("%BOOKBIBLEHUB%", OnlineBooks.BibleHub[(TanakBook)book])
+               .Replace("%BOOKCHABAD%", ( OnlineBooks.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
+               .Replace("%BOOKMM%", OnlineBooks.MechonMamre[(TanakBook)book])
+               .Replace("%BOOKTORAHBOX%", OnlineBooks.TorahBox[(TanakBook)book])
+               .Replace("%BOOKDJEP%", OnlineBooks.Djep[(TanakBook)book])
+               .Replace("%BOOKLE%", OnlineBooks.LEvangile[(TanakBook)book])
+               .Replace("%BOOKNUM%", book.ToString())
+               .Replace("%CHAPTERNUM%", chapterString)
+               .Replace("%VERSENUM%", verse.ToString())
+               .Replace("%BOOKNUM#2%", book.ToString("00"))
+               .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
+               .Replace("%VERSENUM#2%", verse.ToString("00"));
+      SystemManager.RunShell(url);
+    });
   }
 
   /// <summary>
@@ -207,20 +217,23 @@ static class HebrewTools
     //
     void open(Parashah item)
     {
-      string link = url.Replace("%WIKIPEDIA-EN%", OnlineParashot.WikipediaEN[item.Book][item.Number - 1])
-                       .Replace("%WIKIPEDIA-FR%", OnlineParashot.WikipediaFR[item.Book][item.Number - 1])
-                       .Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
-                       .Replace("%TORAHORG%", OnlineParashot.TorahOrg[item.Book][item.Number - 1])
-                       .Replace("%TORAHJEWS%", OnlineParashot.TorahJews[item.Book][item.Number - 1])
-                       .Replace("%YESHIVACO%", OnlineParashot.YeshivaCo[item.Book][item.Number - 1])
-                       .Replace("%THEYESHIVA%", OnlineParashot.TheYeshivaNet[item.Book][item.Number - 1])
-                       .Replace("%MYJEWISHLEARNING%", OnlineParashot.MyJewishLearning[item.Book][item.Number - 1])
-                       .Replace("%CHABAD-EN%", OnlineParashot.ChabadEN[item.Book][item.Number - 1])
-                       .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
-                       .Replace("%AISH-EN%", OnlineParashot.AishEN[item.Book][item.Number - 1])
-                       .Replace("%AISH-FR%", OnlineParashot.AishFR[item.Book][item.Number - 1])
-                       .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1]);
-      SystemManager.OpenWebLink(link);
+      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+      {
+        string link = url.Replace("%WIKIPEDIA-EN%", OnlineParashot.WikipediaEN[item.Book][item.Number - 1])
+                         .Replace("%WIKIPEDIA-FR%", OnlineParashot.WikipediaFR[item.Book][item.Number - 1])
+                         .Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
+                         .Replace("%TORAHORG%", OnlineParashot.TorahOrg[item.Book][item.Number - 1])
+                         .Replace("%TORAHJEWS%", OnlineParashot.TorahJews[item.Book][item.Number - 1])
+                         .Replace("%YESHIVACO%", OnlineParashot.YeshivaCo[item.Book][item.Number - 1])
+                         .Replace("%THEYESHIVA%", OnlineParashot.TheYeshivaNet[item.Book][item.Number - 1])
+                         .Replace("%MYJEWISHLEARNING%", OnlineParashot.MyJewishLearning[item.Book][item.Number - 1])
+                         .Replace("%CHABAD-EN%", OnlineParashot.ChabadEN[item.Book][item.Number - 1])
+                         .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
+                         .Replace("%AISH-EN%", OnlineParashot.AishEN[item.Book][item.Number - 1])
+                         .Replace("%AISH-FR%", OnlineParashot.AishFR[item.Book][item.Number - 1])
+                         .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1]);
+        SystemManager.OpenWebLink(link);
+      });
     }
   }
 
@@ -229,23 +242,25 @@ static class HebrewTools
   /// </summary>
   static public void OpenCelebrationProvider(string url, TorahCelebration celebration)
   {
-    string link = url.Replace("%WIKIPEDIA-EN%", OnlineCelebration.WikipediaEN[celebration])
-                     .Replace("%WIKIPEDIA-FR%", OnlineCelebration.WikipediaFR[celebration])
-                     .Replace("%TORAHBOX%", OnlineCelebration.TorahBox[celebration])
-                     .Replace("%CHIOURIM%", OnlineCelebration.Chiourim[celebration])
-                     .Replace("%TORAHORG%", OnlineCelebration.TorahOrg[celebration])
-                     .Replace("%TORAHJEWS%", OnlineCelebration.TrueTorahJews[celebration])
-                     .Replace("%YESHIVACO%", OnlineCelebration.YeshivaCo[celebration])
-                     .Replace("%THEYESHIVA%", OnlineCelebration.TheYeshiva[celebration])
-                     .Replace("%MYJEWISHLEARNING%", OnlineCelebration.MyJewishLearning[celebration])
-                     .Replace("%LOUBAVITCH%", OnlineCelebration.Loubavitch[celebration])
-                     .Replace("%CHABAD-EN%", OnlineCelebration.ChabadEN[celebration])
-                     .Replace("%CHABAD-FR%", OnlineCelebration.ChabadFR[celebration])
-                     .Replace("%AISH-EN%", OnlineCelebration.AishEN[celebration])
-                     .Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
-                     .Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration]);
-    SystemManager.OpenWebLink(link);
+    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    {
+      string link = url.Replace("%WIKIPEDIA-EN%", OnlineCelebration.WikipediaEN[celebration])
+                       .Replace("%WIKIPEDIA-FR%", OnlineCelebration.WikipediaFR[celebration])
+                       .Replace("%TORAHBOX%", OnlineCelebration.TorahBox[celebration])
+                       .Replace("%CHIOURIM%", OnlineCelebration.Chiourim[celebration])
+                       .Replace("%TORAHORG%", OnlineCelebration.TorahOrg[celebration])
+                       .Replace("%TORAHJEWS%", OnlineCelebration.TrueTorahJews[celebration])
+                       .Replace("%YESHIVACO%", OnlineCelebration.YeshivaCo[celebration])
+                       .Replace("%THEYESHIVA%", OnlineCelebration.TheYeshiva[celebration])
+                       .Replace("%MYJEWISHLEARNING%", OnlineCelebration.MyJewishLearning[celebration])
+                       .Replace("%LOUBAVITCH%", OnlineCelebration.Loubavitch[celebration])
+                       .Replace("%CHABAD-EN%", OnlineCelebration.ChabadEN[celebration])
+                       .Replace("%CHABAD-FR%", OnlineCelebration.ChabadFR[celebration])
+                       .Replace("%AISH-EN%", OnlineCelebration.AishEN[celebration])
+                       .Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
+                       .Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration]);
+      SystemManager.OpenWebLink(link);
+    });
   }
-
 
 }

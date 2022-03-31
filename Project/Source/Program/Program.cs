@@ -52,6 +52,10 @@ static partial class Program
       Globals.MainForm = MainForm.Instance;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      HebrewGlobals.GetHebrewCalendarExePath = () => Globals.ApplicationExeFullPath;
+      HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
+      HebrewGlobals.GetHebrewWordsExePath = () => Settings.HebrewWordsExe;
+      HebrewGlobals.GetCustomWebSearchPattern = () => Settings.CustomWebSearch;
       Globals.ChronoStartingApp.Stop();
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();

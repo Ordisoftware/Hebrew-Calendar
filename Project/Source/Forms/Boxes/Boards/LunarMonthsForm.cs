@@ -47,7 +47,7 @@ partial class LunarMonthsForm : Form
       string word = HebrewMonths.Unicode[(int)LastControl.Tag]
                                 .Replace(" א", string.Empty)
                                 .Replace(" ב", string.Empty);
-      HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word), Settings.CustomWebSearch);
+      HebrewTools.OpenWordProvider((string)menuitem.Tag, HebrewAlphabet.ToHebrewFont(word));
     });
     this.InitDropDowns();
   }
@@ -116,7 +116,7 @@ partial class LunarMonthsForm : Form
 
   private void ActionCopyName_Click(object sender, EventArgs e)
   {
-    ActionCopyMonthName(sender, index => HebrewMonths.Transcriptions[index]);
+    ActionCopyMonthName(sender, index => HebrewMonths.Transcriptions.GetLang()[index]);
   }
 
   private void ActionCopyHebrewChars_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ partial class LunarMonthsForm : Form
     var menuitem = (ToolStripMenuItem)sender;
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
     int index = (int)control.Tag;
-    string name = HebrewMonths.Transcriptions[index];
+    string name = HebrewMonths.Transcriptions.GetLang()[index];
     string meaning = Program.LunarMonthsMeanings[Languages.Current][index];
     string lettriq = Program.LunarMonthsLettriqs[Languages.Current][index];
     Clipboard.SetText($"{process(index)} ({name}) : {meaning} ({lettriq})");
@@ -160,8 +160,7 @@ partial class LunarMonthsForm : Form
     var menuitem = (ToolStripMenuItem)sender;
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
     int index = (int)control.Tag;
-    HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index],
-                                  Settings.HebrewLettersExe);
+    HebrewTools.OpenHebrewLetters(HebrewMonths.Unicode[index]);
   }
 
   private void ActionOpenHebrewWordsSearch_Click(object sender, EventArgs e)
@@ -169,8 +168,7 @@ partial class LunarMonthsForm : Form
     var menuitem = (ToolStripMenuItem)sender;
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
     int index = (int)control.Tag;
-    HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]),
-                                          Settings.HebrewWordsExe);
+    HebrewTools.OpenHebrewWordsSearchWord(HebrewAlphabet.ToHebrewFont(HebrewMonths.Unicode[index]));
   }
 
   private void ActionSearchWikipedia_Click(object sender, EventArgs e)

@@ -587,10 +587,9 @@ partial class MainForm : Form
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionOpenHebrewWordsVerse_Click_1(object sender, EventArgs e)
+  private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin,
-                                         Settings.HebrewWordsExe);
+    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   /// <summary>
@@ -600,7 +599,8 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void CelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    CelebrationVersesBoardForm.Run();
+    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize));
   }
 
   /// <summary>
@@ -1152,7 +1152,11 @@ partial class MainForm : Form
 
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    CelebrationVersesBoardForm.Run(ContextMenuDayCurrentEvent.Date);
+    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize));
+    var day = ApplicationDatabase.Instance.GetCurrentOrNextCelebration(ContextMenuDayCurrentEvent.Date);
+    if ( day is not null )
+      Program.SelectCurrentCelebrationInVersesForm(day.TorahEvent);
   }
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
@@ -1170,7 +1174,7 @@ partial class MainForm : Form
   {
     if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
-        HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin, Settings.HebrewWordsExe);
+        HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin);
   }
 
   private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)

@@ -1051,7 +1051,7 @@
       // 
       resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
-      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click_1);
+      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
       // ActionShowCelebrationVersesBoard
       // 

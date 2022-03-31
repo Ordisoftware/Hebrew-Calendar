@@ -69,7 +69,7 @@ partial class SearchLunarMonthForm : Form
       string key = row.LunarMonth.ToString();
       string date = row.Date.ToLongDateString();
       var item = ListItems.Items.Add(key);
-      item.SubItems.Add(HebrewMonths.Transcriptions[row.LunarMonth]);
+      item.SubItems.Add(HebrewMonths.Transcriptions.GetLang()[row.LunarMonth]);
       item.SubItems.Add(date.Titleize());
       item.Tag = row;
       if ( selectedKey is not null && key == selectedKey && itemToSelect is null )

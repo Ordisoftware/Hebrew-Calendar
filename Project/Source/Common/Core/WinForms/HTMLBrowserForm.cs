@@ -42,15 +42,15 @@ partial class HTMLBrowserForm : Form
     FilePathTemplate = filePathTemplate;
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
-    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
-    {
-      Location = (Point)Globals.Settings[locationPropertyName];
-      ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-    }
   }
 
   private void HTMLBrowserForm_Load(object sender, EventArgs e)
   {
+    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
+    {
+      Location = (Point)Globals.Settings[LocationPropertyName];
+      ClientSize = (Size)Globals.Settings[ClientSizePropertyName];
+    }
     this.CheckLocationOrCenterToMainFormElseScreen();
   }
 

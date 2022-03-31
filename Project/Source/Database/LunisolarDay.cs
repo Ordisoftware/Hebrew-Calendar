@@ -62,7 +62,7 @@ public partial class LunisolarDay
     => TorahEvent != TorahCelebrationDay.None;
 
   public string DayAndMonthText
-    => $"{LunarDay} {HebrewMonths.Transcriptions[LunarMonth]}";
+    => $"{LunarDay} {HebrewMonths.Transcriptions.GetLang()[LunarMonth]}";
 
   public string DayAndMonthWithYearText
     => $"{DayAndMonthText} {Date.Year}";
@@ -70,7 +70,7 @@ public partial class LunisolarDay
   public string DayAndMonthFormattedText
     => Settings.MoonDayTextFormat
                .ToUpper()
-               .Replace("%MONTHNAME%", HebrewMonths.Transcriptions[LunarMonth])
+               .Replace("%MONTHNAME%", HebrewMonths.Transcriptions.GetLang()[LunarMonth])
                .Replace("%MONTHNUM%", LunarMonth.ToString())
                .Replace("%DAYNUM%", LunarDay.ToString());
 

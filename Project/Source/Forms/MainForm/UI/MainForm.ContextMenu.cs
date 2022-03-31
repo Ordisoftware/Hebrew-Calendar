@@ -87,7 +87,7 @@ public partial class MainForm
     // Celebration
     if ( torahevent != TorahCelebration.None )
     {
-      string nameCelebration = AppTranslations.TorahCelebrations.GetLang(torahevent);
+      string nameCelebration = HebrewTranslations.TorahCelebrations.GetLang(torahevent);
       ContextMenuDayDate.Text += $" - {nameCelebration}";
       ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(nameCelebration);
     }
@@ -102,7 +102,7 @@ public partial class MainForm
           toraheventNext = TorahCelebrationSettings.Convert(rowNextCelebration.TorahEvent);
         if ( toraheventNext != TorahCelebration.None )
         {
-          string nameCelebrationNext = AppTranslations.TorahCelebrations.GetLang(toraheventNext);
+          string nameCelebrationNext = HebrewTranslations.TorahCelebrations.GetLang(toraheventNext);
           ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(nameCelebrationNext);
         }
       }
