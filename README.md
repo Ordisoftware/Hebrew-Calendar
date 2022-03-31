@@ -384,6 +384,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Some fixes.
 - Some optimizations.
 - Massive refactorings with new code analyzers.
+- Improve setup to select hebrew font version.
 - Update Aish web links for parashot study.
 
 #### 2022.03.20 - Version 9.27
