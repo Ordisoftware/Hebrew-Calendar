@@ -219,8 +219,7 @@ partial class LettersControl : UserControl
     {
       if ( _Bold == value ) return;
       _Bold = value;
-      TextBox.Font?.Dispose();
-      TextBox.Font = new Font(TextBox.Font.Name, TextBox.Font.Size, _Bold ? FontStyle.Bold : FontStyle.Regular);
+      TextBox.ReplaceFont(new Font(TextBox.Font, _Bold ? FontStyle.Bold : FontStyle.Regular));
       Redraw();
     }
   }
@@ -292,8 +291,7 @@ partial class LettersControl : UserControl
   {
     if ( !First ) return;
     First = false;
-    TextBox.Font?.Dispose();
-    TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
+    TextBox.ReplaceFont(new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style));
     Redraw();
   }
 

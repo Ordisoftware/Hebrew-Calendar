@@ -45,16 +45,16 @@ partial class DataFileEditorForm : Form
       DisplayManager.ShowError(SysTranslations.FileNotFound.GetLang(file.FilePath));
       return;
     }
+    var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
     var textbox = new TextBoxEx
     {
-      Font = new Font("Consolas", 9.75F),
       Multiline = true,
       WordWrap = false,
       ScrollBars = ScrollBars.Both,
       Dock = DockStyle.Fill,
       Text = File.ReadAllText(file.FilePath)
     };
-    var tabpage = new TabPage(Path.GetFileName(file.FilePath).Replace(".txt", string.Empty)) { Tag = file };
+    textbox.ReplaceFont(new Font("Consolas", 9.75f));
     tabpage.Controls.Add(textbox);
     tabcontrol.TabPages.Add(tabpage);
   }
