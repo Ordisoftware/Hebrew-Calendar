@@ -75,5 +75,13 @@ URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
 
 -
 
+Name = (EN) Rabbi Itshak Ginsburgh
+URL = https://www.youtube.com/c/innerorg
+
+Name = (IW) Rabbi Itshak Ginsburgh students
+URL = https://www.youtube.com/c/GalEinaiHeb
+
+-
+
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/user/Adamantha

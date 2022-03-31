@@ -109,7 +109,7 @@ partial class NewMoonsBoardForm : Form
 
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
-    DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+    DataGridView.ReplaceFont(new Font("Microsoft Sans Serif", (float)EditFontSize.Value));
     if ( DataGridView.Rows.Count > 0 )
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }

@@ -95,8 +95,8 @@ partial class TraceForm : Form
 
   private void TrackBarFontSize_ValueChanged(object sender, EventArgs e)
   {
-    TextBoxCurrent.Font = new Font("Courier New", TrackBarFontSize.Value);
-    TextBoxPrevious.Font = new Font("Courier New", TrackBarFontSize.Value);
+    TextBoxCurrent.ReplaceFont(new Font("Courier New", TrackBarFontSize.Value));
+    TextBoxPrevious.ReplaceFont(new Font("Courier New", TrackBarFontSize.Value));
   }
 
   private void ActionOpenLogsFolder_Click(object sender, EventArgs e)

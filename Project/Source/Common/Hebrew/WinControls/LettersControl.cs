@@ -209,6 +209,23 @@ partial class LettersControl : UserControl
   private int _MarginX = DefaultMarginSize;
 
   /// <summary>
+  /// Indicates the hebrew chars are bold or regular.
+  /// </summary>
+  [DefaultValue(true)]
+  public bool HebrewCharsInBold
+  {
+    get => _Bold;
+    set
+    {
+      if ( _Bold == value ) return;
+      _Bold = value;
+      TextBox.ReplaceFont(new Font(TextBox.Font, _Bold ? FontStyle.Bold : FontStyle.Regular));
+      Redraw();
+    }
+  }
+  private bool _Bold = true;
+
+  /// <summary>
   /// Indicates the Y margin.
   /// </summary>
   [DefaultValue(DefaultMarginSize)]
@@ -274,8 +291,7 @@ partial class LettersControl : UserControl
   {
     if ( !First ) return;
     First = false;
-    TextBox.Font?.Dispose();
-    TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
+    TextBox.ReplaceFont(new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style));
     Redraw();
   }
 

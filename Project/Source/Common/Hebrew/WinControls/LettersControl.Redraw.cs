@@ -37,14 +37,13 @@ partial class LettersControl
     {
       // TODO calculate buttons and labels size from fonts size at startup and future setting changed
       PanelLetters.Controls.Clear();
-      TextBox.Font?.Dispose();
-      TextBox.Font = new Font(TextBox.Font.FontFamily, _FontSizeInput, TextBox.Font.Style);
+      TextBox.ReplaceFont(new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style));
       int countLetters = HebrewAlphabet.Codes.Length;
       int countControls = countLetters;
       if ( _ShowValues ) countControls += countLetters;
       if ( _ShowKeys ) countControls += countLetters;
       var controls = new Control[countControls];
-      var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
+      var fontLetter = new Font("Hebrew", _FontSizeLetters, _Bold ? FontStyle.Bold : FontStyle.Regular);
       using var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
       using var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
       const int lettersPerLine = 11;
