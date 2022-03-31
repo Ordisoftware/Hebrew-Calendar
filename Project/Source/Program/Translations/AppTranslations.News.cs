@@ -60,7 +60,7 @@ static partial class AppTranslations
                       "• Quelques correctifs." + Globals.NL +
                       "• Quelques optimisations." + Globals.NL +
                       "• Refactorisations massive avec de nouveaux analyseurs de code." + Globals.NL +
-                      "• Mettre à jour des liens Web Aish pour l'étude parashot."
+                      "• Mise à jour des liens Web Aish pour l'étude parashot."
     },
 
     ["9.27"] = new TranslationsDictionary
