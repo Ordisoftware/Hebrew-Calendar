@@ -168,6 +168,16 @@ static partial class StringHelper
   /// A string.
   /// </returns>
   /// <param name="list">The enumeration to act on.</param>
+  static public string AsMultiSpace(this IEnumerable<object> list)
+    => string.Join(" ", list);
+
+  /// <summary>
+  /// Creates a multi-spaced string from a string enumeration.
+  /// </summary>
+  /// <returns>
+  /// A string.
+  /// </returns>
+  /// <param name="list">The enumeration to act on.</param>
   static public string AsMultiSpace(this IEnumerable<string> list)
     => string.Join(" ", list);
 
