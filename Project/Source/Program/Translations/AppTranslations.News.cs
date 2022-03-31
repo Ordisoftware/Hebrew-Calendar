@@ -36,12 +36,12 @@ static partial class AppTranslations
 
     ["9.28"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Improve lunar month names by adding English transcription in addition to French." + Globals.NL +
+      [Language.EN] = "• Add current day change when cursor changes line in text report." + Globals.NL +
+                      "• Improve lunar month names by adding English transcription in addition to French." + Globals.NL +
                       "• Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item." + Globals.NL +
                       "• Improve the setting of the number of bookmarks by limiting it to the last index defined." + Globals.NL +
                       "• Improve bookmark import to automatically extend the length to match." + Globals.NL +
                       "• Fix copy weekly parashah to clipboard to remove empty lines at the end." + Globals.NL +
-                      "• Add current day change when cursor changes line in text report." + Globals.NL +
                       "• Some data generation improvements and fixes." + Globals.NL +
                       "• Some UI/UX improvements and fixes." + Globals.NL +
                       "• Some fixes." + Globals.NL +
@@ -50,12 +50,12 @@ static partial class AppTranslations
                       "• Improve setup to select hebrew font version." + Globals.NL +
                       "• Update Aish web links for parashot study.",
 
-      [Language.FR] = "• Amélioration des noms des mois lunaires en ajoutant la transcription en anglais en plus du français." + Globals.NL +
+      [Language.FR] = "• Ajout du changement de jour actuel lorsque le curseur change de ligne dans le rapport texte." + Globals.NL +
+                      "• Amélioration des noms des mois lunaires en ajoutant la transcription en anglais en plus du français." + Globals.NL +
                       "• Amélioration du menu contextuel de la vue mensuelle en désactivant les signets vides dans l'élément de menu Aller." + Globals.NL +
                       "• Amélioration du paramétrage du nombre de signets en le limitant au dernier index défini." + Globals.NL +
                       "• Amélioration de l'importation des signets pour étendre automatiquement la longueur pour correspondre." + Globals.NL +
                       "• Correction de la copie de la parashah hebdomadaire dans le presse-papiers pour supprimer les lignes vides à la fin." + Globals.NL +
-                      "• Ajout du changement de jour actuel lorsque le curseur change de ligne dans le rapport texte." + Globals.NL +
                       "• Quelques améliorations et corrections de la génération des données." + Globals.NL +
                       "• Quelques améliorations et corrections de l'UI/UX." + Globals.NL +
                       "• Quelques correctifs." + Globals.NL +

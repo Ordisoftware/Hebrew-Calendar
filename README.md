@@ -373,12 +373,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2022.04.05 - Version 9.28
 
+- Add current day change when cursor changes line in text report.
 - Improve lunar month names by adding English transcription in addition to French.
 - Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item.
 - Improve the setting of the number of bookmarks by limiting it to the last index defined.
 - Improve bookmark import to automatically extend the length to match.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
-- Add current day change when cursor changes line in text report.
 - Some data generation improvements and fixes.
 - Some UI/UX improvements and fixes.
 - Some fixes.
