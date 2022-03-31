@@ -377,7 +377,11 @@ partial class ReminderForm : Form
       if ( Celebration == TorahCelebrationDay.Shabat )
         ParashotForm.Run();
       else
-        CelebrationVersesBoardForm.Run(Celebration);
+      {
+        CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+                                       nameof(Settings.CelebrationVersesBoardFormClientSize));
+        Program.SelectCurrentCelebrationInVersesForm(Celebration);
+      }
     }
     else
     if ( e.Button == MouseButtons.Left )
@@ -397,8 +401,7 @@ partial class ReminderForm : Form
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin,
-                                         Settings.HebrewWordsExe);
+    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   private void ActionLockout_Click(object sender, EventArgs e)

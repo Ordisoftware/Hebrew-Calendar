@@ -1,4 +1,4 @@
-﻿namespace Ordisoftware.Hebrew.Calendar
+﻿namespace Ordisoftware.Hebrew
 {
   partial class CelebrationVersesBoardForm
   {
@@ -170,17 +170,14 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationVersesBoardFormClientSize;
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelBottom);
-      this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationVersesBoardFormLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "CelebrationVersesBoardFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.CelebrationVersesBoardFormLocation;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "CelebrationVersesBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+      this.Deactivate += new System.EventHandler(this.CelebrationVersesBoardForm_Deactivate);
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationVersesBoardForm_FormClosed);
       this.Load += new System.EventHandler(this.CelebrationVersesBoardForm_Load);
       this.PanelBottom.ResumeLayout(false);

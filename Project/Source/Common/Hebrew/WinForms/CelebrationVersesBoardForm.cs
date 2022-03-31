@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2022 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// Copyright 2012-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -12,44 +12,40 @@
 /// </license>
 /// <created> 2021-09 </created>
 /// <edited> 2022-03 </edited>
-namespace Ordisoftware.Hebrew.Calendar;
+namespace Ordisoftware.Hebrew;
 
 public partial class CelebrationVersesBoardForm : Form
 {
 
   private const float FontFactor = 1.5f;
 
-  static private readonly Properties.Settings Settings = Program.Settings;
-
   static public CelebrationVersesBoardForm Instance { get; private set; }
 
-  static public void Run(DateTime date)
-  {
-    Run(ApplicationDatabase.Instance.GetCurrentOrNextCelebration(date)?.TorahEvent ?? TorahCelebrationDay.None);
-  }
-
-  static public void Run(TorahCelebrationDay celebration = TorahCelebrationDay.None)
+  static public void Run(string locationPropertyName, string clientSizePropertyName)
   {
     if ( Instance is null )
-      Instance = new CelebrationVersesBoardForm();
+      Instance = new CelebrationVersesBoardForm(locationPropertyName, clientSizePropertyName);
     else
     if ( Instance.Visible )
     {
       Instance.Popup();
-      Instance.FindCurrentCelebration(celebration);
       return;
     }
     Instance.Show();
     Instance.ForceBringToFront();
-    Instance.FindCurrentCelebration(celebration);
   }
 
-  public CelebrationVersesBoardForm()
+  private readonly string LocationPropertyName;
+  private readonly string ClientSizePropertyName;
+
+  public CelebrationVersesBoardForm(string locationPropertyName, string clientSizePropertyName)
   {
     InitializeComponent();
     InitializeMenu();
-    Icon = MainForm.Instance.Icon;
+    Icon = Globals.MainForm.Icon;
     ActiveControl = SelectCelebration;
+    LocationPropertyName = locationPropertyName;
+    ClientSizePropertyName = clientSizePropertyName;
   }
 
   private void InitializeMenu()
@@ -75,57 +71,27 @@ public partial class CelebrationVersesBoardForm : Form
     });
   }
 
-  private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
-  {
-    if ( SelectVerse.SelectedItems.Count <= 0 ) return;
-    var verseitem = (Tuple<TanakBook, string, string>)SelectVerse.SelectedItems[0].Tag;
-    var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
-    HebrewTools.OpenHebrewWordsGoToVerse(reference, Settings.HebrewWordsExe);
-  }
-
   private void CelebrationVersesBoardForm_Load(object sender, EventArgs e)
   {
+    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
+    {
+      Location = (Point)Globals.Settings[LocationPropertyName];
+      ClientSize = (Size)Globals.Settings[ClientSizePropertyName];
+    }
     this.CheckLocationOrCenterToMainFormElseScreen();
-    PopulateLists();
-  }
-
-  private void PopulateLists()
-  {
     var items = Enums.GetValues<TorahCelebration>()
                      .Skip(1)
-                     .Select(value => new ListViewItem(AppTranslations.TorahCelebrations.GetLang(value)) { Tag = value });
+                     .Select(v => new ListViewItem(HebrewTranslations.TorahCelebrations.GetLang(v)) { Tag = v });
     SelectCelebration.Items.Clear();
     SelectCelebration.Items.AddRange(items.ToArray());
   }
 
-  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
-  private void FindCurrentCelebration(TorahCelebrationDay celebration = TorahCelebrationDay.None)
+  private void CelebrationVersesBoardForm_Deactivate(object sender, EventArgs e)
   {
-    if ( SelectCelebration.Items.Count <= 0 ) return;
-    if ( celebration == TorahCelebrationDay.None )
+    if ( !LocationPropertyName.IsNullOrEmpty() && !ClientSizePropertyName.IsNullOrEmpty() )
     {
-      var dateStart = DateTime.Today;
-      var days = ApplicationDatabase.Instance.LunisolarDays;
-      var day = days.Find(d => d.Date >= dateStart && d.HasTorahEvent && d.TorahEvent != TorahCelebrationDay.NewYearD1);
-      if ( day is not null ) celebration = day.TorahEvent;
-    }
-    if ( celebration == TorahCelebrationDay.NewYearD10 )
-      celebration = TorahCelebrationDay.PessahD1;
-    if ( celebration != TorahCelebrationDay.None )
-    {
-      string str = celebration.ToString();
-      foreach ( ListViewItem item in SelectCelebration.Items )
-        if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString(), StringComparison.Ordinal) )
-        {
-          item.Selected = true;
-          item.Focused = true;
-          break;
-        }
-    }
-    else
-    {
-      SelectCelebration.Items[0].Selected = true;
-      SelectCelebration.Items[0].Focused = true;
+      Globals.Settings[LocationPropertyName] = Location;
+      Globals.Settings[ClientSizePropertyName] = ClientSize;
     }
   }
 
@@ -138,6 +104,14 @@ public partial class CelebrationVersesBoardForm : Form
   private void ActionClose_Click(object sender, EventArgs e)
   {
     Close();
+  }
+
+  private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
+  {
+    if ( SelectVerse.SelectedItems.Count <= 0 ) return;
+    var verseitem = (Tuple<TanakBook, string, string>)SelectVerse.SelectedItems[0].Tag;
+    var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
+    HebrewTools.OpenHebrewWordsGoToVerse(reference);
   }
 
   private void SelectCelebration_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -179,7 +153,7 @@ public partial class CelebrationVersesBoardForm : Form
 
   private void SelectCelebration_Format(object sender, ListControlConvertEventArgs e)
   {
-    e.Value = AppTranslations.TorahCelebrations[(TorahCelebration)e.Value].GetLang();
+    e.Value = HebrewTranslations.TorahCelebrations[(TorahCelebration)e.Value].GetLang();
   }
 
   private void SelectCelebration_SelectedIndexChanged(object sender, EventArgs e)

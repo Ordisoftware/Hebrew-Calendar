@@ -48,7 +48,7 @@ partial class NavigationForm : Form
         ActiveControl = LabelDate;
         var row = LunisolarDays.Single(day => day.Date == value);
         LabelDate.Text = value.ToLongDateString().Titleize();
-        string strMonth = HebrewMonths.Transcriptions[row.LunarMonth];
+        string strMonth = HebrewMonths.Transcriptions.GetLang()[row.LunarMonth];
         bool isShabat = value.DayOfWeek == (DayOfWeek)Settings.ShabatDay;
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
         LabelLunarMonthName.Text = "(" + strMonth.ToUpper() + ")";
@@ -314,8 +314,7 @@ partial class NavigationForm : Form
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
     if ( LabelParashahValue.Tag is LunisolarDay day )
-      HebrewTools.OpenHebrewWordsGoToVerse(ParashotFactory.Instance.Get(day.ParashahID).FullReferenceBegin,
-                                           Settings.HebrewWordsExe);
+      HebrewTools.OpenHebrewWordsGoToVerse(ParashotFactory.Instance.Get(day.ParashahID).FullReferenceBegin);
   }
 
   private void PictureMoon_Click(object sender, EventArgs e)

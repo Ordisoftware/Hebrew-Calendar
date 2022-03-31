@@ -26,20 +26,60 @@ static class HebrewMonths
   static public readonly string[] Unicode =
   {
     string.Empty,
-    "ניסן", "איר", "סיון", "תמוז", "אב", "אלול",
-    "תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א",
+    "ניסן",
+    "איר",
+    "סיון",
+    "תמוז",
+    "אב",
+    "אלול",
+    "תשרי",
+    "חשון",
+    "כסלו",
+    "טבת",
+    "שבט",
+    "אדר א",
     "אדר ב"
   };
 
   /// <summary>
   /// Indicates phonetic lunar months names.
   /// </summary>
-  static public readonly string[] Transcriptions =
+  static public readonly NullSafeDictionary<Language, string[]> Transcriptions = new()
   {
-    string.Empty,
-    "Nissan", "Iyar", "Sivan", "Tamouz", "Av", "Eloul",
-    "Tishri", "Heshvan", "Kislev", "Tevet", "Chevat", "Adar",
-    "Adar II"
+    [Language.EN] = new string[]
+    {
+      string.Empty,
+      "Nisan",
+      "Iyar",
+      "Siwan",
+      "Tamuz",
+      "Av",
+      "Elul",
+      "Tishri",
+      "Cheshvan",
+      "Kislev",
+      "Tevet",
+      "Shevat",
+      "Adar",
+      "Adar II",
+    },
+    [Language.FR] = new string[]
+    {
+      string.Empty,
+      "Nissan",
+      "Iyar",
+      "Sivan",
+      "Tamouz",
+      "Av",
+      "Eloul",
+      "Tishri",
+      "'Heshvan",
+      "Kislev",
+      "Tevet",
+      "Shevat",
+      "Adar",
+      "Adar II"
+    }
   };
 
 }

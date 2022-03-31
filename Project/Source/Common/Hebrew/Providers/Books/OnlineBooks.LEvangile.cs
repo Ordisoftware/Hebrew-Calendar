@@ -10,14 +10,14 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2019-09 </created>
-/// <edited> 2019-09 </edited>
+/// <created> 2020-04 </created>
+/// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class BooksNames
+static partial class OnlineBooks
 {
 
-  static public readonly Dictionary<TanakBook, string> Djep = new()
+  static public readonly Dictionary<TanakBook, string> LEvangile = new()
   {
     // Torah
     { TanakBook.Bereshit, "1" },
@@ -53,8 +53,8 @@ static partial class BooksNames
     { TanakBook.Iyov, "18" },
     { TanakBook.Shir_HaShirim, "22" },
     { TanakBook.Ruth, "8" },
-    { TanakBook.Eikah, "25" },
-    { TanakBook.Qohelet, "21" },
+    { TanakBook.Eikah, "21" },
+    { TanakBook.Qohelet, "25" },
     { TanakBook.Esther, "17" },
     { TanakBook.Daniel, "27" },
     { TanakBook.Ezra, "15" },
@@ -64,3 +64,4 @@ static partial class BooksNames
   };
 
 }
+

@@ -20,54 +20,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 static partial class AppTranslations
 {
 
-  static public readonly TranslationsDictionary Sunrise = new()
-  {
-    [Language.EN] = "{0} Sunrise",
-    [Language.FR] = "{0} Lever du soleil"
-  };
-
-  static public readonly TranslationsDictionary Sunset = new()
-  {
-    [Language.EN] = "{0} Sunset",
-    [Language.FR] = "{0} Coucher du soleil"
-  };
-
-  static public readonly TranslationsDictionary Moonrise = new()
-  {
-    [Language.EN] = "{0} Moonrise",
-    [Language.FR] = "{0} Lever de la lune"
-  };
-
-  static public readonly TranslationsDictionary Moonset = new()
-  {
-    [Language.EN] = "{0} Moonset",
-    [Language.FR] = "{0} Coucher de la lune"
-  };
-
-  static public readonly TranslationsDictionary Today = new()
-  {
-    [Language.EN] = "Today",
-    [Language.FR] = "Aujourd'hui"
-  };
-
-  static public readonly TranslationsDictionary Shabat = new()
-  {
-    [Language.EN] = "Shabat",
-    [Language.FR] = "Shabat"
-  };
-
-  static public readonly TranslationsDictionary NavigationMonth = new()
-  {
-    [Language.EN] = "Month No. {0}",
-    [Language.FR] = "Mois n°{0}"
-  };
-
-  static public readonly TranslationsDictionary NavigationDay = new()
-  {
-    [Language.EN] = "Day No. {0}",
-    [Language.FR] = "Jour n°{0}"
-  };
-
   static public readonly NullSafeDictionary<DayOfWeek, TranslationsDictionary> DaysOfWeek = new()
   {
     [DayOfWeek.Monday] = new TranslationsDictionary
@@ -104,6 +56,78 @@ static partial class AppTranslations
     {
       [Language.EN] = "Sunday",
       [Language.FR] = "Dimanche"
+    }
+  };
+
+  static public readonly TranslationsDictionary Today = new()
+  {
+    [Language.EN] = "Today",
+    [Language.FR] = "Aujourd'hui"
+  };
+
+  static public readonly TranslationsDictionary Shabat = new()
+  {
+    [Language.EN] = "Shabat",
+    [Language.FR] = "Shabat"
+  };
+
+  static public readonly TranslationsDictionary NavigationMonth = new()
+  {
+    [Language.EN] = "Month No. {0}",
+    [Language.FR] = "Mois n°{0}"
+  };
+
+  static public readonly TranslationsDictionary NavigationDay = new()
+  {
+    [Language.EN] = "Day No. {0}",
+    [Language.FR] = "Jour n°{0}"
+  };
+
+  static public readonly TranslationsDictionary Sunrise = new()
+  {
+    [Language.EN] = "{0} Sunrise",
+    [Language.FR] = "{0} Lever du soleil"
+  };
+
+  static public readonly TranslationsDictionary Sunset = new()
+  {
+    [Language.EN] = "{0} Sunset",
+    [Language.FR] = "{0} Coucher du soleil"
+  };
+
+  static public readonly TranslationsDictionary Moonrise = new()
+  {
+    [Language.EN] = "{0} Moonrise",
+    [Language.FR] = "{0} Lever de la lune"
+  };
+
+  static public readonly TranslationsDictionary Moonset = new()
+  {
+    [Language.EN] = "{0} Moonset",
+    [Language.FR] = "{0} Coucher de la lune"
+  };
+
+  static public readonly NullSafeDictionary<Ephemeris, TranslationsDictionary> EphemerisCodes = new()
+  {
+    [Ephemeris.Rise] = new TranslationsDictionary
+    {
+      [Language.EN] = "R: ",
+      [Language.FR] = "L: "
+    },
+    [Ephemeris.Set] = new TranslationsDictionary
+    {
+      [Language.EN] = "S: ",
+      [Language.FR] = "C: "
+    },
+    [Ephemeris.SummerHour] = new TranslationsDictionary
+    {
+      [Language.EN] = "(S)",
+      [Language.FR] = "(E)"
+    },
+    [Ephemeris.WinterHour] = new TranslationsDictionary
+    {
+      [Language.EN] = "(W)",
+      [Language.FR] = "(H)"
     }
   };
 
@@ -170,27 +194,32 @@ static partial class AppTranslations
     }
   };
 
-  static public readonly NullSafeDictionary<Ephemeris, TranslationsDictionary> EphemerisCodes = new()
+  static public readonly NullSafeDictionary<SeasonChange, TranslationsDictionary> SeasonChanges = new()
   {
-    [Ephemeris.Rise] = new TranslationsDictionary
+    [SeasonChange.None] = new TranslationsDictionary
     {
-      [Language.EN] = "R: ",
-      [Language.FR] = "L: "
+      [Language.EN] = "",
+      [Language.FR] = ""
     },
-    [Ephemeris.Set] = new TranslationsDictionary
+    [SeasonChange.SpringEquinox] = new TranslationsDictionary
     {
-      [Language.EN] = "S: ",
-      [Language.FR] = "C: "
+      [Language.EN] = "Spring equinox",
+      [Language.FR] = "Équinoxe de printemps"
     },
-    [Ephemeris.SummerHour] = new TranslationsDictionary
+    [SeasonChange.SummerSolstice] = new TranslationsDictionary
     {
-      [Language.EN] = "(S)",
-      [Language.FR] = "(E)"
+      [Language.EN] = "Summer solstice",
+      [Language.FR] = "Solstice d'été"
     },
-    [Ephemeris.WinterHour] = new TranslationsDictionary
+    [SeasonChange.AutumnEquinox] = new TranslationsDictionary
     {
-      [Language.EN] = "(W)",
-      [Language.FR] = "(H)"
+      [Language.EN] = "Autumn equinox",
+      [Language.FR] = "Équinoxe d'automne"
+    },
+    [SeasonChange.WinterSolstice] = new TranslationsDictionary
+    {
+      [Language.EN] = "Winter solstice",
+      [Language.FR] = "Solstice d'hiver"
     }
   };
 
@@ -221,106 +250,6 @@ static partial class AppTranslations
       [Language.EN] = "Events",
       [Language.FR] = "Évènements"
     }
-  };
-
-  static public readonly NullSafeDictionary<SeasonChange, TranslationsDictionary> SeasonChanges = new()
-  {
-    [SeasonChange.None] = new TranslationsDictionary
-    {
-      [Language.EN] = "",
-      [Language.FR] = ""
-    },
-    [SeasonChange.SpringEquinox] = new TranslationsDictionary
-    {
-      [Language.EN] = "Spring equinox",
-      [Language.FR] = "Équinoxe de printemps"
-    },
-    [SeasonChange.SummerSolstice] = new TranslationsDictionary
-    {
-      [Language.EN] = "Summer solstice",
-      [Language.FR] = "Solstice d'été"
-    },
-    [SeasonChange.AutumnEquinox] = new TranslationsDictionary
-    {
-      [Language.EN] = "Autumn equinox",
-      [Language.FR] = "Équinoxe d'automne"
-    },
-    [SeasonChange.WinterSolstice] = new TranslationsDictionary
-    {
-      [Language.EN] = "Winter solstice",
-      [Language.FR] = "Solstice d'hiver"
-    }
-  };
-
-  static public readonly NullSafeDictionary<TorahCelebration, TranslationsDictionary> TorahCelebrations = new()
-  {
-    [TorahCelebration.Pessah] = new TranslationsDictionary
-    {
-      [Language.EN] = "Pesach",
-      [Language.FR] = "Pessa'h"
-    },
-    [TorahCelebration.Chavouot] = new TranslationsDictionary
-    {
-      [Language.EN] = "Shavu'ot",
-      [Language.FR] = "Shavou'ot"
-    },
-    [TorahCelebration.YomTerouah] = new TranslationsDictionary
-    {
-      [Language.EN] = "Yom Teru'ah",
-      [Language.FR] = "Yom Terou'ah"
-    },
-    [TorahCelebration.YomHaKipourim] = new TranslationsDictionary
-    {
-      [Language.EN] = "Yom HaKipurim",
-      [Language.FR] = "Yom HaKipourim"
-    },
-    [TorahCelebration.Soukot] = new TranslationsDictionary
-    {
-      [Language.EN] = "Sukot",
-      [Language.FR] = "Soukot"
-    }
-  };
-
-  static public readonly TranslationsDictionary PessahDay = new()
-  {
-    [Language.EN] = TorahCelebrations[TorahCelebration.Pessah][Language.EN] + " Day {0}",
-    [Language.FR] = TorahCelebrations[TorahCelebration.Pessah][Language.FR] + " Jour {0}"
-  };
-
-  static public readonly TranslationsDictionary SoukotDay = new()
-  {
-    [Language.EN] = TorahCelebrations[TorahCelebration.Soukot][Language.EN] + " Day {0}",
-    [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " Jour {0}"
-  };
-
-  static public readonly TranslationsDictionary Start = new()
-  {
-    [Language.EN] = "Start",
-    [Language.FR] = "Début"
-  };
-
-  static public readonly TranslationsDictionary End = new()
-  {
-    [Language.EN] = "End",
-    [Language.FR] = "Fin"
-  };
-
-  static public readonly TranslationsDictionary Lamb = new()
-  {
-    [Language.EN] = "Lamb",
-    [Language.FR] = "Agneau"
-  };
-
-  static public readonly TranslationsDictionary VersesAboutCurrentCelebration = new()
-  {
-    [Language.EN] = "Verses about {0}",
-    [Language.FR] = "Versets sur {0}"
-  };
-
-  static public readonly TranslationsDictionary VersesAboutNextCelebration = new()
-  {
-    [Language.EN] = "Verses about next {0}",
-    [Language.FR] = "Versets sur prochain {0}"
   };
 
   static public readonly NullSafeDictionary<Language, NullSafeList<string>> WikipediaMonths = new()
@@ -359,96 +288,6 @@ static partial class AppTranslations
       "https://fr.wikipedia.org/wiki/Adar",
       "https://fr.wikipedia.org/wiki/Adar"
     }
-  };
-
-  static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> TorahCelebrationDays = new()
-  {
-    [TorahCelebrationDay.None] = new TranslationsDictionary
-    {
-      [Language.EN] = "",
-      [Language.FR] = ""
-    },
-    [TorahCelebrationDay.NewYearD1] = new TranslationsDictionary
-    {
-      [Language.EN] = "New Year",
-      [Language.FR] = "Nouvelle Année"
-    },
-    [TorahCelebrationDay.NewYearD10] = new TranslationsDictionary
-    {
-      [Language.EN] = "Set Aside " + Lamb[Language.EN],
-      [Language.FR] = "Réserver " + Lamb[Language.FR]
-    },
-    [TorahCelebrationDay.PessahD1] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Pessah][Language.EN] + " " + Start[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Pessah][Language.FR] + " " + Start[Language.FR]
-    },
-    [TorahCelebrationDay.PessahD7] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Pessah][Language.EN] + " " + End[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Pessah][Language.FR] + " " + End[Language.FR]
-    },
-    [TorahCelebrationDay.ChavouotDiet] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Chavouot][Language.EN] + " Diet",
-      [Language.FR] = TorahCelebrations[TorahCelebration.Chavouot][Language.FR] + " Régime"
-    },
-    [TorahCelebrationDay.Chavouot1] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Chavouot][Language.EN] + " " + Lamb[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Chavouot][Language.FR] + " " + Lamb[Language.FR]
-    },
-    [TorahCelebrationDay.Chavouot2] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Chavouot][Language.EN] + " " + End[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Chavouot][Language.FR] + " " + End[Language.FR]
-    },
-    [TorahCelebrationDay.YomTerouah] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.YomTerouah][Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.YomTerouah][Language.FR]
-    },
-    [TorahCelebrationDay.YomHaKipourim] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.YomHaKipourim][Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.YomHaKipourim][Language.FR]
-    },
-    [TorahCelebrationDay.SoukotD1] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Soukot][Language.EN] + " " + Start[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " " + Start[Language.FR]
-    },
-    [TorahCelebrationDay.SoukotD8] = new TranslationsDictionary
-    {
-      [Language.EN] = TorahCelebrations[TorahCelebration.Soukot][Language.EN] + " " + End[Language.EN],
-      [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " " + End[Language.FR]
-    }
-    // TODO Manage as user custom remind list
-    /*[TorahCelebrationDay.HanoukaD1] = new TranslationsDictionary
-    {
-      [Language.EN] = "'Hanouka start",
-      [Language.FR] = "Début de 'Hanouka"
-    },
-    [TorahCelebrationDay.HanoukaD8] = new TranslationsDictionary
-    {
-      [Language.EN] = "'Hanouka end",
-      [Language.FR] = "'Fin de Hanouka"
-    },
-    [TorahCelebrationDay.Pourim] = new TranslationsDictionary
-    {
-      [Language.EN] = "Pourim",
-      [Language.FR] = "Pourim"
-    },
-    [TorahCelebrationDay.AnniversarySun] = new TranslationsDictionary
-    {
-      [Language.EN] = "Solar anniversary",
-      [Language.FR] = "Anniversaire solaire"
-    },
-    [TorahCelebrationDay.AnniversaryMoon] = new TranslationsDictionary
-    {
-      [Language.EN] = "Lunar anniversary",
-      [Language.FR] = "Anniversaire lunaire"
-    }*/
   };
 
 }

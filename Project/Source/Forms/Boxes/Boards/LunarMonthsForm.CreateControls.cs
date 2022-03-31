@@ -61,7 +61,7 @@ partial class LunarMonthsForm : Form
       default:
         throw new AdvNotImplementedException(Program.Settings.LunarMonthsFormUseColors);
     }
-    for ( int index = 1; index < HebrewMonths.Transcriptions.Length; index++ )
+    for ( int index = 1; index < HebrewMonths.Transcriptions.GetLang().Length; index++ )
     {
       LinkLabel createLabel(int posX, int posY,
                             string text, Color color, Font font,
@@ -97,7 +97,7 @@ partial class LunarMonthsForm : Form
                   new Font("Hebrew", 14f),
                   true, true, false);
       createLabel(xpos + dx1, ypos + dy1,
-                  HebrewMonths.Transcriptions[index],
+                  HebrewMonths.Transcriptions.GetLang()[index],
                   colorsMonth[index - 1],
                   new Font("Microsoft Sans Serif", 10f),
                   false, false, false);

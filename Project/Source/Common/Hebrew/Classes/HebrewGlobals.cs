@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -73,5 +73,40 @@ static partial class HebrewGlobals
   /// </summary>
   static public string ParashotLettriqsFilePath
     => Path.Combine(ParashotFolderPath, $"Parashot-Lettriqs-{Languages.Current}.txt");
+
+  /// <summary>
+  /// Indicates Calendar application code.
+  /// </summary>
+  static public readonly string AppCodeHebrewCalendar = "hebrew-calendar";
+
+  /// <summary>
+  /// Indicates Letters application code.
+  /// </summary>
+  static public readonly string AppCodeHebrewLetters = "hebrew-letters";
+
+  /// <summary>
+  /// Indicates Words application code.
+  /// </summary>
+  static public readonly string AppCodeHebrewWords = "hebrew-words";
+
+  /// <summary>
+  /// Indicates Calendar executable path.
+  /// </summary>
+  static public Func<string> GetHebrewCalendarExePath { get; set; }
+
+  /// <summary>
+  /// Indicates Letters executable path.
+  /// </summary>
+  static public Func<string> GetHebrewLettersExePath { get; set; }
+
+  /// <summary>
+  /// Indicates Words executable path.
+  /// </summary>
+  static public Func<string> GetHebrewWordsExePath { get; set; }
+
+  /// <summary>
+  /// Indicates custom web search pattern.
+  /// </summary>
+  static public Func<string> GetCustomWebSearchPattern { get; set; }
 
 }
