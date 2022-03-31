@@ -327,9 +327,11 @@ partial class ParashotForm : Form
     UpdateStats();
   }
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
     DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
+    ColumnHebrew.DefaultCellStyle.Font?.Dispose();
     ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
     if ( DataGridView.Rows.Count > 0 )
       DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
@@ -415,13 +417,11 @@ partial class ParashotForm : Form
     form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
     form.TextBox.Text = CurrentDataBoundItem.Memo;
     form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() == DialogResult.OK )
-    {
-      CurrentDataBoundItem.Memo = form.TextBox.Text;
-      ActionSave.Enabled = true;
-      ActionUndo.Enabled = true;
-      DataGridView.RefreshEdit();
-    }
+    if ( form.ShowDialog() != DialogResult.OK ) return;
+    CurrentDataBoundItem.Memo = form.TextBox.Text;
+    ActionSave.Enabled = true;
+    ActionUndo.Enabled = true;
+    DataGridView.RefreshEdit();
   }
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
