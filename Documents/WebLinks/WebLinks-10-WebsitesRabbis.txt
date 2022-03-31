@@ -69,3 +69,11 @@ URL = https://www.techouvot.com
 
 Name = (FR) Chiourim Zivoug
 URL = https://www.zivoug.com
+
+-
+
+Name = (EN) Rabbi Itshak Ginsburgh
+URL = https://www.inner.org
+
+Name = (IW) Rabbi Itshak Ginsburgh students
+URL = https://www.malchuty.org
