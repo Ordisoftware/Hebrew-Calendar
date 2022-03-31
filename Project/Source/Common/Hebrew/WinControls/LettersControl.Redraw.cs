@@ -44,7 +44,7 @@ partial class LettersControl
       if ( _ShowValues ) countControls += countLetters;
       if ( _ShowKeys ) countControls += countLetters;
       var controls = new Control[countControls];
-      var fontLetter = new Font("Hebrew", _FontSizeLetters, FontStyle.Bold);
+      var fontLetter = new Font("Hebrew", _FontSizeLetters, _Bold ? FontStyle.Bold : FontStyle.Regular);
       using var fontValue = new Font("Microsoft Sans Serif", _FontSizeValues);
       using var fontKey = new Font("Microsoft Sans Serif", _FontSizeKeys);
       const int lettersPerLine = 11;

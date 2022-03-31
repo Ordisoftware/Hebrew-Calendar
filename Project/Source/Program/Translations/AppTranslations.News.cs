@@ -47,6 +47,7 @@ static partial class AppTranslations
                       "• Some fixes." + Globals.NL +
                       "• Some optimizations." + Globals.NL +
                       "• Massive refactorings with new code analyzers." + Globals.NL +
+                      "• Improve setup to select hebrew font version." + Globals.NL +
                       "• Update Aish web links for parashot study.",
 
       [Language.FR] = "• Amélioration des noms des mois lunaires en ajoutant la transcription en anglais en plus du français." + Globals.NL +
@@ -60,6 +61,7 @@ static partial class AppTranslations
                       "• Quelques correctifs." + Globals.NL +
                       "• Quelques optimisations." + Globals.NL +
                       "• Refactorisations massive avec de nouveaux analyseurs de code." + Globals.NL +
+                      "• Amélioration du setup pour sélectionner la version de la fonte hébreu." + Globals.NL +
                       "• Mise à jour des liens Web Aish pour l'étude parashot."
     },
 
