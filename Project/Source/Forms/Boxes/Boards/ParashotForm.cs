@@ -58,7 +58,7 @@ partial class ParashotForm : Form
     InitializeComponent();
     InitializeMenu();
     Icon = Globals.MainForm.Icon;
-    ActionSaveAsDefaults.Visible = Globals.IsDevExecutable;
+    ActionSaveAsDefaults.Visible = Globals.IsDebugExecutable;
     ActionGoToNextParashah.Visible = Settings.CalendarShowParashah;
     ActionGoToNextParashah.Visible = Settings.CalendarShowParashah;
     SeparatorParashah.Visible = Settings.CalendarShowParashah;

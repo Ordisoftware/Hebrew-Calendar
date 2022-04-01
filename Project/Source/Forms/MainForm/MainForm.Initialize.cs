@@ -53,7 +53,7 @@ partial class MainForm
     Globals.AllowClose = false;
     foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
       LastCelebrationReminded.Add(value, null);
-    if ( !Globals.IsDevExecutable ) // TODO remove when lunar months ready
+    if ( !Globals.IsDebugExecutable ) // TODO remove when lunar months ready
     {
       ActionViewLunarMonths.Enabled = false;
       ActionViewLunarMonths.Visible = false;
