@@ -20,6 +20,8 @@ namespace Ordisoftware.Core;
 static partial class StringHelper
 {
 
+  static private readonly Regex RegExRemoveDoubleSpaces = new Regex(@"\s+");
+
   /// <summary>
   /// Indicates if a string is empty.
   /// </summary>
@@ -76,6 +78,13 @@ static partial class StringHelper
   /// <param name="str">The string to act on.</param>
   static public string Titleize(this string str)
     => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+
+  /// <summary>
+  /// Removes all double and more spaces.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string RemoveDoubleSpaces(this string str)
+    => RegExRemoveDoubleSpaces.Replace(str, " ");
 
   /// <summary>
   /// Trims any first and last char.
