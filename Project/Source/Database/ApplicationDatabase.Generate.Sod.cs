@@ -37,6 +37,7 @@ partial class ApplicationDatabase
         try
         {
           LoadingForm.Instance.DoProgress();
+          throw new NotImplementedException();
           return false; // TODO define months, celebrations, and parashot.
         }
         catch ( Exception ex )
