@@ -213,4 +213,53 @@ abstract class SQLiteDatabase
 
   protected abstract void DoSaveAll();
 
+  protected void ProcessTableUpgrade<TRow, TRowTemp>(
+    string nameTable,
+    string nameTableTemp,
+    Action<TRowTemp, TRow> doCopy)
+  where TRow : new()
+  where TRowTemp : new()
+  {
+    if ( nameTable.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTable));
+    if ( nameTableTemp.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTableTemp));
+    if ( doCopy is null ) throw new ArgumentNullException(nameof(doCopy));
+    if ( Connection.CheckTable(nameTableTemp) )
+    {
+      string error = SysTranslations.UpgradeDatabaseTempTableExists.GetLang(nameTableTemp);
+      string question = SysTranslations.UpgradeDatabaseTableUserChoice.GetLang(error, nameTable, nameTableTemp);
+      switch ( DisplayManager.QueryRetryIgnoreAbort(question) )
+      {
+        case DialogResult.Retry:
+          Connection.RenameTableIfExists(nameTableTemp, nameTable);
+          ProcessTableUpgrade(nameTable, nameTableTemp, doCopy);
+          break;
+        case DialogResult.Ignore:
+          Connection.DropTableIfExists(nameTableTemp);
+          break;
+        case DialogResult.Abort:
+          throw new SQLiteException(error);
+      }
+    }
+    Connection.Execute("PRAGMA foreign_keys = 0;");
+    try
+    {
+      Connection.RenameTableIfExists(nameTable, nameTableTemp);
+      Connection.CreateTable<TRow>();
+      var rows = Connection.Table<TRowTemp>();
+      Connection.BeginTransaction();
+      foreach ( var rowTemp in rows )
+      {
+        var rowNew = new TRow();
+        doCopy(rowTemp, rowNew);
+        Connection.Insert(rowNew);
+      }
+      Connection.Commit();
+      Connection.DropTableIfExists(nameTableTemp);
+    }
+    finally
+    {
+      Connection.Execute("PRAGMA foreign_keys = 1;");
+    }
+  }
+
 }

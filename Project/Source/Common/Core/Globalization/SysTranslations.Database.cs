@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -183,6 +183,24 @@ static partial class SysTranslations
     [Language.FR] = "La colonne '{0}' est trop petite." + Globals.NL2 +
                     "    Available chars: {1}" + Globals.NL +
                     "    Missing chars: {2}",
+  };
+
+  static public readonly TranslationsDictionary UpgradeDatabaseTempTableExists = new()
+  {
+    [Language.EN] = $"Error upgrading database:{Globals.NL2}    Temp table '{{0}}' already exists.",
+    [Language.FR] = $"Erreur lors de la mise à jour de la base de données :{Globals.NL2}    Temp table '{{0}}' existe déjà."
+  };
+
+  static public readonly TranslationsDictionary UpgradeDatabaseTableUserChoice = new()
+  {
+    [Language.EN] = "{0}" + Globals.NL2 +
+                    $"Click Retry to rename '{{2}}' in '{{1}}'." + Globals.NL2 +
+                    $"Click Ignore to delete '{{2}}' and all its data, but all data from original table '{{1}}' could then be lost." + Globals.NL2 +
+                    $"Click Abort to stop the process and check the database or contact the support.",
+    [Language.FR] = "{0}" + Globals.NL2 +
+                    $"Cliquez sur Réessayer pour renommer '{{2}}' en '{{1}}'." + Globals.NL2 +
+                    $"Cliquez sur Ignorer pour supprimer '{{2}}' et toutes ses données, mais toutes les données de la table d'origine '{{1}}' pourraient alors être perdues." + Globals.NL2 +
+                    $"Cliquez sur Abandonner pour arrêter le processus et vérifier la base de données ou contacter le support."
   };
 
 }
