@@ -109,7 +109,6 @@ static partial class Program
       if ( Settings.FirstLaunch && SystemStatistics.Instance.Platform.Contains("Windows 7") )
         Settings.NavigationWindowUseUnicodeIcons = false;
       // Check applications
-      // TODO improve check/change intercom apps paths in case of non-admin user
       string pathLettersFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Letters", "Bin");
       string pathWordsFolder = Path.Combine(Globals.CompanyProgramFilesFolderPath, "Hebrew Words", "Bin");
       string pathLettersOld = Path.Combine(pathLettersFolder, "Ordisoftware.HebrewLetters.exe");
