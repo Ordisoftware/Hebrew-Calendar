@@ -21,8 +21,6 @@ namespace Ordisoftware.Hebrew;
 static class HebrewTools
 {
 
-  // TODO improve check/change intercom apps paths in case of non-admin user
-
   /// <summary>
   /// Remove diacritics and numbers Alef or Bet.
   /// </summary>

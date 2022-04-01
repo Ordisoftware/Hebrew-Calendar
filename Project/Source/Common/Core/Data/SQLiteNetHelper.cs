@@ -179,20 +179,17 @@ static class SQLiteNetHelper
   /// <param name="connection">The connection.</param>
   /// <param name="tableOldName">Old name.</param>
   /// <param name="tableNewName">New name.</param>
-  [SuppressMessage("Usage", "MA0043:Use nameof operator in ArgumentException", Justification = "N/A")]
   static public void RenameTableIfExists(this SQLiteNetORM connection, string tableOldName, string tableNewName)
   {
-    const string argnameTableOld = nameof(tableOldName);
-    const string argnameTableNew = nameof(tableNewName);
-    if ( tableOldName.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTableOld);
-    if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(argnameTableNew);
+    if ( tableOldName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableOldName));
+    if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableNewName));
     try
     {
       connection.Execute($"ALTER TABLE [{tableOldName}] RENAME TO [{tableNewName}];");
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(argnameTableOld, argnameTableNew), ex);
+      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
     }
   }
 
@@ -261,6 +258,9 @@ static class SQLiteNetHelper
   /// <summary>
   /// Checks if a column of a table exists and create it if not.
   /// </summary>
+  /// <remarks>
+  /// The existence of the table is not checked.
+  /// </remarks>
   /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
   /// <param name="column">The column name.</param>
@@ -272,7 +272,6 @@ static class SQLiteNetHelper
     {
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
       if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
-      if ( !connection.CheckTable(table) ) return false;
       const string sqlCheck = "SELECT COUNT(*) AS CNTREC FROM pragma_table_info(?) WHERE name = ?";
       if ( connection.ExecuteScalar<long>(sqlCheck, table, column) > 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
@@ -296,6 +295,9 @@ static class SQLiteNetHelper
   /// <summary>
   /// Checks if a column of a table exists and create it if not.
   /// </summary>
+  /// <remarks>
+  /// The existence of the table is not checked.
+  /// </remarks>
   /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
   /// <param name="column">The column name.</param>

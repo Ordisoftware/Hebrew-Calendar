@@ -90,7 +90,7 @@ partial class MessageBoxEx : Form
     SetButtons(buttons);
     int labelInitialTop = Label.Top;
     int labelInitialHeight = Label.Height;
-    LabelMaxWidth = width - Padding.Left - Padding.Right;
+    LabelMaxWidth = width - 55;
     if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
       icon = MessageBoxIcon.Information;
     else
@@ -141,7 +141,8 @@ partial class MessageBoxEx : Form
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   public void RelocalizeText()
   {
-    if ( LocalizedTitle is not null ) Text = LocalizedTitle.GetLang();
+    if ( LocalizedTitle is not null )
+      Text = LocalizedTitle.GetLang();
     if ( LocalizedText is not null )
     {
       AutoSize = false;
