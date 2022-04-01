@@ -20,6 +20,7 @@ partial class MainForm
   private bool GoToDateMutex;
 
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "<En attente>")]
   public void GoToDate(DateTime date,
                        bool bringToFront = false,
                        bool onlyIfOpened = true,

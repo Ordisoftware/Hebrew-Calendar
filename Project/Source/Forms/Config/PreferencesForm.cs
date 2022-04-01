@@ -223,15 +223,13 @@ partial class PreferencesForm : Form
 
   private void ActionManageBookmarks_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() )
-    {
-      int countBookmarks = Math.Max(Program.DateBookmarks.MaxCount, DateBookmarksCountInterval.Item1);
-      if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-      EditDateBookmarksCount.Minimum = countBookmarks;
-      EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
-      SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
-    }
+    if ( !ManageBookmarksForm.Run() ) return;
+    int countBookmarks = Math.Max(Program.DateBookmarks.MaxCount, DateBookmarksCountInterval.Item1);
+    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
+    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    EditDateBookmarksCount.Minimum = countBookmarks;
+    EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
+    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
   }
 
   private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
