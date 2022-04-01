@@ -20,7 +20,7 @@ namespace Ordisoftware.Core;
 static partial class StringHelper
 {
 
-  static private readonly Regex RegExRemoveDoubleSpaces = new(@"\s+");
+  static private readonly Regex RegExRemoveDoubleSpaces = new(@"\s+", RegexOptions.None, TimeSpan.FromSeconds(1));
 
   /// <summary>
   /// Indicates if a string is empty.
