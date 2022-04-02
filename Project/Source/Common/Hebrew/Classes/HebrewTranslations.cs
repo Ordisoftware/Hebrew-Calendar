@@ -77,6 +77,17 @@ static partial class HebrewTranslations
     [Language.FR] = "Lettrique"
   };
 
+  static public readonly TranslationsDictionary AskToResetParashot = new()
+  {
+    [Language.EN] = "Data will be restored to their default values, except memos. Erase all data before to delete memos too." + Globals.NL2 +
+                    "All changes will be lost and the action cannot be undone." + Globals.NL2 +
+                    SysTranslations.AskToContinue[Language.EN],
+
+    [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut, sauf les memos. Pour effacer les mémos, supprimez toutes les données d'abord." + Globals.NL2 +
+                    "Toutes les modifications seront perdues et l'action ne pourra pas être annulée." + Globals.NL2 +
+                    SysTranslations.AskToContinue[Language.FR]
+  };
+
   static public readonly TranslationsDictionary ParashahReading = new()
   {
     [Language.EN] = "Parashah reading",

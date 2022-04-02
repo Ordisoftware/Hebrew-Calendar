@@ -943,7 +943,7 @@
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 376</value>
+    <value>245, 398</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>

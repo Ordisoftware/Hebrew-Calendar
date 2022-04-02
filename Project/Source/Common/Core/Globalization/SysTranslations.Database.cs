@@ -117,10 +117,10 @@ static partial class SysTranslations
 
   static public readonly TranslationsDictionary AskToClearCustomData = new()
   {
-    [Language.EN] = "Custom data will be erased. " + Globals.NL2 +
+    [Language.EN] = "All custom data will be erased. " + Globals.NL2 +
                     AskToContinue[Language.EN],
 
-    [Language.FR] = "Les données personnalisées vont être effacées." + Globals.NL2 +
+    [Language.FR] = "Toutes les données personnalisées vont être effacées." + Globals.NL2 +
                     AskToContinue[Language.FR]
   };
 

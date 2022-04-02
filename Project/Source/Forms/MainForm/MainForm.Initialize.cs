@@ -437,15 +437,10 @@ partial class MainForm
       CalenderNet.PenBlack = Pens.Black;
     }
     const string fontname = "Calibri";
-    CalendarMonth.DateHeaderFont?.Dispose();
     CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
-    CalendarMonth.DayOfWeekFont?.Dispose();
     CalendarMonth.DayOfWeekFont = new Font(fontname, sizeFont + 1);
-    CalendarMonth.DayViewTimeFont?.Dispose();
     CalendarMonth.DayViewTimeFont = new Font(fontname, sizeFont + 1, FontStyle.Bold);
-    CalendarMonth.DaysFont?.Dispose();
     CalendarMonth.DaysFont = new Font(fontname, sizeFont + 2);
-    CalendarMonth.TodayFont?.Dispose();
     CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
   }
 

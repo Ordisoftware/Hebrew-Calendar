@@ -85,7 +85,10 @@ partial class HebrewDatabase : SQLiteDatabase
     Parashot?.Clear();
   }
 
-  public List<Parashah> CreateParashotDataIfNotExistAndLoad(bool reset = false, bool notext = false)
+  public List<Parashah> CreateParashotDataIfNotExistAndLoad(
+    bool reset = false,
+    bool noText = false,
+    bool keepMemo = false)
   {
     CheckConnected();
     if ( CreateParashotDataMutex )
@@ -101,9 +104,14 @@ partial class HebrewDatabase : SQLiteDatabase
           Connection.BeginTransaction();
           try
           {
+            List<string> memos = keepMemo ? new List<string>() : null;
+            if ( memos is not null ) memos.AddRange(Parashot.Select(p => p.Memo));
             DeleteParashot(true);
             var list = ParashotFactory.Instance.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
-            if ( notext ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
+            if ( noText ) list.ForEach(p => { p.Translation = ""; p.Lettriq = ""; p.Memo = ""; });
+            if ( memos is not null )
+              for ( int index = 0, indexCheck = 0; index < list.Count && indexCheck < memos.Count; index++ )
+                list[index].Memo = memos[index];
             Connection.InsertAll(list);
             Connection.Commit();
           }

@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParashotForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -63,7 +64,7 @@
       this.ColumnHebrew = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.HasMemo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewButtonColumn();
-      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip();
+      this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionShowDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,7 @@
       this.ActionGoToNextParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionEditMemo = new System.Windows.Forms.ToolStripMenuItem();
-      this.BindingSource = new System.Windows.Forms.BindingSource();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +95,7 @@
       this.verseBeginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.Timer = new System.Windows.Forms.Timer();
+      this.Timer = new System.Windows.Forms.Timer(this.components);
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
