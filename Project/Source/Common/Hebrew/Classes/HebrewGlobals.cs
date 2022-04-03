@@ -90,6 +90,21 @@ static partial class HebrewGlobals
   static public readonly string AppCodeHebrewWords = "hebrew-words";
 
   /// <summary>
+  /// Indicates Calendar application name.
+  /// </summary>
+  static public readonly string AppNameHebrewCalendar = "Hebrew Calendar";
+
+  /// <summary>
+  /// Indicates Letters application name.
+  /// </summary>
+  static public readonly string AppNameHebrewLetters = "Hebrew Letters";
+
+  /// <summary>
+  /// Indicates Words application name.
+  /// </summary>
+  static public readonly string AppNameHebrewWords = "Hebrew Words";
+
+  /// <summary>
   /// Indicates Calendar executable path.
   /// </summary>
   static public Func<string> GetHebrewCalendarExePath { get; set; }
