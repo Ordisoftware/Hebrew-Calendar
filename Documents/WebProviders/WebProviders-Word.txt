@@ -34,19 +34,6 @@ URL = http://shorashon.free.fr/online/
 
 -
 
-Name = (FR) Dict.com
-URL = https://www.dict.com/hebreu-francais/%WORD%
-
--
-
-Name = (EN) Wiktionary
-URL = https://en.wiktionary.org/wiki/%WORD%
-
-Name = (FR) Wiktionary
-URL = https://fr.wiktionary.org/w/index.php?search=%WORD%
-
--
-
 Name = (EN) Google Translate
 URL = https://translate.google.com/?op=translate&sl=iw&tl=en&text=%WORD%
 
@@ -87,13 +74,16 @@ URL = https://fr.glosbe.com/he/fr/%WORD%
 
 -
 
+Name = (FR) Dict.com
+URL = https://www.dict.com/hebreu-francais/%WORD%
+
+-
+
 Name = (NONE) Google Search
 URL = https://www.google.com/search?q=hebrew+strong+%WORD%
 
 Name = (NONE) Bing Search
 URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
-
--
 
 Name = (NONE) Custom Search
 URL = %CUSTOM%
