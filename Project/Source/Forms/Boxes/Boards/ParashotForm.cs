@@ -366,6 +366,8 @@ partial class ParashotForm : Form
   private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
   {
     if ( !Created ) return;
+    if ( !Globals.IsReady ) return;
+    if ( e.ColumnIndex == -1 || e.RowIndex == -1 ) return;
     ActionSave.Enabled = true;
     ActionUndo.Enabled = true;
   }

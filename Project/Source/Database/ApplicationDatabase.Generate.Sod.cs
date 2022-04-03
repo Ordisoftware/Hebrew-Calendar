@@ -23,6 +23,7 @@ partial class ApplicationDatabase
   /// <remarkl>
   /// Omer is implicitly as sun and there is no difference between north and south hemisphere.
   /// </remarkl>
+  [SuppressMessage("Design", "MA0025:Implement the functionality instead of throwing NotImplementedException", Justification = "<En attente>")]
   public bool AnalyseDaysSod(int progressCount)
   {
     LoadingForm.Instance.Initialize(AppTranslations.ProgressAnalyzeDays.GetLang(),
@@ -38,7 +39,7 @@ partial class ApplicationDatabase
         {
           LoadingForm.Instance.DoProgress();
           throw new NotImplementedException();
-          return false; // TODO define months, celebrations, and parashot.
+          //return false; // TODO define months, celebrations, and parashot.
         }
         catch ( Exception ex )
         {
