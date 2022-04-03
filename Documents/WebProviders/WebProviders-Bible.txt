@@ -10,10 +10,10 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Name = (EN/IW) StudyBible.org (Literal with Strongs links)
+Name = (EN/IW) StudyBible.org (Literal with contextual concordances)
 URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 
-Name = (EN/IW) BibleHub.com (Literal with Strongs links and transcription)
+Name = (EN/IW) BibleHub.com (Literal with contextual concordances, and transcription)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
 -
@@ -26,13 +26,13 @@ URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%
 
 -
 
-Name = (FR/IW) Torah-Box.org (Avec Rachi)
+Name = (FR/IW) Torah-Box.org (L'un ou l'autre, avec Rachi)
 URL = https://www.torah-box.com/torah-pdf/%BOOKTORAHBOX%/%CHAPTERNUM%.html
 
-Name = (EN/IW) Mechon-Mamre.org
+Name = (EN/IW) Mechon-Mamre.org (Côte-à-côte)
 URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
-Name = (FR/IW) Mechon-Mamre.org
+Name = (FR/IW) Mechon-Mamre.org (Side-by-side)
 URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
 -
@@ -59,13 +59,13 @@ URL = https://saintebible.com/dar/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 -
 
-Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs sans codes)
+Name = (FR) Levangile.com (Louis Segond 1910 avec concordances sans codes)
 URL = https://www.levangile.com/Bible-LSGSN-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
-Name = (FR) Levangile.com (Louis Segond 1910 avec Strongs et codes)
+Name = (FR) Levangile.com (Louis Segond 1910 avec concordances et codes)
 URL = https://www.levangile.com/Bible-LSGS-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
-Name = (FR) Levangile.com (Louis Segond 2007 sans Strongs)
+Name = (FR) Levangile.com (Louis Segond 2007 sans concordances)
 URL = https://www.levangile.com/Bible-S21-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-complet-Contexte-oui.htm
 
 -
@@ -93,5 +93,5 @@ URL = https://www.levangile.com/Bible-KJF-%BOOKLE%-%CHAPTERNUM%-%VERSENUM%-compl
 
 -
 
-Name = (FR) Djep.hd.free.fr
+Name = (FR) Djep.hd.free.fr (comparatif multi-version verset par verset)
 URL = http://djep.hd.free.fr/LaReferenceBiblique/?Livre=%BOOKDJEP%&Chap=%CHAPTERNUM%&Vers=%VERSENUM%

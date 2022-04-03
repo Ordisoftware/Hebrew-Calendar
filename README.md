@@ -378,6 +378,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item.
 - Improve the setting of the number of bookmarks by limiting it to the last index defined.
 - Improve bookmark import to automatically extend the length to match.
+- Improve parashot board to not delete memo on reset data but only using delete all before.
 - Fix copy weekly parashah to clipboard to remove empty lines at the end.
 - Some data generation improvements and fixes.
 - Some UI/UX improvements and fixes.

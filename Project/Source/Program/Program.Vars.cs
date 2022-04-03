@@ -209,11 +209,11 @@ static partial class Program
     {
       LunarMonthsMeanings.Add(lang, new LunarMonthsFile(LunarMonthsMeaningsFilePath,
                                                         true,
-                                                        Globals.IsDevExecutable,
+                                                        Globals.IsDebugExecutable,
                                                         DataFileFolder.ApplicationDocuments));
       LunarMonthsLettriqs.Add(lang, new LunarMonthsFile(LunarMonthsLettriqsFilePath,
                                                         true,
-                                                        Globals.IsDevExecutable,
+                                                        Globals.IsDebugExecutable,
                                                         DataFileFolder.ApplicationDocuments));
     }
   }

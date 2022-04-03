@@ -102,7 +102,7 @@ partial class MainForm
                                           MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
                                           false, false) )
       {
-        form.TextBox.ReplaceFont(new Font("Courier new", 8));
+        form.TextBox.Font = new Font("Courier new", 8);
         form.ShowDialog();
       }
       if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )

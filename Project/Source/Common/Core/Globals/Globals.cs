@@ -238,7 +238,7 @@ static partial class Globals
   /// Indicates if the code is in design time
   /// </summary>
   public static bool IsDesignTime
-    => System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+    => LicenseManager.UsageMode == LicenseUsageMode.Designtime;
 
   /// <summary>
   /// Indicates if the code is executed from the IDE else from a running app.

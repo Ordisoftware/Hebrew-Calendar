@@ -169,7 +169,7 @@ public partial class MainForm
   /// </summary>
   public void UpdateTextCalendar()
   {
-    CalendarText.ReplaceFont(new Font(Settings.FontName, Settings.FontSize));
+    CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
   }
 
   /// <summary>

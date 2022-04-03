@@ -406,30 +406,6 @@ static class FormsHelper
   }
 
   /// <summary>
-  /// Replace the font of a Control after disposing the old.
-  /// </summary>
-  /// <param name="control">The control.</param>
-  /// <param name="font">The new font</param>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
-  static public void ReplaceFont(this Control control, Font font)
-  {
-    control.Font?.Dispose();
-    control.Font = font;
-  }
-
-  /// <summary>
-  /// Replace the font of a ToolStripItem after disposing the old.
-  /// </summary>
-  /// <param name="item">The item.</param>
-  /// <param name="font">The new font</param>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
-  static public void ReplaceFont(this ToolStripItem item, Font font)
-  {
-    item.Font?.Dispose();
-    item.Font = font;
-  }
-
-  /// <summary>
   /// Sets the text justified.
   /// </summary>
   /// <param name="control">The control.</param>

@@ -54,7 +54,7 @@ partial class DataFileEditorForm : Form
       Dock = DockStyle.Fill,
       Text = File.ReadAllText(file.FilePath)
     };
-    textbox.ReplaceFont(new Font("Consolas", 9.75f));
+    textbox.Font = new Font("Consolas", 9.75f);
     tabpage.Controls.Add(textbox);
     tabcontrol.TabPages.Add(tabpage);
   }

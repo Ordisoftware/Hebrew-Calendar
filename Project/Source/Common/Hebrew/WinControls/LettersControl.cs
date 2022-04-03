@@ -212,6 +212,7 @@ partial class LettersControl : UserControl
   /// Indicates the hebrew chars are bold or regular.
   /// </summary>
   [DefaultValue(true)]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   public bool HebrewCharsInBold
   {
     get => _Bold;
@@ -219,7 +220,7 @@ partial class LettersControl : UserControl
     {
       if ( _Bold == value ) return;
       _Bold = value;
-      TextBox.ReplaceFont(new Font(TextBox.Font, _Bold ? FontStyle.Bold : FontStyle.Regular));
+      TextBox.Font = new Font(TextBox.Font, _Bold ? FontStyle.Bold : FontStyle.Regular);
       Redraw();
     }
   }
@@ -287,11 +288,12 @@ partial class LettersControl : UserControl
   /// <summary>
   /// Control paint event.
   /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   private void LettersControl_Paint(object sender, PaintEventArgs e)
   {
     if ( !First ) return;
     First = false;
-    TextBox.ReplaceFont(new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style));
+    TextBox.Font = new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style);
     Redraw();
   }
 
