@@ -327,7 +327,6 @@ partial class ParashotForm : Form
     UpdateStats();
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
   private void EditFontSize_ValueChanged(object sender, EventArgs e)
   {
     DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
@@ -345,9 +344,7 @@ partial class ParashotForm : Form
   private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
     e.Exception.Manage(ShowExceptionMode.None);
-    e.ThrowException = false; // TODO Investigate error on Dispose
-    //DisplayManager.ShowError($"Error with row {e.RowIndex} at column {e.ColumnIndex}.");
-    //e.Exception.Manage();
+    e.ThrowException = false;
   }
 
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
