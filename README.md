@@ -371,6 +371,10 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
 
+#### In progress
+
+- Fix parashot board save causes a null exception in case of empty cells in the grid.
+
 #### 2022.04.05 - Version 9.28
 
 - Add current day change when cursor changes line in text report.
