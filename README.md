@@ -373,7 +373,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress
 
-- Fix parashot board save causes a null exception in case of empty cells in the grid.
+- Fix save in parashot board causes a null exception in case of empty cells in the grid.
 
 #### 2022.04.05 - Version 9.28
 
