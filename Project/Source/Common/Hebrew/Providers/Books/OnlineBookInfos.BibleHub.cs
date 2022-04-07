@@ -14,7 +14,7 @@
 /// <edited> 2019-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class OnlineBooks
+static partial class OnlineBookInfos
 {
 
   static public readonly Dictionary<TanakBook, string> BibleHub = new()

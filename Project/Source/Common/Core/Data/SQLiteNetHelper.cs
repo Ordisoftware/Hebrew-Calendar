@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -313,8 +313,8 @@ static class SQLiteNetHelper
                                  string type,
                                  string valueDefault,
                                  bool valueNotNull,
-                                 bool isPrimary,
-                                 bool isAutoInc)
+                                 bool isPrimary = false,
+                                 bool isAutoInc = false)
   {
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
