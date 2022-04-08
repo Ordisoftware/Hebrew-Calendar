@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMain = new System.Windows.Forms.Panel();
       this.PanelCalendarOuter = new System.Windows.Forms.Panel();
@@ -155,6 +155,7 @@
       this.ActionShowParashahNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionVacuumDB = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,8 +226,9 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -378,14 +380,14 @@
       this.CalendarGrid.AllowUserToDeleteRows = false;
       this.CalendarGrid.AllowUserToResizeRows = false;
       this.CalendarGrid.AutoGenerateColumns = false;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridColumnDate,
@@ -984,12 +986,13 @@
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWeeklyParashah,
-            this.toolStripSeparator25,
-            this.ActionShowCelebrationVersesBoard,
             this.toolStripSeparator11,
             this.ActionViewParashot,
+            this.ActionShowCelebrationVersesBoard,
+            this.toolStripSeparator25,
             this.ActionViewCelebrationsBoard,
             this.ActionViewNewMoonsBoard,
+            this.toolStripSeparator28,
             this.ActionViewLunarMonths,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
@@ -1175,6 +1178,11 @@
       resources.ApplyResources(this.ActionOpenExportFolder, "ActionOpenExportFolder");
       this.ActionOpenExportFolder.Name = "ActionOpenExportFolder";
       this.ActionOpenExportFolder.Click += new System.EventHandler(this.ActionOpenExportFolder_Click);
+      // 
+      // toolStripSeparator26
+      // 
+      this.toolStripSeparator26.Name = "toolStripSeparator26";
+      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
       // 
       // ActionGenerate
       // 
@@ -1464,6 +1472,7 @@
             this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayParashah,
+            this.toolStripSeparator27,
             this.ContextMenuDayCelebrationVersesBoard,
             this.toolStripSeparator18,
             this.ContextMenuDaySelectDate,
@@ -1695,15 +1704,20 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
+      // toolStripSeparator27
+      // 
+      this.toolStripSeparator27.Name = "toolStripSeparator27";
+      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
+      // 
       // toolStripSeparator25
       // 
       this.toolStripSeparator25.Name = "toolStripSeparator25";
       resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
       // 
-      // toolStripSeparator26
+      // toolStripSeparator28
       // 
-      this.toolStripSeparator26.Name = "toolStripSeparator26";
-      resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // MainForm
       // 
@@ -1941,8 +1955,10 @@
     private DataGridViewTextBoxColumn GridColumnMoonPhase;
     private DataGridViewTextBoxColumn GridColumnSeasonChange;
     private DataGridViewTextBoxColumn GridColumnTorahEvent;
-    private ToolStripSeparator toolStripSeparator25;
     private ToolStripSeparator toolStripSeparator26;
+    private ToolStripSeparator toolStripSeparator27;
+    private ToolStripSeparator toolStripSeparator25;
+    private ToolStripSeparator toolStripSeparator28;
   }
 }
 

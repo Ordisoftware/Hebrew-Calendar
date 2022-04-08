@@ -52,9 +52,9 @@
       // 
       // PanelButtons
       // 
+      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Controls.Add(this.ActionCancel);
       this.PanelButtons.Controls.Add(this.ActionOK);
-      resources.ApplyResources(this.PanelButtons, "PanelButtons");
       this.PanelButtons.Name = "PanelButtons";
       // 
       // ActionCancel
@@ -70,7 +70,7 @@
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
       // 
-      // SelectBirthTime
+      // SelectBirthTimeForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
@@ -82,7 +82,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "SelectBirthTime";
+      this.Name = "SelectBirthTimeForm";
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
