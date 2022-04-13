@@ -216,13 +216,12 @@ abstract class SQLiteDatabase
   protected void ProcessTableUpgrade<TRow, TRowTemp>(
     string nameTable,
     string nameTableTemp,
-    Action<TRowTemp, TRow> doCopy)
+    Action<TRowTemp, TRow> doCopy!!)
   where TRow : new()
   where TRowTemp : new()
   {
     if ( nameTable.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTable));
     if ( nameTableTemp.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTableTemp));
-    if ( doCopy is null ) throw new ArgumentNullException(nameof(doCopy));
     if ( Connection.CheckTable(nameTableTemp) )
     {
       string error = SysTranslations.UpgradeDatabaseTempTableExists.GetLang(nameTableTemp);
