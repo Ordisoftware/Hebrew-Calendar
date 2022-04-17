@@ -27,7 +27,6 @@ static class ParashotHelper
     Func<Form> runBoard)
   {
     // Prepare
-    string title = HebrewTranslations.WeeklyParashah.GetLang();
     var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f is MessageBoxEx && f.Tag == parashah).FirstOrDefault();
     if ( form is not null )
     {
@@ -40,6 +39,7 @@ static class ParashotHelper
     var message = parashah.ToStringReadable();
     if ( linked is not null )
       message += Globals.NL2 + linked.ToStringReadable();
+    string title = HebrewTranslations.WeeklyParashah.GetLang() + " : " + parashah.Name;
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
       StartPosition = FormStartPosition.CenterScreen,
