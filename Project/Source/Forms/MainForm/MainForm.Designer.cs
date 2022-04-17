@@ -135,11 +135,13 @@
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
@@ -207,6 +209,7 @@
       this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySelectDate = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,9 +229,6 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1060,12 +1060,6 @@
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
       this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
-      // ActionShowCelebrationVersesBoard
-      // 
-      resources.ApplyResources(this.ActionShowCelebrationVersesBoard, "ActionShowCelebrationVersesBoard");
-      this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
-      this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
-      // 
       // toolStripSeparator11
       // 
       this.toolStripSeparator11.Name = "toolStripSeparator11";
@@ -1076,6 +1070,17 @@
       resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
       this.ActionViewParashot.Name = "ActionViewParashot";
       this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      // 
+      // ActionShowCelebrationVersesBoard
+      // 
+      resources.ApplyResources(this.ActionShowCelebrationVersesBoard, "ActionShowCelebrationVersesBoard");
+      this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
+      this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
+      // 
+      // toolStripSeparator25
+      // 
+      this.toolStripSeparator25.Name = "toolStripSeparator25";
+      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
       // 
       // ActionViewCelebrationsBoard
       // 
@@ -1088,6 +1093,11 @@
       resources.ApplyResources(this.ActionViewNewMoonsBoard, "ActionViewNewMoonsBoard");
       this.ActionViewNewMoonsBoard.Name = "ActionViewNewMoonsBoard";
       this.ActionViewNewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
+      // 
+      // toolStripSeparator28
+      // 
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // ActionViewLunarMonths
       // 
@@ -1592,6 +1602,11 @@
       this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
       this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
       // 
+      // toolStripSeparator27
+      // 
+      this.toolStripSeparator27.Name = "toolStripSeparator27";
+      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
+      // 
       // ContextMenuDayCelebrationVersesBoard
       // 
       resources.ApplyResources(this.ContextMenuDayCelebrationVersesBoard, "ContextMenuDayCelebrationVersesBoard");
@@ -1704,21 +1719,6 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // toolStripSeparator27
-      // 
-      this.toolStripSeparator27.Name = "toolStripSeparator27";
-      resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
-      // 
-      // toolStripSeparator25
-      // 
-      this.toolStripSeparator25.Name = "toolStripSeparator25";
-      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
-      // 
-      // toolStripSeparator28
-      // 
-      this.toolStripSeparator28.Name = "toolStripSeparator28";
-      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1825,7 +1825,7 @@
     private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
+    internal System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenExportFolder;
     internal System.Windows.Forms.ToolStripMenuItem ActionGenerate;

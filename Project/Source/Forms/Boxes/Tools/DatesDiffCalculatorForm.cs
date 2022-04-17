@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class DatesDiffCalculatorForm : Form
@@ -275,6 +275,11 @@ partial class DatesDiffCalculatorForm : Form
     {
       Cursor = cursor;
     }
+  }
+
+  private void ActionOpecCalc_Click(object sender, EventArgs e)
+  {
+    MainForm.Instance.ActionOpenCalculator.PerformClick();
   }
 
 }
