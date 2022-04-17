@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -20,7 +20,29 @@ namespace Ordisoftware.Core;
 static partial class StringHelper
 {
 
-  static private readonly Regex RegExRemoveDoubleSpaces = new(@"\s+", RegexOptions.None, TimeSpan.FromSeconds(1));
+  /// <summary>
+  /// RegEx to replace multiple empty lines by one.
+  /// </summary>
+  static private readonly Regex RegExReplaceMultipleEmptyLines
+    = new("[\r\n]+", RegexOptions.None, TimeSpan.FromSeconds(1));
+
+  /// <summary>
+  /// RegEx to replace multiple spaces by one.
+  /// </summary>
+  static private readonly Regex RegExReplaceMultipleSpaces
+    = new("[ ]+", RegexOptions.None, TimeSpan.FromSeconds(1));
+
+  /// <summary>
+  /// Array to trim empty lines.
+  /// </summary>
+  static private readonly char[] EmptyLineCharArray
+    = Globals.NL.ToCharArray();
+
+  /// <summary>
+  /// Array to trim empty lines and spaces.
+  /// </summary>
+  static private readonly char[] EmptyLineAndSpaceCharArray
+    = ( Globals.NL + ' ' ).ToCharArray();
 
   /// <summary>
   /// Indicates if a string is empty.
@@ -64,13 +86,13 @@ static partial class StringHelper
   static public bool RawContains(this string str, string substr)
     => RawComparer.IndexOf(str, substr, RawContainsFlags) >= 0;
 
+  static readonly private CompareInfo RawComparer = CultureInfo.InvariantCulture.CompareInfo;
+
   [SuppressMessage("Design", "IDE0036:Use constant instead of field.", Justification = "Opinion")]
   [SuppressMessage("Design", "RCS1187:Use constant instead of field.", Justification = "Opinion")]
   static readonly private CompareOptions RawContainsFlags = CompareOptions.IgnoreCase
                                                           | CompareOptions.IgnoreNonSpace
                                                           | CompareOptions.IgnoreSymbols;
-
-  static readonly private CompareInfo RawComparer = CultureInfo.InvariantCulture.CompareInfo;
 
   /// <summary>
   /// Sets all first letter to upper case.
@@ -80,11 +102,46 @@ static partial class StringHelper
     => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
 
   /// <summary>
-  /// Removes all double and more spaces.
+  /// Replace all double and more contiguous empty lines by one.
   /// </summary>
   /// <param name="str">The string to act on.</param>
-  static public string RemoveDoubleSpaces(this string str)
-    => RegExRemoveDoubleSpaces.Replace(str, " ");
+  static public string SanitizeEmptyLines(this string str)
+    => RegExReplaceMultipleEmptyLines.Replace(str, Globals.NL);
+
+  /// <summary>
+  /// Replace all double and more contiguous spaces by one.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string SanitizeSpaces(this string str)
+    => RegExReplaceMultipleSpaces.Replace(str, " ");
+
+  /// <summary>
+  /// Replace all double and more contiguous empty lines as well as spaces by one.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string SanitizeEmptyLinesAndSpaces(this string str)
+    => str.SanitizeSpaces().SanitizeEmptyLines();
+
+  /// <summary>
+  /// Remove all starting and ending empty lines.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string TrimEmptyLines(this string str)
+    => str.Trim(EmptyLineCharArray);
+
+  /// <summary>
+  /// Remove all starting and ending spaces.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string TrimSpaces(this string str)
+    => str.Trim(' ');
+
+  /// <summary>
+  /// Remove all starting and ending empty lines and spaces.
+  /// </summary>
+  /// <param name="str">The string to act on.</param>
+  static public string TrimEmptyLinesAndSpaces(this string str)
+    => str.Trim(EmptyLineAndSpaceCharArray);
 
   /// <summary>
   /// Trims any first and last char.
