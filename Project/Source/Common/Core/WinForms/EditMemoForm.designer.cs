@@ -34,7 +34,7 @@
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelSep = new System.Windows.Forms.Panel();
-      this.TextBox = new Ordisoftware.Core.TextBoxEx();
+      this.TextBox = new System.Windows.Forms.RichTextBox();
       this.PanelButtons.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -66,7 +66,6 @@
       // 
       // TextBox
       // 
-      this.TextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
       // 
@@ -91,7 +90,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    public Ordisoftware.Core.TextBoxEx TextBox;
+    internal System.Windows.Forms.RichTextBox TextBox;
     private System.Windows.Forms.Panel PanelSep;
   }
 }
