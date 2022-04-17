@@ -46,6 +46,7 @@
       this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.LabelInfoOccurences = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuVerse.SuspendLayout();
       this.ContextMenuCelebration.SuspendLayout();
@@ -55,6 +56,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.LabelInfoOccurences);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
@@ -165,6 +167,12 @@
       resources.ApplyResources(this.panel2, "panel2");
       this.panel2.Name = "panel2";
       // 
+      // LabelInfoOccurences
+      // 
+      resources.ApplyResources(this.LabelInfoOccurences, "LabelInfoOccurences");
+      this.LabelInfoOccurences.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoOccurences.Name = "LabelInfoOccurences";
+      // 
       // CelebrationVersesBoardForm
       // 
       resources.ApplyResources(this, "$this");
@@ -181,6 +189,7 @@
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CelebrationVersesBoardForm_FormClosed);
       this.Load += new System.EventHandler(this.CelebrationVersesBoardForm_Load);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       this.ContextMenuVerse.ResumeLayout(false);
       this.ContextMenuCelebration.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
@@ -207,5 +216,6 @@
     private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
+    private Label LabelInfoOccurences;
   }
 }

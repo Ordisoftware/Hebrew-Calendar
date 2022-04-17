@@ -229,7 +229,7 @@
     <value>CalendarMonth</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.28.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
     <value>PanelViewMonth</value>
@@ -442,9 +442,6 @@
   </data>
   <data name="bindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="bindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
   </data>
   <data name="bindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
@@ -2029,39 +2026,13 @@
     <value>Alt+P</value>
   </data>
   <data name="ActionWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionWeeklyParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
   </data>
-  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
-        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
-        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
-        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
-        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
-        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
-        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
-        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+A</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
-    <value>Celebration verses board</value>
-  </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2083,10 +2054,39 @@
     <value>Ctrl+F1</value>
   </data>
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionViewParashot.Text" xml:space="preserve">
     <value>Parashot board</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAcFJREFUOE+lk8tLG1EUxufPECmK2P+gdF+JD7rqqmBtKy7F+kBqi7jvuotC/4Qs
+        3CQEsiulbnyBWNqVCzWJmTHpZLxz7zyNk3w950ZrB2fh4wzf3O8e5vvNuQNjlMtlUSqVUCwW7yTOcNZg
+        c9/irME0rmq1goZZw8bPQ9RPajiuVDN1dMyq6Axn/wGap3W8+LKPgdVdCNuCdWrCtHjt6cqblola/URn
+        0oBGA7G0MbS2i0DYaLVaOBMuXKkgXKnFnnuN5h+dSQFsu4lYtWiCHcSeA6VcjOTGMDn1Fu8WlrC4/B5v
+        pmcwPvGcIEJnUgDHcRApgb6VLQK4kFLC8wMEYQQ/CLXYc885ywBIKdAOJdBWSCIFT/HINyVcN3uC0Pfo
+        I/7Cx/UDTHzex0Uc0Nt8KC8tqXwCKZ1JAc7jkO4xLFticHWbfBvdbgddcj3xBVx0EoRRRO4SUCgU9AZJ
+        jK/fK3j6aQ/fftu69Wwkh5eTU5idm8f84jJevZ5GbnQcHYJwcfYagAT9K5t4vLaNRx+2LnvZlSQdvWrA
+        1RF6g/5ftO/S2JnqAfQRHvwv5PP5H2yYVqSRbiV6ljOcNaiGSU/uJ2P4L2uITW0nzO4CAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F2</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebration verses board</value>
+  </data>
+  <data name="toolStripSeparator25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2112,10 +2112,10 @@
     <value />
   </data>
   <data name="ActionViewCelebrationsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F2</value>
+    <value>Ctrl+F3</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
     <value>Celebrations board</value>
@@ -2141,13 +2141,16 @@
     <value />
   </data>
   <data name="ActionViewNewMoonsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F3</value>
+    <value>Ctrl+F4</value>
   </data>
   <data name="ActionViewNewMoonsBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
     <value>New moons board</value>
+  </data>
+  <data name="toolStripSeparator28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
   </data>
   <data name="ActionViewLunarMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2172,16 +2175,16 @@
     <value />
   </data>
   <data name="ActionViewLunarMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Ctrl+F5</value>
   </data>
   <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionViewLunarMonths.Text" xml:space="preserve">
     <value>Lunar months board</value>
   </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionCalculateDateDiff.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2200,10 +2203,10 @@
     <value>None</value>
   </data>
   <data name="ActionCalculateDateDiff.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F5</value>
+    <value>Ctrl+Maj+D</value>
   </data>
   <data name="ActionCalculateDateDiff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
     <value>Dates difference calculator</value>
@@ -2233,7 +2236,7 @@
     <value>Alt+D</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionOpenSystemDateAndTime.Text" xml:space="preserve">
     <value>Windows date and time</value>
@@ -2263,13 +2266,13 @@
     <value>Alt+C</value>
   </data>
   <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Windows calculator</value>
   </data>
   <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionLocalWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2295,7 +2298,7 @@
     <value>Alt+M</value>
   </data>
   <data name="ActionLocalWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionLocalWeather.Text" xml:space="preserve">
     <value>Windows weather</value>
@@ -2327,13 +2330,13 @@
     <value>Alt+W</value>
   </data>
   <data name="ActionOnlineWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionOnlineWeather.Text" xml:space="preserve">
     <value>Online weather</value>
   </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionShowMonthsAndDaysNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2353,7 +2356,7 @@
     <value>None</value>
   </data>
   <data name="ActionShowMonthsAndDaysNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionShowMonthsAndDaysNotice.Text" xml:space="preserve">
     <value>Months and days notice</value>
@@ -2377,7 +2380,7 @@
     <value>None</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Text" xml:space="preserve">
     <value>Celebrations notice</value>
@@ -2396,7 +2399,7 @@
     <value>None</value>
   </data>
   <data name="ActionShowShabatNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionShowShabatNotice.Text" xml:space="preserve">
     <value>Shabat notice</value>
@@ -2419,13 +2422,13 @@
     <value>None</value>
   </data>
   <data name="ActionShowParashahNotice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionShowParashahNotice.Text" xml:space="preserve">
     <value>Parashot notice</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2454,10 +2457,13 @@
     <value>Alt+E</value>
   </data>
   <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder</value>
+  </data>
+  <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
   </data>
   <data name="ActionGenerate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2481,13 +2487,13 @@
     <value>Alt+G</value>
   </data>
   <data name="ActionGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionGenerate.Text" xml:space="preserve">
     <value>Generate calendar</value>
   </data>
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionVacuumDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2513,7 +2519,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionVacuumDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionVacuumDB.Text" xml:space="preserve">
     <value>Optimize database</value>
@@ -3325,6 +3331,9 @@
   <data name="ContextMenuDayParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
   </data>
+  <data name="toolStripSeparator27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
   <data name="ContextMenuDayCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3624,7 +3633,7 @@
     <value>Navigation window</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 464</value>
+    <value>243, 448</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3640,7 +3649,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAATgBAgE4AQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAUgBAgFIAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -3877,7 +3886,7 @@
     <value>EditExportDataEnumsAsTranslations</value>
   </data>
   <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=9.28.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LabelEnumsAsTranslations.Name" xml:space="preserve">
     <value>LabelEnumsAsTranslations</value>
@@ -4311,6 +4320,12 @@
   <data name="&gt;&gt;ActionOpenExportFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator26.Name" xml:space="preserve">
+    <value>toolStripSeparator26</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionGenerate.Name" xml:space="preserve">
     <value>ActionGenerate</value>
   </data>
@@ -4712,6 +4727,24 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator27.Name" xml:space="preserve">
+    <value>toolStripSeparator27</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Name" xml:space="preserve">
+    <value>toolStripSeparator25</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
+    <value>toolStripSeparator28</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

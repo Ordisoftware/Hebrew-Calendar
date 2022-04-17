@@ -987,8 +987,6 @@ partial class MainForm : Form
     }
   }
 
-  public enum ViewScrollOverride { None, NoTextReport, ForceTextReport }
-
   #endregion
 
   #region Data Grid View

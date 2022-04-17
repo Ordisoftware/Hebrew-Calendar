@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -44,7 +44,7 @@ static partial class AppTranslations
                     "Ctrl + S : Save current view to file" + Globals.NL +
                     "Ctrl + C : Copy current view to clipboard" + Globals.NL +
                     "Ctrl + P : Print current view" + Globals.NL +
-                    "Shift + Ctrl + C : Copy the text report selection to clipboard" + Globals.NL +
+                    "Ctrl + Shift + C : Copy the text report selection to clipboard" + Globals.NL +
                     "Alt + V : View menu" + Globals.NL +
                     "Alt + T : Tools menu" + Globals.NL +
                     "Alt + L : Web links menu" + Globals.NL +
@@ -57,12 +57,12 @@ static partial class AppTranslations
                     "Alt + W : Online weather" + Globals.NL +
                     "Alt + G : Generate calendar" + Globals.NL +
                     "Alt + P : Show online parashah menu" + Globals.NL +
-                    "Alt + A : Celebration verses board" + Globals.NL +
                     "Ctrl + F1 : Parashot board" + Globals.NL +
-                    "Ctrl + F2 : Celebrations board" + Globals.NL +
-                    "Ctrl + F3 : New moons board" + Globals.NL +
-                    "Ctrl + F4 : Lunar months board" + Globals.NL +
-                    "Ctrl + F5 : Dates difference calculator" + Globals.NL +
+                    "Ctrl + F2 : Celebration verses board" + Globals.NL +
+                    "Ctrl + F3 : Celebrations board" + Globals.NL +
+                    "Ctrl + F4 : New moons board" + Globals.NL +
+                    "Ctrl + F5 : Lunar months board" + Globals.NL +
+                    "Ctrl + Shift + D : Dates difference calculator" + Globals.NL +
                     "Home : First month available in the database" + Globals.NL +
                     "End : Last month available in the database" + Globals.NL +
                     "Up (ou PageUp) : Previous year" + Globals.NL +
@@ -103,7 +103,7 @@ static partial class AppTranslations
                     "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
                     "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
                     "Ctrl + P : Imprime la vue en cours" + Globals.NL +
-                    "Maj + Ctrl + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
+                    "Ctrl + Maj + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
                     "Alt + V : Menu des vues" + Globals.NL +
                     "Alt + T : Menu des outils" + Globals.NL +
                     "Alt + L : Menu des liens web" + Globals.NL +
@@ -114,14 +114,14 @@ static partial class AppTranslations
                     "Alt + D : Paramètres de date et heure de Windows" + Globals.NL +
                     "Alt + M : Météo Windows" + Globals.NL +
                     "Alt + W : Météo en ligne" + Globals.NL +
-                    "Alt + G : Génèrate le calendrier" + Globals.NL +
+                    "Alt + G : Génère le calendrier" + Globals.NL +
                     "Alt + P : Affiche le menu de la parashah en ligne" + Globals.NL +
-                    "Alt + A : Tableau des versets des célébrations" + Globals.NL +
                     "Ctrl + F1 : Tableau des parashot" + Globals.NL +
-                    "Ctrl + F2 : Tableau des célébrations" + Globals.NL +
-                    "Ctrl + F3 : Tableau des nouvelles lunes" + Globals.NL +
-                    "Ctrl + F4 : Tableau des mois lunaires" + Globals.NL +
-                    "Ctrl + F5 : Calculateur de différence de dates" + Globals.NL +
+                    "Ctrl + F2 : Tableau des versets des célébrations" + Globals.NL +
+                    "Ctrl + F3 : Tableau des célébrations" + Globals.NL +
+                    "Ctrl + F4 : Tableau des nouvelles lunes" + Globals.NL +
+                    "Ctrl + F5 : Tableau des mois lunaires" + Globals.NL +
+                    "Ctrl + Maj + D : Calculateur de différence de dates" + Globals.NL +
                     "Début : Premier mois disponible dans la base de données" + Globals.NL +
                     "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
                     "Haut (ou PagePrec) : Année précédente" + Globals.NL +

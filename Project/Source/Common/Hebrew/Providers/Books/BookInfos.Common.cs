@@ -14,7 +14,7 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class OnlineBooks
+static partial class BookInfos
 {
 
   static public readonly NullSafeDictionary<Language, NullSafeOfStringDictionary<TanakBook>> Common = new()
@@ -22,7 +22,7 @@ static partial class OnlineBooks
     [Language.FR] = new NullSafeOfStringDictionary<TanakBook>
     {
       // Torah
-      { TanakBook.Bereshit, "Génèse"},
+      { TanakBook.Bereshit, "Genèse"},
       { TanakBook.Shemot, "Exode"},
       { TanakBook.Vayiqra, "Lévitique"},
       { TanakBook.Bamidbar, "Nombres"},

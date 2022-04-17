@@ -49,7 +49,7 @@
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
     <NoWarn>1587, 1591, 0649</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -65,7 +65,7 @@
     <NoWarn>1587, 1591, 0649</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>true</DebugSymbols>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <AllowedReferenceRelatedFileExtensions>
           *.pdb;
           Ordisoftware*.xml;
@@ -345,18 +345,19 @@
     <Compile Include="Source\Common\Hebrew\Database\TermLettriqs.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\Books.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\BooksBounds.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.BibleHub.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.Chabad.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.TorahBox.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.Common.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.Djep.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.Hebrew.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.LEvangile.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.MechonMamre.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.Unicode.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBooks.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewAlphabet.cs" />
     <Compile Include="Source\Common\Hebrew\Classes\HebrewMonths.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Common.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Hebrew.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Transcriptions.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Unicode.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.BibleHub.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Chabad.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Djep.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.LEvangile.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.StudyBible.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.MyJewishLearning.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheYeshivaNet.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.YeshivaCo.cs" />
@@ -396,6 +397,7 @@
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Enums\TorahCelebrationSettings.cs" />
     <Compile Include="Source\Enums\CalendarDoubleClickAction.cs" />
+    <Compile Include="Source\Enums\ViewScrollOverride.cs" />
     <Compile Include="Source\Enums\WeatherProvider.cs" />
     <Compile Include="Source\Common\Hebrew\WinForms\CelebrationVersesBoardForm.cs">
       <SubType>Form</SubType>

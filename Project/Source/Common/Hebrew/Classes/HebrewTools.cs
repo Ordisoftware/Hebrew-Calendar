@@ -175,17 +175,17 @@ static class HebrewTools
         chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
         url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
       }
-      url = url.Replace("%BOOKSEFARIA%", OnlineBooks.StudyBible[(TanakBook)book]
+      url = url.Replace("%BOOKSEFARIA%", OnlineBookInfos.StudyBible[(TanakBook)book]
                                                    .Replace("1", "I")
                                                    .Replace("2", "II")
                                                    .Replace(" ", "_"))
-               .Replace("%BOOKSB%", OnlineBooks.StudyBible[(TanakBook)book])
-               .Replace("%BOOKBIBLEHUB%", OnlineBooks.BibleHub[(TanakBook)book])
-               .Replace("%BOOKCHABAD%", ( OnlineBooks.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
-               .Replace("%BOOKMM%", OnlineBooks.MechonMamre[(TanakBook)book])
-               .Replace("%BOOKTORAHBOX%", OnlineBooks.TorahBox[(TanakBook)book])
-               .Replace("%BOOKDJEP%", OnlineBooks.Djep[(TanakBook)book])
-               .Replace("%BOOKLE%", OnlineBooks.LEvangile[(TanakBook)book])
+               .Replace("%BOOKSB%", OnlineBookInfos.StudyBible[(TanakBook)book])
+               .Replace("%BOOKBIBLEHUB%", OnlineBookInfos.BibleHub[(TanakBook)book])
+               .Replace("%BOOKCHABAD%", ( OnlineBookInfos.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
+               .Replace("%BOOKMM%", OnlineBookInfos.MechonMamre[(TanakBook)book])
+               .Replace("%BOOKTORAHBOX%", OnlineBookInfos.TorahBox[(TanakBook)book])
+               .Replace("%BOOKDJEP%", OnlineBookInfos.Djep[(TanakBook)book])
+               .Replace("%BOOKLE%", OnlineBookInfos.LEvangile[(TanakBook)book])
                .Replace("%BOOKNUM%", book.ToString())
                .Replace("%CHAPTERNUM%", chapterString)
                .Replace("%VERSENUM%", verse.ToString())

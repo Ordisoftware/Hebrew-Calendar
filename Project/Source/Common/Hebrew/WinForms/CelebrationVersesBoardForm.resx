@@ -118,20 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelInfoOccurences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelInfoOccurences.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelInfoOccurences.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelInfoOccurences.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelInfoOccurences.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="LabelInfoOccurences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="LabelInfoOccurences.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="LabelInfoOccurences.Text" xml:space="preserve">
+    <value>Use arrows to toggle between lists</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoOccurences.Name" xml:space="preserve">
+    <value>LabelInfoOccurences</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoOccurences.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoOccurences.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;LabelInfoOccurences.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 2</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -148,7 +184,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -230,7 +266,7 @@
   <data name="ActionOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAP5JREFUOE+lkjEKg0AQRfcEniKCB/AqCZgLxMI2loJpzRUieAFLa0ltKgOxkGAO
+        vQAADr0BR/uQrQAAAP5JREFUOE+lkjEKg0AQRfcEniKCB/AqCZgLxMI2loJpzRUieAFLa0ltKgOxkGAO
         YOEJNvzBEXVXgubDIOvsvP07OwIKw4tcG1F0lVScpqncKoL8A4ATBVCWT5llmWzbVom5tADP83A3bdi2
         PQEFQaACkiTRFnOgiEWHzQF1/ZZn36eTuq4bAmtYdpxjv3MBcItjCp2K4vEbkOd3ud8f+tVUaPA4B6cK
         AFYtyyLbczGAc4vPuDNN7TXYHb+E4gDF3O2T6youMB9jgNIDnIBiwzBoTFcDkHhVlWyaz7BpLADxzAwm
@@ -294,7 +330,7 @@
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        vgAADr4B6kKxwAAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
         QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
         AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
         +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
@@ -414,6 +450,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>384, 306</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 500</value>

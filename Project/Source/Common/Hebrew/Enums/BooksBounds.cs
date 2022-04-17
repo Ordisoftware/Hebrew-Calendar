@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
@@ -34,99 +34,4 @@ static class BooksBounds
   static public readonly BookBound Ketouvim = Create<KetouvimBook>();
   static private BookBound Create<T>() where T : struct, Enum
     => new(EnumHelper.Min<T>(), EnumHelper.Max<T>());
-
-  static public readonly NullSafeDictionary<Language, NullSafeOfStringDictionary<TanakBook>> Transcriptions = new()
-  {
-    [Language.FR] = new NullSafeOfStringDictionary<TanakBook>
-    {
-      // Torah
-      { TanakBook.Bereshit, "Bereshit" },
-      { TanakBook.Shemot, "Shemot" },
-      { TanakBook.Vayiqra, "Vayiqra" },
-      { TanakBook.Bamidbar, "Bamidbar" },
-      { TanakBook.Devarim, "Devarim" },
-      // Nevi'im 
-      { TanakBook.Yehoshoua, "Yehoshoua'" },
-      { TanakBook.Shoftim, "Shoftim" },
-      { TanakBook.Shemouel_I, "Shemouel I" },
-      { TanakBook.Shemouel_II, "Shemouel II" },
-      { TanakBook.Melakim_I, "Melakim I" },
-      { TanakBook.Melakim_II, "Melakim II" },
-      { TanakBook.Yeshayahou, "Yesha'yahou" },
-      { TanakBook.Yirmeyahou, "Yirmeyahou" },
-      { TanakBook.Yehezqel, "Ye'hezqel" },
-      { TanakBook.Hoshea, "Hoshea'" },
-      { TanakBook.Yoel, "Yoel" },
-      { TanakBook.Amos, "'Amos" },
-      { TanakBook.Obadyah, "'Obadyah" },
-      { TanakBook.Yonah, "Yonah" },
-      { TanakBook.Mikah, "Mikah" },
-      { TanakBook.Nahoum, "Na'houm" },
-      { TanakBook.Habaqouq, "'Habaqouq" },
-      { TanakBook.Tsephaniah, "Tsephaniah" },
-      { TanakBook.Hagai, "'Hagai" },
-      { TanakBook.Zekaria, "Zekaria" },
-      { TanakBook.Malaki, "Malaki" },
-      // Ketouvim 
-      { TanakBook.Tehilim, "Tehilim" },
-      { TanakBook.Mishlei, "Mishlei" },
-      { TanakBook.Iyov, "Iyov" },
-      { TanakBook.Shir_HaShirim, "Shir HaShirim" },
-      { TanakBook.Ruth, "Ruth" },
-      { TanakBook.Eikah, "Eikah" },
-      { TanakBook.Qohelet, "Qohelet" },
-      { TanakBook.Esther, "Esther" },
-      { TanakBook.Daniel, "Daniel" },
-      { TanakBook.Ezra, "'Ezra" },
-      { TanakBook.Nehemiah, "Ne'hemiah" },
-      { TanakBook.Divrei_HaYamim_I, "Divrei HaYamim I" },
-      { TanakBook.Divrei_HaYamim_II, "Divrei HaYamim II" }
-    },
-    [Language.EN] = new NullSafeOfStringDictionary<TanakBook>
-    {
-      // Torah
-      { TanakBook.Bereshit, "Bereshit" },
-      { TanakBook.Shemot, "Shemot" },
-      { TanakBook.Vayiqra, "Vayiqra" },
-      { TanakBook.Bamidbar, "Bamidbar" },
-      { TanakBook.Devarim, "Devarim" },
-      // Nevi'im 
-      { TanakBook.Yehoshoua, "Yehoshua'" },
-      { TanakBook.Shoftim, "Shoftim" },
-      { TanakBook.Shemouel_I, "Shemuel I" },
-      { TanakBook.Shemouel_II, "Shemuel II" },
-      { TanakBook.Melakim_I, "Melakim I" },
-      { TanakBook.Melakim_II, "Melakim II" },
-      { TanakBook.Yeshayahou, "Yesha'yahu" },
-      { TanakBook.Yirmeyahou, "Yirmeyahu" },
-      { TanakBook.Yehezqel, "Ye'hezqel" },
-      { TanakBook.Hoshea, "Hoshea'" },
-      { TanakBook.Yoel, "Yoel" },
-      { TanakBook.Amos, "'Amos" },
-      { TanakBook.Obadyah, "'Obadyah" },
-      { TanakBook.Yonah, "Yonah" },
-      { TanakBook.Mikah, "Mikah" },
-      { TanakBook.Nahoum, "Na'hum" },
-      { TanakBook.Habaqouq, "'Habaquq" },
-      { TanakBook.Tsephaniah, "Tsephaniah" },
-      { TanakBook.Hagai, "'Hagai" },
-      { TanakBook.Zekaria, "Zekaria" },
-      { TanakBook.Malaki, "Malaki" },
-      // Ketuvim 
-      { TanakBook.Tehilim, "Tehilim" },
-      { TanakBook.Mishlei, "Mishlei" },
-      { TanakBook.Iyov, "Iyov" },
-      { TanakBook.Shir_HaShirim, "Shir HaShirim" },
-      { TanakBook.Ruth, "Ruth" },
-      { TanakBook.Eikah, "Eikah" },
-      { TanakBook.Qohelet, "Qohelet" },
-      { TanakBook.Esther, "Esther" },
-      { TanakBook.Daniel, "Daniel" },
-      { TanakBook.Ezra, "'Ezra" },
-      { TanakBook.Nehemiah, "Ne'hemiah" },
-      { TanakBook.Divrei_HaYamim_I, "Divrei HaYamim I" },
-      { TanakBook.Divrei_HaYamim_II, "Divrei HaYamim II" }
-    }
-  };
-
 }

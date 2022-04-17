@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class ParashotHelper
@@ -20,14 +20,14 @@ static class ParashotHelper
   [SuppressMessage("AsyncUsage", "AsyncFixer03:Fire-and-forget async-void methods or delegates", Justification = "N/A (event)")]
   [SuppressMessage("Usage", "VSTHRD101:Avoid unsupported async delegates", Justification = "<En attente>")]
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
-  static public bool ShowDescription(this List<Parashah> parashot,
-                                     Parashah parashah,
-                                     bool withLinked,
-                                     Func<Form> runBoard)
+  static public bool ShowDescription(
+    this List<Parashah> parashot,
+    Parashah parashah,
+    bool withLinked,
+    Func<Form> runBoard)
   {
     // Prepare
-    string title = HebrewTranslations.WeeklyParashah.GetLang();
-    var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f.Text.Contains(title)).FirstOrDefault();
+    var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f is MessageBoxEx && f.Tag == parashah).FirstOrDefault();
     if ( form is not null )
     {
       form.Popup();
@@ -39,12 +39,14 @@ static class ParashotHelper
     var message = parashah.ToStringReadable();
     if ( linked is not null )
       message += Globals.NL2 + linked.ToStringReadable();
+    string title = HebrewTranslations.WeeklyParashah.GetLang() + " : " + parashah.Name;
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
       StartPosition = FormStartPosition.CenterScreen,
       ForceNoTopMost = true,
       ShowInTaskbar = true,
-      AllowClose = true
+      AllowClose = true,
+      Tag = parashah
     };
     // Button Open board
     form.ActionYes.Visible = runBoard is not null;
@@ -59,12 +61,7 @@ static class ParashotHelper
     // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
     form.ActionNo.Text = SysTranslations.Memo.GetLang();
-    form.ActionNo.Click += (_, _) =>
-    {
-      string memo1 = parashah.Memo;
-      string memo2 = linked?.Memo ?? "";
-      DisplayManager.Show(string.Join(Globals.NL2, memo1, memo2));
-    };
+    form.ActionNo.Click += (_, _) => DisplayManager.Show(string.Join(Globals.NL2, parashah.Memo, linked?.Memo ?? ""));
     // Button Copy to clipboard
     form.ActionRetry.Visible = true;
     form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();

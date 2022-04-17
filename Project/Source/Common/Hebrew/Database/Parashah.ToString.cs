@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 public partial class Parashah
@@ -38,9 +38,8 @@ public partial class Parashah
        ( Memo.IsNullOrEmpty() ? "" : $" ; {Memo.GetOrEmpty()}" );
 
   public string ToStringReadable()
-    => $"Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
-       $"Parashah n°{Number} " + Globals.NL +
-       $"{Name} {Unicode}" + Globals.NL +
+    => $"• Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
+       $"• Parashah n°{Number} {Name} {Unicode}" + Globals.NL +
        $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
        $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";
 

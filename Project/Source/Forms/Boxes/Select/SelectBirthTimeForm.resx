@@ -117,92 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EditTime.CustomFormat" xml:space="preserve">
-    <value>HH:mm</value>
+  <data name="&gt;&gt;Label.Name" xml:space="preserve">
+    <value>Label</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="EditTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 38</value>
-  </data>
-  <data name="EditTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EditTime.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditTime.Name" xml:space="preserve">
-    <value>EditTime</value>
-  </data>
-  <data name="&gt;&gt;EditTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;EditTime.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Label.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 19</value>
-  </data>
-  <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
-  </data>
-  <data name="Label.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Label.Text" xml:space="preserve">
     <value>Enter the birth time</value>
   </data>
-  <data name="&gt;&gt;Label.Name" xml:space="preserve">
-    <value>Label</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;Label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Label.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectBirthTimeForm</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="EditTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 2</value>
-  </data>
-  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
-  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Birth time</value>
   </data>
   <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
     <value>ActionCancel</value>
   </data>
-  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;EditTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
+  <data name="ActionOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ActionCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditTime.Name" xml:space="preserve">
+    <value>EditTime</value>
+  </data>
+  <data name="Label.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="&gt;&gt;Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 28</value>
   </data>
   <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -210,73 +204,82 @@
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>
   </data>
-  <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
-  </data>
-  <data name="ActionOK.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ActionOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
-    <value>ActionOK</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="PanelButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 76</value>
-  </data>
-  <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 28</value>
-  </data>
-  <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
-    <value>PanelButtons</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelButtons.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Label.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelButtons.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;Label.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 76</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelButtons.Name" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="Label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 39</value>
+  </data>
+  <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 2</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="EditTime.CustomFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="&gt;&gt;EditTime.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="ActionCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelButtons</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>182, 114</value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
+  <data name="ActionCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 20</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Birth time</value>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SelectBirthTime</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

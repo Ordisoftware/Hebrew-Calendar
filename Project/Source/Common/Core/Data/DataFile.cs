@@ -48,9 +48,9 @@ public abstract class DataFile
   /// <summary>
   /// Constructor.
   /// </summary>
-  protected DataFile(string filePath, bool showFileNotFound, bool configurable, DataFileFolder folder)
+  protected DataFile(string filePath!!, bool showFileNotFound, bool configurable, DataFileFolder folder)
   {
-    FilePathDefault = filePath ?? throw new ArgumentNullException(nameof(filePath));
+    FilePathDefault = filePath;
     ShowFileNotFound = showFileNotFound;
     Configurable = configurable;
     Folder = folder;

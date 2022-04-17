@@ -300,7 +300,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 | Ctrl + S | Save current view to a file |
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
-| Shift + Ctrl + C | Copy the text report selection to clipboard |
+| Ctrl + Shift + C | Copy the text report selection to clipboard |
 | Alt + V | Show view menu |
 | Alt + T | Tools menu |
 | Alt + L | Web links menu |
@@ -313,12 +313,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
-| Alt + A | Celebration verses board |
 | Ctrl + F1 | Parashot board |
-| Ctrl + F2 | Celebrations board |
-| Ctrl + F3 | New moons board |
-| Ctrl + F4 | Lunar months board |
-| Ctrl + F5 | Dates difference calculator |
+| Ctrl + F2 | Celebration verses board |
+| Ctrl + F3 | Celebrations board |
+| Ctrl + F4 | New moons board |
+| Ctrl + F5 | Lunar months board |
+| Ctrl + Shift + D | Dates difference calculator |
 | Home | First month available in the database |
 | End | Last month available in the database |
 | Up (or PageUp) | Previous year |
@@ -370,6 +370,13 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
+
+#### 2022.04.26 - Version 9.29
+
+- Improve shortcut for boards.
+- Add parashah name in the title bar of description box.
+- Fix multiple parashah description boxes at the same time which only displays the first one opened until it is closed.
+- Fix save in parashot board causes a null exception in case of empty cells in the grid.
 
 #### 2022.04.05 - Version 9.28
 
