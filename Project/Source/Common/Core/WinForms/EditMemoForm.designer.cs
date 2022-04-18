@@ -28,14 +28,15 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMemoForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionOk = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.PanelSep = new System.Windows.Forms.Panel();
-      this.TextBox = new Ordisoftware.Core.TextBoxEx();
+      this.TextBox = new Ordisoftware.Core.RichTextBoxEx();
+      this.Panel = new System.Windows.Forms.Panel();
       this.PanelButtons.SuspendLayout();
+      this.Panel.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -66,24 +67,37 @@
       // 
       // TextBox
       // 
-      this.TextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.TextBox.DetectUrls = false;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
+      this.TextBox.SelectionAlignment = Ordisoftware.Core.TextAlign.Justify;
+      this.TextBox.SizeChanged += new System.EventHandler(this.TextBox_SizeChanged);
+      // 
+      // Panel
+      // 
+      this.Panel.BackColor = System.Drawing.SystemColors.Window;
+      this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.Panel.Controls.Add(this.TextBox);
+      resources.ApplyResources(this.Panel, "Panel");
+      this.Panel.Name = "Panel";
       // 
       // EditMemoForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.TextBox);
+      this.Controls.Add(this.Panel);
       this.Controls.Add(this.PanelSep);
       this.Controls.Add(this.PanelButtons);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "EditMemoForm";
       this.ShowInTaskbar = false;
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditMemoForm_FormClosed);
+      this.Load += new System.EventHandler(this.EditMemoForm_Load);
       this.PanelButtons.ResumeLayout(false);
+      this.Panel.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -91,7 +105,8 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    public Ordisoftware.Core.TextBoxEx TextBox;
+    internal Ordisoftware.Core.RichTextBoxEx TextBox;
     private System.Windows.Forms.Panel PanelSep;
+    private Panel Panel;
   }
 }

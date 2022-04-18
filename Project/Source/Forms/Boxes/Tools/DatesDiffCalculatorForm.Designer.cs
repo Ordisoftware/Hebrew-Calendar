@@ -62,6 +62,7 @@
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
+      this.ActionOpecCalc = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -114,6 +115,7 @@
       // 
       this.PanelBottom.Controls.Add(this.EditAutoSetRightToToday);
       this.PanelBottom.Controls.Add(this.ActionHelp);
+      this.PanelBottom.Controls.Add(this.ActionOpecCalc);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -313,6 +315,16 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
+      // ActionOpecCalc
+      // 
+      this.ActionOpecCalc.AllowDrop = true;
+      this.ActionOpecCalc.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpecCalc, "ActionOpecCalc");
+      this.ActionOpecCalc.Name = "ActionOpecCalc";
+      this.ActionOpecCalc.TabStop = false;
+      this.ActionOpecCalc.UseVisualStyleBackColor = true;
+      this.ActionOpecCalc.Click += new System.EventHandler(this.ActionOpecCalc_Click);
+      // 
       // DatesDiffCalculatorForm
       // 
       resources.ApplyResources(this, "$this");
@@ -374,5 +386,6 @@
     private System.Windows.Forms.Button ActionSwapDates;
     private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.CheckBox EditAutoSetRightToToday;
+    private Button ActionOpecCalc;
   }
 }

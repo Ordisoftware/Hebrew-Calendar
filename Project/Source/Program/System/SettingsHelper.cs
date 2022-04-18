@@ -103,6 +103,9 @@ static class SettingsHelper
       DisplayManager.ShowSuccessDialogs = settings.ShowSuccessDialogs;
       MainForm.EditDialogBoxesSettings_CheckedChanged(null, null);
       //
+      EditMemoForm.LastLocation = settings.EditMemoFormLastLocation;
+      EditMemoForm.LastSize = settings.EditMemoFormLastSize;
+      //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
     }
@@ -145,6 +148,9 @@ static class SettingsHelper
       settings.SoundsEnabled = MainForm.EditSoundsEnabled.Checked;
       settings.AdvancedDialogBoxes = MainForm.EditUseAdvancedDialogBoxes.Checked;
       settings.ShowSuccessDialogs = MainForm.EditShowSuccessDialogs.Checked;
+      //
+      settings.EditMemoFormLastLocation = EditMemoForm.LastLocation;
+      settings.EditMemoFormLastSize = EditMemoForm.LastSize;
       SystemManager.TryCatch(settings.Save);
     }
     finally
