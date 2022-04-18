@@ -212,10 +212,11 @@ static class FormsHelper
   /// Checks if location is in the screen else center to main form else to screen.
   /// </summary>
   /// <param name="form">The form.</param>
-  static public void CheckLocationOrCenterToMainFormElseScreen(this Form form)
+  static public void CheckLocationOrCenterToMainFormElseScreen(this Form form, bool includeZero = false)
   {
+    int min = includeZero ? 1 : 0;
     if ( form is null ) return;
-    if ( form.Location.X < 0 || form.Location.Y < 0
+    if ( form.Location.X < min || form.Location.Y < min
       || form.Left > SystemInformation.WorkingArea.Width - form.Width / 2
       || form.Top > SystemInformation.WorkingArea.Height - form.Height / 2 )
       form.CenterToMainFormElseScreen();

@@ -692,5 +692,11 @@
     <Setting Name="CustomWebSearch" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%WORD%</Value>
     </Setting>
+    <Setting Name="EditMemoFormLastLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="EditMemoFormLastSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

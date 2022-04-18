@@ -11,16 +11,45 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03  </created>
-/// <edited> 2020-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
 partial class EditMemoForm : Form
 {
 
+  static public Point LocationZero;
+  static public Point LastLocation;
+
+  static public Size SizeZero;
+  static public Size LastSize;
+
+  static public bool Run(string title, string memoCurrent, out string memoNew)
+  {
+    using var form = new EditMemoForm();
+    form.Text += title;
+    form.TextBox.Text = memoCurrent;
+    form.TextBox.SelectionStart = 0;
+    bool changed = form.ShowDialog() == DialogResult.OK;
+    memoNew = changed ? form.TextBox.Text.SanitizeAndTrimEmptyLinesAndSpaces() : null;
+    return changed;
+  }
+
   public EditMemoForm()
   {
     InitializeComponent();
     Icon = Globals.MainForm.Icon;
+  }
+
+  private void EditMemoForm_Load(object sender, EventArgs e)
+  {
+    if ( LastLocation != LocationZero ) Location = LastLocation;
+    if ( LastSize != SizeZero ) Size = LastSize;
+  }
+
+  private void EditMemoForm_FormClosed(object sender, FormClosedEventArgs e)
+  {
+    LastLocation = Location;
+    LastSize = Size;
   }
 
 }

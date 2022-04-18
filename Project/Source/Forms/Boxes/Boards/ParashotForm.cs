@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
@@ -411,15 +411,14 @@ partial class ParashotForm : Form
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
   private void ActionEditMemo_Click(object sender, EventArgs e)
   {
-    using var form = new EditMemoForm();
-    form.Text += (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
-    form.TextBox.Text = CurrentDataBoundItem.Memo;
-    form.TextBox.SelectionStart = 0;
-    if ( form.ShowDialog() != DialogResult.OK ) return;
-    CurrentDataBoundItem.Memo = form.TextBox.Text;
-    ActionSave.Enabled = true;
-    ActionUndo.Enabled = true;
-    DataGridView.RefreshEdit();
+    string title = (string)DataGridView.CurrentRow.Cells[ColumnName.Index].Value;
+    if ( EditMemoForm.Run(title, CurrentDataBoundItem.Memo, out var memo) )
+    {
+      CurrentDataBoundItem.Memo = memo;
+      ActionSave.Enabled = true;
+      ActionUndo.Enabled = true;
+      DataGridView.RefreshEdit();
+    }
   }
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)

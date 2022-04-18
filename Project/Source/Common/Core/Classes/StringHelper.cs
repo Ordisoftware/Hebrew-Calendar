@@ -97,10 +97,14 @@ static partial class StringHelper
 
   /// <summary>
   /// Replaces all double and more contiguous empty lines by one.
+  /// Also replace \n alone by Windows NewLine.
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string SanitizeEmptyLines(this string str)
   {
+    if ( str.IsNullOrEmpty() ) return str;
+    if ( str.Contains("\n") && !str.Contains(Globals.NL) )
+      str = str.Replace("\n", Globals.NL);
     var lines = str.SplitKeepEmptyLines();
     var result = new List<string>();
     bool isPreviousEmpty = false;

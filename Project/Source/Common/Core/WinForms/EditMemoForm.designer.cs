@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMemoForm));
       this.PanelButtons = new System.Windows.Forms.Panel();
       this.ActionOk = new System.Windows.Forms.Button();
@@ -80,9 +79,10 @@
       this.MinimizeBox = false;
       this.Name = "EditMemoForm";
       this.ShowInTaskbar = false;
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditMemoForm_FormClosed);
+      this.Load += new System.EventHandler(this.EditMemoForm_Load);
       this.PanelButtons.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
