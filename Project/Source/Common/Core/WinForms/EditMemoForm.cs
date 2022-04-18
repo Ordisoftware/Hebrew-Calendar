@@ -52,4 +52,9 @@ partial class EditMemoForm : Form
     LastSize = Size;
   }
 
+  private void TextBox_SizeChanged(object sender, EventArgs e)
+  {
+    TextBox.RightMargin = TextBox.ClientSize.Width - 5;
+  }
+
 }
