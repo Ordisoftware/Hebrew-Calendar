@@ -103,25 +103,26 @@ static partial class StringHelper
   static public string SanitizeEmptyLines(this string str)
   {
     if ( str.IsNullOrEmpty() ) return str;
-    if ( str.Contains("\n") && !str.Contains(Globals.NL) )
+    if ( str.IndexOf('\n') >= 0 && !str.Contains(Globals.NL) )
       str = str.Replace("\n", Globals.NL);
     var lines = str.SplitKeepEmptyLines();
     var result = new List<string>();
     bool isPreviousEmpty = false;
     for ( int index = 0; index < lines.Length; index++ )
     {
-      bool isEmpty = lines[index].IsNullOrEmpty();
+      ref string line = ref lines[index];
+      bool isEmpty = line.IsNullOrEmpty();
       if ( isEmpty )
       {
         if ( !isPreviousEmpty )
         {
-          result.Add(lines[index]);
+          result.Add(line);
           isPreviousEmpty = true;
         }
       }
       else
       {
-        result.Add(lines[index]);
+        result.Add(line);
         isPreviousEmpty = false;
       }
     }

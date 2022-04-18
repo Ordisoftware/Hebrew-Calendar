@@ -211,7 +211,6 @@ static class FormsHelper
   /// <summary>
   /// Checks if location is in the screen else center to main form else to screen.
   /// </summary>
-  /// <param name="form">The form.</param>
   static public void CheckLocationOrCenterToMainFormElseScreen(this Form form, bool includeZero = false)
   {
     int min = includeZero ? 1 : 0;

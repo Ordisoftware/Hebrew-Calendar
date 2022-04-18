@@ -17,11 +17,11 @@ namespace Ordisoftware.Core;
 partial class EditMemoForm : Form
 {
 
-  static public Point LocationZero;
-  static public Point LastLocation;
+  static public readonly Point LocationZero;
+  static public readonly Size SizeZero;
 
-  static public Size SizeZero;
-  static public Size LastSize;
+  static public Point LastLocation { get; set; }
+  static public Size LastSize { get; set; }
 
   static public bool Run(string title, string memoCurrent, out string memoNew)
   {
