@@ -68,9 +68,16 @@ partial class NavigationForm : Form
         LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 )
           LabelEventSeasonValue.Text = NoDataField;
-        LabelEventTorahValue.Text = row.TorahEventText;
-        if ( LabelEventTorahValue.Text.Length == 0 )
-          LabelEventTorahValue.Text = NoDataField;
+
+        string torahEventText = row.TorahEventText;
+        if ( torahEventText.Length == 0 )
+        {
+          var rowOmerDay = ApplicationDatabase.Instance.GetDay(row.Date);
+          var (torahEvent, index, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+          torahEventText = torahEvent != TorahCelebration.None ? text : NoDataField;
+        }
+        LabelEventTorahValue.Text = torahEventText;
+
         var rowNext = LunisolarDays.Find(day => day.Date > value && day.TorahEvent != TorahCelebrationDay.None);
         if ( rowNext is not null )
         {

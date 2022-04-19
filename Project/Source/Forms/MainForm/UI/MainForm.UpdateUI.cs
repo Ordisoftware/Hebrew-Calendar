@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -23,7 +23,6 @@ public partial class MainForm
 
   private bool DoScreenPositionMutex;
   private bool UpdateTitlesMutex;
-
 
   private string TitleGPS = "";
   private string TitleOmer = "";
