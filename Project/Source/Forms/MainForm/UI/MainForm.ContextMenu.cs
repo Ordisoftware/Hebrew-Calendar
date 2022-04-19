@@ -89,7 +89,8 @@ public partial class MainForm
     if ( torahEventText.Length == 0 )
     {
       var rowOmerDay = ApplicationDatabase.Instance.GetDay(rowDay.Date);
-      (torahEvent, _, torahEventText) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+      if ( rowOmerDay is not null)
+        (torahEvent, _, torahEventText) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
     }
     if ( torahEvent != TorahCelebration.None )
     {

@@ -75,8 +75,13 @@ partial class NavigationForm : Form
         if ( torahEventText.Length == 0 )
         {
           var rowOmerDay = ApplicationDatabase.Instance.GetDay(row.Date);
-          var (torahEvent, index, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
-          torahEventText = torahEvent != TorahCelebration.None ? text : NoDataField;
+          if ( rowOmerDay is null )
+            torahEventText = NoDataField;
+          else
+          {
+            var (torahEvent, index, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+            torahEventText = torahEvent != TorahCelebration.None ? text : NoDataField;
+          }
         }
         LabelEventTorahValue.Text = torahEventText;
         //
