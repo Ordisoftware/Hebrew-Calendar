@@ -138,10 +138,8 @@
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
@@ -229,6 +227,8 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMain.SuspendLayout();
       this.PanelCalendarOuter.SuspendLayout();
       this.PanelCalendarInner.SuspendLayout();
@@ -1077,11 +1077,6 @@
       this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
       this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
       // 
-      // toolStripSeparator25
-      // 
-      this.toolStripSeparator25.Name = "toolStripSeparator25";
-      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
-      // 
       // ActionViewCelebrationsBoard
       // 
       resources.ApplyResources(this.ActionViewCelebrationsBoard, "ActionViewCelebrationsBoard");
@@ -1093,11 +1088,6 @@
       resources.ApplyResources(this.ActionViewNewMoonsBoard, "ActionViewNewMoonsBoard");
       this.ActionViewNewMoonsBoard.Name = "ActionViewNewMoonsBoard";
       this.ActionViewNewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
-      // 
-      // toolStripSeparator28
-      // 
-      this.toolStripSeparator28.Name = "toolStripSeparator28";
-      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // ActionViewLunarMonths
       // 
@@ -1718,6 +1708,16 @@
       this.MenuBookmarks.Name = "MenuBookmarks";
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      // 
+      // toolStripSeparator25
+      // 
+      this.toolStripSeparator25.Name = "toolStripSeparator25";
+      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
+      // 
+      // toolStripSeparator28
+      // 
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // MainForm
       // 
