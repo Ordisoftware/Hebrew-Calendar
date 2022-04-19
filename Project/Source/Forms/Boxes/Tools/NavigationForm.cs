@@ -52,9 +52,9 @@ partial class NavigationForm : Form
         bool isShabat = value.DayOfWeek == (DayOfWeek)Settings.ShabatDay;
         //
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
-        LabelLunarMonthName.Text = "(" + strMonth.ToUpper() + ")";
+        LabelLunarMonthName.Text = $"({strMonth.ToUpper()})";
         LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-        LabelLunarDayEvent.Text = isShabat ? "(" + AppTranslations.Shabat.GetLang().ToUpper() + ")" : "";
+        LabelLunarDayEvent.Text = isShabat ? $"({AppTranslations.Shabat.GetLang().ToUpper()}" : string.Empty;
         int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
         LabelLunarMonthName.Left = left;
         LabelLunarDayEvent.Left = left;
@@ -63,9 +63,9 @@ partial class NavigationForm : Form
         LabelMoonriseValue.Text = row.MoonriseAsString;
         LabelMoonsetValue.Text = row.MoonsetAsString;
         LabelMoonriseValue.Visible = row.Moonrise is not null;
-        LabelMoonrise.Visible = row.Moonrise is not null;
+        LabelMoonrise.Visible = LabelMoonriseValue.Visible;
         LabelMoonsetValue.Visible = row.Moonset is not null;
-        LabelMoonset.Visible = row.Moonset is not null;
+        LabelMoonset.Visible = LabelMoonsetValue.Visible;
         //
         LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 )
