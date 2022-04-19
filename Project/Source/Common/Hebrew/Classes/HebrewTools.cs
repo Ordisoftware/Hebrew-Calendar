@@ -122,13 +122,14 @@ static class HebrewTools
       if ( !wordAnalyzed.IsUnicode )
         items = items.Select(w => HebrewAlphabet.ToUnicode(HebrewAlphabet.SetFinal(w, true))).ToArray();
       foreach ( string item in items )
-      {
-        string url = link.Replace("%CUSTOM%", HebrewGlobals.GetCustomWebSearchPattern?.Invoke() ?? string.Empty)
-                         .Replace("%WORD%", item)
-                         .Replace("%FIRSTLETTER%", item[0].ToString());
-        SystemManager.RunShell(url, item);
-        Thread.Sleep(250);
-      }
+        if ( item.Length > 0 )
+        {
+          string url = link.Replace("%CUSTOM%", HebrewGlobals.GetCustomWebSearchPattern?.Invoke() ?? string.Empty)
+                           .Replace("%WORD%", item)
+                           .Replace("%FIRSTLETTER%", item[0].ToString());
+          SystemManager.RunShell(url, item);
+          Thread.Sleep(250);
+        }
     });
   }
 
