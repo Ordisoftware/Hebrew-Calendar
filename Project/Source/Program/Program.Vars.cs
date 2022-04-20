@@ -120,7 +120,7 @@ static partial class Program
     get
     {
       return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                       HebrewGlobals.HebrewGrammarGuideFilePath,
+                                                       HebrewGlobals.GrammarGuideFilePath,
                                                        nameof(Settings.GrammarGuideFormLocation),
                                                        nameof(Settings.GrammarGuideFormSize));
     }
