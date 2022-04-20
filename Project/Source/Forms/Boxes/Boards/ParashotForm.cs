@@ -423,7 +423,7 @@ partial class ParashotForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    Program.GrammarGuideForm.Popup();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -478,6 +478,11 @@ partial class ParashotForm : Form
     var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
     var day = days.Find(item => item.Date >= today && item.ParashahID == id);
     if ( day is not null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
+  }
+
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
   }
 
 }

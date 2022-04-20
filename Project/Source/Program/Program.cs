@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.IO.Pipes;
@@ -259,6 +259,7 @@ static partial class Program
         update(MainForm.Instance);
       new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
@@ -281,6 +282,7 @@ static partial class Program
         LoadingForm.Instance.Relocalize();
         TextBoxEx.Relocalize();
         AboutBox.Instance.AboutBox_Shown(null, null);
+        TranscriptionGuideForm.HTMLBrowserForm_Shown(null, null);
         GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();

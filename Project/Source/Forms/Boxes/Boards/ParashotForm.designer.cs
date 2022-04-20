@@ -97,6 +97,7 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -426,6 +427,7 @@
             this.ActionSearchOnline,
             this.ActionOpenHebrewWordsSearch,
             this.toolStripSeparator1,
+            this.ActionShowTranscriptionGuide,
             this.ActionShowGrammarGuide,
             this.ActionOpenHebrewLetters,
             this.toolStripSeparator2,
@@ -623,6 +625,12 @@
       this.Timer.Interval = 3000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
+      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -703,5 +711,6 @@
     private ToolStripSeparator toolStripSeparator7;
     private ToolStripMenuItem ActionEditMemo;
     private ToolStripSeparator toolStripSeparator5;
+    private ToolStripMenuItem ActionShowTranscriptionGuide;
   }
 }

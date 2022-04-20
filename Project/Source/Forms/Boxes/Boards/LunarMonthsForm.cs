@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunarMonthsForm : Form
@@ -152,7 +152,7 @@ partial class LunarMonthsForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    Program.GrammarGuideForm.Popup();
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -177,6 +177,11 @@ partial class LunarMonthsForm : Form
     var control = ( (ContextMenuStrip)menuitem.Owner ).SourceControl;
     int index = (int)control.Tag;
     SystemManager.RunShell(AppTranslations.WikipediaMonths.GetLang()[index]);
+  }
+
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
   }
 
 }
