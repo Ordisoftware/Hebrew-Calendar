@@ -39,6 +39,12 @@ static partial class HebrewGlobals
     => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
 
   /// <summary>
+  /// Indicates file path of the Hebrew transcription guide.
+  /// </summary>
+  static public string HebrewTranscriptionGuideFilePath
+    => Path.Combine(GuidesFolderPath, "Guide-Transcription-{0}.htm");
+
+  /// <summary>
   /// Indicates file path of the Hebrew grammar guide.
   /// </summary>
   static public string HebrewGrammarGuideFilePath
