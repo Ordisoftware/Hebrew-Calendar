@@ -35,6 +35,12 @@ static partial class HebrewTranslations
     }
   };
 
+  static public readonly TranslationsDictionary TranscriptionGuideTitle = new()
+  {
+    [Language.EN] = "Transcription guide",
+    [Language.FR] = "Guide de transcription"
+  };
+
   static public readonly TranslationsDictionary GrammarGuideTitle = new()
   {
     [Language.EN] = "Grammar guide",

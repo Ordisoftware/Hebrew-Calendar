@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -39,9 +39,15 @@ static partial class HebrewGlobals
     => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
 
   /// <summary>
+  /// Indicates file path of the Hebrew transcription guide.
+  /// </summary>
+  static public string TranscriptionGuideFilePath
+    => Path.Combine(GuidesFolderPath, "Guide-Transcription-{0}.htm");
+
+  /// <summary>
   /// Indicates file path of the Hebrew grammar guide.
   /// </summary>
-  static public string HebrewGrammarGuideFilePath
+  static public string GrammarGuideFilePath
     => Path.Combine(GuidesFolderPath, "Guide-Grammar-{0}.htm");
 
   /// <summary>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class NavigationForm : Form
@@ -50,10 +50,11 @@ partial class NavigationForm : Form
         LabelDate.Text = value.ToLongDateString().Titleize();
         string strMonth = HebrewMonths.Transcriptions.GetLang()[row.LunarMonth];
         bool isShabat = value.DayOfWeek == (DayOfWeek)Settings.ShabatDay;
+        //
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
-        LabelLunarMonthName.Text = "(" + strMonth.ToUpper() + ")";
+        LabelLunarMonthName.Text = $"({strMonth.ToUpper()})";
         LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-        LabelLunarDayEvent.Text = isShabat ? "(" + AppTranslations.Shabat.GetLang().ToUpper() + ")" : "";
+        LabelLunarDayEvent.Text = isShabat ? $"({AppTranslations.Shabat.GetLang().ToUpper()}" : string.Empty;
         int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
         LabelLunarMonthName.Left = left;
         LabelLunarDayEvent.Left = left;
@@ -62,15 +63,28 @@ partial class NavigationForm : Form
         LabelMoonriseValue.Text = row.MoonriseAsString;
         LabelMoonsetValue.Text = row.MoonsetAsString;
         LabelMoonriseValue.Visible = row.Moonrise is not null;
-        LabelMoonrise.Visible = row.Moonrise is not null;
+        LabelMoonrise.Visible = LabelMoonriseValue.Visible;
         LabelMoonsetValue.Visible = row.Moonset is not null;
-        LabelMoonset.Visible = row.Moonset is not null;
+        LabelMoonset.Visible = LabelMoonsetValue.Visible;
+        //
         LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 )
           LabelEventSeasonValue.Text = NoDataField;
-        LabelEventTorahValue.Text = row.TorahEventText;
-        if ( LabelEventTorahValue.Text.Length == 0 )
-          LabelEventTorahValue.Text = NoDataField;
+        //
+        string torahEventText = row.TorahEventText;
+        if ( torahEventText.Length == 0 )
+        {
+          var rowOmerDay = ApplicationDatabase.Instance.GetDay(row.Date);
+          if ( rowOmerDay is null )
+            torahEventText = NoDataField;
+          else
+          {
+            var (torahEvent, index, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+            torahEventText = torahEvent != TorahCelebration.None ? text : NoDataField;
+          }
+        }
+        LabelEventTorahValue.Text = torahEventText;
+        //
         var rowNext = LunisolarDays.Find(day => day.Date > value && day.TorahEvent != TorahCelebrationDay.None);
         if ( rowNext is not null )
         {
@@ -85,6 +99,7 @@ partial class NavigationForm : Form
           LabelTorahNextDateValue.Text = string.Empty;
           LabelTorahNextDateValue.Tag = null;
         }
+        //
         var today = ApplicationDatabase.Instance.GetToday();
         LabelCurrentDayValue.Text = today is not null
                                     ? today.DayAndMonthWithYearText
@@ -106,6 +121,7 @@ partial class NavigationForm : Form
           LabelParashahValue.Text = rowParashah.GetParashahText(Settings.ParashahCaptionWithBookAndRef);
           LabelParashahValue.Tag = rowParashah;
         }
+        //
         var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
         PictureMoon.Image = image.Resize(100, 100);
         if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -81,15 +81,22 @@ public partial class MainForm
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ContextMenuDayParashah.Text");
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
-    var torahevent = ( weeklong?.Event ) ?? TorahCelebration.None;
-    if ( torahevent == TorahCelebration.None )
-      torahevent = rowDay is not null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
+    var torahEvent = ( weeklong?.Event ) ?? TorahCelebration.None;
+    if ( torahEvent == TorahCelebration.None )
+      torahEvent = rowDay is not null ? TorahCelebrationSettings.Convert(rowDay.TorahEvent) : TorahCelebration.None;
     // Celebration
-    if ( torahevent != TorahCelebration.None )
+    string torahEventText = rowDay.TorahEventText;
+    if ( torahEventText.Length == 0 )
     {
-      string nameCelebration = HebrewTranslations.TorahCelebrations.GetLang(torahevent);
-      ContextMenuDayDate.Text += $" - {nameCelebration}";
-      ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(nameCelebration);
+      var rowOmerDay = ApplicationDatabase.Instance.GetDay(rowDay.Date);
+      if ( rowOmerDay is not null)
+        (torahEvent, _, torahEventText) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+    }
+    if ( torahEvent != TorahCelebration.None )
+    {
+      ContextMenuDayDate.Text += $" - {torahEventText}";
+      string celebrationName = HebrewTranslations.TorahCelebrations.GetLang(torahEvent);
+      ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(celebrationName);
     }
     else
     {
@@ -97,13 +104,13 @@ public partial class MainForm
       if ( rowNextCelebration is not null )
       {
         var weeklongNext = rowNextCelebration?.GetWeekLongCelebrationIntermediateDay();
-        var toraheventNext = weeklongNext.Value.Event;
-        if ( toraheventNext == TorahCelebration.None )
-          toraheventNext = TorahCelebrationSettings.Convert(rowNextCelebration.TorahEvent);
-        if ( toraheventNext != TorahCelebration.None )
+        var torahEventNext = weeklongNext.Value.Event;
+        if ( torahEventNext == TorahCelebration.None )
+          torahEventNext = TorahCelebrationSettings.Convert(rowNextCelebration.TorahEvent);
+        if ( torahEventNext != TorahCelebration.None )
         {
-          string nameCelebrationNext = HebrewTranslations.TorahCelebrations.GetLang(toraheventNext);
-          ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(nameCelebrationNext);
+          string celebrationName = HebrewTranslations.TorahCelebrations.GetLang(torahEventNext);
+          ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(celebrationName);
         }
       }
     }
