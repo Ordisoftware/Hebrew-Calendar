@@ -168,7 +168,7 @@ public partial class MainForm
   /// </summary>
   public void UpdateTextCalendar()
   {
-    CalendarText.Font = new Font(Settings.FontName, Settings.FontSize);
+    TextReport.Font = new Font(Settings.FontName, Settings.FontSize);
   }
 
   /// <summary>
@@ -185,10 +185,10 @@ public partial class MainForm
       ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
       ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;
       ActionSearchEvent.Enabled = ActionSaveToFile.Enabled;
-      ActionSearchMonth.Enabled = ActionSaveToFile.Enabled;
+      ActionSearchLunarMonth.Enabled = ActionSaveToFile.Enabled;
       ActionSearchDay.Enabled = ActionSaveToFile.Enabled;
       ActionNavigate.Enabled = ActionSaveToFile.Enabled;
-      ActionViewCelebrations.Enabled = ActionSaveToFile.Enabled;
+      ActionViewNextCelebrations.Enabled = ActionSaveToFile.Enabled;
       Refresh();
     });
   }
@@ -203,7 +203,7 @@ public partial class MainForm
     Cursor = Cursors.WaitCursor;
     bool formEnabled = Enabled;
     ToolStrip.Enabled = false;
-    PanelViewMonth.Parent = null;
+    PanelViewMonthlyCalendar.Parent = null;
     try
     {
       InitializeCalendarUI();

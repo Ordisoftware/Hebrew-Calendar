@@ -49,16 +49,16 @@ partial class MainForm
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private IEnumerable<string> GetTextReportLines(ExportInterval interval)
   {
-    if ( !interval.IsDefined ) return CalendarText.Lines;
+    if ( !interval.IsDefined ) return TextReport.Lines;
     int lengthToCheck = ApplicationDatabase.CalendarFieldSize[ReportFieldText.Date]
                       + ApplicationDatabase.ColumnSepLeft.Length;
     int lengthToExtract = ApplicationDatabase.ColumnSepLeft.Length + 4;
-    var linesFiltered = CalendarText.Lines
+    var linesFiltered = TextReport.Lines
                                     .Skip(3)
                                     .SkipWhile(line => filter(line, interval.Start.Value, true))
                                     .TakeWhile(line => filter(line, interval.End.Value, false));
-    var result = CalendarText.Lines.Take(3).Concat(linesFiltered);
-    return Enumerable.Append(result, CalendarText.Lines[CalendarText.Lines.Length - 1]);
+    var result = TextReport.Lines.Take(3).Concat(linesFiltered);
+    return Enumerable.Append(result, TextReport.Lines[TextReport.Lines.Length - 1]);
     //
     bool filter(string line, DateTime dateTrigger, bool strict)
     {

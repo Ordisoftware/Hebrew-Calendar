@@ -164,8 +164,8 @@ static partial class Program
         nameof(cmd.OpenCelebrationVersesBoard) => () => form.ActionShowCelebrationVersesBoard.PerformClick(),
         nameof(cmd.OpenCelebrationsBoard) => () => form.ActionViewCelebrationsBoard.PerformClick(),
         nameof(cmd.OpenNewMoonsBoard) => () => form.ActionViewNewMoonsBoard.PerformClick(),
-        nameof(cmd.OpenParashotBoard) => () => form.ActionViewParashot.PerformClick(),
-        nameof(cmd.OpenWeeklyParashahBox) => () => form.ActionViewParashahDescription.PerformClick(),
+        nameof(cmd.OpenParashotBoard) => () => form.ActionParashotBoard.PerformClick(),
+        nameof(cmd.OpenWeeklyParashahBox) => () => form.ActionWeeklyParashahDescription.PerformClick(),
         // TODO remove when lunar months ready
         nameof(cmd.OpenLunarMonthsBoard) => Globals.IsDebugExecutable ? () => form.ActionViewLunarMonths.PerformClick() : null,
         _ => null
@@ -291,7 +291,7 @@ static partial class Program
         SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
                                      () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
       }
-      MainForm.Instance.CalendarMonth._btnToday.ButtonText = AppTranslations.Today.GetLang();
+      MainForm.Instance.MonthlyCalendar._btnToday.ButtonText = AppTranslations.Today.GetLang();
       task?.Wait();
       MainForm.Instance.CreateSystemInformationMenu();
     }

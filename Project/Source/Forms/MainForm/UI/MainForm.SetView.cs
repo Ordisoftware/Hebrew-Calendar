@@ -58,8 +58,8 @@ partial class MainForm
           new ViewConnector
           {
             MenuItem = ActionViewReport,
-            Panel = PanelViewText,
-            Focused = CalendarText
+            Panel = PanelViewTextReport,
+            Focused = TextReport
           }
         },
         {
@@ -67,8 +67,8 @@ partial class MainForm
           new ViewConnector
           {
             MenuItem = ActionViewMonth,
-            Panel = PanelViewMonth,
-            Focused = CalendarMonth
+            Panel = PanelViewMonthlyCalendar,
+            Focused = MonthlyCalendar
           }
         },
         {
@@ -77,7 +77,7 @@ partial class MainForm
           {
             MenuItem = ActionViewGrid,
             Panel = PanelViewGrid,
-            Focused = CalendarGrid
+            Focused = DataGridView
           }
         }
       };
@@ -95,15 +95,15 @@ partial class MainForm
       viewPanels[Settings.CurrentView].MenuItem.Checked = false;
       viewPanels[Settings.CurrentView].Panel.Parent = null;
       viewPanels[view].MenuItem.Checked = true;
-      viewPanels[view].Panel.Parent = PanelCalendar;
+      viewPanels[view].Panel.Parent = PanelMainInner2;
       viewPanels[view].Focused.Focus();
       Settings.CurrentView = view;
       UpdateButtons();
       if ( view == ViewMode.Text )
         GoToDate(CurrentDay?.Date ?? DateTime.Today, scroll: ViewScrollOverride.ForceTextReport);
       else
-      if ( view == ViewMode.Grid && CalendarGrid.SelectedRows.Count > 0 )
-        CalendarGrid.FirstDisplayedScrollingRowIndex = CalendarGrid.SelectedRows[0].Index;
+      if ( view == ViewMode.Grid && DataGridView.SelectedRows.Count > 0 )
+        DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
     }
     catch ( Exception ex )
     {

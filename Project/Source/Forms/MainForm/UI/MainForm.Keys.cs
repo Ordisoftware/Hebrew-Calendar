@@ -52,7 +52,7 @@ partial class MainForm
           SetView(Settings.CurrentView.Next(ViewMode.None));
           return true;
         case Keys.Alt | Keys.V:
-          ActionView.ShowDropDown();
+          ActionSelectView.ShowDropDown();
           return true;
         // Top menu system
         case Keys.Alt | Keys.T:
@@ -64,13 +64,13 @@ partial class MainForm
           return true;
         // Top menu actions
         case Keys.F4:
-          ActionViewCelebrations.PerformClick();
+          ActionViewNextCelebrations.PerformClick();
           return true;
         case Keys.F5:
           ActionSearchEvent.PerformClick();
           return true;
         case Keys.F6:
-          ActionSearchMonth.PerformClick();
+          ActionSearchLunarMonth.PerformClick();
           return true;
         case Keys.F7:
           ActionSearchGregorianMonth.PerformClick();

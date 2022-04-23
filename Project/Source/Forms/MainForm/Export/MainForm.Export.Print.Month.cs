@@ -21,18 +21,18 @@ partial class MainForm
   [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "<En attente>")]
   private void ExportPrintMonth(ExportInterval interval)
   {
-    var current = CalendarMonth.CalendarDate;
+    var current = MonthlyCalendar.CalendarDate;
     int countPages = 0;
     bool askToContinue = true;
     bool multi = interval.IsDefined;
     if ( multi )
     {
-      CalendarMonth.CalendarDate = interval.Start.Value;
+      MonthlyCalendar.CalendarDate = interval.Start.Value;
       countPages = interval.MonthsCount;
     }
     int margin = Settings.PrintingMargin;
     int margin2 = margin + margin;
-    double ratio = (double)CalendarMonth.Height / CalendarMonth.Width;
+    double ratio = (double)MonthlyCalendar.Height / MonthlyCalendar.Width;
     //
     ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
     {
@@ -63,13 +63,13 @@ partial class MainForm
       //
       void process()
       {
-        using var bitmap = CalendarMonth.GetBitmap();
+        using var bitmap = MonthlyCalendar.GetBitmap();
         int delta = !redone ? 0 : e.PageBounds.Height / 2;
         e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
         if ( multi )
         {
-          CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-          if ( CalendarMonth.CalendarDate <= interval.End )
+          MonthlyCalendar.CalendarDate = MonthlyCalendar.CalendarDate.AddMonths(1);
+          if ( MonthlyCalendar.CalendarDate <= interval.End )
           {
             e.HasMorePages = true;
             if ( !redone && !e.PageSettings.Landscape )
@@ -80,7 +80,7 @@ partial class MainForm
           }
           else
           {
-            CalendarMonth.CalendarDate = interval.Start.Value;
+            MonthlyCalendar.CalendarDate = interval.Start.Value;
             e.HasMorePages = false;
           }
         }
@@ -89,7 +89,7 @@ partial class MainForm
       }
     });
     //
-    CalendarMonth.CalendarDate = current;
+    MonthlyCalendar.CalendarDate = current;
   }
 
 }

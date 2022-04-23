@@ -503,7 +503,7 @@ partial class PreferencesForm : Form
     DialogColor.Color = EditTextReportTextColor.BackColor;
     if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
     EditTextReportTextColor.BackColor = DialogColor.Color;
-    MainForm.Instance.CalendarText.ForeColor = DialogColor.Color;
+    MainForm.Instance.TextReport.ForeColor = DialogColor.Color;
   }
 
   private void TextReportBackColor_Click(object sender, EventArgs e)
@@ -511,7 +511,7 @@ partial class PreferencesForm : Form
     DialogColor.Color = EditTextReportBackColor.BackColor;
     if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
     EditTextReportBackColor.BackColor = DialogColor.Color;
-    MainForm.Instance.CalendarText.BackColor = DialogColor.Color;
+    MainForm.Instance.TextReport.BackColor = DialogColor.Color;
   }
 
   #endregion

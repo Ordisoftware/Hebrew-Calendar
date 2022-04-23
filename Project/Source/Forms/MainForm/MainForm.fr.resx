@@ -247,10 +247,10 @@
   <data name="ActionSearchEvent.ToolTipText" xml:space="preserve">
     <value>Chercher une célébration (F5)</value>
   </data>
-  <data name="ActionSearchMonth.Text" xml:space="preserve">
+  <data name="ActionSearchLunarMonth.Text" xml:space="preserve">
     <value>Chercher un mois lunaire</value>
   </data>
-  <data name="ActionSearchMonth.ToolTipText" xml:space="preserve">
+  <data name="ActionSearchLunarMonth.ToolTipText" xml:space="preserve">
     <value>Chercher un mois lunaire (F6)</value>
   </data>
   <data name="ActionSearchGregorianMonth.Text" xml:space="preserve">
@@ -271,10 +271,10 @@
   <data name="ActionNavigate.ToolTipText" xml:space="preserve">
     <value>Naviguer (F8, Ctrl+N)</value>
   </data>
-  <data name="ActionViewCelebrations.Text" xml:space="preserve">
+  <data name="ActionViewNextCelebrations.Text" xml:space="preserve">
     <value>Voir les prochaines célébrations</value>
   </data>
-  <data name="ActionViewCelebrations.ToolTipText" xml:space="preserve">
+  <data name="ActionViewNextCelebrations.ToolTipText" xml:space="preserve">
     <value>Voir les prochaines célébrations (F4)</value>
   </data>
   <data name="ActionExit.Text" xml:space="preserve">
@@ -310,7 +310,7 @@
   <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ActionViewParashahDescription.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahDescription.Text" xml:space="preserve">
     <value>Afficher la description</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
@@ -319,13 +319,13 @@
   <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
   <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahReadOnline.Text" xml:space="preserve">
     <value>Lire en ligne</value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
@@ -361,7 +361,7 @@
   <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
-  <data name="ActionViewParashot.Text" xml:space="preserve">
+  <data name="ActionParashotBoard.Text" xml:space="preserve">
     <value>Tableau des Parashot</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
@@ -574,7 +574,7 @@
   <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahDescription.Text" xml:space="preserve">
     <value>Afficher la description</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
@@ -583,13 +583,13 @@
   <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahStudyOnline.Text" xml:space="preserve">
     <value>Étudier en ligne</value>
   </data>
   <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahReadOnline.Text" xml:space="preserve">
     <value>Lire en ligne</value>
   </data>
   <data name="ContextMenuDayCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
@@ -647,10 +647,10 @@
   <data name="ActionShowMonthsAndDaysNotice.Text" xml:space="preserve">
     <value>Notice des mois et des jours</value>
   </data>
-  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahOpenWithHebrewWords.Text" xml:space="preserve">
     <value>Ouvrir avec Hebrew Words</value>
   </data>
-  <data name="ContextMenuOpenHebrewWordsVerse.Text" xml:space="preserve">
+  <data name="ContextMenuOpenWithHebrewWords.Text" xml:space="preserve">
     <value>Ouvrir avec Hebrew Words</value>
   </data>
 </root>

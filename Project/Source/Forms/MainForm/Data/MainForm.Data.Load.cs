@@ -83,7 +83,7 @@ partial class MainForm
       try
       {
         Globals.ChronoLoadData.Start();
-        CalendarText.Text = File.ReadAllText(Program.TextReportFilePath);
+        TextReport.Text = File.ReadAllText(Program.TextReportFilePath);
         Globals.ChronoLoadData.Stop();
         isTextReportLoaded = true;
       }
@@ -94,7 +94,7 @@ partial class MainForm
         Globals.ChronoStartingApp.Start();
       }
     if ( !isTextReportLoaded )
-      CalendarText.Text = ApplicationDatabase.Instance.GenerateReport();
+      TextReport.Text = ApplicationDatabase.Instance.GenerateReport();
   }
 
   private void LoadDataGenerate(bool keepYears, bool runPreferences)
@@ -129,7 +129,7 @@ partial class MainForm
     try
     {
       Globals.ChronoStartingApp.Stop();
-      CalendarMonth.ShowEventTooltips = false;
+      MonthlyCalendar.ShowEventTooltips = false;
       TimerReminder.Enabled = true;
       TimerReminder_Tick(null, null);
       Globals.ChronoStartingApp.Start();

@@ -201,14 +201,14 @@ partial class MainForm
             else
             {
               item.EventColor = Color.Transparent;
-              item.EventTextColor = CalendarMonth.ForeColor;
+              item.EventTextColor = MonthlyCalendar.ForeColor;
             }
             item.EventText = text;
             item.Rank = rank++;
             item.IgnoreTimeComponent = true;
             if ( Settings.UseColors )
               item.EventColor = ( (SolidBrush)GetDayBrush(item.Date.Day, item.Date.Month, item.Date.Year) ).Color;
-            CalendarMonth.AddEvent(item);
+            MonthlyCalendar.AddEvent(item);
           }
         }
         catch ( Exception ex )

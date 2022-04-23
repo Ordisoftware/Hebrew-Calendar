@@ -94,8 +94,8 @@ partial class MainForm
     Cursor = Cursors.WaitCursor;
     try
     {
-      CalendarText.ForeColor = Settings.TextColor;
-      CalendarText.BackColor = Settings.TextBackground;
+      TextReport.ForeColor = Settings.TextColor;
+      TextReport.BackColor = Settings.TextBackground;
       InitializeCalendarUI();
       Refresh();
       ClearLists();
@@ -123,7 +123,7 @@ partial class MainForm
       Cursor = Cursors.WaitCursor;
       this.InitDropDowns();
       UpdateTextCalendar();
-      CalendarMonth.CalendarDateChanged += date => GoToDate(date.Date);
+      MonthlyCalendar.CalendarDateChanged += date => GoToDate(date.Date);
       MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
       Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                              AppTranslations.NoticeKeyboardShortcuts,
@@ -145,7 +145,7 @@ partial class MainForm
       if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
         ActionPreferences.PerformClick();
       SystemManager.TryCatch(Settings.Store);
-      TimerBallon.Interval = Settings.BalloonLoomingDelay;
+      TimerBalloon.Interval = Settings.BalloonLoomingDelay;
       TimerMidnight.TimeReached += TimerMidnight_Tick;
     }
     finally
@@ -199,9 +199,9 @@ partial class MainForm
     if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
       ActionViewNewMoonsBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenParashotBoard )
-      ActionViewParashot.PerformClick();
+      ActionParashotBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
-      ActionViewParashahDescription.PerformClick();
+      ActionWeeklyParashahDescription.PerformClick();
     if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
       if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
         ActionViewLunarMonths.PerformClick();
@@ -233,7 +233,7 @@ partial class MainForm
     this.SyncUI(() =>
     {
       MenuShowHide_Click(null, null);
-      CalendarMonth.Refresh();
+      MonthlyCalendar.Refresh();
       var forms = Application.OpenForms.GetAll().Where(f => f.Visible).ToList();
       if ( forms.Count > 0 )
       {
@@ -273,7 +273,7 @@ partial class MainForm
     SystemManager.TryCatch(Settings.Store);
     Interlocks.Release();
     TimerTooltip.Stop();
-    TimerBallon.Stop();
+    TimerBalloon.Stop();
     TimerTrayMouseMove.Stop();
     TimerMidnight.Stop();
     TimerReminder.Stop();
@@ -386,15 +386,15 @@ partial class MainForm
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private void InitializeCalendarUI()
   {
-    CalendarMonth.TheEvents.Clear();
+    MonthlyCalendar.TheEvents.Clear();
     int sizeFont = Settings.MonthViewFontSize;
     if ( Settings.UseColors )
     {
-      PanelCalendar.BackColor = Settings.MonthViewNoDaysBackColor;
+      PanelMainInner2.BackColor = Settings.MonthViewNoDaysBackColor;
       CalenderNet.ColorText = Settings.MonthViewTextColor;
-      CalendarMonth.ForeColor = Settings.MonthViewTextColor;
-      CalendarMonth.BackColor = Settings.MonthViewBackColor;
-      CalendarMonth.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
+      MonthlyCalendar.ForeColor = Settings.MonthViewTextColor;
+      MonthlyCalendar.BackColor = Settings.MonthViewBackColor;
+      MonthlyCalendar.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
       CalenderNet.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
       CalenderNet.PenActiveDay = new Pen(Settings.CalendarColorActiveDay);
       CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
@@ -419,10 +419,10 @@ partial class MainForm
     }
     else
     {
-      PanelCalendar.BackColor = SystemColors.Window;
-      CalendarMonth.RogueBrush = Brushes.WhiteSmoke;
-      CalendarMonth.ForeColor = Color.Black;
-      CalendarMonth.BackColor = Color.White;
+      PanelMainInner2.BackColor = SystemColors.Window;
+      MonthlyCalendar.RogueBrush = Brushes.WhiteSmoke;
+      MonthlyCalendar.ForeColor = Color.Black;
+      MonthlyCalendar.BackColor = Color.White;
       CalenderNet.PenHoverEffect = Pens.Silver;
       CalenderNet.PenActiveDay = Pens.LightGray;
       CalenderNet.CurrentDayForeBrush = Brushes.White;
@@ -437,11 +437,11 @@ partial class MainForm
       CalenderNet.PenBlack = Pens.Black;
     }
     const string fontname = "Calibri";
-    CalendarMonth.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
-    CalendarMonth.DayOfWeekFont = new Font(fontname, sizeFont + 1);
-    CalendarMonth.DayViewTimeFont = new Font(fontname, sizeFont + 1, FontStyle.Bold);
-    CalendarMonth.DaysFont = new Font(fontname, sizeFont + 2);
-    CalendarMonth.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
+    MonthlyCalendar.DateHeaderFont = new Font(fontname, sizeFont + 5, FontStyle.Bold);
+    MonthlyCalendar.DayOfWeekFont = new Font(fontname, sizeFont + 1);
+    MonthlyCalendar.DayViewTimeFont = new Font(fontname, sizeFont + 1, FontStyle.Bold);
+    MonthlyCalendar.DaysFont = new Font(fontname, sizeFont + 2);
+    MonthlyCalendar.TodayFont = new Font("Microsoft Sans Serif", sizeFont + 2, FontStyle.Bold);
   }
 
 }

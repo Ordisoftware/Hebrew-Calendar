@@ -76,7 +76,7 @@ partial class MainForm
   private void CreateProvidersLinks()
   {
     // Weekly parashah study
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ActionWeeklyParashahStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
@@ -86,7 +86,7 @@ partial class MainForm
                                        weekParashah.Day.HasLinkedParashah);
     });
     // Weekly parashah read
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ActionWeeklyParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
@@ -95,7 +95,7 @@ partial class MainForm
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
     // Visual month parashah study
-    ContextMenuDayParashahStudy.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ContextMenuDayParashahStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
@@ -105,7 +105,7 @@ partial class MainForm
                                        ContextMenuDayCurrentEvent.HasLinkedParashah);
     });
     // Visual month parashah read
-    ContextMenuDayParashahRead.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ContextMenuDayParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
