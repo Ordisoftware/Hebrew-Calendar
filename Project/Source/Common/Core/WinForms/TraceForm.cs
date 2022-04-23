@@ -63,7 +63,7 @@ partial class TraceForm : Form
   private void LogForm_Activated(object sender, EventArgs e)
   {
     ActionClearLogs.Enabled = DebugManager.Enabled;
-    ActionRefreshFiles_Click(ActionRefreshFiles, EventArgs.Empty);
+    ActionRefreshFiles_Click(ActionRefreshFiles, null);
   }
 
   private void TraceForm_Deactivate(object sender, EventArgs e)
@@ -147,6 +147,7 @@ partial class TraceForm : Form
 
   private void ActionRefreshFiles_Click(object sender, EventArgs e)
   {
+    string filePath = (string)SelectFile.SelectedItem;
     TextBoxPrevious.Clear();
     SelectFile.Items.Clear();
     foreach ( var file in DebugManager.GetTraceFiles(false) )
@@ -166,7 +167,10 @@ partial class TraceForm : Form
     ActionDeleteFile.Enabled = SelectFile.Enabled;
     LabelFilesCount.Text = SysTranslations.TraceFilesCount.GetLang(SelectFile.Items.Count);
     if ( SelectFile.Enabled )
-      SelectFile.SelectedIndex = SelectFile.Items.Count - 1;
+    {
+      var index = filePath is null ? -1 : SelectFile.Items.IndexOf(filePath);
+      SelectFile.SelectedIndex = index != -1 ? index : SelectFile.Items.Count - 1;
+    }
   }
 
   private void SelectFile_Format(object sender, ListControlConvertEventArgs e)
