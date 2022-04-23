@@ -135,10 +135,12 @@ partial class TraceForm : Form
   private void TextBox_TextChanged(object sender, EventArgs e)
   {
     if ( TabControl.SelectedIndex == 0 )
-      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxCurrent.Lines.Length);
+    {
+      Text = SysTranslations.TraceFileFormTitleWithLines.GetLang(TextBoxCurrent.Lines.Length);
+    }
     else
     {
-      LabelLinesCount.Text = SysTranslations.TraceLinesCount.GetLang(TextBoxPrevious.Lines.Length);
+      Text = SysTranslations.TraceFileFormTitleWithLines.GetLang(TextBoxPrevious.Lines.Length);
       ActiveControl = SelectFile;
     }
   }

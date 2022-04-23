@@ -125,7 +125,7 @@
   <data name="ActionPlay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAApZJREFUOE+1U11IU2EYPpmBZ62LyC4CKbJAKSztZOoUu5GYujMtcu5osuXcpls7
+        wAAADsABataJCQAAApZJREFUOE+1U11IU2EYPpmBZ62LyC4CKbJAKSztZOoUu5GYujMtcu5osuXcpls7
         Rhnasiwy0mli5lT0OEWdlqaVP7kwZ+o0u+imq7qLKMLwpotSInj6ztnJmyi86YGH73vf97wP7893qP+G
         U3m2PSxX/JnlSpB1xh6Q3RuDlrPrdaaLaPFO4L5vCaLIyfziRDn8b2ToS7zWsmoID5+jwOaEd2IBmlwr
         1BouRf6Eoh0v3iodczsl40t34uMVD4O13hio2BI4XQLaHzyDKFJYWgXveIAIWKBmdesV0Mb+LgU/A8lY
@@ -589,7 +589,7 @@
     <value>EditFilePath</value>
   </data>
   <data name="&gt;&gt;EditFilePath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=5.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditFilePath.Parent" xml:space="preserve">
     <value>$this</value>

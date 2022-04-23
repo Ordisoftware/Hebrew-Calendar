@@ -27,10 +27,16 @@ static partial class HebrewGlobals
     => Path.Combine(Globals.DocumentsFolderPath, "WebProviders");
 
   /// <summary>
-  /// Indicates the file path of the online search word providers.
+  /// Indicates the file path of the online bible text providers.
   /// </summary>
-  static public string WebProvidersWordFilePath
-    => Path.Combine(WebProvidersFolderPath, "WebProviders-Word.txt");
+  static public string WebProvidersBibleFilePath
+    => Path.Combine(WebProvidersFolderPath, "WebProviders-Bible.txt");
+
+  /// <summary>
+  /// Indicates the file path of the online study celebration providers.
+  /// </summary>
+  static public string WebProvidersCelebrationFilePath
+    => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration.txt");
 
   /// <summary>
   /// Indicates the file path of the online search concordance providers.
@@ -39,37 +45,31 @@ static partial class HebrewGlobals
     => Path.Combine(WebProvidersFolderPath, "WebProviders-Concordance.txt");
 
   /// <summary>
-  /// Indicates the file path of the online bible verse providers.
-  /// </summary>
-  static public string WebProvidersBibleFilePath
-    => Path.Combine(WebProvidersFolderPath, "WebProviders-Bible.txt");
-
-  /// <summary>
   /// Indicates the file path of the online study parashah providers.
   /// </summary>
   static public string WebProvidersParashahFilePath
     => Path.Combine(WebProvidersFolderPath, "WebProviders-Parashah.txt");
 
   /// <summary>
-  /// Indicates the file path of the online study parashah providers.
+  /// Indicates the file path of the online search hebrew word providers.
   /// </summary>
-  static public string WebProvidersCelebrationFilePath
-    => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration.txt");
+  static public string WebProvidersWordFilePath
+    => Path.Combine(WebProvidersFolderPath, "WebProviders-Word.txt");
 
   /// <summary>
-  /// Indicates the online search a word providers.
-  /// </summary>
-  static public OnlineProviders WebProvidersWord { get; private set; }
-
-  /// <summary>
-  /// Indicates the online search a concordance providers.
-  /// </summary>
-  static public OnlineProviders WebProvidersConcordance { get; private set; }
-
-  /// <summary>
-  /// Indicates the online bible verse providers.
+  /// Indicates the online bible text providers.
   /// </summary>
   static public OnlineProviders WebProvidersBible { get; private set; }
+
+  /// <summary>
+  /// Indicates the online study celebration providers.
+  /// </summary>
+  static public OnlineProviders WebProvidersCelebration { get; private set; }
+
+  /// <summary>
+  /// Indicates the online search concordance providers.
+  /// </summary>
+  static public OnlineProviders WebProvidersConcordance { get; private set; }
 
   /// <summary>
   /// Indicates the online study parashah providers.
@@ -77,9 +77,9 @@ static partial class HebrewGlobals
   static public OnlineProviders WebProvidersParashah { get; private set; }
 
   /// <summary>
-  /// Indicates the online study celebration providers.
+  /// Indicates the online search word providers.
   /// </summary>
-  static public OnlineProviders WebProvidersCelebration { get; private set; }
+  static public OnlineProviders WebProvidersWord { get; private set; }
 
   /// <summary>
   /// Loads the providers files.

@@ -21,22 +21,22 @@ static partial class HebrewGlobals
 {
 
   /// <summary>
-  /// Indicates the application guides folder.
-  /// </summary>
-  static public string GuidesFolderPath
-    => Path.Combine(Globals.DocumentsFolderPath, "Guides");
-
-  /// <summary>
   /// Indicates the bible references folder.
   /// </summary>
   static public string BibleReferencesFolderPath
     => Path.Combine(Globals.DocumentsFolderPath, "References");
 
   /// <summary>
-  /// Indicates file path of the celebration verses.
+  /// Indicates file path of celebration verses board.
   /// </summary>
   static public string CelebrationVersesFilePath
     => Path.Combine(BibleReferencesFolderPath, "Celebration-Verses.txt");
+
+  /// <summary>
+  /// Indicates the application guides folder.
+  /// </summary>
+  static public string GuidesFolderPath
+    => Path.Combine(Globals.DocumentsFolderPath, "Guides");
 
   /// <summary>
   /// Indicates file path of the Hebrew transcription guide.

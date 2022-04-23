@@ -2828,5 +2828,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["TranscriptionGuideFormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+        public global::System.Drawing.Point MethodNoticeFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["MethodNoticeFormLocation"]));
+            }
+            set {
+                this["MethodNoticeFormLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("542; 666")]
+        public string MethodNoticeFormSize {
+            get {
+                return ((string)(this["MethodNoticeFormSize"]));
+            }
+            set {
+                this["MethodNoticeFormSize"] = value;
+            }
+        }
     }
 }
