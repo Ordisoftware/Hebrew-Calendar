@@ -451,7 +451,7 @@
   <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>330, 22</value>
   </data>
-  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
+  <data name="ActionScreenPosition.Text" xml:space="preserve">
     <value>Position de l'écran</value>
   </data>
   <data name="EditScreenNone.Text" xml:space="preserve">
