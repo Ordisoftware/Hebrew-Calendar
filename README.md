@@ -348,6 +348,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 #### Application
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add auto sort bookmarks.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
@@ -379,6 +380,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until it is closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
 - Fix issues with intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
+- Some UI/UX improvements.
 
 #### 2022.04.05 - Version 9.28
 
