@@ -625,7 +625,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool TorahEventRemindDayNewYearD10 {
             get {
                 return ((bool)(this["TorahEventRemindDayNewYearD10"]));
@@ -2850,6 +2850,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["MethodNoticeFormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSortBookmarks {
+            get {
+                return ((bool)(this["AutoSortBookmarks"]));
+            }
+            set {
+                this["AutoSortBookmarks"] = value;
             }
         }
     }

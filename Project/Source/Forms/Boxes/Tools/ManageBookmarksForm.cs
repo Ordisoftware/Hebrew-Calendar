@@ -63,7 +63,9 @@ partial class ManageBookmarksForm : Form
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionSort.Enabled = ListBox.Items.Count > 0;
+    ActionSort.Enabled = ListBox.Items.Count > 0; // TODO add when ready : && !Settings.AutoSortBookmarks;
+    // TODO add when ready : ActionUp.Enabled = !Settings.AutoSortBookmarks;
+    // TODO add when ready : ActionDown.Enabled = !Settings.AutoSortBookmarks;
   }
 
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
@@ -76,8 +78,8 @@ partial class ManageBookmarksForm : Form
 
   private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
   {
-    ActionUp.Enabled = ListBox.SelectedIndex != 0;
-    ActionDown.Enabled = ListBox.SelectedIndex != ListBox.Items.Count - 1;
+    ActionUp.Enabled = /* !Settings.AutoSortBookmarks && */ ListBox.SelectedIndex != 0;
+    ActionDown.Enabled = /* !Settings.AutoSortBookmarks && */ ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0
                         && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
   }

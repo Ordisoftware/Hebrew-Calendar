@@ -34,8 +34,19 @@ class DateBookmarks
 
   public DateTime this[int index]
   {
-    get { return Items[index]; }
-    set { Items[index] = value; Save(); }
+    get => Items[index];
+    set
+    {
+      Items[index] = value;
+      // TODO auto sort bookmarks if ( Program.Settings.AutoSortBookmarks )
+      //  Array.Sort(Items, (dateFirst, dateLast) =>
+      //  {
+      //    if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
+      //    if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
+      //    return dateFirst.CompareTo(dateLast);
+      //  });
+      Save();
+    }
   }
 
   public void Resize(int size)
