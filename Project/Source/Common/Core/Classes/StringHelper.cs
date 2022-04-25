@@ -89,6 +89,17 @@ static partial class StringHelper
                                                           | CompareOptions.IgnoreSymbols;
 
   /// <summary>
+  /// Indicates if a string starts with one of these comment symbol: # - ; /* //
+  /// </summary>
+  /// <param name="str"></param>
+  static public bool IsCommentedText(this string str)
+    => str.StartsWith("#", StringComparison.Ordinal)
+    || str.StartsWith("-", StringComparison.Ordinal)
+    || str.StartsWith(";", StringComparison.Ordinal)
+    || str.StartsWith("/*", StringComparison.Ordinal)
+    || str.StartsWith("//", StringComparison.Ordinal);
+
+  /// <summary>
   /// Sets all first letter to upper case.
   /// </summary>
   /// <param name="str">The string to act on.</param>

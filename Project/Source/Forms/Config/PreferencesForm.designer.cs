@@ -76,6 +76,7 @@
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
       this.LabelChangeLangNotice = new System.Windows.Forms.Label();
+      this.label7 = new System.Windows.Forms.Label();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -293,17 +294,11 @@
       this.EditTextReportBackColor = new System.Windows.Forms.Panel();
       this.LabelTextColor = new System.Windows.Forms.Label();
       this.TabPageExport = new System.Windows.Forms.TabPage();
-      this.LabelDocumentMarginInfo = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
-      this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
       this.EditImageExportFileFormat = new System.Windows.Forms.ComboBox();
       this.EditDataExportFileFormat = new System.Windows.Forms.ComboBox();
-      this.SelectExportDocumentTheme = new System.Windows.Forms.ComboBox();
       this.LabelImageExportFileFormat = new System.Windows.Forms.Label();
       this.LabelDataExportFileFormat = new System.Windows.Forms.Label();
       this.LabelSaveImageCountWarning = new System.Windows.Forms.Label();
-      this.LabelDocumentMargins = new System.Windows.Forms.Label();
-      this.LabelExportDocumentTheme = new System.Windows.Forms.Label();
       this.LabelSaveImageCountWarningIntervalInfo = new System.Windows.Forms.Label();
       this.EditSaveImageCountWarning = new System.Windows.Forms.NumericUpDown();
       this.EditAutoOpenExportedFile = new System.Windows.Forms.CheckBox();
@@ -351,7 +346,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.label7 = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -386,7 +380,6 @@
       this.TabPageTextReport.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).BeginInit();
       this.TabPageExport.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).BeginInit();
       this.TabPagePrinting.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditPrintPageCountWarning)).BeginInit();
@@ -767,6 +760,11 @@
       resources.ApplyResources(this.LabelChangeLangNotice, "LabelChangeLangNotice");
       this.LabelChangeLangNotice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelChangeLangNotice.Name = "LabelChangeLangNotice";
+      // 
+      // label7
+      // 
+      resources.ApplyResources(this.label7, "label7");
+      this.label7.Name = "label7";
       // 
       // LabelVolume
       // 
@@ -2532,17 +2530,11 @@
       // 
       this.TabPageExport.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageExport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageExport.Controls.Add(this.LabelDocumentMarginInfo);
-      this.TabPageExport.Controls.Add(this.label6);
-      this.TabPageExport.Controls.Add(this.numericUpDown1);
       this.TabPageExport.Controls.Add(this.EditImageExportFileFormat);
       this.TabPageExport.Controls.Add(this.EditDataExportFileFormat);
-      this.TabPageExport.Controls.Add(this.SelectExportDocumentTheme);
       this.TabPageExport.Controls.Add(this.LabelImageExportFileFormat);
       this.TabPageExport.Controls.Add(this.LabelDataExportFileFormat);
       this.TabPageExport.Controls.Add(this.LabelSaveImageCountWarning);
-      this.TabPageExport.Controls.Add(this.LabelDocumentMargins);
-      this.TabPageExport.Controls.Add(this.LabelExportDocumentTheme);
       this.TabPageExport.Controls.Add(this.LabelSaveImageCountWarningIntervalInfo);
       this.TabPageExport.Controls.Add(this.EditSaveImageCountWarning);
       this.TabPageExport.Controls.Add(this.EditAutoOpenExportedFile);
@@ -2550,25 +2542,6 @@
       this.TabPageExport.Controls.Add(this.EditAutoOpenExportFolder);
       resources.ApplyResources(this.TabPageExport, "TabPageExport");
       this.TabPageExport.Name = "TabPageExport";
-      // 
-      // LabelDocumentMarginInfo
-      // 
-      resources.ApplyResources(this.LabelDocumentMarginInfo, "LabelDocumentMarginInfo");
-      this.LabelDocumentMarginInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelDocumentMarginInfo.Name = "LabelDocumentMarginInfo";
-      // 
-      // label6
-      // 
-      resources.ApplyResources(this.label6, "label6");
-      this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.label6.Name = "label6";
-      // 
-      // numericUpDown1
-      // 
-      this.numericUpDown1.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
-      this.numericUpDown1.Name = "numericUpDown1";
-      this.numericUpDown1.ReadOnly = true;
       // 
       // EditImageExportFileFormat
       // 
@@ -2588,17 +2561,6 @@
       this.EditDataExportFileFormat.SelectedIndexChanged += new System.EventHandler(this.EditDataExportFileFormat_SelectedIndexChanged);
       this.EditDataExportFileFormat.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.EditDataExportFileFormat_Format);
       // 
-      // SelectExportDocumentTheme
-      // 
-      this.SelectExportDocumentTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectExportDocumentTheme.FormattingEnabled = true;
-      this.SelectExportDocumentTheme.Items.AddRange(new object[] {
-            resources.GetString("SelectExportDocumentTheme.Items"),
-            resources.GetString("SelectExportDocumentTheme.Items1"),
-            resources.GetString("SelectExportDocumentTheme.Items2")});
-      resources.ApplyResources(this.SelectExportDocumentTheme, "SelectExportDocumentTheme");
-      this.SelectExportDocumentTheme.Name = "SelectExportDocumentTheme";
-      // 
       // LabelImageExportFileFormat
       // 
       resources.ApplyResources(this.LabelImageExportFileFormat, "LabelImageExportFileFormat");
@@ -2613,16 +2575,6 @@
       // 
       resources.ApplyResources(this.LabelSaveImageCountWarning, "LabelSaveImageCountWarning");
       this.LabelSaveImageCountWarning.Name = "LabelSaveImageCountWarning";
-      // 
-      // LabelDocumentMargins
-      // 
-      resources.ApplyResources(this.LabelDocumentMargins, "LabelDocumentMargins");
-      this.LabelDocumentMargins.Name = "LabelDocumentMargins";
-      // 
-      // LabelExportDocumentTheme
-      // 
-      resources.ApplyResources(this.LabelExportDocumentTheme, "LabelExportDocumentTheme");
-      this.LabelExportDocumentTheme.Name = "LabelExportDocumentTheme";
       // 
       // LabelSaveImageCountWarningIntervalInfo
       // 
@@ -2988,11 +2940,6 @@
       this.EditWeatherAppPath.Name = "EditWeatherAppPath";
       this.EditWeatherAppPath.ReadOnly = true;
       // 
-      // label7
-      // 
-      resources.ApplyResources(this.label7, "label7");
-      this.label7.Name = "label7";
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3060,7 +3007,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.EditTextReportFontSize)).EndInit();
       this.TabPageExport.ResumeLayout(false);
       this.TabPageExport.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditSaveImageCountWarning)).EndInit();
       this.TabPagePrinting.ResumeLayout(false);
       this.TabPagePrinting.PerformLayout();
@@ -3391,13 +3337,7 @@
     private TextBoxEx EditCustomWebSearch;
     private CheckBox EditAutoSortBookmarks;
     private TabPage TabPagePrinting;
-    private ComboBox SelectExportDocumentTheme;
-    private Label LabelExportDocumentTheme;
     private Label LabelPrintingMarginInfo;
-    private Label LabelDocumentMargins;
-    private Label label6;
-    private NumericUpDown numericUpDown1;
-    private Label LabelDocumentMarginInfo;
     private Label label7;
   }
 }

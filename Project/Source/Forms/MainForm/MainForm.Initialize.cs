@@ -184,6 +184,8 @@ partial class MainForm
       Thread.Sleep(500);
     }
     if ( ApplicationCommandLine.Instance is null ) return;
+    if ( ApplicationCommandLine.Instance.AppStats )
+      CommonMenusControl.Instance.ActionViewStats.PerformClick();
     if ( ApplicationCommandLine.Instance.Generate )
       ActionGenerate.PerformClick();
     if ( ApplicationCommandLine.Instance.ResetReminder )
@@ -394,28 +396,28 @@ partial class MainForm
       CalenderNet.ColorText = Settings.MonthViewTextColor;
       MonthlyCalendar.ForeColor = Settings.MonthViewTextColor;
       MonthlyCalendar.BackColor = Settings.MonthViewBackColor;
-      MonthlyCalendar.RogueBrush = new SolidBrush(Settings.MonthViewNoDaysBackColor);
-      CalenderNet.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
-      CalenderNet.PenActiveDay = new Pen(Settings.CalendarColorActiveDay);
-      CalenderNet.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
-      CalenderNet.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
-      CalenderNet.PenSelectedDay = new Pen(Settings.SelectedDayBoxColor);
-      CalenderNet.PenText = new Pen(Settings.MonthViewTextColor);
+      MonthlyCalendar.RogueBrush = SolidBrushesPool.Get(Settings.MonthViewNoDaysBackColor);
+      CalenderNet.PenHoverEffect = PensPool.Get(Settings.CalendarColorHoverEffect);
+      CalenderNet.PenActiveDay = PensPool.Get(Settings.CalendarColorActiveDay);
+      CalenderNet.CurrentDayForeBrush = SolidBrushesPool.Get(Settings.CurrentDayForeColor);
+      CalenderNet.CurrentDayBackBrush = SolidBrushesPool.Get(Settings.CurrentDayBackColor);
+      CalenderNet.PenSelectedDay = PensPool.Get(Settings.SelectedDayBoxColor);
+      CalenderNet.PenText = PensPool.Get(Settings.MonthViewTextColor);
       CalenderNet.PenTextReduced
-        = new Pen(Color.FromArgb(CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.R * 2 / 3,
-                                 CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.G * 2 / 3,
-                                 CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.B * 2 / 3));
-      CalenderNet.BrushText = new SolidBrush(Settings.MonthViewTextColor);
-      CalenderNet.BrushBlack = new SolidBrush(Settings.MonthViewTextColor);
+        = PensPool.Get(Color.FromArgb(CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.R * 2 / 3,
+                                      CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.G * 2 / 3,
+                                      CalenderNet.PenText.Color.R < 125 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.B * 2 / 3));
+      CalenderNet.BrushText = SolidBrushesPool.Get(Settings.MonthViewTextColor);
+      CalenderNet.BrushBlack = SolidBrushesPool.Get(Settings.MonthViewTextColor);
       CalenderNet.BrushGrayMedium
-        = new SolidBrush(Color.FromArgb(CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.R * 2 / 3,
-                                        CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.G * 2 / 3,
-                                        CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.B * 2 / 3));
+        = SolidBrushesPool.Get(Color.FromArgb(CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.R * 2 / 3,
+                                              CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.G * 2 / 3,
+                                              CalenderNet.PenText.Color.R < 85 ? CalenderNet.PenText.Color.R + 255 * 2 / 3 : CalenderNet.PenText.Color.B * 2 / 3));
       CalenderNet.BrushGrayLight
-        = new SolidBrush(Color.FromArgb((int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.R * 0.92 ),
-                                        (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.G * 0.92 ),
-                                        (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.B * 0.92 )));
-      CalenderNet.PenBlack = new Pen(CalenderNet.BrushBlack);
+        = SolidBrushesPool.Get(Color.FromArgb((int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.R * 0.92 ),
+                                              (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.G * 0.92 ),
+                                              (int)( CalenderNet.PenText.Color.R < 20 ? CalenderNet.PenText.Color.R + 255 * 0.92 : CalenderNet.PenText.Color.B * 0.92 )));
+      CalenderNet.PenBlack = Pens.Black;
     }
     else
     {
@@ -431,9 +433,9 @@ partial class MainForm
       CalenderNet.PenText = Pens.Black;
       CalenderNet.PenTextReduced = Pens.LightGray;
       CalenderNet.BrushText = Brushes.Black;
-      CalenderNet.BrushBlack = new SolidBrush(Color.Black);
-      CalenderNet.BrushGrayMedium = new SolidBrush(Color.DarkGray);
-      CalenderNet.BrushGrayLight = new SolidBrush(CustomColor.PlatinumLight);
+      CalenderNet.BrushBlack = SolidBrushesPool.Get(Color.Black);
+      CalenderNet.BrushGrayMedium = SolidBrushesPool.Get(Color.DarkGray);
+      CalenderNet.BrushGrayLight = SolidBrushesPool.Get(CustomColor.PlatinumLight);
       CalenderNet.PenBlack = Pens.Black;
     }
     const string fontname = "Calibri";

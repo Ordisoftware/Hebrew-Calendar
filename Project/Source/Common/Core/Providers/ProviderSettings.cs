@@ -43,12 +43,8 @@ abstract class ProviderSettings
       DoClear();
       using var stream = File.OpenText(FilePath);
       while ( ( line = stream.ReadLine() ) is not null )
-      {
-        if ( line.Trim().Length != 0
-          && !line.StartsWith(";", StringComparison.Ordinal)
-          && !line.StartsWith("//", StringComparison.Ordinal) )
+        if ( line.Trim().Length != 0 && !line.IsCommentedText() )
           DoLoad(line);
-      }
     }
     catch ( Exception ex )
     {

@@ -78,12 +78,12 @@ namespace CodeProjectCalendar.NET
     public event Action<DateTime> CalendarDateChanged;
 
     private const int MarginSize = 5;
-    internal Brush RogueBrush = new SolidBrush(CustomColor.WhiteSmokeVeryLight);
+    internal Brush RogueBrush = SolidBrushesPool.Get(CustomColor.WhiteSmokeVeryLight);
 
     static public Color ColorText { get; set; } = Color.Black;
 
-    static public Brush BrushGrayMedium { get; set; } = new SolidBrush(Color.DarkGray);
-    static public Brush BrushGrayLight { get; set; } = new SolidBrush(CustomColor.PlatinumLight);
+    static public Brush BrushGrayMedium { get; set; } = SolidBrushesPool.Get(Color.DarkGray);
+    static public Brush BrushGrayLight { get; set; } = SolidBrushesPool.Get(CustomColor.PlatinumLight);
     static public Brush BrushText { get; set; } = Brushes.Black;
     static public Brush BrushBlack { get; set; } = Brushes.Black;
     static public Brush CurrentDayForeBrush { get; set; } = Brushes.White;
@@ -93,7 +93,7 @@ namespace CodeProjectCalendar.NET
     static public Pen PenTextReduced { get; set; } = Pens.DarkGray;
     static public Pen PenActiveDay { get; set; } = Pens.MediumSlateBlue;
     static public Pen PenSelectedDay { get; set; } = Pens.Brown;
-    static public Pen PenHoverEffect { get; set; } = new Pen(Program.Settings.CalendarColorHoverEffect);
+    static public Pen PenHoverEffect { get; set; } = PensPool.Get(Program.Settings.CalendarColorHoverEffect);
     // ORDISOFTWARE MODIF END
 
     /// <summary>
@@ -863,9 +863,9 @@ namespace CodeProjectCalendar.NET
           {
             int divisor = evnt.Date.Minute == 0 ? 1 : 60 / evnt.Date.Minute;
             Color clr = Color.FromArgb(175, evnt.EventColor.R, evnt.EventColor.G, evnt.EventColor.B);
-            g.FillRectangle(new SolidBrush(GetFinalBackColor()), xStart, yStart + cellHourHeight / divisor + 1, ClientSize.Width - MarginSize * 2 - cellHourWidth - 3, cellHourHeight * ts.Hours - 1);
-            g.FillRectangle(new SolidBrush(clr), xStart, yStart + cellHourHeight / divisor + 1, ClientSize.Width - MarginSize * 2 - cellHourWidth - 3, cellHourHeight * ts.Hours - 1);
-            g.DrawString(evnt.EventText, evnt.EventFont, new SolidBrush(evnt.EventTextColor), xStart, yStart + cellHourHeight / divisor);
+            g.FillRectangle(SolidBrushesPool.Get(GetFinalBackColor()), xStart, yStart + cellHourHeight / divisor + 1, ClientSize.Width - MarginSize * 2 - cellHourWidth - 3, cellHourHeight * ts.Hours - 1);
+            g.FillRectangle(SolidBrushesPool.Get(clr), xStart, yStart + cellHourHeight / divisor + 1, ClientSize.Width - MarginSize * 2 - cellHourWidth - 3, cellHourHeight * ts.Hours - 1);
+            g.DrawString(evnt.EventText, evnt.EventFont, SolidBrushesPool.Get(evnt.EventTextColor), xStart, yStart + cellHourHeight / divisor);
 
             var ce = new CalendarEvent
             {
@@ -972,7 +972,7 @@ namespace CodeProjectCalendar.NET
       int numWeeks = (int)value < value ? (int)value + 1 : (int)value;
       int cellWidth = ( ClientSize.Width - MarginSize * 2 ) / 7;
       int cellHeight = ( ClientSize.Height - MarginSize * 2 - headerSpacing - controlsSpacing ) / numWeeks;
-      var brushBack = new SolidBrush(BackColor);
+      var brushBack = SolidBrushesPool.Get(BackColor);
       var outOfMonth = false;
       var isSelected = false;
       var isSelectedNoToday = false;
@@ -1348,19 +1348,19 @@ namespace CodeProjectCalendar.NET
 
             if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 2 && index != countEventsPrev )
             {
-              g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), new SolidBrush(v.EventTextColor), xx, yy + offsetY);
+              g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), SolidBrushesPool.Get(v.EventTextColor), xx, yy + offsetY);
               break;
             }
 
             int pointYoffsetY = point.Y + offsetY;
 
             g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
-            g.FillRectangle(new SolidBrush(alphaColor), point.X + 3, pointYoffsetY, cellWidth - 5, sz.Height);
+            g.FillRectangle(SolidBrushesPool.Get(alphaColor), point.X + 3, pointYoffsetY, cellWidth - 5, sz.Height);
 
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
               g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
-            g.DrawString(v.EventText, v.EventFont, new SolidBrush(v.EventTextColor), xx, yy + offsetY);
+            g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), xx, yy + offsetY);
             g.Clip = r;
 
             /*if ( generateSunToolTips )

@@ -42,10 +42,10 @@ class LunarMonthsFile : DataFile
       {
         if ( index >= HebrewMonths.Transcriptions.GetLang().Length )
           break;
-        string line = lines[index];
-        if ( line.Trim().Length == 0 )
+        string line = lines[index].Trim();
+        if ( line.Length == 0 )
           continue;
-        if ( line.StartsWith(";", StringComparison.Ordinal) )
+        if ( line.IsCommentedText() )
           continue;
         var parts = line.Split(new char[] { '=' }, 2);
         Items.Add(parts[1].Trim());

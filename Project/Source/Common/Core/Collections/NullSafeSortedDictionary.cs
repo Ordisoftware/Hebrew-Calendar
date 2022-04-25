@@ -19,7 +19,7 @@ namespace Ordisoftware.Core;
 /// </summary>
 [Serializable]
 public class NullSafeSortedDictionary<TKey, TValue> : SortedDictionary<TKey, TValue>
-  where TValue : class
+where TValue : class
 {
 
   public NullSafeSortedDictionary()

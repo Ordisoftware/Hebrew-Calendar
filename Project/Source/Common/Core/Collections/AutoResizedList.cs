@@ -39,7 +39,8 @@ where T : new()
     get
     {
       CheckIndex(index);
-      if ( index < Count ) return base[index];
+      if ( index < Count )
+        return base[index];
       var item = new T();
       CreateOutOfRange(index, item);
       return item;
@@ -53,20 +54,19 @@ where T : new()
         CreateOutOfRange(index, value);
     }
   }
+
   private void CheckIndex(int index)
   {
-    if ( index < 0 )
-    {
-      string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
-      throw new IndexOutOfRangeException(msg);
-    }
+    if ( index >= 0 ) return;
+    string message = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
+    throw new IndexOutOfRangeException(message);
   }
 
   private void CreateOutOfRange(int index, T value)
   {
     Capacity = index + 1;
     int count = index + 1 - Count;
-    for ( int i = 0; i < count; i++ )
+    for ( int indexMissing = 0; indexMissing < count; indexMissing++ )
       Add(new T());
     base[index] = value;
   }

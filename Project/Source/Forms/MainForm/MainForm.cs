@@ -330,9 +330,9 @@ partial class MainForm : Form
         CodeProjectCalendar.NET.Calendar.PenHoverEffect?.Dispose();
         CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush?.Dispose();
         CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush?.Dispose();
-        CodeProjectCalendar.NET.Calendar.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
-        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
-        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
+        CodeProjectCalendar.NET.Calendar.PenHoverEffect = PensPool.Get(Settings.CalendarColorHoverEffect);
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = SolidBrushesPool.Get(Settings.CurrentDayForeColor);
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = SolidBrushesPool.Get(Settings.CurrentDayBackColor);
         UpdateCalendarMonth(false);
         Thread.Sleep(1000);
         ActionGenerate_Click(null, null);

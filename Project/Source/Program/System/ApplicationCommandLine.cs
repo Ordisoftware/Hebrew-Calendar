@@ -22,6 +22,9 @@ class ApplicationCommandLine : SystemCommandLine
   static public ApplicationCommandLine Instance
     => SystemManager.CommandLineOptions as ApplicationCommandLine;
 
+  [Option("appstats", Required = false, HelpText = "Show application's statistics.")]
+  public bool AppStats { get; set; }
+
   [Option("generate", Required = false, HelpText = "Generate calendar.")]
   public bool Generate { get; set; }
 

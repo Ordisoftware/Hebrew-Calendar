@@ -54,8 +54,8 @@ where T : class
   private void CheckIndex(int index)
   {
     if ( index >= 0 ) return;
-    string msg = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
-    throw new IndexOutOfRangeException(msg);
+    string message = SysTranslations.IndexCantBeNegative.GetLang(nameof(NullSafeStringList), index);
+    throw new IndexOutOfRangeException(message);
   }
 
   private void CreateOutOfRange(int index, T value)
