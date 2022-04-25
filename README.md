@@ -374,12 +374,13 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2022.04.26 - Version 9.29
 
-- Improve shortcut for boards.
+- Optimize populating monthly view and thus startup time.
 - Add open system calc button in DatesDiffCalculator form.
 - Add parashah name in the title bar of description box.
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until it is closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
 - Fix issues with intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
+- Improve shortcut for boards.
 - Some UI/UX improvements.
 
 #### 2022.04.05 - Version 9.28
