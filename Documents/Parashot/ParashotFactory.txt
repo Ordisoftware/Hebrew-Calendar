@@ -26,8 +26,8 @@ Shemot : 11 - פקודי - Peqoudei - 38.21 - 40.38 - False
 Vayiqra : 1 - ויקרא - Vayikra - 1.1 - 5.26 - False
 Vayiqra : 2 - צו - Tsav - 6.1 - 8.36 - False
 Vayiqra : 3 - שמיני - Shemini - 9.1 - 11.47 - False
-Vayiqra : 4 - תזריע - Tazria' - 12.1 - 13.59 - True
-Vayiqra : 5 - מצורע - Metsora' - 14.1 - 15.33 - False
+Vayiqra : 4 - תזריע - Tazriah' - 12.1 - 13.59 - True
+Vayiqra : 5 - מצורע - Metsorah' - 14.1 - 15.33 - False
 Vayiqra : 6 - אחרי מות - A'harei Mot - 16.1 - 18.30 - True
 Vayiqra : 7 - קדושים - Kedoshim - 19.1 - 20.27 - False
 Vayiqra : 8 - אמור - Emor - 21.1 - 24.23 - False
@@ -36,14 +36,14 @@ Vayiqra : 10 - בחוקותי - Be'houqotaï - 26.3 - 27.34 - False
 
 Bamidbar : 1 - במדבר - Bamidbar - 1.1 - 4.20 - False
 Bamidbar : 2 - נשא - Nasso - 4.21 - 7.89 - False
-Bamidbar : 3 - בהעלותך - Beha'alotka - 8.1 - 12.16 - False
+Bamidbar : 3 - בהעלותך - Behah'alotka - 8.1 - 12.16 - False
 Bamidbar : 4 - שלח לך - Shela'h leka - 13.1 - 15.41 - False
 Bamidbar : 5 - קרח - Kora'h - 16.1 - 18.32 - False
 Bamidbar : 6 - חקת - 'Houkat - 19.1 - 22.1 - True
 Bamidbar : 7 - בלק - Balaq - 22.2 - 25.9 - False
 Bamidbar : 8 - פנחס - Pin'has - 25.10 - 30.1 - False
 Bamidbar : 9 - מטות - Matot - 30.2 - 32.42 - True
-Bamidbar : 10 - מסעי - Masse'i - 33.1 - 36.13 - False
+Bamidbar : 10 - מסעי - Maceh'i - 33.1 - 36.13 - False
 
 Devarim : 1 - דברים - Devarim - 1.1 - 3.22 - False
 Devarim : 2 - ואתחנן - Vaet'hanan - 3.23 - 7.11 - False

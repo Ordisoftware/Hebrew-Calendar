@@ -27,8 +27,8 @@ Peqoudei = Ils ont attribué pour moi
 Vayikra = Il aura choisit
 Tsav = Recommandation
 Shemini = Rayonne pour moi
-Tazria' = Elle enfantera de moi
-Metsora' = En cas d'infection terminée
+Tazriah' = Elle enfantera de moi
+Metsorah' = En cas d'infection terminée
 A'harei Mot = Il a amélioré moi, Il a fait cesser le mal [qui me tuait]
 Kedoshim = Bienveillants [les enfants d'Israël seront]
 Emor = Ils parleront [de HaShem et Sa Torah]
@@ -37,14 +37,14 @@ Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
 Bamidbar = Malgré solitude
 Nasso = Il a soutenu
-Beha'alotka = Lorsque tu as fait jaillir [lumière = flux lumineux = photons = grains-nuées] à toi {avec les sept lampes (grands plexus-chakras)}
+Behah'alotka = Lorsque tu as fait jaillir [lumière = flux lumineux = photons = grains-nuées] à toi {avec les sept lampes (grands plexus-chakras)}
 Shela'h leka = Libère [des victimes esclaves] selon toi {ta compréhension de la Doctrine et tes capacités}
 Kora'h = Celui qui est froid (sans coeur {sans amour pour autrui et la loi visant à protéger la vie et les biens des gens})
 'Houkat = Législation
 Balaq = Celui qui dépouille [les victimes, de leur santé et de leurs biens]
 Pin'has = Celui qui parle de l'avenir par conjectures
 Matot = Groupes dirigeants (tribus, branches, factions, partis, influenceurs)
-Masse'i = Évolution (trajets, cheminements, étapes, degrés)
+Maceh'i = Évolution (trajets, cheminements, étapes, degrés)
 // BOOK DEVARIM
 Devarim = Mots (déclarations, consignes, recommandations, promesses)
 Vaet'hanan = J'aurais imploré
