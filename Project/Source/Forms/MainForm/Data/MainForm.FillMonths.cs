@@ -80,6 +80,7 @@ partial class MainForm
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
+      var fontEvent = new Font("Calibri", Settings.MonthViewFontSize);
       LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
                                       LunisolarDays.Count,
                                       Program.LoadingFormLoadDB);
@@ -149,7 +150,7 @@ partial class MainForm
               : Settings.CalendarColorMoon;
           if ( !Settings.TorahEventsCountAsMoon )
           {
-            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.SunriseAsString} {strMonthDay}");
+            add(colorMoon, $"{AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise)}{row.SunriseAsString} {strMonthDay}");
             add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString);
           }
           else
@@ -159,7 +160,7 @@ partial class MainForm
               if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
+                add(colorMoon, $"{AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise)}{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -167,7 +168,7 @@ partial class MainForm
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
+                add(colorMoon, $"{AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise)}{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -181,9 +182,8 @@ partial class MainForm
           if ( row.SeasonChange != 0 )
             add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
           // Parashah
-          if ( Settings.CalendarShowParashah )
-            if ( !string.IsNullOrEmpty(row.ParashahID) )
-              add(Settings.CalendarColorParashah, row.GetParashahText(false));
+          if ( Settings.CalendarShowParashah && !string.IsNullOrEmpty(row.ParashahID) )
+            add(Settings.CalendarColorParashah, row.GetParashahText(false));
           //
           void add(Color color, string text)
           {
@@ -191,11 +191,10 @@ partial class MainForm
             var item = new CustomEvent
             {
               Date = date,
-              EventFont = new Font("Calibri", Settings.MonthViewFontSize)
+              EventFont = fontEvent
             };
             if ( Settings.UseColors )
             {
-              item.EventColor = Color.OrangeRed;
               item.EventTextColor = color;
             }
             else
