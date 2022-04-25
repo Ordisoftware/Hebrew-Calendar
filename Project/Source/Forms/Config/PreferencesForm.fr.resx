@@ -130,9 +130,6 @@
   <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>477, 13</value>
   </data>
-  <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
-    <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
-  </data>
   <data name="LabelChangeLangNotice.Text" xml:space="preserve">
     <value>Le changement de langue n'affectera pas les données du tableau des Parashot à moins de restaurer les valeurs par défaut</value>
   </data>
