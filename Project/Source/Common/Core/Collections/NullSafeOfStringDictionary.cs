@@ -71,16 +71,17 @@ public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
 static class NullSafeOfStringDictionaryHelper
 {
 
-  static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
-                                       string filePath,
-                                       string separator,
-                                       bool showError = true)
+  static public bool LoadKeyValuePairs(
+    this NullSafeOfStringDictionary<string> list,
+    string filePath,
+    string separator,
+    bool showError = true)
   {
     try
     {
       list.Clear();
       foreach ( string line in File.ReadAllLines(filePath) )
-        if ( !line.StartsWith(";", StringComparison.Ordinal) && !line.StartsWith("//", StringComparison.Ordinal) )
+        if ( !line.IsCommentedText() )
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
@@ -123,11 +124,10 @@ static class NullSafeOfStringDictionaryHelper
     try
     {
       foreach ( var item in list )
-        if ( !item.Key.StartsWith(";", StringComparison.Ordinal) && !item.Key.StartsWith("//", StringComparison.Ordinal) )
-          stream.WriteLine(item.Key + separator + item.Value);
+        if ( item.Key.IsCommentedText() )
+          stream.WriteLine(item.Key); 
         else
-          stream.WriteLine(item.Key);
-      stream.Close();
+          stream.WriteLine(item.Key + separator + item.Value);
       return true;
     }
     catch ( FileNotFoundException )
@@ -147,6 +147,10 @@ static class NullSafeOfStringDictionaryHelper
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
       return false;
+    }
+    finally
+    {
+      stream.Close();
     }
   }
 

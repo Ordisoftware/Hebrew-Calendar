@@ -53,7 +53,7 @@ partial class MainForm
         }
       });
       // Visual month and text report
-      SystemManager.TryCatch(() => CalendarMonth.CalendarDate = date);
+      SystemManager.TryCatch(() => MonthlyCalendar.CalendarDate = date);
       if ( scroll != ViewScrollOverride.NoTextReport )
         if ( scroll == ViewScrollOverride.ForceTextReport || Settings.CurrentView == ViewMode.Text )
           SystemManager.TryCatch(() =>
@@ -65,15 +65,15 @@ partial class MainForm
               SQLiteDate.DaySeparator = SQLiteDateDayTextSeparator.Point;
               SQLiteDate.DayOrder = SQLiteDateDayTextOrder.DayFirst;
               string strDatePattern = SQLiteDate.ToString(date);
-              int position = CalendarText.Find(strDatePattern);
+              int position = TextReport.Find(strDatePattern);
               if ( position != -1 )
               {
-                string line = CalendarText.Lines[CalendarText.GetLineFromCharIndex(CalendarText.SelectionStart)];
+                string line = TextReport.Lines[TextReport.GetLineFromCharIndex(TextReport.SelectionStart)];
                 bool needScroll = line.IndexOf(strDatePattern, StringComparison.Ordinal) == -1;
-                CalendarText.SelectionStart = position - 6;
-                CalendarText.SelectionLength = 119;
+                TextReport.SelectionStart = position - 6;
+                TextReport.SelectionLength = 119;
                 if ( needScroll )
-                  CalendarText.ScrollToCaret();
+                  TextReport.ScrollToCaret();
               }
             }
             finally

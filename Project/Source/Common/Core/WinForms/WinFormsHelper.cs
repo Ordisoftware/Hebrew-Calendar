@@ -11,8 +11,48 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
+
+/// <summary>
+/// Provides a solid brushes buffer.
+/// </summary>
+static public class SolidBrushesPool
+{
+  static private Dictionary<Color, SolidBrush> Items = new();
+  static public Brush Get(Color color)
+  {
+
+    if ( Items.ContainsKey(color) )
+      return Items[color];
+    else
+    {
+      var brush = new SolidBrush(color);
+      Items.Add(color, brush);
+      return brush;
+    }
+  }
+}
+
+/// <summary>
+/// Provides a pens buffer.
+/// </summary>
+static public class PensPool
+{
+  static private Dictionary<Color, Pen> Items = new();
+  static public Pen Get(Color color)
+  {
+
+    if ( Items.ContainsKey(color) )
+      return Items[color];
+    else
+    {
+      var pen = new Pen(color);
+      Items.Add(color, pen);
+      return pen;
+    }
+  }
+}
 
 /// <summary>
 /// Provides win forms helper.

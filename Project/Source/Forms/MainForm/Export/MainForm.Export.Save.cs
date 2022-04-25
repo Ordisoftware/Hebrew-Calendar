@@ -59,8 +59,8 @@ partial class MainForm
         try
         {
           Globals.IsPrinting = true;
-          CalendarMonth.ShowTodayButton = false;
-          CalendarMonth.ShowArrowControls = false;
+          MonthlyCalendar.ShowTodayButton = false;
+          MonthlyCalendar.ShowArrowControls = false;
           if ( interval.IsDefined )
           {
             int countImages = interval.MonthsCount;
@@ -73,13 +73,13 @@ partial class MainForm
           }
           else
           {
-            SaveImageDialog.FileName = $"{nameof(LunisolarDays)} {CalendarMonth.CalendarDate.Year}-{CalendarMonth.CalendarDate.Month:00}";
+            SaveImageDialog.FileName = $"{nameof(LunisolarDays)} {MonthlyCalendar.CalendarDate.Year}-{MonthlyCalendar.CalendarDate.Month:00}";
             for ( int index = 0; index < Program.ImageExportTargets.Count; index++ )
               if ( Program.ImageExportTargets.ElementAt(index).Key == Settings.ExportImagePreferredTarget )
                 SaveImageDialog.FilterIndex = index + 1;
             if ( SaveImageDialog.ShowDialog() != DialogResult.OK ) return false;
             filePath = SaveImageDialog.FileName;
-            using var bitmap = CalendarMonth.GetBitmap();
+            using var bitmap = MonthlyCalendar.GetBitmap();
             bitmap.Save(filePath, Program.ImageExportTargets.GetFormat(Path.GetExtension(filePath)));
             return true;
           }
@@ -87,8 +87,8 @@ partial class MainForm
         finally
         {
           Globals.IsPrinting = false;
-          CalendarMonth.ShowTodayButton = true;
-          CalendarMonth.ShowArrowControls = true;
+          MonthlyCalendar.ShowTodayButton = true;
+          MonthlyCalendar.ShowArrowControls = true;
         }
       },
       [ViewMode.Grid] = (interval) =>
@@ -121,19 +121,19 @@ partial class MainForm
     Cursor = Cursors.WaitCursor;
     try
     {
-      var current = CalendarMonth.CalendarDate;
-      CalendarMonth.CalendarDate = interval.Start.Value;
+      var current = MonthlyCalendar.CalendarDate;
+      MonthlyCalendar.CalendarDate = interval.Start.Value;
       bool hasMorePages = true;
       while ( hasMorePages )
       {
-        string filename = $"{nameof(LunisolarDays)} {CalendarMonth.CalendarDate.Year}-{CalendarMonth.CalendarDate.Month:00}"
+        string filename = $"{nameof(LunisolarDays)} {MonthlyCalendar.CalendarDate.Year}-{MonthlyCalendar.CalendarDate.Month:00}"
                         + Program.ImageExportTargets[Settings.ExportImagePreferredTarget];
-        using var bitmap = CalendarMonth.GetBitmap();
+        using var bitmap = MonthlyCalendar.GetBitmap();
         bitmap.Save(Path.Combine(path, filename), Settings.ExportImagePreferredTarget.GetFormat());
-        CalendarMonth.CalendarDate = CalendarMonth.CalendarDate.AddMonths(1);
-        hasMorePages = CalendarMonth.CalendarDate <= interval.End;
+        MonthlyCalendar.CalendarDate = MonthlyCalendar.CalendarDate.AddMonths(1);
+        hasMorePages = MonthlyCalendar.CalendarDate <= interval.End;
       }
-      CalendarMonth.CalendarDate = current;
+      MonthlyCalendar.CalendarDate = current;
       return true;
     }
     finally

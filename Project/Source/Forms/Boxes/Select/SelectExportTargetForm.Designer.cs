@@ -44,14 +44,14 @@
       this.SelectText = new System.Windows.Forms.RadioButton();
       this.GroupBoxOptions = new System.Windows.Forms.GroupBox();
       this.GroupBoxSettings = new System.Windows.Forms.GroupBox();
-      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
-      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
-      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.GroupBoxFormat = new System.Windows.Forms.GroupBox();
       this.GroupBoxYears = new System.Windows.Forms.GroupBox();
       this.SelectYear2 = new Ordisoftware.Core.SelectYearsControl();
       this.SelectYear1 = new Ordisoftware.Core.SelectYearsControl();
       this.labelYear1 = new System.Windows.Forms.Label();
+      this.EditExportDataEnumsAsTranslations = new System.Windows.Forms.CheckBox();
+      this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
+      this.EditShowPrintPreviewDialog = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.GroupBoxView.SuspendLayout();
       this.GroupBoxOptions.SuspendLayout();
@@ -176,36 +176,6 @@
       this.GroupBoxSettings.Name = "GroupBoxSettings";
       this.GroupBoxSettings.TabStop = false;
       // 
-      // EditExportDataEnumsAsTranslations
-      // 
-      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
-      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
-      this.EditExportDataEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
-      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
-      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
-      // 
-      // EditPrintImageInLandscape
-      // 
-      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
-      this.EditPrintImageInLandscape.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PrintImageInLandscape;
-      this.EditPrintImageInLandscape.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditPrintImageInLandscape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PrintImageInLandscape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
-      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
-      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
-      // 
-      // EditShowPrintPreviewDialog
-      // 
-      resources.ApplyResources(this.EditShowPrintPreviewDialog, "EditShowPrintPreviewDialog");
-      this.EditShowPrintPreviewDialog.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ShowPrintPreviewDialog;
-      this.EditShowPrintPreviewDialog.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditShowPrintPreviewDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ShowPrintPreviewDialog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-      this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
-      this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
-      this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
-      // 
       // GroupBoxFormat
       // 
       resources.ApplyResources(this.GroupBoxFormat, "GroupBoxFormat");
@@ -243,6 +213,36 @@
       // 
       resources.ApplyResources(this.labelYear1, "labelYear1");
       this.labelYear1.Name = "labelYear1";
+      // 
+      // EditExportDataEnumsAsTranslations
+      // 
+      resources.ApplyResources(this.EditExportDataEnumsAsTranslations, "EditExportDataEnumsAsTranslations");
+      this.EditExportDataEnumsAsTranslations.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ExportDataEnumsAsTranslations;
+      this.EditExportDataEnumsAsTranslations.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditExportDataEnumsAsTranslations.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ExportDataEnumsAsTranslations", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditExportDataEnumsAsTranslations.Name = "EditExportDataEnumsAsTranslations";
+      this.EditExportDataEnumsAsTranslations.UseVisualStyleBackColor = true;
+      this.EditExportDataEnumsAsTranslations.CheckedChanged += new System.EventHandler(this.EditExportDataEnumsAsTranslations_CheckedChanged);
+      // 
+      // EditPrintImageInLandscape
+      // 
+      resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
+      this.EditPrintImageInLandscape.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.PrintImageInLandscape;
+      this.EditPrintImageInLandscape.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditPrintImageInLandscape.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "PrintImageInLandscape", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditPrintImageInLandscape.Name = "EditPrintImageInLandscape";
+      this.EditPrintImageInLandscape.UseVisualStyleBackColor = true;
+      this.EditPrintImageInLandscape.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
+      // 
+      // EditShowPrintPreviewDialog
+      // 
+      resources.ApplyResources(this.EditShowPrintPreviewDialog, "EditShowPrintPreviewDialog");
+      this.EditShowPrintPreviewDialog.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ShowPrintPreviewDialog;
+      this.EditShowPrintPreviewDialog.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditShowPrintPreviewDialog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ShowPrintPreviewDialog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditShowPrintPreviewDialog.Name = "EditShowPrintPreviewDialog";
+      this.EditShowPrintPreviewDialog.UseVisualStyleBackColor = true;
+      this.EditShowPrintPreviewDialog.CheckedChanged += new System.EventHandler(this.EditAutoOpenExportFolder_CheckedChanged);
       // 
       // SelectExportTargetForm
       // 

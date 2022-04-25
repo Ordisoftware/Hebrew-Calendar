@@ -82,8 +82,8 @@ partial class PreferencesForm
     NavigationForm.Instance.PanelTop.BackColor = EditNavigateTopColor.BackColor;
     NavigationForm.Instance.PanelMiddle.BackColor = EditNavigateMiddleColor.BackColor;
     NavigationForm.Instance.PanelBottom.BackColor = EditNavigateBottomColor.BackColor;
-    MainForm.Instance.CalendarText.ForeColor = EditTextReportTextColor.BackColor;
-    MainForm.Instance.CalendarText.BackColor = EditTextReportBackColor.BackColor;
+    MainForm.Instance.TextReport.ForeColor = EditTextReportTextColor.BackColor;
+    MainForm.Instance.TextReport.BackColor = EditTextReportBackColor.BackColor;
     MustRefreshMonthView = true;
   }
 

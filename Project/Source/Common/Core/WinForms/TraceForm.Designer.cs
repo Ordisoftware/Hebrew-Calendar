@@ -32,7 +32,6 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionOpenLogsFolder = new System.Windows.Forms.Button();
       this.TrackBarFontSize = new System.Windows.Forms.TrackBar();
-      this.LabelLinesCount = new System.Windows.Forms.Label();
       this.ActionClearLogs = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparator = new System.Windows.Forms.Panel();
@@ -60,7 +59,6 @@
       // 
       this.PanelBottom.Controls.Add(this.ActionOpenLogsFolder);
       this.PanelBottom.Controls.Add(this.TrackBarFontSize);
-      this.PanelBottom.Controls.Add(this.LabelLinesCount);
       this.PanelBottom.Controls.Add(this.ActionClearLogs);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -82,11 +80,6 @@
       this.TrackBarFontSize.Name = "TrackBarFontSize";
       this.TrackBarFontSize.Value = 7;
       this.TrackBarFontSize.ValueChanged += new System.EventHandler(this.TrackBarFontSize_ValueChanged);
-      // 
-      // LabelLinesCount
-      // 
-      resources.ApplyResources(this.LabelLinesCount, "LabelLinesCount");
-      this.LabelLinesCount.Name = "LabelLinesCount";
       // 
       // ActionClearLogs
       // 
@@ -178,6 +171,7 @@
       // 
       resources.ApplyResources(this.SelectFileNavigator, "SelectFileNavigator");
       this.SelectFileNavigator.ComboBox = this.SelectFile;
+      this.SelectFileNavigator.KeepFocus = true;
       this.SelectFileNavigator.Name = "SelectFileNavigator";
       this.SelectFileNavigator.SelectedIndex = -1;
       this.SelectFileNavigator.SelectedItem = null;
@@ -229,7 +223,6 @@
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.Shown += new System.EventHandler(this.TraceForm_Shown);
       this.PanelBottom.ResumeLayout(false);
-      this.PanelBottom.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
       this.TabControl.ResumeLayout(false);
       this.TabPageCurrent.ResumeLayout(false);
@@ -244,7 +237,6 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.Panel PanelSeparator;
     public System.Windows.Forms.Panel PanelBottom;
-    private System.Windows.Forms.Label LabelLinesCount;
     private System.Windows.Forms.Button ActionClearLogs;
     private System.Windows.Forms.TrackBar TrackBarFontSize;
     private System.Windows.Forms.Button ActionOpenLogsFolder;

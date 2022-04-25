@@ -33,20 +33,20 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
-      this.PanelMain = new System.Windows.Forms.Panel();
-      this.PanelCalendarOuter = new System.Windows.Forms.Panel();
-      this.PanelCalendarInner = new System.Windows.Forms.Panel();
-      this.PanelCalendar = new System.Windows.Forms.Panel();
+      this.PanelMainOuter1 = new System.Windows.Forms.Panel();
+      this.PanelMainOuter2 = new System.Windows.Forms.Panel();
+      this.PanelMainInner1 = new System.Windows.Forms.Panel();
+      this.PanelMainInner2 = new System.Windows.Forms.Panel();
       this.TabControl = new System.Windows.Forms.TabControl();
-      this.TabPageText = new System.Windows.Forms.TabPage();
-      this.PanelViewText = new System.Windows.Forms.Panel();
-      this.CalendarText = new System.Windows.Forms.RichTextBox();
-      this.TabPageMonth = new System.Windows.Forms.TabPage();
-      this.PanelViewMonth = new System.Windows.Forms.Panel();
-      this.CalendarMonth = new CodeProjectCalendar.NET.Calendar();
+      this.TabPageTextReport = new System.Windows.Forms.TabPage();
+      this.PanelViewTextReport = new System.Windows.Forms.Panel();
+      this.TextReport = new System.Windows.Forms.RichTextBox();
+      this.TabPageMonthlyCalendar = new System.Windows.Forms.TabPage();
+      this.PanelViewMonthlyCalendar = new System.Windows.Forms.Panel();
+      this.MonthlyCalendar = new CodeProjectCalendar.NET.Calendar();
       this.TabPageGrid = new System.Windows.Forms.TabPage();
       this.PanelViewGrid = new System.Windows.Forms.Panel();
-      this.CalendarGrid = new System.Windows.Forms.DataGridView();
+      this.DataGridView = new System.Windows.Forms.DataGridView();
       this.GridColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.GridColumnLunarMonth = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.GridColumnLunarDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,17 +62,17 @@
       this.GridColumnTorahEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.LunisolarDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.LunisolarDaysBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-      this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+      this.BindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
       this.LabelGridGoToToday = new System.Windows.Forms.ToolStripLabel();
-      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
       this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-      this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+      this.BindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+      this.BindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+      this.BindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+      this.BindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+      this.BindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+      this.BindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+      this.BindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+      this.BindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.EditExportDataEnumsAsTranslations = new Ordisoftware.Core.ToolStripCheckBoxItem();
       this.LabelEnumsAsTranslations = new System.Windows.Forms.ToolStripLabel();
       this.PanelSepTop = new System.Windows.Forms.Panel();
@@ -104,7 +104,7 @@
       this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
       this.TimerReminder = new System.Windows.Forms.Timer(this.components);
-      this.TimerBallon = new System.Windows.Forms.Timer(this.components);
+      this.TimerBalloon = new System.Windows.Forms.Timer(this.components);
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
@@ -112,34 +112,36 @@
       this.ActionSaveToFile = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionPrint = new System.Windows.Forms.ToolStripButton();
-      this.Sep2 = new System.Windows.Forms.ToolStripSeparator();
+      this.ToolStripTopSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionSearchEvent = new System.Windows.Forms.ToolStripButton();
-      this.ActionSearchMonth = new System.Windows.Forms.ToolStripButton();
+      this.ActionSearchLunarMonth = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchGregorianMonth = new System.Windows.Forms.ToolStripButton();
       this.ActionSearchDay = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+      this.ToolStripTopSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionNavigate = new System.Windows.Forms.ToolStripButton();
-      this.ActionViewCelebrations = new System.Windows.Forms.ToolStripButton();
-      this.Sep3 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionViewNextCelebrations = new System.Windows.Forms.ToolStripButton();
+      this.ToolStripTopSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionExit = new System.Windows.Forms.ToolStripButton();
       this.ActionInformation = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionResetReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionDisableReminder = new System.Windows.Forms.ToolStripButton();
       this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ToolStripTopSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionWeeklyParashah = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWeeklyParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWeeklyParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWeeklyParashahReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWeeklyParashahOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionViewParashot = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,7 +164,7 @@
       this.ActionWebLinks = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionPreferences = new System.Windows.Forms.ToolStripButton();
       this.ActionSettings = new System.Windows.Forms.ToolStripDropDownButton();
-      this.MenuitemScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionScreenPosition = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenNone = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenTopLeft = new System.Windows.Forms.ToolStripMenuItem();
       this.EditScreenTopRight = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,13 +183,13 @@
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.EditESCtoExit = new System.Windows.Forms.ToolStripMenuItem();
       this.EditConfirmClosing = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionView = new System.Windows.Forms.ToolStripDropDownButton();
+      this.ActionSelectView = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionViewReport = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewMonth = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewGrid = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
-      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-      this.Sep6 = new System.Windows.Forms.ToolStripSeparator();
+      this.ToolStripTopSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ToolStripTopSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -199,12 +201,12 @@
       this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayParashahShowDescription = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayParashahStudy = new System.Windows.Forms.ToolStripMenuItem();
-      this.ContextMenuDayParashahRead = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
@@ -227,20 +229,18 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-      this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-      this.PanelMain.SuspendLayout();
-      this.PanelCalendarOuter.SuspendLayout();
-      this.PanelCalendarInner.SuspendLayout();
-      this.PanelCalendar.SuspendLayout();
+      this.PanelMainOuter1.SuspendLayout();
+      this.PanelMainOuter2.SuspendLayout();
+      this.PanelMainInner1.SuspendLayout();
+      this.PanelMainInner2.SuspendLayout();
       this.TabControl.SuspendLayout();
-      this.TabPageText.SuspendLayout();
-      this.PanelViewText.SuspendLayout();
-      this.TabPageMonth.SuspendLayout();
-      this.PanelViewMonth.SuspendLayout();
+      this.TabPageTextReport.SuspendLayout();
+      this.PanelViewTextReport.SuspendLayout();
+      this.TabPageMonthlyCalendar.SuspendLayout();
+      this.PanelViewMonthlyCalendar.SuspendLayout();
       this.TabPageGrid.SuspendLayout();
       this.PanelViewGrid.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).BeginInit();
       this.LunisolarDaysBindingNavigator.SuspendLayout();
@@ -256,109 +256,109 @@
       // 
       resources.ApplyResources(this.SaveTextDialog, "SaveTextDialog");
       // 
-      // PanelMain
+      // PanelMainOuter1
       // 
-      this.PanelMain.Controls.Add(this.PanelCalendarOuter);
-      this.PanelMain.Controls.Add(this.PanelSepTop);
-      this.PanelMain.Controls.Add(this.PanelTitle);
-      resources.ApplyResources(this.PanelMain, "PanelMain");
-      this.PanelMain.Name = "PanelMain";
+      this.PanelMainOuter1.Controls.Add(this.PanelMainOuter2);
+      this.PanelMainOuter1.Controls.Add(this.PanelSepTop);
+      this.PanelMainOuter1.Controls.Add(this.PanelTitle);
+      resources.ApplyResources(this.PanelMainOuter1, "PanelMainOuter1");
+      this.PanelMainOuter1.Name = "PanelMainOuter1";
       // 
-      // PanelCalendarOuter
+      // PanelMainOuter2
       // 
-      this.PanelCalendarOuter.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.PanelCalendarOuter.Controls.Add(this.PanelCalendarInner);
-      resources.ApplyResources(this.PanelCalendarOuter, "PanelCalendarOuter");
-      this.PanelCalendarOuter.Name = "PanelCalendarOuter";
+      this.PanelMainOuter2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.PanelMainOuter2.Controls.Add(this.PanelMainInner1);
+      resources.ApplyResources(this.PanelMainOuter2, "PanelMainOuter2");
+      this.PanelMainOuter2.Name = "PanelMainOuter2";
       // 
-      // PanelCalendarInner
+      // PanelMainInner1
       // 
-      this.PanelCalendarInner.BackColor = System.Drawing.SystemColors.Control;
-      this.PanelCalendarInner.Controls.Add(this.PanelCalendar);
-      resources.ApplyResources(this.PanelCalendarInner, "PanelCalendarInner");
-      this.PanelCalendarInner.Name = "PanelCalendarInner";
+      this.PanelMainInner1.BackColor = System.Drawing.SystemColors.Control;
+      this.PanelMainInner1.Controls.Add(this.PanelMainInner2);
+      resources.ApplyResources(this.PanelMainInner1, "PanelMainInner1");
+      this.PanelMainInner1.Name = "PanelMainInner1";
       // 
-      // PanelCalendar
+      // PanelMainInner2
       // 
-      this.PanelCalendar.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelCalendar.Controls.Add(this.TabControl);
-      resources.ApplyResources(this.PanelCalendar, "PanelCalendar");
-      this.PanelCalendar.Name = "PanelCalendar";
+      this.PanelMainInner2.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelMainInner2.Controls.Add(this.TabControl);
+      resources.ApplyResources(this.PanelMainInner2, "PanelMainInner2");
+      this.PanelMainInner2.Name = "PanelMainInner2";
       // 
       // TabControl
       // 
-      this.TabControl.Controls.Add(this.TabPageText);
-      this.TabControl.Controls.Add(this.TabPageMonth);
+      this.TabControl.Controls.Add(this.TabPageTextReport);
+      this.TabControl.Controls.Add(this.TabPageMonthlyCalendar);
       this.TabControl.Controls.Add(this.TabPageGrid);
       resources.ApplyResources(this.TabControl, "TabControl");
       this.TabControl.Name = "TabControl";
       this.TabControl.SelectedIndex = 0;
       this.TabControl.TabStop = false;
       // 
-      // TabPageText
+      // TabPageTextReport
       // 
-      this.TabPageText.Controls.Add(this.PanelViewText);
-      resources.ApplyResources(this.TabPageText, "TabPageText");
-      this.TabPageText.Name = "TabPageText";
-      this.TabPageText.UseVisualStyleBackColor = true;
+      this.TabPageTextReport.Controls.Add(this.PanelViewTextReport);
+      resources.ApplyResources(this.TabPageTextReport, "TabPageTextReport");
+      this.TabPageTextReport.Name = "TabPageTextReport";
+      this.TabPageTextReport.UseVisualStyleBackColor = true;
       // 
-      // PanelViewText
+      // PanelViewTextReport
       // 
-      this.PanelViewText.Controls.Add(this.CalendarText);
-      resources.ApplyResources(this.PanelViewText, "PanelViewText");
-      this.PanelViewText.Name = "PanelViewText";
+      this.PanelViewTextReport.Controls.Add(this.TextReport);
+      resources.ApplyResources(this.PanelViewTextReport, "PanelViewTextReport");
+      this.PanelViewTextReport.Name = "PanelViewTextReport";
       // 
-      // CalendarText
+      // TextReport
       // 
-      resources.ApplyResources(this.CalendarText, "CalendarText");
-      this.CalendarText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-      this.CalendarText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.CalendarText.HideSelection = false;
-      this.CalendarText.Name = "CalendarText";
-      this.CalendarText.ReadOnly = true;
-      this.CalendarText.SelectionChanged += new System.EventHandler(this.CalendarText_SelectionChanged);
-      this.CalendarText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyDown);
-      this.CalendarText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CalendarText_KeyUp);
+      resources.ApplyResources(this.TextReport, "TextReport");
+      this.TextReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+      this.TextReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.TextReport.HideSelection = false;
+      this.TextReport.Name = "TextReport";
+      this.TextReport.ReadOnly = true;
+      this.TextReport.SelectionChanged += new System.EventHandler(this.TextBoxReport_SelectionChanged);
+      this.TextReport.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxReport_KeyDown);
+      this.TextReport.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxReport_KeyUp);
       // 
-      // TabPageMonth
+      // TabPageMonthlyCalendar
       // 
-      this.TabPageMonth.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageMonth.Controls.Add(this.PanelViewMonth);
-      resources.ApplyResources(this.TabPageMonth, "TabPageMonth");
-      this.TabPageMonth.Name = "TabPageMonth";
+      this.TabPageMonthlyCalendar.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageMonthlyCalendar.Controls.Add(this.PanelViewMonthlyCalendar);
+      resources.ApplyResources(this.TabPageMonthlyCalendar, "TabPageMonthlyCalendar");
+      this.TabPageMonthlyCalendar.Name = "TabPageMonthlyCalendar";
       // 
-      // PanelViewMonth
+      // PanelViewMonthlyCalendar
       // 
-      this.PanelViewMonth.BackColor = System.Drawing.SystemColors.Window;
-      this.PanelViewMonth.Controls.Add(this.CalendarMonth);
-      resources.ApplyResources(this.PanelViewMonth, "PanelViewMonth");
-      this.PanelViewMonth.Name = "PanelViewMonth";
+      this.PanelViewMonthlyCalendar.BackColor = System.Drawing.SystemColors.Window;
+      this.PanelViewMonthlyCalendar.Controls.Add(this.MonthlyCalendar);
+      resources.ApplyResources(this.PanelViewMonthlyCalendar, "PanelViewMonthlyCalendar");
+      this.PanelViewMonthlyCalendar.Name = "PanelViewMonthlyCalendar";
       // 
-      // CalendarMonth
+      // MonthlyCalendar
       // 
-      this.CalendarMonth.AllowEditingEvents = false;
-      this.CalendarMonth.BackColor = System.Drawing.Color.White;
-      this.CalendarMonth.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
-      this.CalendarMonth.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
-      this.CalendarMonth.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.DimDisabledEvents = true;
-      resources.ApplyResources(this.CalendarMonth, "CalendarMonth");
-      this.CalendarMonth.HighlightCurrentDay = false;
-      this.CalendarMonth.LoadPresetHolidays = false;
-      this.CalendarMonth.Name = "CalendarMonth";
-      this.CalendarMonth.ShowArrowControls = true;
-      this.CalendarMonth.ShowDashedBorderOnDisabledEvents = true;
-      this.CalendarMonth.ShowDateInHeader = true;
-      this.CalendarMonth.ShowDisabledEvents = false;
-      this.CalendarMonth.ShowEventTooltips = true;
-      this.CalendarMonth.ShowTodayButton = true;
-      this.CalendarMonth.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CalendarMonth.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
-      this.CalendarMonth.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
-      this.CalendarMonth.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseMove);
+      this.MonthlyCalendar.AllowEditingEvents = false;
+      this.MonthlyCalendar.BackColor = System.Drawing.Color.White;
+      this.MonthlyCalendar.CalendarDate = new System.DateTime(2019, 1, 19, 13, 27, 20, 916);
+      this.MonthlyCalendar.CalendarView = CodeProjectCalendar.NET.CalendarViews.Month;
+      this.MonthlyCalendar.DateHeaderFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.MonthlyCalendar.DayOfWeekFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.MonthlyCalendar.DaysFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.MonthlyCalendar.DayViewTimeFont = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.MonthlyCalendar.DimDisabledEvents = true;
+      resources.ApplyResources(this.MonthlyCalendar, "MonthlyCalendar");
+      this.MonthlyCalendar.HighlightCurrentDay = false;
+      this.MonthlyCalendar.LoadPresetHolidays = false;
+      this.MonthlyCalendar.Name = "MonthlyCalendar";
+      this.MonthlyCalendar.ShowArrowControls = true;
+      this.MonthlyCalendar.ShowDashedBorderOnDisabledEvents = true;
+      this.MonthlyCalendar.ShowDateInHeader = true;
+      this.MonthlyCalendar.ShowDisabledEvents = false;
+      this.MonthlyCalendar.ShowEventTooltips = true;
+      this.MonthlyCalendar.ShowTodayButton = true;
+      this.MonthlyCalendar.TodayFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.MonthlyCalendar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
+      this.MonthlyCalendar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseClick);
+      this.MonthlyCalendar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMonth_MouseMove);
       // 
       // TabPageGrid
       // 
@@ -369,17 +369,17 @@
       // 
       // PanelViewGrid
       // 
-      this.PanelViewGrid.Controls.Add(this.CalendarGrid);
+      this.PanelViewGrid.Controls.Add(this.DataGridView);
       this.PanelViewGrid.Controls.Add(this.LunisolarDaysBindingNavigator);
       resources.ApplyResources(this.PanelViewGrid, "PanelViewGrid");
       this.PanelViewGrid.Name = "PanelViewGrid";
       // 
-      // CalendarGrid
+      // DataGridView
       // 
-      this.CalendarGrid.AllowUserToAddRows = false;
-      this.CalendarGrid.AllowUserToDeleteRows = false;
-      this.CalendarGrid.AllowUserToResizeRows = false;
-      this.CalendarGrid.AutoGenerateColumns = false;
+      this.DataGridView.AllowUserToAddRows = false;
+      this.DataGridView.AllowUserToDeleteRows = false;
+      this.DataGridView.AllowUserToResizeRows = false;
+      this.DataGridView.AutoGenerateColumns = false;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -387,9 +387,9 @@
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
       dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.CalendarGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-      this.CalendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.CalendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridColumnDate,
             this.GridColumnLunarMonth,
             this.GridColumnLunarDay,
@@ -403,15 +403,15 @@
             this.GridColumnMoonPhase,
             this.GridColumnSeasonChange,
             this.GridColumnTorahEvent});
-      this.CalendarGrid.DataSource = this.LunisolarDaysBindingSource;
-      resources.ApplyResources(this.CalendarGrid, "CalendarGrid");
-      this.CalendarGrid.EnableHeadersVisualStyles = false;
-      this.CalendarGrid.MultiSelect = false;
-      this.CalendarGrid.Name = "CalendarGrid";
-      this.CalendarGrid.ReadOnly = true;
-      this.CalendarGrid.RowHeadersVisible = false;
-      this.CalendarGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.CalendarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
+      this.DataGridView.DataSource = this.LunisolarDaysBindingSource;
+      resources.ApplyResources(this.DataGridView, "DataGridView");
+      this.DataGridView.EnableHeadersVisualStyles = false;
+      this.DataGridView.MultiSelect = false;
+      this.DataGridView.Name = "DataGridView";
+      this.DataGridView.ReadOnly = true;
+      this.DataGridView.RowHeadersVisible = false;
+      this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+      this.DataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CalendarGrid_CellFormatting);
       // 
       // GridColumnDate
       // 
@@ -527,34 +527,34 @@
       // 
       this.LunisolarDaysBindingNavigator.AddNewItem = null;
       this.LunisolarDaysBindingNavigator.BindingSource = this.LunisolarDaysBindingSource;
-      this.LunisolarDaysBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+      this.LunisolarDaysBindingNavigator.CountItem = this.BindingNavigatorCountItem;
       this.LunisolarDaysBindingNavigator.DeleteItem = null;
       this.LunisolarDaysBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LabelGridGoToToday,
-            this.toolStripSeparator5,
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
             this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.toolStripSeparator14,
+            this.BindingNavigatorMoveFirstItem,
+            this.BindingNavigatorMovePreviousItem,
+            this.BindingNavigatorSeparator2,
+            this.BindingNavigatorPositionItem,
+            this.BindingNavigatorCountItem,
+            this.BindingNavigatorSeparator3,
+            this.BindingNavigatorMoveNextItem,
+            this.BindingNavigatorMoveLastItem,
+            this.BindingNavigatorSeparator4,
             this.EditExportDataEnumsAsTranslations,
             this.LabelEnumsAsTranslations});
       resources.ApplyResources(this.LunisolarDaysBindingNavigator, "LunisolarDaysBindingNavigator");
-      this.LunisolarDaysBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-      this.LunisolarDaysBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-      this.LunisolarDaysBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-      this.LunisolarDaysBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+      this.LunisolarDaysBindingNavigator.MoveFirstItem = this.BindingNavigatorMoveFirstItem;
+      this.LunisolarDaysBindingNavigator.MoveLastItem = this.BindingNavigatorMoveLastItem;
+      this.LunisolarDaysBindingNavigator.MoveNextItem = this.BindingNavigatorMoveNextItem;
+      this.LunisolarDaysBindingNavigator.MovePreviousItem = this.BindingNavigatorMovePreviousItem;
       this.LunisolarDaysBindingNavigator.Name = "LunisolarDaysBindingNavigator";
-      this.LunisolarDaysBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+      this.LunisolarDaysBindingNavigator.PositionItem = this.BindingNavigatorPositionItem;
       // 
-      // bindingNavigatorCountItem
+      // BindingNavigatorCountItem
       // 
-      this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-      resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
+      this.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem";
+      resources.ApplyResources(this.BindingNavigatorCountItem, "BindingNavigatorCountItem");
       // 
       // LabelGridGoToToday
       // 
@@ -562,55 +562,55 @@
       resources.ApplyResources(this.LabelGridGoToToday, "LabelGridGoToToday");
       this.LabelGridGoToToday.Click += new System.EventHandler(this.LabelGridGoToToday_Click);
       // 
-      // toolStripSeparator5
-      // 
-      this.toolStripSeparator5.Name = "toolStripSeparator5";
-      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-      // 
-      // bindingNavigatorMoveFirstItem
-      // 
-      this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
-      this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-      // 
-      // bindingNavigatorMovePreviousItem
-      // 
-      this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
-      this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-      // 
-      // bindingNavigatorSeparator
-      // 
-      this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-      resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
-      // 
-      // bindingNavigatorPositionItem
-      // 
-      resources.ApplyResources(this.bindingNavigatorPositionItem, "bindingNavigatorPositionItem");
-      this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-      this.bindingNavigatorPositionItem.ReadOnly = true;
-      // 
       // bindingNavigatorSeparator1
       // 
       this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
       resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
       // 
-      // bindingNavigatorMoveNextItem
+      // BindingNavigatorMoveFirstItem
       // 
-      this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
-      this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+      this.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.BindingNavigatorMoveFirstItem, "BindingNavigatorMoveFirstItem");
+      this.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem";
       // 
-      // bindingNavigatorMoveLastItem
+      // BindingNavigatorMovePreviousItem
       // 
-      this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
-      this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+      this.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.BindingNavigatorMovePreviousItem, "BindingNavigatorMovePreviousItem");
+      this.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem";
       // 
-      // toolStripSeparator14
+      // BindingNavigatorSeparator2
       // 
-      this.toolStripSeparator14.Name = "toolStripSeparator14";
-      resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
+      this.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2";
+      resources.ApplyResources(this.BindingNavigatorSeparator2, "BindingNavigatorSeparator2");
+      // 
+      // BindingNavigatorPositionItem
+      // 
+      resources.ApplyResources(this.BindingNavigatorPositionItem, "BindingNavigatorPositionItem");
+      this.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem";
+      this.BindingNavigatorPositionItem.ReadOnly = true;
+      // 
+      // BindingNavigatorSeparator3
+      // 
+      this.BindingNavigatorSeparator3.Name = "BindingNavigatorSeparator3";
+      resources.ApplyResources(this.BindingNavigatorSeparator3, "BindingNavigatorSeparator3");
+      // 
+      // BindingNavigatorMoveNextItem
+      // 
+      this.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.BindingNavigatorMoveNextItem, "BindingNavigatorMoveNextItem");
+      this.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem";
+      // 
+      // BindingNavigatorMoveLastItem
+      // 
+      this.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.BindingNavigatorMoveLastItem, "BindingNavigatorMoveLastItem");
+      this.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem";
+      // 
+      // BindingNavigatorSeparator4
+      // 
+      this.BindingNavigatorSeparator4.Name = "BindingNavigatorSeparator4";
+      resources.ApplyResources(this.BindingNavigatorSeparator4, "BindingNavigatorSeparator4");
       // 
       // EditExportDataEnumsAsTranslations
       // 
@@ -624,6 +624,7 @@
       // 
       this.LabelEnumsAsTranslations.Name = "LabelEnumsAsTranslations";
       resources.ApplyResources(this.LabelEnumsAsTranslations, "LabelEnumsAsTranslations");
+      this.LabelEnumsAsTranslations.Click += new System.EventHandler(this.LabelEnumsAsTranslations_Click);
       // 
       // PanelSepTop
       // 
@@ -804,10 +805,10 @@
       this.TimerReminder.Interval = 60000;
       this.TimerReminder.Tick += new System.EventHandler(this.TimerReminder_Tick);
       // 
-      // TimerBallon
+      // TimerBalloon
       // 
-      this.TimerBallon.Interval = 1000;
-      this.TimerBallon.Tick += new System.EventHandler(this.TimerBallon_Tick);
+      this.TimerBalloon.Interval = 1000;
+      this.TimerBalloon.Tick += new System.EventHandler(this.TimerBallon_Tick);
       // 
       // TimerTrayMouseMove
       // 
@@ -852,10 +853,10 @@
       this.ActionPrint.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionPrint.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // Sep2
+      // ToolStripTopSeparator2
       // 
-      this.Sep2.Name = "Sep2";
-      resources.ApplyResources(this.Sep2, "Sep2");
+      this.ToolStripTopSeparator2.Name = "ToolStripTopSeparator2";
+      resources.ApplyResources(this.ToolStripTopSeparator2, "ToolStripTopSeparator2");
       // 
       // ActionSearchEvent
       // 
@@ -867,15 +868,15 @@
       this.ActionSearchEvent.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionSearchEvent.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // ActionSearchMonth
+      // ActionSearchLunarMonth
       // 
-      this.ActionSearchMonth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionSearchMonth, "ActionSearchMonth");
-      this.ActionSearchMonth.Name = "ActionSearchMonth";
-      this.ActionSearchMonth.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionSearchMonth.Click += new System.EventHandler(this.ActionSearchMonth_Click);
-      this.ActionSearchMonth.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionSearchMonth.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      this.ActionSearchLunarMonth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionSearchLunarMonth, "ActionSearchLunarMonth");
+      this.ActionSearchLunarMonth.Name = "ActionSearchLunarMonth";
+      this.ActionSearchLunarMonth.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionSearchLunarMonth.Click += new System.EventHandler(this.ActionSearchMonth_Click);
+      this.ActionSearchLunarMonth.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionSearchLunarMonth.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
       // ActionSearchGregorianMonth
       // 
@@ -897,10 +898,10 @@
       this.ActionSearchDay.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionSearchDay.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator12
+      // ToolStripTopSeparator3
       // 
-      this.toolStripSeparator12.Name = "toolStripSeparator12";
-      resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
+      this.ToolStripTopSeparator3.Name = "ToolStripTopSeparator3";
+      resources.ApplyResources(this.ToolStripTopSeparator3, "ToolStripTopSeparator3");
       // 
       // ActionNavigate
       // 
@@ -912,20 +913,20 @@
       this.ActionNavigate.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionNavigate.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // ActionViewCelebrations
+      // ActionViewNextCelebrations
       // 
-      this.ActionViewCelebrations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      resources.ApplyResources(this.ActionViewCelebrations, "ActionViewCelebrations");
-      this.ActionViewCelebrations.Name = "ActionViewCelebrations";
-      this.ActionViewCelebrations.Padding = new System.Windows.Forms.Padding(5);
-      this.ActionViewCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
-      this.ActionViewCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
-      this.ActionViewCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
+      this.ActionViewNextCelebrations.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      resources.ApplyResources(this.ActionViewNextCelebrations, "ActionViewNextCelebrations");
+      this.ActionViewNextCelebrations.Name = "ActionViewNextCelebrations";
+      this.ActionViewNextCelebrations.Padding = new System.Windows.Forms.Padding(5);
+      this.ActionViewNextCelebrations.Click += new System.EventHandler(this.ActionViewCelebrations_Click);
+      this.ActionViewNextCelebrations.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
+      this.ActionViewNextCelebrations.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // Sep3
+      // ToolStripTopSeparator4
       // 
-      this.Sep3.Name = "Sep3";
-      resources.ApplyResources(this.Sep3, "Sep3");
+      this.ToolStripTopSeparator4.Name = "ToolStripTopSeparator4";
+      resources.ApplyResources(this.ToolStripTopSeparator4, "ToolStripTopSeparator4");
       // 
       // ActionExit
       // 
@@ -976,10 +977,10 @@
       this.ActionEnableReminder.MouseEnter += new System.EventHandler(this.ShowToolTip_OnMouseEnter);
       this.ActionEnableReminder.MouseLeave += new System.EventHandler(this.ShowToolTip_OnMouseLeave);
       // 
-      // toolStripSeparator4
+      // ToolStripTopSeparator5
       // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      this.ToolStripTopSeparator5.Name = "ToolStripTopSeparator5";
+      resources.ApplyResources(this.ToolStripTopSeparator5, "ToolStripTopSeparator5");
       // 
       // ActionTools
       // 
@@ -987,7 +988,7 @@
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWeeklyParashah,
             this.toolStripSeparator11,
-            this.ActionViewParashot,
+            this.ActionParashotBoard,
             this.ActionShowCelebrationVersesBoard,
             this.toolStripSeparator25,
             this.ActionViewCelebrationsBoard,
@@ -1019,63 +1020,68 @@
       // ActionWeeklyParashah
       // 
       this.ActionWeeklyParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionViewParashahDescription,
+            this.ActionWeeklyParashahDescription,
             this.toolStripSeparator13,
-            this.ActionStudyOnline,
-            this.ActionOpenVerseOnline,
+            this.ActionWeeklyParashahStudyOnline,
+            this.ActionWeeklyParashahReadOnline,
             this.toolStripSeparator1,
-            this.ActionOpenHebrewWordsVerse});
+            this.ActionWeeklyParashahOpenWithHebrewWords});
       resources.ApplyResources(this.ActionWeeklyParashah, "ActionWeeklyParashah");
       this.ActionWeeklyParashah.Name = "ActionWeeklyParashah";
       // 
-      // ActionViewParashahDescription
+      // ActionWeeklyParashahDescription
       // 
-      resources.ApplyResources(this.ActionViewParashahDescription, "ActionViewParashahDescription");
-      this.ActionViewParashahDescription.Name = "ActionViewParashahDescription";
-      this.ActionViewParashahDescription.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
+      resources.ApplyResources(this.ActionWeeklyParashahDescription, "ActionWeeklyParashahDescription");
+      this.ActionWeeklyParashahDescription.Name = "ActionWeeklyParashahDescription";
+      this.ActionWeeklyParashahDescription.Click += new System.EventHandler(this.ActionViewParashahInfos_Click);
       // 
       // toolStripSeparator13
       // 
       this.toolStripSeparator13.Name = "toolStripSeparator13";
       resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
       // 
-      // ActionStudyOnline
+      // ActionWeeklyParashahStudyOnline
       // 
-      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
-      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      resources.ApplyResources(this.ActionWeeklyParashahStudyOnline, "ActionWeeklyParashahStudyOnline");
+      this.ActionWeeklyParashahStudyOnline.Name = "ActionWeeklyParashahStudyOnline";
       // 
-      // ActionOpenVerseOnline
+      // ActionWeeklyParashahReadOnline
       // 
-      resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
-      this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      resources.ApplyResources(this.ActionWeeklyParashahReadOnline, "ActionWeeklyParashahReadOnline");
+      this.ActionWeeklyParashahReadOnline.Name = "ActionWeeklyParashahReadOnline";
       // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
-      // ActionOpenHebrewWordsVerse
+      // ActionWeeklyParashahOpenWithHebrewWords
       // 
-      resources.ApplyResources(this.ActionOpenHebrewWordsVerse, "ActionOpenHebrewWordsVerse");
-      this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
-      this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
+      resources.ApplyResources(this.ActionWeeklyParashahOpenWithHebrewWords, "ActionWeeklyParashahOpenWithHebrewWords");
+      this.ActionWeeklyParashahOpenWithHebrewWords.Name = "ActionWeeklyParashahOpenWithHebrewWords";
+      this.ActionWeeklyParashahOpenWithHebrewWords.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
       // toolStripSeparator11
       // 
       this.toolStripSeparator11.Name = "toolStripSeparator11";
       resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
       // 
-      // ActionViewParashot
+      // ActionParashotBoard
       // 
-      resources.ApplyResources(this.ActionViewParashot, "ActionViewParashot");
-      this.ActionViewParashot.Name = "ActionViewParashot";
-      this.ActionViewParashot.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      resources.ApplyResources(this.ActionParashotBoard, "ActionParashotBoard");
+      this.ActionParashotBoard.Name = "ActionParashotBoard";
+      this.ActionParashotBoard.Click += new System.EventHandler(this.ActionViewParashot_Click);
       // 
       // ActionShowCelebrationVersesBoard
       // 
       resources.ApplyResources(this.ActionShowCelebrationVersesBoard, "ActionShowCelebrationVersesBoard");
       this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
       this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
+      // 
+      // toolStripSeparator25
+      // 
+      this.toolStripSeparator25.Name = "toolStripSeparator25";
+      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
       // 
       // ActionViewCelebrationsBoard
       // 
@@ -1088,6 +1094,11 @@
       resources.ApplyResources(this.ActionViewNewMoonsBoard, "ActionViewNewMoonsBoard");
       this.ActionViewNewMoonsBoard.Name = "ActionViewNewMoonsBoard";
       this.ActionViewNewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
+      // 
+      // toolStripSeparator28
+      // 
+      this.toolStripSeparator28.Name = "toolStripSeparator28";
+      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
       // 
       // ActionViewLunarMonths
       // 
@@ -1224,7 +1235,7 @@
       this.ActionSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.ActionSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuitemScreenPosition,
+            this.ActionScreenPosition,
             this.ActionResetWinSettings,
             this.Sep7,
             this.ActionShowKeyboardNotice,
@@ -1241,17 +1252,17 @@
       this.ActionSettings.Name = "ActionSettings";
       this.ActionSettings.Padding = new System.Windows.Forms.Padding(5);
       // 
-      // MenuitemScreenPosition
+      // ActionScreenPosition
       // 
-      this.MenuitemScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ActionScreenPosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditScreenNone,
             this.EditScreenTopLeft,
             this.EditScreenTopRight,
             this.EditScreenBottomLeft,
             this.EditScreenBottomRight,
             this.EditScreenCenter});
-      resources.ApplyResources(this.MenuitemScreenPosition, "MenuitemScreenPosition");
-      this.MenuitemScreenPosition.Name = "MenuitemScreenPosition";
+      resources.ApplyResources(this.ActionScreenPosition, "ActionScreenPosition");
+      this.ActionScreenPosition.Name = "ActionScreenPosition";
       // 
       // EditScreenNone
       // 
@@ -1379,16 +1390,16 @@
       this.EditConfirmClosing.CheckState = System.Windows.Forms.CheckState.Checked;
       this.EditConfirmClosing.Name = "EditConfirmClosing";
       // 
-      // ActionView
+      // ActionSelectView
       // 
-      this.ActionView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.ActionView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ActionSelectView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.ActionSelectView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewReport,
             this.ActionViewMonth,
             this.ActionViewGrid});
-      resources.ApplyResources(this.ActionView, "ActionView");
-      this.ActionView.Name = "ActionView";
-      this.ActionView.Padding = new System.Windows.Forms.Padding(5);
+      resources.ApplyResources(this.ActionSelectView, "ActionSelectView");
+      this.ActionSelectView.Name = "ActionSelectView";
+      this.ActionSelectView.Padding = new System.Windows.Forms.Padding(5);
       // 
       // ActionViewReport
       // 
@@ -1416,45 +1427,45 @@
       this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.ToolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
       this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionView,
-            this.toolStripSeparator7,
+            this.ActionSelectView,
+            this.ToolStripTopSeparator1,
             this.ActionSaveToFile,
             this.ActionCopyToClipboard,
             this.ActionPrint,
-            this.Sep2,
+            this.ToolStripTopSeparator2,
             this.ActionSearchEvent,
-            this.ActionSearchMonth,
+            this.ActionSearchLunarMonth,
             this.ActionSearchGregorianMonth,
             this.ActionSearchDay,
-            this.toolStripSeparator12,
+            this.ToolStripTopSeparator3,
             this.ActionNavigate,
-            this.ActionViewCelebrations,
-            this.Sep3,
+            this.ActionViewNextCelebrations,
+            this.ToolStripTopSeparator4,
             this.ActionExit,
             this.ActionResetReminder,
             this.ActionDisableReminder,
             this.ActionEnableReminder,
-            this.toolStripSeparator4,
+            this.ToolStripTopSeparator5,
             this.ActionTools,
             this.ActionWebLinks,
             this.ActionInformation,
-            this.Sep6,
+            this.ToolStripTopSeparator6,
             this.ActionPreferences,
             this.ActionSettings});
       resources.ApplyResources(this.ToolStrip, "ToolStrip");
       this.ToolStrip.Name = "ToolStrip";
       this.ToolStrip.ShowItemToolTips = false;
       // 
-      // toolStripSeparator7
+      // ToolStripTopSeparator1
       // 
-      this.toolStripSeparator7.Name = "toolStripSeparator7";
-      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      this.ToolStripTopSeparator1.Name = "ToolStripTopSeparator1";
+      resources.ApplyResources(this.ToolStripTopSeparator1, "ToolStripTopSeparator1");
       // 
-      // Sep6
+      // ToolStripTopSeparator6
       // 
-      this.Sep6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-      this.Sep6.Name = "Sep6";
-      resources.ApplyResources(this.Sep6, "Sep6");
+      this.ToolStripTopSeparator6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.ToolStripTopSeparator6.Name = "ToolStripTopSeparator6";
+      resources.ApplyResources(this.ToolStripTopSeparator6, "ToolStripTopSeparator6");
       // 
       // TimerUpdateTitles
       // 
@@ -1538,48 +1549,48 @@
       // ContextMenuDayParashah
       // 
       this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContextMenuDayParashahShowDescription,
+            this.ContextMenuDayParashahDescription,
             this.toolStripSeparator24,
-            this.ContextMenuDayParashahStudy,
-            this.ContextMenuDayParashahRead,
+            this.ContextMenuDayParashahStudyOnline,
+            this.ContextMenuDayParashahReadOnline,
             this.toolStripSeparator22,
-            this.ContextMenuOpenHebrewWordsVerse,
+            this.ContextMenuOpenWithHebrewWords,
             this.toolStripSeparator16,
             this.ContextMenuDayParashotBoard});
       resources.ApplyResources(this.ContextMenuDayParashah, "ContextMenuDayParashah");
       this.ContextMenuDayParashah.Name = "ContextMenuDayParashah";
       // 
-      // ContextMenuDayParashahShowDescription
+      // ContextMenuDayParashahDescription
       // 
-      resources.ApplyResources(this.ContextMenuDayParashahShowDescription, "ContextMenuDayParashahShowDescription");
-      this.ContextMenuDayParashahShowDescription.Name = "ContextMenuDayParashahShowDescription";
-      this.ContextMenuDayParashahShowDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      resources.ApplyResources(this.ContextMenuDayParashahDescription, "ContextMenuDayParashahDescription");
+      this.ContextMenuDayParashahDescription.Name = "ContextMenuDayParashahDescription";
+      this.ContextMenuDayParashahDescription.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
       // 
       // toolStripSeparator24
       // 
       this.toolStripSeparator24.Name = "toolStripSeparator24";
       resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
-      // ContextMenuDayParashahStudy
+      // ContextMenuDayParashahStudyOnline
       // 
-      resources.ApplyResources(this.ContextMenuDayParashahStudy, "ContextMenuDayParashahStudy");
-      this.ContextMenuDayParashahStudy.Name = "ContextMenuDayParashahStudy";
+      resources.ApplyResources(this.ContextMenuDayParashahStudyOnline, "ContextMenuDayParashahStudyOnline");
+      this.ContextMenuDayParashahStudyOnline.Name = "ContextMenuDayParashahStudyOnline";
       // 
-      // ContextMenuDayParashahRead
+      // ContextMenuDayParashahReadOnline
       // 
-      resources.ApplyResources(this.ContextMenuDayParashahRead, "ContextMenuDayParashahRead");
-      this.ContextMenuDayParashahRead.Name = "ContextMenuDayParashahRead";
+      resources.ApplyResources(this.ContextMenuDayParashahReadOnline, "ContextMenuDayParashahReadOnline");
+      this.ContextMenuDayParashahReadOnline.Name = "ContextMenuDayParashahReadOnline";
       // 
       // toolStripSeparator22
       // 
       this.toolStripSeparator22.Name = "toolStripSeparator22";
       resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
       // 
-      // ContextMenuOpenHebrewWordsVerse
+      // ContextMenuOpenWithHebrewWords
       // 
-      resources.ApplyResources(this.ContextMenuOpenHebrewWordsVerse, "ContextMenuOpenHebrewWordsVerse");
-      this.ContextMenuOpenHebrewWordsVerse.Name = "ContextMenuOpenHebrewWordsVerse";
-      this.ContextMenuOpenHebrewWordsVerse.Click += new System.EventHandler(this.ContextMenuOpenHebrewWordsVerse_Click);
+      resources.ApplyResources(this.ContextMenuOpenWithHebrewWords, "ContextMenuOpenWithHebrewWords");
+      this.ContextMenuOpenWithHebrewWords.Name = "ContextMenuOpenWithHebrewWords";
+      this.ContextMenuOpenWithHebrewWords.Click += new System.EventHandler(this.ContextMenuOpenHebrewWordsVerse_Click);
       // 
       // toolStripSeparator16
       // 
@@ -1709,21 +1720,11 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // toolStripSeparator25
-      // 
-      this.toolStripSeparator25.Name = "toolStripSeparator25";
-      resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
-      // 
-      // toolStripSeparator28
-      // 
-      this.toolStripSeparator28.Name = "toolStripSeparator28";
-      resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.PanelMain);
+      this.Controls.Add(this.PanelMainOuter1);
       this.Controls.Add(this.ToolStrip);
       this.Name = "MainForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -1732,19 +1733,19 @@
       this.Shown += new System.EventHandler(this.MainForm_Shown);
       this.ClientSizeChanged += new System.EventHandler(this.MainForm_WindowsChanged);
       this.LocationChanged += new System.EventHandler(this.MainForm_WindowsChanged);
-      this.PanelMain.ResumeLayout(false);
-      this.PanelCalendarOuter.ResumeLayout(false);
-      this.PanelCalendarInner.ResumeLayout(false);
-      this.PanelCalendar.ResumeLayout(false);
+      this.PanelMainOuter1.ResumeLayout(false);
+      this.PanelMainOuter2.ResumeLayout(false);
+      this.PanelMainInner1.ResumeLayout(false);
+      this.PanelMainInner2.ResumeLayout(false);
       this.TabControl.ResumeLayout(false);
-      this.TabPageText.ResumeLayout(false);
-      this.PanelViewText.ResumeLayout(false);
-      this.TabPageMonth.ResumeLayout(false);
-      this.PanelViewMonth.ResumeLayout(false);
+      this.TabPageTextReport.ResumeLayout(false);
+      this.PanelViewTextReport.ResumeLayout(false);
+      this.TabPageMonthlyCalendar.ResumeLayout(false);
+      this.PanelViewMonthlyCalendar.ResumeLayout(false);
       this.TabPageGrid.ResumeLayout(false);
       this.PanelViewGrid.ResumeLayout(false);
       this.PanelViewGrid.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.CalendarGrid)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.LunisolarDaysBindingNavigator)).EndInit();
       this.LunisolarDaysBindingNavigator.ResumeLayout(false);
@@ -1763,22 +1764,22 @@
 
     #endregion
     private System.Windows.Forms.SaveFileDialog SaveTextDialog;
-    private System.Windows.Forms.Panel PanelMain;
+    private System.Windows.Forms.Panel PanelMainOuter1;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
-    private System.Windows.Forms.Panel PanelCalendarOuter;
-    private System.Windows.Forms.Panel PanelCalendarInner;
+    private System.Windows.Forms.Panel PanelMainOuter2;
+    private System.Windows.Forms.Panel PanelMainInner1;
     private System.Windows.Forms.TabControl TabControl;
-    private System.Windows.Forms.TabPage TabPageText;
-    private System.Windows.Forms.Panel PanelViewText;
-    public System.Windows.Forms.RichTextBox CalendarText;
+    private System.Windows.Forms.TabPage TabPageTextReport;
+    private System.Windows.Forms.Panel PanelViewTextReport;
+    public System.Windows.Forms.RichTextBox TextReport;
     private System.Windows.Forms.TabPage TabPageGrid;
     internal System.Windows.Forms.Panel PanelViewGrid;
     private System.Windows.Forms.PictureBox moonPhaseImagePictureBox;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Panel PanelCalendar;
+    private System.Windows.Forms.Panel PanelMainInner2;
     private System.Windows.Forms.Timer TimerTooltip;
-    private System.Windows.Forms.DataGridView CalendarGrid;
+    private System.Windows.Forms.DataGridView DataGridView;
     public System.Windows.Forms.SaveFileDialog SaveDataGridDialog;
     private System.Windows.Forms.NotifyIcon TrayIcon;
     public System.Windows.Forms.ToolStripMenuItem MenuShowHide;
@@ -1787,9 +1788,9 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu3;
     private System.Windows.Forms.ToolStripMenuItem MenuInformation;
     private System.Windows.Forms.ToolStripMenuItem MenuExit;
-    private System.Windows.Forms.TabPage TabPageMonth;
-    public global::CodeProjectCalendar.NET.Calendar CalendarMonth;
-    public System.Windows.Forms.Panel PanelViewMonth;
+    private System.Windows.Forms.TabPage TabPageMonthlyCalendar;
+    public global::CodeProjectCalendar.NET.Calendar MonthlyCalendar;
+    public System.Windows.Forms.Panel PanelViewMonthlyCalendar;
     private System.Windows.Forms.Timer TimerTrayMouseMove;
     public System.Windows.Forms.Timer TimerReminder;
     private System.Windows.Forms.ToolStripMenuItem MenuPreferences;
@@ -1808,19 +1809,19 @@
     private System.Windows.Forms.ToolStripButton ActionSaveToFile;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.ToolStripButton ActionPrint;
-    private System.Windows.Forms.ToolStripSeparator Sep2;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator2;
     private System.Windows.Forms.ToolStripButton ActionSearchEvent;
-    private System.Windows.Forms.ToolStripButton ActionSearchMonth;
+    private System.Windows.Forms.ToolStripButton ActionSearchLunarMonth;
     private System.Windows.Forms.ToolStripButton ActionSearchGregorianMonth;
     private System.Windows.Forms.ToolStripButton ActionSearchDay;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-    private System.Windows.Forms.ToolStripSeparator Sep3;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator3;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator4;
     private System.Windows.Forms.ToolStripButton ActionExit;
     public System.Windows.Forms.ToolStripDropDownButton ActionInformation;
     internal System.Windows.Forms.ToolStripButton ActionResetReminder;
     private System.Windows.Forms.ToolStripButton ActionDisableReminder;
     private System.Windows.Forms.ToolStripButton ActionEnableReminder;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator5;
     private System.Windows.Forms.ToolStripDropDownButton ActionTools;
     private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
     private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
@@ -1833,7 +1834,7 @@
     private System.Windows.Forms.ToolStripDropDownButton ActionWebLinks;
     internal System.Windows.Forms.ToolStripButton ActionPreferences;
     private System.Windows.Forms.ToolStripDropDownButton ActionSettings;
-    private System.Windows.Forms.ToolStripMenuItem MenuitemScreenPosition;
+    private System.Windows.Forms.ToolStripMenuItem ActionScreenPosition;
     public System.Windows.Forms.ToolStripMenuItem EditScreenNone;
     public System.Windows.Forms.ToolStripMenuItem EditScreenTopLeft;
     public System.Windows.Forms.ToolStripMenuItem EditScreenTopRight;
@@ -1852,13 +1853,13 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     public System.Windows.Forms.ToolStripMenuItem EditESCtoExit;
     public System.Windows.Forms.ToolStripMenuItem EditConfirmClosing;
-    private System.Windows.Forms.ToolStripDropDownButton ActionView;
+    private System.Windows.Forms.ToolStripDropDownButton ActionSelectView;
     private System.Windows.Forms.ToolStripMenuItem ActionViewReport;
     private System.Windows.Forms.ToolStripMenuItem ActionViewMonth;
     private System.Windows.Forms.ToolStripMenuItem ActionViewGrid;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-    private System.Windows.Forms.ToolStripSeparator Sep6;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator1;
+    private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator6;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     public System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
@@ -1870,29 +1871,29 @@
     internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewParashot;
+    internal System.Windows.Forms.ToolStripMenuItem ActionParashotBoard;
     public System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     internal System.Windows.Forms.ToolStripButton ActionNavigate;
-    internal System.Windows.Forms.ToolStripButton ActionViewCelebrations;
+    internal System.Windows.Forms.ToolStripButton ActionViewNextCelebrations;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashah;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
-    private System.Windows.Forms.ToolStripMenuItem ActionOpenVerseOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashahStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashahReadOnline;
     private System.Windows.Forms.BindingSource LunisolarDaysBindingSource;
-    private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-    private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-    private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+    private System.Windows.Forms.ToolStripLabel BindingNavigatorCountItem;
+    private System.Windows.Forms.ToolStripButton BindingNavigatorMoveFirstItem;
+    private System.Windows.Forms.ToolStripButton BindingNavigatorMovePreviousItem;
+    private System.Windows.Forms.ToolStripSeparator BindingNavigatorSeparator2;
+    private System.Windows.Forms.ToolStripTextBox BindingNavigatorPositionItem;
+    private System.Windows.Forms.ToolStripSeparator BindingNavigatorSeparator3;
+    private System.Windows.Forms.ToolStripButton BindingNavigatorMoveNextItem;
+    private System.Windows.Forms.ToolStripButton BindingNavigatorMoveLastItem;
     private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-    private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripLabel LabelGridGoToToday;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewParashahDescription;
+    internal System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashahDescription;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-    internal System.Windows.Forms.Timer TimerBallon;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+    internal System.Windows.Forms.Timer TimerBalloon;
+    private System.Windows.Forms.ToolStripSeparator BindingNavigatorSeparator4;
     private System.Windows.Forms.ToolStripLabel LabelEnumsAsTranslations;
     private System.Windows.Forms.BindingNavigator LunisolarDaysBindingNavigator;
     internal Core.ToolStripCheckBoxItem EditExportDataEnumsAsTranslations;
@@ -1903,10 +1904,10 @@
     private System.Windows.Forms.ToolStripSeparator ContextMenuDayTimesSeparator;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayCelebrationVersesBoard;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashah;
-    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahShowDescription;
+    internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahDescription;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
-    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahStudy;
-    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahRead;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ContextMenuDayParashahReadOnline;
     private System.Windows.Forms.ToolStripMenuItem ContextMenuDayNavigation;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
     internal System.Windows.Forms.ToolStripMenuItem ContextMenuDayDatesDiffToSelected;
@@ -1936,8 +1937,8 @@
     private Label LabelSubTitleOmer;
     internal Label LabelSubTitleCalendar;
     private ToolStripMenuItem ActionShowMonthsAndDaysNotice;
-    private ToolStripMenuItem ContextMenuOpenHebrewWordsVerse;
-    private ToolStripMenuItem ActionOpenHebrewWordsVerse;
+    private ToolStripMenuItem ContextMenuOpenWithHebrewWords;
+    private ToolStripMenuItem ActionWeeklyParashahOpenWithHebrewWords;
     private ToolStripSeparator toolStripSeparator1;
     private ToolStripSeparator toolStripSeparator22;
     public ToolStripSeparator toolStripSeparator23;

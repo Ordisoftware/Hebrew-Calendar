@@ -77,7 +77,7 @@ class OnlineProviders : DataFile
         }
         string line = lines[index].Trim();
         if ( line.Length == 0 ) continue;
-        if ( line.StartsWith(";", StringComparison.Ordinal) ) continue;
+        if ( line.IsCommentedText() ) continue;
         if ( line.StartsWith("FOLDER-SEPARATOR", StringComparison.OrdinalIgnoreCase) )
           SeparatorBeforeFolder = true;
         else

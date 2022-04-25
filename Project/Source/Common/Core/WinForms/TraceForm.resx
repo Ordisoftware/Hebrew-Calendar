@@ -128,7 +128,7 @@
   <data name="ActionOpenLogsFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
+        vAAADrwBlbxySQAAAgxJREFUOE/F0t9LU2EYB/DzF/ivNCh1/drWHHUV3XVVlheWOsVKrSCDkHlTy8rp
         Vqxd2IUXSdCFF5pl3Rk159lpv2drIA1rILq1uZ2z9e37njNaBBJB0Asf9nLG8zzv87yv9P+X8tD+XJ46
         irXJQzqxl73HlMbff14iALV1YDdhUNNYnWhF6MHBn0mbDusFwj57vBEuSeIjdqOohs+jInehnp8Hykmg
         kjJU00zKAoJGyEKetkDxH9/fTFB+h2q0l/rJqe9V0uJ9UCM92FnpREF4exaVjXn9FCv3rL2NBEeA4hto
@@ -172,7 +172,7 @@
     <value>NoControl</value>
   </data>
   <data name="TrackBarFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>3, 0</value>
   </data>
   <data name="TrackBarFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 20</value>
@@ -192,36 +192,6 @@
   <data name="&gt;&gt;TrackBarFontSize.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelLinesCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLinesCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelLinesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 4</value>
-  </data>
-  <data name="LabelLinesCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="LabelLinesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="LabelLinesCount.Text" xml:space="preserve">
-    <value>0 lines</value>
-  </data>
-  <data name="&gt;&gt;LabelLinesCount.Name" xml:space="preserve">
-    <value>LabelLinesCount</value>
-  </data>
-  <data name="&gt;&gt;LabelLinesCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLinesCount.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;LabelLinesCount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ActionClearLogs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -231,7 +201,7 @@
   <data name="ActionClearLogs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
+        vAAADrwBlbxySQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
         c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
         2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
         Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi
@@ -266,7 +236,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClearLogs.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -296,7 +266,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -374,7 +344,7 @@
     <value>TextBoxCurrent</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxCurrent.Parent" xml:space="preserve">
     <value>TabPageCurrent</value>
@@ -431,7 +401,7 @@
     <value>TextBoxPrevious</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBoxPrevious.Parent" xml:space="preserve">
     <value>TabPagePrevious</value>
@@ -447,6 +417,9 @@
   </data>
   <data name="EditOnlyErrors.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
+  </data>
+  <data name="EditOnlyErrors.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="EditOnlyErrors.Location" type="System.Drawing.Point, System.Drawing">
     <value>755, 10</value>
@@ -512,7 +485,7 @@
     <value>SelectFileNavigator</value>
   </data>
   <data name="&gt;&gt;SelectFileNavigator.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Calendar, Version=9.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ComboBoxNavigator, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectFileNavigator.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -556,7 +529,7 @@
   <data name="ActionRefreshFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAgZJREFUOE+dUs1LlGEQn8Wgk4GbdVgpQq+Fh0XwJqjr+m7apbJo1RQvdfJQhw55
+        vAAADrwBlbxySQAAAgZJREFUOE+dUs1LlGEQn8Wgk4GbdVgpQq+Fh0XwJqjr+m7apbJo1RQvdfJQhw55
         sNjcr0SR0l2NtBTfffGDDokfIOiaqZm0rrLCfhzCjkH9Bb9m9n3Xb8v8wfDMzDO/3zwzPHQSXPfRT8VH
         MML/R2NvATa/D6Cs7QQidi+pFR5CuZuNCXb22z8Sxpby8CXVg9K/iSg+E/rmK7GYqMVSyonPqXtYTDoR
         jtciECZoqxfYd6HSe4SIwkntWxE+xK5gOJqN4Y1sqGziD0bOIbhCCEXPYyb26LBAtT/r1YtpC9T4Wbhm
@@ -598,7 +571,7 @@
   <data name="ActionDeleteFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
+        vAAADrwBlbxySQAAAlNJREFUOE+FU19IU1EcPhkNFCooo0LxLSKJEJSg5wqCngqqh17qISLyJaiHlvbS
         c/VQam3rxZqjtbt7r0vZ1MTWdGUODBaptdl2N93m7mbbXG1jfZ1zulq5VR98/P5/53fgHCI7HGlBkmCz
         2/HsDwrcCqIIuyQlSBUAIIQ1/A/xeJwd0KfNrYGWCGEnM8x/DkEJhxGJKIgoCkKhEM8/Npu5jS0uwiaK
         Fm2Wg6YJYWsyRKML6JYm8LD/NaUXXfZxnn9i6UOxVOI+24Rex6bNawKCoBVjSKtLyCyrnCr1GSZ9Pipi

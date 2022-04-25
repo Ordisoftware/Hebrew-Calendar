@@ -22,7 +22,7 @@ partial class MainForm
     if ( !Globals.IsReady ) return;
     SystemManager.TryCatchManage(() =>
     {
-      TimerBallon.Stop();
+      TimerBalloon.Stop();
       TimerTrayMouseMove.Stop();
       if ( e is not null )
       {
@@ -36,7 +36,7 @@ partial class MainForm
               if ( NextCelebrationsForm.Instance?.Visible == true )
                 NextCelebrationsForm.Instance.Close();
               else
-                ActionViewCelebrations.PerformClick();
+                ActionViewNextCelebrations.PerformClick();
               break;
             case TrayIconClickOpen.NavigationForm:
               var form = NavigationForm.Instance;
@@ -48,7 +48,7 @@ partial class MainForm
                   if ( Settings.MainFormShownGoToToday )
                     form.Date = DateTime.Today;
                   else
-                    GoToDate(CalendarMonth.CalendarDate.Date);
+                    GoToDate(MonthlyCalendar.CalendarDate.Date);
                   form.Visible = true;
                 });
               break;
@@ -95,14 +95,14 @@ partial class MainForm
           if ( IsTrayBallooned )
             NavigationForm.Instance.Hide();
           this.Popup();
-          CalendarMonth.Refresh();
+          MonthlyCalendar.Refresh();
         }
         if ( sender is not null )
           if ( !NavigationForm.Instance.Visible )
             if ( Settings.MainFormShownGoToToday )
               GoToDate(DateTime.Today);
             else
-              GoToDate(CalendarMonth.CalendarDate.Date);
+              GoToDate(MonthlyCalendar.CalendarDate.Date);
       }
       else
       if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )

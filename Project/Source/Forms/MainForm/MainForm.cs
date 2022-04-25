@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -234,7 +234,7 @@ partial class MainForm : Form
         TrayIcon.Text = string.Empty;
       if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
         return;
-      TimerBallon.Start();
+      TimerBalloon.Start();
       TrayIconMouse = Cursor.Position;
       if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
         TimerTrayMouseMove.Start();
@@ -249,7 +249,7 @@ partial class MainForm : Form
   private void TimerTrayMouseMove_Tick(object sender, EventArgs e)
   {
     if ( Cursor.Position == TrayIconMouse ) return;
-    TimerBallon.Stop();
+    TimerBalloon.Stop();
     TimerTrayMouseMove.Stop();
     if ( NavigationForm.Instance.Visible && IsTrayBallooned )
       ActionNavigate.PerformClick();
@@ -262,7 +262,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void TimerBallon_Tick(object sender, EventArgs e)
   {
-    TimerBallon.Stop();
+    TimerBalloon.Stop();
     if ( !TrayIconCanBallon ) return;
     if ( !NavigationForm.Instance.Visible )
       if ( !Visible || !Settings.BalloonOnlyIfMainFormIsHidden )
@@ -323,23 +323,23 @@ partial class MainForm : Form
       ClearLists();
       if ( PreferencesForm.Run(sender is int index ? index : -1) )
       {
-        PanelViewText.Parent = null;
-        PanelViewMonth.Parent = null;
+        PanelViewTextReport.Parent = null;
+        PanelViewMonthlyCalendar.Parent = null;
         PanelViewGrid.Parent = null;
-        PanelViewMonth.Visible = false;
+        PanelViewMonthlyCalendar.Visible = false;
         CodeProjectCalendar.NET.Calendar.PenHoverEffect?.Dispose();
         CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush?.Dispose();
         CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush?.Dispose();
-        CodeProjectCalendar.NET.Calendar.PenHoverEffect = new Pen(Settings.CalendarColorHoverEffect);
-        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = new SolidBrush(Settings.CurrentDayForeColor);
-        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = new SolidBrush(Settings.CurrentDayBackColor);
+        CodeProjectCalendar.NET.Calendar.PenHoverEffect = PensPool.Get(Settings.CalendarColorHoverEffect);
+        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = SolidBrushesPool.Get(Settings.CurrentDayForeColor);
+        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = SolidBrushesPool.Get(Settings.CurrentDayBackColor);
         UpdateCalendarMonth(false);
         Thread.Sleep(1000);
         ActionGenerate_Click(null, null);
-        PanelViewMonth.Visible = true;
+        PanelViewMonthlyCalendar.Visible = true;
       }
-      TimerBallon.Interval = Settings.BalloonLoomingDelay;
-      CalendarMonth.ShowEventTooltips = false;
+      TimerBalloon.Interval = Settings.BalloonLoomingDelay;
+      MonthlyCalendar.ShowEventTooltips = false;
       InitializeSpecialMenus();
       InitializeDialogsDirectory();
     }
@@ -862,7 +862,7 @@ partial class MainForm : Form
   {
     SystemManager.TryCatchManage(() =>
     {
-      TimerBallon.Stop();
+      TimerBalloon.Stop();
       IsTrayBallooned = sender is null;
       if ( NavigationForm.Instance.Visible )
       {
@@ -873,7 +873,7 @@ partial class MainForm : Form
         if ( sender != ActionNavigate && Settings.MainFormShownGoToToday )
           GoToDate(DateTime.Today);
         else
-          GoToDate(CalendarMonth.CalendarDate.Date);
+          GoToDate(MonthlyCalendar.CalendarDate.Date);
         NavigationForm.Instance.ShowPopup(true);
       }
     });
@@ -931,25 +931,25 @@ partial class MainForm : Form
 
   #region View Text Report
 
-  private bool CalendarTextReportMutex;
+  private bool TextBoxReportMutex;
 
   /// <summary>
-  /// Event handler. Called by CalendarText for key down events.
+  /// Event handler. Called by TextBoxReport for key down events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void CalendarText_KeyDown(object sender, KeyEventArgs e)
+  private void TextBoxReport_KeyDown(object sender, KeyEventArgs e)
   {
-    CalendarTextReportMutex = true;
+    TextBoxReportMutex = true;
     if ( e.Control && e.KeyCode == Keys.A )
     {
-      CalendarText.SelectAll();
+      TextReport.SelectAll();
       e.Handled = true;
     }
     else
     if ( e.Control && e.Shift && e.KeyCode == Keys.C )
     {
-      CalendarText.Copy();
+      TextReport.Copy();
       DisplayManager.ShowSuccessOrSound(SysTranslations.SelectionCopiedToClipboard.GetLang(),
                                         Globals.ClipboardSoundFilePath);
       e.Handled = true;
@@ -957,31 +957,31 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by CalendarText for key up events.
+  /// Event handler. Called by TextBoxReport for key up events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void CalendarText_KeyUp(object sender, KeyEventArgs e)
+  private void TextBoxReport_KeyUp(object sender, KeyEventArgs e)
   {
-    CalendarTextReportMutex = false;
-    CalendarText_SelectionChanged(sender, e);
+    TextBoxReportMutex = false;
+    TextBoxReport_SelectionChanged(sender, e);
   }
 
   /// <summary>
-  /// Event handler. Called by CalendarText for selection changed events.
+  /// Event handler. Called by TextBoxReport for selection changed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  private void CalendarText_SelectionChanged(object sender, EventArgs e)
+  private void TextBoxReport_SelectionChanged(object sender, EventArgs e)
   {
-    if ( CalendarTextReportMutex ) return;
+    if ( TextBoxReportMutex ) return;
     if ( Globals.IsGenerating ) return;
-    int index = CalendarText.SelectionStart;
-    int line = CalendarText.GetLineFromCharIndex(index);
-    if ( line < CalendarText.Lines.Length && CalendarText.Lines[line].Length >= 16 )
+    int index = TextReport.SelectionStart;
+    int line = TextReport.GetLineFromCharIndex(index);
+    if ( line < TextReport.Lines.Length && TextReport.Lines[line].Length >= 16 )
     {
-      string str = CalendarText.Lines[line].Substring(6, 10);
+      string str = TextReport.Lines[line].Substring(6, 10);
       if ( DateTime.TryParseExact(str, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) )
         GoToDate(date, scroll: ViewScrollOverride.NoTextReport);
     }
@@ -1002,6 +1002,16 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by LabelEnumsAsTranslations for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void LabelEnumsAsTranslations_Click(object sender, EventArgs e)
+  {
+    EditExportDataEnumsAsTranslations.Checked = !EditExportDataEnumsAsTranslations.Checked;
+  }
+
+  /// <summary>
   /// Event handler. Called by EditExportDataEnumsAsTranslations for checked changed events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -1009,7 +1019,7 @@ partial class MainForm : Form
   private void EditExportDataEnumsAsTranslations_CheckedChanged(object sender, EventArgs e)
   {
     Settings.ExportDataEnumsAsTranslations = EditExportDataEnumsAsTranslations.Checked;
-    CalendarGrid.Invalidate();
+    DataGridView.Invalidate();
   }
 
   /// <summary>
@@ -1161,7 +1171,7 @@ partial class MainForm : Form
   {
     if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
-        if ( sender == ContextMenuDayParashahShowDescription )
+        if ( sender == ContextMenuDayParashahDescription )
           UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
         else
         if ( sender == ContextMenuDayParashotBoard )
@@ -1179,7 +1189,7 @@ partial class MainForm : Form
   {
     if ( IsCalendarReady ) return;
     if ( TimerMutex ) return;
-    CalendarMonth.Refresh();
+    MonthlyCalendar.Refresh();
   }
 
   private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
@@ -1201,7 +1211,7 @@ partial class MainForm : Form
   {
     DateSelected = ContextMenuDayCurrentEvent.Date;
     if ( DateSelected is not null )
-      if ( CalendarMonth.CalendarDate.Month != DateSelected.Value.Month )
+      if ( MonthlyCalendar.CalendarDate.Month != DateSelected.Value.Month )
         GoToDate(DateSelected.Value);
   }
 

@@ -112,36 +112,6 @@ static partial class Program
   };
 
   /// <summary>
-  /// Indicates the transcription guide form.
-  /// </summary>
-  static public HTMLBrowserForm TranscriptionGuideForm
-  {
-    get
-    {
-      return _TranscriptionGuideForm ??= new HTMLBrowserForm(HebrewTranslations.TranscriptionGuideTitle,
-                                                             HebrewGlobals.TranscriptionGuideFilePath,
-                                                             nameof(Settings.TranscriptionGuideFormLocation),
-                                                             nameof(Settings.TranscriptionGuideFormSize));
-    }
-  }
-  static private HTMLBrowserForm _TranscriptionGuideForm;
-
-  /// <summary>
-  /// Indicates the grammar guide form.
-  /// </summary>
-  static public HTMLBrowserForm GrammarGuideForm
-  {
-    get
-    {
-      return _GrammarGuideForm ??= new HTMLBrowserForm(HebrewTranslations.GrammarGuideTitle,
-                                                       HebrewGlobals.GrammarGuideFilePath,
-                                                       nameof(Settings.GrammarGuideFormLocation),
-                                                       nameof(Settings.GrammarGuideFormSize));
-    }
-  }
-  static private HTMLBrowserForm _GrammarGuideForm;
-
-  /// <summary>
   /// Indicates file path of application image 64x64.
   /// </summary>
   static public string ApplicationImage64FilePath

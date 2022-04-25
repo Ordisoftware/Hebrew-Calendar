@@ -556,6 +556,7 @@
     <Compile Include="Source\Forms\MainForm\UI\MainForm.Weather.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Source\Program\Program.Guides.cs" />
     <Compile Include="Source\Program\System\ApplicationStatistics.cs" />
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />

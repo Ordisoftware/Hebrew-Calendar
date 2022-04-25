@@ -123,166 +123,166 @@
   <data name="SaveTextDialog.Filter" xml:space="preserve">
     <value>Text files|*.txt</value>
   </data>
-  <data name="CalendarText.AccessibleDescription" xml:space="preserve">
+  <data name="TextReport.AccessibleDescription" xml:space="preserve">
     <value />
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CalendarText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TextReport.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CalendarText.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TextReport.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 9.75pt</value>
   </data>
-  <data name="CalendarText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TextReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="CalendarText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>968, 569</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CalendarText.TabIndex" type="System.Int32, mscorlib">
+  <data name="TextReport.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="CalendarText.Text" xml:space="preserve">
+  <data name="TextReport.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="CalendarText.WordWrap" type="System.Boolean, mscorlib">
+  <data name="TextReport.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;CalendarText.Name" xml:space="preserve">
-    <value>CalendarText</value>
+  <data name="&gt;&gt;TextReport.Name" xml:space="preserve">
+    <value>TextReport</value>
   </data>
-  <data name="&gt;&gt;CalendarText.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextReport.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CalendarText.Parent" xml:space="preserve">
-    <value>PanelViewText</value>
+  <data name="&gt;&gt;TextReport.Parent" xml:space="preserve">
+    <value>PanelViewTextReport</value>
   </data>
-  <data name="&gt;&gt;CalendarText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TextReport.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelViewText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewTextReport.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelViewText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewTextReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="PanelViewText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewTextReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>968, 569</value>
   </data>
-  <data name="PanelViewText.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelViewTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelViewText.Name" xml:space="preserve">
-    <value>PanelViewText</value>
+  <data name="&gt;&gt;PanelViewTextReport.Name" xml:space="preserve">
+    <value>PanelViewTextReport</value>
   </data>
-  <data name="&gt;&gt;PanelViewText.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewTextReport.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelViewText.Parent" xml:space="preserve">
-    <value>TabPageText</value>
+  <data name="&gt;&gt;PanelViewTextReport.Parent" xml:space="preserve">
+    <value>TabPageTextReport</value>
   </data>
-  <data name="&gt;&gt;PanelViewText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewTextReport.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TabPageText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TabPageTextReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="TabPageText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TabPageTextReport.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="TabPageText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TabPageTextReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 575</value>
   </data>
-  <data name="TabPageText.TabIndex" type="System.Int32, mscorlib">
+  <data name="TabPageTextReport.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TabPageText.Text" xml:space="preserve">
+  <data name="TabPageTextReport.Text" xml:space="preserve">
     <value>Report</value>
   </data>
-  <data name="&gt;&gt;TabPageText.Name" xml:space="preserve">
-    <value>TabPageText</value>
+  <data name="&gt;&gt;TabPageTextReport.Name" xml:space="preserve">
+    <value>TabPageTextReport</value>
   </data>
-  <data name="&gt;&gt;TabPageText.Type" xml:space="preserve">
+  <data name="&gt;&gt;TabPageTextReport.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPageText.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TabPageTextReport.Parent" xml:space="preserve">
     <value>TabControl</value>
   </data>
-  <data name="&gt;&gt;TabPageText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TabPageTextReport.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="CalendarMonth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="MonthlyCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="CalendarMonth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="MonthlyCalendar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="CalendarMonth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MonthlyCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 575</value>
   </data>
-  <data name="CalendarMonth.TabIndex" type="System.Int32, mscorlib">
+  <data name="MonthlyCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;CalendarMonth.Name" xml:space="preserve">
-    <value>CalendarMonth</value>
+  <data name="&gt;&gt;MonthlyCalendar.Name" xml:space="preserve">
+    <value>MonthlyCalendar</value>
   </data>
-  <data name="&gt;&gt;CalendarMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;MonthlyCalendar.Type" xml:space="preserve">
     <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;CalendarMonth.Parent" xml:space="preserve">
-    <value>PanelViewMonth</value>
+  <data name="&gt;&gt;MonthlyCalendar.Parent" xml:space="preserve">
+    <value>PanelViewMonthlyCalendar</value>
   </data>
-  <data name="&gt;&gt;CalendarMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;MonthlyCalendar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelViewMonth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelViewMonthlyCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelViewMonth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelViewMonthlyCalendar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="PanelViewMonth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelViewMonthlyCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 575</value>
   </data>
-  <data name="PanelViewMonth.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelViewMonthlyCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;PanelViewMonth.Name" xml:space="preserve">
-    <value>PanelViewMonth</value>
+  <data name="&gt;&gt;PanelViewMonthlyCalendar.Name" xml:space="preserve">
+    <value>PanelViewMonthlyCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelViewMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewMonthlyCalendar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelViewMonth.Parent" xml:space="preserve">
-    <value>TabPageMonth</value>
+  <data name="&gt;&gt;PanelViewMonthlyCalendar.Parent" xml:space="preserve">
+    <value>TabPageMonthlyCalendar</value>
   </data>
-  <data name="&gt;&gt;PanelViewMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelViewMonthlyCalendar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TabPageMonth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TabPageMonthlyCalendar.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="TabPageMonth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TabPageMonthlyCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 575</value>
   </data>
-  <data name="TabPageMonth.TabIndex" type="System.Int32, mscorlib">
+  <data name="TabPageMonthlyCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="TabPageMonth.Text" xml:space="preserve">
+  <data name="TabPageMonthlyCalendar.Text" xml:space="preserve">
     <value>Month</value>
   </data>
-  <data name="&gt;&gt;TabPageMonth.Name" xml:space="preserve">
-    <value>TabPageMonth</value>
+  <data name="&gt;&gt;TabPageMonthlyCalendar.Name" xml:space="preserve">
+    <value>TabPageMonthlyCalendar</value>
   </data>
-  <data name="&gt;&gt;TabPageMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;TabPageMonthlyCalendar.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPageMonth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TabPageMonthlyCalendar.Parent" xml:space="preserve">
     <value>TabControl</value>
   </data>
-  <data name="&gt;&gt;TabPageMonth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TabPageMonthlyCalendar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="GridColumnDate.HeaderText" xml:space="preserve">
@@ -360,37 +360,37 @@
   <metadata name="LunisolarDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 90</value>
   </metadata>
-  <data name="CalendarGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="DataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="CalendarGrid.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 25</value>
   </data>
-  <data name="CalendarGrid.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>968, 544</value>
   </data>
-  <data name="CalendarGrid.TabIndex" type="System.Int32, mscorlib">
+  <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;CalendarGrid.Name" xml:space="preserve">
-    <value>CalendarGrid</value>
+  <data name="&gt;&gt;DataGridView.Name" xml:space="preserve">
+    <value>DataGridView</value>
   </data>
-  <data name="&gt;&gt;CalendarGrid.Type" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CalendarGrid.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.Parent" xml:space="preserve">
     <value>PanelViewGrid</value>
   </data>
-  <data name="&gt;&gt;CalendarGrid.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="LunisolarDaysBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 90</value>
   </metadata>
-  <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 22</value>
   </data>
-  <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
+  <data name="BindingNavigatorCountItem.Text" xml:space="preserve">
     <value>de {0}</value>
   </data>
   <data name="LabelGridGoToToday.Size" type="System.Drawing.Size, System.Drawing">
@@ -399,10 +399,10 @@
   <data name="LabelGridGoToToday.Text" xml:space="preserve">
     <value>Today</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="bindingNavigatorSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
@@ -413,13 +413,13 @@
         lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+  <data name="BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="bindingNavigatorMoveFirstItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorMoveFirstItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
@@ -428,37 +428,37 @@
         08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+  <data name="BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="bindingNavigatorMovePreviousItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorMovePreviousItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="bindingNavigatorSeparator.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="bindingNavigatorPositionItem.AccessibleName" xml:space="preserve">
+  <data name="BindingNavigatorPositionItem.AccessibleName" xml:space="preserve">
     <value />
   </data>
-  <data name="bindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
+  <data name="BindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="bindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="BindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="bindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
   </data>
-  <data name="bindingNavigatorPositionItem.Text" xml:space="preserve">
+  <data name="BindingNavigatorPositionItem.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="bindingNavigatorPositionItem.TextBoxTextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="BindingNavigatorPositionItem.TextBoxTextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="bindingNavigatorSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="bindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
@@ -467,13 +467,13 @@
         oAc0QjgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+  <data name="BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="bindingNavigatorMoveNextItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorMoveNextItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
@@ -484,13 +484,13 @@
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+  <data name="BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="bindingNavigatorMoveLastItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorMoveLastItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="toolStripSeparator14.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BindingNavigatorSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
   <data name="EditExportDataEnumsAsTranslations.AutoSize" type="System.Boolean, mscorlib">
@@ -602,84 +602,84 @@
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
-    <value>PanelCalendar</value>
+    <value>PanelMainInner2</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelMainInner2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelCalendar.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelMainInner2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="PanelCalendar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelMainInner2.Size" type="System.Drawing.Size, System.Drawing">
     <value>982, 601</value>
   </data>
-  <data name="PanelCalendar.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelMainInner2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelCalendar.Name" xml:space="preserve">
-    <value>PanelCalendar</value>
+  <data name="&gt;&gt;PanelMainInner2.Name" xml:space="preserve">
+    <value>PanelMainInner2</value>
   </data>
-  <data name="&gt;&gt;PanelCalendar.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainInner2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCalendar.Parent" xml:space="preserve">
-    <value>PanelCalendarInner</value>
+  <data name="&gt;&gt;PanelMainInner2.Parent" xml:space="preserve">
+    <value>PanelMainInner1</value>
   </data>
-  <data name="&gt;&gt;PanelCalendar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainInner2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelCalendarInner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelMainInner1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelCalendarInner.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelMainInner1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
-  <data name="PanelCalendarInner.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelMainInner1.Size" type="System.Drawing.Size, System.Drawing">
     <value>982, 601</value>
   </data>
-  <data name="PanelCalendarInner.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelMainInner1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarInner.Name" xml:space="preserve">
-    <value>PanelCalendarInner</value>
+  <data name="&gt;&gt;PanelMainInner1.Name" xml:space="preserve">
+    <value>PanelMainInner1</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarInner.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainInner1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarInner.Parent" xml:space="preserve">
-    <value>PanelCalendarOuter</value>
+  <data name="&gt;&gt;PanelMainInner1.Parent" xml:space="preserve">
+    <value>PanelMainOuter2</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarInner.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainInner1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PanelCalendarOuter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelMainOuter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelCalendarOuter.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelMainOuter2.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 44</value>
   </data>
-  <data name="PanelCalendarOuter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelMainOuter2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
-  <data name="PanelCalendarOuter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelMainOuter2.Size" type="System.Drawing.Size, System.Drawing">
     <value>984, 603</value>
   </data>
-  <data name="PanelCalendarOuter.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelMainOuter2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarOuter.Name" xml:space="preserve">
-    <value>PanelCalendarOuter</value>
+  <data name="&gt;&gt;PanelMainOuter2.Name" xml:space="preserve">
+    <value>PanelMainOuter2</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarOuter.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainOuter2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarOuter.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="&gt;&gt;PanelMainOuter2.Parent" xml:space="preserve">
+    <value>PanelMainOuter1</value>
   </data>
-  <data name="&gt;&gt;PanelCalendarOuter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainOuter2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="PanelSepTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -701,7 +701,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+    <value>PanelMainOuter1</value>
   </data>
   <data name="&gt;&gt;PanelSepTop.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -851,36 +851,36 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PanelTitle.Parent" xml:space="preserve">
-    <value>PanelMain</value>
+    <value>PanelMainOuter1</value>
   </data>
   <data name="&gt;&gt;PanelTitle.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="PanelMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="PanelMainOuter1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="PanelMain.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PanelMainOuter1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 54</value>
   </data>
-  <data name="PanelMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="PanelMainOuter1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PanelMainOuter1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1004, 657</value>
   </data>
-  <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="PanelMainOuter1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Name" xml:space="preserve">
-    <value>PanelMain</value>
+  <data name="&gt;&gt;PanelMainOuter1.Name" xml:space="preserve">
+    <value>PanelMainOuter1</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainOuter1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PanelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainOuter1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PanelMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PanelMainOuter1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="moonPhaseImagePictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1260,7 +1260,7 @@
   <metadata name="TimerReminder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>361, 15</value>
   </metadata>
-  <metadata name="TimerBallon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TimerBalloon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>654, 15</value>
   </metadata>
   <metadata name="TimerTrayMouseMove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1402,7 +1402,7 @@
   <data name="ActionPrint.ToolTipText" xml:space="preserve">
     <value>Print view (Ctrl+P)</value>
   </data>
-  <data name="Sep2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="ActionSearchEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1456,7 +1456,7 @@
   <data name="ActionSearchEvent.ToolTipText" xml:space="preserve">
     <value>Search a celebration (F5)</value>
   </data>
-  <data name="ActionSearchMonth.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSearchLunarMonth.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHwSURBVFhHzZdNL0NBFIabsLXDTuz5CRIW/ozEL/AvJDai
@@ -1471,16 +1471,16 @@
         QmCC
 </value>
   </data>
-  <data name="ActionSearchMonth.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionSearchLunarMonth.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionSearchMonth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSearchLunarMonth.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
-  <data name="ActionSearchMonth.Text" xml:space="preserve">
+  <data name="ActionSearchLunarMonth.Text" xml:space="preserve">
     <value>Search a lunar month</value>
   </data>
-  <data name="ActionSearchMonth.ToolTipText" xml:space="preserve">
+  <data name="ActionSearchLunarMonth.ToolTipText" xml:space="preserve">
     <value>Search a lunar month (F6)</value>
   </data>
   <data name="ActionSearchGregorianMonth.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1559,7 +1559,7 @@
   <data name="ActionSearchDay.ToolTipText" xml:space="preserve">
     <value>Search a day (Ctrl+D)</value>
   </data>
-  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="ActionNavigate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1619,7 +1619,7 @@
   <data name="ActionNavigate.ToolTipText" xml:space="preserve">
     <value>Navigate (F8, Ctrl+N)</value>
   </data>
-  <data name="ActionViewCelebrations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionViewNextCelebrations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbCSURBVFhH7VZ7UNRVFAaLrCmNMnWyxzRmJlY65kgPMq2c
@@ -1654,19 +1654,19 @@
         mehhAq+z47csuP9tvFlZ/QnGClSUlOoUCAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionViewCelebrations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionViewNextCelebrations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionViewCelebrations.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionViewNextCelebrations.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 46</value>
   </data>
-  <data name="ActionViewCelebrations.Text" xml:space="preserve">
+  <data name="ActionViewNextCelebrations.Text" xml:space="preserve">
     <value>View next celebrations</value>
   </data>
-  <data name="ActionViewCelebrations.ToolTipText" xml:space="preserve">
+  <data name="ActionViewNextCelebrations.ToolTipText" xml:space="preserve">
     <value>View next celebrations (F4)</value>
   </data>
-  <data name="Sep3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="ActionExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1906,10 +1906,10 @@
   <data name="ActionEnableReminder.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
-  <data name="ActionViewParashahDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionWeeklyParashahDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAaBJREFUOE+VU9tKAlEU9V/6hCi7/kQX1ET8iyIk0xmJcpyB8LUSeqiX3vyBPkEi
@@ -1922,19 +1922,19 @@
         C8TFf5DnCYHAJxPhadBGXXF5AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionViewParashahDescription.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionWeeklyParashahDescription.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionViewParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionWeeklyParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ActionViewParashahDescription.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
-  <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionWeeklyParashahStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
@@ -1950,16 +1950,16 @@
         gg==
 </value>
   </data>
-  <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionWeeklyParashahStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionWeeklyParashahStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
   </data>
-  <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionWeeklyParashahReadOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
@@ -1976,19 +1976,19 @@
         EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionOpenVerseOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionWeeklyParashahReadOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionWeeklyParashahReadOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahReadOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
-  <data name="ActionOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionWeeklyParashahOpenWithHebrewWords.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
@@ -1998,13 +1998,13 @@
         gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionOpenHebrewWordsVerse.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionWeeklyParashahOpenWithHebrewWords.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionWeeklyParashahOpenWithHebrewWords.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
+  <data name="ActionWeeklyParashahOpenWithHebrewWords.Text" xml:space="preserve">
     <value>Open with Hebrew Words</value>
   </data>
   <data name="ActionWeeklyParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2037,7 +2037,7 @@
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
   </data>
-  <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
@@ -2047,33 +2047,33 @@
         qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionViewParashot.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionViewParashot.ShortcutKeyDisplayString" xml:space="preserve">
+  <data name="ActionParashotBoard.ShortcutKeyDisplayString" xml:space="preserve">
     <value />
   </data>
-  <data name="ActionViewParashot.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="ActionParashotBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F1</value>
   </data>
-  <data name="ActionViewParashot.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 22</value>
   </data>
-  <data name="ActionViewParashot.Text" xml:space="preserve">
+  <data name="ActionParashotBoard.Text" xml:space="preserve">
     <value>Parashot board</value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVDhPpZPBS9tgGMZzdbqx+44tVdllMAZqFY9jcw5Z
-        N4p/gHcPgv9DL55aKD2PHbyp6GHINjx6cdjSlqS0LCWGfHwJCYlUUvr4vl91M5jD5t7w5Hu+lzy/vF8g
-        Wq1W86rVKiqVyj+JM5zV2Dy0OKsxjavRqKOrN7H77QztVhPn9Uaqfp6z6irD2d+AXqeNF1vHmCoewTYN
-        GB0dusHrWLdeN3Q02y2VSQK6XUTCxJP1I/i2iX6/jwvbgSMkbEcosedet/dLZRIA0+whkn2a4BCRa0FK
-        B9ncNOYWFvH23Xusrn1AfmkZM7PPCWKrTAJgWRZCaWOisE8AB0IIuJ4PPwjh+YESe+5ZFykAIWwMAgEM
-        JOJQwpU88n3ZjpM+QeC59BF/4NPOKWY3j3EV+fQ2D9JNSkiPQFJlEoDLKKB7BMMUeFw8ID/AaDTEiNxY
-        fAFXwxhBGJK7AZTLZbVBHGH7Sx3PNr7i84mpWplsDq/mFvD6zQpWVtcwn19CbnoGQ4JwcfYPADEeFfbw
-        dP0Akx/3b3rpFcdDtSrA7RHGg94t2o9o7FSNAeoI//0vlEql72yYVqGR/kr0LGc4q1FlSC8fJi1zDWCZ
-        LOiTAPPNAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vwAADr8BOAVTJAAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
+        PY8dvKnoYcg2PHpx2NKWpLQsJYZ8fAkJiVRS+vi+X3UzmMPm3vDke76XPL+8XyBarVbzqtUqKpXKP4kz
+        nNXYPLQ4qzGNq9Goo6s3sfvtDO1WE+f1Rqp+nrPqKsPZ34Bep40XW8eYKh7BNg0YHR26wetYt143dDTb
+        LZVJArpdRMLEk/Uj+LaJfr+PC9uBIyRsRyix516390tlEgDT7CGSfZrgEJFrQUoH2dw05hYW8fbde6yu
+        fUB+aRkzs88JYqtMAmBZFkJpY6KwTwAHQgi4ng8/COH5gRJ77lkXKQAhbAwCAQwk4lDClTzyfdmOkz5B
+        4Ln0EX/g084pZjePcRX59DYP0k1KSI9AUmUSgMsooHsEwxR4XDwgP8BoNMSI3Fh8AVfDGEEYkrsBlMtl
+        tUEcYftLHc82vuLzialamWwOr+YW8PrNClZW1zCfX0JuegZDgnBx9g8AMR4V9vB0/QCTH/dveukVx0O1
+        KsDtEcaD3i3aj2jsVI0B6gj//S+USqXvbJhWoZH+SvQsZzirUWVILx8mLXMNYJks6JMA880AAAAASUVO
+        RK5CYII=
 </value>
   </data>
   <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2671,7 +2671,7 @@
     <value>Alt+0</value>
   </data>
   <data name="EditScreenNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenNone.Text" xml:space="preserve">
     <value>Loose</value>
@@ -2683,7 +2683,7 @@
     <value>Alt+1</value>
   </data>
   <data name="EditScreenTopLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenTopLeft.Text" xml:space="preserve">
     <value>Top left</value>
@@ -2695,7 +2695,7 @@
     <value>Alt+2</value>
   </data>
   <data name="EditScreenTopRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenTopRight.Text" xml:space="preserve">
     <value>Top right</value>
@@ -2707,7 +2707,7 @@
     <value>Alt+3</value>
   </data>
   <data name="EditScreenBottomLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenBottomLeft.Text" xml:space="preserve">
     <value>Bottom left</value>
@@ -2719,7 +2719,7 @@
     <value>Alt+4</value>
   </data>
   <data name="EditScreenBottomRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenBottomRight.Text" xml:space="preserve">
     <value>Bottom right</value>
@@ -2731,12 +2731,12 @@
     <value>Alt+5</value>
   </data>
   <data name="EditScreenCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="EditScreenCenter.Text" xml:space="preserve">
     <value>Center</value>
   </data>
-  <data name="MenuitemScreenPosition.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionScreenPosition.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAsJJREFUOE91kllI1FEUh+9TL70EERRpRIWB1JM99VCm2fYQFhi0UCD10IyVLYg1
@@ -2754,13 +2754,13 @@
         evmYtKFzrjUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="MenuitemScreenPosition.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionScreenPosition.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="MenuitemScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionScreenPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
-  <data name="MenuitemScreenPosition.Text" xml:space="preserve">
+  <data name="ActionScreenPosition.Text" xml:space="preserve">
     <value>Screen position</value>
   </data>
   <data name="ActionResetWinSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3058,7 +3058,7 @@
   <data name="ActionViewGrid.Text" xml:space="preserve">
     <value>Grid</value>
   </data>
-  <data name="ActionView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSelectView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAZFSURBVFhHtVdZb1NXEI4ELdCqtFJVt0ioDzzAS/sAavvW
@@ -3091,19 +3091,19 @@
         VGAf9mXZ556MjH8BejRR4Hw0ZM4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionView.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionSelectView.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionView.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSelectView.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 46</value>
   </data>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>20, 12</value>
   </metadata>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
-  <data name="Sep6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStripTopSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -3190,7 +3190,7 @@
   <data name="ContextMenuDayTimesSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
-  <data name="ContextMenuDayParashahShowDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ContextMenuDayParashahDescription.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
@@ -3203,19 +3203,19 @@
         vQFpHuHx/ADyJWnDUWoTZAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ContextMenuDayParashahShowDescription.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ContextMenuDayParashahDescription.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ContextMenuDayParashahShowDescription.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenuDayParashahDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ContextMenuDayParashahShowDescription.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahDescription.Text" xml:space="preserve">
     <value>Show description</value>
   </data>
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
-  <data name="ContextMenuDayParashahStudy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ContextMenuDayParashahStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
@@ -3231,16 +3231,16 @@
         gg==
 </value>
   </data>
-  <data name="ContextMenuDayParashahStudy.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ContextMenuDayParashahStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ContextMenuDayParashahStudy.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenuDayParashahStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ContextMenuDayParashahStudy.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahStudyOnline.Text" xml:space="preserve">
     <value>Study online</value>
   </data>
-  <data name="ContextMenuDayParashahRead.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ContextMenuDayParashahReadOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
@@ -3257,19 +3257,19 @@
         EMchmoO7coBGSlNdyonS3O49tEPIX670310Oth4jAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ContextMenuDayParashahRead.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ContextMenuDayParashahReadOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ContextMenuDayParashahRead.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenuDayParashahReadOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ContextMenuDayParashahRead.Text" xml:space="preserve">
+  <data name="ContextMenuDayParashahReadOnline.Text" xml:space="preserve">
     <value>Read online</value>
   </data>
   <data name="toolStripSeparator22.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
-  <data name="ContextMenuOpenHebrewWordsVerse.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ContextMenuOpenWithHebrewWords.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAPdJREFUOE+dkjEOgkAQRTkBp5CEA3AVTbAnEko67LDFC2CNF8ALEGusMJGCGDwA
@@ -3279,10 +3279,10 @@
         gEUslVgiBBdI8ASVY/h+Wv8Ma9obsXAlUD6btqoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ContextMenuOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenuOpenWithHebrewWords.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ContextMenuOpenHebrewWordsVerse.Text" xml:space="preserve">
+  <data name="ContextMenuOpenWithHebrewWords.Text" xml:space="preserve">
     <value>Open with Hebrew Words</value>
   </data>
   <data name="toolStripSeparator16.Size" type="System.Drawing.Size, System.Drawing">
@@ -3340,7 +3340,7 @@
   <data name="ContextMenuDayCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
+        vgAADr4B6kKxwAAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
         9Dp28KaihyHb8OjFYUtbktKylBjy8SUkJFJJ6eP7ftXNYA6be8OT7/le8vzyfoFotVrNq1arqFQq/yTO
         cFZj89DirMY0rkajjq7exO63M7RbTZzXG6n6ec6qqwxnfwN6nTZebB1jqngE2zRgdHToBq9j3Xrd0NFs
         t1QmCeh2EQkTT9aP4Nsm+v0+LmwHjpCwHaHEnnvd3i+VSQBMs4dI9mmCQ0SuBSkdZHPTmFtYxNt377G6
@@ -3636,7 +3636,7 @@
     <value>Navigation window</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 470</value>
+    <value>243, 448</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3652,7 +3652,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAVgBAgFYAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAXgBAgF4AQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -3819,10 +3819,10 @@
   <data name="&gt;&gt;LunisolarDaysBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
-    <value>bindingNavigatorCountItem</value>
+  <data name="&gt;&gt;BindingNavigatorCountItem.Name" xml:space="preserve">
+    <value>BindingNavigatorCountItem</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorCountItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;BindingNavigatorCountItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LabelGridGoToToday.Name" xml:space="preserve">
@@ -3831,58 +3831,58 @@
   <data name="&gt;&gt;LabelGridGoToToday.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Name" xml:space="preserve">
-    <value>bindingNavigatorMoveFirstItem</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorMoveFirstItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorMovePreviousItem.Name" xml:space="preserve">
-    <value>bindingNavigatorMovePreviousItem</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorMovePreviousItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorSeparator.Name" xml:space="preserve">
-    <value>bindingNavigatorSeparator</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorPositionItem.Name" xml:space="preserve">
-    <value>bindingNavigatorPositionItem</value>
-  </data>
-  <data name="&gt;&gt;bindingNavigatorPositionItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;bindingNavigatorSeparator1.Name" xml:space="preserve">
     <value>bindingNavigatorSeparator1</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorMoveNextItem.Name" xml:space="preserve">
-    <value>bindingNavigatorMoveNextItem</value>
+  <data name="&gt;&gt;BindingNavigatorMoveFirstItem.Name" xml:space="preserve">
+    <value>BindingNavigatorMoveFirstItem</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorMoveNextItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;BindingNavigatorMoveFirstItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorMoveLastItem.Name" xml:space="preserve">
-    <value>bindingNavigatorMoveLastItem</value>
+  <data name="&gt;&gt;BindingNavigatorMovePreviousItem.Name" xml:space="preserve">
+    <value>BindingNavigatorMovePreviousItem</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorMoveLastItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;BindingNavigatorMovePreviousItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator14.Name" xml:space="preserve">
-    <value>toolStripSeparator14</value>
+  <data name="&gt;&gt;BindingNavigatorSeparator2.Name" xml:space="preserve">
+    <value>BindingNavigatorSeparator2</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator14.Type" xml:space="preserve">
+  <data name="&gt;&gt;BindingNavigatorSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorPositionItem.Name" xml:space="preserve">
+    <value>BindingNavigatorPositionItem</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorPositionItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorSeparator3.Name" xml:space="preserve">
+    <value>BindingNavigatorSeparator3</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorMoveNextItem.Name" xml:space="preserve">
+    <value>BindingNavigatorMoveNextItem</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorMoveNextItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorMoveLastItem.Name" xml:space="preserve">
+    <value>BindingNavigatorMoveLastItem</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorMoveLastItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorSeparator4.Name" xml:space="preserve">
+    <value>BindingNavigatorSeparator4</value>
+  </data>
+  <data name="&gt;&gt;BindingNavigatorSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Name" xml:space="preserve">
@@ -4017,10 +4017,10 @@
   <data name="&gt;&gt;TimerReminder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TimerBallon.Name" xml:space="preserve">
-    <value>TimerBallon</value>
+  <data name="&gt;&gt;TimerBalloon.Name" xml:space="preserve">
+    <value>TimerBalloon</value>
   </data>
-  <data name="&gt;&gt;TimerBallon.Type" xml:space="preserve">
+  <data name="&gt;&gt;TimerBalloon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TimerTrayMouseMove.Name" xml:space="preserve">
@@ -4065,10 +4065,10 @@
   <data name="&gt;&gt;ActionPrint.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Sep2.Name" xml:space="preserve">
-    <value>Sep2</value>
+  <data name="&gt;&gt;ToolStripTopSeparator2.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator2</value>
   </data>
-  <data name="&gt;&gt;Sep2.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchEvent.Name" xml:space="preserve">
@@ -4077,10 +4077,10 @@
   <data name="&gt;&gt;ActionSearchEvent.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionSearchMonth.Name" xml:space="preserve">
-    <value>ActionSearchMonth</value>
+  <data name="&gt;&gt;ActionSearchLunarMonth.Name" xml:space="preserve">
+    <value>ActionSearchLunarMonth</value>
   </data>
-  <data name="&gt;&gt;ActionSearchMonth.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSearchLunarMonth.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSearchGregorianMonth.Name" xml:space="preserve">
@@ -4095,10 +4095,10 @@
   <data name="&gt;&gt;ActionSearchDay.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
-    <value>toolStripSeparator12</value>
+  <data name="&gt;&gt;ToolStripTopSeparator3.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator3</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionNavigate.Name" xml:space="preserve">
@@ -4107,16 +4107,16 @@
   <data name="&gt;&gt;ActionNavigate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewCelebrations.Name" xml:space="preserve">
-    <value>ActionViewCelebrations</value>
+  <data name="&gt;&gt;ActionViewNextCelebrations.Name" xml:space="preserve">
+    <value>ActionViewNextCelebrations</value>
   </data>
-  <data name="&gt;&gt;ActionViewCelebrations.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionViewNextCelebrations.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Sep3.Name" xml:space="preserve">
-    <value>Sep3</value>
+  <data name="&gt;&gt;ToolStripTopSeparator4.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator4</value>
   </data>
-  <data name="&gt;&gt;Sep3.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionExit.Name" xml:space="preserve">
@@ -4149,10 +4149,10 @@
   <data name="&gt;&gt;ActionEnableReminder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
+  <data name="&gt;&gt;ToolStripTopSeparator5.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator5</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionTools.Name" xml:space="preserve">
@@ -4167,10 +4167,10 @@
   <data name="&gt;&gt;ActionWeeklyParashah.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewParashahDescription.Name" xml:space="preserve">
-    <value>ActionViewParashahDescription</value>
+  <data name="&gt;&gt;ActionWeeklyParashahDescription.Name" xml:space="preserve">
+    <value>ActionWeeklyParashahDescription</value>
   </data>
-  <data name="&gt;&gt;ActionViewParashahDescription.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionWeeklyParashahDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">
@@ -4179,16 +4179,16 @@
   <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionStudyOnline.Name" xml:space="preserve">
-    <value>ActionStudyOnline</value>
+  <data name="&gt;&gt;ActionWeeklyParashahStudyOnline.Name" xml:space="preserve">
+    <value>ActionWeeklyParashahStudyOnline</value>
   </data>
-  <data name="&gt;&gt;ActionStudyOnline.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionWeeklyParashahStudyOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenVerseOnline.Name" xml:space="preserve">
-    <value>ActionOpenVerseOnline</value>
+  <data name="&gt;&gt;ActionWeeklyParashahReadOnline.Name" xml:space="preserve">
+    <value>ActionWeeklyParashahReadOnline</value>
   </data>
-  <data name="&gt;&gt;ActionOpenVerseOnline.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionWeeklyParashahReadOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
@@ -4197,10 +4197,10 @@
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsVerse.Name" xml:space="preserve">
-    <value>ActionOpenHebrewWordsVerse</value>
+  <data name="&gt;&gt;ActionWeeklyParashahOpenWithHebrewWords.Name" xml:space="preserve">
+    <value>ActionWeeklyParashahOpenWithHebrewWords</value>
   </data>
-  <data name="&gt;&gt;ActionOpenHebrewWordsVerse.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionWeeklyParashahOpenWithHebrewWords.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
@@ -4209,10 +4209,10 @@
   <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionViewParashot.Name" xml:space="preserve">
-    <value>ActionViewParashot</value>
+  <data name="&gt;&gt;ActionParashotBoard.Name" xml:space="preserve">
+    <value>ActionParashotBoard</value>
   </data>
-  <data name="&gt;&gt;ActionViewParashot.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionParashotBoard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Name" xml:space="preserve">
@@ -4220,6 +4220,12 @@
   </data>
   <data name="&gt;&gt;ActionShowCelebrationVersesBoard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Name" xml:space="preserve">
+    <value>toolStripSeparator25</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewCelebrationsBoard.Name" xml:space="preserve">
     <value>ActionViewCelebrationsBoard</value>
@@ -4232,6 +4238,12 @@
   </data>
   <data name="&gt;&gt;ActionViewNewMoonsBoard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
+    <value>toolStripSeparator28</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewLunarMonths.Name" xml:space="preserve">
     <value>ActionViewLunarMonths</value>
@@ -4365,10 +4377,10 @@
   <data name="&gt;&gt;ActionSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MenuitemScreenPosition.Name" xml:space="preserve">
-    <value>MenuitemScreenPosition</value>
+  <data name="&gt;&gt;ActionScreenPosition.Name" xml:space="preserve">
+    <value>ActionScreenPosition</value>
   </data>
-  <data name="&gt;&gt;MenuitemScreenPosition.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionScreenPosition.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EditScreenNone.Name" xml:space="preserve">
@@ -4479,10 +4491,10 @@
   <data name="&gt;&gt;EditConfirmClosing.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionView.Name" xml:space="preserve">
-    <value>ActionView</value>
+  <data name="&gt;&gt;ActionSelectView.Name" xml:space="preserve">
+    <value>ActionSelectView</value>
   </data>
-  <data name="&gt;&gt;ActionView.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSelectView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewReport.Name" xml:space="preserve">
@@ -4503,16 +4515,16 @@
   <data name="&gt;&gt;ActionViewGrid.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
-    <value>toolStripSeparator7</value>
+  <data name="&gt;&gt;ToolStripTopSeparator1.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator1</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Sep6.Name" xml:space="preserve">
-    <value>Sep6</value>
+  <data name="&gt;&gt;ToolStripTopSeparator6.Name" xml:space="preserve">
+    <value>ToolStripTopSeparator6</value>
   </data>
-  <data name="&gt;&gt;Sep6.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripTopSeparator6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SaveDataBoardDialog.Name" xml:space="preserve">
@@ -4575,10 +4587,10 @@
   <data name="&gt;&gt;ContextMenuDayParashah.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahShowDescription.Name" xml:space="preserve">
-    <value>ContextMenuDayParashahShowDescription</value>
+  <data name="&gt;&gt;ContextMenuDayParashahDescription.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahDescription</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahShowDescription.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuDayParashahDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
@@ -4587,16 +4599,16 @@
   <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahStudy.Name" xml:space="preserve">
-    <value>ContextMenuDayParashahStudy</value>
+  <data name="&gt;&gt;ContextMenuDayParashahStudyOnline.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahStudyOnline</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahStudy.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuDayParashahStudyOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahRead.Name" xml:space="preserve">
-    <value>ContextMenuDayParashahRead</value>
+  <data name="&gt;&gt;ContextMenuDayParashahReadOnline.Name" xml:space="preserve">
+    <value>ContextMenuDayParashahReadOnline</value>
   </data>
-  <data name="&gt;&gt;ContextMenuDayParashahRead.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuDayParashahReadOnline.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
@@ -4605,10 +4617,10 @@
   <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ContextMenuOpenHebrewWordsVerse.Name" xml:space="preserve">
-    <value>ContextMenuOpenHebrewWordsVerse</value>
+  <data name="&gt;&gt;ContextMenuOpenWithHebrewWords.Name" xml:space="preserve">
+    <value>ContextMenuOpenWithHebrewWords</value>
   </data>
-  <data name="&gt;&gt;ContextMenuOpenHebrewWordsVerse.Type" xml:space="preserve">
+  <data name="&gt;&gt;ContextMenuOpenWithHebrewWords.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator16.Name" xml:space="preserve">
@@ -4736,18 +4748,6 @@
   </data>
   <data name="&gt;&gt;ImageListRisesAndSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator25.Name" xml:space="preserve">
-    <value>toolStripSeparator25</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator28.Name" xml:space="preserve">
-    <value>toolStripSeparator28</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

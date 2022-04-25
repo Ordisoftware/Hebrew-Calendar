@@ -48,7 +48,7 @@
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.EditFilePath = new Ordisoftware.Core.TextBoxEx();
       this.PanelButtons.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.SuspendLayout();
       // 
       // PanelButtons
@@ -167,7 +167,7 @@
       // LabelVolumeValue
       // 
       resources.ApplyResources(this.LabelVolumeValue, "LabelVolumeValue");
-      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.LabelVolumeValue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelVolumeValue.Name = "LabelVolumeValue";
       // 
       // EditFilePath
@@ -203,7 +203,7 @@
       this.Name = "SelectSoundForm";
       this.Shown += new System.EventHandler(this.SelectSoundForm_Shown);
       this.PanelButtons.ResumeLayout(false);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditVolume ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

@@ -93,7 +93,7 @@ class ApplicationStatistics
   public string MonthViewEventsCount
     => Globals.IsGenerating
        ? SysTranslations.Processing.GetLang()
-       : MainForm.Instance.CalendarMonth.TheEvents.Count.ToString();
+       : MainForm.Instance.MonthlyCalendar.TheEvents.Count.ToString();
 
   public string DBEngine
     => SQLiteNetHelper.EngineNameAndVersion;

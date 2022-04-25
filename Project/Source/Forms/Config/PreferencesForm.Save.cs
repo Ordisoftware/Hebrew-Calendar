@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -127,6 +127,7 @@ partial class PreferencesForm
     Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
     Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
     Settings.CustomWebSearch = EditCustomWebSearch.Text;
+    Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

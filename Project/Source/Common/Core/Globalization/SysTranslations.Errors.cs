@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-11 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -37,6 +37,12 @@ static partial class SysTranslations
   {
     [Language.EN] = "Do you want to delete all log files?",
     [Language.FR] = "Voulez-vous effacer tous les fichiers de log ?"
+  };
+
+  static public readonly TranslationsDictionary TraceFileFormTitleWithLines = new()
+  {
+    [Language.EN] = "Trace file - {0} lines",
+    [Language.FR] = "Fichier de trace - {0} lignes"
   };
 
   static public readonly TranslationsDictionary TraceLinesCount = new()

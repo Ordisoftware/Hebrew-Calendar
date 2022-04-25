@@ -153,9 +153,9 @@ namespace CodeProjectCalendar.NET
         int horWidth = ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2;
         int verHeight = ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2;
 
-        g.FillPath(new SolidBrush(_buttonColor), path);
-        g.DrawPath(Focused ? new Pen(_focusColor) : new Pen(_borderColor), path);
-        g.DrawString(_buttonText, _buttonFont, new SolidBrush(_textColor), horWidth, verHeight);
+        g.FillPath(SolidBrushesPool.Get(_buttonColor), path);
+        g.DrawPath(Focused ? PensPool.Get(_focusColor) : PensPool.Get(_borderColor), path);
+        g.DrawString(_buttonText, _buttonFont, SolidBrushesPool.Get(_textColor), horWidth, verHeight);
       }
       else
       {
@@ -165,9 +165,9 @@ namespace CodeProjectCalendar.NET
         int horWidth = ( ClientSize.Width - 4 - (int)fontSize.Width ) / 2;
         int verHeight = ( ClientSize.Height - 4 - (int)fontSize.Height ) / 2;
 
-        g.FillPath(new SolidBrush(_highlightButtonColor), path);
-        g.DrawPath(ContainsFocus ? new Pen(_focusColor) : new Pen(_borderColor), path);
-        g.DrawString(_buttonText, _buttonFont, new SolidBrush(_textColor), horWidth, verHeight);
+        g.FillPath(SolidBrushesPool.Get(_highlightButtonColor), path);
+        g.DrawPath(ContainsFocus ? PensPool.Get(_focusColor) : PensPool.Get(_borderColor), path);
+        g.DrawString(_buttonText, _buttonFont, SolidBrushesPool.Get(_textColor), horWidth, verHeight);
 
         Color a1 = CustomColor.NeonSilverDark;
         Color a2 = Color.FromArgb(128, CustomColor.NeonSilverDark);
@@ -191,7 +191,7 @@ namespace CodeProjectCalendar.NET
         {
           g.DrawImage(shadowBmp2, ClientSize.Width - 4, z, 3, 1);
         }
-        g.DrawPath(Focused ? new Pen(_focusColor) : new Pen(_borderColor), path);
+        g.DrawPath(Focused ? PensPool.Get(_focusColor) : PensPool.Get(_borderColor), path);
       }
 
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);

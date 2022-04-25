@@ -50,8 +50,8 @@ partial class MainForm
     try
     {
       Globals.IsPrinting = true;
-      CalendarMonth.ShowTodayButton = false;
-      CalendarMonth.ShowArrowControls = false;
+      MonthlyCalendar.ShowTodayButton = false;
+      MonthlyCalendar.ShowArrowControls = false;
       ActionPrint.Visible = false;
       ActionPrint.Visible = true;
       ToolStrip.Enabled = false;
@@ -61,8 +61,8 @@ partial class MainForm
     finally
     {
       Globals.IsPrinting = false;
-      CalendarMonth.ShowTodayButton = true;
-      CalendarMonth.ShowArrowControls = true;
+      MonthlyCalendar.ShowTodayButton = true;
+      MonthlyCalendar.ShowArrowControls = true;
       ToolStrip.Enabled = true;
       MenuTray.Enabled = true;
     }

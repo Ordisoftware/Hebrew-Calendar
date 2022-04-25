@@ -74,7 +74,7 @@ public partial class MainForm
       if ( _DateSelected == value ) return;
       _DateSelected = value == DateTime.Today ? null : value;
       if ( Settings.CurrentView == ViewMode.Month )
-        CalendarMonth.Refresh();
+        MonthlyCalendar.Refresh();
     }
   }
 

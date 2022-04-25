@@ -144,13 +144,13 @@ namespace CodeProjectCalendar.NET
                                                 RoundedRectangle.RectangleCorners.All);
 
       BackColor = Color.Transparent;
-      g.FillPath(new SolidBrush(_eventToolTipColor), gp);
-      g.DrawPath(new Pen(_eventToolTipBorderColor), gp);
+      g.FillPath(SolidBrushesPool.Get(_eventToolTipColor), gp);
+      g.DrawPath(PensPool.Get(_eventToolTipBorderColor), gp);
 
       int totHorMargin = _eventToolTipMargins.Left + _eventToolTipMargins.Right;
       int totVerMargin = _eventToolTipMargins.Top + _eventToolTipMargins.Bottom;
 
-      g.DrawString(_eventToolTipText, _eventToolTipFont, new SolidBrush(_eventToolTipTextColor),
+      g.DrawString(_eventToolTipText, _eventToolTipFont, SolidBrushesPool.Get(_eventToolTipTextColor),
                    ( ClientSize.Width - textSize.Width + totHorMargin ) / 2f - _eventToolTipMargins.Right,
                    ( ClientSize.Height - textSize.Height + totVerMargin ) / 2f - _eventToolTipMargins.Bottom - 1);
 

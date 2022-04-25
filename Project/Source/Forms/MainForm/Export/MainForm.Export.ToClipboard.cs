@@ -34,17 +34,17 @@ partial class MainForm
         try
         {
           Globals.IsPrinting = true;
-          CalendarMonth.ShowTodayButton = false;
-          CalendarMonth.ShowArrowControls = false;
-          using var bitmap = CalendarMonth.GetBitmap();
+          MonthlyCalendar.ShowTodayButton = false;
+          MonthlyCalendar.ShowArrowControls = false;
+          using var bitmap = MonthlyCalendar.GetBitmap();
           Clipboard.SetImage(bitmap);
           return true;
         }
         finally
         {
           Globals.IsPrinting = false;
-          CalendarMonth.ShowTodayButton = true;
-          CalendarMonth.ShowArrowControls = true;
+          MonthlyCalendar.ShowTodayButton = true;
+          MonthlyCalendar.ShowArrowControls = true;
         }
       },
       [ViewMode.Grid] = (interval) =>

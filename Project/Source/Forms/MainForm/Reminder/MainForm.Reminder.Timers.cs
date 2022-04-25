@@ -35,7 +35,7 @@ partial class MainForm
           GoToDate(today);
         else
         if ( Settings.CurrentView == ViewMode.Month )
-          CalendarMonth.Refresh();
+          MonthlyCalendar.Refresh();
         UpdateTitles(true);
         if ( Settings.CheckUpdateEveryWeekWhileRunning )
           ActionWebCheckUpdate_Click(null, null);
@@ -138,7 +138,7 @@ partial class MainForm
         {
           WeeklyParashahShownAtStartup = true;
           WeeklyParashahShownAtNewWeek = true;
-          ActionViewParashahDescription.PerformClick();
+          ActionWeeklyParashahDescription.PerformClick();
         }
       }
     }

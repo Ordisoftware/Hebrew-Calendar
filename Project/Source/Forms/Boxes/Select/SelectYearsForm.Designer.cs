@@ -40,15 +40,15 @@
       this.ActionPrefefinedInterval = new System.Windows.Forms.Button();
       this.MenuPredefinedYears = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionDefaultInterval = new System.Windows.Forms.Button();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditYearLast ) ).BeginInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditYearFirst ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
       // EditYearLast
       // 
-      this.EditYearLast.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYearLast, "EditYearLast");
+      this.EditYearLast.BackColor = System.Drawing.SystemColors.Window;
       this.EditYearLast.Name = "EditYearLast";
       this.EditYearLast.ReadOnly = true;
       this.EditYearLast.ValueChanged += new System.EventHandler(this.EditYearLast_ValueChanged);
@@ -61,8 +61,8 @@
       // 
       // EditYearFirst
       // 
-      this.EditYearFirst.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditYearFirst, "EditYearFirst");
+      this.EditYearFirst.BackColor = System.Drawing.SystemColors.Window;
       this.EditYearFirst.Name = "EditYearFirst";
       this.EditYearFirst.ReadOnly = true;
       this.EditYearFirst.ValueChanged += new System.EventHandler(this.EditYearFirst_ValueChanged);
@@ -83,9 +83,9 @@
       // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionCancel
@@ -96,25 +96,25 @@
       // 
       // ActionPrefefinedInterval
       // 
+      resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.AllowDrop = true;
       this.ActionPrefefinedInterval.ContextMenuStrip = this.MenuPredefinedYears;
       this.ActionPrefefinedInterval.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionPrefefinedInterval, "ActionPrefefinedInterval");
       this.ActionPrefefinedInterval.Name = "ActionPrefefinedInterval";
       this.ActionPrefefinedInterval.UseVisualStyleBackColor = true;
       this.ActionPrefefinedInterval.Click += new System.EventHandler(this.ActionPrefefinedInterval_Click);
       // 
       // MenuPredefinedYears
       // 
+      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
       this.MenuPredefinedYears.Name = "MenuSelectMoonDayTextFormat";
       this.MenuPredefinedYears.ShowImageMargin = false;
-      resources.ApplyResources(this.MenuPredefinedYears, "MenuPredefinedYears");
       // 
       // ActionDefaultInterval
       // 
+      resources.ApplyResources(this.ActionDefaultInterval, "ActionDefaultInterval");
       this.ActionDefaultInterval.AllowDrop = true;
       this.ActionDefaultInterval.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionDefaultInterval, "ActionDefaultInterval");
       this.ActionDefaultInterval.Name = "ActionDefaultInterval";
       this.ActionDefaultInterval.UseVisualStyleBackColor = true;
       this.ActionDefaultInterval.Click += new System.EventHandler(this.ActionDefaultInterval_Click);
@@ -139,8 +139,8 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectYearsForm_FormClosing);
       this.Load += new System.EventHandler(this.SelectYearsRangeForm_Load);
-      ( (System.ComponentModel.ISupportInitialize)( this.EditYearLast ) ).EndInit();
-      ( (System.ComponentModel.ISupportInitialize)( this.EditYearFirst ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearLast)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditYearFirst)).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -11,13 +11,17 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
 
 partial class MainForm
 {
+
+  static private Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
+
+  static private Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
 
   private Brush[,,] DayBrushes;
 
@@ -31,23 +35,36 @@ partial class MainForm
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-  static public Color MixColor(Color c1, Color c2)
+  static public Color MixColor(Color color1, Color color2)
   {
-    int r = Math.Min(( c1.R + c2.R ) / 2, 255);
-    int g = Math.Min(( c1.G + c2.G ) / 2, 255);
-    int b = Math.Min(( c1.B + c2.B ) / 2, 255);
-    return Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
+    bool hasFirstKey = ColorMixesTwoKeys.ContainsKey(color1);
+    bool hasSecondKey = hasFirstKey && ColorMixesTwoKeys[color1].ContainsKey(color2);
+    if ( hasSecondKey ) return ColorMixesTwoKeys[color1][color2];
+    int r = Math.Min(( color1.R + color2.R ) / 2, 255);
+    int g = Math.Min(( color1.G + color2.G ) / 2, 255);
+    int b = Math.Min(( color1.B + color2.B ) / 2, 255);
+    var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
+    if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, new Dictionary<Color, Color>());
+    if ( !hasSecondKey ) ColorMixesTwoKeys[color1].Add(color2, color);
+    return color;
   }
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
-  static public Color MixColor(Color c1, Color c2, Color c3)
+  static public Color MixColor(Color color1, Color color2, Color color3)
   {
-
-    int r = Math.Min(( c1.R + c2.R + c3.R ) / 3, 255);
-    int g = Math.Min(( c1.G + c2.G + c3.G ) / 3, 255);
-    int b = Math.Min(( c1.B + c2.B + c3.B ) / 3, 255);
-    return Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
+    bool hasFirstKey = ColorMixesThreeKeys.ContainsKey(color1);
+    bool hasSecondKey = hasFirstKey && ColorMixesThreeKeys[color1].ContainsKey(color2);
+    bool hasThirdKey = hasSecondKey && ColorMixesThreeKeys[color1][color2].ContainsKey(color3);
+    if ( hasThirdKey ) return ColorMixesThreeKeys[color1][color2][color3];
+    int r = Math.Min(( color1.R + color2.R + color3.R ) / 3, 255);
+    int g = Math.Min(( color1.G + color2.G + color3.G ) / 3, 255);
+    int b = Math.Min(( color1.B + color2.B + color3.B ) / 3, 255);
+    var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
+    if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, new Dictionary<Color, Dictionary<Color, Color>>());
+    if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, new Dictionary<Color, Color>());
+    if ( !hasThirdKey ) ColorMixesThreeKeys[color1][color2].Add(color3, color);
+    return color;
   }
 
   private void InitializeYearsInterval()
@@ -80,6 +97,9 @@ partial class MainForm
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
+      var fontEvent = new Font("Calibri", Settings.MonthViewFontSize);
+      string strRise = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise);
+      string strSet = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set);
       LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
                                       LunisolarDays.Count,
                                       Program.LoadingFormLoadDB);
@@ -87,6 +107,7 @@ partial class MainForm
         try
         {
           LoadingForm.Instance.DoProgress();
+          // Initialize
           var ev = row.TorahEvent;
           var season = row.SeasonChange;
           if ( ev == TorahCelebrationDay.PessahD1
@@ -135,7 +156,7 @@ partial class MainForm
           else
           if ( color1 is null )
             color1 = Settings.MonthViewBackColor;
-          DayBrushes[YearLast - date.Year, date.Month, date.Day] = new SolidBrush(color1.Value);
+          DayBrushes[YearLast - date.Year, date.Month, date.Day] = SolidBrushesPool.Get(color1.Value);
           if ( isCelebrationWeekEnd )
             isCelebrationWeekStart = false;
           int rank = 0;
@@ -149,17 +170,17 @@ partial class MainForm
               : Settings.CalendarColorMoon;
           if ( !Settings.TorahEventsCountAsMoon )
           {
-            add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.SunriseAsString} {strMonthDay}");
-            add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.SunsetAsString);
+            add(colorMoon, $"{strRise}{row.SunriseAsString} {strMonthDay}");
+            add(Settings.MonthViewTextColor, strSet + row.SunsetAsString);
           }
           else
           {
             if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
             {
               if ( row.Moonset is not null )
-                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+                add(Settings.MonthViewTextColor, strSet + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
+                add(colorMoon, $"{strRise}{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
@@ -167,48 +188,46 @@ partial class MainForm
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise) + $"{row.MoonriseAsString} {strMonthDay}");
+                add(colorMoon, $"{strRise}{row.MoonriseAsString} {strMonthDay}");
               else
               if ( !Settings.TorahEventsCountAsMoon )
                 add(colorMoon, strMonthDay);
               if ( row.Moonset is not null )
-                add(Settings.MonthViewTextColor, AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + row.MoonsetAsString);
+                add(Settings.MonthViewTextColor, strSet + row.MoonsetAsString);
             }
           }
-          //Torah
+          // Torah
           add(Settings.CalendarColorTorahEvent, row.TorahEventText);
           // Season
           if ( row.SeasonChange != 0 )
             add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
           // Parashah
-          if ( Settings.CalendarShowParashah )
-            if ( !string.IsNullOrEmpty(row.ParashahID) )
-              add(Settings.CalendarColorParashah, row.GetParashahText(false));
-          //
+          if ( Settings.CalendarShowParashah && !string.IsNullOrEmpty(row.ParashahID) )
+            add(Settings.CalendarColorParashah, row.GetParashahText(false));
+          // Add info
           void add(Color color, string text)
           {
             if ( string.IsNullOrEmpty(text) ) return;
             var item = new CustomEvent
             {
               Date = date,
-              EventFont = new Font("Calibri", Settings.MonthViewFontSize)
+              EventFont = fontEvent
             };
             if ( Settings.UseColors )
             {
-              item.EventColor = Color.OrangeRed;
               item.EventTextColor = color;
             }
             else
             {
               item.EventColor = Color.Transparent;
-              item.EventTextColor = CalendarMonth.ForeColor;
+              item.EventTextColor = MonthlyCalendar.ForeColor;
             }
             item.EventText = text;
             item.Rank = rank++;
             item.IgnoreTimeComponent = true;
             if ( Settings.UseColors )
               item.EventColor = ( (SolidBrush)GetDayBrush(item.Date.Day, item.Date.Month, item.Date.Year) ).Color;
-            CalendarMonth.AddEvent(item);
+            MonthlyCalendar.AddEvent(item);
           }
         }
         catch ( Exception ex )
@@ -219,7 +238,7 @@ partial class MainForm
     }
     finally
     {
-      // TODO show errors like with generatedays
+      // TODO show errors like with generate days
       Globals.ChronoShowData.Stop();
       Settings.BenchmarkFillCalendar = Globals.ChronoShowData.ElapsedMilliseconds;
       SystemManager.TryCatch(Settings.Store);

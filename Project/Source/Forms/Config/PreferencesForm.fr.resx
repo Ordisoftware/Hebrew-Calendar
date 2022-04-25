@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,870 +59,879 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="ActionClose.Text" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-	<data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
-		<value>157, 13</value>
-	</data>
-	<data name="ActionResetSettings.Text" xml:space="preserve">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionResetSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="ActionResetSettings.Text" xml:space="preserve">
     <value>Restaurer les valeurs par défaut</value>
   </data>
-	<data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
-		<value>477, 13</value>
-	</data>
-	<data name="LabelDateBookmarksCount.Text" xml:space="preserve">
-    <value>Nombre de signets de date (modification en temps réel : la réduction effacera les signets enregistrés)</value>
+  <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>477, 13</value>
   </data>
-	<data name="LabelChangeLangNotice.Text" xml:space="preserve">
+  <data name="LabelChangeLangNotice.Text" xml:space="preserve">
     <value>Le changement de langue n'affectera pas les données du tableau des Parashot à moins de restaurer les valeurs par défaut</value>
   </data>
-	<data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
-		<value>360, 13</value>
-	</data>
-	<data name="LabelVolume.Text" xml:space="preserve">
+  <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 13</value>
+  </data>
+  <data name="LabelVolume.Text" xml:space="preserve">
     <value>Volume des sons (non applicable aux sons système des boites de dialogue)</value>
   </data>
-	<data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
-		<value>257, 17</value>
-	</data>
-	<data name="EditLoadingFormHidden.Text" xml:space="preserve">
+  <data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 17</value>
+  </data>
+  <data name="EditLoadingFormHidden.Text" xml:space="preserve">
     <value>Cacher les boites de chargement et de traitement</value>
   </data>
-	<data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>272, 17</value>
-	</data>
-	<data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
+  <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
+  </data>
+  <data name="EditWindowsDoubleBufferingEnabled.Text" xml:space="preserve">
     <value>Activer le double tampon pour le dessin des fenêtres</value>
   </data>
-	<data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>201, 17</value>
-	</data>
-	<data name="EditWeatherMenuItemsEnabled.Text" xml:space="preserve">
+  <data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="EditWeatherMenuItemsEnabled.Text" xml:space="preserve">
     <value>Activer les éléments de menus météo</value>
   </data>
-	<data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>166, 17</value>
-	</data>
-	<data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
+  <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
+  </data>
+  <data name="EditWebLinksMenuEnabled.Text" xml:space="preserve">
     <value>Activer le menu des liens web</value>
   </data>
-	<data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
-		<value>215, 17</value>
-	</data>
-	<data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
+  <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
+  </data>
+  <data name="EditMainFormTitleBarShowToday.Text" xml:space="preserve">
     <value>Afficher aujourd'hui dans la barre de titre</value>
   </data>
-	<data name="EditParashahCaptionWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
-		<value>404, 17</value>
-	</data>
-	<data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
+  <data name="EditParashahCaptionWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 17</value>
+  </data>
+  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
     <value>Afficher la parashah de la semaine avec le nom du livre et la référence de verset</value>
   </data>
-	<data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
-		<value>287, 17</value>
-	</data>
-	<data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 17</value>
+  </data>
+  <data name="EditMainFormTitleBarShowWeeklyParashah.Text" xml:space="preserve">
     <value>Afficher la parashah de la semaine dans la barre de titre</value>
   </data>
-	<data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>124, 17</value>
-	</data>
-	<data name="EditDebuggerEnabled.Text" xml:space="preserve">
+  <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="EditDebuggerEnabled.Text" xml:space="preserve">
     <value>Activer le debogueur</value>
   </data>
-	<data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>170, 17</value>
-	</data>
-	<data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
+  <data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="EditUsageStatisticsEnabled.Text" xml:space="preserve">
     <value>Activer les statistiques d'usage</value>
   </data>
-	<data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>118, 17</value>
-	</data>
-	<data name="EditLogEnabled.Text" xml:space="preserve">
+  <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="EditLogEnabled.Text" xml:space="preserve">
     <value>Activer le fichier log</value>
   </data>
-	<data name="TabPageStartup.Text" xml:space="preserve">
+  <data name="TabPageStartup.Text" xml:space="preserve">
     <value>Démarrage</value>
   </data>
-	<data name="EditShowLastNewInVersionAfterUpdate.Size" type="System.Drawing.Size, System.Drawing">
-		<value>240, 17</value>
-	</data>
-	<data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
+  <data name="EditShowLastNewInVersionAfterUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <data name="EditShowLastNewInVersionAfterUpdate.Text" xml:space="preserve">
     <value>Afficher les nouveautés après une mise à jour</value>
   </data>
-	<data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
-		<value>114, 13</value>
-	</data>
-	<data name="LabelLastDBOptimize.Text" xml:space="preserve">
+  <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelLastDBOptimize.Text" xml:space="preserve">
     <value>Dernière optimisation :</value>
   </data>
-	<data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-		<value>336, 17</value>
-	</data>
-	<data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
+  <data name="EditWeeklyParashahShowAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
     <value>Montrer la description de la parashah de la semaine au démarrage</value>
   </data>
-	<data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
-		<value>110, 13</value>
-	</data>
-	<data name="LabelLastStartupCheck.Text" xml:space="preserve">
+  <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="LabelLastStartupCheck.Text" xml:space="preserve">
     <value>Dernière vérification :</value>
   </data>
-	<data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
-		<value>220, 13</value>
-	</data>
-	<data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
+  <data name="LabelCheckUpdateFrequency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelCheckUpdateFrequency.Text" xml:space="preserve">
     <value>Fréquence de vérification en nombre de jours</value>
   </data>
-	<data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-		<value>190, 17</value>
-	</data>
-	<data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
+  <data name="EditCheckUpdateAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditCheckUpdateAtStartup.Text" xml:space="preserve">
     <value>Vérifier la mise à jour au démarrage</value>
   </data>
-	<data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
-		<value>208, 17</value>
-	</data>
-	<data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
+  <data name="EditCheckUpdateEveryWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="EditCheckUpdateEveryWeek.Text" xml:space="preserve">
     <value>Vérifier la mise à jour durant l'exécution</value>
   </data>
-	<data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-		<value>143, 17</value>
-	</data>
-	<data name="EditStartWithWindows.Text" xml:space="preserve">
+  <data name="EditStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="EditStartWithWindows.Text" xml:space="preserve">
     <value>Démarrer avec Windows</value>
   </data>
-	<data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
-		<value>128, 17</value>
-	</data>
-	<data name="EditStartupHide.Text" xml:space="preserve">
+  <data name="EditStartupHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="EditStartupHide.Text" xml:space="preserve">
     <value>Cacher au démarrage</value>
   </data>
-	<data name="EditRestoreLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-		<value>229, 17</value>
-	</data>
-	<data name="EditRestoreLastViewAtStartup.Text" xml:space="preserve">
+  <data name="EditRestoreLastViewAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 17</value>
+  </data>
+  <data name="EditRestoreLastViewAtStartup.Text" xml:space="preserve">
     <value>Restaurer la vue précédente au démarrage</value>
   </data>
-	<data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
-		<value>329, 17</value>
-	</data>
-	<data name="EditVacuumAtStartup.Text" xml:space="preserve">
+  <data name="EditVacuumAtStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 17</value>
+  </data>
+  <data name="EditVacuumAtStartup.Text" xml:space="preserve">
     <value>Optimiser les données au démarrage chaque ce nombre de jours</value>
   </data>
-	<data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>353, 17</value>
-	</data>
-	<data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
+  <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 17</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
     <value>Utiliser une icône différente lors du Shabat ou d'un jour de célébration</value>
   </data>
-	<data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
-		<value>52, 17</value>
-	</data>
-	<data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
+  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
     <value>Maj +</value>
   </data>
-	<data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
-		<value>152, 13</value>
-	</data>
-	<data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 13</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
     <value>Un clic sur la Tray Icon ouvre :</value>
   </data>
-	<data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
-		<value>141, 17</value>
-	</data>
-	<data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
+  <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
     <value>Fenêtre des célébrations</value>
   </data>
-	<data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
-		<value>134, 17</value>
-	</data>
-	<data name="SelectOpenMainForm.Text" xml:space="preserve">
+  <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="SelectOpenMainForm.Text" xml:space="preserve">
     <value>Fenêtre de l'application</value>
   </data>
-	<data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>305, 17</value>
-	</data>
-	<data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
     <value>Activer le raccourci global pour faire apparaître l'application</value>
   </data>
-	<data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
-		<value>418, 17</value>
-	</data>
-	<data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>418, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
     <value>Aller à aujourd'hui lorsque la fenêtre principale apparaît sinon conserver la sélection</value>
   </data>
-	<data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
-		<value>128, 17</value>
-	</data>
-	<data name="SelectOpenNavigationForm.Text" xml:space="preserve">
+  <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
-	<data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>340, 17</value>
-	</data>
-	<data name="EditBalloon.Text" xml:space="preserve">
+  <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 17</value>
+  </data>
+  <data name="EditBalloon.Text" xml:space="preserve">
     <value>Utiliser le ballon avec ce délai avant surgissement en millisecondes</value>
   </data>
-	<data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-		<value>186, 17</value>
-	</data>
-	<data name="EditBalloonAutoHide.Text" xml:space="preserve">
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 17</value>
+  </data>
+  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
     <value>Cacher automatiquement le ballon</value>
   </data>
-	<data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
-		<value>316, 17</value>
-	</data>
-	<data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 17</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
     <value>Montrer le ballon seulement si la fenêtre principale est cachée</value>
   </data>
-	<data name="TabPageNavigation.Text" xml:space="preserve">
+  <data name="TabPageNavigation.Text" xml:space="preserve">
     <value>Fenêtre de navigation</value>
   </data>
-	<data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
-		<value>109, 13</value>
-	</data>
-	<data name="ActionUseBlackAndWhiteColors.Text" xml:space="preserve">
+  <data name="ActionUseBlackAndWhiteColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
+  </data>
+  <data name="ActionUseBlackAndWhiteColors.Text" xml:space="preserve">
     <value>Couleurs noir et blanc</value>
   </data>
-	<data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
-		<value>30, 13</value>
-	</data>
-	<data name="LabelTopColor.Text" xml:space="preserve">
+  <data name="LabelTopColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="LabelTopColor.Text" xml:space="preserve">
     <value>Haut</value>
   </data>
-	<data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
-		<value>79, 13</value>
-	</data>
-	<data name="ActionUseDefaultColors.Text" xml:space="preserve">
+  <data name="ActionUseDefaultColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="ActionUseDefaultColors.Text" xml:space="preserve">
     <value>Couleurs pastel</value>
   </data>
-	<data name="LabelMiddleColor.Text" xml:space="preserve">
+  <data name="LabelMiddleColor.Text" xml:space="preserve">
     <value>Centre</value>
   </data>
-	<data name="EditNavigationWindowUseUnicodeIcons.Size" type="System.Drawing.Size, System.Drawing">
-		<value>148, 17</value>
-	</data>
-	<data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
+  <data name="EditNavigationWindowUseUnicodeIcons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="EditNavigationWindowUseUnicodeIcons.Text" xml:space="preserve">
     <value>Utiliser les icônes unicode</value>
   </data>
-	<data name="EditNavigationWindowCloseOnShowMainForm.Size" type="System.Drawing.Size, System.Drawing">
-		<value>228, 17</value>
-	</data>
-	<data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
+  <data name="EditNavigationWindowCloseOnShowMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="EditNavigationWindowCloseOnShowMainForm.Text" xml:space="preserve">
     <value>Fermer à l'affichage de la fenêtre principale</value>
   </data>
-	<data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
-		<value>25, 13</value>
-	</data>
-	<data name="LabelBottomColor.Text" xml:space="preserve">
+  <data name="LabelBottomColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 13</value>
+  </data>
+  <data name="LabelBottomColor.Text" xml:space="preserve">
     <value>Bas</value>
   </data>
-	<data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
-		<value>89, 13</value>
-	</data>
-	<data name="ActionUseSystemColors.Text" xml:space="preserve">
+  <data name="ActionUseSystemColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="ActionUseSystemColors.Text" xml:space="preserve">
     <value>Couleurs système</value>
   </data>
-	<data name="TabPageGeneration.Text" xml:space="preserve">
+  <data name="TabPageGeneration.Text" xml:space="preserve">
     <value>Génération</value>
   </data>
-	<data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
-		<value>142, 13</value>
-	</data>
-	<data name="LabelMaxYearsInterval.Text" xml:space="preserve">
+  <data name="LabelMaxYearsInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Intervalle d'années maximum</value>
   </data>
-	<data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
-		<value>238, 17</value>
-	</data>
-	<data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
-		<value>211, 17</value>
-	</data>
-	<data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
+  <data name="EditWeekParashahIsOnSaturday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 17</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 17</value>
+  </data>
+  <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
   </data>
-	<data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>222, 17</value>
-	</data>
-	<data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
-		<value>143, 13</value>
-	</data>
-	<data name="ActionGetGPS.Text" xml:space="preserve">
+  <data name="EditTorahEventsCountAsMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 13</value>
+  </data>
+  <data name="ActionGetGPS.Text" xml:space="preserve">
     <value>Ouvrir le découvreur de GPS</value>
   </data>
-	<data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
-		<value>77, 13</value>
-	</data>
-	<data name="LabelTimeZone.Text" xml:space="preserve">
+  <data name="LabelTimeZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="LabelTimeZone.Text" xml:space="preserve">
     <value>Fuseau horaire</value>
   </data>
-	<data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
-		<value>226, 17</value>
-	</data>
-	<data name="EditBigCalendarWarning.Text" xml:space="preserve">
+  <data name="EditBigCalendarWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 17</value>
+  </data>
+  <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Afficher une alerte pour un grand intervalle</value>
   </data>
-	<data name="EditAskRegenerateIfIntervalGreater.Size" type="System.Drawing.Size, System.Drawing">
-		<value>328, 17</value>
-	</data>
-	<data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
+  <data name="EditAskRegenerateIfIntervalGreater.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 17</value>
+  </data>
+  <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
     <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
   </data>
-	<data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
-		<value>305, 17</value>
-	</data>
-	<data name="EditAutoRegenerate.Text" xml:space="preserve">
+  <data name="EditAutoRegenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="EditAutoRegenerate.Text" xml:space="preserve">
     <value>Auto-générer données pour cet intervalle d'années si expiré</value>
   </data>
-	<data name="TabPageReminder.Text" xml:space="preserve">
+  <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
   </data>
-	<data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
-		<value>144, 13</value>
-	</data>
-	<data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
+  <data name="LabelDefaultLockoutAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="LabelDefaultLockoutAction.Text" xml:space="preserve">
     <value>Action de blocage par défaut</value>
   </data>
-	<data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
-		<value>105, 13</value>
-	</data>
-	<data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
+  <data name="LabelReminderBoxDesktopLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelReminderBoxDesktopLocation.Text" xml:space="preserve">
     <value>Position des fenêtres</value>
   </data>
-	<data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
-		<value>195, 13</value>
-	</data>
-	<data name="LabelSelectReminderSound.Text" xml:space="preserve">
+  <data name="LabelSelectReminderSound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 13</value>
+  </data>
+  <data name="LabelSelectReminderSound.Text" xml:space="preserve">
     <value>Sélectionner le son des boites de rappel</value>
   </data>
-	<data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
-		<value>196, 17</value>
-	</data>
-	<data name="EditAllowSuspendReminder.Text" xml:space="preserve">
+  <data name="EditAllowSuspendReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 17</value>
+  </data>
+  <data name="EditAllowSuspendReminder.Text" xml:space="preserve">
     <value>Autoriser la suspension du rappeleur</value>
   </data>
-	<data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
-		<value>193, 13</value>
-	</data>
-	<data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
+  <data name="LabelRemindAutoLockTimeOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 13</value>
+  </data>
+  <data name="LabelRemindAutoLockTimeOut.Text" xml:space="preserve">
     <value>Délai avant le vérrouillage en secondes</value>
   </data>
-	<data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
-		<value>167, 17</value>
-	</data>
-	<data name="EditConfirmShutdown.Text" xml:space="preserve">
+  <data name="EditConfirmShutdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 17</value>
+  </data>
+  <data name="EditConfirmShutdown.Text" xml:space="preserve">
     <value>Confirmer l'arrêt de l'ordinateur</value>
   </data>
-	<data name="EditReminderShowLockoutIcon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>164, 17</value>
-	</data>
-	<data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
+  <data name="EditReminderShowLockoutIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="EditReminderShowLockoutIcon.Text" xml:space="preserve">
     <value>Afficher l'icône de vérouillage</value>
   </data>
-	<data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
-		<value>208, 17</value>
-	</data>
-	<data name="EditAutoLockSession.Text" xml:space="preserve">
+  <data name="EditAutoLockSession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="EditAutoLockSession.Text" xml:space="preserve">
     <value>Vérouillage automatique de l'ordinateur</value>
   </data>
-	<data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
-		<value>257, 17</value>
-	</data>
-	<data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
+  <data name="EditCloseReminderFormOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 17</value>
+  </data>
+  <data name="EditCloseReminderFormOnClick.Text" xml:space="preserve">
     <value>Fermer la boite de rappel en cliquant n'importe où</value>
   </data>
-	<data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
-		<value>265, 17</value>
-	</data>
-	<data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
+  <data name="EditShowReminderInTaskBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 17</value>
+  </data>
+  <data name="EditShowReminderInTaskBar.Text" xml:space="preserve">
     <value>Afficher les boites de rappel dans la barre de tâche</value>
   </data>
-	<data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-		<value>114, 13</value>
-	</data>
-	<data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
+  <data name="LabelRemindShabatHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="LabelRemindShabatHoursBefore.Text" xml:space="preserve">
     <value>Heures avant le rappel</value>
   </data>
-	<data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
-		<value>27, 13</value>
-	</data>
-	<data name="LabelShabatDay.Text" xml:space="preserve">
+  <data name="LabelShabatDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="LabelShabatDay.Text" xml:space="preserve">
     <value>Jour du Shabat</value>
   </data>
-	<data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
-		<value>381, 17</value>
-	</data>
-	<data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
+  <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 17</value>
+  </data>
+  <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
     <value>Montrer la description de la parashah de la semaine au début de la semaine</value>
   </data>
-	<data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>69, 17</value>
-	</data>
-	<data name="EditReminderShabatEnabled.Text" xml:space="preserve">
+  <data name="EditReminderShabatEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="EditReminderShabatEnabled.Text" xml:space="preserve">
     <value>Rappeler</value>
   </data>
-	<data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-		<value>137, 13</value>
-	</data>
-	<data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
+  <data name="LabelRemindShabatEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="LabelRemindShabatEveryMinutes.Text" xml:space="preserve">
     <value>Rappeler toutes les minutes</value>
   </data>
-	<data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-		<value>298, 17</value>
-	</data>
-	<data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
+  <data name="EditReminderShabatShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 17</value>
+  </data>
+  <data name="EditReminderShabatShowParashah.Text" xml:space="preserve">
     <value>Afficher la parashah de la semaine dans la boite de rappel</value>
   </data>
-	<data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
-		<value>190, 17</value>
-	</data>
-	<data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
+  <data name="EditRemindShabatOnlyLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditRemindShabatOnlyLight.Text" xml:space="preserve">
     <value>Seulement lors de la lumière solaire</value>
   </data>
-	<data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
-		<value>135, 13</value>
-	</data>
-	<data name="ActionUsePersonalShabat.Text" xml:space="preserve">
+  <data name="ActionUsePersonalShabat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 13</value>
+  </data>
+  <data name="ActionUsePersonalShabat.Text" xml:space="preserve">
     <value>Utiliser le Shabat personnel</value>
   </data>
-	<data name="TabPageCelebrations.Text" xml:space="preserve">
+  <data name="TabPageCelebrations.Text" xml:space="preserve">
     <value>Célébrations</value>
   </data>
-	<data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-		<value>152, 13</value>
-	</data>
-	<data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
+  <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
     <value>Heures avant le second rappel</value>
   </data>
-	<data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-		<value>69, 17</value>
-	</data>
-	<data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
+  <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
     <value>Rappeler</value>
   </data>
-	<data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-		<value>137, 13</value>
-	</data>
-	<data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
+  <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
     <value>Rappeler toutes les minutes</value>
   </data>
-	<data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
-		<value>142, 13</value>
-	</data>
-	<data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
+  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
   </data>
-	<data name="TabPageMonthView.Text" xml:space="preserve">
+  <data name="TabPageMonthView.Text" xml:space="preserve">
     <value>Vue par mois</value>
   </data>
-	<data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-		<value>91, 13</value>
-	</data>
-	<data name="LabelCalendarDoubleClickAction.Text" xml:space="preserve">
+  <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="LabelCalendarDoubleClickAction.Text" xml:space="preserve">
     <value>Action double clic</value>
   </data>
-	<data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
-		<value>104, 17</value>
-	</data>
-	<data name="SelectCalendarDoubleClickActionSelect.Text" xml:space="preserve">
+  <data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSelect.Text" xml:space="preserve">
     <value>Sélectionner jour</value>
   </data>
-	<data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
-		<value>47, 17</value>
-	</data>
-	<data name="SelectCalendarDoubleClickActionNothing.Text" xml:space="preserve">
+  <data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionNothing.Text" xml:space="preserve">
     <value>Rien</value>
   </data>
-	<data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
-		<value>98, 17</value>
-	</data>
-	<data name="SelectCalendarDoubleClickActionSetActive.Text" xml:space="preserve">
+  <data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="SelectCalendarDoubleClickActionSetActive.Text" xml:space="preserve">
     <value>Définir jour actif</value>
   </data>
-	<data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-		<value>164, 13</value>
-	</data>
-	<data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
+  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
     <value>Format du texte du jour de la lune</value>
   </data>
-	<data name="label1.Text" xml:space="preserve">
+  <data name="label1.Text" xml:space="preserve">
     <value>Fond Torah</value>
   </data>
-	<data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
-		<value>101, 13</value>
-	</data>
-	<data name="LabelColorNoDay.Text" xml:space="preserve">
+  <data name="LabelColorNoDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="LabelColorNoDay.Text" xml:space="preserve">
     <value>Fond de pas de jour</value>
   </data>
-	<data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-		<value>85, 13</value>
-	</data>
-	<data name="label5.Text" xml:space="preserve">
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
     <value>Fond nouv. mois</value>
   </data>
-	<data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-		<value>96, 13</value>
-	</data>
-	<data name="label4.Text" xml:space="preserve">
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
     <value>Fond évèn. à venir</value>
   </data>
-	<data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
-		<value>77, 13</value>
-	</data>
-	<data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
+  <data name="ActionMonthViewThemeDark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="ActionMonthViewThemeDark.Text" xml:space="preserve">
     <value>Thème sombre</value>
   </data>
-	<data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
-		<value>85, 13</value>
-	</data>
-	<data name="LabelColorText.Text" xml:space="preserve">
+  <data name="LabelColorText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="LabelColorText.Text" xml:space="preserve">
     <value>Texte par défaut</value>
   </data>
-	<data name="ActionMonthViewThemeLight.Text" xml:space="preserve">
+  <data name="ActionMonthViewThemeLight.Text" xml:space="preserve">
     <value>Thème clair</value>
   </data>
-	<data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-		<value>64, 13</value>
-	</data>
-	<data name="label3.Text" xml:space="preserve">
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
     <value>Fond saison</value>
   </data>
-	<data name="label2.Text" xml:space="preserve">
+  <data name="label2.Text" xml:space="preserve">
     <value>Fond Shabat</value>
   </data>
-	<data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
-		<value>69, 13</value>
-	</data>
-	<data name="LabelColorToday.Text" xml:space="preserve">
+  <data name="LabelColorToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="LabelColorToday.Text" xml:space="preserve">
     <value>Texte du jour</value>
   </data>
-	<data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>83, 13</value>
-	</data>
-	<data name="LabelColorMoon.Text" xml:space="preserve">
+  <data name="LabelColorMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="LabelColorMoon.Text" xml:space="preserve">
     <value>Lever de la lune</value>
   </data>
-	<data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
-		<value>91, 13</value>
-	</data>
-	<data name="LabelColorParashah.Text" xml:space="preserve">
+  <data name="LabelColorParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="LabelColorParashah.Text" xml:space="preserve">
     <value>Section Parashah</value>
   </data>
-	<data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
-		<value>39, 13</value>
-	</data>
-	<data name="LabelColorSeason.Text" xml:space="preserve">
+  <data name="LabelColorSeason.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="LabelColorSeason.Text" xml:space="preserve">
     <value>Saison</value>
   </data>
-	<data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
-		<value>54, 13</value>
-	</data>
-	<data name="LabelColorEmpty.Text" xml:space="preserve">
+  <data name="LabelColorEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="LabelColorEmpty.Text" xml:space="preserve">
     <value>Fond vide</value>
   </data>
-	<data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
-		<value>59, 13</value>
-	</data>
-	<data name="LabelColorFullMoon.Text" xml:space="preserve">
+  <data name="LabelColorFullMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="LabelColorFullMoon.Text" xml:space="preserve">
     <value>Pleine lune</value>
   </data>
-	<data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
-		<value>92, 13</value>
-	</data>
-	<data name="LabelColorTorah.Text" xml:space="preserve">
+  <data name="LabelColorTorah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelColorTorah.Text" xml:space="preserve">
     <value>Évènement Torah</value>
   </data>
-	<data name="LabelCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
-		<value>50, 13</value>
-	</data>
-	<data name="LabelCalendarColorActiveDay.Text" xml:space="preserve">
+  <data name="LabelCalendarColorActiveDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelCalendarColorActiveDay.Text" xml:space="preserve">
     <value>Jour actif</value>
   </data>
-	<data name="LabelColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
-		<value>75, 13</value>
-	</data>
-	<data name="LabelColorHoverEffect.Text" xml:space="preserve">
+  <data name="LabelColorHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="LabelColorHoverEffect.Text" xml:space="preserve">
     <value>Effet de survol</value>
   </data>
-	<data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
-		<value>66, 13</value>
-	</data>
-	<data name="LabelColorTodayBack.Text" xml:space="preserve">
+  <data name="LabelColorTodayBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="LabelColorTodayBack.Text" xml:space="preserve">
     <value>Fond du jour</value>
   </data>
-	<data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
-		<value>306, 17</value>
-	</data>
-	<data name="EditUseColors.Text" xml:space="preserve">
+  <data name="EditUseColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 17</value>
+  </data>
+  <data name="EditUseColors.Text" xml:space="preserve">
     <value>Utiliser les couleurs pour le calendrier et les boites de rappel</value>
   </data>
-	<data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
-		<value>122, 17</value>
-	</data>
-	<data name="EditCalendarShowParashah.Text" xml:space="preserve">
+  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="EditCalendarShowParashah.Text" xml:space="preserve">
     <value>Activer la parashah de la semaine</value>
   </data>
-	<data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
-		<value>375, 17</value>
-	</data>
-	<data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 17</value>
+  </data>
+  <data name="EditSelectedDayBoxColorOnlyCurrent.Text" xml:space="preserve">
     <value>Utiliser la couleur de case de jour sélectionné uniquement pour aujourd'hui</value>
   </data>
-	<data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
-		<value>191, 17</value>
-	</data>
-	<data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
+  <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
     <value>Afficher la case du jour sélectionné</value>
   </data>
-	<data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
-		<value>131, 17</value>
-	</data>
-	<data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
+  <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
     <value>Utiliser l'effet de survol</value>
   </data>
-	<data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
-		<value>230, 17</value>
-	</data>
-	<data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
+  <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="EditMonthViewChangeDayOnClick.Text" xml:space="preserve">
     <value>Changer de jour sur un clic</value>
   </data>
-	<data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-		<value>89, 13</value>
-	</data>
-	<data name="LabelMonthViewFontSize.Text" xml:space="preserve">
+  <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
     <value>Taille de la police</value>
   </data>
-	<data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
-		<value>50, 13</value>
-	</data>
-	<data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
     <value>Interligne</value>
   </data>
-	<data name="TabPageTextReport.Text" xml:space="preserve">
+  <data name="TabPageTextReport.Text" xml:space="preserve">
     <value>Rapport texte</value>
   </data>
-	<data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
-		<value>86, 13</value>
-	</data>
-	<data name="LabelFontName.Text" xml:space="preserve">
+  <data name="LabelFontName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="LabelFontName.Text" xml:space="preserve">
     <value>Nom de la police</value>
   </data>
-	<data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
-		<value>89, 13</value>
-	</data>
-	<data name="LabelFontSize.Text" xml:space="preserve">
+  <data name="LabelFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="LabelFontSize.Text" xml:space="preserve">
     <value>Taille de la police</value>
   </data>
-	<data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
-		<value>31, 13</value>
-	</data>
-	<data name="LabelBackColor.Text" xml:space="preserve">
+  <data name="LabelBackColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="LabelBackColor.Text" xml:space="preserve">
     <value>Fond</value>
   </data>
-	<data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
-		<value>34, 13</value>
-	</data>
-	<data name="LabelTextColor.Text" xml:space="preserve">
+  <data name="LabelTextColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="LabelTextColor.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
-	<data name="TabPagePrint.Text" xml:space="preserve">
+  <data name="TabPagePrint.Text" xml:space="preserve">
     <value>Export et impression</value>
   </data>
-	<data name="LabelImageExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
-		<value>205, 13</value>
-	</data>
-	<data name="LabelImageExportFileFormat.Text" xml:space="preserve">
+  <data name="LabelImageExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 13</value>
+  </data>
+  <data name="LabelImageExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export d'images</value>
   </data>
-	<data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
-		<value>220, 13</value>
-	</data>
-	<data name="LabelDataExportFileFormat.Text" xml:space="preserve">
+  <data name="LabelDataExportFileFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 13</value>
+  </data>
+  <data name="LabelDataExportFileFormat.Text" xml:space="preserve">
     <value>Format préféré du fichier d'export de données</value>
   </data>
-	<data name="LabelSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
-		<value>277, 13</value>
-	</data>
-	<data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
+  <data name="LabelSaveImageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 13</value>
+  </data>
+  <data name="LabelSaveImageCountWarning.Text" xml:space="preserve">
     <value>Nombre d'images à sauver pour afficher un avertissement</value>
   </data>
-	<data name="LabelPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
-		<value>286, 13</value>
-	</data>
-	<data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
+  <data name="LabelPrintPageCountWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 13</value>
+  </data>
+  <data name="LabelPrintPageCountWarning.Text" xml:space="preserve">
     <value>Nombre de pages à imprimer pour afficher un avertissement</value>
   </data>
-	<data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
-		<value>485, 13</value>
-	</data>
-	<data name="LabelPrintMargin.Text" xml:space="preserve">
-    <value>Marge d'impression en 100 x inch (20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm)</value>
+  <data name="LabelPrintMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 13</value>
   </data>
-	<data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
-		<value>221, 17</value>
-	</data>
-	<data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
+  <data name="LabelPrintMargin.Text" xml:space="preserve">
+    <value>Marge d'impression en ( Inch x 100 ) *</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
+  <data name="EditAutoOpenExportedFile.Text" xml:space="preserve">
     <value>Ouvrir le fichier exporté en cas de succès</value>
   </data>
-	<data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
-		<value>313, 17</value>
-	</data>
-	<data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
+  <data name="EditExportDataEnumsAsTranslations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 17</value>
+  </data>
+  <data name="EditExportDataEnumsAsTranslations.Text" xml:space="preserve">
     <value>Export des énumérations en tant que traductions humanisées</value>
   </data>
-	<data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-		<value>228, 17</value>
-	</data>
-	<data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
+  <data name="EditAutoOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 17</value>
+  </data>
+  <data name="EditAutoOpenExportFolder.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export en cas de succès</value>
   </data>
-	<data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
-		<value>175, 17</value>
-	</data>
-	<data name="EditPrintImageInLandscape.Text" xml:space="preserve">
+  <data name="EditPrintImageInLandscape.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="EditPrintImageInLandscape.Text" xml:space="preserve">
     <value>Imprimer les images en paysage</value>
   </data>
-	<data name="EditShowPrintDialog.Size" type="System.Drawing.Size, System.Drawing">
-		<value>142, 17</value>
-	</data>
-	<data name="EditShowPrintDialog.Text" xml:space="preserve">
+  <data name="EditShowPrintDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="EditShowPrintDialog.Text" xml:space="preserve">
     <value>Aperçu avant impression</value>
   </data>
-	<data name="TabPagePaths.Text" xml:space="preserve">
+  <data name="TabPagePaths.Text" xml:space="preserve">
     <value>Chemins</value>
   </data>
-	<data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
-		<value>148, 13</value>
-	</data>
-	<data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
+  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 13</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
     <value>Fournisseur de météo en ligne</value>
   </data>
-	<data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
-		<value>190, 17</value>
-	</data>
-	<data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
+  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
     <value>Météo du jour, sinon de la semaine</value>
   </data>
-	<data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
-		<value>37, 13</value>
-	</data>
-	<data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
+  <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
-	<data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-		<value>92, 13</value>
-	</data>
-	<data name="LabelWeatherAppPath.Text" xml:space="preserve">
+  <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="LabelWeatherAppPath.Text" xml:space="preserve">
     <value>Application Météo</value>
   </data>
-	<data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-		<value>105, 13</value>
-	</data>
-	<data name="LabelExportFolder.Text" xml:space="preserve">
+  <data name="LabelExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="LabelExportFolder.Text" xml:space="preserve">
     <value>Dossier d'exportation</value>
   </data>
-	<data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
-		<value>103, 13</value>
-	</data>
-	<data name="LabelCalculatorPath.Text" xml:space="preserve">
+  <data name="LabelCalculatorPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="LabelCalculatorPath.Text" xml:space="preserve">
     <value>Calculatrice système</value>
   </data>
-	<data name="$this.Text" xml:space="preserve">
+  <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-	<data name="TabPageColors.Text" xml:space="preserve">
+  <data name="TabPageColors.Text" xml:space="preserve">
     <value>Couleurs</value>
   </data>
-	<data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
+  <data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
     <value>Afficher la célébration en cours dans la barre de titre</value>
   </data>
-	<data name="LabelColorSelectedDayBox.Text" xml:space="preserve">
+  <data name="LabelColorSelectedDayBox.Text" xml:space="preserve">
     <value>Jour sélectionné</value>
   </data>
-	<data name="OpenExeFileDialog.Filter" xml:space="preserve">
+  <data name="OpenExeFileDialog.Filter" xml:space="preserve">
     <value>Fichiers EXE (*.exe)|*.exe</value>
   </data>
-	<data name="SaveThemeDialog.Filter" xml:space="preserve">
+  <data name="SaveThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
   </data>
-	<data name="OpenThemeDialog.Filter" xml:space="preserve">
+  <data name="OpenThemeDialog.Filter" xml:space="preserve">
     <value>Fichiers de thème (*.ini)|*.ini</value>
   </data>
-	<data name="SelectOmerMoon.Text" xml:space="preserve">
+  <data name="SelectOmerMoon.Text" xml:space="preserve">
     <value>Utiliser le omer des jours de la lune</value>
   </data>
-	<data name="SelectOmerSun.Text" xml:space="preserve">
+  <data name="SelectOmerSun.Text" xml:space="preserve">
     <value>Utiliser le omer des jours du soleil</value>
   </data>
-	<data name="SelectUseSodHaibour.Text" xml:space="preserve">
+  <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Utiliser le sod ha'ibour avec le omer du soleil</value>
   </data>
-	<data name="TabPageWeather.Text" xml:space="preserve">
+  <data name="TabPageWeather.Text" xml:space="preserve">
     <value>Météo</value>
   </data>
-	<data name="LabelCustomWebSearch.Text" xml:space="preserve">
+  <data name="LabelCustomWebSearch.Text" xml:space="preserve">
     <value>Recherche web personnalisée</value>
+  </data>
+  <data name="TabPagePrinting.Text" xml:space="preserve">
+    <value>Impression</value>
+  </data>
+  <data name="LabelExportDocumentTheme.Text" xml:space="preserve">
+    <value>Thème du document</value>
+  </data>
+  <data name="LabelDocumentMargins.Text" xml:space="preserve">
+    <value>Marges du document</value>
+  </data>
+  <data name="LabelPrintingMarginInfo.Text" xml:space="preserve">
+    <value>* 20 = 0,5 cm | 50 = 1,25 cm | 80 = 2 cm | 100 = 2,5 cm | 120 = 3 cm | 140 = 3,5 cm</value>
   </data>
 </root>

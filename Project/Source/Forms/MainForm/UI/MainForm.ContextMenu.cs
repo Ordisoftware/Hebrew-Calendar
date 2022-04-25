@@ -24,7 +24,7 @@ public partial class MainForm
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   private void DoCalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
-    var dayEvent = CalendarMonth.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));
+    var dayEvent = MonthlyCalendar.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));
     if ( dayEvent is null ) return;
     var dayRow = ApplicationDatabase.Instance.LunisolarDays.Find(day => day.Date == dayEvent.Date);
     if ( dayRow is null ) return;
@@ -38,7 +38,7 @@ public partial class MainForm
             break;
           case CalendarDoubleClickAction.Select:
             DateSelected = dayRow.Date;
-            if ( CalendarMonth.CalendarDate.Month != dayRow.Date.Month )
+            if ( MonthlyCalendar.CalendarDate.Month != dayRow.Date.Month )
               GoToDate(dayRow.Date);
             break;
           default:
@@ -50,7 +50,7 @@ public partial class MainForm
         if ( ModifierKeys.HasFlag(Keys.Control) )
         {
           DateSelected = dayRow.Date;
-          if ( CalendarMonth.CalendarDate.Month != dayRow.Date.Month )
+          if ( MonthlyCalendar.CalendarDate.Month != dayRow.Date.Month )
             GoToDate(dayRow.Date);
         }
         else
@@ -135,11 +135,11 @@ public partial class MainForm
       }
     }
     // Times
-    ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != CalendarMonth.CalendarDate.Date;
+    ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != MonthlyCalendar.CalendarDate.Date;
     ContextMenuDayClearSelection.Enabled = DateSelected is not null && DateSelected != DateTime.Today;
     ContextMenuDaySelectDate.Enabled = ( DateSelected is null && DateTime.Today != ContextMenuDayCurrentEvent.Date )
                                         || ( DateSelected is not null && DateSelected != ContextMenuDayCurrentEvent.Date );
-    ContextMenuDayGoToToday.Enabled = CalendarMonth.CalendarDate.Date != DateTime.Today;
+    ContextMenuDayGoToToday.Enabled = MonthlyCalendar.CalendarDate.Date != DateTime.Today;
     ContextMenuDayGoToSelected.Enabled = DateSelected is not null
                                          && DateSelected != ContextMenuDayCurrentEvent.Date;
     ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;

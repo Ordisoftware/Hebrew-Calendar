@@ -153,7 +153,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayNewYearD10" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TorahEventRemindDayPessahD1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -703,6 +703,15 @@
     </Setting>
     <Setting Name="TranscriptionGuideFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">392, 566</Value>
+    </Setting>
+    <Setting Name="MethodNoticeFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="MethodNoticeFormSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">542; 666</Value>
+    </Setting>
+    <Setting Name="AutoSortBookmarks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

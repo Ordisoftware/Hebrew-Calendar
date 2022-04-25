@@ -142,7 +142,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 2</value>
+    <value>114, 2</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -169,7 +169,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 2</value>
+    <value>33, 2</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>

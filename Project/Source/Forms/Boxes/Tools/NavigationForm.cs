@@ -256,7 +256,7 @@ partial class NavigationForm : Form
 
   private void ShowDayForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    MainForm.Instance.TimerBallon.Stop();
+    MainForm.Instance.TimerBalloon.Stop();
     e.Cancel = true;
     Hide();
   }

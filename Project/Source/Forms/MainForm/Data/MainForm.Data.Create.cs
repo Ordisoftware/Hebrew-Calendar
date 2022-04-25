@@ -26,8 +26,8 @@ partial class MainForm
   private string CreateData(int yearFirst, int yearLast)
   {
     Globals.IsGenerating = true;
-    PanelViewText.Parent = null;
-    PanelViewMonth.Parent = null;
+    PanelViewTextReport.Parent = null;
+    PanelViewMonthlyCalendar.Parent = null;
     PanelViewGrid.Parent = null;
     var cursor = Cursor;
     Cursor = Cursors.WaitCursor;
@@ -38,8 +38,8 @@ partial class MainForm
     {
       UpdateButtons();
       LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
-      CalendarText.Clear();
-      CalendarMonth.TheEvents.Clear();
+      TextReport.Clear();
+      MonthlyCalendar.TheEvents.Clear();
       ApplicationDatabase.Instance.DeleteAll();
       try
       {
@@ -49,7 +49,7 @@ partial class MainForm
         if ( Globals.IsGenerating && success )
           try
           {
-            CalendarText.Text = ApplicationDatabase.Instance.GenerateReport(true);
+            TextReport.Text = ApplicationDatabase.Instance.GenerateReport(true);
           }
           catch ( Exception ex )
           {
