@@ -93,12 +93,12 @@ static partial class StringHelper
   /// </summary>
   /// <param name="str"></param>
   static public bool IsCommentedText(this string str)
-    => str.StartsWith("#", StringComparison.Ordinal)
-    || str.StartsWith("-", StringComparison.Ordinal)
+    => str.StartsWith("/*", StringComparison.Ordinal)
+    || str.StartsWith("//", StringComparison.Ordinal)
     || str.StartsWith(";", StringComparison.Ordinal)
-    || str.StartsWith("/*", StringComparison.Ordinal)
-    || str.StartsWith("//", StringComparison.Ordinal);
-
+    || str.StartsWith("#", StringComparison.Ordinal)
+    || str.StartsWith("--", StringComparison.Ordinal);
+    
   /// <summary>
   /// Sets all first letter to upper case.
   /// </summary>
