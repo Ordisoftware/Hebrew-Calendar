@@ -372,7 +372,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
 
-#### 2022.04.26 - Version 9.29
+#### 2022.05.08 - Version 9.29
 
 - Optimize populating monthly view and thus startup time.
 - Add open system calc button in DatesDiffCalculator form.
@@ -382,6 +382,9 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Fix issues with intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
 - Improve shortcut for boards.
 - Some UI/UX improvements.
+
+>- Improve weekly parashah description box to have access to the tools for the study.
+>- Improve weekly parashah description box to have a screenshot button.
 
 #### 2022.04.05 - Version 9.28
 
