@@ -19,12 +19,12 @@ namespace Ordisoftware.Core;
 /// </summary>
 static public class SolidBrushesPool
 {
-  static private Dictionary<Color, SolidBrush> Items = new();
+  static private readonly Dictionary<Color, SolidBrush> Items = new();
   static public Brush Get(Color color)
   {
 
-    if ( Items.ContainsKey(color) )
-      return Items[color];
+    if ( Items.TryGetValue(color, out var result) )
+      return result;
     else
     {
       var brush = new SolidBrush(color);
@@ -39,12 +39,12 @@ static public class SolidBrushesPool
 /// </summary>
 static public class PensPool
 {
-  static private Dictionary<Color, Pen> Items = new();
+  static private readonly Dictionary<Color, Pen> Items = new();
   static public Pen Get(Color color)
   {
 
-    if ( Items.ContainsKey(color) )
-      return Items[color];
+    if ( Items.TryGetValue(color, out var result) )
+      return result;
     else
     {
       var pen = new Pen(color);

@@ -98,7 +98,7 @@ static partial class StringHelper
     || str.StartsWith(";", StringComparison.Ordinal)
     || str.StartsWith("#", StringComparison.Ordinal)
     || str.StartsWith("--", StringComparison.Ordinal);
-    
+
   /// <summary>
   /// Sets all first letter to upper case.
   /// </summary>

@@ -125,7 +125,7 @@ static class NullSafeOfStringDictionaryHelper
     {
       foreach ( var item in list )
         if ( item.Key.IsCommentedText() )
-          stream.WriteLine(item.Key); 
+          stream.WriteLine(item.Key);
         else
           stream.WriteLine(item.Key + separator + item.Value);
       return true;

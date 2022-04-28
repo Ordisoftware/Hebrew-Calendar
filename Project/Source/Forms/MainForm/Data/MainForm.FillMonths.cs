@@ -19,9 +19,9 @@ using CodeProjectCalendar.NET;
 partial class MainForm
 {
 
-  static private Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
 
-  static private Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
 
   private Brush[,,] DayBrushes;
 
@@ -35,6 +35,7 @@ partial class MainForm
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
+  [SuppressMessage("Performance", "U2U1209:Use dictionaries efficiently", Justification = "N/A")]
   static public Color MixColor(Color color1, Color color2)
   {
     bool hasFirstKey = ColorMixesTwoKeys.ContainsKey(color1);
@@ -45,12 +46,13 @@ partial class MainForm
     int b = Math.Min(( color1.B + color2.B ) / 2, 255);
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
     if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, new Dictionary<Color, Color>());
-    if ( !hasSecondKey ) ColorMixesTwoKeys[color1].Add(color2, color);
+    ColorMixesTwoKeys[color1].Add(color2, color);
     return color;
   }
 
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
+  [SuppressMessage("Performance", "U2U1209:Use dictionaries efficiently", Justification = "N/A")]
   static public Color MixColor(Color color1, Color color2, Color color3)
   {
     bool hasFirstKey = ColorMixesThreeKeys.ContainsKey(color1);
@@ -63,7 +65,7 @@ partial class MainForm
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
     if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, new Dictionary<Color, Dictionary<Color, Color>>());
     if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, new Dictionary<Color, Color>());
-    if ( !hasThirdKey ) ColorMixesThreeKeys[color1][color2].Add(color3, color);
+    ColorMixesThreeKeys[color1][color2].Add(color3, color);
     return color;
   }
 
