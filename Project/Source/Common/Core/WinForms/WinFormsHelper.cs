@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -20,6 +20,11 @@ namespace Ordisoftware.Core;
 static public class SolidBrushesPool
 {
   static private readonly Dictionary<Color, SolidBrush> Items = new();
+  static public void Clear()
+  {
+    foreach ( var item in Items )
+      item.Value.Dispose();
+  }
   static public Brush Get(Color color)
   {
 
@@ -40,6 +45,11 @@ static public class SolidBrushesPool
 static public class PensPool
 {
   static private readonly Dictionary<Color, Pen> Items = new();
+  static public void Clear()
+  {
+    foreach ( var item in Items )
+      item.Value.Dispose();
+  }
   static public Pen Get(Color color)
   {
 
