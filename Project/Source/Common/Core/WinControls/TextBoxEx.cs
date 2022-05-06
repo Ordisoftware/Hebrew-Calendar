@@ -134,6 +134,18 @@ public partial class TextBoxEx : TextBox
     }
   }
 
+  public bool SpellCheckAllowed
+  {
+    get => _SpellCheckAllowed;
+    set
+    {
+      if ( value == _SpellCheckAllowed ) return;
+      _SpellCheckAllowed = value;
+      UpdateSpellChecker();
+    }
+  }
+  private bool _SpellCheckAllowed = true;
+
   public TextBoxEx()
   {
     InitializeComponent();
@@ -152,6 +164,22 @@ public partial class TextBoxEx : TextBox
 
   private void TextBoxEx_FontChanged(object sender, EventArgs e)
   {
+    UpdateSpellChecker();
+  }
+
+  private void TextBoxEx_ReadOnlyChanged(object sender, EventArgs e)
+  {
+    UpdateSpellChecker();
+  }
+
+  private void UpdateSpellChecker()
+  {
+    if ( !Globals.IsReady ) return;
+    if ( ReadOnly || !SpellCheckAllowed )
+    {
+      NHunspellTextBoxExtender.SetSpellCheckEnabled(this, false);
+      return;
+    }
     if ( NHunspellTextBoxExtender is null ) return;
     if ( Globals.SpellCheckEnabled && !Font.Name.StartsWith("Hebrew", StringComparison.OrdinalIgnoreCase) )
     {
