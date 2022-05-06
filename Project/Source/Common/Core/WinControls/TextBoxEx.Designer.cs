@@ -32,6 +32,7 @@
       // 
       // TextBoxEx
       // 
+      this.FontChanged += new System.EventHandler(this.TextBoxEx_FontChanged);
       this.ResumeLayout(false);
 
     }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 partial class TextBoxEx
@@ -29,6 +29,7 @@ partial class TextBoxEx
   static public readonly ToolStripSeparator Separator2 = new();
   static public readonly ToolStripMenuItem ActionSelectAll = new();
   static public readonly ToolStripMenuItem ActionDelete = new();
+  static private NHunspellExtender.NHunspellTextBoxExtender NHunspellTextBoxExtender;
 
   static void InitializeContextMenu()
   {
@@ -88,6 +89,18 @@ partial class TextBoxEx
     resources.ApplyResources(ActionPaste, "ActionPaste");
     resources.ApplyResources(ActionSelectAll, "ActionSelectAll");
     resources.ApplyResources(ActionDelete, "ActionDelete");
+    if ( !Globals.IsVisualStudioDesigner )
+    {
+      if ( NHunspellTextBoxExtender is not null )
+      {
+        ContextMenuEdit.Opening -= NHunspellTextBoxExtender.ContextMenu_Opening;
+        ContextMenuEdit.Closed -= NHunspellTextBoxExtender.ContextMenu_Closed;
+        NHunspellTextBoxExtender.controlEnabled.Clear();
+      }
+      NHunspellTextBoxExtender = new();
+      ContextMenuEdit.Opening += NHunspellTextBoxExtender.ContextMenu_Opening;
+      ContextMenuEdit.Closed += NHunspellTextBoxExtender.ContextMenu_Closed;
+    }
   }
 
   static private void ContextMenuEdit_Opened(object sender, EventArgs e)
