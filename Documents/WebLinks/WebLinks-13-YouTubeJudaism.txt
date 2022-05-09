@@ -25,9 +25,6 @@ URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 Name = (FR) Espace Torah
 URL = https://www.youtube.com/channel/UCS3TXWo_jE-_hzG5tCzfTkA
 
-Name = (FR) Hidabroot
-URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
-
 Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 
@@ -42,6 +39,14 @@ URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+-
+
+Name = (FR) Hidabroot
+URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
+
+Name = (EN) Hidabrut
+URL = https://www.youtube.com/c/Hidabrutcom
 
 -
 

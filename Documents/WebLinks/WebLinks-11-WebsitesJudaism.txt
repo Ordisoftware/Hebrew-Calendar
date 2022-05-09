@@ -30,9 +30,6 @@ URL = https://www.dvartorah.org
 Name = (FR) Espace Torah
 URL = http://www.espacetorah.com
 
-Name = (FR) Hidabroot
-URL = https://www.hidabroot.fr
-
 Name = (FR) Israël Torah
 URL = https://www.israeltorah.com
 
@@ -99,6 +96,14 @@ URL = https://www.aish.com
 
 Name = (IW) Aish
 URL = https://www.aish.co.il
+
+-
+
+Name = (FR) Hidabroot (Rav Zamir Cohen)
+URL = https://www.hidabroot.fr
+
+Name = (EN) Hidabrut (Rabbi Zamir Cohen)
+URL = https://www.hidabroot.com
 
 -
 
