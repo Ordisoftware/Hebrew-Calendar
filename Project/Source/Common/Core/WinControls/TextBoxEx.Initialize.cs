@@ -18,7 +18,12 @@ partial class TextBoxEx
 {
 
   static private Container _Container;
-  static private ContextMenuStrip ContextMenuEdit;
+
+  static public ContextMenuStrip ContextMenuEdit;
+
+  static public event EventHandler InstanceCreated;
+  static public event EventHandler UpdateSpellChecker;
+  static public event Action Relocalized;
 
   static public readonly ToolStripMenuItem ActionUndo = new();
   static public readonly ToolStripMenuItem ActionRedo = new();
@@ -29,7 +34,11 @@ partial class TextBoxEx
   static public readonly ToolStripSeparator Separator2 = new();
   static public readonly ToolStripMenuItem ActionSelectAll = new();
   static public readonly ToolStripMenuItem ActionDelete = new();
-  static private NHunspellExtender.NHunspellTextBoxExtender NHunspellTextBoxExtender;
+
+  static TextBoxEx()
+  {
+    InitializeContextMenu();
+  }
 
   static void InitializeContextMenu()
   {
@@ -89,18 +98,7 @@ partial class TextBoxEx
     resources.ApplyResources(ActionPaste, "ActionPaste");
     resources.ApplyResources(ActionSelectAll, "ActionSelectAll");
     resources.ApplyResources(ActionDelete, "ActionDelete");
-    if ( !Globals.IsVisualStudioDesigner )
-    {
-      if ( NHunspellTextBoxExtender is not null )
-      {
-        ContextMenuEdit.Opening -= NHunspellTextBoxExtender.ContextMenu_Opening;
-        ContextMenuEdit.Closed -= NHunspellTextBoxExtender.ContextMenu_Closed;
-        NHunspellTextBoxExtender.controlEnabled.Clear();
-      }
-      NHunspellTextBoxExtender = new();
-      ContextMenuEdit.Opening += NHunspellTextBoxExtender.ContextMenu_Opening;
-      ContextMenuEdit.Closed += NHunspellTextBoxExtender.ContextMenu_Closed;
-    }
+    Relocalized?.Invoke();
   }
 
   static private void ContextMenuEdit_Opened(object sender, EventArgs e)
@@ -120,8 +118,7 @@ partial class TextBoxEx
     ActionCopy.Enabled = b1 && b3;
     ActionCut.Enabled = b2 && b3;
     ActionPaste.Enabled = b2 && !Clipboard.GetText().IsNullOrEmpty();
-    ActionSelectAll.Enabled = b1 && !textbox.Text.IsNullOrEmpty()
-                                 && textbox.SelectionLength != textbox.TextLength;
+    ActionSelectAll.Enabled = b1 && !textbox.Text.IsNullOrEmpty() && textbox.SelectionLength != textbox.TextLength;
     ActionDelete.Enabled = ActionCut.Enabled;
   }
 

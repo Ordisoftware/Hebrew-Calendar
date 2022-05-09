@@ -141,51 +141,25 @@ public partial class TextBoxEx : TextBox
     {
       if ( value == _SpellCheckAllowed ) return;
       _SpellCheckAllowed = value;
-      UpdateSpellChecker();
+      UpdateSpellChecker?.Invoke(this, EventArgs.Empty);
     }
   }
-  private bool _SpellCheckAllowed = true;
+  private bool _SpellCheckAllowed;
 
   public TextBoxEx()
   {
     InitializeComponent();
-    if ( ContextMenuEdit is null )
-      InitializeContextMenu();
     ContextMenuStrip = ContextMenuEdit;
     TextChanged += TextChangedEvent;
     KeyPress += KeyPressEvent;
     KeyDown += KeyDownEvent;
+    ReadOnlyChanged += UpdateSpellChecker;
+    InstanceCreated?.Invoke(this, EventArgs.Empty);
   }
 
   public void UpdateMenuItems()
   {
     UpdateMenuItems(this);
-  }
-
-  private void TextBoxEx_FontChanged(object sender, EventArgs e)
-  {
-    UpdateSpellChecker();
-  }
-
-  private void TextBoxEx_ReadOnlyChanged(object sender, EventArgs e)
-  {
-    UpdateSpellChecker();
-  }
-
-  private void UpdateSpellChecker()
-  {
-    if ( !Globals.IsReady ) return;
-    if ( ReadOnly || !SpellCheckAllowed )
-    {
-      NHunspellTextBoxExtender.SetSpellCheckEnabled(this, false);
-      return;
-    }
-    if ( NHunspellTextBoxExtender is null ) return;
-    if ( Globals.SpellCheckEnabled && !Font.Name.StartsWith("Hebrew", StringComparison.OrdinalIgnoreCase) )
-    {
-      NHunspellTextBoxExtender.SetSpellCheckEnabled(this, true);
-      Disposed += (_, _) => NHunspellTextBoxExtender.SetSpellCheckEnabled(this, false);
-    }
   }
 
   [SuppressMessage("CodeQuality", "IDE0051:Supprimer les membres privés non utilisés", Justification = "To be implemented")]
