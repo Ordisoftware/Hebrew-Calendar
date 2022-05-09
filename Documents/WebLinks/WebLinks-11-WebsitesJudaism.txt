@@ -99,11 +99,14 @@ URL = https://www.aish.co.il
 
 -
 
-Name = (FR) Hidabroot (Rav Zamir Cohen)
+Name = (FR) Hidabroot
 URL = https://www.hidabroot.fr
 
-Name = (EN) Hidabrut (Rabbi Zamir Cohen)
+Name = (EN) Hidabrut
 URL = https://www.hidabroot.com
+
+Name = (IW) Hidabrut
+URL = https://www.hidabroot.org
 
 -
 

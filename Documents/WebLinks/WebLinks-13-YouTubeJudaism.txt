@@ -42,22 +42,6 @@ URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
 -
 
-Name = (FR) Hidabroot
-URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
-
-Name = (EN) Hidabrut
-URL = https://www.youtube.com/c/Hidabrutcom
-
--
-
-Name = (FR) Jewish Educational Media Loubavitch
-URL = https://www.youtube.com/channel/UCqxhJ0eBEcK-OVydaAxo6aw
-
-Name = (EN) Jewish Educational Media Loubavitch
-URL = https://www.youtube.com/channel/UCHSnlLKaXqJADnyFpcgUxVA
-
--
-
 Name = (FR) Aish
 URL = https://www.youtube.com/user/AishFr
 
@@ -69,6 +53,17 @@ URL = https://www.youtube.com/user/AishIvrit
 
 -
 
+Name = (FR) Hidabroot
+URL = https://www.youtube.com/channel/UCJtbh90uFEE6mrPtxi8SMLg
+
+Name = (EN) Hidabrut
+URL = https://www.youtube.com/c/Hidabrutcom
+
+Name = (IW) Hidabrut
+URL = https://www.youtube.com/c/hidabrooTeem
+
+-
+
 Name = (EN) My Jewish Learning 
 URL = https://www.youtube.com/user/myjewishlearning
 
@@ -77,3 +72,11 @@ URL = https://www.youtube.com/user/torahanytime1
 
 Name = (EN) Torah Jews
 URL = https://www.youtube.com/torahjews
+
+-
+
+Name = (FR) Jewish Educational Media Loubavitch
+URL = https://www.youtube.com/channel/UCqxhJ0eBEcK-OVydaAxo6aw
+
+Name = (EN) Jewish Educational Media Loubavitch
+URL = https://www.youtube.com/channel/UCHSnlLKaXqJADnyFpcgUxVA
