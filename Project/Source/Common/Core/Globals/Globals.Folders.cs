@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 using static System.Environment;
@@ -106,6 +106,12 @@ static partial class Globals
   /// </summary>
   static public string HelpFolderPath
     => Path.Combine(RootFolderPath, "Help");
+
+  /// <summary>
+  /// Indicates the application dictionaries folder path.
+  /// </summary>
+  static public string DictionariesFolderPath
+    => Path.Combine(DocumentsFolderPath, "Dictionaries");
 
   /// <summary>
   /// Indicates the application documents folder path.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 using Meziantou.Framework.Win32;
@@ -260,6 +260,11 @@ static partial class Globals
   /// Indicates brint to front application system hot key.
   /// </summary>
   static public readonly SystemHotKey BringToFrontApplicationHotKey = new();
+
+  /// <summary>
+  /// Indicates if spell check is enabled.
+  /// </summary>
+  static public bool SpellCheckEnabled;
 
   /// <summary>
   /// Static constructor.

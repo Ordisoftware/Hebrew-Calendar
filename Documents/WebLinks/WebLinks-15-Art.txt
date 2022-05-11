@@ -34,8 +34,20 @@ URL = http://he.israel-music.com/
 
 -
 
-Name = (NONE) Nature Sounds YouTube Playlist
+Name = (NONE) Nature Houses YouTube Playlist
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AISBJs2Va8sGjDnQp1HvSC
+
+Name = (NONE) Nature Forests YouTube Playlist
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CISXi_m6DGFEhPFbSz45JF
+
+Name = (NONE) Nature Walks YouTube Playlist
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CvbCb7AXu1F4O8TBFFqSPx
+
+Name = (NONE) Nature Oceans YouTube Playlist
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DE7ZNQl10BOYROc9EDDYNI
+
+Name = (NONE) Nature Snow YouTube Playlist
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BI8NOeLQ6E1NwCFEJgCIec
 
 Name = (NONE) Nature Music YouTube Playlist
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Ch3woxzwZJLLNOW8PITKpF

@@ -125,9 +125,9 @@ static class HebrewTools
         if ( item.Length > 0 )
         {
           string url = link.Replace("%CUSTOM%", HebrewGlobals.GetCustomWebSearchPattern?.Invoke() ?? string.Empty)
-                           .Replace("%WORD%", item)
-                           .Replace("%FIRSTLETTER%", item[0].ToString());
-          SystemManager.RunShell(url, item);
+                           .Replace("%FIRSTLETTER%", item[0].ToString())
+                           .Replace("%WORD%", item);
+          SystemManager.RunShell(url);
           Thread.Sleep(250);
         }
     });

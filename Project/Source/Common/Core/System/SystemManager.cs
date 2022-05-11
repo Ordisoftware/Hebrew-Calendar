@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 using System.Configuration;
@@ -92,13 +92,24 @@ static partial class SystemManager
     }
   }
 
+
+  /// <summary>
+  /// Finalize the application before exit.
+  /// </summary>
+  static private void Finalize()
+  {
+    TryCatch(() => DebugManager.Stop());
+    TryCatch(PensPool.Clear);
+    TryCatch(SolidBrushesPool.Clear);
+  }
+
   /// <summary>
   /// Exits the application process.
   /// </summary>
   static public void Exit()
   {
     Globals.IsExiting = true;
-    TryCatch(() => DebugManager.Stop());
+    Finalize();
     Application.Exit();
   }
 
@@ -108,7 +119,7 @@ static partial class SystemManager
   static public void Terminate()
   {
     Globals.IsExiting = true;
-    TryCatch(() => DebugManager.Stop());
+    Finalize();
     Environment.Exit(-1);
   }
 

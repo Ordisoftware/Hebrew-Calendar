@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
@@ -134,15 +134,27 @@ public partial class TextBoxEx : TextBox
     }
   }
 
+  public bool SpellCheckAllowed
+  {
+    get => _SpellCheckAllowed;
+    set
+    {
+      if ( value == _SpellCheckAllowed ) return;
+      _SpellCheckAllowed = value;
+      UpdateSpellChecker?.Invoke(this, EventArgs.Empty);
+    }
+  }
+  private bool _SpellCheckAllowed;
+
   public TextBoxEx()
   {
     InitializeComponent();
-    if ( ContextMenuEdit is null )
-      InitializeContextMenu();
     ContextMenuStrip = ContextMenuEdit;
     TextChanged += TextChangedEvent;
     KeyPress += KeyPressEvent;
     KeyDown += KeyDownEvent;
+    ReadOnlyChanged += UpdateSpellChecker;
+    InstanceCreated?.Invoke(this, EventArgs.Empty);
   }
 
   public void UpdateMenuItems()
