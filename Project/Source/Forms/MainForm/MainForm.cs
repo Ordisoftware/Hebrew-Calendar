@@ -573,6 +573,26 @@ partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowGrammarGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    HTMLBrowserForm.Run(Program.GrammarGuideForm);
+  }
+
+  /// <summary>
   /// Event handler. Called by ActionViewParashahInfos for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
