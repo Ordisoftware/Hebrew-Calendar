@@ -48,22 +48,22 @@ public enum TorahCelebrationDay
   PessahD7,
 
   /// <summary>
-  /// Shavou'ot diet start.
+  /// Shavouh'ot diet start.
   /// </summary>
   ChavouotDiet,
 
   /// <summary>
-  /// Shavou'ot first celebration.
+  /// Shavouh'ot first celebration.
   /// </summary>
   Chavouot1,
 
   /// <summary>
-  /// Shavou'ot second celebration.
+  /// Shavouh'ot second celebration.
   /// </summary>
   Chavouot2,
 
   /// <summary>
-  /// Yom Terou'ah.
+  /// Yom Terouh'ah.
   /// </summary>
   YomTerouah,
 
@@ -99,7 +99,12 @@ public enum TorahCelebrationDay
   /// </summary>
   Pourim,
 
-  // Non database values (always at the end)
+  /// <summary>
+  /// Lag Bah'omer day.
+  /// </summary>
+  LagBahomer,
+
+  // Non database values, the value doesn't matter, always at the end.
 
   /// <summary>
   /// Shabat day.
