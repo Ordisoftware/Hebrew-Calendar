@@ -29,6 +29,20 @@ URL = https://en.wikipedia.org/wiki/Hebrew_language
 Name = (FR) Hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/H%C3%A9breu
 
+Name = (EN) Biblical Hebrew @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Biblical_Hebrew
+
+Name = (FR) Hébreu biblique @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/H%C3%A9breu_biblique
+
+Name = (EN) Modern Hebrew phonology @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Modern_Hebrew_phonology
+
+Name = (FR) Prononciation de l'hébreu @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Prononciation_de_l%27h%C3%A9breu
+
+-
+
 Name = (EN) Gematria @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Gematria
 
