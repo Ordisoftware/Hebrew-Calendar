@@ -139,13 +139,13 @@ static partial class HebrewTranslations
     },
     [TorahCelebration.Chavouot] = new TranslationsDictionary
     {
-      [Language.EN] = "Shavu'ot",
-      [Language.FR] = "Shavou'ot"
+      [Language.EN] = "Shavuh'ot",
+      [Language.FR] = "Shavouh'ot"
     },
     [TorahCelebration.YomTerouah] = new TranslationsDictionary
     {
-      [Language.EN] = "Yom Teru'ah",
-      [Language.FR] = "Yom Terou'ah"
+      [Language.EN] = "Yom Teruh'ah",
+      [Language.FR] = "Yom Terouh'ah"
     },
     [TorahCelebration.YomHaKipourim] = new TranslationsDictionary
     {

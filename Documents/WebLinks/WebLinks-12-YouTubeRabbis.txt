@@ -45,6 +45,20 @@ URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 Name = (FR) Rav Nathan Mrejen
 URL = https://www.youtube.com/channel/UCx3wvPI8c-AHsRMjorGIWSw
 
+Name = (FR) Rav Raphaël Pinto fils du Rav David Pinto
+URL = https://www.youtube.com/channel/UCV_bHFntJqDOAY4GXbNDTiQ
+
+-
+
+Name = (FR) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/user/HEVRATPINTO
+
+Name = (EN) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/channel/UC2dAMNXEjoaU8HrP2CGaFMQ
+
+Name = (IW) Hevrat Pinto (Rav David Pinto)
+URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
+
 -
 
 Name = (FR) Alef Ledoroth (Rav Yakov Sitruk)
@@ -61,17 +75,6 @@ URL = https://www.youtube.com/channel/UCKU1dFq807Wjnp75ItK0lDg
 
 Name = (EN) The Yeshiva (Rabbi Yosef Yitzchak Jacobson)
 URL = https://www.youtube.com/user/TheYeshivaNet
-
--
-
-Name = (FR) Hevrat Pinto (Rav David Pinto)
-URL = https://www.youtube.com/user/HEVRATPINTO
-
-Name = (EN) Hevrat Pinto (Rav David Pinto)
-URL = https://www.youtube.com/channel/UC2dAMNXEjoaU8HrP2CGaFMQ
-
-Name = (IW) Hevrat Pinto (Rav David Pinto)
-URL = https://www.youtube.com/channel/UCF3zPVhQgqqwktX11Nt-27A
 
 -
 

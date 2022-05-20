@@ -29,6 +29,12 @@ URL = https://en.wikipedia.org/wiki/Hebrew_language
 Name = (FR) Hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/H%C3%A9breu
 
+Name = (EN) Gematria @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Gematria
+
+Name = (FR) Gematria @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Gematria
+
 -
 
 Name = (EN) Hebrew Verb Tables @ pealim.com

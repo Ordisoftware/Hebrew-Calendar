@@ -653,4 +653,10 @@
   <data name="ContextMenuOpenWithHebrewWords.Text" xml:space="preserve">
     <value>Ouvrir avec Hebrew Words</value>
   </data>
+  <data name="ActionShowTranscriptionGuide.Text" xml:space="preserve">
+    <value>Guide de transcription</value>
+  </data>
+  <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
+    <value>Guide de grammaire</value>
+  </data>
 </root>
