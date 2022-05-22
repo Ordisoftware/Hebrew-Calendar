@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
 using SQLite;
@@ -30,9 +30,38 @@ public partial class Parashah
 
   public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
 
-  public string Name { get; set; }
-  public string Unicode { get; set; }
-  public string Hebrew { get; set; }
+  public string Name // Obsolete: Value comes from factory.
+  {
+    get => ParashotFactory.Instance.Get(ID)._Name;
+    set
+    {
+      if ( _Name == value ) return;
+      _Name = value;
+    }
+  }
+  private string _Name = string.Empty;
+
+  public string Unicode // Obsolete: Value comes from factory.
+  {
+    get => ParashotFactory.Instance.Get(ID)._Unicode;
+    set
+    {
+      if ( _Unicode == value ) return;
+      _Unicode = value;
+    }
+  }
+  private string _Unicode = string.Empty;
+
+  public string Hebrew // Obsolete: Value comes from factory.
+  {
+    get => ParashotFactory.Instance.Get(ID)._Hebrew;
+    set
+    {
+      if ( _Hebrew == value ) return;
+      _Hebrew = value;
+    }
+  }
+  private string _Hebrew = string.Empty;
 
   public string Translation { get; set; }
   public string Lettriq { get; set; }

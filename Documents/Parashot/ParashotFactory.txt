@@ -16,10 +16,10 @@ Shemot : 2 - וארא - Vaera - 6.2 - 9.35 - False
 Shemot : 3 - בא - Bo - 10.1 - 13.16 - False
 Shemot : 4 - בשלח - Beshala'h - 13.17 - 17.16 - False
 Shemot : 5 - יתרו - Yitro - 18.1 - 20.23 - False
-Shemot : 6 - משפטים - Mishpatim - 21.1 - 24.18 - False
+Shemot : 6 - משפטים - Mishpat'im - 21.1 - 24.18 - False
 Shemot : 7 - תרומה - Teroumah - 25.1 - 27.19 - False
 Shemot : 8 - תצוה - Tetsaveh - 27.20 - 30.10 - False
-Shemot : 9 - כי תשא - Ki Tissa - 30.11 - 34.35 - False
+Shemot : 9 - כי תשא - Ki Tisha - 30.11 - 34.35 - False
 Shemot : 10 - ויקהל - Vayaqhel - 35.1 - 38.20 - True
 Shemot : 11 - פקודי - Peqoudei - 38.21 - 40.38 - False
 
@@ -35,24 +35,24 @@ Vayiqra : 9 - בהר - Behar - 25.1 - 26.2 - True
 Vayiqra : 10 - בחוקותי - Be'houqotaï - 26.3 - 27.34 - False
 
 Bamidbar : 1 - במדבר - Bamidbar - 1.1 - 4.20 - False
-Bamidbar : 2 - נשא - Nasso - 4.21 - 7.89 - False
+Bamidbar : 2 - נשא - Nasho - 4.21 - 7.89 - False
 Bamidbar : 3 - בהעלותך - Behah'alotka - 8.1 - 12.16 - False
 Bamidbar : 4 - שלח לך - Shela'h leka - 13.1 - 15.41 - False
-Bamidbar : 5 - קרח - Kora'h - 16.1 - 18.32 - False
-Bamidbar : 6 - חקת - 'Houkat - 19.1 - 22.1 - True
+Bamidbar : 5 - קרח - Qora'h - 16.1 - 18.32 - False
+Bamidbar : 6 - חקת - 'Houqat - 19.1 - 22.1 - True
 Bamidbar : 7 - בלק - Balaq - 22.2 - 25.9 - False
 Bamidbar : 8 - פנחס - Pin'has - 25.10 - 30.1 - False
-Bamidbar : 9 - מטות - Matot - 30.2 - 32.42 - True
+Bamidbar : 9 - מטות - Mat'ot - 30.2 - 32.42 - True
 Bamidbar : 10 - מסעי - Maceh'i - 33.1 - 36.13 - False
 
 Devarim : 1 - דברים - Devarim - 1.1 - 3.22 - False
 Devarim : 2 - ואתחנן - Vaet'hanan - 3.23 - 7.11 - False
-Devarim : 3 - עקב - Eikev - 7.12 - 11.25 - False
+Devarim : 3 - עקב - Eiqev - 7.12 - 11.25 - False
 Devarim : 4 - ראה - Reeh - 11.26 - 16.17 - False
-Devarim : 5 - שופטים - Shoftim - 16.18 - 21.9 - False
+Devarim : 5 - שופטים - Shoft'im - 16.18 - 21.9 - False
 Devarim : 6 - כי תצא - Ki Tetse - 21.10 - 25.19 - False
 Devarim : 7 - כי תבוא - Ki Tavo - 26.1 - 29.8 - False
 Devarim : 8 - ניצבים - Nitsavim - 29.9 - 30.20 - True
-Devarim : 9 - וילך - Vayelekh - 31.1 - 31.30 - False
+Devarim : 9 - וילך - Vayeleq - 31.1 - 31.30 - False
 Devarim : 10 - האזינו - Haazinou - 32.1 - 32.52 - False
 Devarim : 11 - וזאת הברכה - Vezot HaBerakah - 33.1 - 34.12 - False

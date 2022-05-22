@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -24,14 +24,14 @@ static partial class HebrewTranslations
   {
     [Language.EN] = new string[]
     {
-      "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "Tet", "Yod", "Kaf",
-      "Lamed", "Mem", "Nun", "Samek", "'Ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
+      "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "T'et", "Yod", "Kaf",
+      "Lamed", "Mem", "Nun", "Samek", "H'ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
     },
 
     [Language.FR] = new string[]
     {
-      "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "Tet", "Youd", "Kaf",
-      "Lamed", "Mem", "Noun", "Samek", "'Ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
+      "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "T'et", "Youd", "Kaf",
+      "Lamed", "Mem", "Noun", "Samek", "H'ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
     }
   };
 
