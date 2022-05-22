@@ -148,7 +148,7 @@ partial class DatesDiffCalculatorForm : Form
           var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
             return;
-          menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
+          menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {SysTranslations.EmptySlot.GetLang()}";
           Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
           SystemManager.TryCatch(Settings.Save);
         }
@@ -187,7 +187,7 @@ partial class DatesDiffCalculatorForm : Form
         string msg = SysTranslations.AskToReplaceBookmark.GetLang(date1, date2);
         if ( !DisplayManager.QueryYesNo(msg) ) return;
       }
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { dateNew.ToLongDateString()}";
+      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
       Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
       SystemManager.TryCatch(Settings.Save);
     }
