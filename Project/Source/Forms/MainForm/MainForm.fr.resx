@@ -362,25 +362,25 @@
     <value>300, 22</value>
   </data>
   <data name="ActionParashotBoard.Text" xml:space="preserve">
-    <value>Tableau des Parashot</value>
+    <value>Tableau des parashot</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
   <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
-    <value>Tableau des célébrations</value>
+    <value>Tableau des dates des célébrations</value>
   </data>
   <data name="ActionViewNewMoonsBoard.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
   <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
-    <value>Tableau des nouvelles lunes</value>
+    <value>Tableau des dates des nouvelles lunes</value>
   </data>
   <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
   <data name="ActionViewLunarMonths.Text" xml:space="preserve">
-    <value>Tableau des mois lunaires</value>
+    <value>Tableau des noms des mois lunaires</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 6</value>

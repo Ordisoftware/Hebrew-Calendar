@@ -384,10 +384,10 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add parashah name in the title bar of description box.
 - Add menu for transcription guide in Tools and others windows
 - Add menu for grammar guide in Tools.
-- Fix multiple parashah description boxes at the same time which only displays the first one opened until it is closed.
+- Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
-- Fix issues with intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
-- Improve some parashot transcriptions following a change to better distinguish between Het, Tet and Ayin, and to have a consistent table.
+- Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
+- Improve some parashot transcriptions following a change to better distinguish between 'Het, T'et and H'ayin.
 - Improve shortcut for boards.
 - Some UI/UX improvements.
 - Update web links.

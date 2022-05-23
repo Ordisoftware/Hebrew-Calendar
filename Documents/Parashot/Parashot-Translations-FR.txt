@@ -17,10 +17,10 @@ Vaera = J'aurais pris soin [de l'étude]
 Bo = Il a accomplit
 Beshala'h = Parce qu'Il a dirigé
 Yitro = Il sauvera [des méchants]
-Mishpatim = Jugements
+Mishpat'im = Jugements
 Teroumah = Contribution
 Tetsaveh = Elle commandera
-Ki Tissa = Puisqu'elle portera
+Ki Tisha = Puisqu'elle portera
 Vayaqhel = Il aura assemblé
 Peqoudei = Ils ont attribué pour moi
 // BOOK VAYIQRA
@@ -36,24 +36,24 @@ Behar = Il a clarifié {[via Torah] pays de terre blanche (Sinaï, en sanskrit: 
 Be'houqotaï = J'écrirais selon Lui
 // BOOK BAMIDBAR
 Bamidbar = Malgré solitude
-Nasso = Il a soutenu
+Nasho = Il a soutenu
 Behah'alotka = Lorsque tu as fait jaillir [lumière = flux lumineux = photons = grains-nuées] à toi {avec les sept lampes (grands plexus-chakras)}
 Shela'h leka = Libère [des victimes esclaves] selon toi {ta compréhension de la Doctrine et tes capacités}
-Kora'h = Celui qui est froid (sans coeur {sans amour pour autrui et la loi visant à protéger la vie et les biens des gens})
-'Houkat = Législation
+Qora'h = Celui qui est froid (sans coeur {sans amour pour autrui et la loi visant à protéger la vie et les biens des gens})
+'Houqat = Législation
 Balaq = Celui qui dépouille [les victimes, de leur santé et de leurs biens]
 Pin'has = Celui qui parle de l'avenir par conjectures
-Matot = Groupes dirigeants (tribus, branches, factions, partis, influenceurs)
+Mat'ot = Groupes dirigeants (tribus, branches, factions, partis, influenceurs)
 Maceh'i = Évolution (trajets, cheminements, étapes, degrés)
 // BOOK DEVARIM
 Devarim = Mots (déclarations, consignes, recommandations, promesses)
 Vaet'hanan = J'aurais imploré
-Eikev = Compensation (rétribution, résultat)
+Eiqev = Compensation (rétribution, résultat)
 Reeh = Choisit ! {entre la bénédiction et la prospérité de la Torah des compatissants qui font le bien, aident, soignent, jugent et font vivre, ou la malédiction et la haine des méchants hors-la-loi qui font le mal, abandonnent, blessent, volent et tuent}
-Shoftim = Juges (gouverneurs, décideurs)
+Shoft'im = Juges (gouverneurs, décideurs)
 Ki Tetse = Parce que tu produiras [{les oeuvres prescrites et le témoignage de l'affliction} pour combat contre ennemis à Moi (HaShem) et à toi {qui agressent par haine du bien, de la bonté, de la justice et de la compassion} afin de Me les livrer pour que justice soit rendu et que réparation soit faite, par HaShem dans les Cieux et sur Terre par les Juges du Tribunal, et non par vengeance personnelle]
 Ki Tavo = Lorsque tu entreras [dans le pays donné par HaShem en héritage {ton corps fabriqué par ton ADN, et que tu auras chassé les ennemis illégitimes et criminels qui le possédaient à ta place car étant né en Mitsraïm}]
 Nitsavim = Vous prenez position [pour la Doctrine de la Torah de HaShem de Elohim] {vous agissez selon les plus hautes lois du bien, de la bonté, de la justice et la compassion visant à protéger la vie et les possessions des gens sans nuire même aux criminels et aux fous}
-Vayelekh = Il (Moshéh) aura guidé [le peuple d'Israël via la Torah {en tout temps et à chaque génération}]
+Vayeleq = Il (Moshéh) aura guidé [le peuple d'Israël via la Torah {en tout temps et à chaque génération}]
 Haazinou = Ils ont été compensés par moi (Moshéh) {les Cieux [affligés]}
 Vezot HaBerakah = Parce que celle-ci (la Torah) [est] la bénédiction (prospérité, survie)
