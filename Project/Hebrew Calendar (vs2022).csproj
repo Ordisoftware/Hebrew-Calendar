@@ -153,7 +153,7 @@
     <Compile Include="Source\Common\Core\Data\DataTableHelper.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDatabase.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDate.cs" />
-    <Compile Include="Source\Common\Core\Data\SQLiteNetHelper.cs" />
+    <Compile Include="Source\Common\Core\Data\SQLiteNetORM.cs" />
     <Compile Include="Source\Common\Core\Debug\DebugManager.cs" />
     <Compile Include="Source\Common\Core\Debug\DebugManager.Delegates.cs" />
     <Compile Include="Source\Common\Core\Debug\DebugManager.Trace.cs" />

@@ -134,6 +134,7 @@ public partial class TextBoxEx : TextBox
     }
   }
 
+  [SuppressMessage("Usage", "MA0092:Sender should be 'null' for static events", Justification = "N/A")]
   public bool SpellCheckAllowed
   {
     get => _SpellCheckAllowed;
@@ -146,6 +147,7 @@ public partial class TextBoxEx : TextBox
   }
   private bool _SpellCheckAllowed;
 
+  [SuppressMessage("Usage", "MA0092:Sender should be 'null' for static events", Justification = "N/A")]
   public TextBoxEx()
   {
     InitializeComponent();

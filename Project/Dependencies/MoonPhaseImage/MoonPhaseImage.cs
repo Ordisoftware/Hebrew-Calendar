@@ -15,14 +15,16 @@ namespace MostafaKaisoun
 
     static MoonPhaseImage()
     {
-      PictureBox PicMoon = new();
-      PicMoon.BackColor = Color.Navy;
-      PicMoon.ImeMode = ImeMode.NoControl;
-      PicMoon.Location = new(16, 8);
-      PicMoon.Name = "PicMoon";
-      PicMoon.Size = new(155, 155);
-      PicMoon.TabIndex = 13;
-      PicMoon.TabStop = false;
+      //PictureBox PicMoon = new()
+      //{
+      //  BackColor = Color.Navy,
+      //  ImeMode = ImeMode.NoControl,
+      //  Location = new(16, 8),
+      //  Name = "PicMoon",
+      //  Size = new(155, 155),
+      //  TabIndex = 13,
+      //  TabStop = false
+      //};
     }
 
     static public Image Draw(int y, int m, int d, int width, int height)

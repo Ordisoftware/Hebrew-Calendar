@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -21,33 +21,31 @@ using SQLite;
 /// </summary>
 public class SQLiteNetORM : SQLiteConnection
 {
-  public SQLiteNetORM(SQLiteConnectionString connectionString) : base(connectionString) { }
-  public SQLiteNetORM(string databasePath, bool storeDateTimeAsTicks = true) : base(databasePath, storeDateTimeAsTicks) { }
-  public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true) : base(databasePath, openFlags, storeDateTimeAsTicks) { }
-}
-
-/// <summary>
-/// Provides SQLite-Net helper.
-/// </summary>
-static class SQLiteNetHelper
-{
-
-  static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
   /// <summary>
   /// Indicates the database engine name and version.
   /// </summary>
   static public string EngineNameAndVersion { get; private set; }
+    = SysTranslations.NonthingSlot.GetLang().TrimFirstLast().Titleize();
 
   /// <summary>
   /// Indicates the provider name.
   /// </summary>
   static public string ProviderName { get; private set; }
+    = SysTranslations.NonthingSlot.GetLang().TrimFirstLast().Titleize();
+
+  static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
+
+  public SQLiteNetORM(SQLiteConnectionString connectionString) : base(connectionString) { }
+
+  public SQLiteNetORM(string databasePath, bool storeDateTimeAsTicks = true) : base(databasePath, storeDateTimeAsTicks) { }
+
+  public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true) : base(databasePath, openFlags, storeDateTimeAsTicks) { }
 
   /// <summary>
   /// Gets a single line of a string.
   /// </summary>
-  static public string UnformatSQL(string sql)
+  public string UnformatSQL(string sql)
   {
     return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultiSpace();
   }
@@ -56,9 +54,9 @@ static class SQLiteNetHelper
   /// Returns true if only one instance of the process is running else false.
   /// </summary>
   /// <param name="silent">True if no message is shown else shown.</param>
-  static public bool CheckProcessConcurency(bool silent = false)
+  public bool CheckProcessConcurency(bool silent = false)
   {
-    var list = System.Diagnostics.Process.GetProcessesByName(Globals.ProcessName);
+    var list = Process.GetProcessesByName(Globals.ProcessName);
     bool valid = list.Length == 1;
     if ( !valid && !silent )
       DisplayManager.ShowWarning(SysTranslations.DatabaseNoProcessConcurrency.GetLang());
@@ -68,12 +66,11 @@ static class SQLiteNetHelper
   /// <summary>
   /// Gets the version of the engine.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  static public void InitializeVersion(this SQLiteNetORM connection)
+  public void InitializeVersion()
   {
-    ProviderName = connection?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();
-    int vernum = connection?.LibVersionNumber ?? -1;
+    ProviderName = this?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();
+    int vernum = this?.LibVersionNumber ?? -1;
     if ( vernum == -1 )
       EngineNameAndVersion = SysTranslations.UnknownSlot.GetLang();
     else
@@ -89,37 +86,34 @@ static class SQLiteNetHelper
   /// <summary>
   /// Creates a SQL command.
   /// </summary>
-  /// <param name="connection">The connection.</param>
-  static public SQLiteCommand CreateCommand(this SQLiteNetORM connection)
+  public SQLiteCommand CreateCommand()
   {
-    return new SQLiteCommand(connection);
+    return new SQLiteCommand(this);
   }
 
   /// <summary>
   /// Creates a SQL command.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="sql">The query.</param>
-  static public SQLiteCommand CreateCommand(this SQLiteNetORM connection, string sql)
+  public SQLiteCommand CreateCommand(string sql)
   {
-    return new SQLiteCommand(connection) { CommandText = sql };
+    return new SQLiteCommand(this) { CommandText = sql };
   }
 
   /// <summary>
   /// Optimizes the database.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="lastdone">The last done date.</param>
   /// <param name="interval">Days interval to check.</param>
   /// <param name="force">True to force check.</param>
   /// <returns>The new date if done else lastdone.</returns>
-  static public DateTime Optimize(this SQLiteNetORM connection, DateTime lastdone, int interval = -1, bool force = false)
+  public DateTime Optimize(DateTime lastdone, int interval = -1, bool force = false)
   {
     if ( interval == -1 ) interval = DefaultOptimizeDaysInterval;
     if ( force || lastdone.AddDays(interval) < DateTime.Now )
     {
-      connection.CheckIntegrity();
-      connection.Vacuum();
+      CheckIntegrity();
+      Vacuum();
       lastdone = DateTime.Now;
     }
     return lastdone;
@@ -128,12 +122,11 @@ static class SQLiteNetHelper
   /// <summary>
   /// Checks the database integrity.
   /// </summary>
-  /// <param name="connection">The connection.</param>
-  static public void CheckIntegrity(this SQLiteNetORM connection)
+  public void CheckIntegrity()
   {
     SystemManager.TryCatchManage(() =>
     {
-      string result = connection.ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()");
+      string result = ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()");
       if ( result != "ok" )
       {
         throw new SQLiteException(result);
@@ -144,12 +137,11 @@ static class SQLiteNetHelper
   /// <summary>
   /// Does the database Vacuum.
   /// </summary>
-  /// <param name="connection">The connection.</param>
-  static public void Vacuum(this SQLiteNetORM connection)
+  public void Vacuum()
   {
     try
     {
-      connection.Execute("VACUUM");
+      Execute("VACUUM");
     }
     catch ( Exception ex )
     {
@@ -160,12 +152,12 @@ static class SQLiteNetHelper
   /// <summary>
   /// Drops a table if exists.
   /// </summary>
-  static public void DropTableIfExists(this SQLiteNetORM connection, string table)
+  public void DropTableIfExists(string table)
   {
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     try
     {
-      connection.Execute($"DROP TABLE IF EXISTS [{table}]");
+      Execute($"DROP TABLE IF EXISTS [{table}]");
     }
     catch ( Exception ex )
     {
@@ -176,16 +168,15 @@ static class SQLiteNetHelper
   /// <summary>
   /// Renames a table if exists.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="tableOldName">Old name.</param>
   /// <param name="tableNewName">New name.</param>
-  static public void RenameTableIfExists(this SQLiteNetORM connection, string tableOldName, string tableNewName)
+  public void RenameTableIfExists(string tableOldName, string tableNewName)
   {
     if ( tableOldName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableOldName));
     if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableNewName));
     try
     {
-      connection.Execute($"ALTER TABLE [{tableOldName}] RENAME TO [{tableNewName}];");
+      Execute($"ALTER TABLE [{tableOldName}] RENAME TO [{tableNewName}];");
     }
     catch ( Exception ex )
     {
@@ -196,21 +187,20 @@ static class SQLiteNetHelper
   /// <summary>
   /// Checks if a table exists and create it if not.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
   /// <returns>True if the table exists else false even if created.</returns>
-  static public bool CheckTable(this SQLiteNetORM connection, string table, string sql = "")
+  public bool CheckTable(string table, string sql = "")
   {
     try
     {
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
       const string sqlSelect = "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
-      if ( connection.ExecuteScalar<long>(sqlSelect, table) != 0 ) return true;
+      if ( ExecuteScalar<long>(sqlSelect, table) != 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
         try
         {
-          connection.CreateCommand(sql).ExecuteNonQuery();
+          CreateCommand(sql).ExecuteNonQuery();
         }
         catch ( Exception ex )
         {
@@ -227,21 +217,20 @@ static class SQLiteNetHelper
   /// <summary>
   /// Checks if a index exists and create it if not.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="index">The index name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
   /// <returns>True if the index exists else false even if created.</returns>
-  static public bool CheckIndex(this SQLiteNetORM connection, string index, string sql = "")
+  public bool CheckIndex(string index, string sql = "")
   {
     try
     {
       if ( index.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(index));
       const string sqlCheck = "SELECT count(*) FROM sqlite_master WHERE type = 'index' AND name = ?";
-      if ( connection.ExecuteScalar<long>(sqlCheck, index) != 0 ) return true;
+      if ( ExecuteScalar<long>(sqlCheck, index) != 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
         try
         {
-          connection.Execute(sql);
+          Execute(sql);
         }
         catch ( Exception ex )
         {
@@ -261,24 +250,23 @@ static class SQLiteNetHelper
   /// <remarks>
   /// The existence of the table is not checked.
   /// </remarks>
-  /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
   /// <param name="column">The column name.</param>
   /// <param name="sql">The sql query to create the column, can be empty to only check</param>
   /// <returns>True if the column exists else false even if created.</returns>
-  static public bool CheckColumn(this SQLiteNetORM connection, string table, string column, string sql = "")
+  public bool CheckColumn(string table, string column, string sql = "")
   {
     try
     {
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
       if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
       const string sqlCheck = "SELECT COUNT(*) AS CNTREC FROM pragma_table_info(?) WHERE name = ?";
-      if ( connection.ExecuteScalar<long>(sqlCheck, table, column) > 0 ) return true;
+      if ( ExecuteScalar<long>(sqlCheck, table, column) > 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
         try
         {
           sql = sql.Replace("%TABLE%", table).Replace("%COLUMN%", column);
-          connection.Execute(sql);
+          Execute(sql);
         }
         catch ( Exception ex )
         {
@@ -298,7 +286,6 @@ static class SQLiteNetHelper
   /// <remarks>
   /// The existence of the table is not checked.
   /// </remarks>
-  /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
   /// <param name="column">The column name.</param>
   /// <param name="type">The type of the column.</param>
@@ -307,14 +294,13 @@ static class SQLiteNetHelper
   /// <param name="isPrimary">Indicate if primary key.</param>
   /// <param name="isAutoInc">INdicate if auto inc.</param>
   /// <returns>True if the column exists else false even if created.</returns>
-  static public bool CheckColumn(this SQLiteNetORM connection,
-                                 string table,
-                                 string column,
-                                 string type,
-                                 string valueDefault,
-                                 bool valueNotNull,
-                                 bool isPrimary = false,
-                                 bool isAutoInc = false)
+  public bool CheckColumn(string table,
+                          string column,
+                          string type,
+                          string valueDefault,
+                          bool valueNotNull,
+                          bool isPrimary = false,
+                          bool isAutoInc = false)
   {
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     if ( column.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(column));
@@ -324,19 +310,18 @@ static class SQLiteNetHelper
     string primary = isPrimary ? "PRIMARY KEY" : "";
     if ( isAutoInc ) primary += " AUTOINCREMENT ";
     string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {primary} {valueDefault}";
-    return connection.CheckColumn(table, column, sql);
+    return CheckColumn(table, column, sql);
   }
 
   /// <summary>
   /// Gets the number of rows in a table.
   /// </summary>
-  /// <param name="connection">The connection.</param>
   /// <param name="table">The table name.</param>
-  static public long CountRows(this SQLiteNetORM connection, string table)
+  public long CountRows(string table)
   {
     try
     {
-      return connection.ExecuteScalar<long>($"SELECT count(*) FROM [{table}]");
+      return ExecuteScalar<long>($"SELECT count(*) FROM [{table}]");
     }
     catch ( Exception ex )
     {

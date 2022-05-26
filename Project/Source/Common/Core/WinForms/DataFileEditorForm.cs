@@ -52,9 +52,9 @@ partial class DataFileEditorForm : Form
       WordWrap = false,
       ScrollBars = ScrollBars.Both,
       Dock = DockStyle.Fill,
-      Text = File.ReadAllText(file.FilePath)
+      Text = File.ReadAllText(file.FilePath),
+      Font = new Font("Consolas", 9.75f)
     };
-    textbox.Font = new Font("Consolas", 9.75f);
     tabpage.Controls.Add(textbox);
     tabcontrol.TabPages.Add(tabpage);
   }

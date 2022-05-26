@@ -138,7 +138,7 @@ partial class PreferencesForm
     // Shabat
     Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
     // Reminder boxes location
-    if ( SelectReminderBoxDesktopLocation.SelectedItem != null )
+    if ( SelectReminderBoxDesktopLocation.SelectedItem is not null )
       Settings.ReminderBoxDesktopLocation = (ControlLocation)SelectReminderBoxDesktopLocation.SelectedItem;
     Settings.ReminderCelebrationsInterval = (int)EditRemindCelebrationsDaysBefore.Value;
     // Lockout action

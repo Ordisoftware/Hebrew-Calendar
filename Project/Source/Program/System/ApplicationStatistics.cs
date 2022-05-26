@@ -96,10 +96,10 @@ class ApplicationStatistics
        : MainForm.Instance.MonthlyCalendar.TheEvents.Count.ToString();
 
   public string DBEngine
-    => SQLiteNetHelper.EngineNameAndVersion;
+    => SQLiteNetORM.EngineNameAndVersion;
 
   public string DBProvider
-    => SQLiteNetHelper.ProviderName;
+    => SQLiteNetORM.ProviderName;
 
   public string DBFileSize
   {

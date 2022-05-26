@@ -25,9 +25,9 @@ public delegate void DataLoadedEventHandler(string caption);
 abstract class SQLiteDatabase
 {
 
-  protected bool AutoLoadAllAtOpen { get; init; } = true;
+  public SQLiteNetORM Connection { get; private set; }
 
-  public string ConnectionString { get; }
+  public string ConnectionString { get; init; }
 
   public bool Initialized { get; private set; }
 
@@ -37,6 +37,12 @@ abstract class SQLiteDatabase
 
   public bool BindingsEnabled { get; set; } = true;
 
+  public bool UseTransactionByDefault { get; set; } = true;
+
+  public bool IsInTransaction => Connection.IsInTransaction;
+
+  protected bool AutoLoadAllAtOpen { get; init; } = true;
+
   protected readonly List<object> ModifiedObjects = new();
 
   public bool HasChanges => ModifiedObjects.Count > 0;
@@ -45,43 +51,21 @@ abstract class SQLiteDatabase
 
   public event Action<SQLiteDatabase> Saved;
 
-  [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
-  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-  public void AddToModified(object instance)
+  public event LoadingDataEventHandler LoadingData;
+
+  public event DataLoadedEventHandler DataLoaded;
+
+  protected virtual void OnLoadingData(string caption) => LoadingData?.Invoke(caption);
+
+  protected virtual void OnDataLoaded(string caption) => DataLoaded?.Invoke(caption);
+
+  internal void AddToModified(object instance)
   {
     if ( Loaded && !ModifiedObjects.Contains(instance) )
     {
       ModifiedObjects.Add(instance);
       Modified?.Invoke(this, instance);
     }
-  }
-
-  public SQLiteNetORM Connection
-  {
-    get => _Connection;
-    private set => _Connection = value;
-  }
-
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
-  [NonSerialized]
-  private SQLiteNetORM _Connection;
-
-  public bool IsInTransaction => Connection.IsInTransaction;
-
-  public bool UseTransactionByDefault { get; set; } = true;
-
-  public event LoadingDataEventHandler LoadingData;
-
-  public event DataLoadedEventHandler DataLoaded;
-
-  protected virtual void OnLoadingData(string caption)
-  {
-    LoadingData?.Invoke(caption);
-  }
-
-  protected virtual void OnDataLoaded(string caption)
-  {
-    DataLoaded?.Invoke(caption);
   }
 
   protected SQLiteDatabase(string connectionString)
@@ -94,7 +78,7 @@ abstract class SQLiteDatabase
 
   protected void CheckConnected()
   {
-    if ( Connection is null ) throw new SQLiteException("Not connected.");
+    if ( Connection is null ) throw new SQLiteException(SysTranslations.NotConnected.GetLang());
   }
 
   [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]

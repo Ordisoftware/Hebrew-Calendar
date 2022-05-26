@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -24,6 +24,12 @@ static partial class SysTranslations
   {
     [Language.EN] = "Error creating or updating SQLite ODBC DSN.",
     [Language.FR] = "Erreur de création ou de mise à jour du DSN ODBC SQLite."
+  };
+
+  static public readonly TranslationsDictionary NotConnected = new()
+  {
+    [Language.EN] = "Not connected.",
+    [Language.FR] = "Non connecté."
   };
 
   static public readonly TranslationsDictionary DatabaseTableClosed = new()
