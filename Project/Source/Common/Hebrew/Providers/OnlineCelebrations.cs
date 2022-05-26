@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-02 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class OnlineCelebration
@@ -150,6 +150,15 @@ static class OnlineCelebration
     { TorahCelebration.YomTerouah, "hh/rh" },
     { TorahCelebration.YomHaKipourim, "hh/yk" },
     { TorahCelebration.Soukot, "su" }
+  };
+
+  static public readonly Dictionary<TorahCelebration, string> ReformJudaism = new()
+  {
+    { TorahCelebration.Pessah, "passover" },
+    { TorahCelebration.Chavouot, "shavuot" },
+    { TorahCelebration.YomTerouah, "rosh-hashanah" },
+    { TorahCelebration.YomHaKipourim, "yom-kippur" },
+    { TorahCelebration.Soukot, "sukkot" }
   };
 
 }
