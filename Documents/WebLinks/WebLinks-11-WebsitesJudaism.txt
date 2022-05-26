@@ -16,6 +16,9 @@ Lang/FR = Sites Web sur le judaïsme
 Name = (FR) Consistoire de Paris
 URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
 
+Name = (FR/EN) Conference of European Rabbis
+URL = https://rabbiscer.org
+
 Name = (EN) Judaism 101 (Jew FAQ)
 URL = https://www.jewfaq.org
 
