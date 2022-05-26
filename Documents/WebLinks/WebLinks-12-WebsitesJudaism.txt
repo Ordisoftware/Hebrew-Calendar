@@ -13,15 +13,6 @@
 Lang/EN = Judaism websites
 Lang/FR = Sites Web sur le judaïsme
 
-Name = (FR) Consistoire de Paris
-URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
-
-Name = (FR/EN) Conference of European Rabbis
-URL = https://rabbiscer.org
-
-Name = (EN) Union for Reform Judaism     
-URL = https://urj.org
-
 Name = (EN) Judaism 101 (Jew FAQ)
 URL = https://www.jewfaq.org
 
@@ -38,9 +29,6 @@ URL = http://www.espacetorah.com
 
 Name = (FR) Israël Torah
 URL = https://www.israeltorah.com
-
-Name = (FR) Massorti France
-URL = https://www.massorti.com
 
 Name = (FR) Pureté Juive
 URL = https://www.puretejuive.com
@@ -59,6 +47,15 @@ URL = https://www.tsarfat.com
 
 -
 
+Name = (EN) My Jewish Learning
+URL = https://www.myjewishlearning.com
+
+Name = (EN) Reform Judaism
+URL = https://reformjudaism.org
+
+Name = (EN) TheTorah.com
+URL = https://www.thetorah.com
+
 Name = (EN) Torah.org
 URL = https://torah.org
 
@@ -71,14 +68,7 @@ URL = https://www.torahcafe.com
 Name = (EN) Torah Jews
 URL = https://www.truetorahjews.org
 
-
 -
-
-Name = (FR) Hassidout
-URL = http://hassidout.org
-
-Name = (FR) Loubavitch France-Europe
-URL = https://www.loubavitchfrance.fr
 
 Name = (FR) Beth Loubavitch
 URL = https://www.loubavitch.fr
@@ -113,17 +103,6 @@ URL = https://www.hidabroot.com
 
 Name = (IW) Hidabrut
 URL = https://www.hidabroot.org
-
--
-
-Name = (EN) My Jewish Learning
-URL = https://www.myjewishlearning.com
-
-Name = (EN) Reform Judaism
-URL = https://reformjudaism.org
-
-Name = (EN) The Rabbinical Assembly
-URL = https://www.rabbinicalassembly.org
 
 -
 

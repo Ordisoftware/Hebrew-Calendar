@@ -391,6 +391,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve shortcut for boards.
 - Some UI/UX improvements.
 - Update web links.
+- Update celebration study links.
 
 #### 2022.04.05 - Version 9.28
 
