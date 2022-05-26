@@ -15,6 +15,14 @@ FOLDER-SEPARATOR
 Lang/EN = Semitic languages
 Lang/FR = Langages sémitiques
 
+Name = (EN) History of the alphabet @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/History_of_the_alphabet
+
+Name = (FR) Histoire de l'alphabet @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Histoire_de_l%27alphabet
+
+-
+
 Name = (EN) Semitic languages @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Semitic_languages
 

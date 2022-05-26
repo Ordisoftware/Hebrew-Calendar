@@ -19,6 +19,9 @@ URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
 Name = (FR/EN) Conference of European Rabbis
 URL = https://rabbiscer.org
 
+Name = (EN) Union for Reform Judaism     
+URL = https://urj.org
+
 Name = (EN) Judaism 101 (Jew FAQ)
 URL = https://www.jewfaq.org
 
@@ -115,6 +118,9 @@ URL = https://www.hidabroot.org
 
 Name = (EN) My Jewish Learning
 URL = https://www.myjewishlearning.com
+
+Name = (EN) Reform Judaism
+URL = https://reformjudaism.org
 
 Name = (EN) The Rabbinical Assembly
 URL = https://www.rabbinicalassembly.org

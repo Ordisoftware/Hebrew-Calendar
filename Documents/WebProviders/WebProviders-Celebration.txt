@@ -36,6 +36,10 @@ URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 Name = (EN) MyJewishLearning.com
 URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
 
+Name = (EN) Reformjudaism.org
+URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
+
+
 -
 
 Name = (FR) Torah-Box.com
