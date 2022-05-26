@@ -10,8 +10,6 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-FOLDER-SEPARATOR
-
 Lang/EN = Rabbis websites
 Lang/FR = Sites Web de rabbins
 
