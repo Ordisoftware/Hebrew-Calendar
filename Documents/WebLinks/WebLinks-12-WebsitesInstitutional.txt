@@ -1,0 +1,39 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for web links
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders.
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Lang/EN = Institutional websites
+Lang/FR = Sites Web institutionnels
+
+Name = (FR) Consistoire de Paris
+URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
+
+Name = (FR/EN) Conference of European Rabbis
+URL = https://rabbiscer.org
+
+-
+
+Name = (FR) Hassidout
+URL = http://hassidout.org
+
+Name = (FR) Loubavitch France-Europe
+URL = https://www.loubavitchfrance.fr
+
+-
+
+Name = (FR) Massorti France
+URL = https://www.massorti.com
+
+Name = (EN) The Rabbinical Assembly
+URL = https://www.rabbinicalassembly.org
+
+Name = (EN) Union for Reform Judaism     
+URL = https://urj.org
