@@ -92,12 +92,12 @@ static partial class SystemManager
     }
   }
 
-
   /// <summary>
-  /// Finalize the application before exit.
+  /// Finalize the application before exit or terminate.
   /// </summary>
-  static private void Finalize()
+  static private void CleanBeforeProcessEnd()
   {
+    Globals.IsExiting = true;
     TryCatch(() => DebugManager.Stop());
     TryCatch(PensPool.Clear);
     TryCatch(SolidBrushesPool.Clear);
@@ -108,8 +108,7 @@ static partial class SystemManager
   /// </summary>
   static public void Exit()
   {
-    Globals.IsExiting = true;
-    Finalize();
+    CleanBeforeProcessEnd();
     Application.Exit();
   }
 
@@ -118,8 +117,7 @@ static partial class SystemManager
   /// </summary>
   static public void Terminate()
   {
-    Globals.IsExiting = true;
-    Finalize();
+    CleanBeforeProcessEnd();
     Environment.Exit(-1);
   }
 

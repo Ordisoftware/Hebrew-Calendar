@@ -19,7 +19,7 @@ partial class TextBoxEx
 
   static private Container _Container;
 
-  static public ContextMenuStrip ContextMenuEdit;
+  static public ContextMenuStrip ContextMenuEdit { get; private set; }
 
   static public event EventHandler InstanceCreated;
   static public event EventHandler UpdateSpellChecker;

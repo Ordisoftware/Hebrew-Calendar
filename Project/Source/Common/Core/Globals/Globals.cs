@@ -264,7 +264,7 @@ static partial class Globals
   /// <summary>
   /// Indicates if spell check is enabled.
   /// </summary>
-  static public bool SpellCheckEnabled;
+  static public bool SpellCheckEnabled { get; set; }
 
   /// <summary>
   /// Static constructor.
