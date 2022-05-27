@@ -39,6 +39,8 @@ URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
 Name = (EN) Reformjudaism.org
 URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
 
+Name = (EN) Thetorah.com
+URL = https://www.thetorah.com/holidays/%THETORAHCOM%
 
 -
 
