@@ -230,7 +230,8 @@ static class HebrewTools
                          .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
                          .Replace("%AISH-EN%", OnlineParashot.AishEN[item.Book][item.Number - 1])
                          .Replace("%AISH-FR%", OnlineParashot.AishFR[item.Book][item.Number - 1])
-                         .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1]);
+                         .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1])
+                         .Replace("%THETORAHCOM%", OnlineParashot.TheTorahCom[item.Book][item.Number - 1]);
         SystemManager.OpenWebLink(link);
       });
     }

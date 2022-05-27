@@ -10,14 +10,14 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <created> 2022-05 </created>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
 static partial class OnlineParashot
 {
 
-  static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> MyJewishLearning = new()
+  static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TheTorahCom = new()
   {
     [TorahBook.Bereshit] = new NullSafeList<string>
     {
@@ -32,7 +32,7 @@ static partial class OnlineParashot
       "vayeshev",
       "miketz",
       "vayigash",
-      "vayechi",
+      "vayechi"
     },
     [TorahBook.Shemot] = new NullSafeList<string>
     {
@@ -46,7 +46,7 @@ static partial class OnlineParashot
       "tetzaveh",
       "ki-tisa",
       "vayakhel",
-      "pekudei",
+      "pekudei"
     },
     [TorahBook.Vayiqra] = new NullSafeList<string>
     {
@@ -59,7 +59,7 @@ static partial class OnlineParashot
       "kedoshim",
       "emor",
       "behar",
-      "bechukotai",
+      "bechukotai"
     },
     [TorahBook.Bamidbar] = new NullSafeList<string>
     {
@@ -72,7 +72,7 @@ static partial class OnlineParashot
       "balak",
       "pinchas",
       "matot",
-      "masei",
+      "masei"
     },
     [TorahBook.Devarim] = new NullSafeList<string>
     {
@@ -86,7 +86,7 @@ static partial class OnlineParashot
       "nitzavim",
       "vayeilech",
       "haazinu",
-      "vezot-haberakhah",
+      "vezot-haberachah"
     }
   };
 

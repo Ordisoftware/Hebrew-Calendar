@@ -360,6 +360,7 @@
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.MyJewishLearning.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheYeshivaNet.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheTorahCom.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.YeshivaCo.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\OnlineCelebrations.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.AishEN.cs" />
