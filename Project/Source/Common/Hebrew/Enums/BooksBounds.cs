@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
@@ -20,6 +20,7 @@ public readonly struct BookBound
 {
   public int Min { get; }
   public int Max { get; }
+  public bool IsIn(int index) => index >= Min && index <= Max;
   public BookBound(int min, int max)
   {
     Min = min;
@@ -32,6 +33,5 @@ static class BooksBounds
   static public readonly BookBound Torah = Create<TorahBook>();
   static public readonly BookBound Neviim = Create<NeviimBook>();
   static public readonly BookBound Ketouvim = Create<KetouvimBook>();
-  static private BookBound Create<T>() where T : struct, Enum
-    => new(EnumHelper.Min<T>(), EnumHelper.Max<T>());
+  static private BookBound Create<T>() where T : struct, Enum => new(EnumHelper.Min<T>(), EnumHelper.Max<T>());
 }

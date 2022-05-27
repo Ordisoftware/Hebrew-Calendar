@@ -29,6 +29,7 @@ public partial class Parashah
   public string VerseEnd { get; set; }
 
   public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
+  public string FullReferenceEnd => $"{(int)Book}.{VerseEnd}";
 
   public string Name // Obsolete: Value comes from factory.
   {

@@ -81,21 +81,21 @@ URL = http://halachayomit.co.il/he/Parasha.aspx
 
 -
 
-Name = (FR) TorahDeVie.com *
+Name = (FR) TorahDeVie.com **
 URL = http://www.torahdevie.com/category/paracha/
 
-Name = (FR) Rav Yossef Hay *
+Name = (FR) Rav Yossef Hay **
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAHGuYil7Axs_rpPf9sxMNJt
 
 - 
 
-Name = (FR) Torah-Box : La Paracha en 1 minute *
+Name = (FR) Torah-Box : La Paracha en 1 minute **
 URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0i8Gd-lMeXTbpo4_6iDlIbn
 
-Name = (FR) Torah-Box : Le Message de la Paracha *
+Name = (FR) Torah-Box : Le Message de la Paracha **
 URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0gARoETxiTu_ZN5o0SEHygj
 
-Name = (FR) Torah-Box : Vision 'Hassidique de la Paracha *
+Name = (FR) Torah-Box : Vision 'Hassidique de la Paracha **
 URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0j3ki0dNfQb7rmPBkOid_ev
 
 - 
@@ -103,5 +103,5 @@ URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0j3ki0dNfQb7rmPBkOid_ev
 Name = (FR) JudaismeEnMouvement.org (Site web) *
 URL = https://judaismeenmouvement.org/suivre/la-paracha-de-la-semaine/
 
-Name = (FR) JudaismeEnMouvement.org (YouTube) *
+Name = (FR) JudaismeEnMouvement.org (YouTube) **
 URL = https://www.youtube.com/playlist?list=PLU4D_qR3BkAgutgERizAOhPFHdnPEDjSC

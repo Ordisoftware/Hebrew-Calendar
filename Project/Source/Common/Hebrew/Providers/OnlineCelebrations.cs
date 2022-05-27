@@ -161,4 +161,13 @@ static class OnlineCelebration
     { TorahCelebration.Soukot, "sukkot" }
   };
 
+  static public readonly Dictionary<TorahCelebration, string> TheTorahCom = new()
+  {
+    { TorahCelebration.Pessah, "passover" },
+    { TorahCelebration.Chavouot, "shavuot" },
+    { TorahCelebration.YomTerouah, "rosh-hashanah" },
+    { TorahCelebration.YomHaKipourim, "kippur" },
+    { TorahCelebration.Soukot, "sukkot" }
+  };
+
 }

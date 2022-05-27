@@ -390,8 +390,8 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve some parashot transcriptions following a change to better distinguish between 'Het, T'et and H'ayin.
 - Improve shortcut for boards.
 - Some UI/UX improvements.
-- Update web links.
-- Update celebration study links.
+- Reorganize and add some web links.
+- Add some celebration study links.
 
 #### 2022.04.05 - Version 9.28
 

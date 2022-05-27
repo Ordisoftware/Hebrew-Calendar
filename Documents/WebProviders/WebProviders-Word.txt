@@ -35,7 +35,7 @@ URL = http://shorashon.free.fr/online/
 -
 
 Name = (EN) Wiktionary
-URL = https://en.wiktionary.org/wiki/%WORD%
+URL = https://en.wiktionary.org/w/index.php?search=%WORD%
 
 Name = (FR) Wiktionary
 URL = https://fr.wiktionary.org/w/index.php?search=%WORD%

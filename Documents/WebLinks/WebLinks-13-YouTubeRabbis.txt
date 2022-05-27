@@ -30,6 +30,9 @@ URL = https://www.youtube.com/channel/UCFZbll_XlLWy8gqwIrkTZ0g
 Name = (FR) Rav Menahem Berros 
 URL = https://www.youtube.com/c/RavMenahemBerros
 
+Name = (FR) Rav Ron Chaya
+URL = https://www.youtube.com/channel/UCg-9Mq99UZ_HKW5N7IHqbYw
+
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/channel/UCkc8jAg4atdh-CvBJwn6jZQ
 
@@ -45,10 +48,10 @@ URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 Name = (FR) Rav Nathan Mrejen
 URL = https://www.youtube.com/channel/UCx3wvPI8c-AHsRMjorGIWSw
 
-Name = (FR) Rav Raphaël Pinto fils du Rav David Pinto
-URL = https://www.youtube.com/channel/UCV_bHFntJqDOAY4GXbNDTiQ
-
 -
+
+Name = (FR) Rav Raphaël Pinto
+URL = https://www.youtube.com/channel/UCV_bHFntJqDOAY4GXbNDTiQ
 
 Name = (FR) Hevrat Pinto (Rav David Pinto)
 URL = https://www.youtube.com/user/HEVRATPINTO

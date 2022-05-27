@@ -22,6 +22,9 @@ URL = https://nafshi.fr
 Name = (FR) Rav Menahem Berros 
 URL = https://www.ravmenahemberros.com
 
+Name = (FR) Rav Ron Chaya
+URL = https://myleava.fr
+
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = http://www.torahacademy.fr
 
@@ -33,9 +36,6 @@ URL = https://www.theyeshiva.net
 
 Name = (FR) Rav Nathan Mrejen
 URL = https://www.darkeihaim.com
-
-Name = (FR/EN) Rav David Pinto
-URL = https://hevratpinto.org
 
 Name = (FR) Rav Yakov Sitruk
 URL = https://www.alef-ledoroth.com
@@ -52,6 +52,9 @@ Name = (IW) Rabbi Itshak Ginsburgh students
 URL = https://www.malchuty.org
 
 -
+
+Name = (FR/EN) Hevrat Pinto (Rav David Pinto)
+URL = https://hevratpinto.org
 
 Name = (FR) Halacha Yomit (Rav Ovadia Yossef)
 URL = http://halachayomit.co.il/fr/default.aspx

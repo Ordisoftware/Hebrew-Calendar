@@ -258,7 +258,8 @@ static class HebrewTools
                        .Replace("%AISH-EN%", OnlineCelebration.AishEN[celebration])
                        .Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
                        .Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration])
-                       .Replace("%REFORMJUDAISM%", OnlineCelebration.ReformJudaism[celebration]);
+                       .Replace("%REFORMJUDAISM%", OnlineCelebration.ReformJudaism[celebration])
+                       .Replace("%THETORAHCOM%", OnlineCelebration.TheTorahCom[celebration]);
       SystemManager.OpenWebLink(link);
     });
   }
