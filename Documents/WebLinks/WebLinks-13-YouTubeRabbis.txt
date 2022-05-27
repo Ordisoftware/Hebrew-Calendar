@@ -89,5 +89,10 @@ URL = https://www.youtube.com/c/GalEinaiHeb
 
 -
 
+Name = (FR) Rabbanite Floriane Chinsky
+URL = https://www.youtube.com/c/FlorianeChinsky
+
+-
+
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/user/Adamantha

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -105,6 +105,16 @@ static class Localizer
   /// <param name="value">The value to translate.</param>
   static public string GetLang<T>(this NullSafeDictionary<Language, NullSafeOfStringDictionary<T>> values, T value)
   where T : Enum
+  {
+    return values?[Languages.Current]?[value] ?? values?[Languages.Default]?[value] ?? ERR;
+  }
+
+  /// <summary>
+  /// Gets the string translation.
+  /// </summary>
+  /// <param name="values">The dictionary containing lang>value>translation.</param>
+  /// <param name="value">The value to translate.</param>
+  static public string GetLang(this NullSafeDictionary<Language, Dictionary<string, string>> values, string value)
   {
     return values?[Languages.Current]?[value] ?? values?[Languages.Default]?[value] ?? ERR;
   }

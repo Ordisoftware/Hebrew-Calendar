@@ -38,7 +38,7 @@ partial class LettersControl
       // TODO calculate buttons and labels size from fonts size at startup and future setting changed
       PanelLetters.Controls.Clear();
       TextBox.Font = new Font(TextBox.Font.Name, _FontSizeInput, TextBox.Font.Style);
-      int countLetters = HebrewAlphabet.Codes.Length;
+      int countLetters = HebrewAlphabet.KeyCodes.Length;
       int countControls = countLetters;
       if ( _ShowValues ) countControls += countLetters;
       if ( _ShowKeys ) countControls += countLetters;
@@ -67,7 +67,7 @@ partial class LettersControl
       var colorLabel = Color.DimGray;
       for ( int index = 0, indexControl = 0; index < countLetters; index++ )
       {
-        ref string letter = ref HebrewAlphabet.Codes[index];
+        ref string letter = ref HebrewAlphabet.KeyCodes[index];
         // Button letter
         var buttonLetter = new Button
         {

@@ -24,6 +24,9 @@ URL = https://www.chabad.org/article.aspx?aid=%CHABAD-EN%
 Name = (EN) Torah.org
 URL = https://torah.org/parsha/%TORAHORG%/
 
+Name = (EN) TheTorah.com
+URL = https://www.thetorah.com/parashah/%THETORAHCOM%
+
 Name = (EN) Yeshiva.co
 URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 
@@ -34,7 +37,7 @@ Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
 Name = (EN) MyJewishLearning.com
-URL = https://www.myjewishlearning.com/torah-portions/%MYJEWISHLEARNING%/
+URL = https://www.myjewishlearning.com/torah-portions/parashat-%MYJEWISHLEARNING%/
 
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/paracha/%TORAHBOX%
