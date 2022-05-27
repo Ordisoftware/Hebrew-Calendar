@@ -20,7 +20,7 @@ namespace Ordisoftware.Hebrew;
 static partial class HebrewTranslations
 {
 
-  static public readonly NullSafeDictionary<Language, string[]> Letters = new()
+  static public readonly NullSafeDictionary<Language, string[]> LettersTranscription = new()
   {
     [Language.EN] = new string[]
     {
@@ -33,6 +33,17 @@ static partial class HebrewTranslations
       "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "T'et", "Youd", "Kaf",
       "Lamed", "Mem", "Noun", "Samek", "H'ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
     }
+  };
+
+  static public readonly NullSafeDictionary<Language, Dictionary<string, string>> LettersTranscriptionFromCodes = new()
+  {
+    [Language.EN] = HebrewAlphabet.KeyCodes
+                                  .Zip(LettersTranscription[Language.EN], (k, v) => new { Code = k, Transcription = v })
+                                  .ToDictionary(x => x.Code, x => x.Transcription),
+
+    [Language.FR] = HebrewAlphabet.KeyCodes
+                                  .Zip(LettersTranscription[Language.FR], (k, v) => new { Code = k, Transcription = v })
+                                  .ToDictionary(x => x.Code, x => x.Transcription)
   };
 
   static public readonly TranslationsDictionary TranscriptionGuideTitle = new()

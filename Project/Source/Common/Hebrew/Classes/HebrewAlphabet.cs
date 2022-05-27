@@ -27,7 +27,7 @@ static class HebrewAlphabet
   /// <summary>
   /// Indicates letters keyboard codes for Hebrew font.
   /// </summary>
-  static public readonly string[] Codes =
+  static public readonly string[] KeyCodes =
   {
     "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",
     "l", "m", "n", "c", "i", "p", "j", "q", "r", ">", "t"
@@ -54,12 +54,14 @@ static class HebrewAlphabet
   /// <summary>
   /// Indicates letters names in Hebrew font chars.
   /// </summary>
-  static public readonly string[] Names =
+  static public readonly string[] Hebrew =
   {
     "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
     "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
   };
 
+  static public readonly Dictionary<string, string> HebrewFromCodes
+    = KeyCodes.Zip(Hebrew, (k, v) => new { Code = k, Name = v }).ToDictionary(x => x.Code, x => x.Name);
 
   /// <summary>
   /// Indicates final letters disabled keyboard codes for Hebrew font.
@@ -108,7 +110,7 @@ static class HebrewAlphabet
   static public bool IsValidHebrew(string str)
   {
     str = UnFinalAll(str.RemoveDiacritics().ToLower());
-    return !str.IsNullOrEmpty() && str.All(c => c == ' ' || Codes.Contains(c.ToString()));
+    return !str.IsNullOrEmpty() && str.All(c => c == ' ' || KeyCodes.Contains(c.ToString()));
   }
 
   /// <summary>
@@ -152,7 +154,7 @@ static class HebrewAlphabet
     if ( str.IsNullOrEmpty() ) return string.Empty;
     var result = new StringBuilder(str.Length);
     str = UnFinalAll(str);
-    foreach ( var c in str.RemoveDiacritics().ToLower().Where(c => Codes.Contains(c.ToString())) )
+    foreach ( var c in str.RemoveDiacritics().ToLower().Where(c => KeyCodes.Contains(c.ToString())) )
       result.Append(c);
     return result.ToString();
   }

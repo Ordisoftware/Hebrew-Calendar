@@ -357,7 +357,7 @@ partial class LettersControl : UserControl
   /// </summary>
   private void Input_KeyPress(object sender, KeyPressEventArgs e)
   {
-    if ( HebrewAlphabet.Codes.Contains(e.KeyChar.ToString())
+    if ( HebrewAlphabet.KeyCodes.Contains(e.KeyChar.ToString())
       && ( TextBox.TextLength < TextBox.MaxLength || TextBox.SelectionLength > 0 ) )
       KeyProcessed = true;
     else

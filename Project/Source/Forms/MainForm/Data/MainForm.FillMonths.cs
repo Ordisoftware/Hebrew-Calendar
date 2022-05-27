@@ -19,8 +19,10 @@ using CodeProjectCalendar.NET;
 partial class MainForm
 {
 
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
 
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
 
   private Brush[,,] DayBrushes;

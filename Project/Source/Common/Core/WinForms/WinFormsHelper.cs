@@ -19,6 +19,7 @@ namespace Ordisoftware.Core;
 /// </summary>
 static public class SolidBrushesPool
 {
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<Color, SolidBrush> Items = new();
   static public void Clear()
   {
@@ -44,6 +45,7 @@ static public class SolidBrushesPool
 /// </summary>
 static public class PensPool
 {
+  [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
   static private readonly Dictionary<Color, Pen> Items = new();
   static public void Clear()
   {
