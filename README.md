@@ -67,7 +67,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.35.5
+- SQLite 3.38.3
 
 ## Download
 
@@ -392,6 +392,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Some UI/UX improvements.
 - Reorganize and add some web links.
 - Add some celebration study links.
+- Serilog WinForms must remains at v2.3.1
 
 #### 2022.04.05 - Version 9.28
 

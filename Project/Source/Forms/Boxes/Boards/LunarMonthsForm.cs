@@ -152,7 +152,7 @@ partial class LunarMonthsForm : Form
 
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.GrammarGuideForm);
+    Program.GrammarGuideForm.Popup();
   }
 
   private void ActionOpenHebrewLetters_Click(object sender, EventArgs e)
@@ -181,7 +181,7 @@ partial class LunarMonthsForm : Form
 
   private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
+    Program.TranscriptionGuideForm.Popup();
   }
 
 }

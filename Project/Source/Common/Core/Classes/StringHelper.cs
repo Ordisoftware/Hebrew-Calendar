@@ -91,7 +91,7 @@ static partial class StringHelper
   /// <summary>
   /// Indicates if a string starts with one of these comment symbol: # - ; /* //
   /// </summary>
-  /// <param name="str"></param>
+  /// <param name="str">The string to act on.</param>
   static public bool IsCommentedText(this string str)
     => str.StartsWith("/*", StringComparison.Ordinal)
     || str.StartsWith("//", StringComparison.Ordinal)
@@ -178,7 +178,7 @@ static partial class StringHelper
   /// <summary>
   /// Sanitizes and trims empty lines and spaces a string.
   /// </summary>
-  /// <param name="str"></param>
+  /// <param name="str">The string to act on.</param>
   static public string SanitizeAndTrimEmptyLinesAndSpaces(this string str)
     => str.SanitizeEmptyLinesAndSpaces().TrimEmptyLinesAndSpaces();
 

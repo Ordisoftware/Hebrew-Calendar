@@ -86,19 +86,13 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Creates a SQL command.
   /// </summary>
-  public SQLiteCommand CreateCommand()
-  {
-    return new SQLiteCommand(this);
-  }
+  public SQLiteCommand CreateCommand() => new(this);
 
   /// <summary>
   /// Creates a SQL command.
   /// </summary>
   /// <param name="sql">The query.</param>
-  public SQLiteCommand CreateCommand(string sql)
-  {
-    return new SQLiteCommand(this) { CommandText = sql };
-  }
+  public SQLiteCommand CreateCommand(string sql) => new(this) { CommandText = sql };
 
   /// <summary>
   /// Optimizes the database.
