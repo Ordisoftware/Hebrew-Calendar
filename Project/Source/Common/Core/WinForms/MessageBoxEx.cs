@@ -33,6 +33,8 @@ partial class MessageBoxEx : Form
   public const int DefaultHeightBig = 450;
   public const int DefaultHeightHuge = 500;
 
+  private const int WidthDeltaMargin = 55;
+
   static public readonly List<MessageBoxEx> Instances = new();
 
   [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
@@ -90,7 +92,7 @@ partial class MessageBoxEx : Form
     SetButtons(buttons);
     int labelInitialTop = Label.Top;
     int labelInitialHeight = Label.Height;
-    LabelMaxWidth = width - 55;
+    LabelMaxWidth = width - WidthDeltaMargin;
     if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
       icon = MessageBoxIcon.Information;
     else

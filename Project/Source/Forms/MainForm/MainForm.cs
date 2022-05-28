@@ -579,7 +579,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.TranscriptionGuideForm);
+    Program.TranscriptionGuideForm.Popup();
   }
 
   /// <summary>
@@ -589,7 +589,7 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
   {
-    HTMLBrowserForm.Run(Program.GrammarGuideForm);
+    Program.GrammarGuideForm.Popup();
   }
 
   /// <summary>

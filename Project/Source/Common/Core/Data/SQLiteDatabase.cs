@@ -62,6 +62,8 @@ abstract class SQLiteDatabase : IDisposable
 
   protected virtual void OnDataLoaded(string caption) => DataLoaded?.Invoke(caption);
 
+  [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
+  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   internal void AddToModified(object instance)
   {
     if ( Loaded && !ModifiedObjects.Contains(instance) )
@@ -213,6 +215,7 @@ abstract class SQLiteDatabase : IDisposable
 
   protected abstract void DoSaveAll();
 
+  [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
   protected void ProcessTableUpgrade<TRow, TRowTemp>(
     string nameTable,
     string nameTableTemp,

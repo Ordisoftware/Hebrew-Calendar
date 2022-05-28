@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 partial class HTMLBrowserForm : Form
@@ -23,14 +23,6 @@ partial class HTMLBrowserForm : Form
   private readonly TranslationsDictionary Title;
 
   private readonly string FilePathTemplate;
-
-  static public void Run(HTMLBrowserForm form)
-  {
-    if ( form.WindowState == FormWindowState.Minimized )
-      form.WindowState = FormWindowState.Normal;
-    form.Show();
-    form.BringToFront();
-  }
 
   private HTMLBrowserForm()
   {

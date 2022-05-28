@@ -165,12 +165,10 @@ partial class TraceForm : Form
     SelectFile.Enabled = SelectFile.Items.Count > 0;
     ActionDeleteFile.Enabled = SelectFile.Enabled;
     LabelFilesCount.Text = SysTranslations.TraceFilesCount.GetLang(SelectFile.Items.Count);
-    if ( SelectFile.Enabled )
-    {
-      string filePath = (string)SelectFile.SelectedItem;
-      var index = filePath is null ? -1 : SelectFile.Items.IndexOf(filePath);
-      SelectFile.SelectedIndex = index != -1 ? index : SelectFile.Items.Count - 1;
-    }
+    if ( !SelectFile.Enabled ) return;
+    string filePath = (string)SelectFile.SelectedItem;
+    var index = filePath is null ? -1 : SelectFile.Items.IndexOf(filePath);
+    SelectFile.SelectedIndex = index != -1 ? index : SelectFile.Items.Count - 1;
   }
 
   private void SelectFile_Format(object sender, ListControlConvertEventArgs e)

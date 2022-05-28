@@ -266,19 +266,19 @@ static partial class Globals
   /// </summary>
   static public bool SpellCheckEnabled { get; set; }
 
+#if DEBUG
   /// <summary>
   /// Static constructor.
   /// </summary>
   static Globals()
   {
-#if DEBUG
     if ( !IsVisualStudioDesigner )
     {
       bool conditional = IsExiting;
       StackMethods.PurgeResourceImages(AssemblyTitle, ProjectFolderPath, ref conditional);
       IsExiting = conditional;
     }
-#endif
   }
+#endif
 
 }
