@@ -621,6 +621,7 @@ partial class MainForm : Form
   {
     CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
                                    nameof(Settings.CelebrationVersesBoardFormClientSize));
+    Program.SelectCurrentCelebrationInVersesForm(TorahCelebrationDay.PessahD1);
   }
 
   /// <summary>
