@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
+using System;
 using SQLite;
 
 public delegate void LoadingDataEventHandler(string caption);
@@ -22,8 +23,10 @@ public delegate void DataLoadedEventHandler(string caption);
 /// <summary>
 /// Provides SQLite database wrapper.
 /// </summary>
-abstract class SQLiteDatabase
+abstract class SQLiteDatabase : IDisposable
 {
+
+  private bool Disposed;
 
   public SQLiteNetORM Connection { get; private set; }
 
@@ -74,6 +77,19 @@ abstract class SQLiteDatabase
     ConnectionString = connectionString;
     Connection = new SQLiteNetORM(ConnectionString);
     Connection.InitializeVersion();
+  }
+
+  public void Dispose()
+  {
+    Dispose(true);
+    GC.SuppressFinalize(this);
+  }
+
+  protected virtual void Dispose(bool disposing)
+  {
+    if ( Disposed ) return;
+    if ( disposing ) Connection.Dispose();
+    Disposed = true;
   }
 
   protected void CheckConnected()
@@ -245,4 +261,11 @@ abstract class SQLiteDatabase
     }
   }
 
+  protected virtual void ThrowIfDisposed()
+  {
+    if ( this.Disposed )
+    {
+      throw new ObjectDisposedException(this.GetType().FullName);
+    }
+  }
 }
