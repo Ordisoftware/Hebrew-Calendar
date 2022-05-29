@@ -327,9 +327,6 @@ partial class MainForm : Form
         PanelViewMonthlyCalendar.Parent = null;
         PanelViewGrid.Parent = null;
         PanelViewMonthlyCalendar.Visible = false;
-        CodeProjectCalendar.NET.Calendar.PenHoverEffect?.Dispose();
-        CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush?.Dispose();
-        CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush?.Dispose();
         CodeProjectCalendar.NET.Calendar.PenHoverEffect = PensPool.Get(Settings.CalendarColorHoverEffect);
         CodeProjectCalendar.NET.Calendar.CurrentDayForeBrush = SolidBrushesPool.Get(Settings.CurrentDayForeColor);
         CodeProjectCalendar.NET.Calendar.CurrentDayBackBrush = SolidBrushesPool.Get(Settings.CurrentDayBackColor);
