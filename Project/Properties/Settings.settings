@@ -702,13 +702,13 @@
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
     <Setting Name="TranscriptionGuideFormSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">392, 566</Value>
+      <Value Profile="(Default)">633, 668</Value>
     </Setting>
-    <Setting Name="MethodNoticeFormLocation" Type="System.Drawing.Point" Scope="User">
+    <Setting Name="MethodGuideFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">-1, -1</Value>
     </Setting>
-    <Setting Name="MethodNoticeFormSize" Type="System.String" Scope="User">
-      <Value Profile="(Default)">542; 666</Value>
+    <Setting Name="MethodGuideFormSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">622; 666</Value>
     </Setting>
     <Setting Name="AutoSortBookmarks" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

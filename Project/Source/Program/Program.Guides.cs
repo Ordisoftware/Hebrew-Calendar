@@ -61,8 +61,8 @@ static partial class Program
     {
       return _MethodGuideForm ??= new HTMLBrowserForm(HebrewTranslations.MethodNoticeTitle,
                                                       HebrewGlobals.LettriqMethodNoticeFilePath,
-                                                      nameof(Settings.MethodNoticeFormLocation),
-                                                      nameof(Settings.MethodNoticeFormSize),
+                                                      nameof(Settings.MethodGuideFormLocation),
+                                                      nameof(Settings.MethodGuideFormSize),
                                                       false);
     }
   }

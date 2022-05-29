@@ -63,8 +63,8 @@
       this.ActionOpenFolderSource = new System.Windows.Forms.Button();
       this.LabelIDE = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridViewDependencies ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridViewMedias ) ).BeginInit();
       this.tableLayoutPanel1.SuspendLayout();
       this.panel1.SuspendLayout();
       this.panel4.SuspendLayout();
@@ -171,7 +171,7 @@
       this.DataGridViewDependencies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
       dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -219,7 +219,7 @@
       this.DataGridViewMedias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
       dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -351,8 +351,8 @@
       this.Load += new System.EventHandler(this.AboutBox_Load);
       this.Shown += new System.EventHandler(this.AboutBox_Shown);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDependencies)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMedias)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridViewDependencies ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridViewMedias ) ).EndInit();
       this.tableLayoutPanel1.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.panel4.ResumeLayout(false);
