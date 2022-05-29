@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
@@ -59,7 +59,7 @@ static partial class SystemManager
       }
       catch
       {
-        return File.Exists(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "hiberfil.sys"));
+        return File.Exists($@"{Environment.GetEnvironmentVariable("SystemDrive")}\hiberfil.sys");
       }
       return false;
     }

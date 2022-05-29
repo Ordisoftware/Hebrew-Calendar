@@ -41,6 +41,8 @@ public partial class MainForm
             if ( MonthlyCalendar.CalendarDate.Month != dayRow.Date.Month )
               GoToDate(dayRow.Date);
             break;
+          case CalendarDoubleClickAction.Nothing:
+            break;
           default:
             throw new AdvNotImplementedException(Settings.CalendarDoubleClickAction);
         }
@@ -89,7 +91,7 @@ public partial class MainForm
     if ( torahEventText.Length == 0 )
     {
       var rowOmerDay = ApplicationDatabase.Instance.GetDay(rowDay.Date);
-      if ( rowOmerDay is not null)
+      if ( rowOmerDay is not null )
         (torahEvent, _, torahEventText) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
     }
     if ( torahEvent != TorahCelebration.None )
