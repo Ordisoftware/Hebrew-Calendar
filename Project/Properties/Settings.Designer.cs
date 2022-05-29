@@ -12,7 +12,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -2819,7 +2819,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("392, 566")]
+        [global::System.Configuration.DefaultSettingValueAttribute("633, 668")]
         public global::System.Drawing.Size TranscriptionGuideFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["TranscriptionGuideFormSize"]));
@@ -2832,24 +2832,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point MethodNoticeFormLocation {
+        public global::System.Drawing.Point MethodGuideFormLocation {
             get {
-                return ((global::System.Drawing.Point)(this["MethodNoticeFormLocation"]));
+                return ((global::System.Drawing.Point)(this["MethodGuideFormLocation"]));
             }
             set {
-                this["MethodNoticeFormLocation"] = value;
+                this["MethodGuideFormLocation"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("542; 666")]
-        public string MethodNoticeFormSize {
+        [global::System.Configuration.DefaultSettingValueAttribute("622; 666")]
+        public string MethodGuideFormSize {
             get {
-                return ((string)(this["MethodNoticeFormSize"]));
+                return ((string)(this["MethodGuideFormSize"]));
             }
             set {
-                this["MethodNoticeFormSize"] = value;
+                this["MethodGuideFormSize"] = value;
             }
         }
         

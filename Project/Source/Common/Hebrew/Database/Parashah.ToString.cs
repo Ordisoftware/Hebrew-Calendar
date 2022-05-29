@@ -39,7 +39,7 @@ public partial class Parashah
 
   public string ToStringReadable()
     => $"• Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
-       $"• Parashah n°{Number} {Name} {Unicode}" + Globals.NL +
+       $"• Parashah n°{Number} : {Name} {Unicode}" + Globals.NL +
        $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
        $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";
 

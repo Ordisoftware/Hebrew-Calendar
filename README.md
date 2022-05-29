@@ -384,14 +384,15 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add parashah name in the title bar of description box.
 - Add menu for transcription guide in Tools and others windows
 - Add menu for grammar guide in Tools.
+- Fix reset settings crashed the monthly view until restart.
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
 - Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
-- Improve some parashot transcriptions following a change to better distinguish between 'Het, T'et and H'ayin.
+- Improve transcriptions following a change to better distinguish between 'Het, T'et and H'ayin.
 - Improve shortcut for boards.
 - Some UI/UX improvements.
 - Reorganize and add some web links.
-- Add some celebration study links.
+- Update celebration study links.
 - Serilog WinForms must remains at v2.3.1
 
 #### 2022.04.05 - Version 9.28

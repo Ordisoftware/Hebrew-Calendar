@@ -362,7 +362,6 @@ partial class MainForm
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
   }
 
-
   /// <summary>
   /// Initializes icons
   /// </summary>
