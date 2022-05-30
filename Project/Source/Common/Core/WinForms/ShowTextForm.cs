@@ -81,15 +81,4 @@ partial class ShowTextForm : Form
     Close();
   }
 
-  protected override CreateParams CreateParams
-  {
-    get
-    {
-      var cp = base.CreateParams;
-      if ( DisplayManager.DoubleBufferingEnabled )
-        cp.ExStyle |= Globals.WS_EX_COMPOSITED;
-      return cp;
-    }
-  }
-
 }

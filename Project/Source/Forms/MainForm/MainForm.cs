@@ -299,13 +299,12 @@ partial class MainForm : Form
 
   internal bool PreferencesMutex;
 
-
   /// <summary>
   /// Event handler. Called by ActionPreferences for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A else crash")]
   internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     if ( !ActionPreferences.Enabled ) return;
