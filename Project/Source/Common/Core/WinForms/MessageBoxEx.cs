@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
 partial class MessageBoxEx : Form
@@ -21,9 +21,13 @@ partial class MessageBoxEx : Form
 
   public const int DefaultWidthVerySmall = 300;
   public const int DefaultWidthSmall = 400;
+  public const int DefaultWidthSmallMedium = 450;
   public const int DefaultWidthMedium = 500;
+  public const int DefaultWidthMediumLarge = 550;
   public const int DefaultWidthLarge = 600;
+  public const int DefaultWidthLargeBig = 650;
   public const int DefaultWidthBig = 700;
+  public const int DefaultWidthBigHuge = 750;
   public const int DefaultWidthHuge = 800;
 
   public const int DefaultHeightVerySmall = 250;
@@ -32,6 +36,7 @@ partial class MessageBoxEx : Form
   public const int DefaultHeightLarge = 400;
   public const int DefaultHeightBig = 450;
   public const int DefaultHeightHuge = 500;
+  public const int DefaultHeightVeryHuge = 600;
 
   private const int WidthDeltaMargin = 55;
 

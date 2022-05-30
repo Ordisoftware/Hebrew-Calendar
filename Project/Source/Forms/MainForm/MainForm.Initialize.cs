@@ -128,8 +128,8 @@ partial class MainForm
       Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                              AppTranslations.NoticeKeyboardShortcuts,
                                                              true, false,
-                                                             MessageBoxEx.DefaultHeightMedium,
-                                                             MessageBoxEx.DefaultHeightBig,
+                                                             MessageBoxEx.DefaultWidthSmallMedium,
+                                                             MessageBoxEx.DefaultHeightVeryHuge,
                                                              false, false);
       Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
       Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
