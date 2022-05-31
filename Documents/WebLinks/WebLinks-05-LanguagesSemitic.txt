@@ -51,6 +51,12 @@ URL = https://fr.wikipedia.org/wiki/Prononciation_de_l%27h%C3%A9breu
 
 -
 
+Name = (EN) Hebrew Alphabet@ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Hebrew_alphabet
+
+Name = (FR) Alphabet hébreu @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Alphabet_h%C3%A9breu
+
 Name = (EN) Gematria @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Gematria
 
