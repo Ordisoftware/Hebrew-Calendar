@@ -393,6 +393,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve shortcut for boards.
 - Some UI/UX improvements and fixes.
 - Reorganize and add some web links about Hebrew, Jewish institutions, Rabbis and YouTube.
+- Add some youtube celebration playlist links.
 - Fix and add celebration study links about TheTorah.com and ReformJudaism.org.
 - Serilog WinForms must remains at v2.3.1
 
