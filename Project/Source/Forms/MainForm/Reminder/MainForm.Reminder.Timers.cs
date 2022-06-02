@@ -88,10 +88,10 @@ partial class MainForm
     {
       TimerMutex = false;
       UpdateTitlesMutex = false;
-      ActionDisableReminder.Enabled = true;
+      ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
       ActionPreferences.Enabled = true;
       ActionResetReminder.Enabled = true;
-      MenuDisableReminder.Enabled = true;
+      MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
       MenuPreferences.Enabled = true;
       MenuResetReminder.Enabled = true;
       SystemManager.TryCatch(UpdateTrayIcon, UpdateUI, ShowNewParashah, ShowLockSession);
