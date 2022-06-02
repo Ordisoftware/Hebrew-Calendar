@@ -69,48 +69,48 @@ URL = https://www.aish.co.il/h/%AISH-IW%/
 
 -
 
-Name = (FR) TorahDeVie.com *
+Name = (FR) TorahDeVie.com **
 URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 
-Name = (FR) Rav David Pinto *
+Name = (FR) Rav David Pinto **
 URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
 
-Name = (FR) Rav Yossef Hay *
+Name = (FR) Rav Yossef Hay **
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAEofZFfLuRetOEcVKOOLGbm
 
-Name = (FR) Rav Chriqui *
+Name = (FR) Rav Chriqui **
 URL = https://www.youtube.com/playlist?list=PLI4WtgHMTlAeeu0BFOLjffigOYGdN97WW
 
 -
 
-Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes *
+Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTTgDadDmS-7eOfruomzI3w
 
-Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives *
+Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ49SreVMsp7SnxbsOy7ttf
 
-Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 1 *
+Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 1 **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTJUZ-eKzZd83BBDTqGSoxB
 
-Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 2 *
+Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 2 **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQzFrQK-mo0cFU8VKxLgTOC
 
-Name = (FR) Rav Yehia Benchetrit : Chavouoth *
+Name = (FR) Rav Yehia Benchetrit : Chavouoth **
 URL = https://www.youtube.com/watch?v=n8zlWqiO008
 
-Name = (FR) Rav Yehia Benchetrit : Chavouoth Playlist *
+Name = (FR) Rav Yehia Benchetrit : Chavouoth Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSq6bwe1R1tvoeqkebCrglM
 
-Name = (FR) Rav Yehia Benchetrit : Roch Hachana Playlist *
+Name = (FR) Rav Yehia Benchetrit : Roch Hachana Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQdLi1vntOgV_AzWetLTBtL
 
-Name = (FR) Rav Yehia Benchetrit : Kippour *
+Name = (FR) Rav Yehia Benchetrit : Kippour **
 URL = https://www.youtube.com/watch?v=GZPx6kk3TL0
 
-Name = (FR) Rav Yehia Benchetrit : Kippour Playlist *
+Name = (FR) Rav Yehia Benchetrit : Kippour Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrev_lUQvOCLSOMVlxbHVN
 
-Name = (FR) Rav Yehia Benchetrit : Souccot *
+Name = (FR) Rav Yehia Benchetrit : Souccot **
 URL = https://www.youtube.com/watch?v=HnbYwaJDawA
 
 -
