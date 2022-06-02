@@ -33,6 +33,18 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbcpGqKOVnyktf9GMFwnVV
 Name = (FR) Le couple et les enfants
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BY91zgIakb6tHdc5AxqRyu
 
+Name = (FR) Le couple (Rav Yehia Benchetrit)
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrt65t4l8dNc5fdWi8ayKc
+
+Name = (FR) L'éducation (Rav Yehia Benchetrit)
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrsMqvdwOGTc_Dh9em1Hpo
+
+Name = (FR) La spiritualite (Rav Yehia Benchetrit)
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ_FjcJbCV0zXc6dKeXuk6c
+
+Name = (FR) La techouva (Rav Yehia Benchetrit)
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSTuMCHBn5sc5moEnHXB3Yr
+
 Name = (FR) Le temple et les sacrifices
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AiSB_UbS8L_f1yc8x7Vjnp
 
