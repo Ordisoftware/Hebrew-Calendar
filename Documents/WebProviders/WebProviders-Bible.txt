@@ -18,16 +18,16 @@ URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.ht
 
 -
 
+Name = (EN/IW) Chabad.org (Side-by-side)
+URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
+
 Name = (EN/IW) Sefaria.org (With contextual dictionary)
 URL = https://www.sefaria.org/%BOOKSEFARIA%.%CHAPTERNUM%.%VERSENUM%?lang=bi&with=all&lang2=en
 
-Name = (EN/IW) Chabad.org
-URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/jewish/Chapter-%CHAPTERNUM%.htm#v%VERSENUM%
-
--
-
 Name = (FR/IW) Torah-Box.org (L'un ou l'autre, avec Rachi)
 URL = https://www.torah-box.com/torah-pdf/%BOOKTORAHBOX%/%CHAPTERNUM%.html
+
+-
 
 Name = (EN/IW) Mechon-Mamre.org (Side-by-side)
 URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
@@ -37,14 +37,14 @@ URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
 -
 
-Name = (EN) BibleHub.com (Darby)
-URL = https://biblehub.com/dbt/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
-
 Name = (EN) BibleHub.com (New International)
 URL = https://biblehub.com/niv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 Name = (EN) BibleHub.com (New King James)
 URL = https://biblehub.com/nkjv/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
+
+Name = (EN) BibleHub.com (Darby)
+URL = https://biblehub.com/dbt/%BOOKBIBLEHUB%/%CHAPTERNUM%.htm
 
 -
 

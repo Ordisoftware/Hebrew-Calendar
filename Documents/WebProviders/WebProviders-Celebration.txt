@@ -21,40 +21,43 @@ URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 Name = (EN) Chabad.org
 URL = https://www.chabad.org/%CHABAD-EN%
 
-Name = (EN) Torah.org
-URL = https://torah.org/%TORAHORG%/
+Name = (EN) MyJewishLearning.com
+URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
 
-Name = (EN) Yeshiva.co
-URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
+Name = (EN) TheTorah.com
+URL = https://www.thetorah.com/holidays/%THETORAHCOM%
 
 Name = (EN) TheYeshiva.net
 URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
 
+Name = (EN) Torah.org
+URL = https://torah.org/%TORAHORG%/
+
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
-Name = (EN) MyJewishLearning.com
-URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
+Name = (EN) Yeshiva.co
+URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 
 Name = (EN) ReformJudaism.org
 URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
-
-Name = (EN) TheTorah.com
-URL = https://www.thetorah.com/holidays/%THETORAHCOM%
 
 -
 
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
 
-Name = (FR) Chiourim.com
-URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
-
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
 
+Name = (FR) Chiourim.com
+URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
+
 Name = (FR) Loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/fetes-juives/%LOUBAVITCH%
+
+Name = (FR) Judaïsme en Mouvement *
+URL = https://judaismeenmouvement.org/decouvrir/le-judaisme-a-jem/les-fetes-juives/
 
 -
 
@@ -115,14 +118,14 @@ URL = https://www.youtube.com/watch?v=HnbYwaJDawA
 
 -
 
-Name = (FR) Exposé Les célébrations de la Torah
+Name = (FR) Exposé Les célébrations de la Torah **
 URL = https://www.youtube.com/watch?v=gqjY4wwuAeQ&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=28
 
-Name = (FR) Exposé Pessah et la sortie de Mitsraïm
+Name = (FR) Exposé Pessah et la sortie de Mitsraïm **
 URL = https://www.youtube.com/watch?v=7pYtMgQm6cs&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=16
 
-Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle
+Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle **
 URL = https://www.youtube.com/watch?v=dNKab1_yIzI&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=17
 
-Name = (FR) Exposé La réparation de la Téchouva
+Name = (FR) Exposé La réparation de la Téchouva **
 URL = https://www.youtube.com/watch?v=HpJW4vsAwuA&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=18

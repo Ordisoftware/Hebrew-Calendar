@@ -10,38 +10,20 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-FOLDER-SEPARATOR
+Lang/EN = YouTube playlists Sciences
+Lang/FR = Playlistes YouTube de Sciences
 
-Lang/EN = Institutional websites
-Lang/FR = Sites Web institutionnels
+Name = (FR) Mathématiques et physiques
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Boo3Ss5OZSYCNHEGpFXcPc
 
-Name = (FR/EN) Conference of European Rabbis
-URL = https://rabbiscer.org
+Name = (FR/EN) Biologie et génétique
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEv_KNGXktzeF8oBTXGoKR
 
-Name = (FR) Conseil représentatif des institutions juives de France
-URL = http://www.crif.org
+Name = (FR/EN) Bodybuilding et nutrition
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEAk_k9s5tCMG5ZPwK6KVz
 
-Name = (FR) Consistoire de Paris
-URL = https://www.consistoire.org
+Name = (FR) Mentalisme et psychologie
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B3m_jadFZi3rvJx9LPhHeG
 
-Name = (FR) Judaïsme en Mouvement
-URL = https://judaismeenmouvement.org
-
-Name = (FR) Massorti France
-URL = https://www.massorti.com
-
--
-
-Name = (FR) Hassidout
-URL = http://hassidout.org
-
-Name = (FR) Loubavitch France-Europe
-URL = https://www.loubavitchfrance.fr
-
--
-
-Name = (EN) The Rabbinical Assembly
-URL = https://www.rabbinicalassembly.org
-
-Name = (EN) Union for Reform Judaism     
-URL = https://urj.org
+Name = (FR) Documentaires et sujets de société
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DfPB3GAU-e6hLSzJIjVc18
