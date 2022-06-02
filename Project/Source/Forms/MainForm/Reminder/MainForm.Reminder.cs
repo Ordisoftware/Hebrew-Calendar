@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -20,16 +20,20 @@ partial class MainForm
   private void EnableReminderTimer(bool calltimer = true)
   {
     TimerResumeReminder.Enabled = false;
+    //
     ActionResetReminder.Enabled = true;
-    ActionEnableReminder.Visible = false;
-    ActionDisableReminder.Visible = true;
-    ActionEnableReminder.Enabled = false;
-    ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
     MenuResetReminder.Enabled = true;
+    //
+    ActionEnableReminder.Visible = false;
+    ActionEnableReminder.Enabled = false;
     MenuEnableReminder.Visible = false;
-    MenuDisableReminder.Visible = true;
     MenuEnableReminder.Enabled = false;
+    //
+    ActionDisableReminder.Visible = true;
+    ActionDisableReminder.Enabled = Settings.AllowSuspendReminder;
+    MenuDisableReminder.Visible = true;
     MenuDisableReminder.Enabled = Settings.AllowSuspendReminder;
+    //
     IsReminderPaused = false;
     if ( calltimer )
     {
@@ -48,16 +52,20 @@ partial class MainForm
       var delay = SelectSuspendDelayForm.Run();
       if ( delay is null ) return;
       IsReminderPaused = true;
+      //
       ActionResetReminder.Enabled = false;
-      ActionEnableReminder.Visible = true;
-      ActionDisableReminder.Visible = false;
-      ActionEnableReminder.Enabled = true;
-      ActionDisableReminder.Enabled = false;
       MenuResetReminder.Enabled = false;
+      //
+      ActionEnableReminder.Visible = true;
+      ActionEnableReminder.Enabled = true;
       MenuEnableReminder.Visible = true;
-      MenuDisableReminder.Visible = false;
       MenuEnableReminder.Enabled = true;
+      //
+      ActionDisableReminder.Visible = false;
+      ActionDisableReminder.Enabled = false;
       MenuDisableReminder.Enabled = false;
+      MenuDisableReminder.Visible = false;
+      //
       ClearLists();
       UpdateTitles(true);
       if ( delay > 0 )
