@@ -21,6 +21,9 @@ URL = https://www.jewfaq.org
 Name = (FR) Beit HaZohar
 URL = https://www.beithazohar.com
 
+Name = (FR) Consistoire de Paris
+URL = https://www.consistoire.org/archives-des-cours-hebdomadaires/
+
 Name = (FR) Dvar Torah
 URL = https://www.dvartorah.org
 

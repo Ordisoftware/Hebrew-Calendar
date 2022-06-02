@@ -21,40 +21,43 @@ URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 Name = (EN) Chabad.org
 URL = https://www.chabad.org/%CHABAD-EN%
 
-Name = (EN) Torah.org
-URL = https://torah.org/%TORAHORG%/
+Name = (EN) MyJewishLearning.com
+URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
 
-Name = (EN) Yeshiva.co
-URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
+Name = (EN) TheTorah.com
+URL = https://www.thetorah.com/holidays/%THETORAHCOM%
 
 Name = (EN) TheYeshiva.net
 URL = https://www.theyeshiva.net/jewish/%THEYESHIVA%
 
+Name = (EN) Torah.org
+URL = https://torah.org/%TORAHORG%/
+
 Name = (EN) TrueTorahJews.org
 URL = https://www.truetorahjews.org/parsha-pearls/%TORAHJEWS%
 
-Name = (EN) MyJewishLearning.com
-URL = https://www.myjewishlearning.com/category/celebrate/%MYJEWISHLEARNING%/
+Name = (EN) Yeshiva.co
+URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 
 Name = (EN) ReformJudaism.org
 URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
-
-Name = (EN) TheTorah.com
-URL = https://www.thetorah.com/holidays/%THETORAHCOM%
 
 -
 
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/vie-juive/fetes/%TORAHBOX%/
 
-Name = (FR) Chiourim.com
-URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
-
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
 
+Name = (FR) Chiourim.com
+URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
+
 Name = (FR) Loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/fetes-juives/%LOUBAVITCH%
+
+Name = (FR) Judaïsme en Mouvement *
+URL = https://judaismeenmouvement.org/decouvrir/le-judaisme-a-jem/les-fetes-juives/
 
 -
 
@@ -69,60 +72,60 @@ URL = https://www.aish.co.il/h/%AISH-IW%/
 
 -
 
-Name = (FR) TorahDeVie.com *
+Name = (FR) TorahDeVie.com **
 URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 
-Name = (FR) Rav David Pinto *
+Name = (FR) Rav David Pinto **
 URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
 
-Name = (FR) Rav Yossef Hay *
+Name = (FR) Rav Yossef Hay **
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAEofZFfLuRetOEcVKOOLGbm
 
-Name = (FR) Rav Chriqui *
+Name = (FR) Rav Chriqui **
 URL = https://www.youtube.com/playlist?list=PLI4WtgHMTlAeeu0BFOLjffigOYGdN97WW
 
 -
 
-Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes *
+Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTTgDadDmS-7eOfruomzI3w
 
-Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives *
+Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ49SreVMsp7SnxbsOy7ttf
 
-Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 1 *
+Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 1 **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTJUZ-eKzZd83BBDTqGSoxB
 
-Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 2 *
+Name = (FR) Rav Yehia Benchetrit : Pessah Playlist 2 **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQzFrQK-mo0cFU8VKxLgTOC
 
-Name = (FR) Rav Yehia Benchetrit : Chavouoth *
+Name = (FR) Rav Yehia Benchetrit : Chavouoth **
 URL = https://www.youtube.com/watch?v=n8zlWqiO008
 
-Name = (FR) Rav Yehia Benchetrit : Chavouoth Playlist *
+Name = (FR) Rav Yehia Benchetrit : Chavouoth Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSq6bwe1R1tvoeqkebCrglM
 
-Name = (FR) Rav Yehia Benchetrit : Roch Hachana Playlist *
+Name = (FR) Rav Yehia Benchetrit : Roch Hachana Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQdLi1vntOgV_AzWetLTBtL
 
-Name = (FR) Rav Yehia Benchetrit : Kippour *
+Name = (FR) Rav Yehia Benchetrit : Kippour **
 URL = https://www.youtube.com/watch?v=GZPx6kk3TL0
 
-Name = (FR) Rav Yehia Benchetrit : Kippour Playlist *
+Name = (FR) Rav Yehia Benchetrit : Kippour Playlist **
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrev_lUQvOCLSOMVlxbHVN
 
-Name = (FR) Rav Yehia Benchetrit : Souccot *
+Name = (FR) Rav Yehia Benchetrit : Souccot **
 URL = https://www.youtube.com/watch?v=HnbYwaJDawA
 
 -
 
-Name = (FR) Exposé Les célébrations de la Torah
+Name = (FR) Exposé Les célébrations de la Torah **
 URL = https://www.youtube.com/watch?v=gqjY4wwuAeQ&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=28
 
-Name = (FR) Exposé Pessah et la sortie de Mitsraïm
+Name = (FR) Exposé Pessah et la sortie de Mitsraïm **
 URL = https://www.youtube.com/watch?v=7pYtMgQm6cs&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=16
 
-Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle
+Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle **
 URL = https://www.youtube.com/watch?v=dNKab1_yIzI&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=17
 
-Name = (FR) Exposé La réparation de la Téchouva
+Name = (FR) Exposé La réparation de la Téchouva **
 URL = https://www.youtube.com/watch?v=HpJW4vsAwuA&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=18

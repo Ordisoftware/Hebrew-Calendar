@@ -18,11 +18,11 @@ URL = https://www.pealim.com/search/?q=%WORD%
 
 -
 
-Name = (EN) Sefaria Klein Dictionary
-URL = https://www.sefaria.org/Klein_Dictionary%2C_%FIRSTLETTER%_1?lang=bi
+Name = (EN) Wiktionary
+URL = https://en.wiktionary.org/w/index.php?search=%WORD%
 
-Name = (EN) Sefaria Jastrow Dictionary
-URL = https://www.sefaria.org/Jastrow%2C_%FIRSTLETTER%.1?lang=bi
+Name = (FR) Wiktionary
+URL = https://fr.wiktionary.org/w/index.php?search=%WORD%
 
 -
 
@@ -34,11 +34,11 @@ URL = http://shorashon.free.fr/online/
 
 -
 
-Name = (EN) Wiktionary
-URL = https://en.wiktionary.org/w/index.php?search=%WORD%
+Name = (EN) Sefaria Klein Dictionary
+URL = https://www.sefaria.org/Klein_Dictionary%2C_%FIRSTLETTER%_1?lang=bi
 
-Name = (FR) Wiktionary
-URL = https://fr.wiktionary.org/w/index.php?search=%WORD%
+Name = (EN) Sefaria Jastrow Dictionary
+URL = https://www.sefaria.org/Jastrow%2C_%FIRSTLETTER%.1?lang=bi
 
 -
 
