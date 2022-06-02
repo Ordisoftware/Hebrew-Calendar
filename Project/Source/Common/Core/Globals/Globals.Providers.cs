@@ -38,7 +38,7 @@ static partial class Globals
   {
     try
     {
-      return new OnlineProviders(filePath, true, IsDebugExecutable, folder);
+      return new OnlineProviders(filePath, true, SystemManager.CommandLineOptions.IsPreviewEnabled, folder);
     }
     catch ( FileNotFoundException )
     {

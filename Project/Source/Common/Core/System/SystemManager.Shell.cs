@@ -34,13 +34,17 @@ static partial class SystemManager
   /// Analyses the command line arguments.
   /// </summary>
   static public void CheckCommandLineArguments<T>(string[] args, ref Language language)
-  where T : SystemCommandLine
+  where T : SystemCommandLine, new()
   {
     try
     {
       CommandLineArguments = args;
       var options = CommandLine.Parser.Default.ParseArguments<T>(args);
-      if ( options.Tag != CommandLine.ParserResultType.Parsed ) return;
+      if ( options.Tag != CommandLine.ParserResultType.Parsed )
+      {
+        CommandLineOptions = new T();
+        return;
+      }
       CommandLineOptions = ( (CommandLine.Parsed<T>)options ).Value;
       if ( !CommandLineOptions.Language.IsNullOrEmpty() )
         foreach ( var lang in Languages.Values.Where(lang => CommandLineOptions.Language.RawEquals(lang.Key)) )

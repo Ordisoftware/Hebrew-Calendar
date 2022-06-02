@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2021-02 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
 using CommandLine;
@@ -21,6 +21,15 @@ using CommandLine;
 /// </summary>
 class SystemCommandLine
 {
+
+  [Option("withpreview", Required = false, HelpText = "Enable preview functionalities.")]
+  public bool WithPreview { get; set; } = Globals.IsDebugExecutable;
+
+  [Option("nopreview", Required = false, HelpText = "Disable preview functionalities.")]
+  public bool NoPreview { get; set; } = !Globals.IsDebugExecutable;
+
+  public bool IsPreviewEnabled => Globals.IsDebugExecutable ? !NoPreview : WithPreview;
+
   [Option("reset", Required = false, HelpText = "Erase all application settings as well as those of old versions.")]
   public bool ResetSettings { get; set; }
 
@@ -32,4 +41,5 @@ class SystemCommandLine
 
   [Option("lang", Required = false, HelpText = "Change the interface language.")]
   public string Language { get; set; }
+
 }

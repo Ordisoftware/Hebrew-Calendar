@@ -53,7 +53,7 @@ partial class MainForm
     Globals.AllowClose = false;
     foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
       LastCelebrationReminded.Add(value, null);
-    if ( !Globals.IsDebugExecutable ) // TODO remove when lunar months ready
+    if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when lunar months ready
     {
       ActionViewLunarMonths.Enabled = false;
       ActionViewLunarMonths.Visible = false;
@@ -204,7 +204,7 @@ partial class MainForm
       ActionParashotBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
       ActionWeeklyParashahDescription.PerformClick();
-    if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
+    if ( ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when lunar months ready
       if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
         ActionViewLunarMonths.PerformClick();
   }

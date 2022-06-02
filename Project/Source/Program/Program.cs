@@ -157,18 +157,20 @@ static partial class Program
       Action action = command switch
       {
         nameof(cmd.ShowMainForm) => () => form.MenuShowHide_Click(null, null),
-        nameof(cmd.HideMainForm) => () => form.ForceHideToTray(),
-        nameof(cmd.Generate) => () => form.ActionGenerate.PerformClick(),
-        nameof(cmd.ResetReminder) => () => form.ActionResetReminder.PerformClick(),
-        nameof(cmd.OpenNavigation) => () => form.ActionNavigate.PerformClick(),
-        nameof(cmd.OpenDiffDates) => () => form.ActionCalculateDateDiff.PerformClick(),
-        nameof(cmd.OpenCelebrationVersesBoard) => () => form.ActionShowCelebrationVersesBoard.PerformClick(),
-        nameof(cmd.OpenCelebrationsBoard) => () => form.ActionViewCelebrationsBoard.PerformClick(),
-        nameof(cmd.OpenNewMoonsBoard) => () => form.ActionViewNewMoonsBoard.PerformClick(),
-        nameof(cmd.OpenParashotBoard) => () => form.ActionParashotBoard.PerformClick(),
-        nameof(cmd.OpenWeeklyParashahBox) => () => form.ActionWeeklyParashahDescription.PerformClick(),
+        nameof(cmd.HideMainForm) => form.ForceHideToTray,
+        nameof(cmd.Generate) => form.ActionGenerate.PerformClick,
+        nameof(cmd.ResetReminder) => form.ActionResetReminder.PerformClick,
+        nameof(cmd.OpenNavigation) => form.ActionNavigate.PerformClick,
+        nameof(cmd.OpenDiffDates) => form.ActionCalculateDateDiff.PerformClick,
+        nameof(cmd.OpenCelebrationVersesBoard) => form.ActionShowCelebrationVersesBoard.PerformClick,
+        nameof(cmd.OpenCelebrationsBoard) => form.ActionViewCelebrationsBoard.PerformClick,
+        nameof(cmd.OpenNewMoonsBoard) => form.ActionViewNewMoonsBoard.PerformClick,
+        nameof(cmd.OpenParashotBoard) => form.ActionParashotBoard.PerformClick,
+        nameof(cmd.OpenWeeklyParashahBox) => form.ActionWeeklyParashahDescription.PerformClick,
         // TODO remove when lunar months ready
-        nameof(cmd.OpenLunarMonthsBoard) => Globals.IsDebugExecutable ? () => form.ActionViewLunarMonths.PerformClick() : null,
+        nameof(cmd.OpenLunarMonthsBoard) => ApplicationCommandLine.Instance.IsPreviewEnabled
+                                            ? form.ActionViewLunarMonths.PerformClick
+                                            : null,
         _ => null
       };
       if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
@@ -198,7 +200,7 @@ static partial class Program
     if ( cmd.OpenNewMoonsBoard ) SystemManager.IPCSend(nameof(cmd.OpenNewMoonsBoard));
     if ( cmd.OpenParashotBoard ) SystemManager.IPCSend(nameof(cmd.OpenParashotBoard));
     if ( cmd.OpenWeeklyParashahBox ) SystemManager.IPCSend(nameof(cmd.OpenWeeklyParashahBox));
-    if ( Globals.IsDebugExecutable ) // TODO remove when lunar months ready
+    if ( ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when lunar months ready
       if ( cmd.OpenLunarMonthsBoard )
         SystemManager.IPCSend(nameof(cmd.OpenLunarMonthsBoard));
   }
@@ -225,7 +227,6 @@ static partial class Program
       ex.Manage();
     }
   }
-
 
   /// <summary>
   /// Updates localization strings to the whole application.
