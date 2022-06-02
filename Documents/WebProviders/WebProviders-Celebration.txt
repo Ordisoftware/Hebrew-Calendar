@@ -59,6 +59,9 @@ URL = https://www.loubavitch.fr/pratique/fetes-juives/%LOUBAVITCH%
 Name = (FR) Judaïsme en Mouvement *
 URL = https://judaismeenmouvement.org/decouvrir/le-judaisme-a-jem/les-fetes-juives/
 
+Name = (FR) TorahDeVie.com **
+URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
+
 -
 
 Name = (EN) Aish.com
@@ -71,9 +74,6 @@ Name = (IW) Aish.co.il
 URL = https://www.aish.co.il/h/%AISH-IW%/
 
 -
-
-Name = (FR) TorahDeVie.com **
-URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 
 Name = (FR) Rav David Pinto **
 URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
