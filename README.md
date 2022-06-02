@@ -388,6 +388,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
 - Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).
+- Fix disable reminder button not disabled if disabling is not allowed in preferences.
 - Improve transcriptions following a change to better distinguish between He, 'Het, T'et, H'ayin and Tav.
 - Improve shortcut for boards.
 - Some UI/UX improvements and fixes.
