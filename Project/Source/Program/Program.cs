@@ -152,27 +152,26 @@ static partial class Program
       server.EndWaitForConnection(ar);
       if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
       if ( !Globals.IsReady ) return;
+      var lang = Settings.LanguageSelected;
+      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
       var form = MainForm.Instance;
       var cmd = ApplicationCommandLine.Instance;
-      Action action = command switch
-      {
-        nameof(cmd.ShowMainForm) => () => form.MenuShowHide_Click(null, null),
-        nameof(cmd.HideMainForm) => form.ForceHideToTray,
-        nameof(cmd.Generate) => form.ActionGenerate.PerformClick,
-        nameof(cmd.ResetReminder) => form.ActionResetReminder.PerformClick,
-        nameof(cmd.OpenNavigation) => form.ActionNavigate.PerformClick,
-        nameof(cmd.OpenDiffDates) => form.ActionCalculateDateDiff.PerformClick,
-        nameof(cmd.OpenCelebrationVersesBoard) => form.ActionShowCelebrationVersesBoard.PerformClick,
-        nameof(cmd.OpenCelebrationsBoard) => form.ActionViewCelebrationsBoard.PerformClick,
-        nameof(cmd.OpenNewMoonsBoard) => form.ActionViewNewMoonsBoard.PerformClick,
-        nameof(cmd.OpenParashotBoard) => form.ActionParashotBoard.PerformClick,
-        nameof(cmd.OpenWeeklyParashahBox) => form.ActionWeeklyParashahDescription.PerformClick,
-        // TODO remove when lunar months ready
-        nameof(cmd.OpenLunarMonthsBoard) => ApplicationCommandLine.Instance.IsPreviewEnabled
-                                            ? form.ActionViewLunarMonths.PerformClick
-                                            : null,
-        _ => null
-      };
+      if ( cmd is null ) return;
+      Action action = null;
+      if ( cmd.ShowMainForm ) action = () => form.MenuShowHide_Click(null, null);
+      if ( cmd.HideMainForm ) action = form.ForceHideToTray;
+      if ( cmd.Generate ) action = form.ActionGenerate.PerformClick;
+      if ( cmd.ResetReminder ) action = form.ActionResetReminder.PerformClick;
+      if ( cmd.OpenNavigation ) action = form.ActionNavigate.PerformClick;
+      if ( cmd.OpenDiffDates ) action = form.ActionCalculateDateDiff.PerformClick;
+      if ( cmd.OpenCelebrationVersesBoard ) action = form.ActionShowCelebrationVersesBoard.PerformClick;
+      if ( cmd.OpenCelebrationsBoard ) action = form.ActionViewCelebrationsBoard.PerformClick;
+      if ( cmd.OpenNewMoonsBoard ) action = form.ActionViewNewMoonsBoard.PerformClick;
+      if ( cmd.OpenParashotBoard ) action = form.ActionParashotBoard.PerformClick;
+      if ( cmd.OpenWeeklyParashahBox ) action = form.ActionWeeklyParashahDescription.PerformClick;
+      if ( cmd.OpenLunarMonthsBoard ) action = ApplicationCommandLine.Instance.IsPreviewEnabled // TODO remove when lunar months ready
+                                               ? form.ActionViewLunarMonths.PerformClick
+                                               : null;
       if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
     }
     finally
@@ -187,22 +186,8 @@ static partial class Program
   /// </summary>
   static private void IPCSendCommands()
   {
-    var cmd = ApplicationCommandLine.Instance;
-    if ( cmd is null ) return;
-    if ( cmd.HideMainForm ) SystemManager.IPCSend(nameof(cmd.HideMainForm));
-    if ( cmd.ShowMainForm ) SystemManager.IPCSend(nameof(cmd.ShowMainForm));
-    if ( cmd.Generate ) SystemManager.IPCSend(nameof(cmd.Generate));
-    if ( cmd.ResetReminder ) SystemManager.IPCSend(nameof(cmd.ResetReminder));
-    if ( cmd.OpenNavigation ) SystemManager.IPCSend(nameof(cmd.OpenNavigation));
-    if ( cmd.OpenDiffDates ) SystemManager.IPCSend(nameof(cmd.OpenDiffDates));
-    if ( cmd.OpenCelebrationVersesBoard ) SystemManager.IPCSend(nameof(cmd.OpenCelebrationVersesBoard));
-    if ( cmd.OpenCelebrationsBoard ) SystemManager.IPCSend(nameof(cmd.OpenCelebrationsBoard));
-    if ( cmd.OpenNewMoonsBoard ) SystemManager.IPCSend(nameof(cmd.OpenNewMoonsBoard));
-    if ( cmd.OpenParashotBoard ) SystemManager.IPCSend(nameof(cmd.OpenParashotBoard));
-    if ( cmd.OpenWeeklyParashahBox ) SystemManager.IPCSend(nameof(cmd.OpenWeeklyParashahBox));
-    if ( ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when lunar months ready
-      if ( cmd.OpenLunarMonthsBoard )
-        SystemManager.IPCSend(nameof(cmd.OpenLunarMonthsBoard));
+    if ( SystemManager.CommandLineArguments.Count > 0 )
+      SystemManager.IPCSend(SystemManager.CommandLineArguments.AsMultiLine());
   }
 
   /// <summary>

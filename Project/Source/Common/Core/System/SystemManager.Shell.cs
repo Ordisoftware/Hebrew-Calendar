@@ -23,7 +23,7 @@ static partial class SystemManager
   /// <summary>
   /// Indicates command line arguments.
   /// </summary>
-  static public string[] CommandLineArguments { get; private set; }
+  static public List<string> CommandLineArguments { get; private set; }
 
   /// <summary>
   /// Indicates command line arguments options instance.
@@ -38,7 +38,7 @@ static partial class SystemManager
   {
     try
     {
-      CommandLineArguments = args;
+      CommandLineArguments = args.ToList();
       var options = CommandLine.Parser.Default.ParseArguments<T>(args);
       if ( options.Tag != CommandLine.ParserResultType.Parsed )
       {
