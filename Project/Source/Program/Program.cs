@@ -38,7 +38,6 @@ static partial class Program
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
       var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
-      SystemManager.IPCSendCommands = IPCSendCommands;
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
       bool upgrade = Settings.UpgradeRequired;
       Globals.IsSettingsUpgraded = upgrade;
@@ -179,15 +178,6 @@ static partial class Program
       server.Close();
       SystemManager.CreateIPCServer(IPCRequests);
     }
-  }
-
-  /// <summary>
-  /// Sends IPC commands.
-  /// </summary>
-  static private void IPCSendCommands()
-  {
-    if ( SystemManager.CommandLineArguments.Count > 0 )
-      SystemManager.IPCSend(SystemManager.CommandLineArguments.AsMultiLine());
   }
 
   /// <summary>
