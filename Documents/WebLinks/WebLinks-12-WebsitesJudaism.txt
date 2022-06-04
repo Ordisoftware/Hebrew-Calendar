@@ -73,6 +73,9 @@ URL = https://www.truetorahjews.org
 
 -
 
+Name = (FR) Dossier sur Le Rabbi de Loubavitch
+URL = https://fr.chabad.org/library/article_cdo/aid/527991/jewish/Le-Rabbi.htm
+
 Name = (FR) Beth Loubavitch
 URL = https://www.loubavitch.fr
 
@@ -84,6 +87,9 @@ URL = https://www.chabad.org
 
 Name = (EN) Jewish Educational Media Loubavitch
 URL = https://jemcentral.org
+
+Name = (EN) File on The Rebbe of Lubavitch
+URL = https://www.chabad.org/therebbe/default_cdo/jewish/The-Rebbe.htm
 
 -
 

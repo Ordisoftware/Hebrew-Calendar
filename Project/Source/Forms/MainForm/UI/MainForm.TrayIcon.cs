@@ -129,7 +129,8 @@ partial class MainForm
       DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
       return;
     }
-    if ( EditConfirmClosing.Checked || ( e is null && !Globals.IsDebugExecutable ) )
+    if ( ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
+      || ( e is null && !ApplicationCommandLine.Instance.IsPreviewEnabled ) )
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
         return;
     Globals.AllowClose = true;

@@ -14,6 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
+using CommandLine;
 using System.IO.Pipes;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -56,7 +57,7 @@ static partial class SystemManager
   {
     if ( !Globals.IsCurrentUserAdmin )
     {
-      string str = CommandLineArguments.Length > 0 ? CommandLineArguments.AsMultiSpace() : "show";
+      string str = CommandLineArguments.Count > 0 ? CommandLineArguments.AsMultiSpace() : "show";
       DisplayManager.ShowWarning(SysTranslations.IPCNotAvailable.GetLang($"'{str}'"));
     }
     return Globals.IsCurrentUserAdmin;
@@ -76,12 +77,15 @@ static partial class SystemManager
         CreateIPCServer(ipcRequests);
       else
       {
-        if ( CommandLineArguments.Length == 0 )
+        if ( CommandLineArguments.Count == 0 )
+        {
           CommandLineOptions.ShowMainForm = true;
+          CommandLineArguments.Add("--show");
+        }
         try
         {
           if ( CheckIPCAllowed() )
-            IPCSendCommands?.Invoke();
+            IPCSendCommandLineArguments();
         }
         catch ( Exception ex )
         {
@@ -120,6 +124,15 @@ static partial class SystemManager
       IPCServer = null;
       ex.Manage();
     }
+  }
+
+  /// <summary>
+  /// Sends IPC commands.
+  /// </summary>
+  static private void IPCSendCommandLineArguments()
+  {
+    string arguments = CommandLine.Parser.Default.FormatCommandLine(CommandLineOptions);
+    IPCSend(arguments);
   }
 
   /// <summary>

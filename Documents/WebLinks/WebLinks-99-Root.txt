@@ -10,27 +10,18 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Lang/EN = Asher 'Haïm HaLevi
-Lang/FR = Asher 'Haïm HaLevi
+Name = (FR) Proposition logique pour un monde meilleur
+URL = https://asherhaimhalevi.ordisoftware.com
 
-Name = (FR) Le problème religieux
-URL = https://asherhaimhalevi.ordisoftware.com/works/the-religious-problem/
-
--
-
-Name = (FR) L'alphabet hébreu
-URL = https://asherhaimhalevi.ordisoftware.com/works/hebrew-alphabet/
-
-Name = (FR) L'alliance
-URL = https://asherhaimhalevi.ordisoftware.com/works/alliance/
-
-Name = (FR) Les séfitot
-URL = https://asherhaimhalevi.ordisoftware.com/works/sefirot/
-
-Name = (FR) Epitaphe pour Kémistes de Kémet
-URL = https://asherhaimhalevi.ordisoftware.com/works/epitaph/
+Name = (FR) Théorie de santé-aide-justice
+URL = https://asherhaimhalevi.ordisoftware.com/logical-proposition/health-help-justice-theory/
 
 -
 
-Name = (FR) Playliste YouTube - Exposés tirés des ouvrages
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk
+Name = (FR) Bibliographie
+URL = https://asherhaimhalevi.ordisoftware.com/works/bibliography/
+
+-
+
+Name = (FR) Archive GitHub
+URL = https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books

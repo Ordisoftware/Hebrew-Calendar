@@ -34,6 +34,39 @@ static partial class AppTranslations
                       "• Quelques améliorations et corrections."
     },*/
 
+    // TODO delete all 9.x without changing 9.x
+
+    ["9.29"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Optimize populating monthly view and thus startup time." + Globals.NL +
+                      "• Add open system calculator button in DatesDiffCalculator form." + Globals.NL +
+                      "• Add parashah name in the title bar of description box." + Globals.NL +
+                      "• Add menu for transcription guide in Tools menu and others windows." + Globals.NL +
+                      "• Add menu for grammar guide in Tools and others windows." + Globals.NL +
+                      "• Fix reset settings crashes the monthly view until restart." + Globals.NL +
+                      "• Fix multiple parashah description boxes at the same time which only displays the first one opened until closed." + Globals.NL +
+                      "• Fix save in parashot board causes a null exception in case of empty cells in the grid." + Globals.NL +
+                      "• Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer)." + Globals.NL +
+                      "• Fix disable reminder button not disabled if disabling is not allowed in preferences." + Globals.NL +
+                      "• Improve transcriptions following a change to better distinguish between He, 'Het, H'ayin, T'et and Tav." + Globals.NL +
+                      "• Some UI/UX improvements and fixes." + Globals.NL +
+                      "• Reorganize and add some web links",
+
+      [Language.FR] = "• Optimisation du remplissage de la vue mensuelle et donc du temps de démarrage." + Globals.NL +
+                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire DatesDiffCalculator." + Globals.NL +
+                      "• Ajout du nom de la parashah dans la barre de titre de la fenêtre de description." + Globals.NL +
+                      "• Ajout d'un menu pour un guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
+                      "• Ajout d'un menu pour un guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
+                      "• Correction de la réinitialisation des paramètres qui plante la vue mensuelle jusqu'au redémarrage." + Globals.NL +
+                      "• Correction de plusieurs boîtes de description de parashah ouvertes en même temps qui n'affichent que la première ouverte jusqu'à la fermeture." + Globals.NL +
+                      "• Correction de l'enregistrement dans le tableau des parashot qui provoque une null exception en cas de cellules vides dans la grille." + Globals.NL +
+                      "• Correction des noms des jours intermédiaires des célébrations hebdomadaires en cas de lever de lune survenant le lendemain (omer de la lune)." + Globals.NL +
+                      "• Correction du bouton de désactivation du rappeleur non désactivé si la désactivation n'est pas autorisée dans les préférences." + Globals.NL +
+                      "• Amélioration les transcriptions suite à un changement pour mieux distinguer He, 'Het, H'ayin, T'et et Tav." + Globals.NL +
+                      "• Quelques améliorations et corrections UI/UX." + Globals.NL +
+                      "• Réorganiser et ajout des liens Web."
+    },
+
     ["9.28"] = new TranslationsDictionary
     {
       [Language.EN] = "• Add current day change when cursor changes line in text report." + Globals.NL +

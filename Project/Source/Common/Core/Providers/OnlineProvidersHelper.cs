@@ -135,10 +135,10 @@ static class OnlineProvidersHelper
       if ( items.Items.Count > 0 )
       {
         // Folder
-        string title = items.Title.GetLang();
         ToolStripDropDownItem menu;
-        if ( title.Length != 0 )
+        if ( items.Title.Count > 0 )
         {
+          string title = items.Title.GetLang();
           if ( items.SeparatorBeforeFolder )
             menuRoot.DropDownItems.Add(new ToolStripSeparator());
           menu = new ToolStripMenuItem(title);
@@ -148,7 +148,10 @@ static class OnlineProvidersHelper
           menu.MouseUp += Menu_MouseUp;
         }
         else
+        {
+          menuRoot.DropDownItems.Add(new ToolStripSeparator());
           menu = menuRoot;
+        }
         // Items
         foreach ( var item in items.Items )
           menu.DropDownItems.Add(item.CreateMenuItem((sender, e) =>
