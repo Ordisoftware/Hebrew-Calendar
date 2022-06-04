@@ -34,6 +34,15 @@ static partial class AppTranslations
                       "• Quelques améliorations et corrections."
     },*/
 
+    ["9.29"] = new TranslationsDictionary
+    {
+      [Language.EN] = "" + Globals.NL +
+                      "",
+
+      [Language.FR] = "" + Globals.NL +
+                      "",
+    },
+
     ["9.28"] = new TranslationsDictionary
     {
       [Language.EN] = "• Add current day change when cursor changes line in text report." + Globals.NL +
