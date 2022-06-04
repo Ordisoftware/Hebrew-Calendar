@@ -193,7 +193,7 @@ partial class ApplicationDatabase
         SystemManager.TryCatch(() =>
         {
           calculate(dayDate, 1, TorahCelebrationDay.Chavouot1, true);
-          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLenght - 1, TorahCelebrationDay.Chavouot2, false);
+          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLenght - 1, TorahCelebrationDay.Chavouot2, true);
         });
       }
       else
