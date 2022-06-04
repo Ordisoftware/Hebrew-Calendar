@@ -383,7 +383,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add open system calculator button in DatesDiffCalculator form.
 - Add parashah name in the title bar of description box.
 - Add menu for transcription guide in Tools and others windows.
-- Add menu for grammar guide in Tools and others windows.
+- Add menu for grammar guide in Tools menu and others windows.
 - Fix reset settings crashes the monthly view until restart.
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
@@ -394,7 +394,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve IPC.
 - Some UI/UX improvements and fixes.
 - Reorganize and add some web links about Hebrew, Jewish institutions, Rabbis and YouTube.
-- Add some youtube celebration playlist links.
+- Add some YouTube celebration playlist links.
 - Fix and add celebration study links about TheTorah.com and ReformJudaism.org.
 - Serilog WinForms must remains at v2.3.1
 
