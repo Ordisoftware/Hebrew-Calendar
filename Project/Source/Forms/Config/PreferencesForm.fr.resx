@@ -943,7 +943,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
+  <data name="EditUseTwoDaysForLastPessahDayOutside.Text" xml:space="preserve">
     <value>Utilisez deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël</value>
   </data>
 </root>
