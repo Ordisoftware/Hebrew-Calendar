@@ -57,8 +57,8 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary MainFormSubTitleSod = new()
   {
-    [Language.EN] = "Sod Ha'ibur Omer",
-    [Language.FR] = "Omer du Sod Ha'ibour"
+    [Language.EN] = "Sod HaH'ibur Omer",
+    [Language.FR] = "Omer du Sod HaH'ibour"
   };
 
   static public readonly TranslationsDictionary AskToResetPreferences = new()
