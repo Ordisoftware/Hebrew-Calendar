@@ -15,7 +15,7 @@
 
 # Hebrew Calendar
 
-A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesach, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.
+A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pesa'h, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.
 
 ## Table of content
 
@@ -232,15 +232,15 @@ The software calculates the days according to the moon or the sun and various pa
 
 Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of this new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.
 
-It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesach which is that Pesach is the 14th day of the first seasonal month in the first full moon following the spring equinox.
+It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesa'h which is that Pesa'h is the 14th day of the first seasonal month in the first full moon following the spring equinox.
 
-But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.
+But even with these lags, Pesa'h, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesa'h Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.
 
 The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod HaH'ibur or science of moving stars.
 
 #### What are the times of celebration?
 
-The times of the Torah's celebrations are Pesach or Easter which is the liberation of illusions, Shavu'ot or Weeks which is the gift of knowledge, Teru'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
+The times of the Torah's celebrations are Pesa'h or Easter which is the liberation of illusions, Shavuh'ot or Weeks which is the gift of knowledge, Teruh'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.
 
 These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.
 
@@ -272,7 +272,7 @@ If you prefer to use the traditional group Shabat, select for example Saturday f
 
 The study of the Weekly Torah portion begins at Shim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
 
-It ends with full reading on Shabat, or the next Shabat if Shim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesach, Shavu'ot, Teru'ah, Kipurim, and Sukot.
+It ends with full reading on Shabat, or the next Shabat if Shim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavuh'ot, Teruh'ah, Kipurim, and Sukot.
 
 Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Shim'hat Torah means 'Joy [bestowed by the] Torah' and a Lettriq of Shim'hat is 'Sharing of the Service which Sustains the Matter': it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
@@ -778,7 +778,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2021.02.17 - Version 6.8
 
-- Fix the last day of Pesach and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
+- Fix the last day of Pesa'h and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.
 - Update web links.
 
 #### 2021.02.14 - Version 6.7
@@ -1220,7 +1220,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2019.04.25 - Version 1.7
 
-- Fix Pesach length.
+- Fix Pesa'h length.
 
 #### 2019.04.08 - Version 1.6
 
