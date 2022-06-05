@@ -2864,5 +2864,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["AutoSortBookmarks"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseTwoDaysForLastPessahDayOutside {
+            get {
+                return ((bool)(this["UseTwoDaysForLastPessahDayOutside"]));
+            }
+            set {
+                this["UseTwoDaysForLastPessahDayOutside"] = value;
+            }
+        }
     }
 }
